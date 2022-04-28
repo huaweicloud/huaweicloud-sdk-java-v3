@@ -396,6 +396,52 @@ public class DevStarMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ConfirmDeploymentJobRequest, ConfirmDeploymentJobResponse> confirmDeploymentJob =
+        genForconfirmDeploymentJob();
+
+    private static HttpRequestDef<ConfirmDeploymentJobRequest, ConfirmDeploymentJobResponse> genForconfirmDeploymentJob() {
+        // basic
+        HttpRequestDef.Builder<ConfirmDeploymentJobRequest, ConfirmDeploymentJobResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ConfirmDeploymentJobRequest.class, ConfirmDeploymentJobResponse.class)
+            .withName("ConfirmDeploymentJob")
+            .withUri("/v1/applications/{application_id}/environments/{environment_tag}/confirm")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("application_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ConfirmDeploymentJobRequest::getApplicationId, (req, v) -> {
+                req.setApplicationId(v);
+            }));
+        builder.<String>withRequestField("environment_tag",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ConfirmDeploymentJobRequest::getEnvironmentTag, (req, v) -> {
+                req.setEnvironmentTag(v);
+            }));
+        builder.<ConfirmDeploymentJobRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ConfirmDeploymentJobRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ConfirmDeploymentJobRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<DeploymentJobConfirmType>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeploymentJobConfirmType.class),
+            f -> f.withMarshaller(ConfirmDeploymentJobRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateDeploymentJobsRequest, CreateDeploymentJobsResponse> createDeploymentJobs =
         genForcreateDeploymentJobs();
 

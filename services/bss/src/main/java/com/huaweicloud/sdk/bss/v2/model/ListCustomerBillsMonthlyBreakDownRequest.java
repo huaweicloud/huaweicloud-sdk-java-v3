@@ -86,7 +86,7 @@ public class ListCustomerBillsMonthlyBreakDownRequest {
     }
 
     /**
-     * |忽略大小写，默认 zh_cn：中文 en_us：英文|
+     * 语言。en_US：英文。zh_CN：中文
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -122,7 +122,7 @@ public class ListCustomerBillsMonthlyBreakDownRequest {
     }
 
     /**
-     * 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用查询云服务类型列表接口获取。
+     * 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用[查询云服务类型列表](https://support.huaweicloud.com/api-oce/zh-cn_topic_0000001256679455.html)接口获取。
      * @return serviceTypeCode
      */
     public String getServiceTypeCode() {
@@ -139,7 +139,7 @@ public class ListCustomerBillsMonthlyBreakDownRequest {
     }
 
     /**
-     * 资源类型编码，例如ECS的VM为“hws.resource.type.vm”。您可以调用查询资源类型列表接口获取。
+     * 资源类型编码，例如ECS的VM为“hws.resource.type.vm”。您可以调用[查询资源类型列表](https://support.huaweicloud.com/api-oce/zh-cn_topic_0000001256519451.html)接口获取。
      * @return resourceTypeCode
      */
     public String getResourceTypeCode() {
@@ -156,7 +156,7 @@ public class ListCustomerBillsMonthlyBreakDownRequest {
     }
 
     /**
-     * 云服务区编码，例如：“cn-north-1”。具体请参见地区和终端节点对应云服务的“区域”列的值。
+     * 云服务区编码，例如：“cn-north-1”。具体请参见[地区和终端节点](https://developer.huaweicloud.com/endpoint)对应云服务的“区域”列的值。
      * @return regionCode
      */
     public String getRegionCode() {
@@ -283,7 +283,7 @@ public class ListCustomerBillsMonthlyBreakDownRequest {
     }
 
     /**
-     * 企业项目标识（企业项目ID）。default项目对应ID：0未归集（表示该云服务不支持企业项目管理能力）项目对应ID：-1其余项目对应ID获取方法请参见如何获取企业项目ID。
+     * 企业项目标识（企业项目ID）。default项目对应ID：0未归集（表示该云服务不支持企业项目管理能力）项目对应ID：-1其余项目对应ID获取方法请参见[如何获取企业项目ID](https://support.huaweicloud.com/usermanual-em/zh-cn_topic_0126101490.html)。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {

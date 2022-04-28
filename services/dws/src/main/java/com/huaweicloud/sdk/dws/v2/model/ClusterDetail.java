@@ -318,7 +318,7 @@ public class ClusterDetail {
     }
 
     /**
-     * Key值为正在进行的任务，有效值包括：  - GROWING：扩容中 - RESTORING：恢复中 - SNAPSHOTTING：快照中 - REPAIRING : 修复中 - CREATING : 创建中\\nvalue值为正在进行任务的进度。
+     * Key值为正在进行的任务，有效值包括：  - GROWING：扩容中 - RESTORING：恢复中 - SNAPSHOTTING：快照中 - REPAIRING: 修复中 - CREATING: 创建中\\nvalue值为正在进行任务的进度。
      * @return actionProgress
      */
     public Map<String, String> getActionProgress() {

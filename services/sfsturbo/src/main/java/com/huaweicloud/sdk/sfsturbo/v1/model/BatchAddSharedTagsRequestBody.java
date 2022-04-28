@@ -19,7 +19,7 @@ import java.util.function.Consumer;
 public class BatchAddSharedTagsRequestBody {
 
     /**
-     * 操作标识，取值范围为：\"create\"。 为指定共享批量添加标签时使用\"create\"。
+     * 操作标识，取值范围为：create。 为指定共享批量添加标签时使用create。
      */
     public static final class ActionEnum {
 
@@ -110,7 +110,7 @@ public class BatchAddSharedTagsRequestBody {
     }
 
     /**
-     * 操作标识，取值范围为：\"create\"。 为指定共享批量添加标签时使用\"create\"。
+     * 操作标识，取值范围为：create。 为指定共享批量添加标签时使用create。
      * @return action
      */
     public ActionEnum getAction() {

@@ -225,7 +225,7 @@ public class ClusterInfo {
     }
 
     /**
-     * 任务信息，由key、value组成。key值为正在进行的任务，value值为正在进行任务的进度。key值的有效值包括：  - GROWING：扩容中 - RESTORING：恢复中 - SNAPSHOTTING：快照中 - REPAIRING : 修复中 - CREATING : 创建中
+     * 任务信息，由key、value组成。key值为正在进行的任务，value值为正在进行任务的进度。key值的有效值包括：  - GROWING：扩容中 - RESTORING：恢复中 - SNAPSHOTTING：快照中 - REPAIRING: 修复中 - CREATING: 创建中
      * @return actionProgress
      */
     public Map<String, String> getActionProgress() {

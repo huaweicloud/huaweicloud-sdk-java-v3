@@ -26,7 +26,7 @@ public class ReclaimIndirectPartnerAccountReq {
     }
 
     /**
-     * 精英服务商ID。获取方法请参见查询精英服务商列表。
+     * 精英服务商ID。获取方法请参见[查询精英服务商列表](https://support.huaweicloud.com/api-bpconsole/espp_00003.html)。
      * @return indirectPartnerId
      */
     public String getIndirectPartnerId() {

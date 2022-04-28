@@ -32,6 +32,11 @@ public class DeletePremiumHostResponse extends SdkResponse {
     private String policyid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "region")
+
+    private String region;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protect_status")
 
     private Integer protectStatus;
@@ -105,6 +110,23 @@ public class DeletePremiumHostResponse extends SdkResponse {
 
     public void setPolicyid(String policyid) {
         this.policyid = policyid;
+    }
+
+    public DeletePremiumHostResponse withRegion(String region) {
+        this.region = region;
+        return this;
+    }
+
+    /**
+     * 区域id
+     * @return region
+     */
+    public String getRegion() {
+        return region;
+    }
+
+    public void setRegion(String region) {
+        this.region = region;
     }
 
     public DeletePremiumHostResponse withProtectStatus(Integer protectStatus) {
@@ -236,6 +258,7 @@ public class DeletePremiumHostResponse extends SdkResponse {
         return Objects.equals(this.id, deletePremiumHostResponse.id)
             && Objects.equals(this.hostname, deletePremiumHostResponse.hostname)
             && Objects.equals(this.policyid, deletePremiumHostResponse.policyid)
+            && Objects.equals(this.region, deletePremiumHostResponse.region)
             && Objects.equals(this.protectStatus, deletePremiumHostResponse.protectStatus)
             && Objects.equals(this.accessStatus, deletePremiumHostResponse.accessStatus)
             && Objects.equals(this.flag, deletePremiumHostResponse.flag)
@@ -245,7 +268,7 @@ public class DeletePremiumHostResponse extends SdkResponse {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, hostname, policyid, protectStatus, accessStatus, flag, mode, poolIds);
+        return Objects.hash(id, hostname, policyid, region, protectStatus, accessStatus, flag, mode, poolIds);
     }
 
     @Override
@@ -255,6 +278,7 @@ public class DeletePremiumHostResponse extends SdkResponse {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    hostname: ").append(toIndentedString(hostname)).append("\n");
         sb.append("    policyid: ").append(toIndentedString(policyid)).append("\n");
+        sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("    protectStatus: ").append(toIndentedString(protectStatus)).append("\n");
         sb.append("    accessStatus: ").append(toIndentedString(accessStatus)).append("\n");
         sb.append("    flag: ").append(toIndentedString(flag)).append("\n");

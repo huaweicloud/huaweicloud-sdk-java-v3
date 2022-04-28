@@ -29,11 +29,6 @@ public class ValueListResponseBody {
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "description")
-
-    private String description;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timestamp")
 
     private Long timestamp;
@@ -42,6 +37,16 @@ public class ValueListResponseBody {
     @JsonProperty(value = "values")
 
     private List<String> values = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "producer")
+
+    private Integer producer;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "description")
+
+    private String description;
 
     public ValueListResponseBody withId(String id) {
         this.id = id;
@@ -94,23 +99,6 @@ public class ValueListResponseBody {
         this.type = type;
     }
 
-    public ValueListResponseBody withDescription(String description) {
-        this.description = description;
-        return this;
-    }
-
-    /**
-     * 引用表描述
-     * @return description
-     */
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public ValueListResponseBody withTimestamp(Long timestamp) {
         this.timestamp = timestamp;
         return this;
@@ -161,6 +149,40 @@ public class ValueListResponseBody {
         this.values = values;
     }
 
+    public ValueListResponseBody withProducer(Integer producer) {
+        this.producer = producer;
+        return this;
+    }
+
+    /**
+     * 引用表来源，1代表用户创建，其它值代表modulleX自动生成
+     * @return producer
+     */
+    public Integer getProducer() {
+        return producer;
+    }
+
+    public void setProducer(Integer producer) {
+        this.producer = producer;
+    }
+
+    public ValueListResponseBody withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /**
+     * 引用表描述
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -173,14 +195,15 @@ public class ValueListResponseBody {
         return Objects.equals(this.id, valueListResponseBody.id)
             && Objects.equals(this.name, valueListResponseBody.name)
             && Objects.equals(this.type, valueListResponseBody.type)
-            && Objects.equals(this.description, valueListResponseBody.description)
             && Objects.equals(this.timestamp, valueListResponseBody.timestamp)
-            && Objects.equals(this.values, valueListResponseBody.values);
+            && Objects.equals(this.values, valueListResponseBody.values)
+            && Objects.equals(this.producer, valueListResponseBody.producer)
+            && Objects.equals(this.description, valueListResponseBody.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, type, description, timestamp, values);
+        return Objects.hash(id, name, type, timestamp, values, producer, description);
     }
 
     @Override
@@ -190,9 +213,10 @@ public class ValueListResponseBody {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
-        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
         sb.append("    values: ").append(toIndentedString(values)).append("\n");
+        sb.append("    producer: ").append(toIndentedString(producer)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -24,6 +24,13 @@ public class EnlargeProxyRequest  {
     
     private Integer nodeNum;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="proxy_id")
+    
+    
+    private String proxyId;
+
     public EnlargeProxyRequest withNodeNum(Integer nodeNum) {
         this.nodeNum = nodeNum;
         return this;
@@ -46,6 +53,28 @@ public class EnlargeProxyRequest  {
 
     
 
+    public EnlargeProxyRequest withProxyId(String proxyId) {
+        this.proxyId = proxyId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 数据库代理id。 如果实例只开启了一个代理，可不传该参数；如果实例开启了多个代理，则必须指定一个数据库代理，扩容新的代理节点。。
+     * @return proxyId
+     */
+    public String getProxyId() {
+        return proxyId;
+    }
+
+    public void setProxyId(String proxyId) {
+        this.proxyId = proxyId;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -55,17 +84,19 @@ public class EnlargeProxyRequest  {
             return false;
         }
         EnlargeProxyRequest enlargeProxyRequest = (EnlargeProxyRequest) o;
-        return Objects.equals(this.nodeNum, enlargeProxyRequest.nodeNum);
+        return Objects.equals(this.nodeNum, enlargeProxyRequest.nodeNum) &&
+            Objects.equals(this.proxyId, enlargeProxyRequest.proxyId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(nodeNum);
+        return Objects.hash(nodeNum, proxyId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class EnlargeProxyRequest {\n");
         sb.append("    nodeNum: ").append(toIndentedString(nodeNum)).append("\n");
+        sb.append("    proxyId: ").append(toIndentedString(proxyId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

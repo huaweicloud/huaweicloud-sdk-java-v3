@@ -3357,6 +3357,38 @@ public class MeetingClient {
     }
 
     /**
+     * 通过部门编码查询部门信息
+     *
+     * 通过部门编码查询部门信息
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowDepartmentRequest 请求对象
+     * @return ShowDepartmentResponse
+     */
+    public ShowDepartmentResponse showDepartment(ShowDepartmentRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.showDepartment);
+    }
+
+    /**
+     * 通过部门编码查询部门信息
+     *
+     * 通过部门编码查询部门信息
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowDepartmentRequest 请求对象
+     * @return SyncInvoker<ShowDepartmentRequest, ShowDepartmentResponse>
+     */
+    public SyncInvoker<ShowDepartmentRequest, ShowDepartmentResponse> showDepartmentInvoker(
+        ShowDepartmentRequest request) {
+        return new SyncInvoker<ShowDepartmentRequest, ShowDepartmentResponse>(request, MeetingMeta.showDepartment,
+            hcClient);
+    }
+
+    /**
      * 查询部门及其一级子部门列表
      *
      * 企业管理员通过该接口查询部门及其一级子部门列表。

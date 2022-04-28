@@ -98,7 +98,7 @@ public class ListCustomerOrdersRequest {
     }
 
     /**
-     * 客户账号ID。您可以调用查询客户列表接口获取customer_id。
+     * 客户账号ID。您可以调用[查询客户列表](https://support.huaweicloud.com/api-bpconsole/mc_00021.html)接口获取customer_id。
      * @return customerId
      */
     public String getCustomerId() {
@@ -291,7 +291,7 @@ public class ListCustomerOrdersRequest {
     }
 
     /**
-     * 精英服务商ID。获取方法请参见查询精英服务商列表。华为云伙伴能力中心（一级经销商）查询精英服务商的客户订单列表时，需要携带该参数；否则只能查询自己客户的订单列表。
+     * 精英服务商ID。获取方法请参见[查询精英服务商列表](https://support.huaweicloud.com/api-bpconsole/espp_00003.html)。华为云伙伴能力中心（一级经销商）查询精英服务商的客户订单列表时，需要携带该参数；否则只能查询自己客户的订单列表。
      * @return indirectPartnerId
      */
     public String getIndirectPartnerId() {

@@ -252,7 +252,7 @@ public class ShowCompositeHostResponse extends SdkResponse {
     }
 
     /**
-     * 域名所属WAF模式
+     * 域名所属WAF模式,cloud为云模式，premium为独享模式
      * @return wafType
      */
     public String getWafType() {

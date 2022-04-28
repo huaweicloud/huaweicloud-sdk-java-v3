@@ -16,21 +16,12 @@ public class CloudDeployRegion {
     public static final Region CN_SOUTH_1 =
         new Region("cn-south-1", "https://clouddeploy.cn-south-1.myhuaweicloud.com");
 
-    public static final Region CN_SOUTH_2 =
-        new Region("cn-south-2", "https://clouddeploy.cn-south-2.myhuaweicloud.com");
-
     public static final Region CN_EAST_3 = new Region("cn-east-3", "https://clouddeploy.cn-east-3.myhuaweicloud.com");
 
     public static final Region CN_EAST_2 = new Region("cn-east-2", "https://clouddeploy.cn-east-2.myhuaweicloud.com");
 
-    public static final Region CN_NORTH_1 =
-        new Region("cn-north-1", "https://clouddeploy.cn-north-1.myhuaweicloud.com");
-
     public static final Region CN_NORTH_4 =
         new Region("cn-north-4", "https://clouddeploy.cn-north-4.myhuaweicloud.com");
-
-    public static final Region CN_SOUTHWEST_2 =
-        new Region("cn-southwest-2", "https://clouddeploy.cn-southwest-2.myhuaweicloud.com");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
 
@@ -38,12 +29,9 @@ public class CloudDeployRegion {
         Map<String, Region> map = new HashMap<>();
         map.put("ap-southeast-3", AP_SOUTHEAST_3);
         map.put("cn-south-1", CN_SOUTH_1);
-        map.put("cn-south-2", CN_SOUTH_2);
         map.put("cn-east-3", CN_EAST_3);
         map.put("cn-east-2", CN_EAST_2);
-        map.put("cn-north-1", CN_NORTH_1);
         map.put("cn-north-4", CN_NORTH_4);
-        map.put("cn-southwest-2", CN_SOUTHWEST_2);
         return Collections.unmodifiableMap(map);
     }
 

@@ -21,6 +21,11 @@ public class PostPaidServerPublicip {
 
     private PostPaidServerEip eip;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "delete_on_termination")
+
+    private Boolean deleteOnTermination;
+
     public PostPaidServerPublicip withId(String id) {
         this.id = id;
         return this;
@@ -64,6 +69,23 @@ public class PostPaidServerPublicip {
         this.eip = eip;
     }
 
+    public PostPaidServerPublicip withDeleteOnTermination(Boolean deleteOnTermination) {
+        this.deleteOnTermination = deleteOnTermination;
+        return this;
+    }
+
+    /**
+     * 弹性公网IP随实例释放策略。  true：弹性公网IP随实例释放。 false：弹性公网IP不随实例释放。 默认值：false。
+     * @return deleteOnTermination
+     */
+    public Boolean getDeleteOnTermination() {
+        return deleteOnTermination;
+    }
+
+    public void setDeleteOnTermination(Boolean deleteOnTermination) {
+        this.deleteOnTermination = deleteOnTermination;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -74,12 +96,13 @@ public class PostPaidServerPublicip {
         }
         PostPaidServerPublicip postPaidServerPublicip = (PostPaidServerPublicip) o;
         return Objects.equals(this.id, postPaidServerPublicip.id)
-            && Objects.equals(this.eip, postPaidServerPublicip.eip);
+            && Objects.equals(this.eip, postPaidServerPublicip.eip)
+            && Objects.equals(this.deleteOnTermination, postPaidServerPublicip.deleteOnTermination);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, eip);
+        return Objects.hash(id, eip, deleteOnTermination);
     }
 
     @Override
@@ -88,6 +111,7 @@ public class PostPaidServerPublicip {
         sb.append("class PostPaidServerPublicip {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    eip: ").append(toIndentedString(eip)).append("\n");
+        sb.append("    deleteOnTermination: ").append(toIndentedString(deleteOnTermination)).append("\n");
         sb.append("}");
         return sb.toString();
     }

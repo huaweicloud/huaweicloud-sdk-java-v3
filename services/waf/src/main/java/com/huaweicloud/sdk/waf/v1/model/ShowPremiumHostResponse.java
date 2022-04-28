@@ -358,7 +358,7 @@ public class ShowPremiumHostResponse extends SdkResponse {
     }
 
     /**
-     * 创建的云模式防护域名
+     * 创建的独享模式防护域名
      * @return hostname
      */
     public String getHostname() {

@@ -283,6 +283,38 @@ public class DevStarClient {
     }
 
     /**
+     * 部署任务执行变更人工审核
+     *
+     * 部署任务执行变更人工审核，终止或者继续部署任务
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ConfirmDeploymentJobRequest 请求对象
+     * @return ConfirmDeploymentJobResponse
+     */
+    public ConfirmDeploymentJobResponse confirmDeploymentJob(ConfirmDeploymentJobRequest request) {
+        return hcClient.syncInvokeHttp(request, DevStarMeta.confirmDeploymentJob);
+    }
+
+    /**
+     * 部署任务执行变更人工审核
+     *
+     * 部署任务执行变更人工审核，终止或者继续部署任务
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ConfirmDeploymentJobRequest 请求对象
+     * @return SyncInvoker<ConfirmDeploymentJobRequest, ConfirmDeploymentJobResponse>
+     */
+    public SyncInvoker<ConfirmDeploymentJobRequest, ConfirmDeploymentJobResponse> confirmDeploymentJobInvoker(
+        ConfirmDeploymentJobRequest request) {
+        return new SyncInvoker<ConfirmDeploymentJobRequest, ConfirmDeploymentJobResponse>(request,
+            DevStarMeta.confirmDeploymentJob, hcClient);
+    }
+
+    /**
      * 创建部署任务
      *
      * 创建部署任务，并触发任务执行，当前只支持函数部署。

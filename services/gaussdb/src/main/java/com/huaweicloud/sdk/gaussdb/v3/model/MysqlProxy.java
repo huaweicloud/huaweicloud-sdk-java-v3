@@ -118,6 +118,13 @@ public class MysqlProxy  {
     
     private String flavorRef;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="name")
+    
+    
+    private String name;
+
     public MysqlProxy withPoolId(String poolId) {
         this.poolId = poolId;
         return this;
@@ -149,7 +156,7 @@ public class MysqlProxy  {
 
 
     /**
-     * Proxy实例开启状态。  取值范围：closed、open、frozen、opening、closing、enlarging、freezing和unfreezin。
+     * Proxy实例开启状态。  取值范围：closed、open、frozen、opening、closing、enlarging、freezing和unfreezing。
      * @return status
      */
     public String getStatus() {
@@ -215,7 +222,7 @@ public class MysqlProxy  {
 
 
     /**
-     * Proxy实例状态。 取值范围：abnormal、normal、creating和deleted。
+     * Proxy实例状态。 取值范围：ACTIVE、BUILD、FAILED和DELETED。
      * @return poolStatus
      */
     public String getPoolStatus() {
@@ -440,6 +447,28 @@ public class MysqlProxy  {
 
     
 
+    public MysqlProxy withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Proxy实例名称。
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -462,11 +491,12 @@ public class MysqlProxy  {
             Objects.equals(this.nodeNum, mysqlProxy.nodeNum) &&
             Objects.equals(this.mode, mysqlProxy.mode) &&
             Objects.equals(this.nodes, mysqlProxy.nodes) &&
-            Objects.equals(this.flavorRef, mysqlProxy.flavorRef);
+            Objects.equals(this.flavorRef, mysqlProxy.flavorRef) &&
+            Objects.equals(this.name, mysqlProxy.name);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(poolId, status, address, port, poolStatus, delayThresholdInSeconds, elbVip, eip, vcpus, ram, nodeNum, mode, nodes, flavorRef);
+        return Objects.hash(poolId, status, address, port, poolStatus, delayThresholdInSeconds, elbVip, eip, vcpus, ram, nodeNum, mode, nodes, flavorRef, name);
     }
     @Override
     public String toString() {
@@ -486,6 +516,7 @@ public class MysqlProxy  {
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
         sb.append("    nodes: ").append(toIndentedString(nodes)).append("\n");
         sb.append("    flavorRef: ").append(toIndentedString(flavorRef)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("}");
         return sb.toString();
     }

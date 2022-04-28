@@ -43,12 +43,18 @@ public class OperationState {
          */
         public static final TypeEnum SLEEP = new TypeEnum("Sleep");
 
+        /**
+         * Enum END for value: "End"
+         */
+        public static final TypeEnum END = new TypeEnum("End");
+
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TypeEnum> createStaticFields() {
             Map<String, TypeEnum> map = new HashMap<>();
             map.put("Operation", OPERATION);
             map.put("Sleep", SLEEP);
+            map.put("End", END);
             return Collections.unmodifiableMap(map);
         }
 

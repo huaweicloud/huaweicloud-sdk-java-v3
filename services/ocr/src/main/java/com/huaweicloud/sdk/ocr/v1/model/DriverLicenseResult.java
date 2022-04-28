@@ -91,7 +91,7 @@ public class DriverLicenseResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    private List<DriverLicenseResultStatus> status = null;
+    private List<String> status = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "generation_date")
@@ -363,12 +363,12 @@ public class DriverLicenseResult {
         this.accumulatedScores = accumulatedScores;
     }
 
-    public DriverLicenseResult withStatus(List<DriverLicenseResultStatus> status) {
+    public DriverLicenseResult withStatus(List<String> status) {
         this.status = status;
         return this;
     }
 
-    public DriverLicenseResult addStatusItem(DriverLicenseResultStatus statusItem) {
+    public DriverLicenseResult addStatusItem(String statusItem) {
         if (this.status == null) {
             this.status = new ArrayList<>();
         }
@@ -376,7 +376,7 @@ public class DriverLicenseResult {
         return this;
     }
 
-    public DriverLicenseResult withStatus(Consumer<List<DriverLicenseResultStatus>> statusSetter) {
+    public DriverLicenseResult withStatus(Consumer<List<String>> statusSetter) {
         if (this.status == null) {
             this.status = new ArrayList<>();
         }
@@ -388,11 +388,11 @@ public class DriverLicenseResult {
      * 状态。
      * @return status
      */
-    public List<DriverLicenseResultStatus> getStatus() {
+    public List<String> getStatus() {
         return status;
     }
 
-    public void setStatus(List<DriverLicenseResultStatus> status) {
+    public void setStatus(List<String> status) {
         this.status = status;
     }
 

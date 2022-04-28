@@ -97,7 +97,7 @@ public class CreatePartnerCouponsReq {
     }
 
     /**
-     * 客户账号ID。您可以调用查询客户列表接口获取customer_id。
+     * 客户账号ID。您可以调用[查询客户列表](https://support.huaweicloud.com/api-bpconsole/mc_00021.html)接口获取customer_id。
      * @return customerIds
      */
     public List<String> getCustomerIds() {
@@ -250,7 +250,7 @@ public class CreatePartnerCouponsReq {
     }
 
     /**
-     * 精英服务商ID。获取方法请参见查询精英服务商列表。 精英服务商给子客户发放优惠券时，需要携带该参数。
+     * 精英服务商ID。获取方法请参见[查询精英服务商列表](https://support.huaweicloud.com/api-bpconsole/espp_00003.html)。 精英服务商给子客户发放优惠券时，需要携带该参数。
      * @return indirectPartnerId
      */
     public String getIndirectPartnerId() {

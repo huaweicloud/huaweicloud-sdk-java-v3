@@ -920,6 +920,36 @@ public class GaussDBClient {
     }
 
     /**
+     * 查询数据库代理信息列表
+     *
+     * 查询数据库代理信息列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowGaussMySqlProxyListRequest 请求对象
+     * @return ShowGaussMySqlProxyListResponse
+     */
+    public ShowGaussMySqlProxyListResponse showGaussMySqlProxyList(ShowGaussMySqlProxyListRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.showGaussMySqlProxyList);
+    }
+
+    /**
+     * 查询数据库代理信息列表
+     *
+     * 查询数据库代理信息列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowGaussMySqlProxyListRequest 请求对象
+     * @return SyncInvoker<ShowGaussMySqlProxyListRequest, ShowGaussMySqlProxyListResponse>
+     */
+    public SyncInvoker<ShowGaussMySqlProxyListRequest, ShowGaussMySqlProxyListResponse> showGaussMySqlProxyListInvoker(ShowGaussMySqlProxyListRequest request) {
+        return new SyncInvoker<ShowGaussMySqlProxyListRequest, ShowGaussMySqlProxyListResponse>(request, GaussDBMeta.showGaussMySqlProxyList, hcClient);
+    }
+
+    /**
      * 查询租户基于企业项目的资源配额
      *
      * 获取指定企业项目的资源配额。

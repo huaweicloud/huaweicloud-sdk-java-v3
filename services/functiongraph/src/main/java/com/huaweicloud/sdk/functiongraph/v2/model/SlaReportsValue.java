@@ -13,14 +13,14 @@ public class SlaReportsValue {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timestamp")
 
-    private Integer timestamp;
+    private Long timestamp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "value")
 
-    private Integer value;
+    private Double value;
 
-    public SlaReportsValue withTimestamp(Integer timestamp) {
+    public SlaReportsValue withTimestamp(Long timestamp) {
         this.timestamp = timestamp;
         return this;
     }
@@ -29,15 +29,15 @@ public class SlaReportsValue {
      * 时间戳
      * @return timestamp
      */
-    public Integer getTimestamp() {
+    public Long getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(Integer timestamp) {
+    public void setTimestamp(Long timestamp) {
         this.timestamp = timestamp;
     }
 
-    public SlaReportsValue withValue(Integer value) {
+    public SlaReportsValue withValue(Double value) {
         this.value = value;
         return this;
     }
@@ -46,11 +46,11 @@ public class SlaReportsValue {
      * 值
      * @return value
      */
-    public Integer getValue() {
+    public Double getValue() {
         return value;
     }
 
-    public void setValue(Integer value) {
+    public void setValue(Double value) {
         this.value = value;
     }
 

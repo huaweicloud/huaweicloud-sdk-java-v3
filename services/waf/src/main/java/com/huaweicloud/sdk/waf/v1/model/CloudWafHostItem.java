@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.waf.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -76,10 +81,81 @@ public class CloudWafHostItem {
 
     private Boolean exclusiveIp;
 
+    /**
+     * 付费模式，目前只支持prePaid预付款模式
+     */
+    public static final class PaidTypeEnum {
+
+        /**
+         * Enum PREPAID for value: "prePaid"
+         */
+        public static final PaidTypeEnum PREPAID = new PaidTypeEnum("prePaid");
+
+        private static final Map<String, PaidTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, PaidTypeEnum> createStaticFields() {
+            Map<String, PaidTypeEnum> map = new HashMap<>();
+            map.put("prePaid", PREPAID);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        PaidTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static PaidTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            PaidTypeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new PaidTypeEnum(value);
+            }
+            return result;
+        }
+
+        public static PaidTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            PaidTypeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof PaidTypeEnum) {
+                return this.value.equals(((PaidTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "paid_type")
 
-    private String paidType;
+    private PaidTypeEnum paidType;
 
     public CloudWafHostItem withId(String id) {
         this.id = id;
@@ -311,7 +387,7 @@ public class CloudWafHostItem {
         this.exclusiveIp = exclusiveIp;
     }
 
-    public CloudWafHostItem withPaidType(String paidType) {
+    public CloudWafHostItem withPaidType(PaidTypeEnum paidType) {
         this.paidType = paidType;
         return this;
     }
@@ -320,11 +396,11 @@ public class CloudWafHostItem {
      * 付费模式，目前只支持prePaid预付款模式
      * @return paidType
      */
-    public String getPaidType() {
+    public PaidTypeEnum getPaidType() {
         return paidType;
     }
 
-    public void setPaidType(String paidType) {
+    public void setPaidType(PaidTypeEnum paidType) {
         this.paidType = paidType;
     }
 

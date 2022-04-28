@@ -55,7 +55,7 @@ public class ListUsageTypesRequest {
     }
 
     /**
-     * 资源类型编码，例如ECS的VM为“hws.resource.type.vm”。您可以调用查询资源类型列表接口获取。
+     * 资源类型编码，例如ECS的VM为“hws.resource.type.vm”。您可以调用[查询资源类型列表](https://support.huaweicloud.com/api-oce/zh-cn_topic_0000001256519451.html)接口获取。
      * @return resourceTypeCode
      */
     public String getResourceTypeCode() {

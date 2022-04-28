@@ -34,7 +34,7 @@ public class RateOnDemandReq {
     }
 
     /**
-     * 项目ID。  说明： 使用客户Token，可以调用通过assume_role方式获取用户token接口获取“regionId”的取值对应的“project id”。具体请参见如何将合作伙伴Token置换为客户Token的步骤2。IAM子用户调用此接口，需要IAM主账号授权，具体请参考创建用户组并授权。
+     * 项目ID。  说明： 使用客户Token，可以调用[通过assume_role方式获取用户token](https://support.huaweicloud.com/api-iam/iam_30_0003.html)接口获取“regionId”的取值对应的“project id”。具体请参见[如何将合作伙伴Token置换为客户Token](https://support.huaweicloud.com/bpconsole_faq/bpconsole_apifaq_00001.html)的步骤2。IAM子用户调用此接口，需要IAM主账号授权，具体请参考[创建用户组并授权](https://support.huaweicloud.com/usermanual-iam/iam_03_0001.html)。
      * @return projectId
      */
     public String getProjectId() {

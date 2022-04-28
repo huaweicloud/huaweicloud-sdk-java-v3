@@ -7,7 +7,7 @@
     <packaging>pom</packaging>
     <groupId>com.huaweicloud.sdk</groupId>
     <artifactId>huaweicloud-sdk</artifactId>
-    <version>3.0.85</version>
+    <version>3.0.86</version>
     <name>Huawei Cloud SDK for Java Parent</name>
     <description>Huawei Cloud SDK for Java</description>
     <url>https://github.com/huaweicloud/huaweicloud-sdk-java-v3</url>
@@ -50,8 +50,9 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <revision>3.0.85</revision>
+        <revision>3.0.86</revision>
         <jackson.version>2.13.2</jackson.version>
+        <jackson-databind.version>2.13.2.2</jackson-databind.version>
         <okhttp.version>3.14.2</okhttp.version>
         <junit.version>4.13.1</junit.version>
         <slf4j.version>1.7.32</slf4j.version>
@@ -74,7 +75,7 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>${jackson.version}</version>
+            <version>${jackson-databind.version}</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.datatype</groupId>

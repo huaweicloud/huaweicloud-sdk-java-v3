@@ -65,6 +65,11 @@ public class CreateHostResponse extends SdkResponse {
     private List<CloudWafServer> server = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "flag")
+
+    private Flag flag;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "proxy")
 
     private Boolean proxy;
@@ -78,6 +83,11 @@ public class CreateHostResponse extends SdkResponse {
     @JsonProperty(value = "exclusive_ip")
 
     private Boolean exclusiveIp;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "http2_enable")
+
+    private Boolean http2Enable;
 
     public CreateHostResponse withId(String id) {
         this.id = id;
@@ -265,6 +275,32 @@ public class CreateHostResponse extends SdkResponse {
         this.server = server;
     }
 
+    public CreateHostResponse withFlag(Flag flag) {
+        this.flag = flag;
+        return this;
+    }
+
+    public CreateHostResponse withFlag(Consumer<Flag> flagSetter) {
+        if (this.flag == null) {
+            this.flag = new Flag();
+            flagSetter.accept(this.flag);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get flag
+     * @return flag
+     */
+    public Flag getFlag() {
+        return flag;
+    }
+
+    public void setFlag(Flag flag) {
+        this.flag = flag;
+    }
+
     public CreateHostResponse withProxy(Boolean proxy) {
         this.proxy = proxy;
         return this;
@@ -316,6 +352,23 @@ public class CreateHostResponse extends SdkResponse {
         this.exclusiveIp = exclusiveIp;
     }
 
+    public CreateHostResponse withHttp2Enable(Boolean http2Enable) {
+        this.http2Enable = http2Enable;
+        return this;
+    }
+
+    /**
+     * 是否支持http2
+     * @return http2Enable
+     */
+    public Boolean getHttp2Enable() {
+        return http2Enable;
+    }
+
+    public void setHttp2Enable(Boolean http2Enable) {
+        this.http2Enable = http2Enable;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -335,9 +388,11 @@ public class CreateHostResponse extends SdkResponse {
             && Objects.equals(this.certificateid, createHostResponse.certificateid)
             && Objects.equals(this.certificatename, createHostResponse.certificatename)
             && Objects.equals(this.server, createHostResponse.server)
+            && Objects.equals(this.flag, createHostResponse.flag)
             && Objects.equals(this.proxy, createHostResponse.proxy)
             && Objects.equals(this.timestamp, createHostResponse.timestamp)
-            && Objects.equals(this.exclusiveIp, createHostResponse.exclusiveIp);
+            && Objects.equals(this.exclusiveIp, createHostResponse.exclusiveIp)
+            && Objects.equals(this.http2Enable, createHostResponse.http2Enable);
     }
 
     @Override
@@ -352,9 +407,11 @@ public class CreateHostResponse extends SdkResponse {
             certificateid,
             certificatename,
             server,
+            flag,
             proxy,
             timestamp,
-            exclusiveIp);
+            exclusiveIp,
+            http2Enable);
     }
 
     @Override
@@ -371,9 +428,11 @@ public class CreateHostResponse extends SdkResponse {
         sb.append("    certificateid: ").append(toIndentedString(certificateid)).append("\n");
         sb.append("    certificatename: ").append(toIndentedString(certificatename)).append("\n");
         sb.append("    server: ").append(toIndentedString(server)).append("\n");
+        sb.append("    flag: ").append(toIndentedString(flag)).append("\n");
         sb.append("    proxy: ").append(toIndentedString(proxy)).append("\n");
         sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
         sb.append("    exclusiveIp: ").append(toIndentedString(exclusiveIp)).append("\n");
+        sb.append("    http2Enable: ").append(toIndentedString(http2Enable)).append("\n");
         sb.append("}");
         return sb.toString();
     }

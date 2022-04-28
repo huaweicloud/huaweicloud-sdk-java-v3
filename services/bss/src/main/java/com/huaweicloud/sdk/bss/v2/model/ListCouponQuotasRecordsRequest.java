@@ -56,7 +56,7 @@ public class ListCouponQuotasRecordsRequest {
     }
 
     /**
-     * 精英服务商ID。获取方法请参见查询精英服务商列表。为空表示查询所有的代金券额度发放回收记录。不为空表示仅查询与该精英服务商相关的代金券额度发放回收记录。默认查询所有精英服务商的代金券额度发放回收记录。
+     * 精英服务商ID。获取方法请参见[查询精英服务商列表](https://support.huaweicloud.com/api-bpconsole/espp_00003.html)。为空表示查询所有的代金券额度发放回收记录。不为空表示仅查询与该精英服务商相关的代金券额度发放回收记录。默认查询所有精英服务商的代金券额度发放回收记录。
      * @return indirectPartnerId
      */
     public String getIndirectPartnerId() {
@@ -73,7 +73,7 @@ public class ListCouponQuotasRecordsRequest {
     }
 
     /**
-     * 精英服务商的代金券额度ID。获取方法请参见查询优惠券额度。即华为云伙伴能力中心给精英服务商发放代金券额度时，产生的精英服务商的代金券额度ID，或者从精英服务商回收代金券额度时，精英服务商的代金券额度ID。
+     * 精英服务商的代金券额度ID。获取方法请参见[查询优惠券额度](https://support.huaweicloud.com/api-bpconsole/mp_02003.html)。即华为云伙伴能力中心给精英服务商发放代金券额度时，产生的精英服务商的代金券额度ID，或者从精英服务商回收代金券额度时，精英服务商的代金券额度ID。
      * @return quotaId
      */
     public String getQuotaId() {

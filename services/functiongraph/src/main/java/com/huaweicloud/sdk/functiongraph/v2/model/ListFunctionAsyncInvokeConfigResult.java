@@ -41,6 +41,11 @@ public class ListFunctionAsyncInvokeConfigResult {
 
     private String lastModified;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_async_status_log")
+
+    private Boolean enableAsyncStatusLog;
+
     public ListFunctionAsyncInvokeConfigResult withFuncUrn(String funcUrn) {
         this.funcUrn = funcUrn;
         return this;
@@ -153,6 +158,23 @@ public class ListFunctionAsyncInvokeConfigResult {
         this.lastModified = lastModified;
     }
 
+    public ListFunctionAsyncInvokeConfigResult withEnableAsyncStatusLog(Boolean enableAsyncStatusLog) {
+        this.enableAsyncStatusLog = enableAsyncStatusLog;
+        return this;
+    }
+
+    /**
+     * 开启异步调用状态持久化
+     * @return enableAsyncStatusLog
+     */
+    public Boolean getEnableAsyncStatusLog() {
+        return enableAsyncStatusLog;
+    }
+
+    public void setEnableAsyncStatusLog(Boolean enableAsyncStatusLog) {
+        this.enableAsyncStatusLog = enableAsyncStatusLog;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -169,7 +191,8 @@ public class ListFunctionAsyncInvokeConfigResult {
             && Objects.equals(this.maxAsyncRetryAttempts, listFunctionAsyncInvokeConfigResult.maxAsyncRetryAttempts)
             && Objects.equals(this.destinationConfig, listFunctionAsyncInvokeConfigResult.destinationConfig)
             && Objects.equals(this.createdTime, listFunctionAsyncInvokeConfigResult.createdTime)
-            && Objects.equals(this.lastModified, listFunctionAsyncInvokeConfigResult.lastModified);
+            && Objects.equals(this.lastModified, listFunctionAsyncInvokeConfigResult.lastModified)
+            && Objects.equals(this.enableAsyncStatusLog, listFunctionAsyncInvokeConfigResult.enableAsyncStatusLog);
     }
 
     @Override
@@ -179,7 +202,8 @@ public class ListFunctionAsyncInvokeConfigResult {
             maxAsyncRetryAttempts,
             destinationConfig,
             createdTime,
-            lastModified);
+            lastModified,
+            enableAsyncStatusLog);
     }
 
     @Override
@@ -192,6 +216,7 @@ public class ListFunctionAsyncInvokeConfigResult {
         sb.append("    destinationConfig: ").append(toIndentedString(destinationConfig)).append("\n");
         sb.append("    createdTime: ").append(toIndentedString(createdTime)).append("\n");
         sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
+        sb.append("    enableAsyncStatusLog: ").append(toIndentedString(enableAsyncStatusLog)).append("\n");
         sb.append("}");
         return sb.toString();
     }

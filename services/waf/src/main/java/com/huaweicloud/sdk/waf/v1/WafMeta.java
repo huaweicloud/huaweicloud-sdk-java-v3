@@ -192,6 +192,45 @@ public class WafMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateIgnoreRuleRequest, CreateIgnoreRuleResponse> createIgnoreRule =
+        genForcreateIgnoreRule();
+
+    private static HttpRequestDef<CreateIgnoreRuleRequest, CreateIgnoreRuleResponse> genForcreateIgnoreRule() {
+        // basic
+        HttpRequestDef.Builder<CreateIgnoreRuleRequest, CreateIgnoreRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateIgnoreRuleRequest.class, CreateIgnoreRuleResponse.class)
+                .withName("CreateIgnoreRule")
+                .withUri("/v1/{project_id}/waf/policy/{policy_id}/ignore")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateIgnoreRuleRequest::getPolicyId, (req, v) -> {
+                req.setPolicyId(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateIgnoreRuleRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<CreateIgnoreRuleRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateIgnoreRuleRequestBody.class),
+            f -> f.withMarshaller(CreateIgnoreRuleRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreatePolicyRequest, CreatePolicyResponse> createPolicy = genForcreatePolicy();
 
     private static HttpRequestDef<CreatePolicyRequest, CreatePolicyResponse> genForcreatePolicy() {
@@ -498,6 +537,45 @@ public class WafMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteHostRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteIgnoreRuleRequest, DeleteIgnoreRuleResponse> deleteIgnoreRule =
+        genFordeleteIgnoreRule();
+
+    private static HttpRequestDef<DeleteIgnoreRuleRequest, DeleteIgnoreRuleResponse> genFordeleteIgnoreRule() {
+        // basic
+        HttpRequestDef.Builder<DeleteIgnoreRuleRequest, DeleteIgnoreRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteIgnoreRuleRequest.class, DeleteIgnoreRuleResponse.class)
+                .withName("DeleteIgnoreRule")
+                .withUri("/v1/{project_id}/waf/policy/{policy_id}/ignore/{rule_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteIgnoreRuleRequest::getPolicyId, (req, v) -> {
+                req.setPolicyId(v);
+            }));
+        builder.<String>withRequestField("rule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteIgnoreRuleRequest::getRuleId, (req, v) -> {
+                req.setRuleId(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteIgnoreRuleRequest::getEnterpriseProjectId, (req, v) -> {
                 req.setEnterpriseProjectId(v);
             }));
 

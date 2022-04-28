@@ -42,6 +42,11 @@ public class ShowFunctionAsyncInvokeConfigResponse extends SdkResponse {
 
     private String lastModified;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_async_status_log")
+
+    private Boolean enableAsyncStatusLog;
+
     public ShowFunctionAsyncInvokeConfigResponse withFuncUrn(String funcUrn) {
         this.funcUrn = funcUrn;
         return this;
@@ -154,6 +159,23 @@ public class ShowFunctionAsyncInvokeConfigResponse extends SdkResponse {
         this.lastModified = lastModified;
     }
 
+    public ShowFunctionAsyncInvokeConfigResponse withEnableAsyncStatusLog(Boolean enableAsyncStatusLog) {
+        this.enableAsyncStatusLog = enableAsyncStatusLog;
+        return this;
+    }
+
+    /**
+     * 开启异步调用状态持久化
+     * @return enableAsyncStatusLog
+     */
+    public Boolean getEnableAsyncStatusLog() {
+        return enableAsyncStatusLog;
+    }
+
+    public void setEnableAsyncStatusLog(Boolean enableAsyncStatusLog) {
+        this.enableAsyncStatusLog = enableAsyncStatusLog;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -170,7 +192,8 @@ public class ShowFunctionAsyncInvokeConfigResponse extends SdkResponse {
             && Objects.equals(this.maxAsyncRetryAttempts, showFunctionAsyncInvokeConfigResponse.maxAsyncRetryAttempts)
             && Objects.equals(this.destinationConfig, showFunctionAsyncInvokeConfigResponse.destinationConfig)
             && Objects.equals(this.createdTime, showFunctionAsyncInvokeConfigResponse.createdTime)
-            && Objects.equals(this.lastModified, showFunctionAsyncInvokeConfigResponse.lastModified);
+            && Objects.equals(this.lastModified, showFunctionAsyncInvokeConfigResponse.lastModified)
+            && Objects.equals(this.enableAsyncStatusLog, showFunctionAsyncInvokeConfigResponse.enableAsyncStatusLog);
     }
 
     @Override
@@ -180,7 +203,8 @@ public class ShowFunctionAsyncInvokeConfigResponse extends SdkResponse {
             maxAsyncRetryAttempts,
             destinationConfig,
             createdTime,
-            lastModified);
+            lastModified,
+            enableAsyncStatusLog);
     }
 
     @Override
@@ -193,6 +217,7 @@ public class ShowFunctionAsyncInvokeConfigResponse extends SdkResponse {
         sb.append("    destinationConfig: ").append(toIndentedString(destinationConfig)).append("\n");
         sb.append("    createdTime: ").append(toIndentedString(createdTime)).append("\n");
         sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
+        sb.append("    enableAsyncStatusLog: ").append(toIndentedString(enableAsyncStatusLog)).append("\n");
         sb.append("}");
         return sb.toString();
     }

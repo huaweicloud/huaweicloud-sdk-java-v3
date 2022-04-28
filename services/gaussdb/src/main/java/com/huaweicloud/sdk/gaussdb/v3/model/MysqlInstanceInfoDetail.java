@@ -11,6 +11,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.gaussdb.v3.model.MysqlBackupStrategy;
 import com.huaweicloud.sdk.gaussdb.v3.model.MysqlDatastore;
 import com.huaweicloud.sdk.gaussdb.v3.model.MysqlInstanceNodeInfo;
+import com.huaweicloud.sdk.gaussdb.v3.model.MysqlProxyInfo;
 import com.huaweicloud.sdk.gaussdb.v3.model.MysqlTags;
 import java.util.ArrayList;
 import java.util.List;
@@ -219,6 +220,13 @@ public class MysqlInstanceInfoDetail  {
     
     private String dedicatedResourceId;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="proxies")
+    
+    
+    private List<MysqlProxyInfo> proxies = null;
+    
     public MysqlInstanceInfoDetail withId(String id) {
         this.id = id;
         return this;
@@ -294,7 +302,7 @@ public class MysqlInstanceInfoDetail  {
 
 
     /**
-     * 实例状态。 取值： 值为“BUILD”，表示实例正在创建。 值为“ACTIVE”，表示实例正常。 值为“FAILED”，表示实例异常。 值为“FROZEN”，表示实例冻结。 值为“MODIFYING”，表示实例正在扩容。 值为“REBOOTING”，表示实例正在重启。 值为“RESTORING”，表示实例正在恢复。 值为“MODIFYING INSTANCE TYPE”，表示实例正在转主备。 值为“SWITCHOVER”，表示实例正在主备切换。 值为“MIGRATING”，表示实例正在迁移。 值为“BACKING UP”，表示实例正在进行备份。 值为“MODIFYING DATABASE PORT”，表示实例正在修改数据库端口。值为“STORAGE FULL”，表示实例磁盘空间满。
+     * 实例状态。 取值： 值为“BUILD”，表示实例正在创建。 值为“ACTIVE”，表示实例正常。 值为“FAILED”，表示实例创建失败。 值为“FROZEN”，表示实例冻结。 值为“MODIFYING”，表示实例正在扩容。 值为“REBOOTING”，表示实例正在重启。 值为“RESTORING”，表示实例正在恢复。 值为“SWITCHOVER”，表示实例正在主备切换。 值为“MIGRATING”，表示实例正在迁移。 值为“BACKING UP”，表示实例正在进行备份。 值为“MODIFYING DATABASE PORT”，表示实例正在修改数据库端口。值为“STORAGE FULL”，表示实例磁盘空间满。
      * @return status
      */
     public String getStatus() {
@@ -891,6 +899,42 @@ public class MysqlInstanceInfoDetail  {
 
     
 
+    public MysqlInstanceInfoDetail withProxies(List<MysqlProxyInfo> proxies) {
+        this.proxies = proxies;
+        return this;
+    }
+
+    
+    public MysqlInstanceInfoDetail addProxiesItem(MysqlProxyInfo proxiesItem) {
+        if(this.proxies == null) {
+            this.proxies = new ArrayList<>();
+        }
+        this.proxies.add(proxiesItem);
+        return this;
+    }
+
+    public MysqlInstanceInfoDetail withProxies(Consumer<List<MysqlProxyInfo>> proxiesSetter) {
+        if(this.proxies == null) {
+            this.proxies = new ArrayList<>();
+        }
+        proxiesSetter.accept(this.proxies);
+        return this;
+    }
+
+    /**
+     * Get proxies
+     * @return proxies
+     */
+    public List<MysqlProxyInfo> getProxies() {
+        return proxies;
+    }
+
+    public void setProxies(List<MysqlProxyInfo> proxies) {
+        this.proxies = proxies;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -927,11 +971,12 @@ public class MysqlInstanceInfoDetail  {
             Objects.equals(this.masterAzCode, mysqlInstanceInfoDetail.masterAzCode) &&
             Objects.equals(this.maintenanceWindow, mysqlInstanceInfoDetail.maintenanceWindow) &&
             Objects.equals(this.tags, mysqlInstanceInfoDetail.tags) &&
-            Objects.equals(this.dedicatedResourceId, mysqlInstanceInfoDetail.dedicatedResourceId);
+            Objects.equals(this.dedicatedResourceId, mysqlInstanceInfoDetail.dedicatedResourceId) &&
+            Objects.equals(this.proxies, mysqlInstanceInfoDetail.proxies);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, projectId, status, port, alias, type, nodeCount, datastore, backupUsedSpace, created, updated, privateWriteIps, publicIps, dbUserName, vpcId, subnetId, securityGroupId, configurationId, backupStrategy, nodes, enterpriseProjectId, timeZone, azMode, masterAzCode, maintenanceWindow, tags, dedicatedResourceId);
+        return Objects.hash(id, name, projectId, status, port, alias, type, nodeCount, datastore, backupUsedSpace, created, updated, privateWriteIps, publicIps, dbUserName, vpcId, subnetId, securityGroupId, configurationId, backupStrategy, nodes, enterpriseProjectId, timeZone, azMode, masterAzCode, maintenanceWindow, tags, dedicatedResourceId, proxies);
     }
     @Override
     public String toString() {
@@ -965,6 +1010,7 @@ public class MysqlInstanceInfoDetail  {
         sb.append("    maintenanceWindow: ").append(toIndentedString(maintenanceWindow)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    dedicatedResourceId: ").append(toIndentedString(dedicatedResourceId)).append("\n");
+        sb.append("    proxies: ").append(toIndentedString(proxies)).append("\n");
         sb.append("}");
         return sb.toString();
     }

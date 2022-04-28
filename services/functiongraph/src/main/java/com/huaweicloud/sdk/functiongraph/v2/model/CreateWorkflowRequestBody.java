@@ -1,10 +1,15 @@
 package com.huaweicloud.sdk.functiongraph.v2.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -52,6 +57,93 @@ public class CreateWorkflowRequestBody {
     @JsonProperty(value = "retries")
 
     private List<Retry> retries = null;
+
+    /**
+    * 工作流模式，当前支持两种模式 NORMAL: 标准模式，普通模式面向普通的业务场景，支持长时间任务，支持执行历史持久化和查询，只支持异步调用 EXPRESS: 快速模式，快速模式面向业务执行时长较短，需要极致性能的场景，只支持流程执行时长低于5分钟的场景，不支持执行历史持久化，支持同步和异步调用 默认为标准模式
+    */
+    public static final class ModeEnum {
+
+        /**
+         * Enum NORMAL for value: "NORMAL"
+         */
+        public static final ModeEnum NORMAL = new ModeEnum("NORMAL");
+
+        /**
+         * Enum EXPRESS for value: "EXPRESS"
+         */
+        public static final ModeEnum EXPRESS = new ModeEnum("EXPRESS");
+
+        private static final Map<String, ModeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ModeEnum> createStaticFields() {
+            Map<String, ModeEnum> map = new HashMap<>();
+            map.put("NORMAL", NORMAL);
+            map.put("EXPRESS", EXPRESS);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ModeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ModeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            ModeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new ModeEnum(value);
+            }
+            return result;
+        }
+
+        public static ModeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            ModeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ModeEnum) {
+                return this.value.equals(((ModeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "mode")
+
+    private ModeEnum mode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "express_config")
+
+    private ExpressConfig expressConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
@@ -258,6 +350,49 @@ public class CreateWorkflowRequestBody {
         this.retries = retries;
     }
 
+    public CreateWorkflowRequestBody withMode(ModeEnum mode) {
+        this.mode = mode;
+        return this;
+    }
+
+    /**
+     * 工作流模式，当前支持两种模式 NORMAL: 标准模式，普通模式面向普通的业务场景，支持长时间任务，支持执行历史持久化和查询，只支持异步调用 EXPRESS: 快速模式，快速模式面向业务执行时长较短，需要极致性能的场景，只支持流程执行时长低于5分钟的场景，不支持执行历史持久化，支持同步和异步调用 默认为标准模式
+     * @return mode
+     */
+    public ModeEnum getMode() {
+        return mode;
+    }
+
+    public void setMode(ModeEnum mode) {
+        this.mode = mode;
+    }
+
+    public CreateWorkflowRequestBody withExpressConfig(ExpressConfig expressConfig) {
+        this.expressConfig = expressConfig;
+        return this;
+    }
+
+    public CreateWorkflowRequestBody withExpressConfig(Consumer<ExpressConfig> expressConfigSetter) {
+        if (this.expressConfig == null) {
+            this.expressConfig = new ExpressConfig();
+            expressConfigSetter.accept(this.expressConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get expressConfig
+     * @return expressConfig
+     */
+    public ExpressConfig getExpressConfig() {
+        return expressConfig;
+    }
+
+    public void setExpressConfig(ExpressConfig expressConfig) {
+        this.expressConfig = expressConfig;
+    }
+
     public CreateWorkflowRequestBody withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -292,13 +427,24 @@ public class CreateWorkflowRequestBody {
             && Objects.equals(this.states, createWorkflowRequestBody.states)
             && Objects.equals(this.constants, createWorkflowRequestBody.constants)
             && Objects.equals(this.retries, createWorkflowRequestBody.retries)
+            && Objects.equals(this.mode, createWorkflowRequestBody.mode)
+            && Objects.equals(this.expressConfig, createWorkflowRequestBody.expressConfig)
             && Objects.equals(this.enterpriseProjectId, createWorkflowRequestBody.enterpriseProjectId);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(name, description, triggers, start, functions, states, constants, retries, enterpriseProjectId);
+        return Objects.hash(name,
+            description,
+            triggers,
+            start,
+            functions,
+            states,
+            constants,
+            retries,
+            mode,
+            expressConfig,
+            enterpriseProjectId);
     }
 
     @Override
@@ -313,6 +459,8 @@ public class CreateWorkflowRequestBody {
         sb.append("    states: ").append(toIndentedString(states)).append("\n");
         sb.append("    constants: ").append(toIndentedString(constants)).append("\n");
         sb.append("    retries: ").append(toIndentedString(retries)).append("\n");
+        sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
+        sb.append("    expressConfig: ").append(toIndentedString(expressConfig)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();

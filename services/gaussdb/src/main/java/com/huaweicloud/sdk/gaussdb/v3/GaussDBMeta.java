@@ -298,7 +298,7 @@ public class GaussDBMeta {
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteGaussMySqlProxyRequest.class, DeleteGaussMySqlProxyResponse.class)
                 .withName("DeleteGaussMySqlProxy")
                 .withUri("/v3/{project_id}/instances/{instance_id}/proxy")
-                .withContentType("application/json");
+                .withContentType("application/json;charset=UTF-8");
 
         // requests
         builder.<String>withRequestField("instance_id",
@@ -315,6 +315,14 @@ public class GaussDBMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteGaussMySqlProxyRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
+            })
+        );
+        builder.<CloseMysqlProxyRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CloseMysqlProxyRequestBody.class),
+            f -> f.withMarshaller(DeleteGaussMySqlProxyRequest::getBody, (req, v) -> {
+                req.setBody(v);
             })
         );
 
@@ -601,7 +609,7 @@ public class GaussDBMeta {
         );
         builder.<String>withRequestField("node_id",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListGaussMySqlErrorLogRequest::getNodeId, (req, v) -> {
                 req.setNodeId(v);
@@ -1396,6 +1404,57 @@ public class GaussDBMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowGaussMySqlProxyFlavorsRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowGaussMySqlProxyListRequest, ShowGaussMySqlProxyListResponse> showGaussMySqlProxyList = genForshowGaussMySqlProxyList();
+
+    private static HttpRequestDef<ShowGaussMySqlProxyListRequest, ShowGaussMySqlProxyListResponse> genForshowGaussMySqlProxyList() {
+        // basic
+        HttpRequestDef.Builder<ShowGaussMySqlProxyListRequest, ShowGaussMySqlProxyListResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowGaussMySqlProxyListRequest.class, ShowGaussMySqlProxyListResponse.class)
+                .withName("ShowGaussMySqlProxyList")
+                .withUri("/v3/{project_id}/instances/{instance_id}/proxies")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowGaussMySqlProxyListRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowGaussMySqlProxyListRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowGaussMySqlProxyListRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowGaussMySqlProxyListRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             })
         );

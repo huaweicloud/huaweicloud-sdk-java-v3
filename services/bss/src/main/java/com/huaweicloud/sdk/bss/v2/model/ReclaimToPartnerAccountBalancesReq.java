@@ -31,7 +31,7 @@ public class ReclaimToPartnerAccountBalancesReq {
     }
 
     /**
-     * 客户账号ID。您可以调用查询客户列表接口获取customer_id。
+     * 客户账号ID。您可以调用[查询客户列表](https://support.huaweicloud.com/api-bpconsole/mc_00021.html)接口获取customer_id。
      * @return customerId
      */
     public String getCustomerId() {
@@ -67,7 +67,7 @@ public class ReclaimToPartnerAccountBalancesReq {
     }
 
     /**
-     * 精英服务商ID。获取方法请参见查询精英服务商列表。 华为云伙伴能力中心（一级经销商）回收精英服务商（二级经销商）的子客户账户余额时，需携带此参数；否则只能回收自己的子客户账户余额。
+     * 精英服务商ID。获取方法请参见[查询精英服务商列表](https://support.huaweicloud.com/api-bpconsole/espp_00003.html)。 华为云伙伴能力中心（一级经销商）回收精英服务商（二级经销商）的子客户账户余额时，需携带此参数；否则只能回收自己的子客户账户余额。
      * @return indirectPartnerId
      */
     public String getIndirectPartnerId() {

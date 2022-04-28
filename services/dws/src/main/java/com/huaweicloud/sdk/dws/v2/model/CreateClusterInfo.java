@@ -99,9 +99,9 @@ public class CreateClusterInfo {
     }
 
     /**
-     * 集群节点数量，取值范围为3~32。
-     * minimum: 3
-     * maximum: 32
+     * 集群节点数量，取值范围为2~256。
+     * minimum: 2
+     * maximum: 256
      * @return numberOfNode
      */
     public Integer getNumberOfNode() {

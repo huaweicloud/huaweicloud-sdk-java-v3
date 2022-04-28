@@ -16,6 +16,11 @@ public class CreateDeploymentJobsParams {
 
     private FGSDeploymentJobsParam function;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cci")
+
+    private CciDeploymentJobsParam cci;
+
     public CreateDeploymentJobsParams withFunction(FGSDeploymentJobsParam function) {
         this.function = function;
         return this;
@@ -42,6 +47,32 @@ public class CreateDeploymentJobsParams {
         this.function = function;
     }
 
+    public CreateDeploymentJobsParams withCci(CciDeploymentJobsParam cci) {
+        this.cci = cci;
+        return this;
+    }
+
+    public CreateDeploymentJobsParams withCci(Consumer<CciDeploymentJobsParam> cciSetter) {
+        if (this.cci == null) {
+            this.cci = new CciDeploymentJobsParam();
+            cciSetter.accept(this.cci);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get cci
+     * @return cci
+     */
+    public CciDeploymentJobsParam getCci() {
+        return cci;
+    }
+
+    public void setCci(CciDeploymentJobsParam cci) {
+        this.cci = cci;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -51,12 +82,13 @@ public class CreateDeploymentJobsParams {
             return false;
         }
         CreateDeploymentJobsParams createDeploymentJobsParams = (CreateDeploymentJobsParams) o;
-        return Objects.equals(this.function, createDeploymentJobsParams.function);
+        return Objects.equals(this.function, createDeploymentJobsParams.function)
+            && Objects.equals(this.cci, createDeploymentJobsParams.cci);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(function);
+        return Objects.hash(function, cci);
     }
 
     @Override
@@ -64,6 +96,7 @@ public class CreateDeploymentJobsParams {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateDeploymentJobsParams {\n");
         sb.append("    function: ").append(toIndentedString(function)).append("\n");
+        sb.append("    cci: ").append(toIndentedString(cci)).append("\n");
         sb.append("}");
         return sb.toString();
     }

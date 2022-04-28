@@ -40,7 +40,7 @@ public class MysqlExtendInstanceVolumeRequest  {
 
 
     /**
-     * 扩容后的容量，每次扩容最小容量为10GB，实例所选容量大小必须为10的整数倍
+     * 扩容后的容量，每次扩容最小容量为10GB，实例所选容量大小必须为10的整数倍，最大为128000GB.
      * @return size
      */
     public Integer getSize() {

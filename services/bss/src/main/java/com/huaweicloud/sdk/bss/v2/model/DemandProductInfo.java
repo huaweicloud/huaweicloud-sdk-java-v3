@@ -93,7 +93,7 @@ public class DemandProductInfo {
     }
 
     /**
-     * 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用查询云服务类型列表接口获取。
+     * 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。
      * @return cloudServiceType
      */
     public String getCloudServiceType() {
@@ -110,7 +110,7 @@ public class DemandProductInfo {
     }
 
     /**
-     * 资源类型编码，例如ECS的VM为“hws.resource.type.vm”。您可以调用查询资源类型列表接口获取。 ResourceType是CloudServiceType中的一种资源，CloudServiceType由多种ResourceType组合提供。
+     * 资源类型编码，例如ECS的VM为“hws.resource.type.vm”。 ResourceType是CloudServiceType中的一种资源，CloudServiceType由多种ResourceType组合提供。
      * @return resourceType
      */
     public String getResourceType() {
@@ -144,7 +144,7 @@ public class DemandProductInfo {
     }
 
     /**
-     * 云服务区编码，例如：“cn-north-1”。具体请参见地区和终端节点对应云服务的“区域”列的值。
+     * 云服务区编码，例如：“cn-north-1”。
      * @return region
      */
     public String getRegion() {
@@ -248,7 +248,7 @@ public class DemandProductInfo {
     }
 
     /**
-     * 使用量度量单位，您可以调用查询度量单位列表接口获取。 例如按小时询价，使用量值为1，使用量单位为小时。
+     * 使用量度量单位， 例如按小时询价，使用量值为1，使用量单位为小时。
      * minimum: 0
      * maximum: 100
      * @return usageMeasureId

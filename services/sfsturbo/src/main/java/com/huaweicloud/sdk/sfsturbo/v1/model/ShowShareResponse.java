@@ -74,7 +74,7 @@ public class ShowShareResponse extends SdkResponse {
     private String name;
 
     /**
-     * SFS Turbo文件系统的计费模式。“0”代表按需付费，“1”代表包周期计费。
+     * SFS Turbo文件系统的计费模式。'0'代表按需付费，'1'代表包周期计费。
      */
     public static final class PayModelEnum {
 
@@ -402,7 +402,7 @@ public class ShowShareResponse extends SdkResponse {
     }
 
     /**
-     * SFS Turbo文件系统的计费模式。“0”代表按需付费，“1”代表包周期计费。
+     * SFS Turbo文件系统的计费模式。'0'代表按需付费，'1'代表包周期计费。
      * @return payModel
      */
     public PayModelEnum getPayModel() {

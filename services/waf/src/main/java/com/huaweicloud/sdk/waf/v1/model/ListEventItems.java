@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * 攻击类型
@@ -69,7 +68,7 @@ public class ListEventItems {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "headers")
 
-    private ListEventItemsHeaders headers;
+    private Object headers;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cookie")
@@ -80,6 +79,11 @@ public class ListEventItems {
     @JsonProperty(value = "status")
 
     private String status;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "process_time")
+
+    private Integer processTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region")
@@ -105,6 +109,11 @@ public class ListEventItems {
     @JsonProperty(value = "response_body")
 
     private String responseBody;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "request_body")
+
+    private String requestBody;
 
     public ListEventItems withId(String id) {
         this.id = id;
@@ -293,29 +302,20 @@ public class ListEventItems {
         this.requestLine = requestLine;
     }
 
-    public ListEventItems withHeaders(ListEventItemsHeaders headers) {
+    public ListEventItems withHeaders(Object headers) {
         this.headers = headers;
         return this;
     }
 
-    public ListEventItems withHeaders(Consumer<ListEventItemsHeaders> headersSetter) {
-        if (this.headers == null) {
-            this.headers = new ListEventItemsHeaders();
-            headersSetter.accept(this.headers);
-        }
-
-        return this;
-    }
-
     /**
-     * Get headers
+     * http请求header
      * @return headers
      */
-    public ListEventItemsHeaders getHeaders() {
+    public Object getHeaders() {
         return headers;
     }
 
-    public void setHeaders(ListEventItemsHeaders headers) {
+    public void setHeaders(Object headers) {
         this.headers = headers;
     }
 
@@ -353,13 +353,30 @@ public class ListEventItems {
         this.status = status;
     }
 
+    public ListEventItems withProcessTime(Integer processTime) {
+        this.processTime = processTime;
+        return this;
+    }
+
+    /**
+     * 处理时长
+     * @return processTime
+     */
+    public Integer getProcessTime() {
+        return processTime;
+    }
+
+    public void setProcessTime(Integer processTime) {
+        this.processTime = processTime;
+    }
+
     public ListEventItems withRegion(String region) {
         this.region = region;
         return this;
     }
 
     /**
-     * 区域
+     * 地理位置
      * @return region
      */
     public String getRegion() {
@@ -438,6 +455,23 @@ public class ListEventItems {
         this.responseBody = responseBody;
     }
 
+    public ListEventItems withRequestBody(String requestBody) {
+        this.requestBody = requestBody;
+        return this;
+    }
+
+    /**
+     * 请求体
+     * @return requestBody
+     */
+    public String getRequestBody() {
+        return requestBody;
+    }
+
+    public void setRequestBody(String requestBody) {
+        this.requestBody = requestBody;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -456,10 +490,12 @@ public class ListEventItems {
             && Objects.equals(this.requestLine, listEventItems.requestLine)
             && Objects.equals(this.headers, listEventItems.headers)
             && Objects.equals(this.cookie, listEventItems.cookie) && Objects.equals(this.status, listEventItems.status)
+            && Objects.equals(this.processTime, listEventItems.processTime)
             && Objects.equals(this.region, listEventItems.region) && Objects.equals(this.hostId, listEventItems.hostId)
             && Objects.equals(this.responseTime, listEventItems.responseTime)
             && Objects.equals(this.responseSize, listEventItems.responseSize)
-            && Objects.equals(this.responseBody, listEventItems.responseBody);
+            && Objects.equals(this.responseBody, listEventItems.responseBody)
+            && Objects.equals(this.requestBody, listEventItems.requestBody);
     }
 
     @Override
@@ -478,11 +514,13 @@ public class ListEventItems {
             headers,
             cookie,
             status,
+            processTime,
             region,
             hostId,
             responseTime,
             responseSize,
-            responseBody);
+            responseBody,
+            requestBody);
     }
 
     @Override
@@ -503,11 +541,13 @@ public class ListEventItems {
         sb.append("    headers: ").append(toIndentedString(headers)).append("\n");
         sb.append("    cookie: ").append(toIndentedString(cookie)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    processTime: ").append(toIndentedString(processTime)).append("\n");
         sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("    hostId: ").append(toIndentedString(hostId)).append("\n");
         sb.append("    responseTime: ").append(toIndentedString(responseTime)).append("\n");
         sb.append("    responseSize: ").append(toIndentedString(responseSize)).append("\n");
         sb.append("    responseBody: ").append(toIndentedString(responseBody)).append("\n");
+        sb.append("    requestBody: ").append(toIndentedString(requestBody)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -101,7 +101,7 @@ public class BillSumInfoV2 {
     }
 
     /**
-     * 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用查询云服务类型列表接口获取。
+     * 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。
      * @return cloudServiceType
      */
     public String getCloudServiceType() {

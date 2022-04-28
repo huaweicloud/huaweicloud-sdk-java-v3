@@ -26,6 +26,11 @@ public class UpdateFunctionAsyncInvokeConfigRequestBody {
 
     private FuncAsyncDestinationConfig destinationConfig;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_async_status_log")
+
+    private Boolean enableAsyncStatusLog;
+
     public UpdateFunctionAsyncInvokeConfigRequestBody withMaxAsyncEventAgeInSeconds(Integer maxAsyncEventAgeInSeconds) {
         this.maxAsyncEventAgeInSeconds = maxAsyncEventAgeInSeconds;
         return this;
@@ -92,6 +97,23 @@ public class UpdateFunctionAsyncInvokeConfigRequestBody {
         this.destinationConfig = destinationConfig;
     }
 
+    public UpdateFunctionAsyncInvokeConfigRequestBody withEnableAsyncStatusLog(Boolean enableAsyncStatusLog) {
+        this.enableAsyncStatusLog = enableAsyncStatusLog;
+        return this;
+    }
+
+    /**
+     * 开启异步调用状态持久化
+     * @return enableAsyncStatusLog
+     */
+    public Boolean getEnableAsyncStatusLog() {
+        return enableAsyncStatusLog;
+    }
+
+    public void setEnableAsyncStatusLog(Boolean enableAsyncStatusLog) {
+        this.enableAsyncStatusLog = enableAsyncStatusLog;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -106,12 +128,14 @@ public class UpdateFunctionAsyncInvokeConfigRequestBody {
             updateFunctionAsyncInvokeConfigRequestBody.maxAsyncEventAgeInSeconds)
             && Objects.equals(this.maxAsyncRetryAttempts,
                 updateFunctionAsyncInvokeConfigRequestBody.maxAsyncRetryAttempts)
-            && Objects.equals(this.destinationConfig, updateFunctionAsyncInvokeConfigRequestBody.destinationConfig);
+            && Objects.equals(this.destinationConfig, updateFunctionAsyncInvokeConfigRequestBody.destinationConfig)
+            && Objects.equals(this.enableAsyncStatusLog,
+                updateFunctionAsyncInvokeConfigRequestBody.enableAsyncStatusLog);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(maxAsyncEventAgeInSeconds, maxAsyncRetryAttempts, destinationConfig);
+        return Objects.hash(maxAsyncEventAgeInSeconds, maxAsyncRetryAttempts, destinationConfig, enableAsyncStatusLog);
     }
 
     @Override
@@ -121,6 +145,7 @@ public class UpdateFunctionAsyncInvokeConfigRequestBody {
         sb.append("    maxAsyncEventAgeInSeconds: ").append(toIndentedString(maxAsyncEventAgeInSeconds)).append("\n");
         sb.append("    maxAsyncRetryAttempts: ").append(toIndentedString(maxAsyncRetryAttempts)).append("\n");
         sb.append("    destinationConfig: ").append(toIndentedString(destinationConfig)).append("\n");
+        sb.append("    enableAsyncStatusLog: ").append(toIndentedString(enableAsyncStatusLog)).append("\n");
         sb.append("}");
         return sb.toString();
     }

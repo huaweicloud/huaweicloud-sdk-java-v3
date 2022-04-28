@@ -51,7 +51,7 @@ public class ListResourceUsageSummaryRequest {
     }
 
     /**
-     * |语言。en_US：英文；zh_CN：中文。默认：zh_CN：中文|
+     * 语言。en_US：英文；zh_CN：中文。默认：zh_CN：中文
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -87,7 +87,7 @@ public class ListResourceUsageSummaryRequest {
     }
 
     /**
-     * 云服务类型，当前仅支持：hws.service.type.cdn：内容分发网络hws.service.type.obs：对象存储服务
+     * 云服务类型，当前仅支持：hws.service.type.cdn：内容分发网络,hws.service.type.obs：对象存储服务
      * @return serviceTypeCode
      */
     public String getServiceTypeCode() {
@@ -104,7 +104,7 @@ public class ListResourceUsageSummaryRequest {
     }
 
     /**
-     * 资源类型编码，当前仅支持：hws.resource.type.cdn：CDNhws.resource.type.obs：云存储资源类型和云服务类型的对应关系可调用根据云服务类型查询资源列表接口获取。
+     * 资源类型编码，当前仅支持：hws.resource.type.cdn：CDN,hws.resource.type.obs：云存储.资源类型和云服务类型的对应关系可调用[根据云服务类型查询资源列表](https://support.huaweicloud.com/api-oce/qct_00003.html)接口获取。
      * @return resourceTypeCode
      */
     public String getResourceTypeCode() {
@@ -121,7 +121,7 @@ public class ListResourceUsageSummaryRequest {
     }
 
     /**
-     * 使用量类型编码，目前仅支持：95Peak：中国大陆月95峰值带宽_1024进制95peak_1000：中国大陆月95峰值带宽_1000进制bandwidth95peak：95峰值带宽资源类型和使用量类型的对应关系可调用查询使用量类型列表接口获取。
+     * 使用量类型编码，目前仅支持：95Peak：中国大陆月95峰值带宽_1024进制,95peak_1000：中国大陆月95峰值带宽_1000进制,bandwidth95peak：95峰值带宽.资源类型和使用量类型的对应关系可调用[查询使用量类型列表接](https://support.huaweicloud.com/api-oce/qct_00004.html)口获取。
      * @return usageType
      */
     public String getUsageType() {

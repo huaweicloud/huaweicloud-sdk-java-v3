@@ -20,6 +20,16 @@ public class ShowWorkFlowMetricRequest {
 
     private String period;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "start_time")
+
+    private String startTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "end_time")
+
+    private String endTime;
+
     public ShowWorkFlowMetricRequest withWorkflowUrn(String workflowUrn) {
         this.workflowUrn = workflowUrn;
         return this;
@@ -54,6 +64,40 @@ public class ShowWorkFlowMetricRequest {
         this.period = period;
     }
 
+    public ShowWorkFlowMetricRequest withStartTime(String startTime) {
+        this.startTime = startTime;
+        return this;
+    }
+
+    /**
+     * 开始时间，精确到ms的时间戳
+     * @return startTime
+     */
+    public String getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
+    }
+
+    public ShowWorkFlowMetricRequest withEndTime(String endTime) {
+        this.endTime = endTime;
+        return this;
+    }
+
+    /**
+     * 结束时间，精确到ms的时间戳
+     * @return endTime
+     */
+    public String getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -64,12 +108,14 @@ public class ShowWorkFlowMetricRequest {
         }
         ShowWorkFlowMetricRequest showWorkFlowMetricRequest = (ShowWorkFlowMetricRequest) o;
         return Objects.equals(this.workflowUrn, showWorkFlowMetricRequest.workflowUrn)
-            && Objects.equals(this.period, showWorkFlowMetricRequest.period);
+            && Objects.equals(this.period, showWorkFlowMetricRequest.period)
+            && Objects.equals(this.startTime, showWorkFlowMetricRequest.startTime)
+            && Objects.equals(this.endTime, showWorkFlowMetricRequest.endTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(workflowUrn, period);
+        return Objects.hash(workflowUrn, period, startTime, endTime);
     }
 
     @Override
@@ -78,6 +124,8 @@ public class ShowWorkFlowMetricRequest {
         sb.append("class ShowWorkFlowMetricRequest {\n");
         sb.append("    workflowUrn: ").append(toIndentedString(workflowUrn)).append("\n");
         sb.append("    period: ").append(toIndentedString(period)).append("\n");
+        sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
+        sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

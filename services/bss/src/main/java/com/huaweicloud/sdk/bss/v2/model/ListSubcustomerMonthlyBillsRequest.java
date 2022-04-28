@@ -56,7 +56,7 @@ public class ListSubcustomerMonthlyBillsRequest {
     }
 
     /**
-     * 客户账号ID。您可以调用查询客户列表接口获取customer_id。
+     * 客户账号ID。您可以调用[查询客户列表](https://support.huaweicloud.com/api-bpconsole/mc_00021.html)接口获取customer_id。
      * @return customerId
      */
     public String getCustomerId() {
@@ -90,7 +90,7 @@ public class ListSubcustomerMonthlyBillsRequest {
     }
 
     /**
-     * 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用查询云服务类型列表接口获取。
+     * 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用[查询云服务类型列表](https://support.huaweicloud.com/api-bpconsole/zh-cn_topic_0000001256679455.html)接口获取。
      * @return cloudServiceType
      */
     public String getCloudServiceType() {
@@ -179,7 +179,7 @@ public class ListSubcustomerMonthlyBillsRequest {
     }
 
     /**
-     * 精英服务商ID。获取方法请参见查询精英服务商列表。
+     * 精英服务商ID。获取方法请参见[查询精英服务商列表](https://support.huaweicloud.com/api-bpconsole/espp_00003.html)。
      * @return indirectPartnerId
      */
     public String getIndirectPartnerId() {

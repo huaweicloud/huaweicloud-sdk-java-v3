@@ -44,10 +44,93 @@ public class UpdateHostResponse extends SdkResponse {
 
     private String accessCode;
 
+    /**
+     * 后端协议类型
+     */
+    public static final class ProtocolEnum {
+
+        /**
+         * Enum HTTPS for value: "HTTPS"
+         */
+        public static final ProtocolEnum HTTPS = new ProtocolEnum("HTTPS");
+
+        /**
+         * Enum HTTP for value: "HTTP"
+         */
+        public static final ProtocolEnum HTTP = new ProtocolEnum("HTTP");
+
+        /**
+         * Enum HTTP_HTTPS for value: "HTTP&HTTPS"
+         */
+        public static final ProtocolEnum HTTP_HTTPS = new ProtocolEnum("HTTP&HTTPS");
+
+        private static final Map<String, ProtocolEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ProtocolEnum> createStaticFields() {
+            Map<String, ProtocolEnum> map = new HashMap<>();
+            map.put("HTTPS", HTTPS);
+            map.put("HTTP", HTTP);
+            map.put("HTTP&HTTPS", HTTP_HTTPS);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ProtocolEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ProtocolEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            ProtocolEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new ProtocolEnum(value);
+            }
+            return result;
+        }
+
+        public static ProtocolEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            ProtocolEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ProtocolEnum) {
+                return this.value.equals(((ProtocolEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protocol")
 
-    private String protocol;
+    private ProtocolEnum protocol;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "server")
@@ -398,7 +481,7 @@ public class UpdateHostResponse extends SdkResponse {
         this.accessCode = accessCode;
     }
 
-    public UpdateHostResponse withProtocol(String protocol) {
+    public UpdateHostResponse withProtocol(ProtocolEnum protocol) {
         this.protocol = protocol;
         return this;
     }
@@ -407,11 +490,11 @@ public class UpdateHostResponse extends SdkResponse {
      * 后端协议类型
      * @return protocol
      */
-    public String getProtocol() {
+    public ProtocolEnum getProtocol() {
         return protocol;
     }
 
-    public void setProtocol(String protocol) {
+    public void setProtocol(ProtocolEnum protocol) {
         this.protocol = protocol;
     }
 

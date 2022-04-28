@@ -127,7 +127,7 @@ public class ListGaussMySqlInstancesRequest  {
 
 
     /**
-     * 实例ID。 “*”为系统保留字符，如果id是以 “*”起始，表示按照 “*”后面的值模糊匹配，否则，按照id精确匹配查询。不能只传入 “*”。
+     * 实例ID。 \\“\\*\\”为系统保留字符，如果id是以 \\“\\*\\”起始，表示按照 \\“\\*\\”后面的值模糊匹配，否则，按照id精确匹配查询。不能只传入 \\“\\*\\”。
      * @return id
      */
     public String getId() {
@@ -149,7 +149,7 @@ public class ListGaussMySqlInstancesRequest  {
 
 
     /**
-     * 实例名称。  “*”为系统保留字符，如果name是以 “*”起始，表示按照 “*”后面的值模糊匹配，否则，按照name精确匹配查询。不能只传入 “*”。
+     * 实例名称。  \\“\\*\\”为系统保留字符，如果name是以 \\“\\*\\”起始，表示按照 \\“\\*\\”后面的值模糊匹配，否则，按照name精确匹配查询。不能只传入 \\“\\*\\”。
      * @return name
      */
     public String getName() {

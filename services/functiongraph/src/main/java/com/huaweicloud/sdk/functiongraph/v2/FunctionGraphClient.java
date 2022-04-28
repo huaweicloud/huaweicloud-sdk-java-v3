@@ -84,6 +84,38 @@ public class FunctionGraphClient {
     }
 
     /**
+     * 停止函数异步调用请求
+     *
+     * 停止函数异步调用请求
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CancelAsyncInvocationRequest 请求对象
+     * @return CancelAsyncInvocationResponse
+     */
+    public CancelAsyncInvocationResponse cancelAsyncInvocation(CancelAsyncInvocationRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.cancelAsyncInvocation);
+    }
+
+    /**
+     * 停止函数异步调用请求
+     *
+     * 停止函数异步调用请求
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CancelAsyncInvocationRequest 请求对象
+     * @return SyncInvoker<CancelAsyncInvocationRequest, CancelAsyncInvocationResponse>
+     */
+    public SyncInvoker<CancelAsyncInvocationRequest, CancelAsyncInvocationResponse> cancelAsyncInvocationInvoker(
+        CancelAsyncInvocationRequest request) {
+        return new SyncInvoker<CancelAsyncInvocationRequest, CancelAsyncInvocationResponse>(request,
+            FunctionGraphMeta.cancelAsyncInvocation, hcClient);
+    }
+
+    /**
      * 创建依赖包
      *
      * 创建依赖包。
@@ -1858,6 +1890,38 @@ public class FunctionGraphClient {
         ShowWorkflowExecutionRequest request) {
         return new SyncInvoker<ShowWorkflowExecutionRequest, ShowWorkflowExecutionResponse>(request,
             FunctionGraphMeta.showWorkflowExecution, hcClient);
+    }
+
+    /**
+     * 同步执行函数流
+     *
+     * 同步执行函数流
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param StartSyncWorkflowExecutionRequest 请求对象
+     * @return StartSyncWorkflowExecutionResponse
+     */
+    public StartSyncWorkflowExecutionResponse startSyncWorkflowExecution(StartSyncWorkflowExecutionRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.startSyncWorkflowExecution);
+    }
+
+    /**
+     * 同步执行函数流
+     *
+     * 同步执行函数流
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param StartSyncWorkflowExecutionRequest 请求对象
+     * @return SyncInvoker<StartSyncWorkflowExecutionRequest, StartSyncWorkflowExecutionResponse>
+     */
+    public SyncInvoker<StartSyncWorkflowExecutionRequest, StartSyncWorkflowExecutionResponse> startSyncWorkflowExecutionInvoker(
+        StartSyncWorkflowExecutionRequest request) {
+        return new SyncInvoker<StartSyncWorkflowExecutionRequest, StartSyncWorkflowExecutionResponse>(request,
+            FunctionGraphMeta.startSyncWorkflowExecution, hcClient);
     }
 
     /**

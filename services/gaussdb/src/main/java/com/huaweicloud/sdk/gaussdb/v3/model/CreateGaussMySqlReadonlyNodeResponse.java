@@ -116,7 +116,7 @@ public class CreateGaussMySqlReadonlyNodeResponse extends SdkResponse {
 
 
     /**
-     * 实例创建的任务id。  仅创建按需实例时会返回该参数。
+     * 创建只读节点的任务id。  仅创建按需只读节点时会返回该参数。
      * @return jobId
      */
     public String getJobId() {
@@ -138,7 +138,7 @@ public class CreateGaussMySqlReadonlyNodeResponse extends SdkResponse {
 
 
     /**
-     * 订单号，创建包年包月时返回该参数。
+     * 订单号，创建包年包月只读节点时返回该参数。
      * @return orderId
      */
     public String getOrderId() {

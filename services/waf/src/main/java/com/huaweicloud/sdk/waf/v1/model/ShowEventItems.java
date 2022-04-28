@@ -58,7 +58,7 @@ public class ShowEventItems {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "headers")
 
-    private String headers;
+    private Object headers;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_id")
@@ -86,6 +86,11 @@ public class ShowEventItems {
     private String region;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "process_time")
+
+    private Integer processTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "request_line")
 
     private String requestLine;
@@ -93,17 +98,22 @@ public class ShowEventItems {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "response_size")
 
-    private String responseSize;
+    private Integer responseSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "response_time")
 
-    private String responseTime;
+    private Long responseTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
     private String status;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "request_body")
+
+    private String requestBody;
 
     public ShowEventItems withTime(Long time) {
         this.time = time;
@@ -258,7 +268,7 @@ public class ShowEventItems {
         this.cookie = cookie;
     }
 
-    public ShowEventItems withHeaders(String headers) {
+    public ShowEventItems withHeaders(Object headers) {
         this.headers = headers;
         return this;
     }
@@ -267,11 +277,11 @@ public class ShowEventItems {
      * 攻击请求的headers
      * @return headers
      */
-    public String getHeaders() {
+    public Object getHeaders() {
         return headers;
     }
 
-    public void setHeaders(String headers) {
+    public void setHeaders(Object headers) {
         this.headers = headers;
     }
 
@@ -298,7 +308,7 @@ public class ShowEventItems {
     }
 
     /**
-     * 攻击请求的id
+     * 防护事件id
      * @return id
      */
     public String getId() {
@@ -360,6 +370,23 @@ public class ShowEventItems {
         this.region = region;
     }
 
+    public ShowEventItems withProcessTime(Integer processTime) {
+        this.processTime = processTime;
+        return this;
+    }
+
+    /**
+     * 处理时长
+     * @return processTime
+     */
+    public Integer getProcessTime() {
+        return processTime;
+    }
+
+    public void setProcessTime(Integer processTime) {
+        this.processTime = processTime;
+    }
+
     public ShowEventItems withRequestLine(String requestLine) {
         this.requestLine = requestLine;
         return this;
@@ -377,7 +404,7 @@ public class ShowEventItems {
         this.requestLine = requestLine;
     }
 
-    public ShowEventItems withResponseSize(String responseSize) {
+    public ShowEventItems withResponseSize(Integer responseSize) {
         this.responseSize = responseSize;
         return this;
     }
@@ -386,15 +413,15 @@ public class ShowEventItems {
      * 返回大小（字节）
      * @return responseSize
      */
-    public String getResponseSize() {
+    public Integer getResponseSize() {
         return responseSize;
     }
 
-    public void setResponseSize(String responseSize) {
+    public void setResponseSize(Integer responseSize) {
         this.responseSize = responseSize;
     }
 
-    public ShowEventItems withResponseTime(String responseTime) {
+    public ShowEventItems withResponseTime(Long responseTime) {
         this.responseTime = responseTime;
         return this;
     }
@@ -403,11 +430,11 @@ public class ShowEventItems {
      * 响应时间（毫秒）
      * @return responseTime
      */
-    public String getResponseTime() {
+    public Long getResponseTime() {
         return responseTime;
     }
 
-    public void setResponseTime(String responseTime) {
+    public void setResponseTime(Long responseTime) {
         this.responseTime = responseTime;
     }
 
@@ -426,6 +453,23 @@ public class ShowEventItems {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public ShowEventItems withRequestBody(String requestBody) {
+        this.requestBody = requestBody;
+        return this;
+    }
+
+    /**
+     * 请求体
+     * @return requestBody
+     */
+    public String getRequestBody() {
+        return requestBody;
+    }
+
+    public void setRequestBody(String requestBody) {
+        this.requestBody = requestBody;
     }
 
     @Override
@@ -447,10 +491,12 @@ public class ShowEventItems {
             && Objects.equals(this.payload, showEventItems.payload)
             && Objects.equals(this.payloadLocation, showEventItems.payloadLocation)
             && Objects.equals(this.region, showEventItems.region)
+            && Objects.equals(this.processTime, showEventItems.processTime)
             && Objects.equals(this.requestLine, showEventItems.requestLine)
             && Objects.equals(this.responseSize, showEventItems.responseSize)
             && Objects.equals(this.responseTime, showEventItems.responseTime)
-            && Objects.equals(this.status, showEventItems.status);
+            && Objects.equals(this.status, showEventItems.status)
+            && Objects.equals(this.requestBody, showEventItems.requestBody);
     }
 
     @Override
@@ -470,10 +516,12 @@ public class ShowEventItems {
             payload,
             payloadLocation,
             region,
+            processTime,
             requestLine,
             responseSize,
             responseTime,
-            status);
+            status,
+            requestBody);
     }
 
     @Override
@@ -495,10 +543,12 @@ public class ShowEventItems {
         sb.append("    payload: ").append(toIndentedString(payload)).append("\n");
         sb.append("    payloadLocation: ").append(toIndentedString(payloadLocation)).append("\n");
         sb.append("    region: ").append(toIndentedString(region)).append("\n");
+        sb.append("    processTime: ").append(toIndentedString(processTime)).append("\n");
         sb.append("    requestLine: ").append(toIndentedString(requestLine)).append("\n");
         sb.append("    responseSize: ").append(toIndentedString(responseSize)).append("\n");
         sb.append("    responseTime: ").append(toIndentedString(responseTime)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    requestBody: ").append(toIndentedString(requestBody)).append("\n");
         sb.append("}");
         return sb.toString();
     }

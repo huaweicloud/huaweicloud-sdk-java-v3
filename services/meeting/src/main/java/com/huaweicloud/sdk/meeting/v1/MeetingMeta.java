@@ -5116,6 +5116,45 @@ public class MeetingMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowDepartmentRequest, ShowDepartmentResponse> showDepartment =
+        genForshowDepartment();
+
+    private static HttpRequestDef<ShowDepartmentRequest, ShowDepartmentResponse> genForshowDepartment() {
+        // basic
+        HttpRequestDef.Builder<ShowDepartmentRequest, ShowDepartmentResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDepartmentRequest.class, ShowDepartmentResponse.class)
+                .withName("ShowDepartment")
+                .withUri("/v1/usg/abs/departments/{dept_code}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("dept_code",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDepartmentRequest::getDeptCode, (req, v) -> {
+                req.setDeptCode(v);
+            }));
+        builder.<String>withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDepartmentRequest::getXRequestId, (req, v) -> {
+                req.setXRequestId(v);
+            }));
+        builder.<String>withRequestField("Accept-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDepartmentRequest::getAcceptLanguage, (req, v) -> {
+                req.setAcceptLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowDeptAndChildDeptRequest, ShowDeptAndChildDeptResponse> showDeptAndChildDept =
         genForshowDeptAndChildDept();
 

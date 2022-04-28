@@ -206,7 +206,7 @@ public class QuerySubCustomerListReq {
     }
 
     /**
-     * 客户账号ID。您可以调用查询客户列表接口获取customer_id，或者可以从创建客户接口的响应获取domain_id。
+     * 客户账号ID。您可以调用[查询客户列表](https://support.huaweicloud.com/api-bpconsole/mc_00021.html)接口获取customer_id，或者可以从创建客户接口的响应获取domain_id。
      * @return customerId
      */
     public String getCustomerId() {
@@ -223,7 +223,7 @@ public class QuerySubCustomerListReq {
     }
 
     /**
-     * 精英服务商ID。获取方法请参见查询精英服务商列表。如果需要查询精英服务商伙伴的子客户列表，必须携带该字段。
+     * 精英服务商ID。获取方法请参见[查询精英服务商列表](https://support.huaweicloud.com/api-bpconsole/espp_00003.html)。如果需要查询精英服务商伙伴的子客户列表，必须携带该字段。
      * @return indirectPartnerId
      */
     public String getIndirectPartnerId() {

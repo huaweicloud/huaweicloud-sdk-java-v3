@@ -90,7 +90,7 @@ public class AppRulesSpec  {
     @JsonProperty(value="priority")
     
     
-    private String priority;
+    private Integer priority;
 
     public AppRulesSpec withAppType(String appType) {
         this.appType = appType;
@@ -353,7 +353,7 @@ public class AppRulesSpec  {
 
     
 
-    public AppRulesSpec withPriority(String priority) {
+    public AppRulesSpec withPriority(Integer priority) {
         this.priority = priority;
         return this;
     }
@@ -365,11 +365,11 @@ public class AppRulesSpec  {
      * 规则优先级。 1~9999的整数字符串,默认取值为9999
      * @return priority
      */
-    public String getPriority() {
+    public Integer getPriority() {
         return priority;
     }
 
-    public void setPriority(String priority) {
+    public void setPriority(Integer priority) {
         this.priority = priority;
     }
 

@@ -22,7 +22,7 @@ public class ListIgnoreRuleResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "items")
 
-    private List<IngnoreItem> items = null;
+    private List<IgnoreRuleBody> items = null;
 
     public ListIgnoreRuleResponse withTotal(Integer total) {
         this.total = total;
@@ -30,7 +30,7 @@ public class ListIgnoreRuleResponse extends SdkResponse {
     }
 
     /**
-     * 该策略下规则数量
+     * 该策略下误报屏蔽规则数量
      * @return total
      */
     public Integer getTotal() {
@@ -41,12 +41,12 @@ public class ListIgnoreRuleResponse extends SdkResponse {
         this.total = total;
     }
 
-    public ListIgnoreRuleResponse withItems(List<IngnoreItem> items) {
+    public ListIgnoreRuleResponse withItems(List<IgnoreRuleBody> items) {
         this.items = items;
         return this;
     }
 
-    public ListIgnoreRuleResponse addItemsItem(IngnoreItem itemsItem) {
+    public ListIgnoreRuleResponse addItemsItem(IgnoreRuleBody itemsItem) {
         if (this.items == null) {
             this.items = new ArrayList<>();
         }
@@ -54,7 +54,7 @@ public class ListIgnoreRuleResponse extends SdkResponse {
         return this;
     }
 
-    public ListIgnoreRuleResponse withItems(Consumer<List<IngnoreItem>> itemsSetter) {
+    public ListIgnoreRuleResponse withItems(Consumer<List<IgnoreRuleBody>> itemsSetter) {
         if (this.items == null) {
             this.items = new ArrayList<>();
         }
@@ -66,11 +66,11 @@ public class ListIgnoreRuleResponse extends SdkResponse {
      * 误报屏蔽规则对象列表
      * @return items
      */
-    public List<IngnoreItem> getItems() {
+    public List<IgnoreRuleBody> getItems() {
         return items;
     }
 
-    public void setItems(List<IngnoreItem> items) {
+    public void setItems(List<IgnoreRuleBody> items) {
         this.items = items;
     }
 

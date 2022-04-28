@@ -180,6 +180,38 @@ public class WafAsyncClient {
     }
 
     /**
+     * 创建误报屏蔽规则
+     *
+     * 创建误报屏蔽规则
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateIgnoreRuleRequest 请求对象
+     * @return CompletableFuture<CreateIgnoreRuleResponse>
+     */
+    public CompletableFuture<CreateIgnoreRuleResponse> createIgnoreRuleAsync(CreateIgnoreRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.createIgnoreRule);
+    }
+
+    /**
+     * 创建误报屏蔽规则
+     *
+     * 创建误报屏蔽规则
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateIgnoreRuleRequest 请求对象
+     * @return AsyncInvoker<CreateIgnoreRuleRequest, CreateIgnoreRuleResponse>
+     */
+    public AsyncInvoker<CreateIgnoreRuleRequest, CreateIgnoreRuleResponse> createIgnoreRuleAsyncInvoker(
+        CreateIgnoreRuleRequest request) {
+        return new AsyncInvoker<CreateIgnoreRuleRequest, CreateIgnoreRuleResponse>(request, WafMeta.createIgnoreRule,
+            hcClient);
+    }
+
+    /**
      * 创建防护策略
      *
      * 创建防护策略
@@ -464,6 +496,38 @@ public class WafAsyncClient {
      */
     public AsyncInvoker<DeleteHostRequest, DeleteHostResponse> deleteHostAsyncInvoker(DeleteHostRequest request) {
         return new AsyncInvoker<DeleteHostRequest, DeleteHostResponse>(request, WafMeta.deleteHost, hcClient);
+    }
+
+    /**
+     * 删除误报屏蔽防护规则
+     *
+     * 删除误报屏蔽防护规则
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteIgnoreRuleRequest 请求对象
+     * @return CompletableFuture<DeleteIgnoreRuleResponse>
+     */
+    public CompletableFuture<DeleteIgnoreRuleResponse> deleteIgnoreRuleAsync(DeleteIgnoreRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.deleteIgnoreRule);
+    }
+
+    /**
+     * 删除误报屏蔽防护规则
+     *
+     * 删除误报屏蔽防护规则
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteIgnoreRuleRequest 请求对象
+     * @return AsyncInvoker<DeleteIgnoreRuleRequest, DeleteIgnoreRuleResponse>
+     */
+    public AsyncInvoker<DeleteIgnoreRuleRequest, DeleteIgnoreRuleResponse> deleteIgnoreRuleAsyncInvoker(
+        DeleteIgnoreRuleRequest request) {
+        return new AsyncInvoker<DeleteIgnoreRuleRequest, DeleteIgnoreRuleResponse>(request, WafMeta.deleteIgnoreRule,
+            hcClient);
     }
 
     /**

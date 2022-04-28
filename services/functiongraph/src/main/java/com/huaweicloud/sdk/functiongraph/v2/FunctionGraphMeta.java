@@ -81,6 +81,38 @@ public class FunctionGraphMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CancelAsyncInvocationRequest, CancelAsyncInvocationResponse> cancelAsyncInvocation =
+        genForcancelAsyncInvocation();
+
+    private static HttpRequestDef<CancelAsyncInvocationRequest, CancelAsyncInvocationResponse> genForcancelAsyncInvocation() {
+        // basic
+        HttpRequestDef.Builder<CancelAsyncInvocationRequest, CancelAsyncInvocationResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CancelAsyncInvocationRequest.class, CancelAsyncInvocationResponse.class)
+            .withName("CancelAsyncInvocation")
+            .withUri("/v2/{project_id}/fgs/functions/{function_urn}/cancel")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("function_urn",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CancelAsyncInvocationRequest::getFunctionUrn, (req, v) -> {
+                req.setFunctionUrn(v);
+            }));
+        builder.<CancelAsyncInvocationRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CancelAsyncInvocationRequestBody.class),
+            f -> f.withMarshaller(CancelAsyncInvocationRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateDependencyRequest, CreateDependencyResponse> createDependency =
         genForcreateDependency();
 
@@ -1776,6 +1808,20 @@ public class FunctionGraphMeta {
             f -> f.withMarshaller(ShowTenantMetricRequest::getPeriod, (req, v) -> {
                 req.setPeriod(v);
             }));
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTenantMetricRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            }));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTenantMetricRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            }));
 
         // response
 
@@ -1832,6 +1878,20 @@ public class FunctionGraphMeta {
             f -> f.withMarshaller(ShowWorkFlowMetricRequest::getPeriod, (req, v) -> {
                 req.setPeriod(v);
             }));
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowWorkFlowMetricRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            }));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowWorkFlowMetricRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            }));
 
         // response
 
@@ -1863,6 +1923,41 @@ public class FunctionGraphMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowWorkflowExecutionRequest::getExecutionId, (req, v) -> {
                 req.setExecutionId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StartSyncWorkflowExecutionRequest, StartSyncWorkflowExecutionResponse> startSyncWorkflowExecution =
+        genForstartSyncWorkflowExecution();
+
+    private static HttpRequestDef<StartSyncWorkflowExecutionRequest, StartSyncWorkflowExecutionResponse> genForstartSyncWorkflowExecution() {
+        // basic
+        HttpRequestDef.Builder<StartSyncWorkflowExecutionRequest, StartSyncWorkflowExecutionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    StartSyncWorkflowExecutionRequest.class,
+                    StartSyncWorkflowExecutionResponse.class)
+                .withName("StartSyncWorkflowExecution")
+                .withUri("/v2/{project_id}/fgs/workflows/{workflow_id}/sync-executions")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workflow_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartSyncWorkflowExecutionRequest::getWorkflowId, (req, v) -> {
+                req.setWorkflowId(v);
+            }));
+        builder.<StartSyncWorkflowExecutionRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(StartSyncWorkflowExecutionRequestBody.class),
+            f -> f.withMarshaller(StartSyncWorkflowExecutionRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response

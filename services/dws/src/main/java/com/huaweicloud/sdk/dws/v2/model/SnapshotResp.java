@@ -21,7 +21,7 @@ public class SnapshotResp {
     }
 
     /**
-     * Get id
+     * Snapshot ID
      * @return id
      */
     public String getId() {

@@ -176,6 +176,38 @@ public class WafClient {
     }
 
     /**
+     * 创建误报屏蔽规则
+     *
+     * 创建误报屏蔽规则
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateIgnoreRuleRequest 请求对象
+     * @return CreateIgnoreRuleResponse
+     */
+    public CreateIgnoreRuleResponse createIgnoreRule(CreateIgnoreRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.createIgnoreRule);
+    }
+
+    /**
+     * 创建误报屏蔽规则
+     *
+     * 创建误报屏蔽规则
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateIgnoreRuleRequest 请求对象
+     * @return SyncInvoker<CreateIgnoreRuleRequest, CreateIgnoreRuleResponse>
+     */
+    public SyncInvoker<CreateIgnoreRuleRequest, CreateIgnoreRuleResponse> createIgnoreRuleInvoker(
+        CreateIgnoreRuleRequest request) {
+        return new SyncInvoker<CreateIgnoreRuleRequest, CreateIgnoreRuleResponse>(request, WafMeta.createIgnoreRule,
+            hcClient);
+    }
+
+    /**
      * 创建防护策略
      *
      * 创建防护策略
@@ -457,6 +489,38 @@ public class WafClient {
      */
     public SyncInvoker<DeleteHostRequest, DeleteHostResponse> deleteHostInvoker(DeleteHostRequest request) {
         return new SyncInvoker<DeleteHostRequest, DeleteHostResponse>(request, WafMeta.deleteHost, hcClient);
+    }
+
+    /**
+     * 删除误报屏蔽防护规则
+     *
+     * 删除误报屏蔽防护规则
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteIgnoreRuleRequest 请求对象
+     * @return DeleteIgnoreRuleResponse
+     */
+    public DeleteIgnoreRuleResponse deleteIgnoreRule(DeleteIgnoreRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.deleteIgnoreRule);
+    }
+
+    /**
+     * 删除误报屏蔽防护规则
+     *
+     * 删除误报屏蔽防护规则
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteIgnoreRuleRequest 请求对象
+     * @return SyncInvoker<DeleteIgnoreRuleRequest, DeleteIgnoreRuleResponse>
+     */
+    public SyncInvoker<DeleteIgnoreRuleRequest, DeleteIgnoreRuleResponse> deleteIgnoreRuleInvoker(
+        DeleteIgnoreRuleRequest request) {
+        return new SyncInvoker<DeleteIgnoreRuleRequest, DeleteIgnoreRuleResponse>(request, WafMeta.deleteIgnoreRule,
+            hcClient);
     }
 
     /**

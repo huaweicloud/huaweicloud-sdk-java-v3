@@ -101,7 +101,7 @@ public class ListSubCustomerBillDetailRequest {
     }
 
     /**
-     * |忽略大小写，默认 zh_cn：中文 en_us：英文|
+     * 语言。忽略大小写，默认 zh_cn：中文 en_us：英文
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -137,7 +137,7 @@ public class ListSubCustomerBillDetailRequest {
     }
 
     /**
-     * 客户账号ID。您可以调用查询客户列表接口获取customer_id。
+     * 客户账号ID。您可以调用[查询客户列表](https://support.huaweicloud.com/api-bpconsole/mc_00021.html)接口获取customer_id。
      * @return customerId
      */
     public String getCustomerId() {
@@ -154,7 +154,7 @@ public class ListSubCustomerBillDetailRequest {
     }
 
     /**
-     * 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用查询云服务类型列表接口获取。
+     * 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用[查询云服务类型列表](https://support.huaweicloud.com/api-bpconsole/zh-cn_topic_0000001256679455.html)接口获取。
      * @return serviceTypeCode
      */
     public String getServiceTypeCode() {
@@ -171,7 +171,7 @@ public class ListSubCustomerBillDetailRequest {
     }
 
     /**
-     * 云服务区编码，例如：“cn-north-1”。具体请参见地区和终端节点对应云服务的“区域”列的值。
+     * 云服务区编码，例如：“cn-north-1”。具体请参见[地区和终端节点](https://developer.huaweicloud.com/endpoint)对应云服务的“区域”列的值。
      * @return regionCode
      */
     public String getRegionCode() {
@@ -349,7 +349,7 @@ public class ListSubCustomerBillDetailRequest {
     }
 
     /**
-     * 精英服务商ID。获取方法请参见查询精英服务商列表。 说明： 华为云伙伴能力中心可以查询名下所有子客户消费（包括精英服务商子客户）。如果是普通经销商，那么此处可以为空。
+     * 精英服务商ID。获取方法请参见[查询精英服务商列表](https://support.huaweicloud.com/api-bpconsole/espp_00003.html)。 说明： 华为云伙伴能力中心可以查询名下所有子客户消费（包括精英服务商子客户）。如果是普通经销商，那么此处可以为空。
      * @return indirectPartnerId
      */
     public String getIndirectPartnerId() {

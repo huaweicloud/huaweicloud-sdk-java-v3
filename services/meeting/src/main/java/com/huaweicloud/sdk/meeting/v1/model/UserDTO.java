@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.meeting.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 分页查询企业用户信息
@@ -94,6 +97,11 @@ public class UserDTO {
     @JsonProperty(value = "type")
 
     private String type;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "deptCodes")
+
+    private List<String> deptCodes = null;
 
     public UserDTO withId(String id) {
         this.id = id;
@@ -384,6 +392,39 @@ public class UserDTO {
         this.type = type;
     }
 
+    public UserDTO withDeptCodes(List<String> deptCodes) {
+        this.deptCodes = deptCodes;
+        return this;
+    }
+
+    public UserDTO addDeptCodesItem(String deptCodesItem) {
+        if (this.deptCodes == null) {
+            this.deptCodes = new ArrayList<>();
+        }
+        this.deptCodes.add(deptCodesItem);
+        return this;
+    }
+
+    public UserDTO withDeptCodes(Consumer<List<String>> deptCodesSetter) {
+        if (this.deptCodes == null) {
+            this.deptCodes = new ArrayList<>();
+        }
+        deptCodesSetter.accept(this.deptCodes);
+        return this;
+    }
+
+    /**
+     * 部门编码列表
+     * @return deptCodes
+     */
+    public List<String> getDeptCodes() {
+        return deptCodes;
+    }
+
+    public void setDeptCodes(List<String> deptCodes) {
+        this.deptCodes = deptCodes;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -401,7 +442,8 @@ public class UserDTO {
             && Objects.equals(this.isHardTerminal, userDTO.isHardTerminal) && Objects.equals(this.vmrId, userDTO.vmrId)
             && Objects.equals(this.signature, userDTO.signature) && Objects.equals(this.title, userDTO.title)
             && Objects.equals(this.description, userDTO.description)
-            && Objects.equals(this.hidePhone, userDTO.hidePhone) && Objects.equals(this.type, userDTO.type);
+            && Objects.equals(this.hidePhone, userDTO.hidePhone) && Objects.equals(this.type, userDTO.type)
+            && Objects.equals(this.deptCodes, userDTO.deptCodes);
     }
 
     @Override
@@ -422,7 +464,8 @@ public class UserDTO {
             title,
             description,
             hidePhone,
-            type);
+            type,
+            deptCodes);
     }
 
     @Override
@@ -446,6 +489,7 @@ public class UserDTO {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    hidePhone: ").append(toIndentedString(hidePhone)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    deptCodes: ").append(toIndentedString(deptCodes)).append("\n");
         sb.append("}");
         return sb.toString();
     }

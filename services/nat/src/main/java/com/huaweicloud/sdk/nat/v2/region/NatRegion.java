@@ -41,6 +41,14 @@ public class NatRegion {
     public static final Region RU_NORTHWEST_2 =
         new Region("ru-northwest-2", "https://nat.ru-northwest-2.myhuaweicloud.com");
 
+    public static final Region NA_MEXICO_1 = new Region("na-mexico-1", "https://nat.na-mexico-1.myhuaweicloud.com");
+
+    public static final Region SA_BRAZIL_1 = new Region("sa-brazil-1", "https://nat.sa-brazil-1.myhuaweicloud.com");
+
+    public static final Region LA_SOUTH_2 = new Region("la-south-2", "https://nat.la-south-2.myhuaweicloud.com");
+
+    public static final Region LA_NORTH_2 = new Region("la-north-2", "https://nat.la-north-2.myhuaweicloud.com");
+
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
 
     private static Map<String, Region> createStaticFields() {
@@ -58,6 +66,10 @@ public class NatRegion {
         map.put("cn-south-2", CN_SOUTH_2);
         map.put("cn-north-2", CN_NORTH_2);
         map.put("ru-northwest-2", RU_NORTHWEST_2);
+        map.put("na-mexico-1", NA_MEXICO_1);
+        map.put("sa-brazil-1", SA_BRAZIL_1);
+        map.put("la-south-2", LA_SOUTH_2);
+        map.put("la-north-2", LA_NORTH_2);
         return Collections.unmodifiableMap(map);
     }
 
