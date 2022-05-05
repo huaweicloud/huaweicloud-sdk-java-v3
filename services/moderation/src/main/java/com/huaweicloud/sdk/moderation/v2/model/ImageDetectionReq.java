@@ -26,7 +26,7 @@ public class ImageDetectionReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image")
 
-    private byte[] image;
+    private String image;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "moderation_rule")
@@ -165,7 +165,7 @@ public class ImageDetectionReq {
         this.url = url;
     }
 
-    public ImageDetectionReq withImage(byte[] image) {
+    public ImageDetectionReq withImage(String image) {
         this.image = image;
         return this;
     }
@@ -174,11 +174,11 @@ public class ImageDetectionReq {
      * 与url二选一  图片文件Base64编码字符串。要求base64编码后大小不超过10M。  政治人物检测人脸部分不小于50*50像素。  支持JPG/PNG/BMP格式。 
      * @return image
      */
-    public byte[] getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(byte[] image) {
+    public void setImage(String image) {
         this.image = image;
     }
 

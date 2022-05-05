@@ -21,8 +21,6 @@
 
 package com.huaweicloud.sdk.core;
 
-import static com.huaweicloud.sdk.core.Constants.SDK_EXCHANGE;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.huaweicloud.sdk.core.auth.ICredential;
 import com.huaweicloud.sdk.core.exception.SdkException;
@@ -43,7 +41,6 @@ import com.huaweicloud.sdk.core.impl.DefaultHttpClient;
 import com.huaweicloud.sdk.core.utils.ExceptionUtils;
 import com.huaweicloud.sdk.core.utils.JsonUtils;
 import com.huaweicloud.sdk.core.utils.StringUtils;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -62,6 +59,8 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
+
+import static com.huaweicloud.sdk.core.Constants.SDK_EXCHANGE;
 
 /**
  * @author HuaweiCloud_SDK
@@ -344,8 +343,10 @@ public class HcClient implements CustomizationConfigure {
         try {
             String stringResult = httpResponse.getBodyAsString();
             ResT resT;
-            if (Objects.nonNull(httpResponse.getContentType()) && httpResponse.getContentType()
-                .startsWith(Constants.MEDIATYPE.APPLICATION_OCTET_STREAM)) {
+            String respContentType = httpResponse.getContentType();
+            if (Objects.nonNull(respContentType)
+                && (respContentType.startsWith(Constants.MEDIATYPE.APPLICATION_OCTET_STREAM)
+                    || respContentType.startsWith(Constants.MEDIATYPE.IMAGE))) {
                 resT = reqDef.getResponseType().newInstance();
                 if (resT instanceof SdkStreamResponse) {
                     ((SdkStreamResponse) resT).setBody(httpResponse.getBody());

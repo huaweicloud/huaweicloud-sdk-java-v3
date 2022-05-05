@@ -43,12 +43,12 @@ public class Scene {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
 
-    private Integer createdAt;
+    private Long createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_at")
 
-    private Integer updateAt;
+    private Long updateAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "workspace_id")
@@ -162,7 +162,7 @@ public class Scene {
         this.status = status;
     }
 
-    public Scene withCreatedAt(Integer createdAt) {
+    public Scene withCreatedAt(Long createdAt) {
         this.createdAt = createdAt;
         return this;
     }
@@ -171,15 +171,15 @@ public class Scene {
      * 创建时间。
      * @return createdAt
      */
-    public Integer getCreatedAt() {
+    public Long getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(Integer createdAt) {
+    public void setCreatedAt(Long createdAt) {
         this.createdAt = createdAt;
     }
 
-    public Scene withUpdateAt(Integer updateAt) {
+    public Scene withUpdateAt(Long updateAt) {
         this.updateAt = updateAt;
         return this;
     }
@@ -188,11 +188,11 @@ public class Scene {
      * 更新时间。
      * @return updateAt
      */
-    public Integer getUpdateAt() {
+    public Long getUpdateAt() {
         return updateAt;
     }
 
-    public void setUpdateAt(Integer updateAt) {
+    public void setUpdateAt(Long updateAt) {
         this.updateAt = updateAt;
     }
 

@@ -26,6 +26,8 @@ import com.huaweicloud.sdk.core.exception.SdkException;
 import com.huaweicloud.sdk.core.http.HttpRequest;
 import com.huaweicloud.sdk.core.utils.BinaryUtils;
 
+import javax.crypto.Mac;
+import javax.crypto.spec.SecretKeySpec;
 import java.io.UnsupportedEncodingException;
 import java.net.URL;
 import java.net.URLEncoder;
@@ -46,9 +48,6 @@ import java.util.SimpleTimeZone;
 import java.util.SortedMap;
 import java.util.TreeMap;
 import java.util.stream.Collectors;
-
-import javax.crypto.Mac;
-import javax.crypto.spec.SecretKeySpec;
 
 /**
  * signature certification with AK/SK
@@ -163,7 +162,7 @@ public class AKSKSigner {
         return authenticationHeaders;
     }
 
-    private static String buildCanonicalQueryString(String query, Map<String, List<String>> parameters) {
+    protected static String buildCanonicalQueryString(String query, Map<String, List<String>> parameters) {
         SortedMap<String, List<String>> sorted = convertQuery2SortedMap(query);
         StringBuilder builder = new StringBuilder();
 
@@ -205,7 +204,7 @@ public class AKSKSigner {
         return builder.toString();
     }
 
-    private static SortedMap<String, List<String>> convertQuery2SortedMap(String query) {
+    protected static SortedMap<String, List<String>> convertQuery2SortedMap(String query) {
         SortedMap<String, List<String>> sorted = new TreeMap<>();
 
         if (query == null || query.isEmpty()) {
@@ -237,7 +236,7 @@ public class AKSKSigner {
      * @param heads
      * @return
      */
-    private static String buildCanonicalHeaders(Map<String, String> heads) {
+    protected static String buildCanonicalHeaders(Map<String, String> heads) {
         StringBuilder sb = new StringBuilder();
         heads.forEach((key, value) -> {
             sb.append(key).append(":").append(value);
@@ -250,7 +249,7 @@ public class AKSKSigner {
      * @param request
      * @return
      */
-    private static String buildPayloadHash(HttpRequest request) {
+    protected static String buildPayloadHash(HttpRequest request) {
         if (request.haveHeader(Constants.X_SDK_CONTENT_SHA256)) {
             return request.getHeader(Constants.X_SDK_CONTENT_SHA256);
         }
@@ -270,7 +269,7 @@ public class AKSKSigner {
      * param6 payloadHash
      * @return
      */
-    private static String buildCanonicalRequest(String... segments) {
+    protected static String buildCanonicalRequest(String... segments) {
         return String.join(Constants.LINE_SEPARATOR, segments);
     }
 
@@ -281,7 +280,7 @@ public class AKSKSigner {
      * param4 canonicalRequestHash
      * @return
      */
-    private static String getStringToSign(String... segments) {
+    protected static String getStringToSign(String... segments) {
         return String.join(Constants.LINE_SEPARATOR, segments);
     }
 
@@ -290,7 +289,7 @@ public class AKSKSigner {
      * @param secretKey
      * @return
      */
-    private static String signature(String stringToSign, String secretKey) {
+    protected static String signature(String stringToSign, String secretKey) {
         byte[] keySecret = secretKey.getBytes(StandardCharsets.UTF_8);
         byte[] signature = hmac(keySecret, stringToSign);
         return BinaryUtils.toHex(signature);

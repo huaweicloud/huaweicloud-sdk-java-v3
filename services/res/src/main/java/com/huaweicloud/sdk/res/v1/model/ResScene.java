@@ -59,12 +59,12 @@ public class ResScene {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
 
-    private Integer createdAt;
+    private Long createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_at")
 
-    private String updateAt;
+    private Long updateAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "specs_config")
@@ -233,7 +233,7 @@ public class ResScene {
         this.workspaceId = workspaceId;
     }
 
-    public ResScene withCreatedAt(Integer createdAt) {
+    public ResScene withCreatedAt(Long createdAt) {
         this.createdAt = createdAt;
         return this;
     }
@@ -242,15 +242,15 @@ public class ResScene {
      * 创建时间。
      * @return createdAt
      */
-    public Integer getCreatedAt() {
+    public Long getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(Integer createdAt) {
+    public void setCreatedAt(Long createdAt) {
         this.createdAt = createdAt;
     }
 
-    public ResScene withUpdateAt(String updateAt) {
+    public ResScene withUpdateAt(Long updateAt) {
         this.updateAt = updateAt;
         return this;
     }
@@ -259,11 +259,11 @@ public class ResScene {
      * 更新时间。
      * @return updateAt
      */
-    public String getUpdateAt() {
+    public Long getUpdateAt() {
         return updateAt;
     }
 
-    public void setUpdateAt(String updateAt) {
+    public void setUpdateAt(Long updateAt) {
         this.updateAt = updateAt;
     }
 

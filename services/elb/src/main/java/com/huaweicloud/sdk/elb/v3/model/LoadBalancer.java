@@ -139,6 +139,11 @@ public class LoadBalancer {
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "billing_info")
+
+    private String billingInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "l4_flavor_id")
 
     private String l4FlavorId;
@@ -763,6 +768,23 @@ public class LoadBalancer {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public LoadBalancer withBillingInfo(String billingInfo) {
+        this.billingInfo = billingInfo;
+        return this;
+    }
+
+    /**
+     * 资源账单信息。 [取值： - 空：按需计费。  - 非空：包周期计费，  包周期计费billing_info字段的格式为：order_id:product_id:region_id:project_id，如：  CS2107161019CDJZZ:OFFI569702121789763584:eu-de:057ef081eb00d2732fd1c01a9be75e6f  使用说明：  - admin权限才能更新此字段。](tag:hws,hws_hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42)  [不支持该字段，请勿使用](tag:dt,dt_test,hcso_dt)
+     * @return billingInfo
+     */
+    public String getBillingInfo() {
+        return billingInfo;
+    }
+
+    public void setBillingInfo(String billingInfo) {
+        this.billingInfo = billingInfo;
+    }
+
     public LoadBalancer withL4FlavorId(String l4FlavorId) {
         this.l4FlavorId = l4FlavorId;
         return this;
@@ -1045,6 +1067,7 @@ public class LoadBalancer {
             && Objects.equals(this.ipv6VipPortId, loadBalancer.ipv6VipPortId)
             && Objects.equals(this.availabilityZoneList, loadBalancer.availabilityZoneList)
             && Objects.equals(this.enterpriseProjectId, loadBalancer.enterpriseProjectId)
+            && Objects.equals(this.billingInfo, loadBalancer.billingInfo)
             && Objects.equals(this.l4FlavorId, loadBalancer.l4FlavorId)
             && Objects.equals(this.l4ScaleFlavorId, loadBalancer.l4ScaleFlavorId)
             && Objects.equals(this.l7FlavorId, loadBalancer.l7FlavorId)
@@ -1085,6 +1108,7 @@ public class LoadBalancer {
             ipv6VipPortId,
             availabilityZoneList,
             enterpriseProjectId,
+            billingInfo,
             l4FlavorId,
             l4ScaleFlavorId,
             l7FlavorId,
@@ -1127,6 +1151,7 @@ public class LoadBalancer {
         sb.append("    ipv6VipPortId: ").append(toIndentedString(ipv6VipPortId)).append("\n");
         sb.append("    availabilityZoneList: ").append(toIndentedString(availabilityZoneList)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    billingInfo: ").append(toIndentedString(billingInfo)).append("\n");
         sb.append("    l4FlavorId: ").append(toIndentedString(l4FlavorId)).append("\n");
         sb.append("    l4ScaleFlavorId: ").append(toIndentedString(l4ScaleFlavorId)).append("\n");
         sb.append("    l7FlavorId: ").append(toIndentedString(l7FlavorId)).append("\n");

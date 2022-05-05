@@ -70,6 +70,8 @@ public final class Constants {
         public static final String MULTIPART_FORM_DATA = "multipart/form-data";
 
         public static final String TEXT = "text";
+
+        public static final String IMAGE = "image";
     }
 
     public static final String BODY = "body";

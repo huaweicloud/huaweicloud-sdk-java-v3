@@ -52,6 +52,39 @@ public class ResAsyncClient {
     }
 
     /**
+     * 创建智能场景
+     *
+     * 在指定工作空间下面创建智能场景。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateResIntelligentSceneRequest 请求对象
+     * @return CompletableFuture<CreateResIntelligentSceneResponse>
+     */
+    public CompletableFuture<CreateResIntelligentSceneResponse> createResIntelligentSceneAsync(
+        CreateResIntelligentSceneRequest request) {
+        return hcClient.asyncInvokeHttp(request, ResMeta.createResIntelligentScene);
+    }
+
+    /**
+     * 创建智能场景
+     *
+     * 在指定工作空间下面创建智能场景。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateResIntelligentSceneRequest 请求对象
+     * @return AsyncInvoker<CreateResIntelligentSceneRequest, CreateResIntelligentSceneResponse>
+     */
+    public AsyncInvoker<CreateResIntelligentSceneRequest, CreateResIntelligentSceneResponse> createResIntelligentSceneAsyncInvoker(
+        CreateResIntelligentSceneRequest request) {
+        return new AsyncInvoker<CreateResIntelligentSceneRequest, CreateResIntelligentSceneResponse>(request,
+            ResMeta.createResIntelligentScene, hcClient);
+    }
+
+    /**
      * 新建训练作业
      *
      * 新建训练作业元数据，新建成功之后可手动执行此任务。
@@ -876,6 +909,39 @@ public class ResAsyncClient {
         UpdateResDatastructRequest request) {
         return new AsyncInvoker<UpdateResDatastructRequest, UpdateResDatastructResponse>(request,
             ResMeta.updateResDatastruct, hcClient);
+    }
+
+    /**
+     * 更新智能场景内容
+     *
+     * 更新智能场景的内容信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateResIntelligentSceneRequest 请求对象
+     * @return CompletableFuture<UpdateResIntelligentSceneResponse>
+     */
+    public CompletableFuture<UpdateResIntelligentSceneResponse> updateResIntelligentSceneAsync(
+        UpdateResIntelligentSceneRequest request) {
+        return hcClient.asyncInvokeHttp(request, ResMeta.updateResIntelligentScene);
+    }
+
+    /**
+     * 更新智能场景内容
+     *
+     * 更新智能场景的内容信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateResIntelligentSceneRequest 请求对象
+     * @return AsyncInvoker<UpdateResIntelligentSceneRequest, UpdateResIntelligentSceneResponse>
+     */
+    public AsyncInvoker<UpdateResIntelligentSceneRequest, UpdateResIntelligentSceneResponse> updateResIntelligentSceneAsyncInvoker(
+        UpdateResIntelligentSceneRequest request) {
+        return new AsyncInvoker<UpdateResIntelligentSceneRequest, UpdateResIntelligentSceneResponse>(request,
+            ResMeta.updateResIntelligentScene, hcClient);
     }
 
     /**

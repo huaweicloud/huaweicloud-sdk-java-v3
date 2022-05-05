@@ -42,6 +42,41 @@ public class ResMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateResIntelligentSceneRequest, CreateResIntelligentSceneResponse> createResIntelligentScene =
+        genForcreateResIntelligentScene();
+
+    private static HttpRequestDef<CreateResIntelligentSceneRequest, CreateResIntelligentSceneResponse> genForcreateResIntelligentScene() {
+        // basic
+        HttpRequestDef.Builder<CreateResIntelligentSceneRequest, CreateResIntelligentSceneResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateResIntelligentSceneRequest.class,
+                    CreateResIntelligentSceneResponse.class)
+                .withName("CreateResIntelligentScene")
+                .withUri("/v2.0/{project_id}/workspaces/{workspace_id}/intelligent-scenes")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateResIntelligentSceneRequest::getWorkspaceId, (req, v) -> {
+                req.setWorkspaceId(v);
+            }));
+        builder.<CreateResIntelligentSceneRequestNBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateResIntelligentSceneRequestNBody.class),
+            f -> f.withMarshaller(CreateResIntelligentSceneRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateResJobRequest, CreateResJobResponse> createResJob = genForcreateResJob();
 
     private static HttpRequestDef<CreateResJobRequest, CreateResJobResponse> genForcreateResJob() {
@@ -896,6 +931,48 @@ public class ResMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateResDatastructRequestBodyBody.class),
             f -> f.withMarshaller(UpdateResDatastructRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateResIntelligentSceneRequest, UpdateResIntelligentSceneResponse> updateResIntelligentScene =
+        genForupdateResIntelligentScene();
+
+    private static HttpRequestDef<UpdateResIntelligentSceneRequest, UpdateResIntelligentSceneResponse> genForupdateResIntelligentScene() {
+        // basic
+        HttpRequestDef.Builder<UpdateResIntelligentSceneRequest, UpdateResIntelligentSceneResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateResIntelligentSceneRequest.class,
+                    UpdateResIntelligentSceneResponse.class)
+                .withName("UpdateResIntelligentScene")
+                .withUri("/v2.0/{project_id}/workspaces/{workspace_id}/intelligent-scenes/{scene_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("scene_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateResIntelligentSceneRequest::getSceneId, (req, v) -> {
+                req.setSceneId(v);
+            }));
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateResIntelligentSceneRequest::getWorkspaceId, (req, v) -> {
+                req.setWorkspaceId(v);
+            }));
+        builder.<UpdateResIntelligentSceneRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateResIntelligentSceneRequestBody.class),
+            f -> f.withMarshaller(UpdateResIntelligentSceneRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

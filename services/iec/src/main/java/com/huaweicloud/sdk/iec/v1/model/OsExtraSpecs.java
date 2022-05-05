@@ -21,9 +21,9 @@ public class OsExtraSpecs {
     private String ecsGeneration;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ecs:performance_type")
+    @JsonProperty(value = "ecs:performancetype")
 
-    private String ecsPerformanceType;
+    private String ecsPerformancetype;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ecs:virtualization_env_types")
@@ -31,12 +31,12 @@ public class OsExtraSpecs {
     private String ecsVirtualizationEnvTypes;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "info_cpu_name")
+    @JsonProperty(value = "info:cpu:name")
 
     private String infoCpuName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "info_gpu_name")
+    @JsonProperty(value = "info:gpu:name")
 
     private String infoGpuName;
 
@@ -94,21 +94,21 @@ public class OsExtraSpecs {
         this.ecsGeneration = ecsGeneration;
     }
 
-    public OsExtraSpecs withEcsPerformanceType(String ecsPerformanceType) {
-        this.ecsPerformanceType = ecsPerformanceType;
+    public OsExtraSpecs withEcsPerformancetype(String ecsPerformancetype) {
+        this.ecsPerformancetype = ecsPerformancetype;
         return this;
     }
 
     /**
      * 边缘实例规格的分类。
-     * @return ecsPerformanceType
+     * @return ecsPerformancetype
      */
-    public String getEcsPerformanceType() {
-        return ecsPerformanceType;
+    public String getEcsPerformancetype() {
+        return ecsPerformancetype;
     }
 
-    public void setEcsPerformanceType(String ecsPerformanceType) {
-        this.ecsPerformanceType = ecsPerformanceType;
+    public void setEcsPerformancetype(String ecsPerformancetype) {
+        this.ecsPerformancetype = ecsPerformancetype;
     }
 
     public OsExtraSpecs withEcsVirtualizationEnvTypes(String ecsVirtualizationEnvTypes) {
@@ -241,7 +241,7 @@ public class OsExtraSpecs {
         OsExtraSpecs osExtraSpecs = (OsExtraSpecs) o;
         return Objects.equals(this.condOperationStatus, osExtraSpecs.condOperationStatus)
             && Objects.equals(this.ecsGeneration, osExtraSpecs.ecsGeneration)
-            && Objects.equals(this.ecsPerformanceType, osExtraSpecs.ecsPerformanceType)
+            && Objects.equals(this.ecsPerformancetype, osExtraSpecs.ecsPerformancetype)
             && Objects.equals(this.ecsVirtualizationEnvTypes, osExtraSpecs.ecsVirtualizationEnvTypes)
             && Objects.equals(this.infoCpuName, osExtraSpecs.infoCpuName)
             && Objects.equals(this.infoGpuName, osExtraSpecs.infoGpuName)
@@ -255,7 +255,7 @@ public class OsExtraSpecs {
     public int hashCode() {
         return Objects.hash(condOperationStatus,
             ecsGeneration,
-            ecsPerformanceType,
+            ecsPerformancetype,
             ecsVirtualizationEnvTypes,
             infoCpuName,
             infoGpuName,
@@ -271,7 +271,7 @@ public class OsExtraSpecs {
         sb.append("class OsExtraSpecs {\n");
         sb.append("    condOperationStatus: ").append(toIndentedString(condOperationStatus)).append("\n");
         sb.append("    ecsGeneration: ").append(toIndentedString(ecsGeneration)).append("\n");
-        sb.append("    ecsPerformanceType: ").append(toIndentedString(ecsPerformanceType)).append("\n");
+        sb.append("    ecsPerformancetype: ").append(toIndentedString(ecsPerformancetype)).append("\n");
         sb.append("    ecsVirtualizationEnvTypes: ").append(toIndentedString(ecsVirtualizationEnvTypes)).append("\n");
         sb.append("    infoCpuName: ").append(toIndentedString(infoCpuName)).append("\n");
         sb.append("    infoGpuName: ").append(toIndentedString(infoGpuName)).append("\n");

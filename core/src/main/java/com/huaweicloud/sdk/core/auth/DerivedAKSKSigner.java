@@ -31,28 +31,21 @@ import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.net.URL;
-import java.net.URLEncoder;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.security.InvalidKeyException;
-import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-import java.util.Objects;
 import java.util.SimpleTimeZone;
-import java.util.SortedMap;
 import java.util.TreeMap;
 import java.util.stream.Collectors;
 
@@ -61,19 +54,7 @@ import java.util.stream.Collectors;
  *
  * @author HuaweiCloud_SDK
  */
-public class DerivedAKSKSigner {
-    /**
-     * SHA256 hash of an empty request body
-     **/
-    private static final String EMPTY_BODY_SHA256 = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855";
-
-    /**
-     * format strings for the date/time and date stamps required during signing
-     **/
-    private static final String ISO_8601_BASIC_FORMAT = "yyyyMMdd'T'HHmmss'Z'";
-
-    private static final SimpleDateFormat ISO_DATE_FORMAT = new SimpleDateFormat(ISO_8601_BASIC_FORMAT);
-
+public class DerivedAKSKSigner extends AKSKSigner {
     private static final String V_11_HMAC_SHA_256 = "V11-HMAC-SHA256";
 
     public static Map<String, String> sign(HttpRequest request, AbstractCredentials credential) {
@@ -100,8 +81,9 @@ public class DerivedAKSKSigner {
         // Step 1.2: Add X-Sdk-Date
         String dateTimeStamp;
         if (!request.haveHeader(Constants.X_SDK_DATE)) {
-            ISO_DATE_FORMAT.setTimeZone(new SimpleTimeZone(0, "UTC"));
-            dateTimeStamp = ISO_DATE_FORMAT.format(now);
+            SimpleDateFormat isoDateFormat = new SimpleDateFormat(ISO_8601_BASIC_FORMAT);
+            isoDateFormat.setTimeZone(new SimpleTimeZone(0, "UTC"));
+            dateTimeStamp = isoDateFormat.format(now);
             authenticationHeaders.put(Constants.X_SDK_DATE, dateTimeStamp);
         } else {
             dateTimeStamp = request.getHeader(Constants.X_SDK_DATE);
@@ -188,170 +170,6 @@ public class DerivedAKSKSigner {
         authorization.append("Signature=").append(signatureString);
         authenticationHeaders.put(Constants.AUTHORIZATION, authorization.toString());
         return authenticationHeaders;
-    }
-
-    private static String buildCanonicalQueryString(String query, Map<String, List<String>> parameters) {
-        SortedMap<String, List<String>> sorted = convertQuery2SortedMap(query);
-        StringBuilder builder = new StringBuilder();
-
-        if (parameters == null || parameters.isEmpty()) {
-            return builder.toString();
-        }
-
-        Iterator<Map.Entry<String, List<String>>> iterator = parameters.entrySet().iterator();
-        while (iterator.hasNext()) {
-            Map.Entry<String, List<String>> pair = iterator.next();
-            String key = pair.getKey();
-            List<String> values = pair.getValue();
-            List<String> escapedValues = new ArrayList<>();
-            for (String value : values) {
-                escapedValues.add(urlEncode(value));
-            }
-            sorted.put(urlEncode(key), escapedValues);
-        }
-
-        Iterator<Map.Entry<String, List<String>>> itr = sorted.entrySet().iterator();
-        while (itr.hasNext()) {
-            Map.Entry<String, List<String>> pair = itr.next();
-            for (int i = 0; i < pair.getValue().size(); i++) {
-                builder.append(pair.getKey());
-                builder.append("=");
-                builder.append(pair.getValue().get(i));
-                if (i < pair.getValue().size() - 1) {
-                    builder.append("&");
-                }
-            }
-            if (pair.getValue().size() == 0) {
-                builder.append(pair.getKey()).append("=");
-            }
-            if (itr.hasNext()) {
-                builder.append("&");
-            }
-        }
-
-        return builder.toString();
-    }
-
-    private static SortedMap<String, List<String>> convertQuery2SortedMap(String query) {
-        SortedMap<String, List<String>> sorted = new TreeMap<>();
-
-        if (query == null || query.isEmpty()) {
-            return sorted;
-        }
-
-        // get parameters from path query string
-        String[] splitArr = query.split("&");
-        for (String split : splitArr) {
-            String[] kv = split.split("=");
-            if (kv.length == 2) {
-                if (!sorted.containsKey(urlEncode(kv[0]))) {
-                    List<String> values = new ArrayList<>();
-                    values.add(urlEncode(kv[1]));
-                    sorted.put(urlEncode(kv[0]), values);
-                } else {
-                    sorted.get(urlEncode(kv[0])).add(urlEncode(kv[1]));
-                }
-            }
-        }
-        return sorted;
-    }
-
-    /**
-     * Create the canonical headers and signed headers. Header names and value must
-     * be trimmed and lowercase, and sorted in ASCII order. Note that there is a
-     * trailing \n.
-     *
-     * @param heads
-     * @return
-     */
-    private static String buildCanonicalHeaders(Map<String, String> heads) {
-        StringBuilder sb = new StringBuilder();
-        heads.forEach(
-            (key, value) -> {
-                sb.append(key).append(":").append(value);
-                sb.append(Constants.LINE_SEPARATOR);
-            });
-        return sb.toString();
-    }
-
-    /**
-     * @param request
-     * @return
-     */
-    private static String buildPayloadHash(HttpRequest request) {
-        if (request.haveHeader(Constants.X_SDK_CONTENT_SHA256)) {
-            return request.getHeader(Constants.X_SDK_CONTENT_SHA256);
-        }
-        if (Objects.nonNull(request.getBodyAsString()) && !request.getBodyAsString().isEmpty()) {
-            return BinaryUtils.toHex(sha256(request.getBodyAsString()));
-        }
-
-        return EMPTY_BODY_SHA256;
-    }
-
-    /**
-     * @param segments param1 method param2 canonicalURI param3 canonicalQueryString
-     *                 param4 canonicalHeaders param5 signedHeaderNames param6
-     *                 payloadHash
-     * @return
-     */
-    private static String buildCanonicalRequest(String... segments) {
-        return String.join(Constants.LINE_SEPARATOR, segments);
-    }
-
-    /**
-     * @param segments param1 sdkSigningAlgorithm param2 dateTimeStamp param3
-     *                 credentialScope param4 canonicalRequestHash
-     * @return
-     */
-    private static String getStringToSign(String... segments) {
-        return String.join(Constants.LINE_SEPARATOR, segments);
-    }
-
-    /**
-     * @param stringToSign
-     * @param secretKey
-     * @return
-     */
-    private static String signature(String stringToSign, String secretKey) {
-        byte[] keySecret = secretKey.getBytes(StandardCharsets.UTF_8);
-        byte[] signature = hmac(keySecret, stringToSign);
-        return BinaryUtils.toHex(signature);
-    }
-
-    private static String urlEncode(String url) {
-        try {
-            return URLEncoder.encode(url, "UTF-8").replace("+", "%20").replace("*", "%2A");
-        } catch (UnsupportedEncodingException e) {
-            throw new SdkException("UTF-8 encoding is not supported.", e);
-        }
-    }
-
-    /**
-     * Hashes the string contents (assumed to be UTF-8) using the SHA-256 algorithm.
-     *
-     * @param text string contents
-     * @return byte[]
-     */
-    private static byte[] sha256(String text) {
-        try {
-            MessageDigest md = MessageDigest.getInstance("SHA-256");
-            md.update(text.getBytes(StandardCharsets.UTF_8));
-            return md.digest();
-        } catch (NoSuchAlgorithmException e) {
-            throw new SdkException("Unable to compute hash while signing request", e);
-        }
-    }
-
-    private static byte[] hmac(byte[] key, String data) {
-        try {
-            Mac hmac = Mac.getInstance("HmacSHA256");
-            SecretKeySpec secretKeySpec = new SecretKeySpec(key, "HmacSHA256");
-            hmac.init(secretKeySpec);
-            return hmac.doFinal(data.getBytes(StandardCharsets.UTF_8));
-        } catch (NoSuchAlgorithmException | InvalidKeyException e) {
-            throw new SdkException("Unable to calculate a request signature: " + e.getMessage(), e);
-        }
     }
 
     static class HKDF {
