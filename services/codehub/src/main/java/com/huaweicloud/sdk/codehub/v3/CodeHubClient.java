@@ -488,6 +488,68 @@ public class CodeHubClient {
     }
 
     /**
+     * 新建保护分支
+     *
+     * 新建保护分支
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param AddProtectBranchV2Request 请求对象
+     * @return AddProtectBranchV2Response
+     */
+    public AddProtectBranchV2Response addProtectBranchV2(AddProtectBranchV2Request request) {
+        return hcClient.syncInvokeHttp(request, CodeHubMeta.addProtectBranchV2);
+    }
+
+    /**
+     * 新建保护分支
+     *
+     * 新建保护分支
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param AddProtectBranchV2Request 请求对象
+     * @return SyncInvoker<AddProtectBranchV2Request, AddProtectBranchV2Response>
+     */
+    public SyncInvoker<AddProtectBranchV2Request, AddProtectBranchV2Response> addProtectBranchV2Invoker(
+        AddProtectBranchV2Request request) {
+        return new SyncInvoker<AddProtectBranchV2Request, AddProtectBranchV2Response>(request,
+            CodeHubMeta.addProtectBranchV2, hcClient);
+    }
+
+    /**
+     * 新建标签
+     *
+     * 新建标签
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param AddTagV2Request 请求对象
+     * @return AddTagV2Response
+     */
+    public AddTagV2Response addTagV2(AddTagV2Request request) {
+        return hcClient.syncInvokeHttp(request, CodeHubMeta.addTagV2);
+    }
+
+    /**
+     * 新建标签
+     *
+     * 新建标签
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param AddTagV2Request 请求对象
+     * @return SyncInvoker<AddTagV2Request, AddTagV2Response>
+     */
+    public SyncInvoker<AddTagV2Request, AddTagV2Response> addTagV2Invoker(AddTagV2Request request) {
+        return new SyncInvoker<AddTagV2Request, AddTagV2Response>(request, CodeHubMeta.addTagV2, hcClient);
+    }
+
+    /**
      * 创建仓库
      *
      * 用指定的名称在指定项目上创建仓库。传入参数：仓库名、模板id、是否导入项目成员、归属项目

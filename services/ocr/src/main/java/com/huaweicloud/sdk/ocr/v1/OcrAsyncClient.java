@@ -422,6 +422,38 @@ public class OcrAsyncClient {
     }
 
     /**
+     * 防疫健康码识别
+     *
+     * 识别防疫健康码中的文字信息，并将识别的结构化结果返回给用户。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param RecognizeHealthCodeRequest 请求对象
+     * @return CompletableFuture<RecognizeHealthCodeResponse>
+     */
+    public CompletableFuture<RecognizeHealthCodeResponse> recognizeHealthCodeAsync(RecognizeHealthCodeRequest request) {
+        return hcClient.asyncInvokeHttp(request, OcrMeta.recognizeHealthCode);
+    }
+
+    /**
+     * 防疫健康码识别
+     *
+     * 识别防疫健康码中的文字信息，并将识别的结构化结果返回给用户。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param RecognizeHealthCodeRequest 请求对象
+     * @return AsyncInvoker<RecognizeHealthCodeRequest, RecognizeHealthCodeResponse>
+     */
+    public AsyncInvoker<RecognizeHealthCodeRequest, RecognizeHealthCodeResponse> recognizeHealthCodeAsyncInvoker(
+        RecognizeHealthCodeRequest request) {
+        return new AsyncInvoker<RecognizeHealthCodeRequest, RecognizeHealthCodeResponse>(request,
+            OcrMeta.recognizeHealthCode, hcClient);
+    }
+
+    /**
      * 身份证识别
      *
      * 识别身份证图片中的文字内容，并将识别的结果返回给用户。

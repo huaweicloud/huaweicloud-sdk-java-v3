@@ -268,14 +268,24 @@ public class ListSimCardsRequest {
     private String customerAttribute6;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "min_flow")
+    @JsonProperty(value = "min_used_flow")
 
-    private Long minFlow;
+    private Long minUsedFlow;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "max_flow")
+    @JsonProperty(value = "max_used_flow")
 
-    private Long maxFlow;
+    private Long maxUsedFlow;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "min_left_flow")
+
+    private Long minLeftFlow;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "max_left_flow")
+
+    private Long maxLeftFlow;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "real_named")
@@ -576,8 +586,8 @@ public class ListSimCardsRequest {
         this.customerAttribute6 = customerAttribute6;
     }
 
-    public ListSimCardsRequest withMinFlow(Long minFlow) {
-        this.minFlow = minFlow;
+    public ListSimCardsRequest withMinUsedFlow(Long minUsedFlow) {
+        this.minUsedFlow = minUsedFlow;
         return this;
     }
 
@@ -585,18 +595,18 @@ public class ListSimCardsRequest {
      * 最小使用流量(MB)
      * minimum: 0
      * maximum: 2147483647
-     * @return minFlow
+     * @return minUsedFlow
      */
-    public Long getMinFlow() {
-        return minFlow;
+    public Long getMinUsedFlow() {
+        return minUsedFlow;
     }
 
-    public void setMinFlow(Long minFlow) {
-        this.minFlow = minFlow;
+    public void setMinUsedFlow(Long minUsedFlow) {
+        this.minUsedFlow = minUsedFlow;
     }
 
-    public ListSimCardsRequest withMaxFlow(Long maxFlow) {
-        this.maxFlow = maxFlow;
+    public ListSimCardsRequest withMaxUsedFlow(Long maxUsedFlow) {
+        this.maxUsedFlow = maxUsedFlow;
         return this;
     }
 
@@ -604,14 +614,52 @@ public class ListSimCardsRequest {
      * 最大使用流量(MB)
      * minimum: 0
      * maximum: 2147483647
-     * @return maxFlow
+     * @return maxUsedFlow
      */
-    public Long getMaxFlow() {
-        return maxFlow;
+    public Long getMaxUsedFlow() {
+        return maxUsedFlow;
     }
 
-    public void setMaxFlow(Long maxFlow) {
-        this.maxFlow = maxFlow;
+    public void setMaxUsedFlow(Long maxUsedFlow) {
+        this.maxUsedFlow = maxUsedFlow;
+    }
+
+    public ListSimCardsRequest withMinLeftFlow(Long minLeftFlow) {
+        this.minLeftFlow = minLeftFlow;
+        return this;
+    }
+
+    /**
+     * 最小剩余流量(MB)
+     * minimum: 0
+     * maximum: 2147483647
+     * @return minLeftFlow
+     */
+    public Long getMinLeftFlow() {
+        return minLeftFlow;
+    }
+
+    public void setMinLeftFlow(Long minLeftFlow) {
+        this.minLeftFlow = minLeftFlow;
+    }
+
+    public ListSimCardsRequest withMaxLeftFlow(Long maxLeftFlow) {
+        this.maxLeftFlow = maxLeftFlow;
+        return this;
+    }
+
+    /**
+     * 最大剩余流量(MB)
+     * minimum: 0
+     * maximum: 2147483647
+     * @return maxLeftFlow
+     */
+    public Long getMaxLeftFlow() {
+        return maxLeftFlow;
+    }
+
+    public void setMaxLeftFlow(Long maxLeftFlow) {
+        this.maxLeftFlow = maxLeftFlow;
     }
 
     public ListSimCardsRequest withRealNamed(Boolean realNamed) {
@@ -690,8 +738,10 @@ public class ListSimCardsRequest {
             && Objects.equals(this.customerAttribute4, listSimCardsRequest.customerAttribute4)
             && Objects.equals(this.customerAttribute5, listSimCardsRequest.customerAttribute5)
             && Objects.equals(this.customerAttribute6, listSimCardsRequest.customerAttribute6)
-            && Objects.equals(this.minFlow, listSimCardsRequest.minFlow)
-            && Objects.equals(this.maxFlow, listSimCardsRequest.maxFlow)
+            && Objects.equals(this.minUsedFlow, listSimCardsRequest.minUsedFlow)
+            && Objects.equals(this.maxUsedFlow, listSimCardsRequest.maxUsedFlow)
+            && Objects.equals(this.minLeftFlow, listSimCardsRequest.minLeftFlow)
+            && Objects.equals(this.maxLeftFlow, listSimCardsRequest.maxLeftFlow)
             && Objects.equals(this.realNamed, listSimCardsRequest.realNamed)
             && Objects.equals(this.orderId, listSimCardsRequest.orderId)
             && Objects.equals(this.filterDowntimePeriod, listSimCardsRequest.filterDowntimePeriod);
@@ -715,8 +765,10 @@ public class ListSimCardsRequest {
             customerAttribute4,
             customerAttribute5,
             customerAttribute6,
-            minFlow,
-            maxFlow,
+            minUsedFlow,
+            maxUsedFlow,
+            minLeftFlow,
+            maxLeftFlow,
             realNamed,
             orderId,
             filterDowntimePeriod);
@@ -742,8 +794,10 @@ public class ListSimCardsRequest {
         sb.append("    customerAttribute4: ").append(toIndentedString(customerAttribute4)).append("\n");
         sb.append("    customerAttribute5: ").append(toIndentedString(customerAttribute5)).append("\n");
         sb.append("    customerAttribute6: ").append(toIndentedString(customerAttribute6)).append("\n");
-        sb.append("    minFlow: ").append(toIndentedString(minFlow)).append("\n");
-        sb.append("    maxFlow: ").append(toIndentedString(maxFlow)).append("\n");
+        sb.append("    minUsedFlow: ").append(toIndentedString(minUsedFlow)).append("\n");
+        sb.append("    maxUsedFlow: ").append(toIndentedString(maxUsedFlow)).append("\n");
+        sb.append("    minLeftFlow: ").append(toIndentedString(minLeftFlow)).append("\n");
+        sb.append("    maxLeftFlow: ").append(toIndentedString(maxLeftFlow)).append("\n");
         sb.append("    realNamed: ").append(toIndentedString(realNamed)).append("\n");
         sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("    filterDowntimePeriod: ").append(toIndentedString(filterDowntimePeriod)).append("\n");

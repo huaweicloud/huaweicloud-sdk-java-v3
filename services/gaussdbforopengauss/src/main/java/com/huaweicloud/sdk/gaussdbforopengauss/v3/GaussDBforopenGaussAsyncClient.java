@@ -20,6 +20,126 @@ public class GaussDBforopenGaussAsyncClient {
 
 
     /**
+     * 授权数据库帐号
+     *
+     * 在指定实例的数据库中, 设置帐号的权限。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param AllowDbPrivilegesRequest 请求对象
+     * @return CompletableFuture<AllowDbPrivilegesResponse>
+     */
+    public CompletableFuture<AllowDbPrivilegesResponse> allowDbPrivilegesAsync(AllowDbPrivilegesRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.allowDbPrivileges);
+    }
+
+    /**
+     * 授权数据库帐号
+     *
+     * 在指定实例的数据库中, 设置帐号的权限。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param AllowDbPrivilegesRequest 请求对象
+     * @return AsyncInvoker<AllowDbPrivilegesRequest, AllowDbPrivilegesResponse>
+     */
+    public AsyncInvoker<AllowDbPrivilegesRequest, AllowDbPrivilegesResponse> allowDbPrivilegesAsyncInvoker(AllowDbPrivilegesRequest request) {
+        return new AsyncInvoker<AllowDbPrivilegesRequest, AllowDbPrivilegesResponse>(request, GaussDBforopenGaussMeta.allowDbPrivileges, hcClient);
+    }
+
+    /**
+     * 创建数据库
+     *
+     * 在指定实例中创建数据库。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateDatabaseRequest 请求对象
+     * @return CompletableFuture<CreateDatabaseResponse>
+     */
+    public CompletableFuture<CreateDatabaseResponse> createDatabaseAsync(CreateDatabaseRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.createDatabase);
+    }
+
+    /**
+     * 创建数据库
+     *
+     * 在指定实例中创建数据库。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateDatabaseRequest 请求对象
+     * @return AsyncInvoker<CreateDatabaseRequest, CreateDatabaseResponse>
+     */
+    public AsyncInvoker<CreateDatabaseRequest, CreateDatabaseResponse> createDatabaseAsyncInvoker(CreateDatabaseRequest request) {
+        return new AsyncInvoker<CreateDatabaseRequest, CreateDatabaseResponse>(request, GaussDBforopenGaussMeta.createDatabase, hcClient);
+    }
+
+    /**
+     * 创建数据库SCHEMA
+     *
+     * 在指定实例的数据库中, 创建数据库schema。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateDatabaseSchemasRequest 请求对象
+     * @return CompletableFuture<CreateDatabaseSchemasResponse>
+     */
+    public CompletableFuture<CreateDatabaseSchemasResponse> createDatabaseSchemasAsync(CreateDatabaseSchemasRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.createDatabaseSchemas);
+    }
+
+    /**
+     * 创建数据库SCHEMA
+     *
+     * 在指定实例的数据库中, 创建数据库schema。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateDatabaseSchemasRequest 请求对象
+     * @return AsyncInvoker<CreateDatabaseSchemasRequest, CreateDatabaseSchemasResponse>
+     */
+    public AsyncInvoker<CreateDatabaseSchemasRequest, CreateDatabaseSchemasResponse> createDatabaseSchemasAsyncInvoker(CreateDatabaseSchemasRequest request) {
+        return new AsyncInvoker<CreateDatabaseSchemasRequest, CreateDatabaseSchemasResponse>(request, GaussDBforopenGaussMeta.createDatabaseSchemas, hcClient);
+    }
+
+    /**
+     * 创建数据库用户
+     *
+     * 在指定实例中创建数据库用户。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateDbUserRequest 请求对象
+     * @return CompletableFuture<CreateDbUserResponse>
+     */
+    public CompletableFuture<CreateDbUserResponse> createDbUserAsync(CreateDbUserRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.createDbUser);
+    }
+
+    /**
+     * 创建数据库用户
+     *
+     * 在指定实例中创建数据库用户。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateDbUserRequest 请求对象
+     * @return AsyncInvoker<CreateDbUserRequest, CreateDbUserResponse>
+     */
+    public AsyncInvoker<CreateDbUserRequest, CreateDbUserResponse> createDbUserAsyncInvoker(CreateDbUserRequest request) {
+        return new AsyncInvoker<CreateDbUserRequest, CreateDbUserResponse>(request, GaussDBforopenGaussMeta.createDbUser, hcClient);
+    }
+
+    /**
      * 创建数据库实例
      *
      * 创建数据库企业版和集中式实例
@@ -47,6 +167,66 @@ public class GaussDBforopenGaussAsyncClient {
      */
     public AsyncInvoker<CreateInstanceRequest, CreateInstanceResponse> createInstanceAsyncInvoker(CreateInstanceRequest request) {
         return new AsyncInvoker<CreateInstanceRequest, CreateInstanceResponse>(request, GaussDBforopenGaussMeta.createInstance, hcClient);
+    }
+
+    /**
+     * 创建手动备份
+     *
+     * 创建手动备份。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateManualBackupRequest 请求对象
+     * @return CompletableFuture<CreateManualBackupResponse>
+     */
+    public CompletableFuture<CreateManualBackupResponse> createManualBackupAsync(CreateManualBackupRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.createManualBackup);
+    }
+
+    /**
+     * 创建手动备份
+     *
+     * 创建手动备份。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateManualBackupRequest 请求对象
+     * @return AsyncInvoker<CreateManualBackupRequest, CreateManualBackupResponse>
+     */
+    public AsyncInvoker<CreateManualBackupRequest, CreateManualBackupResponse> createManualBackupAsyncInvoker(CreateManualBackupRequest request) {
+        return new AsyncInvoker<CreateManualBackupRequest, CreateManualBackupResponse>(request, GaussDBforopenGaussMeta.createManualBackup, hcClient);
+    }
+
+    /**
+     * 恢复到新实例
+     *
+     * 根据备份恢复新实例。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateRestoreInstanceRequest 请求对象
+     * @return CompletableFuture<CreateRestoreInstanceResponse>
+     */
+    public CompletableFuture<CreateRestoreInstanceResponse> createRestoreInstanceAsync(CreateRestoreInstanceRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.createRestoreInstance);
+    }
+
+    /**
+     * 恢复到新实例
+     *
+     * 根据备份恢复新实例。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateRestoreInstanceRequest 请求对象
+     * @return AsyncInvoker<CreateRestoreInstanceRequest, CreateRestoreInstanceResponse>
+     */
+    public AsyncInvoker<CreateRestoreInstanceRequest, CreateRestoreInstanceResponse> createRestoreInstanceAsyncInvoker(CreateRestoreInstanceRequest request) {
+        return new AsyncInvoker<CreateRestoreInstanceRequest, CreateRestoreInstanceResponse>(request, GaussDBforopenGaussMeta.createRestoreInstance, hcClient);
     }
 
     /**
@@ -80,6 +260,66 @@ public class GaussDBforopenGaussAsyncClient {
     }
 
     /**
+     * 删除手动备份
+     *
+     * 删除手动备份。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteManualBackupRequest 请求对象
+     * @return CompletableFuture<DeleteManualBackupResponse>
+     */
+    public CompletableFuture<DeleteManualBackupResponse> deleteManualBackupAsync(DeleteManualBackupRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.deleteManualBackup);
+    }
+
+    /**
+     * 删除手动备份
+     *
+     * 删除手动备份。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteManualBackupRequest 请求对象
+     * @return AsyncInvoker<DeleteManualBackupRequest, DeleteManualBackupResponse>
+     */
+    public AsyncInvoker<DeleteManualBackupRequest, DeleteManualBackupResponse> deleteManualBackupAsyncInvoker(DeleteManualBackupRequest request) {
+        return new AsyncInvoker<DeleteManualBackupRequest, DeleteManualBackupResponse>(request, GaussDBforopenGaussMeta.deleteManualBackup, hcClient);
+    }
+
+    /**
+     * 查询备份列表
+     *
+     * 获取备份列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListBackupsRequest 请求对象
+     * @return CompletableFuture<ListBackupsResponse>
+     */
+    public CompletableFuture<ListBackupsResponse> listBackupsAsync(ListBackupsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.listBackups);
+    }
+
+    /**
+     * 查询备份列表
+     *
+     * 获取备份列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListBackupsRequest 请求对象
+     * @return AsyncInvoker<ListBackupsRequest, ListBackupsResponse>
+     */
+    public AsyncInvoker<ListBackupsRequest, ListBackupsResponse> listBackupsAsyncInvoker(ListBackupsRequest request) {
+        return new AsyncInvoker<ListBackupsRequest, ListBackupsResponse>(request, GaussDBforopenGaussMeta.listBackups, hcClient);
+    }
+
+    /**
      * 获取参数模板列表
      *
      * 获取参数模板列表，包括所有数据库的默认参数模板和用户创建的参数模板。
@@ -110,6 +350,66 @@ public class GaussDBforopenGaussAsyncClient {
     }
 
     /**
+     * 查询数据库SCHEMA列表
+     *
+     * 查询指定实例的数据库SCHEMA列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListDatabaseSchemasRequest 请求对象
+     * @return CompletableFuture<ListDatabaseSchemasResponse>
+     */
+    public CompletableFuture<ListDatabaseSchemasResponse> listDatabaseSchemasAsync(ListDatabaseSchemasRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.listDatabaseSchemas);
+    }
+
+    /**
+     * 查询数据库SCHEMA列表
+     *
+     * 查询指定实例的数据库SCHEMA列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListDatabaseSchemasRequest 请求对象
+     * @return AsyncInvoker<ListDatabaseSchemasRequest, ListDatabaseSchemasResponse>
+     */
+    public AsyncInvoker<ListDatabaseSchemasRequest, ListDatabaseSchemasResponse> listDatabaseSchemasAsyncInvoker(ListDatabaseSchemasRequest request) {
+        return new AsyncInvoker<ListDatabaseSchemasRequest, ListDatabaseSchemasResponse>(request, GaussDBforopenGaussMeta.listDatabaseSchemas, hcClient);
+    }
+
+    /**
+     * 查询数据库列表
+     *
+     * 查询指定实例中的数据库列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListDatabasesRequest 请求对象
+     * @return CompletableFuture<ListDatabasesResponse>
+     */
+    public CompletableFuture<ListDatabasesResponse> listDatabasesAsync(ListDatabasesRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.listDatabases);
+    }
+
+    /**
+     * 查询数据库列表
+     *
+     * 查询指定实例中的数据库列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListDatabasesRequest 请求对象
+     * @return AsyncInvoker<ListDatabasesRequest, ListDatabasesResponse>
+     */
+    public AsyncInvoker<ListDatabasesRequest, ListDatabasesResponse> listDatabasesAsyncInvoker(ListDatabasesRequest request) {
+        return new AsyncInvoker<ListDatabasesRequest, ListDatabasesResponse>(request, GaussDBforopenGaussMeta.listDatabases, hcClient);
+    }
+
+    /**
      * 查询数据库引擎的版本
      *
      * 查询指定数据库引擎对应的版本信息。
@@ -137,6 +437,36 @@ public class GaussDBforopenGaussAsyncClient {
      */
     public AsyncInvoker<ListDatastoresRequest, ListDatastoresResponse> listDatastoresAsyncInvoker(ListDatastoresRequest request) {
         return new AsyncInvoker<ListDatastoresRequest, ListDatastoresResponse>(request, GaussDBforopenGaussMeta.listDatastores, hcClient);
+    }
+
+    /**
+     * 查询数据库用户列表
+     *
+     * 在指定实例中查询数据库用户列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListDbUsersRequest 请求对象
+     * @return CompletableFuture<ListDbUsersResponse>
+     */
+    public CompletableFuture<ListDbUsersResponse> listDbUsersAsync(ListDbUsersRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.listDbUsers);
+    }
+
+    /**
+     * 查询数据库用户列表
+     *
+     * 在指定实例中查询数据库用户列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListDbUsersRequest 请求对象
+     * @return AsyncInvoker<ListDbUsersRequest, ListDbUsersResponse>
+     */
+    public AsyncInvoker<ListDbUsersRequest, ListDbUsersResponse> listDbUsersAsyncInvoker(ListDbUsersRequest request) {
+        return new AsyncInvoker<ListDbUsersRequest, ListDbUsersResponse>(request, GaussDBforopenGaussMeta.listDbUsers, hcClient);
     }
 
     /**
@@ -197,6 +527,38 @@ public class GaussDBforopenGaussAsyncClient {
      */
     public AsyncInvoker<ListInstancesRequest, ListInstancesResponse> listInstancesAsyncInvoker(ListInstancesRequest request) {
         return new AsyncInvoker<ListInstancesRequest, ListInstancesResponse>(request, GaussDBforopenGaussMeta.listInstances, hcClient);
+    }
+
+    /**
+     * 查询可恢复时间段
+     *
+     * 查询可恢复时间段。
+     * 如果您备份策略中的保存天数设置较长，建议您传入查询日期“date”。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListRestoreTimesRequest 请求对象
+     * @return CompletableFuture<ListRestoreTimesResponse>
+     */
+    public CompletableFuture<ListRestoreTimesResponse> listRestoreTimesAsync(ListRestoreTimesRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.listRestoreTimes);
+    }
+
+    /**
+     * 查询可恢复时间段
+     *
+     * 查询可恢复时间段。
+     * 如果您备份策略中的保存天数设置较长，建议您传入查询日期“date”。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListRestoreTimesRequest 请求对象
+     * @return AsyncInvoker<ListRestoreTimesRequest, ListRestoreTimesResponse>
+     */
+    public AsyncInvoker<ListRestoreTimesRequest, ListRestoreTimesResponse> listRestoreTimesAsyncInvoker(ListRestoreTimesRequest request) {
+        return new AsyncInvoker<ListRestoreTimesRequest, ListRestoreTimesResponse>(request, GaussDBforopenGaussMeta.listRestoreTimes, hcClient);
     }
 
     /**
@@ -347,6 +709,66 @@ public class GaussDBforopenGaussAsyncClient {
      */
     public AsyncInvoker<SetBackupPolicyRequest, SetBackupPolicyResponse> setBackupPolicyAsyncInvoker(SetBackupPolicyRequest request) {
         return new AsyncInvoker<SetBackupPolicyRequest, SetBackupPolicyResponse>(request, GaussDBforopenGaussMeta.setBackupPolicy, hcClient);
+    }
+
+    /**
+     * 重置数据库帐号密码
+     *
+     * 重置指定数据库帐号的密码。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SetDbUserPwdRequest 请求对象
+     * @return CompletableFuture<SetDbUserPwdResponse>
+     */
+    public CompletableFuture<SetDbUserPwdResponse> setDbUserPwdAsync(SetDbUserPwdRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.setDbUserPwd);
+    }
+
+    /**
+     * 重置数据库帐号密码
+     *
+     * 重置指定数据库帐号的密码。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SetDbUserPwdRequest 请求对象
+     * @return AsyncInvoker<SetDbUserPwdRequest, SetDbUserPwdResponse>
+     */
+    public AsyncInvoker<SetDbUserPwdRequest, SetDbUserPwdResponse> setDbUserPwdAsyncInvoker(SetDbUserPwdRequest request) {
+        return new AsyncInvoker<SetDbUserPwdRequest, SetDbUserPwdResponse>(request, GaussDBforopenGaussMeta.setDbUserPwd, hcClient);
+    }
+
+    /**
+     * 查询自动备份策略
+     *
+     * 查询自动备份策略。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowBackupPolicyRequest 请求对象
+     * @return CompletableFuture<ShowBackupPolicyResponse>
+     */
+    public CompletableFuture<ShowBackupPolicyResponse> showBackupPolicyAsync(ShowBackupPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.showBackupPolicy);
+    }
+
+    /**
+     * 查询自动备份策略
+     *
+     * 查询自动备份策略。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowBackupPolicyRequest 请求对象
+     * @return AsyncInvoker<ShowBackupPolicyRequest, ShowBackupPolicyResponse>
+     */
+    public AsyncInvoker<ShowBackupPolicyRequest, ShowBackupPolicyResponse> showBackupPolicyAsyncInvoker(ShowBackupPolicyRequest request) {
+        return new AsyncInvoker<ShowBackupPolicyRequest, ShowBackupPolicyResponse>(request, GaussDBforopenGaussMeta.showBackupPolicy, hcClient);
     }
 
     /**

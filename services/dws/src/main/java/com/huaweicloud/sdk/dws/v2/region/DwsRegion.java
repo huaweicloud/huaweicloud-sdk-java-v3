@@ -20,6 +20,12 @@ public class DwsRegion {
 
     public static final Region CN_SOUTH_1 = new Region("cn-south-1", "https://dws.cn-south-1.myhuaweicloud.com");
 
+    public static final Region AP_SOUTHEAST_2 =
+        new Region("ap-southeast-2", "https://dws.ap-southeast-2.myhuaweicloud.com");
+
+    public static final Region AP_SOUTHEAST_3 =
+        new Region("ap-southeast-3", "https://dws.ap-southeast-3.myhuaweicloud.com");
+
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
 
     private static Map<String, Region> createStaticFields() {
@@ -29,6 +35,8 @@ public class DwsRegion {
         map.put("cn-north-1", CN_NORTH_1);
         map.put("cn-north-4", CN_NORTH_4);
         map.put("cn-south-1", CN_SOUTH_1);
+        map.put("ap-southeast-2", AP_SOUTHEAST_2);
+        map.put("ap-southeast-3", AP_SOUTHEAST_3);
         return Collections.unmodifiableMap(map);
     }
 

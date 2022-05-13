@@ -368,9 +368,9 @@ public class CdnAsyncClient {
     }
 
     /**
-     * 查询域名全量配置
+     * 查询域名配置接口
      *
-     * 查询域名全量配置接口，支持配置回源请求头、http header配置、url鉴权、证书设置等
+     * 查询域名配置接口，支持配置回源请求头、http header配置、url鉴权
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -384,9 +384,9 @@ public class CdnAsyncClient {
     }
 
     /**
-     * 查询域名全量配置
+     * 查询域名配置接口
      *
-     * 查询域名全量配置接口，支持配置回源请求头、http header配置、url鉴权、证书设置等
+     * 查询域名配置接口，支持配置回源请求头、http header配置、url鉴权
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -971,9 +971,9 @@ public class CdnAsyncClient {
     }
 
     /**
-     * 修改域名全量配置
+     * 修改域名全量配置接口
      *
-     * 修改域名全量配置接口，支持配置回源请求头、http header配置、url鉴权、证书设置等
+     * 修改域名全量配置接口，支持配置回源请求头、http header配置、url鉴权
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -987,9 +987,9 @@ public class CdnAsyncClient {
     }
 
     /**
-     * 修改域名全量配置
+     * 修改域名全量配置接口
      *
-     * 修改域名全量配置接口，支持配置回源请求头、http header配置、url鉴权、证书设置等
+     * 修改域名全量配置接口，支持配置回源请求头、http header配置、url鉴权
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.

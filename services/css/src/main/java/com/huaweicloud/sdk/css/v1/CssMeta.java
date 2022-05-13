@@ -334,6 +334,23 @@ public class CssMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DownloadCertRequest, DownloadCertResponse> downloadCert = genFordownloadCert();
+
+    private static HttpRequestDef<DownloadCertRequest, DownloadCertResponse> genFordownloadCert() {
+        // basic
+        HttpRequestDef.Builder<DownloadCertRequest, DownloadCertResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, DownloadCertRequest.class, DownloadCertResponse.class)
+                .withName("DownloadCert")
+                .withUri("/v1.0/{project_id}/cer/download")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListClustersDetailsRequest, ListClustersDetailsResponse> listClustersDetails =
         genForlistClustersDetails();
 

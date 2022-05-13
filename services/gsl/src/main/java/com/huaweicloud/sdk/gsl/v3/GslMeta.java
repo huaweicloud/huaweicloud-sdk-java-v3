@@ -259,19 +259,33 @@ public class GslMeta {
             f -> f.withMarshaller(ListSimCardsRequest::getCustomerAttribute6, (req, v) -> {
                 req.setCustomerAttribute6(v);
             }));
-        builder.<Long>withRequestField("min_flow",
+        builder.<Long>withRequestField("min_used_flow",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListSimCardsRequest::getMinFlow, (req, v) -> {
-                req.setMinFlow(v);
+            f -> f.withMarshaller(ListSimCardsRequest::getMinUsedFlow, (req, v) -> {
+                req.setMinUsedFlow(v);
             }));
-        builder.<Long>withRequestField("max_flow",
+        builder.<Long>withRequestField("max_used_flow",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListSimCardsRequest::getMaxFlow, (req, v) -> {
-                req.setMaxFlow(v);
+            f -> f.withMarshaller(ListSimCardsRequest::getMaxUsedFlow, (req, v) -> {
+                req.setMaxUsedFlow(v);
+            }));
+        builder.<Long>withRequestField("min_left_flow",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListSimCardsRequest::getMinLeftFlow, (req, v) -> {
+                req.setMinLeftFlow(v);
+            }));
+        builder.<Long>withRequestField("max_left_flow",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListSimCardsRequest::getMaxLeftFlow, (req, v) -> {
+                req.setMaxLeftFlow(v);
             }));
         builder.<Boolean>withRequestField("real_named",
             LocationType.Query,

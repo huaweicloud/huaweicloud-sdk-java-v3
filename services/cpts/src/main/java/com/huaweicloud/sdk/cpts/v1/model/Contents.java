@@ -36,7 +36,7 @@ public class Contents {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
-    private String data;
+    private Object data;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_type")
@@ -131,7 +131,7 @@ public class Contents {
         this.selectedTempName = selectedTempName;
     }
 
-    public Contents withData(String data) {
+    public Contents withData(Object data) {
         this.data = data;
         return this;
     }
@@ -140,11 +140,11 @@ public class Contents {
      * data
      * @return data
      */
-    public String getData() {
+    public Object getData() {
         return data;
     }
 
-    public void setData(String data) {
+    public void setData(Object data) {
         this.data = data;
     }
 

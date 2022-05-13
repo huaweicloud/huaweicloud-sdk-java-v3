@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 活体检测结果，VideoDetectResult结构见[VideoDetectResult](https://support.huaweicloud.com/api-face/face_02_0010.html)。 调用失败时无此字段。
+ * [活体检测结果，VideoDetectResult结构见[VideoDetectResult](https://support.huaweicloud.com/api-face/face_02_0010.html)。 调用失败时无此字段。](tag:hc) [活体检测结果，VideoDetectResult结构见[VideoDetectResult](https://support.huaweicloud.com/intl/zh-cn/api-face/face_02_0010.html)。 调用失败时无此字段。](tag:hk)
  */
 public class LiveDetectRespVideoresult {
 

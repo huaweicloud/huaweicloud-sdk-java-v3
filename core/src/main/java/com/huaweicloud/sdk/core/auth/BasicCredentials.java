@@ -183,33 +183,36 @@ public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
 
     @Override
     public CompletableFuture<HttpRequest> processAuthRequest(HttpRequest httpRequest, HttpClient httpClient) {
-        return CompletableFuture.supplyAsync(() -> {
-            HttpRequest.HttpRequestBuilder builder = httpRequest.builder().addAutoFilledPathParam(getPathParams());
+        return CompletableFuture.completedFuture(syncProcessAuthRequest(httpRequest, httpClient));
+    }
 
-            if (needUpdate()) {
-                updateCredential(httpClient);
-            }
+    @Override
+    public HttpRequest syncProcessAuthRequest(HttpRequest httpRequest, HttpClient httpClient) {
+        HttpRequest.HttpRequestBuilder builder = httpRequest.builder().addAutoFilledPathParam(getPathParams());
 
-            if (Objects.nonNull(getProjectId())) {
-                builder.addHeader(Constants.X_PROJECT_ID, projectId);
-            }
+        if (needUpdate()) {
+            updateCredential(httpClient);
+        }
 
-            if (Objects.nonNull(getSecurityToken())) {
-                builder.addHeader(Constants.X_SECURITY_TOKEN, getSecurityToken());
-            }
+        if (Objects.nonNull(getProjectId())) {
+            builder.addHeader(Constants.X_PROJECT_ID, projectId);
+        }
 
-            if (Objects.nonNull(httpRequest.getContentType())
-                    && !httpRequest.getContentType().startsWith(Constants.MEDIATYPE.APPLICATION_JSON)) {
-                builder.addHeader(Constants.X_SDK_CONTENT_SHA256, Constants.UNSIGNED_PAYLOAD);
-            }
+        if (Objects.nonNull(getSecurityToken())) {
+            builder.addHeader(Constants.X_SECURITY_TOKEN, getSecurityToken());
+        }
 
-            Map<String, String> header = isDerivedAuth(httpRequest)
-                    ? DerivedAKSKSigner.sign(builder.build(), this)
-                    : AKSKSigner.sign(builder.build(), this);
+        if (Objects.nonNull(httpRequest.getContentType())
+                && !httpRequest.getContentType().startsWith(Constants.MEDIATYPE.APPLICATION_JSON)) {
+            builder.addHeader(Constants.X_SDK_CONTENT_SHA256, Constants.UNSIGNED_PAYLOAD);
+        }
 
-            builder.addHeaders(header);
-            return builder.build();
-        });
+        Map<String, String> header = isDerivedAuth(httpRequest)
+                ? DerivedAKSKSigner.sign(builder.build(), this)
+                : AKSKSigner.sign(builder.build(), this);
+
+        builder.addHeaders(header);
+        return builder.build();
     }
 
     @Override

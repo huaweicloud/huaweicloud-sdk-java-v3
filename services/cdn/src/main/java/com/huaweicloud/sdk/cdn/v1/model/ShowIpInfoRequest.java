@@ -43,7 +43,7 @@ public class ShowIpInfoRequest {
     }
 
     /**
-     * IP地址列表，以“,”分割，最多20个。
+     * IP地址列表，以“，”分割，最多20个。
      * @return ips
      */
     public String getIps() {

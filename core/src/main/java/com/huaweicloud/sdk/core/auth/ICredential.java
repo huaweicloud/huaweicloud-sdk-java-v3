@@ -22,10 +22,12 @@
 package com.huaweicloud.sdk.core.auth;
 
 import com.huaweicloud.sdk.core.HcClient;
+import com.huaweicloud.sdk.core.exception.SdkException;
 import com.huaweicloud.sdk.core.http.HttpClient;
 import com.huaweicloud.sdk.core.http.HttpRequest;
 
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
 
 /**
  * @author HuaweiCloud_SDK
@@ -48,6 +50,21 @@ public interface ICredential {
      * @return null
      */
     CompletableFuture<HttpRequest> processAuthRequest(HttpRequest httpRequest, HttpClient httpClient);
+
+    /**
+     * Handle auth request before sending to API Gateway.
+     *
+     * @param httpRequest instance of HttpRequest
+     * @param httpClient  instance of HttpClient
+     * @return null
+     */
+    default HttpRequest syncProcessAuthRequest(HttpRequest httpRequest, HttpClient httpClient) {
+        try {
+            return processAuthRequest(httpRequest, httpClient).get();
+        } catch (InterruptedException | ExecutionException e) {
+            throw new SdkException(e);
+        }
+    }
 
     /**
      * DeepClone Object

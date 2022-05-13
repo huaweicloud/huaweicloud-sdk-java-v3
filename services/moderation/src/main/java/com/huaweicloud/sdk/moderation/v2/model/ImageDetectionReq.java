@@ -148,6 +148,11 @@ public class ImageDetectionReq {
 
     private Float threshold;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "show_ocr_text")
+
+    private Boolean showOcrText;
+
     public ImageDetectionReq withUrl(String url) {
         this.url = url;
         return this;
@@ -315,6 +320,23 @@ public class ImageDetectionReq {
         this.threshold = threshold;
     }
 
+    public ImageDetectionReq withShowOcrText(Boolean showOcrText) {
+        this.showOcrText = showOcrText;
+        return this;
+    }
+
+    /**
+     * 是否返回ocr识别结果，默认为false。
+     * @return showOcrText
+     */
+    public Boolean getShowOcrText() {
+        return showOcrText;
+    }
+
+    public void setShowOcrText(Boolean showOcrText) {
+        this.showOcrText = showOcrText;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -329,12 +351,13 @@ public class ImageDetectionReq {
             && Objects.equals(this.categories, imageDetectionReq.categories)
             && Objects.equals(this.adGlossaries, imageDetectionReq.adGlossaries)
             && Objects.equals(this.adCategories, imageDetectionReq.adCategories)
-            && Objects.equals(this.threshold, imageDetectionReq.threshold);
+            && Objects.equals(this.threshold, imageDetectionReq.threshold)
+            && Objects.equals(this.showOcrText, imageDetectionReq.showOcrText);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(url, image, moderationRule, categories, adGlossaries, adCategories, threshold);
+        return Objects.hash(url, image, moderationRule, categories, adGlossaries, adCategories, threshold, showOcrText);
     }
 
     @Override
@@ -348,6 +371,7 @@ public class ImageDetectionReq {
         sb.append("    adGlossaries: ").append(toIndentedString(adGlossaries)).append("\n");
         sb.append("    adCategories: ").append(toIndentedString(adCategories)).append("\n");
         sb.append("    threshold: ").append(toIndentedString(threshold)).append("\n");
+        sb.append("    showOcrText: ").append(toIndentedString(showOcrText)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -85,7 +85,7 @@ public class AddFacesByBase64Response extends SdkResponse {
     }
 
     /**
-     * 人脸库当中的人脸结构，详见[FaceSetFace](https://support.huaweicloud.com/api-face/face_02_0018.html)。 调用失败时无此字段。
+     * [人脸库当中的人脸结构，详见[FaceSetFace](https://support.huaweicloud.com/api-face/face_02_0018.html)。 调用失败时无此字段。](tag:hc) [人脸库当中的人脸结构，详见[FaceSetFace](https://support.huaweicloud.com/intl/zh-cn/api-face/face_02_0018.html)。 调用失败时无此字段。](tag:hk)
      * @return faces
      */
     public List<FaceSetFace> getFaces() {

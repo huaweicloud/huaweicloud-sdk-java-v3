@@ -366,6 +366,36 @@ public class CssClient {
     }
 
     /**
+     * 下载安全证书
+     *
+     * 该接口用于下载安全证书。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DownloadCertRequest 请求对象
+     * @return DownloadCertResponse
+     */
+    public DownloadCertResponse downloadCert(DownloadCertRequest request) {
+        return hcClient.syncInvokeHttp(request, CssMeta.downloadCert);
+    }
+
+    /**
+     * 下载安全证书
+     *
+     * 该接口用于下载安全证书。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DownloadCertRequest 请求对象
+     * @return SyncInvoker<DownloadCertRequest, DownloadCertResponse>
+     */
+    public SyncInvoker<DownloadCertRequest, DownloadCertResponse> downloadCertInvoker(DownloadCertRequest request) {
+        return new SyncInvoker<DownloadCertRequest, DownloadCertResponse>(request, CssMeta.downloadCert, hcClient);
+    }
+
+    /**
      * 查询集群列表
      *
      * 该接口用于查询并显示集群列表以及集群的状态。

@@ -18,6 +18,126 @@ public class GaussDBforopenGaussClient {
 
 
     /**
+     * 授权数据库帐号
+     *
+     * 在指定实例的数据库中, 设置帐号的权限。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param AllowDbPrivilegesRequest 请求对象
+     * @return AllowDbPrivilegesResponse
+     */
+    public AllowDbPrivilegesResponse allowDbPrivileges(AllowDbPrivilegesRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.allowDbPrivileges);
+    }
+
+    /**
+     * 授权数据库帐号
+     *
+     * 在指定实例的数据库中, 设置帐号的权限。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param AllowDbPrivilegesRequest 请求对象
+     * @return SyncInvoker<AllowDbPrivilegesRequest, AllowDbPrivilegesResponse>
+     */
+    public SyncInvoker<AllowDbPrivilegesRequest, AllowDbPrivilegesResponse> allowDbPrivilegesInvoker(AllowDbPrivilegesRequest request) {
+        return new SyncInvoker<AllowDbPrivilegesRequest, AllowDbPrivilegesResponse>(request, GaussDBforopenGaussMeta.allowDbPrivileges, hcClient);
+    }
+
+    /**
+     * 创建数据库
+     *
+     * 在指定实例中创建数据库。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateDatabaseRequest 请求对象
+     * @return CreateDatabaseResponse
+     */
+    public CreateDatabaseResponse createDatabase(CreateDatabaseRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.createDatabase);
+    }
+
+    /**
+     * 创建数据库
+     *
+     * 在指定实例中创建数据库。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateDatabaseRequest 请求对象
+     * @return SyncInvoker<CreateDatabaseRequest, CreateDatabaseResponse>
+     */
+    public SyncInvoker<CreateDatabaseRequest, CreateDatabaseResponse> createDatabaseInvoker(CreateDatabaseRequest request) {
+        return new SyncInvoker<CreateDatabaseRequest, CreateDatabaseResponse>(request, GaussDBforopenGaussMeta.createDatabase, hcClient);
+    }
+
+    /**
+     * 创建数据库SCHEMA
+     *
+     * 在指定实例的数据库中, 创建数据库schema。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateDatabaseSchemasRequest 请求对象
+     * @return CreateDatabaseSchemasResponse
+     */
+    public CreateDatabaseSchemasResponse createDatabaseSchemas(CreateDatabaseSchemasRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.createDatabaseSchemas);
+    }
+
+    /**
+     * 创建数据库SCHEMA
+     *
+     * 在指定实例的数据库中, 创建数据库schema。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateDatabaseSchemasRequest 请求对象
+     * @return SyncInvoker<CreateDatabaseSchemasRequest, CreateDatabaseSchemasResponse>
+     */
+    public SyncInvoker<CreateDatabaseSchemasRequest, CreateDatabaseSchemasResponse> createDatabaseSchemasInvoker(CreateDatabaseSchemasRequest request) {
+        return new SyncInvoker<CreateDatabaseSchemasRequest, CreateDatabaseSchemasResponse>(request, GaussDBforopenGaussMeta.createDatabaseSchemas, hcClient);
+    }
+
+    /**
+     * 创建数据库用户
+     *
+     * 在指定实例中创建数据库用户。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateDbUserRequest 请求对象
+     * @return CreateDbUserResponse
+     */
+    public CreateDbUserResponse createDbUser(CreateDbUserRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.createDbUser);
+    }
+
+    /**
+     * 创建数据库用户
+     *
+     * 在指定实例中创建数据库用户。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateDbUserRequest 请求对象
+     * @return SyncInvoker<CreateDbUserRequest, CreateDbUserResponse>
+     */
+    public SyncInvoker<CreateDbUserRequest, CreateDbUserResponse> createDbUserInvoker(CreateDbUserRequest request) {
+        return new SyncInvoker<CreateDbUserRequest, CreateDbUserResponse>(request, GaussDBforopenGaussMeta.createDbUser, hcClient);
+    }
+
+    /**
      * 创建数据库实例
      *
      * 创建数据库企业版和集中式实例
@@ -45,6 +165,66 @@ public class GaussDBforopenGaussClient {
      */
     public SyncInvoker<CreateInstanceRequest, CreateInstanceResponse> createInstanceInvoker(CreateInstanceRequest request) {
         return new SyncInvoker<CreateInstanceRequest, CreateInstanceResponse>(request, GaussDBforopenGaussMeta.createInstance, hcClient);
+    }
+
+    /**
+     * 创建手动备份
+     *
+     * 创建手动备份。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateManualBackupRequest 请求对象
+     * @return CreateManualBackupResponse
+     */
+    public CreateManualBackupResponse createManualBackup(CreateManualBackupRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.createManualBackup);
+    }
+
+    /**
+     * 创建手动备份
+     *
+     * 创建手动备份。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateManualBackupRequest 请求对象
+     * @return SyncInvoker<CreateManualBackupRequest, CreateManualBackupResponse>
+     */
+    public SyncInvoker<CreateManualBackupRequest, CreateManualBackupResponse> createManualBackupInvoker(CreateManualBackupRequest request) {
+        return new SyncInvoker<CreateManualBackupRequest, CreateManualBackupResponse>(request, GaussDBforopenGaussMeta.createManualBackup, hcClient);
+    }
+
+    /**
+     * 恢复到新实例
+     *
+     * 根据备份恢复新实例。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateRestoreInstanceRequest 请求对象
+     * @return CreateRestoreInstanceResponse
+     */
+    public CreateRestoreInstanceResponse createRestoreInstance(CreateRestoreInstanceRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.createRestoreInstance);
+    }
+
+    /**
+     * 恢复到新实例
+     *
+     * 根据备份恢复新实例。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateRestoreInstanceRequest 请求对象
+     * @return SyncInvoker<CreateRestoreInstanceRequest, CreateRestoreInstanceResponse>
+     */
+    public SyncInvoker<CreateRestoreInstanceRequest, CreateRestoreInstanceResponse> createRestoreInstanceInvoker(CreateRestoreInstanceRequest request) {
+        return new SyncInvoker<CreateRestoreInstanceRequest, CreateRestoreInstanceResponse>(request, GaussDBforopenGaussMeta.createRestoreInstance, hcClient);
     }
 
     /**
@@ -78,6 +258,66 @@ public class GaussDBforopenGaussClient {
     }
 
     /**
+     * 删除手动备份
+     *
+     * 删除手动备份。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteManualBackupRequest 请求对象
+     * @return DeleteManualBackupResponse
+     */
+    public DeleteManualBackupResponse deleteManualBackup(DeleteManualBackupRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.deleteManualBackup);
+    }
+
+    /**
+     * 删除手动备份
+     *
+     * 删除手动备份。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteManualBackupRequest 请求对象
+     * @return SyncInvoker<DeleteManualBackupRequest, DeleteManualBackupResponse>
+     */
+    public SyncInvoker<DeleteManualBackupRequest, DeleteManualBackupResponse> deleteManualBackupInvoker(DeleteManualBackupRequest request) {
+        return new SyncInvoker<DeleteManualBackupRequest, DeleteManualBackupResponse>(request, GaussDBforopenGaussMeta.deleteManualBackup, hcClient);
+    }
+
+    /**
+     * 查询备份列表
+     *
+     * 获取备份列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListBackupsRequest 请求对象
+     * @return ListBackupsResponse
+     */
+    public ListBackupsResponse listBackups(ListBackupsRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.listBackups);
+    }
+
+    /**
+     * 查询备份列表
+     *
+     * 获取备份列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListBackupsRequest 请求对象
+     * @return SyncInvoker<ListBackupsRequest, ListBackupsResponse>
+     */
+    public SyncInvoker<ListBackupsRequest, ListBackupsResponse> listBackupsInvoker(ListBackupsRequest request) {
+        return new SyncInvoker<ListBackupsRequest, ListBackupsResponse>(request, GaussDBforopenGaussMeta.listBackups, hcClient);
+    }
+
+    /**
      * 获取参数模板列表
      *
      * 获取参数模板列表，包括所有数据库的默认参数模板和用户创建的参数模板。
@@ -108,6 +348,66 @@ public class GaussDBforopenGaussClient {
     }
 
     /**
+     * 查询数据库SCHEMA列表
+     *
+     * 查询指定实例的数据库SCHEMA列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListDatabaseSchemasRequest 请求对象
+     * @return ListDatabaseSchemasResponse
+     */
+    public ListDatabaseSchemasResponse listDatabaseSchemas(ListDatabaseSchemasRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.listDatabaseSchemas);
+    }
+
+    /**
+     * 查询数据库SCHEMA列表
+     *
+     * 查询指定实例的数据库SCHEMA列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListDatabaseSchemasRequest 请求对象
+     * @return SyncInvoker<ListDatabaseSchemasRequest, ListDatabaseSchemasResponse>
+     */
+    public SyncInvoker<ListDatabaseSchemasRequest, ListDatabaseSchemasResponse> listDatabaseSchemasInvoker(ListDatabaseSchemasRequest request) {
+        return new SyncInvoker<ListDatabaseSchemasRequest, ListDatabaseSchemasResponse>(request, GaussDBforopenGaussMeta.listDatabaseSchemas, hcClient);
+    }
+
+    /**
+     * 查询数据库列表
+     *
+     * 查询指定实例中的数据库列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListDatabasesRequest 请求对象
+     * @return ListDatabasesResponse
+     */
+    public ListDatabasesResponse listDatabases(ListDatabasesRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.listDatabases);
+    }
+
+    /**
+     * 查询数据库列表
+     *
+     * 查询指定实例中的数据库列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListDatabasesRequest 请求对象
+     * @return SyncInvoker<ListDatabasesRequest, ListDatabasesResponse>
+     */
+    public SyncInvoker<ListDatabasesRequest, ListDatabasesResponse> listDatabasesInvoker(ListDatabasesRequest request) {
+        return new SyncInvoker<ListDatabasesRequest, ListDatabasesResponse>(request, GaussDBforopenGaussMeta.listDatabases, hcClient);
+    }
+
+    /**
      * 查询数据库引擎的版本
      *
      * 查询指定数据库引擎对应的版本信息。
@@ -135,6 +435,36 @@ public class GaussDBforopenGaussClient {
      */
     public SyncInvoker<ListDatastoresRequest, ListDatastoresResponse> listDatastoresInvoker(ListDatastoresRequest request) {
         return new SyncInvoker<ListDatastoresRequest, ListDatastoresResponse>(request, GaussDBforopenGaussMeta.listDatastores, hcClient);
+    }
+
+    /**
+     * 查询数据库用户列表
+     *
+     * 在指定实例中查询数据库用户列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListDbUsersRequest 请求对象
+     * @return ListDbUsersResponse
+     */
+    public ListDbUsersResponse listDbUsers(ListDbUsersRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.listDbUsers);
+    }
+
+    /**
+     * 查询数据库用户列表
+     *
+     * 在指定实例中查询数据库用户列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListDbUsersRequest 请求对象
+     * @return SyncInvoker<ListDbUsersRequest, ListDbUsersResponse>
+     */
+    public SyncInvoker<ListDbUsersRequest, ListDbUsersResponse> listDbUsersInvoker(ListDbUsersRequest request) {
+        return new SyncInvoker<ListDbUsersRequest, ListDbUsersResponse>(request, GaussDBforopenGaussMeta.listDbUsers, hcClient);
     }
 
     /**
@@ -195,6 +525,38 @@ public class GaussDBforopenGaussClient {
      */
     public SyncInvoker<ListInstancesRequest, ListInstancesResponse> listInstancesInvoker(ListInstancesRequest request) {
         return new SyncInvoker<ListInstancesRequest, ListInstancesResponse>(request, GaussDBforopenGaussMeta.listInstances, hcClient);
+    }
+
+    /**
+     * 查询可恢复时间段
+     *
+     * 查询可恢复时间段。
+     * 如果您备份策略中的保存天数设置较长，建议您传入查询日期“date”。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListRestoreTimesRequest 请求对象
+     * @return ListRestoreTimesResponse
+     */
+    public ListRestoreTimesResponse listRestoreTimes(ListRestoreTimesRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.listRestoreTimes);
+    }
+
+    /**
+     * 查询可恢复时间段
+     *
+     * 查询可恢复时间段。
+     * 如果您备份策略中的保存天数设置较长，建议您传入查询日期“date”。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListRestoreTimesRequest 请求对象
+     * @return SyncInvoker<ListRestoreTimesRequest, ListRestoreTimesResponse>
+     */
+    public SyncInvoker<ListRestoreTimesRequest, ListRestoreTimesResponse> listRestoreTimesInvoker(ListRestoreTimesRequest request) {
+        return new SyncInvoker<ListRestoreTimesRequest, ListRestoreTimesResponse>(request, GaussDBforopenGaussMeta.listRestoreTimes, hcClient);
     }
 
     /**
@@ -345,6 +707,66 @@ public class GaussDBforopenGaussClient {
      */
     public SyncInvoker<SetBackupPolicyRequest, SetBackupPolicyResponse> setBackupPolicyInvoker(SetBackupPolicyRequest request) {
         return new SyncInvoker<SetBackupPolicyRequest, SetBackupPolicyResponse>(request, GaussDBforopenGaussMeta.setBackupPolicy, hcClient);
+    }
+
+    /**
+     * 重置数据库帐号密码
+     *
+     * 重置指定数据库帐号的密码。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SetDbUserPwdRequest 请求对象
+     * @return SetDbUserPwdResponse
+     */
+    public SetDbUserPwdResponse setDbUserPwd(SetDbUserPwdRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.setDbUserPwd);
+    }
+
+    /**
+     * 重置数据库帐号密码
+     *
+     * 重置指定数据库帐号的密码。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SetDbUserPwdRequest 请求对象
+     * @return SyncInvoker<SetDbUserPwdRequest, SetDbUserPwdResponse>
+     */
+    public SyncInvoker<SetDbUserPwdRequest, SetDbUserPwdResponse> setDbUserPwdInvoker(SetDbUserPwdRequest request) {
+        return new SyncInvoker<SetDbUserPwdRequest, SetDbUserPwdResponse>(request, GaussDBforopenGaussMeta.setDbUserPwd, hcClient);
+    }
+
+    /**
+     * 查询自动备份策略
+     *
+     * 查询自动备份策略。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowBackupPolicyRequest 请求对象
+     * @return ShowBackupPolicyResponse
+     */
+    public ShowBackupPolicyResponse showBackupPolicy(ShowBackupPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.showBackupPolicy);
+    }
+
+    /**
+     * 查询自动备份策略
+     *
+     * 查询自动备份策略。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowBackupPolicyRequest 请求对象
+     * @return SyncInvoker<ShowBackupPolicyRequest, ShowBackupPolicyResponse>
+     */
+    public SyncInvoker<ShowBackupPolicyRequest, ShowBackupPolicyResponse> showBackupPolicyInvoker(ShowBackupPolicyRequest request) {
+        return new SyncInvoker<ShowBackupPolicyRequest, ShowBackupPolicyResponse>(request, GaussDBforopenGaussMeta.showBackupPolicy, hcClient);
     }
 
     /**

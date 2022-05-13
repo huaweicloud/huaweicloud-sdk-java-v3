@@ -31,7 +31,7 @@ public class TempContentInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
-    private String data;
+    private Object data;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_type")
@@ -109,7 +109,7 @@ public class TempContentInfo {
         this.index = index;
     }
 
-    public TempContentInfo withData(String data) {
+    public TempContentInfo withData(Object data) {
         this.data = data;
         return this;
     }
@@ -118,11 +118,11 @@ public class TempContentInfo {
      * data
      * @return data
      */
-    public String getData() {
+    public Object getData() {
         return data;
     }
 
-    public void setData(String data) {
+    public void setData(Object data) {
         this.data = data;
     }
 

@@ -21,7 +21,7 @@ public class ContentInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bodys")
 
-    private String bodys;
+    private List<Object> bodys = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "check_end_length")
@@ -107,8 +107,24 @@ public class ContentInfo {
         this.bodyType = bodyType;
     }
 
-    public ContentInfo withBodys(String bodys) {
+    public ContentInfo withBodys(List<Object> bodys) {
         this.bodys = bodys;
+        return this;
+    }
+
+    public ContentInfo addBodysItem(Object bodysItem) {
+        if (this.bodys == null) {
+            this.bodys = new ArrayList<>();
+        }
+        this.bodys.add(bodysItem);
+        return this;
+    }
+
+    public ContentInfo withBodys(Consumer<List<Object>> bodysSetter) {
+        if (this.bodys == null) {
+            this.bodys = new ArrayList<>();
+        }
+        bodysSetter.accept(this.bodys);
         return this;
     }
 
@@ -116,11 +132,11 @@ public class ContentInfo {
      * bodys
      * @return bodys
      */
-    public String getBodys() {
+    public List<Object> getBodys() {
         return bodys;
     }
 
-    public void setBodys(String bodys) {
+    public void setBodys(List<Object> bodys) {
         this.bodys = bodys;
     }
 

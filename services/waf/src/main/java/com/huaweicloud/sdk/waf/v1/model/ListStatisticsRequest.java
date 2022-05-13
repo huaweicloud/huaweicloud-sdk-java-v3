@@ -92,7 +92,7 @@ public class ListStatisticsRequest {
     }
 
     /**
-     * 要查询域名列表
+     * 域名id数组，通过查询云模式防护域名列表（ListHost）获取域名id或者通过独享模式域名列表（ListPremiumHost）获取域名id
      * @return hosts
      */
     public String getHosts() {

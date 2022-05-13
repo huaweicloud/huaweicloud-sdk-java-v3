@@ -19,7 +19,7 @@ public class RestoreExistingInstanceRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target")
 
-    private RestoreToExistingInstanceRequestBodyTarget target;
+    private TargetInstanceRequest target;
 
     public RestoreExistingInstanceRequestBody withSource(RestoreExistingInstanceRequestBodySource source) {
         this.source = source;
@@ -48,15 +48,14 @@ public class RestoreExistingInstanceRequestBody {
         this.source = source;
     }
 
-    public RestoreExistingInstanceRequestBody withTarget(RestoreToExistingInstanceRequestBodyTarget target) {
+    public RestoreExistingInstanceRequestBody withTarget(TargetInstanceRequest target) {
         this.target = target;
         return this;
     }
 
-    public RestoreExistingInstanceRequestBody withTarget(
-        Consumer<RestoreToExistingInstanceRequestBodyTarget> targetSetter) {
+    public RestoreExistingInstanceRequestBody withTarget(Consumer<TargetInstanceRequest> targetSetter) {
         if (this.target == null) {
-            this.target = new RestoreToExistingInstanceRequestBodyTarget();
+            this.target = new TargetInstanceRequest();
             targetSetter.accept(this.target);
         }
 
@@ -67,11 +66,11 @@ public class RestoreExistingInstanceRequestBody {
      * Get target
      * @return target
      */
-    public RestoreToExistingInstanceRequestBodyTarget getTarget() {
+    public TargetInstanceRequest getTarget() {
         return target;
     }
 
-    public void setTarget(RestoreToExistingInstanceRequestBodyTarget target) {
+    public void setTarget(TargetInstanceRequest target) {
         this.target = target;
     }
 

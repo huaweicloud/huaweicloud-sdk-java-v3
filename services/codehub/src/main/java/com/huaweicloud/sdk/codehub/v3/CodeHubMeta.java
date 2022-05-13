@@ -586,6 +586,76 @@ public class CodeHubMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<AddProtectBranchV2Request, AddProtectBranchV2Response> addProtectBranchV2 =
+        genForaddProtectBranchV2();
+
+    private static HttpRequestDef<AddProtectBranchV2Request, AddProtectBranchV2Response> genForaddProtectBranchV2() {
+        // basic
+        HttpRequestDef.Builder<AddProtectBranchV2Request, AddProtectBranchV2Response> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, AddProtectBranchV2Request.class, AddProtectBranchV2Response.class)
+                .withName("AddProtectBranchV2")
+                .withUri("/v2/repositories/{repository_id}/branch/{branch_name}/protect")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("repository_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(AddProtectBranchV2Request::getRepositoryId, (req, v) -> {
+                req.setRepositoryId(v);
+            }));
+        builder.<String>withRequestField("branch_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddProtectBranchV2Request::getBranchName, (req, v) -> {
+                req.setBranchName(v);
+            }));
+        builder.<AddProtectRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AddProtectRequest.class),
+            f -> f.withMarshaller(AddProtectBranchV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AddTagV2Request, AddTagV2Response> addTagV2 = genForaddTagV2();
+
+    private static HttpRequestDef<AddTagV2Request, AddTagV2Response> genForaddTagV2() {
+        // basic
+        HttpRequestDef.Builder<AddTagV2Request, AddTagV2Response> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AddTagV2Request.class, AddTagV2Response.class)
+                .withName("AddTagV2")
+                .withUri("/v2/repositories/{repository_id}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("repository_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(AddTagV2Request::getRepositoryId, (req, v) -> {
+                req.setRepositoryId(v);
+            }));
+        builder.<AddTagsRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AddTagsRequest.class),
+            f -> f.withMarshaller(AddTagV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateRepositoryRequest, CreateRepositoryResponse> createRepository =
         genForcreateRepository();
 

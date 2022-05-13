@@ -409,6 +409,39 @@ public class FrsAsyncClient {
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
      *
+     * @param DetectFaceByBase64IntlRequest 请求对象
+     * @return CompletableFuture<DetectFaceByBase64IntlResponse>
+     */
+    public CompletableFuture<DetectFaceByBase64IntlResponse> detectFaceByBase64IntlAsync(
+        DetectFaceByBase64IntlRequest request) {
+        return hcClient.asyncInvokeHttp(request, FrsMeta.detectFaceByBase64Intl);
+    }
+
+    /**
+     * 人脸检测
+     *
+     * 人脸检测是对输入图片进行人脸检测和分析，输出人脸在图像中的位置、人脸关键点位置和人脸关键属性。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DetectFaceByBase64IntlRequest 请求对象
+     * @return AsyncInvoker<DetectFaceByBase64IntlRequest, DetectFaceByBase64IntlResponse>
+     */
+    public AsyncInvoker<DetectFaceByBase64IntlRequest, DetectFaceByBase64IntlResponse> detectFaceByBase64IntlAsyncInvoker(
+        DetectFaceByBase64IntlRequest request) {
+        return new AsyncInvoker<DetectFaceByBase64IntlRequest, DetectFaceByBase64IntlResponse>(request,
+            FrsMeta.detectFaceByBase64Intl, hcClient);
+    }
+
+    /**
+     * 人脸检测
+     *
+     * 人脸检测是对输入图片进行人脸检测和分析，输出人脸在图像中的位置、人脸关键点位置和人脸关键属性。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
      * @param DetectFaceByFileRequest 请求对象
      * @return CompletableFuture<DetectFaceByFileResponse>
      */
@@ -441,6 +474,39 @@ public class FrsAsyncClient {
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
      *
+     * @param DetectFaceByFileIntlRequest 请求对象
+     * @return CompletableFuture<DetectFaceByFileIntlResponse>
+     */
+    public CompletableFuture<DetectFaceByFileIntlResponse> detectFaceByFileIntlAsync(
+        DetectFaceByFileIntlRequest request) {
+        return hcClient.asyncInvokeHttp(request, FrsMeta.detectFaceByFileIntl);
+    }
+
+    /**
+     * 人脸检测
+     *
+     * 人脸检测是对输入图片进行人脸检测和分析，输出人脸在图像中的位置、人脸关键点位置和人脸关键属性。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DetectFaceByFileIntlRequest 请求对象
+     * @return AsyncInvoker<DetectFaceByFileIntlRequest, DetectFaceByFileIntlResponse>
+     */
+    public AsyncInvoker<DetectFaceByFileIntlRequest, DetectFaceByFileIntlResponse> detectFaceByFileIntlAsyncInvoker(
+        DetectFaceByFileIntlRequest request) {
+        return new AsyncInvoker<DetectFaceByFileIntlRequest, DetectFaceByFileIntlResponse>(request,
+            FrsMeta.detectFaceByFileIntl, hcClient);
+    }
+
+    /**
+     * 人脸检测
+     *
+     * 人脸检测是对输入图片进行人脸检测和分析，输出人脸在图像中的位置、人脸关键点位置和人脸关键属性。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
      * @param DetectFaceByUrlRequest 请求对象
      * @return CompletableFuture<DetectFaceByUrlResponse>
      */
@@ -463,6 +529,38 @@ public class FrsAsyncClient {
         DetectFaceByUrlRequest request) {
         return new AsyncInvoker<DetectFaceByUrlRequest, DetectFaceByUrlResponse>(request, FrsMeta.detectFaceByUrl,
             hcClient);
+    }
+
+    /**
+     * 人脸检测
+     *
+     * 人脸检测是对输入图片进行人脸检测和分析，输出人脸在图像中的位置、人脸关键点位置和人脸关键属性。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DetectFaceByUrlIntlRequest 请求对象
+     * @return CompletableFuture<DetectFaceByUrlIntlResponse>
+     */
+    public CompletableFuture<DetectFaceByUrlIntlResponse> detectFaceByUrlIntlAsync(DetectFaceByUrlIntlRequest request) {
+        return hcClient.asyncInvokeHttp(request, FrsMeta.detectFaceByUrlIntl);
+    }
+
+    /**
+     * 人脸检测
+     *
+     * 人脸检测是对输入图片进行人脸检测和分析，输出人脸在图像中的位置、人脸关键点位置和人脸关键属性。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DetectFaceByUrlIntlRequest 请求对象
+     * @return AsyncInvoker<DetectFaceByUrlIntlRequest, DetectFaceByUrlIntlResponse>
+     */
+    public AsyncInvoker<DetectFaceByUrlIntlRequest, DetectFaceByUrlIntlResponse> detectFaceByUrlIntlAsyncInvoker(
+        DetectFaceByUrlIntlRequest request) {
+        return new AsyncInvoker<DetectFaceByUrlIntlRequest, DetectFaceByUrlIntlResponse>(request,
+            FrsMeta.detectFaceByUrlIntl, hcClient);
     }
 
     /**
@@ -505,6 +603,39 @@ public class FrsAsyncClient {
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
      *
+     * @param DetectLiveByBase64IntlRequest 请求对象
+     * @return CompletableFuture<DetectLiveByBase64IntlResponse>
+     */
+    public CompletableFuture<DetectLiveByBase64IntlResponse> detectLiveByBase64IntlAsync(
+        DetectLiveByBase64IntlRequest request) {
+        return hcClient.asyncInvokeHttp(request, FrsMeta.detectLiveByBase64Intl);
+    }
+
+    /**
+     * 动作活体检测
+     *
+     * 动作活体检测是通过判断视频中的人物动作与传入动作列表是否一致来识别视频中人物是否为活体。如果有多张人脸出现，则选取最大的人脸进行判定。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DetectLiveByBase64IntlRequest 请求对象
+     * @return AsyncInvoker<DetectLiveByBase64IntlRequest, DetectLiveByBase64IntlResponse>
+     */
+    public AsyncInvoker<DetectLiveByBase64IntlRequest, DetectLiveByBase64IntlResponse> detectLiveByBase64IntlAsyncInvoker(
+        DetectLiveByBase64IntlRequest request) {
+        return new AsyncInvoker<DetectLiveByBase64IntlRequest, DetectLiveByBase64IntlResponse>(request,
+            FrsMeta.detectLiveByBase64Intl, hcClient);
+    }
+
+    /**
+     * 动作活体检测
+     *
+     * 动作活体检测是通过判断视频中的人物动作与传入动作列表是否一致来识别视频中人物是否为活体。如果有多张人脸出现，则选取最大的人脸进行判定。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
      * @param DetectLiveByFileRequest 请求对象
      * @return CompletableFuture<DetectLiveByFileResponse>
      */
@@ -537,6 +668,39 @@ public class FrsAsyncClient {
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
      *
+     * @param DetectLiveByFileIntlRequest 请求对象
+     * @return CompletableFuture<DetectLiveByFileIntlResponse>
+     */
+    public CompletableFuture<DetectLiveByFileIntlResponse> detectLiveByFileIntlAsync(
+        DetectLiveByFileIntlRequest request) {
+        return hcClient.asyncInvokeHttp(request, FrsMeta.detectLiveByFileIntl);
+    }
+
+    /**
+     * 动作活体检测
+     *
+     * 动作活体检测是通过判断视频中的人物动作与传入动作列表是否一致来识别视频中人物是否为活体。如果有多张人脸出现，则选取最大的人脸进行判定。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DetectLiveByFileIntlRequest 请求对象
+     * @return AsyncInvoker<DetectLiveByFileIntlRequest, DetectLiveByFileIntlResponse>
+     */
+    public AsyncInvoker<DetectLiveByFileIntlRequest, DetectLiveByFileIntlResponse> detectLiveByFileIntlAsyncInvoker(
+        DetectLiveByFileIntlRequest request) {
+        return new AsyncInvoker<DetectLiveByFileIntlRequest, DetectLiveByFileIntlResponse>(request,
+            FrsMeta.detectLiveByFileIntl, hcClient);
+    }
+
+    /**
+     * 动作活体检测
+     *
+     * 动作活体检测是通过判断视频中的人物动作与传入动作列表是否一致来识别视频中人物是否为活体。如果有多张人脸出现，则选取最大的人脸进行判定。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
      * @param DetectLiveByUrlRequest 请求对象
      * @return CompletableFuture<DetectLiveByUrlResponse>
      */
@@ -559,6 +723,38 @@ public class FrsAsyncClient {
         DetectLiveByUrlRequest request) {
         return new AsyncInvoker<DetectLiveByUrlRequest, DetectLiveByUrlResponse>(request, FrsMeta.detectLiveByUrl,
             hcClient);
+    }
+
+    /**
+     * 动作活体检测
+     *
+     * 动作活体检测是通过判断视频中的人物动作与传入动作列表是否一致来识别视频中人物是否为活体。如果有多张人脸出现，则选取最大的人脸进行判定。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DetectLiveByUrlIntlRequest 请求对象
+     * @return CompletableFuture<DetectLiveByUrlIntlResponse>
+     */
+    public CompletableFuture<DetectLiveByUrlIntlResponse> detectLiveByUrlIntlAsync(DetectLiveByUrlIntlRequest request) {
+        return hcClient.asyncInvokeHttp(request, FrsMeta.detectLiveByUrlIntl);
+    }
+
+    /**
+     * 动作活体检测
+     *
+     * 动作活体检测是通过判断视频中的人物动作与传入动作列表是否一致来识别视频中人物是否为活体。如果有多张人脸出现，则选取最大的人脸进行判定。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DetectLiveByUrlIntlRequest 请求对象
+     * @return AsyncInvoker<DetectLiveByUrlIntlRequest, DetectLiveByUrlIntlResponse>
+     */
+    public AsyncInvoker<DetectLiveByUrlIntlRequest, DetectLiveByUrlIntlResponse> detectLiveByUrlIntlAsyncInvoker(
+        DetectLiveByUrlIntlRequest request) {
+        return new AsyncInvoker<DetectLiveByUrlIntlRequest, DetectLiveByUrlIntlResponse>(request,
+            FrsMeta.detectLiveByUrlIntl, hcClient);
     }
 
     /**

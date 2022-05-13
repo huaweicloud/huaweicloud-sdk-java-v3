@@ -293,6 +293,31 @@ public class OcrMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RecognizeHealthCodeRequest, RecognizeHealthCodeResponse> recognizeHealthCode =
+        genForrecognizeHealthCode();
+
+    private static HttpRequestDef<RecognizeHealthCodeRequest, RecognizeHealthCodeResponse> genForrecognizeHealthCode() {
+        // basic
+        HttpRequestDef.Builder<RecognizeHealthCodeRequest, RecognizeHealthCodeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RecognizeHealthCodeRequest.class, RecognizeHealthCodeResponse.class)
+                .withName("RecognizeHealthCode")
+                .withUri("/v2/{project_id}/ocr/health-code")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<HealthCodeRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(HealthCodeRequestBody.class),
+            f -> f.withMarshaller(RecognizeHealthCodeRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RecognizeIdCardRequest, RecognizeIdCardResponse> recognizeIdCard =
         genForrecognizeIdCard();
 

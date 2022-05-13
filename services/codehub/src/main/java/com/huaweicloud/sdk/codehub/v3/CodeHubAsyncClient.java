@@ -495,6 +495,68 @@ public class CodeHubAsyncClient {
     }
 
     /**
+     * 新建保护分支
+     *
+     * 新建保护分支
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param AddProtectBranchV2Request 请求对象
+     * @return CompletableFuture<AddProtectBranchV2Response>
+     */
+    public CompletableFuture<AddProtectBranchV2Response> addProtectBranchV2Async(AddProtectBranchV2Request request) {
+        return hcClient.asyncInvokeHttp(request, CodeHubMeta.addProtectBranchV2);
+    }
+
+    /**
+     * 新建保护分支
+     *
+     * 新建保护分支
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param AddProtectBranchV2Request 请求对象
+     * @return AsyncInvoker<AddProtectBranchV2Request, AddProtectBranchV2Response>
+     */
+    public AsyncInvoker<AddProtectBranchV2Request, AddProtectBranchV2Response> addProtectBranchV2AsyncInvoker(
+        AddProtectBranchV2Request request) {
+        return new AsyncInvoker<AddProtectBranchV2Request, AddProtectBranchV2Response>(request,
+            CodeHubMeta.addProtectBranchV2, hcClient);
+    }
+
+    /**
+     * 新建标签
+     *
+     * 新建标签
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param AddTagV2Request 请求对象
+     * @return CompletableFuture<AddTagV2Response>
+     */
+    public CompletableFuture<AddTagV2Response> addTagV2Async(AddTagV2Request request) {
+        return hcClient.asyncInvokeHttp(request, CodeHubMeta.addTagV2);
+    }
+
+    /**
+     * 新建标签
+     *
+     * 新建标签
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param AddTagV2Request 请求对象
+     * @return AsyncInvoker<AddTagV2Request, AddTagV2Response>
+     */
+    public AsyncInvoker<AddTagV2Request, AddTagV2Response> addTagV2AsyncInvoker(AddTagV2Request request) {
+        return new AsyncInvoker<AddTagV2Request, AddTagV2Response>(request, CodeHubMeta.addTagV2, hcClient);
+    }
+
+    /**
      * 创建仓库
      *
      * 用指定的名称在指定项目上创建仓库。传入参数：仓库名、模板id、是否导入项目成员、归属项目

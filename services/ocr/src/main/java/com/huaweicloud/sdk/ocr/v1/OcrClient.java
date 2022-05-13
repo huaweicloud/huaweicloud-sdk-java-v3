@@ -410,6 +410,38 @@ public class OcrClient {
     }
 
     /**
+     * 防疫健康码识别
+     *
+     * 识别防疫健康码中的文字信息，并将识别的结构化结果返回给用户。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param RecognizeHealthCodeRequest 请求对象
+     * @return RecognizeHealthCodeResponse
+     */
+    public RecognizeHealthCodeResponse recognizeHealthCode(RecognizeHealthCodeRequest request) {
+        return hcClient.syncInvokeHttp(request, OcrMeta.recognizeHealthCode);
+    }
+
+    /**
+     * 防疫健康码识别
+     *
+     * 识别防疫健康码中的文字信息，并将识别的结构化结果返回给用户。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param RecognizeHealthCodeRequest 请求对象
+     * @return SyncInvoker<RecognizeHealthCodeRequest, RecognizeHealthCodeResponse>
+     */
+    public SyncInvoker<RecognizeHealthCodeRequest, RecognizeHealthCodeResponse> recognizeHealthCodeInvoker(
+        RecognizeHealthCodeRequest request) {
+        return new SyncInvoker<RecognizeHealthCodeRequest, RecognizeHealthCodeResponse>(request,
+            OcrMeta.recognizeHealthCode, hcClient);
+    }
+
+    /**
      * 身份证识别
      *
      * 识别身份证图片中的文字内容，并将识别的结果返回给用户。

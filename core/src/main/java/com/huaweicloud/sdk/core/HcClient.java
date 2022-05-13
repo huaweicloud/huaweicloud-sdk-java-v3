@@ -55,7 +55,6 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.Stack;
 import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutionException;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
@@ -155,11 +154,7 @@ public class HcClient implements CustomizationConfigure {
 
         if (StringUtils.isEmpty(httpRequest.getHeader(Constants.AUTHORIZATION)) && Objects.nonNull(credential)) {
             // 鉴权，处理project_id，domain_id信息
-            try {
-                httpRequest = credential.processAuthRequest(httpRequest, this.httpClient).get();
-            } catch (InterruptedException | ExecutionException e) {
-                throw new SdkException(e);
-            }
+            httpRequest = credential.syncProcessAuthRequest(httpRequest, httpClient);
         }
 
         String exchangeId = SdkExchangeCache.putExchange(exchange);

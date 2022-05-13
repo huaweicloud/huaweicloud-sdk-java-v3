@@ -28,6 +28,11 @@ public class ImageDetectionResultBody {
 
     private Map<String, String> categorySuggestions = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ocr_text")
+
+    private String ocrText;
+
     public ImageDetectionResultBody withDetail(ImageDetectionResultDetail detail) {
         this.detail = detail;
         return this;
@@ -104,6 +109,23 @@ public class ImageDetectionResultBody {
         this.categorySuggestions = categorySuggestions;
     }
 
+    public ImageDetectionResultBody withOcrText(String ocrText) {
+        this.ocrText = ocrText;
+        return this;
+    }
+
+    /**
+     * 文本结果
+     * @return ocrText
+     */
+    public String getOcrText() {
+        return ocrText;
+    }
+
+    public void setOcrText(String ocrText) {
+        this.ocrText = ocrText;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -115,12 +137,13 @@ public class ImageDetectionResultBody {
         ImageDetectionResultBody imageDetectionResultBody = (ImageDetectionResultBody) o;
         return Objects.equals(this.detail, imageDetectionResultBody.detail)
             && Objects.equals(this.suggestion, imageDetectionResultBody.suggestion)
-            && Objects.equals(this.categorySuggestions, imageDetectionResultBody.categorySuggestions);
+            && Objects.equals(this.categorySuggestions, imageDetectionResultBody.categorySuggestions)
+            && Objects.equals(this.ocrText, imageDetectionResultBody.ocrText);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(detail, suggestion, categorySuggestions);
+        return Objects.hash(detail, suggestion, categorySuggestions, ocrText);
     }
 
     @Override
@@ -130,6 +153,7 @@ public class ImageDetectionResultBody {
         sb.append("    detail: ").append(toIndentedString(detail)).append("\n");
         sb.append("    suggestion: ").append(toIndentedString(suggestion)).append("\n");
         sb.append("    categorySuggestions: ").append(toIndentedString(categorySuggestions)).append("\n");
+        sb.append("    ocrText: ").append(toIndentedString(ocrText)).append("\n");
         sb.append("}");
         return sb.toString();
     }

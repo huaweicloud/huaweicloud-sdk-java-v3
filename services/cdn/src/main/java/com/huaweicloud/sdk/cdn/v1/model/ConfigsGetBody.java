@@ -75,7 +75,7 @@ public class ConfigsGetBody {
     }
 
     /**
-     * 回源请求头配置。
+     * 回源请求头配置
      * @return originRequestHeader
      */
     public List<OriginRequestHeader> getOriginRequestHeader() {
@@ -108,7 +108,7 @@ public class ConfigsGetBody {
     }
 
     /**
-     * http header配置。
+     * http header配置
      * @return httpResponseHeader
      */
     public List<HttpResponseHeader> getHttpResponseHeader() {

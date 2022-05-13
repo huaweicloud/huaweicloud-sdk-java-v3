@@ -102,7 +102,7 @@ public class SearchFaceByFileRequestBody implements SdkFormDataBody {
     }
 
     /**
-     * 支持字段排序，参考[sort语法](https://support.huaweicloud.com/api-face/face_02_0013.html)。
+     * [支持字段排序，参考[sort语法](https://support.huaweicloud.com/api-face/face_02_0013.html)。](tag:hc)[支持字段排序，参考[sort语法](https://support.huaweicloud.com/intl/zh-cn/api-face/face_02_0013.html)。](tag:hk)
      * @return sort
      */
     public String getSort() {
@@ -119,7 +119,7 @@ public class SearchFaceByFileRequestBody implements SdkFormDataBody {
     }
 
     /**
-     * 过滤条件，参考[filter语法](https://support.huaweicloud.com/api-face/face_02_0014.html)。
+     * [过滤条件，参考[filter语法](https://support.huaweicloud.com/api-face/face_02_0014.html)。](tag:hc)[过滤条件，参考[filter语法](https://support.huaweicloud.com/intl/zh-cn/api-face/face_02_0014.html)。](tag:hk)
      * @return filter
      */
     public String getFilter() {

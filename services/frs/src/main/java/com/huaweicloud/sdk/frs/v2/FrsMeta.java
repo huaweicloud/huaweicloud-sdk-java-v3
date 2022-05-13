@@ -355,6 +355,31 @@ public class FrsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DetectFaceByBase64IntlRequest, DetectFaceByBase64IntlResponse> detectFaceByBase64Intl =
+        genFordetectFaceByBase64Intl();
+
+    private static HttpRequestDef<DetectFaceByBase64IntlRequest, DetectFaceByBase64IntlResponse> genFordetectFaceByBase64Intl() {
+        // basic
+        HttpRequestDef.Builder<DetectFaceByBase64IntlRequest, DetectFaceByBase64IntlResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, DetectFaceByBase64IntlRequest.class, DetectFaceByBase64IntlResponse.class)
+            .withName("DetectFaceByBase64Intl")
+            .withUri("/v2/{project_id}/face-detect")
+            .withContentType("application/json");
+
+        // requests
+        builder.<FaceDetectBase64Req>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(FaceDetectBase64Req.class),
+            f -> f.withMarshaller(DetectFaceByBase64IntlRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DetectFaceByFileRequest, DetectFaceByFileResponse> detectFaceByFile =
         genFordetectFaceByFile();
 
@@ -372,6 +397,31 @@ public class FrsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DetectFaceByFileRequestBody.class),
             f -> f.withMarshaller(DetectFaceByFileRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DetectFaceByFileIntlRequest, DetectFaceByFileIntlResponse> detectFaceByFileIntl =
+        genFordetectFaceByFileIntl();
+
+    private static HttpRequestDef<DetectFaceByFileIntlRequest, DetectFaceByFileIntlResponse> genFordetectFaceByFileIntl() {
+        // basic
+        HttpRequestDef.Builder<DetectFaceByFileIntlRequest, DetectFaceByFileIntlResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, DetectFaceByFileIntlRequest.class, DetectFaceByFileIntlResponse.class)
+            .withName("DetectFaceByFileIntl")
+            .withUri("/v2/{project_id}/face-detect")
+            .withContentType("multipart/form-data");
+
+        // requests
+        builder.<DetectFaceByFileIntlRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DetectFaceByFileIntlRequestBody.class),
+            f -> f.withMarshaller(DetectFaceByFileIntlRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -405,6 +455,31 @@ public class FrsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DetectFaceByUrlIntlRequest, DetectFaceByUrlIntlResponse> detectFaceByUrlIntl =
+        genFordetectFaceByUrlIntl();
+
+    private static HttpRequestDef<DetectFaceByUrlIntlRequest, DetectFaceByUrlIntlResponse> genFordetectFaceByUrlIntl() {
+        // basic
+        HttpRequestDef.Builder<DetectFaceByUrlIntlRequest, DetectFaceByUrlIntlResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DetectFaceByUrlIntlRequest.class, DetectFaceByUrlIntlResponse.class)
+                .withName("DetectFaceByUrlIntl")
+                .withUri("/v2/{project_id}/face-detect")
+                .withContentType("application/json");
+
+        // requests
+        builder.<FaceDetectUrlReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(FaceDetectUrlReq.class),
+            f -> f.withMarshaller(DetectFaceByUrlIntlRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DetectLiveByBase64Request, DetectLiveByBase64Response> detectLiveByBase64 =
         genFordetectLiveByBase64();
 
@@ -422,6 +497,31 @@ public class FrsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(LiveDetectBase64Req.class),
             f -> f.withMarshaller(DetectLiveByBase64Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DetectLiveByBase64IntlRequest, DetectLiveByBase64IntlResponse> detectLiveByBase64Intl =
+        genFordetectLiveByBase64Intl();
+
+    private static HttpRequestDef<DetectLiveByBase64IntlRequest, DetectLiveByBase64IntlResponse> genFordetectLiveByBase64Intl() {
+        // basic
+        HttpRequestDef.Builder<DetectLiveByBase64IntlRequest, DetectLiveByBase64IntlResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, DetectLiveByBase64IntlRequest.class, DetectLiveByBase64IntlResponse.class)
+            .withName("DetectLiveByBase64Intl")
+            .withUri("/v2/{project_id}/live-detect")
+            .withContentType("application/json");
+
+        // requests
+        builder.<LiveDetectBase64Req>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(LiveDetectBase64Req.class),
+            f -> f.withMarshaller(DetectLiveByBase64IntlRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -455,6 +555,31 @@ public class FrsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DetectLiveByFileIntlRequest, DetectLiveByFileIntlResponse> detectLiveByFileIntl =
+        genFordetectLiveByFileIntl();
+
+    private static HttpRequestDef<DetectLiveByFileIntlRequest, DetectLiveByFileIntlResponse> genFordetectLiveByFileIntl() {
+        // basic
+        HttpRequestDef.Builder<DetectLiveByFileIntlRequest, DetectLiveByFileIntlResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, DetectLiveByFileIntlRequest.class, DetectLiveByFileIntlResponse.class)
+            .withName("DetectLiveByFileIntl")
+            .withUri("/v2/{project_id}/live-detect")
+            .withContentType("multipart/form-data");
+
+        // requests
+        builder.<DetectLiveByFileIntlRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DetectLiveByFileIntlRequestBody.class),
+            f -> f.withMarshaller(DetectLiveByFileIntlRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DetectLiveByUrlRequest, DetectLiveByUrlResponse> detectLiveByUrl =
         genFordetectLiveByUrl();
 
@@ -472,6 +597,31 @@ public class FrsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(LiveDetectUrlReq.class),
             f -> f.withMarshaller(DetectLiveByUrlRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DetectLiveByUrlIntlRequest, DetectLiveByUrlIntlResponse> detectLiveByUrlIntl =
+        genFordetectLiveByUrlIntl();
+
+    private static HttpRequestDef<DetectLiveByUrlIntlRequest, DetectLiveByUrlIntlResponse> genFordetectLiveByUrlIntl() {
+        // basic
+        HttpRequestDef.Builder<DetectLiveByUrlIntlRequest, DetectLiveByUrlIntlResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DetectLiveByUrlIntlRequest.class, DetectLiveByUrlIntlResponse.class)
+                .withName("DetectLiveByUrlIntl")
+                .withUri("/v2/{project_id}/live-detect")
+                .withContentType("application/json");
+
+        // requests
+        builder.<LiveDetectUrlReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(LiveDetectUrlReq.class),
+            f -> f.withMarshaller(DetectLiveByUrlIntlRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

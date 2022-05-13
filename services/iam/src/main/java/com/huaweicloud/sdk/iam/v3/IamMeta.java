@@ -3237,6 +3237,125 @@ public class IamMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowDomainRoleAssignmentsRequest, ShowDomainRoleAssignmentsResponse> showDomainRoleAssignments =
+        genForshowDomainRoleAssignments();
+
+    private static HttpRequestDef<ShowDomainRoleAssignmentsRequest, ShowDomainRoleAssignmentsResponse> genForshowDomainRoleAssignments() {
+        // basic
+        HttpRequestDef.Builder<ShowDomainRoleAssignmentsRequest, ShowDomainRoleAssignmentsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowDomainRoleAssignmentsRequest.class,
+                    ShowDomainRoleAssignmentsResponse.class)
+                .withName("ShowDomainRoleAssignments")
+                .withUri("/v3.0/OS-PERMISSION/role-assignments")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("domain_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDomainRoleAssignmentsRequest::getDomainId, (req, v) -> {
+                req.setDomainId(v);
+            }));
+        builder.<String>withRequestField("role_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDomainRoleAssignmentsRequest::getRoleId, (req, v) -> {
+                req.setRoleId(v);
+            }));
+        builder.<String>withRequestField("subject",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDomainRoleAssignmentsRequest::getSubject, (req, v) -> {
+                req.setSubject(v);
+            }));
+        builder.<String>withRequestField("subject.user_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDomainRoleAssignmentsRequest::getSubjectUserId, (req, v) -> {
+                req.setSubjectUserId(v);
+            }));
+        builder.<String>withRequestField("subject.group_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDomainRoleAssignmentsRequest::getSubjectGroupId, (req, v) -> {
+                req.setSubjectGroupId(v);
+            }));
+        builder.<String>withRequestField("subject.agency_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDomainRoleAssignmentsRequest::getSubjectAgencyId, (req, v) -> {
+                req.setSubjectAgencyId(v);
+            }));
+        builder.<String>withRequestField("scope",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDomainRoleAssignmentsRequest::getScope, (req, v) -> {
+                req.setScope(v);
+            }));
+        builder.<String>withRequestField("scope.project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDomainRoleAssignmentsRequest::getScopeProjectId, (req, v) -> {
+                req.setScopeProjectId(v);
+            }));
+        builder.<String>withRequestField("scope.domain_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDomainRoleAssignmentsRequest::getScopeDomainId, (req, v) -> {
+                req.setScopeDomainId(v);
+            }));
+        builder.<String>withRequestField("scope.enterprise_projects_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDomainRoleAssignmentsRequest::getScopeEnterpriseProjectsId, (req, v) -> {
+                req.setScopeEnterpriseProjectsId(v);
+            }));
+        builder.<Boolean>withRequestField("is_inherited",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ShowDomainRoleAssignmentsRequest::getIsInherited, (req, v) -> {
+                req.setIsInherited(v);
+            }));
+        builder.<Boolean>withRequestField("include_group",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ShowDomainRoleAssignmentsRequest::getIncludeGroup, (req, v) -> {
+                req.setIncludeGroup(v);
+            }));
+        builder.<String>withRequestField("page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDomainRoleAssignmentsRequest::getPage, (req, v) -> {
+                req.setPage(v);
+            }));
+        builder.<String>withRequestField("per_page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDomainRoleAssignmentsRequest::getPerPage, (req, v) -> {
+                req.setPerPage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowMetadataRequest, ShowMetadataResponse> showMetadata = genForshowMetadata();
 
     private static HttpRequestDef<ShowMetadataRequest, ShowMetadataResponse> genForshowMetadata() {
