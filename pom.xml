@@ -52,6 +52,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <revision>3.0.88</revision>
         <jackson.version>2.13.2</jackson.version>
+        <jackson-databind.version>2.13.2.2</jackson-databind.version>
         <okhttp.version>3.14.2</okhttp.version>
         <junit.version>4.13.1</junit.version>
         <slf4j.version>1.7.32</slf4j.version>
