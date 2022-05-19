@@ -149,13 +149,6 @@ public class CseMeta {
             f -> f.withMarshaller(ListEnginesRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
             }));
-        builder.<String>withRequestField("X-Enterprise-Project-ID",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEnginesRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
 
         // response
 

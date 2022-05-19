@@ -11,11 +11,6 @@ import java.util.Objects;
 public class ListEnginesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Enterprise-Project-ID")
-
-    private String xEnterpriseProjectID;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
     private Integer offset;
@@ -24,25 +19,6 @@ public class ListEnginesRequest {
     @JsonProperty(value = "limit")
 
     private String limit;
-
-    public ListEnginesRequest withXEnterpriseProjectID(String xEnterpriseProjectID) {
-        this.xEnterpriseProjectID = xEnterpriseProjectID;
-        return this;
-    }
-
-    /**
-     * 如果不带则默认企业项目为\"default\"，ID为\"0\"。
-     * @return xEnterpriseProjectID
-     */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Enterprise-Project-ID")
-    public String getXEnterpriseProjectID() {
-        return xEnterpriseProjectID;
-    }
-
-    public void setXEnterpriseProjectID(String xEnterpriseProjectID) {
-        this.xEnterpriseProjectID = xEnterpriseProjectID;
-    }
 
     public ListEnginesRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -87,21 +63,19 @@ public class ListEnginesRequest {
             return false;
         }
         ListEnginesRequest listEnginesRequest = (ListEnginesRequest) o;
-        return Objects.equals(this.xEnterpriseProjectID, listEnginesRequest.xEnterpriseProjectID)
-            && Objects.equals(this.offset, listEnginesRequest.offset)
+        return Objects.equals(this.offset, listEnginesRequest.offset)
             && Objects.equals(this.limit, listEnginesRequest.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xEnterpriseProjectID, offset, limit);
+        return Objects.hash(offset, limit);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListEnginesRequest {\n");
-        sb.append("    xEnterpriseProjectID: ").append(toIndentedString(xEnterpriseProjectID)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");

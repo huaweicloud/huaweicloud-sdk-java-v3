@@ -23,84 +23,84 @@ public class NodeGroupV10  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="groupName")
+    @JsonProperty(value="GroupName")
     
     
     private String groupName;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="nodeNum")
+    @JsonProperty(value="NodeNum")
     
     
     private Integer nodeNum;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="nodeSize")
+    @JsonProperty(value="NodeSize")
     
     
     private String nodeSize;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="nodeSpecId")
+    @JsonProperty(value="NodeSpecId")
     
     
     private String nodeSpecId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vmProductId")
+    @JsonProperty(value="VmProductId")
     
     
     private String vmProductId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vmSpecCode")
+    @JsonProperty(value="VmSpecCode")
     
     
     private String vmSpecCode;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="nodeProductId")
+    @JsonProperty(value="NodeProductId")
     
     
     private String nodeProductId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="rootVolumeSize")
+    @JsonProperty(value="RootVolumeSize")
     
     
     private Integer rootVolumeSize;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="rootVolumeProductId")
+    @JsonProperty(value="RootVolumeProductId")
     
     
     private String rootVolumeProductId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="rootVolumeType")
+    @JsonProperty(value="RootVolumeType")
     
     
     private String rootVolumeType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="rootVolumeResourceSpecCode")
+    @JsonProperty(value="RootVolumeResourceSpecCode")
     
     
     private String rootVolumeResourceSpecCode;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="rootVolumeResourceType")
+    @JsonProperty(value="RootVolumeResourceType")
     
     
     private String rootVolumeResourceType;
@@ -197,42 +197,42 @@ public class NodeGroupV10  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dataVolumeType")
+    @JsonProperty(value="DataVolumeType")
     
     
     private DataVolumeTypeEnum dataVolumeType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dataVolumeCount")
+    @JsonProperty(value="DataVolumeCount")
     
     
     private Integer dataVolumeCount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dataVolumeSize")
+    @JsonProperty(value="DataVolumeSize")
     
     
     private Integer dataVolumeSize;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dataVolumeProductId")
+    @JsonProperty(value="DataVolumeProductId")
     
     
     private String dataVolumeProductId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dataVolumeResourceSpecCode")
+    @JsonProperty(value="DataVolumeResourceSpecCode")
     
     
     private String dataVolumeResourceSpecCode;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dataVolumeResourceType")
+    @JsonProperty(value="DataVolumeResourceType")
     
     
     private String dataVolumeResourceType;

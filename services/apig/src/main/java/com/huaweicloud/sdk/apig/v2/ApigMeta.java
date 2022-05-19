@@ -1295,6 +1295,13 @@ public class ApigMeta {
             f -> f.withMarshaller(ListEnvironmentVariablesV2Request::getLimit, (req, v) -> {
                 req.setLimit(v);
             }));
+        builder.<String>withRequestField("group_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEnvironmentVariablesV2Request::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            }));
         builder.<String>withRequestField("env_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,

@@ -17,7 +17,7 @@ import java.util.function.Consumer;
 public class UploadMetaDataByUrl {
 
     /**
-     * 上传音视频文件的格式。  取值如下： - 视频文件：MP4、TS、MOV、MXF、MPG、FLV、WMV、AVI、M4V、F4V、MPEG、3GP、ASF、MKV - 音频文件：MP3、OGG、WAV、WMA、APE、FLAC、AAC、AC3、MMF、AMR、M4A、M4R、WV、MP2  若上传格式为音频文件，则不支持转码、添加水印和字幕。
+     * 上传音视频文件的格式。  取值如下： - 视频文件：MP4、TS、MOV、MXF、MPG、FLV、WMV、AVI、M4V、F4V、MPEG、3GP、ASF、MKV、M3U8 - 音频文件：MP3、OGG、WAV、WMA、APE、FLAC、AAC、AC3、MMF、AMR、M4A、M4R、WV、MP2  若上传格式为音频文件，则不支持转码、添加水印和字幕。
      */
     public static final class VideoTypeEnum {
 
@@ -161,6 +161,11 @@ public class UploadMetaDataByUrl {
          */
         public static final VideoTypeEnum MP2 = new VideoTypeEnum("MP2");
 
+        /**
+         * Enum M3U8 for value: "M3U8"
+         */
+        public static final VideoTypeEnum M3U8 = new VideoTypeEnum("M3U8");
+
         private static final Map<String, VideoTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, VideoTypeEnum> createStaticFields() {
@@ -193,6 +198,7 @@ public class UploadMetaDataByUrl {
             map.put("M4R", M4R);
             map.put("WV", WV);
             map.put("MP2", MP2);
+            map.put("M3U8", M3U8);
             return Collections.unmodifiableMap(map);
         }
 
@@ -320,7 +326,7 @@ public class UploadMetaDataByUrl {
     }
 
     /**
-     * 上传音视频文件的格式。  取值如下： - 视频文件：MP4、TS、MOV、MXF、MPG、FLV、WMV、AVI、M4V、F4V、MPEG、3GP、ASF、MKV - 音频文件：MP3、OGG、WAV、WMA、APE、FLAC、AAC、AC3、MMF、AMR、M4A、M4R、WV、MP2  若上传格式为音频文件，则不支持转码、添加水印和字幕。
+     * 上传音视频文件的格式。  取值如下： - 视频文件：MP4、TS、MOV、MXF、MPG、FLV、WMV、AVI、M4V、F4V、MPEG、3GP、ASF、MKV、M3U8 - 音频文件：MP3、OGG、WAV、WMA、APE、FLAC、AAC、AC3、MMF、AMR、M4A、M4R、WV、MP2  若上传格式为音频文件，则不支持转码、添加水印和字幕。
      * @return videoType
      */
     public VideoTypeEnum getVideoType() {

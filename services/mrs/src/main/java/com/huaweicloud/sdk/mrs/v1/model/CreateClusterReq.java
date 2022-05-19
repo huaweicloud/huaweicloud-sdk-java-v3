@@ -1098,7 +1098,7 @@ public class CreateClusterReq  {
 
 
     /**
-     * Core节点数量。  取值范围：[1～500]  Core节点默认的最大值为500，如果用户需要的Core节点数大于500，请申请扩大配额。
+     * Core节点数量。 取值范围：[1～500] Core节点默认的最大值为500，如果用户需要的Core节点数大于500，请申请扩大配额。
      * minimum: 0
      * maximum: 500
      * @return coreNodeNum
@@ -1693,7 +1693,7 @@ public class CreateClusterReq  {
 
 
     /**
-     * 配置MRS Manager管理员用户的密码。 - 密码长度应在8～32个字符之间 - 不能与用户名或者倒序用户名相同 - 必须包含如下4种中至少3种字符的组合     - 至少一个小写字母     - 至少一个大写字母     - 至少一个数字     - 至少一个特殊字符：`~!@#$%^&*()-_=+\\|[{}];:'\",<.>/?和空格
+     * 配置MRS Manager管理员用户的密码。 - 密码长度应在8～26个字符之间 - 不能与用户名或者倒序用户名相同 - 必须包含如下4种字符的组合     - 至少一个小写字母     - 至少一个大写字母     - 至少一个数字     - 至少一个特殊字符：!@$%^-_=+[{}]:,./?
      * @return clusterAdminSecret
      */
     public String getClusterAdminSecret() {
@@ -1715,7 +1715,7 @@ public class CreateClusterReq  {
 
 
     /**
-     * 配置访问集群节点的root密码。当“login_mode”配置为“0”时，请求消息体中包含cluster_master_secret字段。  密码设置约束如下： - 字符串类型，可输入的字符串长度为8-26。 - 至少包含三种字符组合，如大写字母，小写字母，数字，特殊字符（!@$%^-_=+[{}]:,./?），但不能包含空格。 - 不能与用户名或者倒序用户名相同。
+     * 配置访问集群节点的root密码。当“login_mode”配置为“0”时，请求消息体中包含cluster_master_secret字段。  密码设置约束如下： - 字符串类型，可输入的字符串长度为8-26。 - 至少包含4种字符组合，如大写字母，小写字母，数字，特殊字符（!@$%^-_=+[{}]:,./?），但不能包含空格。 - 不能与用户名或者倒序用户名相同。
      * @return clusterMasterSecret
      */
     public String getClusterMasterSecret() {
@@ -1897,7 +1897,7 @@ public class CreateClusterReq  {
     }
 
     /**
-     * 节点列表信息。  说明：如下参数和该参数任选一组进行配置即可。  master_node_num、master_node_size、core_node_num、core_node_size、master_data_volume_type、master_data_volume_size、master_data_volume_count、core_data_volume_type、core_data_volume_size、core_data_volume_count、volume_type、volume_size、task_node_groups。
+     * 节点列表信息。   说明：如下参数和该参数任选一组进行配置即可。   master_node_num、master_node_size、core_node_num、core_node_size、master_data_volume_type、master_data_volume_size、master_data_volume_count、core_data_volume_type、core_data_volume_size、core_data_volume_count、volume_type、volume_size、task_node_groups。
      * @return nodeGroups
      */
     public List<NodeGroupV11> getNodeGroups() {

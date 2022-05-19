@@ -349,7 +349,7 @@ public class ShowJobExeListNewRequest  {
 
 
     /**
-     * 作业名称，只能由字母、数字、中划线和下划线组成，并且长度为1～36个字符。
+     * 作业名称，只能由字母、数字、中划线和下划线组成，并且长度为1～128个字符。
      * @return jobName
      */
     public String getJobName() {
@@ -371,7 +371,7 @@ public class ShowJobExeListNewRequest  {
 
 
     /**
-     * 作业ID，只能由字母、数字、中划线(-)组成，并且长度为1~36字符。
+     * 作业ID，只能由字母、数字、中划线(-)组成，并且长度为1~64字符。
      * @return jobId
      */
     public String getJobId() {

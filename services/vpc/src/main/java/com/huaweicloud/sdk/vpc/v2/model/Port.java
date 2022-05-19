@@ -54,7 +54,7 @@ public class Port {
     private String deviceId;
 
     /**
-     * 功能说明：设备所属 取值范围：合法设备所属，如network:dhcp、network:VIP_PORT、network:router_interface_distributed、network:router_centralized_snat 约束：不支持设置和更新，由系统自动维护
+     * 功能说明：设备所属 取值范围：合法设备所属，如network:dhcp、neutron:VIP_PORT、network:router_interface_distributed、network:router_centralized_snat 约束：不支持设置和更新，由系统自动维护
      */
     public static final class DeviceOwnerEnum {
 
@@ -64,9 +64,9 @@ public class Port {
         public static final DeviceOwnerEnum NETWORK_DHCP = new DeviceOwnerEnum("network:dhcp");
 
         /**
-         * Enum NETWORK_VIP_PORT for value: "network:VIP_PORT"
+         * Enum NEUTRON_VIP_PORT for value: "neutron:VIP_PORT"
          */
-        public static final DeviceOwnerEnum NETWORK_VIP_PORT = new DeviceOwnerEnum("network:VIP_PORT");
+        public static final DeviceOwnerEnum NEUTRON_VIP_PORT = new DeviceOwnerEnum("neutron:VIP_PORT");
 
         /**
          * Enum NETWORK_ROUTER_INTERFACE_DISTRIBUTED for value: "network:router_interface_distributed"
@@ -85,7 +85,7 @@ public class Port {
         private static Map<String, DeviceOwnerEnum> createStaticFields() {
             Map<String, DeviceOwnerEnum> map = new HashMap<>();
             map.put("network:dhcp", NETWORK_DHCP);
-            map.put("network:VIP_PORT", NETWORK_VIP_PORT);
+            map.put("neutron:VIP_PORT", NEUTRON_VIP_PORT);
             map.put("network:router_interface_distributed", NETWORK_ROUTER_INTERFACE_DISTRIBUTED);
             map.put("network:router_centralized_snat", NETWORK_ROUTER_CENTRALIZED_SNAT);
             return Collections.unmodifiableMap(map);
@@ -443,7 +443,7 @@ public class Port {
     }
 
     /**
-     * 功能说明：设备所属 取值范围：合法设备所属，如network:dhcp、network:VIP_PORT、network:router_interface_distributed、network:router_centralized_snat 约束：不支持设置和更新，由系统自动维护
+     * 功能说明：设备所属 取值范围：合法设备所属，如network:dhcp、neutron:VIP_PORT、network:router_interface_distributed、network:router_centralized_snat 约束：不支持设置和更新，由系统自动维护
      * @return deviceOwner
      */
     public DeviceOwnerEnum getDeviceOwner() {

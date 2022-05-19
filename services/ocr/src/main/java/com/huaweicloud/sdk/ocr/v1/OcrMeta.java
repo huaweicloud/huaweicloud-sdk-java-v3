@@ -525,6 +525,31 @@ public class OcrMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RecognizePcrTestRecordRequest, RecognizePcrTestRecordResponse> recognizePcrTestRecord =
+        genForrecognizePcrTestRecord();
+
+    private static HttpRequestDef<RecognizePcrTestRecordRequest, RecognizePcrTestRecordResponse> genForrecognizePcrTestRecord() {
+        // basic
+        HttpRequestDef.Builder<RecognizePcrTestRecordRequest, RecognizePcrTestRecordResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, RecognizePcrTestRecordRequest.class, RecognizePcrTestRecordResponse.class)
+            .withName("RecognizePcrTestRecord")
+            .withUri("/v2/{project_id}/ocr/pcr-test-record")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<PcrTestRecordRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(PcrTestRecordRequestBody.class),
+            f -> f.withMarshaller(RecognizePcrTestRecordRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RecognizeQualificationCertificateRequest, RecognizeQualificationCertificateResponse> recognizeQualificationCertificate =
         genForrecognizeQualificationCertificate();
 

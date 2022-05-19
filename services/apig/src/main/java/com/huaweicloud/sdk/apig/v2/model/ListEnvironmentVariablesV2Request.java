@@ -26,6 +26,11 @@ public class ListEnvironmentVariablesV2Request {
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_id")
+
+    private String groupId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "env_id")
 
     private String envId;
@@ -93,6 +98,23 @@ public class ListEnvironmentVariablesV2Request {
         this.limit = limit;
     }
 
+    public ListEnvironmentVariablesV2Request withGroupId(String groupId) {
+        this.groupId = groupId;
+        return this;
+    }
+
+    /**
+     * API分组编号
+     * @return groupId
+     */
+    public String getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
+    }
+
     public ListEnvironmentVariablesV2Request withEnvId(String envId) {
         this.envId = envId;
         return this;
@@ -156,6 +178,7 @@ public class ListEnvironmentVariablesV2Request {
         return Objects.equals(this.instanceId, listEnvironmentVariablesV2Request.instanceId)
             && Objects.equals(this.offset, listEnvironmentVariablesV2Request.offset)
             && Objects.equals(this.limit, listEnvironmentVariablesV2Request.limit)
+            && Objects.equals(this.groupId, listEnvironmentVariablesV2Request.groupId)
             && Objects.equals(this.envId, listEnvironmentVariablesV2Request.envId)
             && Objects.equals(this.variableName, listEnvironmentVariablesV2Request.variableName)
             && Objects.equals(this.preciseSearch, listEnvironmentVariablesV2Request.preciseSearch);
@@ -163,7 +186,7 @@ public class ListEnvironmentVariablesV2Request {
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, offset, limit, envId, variableName, preciseSearch);
+        return Objects.hash(instanceId, offset, limit, groupId, envId, variableName, preciseSearch);
     }
 
     @Override
@@ -173,6 +196,7 @@ public class ListEnvironmentVariablesV2Request {
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("    envId: ").append(toIndentedString(envId)).append("\n");
         sb.append("    variableName: ").append(toIndentedString(variableName)).append("\n");
         sb.append("    preciseSearch: ").append(toIndentedString(preciseSearch)).append("\n");

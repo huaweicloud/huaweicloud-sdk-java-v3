@@ -807,6 +807,88 @@ public class UpdateInstanceV2Response extends SdkResponse {
 
     private String cbcMetadata;
 
+    /**
+     * 实例使用的负载均衡器类型 - lvs Linux虚拟服务器 - elb 弹性负载均衡，elb仅部分region支持
+     */
+    public static final class LoadbalancerProviderEnum {
+
+        /**
+         * Enum LVS for value: "lvs"
+         */
+        public static final LoadbalancerProviderEnum LVS = new LoadbalancerProviderEnum("lvs");
+
+        /**
+         * Enum ELB for value: "elb"
+         */
+        public static final LoadbalancerProviderEnum ELB = new LoadbalancerProviderEnum("elb");
+
+        private static final Map<String, LoadbalancerProviderEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, LoadbalancerProviderEnum> createStaticFields() {
+            Map<String, LoadbalancerProviderEnum> map = new HashMap<>();
+            map.put("lvs", LVS);
+            map.put("elb", ELB);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        LoadbalancerProviderEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static LoadbalancerProviderEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            LoadbalancerProviderEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new LoadbalancerProviderEnum(value);
+            }
+            return result;
+        }
+
+        public static LoadbalancerProviderEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            LoadbalancerProviderEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof LoadbalancerProviderEnum) {
+                return this.value.equals(((LoadbalancerProviderEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "loadbalancer_provider")
+
+    private LoadbalancerProviderEnum loadbalancerProvider;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
@@ -896,6 +978,31 @@ public class UpdateInstanceV2Response extends SdkResponse {
     @JsonProperty(value = "supported_features")
 
     private List<String> supportedFeatures = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "endpoint_service")
+
+    private EndpointService endpointService;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "endpoint_services")
+
+    private List<EndpointService> endpointServices = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "node_ips")
+
+    private NodeIps nodeIps;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "publicips")
+
+    private List<IpDetails> publicips = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "privateips")
+
+    private List<IpDetails> privateips = null;
 
     public UpdateInstanceV2Response withId(String id) {
         this.id = id;
@@ -1099,6 +1206,23 @@ public class UpdateInstanceV2Response extends SdkResponse {
 
     public void setCbcMetadata(String cbcMetadata) {
         this.cbcMetadata = cbcMetadata;
+    }
+
+    public UpdateInstanceV2Response withLoadbalancerProvider(LoadbalancerProviderEnum loadbalancerProvider) {
+        this.loadbalancerProvider = loadbalancerProvider;
+        return this;
+    }
+
+    /**
+     * 实例使用的负载均衡器类型 - lvs Linux虚拟服务器 - elb 弹性负载均衡，elb仅部分region支持
+     * @return loadbalancerProvider
+     */
+    public LoadbalancerProviderEnum getLoadbalancerProvider() {
+        return loadbalancerProvider;
+    }
+
+    public void setLoadbalancerProvider(LoadbalancerProviderEnum loadbalancerProvider) {
+        this.loadbalancerProvider = loadbalancerProvider;
     }
 
     public UpdateInstanceV2Response withDescription(String description) {
@@ -1423,6 +1547,157 @@ public class UpdateInstanceV2Response extends SdkResponse {
         this.supportedFeatures = supportedFeatures;
     }
 
+    public UpdateInstanceV2Response withEndpointService(EndpointService endpointService) {
+        this.endpointService = endpointService;
+        return this;
+    }
+
+    public UpdateInstanceV2Response withEndpointService(Consumer<EndpointService> endpointServiceSetter) {
+        if (this.endpointService == null) {
+            this.endpointService = new EndpointService();
+            endpointServiceSetter.accept(this.endpointService);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get endpointService
+     * @return endpointService
+     */
+    public EndpointService getEndpointService() {
+        return endpointService;
+    }
+
+    public void setEndpointService(EndpointService endpointService) {
+        this.endpointService = endpointService;
+    }
+
+    public UpdateInstanceV2Response withEndpointServices(List<EndpointService> endpointServices) {
+        this.endpointServices = endpointServices;
+        return this;
+    }
+
+    public UpdateInstanceV2Response addEndpointServicesItem(EndpointService endpointServicesItem) {
+        if (this.endpointServices == null) {
+            this.endpointServices = new ArrayList<>();
+        }
+        this.endpointServices.add(endpointServicesItem);
+        return this;
+    }
+
+    public UpdateInstanceV2Response withEndpointServices(Consumer<List<EndpointService>> endpointServicesSetter) {
+        if (this.endpointServices == null) {
+            this.endpointServices = new ArrayList<>();
+        }
+        endpointServicesSetter.accept(this.endpointServices);
+        return this;
+    }
+
+    /**
+     * 终端节点服务列表
+     * @return endpointServices
+     */
+    public List<EndpointService> getEndpointServices() {
+        return endpointServices;
+    }
+
+    public void setEndpointServices(List<EndpointService> endpointServices) {
+        this.endpointServices = endpointServices;
+    }
+
+    public UpdateInstanceV2Response withNodeIps(NodeIps nodeIps) {
+        this.nodeIps = nodeIps;
+        return this;
+    }
+
+    public UpdateInstanceV2Response withNodeIps(Consumer<NodeIps> nodeIpsSetter) {
+        if (this.nodeIps == null) {
+            this.nodeIps = new NodeIps();
+            nodeIpsSetter.accept(this.nodeIps);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get nodeIps
+     * @return nodeIps
+     */
+    public NodeIps getNodeIps() {
+        return nodeIps;
+    }
+
+    public void setNodeIps(NodeIps nodeIps) {
+        this.nodeIps = nodeIps;
+    }
+
+    public UpdateInstanceV2Response withPublicips(List<IpDetails> publicips) {
+        this.publicips = publicips;
+        return this;
+    }
+
+    public UpdateInstanceV2Response addPublicipsItem(IpDetails publicipsItem) {
+        if (this.publicips == null) {
+            this.publicips = new ArrayList<>();
+        }
+        this.publicips.add(publicipsItem);
+        return this;
+    }
+
+    public UpdateInstanceV2Response withPublicips(Consumer<List<IpDetails>> publicipsSetter) {
+        if (this.publicips == null) {
+            this.publicips = new ArrayList<>();
+        }
+        publicipsSetter.accept(this.publicips);
+        return this;
+    }
+
+    /**
+     * 公网入口地址列表
+     * @return publicips
+     */
+    public List<IpDetails> getPublicips() {
+        return publicips;
+    }
+
+    public void setPublicips(List<IpDetails> publicips) {
+        this.publicips = publicips;
+    }
+
+    public UpdateInstanceV2Response withPrivateips(List<IpDetails> privateips) {
+        this.privateips = privateips;
+        return this;
+    }
+
+    public UpdateInstanceV2Response addPrivateipsItem(IpDetails privateipsItem) {
+        if (this.privateips == null) {
+            this.privateips = new ArrayList<>();
+        }
+        this.privateips.add(privateipsItem);
+        return this;
+    }
+
+    public UpdateInstanceV2Response withPrivateips(Consumer<List<IpDetails>> privateipsSetter) {
+        if (this.privateips == null) {
+            this.privateips = new ArrayList<>();
+        }
+        privateipsSetter.accept(this.privateips);
+        return this;
+    }
+
+    /**
+     * 私网入口地址列表
+     * @return privateips
+     */
+    public List<IpDetails> getPrivateips() {
+        return privateips;
+    }
+
+    public void setPrivateips(List<IpDetails> privateips) {
+        this.privateips = privateips;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -1444,6 +1719,7 @@ public class UpdateInstanceV2Response extends SdkResponse {
             && Objects.equals(this.eipAddress, updateInstanceV2Response.eipAddress)
             && Objects.equals(this.chargingMode, updateInstanceV2Response.chargingMode)
             && Objects.equals(this.cbcMetadata, updateInstanceV2Response.cbcMetadata)
+            && Objects.equals(this.loadbalancerProvider, updateInstanceV2Response.loadbalancerProvider)
             && Objects.equals(this.description, updateInstanceV2Response.description)
             && Objects.equals(this.vpcId, updateInstanceV2Response.vpcId)
             && Objects.equals(this.subnetId, updateInstanceV2Response.subnetId)
@@ -1461,7 +1737,12 @@ public class UpdateInstanceV2Response extends SdkResponse {
             && Objects.equals(this.virsubnetId, updateInstanceV2Response.virsubnetId)
             && Objects.equals(this.romaEipAddress, updateInstanceV2Response.romaEipAddress)
             && Objects.equals(this.listeners, updateInstanceV2Response.listeners)
-            && Objects.equals(this.supportedFeatures, updateInstanceV2Response.supportedFeatures);
+            && Objects.equals(this.supportedFeatures, updateInstanceV2Response.supportedFeatures)
+            && Objects.equals(this.endpointService, updateInstanceV2Response.endpointService)
+            && Objects.equals(this.endpointServices, updateInstanceV2Response.endpointServices)
+            && Objects.equals(this.nodeIps, updateInstanceV2Response.nodeIps)
+            && Objects.equals(this.publicips, updateInstanceV2Response.publicips)
+            && Objects.equals(this.privateips, updateInstanceV2Response.privateips);
     }
 
     @Override
@@ -1478,6 +1759,7 @@ public class UpdateInstanceV2Response extends SdkResponse {
             eipAddress,
             chargingMode,
             cbcMetadata,
+            loadbalancerProvider,
             description,
             vpcId,
             subnetId,
@@ -1495,7 +1777,12 @@ public class UpdateInstanceV2Response extends SdkResponse {
             virsubnetId,
             romaEipAddress,
             listeners,
-            supportedFeatures);
+            supportedFeatures,
+            endpointService,
+            endpointServices,
+            nodeIps,
+            publicips,
+            privateips);
     }
 
     @Override
@@ -1514,6 +1801,7 @@ public class UpdateInstanceV2Response extends SdkResponse {
         sb.append("    eipAddress: ").append(toIndentedString(eipAddress)).append("\n");
         sb.append("    chargingMode: ").append(toIndentedString(chargingMode)).append("\n");
         sb.append("    cbcMetadata: ").append(toIndentedString(cbcMetadata)).append("\n");
+        sb.append("    loadbalancerProvider: ").append(toIndentedString(loadbalancerProvider)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
@@ -1532,6 +1820,11 @@ public class UpdateInstanceV2Response extends SdkResponse {
         sb.append("    romaEipAddress: ").append(toIndentedString(romaEipAddress)).append("\n");
         sb.append("    listeners: ").append(toIndentedString(listeners)).append("\n");
         sb.append("    supportedFeatures: ").append(toIndentedString(supportedFeatures)).append("\n");
+        sb.append("    endpointService: ").append(toIndentedString(endpointService)).append("\n");
+        sb.append("    endpointServices: ").append(toIndentedString(endpointServices)).append("\n");
+        sb.append("    nodeIps: ").append(toIndentedString(nodeIps)).append("\n");
+        sb.append("    publicips: ").append(toIndentedString(publicips)).append("\n");
+        sb.append("    privateips: ").append(toIndentedString(privateips)).append("\n");
         sb.append("}");
         return sb.toString();
     }

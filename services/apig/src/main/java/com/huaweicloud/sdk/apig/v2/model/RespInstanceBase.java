@@ -803,6 +803,88 @@ public class RespInstanceBase {
 
     private String cbcMetadata;
 
+    /**
+     * 实例使用的负载均衡器类型 - lvs Linux虚拟服务器 - elb 弹性负载均衡，elb仅部分region支持
+     */
+    public static final class LoadbalancerProviderEnum {
+
+        /**
+         * Enum LVS for value: "lvs"
+         */
+        public static final LoadbalancerProviderEnum LVS = new LoadbalancerProviderEnum("lvs");
+
+        /**
+         * Enum ELB for value: "elb"
+         */
+        public static final LoadbalancerProviderEnum ELB = new LoadbalancerProviderEnum("elb");
+
+        private static final Map<String, LoadbalancerProviderEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, LoadbalancerProviderEnum> createStaticFields() {
+            Map<String, LoadbalancerProviderEnum> map = new HashMap<>();
+            map.put("lvs", LVS);
+            map.put("elb", ELB);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        LoadbalancerProviderEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static LoadbalancerProviderEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            LoadbalancerProviderEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new LoadbalancerProviderEnum(value);
+            }
+            return result;
+        }
+
+        public static LoadbalancerProviderEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            LoadbalancerProviderEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof LoadbalancerProviderEnum) {
+                return this.value.equals(((LoadbalancerProviderEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "loadbalancer_provider")
+
+    private LoadbalancerProviderEnum loadbalancerProvider;
+
     public RespInstanceBase withId(String id) {
         this.id = id;
         return this;
@@ -1007,6 +1089,23 @@ public class RespInstanceBase {
         this.cbcMetadata = cbcMetadata;
     }
 
+    public RespInstanceBase withLoadbalancerProvider(LoadbalancerProviderEnum loadbalancerProvider) {
+        this.loadbalancerProvider = loadbalancerProvider;
+        return this;
+    }
+
+    /**
+     * 实例使用的负载均衡器类型 - lvs Linux虚拟服务器 - elb 弹性负载均衡，elb仅部分region支持
+     * @return loadbalancerProvider
+     */
+    public LoadbalancerProviderEnum getLoadbalancerProvider() {
+        return loadbalancerProvider;
+    }
+
+    public void setLoadbalancerProvider(LoadbalancerProviderEnum loadbalancerProvider) {
+        this.loadbalancerProvider = loadbalancerProvider;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -1026,7 +1125,8 @@ public class RespInstanceBase {
             && Objects.equals(this.enterpriseProjectId, respInstanceBase.enterpriseProjectId)
             && Objects.equals(this.eipAddress, respInstanceBase.eipAddress)
             && Objects.equals(this.chargingMode, respInstanceBase.chargingMode)
-            && Objects.equals(this.cbcMetadata, respInstanceBase.cbcMetadata);
+            && Objects.equals(this.cbcMetadata, respInstanceBase.cbcMetadata)
+            && Objects.equals(this.loadbalancerProvider, respInstanceBase.loadbalancerProvider);
     }
 
     @Override
@@ -1042,7 +1142,8 @@ public class RespInstanceBase {
             enterpriseProjectId,
             eipAddress,
             chargingMode,
-            cbcMetadata);
+            cbcMetadata,
+            loadbalancerProvider);
     }
 
     @Override
@@ -1061,6 +1162,7 @@ public class RespInstanceBase {
         sb.append("    eipAddress: ").append(toIndentedString(eipAddress)).append("\n");
         sb.append("    chargingMode: ").append(toIndentedString(chargingMode)).append("\n");
         sb.append("    cbcMetadata: ").append(toIndentedString(cbcMetadata)).append("\n");
+        sb.append("    loadbalancerProvider: ").append(toIndentedString(loadbalancerProvider)).append("\n");
         sb.append("}");
         return sb.toString();
     }

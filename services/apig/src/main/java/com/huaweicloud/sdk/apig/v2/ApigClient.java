@@ -1291,10 +1291,10 @@ public class ApigClient {
      * sign_basic | 签名秘钥是否支持basic类型。| 否 |
      * multi_auth | API是否支持双重认证方式。| 否 |
      * backend_client_certificate | 是否开启后端双向认证。| 是 |
-     * ssl_ciphers | 是否支持https加密套件。 | 是 |
+     * ssl_ciphers | 是否支持https加密套件。  | 是 |
      * route | 是否支持自定义路由。| 否 |
      * cors | 是否支持API使用插件功能。| 否 |
-     * real_ip_from_xff | 是否开启使用xff头作为访问控制、流控策略的源ip生效依据。 | 是 |
+     * real_ip_from_xff | 是否开启使用xff头作为访问控制、流控策略的源ip生效依据。  | 是 |
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1330,10 +1330,10 @@ public class ApigClient {
      * sign_basic | 签名秘钥是否支持basic类型。| 否 |
      * multi_auth | API是否支持双重认证方式。| 否 |
      * backend_client_certificate | 是否开启后端双向认证。| 是 |
-     * ssl_ciphers | 是否支持https加密套件。 | 是 |
+     * ssl_ciphers | 是否支持https加密套件。  | 是 |
      * route | 是否支持自定义路由。| 否 |
      * cors | 是否支持API使用插件功能。| 否 |
-     * real_ip_from_xff | 是否开启使用xff头作为访问控制、流控策略的源ip生效依据。 | 是 |
+     * real_ip_from_xff | 是否开启使用xff头作为访问控制、流控策略的源ip生效依据。  | 是 |
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -2860,8 +2860,8 @@ public class ApigClient {
      * 删除API分组
      *
      * 删除指定的API分组。
-     * 
-     * 删除时，会一并删除直接或间接关联到该分组下的所有资源，包括API、独立域名、SSL证书、上架信息、分组下所有API的授权信息、编排信息、白名单配置、认证增强信息等等。并会将外部域名与子域名的绑定关系进行解除（取决于域名cname方式）。
+     * 删除API分组前，要先下线并删除分组下的所有API。
+     * 删除时，会一并删除直接或间接关联到该分组下的所有资源，包括独立域名、SSL证书信息等等。并会将外部域名与子域名的绑定关系进行解除（取决于域名cname方式）。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -2877,8 +2877,8 @@ public class ApigClient {
      * 删除API分组
      *
      * 删除指定的API分组。
-     * 
-     * 删除时，会一并删除直接或间接关联到该分组下的所有资源，包括API、独立域名、SSL证书、上架信息、分组下所有API的授权信息、编排信息、白名单配置、认证增强信息等等。并会将外部域名与子域名的绑定关系进行解除（取决于域名cname方式）。
+     * 删除API分组前，要先下线并删除分组下的所有API。
+     * 删除时，会一并删除直接或间接关联到该分组下的所有资源，包括独立域名、SSL证书信息等等。并会将外部域名与子域名的绑定关系进行解除（取决于域名cname方式）。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.

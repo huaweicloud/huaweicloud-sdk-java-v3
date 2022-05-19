@@ -31,9 +31,9 @@ public class TransportationLicenseResult {
     private String vehicleType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "vehicle_weight")
+    @JsonProperty(value = "maximum_capacity")
 
-    private String vehicleWeight;
+    private String maximumCapacity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vehicle_size")
@@ -143,21 +143,21 @@ public class TransportationLicenseResult {
         this.vehicleType = vehicleType;
     }
 
-    public TransportationLicenseResult withVehicleWeight(String vehicleWeight) {
-        this.vehicleWeight = vehicleWeight;
+    public TransportationLicenseResult withMaximumCapacity(String maximumCapacity) {
+        this.maximumCapacity = maximumCapacity;
         return this;
     }
 
     /**
      * 吨(座)位。 
-     * @return vehicleWeight
+     * @return maximumCapacity
      */
-    public String getVehicleWeight() {
-        return vehicleWeight;
+    public String getMaximumCapacity() {
+        return maximumCapacity;
     }
 
-    public void setVehicleWeight(String vehicleWeight) {
-        this.vehicleWeight = vehicleWeight;
+    public void setMaximumCapacity(String maximumCapacity) {
+        this.maximumCapacity = maximumCapacity;
     }
 
     public TransportationLicenseResult withVehicleSize(String vehicleSize) {
@@ -309,7 +309,7 @@ public class TransportationLicenseResult {
             && Objects.equals(this.licenseNumber, transportationLicenseResult.licenseNumber)
             && Objects.equals(this.vehicleNumber, transportationLicenseResult.vehicleNumber)
             && Objects.equals(this.vehicleType, transportationLicenseResult.vehicleType)
-            && Objects.equals(this.vehicleWeight, transportationLicenseResult.vehicleWeight)
+            && Objects.equals(this.maximumCapacity, transportationLicenseResult.maximumCapacity)
             && Objects.equals(this.vehicleSize, transportationLicenseResult.vehicleSize)
             && Objects.equals(this.issuingAuthority, transportationLicenseResult.issuingAuthority)
             && Objects.equals(this.issueDate, transportationLicenseResult.issueDate)
@@ -326,7 +326,7 @@ public class TransportationLicenseResult {
             licenseNumber,
             vehicleNumber,
             vehicleType,
-            vehicleWeight,
+            maximumCapacity,
             vehicleSize,
             issuingAuthority,
             issueDate,
@@ -345,7 +345,7 @@ public class TransportationLicenseResult {
         sb.append("    licenseNumber: ").append(toIndentedString(licenseNumber)).append("\n");
         sb.append("    vehicleNumber: ").append(toIndentedString(vehicleNumber)).append("\n");
         sb.append("    vehicleType: ").append(toIndentedString(vehicleType)).append("\n");
-        sb.append("    vehicleWeight: ").append(toIndentedString(vehicleWeight)).append("\n");
+        sb.append("    maximumCapacity: ").append(toIndentedString(maximumCapacity)).append("\n");
         sb.append("    vehicleSize: ").append(toIndentedString(vehicleSize)).append("\n");
         sb.append("    issuingAuthority: ").append(toIndentedString(issuingAuthority)).append("\n");
         sb.append("    issueDate: ").append(toIndentedString(issueDate)).append("\n");

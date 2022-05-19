@@ -21,6 +21,11 @@ public class CreateInstanceV2Response extends SdkResponse {
 
     private String message;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "job_id")
+
+    private String jobId;
+
     public CreateInstanceV2Response withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -55,6 +60,23 @@ public class CreateInstanceV2Response extends SdkResponse {
         this.message = message;
     }
 
+    public CreateInstanceV2Response withJobId(String jobId) {
+        this.jobId = jobId;
+        return this;
+    }
+
+    /**
+     * 任务编号
+     * @return jobId
+     */
+    public String getJobId() {
+        return jobId;
+    }
+
+    public void setJobId(String jobId) {
+        this.jobId = jobId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -65,12 +87,13 @@ public class CreateInstanceV2Response extends SdkResponse {
         }
         CreateInstanceV2Response createInstanceV2Response = (CreateInstanceV2Response) o;
         return Objects.equals(this.instanceId, createInstanceV2Response.instanceId)
-            && Objects.equals(this.message, createInstanceV2Response.message);
+            && Objects.equals(this.message, createInstanceV2Response.message)
+            && Objects.equals(this.jobId, createInstanceV2Response.jobId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, message);
+        return Objects.hash(instanceId, message, jobId);
     }
 
     @Override
@@ -79,6 +102,7 @@ public class CreateInstanceV2Response extends SdkResponse {
         sb.append("class CreateInstanceV2Response {\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    message: ").append(toIndentedString(message)).append("\n");
+        sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

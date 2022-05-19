@@ -69,6 +69,11 @@ public class BaseInfo {
     private String videoUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sign_url")
+
+    private String signUrl;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cover_info_array")
 
     private List<CoverInfo> coverInfoArray = null;
@@ -284,6 +289,23 @@ public class BaseInfo {
         this.videoUrl = videoUrl;
     }
 
+    public BaseInfo withSignUrl(String signUrl) {
+        this.signUrl = signUrl;
+        return this;
+    }
+
+    /**
+     * 原视频文件的OBS临时访问地址,仅媒资详情接口生效
+     * @return signUrl
+     */
+    public String getSignUrl() {
+        return signUrl;
+    }
+
+    public void setSignUrl(String signUrl) {
+        this.signUrl = signUrl;
+    }
+
     public BaseInfo withCoverInfoArray(List<CoverInfo> coverInfoArray) {
         this.coverInfoArray = coverInfoArray;
         return this;
@@ -419,6 +441,7 @@ public class BaseInfo {
             && Objects.equals(this.lastModified, baseInfo.lastModified)
             && Objects.equals(this.videoType, baseInfo.videoType) && Objects.equals(this.tags, baseInfo.tags)
             && Objects.equals(this.metaData, baseInfo.metaData) && Objects.equals(this.videoUrl, baseInfo.videoUrl)
+            && Objects.equals(this.signUrl, baseInfo.signUrl)
             && Objects.equals(this.coverInfoArray, baseInfo.coverInfoArray)
             && Objects.equals(this.subtitleInfo, baseInfo.subtitleInfo)
             && Objects.equals(this.sourcePath, baseInfo.sourcePath)
@@ -438,6 +461,7 @@ public class BaseInfo {
             tags,
             metaData,
             videoUrl,
+            signUrl,
             coverInfoArray,
             subtitleInfo,
             sourcePath,
@@ -459,6 +483,7 @@ public class BaseInfo {
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    metaData: ").append(toIndentedString(metaData)).append("\n");
         sb.append("    videoUrl: ").append(toIndentedString(videoUrl)).append("\n");
+        sb.append("    signUrl: ").append(toIndentedString(signUrl)).append("\n");
         sb.append("    coverInfoArray: ").append(toIndentedString(coverInfoArray)).append("\n");
         sb.append("    subtitleInfo: ").append(toIndentedString(subtitleInfo)).append("\n");
         sb.append("    sourcePath: ").append(toIndentedString(sourcePath)).append("\n");

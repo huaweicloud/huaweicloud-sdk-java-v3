@@ -114,7 +114,7 @@ public class AgencyMapping  {
     }
 
     /**
-     * IAM委托映射的用户（组）名称列表。
+     * IAM委托映射的用户（组）名称列表。请前往IAM，单击“用户（组）”按钮，获取用户（组）名称列表。
      * @return identifiers
      */
     public List<String> getIdentifiers() {
@@ -136,7 +136,7 @@ public class AgencyMapping  {
 
 
     /**
-     * 该映射关系绑定的委托的的唯一标识码。
+     * 该映射关系绑定的委托的的唯一标识码。请前往IAM，单击“委托”按钮，进入委托页面，将鼠标放置委托名称上，在弹窗中获取委托唯一标识码。
      * @return agencyId
      */
     public String getAgencyId() {

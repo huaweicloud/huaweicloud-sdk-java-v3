@@ -99,7 +99,7 @@ public class ListDomainLogsRequest {
     }
 
     /**
-     * 查询日期，yyyyMMddHHmmss。 - 查询结果为开始时间之后24小时内的日志数据 - 只能查最近一个月内的数据
+     * 查询开始时间，格式为yyyyMMddHHmmss。 - 查询结果为开始时间之后24小时内的日志数据 - 只能查最近一个月内的数据
      * @return queryDate
      */
     public String getQueryDate() {

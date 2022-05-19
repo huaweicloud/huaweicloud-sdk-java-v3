@@ -97,7 +97,7 @@ public class Subtitle {
     private TypeEnum type;
 
     /**
-     * 字幕语音类型。  取值如下： - CN：表示中文字幕。 - EN：表示英文字幕。
+     * 字幕语言类型。  取值如下： - CN：表示中文字幕。 - EN：表示英文字幕。
      */
     public static final class LanguageEnum {
 
@@ -228,7 +228,7 @@ public class Subtitle {
     }
 
     /**
-     * 字幕语音类型。  取值如下： - CN：表示中文字幕。 - EN：表示英文字幕。
+     * 字幕语言类型。  取值如下： - CN：表示中文字幕。 - EN：表示英文字幕。
      * @return language
      */
     public LanguageEnum getLanguage() {

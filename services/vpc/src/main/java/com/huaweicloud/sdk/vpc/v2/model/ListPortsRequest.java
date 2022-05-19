@@ -61,9 +61,9 @@ public class ListPortsRequest {
         public static final DeviceOwnerEnum NETWORK_DHCP = new DeviceOwnerEnum("network:dhcp");
 
         /**
-         * Enum NETWORK_VIP_PORT for value: "network:VIP_PORT"
+         * Enum NEUTRON_VIP_PORT for value: "neutron:VIP_PORT"
          */
-        public static final DeviceOwnerEnum NETWORK_VIP_PORT = new DeviceOwnerEnum("network:VIP_PORT");
+        public static final DeviceOwnerEnum NEUTRON_VIP_PORT = new DeviceOwnerEnum("neutron:VIP_PORT");
 
         /**
          * Enum NETWORK_ROUTER_INTERFACE_DISTRIBUTED for value: "network:router_interface_distributed"
@@ -82,7 +82,7 @@ public class ListPortsRequest {
         private static Map<String, DeviceOwnerEnum> createStaticFields() {
             Map<String, DeviceOwnerEnum> map = new HashMap<>();
             map.put("network:dhcp", NETWORK_DHCP);
-            map.put("network:VIP_PORT", NETWORK_VIP_PORT);
+            map.put("neutron:VIP_PORT", NEUTRON_VIP_PORT);
             map.put("network:router_interface_distributed", NETWORK_ROUTER_INTERFACE_DISTRIBUTED);
             map.put("network:router_centralized_snat", NETWORK_ROUTER_CENTRALIZED_SNAT);
             return Collections.unmodifiableMap(map);

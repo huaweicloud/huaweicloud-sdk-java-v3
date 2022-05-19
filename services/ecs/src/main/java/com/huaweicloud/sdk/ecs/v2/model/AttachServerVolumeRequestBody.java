@@ -16,6 +16,11 @@ public class AttachServerVolumeRequestBody {
 
     private AttachServerVolumeOption volumeAttachment;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dry_run")
+
+    private Boolean dryRun;
+
     public AttachServerVolumeRequestBody withVolumeAttachment(AttachServerVolumeOption volumeAttachment) {
         this.volumeAttachment = volumeAttachment;
         return this;
@@ -43,6 +48,23 @@ public class AttachServerVolumeRequestBody {
         this.volumeAttachment = volumeAttachment;
     }
 
+    public AttachServerVolumeRequestBody withDryRun(Boolean dryRun) {
+        this.dryRun = dryRun;
+        return this;
+    }
+
+    /**
+     * 是否只预检此次请求。  true：发送检查请求，不会挂载磁盘。检查项包括是否填写了必需参数、请求格式、业务限制。如果检查不通过，则返回对应错误。如果检查通过，则返回响应结果。 false：发送正常请求，通过检查后并且进行挂载磁盘请求。 默认值：false
+     * @return dryRun
+     */
+    public Boolean getDryRun() {
+        return dryRun;
+    }
+
+    public void setDryRun(Boolean dryRun) {
+        this.dryRun = dryRun;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -52,12 +74,13 @@ public class AttachServerVolumeRequestBody {
             return false;
         }
         AttachServerVolumeRequestBody attachServerVolumeRequestBody = (AttachServerVolumeRequestBody) o;
-        return Objects.equals(this.volumeAttachment, attachServerVolumeRequestBody.volumeAttachment);
+        return Objects.equals(this.volumeAttachment, attachServerVolumeRequestBody.volumeAttachment)
+            && Objects.equals(this.dryRun, attachServerVolumeRequestBody.dryRun);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(volumeAttachment);
+        return Objects.hash(volumeAttachment, dryRun);
     }
 
     @Override
@@ -65,6 +88,7 @@ public class AttachServerVolumeRequestBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class AttachServerVolumeRequestBody {\n");
         sb.append("    volumeAttachment: ").append(toIndentedString(volumeAttachment)).append("\n");
+        sb.append("    dryRun: ").append(toIndentedString(dryRun)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -37,6 +37,8 @@ public class CseRegion {
     public static final Region RU_NORTHWEST_2 =
         new Region("ru-northwest-2", "https://cse.ru-northwest-2.myhuaweicloud.com");
 
+    public static final Region CN_SOUTH_2 = new Region("cn-south-2", "https://cse.cn-south-2.myhuaweicloud.com");
+
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
 
     private static Map<String, Region> createStaticFields() {
@@ -52,6 +54,7 @@ public class CseRegion {
         map.put("ap-southeast-1", AP_SOUTHEAST_1);
         map.put("ap-southeast-3", AP_SOUTHEAST_3);
         map.put("ru-northwest-2", RU_NORTHWEST_2);
+        map.put("cn-south-2", CN_SOUTH_2);
         return Collections.unmodifiableMap(map);
     }
 

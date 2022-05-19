@@ -147,7 +147,7 @@ public class SubmitJobReqV11  {
 
 
     /**
-     * 执行程序Jar包或sql文件地址，需要满足如下要求：  - 最多为1023字符，不能包含;|&><'$特殊字符，且不可为空或全空格。 - 需要以“/”或“s3a://”开头。OBS路径不支持KMS加密的文件或程序。 - Spark Script需要以“.sql”结尾，MapReduce和Spark Jar需要以“.jar”结尾，sql和jar不区分大小写。
+     * 执行程序Jar包或sql文件地址，需要满足如下要求：  - 最多为1023字符，不能包含;|&><'$特殊字符，且不可为空或全空格。 - 需要以“/”或“s3a://”开头。OBS路径不支持KMS加密的文件或程序。 - Spark Script需要以“.sql”结尾，MapReduce和Spark Jar需要以“.jar”结尾，sql和jar不区分大小写。  说明： 作业类型为MapReduce或Spark时，jar_path参数为必选。
      * @return jarPath
      */
     public String getJarPath() {
