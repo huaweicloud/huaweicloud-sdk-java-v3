@@ -151,6 +151,39 @@ public class BcsAsyncClient {
     }
 
     /**
+     * BCS某个组织中的节点退出某通道
+     *
+     * 该接口用于BCS某个组织中的节点退出某通道。当节点为通道中最后一个节点时，需要使用组织退通道的接口来将通道中的最后一个节点退出。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param BatchRemovePeersFromChannelRequest 请求对象
+     * @return CompletableFuture<BatchRemovePeersFromChannelResponse>
+     */
+    public CompletableFuture<BatchRemovePeersFromChannelResponse> batchRemovePeersFromChannelAsync(
+        BatchRemovePeersFromChannelRequest request) {
+        return hcClient.asyncInvokeHttp(request, BcsMeta.batchRemovePeersFromChannel);
+    }
+
+    /**
+     * BCS某个组织中的节点退出某通道
+     *
+     * 该接口用于BCS某个组织中的节点退出某通道。当节点为通道中最后一个节点时，需要使用组织退通道的接口来将通道中的最后一个节点退出。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param BatchRemovePeersFromChannelRequest 请求对象
+     * @return AsyncInvoker<BatchRemovePeersFromChannelRequest, BatchRemovePeersFromChannelResponse>
+     */
+    public AsyncInvoker<BatchRemovePeersFromChannelRequest, BatchRemovePeersFromChannelResponse> batchRemovePeersFromChannelAsyncInvoker(
+        BatchRemovePeersFromChannelRequest request) {
+        return new AsyncInvoker<BatchRemovePeersFromChannelRequest, BatchRemovePeersFromChannelResponse>(request,
+            BcsMeta.batchRemovePeersFromChannel, hcClient);
+    }
+
+    /**
      * 生成用户证书
      *
      * 通过用户名生成指定服务实例组织用户证书
@@ -245,6 +278,37 @@ public class BcsAsyncClient {
         DeleteBlockchainRequest request) {
         return new AsyncInvoker<DeleteBlockchainRequest, DeleteBlockchainResponse>(request, BcsMeta.deleteBlockchain,
             hcClient);
+    }
+
+    /**
+     * BCS删除某个通道
+     *
+     * 该接口用于BCS删除某个通道。仅支持删除空通道
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteChannelRequest 请求对象
+     * @return CompletableFuture<DeleteChannelResponse>
+     */
+    public CompletableFuture<DeleteChannelResponse> deleteChannelAsync(DeleteChannelRequest request) {
+        return hcClient.asyncInvokeHttp(request, BcsMeta.deleteChannel);
+    }
+
+    /**
+     * BCS删除某个通道
+     *
+     * 该接口用于BCS删除某个通道。仅支持删除空通道
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteChannelRequest 请求对象
+     * @return AsyncInvoker<DeleteChannelRequest, DeleteChannelResponse>
+     */
+    public AsyncInvoker<DeleteChannelRequest, DeleteChannelResponse> deleteChannelAsyncInvoker(
+        DeleteChannelRequest request) {
+        return new AsyncInvoker<DeleteChannelRequest, DeleteChannelResponse>(request, BcsMeta.deleteChannel, hcClient);
     }
 
     /**
@@ -405,6 +469,39 @@ public class BcsAsyncClient {
         HandleNotificationRequest request) {
         return new AsyncInvoker<HandleNotificationRequest, HandleNotificationResponse>(request,
             BcsMeta.handleNotification, hcClient);
+    }
+
+    /**
+     * 被邀请方退出指定联盟
+     *
+     * 被邀请方退出联盟
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param HandleUnionMemberQuitListRequest 请求对象
+     * @return CompletableFuture<HandleUnionMemberQuitListResponse>
+     */
+    public CompletableFuture<HandleUnionMemberQuitListResponse> handleUnionMemberQuitListAsync(
+        HandleUnionMemberQuitListRequest request) {
+        return hcClient.asyncInvokeHttp(request, BcsMeta.handleUnionMemberQuitList);
+    }
+
+    /**
+     * 被邀请方退出指定联盟
+     *
+     * 被邀请方退出联盟
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param HandleUnionMemberQuitListRequest 请求对象
+     * @return AsyncInvoker<HandleUnionMemberQuitListRequest, HandleUnionMemberQuitListResponse>
+     */
+    public AsyncInvoker<HandleUnionMemberQuitListRequest, HandleUnionMemberQuitListResponse> handleUnionMemberQuitListAsyncInvoker(
+        HandleUnionMemberQuitListRequest request) {
+        return new AsyncInvoker<HandleUnionMemberQuitListRequest, HandleUnionMemberQuitListResponse>(request,
+            BcsMeta.handleUnionMemberQuitList, hcClient);
     }
 
     /**

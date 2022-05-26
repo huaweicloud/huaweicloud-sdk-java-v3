@@ -110,7 +110,7 @@ public class InvitorInfo {
     }
 
     /**
-     * 邀请方的服务id
+     * 邀请方的BCS服务实例id
      * @return invitorBcsId
      */
     public String getInvitorBcsId() {
@@ -127,7 +127,7 @@ public class InvitorInfo {
     }
 
     /**
-     * 邀请方的服务名
+     * 邀请方的BCS服务实例名
      * @return invitorBcsName
      */
     public String getInvitorBcsName() {

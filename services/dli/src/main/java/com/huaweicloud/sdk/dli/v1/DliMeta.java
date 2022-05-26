@@ -350,6 +350,34 @@ public class DliMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateElasticResourcePoolRequest, CreateElasticResourcePoolResponse> createElasticResourcePool =
+        genForcreateElasticResourcePool();
+
+    private static HttpRequestDef<CreateElasticResourcePoolRequest, CreateElasticResourcePoolResponse> genForcreateElasticResourcePool() {
+        // basic
+        HttpRequestDef.Builder<CreateElasticResourcePoolRequest, CreateElasticResourcePoolResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateElasticResourcePoolRequest.class,
+                    CreateElasticResourcePoolResponse.class)
+                .withName("CreateElasticResourcePool")
+                .withUri("/v3/{project_id}/elastic-resource-pools")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateElasticResourcePoolInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateElasticResourcePoolInfo.class),
+            f -> f.withMarshaller(CreateElasticResourcePoolRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateEnhancedConnectionRequest, CreateEnhancedConnectionResponse> createEnhancedConnection =
         genForcreateEnhancedConnection();
 
@@ -561,6 +589,34 @@ public class DliMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteElasticResourcePoolRequest, DeleteElasticResourcePoolResponse> deleteElasticResourcePool =
+        genFordeleteElasticResourcePool();
+
+    private static HttpRequestDef<DeleteElasticResourcePoolRequest, DeleteElasticResourcePoolResponse> genFordeleteElasticResourcePool() {
+        // basic
+        HttpRequestDef.Builder<DeleteElasticResourcePoolRequest, DeleteElasticResourcePoolResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteElasticResourcePoolRequest.class,
+                    DeleteElasticResourcePoolResponse.class)
+                .withName("DeleteElasticResourcePool")
+                .withUri("/v3/{project_id}/elastic-resource-pools/{elastic_resource_pool_name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("elastic_resource_pool_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteElasticResourcePoolRequest::getElasticResourcePoolName, (req, v) -> {
+                req.setElasticResourcePoolName(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteEnhancedConnectionRequest, DeleteEnhancedConnectionResponse> deleteEnhancedConnection =
         genFordeleteEnhancedConnection();
 
@@ -713,6 +769,60 @@ public class DliMeta {
                 .withContentType("application/json");
 
         // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListElasticResourcePoolsRequest, ListElasticResourcePoolsResponse> listElasticResourcePools =
+        genForlistElasticResourcePools();
+
+    private static HttpRequestDef<ListElasticResourcePoolsRequest, ListElasticResourcePoolsResponse> genForlistElasticResourcePools() {
+        // basic
+        HttpRequestDef.Builder<ListElasticResourcePoolsRequest, ListElasticResourcePoolsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ListElasticResourcePoolsRequest.class, ListElasticResourcePoolsResponse.class)
+                .withName("ListElasticResourcePools")
+                .withUri("/v3/{project_id}/elastic-resource-pools")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListElasticResourcePoolsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListElasticResourcePoolsRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListElasticResourcePoolsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<ListElasticResourcePoolsRequest.StatusEnum>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListElasticResourcePoolsRequest.StatusEnum.class),
+            f -> f.withMarshaller(ListElasticResourcePoolsRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            }));
+        builder.<String>withRequestField("tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListElasticResourcePoolsRequest::getTags, (req, v) -> {
+                req.setTags(v);
+            }));
 
         // response
 
@@ -1127,6 +1237,41 @@ public class DliMeta {
             f -> f.withMarshaller(StopFlinkJobResponse::getBody, (response, data) -> {
                 response.setBody(data);
             }).withInnerContainerType(CommonResp.class));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateElasticResourcePoolRequest, UpdateElasticResourcePoolResponse> updateElasticResourcePool =
+        genForupdateElasticResourcePool();
+
+    private static HttpRequestDef<UpdateElasticResourcePoolRequest, UpdateElasticResourcePoolResponse> genForupdateElasticResourcePool() {
+        // basic
+        HttpRequestDef.Builder<UpdateElasticResourcePoolRequest, UpdateElasticResourcePoolResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateElasticResourcePoolRequest.class,
+                    UpdateElasticResourcePoolResponse.class)
+                .withName("UpdateElasticResourcePool")
+                .withUri("/v3/{project_id}/elastic-resource-pools/{elastic_resource_pool_name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("elastic_resource_pool_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateElasticResourcePoolRequest::getElasticResourcePoolName, (req, v) -> {
+                req.setElasticResourcePoolName(v);
+            }));
+        builder.<UpdateElasticResourcePoolInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UpdateElasticResourcePoolInfo.class),
+            f -> f.withMarshaller(UpdateElasticResourcePoolRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
 
         return builder.build();
     }

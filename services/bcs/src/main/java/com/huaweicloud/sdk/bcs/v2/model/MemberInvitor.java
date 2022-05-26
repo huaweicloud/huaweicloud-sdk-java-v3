@@ -41,7 +41,7 @@ public class MemberInvitor {
     }
 
     /**
-     * 邀请方实例id
+     * 邀请方BCS服务实例id
      * @return invitorBcsId
      */
     public String getInvitorBcsId() {
@@ -58,7 +58,7 @@ public class MemberInvitor {
     }
 
     /**
-     * 邀请方实例名称
+     * 邀请方BCS服务实例名称
      * @return invitorBcsName
      */
     public String getInvitorBcsName() {

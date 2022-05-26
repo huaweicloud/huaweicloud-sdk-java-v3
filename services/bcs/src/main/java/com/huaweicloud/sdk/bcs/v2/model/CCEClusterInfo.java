@@ -20,6 +20,11 @@ public class CCEClusterInfo {
 
     private String clusterName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cluster_platform_type")
+
+    private String clusterPlatformType;
+
     public CCEClusterInfo withClusterId(String clusterId) {
         this.clusterId = clusterId;
         return this;
@@ -54,6 +59,23 @@ public class CCEClusterInfo {
         this.clusterName = clusterName;
     }
 
+    public CCEClusterInfo withClusterPlatformType(String clusterPlatformType) {
+        this.clusterPlatformType = clusterPlatformType;
+        return this;
+    }
+
+    /**
+     * 集群CPU架构类型：X86（VirtualMachine），ARM（ARM64）
+     * @return clusterPlatformType
+     */
+    public String getClusterPlatformType() {
+        return clusterPlatformType;
+    }
+
+    public void setClusterPlatformType(String clusterPlatformType) {
+        this.clusterPlatformType = clusterPlatformType;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -64,12 +86,13 @@ public class CCEClusterInfo {
         }
         CCEClusterInfo ccEClusterInfo = (CCEClusterInfo) o;
         return Objects.equals(this.clusterId, ccEClusterInfo.clusterId)
-            && Objects.equals(this.clusterName, ccEClusterInfo.clusterName);
+            && Objects.equals(this.clusterName, ccEClusterInfo.clusterName)
+            && Objects.equals(this.clusterPlatformType, ccEClusterInfo.clusterPlatformType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clusterId, clusterName);
+        return Objects.hash(clusterId, clusterName, clusterPlatformType);
     }
 
     @Override
@@ -78,6 +101,7 @@ public class CCEClusterInfo {
         sb.append("class CCEClusterInfo {\n");
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
         sb.append("    clusterName: ").append(toIndentedString(clusterName)).append("\n");
+        sb.append("    clusterPlatformType: ").append(toIndentedString(clusterPlatformType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

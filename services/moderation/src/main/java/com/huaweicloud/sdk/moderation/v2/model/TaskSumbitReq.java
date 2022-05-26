@@ -111,6 +111,21 @@ public class TaskSumbitReq {
 
     private List<CategoriesEnum> categories = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "moderation_rule")
+
+    private String moderationRule;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ad_categories")
+
+    private List<String> adCategories = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "show_ocr_text")
+
+    private Boolean showOcrText;
+
     public TaskSumbitReq withUrls(List<String> urls) {
         this.urls = urls;
         return this;
@@ -177,6 +192,73 @@ public class TaskSumbitReq {
         this.categories = categories;
     }
 
+    public TaskSumbitReq withModerationRule(String moderationRule) {
+        this.moderationRule = moderationRule;
+        return this;
+    }
+
+    /**
+     * 图像审核规则名称，默认使用default规则。 审核规则的创建和使用请参见[配置审核规则](https://support.huaweicloud.com/api-moderation/moderation_03_0063.html)。 
+     * @return moderationRule
+     */
+    public String getModerationRule() {
+        return moderationRule;
+    }
+
+    public void setModerationRule(String moderationRule) {
+        this.moderationRule = moderationRule;
+    }
+
+    public TaskSumbitReq withAdCategories(List<String> adCategories) {
+        this.adCategories = adCategories;
+        return this;
+    }
+
+    public TaskSumbitReq addAdCategoriesItem(String adCategoriesItem) {
+        if (this.adCategories == null) {
+            this.adCategories = new ArrayList<>();
+        }
+        this.adCategories.add(adCategoriesItem);
+        return this;
+    }
+
+    public TaskSumbitReq withAdCategories(Consumer<List<String>> adCategoriesSetter) {
+        if (this.adCategories == null) {
+            this.adCategories = new ArrayList<>();
+        }
+        adCategoriesSetter.accept(this.adCategories);
+        return this;
+    }
+
+    /**
+     * 图文审核检测场景。当categories包含ad时，该参数生效。  当前支持的场景有系统场景和用户自定义场景: - 系统场景为：   - qr_code：二维码   - politics：涉政   - porn：涉黄   - ad：广告   - abuse：辱骂   - contraband：违禁品 - 用户自定义场景为：自定义黑名单词库。  自定义词库的创建和使用请参见[配置自定义词库](https://support.huaweicloud.com/api-moderation/moderation_03_0027.html)。 
+     * @return adCategories
+     */
+    public List<String> getAdCategories() {
+        return adCategories;
+    }
+
+    public void setAdCategories(List<String> adCategories) {
+        this.adCategories = adCategories;
+    }
+
+    public TaskSumbitReq withShowOcrText(Boolean showOcrText) {
+        this.showOcrText = showOcrText;
+        return this;
+    }
+
+    /**
+     * 是否返回ocr识别的结果。
+     * @return showOcrText
+     */
+    public Boolean getShowOcrText() {
+        return showOcrText;
+    }
+
+    public void setShowOcrText(Boolean showOcrText) {
+        this.showOcrText = showOcrText;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -187,12 +269,15 @@ public class TaskSumbitReq {
         }
         TaskSumbitReq taskSumbitReq = (TaskSumbitReq) o;
         return Objects.equals(this.urls, taskSumbitReq.urls)
-            && Objects.equals(this.categories, taskSumbitReq.categories);
+            && Objects.equals(this.categories, taskSumbitReq.categories)
+            && Objects.equals(this.moderationRule, taskSumbitReq.moderationRule)
+            && Objects.equals(this.adCategories, taskSumbitReq.adCategories)
+            && Objects.equals(this.showOcrText, taskSumbitReq.showOcrText);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(urls, categories);
+        return Objects.hash(urls, categories, moderationRule, adCategories, showOcrText);
     }
 
     @Override
@@ -201,6 +286,9 @@ public class TaskSumbitReq {
         sb.append("class TaskSumbitReq {\n");
         sb.append("    urls: ").append(toIndentedString(urls)).append("\n");
         sb.append("    categories: ").append(toIndentedString(categories)).append("\n");
+        sb.append("    moderationRule: ").append(toIndentedString(moderationRule)).append("\n");
+        sb.append("    adCategories: ").append(toIndentedString(adCategories)).append("\n");
+        sb.append("    showOcrText: ").append(toIndentedString(showOcrText)).append("\n");
         sb.append("}");
         return sb.toString();
     }

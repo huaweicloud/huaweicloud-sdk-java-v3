@@ -57,7 +57,7 @@ public class GaussDBforOpenGaussUserForListAttributes  {
     @JsonProperty(value="rolconnlimit")
     
     
-    private Boolean rolconnlimit;
+    private Integer rolconnlimit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -183,7 +183,7 @@ public class GaussDBforOpenGaussUserForListAttributes  {
 
     
 
-    public GaussDBforOpenGaussUserForListAttributes withRolconnlimit(Boolean rolconnlimit) {
+    public GaussDBforOpenGaussUserForListAttributes withRolconnlimit(Integer rolconnlimit) {
         this.rolconnlimit = rolconnlimit;
         return this;
     }
@@ -195,11 +195,11 @@ public class GaussDBforOpenGaussUserForListAttributes  {
      * 用户连接实例的最大并发连接数。-1表示没有限制。
      * @return rolconnlimit
      */
-    public Boolean getRolconnlimit() {
+    public Integer getRolconnlimit() {
         return rolconnlimit;
     }
 
-    public void setRolconnlimit(Boolean rolconnlimit) {
+    public void setRolconnlimit(Integer rolconnlimit) {
         this.rolconnlimit = rolconnlimit;
     }
 

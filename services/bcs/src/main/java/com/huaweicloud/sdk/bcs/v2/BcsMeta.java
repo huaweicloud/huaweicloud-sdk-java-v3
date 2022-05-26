@@ -144,6 +144,48 @@ public class BcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchRemovePeersFromChannelRequest, BatchRemovePeersFromChannelResponse> batchRemovePeersFromChannel =
+        genForbatchRemovePeersFromChannel();
+
+    private static HttpRequestDef<BatchRemovePeersFromChannelRequest, BatchRemovePeersFromChannelResponse> genForbatchRemovePeersFromChannel() {
+        // basic
+        HttpRequestDef.Builder<BatchRemovePeersFromChannelRequest, BatchRemovePeersFromChannelResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    BatchRemovePeersFromChannelRequest.class,
+                    BatchRemovePeersFromChannelResponse.class)
+                .withName("BatchRemovePeersFromChannel")
+                .withUri("/v2/{project_id}/blockchains/{blockchain_id}/{channel_id}/peers/quit")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("blockchain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchRemovePeersFromChannelRequest::getBlockchainId, (req, v) -> {
+                req.setBlockchainId(v);
+            }));
+        builder.<String>withRequestField("channel_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchRemovePeersFromChannelRequest::getChannelId, (req, v) -> {
+                req.setChannelId(v);
+            }));
+        builder.<BatchRemovePeersFromChannelRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchRemovePeersFromChannelRequestBody.class),
+            f -> f.withMarshaller(BatchRemovePeersFromChannelRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateBlockchainCertByUserNameRequest, CreateBlockchainCertByUserNameResponse> createBlockchainCertByUserName =
         genForcreateBlockchainCertByUserName();
 
@@ -156,7 +198,7 @@ public class BcsMeta {
                     CreateBlockchainCertByUserNameResponse.class)
                 .withName("CreateBlockchainCertByUserName")
                 .withUri("/v2/{project_id}/blockchains/{blockchain_id}/orgs/{org_name}/usercert/{user_name}")
-                .withContentType("application/json");
+                .withContentType("application/json;charset=UTF-8");
 
         // requests
         builder.<String>withRequestField("blockchain_id",
@@ -179,6 +221,13 @@ public class BcsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateBlockchainCertByUserNameRequest::getUserName, (req, v) -> {
                 req.setUserName(v);
+            }));
+        builder.<CreateBlockchainCertByUserNameRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CreateBlockchainCertByUserNameRequestBody.class),
+            f -> f.withMarshaller(CreateBlockchainCertByUserNameRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response
@@ -250,6 +299,59 @@ public class BcsMeta {
             TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(DeleteBlockchainRequest::getIsDeleteResource, (req, v) -> {
                 req.setIsDeleteResource(v);
+            }));
+        builder.<Boolean>withRequestField("is_delete_ief",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(DeleteBlockchainRequest::getIsDeleteIef, (req, v) -> {
+                req.setIsDeleteIef(v);
+            }));
+        builder.<String>withRequestField("is_delete_lightpeer",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteBlockchainRequest::getIsDeleteLightpeer, (req, v) -> {
+                req.setIsDeleteLightpeer(v);
+            }));
+        builder.<String>withRequestField("ief_nodes_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteBlockchainRequest::getIefNodesId, (req, v) -> {
+                req.setIefNodesId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteChannelRequest, DeleteChannelResponse> deleteChannel =
+        genFordeleteChannel();
+
+    private static HttpRequestDef<DeleteChannelRequest, DeleteChannelResponse> genFordeleteChannel() {
+        // basic
+        HttpRequestDef.Builder<DeleteChannelRequest, DeleteChannelResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteChannelRequest.class, DeleteChannelResponse.class)
+                .withName("DeleteChannel")
+                .withUri("/v2/{project_id}/blockchains/{blockchain_id}/channel/{channel_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("blockchain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteChannelRequest::getBlockchainId, (req, v) -> {
+                req.setBlockchainId(v);
+            }));
+        builder.<String>withRequestField("channel_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteChannelRequest::getChannelId, (req, v) -> {
+                req.setChannelId(v);
             }));
 
         // response
@@ -364,7 +466,7 @@ public class BcsMeta {
             HttpRequestDef.builder(HttpMethod.POST, FreezeCertRequest.class, FreezeCertResponse.class)
                 .withName("FreezeCert")
                 .withUri("/v2/{project_id}/blockchains/{blockchain_id}/orgs/{org_name}/usercert/{user_name}/freeze")
-                .withContentType("application/json");
+                .withContentType("multipart/form-data");
 
         // requests
         builder.<String>withRequestField("user_name",
@@ -387,6 +489,13 @@ public class BcsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(FreezeCertRequest::getOrgName, (req, v) -> {
                 req.setOrgName(v);
+            }));
+        builder.<FreezeCertRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(FreezeCertRequestBody.class),
+            f -> f.withMarshaller(FreezeCertRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response
@@ -411,6 +520,34 @@ public class BcsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(HandleNotificationRequestBody.class),
             f -> f.withMarshaller(HandleNotificationRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<HandleUnionMemberQuitListRequest, HandleUnionMemberQuitListResponse> handleUnionMemberQuitList =
+        genForhandleUnionMemberQuitList();
+
+    private static HttpRequestDef<HandleUnionMemberQuitListRequest, HandleUnionMemberQuitListResponse> genForhandleUnionMemberQuitList() {
+        // basic
+        HttpRequestDef.Builder<HandleUnionMemberQuitListRequest, HandleUnionMemberQuitListResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    HandleUnionMemberQuitListRequest.class,
+                    HandleUnionMemberQuitListResponse.class)
+                .withName("HandleUnionMemberQuitList")
+                .withUri("/v2/{project_id}/members/quit")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<QuitUnionFromMemberListRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(QuitUnionFromMemberListRequestBody.class),
+            f -> f.withMarshaller(HandleUnionMemberQuitListRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -777,7 +914,7 @@ public class BcsMeta {
             HttpRequestDef.builder(HttpMethod.POST, UnfreezeCertRequest.class, UnfreezeCertResponse.class)
                 .withName("UnfreezeCert")
                 .withUri("/v2/{project_id}/blockchains/{blockchain_id}/orgs/{org_name}/usercert/{user_name}/unfreeze")
-                .withContentType("application/json");
+                .withContentType("multipart/form-data");
 
         // requests
         builder.<String>withRequestField("user_name",
@@ -800,6 +937,13 @@ public class BcsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UnfreezeCertRequest::getOrgName, (req, v) -> {
                 req.setOrgName(v);
+            }));
+        builder.<UnfreezeCertRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UnfreezeCertRequestBody.class),
+            f -> f.withMarshaller(UnfreezeCertRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response

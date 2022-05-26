@@ -20,6 +20,16 @@ public class AttachServerVolumeOption {
 
     private String volumeId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "volume_type")
+
+    private String volumeType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "hw:passthrough")
+
+    private String hwPassthrough;
+
     public AttachServerVolumeOption withDevice(String device) {
         this.device = device;
         return this;
@@ -54,6 +64,40 @@ public class AttachServerVolumeOption {
         this.volumeId = volumeId;
     }
 
+    public AttachServerVolumeOption withVolumeType(String volumeType) {
+        this.volumeType = volumeType;
+        return this;
+    }
+
+    /**
+     * 云硬盘类型。  该字段于dry_run为true并且volumeId不存在时有效且为必选字段。
+     * @return volumeType
+     */
+    public String getVolumeType() {
+        return volumeType;
+    }
+
+    public void setVolumeType(String volumeType) {
+        this.volumeType = volumeType;
+    }
+
+    public AttachServerVolumeOption withHwPassthrough(String hwPassthrough) {
+        this.hwPassthrough = hwPassthrough;
+        return this;
+    }
+
+    /**
+     * - true: 表示云硬盘的设备类型为SCSI类型，即允许ECS操作系统直接访问底层存储介质。支持SCSI锁命令 - false: 表示云硬盘的设备类型为VBD (虚拟块存储设备 , Virtual Block Device)类型，VBD只能支持简单的SCSI读写命令。 该字段于dry_run为true并且volumeId不存在时有效且为必选字段。
+     * @return hwPassthrough
+     */
+    public String getHwPassthrough() {
+        return hwPassthrough;
+    }
+
+    public void setHwPassthrough(String hwPassthrough) {
+        this.hwPassthrough = hwPassthrough;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -64,12 +108,14 @@ public class AttachServerVolumeOption {
         }
         AttachServerVolumeOption attachServerVolumeOption = (AttachServerVolumeOption) o;
         return Objects.equals(this.device, attachServerVolumeOption.device)
-            && Objects.equals(this.volumeId, attachServerVolumeOption.volumeId);
+            && Objects.equals(this.volumeId, attachServerVolumeOption.volumeId)
+            && Objects.equals(this.volumeType, attachServerVolumeOption.volumeType)
+            && Objects.equals(this.hwPassthrough, attachServerVolumeOption.hwPassthrough);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(device, volumeId);
+        return Objects.hash(device, volumeId, volumeType, hwPassthrough);
     }
 
     @Override
@@ -78,6 +124,8 @@ public class AttachServerVolumeOption {
         sb.append("class AttachServerVolumeOption {\n");
         sb.append("    device: ").append(toIndentedString(device)).append("\n");
         sb.append("    volumeId: ").append(toIndentedString(volumeId)).append("\n");
+        sb.append("    volumeType: ").append(toIndentedString(volumeType)).append("\n");
+        sb.append("    hwPassthrough: ").append(toIndentedString(hwPassthrough)).append("\n");
         sb.append("}");
         return sb.toString();
     }

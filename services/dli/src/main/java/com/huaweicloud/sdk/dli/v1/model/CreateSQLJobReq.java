@@ -141,7 +141,7 @@ public class CreateSQLJobReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "runtime_config")
 
-    private String runtimeConfig;
+    private List<JobsRuntimeConfig> runtimeConfig = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
@@ -188,7 +188,7 @@ public class CreateSQLJobReq {
     }
 
     /**
-     * 模板Id。  如果template_id和sql_body都不为空，优先sql_body；如果template_id不空，sql_body为空，以template_id内容填充sql_body。
+     * 模板Id。 如果template_id和sql_body都不为空，优先sql_body；如果template_id不空，sql_body为空，以template_id内容填充sql_body。
      * @return templateId
      */
     public Long getTemplateId() {
@@ -589,8 +589,24 @@ public class CreateSQLJobReq {
         this.resumeMaxNum = resumeMaxNum;
     }
 
-    public CreateSQLJobReq withRuntimeConfig(String runtimeConfig) {
+    public CreateSQLJobReq withRuntimeConfig(List<JobsRuntimeConfig> runtimeConfig) {
         this.runtimeConfig = runtimeConfig;
+        return this;
+    }
+
+    public CreateSQLJobReq addRuntimeConfigItem(JobsRuntimeConfig runtimeConfigItem) {
+        if (this.runtimeConfig == null) {
+            this.runtimeConfig = new ArrayList<>();
+        }
+        this.runtimeConfig.add(runtimeConfigItem);
+        return this;
+    }
+
+    public CreateSQLJobReq withRuntimeConfig(Consumer<List<JobsRuntimeConfig>> runtimeConfigSetter) {
+        if (this.runtimeConfig == null) {
+            this.runtimeConfig = new ArrayList<>();
+        }
+        runtimeConfigSetter.accept(this.runtimeConfig);
         return this;
     }
 
@@ -598,11 +614,11 @@ public class CreateSQLJobReq {
      * Flink作业运行时自定义优化参数。
      * @return runtimeConfig
      */
-    public String getRuntimeConfig() {
+    public List<JobsRuntimeConfig> getRuntimeConfig() {
         return runtimeConfig;
     }
 
-    public void setRuntimeConfig(String runtimeConfig) {
+    public void setRuntimeConfig(List<JobsRuntimeConfig> runtimeConfig) {
         this.runtimeConfig = runtimeConfig;
     }
 

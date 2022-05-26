@@ -8,7 +8,7 @@ import java.util.Objects;
 /**
  * couchDB信息
  */
-public class Couchdb {
+public class CouchDb {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_name")
@@ -20,7 +20,7 @@ public class Couchdb {
 
     private String password;
 
-    public Couchdb withUserName(String userName) {
+    public CouchDb withUserName(String userName) {
         this.userName = userName;
         return this;
     }
@@ -37,7 +37,7 @@ public class Couchdb {
         this.userName = userName;
     }
 
-    public Couchdb withPassword(String password) {
+    public CouchDb withPassword(String password) {
         this.password = password;
         return this;
     }
@@ -62,8 +62,8 @@ public class Couchdb {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        Couchdb couchdb = (Couchdb) o;
-        return Objects.equals(this.userName, couchdb.userName) && Objects.equals(this.password, couchdb.password);
+        CouchDb couchDb = (CouchDb) o;
+        return Objects.equals(this.userName, couchDb.userName) && Objects.equals(this.password, couchDb.password);
     }
 
     @Override
@@ -74,7 +74,7 @@ public class Couchdb {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class Couchdb {\n");
+        sb.append("class CouchDb {\n");
         sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
         sb.append("    password: ").append(toIndentedString(password)).append("\n");
         sb.append("}");

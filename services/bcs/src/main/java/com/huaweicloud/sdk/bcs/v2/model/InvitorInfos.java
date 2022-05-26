@@ -65,7 +65,7 @@ public class InvitorInfos {
     }
 
     /**
-     * 邀请方服务实例ID
+     * 邀请方BCS服务实例ID
      * @return blockchainId
      */
     public String getBlockchainId() {

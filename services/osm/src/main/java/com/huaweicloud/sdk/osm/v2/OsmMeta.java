@@ -2799,33 +2799,12 @@ public class OsmMeta {
     private static HttpRequestDef<SendVerifyCodesRequest, SendVerifyCodesResponse> genForsendVerifyCodes() {
         // basic
         HttpRequestDef.Builder<SendVerifyCodesRequest, SendVerifyCodesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, SendVerifyCodesRequest.class, SendVerifyCodesResponse.class)
+            HttpRequestDef.builder(HttpMethod.POST, SendVerifyCodesRequest.class, SendVerifyCodesResponse.class)
                 .withName("SendVerifyCodes")
-                .withUri("/v2/servicerequest/verifycodes")
+                .withUri("/v2/servicerequest/verifycodes/send")
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("contact_value",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SendVerifyCodesRequest::getContactValue, (req, v) -> {
-                req.setContactValue(v);
-            }));
-        builder.<Integer>withRequestField("contact_way",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SendVerifyCodesRequest::getContactWay, (req, v) -> {
-                req.setContactWay(v);
-            }));
-        builder.<String>withRequestField("area_code",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SendVerifyCodesRequest::getAreaCode, (req, v) -> {
-                req.setAreaCode(v);
-            }));
         builder.<Integer>withRequestField("X-Site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -2846,6 +2825,13 @@ public class OsmMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(SendVerifyCodesRequest::getXTimeZone, (req, v) -> {
                 req.setXTimeZone(v);
+            }));
+        builder.<SendVerifyCodeReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(SendVerifyCodeReq.class),
+            f -> f.withMarshaller(SendVerifyCodesRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response

@@ -24,6 +24,11 @@ public class AomMappingRuleInfo {
     private String clusterName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "deployments_prefix")
+
+    private String deploymentsPrefix;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deployments")
 
     private List<String> deployments = null;
@@ -75,6 +80,23 @@ public class AomMappingRuleInfo {
 
     public void setClusterName(String clusterName) {
         this.clusterName = clusterName;
+    }
+
+    public AomMappingRuleInfo withDeploymentsPrefix(String deploymentsPrefix) {
+        this.deploymentsPrefix = deploymentsPrefix;
+        return this;
+    }
+
+    /**
+     * 日志流前缀
+     * @return deploymentsPrefix
+     */
+    public String getDeploymentsPrefix() {
+        return deploymentsPrefix;
+    }
+
+    public void setDeploymentsPrefix(String deploymentsPrefix) {
+        this.deploymentsPrefix = deploymentsPrefix;
     }
 
     public AomMappingRuleInfo withDeployments(List<String> deployments) {
@@ -188,6 +210,7 @@ public class AomMappingRuleInfo {
         AomMappingRuleInfo aomMappingRuleInfo = (AomMappingRuleInfo) o;
         return Objects.equals(this.clusterId, aomMappingRuleInfo.clusterId)
             && Objects.equals(this.clusterName, aomMappingRuleInfo.clusterName)
+            && Objects.equals(this.deploymentsPrefix, aomMappingRuleInfo.deploymentsPrefix)
             && Objects.equals(this.deployments, aomMappingRuleInfo.deployments)
             && Objects.equals(this.namespace, aomMappingRuleInfo.namespace)
             && Objects.equals(this.containerName, aomMappingRuleInfo.containerName)
@@ -196,7 +219,7 @@ public class AomMappingRuleInfo {
 
     @Override
     public int hashCode() {
-        return Objects.hash(clusterId, clusterName, deployments, namespace, containerName, files);
+        return Objects.hash(clusterId, clusterName, deploymentsPrefix, deployments, namespace, containerName, files);
     }
 
     @Override
@@ -205,6 +228,7 @@ public class AomMappingRuleInfo {
         sb.append("class AomMappingRuleInfo {\n");
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
         sb.append("    clusterName: ").append(toIndentedString(clusterName)).append("\n");
+        sb.append("    deploymentsPrefix: ").append(toIndentedString(deploymentsPrefix)).append("\n");
         sb.append("    deployments: ").append(toIndentedString(deployments)).append("\n");
         sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");
         sb.append("    containerName: ").append(toIndentedString(containerName)).append("\n");

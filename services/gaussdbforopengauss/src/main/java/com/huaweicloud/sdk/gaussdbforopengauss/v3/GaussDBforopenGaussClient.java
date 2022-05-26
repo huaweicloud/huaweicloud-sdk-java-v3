@@ -318,6 +318,36 @@ public class GaussDBforopenGaussClient {
     }
 
     /**
+     * 查询实例的组件列表
+     *
+     * 查询实例的组件列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListComponentInfosRequest 请求对象
+     * @return ListComponentInfosResponse
+     */
+    public ListComponentInfosResponse listComponentInfos(ListComponentInfosRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.listComponentInfos);
+    }
+
+    /**
+     * 查询实例的组件列表
+     *
+     * 查询实例的组件列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListComponentInfosRequest 请求对象
+     * @return SyncInvoker<ListComponentInfosRequest, ListComponentInfosResponse>
+     */
+    public SyncInvoker<ListComponentInfosRequest, ListComponentInfosResponse> listComponentInfosInvoker(ListComponentInfosRequest request) {
+        return new SyncInvoker<ListComponentInfosRequest, ListComponentInfosResponse>(request, GaussDBforopenGaussMeta.listComponentInfos, hcClient);
+    }
+
+    /**
      * 获取参数模板列表
      *
      * 获取参数模板列表，包括所有数据库的默认参数模板和用户创建的参数模板。
@@ -620,6 +650,36 @@ public class GaussDBforopenGaussClient {
     }
 
     /**
+     * GaussDB(for openGauss)数据库实例规格变更
+     *
+     * GaussDB(for openGauss)数据库实例规格变更
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ResizeInstanceFlavorRequest 请求对象
+     * @return ResizeInstanceFlavorResponse
+     */
+    public ResizeInstanceFlavorResponse resizeInstanceFlavor(ResizeInstanceFlavorRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.resizeInstanceFlavor);
+    }
+
+    /**
+     * GaussDB(for openGauss)数据库实例规格变更
+     *
+     * GaussDB(for openGauss)数据库实例规格变更
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ResizeInstanceFlavorRequest 请求对象
+     * @return SyncInvoker<ResizeInstanceFlavorRequest, ResizeInstanceFlavorResponse>
+     */
+    public SyncInvoker<ResizeInstanceFlavorRequest, ResizeInstanceFlavorResponse> resizeInstanceFlavorInvoker(ResizeInstanceFlavorRequest request) {
+        return new SyncInvoker<ResizeInstanceFlavorRequest, ResizeInstanceFlavorResponse>(request, GaussDBforopenGaussMeta.resizeInstanceFlavor, hcClient);
+    }
+
+    /**
      * 重启数据库实例
      *
      * 重启数据库实例。
@@ -797,6 +857,36 @@ public class GaussDBforopenGaussClient {
      */
     public SyncInvoker<ShowInstanceConfigurationRequest, ShowInstanceConfigurationResponse> showInstanceConfigurationInvoker(ShowInstanceConfigurationRequest request) {
         return new SyncInvoker<ShowInstanceConfigurationRequest, ShowInstanceConfigurationResponse>(request, GaussDBforopenGaussMeta.showInstanceConfiguration, hcClient);
+    }
+
+    /**
+     * 分片节点主备切换。
+     *
+     * 支持用户对单个或多个DN分片做主备切换，同一分组内只能指定一个新的备节点进行升主操作。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SwitchShardRequest 请求对象
+     * @return SwitchShardResponse
+     */
+    public SwitchShardResponse switchShard(SwitchShardRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.switchShard);
+    }
+
+    /**
+     * 分片节点主备切换。
+     *
+     * 支持用户对单个或多个DN分片做主备切换，同一分组内只能指定一个新的备节点进行升主操作。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SwitchShardRequest 请求对象
+     * @return SyncInvoker<SwitchShardRequest, SwitchShardResponse>
+     */
+    public SyncInvoker<SwitchShardRequest, SwitchShardResponse> switchShardInvoker(SwitchShardRequest request) {
+        return new SyncInvoker<SwitchShardRequest, SwitchShardResponse>(request, GaussDBforopenGaussMeta.switchShard, hcClient);
     }
 
     /**

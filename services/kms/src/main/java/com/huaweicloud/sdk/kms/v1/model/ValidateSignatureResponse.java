@@ -17,9 +17,9 @@ public class ValidateSignatureResponse extends SdkResponse {
     private String keyId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "signature_vaild")
+    @JsonProperty(value = "signature_valid")
 
-    private Boolean signatureVaild;
+    private String signatureValid;
 
     public ValidateSignatureResponse withKeyId(String keyId) {
         this.keyId = keyId;
@@ -38,21 +38,21 @@ public class ValidateSignatureResponse extends SdkResponse {
         this.keyId = keyId;
     }
 
-    public ValidateSignatureResponse withSignatureVaild(Boolean signatureVaild) {
-        this.signatureVaild = signatureVaild;
+    public ValidateSignatureResponse withSignatureValid(String signatureValid) {
+        this.signatureValid = signatureValid;
         return this;
     }
 
     /**
      * 签名验证合法性，“true”表示验证签名合法，“false”表示验证签名非法。
-     * @return signatureVaild
+     * @return signatureValid
      */
-    public Boolean getSignatureVaild() {
-        return signatureVaild;
+    public String getSignatureValid() {
+        return signatureValid;
     }
 
-    public void setSignatureVaild(Boolean signatureVaild) {
-        this.signatureVaild = signatureVaild;
+    public void setSignatureValid(String signatureValid) {
+        this.signatureValid = signatureValid;
     }
 
     @Override
@@ -65,12 +65,12 @@ public class ValidateSignatureResponse extends SdkResponse {
         }
         ValidateSignatureResponse validateSignatureResponse = (ValidateSignatureResponse) o;
         return Objects.equals(this.keyId, validateSignatureResponse.keyId)
-            && Objects.equals(this.signatureVaild, validateSignatureResponse.signatureVaild);
+            && Objects.equals(this.signatureValid, validateSignatureResponse.signatureValid);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(keyId, signatureVaild);
+        return Objects.hash(keyId, signatureValid);
     }
 
     @Override
@@ -78,7 +78,7 @@ public class ValidateSignatureResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ValidateSignatureResponse {\n");
         sb.append("    keyId: ").append(toIndentedString(keyId)).append("\n");
-        sb.append("    signatureVaild: ").append(toIndentedString(signatureVaild)).append("\n");
+        sb.append("    signatureValid: ").append(toIndentedString(signatureValid)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -203,6 +203,16 @@ public class InstanceListInfo {
 
     private List<String> azCodes = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "features")
+
+    private Features features;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sub_status")
+
+    private String subStatus;
+
     public InstanceListInfo withPublicipId(String publicipId) {
         this.publicipId = publicipId;
         return this;
@@ -881,6 +891,49 @@ public class InstanceListInfo {
         this.azCodes = azCodes;
     }
 
+    public InstanceListInfo withFeatures(Features features) {
+        this.features = features;
+        return this;
+    }
+
+    public InstanceListInfo withFeatures(Consumer<Features> featuresSetter) {
+        if (this.features == null) {
+            this.features = new Features();
+            featuresSetter.accept(this.features);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get features
+     * @return features
+     */
+    public Features getFeatures() {
+        return features;
+    }
+
+    public void setFeatures(Features features) {
+        this.features = features;
+    }
+
+    public InstanceListInfo withSubStatus(String subStatus) {
+        this.subStatus = subStatus;
+        return this;
+    }
+
+    /**
+     * 实例子状态。
+     * @return subStatus
+     */
+    public String getSubStatus() {
+        return subStatus;
+    }
+
+    public void setSubStatus(String subStatus) {
+        this.subStatus = subStatus;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -925,7 +978,9 @@ public class InstanceListInfo {
             && Objects.equals(this.enterpriseProjectId, instanceListInfo.enterpriseProjectId)
             && Objects.equals(this.description, instanceListInfo.description)
             && Objects.equals(this.cpuType, instanceListInfo.cpuType)
-            && Objects.equals(this.azCodes, instanceListInfo.azCodes);
+            && Objects.equals(this.azCodes, instanceListInfo.azCodes)
+            && Objects.equals(this.features, instanceListInfo.features)
+            && Objects.equals(this.subStatus, instanceListInfo.subStatus);
     }
 
     @Override
@@ -967,7 +1022,9 @@ public class InstanceListInfo {
             enterpriseProjectId,
             description,
             cpuType,
-            azCodes);
+            azCodes,
+            features,
+            subStatus);
     }
 
     @Override
@@ -1012,6 +1069,8 @@ public class InstanceListInfo {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    cpuType: ").append(toIndentedString(cpuType)).append("\n");
         sb.append("    azCodes: ").append(toIndentedString(azCodes)).append("\n");
+        sb.append("    features: ").append(toIndentedString(features)).append("\n");
+        sb.append("    subStatus: ").append(toIndentedString(subStatus)).append("\n");
         sb.append("}");
         return sb.toString();
     }

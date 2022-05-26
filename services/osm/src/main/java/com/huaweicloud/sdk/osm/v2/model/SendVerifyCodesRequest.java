@@ -4,26 +4,12 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
  */
 public class SendVerifyCodesRequest {
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "contact_value")
-
-    private String contactValue;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "contact_way")
-
-    private Integer contactWay;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "area_code")
-
-    private String areaCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Site")
@@ -40,58 +26,10 @@ public class SendVerifyCodesRequest {
 
     private String xTimeZone;
 
-    public SendVerifyCodesRequest withContactValue(String contactValue) {
-        this.contactValue = contactValue;
-        return this;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "body")
 
-    /**
-     * 联系方式的值
-     * @return contactValue
-     */
-    public String getContactValue() {
-        return contactValue;
-    }
-
-    public void setContactValue(String contactValue) {
-        this.contactValue = contactValue;
-    }
-
-    public SendVerifyCodesRequest withContactWay(Integer contactWay) {
-        this.contactWay = contactWay;
-        return this;
-    }
-
-    /**
-     * 联系方式类型：0：手机；1：邮箱
-     * minimum: 0
-     * maximum: 1
-     * @return contactWay
-     */
-    public Integer getContactWay() {
-        return contactWay;
-    }
-
-    public void setContactWay(Integer contactWay) {
-        this.contactWay = contactWay;
-    }
-
-    public SendVerifyCodesRequest withAreaCode(String areaCode) {
-        this.areaCode = areaCode;
-        return this;
-    }
-
-    /**
-     * 国家码
-     * @return areaCode
-     */
-    public String getAreaCode() {
-        return areaCode;
-    }
-
-    public void setAreaCode(String areaCode) {
-        this.areaCode = areaCode;
-    }
+    private SendVerifyCodeReq body;
 
     public SendVerifyCodesRequest withXSite(Integer xSite) {
         this.xSite = xSite;
@@ -152,6 +90,32 @@ public class SendVerifyCodesRequest {
         this.xTimeZone = xTimeZone;
     }
 
+    public SendVerifyCodesRequest withBody(SendVerifyCodeReq body) {
+        this.body = body;
+        return this;
+    }
+
+    public SendVerifyCodesRequest withBody(Consumer<SendVerifyCodeReq> bodySetter) {
+        if (this.body == null) {
+            this.body = new SendVerifyCodeReq();
+            bodySetter.accept(this.body);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get body
+     * @return body
+     */
+    public SendVerifyCodeReq getBody() {
+        return body;
+    }
+
+    public void setBody(SendVerifyCodeReq body) {
+        this.body = body;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -161,29 +125,25 @@ public class SendVerifyCodesRequest {
             return false;
         }
         SendVerifyCodesRequest sendVerifyCodesRequest = (SendVerifyCodesRequest) o;
-        return Objects.equals(this.contactValue, sendVerifyCodesRequest.contactValue)
-            && Objects.equals(this.contactWay, sendVerifyCodesRequest.contactWay)
-            && Objects.equals(this.areaCode, sendVerifyCodesRequest.areaCode)
-            && Objects.equals(this.xSite, sendVerifyCodesRequest.xSite)
+        return Objects.equals(this.xSite, sendVerifyCodesRequest.xSite)
             && Objects.equals(this.xLanguage, sendVerifyCodesRequest.xLanguage)
-            && Objects.equals(this.xTimeZone, sendVerifyCodesRequest.xTimeZone);
+            && Objects.equals(this.xTimeZone, sendVerifyCodesRequest.xTimeZone)
+            && Objects.equals(this.body, sendVerifyCodesRequest.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(contactValue, contactWay, areaCode, xSite, xLanguage, xTimeZone);
+        return Objects.hash(xSite, xLanguage, xTimeZone, body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class SendVerifyCodesRequest {\n");
-        sb.append("    contactValue: ").append(toIndentedString(contactValue)).append("\n");
-        sb.append("    contactWay: ").append(toIndentedString(contactWay)).append("\n");
-        sb.append("    areaCode: ").append(toIndentedString(areaCode)).append("\n");
         sb.append("    xSite: ").append(toIndentedString(xSite)).append("\n");
         sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
         sb.append("    xTimeZone: ").append(toIndentedString(xTimeZone)).append("\n");
+        sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();
     }

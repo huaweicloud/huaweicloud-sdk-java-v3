@@ -131,7 +131,7 @@ public class UpdateFlinkdefinedJobsResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "runtime_config")
 
-    private String runtimeConfig;
+    private List<JobsRuntimeConfig> runtimeConfig = null;
 
     public UpdateFlinkdefinedJobsResp withName(String name) {
         this.name = name;
@@ -556,8 +556,24 @@ public class UpdateFlinkdefinedJobsResp {
         this.checkpointPath = checkpointPath;
     }
 
-    public UpdateFlinkdefinedJobsResp withRuntimeConfig(String runtimeConfig) {
+    public UpdateFlinkdefinedJobsResp withRuntimeConfig(List<JobsRuntimeConfig> runtimeConfig) {
         this.runtimeConfig = runtimeConfig;
+        return this;
+    }
+
+    public UpdateFlinkdefinedJobsResp addRuntimeConfigItem(JobsRuntimeConfig runtimeConfigItem) {
+        if (this.runtimeConfig == null) {
+            this.runtimeConfig = new ArrayList<>();
+        }
+        this.runtimeConfig.add(runtimeConfigItem);
+        return this;
+    }
+
+    public UpdateFlinkdefinedJobsResp withRuntimeConfig(Consumer<List<JobsRuntimeConfig>> runtimeConfigSetter) {
+        if (this.runtimeConfig == null) {
+            this.runtimeConfig = new ArrayList<>();
+        }
+        runtimeConfigSetter.accept(this.runtimeConfig);
         return this;
     }
 
@@ -565,11 +581,11 @@ public class UpdateFlinkdefinedJobsResp {
      * Flink作业运行时自定义优化参数。
      * @return runtimeConfig
      */
-    public String getRuntimeConfig() {
+    public List<JobsRuntimeConfig> getRuntimeConfig() {
         return runtimeConfig;
     }
 
-    public void setRuntimeConfig(String runtimeConfig) {
+    public void setRuntimeConfig(List<JobsRuntimeConfig> runtimeConfig) {
         this.runtimeConfig = runtimeConfig;
     }
 

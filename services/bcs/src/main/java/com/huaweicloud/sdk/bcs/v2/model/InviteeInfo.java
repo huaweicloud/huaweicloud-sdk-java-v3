@@ -75,7 +75,7 @@ public class InviteeInfo {
     }
 
     /**
-     * 被邀请的服务名称
+     * 被邀请的BCS服务实例名称
      * @return inviteeBcsName
      */
     public String getInviteeBcsName() {
@@ -92,7 +92,7 @@ public class InviteeInfo {
     }
 
     /**
-     * 被邀请的服务id
+     * 被邀请的BCS服务实例id
      * @return inviteeBcsId
      */
     public String getInviteeBcsId() {

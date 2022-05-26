@@ -45,27 +45,6 @@ public class ShowBackupPolicy  {
     
     private String differentialPriod;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="rate_limit")
-    
-    
-    private Integer rateLimit;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="prefetch_block")
-    
-    
-    private Integer prefetchBlock;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="filesplit_size")
-    
-    
-    private Integer filesplitSize;
-
     public ShowBackupPolicy withKeepDays(Integer keepDays) {
         this.keepDays = keepDays;
         return this;
@@ -156,74 +135,6 @@ public class ShowBackupPolicy  {
 
     
 
-    public ShowBackupPolicy withRateLimit(Integer rateLimit) {
-        this.rateLimit = rateLimit;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 备份时备份数据上传OBS的速度，单位为MB/s。范围为0~1024MB/s，默认75MB/s，0MB/s表示不限速。
-     * @return rateLimit
-     */
-    public Integer getRateLimit() {
-        return rateLimit;
-    }
-
-    public void setRateLimit(Integer rateLimit) {
-        this.rateLimit = rateLimit;
-    }
-
-    
-
-    public ShowBackupPolicy withPrefetchBlock(Integer prefetchBlock) {
-        this.prefetchBlock = prefetchBlock;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 控制差量备份时读取磁盘上表文件差量修改页面的预取页面个数，可设置范围为1~8192，默认64。
-     * @return prefetchBlock
-     */
-    public Integer getPrefetchBlock() {
-        return prefetchBlock;
-    }
-
-    public void setPrefetchBlock(Integer prefetchBlock) {
-        this.prefetchBlock = prefetchBlock;
-    }
-
-    
-
-    public ShowBackupPolicy withFilesplitSize(Integer filesplitSize) {
-        this.filesplitSize = filesplitSize;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 全量、差量备份时产生的备份文件会根据分片大小进行拆分，可设置范围为0~1024GB，设置需为4的倍数，默认4GB，0GB表示不限制大小。  取值范围：0 ~ 1024
-     * minimum: 0
-     * maximum: 1024
-     * @return filesplitSize
-     */
-    public Integer getFilesplitSize() {
-        return filesplitSize;
-    }
-
-    public void setFilesplitSize(Integer filesplitSize) {
-        this.filesplitSize = filesplitSize;
-    }
-
-    
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -236,14 +147,11 @@ public class ShowBackupPolicy  {
         return Objects.equals(this.keepDays, showBackupPolicy.keepDays) &&
             Objects.equals(this.startTime, showBackupPolicy.startTime) &&
             Objects.equals(this.period, showBackupPolicy.period) &&
-            Objects.equals(this.differentialPriod, showBackupPolicy.differentialPriod) &&
-            Objects.equals(this.rateLimit, showBackupPolicy.rateLimit) &&
-            Objects.equals(this.prefetchBlock, showBackupPolicy.prefetchBlock) &&
-            Objects.equals(this.filesplitSize, showBackupPolicy.filesplitSize);
+            Objects.equals(this.differentialPriod, showBackupPolicy.differentialPriod);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(keepDays, startTime, period, differentialPriod, rateLimit, prefetchBlock, filesplitSize);
+        return Objects.hash(keepDays, startTime, period, differentialPriod);
     }
     @Override
     public String toString() {
@@ -253,9 +161,6 @@ public class ShowBackupPolicy  {
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    period: ").append(toIndentedString(period)).append("\n");
         sb.append("    differentialPriod: ").append(toIndentedString(differentialPriod)).append("\n");
-        sb.append("    rateLimit: ").append(toIndentedString(rateLimit)).append("\n");
-        sb.append("    prefetchBlock: ").append(toIndentedString(prefetchBlock)).append("\n");
-        sb.append("    filesplitSize: ").append(toIndentedString(filesplitSize)).append("\n");
         sb.append("}");
         return sb.toString();
     }

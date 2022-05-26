@@ -376,6 +376,38 @@ public class DliClient {
     }
 
     /**
+     * 创建弹性资源池
+     *
+     * 创建弹性资源池
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateElasticResourcePoolRequest 请求对象
+     * @return CreateElasticResourcePoolResponse
+     */
+    public CreateElasticResourcePoolResponse createElasticResourcePool(CreateElasticResourcePoolRequest request) {
+        return hcClient.syncInvokeHttp(request, DliMeta.createElasticResourcePool);
+    }
+
+    /**
+     * 创建弹性资源池
+     *
+     * 创建弹性资源池
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateElasticResourcePoolRequest 请求对象
+     * @return SyncInvoker<CreateElasticResourcePoolRequest, CreateElasticResourcePoolResponse>
+     */
+    public SyncInvoker<CreateElasticResourcePoolRequest, CreateElasticResourcePoolResponse> createElasticResourcePoolInvoker(
+        CreateElasticResourcePoolRequest request) {
+        return new SyncInvoker<CreateElasticResourcePoolRequest, CreateElasticResourcePoolResponse>(request,
+            DliMeta.createElasticResourcePool, hcClient);
+    }
+
+    /**
      * 创建增强型跨源连接
      *
      * 该API用于创建与其他服务的增强型跨源连接。
@@ -636,6 +668,38 @@ public class DliClient {
     }
 
     /**
+     * 删除弹性资源池
+     *
+     * 删除弹性资源池
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteElasticResourcePoolRequest 请求对象
+     * @return DeleteElasticResourcePoolResponse
+     */
+    public DeleteElasticResourcePoolResponse deleteElasticResourcePool(DeleteElasticResourcePoolRequest request) {
+        return hcClient.syncInvokeHttp(request, DliMeta.deleteElasticResourcePool);
+    }
+
+    /**
+     * 删除弹性资源池
+     *
+     * 删除弹性资源池
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteElasticResourcePoolRequest 请求对象
+     * @return SyncInvoker<DeleteElasticResourcePoolRequest, DeleteElasticResourcePoolResponse>
+     */
+    public SyncInvoker<DeleteElasticResourcePoolRequest, DeleteElasticResourcePoolResponse> deleteElasticResourcePoolInvoker(
+        DeleteElasticResourcePoolRequest request) {
+        return new SyncInvoker<DeleteElasticResourcePoolRequest, DeleteElasticResourcePoolResponse>(request,
+            DliMeta.deleteElasticResourcePool, hcClient);
+    }
+
+    /**
      * 删除增强型跨源连接
      *
      * 该API用于删除已创建的增强型跨源连接。
@@ -823,6 +887,38 @@ public class DliClient {
         ListDatasourceConnectionsRequest request) {
         return new SyncInvoker<ListDatasourceConnectionsRequest, ListDatasourceConnectionsResponse>(request,
             DliMeta.listDatasourceConnections, hcClient);
+    }
+
+    /**
+     * 查询所有弹性资源池
+     *
+     * 查询所有弹性资源池
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListElasticResourcePoolsRequest 请求对象
+     * @return ListElasticResourcePoolsResponse
+     */
+    public ListElasticResourcePoolsResponse listElasticResourcePools(ListElasticResourcePoolsRequest request) {
+        return hcClient.syncInvokeHttp(request, DliMeta.listElasticResourcePools);
+    }
+
+    /**
+     * 查询所有弹性资源池
+     *
+     * 查询所有弹性资源池
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListElasticResourcePoolsRequest 请求对象
+     * @return SyncInvoker<ListElasticResourcePoolsRequest, ListElasticResourcePoolsResponse>
+     */
+    public SyncInvoker<ListElasticResourcePoolsRequest, ListElasticResourcePoolsResponse> listElasticResourcePoolsInvoker(
+        ListElasticResourcePoolsRequest request) {
+        return new SyncInvoker<ListElasticResourcePoolsRequest, ListElasticResourcePoolsResponse>(request,
+            DliMeta.listElasticResourcePools, hcClient);
     }
 
     /**
@@ -1199,6 +1295,38 @@ public class DliClient {
      */
     public SyncInvoker<StopFlinkJobRequest, StopFlinkJobResponse> stopFlinkJobInvoker(StopFlinkJobRequest request) {
         return new SyncInvoker<StopFlinkJobRequest, StopFlinkJobResponse>(request, DliMeta.stopFlinkJob, hcClient);
+    }
+
+    /**
+     * 修改弹性资源池信息
+     *
+     * 修改弹性资源池信息
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateElasticResourcePoolRequest 请求对象
+     * @return UpdateElasticResourcePoolResponse
+     */
+    public UpdateElasticResourcePoolResponse updateElasticResourcePool(UpdateElasticResourcePoolRequest request) {
+        return hcClient.syncInvokeHttp(request, DliMeta.updateElasticResourcePool);
+    }
+
+    /**
+     * 修改弹性资源池信息
+     *
+     * 修改弹性资源池信息
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateElasticResourcePoolRequest 请求对象
+     * @return SyncInvoker<UpdateElasticResourcePoolRequest, UpdateElasticResourcePoolResponse>
+     */
+    public SyncInvoker<UpdateElasticResourcePoolRequest, UpdateElasticResourcePoolResponse> updateElasticResourcePoolInvoker(
+        UpdateElasticResourcePoolRequest request) {
+        return new SyncInvoker<UpdateElasticResourcePoolRequest, UpdateElasticResourcePoolResponse>(request,
+            DliMeta.updateElasticResourcePool, hcClient);
     }
 
     /**

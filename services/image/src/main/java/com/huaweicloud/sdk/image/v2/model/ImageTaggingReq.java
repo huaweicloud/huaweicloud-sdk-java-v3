@@ -111,7 +111,7 @@ public class ImageTaggingReq {
     }
 
     /**
-     * 最多返回的tag数，默认值： 50
+     * 最多返回的tag数（最大为150），默认值： 50。
      * @return limit
      */
     public Integer getLimit() {

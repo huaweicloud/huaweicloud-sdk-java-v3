@@ -220,9 +220,24 @@ public class ShowInstanceResponse extends SdkResponse {
     private String backendAddrs;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "features")
+
+    private Features features;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_name_info")
 
     private DomainNameInfo domainNameInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "transparent_client_ip_enable")
+
+    private Boolean transparentClientIpEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sub_status")
+
+    private String subStatus;
 
     public ShowInstanceResponse withVpcName(String vpcName) {
         this.vpcName = vpcName;
@@ -946,6 +961,32 @@ public class ShowInstanceResponse extends SdkResponse {
         this.backendAddrs = backendAddrs;
     }
 
+    public ShowInstanceResponse withFeatures(Features features) {
+        this.features = features;
+        return this;
+    }
+
+    public ShowInstanceResponse withFeatures(Consumer<Features> featuresSetter) {
+        if (this.features == null) {
+            this.features = new Features();
+            featuresSetter.accept(this.features);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get features
+     * @return features
+     */
+    public Features getFeatures() {
+        return features;
+    }
+
+    public void setFeatures(Features features) {
+        this.features = features;
+    }
+
     public ShowInstanceResponse withDomainNameInfo(DomainNameInfo domainNameInfo) {
         this.domainNameInfo = domainNameInfo;
         return this;
@@ -970,6 +1011,40 @@ public class ShowInstanceResponse extends SdkResponse {
 
     public void setDomainNameInfo(DomainNameInfo domainNameInfo) {
         this.domainNameInfo = domainNameInfo;
+    }
+
+    public ShowInstanceResponse withTransparentClientIpEnable(Boolean transparentClientIpEnable) {
+        this.transparentClientIpEnable = transparentClientIpEnable;
+        return this;
+    }
+
+    /**
+     * 是否开启客户端ip透传。
+     * @return transparentClientIpEnable
+     */
+    public Boolean getTransparentClientIpEnable() {
+        return transparentClientIpEnable;
+    }
+
+    public void setTransparentClientIpEnable(Boolean transparentClientIpEnable) {
+        this.transparentClientIpEnable = transparentClientIpEnable;
+    }
+
+    public ShowInstanceResponse withSubStatus(String subStatus) {
+        this.subStatus = subStatus;
+        return this;
+    }
+
+    /**
+     * 实例子状态。
+     * @return subStatus
+     */
+    public String getSubStatus() {
+        return subStatus;
+    }
+
+    public void setSubStatus(String subStatus) {
+        this.subStatus = subStatus;
     }
 
     @Override
@@ -1022,7 +1097,10 @@ public class ShowInstanceResponse extends SdkResponse {
             && Objects.equals(this.serviceTaskId, showInstanceResponse.serviceTaskId)
             && Objects.equals(this.enterpriseProjectId, showInstanceResponse.enterpriseProjectId)
             && Objects.equals(this.backendAddrs, showInstanceResponse.backendAddrs)
-            && Objects.equals(this.domainNameInfo, showInstanceResponse.domainNameInfo);
+            && Objects.equals(this.features, showInstanceResponse.features)
+            && Objects.equals(this.domainNameInfo, showInstanceResponse.domainNameInfo)
+            && Objects.equals(this.transparentClientIpEnable, showInstanceResponse.transparentClientIpEnable)
+            && Objects.equals(this.subStatus, showInstanceResponse.subStatus);
     }
 
     @Override
@@ -1068,7 +1146,10 @@ public class ShowInstanceResponse extends SdkResponse {
             serviceTaskId,
             enterpriseProjectId,
             backendAddrs,
-            domainNameInfo);
+            features,
+            domainNameInfo,
+            transparentClientIpEnable,
+            subStatus);
     }
 
     @Override
@@ -1116,7 +1197,10 @@ public class ShowInstanceResponse extends SdkResponse {
         sb.append("    serviceTaskId: ").append(toIndentedString(serviceTaskId)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    backendAddrs: ").append(toIndentedString(backendAddrs)).append("\n");
+        sb.append("    features: ").append(toIndentedString(features)).append("\n");
         sb.append("    domainNameInfo: ").append(toIndentedString(domainNameInfo)).append("\n");
+        sb.append("    transparentClientIpEnable: ").append(toIndentedString(transparentClientIpEnable)).append("\n");
+        sb.append("    subStatus: ").append(toIndentedString(subStatus)).append("\n");
         sb.append("}");
         return sb.toString();
     }

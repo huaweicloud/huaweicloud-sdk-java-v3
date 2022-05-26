@@ -31,6 +31,21 @@ public class ImageBatchModerationResultBody {
 
     private Object categorySuggestions;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ocr_text")
+
+    private String ocrText;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "error_code")
+
+    private String errorCode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "error_msg")
+
+    private String errorMsg;
+
     public ImageBatchModerationResultBody withUrl(String url) {
         this.url = url;
         return this;
@@ -108,6 +123,57 @@ public class ImageBatchModerationResultBody {
         this.categorySuggestions = categorySuggestions;
     }
 
+    public ImageBatchModerationResultBody withOcrText(String ocrText) {
+        this.ocrText = ocrText;
+        return this;
+    }
+
+    /**
+     * ocr识别结果。
+     * @return ocrText
+     */
+    public String getOcrText() {
+        return ocrText;
+    }
+
+    public void setOcrText(String ocrText) {
+        this.ocrText = ocrText;
+    }
+
+    public ImageBatchModerationResultBody withErrorCode(String errorCode) {
+        this.errorCode = errorCode;
+        return this;
+    }
+
+    /**
+     * 图像审核失败时错误码
+     * @return errorCode
+     */
+    public String getErrorCode() {
+        return errorCode;
+    }
+
+    public void setErrorCode(String errorCode) {
+        this.errorCode = errorCode;
+    }
+
+    public ImageBatchModerationResultBody withErrorMsg(String errorMsg) {
+        this.errorMsg = errorMsg;
+        return this;
+    }
+
+    /**
+     * 图像审核失败时错误信息
+     * @return errorMsg
+     */
+    public String getErrorMsg() {
+        return errorMsg;
+    }
+
+    public void setErrorMsg(String errorMsg) {
+        this.errorMsg = errorMsg;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -120,12 +186,15 @@ public class ImageBatchModerationResultBody {
         return Objects.equals(this.url, imageBatchModerationResultBody.url)
             && Objects.equals(this.suggestion, imageBatchModerationResultBody.suggestion)
             && Objects.equals(this.detail, imageBatchModerationResultBody.detail)
-            && Objects.equals(this.categorySuggestions, imageBatchModerationResultBody.categorySuggestions);
+            && Objects.equals(this.categorySuggestions, imageBatchModerationResultBody.categorySuggestions)
+            && Objects.equals(this.ocrText, imageBatchModerationResultBody.ocrText)
+            && Objects.equals(this.errorCode, imageBatchModerationResultBody.errorCode)
+            && Objects.equals(this.errorMsg, imageBatchModerationResultBody.errorMsg);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(url, suggestion, detail, categorySuggestions);
+        return Objects.hash(url, suggestion, detail, categorySuggestions, ocrText, errorCode, errorMsg);
     }
 
     @Override
@@ -136,6 +205,9 @@ public class ImageBatchModerationResultBody {
         sb.append("    suggestion: ").append(toIndentedString(suggestion)).append("\n");
         sb.append("    detail: ").append(toIndentedString(detail)).append("\n");
         sb.append("    categorySuggestions: ").append(toIndentedString(categorySuggestions)).append("\n");
+        sb.append("    ocrText: ").append(toIndentedString(ocrText)).append("\n");
+        sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
+        sb.append("    errorMsg: ").append(toIndentedString(errorMsg)).append("\n");
         sb.append("}");
         return sb.toString();
     }

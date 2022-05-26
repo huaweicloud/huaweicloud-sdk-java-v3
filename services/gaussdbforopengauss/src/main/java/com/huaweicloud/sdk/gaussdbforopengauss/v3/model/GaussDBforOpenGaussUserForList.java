@@ -37,7 +37,7 @@ public class GaussDBforOpenGaussUserForList  {
     @JsonProperty(value="memberof")
     
     
-    private Object memberof;
+    private String memberof;
 
     public GaussDBforOpenGaussUserForList withName(String name) {
         this.name = name;
@@ -90,7 +90,7 @@ public class GaussDBforOpenGaussUserForList  {
 
     
 
-    public GaussDBforOpenGaussUserForList withMemberof(Object memberof) {
+    public GaussDBforOpenGaussUserForList withMemberof(String memberof) {
         this.memberof = memberof;
         return this;
     }
@@ -102,11 +102,11 @@ public class GaussDBforOpenGaussUserForList  {
      * 用户的默认权限。
      * @return memberof
      */
-    public Object getMemberof() {
+    public String getMemberof() {
         return memberof;
     }
 
-    public void setMemberof(Object memberof) {
+    public void setMemberof(String memberof) {
         this.memberof = memberof;
     }
 

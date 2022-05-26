@@ -131,7 +131,7 @@ public class CreateRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "couchdb_info")
 
-    private Couchdb couchdbInfo;
+    private CouchDb couchdbInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "turbo_info")
@@ -174,7 +174,7 @@ public class CreateRequestBody {
     }
 
     /**
-     * BCS服务名
+     * 区块链服务名称，支持英文，数字，中文字符和中划线(-)，不能以中划线(-)开头，长度4-24个字符。
      * @return name
      */
     public String getName() {
@@ -191,7 +191,7 @@ public class CreateRequestBody {
     }
 
     /**
-     * BCS服务版本类型，[专业版（4），企业版（2）](tag:g42)[可选：基础版（1），专业版（4），企业版（2），铂金版（3）](tag:online)。被邀请方创建时，和邀请方保持一致。
+     * BCS服务版本类型，[专业版（4），企业版（2）](tag:g42)[可选：专业版（4），企业版（2），铂金版（3）](tag:online)。被邀请方创建时，和邀请方保持一致。
      * @return versionType
      */
     public Long getVersionType() {
@@ -208,7 +208,7 @@ public class CreateRequestBody {
     }
 
     /**
-     * Fabric版本，当前邀请方以及私有链的创建仅可选：2.2 ;被邀请方创建时，和邀请方保持一致，1.4版本服务仅支持1.15及以下版本集群
+     * Fabric版本，当前邀请方以及私有链的创建仅可选：2.2 ;被邀请方创建时，和邀请方保持一致，1.4版本服务仅支持1.15及以下版本集群. 默认值为2.2.
      * @return fabricVersion
      */
     public String getFabricVersion() {
@@ -327,7 +327,7 @@ public class CreateRequestBody {
     }
 
     /**
-     * 节点组织存储容量[，基础版至少40GB，专业版和企业版至少100GB，铂金版至少500GB](tag:online)[，专业版和企业版至少100GB](tag:g42)[节点组织存储容量GB，至少为100GB](tag:hcs)
+     * 节点组织存储容量[专业版和企业版至少100GB，铂金版至少500GB](tag:online)[，专业版和企业版至少100GB](tag:g42)[节点组织存储容量GB，至少为100GB](tag:hcs)
      * @return orgDiskSize
      */
     public Long getOrgDiskSize() {
@@ -625,14 +625,14 @@ public class CreateRequestBody {
         this.channels = channels;
     }
 
-    public CreateRequestBody withCouchdbInfo(Couchdb couchdbInfo) {
+    public CreateRequestBody withCouchdbInfo(CouchDb couchdbInfo) {
         this.couchdbInfo = couchdbInfo;
         return this;
     }
 
-    public CreateRequestBody withCouchdbInfo(Consumer<Couchdb> couchdbInfoSetter) {
+    public CreateRequestBody withCouchdbInfo(Consumer<CouchDb> couchdbInfoSetter) {
         if (this.couchdbInfo == null) {
-            this.couchdbInfo = new Couchdb();
+            this.couchdbInfo = new CouchDb();
             couchdbInfoSetter.accept(this.couchdbInfo);
         }
 
@@ -643,11 +643,11 @@ public class CreateRequestBody {
      * Get couchdbInfo
      * @return couchdbInfo
      */
-    public Couchdb getCouchdbInfo() {
+    public CouchDb getCouchdbInfo() {
         return couchdbInfo;
     }
 
-    public void setCouchdbInfo(Couchdb couchdbInfo) {
+    public void setCouchdbInfo(CouchDb couchdbInfo) {
         this.couchdbInfo = couchdbInfo;
     }
 
@@ -769,7 +769,7 @@ public class CreateRequestBody {
     }
 
     /**
-     * 是否是创建被邀请方实例，创建被邀请方实例需要同时填写invitor_infos字段中的信息
+     * 是否是创建被邀请方BCS服务实例，创建被邀请方实例需要同时填写invitor_infos字段中的信息
      * @return isInvitee
      */
     public Boolean getIsInvitee() {

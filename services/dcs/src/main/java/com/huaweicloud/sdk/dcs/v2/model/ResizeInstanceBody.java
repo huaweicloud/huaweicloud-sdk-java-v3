@@ -130,6 +130,11 @@ public class ResizeInstanceBody {
 
     private List<String> nodeList = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "execute_immediately")
+
+    private Boolean executeImmediately;
+
     public ResizeInstanceBody withSpecCode(String specCode) {
         this.specCode = specCode;
         return this;
@@ -306,6 +311,23 @@ public class ResizeInstanceBody {
         this.nodeList = nodeList;
     }
 
+    public ResizeInstanceBody withExecuteImmediately(Boolean executeImmediately) {
+        this.executeImmediately = executeImmediately;
+        return this;
+    }
+
+    /**
+     * 是否立即变更。默认值为true。 - true: 立即变更 - false: 可维护时间窗内进行变更 
+     * @return executeImmediately
+     */
+    public Boolean getExecuteImmediately() {
+        return executeImmediately;
+    }
+
+    public void setExecuteImmediately(Boolean executeImmediately) {
+        this.executeImmediately = executeImmediately;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -321,12 +343,20 @@ public class ResizeInstanceBody {
             && Objects.equals(this.reservedIp, resizeInstanceBody.reservedIp)
             && Objects.equals(this.changeType, resizeInstanceBody.changeType)
             && Objects.equals(this.availableZones, resizeInstanceBody.availableZones)
-            && Objects.equals(this.nodeList, resizeInstanceBody.nodeList);
+            && Objects.equals(this.nodeList, resizeInstanceBody.nodeList)
+            && Objects.equals(this.executeImmediately, resizeInstanceBody.executeImmediately);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(specCode, newCapacity, bssParam, reservedIp, changeType, availableZones, nodeList);
+        return Objects.hash(specCode,
+            newCapacity,
+            bssParam,
+            reservedIp,
+            changeType,
+            availableZones,
+            nodeList,
+            executeImmediately);
     }
 
     @Override
@@ -340,6 +370,7 @@ public class ResizeInstanceBody {
         sb.append("    changeType: ").append(toIndentedString(changeType)).append("\n");
         sb.append("    availableZones: ").append(toIndentedString(availableZones)).append("\n");
         sb.append("    nodeList: ").append(toIndentedString(nodeList)).append("\n");
+        sb.append("    executeImmediately: ").append(toIndentedString(executeImmediately)).append("\n");
         sb.append("}");
         return sb.toString();
     }

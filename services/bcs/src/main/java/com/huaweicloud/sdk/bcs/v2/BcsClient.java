@@ -146,6 +146,38 @@ public class BcsClient {
     }
 
     /**
+     * BCS某个组织中的节点退出某通道
+     *
+     * 该接口用于BCS某个组织中的节点退出某通道。当节点为通道中最后一个节点时，需要使用组织退通道的接口来将通道中的最后一个节点退出。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param BatchRemovePeersFromChannelRequest 请求对象
+     * @return BatchRemovePeersFromChannelResponse
+     */
+    public BatchRemovePeersFromChannelResponse batchRemovePeersFromChannel(BatchRemovePeersFromChannelRequest request) {
+        return hcClient.syncInvokeHttp(request, BcsMeta.batchRemovePeersFromChannel);
+    }
+
+    /**
+     * BCS某个组织中的节点退出某通道
+     *
+     * 该接口用于BCS某个组织中的节点退出某通道。当节点为通道中最后一个节点时，需要使用组织退通道的接口来将通道中的最后一个节点退出。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param BatchRemovePeersFromChannelRequest 请求对象
+     * @return SyncInvoker<BatchRemovePeersFromChannelRequest, BatchRemovePeersFromChannelResponse>
+     */
+    public SyncInvoker<BatchRemovePeersFromChannelRequest, BatchRemovePeersFromChannelResponse> batchRemovePeersFromChannelInvoker(
+        BatchRemovePeersFromChannelRequest request) {
+        return new SyncInvoker<BatchRemovePeersFromChannelRequest, BatchRemovePeersFromChannelResponse>(request,
+            BcsMeta.batchRemovePeersFromChannel, hcClient);
+    }
+
+    /**
      * 生成用户证书
      *
      * 通过用户名生成指定服务实例组织用户证书
@@ -240,6 +272,36 @@ public class BcsClient {
         DeleteBlockchainRequest request) {
         return new SyncInvoker<DeleteBlockchainRequest, DeleteBlockchainResponse>(request, BcsMeta.deleteBlockchain,
             hcClient);
+    }
+
+    /**
+     * BCS删除某个通道
+     *
+     * 该接口用于BCS删除某个通道。仅支持删除空通道
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteChannelRequest 请求对象
+     * @return DeleteChannelResponse
+     */
+    public DeleteChannelResponse deleteChannel(DeleteChannelRequest request) {
+        return hcClient.syncInvokeHttp(request, BcsMeta.deleteChannel);
+    }
+
+    /**
+     * BCS删除某个通道
+     *
+     * 该接口用于BCS删除某个通道。仅支持删除空通道
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteChannelRequest 请求对象
+     * @return SyncInvoker<DeleteChannelRequest, DeleteChannelResponse>
+     */
+    public SyncInvoker<DeleteChannelRequest, DeleteChannelResponse> deleteChannelInvoker(DeleteChannelRequest request) {
+        return new SyncInvoker<DeleteChannelRequest, DeleteChannelResponse>(request, BcsMeta.deleteChannel, hcClient);
     }
 
     /**
@@ -398,6 +460,38 @@ public class BcsClient {
         HandleNotificationRequest request) {
         return new SyncInvoker<HandleNotificationRequest, HandleNotificationResponse>(request,
             BcsMeta.handleNotification, hcClient);
+    }
+
+    /**
+     * 被邀请方退出指定联盟
+     *
+     * 被邀请方退出联盟
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param HandleUnionMemberQuitListRequest 请求对象
+     * @return HandleUnionMemberQuitListResponse
+     */
+    public HandleUnionMemberQuitListResponse handleUnionMemberQuitList(HandleUnionMemberQuitListRequest request) {
+        return hcClient.syncInvokeHttp(request, BcsMeta.handleUnionMemberQuitList);
+    }
+
+    /**
+     * 被邀请方退出指定联盟
+     *
+     * 被邀请方退出联盟
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param HandleUnionMemberQuitListRequest 请求对象
+     * @return SyncInvoker<HandleUnionMemberQuitListRequest, HandleUnionMemberQuitListResponse>
+     */
+    public SyncInvoker<HandleUnionMemberQuitListRequest, HandleUnionMemberQuitListResponse> handleUnionMemberQuitListInvoker(
+        HandleUnionMemberQuitListRequest request) {
+        return new SyncInvoker<HandleUnionMemberQuitListRequest, HandleUnionMemberQuitListResponse>(request,
+            BcsMeta.handleUnionMemberQuitList, hcClient);
     }
 
     /**

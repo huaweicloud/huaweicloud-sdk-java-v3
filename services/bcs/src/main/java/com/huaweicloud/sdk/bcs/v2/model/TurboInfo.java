@@ -36,7 +36,7 @@ public class TurboInfo {
     }
 
     /**
-     * 共享方式
+     * 共享方式，固定值为“STANDARD”
      * @return shareType
      */
     public String getShareType() {
@@ -53,7 +53,7 @@ public class TurboInfo {
     }
 
     /**
-     * 类型
+     * 类型，固定值为“efs-ha”
      * @return type
      */
     public String getType() {
@@ -70,7 +70,7 @@ public class TurboInfo {
     }
 
     /**
-     * 可用区
+     * 可用区，可填空字符串(\"\")。
      * @return availableZone
      */
     public String getAvailableZone() {
@@ -87,7 +87,7 @@ public class TurboInfo {
     }
 
     /**
-     * 规格
+     * 规格，固定值为“sfs.turbo.standard”
      * @return resourceSpecCode
      */
     public String getResourceSpecCode() {

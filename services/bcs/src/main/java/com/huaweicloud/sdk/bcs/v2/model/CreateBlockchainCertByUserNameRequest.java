@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -24,6 +25,11 @@ public class CreateBlockchainCertByUserNameRequest {
     @JsonProperty(value = "user_name")
 
     private String userName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "body")
+
+    private CreateBlockchainCertByUserNameRequestBody body;
 
     public CreateBlockchainCertByUserNameRequest withBlockchainId(String blockchainId) {
         this.blockchainId = blockchainId;
@@ -65,7 +71,7 @@ public class CreateBlockchainCertByUserNameRequest {
     }
 
     /**
-     * 用户名称，字符串长度4-24，必须包含a-z，0-9，以小写字母开头，以小写字母或者数字结尾
+     * 用户名称，字符串长度4-24，仅支持小写字母和数字，以小写字母开头
      * @return userName
      */
     public String getUserName() {
@@ -74,6 +80,33 @@ public class CreateBlockchainCertByUserNameRequest {
 
     public void setUserName(String userName) {
         this.userName = userName;
+    }
+
+    public CreateBlockchainCertByUserNameRequest withBody(CreateBlockchainCertByUserNameRequestBody body) {
+        this.body = body;
+        return this;
+    }
+
+    public CreateBlockchainCertByUserNameRequest withBody(
+        Consumer<CreateBlockchainCertByUserNameRequestBody> bodySetter) {
+        if (this.body == null) {
+            this.body = new CreateBlockchainCertByUserNameRequestBody();
+            bodySetter.accept(this.body);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get body
+     * @return body
+     */
+    public CreateBlockchainCertByUserNameRequestBody getBody() {
+        return body;
+    }
+
+    public void setBody(CreateBlockchainCertByUserNameRequestBody body) {
+        this.body = body;
     }
 
     @Override
@@ -88,12 +121,13 @@ public class CreateBlockchainCertByUserNameRequest {
             (CreateBlockchainCertByUserNameRequest) o;
         return Objects.equals(this.blockchainId, createBlockchainCertByUserNameRequest.blockchainId)
             && Objects.equals(this.orgName, createBlockchainCertByUserNameRequest.orgName)
-            && Objects.equals(this.userName, createBlockchainCertByUserNameRequest.userName);
+            && Objects.equals(this.userName, createBlockchainCertByUserNameRequest.userName)
+            && Objects.equals(this.body, createBlockchainCertByUserNameRequest.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(blockchainId, orgName, userName);
+        return Objects.hash(blockchainId, orgName, userName, body);
     }
 
     @Override
@@ -103,6 +137,7 @@ public class CreateBlockchainCertByUserNameRequest {
         sb.append("    blockchainId: ").append(toIndentedString(blockchainId)).append("\n");
         sb.append("    orgName: ").append(toIndentedString(orgName)).append("\n");
         sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
+        sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();
     }

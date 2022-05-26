@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -24,6 +25,11 @@ public class FreezeCertRequest {
     @JsonProperty(value = "org_name")
 
     private String orgName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "body")
+
+    private FreezeCertRequestBody body;
 
     public FreezeCertRequest withUserName(String userName) {
         this.userName = userName;
@@ -76,6 +82,32 @@ public class FreezeCertRequest {
         this.orgName = orgName;
     }
 
+    public FreezeCertRequest withBody(FreezeCertRequestBody body) {
+        this.body = body;
+        return this;
+    }
+
+    public FreezeCertRequest withBody(Consumer<FreezeCertRequestBody> bodySetter) {
+        if (this.body == null) {
+            this.body = new FreezeCertRequestBody();
+            bodySetter.accept(this.body);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get body
+     * @return body
+     */
+    public FreezeCertRequestBody getBody() {
+        return body;
+    }
+
+    public void setBody(FreezeCertRequestBody body) {
+        this.body = body;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -87,12 +119,13 @@ public class FreezeCertRequest {
         FreezeCertRequest freezeCertRequest = (FreezeCertRequest) o;
         return Objects.equals(this.userName, freezeCertRequest.userName)
             && Objects.equals(this.blockchainId, freezeCertRequest.blockchainId)
-            && Objects.equals(this.orgName, freezeCertRequest.orgName);
+            && Objects.equals(this.orgName, freezeCertRequest.orgName)
+            && Objects.equals(this.body, freezeCertRequest.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(userName, blockchainId, orgName);
+        return Objects.hash(userName, blockchainId, orgName, body);
     }
 
     @Override
@@ -102,6 +135,7 @@ public class FreezeCertRequest {
         sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
         sb.append("    blockchainId: ").append(toIndentedString(blockchainId)).append("\n");
         sb.append("    orgName: ").append(toIndentedString(orgName)).append("\n");
+        sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();
     }

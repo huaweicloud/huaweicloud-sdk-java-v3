@@ -320,6 +320,36 @@ public class GaussDBforopenGaussAsyncClient {
     }
 
     /**
+     * 查询实例的组件列表
+     *
+     * 查询实例的组件列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListComponentInfosRequest 请求对象
+     * @return CompletableFuture<ListComponentInfosResponse>
+     */
+    public CompletableFuture<ListComponentInfosResponse> listComponentInfosAsync(ListComponentInfosRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.listComponentInfos);
+    }
+
+    /**
+     * 查询实例的组件列表
+     *
+     * 查询实例的组件列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListComponentInfosRequest 请求对象
+     * @return AsyncInvoker<ListComponentInfosRequest, ListComponentInfosResponse>
+     */
+    public AsyncInvoker<ListComponentInfosRequest, ListComponentInfosResponse> listComponentInfosAsyncInvoker(ListComponentInfosRequest request) {
+        return new AsyncInvoker<ListComponentInfosRequest, ListComponentInfosResponse>(request, GaussDBforopenGaussMeta.listComponentInfos, hcClient);
+    }
+
+    /**
      * 获取参数模板列表
      *
      * 获取参数模板列表，包括所有数据库的默认参数模板和用户创建的参数模板。
@@ -622,6 +652,36 @@ public class GaussDBforopenGaussAsyncClient {
     }
 
     /**
+     * GaussDB(for openGauss)数据库实例规格变更
+     *
+     * GaussDB(for openGauss)数据库实例规格变更
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ResizeInstanceFlavorRequest 请求对象
+     * @return CompletableFuture<ResizeInstanceFlavorResponse>
+     */
+    public CompletableFuture<ResizeInstanceFlavorResponse> resizeInstanceFlavorAsync(ResizeInstanceFlavorRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.resizeInstanceFlavor);
+    }
+
+    /**
+     * GaussDB(for openGauss)数据库实例规格变更
+     *
+     * GaussDB(for openGauss)数据库实例规格变更
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ResizeInstanceFlavorRequest 请求对象
+     * @return AsyncInvoker<ResizeInstanceFlavorRequest, ResizeInstanceFlavorResponse>
+     */
+    public AsyncInvoker<ResizeInstanceFlavorRequest, ResizeInstanceFlavorResponse> resizeInstanceFlavorAsyncInvoker(ResizeInstanceFlavorRequest request) {
+        return new AsyncInvoker<ResizeInstanceFlavorRequest, ResizeInstanceFlavorResponse>(request, GaussDBforopenGaussMeta.resizeInstanceFlavor, hcClient);
+    }
+
+    /**
      * 重启数据库实例
      *
      * 重启数据库实例。
@@ -799,6 +859,36 @@ public class GaussDBforopenGaussAsyncClient {
      */
     public AsyncInvoker<ShowInstanceConfigurationRequest, ShowInstanceConfigurationResponse> showInstanceConfigurationAsyncInvoker(ShowInstanceConfigurationRequest request) {
         return new AsyncInvoker<ShowInstanceConfigurationRequest, ShowInstanceConfigurationResponse>(request, GaussDBforopenGaussMeta.showInstanceConfiguration, hcClient);
+    }
+
+    /**
+     * 分片节点主备切换。
+     *
+     * 支持用户对单个或多个DN分片做主备切换，同一分组内只能指定一个新的备节点进行升主操作。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SwitchShardRequest 请求对象
+     * @return CompletableFuture<SwitchShardResponse>
+     */
+    public CompletableFuture<SwitchShardResponse> switchShardAsync(SwitchShardRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.switchShard);
+    }
+
+    /**
+     * 分片节点主备切换。
+     *
+     * 支持用户对单个或多个DN分片做主备切换，同一分组内只能指定一个新的备节点进行升主操作。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SwitchShardRequest 请求对象
+     * @return AsyncInvoker<SwitchShardRequest, SwitchShardResponse>
+     */
+    public AsyncInvoker<SwitchShardRequest, SwitchShardResponse> switchShardAsyncInvoker(SwitchShardRequest request) {
+        return new AsyncInvoker<SwitchShardRequest, SwitchShardResponse>(request, GaussDBforopenGaussMeta.switchShard, hcClient);
     }
 
     /**

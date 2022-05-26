@@ -33,6 +33,21 @@ public class CheckResultItemsBody {
 
     private Map<String, String> categorySuggestions = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ocr_text")
+
+    private String ocrText;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "error_code")
+
+    private String errorCode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "error_msg")
+
+    private String errorMsg;
+
     public CheckResultItemsBody withUrl(String url) {
         this.url = url;
         return this;
@@ -126,6 +141,57 @@ public class CheckResultItemsBody {
         this.categorySuggestions = categorySuggestions;
     }
 
+    public CheckResultItemsBody withOcrText(String ocrText) {
+        this.ocrText = ocrText;
+        return this;
+    }
+
+    /**
+     * ocr识别结果。
+     * @return ocrText
+     */
+    public String getOcrText() {
+        return ocrText;
+    }
+
+    public void setOcrText(String ocrText) {
+        this.ocrText = ocrText;
+    }
+
+    public CheckResultItemsBody withErrorCode(String errorCode) {
+        this.errorCode = errorCode;
+        return this;
+    }
+
+    /**
+     * 图像审核失败时错误码
+     * @return errorCode
+     */
+    public String getErrorCode() {
+        return errorCode;
+    }
+
+    public void setErrorCode(String errorCode) {
+        this.errorCode = errorCode;
+    }
+
+    public CheckResultItemsBody withErrorMsg(String errorMsg) {
+        this.errorMsg = errorMsg;
+        return this;
+    }
+
+    /**
+     * 图像审核失败时错误信息
+     * @return errorMsg
+     */
+    public String getErrorMsg() {
+        return errorMsg;
+    }
+
+    public void setErrorMsg(String errorMsg) {
+        this.errorMsg = errorMsg;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -138,12 +204,15 @@ public class CheckResultItemsBody {
         return Objects.equals(this.url, checkResultItemsBody.url)
             && Objects.equals(this.suggestion, checkResultItemsBody.suggestion)
             && Objects.equals(this.detail, checkResultItemsBody.detail)
-            && Objects.equals(this.categorySuggestions, checkResultItemsBody.categorySuggestions);
+            && Objects.equals(this.categorySuggestions, checkResultItemsBody.categorySuggestions)
+            && Objects.equals(this.ocrText, checkResultItemsBody.ocrText)
+            && Objects.equals(this.errorCode, checkResultItemsBody.errorCode)
+            && Objects.equals(this.errorMsg, checkResultItemsBody.errorMsg);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(url, suggestion, detail, categorySuggestions);
+        return Objects.hash(url, suggestion, detail, categorySuggestions, ocrText, errorCode, errorMsg);
     }
 
     @Override
@@ -154,6 +223,9 @@ public class CheckResultItemsBody {
         sb.append("    suggestion: ").append(toIndentedString(suggestion)).append("\n");
         sb.append("    detail: ").append(toIndentedString(detail)).append("\n");
         sb.append("    categorySuggestions: ").append(toIndentedString(categorySuggestions)).append("\n");
+        sb.append("    ocrText: ").append(toIndentedString(ocrText)).append("\n");
+        sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
+        sb.append("    errorMsg: ").append(toIndentedString(errorMsg)).append("\n");
         sb.append("}");
         return sb.toString();
     }

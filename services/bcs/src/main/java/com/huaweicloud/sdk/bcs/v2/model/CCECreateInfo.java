@@ -63,7 +63,7 @@ public class CCECreateInfo {
     }
 
     /**
-     * 集群节点规格
+     * 集群节点规格ID（支持的规格配置最小为4u8g）
      * @return nodeFlavor
      */
     public String getNodeFlavor() {
