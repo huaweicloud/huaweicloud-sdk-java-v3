@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 工作项类型
+ * 工作项类型， 2任务/Task,3缺陷/Bug,5Epic,6Feature,7Story
  */
 public class IssueItemSfV4Tracker {
 

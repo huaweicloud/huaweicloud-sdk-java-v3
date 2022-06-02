@@ -1,7 +1,29 @@
+/*
+ * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
+ *
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+
 package com.huaweicloud.sdk.core;
 
-import java.lang.reflect.Field;
-
+import com.huaweicloud.sdk.core.auth.BasicCredentials;
+import com.huaweicloud.sdk.core.http.HttpConfig;
+import com.huaweicloud.sdk.core.region.Region;
 import org.junit.Assert;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
@@ -9,9 +31,7 @@ import org.junit.runners.MethodSorters;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.huaweicloud.sdk.core.auth.BasicCredentials;
-import com.huaweicloud.sdk.core.http.HttpConfig;
-import com.huaweicloud.sdk.core.region.Region;
+import java.lang.reflect.Field;
 
 import static com.huaweicloud.sdk.core.TestRegion.SERVICE_ENDPOINT;
 import static com.huaweicloud.sdk.core.TestRegion.TEST_ENDPOINT;
@@ -29,11 +49,12 @@ public class TestRegionEndpoint {
 
     @Test
     public void testEndpointWithRegion1() {
-        TestServiceClient client = TestServiceClient.newBuilder()
-                .withCredential(CREDENTIALS)
-                .withHttpConfig(HttpConfig.getDefaultHttpConfig())
-                .withRegion(TestRegion.CN_NORTH_7)
-                .build();
+        TestServiceClient client =
+                TestServiceClient.newBuilder()
+                        .withCredential(CREDENTIALS)
+                        .withHttpConfig(HttpConfig.getDefaultHttpConfig())
+                        .withRegion(TestRegion.CN_NORTH_7)
+                        .build();
 
         try {
             Field endpoint = HcClient.class.getDeclaredField("endpoint");
@@ -46,11 +67,12 @@ public class TestRegionEndpoint {
 
     @Test
     public void testEndpointWithRegion2() {
-        TestServiceClient client = TestServiceClient.newBuilder()
-                .withCredential(CREDENTIALS)
-                .withHttpConfig(HttpConfig.getDefaultHttpConfig())
-                .withRegion(TestRegion.valueOf("cn-north-7"))
-                .build();
+        TestServiceClient client =
+                TestServiceClient.newBuilder()
+                        .withCredential(CREDENTIALS)
+                        .withHttpConfig(HttpConfig.getDefaultHttpConfig())
+                        .withRegion(TestRegion.valueOf("cn-north-7"))
+                        .build();
 
         try {
             Field endpoint = HcClient.class.getDeclaredField("endpoint");
@@ -63,11 +85,12 @@ public class TestRegionEndpoint {
 
     @Test
     public void testEndpointWithRegion3() {
-        TestServiceClient client = TestServiceClient.newBuilder()
-                .withCredential(CREDENTIALS)
-                .withHttpConfig(HttpConfig.getDefaultHttpConfig())
-                .withRegion(new Region("cn-north-7", TEST_ENDPOINT))
-                .build();
+        TestServiceClient client =
+                TestServiceClient.newBuilder()
+                        .withCredential(CREDENTIALS)
+                        .withHttpConfig(HttpConfig.getDefaultHttpConfig())
+                        .withRegion(new Region("cn-north-7", TEST_ENDPOINT))
+                        .build();
         try {
             Field endpoint = HcClient.class.getDeclaredField("endpoint");
             endpoint.setAccessible(true);
@@ -79,11 +102,12 @@ public class TestRegionEndpoint {
 
     @Test
     public void testEndpointWithRegionWithoutScheme() {
-        TestServiceClient client = TestServiceClient.newBuilder()
-                .withCredential(CREDENTIALS)
-                .withHttpConfig(HttpConfig.getDefaultHttpConfig())
-                .withRegion(new Region("cn-north-7", TEST_ENDPOINT_WITHOUT_SCHEME))
-                .build();
+        TestServiceClient client =
+                TestServiceClient.newBuilder()
+                        .withCredential(CREDENTIALS)
+                        .withHttpConfig(HttpConfig.getDefaultHttpConfig())
+                        .withRegion(new Region("cn-north-7", TEST_ENDPOINT_WITHOUT_SCHEME))
+                        .build();
         try {
             Field endpoint = HcClient.class.getDeclaredField("endpoint");
             endpoint.setAccessible(true);
@@ -95,11 +119,12 @@ public class TestRegionEndpoint {
 
     @Test
     public void testEndpointWithRegionOverride1() {
-        TestServiceClient client = TestServiceClient.newBuilder()
-                .withCredential(CREDENTIALS)
-                .withHttpConfig(HttpConfig.getDefaultHttpConfig())
-                .withRegion(TestRegion.CN_NORTH_7.withEndpointOverride(TEST_ENDPOINT))
-                .build();
+        TestServiceClient client =
+                TestServiceClient.newBuilder()
+                        .withCredential(CREDENTIALS)
+                        .withHttpConfig(HttpConfig.getDefaultHttpConfig())
+                        .withRegion(TestRegion.CN_NORTH_7.withEndpointOverride(TEST_ENDPOINT))
+                        .build();
         try {
             Field endpoint = HcClient.class.getDeclaredField("endpoint");
             endpoint.setAccessible(true);
@@ -111,11 +136,12 @@ public class TestRegionEndpoint {
 
     @Test
     public void testEndpointWithRegionOverride2() {
-        TestServiceClient client = TestServiceClient.newBuilder()
-                .withCredential(CREDENTIALS)
-                .withHttpConfig(HttpConfig.getDefaultHttpConfig())
-                .withRegion(TestRegion.valueOf("cn-north-7").withEndpointOverride(TEST_ENDPOINT))
-                .build();
+        TestServiceClient client =
+                TestServiceClient.newBuilder()
+                        .withCredential(CREDENTIALS)
+                        .withHttpConfig(HttpConfig.getDefaultHttpConfig())
+                        .withRegion(TestRegion.valueOf("cn-north-7").withEndpointOverride(TEST_ENDPOINT))
+                        .build();
         try {
             Field endpoint = HcClient.class.getDeclaredField("endpoint");
             endpoint.setAccessible(true);

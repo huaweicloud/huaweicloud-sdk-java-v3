@@ -134,10 +134,10 @@ public class MysqlInstanceNodeInfo  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="priotiry")
+    @JsonProperty(value="priority")
     
     
-    private Integer priotiry;
+    private Integer priority;
 
     public MysqlInstanceNodeInfo withId(String id) {
         this.id = id;
@@ -512,8 +512,8 @@ public class MysqlInstanceNodeInfo  {
 
     
 
-    public MysqlInstanceNodeInfo withPriotiry(Integer priotiry) {
-        this.priotiry = priotiry;
+    public MysqlInstanceNodeInfo withPriority(Integer priority) {
+        this.priority = priority;
         return this;
     }
 
@@ -522,14 +522,14 @@ public class MysqlInstanceNodeInfo  {
 
     /**
      * 主备倒换优先级。
-     * @return priotiry
+     * @return priority
      */
-    public Integer getPriotiry() {
-        return priotiry;
+    public Integer getPriority() {
+        return priority;
     }
 
-    public void setPriotiry(Integer priotiry) {
-        this.priotiry = priotiry;
+    public void setPriority(Integer priority) {
+        this.priority = priority;
     }
 
     
@@ -559,11 +559,11 @@ public class MysqlInstanceNodeInfo  {
             Objects.equals(this.vcpus, mysqlInstanceNodeInfo.vcpus) &&
             Objects.equals(this.ram, mysqlInstanceNodeInfo.ram) &&
             Objects.equals(this.needRestart, mysqlInstanceNodeInfo.needRestart) &&
-            Objects.equals(this.priotiry, mysqlInstanceNodeInfo.priotiry);
+            Objects.equals(this.priority, mysqlInstanceNodeInfo.priority);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, type, status, port, privateReadIps, volume, azCode, regionCode, created, updated, flavorRef, maxConnections, vcpus, ram, needRestart, priotiry);
+        return Objects.hash(id, name, type, status, port, privateReadIps, volume, azCode, regionCode, created, updated, flavorRef, maxConnections, vcpus, ram, needRestart, priority);
     }
     @Override
     public String toString() {
@@ -585,7 +585,7 @@ public class MysqlInstanceNodeInfo  {
         sb.append("    vcpus: ").append(toIndentedString(vcpus)).append("\n");
         sb.append("    ram: ").append(toIndentedString(ram)).append("\n");
         sb.append("    needRestart: ").append(toIndentedString(needRestart)).append("\n");
-        sb.append("    priotiry: ").append(toIndentedString(priotiry)).append("\n");
+        sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
         sb.append("}");
         return sb.toString();
     }

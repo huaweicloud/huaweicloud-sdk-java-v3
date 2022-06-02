@@ -433,6 +433,69 @@ public class ProjectManClient {
     }
 
     /**
+     * 查询看板项目下工作项的状态历史记录
+     *
+     * 分页查询看板项目下工作项的状态历史记录
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListWorkitemStatusRecordsV4Request 请求对象
+     * @return ListWorkitemStatusRecordsV4Response
+     */
+    public ListWorkitemStatusRecordsV4Response listWorkitemStatusRecordsV4(ListWorkitemStatusRecordsV4Request request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.listWorkitemStatusRecordsV4);
+    }
+
+    /**
+     * 查询看板项目下工作项的状态历史记录
+     *
+     * 分页查询看板项目下工作项的状态历史记录
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListWorkitemStatusRecordsV4Request 请求对象
+     * @return SyncInvoker<ListWorkitemStatusRecordsV4Request, ListWorkitemStatusRecordsV4Response>
+     */
+    public SyncInvoker<ListWorkitemStatusRecordsV4Request, ListWorkitemStatusRecordsV4Response> listWorkitemStatusRecordsV4Invoker(
+        ListWorkitemStatusRecordsV4Request request) {
+        return new SyncInvoker<ListWorkitemStatusRecordsV4Request, ListWorkitemStatusRecordsV4Response>(request,
+            ProjectManMeta.listWorkitemStatusRecordsV4, hcClient);
+    }
+
+    /**
+     * 查询看板项目下的工作项
+     *
+     * 查询看板项目下的工作项
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListWorkitemsRequest 请求对象
+     * @return ListWorkitemsResponse
+     */
+    public ListWorkitemsResponse listWorkitems(ListWorkitemsRequest request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.listWorkitems);
+    }
+
+    /**
+     * 查询看板项目下的工作项
+     *
+     * 查询看板项目下的工作项
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListWorkitemsRequest 请求对象
+     * @return SyncInvoker<ListWorkitemsRequest, ListWorkitemsResponse>
+     */
+    public SyncInvoker<ListWorkitemsRequest, ListWorkitemsResponse> listWorkitemsInvoker(ListWorkitemsRequest request) {
+        return new SyncInvoker<ListWorkitemsRequest, ListWorkitemsResponse>(request, ProjectManMeta.listWorkitems,
+            hcClient);
+    }
+
+    /**
      * 主动退出项目
      *
      * 项目成员主动退出项目，项目创建者不能退出
@@ -685,6 +748,38 @@ public class ProjectManClient {
         ShowProjectSummaryV4Request request) {
         return new SyncInvoker<ShowProjectSummaryV4Request, ShowProjectSummaryV4Response>(request,
             ProjectManMeta.showProjectSummaryV4, hcClient);
+    }
+
+    /**
+     * 查询看板项目的工作项流转配置
+     *
+     * 查询看板项目的工作项流转配置
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowWorkItemWrokflowConfigRequest 请求对象
+     * @return ShowWorkItemWrokflowConfigResponse
+     */
+    public ShowWorkItemWrokflowConfigResponse showWorkItemWrokflowConfig(ShowWorkItemWrokflowConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.showWorkItemWrokflowConfig);
+    }
+
+    /**
+     * 查询看板项目的工作项流转配置
+     *
+     * 查询看板项目的工作项流转配置
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowWorkItemWrokflowConfigRequest 请求对象
+     * @return SyncInvoker<ShowWorkItemWrokflowConfigRequest, ShowWorkItemWrokflowConfigResponse>
+     */
+    public SyncInvoker<ShowWorkItemWrokflowConfigRequest, ShowWorkItemWrokflowConfigResponse> showWorkItemWrokflowConfigInvoker(
+        ShowWorkItemWrokflowConfigRequest request) {
+        return new SyncInvoker<ShowWorkItemWrokflowConfigRequest, ShowWorkItemWrokflowConfigResponse>(request,
+            ProjectManMeta.showWorkItemWrokflowConfig, hcClient);
     }
 
     /**
@@ -1038,6 +1133,102 @@ public class ProjectManClient {
     }
 
     /**
+     * 查询当前工作项已经关联的工作项
+     *
+     * 查询当前工作项已经关联的工作项
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListAssociatedIssuesRequest 请求对象
+     * @return ListAssociatedIssuesResponse
+     */
+    public ListAssociatedIssuesResponse listAssociatedIssues(ListAssociatedIssuesRequest request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.listAssociatedIssues);
+    }
+
+    /**
+     * 查询当前工作项已经关联的工作项
+     *
+     * 查询当前工作项已经关联的工作项
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListAssociatedIssuesRequest 请求对象
+     * @return SyncInvoker<ListAssociatedIssuesRequest, ListAssociatedIssuesResponse>
+     */
+    public SyncInvoker<ListAssociatedIssuesRequest, ListAssociatedIssuesResponse> listAssociatedIssuesInvoker(
+        ListAssociatedIssuesRequest request) {
+        return new SyncInvoker<ListAssociatedIssuesRequest, ListAssociatedIssuesResponse>(request,
+            ProjectManMeta.listAssociatedIssues, hcClient);
+    }
+
+    /**
+     * 查询关联Wiki
+     *
+     * 查询关联Wiki
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListAssociatedTestCasesRequest 请求对象
+     * @return ListAssociatedTestCasesResponse
+     */
+    public ListAssociatedTestCasesResponse listAssociatedTestCases(ListAssociatedTestCasesRequest request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.listAssociatedTestCases);
+    }
+
+    /**
+     * 查询关联Wiki
+     *
+     * 查询关联Wiki
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListAssociatedTestCasesRequest 请求对象
+     * @return SyncInvoker<ListAssociatedTestCasesRequest, ListAssociatedTestCasesResponse>
+     */
+    public SyncInvoker<ListAssociatedTestCasesRequest, ListAssociatedTestCasesResponse> listAssociatedTestCasesInvoker(
+        ListAssociatedTestCasesRequest request) {
+        return new SyncInvoker<ListAssociatedTestCasesRequest, ListAssociatedTestCasesResponse>(request,
+            ProjectManMeta.listAssociatedTestCases, hcClient);
+    }
+
+    /**
+     * 查询当前工作项已经关联的关联Wiki
+     *
+     * 查询当前工作项已经关联的关联Wiki
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListAssociatedWikisRequest 请求对象
+     * @return ListAssociatedWikisResponse
+     */
+    public ListAssociatedWikisResponse listAssociatedWikis(ListAssociatedWikisRequest request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.listAssociatedWikis);
+    }
+
+    /**
+     * 查询当前工作项已经关联的关联Wiki
+     *
+     * 查询当前工作项已经关联的关联Wiki
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListAssociatedWikisRequest 请求对象
+     * @return SyncInvoker<ListAssociatedWikisRequest, ListAssociatedWikisResponse>
+     */
+    public SyncInvoker<ListAssociatedWikisRequest, ListAssociatedWikisResponse> listAssociatedWikisInvoker(
+        ListAssociatedWikisRequest request) {
+        return new SyncInvoker<ListAssociatedWikisRequest, ListAssociatedWikisResponse>(request,
+            ProjectManMeta.listAssociatedWikis, hcClient);
+    }
+
+    /**
      * 获取子工作项
      *
      * 获取子工作项
@@ -1067,6 +1258,38 @@ public class ProjectManClient {
         ListChildIssuesV4Request request) {
         return new SyncInvoker<ListChildIssuesV4Request, ListChildIssuesV4Response>(request,
             ProjectManMeta.listChildIssuesV4, hcClient);
+    }
+
+    /**
+     * 查询当前工作项已经关联的代码提交记录 / 分支创建记录
+     *
+     * 查询当前工作项已经关联的代码提交记录 / 分支创建记录
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListIssueAssociatedCommitsRequest 请求对象
+     * @return ListIssueAssociatedCommitsResponse
+     */
+    public ListIssueAssociatedCommitsResponse listIssueAssociatedCommits(ListIssueAssociatedCommitsRequest request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.listIssueAssociatedCommits);
+    }
+
+    /**
+     * 查询当前工作项已经关联的代码提交记录 / 分支创建记录
+     *
+     * 查询当前工作项已经关联的代码提交记录 / 分支创建记录
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListIssueAssociatedCommitsRequest 请求对象
+     * @return SyncInvoker<ListIssueAssociatedCommitsRequest, ListIssueAssociatedCommitsResponse>
+     */
+    public SyncInvoker<ListIssueAssociatedCommitsRequest, ListIssueAssociatedCommitsResponse> listIssueAssociatedCommitsInvoker(
+        ListIssueAssociatedCommitsRequest request) {
+        return new SyncInvoker<ListIssueAssociatedCommitsRequest, ListIssueAssociatedCommitsResponse>(request,
+            ProjectManMeta.listIssueAssociatedCommits, hcClient);
     }
 
     /**
@@ -1102,6 +1325,38 @@ public class ProjectManClient {
     }
 
     /**
+     * 查询Scrum工作项自定义字段
+     *
+     * 查询Scrum工作项自定义字段的可选列表,符合custom_fields或者names条件的都返回,2个值都不传，返回所有的自定义字段列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListIssueCustomFieldsRequest 请求对象
+     * @return ListIssueCustomFieldsResponse
+     */
+    public ListIssueCustomFieldsResponse listIssueCustomFields(ListIssueCustomFieldsRequest request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.listIssueCustomFields);
+    }
+
+    /**
+     * 查询Scrum工作项自定义字段
+     *
+     * 查询Scrum工作项自定义字段的可选列表,符合custom_fields或者names条件的都返回,2个值都不传，返回所有的自定义字段列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListIssueCustomFieldsRequest 请求对象
+     * @return SyncInvoker<ListIssueCustomFieldsRequest, ListIssueCustomFieldsResponse>
+     */
+    public SyncInvoker<ListIssueCustomFieldsRequest, ListIssueCustomFieldsResponse> listIssueCustomFieldsInvoker(
+        ListIssueCustomFieldsRequest request) {
+        return new SyncInvoker<ListIssueCustomFieldsRequest, ListIssueCustomFieldsResponse>(request,
+            ProjectManMeta.listIssueCustomFields, hcClient);
+    }
+
+    /**
      * 获取工作项历史记录
      *
      * 获取工作项历史记录
@@ -1131,6 +1386,38 @@ public class ProjectManClient {
         ListIssueRecordsV4Request request) {
         return new SyncInvoker<ListIssueRecordsV4Request, ListIssueRecordsV4Response>(request,
             ProjectManMeta.listIssueRecordsV4, hcClient);
+    }
+
+    /**
+     * 查询项目的工作项
+     *
+     * 工作项类型id, 分页参数，创建时间查询项目的工作项
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListIssuesSfV4Request 请求对象
+     * @return ListIssuesSfV4Response
+     */
+    public ListIssuesSfV4Response listIssuesSfV4(ListIssuesSfV4Request request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.listIssuesSfV4);
+    }
+
+    /**
+     * 查询项目的工作项
+     *
+     * 工作项类型id, 分页参数，创建时间查询项目的工作项
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListIssuesSfV4Request 请求对象
+     * @return SyncInvoker<ListIssuesSfV4Request, ListIssuesSfV4Response>
+     */
+    public SyncInvoker<ListIssuesSfV4Request, ListIssuesSfV4Response> listIssuesSfV4Invoker(
+        ListIssuesSfV4Request request) {
+        return new SyncInvoker<ListIssuesSfV4Request, ListIssuesSfV4Response>(request, ProjectManMeta.listIssuesSfV4,
+            hcClient);
     }
 
     /**
@@ -1194,6 +1481,38 @@ public class ProjectManClient {
         ListIterationHistoriesRequest request) {
         return new SyncInvoker<ListIterationHistoriesRequest, ListIterationHistoriesResponse>(request,
             ProjectManMeta.listIterationHistories, hcClient);
+    }
+
+    /**
+     * 查询项目下所有工作项的历史记录
+     *
+     * 查询项目下所有工作项的历史记录
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListProjectIssuesRecordsV4Request 请求对象
+     * @return ListProjectIssuesRecordsV4Response
+     */
+    public ListProjectIssuesRecordsV4Response listProjectIssuesRecordsV4(ListProjectIssuesRecordsV4Request request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.listProjectIssuesRecordsV4);
+    }
+
+    /**
+     * 查询项目下所有工作项的历史记录
+     *
+     * 查询项目下所有工作项的历史记录
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListProjectIssuesRecordsV4Request 请求对象
+     * @return SyncInvoker<ListProjectIssuesRecordsV4Request, ListProjectIssuesRecordsV4Response>
+     */
+    public SyncInvoker<ListProjectIssuesRecordsV4Request, ListProjectIssuesRecordsV4Response> listProjectIssuesRecordsV4Invoker(
+        ListProjectIssuesRecordsV4Request request) {
+        return new SyncInvoker<ListProjectIssuesRecordsV4Request, ListProjectIssuesRecordsV4Response>(request,
+            ProjectManMeta.listProjectIssuesRecordsV4, hcClient);
     }
 
     /**
@@ -1320,6 +1639,38 @@ public class ProjectManClient {
      */
     public SyncInvoker<ShowIssueV4Request, ShowIssueV4Response> showIssueV4Invoker(ShowIssueV4Request request) {
         return new SyncInvoker<ShowIssueV4Request, ShowIssueV4Response>(request, ProjectManMeta.showIssueV4, hcClient);
+    }
+
+    /**
+     * 查询Scrum的工作项流转配置
+     *
+     * 查询Scrum的工作项流转配置
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowIssuesWrokFlowConfigRequest 请求对象
+     * @return ShowIssuesWrokFlowConfigResponse
+     */
+    public ShowIssuesWrokFlowConfigResponse showIssuesWrokFlowConfig(ShowIssuesWrokFlowConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.showIssuesWrokFlowConfig);
+    }
+
+    /**
+     * 查询Scrum的工作项流转配置
+     *
+     * 查询Scrum的工作项流转配置
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowIssuesWrokFlowConfigRequest 请求对象
+     * @return SyncInvoker<ShowIssuesWrokFlowConfigRequest, ShowIssuesWrokFlowConfigResponse>
+     */
+    public SyncInvoker<ShowIssuesWrokFlowConfigRequest, ShowIssuesWrokFlowConfigResponse> showIssuesWrokFlowConfigInvoker(
+        ShowIssuesWrokFlowConfigRequest request) {
+        return new SyncInvoker<ShowIssuesWrokFlowConfigRequest, ShowIssuesWrokFlowConfigResponse>(request,
+            ProjectManMeta.showIssuesWrokFlowConfig, hcClient);
     }
 
     /**

@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -168,7 +167,7 @@ public class ListNatGatewayDnatRulesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
 
-    private OffsetDateTime createdAt;
+    private String createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nat_gateway_id")
@@ -365,20 +364,20 @@ public class ListNatGatewayDnatRulesRequest {
         this.description = description;
     }
 
-    public ListNatGatewayDnatRulesRequest withCreatedAt(OffsetDateTime createdAt) {
+    public ListNatGatewayDnatRulesRequest withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
     }
 
     /**
-     * DNAT规则的创建时间，遵循UTC时间，格式是yyyy-mm-ddThh:mm:ssZ。
+     * DNAT规则的创建时间，格式是yyyy-mm-dd hh:mm:ss.SSSSSS。
      * @return createdAt
      */
-    public OffsetDateTime getCreatedAt() {
+    public String getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(OffsetDateTime createdAt) {
+    public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
 

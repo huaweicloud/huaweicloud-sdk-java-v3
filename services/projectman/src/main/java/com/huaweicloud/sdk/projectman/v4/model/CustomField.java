@@ -20,6 +20,11 @@ public class CustomField {
 
     private String value;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "new_name")
+
+    private String newName;
+
     public CustomField withName(String name) {
         this.name = name;
         return this;
@@ -54,6 +59,23 @@ public class CustomField {
         this.value = value;
     }
 
+    public CustomField withNewName(String newName) {
+        this.newName = newName;
+        return this;
+    }
+
+    /**
+     * 自定义属性名
+     * @return newName
+     */
+    public String getNewName() {
+        return newName;
+    }
+
+    public void setNewName(String newName) {
+        this.newName = newName;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -63,12 +85,13 @@ public class CustomField {
             return false;
         }
         CustomField customField = (CustomField) o;
-        return Objects.equals(this.name, customField.name) && Objects.equals(this.value, customField.value);
+        return Objects.equals(this.name, customField.name) && Objects.equals(this.value, customField.value)
+            && Objects.equals(this.newName, customField.newName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, value);
+        return Objects.hash(name, value, newName);
     }
 
     @Override
@@ -77,6 +100,7 @@ public class CustomField {
         sb.append("class CustomField {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    value: ").append(toIndentedString(value)).append("\n");
+        sb.append("    newName: ").append(toIndentedString(newName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

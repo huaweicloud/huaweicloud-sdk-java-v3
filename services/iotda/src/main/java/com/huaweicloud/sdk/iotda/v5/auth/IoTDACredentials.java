@@ -100,8 +100,7 @@ public class IoTDACredentials extends AbstractCredentials<IoTDACredentials> {
         if (!StringUtils.isEmpty(this.projectId)) {
             return CompletableFuture.completedFuture(this);
         }
-        // Confirm if current ak has been cached in AuthCache, key of authMap is
-        // ak+regionId
+        // Confirm if current ak has been cached in AuthCache, key of authMap is ak+regionId
         String akWithName = getAk() + regionId;
         if (Objects.nonNull(AuthCache.getAuth(akWithName)) && !StringUtils.isEmpty(AuthCache.getAuth(akWithName))) {
             this.projectId = AuthCache.getAuth(akWithName);

@@ -80,6 +80,36 @@ public class GaussDBAsyncClient {
     }
 
     /**
+     * 数据库代理规格变更
+     *
+     * 数据库代理规格变更。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ChangeGaussMySqlProxySpecificationRequest 请求对象
+     * @return CompletableFuture<ChangeGaussMySqlProxySpecificationResponse>
+     */
+    public CompletableFuture<ChangeGaussMySqlProxySpecificationResponse> changeGaussMySqlProxySpecificationAsync(ChangeGaussMySqlProxySpecificationRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBMeta.changeGaussMySqlProxySpecification);
+    }
+
+    /**
+     * 数据库代理规格变更
+     *
+     * 数据库代理规格变更。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ChangeGaussMySqlProxySpecificationRequest 请求对象
+     * @return AsyncInvoker<ChangeGaussMySqlProxySpecificationRequest, ChangeGaussMySqlProxySpecificationResponse>
+     */
+    public AsyncInvoker<ChangeGaussMySqlProxySpecificationRequest, ChangeGaussMySqlProxySpecificationResponse> changeGaussMySqlProxySpecificationAsyncInvoker(ChangeGaussMySqlProxySpecificationRequest request) {
+        return new AsyncInvoker<ChangeGaussMySqlProxySpecificationRequest, ChangeGaussMySqlProxySpecificationResponse>(request, GaussDBMeta.changeGaussMySqlProxySpecification, hcClient);
+    }
+
+    /**
      * 创建手动备份
      *
      * 创建手动备份

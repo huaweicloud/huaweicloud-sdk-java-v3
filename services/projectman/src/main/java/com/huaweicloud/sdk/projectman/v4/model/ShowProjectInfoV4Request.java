@@ -21,7 +21,7 @@ public class ShowProjectInfoV4Request {
     }
 
     /**
-     * devcloud的项目ID
+     * devcloud项目的32位id
      * @return projectId
      */
     public String getProjectId() {

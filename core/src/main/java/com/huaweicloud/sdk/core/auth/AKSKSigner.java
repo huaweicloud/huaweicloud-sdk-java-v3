@@ -67,7 +67,6 @@ public class AKSKSigner {
 
     public static Map<String, String> sign(HttpRequest request, AbstractCredentials credential) {
         // ************* TASK 1: CONSTRUCT CANONICAL REQUEST *************
-        // Date now = ISODateFormat.parse("20191115T033655Z"); // 设置基准时间
         // 设置基准时间
         Date now = new Date();
         HashMap<String, String> authenticationHeaders = new HashMap<>();

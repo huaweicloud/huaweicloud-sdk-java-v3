@@ -99,6 +99,11 @@ public class CreateSystemIssueRequestV4 {
     private Integer trackerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "new_custom_fields")
+
+    private List<NewCustomField> newCustomFields = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "creator")
 
     private Creator creator;
@@ -369,7 +374,7 @@ public class CreateSystemIssueRequestV4 {
     }
 
     /**
-     * 状态   id, 开始   1, 进行中 2, 已解决 3, 测试中 4, 已关闭 5, 已拒绝 6,
+     * 状态   id, 新建   1, 进行中 2, 已解决 3, 测试中 4, 已关闭 5, 已拒绝 6,
      * @return statusId
      */
     public Integer getStatusId() {
@@ -386,7 +391,7 @@ public class CreateSystemIssueRequestV4 {
     }
 
     /**
-     * 工作项类型, 2任务/task,3缺陷/bug,5epic,6feature,7story;     5 只能为 6 的父工作项类型;     6 只能为 7 的父工作项类型;     7 只能为 2,3的父;
+     * 工作项类型, 2任务/Task,3缺陷/Bug,5Epic,6Feature,7Story;     5 只能为 6 的父工作项类型;     6 只能为 7 的父工作项类型;     7 只能为 2,3的父;
      * @return trackerId
      */
     public Integer getTrackerId() {
@@ -395,6 +400,39 @@ public class CreateSystemIssueRequestV4 {
 
     public void setTrackerId(Integer trackerId) {
         this.trackerId = trackerId;
+    }
+
+    public CreateSystemIssueRequestV4 withNewCustomFields(List<NewCustomField> newCustomFields) {
+        this.newCustomFields = newCustomFields;
+        return this;
+    }
+
+    public CreateSystemIssueRequestV4 addNewCustomFieldsItem(NewCustomField newCustomFieldsItem) {
+        if (this.newCustomFields == null) {
+            this.newCustomFields = new ArrayList<>();
+        }
+        this.newCustomFields.add(newCustomFieldsItem);
+        return this;
+    }
+
+    public CreateSystemIssueRequestV4 withNewCustomFields(Consumer<List<NewCustomField>> newCustomFieldsSetter) {
+        if (this.newCustomFields == null) {
+            this.newCustomFields = new ArrayList<>();
+        }
+        newCustomFieldsSetter.accept(this.newCustomFields);
+        return this;
+    }
+
+    /**
+     * 用户自定义字段
+     * @return newCustomFields
+     */
+    public List<NewCustomField> getNewCustomFields() {
+        return newCustomFields;
+    }
+
+    public void setNewCustomFields(List<NewCustomField> newCustomFields) {
+        this.newCustomFields = newCustomFields;
     }
 
     public CreateSystemIssueRequestV4 withCreator(Creator creator) {
@@ -482,6 +520,7 @@ public class CreateSystemIssueRequestV4 {
             && Objects.equals(this.severityId, createSystemIssueRequestV4.severityId)
             && Objects.equals(this.statusId, createSystemIssueRequestV4.statusId)
             && Objects.equals(this.trackerId, createSystemIssueRequestV4.trackerId)
+            && Objects.equals(this.newCustomFields, createSystemIssueRequestV4.newCustomFields)
             && Objects.equals(this.creator, createSystemIssueRequestV4.creator)
             && Objects.equals(this.customFields, createSystemIssueRequestV4.customFields);
     }
@@ -505,6 +544,7 @@ public class CreateSystemIssueRequestV4 {
             severityId,
             statusId,
             trackerId,
+            newCustomFields,
             creator,
             customFields);
     }
@@ -530,6 +570,7 @@ public class CreateSystemIssueRequestV4 {
         sb.append("    severityId: ").append(toIndentedString(severityId)).append("\n");
         sb.append("    statusId: ").append(toIndentedString(statusId)).append("\n");
         sb.append("    trackerId: ").append(toIndentedString(trackerId)).append("\n");
+        sb.append("    newCustomFields: ").append(toIndentedString(newCustomFields)).append("\n");
         sb.append("    creator: ").append(toIndentedString(creator)).append("\n");
         sb.append("    customFields: ").append(toIndentedString(customFields)).append("\n");
         sb.append("}");

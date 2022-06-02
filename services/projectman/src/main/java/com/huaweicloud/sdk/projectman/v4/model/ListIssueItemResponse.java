@@ -49,6 +49,11 @@ public class ListIssueItemResponse {
     private List<CustomField> customFields = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "new_custom_fields")
+
+    private List<NewCustomField> newCustomFields = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "developer")
 
     private IssueUser developer;
@@ -121,7 +126,7 @@ public class ListIssueItemResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tracker")
 
-    private IssueItemSfV4Tracker tracker;
+    private CreateIssueResponseV4Tracker tracker;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_time")
@@ -296,7 +301,7 @@ public class ListIssueItemResponse {
     }
 
     /**
-     * 自定义属性值
+     * 自定义属性值,不建议使用，建议参考new_custom_fields字段
      * @return customFields
      */
     public List<CustomField> getCustomFields() {
@@ -305,6 +310,39 @@ public class ListIssueItemResponse {
 
     public void setCustomFields(List<CustomField> customFields) {
         this.customFields = customFields;
+    }
+
+    public ListIssueItemResponse withNewCustomFields(List<NewCustomField> newCustomFields) {
+        this.newCustomFields = newCustomFields;
+        return this;
+    }
+
+    public ListIssueItemResponse addNewCustomFieldsItem(NewCustomField newCustomFieldsItem) {
+        if (this.newCustomFields == null) {
+            this.newCustomFields = new ArrayList<>();
+        }
+        this.newCustomFields.add(newCustomFieldsItem);
+        return this;
+    }
+
+    public ListIssueItemResponse withNewCustomFields(Consumer<List<NewCustomField>> newCustomFieldsSetter) {
+        if (this.newCustomFields == null) {
+            this.newCustomFields = new ArrayList<>();
+        }
+        newCustomFieldsSetter.accept(this.newCustomFields);
+        return this;
+    }
+
+    /**
+     * 自定义属性值
+     * @return newCustomFields
+     */
+    public List<NewCustomField> getNewCustomFields() {
+        return newCustomFields;
+    }
+
+    public void setNewCustomFields(List<NewCustomField> newCustomFields) {
+        this.newCustomFields = newCustomFields;
     }
 
     public ListIssueItemResponse withDeveloper(IssueUser developer) {
@@ -626,14 +664,14 @@ public class ListIssueItemResponse {
         this.status = status;
     }
 
-    public ListIssueItemResponse withTracker(IssueItemSfV4Tracker tracker) {
+    public ListIssueItemResponse withTracker(CreateIssueResponseV4Tracker tracker) {
         this.tracker = tracker;
         return this;
     }
 
-    public ListIssueItemResponse withTracker(Consumer<IssueItemSfV4Tracker> trackerSetter) {
+    public ListIssueItemResponse withTracker(Consumer<CreateIssueResponseV4Tracker> trackerSetter) {
         if (this.tracker == null) {
-            this.tracker = new IssueItemSfV4Tracker();
+            this.tracker = new CreateIssueResponseV4Tracker();
             trackerSetter.accept(this.tracker);
         }
 
@@ -644,11 +682,11 @@ public class ListIssueItemResponse {
      * Get tracker
      * @return tracker
      */
-    public IssueItemSfV4Tracker getTracker() {
+    public CreateIssueResponseV4Tracker getTracker() {
         return tracker;
     }
 
-    public void setTracker(IssueItemSfV4Tracker tracker) {
+    public void setTracker(CreateIssueResponseV4Tracker tracker) {
         this.tracker = tracker;
     }
 
@@ -719,6 +757,7 @@ public class ListIssueItemResponse {
             && Objects.equals(this.createdTime, listIssueItemResponse.createdTime)
             && Objects.equals(this.creator, listIssueItemResponse.creator)
             && Objects.equals(this.customFields, listIssueItemResponse.customFields)
+            && Objects.equals(this.newCustomFields, listIssueItemResponse.newCustomFields)
             && Objects.equals(this.developer, listIssueItemResponse.developer)
             && Objects.equals(this.domain, listIssueItemResponse.domain)
             && Objects.equals(this.doneRatio, listIssueItemResponse.doneRatio)
@@ -748,6 +787,7 @@ public class ListIssueItemResponse {
             createdTime,
             creator,
             customFields,
+            newCustomFields,
             developer,
             domain,
             doneRatio,
@@ -779,6 +819,7 @@ public class ListIssueItemResponse {
         sb.append("    createdTime: ").append(toIndentedString(createdTime)).append("\n");
         sb.append("    creator: ").append(toIndentedString(creator)).append("\n");
         sb.append("    customFields: ").append(toIndentedString(customFields)).append("\n");
+        sb.append("    newCustomFields: ").append(toIndentedString(newCustomFields)).append("\n");
         sb.append("    developer: ").append(toIndentedString(developer)).append("\n");
         sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
         sb.append("    doneRatio: ").append(toIndentedString(doneRatio)).append("\n");

@@ -39,10 +39,10 @@ public class Backup  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="descriprion")
+    @JsonProperty(value="description")
     
     
-    private String descriprion;
+    private String description;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -278,8 +278,8 @@ public class Backup  {
 
     
 
-    public Backup withDescriprion(String descriprion) {
-        this.descriprion = descriprion;
+    public Backup withDescription(String description) {
+        this.description = description;
         return this;
     }
 
@@ -288,14 +288,14 @@ public class Backup  {
 
     /**
      * 备份描述。
-     * @return descriprion
+     * @return description
      */
-    public String getDescriprion() {
-        return descriprion;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDescriprion(String descriprion) {
-        this.descriprion = descriprion;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     
@@ -399,7 +399,7 @@ public class Backup  {
         Backup backup = (Backup) o;
         return Objects.equals(this.id, backup.id) &&
             Objects.equals(this.name, backup.name) &&
-            Objects.equals(this.descriprion, backup.descriprion) &&
+            Objects.equals(this.description, backup.description) &&
             Objects.equals(this.beginTime, backup.beginTime) &&
             Objects.equals(this.status, backup.status) &&
             Objects.equals(this.type, backup.type) &&
@@ -407,7 +407,7 @@ public class Backup  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, descriprion, beginTime, status, type, instanceId);
+        return Objects.hash(id, name, description, beginTime, status, type, instanceId);
     }
     @Override
     public String toString() {
@@ -415,7 +415,7 @@ public class Backup  {
         sb.append("class Backup {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    descriprion: ").append(toIndentedString(descriprion)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    beginTime: ").append(toIndentedString(beginTime)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");

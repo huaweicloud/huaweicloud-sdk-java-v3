@@ -1,4 +1,37 @@
+/*
+ * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
+ *
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+
 package com.huaweicloud.sdk.core;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.huaweicloud.sdk.core.http.FieldExistence;
+import com.huaweicloud.sdk.core.http.HttpConfig;
+import com.huaweicloud.sdk.core.http.HttpMethod;
+import com.huaweicloud.sdk.core.http.HttpRequest;
+import com.huaweicloud.sdk.core.http.HttpRequestDef;
+import com.huaweicloud.sdk.core.http.LocationType;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -6,19 +39,6 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-
-import com.huaweicloud.sdk.core.http.HttpConfig;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
-
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.huaweicloud.sdk.core.http.FieldExistence;
-import com.huaweicloud.sdk.core.http.HttpMethod;
-import com.huaweicloud.sdk.core.http.HttpRequest;
-import com.huaweicloud.sdk.core.http.HttpRequestDef;
-import com.huaweicloud.sdk.core.http.LocationType;
 
 public class TestMapQueryParameters {
     TestRequest request;
@@ -116,8 +136,8 @@ public class TestMapQueryParameters {
     private static HttpRequestDef<TestRequest, TestResponse> genFortest() {
         // basic
         HttpRequestDef.Builder<TestRequest, TestResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, TestRequest.class, TestResponse.class)
-                .withUri("/v1/test");
+                HttpRequestDef.builder(HttpMethod.GET, TestRequest.class, TestResponse.class)
+                        .withUri("/v1/test");
 
         // requests
         builder.withRequestField("p1",
@@ -178,12 +198,11 @@ public class TestMapQueryParameters {
         List<String> map5 = Arrays.asList("p51", "p52");
 
         request = new TestRequest()
-            .withP1(map1)
-            .withP2(map2)
-            .withP3(map3)
-            .withP4(map4)
-            .withP5(map5)
-        ;
+                .withP1(map1)
+                .withP2(map2)
+                .withP3(map3)
+                .withP4(map4)
+                .withP5(map5);
     }
 
     @Test
@@ -194,6 +213,6 @@ public class TestMapQueryParameters {
         HttpRequest httpRequest = hcClient.buildRequest(request, genFortest());
         // 当类型为 Map<String, List<Object>> 时，由于堆栈先进后出，此处参数的顺序为逆序
         Assert.assertEquals("p1=p1&p2[id]=p2&p3[id3]=&p3[id2]=p33&p3[id2]=p34&p3[id1]=p31&p3[id1]=p32"
-            + "&p4[id][id1]=p41&p4[id][id2]=p42&p5=p51&p5=p52", httpRequest.getQueryParamsString());
+                + "&p4[id][id1]=p41&p4[id][id2]=p42&p5=p51&p5=p52", httpRequest.getQueryParamsString());
     }
 }

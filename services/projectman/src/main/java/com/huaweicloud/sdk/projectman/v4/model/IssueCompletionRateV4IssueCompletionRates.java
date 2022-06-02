@@ -54,7 +54,7 @@ public class IssueCompletionRateV4IssueCompletionRates {
     }
 
     /**
-     * 工作项类型id,1需求,2任务/task,3缺陷/bug,5epic,6feature,7story
+     * 工作项类型id,1需求,2任务/Task,3缺陷/Bug,5Epic,6Feature,7Story
      * @return trackerId
      */
     public Integer getTrackerId() {

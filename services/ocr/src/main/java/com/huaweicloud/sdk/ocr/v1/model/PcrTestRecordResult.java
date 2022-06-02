@@ -36,7 +36,7 @@ public class PcrTestRecordResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confidence")
 
-    private Float confidence;
+    private PcrTestRecordConfidence confidence;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "words_block_count")
@@ -116,20 +116,29 @@ public class PcrTestRecordResult {
         this.testResult = testResult;
     }
 
-    public PcrTestRecordResult withConfidence(Float confidence) {
+    public PcrTestRecordResult withConfidence(PcrTestRecordConfidence confidence) {
         this.confidence = confidence;
         return this;
     }
 
+    public PcrTestRecordResult withConfidence(Consumer<PcrTestRecordConfidence> confidenceSetter) {
+        if (this.confidence == null) {
+            this.confidence = new PcrTestRecordConfidence();
+            confidenceSetter.accept(this.confidence);
+        }
+
+        return this;
+    }
+
     /**
-     * 各个字段的置信度 
+     * Get confidence
      * @return confidence
      */
-    public Float getConfidence() {
+    public PcrTestRecordConfidence getConfidence() {
         return confidence;
     }
 
-    public void setConfidence(Float confidence) {
+    public void setConfidence(PcrTestRecordConfidence confidence) {
         this.confidence = confidence;
     }
 

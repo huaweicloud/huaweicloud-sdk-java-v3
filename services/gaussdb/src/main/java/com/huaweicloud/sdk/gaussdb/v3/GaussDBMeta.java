@@ -99,6 +99,57 @@ public class GaussDBMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ChangeGaussMySqlProxySpecificationRequest, ChangeGaussMySqlProxySpecificationResponse> changeGaussMySqlProxySpecification = genForchangeGaussMySqlProxySpecification();
+
+    private static HttpRequestDef<ChangeGaussMySqlProxySpecificationRequest, ChangeGaussMySqlProxySpecificationResponse> genForchangeGaussMySqlProxySpecification() {
+        // basic
+        HttpRequestDef.Builder<ChangeGaussMySqlProxySpecificationRequest, ChangeGaussMySqlProxySpecificationResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ChangeGaussMySqlProxySpecificationRequest.class, ChangeGaussMySqlProxySpecificationResponse.class)
+                .withName("ChangeGaussMySqlProxySpecification")
+                .withUri("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/flavor")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeGaussMySqlProxySpecificationRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.<String>withRequestField("proxy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeGaussMySqlProxySpecificationRequest::getProxyId, (req, v) -> {
+                req.setProxyId(v);
+            })
+        );
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeGaussMySqlProxySpecificationRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+        builder.<TaurusProxyScaleRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(TaurusProxyScaleRequest.class),
+            f -> f.withMarshaller(ChangeGaussMySqlProxySpecificationRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateGaussMySqlBackupRequest, CreateGaussMySqlBackupResponse> createGaussMySqlBackup = genForcreateGaussMySqlBackup();
 
     private static HttpRequestDef<CreateGaussMySqlBackupRequest, CreateGaussMySqlBackupResponse> genForcreateGaussMySqlBackup() {

@@ -775,6 +775,55 @@ public class DliMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListElasticResourcePoolQueuesRequest, ListElasticResourcePoolQueuesResponse> listElasticResourcePoolQueues =
+        genForlistElasticResourcePoolQueues();
+
+    private static HttpRequestDef<ListElasticResourcePoolQueuesRequest, ListElasticResourcePoolQueuesResponse> genForlistElasticResourcePoolQueues() {
+        // basic
+        HttpRequestDef.Builder<ListElasticResourcePoolQueuesRequest, ListElasticResourcePoolQueuesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListElasticResourcePoolQueuesRequest.class,
+                    ListElasticResourcePoolQueuesResponse.class)
+                .withName("ListElasticResourcePoolQueues")
+                .withUri("/v3/{project_id}/elastic-resource-pools/{elastic_resource_pool_name}/queues")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("elastic_resource_pool_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListElasticResourcePoolQueuesRequest::getElasticResourcePoolName, (req, v) -> {
+                req.setElasticResourcePoolName(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListElasticResourcePoolQueuesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListElasticResourcePoolQueuesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<String>withRequestField("queue_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListElasticResourcePoolQueuesRequest::getQueueName, (req, v) -> {
+                req.setQueueName(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListElasticResourcePoolsRequest, ListElasticResourcePoolsResponse> listElasticResourcePools =
         genForlistElasticResourcePools();
 
@@ -1268,6 +1317,48 @@ public class DliMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UpdateElasticResourcePoolInfo.class),
             f -> f.withMarshaller(UpdateElasticResourcePoolRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateElasticResourcePoolQueueInfoRequest, UpdateElasticResourcePoolQueueInfoResponse> updateElasticResourcePoolQueueInfo =
+        genForupdateElasticResourcePoolQueueInfo();
+
+    private static HttpRequestDef<UpdateElasticResourcePoolQueueInfoRequest, UpdateElasticResourcePoolQueueInfoResponse> genForupdateElasticResourcePoolQueueInfo() {
+        // basic
+        HttpRequestDef.Builder<UpdateElasticResourcePoolQueueInfoRequest, UpdateElasticResourcePoolQueueInfoResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateElasticResourcePoolQueueInfoRequest.class,
+                    UpdateElasticResourcePoolQueueInfoResponse.class)
+                .withName("UpdateElasticResourcePoolQueueInfo")
+                .withUri("/v3/{project_id}/elastic-resource-pools/{elastic_resource_pool_name}/queues/{queue_name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("elastic_resource_pool_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateElasticResourcePoolQueueInfoRequest::getElasticResourcePoolName, (req, v) -> {
+                req.setElasticResourcePoolName(v);
+            }));
+        builder.<String>withRequestField("queue_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateElasticResourcePoolQueueInfoRequest::getQueueName, (req, v) -> {
+                req.setQueueName(v);
+            }));
+        builder.<UpdateElasticResourcePoolQueueScalingPolicyInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateElasticResourcePoolQueueScalingPolicyInfo.class),
+            f -> f.withMarshaller(UpdateElasticResourcePoolQueueInfoRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

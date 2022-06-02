@@ -50,6 +50,11 @@ public class UpdateIssueV4Response extends SdkResponse {
     private List<CustomField> customFields = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "new_custom_fields")
+
+    private List<NewCustomField> newCustomFields = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "developer")
 
     private IssueUser developer;
@@ -122,7 +127,7 @@ public class UpdateIssueV4Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tracker")
 
-    private IssueItemSfV4Tracker tracker;
+    private CreateIssueResponseV4Tracker tracker;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_time")
@@ -292,7 +297,7 @@ public class UpdateIssueV4Response extends SdkResponse {
     }
 
     /**
-     * 自定义属性值
+     * 自定义属性值,不建议使用，建议参考new_custom_fields字段
      * @return customFields
      */
     public List<CustomField> getCustomFields() {
@@ -301,6 +306,39 @@ public class UpdateIssueV4Response extends SdkResponse {
 
     public void setCustomFields(List<CustomField> customFields) {
         this.customFields = customFields;
+    }
+
+    public UpdateIssueV4Response withNewCustomFields(List<NewCustomField> newCustomFields) {
+        this.newCustomFields = newCustomFields;
+        return this;
+    }
+
+    public UpdateIssueV4Response addNewCustomFieldsItem(NewCustomField newCustomFieldsItem) {
+        if (this.newCustomFields == null) {
+            this.newCustomFields = new ArrayList<>();
+        }
+        this.newCustomFields.add(newCustomFieldsItem);
+        return this;
+    }
+
+    public UpdateIssueV4Response withNewCustomFields(Consumer<List<NewCustomField>> newCustomFieldsSetter) {
+        if (this.newCustomFields == null) {
+            this.newCustomFields = new ArrayList<>();
+        }
+        newCustomFieldsSetter.accept(this.newCustomFields);
+        return this;
+    }
+
+    /**
+     * 自定义属性值
+     * @return newCustomFields
+     */
+    public List<NewCustomField> getNewCustomFields() {
+        return newCustomFields;
+    }
+
+    public void setNewCustomFields(List<NewCustomField> newCustomFields) {
+        this.newCustomFields = newCustomFields;
     }
 
     public UpdateIssueV4Response withDeveloper(IssueUser developer) {
@@ -622,14 +660,14 @@ public class UpdateIssueV4Response extends SdkResponse {
         this.status = status;
     }
 
-    public UpdateIssueV4Response withTracker(IssueItemSfV4Tracker tracker) {
+    public UpdateIssueV4Response withTracker(CreateIssueResponseV4Tracker tracker) {
         this.tracker = tracker;
         return this;
     }
 
-    public UpdateIssueV4Response withTracker(Consumer<IssueItemSfV4Tracker> trackerSetter) {
+    public UpdateIssueV4Response withTracker(Consumer<CreateIssueResponseV4Tracker> trackerSetter) {
         if (this.tracker == null) {
-            this.tracker = new IssueItemSfV4Tracker();
+            this.tracker = new CreateIssueResponseV4Tracker();
             trackerSetter.accept(this.tracker);
         }
 
@@ -640,11 +678,11 @@ public class UpdateIssueV4Response extends SdkResponse {
      * Get tracker
      * @return tracker
      */
-    public IssueItemSfV4Tracker getTracker() {
+    public CreateIssueResponseV4Tracker getTracker() {
         return tracker;
     }
 
-    public void setTracker(IssueItemSfV4Tracker tracker) {
+    public void setTracker(CreateIssueResponseV4Tracker tracker) {
         this.tracker = tracker;
     }
 
@@ -698,6 +736,7 @@ public class UpdateIssueV4Response extends SdkResponse {
             && Objects.equals(this.createdTime, updateIssueV4Response.createdTime)
             && Objects.equals(this.creator, updateIssueV4Response.creator)
             && Objects.equals(this.customFields, updateIssueV4Response.customFields)
+            && Objects.equals(this.newCustomFields, updateIssueV4Response.newCustomFields)
             && Objects.equals(this.developer, updateIssueV4Response.developer)
             && Objects.equals(this.domain, updateIssueV4Response.domain)
             && Objects.equals(this.doneRatio, updateIssueV4Response.doneRatio)
@@ -726,6 +765,7 @@ public class UpdateIssueV4Response extends SdkResponse {
             createdTime,
             creator,
             customFields,
+            newCustomFields,
             developer,
             domain,
             doneRatio,
@@ -756,6 +796,7 @@ public class UpdateIssueV4Response extends SdkResponse {
         sb.append("    createdTime: ").append(toIndentedString(createdTime)).append("\n");
         sb.append("    creator: ").append(toIndentedString(creator)).append("\n");
         sb.append("    customFields: ").append(toIndentedString(customFields)).append("\n");
+        sb.append("    newCustomFields: ").append(toIndentedString(newCustomFields)).append("\n");
         sb.append("    developer: ").append(toIndentedString(developer)).append("\n");
         sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
         sb.append("    doneRatio: ").append(toIndentedString(doneRatio)).append("\n");

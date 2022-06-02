@@ -21,7 +21,7 @@ public class DeleteProjectV4Request {
     }
 
     /**
-     * devcloud的项目id
+     * devcloud项目的32位id
      * @return projectId
      */
     public String getProjectId() {

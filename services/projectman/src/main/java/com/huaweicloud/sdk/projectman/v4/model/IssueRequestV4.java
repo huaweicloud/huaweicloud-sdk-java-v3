@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.projectman.v4.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 工作项属性
@@ -94,6 +97,11 @@ public class IssueRequestV4 {
     @JsonProperty(value = "tracker_id")
 
     private Integer trackerId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "new_custom_fields")
+
+    private List<NewCustomField> newCustomFields = null;
 
     public IssueRequestV4 withActualWorkHours(Double actualWorkHours) {
         this.actualWorkHours = actualWorkHours;
@@ -356,7 +364,7 @@ public class IssueRequestV4 {
     }
 
     /**
-     * 状态   id, 开始   1, 进行中 2, 已解决 3, 测试中 4, 已关闭 5, 已解决 6,
+     * 状态   id, 新建   1, 进行中 2, 已解决 3, 测试中 4, 已关闭 5, 已解决 6,
      * @return statusId
      */
     public Integer getStatusId() {
@@ -373,7 +381,7 @@ public class IssueRequestV4 {
     }
 
     /**
-     * 工作项类型,2任务/task,3缺陷/bug,5epic,6feature,7story
+     * 工作项类型,2任务/Task,3缺陷/Bug,5Epic,6Feature,7Story
      * @return trackerId
      */
     public Integer getTrackerId() {
@@ -382,6 +390,39 @@ public class IssueRequestV4 {
 
     public void setTrackerId(Integer trackerId) {
         this.trackerId = trackerId;
+    }
+
+    public IssueRequestV4 withNewCustomFields(List<NewCustomField> newCustomFields) {
+        this.newCustomFields = newCustomFields;
+        return this;
+    }
+
+    public IssueRequestV4 addNewCustomFieldsItem(NewCustomField newCustomFieldsItem) {
+        if (this.newCustomFields == null) {
+            this.newCustomFields = new ArrayList<>();
+        }
+        this.newCustomFields.add(newCustomFieldsItem);
+        return this;
+    }
+
+    public IssueRequestV4 withNewCustomFields(Consumer<List<NewCustomField>> newCustomFieldsSetter) {
+        if (this.newCustomFields == null) {
+            this.newCustomFields = new ArrayList<>();
+        }
+        newCustomFieldsSetter.accept(this.newCustomFields);
+        return this;
+    }
+
+    /**
+     * 用户自定义字段
+     * @return newCustomFields
+     */
+    public List<NewCustomField> getNewCustomFields() {
+        return newCustomFields;
+    }
+
+    public void setNewCustomFields(List<NewCustomField> newCustomFields) {
+        this.newCustomFields = newCustomFields;
     }
 
     @Override
@@ -408,7 +449,8 @@ public class IssueRequestV4 {
             && Objects.equals(this.priorityId, issueRequestV4.priorityId)
             && Objects.equals(this.severityId, issueRequestV4.severityId)
             && Objects.equals(this.statusId, issueRequestV4.statusId)
-            && Objects.equals(this.trackerId, issueRequestV4.trackerId);
+            && Objects.equals(this.trackerId, issueRequestV4.trackerId)
+            && Objects.equals(this.newCustomFields, issueRequestV4.newCustomFields);
     }
 
     @Override
@@ -429,7 +471,8 @@ public class IssueRequestV4 {
             priorityId,
             severityId,
             statusId,
-            trackerId);
+            trackerId,
+            newCustomFields);
     }
 
     @Override
@@ -453,6 +496,7 @@ public class IssueRequestV4 {
         sb.append("    severityId: ").append(toIndentedString(severityId)).append("\n");
         sb.append("    statusId: ").append(toIndentedString(statusId)).append("\n");
         sb.append("    trackerId: ").append(toIndentedString(trackerId)).append("\n");
+        sb.append("    newCustomFields: ").append(toIndentedString(newCustomFields)).append("\n");
         sb.append("}");
         return sb.toString();
     }

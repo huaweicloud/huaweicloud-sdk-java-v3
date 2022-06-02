@@ -7,7 +7,6 @@ import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.nat.v2.model.*;
 
-import java.time.OffsetDateTime;
 import java.util.List;
 
 @SuppressWarnings("unchecked")
@@ -177,10 +176,10 @@ public class NatMeta {
             f -> f.withMarshaller(ListNatGatewayDnatRulesRequest::getDescription, (req, v) -> {
                 req.setDescription(v);
             }));
-        builder.<OffsetDateTime>withRequestField("created_at",
+        builder.<String>withRequestField("created_at",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(OffsetDateTime.class),
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListNatGatewayDnatRulesRequest::getCreatedAt, (req, v) -> {
                 req.setCreatedAt(v);
             }));
@@ -359,10 +358,10 @@ public class NatMeta {
             f -> f.withMarshaller(ListNatGatewaysRequest::getDescription, (req, v) -> {
                 req.setDescription(v);
             }));
-        builder.<OffsetDateTime>withRequestField("created_at",
+        builder.<String>withRequestField("created_at",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(OffsetDateTime.class),
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListNatGatewaysRequest::getCreatedAt, (req, v) -> {
                 req.setCreatedAt(v);
             }));
@@ -600,10 +599,10 @@ public class NatMeta {
             f -> f.withMarshaller(ListNatGatewaySnatRulesRequest::getDescription, (req, v) -> {
                 req.setDescription(v);
             }));
-        builder.<OffsetDateTime>withRequestField("created_at",
+        builder.<String>withRequestField("created_at",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(OffsetDateTime.class),
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListNatGatewaySnatRulesRequest::getCreatedAt, (req, v) -> {
                 req.setCreatedAt(v);
             }));

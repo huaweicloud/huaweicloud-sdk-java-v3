@@ -30,8 +30,8 @@ public class Region {
     private String endpoint;
 
     public Region(String id, String endpoint) {
-        this.setId(id);
-        this.setEndpoint(endpoint);
+        this.id = id;
+        this.endpoint = endpoint;
     }
 
     public String getId() {

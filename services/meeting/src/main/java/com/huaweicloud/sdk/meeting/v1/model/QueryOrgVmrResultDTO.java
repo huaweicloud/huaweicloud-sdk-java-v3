@@ -37,6 +37,11 @@ public class QueryOrgVmrResultDTO {
     private Integer vmrPkgParties;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "maxAudienceParties")
+
+    private Integer maxAudienceParties;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "member")
 
     private IdMarkDTO member;
@@ -50,6 +55,16 @@ public class QueryOrgVmrResultDTO {
     @JsonProperty(value = "status")
 
     private Integer status;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "expireDate")
+
+    private Long expireDate;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "commercialMaxAudienceParties")
+
+    private Integer commercialMaxAudienceParties;
 
     public QueryOrgVmrResultDTO withId(String id) {
         this.id = id;
@@ -136,6 +151,23 @@ public class QueryOrgVmrResultDTO {
         this.vmrPkgParties = vmrPkgParties;
     }
 
+    public QueryOrgVmrResultDTO withMaxAudienceParties(Integer maxAudienceParties) {
+        this.maxAudienceParties = maxAudienceParties;
+        return this;
+    }
+
+    /**
+     * 最大观众与会方数（仅网络研讨会有效）
+     * @return maxAudienceParties
+     */
+    public Integer getMaxAudienceParties() {
+        return maxAudienceParties;
+    }
+
+    public void setMaxAudienceParties(Integer maxAudienceParties) {
+        this.maxAudienceParties = maxAudienceParties;
+    }
+
     public QueryOrgVmrResultDTO withMember(IdMarkDTO member) {
         this.member = member;
         return this;
@@ -205,6 +237,40 @@ public class QueryOrgVmrResultDTO {
         this.status = status;
     }
 
+    public QueryOrgVmrResultDTO withExpireDate(Long expireDate) {
+        this.expireDate = expireDate;
+        return this;
+    }
+
+    /**
+     * 到期时间，utc时间戳
+     * @return expireDate
+     */
+    public Long getExpireDate() {
+        return expireDate;
+    }
+
+    public void setExpireDate(Long expireDate) {
+        this.expireDate = expireDate;
+    }
+
+    public QueryOrgVmrResultDTO withCommercialMaxAudienceParties(Integer commercialMaxAudienceParties) {
+        this.commercialMaxAudienceParties = commercialMaxAudienceParties;
+        return this;
+    }
+
+    /**
+     * 按次资源转商后，商用规格最大观众与会方数（仅网络研讨会有效）
+     * @return commercialMaxAudienceParties
+     */
+    public Integer getCommercialMaxAudienceParties() {
+        return commercialMaxAudienceParties;
+    }
+
+    public void setCommercialMaxAudienceParties(Integer commercialMaxAudienceParties) {
+        this.commercialMaxAudienceParties = commercialMaxAudienceParties;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -219,14 +285,27 @@ public class QueryOrgVmrResultDTO {
             && Objects.equals(this.vmrName, queryOrgVmrResultDTO.vmrName)
             && Objects.equals(this.vmrPkgName, queryOrgVmrResultDTO.vmrPkgName)
             && Objects.equals(this.vmrPkgParties, queryOrgVmrResultDTO.vmrPkgParties)
+            && Objects.equals(this.maxAudienceParties, queryOrgVmrResultDTO.maxAudienceParties)
             && Objects.equals(this.member, queryOrgVmrResultDTO.member)
             && Objects.equals(this.device, queryOrgVmrResultDTO.device)
-            && Objects.equals(this.status, queryOrgVmrResultDTO.status);
+            && Objects.equals(this.status, queryOrgVmrResultDTO.status)
+            && Objects.equals(this.expireDate, queryOrgVmrResultDTO.expireDate)
+            && Objects.equals(this.commercialMaxAudienceParties, queryOrgVmrResultDTO.commercialMaxAudienceParties);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, vmrId, vmrName, vmrPkgName, vmrPkgParties, member, device, status);
+        return Objects.hash(id,
+            vmrId,
+            vmrName,
+            vmrPkgName,
+            vmrPkgParties,
+            maxAudienceParties,
+            member,
+            device,
+            status,
+            expireDate,
+            commercialMaxAudienceParties);
     }
 
     @Override
@@ -238,9 +317,14 @@ public class QueryOrgVmrResultDTO {
         sb.append("    vmrName: ").append(toIndentedString(vmrName)).append("\n");
         sb.append("    vmrPkgName: ").append(toIndentedString(vmrPkgName)).append("\n");
         sb.append("    vmrPkgParties: ").append(toIndentedString(vmrPkgParties)).append("\n");
+        sb.append("    maxAudienceParties: ").append(toIndentedString(maxAudienceParties)).append("\n");
         sb.append("    member: ").append(toIndentedString(member)).append("\n");
         sb.append("    device: ").append(toIndentedString(device)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    expireDate: ").append(toIndentedString(expireDate)).append("\n");
+        sb.append("    commercialMaxAudienceParties: ")
+            .append(toIndentedString(commercialMaxAudienceParties))
+            .append("\n");
         sb.append("}");
         return sb.toString();
     }

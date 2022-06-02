@@ -49,6 +49,11 @@ public class IssueResponseV4 {
     private List<CustomField> customFields = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "new_custom_fields")
+
+    private List<NewCustomField> newCustomFields = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "developer")
 
     private IssueUser developer;
@@ -121,7 +126,7 @@ public class IssueResponseV4 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tracker")
 
-    private IssueItemSfV4Tracker tracker;
+    private CreateIssueResponseV4Tracker tracker;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_time")
@@ -291,7 +296,7 @@ public class IssueResponseV4 {
     }
 
     /**
-     * 自定义属性值
+     * 自定义属性值,不建议使用，建议参考new_custom_fields字段
      * @return customFields
      */
     public List<CustomField> getCustomFields() {
@@ -300,6 +305,39 @@ public class IssueResponseV4 {
 
     public void setCustomFields(List<CustomField> customFields) {
         this.customFields = customFields;
+    }
+
+    public IssueResponseV4 withNewCustomFields(List<NewCustomField> newCustomFields) {
+        this.newCustomFields = newCustomFields;
+        return this;
+    }
+
+    public IssueResponseV4 addNewCustomFieldsItem(NewCustomField newCustomFieldsItem) {
+        if (this.newCustomFields == null) {
+            this.newCustomFields = new ArrayList<>();
+        }
+        this.newCustomFields.add(newCustomFieldsItem);
+        return this;
+    }
+
+    public IssueResponseV4 withNewCustomFields(Consumer<List<NewCustomField>> newCustomFieldsSetter) {
+        if (this.newCustomFields == null) {
+            this.newCustomFields = new ArrayList<>();
+        }
+        newCustomFieldsSetter.accept(this.newCustomFields);
+        return this;
+    }
+
+    /**
+     * 自定义属性值
+     * @return newCustomFields
+     */
+    public List<NewCustomField> getNewCustomFields() {
+        return newCustomFields;
+    }
+
+    public void setNewCustomFields(List<NewCustomField> newCustomFields) {
+        this.newCustomFields = newCustomFields;
     }
 
     public IssueResponseV4 withDeveloper(IssueUser developer) {
@@ -621,14 +659,14 @@ public class IssueResponseV4 {
         this.status = status;
     }
 
-    public IssueResponseV4 withTracker(IssueItemSfV4Tracker tracker) {
+    public IssueResponseV4 withTracker(CreateIssueResponseV4Tracker tracker) {
         this.tracker = tracker;
         return this;
     }
 
-    public IssueResponseV4 withTracker(Consumer<IssueItemSfV4Tracker> trackerSetter) {
+    public IssueResponseV4 withTracker(Consumer<CreateIssueResponseV4Tracker> trackerSetter) {
         if (this.tracker == null) {
-            this.tracker = new IssueItemSfV4Tracker();
+            this.tracker = new CreateIssueResponseV4Tracker();
             trackerSetter.accept(this.tracker);
         }
 
@@ -639,11 +677,11 @@ public class IssueResponseV4 {
      * Get tracker
      * @return tracker
      */
-    public IssueItemSfV4Tracker getTracker() {
+    public CreateIssueResponseV4Tracker getTracker() {
         return tracker;
     }
 
-    public void setTracker(IssueItemSfV4Tracker tracker) {
+    public void setTracker(CreateIssueResponseV4Tracker tracker) {
         this.tracker = tracker;
     }
 
@@ -697,6 +735,7 @@ public class IssueResponseV4 {
             && Objects.equals(this.createdTime, issueResponseV4.createdTime)
             && Objects.equals(this.creator, issueResponseV4.creator)
             && Objects.equals(this.customFields, issueResponseV4.customFields)
+            && Objects.equals(this.newCustomFields, issueResponseV4.newCustomFields)
             && Objects.equals(this.developer, issueResponseV4.developer)
             && Objects.equals(this.domain, issueResponseV4.domain)
             && Objects.equals(this.doneRatio, issueResponseV4.doneRatio)
@@ -723,6 +762,7 @@ public class IssueResponseV4 {
             createdTime,
             creator,
             customFields,
+            newCustomFields,
             developer,
             domain,
             doneRatio,
@@ -753,6 +793,7 @@ public class IssueResponseV4 {
         sb.append("    createdTime: ").append(toIndentedString(createdTime)).append("\n");
         sb.append("    creator: ").append(toIndentedString(creator)).append("\n");
         sb.append("    customFields: ").append(toIndentedString(customFields)).append("\n");
+        sb.append("    newCustomFields: ").append(toIndentedString(newCustomFields)).append("\n");
         sb.append("    developer: ").append(toIndentedString(developer)).append("\n");
         sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
         sb.append("    doneRatio: ").append(toIndentedString(doneRatio)).append("\n");

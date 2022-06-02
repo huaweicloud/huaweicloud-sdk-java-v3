@@ -40,7 +40,7 @@ public class TempCredentialHelper {
 
     private static final String ERROR_MESSAGE = "Unable to get temporary credential.";
 
-    private static final SimpleDateFormat SIMPLE_DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+    private static final String EXPIRED_DATE_FORMAT = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
 
     private static final HttpRequest CREATE_TEMPORARY_ACCESS_KEY_IN_CES_REQUEST =
             HttpRequest.newBuilder()
@@ -116,7 +116,7 @@ public class TempCredentialHelper {
 
         try {
             String expiredAt = credential.getExpiresAt().replace("000Z", "Z");
-            cred.expiredAt = SIMPLE_DATE_FORMAT.parse(expiredAt).getTime();
+            cred.expiredAt = new SimpleDateFormat(EXPIRED_DATE_FORMAT).parse(expiredAt).getTime();
         } catch (ParseException e) {
             throw new SdkException(ERROR_MESSAGE, e);
         }

@@ -441,6 +441,71 @@ public class ProjectManAsyncClient {
     }
 
     /**
+     * 查询看板项目下工作项的状态历史记录
+     *
+     * 分页查询看板项目下工作项的状态历史记录
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListWorkitemStatusRecordsV4Request 请求对象
+     * @return CompletableFuture<ListWorkitemStatusRecordsV4Response>
+     */
+    public CompletableFuture<ListWorkitemStatusRecordsV4Response> listWorkitemStatusRecordsV4Async(
+        ListWorkitemStatusRecordsV4Request request) {
+        return hcClient.asyncInvokeHttp(request, ProjectManMeta.listWorkitemStatusRecordsV4);
+    }
+
+    /**
+     * 查询看板项目下工作项的状态历史记录
+     *
+     * 分页查询看板项目下工作项的状态历史记录
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListWorkitemStatusRecordsV4Request 请求对象
+     * @return AsyncInvoker<ListWorkitemStatusRecordsV4Request, ListWorkitemStatusRecordsV4Response>
+     */
+    public AsyncInvoker<ListWorkitemStatusRecordsV4Request, ListWorkitemStatusRecordsV4Response> listWorkitemStatusRecordsV4AsyncInvoker(
+        ListWorkitemStatusRecordsV4Request request) {
+        return new AsyncInvoker<ListWorkitemStatusRecordsV4Request, ListWorkitemStatusRecordsV4Response>(request,
+            ProjectManMeta.listWorkitemStatusRecordsV4, hcClient);
+    }
+
+    /**
+     * 查询看板项目下的工作项
+     *
+     * 查询看板项目下的工作项
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListWorkitemsRequest 请求对象
+     * @return CompletableFuture<ListWorkitemsResponse>
+     */
+    public CompletableFuture<ListWorkitemsResponse> listWorkitemsAsync(ListWorkitemsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ProjectManMeta.listWorkitems);
+    }
+
+    /**
+     * 查询看板项目下的工作项
+     *
+     * 查询看板项目下的工作项
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListWorkitemsRequest 请求对象
+     * @return AsyncInvoker<ListWorkitemsRequest, ListWorkitemsResponse>
+     */
+    public AsyncInvoker<ListWorkitemsRequest, ListWorkitemsResponse> listWorkitemsAsyncInvoker(
+        ListWorkitemsRequest request) {
+        return new AsyncInvoker<ListWorkitemsRequest, ListWorkitemsResponse>(request, ProjectManMeta.listWorkitems,
+            hcClient);
+    }
+
+    /**
      * 主动退出项目
      *
      * 项目成员主动退出项目，项目创建者不能退出
@@ -696,6 +761,39 @@ public class ProjectManAsyncClient {
         ShowProjectSummaryV4Request request) {
         return new AsyncInvoker<ShowProjectSummaryV4Request, ShowProjectSummaryV4Response>(request,
             ProjectManMeta.showProjectSummaryV4, hcClient);
+    }
+
+    /**
+     * 查询看板项目的工作项流转配置
+     *
+     * 查询看板项目的工作项流转配置
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowWorkItemWrokflowConfigRequest 请求对象
+     * @return CompletableFuture<ShowWorkItemWrokflowConfigResponse>
+     */
+    public CompletableFuture<ShowWorkItemWrokflowConfigResponse> showWorkItemWrokflowConfigAsync(
+        ShowWorkItemWrokflowConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, ProjectManMeta.showWorkItemWrokflowConfig);
+    }
+
+    /**
+     * 查询看板项目的工作项流转配置
+     *
+     * 查询看板项目的工作项流转配置
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowWorkItemWrokflowConfigRequest 请求对象
+     * @return AsyncInvoker<ShowWorkItemWrokflowConfigRequest, ShowWorkItemWrokflowConfigResponse>
+     */
+    public AsyncInvoker<ShowWorkItemWrokflowConfigRequest, ShowWorkItemWrokflowConfigResponse> showWorkItemWrokflowConfigAsyncInvoker(
+        ShowWorkItemWrokflowConfigRequest request) {
+        return new AsyncInvoker<ShowWorkItemWrokflowConfigRequest, ShowWorkItemWrokflowConfigResponse>(request,
+            ProjectManMeta.showWorkItemWrokflowConfig, hcClient);
     }
 
     /**
@@ -1052,6 +1150,104 @@ public class ProjectManAsyncClient {
     }
 
     /**
+     * 查询当前工作项已经关联的工作项
+     *
+     * 查询当前工作项已经关联的工作项
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListAssociatedIssuesRequest 请求对象
+     * @return CompletableFuture<ListAssociatedIssuesResponse>
+     */
+    public CompletableFuture<ListAssociatedIssuesResponse> listAssociatedIssuesAsync(
+        ListAssociatedIssuesRequest request) {
+        return hcClient.asyncInvokeHttp(request, ProjectManMeta.listAssociatedIssues);
+    }
+
+    /**
+     * 查询当前工作项已经关联的工作项
+     *
+     * 查询当前工作项已经关联的工作项
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListAssociatedIssuesRequest 请求对象
+     * @return AsyncInvoker<ListAssociatedIssuesRequest, ListAssociatedIssuesResponse>
+     */
+    public AsyncInvoker<ListAssociatedIssuesRequest, ListAssociatedIssuesResponse> listAssociatedIssuesAsyncInvoker(
+        ListAssociatedIssuesRequest request) {
+        return new AsyncInvoker<ListAssociatedIssuesRequest, ListAssociatedIssuesResponse>(request,
+            ProjectManMeta.listAssociatedIssues, hcClient);
+    }
+
+    /**
+     * 查询关联Wiki
+     *
+     * 查询关联Wiki
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListAssociatedTestCasesRequest 请求对象
+     * @return CompletableFuture<ListAssociatedTestCasesResponse>
+     */
+    public CompletableFuture<ListAssociatedTestCasesResponse> listAssociatedTestCasesAsync(
+        ListAssociatedTestCasesRequest request) {
+        return hcClient.asyncInvokeHttp(request, ProjectManMeta.listAssociatedTestCases);
+    }
+
+    /**
+     * 查询关联Wiki
+     *
+     * 查询关联Wiki
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListAssociatedTestCasesRequest 请求对象
+     * @return AsyncInvoker<ListAssociatedTestCasesRequest, ListAssociatedTestCasesResponse>
+     */
+    public AsyncInvoker<ListAssociatedTestCasesRequest, ListAssociatedTestCasesResponse> listAssociatedTestCasesAsyncInvoker(
+        ListAssociatedTestCasesRequest request) {
+        return new AsyncInvoker<ListAssociatedTestCasesRequest, ListAssociatedTestCasesResponse>(request,
+            ProjectManMeta.listAssociatedTestCases, hcClient);
+    }
+
+    /**
+     * 查询当前工作项已经关联的关联Wiki
+     *
+     * 查询当前工作项已经关联的关联Wiki
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListAssociatedWikisRequest 请求对象
+     * @return CompletableFuture<ListAssociatedWikisResponse>
+     */
+    public CompletableFuture<ListAssociatedWikisResponse> listAssociatedWikisAsync(ListAssociatedWikisRequest request) {
+        return hcClient.asyncInvokeHttp(request, ProjectManMeta.listAssociatedWikis);
+    }
+
+    /**
+     * 查询当前工作项已经关联的关联Wiki
+     *
+     * 查询当前工作项已经关联的关联Wiki
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListAssociatedWikisRequest 请求对象
+     * @return AsyncInvoker<ListAssociatedWikisRequest, ListAssociatedWikisResponse>
+     */
+    public AsyncInvoker<ListAssociatedWikisRequest, ListAssociatedWikisResponse> listAssociatedWikisAsyncInvoker(
+        ListAssociatedWikisRequest request) {
+        return new AsyncInvoker<ListAssociatedWikisRequest, ListAssociatedWikisResponse>(request,
+            ProjectManMeta.listAssociatedWikis, hcClient);
+    }
+
+    /**
      * 获取子工作项
      *
      * 获取子工作项
@@ -1081,6 +1277,39 @@ public class ProjectManAsyncClient {
         ListChildIssuesV4Request request) {
         return new AsyncInvoker<ListChildIssuesV4Request, ListChildIssuesV4Response>(request,
             ProjectManMeta.listChildIssuesV4, hcClient);
+    }
+
+    /**
+     * 查询当前工作项已经关联的代码提交记录 / 分支创建记录
+     *
+     * 查询当前工作项已经关联的代码提交记录 / 分支创建记录
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListIssueAssociatedCommitsRequest 请求对象
+     * @return CompletableFuture<ListIssueAssociatedCommitsResponse>
+     */
+    public CompletableFuture<ListIssueAssociatedCommitsResponse> listIssueAssociatedCommitsAsync(
+        ListIssueAssociatedCommitsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ProjectManMeta.listIssueAssociatedCommits);
+    }
+
+    /**
+     * 查询当前工作项已经关联的代码提交记录 / 分支创建记录
+     *
+     * 查询当前工作项已经关联的代码提交记录 / 分支创建记录
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListIssueAssociatedCommitsRequest 请求对象
+     * @return AsyncInvoker<ListIssueAssociatedCommitsRequest, ListIssueAssociatedCommitsResponse>
+     */
+    public AsyncInvoker<ListIssueAssociatedCommitsRequest, ListIssueAssociatedCommitsResponse> listIssueAssociatedCommitsAsyncInvoker(
+        ListIssueAssociatedCommitsRequest request) {
+        return new AsyncInvoker<ListIssueAssociatedCommitsRequest, ListIssueAssociatedCommitsResponse>(request,
+            ProjectManMeta.listIssueAssociatedCommits, hcClient);
     }
 
     /**
@@ -1116,6 +1345,39 @@ public class ProjectManAsyncClient {
     }
 
     /**
+     * 查询Scrum工作项自定义字段
+     *
+     * 查询Scrum工作项自定义字段的可选列表,符合custom_fields或者names条件的都返回,2个值都不传，返回所有的自定义字段列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListIssueCustomFieldsRequest 请求对象
+     * @return CompletableFuture<ListIssueCustomFieldsResponse>
+     */
+    public CompletableFuture<ListIssueCustomFieldsResponse> listIssueCustomFieldsAsync(
+        ListIssueCustomFieldsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ProjectManMeta.listIssueCustomFields);
+    }
+
+    /**
+     * 查询Scrum工作项自定义字段
+     *
+     * 查询Scrum工作项自定义字段的可选列表,符合custom_fields或者names条件的都返回,2个值都不传，返回所有的自定义字段列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListIssueCustomFieldsRequest 请求对象
+     * @return AsyncInvoker<ListIssueCustomFieldsRequest, ListIssueCustomFieldsResponse>
+     */
+    public AsyncInvoker<ListIssueCustomFieldsRequest, ListIssueCustomFieldsResponse> listIssueCustomFieldsAsyncInvoker(
+        ListIssueCustomFieldsRequest request) {
+        return new AsyncInvoker<ListIssueCustomFieldsRequest, ListIssueCustomFieldsResponse>(request,
+            ProjectManMeta.listIssueCustomFields, hcClient);
+    }
+
+    /**
      * 获取工作项历史记录
      *
      * 获取工作项历史记录
@@ -1145,6 +1407,38 @@ public class ProjectManAsyncClient {
         ListIssueRecordsV4Request request) {
         return new AsyncInvoker<ListIssueRecordsV4Request, ListIssueRecordsV4Response>(request,
             ProjectManMeta.listIssueRecordsV4, hcClient);
+    }
+
+    /**
+     * 查询项目的工作项
+     *
+     * 工作项类型id, 分页参数，创建时间查询项目的工作项
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListIssuesSfV4Request 请求对象
+     * @return CompletableFuture<ListIssuesSfV4Response>
+     */
+    public CompletableFuture<ListIssuesSfV4Response> listIssuesSfV4Async(ListIssuesSfV4Request request) {
+        return hcClient.asyncInvokeHttp(request, ProjectManMeta.listIssuesSfV4);
+    }
+
+    /**
+     * 查询项目的工作项
+     *
+     * 工作项类型id, 分页参数，创建时间查询项目的工作项
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListIssuesSfV4Request 请求对象
+     * @return AsyncInvoker<ListIssuesSfV4Request, ListIssuesSfV4Response>
+     */
+    public AsyncInvoker<ListIssuesSfV4Request, ListIssuesSfV4Response> listIssuesSfV4AsyncInvoker(
+        ListIssuesSfV4Request request) {
+        return new AsyncInvoker<ListIssuesSfV4Request, ListIssuesSfV4Response>(request, ProjectManMeta.listIssuesSfV4,
+            hcClient);
     }
 
     /**
@@ -1210,6 +1504,39 @@ public class ProjectManAsyncClient {
         ListIterationHistoriesRequest request) {
         return new AsyncInvoker<ListIterationHistoriesRequest, ListIterationHistoriesResponse>(request,
             ProjectManMeta.listIterationHistories, hcClient);
+    }
+
+    /**
+     * 查询项目下所有工作项的历史记录
+     *
+     * 查询项目下所有工作项的历史记录
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListProjectIssuesRecordsV4Request 请求对象
+     * @return CompletableFuture<ListProjectIssuesRecordsV4Response>
+     */
+    public CompletableFuture<ListProjectIssuesRecordsV4Response> listProjectIssuesRecordsV4Async(
+        ListProjectIssuesRecordsV4Request request) {
+        return hcClient.asyncInvokeHttp(request, ProjectManMeta.listProjectIssuesRecordsV4);
+    }
+
+    /**
+     * 查询项目下所有工作项的历史记录
+     *
+     * 查询项目下所有工作项的历史记录
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListProjectIssuesRecordsV4Request 请求对象
+     * @return AsyncInvoker<ListProjectIssuesRecordsV4Request, ListProjectIssuesRecordsV4Response>
+     */
+    public AsyncInvoker<ListProjectIssuesRecordsV4Request, ListProjectIssuesRecordsV4Response> listProjectIssuesRecordsV4AsyncInvoker(
+        ListProjectIssuesRecordsV4Request request) {
+        return new AsyncInvoker<ListProjectIssuesRecordsV4Request, ListProjectIssuesRecordsV4Response>(request,
+            ProjectManMeta.listProjectIssuesRecordsV4, hcClient);
     }
 
     /**
@@ -1339,6 +1666,39 @@ public class ProjectManAsyncClient {
      */
     public AsyncInvoker<ShowIssueV4Request, ShowIssueV4Response> showIssueV4AsyncInvoker(ShowIssueV4Request request) {
         return new AsyncInvoker<ShowIssueV4Request, ShowIssueV4Response>(request, ProjectManMeta.showIssueV4, hcClient);
+    }
+
+    /**
+     * 查询Scrum的工作项流转配置
+     *
+     * 查询Scrum的工作项流转配置
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowIssuesWrokFlowConfigRequest 请求对象
+     * @return CompletableFuture<ShowIssuesWrokFlowConfigResponse>
+     */
+    public CompletableFuture<ShowIssuesWrokFlowConfigResponse> showIssuesWrokFlowConfigAsync(
+        ShowIssuesWrokFlowConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, ProjectManMeta.showIssuesWrokFlowConfig);
+    }
+
+    /**
+     * 查询Scrum的工作项流转配置
+     *
+     * 查询Scrum的工作项流转配置
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowIssuesWrokFlowConfigRequest 请求对象
+     * @return AsyncInvoker<ShowIssuesWrokFlowConfigRequest, ShowIssuesWrokFlowConfigResponse>
+     */
+    public AsyncInvoker<ShowIssuesWrokFlowConfigRequest, ShowIssuesWrokFlowConfigResponse> showIssuesWrokFlowConfigAsyncInvoker(
+        ShowIssuesWrokFlowConfigRequest request) {
+        return new AsyncInvoker<ShowIssuesWrokFlowConfigRequest, ShowIssuesWrokFlowConfigResponse>(request,
+            ProjectManMeta.showIssuesWrokFlowConfig, hcClient);
     }
 
     /**

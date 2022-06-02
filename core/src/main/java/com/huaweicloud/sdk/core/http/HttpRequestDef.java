@@ -272,8 +272,7 @@ public interface HttpRequestDef<ReqT, ResT> {
 
         @Override
         public Builder<R, T> builder() {
-            Builder<R, T> builder = new Builder(this);
-            return builder;
+            return new Builder(this);
         }
     }
 }

@@ -78,6 +78,36 @@ public class GaussDBClient {
     }
 
     /**
+     * 数据库代理规格变更
+     *
+     * 数据库代理规格变更。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ChangeGaussMySqlProxySpecificationRequest 请求对象
+     * @return ChangeGaussMySqlProxySpecificationResponse
+     */
+    public ChangeGaussMySqlProxySpecificationResponse changeGaussMySqlProxySpecification(ChangeGaussMySqlProxySpecificationRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.changeGaussMySqlProxySpecification);
+    }
+
+    /**
+     * 数据库代理规格变更
+     *
+     * 数据库代理规格变更。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ChangeGaussMySqlProxySpecificationRequest 请求对象
+     * @return SyncInvoker<ChangeGaussMySqlProxySpecificationRequest, ChangeGaussMySqlProxySpecificationResponse>
+     */
+    public SyncInvoker<ChangeGaussMySqlProxySpecificationRequest, ChangeGaussMySqlProxySpecificationResponse> changeGaussMySqlProxySpecificationInvoker(ChangeGaussMySqlProxySpecificationRequest request) {
+        return new SyncInvoker<ChangeGaussMySqlProxySpecificationRequest, ChangeGaussMySqlProxySpecificationResponse>(request, GaussDBMeta.changeGaussMySqlProxySpecification, hcClient);
+    }
+
+    /**
      * 创建手动备份
      *
      * 创建手动备份

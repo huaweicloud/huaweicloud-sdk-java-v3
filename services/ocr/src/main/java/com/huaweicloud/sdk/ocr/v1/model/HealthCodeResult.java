@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.ocr.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
@@ -29,6 +32,16 @@ public class HealthCodeResult {
     @JsonProperty(value = "confidence")
 
     private Object confidence;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "words_block_count")
+
+    private Integer wordsBlockCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "words_block_list")
+
+    private List<HealthCodeWordsBlockList> wordsBlockList = null;
 
     public HealthCodeResult withName(String name) {
         this.name = name;
@@ -87,7 +100,7 @@ public class HealthCodeResult {
     }
 
     /**
-     * 各个字段的置信度 
+     * 各个字段的置信度。 
      * @return confidence
      */
     public Object getConfidence() {
@@ -96,6 +109,56 @@ public class HealthCodeResult {
 
     public void setConfidence(Object confidence) {
         this.confidence = confidence;
+    }
+
+    public HealthCodeResult withWordsBlockCount(Integer wordsBlockCount) {
+        this.wordsBlockCount = wordsBlockCount;
+        return this;
+    }
+
+    /**
+     * 代表检测识别出来的文字块数目。 
+     * @return wordsBlockCount
+     */
+    public Integer getWordsBlockCount() {
+        return wordsBlockCount;
+    }
+
+    public void setWordsBlockCount(Integer wordsBlockCount) {
+        this.wordsBlockCount = wordsBlockCount;
+    }
+
+    public HealthCodeResult withWordsBlockList(List<HealthCodeWordsBlockList> wordsBlockList) {
+        this.wordsBlockList = wordsBlockList;
+        return this;
+    }
+
+    public HealthCodeResult addWordsBlockListItem(HealthCodeWordsBlockList wordsBlockListItem) {
+        if (this.wordsBlockList == null) {
+            this.wordsBlockList = new ArrayList<>();
+        }
+        this.wordsBlockList.add(wordsBlockListItem);
+        return this;
+    }
+
+    public HealthCodeResult withWordsBlockList(Consumer<List<HealthCodeWordsBlockList>> wordsBlockListSetter) {
+        if (this.wordsBlockList == null) {
+            this.wordsBlockList = new ArrayList<>();
+        }
+        wordsBlockListSetter.accept(this.wordsBlockList);
+        return this;
+    }
+
+    /**
+     * 识别文字块列表，输出顺序从左到右，从上到下。 
+     * @return wordsBlockList
+     */
+    public List<HealthCodeWordsBlockList> getWordsBlockList() {
+        return wordsBlockList;
+    }
+
+    public void setWordsBlockList(List<HealthCodeWordsBlockList> wordsBlockList) {
+        this.wordsBlockList = wordsBlockList;
     }
 
     @Override
@@ -109,12 +172,14 @@ public class HealthCodeResult {
         HealthCodeResult healthCodeResult = (HealthCodeResult) o;
         return Objects.equals(this.name, healthCodeResult.name) && Objects.equals(this.time, healthCodeResult.time)
             && Objects.equals(this.color, healthCodeResult.color)
-            && Objects.equals(this.confidence, healthCodeResult.confidence);
+            && Objects.equals(this.confidence, healthCodeResult.confidence)
+            && Objects.equals(this.wordsBlockCount, healthCodeResult.wordsBlockCount)
+            && Objects.equals(this.wordsBlockList, healthCodeResult.wordsBlockList);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, time, color, confidence);
+        return Objects.hash(name, time, color, confidence, wordsBlockCount, wordsBlockList);
     }
 
     @Override
@@ -125,6 +190,8 @@ public class HealthCodeResult {
         sb.append("    time: ").append(toIndentedString(time)).append("\n");
         sb.append("    color: ").append(toIndentedString(color)).append("\n");
         sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
+        sb.append("    wordsBlockCount: ").append(toIndentedString(wordsBlockCount)).append("\n");
+        sb.append("    wordsBlockList: ").append(toIndentedString(wordsBlockList)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -98,6 +98,11 @@ public class ListIssueRequestV4 {
 
     private String updatedTimeInterval;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "custom_fields")
+
+    private List<ListIssueRequestV4CustomFields> customFields = null;
+
     public ListIssueRequestV4 withAssignedIds(List<Integer> assignedIds) {
         this.assignedIds = assignedIds;
         return this;
@@ -471,7 +476,7 @@ public class ListIssueRequestV4 {
     }
 
     /**
-     * 状态   id, 开始   1, 进行中 2, 已解决 3, 测试中 4, 已关闭 5, 已拒绝 6,
+     * 状态   id, 新建   1, 进行中 2, 已解决 3, 测试中 4, 已关闭 5, 已拒绝 6,
      * @return statusIds
      */
     public List<Integer> getStatusIds() {
@@ -537,7 +542,7 @@ public class ListIssueRequestV4 {
     }
 
     /**
-     * 工作项类型,2任务/task,3缺陷/bug,5epic,6feature,7story
+     * 工作项类型,2任务/Task,3缺陷/Bug,5Epic,6Feature,7Story
      * @return trackerIds
      */
     public List<Integer> getTrackerIds() {
@@ -582,6 +587,39 @@ public class ListIssueRequestV4 {
         this.updatedTimeInterval = updatedTimeInterval;
     }
 
+    public ListIssueRequestV4 withCustomFields(List<ListIssueRequestV4CustomFields> customFields) {
+        this.customFields = customFields;
+        return this;
+    }
+
+    public ListIssueRequestV4 addCustomFieldsItem(ListIssueRequestV4CustomFields customFieldsItem) {
+        if (this.customFields == null) {
+            this.customFields = new ArrayList<>();
+        }
+        this.customFields.add(customFieldsItem);
+        return this;
+    }
+
+    public ListIssueRequestV4 withCustomFields(Consumer<List<ListIssueRequestV4CustomFields>> customFieldsSetter) {
+        if (this.customFields == null) {
+            this.customFields = new ArrayList<>();
+        }
+        customFieldsSetter.accept(this.customFields);
+        return this;
+    }
+
+    /**
+     * 自定义字段
+     * @return customFields
+     */
+    public List<ListIssueRequestV4CustomFields> getCustomFields() {
+        return customFields;
+    }
+
+    public void setCustomFields(List<ListIssueRequestV4CustomFields> customFields) {
+        this.customFields = customFields;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -607,7 +645,8 @@ public class ListIssueRequestV4 {
             && Objects.equals(this.storyPointIds, listIssueRequestV4.storyPointIds)
             && Objects.equals(this.trackerIds, listIssueRequestV4.trackerIds)
             && Objects.equals(this.includeDeleted, listIssueRequestV4.includeDeleted)
-            && Objects.equals(this.updatedTimeInterval, listIssueRequestV4.updatedTimeInterval);
+            && Objects.equals(this.updatedTimeInterval, listIssueRequestV4.updatedTimeInterval)
+            && Objects.equals(this.customFields, listIssueRequestV4.customFields);
     }
 
     @Override
@@ -628,7 +667,8 @@ public class ListIssueRequestV4 {
             storyPointIds,
             trackerIds,
             includeDeleted,
-            updatedTimeInterval);
+            updatedTimeInterval,
+            customFields);
     }
 
     @Override
@@ -652,6 +692,7 @@ public class ListIssueRequestV4 {
         sb.append("    trackerIds: ").append(toIndentedString(trackerIds)).append("\n");
         sb.append("    includeDeleted: ").append(toIndentedString(includeDeleted)).append("\n");
         sb.append("    updatedTimeInterval: ").append(toIndentedString(updatedTimeInterval)).append("\n");
+        sb.append("    customFields: ").append(toIndentedString(customFields)).append("\n");
         sb.append("}");
         return sb.toString();
     }

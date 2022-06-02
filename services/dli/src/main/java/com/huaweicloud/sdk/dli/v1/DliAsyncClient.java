@@ -904,6 +904,39 @@ public class DliAsyncClient {
     }
 
     /**
+     * 查询弹性资源池所属队列
+     *
+     * 查询弹性资源池所属队列
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListElasticResourcePoolQueuesRequest 请求对象
+     * @return CompletableFuture<ListElasticResourcePoolQueuesResponse>
+     */
+    public CompletableFuture<ListElasticResourcePoolQueuesResponse> listElasticResourcePoolQueuesAsync(
+        ListElasticResourcePoolQueuesRequest request) {
+        return hcClient.asyncInvokeHttp(request, DliMeta.listElasticResourcePoolQueues);
+    }
+
+    /**
+     * 查询弹性资源池所属队列
+     *
+     * 查询弹性资源池所属队列
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListElasticResourcePoolQueuesRequest 请求对象
+     * @return AsyncInvoker<ListElasticResourcePoolQueuesRequest, ListElasticResourcePoolQueuesResponse>
+     */
+    public AsyncInvoker<ListElasticResourcePoolQueuesRequest, ListElasticResourcePoolQueuesResponse> listElasticResourcePoolQueuesAsyncInvoker(
+        ListElasticResourcePoolQueuesRequest request) {
+        return new AsyncInvoker<ListElasticResourcePoolQueuesRequest, ListElasticResourcePoolQueuesResponse>(request,
+            DliMeta.listElasticResourcePoolQueues, hcClient);
+    }
+
+    /**
      * 查询所有弹性资源池
      *
      * 查询所有弹性资源池
@@ -1352,6 +1385,39 @@ public class DliAsyncClient {
         UpdateElasticResourcePoolRequest request) {
         return new AsyncInvoker<UpdateElasticResourcePoolRequest, UpdateElasticResourcePoolResponse>(request,
             DliMeta.updateElasticResourcePool, hcClient);
+    }
+
+    /**
+     * 修改弹性资源池关联的队列优先级
+     *
+     * 设置弹性资源池指定队列的扩缩容策略信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateElasticResourcePoolQueueInfoRequest 请求对象
+     * @return CompletableFuture<UpdateElasticResourcePoolQueueInfoResponse>
+     */
+    public CompletableFuture<UpdateElasticResourcePoolQueueInfoResponse> updateElasticResourcePoolQueueInfoAsync(
+        UpdateElasticResourcePoolQueueInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, DliMeta.updateElasticResourcePoolQueueInfo);
+    }
+
+    /**
+     * 修改弹性资源池关联的队列优先级
+     *
+     * 设置弹性资源池指定队列的扩缩容策略信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateElasticResourcePoolQueueInfoRequest 请求对象
+     * @return AsyncInvoker<UpdateElasticResourcePoolQueueInfoRequest, UpdateElasticResourcePoolQueueInfoResponse>
+     */
+    public AsyncInvoker<UpdateElasticResourcePoolQueueInfoRequest, UpdateElasticResourcePoolQueueInfoResponse> updateElasticResourcePoolQueueInfoAsyncInvoker(
+        UpdateElasticResourcePoolQueueInfoRequest request) {
+        return new AsyncInvoker<UpdateElasticResourcePoolQueueInfoRequest, UpdateElasticResourcePoolQueueInfoResponse>(
+            request, DliMeta.updateElasticResourcePoolQueueInfo, hcClient);
     }
 
     /**

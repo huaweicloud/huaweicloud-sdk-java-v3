@@ -444,6 +444,94 @@ public class ProjectManMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListWorkitemStatusRecordsV4Request, ListWorkitemStatusRecordsV4Response> listWorkitemStatusRecordsV4 =
+        genForlistWorkitemStatusRecordsV4();
+
+    private static HttpRequestDef<ListWorkitemStatusRecordsV4Request, ListWorkitemStatusRecordsV4Response> genForlistWorkitemStatusRecordsV4() {
+        // basic
+        HttpRequestDef.Builder<ListWorkitemStatusRecordsV4Request, ListWorkitemStatusRecordsV4Response> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListWorkitemStatusRecordsV4Request.class,
+                    ListWorkitemStatusRecordsV4Response.class)
+                .withName("ListWorkitemStatusRecordsV4")
+                .withUri("/v4/projects/{project_id}/work-items/status-records")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWorkitemStatusRecordsV4Request::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListWorkitemStatusRecordsV4Request::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListWorkitemStatusRecordsV4Request::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListWorkitemsRequest, ListWorkitemsResponse> listWorkitems =
+        genForlistWorkitems();
+
+    private static HttpRequestDef<ListWorkitemsRequest, ListWorkitemsResponse> genForlistWorkitems() {
+        // basic
+        HttpRequestDef.Builder<ListWorkitemsRequest, ListWorkitemsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListWorkitemsRequest.class, ListWorkitemsResponse.class)
+                .withName("ListWorkitems")
+                .withUri("/v4/projects/{project_id}/work-items")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWorkitemsRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListWorkitemsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListWorkitemsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("created_time_interval",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWorkitemsRequest::getCreatedTimeInterval, (req, v) -> {
+                req.setCreatedTimeInterval(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RemoveProjectRequest, RemoveProjectResponse> removeProject =
         genForremoveProject();
 
@@ -651,6 +739,41 @@ public class ProjectManMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowProjectSummaryV4Request::getProjectId, (req, v) -> {
                 req.setProjectId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowWorkItemWrokflowConfigRequest, ShowWorkItemWrokflowConfigResponse> showWorkItemWrokflowConfig =
+        genForshowWorkItemWrokflowConfig();
+
+    private static HttpRequestDef<ShowWorkItemWrokflowConfigRequest, ShowWorkItemWrokflowConfigResponse> genForshowWorkItemWrokflowConfig() {
+        // basic
+        HttpRequestDef.Builder<ShowWorkItemWrokflowConfigRequest, ShowWorkItemWrokflowConfigResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowWorkItemWrokflowConfigRequest.class,
+                    ShowWorkItemWrokflowConfigResponse.class)
+                .withName("ShowWorkItemWrokflowConfig")
+                .withUri("/v4/projects/{project_id}/work-items/workflow/config")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowWorkItemWrokflowConfigRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<String>withRequestField("board_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowWorkItemWrokflowConfigRequest::getBoardId, (req, v) -> {
+                req.setBoardId(v);
             }));
 
         // response
@@ -1003,6 +1126,144 @@ public class ProjectManMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListAssociatedIssuesRequest, ListAssociatedIssuesResponse> listAssociatedIssues =
+        genForlistAssociatedIssues();
+
+    private static HttpRequestDef<ListAssociatedIssuesRequest, ListAssociatedIssuesResponse> genForlistAssociatedIssues() {
+        // basic
+        HttpRequestDef.Builder<ListAssociatedIssuesRequest, ListAssociatedIssuesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListAssociatedIssuesRequest.class, ListAssociatedIssuesResponse.class)
+            .withName("ListAssociatedIssues")
+            .withUri("/v4/projects/{project_id}/issues/{issue_id}/associated-issues")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAssociatedIssuesRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<Integer>withRequestField("issue_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAssociatedIssuesRequest::getIssueId, (req, v) -> {
+                req.setIssueId(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAssociatedIssuesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAssociatedIssuesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAssociatedTestCasesRequest, ListAssociatedTestCasesResponse> listAssociatedTestCases =
+        genForlistAssociatedTestCases();
+
+    private static HttpRequestDef<ListAssociatedTestCasesRequest, ListAssociatedTestCasesResponse> genForlistAssociatedTestCases() {
+        // basic
+        HttpRequestDef.Builder<ListAssociatedTestCasesRequest, ListAssociatedTestCasesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListAssociatedTestCasesRequest.class, ListAssociatedTestCasesResponse.class)
+            .withName("ListAssociatedTestCases")
+            .withUri("/v4/projects/{project_id}/issues/{issue_id}/associate-test-cases")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAssociatedTestCasesRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<Integer>withRequestField("issue_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAssociatedTestCasesRequest::getIssueId, (req, v) -> {
+                req.setIssueId(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAssociatedTestCasesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAssociatedTestCasesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAssociatedWikisRequest, ListAssociatedWikisResponse> listAssociatedWikis =
+        genForlistAssociatedWikis();
+
+    private static HttpRequestDef<ListAssociatedWikisRequest, ListAssociatedWikisResponse> genForlistAssociatedWikis() {
+        // basic
+        HttpRequestDef.Builder<ListAssociatedWikisRequest, ListAssociatedWikisResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAssociatedWikisRequest.class, ListAssociatedWikisResponse.class)
+                .withName("ListAssociatedWikis")
+                .withUri("/v4/projects/{project_id}/issues/{issue_id}/associated-wikis")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAssociatedWikisRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<Integer>withRequestField("issue_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAssociatedWikisRequest::getIssueId, (req, v) -> {
+                req.setIssueId(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAssociatedWikisRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAssociatedWikisRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListChildIssuesV4Request, ListChildIssuesV4Response> listChildIssuesV4 =
         genForlistChildIssuesV4();
 
@@ -1028,6 +1289,62 @@ public class ProjectManMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListChildIssuesV4Request::getIssueId, (req, v) -> {
                 req.setIssueId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListIssueAssociatedCommitsRequest, ListIssueAssociatedCommitsResponse> listIssueAssociatedCommits =
+        genForlistIssueAssociatedCommits();
+
+    private static HttpRequestDef<ListIssueAssociatedCommitsRequest, ListIssueAssociatedCommitsResponse> genForlistIssueAssociatedCommits() {
+        // basic
+        HttpRequestDef.Builder<ListIssueAssociatedCommitsRequest, ListIssueAssociatedCommitsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListIssueAssociatedCommitsRequest.class,
+                    ListIssueAssociatedCommitsResponse.class)
+                .withName("ListIssueAssociatedCommits")
+                .withUri("/v4/projects/{project_id}/issues/{issue_id}/associated-commits")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListIssueAssociatedCommitsRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<Integer>withRequestField("issue_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListIssueAssociatedCommitsRequest::getIssueId, (req, v) -> {
+                req.setIssueId(v);
+            }));
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListIssueAssociatedCommitsRequest::getType, (req, v) -> {
+                req.setType(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListIssueAssociatedCommitsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListIssueAssociatedCommitsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
             }));
 
         // response
@@ -1081,6 +1398,38 @@ public class ProjectManMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListIssueCustomFieldsRequest, ListIssueCustomFieldsResponse> listIssueCustomFields =
+        genForlistIssueCustomFields();
+
+    private static HttpRequestDef<ListIssueCustomFieldsRequest, ListIssueCustomFieldsResponse> genForlistIssueCustomFields() {
+        // basic
+        HttpRequestDef.Builder<ListIssueCustomFieldsRequest, ListIssueCustomFieldsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ListIssueCustomFieldsRequest.class, ListIssueCustomFieldsResponse.class)
+            .withName("ListIssueCustomFields")
+            .withUri("/v4/projects/{project_id}/issues/custom-fields")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListIssueCustomFieldsRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<ListIssueCustomFieldsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListIssueCustomFieldsRequestBody.class),
+            f -> f.withMarshaller(ListIssueCustomFieldsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListIssueRecordsV4Request, ListIssueRecordsV4Response> listIssueRecordsV4 =
         genForlistIssueRecordsV4();
 
@@ -1120,6 +1469,66 @@ public class ProjectManMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListIssueRecordsV4Request::getLimit, (req, v) -> {
                 req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListIssuesSfV4Request, ListIssuesSfV4Response> listIssuesSfV4 =
+        genForlistIssuesSfV4();
+
+    private static HttpRequestDef<ListIssuesSfV4Request, ListIssuesSfV4Response> genForlistIssuesSfV4() {
+        // basic
+        HttpRequestDef.Builder<ListIssuesSfV4Request, ListIssuesSfV4Response> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListIssuesSfV4Request.class, ListIssuesSfV4Response.class)
+                .withName("ListIssuesSfV4")
+                .withUri("/v4/projects/{project_id}/issues")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListIssuesSfV4Request::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListIssuesSfV4Request::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListIssuesSfV4Request::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<ListIssuesSfV4Request.TrackerIdEnum>withRequestField("tracker_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListIssuesSfV4Request.TrackerIdEnum.class),
+            f -> f.withMarshaller(ListIssuesSfV4Request::getTrackerId, (req, v) -> {
+                req.setTrackerId(v);
+            }));
+        builder.<String>withRequestField("created_time_interval",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListIssuesSfV4Request::getCreatedTimeInterval, (req, v) -> {
+                req.setCreatedTimeInterval(v);
+            }));
+        builder.<String>withRequestField("updated_time_interval",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListIssuesSfV4Request::getUpdatedTimeInterval, (req, v) -> {
+                req.setUpdatedTimeInterval(v);
             }));
 
         // response
@@ -1190,6 +1599,55 @@ public class ProjectManMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListIterationHistoriesRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListProjectIssuesRecordsV4Request, ListProjectIssuesRecordsV4Response> listProjectIssuesRecordsV4 =
+        genForlistProjectIssuesRecordsV4();
+
+    private static HttpRequestDef<ListProjectIssuesRecordsV4Request, ListProjectIssuesRecordsV4Response> genForlistProjectIssuesRecordsV4() {
+        // basic
+        HttpRequestDef.Builder<ListProjectIssuesRecordsV4Request, ListProjectIssuesRecordsV4Response> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListProjectIssuesRecordsV4Request.class,
+                    ListProjectIssuesRecordsV4Response.class)
+                .withName("ListProjectIssuesRecordsV4")
+                .withUri("/v4/projects/{project_id}/issues/records")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProjectIssuesRecordsV4Request::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListProjectIssuesRecordsV4Request::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListProjectIssuesRecordsV4Request::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("operated_time_interval",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProjectIssuesRecordsV4Request::getOperatedTimeInterval, (req, v) -> {
+                req.setOperatedTimeInterval(v);
             }));
 
         // response
@@ -1310,6 +1768,39 @@ public class ProjectManMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowIssueV4Request::getIssueId, (req, v) -> {
                 req.setIssueId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowIssuesWrokFlowConfigRequest, ShowIssuesWrokFlowConfigResponse> showIssuesWrokFlowConfig =
+        genForshowIssuesWrokFlowConfig();
+
+    private static HttpRequestDef<ShowIssuesWrokFlowConfigRequest, ShowIssuesWrokFlowConfigResponse> genForshowIssuesWrokFlowConfig() {
+        // basic
+        HttpRequestDef.Builder<ShowIssuesWrokFlowConfigRequest, ShowIssuesWrokFlowConfigResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ShowIssuesWrokFlowConfigRequest.class, ShowIssuesWrokFlowConfigResponse.class)
+                .withName("ShowIssuesWrokFlowConfig")
+                .withUri("/v4/projects/{project_id}/issues/workflow/config")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowIssuesWrokFlowConfigRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<Integer>withRequestField("tracker_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowIssuesWrokFlowConfigRequest::getTrackerId, (req, v) -> {
+                req.setTrackerId(v);
             }));
 
         // response

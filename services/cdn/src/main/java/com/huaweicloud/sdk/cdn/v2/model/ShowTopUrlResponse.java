@@ -6,7 +6,6 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -23,7 +22,7 @@ public class ShowTopUrlResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "top_url_summary")
 
-    private List<Map<String, Object>> topUrlSummary = null;
+    private List<TopUrlSummary> topUrlSummary = null;
 
     public ShowTopUrlResponse withServiceArea(String serviceArea) {
         this.serviceArea = serviceArea;
@@ -42,12 +41,12 @@ public class ShowTopUrlResponse extends SdkResponse {
         this.serviceArea = serviceArea;
     }
 
-    public ShowTopUrlResponse withTopUrlSummary(List<Map<String, Object>> topUrlSummary) {
+    public ShowTopUrlResponse withTopUrlSummary(List<TopUrlSummary> topUrlSummary) {
         this.topUrlSummary = topUrlSummary;
         return this;
     }
 
-    public ShowTopUrlResponse addTopUrlSummaryItem(Map<String, Object> topUrlSummaryItem) {
+    public ShowTopUrlResponse addTopUrlSummaryItem(TopUrlSummary topUrlSummaryItem) {
         if (this.topUrlSummary == null) {
             this.topUrlSummary = new ArrayList<>();
         }
@@ -55,7 +54,7 @@ public class ShowTopUrlResponse extends SdkResponse {
         return this;
     }
 
-    public ShowTopUrlResponse withTopUrlSummary(Consumer<List<Map<String, Object>>> topUrlSummarySetter) {
+    public ShowTopUrlResponse withTopUrlSummary(Consumer<List<TopUrlSummary>> topUrlSummarySetter) {
         if (this.topUrlSummary == null) {
             this.topUrlSummary = new ArrayList<>();
         }
@@ -67,11 +66,11 @@ public class ShowTopUrlResponse extends SdkResponse {
      * 详情数据对象。
      * @return topUrlSummary
      */
-    public List<Map<String, Object>> getTopUrlSummary() {
+    public List<TopUrlSummary> getTopUrlSummary() {
         return topUrlSummary;
     }
 
-    public void setTopUrlSummary(List<Map<String, Object>> topUrlSummary) {
+    public void setTopUrlSummary(List<TopUrlSummary> topUrlSummary) {
         this.topUrlSummary = topUrlSummary;
     }
 

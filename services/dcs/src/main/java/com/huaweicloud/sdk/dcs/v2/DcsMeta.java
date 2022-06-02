@@ -932,6 +932,13 @@ public class DcsMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFlavorsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
         builder.<String>withRequestField("spec_code",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,

@@ -66,7 +66,6 @@ public class DerivedAKSKSigner extends AKSKSigner {
         }
 
         // ************* TASK 1: CONSTRUCT CANONICAL REQUEST *************
-        // Date now = ISODateFormat.parse("20191115T033655Z"); // 设置基准时间
         // 设置基准时间
         Date now = new Date();
         HashMap<String, String> authenticationHeaders = new HashMap<>();
@@ -106,11 +105,13 @@ public class DerivedAKSKSigner extends AKSKSigner {
 
         // Step 2: Create Canonical URI -- the part of the URI from domain to query
         String pathOld = url.getPath();
-        String canonicalUri = "";
+        String canonicalUri;
+        StringBuilder canonicalUriSb = new StringBuilder();
         String[] split = pathOld.split("/");
         for (String urlSplit : split) {
-            canonicalUri += urlEncode(urlSplit) + "/";
+            canonicalUriSb.append(urlEncode(urlSplit)).append("/");
         }
+        canonicalUri = canonicalUriSb.toString();
 
         // Step 3: Create the canonical query string. In this example (a GET request),
         // request parameters are in the query string. Query string values must
@@ -149,8 +150,7 @@ public class DerivedAKSKSigner extends AKSKSigner {
                 payloadHash);
         String canonicalRequestHash = BinaryUtils.toHex(sha256(canonicalRequest));
         // ************* TASK 2: CREATE THE STRING TO SIGN*************
-        // Match the algorithm to the hashing algorithm you use, either SHA-1 or SHA-256
-        // (recommended)
+        // Match the algorithm to the hashing algorithm you use, either SHA-1 or SHA-256(recommended)
         String dateStr = LocalDate.now().format(DateTimeFormatter.BASIC_ISO_DATE);
         String info = dateStr + "/" + credential.regionId + "/" + credential.derivedAuthServiceName;
         String stringToSign = getStringToSign(V_11_HMAC_SHA_256, dateTimeStamp, info, canonicalRequestHash);

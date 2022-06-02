@@ -16,6 +16,11 @@ import java.util.Objects;
 public class ListFlavorsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_id")
+
+    private String instanceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "spec_code")
 
     private String specCode;
@@ -121,6 +126,23 @@ public class ListFlavorsRequest {
     @JsonProperty(value = "capacity")
 
     private String capacity;
+
+    public ListFlavorsRequest withInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+        return this;
+    }
+
+    /**
+     * 缓存实例ID，根据该字段可查询出实例可变更的规格
+     * @return instanceId
+     */
+    public String getInstanceId() {
+        return instanceId;
+    }
+
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+    }
 
     public ListFlavorsRequest withSpecCode(String specCode) {
         this.specCode = specCode;
@@ -233,7 +255,8 @@ public class ListFlavorsRequest {
             return false;
         }
         ListFlavorsRequest listFlavorsRequest = (ListFlavorsRequest) o;
-        return Objects.equals(this.specCode, listFlavorsRequest.specCode)
+        return Objects.equals(this.instanceId, listFlavorsRequest.instanceId)
+            && Objects.equals(this.specCode, listFlavorsRequest.specCode)
             && Objects.equals(this.cacheMode, listFlavorsRequest.cacheMode)
             && Objects.equals(this.engine, listFlavorsRequest.engine)
             && Objects.equals(this.engineVersion, listFlavorsRequest.engineVersion)
@@ -243,13 +266,14 @@ public class ListFlavorsRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hash(specCode, cacheMode, engine, engineVersion, cpuType, capacity);
+        return Objects.hash(instanceId, specCode, cacheMode, engine, engineVersion, cpuType, capacity);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListFlavorsRequest {\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    specCode: ").append(toIndentedString(specCode)).append("\n");
         sb.append("    cacheMode: ").append(toIndentedString(cacheMode)).append("\n");
         sb.append("    engine: ").append(toIndentedString(engine)).append("\n");

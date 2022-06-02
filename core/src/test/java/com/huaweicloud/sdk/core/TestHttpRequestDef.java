@@ -1,3 +1,24 @@
+/*
+ * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
+ *
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+
 package com.huaweicloud.sdk.core;
 
 import com.huaweicloud.sdk.core.http.Field;
@@ -128,10 +149,10 @@ public class TestHttpRequestDef {
 
     public static HttpRequestDef<TestRequest, TestResponse> buildHttpRequestDef() {
         HttpRequestDef.Builder<TestRequest, TestResponse> builder = HttpRequestDef.builder(HttpMethod.GET,
-            TestRequest.class, TestResponse.class)
-            .withName("Test")
-            .withUri("/v2.1/{project_id}/servers")
-            .withContentType("application/json;charset=UTF-8");
+                TestRequest.class, TestResponse.class)
+                .withName("Test")
+                .withUri("/v2.1/{project_id}/servers")
+                .withContentType("application/json;charset=UTF-8");
 
         builder.withResponseField("body", LocationType.Body, FieldExistence.NULL_IGNORE, List.class,
             f -> f.withMarshaller(TestResponse::getBody, TestResponse::setBody)
@@ -235,54 +256,49 @@ public class TestHttpRequestDef {
 
     }
 
-    public static final HttpRequestDef<TestUploadDownloadRequest, TestUploadDownloadResponse>
+    public static HttpRequestDef<TestUploadDownloadRequest, TestUploadDownloadResponse>
         buildTestUploadDownloadRequestDef() {
         HttpRequestDef.Builder<TestUploadDownloadRequest, TestUploadDownloadResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST,
                 TestUploadDownloadRequest.class,
-                    TestUploadDownloadResponse.class)
-                    .withName("TestUploadDownload")
-                    .withUri("/uploaddownload")
-                    .withContentType("application/octet-stream");
+                TestUploadDownloadResponse.class)
+                .withName("TestUploadDownload")
+                .withUri("/uploaddownload")
+                .withContentType("application/octet-stream");
         builder.withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(TestUploadDownloadRequest::getId, (req, v) -> {
-                req.setId(v);
-            })
-        );
+            f -> f.withMarshaller(TestUploadDownloadRequest::getId, TestUploadDownloadRequest::setId));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<TestFormDataRequest, TestFormDataResponse> buildTestFormDataRequestDef() {
+    public static HttpRequestDef<TestFormDataRequest, TestFormDataResponse> buildTestFormDataRequestDef() {
         HttpRequestDef.Builder<TestFormDataRequest, TestFormDataResponse> builder = HttpRequestDef.builder(
-            HttpMethod.POST, TestFormDataRequest.class, TestFormDataResponse.class)
-            .withName("TestFormData")
-            .withUri("/upload-formdata")
-            .withContentType("multipart/form-data");
+                HttpMethod.POST, TestFormDataRequest.class, TestFormDataResponse.class)
+                .withName("TestFormData")
+                .withUri("/upload-formdata")
+                .withContentType("multipart/form-data");
 
         builder.withRequestField("body", LocationType.Body, FieldExistence.NON_NULL_NON_EMPTY,
-            TestFormDataBodyBody.class, f -> f.withMarshaller(TestFormDataRequest::getBody, null));
+                TestFormDataBodyBody.class, f -> f.withMarshaller(TestFormDataRequest::getBody, null));
 
         return builder.build();
     }
 
     public static HttpRequestDef<TestNoBodyRequest, TestResponse> buildHttpRequestNoRequestBodyDef() {
         HttpRequestDef.Builder<TestNoBodyRequest, TestResponse> builder =
-                HttpRequestDef.builder(HttpMethod.PUT, TestNoBodyRequest.class, TestResponse.class)
-                        .withName("TestNoBody")
-                        .withUri("/v2.1/{project_id}/servers")
-                        .withContentType("application/json;charset=UTF-8");
+            HttpRequestDef.builder(HttpMethod.PUT, TestNoBodyRequest.class, TestResponse.class)
+                .withName("TestNoBody")
+                .withUri("/v2.1/{project_id}/servers")
+                .withContentType("application/json;charset=UTF-8");
 
         builder.withResponseField("body", LocationType.Body, FieldExistence.NULL_IGNORE, List.class,
-            f -> f.withMarshaller(TestResponse::getBody, (req, v) -> {
-                req.setBody(v);
-            }).withInnerContainerType(InnerResponse.class));
+            f -> f.withMarshaller(TestResponse::getBody, TestResponse::setBody)
+                .withInnerContainerType(InnerResponse.class));
 
-        HttpRequestDef<TestNoBodyRequest, TestResponse> requestDef = builder.build();
-        return requestDef;
+        return builder.build();
     }
 
     public static class TestCustomAuthorizationRequest {
@@ -318,21 +334,19 @@ public class TestHttpRequestDef {
         buildTestCustomizedAuthorizationRequestDef() {
         // basic
         HttpRequestDef.Builder<TestCustomAuthorizationRequest, TestCustomAuthorizationResponse> builder = HttpRequestDef
-            .builder(HttpMethod.POST, TestCustomAuthorizationRequest.class, TestCustomAuthorizationResponse.class)
-            .withName("TestCustomizeAuthorization")
-            .withUri("/v3/oidc/authorization")
-            .withContentType("application/json");
+                .builder(HttpMethod.POST, TestCustomAuthorizationRequest.class, TestCustomAuthorizationResponse.class)
+                .withName("TestCustomizeAuthorization")
+                .withUri("/v3/oidc/authorization")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("Authorization", LocationType.Header, FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(TestCustomAuthorizationRequest::getAuthorization,
+            String.class, f -> f.withMarshaller(TestCustomAuthorizationRequest::getAuthorization,
                 TestCustomAuthorizationRequest::setAuthorization));
 
         // response
         builder.withResponseField("token", LocationType.Header, FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(TestCustomAuthorizationResponse::getToken,
+            String.class, f -> f.withMarshaller(TestCustomAuthorizationResponse::getToken,
                 TestCustomAuthorizationResponse::setToken));
         return builder.build();
     }
