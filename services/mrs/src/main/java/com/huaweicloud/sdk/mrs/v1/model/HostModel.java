@@ -8,6 +8,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.mrs.v1.model.TagPlain;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -38,6 +41,20 @@ public class HostModel  {
     
     private String ip;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="availability_zone_id")
+    
+    
+    private String availabilityZoneId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="tags")
+    
+    
+    private List<TagPlain> tags = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
@@ -163,6 +180,64 @@ public class HostModel  {
 
     public void setIp(String ip) {
         this.ip = ip;
+    }
+
+    
+
+    public HostModel withAvailabilityZoneId(String availabilityZoneId) {
+        this.availabilityZoneId = availabilityZoneId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 可用区域
+     * @return availabilityZoneId
+     */
+    public String getAvailabilityZoneId() {
+        return availabilityZoneId;
+    }
+
+    public void setAvailabilityZoneId(String availabilityZoneId) {
+        this.availabilityZoneId = availabilityZoneId;
+    }
+
+    
+
+    public HostModel withTags(List<TagPlain> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    
+    public HostModel addTagsItem(TagPlain tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public HostModel withTags(Consumer<List<TagPlain>> tagsSetter) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * 标签列表信息
+     * @return tags
+     */
+    public List<TagPlain> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<TagPlain> tags) {
+        this.tags = tags;
     }
 
     
@@ -377,6 +452,8 @@ public class HostModel  {
         return Objects.equals(this.id, hostModel.id) &&
             Objects.equals(this.name, hostModel.name) &&
             Objects.equals(this.ip, hostModel.ip) &&
+            Objects.equals(this.availabilityZoneId, hostModel.availabilityZoneId) &&
+            Objects.equals(this.tags, hostModel.tags) &&
             Objects.equals(this.status, hostModel.status) &&
             Objects.equals(this.flavor, hostModel.flavor) &&
             Objects.equals(this.type, hostModel.type) &&
@@ -389,7 +466,7 @@ public class HostModel  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, ip, status, flavor, type, mem, cpu, rootVolumeSize, dataVolumeType, dataVolumeSize, dataVolumeCount);
+        return Objects.hash(id, name, ip, availabilityZoneId, tags, status, flavor, type, mem, cpu, rootVolumeSize, dataVolumeType, dataVolumeSize, dataVolumeCount);
     }
     @Override
     public String toString() {
@@ -398,6 +475,8 @@ public class HostModel  {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
+        sb.append("    availabilityZoneId: ").append(toIndentedString(availabilityZoneId)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    flavor: ").append(toIndentedString(flavor)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");

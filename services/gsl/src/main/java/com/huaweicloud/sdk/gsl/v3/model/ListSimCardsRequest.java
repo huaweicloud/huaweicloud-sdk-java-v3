@@ -5,10 +5,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -44,6 +47,11 @@ public class ListSimCardsRequest {
     @JsonProperty(value = "device_status")
 
     private Integer deviceStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tag_id")
+
+    private List<Long> tagId = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sim_type")
@@ -414,6 +422,39 @@ public class ListSimCardsRequest {
         this.deviceStatus = deviceStatus;
     }
 
+    public ListSimCardsRequest withTagId(List<Long> tagId) {
+        this.tagId = tagId;
+        return this;
+    }
+
+    public ListSimCardsRequest addTagIdItem(Long tagIdItem) {
+        if (this.tagId == null) {
+            this.tagId = new ArrayList<>();
+        }
+        this.tagId.add(tagIdItem);
+        return this;
+    }
+
+    public ListSimCardsRequest withTagId(Consumer<List<Long>> tagIdSetter) {
+        if (this.tagId == null) {
+            this.tagId = new ArrayList<>();
+        }
+        tagIdSetter.accept(this.tagId);
+        return this;
+    }
+
+    /**
+     * 标签ID，最多支持传50个
+     * @return tagId
+     */
+    public List<Long> getTagId() {
+        return tagId;
+    }
+
+    public void setTagId(List<Long> tagId) {
+        this.tagId = tagId;
+    }
+
     public ListSimCardsRequest withSimType(Integer simType) {
         this.simType = simType;
         return this;
@@ -728,6 +769,7 @@ public class ListSimCardsRequest {
             && Objects.equals(this.offset, listSimCardsRequest.offset)
             && Objects.equals(this.simStatus, listSimCardsRequest.simStatus)
             && Objects.equals(this.deviceStatus, listSimCardsRequest.deviceStatus)
+            && Objects.equals(this.tagId, listSimCardsRequest.tagId)
             && Objects.equals(this.simType, listSimCardsRequest.simType)
             && Objects.equals(this.order, listSimCardsRequest.order)
             && Objects.equals(this.sort, listSimCardsRequest.sort)
@@ -755,6 +797,7 @@ public class ListSimCardsRequest {
             offset,
             simStatus,
             deviceStatus,
+            tagId,
             simType,
             order,
             sort,
@@ -784,6 +827,7 @@ public class ListSimCardsRequest {
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    simStatus: ").append(toIndentedString(simStatus)).append("\n");
         sb.append("    deviceStatus: ").append(toIndentedString(deviceStatus)).append("\n");
+        sb.append("    tagId: ").append(toIndentedString(tagId)).append("\n");
         sb.append("    simType: ").append(toIndentedString(simType)).append("\n");
         sb.append("    order: ").append(toIndentedString(order)).append("\n");
         sb.append("    sort: ").append(toIndentedString(sort)).append("\n");

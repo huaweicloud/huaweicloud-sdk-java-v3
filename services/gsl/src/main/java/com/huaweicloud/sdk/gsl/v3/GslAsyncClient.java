@@ -52,6 +52,198 @@ public class GslAsyncClient {
     }
 
     /**
+     * 批量设置自定义属性接口
+     *
+     * 批量设置自定义属性接口
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param BatchSetAttributesRequest 请求对象
+     * @return CompletableFuture<BatchSetAttributesResponse>
+     */
+    public CompletableFuture<BatchSetAttributesResponse> batchSetAttributesAsync(BatchSetAttributesRequest request) {
+        return hcClient.asyncInvokeHttp(request, GslMeta.batchSetAttributes);
+    }
+
+    /**
+     * 批量设置自定义属性接口
+     *
+     * 批量设置自定义属性接口
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param BatchSetAttributesRequest 请求对象
+     * @return AsyncInvoker<BatchSetAttributesRequest, BatchSetAttributesResponse>
+     */
+    public AsyncInvoker<BatchSetAttributesRequest, BatchSetAttributesResponse> batchSetAttributesAsyncInvoker(
+        BatchSetAttributesRequest request) {
+        return new AsyncInvoker<BatchSetAttributesRequest, BatchSetAttributesResponse>(request,
+            GslMeta.batchSetAttributes, hcClient);
+    }
+
+    /**
+     * 用户新增自定义属性接口
+     *
+     * 用户新增自定义属性接口
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateAttributeRequest 请求对象
+     * @return CompletableFuture<CreateAttributeResponse>
+     */
+    public CompletableFuture<CreateAttributeResponse> createAttributeAsync(CreateAttributeRequest request) {
+        return hcClient.asyncInvokeHttp(request, GslMeta.createAttribute);
+    }
+
+    /**
+     * 用户新增自定义属性接口
+     *
+     * 用户新增自定义属性接口
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateAttributeRequest 请求对象
+     * @return AsyncInvoker<CreateAttributeRequest, CreateAttributeResponse>
+     */
+    public AsyncInvoker<CreateAttributeRequest, CreateAttributeResponse> createAttributeAsyncInvoker(
+        CreateAttributeRequest request) {
+        return new AsyncInvoker<CreateAttributeRequest, CreateAttributeResponse>(request, GslMeta.createAttribute,
+            hcClient);
+    }
+
+    /**
+     * 停用自定义属性接口
+     *
+     * 停用自定义属性接口
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DisableAttributeRequest 请求对象
+     * @return CompletableFuture<DisableAttributeResponse>
+     */
+    public CompletableFuture<DisableAttributeResponse> disableAttributeAsync(DisableAttributeRequest request) {
+        return hcClient.asyncInvokeHttp(request, GslMeta.disableAttribute);
+    }
+
+    /**
+     * 停用自定义属性接口
+     *
+     * 停用自定义属性接口
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DisableAttributeRequest 请求对象
+     * @return AsyncInvoker<DisableAttributeRequest, DisableAttributeResponse>
+     */
+    public AsyncInvoker<DisableAttributeRequest, DisableAttributeResponse> disableAttributeAsyncInvoker(
+        DisableAttributeRequest request) {
+        return new AsyncInvoker<DisableAttributeRequest, DisableAttributeResponse>(request, GslMeta.disableAttribute,
+            hcClient);
+    }
+
+    /**
+     * 启用自定义属性接口
+     *
+     * 启用自定义属性接口
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param EnableAttributeRequest 请求对象
+     * @return CompletableFuture<EnableAttributeResponse>
+     */
+    public CompletableFuture<EnableAttributeResponse> enableAttributeAsync(EnableAttributeRequest request) {
+        return hcClient.asyncInvokeHttp(request, GslMeta.enableAttribute);
+    }
+
+    /**
+     * 启用自定义属性接口
+     *
+     * 启用自定义属性接口
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param EnableAttributeRequest 请求对象
+     * @return AsyncInvoker<EnableAttributeRequest, EnableAttributeResponse>
+     */
+    public AsyncInvoker<EnableAttributeRequest, EnableAttributeResponse> enableAttributeAsyncInvoker(
+        EnableAttributeRequest request) {
+        return new AsyncInvoker<EnableAttributeRequest, EnableAttributeResponse>(request, GslMeta.enableAttribute,
+            hcClient);
+    }
+
+    /**
+     * 查询自定义属性列表接口
+     *
+     * 查询自定义属性列表接口
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListAttributesRequest 请求对象
+     * @return CompletableFuture<ListAttributesResponse>
+     */
+    public CompletableFuture<ListAttributesResponse> listAttributesAsync(ListAttributesRequest request) {
+        return hcClient.asyncInvokeHttp(request, GslMeta.listAttributes);
+    }
+
+    /**
+     * 查询自定义属性列表接口
+     *
+     * 查询自定义属性列表接口
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListAttributesRequest 请求对象
+     * @return AsyncInvoker<ListAttributesRequest, ListAttributesResponse>
+     */
+    public AsyncInvoker<ListAttributesRequest, ListAttributesResponse> listAttributesAsyncInvoker(
+        ListAttributesRequest request) {
+        return new AsyncInvoker<ListAttributesRequest, ListAttributesResponse>(request, GslMeta.listAttributes,
+            hcClient);
+    }
+
+    /**
+     * 修改自定义属性接口
+     *
+     * 修改自定义属性接口
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateAttributeRequest 请求对象
+     * @return CompletableFuture<UpdateAttributeResponse>
+     */
+    public CompletableFuture<UpdateAttributeResponse> updateAttributeAsync(UpdateAttributeRequest request) {
+        return hcClient.asyncInvokeHttp(request, GslMeta.updateAttribute);
+    }
+
+    /**
+     * 修改自定义属性接口
+     *
+     * 修改自定义属性接口
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateAttributeRequest 请求对象
+     * @return AsyncInvoker<UpdateAttributeRequest, UpdateAttributeResponse>
+     */
+    public AsyncInvoker<UpdateAttributeRequest, UpdateAttributeResponse> updateAttributeAsyncInvoker(
+        UpdateAttributeRequest request) {
+        return new AsyncInvoker<UpdateAttributeRequest, UpdateAttributeResponse>(request, GslMeta.updateAttribute,
+            hcClient);
+    }
+
+    /**
      * 清除实名认证信息
      *
      * 清除实名认证信息，接口只支持电信卡调用
@@ -517,6 +709,127 @@ public class GslAsyncClient {
         ListSimPricePlansRequest request) {
         return new AsyncInvoker<ListSimPricePlansRequest, ListSimPricePlansResponse>(request, GslMeta.listSimPricePlans,
             hcClient);
+    }
+
+    /**
+     * 批量设置/取消设置标签接口
+     *
+     * 批量设置/取消设置标签接口
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param BatchSetTagsRequest 请求对象
+     * @return CompletableFuture<BatchSetTagsResponse>
+     */
+    public CompletableFuture<BatchSetTagsResponse> batchSetTagsAsync(BatchSetTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GslMeta.batchSetTags);
+    }
+
+    /**
+     * 批量设置/取消设置标签接口
+     *
+     * 批量设置/取消设置标签接口
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param BatchSetTagsRequest 请求对象
+     * @return AsyncInvoker<BatchSetTagsRequest, BatchSetTagsResponse>
+     */
+    public AsyncInvoker<BatchSetTagsRequest, BatchSetTagsResponse> batchSetTagsAsyncInvoker(
+        BatchSetTagsRequest request) {
+        return new AsyncInvoker<BatchSetTagsRequest, BatchSetTagsResponse>(request, GslMeta.batchSetTags, hcClient);
+    }
+
+    /**
+     * 用户添加标签
+     *
+     * 添加标签接口
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateTagRequest 请求对象
+     * @return CompletableFuture<CreateTagResponse>
+     */
+    public CompletableFuture<CreateTagResponse> createTagAsync(CreateTagRequest request) {
+        return hcClient.asyncInvokeHttp(request, GslMeta.createTag);
+    }
+
+    /**
+     * 用户添加标签
+     *
+     * 添加标签接口
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateTagRequest 请求对象
+     * @return AsyncInvoker<CreateTagRequest, CreateTagResponse>
+     */
+    public AsyncInvoker<CreateTagRequest, CreateTagResponse> createTagAsyncInvoker(CreateTagRequest request) {
+        return new AsyncInvoker<CreateTagRequest, CreateTagResponse>(request, GslMeta.createTag, hcClient);
+    }
+
+    /**
+     * 删除标签
+     *
+     * 删除标签
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteTagRequest 请求对象
+     * @return CompletableFuture<DeleteTagResponse>
+     */
+    public CompletableFuture<DeleteTagResponse> deleteTagAsync(DeleteTagRequest request) {
+        return hcClient.asyncInvokeHttp(request, GslMeta.deleteTag);
+    }
+
+    /**
+     * 删除标签
+     *
+     * 删除标签
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteTagRequest 请求对象
+     * @return AsyncInvoker<DeleteTagRequest, DeleteTagResponse>
+     */
+    public AsyncInvoker<DeleteTagRequest, DeleteTagResponse> deleteTagAsyncInvoker(DeleteTagRequest request) {
+        return new AsyncInvoker<DeleteTagRequest, DeleteTagResponse>(request, GslMeta.deleteTag, hcClient);
+    }
+
+    /**
+     * 查询标签列表
+     *
+     * 查询标签列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListTagsRequest 请求对象
+     * @return CompletableFuture<ListTagsResponse>
+     */
+    public CompletableFuture<ListTagsResponse> listTagsAsync(ListTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GslMeta.listTags);
+    }
+
+    /**
+     * 查询标签列表
+     *
+     * 查询标签列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListTagsRequest 请求对象
+     * @return AsyncInvoker<ListTagsRequest, ListTagsResponse>
+     */
+    public AsyncInvoker<ListTagsRequest, ListTagsResponse> listTagsAsyncInvoker(ListTagsRequest request) {
+        return new AsyncInvoker<ListTagsRequest, ListTagsResponse>(request, GslMeta.listTags, hcClient);
     }
 
 }

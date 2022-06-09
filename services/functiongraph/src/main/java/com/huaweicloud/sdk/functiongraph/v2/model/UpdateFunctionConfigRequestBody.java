@@ -22,7 +22,7 @@ public class UpdateFunctionConfigRequestBody {
     private String funcName;
 
     /**
-     * FunctionGraph函数的执行环境 支持Node.js6.10、Python2.7、Python3.6、Java8、Go1.8、Node.js 8.10、C#.NET Core 2.0、C#.NET Core 2.1、PHP7.3。 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Go1.8: Go语言1.8版本。 Go1.x: Go语言1.x版本。 Java8: Java语言8版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 Node.js10.16: Nodejs语言10.16版本。 Node.js12.13: Nodejs语言12.13版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本。 Java11、Nodejs14.18、Python3.9在type为v2时支持
+     * FunctionGraph函数的执行环境 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Python3.9: Python语言3.9版本。 Go1.8: Go语言1.8版本。 Go1.x: Go语言1.x版本。 Java8: Java语言8版本。 Java11: Java语言11版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 Node.js10.16: Nodejs语言10.16版本。 Node.js12.13: Nodejs语言12.13版本。 Node.js14.18: Nodejs语言14.18版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本
      */
     public static final class RuntimeEnum {
 
@@ -72,11 +72,6 @@ public class UpdateFunctionConfigRequestBody {
         public static final RuntimeEnum PYTHON3_6 = new RuntimeEnum("Python3.6");
 
         /**
-         * Enum PYTHON3_9 for value: "Python3.9"
-         */
-        public static final RuntimeEnum PYTHON3_9 = new RuntimeEnum("Python3.9");
-
-        /**
          * Enum GO1_8 for value: "Go1.8"
          */
         public static final RuntimeEnum GO1_8 = new RuntimeEnum("Go1.8");
@@ -106,6 +101,11 @@ public class UpdateFunctionConfigRequestBody {
          */
         public static final RuntimeEnum PHP7_3 = new RuntimeEnum("PHP7.3");
 
+        /**
+         * Enum PYTHON3_9 for value: "Python3.9"
+         */
+        public static final RuntimeEnum PYTHON3_9 = new RuntimeEnum("Python3.9");
+
         private static final Map<String, RuntimeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, RuntimeEnum> createStaticFields() {
@@ -119,13 +119,13 @@ public class UpdateFunctionConfigRequestBody {
             map.put("Node.js14.18", NODE_JS14_18);
             map.put("Python2.7", PYTHON2_7);
             map.put("Python3.6", PYTHON3_6);
-            map.put("Python3.9", PYTHON3_9);
             map.put("Go1.8", GO1_8);
             map.put("Go1.x", GO1_X);
             map.put("C#(.NET Core 2.0)", C_NET_CORE_2_0_);
             map.put("C#(.NET Core 2.1)", C_NET_CORE_2_1_);
             map.put("C#(.NET Core 3.1)", C_NET_CORE_3_1_);
             map.put("PHP7.3", PHP7_3);
+            map.put("Python3.9", PYTHON3_9);
             return Collections.unmodifiableMap(map);
         }
 
@@ -267,6 +267,11 @@ public class UpdateFunctionConfigRequestBody {
 
     private Boolean isStatefulFunction;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "domain_names")
+
+    private String domainNames;
+
     public UpdateFunctionConfigRequestBody withFuncName(String funcName) {
         this.funcName = funcName;
         return this;
@@ -290,7 +295,7 @@ public class UpdateFunctionConfigRequestBody {
     }
 
     /**
-     * FunctionGraph函数的执行环境 支持Node.js6.10、Python2.7、Python3.6、Java8、Go1.8、Node.js 8.10、C#.NET Core 2.0、C#.NET Core 2.1、PHP7.3。 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Go1.8: Go语言1.8版本。 Go1.x: Go语言1.x版本。 Java8: Java语言8版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 Node.js10.16: Nodejs语言10.16版本。 Node.js12.13: Nodejs语言12.13版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本。 Java11、Nodejs14.18、Python3.9在type为v2时支持
+     * FunctionGraph函数的执行环境 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Python3.9: Python语言3.9版本。 Go1.8: Go语言1.8版本。 Go1.x: Go语言1.x版本。 Java8: Java语言8版本。 Java11: Java语言11版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 Node.js10.16: Nodejs语言10.16版本。 Node.js12.13: Nodejs语言12.13版本。 Node.js14.18: Nodejs语言14.18版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本
      * @return runtime
      */
     public RuntimeEnum getRuntime() {
@@ -600,6 +605,23 @@ public class UpdateFunctionConfigRequestBody {
         this.isStatefulFunction = isStatefulFunction;
     }
 
+    public UpdateFunctionConfigRequestBody withDomainNames(String domainNames) {
+        this.domainNames = domainNames;
+        return this;
+    }
+
+    /**
+     * 内网域名配置。
+     * @return domainNames
+     */
+    public String getDomainNames() {
+        return domainNames;
+    }
+
+    public void setDomainNames(String domainNames) {
+        this.domainNames = domainNames;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -626,7 +648,8 @@ public class UpdateFunctionConfigRequestBody {
             && Objects.equals(this.initializerHandler, updateFunctionConfigRequestBody.initializerHandler)
             && Objects.equals(this.initializerTimeout, updateFunctionConfigRequestBody.initializerTimeout)
             && Objects.equals(this.enterpriseProjectId, updateFunctionConfigRequestBody.enterpriseProjectId)
-            && Objects.equals(this.isStatefulFunction, updateFunctionConfigRequestBody.isStatefulFunction);
+            && Objects.equals(this.isStatefulFunction, updateFunctionConfigRequestBody.isStatefulFunction)
+            && Objects.equals(this.domainNames, updateFunctionConfigRequestBody.domainNames);
     }
 
     @Override
@@ -648,7 +671,8 @@ public class UpdateFunctionConfigRequestBody {
             initializerHandler,
             initializerTimeout,
             enterpriseProjectId,
-            isStatefulFunction);
+            isStatefulFunction,
+            domainNames);
     }
 
     @Override
@@ -673,6 +697,7 @@ public class UpdateFunctionConfigRequestBody {
         sb.append("    initializerTimeout: ").append(toIndentedString(initializerTimeout)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    isStatefulFunction: ").append(toIndentedString(isStatefulFunction)).append("\n");
+        sb.append("    domainNames: ").append(toIndentedString(domainNames)).append("\n");
         sb.append("}");
         return sb.toString();
     }

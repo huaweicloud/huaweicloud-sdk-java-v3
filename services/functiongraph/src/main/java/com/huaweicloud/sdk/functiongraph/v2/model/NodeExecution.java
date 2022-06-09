@@ -140,6 +140,11 @@ public class NodeExecution {
 
     private Object errorMessage;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "request_id")
+
+    private String requestId;
+
     public NodeExecution withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -246,6 +251,23 @@ public class NodeExecution {
         this.errorMessage = errorMessage;
     }
 
+    public NodeExecution withRequestId(String requestId) {
+        this.requestId = requestId;
+        return this;
+    }
+
+    /**
+     * 流程节点请求ID
+     * @return requestId
+     */
+    public String getRequestId() {
+        return requestId;
+    }
+
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -259,12 +281,13 @@ public class NodeExecution {
             && Objects.equals(this.output, nodeExecution.output)
             && Objects.equals(this.beginTime, nodeExecution.beginTime)
             && Objects.equals(this.endTime, nodeExecution.endTime)
-            && Objects.equals(this.errorMessage, nodeExecution.errorMessage);
+            && Objects.equals(this.errorMessage, nodeExecution.errorMessage)
+            && Objects.equals(this.requestId, nodeExecution.requestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(status, input, output, beginTime, endTime, errorMessage);
+        return Objects.hash(status, input, output, beginTime, endTime, errorMessage, requestId);
     }
 
     @Override
@@ -277,6 +300,7 @@ public class NodeExecution {
         sb.append("    beginTime: ").append(toIndentedString(beginTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    errorMessage: ").append(toIndentedString(errorMessage)).append("\n");
+        sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

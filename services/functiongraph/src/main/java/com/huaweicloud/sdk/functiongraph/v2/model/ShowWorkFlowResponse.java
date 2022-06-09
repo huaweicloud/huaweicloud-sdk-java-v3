@@ -38,6 +38,16 @@ public class ShowWorkFlowResponse extends SdkResponse {
     private String createdBy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "lts_group_id")
+
+    private String ltsGroupId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "lts_stream_id")
+
+    private String ltsStreamId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "definition")
 
     private CreateWorkflowRequestBody definition;
@@ -127,6 +137,40 @@ public class ShowWorkFlowResponse extends SdkResponse {
         this.createdBy = createdBy;
     }
 
+    public ShowWorkFlowResponse withLtsGroupId(String ltsGroupId) {
+        this.ltsGroupId = ltsGroupId;
+        return this;
+    }
+
+    /**
+     * 快速函数流日志组ID，仅快速模式函数流且日志级别不为NONE时
+     * @return ltsGroupId
+     */
+    public String getLtsGroupId() {
+        return ltsGroupId;
+    }
+
+    public void setLtsGroupId(String ltsGroupId) {
+        this.ltsGroupId = ltsGroupId;
+    }
+
+    public ShowWorkFlowResponse withLtsStreamId(String ltsStreamId) {
+        this.ltsStreamId = ltsStreamId;
+        return this;
+    }
+
+    /**
+     * 快速函数流日志流ID，仅快速模式函数流且日志级别不为NONE时返回。
+     * @return ltsStreamId
+     */
+    public String getLtsStreamId() {
+        return ltsStreamId;
+    }
+
+    public void setLtsStreamId(String ltsStreamId) {
+        this.ltsStreamId = ltsStreamId;
+    }
+
     public ShowWorkFlowResponse withDefinition(CreateWorkflowRequestBody definition) {
         this.definition = definition;
         return this;
@@ -167,12 +211,14 @@ public class ShowWorkFlowResponse extends SdkResponse {
             && Objects.equals(this.createdTime, showWorkFlowResponse.createdTime)
             && Objects.equals(this.updatedTime, showWorkFlowResponse.updatedTime)
             && Objects.equals(this.createdBy, showWorkFlowResponse.createdBy)
+            && Objects.equals(this.ltsGroupId, showWorkFlowResponse.ltsGroupId)
+            && Objects.equals(this.ltsStreamId, showWorkFlowResponse.ltsStreamId)
             && Objects.equals(this.definition, showWorkFlowResponse.definition);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, workflowUrn, createdTime, updatedTime, createdBy, definition);
+        return Objects.hash(id, workflowUrn, createdTime, updatedTime, createdBy, ltsGroupId, ltsStreamId, definition);
     }
 
     @Override
@@ -184,6 +230,8 @@ public class ShowWorkFlowResponse extends SdkResponse {
         sb.append("    createdTime: ").append(toIndentedString(createdTime)).append("\n");
         sb.append("    updatedTime: ").append(toIndentedString(updatedTime)).append("\n");
         sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
+        sb.append("    ltsGroupId: ").append(toIndentedString(ltsGroupId)).append("\n");
+        sb.append("    ltsStreamId: ").append(toIndentedString(ltsStreamId)).append("\n");
         sb.append("    definition: ").append(toIndentedString(definition)).append("\n");
         sb.append("}");
         return sb.toString();

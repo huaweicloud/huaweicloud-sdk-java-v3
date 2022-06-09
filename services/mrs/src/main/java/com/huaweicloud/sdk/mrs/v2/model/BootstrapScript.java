@@ -350,7 +350,7 @@ public class BootstrapScript  {
     }
 
     /**
-     * 引导操作脚本所执行的节点类型，包含Master、Core和Task三种类型。
+     * 引导操作脚本所执行的节点组名称，包含Master、Core和Task三种类型节点组。
      * @return nodes
      */
     public List<String> getNodes() {

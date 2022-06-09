@@ -31,6 +31,11 @@ public class ListFunctionAsyncInvocationsRequest {
 
     private String limit;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "marker")
+
+    private String marker;
+
     /**
      * 本次查询指定的异步调用状态，支持5种状态，如果不指定，则查询所有状态的调用记录 WAIT: 等待 RUNNING: 执行中 SUCCESS: 执行成功 FAIL: 执行失败 DISCARD: 请求丢弃
      */
@@ -192,6 +197,23 @@ public class ListFunctionAsyncInvocationsRequest {
         this.limit = limit;
     }
 
+    public ListFunctionAsyncInvocationsRequest withMarker(String marker) {
+        this.marker = marker;
+        return this;
+    }
+
+    /**
+     * 本次查询起始位置，默认值0
+     * @return marker
+     */
+    public String getMarker() {
+        return marker;
+    }
+
+    public void setMarker(String marker) {
+        this.marker = marker;
+    }
+
     public ListFunctionAsyncInvocationsRequest withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -256,6 +278,7 @@ public class ListFunctionAsyncInvocationsRequest {
         return Objects.equals(this.functionUrn, listFunctionAsyncInvocationsRequest.functionUrn)
             && Objects.equals(this.requestId, listFunctionAsyncInvocationsRequest.requestId)
             && Objects.equals(this.limit, listFunctionAsyncInvocationsRequest.limit)
+            && Objects.equals(this.marker, listFunctionAsyncInvocationsRequest.marker)
             && Objects.equals(this.status, listFunctionAsyncInvocationsRequest.status)
             && Objects.equals(this.queryBeginTime, listFunctionAsyncInvocationsRequest.queryBeginTime)
             && Objects.equals(this.queryEndTime, listFunctionAsyncInvocationsRequest.queryEndTime);
@@ -263,7 +286,7 @@ public class ListFunctionAsyncInvocationsRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hash(functionUrn, requestId, limit, status, queryBeginTime, queryEndTime);
+        return Objects.hash(functionUrn, requestId, limit, marker, status, queryBeginTime, queryEndTime);
     }
 
     @Override
@@ -273,6 +296,7 @@ public class ListFunctionAsyncInvocationsRequest {
         sb.append("    functionUrn: ").append(toIndentedString(functionUrn)).append("\n");
         sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    queryBeginTime: ").append(toIndentedString(queryBeginTime)).append("\n");
         sb.append("    queryEndTime: ").append(toIndentedString(queryEndTime)).append("\n");

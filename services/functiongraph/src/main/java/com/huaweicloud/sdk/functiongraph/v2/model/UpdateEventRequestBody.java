@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 更新测试事件请求体。
+ * UpdateEventRequestBody
  */
 public class UpdateEventRequestBody {
 
@@ -21,7 +21,7 @@ public class UpdateEventRequestBody {
     }
 
     /**
-     * 测试事件content。
+     * 测试事件content,为json字符串
      * @return content
      */
     public String getContent() {

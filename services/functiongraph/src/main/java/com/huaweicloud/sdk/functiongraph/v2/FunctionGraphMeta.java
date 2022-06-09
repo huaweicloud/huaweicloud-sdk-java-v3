@@ -647,6 +647,13 @@ public class FunctionGraphMeta {
             f -> f.withMarshaller(ListFunctionAsyncInvocationsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
             }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFunctionAsyncInvocationsRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
         builder.<ListFunctionAsyncInvocationsRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -735,10 +742,10 @@ public class FunctionGraphMeta {
             f -> f.withMarshaller(ListFunctionStatisticsRequest::getFuncUrn, (req, v) -> {
                 req.setFuncUrn(v);
             }));
-        builder.<String>withRequestField("period",
+        builder.<ListFunctionStatisticsRequest.PeriodEnum>withRequestField("period",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(ListFunctionStatisticsRequest.PeriodEnum.class),
             f -> f.withMarshaller(ListFunctionStatisticsRequest::getPeriod, (req, v) -> {
                 req.setPeriod(v);
             }));
@@ -868,6 +875,13 @@ public class FunctionGraphMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListStatisticsRequest::getPeriod, (req, v) -> {
                 req.setPeriod(v);
+            }));
+        builder.<ListStatisticsRequest.OptionEnum>withRequestField("option",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListStatisticsRequest.OptionEnum.class),
+            f -> f.withMarshaller(ListStatisticsRequest::getOption, (req, v) -> {
+                req.setOption(v);
             }));
 
         // response

@@ -86,6 +86,224 @@ public class GslMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchSetAttributesRequest, BatchSetAttributesResponse> batchSetAttributes =
+        genForbatchSetAttributes();
+
+    private static HttpRequestDef<BatchSetAttributesRequest, BatchSetAttributesResponse> genForbatchSetAttributes() {
+        // basic
+        HttpRequestDef.Builder<BatchSetAttributesRequest, BatchSetAttributesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchSetAttributesRequest.class, BatchSetAttributesResponse.class)
+                .withName("BatchSetAttributes")
+                .withUri("/v1/sim-cards/attributes/batch-set")
+                .withContentType("application/json");
+
+        // requests
+        builder.<BatchSetAttributesReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchSetAttributesReq.class),
+            f -> f.withMarshaller(BatchSetAttributesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(BatchSetAttributesResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateAttributeRequest, CreateAttributeResponse> createAttribute =
+        genForcreateAttribute();
+
+    private static HttpRequestDef<CreateAttributeRequest, CreateAttributeResponse> genForcreateAttribute() {
+        // basic
+        HttpRequestDef.Builder<CreateAttributeRequest, CreateAttributeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateAttributeRequest.class, CreateAttributeResponse.class)
+                .withName("CreateAttribute")
+                .withUri("/v1/attributes")
+                .withContentType("application/json");
+
+        // requests
+        builder.<AddOrModifyAttributeReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AddOrModifyAttributeReq.class),
+            f -> f.withMarshaller(CreateAttributeRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateAttributeResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DisableAttributeRequest, DisableAttributeResponse> disableAttribute =
+        genFordisableAttribute();
+
+    private static HttpRequestDef<DisableAttributeRequest, DisableAttributeResponse> genFordisableAttribute() {
+        // basic
+        HttpRequestDef.Builder<DisableAttributeRequest, DisableAttributeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DisableAttributeRequest.class, DisableAttributeResponse.class)
+                .withName("DisableAttribute")
+                .withUri("/v1/attributes/{attribute_id}/disable")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Long>withRequestField("attribute_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(DisableAttributeRequest::getAttributeId, (req, v) -> {
+                req.setAttributeId(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DisableAttributeResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<EnableAttributeRequest, EnableAttributeResponse> enableAttribute =
+        genForenableAttribute();
+
+    private static HttpRequestDef<EnableAttributeRequest, EnableAttributeResponse> genForenableAttribute() {
+        // basic
+        HttpRequestDef.Builder<EnableAttributeRequest, EnableAttributeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, EnableAttributeRequest.class, EnableAttributeResponse.class)
+                .withName("EnableAttribute")
+                .withUri("/v1/attributes/{attribute_id}/enable")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Long>withRequestField("attribute_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(EnableAttributeRequest::getAttributeId, (req, v) -> {
+                req.setAttributeId(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(EnableAttributeResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAttributesRequest, ListAttributesResponse> listAttributes =
+        genForlistAttributes();
+
+    private static HttpRequestDef<ListAttributesRequest, ListAttributesResponse> genForlistAttributes() {
+        // basic
+        HttpRequestDef.Builder<ListAttributesRequest, ListAttributesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAttributesRequest.class, ListAttributesResponse.class)
+                .withName("ListAttributes")
+                .withUri("/v1/attributes")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cust_attr_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAttributesRequest::getCustAttrName, (req, v) -> {
+                req.setCustAttrName(v);
+            }));
+        builder.<Long>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListAttributesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListAttributesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAttributesRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateAttributeRequest, UpdateAttributeResponse> updateAttribute =
+        genForupdateAttribute();
+
+    private static HttpRequestDef<UpdateAttributeRequest, UpdateAttributeResponse> genForupdateAttribute() {
+        // basic
+        HttpRequestDef.Builder<UpdateAttributeRequest, UpdateAttributeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateAttributeRequest.class, UpdateAttributeResponse.class)
+                .withName("UpdateAttribute")
+                .withUri("/v1/attributes/{attribute_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Long>withRequestField("attribute_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(UpdateAttributeRequest::getAttributeId, (req, v) -> {
+                req.setAttributeId(v);
+            }));
+        builder.<AddOrModifyAttributeReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AddOrModifyAttributeReq.class),
+            f -> f.withMarshaller(UpdateAttributeRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateAttributeResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteRealNameRequest, DeleteRealNameResponse> deleteRealName =
         genFordeleteRealName();
 
@@ -188,6 +406,13 @@ public class GslMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListSimCardsRequest::getDeviceStatus, (req, v) -> {
                 req.setDeviceStatus(v);
+            }));
+        builder.<List<Long>>withRequestField("tag_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListSimCardsRequest::getTagId, (req, v) -> {
+                req.setTagId(v);
             }));
         builder.<Integer>withRequestField("sim_type",
             LocationType.Query,
@@ -732,6 +957,139 @@ public class GslMeta {
             f -> f.withMarshaller(ListSimPricePlansResponse::getBody, (response, data) -> {
                 response.setBody(data);
             }).withInnerContainerType(SimPricePlanVO.class));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchSetTagsRequest, BatchSetTagsResponse> batchSetTags = genForbatchSetTags();
+
+    private static HttpRequestDef<BatchSetTagsRequest, BatchSetTagsResponse> genForbatchSetTags() {
+        // basic
+        HttpRequestDef.Builder<BatchSetTagsRequest, BatchSetTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchSetTagsRequest.class, BatchSetTagsResponse.class)
+                .withName("BatchSetTags")
+                .withUri("/v1/sim-tags/batch-set")
+                .withContentType("application/json");
+
+        // requests
+        builder.<BatchSetTagsReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchSetTagsReq.class),
+            f -> f.withMarshaller(BatchSetTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(BatchSetTagsResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateTagRequest, CreateTagResponse> createTag = genForcreateTag();
+
+    private static HttpRequestDef<CreateTagRequest, CreateTagResponse> genForcreateTag() {
+        // basic
+        HttpRequestDef.Builder<CreateTagRequest, CreateTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateTagRequest.class, CreateTagResponse.class)
+                .withName("CreateTag")
+                .withUri("/v1/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<AddOrModifyTagReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AddOrModifyTagReq.class),
+            f -> f.withMarshaller(CreateTagRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteTagRequest, DeleteTagResponse> deleteTag = genFordeleteTag();
+
+    private static HttpRequestDef<DeleteTagRequest, DeleteTagResponse> genFordeleteTag() {
+        // basic
+        HttpRequestDef.Builder<DeleteTagRequest, DeleteTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteTagRequest.class, DeleteTagResponse.class)
+                .withName("DeleteTag")
+                .withUri("/v1/tags/{tag_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Long>withRequestField("tag_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(DeleteTagRequest::getTagId, (req, v) -> {
+                req.setTagId(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteTagResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTagsRequest, ListTagsResponse> listTags = genForlistTags();
+
+    private static HttpRequestDef<ListTagsRequest, ListTagsResponse> genForlistTags() {
+        // basic
+        HttpRequestDef.Builder<ListTagsRequest, ListTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListTagsRequest.class, ListTagsResponse.class)
+                .withName("ListTags")
+                .withUri("/v1/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("tag_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTagsRequest::getTagName, (req, v) -> {
+                req.setTagName(v);
+            }));
+        builder.<Long>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListTagsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListTagsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTagsRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            }));
+
+        // response
 
         return builder.build();
     }

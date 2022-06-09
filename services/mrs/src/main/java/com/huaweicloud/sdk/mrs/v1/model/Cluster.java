@@ -199,6 +199,13 @@ public class Cluster  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="availabilityZoneId")
+    
+    
+    private String availabilityZoneId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instanceId")
     
     
@@ -1030,6 +1037,28 @@ public class Cluster  {
 
     public void setAzCode(String azCode) {
         this.azCode = azCode;
+    }
+
+    
+
+    public Cluster withAvailabilityZoneId(String availabilityZoneId) {
+        this.availabilityZoneId = availabilityZoneId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 可用区域
+     * @return availabilityZoneId
+     */
+    public String getAvailabilityZoneId() {
+        return availabilityZoneId;
+    }
+
+    public void setAvailabilityZoneId(String availabilityZoneId) {
+        this.availabilityZoneId = availabilityZoneId;
     }
 
     
@@ -1968,6 +1997,7 @@ public class Cluster  {
             Objects.equals(this.azId, cluster.azId) &&
             Objects.equals(this.azName, cluster.azName) &&
             Objects.equals(this.azCode, cluster.azCode) &&
+            Objects.equals(this.availabilityZoneId, cluster.availabilityZoneId) &&
             Objects.equals(this.instanceId, cluster.instanceId) &&
             Objects.equals(this.vnc, cluster.vnc) &&
             Objects.equals(this.tenantId, cluster.tenantId) &&
@@ -2010,7 +2040,7 @@ public class Cluster  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(clusterId, clusterName, totalNodeNum, clusterState, stageDesc, createAt, updateAt, chargingStartTime, billingType, dataCenter, vpc, vpcId, duration, fee, hadoopVersion, componentList, externalIp, externalAlternateIp, internalIp, deploymentId, remark, orderId, azId, azName, azCode, instanceId, vnc, tenantId, volumeSize, volumeType, subnetId, subnetName, securityGroupsId, slaveSecurityGroupsId, bootstrapScripts, safeMode, clusterVersion, nodePublicCertName, masterNodeIp, privateIpFirst, errorInfo, tags, masterNodeNum, coreNodeNum, masterNodeSize, coreNodeSize, masterNodeProductId, masterNodeSpecId, coreNodeProductId, coreNodeSpecId, masterDataVolumeType, masterDataVolumeSize, masterDataVolumeCount, coreDataVolumeType, coreDataVolumeSize, coreDataVolumeCount, enterpriseProjectId, isMrsManagerFinish, clusterType, logCollection, periodType, scale, nodeGroups, taskNodeGroups);
+        return Objects.hash(clusterId, clusterName, totalNodeNum, clusterState, stageDesc, createAt, updateAt, chargingStartTime, billingType, dataCenter, vpc, vpcId, duration, fee, hadoopVersion, componentList, externalIp, externalAlternateIp, internalIp, deploymentId, remark, orderId, azId, azName, azCode, availabilityZoneId, instanceId, vnc, tenantId, volumeSize, volumeType, subnetId, subnetName, securityGroupsId, slaveSecurityGroupsId, bootstrapScripts, safeMode, clusterVersion, nodePublicCertName, masterNodeIp, privateIpFirst, errorInfo, tags, masterNodeNum, coreNodeNum, masterNodeSize, coreNodeSize, masterNodeProductId, masterNodeSpecId, coreNodeProductId, coreNodeSpecId, masterDataVolumeType, masterDataVolumeSize, masterDataVolumeCount, coreDataVolumeType, coreDataVolumeSize, coreDataVolumeCount, enterpriseProjectId, isMrsManagerFinish, clusterType, logCollection, periodType, scale, nodeGroups, taskNodeGroups);
     }
     @Override
     public String toString() {
@@ -2041,6 +2071,7 @@ public class Cluster  {
         sb.append("    azId: ").append(toIndentedString(azId)).append("\n");
         sb.append("    azName: ").append(toIndentedString(azName)).append("\n");
         sb.append("    azCode: ").append(toIndentedString(azCode)).append("\n");
+        sb.append("    availabilityZoneId: ").append(toIndentedString(availabilityZoneId)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    vnc: ").append(toIndentedString(vnc)).append("\n");
         sb.append("    tenantId: ").append(toIndentedString(tenantId)).append("\n");
