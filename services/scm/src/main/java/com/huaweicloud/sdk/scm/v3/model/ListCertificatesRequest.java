@@ -70,9 +70,8 @@ public class ListCertificatesRequest {
     }
 
     /**
-     * 偏移量。取值范围为1~30。
+     * 偏移量。
      * minimum: 0
-     * maximum: 30
      * @return offset
      */
     public Integer getOffset() {

@@ -498,6 +498,72 @@ public class OcrAsyncClient {
     }
 
     /**
+     * 通用证件识别
+     *
+     * 识别身份证件图像，并将识别的结构化结果返回给用户。支持多个国家的身份证、驾驶证和护照，具体国家和证件列表详见表1。
+     * 
+     * **表1支持国家列表**
+     * 
+     * | 国家/地区  | 英文名称    | 国家代码  country_region | 支持证件类型  id_type   |
+     * | ---------- | ----------- | ------------------------ | ----------------------- |
+     * | 越南       | Vietnam     | VNM                      | PP、DL、ID              |
+     * | 印度       | India       | IND                      | PP                      |
+     * | 菲律宾     | Philippines | PHL                      | PP、DL、ID(仅支持UUMID) |
+     * | 阿尔巴尼亚 | Albania     | ALB                      | PP、DL、ID              |
+     * | 巴西       | BRAZIL      | BRA                      | PP                      |
+     * | 印度尼西亚 | INDONESIA   | IDN                      | PP                      |
+     * | 马来西亚   | MALAYSIA    | MYS                      | PP                      |
+     * | 尼日利亚   | NIGERIA     | NGA                      | PP                      |
+     * | 巴基斯坦   | PAKISTAN    | PAK                      | PP                      |
+     * | 俄罗斯     | RUSSIA      | RUS                      | PP(仅支持国际标准版本)  |
+     * | 中国台湾   | TAIWAN      | TWN                      | PP                      |
+     * | 乌克兰     | UKRAINE     | UKR                      | PP                      |
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param RecognizeIdDocumentRequest 请求对象
+     * @return CompletableFuture<RecognizeIdDocumentResponse>
+     */
+    public CompletableFuture<RecognizeIdDocumentResponse> recognizeIdDocumentAsync(RecognizeIdDocumentRequest request) {
+        return hcClient.asyncInvokeHttp(request, OcrMeta.recognizeIdDocument);
+    }
+
+    /**
+     * 通用证件识别
+     *
+     * 识别身份证件图像，并将识别的结构化结果返回给用户。支持多个国家的身份证、驾驶证和护照，具体国家和证件列表详见表1。
+     * 
+     * **表1支持国家列表**
+     * 
+     * | 国家/地区  | 英文名称    | 国家代码  country_region | 支持证件类型  id_type   |
+     * | ---------- | ----------- | ------------------------ | ----------------------- |
+     * | 越南       | Vietnam     | VNM                      | PP、DL、ID              |
+     * | 印度       | India       | IND                      | PP                      |
+     * | 菲律宾     | Philippines | PHL                      | PP、DL、ID(仅支持UUMID) |
+     * | 阿尔巴尼亚 | Albania     | ALB                      | PP、DL、ID              |
+     * | 巴西       | BRAZIL      | BRA                      | PP                      |
+     * | 印度尼西亚 | INDONESIA   | IDN                      | PP                      |
+     * | 马来西亚   | MALAYSIA    | MYS                      | PP                      |
+     * | 尼日利亚   | NIGERIA     | NGA                      | PP                      |
+     * | 巴基斯坦   | PAKISTAN    | PAK                      | PP                      |
+     * | 俄罗斯     | RUSSIA      | RUS                      | PP(仅支持国际标准版本)  |
+     * | 中国台湾   | TAIWAN      | TWN                      | PP                      |
+     * | 乌克兰     | UKRAINE     | UKR                      | PP                      |
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param RecognizeIdDocumentRequest 请求对象
+     * @return AsyncInvoker<RecognizeIdDocumentRequest, RecognizeIdDocumentResponse>
+     */
+    public AsyncInvoker<RecognizeIdDocumentRequest, RecognizeIdDocumentResponse> recognizeIdDocumentAsyncInvoker(
+        RecognizeIdDocumentRequest request) {
+        return new AsyncInvoker<RecognizeIdDocumentRequest, RecognizeIdDocumentResponse>(request,
+            OcrMeta.recognizeIdDocument, hcClient);
+    }
+
+    /**
      * 保险单识别
      *
      * 识别保险单图片上的文字信息，并将识别的结构化结果返回给用户。支持对多板式保险单的扫描图片及手机照片进行结构化信息提取。

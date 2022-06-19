@@ -180,6 +180,56 @@ public class VssMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DownloadTaskReportRequest, DownloadTaskReportResponse> downloadTaskReport =
+        genFordownloadTaskReport();
+
+    private static HttpRequestDef<DownloadTaskReportRequest, DownloadTaskReportResponse> genFordownloadTaskReport() {
+        // basic
+        HttpRequestDef.Builder<DownloadTaskReportRequest, DownloadTaskReportResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, DownloadTaskReportRequest.class, DownloadTaskReportResponse.class)
+                .withName("DownloadTaskReport")
+                .withUri("/v3/{project_id}/webscan/report")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadTaskReportRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExecuteGenerateReportRequest, ExecuteGenerateReportResponse> executeGenerateReport =
+        genForexecuteGenerateReport();
+
+    private static HttpRequestDef<ExecuteGenerateReportRequest, ExecuteGenerateReportResponse> genForexecuteGenerateReport() {
+        // basic
+        HttpRequestDef.Builder<ExecuteGenerateReportRequest, ExecuteGenerateReportResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ExecuteGenerateReportRequest.class, ExecuteGenerateReportResponse.class)
+            .withName("ExecuteGenerateReport")
+            .withUri("/v3/{project_id}/webscan/report")
+            .withContentType("application/json; charset=UTF-8");
+
+        // requests
+        builder.<ExecuteGenerateReportRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ExecuteGenerateReportRequestBody.class),
+            f -> f.withMarshaller(ExecuteGenerateReportRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListBusinessRisksRequest, ListBusinessRisksResponse> listBusinessRisks =
         genForlistBusinessRisks();
 
@@ -251,6 +301,31 @@ public class VssMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListPortResultsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowReportStatusRequest, ShowReportStatusResponse> showReportStatus =
+        genForshowReportStatus();
+
+    private static HttpRequestDef<ShowReportStatusRequest, ShowReportStatusResponse> genForshowReportStatus() {
+        // basic
+        HttpRequestDef.Builder<ShowReportStatusRequest, ShowReportStatusResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowReportStatusRequest.class, ShowReportStatusResponse.class)
+                .withName("ShowReportStatus")
+                .withUri("/v3/{project_id}/webscan/report/status")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowReportStatusRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
             }));
 
         // response

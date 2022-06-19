@@ -343,6 +343,31 @@ public class OcrMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RecognizeIdDocumentRequest, RecognizeIdDocumentResponse> recognizeIdDocument =
+        genForrecognizeIdDocument();
+
+    private static HttpRequestDef<RecognizeIdDocumentRequest, RecognizeIdDocumentResponse> genForrecognizeIdDocument() {
+        // basic
+        HttpRequestDef.Builder<RecognizeIdDocumentRequest, RecognizeIdDocumentResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RecognizeIdDocumentRequest.class, RecognizeIdDocumentResponse.class)
+                .withName("RecognizeIdDocument")
+                .withUri("/v2/{project_id}/ocr/id-document")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<IdDocumentRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(IdDocumentRequestBody.class),
+            f -> f.withMarshaller(RecognizeIdDocumentRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RecognizeInsurancePolicyRequest, RecognizeInsurancePolicyResponse> recognizeInsurancePolicy =
         genForrecognizeInsurancePolicy();
 

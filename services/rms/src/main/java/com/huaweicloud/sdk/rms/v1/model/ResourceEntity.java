@@ -162,7 +162,7 @@ public class ResourceEntity {
     }
 
     /**
-     * region id
+     * 区域id
      * @return regionId
      */
     public String getRegionId() {
@@ -179,7 +179,7 @@ public class ResourceEntity {
     }
 
     /**
-     * Openstack中的project id
+     * Openstack中的项目id
      * @return projectId
      */
     public String getProjectId() {
@@ -196,7 +196,7 @@ public class ResourceEntity {
     }
 
     /**
-     * Openstack中的project名称
+     * Openstack中的项目名称
      * @return projectName
      */
     public String getProjectName() {

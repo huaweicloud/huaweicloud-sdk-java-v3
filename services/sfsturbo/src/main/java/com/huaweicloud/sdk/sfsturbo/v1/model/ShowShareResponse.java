@@ -249,7 +249,7 @@ public class ShowShareResponse extends SdkResponse {
     }
 
     /**
-     * SFS Turbo文件系统可用容量，单位GB。
+     * SFS Turbo文件系统剩余容量，单位GB。
      * @return availCapacity
      */
     public String getAvailCapacity() {
@@ -504,7 +504,7 @@ public class ShowShareResponse extends SdkResponse {
     }
 
     /**
-     * SFS Turbo文件系统的状态
+     * SFS Turbo文件系统的状态。'100'表示创建中，'200'表示可用，'400'表示已删除，'303'表示创建失败。
      * @return status
      */
     public String getStatus() {
@@ -521,7 +521,7 @@ public class ShowShareResponse extends SdkResponse {
     }
 
     /**
-     * SFS Turbo文件系统的子状态
+     * SFS Turbo文件系统的子状态。'121'表示扩容中，'221'表示扩容成功，'321'表示扩容失败。
      * @return subStatus
      */
     public String getSubStatus() {

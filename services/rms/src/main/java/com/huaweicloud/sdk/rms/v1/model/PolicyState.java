@@ -71,7 +71,7 @@ public class PolicyState {
     }
 
     /**
-     * 合规状态所属用户ID
+     * 用户ID
      * @return domainId
      */
     public String getDomainId() {
@@ -88,7 +88,7 @@ public class PolicyState {
     }
 
     /**
-     * 合规状态所属资源区域ID
+     * 资源区域ID
      * @return regionId
      */
     public String getRegionId() {
@@ -105,7 +105,7 @@ public class PolicyState {
     }
 
     /**
-     * 合规状态所属资源ID
+     * 资源ID
      * @return resourceId
      */
     public String getResourceId() {
@@ -122,7 +122,7 @@ public class PolicyState {
     }
 
     /**
-     * 合规状态所属资源名字
+     * 资源名称
      * @return resourceName
      */
     public String getResourceName() {
@@ -139,7 +139,7 @@ public class PolicyState {
     }
 
     /**
-     * 合规状态所属资源provider
+     * 云服务名称
      * @return resourceProvider
      */
     public String getResourceProvider() {
@@ -156,7 +156,7 @@ public class PolicyState {
     }
 
     /**
-     * 合规状态所属资源类型
+     * 资源类型
      * @return resourceType
      */
     public String getResourceType() {
@@ -190,7 +190,7 @@ public class PolicyState {
     }
 
     /**
-     * 合规状态所属规则ID
+     * 规则ID
      * @return policyAssignmentId
      */
     public String getPolicyAssignmentId() {
@@ -207,7 +207,7 @@ public class PolicyState {
     }
 
     /**
-     * 合规状态所属规则名字
+     * 规则名称
      * @return policyAssignmentName
      */
     public String getPolicyAssignmentName() {
@@ -224,7 +224,7 @@ public class PolicyState {
     }
 
     /**
-     * 合规状态所属策略ID
+     * 策略ID
      * @return policyDefinitionId
      */
     public String getPolicyDefinitionId() {

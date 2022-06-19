@@ -63,7 +63,7 @@ public class PolicyFilterDefinition {
     }
 
     /**
-     * 资源服务
+     * 云服务名称
      * @return resourceProvider
      */
     public String getResourceProvider() {

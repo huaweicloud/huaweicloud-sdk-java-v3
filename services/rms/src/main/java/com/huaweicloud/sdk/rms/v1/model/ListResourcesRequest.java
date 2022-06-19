@@ -3,7 +3,11 @@ package com.huaweicloud.sdk.rms.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -31,6 +35,11 @@ public class ListResourcesRequest {
     private String epId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tag")
+
+    private Map<String, List<String>> tag = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
     private Integer limit;
@@ -46,7 +55,7 @@ public class ListResourcesRequest {
     }
 
     /**
-     * 云服务英文简写
+     * 云服务名称
      * @return provider
      */
     public String getProvider() {
@@ -63,7 +72,7 @@ public class ListResourcesRequest {
     }
 
     /**
-     * 云服务资源类型名称
+     * 资源类型名称
      * @return type
      */
     public String getType() {
@@ -106,6 +115,39 @@ public class ListResourcesRequest {
 
     public void setEpId(String epId) {
         this.epId = epId;
+    }
+
+    public ListResourcesRequest withTag(Map<String, List<String>> tag) {
+        this.tag = tag;
+        return this;
+    }
+
+    public ListResourcesRequest putTagItem(String key, List<String> tagItem) {
+        if (this.tag == null) {
+            this.tag = new HashMap<>();
+        }
+        this.tag.put(key, tagItem);
+        return this;
+    }
+
+    public ListResourcesRequest withTag(Consumer<Map<String, List<String>>> tagSetter) {
+        if (this.tag == null) {
+            this.tag = new HashMap<>();
+        }
+        tagSetter.accept(this.tag);
+        return this;
+    }
+
+    /**
+     * 标签
+     * @return tag
+     */
+    public Map<String, List<String>> getTag() {
+        return tag;
+    }
+
+    public void setTag(Map<String, List<String>> tag) {
+        this.tag = tag;
     }
 
     public ListResourcesRequest withLimit(Integer limit) {
@@ -157,13 +199,14 @@ public class ListResourcesRequest {
             && Objects.equals(this.type, listResourcesRequest.type)
             && Objects.equals(this.regionId, listResourcesRequest.regionId)
             && Objects.equals(this.epId, listResourcesRequest.epId)
+            && Objects.equals(this.tag, listResourcesRequest.tag)
             && Objects.equals(this.limit, listResourcesRequest.limit)
             && Objects.equals(this.marker, listResourcesRequest.marker);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(provider, type, regionId, epId, limit, marker);
+        return Objects.hash(provider, type, regionId, epId, tag, limit, marker);
     }
 
     @Override
@@ -174,6 +217,7 @@ public class ListResourcesRequest {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    regionId: ").append(toIndentedString(regionId)).append("\n");
         sb.append("    epId: ").append(toIndentedString(epId)).append("\n");
+        sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
         sb.append("}");

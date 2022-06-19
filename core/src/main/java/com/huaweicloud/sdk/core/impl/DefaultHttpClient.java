@@ -176,7 +176,7 @@ public class DefaultHttpClient implements HttpClient {
 
                     @Override
                     public void writeTo(BufferedSink bufferedSink) throws IOException {
-                        try (Source source = Okio.source(((FormDataFilePart) part).getInputStream())) {
+                        try (Source source = Okio.source(filePart.getInputStream())) {
                             bufferedSink.writeAll(source);
                         }
                     }

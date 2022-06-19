@@ -31,7 +31,7 @@ public class TrackerSMNChannelConfigBody {
     }
 
     /**
-     * region id
+     * 区域id
      * @return regionId
      */
     public String getRegionId() {
@@ -48,7 +48,7 @@ public class TrackerSMNChannelConfigBody {
     }
 
     /**
-     * project id
+     * 项目id
      * @return projectId
      */
     public String getProjectId() {
@@ -65,7 +65,7 @@ public class TrackerSMNChannelConfigBody {
     }
 
     /**
-     * SMN 主题urn
+     * SMN主题urn
      * @return topicUrn
      */
     public String getTopicUrn() {

@@ -209,6 +209,71 @@ public class VssAsyncClient {
     }
 
     /**
+     * 下载域名扫描报告
+     *
+     * 下载域名扫描任务PDF报告
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DownloadTaskReportRequest 请求对象
+     * @return CompletableFuture<DownloadTaskReportResponse>
+     */
+    public CompletableFuture<DownloadTaskReportResponse> downloadTaskReportAsync(DownloadTaskReportRequest request) {
+        return hcClient.asyncInvokeHttp(request, VssMeta.downloadTaskReport);
+    }
+
+    /**
+     * 下载域名扫描报告
+     *
+     * 下载域名扫描任务PDF报告
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DownloadTaskReportRequest 请求对象
+     * @return AsyncInvoker<DownloadTaskReportRequest, DownloadTaskReportResponse>
+     */
+    public AsyncInvoker<DownloadTaskReportRequest, DownloadTaskReportResponse> downloadTaskReportAsyncInvoker(
+        DownloadTaskReportRequest request) {
+        return new AsyncInvoker<DownloadTaskReportRequest, DownloadTaskReportResponse>(request,
+            VssMeta.downloadTaskReport, hcClient);
+    }
+
+    /**
+     * 生成域名扫描报告
+     *
+     * 生成域名扫描PDF报告
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ExecuteGenerateReportRequest 请求对象
+     * @return CompletableFuture<ExecuteGenerateReportResponse>
+     */
+    public CompletableFuture<ExecuteGenerateReportResponse> executeGenerateReportAsync(
+        ExecuteGenerateReportRequest request) {
+        return hcClient.asyncInvokeHttp(request, VssMeta.executeGenerateReport);
+    }
+
+    /**
+     * 生成域名扫描报告
+     *
+     * 生成域名扫描PDF报告
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ExecuteGenerateReportRequest 请求对象
+     * @return AsyncInvoker<ExecuteGenerateReportRequest, ExecuteGenerateReportResponse>
+     */
+    public AsyncInvoker<ExecuteGenerateReportRequest, ExecuteGenerateReportResponse> executeGenerateReportAsyncInvoker(
+        ExecuteGenerateReportRequest request) {
+        return new AsyncInvoker<ExecuteGenerateReportRequest, ExecuteGenerateReportResponse>(request,
+            VssMeta.executeGenerateReport, hcClient);
+    }
+
+    /**
      * 获取业务风险扫描结果
      *
      * 获取域名业务风险扫描结果
@@ -269,6 +334,38 @@ public class VssAsyncClient {
     public AsyncInvoker<ListPortResultsRequest, ListPortResultsResponse> listPortResultsAsyncInvoker(
         ListPortResultsRequest request) {
         return new AsyncInvoker<ListPortResultsRequest, ListPortResultsResponse>(request, VssMeta.listPortResults,
+            hcClient);
+    }
+
+    /**
+     * 获取域名扫描报告状态
+     *
+     * 获取域名扫描PDF报告生成状态
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowReportStatusRequest 请求对象
+     * @return CompletableFuture<ShowReportStatusResponse>
+     */
+    public CompletableFuture<ShowReportStatusResponse> showReportStatusAsync(ShowReportStatusRequest request) {
+        return hcClient.asyncInvokeHttp(request, VssMeta.showReportStatus);
+    }
+
+    /**
+     * 获取域名扫描报告状态
+     *
+     * 获取域名扫描PDF报告生成状态
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowReportStatusRequest 请求对象
+     * @return AsyncInvoker<ShowReportStatusRequest, ShowReportStatusResponse>
+     */
+    public AsyncInvoker<ShowReportStatusRequest, ShowReportStatusResponse> showReportStatusAsyncInvoker(
+        ShowReportStatusRequest request) {
+        return new AsyncInvoker<ShowReportStatusRequest, ShowReportStatusResponse>(request, VssMeta.showReportStatus,
             hcClient);
     }
 

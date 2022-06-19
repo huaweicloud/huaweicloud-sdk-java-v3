@@ -43,7 +43,7 @@ public class TrackerOBSChannelConfigBody {
     }
 
     /**
-     * region id
+     * 区域id
      * @return regionId
      */
     public String getRegionId() {

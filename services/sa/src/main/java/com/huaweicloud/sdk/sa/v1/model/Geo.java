@@ -38,8 +38,8 @@ public class Geo {
 
     /**
      * 纬度。
-     * minimum: -1.8E+2
-     * maximum: 1.8E+2
+     * minimum: -9E+1
+     * maximum: 9E+1
      * @return latitude
      */
     public BigDecimal getLatitude() {

@@ -31,7 +31,7 @@ public class ShowResourceByIdRequest {
     }
 
     /**
-     * 云服务英文简写
+     * 云服务名称
      * @return provider
      */
     public String getProvider() {
@@ -48,7 +48,7 @@ public class ShowResourceByIdRequest {
     }
 
     /**
-     * 云服务资源类型名称
+     * 资源类型名称
      * @return type
      */
     public String getType() {

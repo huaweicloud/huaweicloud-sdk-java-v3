@@ -54,7 +54,7 @@ public class HistoryItem {
     }
 
     /**
-     * 租户id
+     * 用户id
      * @return domainId
      */
     public String getDomainId() {

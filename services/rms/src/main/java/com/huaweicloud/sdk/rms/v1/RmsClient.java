@@ -503,9 +503,199 @@ public class RmsClient {
     }
 
     /**
-     * 查询租户可见的区域
+     * 创建高级查询
      *
-     * 查询租户可见的区域
+     * Create Resource Query Language
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateStoredQueryRequest 请求对象
+     * @return CreateStoredQueryResponse
+     */
+    public CreateStoredQueryResponse createStoredQuery(CreateStoredQueryRequest request) {
+        return hcClient.syncInvokeHttp(request, RmsMeta.createStoredQuery);
+    }
+
+    /**
+     * 创建高级查询
+     *
+     * Create Resource Query Language
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateStoredQueryRequest 请求对象
+     * @return SyncInvoker<CreateStoredQueryRequest, CreateStoredQueryResponse>
+     */
+    public SyncInvoker<CreateStoredQueryRequest, CreateStoredQueryResponse> createStoredQueryInvoker(
+        CreateStoredQueryRequest request) {
+        return new SyncInvoker<CreateStoredQueryRequest, CreateStoredQueryResponse>(request, RmsMeta.createStoredQuery,
+            hcClient);
+    }
+
+    /**
+     * 删除资源查询
+     *
+     * Select resources by SQL
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteStoredQueryRequest 请求对象
+     * @return DeleteStoredQueryResponse
+     */
+    public DeleteStoredQueryResponse deleteStoredQuery(DeleteStoredQueryRequest request) {
+        return hcClient.syncInvokeHttp(request, RmsMeta.deleteStoredQuery);
+    }
+
+    /**
+     * 删除资源查询
+     *
+     * Select resources by SQL
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteStoredQueryRequest 请求对象
+     * @return SyncInvoker<DeleteStoredQueryRequest, DeleteStoredQueryResponse>
+     */
+    public SyncInvoker<DeleteStoredQueryRequest, DeleteStoredQueryResponse> deleteStoredQueryInvoker(
+        DeleteStoredQueryRequest request) {
+        return new SyncInvoker<DeleteStoredQueryRequest, DeleteStoredQueryResponse>(request, RmsMeta.deleteStoredQuery,
+            hcClient);
+    }
+
+    /**
+     * 列出高级查询
+     *
+     * List Resource Query Language
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListStoredQueriesRequest 请求对象
+     * @return ListStoredQueriesResponse
+     */
+    public ListStoredQueriesResponse listStoredQueries(ListStoredQueriesRequest request) {
+        return hcClient.syncInvokeHttp(request, RmsMeta.listStoredQueries);
+    }
+
+    /**
+     * 列出高级查询
+     *
+     * List Resource Query Language
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListStoredQueriesRequest 请求对象
+     * @return SyncInvoker<ListStoredQueriesRequest, ListStoredQueriesResponse>
+     */
+    public SyncInvoker<ListStoredQueriesRequest, ListStoredQueriesResponse> listStoredQueriesInvoker(
+        ListStoredQueriesRequest request) {
+        return new SyncInvoker<ListStoredQueriesRequest, ListStoredQueriesResponse>(request, RmsMeta.listStoredQueries,
+            hcClient);
+    }
+
+    /**
+     * 运行高级查询
+     *
+     * Run Resource Query Language
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param RunQueryRequest 请求对象
+     * @return RunQueryResponse
+     */
+    public RunQueryResponse runQuery(RunQueryRequest request) {
+        return hcClient.syncInvokeHttp(request, RmsMeta.runQuery);
+    }
+
+    /**
+     * 运行高级查询
+     *
+     * Run Resource Query Language
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param RunQueryRequest 请求对象
+     * @return SyncInvoker<RunQueryRequest, RunQueryResponse>
+     */
+    public SyncInvoker<RunQueryRequest, RunQueryResponse> runQueryInvoker(RunQueryRequest request) {
+        return new SyncInvoker<RunQueryRequest, RunQueryResponse>(request, RmsMeta.runQuery, hcClient);
+    }
+
+    /**
+     * 查询单个高级查询
+     *
+     * Show Resource Query Language
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowStoredQueryRequest 请求对象
+     * @return ShowStoredQueryResponse
+     */
+    public ShowStoredQueryResponse showStoredQuery(ShowStoredQueryRequest request) {
+        return hcClient.syncInvokeHttp(request, RmsMeta.showStoredQuery);
+    }
+
+    /**
+     * 查询单个高级查询
+     *
+     * Show Resource Query Language
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowStoredQueryRequest 请求对象
+     * @return SyncInvoker<ShowStoredQueryRequest, ShowStoredQueryResponse>
+     */
+    public SyncInvoker<ShowStoredQueryRequest, ShowStoredQueryResponse> showStoredQueryInvoker(
+        ShowStoredQueryRequest request) {
+        return new SyncInvoker<ShowStoredQueryRequest, ShowStoredQueryResponse>(request, RmsMeta.showStoredQuery,
+            hcClient);
+    }
+
+    /**
+     * 更新单个高级查询
+     *
+     * Update Resource Query Language
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateStoredQueryRequest 请求对象
+     * @return UpdateStoredQueryResponse
+     */
+    public UpdateStoredQueryResponse updateStoredQuery(UpdateStoredQueryRequest request) {
+        return hcClient.syncInvokeHttp(request, RmsMeta.updateStoredQuery);
+    }
+
+    /**
+     * 更新单个高级查询
+     *
+     * Update Resource Query Language
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateStoredQueryRequest 请求对象
+     * @return SyncInvoker<UpdateStoredQueryRequest, UpdateStoredQueryResponse>
+     */
+    public SyncInvoker<UpdateStoredQueryRequest, UpdateStoredQueryResponse> updateStoredQueryInvoker(
+        UpdateStoredQueryRequest request) {
+        return new SyncInvoker<UpdateStoredQueryRequest, UpdateStoredQueryResponse>(request, RmsMeta.updateStoredQuery,
+            hcClient);
+    }
+
+    /**
+     * 查询用户可见的区域
+     *
+     * 查询用户可见的区域
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -518,9 +708,9 @@ public class RmsClient {
     }
 
     /**
-     * 查询租户可见的区域
+     * 查询用户可见的区域
      *
-     * 查询租户可见的区域
+     * 查询用户可见的区域
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -567,7 +757,7 @@ public class RmsClient {
     /**
      * 列举所有资源
      *
-     * 返回当前租户下所有资源，需要当前用户有rms:resources:list权限。
+     * 返回当前用户下所有资源，需要当前用户有rms:resources:list权限。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -582,7 +772,7 @@ public class RmsClient {
     /**
      * 列举所有资源
      *
-     * 返回当前租户下所有资源，需要当前用户有rms:resources:list权限。
+     * 返回当前用户下所有资源，需要当前用户有rms:resources:list权限。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.

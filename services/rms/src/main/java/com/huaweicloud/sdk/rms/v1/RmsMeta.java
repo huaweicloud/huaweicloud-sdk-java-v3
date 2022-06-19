@@ -7,6 +7,9 @@ import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.rms.v1.model.*;
 
+import java.util.List;
+import java.util.Map;
+
 @SuppressWarnings("unchecked")
 public class RmsMeta {
 
@@ -535,6 +538,176 @@ public class RmsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateStoredQueryRequest, CreateStoredQueryResponse> createStoredQuery =
+        genForcreateStoredQuery();
+
+    private static HttpRequestDef<CreateStoredQueryRequest, CreateStoredQueryResponse> genForcreateStoredQuery() {
+        // basic
+        HttpRequestDef.Builder<CreateStoredQueryRequest, CreateStoredQueryResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateStoredQueryRequest.class, CreateStoredQueryResponse.class)
+                .withName("CreateStoredQuery")
+                .withUri("/v1/resource-manager/domains/{domain_id}/stored-queries")
+                .withContentType("application/json");
+
+        // requests
+        builder.<StoredQueryRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(StoredQueryRequestBody.class),
+            f -> f.withMarshaller(CreateStoredQueryRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteStoredQueryRequest, DeleteStoredQueryResponse> deleteStoredQuery =
+        genFordeleteStoredQuery();
+
+    private static HttpRequestDef<DeleteStoredQueryRequest, DeleteStoredQueryResponse> genFordeleteStoredQuery() {
+        // basic
+        HttpRequestDef.Builder<DeleteStoredQueryRequest, DeleteStoredQueryResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteStoredQueryRequest.class, DeleteStoredQueryResponse.class)
+                .withName("DeleteStoredQuery")
+                .withUri("/v1/resource-manager/domains/{domain_id}/stored-queries/{query_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("query_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteStoredQueryRequest::getQueryId, (req, v) -> {
+                req.setQueryId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListStoredQueriesRequest, ListStoredQueriesResponse> listStoredQueries =
+        genForlistStoredQueries();
+
+    private static HttpRequestDef<ListStoredQueriesRequest, ListStoredQueriesResponse> genForlistStoredQueries() {
+        // basic
+        HttpRequestDef.Builder<ListStoredQueriesRequest, ListStoredQueriesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListStoredQueriesRequest.class, ListStoredQueriesResponse.class)
+                .withName("ListStoredQueries")
+                .withUri("/v1/resource-manager/domains/{domain_id}/stored-queries")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListStoredQueriesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListStoredQueriesRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListStoredQueriesRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RunQueryRequest, RunQueryResponse> runQuery = genForrunQuery();
+
+    private static HttpRequestDef<RunQueryRequest, RunQueryResponse> genForrunQuery() {
+        // basic
+        HttpRequestDef.Builder<RunQueryRequest, RunQueryResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RunQueryRequest.class, RunQueryResponse.class)
+                .withName("RunQuery")
+                .withUri("/v1/resource-manager/domains/{domain_id}/run-query")
+                .withContentType("application/json");
+
+        // requests
+        builder.<QueryRunRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(QueryRunRequestBody.class),
+            f -> f.withMarshaller(RunQueryRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowStoredQueryRequest, ShowStoredQueryResponse> showStoredQuery =
+        genForshowStoredQuery();
+
+    private static HttpRequestDef<ShowStoredQueryRequest, ShowStoredQueryResponse> genForshowStoredQuery() {
+        // basic
+        HttpRequestDef.Builder<ShowStoredQueryRequest, ShowStoredQueryResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowStoredQueryRequest.class, ShowStoredQueryResponse.class)
+                .withName("ShowStoredQuery")
+                .withUri("/v1/resource-manager/domains/{domain_id}/stored-queries/{query_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("query_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowStoredQueryRequest::getQueryId, (req, v) -> {
+                req.setQueryId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateStoredQueryRequest, UpdateStoredQueryResponse> updateStoredQuery =
+        genForupdateStoredQuery();
+
+    private static HttpRequestDef<UpdateStoredQueryRequest, UpdateStoredQueryResponse> genForupdateStoredQuery() {
+        // basic
+        HttpRequestDef.Builder<UpdateStoredQueryRequest, UpdateStoredQueryResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateStoredQueryRequest.class, UpdateStoredQueryResponse.class)
+                .withName("UpdateStoredQuery")
+                .withUri("/v1/resource-manager/domains/{domain_id}/stored-queries/{query_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("query_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateStoredQueryRequest::getQueryId, (req, v) -> {
+                req.setQueryId(v);
+            }));
+        builder.<StoredQueryRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(StoredQueryRequestBody.class),
+            f -> f.withMarshaller(UpdateStoredQueryRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListRegionsRequest, ListRegionsResponse> listRegions = genForlistRegions();
 
     private static HttpRequestDef<ListRegionsRequest, ListRegionsResponse> genForlistRegions() {
@@ -736,6 +909,13 @@ public class RmsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListResourcesRequest::getEpId, (req, v) -> {
                 req.setEpId(v);
+            }));
+        builder.<Map<String, List<String>>>withRequestField("tag",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Map.class),
+            f -> f.withMarshaller(ListResourcesRequest::getTag, (req, v) -> {
+                req.setTag(v);
             }));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,

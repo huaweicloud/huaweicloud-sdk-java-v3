@@ -10,7 +10,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.aom.v2.model.Data;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -32,7 +31,7 @@ public class ListInstantQueryAomPromGetResponse extends SdkResponse {
     @JsonProperty(value="data")
     
     
-    private Data data;
+    private Object data;
 
     public ListInstantQueryAomPromGetResponse withStatus(String status) {
         this.status = status;
@@ -56,30 +55,23 @@ public class ListInstantQueryAomPromGetResponse extends SdkResponse {
 
     
 
-    public ListInstantQueryAomPromGetResponse withData(Data data) {
+    public ListInstantQueryAomPromGetResponse withData(Object data) {
         this.data = data;
         return this;
     }
 
-    public ListInstantQueryAomPromGetResponse withData(Consumer<Data> dataSetter) {
-        if(this.data == null ){
-            this.data = new Data();
-            dataSetter.accept(this.data);
-        }
-        
-        return this;
-    }
+    
 
 
     /**
      * Get data
      * @return data
      */
-    public Data getData() {
+    public Object getData() {
         return data;
     }
 
-    public void setData(Data data) {
+    public void setData(Object data) {
         this.data = data;
     }
 
