@@ -103,6 +103,11 @@ public class AuthorizeDomainsResponse extends SdkResponse {
 
     private String infoDescription;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "usage_notice")
+
+    private String usageNotice;
+
     public AuthorizeDomainsResponse withInfoCode(InfoCodeEnum infoCode) {
         this.infoCode = infoCode;
         return this;
@@ -137,6 +142,23 @@ public class AuthorizeDomainsResponse extends SdkResponse {
         this.infoDescription = infoDescription;
     }
 
+    public AuthorizeDomainsResponse withUsageNotice(String usageNotice) {
+        this.usageNotice = usageNotice;
+        return this;
+    }
+
+    /**
+     * 域名认证使用须知
+     * @return usageNotice
+     */
+    public String getUsageNotice() {
+        return usageNotice;
+    }
+
+    public void setUsageNotice(String usageNotice) {
+        this.usageNotice = usageNotice;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -147,12 +169,13 @@ public class AuthorizeDomainsResponse extends SdkResponse {
         }
         AuthorizeDomainsResponse authorizeDomainsResponse = (AuthorizeDomainsResponse) o;
         return Objects.equals(this.infoCode, authorizeDomainsResponse.infoCode)
-            && Objects.equals(this.infoDescription, authorizeDomainsResponse.infoDescription);
+            && Objects.equals(this.infoDescription, authorizeDomainsResponse.infoDescription)
+            && Objects.equals(this.usageNotice, authorizeDomainsResponse.usageNotice);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(infoCode, infoDescription);
+        return Objects.hash(infoCode, infoDescription, usageNotice);
     }
 
     @Override
@@ -161,6 +184,7 @@ public class AuthorizeDomainsResponse extends SdkResponse {
         sb.append("class AuthorizeDomainsResponse {\n");
         sb.append("    infoCode: ").append(toIndentedString(infoCode)).append("\n");
         sb.append("    infoDescription: ").append(toIndentedString(infoDescription)).append("\n");
+        sb.append("    usageNotice: ").append(toIndentedString(usageNotice)).append("\n");
         sb.append("}");
         return sb.toString();
     }

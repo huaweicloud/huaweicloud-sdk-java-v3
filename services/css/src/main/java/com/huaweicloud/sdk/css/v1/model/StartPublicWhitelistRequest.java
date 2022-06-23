@@ -27,7 +27,7 @@ public class StartPublicWhitelistRequest {
     }
 
     /**
-     * 指定查询集群ID。
+     * 指定开启公网访问控制白名单集群ID。
      * @return clusterId
      */
     public String getClusterId() {

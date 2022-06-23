@@ -107,7 +107,7 @@ public class ListInstancesRequest {
     }
 
     /**
-     * 数据库类型。   - 取值为“cassandra”，表示查询GaussDB(for Cassandra)数据库实例。   - 取值为“mongodb”，表示查询GaussDB(for Mongo)数据库实例。   - 取值为“influxdb”，表示查询GaussDB(for Influx)数据库实例。   - 如果不传该参数，表示查询所有数据库实例。
+     * 数据库类型。   - 取值为“cassandra”，表示查询GaussDB(for Cassandra)数据库实例。   - 取值为“mongodb”，表示查询GaussDB(for Mongo)数据库实例。   - 取值为“influxdb”，表示查询GaussDB(for Influx)数据库实例。   - 取值为“redis”，表示查询GaussDB(for Redis)数据库实例。   - 如果不传该参数，表示查询所有数据库实例。
      * @return datastoreType
      */
     public String getDatastoreType() {

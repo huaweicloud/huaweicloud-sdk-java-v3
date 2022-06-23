@@ -1,4 +1,4 @@
-package com.huaweicloud.sdk.cbr.v1.model;
+package com.huaweicloud.sdk.css.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -6,9 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 
+ * BackupRsp
  */
-public class ResourceExtraInfoIncludeVolumes {
+public class BackupRsp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
@@ -16,17 +16,17 @@ public class ResourceExtraInfoIncludeVolumes {
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "os_version")
+    @JsonProperty(value = "name")
 
-    private String osVersion;
+    private String name;
 
-    public ResourceExtraInfoIncludeVolumes withId(String id) {
+    public BackupRsp withId(String id) {
         this.id = id;
         return this;
     }
 
     /**
-     * 卷ID，仅支持uuid
+     * 快照id。
      * @return id
      */
     public String getId() {
@@ -37,21 +37,21 @@ public class ResourceExtraInfoIncludeVolumes {
         this.id = id;
     }
 
-    public ResourceExtraInfoIncludeVolumes withOsVersion(String osVersion) {
-        this.osVersion = osVersion;
+    public BackupRsp withName(String name) {
+        this.name = name;
         return this;
     }
 
     /**
-     * 操作系统类型
-     * @return osVersion
+     * 快照名称。
+     * @return name
      */
-    public String getOsVersion() {
-        return osVersion;
+    public String getName() {
+        return name;
     }
 
-    public void setOsVersion(String osVersion) {
-        this.osVersion = osVersion;
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
@@ -62,22 +62,21 @@ public class ResourceExtraInfoIncludeVolumes {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        ResourceExtraInfoIncludeVolumes resourceExtraInfoIncludeVolumes = (ResourceExtraInfoIncludeVolumes) o;
-        return Objects.equals(this.id, resourceExtraInfoIncludeVolumes.id)
-            && Objects.equals(this.osVersion, resourceExtraInfoIncludeVolumes.osVersion);
+        BackupRsp backupRsp = (BackupRsp) o;
+        return Objects.equals(this.id, backupRsp.id) && Objects.equals(this.name, backupRsp.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, osVersion);
+        return Objects.hash(id, name);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class ResourceExtraInfoIncludeVolumes {\n");
+        sb.append("class BackupRsp {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
-        sb.append("    osVersion: ").append(toIndentedString(osVersion)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("}");
         return sb.toString();
     }

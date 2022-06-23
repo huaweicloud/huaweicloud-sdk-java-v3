@@ -82,7 +82,7 @@ public class GlobalCredentials extends AbstractCredentials<GlobalCredentials> {
             return CompletableFuture.completedFuture(this);
         }
 
-        String iamEndpoint = StringUtils.isEmpty(getIamEndpoint()) ? Constants.DEFAULT_IAM_ENDPOINT : getIamEndpoint();
+        String iamEndpoint = StringUtils.isEmpty(getIamEndpoint()) ? getDefaultIamEndpoint() : getIamEndpoint();
         HcClient inner = hcClient.overrideEndpoint(iamEndpoint);
 
         Function<HttpRequest, Boolean> derivedPredicate = getDerivedPredicate();

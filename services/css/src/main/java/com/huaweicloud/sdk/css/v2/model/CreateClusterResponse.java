@@ -13,34 +13,34 @@ import java.util.function.Consumer;
 public class CreateClusterResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "schema")
+    @JsonProperty(value = "cluster")
 
-    private CreateClusterResp schema;
+    private CreateClusterResp cluster;
 
-    public CreateClusterResponse withSchema(CreateClusterResp schema) {
-        this.schema = schema;
+    public CreateClusterResponse withCluster(CreateClusterResp cluster) {
+        this.cluster = cluster;
         return this;
     }
 
-    public CreateClusterResponse withSchema(Consumer<CreateClusterResp> schemaSetter) {
-        if (this.schema == null) {
-            this.schema = new CreateClusterResp();
-            schemaSetter.accept(this.schema);
+    public CreateClusterResponse withCluster(Consumer<CreateClusterResp> clusterSetter) {
+        if (this.cluster == null) {
+            this.cluster = new CreateClusterResp();
+            clusterSetter.accept(this.cluster);
         }
 
         return this;
     }
 
     /**
-     * Get schema
-     * @return schema
+     * Get cluster
+     * @return cluster
      */
-    public CreateClusterResp getSchema() {
-        return schema;
+    public CreateClusterResp getCluster() {
+        return cluster;
     }
 
-    public void setSchema(CreateClusterResp schema) {
-        this.schema = schema;
+    public void setCluster(CreateClusterResp cluster) {
+        this.cluster = cluster;
     }
 
     @Override
@@ -52,19 +52,19 @@ public class CreateClusterResponse extends SdkResponse {
             return false;
         }
         CreateClusterResponse createClusterResponse = (CreateClusterResponse) o;
-        return Objects.equals(this.schema, createClusterResponse.schema);
+        return Objects.equals(this.cluster, createClusterResponse.cluster);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(schema);
+        return Objects.hash(cluster);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateClusterResponse {\n");
-        sb.append("    schema: ").append(toIndentedString(schema)).append("\n");
+        sb.append("    cluster: ").append(toIndentedString(cluster)).append("\n");
         sb.append("}");
         return sb.toString();
     }

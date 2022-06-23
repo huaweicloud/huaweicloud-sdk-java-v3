@@ -87,6 +87,80 @@ public class FunctionGraphAsyncClient {
     }
 
     /**
+     * 删除指定函数的所有触发器。
+     *
+     * 删除指定函数所有触发器设置。
+     * 
+     * 在提供函数版本且非latest的情况下，删除对应函数版本的触发器。
+     * 在提供函数别名的情况下，删除对应函数别名的触发器。
+     * 在不提供函数版本（也不提供别名）或版本为latest的情况下，删除该函数所有的触发器（包括所有版本和别名）。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param BatchDeleteFunctionTriggersRequest 请求对象
+     * @return CompletableFuture<BatchDeleteFunctionTriggersResponse>
+     */
+    public CompletableFuture<BatchDeleteFunctionTriggersResponse> batchDeleteFunctionTriggersAsync(
+        BatchDeleteFunctionTriggersRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.batchDeleteFunctionTriggers);
+    }
+
+    /**
+     * 删除指定函数的所有触发器。
+     *
+     * 删除指定函数所有触发器设置。
+     * 
+     * 在提供函数版本且非latest的情况下，删除对应函数版本的触发器。
+     * 在提供函数别名的情况下，删除对应函数别名的触发器。
+     * 在不提供函数版本（也不提供别名）或版本为latest的情况下，删除该函数所有的触发器（包括所有版本和别名）。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param BatchDeleteFunctionTriggersRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteFunctionTriggersRequest, BatchDeleteFunctionTriggersResponse>
+     */
+    public AsyncInvoker<BatchDeleteFunctionTriggersRequest, BatchDeleteFunctionTriggersResponse> batchDeleteFunctionTriggersAsyncInvoker(
+        BatchDeleteFunctionTriggersRequest request) {
+        return new AsyncInvoker<BatchDeleteFunctionTriggersRequest, BatchDeleteFunctionTriggersResponse>(request,
+            FunctionGraphMeta.batchDeleteFunctionTriggers, hcClient);
+    }
+
+    /**
+     * 删除工作流列表
+     *
+     * 删除工作流列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param BatchDeleteWorkflowsRequest 请求对象
+     * @return CompletableFuture<BatchDeleteWorkflowsResponse>
+     */
+    public CompletableFuture<BatchDeleteWorkflowsResponse> batchDeleteWorkflowsAsync(
+        BatchDeleteWorkflowsRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.batchDeleteWorkflows);
+    }
+
+    /**
+     * 删除工作流列表
+     *
+     * 删除工作流列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param BatchDeleteWorkflowsRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteWorkflowsRequest, BatchDeleteWorkflowsResponse>
+     */
+    public AsyncInvoker<BatchDeleteWorkflowsRequest, BatchDeleteWorkflowsResponse> batchDeleteWorkflowsAsyncInvoker(
+        BatchDeleteWorkflowsRequest request) {
+        return new AsyncInvoker<BatchDeleteWorkflowsRequest, BatchDeleteWorkflowsResponse>(request,
+            FunctionGraphMeta.batchDeleteWorkflows, hcClient);
+    }
+
+    /**
      * 停止函数异步调用请求
      *
      * 停止函数异步调用请求
@@ -215,6 +289,47 @@ public class FunctionGraphAsyncClient {
     }
 
     /**
+     * 创建触发器。
+     *
+     * 创建触发器。
+     * 
+     * - 可以创建的触发器类型包括TIMER、APIG、CTS、DDS、DMS、DIS、LTS、OBS、SMN、KAFKA。
+     * - DDS和KAFKA触发器创建时默认为DISABLED状态，其他触发器默认为ACTIVE状态。
+     * - TIMER、DDS、DMS、KAFKA、LTS触发器支持禁用，其他触发器不支持。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateFunctionTriggerRequest 请求对象
+     * @return CompletableFuture<CreateFunctionTriggerResponse>
+     */
+    public CompletableFuture<CreateFunctionTriggerResponse> createFunctionTriggerAsync(
+        CreateFunctionTriggerRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.createFunctionTrigger);
+    }
+
+    /**
+     * 创建触发器。
+     *
+     * 创建触发器。
+     * 
+     * - 可以创建的触发器类型包括TIMER、APIG、CTS、DDS、DMS、DIS、LTS、OBS、SMN、KAFKA。
+     * - DDS和KAFKA触发器创建时默认为DISABLED状态，其他触发器默认为ACTIVE状态。
+     * - TIMER、DDS、DMS、KAFKA、LTS触发器支持禁用，其他触发器不支持。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateFunctionTriggerRequest 请求对象
+     * @return AsyncInvoker<CreateFunctionTriggerRequest, CreateFunctionTriggerResponse>
+     */
+    public AsyncInvoker<CreateFunctionTriggerRequest, CreateFunctionTriggerResponse> createFunctionTriggerAsyncInvoker(
+        CreateFunctionTriggerRequest request) {
+        return new AsyncInvoker<CreateFunctionTriggerRequest, CreateFunctionTriggerResponse>(request,
+            FunctionGraphMeta.createFunctionTrigger, hcClient);
+    }
+
+    /**
      * 发布函数版本。
      *
      * 发布函数版本。
@@ -277,6 +392,38 @@ public class FunctionGraphAsyncClient {
         CreateVersionAliasRequest request) {
         return new AsyncInvoker<CreateVersionAliasRequest, CreateVersionAliasResponse>(request,
             FunctionGraphMeta.createVersionAlias, hcClient);
+    }
+
+    /**
+     * 创建工作流列表
+     *
+     * 创建工作流列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateWorkflowRequest 请求对象
+     * @return CompletableFuture<CreateWorkflowResponse>
+     */
+    public CompletableFuture<CreateWorkflowResponse> createWorkflowAsync(CreateWorkflowRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.createWorkflow);
+    }
+
+    /**
+     * 创建工作流列表
+     *
+     * 创建工作流列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateWorkflowRequest 请求对象
+     * @return AsyncInvoker<CreateWorkflowRequest, CreateWorkflowResponse>
+     */
+    public AsyncInvoker<CreateWorkflowRequest, CreateWorkflowResponse> createWorkflowAsyncInvoker(
+        CreateWorkflowRequest request) {
+        return new AsyncInvoker<CreateWorkflowRequest, CreateWorkflowResponse>(request,
+            FunctionGraphMeta.createWorkflow, hcClient);
     }
 
     /**
@@ -411,6 +558,39 @@ public class FunctionGraphAsyncClient {
         DeleteFunctionAsyncInvokeConfigRequest request) {
         return new AsyncInvoker<DeleteFunctionAsyncInvokeConfigRequest, DeleteFunctionAsyncInvokeConfigResponse>(
             request, FunctionGraphMeta.deleteFunctionAsyncInvokeConfig, hcClient);
+    }
+
+    /**
+     * 删除触发器。
+     *
+     * 删除触发器。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteFunctionTriggerRequest 请求对象
+     * @return CompletableFuture<DeleteFunctionTriggerResponse>
+     */
+    public CompletableFuture<DeleteFunctionTriggerResponse> deleteFunctionTriggerAsync(
+        DeleteFunctionTriggerRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.deleteFunctionTrigger);
+    }
+
+    /**
+     * 删除触发器。
+     *
+     * 删除触发器。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteFunctionTriggerRequest 请求对象
+     * @return AsyncInvoker<DeleteFunctionTriggerRequest, DeleteFunctionTriggerResponse>
+     */
+    public AsyncInvoker<DeleteFunctionTriggerRequest, DeleteFunctionTriggerResponse> deleteFunctionTriggerAsyncInvoker(
+        DeleteFunctionTriggerRequest request) {
+        return new AsyncInvoker<DeleteFunctionTriggerRequest, DeleteFunctionTriggerResponse>(request,
+            FunctionGraphMeta.deleteFunctionTrigger, hcClient);
     }
 
     /**
@@ -735,6 +915,39 @@ public class FunctionGraphAsyncClient {
     }
 
     /**
+     * 获取指定函数的所有触发器。
+     *
+     * 获取指定函数的所有触发器设置。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListFunctionTriggersRequest 请求对象
+     * @return CompletableFuture<ListFunctionTriggersResponse>
+     */
+    public CompletableFuture<ListFunctionTriggersResponse> listFunctionTriggersAsync(
+        ListFunctionTriggersRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.listFunctionTriggers);
+    }
+
+    /**
+     * 获取指定函数的所有触发器。
+     *
+     * 获取指定函数的所有触发器设置。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListFunctionTriggersRequest 请求对象
+     * @return AsyncInvoker<ListFunctionTriggersRequest, ListFunctionTriggersResponse>
+     */
+    public AsyncInvoker<ListFunctionTriggersRequest, ListFunctionTriggersResponse> listFunctionTriggersAsyncInvoker(
+        ListFunctionTriggersRequest request) {
+        return new AsyncInvoker<ListFunctionTriggersRequest, ListFunctionTriggersResponse>(request,
+            FunctionGraphMeta.listFunctionTriggers, hcClient);
+    }
+
+    /**
      * 获取指定函数的版本列表。
      *
      * 获取指定函数的版本列表。
@@ -900,6 +1113,103 @@ public class FunctionGraphAsyncClient {
     }
 
     /**
+     * 获取指定函数流执行实例列表
+     *
+     * 获取指定函数流执行实例列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListWorkflowExecutionsRequest 请求对象
+     * @return CompletableFuture<ListWorkflowExecutionsResponse>
+     */
+    public CompletableFuture<ListWorkflowExecutionsResponse> listWorkflowExecutionsAsync(
+        ListWorkflowExecutionsRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.listWorkflowExecutions);
+    }
+
+    /**
+     * 获取指定函数流执行实例列表
+     *
+     * 获取指定函数流执行实例列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListWorkflowExecutionsRequest 请求对象
+     * @return AsyncInvoker<ListWorkflowExecutionsRequest, ListWorkflowExecutionsResponse>
+     */
+    public AsyncInvoker<ListWorkflowExecutionsRequest, ListWorkflowExecutionsResponse> listWorkflowExecutionsAsyncInvoker(
+        ListWorkflowExecutionsRequest request) {
+        return new AsyncInvoker<ListWorkflowExecutionsRequest, ListWorkflowExecutionsResponse>(request,
+            FunctionGraphMeta.listWorkflowExecutions, hcClient);
+    }
+
+    /**
+     * 查询工作流列表
+     *
+     * 查询工作流列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListWorkflowsRequest 请求对象
+     * @return CompletableFuture<ListWorkflowsResponse>
+     */
+    public CompletableFuture<ListWorkflowsResponse> listWorkflowsAsync(ListWorkflowsRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.listWorkflows);
+    }
+
+    /**
+     * 查询工作流列表
+     *
+     * 查询工作流列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListWorkflowsRequest 请求对象
+     * @return AsyncInvoker<ListWorkflowsRequest, ListWorkflowsResponse>
+     */
+    public AsyncInvoker<ListWorkflowsRequest, ListWorkflowsResponse> listWorkflowsAsyncInvoker(
+        ListWorkflowsRequest request) {
+        return new AsyncInvoker<ListWorkflowsRequest, ListWorkflowsResponse>(request, FunctionGraphMeta.listWorkflows,
+            hcClient);
+    }
+
+    /**
+     * 重试工作流
+     *
+     * 重试工作流
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param RetryWorkFlowRequest 请求对象
+     * @return CompletableFuture<RetryWorkFlowResponse>
+     */
+    public CompletableFuture<RetryWorkFlowResponse> retryWorkFlowAsync(RetryWorkFlowRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.retryWorkFlow);
+    }
+
+    /**
+     * 重试工作流
+     *
+     * 重试工作流
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param RetryWorkFlowRequest 请求对象
+     * @return AsyncInvoker<RetryWorkFlowRequest, RetryWorkFlowResponse>
+     */
+    public AsyncInvoker<RetryWorkFlowRequest, RetryWorkFlowResponse> retryWorkFlowAsyncInvoker(
+        RetryWorkFlowRequest request) {
+        return new AsyncInvoker<RetryWorkFlowRequest, RetryWorkFlowResponse>(request, FunctionGraphMeta.retryWorkFlow,
+            hcClient);
+    }
+
+    /**
      * 获取指定依赖包
      *
      * 获取指定依赖包。
@@ -1059,6 +1369,38 @@ public class FunctionGraphAsyncClient {
     }
 
     /**
+     * 获取指定触发器的信息。
+     *
+     * 获取特定触发器的信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowFunctionTriggerRequest 请求对象
+     * @return CompletableFuture<ShowFunctionTriggerResponse>
+     */
+    public CompletableFuture<ShowFunctionTriggerResponse> showFunctionTriggerAsync(ShowFunctionTriggerRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.showFunctionTrigger);
+    }
+
+    /**
+     * 获取指定触发器的信息。
+     *
+     * 获取特定触发器的信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowFunctionTriggerRequest 请求对象
+     * @return AsyncInvoker<ShowFunctionTriggerRequest, ShowFunctionTriggerResponse>
+     */
+    public AsyncInvoker<ShowFunctionTriggerRequest, ShowFunctionTriggerResponse> showFunctionTriggerAsyncInvoker(
+        ShowFunctionTriggerRequest request) {
+        return new AsyncInvoker<ShowFunctionTriggerRequest, ShowFunctionTriggerResponse>(request,
+            FunctionGraphMeta.showFunctionTrigger, hcClient);
+    }
+
+    /**
      * 获取指定函数的lts日志组日志流配置。
      *
      * 获取指定函数的lts日志组日志流配置。
@@ -1088,6 +1430,38 @@ public class FunctionGraphAsyncClient {
         ShowLtsLogDetailsRequest request) {
         return new AsyncInvoker<ShowLtsLogDetailsRequest, ShowLtsLogDetailsResponse>(request,
             FunctionGraphMeta.showLtsLogDetails, hcClient);
+    }
+
+    /**
+     * 获取函数流指标
+     *
+     * 获取函数流指标
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowTenantMetricRequest 请求对象
+     * @return CompletableFuture<ShowTenantMetricResponse>
+     */
+    public CompletableFuture<ShowTenantMetricResponse> showTenantMetricAsync(ShowTenantMetricRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.showTenantMetric);
+    }
+
+    /**
+     * 获取函数流指标
+     *
+     * 获取函数流指标
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowTenantMetricRequest 请求对象
+     * @return AsyncInvoker<ShowTenantMetricRequest, ShowTenantMetricResponse>
+     */
+    public AsyncInvoker<ShowTenantMetricRequest, ShowTenantMetricResponse> showTenantMetricAsyncInvoker(
+        ShowTenantMetricRequest request) {
+        return new AsyncInvoker<ShowTenantMetricRequest, ShowTenantMetricResponse>(request,
+            FunctionGraphMeta.showTenantMetric, hcClient);
     }
 
     /**
@@ -1151,6 +1525,201 @@ public class FunctionGraphAsyncClient {
         ShowVersionAliasRequest request) {
         return new AsyncInvoker<ShowVersionAliasRequest, ShowVersionAliasResponse>(request,
             FunctionGraphMeta.showVersionAlias, hcClient);
+    }
+
+    /**
+     * 获取指定函数流实例
+     *
+     * 获取指定函数流实例
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowWorkFlowRequest 请求对象
+     * @return CompletableFuture<ShowWorkFlowResponse>
+     */
+    public CompletableFuture<ShowWorkFlowResponse> showWorkFlowAsync(ShowWorkFlowRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.showWorkFlow);
+    }
+
+    /**
+     * 获取指定函数流实例
+     *
+     * 获取指定函数流实例
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowWorkFlowRequest 请求对象
+     * @return AsyncInvoker<ShowWorkFlowRequest, ShowWorkFlowResponse>
+     */
+    public AsyncInvoker<ShowWorkFlowRequest, ShowWorkFlowResponse> showWorkFlowAsyncInvoker(
+        ShowWorkFlowRequest request) {
+        return new AsyncInvoker<ShowWorkFlowRequest, ShowWorkFlowResponse>(request, FunctionGraphMeta.showWorkFlow,
+            hcClient);
+    }
+
+    /**
+     * 获取指定工作流指标
+     *
+     * 获取指定工作流指标
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowWorkFlowMetricRequest 请求对象
+     * @return CompletableFuture<ShowWorkFlowMetricResponse>
+     */
+    public CompletableFuture<ShowWorkFlowMetricResponse> showWorkFlowMetricAsync(ShowWorkFlowMetricRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.showWorkFlowMetric);
+    }
+
+    /**
+     * 获取指定工作流指标
+     *
+     * 获取指定工作流指标
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowWorkFlowMetricRequest 请求对象
+     * @return AsyncInvoker<ShowWorkFlowMetricRequest, ShowWorkFlowMetricResponse>
+     */
+    public AsyncInvoker<ShowWorkFlowMetricRequest, ShowWorkFlowMetricResponse> showWorkFlowMetricAsyncInvoker(
+        ShowWorkFlowMetricRequest request) {
+        return new AsyncInvoker<ShowWorkFlowMetricRequest, ShowWorkFlowMetricResponse>(request,
+            FunctionGraphMeta.showWorkFlowMetric, hcClient);
+    }
+
+    /**
+     * 获取指定函数流执行实例
+     *
+     * 获取指定函数流执行实例。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowWorkflowExecutionRequest 请求对象
+     * @return CompletableFuture<ShowWorkflowExecutionResponse>
+     */
+    public CompletableFuture<ShowWorkflowExecutionResponse> showWorkflowExecutionAsync(
+        ShowWorkflowExecutionRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.showWorkflowExecution);
+    }
+
+    /**
+     * 获取指定函数流执行实例
+     *
+     * 获取指定函数流执行实例。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowWorkflowExecutionRequest 请求对象
+     * @return AsyncInvoker<ShowWorkflowExecutionRequest, ShowWorkflowExecutionResponse>
+     */
+    public AsyncInvoker<ShowWorkflowExecutionRequest, ShowWorkflowExecutionResponse> showWorkflowExecutionAsyncInvoker(
+        ShowWorkflowExecutionRequest request) {
+        return new AsyncInvoker<ShowWorkflowExecutionRequest, ShowWorkflowExecutionResponse>(request,
+            FunctionGraphMeta.showWorkflowExecution, hcClient);
+    }
+
+    /**
+     * 同步执行函数流
+     *
+     * 同步执行函数流
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param StartSyncWorkflowExecutionRequest 请求对象
+     * @return CompletableFuture<StartSyncWorkflowExecutionResponse>
+     */
+    public CompletableFuture<StartSyncWorkflowExecutionResponse> startSyncWorkflowExecutionAsync(
+        StartSyncWorkflowExecutionRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.startSyncWorkflowExecution);
+    }
+
+    /**
+     * 同步执行函数流
+     *
+     * 同步执行函数流
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param StartSyncWorkflowExecutionRequest 请求对象
+     * @return AsyncInvoker<StartSyncWorkflowExecutionRequest, StartSyncWorkflowExecutionResponse>
+     */
+    public AsyncInvoker<StartSyncWorkflowExecutionRequest, StartSyncWorkflowExecutionResponse> startSyncWorkflowExecutionAsyncInvoker(
+        StartSyncWorkflowExecutionRequest request) {
+        return new AsyncInvoker<StartSyncWorkflowExecutionRequest, StartSyncWorkflowExecutionResponse>(request,
+            FunctionGraphMeta.startSyncWorkflowExecution, hcClient);
+    }
+
+    /**
+     * 开始执行函数流
+     *
+     * 开始执行函数流
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param StartWorkflowExecutionRequest 请求对象
+     * @return CompletableFuture<StartWorkflowExecutionResponse>
+     */
+    public CompletableFuture<StartWorkflowExecutionResponse> startWorkflowExecutionAsync(
+        StartWorkflowExecutionRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.startWorkflowExecution);
+    }
+
+    /**
+     * 开始执行函数流
+     *
+     * 开始执行函数流
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param StartWorkflowExecutionRequest 请求对象
+     * @return AsyncInvoker<StartWorkflowExecutionRequest, StartWorkflowExecutionResponse>
+     */
+    public AsyncInvoker<StartWorkflowExecutionRequest, StartWorkflowExecutionResponse> startWorkflowExecutionAsyncInvoker(
+        StartWorkflowExecutionRequest request) {
+        return new AsyncInvoker<StartWorkflowExecutionRequest, StartWorkflowExecutionResponse>(request,
+            FunctionGraphMeta.startWorkflowExecution, hcClient);
+    }
+
+    /**
+     * 停止工作流
+     *
+     * 停止工作流
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param StopWorkFlowRequest 请求对象
+     * @return CompletableFuture<StopWorkFlowResponse>
+     */
+    public CompletableFuture<StopWorkFlowResponse> stopWorkFlowAsync(StopWorkFlowRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.stopWorkFlow);
+    }
+
+    /**
+     * 停止工作流
+     *
+     * 停止工作流
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param StopWorkFlowRequest 请求对象
+     * @return AsyncInvoker<StopWorkFlowRequest, StopWorkFlowResponse>
+     */
+    public AsyncInvoker<StopWorkFlowRequest, StopWorkFlowResponse> stopWorkFlowAsyncInvoker(
+        StopWorkFlowRequest request) {
+        return new AsyncInvoker<StopWorkFlowRequest, StopWorkFlowResponse>(request, FunctionGraphMeta.stopWorkFlow,
+            hcClient);
     }
 
     /**
@@ -1380,218 +1949,6 @@ public class FunctionGraphAsyncClient {
     }
 
     /**
-     * 修改函数版本别名信息。
-     *
-     * 修改函数版本别名信息。
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param UpdateVersionAliasRequest 请求对象
-     * @return CompletableFuture<UpdateVersionAliasResponse>
-     */
-    public CompletableFuture<UpdateVersionAliasResponse> updateVersionAliasAsync(UpdateVersionAliasRequest request) {
-        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.updateVersionAlias);
-    }
-
-    /**
-     * 修改函数版本别名信息。
-     *
-     * 修改函数版本别名信息。
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param UpdateVersionAliasRequest 请求对象
-     * @return AsyncInvoker<UpdateVersionAliasRequest, UpdateVersionAliasResponse>
-     */
-    public AsyncInvoker<UpdateVersionAliasRequest, UpdateVersionAliasResponse> updateVersionAliasAsyncInvoker(
-        UpdateVersionAliasRequest request) {
-        return new AsyncInvoker<UpdateVersionAliasRequest, UpdateVersionAliasResponse>(request,
-            FunctionGraphMeta.updateVersionAlias, hcClient);
-    }
-
-    /**
-     * 删除指定函数的所有触发器。
-     *
-     * 删除指定函数所有触发器设置。
-     * 
-     * 在提供函数版本且非latest的情况下，删除对应函数版本的触发器。
-     * 在提供函数别名的情况下，删除对应函数别名的触发器。
-     * 在不提供函数版本（也不提供别名）或版本为latest的情况下，删除该函数所有的触发器（包括所有版本和别名）。
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param BatchDeleteFunctionTriggersRequest 请求对象
-     * @return CompletableFuture<BatchDeleteFunctionTriggersResponse>
-     */
-    public CompletableFuture<BatchDeleteFunctionTriggersResponse> batchDeleteFunctionTriggersAsync(
-        BatchDeleteFunctionTriggersRequest request) {
-        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.batchDeleteFunctionTriggers);
-    }
-
-    /**
-     * 删除指定函数的所有触发器。
-     *
-     * 删除指定函数所有触发器设置。
-     * 
-     * 在提供函数版本且非latest的情况下，删除对应函数版本的触发器。
-     * 在提供函数别名的情况下，删除对应函数别名的触发器。
-     * 在不提供函数版本（也不提供别名）或版本为latest的情况下，删除该函数所有的触发器（包括所有版本和别名）。
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param BatchDeleteFunctionTriggersRequest 请求对象
-     * @return AsyncInvoker<BatchDeleteFunctionTriggersRequest, BatchDeleteFunctionTriggersResponse>
-     */
-    public AsyncInvoker<BatchDeleteFunctionTriggersRequest, BatchDeleteFunctionTriggersResponse> batchDeleteFunctionTriggersAsyncInvoker(
-        BatchDeleteFunctionTriggersRequest request) {
-        return new AsyncInvoker<BatchDeleteFunctionTriggersRequest, BatchDeleteFunctionTriggersResponse>(request,
-            FunctionGraphMeta.batchDeleteFunctionTriggers, hcClient);
-    }
-
-    /**
-     * 创建触发器。
-     *
-     * 创建触发器。
-     * 
-     * - 可以创建的触发器类型包括TIMER、APIG、CTS、DDS、DMS、DIS、LTS、OBS、SMN、KAFKA。
-     * - DDS和KAFKA触发器创建时默认为DISABLED状态，其他触发器默认为ACTIVE状态。
-     * - TIMER、DDS、DMS、KAFKA、LTS触发器支持禁用，其他触发器不支持。
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param CreateFunctionTriggerRequest 请求对象
-     * @return CompletableFuture<CreateFunctionTriggerResponse>
-     */
-    public CompletableFuture<CreateFunctionTriggerResponse> createFunctionTriggerAsync(
-        CreateFunctionTriggerRequest request) {
-        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.createFunctionTrigger);
-    }
-
-    /**
-     * 创建触发器。
-     *
-     * 创建触发器。
-     * 
-     * - 可以创建的触发器类型包括TIMER、APIG、CTS、DDS、DMS、DIS、LTS、OBS、SMN、KAFKA。
-     * - DDS和KAFKA触发器创建时默认为DISABLED状态，其他触发器默认为ACTIVE状态。
-     * - TIMER、DDS、DMS、KAFKA、LTS触发器支持禁用，其他触发器不支持。
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param CreateFunctionTriggerRequest 请求对象
-     * @return AsyncInvoker<CreateFunctionTriggerRequest, CreateFunctionTriggerResponse>
-     */
-    public AsyncInvoker<CreateFunctionTriggerRequest, CreateFunctionTriggerResponse> createFunctionTriggerAsyncInvoker(
-        CreateFunctionTriggerRequest request) {
-        return new AsyncInvoker<CreateFunctionTriggerRequest, CreateFunctionTriggerResponse>(request,
-            FunctionGraphMeta.createFunctionTrigger, hcClient);
-    }
-
-    /**
-     * 删除触发器。
-     *
-     * 删除触发器。
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param DeleteFunctionTriggerRequest 请求对象
-     * @return CompletableFuture<DeleteFunctionTriggerResponse>
-     */
-    public CompletableFuture<DeleteFunctionTriggerResponse> deleteFunctionTriggerAsync(
-        DeleteFunctionTriggerRequest request) {
-        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.deleteFunctionTrigger);
-    }
-
-    /**
-     * 删除触发器。
-     *
-     * 删除触发器。
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param DeleteFunctionTriggerRequest 请求对象
-     * @return AsyncInvoker<DeleteFunctionTriggerRequest, DeleteFunctionTriggerResponse>
-     */
-    public AsyncInvoker<DeleteFunctionTriggerRequest, DeleteFunctionTriggerResponse> deleteFunctionTriggerAsyncInvoker(
-        DeleteFunctionTriggerRequest request) {
-        return new AsyncInvoker<DeleteFunctionTriggerRequest, DeleteFunctionTriggerResponse>(request,
-            FunctionGraphMeta.deleteFunctionTrigger, hcClient);
-    }
-
-    /**
-     * 获取指定函数的所有触发器。
-     *
-     * 获取指定函数的所有触发器设置。
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param ListFunctionTriggersRequest 请求对象
-     * @return CompletableFuture<ListFunctionTriggersResponse>
-     */
-    public CompletableFuture<ListFunctionTriggersResponse> listFunctionTriggersAsync(
-        ListFunctionTriggersRequest request) {
-        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.listFunctionTriggers);
-    }
-
-    /**
-     * 获取指定函数的所有触发器。
-     *
-     * 获取指定函数的所有触发器设置。
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param ListFunctionTriggersRequest 请求对象
-     * @return AsyncInvoker<ListFunctionTriggersRequest, ListFunctionTriggersResponse>
-     */
-    public AsyncInvoker<ListFunctionTriggersRequest, ListFunctionTriggersResponse> listFunctionTriggersAsyncInvoker(
-        ListFunctionTriggersRequest request) {
-        return new AsyncInvoker<ListFunctionTriggersRequest, ListFunctionTriggersResponse>(request,
-            FunctionGraphMeta.listFunctionTriggers, hcClient);
-    }
-
-    /**
-     * 获取指定触发器的信息。
-     *
-     * 获取特定触发器的信息。
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param ShowFunctionTriggerRequest 请求对象
-     * @return CompletableFuture<ShowFunctionTriggerResponse>
-     */
-    public CompletableFuture<ShowFunctionTriggerResponse> showFunctionTriggerAsync(ShowFunctionTriggerRequest request) {
-        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.showFunctionTrigger);
-    }
-
-    /**
-     * 获取指定触发器的信息。
-     *
-     * 获取特定触发器的信息。
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param ShowFunctionTriggerRequest 请求对象
-     * @return AsyncInvoker<ShowFunctionTriggerRequest, ShowFunctionTriggerResponse>
-     */
-    public AsyncInvoker<ShowFunctionTriggerRequest, ShowFunctionTriggerResponse> showFunctionTriggerAsyncInvoker(
-        ShowFunctionTriggerRequest request) {
-        return new AsyncInvoker<ShowFunctionTriggerRequest, ShowFunctionTriggerResponse>(request,
-            FunctionGraphMeta.showFunctionTrigger, hcClient);
-    }
-
-    /**
      * 更新触发器
      *
      * 更新触发器
@@ -1624,392 +1981,35 @@ public class FunctionGraphAsyncClient {
     }
 
     /**
-     * 删除工作流列表
+     * 修改函数版本别名信息。
      *
-     * 删除工作流列表
+     * 修改函数版本别名信息。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
      *
-     * @param BatchDeleteWorkflowsRequest 请求对象
-     * @return CompletableFuture<BatchDeleteWorkflowsResponse>
+     * @param UpdateVersionAliasRequest 请求对象
+     * @return CompletableFuture<UpdateVersionAliasResponse>
      */
-    public CompletableFuture<BatchDeleteWorkflowsResponse> batchDeleteWorkflowsAsync(
-        BatchDeleteWorkflowsRequest request) {
-        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.batchDeleteWorkflows);
+    public CompletableFuture<UpdateVersionAliasResponse> updateVersionAliasAsync(UpdateVersionAliasRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.updateVersionAlias);
     }
 
     /**
-     * 删除工作流列表
+     * 修改函数版本别名信息。
      *
-     * 删除工作流列表
+     * 修改函数版本别名信息。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
      *
-     * @param BatchDeleteWorkflowsRequest 请求对象
-     * @return AsyncInvoker<BatchDeleteWorkflowsRequest, BatchDeleteWorkflowsResponse>
+     * @param UpdateVersionAliasRequest 请求对象
+     * @return AsyncInvoker<UpdateVersionAliasRequest, UpdateVersionAliasResponse>
      */
-    public AsyncInvoker<BatchDeleteWorkflowsRequest, BatchDeleteWorkflowsResponse> batchDeleteWorkflowsAsyncInvoker(
-        BatchDeleteWorkflowsRequest request) {
-        return new AsyncInvoker<BatchDeleteWorkflowsRequest, BatchDeleteWorkflowsResponse>(request,
-            FunctionGraphMeta.batchDeleteWorkflows, hcClient);
-    }
-
-    /**
-     * 创建工作流列表
-     *
-     * 创建工作流列表
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param CreateWorkflowRequest 请求对象
-     * @return CompletableFuture<CreateWorkflowResponse>
-     */
-    public CompletableFuture<CreateWorkflowResponse> createWorkflowAsync(CreateWorkflowRequest request) {
-        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.createWorkflow);
-    }
-
-    /**
-     * 创建工作流列表
-     *
-     * 创建工作流列表
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param CreateWorkflowRequest 请求对象
-     * @return AsyncInvoker<CreateWorkflowRequest, CreateWorkflowResponse>
-     */
-    public AsyncInvoker<CreateWorkflowRequest, CreateWorkflowResponse> createWorkflowAsyncInvoker(
-        CreateWorkflowRequest request) {
-        return new AsyncInvoker<CreateWorkflowRequest, CreateWorkflowResponse>(request,
-            FunctionGraphMeta.createWorkflow, hcClient);
-    }
-
-    /**
-     * 获取指定函数流执行实例列表
-     *
-     * 获取指定函数流执行实例列表
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param ListWorkflowExecutionsRequest 请求对象
-     * @return CompletableFuture<ListWorkflowExecutionsResponse>
-     */
-    public CompletableFuture<ListWorkflowExecutionsResponse> listWorkflowExecutionsAsync(
-        ListWorkflowExecutionsRequest request) {
-        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.listWorkflowExecutions);
-    }
-
-    /**
-     * 获取指定函数流执行实例列表
-     *
-     * 获取指定函数流执行实例列表
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param ListWorkflowExecutionsRequest 请求对象
-     * @return AsyncInvoker<ListWorkflowExecutionsRequest, ListWorkflowExecutionsResponse>
-     */
-    public AsyncInvoker<ListWorkflowExecutionsRequest, ListWorkflowExecutionsResponse> listWorkflowExecutionsAsyncInvoker(
-        ListWorkflowExecutionsRequest request) {
-        return new AsyncInvoker<ListWorkflowExecutionsRequest, ListWorkflowExecutionsResponse>(request,
-            FunctionGraphMeta.listWorkflowExecutions, hcClient);
-    }
-
-    /**
-     * 查询工作流列表
-     *
-     * 查询工作流列表
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param ListWorkflowsRequest 请求对象
-     * @return CompletableFuture<ListWorkflowsResponse>
-     */
-    public CompletableFuture<ListWorkflowsResponse> listWorkflowsAsync(ListWorkflowsRequest request) {
-        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.listWorkflows);
-    }
-
-    /**
-     * 查询工作流列表
-     *
-     * 查询工作流列表
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param ListWorkflowsRequest 请求对象
-     * @return AsyncInvoker<ListWorkflowsRequest, ListWorkflowsResponse>
-     */
-    public AsyncInvoker<ListWorkflowsRequest, ListWorkflowsResponse> listWorkflowsAsyncInvoker(
-        ListWorkflowsRequest request) {
-        return new AsyncInvoker<ListWorkflowsRequest, ListWorkflowsResponse>(request, FunctionGraphMeta.listWorkflows,
-            hcClient);
-    }
-
-    /**
-     * 重试工作流
-     *
-     * 重试工作流
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param RetryWorkFlowRequest 请求对象
-     * @return CompletableFuture<RetryWorkFlowResponse>
-     */
-    public CompletableFuture<RetryWorkFlowResponse> retryWorkFlowAsync(RetryWorkFlowRequest request) {
-        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.retryWorkFlow);
-    }
-
-    /**
-     * 重试工作流
-     *
-     * 重试工作流
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param RetryWorkFlowRequest 请求对象
-     * @return AsyncInvoker<RetryWorkFlowRequest, RetryWorkFlowResponse>
-     */
-    public AsyncInvoker<RetryWorkFlowRequest, RetryWorkFlowResponse> retryWorkFlowAsyncInvoker(
-        RetryWorkFlowRequest request) {
-        return new AsyncInvoker<RetryWorkFlowRequest, RetryWorkFlowResponse>(request, FunctionGraphMeta.retryWorkFlow,
-            hcClient);
-    }
-
-    /**
-     * 获取函数流指标
-     *
-     * 获取函数流指标
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param ShowTenantMetricRequest 请求对象
-     * @return CompletableFuture<ShowTenantMetricResponse>
-     */
-    public CompletableFuture<ShowTenantMetricResponse> showTenantMetricAsync(ShowTenantMetricRequest request) {
-        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.showTenantMetric);
-    }
-
-    /**
-     * 获取函数流指标
-     *
-     * 获取函数流指标
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param ShowTenantMetricRequest 请求对象
-     * @return AsyncInvoker<ShowTenantMetricRequest, ShowTenantMetricResponse>
-     */
-    public AsyncInvoker<ShowTenantMetricRequest, ShowTenantMetricResponse> showTenantMetricAsyncInvoker(
-        ShowTenantMetricRequest request) {
-        return new AsyncInvoker<ShowTenantMetricRequest, ShowTenantMetricResponse>(request,
-            FunctionGraphMeta.showTenantMetric, hcClient);
-    }
-
-    /**
-     * 获取指定函数流实例
-     *
-     * 获取指定函数流实例
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param ShowWorkFlowRequest 请求对象
-     * @return CompletableFuture<ShowWorkFlowResponse>
-     */
-    public CompletableFuture<ShowWorkFlowResponse> showWorkFlowAsync(ShowWorkFlowRequest request) {
-        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.showWorkFlow);
-    }
-
-    /**
-     * 获取指定函数流实例
-     *
-     * 获取指定函数流实例
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param ShowWorkFlowRequest 请求对象
-     * @return AsyncInvoker<ShowWorkFlowRequest, ShowWorkFlowResponse>
-     */
-    public AsyncInvoker<ShowWorkFlowRequest, ShowWorkFlowResponse> showWorkFlowAsyncInvoker(
-        ShowWorkFlowRequest request) {
-        return new AsyncInvoker<ShowWorkFlowRequest, ShowWorkFlowResponse>(request, FunctionGraphMeta.showWorkFlow,
-            hcClient);
-    }
-
-    /**
-     * 获取指定工作流指标
-     *
-     * 获取指定工作流指标
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param ShowWorkFlowMetricRequest 请求对象
-     * @return CompletableFuture<ShowWorkFlowMetricResponse>
-     */
-    public CompletableFuture<ShowWorkFlowMetricResponse> showWorkFlowMetricAsync(ShowWorkFlowMetricRequest request) {
-        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.showWorkFlowMetric);
-    }
-
-    /**
-     * 获取指定工作流指标
-     *
-     * 获取指定工作流指标
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param ShowWorkFlowMetricRequest 请求对象
-     * @return AsyncInvoker<ShowWorkFlowMetricRequest, ShowWorkFlowMetricResponse>
-     */
-    public AsyncInvoker<ShowWorkFlowMetricRequest, ShowWorkFlowMetricResponse> showWorkFlowMetricAsyncInvoker(
-        ShowWorkFlowMetricRequest request) {
-        return new AsyncInvoker<ShowWorkFlowMetricRequest, ShowWorkFlowMetricResponse>(request,
-            FunctionGraphMeta.showWorkFlowMetric, hcClient);
-    }
-
-    /**
-     * 获取指定函数流执行实例
-     *
-     * 获取指定函数流执行实例。
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param ShowWorkflowExecutionRequest 请求对象
-     * @return CompletableFuture<ShowWorkflowExecutionResponse>
-     */
-    public CompletableFuture<ShowWorkflowExecutionResponse> showWorkflowExecutionAsync(
-        ShowWorkflowExecutionRequest request) {
-        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.showWorkflowExecution);
-    }
-
-    /**
-     * 获取指定函数流执行实例
-     *
-     * 获取指定函数流执行实例。
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param ShowWorkflowExecutionRequest 请求对象
-     * @return AsyncInvoker<ShowWorkflowExecutionRequest, ShowWorkflowExecutionResponse>
-     */
-    public AsyncInvoker<ShowWorkflowExecutionRequest, ShowWorkflowExecutionResponse> showWorkflowExecutionAsyncInvoker(
-        ShowWorkflowExecutionRequest request) {
-        return new AsyncInvoker<ShowWorkflowExecutionRequest, ShowWorkflowExecutionResponse>(request,
-            FunctionGraphMeta.showWorkflowExecution, hcClient);
-    }
-
-    /**
-     * 同步执行函数流
-     *
-     * 同步执行函数流
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param StartSyncWorkflowExecutionRequest 请求对象
-     * @return CompletableFuture<StartSyncWorkflowExecutionResponse>
-     */
-    public CompletableFuture<StartSyncWorkflowExecutionResponse> startSyncWorkflowExecutionAsync(
-        StartSyncWorkflowExecutionRequest request) {
-        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.startSyncWorkflowExecution);
-    }
-
-    /**
-     * 同步执行函数流
-     *
-     * 同步执行函数流
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param StartSyncWorkflowExecutionRequest 请求对象
-     * @return AsyncInvoker<StartSyncWorkflowExecutionRequest, StartSyncWorkflowExecutionResponse>
-     */
-    public AsyncInvoker<StartSyncWorkflowExecutionRequest, StartSyncWorkflowExecutionResponse> startSyncWorkflowExecutionAsyncInvoker(
-        StartSyncWorkflowExecutionRequest request) {
-        return new AsyncInvoker<StartSyncWorkflowExecutionRequest, StartSyncWorkflowExecutionResponse>(request,
-            FunctionGraphMeta.startSyncWorkflowExecution, hcClient);
-    }
-
-    /**
-     * 开始执行函数流
-     *
-     * 开始执行函数流
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param StartWorkflowExecutionRequest 请求对象
-     * @return CompletableFuture<StartWorkflowExecutionResponse>
-     */
-    public CompletableFuture<StartWorkflowExecutionResponse> startWorkflowExecutionAsync(
-        StartWorkflowExecutionRequest request) {
-        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.startWorkflowExecution);
-    }
-
-    /**
-     * 开始执行函数流
-     *
-     * 开始执行函数流
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param StartWorkflowExecutionRequest 请求对象
-     * @return AsyncInvoker<StartWorkflowExecutionRequest, StartWorkflowExecutionResponse>
-     */
-    public AsyncInvoker<StartWorkflowExecutionRequest, StartWorkflowExecutionResponse> startWorkflowExecutionAsyncInvoker(
-        StartWorkflowExecutionRequest request) {
-        return new AsyncInvoker<StartWorkflowExecutionRequest, StartWorkflowExecutionResponse>(request,
-            FunctionGraphMeta.startWorkflowExecution, hcClient);
-    }
-
-    /**
-     * 停止工作流
-     *
-     * 停止工作流
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param StopWorkFlowRequest 请求对象
-     * @return CompletableFuture<StopWorkFlowResponse>
-     */
-    public CompletableFuture<StopWorkFlowResponse> stopWorkFlowAsync(StopWorkFlowRequest request) {
-        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.stopWorkFlow);
-    }
-
-    /**
-     * 停止工作流
-     *
-     * 停止工作流
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param StopWorkFlowRequest 请求对象
-     * @return AsyncInvoker<StopWorkFlowRequest, StopWorkFlowResponse>
-     */
-    public AsyncInvoker<StopWorkFlowRequest, StopWorkFlowResponse> stopWorkFlowAsyncInvoker(
-        StopWorkFlowRequest request) {
-        return new AsyncInvoker<StopWorkFlowRequest, StopWorkFlowResponse>(request, FunctionGraphMeta.stopWorkFlow,
-            hcClient);
+    public AsyncInvoker<UpdateVersionAliasRequest, UpdateVersionAliasResponse> updateVersionAliasAsyncInvoker(
+        UpdateVersionAliasRequest request) {
+        return new AsyncInvoker<UpdateVersionAliasRequest, UpdateVersionAliasResponse>(request,
+            FunctionGraphMeta.updateVersionAlias, hcClient);
     }
 
     /**

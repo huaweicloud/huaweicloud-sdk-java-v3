@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 弹性IP白名单信息
+ * 弹性IP白名单信息。
  */
 public class CreateClusterPublicEip {
 

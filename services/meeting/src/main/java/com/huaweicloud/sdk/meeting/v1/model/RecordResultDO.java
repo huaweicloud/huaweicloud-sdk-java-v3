@@ -68,6 +68,11 @@ public class RecordResultDO {
 
     private Boolean available;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "recordAuthType")
+
+    private Integer recordAuthType;
+
     public RecordResultDO withConfUUID(String confUUID) {
         this.confUUID = confUUID;
         return this;
@@ -271,6 +276,23 @@ public class RecordResultDO {
         this.available = available;
     }
 
+    public RecordResultDO withRecordAuthType(Integer recordAuthType) {
+        this.recordAuthType = recordAuthType;
+        return this;
+    }
+
+    /**
+     * * 录播鉴权方式，在录播类型为:录播、直播+录播时有效 * 0： 可通过链接观看/下载 * 1： 企业用户可观看/下载 * 2： 与会者可观看/下载
+     * @return recordAuthType
+     */
+    public Integer getRecordAuthType() {
+        return recordAuthType;
+    }
+
+    public void setRecordAuthType(Integer recordAuthType) {
+        this.recordAuthType = recordAuthType;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -289,7 +311,8 @@ public class RecordResultDO {
             && Objects.equals(this.startTime, recordResultDO.startTime)
             && Objects.equals(this.isDecodeFinish, recordResultDO.isDecodeFinish)
             && Objects.equals(this.decodeEndTime, recordResultDO.decodeEndTime)
-            && Objects.equals(this.available, recordResultDO.available);
+            && Objects.equals(this.available, recordResultDO.available)
+            && Objects.equals(this.recordAuthType, recordResultDO.recordAuthType);
     }
 
     @Override
@@ -304,7 +327,8 @@ public class RecordResultDO {
             startTime,
             isDecodeFinish,
             decodeEndTime,
-            available);
+            available,
+            recordAuthType);
     }
 
     @Override
@@ -322,6 +346,7 @@ public class RecordResultDO {
         sb.append("    isDecodeFinish: ").append(toIndentedString(isDecodeFinish)).append("\n");
         sb.append("    decodeEndTime: ").append(toIndentedString(decodeEndTime)).append("\n");
         sb.append("    available: ").append(toIndentedString(available)).append("\n");
+        sb.append("    recordAuthType: ").append(toIndentedString(recordAuthType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

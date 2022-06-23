@@ -96,6 +96,8 @@ public final class Constants {
 
     public static final String DEFAULT_IAM_ENDPOINT = "https://iam.myhuaweicloud.com";
 
+    public static final String IAM_ENDPOINT_ENV_NAME = "HUAWEICLOUD_SDK_IAM_ENDPOINT";
+
     public static final String DEFAULT_ENDPOINT_REG =
             "^[a-z][a-z0-9-]+(\\.[a-z]{2,}-[a-z]+-\\d{1,2})?\\.(my)?(huaweicloud|myhwclouds).(com|cn)";
 

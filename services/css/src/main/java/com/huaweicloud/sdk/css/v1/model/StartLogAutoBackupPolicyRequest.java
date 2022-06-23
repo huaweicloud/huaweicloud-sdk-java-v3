@@ -27,7 +27,7 @@ public class StartLogAutoBackupPolicyRequest {
     }
 
     /**
-     * 指定待开启的集群ID。
+     * 指定开启日志备份的集群ID。
      * @return clusterId
      */
     public String getClusterId() {

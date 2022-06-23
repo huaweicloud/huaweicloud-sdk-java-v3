@@ -21,7 +21,7 @@ public class ShowVpcepConnectionRequest {
     }
 
     /**
-     * 指定待获取终端节点连接的集群ID。
+     * 指定待查询的集群ID。
      * @return clusterId
      */
     public String getClusterId() {

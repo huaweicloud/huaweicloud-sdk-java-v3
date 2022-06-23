@@ -27,7 +27,7 @@ public class UpdatePublicKibanaWhitelistRequest {
     }
 
     /**
-     * 指定待更改的集群ID。
+     * 指定修改kibana的访问权限的集群ID。
      * @return clusterId
      */
     public String getClusterId() {

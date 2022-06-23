@@ -27,7 +27,7 @@ public class DeleteConfRequest {
     }
 
     /**
-     * 指定待删除的集群ID。
+     * 指定删除配置文件的集群ID。
      * @return clusterId
      */
     public String getClusterId() {

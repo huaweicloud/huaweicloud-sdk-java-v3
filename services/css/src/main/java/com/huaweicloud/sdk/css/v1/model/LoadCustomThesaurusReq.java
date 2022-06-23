@@ -53,7 +53,7 @@ public class LoadCustomThesaurusReq {
     }
 
     /**
-     * 主词库文件对象，必须为UTF-8无BOM编码的文本文件，一行一个分词，文件大小最大支持100M。  mainObject, stopObject, synonymObject三个参数至少要填写一个。 说明：一次只能加载一个主词库，不支持同时加载多个主词库。
+     * 主词库文件对象，必须为UTF-8无BOM编码的文本文件，一行一个分词，文件大小最大支持100M。 mainObject, stopObject, synonymObject三个参数至少要填写一个。  >一次只能加载一个主词库，不支持同时加载多个主词库。
      * @return mainObject
      */
     public String getMainObject() {

@@ -21,7 +21,7 @@ public class UpdateUnbindPublicRequest {
     }
 
     /**
-     * 指定查询集群ID。
+     * 指定关闭公网访问集群ID。
      * @return clusterId
      */
     public String getClusterId() {

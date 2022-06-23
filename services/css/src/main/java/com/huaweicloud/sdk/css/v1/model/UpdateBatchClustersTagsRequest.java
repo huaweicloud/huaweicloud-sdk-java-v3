@@ -27,7 +27,7 @@ public class UpdateBatchClustersTagsRequest {
     }
 
     /**
-     * 指定待添加的集群ID。
+     * 指定批量添加标签的集群ID。
      * @return clusterId
      */
     public String getClusterId() {

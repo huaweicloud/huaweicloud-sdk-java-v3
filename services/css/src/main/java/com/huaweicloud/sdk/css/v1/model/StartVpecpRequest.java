@@ -27,7 +27,7 @@ public class StartVpecpRequest {
     }
 
     /**
-     * 指定待开启的集群ID。
+     * 指定开启终端节点的集群ID。
      * @return clusterId
      */
     public String getClusterId() {

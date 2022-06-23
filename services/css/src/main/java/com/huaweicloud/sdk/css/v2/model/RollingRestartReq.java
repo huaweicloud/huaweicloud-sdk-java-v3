@@ -26,7 +26,7 @@ public class RollingRestartReq {
     }
 
     /**
-     * 操作角色
+     * 操作角色。
      * @return type
      */
     public String getType() {
@@ -43,7 +43,7 @@ public class RollingRestartReq {
     }
 
     /**
-     * 实例类型。例如，  - ess-master对应Master节点。 - ess-client对应Clinet节点。 - ess-cold对应冷数据节点。 - ess对应数据节点。 - all对应所有节点。
+     * 实例类型（选择实例类型时至少需要一个数据节点）。例如:  - ess-master对应Master节点。 - ess-client对应Clinet节点。 - ess-cold对应冷数据节点。 - ess对应数据节点。 - all对应所有节点。
      * @return value
      */
     public String getValue() {

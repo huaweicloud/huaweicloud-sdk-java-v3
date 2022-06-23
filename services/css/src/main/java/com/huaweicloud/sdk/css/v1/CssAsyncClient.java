@@ -249,6 +249,8 @@ public class CssAsyncClient {
      *
      * 此接口用于删除集群。集群删除将释放此集群的所有资源，包括客户数据。为了安全起见，请确保为这个集群创建快照。
      * 
+     * &gt;此接口亦可用于包年/包月集群退订。公安冻结的集群不能删除。
+     * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
      *
@@ -263,6 +265,8 @@ public class CssAsyncClient {
      * 删除集群
      *
      * 此接口用于删除集群。集群删除将释放此集群的所有资源，包括客户数据。为了安全起见，请确保为这个集群创建快照。
+     * 
+     * &gt;此接口亦可用于包年/包月集群退订。公安冻结的集群不能删除。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -560,7 +564,7 @@ public class CssAsyncClient {
     /**
      * 获取参数配置列表
      *
-     * 该接口用于获取参数配置列表。
+     * 该接口用于获取当前集群现有的参数配置列表。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -575,7 +579,7 @@ public class CssAsyncClient {
     /**
      * 获取参数配置列表
      *
-     * 该接口用于获取参数配置列表。
+     * 该接口用于获取当前集群现有的参数配置列表。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -590,7 +594,7 @@ public class CssAsyncClient {
     /**
      * 获取参数配置任务列表
      *
-     * 该接口用于获取参数配置任务列表。
+     * 该接口可获取参数配置的任务流程。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -605,7 +609,7 @@ public class CssAsyncClient {
     /**
      * 获取参数配置任务列表
      *
-     * 该接口用于获取参数配置任务列表。
+     * 该接口可获取参数配置的任务流程。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -939,7 +943,7 @@ public class CssAsyncClient {
     /**
      * 自动设置集群快照的基础配置（不推荐使用）
      *
-     * 说明：自动设置集群快照接口将会自动创建快照OBS桶和委托。如果有多个集群，每个集群使用这个接口都会创建一个不一样的OBS桶，可能会导致OBS的配额不够，较多的OBS桶也难以维护。建议可以直接使用[修改集群快照的基础配置](https://support.huaweicloud.com/api-css/css_03_0030.html)。
+     * &gt;自动设置集群快照接口将会自动创建快照OBS桶和委托。如果有多个集群，每个集群使用这个接口都会创建一个不一样的OBS桶，可能会导致OBS的配额不够，较多的OBS桶也难以维护。建议可以直接使用[修改集群快照的基础配置](UpdateSnapshotSetting.xml)。
      * 
      * 该接口用于自动设置集群快照的基础配置，包括配置OBS桶和IAM委托。
      * 
@@ -960,7 +964,7 @@ public class CssAsyncClient {
     /**
      * 自动设置集群快照的基础配置（不推荐使用）
      *
-     * 说明：自动设置集群快照接口将会自动创建快照OBS桶和委托。如果有多个集群，每个集群使用这个接口都会创建一个不一样的OBS桶，可能会导致OBS的配额不够，较多的OBS桶也难以维护。建议可以直接使用[修改集群快照的基础配置](https://support.huaweicloud.com/api-css/css_03_0030.html)。
+     * &gt;自动设置集群快照接口将会自动创建快照OBS桶和委托。如果有多个集群，每个集群使用这个接口都会创建一个不一样的OBS桶，可能会导致OBS的配额不够，较多的OBS桶也难以维护。建议可以直接使用[修改集群快照的基础配置](UpdateSnapshotSetting.xml)。
      * 
      * 该接口用于自动设置集群快照的基础配置，包括配置OBS桶和IAM委托。
      * 
@@ -1331,7 +1335,8 @@ public class CssAsyncClient {
      * 扩容集群
      *
      * 该接口用于集群扩容实例（仅支持扩容elasticsearch实例）。只扩容普通节点，且只针对要扩容的集群实例不存在特殊节点（Master、Client、冷数据节点）的情况。
-     * 说明：推荐使用[扩容实例的数量和存储容量](https://support.huaweicloud.com/api-css/css_03_0038.html)进行扩容。
+     * 
+     * 推荐使用[扩容实例的数量和存储容量](UpdateExtendInstanceStorage.xml)进行扩容。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1347,7 +1352,8 @@ public class CssAsyncClient {
      * 扩容集群
      *
      * 该接口用于集群扩容实例（仅支持扩容elasticsearch实例）。只扩容普通节点，且只针对要扩容的集群实例不存在特殊节点（Master、Client、冷数据节点）的情况。
-     * 说明：推荐使用[扩容实例的数量和存储容量](https://support.huaweicloud.com/api-css/css_03_0038.html)进行扩容。
+     * 
+     * 推荐使用[扩容实例的数量和存储容量](UpdateExtendInstanceStorage.xml)进行扩容。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1426,9 +1432,13 @@ public class CssAsyncClient {
     }
 
     /**
-     * 全规格集群变更
+     * 指定节点类型规格变更
      *
-     * 修改集群规格。支持修改ess， ess-cold， ess-client， ess-master节点类型。
+     * 修改集群规格。支持修改:
+     * - ess： 数据节点。
+     * - ess-cold: 冷数据节点。
+     * - ess-client: Client节点。
+     * - ess-master: Master节点。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1441,9 +1451,13 @@ public class CssAsyncClient {
     }
 
     /**
-     * 全规格集群变更
+     * 指定节点类型规格变更
      *
-     * 修改集群规格。支持修改ess， ess-cold， ess-client， ess-master节点类型。
+     * 修改集群规格。支持修改:
+     * - ess： 数据节点。
+     * - ess-cold: 冷数据节点。
+     * - ess-client: Client节点。
+     * - ess-master: Master节点。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1556,7 +1570,7 @@ public class CssAsyncClient {
     }
 
     /**
-     * 缩容集群
+     * 指定节点类型缩容
      *
      * 该接口用于集群缩容不同类型实例的个数以及存储容量。
      * 
@@ -1571,7 +1585,7 @@ public class CssAsyncClient {
     }
 
     /**
-     * 缩容集群
+     * 指定节点类型缩容
      *
      * 该接口用于集群缩容不同类型实例的个数以及存储容量。
      * 
@@ -1588,9 +1602,9 @@ public class CssAsyncClient {
     }
 
     /**
-     * 指定角色下线
+     * 指定节点缩容
      *
-     * 该接口用于下线集群指定角色。
+     * 该接口可以对集群现有节点中指定节点进行缩容。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1603,9 +1617,9 @@ public class CssAsyncClient {
     }
 
     /**
-     * 指定角色下线
+     * 指定节点缩容
      *
-     * 该接口用于下线集群指定角色。
+     * 该接口可以对集群现有节点中指定节点进行缩容。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1622,7 +1636,9 @@ public class CssAsyncClient {
     /**
      * 修改集群快照的基础配置
      *
-     * 该接口用于修改集群快照的基础配置，可修改OBS桶和IAM委托。 说明：如果未开启快照功能，使用该接口后，将会开启快照。
+     * 该接口用于修改集群快照的基础配置，可修改OBS桶和IAM委托。
+     * 
+     * 如果未开启快照功能，使用该接口后，将会开启快照。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1638,7 +1654,9 @@ public class CssAsyncClient {
     /**
      * 修改集群快照的基础配置
      *
-     * 该接口用于修改集群快照的基础配置，可修改OBS桶和IAM委托。 说明：如果未开启快照功能，使用该接口后，将会开启快照。
+     * 该接口用于修改集群快照的基础配置，可修改OBS桶和IAM委托。
+     * 
+     * 如果未开启快照功能，使用该接口后，将会开启快照。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1813,7 +1831,7 @@ public class CssAsyncClient {
     }
 
     /**
-     * 关闭访问控制
+     * 关闭Kibana公网访问控制
      *
      * 该接口用于关闭Kibana公网访问控制。
      * 
@@ -1829,7 +1847,7 @@ public class CssAsyncClient {
     }
 
     /**
-     * 关闭访问控制
+     * 关闭Kibana公网访问控制
      *
      * 该接口用于关闭Kibana公网访问控制。
      * 
@@ -1910,7 +1928,7 @@ public class CssAsyncClient {
     }
 
     /**
-     * 修改访问控制
+     * 修改Kibana公网访问控制
      *
      * 该接口通过修改kibana白名单，修改kibana的访问权限。
      * 
@@ -1926,7 +1944,7 @@ public class CssAsyncClient {
     }
 
     /**
-     * 修改访问控制
+     * 修改Kibana公网访问控制
      *
      * 该接口通过修改kibana白名单，修改kibana的访问权限。
      * 

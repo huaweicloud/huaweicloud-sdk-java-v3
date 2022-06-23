@@ -48,7 +48,7 @@ public class ShowResourcesDetailResponseBody {
     }
 
     /**
-     * 当前配额值。
+     * 当前配额值。 取值为0时，表示不限制当前配额值。
      * @return quota
      */
     public Integer getQuota() {

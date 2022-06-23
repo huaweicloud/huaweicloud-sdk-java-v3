@@ -2123,12 +2123,12 @@ public class ElbMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("type",
+        builder.<List<String>>withRequestField("quota_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListQuotaDetailsRequest::getType, (req, v) -> {
-                req.setType(v);
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListQuotaDetailsRequest::getQuotaKey, (req, v) -> {
+                req.setQuotaKey(v);
             }));
 
         // response

@@ -21,7 +21,7 @@ public class StopPipelineRequest {
     }
 
     /**
-     * 指定待停止的集群ID。
+     * 指定停止pipeline的集群ID。
      * @return clusterId
      */
     public String getClusterId() {

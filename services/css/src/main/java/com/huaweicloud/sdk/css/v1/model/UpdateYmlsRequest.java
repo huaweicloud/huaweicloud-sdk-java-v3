@@ -27,7 +27,7 @@ public class UpdateYmlsRequest {
     }
 
     /**
-     * 指定待更改的集群ID。
+     * 指定修改参数配置的集群ID。
      * @return clusterId
      */
     public String getClusterId() {

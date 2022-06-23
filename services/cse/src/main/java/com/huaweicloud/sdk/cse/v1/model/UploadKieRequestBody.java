@@ -15,7 +15,7 @@ import java.util.Objects;
  */
 public class UploadKieRequestBody implements SdkFormDataBody {
 
-    @JsonProperty(value = "UploadFile", access = JsonProperty.Access.WRITE_ONLY)
+    @JsonProperty(value = "upload_file", access = JsonProperty.Access.WRITE_ONLY)
 
     private FormDataFilePart uploadFile;
 
@@ -56,7 +56,7 @@ public class UploadKieRequestBody implements SdkFormDataBody {
         return new LinkedHashMap<String, FormDataPart>() {
 
             {
-                put("UploadFile", uploadFile);
+                put("upload_file", uploadFile);
             }
         };
     }

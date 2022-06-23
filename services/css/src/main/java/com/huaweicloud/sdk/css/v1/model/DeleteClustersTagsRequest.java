@@ -26,7 +26,7 @@ public class DeleteClustersTagsRequest {
     }
 
     /**
-     * 指定删除集群ID。
+     * 指定删除标签的集群ID。
      * @return clusterId
      */
     public String getClusterId() {

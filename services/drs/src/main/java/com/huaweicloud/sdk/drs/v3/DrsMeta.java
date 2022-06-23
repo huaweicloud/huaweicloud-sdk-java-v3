@@ -884,6 +884,38 @@ public class DrsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListAvailableZoneRequest, ListAvailableZoneResponse> listAvailableZone =
+        genForlistAvailableZone();
+
+    private static HttpRequestDef<ListAvailableZoneRequest, ListAvailableZoneResponse> genForlistAvailableZone() {
+        // basic
+        HttpRequestDef.Builder<ListAvailableZoneRequest, ListAvailableZoneResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListAvailableZoneRequest.class, ListAvailableZoneResponse.class)
+                .withName("ListAvailableZone")
+                .withUri("/v3/{project_id}/available-zone")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ListAvailableZoneRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListAvailableZoneRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListAvailableZoneRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<QueryAvailableNodeTypeReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(QueryAvailableNodeTypeReq.class),
+            f -> f.withMarshaller(ListAvailableZoneRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListCompareResultRequest, ListCompareResultResponse> listCompareResult =
         genForlistCompareResult();
 
@@ -1064,6 +1096,45 @@ public class DrsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModifyTargetParamsReq.class),
             f -> f.withMarshaller(UpdateParamsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateTuningParamsRequest, UpdateTuningParamsResponse> updateTuningParams =
+        genForupdateTuningParams();
+
+    private static HttpRequestDef<UpdateTuningParamsRequest, UpdateTuningParamsResponse> genForupdateTuningParams() {
+        // basic
+        HttpRequestDef.Builder<UpdateTuningParamsRequest, UpdateTuningParamsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateTuningParamsRequest.class, UpdateTuningParamsResponse.class)
+                .withName("UpdateTuningParams")
+                .withUri("/v3/{project_id}/job/{job_id}/tuning-params/modify-params")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateTuningParamsRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+        builder.<UpdateTuningParamsRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UpdateTuningParamsRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(UpdateTuningParamsRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<ModifyTuningParamsReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ModifyTuningParamsReq.class),
+            f -> f.withMarshaller(UpdateTuningParamsRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

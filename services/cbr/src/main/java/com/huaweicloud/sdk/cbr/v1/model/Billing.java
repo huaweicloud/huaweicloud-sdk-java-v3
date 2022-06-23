@@ -648,11 +648,6 @@ public class Billing {
 
     private String frozenScene;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "is_multi_az")
-
-    private Boolean isMultiAz;
-
     public Billing withAllocated(Integer allocated) {
         this.allocated = allocated;
         return this;
@@ -893,23 +888,6 @@ public class Billing {
         this.frozenScene = frozenScene;
     }
 
-    public Billing withIsMultiAz(Boolean isMultiAz) {
-        this.isMultiAz = isMultiAz;
-        return this;
-    }
-
-    /**
-     * 存储库多az属性
-     * @return isMultiAz
-     */
-    public Boolean getIsMultiAz() {
-        return isMultiAz;
-    }
-
-    public void setIsMultiAz(Boolean isMultiAz) {
-        this.isMultiAz = isMultiAz;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -928,8 +906,7 @@ public class Billing {
             && Objects.equals(this.protectType, billing.protectType) && Objects.equals(this.size, billing.size)
             && Objects.equals(this.specCode, billing.specCode) && Objects.equals(this.status, billing.status)
             && Objects.equals(this.storageUnit, billing.storageUnit) && Objects.equals(this.used, billing.used)
-            && Objects.equals(this.frozenScene, billing.frozenScene)
-            && Objects.equals(this.isMultiAz, billing.isMultiAz);
+            && Objects.equals(this.frozenScene, billing.frozenScene);
     }
 
     @Override
@@ -947,8 +924,7 @@ public class Billing {
             status,
             storageUnit,
             used,
-            frozenScene,
-            isMultiAz);
+            frozenScene);
     }
 
     @Override
@@ -969,7 +945,6 @@ public class Billing {
         sb.append("    storageUnit: ").append(toIndentedString(storageUnit)).append("\n");
         sb.append("    used: ").append(toIndentedString(used)).append("\n");
         sb.append("    frozenScene: ").append(toIndentedString(frozenScene)).append("\n");
-        sb.append("    isMultiAz: ").append(toIndentedString(isMultiAz)).append("\n");
         sb.append("}");
         return sb.toString();
     }

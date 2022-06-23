@@ -21,13 +21,13 @@ public class CreateClusterResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
+    @JsonProperty(value="cluster_id")
     
     
-    private String type;
+    private String clusterId;
 
-    public CreateClusterResponse withType(String type) {
-        this.type = type;
+    public CreateClusterResponse withClusterId(String clusterId) {
+        this.clusterId = clusterId;
         return this;
     }
 
@@ -36,14 +36,14 @@ public class CreateClusterResponse extends SdkResponse {
 
     /**
      * 集群创建成功后系统返回的集群ID值。
-     * @return type
+     * @return clusterId
      */
-    public String getType() {
-        return type;
+    public String getClusterId() {
+        return clusterId;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setClusterId(String clusterId) {
+        this.clusterId = clusterId;
     }
 
     
@@ -57,17 +57,17 @@ public class CreateClusterResponse extends SdkResponse {
             return false;
         }
         CreateClusterResponse createClusterResponse = (CreateClusterResponse) o;
-        return Objects.equals(this.type, createClusterResponse.type);
+        return Objects.equals(this.clusterId, createClusterResponse.clusterId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(type);
+        return Objects.hash(clusterId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateClusterResponse {\n");
-        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

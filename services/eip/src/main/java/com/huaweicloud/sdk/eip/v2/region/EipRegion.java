@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.eip.v2.region;
 
+import com.huaweicloud.sdk.core.region.IRegionProvider;
 import com.huaweicloud.sdk.core.region.Region;
+import com.huaweicloud.sdk.core.region.RegionProviderChain;
 import com.huaweicloud.sdk.core.utils.StringUtils;
 
 import java.util.Collections;
@@ -40,6 +42,8 @@ public class EipRegion {
 
     public static final Region SA_BRAZIL_1 = new Region("sa-brazil-1", "https://vpc.sa-brazil-1.myhuaweicloud.com");
 
+    private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("EIP");
+
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
 
     private static Map<String, Region> createStaticFields() {
@@ -64,11 +68,16 @@ public class EipRegion {
         if (StringUtils.isEmpty(regionId)) {
             throw new IllegalArgumentException("Unexpected empty parameter: regionId.");
         }
-        Region result = STATIC_FIELDS.get(regionId);
+
+        Region result = PROVIDER.getRegion(regionId);
+        if (Objects.nonNull(result)) {
+            return result;
+        }
+
+        result = STATIC_FIELDS.get(regionId);
         if (Objects.nonNull(result)) {
             return result;
         }
         throw new IllegalArgumentException("Unexpected regionId: " + regionId);
     }
-
 }

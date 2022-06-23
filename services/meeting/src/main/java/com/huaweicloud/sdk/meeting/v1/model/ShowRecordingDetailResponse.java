@@ -69,6 +69,11 @@ public class ShowRecordingDetailResponse extends SdkResponse {
 
     private Boolean available;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "recordAuthType")
+
+    private Integer recordAuthType;
+
     public ShowRecordingDetailResponse withConfUUID(String confUUID) {
         this.confUUID = confUUID;
         return this;
@@ -272,6 +277,23 @@ public class ShowRecordingDetailResponse extends SdkResponse {
         this.available = available;
     }
 
+    public ShowRecordingDetailResponse withRecordAuthType(Integer recordAuthType) {
+        this.recordAuthType = recordAuthType;
+        return this;
+    }
+
+    /**
+     * * 录播鉴权方式，在录播类型为:录播、直播+录播时有效 * 0： 可通过链接观看/下载 * 1： 企业用户可观看/下载 * 2： 与会者可观看/下载
+     * @return recordAuthType
+     */
+    public Integer getRecordAuthType() {
+        return recordAuthType;
+    }
+
+    public void setRecordAuthType(Integer recordAuthType) {
+        this.recordAuthType = recordAuthType;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -291,7 +313,8 @@ public class ShowRecordingDetailResponse extends SdkResponse {
             && Objects.equals(this.startTime, showRecordingDetailResponse.startTime)
             && Objects.equals(this.isDecodeFinish, showRecordingDetailResponse.isDecodeFinish)
             && Objects.equals(this.decodeEndTime, showRecordingDetailResponse.decodeEndTime)
-            && Objects.equals(this.available, showRecordingDetailResponse.available);
+            && Objects.equals(this.available, showRecordingDetailResponse.available)
+            && Objects.equals(this.recordAuthType, showRecordingDetailResponse.recordAuthType);
     }
 
     @Override
@@ -306,7 +329,8 @@ public class ShowRecordingDetailResponse extends SdkResponse {
             startTime,
             isDecodeFinish,
             decodeEndTime,
-            available);
+            available,
+            recordAuthType);
     }
 
     @Override
@@ -324,6 +348,7 @@ public class ShowRecordingDetailResponse extends SdkResponse {
         sb.append("    isDecodeFinish: ").append(toIndentedString(isDecodeFinish)).append("\n");
         sb.append("    decodeEndTime: ").append(toIndentedString(decodeEndTime)).append("\n");
         sb.append("    available: ").append(toIndentedString(available)).append("\n");
+        sb.append("    recordAuthType: ").append(toIndentedString(recordAuthType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

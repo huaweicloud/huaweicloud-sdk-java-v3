@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.swr.v2.region;
 
+import com.huaweicloud.sdk.core.region.IRegionProvider;
 import com.huaweicloud.sdk.core.region.Region;
+import com.huaweicloud.sdk.core.region.RegionProviderChain;
 import com.huaweicloud.sdk.core.utils.StringUtils;
 
 import java.util.Collections;
@@ -41,6 +43,8 @@ public class SwrRegion {
     public static final Region RU_NORTHWEST_2 =
         new Region("ru-northwest-2", "https://swr-api.ru-northwest-2.myhuaweicloud.com");
 
+    private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("SWR");
+
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
 
     private static Map<String, Region> createStaticFields() {
@@ -65,11 +69,16 @@ public class SwrRegion {
         if (StringUtils.isEmpty(regionId)) {
             throw new IllegalArgumentException("Unexpected empty parameter: regionId.");
         }
-        Region result = STATIC_FIELDS.get(regionId);
+
+        Region result = PROVIDER.getRegion(regionId);
+        if (Objects.nonNull(result)) {
+            return result;
+        }
+
+        result = STATIC_FIELDS.get(regionId);
         if (Objects.nonNull(result)) {
             return result;
         }
         throw new IllegalArgumentException("Unexpected regionId: " + regionId);
     }
-
 }

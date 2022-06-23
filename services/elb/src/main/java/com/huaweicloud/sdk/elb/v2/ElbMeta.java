@@ -1134,6 +1134,27 @@ public class ElbMeta {
             f -> f.withMarshaller(ListListenersRequest::getDescription, (req, v) -> {
                 req.setDescription(v);
             }));
+        builder.<String>withRequestField("loadbalancer_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListListenersRequest::getLoadbalancerId, (req, v) -> {
+                req.setLoadbalancerId(v);
+            }));
+        builder.<Integer>withRequestField("connection_limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListListenersRequest::getConnectionLimit, (req, v) -> {
+                req.setConnectionLimit(v);
+            }));
+        builder.<Boolean>withRequestField("admin_state_up",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListListenersRequest::getAdminStateUp, (req, v) -> {
+                req.setAdminStateUp(v);
+            }));
         builder.<String>withRequestField("default_pool_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -1176,33 +1197,26 @@ public class ElbMeta {
             f -> f.withMarshaller(ListListenersRequest::getTlsCiphersPolicy, (req, v) -> {
                 req.setTlsCiphersPolicy(v);
             }));
-        builder.<Integer>withRequestField("member_timeout",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListListenersRequest::getMemberTimeout, (req, v) -> {
-                req.setMemberTimeout(v);
-            }));
-        builder.<Integer>withRequestField("client_timeout",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListListenersRequest::getClientTimeout, (req, v) -> {
-                req.setClientTimeout(v);
-            }));
-        builder.<Integer>withRequestField("keepalive_timeout",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListListenersRequest::getKeepaliveTimeout, (req, v) -> {
-                req.setKeepaliveTimeout(v);
-            }));
         builder.<String>withRequestField("tls_container_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListListenersRequest::getTlsContainerId, (req, v) -> {
                 req.setTlsContainerId(v);
+            }));
+        builder.<Boolean>withRequestField("http2_enable",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListListenersRequest::getHttp2Enable, (req, v) -> {
+                req.setHttp2Enable(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListListenersRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
             }));
 
         // response

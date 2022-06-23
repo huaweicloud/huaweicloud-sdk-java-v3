@@ -34,7 +34,7 @@ public class BatchAddOrDeleteTagOnClusterReq {
     }
 
     /**
-     * 操作类型。 说明：通过该属性标识当前所需的操作类型。 - create：批量添加标签。 - delete：批量删除标签。
+     * 操作类型。通过该属性标识当前所需的操作类型。  - create：批量添加标签。 - delete：批量删除标签。
      * @return action
      */
     public String getAction() {

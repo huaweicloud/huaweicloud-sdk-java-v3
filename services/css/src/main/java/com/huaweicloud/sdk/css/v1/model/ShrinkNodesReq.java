@@ -40,7 +40,7 @@ public class ShrinkNodesReq {
     }
 
     /**
-     * 需要下线的节点ID。
+     * 需要缩容的节点ID。  通过[查询集群详情](ShowClusterDetail.xml)获取instances中的id属性。
      * @return shrinkNodes
      */
     public List<String> getShrinkNodes() {

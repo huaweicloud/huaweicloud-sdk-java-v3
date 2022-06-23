@@ -84,6 +84,78 @@ public class FunctionGraphClient {
     }
 
     /**
+     * 删除指定函数的所有触发器。
+     *
+     * 删除指定函数所有触发器设置。
+     * 
+     * 在提供函数版本且非latest的情况下，删除对应函数版本的触发器。
+     * 在提供函数别名的情况下，删除对应函数别名的触发器。
+     * 在不提供函数版本（也不提供别名）或版本为latest的情况下，删除该函数所有的触发器（包括所有版本和别名）。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param BatchDeleteFunctionTriggersRequest 请求对象
+     * @return BatchDeleteFunctionTriggersResponse
+     */
+    public BatchDeleteFunctionTriggersResponse batchDeleteFunctionTriggers(BatchDeleteFunctionTriggersRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.batchDeleteFunctionTriggers);
+    }
+
+    /**
+     * 删除指定函数的所有触发器。
+     *
+     * 删除指定函数所有触发器设置。
+     * 
+     * 在提供函数版本且非latest的情况下，删除对应函数版本的触发器。
+     * 在提供函数别名的情况下，删除对应函数别名的触发器。
+     * 在不提供函数版本（也不提供别名）或版本为latest的情况下，删除该函数所有的触发器（包括所有版本和别名）。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param BatchDeleteFunctionTriggersRequest 请求对象
+     * @return SyncInvoker<BatchDeleteFunctionTriggersRequest, BatchDeleteFunctionTriggersResponse>
+     */
+    public SyncInvoker<BatchDeleteFunctionTriggersRequest, BatchDeleteFunctionTriggersResponse> batchDeleteFunctionTriggersInvoker(
+        BatchDeleteFunctionTriggersRequest request) {
+        return new SyncInvoker<BatchDeleteFunctionTriggersRequest, BatchDeleteFunctionTriggersResponse>(request,
+            FunctionGraphMeta.batchDeleteFunctionTriggers, hcClient);
+    }
+
+    /**
+     * 删除工作流列表
+     *
+     * 删除工作流列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param BatchDeleteWorkflowsRequest 请求对象
+     * @return BatchDeleteWorkflowsResponse
+     */
+    public BatchDeleteWorkflowsResponse batchDeleteWorkflows(BatchDeleteWorkflowsRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.batchDeleteWorkflows);
+    }
+
+    /**
+     * 删除工作流列表
+     *
+     * 删除工作流列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param BatchDeleteWorkflowsRequest 请求对象
+     * @return SyncInvoker<BatchDeleteWorkflowsRequest, BatchDeleteWorkflowsResponse>
+     */
+    public SyncInvoker<BatchDeleteWorkflowsRequest, BatchDeleteWorkflowsResponse> batchDeleteWorkflowsInvoker(
+        BatchDeleteWorkflowsRequest request) {
+        return new SyncInvoker<BatchDeleteWorkflowsRequest, BatchDeleteWorkflowsResponse>(request,
+            FunctionGraphMeta.batchDeleteWorkflows, hcClient);
+    }
+
+    /**
      * 停止函数异步调用请求
      *
      * 停止函数异步调用请求
@@ -211,6 +283,46 @@ public class FunctionGraphClient {
     }
 
     /**
+     * 创建触发器。
+     *
+     * 创建触发器。
+     * 
+     * - 可以创建的触发器类型包括TIMER、APIG、CTS、DDS、DMS、DIS、LTS、OBS、SMN、KAFKA。
+     * - DDS和KAFKA触发器创建时默认为DISABLED状态，其他触发器默认为ACTIVE状态。
+     * - TIMER、DDS、DMS、KAFKA、LTS触发器支持禁用，其他触发器不支持。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateFunctionTriggerRequest 请求对象
+     * @return CreateFunctionTriggerResponse
+     */
+    public CreateFunctionTriggerResponse createFunctionTrigger(CreateFunctionTriggerRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.createFunctionTrigger);
+    }
+
+    /**
+     * 创建触发器。
+     *
+     * 创建触发器。
+     * 
+     * - 可以创建的触发器类型包括TIMER、APIG、CTS、DDS、DMS、DIS、LTS、OBS、SMN、KAFKA。
+     * - DDS和KAFKA触发器创建时默认为DISABLED状态，其他触发器默认为ACTIVE状态。
+     * - TIMER、DDS、DMS、KAFKA、LTS触发器支持禁用，其他触发器不支持。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateFunctionTriggerRequest 请求对象
+     * @return SyncInvoker<CreateFunctionTriggerRequest, CreateFunctionTriggerResponse>
+     */
+    public SyncInvoker<CreateFunctionTriggerRequest, CreateFunctionTriggerResponse> createFunctionTriggerInvoker(
+        CreateFunctionTriggerRequest request) {
+        return new SyncInvoker<CreateFunctionTriggerRequest, CreateFunctionTriggerResponse>(request,
+            FunctionGraphMeta.createFunctionTrigger, hcClient);
+    }
+
+    /**
      * 发布函数版本。
      *
      * 发布函数版本。
@@ -272,6 +384,38 @@ public class FunctionGraphClient {
         CreateVersionAliasRequest request) {
         return new SyncInvoker<CreateVersionAliasRequest, CreateVersionAliasResponse>(request,
             FunctionGraphMeta.createVersionAlias, hcClient);
+    }
+
+    /**
+     * 创建工作流列表
+     *
+     * 创建工作流列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateWorkflowRequest 请求对象
+     * @return CreateWorkflowResponse
+     */
+    public CreateWorkflowResponse createWorkflow(CreateWorkflowRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.createWorkflow);
+    }
+
+    /**
+     * 创建工作流列表
+     *
+     * 创建工作流列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateWorkflowRequest 请求对象
+     * @return SyncInvoker<CreateWorkflowRequest, CreateWorkflowResponse>
+     */
+    public SyncInvoker<CreateWorkflowRequest, CreateWorkflowResponse> createWorkflowInvoker(
+        CreateWorkflowRequest request) {
+        return new SyncInvoker<CreateWorkflowRequest, CreateWorkflowResponse>(request, FunctionGraphMeta.createWorkflow,
+            hcClient);
     }
 
     /**
@@ -406,6 +550,38 @@ public class FunctionGraphClient {
         DeleteFunctionAsyncInvokeConfigRequest request) {
         return new SyncInvoker<DeleteFunctionAsyncInvokeConfigRequest, DeleteFunctionAsyncInvokeConfigResponse>(request,
             FunctionGraphMeta.deleteFunctionAsyncInvokeConfig, hcClient);
+    }
+
+    /**
+     * 删除触发器。
+     *
+     * 删除触发器。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteFunctionTriggerRequest 请求对象
+     * @return DeleteFunctionTriggerResponse
+     */
+    public DeleteFunctionTriggerResponse deleteFunctionTrigger(DeleteFunctionTriggerRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.deleteFunctionTrigger);
+    }
+
+    /**
+     * 删除触发器。
+     *
+     * 删除触发器。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteFunctionTriggerRequest 请求对象
+     * @return SyncInvoker<DeleteFunctionTriggerRequest, DeleteFunctionTriggerResponse>
+     */
+    public SyncInvoker<DeleteFunctionTriggerRequest, DeleteFunctionTriggerResponse> deleteFunctionTriggerInvoker(
+        DeleteFunctionTriggerRequest request) {
+        return new SyncInvoker<DeleteFunctionTriggerRequest, DeleteFunctionTriggerResponse>(request,
+            FunctionGraphMeta.deleteFunctionTrigger, hcClient);
     }
 
     /**
@@ -728,6 +904,38 @@ public class FunctionGraphClient {
     }
 
     /**
+     * 获取指定函数的所有触发器。
+     *
+     * 获取指定函数的所有触发器设置。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListFunctionTriggersRequest 请求对象
+     * @return ListFunctionTriggersResponse
+     */
+    public ListFunctionTriggersResponse listFunctionTriggers(ListFunctionTriggersRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.listFunctionTriggers);
+    }
+
+    /**
+     * 获取指定函数的所有触发器。
+     *
+     * 获取指定函数的所有触发器设置。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListFunctionTriggersRequest 请求对象
+     * @return SyncInvoker<ListFunctionTriggersRequest, ListFunctionTriggersResponse>
+     */
+    public SyncInvoker<ListFunctionTriggersRequest, ListFunctionTriggersResponse> listFunctionTriggersInvoker(
+        ListFunctionTriggersRequest request) {
+        return new SyncInvoker<ListFunctionTriggersRequest, ListFunctionTriggersResponse>(request,
+            FunctionGraphMeta.listFunctionTriggers, hcClient);
+    }
+
+    /**
      * 获取指定函数的版本列表。
      *
      * 获取指定函数的版本列表。
@@ -891,6 +1099,100 @@ public class FunctionGraphClient {
     }
 
     /**
+     * 获取指定函数流执行实例列表
+     *
+     * 获取指定函数流执行实例列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListWorkflowExecutionsRequest 请求对象
+     * @return ListWorkflowExecutionsResponse
+     */
+    public ListWorkflowExecutionsResponse listWorkflowExecutions(ListWorkflowExecutionsRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.listWorkflowExecutions);
+    }
+
+    /**
+     * 获取指定函数流执行实例列表
+     *
+     * 获取指定函数流执行实例列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListWorkflowExecutionsRequest 请求对象
+     * @return SyncInvoker<ListWorkflowExecutionsRequest, ListWorkflowExecutionsResponse>
+     */
+    public SyncInvoker<ListWorkflowExecutionsRequest, ListWorkflowExecutionsResponse> listWorkflowExecutionsInvoker(
+        ListWorkflowExecutionsRequest request) {
+        return new SyncInvoker<ListWorkflowExecutionsRequest, ListWorkflowExecutionsResponse>(request,
+            FunctionGraphMeta.listWorkflowExecutions, hcClient);
+    }
+
+    /**
+     * 查询工作流列表
+     *
+     * 查询工作流列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListWorkflowsRequest 请求对象
+     * @return ListWorkflowsResponse
+     */
+    public ListWorkflowsResponse listWorkflows(ListWorkflowsRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.listWorkflows);
+    }
+
+    /**
+     * 查询工作流列表
+     *
+     * 查询工作流列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListWorkflowsRequest 请求对象
+     * @return SyncInvoker<ListWorkflowsRequest, ListWorkflowsResponse>
+     */
+    public SyncInvoker<ListWorkflowsRequest, ListWorkflowsResponse> listWorkflowsInvoker(ListWorkflowsRequest request) {
+        return new SyncInvoker<ListWorkflowsRequest, ListWorkflowsResponse>(request, FunctionGraphMeta.listWorkflows,
+            hcClient);
+    }
+
+    /**
+     * 重试工作流
+     *
+     * 重试工作流
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param RetryWorkFlowRequest 请求对象
+     * @return RetryWorkFlowResponse
+     */
+    public RetryWorkFlowResponse retryWorkFlow(RetryWorkFlowRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.retryWorkFlow);
+    }
+
+    /**
+     * 重试工作流
+     *
+     * 重试工作流
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param RetryWorkFlowRequest 请求对象
+     * @return SyncInvoker<RetryWorkFlowRequest, RetryWorkFlowResponse>
+     */
+    public SyncInvoker<RetryWorkFlowRequest, RetryWorkFlowResponse> retryWorkFlowInvoker(RetryWorkFlowRequest request) {
+        return new SyncInvoker<RetryWorkFlowRequest, RetryWorkFlowResponse>(request, FunctionGraphMeta.retryWorkFlow,
+            hcClient);
+    }
+
+    /**
      * 获取指定依赖包
      *
      * 获取指定依赖包。
@@ -1050,6 +1352,38 @@ public class FunctionGraphClient {
     }
 
     /**
+     * 获取指定触发器的信息。
+     *
+     * 获取特定触发器的信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowFunctionTriggerRequest 请求对象
+     * @return ShowFunctionTriggerResponse
+     */
+    public ShowFunctionTriggerResponse showFunctionTrigger(ShowFunctionTriggerRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.showFunctionTrigger);
+    }
+
+    /**
+     * 获取指定触发器的信息。
+     *
+     * 获取特定触发器的信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowFunctionTriggerRequest 请求对象
+     * @return SyncInvoker<ShowFunctionTriggerRequest, ShowFunctionTriggerResponse>
+     */
+    public SyncInvoker<ShowFunctionTriggerRequest, ShowFunctionTriggerResponse> showFunctionTriggerInvoker(
+        ShowFunctionTriggerRequest request) {
+        return new SyncInvoker<ShowFunctionTriggerRequest, ShowFunctionTriggerResponse>(request,
+            FunctionGraphMeta.showFunctionTrigger, hcClient);
+    }
+
+    /**
      * 获取指定函数的lts日志组日志流配置。
      *
      * 获取指定函数的lts日志组日志流配置。
@@ -1079,6 +1413,38 @@ public class FunctionGraphClient {
         ShowLtsLogDetailsRequest request) {
         return new SyncInvoker<ShowLtsLogDetailsRequest, ShowLtsLogDetailsResponse>(request,
             FunctionGraphMeta.showLtsLogDetails, hcClient);
+    }
+
+    /**
+     * 获取函数流指标
+     *
+     * 获取函数流指标
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowTenantMetricRequest 请求对象
+     * @return ShowTenantMetricResponse
+     */
+    public ShowTenantMetricResponse showTenantMetric(ShowTenantMetricRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.showTenantMetric);
+    }
+
+    /**
+     * 获取函数流指标
+     *
+     * 获取函数流指标
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowTenantMetricRequest 请求对象
+     * @return SyncInvoker<ShowTenantMetricRequest, ShowTenantMetricResponse>
+     */
+    public SyncInvoker<ShowTenantMetricRequest, ShowTenantMetricResponse> showTenantMetricInvoker(
+        ShowTenantMetricRequest request) {
+        return new SyncInvoker<ShowTenantMetricRequest, ShowTenantMetricResponse>(request,
+            FunctionGraphMeta.showTenantMetric, hcClient);
     }
 
     /**
@@ -1142,6 +1508,196 @@ public class FunctionGraphClient {
         ShowVersionAliasRequest request) {
         return new SyncInvoker<ShowVersionAliasRequest, ShowVersionAliasResponse>(request,
             FunctionGraphMeta.showVersionAlias, hcClient);
+    }
+
+    /**
+     * 获取指定函数流实例
+     *
+     * 获取指定函数流实例
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowWorkFlowRequest 请求对象
+     * @return ShowWorkFlowResponse
+     */
+    public ShowWorkFlowResponse showWorkFlow(ShowWorkFlowRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.showWorkFlow);
+    }
+
+    /**
+     * 获取指定函数流实例
+     *
+     * 获取指定函数流实例
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowWorkFlowRequest 请求对象
+     * @return SyncInvoker<ShowWorkFlowRequest, ShowWorkFlowResponse>
+     */
+    public SyncInvoker<ShowWorkFlowRequest, ShowWorkFlowResponse> showWorkFlowInvoker(ShowWorkFlowRequest request) {
+        return new SyncInvoker<ShowWorkFlowRequest, ShowWorkFlowResponse>(request, FunctionGraphMeta.showWorkFlow,
+            hcClient);
+    }
+
+    /**
+     * 获取指定工作流指标
+     *
+     * 获取指定工作流指标
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowWorkFlowMetricRequest 请求对象
+     * @return ShowWorkFlowMetricResponse
+     */
+    public ShowWorkFlowMetricResponse showWorkFlowMetric(ShowWorkFlowMetricRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.showWorkFlowMetric);
+    }
+
+    /**
+     * 获取指定工作流指标
+     *
+     * 获取指定工作流指标
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowWorkFlowMetricRequest 请求对象
+     * @return SyncInvoker<ShowWorkFlowMetricRequest, ShowWorkFlowMetricResponse>
+     */
+    public SyncInvoker<ShowWorkFlowMetricRequest, ShowWorkFlowMetricResponse> showWorkFlowMetricInvoker(
+        ShowWorkFlowMetricRequest request) {
+        return new SyncInvoker<ShowWorkFlowMetricRequest, ShowWorkFlowMetricResponse>(request,
+            FunctionGraphMeta.showWorkFlowMetric, hcClient);
+    }
+
+    /**
+     * 获取指定函数流执行实例
+     *
+     * 获取指定函数流执行实例。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowWorkflowExecutionRequest 请求对象
+     * @return ShowWorkflowExecutionResponse
+     */
+    public ShowWorkflowExecutionResponse showWorkflowExecution(ShowWorkflowExecutionRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.showWorkflowExecution);
+    }
+
+    /**
+     * 获取指定函数流执行实例
+     *
+     * 获取指定函数流执行实例。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowWorkflowExecutionRequest 请求对象
+     * @return SyncInvoker<ShowWorkflowExecutionRequest, ShowWorkflowExecutionResponse>
+     */
+    public SyncInvoker<ShowWorkflowExecutionRequest, ShowWorkflowExecutionResponse> showWorkflowExecutionInvoker(
+        ShowWorkflowExecutionRequest request) {
+        return new SyncInvoker<ShowWorkflowExecutionRequest, ShowWorkflowExecutionResponse>(request,
+            FunctionGraphMeta.showWorkflowExecution, hcClient);
+    }
+
+    /**
+     * 同步执行函数流
+     *
+     * 同步执行函数流
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param StartSyncWorkflowExecutionRequest 请求对象
+     * @return StartSyncWorkflowExecutionResponse
+     */
+    public StartSyncWorkflowExecutionResponse startSyncWorkflowExecution(StartSyncWorkflowExecutionRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.startSyncWorkflowExecution);
+    }
+
+    /**
+     * 同步执行函数流
+     *
+     * 同步执行函数流
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param StartSyncWorkflowExecutionRequest 请求对象
+     * @return SyncInvoker<StartSyncWorkflowExecutionRequest, StartSyncWorkflowExecutionResponse>
+     */
+    public SyncInvoker<StartSyncWorkflowExecutionRequest, StartSyncWorkflowExecutionResponse> startSyncWorkflowExecutionInvoker(
+        StartSyncWorkflowExecutionRequest request) {
+        return new SyncInvoker<StartSyncWorkflowExecutionRequest, StartSyncWorkflowExecutionResponse>(request,
+            FunctionGraphMeta.startSyncWorkflowExecution, hcClient);
+    }
+
+    /**
+     * 开始执行函数流
+     *
+     * 开始执行函数流
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param StartWorkflowExecutionRequest 请求对象
+     * @return StartWorkflowExecutionResponse
+     */
+    public StartWorkflowExecutionResponse startWorkflowExecution(StartWorkflowExecutionRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.startWorkflowExecution);
+    }
+
+    /**
+     * 开始执行函数流
+     *
+     * 开始执行函数流
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param StartWorkflowExecutionRequest 请求对象
+     * @return SyncInvoker<StartWorkflowExecutionRequest, StartWorkflowExecutionResponse>
+     */
+    public SyncInvoker<StartWorkflowExecutionRequest, StartWorkflowExecutionResponse> startWorkflowExecutionInvoker(
+        StartWorkflowExecutionRequest request) {
+        return new SyncInvoker<StartWorkflowExecutionRequest, StartWorkflowExecutionResponse>(request,
+            FunctionGraphMeta.startWorkflowExecution, hcClient);
+    }
+
+    /**
+     * 停止工作流
+     *
+     * 停止工作流
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param StopWorkFlowRequest 请求对象
+     * @return StopWorkFlowResponse
+     */
+    public StopWorkFlowResponse stopWorkFlow(StopWorkFlowRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.stopWorkFlow);
+    }
+
+    /**
+     * 停止工作流
+     *
+     * 停止工作流
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param StopWorkFlowRequest 请求对象
+     * @return SyncInvoker<StopWorkFlowRequest, StopWorkFlowResponse>
+     */
+    public SyncInvoker<StopWorkFlowRequest, StopWorkFlowResponse> stopWorkFlowInvoker(StopWorkFlowRequest request) {
+        return new SyncInvoker<StopWorkFlowRequest, StopWorkFlowResponse>(request, FunctionGraphMeta.stopWorkFlow,
+            hcClient);
     }
 
     /**
@@ -1369,214 +1925,6 @@ public class FunctionGraphClient {
     }
 
     /**
-     * 修改函数版本别名信息。
-     *
-     * 修改函数版本别名信息。
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param UpdateVersionAliasRequest 请求对象
-     * @return UpdateVersionAliasResponse
-     */
-    public UpdateVersionAliasResponse updateVersionAlias(UpdateVersionAliasRequest request) {
-        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.updateVersionAlias);
-    }
-
-    /**
-     * 修改函数版本别名信息。
-     *
-     * 修改函数版本别名信息。
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param UpdateVersionAliasRequest 请求对象
-     * @return SyncInvoker<UpdateVersionAliasRequest, UpdateVersionAliasResponse>
-     */
-    public SyncInvoker<UpdateVersionAliasRequest, UpdateVersionAliasResponse> updateVersionAliasInvoker(
-        UpdateVersionAliasRequest request) {
-        return new SyncInvoker<UpdateVersionAliasRequest, UpdateVersionAliasResponse>(request,
-            FunctionGraphMeta.updateVersionAlias, hcClient);
-    }
-
-    /**
-     * 删除指定函数的所有触发器。
-     *
-     * 删除指定函数所有触发器设置。
-     * 
-     * 在提供函数版本且非latest的情况下，删除对应函数版本的触发器。
-     * 在提供函数别名的情况下，删除对应函数别名的触发器。
-     * 在不提供函数版本（也不提供别名）或版本为latest的情况下，删除该函数所有的触发器（包括所有版本和别名）。
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param BatchDeleteFunctionTriggersRequest 请求对象
-     * @return BatchDeleteFunctionTriggersResponse
-     */
-    public BatchDeleteFunctionTriggersResponse batchDeleteFunctionTriggers(BatchDeleteFunctionTriggersRequest request) {
-        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.batchDeleteFunctionTriggers);
-    }
-
-    /**
-     * 删除指定函数的所有触发器。
-     *
-     * 删除指定函数所有触发器设置。
-     * 
-     * 在提供函数版本且非latest的情况下，删除对应函数版本的触发器。
-     * 在提供函数别名的情况下，删除对应函数别名的触发器。
-     * 在不提供函数版本（也不提供别名）或版本为latest的情况下，删除该函数所有的触发器（包括所有版本和别名）。
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param BatchDeleteFunctionTriggersRequest 请求对象
-     * @return SyncInvoker<BatchDeleteFunctionTriggersRequest, BatchDeleteFunctionTriggersResponse>
-     */
-    public SyncInvoker<BatchDeleteFunctionTriggersRequest, BatchDeleteFunctionTriggersResponse> batchDeleteFunctionTriggersInvoker(
-        BatchDeleteFunctionTriggersRequest request) {
-        return new SyncInvoker<BatchDeleteFunctionTriggersRequest, BatchDeleteFunctionTriggersResponse>(request,
-            FunctionGraphMeta.batchDeleteFunctionTriggers, hcClient);
-    }
-
-    /**
-     * 创建触发器。
-     *
-     * 创建触发器。
-     * 
-     * - 可以创建的触发器类型包括TIMER、APIG、CTS、DDS、DMS、DIS、LTS、OBS、SMN、KAFKA。
-     * - DDS和KAFKA触发器创建时默认为DISABLED状态，其他触发器默认为ACTIVE状态。
-     * - TIMER、DDS、DMS、KAFKA、LTS触发器支持禁用，其他触发器不支持。
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param CreateFunctionTriggerRequest 请求对象
-     * @return CreateFunctionTriggerResponse
-     */
-    public CreateFunctionTriggerResponse createFunctionTrigger(CreateFunctionTriggerRequest request) {
-        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.createFunctionTrigger);
-    }
-
-    /**
-     * 创建触发器。
-     *
-     * 创建触发器。
-     * 
-     * - 可以创建的触发器类型包括TIMER、APIG、CTS、DDS、DMS、DIS、LTS、OBS、SMN、KAFKA。
-     * - DDS和KAFKA触发器创建时默认为DISABLED状态，其他触发器默认为ACTIVE状态。
-     * - TIMER、DDS、DMS、KAFKA、LTS触发器支持禁用，其他触发器不支持。
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param CreateFunctionTriggerRequest 请求对象
-     * @return SyncInvoker<CreateFunctionTriggerRequest, CreateFunctionTriggerResponse>
-     */
-    public SyncInvoker<CreateFunctionTriggerRequest, CreateFunctionTriggerResponse> createFunctionTriggerInvoker(
-        CreateFunctionTriggerRequest request) {
-        return new SyncInvoker<CreateFunctionTriggerRequest, CreateFunctionTriggerResponse>(request,
-            FunctionGraphMeta.createFunctionTrigger, hcClient);
-    }
-
-    /**
-     * 删除触发器。
-     *
-     * 删除触发器。
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param DeleteFunctionTriggerRequest 请求对象
-     * @return DeleteFunctionTriggerResponse
-     */
-    public DeleteFunctionTriggerResponse deleteFunctionTrigger(DeleteFunctionTriggerRequest request) {
-        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.deleteFunctionTrigger);
-    }
-
-    /**
-     * 删除触发器。
-     *
-     * 删除触发器。
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param DeleteFunctionTriggerRequest 请求对象
-     * @return SyncInvoker<DeleteFunctionTriggerRequest, DeleteFunctionTriggerResponse>
-     */
-    public SyncInvoker<DeleteFunctionTriggerRequest, DeleteFunctionTriggerResponse> deleteFunctionTriggerInvoker(
-        DeleteFunctionTriggerRequest request) {
-        return new SyncInvoker<DeleteFunctionTriggerRequest, DeleteFunctionTriggerResponse>(request,
-            FunctionGraphMeta.deleteFunctionTrigger, hcClient);
-    }
-
-    /**
-     * 获取指定函数的所有触发器。
-     *
-     * 获取指定函数的所有触发器设置。
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param ListFunctionTriggersRequest 请求对象
-     * @return ListFunctionTriggersResponse
-     */
-    public ListFunctionTriggersResponse listFunctionTriggers(ListFunctionTriggersRequest request) {
-        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.listFunctionTriggers);
-    }
-
-    /**
-     * 获取指定函数的所有触发器。
-     *
-     * 获取指定函数的所有触发器设置。
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param ListFunctionTriggersRequest 请求对象
-     * @return SyncInvoker<ListFunctionTriggersRequest, ListFunctionTriggersResponse>
-     */
-    public SyncInvoker<ListFunctionTriggersRequest, ListFunctionTriggersResponse> listFunctionTriggersInvoker(
-        ListFunctionTriggersRequest request) {
-        return new SyncInvoker<ListFunctionTriggersRequest, ListFunctionTriggersResponse>(request,
-            FunctionGraphMeta.listFunctionTriggers, hcClient);
-    }
-
-    /**
-     * 获取指定触发器的信息。
-     *
-     * 获取特定触发器的信息。
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param ShowFunctionTriggerRequest 请求对象
-     * @return ShowFunctionTriggerResponse
-     */
-    public ShowFunctionTriggerResponse showFunctionTrigger(ShowFunctionTriggerRequest request) {
-        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.showFunctionTrigger);
-    }
-
-    /**
-     * 获取指定触发器的信息。
-     *
-     * 获取特定触发器的信息。
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param ShowFunctionTriggerRequest 请求对象
-     * @return SyncInvoker<ShowFunctionTriggerRequest, ShowFunctionTriggerResponse>
-     */
-    public SyncInvoker<ShowFunctionTriggerRequest, ShowFunctionTriggerResponse> showFunctionTriggerInvoker(
-        ShowFunctionTriggerRequest request) {
-        return new SyncInvoker<ShowFunctionTriggerRequest, ShowFunctionTriggerResponse>(request,
-            FunctionGraphMeta.showFunctionTrigger, hcClient);
-    }
-
-    /**
      * 更新触发器
      *
      * 更新触发器
@@ -1608,383 +1956,35 @@ public class FunctionGraphClient {
     }
 
     /**
-     * 删除工作流列表
+     * 修改函数版本别名信息。
      *
-     * 删除工作流列表
+     * 修改函数版本别名信息。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
      *
-     * @param BatchDeleteWorkflowsRequest 请求对象
-     * @return BatchDeleteWorkflowsResponse
+     * @param UpdateVersionAliasRequest 请求对象
+     * @return UpdateVersionAliasResponse
      */
-    public BatchDeleteWorkflowsResponse batchDeleteWorkflows(BatchDeleteWorkflowsRequest request) {
-        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.batchDeleteWorkflows);
+    public UpdateVersionAliasResponse updateVersionAlias(UpdateVersionAliasRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.updateVersionAlias);
     }
 
     /**
-     * 删除工作流列表
+     * 修改函数版本别名信息。
      *
-     * 删除工作流列表
+     * 修改函数版本别名信息。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
      *
-     * @param BatchDeleteWorkflowsRequest 请求对象
-     * @return SyncInvoker<BatchDeleteWorkflowsRequest, BatchDeleteWorkflowsResponse>
+     * @param UpdateVersionAliasRequest 请求对象
+     * @return SyncInvoker<UpdateVersionAliasRequest, UpdateVersionAliasResponse>
      */
-    public SyncInvoker<BatchDeleteWorkflowsRequest, BatchDeleteWorkflowsResponse> batchDeleteWorkflowsInvoker(
-        BatchDeleteWorkflowsRequest request) {
-        return new SyncInvoker<BatchDeleteWorkflowsRequest, BatchDeleteWorkflowsResponse>(request,
-            FunctionGraphMeta.batchDeleteWorkflows, hcClient);
-    }
-
-    /**
-     * 创建工作流列表
-     *
-     * 创建工作流列表
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param CreateWorkflowRequest 请求对象
-     * @return CreateWorkflowResponse
-     */
-    public CreateWorkflowResponse createWorkflow(CreateWorkflowRequest request) {
-        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.createWorkflow);
-    }
-
-    /**
-     * 创建工作流列表
-     *
-     * 创建工作流列表
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param CreateWorkflowRequest 请求对象
-     * @return SyncInvoker<CreateWorkflowRequest, CreateWorkflowResponse>
-     */
-    public SyncInvoker<CreateWorkflowRequest, CreateWorkflowResponse> createWorkflowInvoker(
-        CreateWorkflowRequest request) {
-        return new SyncInvoker<CreateWorkflowRequest, CreateWorkflowResponse>(request, FunctionGraphMeta.createWorkflow,
-            hcClient);
-    }
-
-    /**
-     * 获取指定函数流执行实例列表
-     *
-     * 获取指定函数流执行实例列表
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param ListWorkflowExecutionsRequest 请求对象
-     * @return ListWorkflowExecutionsResponse
-     */
-    public ListWorkflowExecutionsResponse listWorkflowExecutions(ListWorkflowExecutionsRequest request) {
-        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.listWorkflowExecutions);
-    }
-
-    /**
-     * 获取指定函数流执行实例列表
-     *
-     * 获取指定函数流执行实例列表
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param ListWorkflowExecutionsRequest 请求对象
-     * @return SyncInvoker<ListWorkflowExecutionsRequest, ListWorkflowExecutionsResponse>
-     */
-    public SyncInvoker<ListWorkflowExecutionsRequest, ListWorkflowExecutionsResponse> listWorkflowExecutionsInvoker(
-        ListWorkflowExecutionsRequest request) {
-        return new SyncInvoker<ListWorkflowExecutionsRequest, ListWorkflowExecutionsResponse>(request,
-            FunctionGraphMeta.listWorkflowExecutions, hcClient);
-    }
-
-    /**
-     * 查询工作流列表
-     *
-     * 查询工作流列表
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param ListWorkflowsRequest 请求对象
-     * @return ListWorkflowsResponse
-     */
-    public ListWorkflowsResponse listWorkflows(ListWorkflowsRequest request) {
-        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.listWorkflows);
-    }
-
-    /**
-     * 查询工作流列表
-     *
-     * 查询工作流列表
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param ListWorkflowsRequest 请求对象
-     * @return SyncInvoker<ListWorkflowsRequest, ListWorkflowsResponse>
-     */
-    public SyncInvoker<ListWorkflowsRequest, ListWorkflowsResponse> listWorkflowsInvoker(ListWorkflowsRequest request) {
-        return new SyncInvoker<ListWorkflowsRequest, ListWorkflowsResponse>(request, FunctionGraphMeta.listWorkflows,
-            hcClient);
-    }
-
-    /**
-     * 重试工作流
-     *
-     * 重试工作流
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param RetryWorkFlowRequest 请求对象
-     * @return RetryWorkFlowResponse
-     */
-    public RetryWorkFlowResponse retryWorkFlow(RetryWorkFlowRequest request) {
-        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.retryWorkFlow);
-    }
-
-    /**
-     * 重试工作流
-     *
-     * 重试工作流
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param RetryWorkFlowRequest 请求对象
-     * @return SyncInvoker<RetryWorkFlowRequest, RetryWorkFlowResponse>
-     */
-    public SyncInvoker<RetryWorkFlowRequest, RetryWorkFlowResponse> retryWorkFlowInvoker(RetryWorkFlowRequest request) {
-        return new SyncInvoker<RetryWorkFlowRequest, RetryWorkFlowResponse>(request, FunctionGraphMeta.retryWorkFlow,
-            hcClient);
-    }
-
-    /**
-     * 获取函数流指标
-     *
-     * 获取函数流指标
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param ShowTenantMetricRequest 请求对象
-     * @return ShowTenantMetricResponse
-     */
-    public ShowTenantMetricResponse showTenantMetric(ShowTenantMetricRequest request) {
-        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.showTenantMetric);
-    }
-
-    /**
-     * 获取函数流指标
-     *
-     * 获取函数流指标
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param ShowTenantMetricRequest 请求对象
-     * @return SyncInvoker<ShowTenantMetricRequest, ShowTenantMetricResponse>
-     */
-    public SyncInvoker<ShowTenantMetricRequest, ShowTenantMetricResponse> showTenantMetricInvoker(
-        ShowTenantMetricRequest request) {
-        return new SyncInvoker<ShowTenantMetricRequest, ShowTenantMetricResponse>(request,
-            FunctionGraphMeta.showTenantMetric, hcClient);
-    }
-
-    /**
-     * 获取指定函数流实例
-     *
-     * 获取指定函数流实例
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param ShowWorkFlowRequest 请求对象
-     * @return ShowWorkFlowResponse
-     */
-    public ShowWorkFlowResponse showWorkFlow(ShowWorkFlowRequest request) {
-        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.showWorkFlow);
-    }
-
-    /**
-     * 获取指定函数流实例
-     *
-     * 获取指定函数流实例
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param ShowWorkFlowRequest 请求对象
-     * @return SyncInvoker<ShowWorkFlowRequest, ShowWorkFlowResponse>
-     */
-    public SyncInvoker<ShowWorkFlowRequest, ShowWorkFlowResponse> showWorkFlowInvoker(ShowWorkFlowRequest request) {
-        return new SyncInvoker<ShowWorkFlowRequest, ShowWorkFlowResponse>(request, FunctionGraphMeta.showWorkFlow,
-            hcClient);
-    }
-
-    /**
-     * 获取指定工作流指标
-     *
-     * 获取指定工作流指标
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param ShowWorkFlowMetricRequest 请求对象
-     * @return ShowWorkFlowMetricResponse
-     */
-    public ShowWorkFlowMetricResponse showWorkFlowMetric(ShowWorkFlowMetricRequest request) {
-        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.showWorkFlowMetric);
-    }
-
-    /**
-     * 获取指定工作流指标
-     *
-     * 获取指定工作流指标
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param ShowWorkFlowMetricRequest 请求对象
-     * @return SyncInvoker<ShowWorkFlowMetricRequest, ShowWorkFlowMetricResponse>
-     */
-    public SyncInvoker<ShowWorkFlowMetricRequest, ShowWorkFlowMetricResponse> showWorkFlowMetricInvoker(
-        ShowWorkFlowMetricRequest request) {
-        return new SyncInvoker<ShowWorkFlowMetricRequest, ShowWorkFlowMetricResponse>(request,
-            FunctionGraphMeta.showWorkFlowMetric, hcClient);
-    }
-
-    /**
-     * 获取指定函数流执行实例
-     *
-     * 获取指定函数流执行实例。
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param ShowWorkflowExecutionRequest 请求对象
-     * @return ShowWorkflowExecutionResponse
-     */
-    public ShowWorkflowExecutionResponse showWorkflowExecution(ShowWorkflowExecutionRequest request) {
-        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.showWorkflowExecution);
-    }
-
-    /**
-     * 获取指定函数流执行实例
-     *
-     * 获取指定函数流执行实例。
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param ShowWorkflowExecutionRequest 请求对象
-     * @return SyncInvoker<ShowWorkflowExecutionRequest, ShowWorkflowExecutionResponse>
-     */
-    public SyncInvoker<ShowWorkflowExecutionRequest, ShowWorkflowExecutionResponse> showWorkflowExecutionInvoker(
-        ShowWorkflowExecutionRequest request) {
-        return new SyncInvoker<ShowWorkflowExecutionRequest, ShowWorkflowExecutionResponse>(request,
-            FunctionGraphMeta.showWorkflowExecution, hcClient);
-    }
-
-    /**
-     * 同步执行函数流
-     *
-     * 同步执行函数流
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param StartSyncWorkflowExecutionRequest 请求对象
-     * @return StartSyncWorkflowExecutionResponse
-     */
-    public StartSyncWorkflowExecutionResponse startSyncWorkflowExecution(StartSyncWorkflowExecutionRequest request) {
-        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.startSyncWorkflowExecution);
-    }
-
-    /**
-     * 同步执行函数流
-     *
-     * 同步执行函数流
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param StartSyncWorkflowExecutionRequest 请求对象
-     * @return SyncInvoker<StartSyncWorkflowExecutionRequest, StartSyncWorkflowExecutionResponse>
-     */
-    public SyncInvoker<StartSyncWorkflowExecutionRequest, StartSyncWorkflowExecutionResponse> startSyncWorkflowExecutionInvoker(
-        StartSyncWorkflowExecutionRequest request) {
-        return new SyncInvoker<StartSyncWorkflowExecutionRequest, StartSyncWorkflowExecutionResponse>(request,
-            FunctionGraphMeta.startSyncWorkflowExecution, hcClient);
-    }
-
-    /**
-     * 开始执行函数流
-     *
-     * 开始执行函数流
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param StartWorkflowExecutionRequest 请求对象
-     * @return StartWorkflowExecutionResponse
-     */
-    public StartWorkflowExecutionResponse startWorkflowExecution(StartWorkflowExecutionRequest request) {
-        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.startWorkflowExecution);
-    }
-
-    /**
-     * 开始执行函数流
-     *
-     * 开始执行函数流
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param StartWorkflowExecutionRequest 请求对象
-     * @return SyncInvoker<StartWorkflowExecutionRequest, StartWorkflowExecutionResponse>
-     */
-    public SyncInvoker<StartWorkflowExecutionRequest, StartWorkflowExecutionResponse> startWorkflowExecutionInvoker(
-        StartWorkflowExecutionRequest request) {
-        return new SyncInvoker<StartWorkflowExecutionRequest, StartWorkflowExecutionResponse>(request,
-            FunctionGraphMeta.startWorkflowExecution, hcClient);
-    }
-
-    /**
-     * 停止工作流
-     *
-     * 停止工作流
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param StopWorkFlowRequest 请求对象
-     * @return StopWorkFlowResponse
-     */
-    public StopWorkFlowResponse stopWorkFlow(StopWorkFlowRequest request) {
-        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.stopWorkFlow);
-    }
-
-    /**
-     * 停止工作流
-     *
-     * 停止工作流
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param StopWorkFlowRequest 请求对象
-     * @return SyncInvoker<StopWorkFlowRequest, StopWorkFlowResponse>
-     */
-    public SyncInvoker<StopWorkFlowRequest, StopWorkFlowResponse> stopWorkFlowInvoker(StopWorkFlowRequest request) {
-        return new SyncInvoker<StopWorkFlowRequest, StopWorkFlowResponse>(request, FunctionGraphMeta.stopWorkFlow,
-            hcClient);
+    public SyncInvoker<UpdateVersionAliasRequest, UpdateVersionAliasResponse> updateVersionAliasInvoker(
+        UpdateVersionAliasRequest request) {
+        return new SyncInvoker<UpdateVersionAliasRequest, UpdateVersionAliasResponse>(request,
+            FunctionGraphMeta.updateVersionAlias, hcClient);
     }
 
     /**

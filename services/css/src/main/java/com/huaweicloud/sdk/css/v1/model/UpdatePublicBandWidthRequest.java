@@ -27,7 +27,7 @@ public class UpdatePublicBandWidthRequest {
     }
 
     /**
-     * 指定查询集群ID。
+     * 指定修改公网访问带宽集群ID。
      * @return clusterId
      */
     public String getClusterId() {

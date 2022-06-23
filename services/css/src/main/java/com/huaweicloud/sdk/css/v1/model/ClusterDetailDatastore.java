@@ -43,7 +43,7 @@ public class ClusterDetailDatastore {
     }
 
     /**
-     * 引擎版本号。当前引擎版本为5.5.1、6.2.3、6.5.4、7.1.1、7.6.2、7.9.3。
+     * CSS集群引擎版本号。详细请参考CSS[支持的集群版本](css_03_0056.xml)。
      * @return version
      */
     public String getVersion() {

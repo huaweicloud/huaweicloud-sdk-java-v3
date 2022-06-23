@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.elb.v3.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -11,25 +14,41 @@ import java.util.Objects;
 public class ListQuotaDetailsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "type")
+    @JsonProperty(value = "quota_key")
 
-    private String type;
+    private List<String> quotaKey = null;
 
-    public ListQuotaDetailsRequest withType(String type) {
-        this.type = type;
+    public ListQuotaDetailsRequest withQuotaKey(List<String> quotaKey) {
+        this.quotaKey = quotaKey;
+        return this;
+    }
+
+    public ListQuotaDetailsRequest addQuotaKeyItem(String quotaKeyItem) {
+        if (this.quotaKey == null) {
+            this.quotaKey = new ArrayList<>();
+        }
+        this.quotaKey.add(quotaKeyItem);
+        return this;
+    }
+
+    public ListQuotaDetailsRequest withQuotaKey(Consumer<List<String>> quotaKeySetter) {
+        if (this.quotaKey == null) {
+            this.quotaKey = new ArrayList<>();
+        }
+        quotaKeySetter.accept(this.quotaKey);
         return this;
     }
 
     /**
-     * 资源类型，取值：loadbalancer、listener、ipgroup、pool、member、members_per_pool、healthmonitor、l7policy、certificate、security_policy，其中members_per_pool表示一个pool下最多可关联的member数量。
-     * @return type
+     * 资源类型，取值：loadbalancer、listener、ipgroup、pool、member、members_per_pool、healthmonitor、l7policy、certificate、security_policy，其中members_per_pool表示一个pool下最多可关联的member数量。 支持多值查询，查询条件格式：quota_key=xxx&quota_key=xxx。
+     * @return quotaKey
      */
-    public String getType() {
-        return type;
+    public List<String> getQuotaKey() {
+        return quotaKey;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setQuotaKey(List<String> quotaKey) {
+        this.quotaKey = quotaKey;
     }
 
     @Override
@@ -41,19 +60,19 @@ public class ListQuotaDetailsRequest {
             return false;
         }
         ListQuotaDetailsRequest listQuotaDetailsRequest = (ListQuotaDetailsRequest) o;
-        return Objects.equals(this.type, listQuotaDetailsRequest.type);
+        return Objects.equals(this.quotaKey, listQuotaDetailsRequest.quotaKey);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type);
+        return Objects.hash(quotaKey);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListQuotaDetailsRequest {\n");
-        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    quotaKey: ").append(toIndentedString(quotaKey)).append("\n");
         sb.append("}");
         return sb.toString();
     }

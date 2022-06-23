@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 集群信息
+ * 集群信息。
  */
 public class CreateClusterRolesBody {
 
@@ -37,7 +37,7 @@ public class CreateClusterRolesBody {
     }
 
     /**
-     * 实例规格名称。例如，  - ess.spec-2u16g规格对应的取值范围为40GB～1280GB。 - ess.spec-4u32g规格对应的取值范围为40GB～2560GB。 - ess.spec-8u64g规格对应的取值范围为80GB～5120GB。 - ess.spec-16u128g规格对应的取值范围为160GB～10240GB。
+     * 实例规格名称。例如，  - ess.spec-4u32g规格对应的取值范围为40GB～2560GB。 - ess.spec-8u64g规格对应的取值范围为80GB～5120GB。 - ess.spec-16u128g规格对应的取值范围为160GB～10240GB。
      * @return flavorRef
      */
     public String getFlavorRef() {
@@ -80,7 +80,7 @@ public class CreateClusterRolesBody {
     }
 
     /**
-     * 实例类型。例如，  - ess-master对应Master节点。 - ess-client对应Clinet节点。 - ess-cold对应冷数据节点。 - ess对应数据节点。
+     * 实例类型(选择实例类型时应至少选择一个ess类型)。例如，  - ess-master对应Master节点。 - ess-client对应Clinet节点。 - ess-cold对应冷数据节点。 - ess对应数据节点。
      * @return type
      */
     public String getType() {
@@ -97,7 +97,7 @@ public class CreateClusterRolesBody {
     }
 
     /**
-     * 实例个数。
+     * 实例个数。 - ess节点，选择范围：1~32个节点数量。    - 若同时选择ess和ess-master时，可以选择1~200个节点数量。    - 若同时选择ess和ess-client时，可以选择1~32个节点数量。    - 若同时选择ess和ess-cold时，可以选择1~32个节点数量。 - ess-master节点，选择范围：3~10内的奇数个节点数量。 - ess-client节点，选择范围：1~32个节点数量。 - ess-cold节点，选择范围：1~32个节点数量。
      * @return instanceNum
      */
     public Integer getInstanceNum() {

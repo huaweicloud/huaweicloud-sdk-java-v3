@@ -48,7 +48,7 @@ public class CreateSnapshotReq {
     }
 
     /**
-     * 快照描述，0～256个字符，不能包含“<>”字符。
+     * 快照描述，0～256个字符，不能包含!<>=&\\\"'字符。
      * @return description
      */
     public String getDescription() {

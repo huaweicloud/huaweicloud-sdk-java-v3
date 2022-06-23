@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 集群负载均衡信息。
+ * 终端节点服务信息。
  */
 public class CreateClusterLoadBalance {
 

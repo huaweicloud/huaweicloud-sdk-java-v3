@@ -27,7 +27,7 @@ public class StartKibanaPublicRequest {
     }
 
     /**
-     * 指定待开启的集群ID。
+     * 指定待开启kibana公网访问的集群ID。
      * @return clusterId
      */
     public String getClusterId() {

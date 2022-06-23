@@ -782,9 +782,9 @@ public class GaussDBforNoSQLClient {
     }
 
     /**
-     * 获取指定实例的参数模板
+     * 获取指定实例的参数
      *
-     * 获取指定实例的参数模板。
+     * 获取指定实例的参数信息。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -797,9 +797,9 @@ public class GaussDBforNoSQLClient {
     }
 
     /**
-     * 获取指定实例的参数模板
+     * 获取指定实例的参数
      *
-     * 获取指定实例的参数模板。
+     * 获取指定实例的参数信息。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.

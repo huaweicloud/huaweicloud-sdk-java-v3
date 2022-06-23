@@ -23,13 +23,18 @@ public class EsflavorsVersionsResp {
 
     private List<EsflavorsVersionsFlavorsResp> flavors = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private String type;
+
     public EsflavorsVersionsResp withVersion(String version) {
         this.version = version;
         return this;
     }
 
     /**
-     * 引擎版本，支持5.5.1、6.2.3、6.5.4、7.1.1、7.6.2、7.9.3。
+     * Esasticsearch引擎版本号。详细请参考CSS[支持的集群版本](css_03_0056.xml)。
      * @return version
      */
     public String getVersion() {
@@ -73,6 +78,23 @@ public class EsflavorsVersionsResp {
         this.flavors = flavors;
     }
 
+    public EsflavorsVersionsResp withType(String type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * 实例类型，包括为ess、ess-cold、ess-master和ess-client。
+     * @return type
+     */
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -83,12 +105,13 @@ public class EsflavorsVersionsResp {
         }
         EsflavorsVersionsResp esflavorsVersionsResp = (EsflavorsVersionsResp) o;
         return Objects.equals(this.version, esflavorsVersionsResp.version)
-            && Objects.equals(this.flavors, esflavorsVersionsResp.flavors);
+            && Objects.equals(this.flavors, esflavorsVersionsResp.flavors)
+            && Objects.equals(this.type, esflavorsVersionsResp.type);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(version, flavors);
+        return Objects.hash(version, flavors, type);
     }
 
     @Override
@@ -97,6 +120,7 @@ public class EsflavorsVersionsResp {
         sb.append("class EsflavorsVersionsResp {\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    flavors: ").append(toIndentedString(flavors)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");
         return sb.toString();
     }

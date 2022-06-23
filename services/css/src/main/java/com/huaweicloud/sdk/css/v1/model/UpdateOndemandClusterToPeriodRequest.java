@@ -27,7 +27,7 @@ public class UpdateOndemandClusterToPeriodRequest {
     }
 
     /**
-     * 指定待更改的集群ID。
+     * 指定待转包周期的集群ID。
      * @return clusterId
      */
     public String getClusterId() {

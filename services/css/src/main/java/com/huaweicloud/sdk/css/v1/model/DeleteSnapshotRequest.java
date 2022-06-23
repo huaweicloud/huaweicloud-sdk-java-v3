@@ -26,7 +26,7 @@ public class DeleteSnapshotRequest {
     }
 
     /**
-     * 快照所属的集群的ID。
+     * 删除快照所属的集群的ID。
      * @return clusterId
      */
     public String getClusterId() {

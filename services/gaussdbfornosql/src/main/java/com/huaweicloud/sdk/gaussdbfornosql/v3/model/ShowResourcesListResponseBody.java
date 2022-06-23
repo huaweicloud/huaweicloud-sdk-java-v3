@@ -41,7 +41,7 @@ public class ShowResourcesListResponseBody {
     }
 
     /**
-     * 资源列表对象。
+     * 资源列表对象
      * @return resources
      */
     public List<ShowResourcesDetailResponseBody> getResources() {

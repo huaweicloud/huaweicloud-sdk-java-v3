@@ -505,7 +505,7 @@ public class RmsClient {
     /**
      * 创建高级查询
      *
-     * Create Resource Query Language
+     * 创建新的高级查询
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -520,7 +520,7 @@ public class RmsClient {
     /**
      * 创建高级查询
      *
-     * Create Resource Query Language
+     * 创建新的高级查询
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -535,9 +535,9 @@ public class RmsClient {
     }
 
     /**
-     * 删除资源查询
+     * 删除高级查询
      *
-     * Select resources by SQL
+     * 删除单个高级查询
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -550,9 +550,9 @@ public class RmsClient {
     }
 
     /**
-     * 删除资源查询
+     * 删除高级查询
      *
-     * Select resources by SQL
+     * 删除单个高级查询
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -569,7 +569,7 @@ public class RmsClient {
     /**
      * 列出高级查询
      *
-     * List Resource Query Language
+     * 列举所有高级查询
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -584,7 +584,7 @@ public class RmsClient {
     /**
      * 列出高级查询
      *
-     * List Resource Query Language
+     * 列举所有高级查询
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -601,7 +601,7 @@ public class RmsClient {
     /**
      * 运行高级查询
      *
-     * Run Resource Query Language
+     * 执行高级查询
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -616,7 +616,7 @@ public class RmsClient {
     /**
      * 运行高级查询
      *
-     * Run Resource Query Language
+     * 执行高级查询
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -663,7 +663,7 @@ public class RmsClient {
     /**
      * 更新单个高级查询
      *
-     * Update Resource Query Language
+     * 更新自定义查询
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -678,7 +678,7 @@ public class RmsClient {
     /**
      * 更新单个高级查询
      *
-     * Update Resource Query Language
+     * 更新自定义查询
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.

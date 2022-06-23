@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 开启自动创建快照策略。 说明：当backupStrategy参数配置不为空时，才会开启自动创建快照策略。
+ * 开启自动创建快照策略。  当backupStrategy参数配置不为空时，才会开启自动创建快照策略。
  */
 public class CreateClusterBackupStrategyBody {
 
@@ -131,7 +131,7 @@ public class CreateClusterBackupStrategyBody {
     }
 
     /**
-     * 访问OBS使用的IAM委托名称。   说明：如果bucket、basePath和agency三个参数同时为空，则系统会自动创建OBS桶和IAM代理，否则使用配置的参数值。
+     * 访问OBS使用的IAM委托名称。  >如果bucket、basePath和agency三个参数同时为空，则系统会自动创建OBS桶和IAM代理，否则使用配置的参数值。
      * @return agency
      */
     public String getAgency() {

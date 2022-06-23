@@ -32,7 +32,7 @@ public class RestoreSnapshotRequest {
     }
 
     /**
-     * 快照所属的集群ID。
+     * 恢复快照所属的集群ID。
      * @return clusterId
      */
     public String getClusterId() {

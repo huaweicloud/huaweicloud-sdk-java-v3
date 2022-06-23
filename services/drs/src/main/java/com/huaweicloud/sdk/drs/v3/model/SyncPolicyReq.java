@@ -494,6 +494,11 @@ public class SyncPolicyReq {
 
     private Boolean exportSnapshot;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "slot_name")
+
+    private String slotName;
+
     public SyncPolicyReq withJobId(String jobId) {
         this.jobId = jobId;
         return this;
@@ -732,6 +737,23 @@ public class SyncPolicyReq {
         this.exportSnapshot = exportSnapshot;
     }
 
+    public SyncPolicyReq withSlotName(String slotName) {
+        this.slotName = slotName;
+        return this;
+    }
+
+    /**
+     * 复制槽名称，gaussdbv5ha-to-kafka主备任务必填
+     * @return slotName
+     */
+    public String getSlotName() {
+        return slotName;
+    }
+
+    public void setSlotName(String slotName) {
+        this.slotName = slotName;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -754,7 +776,8 @@ public class SyncPolicyReq {
             && Objects.equals(this.partitionsNum, syncPolicyReq.partitionsNum)
             && Objects.equals(this.replicationFactor, syncPolicyReq.replicationFactor)
             && Objects.equals(this.isFillMaterializedView, syncPolicyReq.isFillMaterializedView)
-            && Objects.equals(this.exportSnapshot, syncPolicyReq.exportSnapshot);
+            && Objects.equals(this.exportSnapshot, syncPolicyReq.exportSnapshot)
+            && Objects.equals(this.slotName, syncPolicyReq.slotName);
     }
 
     @Override
@@ -772,7 +795,8 @@ public class SyncPolicyReq {
             partitionsNum,
             replicationFactor,
             isFillMaterializedView,
-            exportSnapshot);
+            exportSnapshot,
+            slotName);
     }
 
     @Override
@@ -793,6 +817,7 @@ public class SyncPolicyReq {
         sb.append("    replicationFactor: ").append(toIndentedString(replicationFactor)).append("\n");
         sb.append("    isFillMaterializedView: ").append(toIndentedString(isFillMaterializedView)).append("\n");
         sb.append("    exportSnapshot: ").append(toIndentedString(exportSnapshot)).append("\n");
+        sb.append("    slotName: ").append(toIndentedString(slotName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

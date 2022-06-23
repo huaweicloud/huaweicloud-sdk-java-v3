@@ -65,7 +65,7 @@ public class RoleExtendGrowReq {
     }
 
     /**
-     * 扩容实例存储容量。集群原实例存储容量和扩容实例存储容量之和不能超过创建集群时对应的实例存储容量上限，且同一个集群实例存储容量扩容不能超过6次。 单位：GB。
+     * 扩容实例存储容量。集群原实例存储容量和扩容实例存储容量之和不能超过创建集群时对应的实例存储容量上限，且同一个集群实例存储容量扩容不能超过6次。 单位：GB。 - ess节点、ess-cold节点扩容后应为10的倍数。 - ess-master节点、ess-client节点不允许扩容存储。
      * @return disksize
      */
     public Integer getDisksize() {

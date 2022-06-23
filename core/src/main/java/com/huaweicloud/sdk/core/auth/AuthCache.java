@@ -30,14 +30,14 @@ import java.util.concurrent.ConcurrentHashMap;
  * @author HuaweiCloud_SDK
  */
 public class AuthCache {
-    private static Map<String, String> authMap = new ConcurrentHashMap<>();
+    private static final Map<String, String> AUTH_MAP = new ConcurrentHashMap<>();
 
     /**
      * @param akWithName use ak and regionId as key of project, use ak as key of domain
      * @return find value with akWithName
      */
     public static String getAuth(String akWithName) {
-        return StringUtils.isEmpty(akWithName) ? null : authMap.get(akWithName);
+        return StringUtils.isEmpty(akWithName) ? null : AUTH_MAP.get(akWithName);
     }
 
     /**
@@ -45,13 +45,13 @@ public class AuthCache {
      * @param id projectId or domainId of the account
      */
     public static void putAuth(String akWithName, String id) {
-        authMap.put(akWithName, id);
+        AUTH_MAP.put(akWithName, id);
     }
 
     /**
      * @param akWithName use ak and regionId as key of project, use ak as key of domain
      */
     public static void removeAuth(String akWithName) {
-        authMap.remove(akWithName);
+        AUTH_MAP.remove(akWithName);
     }
 }

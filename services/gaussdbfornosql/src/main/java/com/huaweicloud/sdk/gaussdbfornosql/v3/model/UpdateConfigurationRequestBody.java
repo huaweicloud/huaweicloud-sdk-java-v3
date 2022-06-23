@@ -3,8 +3,6 @@ package com.huaweicloud.sdk.gaussdbfornosql.v3.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -26,7 +24,7 @@ public class UpdateConfigurationRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "values")
 
-    private Map<String, String> values = null;
+    private UpdateConfigurationValuesOption values;
 
     public UpdateConfigurationRequestBody withName(String name) {
         this.name = name;
@@ -62,36 +60,29 @@ public class UpdateConfigurationRequestBody {
         this.description = description;
     }
 
-    public UpdateConfigurationRequestBody withValues(Map<String, String> values) {
+    public UpdateConfigurationRequestBody withValues(UpdateConfigurationValuesOption values) {
         this.values = values;
         return this;
     }
 
-    public UpdateConfigurationRequestBody putValuesItem(String key, String valuesItem) {
+    public UpdateConfigurationRequestBody withValues(Consumer<UpdateConfigurationValuesOption> valuesSetter) {
         if (this.values == null) {
-            this.values = new HashMap<>();
+            this.values = new UpdateConfigurationValuesOption();
+            valuesSetter.accept(this.values);
         }
-        this.values.put(key, valuesItem);
-        return this;
-    }
 
-    public UpdateConfigurationRequestBody withValues(Consumer<Map<String, String>> valuesSetter) {
-        if (this.values == null) {
-            this.values = new HashMap<>();
-        }
-        valuesSetter.accept(this.values);
         return this;
     }
 
     /**
-     * 参数值对象，用户基于默认参数模板自定义的参数值。为空时不修改参数值。
+     * Get values
      * @return values
      */
-    public Map<String, String> getValues() {
+    public UpdateConfigurationValuesOption getValues() {
         return values;
     }
 
-    public void setValues(Map<String, String> values) {
+    public void setValues(UpdateConfigurationValuesOption values) {
         this.values = values;
     }
 

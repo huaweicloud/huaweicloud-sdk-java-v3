@@ -16,6 +16,11 @@ public class ExpandInstanceNodeRequestBody {
     private Integer num;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "subnet_id")
+
+    private String subnetId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_auto_pay")
 
     private String isAutoPay;
@@ -35,6 +40,23 @@ public class ExpandInstanceNodeRequestBody {
 
     public void setNum(Integer num) {
         this.num = num;
+    }
+
+    public ExpandInstanceNodeRequestBody withSubnetId(String subnetId) {
+        this.subnetId = subnetId;
+        return this;
+    }
+
+    /**
+     * 扩容的节点所使用的子网的ID。 - 该参数仅只支持GaussDB(for Cassandra)数据库实例扩容节点时传入。 - 所传入的子网ID必须属于实例当前所在的VPC。 - 不传该参数时，系统会为当前扩容的节点选择一个IP容量较为充足的子网。
+     * @return subnetId
+     */
+    public String getSubnetId() {
+        return subnetId;
+    }
+
+    public void setSubnetId(String subnetId) {
+        this.subnetId = subnetId;
     }
 
     public ExpandInstanceNodeRequestBody withIsAutoPay(String isAutoPay) {
@@ -64,12 +86,13 @@ public class ExpandInstanceNodeRequestBody {
         }
         ExpandInstanceNodeRequestBody expandInstanceNodeRequestBody = (ExpandInstanceNodeRequestBody) o;
         return Objects.equals(this.num, expandInstanceNodeRequestBody.num)
+            && Objects.equals(this.subnetId, expandInstanceNodeRequestBody.subnetId)
             && Objects.equals(this.isAutoPay, expandInstanceNodeRequestBody.isAutoPay);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(num, isAutoPay);
+        return Objects.hash(num, subnetId, isAutoPay);
     }
 
     @Override
@@ -77,6 +100,7 @@ public class ExpandInstanceNodeRequestBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class ExpandInstanceNodeRequestBody {\n");
         sb.append("    num: ").append(toIndentedString(num)).append("\n");
+        sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
         sb.append("    isAutoPay: ").append(toIndentedString(isAutoPay)).append("\n");
         sb.append("}");
         return sb.toString();

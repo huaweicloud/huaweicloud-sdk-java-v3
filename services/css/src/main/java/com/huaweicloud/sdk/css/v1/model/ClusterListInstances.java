@@ -40,6 +40,11 @@ public class ClusterListInstances {
 
     private String azCode;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ip")
+
+    private String ip;
+
     public ClusterListInstances withStatus(String status) {
         this.status = status;
         return this;
@@ -142,6 +147,23 @@ public class ClusterListInstances {
         this.azCode = azCode;
     }
 
+    public ClusterListInstances withIp(String ip) {
+        this.ip = ip;
+        return this;
+    }
+
+    /**
+     * 实例ip信息。
+     * @return ip
+     */
+    public String getIp() {
+        return ip;
+    }
+
+    public void setIp(String ip) {
+        this.ip = ip;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -155,12 +177,13 @@ public class ClusterListInstances {
             && Objects.equals(this.type, clusterListInstances.type) && Objects.equals(this.id, clusterListInstances.id)
             && Objects.equals(this.name, clusterListInstances.name)
             && Objects.equals(this.specCode, clusterListInstances.specCode)
-            && Objects.equals(this.azCode, clusterListInstances.azCode);
+            && Objects.equals(this.azCode, clusterListInstances.azCode)
+            && Objects.equals(this.ip, clusterListInstances.ip);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(status, type, id, name, specCode, azCode);
+        return Objects.hash(status, type, id, name, specCode, azCode, ip);
     }
 
     @Override
@@ -173,6 +196,7 @@ public class ClusterListInstances {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    specCode: ").append(toIndentedString(specCode)).append("\n");
         sb.append("    azCode: ").append(toIndentedString(azCode)).append("\n");
+        sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
         sb.append("}");
         return sb.toString();
     }

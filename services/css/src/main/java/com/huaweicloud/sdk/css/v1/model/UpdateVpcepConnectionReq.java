@@ -62,7 +62,7 @@ public class UpdateVpcepConnectionReq {
     }
 
     /**
-     * 终端节点ID列表（用户ID）。
+     * 终端节点ID列表。
      * @return endpointIdList
      */
     public List<String> getEndpointIdList() {

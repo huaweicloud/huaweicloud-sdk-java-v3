@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.cloudbuild.v3.region;
 
+import com.huaweicloud.sdk.core.region.IRegionProvider;
 import com.huaweicloud.sdk.core.region.Region;
+import com.huaweicloud.sdk.core.region.RegionProviderChain;
 import com.huaweicloud.sdk.core.utils.StringUtils;
 
 import java.util.Collections;
@@ -31,6 +33,8 @@ public class CloudBuildRegion {
     public static final Region CN_SOUTHWEST_2 =
         new Region("cn-southwest-2", "https://cloudbuild-ext.cn-southwest-2.myhuaweicloud.com");
 
+    private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("CLOUDBUILD");
+
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
 
     private static Map<String, Region> createStaticFields() {
@@ -49,11 +53,16 @@ public class CloudBuildRegion {
         if (StringUtils.isEmpty(regionId)) {
             throw new IllegalArgumentException("Unexpected empty parameter: regionId.");
         }
-        Region result = STATIC_FIELDS.get(regionId);
+
+        Region result = PROVIDER.getRegion(regionId);
+        if (Objects.nonNull(result)) {
+            return result;
+        }
+
+        result = STATIC_FIELDS.get(regionId);
         if (Objects.nonNull(result)) {
             return result;
         }
         throw new IllegalArgumentException("Unexpected regionId: " + regionId);
     }
-
 }

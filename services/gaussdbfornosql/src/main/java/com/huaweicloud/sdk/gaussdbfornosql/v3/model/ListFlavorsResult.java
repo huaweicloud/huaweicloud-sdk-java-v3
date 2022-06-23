@@ -155,7 +155,7 @@ public class ListFlavorsResult {
     }
 
     /**
-     * Get availabilityZone
+     * 支持该规格的可用区ID。   - 该字段已废弃，请不要使用。
      * @return availabilityZone
      */
     public List<String> getAvailabilityZone() {

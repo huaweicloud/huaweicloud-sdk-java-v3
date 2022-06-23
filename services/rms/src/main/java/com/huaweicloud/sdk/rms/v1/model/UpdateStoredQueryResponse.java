@@ -132,7 +132,7 @@ public class UpdateStoredQueryResponse extends SdkResponse {
     }
 
     /**
-     * ResouerceQL 更新时间
+     * ResourceQL 更新时间
      * @return updated
      */
     public String getUpdated() {

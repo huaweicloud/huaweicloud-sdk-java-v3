@@ -801,7 +801,8 @@ public class DrsAsyncClient {
     /**
      * 批量测试连接-集群模式
      *
-     * 批量测试连接（集群模式）。
+     * - 批量测试连接（集群模式）。
+     * - 主备任务测试连接
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -817,7 +818,8 @@ public class DrsAsyncClient {
     /**
      * 批量测试连接-集群模式
      *
-     * 批量测试连接（集群模式）。
+     * - 批量测试连接（集群模式）。
+     * - 主备任务测试连接
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -893,6 +895,38 @@ public class DrsAsyncClient {
     public AsyncInvoker<CreateCompareTaskRequest, CreateCompareTaskResponse> createCompareTaskAsyncInvoker(
         CreateCompareTaskRequest request) {
         return new AsyncInvoker<CreateCompareTaskRequest, CreateCompareTaskResponse>(request, DrsMeta.createCompareTask,
+            hcClient);
+    }
+
+    /**
+     * 查询规格未售罄的可用区
+     *
+     * 查询规格未售罄的可用区
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListAvailableZoneRequest 请求对象
+     * @return CompletableFuture<ListAvailableZoneResponse>
+     */
+    public CompletableFuture<ListAvailableZoneResponse> listAvailableZoneAsync(ListAvailableZoneRequest request) {
+        return hcClient.asyncInvokeHttp(request, DrsMeta.listAvailableZone);
+    }
+
+    /**
+     * 查询规格未售罄的可用区
+     *
+     * 查询规格未售罄的可用区
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListAvailableZoneRequest 请求对象
+     * @return AsyncInvoker<ListAvailableZoneRequest, ListAvailableZoneResponse>
+     */
+    public AsyncInvoker<ListAvailableZoneRequest, ListAvailableZoneResponse> listAvailableZoneAsyncInvoker(
+        ListAvailableZoneRequest request) {
+        return new AsyncInvoker<ListAvailableZoneRequest, ListAvailableZoneResponse>(request, DrsMeta.listAvailableZone,
             hcClient);
     }
 
@@ -1079,6 +1113,38 @@ public class DrsAsyncClient {
     public AsyncInvoker<UpdateParamsRequest, UpdateParamsResponse> updateParamsAsyncInvoker(
         UpdateParamsRequest request) {
         return new AsyncInvoker<UpdateParamsRequest, UpdateParamsResponse>(request, DrsMeta.updateParams, hcClient);
+    }
+
+    /**
+     * 高级设置
+     *
+     * 修改调优参数的值。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateTuningParamsRequest 请求对象
+     * @return CompletableFuture<UpdateTuningParamsResponse>
+     */
+    public CompletableFuture<UpdateTuningParamsResponse> updateTuningParamsAsync(UpdateTuningParamsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DrsMeta.updateTuningParams);
+    }
+
+    /**
+     * 高级设置
+     *
+     * 修改调优参数的值。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateTuningParamsRequest 请求对象
+     * @return AsyncInvoker<UpdateTuningParamsRequest, UpdateTuningParamsResponse>
+     */
+    public AsyncInvoker<UpdateTuningParamsRequest, UpdateTuningParamsResponse> updateTuningParamsAsyncInvoker(
+        UpdateTuningParamsRequest request) {
+        return new AsyncInvoker<UpdateTuningParamsRequest, UpdateTuningParamsResponse>(request,
+            DrsMeta.updateTuningParams, hcClient);
     }
 
 }

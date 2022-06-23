@@ -21,7 +21,7 @@ public class StopVpecpRequest {
     }
 
     /**
-     * 指定待关闭的集群ID。
+     * 指定待关闭终端节点的集群ID。
      * @return clusterId
      */
     public String getClusterId() {

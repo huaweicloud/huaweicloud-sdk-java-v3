@@ -611,6 +611,16 @@ public class CreateJobReq {
 
     private String expiredDays;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "master_az")
+
+    private String masterAz;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "slave_az")
+
+    private String slaveAz;
+
     public CreateJobReq withBindEip(Boolean bindEip) {
         this.bindEip = bindEip;
         return this;
@@ -986,6 +996,40 @@ public class CreateJobReq {
         this.expiredDays = expiredDays;
     }
 
+    public CreateJobReq withMasterAz(String masterAz) {
+        this.masterAz = masterAz;
+        return this;
+    }
+
+    /**
+     * 主备任务主任务所在可用区code，可以通过查询规格未售罄的可用区接口获取 - master_az和slave_az同时填写时生效 - 目前支持mysql，gaussdbv5ha-to-kafka
+     * @return masterAz
+     */
+    public String getMasterAz() {
+        return masterAz;
+    }
+
+    public void setMasterAz(String masterAz) {
+        this.masterAz = masterAz;
+    }
+
+    public CreateJobReq withSlaveAz(String slaveAz) {
+        this.slaveAz = slaveAz;
+        return this;
+    }
+
+    /**
+     * 主备任务备任务所在可用区code，可以通过查询规格未售罄的可用区接口获取 - master_az和slave_az同时填写时生效 - 目前支持mysql，gaussdbv5ha-to-kafka
+     * @return slaveAz
+     */
+    public String getSlaveAz() {
+        return slaveAz;
+    }
+
+    public void setSlaveAz(String slaveAz) {
+        this.slaveAz = slaveAz;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -1010,7 +1054,9 @@ public class CreateJobReq {
             && Objects.equals(this.customizeSutnetId, createJobReq.customizeSutnetId)
             && Objects.equals(this.productId, createJobReq.productId)
             && Objects.equals(this.sysTags, createJobReq.sysTags)
-            && Objects.equals(this.expiredDays, createJobReq.expiredDays);
+            && Objects.equals(this.expiredDays, createJobReq.expiredDays)
+            && Objects.equals(this.masterAz, createJobReq.masterAz)
+            && Objects.equals(this.slaveAz, createJobReq.slaveAz);
     }
 
     @Override
@@ -1033,7 +1079,9 @@ public class CreateJobReq {
             customizeSutnetId,
             productId,
             sysTags,
-            expiredDays);
+            expiredDays,
+            masterAz,
+            slaveAz);
     }
 
     @Override
@@ -1059,6 +1107,8 @@ public class CreateJobReq {
         sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
         sb.append("    sysTags: ").append(toIndentedString(sysTags)).append("\n");
         sb.append("    expiredDays: ").append(toIndentedString(expiredDays)).append("\n");
+        sb.append("    masterAz: ").append(toIndentedString(masterAz)).append("\n");
+        sb.append("    slaveAz: ").append(toIndentedString(slaveAz)).append("\n");
         sb.append("}");
         return sb.toString();
     }

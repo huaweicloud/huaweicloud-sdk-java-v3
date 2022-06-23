@@ -21,7 +21,7 @@ public class StopSnapshotRequest {
     }
 
     /**
-     * 快照所属的集群的ID。
+     * 停用快照所属的集群的ID。
      * @return clusterId
      */
     public String getClusterId() {

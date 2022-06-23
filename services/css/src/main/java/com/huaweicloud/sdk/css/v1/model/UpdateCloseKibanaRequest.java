@@ -21,7 +21,7 @@ public class UpdateCloseKibanaRequest {
     }
 
     /**
-     * 指定待关闭的集群ID。
+     * 指定待关闭的kibana公网访问的集群ID。
      * @return clusterId
      */
     public String getClusterId() {

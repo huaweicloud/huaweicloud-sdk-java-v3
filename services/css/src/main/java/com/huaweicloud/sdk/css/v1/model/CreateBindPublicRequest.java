@@ -27,7 +27,7 @@ public class CreateBindPublicRequest {
     }
 
     /**
-     * 指定待开启的集群ID。
+     * 指定开启公网访问的集群ID。
      * @return clusterId
      */
     public String getClusterId() {

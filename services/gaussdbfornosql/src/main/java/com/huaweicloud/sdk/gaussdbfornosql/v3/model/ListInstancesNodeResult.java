@@ -31,6 +31,11 @@ public class ListInstancesNodeResult {
     private String role;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "subnet_id")
+
+    private String subnetId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "private_ip")
 
     private String privateIp;
@@ -121,6 +126,23 @@ public class ListInstancesNodeResult {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    public ListInstancesNodeResult withSubnetId(String subnetId) {
+        this.subnetId = subnetId;
+        return this;
+    }
+
+    /**
+     * 节点所在的子网的ID。
+     * @return subnetId
+     */
+    public String getSubnetId() {
+        return subnetId;
+    }
+
+    public void setSubnetId(String subnetId) {
+        this.subnetId = subnetId;
     }
 
     public ListInstancesNodeResult withPrivateIp(String privateIp) {
@@ -221,6 +243,7 @@ public class ListInstancesNodeResult {
             && Objects.equals(this.name, listInstancesNodeResult.name)
             && Objects.equals(this.status, listInstancesNodeResult.status)
             && Objects.equals(this.role, listInstancesNodeResult.role)
+            && Objects.equals(this.subnetId, listInstancesNodeResult.subnetId)
             && Objects.equals(this.privateIp, listInstancesNodeResult.privateIp)
             && Objects.equals(this.publicIp, listInstancesNodeResult.publicIp)
             && Objects.equals(this.specCode, listInstancesNodeResult.specCode)
@@ -230,7 +253,8 @@ public class ListInstancesNodeResult {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, status, role, privateIp, publicIp, specCode, availabilityZone, supportReduce);
+        return Objects
+            .hash(id, name, status, role, subnetId, privateIp, publicIp, specCode, availabilityZone, supportReduce);
     }
 
     @Override
@@ -241,6 +265,7 @@ public class ListInstancesNodeResult {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    role: ").append(toIndentedString(role)).append("\n");
+        sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
         sb.append("    privateIp: ").append(toIndentedString(privateIp)).append("\n");
         sb.append("    publicIp: ").append(toIndentedString(publicIp)).append("\n");
         sb.append("    specCode: ").append(toIndentedString(specCode)).append("\n");

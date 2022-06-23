@@ -27,7 +27,7 @@ public class RollingRestartRequest {
     }
 
     /**
-     * 指定待查询的集群ID。
+     * 指定重启集群ID。
      * @return clusterId
      */
     public String getClusterId() {

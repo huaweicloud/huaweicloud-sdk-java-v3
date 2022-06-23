@@ -12,31 +12,9 @@ import java.util.function.Consumer;
 public class DeleteTemplateRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "cluster_id")
-
-    private String clusterId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
     private DeleteTemplateReq body;
-
-    public DeleteTemplateRequest withClusterId(String clusterId) {
-        this.clusterId = clusterId;
-        return this;
-    }
-
-    /**
-     * 指定待删除的集群ID。
-     * @return clusterId
-     */
-    public String getClusterId() {
-        return clusterId;
-    }
-
-    public void setClusterId(String clusterId) {
-        this.clusterId = clusterId;
-    }
 
     public DeleteTemplateRequest withBody(DeleteTemplateReq body) {
         this.body = body;
@@ -73,20 +51,18 @@ public class DeleteTemplateRequest {
             return false;
         }
         DeleteTemplateRequest deleteTemplateRequest = (DeleteTemplateRequest) o;
-        return Objects.equals(this.clusterId, deleteTemplateRequest.clusterId)
-            && Objects.equals(this.body, deleteTemplateRequest.body);
+        return Objects.equals(this.body, deleteTemplateRequest.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clusterId, body);
+        return Objects.hash(body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class DeleteTemplateRequest {\n");
-        sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

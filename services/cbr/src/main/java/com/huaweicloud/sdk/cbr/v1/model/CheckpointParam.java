@@ -43,11 +43,6 @@ public class CheckpointParam {
 
     private List<Resource> resourceDetails = null;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "policy_id")
-
-    private String policyId;
-
     public CheckpointParam withAutoTrigger(Boolean autoTrigger) {
         this.autoTrigger = autoTrigger;
         return this;
@@ -182,23 +177,6 @@ public class CheckpointParam {
         this.resourceDetails = resourceDetails;
     }
 
-    public CheckpointParam withPolicyId(String policyId) {
-        this.policyId = policyId;
-        return this;
-    }
-
-    /**
-     * 自动备份时的策略id
-     * @return policyId
-     */
-    public String getPolicyId() {
-        return policyId;
-    }
-
-    public void setPolicyId(String policyId) {
-        this.policyId = policyId;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -213,13 +191,12 @@ public class CheckpointParam {
             && Objects.equals(this.incremental, checkpointParam.incremental)
             && Objects.equals(this.name, checkpointParam.name)
             && Objects.equals(this.resources, checkpointParam.resources)
-            && Objects.equals(this.resourceDetails, checkpointParam.resourceDetails)
-            && Objects.equals(this.policyId, checkpointParam.policyId);
+            && Objects.equals(this.resourceDetails, checkpointParam.resourceDetails);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(autoTrigger, description, incremental, name, resources, resourceDetails, policyId);
+        return Objects.hash(autoTrigger, description, incremental, name, resources, resourceDetails);
     }
 
     @Override
@@ -232,7 +209,6 @@ public class CheckpointParam {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    resources: ").append(toIndentedString(resources)).append("\n");
         sb.append("    resourceDetails: ").append(toIndentedString(resourceDetails)).append("\n");
-        sb.append("    policyId: ").append(toIndentedString(policyId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -21,7 +21,7 @@ public class ExtendClusterGrowReq {
     }
 
     /**
-     * 扩容实例个数。  说明：集群已有实例个数和扩容实例个数总和不能超过32。
+     * 扩容实例个数。  集群已有实例个数和扩容实例个数总和不能超过32。
      * @return modifySize
      */
     public Integer getModifySize() {

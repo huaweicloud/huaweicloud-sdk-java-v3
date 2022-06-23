@@ -13,22 +13,22 @@ public class StartVpecpReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "endpointWithDnsName")
 
-    private String endpointWithDnsName;
+    private Boolean endpointWithDnsName;
 
-    public StartVpecpReq withEndpointWithDnsName(String endpointWithDnsName) {
+    public StartVpecpReq withEndpointWithDnsName(Boolean endpointWithDnsName) {
         this.endpointWithDnsName = endpointWithDnsName;
         return this;
     }
 
     /**
-     * 内网域名。
+     * 开启终端节点。
      * @return endpointWithDnsName
      */
-    public String getEndpointWithDnsName() {
+    public Boolean getEndpointWithDnsName() {
         return endpointWithDnsName;
     }
 
-    public void setEndpointWithDnsName(String endpointWithDnsName) {
+    public void setEndpointWithDnsName(Boolean endpointWithDnsName) {
         this.endpointWithDnsName = endpointWithDnsName;
     }
 

@@ -34,6 +34,10 @@ public class Region {
         this.endpoint = endpoint;
     }
 
+    public Region() {
+
+    }
+
     public String getId() {
         return id;
     }

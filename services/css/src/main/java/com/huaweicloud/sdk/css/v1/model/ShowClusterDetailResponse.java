@@ -25,6 +25,16 @@ public class ShowClusterDetailResponse extends SdkResponse {
     private List<ClusterDetailInstances> instances = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "publicKibanaResp")
+
+    private PublicKibanaRespBody publicKibanaResp;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "elbWhiteList")
+
+    private ElbWhiteListResp elbWhiteList;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated")
 
     private String updated;
@@ -33,6 +43,11 @@ public class ShowClusterDetailResponse extends SdkResponse {
     @JsonProperty(value = "name")
 
     private String name;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "publicIp")
+
+    private String publicIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created")
@@ -55,6 +70,46 @@ public class ShowClusterDetailResponse extends SdkResponse {
     private String endpoint;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "vpcId")
+
+    private String vpcId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "subnetId")
+
+    private String subnetId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "securityGroupId")
+
+    private String securityGroupId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "bandwidthSize")
+
+    private Integer bandwidthSize;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "httpsEnable")
+
+    private Boolean httpsEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "diskEncrypted")
+
+    private Boolean diskEncrypted;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "authorityEnable")
+
+    private Boolean authorityEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "backupAvailable")
+
+    private Boolean backupAvailable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "actionProgress")
 
     private ClusterDetailActionProgress actionProgress;
@@ -65,22 +120,7 @@ public class ShowClusterDetailResponse extends SdkResponse {
     private List<ActionReq> actions = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "failed_reasons")
-
-    private ClusterDetailFailedReasons failedReasons;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "authorityEnable")
-
-    private Boolean authorityEnable;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "httpsEnable")
-
-    private Boolean httpsEnable;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "enterprise_project_id")
+    @JsonProperty(value = "enterpriseProjectId")
 
     private String enterpriseProjectId;
 
@@ -88,6 +128,16 @@ public class ShowClusterDetailResponse extends SdkResponse {
     @JsonProperty(value = "tags")
 
     private List<ClusterDetailTags> tags = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "failed_reasons")
+
+    private ClusterDetailFailedReasons failedReasons;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "period")
+
+    private Boolean period;
 
     public ShowClusterDetailResponse withDatastore(ClusterDetailDatastore datastore) {
         this.datastore = datastore;
@@ -148,6 +198,58 @@ public class ShowClusterDetailResponse extends SdkResponse {
         this.instances = instances;
     }
 
+    public ShowClusterDetailResponse withPublicKibanaResp(PublicKibanaRespBody publicKibanaResp) {
+        this.publicKibanaResp = publicKibanaResp;
+        return this;
+    }
+
+    public ShowClusterDetailResponse withPublicKibanaResp(Consumer<PublicKibanaRespBody> publicKibanaRespSetter) {
+        if (this.publicKibanaResp == null) {
+            this.publicKibanaResp = new PublicKibanaRespBody();
+            publicKibanaRespSetter.accept(this.publicKibanaResp);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get publicKibanaResp
+     * @return publicKibanaResp
+     */
+    public PublicKibanaRespBody getPublicKibanaResp() {
+        return publicKibanaResp;
+    }
+
+    public void setPublicKibanaResp(PublicKibanaRespBody publicKibanaResp) {
+        this.publicKibanaResp = publicKibanaResp;
+    }
+
+    public ShowClusterDetailResponse withElbWhiteList(ElbWhiteListResp elbWhiteList) {
+        this.elbWhiteList = elbWhiteList;
+        return this;
+    }
+
+    public ShowClusterDetailResponse withElbWhiteList(Consumer<ElbWhiteListResp> elbWhiteListSetter) {
+        if (this.elbWhiteList == null) {
+            this.elbWhiteList = new ElbWhiteListResp();
+            elbWhiteListSetter.accept(this.elbWhiteList);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get elbWhiteList
+     * @return elbWhiteList
+     */
+    public ElbWhiteListResp getElbWhiteList() {
+        return elbWhiteList;
+    }
+
+    public void setElbWhiteList(ElbWhiteListResp elbWhiteList) {
+        this.elbWhiteList = elbWhiteList;
+    }
+
     public ShowClusterDetailResponse withUpdated(String updated) {
         this.updated = updated;
         return this;
@@ -180,6 +282,23 @@ public class ShowClusterDetailResponse extends SdkResponse {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public ShowClusterDetailResponse withPublicIp(String publicIp) {
+        this.publicIp = publicIp;
+        return this;
+    }
+
+    /**
+     * 公网IP信息。
+     * @return publicIp
+     */
+    public String getPublicIp() {
+        return publicIp;
+    }
+
+    public void setPublicIp(String publicIp) {
+        this.publicIp = publicIp;
     }
 
     public ShowClusterDetailResponse withCreated(String created) {
@@ -250,6 +369,142 @@ public class ShowClusterDetailResponse extends SdkResponse {
         this.endpoint = endpoint;
     }
 
+    public ShowClusterDetailResponse withVpcId(String vpcId) {
+        this.vpcId = vpcId;
+        return this;
+    }
+
+    /**
+     * VPC ID。
+     * @return vpcId
+     */
+    public String getVpcId() {
+        return vpcId;
+    }
+
+    public void setVpcId(String vpcId) {
+        this.vpcId = vpcId;
+    }
+
+    public ShowClusterDetailResponse withSubnetId(String subnetId) {
+        this.subnetId = subnetId;
+        return this;
+    }
+
+    /**
+     * 子网ID。
+     * @return subnetId
+     */
+    public String getSubnetId() {
+        return subnetId;
+    }
+
+    public void setSubnetId(String subnetId) {
+        this.subnetId = subnetId;
+    }
+
+    public ShowClusterDetailResponse withSecurityGroupId(String securityGroupId) {
+        this.securityGroupId = securityGroupId;
+        return this;
+    }
+
+    /**
+     * 安全组ID。
+     * @return securityGroupId
+     */
+    public String getSecurityGroupId() {
+        return securityGroupId;
+    }
+
+    public void setSecurityGroupId(String securityGroupId) {
+        this.securityGroupId = securityGroupId;
+    }
+
+    public ShowClusterDetailResponse withBandwidthSize(Integer bandwidthSize) {
+        this.bandwidthSize = bandwidthSize;
+        return this;
+    }
+
+    /**
+     * 公网带宽大小。
+     * @return bandwidthSize
+     */
+    public Integer getBandwidthSize() {
+        return bandwidthSize;
+    }
+
+    public void setBandwidthSize(Integer bandwidthSize) {
+        this.bandwidthSize = bandwidthSize;
+    }
+
+    public ShowClusterDetailResponse withHttpsEnable(Boolean httpsEnable) {
+        this.httpsEnable = httpsEnable;
+        return this;
+    }
+
+    /**
+     * 通信加密状态。 false：未设置通信加密。 true：已设置通信加密。
+     * @return httpsEnable
+     */
+    public Boolean getHttpsEnable() {
+        return httpsEnable;
+    }
+
+    public void setHttpsEnable(Boolean httpsEnable) {
+        this.httpsEnable = httpsEnable;
+    }
+
+    public ShowClusterDetailResponse withDiskEncrypted(Boolean diskEncrypted) {
+        this.diskEncrypted = diskEncrypted;
+        return this;
+    }
+
+    /**
+     * 磁盘是否加密。  - true : 磁盘已加密。 - false : 磁盘未加密。
+     * @return diskEncrypted
+     */
+    public Boolean getDiskEncrypted() {
+        return diskEncrypted;
+    }
+
+    public void setDiskEncrypted(Boolean diskEncrypted) {
+        this.diskEncrypted = diskEncrypted;
+    }
+
+    public ShowClusterDetailResponse withAuthorityEnable(Boolean authorityEnable) {
+        this.authorityEnable = authorityEnable;
+        return this;
+    }
+
+    /**
+     * 是否开启认证，取值范围为true或false。默认关闭认证功能。当开启认证时，httpsEnable需要设置为true。 - true：表示集群开启认证。 - false：表示集群不开启认证。
+     * @return authorityEnable
+     */
+    public Boolean getAuthorityEnable() {
+        return authorityEnable;
+    }
+
+    public void setAuthorityEnable(Boolean authorityEnable) {
+        this.authorityEnable = authorityEnable;
+    }
+
+    public ShowClusterDetailResponse withBackupAvailable(Boolean backupAvailable) {
+        this.backupAvailable = backupAvailable;
+        return this;
+    }
+
+    /**
+     * 快照是否开启。
+     * @return backupAvailable
+     */
+    public Boolean getBackupAvailable() {
+        return backupAvailable;
+    }
+
+    public void setBackupAvailable(Boolean backupAvailable) {
+        this.backupAvailable = backupAvailable;
+    }
+
     public ShowClusterDetailResponse withActionProgress(ClusterDetailActionProgress actionProgress) {
         this.actionProgress = actionProgress;
         return this;
@@ -309,66 +564,6 @@ public class ShowClusterDetailResponse extends SdkResponse {
         this.actions = actions;
     }
 
-    public ShowClusterDetailResponse withFailedReasons(ClusterDetailFailedReasons failedReasons) {
-        this.failedReasons = failedReasons;
-        return this;
-    }
-
-    public ShowClusterDetailResponse withFailedReasons(Consumer<ClusterDetailFailedReasons> failedReasonsSetter) {
-        if (this.failedReasons == null) {
-            this.failedReasons = new ClusterDetailFailedReasons();
-            failedReasonsSetter.accept(this.failedReasons);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get failedReasons
-     * @return failedReasons
-     */
-    public ClusterDetailFailedReasons getFailedReasons() {
-        return failedReasons;
-    }
-
-    public void setFailedReasons(ClusterDetailFailedReasons failedReasons) {
-        this.failedReasons = failedReasons;
-    }
-
-    public ShowClusterDetailResponse withAuthorityEnable(Boolean authorityEnable) {
-        this.authorityEnable = authorityEnable;
-        return this;
-    }
-
-    /**
-     * 是否开启认证，取值范围为true或false。默认关闭认证功能。当开启认证时，httpsEnable需要设置为true。 - true：表示集群开启认证。 - false：表示集群不开启认证。
-     * @return authorityEnable
-     */
-    public Boolean getAuthorityEnable() {
-        return authorityEnable;
-    }
-
-    public void setAuthorityEnable(Boolean authorityEnable) {
-        this.authorityEnable = authorityEnable;
-    }
-
-    public ShowClusterDetailResponse withHttpsEnable(Boolean httpsEnable) {
-        this.httpsEnable = httpsEnable;
-        return this;
-    }
-
-    /**
-     * Get httpsEnable
-     * @return httpsEnable
-     */
-    public Boolean getHttpsEnable() {
-        return httpsEnable;
-    }
-
-    public void setHttpsEnable(Boolean httpsEnable) {
-        this.httpsEnable = httpsEnable;
-    }
-
     public ShowClusterDetailResponse withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -419,6 +614,49 @@ public class ShowClusterDetailResponse extends SdkResponse {
         this.tags = tags;
     }
 
+    public ShowClusterDetailResponse withFailedReasons(ClusterDetailFailedReasons failedReasons) {
+        this.failedReasons = failedReasons;
+        return this;
+    }
+
+    public ShowClusterDetailResponse withFailedReasons(Consumer<ClusterDetailFailedReasons> failedReasonsSetter) {
+        if (this.failedReasons == null) {
+            this.failedReasons = new ClusterDetailFailedReasons();
+            failedReasonsSetter.accept(this.failedReasons);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get failedReasons
+     * @return failedReasons
+     */
+    public ClusterDetailFailedReasons getFailedReasons() {
+        return failedReasons;
+    }
+
+    public void setFailedReasons(ClusterDetailFailedReasons failedReasons) {
+        this.failedReasons = failedReasons;
+    }
+
+    public ShowClusterDetailResponse withPeriod(Boolean period) {
+        this.period = period;
+        return this;
+    }
+
+    /**
+     * 是为包周期集群。 - \"true\" 表示是包周期计费的集群。 - \"false\" 表示是按需计费的集群。
+     * @return period
+     */
+    public Boolean getPeriod() {
+        return period;
+    }
+
+    public void setPeriod(Boolean period) {
+        this.period = period;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -430,38 +668,58 @@ public class ShowClusterDetailResponse extends SdkResponse {
         ShowClusterDetailResponse showClusterDetailResponse = (ShowClusterDetailResponse) o;
         return Objects.equals(this.datastore, showClusterDetailResponse.datastore)
             && Objects.equals(this.instances, showClusterDetailResponse.instances)
+            && Objects.equals(this.publicKibanaResp, showClusterDetailResponse.publicKibanaResp)
+            && Objects.equals(this.elbWhiteList, showClusterDetailResponse.elbWhiteList)
             && Objects.equals(this.updated, showClusterDetailResponse.updated)
             && Objects.equals(this.name, showClusterDetailResponse.name)
+            && Objects.equals(this.publicIp, showClusterDetailResponse.publicIp)
             && Objects.equals(this.created, showClusterDetailResponse.created)
             && Objects.equals(this.id, showClusterDetailResponse.id)
             && Objects.equals(this.status, showClusterDetailResponse.status)
             && Objects.equals(this.endpoint, showClusterDetailResponse.endpoint)
+            && Objects.equals(this.vpcId, showClusterDetailResponse.vpcId)
+            && Objects.equals(this.subnetId, showClusterDetailResponse.subnetId)
+            && Objects.equals(this.securityGroupId, showClusterDetailResponse.securityGroupId)
+            && Objects.equals(this.bandwidthSize, showClusterDetailResponse.bandwidthSize)
+            && Objects.equals(this.httpsEnable, showClusterDetailResponse.httpsEnable)
+            && Objects.equals(this.diskEncrypted, showClusterDetailResponse.diskEncrypted)
+            && Objects.equals(this.authorityEnable, showClusterDetailResponse.authorityEnable)
+            && Objects.equals(this.backupAvailable, showClusterDetailResponse.backupAvailable)
             && Objects.equals(this.actionProgress, showClusterDetailResponse.actionProgress)
             && Objects.equals(this.actions, showClusterDetailResponse.actions)
-            && Objects.equals(this.failedReasons, showClusterDetailResponse.failedReasons)
-            && Objects.equals(this.authorityEnable, showClusterDetailResponse.authorityEnable)
-            && Objects.equals(this.httpsEnable, showClusterDetailResponse.httpsEnable)
             && Objects.equals(this.enterpriseProjectId, showClusterDetailResponse.enterpriseProjectId)
-            && Objects.equals(this.tags, showClusterDetailResponse.tags);
+            && Objects.equals(this.tags, showClusterDetailResponse.tags)
+            && Objects.equals(this.failedReasons, showClusterDetailResponse.failedReasons)
+            && Objects.equals(this.period, showClusterDetailResponse.period);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(datastore,
             instances,
+            publicKibanaResp,
+            elbWhiteList,
             updated,
             name,
+            publicIp,
             created,
             id,
             status,
             endpoint,
+            vpcId,
+            subnetId,
+            securityGroupId,
+            bandwidthSize,
+            httpsEnable,
+            diskEncrypted,
+            authorityEnable,
+            backupAvailable,
             actionProgress,
             actions,
-            failedReasons,
-            authorityEnable,
-            httpsEnable,
             enterpriseProjectId,
-            tags);
+            tags,
+            failedReasons,
+            period);
     }
 
     @Override
@@ -470,19 +728,29 @@ public class ShowClusterDetailResponse extends SdkResponse {
         sb.append("class ShowClusterDetailResponse {\n");
         sb.append("    datastore: ").append(toIndentedString(datastore)).append("\n");
         sb.append("    instances: ").append(toIndentedString(instances)).append("\n");
+        sb.append("    publicKibanaResp: ").append(toIndentedString(publicKibanaResp)).append("\n");
+        sb.append("    elbWhiteList: ").append(toIndentedString(elbWhiteList)).append("\n");
         sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    publicIp: ").append(toIndentedString(publicIp)).append("\n");
         sb.append("    created: ").append(toIndentedString(created)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    endpoint: ").append(toIndentedString(endpoint)).append("\n");
+        sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
+        sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
+        sb.append("    securityGroupId: ").append(toIndentedString(securityGroupId)).append("\n");
+        sb.append("    bandwidthSize: ").append(toIndentedString(bandwidthSize)).append("\n");
+        sb.append("    httpsEnable: ").append(toIndentedString(httpsEnable)).append("\n");
+        sb.append("    diskEncrypted: ").append(toIndentedString(diskEncrypted)).append("\n");
+        sb.append("    authorityEnable: ").append(toIndentedString(authorityEnable)).append("\n");
+        sb.append("    backupAvailable: ").append(toIndentedString(backupAvailable)).append("\n");
         sb.append("    actionProgress: ").append(toIndentedString(actionProgress)).append("\n");
         sb.append("    actions: ").append(toIndentedString(actions)).append("\n");
-        sb.append("    failedReasons: ").append(toIndentedString(failedReasons)).append("\n");
-        sb.append("    authorityEnable: ").append(toIndentedString(authorityEnable)).append("\n");
-        sb.append("    httpsEnable: ").append(toIndentedString(httpsEnable)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    failedReasons: ").append(toIndentedString(failedReasons)).append("\n");
+        sb.append("    period: ").append(toIndentedString(period)).append("\n");
         sb.append("}");
         return sb.toString();
     }

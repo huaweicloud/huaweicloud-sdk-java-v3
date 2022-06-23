@@ -151,11 +151,6 @@ public class ResourceResp {
 
     private Integer backupCount;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "auto_protect")
-
-    private Boolean autoProtect;
-
     public ResourceResp withExtraInfo(ResourceExtraInfo extraInfo) {
         this.extraInfo = extraInfo;
         return this;
@@ -301,23 +296,6 @@ public class ResourceResp {
         this.backupCount = backupCount;
     }
 
-    public ResourceResp withAutoProtect(Boolean autoProtect) {
-        this.autoProtect = autoProtect;
-        return this;
-    }
-
-    /**
-     * 是否跟随存储库自动备份策略进行备份
-     * @return autoProtect
-     */
-    public Boolean getAutoProtect() {
-        return autoProtect;
-    }
-
-    public void setAutoProtect(Boolean autoProtect) {
-        this.autoProtect = autoProtect;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -332,13 +310,12 @@ public class ResourceResp {
             && Objects.equals(this.protectStatus, resourceResp.protectStatus)
             && Objects.equals(this.size, resourceResp.size) && Objects.equals(this.type, resourceResp.type)
             && Objects.equals(this.backupSize, resourceResp.backupSize)
-            && Objects.equals(this.backupCount, resourceResp.backupCount)
-            && Objects.equals(this.autoProtect, resourceResp.autoProtect);
+            && Objects.equals(this.backupCount, resourceResp.backupCount);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(extraInfo, id, name, protectStatus, size, type, backupSize, backupCount, autoProtect);
+        return Objects.hash(extraInfo, id, name, protectStatus, size, type, backupSize, backupCount);
     }
 
     @Override
@@ -353,7 +330,6 @@ public class ResourceResp {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    backupSize: ").append(toIndentedString(backupSize)).append("\n");
         sb.append("    backupCount: ").append(toIndentedString(backupCount)).append("\n");
-        sb.append("    autoProtect: ").append(toIndentedString(autoProtect)).append("\n");
         sb.append("}");
         return sb.toString();
     }

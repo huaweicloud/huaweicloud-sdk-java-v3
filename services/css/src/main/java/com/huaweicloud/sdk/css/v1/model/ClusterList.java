@@ -24,6 +24,16 @@ public class ClusterList {
     private List<ClusterListInstances> instances = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "publicKibanaResp")
+
+    private KibanaElbWhiteListResp publicKibanaResp;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "elbWhiteList")
+
+    private ElbWhiteListResp elbWhiteList;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated")
 
     private String updated;
@@ -32,6 +42,11 @@ public class ClusterList {
     @JsonProperty(value = "name")
 
     private String name;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "publicIp")
+
+    private String publicIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created")
@@ -54,26 +69,6 @@ public class ClusterList {
     private String endpoint;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "actionProgress")
-
-    private ClusterListActionProgress actionProgress;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "actions")
-
-    private List<String> actions = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "failed_reasons")
-
-    private ClusterListFailedReasons failedReasons;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "authorityEnable")
-
-    private Boolean authorityEnable;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpcId")
 
     private String vpcId;
@@ -89,14 +84,9 @@ public class ClusterList {
     private String securityGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "enterprise_project_id")
+    @JsonProperty(value = "bandwidthSize")
 
-    private String enterpriseProjectId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "period")
-
-    private Boolean period;
+    private Integer bandwidthSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "httpsEnable")
@@ -104,9 +94,49 @@ public class ClusterList {
     private Boolean httpsEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "authorityEnable")
+
+    private Boolean authorityEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "diskEncrypted")
+
+    private Boolean diskEncrypted;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "backupAvailable")
+
+    private Boolean backupAvailable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "actionProgress")
+
+    private ClusterListActionProgress actionProgress;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "actions")
+
+    private List<String> actions = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterpriseProjectId")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
     private List<ClusterListTags> tags = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "failed_reasons")
+
+    private ClusterListFailedReasons failedReasons;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "period")
+
+    private Boolean period;
 
     public ClusterList withDatastore(ClusterListDatastore datastore) {
         this.datastore = datastore;
@@ -167,6 +197,58 @@ public class ClusterList {
         this.instances = instances;
     }
 
+    public ClusterList withPublicKibanaResp(KibanaElbWhiteListResp publicKibanaResp) {
+        this.publicKibanaResp = publicKibanaResp;
+        return this;
+    }
+
+    public ClusterList withPublicKibanaResp(Consumer<KibanaElbWhiteListResp> publicKibanaRespSetter) {
+        if (this.publicKibanaResp == null) {
+            this.publicKibanaResp = new KibanaElbWhiteListResp();
+            publicKibanaRespSetter.accept(this.publicKibanaResp);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get publicKibanaResp
+     * @return publicKibanaResp
+     */
+    public KibanaElbWhiteListResp getPublicKibanaResp() {
+        return publicKibanaResp;
+    }
+
+    public void setPublicKibanaResp(KibanaElbWhiteListResp publicKibanaResp) {
+        this.publicKibanaResp = publicKibanaResp;
+    }
+
+    public ClusterList withElbWhiteList(ElbWhiteListResp elbWhiteList) {
+        this.elbWhiteList = elbWhiteList;
+        return this;
+    }
+
+    public ClusterList withElbWhiteList(Consumer<ElbWhiteListResp> elbWhiteListSetter) {
+        if (this.elbWhiteList == null) {
+            this.elbWhiteList = new ElbWhiteListResp();
+            elbWhiteListSetter.accept(this.elbWhiteList);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get elbWhiteList
+     * @return elbWhiteList
+     */
+    public ElbWhiteListResp getElbWhiteList() {
+        return elbWhiteList;
+    }
+
+    public void setElbWhiteList(ElbWhiteListResp elbWhiteList) {
+        this.elbWhiteList = elbWhiteList;
+    }
+
     public ClusterList withUpdated(String updated) {
         this.updated = updated;
         return this;
@@ -201,13 +283,30 @@ public class ClusterList {
         this.name = name;
     }
 
+    public ClusterList withPublicIp(String publicIp) {
+        this.publicIp = publicIp;
+        return this;
+    }
+
+    /**
+     * 公网IP信息。
+     * @return publicIp
+     */
+    public String getPublicIp() {
+        return publicIp;
+    }
+
+    public void setPublicIp(String publicIp) {
+        this.publicIp = publicIp;
+    }
+
     public ClusterList withCreated(String created) {
         this.created = created;
         return this;
     }
 
     /**
-     * 集群创建时间，格式为ISO8601: CCYY-MM-DDThh:mm:ss。     说明：返回的集群列表信息按照创建时间降序排序，即创建时间最新的集群排在最前。
+     * 集群创建时间，格式为ISO8601: CCYY-MM-DDThh:mm:ss。  返回的集群列表信息按照创建时间降序排序，即创建时间最新的集群排在最前。
      * @return created
      */
     public String getCreated() {
@@ -269,108 +368,6 @@ public class ClusterList {
         this.endpoint = endpoint;
     }
 
-    public ClusterList withActionProgress(ClusterListActionProgress actionProgress) {
-        this.actionProgress = actionProgress;
-        return this;
-    }
-
-    public ClusterList withActionProgress(Consumer<ClusterListActionProgress> actionProgressSetter) {
-        if (this.actionProgress == null) {
-            this.actionProgress = new ClusterListActionProgress();
-            actionProgressSetter.accept(this.actionProgress);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get actionProgress
-     * @return actionProgress
-     */
-    public ClusterListActionProgress getActionProgress() {
-        return actionProgress;
-    }
-
-    public void setActionProgress(ClusterListActionProgress actionProgress) {
-        this.actionProgress = actionProgress;
-    }
-
-    public ClusterList withActions(List<String> actions) {
-        this.actions = actions;
-        return this;
-    }
-
-    public ClusterList addActionsItem(String actionsItem) {
-        if (this.actions == null) {
-            this.actions = new ArrayList<>();
-        }
-        this.actions.add(actionsItem);
-        return this;
-    }
-
-    public ClusterList withActions(Consumer<List<String>> actionsSetter) {
-        if (this.actions == null) {
-            this.actions = new ArrayList<>();
-        }
-        actionsSetter.accept(this.actions);
-        return this;
-    }
-
-    /**
-     * 集群当前行为，REBOOTING表示重启，GROWING表示扩容，RESTORING表示恢复集群，SNAPSHOTTING表示创建快照。
-     * @return actions
-     */
-    public List<String> getActions() {
-        return actions;
-    }
-
-    public void setActions(List<String> actions) {
-        this.actions = actions;
-    }
-
-    public ClusterList withFailedReasons(ClusterListFailedReasons failedReasons) {
-        this.failedReasons = failedReasons;
-        return this;
-    }
-
-    public ClusterList withFailedReasons(Consumer<ClusterListFailedReasons> failedReasonsSetter) {
-        if (this.failedReasons == null) {
-            this.failedReasons = new ClusterListFailedReasons();
-            failedReasonsSetter.accept(this.failedReasons);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get failedReasons
-     * @return failedReasons
-     */
-    public ClusterListFailedReasons getFailedReasons() {
-        return failedReasons;
-    }
-
-    public void setFailedReasons(ClusterListFailedReasons failedReasons) {
-        this.failedReasons = failedReasons;
-    }
-
-    public ClusterList withAuthorityEnable(Boolean authorityEnable) {
-        this.authorityEnable = authorityEnable;
-        return this;
-    }
-
-    /**
-     * 是否开启认证，取值范围为true或false。默认关闭认证功能。当开启认证时，httpsEnable需要设置为true。 - true：表示集群开启认证。 - false：表示集群不开启认证。
-     * @return authorityEnable
-     */
-    public Boolean getAuthorityEnable() {
-        return authorityEnable;
-    }
-
-    public void setAuthorityEnable(Boolean authorityEnable) {
-        this.authorityEnable = authorityEnable;
-    }
-
     public ClusterList withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
@@ -422,38 +419,21 @@ public class ClusterList {
         this.securityGroupId = securityGroupId;
     }
 
-    public ClusterList withEnterpriseProjectId(String enterpriseProjectId) {
-        this.enterpriseProjectId = enterpriseProjectId;
+    public ClusterList withBandwidthSize(Integer bandwidthSize) {
+        this.bandwidthSize = bandwidthSize;
         return this;
     }
 
     /**
-     * 集群所属的企业项目ID。  如果集群所属用户没有开通企业项目，则不会返回该参数。
-     * @return enterpriseProjectId
+     * 公网带宽大小。
+     * @return bandwidthSize
      */
-    public String getEnterpriseProjectId() {
-        return enterpriseProjectId;
+    public Integer getBandwidthSize() {
+        return bandwidthSize;
     }
 
-    public void setEnterpriseProjectId(String enterpriseProjectId) {
-        this.enterpriseProjectId = enterpriseProjectId;
-    }
-
-    public ClusterList withPeriod(Boolean period) {
-        this.period = period;
-        return this;
-    }
-
-    /**
-     * 是为包周期集群。
-     * @return period
-     */
-    public Boolean getPeriod() {
-        return period;
-    }
-
-    public void setPeriod(Boolean period) {
-        this.period = period;
+    public void setBandwidthSize(Integer bandwidthSize) {
+        this.bandwidthSize = bandwidthSize;
     }
 
     public ClusterList withHttpsEnable(Boolean httpsEnable) {
@@ -462,7 +442,7 @@ public class ClusterList {
     }
 
     /**
-     * 是否开启https访问。
+     * 通信加密状态。 - false：未设置通信加密。 - true：已设置通信加密。
      * @return httpsEnable
      */
     public Boolean getHttpsEnable() {
@@ -471,6 +451,133 @@ public class ClusterList {
 
     public void setHttpsEnable(Boolean httpsEnable) {
         this.httpsEnable = httpsEnable;
+    }
+
+    public ClusterList withAuthorityEnable(Boolean authorityEnable) {
+        this.authorityEnable = authorityEnable;
+        return this;
+    }
+
+    /**
+     * 是否开启认证，取值范围为true或false。默认关闭认证功能。当开启认证时，httpsEnable需要设置为true。 - true：表示集群开启认证。 - false：表示集群不开启认证。
+     * @return authorityEnable
+     */
+    public Boolean getAuthorityEnable() {
+        return authorityEnable;
+    }
+
+    public void setAuthorityEnable(Boolean authorityEnable) {
+        this.authorityEnable = authorityEnable;
+    }
+
+    public ClusterList withDiskEncrypted(Boolean diskEncrypted) {
+        this.diskEncrypted = diskEncrypted;
+        return this;
+    }
+
+    /**
+     * 磁盘是否加密。  - true : 磁盘已加密。 - false : 磁盘未加密。
+     * @return diskEncrypted
+     */
+    public Boolean getDiskEncrypted() {
+        return diskEncrypted;
+    }
+
+    public void setDiskEncrypted(Boolean diskEncrypted) {
+        this.diskEncrypted = diskEncrypted;
+    }
+
+    public ClusterList withBackupAvailable(Boolean backupAvailable) {
+        this.backupAvailable = backupAvailable;
+        return this;
+    }
+
+    /**
+     * 快照是否开启。
+     * @return backupAvailable
+     */
+    public Boolean getBackupAvailable() {
+        return backupAvailable;
+    }
+
+    public void setBackupAvailable(Boolean backupAvailable) {
+        this.backupAvailable = backupAvailable;
+    }
+
+    public ClusterList withActionProgress(ClusterListActionProgress actionProgress) {
+        this.actionProgress = actionProgress;
+        return this;
+    }
+
+    public ClusterList withActionProgress(Consumer<ClusterListActionProgress> actionProgressSetter) {
+        if (this.actionProgress == null) {
+            this.actionProgress = new ClusterListActionProgress();
+            actionProgressSetter.accept(this.actionProgress);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get actionProgress
+     * @return actionProgress
+     */
+    public ClusterListActionProgress getActionProgress() {
+        return actionProgress;
+    }
+
+    public void setActionProgress(ClusterListActionProgress actionProgress) {
+        this.actionProgress = actionProgress;
+    }
+
+    public ClusterList withActions(List<String> actions) {
+        this.actions = actions;
+        return this;
+    }
+
+    public ClusterList addActionsItem(String actionsItem) {
+        if (this.actions == null) {
+            this.actions = new ArrayList<>();
+        }
+        this.actions.add(actionsItem);
+        return this;
+    }
+
+    public ClusterList withActions(Consumer<List<String>> actionsSetter) {
+        if (this.actions == null) {
+            this.actions = new ArrayList<>();
+        }
+        actionsSetter.accept(this.actions);
+        return this;
+    }
+
+    /**
+     * 集群当前行为。REBOOTING表示重启、GROWING表示扩容、RESTORING表示恢复集群、SNAPSHOTTING表示创建快照。
+     * @return actions
+     */
+    public List<String> getActions() {
+        return actions;
+    }
+
+    public void setActions(List<String> actions) {
+        this.actions = actions;
+    }
+
+    public ClusterList withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 集群所属的企业项目ID。 如果集群所属用户没有开通企业项目，则不会返回该参数。
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
     }
 
     public ClusterList withTags(List<ClusterListTags> tags) {
@@ -506,6 +613,49 @@ public class ClusterList {
         this.tags = tags;
     }
 
+    public ClusterList withFailedReasons(ClusterListFailedReasons failedReasons) {
+        this.failedReasons = failedReasons;
+        return this;
+    }
+
+    public ClusterList withFailedReasons(Consumer<ClusterListFailedReasons> failedReasonsSetter) {
+        if (this.failedReasons == null) {
+            this.failedReasons = new ClusterListFailedReasons();
+            failedReasonsSetter.accept(this.failedReasons);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get failedReasons
+     * @return failedReasons
+     */
+    public ClusterListFailedReasons getFailedReasons() {
+        return failedReasons;
+    }
+
+    public void setFailedReasons(ClusterListFailedReasons failedReasons) {
+        this.failedReasons = failedReasons;
+    }
+
+    public ClusterList withPeriod(Boolean period) {
+        this.period = period;
+        return this;
+    }
+
+    /**
+     * 是为包周期集群。 - \"true\" 表示是包周期计费的集群。 - \"false\" 表示是按需计费的集群。
+     * @return period
+     */
+    public Boolean getPeriod() {
+        return period;
+    }
+
+    public void setPeriod(Boolean period) {
+        this.period = period;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -517,41 +667,54 @@ public class ClusterList {
         ClusterList clusterList = (ClusterList) o;
         return Objects.equals(this.datastore, clusterList.datastore)
             && Objects.equals(this.instances, clusterList.instances)
+            && Objects.equals(this.publicKibanaResp, clusterList.publicKibanaResp)
+            && Objects.equals(this.elbWhiteList, clusterList.elbWhiteList)
             && Objects.equals(this.updated, clusterList.updated) && Objects.equals(this.name, clusterList.name)
-            && Objects.equals(this.created, clusterList.created) && Objects.equals(this.id, clusterList.id)
-            && Objects.equals(this.status, clusterList.status) && Objects.equals(this.endpoint, clusterList.endpoint)
+            && Objects.equals(this.publicIp, clusterList.publicIp) && Objects.equals(this.created, clusterList.created)
+            && Objects.equals(this.id, clusterList.id) && Objects.equals(this.status, clusterList.status)
+            && Objects.equals(this.endpoint, clusterList.endpoint) && Objects.equals(this.vpcId, clusterList.vpcId)
+            && Objects.equals(this.subnetId, clusterList.subnetId)
+            && Objects.equals(this.securityGroupId, clusterList.securityGroupId)
+            && Objects.equals(this.bandwidthSize, clusterList.bandwidthSize)
+            && Objects.equals(this.httpsEnable, clusterList.httpsEnable)
+            && Objects.equals(this.authorityEnable, clusterList.authorityEnable)
+            && Objects.equals(this.diskEncrypted, clusterList.diskEncrypted)
+            && Objects.equals(this.backupAvailable, clusterList.backupAvailable)
             && Objects.equals(this.actionProgress, clusterList.actionProgress)
             && Objects.equals(this.actions, clusterList.actions)
-            && Objects.equals(this.failedReasons, clusterList.failedReasons)
-            && Objects.equals(this.authorityEnable, clusterList.authorityEnable)
-            && Objects.equals(this.vpcId, clusterList.vpcId) && Objects.equals(this.subnetId, clusterList.subnetId)
-            && Objects.equals(this.securityGroupId, clusterList.securityGroupId)
             && Objects.equals(this.enterpriseProjectId, clusterList.enterpriseProjectId)
-            && Objects.equals(this.period, clusterList.period)
-            && Objects.equals(this.httpsEnable, clusterList.httpsEnable) && Objects.equals(this.tags, clusterList.tags);
+            && Objects.equals(this.tags, clusterList.tags)
+            && Objects.equals(this.failedReasons, clusterList.failedReasons)
+            && Objects.equals(this.period, clusterList.period);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(datastore,
             instances,
+            publicKibanaResp,
+            elbWhiteList,
             updated,
             name,
+            publicIp,
             created,
             id,
             status,
             endpoint,
-            actionProgress,
-            actions,
-            failedReasons,
-            authorityEnable,
             vpcId,
             subnetId,
             securityGroupId,
-            enterpriseProjectId,
-            period,
+            bandwidthSize,
             httpsEnable,
-            tags);
+            authorityEnable,
+            diskEncrypted,
+            backupAvailable,
+            actionProgress,
+            actions,
+            enterpriseProjectId,
+            tags,
+            failedReasons,
+            period);
     }
 
     @Override
@@ -560,23 +723,29 @@ public class ClusterList {
         sb.append("class ClusterList {\n");
         sb.append("    datastore: ").append(toIndentedString(datastore)).append("\n");
         sb.append("    instances: ").append(toIndentedString(instances)).append("\n");
+        sb.append("    publicKibanaResp: ").append(toIndentedString(publicKibanaResp)).append("\n");
+        sb.append("    elbWhiteList: ").append(toIndentedString(elbWhiteList)).append("\n");
         sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    publicIp: ").append(toIndentedString(publicIp)).append("\n");
         sb.append("    created: ").append(toIndentedString(created)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    endpoint: ").append(toIndentedString(endpoint)).append("\n");
-        sb.append("    actionProgress: ").append(toIndentedString(actionProgress)).append("\n");
-        sb.append("    actions: ").append(toIndentedString(actions)).append("\n");
-        sb.append("    failedReasons: ").append(toIndentedString(failedReasons)).append("\n");
-        sb.append("    authorityEnable: ").append(toIndentedString(authorityEnable)).append("\n");
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
         sb.append("    securityGroupId: ").append(toIndentedString(securityGroupId)).append("\n");
-        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
-        sb.append("    period: ").append(toIndentedString(period)).append("\n");
+        sb.append("    bandwidthSize: ").append(toIndentedString(bandwidthSize)).append("\n");
         sb.append("    httpsEnable: ").append(toIndentedString(httpsEnable)).append("\n");
+        sb.append("    authorityEnable: ").append(toIndentedString(authorityEnable)).append("\n");
+        sb.append("    diskEncrypted: ").append(toIndentedString(diskEncrypted)).append("\n");
+        sb.append("    backupAvailable: ").append(toIndentedString(backupAvailable)).append("\n");
+        sb.append("    actionProgress: ").append(toIndentedString(actionProgress)).append("\n");
+        sb.append("    actions: ").append(toIndentedString(actions)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    failedReasons: ").append(toIndentedString(failedReasons)).append("\n");
+        sb.append("    period: ").append(toIndentedString(period)).append("\n");
         sb.append("}");
         return sb.toString();
     }

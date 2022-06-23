@@ -27,7 +27,7 @@ public class UpdateAlterKibanaRequest {
     }
 
     /**
-     * 指定待更改的集群ID。
+     * 指定待修改kibana公网带宽的集群ID。
      * @return clusterId
      */
     public String getClusterId() {

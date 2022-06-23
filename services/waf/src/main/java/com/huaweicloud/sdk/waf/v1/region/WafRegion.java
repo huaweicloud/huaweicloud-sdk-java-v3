@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.waf.v1.region;
 
+import com.huaweicloud.sdk.core.region.IRegionProvider;
 import com.huaweicloud.sdk.core.region.Region;
+import com.huaweicloud.sdk.core.region.RegionProviderChain;
 import com.huaweicloud.sdk.core.utils.StringUtils;
 
 import java.util.Collections;
@@ -38,6 +40,8 @@ public class WafRegion {
     public static final Region RU_NORTHWEST_2 =
         new Region("ru-northwest-2", "https://waf.ru-northwest-2.myhuaweicloud.com");
 
+    private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("WAF");
+
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
 
     private static Map<String, Region> createStaticFields() {
@@ -61,11 +65,16 @@ public class WafRegion {
         if (StringUtils.isEmpty(regionId)) {
             throw new IllegalArgumentException("Unexpected empty parameter: regionId.");
         }
-        Region result = STATIC_FIELDS.get(regionId);
+
+        Region result = PROVIDER.getRegion(regionId);
+        if (Objects.nonNull(result)) {
+            return result;
+        }
+
+        result = STATIC_FIELDS.get(regionId);
         if (Objects.nonNull(result)) {
             return result;
         }
         throw new IllegalArgumentException("Unexpected regionId: " + regionId);
     }
-
 }

@@ -3,8 +3,6 @@ package com.huaweicloud.sdk.gaussdbfornosql.v3.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -31,7 +29,7 @@ public class CreateConfigurationRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "values")
 
-    private Map<String, String> values = null;
+    private CreateConfigurationValuesOption values;
 
     public CreateConfigurationRequestBody withName(String name) {
         this.name = name;
@@ -93,36 +91,29 @@ public class CreateConfigurationRequestBody {
         this.datastore = datastore;
     }
 
-    public CreateConfigurationRequestBody withValues(Map<String, String> values) {
+    public CreateConfigurationRequestBody withValues(CreateConfigurationValuesOption values) {
         this.values = values;
         return this;
     }
 
-    public CreateConfigurationRequestBody putValuesItem(String key, String valuesItem) {
+    public CreateConfigurationRequestBody withValues(Consumer<CreateConfigurationValuesOption> valuesSetter) {
         if (this.values == null) {
-            this.values = new HashMap<>();
+            this.values = new CreateConfigurationValuesOption();
+            valuesSetter.accept(this.values);
         }
-        this.values.put(key, valuesItem);
-        return this;
-    }
 
-    public CreateConfigurationRequestBody withValues(Consumer<Map<String, String>> valuesSetter) {
-        if (this.values == null) {
-            this.values = new HashMap<>();
-        }
-        valuesSetter.accept(this.values);
         return this;
     }
 
     /**
-     * 参数值对象，用户基于默认参数模板自定义的参数值。默认不修改参数值。
+     * Get values
      * @return values
      */
-    public Map<String, String> getValues() {
+    public CreateConfigurationValuesOption getValues() {
         return values;
     }
 
-    public void setValues(Map<String, String> values) {
+    public void setValues(CreateConfigurationValuesOption values) {
         this.values = values;
     }
 

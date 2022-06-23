@@ -21,7 +21,7 @@ public class StopLogAutoBackupPolicyRequest {
     }
 
     /**
-     * 指定待关闭的集群ID。
+     * 指定关闭日志自动备份的集群ID。
      * @return clusterId
      */
     public String getClusterId() {

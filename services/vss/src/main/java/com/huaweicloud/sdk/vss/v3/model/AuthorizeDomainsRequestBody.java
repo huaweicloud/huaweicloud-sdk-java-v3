@@ -21,7 +21,7 @@ public class AuthorizeDomainsRequestBody {
     private String domainName;
 
     /**
-     * 认证方式:   * file - 文件认证   * auto - 一键认证 
+     * 认证方式:   * file - 文件认证   * auto - 一键认证   * free - 免认证，选择此项默认已阅读并了解下述使用要求           使用须知：           1、您的账号已完成实名认证，且非受限账号。           2、您确认您已获得对扫描对象进行扫描的相关合法权利。           3、您确认您的扫描行为有合法合理目的，且符合适用的法律法规要求，不得利用本服务从事任何黑灰产等非法活动。           4、若您违反上述承诺，我们有权立即终止您对本服务的使用，并要求您对我们及相关第三方因此遭受的损失进行赔偿。 
      */
     public static final class AuthModeEnum {
 
@@ -35,12 +35,18 @@ public class AuthorizeDomainsRequestBody {
          */
         public static final AuthModeEnum AUTO = new AuthModeEnum("auto");
 
+        /**
+         * Enum FREE for value: "free"
+         */
+        public static final AuthModeEnum FREE = new AuthModeEnum("free");
+
         private static final Map<String, AuthModeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, AuthModeEnum> createStaticFields() {
             Map<String, AuthModeEnum> map = new HashMap<>();
             map.put("file", FILE);
             map.put("auto", AUTO);
+            map.put("free", FREE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -125,7 +131,7 @@ public class AuthorizeDomainsRequestBody {
     }
 
     /**
-     * 认证方式:   * file - 文件认证   * auto - 一键认证 
+     * 认证方式:   * file - 文件认证   * auto - 一键认证   * free - 免认证，选择此项默认已阅读并了解下述使用要求           使用须知：           1、您的账号已完成实名认证，且非受限账号。           2、您确认您已获得对扫描对象进行扫描的相关合法权利。           3、您确认您的扫描行为有合法合理目的，且符合适用的法律法规要求，不得利用本服务从事任何黑灰产等非法活动。           4、若您违反上述承诺，我们有权立即终止您对本服务的使用，并要求您对我们及相关第三方因此遭受的损失进行赔偿。 
      * @return authMode
      */
     public AuthModeEnum getAuthMode() {

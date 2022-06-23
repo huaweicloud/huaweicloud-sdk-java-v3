@@ -27,7 +27,7 @@ public class StartPipelineRequest {
     }
 
     /**
-     * 指定待开启的集群ID。
+     * 指定开启pipeline的集群ID。
      * @return clusterId
      */
     public String getClusterId() {

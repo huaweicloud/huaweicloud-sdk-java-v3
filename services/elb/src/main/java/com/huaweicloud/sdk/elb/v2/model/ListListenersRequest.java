@@ -41,6 +41,21 @@ public class ListListenersRequest {
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "loadbalancer_id")
+
+    private String loadbalancerId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "connection_limit")
+
+    private Integer connectionLimit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "admin_state_up")
+
+    private Boolean adminStateUp;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "default_pool_id")
 
     private String defaultPoolId;
@@ -71,24 +86,19 @@ public class ListListenersRequest {
     private String tlsCiphersPolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "member_timeout")
-
-    private Integer memberTimeout;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "client_timeout")
-
-    private Integer clientTimeout;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "keepalive_timeout")
-
-    private Integer keepaliveTimeout;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tls_container_id")
 
     private String tlsContainerId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "http2_enable")
+
+    private Boolean http2Enable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
 
     public ListListenersRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -194,6 +204,57 @@ public class ListListenersRequest {
         this.description = description;
     }
 
+    public ListListenersRequest withLoadbalancerId(String loadbalancerId) {
+        this.loadbalancerId = loadbalancerId;
+        return this;
+    }
+
+    /**
+     * 监听器所在的负载均衡器ID。
+     * @return loadbalancerId
+     */
+    public String getLoadbalancerId() {
+        return loadbalancerId;
+    }
+
+    public void setLoadbalancerId(String loadbalancerId) {
+        this.loadbalancerId = loadbalancerId;
+    }
+
+    public ListListenersRequest withConnectionLimit(Integer connectionLimit) {
+        this.connectionLimit = connectionLimit;
+        return this;
+    }
+
+    /**
+     * 监听器的最大连接数。
+     * @return connectionLimit
+     */
+    public Integer getConnectionLimit() {
+        return connectionLimit;
+    }
+
+    public void setConnectionLimit(Integer connectionLimit) {
+        this.connectionLimit = connectionLimit;
+    }
+
+    public ListListenersRequest withAdminStateUp(Boolean adminStateUp) {
+        this.adminStateUp = adminStateUp;
+        return this;
+    }
+
+    /**
+     * 监听器的管理状态。该字段为预留字段，暂未启用。默认为true。
+     * @return adminStateUp
+     */
+    public Boolean getAdminStateUp() {
+        return adminStateUp;
+    }
+
+    public void setAdminStateUp(Boolean adminStateUp) {
+        this.adminStateUp = adminStateUp;
+    }
+
     public ListListenersRequest withDefaultPoolId(String defaultPoolId) {
         this.defaultPoolId = defaultPoolId;
         return this;
@@ -296,57 +357,6 @@ public class ListListenersRequest {
         this.tlsCiphersPolicy = tlsCiphersPolicy;
     }
 
-    public ListListenersRequest withMemberTimeout(Integer memberTimeout) {
-        this.memberTimeout = memberTimeout;
-        return this;
-    }
-
-    /**
-     * 等待后端服务器请求超时时间，协议为HTTP， TERMINATED_HTTPS时才有意义。取值范围 1-300
-     * @return memberTimeout
-     */
-    public Integer getMemberTimeout() {
-        return memberTimeout;
-    }
-
-    public void setMemberTimeout(Integer memberTimeout) {
-        this.memberTimeout = memberTimeout;
-    }
-
-    public ListListenersRequest withClientTimeout(Integer clientTimeout) {
-        this.clientTimeout = clientTimeout;
-        return this;
-    }
-
-    /**
-     * 等待客户端请求超时时间，协议为HTTP， TERMINATED_HTTPS的监听器才有意义。取值范围 1-60
-     * @return clientTimeout
-     */
-    public Integer getClientTimeout() {
-        return clientTimeout;
-    }
-
-    public void setClientTimeout(Integer clientTimeout) {
-        this.clientTimeout = clientTimeout;
-    }
-
-    public ListListenersRequest withKeepaliveTimeout(Integer keepaliveTimeout) {
-        this.keepaliveTimeout = keepaliveTimeout;
-        return this;
-    }
-
-    /**
-     * TCP监听器配置空闲超时时间，取值范围为（10-900s）默认值为300s，TCP监听器配置空闲超时时间，取值范围为（10-900s）默认值为300s，HTTP/TERMINATED_HTTPS监听器为客户端连接空闲超时时间，取值范围为（1-300s）默认值为15s。 UDP此字段无意义
-     * @return keepaliveTimeout
-     */
-    public Integer getKeepaliveTimeout() {
-        return keepaliveTimeout;
-    }
-
-    public void setKeepaliveTimeout(Integer keepaliveTimeout) {
-        this.keepaliveTimeout = keepaliveTimeout;
-    }
-
     public ListListenersRequest withTlsContainerId(String tlsContainerId) {
         this.tlsContainerId = tlsContainerId;
         return this;
@@ -364,6 +374,40 @@ public class ListListenersRequest {
         this.tlsContainerId = tlsContainerId;
     }
 
+    public ListListenersRequest withHttp2Enable(Boolean http2Enable) {
+        this.http2Enable = http2Enable;
+        return this;
+    }
+
+    /**
+     * HTTP2功能的开启状态。取值范围：true/false。true：开启。false：关闭。
+     * @return http2Enable
+     */
+    public Boolean getHttp2Enable() {
+        return http2Enable;
+    }
+
+    public void setHttp2Enable(Boolean http2Enable) {
+        this.http2Enable = http2Enable;
+    }
+
+    public ListListenersRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目ID，仅用于基于企业项目的细粒度鉴权使用。 - 如果参数传递default_pool_id，则以pool对应的企业项目ID鉴权。 - 如果default_pool_id和enterprise_project_id都没有传递 ，则进行细粒度鉴权 ，必须在用户
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -378,16 +422,18 @@ public class ListListenersRequest {
             && Objects.equals(this.pageReverse, listListenersRequest.pageReverse)
             && Objects.equals(this.id, listListenersRequest.id) && Objects.equals(this.name, listListenersRequest.name)
             && Objects.equals(this.description, listListenersRequest.description)
+            && Objects.equals(this.loadbalancerId, listListenersRequest.loadbalancerId)
+            && Objects.equals(this.connectionLimit, listListenersRequest.connectionLimit)
+            && Objects.equals(this.adminStateUp, listListenersRequest.adminStateUp)
             && Objects.equals(this.defaultPoolId, listListenersRequest.defaultPoolId)
             && Objects.equals(this.defaultTlsContainerRef, listListenersRequest.defaultTlsContainerRef)
             && Objects.equals(this.clientCaTlsContainerRef, listListenersRequest.clientCaTlsContainerRef)
             && Objects.equals(this.protocol, listListenersRequest.protocol)
             && Objects.equals(this.protocolPort, listListenersRequest.protocolPort)
             && Objects.equals(this.tlsCiphersPolicy, listListenersRequest.tlsCiphersPolicy)
-            && Objects.equals(this.memberTimeout, listListenersRequest.memberTimeout)
-            && Objects.equals(this.clientTimeout, listListenersRequest.clientTimeout)
-            && Objects.equals(this.keepaliveTimeout, listListenersRequest.keepaliveTimeout)
-            && Objects.equals(this.tlsContainerId, listListenersRequest.tlsContainerId);
+            && Objects.equals(this.tlsContainerId, listListenersRequest.tlsContainerId)
+            && Objects.equals(this.http2Enable, listListenersRequest.http2Enable)
+            && Objects.equals(this.enterpriseProjectId, listListenersRequest.enterpriseProjectId);
     }
 
     @Override
@@ -398,16 +444,18 @@ public class ListListenersRequest {
             id,
             name,
             description,
+            loadbalancerId,
+            connectionLimit,
+            adminStateUp,
             defaultPoolId,
             defaultTlsContainerRef,
             clientCaTlsContainerRef,
             protocol,
             protocolPort,
             tlsCiphersPolicy,
-            memberTimeout,
-            clientTimeout,
-            keepaliveTimeout,
-            tlsContainerId);
+            tlsContainerId,
+            http2Enable,
+            enterpriseProjectId);
     }
 
     @Override
@@ -420,16 +468,18 @@ public class ListListenersRequest {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    loadbalancerId: ").append(toIndentedString(loadbalancerId)).append("\n");
+        sb.append("    connectionLimit: ").append(toIndentedString(connectionLimit)).append("\n");
+        sb.append("    adminStateUp: ").append(toIndentedString(adminStateUp)).append("\n");
         sb.append("    defaultPoolId: ").append(toIndentedString(defaultPoolId)).append("\n");
         sb.append("    defaultTlsContainerRef: ").append(toIndentedString(defaultTlsContainerRef)).append("\n");
         sb.append("    clientCaTlsContainerRef: ").append(toIndentedString(clientCaTlsContainerRef)).append("\n");
         sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
         sb.append("    protocolPort: ").append(toIndentedString(protocolPort)).append("\n");
         sb.append("    tlsCiphersPolicy: ").append(toIndentedString(tlsCiphersPolicy)).append("\n");
-        sb.append("    memberTimeout: ").append(toIndentedString(memberTimeout)).append("\n");
-        sb.append("    clientTimeout: ").append(toIndentedString(clientTimeout)).append("\n");
-        sb.append("    keepaliveTimeout: ").append(toIndentedString(keepaliveTimeout)).append("\n");
         sb.append("    tlsContainerId: ").append(toIndentedString(tlsContainerId)).append("\n");
+        sb.append("    http2Enable: ").append(toIndentedString(http2Enable)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

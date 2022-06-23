@@ -35,6 +35,16 @@ public class PartAttendee {
 
     private String type;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "role")
+
+    private Integer role;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "isMute")
+
+    private Integer isMute;
+
     public PartAttendee withName(String name) {
         this.name = name;
         return this;
@@ -120,6 +130,40 @@ public class PartAttendee {
         this.type = type;
     }
 
+    public PartAttendee withRole(Integer role) {
+        this.role = role;
+        return this;
+    }
+
+    /**
+     * 会议中的角色。默认为普通与会者。 - 0：普通与会者。 - 1：会议主持人。
+     * @return role
+     */
+    public Integer getRole() {
+        return role;
+    }
+
+    public void setRole(Integer role) {
+        this.role = role;
+    }
+
+    public PartAttendee withIsMute(Integer isMute) {
+        this.isMute = isMute;
+        return this;
+    }
+
+    /**
+     * 用户入会时是否需要自动静音。默认不静音。 - 0: 不需要静音。 - 1: 需要静音。
+     * @return isMute
+     */
+    public Integer getIsMute() {
+        return isMute;
+    }
+
+    public void setIsMute(Integer isMute) {
+        this.isMute = isMute;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -131,12 +175,13 @@ public class PartAttendee {
         PartAttendee partAttendee = (PartAttendee) o;
         return Objects.equals(this.name, partAttendee.name) && Objects.equals(this.phone, partAttendee.phone)
             && Objects.equals(this.phone2, partAttendee.phone2) && Objects.equals(this.phone3, partAttendee.phone3)
-            && Objects.equals(this.type, partAttendee.type);
+            && Objects.equals(this.type, partAttendee.type) && Objects.equals(this.role, partAttendee.role)
+            && Objects.equals(this.isMute, partAttendee.isMute);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, phone, phone2, phone3, type);
+        return Objects.hash(name, phone, phone2, phone3, type, role, isMute);
     }
 
     @Override
@@ -148,6 +193,8 @@ public class PartAttendee {
         sb.append("    phone2: ").append(toIndentedString(phone2)).append("\n");
         sb.append("    phone3: ").append(toIndentedString(phone3)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    role: ").append(toIndentedString(role)).append("\n");
+        sb.append("    isMute: ").append(toIndentedString(isMute)).append("\n");
         sb.append("}");
         return sb.toString();
     }

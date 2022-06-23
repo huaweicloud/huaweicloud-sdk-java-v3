@@ -21,7 +21,7 @@ public class CreateLogBackupRequest {
     }
 
     /**
-     * 指定待备份的集群ID。
+     * 指定待备份日志的集群ID。
      * @return clusterId
      */
     public String getClusterId() {

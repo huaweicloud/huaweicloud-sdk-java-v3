@@ -43,7 +43,7 @@ public class Region {
     }
 
     /**
-     * 显示名称
+     * 区域显示名称
      * @return displayName
      */
     public String getDisplayName() {

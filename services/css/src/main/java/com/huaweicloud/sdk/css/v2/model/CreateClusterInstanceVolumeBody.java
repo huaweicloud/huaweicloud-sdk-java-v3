@@ -43,7 +43,7 @@ public class CreateClusterInstanceVolumeBody {
     }
 
     /**
-     * 卷大小，必须为4和10的倍数。 单位：GB。
+     * 卷大小，必须为大于0且为4和10的公倍数。 单位：GB。
      * @return size
      */
     public Integer getSize() {

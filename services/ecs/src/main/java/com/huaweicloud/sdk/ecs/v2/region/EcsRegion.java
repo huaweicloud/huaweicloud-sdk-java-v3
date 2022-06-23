@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.ecs.v2.region;
 
+import com.huaweicloud.sdk.core.region.IRegionProvider;
 import com.huaweicloud.sdk.core.region.Region;
+import com.huaweicloud.sdk.core.region.RegionProviderChain;
 import com.huaweicloud.sdk.core.utils.StringUtils;
 
 import java.util.Collections;
@@ -44,6 +46,12 @@ public class EcsRegion {
 
     public static final Region LA_SOUTH_2 = new Region("la-south-2", "https://ecs.la-south-2.myhuaweicloud.com");
 
+    public static final Region CN_SOUTH_2 = new Region("cn-south-2", "https://ecs.cn-south-2.myhuaweicloud.com");
+
+    public static final Region CN_NORTH_9 = new Region("cn-north-9", "https://ecs.cn-north-9.myhuaweicloud.com");
+
+    private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("ECS");
+
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
 
     private static Map<String, Region> createStaticFields() {
@@ -63,6 +71,8 @@ public class EcsRegion {
         map.put("cn-south-4", CN_SOUTH_4);
         map.put("na-mexico-1", NA_MEXICO_1);
         map.put("la-south-2", LA_SOUTH_2);
+        map.put("cn-south-2", CN_SOUTH_2);
+        map.put("cn-north-9", CN_NORTH_9);
         return Collections.unmodifiableMap(map);
     }
 
@@ -70,11 +80,16 @@ public class EcsRegion {
         if (StringUtils.isEmpty(regionId)) {
             throw new IllegalArgumentException("Unexpected empty parameter: regionId.");
         }
-        Region result = STATIC_FIELDS.get(regionId);
+
+        Region result = PROVIDER.getRegion(regionId);
+        if (Objects.nonNull(result)) {
+            return result;
+        }
+
+        result = STATIC_FIELDS.get(regionId);
         if (Objects.nonNull(result)) {
             return result;
         }
         throw new IllegalArgumentException("Unexpected regionId: " + regionId);
     }
-
 }

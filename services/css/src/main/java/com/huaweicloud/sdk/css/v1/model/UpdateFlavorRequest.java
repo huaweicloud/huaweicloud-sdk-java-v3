@@ -27,7 +27,7 @@ public class UpdateFlavorRequest {
     }
 
     /**
-     * 指定待更改该的集群ID。
+     * 指定待更改规格的集群ID。
      * @return clusterId
      */
     public String getClusterId() {

@@ -26,7 +26,7 @@ public class CreateClusterDatastoreBody {
     }
 
     /**
-     * 引擎版本号。  elasticsearch支持5.5.1、6.2.3、6.5.4、7.1.1、7.6.2或7.9.3。  logstash支持5.6.16或7.10.0。
+     * CSS集群引擎版本号。详细请参考CSS[支持的集群版本](css_03_0056.xml)。
      * @return version
      */
     public String getVersion() {

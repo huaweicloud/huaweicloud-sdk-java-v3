@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 弹性Ip信息
+ * 公网访问信息。
  */
 public class CreateClusterPublicIpReq {
 

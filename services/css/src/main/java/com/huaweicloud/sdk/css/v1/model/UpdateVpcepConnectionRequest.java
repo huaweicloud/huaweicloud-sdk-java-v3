@@ -27,7 +27,7 @@ public class UpdateVpcepConnectionRequest {
     }
 
     /**
-     * 指定待更新的集群ID。
+     * 指定更新终端节点的集群ID。
      * @return clusterId
      */
     public String getClusterId() {

@@ -11,14 +11,14 @@ import java.util.Objects;
 public class EsflavorsVersionsFlavorsResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ram")
-
-    private Integer ram;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cpu")
 
     private Integer cpu;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ram")
+
+    private Integer ram;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
@@ -36,26 +36,14 @@ public class EsflavorsVersionsFlavorsResp {
     private String diskrange;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "availableAZ")
+
+    private String availableAZ;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flavor_id")
 
     private String flavorId;
-
-    public EsflavorsVersionsFlavorsResp withRam(Integer ram) {
-        this.ram = ram;
-        return this;
-    }
-
-    /**
-     * 实例的内存大小。单位GB。
-     * @return ram
-     */
-    public Integer getRam() {
-        return ram;
-    }
-
-    public void setRam(Integer ram) {
-        this.ram = ram;
-    }
 
     public EsflavorsVersionsFlavorsResp withCpu(Integer cpu) {
         this.cpu = cpu;
@@ -72,6 +60,23 @@ public class EsflavorsVersionsFlavorsResp {
 
     public void setCpu(Integer cpu) {
         this.cpu = cpu;
+    }
+
+    public EsflavorsVersionsFlavorsResp withRam(Integer ram) {
+        this.ram = ram;
+        return this;
+    }
+
+    /**
+     * 实例的内存大小。单位GB。
+     * @return ram
+     */
+    public Integer getRam() {
+        return ram;
+    }
+
+    public void setRam(Integer ram) {
+        this.ram = ram;
     }
 
     public EsflavorsVersionsFlavorsResp withName(String name) {
@@ -125,6 +130,23 @@ public class EsflavorsVersionsFlavorsResp {
         this.diskrange = diskrange;
     }
 
+    public EsflavorsVersionsFlavorsResp withAvailableAZ(String availableAZ) {
+        this.availableAZ = availableAZ;
+        return this;
+    }
+
+    /**
+     * 可用区。
+     * @return availableAZ
+     */
+    public String getAvailableAZ() {
+        return availableAZ;
+    }
+
+    public void setAvailableAZ(String availableAZ) {
+        this.availableAZ = availableAZ;
+    }
+
     public EsflavorsVersionsFlavorsResp withFlavorId(String flavorId) {
         this.flavorId = flavorId;
         return this;
@@ -151,28 +173,30 @@ public class EsflavorsVersionsFlavorsResp {
             return false;
         }
         EsflavorsVersionsFlavorsResp esflavorsVersionsFlavorsResp = (EsflavorsVersionsFlavorsResp) o;
-        return Objects.equals(this.ram, esflavorsVersionsFlavorsResp.ram)
-            && Objects.equals(this.cpu, esflavorsVersionsFlavorsResp.cpu)
+        return Objects.equals(this.cpu, esflavorsVersionsFlavorsResp.cpu)
+            && Objects.equals(this.ram, esflavorsVersionsFlavorsResp.ram)
             && Objects.equals(this.name, esflavorsVersionsFlavorsResp.name)
             && Objects.equals(this.region, esflavorsVersionsFlavorsResp.region)
             && Objects.equals(this.diskrange, esflavorsVersionsFlavorsResp.diskrange)
+            && Objects.equals(this.availableAZ, esflavorsVersionsFlavorsResp.availableAZ)
             && Objects.equals(this.flavorId, esflavorsVersionsFlavorsResp.flavorId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(ram, cpu, name, region, diskrange, flavorId);
+        return Objects.hash(cpu, ram, name, region, diskrange, availableAZ, flavorId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class EsflavorsVersionsFlavorsResp {\n");
-        sb.append("    ram: ").append(toIndentedString(ram)).append("\n");
         sb.append("    cpu: ").append(toIndentedString(cpu)).append("\n");
+        sb.append("    ram: ").append(toIndentedString(ram)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("    diskrange: ").append(toIndentedString(diskrange)).append("\n");
+        sb.append("    availableAZ: ").append(toIndentedString(availableAZ)).append("\n");
         sb.append("    flavorId: ").append(toIndentedString(flavorId)).append("\n");
         sb.append("}");
         return sb.toString();

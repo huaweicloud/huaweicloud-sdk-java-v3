@@ -1840,13 +1840,6 @@ public class CssMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("cluster_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTemplateRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
         builder.<DeleteTemplateReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,

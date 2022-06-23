@@ -25,6 +25,7 @@ import com.huaweicloud.sdk.core.Constants;
 import com.huaweicloud.sdk.core.http.HttpClient;
 import com.huaweicloud.sdk.core.http.HttpRequest;
 import com.huaweicloud.sdk.core.internal.model.Credential;
+import com.huaweicloud.sdk.core.utils.StringUtils;
 import com.huaweicloud.sdk.core.utils.TimeUtils;
 
 import java.util.Objects;
@@ -54,8 +55,8 @@ public abstract class AbstractCredentials<DerivedT extends AbstractCredentials<D
 
     public static final Function<HttpRequest, Boolean> DEFAULT_DERIVED_PREDICATE =
         httpRequest ->
-                !Constants.DEFAULT_ENDPOINT_REG.matches(
-                        httpRequest.getEndpoint().replace(Constants.HTTPS_SCHEME + "://", ""));
+            !Constants.DEFAULT_ENDPOINT_REG.matches(
+                httpRequest.getEndpoint().replace(Constants.HTTPS_SCHEME + "://", ""));
 
     public abstract void processDerivedAuthParams(String derivedAuthServiceName, String regionId);
 
@@ -142,6 +143,11 @@ public abstract class AbstractCredentials<DerivedT extends AbstractCredentials<D
     public DerivedT withDerivedPredicate(Function<HttpRequest, Boolean> derivedPredicate) {
         this.derivedPredicate = derivedPredicate;
         return (DerivedT) this;
+    }
+
+    protected String getDefaultIamEndpoint() {
+        String iamEndpointEnv = System.getenv(Constants.IAM_ENDPOINT_ENV_NAME);
+        return StringUtils.isEmpty(iamEndpointEnv) ? Constants.DEFAULT_IAM_ENDPOINT : iamEndpointEnv;
     }
 
     protected boolean isDerivedAuth(HttpRequest httpRequest) {

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 包周期集群相关参数订购包周期集群时使用。
+ * 包周期集群相关参数，订购包周期集群时使用。
  */
 public class PayInfoBody {
 

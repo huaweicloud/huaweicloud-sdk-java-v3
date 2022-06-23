@@ -27,7 +27,7 @@ public class UpdateCnfRequest {
     }
 
     /**
-     * 指定待更新的集群ID。
+     * 指定更新配置文件的集群ID。
      * @return clusterId
      */
     public String getClusterId() {
