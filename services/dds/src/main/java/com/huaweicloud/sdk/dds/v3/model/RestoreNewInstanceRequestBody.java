@@ -49,6 +49,11 @@ public class RestoreNewInstanceRequestBody {
     private String diskEncryptionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "configurations")
+
+    private List<RestoreNewInstanceConfigurationsOption> configurations = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flavor")
 
     private List<RestoreNewInstanceFlavorOption> flavor = null;
@@ -82,6 +87,11 @@ public class RestoreNewInstanceRequestBody {
     @JsonProperty(value = "restore_point")
 
     private RestorePoint restorePoint;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "charge_info")
+
+    private ChargeInfoOption chargeInfo;
 
     public RestoreNewInstanceRequestBody withName(String name) {
         this.name = name;
@@ -200,6 +210,42 @@ public class RestoreNewInstanceRequestBody {
 
     public void setDiskEncryptionId(String diskEncryptionId) {
         this.diskEncryptionId = diskEncryptionId;
+    }
+
+    public RestoreNewInstanceRequestBody withConfigurations(
+        List<RestoreNewInstanceConfigurationsOption> configurations) {
+        this.configurations = configurations;
+        return this;
+    }
+
+    public RestoreNewInstanceRequestBody addConfigurationsItem(
+        RestoreNewInstanceConfigurationsOption configurationsItem) {
+        if (this.configurations == null) {
+            this.configurations = new ArrayList<>();
+        }
+        this.configurations.add(configurationsItem);
+        return this;
+    }
+
+    public RestoreNewInstanceRequestBody withConfigurations(
+        Consumer<List<RestoreNewInstanceConfigurationsOption>> configurationsSetter) {
+        if (this.configurations == null) {
+            this.configurations = new ArrayList<>();
+        }
+        configurationsSetter.accept(this.configurations);
+        return this;
+    }
+
+    /**
+     * 参数组配置信息。
+     * @return configurations
+     */
+    public List<RestoreNewInstanceConfigurationsOption> getConfigurations() {
+        return configurations;
+    }
+
+    public void setConfigurations(List<RestoreNewInstanceConfigurationsOption> configurations) {
+        this.configurations = configurations;
     }
 
     public RestoreNewInstanceRequestBody withFlavor(List<RestoreNewInstanceFlavorOption> flavor) {
@@ -371,6 +417,32 @@ public class RestoreNewInstanceRequestBody {
         this.restorePoint = restorePoint;
     }
 
+    public RestoreNewInstanceRequestBody withChargeInfo(ChargeInfoOption chargeInfo) {
+        this.chargeInfo = chargeInfo;
+        return this;
+    }
+
+    public RestoreNewInstanceRequestBody withChargeInfo(Consumer<ChargeInfoOption> chargeInfoSetter) {
+        if (this.chargeInfo == null) {
+            this.chargeInfo = new ChargeInfoOption();
+            chargeInfoSetter.accept(this.chargeInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get chargeInfo
+     * @return chargeInfo
+     */
+    public ChargeInfoOption getChargeInfo() {
+        return chargeInfo;
+    }
+
+    public void setChargeInfo(ChargeInfoOption chargeInfo) {
+        this.chargeInfo = chargeInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -387,13 +459,15 @@ public class RestoreNewInstanceRequestBody {
             && Objects.equals(this.securityGroupId, restoreNewInstanceRequestBody.securityGroupId)
             && Objects.equals(this.password, restoreNewInstanceRequestBody.password)
             && Objects.equals(this.diskEncryptionId, restoreNewInstanceRequestBody.diskEncryptionId)
+            && Objects.equals(this.configurations, restoreNewInstanceRequestBody.configurations)
             && Objects.equals(this.flavor, restoreNewInstanceRequestBody.flavor)
             && Objects.equals(this.backupStrategy, restoreNewInstanceRequestBody.backupStrategy)
             && Objects.equals(this.enterpriseProjectId, restoreNewInstanceRequestBody.enterpriseProjectId)
             && Objects.equals(this.sslOption, restoreNewInstanceRequestBody.sslOption)
             && Objects.equals(this.dssPoolId, restoreNewInstanceRequestBody.dssPoolId)
             && Objects.equals(this.serverGroupPolicies, restoreNewInstanceRequestBody.serverGroupPolicies)
-            && Objects.equals(this.restorePoint, restoreNewInstanceRequestBody.restorePoint);
+            && Objects.equals(this.restorePoint, restoreNewInstanceRequestBody.restorePoint)
+            && Objects.equals(this.chargeInfo, restoreNewInstanceRequestBody.chargeInfo);
     }
 
     @Override
@@ -405,13 +479,15 @@ public class RestoreNewInstanceRequestBody {
             securityGroupId,
             password,
             diskEncryptionId,
+            configurations,
             flavor,
             backupStrategy,
             enterpriseProjectId,
             sslOption,
             dssPoolId,
             serverGroupPolicies,
-            restorePoint);
+            restorePoint,
+            chargeInfo);
     }
 
     @Override
@@ -425,6 +501,7 @@ public class RestoreNewInstanceRequestBody {
         sb.append("    securityGroupId: ").append(toIndentedString(securityGroupId)).append("\n");
         sb.append("    password: ").append(toIndentedString(password)).append("\n");
         sb.append("    diskEncryptionId: ").append(toIndentedString(diskEncryptionId)).append("\n");
+        sb.append("    configurations: ").append(toIndentedString(configurations)).append("\n");
         sb.append("    flavor: ").append(toIndentedString(flavor)).append("\n");
         sb.append("    backupStrategy: ").append(toIndentedString(backupStrategy)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
@@ -432,6 +509,7 @@ public class RestoreNewInstanceRequestBody {
         sb.append("    dssPoolId: ").append(toIndentedString(dssPoolId)).append("\n");
         sb.append("    serverGroupPolicies: ").append(toIndentedString(serverGroupPolicies)).append("\n");
         sb.append("    restorePoint: ").append(toIndentedString(restorePoint)).append("\n");
+        sb.append("    chargeInfo: ").append(toIndentedString(chargeInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

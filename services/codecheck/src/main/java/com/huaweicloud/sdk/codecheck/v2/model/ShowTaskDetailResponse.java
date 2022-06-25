@@ -118,6 +118,11 @@ public class ShowTaskDetailResponse extends SdkResponse {
     private String cyclomaticComplexityPerMethod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cyclomatic_complexity_per_file")
+
+    private String cyclomaticComplexityPerFile;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "critical_count")
 
     private String criticalCount;
@@ -146,6 +151,11 @@ public class ShowTaskDetailResponse extends SdkResponse {
     @JsonProperty(value = "trigger_type")
 
     private String triggerType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "file_duplication_ratio")
+
+    private String fileDuplicationRatio;
 
     public ShowTaskDetailResponse withTaskId(String taskId) {
         this.taskId = taskId;
@@ -504,6 +514,23 @@ public class ShowTaskDetailResponse extends SdkResponse {
         this.cyclomaticComplexityPerMethod = cyclomaticComplexityPerMethod;
     }
 
+    public ShowTaskDetailResponse withCyclomaticComplexityPerFile(String cyclomaticComplexityPerFile) {
+        this.cyclomaticComplexityPerFile = cyclomaticComplexityPerFile;
+        return this;
+    }
+
+    /**
+     * 代码平均复杂度(文件)
+     * @return cyclomaticComplexityPerFile
+     */
+    public String getCyclomaticComplexityPerFile() {
+        return cyclomaticComplexityPerFile;
+    }
+
+    public void setCyclomaticComplexityPerFile(String cyclomaticComplexityPerFile) {
+        this.cyclomaticComplexityPerFile = cyclomaticComplexityPerFile;
+    }
+
     public ShowTaskDetailResponse withCriticalCount(String criticalCount) {
         this.criticalCount = criticalCount;
         return this;
@@ -606,6 +633,23 @@ public class ShowTaskDetailResponse extends SdkResponse {
         this.triggerType = triggerType;
     }
 
+    public ShowTaskDetailResponse withFileDuplicationRatio(String fileDuplicationRatio) {
+        this.fileDuplicationRatio = fileDuplicationRatio;
+        return this;
+    }
+
+    /**
+     * 文件重复率
+     * @return fileDuplicationRatio
+     */
+    public String getFileDuplicationRatio() {
+        return fileDuplicationRatio;
+    }
+
+    public void setFileDuplicationRatio(String fileDuplicationRatio) {
+        this.fileDuplicationRatio = fileDuplicationRatio;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -636,12 +680,14 @@ public class ShowTaskDetailResponse extends SdkResponse {
             && Objects.equals(this.checkType, showTaskDetailResponse.checkType)
             && Objects.equals(this.createdAt, showTaskDetailResponse.createdAt)
             && Objects.equals(this.cyclomaticComplexityPerMethod, showTaskDetailResponse.cyclomaticComplexityPerMethod)
+            && Objects.equals(this.cyclomaticComplexityPerFile, showTaskDetailResponse.cyclomaticComplexityPerFile)
             && Objects.equals(this.criticalCount, showTaskDetailResponse.criticalCount)
             && Objects.equals(this.majorCount, showTaskDetailResponse.majorCount)
             && Objects.equals(this.minorCount, showTaskDetailResponse.minorCount)
             && Objects.equals(this.suggestionCount, showTaskDetailResponse.suggestionCount)
             && Objects.equals(this.isAccess, showTaskDetailResponse.isAccess)
-            && Objects.equals(this.triggerType, showTaskDetailResponse.triggerType);
+            && Objects.equals(this.triggerType, showTaskDetailResponse.triggerType)
+            && Objects.equals(this.fileDuplicationRatio, showTaskDetailResponse.fileDuplicationRatio);
     }
 
     @Override
@@ -667,12 +713,14 @@ public class ShowTaskDetailResponse extends SdkResponse {
             checkType,
             createdAt,
             cyclomaticComplexityPerMethod,
+            cyclomaticComplexityPerFile,
             criticalCount,
             majorCount,
             minorCount,
             suggestionCount,
             isAccess,
-            triggerType);
+            triggerType,
+            fileDuplicationRatio);
     }
 
     @Override
@@ -702,12 +750,16 @@ public class ShowTaskDetailResponse extends SdkResponse {
         sb.append("    cyclomaticComplexityPerMethod: ")
             .append(toIndentedString(cyclomaticComplexityPerMethod))
             .append("\n");
+        sb.append("    cyclomaticComplexityPerFile: ")
+            .append(toIndentedString(cyclomaticComplexityPerFile))
+            .append("\n");
         sb.append("    criticalCount: ").append(toIndentedString(criticalCount)).append("\n");
         sb.append("    majorCount: ").append(toIndentedString(majorCount)).append("\n");
         sb.append("    minorCount: ").append(toIndentedString(minorCount)).append("\n");
         sb.append("    suggestionCount: ").append(toIndentedString(suggestionCount)).append("\n");
         sb.append("    isAccess: ").append(toIndentedString(isAccess)).append("\n");
         sb.append("    triggerType: ").append(toIndentedString(triggerType)).append("\n");
+        sb.append("    fileDuplicationRatio: ").append(toIndentedString(fileDuplicationRatio)).append("\n");
         sb.append("}");
         return sb.toString();
     }

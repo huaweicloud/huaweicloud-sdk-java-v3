@@ -16,6 +16,11 @@ public class ResizeInstanceVolumeRequestBody {
 
     private ResizeInstanceVolumeOption volume;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_auto_pay")
+
+    private Boolean isAutoPay;
+
     public ResizeInstanceVolumeRequestBody withVolume(ResizeInstanceVolumeOption volume) {
         this.volume = volume;
         return this;
@@ -42,6 +47,23 @@ public class ResizeInstanceVolumeRequestBody {
         this.volume = volume;
     }
 
+    public ResizeInstanceVolumeRequestBody withIsAutoPay(Boolean isAutoPay) {
+        this.isAutoPay = isAutoPay;
+        return this;
+    }
+
+    /**
+     * 扩容包年包月实例的存储容量时可指定，表示是否自动从账户中支付，此字段不影响自动续订的支付方式。 - true，表示自动从账户中支付。 - false，表示手动从账户中支付，默认为该方式。
+     * @return isAutoPay
+     */
+    public Boolean getIsAutoPay() {
+        return isAutoPay;
+    }
+
+    public void setIsAutoPay(Boolean isAutoPay) {
+        this.isAutoPay = isAutoPay;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -51,12 +73,13 @@ public class ResizeInstanceVolumeRequestBody {
             return false;
         }
         ResizeInstanceVolumeRequestBody resizeInstanceVolumeRequestBody = (ResizeInstanceVolumeRequestBody) o;
-        return Objects.equals(this.volume, resizeInstanceVolumeRequestBody.volume);
+        return Objects.equals(this.volume, resizeInstanceVolumeRequestBody.volume)
+            && Objects.equals(this.isAutoPay, resizeInstanceVolumeRequestBody.isAutoPay);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(volume);
+        return Objects.hash(volume, isAutoPay);
     }
 
     @Override
@@ -64,6 +87,7 @@ public class ResizeInstanceVolumeRequestBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class ResizeInstanceVolumeRequestBody {\n");
         sb.append("    volume: ").append(toIndentedString(volume)).append("\n");
+        sb.append("    isAutoPay: ").append(toIndentedString(isAutoPay)).append("\n");
         sb.append("}");
         return sb.toString();
     }

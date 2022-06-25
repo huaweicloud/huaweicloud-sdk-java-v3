@@ -69,6 +69,11 @@ public class CreateInstanceRequestBody {
     private String mode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "configurations")
+
+    private List<CreateInstanceConfigurationsOption> configurations = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flavor")
 
     private List<CreateInstanceFlavorOption> flavor = null;
@@ -102,6 +107,11 @@ public class CreateInstanceRequestBody {
     @JsonProperty(value = "tags")
 
     private List<TagWithKeyValue> tags = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "charge_info")
+
+    private ChargeInfoOption chargeInfo;
 
     public CreateInstanceRequestBody withName(String name) {
         this.name = name;
@@ -299,6 +309,40 @@ public class CreateInstanceRequestBody {
         this.mode = mode;
     }
 
+    public CreateInstanceRequestBody withConfigurations(List<CreateInstanceConfigurationsOption> configurations) {
+        this.configurations = configurations;
+        return this;
+    }
+
+    public CreateInstanceRequestBody addConfigurationsItem(CreateInstanceConfigurationsOption configurationsItem) {
+        if (this.configurations == null) {
+            this.configurations = new ArrayList<>();
+        }
+        this.configurations.add(configurationsItem);
+        return this;
+    }
+
+    public CreateInstanceRequestBody withConfigurations(
+        Consumer<List<CreateInstanceConfigurationsOption>> configurationsSetter) {
+        if (this.configurations == null) {
+            this.configurations = new ArrayList<>();
+        }
+        configurationsSetter.accept(this.configurations);
+        return this;
+    }
+
+    /**
+     * 参数组配置信息。
+     * @return configurations
+     */
+    public List<CreateInstanceConfigurationsOption> getConfigurations() {
+        return configurations;
+    }
+
+    public void setConfigurations(List<CreateInstanceConfigurationsOption> configurations) {
+        this.configurations = configurations;
+    }
+
     public CreateInstanceRequestBody withFlavor(List<CreateInstanceFlavorOption> flavor) {
         this.flavor = flavor;
         return this;
@@ -475,6 +519,32 @@ public class CreateInstanceRequestBody {
         this.tags = tags;
     }
 
+    public CreateInstanceRequestBody withChargeInfo(ChargeInfoOption chargeInfo) {
+        this.chargeInfo = chargeInfo;
+        return this;
+    }
+
+    public CreateInstanceRequestBody withChargeInfo(Consumer<ChargeInfoOption> chargeInfoSetter) {
+        if (this.chargeInfo == null) {
+            this.chargeInfo = new ChargeInfoOption();
+            chargeInfoSetter.accept(this.chargeInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get chargeInfo
+     * @return chargeInfo
+     */
+    public ChargeInfoOption getChargeInfo() {
+        return chargeInfo;
+    }
+
+    public void setChargeInfo(ChargeInfoOption chargeInfo) {
+        this.chargeInfo = chargeInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -495,13 +565,15 @@ public class CreateInstanceRequestBody {
             && Objects.equals(this.password, createInstanceRequestBody.password)
             && Objects.equals(this.diskEncryptionId, createInstanceRequestBody.diskEncryptionId)
             && Objects.equals(this.mode, createInstanceRequestBody.mode)
+            && Objects.equals(this.configurations, createInstanceRequestBody.configurations)
             && Objects.equals(this.flavor, createInstanceRequestBody.flavor)
             && Objects.equals(this.backupStrategy, createInstanceRequestBody.backupStrategy)
             && Objects.equals(this.enterpriseProjectId, createInstanceRequestBody.enterpriseProjectId)
             && Objects.equals(this.sslOption, createInstanceRequestBody.sslOption)
             && Objects.equals(this.dssPoolId, createInstanceRequestBody.dssPoolId)
             && Objects.equals(this.serverGroupPolicies, createInstanceRequestBody.serverGroupPolicies)
-            && Objects.equals(this.tags, createInstanceRequestBody.tags);
+            && Objects.equals(this.tags, createInstanceRequestBody.tags)
+            && Objects.equals(this.chargeInfo, createInstanceRequestBody.chargeInfo);
     }
 
     @Override
@@ -517,13 +589,15 @@ public class CreateInstanceRequestBody {
             password,
             diskEncryptionId,
             mode,
+            configurations,
             flavor,
             backupStrategy,
             enterpriseProjectId,
             sslOption,
             dssPoolId,
             serverGroupPolicies,
-            tags);
+            tags,
+            chargeInfo);
     }
 
     @Override
@@ -541,6 +615,7 @@ public class CreateInstanceRequestBody {
         sb.append("    password: ").append(toIndentedString(password)).append("\n");
         sb.append("    diskEncryptionId: ").append(toIndentedString(diskEncryptionId)).append("\n");
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
+        sb.append("    configurations: ").append(toIndentedString(configurations)).append("\n");
         sb.append("    flavor: ").append(toIndentedString(flavor)).append("\n");
         sb.append("    backupStrategy: ").append(toIndentedString(backupStrategy)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
@@ -548,6 +623,7 @@ public class CreateInstanceRequestBody {
         sb.append("    dssPoolId: ").append(toIndentedString(dssPoolId)).append("\n");
         sb.append("    serverGroupPolicies: ").append(toIndentedString(serverGroupPolicies)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    chargeInfo: ").append(toIndentedString(chargeInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

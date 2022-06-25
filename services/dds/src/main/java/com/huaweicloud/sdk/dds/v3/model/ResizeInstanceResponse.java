@@ -16,6 +16,11 @@ public class ResizeInstanceResponse extends SdkResponse {
 
     private String jobId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "order_id")
+
+    private String orderId;
+
     public ResizeInstanceResponse withJobId(String jobId) {
         this.jobId = jobId;
         return this;
@@ -33,6 +38,23 @@ public class ResizeInstanceResponse extends SdkResponse {
         this.jobId = jobId;
     }
 
+    public ResizeInstanceResponse withOrderId(String orderId) {
+        this.orderId = orderId;
+        return this;
+    }
+
+    /**
+     * 订单ID，仅变更包年包月实例的规格时返回该参数。
+     * @return orderId
+     */
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -42,12 +64,13 @@ public class ResizeInstanceResponse extends SdkResponse {
             return false;
         }
         ResizeInstanceResponse resizeInstanceResponse = (ResizeInstanceResponse) o;
-        return Objects.equals(this.jobId, resizeInstanceResponse.jobId);
+        return Objects.equals(this.jobId, resizeInstanceResponse.jobId)
+            && Objects.equals(this.orderId, resizeInstanceResponse.orderId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(jobId);
+        return Objects.hash(jobId, orderId);
     }
 
     @Override
@@ -55,6 +78,7 @@ public class ResizeInstanceResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ResizeInstanceResponse {\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
+        sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

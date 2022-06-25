@@ -75,6 +75,11 @@ public class RestoreNewInstanceResponse extends SdkResponse {
     private String mode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "configurations")
+
+    private List<RestoreNewInstanceConfigurationsOption> configurations = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flavor")
 
     private List<RestoreNewInstanceFlavorOption> flavor = null;
@@ -103,6 +108,16 @@ public class RestoreNewInstanceResponse extends SdkResponse {
     @JsonProperty(value = "job_id")
 
     private String jobId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "order_id")
+
+    private String orderId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "charge_info")
+
+    private ChargeInfoResult chargeInfo;
 
     public RestoreNewInstanceResponse withId(String id) {
         this.id = id;
@@ -317,6 +332,40 @@ public class RestoreNewInstanceResponse extends SdkResponse {
         this.mode = mode;
     }
 
+    public RestoreNewInstanceResponse withConfigurations(List<RestoreNewInstanceConfigurationsOption> configurations) {
+        this.configurations = configurations;
+        return this;
+    }
+
+    public RestoreNewInstanceResponse addConfigurationsItem(RestoreNewInstanceConfigurationsOption configurationsItem) {
+        if (this.configurations == null) {
+            this.configurations = new ArrayList<>();
+        }
+        this.configurations.add(configurationsItem);
+        return this;
+    }
+
+    public RestoreNewInstanceResponse withConfigurations(
+        Consumer<List<RestoreNewInstanceConfigurationsOption>> configurationsSetter) {
+        if (this.configurations == null) {
+            this.configurations = new ArrayList<>();
+        }
+        configurationsSetter.accept(this.configurations);
+        return this;
+    }
+
+    /**
+     * 参数组配置信息。
+     * @return configurations
+     */
+    public List<RestoreNewInstanceConfigurationsOption> getConfigurations() {
+        return configurations;
+    }
+
+    public void setConfigurations(List<RestoreNewInstanceConfigurationsOption> configurations) {
+        this.configurations = configurations;
+    }
+
     public RestoreNewInstanceResponse withFlavor(List<RestoreNewInstanceFlavorOption> flavor) {
         this.flavor = flavor;
         return this;
@@ -444,6 +493,49 @@ public class RestoreNewInstanceResponse extends SdkResponse {
         this.jobId = jobId;
     }
 
+    public RestoreNewInstanceResponse withOrderId(String orderId) {
+        this.orderId = orderId;
+        return this;
+    }
+
+    /**
+     * 创建实例的订单ID，仅创建包年包月实例时返回该参数。
+     * @return orderId
+     */
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
+    }
+
+    public RestoreNewInstanceResponse withChargeInfo(ChargeInfoResult chargeInfo) {
+        this.chargeInfo = chargeInfo;
+        return this;
+    }
+
+    public RestoreNewInstanceResponse withChargeInfo(Consumer<ChargeInfoResult> chargeInfoSetter) {
+        if (this.chargeInfo == null) {
+            this.chargeInfo = new ChargeInfoResult();
+            chargeInfoSetter.accept(this.chargeInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get chargeInfo
+     * @return chargeInfo
+     */
+    public ChargeInfoResult getChargeInfo() {
+        return chargeInfo;
+    }
+
+    public void setChargeInfo(ChargeInfoResult chargeInfo) {
+        this.chargeInfo = chargeInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -465,12 +557,15 @@ public class RestoreNewInstanceResponse extends SdkResponse {
             && Objects.equals(this.securityGroupId, restoreNewInstanceResponse.securityGroupId)
             && Objects.equals(this.diskEncryptionId, restoreNewInstanceResponse.diskEncryptionId)
             && Objects.equals(this.mode, restoreNewInstanceResponse.mode)
+            && Objects.equals(this.configurations, restoreNewInstanceResponse.configurations)
             && Objects.equals(this.flavor, restoreNewInstanceResponse.flavor)
             && Objects.equals(this.backupStrategy, restoreNewInstanceResponse.backupStrategy)
             && Objects.equals(this.enterpriseProjectId, restoreNewInstanceResponse.enterpriseProjectId)
             && Objects.equals(this.sslOption, restoreNewInstanceResponse.sslOption)
             && Objects.equals(this.dssPoolId, restoreNewInstanceResponse.dssPoolId)
-            && Objects.equals(this.jobId, restoreNewInstanceResponse.jobId);
+            && Objects.equals(this.jobId, restoreNewInstanceResponse.jobId)
+            && Objects.equals(this.orderId, restoreNewInstanceResponse.orderId)
+            && Objects.equals(this.chargeInfo, restoreNewInstanceResponse.chargeInfo);
     }
 
     @Override
@@ -487,12 +582,15 @@ public class RestoreNewInstanceResponse extends SdkResponse {
             securityGroupId,
             diskEncryptionId,
             mode,
+            configurations,
             flavor,
             backupStrategy,
             enterpriseProjectId,
             sslOption,
             dssPoolId,
-            jobId);
+            jobId,
+            orderId,
+            chargeInfo);
     }
 
     @Override
@@ -511,12 +609,15 @@ public class RestoreNewInstanceResponse extends SdkResponse {
         sb.append("    securityGroupId: ").append(toIndentedString(securityGroupId)).append("\n");
         sb.append("    diskEncryptionId: ").append(toIndentedString(diskEncryptionId)).append("\n");
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
+        sb.append("    configurations: ").append(toIndentedString(configurations)).append("\n");
         sb.append("    flavor: ").append(toIndentedString(flavor)).append("\n");
         sb.append("    backupStrategy: ").append(toIndentedString(backupStrategy)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    sslOption: ").append(toIndentedString(sslOption)).append("\n");
         sb.append("    dssPoolId: ").append(toIndentedString(dssPoolId)).append("\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
+        sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
+        sb.append("    chargeInfo: ").append(toIndentedString(chargeInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

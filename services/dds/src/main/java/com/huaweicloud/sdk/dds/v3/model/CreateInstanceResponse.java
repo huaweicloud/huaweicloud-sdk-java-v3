@@ -80,6 +80,11 @@ public class CreateInstanceResponse extends SdkResponse {
     private String mode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "configurations")
+
+    private List<CreateInstanceConfigurationsOption> configurations = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flavor")
 
     private List<CreateInstanceFlavorOption> flavor = null;
@@ -113,6 +118,16 @@ public class CreateInstanceResponse extends SdkResponse {
     @JsonProperty(value = "tags")
 
     private List<TagWithKeyValue> tags = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "order_id")
+
+    private String orderId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "charge_info")
+
+    private ChargeInfoResult chargeInfo;
 
     public CreateInstanceResponse withId(String id) {
         this.id = id;
@@ -344,6 +359,40 @@ public class CreateInstanceResponse extends SdkResponse {
         this.mode = mode;
     }
 
+    public CreateInstanceResponse withConfigurations(List<CreateInstanceConfigurationsOption> configurations) {
+        this.configurations = configurations;
+        return this;
+    }
+
+    public CreateInstanceResponse addConfigurationsItem(CreateInstanceConfigurationsOption configurationsItem) {
+        if (this.configurations == null) {
+            this.configurations = new ArrayList<>();
+        }
+        this.configurations.add(configurationsItem);
+        return this;
+    }
+
+    public CreateInstanceResponse withConfigurations(
+        Consumer<List<CreateInstanceConfigurationsOption>> configurationsSetter) {
+        if (this.configurations == null) {
+            this.configurations = new ArrayList<>();
+        }
+        configurationsSetter.accept(this.configurations);
+        return this;
+    }
+
+    /**
+     * 参数组配置信息。
+     * @return configurations
+     */
+    public List<CreateInstanceConfigurationsOption> getConfigurations() {
+        return configurations;
+    }
+
+    public void setConfigurations(List<CreateInstanceConfigurationsOption> configurations) {
+        this.configurations = configurations;
+    }
+
     public CreateInstanceResponse withFlavor(List<CreateInstanceFlavorOption> flavor) {
         this.flavor = flavor;
         return this;
@@ -504,6 +553,49 @@ public class CreateInstanceResponse extends SdkResponse {
         this.tags = tags;
     }
 
+    public CreateInstanceResponse withOrderId(String orderId) {
+        this.orderId = orderId;
+        return this;
+    }
+
+    /**
+     * 创建实例的订单ID，仅创建包年包月实例时返回该参数。
+     * @return orderId
+     */
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
+    }
+
+    public CreateInstanceResponse withChargeInfo(ChargeInfoResult chargeInfo) {
+        this.chargeInfo = chargeInfo;
+        return this;
+    }
+
+    public CreateInstanceResponse withChargeInfo(Consumer<ChargeInfoResult> chargeInfoSetter) {
+        if (this.chargeInfo == null) {
+            this.chargeInfo = new ChargeInfoResult();
+            chargeInfoSetter.accept(this.chargeInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get chargeInfo
+     * @return chargeInfo
+     */
+    public ChargeInfoResult getChargeInfo() {
+        return chargeInfo;
+    }
+
+    public void setChargeInfo(ChargeInfoResult chargeInfo) {
+        this.chargeInfo = chargeInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -526,13 +618,16 @@ public class CreateInstanceResponse extends SdkResponse {
             && Objects.equals(this.port, createInstanceResponse.port)
             && Objects.equals(this.diskEncryptionId, createInstanceResponse.diskEncryptionId)
             && Objects.equals(this.mode, createInstanceResponse.mode)
+            && Objects.equals(this.configurations, createInstanceResponse.configurations)
             && Objects.equals(this.flavor, createInstanceResponse.flavor)
             && Objects.equals(this.backupStrategy, createInstanceResponse.backupStrategy)
             && Objects.equals(this.enterpriseProjectId, createInstanceResponse.enterpriseProjectId)
             && Objects.equals(this.sslOption, createInstanceResponse.sslOption)
             && Objects.equals(this.dssPoolId, createInstanceResponse.dssPoolId)
             && Objects.equals(this.jobId, createInstanceResponse.jobId)
-            && Objects.equals(this.tags, createInstanceResponse.tags);
+            && Objects.equals(this.tags, createInstanceResponse.tags)
+            && Objects.equals(this.orderId, createInstanceResponse.orderId)
+            && Objects.equals(this.chargeInfo, createInstanceResponse.chargeInfo);
     }
 
     @Override
@@ -550,13 +645,16 @@ public class CreateInstanceResponse extends SdkResponse {
             port,
             diskEncryptionId,
             mode,
+            configurations,
             flavor,
             backupStrategy,
             enterpriseProjectId,
             sslOption,
             dssPoolId,
             jobId,
-            tags);
+            tags,
+            orderId,
+            chargeInfo);
     }
 
     @Override
@@ -576,6 +674,7 @@ public class CreateInstanceResponse extends SdkResponse {
         sb.append("    port: ").append(toIndentedString(port)).append("\n");
         sb.append("    diskEncryptionId: ").append(toIndentedString(diskEncryptionId)).append("\n");
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
+        sb.append("    configurations: ").append(toIndentedString(configurations)).append("\n");
         sb.append("    flavor: ").append(toIndentedString(flavor)).append("\n");
         sb.append("    backupStrategy: ").append(toIndentedString(backupStrategy)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
@@ -583,6 +682,8 @@ public class CreateInstanceResponse extends SdkResponse {
         sb.append("    dssPoolId: ").append(toIndentedString(dssPoolId)).append("\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
+        sb.append("    chargeInfo: ").append(toIndentedString(chargeInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

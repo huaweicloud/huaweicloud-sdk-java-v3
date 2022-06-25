@@ -193,6 +193,31 @@ public class DdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateConfigurationRequest, CreateConfigurationResponse> createConfiguration =
+        genForcreateConfiguration();
+
+    private static HttpRequestDef<CreateConfigurationRequest, CreateConfigurationResponse> genForcreateConfiguration() {
+        // basic
+        HttpRequestDef.Builder<CreateConfigurationRequest, CreateConfigurationResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateConfigurationRequest.class, CreateConfigurationResponse.class)
+                .withName("CreateConfiguration")
+                .withUri("/v3/{project_id}/configurations")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateConfigurationRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateConfigurationRequestBody.class),
+            f -> f.withMarshaller(CreateConfigurationRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateDatabaseRoleRequest, CreateDatabaseRoleResponse> createDatabaseRole =
         genForcreateDatabaseRole();
 
@@ -331,6 +356,31 @@ public class DdsMeta {
             TypeCasts.uncheckedConversion(CreateManualBackupRequestBody.class),
             f -> f.withMarshaller(CreateManualBackupRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteConfigurationRequest, DeleteConfigurationResponse> deleteConfiguration =
+        genFordeleteConfiguration();
+
+    private static HttpRequestDef<DeleteConfigurationRequest, DeleteConfigurationResponse> genFordeleteConfiguration() {
+        // basic
+        HttpRequestDef.Builder<DeleteConfigurationRequest, DeleteConfigurationResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteConfigurationRequest.class, DeleteConfigurationResponse.class)
+            .withName("DeleteConfiguration")
+            .withUri("/v3/{project_id}/configurations/{config_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("config_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteConfigurationRequest::getConfigId, (req, v) -> {
+                req.setConfigId(v);
             }));
 
         // response
@@ -738,6 +788,38 @@ public class DdsMeta {
             TypeCasts.uncheckedConversion(ListBackupsRequest.ModeEnum.class),
             f -> f.withMarshaller(ListBackupsRequest::getMode, (req, v) -> {
                 req.setMode(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListConfigurationsRequest, ListConfigurationsResponse> listConfigurations =
+        genForlistConfigurations();
+
+    private static HttpRequestDef<ListConfigurationsRequest, ListConfigurationsResponse> genForlistConfigurations() {
+        // basic
+        HttpRequestDef.Builder<ListConfigurationsRequest, ListConfigurationsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListConfigurationsRequest.class, ListConfigurationsResponse.class)
+                .withName("ListConfigurations")
+                .withUri("/v3/{project_id}/configurations")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListConfigurationsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListConfigurationsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
             }));
 
         // response
@@ -1960,6 +2042,34 @@ public class DdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowConfigurationParameterRequest, ShowConfigurationParameterResponse> showConfigurationParameter =
+        genForshowConfigurationParameter();
+
+    private static HttpRequestDef<ShowConfigurationParameterRequest, ShowConfigurationParameterResponse> genForshowConfigurationParameter() {
+        // basic
+        HttpRequestDef.Builder<ShowConfigurationParameterRequest, ShowConfigurationParameterResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowConfigurationParameterRequest.class,
+                    ShowConfigurationParameterResponse.class)
+                .withName("ShowConfigurationParameter")
+                .withUri("/v3/{project_id}/configurations/{config_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("config_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowConfigurationParameterRequest::getConfigId, (req, v) -> {
+                req.setConfigId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowConnectionStatisticsRequest, ShowConnectionStatisticsResponse> showConnectionStatistics =
         genForshowConnectionStatistics();
 
@@ -1986,6 +2096,38 @@ public class DdsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowConnectionStatisticsRequest::getNodeId, (req, v) -> {
                 req.setNodeId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowEntityConfigurationRequest, ShowEntityConfigurationResponse> showEntityConfiguration =
+        genForshowEntityConfiguration();
+
+    private static HttpRequestDef<ShowEntityConfigurationRequest, ShowEntityConfigurationResponse> genForshowEntityConfiguration() {
+        // basic
+        HttpRequestDef.Builder<ShowEntityConfigurationRequest, ShowEntityConfigurationResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowEntityConfigurationRequest.class, ShowEntityConfigurationResponse.class)
+            .withName("ShowEntityConfiguration")
+            .withUri("/v3/{project_id}/instances/{instance_id}/configurations")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowEntityConfigurationRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("entity_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowEntityConfigurationRequest::getEntityId, (req, v) -> {
+                req.setEntityId(v);
             }));
 
         // response
@@ -2053,6 +2195,38 @@ public class DdsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowShardingBalancerRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SwitchConfigurationRequest, SwitchConfigurationResponse> switchConfiguration =
+        genForswitchConfiguration();
+
+    private static HttpRequestDef<SwitchConfigurationRequest, SwitchConfigurationResponse> genForswitchConfiguration() {
+        // basic
+        HttpRequestDef.Builder<SwitchConfigurationRequest, SwitchConfigurationResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, SwitchConfigurationRequest.class, SwitchConfigurationResponse.class)
+                .withName("SwitchConfiguration")
+                .withUri("/v3/{project_id}/configurations/{config_id}/apply")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("config_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SwitchConfigurationRequest::getConfigId, (req, v) -> {
+                req.setConfigId(v);
+            }));
+        builder.<ApplyConfigurationRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ApplyConfigurationRequestBody.class),
+            f -> f.withMarshaller(SwitchConfigurationRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response
@@ -2175,6 +2349,76 @@ public class DdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ClientNetworkRequestBody.class),
             f -> f.withMarshaller(UpdateClientNetworkRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateConfigurationParameterRequest, UpdateConfigurationParameterResponse> updateConfigurationParameter =
+        genForupdateConfigurationParameter();
+
+    private static HttpRequestDef<UpdateConfigurationParameterRequest, UpdateConfigurationParameterResponse> genForupdateConfigurationParameter() {
+        // basic
+        HttpRequestDef.Builder<UpdateConfigurationParameterRequest, UpdateConfigurationParameterResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateConfigurationParameterRequest.class,
+                    UpdateConfigurationParameterResponse.class)
+                .withName("UpdateConfigurationParameter")
+                .withUri("/v3/{project_id}/configurations/{config_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("config_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateConfigurationParameterRequest::getConfigId, (req, v) -> {
+                req.setConfigId(v);
+            }));
+        builder.<UpdateConfigurationParameterRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateConfigurationParameterRequestBody.class),
+            f -> f.withMarshaller(UpdateConfigurationParameterRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateEntityConfigurationRequest, UpdateEntityConfigurationResponse> updateEntityConfiguration =
+        genForupdateEntityConfiguration();
+
+    private static HttpRequestDef<UpdateEntityConfigurationRequest, UpdateEntityConfigurationResponse> genForupdateEntityConfiguration() {
+        // basic
+        HttpRequestDef.Builder<UpdateEntityConfigurationRequest, UpdateEntityConfigurationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateEntityConfigurationRequest.class,
+                    UpdateEntityConfigurationResponse.class)
+                .withName("UpdateEntityConfiguration")
+                .withUri("/v3/{project_id}/instances/{instance_id}/configurations")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateEntityConfigurationRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<UpdateConfigurationParameterResult>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateConfigurationParameterResult.class),
+            f -> f.withMarshaller(UpdateEntityConfigurationRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

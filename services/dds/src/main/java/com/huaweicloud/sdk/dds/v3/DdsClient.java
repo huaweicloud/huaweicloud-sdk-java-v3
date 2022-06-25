@@ -204,6 +204,38 @@ public class DdsClient {
     }
 
     /**
+     * 创建参数模板
+     *
+     * 创建参数模板。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateConfigurationRequest 请求对象
+     * @return CreateConfigurationResponse
+     */
+    public CreateConfigurationResponse createConfiguration(CreateConfigurationRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.createConfiguration);
+    }
+
+    /**
+     * 创建参数模板
+     *
+     * 创建参数模板。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateConfigurationRequest 请求对象
+     * @return SyncInvoker<CreateConfigurationRequest, CreateConfigurationResponse>
+     */
+    public SyncInvoker<CreateConfigurationRequest, CreateConfigurationResponse> createConfigurationInvoker(
+        CreateConfigurationRequest request) {
+        return new SyncInvoker<CreateConfigurationRequest, CreateConfigurationResponse>(request,
+            DdsMeta.createConfiguration, hcClient);
+    }
+
+    /**
      * 创建数据库角色
      *
      * 创建数据库角色。
@@ -359,6 +391,38 @@ public class DdsClient {
         CreateManualBackupRequest request) {
         return new SyncInvoker<CreateManualBackupRequest, CreateManualBackupResponse>(request,
             DdsMeta.createManualBackup, hcClient);
+    }
+
+    /**
+     * 删除参数模板
+     *
+     * 删除参数模板。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteConfigurationRequest 请求对象
+     * @return DeleteConfigurationResponse
+     */
+    public DeleteConfigurationResponse deleteConfiguration(DeleteConfigurationRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.deleteConfiguration);
+    }
+
+    /**
+     * 删除参数模板
+     *
+     * 删除参数模板。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteConfigurationRequest 请求对象
+     * @return SyncInvoker<DeleteConfigurationRequest, DeleteConfigurationResponse>
+     */
+    public SyncInvoker<DeleteConfigurationRequest, DeleteConfigurationResponse> deleteConfigurationInvoker(
+        DeleteConfigurationRequest request) {
+        return new SyncInvoker<DeleteConfigurationRequest, DeleteConfigurationResponse>(request,
+            DdsMeta.deleteConfiguration, hcClient);
     }
 
     /**
@@ -705,6 +769,38 @@ public class DdsClient {
      */
     public SyncInvoker<ListBackupsRequest, ListBackupsResponse> listBackupsInvoker(ListBackupsRequest request) {
         return new SyncInvoker<ListBackupsRequest, ListBackupsResponse>(request, DdsMeta.listBackups, hcClient);
+    }
+
+    /**
+     * 获取参数模板列表
+     *
+     * 获取参数模板列表，包括DDS数据库的所有默认参数模板和用户创建的参数模板。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListConfigurationsRequest 请求对象
+     * @return ListConfigurationsResponse
+     */
+    public ListConfigurationsResponse listConfigurations(ListConfigurationsRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.listConfigurations);
+    }
+
+    /**
+     * 获取参数模板列表
+     *
+     * 获取参数模板列表，包括DDS数据库的所有默认参数模板和用户创建的参数模板。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListConfigurationsRequest 请求对象
+     * @return SyncInvoker<ListConfigurationsRequest, ListConfigurationsResponse>
+     */
+    public SyncInvoker<ListConfigurationsRequest, ListConfigurationsResponse> listConfigurationsInvoker(
+        ListConfigurationsRequest request) {
+        return new SyncInvoker<ListConfigurationsRequest, ListConfigurationsResponse>(request,
+            DdsMeta.listConfigurations, hcClient);
     }
 
     /**
@@ -1687,6 +1783,38 @@ public class DdsClient {
     }
 
     /**
+     * 获取参数模板的详情
+     *
+     * 获取参数模板的详情。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowConfigurationParameterRequest 请求对象
+     * @return ShowConfigurationParameterResponse
+     */
+    public ShowConfigurationParameterResponse showConfigurationParameter(ShowConfigurationParameterRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.showConfigurationParameter);
+    }
+
+    /**
+     * 获取参数模板的详情
+     *
+     * 获取参数模板的详情。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowConfigurationParameterRequest 请求对象
+     * @return SyncInvoker<ShowConfigurationParameterRequest, ShowConfigurationParameterResponse>
+     */
+    public SyncInvoker<ShowConfigurationParameterRequest, ShowConfigurationParameterResponse> showConfigurationParameterInvoker(
+        ShowConfigurationParameterRequest request) {
+        return new SyncInvoker<ShowConfigurationParameterRequest, ShowConfigurationParameterResponse>(request,
+            DdsMeta.showConfigurationParameter, hcClient);
+    }
+
+    /**
      * 查询实例连接数统计信息
      *
      * 查询客户端IP访问至DDS数据库实例的连接数统计信息。
@@ -1716,6 +1844,38 @@ public class DdsClient {
         ShowConnectionStatisticsRequest request) {
         return new SyncInvoker<ShowConnectionStatisticsRequest, ShowConnectionStatisticsResponse>(request,
             DdsMeta.showConnectionStatistics, hcClient);
+    }
+
+    /**
+     * 获取指定实例的参数信息
+     *
+     * 获取指定实例的参数，可以是实例，组，节点的参数模板。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowEntityConfigurationRequest 请求对象
+     * @return ShowEntityConfigurationResponse
+     */
+    public ShowEntityConfigurationResponse showEntityConfiguration(ShowEntityConfigurationRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.showEntityConfiguration);
+    }
+
+    /**
+     * 获取指定实例的参数信息
+     *
+     * 获取指定实例的参数，可以是实例，组，节点的参数模板。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowEntityConfigurationRequest 请求对象
+     * @return SyncInvoker<ShowEntityConfigurationRequest, ShowEntityConfigurationResponse>
+     */
+    public SyncInvoker<ShowEntityConfigurationRequest, ShowEntityConfigurationResponse> showEntityConfigurationInvoker(
+        ShowEntityConfigurationRequest request) {
+        return new SyncInvoker<ShowEntityConfigurationRequest, ShowEntityConfigurationResponse>(request,
+            DdsMeta.showEntityConfiguration, hcClient);
     }
 
     /**
@@ -1808,6 +1968,38 @@ public class DdsClient {
         ShowShardingBalancerRequest request) {
         return new SyncInvoker<ShowShardingBalancerRequest, ShowShardingBalancerResponse>(request,
             DdsMeta.showShardingBalancer, hcClient);
+    }
+
+    /**
+     * 应用参数模板
+     *
+     * 指定实例变更参数模板。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SwitchConfigurationRequest 请求对象
+     * @return SwitchConfigurationResponse
+     */
+    public SwitchConfigurationResponse switchConfiguration(SwitchConfigurationRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.switchConfiguration);
+    }
+
+    /**
+     * 应用参数模板
+     *
+     * 指定实例变更参数模板。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SwitchConfigurationRequest 请求对象
+     * @return SyncInvoker<SwitchConfigurationRequest, SwitchConfigurationResponse>
+     */
+    public SyncInvoker<SwitchConfigurationRequest, SwitchConfigurationResponse> switchConfigurationInvoker(
+        SwitchConfigurationRequest request) {
+        return new SyncInvoker<SwitchConfigurationRequest, SwitchConfigurationResponse>(request,
+            DdsMeta.switchConfiguration, hcClient);
     }
 
     /**
@@ -1935,6 +2127,71 @@ public class DdsClient {
         UpdateClientNetworkRequest request) {
         return new SyncInvoker<UpdateClientNetworkRequest, UpdateClientNetworkResponse>(request,
             DdsMeta.updateClientNetwork, hcClient);
+    }
+
+    /**
+     * 修改参数模板
+     *
+     * 修改指定参数模板的参数信息，包括名称、描述、指定参数的值。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateConfigurationParameterRequest 请求对象
+     * @return UpdateConfigurationParameterResponse
+     */
+    public UpdateConfigurationParameterResponse updateConfigurationParameter(
+        UpdateConfigurationParameterRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.updateConfigurationParameter);
+    }
+
+    /**
+     * 修改参数模板
+     *
+     * 修改指定参数模板的参数信息，包括名称、描述、指定参数的值。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateConfigurationParameterRequest 请求对象
+     * @return SyncInvoker<UpdateConfigurationParameterRequest, UpdateConfigurationParameterResponse>
+     */
+    public SyncInvoker<UpdateConfigurationParameterRequest, UpdateConfigurationParameterResponse> updateConfigurationParameterInvoker(
+        UpdateConfigurationParameterRequest request) {
+        return new SyncInvoker<UpdateConfigurationParameterRequest, UpdateConfigurationParameterResponse>(request,
+            DdsMeta.updateConfigurationParameter, hcClient);
+    }
+
+    /**
+     * 修改指定实例的参数
+     *
+     * 修改指定实例的参数，可以是实例，组，节点的参数模板。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateEntityConfigurationRequest 请求对象
+     * @return UpdateEntityConfigurationResponse
+     */
+    public UpdateEntityConfigurationResponse updateEntityConfiguration(UpdateEntityConfigurationRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.updateEntityConfiguration);
+    }
+
+    /**
+     * 修改指定实例的参数
+     *
+     * 修改指定实例的参数，可以是实例，组，节点的参数模板。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateEntityConfigurationRequest 请求对象
+     * @return SyncInvoker<UpdateEntityConfigurationRequest, UpdateEntityConfigurationResponse>
+     */
+    public SyncInvoker<UpdateEntityConfigurationRequest, UpdateEntityConfigurationResponse> updateEntityConfigurationInvoker(
+        UpdateEntityConfigurationRequest request) {
+        return new SyncInvoker<UpdateEntityConfigurationRequest, UpdateEntityConfigurationResponse>(request,
+            DdsMeta.updateEntityConfiguration, hcClient);
     }
 
     /**

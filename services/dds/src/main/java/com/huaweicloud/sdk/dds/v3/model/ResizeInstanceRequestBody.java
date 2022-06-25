@@ -16,6 +16,11 @@ public class ResizeInstanceRequestBody {
 
     private ResizeInstanceOption resize;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_auto_pay")
+
+    private Boolean isAutoPay;
+
     public ResizeInstanceRequestBody withResize(ResizeInstanceOption resize) {
         this.resize = resize;
         return this;
@@ -42,6 +47,23 @@ public class ResizeInstanceRequestBody {
         this.resize = resize;
     }
 
+    public ResizeInstanceRequestBody withIsAutoPay(Boolean isAutoPay) {
+        this.isAutoPay = isAutoPay;
+        return this;
+    }
+
+    /**
+     * 变更包年包月实例规格时可指定，表示是否自动从账户中支付，此字段不影响自动续订的支付方式。 - 对于降低规格场景，该字段无效。 - 对于扩大规格场景：   - true，表示自动从账户中支付。   - false，表示手动从账户中支付，默认为该方式。
+     * @return isAutoPay
+     */
+    public Boolean getIsAutoPay() {
+        return isAutoPay;
+    }
+
+    public void setIsAutoPay(Boolean isAutoPay) {
+        this.isAutoPay = isAutoPay;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -51,12 +73,13 @@ public class ResizeInstanceRequestBody {
             return false;
         }
         ResizeInstanceRequestBody resizeInstanceRequestBody = (ResizeInstanceRequestBody) o;
-        return Objects.equals(this.resize, resizeInstanceRequestBody.resize);
+        return Objects.equals(this.resize, resizeInstanceRequestBody.resize)
+            && Objects.equals(this.isAutoPay, resizeInstanceRequestBody.isAutoPay);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(resize);
+        return Objects.hash(resize, isAutoPay);
     }
 
     @Override
@@ -64,6 +87,7 @@ public class ResizeInstanceRequestBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class ResizeInstanceRequestBody {\n");
         sb.append("    resize: ").append(toIndentedString(resize)).append("\n");
+        sb.append("    isAutoPay: ").append(toIndentedString(isAutoPay)).append("\n");
         sb.append("}");
         return sb.toString();
     }
