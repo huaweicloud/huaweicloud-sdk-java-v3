@@ -26,6 +26,13 @@ public class ResizeInstanceFlavorResponse extends SdkResponse {
     
     private String jobId;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="order_id")
+    
+    
+    private String orderId;
+
     public ResizeInstanceFlavorResponse withJobId(String jobId) {
         this.jobId = jobId;
         return this;
@@ -35,7 +42,7 @@ public class ResizeInstanceFlavorResponse extends SdkResponse {
 
 
     /**
-     * 任务id。
+     * 任务id。按需实例时仅返回任务id。
      * @return jobId
      */
     public String getJobId() {
@@ -44,6 +51,28 @@ public class ResizeInstanceFlavorResponse extends SdkResponse {
 
     public void setJobId(String jobId) {
         this.jobId = jobId;
+    }
+
+    
+
+    public ResizeInstanceFlavorResponse withOrderId(String orderId) {
+        this.orderId = orderId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 订单id。仅变更包周期实例会返回该参数。
+     * @return orderId
+     */
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
     }
 
     
@@ -57,17 +86,19 @@ public class ResizeInstanceFlavorResponse extends SdkResponse {
             return false;
         }
         ResizeInstanceFlavorResponse resizeInstanceFlavorResponse = (ResizeInstanceFlavorResponse) o;
-        return Objects.equals(this.jobId, resizeInstanceFlavorResponse.jobId);
+        return Objects.equals(this.jobId, resizeInstanceFlavorResponse.jobId) &&
+            Objects.equals(this.orderId, resizeInstanceFlavorResponse.orderId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(jobId);
+        return Objects.hash(jobId, orderId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ResizeInstanceFlavorResponse {\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
+        sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

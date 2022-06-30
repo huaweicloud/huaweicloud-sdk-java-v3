@@ -20,7 +20,7 @@ public class ListUsersOfStreamResponse extends SdkResponse {
     private List<V2UserData> dataList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-request-id")
+    @JsonProperty(value = "X-Request-Id")
 
     private String xRequestId;
 
@@ -67,7 +67,7 @@ public class ListUsersOfStreamResponse extends SdkResponse {
      * @return xRequestId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-request-id")
+    @JsonProperty(value = "X-Request-Id")
     public String getXRequestId() {
         return xRequestId;
     }

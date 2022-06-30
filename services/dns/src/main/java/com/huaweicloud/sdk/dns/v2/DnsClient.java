@@ -432,6 +432,76 @@ public class DnsClient {
     }
 
     /**
+     * 批量删除某个Zone下的Record Set资源。
+     *
+     * 批量删除某个Zone下的Record Set资源，当删除的资源不存在时，则默认删除成功。
+     * 响应结果中只包含本次实际删除的资源。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param BatchDeleteRecordSetWithLineRequest 请求对象
+     * @return BatchDeleteRecordSetWithLineResponse
+     */
+    public BatchDeleteRecordSetWithLineResponse batchDeleteRecordSetWithLine(
+        BatchDeleteRecordSetWithLineRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.batchDeleteRecordSetWithLine);
+    }
+
+    /**
+     * 批量删除某个Zone下的Record Set资源。
+     *
+     * 批量删除某个Zone下的Record Set资源，当删除的资源不存在时，则默认删除成功。
+     * 响应结果中只包含本次实际删除的资源。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param BatchDeleteRecordSetWithLineRequest 请求对象
+     * @return SyncInvoker<BatchDeleteRecordSetWithLineRequest, BatchDeleteRecordSetWithLineResponse>
+     */
+    public SyncInvoker<BatchDeleteRecordSetWithLineRequest, BatchDeleteRecordSetWithLineResponse> batchDeleteRecordSetWithLineInvoker(
+        BatchDeleteRecordSetWithLineRequest request) {
+        return new SyncInvoker<BatchDeleteRecordSetWithLineRequest, BatchDeleteRecordSetWithLineResponse>(request,
+            DnsMeta.batchDeleteRecordSetWithLine, hcClient);
+    }
+
+    /**
+     * 批量修改RecordSet。
+     *
+     * 批量修改RecordSet。属于原子性操作，请求Record Set将全部完成修改，或不做任何修改。
+     * 仅公网Zone支持。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param BatchUpdateRecordSetWithLineRequest 请求对象
+     * @return BatchUpdateRecordSetWithLineResponse
+     */
+    public BatchUpdateRecordSetWithLineResponse batchUpdateRecordSetWithLine(
+        BatchUpdateRecordSetWithLineRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.batchUpdateRecordSetWithLine);
+    }
+
+    /**
+     * 批量修改RecordSet。
+     *
+     * 批量修改RecordSet。属于原子性操作，请求Record Set将全部完成修改，或不做任何修改。
+     * 仅公网Zone支持。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param BatchUpdateRecordSetWithLineRequest 请求对象
+     * @return SyncInvoker<BatchUpdateRecordSetWithLineRequest, BatchUpdateRecordSetWithLineResponse>
+     */
+    public SyncInvoker<BatchUpdateRecordSetWithLineRequest, BatchUpdateRecordSetWithLineResponse> batchUpdateRecordSetWithLineInvoker(
+        BatchUpdateRecordSetWithLineRequest request) {
+        return new SyncInvoker<BatchUpdateRecordSetWithLineRequest, BatchUpdateRecordSetWithLineResponse>(request,
+            DnsMeta.batchUpdateRecordSetWithLine, hcClient);
+    }
+
+    /**
      * 创建单个Record Set
      *
      * 创建单个Record Set
@@ -461,6 +531,39 @@ public class DnsClient {
         CreateRecordSetRequest request) {
         return new SyncInvoker<CreateRecordSetRequest, CreateRecordSetResponse>(request, DnsMeta.createRecordSet,
             hcClient);
+    }
+
+    /**
+     * 批量线路创建RecordSet。仅公网Zone支持。
+     *
+     * 批量线路创建RecordSet。属于原子性操作，如果存在一个参数校验不通过，则创建失败。仅公网Zone支持。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateRecordSetWithBatchLinesRequest 请求对象
+     * @return CreateRecordSetWithBatchLinesResponse
+     */
+    public CreateRecordSetWithBatchLinesResponse createRecordSetWithBatchLines(
+        CreateRecordSetWithBatchLinesRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.createRecordSetWithBatchLines);
+    }
+
+    /**
+     * 批量线路创建RecordSet。仅公网Zone支持。
+     *
+     * 批量线路创建RecordSet。属于原子性操作，如果存在一个参数校验不通过，则创建失败。仅公网Zone支持。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateRecordSetWithBatchLinesRequest 请求对象
+     * @return SyncInvoker<CreateRecordSetWithBatchLinesRequest, CreateRecordSetWithBatchLinesResponse>
+     */
+    public SyncInvoker<CreateRecordSetWithBatchLinesRequest, CreateRecordSetWithBatchLinesResponse> createRecordSetWithBatchLinesInvoker(
+        CreateRecordSetWithBatchLinesRequest request) {
+        return new SyncInvoker<CreateRecordSetWithBatchLinesRequest, CreateRecordSetWithBatchLinesResponse>(request,
+            DnsMeta.createRecordSetWithBatchLines, hcClient);
     }
 
     /**

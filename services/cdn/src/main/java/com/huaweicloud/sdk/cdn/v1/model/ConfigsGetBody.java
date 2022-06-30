@@ -53,6 +53,11 @@ public class ConfigsGetBody {
 
     private Compress compress;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cache_url_parameter_filter")
+
+    private CacheUrlParameterFilter cacheUrlParameterFilter;
+
     public ConfigsGetBody withOriginRequestHeader(List<OriginRequestHeader> originRequestHeader) {
         this.originRequestHeader = originRequestHeader;
         return this;
@@ -273,6 +278,32 @@ public class ConfigsGetBody {
         this.compress = compress;
     }
 
+    public ConfigsGetBody withCacheUrlParameterFilter(CacheUrlParameterFilter cacheUrlParameterFilter) {
+        this.cacheUrlParameterFilter = cacheUrlParameterFilter;
+        return this;
+    }
+
+    public ConfigsGetBody withCacheUrlParameterFilter(Consumer<CacheUrlParameterFilter> cacheUrlParameterFilterSetter) {
+        if (this.cacheUrlParameterFilter == null) {
+            this.cacheUrlParameterFilter = new CacheUrlParameterFilter();
+            cacheUrlParameterFilterSetter.accept(this.cacheUrlParameterFilter);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get cacheUrlParameterFilter
+     * @return cacheUrlParameterFilter
+     */
+    public CacheUrlParameterFilter getCacheUrlParameterFilter() {
+        return cacheUrlParameterFilter;
+    }
+
+    public void setCacheUrlParameterFilter(CacheUrlParameterFilter cacheUrlParameterFilter) {
+        this.cacheUrlParameterFilter = cacheUrlParameterFilter;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -288,7 +319,8 @@ public class ConfigsGetBody {
             && Objects.equals(this.sources, configsGetBody.sources)
             && Objects.equals(this.originProtocol, configsGetBody.originProtocol)
             && Objects.equals(this.forceRedirect, configsGetBody.forceRedirect)
-            && Objects.equals(this.compress, configsGetBody.compress);
+            && Objects.equals(this.compress, configsGetBody.compress)
+            && Objects.equals(this.cacheUrlParameterFilter, configsGetBody.cacheUrlParameterFilter);
     }
 
     @Override
@@ -300,7 +332,8 @@ public class ConfigsGetBody {
             sources,
             originProtocol,
             forceRedirect,
-            compress);
+            compress,
+            cacheUrlParameterFilter);
     }
 
     @Override
@@ -315,6 +348,7 @@ public class ConfigsGetBody {
         sb.append("    originProtocol: ").append(toIndentedString(originProtocol)).append("\n");
         sb.append("    forceRedirect: ").append(toIndentedString(forceRedirect)).append("\n");
         sb.append("    compress: ").append(toIndentedString(compress)).append("\n");
+        sb.append("    cacheUrlParameterFilter: ").append(toIndentedString(cacheUrlParameterFilter)).append("\n");
         sb.append("}");
         return sb.toString();
     }

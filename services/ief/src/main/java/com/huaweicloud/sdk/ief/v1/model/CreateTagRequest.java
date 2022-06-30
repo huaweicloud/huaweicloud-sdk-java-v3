@@ -12,6 +12,11 @@ import java.util.function.Consumer;
 public class CreateTagRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ief-instance-id")
+
+    private String iefInstanceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_id")
 
     private String resourceId;
@@ -22,14 +27,26 @@ public class CreateTagRequest {
     private String resourceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ief-instance-id")
-
-    private String iefInstanceId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private AddTag body;
+    private CreateTagRequestBody body;
+
+    public CreateTagRequest withIefInstanceId(String iefInstanceId) {
+        this.iefInstanceId = iefInstanceId;
+        return this;
+    }
+
+    /**
+     * 铂金版实例ID，专业版实例为空值
+     * @return iefInstanceId
+     */
+    public String getIefInstanceId() {
+        return iefInstanceId;
+    }
+
+    public void setIefInstanceId(String iefInstanceId) {
+        this.iefInstanceId = iefInstanceId;
+    }
 
     public CreateTagRequest withResourceId(String resourceId) {
         this.resourceId = resourceId;
@@ -37,7 +54,7 @@ public class CreateTagRequest {
     }
 
     /**
-     * 资源id
+     * 资源ID
      * @return resourceId
      */
     public String getResourceId() {
@@ -65,31 +82,14 @@ public class CreateTagRequest {
         this.resourceType = resourceType;
     }
 
-    public CreateTagRequest withIefInstanceId(String iefInstanceId) {
-        this.iefInstanceId = iefInstanceId;
-        return this;
-    }
-
-    /**
-     * 铂金版实例ID，专业版实例为空值
-     * @return iefInstanceId
-     */
-    public String getIefInstanceId() {
-        return iefInstanceId;
-    }
-
-    public void setIefInstanceId(String iefInstanceId) {
-        this.iefInstanceId = iefInstanceId;
-    }
-
-    public CreateTagRequest withBody(AddTag body) {
+    public CreateTagRequest withBody(CreateTagRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public CreateTagRequest withBody(Consumer<AddTag> bodySetter) {
+    public CreateTagRequest withBody(Consumer<CreateTagRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new AddTag();
+            this.body = new CreateTagRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -100,11 +100,11 @@ public class CreateTagRequest {
      * Get body
      * @return body
      */
-    public AddTag getBody() {
+    public CreateTagRequestBody getBody() {
         return body;
     }
 
-    public void setBody(AddTag body) {
+    public void setBody(CreateTagRequestBody body) {
         this.body = body;
     }
 
@@ -117,24 +117,24 @@ public class CreateTagRequest {
             return false;
         }
         CreateTagRequest createTagRequest = (CreateTagRequest) o;
-        return Objects.equals(this.resourceId, createTagRequest.resourceId)
+        return Objects.equals(this.iefInstanceId, createTagRequest.iefInstanceId)
+            && Objects.equals(this.resourceId, createTagRequest.resourceId)
             && Objects.equals(this.resourceType, createTagRequest.resourceType)
-            && Objects.equals(this.iefInstanceId, createTagRequest.iefInstanceId)
             && Objects.equals(this.body, createTagRequest.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(resourceId, resourceType, iefInstanceId, body);
+        return Objects.hash(iefInstanceId, resourceId, resourceType, body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateTagRequest {\n");
+        sb.append("    iefInstanceId: ").append(toIndentedString(iefInstanceId)).append("\n");
         sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
         sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
-        sb.append("    iefInstanceId: ").append(toIndentedString(iefInstanceId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

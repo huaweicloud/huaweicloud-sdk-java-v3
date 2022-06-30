@@ -865,7 +865,7 @@ public class EdgeNodeResp {
     }
 
     /**
-     * npu类型，支持D310类型和D910类型。 - D310表示D310类型。 - D910表示D910类型。 - 不填表示为D310类型。
+     * NPU类型，支持D310类型和D910类型。 - D310表示D310类型。 - D910表示D910类型。 - 不填表示为D310类型。
      * @return npuType
      */
     public String getNpuType() {

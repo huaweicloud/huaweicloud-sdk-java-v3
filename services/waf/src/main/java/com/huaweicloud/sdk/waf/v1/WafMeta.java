@@ -1261,6 +1261,69 @@ public class WafMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListOverviewsClassificationRequest, ListOverviewsClassificationResponse> listOverviewsClassification =
+        genForlistOverviewsClassification();
+
+    private static HttpRequestDef<ListOverviewsClassificationRequest, ListOverviewsClassificationResponse> genForlistOverviewsClassification() {
+        // basic
+        HttpRequestDef.Builder<ListOverviewsClassificationRequest, ListOverviewsClassificationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListOverviewsClassificationRequest.class,
+                    ListOverviewsClassificationResponse.class)
+                .withName("ListOverviewsClassification")
+                .withUri("/v1/{project_id}/waf/overviews/classification")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOverviewsClassificationRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<Long>withRequestField("from",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListOverviewsClassificationRequest::getFrom, (req, v) -> {
+                req.setFrom(v);
+            }));
+        builder.<Long>withRequestField("to",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListOverviewsClassificationRequest::getTo, (req, v) -> {
+                req.setTo(v);
+            }));
+        builder.<Integer>withRequestField("top",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListOverviewsClassificationRequest::getTop, (req, v) -> {
+                req.setTop(v);
+            }));
+        builder.<String>withRequestField("hosts",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOverviewsClassificationRequest::getHosts, (req, v) -> {
+                req.setHosts(v);
+            }));
+        builder.<String>withRequestField("instances",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOverviewsClassificationRequest::getInstances, (req, v) -> {
+                req.setInstances(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListPolicyRequest, ListPolicyResponse> listPolicy = genForlistPolicy();
 
     private static HttpRequestDef<ListPolicyRequest, ListPolicyResponse> genForlistPolicy() {

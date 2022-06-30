@@ -14,12 +14,12 @@ public class Probe {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "exec")
 
-    private ProbeExec exec;
+    private Exec exec;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "http_get")
 
-    private InstancesLivenessProbeHttpGet httpGet;
+    private HttpGetDetail httpGet;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "initial_delay_seconds")
@@ -31,14 +31,14 @@ public class Probe {
 
     private Integer timeoutSeconds;
 
-    public Probe withExec(ProbeExec exec) {
+    public Probe withExec(Exec exec) {
         this.exec = exec;
         return this;
     }
 
-    public Probe withExec(Consumer<ProbeExec> execSetter) {
+    public Probe withExec(Consumer<Exec> execSetter) {
         if (this.exec == null) {
-            this.exec = new ProbeExec();
+            this.exec = new Exec();
             execSetter.accept(this.exec);
         }
 
@@ -49,22 +49,22 @@ public class Probe {
      * Get exec
      * @return exec
      */
-    public ProbeExec getExec() {
+    public Exec getExec() {
         return exec;
     }
 
-    public void setExec(ProbeExec exec) {
+    public void setExec(Exec exec) {
         this.exec = exec;
     }
 
-    public Probe withHttpGet(InstancesLivenessProbeHttpGet httpGet) {
+    public Probe withHttpGet(HttpGetDetail httpGet) {
         this.httpGet = httpGet;
         return this;
     }
 
-    public Probe withHttpGet(Consumer<InstancesLivenessProbeHttpGet> httpGetSetter) {
+    public Probe withHttpGet(Consumer<HttpGetDetail> httpGetSetter) {
         if (this.httpGet == null) {
-            this.httpGet = new InstancesLivenessProbeHttpGet();
+            this.httpGet = new HttpGetDetail();
             httpGetSetter.accept(this.httpGet);
         }
 
@@ -75,11 +75,11 @@ public class Probe {
      * Get httpGet
      * @return httpGet
      */
-    public InstancesLivenessProbeHttpGet getHttpGet() {
+    public HttpGetDetail getHttpGet() {
         return httpGet;
     }
 
-    public void setHttpGet(InstancesLivenessProbeHttpGet httpGet) {
+    public void setHttpGet(HttpGetDetail httpGet) {
         this.httpGet = httpGet;
     }
 

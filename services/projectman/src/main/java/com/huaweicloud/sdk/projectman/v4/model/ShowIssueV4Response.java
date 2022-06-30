@@ -52,7 +52,7 @@ public class ShowIssueV4Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "new_custom_fields")
 
-    private List<NewCustomField> newCustomFields = null;
+    private List<IssueDetailCustomField> newCustomFields = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "developer")
@@ -323,12 +323,12 @@ public class ShowIssueV4Response extends SdkResponse {
         this.customFields = customFields;
     }
 
-    public ShowIssueV4Response withNewCustomFields(List<NewCustomField> newCustomFields) {
+    public ShowIssueV4Response withNewCustomFields(List<IssueDetailCustomField> newCustomFields) {
         this.newCustomFields = newCustomFields;
         return this;
     }
 
-    public ShowIssueV4Response addNewCustomFieldsItem(NewCustomField newCustomFieldsItem) {
+    public ShowIssueV4Response addNewCustomFieldsItem(IssueDetailCustomField newCustomFieldsItem) {
         if (this.newCustomFields == null) {
             this.newCustomFields = new ArrayList<>();
         }
@@ -336,7 +336,7 @@ public class ShowIssueV4Response extends SdkResponse {
         return this;
     }
 
-    public ShowIssueV4Response withNewCustomFields(Consumer<List<NewCustomField>> newCustomFieldsSetter) {
+    public ShowIssueV4Response withNewCustomFields(Consumer<List<IssueDetailCustomField>> newCustomFieldsSetter) {
         if (this.newCustomFields == null) {
             this.newCustomFields = new ArrayList<>();
         }
@@ -348,11 +348,11 @@ public class ShowIssueV4Response extends SdkResponse {
      * 自定义属性值
      * @return newCustomFields
      */
-    public List<NewCustomField> getNewCustomFields() {
+    public List<IssueDetailCustomField> getNewCustomFields() {
         return newCustomFields;
     }
 
-    public void setNewCustomFields(List<NewCustomField> newCustomFields) {
+    public void setNewCustomFields(List<IssueDetailCustomField> newCustomFields) {
         this.newCustomFields = newCustomFields;
     }
 

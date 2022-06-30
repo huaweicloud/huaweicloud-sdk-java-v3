@@ -359,47 +359,6 @@ public class LiveAsyncClient {
     }
 
     /**
-     * 查询直播转码任务数接口
-     *
-     * 查询5分钟粒度的各档位转码任务数。
-     * 
-     * 仅支持查询视频转码任务数。
-     * 
-     * 最大查询跨度7天，最大查询周期90天。
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param ListTranscodeTaskCountRequest 请求对象
-     * @return CompletableFuture<ListTranscodeTaskCountResponse>
-     */
-    public CompletableFuture<ListTranscodeTaskCountResponse> listTranscodeTaskCountAsync(
-        ListTranscodeTaskCountRequest request) {
-        return hcClient.asyncInvokeHttp(request, LiveMeta.listTranscodeTaskCount);
-    }
-
-    /**
-     * 查询直播转码任务数接口
-     *
-     * 查询5分钟粒度的各档位转码任务数。
-     * 
-     * 仅支持查询视频转码任务数。
-     * 
-     * 最大查询跨度7天，最大查询周期90天。
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param ListTranscodeTaskCountRequest 请求对象
-     * @return AsyncInvoker<ListTranscodeTaskCountRequest, ListTranscodeTaskCountResponse>
-     */
-    public AsyncInvoker<ListTranscodeTaskCountRequest, ListTranscodeTaskCountResponse> listTranscodeTaskCountAsyncInvoker(
-        ListTranscodeTaskCountRequest request) {
-        return new AsyncInvoker<ListTranscodeTaskCountRequest, ListTranscodeTaskCountResponse>(request,
-            LiveMeta.listTranscodeTaskCount, hcClient);
-    }
-
-    /**
      * 查询观众趋势接口
      *
      * 查询观众趋势。  最大查询跨度31天，最大查询周期一年。

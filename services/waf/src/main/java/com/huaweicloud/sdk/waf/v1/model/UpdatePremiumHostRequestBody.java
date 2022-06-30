@@ -5,10 +5,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 修改独享模式域名的请求
@@ -224,6 +227,66 @@ public class UpdatePremiumHostRequestBody {
 
     private CipherEnum cipher;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "mode")
+
+    private String mode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "locked")
+
+    private Integer locked;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "protect_status")
+
+    private Integer protectStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "access_status")
+
+    private Integer accessStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "timestamp")
+
+    private Integer timestamp;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pool_ids")
+
+    private List<String> poolIds = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "block_page")
+
+    private BlockPage blockPage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "traffic_mark")
+
+    private TrafficMark trafficMark;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "flag")
+
+    private Map<String, String> flag = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "extend")
+
+    private Map<String, String> extend = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "circuit_breaker")
+
+    private CircuitBreaker circuitBreaker;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "timeout_config")
+
+    private TimeoutConfig timeoutConfig;
+
     public UpdatePremiumHostRequestBody withProxy(Boolean proxy) {
         this.proxy = proxy;
         return this;
@@ -309,6 +372,294 @@ public class UpdatePremiumHostRequestBody {
         this.cipher = cipher;
     }
 
+    public UpdatePremiumHostRequestBody withMode(String mode) {
+        this.mode = mode;
+        return this;
+    }
+
+    /**
+     * 独享模式特殊域名模式（仅特殊模式需要，如elb）
+     * @return mode
+     */
+    public String getMode() {
+        return mode;
+    }
+
+    public void setMode(String mode) {
+        this.mode = mode;
+    }
+
+    public UpdatePremiumHostRequestBody withLocked(Integer locked) {
+        this.locked = locked;
+        return this;
+    }
+
+    /**
+     * 是否锁定
+     * @return locked
+     */
+    public Integer getLocked() {
+        return locked;
+    }
+
+    public void setLocked(Integer locked) {
+        this.locked = locked;
+    }
+
+    public UpdatePremiumHostRequestBody withProtectStatus(Integer protectStatus) {
+        this.protectStatus = protectStatus;
+        return this;
+    }
+
+    /**
+     * 防护状态
+     * @return protectStatus
+     */
+    public Integer getProtectStatus() {
+        return protectStatus;
+    }
+
+    public void setProtectStatus(Integer protectStatus) {
+        this.protectStatus = protectStatus;
+    }
+
+    public UpdatePremiumHostRequestBody withAccessStatus(Integer accessStatus) {
+        this.accessStatus = accessStatus;
+        return this;
+    }
+
+    /**
+     * 接入状态
+     * @return accessStatus
+     */
+    public Integer getAccessStatus() {
+        return accessStatus;
+    }
+
+    public void setAccessStatus(Integer accessStatus) {
+        this.accessStatus = accessStatus;
+    }
+
+    public UpdatePremiumHostRequestBody withTimestamp(Integer timestamp) {
+        this.timestamp = timestamp;
+        return this;
+    }
+
+    /**
+     * 时间戳
+     * @return timestamp
+     */
+    public Integer getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(Integer timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    public UpdatePremiumHostRequestBody withPoolIds(List<String> poolIds) {
+        this.poolIds = poolIds;
+        return this;
+    }
+
+    public UpdatePremiumHostRequestBody addPoolIdsItem(String poolIdsItem) {
+        if (this.poolIds == null) {
+            this.poolIds = new ArrayList<>();
+        }
+        this.poolIds.add(poolIdsItem);
+        return this;
+    }
+
+    public UpdatePremiumHostRequestBody withPoolIds(Consumer<List<String>> poolIdsSetter) {
+        if (this.poolIds == null) {
+            this.poolIds = new ArrayList<>();
+        }
+        poolIdsSetter.accept(this.poolIds);
+        return this;
+    }
+
+    /**
+     * 域名关联的组ID（仅特殊模式需要，如elb）
+     * @return poolIds
+     */
+    public List<String> getPoolIds() {
+        return poolIds;
+    }
+
+    public void setPoolIds(List<String> poolIds) {
+        this.poolIds = poolIds;
+    }
+
+    public UpdatePremiumHostRequestBody withBlockPage(BlockPage blockPage) {
+        this.blockPage = blockPage;
+        return this;
+    }
+
+    public UpdatePremiumHostRequestBody withBlockPage(Consumer<BlockPage> blockPageSetter) {
+        if (this.blockPage == null) {
+            this.blockPage = new BlockPage();
+            blockPageSetter.accept(this.blockPage);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get blockPage
+     * @return blockPage
+     */
+    public BlockPage getBlockPage() {
+        return blockPage;
+    }
+
+    public void setBlockPage(BlockPage blockPage) {
+        this.blockPage = blockPage;
+    }
+
+    public UpdatePremiumHostRequestBody withTrafficMark(TrafficMark trafficMark) {
+        this.trafficMark = trafficMark;
+        return this;
+    }
+
+    public UpdatePremiumHostRequestBody withTrafficMark(Consumer<TrafficMark> trafficMarkSetter) {
+        if (this.trafficMark == null) {
+            this.trafficMark = new TrafficMark();
+            trafficMarkSetter.accept(this.trafficMark);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get trafficMark
+     * @return trafficMark
+     */
+    public TrafficMark getTrafficMark() {
+        return trafficMark;
+    }
+
+    public void setTrafficMark(TrafficMark trafficMark) {
+        this.trafficMark = trafficMark;
+    }
+
+    public UpdatePremiumHostRequestBody withFlag(Map<String, String> flag) {
+        this.flag = flag;
+        return this;
+    }
+
+    public UpdatePremiumHostRequestBody putFlagItem(String key, String flagItem) {
+        if (this.flag == null) {
+            this.flag = new HashMap<>();
+        }
+        this.flag.put(key, flagItem);
+        return this;
+    }
+
+    public UpdatePremiumHostRequestBody withFlag(Consumer<Map<String, String>> flagSetter) {
+        if (this.flag == null) {
+            this.flag = new HashMap<>();
+        }
+        flagSetter.accept(this.flag);
+        return this;
+    }
+
+    /**
+     * 域名特殊标识
+     * @return flag
+     */
+    public Map<String, String> getFlag() {
+        return flag;
+    }
+
+    public void setFlag(Map<String, String> flag) {
+        this.flag = flag;
+    }
+
+    public UpdatePremiumHostRequestBody withExtend(Map<String, String> extend) {
+        this.extend = extend;
+        return this;
+    }
+
+    public UpdatePremiumHostRequestBody putExtendItem(String key, String extendItem) {
+        if (this.extend == null) {
+            this.extend = new HashMap<>();
+        }
+        this.extend.put(key, extendItem);
+        return this;
+    }
+
+    public UpdatePremiumHostRequestBody withExtend(Consumer<Map<String, String>> extendSetter) {
+        if (this.extend == null) {
+            this.extend = new HashMap<>();
+        }
+        extendSetter.accept(this.extend);
+        return this;
+    }
+
+    /**
+     * 可扩展字段
+     * @return extend
+     */
+    public Map<String, String> getExtend() {
+        return extend;
+    }
+
+    public void setExtend(Map<String, String> extend) {
+        this.extend = extend;
+    }
+
+    public UpdatePremiumHostRequestBody withCircuitBreaker(CircuitBreaker circuitBreaker) {
+        this.circuitBreaker = circuitBreaker;
+        return this;
+    }
+
+    public UpdatePremiumHostRequestBody withCircuitBreaker(Consumer<CircuitBreaker> circuitBreakerSetter) {
+        if (this.circuitBreaker == null) {
+            this.circuitBreaker = new CircuitBreaker();
+            circuitBreakerSetter.accept(this.circuitBreaker);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get circuitBreaker
+     * @return circuitBreaker
+     */
+    public CircuitBreaker getCircuitBreaker() {
+        return circuitBreaker;
+    }
+
+    public void setCircuitBreaker(CircuitBreaker circuitBreaker) {
+        this.circuitBreaker = circuitBreaker;
+    }
+
+    public UpdatePremiumHostRequestBody withTimeoutConfig(TimeoutConfig timeoutConfig) {
+        this.timeoutConfig = timeoutConfig;
+        return this;
+    }
+
+    public UpdatePremiumHostRequestBody withTimeoutConfig(Consumer<TimeoutConfig> timeoutConfigSetter) {
+        if (this.timeoutConfig == null) {
+            this.timeoutConfig = new TimeoutConfig();
+            timeoutConfigSetter.accept(this.timeoutConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get timeoutConfig
+     * @return timeoutConfig
+     */
+    public TimeoutConfig getTimeoutConfig() {
+        return timeoutConfig;
+    }
+
+    public void setTimeoutConfig(TimeoutConfig timeoutConfig) {
+        this.timeoutConfig = timeoutConfig;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -322,12 +673,40 @@ public class UpdatePremiumHostRequestBody {
             && Objects.equals(this.certificateid, updatePremiumHostRequestBody.certificateid)
             && Objects.equals(this.certificatename, updatePremiumHostRequestBody.certificatename)
             && Objects.equals(this.tls, updatePremiumHostRequestBody.tls)
-            && Objects.equals(this.cipher, updatePremiumHostRequestBody.cipher);
+            && Objects.equals(this.cipher, updatePremiumHostRequestBody.cipher)
+            && Objects.equals(this.mode, updatePremiumHostRequestBody.mode)
+            && Objects.equals(this.locked, updatePremiumHostRequestBody.locked)
+            && Objects.equals(this.protectStatus, updatePremiumHostRequestBody.protectStatus)
+            && Objects.equals(this.accessStatus, updatePremiumHostRequestBody.accessStatus)
+            && Objects.equals(this.timestamp, updatePremiumHostRequestBody.timestamp)
+            && Objects.equals(this.poolIds, updatePremiumHostRequestBody.poolIds)
+            && Objects.equals(this.blockPage, updatePremiumHostRequestBody.blockPage)
+            && Objects.equals(this.trafficMark, updatePremiumHostRequestBody.trafficMark)
+            && Objects.equals(this.flag, updatePremiumHostRequestBody.flag)
+            && Objects.equals(this.extend, updatePremiumHostRequestBody.extend)
+            && Objects.equals(this.circuitBreaker, updatePremiumHostRequestBody.circuitBreaker)
+            && Objects.equals(this.timeoutConfig, updatePremiumHostRequestBody.timeoutConfig);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(proxy, certificateid, certificatename, tls, cipher);
+        return Objects.hash(proxy,
+            certificateid,
+            certificatename,
+            tls,
+            cipher,
+            mode,
+            locked,
+            protectStatus,
+            accessStatus,
+            timestamp,
+            poolIds,
+            blockPage,
+            trafficMark,
+            flag,
+            extend,
+            circuitBreaker,
+            timeoutConfig);
     }
 
     @Override
@@ -339,6 +718,18 @@ public class UpdatePremiumHostRequestBody {
         sb.append("    certificatename: ").append(toIndentedString(certificatename)).append("\n");
         sb.append("    tls: ").append(toIndentedString(tls)).append("\n");
         sb.append("    cipher: ").append(toIndentedString(cipher)).append("\n");
+        sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
+        sb.append("    locked: ").append(toIndentedString(locked)).append("\n");
+        sb.append("    protectStatus: ").append(toIndentedString(protectStatus)).append("\n");
+        sb.append("    accessStatus: ").append(toIndentedString(accessStatus)).append("\n");
+        sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
+        sb.append("    poolIds: ").append(toIndentedString(poolIds)).append("\n");
+        sb.append("    blockPage: ").append(toIndentedString(blockPage)).append("\n");
+        sb.append("    trafficMark: ").append(toIndentedString(trafficMark)).append("\n");
+        sb.append("    flag: ").append(toIndentedString(flag)).append("\n");
+        sb.append("    extend: ").append(toIndentedString(extend)).append("\n");
+        sb.append("    circuitBreaker: ").append(toIndentedString(circuitBreaker)).append("\n");
+        sb.append("    timeoutConfig: ").append(toIndentedString(timeoutConfig)).append("\n");
         sb.append("}");
         return sb.toString();
     }

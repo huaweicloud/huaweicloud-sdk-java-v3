@@ -65,7 +65,7 @@ public class DeleteDeploymentRequest {
     }
 
     /**
-     * 是否强制删除；默认为false。
+     * 是否强制删除。默认为false。
      * @return forceDelete
      */
     public String getForceDelete() {

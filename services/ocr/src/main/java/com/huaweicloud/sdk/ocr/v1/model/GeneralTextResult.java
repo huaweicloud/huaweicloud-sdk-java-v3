@@ -16,7 +16,7 @@ public class GeneralTextResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "direction")
 
-    private Integer direction;
+    private Float direction;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "words_block_count")
@@ -28,20 +28,20 @@ public class GeneralTextResult {
 
     private List<GeneralTextWordsBlockList> wordsBlockList = null;
 
-    public GeneralTextResult withDirection(Integer direction) {
+    public GeneralTextResult withDirection(Float direction) {
         this.direction = direction;
         return this;
     }
 
     /**
-     * 图片朝向，仅当detect_direction为true时，该字段有效。返回图片逆时针旋转角度，值区间为[0， 359]。当detect_direction为false时，该字段值为 -1。 
+     * 图片朝向，仅当detect_direction为true时，该字段有效。返回图片逆时针旋转角度，值区间为[0， 360)。当detect_direction为false时，该字段值为 -1。 
      * @return direction
      */
-    public Integer getDirection() {
+    public Float getDirection() {
         return direction;
     }
 
-    public void setDirection(Integer direction) {
+    public void setDirection(Float direction) {
         this.direction = direction;
     }
 

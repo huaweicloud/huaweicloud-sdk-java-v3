@@ -88,7 +88,7 @@ public class Deployment {
     }
 
     /**
-     * 应用部署来源: 边缘市场(iem) or 自定义(userdefined)
+     * 应用部署来源：边缘市场（iem）或自定义()
      * @return source
      */
     public String getSource() {

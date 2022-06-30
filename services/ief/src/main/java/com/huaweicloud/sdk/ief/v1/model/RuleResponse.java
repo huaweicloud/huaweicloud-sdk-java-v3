@@ -174,7 +174,7 @@ public class RuleResponse {
     }
 
     /**
-     * 是否启用规则，默认为true(启用)
+     * 是否启用规则，默认为true（启用）
      * @return inUsing
      */
     public Boolean getInUsing() {

@@ -16,21 +16,21 @@ public class NodeUpdateByDevice {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "added")
 
-    private EdgeNodeAdded added;
+    private NodeDeviceInfos added;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "removed")
 
     private List<String> removed = null;
 
-    public NodeUpdateByDevice withAdded(EdgeNodeAdded added) {
+    public NodeUpdateByDevice withAdded(NodeDeviceInfos added) {
         this.added = added;
         return this;
     }
 
-    public NodeUpdateByDevice withAdded(Consumer<EdgeNodeAdded> addedSetter) {
+    public NodeUpdateByDevice withAdded(Consumer<NodeDeviceInfos> addedSetter) {
         if (this.added == null) {
-            this.added = new EdgeNodeAdded();
+            this.added = new NodeDeviceInfos();
             addedSetter.accept(this.added);
         }
 
@@ -41,11 +41,11 @@ public class NodeUpdateByDevice {
      * Get added
      * @return added
      */
-    public EdgeNodeAdded getAdded() {
+    public NodeDeviceInfos getAdded() {
         return added;
     }
 
-    public void setAdded(EdgeNodeAdded added) {
+    public void setAdded(NodeDeviceInfos added) {
         this.added = added;
     }
 

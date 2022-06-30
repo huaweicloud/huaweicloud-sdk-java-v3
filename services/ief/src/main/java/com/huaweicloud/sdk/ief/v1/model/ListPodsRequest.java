@@ -51,7 +51,7 @@ public class ListPodsRequest {
     }
 
     /**
-     * 指定节点查询应用实例, 可选， 与group_id、deployment_id、deployment_ids四选一
+     * 指定节点查询应用实例，可选， 与group_id、deployment_id、deployment_ids四选一
      * @return nodeId
      */
     public String getNodeId() {
@@ -85,7 +85,7 @@ public class ListPodsRequest {
     }
 
     /**
-     * 指定应用部署ID查询应用实例， 可选， 与node_id、group_id、deployment_ids四选一
+     * 指定应用部署ID查询应用实例，可选， 与node_id、group_id、deployment_ids四选一
      * @return deploymentId
      */
     public String getDeploymentId() {

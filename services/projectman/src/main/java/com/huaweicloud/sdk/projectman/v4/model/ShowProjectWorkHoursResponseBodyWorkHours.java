@@ -21,6 +21,11 @@ public class ShowProjectWorkHoursResponseBodyWorkHours {
     private String nickName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "user_id")
+
+    private String userId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_name")
 
     private String userName;
@@ -102,6 +107,23 @@ public class ShowProjectWorkHoursResponseBodyWorkHours {
 
     public void setNickName(String nickName) {
         this.nickName = nickName;
+    }
+
+    public ShowProjectWorkHoursResponseBodyWorkHours withUserId(String userId) {
+        this.userId = userId;
+        return this;
+    }
+
+    /**
+     * 用户id
+     * @return userId
+     */
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public ShowProjectWorkHoursResponseBodyWorkHours withUserName(String userName) {
@@ -286,6 +308,7 @@ public class ShowProjectWorkHoursResponseBodyWorkHours {
             (ShowProjectWorkHoursResponseBodyWorkHours) o;
         return Objects.equals(this.projectName, showProjectWorkHoursResponseBodyWorkHours.projectName)
             && Objects.equals(this.nickName, showProjectWorkHoursResponseBodyWorkHours.nickName)
+            && Objects.equals(this.userId, showProjectWorkHoursResponseBodyWorkHours.userId)
             && Objects.equals(this.userName, showProjectWorkHoursResponseBodyWorkHours.userName)
             && Objects.equals(this.workDate, showProjectWorkHoursResponseBodyWorkHours.workDate)
             && Objects.equals(this.workHoursNum, showProjectWorkHoursResponseBodyWorkHours.workHoursNum)
@@ -302,6 +325,7 @@ public class ShowProjectWorkHoursResponseBodyWorkHours {
     public int hashCode() {
         return Objects.hash(projectName,
             nickName,
+            userId,
             userName,
             workDate,
             workHoursNum,
@@ -320,6 +344,7 @@ public class ShowProjectWorkHoursResponseBodyWorkHours {
         sb.append("class ShowProjectWorkHoursResponseBodyWorkHours {\n");
         sb.append("    projectName: ").append(toIndentedString(projectName)).append("\n");
         sb.append("    nickName: ").append(toIndentedString(nickName)).append("\n");
+        sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
         sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
         sb.append("    workDate: ").append(toIndentedString(workDate)).append("\n");
         sb.append("    workHoursNum: ").append(toIndentedString(workHoursNum)).append("\n");

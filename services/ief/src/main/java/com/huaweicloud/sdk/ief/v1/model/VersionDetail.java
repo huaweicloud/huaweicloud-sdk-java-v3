@@ -36,12 +36,12 @@ public class VersionDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "configs")
 
-    private VersionDetailConfigs configs;
+    private AppConfigs configs;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resources")
 
-    private VersionDetailResources resources;
+    private Resources resources;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "arch")
@@ -61,12 +61,12 @@ public class VersionDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "liveness_probe")
 
-    private AppVersionDetailLivenessProbe livenessProbe;
+    private ProbeDetail livenessProbe;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "readiness_probe")
 
-    private AppVersionDetailReadinessProbe readinessProbe;
+    private ProbeDetail readinessProbe;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "npu_type")
@@ -173,14 +173,14 @@ public class VersionDetail {
         this.volumes = volumes;
     }
 
-    public VersionDetail withConfigs(VersionDetailConfigs configs) {
+    public VersionDetail withConfigs(AppConfigs configs) {
         this.configs = configs;
         return this;
     }
 
-    public VersionDetail withConfigs(Consumer<VersionDetailConfigs> configsSetter) {
+    public VersionDetail withConfigs(Consumer<AppConfigs> configsSetter) {
         if (this.configs == null) {
-            this.configs = new VersionDetailConfigs();
+            this.configs = new AppConfigs();
             configsSetter.accept(this.configs);
         }
 
@@ -191,22 +191,22 @@ public class VersionDetail {
      * Get configs
      * @return configs
      */
-    public VersionDetailConfigs getConfigs() {
+    public AppConfigs getConfigs() {
         return configs;
     }
 
-    public void setConfigs(VersionDetailConfigs configs) {
+    public void setConfigs(AppConfigs configs) {
         this.configs = configs;
     }
 
-    public VersionDetail withResources(VersionDetailResources resources) {
+    public VersionDetail withResources(Resources resources) {
         this.resources = resources;
         return this;
     }
 
-    public VersionDetail withResources(Consumer<VersionDetailResources> resourcesSetter) {
+    public VersionDetail withResources(Consumer<Resources> resourcesSetter) {
         if (this.resources == null) {
-            this.resources = new VersionDetailResources();
+            this.resources = new Resources();
             resourcesSetter.accept(this.resources);
         }
 
@@ -217,11 +217,11 @@ public class VersionDetail {
      * Get resources
      * @return resources
      */
-    public VersionDetailResources getResources() {
+    public Resources getResources() {
         return resources;
     }
 
-    public void setResources(VersionDetailResources resources) {
+    public void setResources(Resources resources) {
         this.resources = resources;
     }
 
@@ -308,14 +308,14 @@ public class VersionDetail {
         this.args = args;
     }
 
-    public VersionDetail withLivenessProbe(AppVersionDetailLivenessProbe livenessProbe) {
+    public VersionDetail withLivenessProbe(ProbeDetail livenessProbe) {
         this.livenessProbe = livenessProbe;
         return this;
     }
 
-    public VersionDetail withLivenessProbe(Consumer<AppVersionDetailLivenessProbe> livenessProbeSetter) {
+    public VersionDetail withLivenessProbe(Consumer<ProbeDetail> livenessProbeSetter) {
         if (this.livenessProbe == null) {
-            this.livenessProbe = new AppVersionDetailLivenessProbe();
+            this.livenessProbe = new ProbeDetail();
             livenessProbeSetter.accept(this.livenessProbe);
         }
 
@@ -326,22 +326,22 @@ public class VersionDetail {
      * Get livenessProbe
      * @return livenessProbe
      */
-    public AppVersionDetailLivenessProbe getLivenessProbe() {
+    public ProbeDetail getLivenessProbe() {
         return livenessProbe;
     }
 
-    public void setLivenessProbe(AppVersionDetailLivenessProbe livenessProbe) {
+    public void setLivenessProbe(ProbeDetail livenessProbe) {
         this.livenessProbe = livenessProbe;
     }
 
-    public VersionDetail withReadinessProbe(AppVersionDetailReadinessProbe readinessProbe) {
+    public VersionDetail withReadinessProbe(ProbeDetail readinessProbe) {
         this.readinessProbe = readinessProbe;
         return this;
     }
 
-    public VersionDetail withReadinessProbe(Consumer<AppVersionDetailReadinessProbe> readinessProbeSetter) {
+    public VersionDetail withReadinessProbe(Consumer<ProbeDetail> readinessProbeSetter) {
         if (this.readinessProbe == null) {
-            this.readinessProbe = new AppVersionDetailReadinessProbe();
+            this.readinessProbe = new ProbeDetail();
             readinessProbeSetter.accept(this.readinessProbe);
         }
 
@@ -352,11 +352,11 @@ public class VersionDetail {
      * Get readinessProbe
      * @return readinessProbe
      */
-    public AppVersionDetailReadinessProbe getReadinessProbe() {
+    public ProbeDetail getReadinessProbe() {
         return readinessProbe;
     }
 
-    public void setReadinessProbe(AppVersionDetailReadinessProbe readinessProbe) {
+    public void setReadinessProbe(ProbeDetail readinessProbe) {
         this.readinessProbe = readinessProbe;
     }
 
@@ -366,7 +366,7 @@ public class VersionDetail {
     }
 
     /**
-     * npu类型，支持D310类型和D910类型。 - D310表示D310类型。 - D910表示D910类型。 - 不填表示为D310类型。
+     * NPU类型，支持D310类型和D910类型。 - D310表示D310类型。 - D910表示D910类型。 - 不填表示为D310类型。
      * @return npuType
      */
     public String getNpuType() {

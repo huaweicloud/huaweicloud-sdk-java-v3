@@ -974,6 +974,39 @@ public class WafAsyncClient {
     }
 
     /**
+     * 查询安全总览分类统计top信息
+     *
+     * 查询安全总览分类统计top信息，包含受攻击域名 、攻击源ip、受攻击URL、攻击来源区域、事件分布
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListOverviewsClassificationRequest 请求对象
+     * @return CompletableFuture<ListOverviewsClassificationResponse>
+     */
+    public CompletableFuture<ListOverviewsClassificationResponse> listOverviewsClassificationAsync(
+        ListOverviewsClassificationRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.listOverviewsClassification);
+    }
+
+    /**
+     * 查询安全总览分类统计top信息
+     *
+     * 查询安全总览分类统计top信息，包含受攻击域名 、攻击源ip、受攻击URL、攻击来源区域、事件分布
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListOverviewsClassificationRequest 请求对象
+     * @return AsyncInvoker<ListOverviewsClassificationRequest, ListOverviewsClassificationResponse>
+     */
+    public AsyncInvoker<ListOverviewsClassificationRequest, ListOverviewsClassificationResponse> listOverviewsClassificationAsyncInvoker(
+        ListOverviewsClassificationRequest request) {
+        return new AsyncInvoker<ListOverviewsClassificationRequest, ListOverviewsClassificationResponse>(request,
+            WafMeta.listOverviewsClassification, hcClient);
+    }
+
+    /**
      * 查询防护策略列表
      *
      * 查询防护策略列表
@@ -1100,9 +1133,9 @@ public class WafAsyncClient {
     }
 
     /**
-     * 查询安全总览请求数据
+     * 查询安全总览请求与攻击数量
      *
-     * 查询安全总览请求数据
+     * 查询安全总览请求与攻击数量
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1115,9 +1148,9 @@ public class WafAsyncClient {
     }
 
     /**
-     * 查询安全总览请求数据
+     * 查询安全总览请求与攻击数量
      *
-     * 查询安全总览请求数据
+     * 查询安全总览请求与攻击数量
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.

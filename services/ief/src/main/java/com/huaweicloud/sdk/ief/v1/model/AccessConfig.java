@@ -14,106 +14,106 @@ public class AccessConfig {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protocol_type")
 
-    private AccessConfigProtocolType protocolType;
+    private ValueInAttributes protocolType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protocol_name")
 
-    private AccessConfigProtocolName protocolName;
+    private ValueInAttributes protocolName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "slave_id")
 
-    private AccessConfigSlaveId slaveId;
+    private ValueInAttributes slaveId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip")
 
-    private AccessConfigIp ip;
+    private ValueInAttributes ip;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "port")
 
-    private AccessConfigPort port;
+    private ValueInAttributes port;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "serial_port")
 
-    private AccessConfigSerialPort serialPort;
+    private ValueInAttributes serialPort;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "baud_rate")
 
-    private AccessConfigBaudRate baudRate;
+    private ValueInAttributes baudRate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_bits")
 
-    private AccessConfigDataBits dataBits;
+    private ValueInAttributes dataBits;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stop_bits")
 
-    private AccessConfigStopBits stopBits;
+    private ValueInAttributes stopBits;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parity_bits")
 
-    private AccessConfigParityBits parityBits;
+    private ValueInAttributes parityBits;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "url")
 
-    private AccessConfigUrl url;
+    private ValueInAttributes url;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sec_mode")
 
-    private AccessConfigSecMode secMode;
+    private ValueInAttributes secMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sec_policy")
 
-    private AccessConfigSecPolicy secPolicy;
+    private ValueInAttributes secPolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auth_type")
 
-    private AccessConfigAuthType authType;
+    private ValueInAttributes authType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "username")
 
-    private AccessConfigUsername username;
+    private ValueInAttributes username;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "password")
 
-    private AccessConfigPassword password;
+    private ValueInAttributes password;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "private_key")
 
-    private AccessConfigPrivateKey privateKey;
+    private ValueInAttributes privateKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "certificate")
 
-    private AccessConfigCertificate certificate;
+    private ValueInAttributes certificate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timeout")
 
-    private AccessConfigTimeout timeout;
+    private ValueInAttributes timeout;
 
-    public AccessConfig withProtocolType(AccessConfigProtocolType protocolType) {
+    public AccessConfig withProtocolType(ValueInAttributes protocolType) {
         this.protocolType = protocolType;
         return this;
     }
 
-    public AccessConfig withProtocolType(Consumer<AccessConfigProtocolType> protocolTypeSetter) {
+    public AccessConfig withProtocolType(Consumer<ValueInAttributes> protocolTypeSetter) {
         if (this.protocolType == null) {
-            this.protocolType = new AccessConfigProtocolType();
+            this.protocolType = new ValueInAttributes();
             protocolTypeSetter.accept(this.protocolType);
         }
 
@@ -124,22 +124,22 @@ public class AccessConfig {
      * Get protocolType
      * @return protocolType
      */
-    public AccessConfigProtocolType getProtocolType() {
+    public ValueInAttributes getProtocolType() {
         return protocolType;
     }
 
-    public void setProtocolType(AccessConfigProtocolType protocolType) {
+    public void setProtocolType(ValueInAttributes protocolType) {
         this.protocolType = protocolType;
     }
 
-    public AccessConfig withProtocolName(AccessConfigProtocolName protocolName) {
+    public AccessConfig withProtocolName(ValueInAttributes protocolName) {
         this.protocolName = protocolName;
         return this;
     }
 
-    public AccessConfig withProtocolName(Consumer<AccessConfigProtocolName> protocolNameSetter) {
+    public AccessConfig withProtocolName(Consumer<ValueInAttributes> protocolNameSetter) {
         if (this.protocolName == null) {
-            this.protocolName = new AccessConfigProtocolName();
+            this.protocolName = new ValueInAttributes();
             protocolNameSetter.accept(this.protocolName);
         }
 
@@ -150,22 +150,22 @@ public class AccessConfig {
      * Get protocolName
      * @return protocolName
      */
-    public AccessConfigProtocolName getProtocolName() {
+    public ValueInAttributes getProtocolName() {
         return protocolName;
     }
 
-    public void setProtocolName(AccessConfigProtocolName protocolName) {
+    public void setProtocolName(ValueInAttributes protocolName) {
         this.protocolName = protocolName;
     }
 
-    public AccessConfig withSlaveId(AccessConfigSlaveId slaveId) {
+    public AccessConfig withSlaveId(ValueInAttributes slaveId) {
         this.slaveId = slaveId;
         return this;
     }
 
-    public AccessConfig withSlaveId(Consumer<AccessConfigSlaveId> slaveIdSetter) {
+    public AccessConfig withSlaveId(Consumer<ValueInAttributes> slaveIdSetter) {
         if (this.slaveId == null) {
-            this.slaveId = new AccessConfigSlaveId();
+            this.slaveId = new ValueInAttributes();
             slaveIdSetter.accept(this.slaveId);
         }
 
@@ -176,22 +176,22 @@ public class AccessConfig {
      * Get slaveId
      * @return slaveId
      */
-    public AccessConfigSlaveId getSlaveId() {
+    public ValueInAttributes getSlaveId() {
         return slaveId;
     }
 
-    public void setSlaveId(AccessConfigSlaveId slaveId) {
+    public void setSlaveId(ValueInAttributes slaveId) {
         this.slaveId = slaveId;
     }
 
-    public AccessConfig withIp(AccessConfigIp ip) {
+    public AccessConfig withIp(ValueInAttributes ip) {
         this.ip = ip;
         return this;
     }
 
-    public AccessConfig withIp(Consumer<AccessConfigIp> ipSetter) {
+    public AccessConfig withIp(Consumer<ValueInAttributes> ipSetter) {
         if (this.ip == null) {
-            this.ip = new AccessConfigIp();
+            this.ip = new ValueInAttributes();
             ipSetter.accept(this.ip);
         }
 
@@ -202,22 +202,22 @@ public class AccessConfig {
      * Get ip
      * @return ip
      */
-    public AccessConfigIp getIp() {
+    public ValueInAttributes getIp() {
         return ip;
     }
 
-    public void setIp(AccessConfigIp ip) {
+    public void setIp(ValueInAttributes ip) {
         this.ip = ip;
     }
 
-    public AccessConfig withPort(AccessConfigPort port) {
+    public AccessConfig withPort(ValueInAttributes port) {
         this.port = port;
         return this;
     }
 
-    public AccessConfig withPort(Consumer<AccessConfigPort> portSetter) {
+    public AccessConfig withPort(Consumer<ValueInAttributes> portSetter) {
         if (this.port == null) {
-            this.port = new AccessConfigPort();
+            this.port = new ValueInAttributes();
             portSetter.accept(this.port);
         }
 
@@ -228,22 +228,22 @@ public class AccessConfig {
      * Get port
      * @return port
      */
-    public AccessConfigPort getPort() {
+    public ValueInAttributes getPort() {
         return port;
     }
 
-    public void setPort(AccessConfigPort port) {
+    public void setPort(ValueInAttributes port) {
         this.port = port;
     }
 
-    public AccessConfig withSerialPort(AccessConfigSerialPort serialPort) {
+    public AccessConfig withSerialPort(ValueInAttributes serialPort) {
         this.serialPort = serialPort;
         return this;
     }
 
-    public AccessConfig withSerialPort(Consumer<AccessConfigSerialPort> serialPortSetter) {
+    public AccessConfig withSerialPort(Consumer<ValueInAttributes> serialPortSetter) {
         if (this.serialPort == null) {
-            this.serialPort = new AccessConfigSerialPort();
+            this.serialPort = new ValueInAttributes();
             serialPortSetter.accept(this.serialPort);
         }
 
@@ -254,22 +254,22 @@ public class AccessConfig {
      * Get serialPort
      * @return serialPort
      */
-    public AccessConfigSerialPort getSerialPort() {
+    public ValueInAttributes getSerialPort() {
         return serialPort;
     }
 
-    public void setSerialPort(AccessConfigSerialPort serialPort) {
+    public void setSerialPort(ValueInAttributes serialPort) {
         this.serialPort = serialPort;
     }
 
-    public AccessConfig withBaudRate(AccessConfigBaudRate baudRate) {
+    public AccessConfig withBaudRate(ValueInAttributes baudRate) {
         this.baudRate = baudRate;
         return this;
     }
 
-    public AccessConfig withBaudRate(Consumer<AccessConfigBaudRate> baudRateSetter) {
+    public AccessConfig withBaudRate(Consumer<ValueInAttributes> baudRateSetter) {
         if (this.baudRate == null) {
-            this.baudRate = new AccessConfigBaudRate();
+            this.baudRate = new ValueInAttributes();
             baudRateSetter.accept(this.baudRate);
         }
 
@@ -280,22 +280,22 @@ public class AccessConfig {
      * Get baudRate
      * @return baudRate
      */
-    public AccessConfigBaudRate getBaudRate() {
+    public ValueInAttributes getBaudRate() {
         return baudRate;
     }
 
-    public void setBaudRate(AccessConfigBaudRate baudRate) {
+    public void setBaudRate(ValueInAttributes baudRate) {
         this.baudRate = baudRate;
     }
 
-    public AccessConfig withDataBits(AccessConfigDataBits dataBits) {
+    public AccessConfig withDataBits(ValueInAttributes dataBits) {
         this.dataBits = dataBits;
         return this;
     }
 
-    public AccessConfig withDataBits(Consumer<AccessConfigDataBits> dataBitsSetter) {
+    public AccessConfig withDataBits(Consumer<ValueInAttributes> dataBitsSetter) {
         if (this.dataBits == null) {
-            this.dataBits = new AccessConfigDataBits();
+            this.dataBits = new ValueInAttributes();
             dataBitsSetter.accept(this.dataBits);
         }
 
@@ -306,22 +306,22 @@ public class AccessConfig {
      * Get dataBits
      * @return dataBits
      */
-    public AccessConfigDataBits getDataBits() {
+    public ValueInAttributes getDataBits() {
         return dataBits;
     }
 
-    public void setDataBits(AccessConfigDataBits dataBits) {
+    public void setDataBits(ValueInAttributes dataBits) {
         this.dataBits = dataBits;
     }
 
-    public AccessConfig withStopBits(AccessConfigStopBits stopBits) {
+    public AccessConfig withStopBits(ValueInAttributes stopBits) {
         this.stopBits = stopBits;
         return this;
     }
 
-    public AccessConfig withStopBits(Consumer<AccessConfigStopBits> stopBitsSetter) {
+    public AccessConfig withStopBits(Consumer<ValueInAttributes> stopBitsSetter) {
         if (this.stopBits == null) {
-            this.stopBits = new AccessConfigStopBits();
+            this.stopBits = new ValueInAttributes();
             stopBitsSetter.accept(this.stopBits);
         }
 
@@ -332,22 +332,22 @@ public class AccessConfig {
      * Get stopBits
      * @return stopBits
      */
-    public AccessConfigStopBits getStopBits() {
+    public ValueInAttributes getStopBits() {
         return stopBits;
     }
 
-    public void setStopBits(AccessConfigStopBits stopBits) {
+    public void setStopBits(ValueInAttributes stopBits) {
         this.stopBits = stopBits;
     }
 
-    public AccessConfig withParityBits(AccessConfigParityBits parityBits) {
+    public AccessConfig withParityBits(ValueInAttributes parityBits) {
         this.parityBits = parityBits;
         return this;
     }
 
-    public AccessConfig withParityBits(Consumer<AccessConfigParityBits> parityBitsSetter) {
+    public AccessConfig withParityBits(Consumer<ValueInAttributes> parityBitsSetter) {
         if (this.parityBits == null) {
-            this.parityBits = new AccessConfigParityBits();
+            this.parityBits = new ValueInAttributes();
             parityBitsSetter.accept(this.parityBits);
         }
 
@@ -358,22 +358,22 @@ public class AccessConfig {
      * Get parityBits
      * @return parityBits
      */
-    public AccessConfigParityBits getParityBits() {
+    public ValueInAttributes getParityBits() {
         return parityBits;
     }
 
-    public void setParityBits(AccessConfigParityBits parityBits) {
+    public void setParityBits(ValueInAttributes parityBits) {
         this.parityBits = parityBits;
     }
 
-    public AccessConfig withUrl(AccessConfigUrl url) {
+    public AccessConfig withUrl(ValueInAttributes url) {
         this.url = url;
         return this;
     }
 
-    public AccessConfig withUrl(Consumer<AccessConfigUrl> urlSetter) {
+    public AccessConfig withUrl(Consumer<ValueInAttributes> urlSetter) {
         if (this.url == null) {
-            this.url = new AccessConfigUrl();
+            this.url = new ValueInAttributes();
             urlSetter.accept(this.url);
         }
 
@@ -384,22 +384,22 @@ public class AccessConfig {
      * Get url
      * @return url
      */
-    public AccessConfigUrl getUrl() {
+    public ValueInAttributes getUrl() {
         return url;
     }
 
-    public void setUrl(AccessConfigUrl url) {
+    public void setUrl(ValueInAttributes url) {
         this.url = url;
     }
 
-    public AccessConfig withSecMode(AccessConfigSecMode secMode) {
+    public AccessConfig withSecMode(ValueInAttributes secMode) {
         this.secMode = secMode;
         return this;
     }
 
-    public AccessConfig withSecMode(Consumer<AccessConfigSecMode> secModeSetter) {
+    public AccessConfig withSecMode(Consumer<ValueInAttributes> secModeSetter) {
         if (this.secMode == null) {
-            this.secMode = new AccessConfigSecMode();
+            this.secMode = new ValueInAttributes();
             secModeSetter.accept(this.secMode);
         }
 
@@ -410,22 +410,22 @@ public class AccessConfig {
      * Get secMode
      * @return secMode
      */
-    public AccessConfigSecMode getSecMode() {
+    public ValueInAttributes getSecMode() {
         return secMode;
     }
 
-    public void setSecMode(AccessConfigSecMode secMode) {
+    public void setSecMode(ValueInAttributes secMode) {
         this.secMode = secMode;
     }
 
-    public AccessConfig withSecPolicy(AccessConfigSecPolicy secPolicy) {
+    public AccessConfig withSecPolicy(ValueInAttributes secPolicy) {
         this.secPolicy = secPolicy;
         return this;
     }
 
-    public AccessConfig withSecPolicy(Consumer<AccessConfigSecPolicy> secPolicySetter) {
+    public AccessConfig withSecPolicy(Consumer<ValueInAttributes> secPolicySetter) {
         if (this.secPolicy == null) {
-            this.secPolicy = new AccessConfigSecPolicy();
+            this.secPolicy = new ValueInAttributes();
             secPolicySetter.accept(this.secPolicy);
         }
 
@@ -436,22 +436,22 @@ public class AccessConfig {
      * Get secPolicy
      * @return secPolicy
      */
-    public AccessConfigSecPolicy getSecPolicy() {
+    public ValueInAttributes getSecPolicy() {
         return secPolicy;
     }
 
-    public void setSecPolicy(AccessConfigSecPolicy secPolicy) {
+    public void setSecPolicy(ValueInAttributes secPolicy) {
         this.secPolicy = secPolicy;
     }
 
-    public AccessConfig withAuthType(AccessConfigAuthType authType) {
+    public AccessConfig withAuthType(ValueInAttributes authType) {
         this.authType = authType;
         return this;
     }
 
-    public AccessConfig withAuthType(Consumer<AccessConfigAuthType> authTypeSetter) {
+    public AccessConfig withAuthType(Consumer<ValueInAttributes> authTypeSetter) {
         if (this.authType == null) {
-            this.authType = new AccessConfigAuthType();
+            this.authType = new ValueInAttributes();
             authTypeSetter.accept(this.authType);
         }
 
@@ -462,22 +462,22 @@ public class AccessConfig {
      * Get authType
      * @return authType
      */
-    public AccessConfigAuthType getAuthType() {
+    public ValueInAttributes getAuthType() {
         return authType;
     }
 
-    public void setAuthType(AccessConfigAuthType authType) {
+    public void setAuthType(ValueInAttributes authType) {
         this.authType = authType;
     }
 
-    public AccessConfig withUsername(AccessConfigUsername username) {
+    public AccessConfig withUsername(ValueInAttributes username) {
         this.username = username;
         return this;
     }
 
-    public AccessConfig withUsername(Consumer<AccessConfigUsername> usernameSetter) {
+    public AccessConfig withUsername(Consumer<ValueInAttributes> usernameSetter) {
         if (this.username == null) {
-            this.username = new AccessConfigUsername();
+            this.username = new ValueInAttributes();
             usernameSetter.accept(this.username);
         }
 
@@ -488,22 +488,22 @@ public class AccessConfig {
      * Get username
      * @return username
      */
-    public AccessConfigUsername getUsername() {
+    public ValueInAttributes getUsername() {
         return username;
     }
 
-    public void setUsername(AccessConfigUsername username) {
+    public void setUsername(ValueInAttributes username) {
         this.username = username;
     }
 
-    public AccessConfig withPassword(AccessConfigPassword password) {
+    public AccessConfig withPassword(ValueInAttributes password) {
         this.password = password;
         return this;
     }
 
-    public AccessConfig withPassword(Consumer<AccessConfigPassword> passwordSetter) {
+    public AccessConfig withPassword(Consumer<ValueInAttributes> passwordSetter) {
         if (this.password == null) {
-            this.password = new AccessConfigPassword();
+            this.password = new ValueInAttributes();
             passwordSetter.accept(this.password);
         }
 
@@ -514,22 +514,22 @@ public class AccessConfig {
      * Get password
      * @return password
      */
-    public AccessConfigPassword getPassword() {
+    public ValueInAttributes getPassword() {
         return password;
     }
 
-    public void setPassword(AccessConfigPassword password) {
+    public void setPassword(ValueInAttributes password) {
         this.password = password;
     }
 
-    public AccessConfig withPrivateKey(AccessConfigPrivateKey privateKey) {
+    public AccessConfig withPrivateKey(ValueInAttributes privateKey) {
         this.privateKey = privateKey;
         return this;
     }
 
-    public AccessConfig withPrivateKey(Consumer<AccessConfigPrivateKey> privateKeySetter) {
+    public AccessConfig withPrivateKey(Consumer<ValueInAttributes> privateKeySetter) {
         if (this.privateKey == null) {
-            this.privateKey = new AccessConfigPrivateKey();
+            this.privateKey = new ValueInAttributes();
             privateKeySetter.accept(this.privateKey);
         }
 
@@ -540,22 +540,22 @@ public class AccessConfig {
      * Get privateKey
      * @return privateKey
      */
-    public AccessConfigPrivateKey getPrivateKey() {
+    public ValueInAttributes getPrivateKey() {
         return privateKey;
     }
 
-    public void setPrivateKey(AccessConfigPrivateKey privateKey) {
+    public void setPrivateKey(ValueInAttributes privateKey) {
         this.privateKey = privateKey;
     }
 
-    public AccessConfig withCertificate(AccessConfigCertificate certificate) {
+    public AccessConfig withCertificate(ValueInAttributes certificate) {
         this.certificate = certificate;
         return this;
     }
 
-    public AccessConfig withCertificate(Consumer<AccessConfigCertificate> certificateSetter) {
+    public AccessConfig withCertificate(Consumer<ValueInAttributes> certificateSetter) {
         if (this.certificate == null) {
-            this.certificate = new AccessConfigCertificate();
+            this.certificate = new ValueInAttributes();
             certificateSetter.accept(this.certificate);
         }
 
@@ -566,22 +566,22 @@ public class AccessConfig {
      * Get certificate
      * @return certificate
      */
-    public AccessConfigCertificate getCertificate() {
+    public ValueInAttributes getCertificate() {
         return certificate;
     }
 
-    public void setCertificate(AccessConfigCertificate certificate) {
+    public void setCertificate(ValueInAttributes certificate) {
         this.certificate = certificate;
     }
 
-    public AccessConfig withTimeout(AccessConfigTimeout timeout) {
+    public AccessConfig withTimeout(ValueInAttributes timeout) {
         this.timeout = timeout;
         return this;
     }
 
-    public AccessConfig withTimeout(Consumer<AccessConfigTimeout> timeoutSetter) {
+    public AccessConfig withTimeout(Consumer<ValueInAttributes> timeoutSetter) {
         if (this.timeout == null) {
-            this.timeout = new AccessConfigTimeout();
+            this.timeout = new ValueInAttributes();
             timeoutSetter.accept(this.timeout);
         }
 
@@ -592,11 +592,11 @@ public class AccessConfig {
      * Get timeout
      * @return timeout
      */
-    public AccessConfigTimeout getTimeout() {
+    public ValueInAttributes getTimeout() {
         return timeout;
     }
 
-    public void setTimeout(AccessConfigTimeout timeout) {
+    public void setTimeout(ValueInAttributes timeout) {
         this.timeout = timeout;
     }
 

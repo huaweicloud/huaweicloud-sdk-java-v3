@@ -97,7 +97,7 @@ public class LiveMeta {
 
         // response
 
-        builder.<String>withResponseField("X-request-id",
+        builder.<String>withResponseField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             String.class,
@@ -190,7 +190,7 @@ public class LiveMeta {
 
         // response
 
-        builder.<String>withResponseField("X-request-id",
+        builder.<String>withResponseField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             String.class,
@@ -270,7 +270,7 @@ public class LiveMeta {
 
         // response
 
-        builder.<String>withResponseField("X-request-id",
+        builder.<String>withResponseField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             String.class,
@@ -357,7 +357,7 @@ public class LiveMeta {
 
         // response
 
-        builder.<String>withResponseField("X-request-id",
+        builder.<String>withResponseField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             String.class,
@@ -438,7 +438,7 @@ public class LiveMeta {
 
         // response
 
-        builder.<String>withResponseField("X-request-id",
+        builder.<String>withResponseField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             String.class,
@@ -511,7 +511,7 @@ public class LiveMeta {
 
         // response
 
-        builder.<String>withResponseField("X-request-id",
+        builder.<String>withResponseField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             String.class,
@@ -577,7 +577,7 @@ public class LiveMeta {
 
         // response
 
-        builder.<String>withResponseField("X-request-id",
+        builder.<String>withResponseField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             String.class,
@@ -621,7 +621,7 @@ public class LiveMeta {
 
         // response
 
-        builder.<String>withResponseField("X-request-id",
+        builder.<String>withResponseField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             String.class,
@@ -665,7 +665,7 @@ public class LiveMeta {
 
         // response
 
-        builder.<String>withResponseField("X-request-id",
+        builder.<String>withResponseField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             String.class,
@@ -716,63 +716,11 @@ public class LiveMeta {
 
         // response
 
-        builder.<String>withResponseField("X-request-id",
+        builder.<String>withResponseField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(ListTranscodeDataResponse::getXRequestId, ListTranscodeDataResponse::setXRequestId));
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListTranscodeTaskCountRequest, ListTranscodeTaskCountResponse> listTranscodeTaskCount =
-        genForlistTranscodeTaskCount();
-
-    private static HttpRequestDef<ListTranscodeTaskCountRequest, ListTranscodeTaskCountResponse> genForlistTranscodeTaskCount() {
-        // basic
-        HttpRequestDef.Builder<ListTranscodeTaskCountRequest, ListTranscodeTaskCountResponse> builder = HttpRequestDef
-            .builder(HttpMethod.GET, ListTranscodeTaskCountRequest.class, ListTranscodeTaskCountResponse.class)
-            .withName("ListTranscodeTaskCount")
-            .withUri("/v2/{project_id}/stats/transcode/task-count")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("publish_domain",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTranscodeTaskCountRequest::getPublishDomain, (req, v) -> {
-                req.setPublishDomain(v);
-            }));
-        builder.<String>withRequestField("app",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTranscodeTaskCountRequest::getApp, (req, v) -> {
-                req.setApp(v);
-            }));
-        builder.<String>withRequestField("start_time",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTranscodeTaskCountRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
-        builder.<String>withRequestField("end_time",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTranscodeTaskCountRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
-
-        // response
-
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListTranscodeTaskCountResponse::getXRequestId,
-                ListTranscodeTaskCountResponse::setXRequestId));
         return builder.build();
     }
 
@@ -861,7 +809,7 @@ public class LiveMeta {
 
         // response
 
-        builder.<String>withResponseField("X-request-id",
+        builder.<String>withResponseField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             String.class,
@@ -905,7 +853,7 @@ public class LiveMeta {
 
         // response
 
-        builder.<String>withResponseField("X-request-id",
+        builder.<String>withResponseField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             String.class,
@@ -949,7 +897,7 @@ public class LiveMeta {
 
         // response
 
-        builder.<String>withResponseField("X-request-id",
+        builder.<String>withResponseField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             String.class,
@@ -1029,7 +977,7 @@ public class LiveMeta {
 
         // response
 
-        builder.<String>withResponseField("X-request-id",
+        builder.<String>withResponseField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             String.class,
@@ -1087,7 +1035,7 @@ public class LiveMeta {
 
         // response
 
-        builder.<String>withResponseField("X-request-id",
+        builder.<String>withResponseField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             String.class,
@@ -1146,7 +1094,7 @@ public class LiveMeta {
 
         // response
 
-        builder.<String>withResponseField("X-request-id",
+        builder.<String>withResponseField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             String.class,
@@ -1208,7 +1156,7 @@ public class LiveMeta {
 
         // response
 
-        builder.<String>withResponseField("X-request-id",
+        builder.<String>withResponseField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             String.class,

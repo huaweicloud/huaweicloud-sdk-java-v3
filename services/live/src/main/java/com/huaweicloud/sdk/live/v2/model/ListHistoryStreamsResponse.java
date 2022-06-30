@@ -25,7 +25,7 @@ public class ListHistoryStreamsResponse extends SdkResponse {
     private Integer total;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-request-id")
+    @JsonProperty(value = "X-Request-Id")
 
     private String xRequestId;
 
@@ -91,7 +91,7 @@ public class ListHistoryStreamsResponse extends SdkResponse {
      * @return xRequestId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-request-id")
+    @JsonProperty(value = "X-Request-Id")
     public String getXRequestId() {
         return xRequestId;
     }

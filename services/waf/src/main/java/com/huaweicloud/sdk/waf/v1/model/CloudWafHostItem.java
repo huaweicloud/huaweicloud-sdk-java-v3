@@ -157,6 +157,11 @@ public class CloudWafHostItem {
 
     private PaidTypeEnum paidType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "timeout_config")
+
+    private TimeoutConfig timeoutConfig;
+
     public CloudWafHostItem withId(String id) {
         this.id = id;
         return this;
@@ -404,6 +409,32 @@ public class CloudWafHostItem {
         this.paidType = paidType;
     }
 
+    public CloudWafHostItem withTimeoutConfig(TimeoutConfig timeoutConfig) {
+        this.timeoutConfig = timeoutConfig;
+        return this;
+    }
+
+    public CloudWafHostItem withTimeoutConfig(Consumer<TimeoutConfig> timeoutConfigSetter) {
+        if (this.timeoutConfig == null) {
+            this.timeoutConfig = new TimeoutConfig();
+            timeoutConfigSetter.accept(this.timeoutConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get timeoutConfig
+     * @return timeoutConfig
+     */
+    public TimeoutConfig getTimeoutConfig() {
+        return timeoutConfig;
+    }
+
+    public void setTimeoutConfig(TimeoutConfig timeoutConfig) {
+        this.timeoutConfig = timeoutConfig;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -424,7 +455,8 @@ public class CloudWafHostItem {
             && Objects.equals(this.protectStatus, cloudWafHostItem.protectStatus)
             && Objects.equals(this.accessStatus, cloudWafHostItem.accessStatus)
             && Objects.equals(this.exclusiveIp, cloudWafHostItem.exclusiveIp)
-            && Objects.equals(this.paidType, cloudWafHostItem.paidType);
+            && Objects.equals(this.paidType, cloudWafHostItem.paidType)
+            && Objects.equals(this.timeoutConfig, cloudWafHostItem.timeoutConfig);
     }
 
     @Override
@@ -442,7 +474,8 @@ public class CloudWafHostItem {
             protectStatus,
             accessStatus,
             exclusiveIp,
-            paidType);
+            paidType,
+            timeoutConfig);
     }
 
     @Override
@@ -463,6 +496,7 @@ public class CloudWafHostItem {
         sb.append("    accessStatus: ").append(toIndentedString(accessStatus)).append("\n");
         sb.append("    exclusiveIp: ").append(toIndentedString(exclusiveIp)).append("\n");
         sb.append("    paidType: ").append(toIndentedString(paidType)).append("\n");
+        sb.append("    timeoutConfig: ").append(toIndentedString(timeoutConfig)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -68,7 +68,7 @@ public class ListDeploymentsRequest {
     }
 
     /**
-     * 每页显示的条目数量, 最大 100，默认值 10
+     * 每页显示的条目数量，最大100，默认值10
      * @return limit
      */
     public Long getLimit() {
@@ -85,7 +85,7 @@ public class ListDeploymentsRequest {
     }
 
     /**
-     * 查询的起始位置, 默认值 0
+     * 查询的起始位置，默认值0
      * @return offset
      */
     public Long getOffset() {
@@ -119,7 +119,7 @@ public class ListDeploymentsRequest {
     }
 
     /**
-     * deployment 名称(支持模糊匹配)
+     * deployment名称（支持模糊匹配）
      * @return name
      */
     public String getName() {

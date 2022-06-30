@@ -26,12 +26,12 @@ public class VersionUpdate {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "configs")
 
-    private VersionUpdateConfigs configs;
+    private AppConfigs configs;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resources")
 
-    private VersionDetailResources resources;
+    private Resources resources;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "command")
@@ -46,12 +46,12 @@ public class VersionUpdate {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "liveness_probe")
 
-    private String livenessProbe;
+    private ProbeDetail livenessProbe;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "readiness_probe")
 
-    private String readinessProbe;
+    private ProbeDetail readinessProbe;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "npu_type")
@@ -124,14 +124,14 @@ public class VersionUpdate {
         this.volumes = volumes;
     }
 
-    public VersionUpdate withConfigs(VersionUpdateConfigs configs) {
+    public VersionUpdate withConfigs(AppConfigs configs) {
         this.configs = configs;
         return this;
     }
 
-    public VersionUpdate withConfigs(Consumer<VersionUpdateConfigs> configsSetter) {
+    public VersionUpdate withConfigs(Consumer<AppConfigs> configsSetter) {
         if (this.configs == null) {
-            this.configs = new VersionUpdateConfigs();
+            this.configs = new AppConfigs();
             configsSetter.accept(this.configs);
         }
 
@@ -142,22 +142,22 @@ public class VersionUpdate {
      * Get configs
      * @return configs
      */
-    public VersionUpdateConfigs getConfigs() {
+    public AppConfigs getConfigs() {
         return configs;
     }
 
-    public void setConfigs(VersionUpdateConfigs configs) {
+    public void setConfigs(AppConfigs configs) {
         this.configs = configs;
     }
 
-    public VersionUpdate withResources(VersionDetailResources resources) {
+    public VersionUpdate withResources(Resources resources) {
         this.resources = resources;
         return this;
     }
 
-    public VersionUpdate withResources(Consumer<VersionDetailResources> resourcesSetter) {
+    public VersionUpdate withResources(Consumer<Resources> resourcesSetter) {
         if (this.resources == null) {
-            this.resources = new VersionDetailResources();
+            this.resources = new Resources();
             resourcesSetter.accept(this.resources);
         }
 
@@ -168,11 +168,11 @@ public class VersionUpdate {
      * Get resources
      * @return resources
      */
-    public VersionDetailResources getResources() {
+    public Resources getResources() {
         return resources;
     }
 
-    public void setResources(VersionDetailResources resources) {
+    public void setResources(Resources resources) {
         this.resources = resources;
     }
 
@@ -242,37 +242,55 @@ public class VersionUpdate {
         this.args = args;
     }
 
-    public VersionUpdate withLivenessProbe(String livenessProbe) {
+    public VersionUpdate withLivenessProbe(ProbeDetail livenessProbe) {
         this.livenessProbe = livenessProbe;
         return this;
     }
 
+    public VersionUpdate withLivenessProbe(Consumer<ProbeDetail> livenessProbeSetter) {
+        if (this.livenessProbe == null) {
+            this.livenessProbe = new ProbeDetail();
+            livenessProbeSetter.accept(this.livenessProbe);
+        }
+
+        return this;
+    }
+
     /**
-     * 工作负载存活探针
+     * Get livenessProbe
      * @return livenessProbe
      */
-    public String getLivenessProbe() {
+    public ProbeDetail getLivenessProbe() {
         return livenessProbe;
     }
 
-    public void setLivenessProbe(String livenessProbe) {
+    public void setLivenessProbe(ProbeDetail livenessProbe) {
         this.livenessProbe = livenessProbe;
     }
 
-    public VersionUpdate withReadinessProbe(String readinessProbe) {
+    public VersionUpdate withReadinessProbe(ProbeDetail readinessProbe) {
         this.readinessProbe = readinessProbe;
         return this;
     }
 
+    public VersionUpdate withReadinessProbe(Consumer<ProbeDetail> readinessProbeSetter) {
+        if (this.readinessProbe == null) {
+            this.readinessProbe = new ProbeDetail();
+            readinessProbeSetter.accept(this.readinessProbe);
+        }
+
+        return this;
+    }
+
     /**
-     * 工作负载业务探针
+     * Get readinessProbe
      * @return readinessProbe
      */
-    public String getReadinessProbe() {
+    public ProbeDetail getReadinessProbe() {
         return readinessProbe;
     }
 
-    public void setReadinessProbe(String readinessProbe) {
+    public void setReadinessProbe(ProbeDetail readinessProbe) {
         this.readinessProbe = readinessProbe;
     }
 
@@ -282,7 +300,7 @@ public class VersionUpdate {
     }
 
     /**
-     * npu类型，支持D310类型和D910类型。 - D310表示D310类型。 - D910表示D910类型。 - 不填表示为D310类型。
+     * NPU类型，支持D310类型和D910类型。 - D310表示D310类型。 - D910表示D910类型。 - 不填表示为D310类型。
      * @return npuType
      */
     public String getNpuType() {

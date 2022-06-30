@@ -31,7 +31,7 @@ public class VersionDetails {
     private String version;
 
     /**
-     * 版本的状态
+     * 版本的状态。
      */
     public static final class StatusEnum {
 
@@ -129,7 +129,7 @@ public class VersionDetails {
     }
 
     /**
-     * 版本ID
+     * 版本ID。
      * @return id
      */
     public String getId() {
@@ -146,7 +146,7 @@ public class VersionDetails {
     }
 
     /**
-     * 版本详情
+     * 版本详情的URL地址。
      * @return links
      */
     public String getLinks() {
@@ -163,7 +163,7 @@ public class VersionDetails {
     }
 
     /**
-     * 该版本API的微版本信息
+     * 该版本API的微版本信息。
      * @return version
      */
     public String getVersion() {
@@ -180,7 +180,7 @@ public class VersionDetails {
     }
 
     /**
-     * 版本的状态
+     * 版本的状态。
      * @return status
      */
     public StatusEnum getStatus() {
@@ -197,7 +197,7 @@ public class VersionDetails {
     }
 
     /**
-     * 版本更新时间
+     * 版本更新时间。
      * @return updated
      */
     public String getUpdated() {

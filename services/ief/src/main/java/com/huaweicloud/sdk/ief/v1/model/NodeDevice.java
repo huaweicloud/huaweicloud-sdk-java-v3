@@ -16,21 +16,21 @@ public class NodeDevice {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "added")
 
-    private DevicesDevicesAdded added;
+    private DeviceInfos added;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "removed")
 
     private List<String> removed = null;
 
-    public NodeDevice withAdded(DevicesDevicesAdded added) {
+    public NodeDevice withAdded(DeviceInfos added) {
         this.added = added;
         return this;
     }
 
-    public NodeDevice withAdded(Consumer<DevicesDevicesAdded> addedSetter) {
+    public NodeDevice withAdded(Consumer<DeviceInfos> addedSetter) {
         if (this.added == null) {
-            this.added = new DevicesDevicesAdded();
+            this.added = new DeviceInfos();
             addedSetter.accept(this.added);
         }
 
@@ -41,11 +41,11 @@ public class NodeDevice {
      * Get added
      * @return added
      */
-    public DevicesDevicesAdded getAdded() {
+    public DeviceInfos getAdded() {
         return added;
     }
 
-    public void setAdded(DevicesDevicesAdded added) {
+    public void setAdded(DeviceInfos added) {
         this.added = added;
     }
 

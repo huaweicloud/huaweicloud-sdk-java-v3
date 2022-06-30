@@ -20,7 +20,7 @@ public class ListSingleStreamFramerateResponse extends SdkResponse {
     private List<V2FramerateInfo> framerateInfoList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-request-id")
+    @JsonProperty(value = "X-Request-Id")
 
     private String xRequestId;
 
@@ -68,7 +68,7 @@ public class ListSingleStreamFramerateResponse extends SdkResponse {
      * @return xRequestId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-request-id")
+    @JsonProperty(value = "X-Request-Id")
     public String getXRequestId() {
         return xRequestId;
     }

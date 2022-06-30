@@ -590,7 +590,7 @@ public class LiveMeta {
 
         // response
 
-        builder.<String>withResponseField("X-request-id",
+        builder.<String>withResponseField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             String.class,
@@ -747,6 +747,11 @@ public class LiveMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RunRecordResponse::getXRequestId, RunRecordResponse::setXRequestId));
         return builder.build();
     }
 

@@ -453,6 +453,76 @@ public class DnsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchDeleteRecordSetWithLineRequest, BatchDeleteRecordSetWithLineResponse> batchDeleteRecordSetWithLine =
+        genForbatchDeleteRecordSetWithLine();
+
+    private static HttpRequestDef<BatchDeleteRecordSetWithLineRequest, BatchDeleteRecordSetWithLineResponse> genForbatchDeleteRecordSetWithLine() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteRecordSetWithLineRequest, BatchDeleteRecordSetWithLineResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    BatchDeleteRecordSetWithLineRequest.class,
+                    BatchDeleteRecordSetWithLineResponse.class)
+                .withName("BatchDeleteRecordSetWithLine")
+                .withUri("/v2.1/zones/{zone_id}/recordsets")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("zone_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteRecordSetWithLineRequest::getZoneId, (req, v) -> {
+                req.setZoneId(v);
+            }));
+        builder.<BatchDeleteRSetWithLineReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteRSetWithLineReq.class),
+            f -> f.withMarshaller(BatchDeleteRecordSetWithLineRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchUpdateRecordSetWithLineRequest, BatchUpdateRecordSetWithLineResponse> batchUpdateRecordSetWithLine =
+        genForbatchUpdateRecordSetWithLine();
+
+    private static HttpRequestDef<BatchUpdateRecordSetWithLineRequest, BatchUpdateRecordSetWithLineResponse> genForbatchUpdateRecordSetWithLine() {
+        // basic
+        HttpRequestDef.Builder<BatchUpdateRecordSetWithLineRequest, BatchUpdateRecordSetWithLineResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    BatchUpdateRecordSetWithLineRequest.class,
+                    BatchUpdateRecordSetWithLineResponse.class)
+                .withName("BatchUpdateRecordSetWithLine")
+                .withUri("/v2.1/zones/{zone_id}/recordsets")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("zone_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchUpdateRecordSetWithLineRequest::getZoneId, (req, v) -> {
+                req.setZoneId(v);
+            }));
+        builder.<BatchUpdateRecordSetWithLineReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchUpdateRecordSetWithLineReq.class),
+            f -> f.withMarshaller(BatchUpdateRecordSetWithLineRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateRecordSetRequest, CreateRecordSetResponse> createRecordSet =
         genForcreateRecordSet();
 
@@ -477,6 +547,41 @@ public class DnsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateRecordSetReq.class),
             f -> f.withMarshaller(CreateRecordSetRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateRecordSetWithBatchLinesRequest, CreateRecordSetWithBatchLinesResponse> createRecordSetWithBatchLines =
+        genForcreateRecordSetWithBatchLines();
+
+    private static HttpRequestDef<CreateRecordSetWithBatchLinesRequest, CreateRecordSetWithBatchLinesResponse> genForcreateRecordSetWithBatchLines() {
+        // basic
+        HttpRequestDef.Builder<CreateRecordSetWithBatchLinesRequest, CreateRecordSetWithBatchLinesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateRecordSetWithBatchLinesRequest.class,
+                    CreateRecordSetWithBatchLinesResponse.class)
+                .withName("CreateRecordSetWithBatchLines")
+                .withUri("/v2.1/zones/{zone_id}/recordsets/batch/lines")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("zone_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateRecordSetWithBatchLinesRequest::getZoneId, (req, v) -> {
+                req.setZoneId(v);
+            }));
+        builder.<CreateRSetBatchLinesReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateRSetBatchLinesReq.class),
+            f -> f.withMarshaller(CreateRecordSetWithBatchLinesRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

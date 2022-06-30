@@ -75,7 +75,7 @@ public class InvokeFunctionRequest {
     }
 
     /**
-     * 返回体格式，取值v0,v1。
+     * 返回体格式，取值v0,v1。 v0:默认返回文本格式 v1:默认返回json格式，sdk需要使用此值。
      * @return xCFFRequestVersion
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

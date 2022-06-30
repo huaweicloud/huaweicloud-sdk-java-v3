@@ -24,7 +24,7 @@ public class ValueInAttributes {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metadata")
 
-    private ValueInPropertyVisitorsRegisterTypeMetadata metadata;
+    private Metadata metadata;
 
     public ValueInAttributes withValue(String value) {
         this.value = value;
@@ -60,14 +60,14 @@ public class ValueInAttributes {
         this.optional = optional;
     }
 
-    public ValueInAttributes withMetadata(ValueInPropertyVisitorsRegisterTypeMetadata metadata) {
+    public ValueInAttributes withMetadata(Metadata metadata) {
         this.metadata = metadata;
         return this;
     }
 
-    public ValueInAttributes withMetadata(Consumer<ValueInPropertyVisitorsRegisterTypeMetadata> metadataSetter) {
+    public ValueInAttributes withMetadata(Consumer<Metadata> metadataSetter) {
         if (this.metadata == null) {
-            this.metadata = new ValueInPropertyVisitorsRegisterTypeMetadata();
+            this.metadata = new Metadata();
             metadataSetter.accept(this.metadata);
         }
 
@@ -78,11 +78,11 @@ public class ValueInAttributes {
      * Get metadata
      * @return metadata
      */
-    public ValueInPropertyVisitorsRegisterTypeMetadata getMetadata() {
+    public Metadata getMetadata() {
         return metadata;
     }
 
-    public void setMetadata(ValueInPropertyVisitorsRegisterTypeMetadata metadata) {
+    public void setMetadata(Metadata metadata) {
         this.metadata = metadata;
     }
 

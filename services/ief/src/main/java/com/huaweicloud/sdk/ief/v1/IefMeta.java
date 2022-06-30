@@ -490,10 +490,10 @@ public class IefMeta {
             f -> f.withMarshaller(CreateTagRequest::getIefInstanceId, (req, v) -> {
                 req.setIefInstanceId(v);
             }));
-        builder.<AddTag>withRequestField("body",
+        builder.<CreateTagRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(AddTag.class),
+            TypeCasts.uncheckedConversion(CreateTagRequestBody.class),
             f -> f.withMarshaller(CreateTagRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
@@ -1406,6 +1406,13 @@ public class IefMeta {
             f -> f.withMarshaller(ListEdgeNodesRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
             }));
+        builder.<String>withRequestField("sort",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEdgeNodesRequest::getSort, (req, v) -> {
+                req.setSort(v);
+            }));
         builder.<String>withRequestField("device_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -1426,6 +1433,13 @@ public class IefMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListEdgeNodesRequest::getAppName, (req, v) -> {
                 req.setAppName(v);
+            }));
+        builder.<ListEdgeNodesRequest.StateEnum>withRequestField("state",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListEdgeNodesRequest.StateEnum.class),
+            f -> f.withMarshaller(ListEdgeNodesRequest::getState, (req, v) -> {
+                req.setState(v);
             }));
         builder.<String>withRequestField("tags",
             LocationType.Query,

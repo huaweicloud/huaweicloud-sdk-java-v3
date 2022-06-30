@@ -56,7 +56,7 @@ public class AppVersionDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "configs")
 
-    private AppVersionDetailConfigs configs;
+    private AppConfigs configs;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resources")
@@ -81,12 +81,12 @@ public class AppVersionDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "liveness_probe")
 
-    private AppVersionDetailLivenessProbe livenessProbe;
+    private ProbeDetail livenessProbe;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "readiness_probe")
 
-    private AppVersionDetailReadinessProbe readinessProbe;
+    private ProbeDetail readinessProbe;
 
     public AppVersionDetail withId(String id) {
         this.id = id;
@@ -256,14 +256,14 @@ public class AppVersionDetail {
         this.volumes = volumes;
     }
 
-    public AppVersionDetail withConfigs(AppVersionDetailConfigs configs) {
+    public AppVersionDetail withConfigs(AppConfigs configs) {
         this.configs = configs;
         return this;
     }
 
-    public AppVersionDetail withConfigs(Consumer<AppVersionDetailConfigs> configsSetter) {
+    public AppVersionDetail withConfigs(Consumer<AppConfigs> configsSetter) {
         if (this.configs == null) {
-            this.configs = new AppVersionDetailConfigs();
+            this.configs = new AppConfigs();
             configsSetter.accept(this.configs);
         }
 
@@ -274,11 +274,11 @@ public class AppVersionDetail {
      * Get configs
      * @return configs
      */
-    public AppVersionDetailConfigs getConfigs() {
+    public AppConfigs getConfigs() {
         return configs;
     }
 
-    public void setConfigs(AppVersionDetailConfigs configs) {
+    public void setConfigs(AppConfigs configs) {
         this.configs = configs;
     }
 
@@ -391,14 +391,14 @@ public class AppVersionDetail {
         this.args = args;
     }
 
-    public AppVersionDetail withLivenessProbe(AppVersionDetailLivenessProbe livenessProbe) {
+    public AppVersionDetail withLivenessProbe(ProbeDetail livenessProbe) {
         this.livenessProbe = livenessProbe;
         return this;
     }
 
-    public AppVersionDetail withLivenessProbe(Consumer<AppVersionDetailLivenessProbe> livenessProbeSetter) {
+    public AppVersionDetail withLivenessProbe(Consumer<ProbeDetail> livenessProbeSetter) {
         if (this.livenessProbe == null) {
-            this.livenessProbe = new AppVersionDetailLivenessProbe();
+            this.livenessProbe = new ProbeDetail();
             livenessProbeSetter.accept(this.livenessProbe);
         }
 
@@ -409,22 +409,22 @@ public class AppVersionDetail {
      * Get livenessProbe
      * @return livenessProbe
      */
-    public AppVersionDetailLivenessProbe getLivenessProbe() {
+    public ProbeDetail getLivenessProbe() {
         return livenessProbe;
     }
 
-    public void setLivenessProbe(AppVersionDetailLivenessProbe livenessProbe) {
+    public void setLivenessProbe(ProbeDetail livenessProbe) {
         this.livenessProbe = livenessProbe;
     }
 
-    public AppVersionDetail withReadinessProbe(AppVersionDetailReadinessProbe readinessProbe) {
+    public AppVersionDetail withReadinessProbe(ProbeDetail readinessProbe) {
         this.readinessProbe = readinessProbe;
         return this;
     }
 
-    public AppVersionDetail withReadinessProbe(Consumer<AppVersionDetailReadinessProbe> readinessProbeSetter) {
+    public AppVersionDetail withReadinessProbe(Consumer<ProbeDetail> readinessProbeSetter) {
         if (this.readinessProbe == null) {
-            this.readinessProbe = new AppVersionDetailReadinessProbe();
+            this.readinessProbe = new ProbeDetail();
             readinessProbeSetter.accept(this.readinessProbe);
         }
 
@@ -435,11 +435,11 @@ public class AppVersionDetail {
      * Get readinessProbe
      * @return readinessProbe
      */
-    public AppVersionDetailReadinessProbe getReadinessProbe() {
+    public ProbeDetail getReadinessProbe() {
         return readinessProbe;
     }
 
-    public void setReadinessProbe(AppVersionDetailReadinessProbe readinessProbe) {
+    public void setReadinessProbe(ProbeDetail readinessProbe) {
         this.readinessProbe = readinessProbe;
     }
 

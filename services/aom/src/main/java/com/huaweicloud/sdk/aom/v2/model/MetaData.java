@@ -29,7 +29,7 @@ public class MetaData  {
     @JsonProperty(value="start")
     
     
-    private String start;
+    private Long start;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -60,7 +60,7 @@ public class MetaData  {
 
     
 
-    public MetaData withStart(String start) {
+    public MetaData withStart(Long start) {
         this.start = start;
         return this;
     }
@@ -72,11 +72,11 @@ public class MetaData  {
      * 下一个开始的标记，用于分页，null表示无更多数据。
      * @return start
      */
-    public String getStart() {
+    public Long getStart() {
         return start;
     }
 
-    public void setStart(String start) {
+    public void setStart(Long start) {
         this.start = start;
     }
 

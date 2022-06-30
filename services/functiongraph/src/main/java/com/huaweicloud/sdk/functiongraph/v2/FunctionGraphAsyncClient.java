@@ -1884,6 +1884,39 @@ public class FunctionGraphAsyncClient {
     }
 
     /**
+     * 更新函数最大实例数
+     *
+     * 更新函数最大实例数
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateFunctionMaxInstanceConfigRequest 请求对象
+     * @return CompletableFuture<UpdateFunctionMaxInstanceConfigResponse>
+     */
+    public CompletableFuture<UpdateFunctionMaxInstanceConfigResponse> updateFunctionMaxInstanceConfigAsync(
+        UpdateFunctionMaxInstanceConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.updateFunctionMaxInstanceConfig);
+    }
+
+    /**
+     * 更新函数最大实例数
+     *
+     * 更新函数最大实例数
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateFunctionMaxInstanceConfigRequest 请求对象
+     * @return AsyncInvoker<UpdateFunctionMaxInstanceConfigRequest, UpdateFunctionMaxInstanceConfigResponse>
+     */
+    public AsyncInvoker<UpdateFunctionMaxInstanceConfigRequest, UpdateFunctionMaxInstanceConfigResponse> updateFunctionMaxInstanceConfigAsyncInvoker(
+        UpdateFunctionMaxInstanceConfigRequest request) {
+        return new AsyncInvoker<UpdateFunctionMaxInstanceConfigRequest, UpdateFunctionMaxInstanceConfigResponse>(
+            request, FunctionGraphMeta.updateFunctionMaxInstanceConfig, hcClient);
+    }
+
+    /**
      * 更新函数预留实例个数
      *
      * 为函数绑定预留实例

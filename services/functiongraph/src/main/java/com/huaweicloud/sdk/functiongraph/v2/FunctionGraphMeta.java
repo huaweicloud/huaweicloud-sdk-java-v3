@@ -1904,6 +1904,41 @@ public class FunctionGraphMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateFunctionMaxInstanceConfigRequest, UpdateFunctionMaxInstanceConfigResponse> updateFunctionMaxInstanceConfig =
+        genForupdateFunctionMaxInstanceConfig();
+
+    private static HttpRequestDef<UpdateFunctionMaxInstanceConfigRequest, UpdateFunctionMaxInstanceConfigResponse> genForupdateFunctionMaxInstanceConfig() {
+        // basic
+        HttpRequestDef.Builder<UpdateFunctionMaxInstanceConfigRequest, UpdateFunctionMaxInstanceConfigResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateFunctionMaxInstanceConfigRequest.class,
+                    UpdateFunctionMaxInstanceConfigResponse.class)
+                .withName("UpdateFunctionMaxInstanceConfig")
+                .withUri("/v2/{project_id}/fgs/functions/{function_urn}/config-max-instance")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("function_urn",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateFunctionMaxInstanceConfigRequest::getFunctionUrn, (req, v) -> {
+                req.setFunctionUrn(v);
+            }));
+        builder.<UpdateFunctionMaxInstanceConfigRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateFunctionMaxInstanceConfigRequestBody.class),
+            f -> f.withMarshaller(UpdateFunctionMaxInstanceConfigRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateFunctionReservedInstancesRequest, UpdateFunctionReservedInstancesResponse> updateFunctionReservedInstances =
         genForupdateFunctionReservedInstances();
 

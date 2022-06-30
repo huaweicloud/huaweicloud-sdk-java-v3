@@ -14,21 +14,21 @@ public class Resources {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limits")
 
-    private ResourcesLimits limits;
+    private LimitsRequests limits;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "requests")
 
-    private ResourcesRequests requests;
+    private LimitsRequests requests;
 
-    public Resources withLimits(ResourcesLimits limits) {
+    public Resources withLimits(LimitsRequests limits) {
         this.limits = limits;
         return this;
     }
 
-    public Resources withLimits(Consumer<ResourcesLimits> limitsSetter) {
+    public Resources withLimits(Consumer<LimitsRequests> limitsSetter) {
         if (this.limits == null) {
-            this.limits = new ResourcesLimits();
+            this.limits = new LimitsRequests();
             limitsSetter.accept(this.limits);
         }
 
@@ -39,22 +39,22 @@ public class Resources {
      * Get limits
      * @return limits
      */
-    public ResourcesLimits getLimits() {
+    public LimitsRequests getLimits() {
         return limits;
     }
 
-    public void setLimits(ResourcesLimits limits) {
+    public void setLimits(LimitsRequests limits) {
         this.limits = limits;
     }
 
-    public Resources withRequests(ResourcesRequests requests) {
+    public Resources withRequests(LimitsRequests requests) {
         this.requests = requests;
         return this;
     }
 
-    public Resources withRequests(Consumer<ResourcesRequests> requestsSetter) {
+    public Resources withRequests(Consumer<LimitsRequests> requestsSetter) {
         if (this.requests == null) {
-            this.requests = new ResourcesRequests();
+            this.requests = new LimitsRequests();
             requestsSetter.accept(this.requests);
         }
 
@@ -65,11 +65,11 @@ public class Resources {
      * Get requests
      * @return requests
      */
-    public ResourcesRequests getRequests() {
+    public LimitsRequests getRequests() {
         return requests;
     }
 
-    public void setRequests(ResourcesRequests requests) {
+    public void setRequests(LimitsRequests requests) {
         this.requests = requests;
     }
 

@@ -66,7 +66,7 @@ public class EdgeNode {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mqtt_config")
 
-    private EdgeNodeMqttConfig mqttConfig;
+    private MqttConfigs mqttConfig;
 
     public EdgeNode withName(String name) {
         this.name = name;
@@ -208,7 +208,7 @@ public class EdgeNode {
     }
 
     /**
-     * npu类型，支持D310类型和D910类型。 - D310表示D310类型。 - D910表示D910类型。 - 不填表示为D310类型。
+     * NPU类型，支持D310类型和D910类型。 - D310表示D310类型。 - D910表示D910类型。 - 不填表示为D310类型。
      * @return npuType
      */
     public String getNpuType() {
@@ -302,14 +302,14 @@ public class EdgeNode {
         this.tags = tags;
     }
 
-    public EdgeNode withMqttConfig(EdgeNodeMqttConfig mqttConfig) {
+    public EdgeNode withMqttConfig(MqttConfigs mqttConfig) {
         this.mqttConfig = mqttConfig;
         return this;
     }
 
-    public EdgeNode withMqttConfig(Consumer<EdgeNodeMqttConfig> mqttConfigSetter) {
+    public EdgeNode withMqttConfig(Consumer<MqttConfigs> mqttConfigSetter) {
         if (this.mqttConfig == null) {
-            this.mqttConfig = new EdgeNodeMqttConfig();
+            this.mqttConfig = new MqttConfigs();
             mqttConfigSetter.accept(this.mqttConfig);
         }
 
@@ -320,11 +320,11 @@ public class EdgeNode {
      * Get mqttConfig
      * @return mqttConfig
      */
-    public EdgeNodeMqttConfig getMqttConfig() {
+    public MqttConfigs getMqttConfig() {
         return mqttConfig;
     }
 
-    public void setMqttConfig(EdgeNodeMqttConfig mqttConfig) {
+    public void setMqttConfig(MqttConfigs mqttConfig) {
         this.mqttConfig = mqttConfig;
     }
 

@@ -48,7 +48,7 @@ public class DeleteEdgeNodeCertsRequest {
     }
 
     /**
-     * 证书id
+     * 证书ID
      * @return certId
      */
     public String getCertId() {

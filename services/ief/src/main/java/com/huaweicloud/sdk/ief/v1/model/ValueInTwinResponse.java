@@ -14,31 +14,31 @@ public class ValueInTwinResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "excepted")
 
-    private ValueInTwinResponseExcepted excepted;
+    private ExceptedActual excepted;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "actual")
 
-    private ValueInTwinResponseActual actual;
+    private ExceptedActual actual;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metadata")
 
-    private ValueInTwinResponseMetadata metadata;
+    private Metadata metadata;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "optional")
 
     private Boolean optional;
 
-    public ValueInTwinResponse withExcepted(ValueInTwinResponseExcepted excepted) {
+    public ValueInTwinResponse withExcepted(ExceptedActual excepted) {
         this.excepted = excepted;
         return this;
     }
 
-    public ValueInTwinResponse withExcepted(Consumer<ValueInTwinResponseExcepted> exceptedSetter) {
+    public ValueInTwinResponse withExcepted(Consumer<ExceptedActual> exceptedSetter) {
         if (this.excepted == null) {
-            this.excepted = new ValueInTwinResponseExcepted();
+            this.excepted = new ExceptedActual();
             exceptedSetter.accept(this.excepted);
         }
 
@@ -49,22 +49,22 @@ public class ValueInTwinResponse {
      * Get excepted
      * @return excepted
      */
-    public ValueInTwinResponseExcepted getExcepted() {
+    public ExceptedActual getExcepted() {
         return excepted;
     }
 
-    public void setExcepted(ValueInTwinResponseExcepted excepted) {
+    public void setExcepted(ExceptedActual excepted) {
         this.excepted = excepted;
     }
 
-    public ValueInTwinResponse withActual(ValueInTwinResponseActual actual) {
+    public ValueInTwinResponse withActual(ExceptedActual actual) {
         this.actual = actual;
         return this;
     }
 
-    public ValueInTwinResponse withActual(Consumer<ValueInTwinResponseActual> actualSetter) {
+    public ValueInTwinResponse withActual(Consumer<ExceptedActual> actualSetter) {
         if (this.actual == null) {
-            this.actual = new ValueInTwinResponseActual();
+            this.actual = new ExceptedActual();
             actualSetter.accept(this.actual);
         }
 
@@ -75,22 +75,22 @@ public class ValueInTwinResponse {
      * Get actual
      * @return actual
      */
-    public ValueInTwinResponseActual getActual() {
+    public ExceptedActual getActual() {
         return actual;
     }
 
-    public void setActual(ValueInTwinResponseActual actual) {
+    public void setActual(ExceptedActual actual) {
         this.actual = actual;
     }
 
-    public ValueInTwinResponse withMetadata(ValueInTwinResponseMetadata metadata) {
+    public ValueInTwinResponse withMetadata(Metadata metadata) {
         this.metadata = metadata;
         return this;
     }
 
-    public ValueInTwinResponse withMetadata(Consumer<ValueInTwinResponseMetadata> metadataSetter) {
+    public ValueInTwinResponse withMetadata(Consumer<Metadata> metadataSetter) {
         if (this.metadata == null) {
-            this.metadata = new ValueInTwinResponseMetadata();
+            this.metadata = new Metadata();
             metadataSetter.accept(this.metadata);
         }
 
@@ -101,11 +101,11 @@ public class ValueInTwinResponse {
      * Get metadata
      * @return metadata
      */
-    public ValueInTwinResponseMetadata getMetadata() {
+    public Metadata getMetadata() {
         return metadata;
     }
 
-    public void setMetadata(ValueInTwinResponseMetadata metadata) {
+    public void setMetadata(Metadata metadata) {
         this.metadata = metadata;
     }
 

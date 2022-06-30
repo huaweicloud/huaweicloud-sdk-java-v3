@@ -27,7 +27,7 @@ public class CreateRecordSetWithLineRequest {
     }
 
     /**
-     * Get zoneId
+     * 所属zone的ID。
      * @return zoneId
      */
     public String getZoneId() {

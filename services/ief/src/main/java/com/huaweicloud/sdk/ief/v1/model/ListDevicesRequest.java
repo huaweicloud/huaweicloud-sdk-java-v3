@@ -136,7 +136,7 @@ public class ListDevicesRequest {
     }
 
     /**
-     * 是否绑定到边缘节点，为“true”时返回所有已绑定到节点的设备列表，为“false”则返回未绑定节点的设备列表
+     * 是否绑定到边缘节点，为“true”时返回所有已绑定到节点的设备列表；为“false”则返回未绑定节点的设备列表。
      * @return isBinding
      */
     public String getIsBinding() {

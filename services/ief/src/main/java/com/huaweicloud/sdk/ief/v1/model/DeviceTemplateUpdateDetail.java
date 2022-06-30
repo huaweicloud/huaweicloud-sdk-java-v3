@@ -49,7 +49,7 @@ public class DeviceTemplateUpdateDetail {
     }
 
     /**
-     * 设备模板描述,最大长度255
+     * 设备模板描述，最大长度255
      * @return description
      */
     public String getDescription() {

@@ -24,7 +24,7 @@ public class Env {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "value_from")
 
-    private EnvValueFrom valueFrom;
+    private ValueFrom valueFrom;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "field_path")
@@ -65,14 +65,14 @@ public class Env {
         this.value = value;
     }
 
-    public Env withValueFrom(EnvValueFrom valueFrom) {
+    public Env withValueFrom(ValueFrom valueFrom) {
         this.valueFrom = valueFrom;
         return this;
     }
 
-    public Env withValueFrom(Consumer<EnvValueFrom> valueFromSetter) {
+    public Env withValueFrom(Consumer<ValueFrom> valueFromSetter) {
         if (this.valueFrom == null) {
-            this.valueFrom = new EnvValueFrom();
+            this.valueFrom = new ValueFrom();
             valueFromSetter.accept(this.valueFrom);
         }
 
@@ -83,11 +83,11 @@ public class Env {
      * Get valueFrom
      * @return valueFrom
      */
-    public EnvValueFrom getValueFrom() {
+    public ValueFrom getValueFrom() {
         return valueFrom;
     }
 
-    public void setValueFrom(EnvValueFrom valueFrom) {
+    public void setValueFrom(ValueFrom valueFrom) {
         this.valueFrom = valueFrom;
     }
 

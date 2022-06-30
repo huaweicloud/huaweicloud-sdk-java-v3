@@ -14,81 +14,81 @@ public class ValueInPropertyVisitors {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "register_type")
 
-    private ValueInPropertyVisitorsRegisterType registerType;
+    private ValueInAttributes registerType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "access_mode")
 
-    private ValueInPropertyVisitorsAccessMode accessMode;
+    private ValueInAttributes accessMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "register_index")
 
-    private ValueInPropertyVisitorsRegisterIndex registerIndex;
+    private ValueInAttributes registerIndex;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "register_num")
 
-    private ValueInPropertyVisitorsRegisterNum registerNum;
+    private ValueInAttributes registerNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scale_index")
 
-    private ValueInPropertyVisitorsScaleIndex scaleIndex;
+    private ValueInAttributes scaleIndex;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "original_datatype")
 
-    private ValueInPropertyVisitorsOriginalDatatype originalDatatype;
+    private ValueInAttributes originalDatatype;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expected_datatype")
 
-    private ValueInPropertyVisitorsExpectedDatatype expectedDatatype;
+    private ValueInAttributes expectedDatatype;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_registerswap")
 
-    private ValueInPropertyVisitorsIsRegisterswap isRegisterswap;
+    private ValueInAttributes isRegisterswap;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_swap")
 
-    private ValueInPropertyVisitorsIsSwap isSwap;
+    private ValueInAttributes isSwap;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sample_interval")
 
-    private ValueInPropertyVisitorsSampleInterval sampleInterval;
+    private ValueInAttributes sampleInterval;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_min")
 
-    private ValueInPropertyVisitorsDataMin dataMin;
+    private ValueInAttributes dataMin;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_max")
 
-    private ValueInPropertyVisitorsDataMax dataMax;
+    private ValueInAttributes dataMax;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "node_id")
 
-    private ValueInPropertyVisitorsNodeId nodeId;
+    private ValueInAttributes nodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "browse_name")
 
-    private ValueInPropertyVisitorsBrowseName browseName;
+    private ValueInAttributes browseName;
 
-    public ValueInPropertyVisitors withRegisterType(ValueInPropertyVisitorsRegisterType registerType) {
+    public ValueInPropertyVisitors withRegisterType(ValueInAttributes registerType) {
         this.registerType = registerType;
         return this;
     }
 
-    public ValueInPropertyVisitors withRegisterType(Consumer<ValueInPropertyVisitorsRegisterType> registerTypeSetter) {
+    public ValueInPropertyVisitors withRegisterType(Consumer<ValueInAttributes> registerTypeSetter) {
         if (this.registerType == null) {
-            this.registerType = new ValueInPropertyVisitorsRegisterType();
+            this.registerType = new ValueInAttributes();
             registerTypeSetter.accept(this.registerType);
         }
 
@@ -99,22 +99,22 @@ public class ValueInPropertyVisitors {
      * Get registerType
      * @return registerType
      */
-    public ValueInPropertyVisitorsRegisterType getRegisterType() {
+    public ValueInAttributes getRegisterType() {
         return registerType;
     }
 
-    public void setRegisterType(ValueInPropertyVisitorsRegisterType registerType) {
+    public void setRegisterType(ValueInAttributes registerType) {
         this.registerType = registerType;
     }
 
-    public ValueInPropertyVisitors withAccessMode(ValueInPropertyVisitorsAccessMode accessMode) {
+    public ValueInPropertyVisitors withAccessMode(ValueInAttributes accessMode) {
         this.accessMode = accessMode;
         return this;
     }
 
-    public ValueInPropertyVisitors withAccessMode(Consumer<ValueInPropertyVisitorsAccessMode> accessModeSetter) {
+    public ValueInPropertyVisitors withAccessMode(Consumer<ValueInAttributes> accessModeSetter) {
         if (this.accessMode == null) {
-            this.accessMode = new ValueInPropertyVisitorsAccessMode();
+            this.accessMode = new ValueInAttributes();
             accessModeSetter.accept(this.accessMode);
         }
 
@@ -125,23 +125,22 @@ public class ValueInPropertyVisitors {
      * Get accessMode
      * @return accessMode
      */
-    public ValueInPropertyVisitorsAccessMode getAccessMode() {
+    public ValueInAttributes getAccessMode() {
         return accessMode;
     }
 
-    public void setAccessMode(ValueInPropertyVisitorsAccessMode accessMode) {
+    public void setAccessMode(ValueInAttributes accessMode) {
         this.accessMode = accessMode;
     }
 
-    public ValueInPropertyVisitors withRegisterIndex(ValueInPropertyVisitorsRegisterIndex registerIndex) {
+    public ValueInPropertyVisitors withRegisterIndex(ValueInAttributes registerIndex) {
         this.registerIndex = registerIndex;
         return this;
     }
 
-    public ValueInPropertyVisitors withRegisterIndex(
-        Consumer<ValueInPropertyVisitorsRegisterIndex> registerIndexSetter) {
+    public ValueInPropertyVisitors withRegisterIndex(Consumer<ValueInAttributes> registerIndexSetter) {
         if (this.registerIndex == null) {
-            this.registerIndex = new ValueInPropertyVisitorsRegisterIndex();
+            this.registerIndex = new ValueInAttributes();
             registerIndexSetter.accept(this.registerIndex);
         }
 
@@ -152,22 +151,22 @@ public class ValueInPropertyVisitors {
      * Get registerIndex
      * @return registerIndex
      */
-    public ValueInPropertyVisitorsRegisterIndex getRegisterIndex() {
+    public ValueInAttributes getRegisterIndex() {
         return registerIndex;
     }
 
-    public void setRegisterIndex(ValueInPropertyVisitorsRegisterIndex registerIndex) {
+    public void setRegisterIndex(ValueInAttributes registerIndex) {
         this.registerIndex = registerIndex;
     }
 
-    public ValueInPropertyVisitors withRegisterNum(ValueInPropertyVisitorsRegisterNum registerNum) {
+    public ValueInPropertyVisitors withRegisterNum(ValueInAttributes registerNum) {
         this.registerNum = registerNum;
         return this;
     }
 
-    public ValueInPropertyVisitors withRegisterNum(Consumer<ValueInPropertyVisitorsRegisterNum> registerNumSetter) {
+    public ValueInPropertyVisitors withRegisterNum(Consumer<ValueInAttributes> registerNumSetter) {
         if (this.registerNum == null) {
-            this.registerNum = new ValueInPropertyVisitorsRegisterNum();
+            this.registerNum = new ValueInAttributes();
             registerNumSetter.accept(this.registerNum);
         }
 
@@ -178,22 +177,22 @@ public class ValueInPropertyVisitors {
      * Get registerNum
      * @return registerNum
      */
-    public ValueInPropertyVisitorsRegisterNum getRegisterNum() {
+    public ValueInAttributes getRegisterNum() {
         return registerNum;
     }
 
-    public void setRegisterNum(ValueInPropertyVisitorsRegisterNum registerNum) {
+    public void setRegisterNum(ValueInAttributes registerNum) {
         this.registerNum = registerNum;
     }
 
-    public ValueInPropertyVisitors withScaleIndex(ValueInPropertyVisitorsScaleIndex scaleIndex) {
+    public ValueInPropertyVisitors withScaleIndex(ValueInAttributes scaleIndex) {
         this.scaleIndex = scaleIndex;
         return this;
     }
 
-    public ValueInPropertyVisitors withScaleIndex(Consumer<ValueInPropertyVisitorsScaleIndex> scaleIndexSetter) {
+    public ValueInPropertyVisitors withScaleIndex(Consumer<ValueInAttributes> scaleIndexSetter) {
         if (this.scaleIndex == null) {
-            this.scaleIndex = new ValueInPropertyVisitorsScaleIndex();
+            this.scaleIndex = new ValueInAttributes();
             scaleIndexSetter.accept(this.scaleIndex);
         }
 
@@ -204,23 +203,22 @@ public class ValueInPropertyVisitors {
      * Get scaleIndex
      * @return scaleIndex
      */
-    public ValueInPropertyVisitorsScaleIndex getScaleIndex() {
+    public ValueInAttributes getScaleIndex() {
         return scaleIndex;
     }
 
-    public void setScaleIndex(ValueInPropertyVisitorsScaleIndex scaleIndex) {
+    public void setScaleIndex(ValueInAttributes scaleIndex) {
         this.scaleIndex = scaleIndex;
     }
 
-    public ValueInPropertyVisitors withOriginalDatatype(ValueInPropertyVisitorsOriginalDatatype originalDatatype) {
+    public ValueInPropertyVisitors withOriginalDatatype(ValueInAttributes originalDatatype) {
         this.originalDatatype = originalDatatype;
         return this;
     }
 
-    public ValueInPropertyVisitors withOriginalDatatype(
-        Consumer<ValueInPropertyVisitorsOriginalDatatype> originalDatatypeSetter) {
+    public ValueInPropertyVisitors withOriginalDatatype(Consumer<ValueInAttributes> originalDatatypeSetter) {
         if (this.originalDatatype == null) {
-            this.originalDatatype = new ValueInPropertyVisitorsOriginalDatatype();
+            this.originalDatatype = new ValueInAttributes();
             originalDatatypeSetter.accept(this.originalDatatype);
         }
 
@@ -231,23 +229,22 @@ public class ValueInPropertyVisitors {
      * Get originalDatatype
      * @return originalDatatype
      */
-    public ValueInPropertyVisitorsOriginalDatatype getOriginalDatatype() {
+    public ValueInAttributes getOriginalDatatype() {
         return originalDatatype;
     }
 
-    public void setOriginalDatatype(ValueInPropertyVisitorsOriginalDatatype originalDatatype) {
+    public void setOriginalDatatype(ValueInAttributes originalDatatype) {
         this.originalDatatype = originalDatatype;
     }
 
-    public ValueInPropertyVisitors withExpectedDatatype(ValueInPropertyVisitorsExpectedDatatype expectedDatatype) {
+    public ValueInPropertyVisitors withExpectedDatatype(ValueInAttributes expectedDatatype) {
         this.expectedDatatype = expectedDatatype;
         return this;
     }
 
-    public ValueInPropertyVisitors withExpectedDatatype(
-        Consumer<ValueInPropertyVisitorsExpectedDatatype> expectedDatatypeSetter) {
+    public ValueInPropertyVisitors withExpectedDatatype(Consumer<ValueInAttributes> expectedDatatypeSetter) {
         if (this.expectedDatatype == null) {
-            this.expectedDatatype = new ValueInPropertyVisitorsExpectedDatatype();
+            this.expectedDatatype = new ValueInAttributes();
             expectedDatatypeSetter.accept(this.expectedDatatype);
         }
 
@@ -258,23 +255,22 @@ public class ValueInPropertyVisitors {
      * Get expectedDatatype
      * @return expectedDatatype
      */
-    public ValueInPropertyVisitorsExpectedDatatype getExpectedDatatype() {
+    public ValueInAttributes getExpectedDatatype() {
         return expectedDatatype;
     }
 
-    public void setExpectedDatatype(ValueInPropertyVisitorsExpectedDatatype expectedDatatype) {
+    public void setExpectedDatatype(ValueInAttributes expectedDatatype) {
         this.expectedDatatype = expectedDatatype;
     }
 
-    public ValueInPropertyVisitors withIsRegisterswap(ValueInPropertyVisitorsIsRegisterswap isRegisterswap) {
+    public ValueInPropertyVisitors withIsRegisterswap(ValueInAttributes isRegisterswap) {
         this.isRegisterswap = isRegisterswap;
         return this;
     }
 
-    public ValueInPropertyVisitors withIsRegisterswap(
-        Consumer<ValueInPropertyVisitorsIsRegisterswap> isRegisterswapSetter) {
+    public ValueInPropertyVisitors withIsRegisterswap(Consumer<ValueInAttributes> isRegisterswapSetter) {
         if (this.isRegisterswap == null) {
-            this.isRegisterswap = new ValueInPropertyVisitorsIsRegisterswap();
+            this.isRegisterswap = new ValueInAttributes();
             isRegisterswapSetter.accept(this.isRegisterswap);
         }
 
@@ -285,22 +281,22 @@ public class ValueInPropertyVisitors {
      * Get isRegisterswap
      * @return isRegisterswap
      */
-    public ValueInPropertyVisitorsIsRegisterswap getIsRegisterswap() {
+    public ValueInAttributes getIsRegisterswap() {
         return isRegisterswap;
     }
 
-    public void setIsRegisterswap(ValueInPropertyVisitorsIsRegisterswap isRegisterswap) {
+    public void setIsRegisterswap(ValueInAttributes isRegisterswap) {
         this.isRegisterswap = isRegisterswap;
     }
 
-    public ValueInPropertyVisitors withIsSwap(ValueInPropertyVisitorsIsSwap isSwap) {
+    public ValueInPropertyVisitors withIsSwap(ValueInAttributes isSwap) {
         this.isSwap = isSwap;
         return this;
     }
 
-    public ValueInPropertyVisitors withIsSwap(Consumer<ValueInPropertyVisitorsIsSwap> isSwapSetter) {
+    public ValueInPropertyVisitors withIsSwap(Consumer<ValueInAttributes> isSwapSetter) {
         if (this.isSwap == null) {
-            this.isSwap = new ValueInPropertyVisitorsIsSwap();
+            this.isSwap = new ValueInAttributes();
             isSwapSetter.accept(this.isSwap);
         }
 
@@ -311,23 +307,22 @@ public class ValueInPropertyVisitors {
      * Get isSwap
      * @return isSwap
      */
-    public ValueInPropertyVisitorsIsSwap getIsSwap() {
+    public ValueInAttributes getIsSwap() {
         return isSwap;
     }
 
-    public void setIsSwap(ValueInPropertyVisitorsIsSwap isSwap) {
+    public void setIsSwap(ValueInAttributes isSwap) {
         this.isSwap = isSwap;
     }
 
-    public ValueInPropertyVisitors withSampleInterval(ValueInPropertyVisitorsSampleInterval sampleInterval) {
+    public ValueInPropertyVisitors withSampleInterval(ValueInAttributes sampleInterval) {
         this.sampleInterval = sampleInterval;
         return this;
     }
 
-    public ValueInPropertyVisitors withSampleInterval(
-        Consumer<ValueInPropertyVisitorsSampleInterval> sampleIntervalSetter) {
+    public ValueInPropertyVisitors withSampleInterval(Consumer<ValueInAttributes> sampleIntervalSetter) {
         if (this.sampleInterval == null) {
-            this.sampleInterval = new ValueInPropertyVisitorsSampleInterval();
+            this.sampleInterval = new ValueInAttributes();
             sampleIntervalSetter.accept(this.sampleInterval);
         }
 
@@ -338,22 +333,22 @@ public class ValueInPropertyVisitors {
      * Get sampleInterval
      * @return sampleInterval
      */
-    public ValueInPropertyVisitorsSampleInterval getSampleInterval() {
+    public ValueInAttributes getSampleInterval() {
         return sampleInterval;
     }
 
-    public void setSampleInterval(ValueInPropertyVisitorsSampleInterval sampleInterval) {
+    public void setSampleInterval(ValueInAttributes sampleInterval) {
         this.sampleInterval = sampleInterval;
     }
 
-    public ValueInPropertyVisitors withDataMin(ValueInPropertyVisitorsDataMin dataMin) {
+    public ValueInPropertyVisitors withDataMin(ValueInAttributes dataMin) {
         this.dataMin = dataMin;
         return this;
     }
 
-    public ValueInPropertyVisitors withDataMin(Consumer<ValueInPropertyVisitorsDataMin> dataMinSetter) {
+    public ValueInPropertyVisitors withDataMin(Consumer<ValueInAttributes> dataMinSetter) {
         if (this.dataMin == null) {
-            this.dataMin = new ValueInPropertyVisitorsDataMin();
+            this.dataMin = new ValueInAttributes();
             dataMinSetter.accept(this.dataMin);
         }
 
@@ -364,22 +359,22 @@ public class ValueInPropertyVisitors {
      * Get dataMin
      * @return dataMin
      */
-    public ValueInPropertyVisitorsDataMin getDataMin() {
+    public ValueInAttributes getDataMin() {
         return dataMin;
     }
 
-    public void setDataMin(ValueInPropertyVisitorsDataMin dataMin) {
+    public void setDataMin(ValueInAttributes dataMin) {
         this.dataMin = dataMin;
     }
 
-    public ValueInPropertyVisitors withDataMax(ValueInPropertyVisitorsDataMax dataMax) {
+    public ValueInPropertyVisitors withDataMax(ValueInAttributes dataMax) {
         this.dataMax = dataMax;
         return this;
     }
 
-    public ValueInPropertyVisitors withDataMax(Consumer<ValueInPropertyVisitorsDataMax> dataMaxSetter) {
+    public ValueInPropertyVisitors withDataMax(Consumer<ValueInAttributes> dataMaxSetter) {
         if (this.dataMax == null) {
-            this.dataMax = new ValueInPropertyVisitorsDataMax();
+            this.dataMax = new ValueInAttributes();
             dataMaxSetter.accept(this.dataMax);
         }
 
@@ -390,22 +385,22 @@ public class ValueInPropertyVisitors {
      * Get dataMax
      * @return dataMax
      */
-    public ValueInPropertyVisitorsDataMax getDataMax() {
+    public ValueInAttributes getDataMax() {
         return dataMax;
     }
 
-    public void setDataMax(ValueInPropertyVisitorsDataMax dataMax) {
+    public void setDataMax(ValueInAttributes dataMax) {
         this.dataMax = dataMax;
     }
 
-    public ValueInPropertyVisitors withNodeId(ValueInPropertyVisitorsNodeId nodeId) {
+    public ValueInPropertyVisitors withNodeId(ValueInAttributes nodeId) {
         this.nodeId = nodeId;
         return this;
     }
 
-    public ValueInPropertyVisitors withNodeId(Consumer<ValueInPropertyVisitorsNodeId> nodeIdSetter) {
+    public ValueInPropertyVisitors withNodeId(Consumer<ValueInAttributes> nodeIdSetter) {
         if (this.nodeId == null) {
-            this.nodeId = new ValueInPropertyVisitorsNodeId();
+            this.nodeId = new ValueInAttributes();
             nodeIdSetter.accept(this.nodeId);
         }
 
@@ -416,22 +411,22 @@ public class ValueInPropertyVisitors {
      * Get nodeId
      * @return nodeId
      */
-    public ValueInPropertyVisitorsNodeId getNodeId() {
+    public ValueInAttributes getNodeId() {
         return nodeId;
     }
 
-    public void setNodeId(ValueInPropertyVisitorsNodeId nodeId) {
+    public void setNodeId(ValueInAttributes nodeId) {
         this.nodeId = nodeId;
     }
 
-    public ValueInPropertyVisitors withBrowseName(ValueInPropertyVisitorsBrowseName browseName) {
+    public ValueInPropertyVisitors withBrowseName(ValueInAttributes browseName) {
         this.browseName = browseName;
         return this;
     }
 
-    public ValueInPropertyVisitors withBrowseName(Consumer<ValueInPropertyVisitorsBrowseName> browseNameSetter) {
+    public ValueInPropertyVisitors withBrowseName(Consumer<ValueInAttributes> browseNameSetter) {
         if (this.browseName == null) {
-            this.browseName = new ValueInPropertyVisitorsBrowseName();
+            this.browseName = new ValueInAttributes();
             browseNameSetter.accept(this.browseName);
         }
 
@@ -442,11 +437,11 @@ public class ValueInPropertyVisitors {
      * Get browseName
      * @return browseName
      */
-    public ValueInPropertyVisitorsBrowseName getBrowseName() {
+    public ValueInAttributes getBrowseName() {
         return browseName;
     }
 
-    public void setBrowseName(ValueInPropertyVisitorsBrowseName browseName) {
+    public void setBrowseName(ValueInAttributes browseName) {
         this.browseName = browseName;
     }
 

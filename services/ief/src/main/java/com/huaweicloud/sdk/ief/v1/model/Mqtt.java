@@ -65,7 +65,7 @@ public class Mqtt {
     }
 
     /**
-     * 类型。 枚举值： - nic：网卡类型 - ip：IP类型
+     * 类型。枚举值： - nic：网卡类型 - ip：IP类型
      * @return type
      */
     public String getType() {

@@ -29,6 +29,13 @@ public class ListComponentInfosResponse extends SdkResponse {
     
     private List<Nodes> nodes = null;
     
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="total_count")
+    
+    
+    private Integer totalCount;
+
     public ListComponentInfosResponse withNodes(List<Nodes> nodes) {
         this.nodes = nodes;
         return this;
@@ -65,6 +72,28 @@ public class ListComponentInfosResponse extends SdkResponse {
 
     
 
+    public ListComponentInfosResponse withTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 总记录数。
+     * @return totalCount
+     */
+    public Integer getTotalCount() {
+        return totalCount;
+    }
+
+    public void setTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -74,17 +103,19 @@ public class ListComponentInfosResponse extends SdkResponse {
             return false;
         }
         ListComponentInfosResponse listComponentInfosResponse = (ListComponentInfosResponse) o;
-        return Objects.equals(this.nodes, listComponentInfosResponse.nodes);
+        return Objects.equals(this.nodes, listComponentInfosResponse.nodes) &&
+            Objects.equals(this.totalCount, listComponentInfosResponse.totalCount);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(nodes);
+        return Objects.hash(nodes, totalCount);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListComponentInfosResponse {\n");
         sb.append("    nodes: ").append(toIndentedString(nodes)).append("\n");
+        sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
         sb.append("}");
         return sb.toString();
     }

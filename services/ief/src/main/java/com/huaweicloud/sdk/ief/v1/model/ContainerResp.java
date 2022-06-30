@@ -180,7 +180,7 @@ public class ContainerResp {
     }
 
     /**
-     * 容器名称，只允许英文小写字母、数字、中划线，最大长度32, 英文小写字母或数字开头和结尾
+     * 容器名称，只允许英文小写字母、数字、中划线，最大长度32， 英文小写字母或数字开头和结尾
      * @return name
      */
     public String getName() {
@@ -476,7 +476,7 @@ public class ContainerResp {
     }
 
     /**
-     * 是否启用特权容器,默认值false
+     * 是否启用特权容器，默认值false
      * @return privileged
      */
     public Boolean getPrivileged() {
@@ -527,7 +527,7 @@ public class ContainerResp {
     }
 
     /**
-     * npu类型，支持D310类型和D910类型。 - D310表示D310类型。 - D910表示D910类型。 - 不填表示为D310类型。
+     * NPU类型，支持D310类型和D910类型。 - D310表示D310类型。 - D910表示D910类型。 - 不填表示为D310类型。
      * @return npuType
      */
     public String getNpuType() {

@@ -221,7 +221,7 @@ public class EndpointObjResp {
     }
 
     /**
-     * 端点类型 枚举值： - dis - servicebus - apigw
+     * 端点类型。枚举值： - dis - servicebus - apigw
      * @return type
      */
     public String getType() {

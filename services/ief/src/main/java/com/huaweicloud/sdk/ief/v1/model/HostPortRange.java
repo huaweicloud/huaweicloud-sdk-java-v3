@@ -26,7 +26,7 @@ public class HostPortRange {
     }
 
     /**
-     * 主机端口下限制,1到65535之间的整数
+     * 主机端口下限制，1到65535之间的整数
      * @return minPort
      */
     public Integer getMinPort() {
@@ -43,7 +43,7 @@ public class HostPortRange {
     }
 
     /**
-     * 主机端口上限值,1到65535之间的整数；max_port需大于min_port
+     * 主机端口上限值，1到65535之间的整数；max_port需大于min_port
      * @return maxPort
      */
     public Integer getMaxPort() {

@@ -178,6 +178,38 @@ public class CloudIDEMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UploadExtensionFileRequest, UploadExtensionFileResponse> uploadExtensionFile =
+        genForuploadExtensionFile();
+
+    private static HttpRequestDef<UploadExtensionFileRequest, UploadExtensionFileResponse> genForuploadExtensionFile() {
+        // basic
+        HttpRequestDef.Builder<UploadExtensionFileRequest, UploadExtensionFileResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UploadExtensionFileRequest.class, UploadExtensionFileResponse.class)
+                .withName("UploadExtensionFile")
+                .withUri("/v1/marketplace/file/plugin")
+                .withContentType("multipart/form-data");
+
+        // requests
+        builder.<String>withRequestField("official",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UploadExtensionFileRequest::getOfficial, (req, v) -> {
+                req.setOfficial(v);
+            }));
+        builder.<UploadExtensionFileRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UploadExtensionFileRequestBody.class),
+            f -> f.withMarshaller(UploadExtensionFileRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CheckInstanceAccessRequest, CheckInstanceAccessResponse> checkInstanceAccess =
         genForcheckInstanceAccess();
 

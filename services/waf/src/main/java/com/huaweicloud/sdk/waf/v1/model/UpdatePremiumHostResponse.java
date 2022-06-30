@@ -304,6 +304,11 @@ public class UpdatePremiumHostResponse extends SdkResponse {
     private TrafficMark trafficMark;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "timeout_config")
+
+    private TimeoutConfig timeoutConfig;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flag")
 
     private Map<String, String> flag = null;
@@ -708,6 +713,32 @@ public class UpdatePremiumHostResponse extends SdkResponse {
         this.trafficMark = trafficMark;
     }
 
+    public UpdatePremiumHostResponse withTimeoutConfig(TimeoutConfig timeoutConfig) {
+        this.timeoutConfig = timeoutConfig;
+        return this;
+    }
+
+    public UpdatePremiumHostResponse withTimeoutConfig(Consumer<TimeoutConfig> timeoutConfigSetter) {
+        if (this.timeoutConfig == null) {
+            this.timeoutConfig = new TimeoutConfig();
+            timeoutConfigSetter.accept(this.timeoutConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get timeoutConfig
+     * @return timeoutConfig
+     */
+    public TimeoutConfig getTimeoutConfig() {
+        return timeoutConfig;
+    }
+
+    public void setTimeoutConfig(TimeoutConfig timeoutConfig) {
+        this.timeoutConfig = timeoutConfig;
+    }
+
     public UpdatePremiumHostResponse withFlag(Map<String, String> flag) {
         this.flag = flag;
         return this;
@@ -820,6 +851,7 @@ public class UpdatePremiumHostResponse extends SdkResponse {
             && Objects.equals(this.blockPage, updatePremiumHostResponse.blockPage)
             && Objects.equals(this.extend, updatePremiumHostResponse.extend)
             && Objects.equals(this.trafficMark, updatePremiumHostResponse.trafficMark)
+            && Objects.equals(this.timeoutConfig, updatePremiumHostResponse.timeoutConfig)
             && Objects.equals(this.flag, updatePremiumHostResponse.flag)
             && Objects.equals(this.mode, updatePremiumHostResponse.mode)
             && Objects.equals(this.poolIds, updatePremiumHostResponse.poolIds);
@@ -847,6 +879,7 @@ public class UpdatePremiumHostResponse extends SdkResponse {
             blockPage,
             extend,
             trafficMark,
+            timeoutConfig,
             flag,
             mode,
             poolIds);
@@ -876,6 +909,7 @@ public class UpdatePremiumHostResponse extends SdkResponse {
         sb.append("    blockPage: ").append(toIndentedString(blockPage)).append("\n");
         sb.append("    extend: ").append(toIndentedString(extend)).append("\n");
         sb.append("    trafficMark: ").append(toIndentedString(trafficMark)).append("\n");
+        sb.append("    timeoutConfig: ").append(toIndentedString(timeoutConfig)).append("\n");
         sb.append("    flag: ").append(toIndentedString(flag)).append("\n");
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
         sb.append("    poolIds: ").append(toIndentedString(poolIds)).append("\n");

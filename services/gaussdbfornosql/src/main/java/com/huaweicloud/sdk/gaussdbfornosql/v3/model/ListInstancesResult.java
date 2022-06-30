@@ -128,6 +128,11 @@ public class ListInstancesResult {
 
     private String lbIpAddress;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "lb_port")
+
+    private String lbPort;
+
     public ListInstancesResult withId(String id) {
         this.id = id;
         return this;
@@ -558,7 +563,7 @@ public class ListInstancesResult {
     }
 
     /**
-     * 负载均衡ip，只有存在负载均衡ip才会返回该参数。
+     * 负载均衡ip，只有存在负载均衡ip，才会返回该参数。
      * @return lbIpAddress
      */
     public String getLbIpAddress() {
@@ -567,6 +572,23 @@ public class ListInstancesResult {
 
     public void setLbIpAddress(String lbIpAddress) {
         this.lbIpAddress = lbIpAddress;
+    }
+
+    public ListInstancesResult withLbPort(String lbPort) {
+        this.lbPort = lbPort;
+        return this;
+    }
+
+    /**
+     * 负载均衡端口，只有存在负载均衡ip，才会返回该参数。
+     * @return lbPort
+     */
+    public String getLbPort() {
+        return lbPort;
+    }
+
+    public void setLbPort(String lbPort) {
+        this.lbPort = lbPort;
     }
 
     @Override
@@ -599,7 +621,8 @@ public class ListInstancesResult {
             && Objects.equals(this.dedicatedResourceId, listInstancesResult.dedicatedResourceId)
             && Objects.equals(this.timeZone, listInstancesResult.timeZone)
             && Objects.equals(this.actions, listInstancesResult.actions)
-            && Objects.equals(this.lbIpAddress, listInstancesResult.lbIpAddress);
+            && Objects.equals(this.lbIpAddress, listInstancesResult.lbIpAddress)
+            && Objects.equals(this.lbPort, listInstancesResult.lbPort);
     }
 
     @Override
@@ -626,7 +649,8 @@ public class ListInstancesResult {
             dedicatedResourceId,
             timeZone,
             actions,
-            lbIpAddress);
+            lbIpAddress,
+            lbPort);
     }
 
     @Override
@@ -656,6 +680,7 @@ public class ListInstancesResult {
         sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
         sb.append("    actions: ").append(toIndentedString(actions)).append("\n");
         sb.append("    lbIpAddress: ").append(toIndentedString(lbIpAddress)).append("\n");
+        sb.append("    lbPort: ").append(toIndentedString(lbPort)).append("\n");
         sb.append("}");
         return sb.toString();
     }

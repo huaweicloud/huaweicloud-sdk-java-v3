@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 期望值设置的时间信息
+ * 静态属性的元数据信息，默认为{\&quot;type\&quot;: \&quot;string\&quot;}
  */
 public class Metadata {
 

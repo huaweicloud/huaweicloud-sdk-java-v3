@@ -93,7 +93,7 @@ public class RuleConfig {
     }
 
     /**
-     * 是否启用规则，默认为true(启用)
+     * 是否启用规则，默认为true（启用）
      * @return inUsing
      */
     public Boolean getInUsing() {
@@ -160,7 +160,7 @@ public class RuleConfig {
     }
 
     /**
-     * 源端点资源。 示例： - rest: path取值需要为标准URI格式。 {\"path\":\"/a/b/c\"} - eventbus: {\"topic\": \"<project id>/nodes/<node id>/user/<租户自定义且满足eventbus topic要求的字符串>\",\"node_id\":\"<node id>\"}
+     * 源端点资源。示例： - rest: {\"path\":\"<standard uri format>\"} - eventbus: {\"topic\":\"<project id>/nodes/<node id>/user/<租户自定义且满足eventbus topic要求的字符串>\",\"node_id\":\"<node id>\"}
      * @return sourceResource
      */
     public Map<String, String> getSourceResource() {
@@ -210,7 +210,7 @@ public class RuleConfig {
     }
 
     /**
-     * 目的端点资源，示例： - dis: {\"channel\": \"dis channel name\"} - servicebus: {\"path\": \"/request path\"} - apigw: {\"resource\": \"http://ssss.com\"} - eventbus: {\"topic\": \"/xxxx\"}
+     * 目的端点资源。示例： - dis: {\"channel\": \"dis channel name\"} - servicebus: {\"path\": \"/request path\"} - apigw: {\"resource\": \"http://ssss.com\"} - eventbus: {\"topic\": \"/xxxx\"}
      * @return targetResource
      */
     public Map<String, String> getTargetResource() {

@@ -1030,6 +1030,38 @@ public class ProjectManMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateProjectModuleRequest, CreateProjectModuleResponse> createProjectModule =
+        genForcreateProjectModule();
+
+    private static HttpRequestDef<CreateProjectModuleRequest, CreateProjectModuleResponse> genForcreateProjectModule() {
+        // basic
+        HttpRequestDef.Builder<CreateProjectModuleRequest, CreateProjectModuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateProjectModuleRequest.class, CreateProjectModuleResponse.class)
+                .withName("CreateProjectModule")
+                .withUri("/v4/projects/{project_id}/module")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateProjectModuleRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<CreateProjectModuleRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateProjectModuleRequestBody.class),
+            f -> f.withMarshaller(CreateProjectModuleRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateSystemIssueV4Request, CreateSystemIssueV4Response> createSystemIssueV4 =
         genForcreateSystemIssueV4();
 
@@ -1119,6 +1151,38 @@ public class ProjectManMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(DeleteIterationV4Request::getIterationId, (req, v) -> {
                 req.setIterationId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteProjectModuleRequest, DeleteProjectModuleResponse> deleteProjectModule =
+        genFordeleteProjectModule();
+
+    private static HttpRequestDef<DeleteProjectModuleRequest, DeleteProjectModuleResponse> genFordeleteProjectModule() {
+        // basic
+        HttpRequestDef.Builder<DeleteProjectModuleRequest, DeleteProjectModuleResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteProjectModuleRequest.class, DeleteProjectModuleResponse.class)
+            .withName("DeleteProjectModule")
+            .withUri("/v4/projects/{project_id}/modules/{module_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteProjectModuleRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<Integer>withRequestField("module_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(DeleteProjectModuleRequest::getModuleId, (req, v) -> {
+                req.setModuleId(v);
             }));
 
         // response
@@ -1694,6 +1758,45 @@ public class ProjectManMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListProjectModulesRequest, ListProjectModulesResponse> listProjectModules =
+        genForlistProjectModules();
+
+    private static HttpRequestDef<ListProjectModulesRequest, ListProjectModulesResponse> genForlistProjectModules() {
+        // basic
+        HttpRequestDef.Builder<ListProjectModulesRequest, ListProjectModulesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListProjectModulesRequest.class, ListProjectModulesResponse.class)
+                .withName("ListProjectModules")
+                .withUri("/v4/projects/{project_id}/modules")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProjectModulesRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListProjectModulesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListProjectModulesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListProjectWorkHoursRequest, ListProjectWorkHoursResponse> listProjectWorkHours =
         genForlistProjectWorkHours();
 
@@ -1935,6 +2038,45 @@ public class ProjectManMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateIterationRequestV4.class),
             f -> f.withMarshaller(UpdateIterationV4Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateProjectModuleRequest, UpdateProjectModuleResponse> updateProjectModule =
+        genForupdateProjectModule();
+
+    private static HttpRequestDef<UpdateProjectModuleRequest, UpdateProjectModuleResponse> genForupdateProjectModule() {
+        // basic
+        HttpRequestDef.Builder<UpdateProjectModuleRequest, UpdateProjectModuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateProjectModuleRequest.class, UpdateProjectModuleResponse.class)
+                .withName("UpdateProjectModule")
+                .withUri("/v4/projects/{project_id}/modules/{module_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateProjectModuleRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<Integer>withRequestField("module_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(UpdateProjectModuleRequest::getModuleId, (req, v) -> {
+                req.setModuleId(v);
+            }));
+        builder.<UpdateProjectModuleRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateProjectModuleRequestBody.class),
+            f -> f.withMarshaller(UpdateProjectModuleRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

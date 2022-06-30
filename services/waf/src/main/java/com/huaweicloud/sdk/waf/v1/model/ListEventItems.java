@@ -138,7 +138,7 @@ public class ListEventItems {
     }
 
     /**
-     * 次数
+     * 攻击发生时的时间戳(毫秒)
      * @return time
      */
     public Long getTime() {

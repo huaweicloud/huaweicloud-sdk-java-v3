@@ -114,6 +114,32 @@ public class OcrMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RecognizeCambodianIdCardRequest, RecognizeCambodianIdCardResponse> recognizeCambodianIdCard =
+        genForrecognizeCambodianIdCard();
+
+    private static HttpRequestDef<RecognizeCambodianIdCardRequest, RecognizeCambodianIdCardResponse> genForrecognizeCambodianIdCard() {
+        // basic
+        HttpRequestDef.Builder<RecognizeCambodianIdCardRequest, RecognizeCambodianIdCardResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, RecognizeCambodianIdCardRequest.class, RecognizeCambodianIdCardResponse.class)
+                .withName("RecognizeCambodianIdCard")
+                .withUri("/v2/{project_id}/ocr/cambodian-idcard")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<CambodianIdCardRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CambodianIdCardRequestBody.class),
+            f -> f.withMarshaller(RecognizeCambodianIdCardRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RecognizeChileIdCardRequest, RecognizeChileIdCardResponse> recognizeChileIdCard =
         genForrecognizeChileIdCard();
 
@@ -156,6 +182,32 @@ public class OcrMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DriverLicenseRequestBody.class),
             f -> f.withMarshaller(RecognizeDriverLicenseRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RecognizeExitEntryPermitRequest, RecognizeExitEntryPermitResponse> recognizeExitEntryPermit =
+        genForrecognizeExitEntryPermit();
+
+    private static HttpRequestDef<RecognizeExitEntryPermitRequest, RecognizeExitEntryPermitResponse> genForrecognizeExitEntryPermit() {
+        // basic
+        HttpRequestDef.Builder<RecognizeExitEntryPermitRequest, RecognizeExitEntryPermitResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, RecognizeExitEntryPermitRequest.class, RecognizeExitEntryPermitResponse.class)
+                .withName("RecognizeExitEntryPermit")
+                .withUri("/v2/{project_id}/ocr/exit-entry-permit")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<ExitEntryPermitRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ExitEntryPermitRequestBody.class),
+            f -> f.withMarshaller(RecognizeExitEntryPermitRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -318,6 +370,31 @@ public class OcrMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RecognizeHkIdCardRequest, RecognizeHkIdCardResponse> recognizeHkIdCard =
+        genForrecognizeHkIdCard();
+
+    private static HttpRequestDef<RecognizeHkIdCardRequest, RecognizeHkIdCardResponse> genForrecognizeHkIdCard() {
+        // basic
+        HttpRequestDef.Builder<RecognizeHkIdCardRequest, RecognizeHkIdCardResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RecognizeHkIdCardRequest.class, RecognizeHkIdCardResponse.class)
+                .withName("RecognizeHkIdCard")
+                .withUri("/v2/{project_id}/ocr/hk-id-card")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<HkIdCardRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(HkIdCardRequestBody.class),
+            f -> f.withMarshaller(RecognizeHkIdCardRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RecognizeIdCardRequest, RecognizeIdCardResponse> recognizeIdCard =
         genForrecognizeIdCard();
 
@@ -439,6 +516,34 @@ public class OcrMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(LicensePlateRequestBody.class),
             f -> f.withMarshaller(RecognizeLicensePlateRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RecognizeMainlandTravelPermitRequest, RecognizeMainlandTravelPermitResponse> recognizeMainlandTravelPermit =
+        genForrecognizeMainlandTravelPermit();
+
+    private static HttpRequestDef<RecognizeMainlandTravelPermitRequest, RecognizeMainlandTravelPermitResponse> genForrecognizeMainlandTravelPermit() {
+        // basic
+        HttpRequestDef.Builder<RecognizeMainlandTravelPermitRequest, RecognizeMainlandTravelPermitResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    RecognizeMainlandTravelPermitRequest.class,
+                    RecognizeMainlandTravelPermitResponse.class)
+                .withName("RecognizeMainlandTravelPermit")
+                .withUri("/v2/{project_id}/ocr/mainland-travel-permit")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<MainlandTravelPermitRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(MainlandTravelPermitRequestBody.class),
+            f -> f.withMarshaller(RecognizeMainlandTravelPermitRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

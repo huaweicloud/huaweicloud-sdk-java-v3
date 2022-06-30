@@ -157,7 +157,7 @@ public class CreateEdgeNodeCertsResponse extends SdkResponse {
     }
 
     /**
-     * 证书类型，包含： - system：创建节点时会默认创建一套系统证书； - application：应用证书； - device：设备证书；
+     * 证书类型，包含： - system：创建节点时会默认创建一套系统证书 - application：应用证书 - device：设备证书
      * @return type
      */
     public String getType() {

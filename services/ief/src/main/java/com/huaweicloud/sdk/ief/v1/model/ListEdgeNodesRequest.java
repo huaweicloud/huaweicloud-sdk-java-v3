@@ -1,14 +1,24 @@
 package com.huaweicloud.sdk.ief.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
  * Request Object
  */
 public class ListEdgeNodesRequest {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ief-instance-id")
+
+    private String iefInstanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
@@ -26,6 +36,11 @@ public class ListEdgeNodesRequest {
     private String offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sort")
+
+    private String sort;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "device_id")
 
     private String deviceId;
@@ -40,15 +55,133 @@ public class ListEdgeNodesRequest {
 
     private String appName;
 
+    /**
+     * 按边缘节点状态查找，节点状态可选项： - RUNNING：运行中 - FAIL：故障 - UPGRADING：升级中 - STOPPED：已停用 - UNCONNECTED：未纳管
+     */
+    public static final class StateEnum {
+
+        /**
+         * Enum RUNNING for value: "RUNNING"
+         */
+        public static final StateEnum RUNNING = new StateEnum("RUNNING");
+
+        /**
+         * Enum FAIL for value: "FAIL"
+         */
+        public static final StateEnum FAIL = new StateEnum("FAIL");
+
+        /**
+         * Enum FREEZE for value: "FREEZE"
+         */
+        public static final StateEnum FREEZE = new StateEnum("FREEZE");
+
+        /**
+         * Enum UPGRADING for value: "UPGRADING"
+         */
+        public static final StateEnum UPGRADING = new StateEnum("UPGRADING");
+
+        /**
+         * Enum STOPPED for value: "STOPPED"
+         */
+        public static final StateEnum STOPPED = new StateEnum("STOPPED");
+
+        /**
+         * Enum UNCONNECTED for value: "UNCONNECTED"
+         */
+        public static final StateEnum UNCONNECTED = new StateEnum("UNCONNECTED");
+
+        private static final Map<String, StateEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StateEnum> createStaticFields() {
+            Map<String, StateEnum> map = new HashMap<>();
+            map.put("RUNNING", RUNNING);
+            map.put("FAIL", FAIL);
+            map.put("FREEZE", FREEZE);
+            map.put("UPGRADING", UPGRADING);
+            map.put("STOPPED", STOPPED);
+            map.put("UNCONNECTED", UNCONNECTED);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        StateEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static StateEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            StateEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new StateEnum(value);
+            }
+            return result;
+        }
+
+        public static StateEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            StateEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof StateEnum) {
+                return this.value.equals(((StateEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "state")
+
+    private StateEnum state;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
     private String tags;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ief-instance-id")
+    public ListEdgeNodesRequest withIefInstanceId(String iefInstanceId) {
+        this.iefInstanceId = iefInstanceId;
+        return this;
+    }
 
-    private String iefInstanceId;
+    /**
+     * 铂金版实例ID，专业版实例为空值
+     * @return iefInstanceId
+     */
+    public String getIefInstanceId() {
+        return iefInstanceId;
+    }
+
+    public void setIefInstanceId(String iefInstanceId) {
+        this.iefInstanceId = iefInstanceId;
+    }
 
     public ListEdgeNodesRequest withName(String name) {
         this.name = name;
@@ -99,6 +232,23 @@ public class ListEdgeNodesRequest {
 
     public void setOffset(String offset) {
         this.offset = offset;
+    }
+
+    public ListEdgeNodesRequest withSort(String sort) {
+        this.sort = sort;
+        return this;
+    }
+
+    /**
+     * 显示的条目排列顺序，使用:分隔参考值和顺序， 如sort=created_at%3Adesc表示根据创建时间逆序排列
+     * @return sort
+     */
+    public String getSort() {
+        return sort;
+    }
+
+    public void setSort(String sort) {
+        this.sort = sort;
     }
 
     public ListEdgeNodesRequest withDeviceId(String deviceId) {
@@ -152,6 +302,23 @@ public class ListEdgeNodesRequest {
         this.appName = appName;
     }
 
+    public ListEdgeNodesRequest withState(StateEnum state) {
+        this.state = state;
+        return this;
+    }
+
+    /**
+     * 按边缘节点状态查找，节点状态可选项： - RUNNING：运行中 - FAIL：故障 - UPGRADING：升级中 - STOPPED：已停用 - UNCONNECTED：未纳管
+     * @return state
+     */
+    public StateEnum getState() {
+        return state;
+    }
+
+    public void setState(StateEnum state) {
+        this.state = state;
+    }
+
     public ListEdgeNodesRequest withTags(String tags) {
         this.tags = tags;
         return this;
@@ -169,23 +336,6 @@ public class ListEdgeNodesRequest {
         this.tags = tags;
     }
 
-    public ListEdgeNodesRequest withIefInstanceId(String iefInstanceId) {
-        this.iefInstanceId = iefInstanceId;
-        return this;
-    }
-
-    /**
-     * 铂金版实例ID，专业版实例为空值
-     * @return iefInstanceId
-     */
-    public String getIefInstanceId() {
-        return iefInstanceId;
-    }
-
-    public void setIefInstanceId(String iefInstanceId) {
-        this.iefInstanceId = iefInstanceId;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -195,33 +345,37 @@ public class ListEdgeNodesRequest {
             return false;
         }
         ListEdgeNodesRequest listEdgeNodesRequest = (ListEdgeNodesRequest) o;
-        return Objects.equals(this.name, listEdgeNodesRequest.name)
+        return Objects.equals(this.iefInstanceId, listEdgeNodesRequest.iefInstanceId)
+            && Objects.equals(this.name, listEdgeNodesRequest.name)
             && Objects.equals(this.limit, listEdgeNodesRequest.limit)
             && Objects.equals(this.offset, listEdgeNodesRequest.offset)
+            && Objects.equals(this.sort, listEdgeNodesRequest.sort)
             && Objects.equals(this.deviceId, listEdgeNodesRequest.deviceId)
             && Objects.equals(this.deviceName, listEdgeNodesRequest.deviceName)
             && Objects.equals(this.appName, listEdgeNodesRequest.appName)
-            && Objects.equals(this.tags, listEdgeNodesRequest.tags)
-            && Objects.equals(this.iefInstanceId, listEdgeNodesRequest.iefInstanceId);
+            && Objects.equals(this.state, listEdgeNodesRequest.state)
+            && Objects.equals(this.tags, listEdgeNodesRequest.tags);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, limit, offset, deviceId, deviceName, appName, tags, iefInstanceId);
+        return Objects.hash(iefInstanceId, name, limit, offset, sort, deviceId, deviceName, appName, state, tags);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListEdgeNodesRequest {\n");
+        sb.append("    iefInstanceId: ").append(toIndentedString(iefInstanceId)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    sort: ").append(toIndentedString(sort)).append("\n");
         sb.append("    deviceId: ").append(toIndentedString(deviceId)).append("\n");
         sb.append("    deviceName: ").append(toIndentedString(deviceName)).append("\n");
         sb.append("    appName: ").append(toIndentedString(appName)).append("\n");
+        sb.append("    state: ").append(toIndentedString(state)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
-        sb.append("    iefInstanceId: ").append(toIndentedString(iefInstanceId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

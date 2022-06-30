@@ -93,7 +93,7 @@ public class PodAffinityTerm {
     }
 
     /**
-     * 拓扑标签。 先圈定topologyKey指定的范围，然后再选择labelSelector定义的内容，即亲和调度只会在有topologyKey指定的标签节点上调度。
+     * 拓扑标签。先圈定topologyKey指定的范围，然后再选择labelSelector定义的内容，即亲和调度只会在有topologyKey指定的标签节点上调度。
      * @return topologyKey
      */
     public String getTopologyKey() {

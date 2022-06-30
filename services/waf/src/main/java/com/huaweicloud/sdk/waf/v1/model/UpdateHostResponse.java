@@ -396,6 +396,26 @@ public class UpdateHostResponse extends SdkResponse {
 
     private String description;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "http2_enable")
+
+    private Boolean http2Enable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ipv6_enable")
+
+    private Boolean ipv6Enable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "lb_algorithm")
+
+    private String lbAlgorithm;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "timeout_config")
+
+    private TimeoutConfig timeoutConfig;
+
     public UpdateHostResponse withId(String id) {
         this.id = id;
         return this;
@@ -804,6 +824,83 @@ public class UpdateHostResponse extends SdkResponse {
         this.description = description;
     }
 
+    public UpdateHostResponse withHttp2Enable(Boolean http2Enable) {
+        this.http2Enable = http2Enable;
+        return this;
+    }
+
+    /**
+     * 是否使用HTTP2
+     * @return http2Enable
+     */
+    public Boolean getHttp2Enable() {
+        return http2Enable;
+    }
+
+    public void setHttp2Enable(Boolean http2Enable) {
+        this.http2Enable = http2Enable;
+    }
+
+    public UpdateHostResponse withIpv6Enable(Boolean ipv6Enable) {
+        this.ipv6Enable = ipv6Enable;
+        return this;
+    }
+
+    /**
+     * 是否开启IPv6防护
+     * @return ipv6Enable
+     */
+    public Boolean getIpv6Enable() {
+        return ipv6Enable;
+    }
+
+    public void setIpv6Enable(Boolean ipv6Enable) {
+        this.ipv6Enable = ipv6Enable;
+    }
+
+    public UpdateHostResponse withLbAlgorithm(String lbAlgorithm) {
+        this.lbAlgorithm = lbAlgorithm;
+        return this;
+    }
+
+    /**
+     * 负载均衡算法
+     * @return lbAlgorithm
+     */
+    public String getLbAlgorithm() {
+        return lbAlgorithm;
+    }
+
+    public void setLbAlgorithm(String lbAlgorithm) {
+        this.lbAlgorithm = lbAlgorithm;
+    }
+
+    public UpdateHostResponse withTimeoutConfig(TimeoutConfig timeoutConfig) {
+        this.timeoutConfig = timeoutConfig;
+        return this;
+    }
+
+    public UpdateHostResponse withTimeoutConfig(Consumer<TimeoutConfig> timeoutConfigSetter) {
+        if (this.timeoutConfig == null) {
+            this.timeoutConfig = new TimeoutConfig();
+            timeoutConfigSetter.accept(this.timeoutConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get timeoutConfig
+     * @return timeoutConfig
+     */
+    public TimeoutConfig getTimeoutConfig() {
+        return timeoutConfig;
+    }
+
+    public void setTimeoutConfig(TimeoutConfig timeoutConfig) {
+        this.timeoutConfig = timeoutConfig;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -834,7 +931,11 @@ public class UpdateHostResponse extends SdkResponse {
             && Objects.equals(this.webTag, updateHostResponse.webTag)
             && Objects.equals(this.flag, updateHostResponse.flag)
             && Objects.equals(this.exclusiveIp, updateHostResponse.exclusiveIp)
-            && Objects.equals(this.description, updateHostResponse.description);
+            && Objects.equals(this.description, updateHostResponse.description)
+            && Objects.equals(this.http2Enable, updateHostResponse.http2Enable)
+            && Objects.equals(this.ipv6Enable, updateHostResponse.ipv6Enable)
+            && Objects.equals(this.lbAlgorithm, updateHostResponse.lbAlgorithm)
+            && Objects.equals(this.timeoutConfig, updateHostResponse.timeoutConfig);
     }
 
     @Override
@@ -860,7 +961,11 @@ public class UpdateHostResponse extends SdkResponse {
             webTag,
             flag,
             exclusiveIp,
-            description);
+            description,
+            http2Enable,
+            ipv6Enable,
+            lbAlgorithm,
+            timeoutConfig);
     }
 
     @Override
@@ -889,6 +994,10 @@ public class UpdateHostResponse extends SdkResponse {
         sb.append("    flag: ").append(toIndentedString(flag)).append("\n");
         sb.append("    exclusiveIp: ").append(toIndentedString(exclusiveIp)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    http2Enable: ").append(toIndentedString(http2Enable)).append("\n");
+        sb.append("    ipv6Enable: ").append(toIndentedString(ipv6Enable)).append("\n");
+        sb.append("    lbAlgorithm: ").append(toIndentedString(lbAlgorithm)).append("\n");
+        sb.append("    timeoutConfig: ").append(toIndentedString(timeoutConfig)).append("\n");
         sb.append("}");
         return sb.toString();
     }

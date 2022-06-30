@@ -79,6 +79,11 @@ public class ShowHostResponse extends SdkResponse {
 
     private Boolean exclusiveIp;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "timeout_config")
+
+    private TimeoutConfig timeoutConfig;
+
     public ShowHostResponse withId(String id) {
         this.id = id;
         return this;
@@ -316,6 +321,32 @@ public class ShowHostResponse extends SdkResponse {
         this.exclusiveIp = exclusiveIp;
     }
 
+    public ShowHostResponse withTimeoutConfig(TimeoutConfig timeoutConfig) {
+        this.timeoutConfig = timeoutConfig;
+        return this;
+    }
+
+    public ShowHostResponse withTimeoutConfig(Consumer<TimeoutConfig> timeoutConfigSetter) {
+        if (this.timeoutConfig == null) {
+            this.timeoutConfig = new TimeoutConfig();
+            timeoutConfigSetter.accept(this.timeoutConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get timeoutConfig
+     * @return timeoutConfig
+     */
+    public TimeoutConfig getTimeoutConfig() {
+        return timeoutConfig;
+    }
+
+    public void setTimeoutConfig(TimeoutConfig timeoutConfig) {
+        this.timeoutConfig = timeoutConfig;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -336,7 +367,8 @@ public class ShowHostResponse extends SdkResponse {
             && Objects.equals(this.server, showHostResponse.server)
             && Objects.equals(this.proxy, showHostResponse.proxy)
             && Objects.equals(this.timestamp, showHostResponse.timestamp)
-            && Objects.equals(this.exclusiveIp, showHostResponse.exclusiveIp);
+            && Objects.equals(this.exclusiveIp, showHostResponse.exclusiveIp)
+            && Objects.equals(this.timeoutConfig, showHostResponse.timeoutConfig);
     }
 
     @Override
@@ -353,7 +385,8 @@ public class ShowHostResponse extends SdkResponse {
             server,
             proxy,
             timestamp,
-            exclusiveIp);
+            exclusiveIp,
+            timeoutConfig);
     }
 
     @Override
@@ -373,6 +406,7 @@ public class ShowHostResponse extends SdkResponse {
         sb.append("    proxy: ").append(toIndentedString(proxy)).append("\n");
         sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
         sb.append("    exclusiveIp: ").append(toIndentedString(exclusiveIp)).append("\n");
+        sb.append("    timeoutConfig: ").append(toIndentedString(timeoutConfig)).append("\n");
         sb.append("}");
         return sb.toString();
     }

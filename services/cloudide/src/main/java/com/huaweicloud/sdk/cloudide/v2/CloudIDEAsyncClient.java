@@ -211,6 +211,38 @@ public class CloudIDEAsyncClient {
     }
 
     /**
+     * 上传插件
+     *
+     * 上传插件
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UploadExtensionFileRequest 请求对象
+     * @return CompletableFuture<UploadExtensionFileResponse>
+     */
+    public CompletableFuture<UploadExtensionFileResponse> uploadExtensionFileAsync(UploadExtensionFileRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudIDEMeta.uploadExtensionFile);
+    }
+
+    /**
+     * 上传插件
+     *
+     * 上传插件
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UploadExtensionFileRequest 请求对象
+     * @return AsyncInvoker<UploadExtensionFileRequest, UploadExtensionFileResponse>
+     */
+    public AsyncInvoker<UploadExtensionFileRequest, UploadExtensionFileResponse> uploadExtensionFileAsyncInvoker(
+        UploadExtensionFileRequest request) {
+        return new AsyncInvoker<UploadExtensionFileRequest, UploadExtensionFileResponse>(request,
+            CloudIDEMeta.uploadExtensionFile, hcClient);
+    }
+
+    /**
      * 查询用户是否有权限访问某个IDE实例
      *
      * 查询用户是否有权限访问某个IDE实例

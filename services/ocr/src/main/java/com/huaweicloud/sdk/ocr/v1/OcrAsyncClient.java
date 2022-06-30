@@ -175,6 +175,39 @@ public class OcrAsyncClient {
     }
 
     /**
+     * 柬文身份证识别
+     *
+     * 识别柬文身份证图片中的文字内容，并将识别的结构化结果返回给用户。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param RecognizeCambodianIdCardRequest 请求对象
+     * @return CompletableFuture<RecognizeCambodianIdCardResponse>
+     */
+    public CompletableFuture<RecognizeCambodianIdCardResponse> recognizeCambodianIdCardAsync(
+        RecognizeCambodianIdCardRequest request) {
+        return hcClient.asyncInvokeHttp(request, OcrMeta.recognizeCambodianIdCard);
+    }
+
+    /**
+     * 柬文身份证识别
+     *
+     * 识别柬文身份证图片中的文字内容，并将识别的结构化结果返回给用户。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param RecognizeCambodianIdCardRequest 请求对象
+     * @return AsyncInvoker<RecognizeCambodianIdCardRequest, RecognizeCambodianIdCardResponse>
+     */
+    public AsyncInvoker<RecognizeCambodianIdCardRequest, RecognizeCambodianIdCardResponse> recognizeCambodianIdCardAsyncInvoker(
+        RecognizeCambodianIdCardRequest request) {
+        return new AsyncInvoker<RecognizeCambodianIdCardRequest, RecognizeCambodianIdCardResponse>(request,
+            OcrMeta.recognizeCambodianIdCard, hcClient);
+    }
+
+    /**
      * 智利身份证识别
      *
      * 识别智利身份证图片中的文字内容，并返回识别的结构化结果。
@@ -246,6 +279,39 @@ public class OcrAsyncClient {
         RecognizeDriverLicenseRequest request) {
         return new AsyncInvoker<RecognizeDriverLicenseRequest, RecognizeDriverLicenseResponse>(request,
             OcrMeta.recognizeDriverLicense, hcClient);
+    }
+
+    /**
+     * 往来港澳台通行证识别
+     *
+     * 识别往来港澳台证件图片中的文字内容，并将识别的结构化结果返回给用户。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param RecognizeExitEntryPermitRequest 请求对象
+     * @return CompletableFuture<RecognizeExitEntryPermitResponse>
+     */
+    public CompletableFuture<RecognizeExitEntryPermitResponse> recognizeExitEntryPermitAsync(
+        RecognizeExitEntryPermitRequest request) {
+        return hcClient.asyncInvokeHttp(request, OcrMeta.recognizeExitEntryPermit);
+    }
+
+    /**
+     * 往来港澳台通行证识别
+     *
+     * 识别往来港澳台证件图片中的文字内容，并将识别的结构化结果返回给用户。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param RecognizeExitEntryPermitRequest 请求对象
+     * @return AsyncInvoker<RecognizeExitEntryPermitRequest, RecognizeExitEntryPermitResponse>
+     */
+    public AsyncInvoker<RecognizeExitEntryPermitRequest, RecognizeExitEntryPermitResponse> recognizeExitEntryPermitAsyncInvoker(
+        RecognizeExitEntryPermitRequest request) {
+        return new AsyncInvoker<RecognizeExitEntryPermitRequest, RecognizeExitEntryPermitResponse>(request,
+            OcrMeta.recognizeExitEntryPermit, hcClient);
     }
 
     /**
@@ -451,6 +517,38 @@ public class OcrAsyncClient {
         RecognizeHealthCodeRequest request) {
         return new AsyncInvoker<RecognizeHealthCodeRequest, RecognizeHealthCodeResponse>(request,
             OcrMeta.recognizeHealthCode, hcClient);
+    }
+
+    /**
+     * 香港身份证识别
+     *
+     * 识别香港身份证中的文字内容，并将识别的结果返回给用户。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param RecognizeHkIdCardRequest 请求对象
+     * @return CompletableFuture<RecognizeHkIdCardResponse>
+     */
+    public CompletableFuture<RecognizeHkIdCardResponse> recognizeHkIdCardAsync(RecognizeHkIdCardRequest request) {
+        return hcClient.asyncInvokeHttp(request, OcrMeta.recognizeHkIdCard);
+    }
+
+    /**
+     * 香港身份证识别
+     *
+     * 识别香港身份证中的文字内容，并将识别的结果返回给用户。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param RecognizeHkIdCardRequest 请求对象
+     * @return AsyncInvoker<RecognizeHkIdCardRequest, RecognizeHkIdCardResponse>
+     */
+    public AsyncInvoker<RecognizeHkIdCardRequest, RecognizeHkIdCardResponse> recognizeHkIdCardAsyncInvoker(
+        RecognizeHkIdCardRequest request) {
+        return new AsyncInvoker<RecognizeHkIdCardRequest, RecognizeHkIdCardResponse>(request, OcrMeta.recognizeHkIdCard,
+            hcClient);
     }
 
     /**
@@ -660,6 +758,39 @@ public class OcrAsyncClient {
         RecognizeLicensePlateRequest request) {
         return new AsyncInvoker<RecognizeLicensePlateRequest, RecognizeLicensePlateResponse>(request,
             OcrMeta.recognizeLicensePlate, hcClient);
+    }
+
+    /**
+     * 港澳台居民来往内地通行证识别
+     *
+     * 识别港澳居民来往内地通行证上的文字内容，并将识别的结构化结果返回给用户。支持港澳居民来往内地通行证和台湾居民来往内地通行证两种卡证。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param RecognizeMainlandTravelPermitRequest 请求对象
+     * @return CompletableFuture<RecognizeMainlandTravelPermitResponse>
+     */
+    public CompletableFuture<RecognizeMainlandTravelPermitResponse> recognizeMainlandTravelPermitAsync(
+        RecognizeMainlandTravelPermitRequest request) {
+        return hcClient.asyncInvokeHttp(request, OcrMeta.recognizeMainlandTravelPermit);
+    }
+
+    /**
+     * 港澳台居民来往内地通行证识别
+     *
+     * 识别港澳居民来往内地通行证上的文字内容，并将识别的结构化结果返回给用户。支持港澳居民来往内地通行证和台湾居民来往内地通行证两种卡证。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param RecognizeMainlandTravelPermitRequest 请求对象
+     * @return AsyncInvoker<RecognizeMainlandTravelPermitRequest, RecognizeMainlandTravelPermitResponse>
+     */
+    public AsyncInvoker<RecognizeMainlandTravelPermitRequest, RecognizeMainlandTravelPermitResponse> recognizeMainlandTravelPermitAsyncInvoker(
+        RecognizeMainlandTravelPermitRequest request) {
+        return new AsyncInvoker<RecognizeMainlandTravelPermitRequest, RecognizeMainlandTravelPermitResponse>(request,
+            OcrMeta.recognizeMainlandTravelPermit, hcClient);
     }
 
     /**

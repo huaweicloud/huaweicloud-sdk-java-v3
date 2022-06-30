@@ -1038,6 +1038,38 @@ public class ProjectManClient {
     }
 
     /**
+     * 创建项目的模块
+     *
+     * 查询项目的模块列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateProjectModuleRequest 请求对象
+     * @return CreateProjectModuleResponse
+     */
+    public CreateProjectModuleResponse createProjectModule(CreateProjectModuleRequest request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.createProjectModule);
+    }
+
+    /**
+     * 创建项目的模块
+     *
+     * 查询项目的模块列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateProjectModuleRequest 请求对象
+     * @return SyncInvoker<CreateProjectModuleRequest, CreateProjectModuleResponse>
+     */
+    public SyncInvoker<CreateProjectModuleRequest, CreateProjectModuleResponse> createProjectModuleInvoker(
+        CreateProjectModuleRequest request) {
+        return new SyncInvoker<CreateProjectModuleRequest, CreateProjectModuleResponse>(request,
+            ProjectManMeta.createProjectModule, hcClient);
+    }
+
+    /**
      * 细粒度权限用户创建工作项
      *
      * 拥有IAM细粒度权限（projectmanConfig:systemSettingField:set）且在devcloud项目中有创建工作项的权限的用户可以设置工作项的创建者
@@ -1130,6 +1162,38 @@ public class ProjectManClient {
         DeleteIterationV4Request request) {
         return new SyncInvoker<DeleteIterationV4Request, DeleteIterationV4Response>(request,
             ProjectManMeta.deleteIterationV4, hcClient);
+    }
+
+    /**
+     * 删除项目的模块
+     *
+     * 删除项目的模块
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteProjectModuleRequest 请求对象
+     * @return DeleteProjectModuleResponse
+     */
+    public DeleteProjectModuleResponse deleteProjectModule(DeleteProjectModuleRequest request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.deleteProjectModule);
+    }
+
+    /**
+     * 删除项目的模块
+     *
+     * 删除项目的模块
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteProjectModuleRequest 请求对象
+     * @return SyncInvoker<DeleteProjectModuleRequest, DeleteProjectModuleResponse>
+     */
+    public SyncInvoker<DeleteProjectModuleRequest, DeleteProjectModuleResponse> deleteProjectModuleInvoker(
+        DeleteProjectModuleRequest request) {
+        return new SyncInvoker<DeleteProjectModuleRequest, DeleteProjectModuleResponse>(request,
+            ProjectManMeta.deleteProjectModule, hcClient);
     }
 
     /**
@@ -1548,6 +1612,38 @@ public class ProjectManClient {
     }
 
     /**
+     * 查询项目的模块列表
+     *
+     * 查询项目的模块列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListProjectModulesRequest 请求对象
+     * @return ListProjectModulesResponse
+     */
+    public ListProjectModulesResponse listProjectModules(ListProjectModulesRequest request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.listProjectModules);
+    }
+
+    /**
+     * 查询项目的模块列表
+     *
+     * 查询项目的模块列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListProjectModulesRequest 请求对象
+     * @return SyncInvoker<ListProjectModulesRequest, ListProjectModulesResponse>
+     */
+    public SyncInvoker<ListProjectModulesRequest, ListProjectModulesResponse> listProjectModulesInvoker(
+        ListProjectModulesRequest request) {
+        return new SyncInvoker<ListProjectModulesRequest, ListProjectModulesResponse>(request,
+            ProjectManMeta.listProjectModules, hcClient);
+    }
+
+    /**
      * 按用户查询工时（多项目）
      *
      * 按用户查询工时（多项目）
@@ -1642,9 +1738,9 @@ public class ProjectManClient {
     }
 
     /**
-     * 查询Scrum的工作项流转配置
+     * 查询Scrum项目的工作项流转配置
      *
-     * 查询Scrum的工作项流转配置
+     * 查询Scrum项目的工作项流转配置
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1657,9 +1753,9 @@ public class ProjectManClient {
     }
 
     /**
-     * 查询Scrum的工作项流转配置
+     * 查询Scrum项目的工作项流转配置
      *
-     * 查询Scrum的工作项流转配置
+     * 查询Scrum项目的工作项流转配置
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1798,6 +1894,38 @@ public class ProjectManClient {
         UpdateIterationV4Request request) {
         return new SyncInvoker<UpdateIterationV4Request, UpdateIterationV4Response>(request,
             ProjectManMeta.updateIterationV4, hcClient);
+    }
+
+    /**
+     * 更新项目的模块
+     *
+     * 更新项目的模块
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateProjectModuleRequest 请求对象
+     * @return UpdateProjectModuleResponse
+     */
+    public UpdateProjectModuleResponse updateProjectModule(UpdateProjectModuleRequest request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.updateProjectModule);
+    }
+
+    /**
+     * 更新项目的模块
+     *
+     * 更新项目的模块
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateProjectModuleRequest 请求对象
+     * @return SyncInvoker<UpdateProjectModuleRequest, UpdateProjectModuleResponse>
+     */
+    public SyncInvoker<UpdateProjectModuleRequest, UpdateProjectModuleResponse> updateProjectModuleInvoker(
+        UpdateProjectModuleRequest request) {
+        return new SyncInvoker<UpdateProjectModuleRequest, UpdateProjectModuleResponse>(request,
+            ProjectManMeta.updateProjectModule, hcClient);
     }
 
     /**

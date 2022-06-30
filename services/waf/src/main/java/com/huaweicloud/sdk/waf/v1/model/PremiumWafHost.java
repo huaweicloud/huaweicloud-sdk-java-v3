@@ -302,6 +302,11 @@ public class PremiumWafHost {
 
     private TrafficMark trafficMark;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "timeout_config")
+
+    private TimeoutConfig timeoutConfig;
+
     public PremiumWafHost withId(String id) {
         this.id = id;
         return this;
@@ -692,6 +697,32 @@ public class PremiumWafHost {
         this.trafficMark = trafficMark;
     }
 
+    public PremiumWafHost withTimeoutConfig(TimeoutConfig timeoutConfig) {
+        this.timeoutConfig = timeoutConfig;
+        return this;
+    }
+
+    public PremiumWafHost withTimeoutConfig(Consumer<TimeoutConfig> timeoutConfigSetter) {
+        if (this.timeoutConfig == null) {
+            this.timeoutConfig = new TimeoutConfig();
+            timeoutConfigSetter.accept(this.timeoutConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get timeoutConfig
+     * @return timeoutConfig
+     */
+    public TimeoutConfig getTimeoutConfig() {
+        return timeoutConfig;
+    }
+
+    public void setTimeoutConfig(TimeoutConfig timeoutConfig) {
+        this.timeoutConfig = timeoutConfig;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -717,7 +748,8 @@ public class PremiumWafHost {
             && Objects.equals(this.timestamp, premiumWafHost.timestamp)
             && Objects.equals(this.blockPage, premiumWafHost.blockPage)
             && Objects.equals(this.extend, premiumWafHost.extend)
-            && Objects.equals(this.trafficMark, premiumWafHost.trafficMark);
+            && Objects.equals(this.trafficMark, premiumWafHost.trafficMark)
+            && Objects.equals(this.timeoutConfig, premiumWafHost.timeoutConfig);
     }
 
     @Override
@@ -741,7 +773,8 @@ public class PremiumWafHost {
             timestamp,
             blockPage,
             extend,
-            trafficMark);
+            trafficMark,
+            timeoutConfig);
     }
 
     @Override
@@ -768,6 +801,7 @@ public class PremiumWafHost {
         sb.append("    blockPage: ").append(toIndentedString(blockPage)).append("\n");
         sb.append("    extend: ").append(toIndentedString(extend)).append("\n");
         sb.append("    trafficMark: ").append(toIndentedString(trafficMark)).append("\n");
+        sb.append("    timeoutConfig: ").append(toIndentedString(timeoutConfig)).append("\n");
         sb.append("}");
         return sb.toString();
     }
