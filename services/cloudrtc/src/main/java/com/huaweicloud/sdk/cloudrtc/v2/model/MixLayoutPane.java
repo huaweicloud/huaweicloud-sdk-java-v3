@@ -214,6 +214,88 @@ public class MixLayoutPane {
 
     private CropModeEnum cropMode;
 
+    /**
+     * 填充策略，仅限屏幕共享模板(包括screen_share_right、screen_share_left)场景下填写本字段，支持两种模式：   - FIXED_USER ：固定用户填充。   - SHARED_SCREEN ：共享屏幕填充。 
+     */
+    public static final class FillingPolicyEnum {
+
+        /**
+         * Enum FIXED_USER for value: "FIXED_USER"
+         */
+        public static final FillingPolicyEnum FIXED_USER = new FillingPolicyEnum("FIXED_USER");
+
+        /**
+         * Enum SHARED_SCREEN for value: "SHARED_SCREEN"
+         */
+        public static final FillingPolicyEnum SHARED_SCREEN = new FillingPolicyEnum("SHARED_SCREEN");
+
+        private static final Map<String, FillingPolicyEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, FillingPolicyEnum> createStaticFields() {
+            Map<String, FillingPolicyEnum> map = new HashMap<>();
+            map.put("FIXED_USER", FIXED_USER);
+            map.put("SHARED_SCREEN", SHARED_SCREEN);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        FillingPolicyEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static FillingPolicyEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            FillingPolicyEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new FillingPolicyEnum(value);
+            }
+            return result;
+        }
+
+        public static FillingPolicyEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            FillingPolicyEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof FillingPolicyEnum) {
+                return this.value.equals(((FillingPolicyEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "filling_policy")
+
+    private FillingPolicyEnum fillingPolicy;
+
     public MixLayoutPane withId(Integer id) {
         this.id = id;
         return this;
@@ -379,6 +461,23 @@ public class MixLayoutPane {
         this.cropMode = cropMode;
     }
 
+    public MixLayoutPane withFillingPolicy(FillingPolicyEnum fillingPolicy) {
+        this.fillingPolicy = fillingPolicy;
+        return this;
+    }
+
+    /**
+     * 填充策略，仅限屏幕共享模板(包括screen_share_right、screen_share_left)场景下填写本字段，支持两种模式：   - FIXED_USER ：固定用户填充。   - SHARED_SCREEN ：共享屏幕填充。 
+     * @return fillingPolicy
+     */
+    public FillingPolicyEnum getFillingPolicy() {
+        return fillingPolicy;
+    }
+
+    public void setFillingPolicy(FillingPolicyEnum fillingPolicy) {
+        this.fillingPolicy = fillingPolicy;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -392,12 +491,13 @@ public class MixLayoutPane {
             && Objects.equals(this.videoType, mixLayoutPane.videoType) && Objects.equals(this.x, mixLayoutPane.x)
             && Objects.equals(this.y, mixLayoutPane.y) && Objects.equals(this.width, mixLayoutPane.width)
             && Objects.equals(this.height, mixLayoutPane.height) && Objects.equals(this.zorder, mixLayoutPane.zorder)
-            && Objects.equals(this.cropMode, mixLayoutPane.cropMode);
+            && Objects.equals(this.cropMode, mixLayoutPane.cropMode)
+            && Objects.equals(this.fillingPolicy, mixLayoutPane.fillingPolicy);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, userId, videoType, x, y, width, height, zorder, cropMode);
+        return Objects.hash(id, userId, videoType, x, y, width, height, zorder, cropMode, fillingPolicy);
     }
 
     @Override
@@ -413,6 +513,7 @@ public class MixLayoutPane {
         sb.append("    height: ").append(toIndentedString(height)).append("\n");
         sb.append("    zorder: ").append(toIndentedString(zorder)).append("\n");
         sb.append("    cropMode: ").append(toIndentedString(cropMode)).append("\n");
+        sb.append("    fillingPolicy: ").append(toIndentedString(fillingPolicy)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -24,24 +24,23 @@ package com.huaweicloud.sdk.core.region;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
+import com.huaweicloud.sdk.core.Constants;
 import com.huaweicloud.sdk.core.exception.SdkException;
+import com.huaweicloud.sdk.core.utils.PathUtils;
 import com.huaweicloud.sdk.core.utils.StringUtils;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Objects;
 
 public class ProfileRegionCache {
     private static final ProfileRegionCache INSTANCE = createInstance();
-
-    private static final String DEFAULT_REGIONS_FILE_DIR_NAME = ".huaweicloud";
 
     private static final String DEFAULT_REGIONS_FILE_NAME = "regions.yaml";
 
@@ -60,7 +59,7 @@ public class ProfileRegionCache {
     private static ProfileRegionCache createInstance() {
         Map<String, Region> result = new LinkedHashMap<>();
         String regionsFilePath = getRegionsFilePath();
-        if (!isPathExist(regionsFilePath)) {
+        if (Objects.isNull(regionsFilePath) || !PathUtils.isPathExist(regionsFilePath)) {
             return new ProfileRegionCache(Collections.unmodifiableMap(result));
         }
 
@@ -70,7 +69,7 @@ public class ProfileRegionCache {
             map = mapper.readValue(new File(regionsFilePath), new TypeReference<Map<String, List<Region>>>() {
             });
         } catch (IOException e) {
-            throw new SdkException("failed to resolve file: " + regionsFilePath, e);
+            throw new SdkException(String.format("failed to resolve file '%s'", regionsFilePath), e);
         }
 
         Iterator<Map.Entry<String, List<Region>>> iterator = map.entrySet().iterator();
@@ -85,11 +84,12 @@ public class ProfileRegionCache {
 
     private static String getRegionsFilePath() {
         String regionsFile = System.getenv(REGIONS_FILE_ENV);
-        return StringUtils.isEmpty(regionsFile) ? System.getProperty("user.home") + File.separator
-                + DEFAULT_REGIONS_FILE_DIR_NAME + File.separator + DEFAULT_REGIONS_FILE_NAME : regionsFile;
-    }
+        if (!StringUtils.isEmpty(regionsFile)) {
+            return regionsFile;
+        }
 
-    private static boolean isPathExist(String path) {
-        return Files.exists(Paths.get(path));
+        String userHomePath = PathUtils.getUserHomePath();
+        return StringUtils.isEmpty(userHomePath) ? null : userHomePath + File.separator
+            + Constants.DEFAULT_PROFILE_DIR_NAME + File.separator + DEFAULT_REGIONS_FILE_NAME;
     }
 }

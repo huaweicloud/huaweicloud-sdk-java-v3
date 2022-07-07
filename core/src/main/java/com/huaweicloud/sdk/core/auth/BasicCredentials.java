@@ -26,7 +26,9 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.exception.SdkException;
 import com.huaweicloud.sdk.core.http.HttpClient;
 import com.huaweicloud.sdk.core.http.HttpRequest;
+import com.huaweicloud.sdk.core.internal.Iam;
 import com.huaweicloud.sdk.core.internal.InnerIamMeta;
+import com.huaweicloud.sdk.core.internal.model.CreateTokenWithIdTokenResponse;
 import com.huaweicloud.sdk.core.internal.model.KeystoneCreateProjectRequest;
 import com.huaweicloud.sdk.core.internal.model.KeystoneCreateProjectResponse;
 import com.huaweicloud.sdk.core.internal.model.KeystoneListAuthDomainsRequest;
@@ -37,6 +39,8 @@ import com.huaweicloud.sdk.core.internal.model.KeystoneListRegionsRequest;
 import com.huaweicloud.sdk.core.internal.model.KeystoneListRegionsResponse;
 import com.huaweicloud.sdk.core.utils.StringUtils;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -79,6 +83,17 @@ public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
 
     @Override
     public CompletableFuture<ICredential> processAuthParams(HcClient hcClient, String regionId) {
+        if (!StringUtils.isEmpty(getIdpId()) || !StringUtils.isEmpty(getIdTokenFile())) {
+            if (StringUtils.isEmpty(getIdpId())) {
+                throw new SdkException("idpId is required when using idpId&idTokenFile");
+            } else if (StringUtils.isEmpty(getIdTokenFile())) {
+                throw new SdkException("idTokenFile is required when using idpId&idTokenFile");
+            }
+            if (StringUtils.isEmpty(projectId)) {
+                throw new SdkException("projectId is required when using idpId&idTokenFile");
+            }
+        }
+
         if (!StringUtils.isEmpty(projectId)) {
             return CompletableFuture.completedFuture(this);
         }
@@ -190,12 +205,19 @@ public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
     public HttpRequest syncProcessAuthRequest(HttpRequest httpRequest, HttpClient httpClient) {
         HttpRequest.HttpRequestBuilder builder = httpRequest.builder().addAutoFilledPathParam(getPathParams());
 
-        if (needUpdate()) {
-            updateCredential(httpClient);
+        if (needUpdateAuthToken()) {
+            updateAuthTokenByIdToken(httpClient);
+        } else if (needUpdateSecurityToken()) {
+            updateSecurityTokenFromMetadata();
         }
 
         if (Objects.nonNull(getProjectId())) {
             builder.addHeader(Constants.X_PROJECT_ID, projectId);
+        }
+
+        if (Objects.nonNull(authToken)) {
+            builder.addHeader(Constants.X_AUTH_TOKEN, authToken);
+            return builder.build();
         }
 
         if (Objects.nonNull(getSecurityToken())) {
@@ -227,11 +249,28 @@ public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
     }
 
     @Override
+    protected void updateAuthTokenByIdToken(HttpClient httpClient) {
+        String iamEndpoint = StringUtils.isEmpty(getIamEndpoint()) ? Constants.DEFAULT_IAM_ENDPOINT : getIamEndpoint();
+        HttpRequest httpRequest = Iam.getProjectTokenWithIdTokenRequest(
+                iamEndpoint, getIdpId(), getIdToken(), projectId);
+        CreateTokenWithIdTokenResponse response = Iam.createTokenWithIdToken(httpClient, httpRequest);
+        authToken = response.getSubjectToken();
+        try {
+            String expiredTime = response.getToken().getExpiresAt().replace("000Z", "Z");
+            expiredAt = new SimpleDateFormat(Iam.EXPIRED_DATE_FORMAT).parse(expiredTime).getTime();
+        } catch (ParseException e) {
+            throw new SdkException(e);
+        }
+    }
+
+    @Override
     public BasicCredentials deepClone() {
         BasicCredentials credentials = new BasicCredentials()
                 .withProjectId(projectId)
                 .withAk(getAk())
                 .withSk(getSk())
+                .withIdpId(getIdpId())
+                .withIdTokenFile(getIdTokenFile())
                 .withDerivedPredicate(getDerivedPredicate())
                 .withIamEndpoint(getIamEndpoint())
                 .withSecurityToken(getSecurityToken());

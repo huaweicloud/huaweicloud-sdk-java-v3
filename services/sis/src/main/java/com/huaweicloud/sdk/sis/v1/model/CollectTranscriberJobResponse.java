@@ -39,6 +39,11 @@ public class CollectTranscriberJobResponse extends SdkResponse {
 
     private List<Segment> segments = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "audio_duration")
+
+    private Integer audioDuration;
+
     public CollectTranscriberJobResponse withStatus(String status) {
         this.status = status;
         return this;
@@ -140,6 +145,23 @@ public class CollectTranscriberJobResponse extends SdkResponse {
         this.segments = segments;
     }
 
+    public CollectTranscriberJobResponse withAudioDuration(Integer audioDuration) {
+        this.audioDuration = audioDuration;
+        return this;
+    }
+
+    /**
+     * 音频时长，单位ms
+     * @return audioDuration
+     */
+    public Integer getAudioDuration() {
+        return audioDuration;
+    }
+
+    public void setAudioDuration(Integer audioDuration) {
+        this.audioDuration = audioDuration;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -153,12 +175,13 @@ public class CollectTranscriberJobResponse extends SdkResponse {
             && Objects.equals(this.createTime, collectTranscriberJobResponse.createTime)
             && Objects.equals(this.startTime, collectTranscriberJobResponse.startTime)
             && Objects.equals(this.finishTime, collectTranscriberJobResponse.finishTime)
-            && Objects.equals(this.segments, collectTranscriberJobResponse.segments);
+            && Objects.equals(this.segments, collectTranscriberJobResponse.segments)
+            && Objects.equals(this.audioDuration, collectTranscriberJobResponse.audioDuration);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(status, createTime, startTime, finishTime, segments);
+        return Objects.hash(status, createTime, startTime, finishTime, segments, audioDuration);
     }
 
     @Override
@@ -170,6 +193,7 @@ public class CollectTranscriberJobResponse extends SdkResponse {
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    finishTime: ").append(toIndentedString(finishTime)).append("\n");
         sb.append("    segments: ").append(toIndentedString(segments)).append("\n");
+        sb.append("    audioDuration: ").append(toIndentedString(audioDuration)).append("\n");
         sb.append("}");
         return sb.toString();
     }

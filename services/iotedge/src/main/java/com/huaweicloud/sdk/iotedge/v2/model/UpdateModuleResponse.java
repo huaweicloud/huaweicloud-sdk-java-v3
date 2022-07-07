@@ -41,7 +41,7 @@ public class UpdateModuleResponse extends SdkResponse {
     
     private String appVersion;
     /**
-     * 模块状态
+     * 模块运行状态
      */
     public static final class StateEnum {
 
@@ -81,6 +81,16 @@ public class UpdateModuleResponse extends SdkResponse {
          */
         public static final StateEnum UNKNOWN = new StateEnum("UNKNOWN");
         
+        /**
+         * Enum DELETE_SUCCESS for value: "DELETE_SUCCESS"
+         */
+        public static final StateEnum DELETE_SUCCESS = new StateEnum("DELETE_SUCCESS");
+        
+        /**
+         * Enum STOPPED for value: "STOPPED"
+         */
+        public static final StateEnum STOPPED = new StateEnum("STOPPED");
+        
 
         private static final Map<String, StateEnum> STATIC_FIELDS = createStaticFields();
 
@@ -93,6 +103,8 @@ public class UpdateModuleResponse extends SdkResponse {
             map.put("FAILED", FAILED);
             map.put("SUCCEEDED", SUCCEEDED);
             map.put("UNKNOWN", UNKNOWN);
+            map.put("DELETE_SUCCESS", DELETE_SUCCESS);
+            map.put("STOPPED", STOPPED);
             return Collections.unmodifiableMap(map);
         }
 
@@ -155,6 +167,13 @@ public class UpdateModuleResponse extends SdkResponse {
     
     
     private StateEnum state;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="control_status")
+    
+    
+    private String controlStatus;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -302,6 +321,21 @@ public class UpdateModuleResponse extends SdkResponse {
          */
         public static final FunctionTypeEnum ON_PREMISE_INTEGRATION = new FunctionTypeEnum("ON_PREMISE_INTEGRATION");
         
+        /**
+         * Enum GATEWAY_MANAGER for value: "GATEWAY_MANAGER"
+         */
+        public static final FunctionTypeEnum GATEWAY_MANAGER = new FunctionTypeEnum("GATEWAY_MANAGER");
+        
+        /**
+         * Enum COMPOSITE_APPLICATION for value: "COMPOSITE_APPLICATION"
+         */
+        public static final FunctionTypeEnum COMPOSITE_APPLICATION = new FunctionTypeEnum("COMPOSITE_APPLICATION");
+        
+        /**
+         * Enum DATA_COLLECTION for value: "DATA_COLLECTION"
+         */
+        public static final FunctionTypeEnum DATA_COLLECTION = new FunctionTypeEnum("DATA_COLLECTION");
+        
 
         private static final Map<String, FunctionTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -310,6 +344,9 @@ public class UpdateModuleResponse extends SdkResponse {
             map.put("DATA_PROCESSING", DATA_PROCESSING);
             map.put("PROTOCOL_PARSING", PROTOCOL_PARSING);
             map.put("ON_PREMISE_INTEGRATION", ON_PREMISE_INTEGRATION);
+            map.put("GATEWAY_MANAGER", GATEWAY_MANAGER);
+            map.put("COMPOSITE_APPLICATION", COMPOSITE_APPLICATION);
+            map.put("DATA_COLLECTION", DATA_COLLECTION);
             return Collections.unmodifiableMap(map);
         }
 
@@ -426,7 +463,7 @@ public class UpdateModuleResponse extends SdkResponse {
 
 
     /**
-     * 模块状态
+     * 模块运行状态
      * @return state
      */
     public StateEnum getState() {
@@ -435,6 +472,28 @@ public class UpdateModuleResponse extends SdkResponse {
 
     public void setState(StateEnum state) {
         this.state = state;
+    }
+
+    
+
+    public UpdateModuleResponse withControlStatus(String controlStatus) {
+        this.controlStatus = controlStatus;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 模块管控状态
+     * @return controlStatus
+     */
+    public String getControlStatus() {
+        return controlStatus;
+    }
+
+    public void setControlStatus(String controlStatus) {
+        this.controlStatus = controlStatus;
     }
 
     
@@ -605,6 +664,7 @@ public class UpdateModuleResponse extends SdkResponse {
         return Objects.equals(this.edgeAppId, updateModuleResponse.edgeAppId) &&
             Objects.equals(this.appVersion, updateModuleResponse.appVersion) &&
             Objects.equals(this.state, updateModuleResponse.state) &&
+            Objects.equals(this.controlStatus, updateModuleResponse.controlStatus) &&
             Objects.equals(this.nodeId, updateModuleResponse.nodeId) &&
             Objects.equals(this.moduleName, updateModuleResponse.moduleName) &&
             Objects.equals(this.moduleId, updateModuleResponse.moduleId) &&
@@ -615,7 +675,7 @@ public class UpdateModuleResponse extends SdkResponse {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(edgeAppId, appVersion, state, nodeId, moduleName, moduleId, createTime, updateTime, appType, functionType);
+        return Objects.hash(edgeAppId, appVersion, state, controlStatus, nodeId, moduleName, moduleId, createTime, updateTime, appType, functionType);
     }
     @Override
     public String toString() {
@@ -624,6 +684,7 @@ public class UpdateModuleResponse extends SdkResponse {
         sb.append("    edgeAppId: ").append(toIndentedString(edgeAppId)).append("\n");
         sb.append("    appVersion: ").append(toIndentedString(appVersion)).append("\n");
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
+        sb.append("    controlStatus: ").append(toIndentedString(controlStatus)).append("\n");
         sb.append("    nodeId: ").append(toIndentedString(nodeId)).append("\n");
         sb.append("    moduleName: ").append(toIndentedString(moduleName)).append("\n");
         sb.append("    moduleId: ").append(toIndentedString(moduleId)).append("\n");

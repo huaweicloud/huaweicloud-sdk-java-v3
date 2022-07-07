@@ -22,7 +22,7 @@ public class StartVpecpResponse extends SdkResponse {
     }
 
     /**
-     * 操作行为。createVpcepservice表示已开启终端节点。
+     * 操作行为。固定为：createVpcepservice，表示已开启终端节点。
      * @return action
      */
     public String getAction() {

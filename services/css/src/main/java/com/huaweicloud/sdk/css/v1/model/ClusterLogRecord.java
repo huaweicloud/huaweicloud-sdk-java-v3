@@ -61,7 +61,7 @@ public class ClusterLogRecord {
     }
 
     /**
-     * 日志任务ID，通过系统uuid生成。
+     * 日志任务ID，通过系统UUID生成。
      * @return id
      */
     public String getId() {
@@ -95,7 +95,7 @@ public class ClusterLogRecord {
     }
 
     /**
-     * 创建时间。
+     * 创建时间。格式：Unix时间戳格式。
      * @return createAt
      */
     public String getCreateAt() {
@@ -112,7 +112,7 @@ public class ClusterLogRecord {
     }
 
     /**
-     * 备份路径。
+     * 日志在OBS桶中的备份路径。
      * @return logPath
      */
     public String getLogPath() {
@@ -129,7 +129,7 @@ public class ClusterLogRecord {
     }
 
     /**
-     * 任务状态。
+     * 任务状态。 - RUNNING: 备份行中。 - SUCCESS: 备份成功。 - FAIL: 备份失败。
      * @return status
      */
     public String getStatus() {
@@ -146,7 +146,7 @@ public class ClusterLogRecord {
     }
 
     /**
-     * 结束时间。
+     * 结束时间，当创建未结束时结束时间为null。格式：Unix时间戳格式。
      * @return finishedAt
      */
     public Long getFinishedAt() {
@@ -163,7 +163,7 @@ public class ClusterLogRecord {
     }
 
     /**
-     * 任务类型。
+     * 任务类型。 - Manual: 手动备份。 - Auto： 自动备份。
      * @return jobTypes
      */
     public String getJobTypes() {
@@ -180,7 +180,7 @@ public class ClusterLogRecord {
     }
 
     /**
-     * 错误信息。
+     * 错误信息。当任务状态没有处于失败状态时该字段为null。
      * @return failedMsg
      */
     public String getFailedMsg() {

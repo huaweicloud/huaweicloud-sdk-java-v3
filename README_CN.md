@@ -8,7 +8,7 @@
 
 欢迎使用华为云 Java SDK 。
 
-华为云 Java SDK 让您无需关心请求细节即可快速使用弹性云服务器、虚拟私有云等多个华为云服务。
+华为云 Java SDK 让您无需关心请求细节即可快速使用弹性云服务器（ECS）、虚拟私有云（VPC）等多个华为云服务。
 
 这里将向您介绍如何获取并使用华为云 Java SDK 。
 
@@ -31,7 +31,7 @@ Maven 项目的 `pom.xml` 文件加入相应的依赖项即可。
 
 ### 独立服务包：
 
-根据需要独立引入SDK依赖包 。以使用云服务器ECS和虚拟私有云 VPC SDK 为例，您需要安装 `huaweicloud-sdk-ecs`和 `huaweicloud-sdk-vpc` ：
+根据需要独立引入SDK依赖包 。以 ECS 和 VPC SDK 为例，您需要安装 `huaweicloud-sdk-ecs`和 `huaweicloud-sdk-vpc`：
 
 ``` xml
 <dependency>
@@ -86,14 +86,14 @@ package com.huaweicloud.sdk.test;
 // 日志打印
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-// 用户身份认证
+// 认证信息
 import com.huaweicloud.sdk.core.auth.BasicCredentials;
-// 请求异常类
+// 服务响应异常类
 import com.huaweicloud.sdk.core.exception.ServiceResponseException;
 // Http配置
 import com.huaweicloud.sdk.core.http.HttpConfig;
 import com.huaweicloud.sdk.vpc.v2.VpcClient;
-// 导入待请求接口的 request 和 response 类
+// 导入 request 和 response 类
 import com.huaweicloud.sdk.vpc.v2.model.ListVpcsRequest;
 import com.huaweicloud.sdk.vpc.v2.model.ListVpcsResponse;
 
@@ -130,7 +130,7 @@ public class Application {
             .withSk(sk)
             .withProjectId(projectId);
 
-        // 创建VpcClient实例并初始化
+        // 创建VpcClient实例
         VpcClient vpcClient = VpcClient.newBuilder()
             .withHttpConfig(config)
             .withCredential(auth)
@@ -158,14 +158,15 @@ public class Application {
     * [1.2 网络代理](#12-网络代理-top)
     * [1.3 超时配置](#13-超时配置-top)
     * [1.4 SSL 配置](#14-ssl-配置-top)
-* [2. 客户端认证信息](#2-客户端认证信息-top)
+* [2. 认证信息配置](#2-认证信息配置-top)
     * [2.1 使用永久 AK 和 SK](#21-使用永久-ak-和-sk-top)
-        * [2.1.1 手动指定](#211-手动指定)
-        * [2.1.2 环境变量](#212-环境变量)
     * [2.2 使用临时 AK 和 SK](#22-使用临时-ak-和-sk-top)
-        * [2.2.1 手动指定](#221-手动指定)
-        * [2.2.2 元数据获取](#222-元数据获取)
-    * [2.3 认证信息提供链](#23-认证信息提供链)
+    * [2.3 使用 IdpId 和 IdTokenFile](#23-使用-idpid-和-idtokenfile-top)
+    * [2.4 认证信息管理](#24-认证信息管理-top)
+        * [2.4.1 环境变量](#241-环境变量-top)
+        * [2.4.2 配置文件](#242-配置文件-top)
+        * [2.4.3 实例元数据](#243-实例元数据-top)
+        * [2.4.4 认证信息提供链](#244-认证信息提供链-top)
 * [3. 客户端初始化](#3-客户端初始化-top)
     * [3.1 指定云服务 Endpoint 方式](#31-指定云服务-endpoint-方式-top)
     * [3.2 指定 Region 方式（推荐）](#32-指定-region-方式-推荐-top)
@@ -235,7 +236,17 @@ config.withSSLSocketFactory(sslSocketFactory).
 
 Global 级服务有 BSS、DevStar、EPS、IAM、OSM、RMS、TMS。
 
-Region 级服务使用 BasicCredentials 初始化，需要提供 projectId 。Global 级服务使用 GlobalCredentials 初始化，需要提供 domainId 。
+Region 级服务使用 BasicCredentials 初始化，需要提供 projectId 。
+
+Global 级服务使用 GlobalCredentials 初始化，需要提供 domainId 。
+
+客户端认证方式支持以下几种：
+
+- 永久 AK&SK 认证
+- 临时 AK&SK&SecurityToken 认证
+- IdpId&IdTokenFile 认证
+
+#### 2.1 使用永久 AK 和 SK [:top:](#用户手册-top)
 
 **认证参数说明**：
 
@@ -243,15 +254,11 @@ Region 级服务使用 BasicCredentials 初始化，需要提供 projectId 。Gl
 - `sk` - 华为云账号 Secret Access Key
 - `projectId` - 云服务所在项目 ID ，根据你想操作的项目所属区域选择对应的项目 ID
 - `domainId` - 华为云账号 ID
-- `securityToken` - 采用临时 AK&SK 认证场景下的安全票据
-
-客户端认证可以使用永久 AK&SK 认证，也可以使用临时 AK&SK&SecurityToken 认证。
-
-#### 2.1 使用永久 AK 和 SK [:top:](#用户手册-top)
-
-##### 2.1.1 手动指定
 
 ``` java
+import com.huaweicloud.sdk.core.auth.BasicCredentials;
+import com.huaweicloud.sdk.core.auth.GlobalCredentials;
+
 // Region级服务
 BasicCredentials basicCredentials = new BasicCredentials()
     .withAk(ak)
@@ -269,14 +276,8 @@ GlobalCredentials globalCredentials = new GlobalCredentials()
 
 - `3.0.26-beta` 及以上版本支持自动获取 projectId/domainId ，用户需要指定当前华为云账号的永久 AK&SK 和 对应的 region_id，同时在初始化客户端时配合 `withRegion()`
   方法使用。代码示例详见 [3.2 指定Region方式（推荐）](#32-指定-region-方式-推荐-top)。
-  
-##### 2.1.2 环境变量
-
-默认从环境变量`HUAWEICLOUD_SDK_AK`、`HUAWEICLOUD_SDK_SK`、`HUAWEICLOUD_SDK_PROJECT_ID`和`HUAWEICLOUD_SDK_DOMAIN_ID`中读取 ak、sk、projectId 和 domainId。
 
 #### 2.2 使用临时 AK 和 SK [:top:](#用户手册-top)
-
-##### 2.2.1 手动指定
 
 临时AK/SK和securitytoken是系统颁发给IAM用户的临时访问令牌，有效期可在15分钟至24小时范围内设置，过期后需要重新获取。 首先需要获得临时 AK、SK 和 SecurityToken ，可以从永久 AK&SK 获得，或者通过委托授权获得。
 
@@ -286,9 +287,20 @@ GlobalCredentials globalCredentials = new GlobalCredentials()
 - 通过委托授权获得可以参考文档：https://support.huaweicloud.com/api-iam/iam_04_0101.html ，对应 IAM SDK
   中的 `CreateTemporaryAccessKeyByAgency` 方法。
 
+**认证参数说明**：
+
+- `ak` - 华为云账号 Access Key
+- `sk` - 华为云账号 Secret Access Key
+- `projectId` - 云服务所在项目 ID ，根据你想操作的项目所属区域选择对应的项目 ID
+- `domainId` - 华为云账号 ID
+- `securityToken` - 采用临时 AK&SK 认证场景下的安全票据
+
 临时 AK&SK&SecurityToken 获取成功后，可使用如下方式初始化认证信息：
 
 ``` java
+import com.huaweicloud.sdk.core.auth.BasicCredentials;
+import com.huaweicloud.sdk.core.auth.GlobalCredentials;
+
 // Region级服务
 BasicCredentials basicCredentials = new BasicCredentials()
     .withAk(ak)
@@ -304,16 +316,17 @@ GlobalCredentials globalCredentials = new GlobalCredentials()
     .withDomainId(domainId);
 ```
 
-##### 2.2.2 元数据获取
-
-从实例元数据获取临时AK/SK和securitytoken，关于元数据获取请参阅：[元数据获取](https://support.huaweicloud.com/usermanual-ecs/ecs_03_0166.html)
-
 以下两种情况，会尝试从实例元数据中读取认证信息：
 
 1. 创建客户端时未手动指定 BasicCredentials 或 GlobalCredentials
 2. 创建 BasicCredentials 或 GlobalCredentials 时未指定 AK/SK
 
+关于元数据获取请参阅：[元数据获取](https://support.huaweicloud.com/usermanual-ecs/ecs_03_0166.html)
+
 ```java
+import com.huaweicloud.sdk.core.auth.BasicCredentials;
+import com.huaweicloud.sdk.core.auth.GlobalCredentials;
+
 // Region级服务
 BasicCredentials credentials = new BasicCredentials().withProjectId(projectId);
 
@@ -321,13 +334,256 @@ BasicCredentials credentials = new BasicCredentials().withProjectId(projectId);
 GlobalCredentials credentials = new GlobalCredentials().withDomainId(domainId);
 ```
 
-#### 2.3 认证信息提供链
+#### 2.3 使用 IdpId 和 IdTokenFile [:top:](#用户手册-top)
 
-在创建客户端时按照以下顺序加载认证信息：
+通过OpenID Connect ID token方式获取联邦认证token, 可参考文档：[获取联邦认证token(OpenID Connect ID token方式)](https://support.huaweicloud.com/api-iam/iam_13_0605.html)
 
-1. [手动指定](#211-手动指定) BasicCredentials 或 GlobalCredentials
-2. 未手动指定，尝试从 [环境变量](#212-环境变量) 加载
-3. 环境变量中获取不到，尝试从 [实例元数据](#222-元数据获取) 读取临时认证信息
+**认证参数说明**：
+
+- `IdpId` 身份提供商ID
+- `IdTokenFile` 存放id_token的文件路径，id_token由企业IdP构建，携带联邦用户身份信息
+- `projectId` 云服务所在项目 ID ，根据你想操作的项目所属区域选择对应的项目 ID
+- `domainId` 华为云账号 ID
+
+``` java
+import com.huaweicloud.sdk.core.auth.BasicCredentials;
+import com.huaweicloud.sdk.core.auth.GlobalCredentials;
+
+// Region级服务
+BasicCredentials basicCredentials = new BasicCredentials()
+    .withIdpId(idpId)
+    .withIdTokenFile(idTokenFile)
+    .withProjectId(projectId)
+
+// Global级服务
+GlobalCredentials globalCredentials = new GlobalCredentials()
+    .withIdpId(idpId)
+    .withIdTokenFile(idTokenFile)
+    .withDomainId(domainId);
+```
+
+#### 2.4 认证信息管理 [:top:](#用户手册-top)
+
+从**3.0.97**版本起，支持从各类提供器中获取认证信息
+
+**Region级服务** 请使用 `XxxCredentialProvider.getBasicCredentialXxxProvider()`
+
+**Global级服务** 请使用 `XxxCredentialProvider.getGlobalCredentialXxxProvider()`
+
+##### 2.4.1 环境变量 [:top:](#用户手册-top)
+
+**AK/SK认证**
+
+| 环境变量  |  说明 |
+| ------------ | ------------ |
+| HUAWEICLOUD_SDK_AK  | 必填，AccessKey  |
+| HUAWEICLOUD_SDK_SK  |  必填，SecretKey |
+| HUAWEICLOUD_SDK_SECURITY_TOKEN  | 可选, 使用临时ak/sk认证时需要指定该参数  |
+| HUAWEICLOUD_SDK_PROJECT_ID  | 可选，用于Region级服务，多ProjectId场景下必填  |
+| HUAWEICLOUD_SDK_DOMAIN_ID  | 可选，用于Global级服务  |
+
+配置环境变量：
+
+```
+// Linux
+export HUAWEICLOUD_SDK_AK=YOUR_AK
+export HUAWEICLOUD_SDK_SK=YOUR_SK
+
+// Windows
+set HUAWEICLOUD_SDK_AK=YOUR_AK
+set HUAWEICLOUD_SDK_SK=YOUR_SK
+```
+
+从配置的环境变量中获取认证信息：
+
+```java
+import com.huaweicloud.sdk.core.auth.EnvCredentialProvider;
+import com.huaweicloud.sdk.core.auth.ICredential;
+
+// basic
+EnvCredentialProvider basicProvider = EnvCredentialProvider.getBasicCredentialEnvProvider();
+ICredential basicCred = basicProvider.getCredentials();
+
+// global
+EnvCredentialProvider globalProvider = EnvCredentialProvider.getGlobalCredentialEnvProvider();
+ICredential globalCred = globalProvider.getCredentials();
+```
+
+**IdpId/IdTokenFile认证**
+
+| 环境变量  |  说明 |
+| ------------ | ------------ |
+| HUAWEICLOUD_SDK_IDP_ID  | 必填，身份提供商ID |
+| HUAWEICLOUD_SDK_ID_TOKEN_FILE  |  必填，存放id_token的文件路径 |
+| HUAWEICLOUD_SDK_PROJECT_ID  | basic类型认证时，该参数必填  |
+| HUAWEICLOUD_SDK_DOMAIN_ID  | global类型认证时，该参数必填  |
+
+配置环境变量：
+
+```
+// Linux
+export HUAWEICLOUD_SDK_IDP_ID=YOUR_IDP_ID
+export HUAWEICLOUD_SDK_ID_TOKEN_FILE=/some_path/your_token_file
+export HUAWEICLOUD_SDK_PROJECT_ID=YOUR_PROJECT_ID // basic认证时必填
+export HUAWEICLOUD_SDK_DOMAIN_ID=YOUR_DOMAIN_ID // global认证时必填
+
+// Windows
+set HUAWEICLOUD_SDK_IDP_ID=YOUR_IDP_ID
+set HUAWEICLOUD_SDK_ID_TOKEN_FILE=/some_path/your_token_file
+set HUAWEICLOUD_SDK_PROJECT_ID=YOUR_PROJECT_ID // basic认证时必填
+set HUAWEICLOUD_SDK_DOMAIN_ID=YOUR_DOMAIN_ID // global认证时必填
+```
+
+从配置的环境变量中获取认证信息：
+
+```java
+import com.huaweicloud.sdk.core.auth.EnvCredentialProvider;
+import com.huaweicloud.sdk.core.auth.ICredential;
+
+// basic
+EnvCredentialProvider basicProvider = EnvCredentialProvider.getBasicCredentialEnvProvider();
+ICredential basicCred = basicProvider.getCredentials();
+
+// global
+EnvCredentialProvider globalProvider = EnvCredentialProvider.getGlobalCredentialEnvProvider();
+ICredential globalCred = globalProvider.getCredentials();
+```
+
+##### 2.4.2 配置文件 [:top:](#用户手册-top)
+
+默认会从用户主目录下读取认证信息配置文件，linux为`~/.huaweicloud/credentials`，windows为`C:\Users\USER_NAME\.huaweicloud\credentials`，可以通过配置环境变量`HUAWEICLOUD_SDK_CREDENTIALS_FILE`来修改默认文件的路径
+
+**AK/SK认证**
+
+| 配置参数  |  说明 |
+| ------------ | ------------ |
+| ak  | 必填，AccessKey  |
+| sk  |  必填，SecretKey |
+| security_token  | 可选, 使用临时ak/sk认证时需要指定该参数  |
+| project_id  | 可选，用于Region级服务，多ProjectId场景下必填  |
+| domain_id  | 可选，用于Global级服务  |
+| iam_endpoint  | 可选，用于身份认证的endpoint，默认为`https://iam.myhuaweicloud.com` |
+
+配置文件内容如下：
+
+```ini
+[basic]
+ak = your_ak
+sk = your_sk
+
+[global]
+ak = your_ak
+sk = your_sk
+```
+
+从配置文件中读取认证信息：
+
+```java
+import com.huaweicloud.sdk.core.auth.ProfileCredentialProvider;
+import com.huaweicloud.sdk.core.auth.ICredential;
+
+// basic
+ProfileCredentialProvider basicProvider = ProfileCredentialProvider.getBasicCredentialProfileProvider();
+ICredential basicCred = basicProvider.getCredentials();
+
+// global
+ProfileCredentialProvider globalProvider = ProfileCredentialProvider.getGlobalCredentialProfileProvider();
+ICredential globalCred = globalProvider.getCredentials();
+```
+
+**IdpId/IdTokenFile认证**
+
+| 配置参数  |  说明 |
+| ------------ | ------------ |
+| idp_id  | 必填，身份提供商ID |
+| id_token_file  |  必填，存放id_token的文件路径 |
+| project_id  | basic类型认证时，该参数必填  |
+| domain_id  | global类型认证时，该参数必填  |
+| iam_endpoint  | 可选，用于身份认证的endpoint，默认为`https://iam.myhuaweicloud.com` |
+
+配置文件内容如下：
+
+```ini
+[basic]
+idp_id = your_idp_id
+id_token_file = /some_path/your_token_file
+project_id = your_project_id
+
+[global]
+idp_id = your_idp_id
+id_token_file = /some_path/your_token_file
+domainId = your_domain_id
+```
+
+从配置文件中读取认证信息：
+
+```java
+import com.huaweicloud.sdk.core.auth.ProfileCredentialProvider;
+import com.huaweicloud.sdk.core.auth.ICredential;
+
+// basic
+ProfileCredentialProvider basicProvider = ProfileCredentialProvider.getBasicCredentialProfileProvider();
+ICredential basicCred = basicProvider.getCredentials();
+
+// global
+ProfileCredentialProvider globalProvider = ProfileCredentialProvider.getGlobalCredentialProfileProvider();
+ICredential globalCred = globalProvider.getCredentials();
+```
+
+##### 2.4.3 实例元数据 [:top:](#用户手册-top)
+
+从实例元数据获取临时AK/SK和securitytoken，关于元数据获取请参阅：[元数据获取](https://support.huaweicloud.com/usermanual-ecs/ecs_03_0166.html)
+
+手动获取实例元数据认证信息：
+
+```java
+import com.huaweicloud.sdk.core.auth.MetadataCredentialProvider;
+import com.huaweicloud.sdk.core.auth.ICredential;
+
+// basic
+MetadataCredentialProvider basicProvider = MetadataCredentialProvider.getBasicCredentialMetadataProvider();
+ICredential basicCred = basicProvider.getCredentials();
+
+// global
+MetadataCredentialProvider globalProvider = MetadataCredentialProvider.getGlobalCredentialMetadataProvider();
+ICredential globalCred = globalProvider.getCredentials();
+```
+
+##### 2.4.4 认证信息提供链 [:top:](#用户手册-top)
+
+在创建服务客户端，未显式指定认证信息时，按照顺序 **环境变量 -> 配置文件 -> 实例元数据** 尝试加载认证信息
+
+通过提供链获取认证信息：
+
+```java
+import com.huaweicloud.sdk.core.auth.CredentialProviderChain;
+import com.huaweicloud.sdk.core.auth.ICredential;
+
+// basic
+CredentialProviderChain basicChain = CredentialProviderChain.getBasicCredentialProviderChain();
+ICredential basicCred = basicChain.getCredentials();
+
+// global
+CredentialProviderChain globalChain = CredentialProviderChain.getGlobalCredentialProviderChain();
+ICredential globalCred = globalChain.getCredentials();
+```
+
+支持自定义认证信息提供链：
+
+```java
+import com.huaweicloud.sdk.core.auth.CredentialProviderChain;
+import com.huaweicloud.sdk.core.auth.ICredential;
+import com.huaweicloud.sdk.core.auth.ICredentialProvider;
+import com.huaweicloud.sdk.core.auth.MetadataCredentialProvider;
+import com.huaweicloud.sdk.core.auth.ProfileCredentialProvider;
+
+ICredentialProvider[] providers = new ICredentialProvider[]{
+        MetadataCredentialProvider.getBasicCredentialMetadataProvider(),
+        ProfileCredentialProvider.getBasicCredentialProfileProvider()
+};
+CredentialProviderChain chain = new CredentialProviderChain(providers);
+ICredential cred = chain.getCredentials();
+```
 
 ### 3. 客户端初始化 [:top:](#用户手册-top)
 
@@ -390,7 +646,7 @@ IamClient iamClient = IamClient.newBuilder()
 **两种方式对比：**
 
 | 初始化方式 | 优势 | 劣势 |
-| :---- | :---- | :---- | 
+| :---- | :---- | :---- |
 | 指定云服务 Endpoint 方式 | 只要接口已在当前环境发布就可以成功调用 | 需要用户自行查找并填写 projectId 和 endpoint
 | 指定 Region 方式 | 无需指定 projectId 和 endpoint，按照要求配置即可自动获取该值并回填 | 支持的服务和 region 有限制
 
@@ -761,7 +1017,7 @@ try {
 String jobId = "{valid job id}";
 ShowJobRequest request = new ShowJobRequest().withJobId(jobId);
 try {
-    // 退避等待的基础时间
+    // 退避等待的基础时间(毫秒)
     final int baseDelay = 1000;
     // 退避等待的最长时间
     final int maxBackoffInMilliseconds = 30000;

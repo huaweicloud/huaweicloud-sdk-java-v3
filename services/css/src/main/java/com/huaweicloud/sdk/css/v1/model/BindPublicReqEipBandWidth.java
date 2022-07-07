@@ -21,7 +21,7 @@ public class BindPublicReqEipBandWidth {
     }
 
     /**
-     * 带宽大小。
+     * 带宽大小。单位：Mbit/s
      * @return size
      */
     public Integer getSize() {

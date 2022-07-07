@@ -49,11 +49,6 @@ public class Region {
         return this;
     }
 
-    /**
-     * 区域描述信息。
-     *
-     * @return description
-     */
     public String getDescription() {
         return description;
     }
@@ -80,11 +75,6 @@ public class Region {
         return this;
     }
 
-    /**
-     * 区域ID。
-     *
-     * @return id
-     */
     public String getId() {
         return id;
     }
@@ -98,11 +88,6 @@ public class Region {
         return this;
     }
 
-    /**
-     * 区域类型。
-     *
-     * @return type
-     */
     public String getType() {
         return type;
     }
@@ -110,6 +95,5 @@ public class Region {
     public void setType(String type) {
         this.type = type;
     }
-
 }
 

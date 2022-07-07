@@ -63,7 +63,7 @@ public class CreateClusterBackupStrategyBody {
     }
 
     /**
-     * 自动创建的快照的前缀。
+     * 自动创建的快照的前缀，需要用户自己手动输入。只能包含1~32位小写字母、数字、中划线或者下划线，并且以小写字母开头。
      * @return prefix
      */
     public String getPrefix() {
@@ -97,7 +97,7 @@ public class CreateClusterBackupStrategyBody {
     }
 
     /**
-     * 备份使用的OBS桶名称，如果桶已经存放快照数据了，不可更改。
+     * 备份使用的OBS桶名称。
      * @return bucket
      */
     public String getBucket() {

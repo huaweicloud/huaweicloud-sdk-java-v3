@@ -9,6 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.iotedge.v2.model.ContainerConfigsDTO;
+import com.huaweicloud.sdk.iotedge.v2.model.ExtDevice;
 import com.huaweicloud.sdk.iotedge.v2.model.ResourceDTO;
 import com.huaweicloud.sdk.iotedge.v2.model.VolumeDTO;
 import java.util.ArrayList;
@@ -57,6 +58,13 @@ public class ContainerSettingsDTO  {
     
     private ResourceDTO resources;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="ext_devices")
+    
+    
+    private List<ExtDevice> extDevices = null;
+    
     public ContainerSettingsDTO withConfigs(ContainerConfigsDTO configs) {
         this.configs = configs;
         return this;
@@ -195,6 +203,42 @@ public class ContainerSettingsDTO  {
 
     
 
+    public ContainerSettingsDTO withExtDevices(List<ExtDevice> extDevices) {
+        this.extDevices = extDevices;
+        return this;
+    }
+
+    
+    public ContainerSettingsDTO addExtDevicesItem(ExtDevice extDevicesItem) {
+        if(this.extDevices == null) {
+            this.extDevices = new ArrayList<>();
+        }
+        this.extDevices.add(extDevicesItem);
+        return this;
+    }
+
+    public ContainerSettingsDTO withExtDevices(Consumer<List<ExtDevice>> extDevicesSetter) {
+        if(this.extDevices == null) {
+            this.extDevices = new ArrayList<>();
+        }
+        extDevicesSetter.accept(this.extDevices);
+        return this;
+    }
+
+    /**
+     * 外挂设备配置
+     * @return extDevices
+     */
+    public List<ExtDevice> getExtDevices() {
+        return extDevices;
+    }
+
+    public void setExtDevices(List<ExtDevice> extDevices) {
+        this.extDevices = extDevices;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -208,11 +252,12 @@ public class ContainerSettingsDTO  {
             Objects.equals(this.imageUrl, containerSettingsDTO.imageUrl) &&
             Objects.equals(this.envs, containerSettingsDTO.envs) &&
             Objects.equals(this.volumes, containerSettingsDTO.volumes) &&
-            Objects.equals(this.resources, containerSettingsDTO.resources);
+            Objects.equals(this.resources, containerSettingsDTO.resources) &&
+            Objects.equals(this.extDevices, containerSettingsDTO.extDevices);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(configs, imageUrl, envs, volumes, resources);
+        return Objects.hash(configs, imageUrl, envs, volumes, resources, extDevices);
     }
     @Override
     public String toString() {
@@ -223,6 +268,7 @@ public class ContainerSettingsDTO  {
         sb.append("    envs: ").append(toIndentedString(envs)).append("\n");
         sb.append("    volumes: ").append(toIndentedString(volumes)).append("\n");
         sb.append("    resources: ").append(toIndentedString(resources)).append("\n");
+        sb.append("    extDevices: ").append(toIndentedString(extDevices)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -19,7 +19,7 @@ public class BatchDeleteIpListRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private BatchDeleteIpListRequestBody body;
+    private BatchDeleteIpGroupIpListRequestBody body;
 
     public BatchDeleteIpListRequest withIpgroupId(String ipgroupId) {
         this.ipgroupId = ipgroupId;
@@ -38,14 +38,14 @@ public class BatchDeleteIpListRequest {
         this.ipgroupId = ipgroupId;
     }
 
-    public BatchDeleteIpListRequest withBody(BatchDeleteIpListRequestBody body) {
+    public BatchDeleteIpListRequest withBody(BatchDeleteIpGroupIpListRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public BatchDeleteIpListRequest withBody(Consumer<BatchDeleteIpListRequestBody> bodySetter) {
+    public BatchDeleteIpListRequest withBody(Consumer<BatchDeleteIpGroupIpListRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new BatchDeleteIpListRequestBody();
+            this.body = new BatchDeleteIpGroupIpListRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class BatchDeleteIpListRequest {
      * Get body
      * @return body
      */
-    public BatchDeleteIpListRequestBody getBody() {
+    public BatchDeleteIpGroupIpListRequestBody getBody() {
         return body;
     }
 
-    public void setBody(BatchDeleteIpListRequestBody body) {
+    public void setBody(BatchDeleteIpGroupIpListRequestBody body) {
         this.body = body;
     }
 

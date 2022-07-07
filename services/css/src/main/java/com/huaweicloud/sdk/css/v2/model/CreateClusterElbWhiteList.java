@@ -26,7 +26,7 @@ public class CreateClusterElbWhiteList {
     }
 
     /**
-     * 是否开启访问控制。
+     * 是否开启公网访问控制。
      * @return enableWhiteList
      */
     public Boolean getEnableWhiteList() {
@@ -43,7 +43,7 @@ public class CreateClusterElbWhiteList {
     }
 
     /**
-     * 访问控制白名单。
+     * 公网访问控制白名单。白名单。需要添加白名单的网段或ip，以逗号隔开，不可重复。
      * @return whiteList
      */
     public String getWhiteList() {

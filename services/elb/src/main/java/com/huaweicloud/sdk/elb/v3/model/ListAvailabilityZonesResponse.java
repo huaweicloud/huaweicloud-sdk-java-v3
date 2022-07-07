@@ -64,7 +64,7 @@ public class ListAvailabilityZonesResponse extends SdkResponse {
     }
 
     /**
-     * 返回创建LB时可使用的可用区集合列表。
+     * 返回创建LB时可使用的可用区集合列表。如：[[az1,az2],[az2,az3]] , 则在创建LB时，只能从其中的一个子列表中选择一个或多个可用区，不能跨列表选择。在上述例子中，不能选择az1和az3。
      * @return availabilityZones
      */
     public List<List<AvailabilityZone>> getAvailabilityZones() {

@@ -247,7 +247,7 @@ public class CssAsyncClient {
     /**
      * 删除集群
      *
-     * 此接口用于删除集群。集群删除将释放此集群的所有资源，包括客户数据。为了安全起见，请确保为这个集群创建快照。
+     * 此接口用于删除集群。集群删除将释放此集群的所有资源，包括客户数据。如果需要保留客户集群数据，建议在删除集群前先创建快照。
      * 
      * &gt;此接口亦可用于包年/包月集群退订。公安冻结的集群不能删除。
      * 
@@ -264,7 +264,7 @@ public class CssAsyncClient {
     /**
      * 删除集群
      *
-     * 此接口用于删除集群。集群删除将释放此集群的所有资源，包括客户数据。为了安全起见，请确保为这个集群创建快照。
+     * 此接口用于删除集群。集群删除将释放此集群的所有资源，包括客户数据。如果需要保留客户集群数据，建议在删除集群前先创建快照。
      * 
      * &gt;此接口亦可用于包年/包月集群退订。公安冻结的集群不能删除。
      * 
@@ -594,7 +594,7 @@ public class CssAsyncClient {
     /**
      * 获取参数配置任务列表
      *
-     * 该接口可获取参数配置的任务流程。
+     * 该接口可获取参数配置的任务操作列表。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -609,7 +609,7 @@ public class CssAsyncClient {
     /**
      * 获取参数配置任务列表
      *
-     * 该接口可获取参数配置的任务流程。
+     * 该接口可获取参数配置的任务操作列表。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1269,7 +1269,7 @@ public class CssAsyncClient {
     /**
      * 批量添加或删除集群标签
      *
-     * 该接口用于批量添加或删除集群标签。
+     * 该接口用于对集群批量添加或删除标签。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1285,7 +1285,7 @@ public class CssAsyncClient {
     /**
      * 批量添加或删除集群标签
      *
-     * 该接口用于批量添加或删除集群标签。
+     * 该接口用于对集群批量添加或删除标签。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1336,7 +1336,7 @@ public class CssAsyncClient {
      *
      * 该接口用于集群扩容实例（仅支持扩容elasticsearch实例）。只扩容普通节点，且只针对要扩容的集群实例不存在特殊节点（Master、Client、冷数据节点）的情况。
      * 
-     * 推荐使用[扩容实例的数量和存储容量](UpdateExtendInstanceStorage.xml)进行扩容。
+     * 集群扩容实例的数量和存储容量，请参考[扩容实例的数量和存储容量](UpdateExtendInstanceStorage.xml)。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1353,7 +1353,7 @@ public class CssAsyncClient {
      *
      * 该接口用于集群扩容实例（仅支持扩容elasticsearch实例）。只扩容普通节点，且只针对要扩容的集群实例不存在特殊节点（Master、Client、冷数据节点）的情况。
      * 
-     * 推荐使用[扩容实例的数量和存储容量](UpdateExtendInstanceStorage.xml)进行扩容。
+     * 集群扩容实例的数量和存储容量，请参考[扩容实例的数量和存储容量](UpdateExtendInstanceStorage.xml)。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1370,7 +1370,7 @@ public class CssAsyncClient {
     /**
      * 扩容实例的数量和存储容量
      *
-     * 该接口用于集群扩容不同类型实例的个数以及存储容量。已经存在独立Master、Client、冷数据节点的集群使用该接口扩容。（支持扩容elasticsearch和logstash实例）。
+     * 该接口用于集群扩容不同类型实例的个数以及存储容量。已经存在独立Master、Client、冷数据节点的集群使用该接口扩容。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1386,7 +1386,7 @@ public class CssAsyncClient {
     /**
      * 扩容实例的数量和存储容量
      *
-     * 该接口用于集群扩容不同类型实例的个数以及存储容量。已经存在独立Master、Client、冷数据节点的集群使用该接口扩容。（支持扩容elasticsearch和logstash实例）。
+     * 该接口用于集群扩容不同类型实例的个数以及存储容量。已经存在独立Master、Client、冷数据节点的集群使用该接口扩容。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1572,7 +1572,7 @@ public class CssAsyncClient {
     /**
      * 指定节点类型缩容
      *
-     * 该接口用于集群缩容不同类型实例的个数以及存储容量。
+     * 该接口用于集群对不同类型实例的个数以及存储容量进行缩容。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1587,7 +1587,7 @@ public class CssAsyncClient {
     /**
      * 指定节点类型缩容
      *
-     * 该接口用于集群缩容不同类型实例的个数以及存储容量。
+     * 该接口用于集群对不同类型实例的个数以及存储容量进行缩容。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1638,7 +1638,7 @@ public class CssAsyncClient {
      *
      * 该接口用于修改集群快照的基础配置，可修改OBS桶和IAM委托。
      * 
-     * 如果未开启快照功能，使用该接口后，将会开启快照。
+     * 可以使用该接口开启快照功能。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1656,7 +1656,7 @@ public class CssAsyncClient {
      *
      * 该接口用于修改集群快照的基础配置，可修改OBS桶和IAM委托。
      * 
-     * 如果未开启快照功能，使用该接口后，将会开启快照。
+     * 可以使用该接口开启快照功能。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1771,7 +1771,7 @@ public class CssAsyncClient {
     /**
      * 修改参数配置
      *
-     * 该接口用于修改参数配口。
+     * 该接口用于修改参数配置。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1786,7 +1786,7 @@ public class CssAsyncClient {
     /**
      * 修改参数配置
      *
-     * 该接口用于修改参数配口。
+     * 该接口用于修改参数配置。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.

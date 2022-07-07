@@ -155,6 +155,21 @@ public class BatchListEdgeAppsRequest  {
          */
         public static final FunctionTypeEnum ON_PREMISE_INTEGRATION = new FunctionTypeEnum("ON_PREMISE_INTEGRATION");
         
+        /**
+         * Enum GATEWAY_MANAGER for value: "GATEWAY_MANAGER"
+         */
+        public static final FunctionTypeEnum GATEWAY_MANAGER = new FunctionTypeEnum("GATEWAY_MANAGER");
+        
+        /**
+         * Enum COMPOSITE_APPLICATION for value: "COMPOSITE_APPLICATION"
+         */
+        public static final FunctionTypeEnum COMPOSITE_APPLICATION = new FunctionTypeEnum("COMPOSITE_APPLICATION");
+        
+        /**
+         * Enum DATA_COLLECTION for value: "DATA_COLLECTION"
+         */
+        public static final FunctionTypeEnum DATA_COLLECTION = new FunctionTypeEnum("DATA_COLLECTION");
+        
 
         private static final Map<String, FunctionTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -163,6 +178,9 @@ public class BatchListEdgeAppsRequest  {
             map.put("DATA_PROCESSING", DATA_PROCESSING);
             map.put("PROTOCOL_PARSING", PROTOCOL_PARSING);
             map.put("ON_PREMISE_INTEGRATION", ON_PREMISE_INTEGRATION);
+            map.put("GATEWAY_MANAGER", GATEWAY_MANAGER);
+            map.put("COMPOSITE_APPLICATION", COMPOSITE_APPLICATION);
+            map.put("DATA_COLLECTION", DATA_COLLECTION);
             return Collections.unmodifiableMap(map);
         }
 

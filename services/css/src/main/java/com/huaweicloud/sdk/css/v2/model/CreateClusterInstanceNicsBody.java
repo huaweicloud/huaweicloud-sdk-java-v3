@@ -48,7 +48,7 @@ public class CreateClusterInstanceNicsBody {
     }
 
     /**
-     * 子网ID(网络ID)，其中一个搜索集群所有实例的子网和安全组必须相同。
+     * 子网ID(网络ID)。
      * @return netId
      */
     public String getNetId() {
@@ -65,7 +65,7 @@ public class CreateClusterInstanceNicsBody {
     }
 
     /**
-     * 安全组ID，其中一个搜索集群所有实例的子网和安全组必须相同。
+     * 安全组ID。
      * @return securityGroupId
      */
     public String getSecurityGroupId() {

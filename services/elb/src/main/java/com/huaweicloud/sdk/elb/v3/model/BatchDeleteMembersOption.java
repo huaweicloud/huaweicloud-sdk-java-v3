@@ -31,7 +31,7 @@ public class BatchDeleteMembersOption {
     }
 
     /**
-     * 需要删除的后端服务器ID。  使用说明： - 若传入id则不能传其他参数，否则报错。
+     * 需要删除的后端服务器ID。  使用说明： - 若传入id则不能传其他参数，否则报错。  >说明： 此处并非ECS服务器的ID，而是ELB为绑定的后端服务器自动生成的member ID。
      * @return id
      */
     public String getId() {

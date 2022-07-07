@@ -11,6 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.iotedge.v2.model.BasePathDTO;
+import com.huaweicloud.sdk.iotedge.v2.model.HaConfigDTO;
 import com.huaweicloud.sdk.iotedge.v2.model.LogConfigDTO;
 import com.huaweicloud.sdk.iotedge.v2.model.Nic;
 import java.util.ArrayList;
@@ -31,6 +32,13 @@ public class ShowEdgeNodeResponse extends SdkResponse {
     
     private List<LogConfigDTO> logConfigs = null;
     
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="ha_config")
+    
+    
+    private HaConfigDTO haConfig;
+
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edge_node_id")
@@ -199,6 +207,13 @@ public class ShowEdgeNodeResponse extends SdkResponse {
     
     private BasePathDTO basePath;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="hardware_model")
+    
+    
+    private String hardwareModel;
+
     public ShowEdgeNodeResponse withLogConfigs(List<LogConfigDTO> logConfigs) {
         this.logConfigs = logConfigs;
         return this;
@@ -231,6 +246,35 @@ public class ShowEdgeNodeResponse extends SdkResponse {
 
     public void setLogConfigs(List<LogConfigDTO> logConfigs) {
         this.logConfigs = logConfigs;
+    }
+
+    
+
+    public ShowEdgeNodeResponse withHaConfig(HaConfigDTO haConfig) {
+        this.haConfig = haConfig;
+        return this;
+    }
+
+    public ShowEdgeNodeResponse withHaConfig(Consumer<HaConfigDTO> haConfigSetter) {
+        if(this.haConfig == null ){
+            this.haConfig = new HaConfigDTO();
+            haConfigSetter.accept(this.haConfig);
+        }
+        
+        return this;
+    }
+
+
+    /**
+     * Get haConfig
+     * @return haConfig
+     */
+    public HaConfigDTO getHaConfig() {
+        return haConfig;
+    }
+
+    public void setHaConfig(HaConfigDTO haConfig) {
+        this.haConfig = haConfig;
     }
 
     
@@ -828,6 +872,28 @@ public class ShowEdgeNodeResponse extends SdkResponse {
 
     
 
+    public ShowEdgeNodeResponse withHardwareModel(String hardwareModel) {
+        this.hardwareModel = hardwareModel;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 注册节点网关配置
+     * @return hardwareModel
+     */
+    public String getHardwareModel() {
+        return hardwareModel;
+    }
+
+    public void setHardwareModel(String hardwareModel) {
+        this.hardwareModel = hardwareModel;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -838,6 +904,7 @@ public class ShowEdgeNodeResponse extends SdkResponse {
         }
         ShowEdgeNodeResponse showEdgeNodeResponse = (ShowEdgeNodeResponse) o;
         return Objects.equals(this.logConfigs, showEdgeNodeResponse.logConfigs) &&
+            Objects.equals(this.haConfig, showEdgeNodeResponse.haConfig) &&
             Objects.equals(this.edgeNodeId, showEdgeNodeResponse.edgeNodeId) &&
             Objects.equals(this.instanceId, showEdgeNodeResponse.instanceId) &&
             Objects.equals(this.productId, showEdgeNodeResponse.productId) &&
@@ -861,17 +928,19 @@ public class ShowEdgeNodeResponse extends SdkResponse {
             Objects.equals(this.type, showEdgeNodeResponse.type) &&
             Objects.equals(this.securityLevel, showEdgeNodeResponse.securityLevel) &&
             Objects.equals(this.storagePeriod, showEdgeNodeResponse.storagePeriod) &&
-            Objects.equals(this.basePath, showEdgeNodeResponse.basePath);
+            Objects.equals(this.basePath, showEdgeNodeResponse.basePath) &&
+            Objects.equals(this.hardwareModel, showEdgeNodeResponse.hardwareModel);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(logConfigs, edgeNodeId, instanceId, productId, productName, spaceId, resourceSpecTypes, resourceIds, ips, name, state, softwareVersion, createTime, updateTime, osName, arch, hostName, nics, specification, aiCardType, containerVersion, type, securityLevel, storagePeriod, basePath);
+        return Objects.hash(logConfigs, haConfig, edgeNodeId, instanceId, productId, productName, spaceId, resourceSpecTypes, resourceIds, ips, name, state, softwareVersion, createTime, updateTime, osName, arch, hostName, nics, specification, aiCardType, containerVersion, type, securityLevel, storagePeriod, basePath, hardwareModel);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowEdgeNodeResponse {\n");
         sb.append("    logConfigs: ").append(toIndentedString(logConfigs)).append("\n");
+        sb.append("    haConfig: ").append(toIndentedString(haConfig)).append("\n");
         sb.append("    edgeNodeId: ").append(toIndentedString(edgeNodeId)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
@@ -896,6 +965,7 @@ public class ShowEdgeNodeResponse extends SdkResponse {
         sb.append("    securityLevel: ").append(toIndentedString(securityLevel)).append("\n");
         sb.append("    storagePeriod: ").append(toIndentedString(storagePeriod)).append("\n");
         sb.append("    basePath: ").append(toIndentedString(basePath)).append("\n");
+        sb.append("    hardwareModel: ").append(toIndentedString(hardwareModel)).append("\n");
         sb.append("}");
         return sb.toString();
     }

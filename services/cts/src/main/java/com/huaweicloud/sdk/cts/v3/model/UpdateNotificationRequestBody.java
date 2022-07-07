@@ -207,6 +207,11 @@ public class UpdateNotificationRequestBody {
 
     private String notificationId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "filter")
+
+    private Filter filter;
+
     public UpdateNotificationRequestBody withNotificationName(String notificationName) {
         this.notificationName = notificationName;
         return this;
@@ -347,7 +352,7 @@ public class UpdateNotificationRequestBody {
     }
 
     /**
-     * 关键操作通知id
+     * 关键操作通知id。
      * @return notificationId
      */
     public String getNotificationId() {
@@ -356,6 +361,32 @@ public class UpdateNotificationRequestBody {
 
     public void setNotificationId(String notificationId) {
         this.notificationId = notificationId;
+    }
+
+    public UpdateNotificationRequestBody withFilter(Filter filter) {
+        this.filter = filter;
+        return this;
+    }
+
+    public UpdateNotificationRequestBody withFilter(Consumer<Filter> filterSetter) {
+        if (this.filter == null) {
+            this.filter = new Filter();
+            filterSetter.accept(this.filter);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get filter
+     * @return filter
+     */
+    public Filter getFilter() {
+        return filter;
+    }
+
+    public void setFilter(Filter filter) {
+        this.filter = filter;
     }
 
     @Override
@@ -373,13 +404,14 @@ public class UpdateNotificationRequestBody {
             && Objects.equals(this.notifyUserList, updateNotificationRequestBody.notifyUserList)
             && Objects.equals(this.status, updateNotificationRequestBody.status)
             && Objects.equals(this.topicId, updateNotificationRequestBody.topicId)
-            && Objects.equals(this.notificationId, updateNotificationRequestBody.notificationId);
+            && Objects.equals(this.notificationId, updateNotificationRequestBody.notificationId)
+            && Objects.equals(this.filter, updateNotificationRequestBody.filter);
     }
 
     @Override
     public int hashCode() {
         return Objects
-            .hash(notificationName, operationType, operations, notifyUserList, status, topicId, notificationId);
+            .hash(notificationName, operationType, operations, notifyUserList, status, topicId, notificationId, filter);
     }
 
     @Override
@@ -393,6 +425,7 @@ public class UpdateNotificationRequestBody {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    topicId: ").append(toIndentedString(topicId)).append("\n");
         sb.append("    notificationId: ").append(toIndentedString(notificationId)).append("\n");
+        sb.append("    filter: ").append(toIndentedString(filter)).append("\n");
         sb.append("}");
         return sb.toString();
     }

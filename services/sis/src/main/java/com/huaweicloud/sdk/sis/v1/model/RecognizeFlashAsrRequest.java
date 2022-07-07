@@ -16,7 +16,7 @@ import java.util.Objects;
 public class RecognizeFlashAsrRequest {
 
     /**
-     * 所使用的模型特征串。通常是 “语种_采样率_领域”的形式。 采样率需要与音频采样率保持一致。 当前支持如下模型特征串： chinese_8k_common chinese_16k_common
+     * 所使用的模型特征串。通常是 “语种_采样率_领域”的形式。 采样率需要与音频采样率保持一致。 当前支持如下模型特征串： chinese_8k_common chinese_16k_conversation
      */
     public static final class PropertyEnum {
 
@@ -26,16 +26,16 @@ public class RecognizeFlashAsrRequest {
         public static final PropertyEnum CHINESE_8K_COMMON = new PropertyEnum("chinese_8k_common");
 
         /**
-         * Enum CHINESE_16K_COMMON for value: "chinese_16k_common"
+         * Enum CHINESE_16K_CONVERSATION for value: "chinese_16k_conversation"
          */
-        public static final PropertyEnum CHINESE_16K_COMMON = new PropertyEnum("chinese_16k_common");
+        public static final PropertyEnum CHINESE_16K_CONVERSATION = new PropertyEnum("chinese_16k_conversation");
 
         private static final Map<String, PropertyEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, PropertyEnum> createStaticFields() {
             Map<String, PropertyEnum> map = new HashMap<>();
             map.put("chinese_8k_common", CHINESE_8K_COMMON);
-            map.put("chinese_16k_common", CHINESE_16K_COMMON);
+            map.put("chinese_16k_conversation", CHINESE_16K_CONVERSATION);
             return Collections.unmodifiableMap(map);
         }
 
@@ -546,7 +546,7 @@ public class RecognizeFlashAsrRequest {
     }
 
     /**
-     * 所使用的模型特征串。通常是 “语种_采样率_领域”的形式。 采样率需要与音频采样率保持一致。 当前支持如下模型特征串： chinese_8k_common chinese_16k_common
+     * 所使用的模型特征串。通常是 “语种_采样率_领域”的形式。 采样率需要与音频采样率保持一致。 当前支持如下模型特征串： chinese_8k_common chinese_16k_conversation
      * @return property
      */
     public PropertyEnum getProperty() {

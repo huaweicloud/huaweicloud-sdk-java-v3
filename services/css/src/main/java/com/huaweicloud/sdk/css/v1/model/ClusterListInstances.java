@@ -51,7 +51,7 @@ public class ClusterListInstances {
     }
 
     /**
-     * 状态。  - 100：创建中。 - 200：可用。 - 303：不可用，如创建失败。
+     * 节点状态值。  - 100：创建中。 - 200：可用。 - 303：不可用，如创建失败。
      * @return status
      */
     public String getStatus() {
@@ -68,7 +68,7 @@ public class ClusterListInstances {
     }
 
     /**
-     * 支持类型：ess（Elasticsearch节点）。
+     * 当前节点的类型。
      * @return type
      */
     public String getType() {

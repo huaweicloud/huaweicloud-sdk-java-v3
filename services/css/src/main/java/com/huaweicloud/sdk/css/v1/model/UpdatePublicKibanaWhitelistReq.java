@@ -21,7 +21,7 @@ public class UpdatePublicKibanaWhitelistReq {
     }
 
     /**
-     * 白名单。
+     * 允许kibana公网访问的白名单ip或网段，以逗号隔开，不可重复。
      * @return whiteList
      */
     public String getWhiteList() {

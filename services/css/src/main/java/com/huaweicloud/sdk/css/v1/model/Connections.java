@@ -68,7 +68,7 @@ public class Connections {
     }
 
     /**
-     * 状态。
+     * 终端节点状态。 - accepted：允许该终端节点连接。 - rejected：拒绝该终端节点连接。
      * @return status
      */
     public String getStatus() {
@@ -119,7 +119,7 @@ public class Connections {
     }
 
     /**
-     * 创建时间。
+     * 创建时间，格式为ISO8601：CCYY-MM-DDThh:mm:ss。
      * @return createdAt
      */
     public String getCreatedAt() {
@@ -136,7 +136,7 @@ public class Connections {
     }
 
     /**
-     * 更新时间。
+     * 更新时间。默认为null。
      * @return updateAt
      */
     public String getUpdateAt() {

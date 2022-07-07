@@ -16,6 +16,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.iotedge.v2.model.ModuleContainerSettingsResDTO;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
@@ -41,7 +42,7 @@ public class ShowModuleResponse extends SdkResponse {
     
     private String appVersion;
     /**
-     * 模块状态
+     * 模块运行状态
      */
     public static final class StateEnum {
 
@@ -81,6 +82,16 @@ public class ShowModuleResponse extends SdkResponse {
          */
         public static final StateEnum UNKNOWN = new StateEnum("UNKNOWN");
         
+        /**
+         * Enum DELETE_SUCCESS for value: "DELETE_SUCCESS"
+         */
+        public static final StateEnum DELETE_SUCCESS = new StateEnum("DELETE_SUCCESS");
+        
+        /**
+         * Enum STOPPED for value: "STOPPED"
+         */
+        public static final StateEnum STOPPED = new StateEnum("STOPPED");
+        
 
         private static final Map<String, StateEnum> STATIC_FIELDS = createStaticFields();
 
@@ -93,6 +104,8 @@ public class ShowModuleResponse extends SdkResponse {
             map.put("FAILED", FAILED);
             map.put("SUCCEEDED", SUCCEEDED);
             map.put("UNKNOWN", UNKNOWN);
+            map.put("DELETE_SUCCESS", DELETE_SUCCESS);
+            map.put("STOPPED", STOPPED);
             return Collections.unmodifiableMap(map);
         }
 
@@ -155,6 +168,13 @@ public class ShowModuleResponse extends SdkResponse {
     
     
     private StateEnum state;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="control_status")
+    
+    
+    private String controlStatus;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -302,6 +322,21 @@ public class ShowModuleResponse extends SdkResponse {
          */
         public static final FunctionTypeEnum ON_PREMISE_INTEGRATION = new FunctionTypeEnum("ON_PREMISE_INTEGRATION");
         
+        /**
+         * Enum GATEWAY_MANAGER for value: "GATEWAY_MANAGER"
+         */
+        public static final FunctionTypeEnum GATEWAY_MANAGER = new FunctionTypeEnum("GATEWAY_MANAGER");
+        
+        /**
+         * Enum COMPOSITE_APPLICATION for value: "COMPOSITE_APPLICATION"
+         */
+        public static final FunctionTypeEnum COMPOSITE_APPLICATION = new FunctionTypeEnum("COMPOSITE_APPLICATION");
+        
+        /**
+         * Enum DATA_COLLECTION for value: "DATA_COLLECTION"
+         */
+        public static final FunctionTypeEnum DATA_COLLECTION = new FunctionTypeEnum("DATA_COLLECTION");
+        
 
         private static final Map<String, FunctionTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -310,6 +345,9 @@ public class ShowModuleResponse extends SdkResponse {
             map.put("DATA_PROCESSING", DATA_PROCESSING);
             map.put("PROTOCOL_PARSING", PROTOCOL_PARSING);
             map.put("ON_PREMISE_INTEGRATION", ON_PREMISE_INTEGRATION);
+            map.put("GATEWAY_MANAGER", GATEWAY_MANAGER);
+            map.put("COMPOSITE_APPLICATION", COMPOSITE_APPLICATION);
+            map.put("DATA_COLLECTION", DATA_COLLECTION);
             return Collections.unmodifiableMap(map);
         }
 
@@ -373,6 +411,13 @@ public class ShowModuleResponse extends SdkResponse {
     
     private FunctionTypeEnum functionType;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="container_settings")
+    
+    
+    private ModuleContainerSettingsResDTO containerSettings;
+
     public ShowModuleResponse withEdgeAppId(String edgeAppId) {
         this.edgeAppId = edgeAppId;
         return this;
@@ -426,7 +471,7 @@ public class ShowModuleResponse extends SdkResponse {
 
 
     /**
-     * 模块状态
+     * 模块运行状态
      * @return state
      */
     public StateEnum getState() {
@@ -435,6 +480,28 @@ public class ShowModuleResponse extends SdkResponse {
 
     public void setState(StateEnum state) {
         this.state = state;
+    }
+
+    
+
+    public ShowModuleResponse withControlStatus(String controlStatus) {
+        this.controlStatus = controlStatus;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 模块管控状态
+     * @return controlStatus
+     */
+    public String getControlStatus() {
+        return controlStatus;
+    }
+
+    public void setControlStatus(String controlStatus) {
+        this.controlStatus = controlStatus;
     }
 
     
@@ -593,6 +660,35 @@ public class ShowModuleResponse extends SdkResponse {
 
     
 
+    public ShowModuleResponse withContainerSettings(ModuleContainerSettingsResDTO containerSettings) {
+        this.containerSettings = containerSettings;
+        return this;
+    }
+
+    public ShowModuleResponse withContainerSettings(Consumer<ModuleContainerSettingsResDTO> containerSettingsSetter) {
+        if(this.containerSettings == null ){
+            this.containerSettings = new ModuleContainerSettingsResDTO();
+            containerSettingsSetter.accept(this.containerSettings);
+        }
+        
+        return this;
+    }
+
+
+    /**
+     * Get containerSettings
+     * @return containerSettings
+     */
+    public ModuleContainerSettingsResDTO getContainerSettings() {
+        return containerSettings;
+    }
+
+    public void setContainerSettings(ModuleContainerSettingsResDTO containerSettings) {
+        this.containerSettings = containerSettings;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -605,17 +701,19 @@ public class ShowModuleResponse extends SdkResponse {
         return Objects.equals(this.edgeAppId, showModuleResponse.edgeAppId) &&
             Objects.equals(this.appVersion, showModuleResponse.appVersion) &&
             Objects.equals(this.state, showModuleResponse.state) &&
+            Objects.equals(this.controlStatus, showModuleResponse.controlStatus) &&
             Objects.equals(this.nodeId, showModuleResponse.nodeId) &&
             Objects.equals(this.moduleName, showModuleResponse.moduleName) &&
             Objects.equals(this.moduleId, showModuleResponse.moduleId) &&
             Objects.equals(this.createTime, showModuleResponse.createTime) &&
             Objects.equals(this.updateTime, showModuleResponse.updateTime) &&
             Objects.equals(this.appType, showModuleResponse.appType) &&
-            Objects.equals(this.functionType, showModuleResponse.functionType);
+            Objects.equals(this.functionType, showModuleResponse.functionType) &&
+            Objects.equals(this.containerSettings, showModuleResponse.containerSettings);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(edgeAppId, appVersion, state, nodeId, moduleName, moduleId, createTime, updateTime, appType, functionType);
+        return Objects.hash(edgeAppId, appVersion, state, controlStatus, nodeId, moduleName, moduleId, createTime, updateTime, appType, functionType, containerSettings);
     }
     @Override
     public String toString() {
@@ -624,6 +722,7 @@ public class ShowModuleResponse extends SdkResponse {
         sb.append("    edgeAppId: ").append(toIndentedString(edgeAppId)).append("\n");
         sb.append("    appVersion: ").append(toIndentedString(appVersion)).append("\n");
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
+        sb.append("    controlStatus: ").append(toIndentedString(controlStatus)).append("\n");
         sb.append("    nodeId: ").append(toIndentedString(nodeId)).append("\n");
         sb.append("    moduleName: ").append(toIndentedString(moduleName)).append("\n");
         sb.append("    moduleId: ").append(toIndentedString(moduleId)).append("\n");
@@ -631,6 +730,7 @@ public class ShowModuleResponse extends SdkResponse {
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    appType: ").append(toIndentedString(appType)).append("\n");
         sb.append("    functionType: ").append(toIndentedString(functionType)).append("\n");
+        sb.append("    containerSettings: ").append(toIndentedString(containerSettings)).append("\n");
         sb.append("}");
         return sb.toString();
     }

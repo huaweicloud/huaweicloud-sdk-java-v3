@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 标签对象。
+ * 待添加的标签对象。
  */
 public class Tag {
 

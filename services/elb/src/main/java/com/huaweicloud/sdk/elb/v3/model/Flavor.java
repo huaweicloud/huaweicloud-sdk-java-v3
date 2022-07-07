@@ -112,7 +112,7 @@ public class Flavor {
     }
 
     /**
-     * 共享。
+     * 是否公共规格。取值：  true表示公共规格，所有租户可见。 false表示私有规格，为当前租户所有。
      * @return shared
      */
     public Boolean getShared() {
@@ -146,7 +146,7 @@ public class Flavor {
     }
 
     /**
-     * L4和L7 分别表示四层和七层flavor。查询支持按type过滤。
+     * 规格类别。取值： - L4和L7 表示四层和七层flavor。 - L4_elastic和L7_elastic 表示弹性扩缩容实例的下限规格。 - L4_elastic_max和L7_elastic_max 表示弹性扩缩容实例的上限规格。
      * @return type
      */
     public String getType() {
@@ -163,7 +163,7 @@ public class Flavor {
     }
 
     /**
-     * 是否售罄。
+     * 是否售罄。取值： - true：已售罄，将无法购买该规格的LB。 - false：未售罄，可购买该规格的LB。
      * @return flavorSoldOut
      */
     public Boolean getFlavorSoldOut() {

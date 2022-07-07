@@ -24,9 +24,6 @@ package com.huaweicloud.sdk.core.internal.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/**
- * @author HuaweiCloud_SDK
- */
 public class KeystoneCreateProjectOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")

@@ -588,6 +588,37 @@ public class RmsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListSchemasRequest, ListSchemasResponse> listSchemas = genForlistSchemas();
+
+    private static HttpRequestDef<ListSchemasRequest, ListSchemasResponse> genForlistSchemas() {
+        // basic
+        HttpRequestDef.Builder<ListSchemasRequest, ListSchemasResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSchemasRequest.class, ListSchemasResponse.class)
+                .withName("ListSchemas")
+                .withUri("/v1/resource-manager/domains/{domain_id}/schemas")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSchemasRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSchemasRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListStoredQueriesRequest, ListStoredQueriesResponse> listStoredQueries =
         genForlistStoredQueries();
 

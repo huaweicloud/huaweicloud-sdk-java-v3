@@ -71,7 +71,7 @@ public class NodeNicSpec {
     }
 
     /**
-     * 扩展网卡
+     * 扩展网卡 >创建节点池添加节点时不支持该参数。
      * @return extNics
      */
     public List<NicSpec> getExtNics() {

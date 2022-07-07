@@ -44,6 +44,102 @@ public class ApmMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListEnvMonitorItemRequest, ListEnvMonitorItemResponse> listEnvMonitorItem =
+        genForlistEnvMonitorItem();
+
+    private static HttpRequestDef<ListEnvMonitorItemRequest, ListEnvMonitorItemResponse> genForlistEnvMonitorItem() {
+        // basic
+        HttpRequestDef.Builder<ListEnvMonitorItemRequest, ListEnvMonitorItemResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListEnvMonitorItemRequest.class, ListEnvMonitorItemResponse.class)
+                .withName("ListEnvMonitorItem")
+                .withUri("/v1/apm2/openapi/apm-service/monitor-item-mgr/get-env-monitor-item-list")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Long>withRequestField("x-business-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListEnvMonitorItemRequest::getXBusinessId, (req, v) -> {
+                req.setXBusinessId(v);
+            }));
+        builder.<GetEnvMonitorItemListParam>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(GetEnvMonitorItemListParam.class),
+            f -> f.withMarshaller(ListEnvMonitorItemRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SaveMonitorItemConfigRequest, SaveMonitorItemConfigResponse> saveMonitorItemConfig =
+        genForsaveMonitorItemConfig();
+
+    private static HttpRequestDef<SaveMonitorItemConfigRequest, SaveMonitorItemConfigResponse> genForsaveMonitorItemConfig() {
+        // basic
+        HttpRequestDef.Builder<SaveMonitorItemConfigRequest, SaveMonitorItemConfigResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, SaveMonitorItemConfigRequest.class, SaveMonitorItemConfigResponse.class)
+            .withName("SaveMonitorItemConfig")
+            .withUri("/v1/apm2/openapi/apm-service/monitor-item-mgr/save-monitor-item-config")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Long>withRequestField("x-business-id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(SaveMonitorItemConfigRequest::getXBusinessId, (req, v) -> {
+                req.setXBusinessId(v);
+            }));
+        builder.<SaveMonitorItemParam>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SaveMonitorItemParam.class),
+            f -> f.withMarshaller(SaveMonitorItemConfigRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SearchApplicationRequest, SearchApplicationResponse> searchApplication =
+        genForsearchApplication();
+
+    private static HttpRequestDef<SearchApplicationRequest, SearchApplicationResponse> genForsearchApplication() {
+        // basic
+        HttpRequestDef.Builder<SearchApplicationRequest, SearchApplicationResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, SearchApplicationRequest.class, SearchApplicationResponse.class)
+                .withName("SearchApplication")
+                .withUri("/v1/apm2/openapi/apm-service/app-mgr/search")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Long>withRequestField("x-business-id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(SearchApplicationRequest::getXBusinessId, (req, v) -> {
+                req.setXBusinessId(v);
+            }));
+        builder.<AppSearchParam>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AppSearchParam.class),
+            f -> f.withMarshaller(SearchApplicationRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowMasterAddressRequest, ShowMasterAddressResponse> showMasterAddress =
         genForshowMasterAddress();
 

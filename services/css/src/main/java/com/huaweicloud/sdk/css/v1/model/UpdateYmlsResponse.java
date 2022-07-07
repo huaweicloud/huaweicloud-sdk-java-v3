@@ -32,7 +32,7 @@ public class UpdateYmlsResponse extends SdkResponse {
     }
 
     /**
-     * 返回值。
+     * 修改是否成功。 - true: 修改成功。 - false: 修改失败。
      * @return acknowledged
      */
     public Boolean getAcknowledged() {
@@ -49,7 +49,7 @@ public class UpdateYmlsResponse extends SdkResponse {
     }
 
     /**
-     * 返回信息。
+     * 错误信息描述。当acknowledged为true时，该字段返回null。
      * @return externalMessage
      */
     public String getExternalMessage() {
@@ -66,7 +66,7 @@ public class UpdateYmlsResponse extends SdkResponse {
     }
 
     /**
-     * 返回错误信息。
+     * HTTTP错误信息。默认为null。
      * @return httpErrorResponse
      */
     public String getHttpErrorResponse() {

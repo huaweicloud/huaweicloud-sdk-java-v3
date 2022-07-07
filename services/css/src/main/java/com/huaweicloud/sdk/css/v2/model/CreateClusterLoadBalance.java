@@ -29,7 +29,7 @@ public class CreateClusterLoadBalance {
     }
 
     /**
-     * 是否开启内网域名。
+     * 是否开启内网域名。 - true： 开启内网域名。 - false： 关闭内网域名。
      * @return endpointWithDnsName
      */
     public Boolean getEndpointWithDnsName() {

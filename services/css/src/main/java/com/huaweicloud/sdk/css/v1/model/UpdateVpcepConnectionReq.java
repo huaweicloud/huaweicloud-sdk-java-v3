@@ -29,7 +29,7 @@ public class UpdateVpcepConnectionReq {
     }
 
     /**
-     * 期望的操作行为。
+     * 期望的操作行为。 - receive: 允许连接 - reject: 拒绝连接
      * @return action
      */
     public String getAction() {

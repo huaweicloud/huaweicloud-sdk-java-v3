@@ -131,7 +131,7 @@ public class CdnLog {
     }
 
     /**
-     * 日志下载链接。
+     * 日志下载链接,日志文件[参数说明](https://support.huaweicloud.com/usermanual-cdn/zh-cn_topic_0073337424.html)。
      * @return link
      */
     public String getLink() {

@@ -119,7 +119,7 @@ public class Actions {
     }
 
     /**
-     * 更新时间。
+     * 更新时间，格式为ISO8601：CCYY-MM-DDThh:mm:ss。
      * @return updateAt
      */
     public String getUpdateAt() {
@@ -136,7 +136,7 @@ public class Actions {
     }
 
     /**
-     * 错误信息。
+     * 错误信息。当操作状态为success时该字段为null。
      * @return errorMsg
      */
     public String getErrorMsg() {

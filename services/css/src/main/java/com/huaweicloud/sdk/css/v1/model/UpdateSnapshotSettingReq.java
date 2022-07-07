@@ -31,7 +31,7 @@ public class UpdateSnapshotSettingReq {
     }
 
     /**
-     * 备份使用的OBS桶，如果桶已经存放快照数据了，不可更改。
+     * 备份使用的OBS桶的桶名。
      * @return bucket
      */
     public String getBucket() {

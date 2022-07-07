@@ -3,10 +3,7 @@ package com.huaweicloud.sdk.elb.v3.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * SystemSecurityPolicy
@@ -21,12 +18,12 @@ public class SystemSecurityPolicy {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protocols")
 
-    private List<String> protocols = null;
+    private String protocols;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ciphers")
 
-    private List<String> ciphers = null;
+    private String ciphers;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
@@ -50,24 +47,8 @@ public class SystemSecurityPolicy {
         this.name = name;
     }
 
-    public SystemSecurityPolicy withProtocols(List<String> protocols) {
+    public SystemSecurityPolicy withProtocols(String protocols) {
         this.protocols = protocols;
-        return this;
-    }
-
-    public SystemSecurityPolicy addProtocolsItem(String protocolsItem) {
-        if (this.protocols == null) {
-            this.protocols = new ArrayList<>();
-        }
-        this.protocols.add(protocolsItem);
-        return this;
-    }
-
-    public SystemSecurityPolicy withProtocols(Consumer<List<String>> protocolsSetter) {
-        if (this.protocols == null) {
-            this.protocols = new ArrayList<>();
-        }
-        protocolsSetter.accept(this.protocols);
         return this;
     }
 
@@ -75,32 +56,16 @@ public class SystemSecurityPolicy {
      * 系统安全策略的TLS协议列表。
      * @return protocols
      */
-    public List<String> getProtocols() {
+    public String getProtocols() {
         return protocols;
     }
 
-    public void setProtocols(List<String> protocols) {
+    public void setProtocols(String protocols) {
         this.protocols = protocols;
     }
 
-    public SystemSecurityPolicy withCiphers(List<String> ciphers) {
+    public SystemSecurityPolicy withCiphers(String ciphers) {
         this.ciphers = ciphers;
-        return this;
-    }
-
-    public SystemSecurityPolicy addCiphersItem(String ciphersItem) {
-        if (this.ciphers == null) {
-            this.ciphers = new ArrayList<>();
-        }
-        this.ciphers.add(ciphersItem);
-        return this;
-    }
-
-    public SystemSecurityPolicy withCiphers(Consumer<List<String>> ciphersSetter) {
-        if (this.ciphers == null) {
-            this.ciphers = new ArrayList<>();
-        }
-        ciphersSetter.accept(this.ciphers);
         return this;
     }
 
@@ -108,11 +73,11 @@ public class SystemSecurityPolicy {
      * 系统安全策略的加密套件列表。
      * @return ciphers
      */
-    public List<String> getCiphers() {
+    public String getCiphers() {
         return ciphers;
     }
 
-    public void setCiphers(List<String> ciphers) {
+    public void setCiphers(String ciphers) {
         this.ciphers = ciphers;
     }
 

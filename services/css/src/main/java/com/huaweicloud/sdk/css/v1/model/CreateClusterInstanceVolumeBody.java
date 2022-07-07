@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * volume信息。当flavorRef选择的是本地盘规格时不需要填写，本地盘规格可以通过获取实例规格列表接口获取。目前支持的本地盘规格有： - ess.spec-i3small - ess.spec-i3medium - ess.spec-i3.8xlarge.8 - ess.spec-ds.xlarge.8 - ess.spec-ds.2xlarge.8 - ess.spec-ds.4xlarge.8
+ * volume信息。当flavorRef选择的是本地盘规格时不需要填写,目前支持的本地盘规格有： - ess.spec-i3small - ess.spec-i3medium - ess.spec-i3.8xlarge.8 - ess.spec-ds.xlarge.8 - ess.spec-ds.2xlarge.8 - ess.spec-ds.4xlarge.8
  */
 public class CreateClusterInstanceVolumeBody {
 
@@ -43,7 +43,7 @@ public class CreateClusterInstanceVolumeBody {
     }
 
     /**
-     * 卷大小，必须大于0且为4和10的公倍数。 单位：GB。
+     * 卷大小，必须大于0且为4和10的公倍数，本地盘规格大小可以通过[获取实例规格列表](ListFlavors.xml)中diskrange属性获得。 单位：GB。
      * @return size
      */
     public Integer getSize() {

@@ -32,7 +32,7 @@ public class StartKibanaPublicReq {
     }
 
     /**
-     * 带宽。
+     * 带宽。单位：Mbit/s
      * @return eipSize
      */
     public Integer getEipSize() {

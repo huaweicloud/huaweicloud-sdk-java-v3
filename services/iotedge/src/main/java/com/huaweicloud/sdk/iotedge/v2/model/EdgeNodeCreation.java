@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.iotedge.v2.model.BasePathDTO;
 import com.huaweicloud.sdk.iotedge.v2.model.EdgeAppInstanceDTO;
 import com.huaweicloud.sdk.iotedge.v2.model.LogConfigDTO;
 import java.util.ArrayList;
@@ -23,6 +24,13 @@ public class EdgeNodeCreation  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="edge_node_id")
+    
+    
+    private String edgeNodeId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
     
@@ -34,6 +42,27 @@ public class EdgeNodeCreation  {
     
     
     private String type;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="verify_code")
+    
+    
+    private String verifyCode;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="time_out")
+    
+    
+    private Integer timeOut;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="arch")
+    
+    
+    private String arch;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -79,6 +108,13 @@ public class EdgeNodeCreation  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="base_path")
+    
+    
+    private BasePathDTO basePath;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="log_configs")
     
     
@@ -91,6 +127,35 @@ public class EdgeNodeCreation  {
     
     private List<EdgeAppInstanceDTO> apps = null;
     
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="hardware_model")
+    
+    
+    private String hardwareModel;
+
+    public EdgeNodeCreation withEdgeNodeId(String edgeNodeId) {
+        this.edgeNodeId = edgeNodeId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 边缘节点ID
+     * @return edgeNodeId
+     */
+    public String getEdgeNodeId() {
+        return edgeNodeId;
+    }
+
+    public void setEdgeNodeId(String edgeNodeId) {
+        this.edgeNodeId = edgeNodeId;
+    }
+
+    
+
     public EdgeNodeCreation withName(String name) {
         this.name = name;
         return this;
@@ -131,6 +196,74 @@ public class EdgeNodeCreation  {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    
+
+    public EdgeNodeCreation withVerifyCode(String verifyCode) {
+        this.verifyCode = verifyCode;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 边缘节点注册使用的验证码，如果不输入则平台随机生成。
+     * @return verifyCode
+     */
+    public String getVerifyCode() {
+        return verifyCode;
+    }
+
+    public void setVerifyCode(String verifyCode) {
+        this.verifyCode = verifyCode;
+    }
+
+    
+
+    public EdgeNodeCreation withTimeOut(Integer timeOut) {
+        this.timeOut = timeOut;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 验证码的有效时间单位秒，默认1800秒，范围为1~864000，过期后平台会随机生成。
+     * minimum: 1
+     * maximum: 864000
+     * @return timeOut
+     */
+    public Integer getTimeOut() {
+        return timeOut;
+    }
+
+    public void setTimeOut(Integer timeOut) {
+        this.timeOut = timeOut;
+    }
+
+    
+
+    public EdgeNodeCreation withArch(String arch) {
+        this.arch = arch;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 系统架构。包括：arm64，arm32，x86_64。
+     * @return arch
+     */
+    public String getArch() {
+        return arch;
+    }
+
+    public void setArch(String arch) {
+        this.arch = arch;
     }
 
     
@@ -202,7 +335,7 @@ public class EdgeNodeCreation  {
     }
 
     /**
-     * 资源id列表，创建节点时需绑定已购买的资源包，可以叠加节点功能。
+     * 资源id列表，创建节点时需绑定已购买的资源包，资源可叠加。
      * @return resourceIds
      */
     public List<String> getResourceIds() {
@@ -224,7 +357,7 @@ public class EdgeNodeCreation  {
 
 
     /**
-     * 节点的安全等级，MEDIUM边缘节数据上报不进行加密，HIGH对数据上报进行加密。
+     * 节点的安全等级，MEDIUM表示本地明文存储，HIGH表示本地加密存储。
      * @return securityLevel
      */
     public String getSecurityLevel() {
@@ -270,7 +403,7 @@ public class EdgeNodeCreation  {
 
 
     /**
-     * 华为AI加速卡类型，如NPU、GPU
+     * 华为AI加速卡类型，如NPU、GPU。
      * @return aiCardType
      */
     public String getAiCardType() {
@@ -279,6 +412,35 @@ public class EdgeNodeCreation  {
 
     public void setAiCardType(String aiCardType) {
         this.aiCardType = aiCardType;
+    }
+
+    
+
+    public EdgeNodeCreation withBasePath(BasePathDTO basePath) {
+        this.basePath = basePath;
+        return this;
+    }
+
+    public EdgeNodeCreation withBasePath(Consumer<BasePathDTO> basePathSetter) {
+        if(this.basePath == null ){
+            this.basePath = new BasePathDTO();
+            basePathSetter.accept(this.basePath);
+        }
+        
+        return this;
+    }
+
+
+    /**
+     * Get basePath
+     * @return basePath
+     */
+    public BasePathDTO getBasePath() {
+        return basePath;
+    }
+
+    public void setBasePath(BasePathDTO basePath) {
+        this.basePath = basePath;
     }
 
     
@@ -306,7 +468,7 @@ public class EdgeNodeCreation  {
     }
 
     /**
-     * 边缘节点在IEF日志配置参数
+     * 边缘节点在IEF日志配置参数，仅高级版支持。
      * @return logConfigs
      */
     public List<LogConfigDTO> getLogConfigs() {
@@ -355,6 +517,28 @@ public class EdgeNodeCreation  {
 
     
 
+    public EdgeNodeCreation withHardwareModel(String hardwareModel) {
+        this.hardwareModel = hardwareModel;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 网关型号
+     * @return hardwareModel
+     */
+    public String getHardwareModel() {
+        return hardwareModel;
+    }
+
+    public void setHardwareModel(String hardwareModel) {
+        this.hardwareModel = hardwareModel;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -364,35 +548,47 @@ public class EdgeNodeCreation  {
             return false;
         }
         EdgeNodeCreation edgeNodeCreation = (EdgeNodeCreation) o;
-        return Objects.equals(this.name, edgeNodeCreation.name) &&
+        return Objects.equals(this.edgeNodeId, edgeNodeCreation.edgeNodeId) &&
+            Objects.equals(this.name, edgeNodeCreation.name) &&
             Objects.equals(this.type, edgeNodeCreation.type) &&
+            Objects.equals(this.verifyCode, edgeNodeCreation.verifyCode) &&
+            Objects.equals(this.timeOut, edgeNodeCreation.timeOut) &&
+            Objects.equals(this.arch, edgeNodeCreation.arch) &&
             Objects.equals(this.instanceId, edgeNodeCreation.instanceId) &&
             Objects.equals(this.spaceId, edgeNodeCreation.spaceId) &&
             Objects.equals(this.resourceIds, edgeNodeCreation.resourceIds) &&
             Objects.equals(this.securityLevel, edgeNodeCreation.securityLevel) &&
             Objects.equals(this.storagePeriod, edgeNodeCreation.storagePeriod) &&
             Objects.equals(this.aiCardType, edgeNodeCreation.aiCardType) &&
+            Objects.equals(this.basePath, edgeNodeCreation.basePath) &&
             Objects.equals(this.logConfigs, edgeNodeCreation.logConfigs) &&
-            Objects.equals(this.apps, edgeNodeCreation.apps);
+            Objects.equals(this.apps, edgeNodeCreation.apps) &&
+            Objects.equals(this.hardwareModel, edgeNodeCreation.hardwareModel);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(name, type, instanceId, spaceId, resourceIds, securityLevel, storagePeriod, aiCardType, logConfigs, apps);
+        return Objects.hash(edgeNodeId, name, type, verifyCode, timeOut, arch, instanceId, spaceId, resourceIds, securityLevel, storagePeriod, aiCardType, basePath, logConfigs, apps, hardwareModel);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class EdgeNodeCreation {\n");
+        sb.append("    edgeNodeId: ").append(toIndentedString(edgeNodeId)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    verifyCode: ").append(toIndentedString(verifyCode)).append("\n");
+        sb.append("    timeOut: ").append(toIndentedString(timeOut)).append("\n");
+        sb.append("    arch: ").append(toIndentedString(arch)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    spaceId: ").append(toIndentedString(spaceId)).append("\n");
         sb.append("    resourceIds: ").append(toIndentedString(resourceIds)).append("\n");
         sb.append("    securityLevel: ").append(toIndentedString(securityLevel)).append("\n");
         sb.append("    storagePeriod: ").append(toIndentedString(storagePeriod)).append("\n");
         sb.append("    aiCardType: ").append(toIndentedString(aiCardType)).append("\n");
+        sb.append("    basePath: ").append(toIndentedString(basePath)).append("\n");
         sb.append("    logConfigs: ").append(toIndentedString(logConfigs)).append("\n");
         sb.append("    apps: ").append(toIndentedString(apps)).append("\n");
+        sb.append("    hardwareModel: ").append(toIndentedString(hardwareModel)).append("\n");
         sb.append("}");
         return sb.toString();
     }

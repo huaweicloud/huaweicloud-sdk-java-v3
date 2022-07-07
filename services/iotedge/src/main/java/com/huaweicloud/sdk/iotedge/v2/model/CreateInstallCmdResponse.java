@@ -35,7 +35,7 @@ public class CreateInstallCmdResponse extends SdkResponse {
 
 
     /**
-     * 标准版节点安装命令
+     * 标准版节点安装/升级命令
      * @return cmd
      */
     public String getCmd() {

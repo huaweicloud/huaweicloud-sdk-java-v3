@@ -21,7 +21,7 @@ public class StartLogAutoBackupPolicyReq {
     }
 
     /**
-     * 备份开始时间。
+     * 备份开始时间。格式：格林威治标准时间。
      * @return period
      */
     public String getPeriod() {

@@ -67,6 +67,14 @@ public class IoTEdgeMeta {
                 req.setArch(v);
             })
         );
+        builder.<CreateInstallCmdRequestDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CreateInstallCmdRequestDTO.class),
+            f -> f.withMarshaller(CreateInstallCmdRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
 
         // response
         
@@ -264,68 +272,6 @@ public class IoTEdgeMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<BatchUpdateConfigsRequest, BatchUpdateConfigsResponse> batchUpdateConfigs = genForbatchUpdateConfigs();
-
-    private static HttpRequestDef<BatchUpdateConfigsRequest, BatchUpdateConfigsResponse> genForbatchUpdateConfigs() {
-        // basic
-        HttpRequestDef.Builder<BatchUpdateConfigsRequest, BatchUpdateConfigsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, BatchUpdateConfigsRequest.class, BatchUpdateConfigsResponse.class)
-                .withName("BatchUpdateConfigs")
-                .withUri("/v2/{project_id}/devices/batch-configs")
-                .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.<BatchUpdateConfigs>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(BatchUpdateConfigs.class),
-            f -> f.withMarshaller(BatchUpdateConfigsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            })
-        );
-
-        // response
-        
-
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreateAccessCodeRequest, CreateAccessCodeResponse> createAccessCode = genForcreateAccessCode();
-
-    private static HttpRequestDef<CreateAccessCodeRequest, CreateAccessCodeResponse> genForcreateAccessCode() {
-        // basic
-        HttpRequestDef.Builder<CreateAccessCodeRequest, CreateAccessCodeResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateAccessCodeRequest.class, CreateAccessCodeResponse.class)
-                .withName("CreateAccessCode")
-                .withUri("/v2/{project_id}/edge-nodes/{edge_node_id}/devices/{device_id}/access-code")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("edge_node_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAccessCodeRequest::getEdgeNodeId, (req, v) -> {
-                req.setEdgeNodeId(v);
-            })
-        );
-        builder.<String>withRequestField("device_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAccessCodeRequest::getDeviceId, (req, v) -> {
-                req.setDeviceId(v);
-            })
-        );
-
-        // response
-        
-
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<DeleteDeviceRequest, DeleteDeviceResponse> deleteDevice = genFordeleteDevice();
 
     private static HttpRequestDef<DeleteDeviceRequest, DeleteDeviceResponse> genFordeleteDevice() {
@@ -456,42 +402,6 @@ public class IoTEdgeMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowProtocolMappingsRequest, ShowProtocolMappingsResponse> showProtocolMappings = genForshowProtocolMappings();
-
-    private static HttpRequestDef<ShowProtocolMappingsRequest, ShowProtocolMappingsResponse> genForshowProtocolMappings() {
-        // basic
-        HttpRequestDef.Builder<ShowProtocolMappingsRequest, ShowProtocolMappingsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowProtocolMappingsRequest.class, ShowProtocolMappingsResponse.class)
-                .withName("ShowProtocolMappings")
-                .withUri("/v2/{project_id}/products/{product_id}/protocol-mappings")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("product_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowProtocolMappingsRequest::getProductId, (req, v) -> {
-                req.setProductId(v);
-            })
-        );
-
-        // response
-        
-        builder.<String>withResponseField(
-            "body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ShowProtocolMappingsResponse::getBody, (response, data)->{
-                response.setBody(data);
-            })
-        );
-        
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<UpdateDeviceRequest, UpdateDeviceResponse> updateDevice = genForupdateDevice();
 
     private static HttpRequestDef<UpdateDeviceRequest, UpdateDeviceResponse> genForupdateDevice() {
@@ -531,50 +441,6 @@ public class IoTEdgeMeta {
         // response
         
 
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<UploadProtocolMappingsRequest, UploadProtocolMappingsResponse> uploadProtocolMappings = genForuploadProtocolMappings();
-
-    private static HttpRequestDef<UploadProtocolMappingsRequest, UploadProtocolMappingsResponse> genForuploadProtocolMappings() {
-        // basic
-        HttpRequestDef.Builder<UploadProtocolMappingsRequest, UploadProtocolMappingsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, UploadProtocolMappingsRequest.class, UploadProtocolMappingsResponse.class)
-                .withName("UploadProtocolMappings")
-                .withUri("/v2/{project_id}/products/{product_id}/protocol-mappings")
-                .withContentType("multipart/form-data");
-
-        // requests
-        builder.<String>withRequestField("product_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UploadProtocolMappingsRequest::getProductId, (req, v) -> {
-                req.setProductId(v);
-            })
-        );
-        builder.<UploadProtocolMappingsRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(UploadProtocolMappingsRequestBody.class),
-            f -> f.withMarshaller(UploadProtocolMappingsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            })
-        );
-
-        // response
-        
-        builder.<String>withResponseField(
-            "body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(UploadProtocolMappingsResponse::getBody, (response, data)->{
-                response.setBody(data);
-            })
-        );
-        
 
         return builder.build();
     }
@@ -1115,41 +981,6 @@ public class IoTEdgeMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListExternalEntityRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-
-        // response
-        
-
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowExternalEntityRequest, ShowExternalEntityResponse> showExternalEntity = genForshowExternalEntity();
-
-    private static HttpRequestDef<ShowExternalEntityRequest, ShowExternalEntityResponse> genForshowExternalEntity() {
-        // basic
-        HttpRequestDef.Builder<ShowExternalEntityRequest, ShowExternalEntityResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowExternalEntityRequest.class, ShowExternalEntityResponse.class)
-                .withName("ShowExternalEntity")
-                .withUri("/v2/{project_id}/edge-nodes/{edge_node_id}/externals/{external_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("edge_node_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowExternalEntityRequest::getEdgeNodeId, (req, v) -> {
-                req.setEdgeNodeId(v);
-            })
-        );
-        builder.<String>withRequestField("external_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowExternalEntityRequest::getExternalId, (req, v) -> {
-                req.setExternalId(v);
             })
         );
 

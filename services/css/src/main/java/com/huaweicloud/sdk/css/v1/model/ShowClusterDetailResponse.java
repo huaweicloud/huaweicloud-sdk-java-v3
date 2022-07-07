@@ -112,7 +112,7 @@ public class ShowClusterDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "actionProgress")
 
-    private ClusterDetailActionProgress actionProgress;
+    private Object actionProgress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "actions")
@@ -256,7 +256,7 @@ public class ShowClusterDetailResponse extends SdkResponse {
     }
 
     /**
-     * 集群上次修改时间，格式为ISO8601: CCYY-MM-DDThh:mm:ss。
+     * 集群上次修改时间，格式为ISO8601： CCYY-MM-DDThh:mm:ss。
      * @return updated
      */
     public String getUpdated() {
@@ -307,7 +307,7 @@ public class ShowClusterDetailResponse extends SdkResponse {
     }
 
     /**
-     * 集群创建时间，格式为ISO8601: CCYY-MM-DDThh:mm:ss。
+     * 集群创建时间，格式为ISO8601： CCYY-MM-DDThh:mm:ss。
      * @return created
      */
     public String getCreated() {
@@ -341,7 +341,7 @@ public class ShowClusterDetailResponse extends SdkResponse {
     }
 
     /**
-     * 查询返回值。  - 100：操作进行中，如创建中。 - 200：可用。 - 303：不可用，如创建失败。
+     * 集群状态值。  - 100：操作进行中，如创建中。 - 200：可用。 - 303：不可用，如创建失败。
      * @return status
      */
     public String getStatus() {
@@ -426,7 +426,7 @@ public class ShowClusterDetailResponse extends SdkResponse {
     }
 
     /**
-     * 公网带宽大小。
+     * 公网带宽大小。单位：Mbit/s
      * @return bandwidthSize
      */
     public Integer getBandwidthSize() {
@@ -443,7 +443,7 @@ public class ShowClusterDetailResponse extends SdkResponse {
     }
 
     /**
-     * 通信加密状态。 false：未设置通信加密。 true：已设置通信加密。
+     * 通信加密状态。 - false：未设置通信加密。 - true：已设置通信加密。
      * @return httpsEnable
      */
     public Boolean getHttpsEnable() {
@@ -477,7 +477,7 @@ public class ShowClusterDetailResponse extends SdkResponse {
     }
 
     /**
-     * 是否开启认证，取值范围为true或false。默认关闭认证功能。当开启认证时，httpsEnable需要设置为true。 - true：表示集群开启认证。 - false：表示集群不开启认证。
+     * 是否开启认证，取值范围为true或false。默认关闭认证功能。 - true：表示集群开启认证。 - false：表示集群不开启认证。
      * @return authorityEnable
      */
     public Boolean getAuthorityEnable() {
@@ -494,7 +494,7 @@ public class ShowClusterDetailResponse extends SdkResponse {
     }
 
     /**
-     * 快照是否开启。
+     * 快照是否开启。 - true: 快照开启状态。 - false: 快照关闭状态。
      * @return backupAvailable
      */
     public Boolean getBackupAvailable() {
@@ -505,29 +505,20 @@ public class ShowClusterDetailResponse extends SdkResponse {
         this.backupAvailable = backupAvailable;
     }
 
-    public ShowClusterDetailResponse withActionProgress(ClusterDetailActionProgress actionProgress) {
+    public ShowClusterDetailResponse withActionProgress(Object actionProgress) {
         this.actionProgress = actionProgress;
         return this;
     }
 
-    public ShowClusterDetailResponse withActionProgress(Consumer<ClusterDetailActionProgress> actionProgressSetter) {
-        if (this.actionProgress == null) {
-            this.actionProgress = new ClusterDetailActionProgress();
-            actionProgressSetter.accept(this.actionProgress);
-        }
-
-        return this;
-    }
-
     /**
-     * Get actionProgress
+     * 集群行为进度，显示创建或扩容进度的百分比。
      * @return actionProgress
      */
-    public ClusterDetailActionProgress getActionProgress() {
+    public Object getActionProgress() {
         return actionProgress;
     }
 
-    public void setActionProgress(ClusterDetailActionProgress actionProgress) {
+    public void setActionProgress(Object actionProgress) {
         this.actionProgress = actionProgress;
     }
 
@@ -646,7 +637,7 @@ public class ShowClusterDetailResponse extends SdkResponse {
     }
 
     /**
-     * 是为包周期集群。 - \"true\" 表示是包周期计费的集群。 - \"false\" 表示是按需计费的集群。
+     * 是否为包周期集群。 - \"true\" 表示是包周期计费的集群。 - \"false\" 表示是按需计费的集群。
      * @return period
      */
     public Boolean getPeriod() {

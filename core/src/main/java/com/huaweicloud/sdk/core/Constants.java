@@ -51,7 +51,13 @@ public final class Constants {
 
     public static final String X_SECURITY_TOKEN = "X-Security-Token";
 
+    public static final String X_AUTH_TOKEN = "X-Auth-Token";
+
+    public static final String X_IDP_ID = "X-Idp-Id";
+
     public static final String X_SDK_CONTENT_SHA256 = "X-Sdk-Content-Sha256";
+
+    public static final String X_SUBJECT_TOKEN = "X-Subject-Token";
 
     public static final String UNSIGNED_PAYLOAD = "UNSIGNED-PAYLOAD";
 
@@ -103,6 +109,8 @@ public final class Constants {
 
     public static final String GLOBAL_REGION_ID = "globe";
 
+    public static final String DEFAULT_PROFILE_DIR_NAME = ".huaweicloud";
+
     /**
      * some special status code
      */
@@ -125,6 +133,10 @@ public final class Constants {
         public static final String BASIC_CREDENTIAL = "BasicCredentials";
 
         public static final String GLOBAL_CREDENTIAL = "GlobalCredentials";
+
+        public static final String BASIC = "basic";
+
+        public static final String GLOBAL = "global";
     }
 
     /**

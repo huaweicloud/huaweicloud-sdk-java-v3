@@ -70,16 +70,6 @@ public class CertificateInfo {
 
     private String projectId;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "enc_certificate")
-
-    private String encCertificate;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "enc_private_key")
-
-    private String encPrivateKey;
-
     public CertificateInfo withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
@@ -137,7 +127,7 @@ public class CertificateInfo {
     }
 
     /**
-     * 服务器证书所签域名。该字段仅type为server时有效。 总长度为0-1024，由若干普通域名或泛域名组成，域名之间以\",\"分割，不超过30个域名。 普通域名：由若干字符串组成，字符串间以\".\"分割，单个字符串长度不超过63个字符，只能包含英文字母、数字或\"-\"，且必须以字母或数字开头和结尾。例：www.test.com； 泛域名：在普通域名的基础上仅允许首字母为\"*\"。例：*.test.com
+     * 服务器证书所签域名。该字段仅type为server时有效。   总长度为0-1024，由若干普通域名或泛域名组成，域名之间以\",\"分割，不超过30个域名。   普通域名：由若干字符串组成，字符串间以\".\"分割，单个字符串长度不超过63个字符，只能包含英文字母、数字或\"-\"，且必须以字母或数字开头和结尾。例：www.test.com；   泛域名：在普通域名的基础上仅允许首字母为\"*\"。例：*.test.com
      * @return domain
      */
     public String getDomain() {
@@ -205,7 +195,7 @@ public class CertificateInfo {
     }
 
     /**
-     * 证书的类型。分为服务器证书(server)和CA证书(client)。默认值：server。
+     * SSL证书的类型。分为服务器证书(server)、CA证书(client)。默认值：server。
      * @return type
      */
     public String getType() {
@@ -284,40 +274,6 @@ public class CertificateInfo {
         this.projectId = projectId;
     }
 
-    public CertificateInfo withEncCertificate(String encCertificate) {
-        this.encCertificate = encCertificate;
-        return this;
-    }
-
-    /**
-     * HTTPS协议使用的SM加密证书内容。  取值：PEM编码格式。  注意：仅在当前局点的SM加密证书特性开启才会返回该字段。
-     * @return encCertificate
-     */
-    public String getEncCertificate() {
-        return encCertificate;
-    }
-
-    public void setEncCertificate(String encCertificate) {
-        this.encCertificate = encCertificate;
-    }
-
-    public CertificateInfo withEncPrivateKey(String encPrivateKey) {
-        this.encPrivateKey = encPrivateKey;
-        return this;
-    }
-
-    /**
-     * HTTPS协议使用的SM加密证书私钥。  取值：PEM编码格式。  注意：仅在当前局点的SM加密证书特性开启才会返回该字段。
-     * @return encPrivateKey
-     */
-    public String getEncPrivateKey() {
-        return encPrivateKey;
-    }
-
-    public void setEncPrivateKey(String encPrivateKey) {
-        this.encPrivateKey = encPrivateKey;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -337,9 +293,7 @@ public class CertificateInfo {
             && Objects.equals(this.createdAt, certificateInfo.createdAt)
             && Objects.equals(this.updatedAt, certificateInfo.updatedAt)
             && Objects.equals(this.expireTime, certificateInfo.expireTime)
-            && Objects.equals(this.projectId, certificateInfo.projectId)
-            && Objects.equals(this.encCertificate, certificateInfo.encCertificate)
-            && Objects.equals(this.encPrivateKey, certificateInfo.encPrivateKey);
+            && Objects.equals(this.projectId, certificateInfo.projectId);
     }
 
     @Override
@@ -355,9 +309,7 @@ public class CertificateInfo {
             createdAt,
             updatedAt,
             expireTime,
-            projectId,
-            encCertificate,
-            encPrivateKey);
+            projectId);
     }
 
     @Override
@@ -376,8 +328,6 @@ public class CertificateInfo {
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("    expireTime: ").append(toIndentedString(expireTime)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
-        sb.append("    encCertificate: ").append(toIndentedString(encCertificate)).append("\n");
-        sb.append("    encPrivateKey: ").append(toIndentedString(encPrivateKey)).append("\n");
         sb.append("}");
         return sb.toString();
     }

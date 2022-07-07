@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 数据搜索引擎类型。
+ * 引擎类型，目前只支持elasticsearch。
  */
 public class CreateClusterDatastoreBody {
 
@@ -43,7 +43,7 @@ public class CreateClusterDatastoreBody {
     }
 
     /**
-     * 引擎类型，支持elasticsearch和logstash。
+     * 引擎类型，支持elasticsearch。
      * @return type
      */
     public String getType() {

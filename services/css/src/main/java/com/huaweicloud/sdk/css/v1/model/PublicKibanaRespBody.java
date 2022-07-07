@@ -32,7 +32,7 @@ public class PublicKibanaRespBody {
     }
 
     /**
-     * 带宽大小。
+     * 带宽大小。单位：Mbit/s
      * @return eipSize
      */
     public Integer getEipSize() {

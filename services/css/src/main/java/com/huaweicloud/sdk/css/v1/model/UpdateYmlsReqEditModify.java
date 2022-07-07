@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 配置文件信息。
+ * 配置文件操作。 - modify: 修改参数配置。 - delete: 删除参数配置。 - reset: 重置参数配置。
  */
 public class UpdateYmlsReqEditModify {
 
@@ -21,7 +21,7 @@ public class UpdateYmlsReqEditModify {
     }
 
     /**
-     * 参数配置列表。
+     * 参数配置列表。值为需要修改的json数据。
      * @return elasticsearchYml
      */
     public Object getElasticsearchYml() {

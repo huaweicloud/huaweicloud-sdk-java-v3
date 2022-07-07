@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 白名单信息。
+ * kibana白名单信息。
  */
 public class CreateClusterPublicKibanaElbWhiteList {
 
@@ -26,7 +26,7 @@ public class CreateClusterPublicKibanaElbWhiteList {
     }
 
     /**
-     * 白名单。
+     * 白名单。需要添加白名单的网段或ip，以逗号隔开，不可重复。
      * @return whiteList
      */
     public String getWhiteList() {
@@ -43,7 +43,7 @@ public class CreateClusterPublicKibanaElbWhiteList {
     }
 
     /**
-     * 是否开启访问控制。
+     * 是否开启kibana访问控制。
      * @return enableWhiteList
      */
     public Boolean getEnableWhiteList() {

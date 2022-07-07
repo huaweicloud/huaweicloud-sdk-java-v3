@@ -12,7 +12,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * 设备接入类型。
+ * 设备接入类型（已废弃）
  */
 public class EdgeDeviceAuthInfo  {
 

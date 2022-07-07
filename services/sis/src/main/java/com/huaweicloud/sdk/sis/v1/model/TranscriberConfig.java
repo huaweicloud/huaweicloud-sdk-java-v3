@@ -165,6 +165,11 @@ public class TranscriberConfig {
          */
         public static final PropertyEnum CHINESE_8K_INSURANCE = new PropertyEnum("chinese_8k_insurance");
 
+        /**
+         * Enum CHINESE_16K_MEDIA for value: "chinese_16k_media"
+         */
+        public static final PropertyEnum CHINESE_16K_MEDIA = new PropertyEnum("chinese_16k_media");
+
         private static final Map<String, PropertyEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, PropertyEnum> createStaticFields() {
@@ -173,6 +178,7 @@ public class TranscriberConfig {
             map.put("chinese_16k_conversation", CHINESE_16K_CONVERSATION);
             map.put("chinese_8k_bank", CHINESE_8K_BANK);
             map.put("chinese_8k_insurance", CHINESE_8K_INSURANCE);
+            map.put("chinese_16k_media", CHINESE_16K_MEDIA);
             return Collections.unmodifiableMap(map);
         }
 

@@ -1526,6 +1526,38 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 慢日志敏感信息的开关
+     *
+     * V3慢日志敏感信息的开关
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SetSensitiveSlowLogRequest 请求对象
+     * @return CompletableFuture<SetSensitiveSlowLogResponse>
+     */
+    public CompletableFuture<SetSensitiveSlowLogResponse> setSensitiveSlowLogAsync(SetSensitiveSlowLogRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.setSensitiveSlowLog);
+    }
+
+    /**
+     * 慢日志敏感信息的开关
+     *
+     * V3慢日志敏感信息的开关
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SetSensitiveSlowLogRequest 请求对象
+     * @return AsyncInvoker<SetSensitiveSlowLogRequest, SetSensitiveSlowLogResponse>
+     */
+    public AsyncInvoker<SetSensitiveSlowLogRequest, SetSensitiveSlowLogResponse> setSensitiveSlowLogAsyncInvoker(
+        SetSensitiveSlowLogRequest request) {
+        return new AsyncInvoker<SetSensitiveSlowLogRequest, SetSensitiveSlowLogResponse>(request,
+            RdsMeta.setSensitiveSlowLog, hcClient);
+    }
+
+    /**
      * 生成审计日志下载链接
      *
      * 生成审计日志下载链接。

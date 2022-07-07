@@ -272,7 +272,7 @@ public class ListSnapshotBackupsResp {
     }
 
     /**
-     * 快照状态是否更新。
+     * 快照更新时间，格式为ISO8601：CCYY-MM-DDThh:mm:ss。
      * @return updated
      */
     public String getUpdated() {
@@ -289,7 +289,7 @@ public class ListSnapshotBackupsResp {
     }
 
     /**
-     * “0”表示自动创建，“1”表示手动创建。
+     * 快照创建类型： - 0：表示自动创建。 - 1：表示手动创建。
      * @return backupType
      */
     public String getBackupType() {
@@ -493,7 +493,7 @@ public class ListSnapshotBackupsResp {
     }
 
     /**
-     * 保存快照数据的桶。
+     * 保存快照数据的桶名。
      * @return bucketName
      */
     public String getBucketName() {

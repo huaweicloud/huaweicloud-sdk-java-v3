@@ -41,7 +41,7 @@ public class SetRDSBackupCnfReq {
     }
 
     /**
-     * 自动创建的快照名称前缀。
+     * 自动创建快照的名称前缀，需要用户自己手动输入。只能包含1~32位小写字母、数字、中划线或者下划线，并且以小写字母开头。
      * @return prefix
      */
     public String getPrefix() {
@@ -75,7 +75,7 @@ public class SetRDSBackupCnfReq {
     }
 
     /**
-     * 设置快照保留的天数，范围是1～90。系统在半点时刻会自动删除超过保留天数的快照。
+     * 自定义设置快照保留的天数，范围是1～90。系统在半点时刻会自动删除超过保留天数的快照。
      * @return keepday
      */
     public Integer getKeepday() {
@@ -92,7 +92,7 @@ public class SetRDSBackupCnfReq {
     }
 
     /**
-     * “true”表示开启自动创建快照策略，“false”表示关闭自动创建快照策略。
+     * 是否开启自动创建快照策略。 - true：表示开启自动创建快照策略。 - false：表示关闭自动创建快照策略。
      * @return enable
      */
     public String getEnable() {

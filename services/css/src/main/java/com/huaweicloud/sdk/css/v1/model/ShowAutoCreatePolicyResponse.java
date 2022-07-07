@@ -86,7 +86,7 @@ public class ShowAutoCreatePolicyResponse extends SdkResponse {
     }
 
     /**
-     * 快照命名前缀。
+     * 快照命名前缀，需要用户自己手动输入。
      * @return prefix
      */
     public String getPrefix() {
@@ -103,7 +103,7 @@ public class ShowAutoCreatePolicyResponse extends SdkResponse {
     }
 
     /**
-     * 快照存放的OBS桶。
+     * 快照存放的OBS桶的桶名。
      * @return bucket
      */
     public String getBucket() {
@@ -154,7 +154,7 @@ public class ShowAutoCreatePolicyResponse extends SdkResponse {
     }
 
     /**
-     * 是否开启自动创建快照策略。
+     * 是否开启自动创建快照策略。 - true：表示开启自动创建快照策略。 - false：表示关闭自动创建快照策略。
      * @return enable
      */
     public String getEnable() {

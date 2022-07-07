@@ -26,9 +26,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.function.Consumer;
 
-/**
- * @author HuaweiCloud_SDK
- */
 public class KeystoneCreateProjectRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -56,6 +53,5 @@ public class KeystoneCreateProjectRequest {
     public void setBody(KeystoneCreateProjectRequestBody body) {
         this.body = body;
     }
-
 }
 

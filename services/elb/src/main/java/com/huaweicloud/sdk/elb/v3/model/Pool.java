@@ -88,6 +88,26 @@ public class Pool {
 
     private Boolean memberDeletionProtectionEnable;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "created_at")
+
+    private String createdAt;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "updated_at")
+
+    private String updatedAt;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "vpc_id")
+
+    private String vpcId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private String type;
+
     public Pool withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
@@ -162,7 +182,7 @@ public class Pool {
     }
 
     /**
-     * 后端云服务器组的负载均衡算法。  取值： 1、ROUND_ROBIN：加权轮询算法。 2、LEAST_CONNECTIONS：加权最少连接算法。 3、SOURCE_IP：源IP算法。 4、QUIC_CID：连接ID算法。  使用说明： - 当该字段的取值为SOURCE_IP时，后端云服务器组绑定的后端云服务器的weight字段无效。 - 只有pool的protocol为QUIC时，才支持QUIC_CID算法。
+     * 后端云服务器组的负载均衡算法。  取值： - ROUND_ROBIN：加权轮询算法。 - LEAST_CONNECTIONS：加权最少连接算法。 - SOURCE_IP：源IP算法。 - QUIC_CID：连接ID算法。  使用说明： - 当该字段的取值为SOURCE_IP时，后端云服务器组绑定的后端云服务器的weight字段无效。 - 只有pool的protocol为QUIC时，才支持QUIC_CID算法。
      * @return lbAlgorithm
      */
     public String getLbAlgorithm() {
@@ -195,7 +215,7 @@ public class Pool {
     }
 
     /**
-     * 后端云服务器组关联的监听器ID列表。实际上只会有一个关联的监听器ID。
+     * 后端云服务器组关联的监听器ID列表。
      * @return listeners
      */
     public List<ListenerRef> getListeners() {
@@ -228,7 +248,7 @@ public class Pool {
     }
 
     /**
-     * 后端云服务器组关联的负载均衡器ID列表。实际只会有一个关联的负载均衡器ID。
+     * 后端云服务器组关联的负载均衡器ID列表。
      * @return loadbalancers
      */
     public List<LoadBalancerRef> getLoadbalancers() {
@@ -312,7 +332,7 @@ public class Pool {
     }
 
     /**
-     * 后端云服务器组的后端协议。  取值：TCP、UDP、HTTP、HTTPS和QUIC。  使用说明： - listener的protocol为UDP时，pool的protocol必须为UDP或QUIC； - listener的protocol为TCP时pool的protocol必须为TCP； - listener的protocol为HTTP时，pool的protocol必须为HTTP。 - listener的protocol为HTTPS时，pool的protocol必须为HTTP或HTTPS。 - listener的protocol为TERMINATED_HTTPS时，pool的protocol必须为HTTP。
+     * 后端云服务器组的后端协议。  取值：TCP、UDP、HTTP、HTTPS和QUIC。   使用说明： - listener的protocol为UDP时，pool的protocol必须为UDP或QUIC； - listener的protocol为TCP时pool的protocol必须为TCP； - listener的protocol为HTTP时，pool的protocol必须为HTTP。 - listener的protocol为HTTPS时，pool的protocol必须为HTTP或HTTPS。 - listener的protocol为TERMINATED_HTTPS时，pool的protocol必须为HTTP。
      * @return protocol
      */
     public String getProtocol() {
@@ -355,7 +375,7 @@ public class Pool {
     }
 
     /**
-     * 后端云服务器组支持的IP版本。[取值：  [共享型：默认为v4；](tag:hc,hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42,dt,dt_test)  [独享型：取值范围(dualstack、v4、v6)。当协议为TCP/UDP时，ip_version为dualstack，表示双栈。当协议为HTTP时，ip_version为v4。](tag:hc,hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42,dt,dt_test) [取值范围(dualstack、v4、v6)。当协议为TCP/UDP时，ip_version为dualstack，表示双栈。当协议为HTTP时，ip_version为v4。](tag:hcso_dt)  [不支持IPv6，只会返回v4。](tag:dt,dt_test)
+     * 后端云服务器组支持的IP版本。 [取值： - 共享型：固定为v4； - 独享型：取值dualstack、v4、v6。当协议为TCP/UDP时，ip_version为dualstack，表示双栈。当协议为HTTP时，ip_version为v4。](tag:hws,hws_hk,ocb,tlf,ctc,hcs,sbc,g42,tm,cmcc,hk_g42,mix,hk_sbc,hws_ocb,fcs) [取值：dualstack、v4、v6。当协议为TCP/UDP时，ip_version为dualstack，表示双栈。当协议为HTTP时，ip_version为v4。](tag:hcso_dt)   [不支持IPv6，只会返回v4。](tag:dt,dt_test)
      * @return ipVersion
      */
     public String getIpVersion() {
@@ -398,7 +418,7 @@ public class Pool {
     }
 
     /**
-     * 是否开启误删保护。取值：false不开启，true开启。  > 退场时需要先关闭所有资源的删除保护开关。
+     * 是否开启误删保护。取值：false不开启，true开启。 > 退场时需要先关闭所有资源的删除保护开关。
      * @return memberDeletionProtectionEnable
      */
     public Boolean getMemberDeletionProtectionEnable() {
@@ -407,6 +427,74 @@ public class Pool {
 
     public void setMemberDeletionProtectionEnable(Boolean memberDeletionProtectionEnable) {
         this.memberDeletionProtectionEnable = memberDeletionProtectionEnable;
+    }
+
+    public Pool withCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+        return this;
+    }
+
+    /**
+     * 创建时间。格式：yyyy-MM-dd'T'HH:mm:ss'Z'，UTC时区。  注意：独享型实例的历史数据以及共享型实例下的资源，不返回该字段。
+     * @return createdAt
+     */
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Pool withUpdatedAt(String updatedAt) {
+        this.updatedAt = updatedAt;
+        return this;
+    }
+
+    /**
+     * 更新时间。格式：yyyy-MM-dd'T'HH:mm:ss'Z'，UTC时区。  注意：独享型实例的历史数据以及共享型实例下的资源，不返回该字段。
+     * @return updatedAt
+     */
+    public String getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(String updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    public Pool withVpcId(String vpcId) {
+        this.vpcId = vpcId;
+        return this;
+    }
+
+    /**
+     * 后端云服务器组关联的虚拟私有云的ID。
+     * @return vpcId
+     */
+    public String getVpcId() {
+        return vpcId;
+    }
+
+    public void setVpcId(String vpcId) {
+        this.vpcId = vpcId;
+    }
+
+    public Pool withType(String type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * 后端服务器组的类型。   取值：  - instance：允许任意类型的后端，type指定为该类型时，vpc_id是必选字段。  - ip：只能添加跨VPC后端，type指定为该类型时，vpc_id不允许指定。  - 空字符串：允许任意类型的后端
+     * @return type
+     */
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     @Override
@@ -427,7 +515,9 @@ public class Pool {
             && Objects.equals(this.protocol, pool.protocol)
             && Objects.equals(this.sessionPersistence, pool.sessionPersistence)
             && Objects.equals(this.ipVersion, pool.ipVersion) && Objects.equals(this.slowStart, pool.slowStart)
-            && Objects.equals(this.memberDeletionProtectionEnable, pool.memberDeletionProtectionEnable);
+            && Objects.equals(this.memberDeletionProtectionEnable, pool.memberDeletionProtectionEnable)
+            && Objects.equals(this.createdAt, pool.createdAt) && Objects.equals(this.updatedAt, pool.updatedAt)
+            && Objects.equals(this.vpcId, pool.vpcId) && Objects.equals(this.type, pool.type);
     }
 
     @Override
@@ -446,7 +536,11 @@ public class Pool {
             sessionPersistence,
             ipVersion,
             slowStart,
-            memberDeletionProtectionEnable);
+            memberDeletionProtectionEnable,
+            createdAt,
+            updatedAt,
+            vpcId,
+            type);
     }
 
     @Override
@@ -470,6 +564,10 @@ public class Pool {
         sb.append("    memberDeletionProtectionEnable: ")
             .append(toIndentedString(memberDeletionProtectionEnable))
             .append("\n");
+        sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+        sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+        sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");
         return sb.toString();
     }

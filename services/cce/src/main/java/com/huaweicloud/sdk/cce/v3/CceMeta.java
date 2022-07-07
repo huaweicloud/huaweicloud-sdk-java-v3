@@ -848,6 +848,31 @@ public class CceMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowClusterEndpointsRequest, ShowClusterEndpointsResponse> showClusterEndpoints =
+        genForshowClusterEndpoints();
+
+    private static HttpRequestDef<ShowClusterEndpointsRequest, ShowClusterEndpointsResponse> genForshowClusterEndpoints() {
+        // basic
+        HttpRequestDef.Builder<ShowClusterEndpointsRequest, ShowClusterEndpointsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowClusterEndpointsRequest.class, ShowClusterEndpointsResponse.class)
+            .withName("ShowClusterEndpoints")
+            .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/openapi")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowClusterEndpointsRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowJobRequest, ShowJobResponse> showJob = genForshowJob();
 
     private static HttpRequestDef<ShowJobRequest, ShowJobResponse> genForshowJob() {
@@ -1015,6 +1040,38 @@ public class CceMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateClusterEipRequest, UpdateClusterEipResponse> updateClusterEip =
+        genForupdateClusterEip();
+
+    private static HttpRequestDef<UpdateClusterEipRequest, UpdateClusterEipResponse> genForupdateClusterEip() {
+        // basic
+        HttpRequestDef.Builder<UpdateClusterEipRequest, UpdateClusterEipResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateClusterEipRequest.class, UpdateClusterEipResponse.class)
+                .withName("UpdateClusterEip")
+                .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/mastereip")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateClusterEipRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<MasterEIPRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(MasterEIPRequest.class),
+            f -> f.withMarshaller(UpdateClusterEipRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateNodeRequest, UpdateNodeResponse> updateNode = genForupdateNode();
 
     private static HttpRequestDef<UpdateNodeRequest, UpdateNodeResponse> genForupdateNode() {
@@ -1086,6 +1143,23 @@ public class CceMeta {
             f -> f.withMarshaller(UpdateNodePoolRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowVersionRequest, ShowVersionResponse> showVersion = genForshowVersion();
+
+    private static HttpRequestDef<ShowVersionRequest, ShowVersionResponse> genForshowVersion() {
+        // basic
+        HttpRequestDef.Builder<ShowVersionRequest, ShowVersionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowVersionRequest.class, ShowVersionResponse.class)
+                .withName("ShowVersion")
+                .withUri("/")
+                .withContentType("application/json");
+
+        // requests
 
         // response
 

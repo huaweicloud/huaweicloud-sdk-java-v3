@@ -29,10 +29,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 
-/**
- * Response Object
- * @author HuaweiCloud_SDK
- */
 public class KeystoneListProjectsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "projects")
@@ -59,13 +55,6 @@ public class KeystoneListProjectsResponse extends SdkResponse {
         return this;
     }
 
-
-
-    /**
-     * 项目信息列表。
-     *
-     * @return projects
-     */
     public List<Project> getProjects() {
         return projects;
     }
@@ -73,6 +62,5 @@ public class KeystoneListProjectsResponse extends SdkResponse {
     public void setProjects(List<Project> projects) {
         this.projects = projects;
     }
-
 }
 

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 公网带宽信息。
+ * 设置公网带宽大小。
  */
 public class CreateClusterPublicEipSize {
 

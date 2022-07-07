@@ -21,7 +21,7 @@ public class UpdatePublicKibanaBandwidthReqBandWidth {
     }
 
     /**
-     * 修改后的带宽。
+     * 修改后的带宽大小。
      * @return size
      */
     public Integer getSize() {

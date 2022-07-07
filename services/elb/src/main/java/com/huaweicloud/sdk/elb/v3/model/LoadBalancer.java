@@ -139,11 +139,6 @@ public class LoadBalancer {
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "billing_info")
-
-    private String billingInfo;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "l4_flavor_id")
 
     private String l4FlavorId;
@@ -167,6 +162,11 @@ public class LoadBalancer {
     @JsonProperty(value = "publicips")
 
     private List<PublicIpInfo> publicips = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "global_eips")
+
+    private List<GlobalEipInfo> globalEips = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "elb_virsubnet_ids")
@@ -279,6 +279,11 @@ public class LoadBalancer {
     @JsonProperty(value = "autoscaling")
 
     private AutoscalingRef autoscaling;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_border_group")
+
+    private String publicBorderGroup;
 
     public LoadBalancer withId(String id) {
         this.id = id;
@@ -673,7 +678,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 双栈类型负载均衡器的IPv6地址。  [不支持IPv6，请勿使用。](tag:dt,dt_test)
+     * 双栈类型负载均衡器的IPv6地址。 [ 不支持IPv6，请勿使用。](tag:dt,dt_test)
      * @return ipv6VipAddress
      */
     public String getIpv6VipAddress() {
@@ -690,7 +695,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 双栈类型负载均衡器所在子网的IPv6网络ID。  [不支持IPv6，请勿使用。](tag:dt,dt_test)
+     * 双栈类型负载均衡器所在子网的IPv6网络ID。 [ 不支持IPv6，请勿使用。](tag:dt,dt_test)
      * @return ipv6VipVirsubnetId
      */
     public String getIpv6VipVirsubnetId() {
@@ -707,7 +712,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 双栈类型负载均衡器的IPv6对应的port ID。  [不支持IPv6，请勿使用。](tag:dt,dt_test)
+     * 双栈类型负载均衡器的IPv6对应的port ID。 [ 不支持IPv6，请勿使用。](tag:dt,dt_test)
      * @return ipv6VipPortId
      */
     public String getIpv6VipPortId() {
@@ -757,7 +762,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 企业项目ID。  [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
+     * 企业项目ID。创建时不传则返回\"0\"，表示资源属于default企业项目。  注：\"0\"并不是真实存在的企业项目ID，在创建、更新和查询时不能作为请求参数传入。  [不支持该字段，请勿使用](tag:dt,dt_test,hcso_dt)
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -768,30 +773,13 @@ public class LoadBalancer {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    public LoadBalancer withBillingInfo(String billingInfo) {
-        this.billingInfo = billingInfo;
-        return this;
-    }
-
-    /**
-     * 资源账单信息。 [取值： - 空：按需计费。  - 非空：包周期计费，  包周期计费billing_info字段的格式为：order_id:product_id:region_id:project_id，如：  CS2107161019CDJZZ:OFFI569702121789763584:eu-de:057ef081eb00d2732fd1c01a9be75e6f  使用说明：  - admin权限才能更新此字段。](tag:hws,hws_hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42)  [不支持该字段，请勿使用](tag:dt,dt_test,hcso_dt)
-     * @return billingInfo
-     */
-    public String getBillingInfo() {
-        return billingInfo;
-    }
-
-    public void setBillingInfo(String billingInfo) {
-        this.billingInfo = billingInfo;
-    }
-
     public LoadBalancer withL4FlavorId(String l4FlavorId) {
         this.l4FlavorId = l4FlavorId;
         return this;
     }
 
     /**
-     * 四层Flavor ID。  [hcso场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:hws,hcso)
+     * 四层Flavor ID。  对于弹性扩缩容实例，表示上限规格。  [hsco场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:hcso)
      * @return l4FlavorId
      */
     public String getL4FlavorId() {
@@ -825,7 +813,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 七层Flavor ID。  [hcso场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:hws,hcso)
+     * 七层Flavor ID。 对于弹性扩缩容实例，表示上限规格ID。  [hsco场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:hcso)
      * @return l7FlavorId
      */
     public String getL7FlavorId() {
@@ -886,6 +874,39 @@ public class LoadBalancer {
         this.publicips = publicips;
     }
 
+    public LoadBalancer withGlobalEips(List<GlobalEipInfo> globalEips) {
+        this.globalEips = globalEips;
+        return this;
+    }
+
+    public LoadBalancer addGlobalEipsItem(GlobalEipInfo globalEipsItem) {
+        if (this.globalEips == null) {
+            this.globalEips = new ArrayList<>();
+        }
+        this.globalEips.add(globalEipsItem);
+        return this;
+    }
+
+    public LoadBalancer withGlobalEips(Consumer<List<GlobalEipInfo>> globalEipsSetter) {
+        if (this.globalEips == null) {
+            this.globalEips = new ArrayList<>();
+        }
+        globalEipsSetter.accept(this.globalEips);
+        return this;
+    }
+
+    /**
+     * 负载均衡器绑定的global eip。只支持绑定一个global eip。
+     * @return globalEips
+     */
+    public List<GlobalEipInfo> getGlobalEips() {
+        return globalEips;
+    }
+
+    public void setGlobalEips(List<GlobalEipInfo> globalEips) {
+        this.globalEips = globalEips;
+    }
+
     public LoadBalancer withElbVirsubnetIds(List<String> elbVirsubnetIds) {
         this.elbVirsubnetIds = elbVirsubnetIds;
         return this;
@@ -908,7 +929,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 下联面子网的网络ID列表。可以通过GET https://{VPC_Endpoint}/v1/{project_id}/subnets 响应参数中的id得到。  使用说明： - 若不指定该字段，则会在当前负载均衡器所在子网作为下联面子网。  - 若指定多个下联面子网，则按顺序优先使用第一个子网来为负载均衡器下联面端口分配ip地址。  - 下联面子网必须属于该LB所在的VPC。  - 不支持边缘云子网。
+     * 下联面子网网络ID列表。可以通过GET https://{VPC_Endpoint}/v1/{project_id}/subnets  响应参数中的id得到。  [  若不指定该字段，则会在当前负载均衡器所在的VPC中任意选一个子网，优选双栈网络。](tag:hws,hws_hk,ocb,tlf,ctc,hcs,sbc,g42,tm,cmcc,hk_g42,mix,hk_sbc,hws_ocb,fcs)   若指定多个下联面子网，则按顺序优先使用第一个子网来为负载均衡器下联面端口分配ip地址。   下联面子网必须属于该LB所在的VPC。
      * @return elbVirsubnetIds
      */
     public List<String> getElbVirsubnetIds() {
@@ -942,7 +963,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 是否启用跨VPC后端转发。开启跨VPC后端转发后，后端服务器组支持添加其他VPC、其他公有云、云下数据中心的服务器。取值： - true：开启。 - false：不开启。 [仅独享型负载均衡器支持该特性。](tag:hws,hws_hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42,dt,dt_test) [不支持该字段，请勿使用。](tag:dt,dt_test)
+     * 是否启用跨VPC后端转发。取值： - true：开启、 - false：不开启。  仅独享型负载均衡器支持该特性。  开启跨VPC后端转发后，后端服务器组不仅支持添加云上VPC内的服务器，还支持添加其他VPC、其他公有云、云下数据中心的服务器。 [ 不支持该字段，请勿使用。](tag:dt,dt_test)
      * @return ipTargetEnable
      */
     public Boolean getIpTargetEnable() {
@@ -1002,7 +1023,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 是否开启删除保护，取值： - false：不开启。 - true：开启。  仅当前局点启用删除保护特性后才会返回该字段。  >退场时需要先关闭所有资源的删除保护开关。
+     * 是否开启删除保护，取值： - false：不开启。 - true：开启。 >退场时需要先关闭所有资源的删除保护开关。  仅当前局点启用删除保护特性后才会返回该字段。
      * @return deletionProtectionEnable
      */
     public Boolean getDeletionProtectionEnable() {
@@ -1039,6 +1060,23 @@ public class LoadBalancer {
         this.autoscaling = autoscaling;
     }
 
+    public LoadBalancer withPublicBorderGroup(String publicBorderGroup) {
+        this.publicBorderGroup = publicBorderGroup;
+        return this;
+    }
+
+    /**
+     * LB所属AZ组
+     * @return publicBorderGroup
+     */
+    public String getPublicBorderGroup() {
+        return publicBorderGroup;
+    }
+
+    public void setPublicBorderGroup(String publicBorderGroup) {
+        this.publicBorderGroup = publicBorderGroup;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -1067,19 +1105,20 @@ public class LoadBalancer {
             && Objects.equals(this.ipv6VipPortId, loadBalancer.ipv6VipPortId)
             && Objects.equals(this.availabilityZoneList, loadBalancer.availabilityZoneList)
             && Objects.equals(this.enterpriseProjectId, loadBalancer.enterpriseProjectId)
-            && Objects.equals(this.billingInfo, loadBalancer.billingInfo)
             && Objects.equals(this.l4FlavorId, loadBalancer.l4FlavorId)
             && Objects.equals(this.l4ScaleFlavorId, loadBalancer.l4ScaleFlavorId)
             && Objects.equals(this.l7FlavorId, loadBalancer.l7FlavorId)
             && Objects.equals(this.l7ScaleFlavorId, loadBalancer.l7ScaleFlavorId)
             && Objects.equals(this.publicips, loadBalancer.publicips)
+            && Objects.equals(this.globalEips, loadBalancer.globalEips)
             && Objects.equals(this.elbVirsubnetIds, loadBalancer.elbVirsubnetIds)
             && Objects.equals(this.elbVirsubnetType, loadBalancer.elbVirsubnetType)
             && Objects.equals(this.ipTargetEnable, loadBalancer.ipTargetEnable)
             && Objects.equals(this.frozenScene, loadBalancer.frozenScene)
             && Objects.equals(this.ipv6Bandwidth, loadBalancer.ipv6Bandwidth)
             && Objects.equals(this.deletionProtectionEnable, loadBalancer.deletionProtectionEnable)
-            && Objects.equals(this.autoscaling, loadBalancer.autoscaling);
+            && Objects.equals(this.autoscaling, loadBalancer.autoscaling)
+            && Objects.equals(this.publicBorderGroup, loadBalancer.publicBorderGroup);
     }
 
     @Override
@@ -1108,19 +1147,20 @@ public class LoadBalancer {
             ipv6VipPortId,
             availabilityZoneList,
             enterpriseProjectId,
-            billingInfo,
             l4FlavorId,
             l4ScaleFlavorId,
             l7FlavorId,
             l7ScaleFlavorId,
             publicips,
+            globalEips,
             elbVirsubnetIds,
             elbVirsubnetType,
             ipTargetEnable,
             frozenScene,
             ipv6Bandwidth,
             deletionProtectionEnable,
-            autoscaling);
+            autoscaling,
+            publicBorderGroup);
     }
 
     @Override
@@ -1151,12 +1191,12 @@ public class LoadBalancer {
         sb.append("    ipv6VipPortId: ").append(toIndentedString(ipv6VipPortId)).append("\n");
         sb.append("    availabilityZoneList: ").append(toIndentedString(availabilityZoneList)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
-        sb.append("    billingInfo: ").append(toIndentedString(billingInfo)).append("\n");
         sb.append("    l4FlavorId: ").append(toIndentedString(l4FlavorId)).append("\n");
         sb.append("    l4ScaleFlavorId: ").append(toIndentedString(l4ScaleFlavorId)).append("\n");
         sb.append("    l7FlavorId: ").append(toIndentedString(l7FlavorId)).append("\n");
         sb.append("    l7ScaleFlavorId: ").append(toIndentedString(l7ScaleFlavorId)).append("\n");
         sb.append("    publicips: ").append(toIndentedString(publicips)).append("\n");
+        sb.append("    globalEips: ").append(toIndentedString(globalEips)).append("\n");
         sb.append("    elbVirsubnetIds: ").append(toIndentedString(elbVirsubnetIds)).append("\n");
         sb.append("    elbVirsubnetType: ").append(toIndentedString(elbVirsubnetType)).append("\n");
         sb.append("    ipTargetEnable: ").append(toIndentedString(ipTargetEnable)).append("\n");
@@ -1164,6 +1204,7 @@ public class LoadBalancer {
         sb.append("    ipv6Bandwidth: ").append(toIndentedString(ipv6Bandwidth)).append("\n");
         sb.append("    deletionProtectionEnable: ").append(toIndentedString(deletionProtectionEnable)).append("\n");
         sb.append("    autoscaling: ").append(toIndentedString(autoscaling)).append("\n");
+        sb.append("    publicBorderGroup: ").append(toIndentedString(publicBorderGroup)).append("\n");
         sb.append("}");
         return sb.toString();
     }

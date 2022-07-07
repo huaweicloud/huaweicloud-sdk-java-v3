@@ -14,6 +14,11 @@ import java.util.function.Consumer;
 public class VatInvoiceResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "title")
+
+    private String title;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
     private String type;
@@ -173,13 +178,30 @@ public class VatInvoiceResult {
 
     private Object textLocation;
 
+    public VatInvoiceResult withTitle(String title) {
+        this.title = title;
+        return this;
+    }
+
+    /**
+     * 增值税发票标题 
+     * @return title
+     */
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
     public VatInvoiceResult withType(String type) {
         this.type = type;
         return this;
     }
 
     /**
-     * 增值税发票类型，可选值包括：  - special: 增值税专用发票  - normal: 增值税普通发票  - electronic: 增值税电子普通发票  - roll：增值税普通发票（卷票） 
+     * 增值税发票类型，可选值包括：  - special: 增值税专用发票  - normal: 增值税普通发票  - electronic: 增值税电子普通发票  - special_electronic：增值税电子专用发票  - toll：增值税电子普通发票（通行费）  - roll：增值税普通发票（卷票） 
      * @return type
      */
     public String getType() {
@@ -280,7 +302,7 @@ public class VatInvoiceResult {
     }
 
     /**
-     * 打印发票代码。普通发票和专用发票在右上角，电子发票、通行费发票、卷票无此字段。 
+     * 机打代码。当“advanced_mode”设置为“true”时才返回。 
      * @return printCode
      */
     public String getPrintCode() {
@@ -774,7 +796,7 @@ public class VatInvoiceResult {
             return false;
         }
         VatInvoiceResult vatInvoiceResult = (VatInvoiceResult) o;
-        return Objects.equals(this.type, vatInvoiceResult.type)
+        return Objects.equals(this.title, vatInvoiceResult.title) && Objects.equals(this.type, vatInvoiceResult.type)
             && Objects.equals(this.serialNumber, vatInvoiceResult.serialNumber)
             && Objects.equals(this.attribution, vatInvoiceResult.attribution)
             && Objects.equals(this.supervisionSeal, vatInvoiceResult.supervisionSeal)
@@ -810,7 +832,8 @@ public class VatInvoiceResult {
 
     @Override
     public int hashCode() {
-        return Objects.hash(type,
+        return Objects.hash(title,
+            type,
             serialNumber,
             attribution,
             supervisionSeal,
@@ -848,6 +871,7 @@ public class VatInvoiceResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class VatInvoiceResult {\n");
+        sb.append("    title: ").append(toIndentedString(title)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    serialNumber: ").append(toIndentedString(serialNumber)).append("\n");
         sb.append("    attribution: ").append(toIndentedString(attribution)).append("\n");

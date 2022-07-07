@@ -117,7 +117,7 @@ public class ElbAsyncClient {
     }
 
     /**
-     * 负载均衡器计费模式变更
+     * 变更负载均衡器计费模式
      *
      * 负载均衡器计费模式变更，当前只支持按需计费转包周期计费。
      * 
@@ -133,7 +133,7 @@ public class ElbAsyncClient {
     }
 
     /**
-     * 负载均衡器计费模式变更
+     * 变更负载均衡器计费模式
      *
      * 负载均衡器计费模式变更，当前只支持按需计费转包周期计费。
      * 
@@ -313,19 +313,26 @@ public class ElbAsyncClient {
      *
      * 创建负载均衡器。
      * 
+     * 
      * 1.若要创建内网IPv4负载均衡器，则需要设置vip_subnet_cidr_id。
+     * 
      * 
      * 2.若要创建公网IPv4负载均衡器，则需要设置publicip，以及设置vpc_id和vip_subnet_cidr_id这两个参数中的一个。
      * 
+     * 
      * 3.若要绑定有已有公网IPv4地址，需要设置publicip_ids，以及设置vpc_id和vip_subnet_cidr_id这两个参数中的一个。
+     * 
      * 
      * 4.若要创建内网双栈负载均衡器，则需要设置ipv6_vip_virsubnet_id。
      * 
+     * 
      * 5.若要创建公网双栈负载均衡器，则需要设置ipv6_vip_virsubnet_id和ipv6_bandwidth。
+     * 
      * 
      * 6.不支持绑定已有未使用的内网IPv4、内网IPv6或公网IPv6地址。
      * 
-     * [&gt;不支持创建IPv6地址负载均衡器](tag:dt,dt_test)
+     * 
+     * [&gt; 不支持创建IPv6地址负载均衡器](tag:dt,dt_test)
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -342,19 +349,26 @@ public class ElbAsyncClient {
      *
      * 创建负载均衡器。
      * 
+     * 
      * 1.若要创建内网IPv4负载均衡器，则需要设置vip_subnet_cidr_id。
+     * 
      * 
      * 2.若要创建公网IPv4负载均衡器，则需要设置publicip，以及设置vpc_id和vip_subnet_cidr_id这两个参数中的一个。
      * 
+     * 
      * 3.若要绑定有已有公网IPv4地址，需要设置publicip_ids，以及设置vpc_id和vip_subnet_cidr_id这两个参数中的一个。
+     * 
      * 
      * 4.若要创建内网双栈负载均衡器，则需要设置ipv6_vip_virsubnet_id。
      * 
+     * 
      * 5.若要创建公网双栈负载均衡器，则需要设置ipv6_vip_virsubnet_id和ipv6_bandwidth。
+     * 
      * 
      * 6.不支持绑定已有未使用的内网IPv4、内网IPv6或公网IPv6地址。
      * 
-     * [&gt;不支持创建IPv6地址负载均衡器](tag:dt,dt_test)
+     * 
+     * [&gt; 不支持创建IPv6地址负载均衡器](tag:dt,dt_test)
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -397,6 +411,39 @@ public class ElbAsyncClient {
     public AsyncInvoker<CreateLogtankRequest, CreateLogtankResponse> createLogtankAsyncInvoker(
         CreateLogtankRequest request) {
         return new AsyncInvoker<CreateLogtankRequest, CreateLogtankResponse>(request, ElbMeta.createLogtank, hcClient);
+    }
+
+    /**
+     * 创建主备后端服务器组
+     *
+     * 创建主备后端服务器组。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateMasterSlavePoolRequest 请求对象
+     * @return CompletableFuture<CreateMasterSlavePoolResponse>
+     */
+    public CompletableFuture<CreateMasterSlavePoolResponse> createMasterSlavePoolAsync(
+        CreateMasterSlavePoolRequest request) {
+        return hcClient.asyncInvokeHttp(request, ElbMeta.createMasterSlavePool);
+    }
+
+    /**
+     * 创建主备后端服务器组
+     *
+     * 创建主备后端服务器组。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateMasterSlavePoolRequest 请求对象
+     * @return AsyncInvoker<CreateMasterSlavePoolRequest, CreateMasterSlavePoolResponse>
+     */
+    public AsyncInvoker<CreateMasterSlavePoolRequest, CreateMasterSlavePoolResponse> createMasterSlavePoolAsyncInvoker(
+        CreateMasterSlavePoolRequest request) {
+        return new AsyncInvoker<CreateMasterSlavePoolRequest, CreateMasterSlavePoolResponse>(request,
+            ElbMeta.createMasterSlavePool, hcClient);
     }
 
     /**
@@ -716,6 +763,39 @@ public class ElbAsyncClient {
     }
 
     /**
+     * 删除主备后端服务器组
+     *
+     * 删除主备后端服务器组。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteMasterSlavePoolRequest 请求对象
+     * @return CompletableFuture<DeleteMasterSlavePoolResponse>
+     */
+    public CompletableFuture<DeleteMasterSlavePoolResponse> deleteMasterSlavePoolAsync(
+        DeleteMasterSlavePoolRequest request) {
+        return hcClient.asyncInvokeHttp(request, ElbMeta.deleteMasterSlavePool);
+    }
+
+    /**
+     * 删除主备后端服务器组
+     *
+     * 删除主备后端服务器组。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteMasterSlavePoolRequest 请求对象
+     * @return AsyncInvoker<DeleteMasterSlavePoolRequest, DeleteMasterSlavePoolResponse>
+     */
+    public AsyncInvoker<DeleteMasterSlavePoolRequest, DeleteMasterSlavePoolResponse> deleteMasterSlavePoolAsyncInvoker(
+        DeleteMasterSlavePoolRequest request) {
+        return new AsyncInvoker<DeleteMasterSlavePoolRequest, DeleteMasterSlavePoolResponse>(request,
+            ElbMeta.deleteMasterSlavePool, hcClient);
+    }
+
+    /**
      * 删除后端服务器
      *
      * 删除后端服务器。
@@ -846,10 +926,11 @@ public class ElbAsyncClient {
      *
      * 返回租户创建LB时可使用的可用区集合列表情况。
      * 
-     * 默认情况下，会返回一个可用区集合。在（如创建LB）设置可用区时，填写的可用区必须包含在可用区集合中、为这个可用区集合的子集。
      * 
-     * [特殊场景下，部分客户要求负载均衡只能创建在指定可用区集合中，此时会返回客户定制的可用区集合。返回可用区集合可能为一个也可能为多个，比如列表有两个可用区集合[az1,az2],
-     * [az2,az3]。在创建负载均衡器时，可以选择创建在多个可用区，但所选的多个可用区必须同属于其中一个可用区集合，如可以选az2和az3，但不能选择az1和az3。你可以选择多个可用区，只要这些可用区在一个子集中](tag:hws,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42)
+     * - 默认情况下，会返回一个可用区集合。在（如创建LB）设置可用区时，填写的可用区必须包含在可用区集合中、为这个可用区集合的子集。
+     * 
+     * 
+     * - 特殊场景下，部分客户要求负载均衡只能创建在指定可用区集合中，此时会返回客户定制的可用区集合。返回可用区集合可能为一个也可能为多个，比如列表有两个可用区集合\\[az1,az2\\], \\[az2, az3\\]。在创建负载均衡器时，可以选择创建在多个可用区，但所选的多个可用区必须同属于其中一个可用区集合，如可以选az2和az3，但不能选择 az1和az3。你可以选择多个可用区，只要这些可用区在一个子集中
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -867,10 +948,11 @@ public class ElbAsyncClient {
      *
      * 返回租户创建LB时可使用的可用区集合列表情况。
      * 
-     * 默认情况下，会返回一个可用区集合。在（如创建LB）设置可用区时，填写的可用区必须包含在可用区集合中、为这个可用区集合的子集。
      * 
-     * [特殊场景下，部分客户要求负载均衡只能创建在指定可用区集合中，此时会返回客户定制的可用区集合。返回可用区集合可能为一个也可能为多个，比如列表有两个可用区集合[az1,az2],
-     * [az2,az3]。在创建负载均衡器时，可以选择创建在多个可用区，但所选的多个可用区必须同属于其中一个可用区集合，如可以选az2和az3，但不能选择az1和az3。你可以选择多个可用区，只要这些可用区在一个子集中](tag:hws,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42)
+     * - 默认情况下，会返回一个可用区集合。在（如创建LB）设置可用区时，填写的可用区必须包含在可用区集合中、为这个可用区集合的子集。
+     * 
+     * 
+     * - 特殊场景下，部分客户要求负载均衡只能创建在指定可用区集合中，此时会返回客户定制的可用区集合。返回可用区集合可能为一个也可能为多个，比如列表有两个可用区集合\\[az1,az2\\], \\[az2, az3\\]。在创建负载均衡器时，可以选择创建在多个可用区，但所选的多个可用区必须同属于其中一个可用区集合，如可以选az2和az3，但不能选择 az1和az3。你可以选择多个可用区，只要这些可用区在一个子集中
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -885,7 +967,7 @@ public class ElbAsyncClient {
     }
 
     /**
-     * 证书列表
+     * 查询证书列表
      *
      * 查询证书列表。
      * 
@@ -900,7 +982,7 @@ public class ElbAsyncClient {
     }
 
     /**
-     * 证书列表
+     * 查询证书列表
      *
      * 查询证书列表。
      * 
@@ -1104,9 +1186,9 @@ public class ElbAsyncClient {
     }
 
     /**
-     * 云日志列表
+     * 查询云日志列表
      *
-     * 云日志列表
+     * 查询云日志列表
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1119,9 +1201,9 @@ public class ElbAsyncClient {
     }
 
     /**
-     * 云日志列表
+     * 查询云日志列表
      *
-     * 云日志列表
+     * 查询云日志列表
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1135,7 +1217,40 @@ public class ElbAsyncClient {
     }
 
     /**
-     * 后端服务器列表
+     * 查询主备后端服务器组列表
+     *
+     * 主备后端服务器组列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListMasterSlavePoolsRequest 请求对象
+     * @return CompletableFuture<ListMasterSlavePoolsResponse>
+     */
+    public CompletableFuture<ListMasterSlavePoolsResponse> listMasterSlavePoolsAsync(
+        ListMasterSlavePoolsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ElbMeta.listMasterSlavePools);
+    }
+
+    /**
+     * 查询主备后端服务器组列表
+     *
+     * 主备后端服务器组列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListMasterSlavePoolsRequest 请求对象
+     * @return AsyncInvoker<ListMasterSlavePoolsRequest, ListMasterSlavePoolsResponse>
+     */
+    public AsyncInvoker<ListMasterSlavePoolsRequest, ListMasterSlavePoolsResponse> listMasterSlavePoolsAsyncInvoker(
+        ListMasterSlavePoolsRequest request) {
+        return new AsyncInvoker<ListMasterSlavePoolsRequest, ListMasterSlavePoolsResponse>(request,
+            ElbMeta.listMasterSlavePools, hcClient);
+    }
+
+    /**
+     * 查询后端服务器列表
      *
      * Pool下的后端服务器列表。
      * 
@@ -1150,7 +1265,7 @@ public class ElbAsyncClient {
     }
 
     /**
-     * 后端服务器列表
+     * 查询后端服务器列表
      *
      * Pool下的后端服务器列表。
      * 
@@ -1297,7 +1412,7 @@ public class ElbAsyncClient {
     }
 
     /**
-     * 证书详情
+     * 查询证书详情
      *
      * 查询证书详情。
      * 
@@ -1312,7 +1427,7 @@ public class ElbAsyncClient {
     }
 
     /**
-     * 证书详情
+     * 查询证书详情
      *
      * 查询证书详情。
      * 
@@ -1552,7 +1667,7 @@ public class ElbAsyncClient {
     }
 
     /**
-     * 云日志配置详情
+     * 查询云日志详情
      *
      * 云日志详情。
      * 
@@ -1567,7 +1682,7 @@ public class ElbAsyncClient {
     }
 
     /**
-     * 云日志配置详情
+     * 查询云日志详情
      *
      * 云日志详情。
      * 
@@ -1582,7 +1697,39 @@ public class ElbAsyncClient {
     }
 
     /**
-     * 后端服务器详情
+     * 查询主备后端服务器组详情
+     *
+     * 主备后端服务器组详情。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowMasterSlavePoolRequest 请求对象
+     * @return CompletableFuture<ShowMasterSlavePoolResponse>
+     */
+    public CompletableFuture<ShowMasterSlavePoolResponse> showMasterSlavePoolAsync(ShowMasterSlavePoolRequest request) {
+        return hcClient.asyncInvokeHttp(request, ElbMeta.showMasterSlavePool);
+    }
+
+    /**
+     * 查询主备后端服务器组详情
+     *
+     * 主备后端服务器组详情。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowMasterSlavePoolRequest 请求对象
+     * @return AsyncInvoker<ShowMasterSlavePoolRequest, ShowMasterSlavePoolResponse>
+     */
+    public AsyncInvoker<ShowMasterSlavePoolRequest, ShowMasterSlavePoolResponse> showMasterSlavePoolAsyncInvoker(
+        ShowMasterSlavePoolRequest request) {
+        return new AsyncInvoker<ShowMasterSlavePoolRequest, ShowMasterSlavePoolResponse>(request,
+            ElbMeta.showMasterSlavePool, hcClient);
+    }
+
+    /**
+     * 查询后端服务器详情
      *
      * 后端服务器详情。
      * 
@@ -1597,7 +1744,7 @@ public class ElbAsyncClient {
     }
 
     /**
-     * 后端服务器详情
+     * 查询后端服务器详情
      *
      * 后端服务器详情。
      * 
@@ -1642,7 +1789,7 @@ public class ElbAsyncClient {
     }
 
     /**
-     * 查询配额
+     * 查询配额详情
      *
      * 查询指定项目中负载均衡相关的各类资源的当前配额。
      * 
@@ -1657,7 +1804,7 @@ public class ElbAsyncClient {
     }
 
     /**
-     * 查询配额
+     * 查询配额详情
      *
      * 查询指定项目中负载均衡相关的各类资源的当前配额。
      * 
@@ -2054,7 +2201,7 @@ public class ElbAsyncClient {
     /**
      * 删除IP地址组的IP列表项
      *
-     * 批量删除IP地址组的IP列表项。
+     * 批量删除IP地址组的IP列表信息。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -2069,7 +2216,7 @@ public class ElbAsyncClient {
     /**
      * 删除IP地址组的IP列表项
      *
-     * 批量删除IP地址组的IP列表项。
+     * 批量删除IP地址组的IP列表信息。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -2087,10 +2234,23 @@ public class ElbAsyncClient {
      * 计算预占IP数
      *
      * 计算以下几种场景的预占用IP数量：
-     * - 计算创建LB的第一个七层监听器后总占用IP数量：传入loadbalancer_id、l7_flavor_id为空、ip_target_enable不传或为false。
-     * - 计算LB规格变更或开启跨VPC后总占用IP数量：传入参数loadbalancer_id，及l7_flavor_id不为空或ip_target_enable为true。
-     * - 计算创建LB所需IP数量：传入参数availability_zone_id，及可选参数l7_flavor_id、ip_target_enable、ip_version，不能传loadbalancer_id。
-     * &gt; 查询出的预占IP数大于等于最终实际占用的IP数。
+     * 
+     * -
+     * 计算创建LB的第一个七层监听器后总占用IP数量：传入loadbalancer_id、l7_flavor_id为空、ip_target_enable不传或为false。
+     * 
+     * -
+     * 计算LB规格变更或开启跨VPC后总占用IP数量：传入参数loadbalancer_id，及l7_flavor_id不为空或ip_target_enable为true。
+     * 
+     * -
+     * 计算创建LB所需IP数量：传入参数availability_zone_id，及可选参数l7_flavor_id、ip_target_enable、ip_version，不能传loadbalancer_id。
+     * 
+     * 
+     * 说明：
+     * 
+     * 
+     * - 计算出来的预占IP数大于等于最终实际占用的IP数。
+     * 
+     * - 总占用IP数量，即整个LB所占用的IP数量。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -2106,10 +2266,23 @@ public class ElbAsyncClient {
      * 计算预占IP数
      *
      * 计算以下几种场景的预占用IP数量：
-     * - 计算创建LB的第一个七层监听器后总占用IP数量：传入loadbalancer_id、l7_flavor_id为空、ip_target_enable不传或为false。
-     * - 计算LB规格变更或开启跨VPC后总占用IP数量：传入参数loadbalancer_id，及l7_flavor_id不为空或ip_target_enable为true。
-     * - 计算创建LB所需IP数量：传入参数availability_zone_id，及可选参数l7_flavor_id、ip_target_enable、ip_version，不能传loadbalancer_id。
-     * &gt; 查询出的预占IP数大于等于最终实际占用的IP数。
+     * 
+     * -
+     * 计算创建LB的第一个七层监听器后总占用IP数量：传入loadbalancer_id、l7_flavor_id为空、ip_target_enable不传或为false。
+     * 
+     * -
+     * 计算LB规格变更或开启跨VPC后总占用IP数量：传入参数loadbalancer_id，及l7_flavor_id不为空或ip_target_enable为true。
+     * 
+     * -
+     * 计算创建LB所需IP数量：传入参数availability_zone_id，及可选参数l7_flavor_id、ip_target_enable、ip_version，不能传loadbalancer_id。
+     * 
+     * 
+     * 说明：
+     * 
+     * 
+     * - 计算出来的预占IP数大于等于最终实际占用的IP数。
+     * 
+     * - 总占用IP数量，即整个LB所占用的IP数量。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -2127,7 +2300,6 @@ public class ElbAsyncClient {
      * 创建IP地址组
      *
      * 创建IP地址组。输入的ip可为ip地址或者CIDR子网，支持IPV4和IPV6。需要注意，0.0.0.0与0.0.0.0/32视为重复，0:0:0:0:0:0:0:1与::1与::1/128视为重复，会只保留其中一个写入。
-     * [不支持IPv6，请勿传入IPv6地址。](tag:dt,dt_test)
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -2143,7 +2315,6 @@ public class ElbAsyncClient {
      * 创建IP地址组
      *
      * 创建IP地址组。输入的ip可为ip地址或者CIDR子网，支持IPV4和IPV6。需要注意，0.0.0.0与0.0.0.0/32视为重复，0:0:0:0:0:0:0:1与::1与::1/128视为重复，会只保留其中一个写入。
-     * [不支持IPv6，请勿传入IPv6地址。](tag:dt,dt_test)
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -2252,7 +2423,6 @@ public class ElbAsyncClient {
      * 更新IP地址组
      *
      * 更新IP地址组，只支持全量更新IP。即IP地址组中的ip_list将被全量覆盖，不在请求参数中的IP地址将被移除。输入的ip可为ip地址或者CIDR子网，支持IPV4和IPV6。需要注意，0.0.0.0与0.0.0.0/32视为重复，0:0:0:0:0:0:0:1与::1与::1/128视为重复，会只保留其中一个写入。
-     * [不支持IPv6，请勿传入IPv6地址。](tag:dt,dt_test)
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -2268,7 +2438,6 @@ public class ElbAsyncClient {
      * 更新IP地址组
      *
      * 更新IP地址组，只支持全量更新IP。即IP地址组中的ip_list将被全量覆盖，不在请求参数中的IP地址将被移除。输入的ip可为ip地址或者CIDR子网，支持IPV4和IPV6。需要注意，0.0.0.0与0.0.0.0/32视为重复，0:0:0:0:0:0:0:1与::1与::1/128视为重复，会只保留其中一个写入。
-     * [不支持IPv6，请勿传入IPv6地址。](tag:dt,dt_test)
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.

@@ -172,6 +172,11 @@ public class Config {
         public static final PropertyEnum CHINESE_16K_GENERAL = new PropertyEnum("chinese_16k_general");
 
         /**
+         * Enum CHINESE_16K_TRAVEL for value: "chinese_16k_travel"
+         */
+        public static final PropertyEnum CHINESE_16K_TRAVEL = new PropertyEnum("chinese_16k_travel");
+
+        /**
          * Enum SICHUAN_16K_COMMON for value: "sichuan_16k_common"
          */
         public static final PropertyEnum SICHUAN_16K_COMMON = new PropertyEnum("sichuan_16k_common");
@@ -193,6 +198,7 @@ public class Config {
             map.put("chinese_8k_common", CHINESE_8K_COMMON);
             map.put("chinese_16k_common", CHINESE_16K_COMMON);
             map.put("chinese_16k_general", CHINESE_16K_GENERAL);
+            map.put("chinese_16k_travel", CHINESE_16K_TRAVEL);
             map.put("sichuan_16k_common", SICHUAN_16K_COMMON);
             map.put("cantonese_16k_common", CANTONESE_16K_COMMON);
             map.put("shanghai_16k_common", SHANGHAI_16K_COMMON);

@@ -103,13 +103,23 @@ public class ListPoolsRequest {
 
     private List<String> memberInstanceId = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "vpc_id")
+
+    private List<String> vpcId = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private List<String> type = null;
+
     public ListPoolsRequest withMarker(String marker) {
         this.marker = marker;
         return this;
     }
 
     /**
-     * 上一页最后一条记录的ID。  使用说明： - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
+     * 上一页最后一条记录的ID。  使用说明：  - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
      * @return marker
      */
     public String getMarker() {
@@ -145,7 +155,7 @@ public class ListPoolsRequest {
     }
 
     /**
-     * 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。使用说明：必须与limit一起使用。
+     * 是否反向查询，取值： - true：查询上一页。 - false：查询下一页，默认。  使用说明： - 必须与limit一起使用。 - 当page_reverse=true时，若要查询上一页，marker取值为当前页返回值的previous_marker。
      * @return pageReverse
      */
     public Boolean getPageReverse() {
@@ -393,7 +403,7 @@ public class ListPoolsRequest {
     }
 
     /**
-     * 后端云服务器组的负载均衡算法。  取值： 1、ROUND_ROBIN：加权轮询算法。 2、LEAST_CONNECTIONS：加权最少连接算法。 3、SOURCE_IP：源IP算法。 4、QUIC_CID：连接ID算法。  支持多值查询，查询条件格式：*lb_algorithm=xxx&lb_algorithm=xxx*。
+     * 后端云服务器组的负载均衡算法。  取值： - ROUND_ROBIN：加权轮询算法。 - LEAST_CONNECTIONS：加权最少连接算法。 - SOURCE_IP：源IP算法。 - QUIC_CID：连接ID算法。  支持多值查询，查询条件格式：*lb_algorithm=xxx&lb_algorithm=xxx*。
      * @return lbAlgorithm
      */
     public List<String> getLbAlgorithm() {
@@ -426,7 +436,7 @@ public class ListPoolsRequest {
     }
 
     /**
-     * 企业项目ID。  支持多值查询，查询条件格式：*enterprise_project_id=xxx&enterprise_project_id=xxx*。  [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
+     * 企业项目ID。不传时查询default企业项目\"0\"下的资源，鉴权按照default企业项目鉴权；如果传值，则传已存在的企业项目ID或all_granted_eps（表示查询所有企业项目）进行查询。   支持多值查询，查询条件格式：*enterprise_project_id=xxx&enterprise_project_id=xxx*。   [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
      * @return enterpriseProjectId
      */
     public List<String> getEnterpriseProjectId() {
@@ -459,7 +469,7 @@ public class ListPoolsRequest {
     }
 
     /**
-     * 后端云服务器组支持的IP版本。取值： [- 共享型LB下的pool：固定为v4； - 独享型LB下的pool：dualstack、v4。当该pool的协议为TCP/UDP/QUIC时，ip_version为dualstack，表示双栈。当协议为HTTP/HTTPS时，ip_version为v4。](tag:hws,hws_hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42,dt,dt_test) [- dualstack: 当该pool的协议为TCP/UDP/QUIC时，ip_version为dualstack，表示双栈。 - v4: 当该pool的协议为HTTP/HTTPS时，ip_version为v4。](tag:hcso_dt) 支持多值查询，查询条件格式：*ip_version=xxx&ip_version=xxx*。
+     * 后端云服务器组支持的IP版本。  支持多值查询，查询条件格式：*ip_version=xxx&ip_version=xxx*。
      * @return ipVersion
      */
     public List<String> getIpVersion() {
@@ -619,6 +629,72 @@ public class ListPoolsRequest {
         this.memberInstanceId = memberInstanceId;
     }
 
+    public ListPoolsRequest withVpcId(List<String> vpcId) {
+        this.vpcId = vpcId;
+        return this;
+    }
+
+    public ListPoolsRequest addVpcIdItem(String vpcIdItem) {
+        if (this.vpcId == null) {
+            this.vpcId = new ArrayList<>();
+        }
+        this.vpcId.add(vpcIdItem);
+        return this;
+    }
+
+    public ListPoolsRequest withVpcId(Consumer<List<String>> vpcIdSetter) {
+        if (this.vpcId == null) {
+            this.vpcId = new ArrayList<>();
+        }
+        vpcIdSetter.accept(this.vpcId);
+        return this;
+    }
+
+    /**
+     * 后端云服务器组关联的虚拟私有云的ID。
+     * @return vpcId
+     */
+    public List<String> getVpcId() {
+        return vpcId;
+    }
+
+    public void setVpcId(List<String> vpcId) {
+        this.vpcId = vpcId;
+    }
+
+    public ListPoolsRequest withType(List<String> type) {
+        this.type = type;
+        return this;
+    }
+
+    public ListPoolsRequest addTypeItem(String typeItem) {
+        if (this.type == null) {
+            this.type = new ArrayList<>();
+        }
+        this.type.add(typeItem);
+        return this;
+    }
+
+    public ListPoolsRequest withType(Consumer<List<String>> typeSetter) {
+        if (this.type == null) {
+            this.type = new ArrayList<>();
+        }
+        typeSetter.accept(this.type);
+        return this;
+    }
+
+    /**
+     * 后端服务器组的类型。   取值：  - instance：允许任意类型的后端，type指定为该类型时，vpc_id是必选字段。  - ip：只能添加跨VPC后端，type指定为该类型时，vpc_id不允许指定。  - 空字符串（\"\"）：允许任意类型的后端
+     * @return type
+     */
+    public List<String> getType() {
+        return type;
+    }
+
+    public void setType(List<String> type) {
+        this.type = type;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -644,7 +720,8 @@ public class ListPoolsRequest {
             && Objects.equals(this.memberDeviceId, listPoolsRequest.memberDeviceId)
             && Objects.equals(this.memberDeletionProtectionEnable, listPoolsRequest.memberDeletionProtectionEnable)
             && Objects.equals(this.listenerId, listPoolsRequest.listenerId)
-            && Objects.equals(this.memberInstanceId, listPoolsRequest.memberInstanceId);
+            && Objects.equals(this.memberInstanceId, listPoolsRequest.memberInstanceId)
+            && Objects.equals(this.vpcId, listPoolsRequest.vpcId) && Objects.equals(this.type, listPoolsRequest.type);
     }
 
     @Override
@@ -666,7 +743,9 @@ public class ListPoolsRequest {
             memberDeviceId,
             memberDeletionProtectionEnable,
             listenerId,
-            memberInstanceId);
+            memberInstanceId,
+            vpcId,
+            type);
     }
 
     @Override
@@ -693,6 +772,8 @@ public class ListPoolsRequest {
             .append("\n");
         sb.append("    listenerId: ").append(toIndentedString(listenerId)).append("\n");
         sb.append("    memberInstanceId: ").append(toIndentedString(memberInstanceId)).append("\n");
+        sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");
         return sb.toString();
     }

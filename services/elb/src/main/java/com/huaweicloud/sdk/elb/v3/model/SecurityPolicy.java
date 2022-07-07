@@ -36,7 +36,7 @@ public class SecurityPolicy {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "listeners")
 
-    private ListenerRef listeners;
+    private List<ListenerRef> listeners = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protocols")
@@ -126,29 +126,36 @@ public class SecurityPolicy {
         this.description = description;
     }
 
-    public SecurityPolicy withListeners(ListenerRef listeners) {
+    public SecurityPolicy withListeners(List<ListenerRef> listeners) {
         this.listeners = listeners;
         return this;
     }
 
-    public SecurityPolicy withListeners(Consumer<ListenerRef> listenersSetter) {
+    public SecurityPolicy addListenersItem(ListenerRef listenersItem) {
         if (this.listeners == null) {
-            this.listeners = new ListenerRef();
-            listenersSetter.accept(this.listeners);
+            this.listeners = new ArrayList<>();
         }
+        this.listeners.add(listenersItem);
+        return this;
+    }
 
+    public SecurityPolicy withListeners(Consumer<List<ListenerRef>> listenersSetter) {
+        if (this.listeners == null) {
+            this.listeners = new ArrayList<>();
+        }
+        listenersSetter.accept(this.listeners);
         return this;
     }
 
     /**
-     * Get listeners
+     * 自定义安全策略关联的监听器。
      * @return listeners
      */
-    public ListenerRef getListeners() {
+    public List<ListenerRef> getListeners() {
         return listeners;
     }
 
-    public void setListeners(ListenerRef listeners) {
+    public void setListeners(List<ListenerRef> listeners) {
         this.listeners = listeners;
     }
 

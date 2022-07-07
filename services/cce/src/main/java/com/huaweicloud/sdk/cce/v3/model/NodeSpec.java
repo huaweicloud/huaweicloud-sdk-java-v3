@@ -145,7 +145,7 @@ public class NodeSpec {
     }
 
     /**
-     * 节点的操作系统类型。  - 对于虚拟机节点，可以配置为“EulerOS”、“CentOS”、“Debian”、“Ubuntu”。默认为\"EulerOS\"。  > 系统会根据集群版本自动选择支持的系统版本。当前集群版本不支持该系统类型，则会报错。  - 对于自动付费包周期的裸金属节点，只支持EulerOS 2.3、EulerOS 2.5、EulerOS 2.8。  - 若在创建节点时指定了extendParam中的alpha.cce/NodeImageID参数，可以不填写此参数。
+     * 节点的操作系统类型。具体支持的操作系统请参见[节点操作系统说明](node-os.xml)。  > - 系统会根据集群版本自动选择支持的系统版本。当前集群版本不支持该系统类型，则会报错。  > - 若在创建节点时指定了extendParam中的alpha.cce/NodeImageID参数，可以不填写此参数。
      * @return os
      */
     public String getOs() {
@@ -342,7 +342,7 @@ public class NodeSpec {
     }
 
     /**
-     * 节点的计费模式：取值为 0（按需付费）、1（包周期）、2（已废弃：自动付费包周期）
+     * 节点的计费模式： -  0: 按需付费 [- 1: 包周期](tag:hws,hws_hk) [- 2: 已废弃：自动付费包周期](tag:hws,hws_hk) 
      * @return billingMode
      */
     public Integer getBillingMode() {
@@ -442,7 +442,7 @@ public class NodeSpec {
     }
 
     /**
-     * 指定DeH主机的ID，将节点调度到自己的DeH上。\\n>创建节点池添加节点时不支持该参数。 
+     * 指定DeH主机的ID，将节点调度到自己的DeH上。 >创建节点池添加节点时不支持该参数。 
      * @return dedicatedHostId
      */
     public String getDedicatedHostId() {

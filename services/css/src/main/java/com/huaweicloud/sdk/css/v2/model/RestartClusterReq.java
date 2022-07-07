@@ -43,7 +43,7 @@ public class RestartClusterReq {
     }
 
     /**
-     * 操作参数。参数说明： - 当操作角色为node时，value为节点ID。 - 当操作角色为role时，value为节点类型(ess、ess-master、ess-client、ess-cold)。
+     * 操作参数。参数说明： - 当操作角色为node时，value为节点ID,通过[查询集群详情](ShowClusterDetail.xml)获取instances中的id属性。 - 当操作角色为role时，value为节点类型(ess、ess-master、ess-client、ess-cold)的多种不同组合。
      * @return value
      */
     public String getValue() {

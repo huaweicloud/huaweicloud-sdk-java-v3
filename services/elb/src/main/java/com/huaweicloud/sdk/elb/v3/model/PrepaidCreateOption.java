@@ -16,7 +16,7 @@ import java.util.Objects;
 public class PrepaidCreateOption {
 
     /**
-     * 订购周期类型，仅在change_mode为delay时有效。取值： - month：月（默认）。 - year：年。
+     * 订购周期类型，当前支持包月和包年： month：月； year：年；
      */
     public static final class PeriodTypeEnum {
 
@@ -118,7 +118,7 @@ public class PrepaidCreateOption {
     }
 
     /**
-     * 订购周期类型，仅在change_mode为delay时有效。取值： - month：月（默认）。 - year：年。
+     * 订购周期类型，当前支持包月和包年： month：月； year：年；
      * @return periodType
      */
     public PeriodTypeEnum getPeriodType() {
@@ -135,7 +135,7 @@ public class PrepaidCreateOption {
     }
 
     /**
-     * 订购周期数，仅在change_mode为delay时有效。取值： - period_type为month时，为[1,9]，默认1。 - period_type为year时，为[1,3]，默认1。
+     * 订购周期数，取值会随运营策略变化。 period_type为month时，为[1,9]， period_type为year时，为[1,3]
      * minimum: 1
      * maximum: 9
      * @return periodNum

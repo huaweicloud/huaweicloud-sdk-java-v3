@@ -26,7 +26,7 @@ public class ClusterDetailDatastore {
     }
 
     /**
-     * 支持类型：elasticsearch。
+     * 引擎类型，目前只支持elasticsearch。
      * @return type
      */
     public String getType() {

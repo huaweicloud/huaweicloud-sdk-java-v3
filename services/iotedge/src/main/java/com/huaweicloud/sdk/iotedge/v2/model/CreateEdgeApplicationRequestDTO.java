@@ -35,7 +35,7 @@ public class CreateEdgeApplicationRequestDTO  {
     
     private String description;
     /**
-     * 功能类型,分为数据处理（DATA_PROCESSING）和协议解析（PROTOCOL_PARSING）和IT集成（ON_PREMISE_INTEGRATION），数据默认为DATA_PROCESSING，数据处理模块可以传输消息，协议解析为驱动类型，IT集成为部署南向3rdIA使用
+     * 功能类型,分为数据处理（DATA_PROCESSING）、协议解析（PROTOCOL_PARSING）、IT集成（ON_PREMISE_INTEGRATION）和混合应用（COMPOSITE_APPLICATION），数据默认为DATA_PROCESSING，数据处理模块可以传输消息，协议解析为驱动类型，IT集成为部署南向3rdIA使用，混合应用可同时实现数据处理和协议解析。
      */
     public static final class FunctionTypeEnum {
 
@@ -60,6 +60,16 @@ public class CreateEdgeApplicationRequestDTO  {
          */
         public static final FunctionTypeEnum GATEWAY_MANAGER = new FunctionTypeEnum("GATEWAY_MANAGER");
         
+        /**
+         * Enum COMPOSITE_APPLICATION for value: "COMPOSITE_APPLICATION"
+         */
+        public static final FunctionTypeEnum COMPOSITE_APPLICATION = new FunctionTypeEnum("COMPOSITE_APPLICATION");
+        
+        /**
+         * Enum DATA_COLLECTION for value: "DATA_COLLECTION"
+         */
+        public static final FunctionTypeEnum DATA_COLLECTION = new FunctionTypeEnum("DATA_COLLECTION");
+        
 
         private static final Map<String, FunctionTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -69,6 +79,8 @@ public class CreateEdgeApplicationRequestDTO  {
             map.put("PROTOCOL_PARSING", PROTOCOL_PARSING);
             map.put("ON_PREMISE_INTEGRATION", ON_PREMISE_INTEGRATION);
             map.put("GATEWAY_MANAGER", GATEWAY_MANAGER);
+            map.put("COMPOSITE_APPLICATION", COMPOSITE_APPLICATION);
+            map.put("DATA_COLLECTION", DATA_COLLECTION);
             return Collections.unmodifiableMap(map);
         }
 
@@ -185,7 +197,7 @@ public class CreateEdgeApplicationRequestDTO  {
 
 
     /**
-     * 功能类型,分为数据处理（DATA_PROCESSING）和协议解析（PROTOCOL_PARSING）和IT集成（ON_PREMISE_INTEGRATION），数据默认为DATA_PROCESSING，数据处理模块可以传输消息，协议解析为驱动类型，IT集成为部署南向3rdIA使用
+     * 功能类型,分为数据处理（DATA_PROCESSING）、协议解析（PROTOCOL_PARSING）、IT集成（ON_PREMISE_INTEGRATION）和混合应用（COMPOSITE_APPLICATION），数据默认为DATA_PROCESSING，数据处理模块可以传输消息，协议解析为驱动类型，IT集成为部署南向3rdIA使用，混合应用可同时实现数据处理和协议解析。
      * @return functionType
      */
     public FunctionTypeEnum getFunctionType() {

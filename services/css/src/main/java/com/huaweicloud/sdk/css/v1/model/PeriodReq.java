@@ -41,7 +41,7 @@ public class PeriodReq {
     }
 
     /**
-     * 订购周期类型。 - 2: 包月（参数范围：1-9）。 - 3: 包年（参数范围：1-3）。
+     * 订购周期类型。 - 2: 包月。 - 3: 包年。
      * @return periodType
      */
     public Integer getPeriodType() {
@@ -58,7 +58,7 @@ public class PeriodReq {
     }
 
     /**
-     * 订购周期数。
+     * 订购周期数。 - 若选择包月（参数范围：1-9）。 - 若选择包年（参数范围：1-3）。
      * @return periodNum
      */
     public Integer getPeriodNum() {

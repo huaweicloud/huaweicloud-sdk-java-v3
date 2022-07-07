@@ -69,6 +69,11 @@ public class L7Policy {
     private String redirectPoolId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "redirect_pools_config")
+
+    private List<CreateRedirectPoolsConfig> redirectPoolsConfig = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "redirect_listener_id")
 
     private String redirectListenerId;
@@ -93,13 +98,23 @@ public class L7Policy {
 
     private FixtedResponseConfig fixedResponseConfig;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "created_at")
+
+    private String createdAt;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "updated_at")
+
+    private String updatedAt;
+
     public L7Policy withAction(String action) {
         this.action = action;
         return this;
     }
 
     /**
-     * 转发策略的转发动作。取值：  - REDIRECT_TO_POOL：转发到后端云服务器组；  - REDIRECT_TO_LISTENER：重定向到监听器；  - REDIRECT_TO_URL：重定向到URL；  -FIXED_RESPONSE：返回固定响应体。  使用说明：  - REDIRECT_TO_LISTENER的优先级最高，配置了以后，该监听器下的其他policy会失效。  - 当action为REDIRECT_TO_POOL时，只支持创建在PROTOCOL为HTTP、HTTPS、TERMINATED_HTTPS的listener上。  - 当action为REDIRECT_TO_LISTENER时，只支持创建在PROTOCOL为HTTP的listener上。
+     * 转发策略的转发动作。取值：  - REDIRECT_TO_POOL：转发到后端云服务器组；  - REDIRECT_TO_LISTENER：重定向到监听器；  [- REDIRECT_TO_URL：重定向到URL；  - FIXED_RESPONSE：返回固定响应体。](tag:hws,hws_hk,ocb,tlf,ctc,hcs,sbc,g42,tm,cmcc,hk_g42,mix,hk_sbc,hws_ocb,fcs)   REDIRECT_TO_LISTENER的优先级最高，配置了以后，该监听器下的其他policy会失效。   使用说明：  - 当action为REDIRECT_TO_POOL时，只支持创建在PROTOCOL为HTTP、HTTPS、TERMINATED_HTTPS的listener上。  - 当action为REDIRECT_TO_LISTENER时，只支持创建在PROTOCOL为HTTP的listener上。
      * @return action
      */
     public String getAction() {
@@ -220,7 +235,7 @@ public class L7Policy {
     }
 
     /**
-     * 转发策略的优先级。当监听器的高级转发策略功能（enhance_l7policy_enable）开启后才会生效，未开启传入该字段会报错。[共享型负载均衡器下的转发策略不支持该字段。](tag:hcso_dt)  数字越小表示优先级越高，同一监听器下不允许重复。  当action为REDIRECT_TO_LISTENER时，仅支持指定为0，优先级最高。 当关联的listener没有开启enhance_l7policy_enable，按原有policy的排序逻辑，自动排序。各域名之间优先级独立，相同域名下，按path的compare_type排序，精确>前缀>正则，匹配类型相同时，path的长度越长优先级越高。若policy下只有域名rule，没有路径rule，默认path为前缀匹配/。 当关联的listener开启了enhance_l7policy_enable，且不传该字段，则新创建的转发策略的优先级的值为：同一监听器下已有转发策略的优先级的最大值+1。因此，若当前已有转发策略的优先级的最大值是10000，新创建会因超出取值范围10000而失败。此时可通过传入指定priority，或调整原有policy的优先级来避免错误。若监听器下没有转发策略，则新建的转发策略的优先级为1。  [不支持该字段，请勿使用。](tag:dt,dt_test)
+     * 转发策略的优先级。共享型实例该字段无意义。当监听器的高级转发策略功能（enhance_l7policy_enable）开启后才会生效，未开启传入该字段会报错。共享型负载均衡器下的转发策略不支持该字段。   数字越小表示优先级越高，同一监听器下不允许重复。   当action为REDIRECT_TO_LISTENER时，仅支持指定为0，优先级最高。   当关联的listener没有开启enhance_l7policy_enable，按原有policy的排序逻辑，自动排序。各域名之间优先级独立，相同域名下，按path的compare_type排序，精确>前缀>正则，匹配类型相同时，path的长度越长优先级越高。若policy下只有域名rule，没有路径rule，默认path为前缀匹配/。  当关联的listener开启了enhance_l7policy_enable，且不传该字段，则新创建的转发策略的优先级的值为：同一监听器下已有转发策略的优先级的最大值+1。因此，若当前已有转发策略的优先级的最大值是10000，新创建会因超出取值范围10000而失败。此时可通过传入指定priority，或调整原有policy的优先级来避免错误。若监听器下没有转发策略，则新建的转发策略的优先级为1。  [ 不支持该字段，请勿使用。](tag:dt,dt_test)
      * @return priority
      */
     public Integer getPriority() {
@@ -254,7 +269,7 @@ public class L7Policy {
     }
 
     /**
-     * 转发策略的配置状态。 取值范围：  - ACTIVE：默认值，表示正常。 - ERROR：表示当前策略与同一监听器下的其他策略存在相同的规则配置。
+     * 转发策略的配置状态。  取值范围：  - ACTIVE - 默认值，表示正常。  [- ERROR - 表示当前策略与同一监听器下的其他策略存在相同的规则配置。](tag:hws,hws_hk,ocb,tlf,ctc,hcs,sbc,g42,tm,cmcc,hk_g42,mix,hk_sbc,hws_ocb,fcs)
      * @return provisioningStatus
      */
     public String getProvisioningStatus() {
@@ -271,7 +286,7 @@ public class L7Policy {
     }
 
     /**
-     * 转发到pool的ID。当action为REDIRECT_TO_POOL时生效。  使用说明： - 指定的pool不能是listener的default_pool。不能是其他listener的l7policy使用的pool。 - 当action为REDIRECT_TO_POOL时为必选字段。当action为REDIRECT_TO_LISTENER时，不可指定。
+     * 转发到pool的ID。当action为REDIRECT_TO_POOL时生效。 若同时指定redirect_pools_config和redirect_pool_id，按redirect_pools_config生效。
      * @return redirectPoolId
      */
     public String getRedirectPoolId() {
@@ -280,6 +295,39 @@ public class L7Policy {
 
     public void setRedirectPoolId(String redirectPoolId) {
         this.redirectPoolId = redirectPoolId;
+    }
+
+    public L7Policy withRedirectPoolsConfig(List<CreateRedirectPoolsConfig> redirectPoolsConfig) {
+        this.redirectPoolsConfig = redirectPoolsConfig;
+        return this;
+    }
+
+    public L7Policy addRedirectPoolsConfigItem(CreateRedirectPoolsConfig redirectPoolsConfigItem) {
+        if (this.redirectPoolsConfig == null) {
+            this.redirectPoolsConfig = new ArrayList<>();
+        }
+        this.redirectPoolsConfig.add(redirectPoolsConfigItem);
+        return this;
+    }
+
+    public L7Policy withRedirectPoolsConfig(Consumer<List<CreateRedirectPoolsConfig>> redirectPoolsConfigSetter) {
+        if (this.redirectPoolsConfig == null) {
+            this.redirectPoolsConfig = new ArrayList<>();
+        }
+        redirectPoolsConfigSetter.accept(this.redirectPoolsConfig);
+        return this;
+    }
+
+    /**
+     * 转发到后端主机组的配置。当action为REDIRECT_TO_POOL时生效。
+     * @return redirectPoolsConfig
+     */
+    public List<CreateRedirectPoolsConfig> getRedirectPoolsConfig() {
+        return redirectPoolsConfig;
+    }
+
+    public void setRedirectPoolsConfig(List<CreateRedirectPoolsConfig> redirectPoolsConfig) {
+        this.redirectPoolsConfig = redirectPoolsConfig;
     }
 
     public L7Policy withRedirectListenerId(String redirectListenerId) {
@@ -401,6 +449,40 @@ public class L7Policy {
         this.fixedResponseConfig = fixedResponseConfig;
     }
 
+    public L7Policy withCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+        return this;
+    }
+
+    /**
+     * 创建时间。格式：yyyy-MM-dd'T'HH:mm:ss'Z'，UTC时区。  注意：独享型实例的历史数据以及共享型实例下的资源，不返回该字段。
+     * @return createdAt
+     */
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public L7Policy withUpdatedAt(String updatedAt) {
+        this.updatedAt = updatedAt;
+        return this;
+    }
+
+    /**
+     * 更新时间。格式：yyyy-MM-dd'T'HH:mm:ss'Z'，UTC时区。  注意：独享型实例的历史数据以及共享型实例下的资源，不返回该字段。
+     * @return updatedAt
+     */
+    public String getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(String updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -417,10 +499,12 @@ public class L7Policy {
             && Objects.equals(this.projectId, l7Policy.projectId)
             && Objects.equals(this.provisioningStatus, l7Policy.provisioningStatus)
             && Objects.equals(this.redirectPoolId, l7Policy.redirectPoolId)
+            && Objects.equals(this.redirectPoolsConfig, l7Policy.redirectPoolsConfig)
             && Objects.equals(this.redirectListenerId, l7Policy.redirectListenerId)
             && Objects.equals(this.redirectUrl, l7Policy.redirectUrl) && Objects.equals(this.rules, l7Policy.rules)
             && Objects.equals(this.redirectUrlConfig, l7Policy.redirectUrlConfig)
-            && Objects.equals(this.fixedResponseConfig, l7Policy.fixedResponseConfig);
+            && Objects.equals(this.fixedResponseConfig, l7Policy.fixedResponseConfig)
+            && Objects.equals(this.createdAt, l7Policy.createdAt) && Objects.equals(this.updatedAt, l7Policy.updatedAt);
     }
 
     @Override
@@ -436,11 +520,14 @@ public class L7Policy {
             projectId,
             provisioningStatus,
             redirectPoolId,
+            redirectPoolsConfig,
             redirectListenerId,
             redirectUrl,
             rules,
             redirectUrlConfig,
-            fixedResponseConfig);
+            fixedResponseConfig,
+            createdAt,
+            updatedAt);
     }
 
     @Override
@@ -458,11 +545,14 @@ public class L7Policy {
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    provisioningStatus: ").append(toIndentedString(provisioningStatus)).append("\n");
         sb.append("    redirectPoolId: ").append(toIndentedString(redirectPoolId)).append("\n");
+        sb.append("    redirectPoolsConfig: ").append(toIndentedString(redirectPoolsConfig)).append("\n");
         sb.append("    redirectListenerId: ").append(toIndentedString(redirectListenerId)).append("\n");
         sb.append("    redirectUrl: ").append(toIndentedString(redirectUrl)).append("\n");
         sb.append("    rules: ").append(toIndentedString(rules)).append("\n");
         sb.append("    redirectUrlConfig: ").append(toIndentedString(redirectUrlConfig)).append("\n");
         sb.append("    fixedResponseConfig: ").append(toIndentedString(fixedResponseConfig)).append("\n");
+        sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+        sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("}");
         return sb.toString();
     }

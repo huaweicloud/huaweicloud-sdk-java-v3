@@ -21,7 +21,7 @@ public class HealthCodeWordsBlockList {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "location")
 
-    private List<Integer> location = null;
+    private List<List<Integer>> location = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confidence")
@@ -45,12 +45,12 @@ public class HealthCodeWordsBlockList {
         this.words = words;
     }
 
-    public HealthCodeWordsBlockList withLocation(List<Integer> location) {
+    public HealthCodeWordsBlockList withLocation(List<List<Integer>> location) {
         this.location = location;
         return this;
     }
 
-    public HealthCodeWordsBlockList addLocationItem(Integer locationItem) {
+    public HealthCodeWordsBlockList addLocationItem(List<Integer> locationItem) {
         if (this.location == null) {
             this.location = new ArrayList<>();
         }
@@ -58,7 +58,7 @@ public class HealthCodeWordsBlockList {
         return this;
     }
 
-    public HealthCodeWordsBlockList withLocation(Consumer<List<Integer>> locationSetter) {
+    public HealthCodeWordsBlockList withLocation(Consumer<List<List<Integer>>> locationSetter) {
         if (this.location == null) {
             this.location = new ArrayList<>();
         }
@@ -70,11 +70,11 @@ public class HealthCodeWordsBlockList {
      * 识别到的文字块的区域位置信息，列表形式，分别表示文字块4个顶点的（x,y）坐标。采用图像坐标系，图像坐标原点为图像左上角，x轴沿水平方向，y轴沿竖直方向。 
      * @return location
      */
-    public List<Integer> getLocation() {
+    public List<List<Integer>> getLocation() {
         return location;
     }
 
-    public void setLocation(List<Integer> location) {
+    public void setLocation(List<List<Integer>> location) {
         this.location = location;
     }
 

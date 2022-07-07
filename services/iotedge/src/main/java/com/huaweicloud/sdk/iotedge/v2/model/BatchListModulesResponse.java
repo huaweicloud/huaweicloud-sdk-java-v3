@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iotedge.v2.model.EdgeModuleRespDTO;
+import com.huaweicloud.sdk.iotedge.v2.model.EdgeModuleDTO;
 import com.huaweicloud.sdk.iotedge.v2.model.PageInfoDTO;
 import java.util.ArrayList;
 import java.util.List;
@@ -42,7 +42,7 @@ public class BatchListModulesResponse extends SdkResponse {
     @JsonProperty(value="modules")
     
     
-    private List<EdgeModuleRespDTO> modules = null;
+    private List<EdgeModuleDTO> modules = null;
     
     public BatchListModulesResponse withCount(Long count) {
         this.count = count;
@@ -97,13 +97,13 @@ public class BatchListModulesResponse extends SdkResponse {
 
     
 
-    public BatchListModulesResponse withModules(List<EdgeModuleRespDTO> modules) {
+    public BatchListModulesResponse withModules(List<EdgeModuleDTO> modules) {
         this.modules = modules;
         return this;
     }
 
     
-    public BatchListModulesResponse addModulesItem(EdgeModuleRespDTO modulesItem) {
+    public BatchListModulesResponse addModulesItem(EdgeModuleDTO modulesItem) {
         if(this.modules == null) {
             this.modules = new ArrayList<>();
         }
@@ -111,7 +111,7 @@ public class BatchListModulesResponse extends SdkResponse {
         return this;
     }
 
-    public BatchListModulesResponse withModules(Consumer<List<EdgeModuleRespDTO>> modulesSetter) {
+    public BatchListModulesResponse withModules(Consumer<List<EdgeModuleDTO>> modulesSetter) {
         if(this.modules == null) {
             this.modules = new ArrayList<>();
         }
@@ -123,11 +123,11 @@ public class BatchListModulesResponse extends SdkResponse {
      * 每页记录数
      * @return modules
      */
-    public List<EdgeModuleRespDTO> getModules() {
+    public List<EdgeModuleDTO> getModules() {
         return modules;
     }
 
-    public void setModules(List<EdgeModuleRespDTO> modules) {
+    public void setModules(List<EdgeModuleDTO> modules) {
         this.modules = modules;
     }
 

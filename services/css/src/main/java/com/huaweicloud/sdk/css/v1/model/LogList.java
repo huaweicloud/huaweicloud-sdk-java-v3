@@ -48,7 +48,7 @@ public class LogList {
     }
 
     /**
-     * 日期。
+     * 当条日志记录时间，格式为ISO8601：CCYY-MM-DDThh:mm:ss。
      * @return date
      */
     public String getDate() {

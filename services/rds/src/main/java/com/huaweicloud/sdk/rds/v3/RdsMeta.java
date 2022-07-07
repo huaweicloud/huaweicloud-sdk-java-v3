@@ -2037,6 +2037,45 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<SetSensitiveSlowLogRequest, SetSensitiveSlowLogResponse> setSensitiveSlowLog =
+        genForsetSensitiveSlowLog();
+
+    private static HttpRequestDef<SetSensitiveSlowLogRequest, SetSensitiveSlowLogResponse> genForsetSensitiveSlowLog() {
+        // basic
+        HttpRequestDef.Builder<SetSensitiveSlowLogRequest, SetSensitiveSlowLogResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, SetSensitiveSlowLogRequest.class, SetSensitiveSlowLogResponse.class)
+                .withName("SetSensitiveSlowLog")
+                .withUri("/v3/{project_id}/instances/{instance_id}/slowlog-sensitization/{status}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetSensitiveSlowLogRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("status",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetSensitiveSlowLogRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetSensitiveSlowLogRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowAuditlogDownloadLinkRequest, ShowAuditlogDownloadLinkResponse> showAuditlogDownloadLink =
         genForshowAuditlogDownloadLink();
 

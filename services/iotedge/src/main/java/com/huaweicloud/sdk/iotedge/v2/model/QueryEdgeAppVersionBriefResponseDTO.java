@@ -39,6 +39,13 @@ public class QueryEdgeAppVersionBriefResponseDTO  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="sdk_version")
+    
+    
+    private String sdkVersion;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
     
@@ -50,6 +57,13 @@ public class QueryEdgeAppVersionBriefResponseDTO  {
     
     
     private String deployType;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="deploy_multi_instance")
+    
+    
+    private Boolean deployMultiInstance;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -221,6 +235,28 @@ public class QueryEdgeAppVersionBriefResponseDTO  {
 
     
 
+    public QueryEdgeAppVersionBriefResponseDTO withSdkVersion(String sdkVersion) {
+        this.sdkVersion = sdkVersion;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 应用集成的边缘升得快版本
+     * @return sdkVersion
+     */
+    public String getSdkVersion() {
+        return sdkVersion;
+    }
+
+    public void setSdkVersion(String sdkVersion) {
+        this.sdkVersion = sdkVersion;
+    }
+
+    
+
     public QueryEdgeAppVersionBriefResponseDTO withDescription(String description) {
         this.description = description;
         return this;
@@ -261,6 +297,28 @@ public class QueryEdgeAppVersionBriefResponseDTO  {
 
     public void setDeployType(String deployType) {
         this.deployType = deployType;
+    }
+
+    
+
+    public QueryEdgeAppVersionBriefResponseDTO withDeployMultiInstance(Boolean deployMultiInstance) {
+        this.deployMultiInstance = deployMultiInstance;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 是否允许部署多实例
+     * @return deployMultiInstance
+     */
+    public Boolean getDeployMultiInstance() {
+        return deployMultiInstance;
+    }
+
+    public void setDeployMultiInstance(Boolean deployMultiInstance) {
+        this.deployMultiInstance = deployMultiInstance;
     }
 
     
@@ -422,8 +480,10 @@ public class QueryEdgeAppVersionBriefResponseDTO  {
         QueryEdgeAppVersionBriefResponseDTO queryEdgeAppVersionBriefResponseDTO = (QueryEdgeAppVersionBriefResponseDTO) o;
         return Objects.equals(this.edgeAppId, queryEdgeAppVersionBriefResponseDTO.edgeAppId) &&
             Objects.equals(this.version, queryEdgeAppVersionBriefResponseDTO.version) &&
+            Objects.equals(this.sdkVersion, queryEdgeAppVersionBriefResponseDTO.sdkVersion) &&
             Objects.equals(this.description, queryEdgeAppVersionBriefResponseDTO.description) &&
             Objects.equals(this.deployType, queryEdgeAppVersionBriefResponseDTO.deployType) &&
+            Objects.equals(this.deployMultiInstance, queryEdgeAppVersionBriefResponseDTO.deployMultiInstance) &&
             Objects.equals(this.createTime, queryEdgeAppVersionBriefResponseDTO.createTime) &&
             Objects.equals(this.updateTime, queryEdgeAppVersionBriefResponseDTO.updateTime) &&
             Objects.equals(this.state, queryEdgeAppVersionBriefResponseDTO.state) &&
@@ -433,7 +493,7 @@ public class QueryEdgeAppVersionBriefResponseDTO  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(edgeAppId, version, description, deployType, createTime, updateTime, state, arch, publishTime, offShelfTime);
+        return Objects.hash(edgeAppId, version, sdkVersion, description, deployType, deployMultiInstance, createTime, updateTime, state, arch, publishTime, offShelfTime);
     }
     @Override
     public String toString() {
@@ -441,8 +501,10 @@ public class QueryEdgeAppVersionBriefResponseDTO  {
         sb.append("class QueryEdgeAppVersionBriefResponseDTO {\n");
         sb.append("    edgeAppId: ").append(toIndentedString(edgeAppId)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
+        sb.append("    sdkVersion: ").append(toIndentedString(sdkVersion)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    deployType: ").append(toIndentedString(deployType)).append("\n");
+        sb.append("    deployMultiInstance: ").append(toIndentedString(deployMultiInstance)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    state: ").append(toIndentedString(state)).append("\n");

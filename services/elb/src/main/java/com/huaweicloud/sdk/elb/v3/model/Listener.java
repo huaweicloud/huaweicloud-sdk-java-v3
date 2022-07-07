@@ -148,6 +148,11 @@ public class Listener {
 
     private Boolean enhanceL7policyEnable;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "quic_config")
+
+    private ListenerQuicConfig quicConfig;
+
     public Listener withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
@@ -171,7 +176,7 @@ public class Listener {
     }
 
     /**
-     * 监听器使用的CA证书ID。仅客户端证书有效，其他类型证书无效。
+     * 监听器使用的CA证书ID。当且仅当type=client时，才会使用该字段对应的证书。
      * @return clientCaTlsContainerRef
      */
     public String getClientCaTlsContainerRef() {
@@ -273,7 +278,7 @@ public class Listener {
     }
 
     /**
-     * 客户端与LB之间的HTTPS请求的HTTP2功能的开启状态。开启后，可提升客户端与LB间的访问性能，但LB与后端服务器间仍采用HTTP1.X协议。 其他协议的监听器该字段无效，无论取值如何都不影响监听器正常运行。
+     * 客户端与LB之间的HTTPS请求的HTTP2功能的开启状态。开启后，可提升客户端与LB间的访问性能，但LB与后端服务器间仍采用HTTP1.X协议。   其他协议的监听器该字段无效，无论取值如何都不影响监听器正常运行。
      * @return http2Enable
      */
     public Boolean getHttp2Enable() {
@@ -400,7 +405,7 @@ public class Listener {
     }
 
     /**
-     * 监听器的监听协议。支持TCP、UDP、HTTP、HTTPS、TERMINATED_HTTPS和QUIC。
+     * 监听器的监听协议。   [取值：TCP、UDP、HTTP、HTTPS、TERMINATED_HTTPS、QUIC。    使用说明：  - 共享型LB上的HTTPS监听器只支持设置为TERMINATED_HTTPS，创建时传入HTTPS将会自动转为TERMINATED_HTTPS。  - 独享型LB上的HTTPS监听器只支持设置为HTTPS，创建时传入TERMINATED_HTTPS将会自动转为HTTPS。](tag:hws,hws_hk,ocb,tlf,ctc,hcs,sbc,g42,tm,cmcc,hk_g42,mix,hk_sbc,hws_ocb,fcs)   [取值：TCP、UDP、HTTP、HTTPS、QUIC。](tag:dt,dt_test,hcso_dt)
      * @return protocol
      */
     public String getProtocol() {
@@ -519,7 +524,7 @@ public class Listener {
     }
 
     /**
-     * 监听器使用的安全策略，仅对HTTPS协议类型的监听器有效。  [取值：tls-1-0-inherit, tls-1-0, tls-1-1, tls-1-2, tls-1-2-strict，tls-1-2-fs, tls-1-0-with-1-3, tls-1-2-fs-with-1-3, hybrid-policy-1-0，默认：tls-1-0。](tag:hws,hws_hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42)  [取值：tls-1-0, tls-1-1, tls-1-2, tls-1-2-strict，默认：tls-1-0。](tag:dt,dt_test)  使用说明： - 若同时设置了security_policy_id和tls_ciphers_policy，则仅security_policy_id生效。
+     * 监听器使用的安全策略。  [取值：tls-1-0-inherit,tls-1-0, tls-1-1, tls-1-2,tls-1-2-strict，tls-1-2-fs，tls-1-0-with-1-3, tls-1-2-fs-with-1-3, hybrid-policy-1-0，默认：tls-1-0。](tag:hws,hws_hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42) [取值：tls-1-0, tls-1-1, tls-1-2, tls-1-2-strict，默认：tls-1-0。](tag:dt,dt_test,hcso_dt)  [使用说明： - 仅对HTTPS协议类型的监听器且关联LB为独享型时有效。  - QUIC监听器不支持该字段。  - 若同时设置了security_policy_id和tls_ciphers_policy，则仅security_policy_id生效。  - 加密套件的优先顺序为ecc套件、rsa套件、tls1.3协议的套件（即支持ecc又支持rsa）](tag:hws,hws_hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42,dt,dt_test)  [使用说明： - 仅对HTTPS协议类型的监听器有效](tag:hcso_dt)
      * @return tlsCiphersPolicy
      */
     public String getTlsCiphersPolicy() {
@@ -536,7 +541,7 @@ public class Listener {
     }
 
     /**
-     * 自定义安全策略的ID。[仅关联LB为独享型时有效。](tag:hws,hws_hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42,dt,dt_test)  若同时设置了security_policy_id和tls_ciphers_policy，则仅security_policy_id生效。
+     * 自定义安全策略的ID。  [使用说明： - 仅对HTTPS协议类型的监听器且关联LB为独享型时有效。  - QUIC监听器不支持该字段。  - 若同时设置了security_policy_id和tls_ciphers_policy，则仅security_policy_id生效。  - 加密套件的优先顺序为ecc套件、rsa套件、tls1.3协议的套件（即支持ecc又支持rsa）](tag:hws,hws_hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42,dt,dt_test)  [使用说明： - 仅对HTTPS协议类型的监听器有效](tag:hcso_dt)
      * @return securityPolicyId
      */
     public String getSecurityPolicyId() {
@@ -553,7 +558,7 @@ public class Listener {
     }
 
     /**
-     * 是否开启后端服务器的重试。取值：true 开启重试，false 不开启重试。默认：true。  [使用说明： - 若关联是共享型LB，仅在protocol为HTTP、TERMINATED_HTTPS时才能传入该字段。 - 若关联是独享型LB，仅在protocol为HTTP、HTTPS时才能传入该字段。](tag:hws,hws_hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42,dt,dt_test) [使用说明： 仅在protocol为HTTP、HTTPS时才能传入该字段。](tag:hcso_dt)
+     * 是否开启后端服务器的重试。取值：true 开启重试，false 不开启重试。默认：true。   [使用说明：  - 若关联是共享型LB，仅在protocol为HTTP、TERMINATED_HTTPS时才能传入该字段。  - 若关联是独享型LB，仅在protocol为HTTP、HTTPS和QUIC时才能传入该字段。](tag:hws,hws_hk,ocb,tlf,ctc,hcs,sbc,g42,tm,cmcc,hk_g42,mix,hk_sbc,hws_ocb,fcs,dt,dt_test)  [使用说明：  - 仅在protocol为HTTP、HTTPS和QUIC时才能传入该字段。](tag:hcso_dt)
      * @return enableMemberRetry
      */
     public Boolean getEnableMemberRetry() {
@@ -570,7 +575,7 @@ public class Listener {
     }
 
     /**
-     * 客户端连接空闲超时时间。在超过keepalive_timeout时长一直没有请求，负载均衡会暂时中断当前连接，直到一下次请求时重新建立新的连接。取值：  - 若为TCP监听器，取值范围为（10-4000s）默认值为300s。  - 若为HTTP/HTTPS/TERMINATED_HTTPS监听器，取值范围为（0-4000s）默认值为60s。 UDP监听器不支持此字段。
+     * 客户端连接空闲超时时间。在超过keepalive_timeout时长一直没有请求，负载均衡会暂时中断当前连接，直到一下次请求时重新建立新的连接。取值：  - 若为TCP监听器，取值范围为（10-4000s）默认值为300s。  - 若为HTTP/HTTPS/TERMINATED_HTTPS监听器，取值范围为（0-4000s）默认值为60s。   UDP监听器不支持此字段。
      * @return keepaliveTimeout
      */
     public Integer getKeepaliveTimeout() {
@@ -587,7 +592,7 @@ public class Listener {
     }
 
     /**
-     * 等待客户端请求超时时间，包括两种情况： - 读取整个客户端请求头的超时时长：如果客户端未在超时时长内发送完整个请求头，则请求将被中断 - 两个连续body体的数据包到达LB的时间间隔，超出client_timeout将会断开连接。  取值范围为1-300s，默认值为60s。  使用说明： - 仅协议为HTTP/HTTPS的监听器支持该字段。
+     * 等待客户端请求超时时间，包括两种情况： - 读取整个客户端请求头的超时时长：如果客户端未在超时时长内发送完整个请求头，则请求将被中断 - 两个连续body体的数据包到达LB的时间间隔，超出client_timeout将会断开连接。  取值范围为1-300s，默认值为60s。  使用说明：仅协议为HTTP/HTTPS的监听器支持该字段。
      * @return clientTimeout
      */
     public Integer getClientTimeout() {
@@ -604,7 +609,7 @@ public class Listener {
     }
 
     /**
-     * 等待后端服务器响应超时时间。请求转发后端服务器后，在等待超时member_timeout时长没有响应，负载均衡将终止等待，并返回 HTTP504错误码。  取值：1-300s，默认为60s。  使用说明： - 仅支持协议为HTTP/HTTPS的监听器。
+     * 等待后端服务器响应超时时间。请求转发后端服务器后，在等待超时member_timeout时长没有响应，负载均衡将终止等待，并返回 HTTP504错误码。   取值：1-300s，默认为60s。   使用说明：仅支持协议为HTTP/HTTPS的监听器。
      * @return memberTimeout
      */
     public Integer getMemberTimeout() {
@@ -647,7 +652,7 @@ public class Listener {
     }
 
     /**
-     * 是否透传客户端IP地址。开启后客户端IP地址将透传到后端服务器。[仅作用于共享型LB的TCP/UDP监听器。取值： - 共享型LB的TCP/UDP监听器可设置为true或false，不传默认为false。 - 共享型LB的HTTP/HTTPS监听器只支持设置为true，不传默认为true。 - 独享型负载均衡器所有协议的监听器只支持设置为true，不传默认为true。  使用说明： - 开启特性后，ELB和后端服务器之间直接使用真实的IP访问，需要确保已正确设置服务器的安全组以及访问控制策略。 - 开启特性后，不支持同一台服务器既作为后端服务器又作为客户端的场景。 - 开启特性后，不支持变更后端服务器规格。](tag:hws,hws_hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42,dt,dt_test)  [当前所有协议的监听器只设支持置为true，不传默认为true。](tag:hcso_dt)
+     * 是否透传客户端IP地址。开启后客户端IP地址将透传到后端服务器。[仅作用于共享型LB的TCP/UDP监听器。取值：  - 共享型LB的TCP/UDP监听器可设置为true或false，不传默认为false。  - 共享型LB的HTTP/HTTPS监听器只支持设置为true，不传默认为true。  - 独享型负载均衡器所有协议的监听器只支持设置为true，不传默认为true。   使用说明：  - 开启特性后，ELB和后端服务器之间直接使用真实的IP访问，需要确保已正确设置服务器的安全组以及访问控制策略。  - 开启特性后，不支持同一台服务器既作为后端服务器又作为客户端的场景。  - 开启特性后，不支持变更后端服务器规格。](tag:hws,hws_hk,ocb,tlf,ctc,hcs,sbc,g42,tm,cmcc,hk_g42,mix,hk_sbc,hws_ocb,fcs,dt,dt_test)   [当前所有协议的监听器只设支持置为true，不传默认为true。](tag:hcso_dt)
      * @return transparentClientIpEnable
      */
     public Boolean getTransparentClientIpEnable() {
@@ -664,7 +669,7 @@ public class Listener {
     }
 
     /**
-     * 是否开启高级转发策略功能。开启高级转发策略后，支持更灵活的转发策略和转发规则设置。取值：true开启，false不开启，默认false。 开启后支持如下场景：  - 转发策略的action字段支持指定为REDIRECT_TO_URL, FIXED_RESPONSE，即支持URL重定向和响应固定的内容给客户端。  - 转发策略支持指定priority、redirect_url_config、fixed_response_config字段。  - 转发规则rule的type可以指定METHOD, HEADER, QUERY_STRING, SOURCE_IP这几种取值。  - 转发规则rule的type为HOST_NAME时，转发规则rule的value支持通配符*。  - 转发规则支持指定conditions字段。
+     * 是否开启高级转发策略功能。开启高级转发策略后，支持更灵活的转发策略和转发规则设置。取值：true开启，false不开启，默认false。   开启后支持如下场景：  - 转发策略的action字段支持指定为REDIRECT_TO_URL, FIXED_RESPONSE，即支持URL重定向和响应固定的内容给客户端。  - 转发策略支持指定priority、redirect_url_config、fixed_response_config字段。  - 转发规则rule的type可以指定METHOD, HEADER, QUERY_STRING, SOURCE_IP这几种取值。  - 转发规则rule的type为HOST_NAME时，转发规则rule的value支持通配符*。  - 转发规则支持指定conditions字段。
      * @return enhanceL7policyEnable
      */
     public Boolean getEnhanceL7policyEnable() {
@@ -673,6 +678,32 @@ public class Listener {
 
     public void setEnhanceL7policyEnable(Boolean enhanceL7policyEnable) {
         this.enhanceL7policyEnable = enhanceL7policyEnable;
+    }
+
+    public Listener withQuicConfig(ListenerQuicConfig quicConfig) {
+        this.quicConfig = quicConfig;
+        return this;
+    }
+
+    public Listener withQuicConfig(Consumer<ListenerQuicConfig> quicConfigSetter) {
+        if (this.quicConfig == null) {
+            this.quicConfig = new ListenerQuicConfig();
+            quicConfigSetter.accept(this.quicConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get quicConfig
+     * @return quicConfig
+     */
+    public ListenerQuicConfig getQuicConfig() {
+        return quicConfig;
+    }
+
+    public void setQuicConfig(ListenerQuicConfig quicConfig) {
+        this.quicConfig = quicConfig;
     }
 
     @Override
@@ -706,7 +737,8 @@ public class Listener {
             && Objects.equals(this.memberTimeout, listener.memberTimeout)
             && Objects.equals(this.ipgroup, listener.ipgroup)
             && Objects.equals(this.transparentClientIpEnable, listener.transparentClientIpEnable)
-            && Objects.equals(this.enhanceL7policyEnable, listener.enhanceL7policyEnable);
+            && Objects.equals(this.enhanceL7policyEnable, listener.enhanceL7policyEnable)
+            && Objects.equals(this.quicConfig, listener.quicConfig);
     }
 
     @Override
@@ -737,7 +769,8 @@ public class Listener {
             memberTimeout,
             ipgroup,
             transparentClientIpEnable,
-            enhanceL7policyEnable);
+            enhanceL7policyEnable,
+            quicConfig);
     }
 
     @Override
@@ -771,6 +804,7 @@ public class Listener {
         sb.append("    ipgroup: ").append(toIndentedString(ipgroup)).append("\n");
         sb.append("    transparentClientIpEnable: ").append(toIndentedString(transparentClientIpEnable)).append("\n");
         sb.append("    enhanceL7policyEnable: ").append(toIndentedString(enhanceL7policyEnable)).append("\n");
+        sb.append("    quicConfig: ").append(toIndentedString(quicConfig)).append("\n");
         sb.append("}");
         return sb.toString();
     }

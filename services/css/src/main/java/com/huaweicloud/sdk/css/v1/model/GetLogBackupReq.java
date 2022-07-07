@@ -31,7 +31,7 @@ public class GetLogBackupReq {
     }
 
     /**
-     * 节点名称
+     * 节点名称。通过[查询集群详情](ShowClusterDetail.xml)获取instances中的name属性。
      * @return instanceName
      */
     public String getInstanceName() {

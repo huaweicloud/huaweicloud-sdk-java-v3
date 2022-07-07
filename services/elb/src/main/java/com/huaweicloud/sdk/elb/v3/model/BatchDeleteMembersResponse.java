@@ -22,7 +22,7 @@ public class BatchDeleteMembersResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "members")
 
-    private List<BatchDeleteMemberState> members = null;
+    private List<BatchDeleteMembersState> members = null;
 
     public BatchDeleteMembersResponse withRequestId(String requestId) {
         this.requestId = requestId;
@@ -41,12 +41,12 @@ public class BatchDeleteMembersResponse extends SdkResponse {
         this.requestId = requestId;
     }
 
-    public BatchDeleteMembersResponse withMembers(List<BatchDeleteMemberState> members) {
+    public BatchDeleteMembersResponse withMembers(List<BatchDeleteMembersState> members) {
         this.members = members;
         return this;
     }
 
-    public BatchDeleteMembersResponse addMembersItem(BatchDeleteMemberState membersItem) {
+    public BatchDeleteMembersResponse addMembersItem(BatchDeleteMembersState membersItem) {
         if (this.members == null) {
             this.members = new ArrayList<>();
         }
@@ -54,7 +54,7 @@ public class BatchDeleteMembersResponse extends SdkResponse {
         return this;
     }
 
-    public BatchDeleteMembersResponse withMembers(Consumer<List<BatchDeleteMemberState>> membersSetter) {
+    public BatchDeleteMembersResponse withMembers(Consumer<List<BatchDeleteMembersState>> membersSetter) {
         if (this.members == null) {
             this.members = new ArrayList<>();
         }
@@ -66,11 +66,11 @@ public class BatchDeleteMembersResponse extends SdkResponse {
      * 后端服务器对象列表。
      * @return members
      */
-    public List<BatchDeleteMemberState> getMembers() {
+    public List<BatchDeleteMembersState> getMembers() {
         return members;
     }
 
-    public void setMembers(List<BatchDeleteMemberState> members) {
+    public void setMembers(List<BatchDeleteMembersState> members) {
         this.members = members;
     }
 

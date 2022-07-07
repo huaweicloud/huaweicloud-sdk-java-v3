@@ -161,7 +161,7 @@ public class ItemList {
     }
 
     /**
-     * 车牌号码。 当“advanced_mode”设置为“true”时才返回。 
+     * 车牌号码。 当“type”被识别为“toll”且 “advanced_mode”设置为“true” 时才返回。 
      * @return licensePlateNumber
      */
     public String getLicensePlateNumber() {
@@ -229,7 +229,7 @@ public class ItemList {
     }
 
     /**
-     * 通行日期止。 当“advanced_mode”设置为“true”时才返回。 
+     * 通行日期止。 当“type”被识别为“toll”且“advanced_mode”设置为“true”时才返回。 
      * @return endDate
      */
     public String getEndDate() {
@@ -246,7 +246,7 @@ public class ItemList {
     }
 
     /**
-     * 通行日期起。 当“advanced_mode”设置为“true”时才返回。 
+     * 通行日期起。 当“type”被识别为“toll”且“advanced_mode”设置为“true”时才返回。 
      * @return startDate
      */
     public String getStartDate() {
@@ -263,7 +263,7 @@ public class ItemList {
     }
 
     /**
-     * 车辆类型。 当“advanced_mode”设置为“true”时才返回。 
+     * 车辆类型。 当“type”被识别为“toll”且“advanced_mode”设置为“true”时才返回。 
      * @return vehicleType
      */
     public String getVehicleType() {

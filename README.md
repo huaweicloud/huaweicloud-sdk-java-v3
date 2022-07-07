@@ -13,7 +13,7 @@ This document introduces how to obtain and use Huawei Cloud Java SDK.
 
 ## Requirements
 
-- To use Huawei Cloud Java SDK, you must have Huawei Cloud account as well as the Access Key and Secret Key of the
+- To use Huawei Cloud Java SDK, you must have Huawei Cloud account as well as the Access Key (AK) and Secret key (SK) of the
   Huawei Cloud account. You can create an Access Key in the Huawei Cloud console. For more information,
   see [My Credentials](https://support.huaweicloud.com/en-us/usermanual-ca/en-us_topic_0046606340.html).
 
@@ -85,13 +85,17 @@ Common conflicts, such as Jackson and okhttp3 version conflicts.
 package com.huaweicloud.sdk.test;
 
 /* Import dependent module */
+// Logger
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
+// Authentication
 import com.huaweicloud.sdk.core.auth.BasicCredentials;
+// Service response exception class
 import com.huaweicloud.sdk.core.exception.ServiceResponseException;
+// Http Configuration
 import com.huaweicloud.sdk.core.http.HttpConfig;
 import com.huaweicloud.sdk.vpc.v2.VpcClient;
+// Import the request and response classes
 import com.huaweicloud.sdk.vpc.v2.model.ListVpcsRequest;
 import com.huaweicloud.sdk.vpc.v2.model.ListVpcsResponse;
 
@@ -100,7 +104,9 @@ public class Application {
 
     public static void listVpcs(VpcClient client) {
         try {
+            // Instantiate the ListVpcsRequest object and call the listVpcs interface
             ListVpcsResponse listVpcsResponse = client.listVpcs(new ListVpcsRequest().withLimit(1));
+            // Output string response in json format
             logger.info(listVpcsResponse.toString());
         } catch (ServiceResponseException e) {
             logger.error("HttpStatusCode: " + e.getHttpStatusCode());
@@ -115,15 +121,18 @@ public class Application {
         String sk = "{your sk string}";
         String endpoint = "{your endpoint string}";
         String projectId = "{your project id}";
-
+		
+        // Http Configuration for client
         HttpConfig config = HttpConfig.getDefaultHttpConfig();
         config.withIgnoreSSLVerification(true);
-
+		
+        // Create the authentication
         BasicCredentials auth = new BasicCredentials()
             .withAk(ak)
             .withSk(sk)
             .withProjectId(projectId);
-
+		
+        // Create VpcClient instance
         VpcClient vpcClient = VpcClient.newBuilder()
             .withHttpConfig(config)
             .withCredential(auth)
@@ -135,6 +144,10 @@ public class Application {
 }
 ```
 
+## Online Debugging
+
+[API Explorer](https://apiexplorer.developer.intl.huaweicloud.com/apiexplorer/overview) provides api retrieval and online debugging, supports full fast retrieval, visual debugging, help document viewing, and online consultation.
+
 ## Changelog
 
 Detailed changes for each released version are documented in
@@ -143,26 +156,27 @@ the [CHANGELOG.md](https://github.com/huaweicloud/huaweicloud-sdk-java-v3/blob/m
 ## User Manual [:top:](#huawei-cloud-java-software-development-kit-java-sdk)
 
 * [1. Client Configuration](#1-client-configuration-top)
-    * [1.1  Default Configuration](#11-default-configuration-top)
-    * [1.2  Network Proxy](#12-network-proxy-top)
-    * [1.3  Connection](#13-connection-top)
-    * [1.4  SSL Certification](#14-ssl-certification-top)
+    * [1.1 Default Configuration](#11-default-configuration-top)
+    * [1.2 Network Proxy](#12-network-proxy-top)
+    * [1.3 Timeout Configuration](#13-timeout-configuration-top)
+    * [1.4 SSL Certification](#14-ssl-certification-top)
 * [2. Credentials Configuration](#2-credentials-configuration-top)
-    * [2.1  Use Permanent AK&SK](#21-use-permanent-aksk-top)
-        * [2.1.1 Manually specify](#211-Manually-specify)
-        * [2.1.2 Environment variable](#212-Environment-variable)
-    * [2.2  Use Temporary AK&SK](#22-use-temporary-aksk-top)
-        * [2.2.1 Manually specify](#221-Manually-specify)
-        * [2.2.2 Metadata](#222-Metadata)
-    * [2.3 Credential supply chain](#23-credential-supply-chain)
+    * [2.1 Use Permanent AK&SK](#21-use-permanent-aksk-top)
+    * [2.2 Use Temporary AK&SK](#22-use-temporary-aksk-top)
+    * [2.3 Use IdpId&IdTokenFile](#23-use-idpididtokenfile-top)
+    * [2.4 Authentication Management](#24-authentication-management-top)
+        * [2.4.1 Environment Variables](#241-environment-variables-top)
+        * [2.4.2 Profile](#242-profile-top)
+        * [2.4.3 Metadata](#243-metadata-top)
+        * [2.4.4 Provider Chain](#244-provider-chain-top)
 * [3. Client Initialization](#3-client-initialization-top)
-    * [3.1  Initialize the client with specified Endpoint](#31-initialize-the-serviceclient-with-specified-endpoint-top)
-    * [3.2  Initialize the client with specified Region (Recommended)](#32-initialize-the-serviceclient-with-specified-region-recommended-top)
+    * [3.1 Initialize the client with specified Endpoint](#31-initialize-the-serviceclient-with-specified-endpoint-top)
+    * [3.2 Initialize the client with specified Region (Recommended)](#32-initialize-the-serviceclient-with-specified-region-recommended-top)
     * [3.3 Custom Configuration](#33-custom-configuration-top)
         * [3.3.1 IAM endpoint configuration](#331-iam-endpoint-configuration-top)
         * [3.3.2 Region configuration](#332-region-configuration-top)
 * [4. Send Requests and Handle Responses](#4-send-requests-and-handle-responses-top)
-    * [4.1  Exceptions](#41-exceptions-top)
+    * [4.1 Exceptions](#41-exceptions-top)
 * [5. Use Asynchronous Client](#5-use-asynchronous-client-top)
 * [6. Troubleshooting](#6-troubleshooting-top)
     * [6.1 Access Log](#61-access-log-top)
@@ -194,7 +208,7 @@ config.withProxyHost("proxy.huawei.com")
     .withProxyPassword("test");
 ```
 
-#### 1.3 Connection [:top:](#user-manual-top)
+#### 1.3 Timeout Configuration [:top:](#user-manual-top)
 
 ``` java
 // The default connection timeout is 60 seconds, change it if needed
@@ -203,10 +217,10 @@ config.withTimeout(60);
 
 #### 1.4 SSL Certification [:top:](#user-manual-top)
 
-Skip ssl certification:
+Skip SSL certification:
 
 ``` java
-// Skip ssl certification checking while using https protocol if needed
+// Skip SSL certification checking while using https protocol if needed
 config.withIgnoreSSLVerification(true);
 ```
 
@@ -224,8 +238,15 @@ There are two types of Huawei Cloud services, `regional` services and `global` s
 
 Global services contain BSS, DevStar, EPS, IAM, OSM, RMS, TMS.
 
-For `regional` services' authentication, projectId is required to initialize BasicCredentials. For `global` services'
-authentication, domainId is required to initialize GlobalCredentials.
+For `regional` services' authentication, projectId is required to initialize BasicCredentials. 
+
+For `global` services' authentication, domainId is required to initialize GlobalCredentials.
+
+The following authentications are supported:
+
+- permanent AK&SK
+- temporary AK&SK + SecurityToken
+- IdpId&IdTokenFile
 
 **Parameter description**:
 
@@ -235,12 +256,14 @@ authentication, domainId is required to initialize GlobalCredentials.
 - `domainId` is the account ID of Huawei Cloud.
 - `securityToken` is the security token when using temporary AK/SK.
 
-You could use permanent AK and SK **or** use temporary AK and SK and SecurityToken to complete credentials'
-configuration.
-
 #### 2.1 Use Permanent AK&SK [:top:](#user-manual-top)
 
-##### 2.1.1 Manually specify
+**Parameter description**:
+
+- `ak` is the access key ID for your account.
+- `sk` is the secret access key for your account.
+- `projectId` is the ID of your project depending on the region you want to operate.
+- `domainId` is the account ID of Huawei Cloud.
 
 ``` java
 // Regional Services
@@ -264,24 +287,26 @@ GlobalCredentials globalCredentials = new GlobalCredentials()
   to [3.2 Initialize the client with specified Region](#32-initialize-the-serviceclient-with-specified-region-recommended-top)
   .
 
-##### 2.1.2 Environment variable
-
-Load ak, sk, projectId and domainId from environment variables `HUAWEICLOUD_SDK_AK`, `HUAWEICLOUD_SDK_SK`, `HUAWEICLOUD_SDK_PROJECT_ID` and `HUAWEICLOUD_SDK_DOMAIN_ID`.
-
 #### 2.2 Use Temporary AK&SK [:top:](#user-manual-top)
 
-##### 2.2.1 Manually specify
+A temporary access key and securityToken are issued by the system to IAM users, and can be valid for 15 minutes to 24 hours. After the validity period expires, you need to obtain them again. It's required to obtain temporary AK&SK and security token first, which could be obtained through
+permanent AK&SK or through an agency.
 
-A temporary access key and securityToken are issued by the system to IAM users, and can be valid for 15 minutes to 24 hours. After the validity period expires, you need to obtain them again. It's required to obtain temporary access key, security key and security token first, which could be obtained through
-permanent access key and security key or through an agency.
-
-Obtaining a temporary access key token through permanent access key and security key, you could refer to
+- Obtaining a temporary access key and security token through token, you could refer to
 document: https://support.huaweicloud.com/en-us/api-iam/iam_04_0002.html . The API mentioned in the document above
 corresponds to the method of `CreateTemporaryAccessKeyByToken` in IAM SDK.
 
-Obtaining a temporary access key and security token through an agency, you could refer to
+- Obtaining a temporary access key and security token through an agency, you could refer to
 document: https://support.huaweicloud.com/en-us/api-iam/iam_04_0101.html . The API mentioned in the document above
 corresponds to the method of `CreateTemporaryAccessKeyByAgency` in IAM SDK.
+
+**Parameter description**:
+
+- `ak` is the access key ID for your account.
+- `sk` is the secret access key for your account.
+- `projectId` is the ID of your project depending on the region you want to operate.
+- `domainId` is the account ID of Huawei Cloud.
+- `securityToken` is the security token when using temporary AK/SK.
 
 ``` java
 // Regional services
@@ -299,14 +324,12 @@ GlobalCredentials globalCredentials = new GlobalCredentials()
     .withDomainId(domainId);
 ```
 
-##### 2.2.2 Metadata
-
-Get temporary AK/SK and securitytoken from instance's metadata. Refer to the [Obtaining Metadata](https://support.huaweicloud.com/intl/en-us/usermanual-ecs/ecs_03_0166.html) for more information.
-
 In the following two cases, the credential information will be obtained from the metadata of the instance:
 
 1. BasicCredentials or GlobalCredentials were not manually specified when creating the client.
 2. AK/SK was not specified when creating BasicCredentials or GlobalCredentials.
+
+Refer to the [Obtaining Metadata](https://support.huaweicloud.com/intl/en-us/usermanual-ecs/ecs_03_0166.html) for more information.
 
 ```java
 // Regional services
@@ -316,13 +339,256 @@ BasicCredentials credentials = new BasicCredentials().withProjectId(projectId);
 GlobalCredentials credentials = new GlobalCredentials().withDomainId(domainId);
 ```
 
-#### 2.3 Credential supply chain
+#### 2.3 Use IdpId&IdTokenFile [:top:](#user-manual-top)
 
-Credential is loaded in the following order when creating a client:
+Obtain a federated identity authentication token using an OpenID Connect ID token, refer to the [Obtaining a Token with an OpenID Connect ID Token](https://support.huaweicloud.com/intl/en-us/api-iam/iam_13_0605.html)
 
-1. [Specify manually](#211-Manually-specify) BasicCredentials or GlobalCredentials.
-2. Not specified manually, loaded from [environment variables](#212-Environment-variable).
-3. Obtain temporary authentication information from the [metadata](#222-Metadata) of the instance.
+**Parameter description**:
+
+- `IdpId` Identity provider ID.
+- `IdTokenFile` Id token file path. Id token is constructed by the enterprise IdP to carry the identity information of federated users.
+- `projectId` is the ID of your project depending on your region which you want to operate.
+- `domainId` is the account ID of Huawei Cloud.
+
+``` java
+import com.huaweicloud.sdk.core.auth.BasicCredentials;
+import com.huaweicloud.sdk.core.auth.GlobalCredentials;
+
+// Regional service
+BasicCredentials basicCredentials = new BasicCredentials()
+    .withIdpId(idpId)
+    .withIdTokenFile(idTokenFile)
+    .withProjectId(projectId)
+
+// Global service
+GlobalCredentials globalCredentials = new GlobalCredentials()
+    .withIdpId(idpId)
+    .withIdTokenFile(idTokenFile)
+    .withDomainId(domainId);
+```
+
+#### 2.4 Authentication Management [:top:](#user-manual-top)
+
+Getting Authentication from providers is supported since `v3.0.97`
+
+**Regional services** use `XxxCredentialProvider.getBasicCredentialXxxProvider()`
+
+**Global services** use `XxxCredentialProvider.getGlobalCredentialXxxProvider()`
+
+##### 2.4.1 Environment Variables [:top:](#user-manual-top)
+
+**AK/SK Auth**
+
+| Environment Variables  |  Notice |
+| ------------ | ------------ |
+| HUAWEICLOUD_SDK_AK  | Required，AccessKey  |
+| HUAWEICLOUD_SDK_SK  |  Required，SecretKey |
+| HUAWEICLOUD_SDK_SECURITY_TOKEN  | Optional, this parameter needs to be specified when using temporary ak/sk  |
+| HUAWEICLOUD_SDK_PROJECT_ID  | Optional, used for regional services, required in multi-ProjectId scenarios  |
+| HUAWEICLOUD_SDK_DOMAIN_ID  | Optional, used for global services  |
+
+Configure environment variables:
+
+```
+// Linux
+export HUAWEICLOUD_SDK_AK=YOUR_AK
+export HUAWEICLOUD_SDK_SK=YOUR_SK
+
+// Windows
+set HUAWEICLOUD_SDK_AK=YOUR_AK
+set HUAWEICLOUD_SDK_SK=YOUR_SK
+```
+
+Get the credentials from configured environment variables:
+
+```java
+import com.huaweicloud.sdk.core.auth.EnvCredentialProvider;
+import com.huaweicloud.sdk.core.auth.ICredential;
+
+// basic
+EnvCredentialProvider basicProvider = EnvCredentialProvider.getBasicCredentialEnvProvider();
+ICredential basicCred = basicProvider.getCredentials();
+
+// global
+EnvCredentialProvider globalProvider = EnvCredentialProvider.getGlobalCredentialEnvProvider();
+ICredential globalCred = globalProvider.getCredentials();
+```
+
+**IdpId/IdTokenFile Auth**
+
+| Environment Variables  |  Notice |
+| ------------ | ------------ |
+| HUAWEICLOUD_SDK_IDP_ID  | Required, identity provider Id |
+| HUAWEICLOUD_SDK_ID_TOKEN_FILE  |  Required, id token file path |
+| HUAWEICLOUD_SDK_PROJECT_ID  | For basic credentials, this parameter is required  |
+| HUAWEICLOUD_SDK_DOMAIN_ID  | For global credentials, this parameter is required  |
+
+Configure environment variables:
+
+```
+// Linux
+export HUAWEICLOUD_SDK_IDP_ID=YOUR_IDP_ID
+export HUAWEICLOUD_SDK_ID_TOKEN_FILE=/some_path/your_token_file
+export HUAWEICLOUD_SDK_PROJECT_ID=YOUR_PROJECT_ID // For basic credentials, this parameter is required
+export HUAWEICLOUD_SDK_DOMAIN_ID=YOUR_DOMAIN_ID // For global credentials, this parameter is required
+
+// Windows
+set HUAWEICLOUD_SDK_IDP_ID=YOUR_IDP_ID
+set HUAWEICLOUD_SDK_ID_TOKEN_FILE=/some_path/your_token_file
+set HUAWEICLOUD_SDK_PROJECT_ID=YOUR_PROJECT_ID // For basic credentials, this parameter is required
+set HUAWEICLOUD_SDK_DOMAIN_ID=YOUR_DOMAIN_ID // For global credentials, this parameter is required
+```
+
+Get the credentials from configured environment variables:
+
+```java
+import com.huaweicloud.sdk.core.auth.EnvCredentialProvider;
+import com.huaweicloud.sdk.core.auth.ICredential;
+
+// basic
+EnvCredentialProvider basicProvider = EnvCredentialProvider.getBasicCredentialEnvProvider();
+ICredential basicCred = basicProvider.getCredentials();
+
+// global
+EnvCredentialProvider globalProvider = EnvCredentialProvider.getGlobalCredentialEnvProvider();
+ICredential globalCred = globalProvider.getCredentials();
+```
+
+##### 2.4.2 Profile [:top:](#user-manual-top)
+
+The profile will be read from the user's home directory by default, linux`~/.huaweicloud/credentials`,windows`C:\Users\USER_NAME\.huaweicloud\credentials`, the path to the profile can be modified by configuring the environment variable `HUAWEICLOUD_SDK_CREDENTIALS_FILE`
+
+**AK/SK Auth**
+
+| Configuration Parameters  |  Notice |
+| ------------ | ------------ |
+| ak  | Required，AccessKey  |
+| sk  |  Required，SecretKey |
+| security_token  | Optional, this parameter needs to be specified when using temporary ak/sk  |
+| project_id  | Optional, used for regional services, required in multi-ProjectId scenarios  |
+| domain_id  | Optional, used for global services  |
+| iam_endpoint  | optional, endpoint for authentication, default is `https://iam.myhuaweicloud.com` |
+
+The content of the profile is as follows:
+
+```ini
+[basic]
+ak = your_ak
+sk = your_sk
+
+[global]
+ak = your_ak
+sk = your_sk
+```
+
+Get the credentials from profile:
+
+```java
+import com.huaweicloud.sdk.core.auth.ProfileCredentialProvider;
+import com.huaweicloud.sdk.core.auth.ICredential;
+
+// basic
+ProfileCredentialProvider basicProvider = ProfileCredentialProvider.getBasicCredentialProfileProvider();
+ICredential basicCred = basicProvider.getCredentials();
+
+// global
+ProfileCredentialProvider globalProvider = ProfileCredentialProvider.getGlobalCredentialProfileProvider();
+ICredential globalCred = globalProvider.getCredentials();
+```
+
+**IdpId/IdTokenFile Auth**
+
+| Configuration Parameters  |  Notice |
+| ------------ | ------------ |
+| idp_id  | Required, identity provider Id |
+| id_token_file  |  Required, id token file path |
+| project_id  | For basic credentials, this parameter is required  |
+| domain_id  | For global credentials, this parameter is required  |
+| iam_endpoint  | optional, endpoint for authentication, default is `https://iam.myhuaweicloud.com` |
+
+The content of the profile is as follows:
+
+```ini
+[basic]
+idp_id = your_idp_id
+id_token_file = /some_path/your_token_file
+project_id = your_project_id
+
+[global]
+idp_id = your_idp_id
+id_token_file = /some_path/your_token_file
+domainId = your_domain_id
+```
+
+Get the credentials from profile:
+
+```java
+import com.huaweicloud.sdk.core.auth.ProfileCredentialProvider;
+import com.huaweicloud.sdk.core.auth.ICredential;
+
+// basic
+ProfileCredentialProvider basicProvider = ProfileCredentialProvider.getBasicCredentialProfileProvider();
+ICredential basicCred = basicProvider.getCredentials();
+
+// global
+ProfileCredentialProvider globalProvider = ProfileCredentialProvider.getGlobalCredentialProfileProvider();
+ICredential globalCred = globalProvider.getCredentials();
+```
+
+##### 2.4.3 Metadata [:top:](#user-manual-top)
+
+Get temporary AK/SK and securitytoken from instance's metadata. Refer to the [Obtaining Metadata](https://support.huaweicloud.com/intl/en-us/usermanual-ecs/ecs_03_0166.html) for more information.
+
+Manually obtain authentication from instance metadata:
+
+```java
+import com.huaweicloud.sdk.core.auth.MetadataCredentialProvider;
+import com.huaweicloud.sdk.core.auth.ICredential;
+
+// basic
+MetadataCredentialProvider basicProvider = MetadataCredentialProvider.getBasicCredentialMetadataProvider();
+ICredential basicCred = basicProvider.getCredentials();
+
+// global
+MetadataCredentialProvider globalProvider = MetadataCredentialProvider.getGlobalCredentialMetadataProvider();
+ICredential globalCred = globalProvider.getCredentials();
+```
+
+##### 2.4.4 Provider Chain [:top:](#user-manual-top)
+
+When creating a service client without credentials, try to load authentication in the order **Environment Variables -> Profile -> Metadata**
+
+Get authentication from provider chain:
+
+```java
+import com.huaweicloud.sdk.core.auth.CredentialProviderChain;
+import com.huaweicloud.sdk.core.auth.ICredential;
+
+// basic
+CredentialProviderChain basicChain = CredentialProviderChain.getBasicCredentialProviderChain();
+ICredential basicCred = basicChain.getCredentials();
+
+// global
+CredentialProviderChain globalChain = CredentialProviderChain.getGlobalCredentialProviderChain();
+ICredential globalCred = globalChain.getCredentials();
+```
+
+Custom credentials provider chain is supported:
+
+```java
+import com.huaweicloud.sdk.core.auth.CredentialProviderChain;
+import com.huaweicloud.sdk.core.auth.ICredential;
+import com.huaweicloud.sdk.core.auth.ICredentialProvider;
+import com.huaweicloud.sdk.core.auth.MetadataCredentialProvider;
+import com.huaweicloud.sdk.core.auth.ProfileCredentialProvider;
+
+ICredentialProvider[] providers = new ICredentialProvider[]{
+        MetadataCredentialProvider.getBasicCredentialMetadataProvider(),
+        ProfileCredentialProvider.getBasicCredentialProfileProvider()
+};
+CredentialProviderChain chain = new CredentialProviderChain(providers);
+ICredential cred = chain.getCredentials();
+```
 
 ### 3. Client Initialization [:top:](#user-manual-top)
 
@@ -780,8 +1046,12 @@ try {
     final int maxBackoffInMilliseconds = 30000;
 
     ShowJobResponse response = client.showJobInvoker(request)
+    // max retry times
     .retryTimes(10)
+    // Request retry condition, set the retry condition to stop when the job status is success
     .retryCondition((resp, ex) -> Objects.nonNull(resp) && !resp.getStatus().equals(ShowJobResponse.StatusEnum.SUCCESS))
+     // Request backoff policy, calculate the next request time after each request fails
+     // Polling job status requires a long basic delay
     .backoffStrategy(new SdkBackoffStrategy(baseDelay, maxBackoffInMilliseconds))
     .invoke();
     logger.info(response.toString());

@@ -44,7 +44,7 @@ public class CountPreoccupyIpNumRequest {
     }
 
     /**
-     * 负载均衡器七层规格的ID。传入该字段表示计算创建该规格的LB，或变更LB的原七层规格到该规格所需要的预占IP。  适用场景：创建LB，变更LB规格。
+     * 负载均衡器七层规格的ID。传入该字段表示计算创建该规格的LB，或变更LB的原七层规格到该规格所需要的预占IP。  适用场景：创建负LB，变更LB规格。
      * @return l7FlavorId
      */
     public String getL7FlavorId() {
@@ -78,7 +78,7 @@ public class CountPreoccupyIpNumRequest {
     }
 
     /**
-     * 负载均衡器IP地址类型，取值4，6 。  取值4表示计算创建支持IPv4地址的LB的预占IP。  取值6表示计算创建支持IPv6地址的LB的预占IP。  适用场景：创建LB。   [不支持IPv6，请勿设置为6。](tag:dt,dt_test)
+     * 负载均衡器IP地址类型，取值4，6 。  取值4表示计算创建支持IPv4地址的LB的预占IP。  取值6表示计算创建支持IPv6地址的LB的预占IP。  适用场景：创建LB。  [不支持IPv6，请勿设置为6。](tag:dt,dt_test)
      * @return ipVersion
      */
     public Integer getIpVersion() {
@@ -128,7 +128,7 @@ public class CountPreoccupyIpNumRequest {
     }
 
     /**
-     * 计算创建AZ列表为availability_zone_id的负载局衡器实例的预占IP。  适用场景：创建LB。  使用说明： - 传入loadbalancer_id时，该参数无效。
+     * 计算创建AZ列表为availability_zone_id的负载局衡器实例的预占IP。  适用场景：创建LB。  使用说明：传入loadbalancer_id时，该参数无效。
      * @return availabilityZoneId
      */
     public List<String> getAvailabilityZoneId() {

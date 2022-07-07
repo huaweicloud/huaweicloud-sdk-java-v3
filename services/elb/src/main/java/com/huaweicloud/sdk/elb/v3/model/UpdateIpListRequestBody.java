@@ -14,16 +14,16 @@ public class UpdateIpListRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ipgroup")
 
-    private UpdateIpGroupIpListOption ipgroup;
+    private UpdateIpListOption ipgroup;
 
-    public UpdateIpListRequestBody withIpgroup(UpdateIpGroupIpListOption ipgroup) {
+    public UpdateIpListRequestBody withIpgroup(UpdateIpListOption ipgroup) {
         this.ipgroup = ipgroup;
         return this;
     }
 
-    public UpdateIpListRequestBody withIpgroup(Consumer<UpdateIpGroupIpListOption> ipgroupSetter) {
+    public UpdateIpListRequestBody withIpgroup(Consumer<UpdateIpListOption> ipgroupSetter) {
         if (this.ipgroup == null) {
-            this.ipgroup = new UpdateIpGroupIpListOption();
+            this.ipgroup = new UpdateIpListOption();
             ipgroupSetter.accept(this.ipgroup);
         }
 
@@ -34,11 +34,11 @@ public class UpdateIpListRequestBody {
      * Get ipgroup
      * @return ipgroup
      */
-    public UpdateIpGroupIpListOption getIpgroup() {
+    public UpdateIpListOption getIpgroup() {
         return ipgroup;
     }
 
-    public void setIpgroup(UpdateIpGroupIpListOption ipgroup) {
+    public void setIpgroup(UpdateIpListOption ipgroup) {
         this.ipgroup = ipgroup;
     }
 

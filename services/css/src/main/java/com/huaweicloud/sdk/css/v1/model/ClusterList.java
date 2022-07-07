@@ -111,7 +111,7 @@ public class ClusterList {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "actionProgress")
 
-    private ClusterListActionProgress actionProgress;
+    private Object actionProgress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "actions")
@@ -255,7 +255,7 @@ public class ClusterList {
     }
 
     /**
-     * 集群上次修改时间，格式为ISO8601: CCYY-MM-DDThh:mm:ss。
+     * 集群上次修改时间，格式为ISO8601： CCYY-MM-DDThh:mm:ss。
      * @return updated
      */
     public String getUpdated() {
@@ -306,7 +306,7 @@ public class ClusterList {
     }
 
     /**
-     * 集群创建时间，格式为ISO8601: CCYY-MM-DDThh:mm:ss。  返回的集群列表信息按照创建时间降序排序，即创建时间最新的集群排在最前。
+     * 集群创建时间，格式为ISO8601：CCYY-MM-DDThh:mm:ss。  返回的集群列表信息按照创建时间降序排序，即创建时间最新的集群排在最前。
      * @return created
      */
     public String getCreated() {
@@ -340,7 +340,7 @@ public class ClusterList {
     }
 
     /**
-     * 查询返回值。  - 100：创建中。 - 200：可用。 - 303：不可用，如创建失败。
+     * 集群状态值。  - 100：创建中。 - 200：可用。 - 303：不可用，如创建失败。
      * @return status
      */
     public String getStatus() {
@@ -425,7 +425,7 @@ public class ClusterList {
     }
 
     /**
-     * 公网带宽大小。
+     * 公网带宽大小。单位：Mbit/s
      * @return bandwidthSize
      */
     public Integer getBandwidthSize() {
@@ -459,7 +459,7 @@ public class ClusterList {
     }
 
     /**
-     * 是否开启认证，取值范围为true或false。默认关闭认证功能。当开启认证时，httpsEnable需要设置为true。 - true：表示集群开启认证。 - false：表示集群不开启认证。
+     * 是否开启认证。 - true：表示集群开启认证。 - false：表示集群不开启认证。
      * @return authorityEnable
      */
     public Boolean getAuthorityEnable() {
@@ -493,7 +493,7 @@ public class ClusterList {
     }
 
     /**
-     * 快照是否开启。
+     * 快照是否开启。 - true: 快照开启状态。 - false: 快照关闭状态。
      * @return backupAvailable
      */
     public Boolean getBackupAvailable() {
@@ -504,29 +504,20 @@ public class ClusterList {
         this.backupAvailable = backupAvailable;
     }
 
-    public ClusterList withActionProgress(ClusterListActionProgress actionProgress) {
+    public ClusterList withActionProgress(Object actionProgress) {
         this.actionProgress = actionProgress;
         return this;
     }
 
-    public ClusterList withActionProgress(Consumer<ClusterListActionProgress> actionProgressSetter) {
-        if (this.actionProgress == null) {
-            this.actionProgress = new ClusterListActionProgress();
-            actionProgressSetter.accept(this.actionProgress);
-        }
-
-        return this;
-    }
-
     /**
-     * Get actionProgress
+     * 集群行为进度，显示创建或扩容进度的百分比等。CREATING表示创建的百分比。
      * @return actionProgress
      */
-    public ClusterListActionProgress getActionProgress() {
+    public Object getActionProgress() {
         return actionProgress;
     }
 
-    public void setActionProgress(ClusterListActionProgress actionProgress) {
+    public void setActionProgress(Object actionProgress) {
         this.actionProgress = actionProgress;
     }
 
@@ -552,7 +543,7 @@ public class ClusterList {
     }
 
     /**
-     * 集群当前行为。REBOOTING表示重启、GROWING表示扩容、RESTORING表示恢复集群、SNAPSHOTTING表示创建快照。
+     * 集群当前行为。REBOOTING表示重启、GROWING表示扩容、RESTORING表示恢复集群、SNAPSHOTTING表示创建快照等。
      * @return actions
      */
     public List<String> getActions() {
@@ -645,7 +636,7 @@ public class ClusterList {
     }
 
     /**
-     * 是为包周期集群。 - \"true\" 表示是包周期计费的集群。 - \"false\" 表示是按需计费的集群。
+     * 是否为包周期集群。 - \"true\" 表示是包周期计费的集群。 - \"false\" 表示是按需计费的集群。
      * @return period
      */
     public Boolean getPeriod() {

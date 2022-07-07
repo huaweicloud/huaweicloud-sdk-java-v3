@@ -10,6 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.iotedge.v2.model.BasePathDTO;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -86,6 +87,13 @@ public class CreateEdgeNodeResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="base_path")
+    
+    
+    private BasePathDTO basePath;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_ids")
     
     
@@ -104,6 +112,13 @@ public class CreateEdgeNodeResponse extends SdkResponse {
     
     
     private String createTime;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="hardware_model")
+    
+    
+    private String hardwareModel;
 
     public CreateEdgeNodeResponse withEdgeNodeId(String edgeNodeId) {
         this.edgeNodeId = edgeNodeId;
@@ -246,7 +261,7 @@ public class CreateEdgeNodeResponse extends SdkResponse {
 
 
     /**
-     * 边缘节点状态UNINSTALLED|INSTALLED|OFFLINE|ONLINE|DELETING|UPGRADING
+     * 边缘节点状态UNINSTALLED|INSTALLED|OFFLINE|ONLINE|DELETING|FROZEN
      * @return state
      */
     public String getState() {
@@ -299,6 +314,35 @@ public class CreateEdgeNodeResponse extends SdkResponse {
 
     public void setInstallerVersion(String installerVersion) {
         this.installerVersion = installerVersion;
+    }
+
+    
+
+    public CreateEdgeNodeResponse withBasePath(BasePathDTO basePath) {
+        this.basePath = basePath;
+        return this;
+    }
+
+    public CreateEdgeNodeResponse withBasePath(Consumer<BasePathDTO> basePathSetter) {
+        if(this.basePath == null ){
+            this.basePath = new BasePathDTO();
+            basePathSetter.accept(this.basePath);
+        }
+        
+        return this;
+    }
+
+
+    /**
+     * Get basePath
+     * @return basePath
+     */
+    public BasePathDTO getBasePath() {
+        return basePath;
+    }
+
+    public void setBasePath(BasePathDTO basePath) {
+        this.basePath = basePath;
     }
 
     
@@ -397,6 +441,28 @@ public class CreateEdgeNodeResponse extends SdkResponse {
 
     
 
+    public CreateEdgeNodeResponse withHardwareModel(String hardwareModel) {
+        this.hardwareModel = hardwareModel;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 注册节点网关配置
+     * @return hardwareModel
+     */
+    public String getHardwareModel() {
+        return hardwareModel;
+    }
+
+    public void setHardwareModel(String hardwareModel) {
+        this.hardwareModel = hardwareModel;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -415,13 +481,15 @@ public class CreateEdgeNodeResponse extends SdkResponse {
             Objects.equals(this.state, createEdgeNodeResponse.state) &&
             Objects.equals(this.type, createEdgeNodeResponse.type) &&
             Objects.equals(this.installerVersion, createEdgeNodeResponse.installerVersion) &&
+            Objects.equals(this.basePath, createEdgeNodeResponse.basePath) &&
             Objects.equals(this.resourceIds, createEdgeNodeResponse.resourceIds) &&
             Objects.equals(this.ips, createEdgeNodeResponse.ips) &&
-            Objects.equals(this.createTime, createEdgeNodeResponse.createTime);
+            Objects.equals(this.createTime, createEdgeNodeResponse.createTime) &&
+            Objects.equals(this.hardwareModel, createEdgeNodeResponse.hardwareModel);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(edgeNodeId, name, instanceId, spaceId, productId, productName, state, type, installerVersion, resourceIds, ips, createTime);
+        return Objects.hash(edgeNodeId, name, instanceId, spaceId, productId, productName, state, type, installerVersion, basePath, resourceIds, ips, createTime, hardwareModel);
     }
     @Override
     public String toString() {
@@ -436,9 +504,11 @@ public class CreateEdgeNodeResponse extends SdkResponse {
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    installerVersion: ").append(toIndentedString(installerVersion)).append("\n");
+        sb.append("    basePath: ").append(toIndentedString(basePath)).append("\n");
         sb.append("    resourceIds: ").append(toIndentedString(resourceIds)).append("\n");
         sb.append("    ips: ").append(toIndentedString(ips)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+        sb.append("    hardwareModel: ").append(toIndentedString(hardwareModel)).append("\n");
         sb.append("}");
         return sb.toString();
     }

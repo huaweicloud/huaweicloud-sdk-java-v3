@@ -22,7 +22,7 @@ public class CreateBindPublicResponse extends SdkResponse {
     }
 
     /**
-     * 操作行为。
+     * 操作行为。固定为bindZone，表示绑定成功。
      * @return action
      */
     public String getAction() {

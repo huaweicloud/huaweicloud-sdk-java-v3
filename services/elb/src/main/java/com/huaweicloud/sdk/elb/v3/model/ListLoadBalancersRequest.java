@@ -179,7 +179,7 @@ public class ListLoadBalancersRequest {
     }
 
     /**
-     * 上一页最后一条记录的ID。  使用说明： - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
+     * 上一页最后一条记录的ID。  使用说明：  - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
      * @return marker
      */
     public String getMarker() {
@@ -215,7 +215,7 @@ public class ListLoadBalancersRequest {
     }
 
     /**
-     * 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。  使用说明： - 必须与limit一起使用。
+     * 是否反向查询，取值： - true：查询上一页。 - false：查询下一页，默认。  使用说明： - 必须与limit一起使用。 - 当page_reverse=true时，若要查询上一页，marker取值为当前页返回值的previous_marker。
      * @return pageReverse
      */
     public Boolean getPageReverse() {
@@ -579,7 +579,7 @@ public class ListLoadBalancersRequest {
     }
 
     /**
-     * 双栈类型负载均衡器的IPv6对应的port ID。  支持多值查询，查询条件格式：*ipv6_vip_port_id=xxx&ipv6_vip_port_id=xxx*。   [不支持IPv6，请勿使用。](tag:dt,dt_test)
+     * 双栈类型负载均衡器的IPv6对应的port ID。  支持多值查询，查询条件格式：*ipv6_vip_port_id=xxx&ipv6_vip_port_id=xxx*。 [ 不支持IPv6，请勿使用。](tag:dt,dt_test)
      * @return ipv6VipPortId
      */
     public List<String> getIpv6VipPortId() {
@@ -612,7 +612,7 @@ public class ListLoadBalancersRequest {
     }
 
     /**
-     * 双栈类型负载均衡器的IPv6地址。  支持多值查询，查询条件格式：*ipv6_vip_address=xxx&ipv6_vip_address=xxx*。   [不支持IPv6，请勿使用。](tag:dt,dt_test)
+     * 双栈类型负载均衡器的IPv6地址。  支持多值查询，查询条件格式：*ipv6_vip_address=xxx&ipv6_vip_address=xxx*。 [ 不支持IPv6，请勿使用。](tag:dt,dt_test)
      * @return ipv6VipAddress
      */
     public List<String> getIpv6VipAddress() {
@@ -645,7 +645,7 @@ public class ListLoadBalancersRequest {
     }
 
     /**
-     * 双栈类型负载均衡器所在的子网IPv6网络ID。  支持多值查询，查询条件格式：*ipv6_vip_virsubnet_id=xxx&ipv6_vip_virsubnet_id=xxx*。   [不支持IPv6，请勿使用。](tag:dt,dt_test)
+     * 双栈类型负载均衡器所在的子网IPv6网络ID。  支持多值查询，查询条件格式：*ipv6_vip_virsubnet_id=xxx&ipv6_vip_virsubnet_id=xxx*。 [ 不支持IPv6，请勿使用。](tag:dt,dt_test)
      * @return ipv6VipVirsubnetId
      */
     public List<String> getIpv6VipVirsubnetId() {
@@ -678,7 +678,7 @@ public class ListLoadBalancersRequest {
     }
 
     /**
-     * 负载均衡器绑定的EIP ID。示例如下： \"eips\": [             {                 \"eip_id\": \"e9b72a9d-4275-455e-a724-853504e4d9c6\",                 \"eip_address\": \"88.88.14.122\",                 \"ip_version\": 4             }         ]  支持多值查询，查询条件格式： - eip_id作为查询条件：*eips=eip_id=xxx&eips=eip_id=xxx*。 - eip_address作为查询条件：*eips=eip_address=xxx&eips=eip_address=xxx*。 - ip_version作为查询条件：*eips=ip_version=xxx&eips=ip_version=xxx*。  注：该字段与publicips字段一致。
+     * 负载均衡器绑定的EIP。示例如下： \"eips\": [             {                 \"eip_id\": \"e9b72a9d-4275-455e-a724-853504e4d9c6\",                 \"eip_address\": \"88.88.14.122\",                 \"ip_version\": 4             }         ]  支持多值查询，查询条件格式： - eip_id作为查询条件：*eips=eip_id=xxx&eips=eip_id=xxx*。 - eip_address作为查询条件：*eips=eip_address=xxx&eips=eip_address=xxx*。 - ip_version作为查询条件：*eips=ip_version=xxx&eips=ip_version=xxx*。  注：该字段与publicips字段一致。
      * @return eips
      */
     public List<String> getEips() {
@@ -909,7 +909,7 @@ public class ListLoadBalancersRequest {
     }
 
     /**
-     * 资源账单信息。admin权限才能更新此字段。  支持多值查询，查询条件格式：*billing_info=xxx&billing_info=xxx*。   [不支持该字段，请勿使用。](tag:dt,dt_test)
+     * 资源账单信息。  支持多值查询，查询条件格式：*billing_info=xxx&billing_info=xxx*。  [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
      * @return billingInfo
      */
     public List<String> getBillingInfo() {
@@ -1008,7 +1008,7 @@ public class ListLoadBalancersRequest {
     }
 
     /**
-     * 负载均衡器所属的企业项目ID。  支持多值查询，查询条件格式：*enterprise_project_id=xxx&enterprise_project_id=xxx*。  [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
+     * 负载均衡器所属的企业项目ID。  查询时若不传，则查询default企业项目下的资源，鉴权按照default企业项目鉴权。如果传值，则必须传已存在的企业项目ID（不可为\"0\"）或传all_granted_eps表示查询所有企业项目。  支持多值查询，查询条件格式：*enterprise_project_id=xxx&enterprise_project_id=xxx*。  [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
      * @return enterpriseProjectId
      */
     public List<String> getEnterpriseProjectId() {
@@ -1041,7 +1041,7 @@ public class ListLoadBalancersRequest {
     }
 
     /**
-     * IP版本信息。 取值：4代表IPv4，6代表IPv6。  支持多值查询，查询条件格式：*ip_version=xxx&ip_version=xxx*。   [不支持IPv6，请勿设置为6。](tag:dt,dt_test)
+     * IP版本信息。 取值：4代表IPv4，6代表IPv6。  支持多值查询，查询条件格式：*ip_version=xxx&ip_version=xxx*。  [不支持IPv6，请勿设置为6。](tag:dt,dt_test)
      * @return ipVersion
      */
     public List<Integer> getIpVersion() {

@@ -43,6 +43,12 @@ public class AntiDDoSRegion {
     public static final Region RU_NORTHWEST_2 =
         new Region("ru-northwest-2", "https://antiddos.ru-northwest-2.myhuaweicloud.com");
 
+    public static final Region LA_SOUTH_2 = new Region("la-south-2", "https://antiddos.la-south-2.myhuaweicloud.com");
+
+    public static final Region SA_BRAZIL_1 = new Region("sa-brazil-1", "https://antiddos.sa-peru-1.myhuaweicloud.com");
+
+    public static final Region NA_MEXICO_1 = new Region("na-mexico-1", "https://antiddos.sa-peru-1.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("ANTIDDOS");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -62,6 +68,9 @@ public class AntiDDoSRegion {
         map.put("ap-southeast-3", AP_SOUTHEAST_3);
         map.put("af-south-1", AF_SOUTH_1);
         map.put("ru-northwest-2", RU_NORTHWEST_2);
+        map.put("la-south-2", LA_SOUTH_2);
+        map.put("sa-brazil-1", SA_BRAZIL_1);
+        map.put("na-mexico-1", NA_MEXICO_1);
         return Collections.unmodifiableMap(map);
     }
 

@@ -35,6 +35,13 @@ public class UpdateEdgeAppVersionDTO  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="deploy_multi_instance")
+    
+    
+    private Boolean deployMultiInstance;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="container_settings")
     
     
@@ -53,6 +60,13 @@ public class UpdateEdgeAppVersionDTO  {
     
     
     private ProbeDTO readinessProbe;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="sdk_version")
+    
+    
+    private String sdkVersion;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -140,6 +154,28 @@ public class UpdateEdgeAppVersionDTO  {
 
     
 
+    public UpdateEdgeAppVersionDTO withDeployMultiInstance(Boolean deployMultiInstance) {
+        this.deployMultiInstance = deployMultiInstance;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 是否允许部署多实例
+     * @return deployMultiInstance
+     */
+    public Boolean getDeployMultiInstance() {
+        return deployMultiInstance;
+    }
+
+    public void setDeployMultiInstance(Boolean deployMultiInstance) {
+        this.deployMultiInstance = deployMultiInstance;
+    }
+
+    
+
     public UpdateEdgeAppVersionDTO withContainerSettings(ContainerSettingsDTO containerSettings) {
         this.containerSettings = containerSettings;
         return this;
@@ -223,6 +259,28 @@ public class UpdateEdgeAppVersionDTO  {
 
     public void setReadinessProbe(ProbeDTO readinessProbe) {
         this.readinessProbe = readinessProbe;
+    }
+
+    
+
+    public UpdateEdgeAppVersionDTO withSdkVersion(String sdkVersion) {
+        this.sdkVersion = sdkVersion;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 应用集成的边缘升得快版本
+     * @return sdkVersion
+     */
+    public String getSdkVersion() {
+        return sdkVersion;
+    }
+
+    public void setSdkVersion(String sdkVersion) {
+        this.sdkVersion = sdkVersion;
     }
 
     
@@ -370,9 +428,11 @@ public class UpdateEdgeAppVersionDTO  {
         UpdateEdgeAppVersionDTO updateEdgeAppVersionDTO = (UpdateEdgeAppVersionDTO) o;
         return Objects.equals(this.description, updateEdgeAppVersionDTO.description) &&
             Objects.equals(this.deployType, updateEdgeAppVersionDTO.deployType) &&
+            Objects.equals(this.deployMultiInstance, updateEdgeAppVersionDTO.deployMultiInstance) &&
             Objects.equals(this.containerSettings, updateEdgeAppVersionDTO.containerSettings) &&
             Objects.equals(this.livenessProbe, updateEdgeAppVersionDTO.livenessProbe) &&
             Objects.equals(this.readinessProbe, updateEdgeAppVersionDTO.readinessProbe) &&
+            Objects.equals(this.sdkVersion, updateEdgeAppVersionDTO.sdkVersion) &&
             Objects.equals(this.arch, updateEdgeAppVersionDTO.arch) &&
             Objects.equals(this.command, updateEdgeAppVersionDTO.command) &&
             Objects.equals(this.args, updateEdgeAppVersionDTO.args) &&
@@ -382,7 +442,7 @@ public class UpdateEdgeAppVersionDTO  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(description, deployType, containerSettings, livenessProbe, readinessProbe, arch, command, args, outputs, inputs, services);
+        return Objects.hash(description, deployType, deployMultiInstance, containerSettings, livenessProbe, readinessProbe, sdkVersion, arch, command, args, outputs, inputs, services);
     }
     @Override
     public String toString() {
@@ -390,9 +450,11 @@ public class UpdateEdgeAppVersionDTO  {
         sb.append("class UpdateEdgeAppVersionDTO {\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    deployType: ").append(toIndentedString(deployType)).append("\n");
+        sb.append("    deployMultiInstance: ").append(toIndentedString(deployMultiInstance)).append("\n");
         sb.append("    containerSettings: ").append(toIndentedString(containerSettings)).append("\n");
         sb.append("    livenessProbe: ").append(toIndentedString(livenessProbe)).append("\n");
         sb.append("    readinessProbe: ").append(toIndentedString(readinessProbe)).append("\n");
+        sb.append("    sdkVersion: ").append(toIndentedString(sdkVersion)).append("\n");
         sb.append("    arch: ").append(toIndentedString(arch)).append("\n");
         sb.append("    command: ").append(toIndentedString(command)).append("\n");
         sb.append("    args: ").append(toIndentedString(args)).append("\n");

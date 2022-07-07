@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import java.util.Objects;
 
 /**
- * ak-sk数据模型
+ * ak/sk数据模型。
  */
 public class AccessAkskVO {
 
@@ -57,7 +57,7 @@ public class AccessAkskVO {
     }
 
     /**
-     * ak-sk的id
+     * ak/sk的id
      * @return id
      */
     public Integer getId() {
@@ -74,7 +74,7 @@ public class AccessAkskVO {
     }
 
     /**
-     * ak-sk的生成时间
+     * ak/sk的生成时间
      * @return gmtCreate
      */
     public LocalDate getGmtCreate() {
@@ -91,7 +91,7 @@ public class AccessAkskVO {
     }
 
     /**
-     * ak-sk的修改时间
+     * ak/sk的修改时间
      * @return gmtModify
      */
     public LocalDate getGmtModify() {
@@ -159,7 +159,7 @@ public class AccessAkskVO {
     }
 
     /**
-     * ak-sk的状态
+     * ak/sk的状态
      * @return status
      */
     public String getStatus() {
@@ -176,7 +176,7 @@ public class AccessAkskVO {
     }
 
     /**
-     * ak-sk的描述信息
+     * ak/sk的描述信息
      * @return descp
      */
     public String getDescp() {

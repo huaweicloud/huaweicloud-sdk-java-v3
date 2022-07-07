@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.iotedge.v2.model.CreateInstallCmdRequestDTO;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -30,6 +31,13 @@ public class CreateInstallCmdRequest  {
     
     
     private String arch;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="body")
+    
+    
+    private CreateInstallCmdRequestDTO body;
 
     public CreateInstallCmdRequest withEdgeNodeId(String edgeNodeId) {
         this.edgeNodeId = edgeNodeId;
@@ -75,6 +83,35 @@ public class CreateInstallCmdRequest  {
 
     
 
+    public CreateInstallCmdRequest withBody(CreateInstallCmdRequestDTO body) {
+        this.body = body;
+        return this;
+    }
+
+    public CreateInstallCmdRequest withBody(Consumer<CreateInstallCmdRequestDTO> bodySetter) {
+        if(this.body == null ){
+            this.body = new CreateInstallCmdRequestDTO();
+            bodySetter.accept(this.body);
+        }
+        
+        return this;
+    }
+
+
+    /**
+     * Get body
+     * @return body
+     */
+    public CreateInstallCmdRequestDTO getBody() {
+        return body;
+    }
+
+    public void setBody(CreateInstallCmdRequestDTO body) {
+        this.body = body;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -85,11 +122,12 @@ public class CreateInstallCmdRequest  {
         }
         CreateInstallCmdRequest createInstallCmdRequest = (CreateInstallCmdRequest) o;
         return Objects.equals(this.edgeNodeId, createInstallCmdRequest.edgeNodeId) &&
-            Objects.equals(this.arch, createInstallCmdRequest.arch);
+            Objects.equals(this.arch, createInstallCmdRequest.arch) &&
+            Objects.equals(this.body, createInstallCmdRequest.body);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(edgeNodeId, arch);
+        return Objects.hash(edgeNodeId, arch, body);
     }
     @Override
     public String toString() {
@@ -97,6 +135,7 @@ public class CreateInstallCmdRequest  {
         sb.append("class CreateInstallCmdRequest {\n");
         sb.append("    edgeNodeId: ").append(toIndentedString(edgeNodeId)).append("\n");
         sb.append("    arch: ").append(toIndentedString(arch)).append("\n");
+        sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();
     }

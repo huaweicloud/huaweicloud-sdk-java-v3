@@ -28,6 +28,16 @@ public class AvailabilityZone {
 
     private List<String> protocol = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_border_group")
+
+    private String publicBorderGroup;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "category")
+
+    private Integer category;
+
     public AvailabilityZone withCode(String code) {
         this.code = code;
         return this;
@@ -84,7 +94,7 @@ public class AvailabilityZone {
     }
 
     /**
-     * 未售罄的LB规格类别。取值： - L4：表示网络型LB未售罄。 - L7：表示应用型LB未售罄。
+     * 未售罄的LB规格类别。取值：L4 表示网络型LB未售罄；L7 表示应用型LB未售罄。
      * @return protocol
      */
     public List<String> getProtocol() {
@@ -93,6 +103,40 @@ public class AvailabilityZone {
 
     public void setProtocol(List<String> protocol) {
         this.protocol = protocol;
+    }
+
+    public AvailabilityZone withPublicBorderGroup(String publicBorderGroup) {
+        this.publicBorderGroup = publicBorderGroup;
+        return this;
+    }
+
+    /**
+     * 可用区组，如：center
+     * @return publicBorderGroup
+     */
+    public String getPublicBorderGroup() {
+        return publicBorderGroup;
+    }
+
+    public void setPublicBorderGroup(String publicBorderGroup) {
+        this.publicBorderGroup = publicBorderGroup;
+    }
+
+    public AvailabilityZone withCategory(Integer category) {
+        this.category = category;
+        return this;
+    }
+
+    /**
+     * 范围编码，0表示center，21表示homezone
+     * @return category
+     */
+    public Integer getCategory() {
+        return category;
+    }
+
+    public void setCategory(Integer category) {
+        this.category = category;
     }
 
     @Override
@@ -105,12 +149,14 @@ public class AvailabilityZone {
         }
         AvailabilityZone availabilityZone = (AvailabilityZone) o;
         return Objects.equals(this.code, availabilityZone.code) && Objects.equals(this.state, availabilityZone.state)
-            && Objects.equals(this.protocol, availabilityZone.protocol);
+            && Objects.equals(this.protocol, availabilityZone.protocol)
+            && Objects.equals(this.publicBorderGroup, availabilityZone.publicBorderGroup)
+            && Objects.equals(this.category, availabilityZone.category);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(code, state, protocol);
+        return Objects.hash(code, state, protocol, publicBorderGroup, category);
     }
 
     @Override
@@ -120,6 +166,8 @@ public class AvailabilityZone {
         sb.append("    code: ").append(toIndentedString(code)).append("\n");
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
         sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
+        sb.append("    publicBorderGroup: ").append(toIndentedString(publicBorderGroup)).append("\n");
+        sb.append("    category: ").append(toIndentedString(category)).append("\n");
         sb.append("}");
         return sb.toString();
     }

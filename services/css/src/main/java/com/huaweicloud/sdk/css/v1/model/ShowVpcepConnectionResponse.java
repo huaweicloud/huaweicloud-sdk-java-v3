@@ -68,7 +68,7 @@ public class ShowVpcepConnectionResponse extends SdkResponse {
     }
 
     /**
-     * 终端节点更新开关。
+     * 终端节点更新开关。 - true： 开启终端节点。 - false： 关闭终端节点。
      * @return vpcepUpdateSwitch
      */
     public Boolean getVpcepUpdateSwitch() {

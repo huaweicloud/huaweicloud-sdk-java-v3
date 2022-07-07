@@ -61,7 +61,7 @@ public class LogConfiguration {
     }
 
     /**
-     * ID。
+     * 日志备份ID，通过系统UUID生成。
      * @return id
      */
     public String getId() {
@@ -95,7 +95,7 @@ public class LogConfiguration {
     }
 
     /**
-     * OBS桶。
+     * 用于存储日志的OBS桶的桶名。
      * @return obsBucket
      */
     public String getObsBucket() {
@@ -129,7 +129,7 @@ public class LogConfiguration {
     }
 
     /**
-     * 更新时间。
+     * 更新时间。格式为：Unix时间戳格式
      * @return updateAt
      */
     public Long getUpdateAt() {
@@ -146,7 +146,7 @@ public class LogConfiguration {
     }
 
     /**
-     * 备份路径。
+     * 日志在OBS桶中的备份路径。
      * @return basePath
      */
     public String getBasePath() {
@@ -163,7 +163,7 @@ public class LogConfiguration {
     }
 
     /**
-     * 自动备份开关。
+     * 自动备份开关。 - true: 自动备份开启。 - false: 自动备份关闭。
      * @return autoEnable
      */
     public Boolean getAutoEnable() {
@@ -180,7 +180,7 @@ public class LogConfiguration {
     }
 
     /**
-     * 备份开始时间。
+     * 自动备份日志开始时间。当autoEnable为false时该字段为null。格式为：格林威治标准时间。
      * @return period
      */
     public String getPeriod() {
@@ -197,7 +197,7 @@ public class LogConfiguration {
     }
 
     /**
-     * 日志开关。
+     * 日志开关。 - true: 日志开启。 - false: 日志关闭。
      * @return logSwitch
      */
     public Boolean getLogSwitch() {

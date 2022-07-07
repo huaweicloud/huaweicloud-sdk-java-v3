@@ -46,13 +46,23 @@ public class UpdatePoolOption {
 
     private Boolean memberDeletionProtectionEnable;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "vpc_id")
+
+    private String vpcId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private String type;
+
     public UpdatePoolOption withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
     }
 
     /**
-     * 后端云服务器组的管理状态，只支持更新为true。  [不支持该字段，请勿使用。](tag:dt,dt_test)
+     * 后端云服务器组的管理状态，只支持更新为true。 [ 不支持该字段，请勿使用。](tag:dt,dt_test)
      * @return adminStateUp
      */
     public Boolean getAdminStateUp() {
@@ -86,7 +96,7 @@ public class UpdatePoolOption {
     }
 
     /**
-     * 后端云服务器组的负载均衡算法。  取值： 1、ROUND_ROBIN：加权轮询算法。 2、LEAST_CONNECTIONS：加权最少连接算法。 3、SOURCE_IP：源IP算法。 4、QUIC_CID：连接ID算法。  使用说明： - 当该字段的取值为SOURCE_IP时，后端云服务器组绑定的后端云服务器的weight字段无效。 - 只有pool的protocol为QUIC时，才支持QUIC_CID算法。
+     * 后端云服务器组的负载均衡算法。  取值： - ROUND_ROBIN：加权轮询算法。 - LEAST_CONNECTIONS：加权最少连接算法。 - SOURCE_IP：源IP算法。 - QUIC_CID：连接ID算法。  使用说明： - 当该字段的取值为SOURCE_IP时，后端云服务器组绑定的后端云服务器的weight字段无效。 - 只有pool的protocol为QUIC时，才支持QUIC_CID算法。
      * @return lbAlgorithm
      */
     public String getLbAlgorithm() {
@@ -184,6 +194,40 @@ public class UpdatePoolOption {
         this.memberDeletionProtectionEnable = memberDeletionProtectionEnable;
     }
 
+    public UpdatePoolOption withVpcId(String vpcId) {
+        this.vpcId = vpcId;
+        return this;
+    }
+
+    /**
+     * 后端云服务器组关联的虚拟私有云的ID。  只有vpc_id为空时允许更新。
+     * @return vpcId
+     */
+    public String getVpcId() {
+        return vpcId;
+    }
+
+    public void setVpcId(String vpcId) {
+        this.vpcId = vpcId;
+    }
+
+    public UpdatePoolOption withType(String type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * 后端服务器组的类型。   取值：  - instance：允许任意类型的后端，type指定为该类型时，vpc_id是必选字段。  - ip：只能添加跨VPC后端，type指定为该类型时，vpc_id不允许指定。  - 空字符串（\"\"）：允许任意类型的后端   使用说明：  - 只有type为空时允许更新，不允许从非空更新为空。
+     * @return type
+     */
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -199,7 +243,8 @@ public class UpdatePoolOption {
             && Objects.equals(this.name, updatePoolOption.name)
             && Objects.equals(this.sessionPersistence, updatePoolOption.sessionPersistence)
             && Objects.equals(this.slowStart, updatePoolOption.slowStart)
-            && Objects.equals(this.memberDeletionProtectionEnable, updatePoolOption.memberDeletionProtectionEnable);
+            && Objects.equals(this.memberDeletionProtectionEnable, updatePoolOption.memberDeletionProtectionEnable)
+            && Objects.equals(this.vpcId, updatePoolOption.vpcId) && Objects.equals(this.type, updatePoolOption.type);
     }
 
     @Override
@@ -210,7 +255,9 @@ public class UpdatePoolOption {
             name,
             sessionPersistence,
             slowStart,
-            memberDeletionProtectionEnable);
+            memberDeletionProtectionEnable,
+            vpcId,
+            type);
     }
 
     @Override
@@ -226,6 +273,8 @@ public class UpdatePoolOption {
         sb.append("    memberDeletionProtectionEnable: ")
             .append(toIndentedString(memberDeletionProtectionEnable))
             .append("\n");
+        sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");
         return sb.toString();
     }

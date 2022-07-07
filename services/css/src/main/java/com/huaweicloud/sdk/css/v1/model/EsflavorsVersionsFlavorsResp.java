@@ -102,7 +102,7 @@ public class EsflavorsVersionsFlavorsResp {
     }
 
     /**
-     * 可用区域。
+     * 可用region。
      * @return region
      */
     public String getRegion() {

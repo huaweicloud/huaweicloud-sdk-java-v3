@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.elb.v3.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 后端服务器信息。
@@ -76,9 +79,29 @@ public class Member {
     private String operatingStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status")
+
+    private List<MemberStatus> status = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "loadbalancer_id")
 
     private String loadbalancerId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "loadbalancers")
+
+    private List<ResourceID> loadbalancers = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "created_at")
+
+    private String createdAt;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "updated_at")
+
+    private String updatedAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "member_type")
@@ -96,7 +119,7 @@ public class Member {
     }
 
     /**
-     * 后端服务器ID。
+     * 后端服务器ID。 >说明： 此处并非ECS服务器的ID，而是ELB为绑定的后端服务器自动生成的member ID。
      * @return id
      */
     public String getId() {
@@ -147,7 +170,7 @@ public class Member {
     }
 
     /**
-     * 所在后端服务器组ID。  不支持该字段，请勿使用。
+     * 所在后端服务器组ID。  注意：该字段当前仅GET /v3/{project_id}/elb/members 接口可见。
      * @return poolId
      */
     public String getPoolId() {
@@ -181,7 +204,7 @@ public class Member {
     }
 
     /**
-     * 后端云服务器所在子网的IPv4子网ID或IPv6子网ID。  若所属的LB的跨VPC后端转发特性已开启，则该字段可以不传，表示添加跨VPC的后端服务器。此时address必须为IPv4地址，所在的pool的协议必须为TCP/HTTP/HTTPS。  使用说明：  - 该子网和关联的负载均衡器的子网必须在同一VPC下。  [不支持IPv6，请勿设置为IPv6子网ID。](tag:dt,dt_test)
+     * 后端云服务器所在子网的IPv4子网ID或IPv6子网ID。   若所属的LB的跨VPC后端转发特性已开启，则该字段可以不传，表示添加跨VPC的后端服务器。此时address必须为IPv4地址，所在的pool的协议必须为TCP/HTTP/HTTPS。   使用说明：该子网和关联的负载均衡器的子网必须在同一VPC下。  [不支持IPv6，请勿设置为IPv6子网ID。](tag:dt,dt_test)
      * @return subnetCidrId
      */
     public String getSubnetCidrId() {
@@ -217,7 +240,7 @@ public class Member {
     }
 
     /**
-     * 后端云服务器的权重，请求将根据pool配置的负载均衡算法和后端云服务器的权重进行负载分发。权重值越大，分发的请求越多。权重为0的后端不再接受新的请求。 取值：0-100，默认1。 使用说明：  - 若所在pool的lb_algorithm取值为SOURCE_IP，该字段无效。
+     * 后端云服务器的权重，请求将根据pool配置的负载均衡算法和后端云服务器的权重进行负载分发。权重值越大，分发的请求越多。权重为0的后端不再接受新的请求。   取值：0-100，默认1。   使用说明：若所在pool的lb_algorithm取值为SOURCE_IP，该字段无效。
      * minimum: 0
      * maximum: 100
      * @return weight
@@ -236,7 +259,7 @@ public class Member {
     }
 
     /**
-     * 后端服务器对应的IP地址。 使用说明：  - 若subnet_cidr_id为空，表示添加跨VPC后端，此时address必须为IPv4地址。  - 若subnet_cidr_id不为空，表示是一个关联到ECS的后端服务器。该IP地址可以是IPv4或IPv6。但必须在subnet_cidr_id对应的子网网段中。且只能指定为关联ECS的主网卡IP。 [不支持IPv6，请勿设置为IPv6地址。](tag:dt,dt_test)
+     * 后端服务器对应的IP地址。  使用说明：  - 若subnet_cidr_id为空，表示添加跨VPC后端，此时address必须为IPv4地址。  - 若subnet_cidr_id不为空，表示是一个关联到ECS的后端服务器。该IP地址可以是IPv4或IPv6。但必须在subnet_cidr_id对应的子网网段中。且只能指定为关联ECS的主网卡IP。  [不支持IPv6，请勿设置为IPv6地址。](tag:dt,dt_test)
      * @return address
      */
     public String getAddress() {
@@ -270,7 +293,7 @@ public class Member {
     }
 
     /**
-     * 设备所有者，取值： - 空，表示后端服务器未关联到ECS。 - compute：{az_name}，表示关联到ECS，其中{az_name}表示ECS所在可用区名。  不支持该字段，请勿使用。
+     * 设备所有者，取值： - 空，表示后端服务器未关联到ECS。 - compute:{az_name}，表示关联到ECS，其中{az_name}表示ECS所在可用区名。  注意：该字段当前仅GET /v3/{project_id}/elb/members 接口可见。
      * @return deviceOwner
      */
     public String getDeviceOwner() {
@@ -287,7 +310,7 @@ public class Member {
     }
 
     /**
-     * 关联的ECS ID，为空表示后端服务器未关联到ECS。
+     * 关联的ECS ID，为空表示后端服务器未关联到ECS。  注意：该字段当前仅GET /v3/{project_id}/elb/members 接口可见。
      * @return deviceId
      */
     public String getDeviceId() {
@@ -315,13 +338,46 @@ public class Member {
         this.operatingStatus = operatingStatus;
     }
 
+    public Member withStatus(List<MemberStatus> status) {
+        this.status = status;
+        return this;
+    }
+
+    public Member addStatusItem(MemberStatus statusItem) {
+        if (this.status == null) {
+            this.status = new ArrayList<>();
+        }
+        this.status.add(statusItem);
+        return this;
+    }
+
+    public Member withStatus(Consumer<List<MemberStatus>> statusSetter) {
+        if (this.status == null) {
+            this.status = new ArrayList<>();
+        }
+        statusSetter.accept(this.status);
+        return this;
+    }
+
+    /**
+     * 后端云服务器监听器粒度的的健康状态。 若绑定的监听器在该字段中，则以该字段中监听器对应的operating_stauts为准。 若绑定的监听器不在该字段中，则以外层的operating_status为准。
+     * @return status
+     */
+    public List<MemberStatus> getStatus() {
+        return status;
+    }
+
+    public void setStatus(List<MemberStatus> status) {
+        this.status = status;
+    }
+
     public Member withLoadbalancerId(String loadbalancerId) {
         this.loadbalancerId = loadbalancerId;
         return this;
     }
 
     /**
-     * 所属负载均衡器ID。  不支持该字段，请勿使用。
+     * 所属负载均衡器ID。  注意：该字段当前仅GET /v3/{project_id}/elb/members 接口可见。
      * @return loadbalancerId
      */
     public String getLoadbalancerId() {
@@ -330,6 +386,73 @@ public class Member {
 
     public void setLoadbalancerId(String loadbalancerId) {
         this.loadbalancerId = loadbalancerId;
+    }
+
+    public Member withLoadbalancers(List<ResourceID> loadbalancers) {
+        this.loadbalancers = loadbalancers;
+        return this;
+    }
+
+    public Member addLoadbalancersItem(ResourceID loadbalancersItem) {
+        if (this.loadbalancers == null) {
+            this.loadbalancers = new ArrayList<>();
+        }
+        this.loadbalancers.add(loadbalancersItem);
+        return this;
+    }
+
+    public Member withLoadbalancers(Consumer<List<ResourceID>> loadbalancersSetter) {
+        if (this.loadbalancers == null) {
+            this.loadbalancers = new ArrayList<>();
+        }
+        loadbalancersSetter.accept(this.loadbalancers);
+        return this;
+    }
+
+    /**
+     * 后端云服务器关联的负载均衡器ID列表。  注意：该字段当前仅GET /v3/{project_id}/elb/members 接口可见。
+     * @return loadbalancers
+     */
+    public List<ResourceID> getLoadbalancers() {
+        return loadbalancers;
+    }
+
+    public void setLoadbalancers(List<ResourceID> loadbalancers) {
+        this.loadbalancers = loadbalancers;
+    }
+
+    public Member withCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+        return this;
+    }
+
+    /**
+     * 创建时间。格式：yyyy-MM-dd'T'HH:mm:ss'Z'，UTC时区。  注意：独享型实例的历史数据以及共享型实例下的资源，不返回该字段。
+     * @return createdAt
+     */
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Member withUpdatedAt(String updatedAt) {
+        this.updatedAt = updatedAt;
+        return this;
+    }
+
+    /**
+     * 更新时间。格式：yyyy-MM-dd'T'HH:mm:ss'Z'，UTC时区。  注意：独享型实例的历史数据以及共享型实例下的资源，不返回该字段。
+     * @return updatedAt
+     */
+    public String getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(String updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
     public Member withMemberType(String memberType) {
@@ -355,7 +478,7 @@ public class Member {
     }
 
     /**
-     * member关联的实例ID，空表示跨VPC场景的member。
+     * member关联的实例ID。空表示member关联的实例为非真实设备 （如：跨VPC场景）
      * @return instanceId
      */
     public String getInstanceId() {
@@ -383,7 +506,9 @@ public class Member {
             && Objects.equals(this.address, member.address) && Objects.equals(this.ipVersion, member.ipVersion)
             && Objects.equals(this.deviceOwner, member.deviceOwner) && Objects.equals(this.deviceId, member.deviceId)
             && Objects.equals(this.operatingStatus, member.operatingStatus)
-            && Objects.equals(this.loadbalancerId, member.loadbalancerId)
+            && Objects.equals(this.status, member.status) && Objects.equals(this.loadbalancerId, member.loadbalancerId)
+            && Objects.equals(this.loadbalancers, member.loadbalancers)
+            && Objects.equals(this.createdAt, member.createdAt) && Objects.equals(this.updatedAt, member.updatedAt)
             && Objects.equals(this.memberType, member.memberType) && Objects.equals(this.instanceId, member.instanceId);
     }
 
@@ -402,7 +527,11 @@ public class Member {
             deviceOwner,
             deviceId,
             operatingStatus,
+            status,
             loadbalancerId,
+            loadbalancers,
+            createdAt,
+            updatedAt,
             memberType,
             instanceId);
     }
@@ -424,7 +553,11 @@ public class Member {
         sb.append("    deviceOwner: ").append(toIndentedString(deviceOwner)).append("\n");
         sb.append("    deviceId: ").append(toIndentedString(deviceId)).append("\n");
         sb.append("    operatingStatus: ").append(toIndentedString(operatingStatus)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    loadbalancerId: ").append(toIndentedString(loadbalancerId)).append("\n");
+        sb.append("    loadbalancers: ").append(toIndentedString(loadbalancers)).append("\n");
+        sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+        sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("    memberType: ").append(toIndentedString(memberType)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("}");

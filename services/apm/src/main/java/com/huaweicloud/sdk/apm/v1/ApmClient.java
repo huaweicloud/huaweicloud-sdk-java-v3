@@ -18,9 +18,9 @@ public class ApmClient {
     }
 
     /**
-     * 获取ak-sk
+     * 获取ak/sk
      *
-     * 获取该用户创建的aksk列表
+     * 获取该用户创建的ak/sk列表。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -33,9 +33,9 @@ public class ApmClient {
     }
 
     /**
-     * 获取ak-sk
+     * 获取ak/sk
      *
-     * 获取该用户创建的aksk列表
+     * 获取该用户创建的ak/sk列表。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -78,9 +78,105 @@ public class ApmClient {
     }
 
     /**
+     * 
+     *
+     * 查询监控项列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListEnvMonitorItemRequest 请求对象
+     * @return ListEnvMonitorItemResponse
+     */
+    public ListEnvMonitorItemResponse listEnvMonitorItem(ListEnvMonitorItemRequest request) {
+        return hcClient.syncInvokeHttp(request, ApmMeta.listEnvMonitorItem);
+    }
+
+    /**
+     * 
+     *
+     * 查询监控项列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListEnvMonitorItemRequest 请求对象
+     * @return SyncInvoker<ListEnvMonitorItemRequest, ListEnvMonitorItemResponse>
+     */
+    public SyncInvoker<ListEnvMonitorItemRequest, ListEnvMonitorItemResponse> listEnvMonitorItemInvoker(
+        ListEnvMonitorItemRequest request) {
+        return new SyncInvoker<ListEnvMonitorItemRequest, ListEnvMonitorItemResponse>(request,
+            ApmMeta.listEnvMonitorItem, hcClient);
+    }
+
+    /**
+     * 保存监控项
+     *
+     * 保存监控项
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SaveMonitorItemConfigRequest 请求对象
+     * @return SaveMonitorItemConfigResponse
+     */
+    public SaveMonitorItemConfigResponse saveMonitorItemConfig(SaveMonitorItemConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, ApmMeta.saveMonitorItemConfig);
+    }
+
+    /**
+     * 保存监控项
+     *
+     * 保存监控项
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SaveMonitorItemConfigRequest 请求对象
+     * @return SyncInvoker<SaveMonitorItemConfigRequest, SaveMonitorItemConfigResponse>
+     */
+    public SyncInvoker<SaveMonitorItemConfigRequest, SaveMonitorItemConfigResponse> saveMonitorItemConfigInvoker(
+        SaveMonitorItemConfigRequest request) {
+        return new SyncInvoker<SaveMonitorItemConfigRequest, SaveMonitorItemConfigResponse>(request,
+            ApmMeta.saveMonitorItemConfig, hcClient);
+    }
+
+    /**
+     * 对指定区域下的应用和环境及其探针情况进行搜索
+     *
+     * 对指定区域下的应用和环境及其探针情况进行搜索
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SearchApplicationRequest 请求对象
+     * @return SearchApplicationResponse
+     */
+    public SearchApplicationResponse searchApplication(SearchApplicationRequest request) {
+        return hcClient.syncInvokeHttp(request, ApmMeta.searchApplication);
+    }
+
+    /**
+     * 对指定区域下的应用和环境及其探针情况进行搜索
+     *
+     * 对指定区域下的应用和环境及其探针情况进行搜索
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SearchApplicationRequest 请求对象
+     * @return SyncInvoker<SearchApplicationRequest, SearchApplicationResponse>
+     */
+    public SyncInvoker<SearchApplicationRequest, SearchApplicationResponse> searchApplicationInvoker(
+        SearchApplicationRequest request) {
+        return new SyncInvoker<SearchApplicationRequest, SearchApplicationResponse>(request, ApmMeta.searchApplication,
+            hcClient);
+    }
+
+    /**
      * 查询master地址
      *
-     * 根据region名称获取该名称下的master服务podlb地址信息
+     * 根据region名称获取该名称下的master服务podlb地址信息。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -95,7 +191,7 @@ public class ApmClient {
     /**
      * 查询master地址
      *
-     * 根据region名称获取该名称下的master服务podlb地址信息
+     * 根据region名称获取该名称下的master服务podlb地址信息。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.

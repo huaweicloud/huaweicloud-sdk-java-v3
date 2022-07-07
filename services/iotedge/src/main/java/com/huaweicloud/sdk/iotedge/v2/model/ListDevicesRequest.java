@@ -83,7 +83,7 @@ public class ListDevicesRequest  {
 
 
     /**
-     * 父设备ID,对应之前的gatewayId的概念，传该参数时代表查询网关下的子设备，不传代表节点下的
+     * 父设备ID,对应之前的gatewayId的概念，传该参数时代表查询网关下的子设备，不传代表查询网关直连设备
      * @return gatewayId
      */
     public String getGatewayId() {

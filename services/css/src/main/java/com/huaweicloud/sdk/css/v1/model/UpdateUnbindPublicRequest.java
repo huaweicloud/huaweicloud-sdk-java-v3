@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -14,6 +15,11 @@ public class UpdateUnbindPublicRequest {
     @JsonProperty(value = "cluster_id")
 
     private String clusterId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "body")
+
+    private UnBindPublicReq body;
 
     public UpdateUnbindPublicRequest withClusterId(String clusterId) {
         this.clusterId = clusterId;
@@ -32,6 +38,32 @@ public class UpdateUnbindPublicRequest {
         this.clusterId = clusterId;
     }
 
+    public UpdateUnbindPublicRequest withBody(UnBindPublicReq body) {
+        this.body = body;
+        return this;
+    }
+
+    public UpdateUnbindPublicRequest withBody(Consumer<UnBindPublicReq> bodySetter) {
+        if (this.body == null) {
+            this.body = new UnBindPublicReq();
+            bodySetter.accept(this.body);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get body
+     * @return body
+     */
+    public UnBindPublicReq getBody() {
+        return body;
+    }
+
+    public void setBody(UnBindPublicReq body) {
+        this.body = body;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -41,12 +73,13 @@ public class UpdateUnbindPublicRequest {
             return false;
         }
         UpdateUnbindPublicRequest updateUnbindPublicRequest = (UpdateUnbindPublicRequest) o;
-        return Objects.equals(this.clusterId, updateUnbindPublicRequest.clusterId);
+        return Objects.equals(this.clusterId, updateUnbindPublicRequest.clusterId)
+            && Objects.equals(this.body, updateUnbindPublicRequest.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clusterId);
+        return Objects.hash(clusterId, body);
     }
 
     @Override
@@ -54,6 +87,7 @@ public class UpdateUnbindPublicRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateUnbindPublicRequest {\n");
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
+        sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();
     }

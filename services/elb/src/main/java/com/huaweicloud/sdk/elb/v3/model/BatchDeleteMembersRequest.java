@@ -19,7 +19,7 @@ public class BatchDeleteMembersRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private BatchDeleteMemberRequestBody body;
+    private BatchDeleteMembersRequestBody body;
 
     public BatchDeleteMembersRequest withPoolId(String poolId) {
         this.poolId = poolId;
@@ -38,14 +38,14 @@ public class BatchDeleteMembersRequest {
         this.poolId = poolId;
     }
 
-    public BatchDeleteMembersRequest withBody(BatchDeleteMemberRequestBody body) {
+    public BatchDeleteMembersRequest withBody(BatchDeleteMembersRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public BatchDeleteMembersRequest withBody(Consumer<BatchDeleteMemberRequestBody> bodySetter) {
+    public BatchDeleteMembersRequest withBody(Consumer<BatchDeleteMembersRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new BatchDeleteMemberRequestBody();
+            this.body = new BatchDeleteMembersRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class BatchDeleteMembersRequest {
      * Get body
      * @return body
      */
-    public BatchDeleteMemberRequestBody getBody() {
+    public BatchDeleteMembersRequestBody getBody() {
         return body;
     }
 
-    public void setBody(BatchDeleteMemberRequestBody body) {
+    public void setBody(BatchDeleteMembersRequestBody body) {
         this.body = body;
     }
 

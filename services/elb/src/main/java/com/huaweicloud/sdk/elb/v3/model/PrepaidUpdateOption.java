@@ -21,7 +21,7 @@ public class PrepaidUpdateOption {
     private Boolean autoPay;
 
     /**
-     * 规格变更类型。取值： - immediate：即时变更（默认），规格变更立即生效。 - delay：续费变更，当前周期结束后变更为目标规格。
+     * 规格变更类型： immediate：即时变更，规格变更立即生效。（默认） delay：续费变更，当前周期结束后变更为目标规格。
      */
     public static final class ChangeModeEnum {
 
@@ -103,12 +103,17 @@ public class PrepaidUpdateOption {
     private ChangeModeEnum changeMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cloud_service_console_url")
+
+    private String cloudServiceConsoleUrl;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "period_num")
 
     private Integer periodNum;
 
     /**
-     * 订购周期类型，仅在change_mode为delay时有效。取值： - month：月（默认）。 - year：年。
+     * 订购周期类型，当前支持包月和包年： （仅在change_mode为delay时生效） month：月（默认）； year：年；
      */
     public static final class PeriodTypeEnum {
 
@@ -212,7 +217,7 @@ public class PrepaidUpdateOption {
     }
 
     /**
-     * 规格变更类型。取值： - immediate：即时变更（默认），规格变更立即生效。 - delay：续费变更，当前周期结束后变更为目标规格。
+     * 规格变更类型： immediate：即时变更，规格变更立即生效。（默认） delay：续费变更，当前周期结束后变更为目标规格。
      * @return changeMode
      */
     public ChangeModeEnum getChangeMode() {
@@ -223,13 +228,30 @@ public class PrepaidUpdateOption {
         this.changeMode = changeMode;
     }
 
+    public PrepaidUpdateOption withCloudServiceConsoleUrl(String cloudServiceConsoleUrl) {
+        this.cloudServiceConsoleUrl = cloudServiceConsoleUrl;
+        return this;
+    }
+
+    /**
+     * 云服务引导URL。 订购订单支付完成后，支付成功的页面嵌入该url的内容。 console传，用户侧api文档不可见该字段。
+     * @return cloudServiceConsoleUrl
+     */
+    public String getCloudServiceConsoleUrl() {
+        return cloudServiceConsoleUrl;
+    }
+
+    public void setCloudServiceConsoleUrl(String cloudServiceConsoleUrl) {
+        this.cloudServiceConsoleUrl = cloudServiceConsoleUrl;
+    }
+
     public PrepaidUpdateOption withPeriodNum(Integer periodNum) {
         this.periodNum = periodNum;
         return this;
     }
 
     /**
-     * 订购周期数，仅在change_mode为delay时有效。取值： - period_type为month时，为[1,9]，默认1。 - period_type为year时，为[1,3]，默认1。
+     * 订购周期数（默认1），取值会随运营策略变化。（仅在change_mode为delay时生效） period_type为month时，为[1,9]， period_type为year时，为[1,3]
      * minimum: 1
      * maximum: 9
      * @return periodNum
@@ -248,7 +270,7 @@ public class PrepaidUpdateOption {
     }
 
     /**
-     * 订购周期类型，仅在change_mode为delay时有效。取值： - month：月（默认）。 - year：年。
+     * 订购周期类型，当前支持包月和包年： （仅在change_mode为delay时生效） month：月（默认）； year：年；
      * @return periodType
      */
     public PeriodTypeEnum getPeriodType() {
@@ -270,13 +292,14 @@ public class PrepaidUpdateOption {
         PrepaidUpdateOption prepaidUpdateOption = (PrepaidUpdateOption) o;
         return Objects.equals(this.autoPay, prepaidUpdateOption.autoPay)
             && Objects.equals(this.changeMode, prepaidUpdateOption.changeMode)
+            && Objects.equals(this.cloudServiceConsoleUrl, prepaidUpdateOption.cloudServiceConsoleUrl)
             && Objects.equals(this.periodNum, prepaidUpdateOption.periodNum)
             && Objects.equals(this.periodType, prepaidUpdateOption.periodType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(autoPay, changeMode, periodNum, periodType);
+        return Objects.hash(autoPay, changeMode, cloudServiceConsoleUrl, periodNum, periodType);
     }
 
     @Override
@@ -285,6 +308,7 @@ public class PrepaidUpdateOption {
         sb.append("class PrepaidUpdateOption {\n");
         sb.append("    autoPay: ").append(toIndentedString(autoPay)).append("\n");
         sb.append("    changeMode: ").append(toIndentedString(changeMode)).append("\n");
+        sb.append("    cloudServiceConsoleUrl: ").append(toIndentedString(cloudServiceConsoleUrl)).append("\n");
         sb.append("    periodNum: ").append(toIndentedString(periodNum)).append("\n");
         sb.append("    periodType: ").append(toIndentedString(periodType)).append("\n");
         sb.append("}");

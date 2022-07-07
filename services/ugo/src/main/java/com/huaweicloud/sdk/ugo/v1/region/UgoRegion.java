@@ -14,6 +14,9 @@ public class UgoRegion {
 
     public static final Region CN_SOUTH_1 = new Region("cn-south-1", "https://ugo.cn-south-1.myhuaweicloud.com");
 
+    public static final Region AP_SOUTHEAST_3 =
+        new Region("ap-southeast-3", "https://ugo.ap-southeast-3.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("UGO");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -21,6 +24,7 @@ public class UgoRegion {
     private static Map<String, Region> createStaticFields() {
         Map<String, Region> map = new HashMap<>();
         map.put("cn-south-1", CN_SOUTH_1);
+        map.put("ap-southeast-3", AP_SOUTHEAST_3);
         return Collections.unmodifiableMap(map);
     }
 

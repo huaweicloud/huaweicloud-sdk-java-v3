@@ -39,7 +39,7 @@ public class L7Rule {
     private String projectId;
 
     /**
-     * 转发规则类别。取值：  - HOST_NAME：匹配域名  - PATH：匹配请求路径  [- METHOD：匹配请求方法  - HEADER：匹配请求头  - QUERY_STRING：匹配请求查询参数  - SOURCE_IP：匹配请求源IP地址](tag:hc,hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42) 使用说明： [- 一个l7policy下创建的l7rule的HOST_NAME，PATH，METHOD，SOURCE_IP不能重复。HEADER、QUERY_STRING支持重复的rule配置。](tag:hc,hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42) [- 一个l7policy下创建的l7rule的HOST_NAME，PATH不能重复。](tag:dt,dt_test,hcso_dt)
+     * 转发规则类别。取值： - HOST_NAME：匹配域名 - PATH：匹配请求路径 [- METHOD：匹配请求方法 - HEADER：匹配请求头 - QUERY_STRING：匹配请求查询参数 - SOURCE_IP：匹配请求源IP地址](tag:hws,hws_hk,ocb,tlf,ctc,hcs,sbc,g42,tm,cmcc,hk_g42,mix,hk_sbc,hws_ocb,fcs)   使用说明： [- 一个l7policy下创建的l7rule的HOST_NAME，PATH，METHOD，SOURCE_IP不能重复。HEADER、QUERY_STRING支持重复的rule配置。](tag:hws,hws_hk,ocb,tlf,ctc,hcs,sbc,g42,tm,cmcc,hk_g42,mix,hk_sbc,hws_ocb,fcs) [- 一个l7policy下创建的l7rule的HOST_NAME，PATH不能重复。](tag:dt,dt_test,hcso_dt)
      */
     public static final class TypeEnum {
 
@@ -169,6 +169,16 @@ public class L7Rule {
 
     private List<RuleCondition> conditions = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "created_at")
+
+    private String createdAt;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "updated_at")
+
+    private String updatedAt;
+
     public L7Rule withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
@@ -192,7 +202,7 @@ public class L7Rule {
     }
 
     /**
-     * 转发规则的匹配方式。  - type为HOST_NAME时仅支持EQUAL_TO，支持通配符*。 - type为PATH时可以为Perl类型的REGEX，STARTS_WITH，EQUAL_TO。 [- type为METHOD、SOURCE_IP时，仅支持EQUAL_TO。 - type为HEADER、QUERY_STRING，仅支持EQUAL_TO，支持通配符*、？。](tag:hws,hws_hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42)
+     * 转发规则的匹配方式。type为HOST_NAME时可以为EQUAL_TO。type为PATH时可以为REGEX， STARTS_WITH，EQUAL_TO。
      * @return compareType
      */
     public String getCompareType() {
@@ -209,7 +219,7 @@ public class L7Rule {
     }
 
     /**
-     * 匹配内容的键值。[type为HOST_NAME和PATH时，该字段不生效。](tag:hws,hws_hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42)  [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
+     * 匹配内容的键值。[type为HOST_NAME和PATH时，该字段不生效。](tag:hws,hws_hk,ocb,tlf,ctc,hcs,sbc,g42,tm,cmcc,hk_g42,mix,hk_sbc,hws_ocb,fcs)   [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
      * @return key
      */
     public String getKey() {
@@ -243,7 +253,7 @@ public class L7Rule {
     }
 
     /**
-     * 转发规则类别。取值：  - HOST_NAME：匹配域名  - PATH：匹配请求路径  [- METHOD：匹配请求方法  - HEADER：匹配请求头  - QUERY_STRING：匹配请求查询参数  - SOURCE_IP：匹配请求源IP地址](tag:hc,hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42) 使用说明： [- 一个l7policy下创建的l7rule的HOST_NAME，PATH，METHOD，SOURCE_IP不能重复。HEADER、QUERY_STRING支持重复的rule配置。](tag:hc,hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42) [- 一个l7policy下创建的l7rule的HOST_NAME，PATH不能重复。](tag:dt,dt_test,hcso_dt)
+     * 转发规则类别。取值： - HOST_NAME：匹配域名 - PATH：匹配请求路径 [- METHOD：匹配请求方法 - HEADER：匹配请求头 - QUERY_STRING：匹配请求查询参数 - SOURCE_IP：匹配请求源IP地址](tag:hws,hws_hk,ocb,tlf,ctc,hcs,sbc,g42,tm,cmcc,hk_g42,mix,hk_sbc,hws_ocb,fcs)   使用说明： [- 一个l7policy下创建的l7rule的HOST_NAME，PATH，METHOD，SOURCE_IP不能重复。HEADER、QUERY_STRING支持重复的rule配置。](tag:hws,hws_hk,ocb,tlf,ctc,hcs,sbc,g42,tm,cmcc,hk_g42,mix,hk_sbc,hws_ocb,fcs) [- 一个l7policy下创建的l7rule的HOST_NAME，PATH不能重复。](tag:dt,dt_test,hcso_dt)
      * @return type
      */
     public TypeEnum getType() {
@@ -260,7 +270,7 @@ public class L7Rule {
     }
 
     /**
-     * 匹配内容的值。[仅当conditions空时该字段生效。](tag:hc,hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42)  当type为HOST_NAME时，字符串只能包含英文字母、数字、\"-\"、\".\"或\"*\"，必须以字母、数字或\"*\"开头。若域名中包含\"*\"，则\"*\"只能出现在开头且必须以*.开始。当*开头时表示通配0~任一个字符。  当type为PATH时，当转发规则的compare_type为STARTS_WITH、EQUAL_TO时，字符串只能包含英文字母、数字、_~';@^-%#&$.*+?,=!:|/()[]{}，且必须以\"/\"开头。  [当type为METHOD、SOURCE_IP、HEADER、QUERY_STRING时，该字段无意义，使用condition_pair来指定key，value。](tag:hws,hws_hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42)
+     * 匹配内容的值。仅当conditions空时该字段生效。  当type为HOST_NAME时，字符串只能包含英文字母、数字、“-”、“.”或“*”，必须以字母、数字或“*”开头。  若域名中包含“*”，则“*”只能出现在开头且必须以*.开始。当*开头时表示通配0~任一个字符。  当type为PATH时，当转发规则的compare_type为STARTS_WITH、EQUAL_TO时，字符串只能包含英文字母、数字、_~';@^-%#&$.*+?,=!:|\\/()\\[\\]{}，且必须以\"/\"开头。  当type为METHOD、SOURCE_IP、HEADER, QUERY_STRING时，该字段无意义，使用condition_pair来指定key，value。
      * @return value
      */
     public String getValue() {
@@ -294,7 +304,7 @@ public class L7Rule {
     }
 
     /**
-     * 是否反向匹配。 使用说明： - 固定为false。该字段能更新但不会生效。
+     * 是否反向匹配。 使用说明：固定为false。该字段能更新但不会生效。
      * @return invert
      */
     public Boolean getInvert() {
@@ -344,7 +354,7 @@ public class L7Rule {
     }
 
     /**
-     * 转发规则的匹配条件。当监听器的高级转发策略功能（enhance_l7policy_enable）开启后才会生效。 配置了conditions后，字段key、字段value的值无意义。 若指定了conditions，该rule的条件数为conditions列表长度。 列表中key必须相同，value不允许重复。  [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
+     * 转发规则的匹配条件。当监听器的高级转发策略功能（enhance_l7policy_enable）开启后才会生效。 配置了conditions后，字段key、字段value的值无意义。 若指定了conditons，该rule的条件数为conditons列表长度。 列表中key必须相同，value不允许重复。  [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
      * @return conditions
      */
     public List<RuleCondition> getConditions() {
@@ -353,6 +363,40 @@ public class L7Rule {
 
     public void setConditions(List<RuleCondition> conditions) {
         this.conditions = conditions;
+    }
+
+    public L7Rule withCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+        return this;
+    }
+
+    /**
+     * 创建时间。格式：yyyy-MM-dd'T'HH:mm:ss'Z'，UTC时区。  注意：独享型实例的历史数据以及共享型实例下的资源，不返回该字段。
+     * @return createdAt
+     */
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public L7Rule withUpdatedAt(String updatedAt) {
+        this.updatedAt = updatedAt;
+        return this;
+    }
+
+    /**
+     * 更新时间。格式：yyyy-MM-dd'T'HH:mm:ss'Z'，UTC时区。  注意：独享型实例的历史数据以及共享型实例下的资源，不返回该字段。
+     * @return updatedAt
+     */
+    public String getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(String updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
     @Override
@@ -370,13 +414,24 @@ public class L7Rule {
             && Objects.equals(this.value, l7Rule.value)
             && Objects.equals(this.provisioningStatus, l7Rule.provisioningStatus)
             && Objects.equals(this.invert, l7Rule.invert) && Objects.equals(this.id, l7Rule.id)
-            && Objects.equals(this.conditions, l7Rule.conditions);
+            && Objects.equals(this.conditions, l7Rule.conditions) && Objects.equals(this.createdAt, l7Rule.createdAt)
+            && Objects.equals(this.updatedAt, l7Rule.updatedAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(adminStateUp, compareType, key, projectId, type, value, provisioningStatus, invert, id, conditions);
+        return Objects.hash(adminStateUp,
+            compareType,
+            key,
+            projectId,
+            type,
+            value,
+            provisioningStatus,
+            invert,
+            id,
+            conditions,
+            createdAt,
+            updatedAt);
     }
 
     @Override
@@ -393,6 +448,8 @@ public class L7Rule {
         sb.append("    invert: ").append(toIndentedString(invert)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    conditions: ").append(toIndentedString(conditions)).append("\n");
+        sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+        sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("}");
         return sb.toString();
     }

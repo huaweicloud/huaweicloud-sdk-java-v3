@@ -200,66 +200,6 @@ public class IoTEdgeAsyncClient {
     }
 
     /**
-     * 批量修改子设备协议配置
-     *
-     * 批量修改产品关联的设备，传入product_id修改该产品下所有设备，传入device_id列表，根据device_id修改,两者互斥。
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param BatchUpdateConfigsRequest 请求对象
-     * @return CompletableFuture<BatchUpdateConfigsResponse>
-     */
-    public CompletableFuture<BatchUpdateConfigsResponse> batchUpdateConfigsAsync(BatchUpdateConfigsRequest request) {
-        return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.batchUpdateConfigs);
-    }
-
-    /**
-     * 批量修改子设备协议配置
-     *
-     * 批量修改产品关联的设备，传入product_id修改该产品下所有设备，传入device_id列表，根据device_id修改,两者互斥。
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param BatchUpdateConfigsRequest 请求对象
-     * @return AsyncInvoker<BatchUpdateConfigsRequest, BatchUpdateConfigsResponse>
-     */
-    public AsyncInvoker<BatchUpdateConfigsRequest, BatchUpdateConfigsResponse> batchUpdateConfigsAsyncInvoker(BatchUpdateConfigsRequest request) {
-        return new AsyncInvoker<BatchUpdateConfigsRequest, BatchUpdateConfigsResponse>(request, IoTEdgeMeta.batchUpdateConfigs, hcClient);
-    }
-
-    /**
-     * 生成modbus协议设备接入码
-     *
-     * 生成modbus协议设备接入码
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param CreateAccessCodeRequest 请求对象
-     * @return CompletableFuture<CreateAccessCodeResponse>
-     */
-    public CompletableFuture<CreateAccessCodeResponse> createAccessCodeAsync(CreateAccessCodeRequest request) {
-        return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.createAccessCode);
-    }
-
-    /**
-     * 生成modbus协议设备接入码
-     *
-     * 生成modbus协议设备接入码
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param CreateAccessCodeRequest 请求对象
-     * @return AsyncInvoker<CreateAccessCodeRequest, CreateAccessCodeResponse>
-     */
-    public AsyncInvoker<CreateAccessCodeRequest, CreateAccessCodeResponse> createAccessCodeAsyncInvoker(CreateAccessCodeRequest request) {
-        return new AsyncInvoker<CreateAccessCodeRequest, CreateAccessCodeResponse>(request, IoTEdgeMeta.createAccessCode, hcClient);
-    }
-
-    /**
      * 删除设备
      *
      * 删除设备
@@ -350,36 +290,6 @@ public class IoTEdgeAsyncClient {
     }
 
     /**
-     * 获取协议映射文件
-     *
-     * 获取协议映射文件
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param ShowProtocolMappingsRequest 请求对象
-     * @return CompletableFuture<ShowProtocolMappingsResponse>
-     */
-    public CompletableFuture<ShowProtocolMappingsResponse> showProtocolMappingsAsync(ShowProtocolMappingsRequest request) {
-        return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.showProtocolMappings);
-    }
-
-    /**
-     * 获取协议映射文件
-     *
-     * 获取协议映射文件
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param ShowProtocolMappingsRequest 请求对象
-     * @return AsyncInvoker<ShowProtocolMappingsRequest, ShowProtocolMappingsResponse>
-     */
-    public AsyncInvoker<ShowProtocolMappingsRequest, ShowProtocolMappingsResponse> showProtocolMappingsAsyncInvoker(ShowProtocolMappingsRequest request) {
-        return new AsyncInvoker<ShowProtocolMappingsRequest, ShowProtocolMappingsResponse>(request, IoTEdgeMeta.showProtocolMappings, hcClient);
-    }
-
-    /**
      * 修改设备
      *
      * 修改设备
@@ -407,36 +317,6 @@ public class IoTEdgeAsyncClient {
      */
     public AsyncInvoker<UpdateDeviceRequest, UpdateDeviceResponse> updateDeviceAsyncInvoker(UpdateDeviceRequest request) {
         return new AsyncInvoker<UpdateDeviceRequest, UpdateDeviceResponse>(request, IoTEdgeMeta.updateDevice, hcClient);
-    }
-
-    /**
-     * 上传协议映射文件
-     *
-     * 上传协议映射文件
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param UploadProtocolMappingsRequest 请求对象
-     * @return CompletableFuture<UploadProtocolMappingsResponse>
-     */
-    public CompletableFuture<UploadProtocolMappingsResponse> uploadProtocolMappingsAsync(UploadProtocolMappingsRequest request) {
-        return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.uploadProtocolMappings);
-    }
-
-    /**
-     * 上传协议映射文件
-     *
-     * 上传协议映射文件
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param UploadProtocolMappingsRequest 请求对象
-     * @return AsyncInvoker<UploadProtocolMappingsRequest, UploadProtocolMappingsResponse>
-     */
-    public AsyncInvoker<UploadProtocolMappingsRequest, UploadProtocolMappingsResponse> uploadProtocolMappingsAsyncInvoker(UploadProtocolMappingsRequest request) {
-        return new AsyncInvoker<UploadProtocolMappingsRequest, UploadProtocolMappingsResponse>(request, IoTEdgeMeta.uploadProtocolMappings, hcClient);
     }
 
     /**
@@ -827,36 +707,6 @@ public class IoTEdgeAsyncClient {
      */
     public AsyncInvoker<ListExternalEntityRequest, ListExternalEntityResponse> listExternalEntityAsyncInvoker(ListExternalEntityRequest request) {
         return new AsyncInvoker<ListExternalEntityRequest, ListExternalEntityResponse>(request, IoTEdgeMeta.listExternalEntity, hcClient);
-    }
-
-    /**
-     * 查询指定节点下指定外部实体的详情
-     *
-     * 查询指定节点下指定外部实体的详情
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param ShowExternalEntityRequest 请求对象
-     * @return CompletableFuture<ShowExternalEntityResponse>
-     */
-    public CompletableFuture<ShowExternalEntityResponse> showExternalEntityAsync(ShowExternalEntityRequest request) {
-        return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.showExternalEntity);
-    }
-
-    /**
-     * 查询指定节点下指定外部实体的详情
-     *
-     * 查询指定节点下指定外部实体的详情
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param ShowExternalEntityRequest 请求对象
-     * @return AsyncInvoker<ShowExternalEntityRequest, ShowExternalEntityResponse>
-     */
-    public AsyncInvoker<ShowExternalEntityRequest, ShowExternalEntityResponse> showExternalEntityAsyncInvoker(ShowExternalEntityRequest request) {
-        return new AsyncInvoker<ShowExternalEntityRequest, ShowExternalEntityResponse>(request, IoTEdgeMeta.showExternalEntity, hcClient);
     }
 
     /**

@@ -41,6 +41,13 @@ public class UpdateEdgeApplicationVersionStateResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="sdk_version")
+    
+    
+    private String sdkVersion;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
     
@@ -52,6 +59,13 @@ public class UpdateEdgeApplicationVersionStateResponse extends SdkResponse {
     
     
     private String deployType;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="deploy_multi_instance")
+    
+    
+    private Boolean deployMultiInstance;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -223,6 +237,28 @@ public class UpdateEdgeApplicationVersionStateResponse extends SdkResponse {
 
     
 
+    public UpdateEdgeApplicationVersionStateResponse withSdkVersion(String sdkVersion) {
+        this.sdkVersion = sdkVersion;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 应用集成的边缘升得快版本
+     * @return sdkVersion
+     */
+    public String getSdkVersion() {
+        return sdkVersion;
+    }
+
+    public void setSdkVersion(String sdkVersion) {
+        this.sdkVersion = sdkVersion;
+    }
+
+    
+
     public UpdateEdgeApplicationVersionStateResponse withDescription(String description) {
         this.description = description;
         return this;
@@ -263,6 +299,28 @@ public class UpdateEdgeApplicationVersionStateResponse extends SdkResponse {
 
     public void setDeployType(String deployType) {
         this.deployType = deployType;
+    }
+
+    
+
+    public UpdateEdgeApplicationVersionStateResponse withDeployMultiInstance(Boolean deployMultiInstance) {
+        this.deployMultiInstance = deployMultiInstance;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 是否允许部署多实例
+     * @return deployMultiInstance
+     */
+    public Boolean getDeployMultiInstance() {
+        return deployMultiInstance;
+    }
+
+    public void setDeployMultiInstance(Boolean deployMultiInstance) {
+        this.deployMultiInstance = deployMultiInstance;
     }
 
     
@@ -424,8 +482,10 @@ public class UpdateEdgeApplicationVersionStateResponse extends SdkResponse {
         UpdateEdgeApplicationVersionStateResponse updateEdgeApplicationVersionStateResponse = (UpdateEdgeApplicationVersionStateResponse) o;
         return Objects.equals(this.edgeAppId, updateEdgeApplicationVersionStateResponse.edgeAppId) &&
             Objects.equals(this.version, updateEdgeApplicationVersionStateResponse.version) &&
+            Objects.equals(this.sdkVersion, updateEdgeApplicationVersionStateResponse.sdkVersion) &&
             Objects.equals(this.description, updateEdgeApplicationVersionStateResponse.description) &&
             Objects.equals(this.deployType, updateEdgeApplicationVersionStateResponse.deployType) &&
+            Objects.equals(this.deployMultiInstance, updateEdgeApplicationVersionStateResponse.deployMultiInstance) &&
             Objects.equals(this.createTime, updateEdgeApplicationVersionStateResponse.createTime) &&
             Objects.equals(this.updateTime, updateEdgeApplicationVersionStateResponse.updateTime) &&
             Objects.equals(this.state, updateEdgeApplicationVersionStateResponse.state) &&
@@ -435,7 +495,7 @@ public class UpdateEdgeApplicationVersionStateResponse extends SdkResponse {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(edgeAppId, version, description, deployType, createTime, updateTime, state, arch, publishTime, offShelfTime);
+        return Objects.hash(edgeAppId, version, sdkVersion, description, deployType, deployMultiInstance, createTime, updateTime, state, arch, publishTime, offShelfTime);
     }
     @Override
     public String toString() {
@@ -443,8 +503,10 @@ public class UpdateEdgeApplicationVersionStateResponse extends SdkResponse {
         sb.append("class UpdateEdgeApplicationVersionStateResponse {\n");
         sb.append("    edgeAppId: ").append(toIndentedString(edgeAppId)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
+        sb.append("    sdkVersion: ").append(toIndentedString(sdkVersion)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    deployType: ").append(toIndentedString(deployType)).append("\n");
+        sb.append("    deployMultiInstance: ").append(toIndentedString(deployMultiInstance)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    state: ").append(toIndentedString(state)).append("\n");

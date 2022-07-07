@@ -26,7 +26,7 @@ public class StartKibanaPublicReqElbWhitelist {
     }
 
     /**
-     * 开启白名单。
+     * 是否开启白名单。 - true: 开启白名单。 - false: 关闭白名单。
      * @return enableWhiteList
      */
     public Boolean getEnableWhiteList() {

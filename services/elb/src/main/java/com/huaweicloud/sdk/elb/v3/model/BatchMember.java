@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.elb.v3.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 批量创建后端服务器响应参数
@@ -56,6 +59,11 @@ public class BatchMember {
     private String operatingStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status")
+
+    private List<MemberStatus> status = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "member_type")
 
     private String memberType;
@@ -81,7 +89,7 @@ public class BatchMember {
     }
 
     /**
-     * 后端服务器ID。
+     * 后端服务器ID。 >说明： 此处并非ECS服务器的ID，而是ELB为绑定的后端服务器自动生成的member ID。
      * @return id
      */
     public String getId() {
@@ -149,7 +157,7 @@ public class BatchMember {
     }
 
     /**
-     * 后端云服务器所在子网的IPv4子网ID或IPv6子网ID。  若所属的LB的跨VPC后端转发特性已开启，则该字段可以不传，表示添加跨VPC的后端服务器。此时address必须为IPv4地址，所在的pool的协议必须为TCP/HTTP/HTTPS。  使用说明： - 该子网和关联的负载均衡器的子网必须在同一VPC下。 [不支持IPv6，请勿设置为IPv6子网ID。](tag:dt,dt_test)
+     * 后端云服务器所在子网的IPv4子网ID或IPv6子网ID。   若所属的LB的跨VPC后端转发特性已开启，则该字段可以不传，表示添加跨VPC的后端服务器。此时address必须为IPv4地址，所在的pool的协议必须为TCP/HTTP/HTTPS。   使用说明：  - 该子网和关联的负载均衡器的子网必须在同一VPC下。  [不支持IPv6，请勿设置为IPv6子网ID。](tag:dt,dt_test)
      * @return subnetCidrId
      */
     public String getSubnetCidrId() {
@@ -185,7 +193,7 @@ public class BatchMember {
     }
 
     /**
-     * 后端云服务器的权重，请求将根据pool配置的负载均衡算法和后端云服务器的权重进行负载分发。权重值越大，分发的请求越多。权重为0的后端不再接受新的请求。 取值：0-100，默认1。 使用说明：  - 若所在pool的lb_algorithm取值为SOURCE_IP，该字段无效。
+     * 后端云服务器的权重，请求将根据pool配置的负载均衡算法和后端云服务器的权重进行负载分发。权重值越大，分发的请求越多。权重为0的后端不再接受新的请求。  取值：0-100，默认1。  使用说明：   - 若所在pool的lb_algorithm取值为SOURCE_IP，该字段无效。
      * minimum: 0
      * maximum: 100
      * @return weight
@@ -204,7 +212,7 @@ public class BatchMember {
     }
 
     /**
-     * 后端服务器对应的IP地址。 使用说明：  - 若subnet_cidr_id为空，表示添加跨VPC后端，此时address必须为IPv4地址。  - 若subnet_cidr_id不为空，表示是一个关联到ECS的后端服务器。该IP地址可以是IPv4或IPv6。但必须在subnet_cidr_id对应的子网网段中。且只能指定为关联ECS的主网卡IP。 [不支持IPv6，请勿设置为IPv6地址。](tag:dt,dt_test)
+     * 后端服务器对应的IP地址。  使用说明：  - 若subnet_cidr_id为空，表示添加跨VPC后端，此时address必须为IPv4地址。  - 若subnet_cidr_id不为空，表示是一个关联到ECS的后端服务器。该IP地址可以是IPv4或IPv6。但必须在subnet_cidr_id对应的子网网段中。且只能指定为关联ECS的主网卡IP。  [不支持IPv6，请勿设置为IPv6地址。](tag:dt,dt_test)
      * @return address
      */
     public String getAddress() {
@@ -230,6 +238,39 @@ public class BatchMember {
 
     public void setOperatingStatus(String operatingStatus) {
         this.operatingStatus = operatingStatus;
+    }
+
+    public BatchMember withStatus(List<MemberStatus> status) {
+        this.status = status;
+        return this;
+    }
+
+    public BatchMember addStatusItem(MemberStatus statusItem) {
+        if (this.status == null) {
+            this.status = new ArrayList<>();
+        }
+        this.status.add(statusItem);
+        return this;
+    }
+
+    public BatchMember withStatus(Consumer<List<MemberStatus>> statusSetter) {
+        if (this.status == null) {
+            this.status = new ArrayList<>();
+        }
+        statusSetter.accept(this.status);
+        return this;
+    }
+
+    /**
+     * 后端云服务器监听器粒度的的健康状态。 若绑定的监听器在该字段中，则以该字段中监听器对应的operating_stauts为准。 若绑定的监听器不在该字段中，则以外层的operating_status为准。
+     * @return status
+     */
+    public List<MemberStatus> getStatus() {
+        return status;
+    }
+
+    public void setStatus(List<MemberStatus> status) {
+        this.status = status;
     }
 
     public BatchMember withMemberType(String memberType) {
@@ -316,6 +357,7 @@ public class BatchMember {
             && Objects.equals(this.protocolPort, batchMember.protocolPort)
             && Objects.equals(this.weight, batchMember.weight) && Objects.equals(this.address, batchMember.address)
             && Objects.equals(this.operatingStatus, batchMember.operatingStatus)
+            && Objects.equals(this.status, batchMember.status)
             && Objects.equals(this.memberType, batchMember.memberType)
             && Objects.equals(this.instanceId, batchMember.instanceId)
             && Objects.equals(this.portId, batchMember.portId) && Objects.equals(this.retStatus, batchMember.retStatus);
@@ -332,6 +374,7 @@ public class BatchMember {
             weight,
             address,
             operatingStatus,
+            status,
             memberType,
             instanceId,
             portId,
@@ -351,6 +394,7 @@ public class BatchMember {
         sb.append("    weight: ").append(toIndentedString(weight)).append("\n");
         sb.append("    address: ").append(toIndentedString(address)).append("\n");
         sb.append("    operatingStatus: ").append(toIndentedString(operatingStatus)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    memberType: ").append(toIndentedString(memberType)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    portId: ").append(toIndentedString(portId)).append("\n");

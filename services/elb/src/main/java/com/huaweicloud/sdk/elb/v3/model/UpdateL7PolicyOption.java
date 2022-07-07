@@ -58,6 +58,11 @@ public class UpdateL7PolicyOption {
 
     private Integer priority;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "redirect_pools_config")
+
+    private List<CreateRedirectPoolsConfig> redirectPoolsConfig = null;
+
     public UpdateL7PolicyOption withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
@@ -132,7 +137,7 @@ public class UpdateL7PolicyOption {
     }
 
     /**
-     * 转发到pool的ID。  使用说明：  - 指定的pool不能是listener的default_pool。不能是其他listener的l7policy使用的pool。  - 当action为REDIRECT_TO_POOL时为必选字段，不能更新为空或null。当action为REDIRECT_TO_LISTENER时，不可指定。
+     * 转发到pool的ID。   使用说明：  - 指定的pool不能是listener的default_pool。不能是其他listener的l7policy使用的pool。  - 当action为REDIRECT_TO_POOL时为必选字段，不能更新为空或null。当action为REDIRECT_TO_LISTENER时，不可指定。
      * @return redirectPoolId
      */
     public String getRedirectPoolId() {
@@ -235,7 +240,7 @@ public class UpdateL7PolicyOption {
     }
 
     /**
-     * 转发策略的优先级。当监听器的高级转发策略功能（enhance_l7policy_enable）开启后才会生效，未开启传入该字段会报错。[共享型负载均衡器下的转发策略不支持该字段](tag:hws,hws_hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42,dt,dt_test)  数字越小表示优先级越高，同一监听器下不允许重复。  当action为REDIRECT_TO_LISTENER时，仅支持指定为0，优先级最高。 当关联的listener没有开启enhance_l7policy_enable，按原有policy的排序逻辑，自动排序。各域名之间优先级独立，相同域名下，按path的compare_type排序，精确>前缀>正则，匹配类型相同时，path的长度越长优先级越高。若policy下只有域名rule，没有路径rule，默认path为前缀匹配/。 当关联的listener开启了enhance_l7policy_enable，且不传该字段，则新创建的转发策略的优先级的值为：同一监听器下已有转发策略的优先级的最大值+1。因此，若当前已有转发策略的优先级的最大值是10000，新创建会因超出取值范围10000而失败。此时可通过传入指定priority，或调整原有policy的优先级来避免错误。若监听器下没有转发策略，则新建的转发策略的优先级为1。 [不支持该字段，请勿使用。](tag:dt,dt_test)
+     * 转发策略的优先级。共享型实例该字段无意义。当监听器的高级转发策略功能（enhance_l7policy_enable）开启后才会生效，未开启传入该字段会报错。共享型负载均衡器下的转发策略不支持该字段。   数字越小表示优先级越高，同一监听器下不允许重复。   当action为REDIRECT_TO_LISTENER时，仅支持指定为0，优先级最高。   当关联的listener没有开启enhance_l7policy_enable，按原有policy的排序逻辑，自动排序。各域名之间优先级独立，相同域名下，按path的compare_type排序，精确>前缀>正则，匹配类型相同时，path的长度越长优先级越高。若policy下只有域名rule，没有路径rule，默认path为前缀匹配/。  当关联的listener开启了enhance_l7policy_enable，且不传该字段，则新创建的转发策略的优先级的值为：同一监听器下已有转发策略的优先级的最大值+1。因此，若当前已有转发策略的优先级的最大值是10000，新创建会因超出取值范围10000而失败。此时可通过传入指定priority，或调整原有policy的优先级来避免错误。若监听器下没有转发策略，则新建的转发策略的优先级为1。 [ 不支持该字段，请勿使用。](tag:dt,dt_test)
      * minimum: 0
      * maximum: 10000
      * @return priority
@@ -246,6 +251,40 @@ public class UpdateL7PolicyOption {
 
     public void setPriority(Integer priority) {
         this.priority = priority;
+    }
+
+    public UpdateL7PolicyOption withRedirectPoolsConfig(List<CreateRedirectPoolsConfig> redirectPoolsConfig) {
+        this.redirectPoolsConfig = redirectPoolsConfig;
+        return this;
+    }
+
+    public UpdateL7PolicyOption addRedirectPoolsConfigItem(CreateRedirectPoolsConfig redirectPoolsConfigItem) {
+        if (this.redirectPoolsConfig == null) {
+            this.redirectPoolsConfig = new ArrayList<>();
+        }
+        this.redirectPoolsConfig.add(redirectPoolsConfigItem);
+        return this;
+    }
+
+    public UpdateL7PolicyOption withRedirectPoolsConfig(
+        Consumer<List<CreateRedirectPoolsConfig>> redirectPoolsConfigSetter) {
+        if (this.redirectPoolsConfig == null) {
+            this.redirectPoolsConfig = new ArrayList<>();
+        }
+        redirectPoolsConfigSetter.accept(this.redirectPoolsConfig);
+        return this;
+    }
+
+    /**
+     * 转发到的后端主机组的配置。当action为REDIRECT_TO_POOL时生效。   使用说明：   当action为REDIRECT_TO_POOL时redirect_pool_id和redirect_pools_config必须指定一个，两个都指定时按redirect_pools_config生效。  当action为REDIRECT_TO_LISTENER时，不可指定。  只支持全量覆盖。
+     * @return redirectPoolsConfig
+     */
+    public List<CreateRedirectPoolsConfig> getRedirectPoolsConfig() {
+        return redirectPoolsConfig;
+    }
+
+    public void setRedirectPoolsConfig(List<CreateRedirectPoolsConfig> redirectPoolsConfig) {
+        this.redirectPoolsConfig = redirectPoolsConfig;
     }
 
     @Override
@@ -265,7 +304,8 @@ public class UpdateL7PolicyOption {
             && Objects.equals(this.redirectUrlConfig, updateL7PolicyOption.redirectUrlConfig)
             && Objects.equals(this.fixedResponseConfig, updateL7PolicyOption.fixedResponseConfig)
             && Objects.equals(this.rules, updateL7PolicyOption.rules)
-            && Objects.equals(this.priority, updateL7PolicyOption.priority);
+            && Objects.equals(this.priority, updateL7PolicyOption.priority)
+            && Objects.equals(this.redirectPoolsConfig, updateL7PolicyOption.redirectPoolsConfig);
     }
 
     @Override
@@ -278,7 +318,8 @@ public class UpdateL7PolicyOption {
             redirectUrlConfig,
             fixedResponseConfig,
             rules,
-            priority);
+            priority,
+            redirectPoolsConfig);
     }
 
     @Override
@@ -294,6 +335,7 @@ public class UpdateL7PolicyOption {
         sb.append("    fixedResponseConfig: ").append(toIndentedString(fixedResponseConfig)).append("\n");
         sb.append("    rules: ").append(toIndentedString(rules)).append("\n");
         sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
+        sb.append("    redirectPoolsConfig: ").append(toIndentedString(redirectPoolsConfig)).append("\n");
         sb.append("}");
         return sb.toString();
     }

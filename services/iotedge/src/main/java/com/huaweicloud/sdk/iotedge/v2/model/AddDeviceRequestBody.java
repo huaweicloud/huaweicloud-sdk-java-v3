@@ -207,7 +207,7 @@ public class AddDeviceRequestBody  {
 
 
     /**
-     * 父设备ID，用于标识设备所属的父设备。携带该参数时，表示在该父设备下创建一个子设备，这个子设备不与平台直连，此时必须保证这个父设备在平台已存在，创建成功后子设备的gateway_id等于该参数值；不携带该参数时，表示创建一个和平台直连的设备，创建成功后设备的device_id和gateway_id一致。
+     * 父设备ID，用于标识设备所属的父设备。创建网关直连设备时，不携带该参数；在网关直连设备下创建子设备时，携带该参数，参数值为父设备ID。
      * @return gatewayId
      */
     public String getGatewayId() {
@@ -251,7 +251,7 @@ public class AddDeviceRequestBody  {
 
 
     /**
-     * 设备扩展信息。用户可以自定义任何想要的扩展信息，如果在创建设备时为子设备指定该字段，将会通过MQTT接口“平台通知网关子设备新增“将该信息通知给网关。字段值大小上限为1K。
+     * 设备扩展信息。用户可以自定义任何想要的扩展信息，如果在创建设备时为子设备指定该字段，将会通过MQTT接口“平台通知网关子设备新增“将该信息通知给网关。字段值大小上限为1K。 追加：如果通过EdgeHub, EdgeAccess进行设备接入，不需要携带extension_info；如果通过用户自定义的应用进行边缘设备接入，则携带模块id参数作为extension_info, 例如：{\\\"module_id\":\\\"user_xxx\"}
      * @return extensionInfo
      */
     public Object getExtensionInfo() {
@@ -273,7 +273,7 @@ public class AddDeviceRequestBody  {
 
 
     /**
-     * 设备初始配置。用户使用该字段可以为设备指定初始配置，指定后将会根据service_id和desired设置的属性值与产品中对应属性的默认值比对，如果不同，则将以设置的属性值为准写入到设备配置中。
+     * 设备初始配置。用户使用该字段可以为设备指定初始配置，指定后将会根据service_id和desired设置的属性值与产品中对应属性的默认值比对，如果不同，则将以设置的属性值为准写入到设备配置中。例如连接MQTT设备，配置接入平台密码，携带该参数{\\\"password\":\\\"xxxxxxxx\"}
      * @return config
      */
     public Object getConfig() {

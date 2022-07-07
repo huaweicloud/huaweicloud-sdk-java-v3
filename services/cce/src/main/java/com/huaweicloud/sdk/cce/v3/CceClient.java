@@ -256,7 +256,6 @@ public class CceClient {
      * 该API用于在指定集群下创建节点池。仅支持集群在处于可用、扩容、缩容状态时调用。1.21版本的集群创建节点池时支持绑定安全组，每个节点池最多绑定五个安全组。更新节点池的安全组后，只针对新创的pod生效，建议驱逐节点上原有的pod。
      * 
      * &gt; 若无集群，请先[创建集群](cce_02_0236.xml)。
-     * 
      * &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径
      * 
      * 详细说明请参考华为云API Explorer。
@@ -275,7 +274,6 @@ public class CceClient {
      * 该API用于在指定集群下创建节点池。仅支持集群在处于可用、扩容、缩容状态时调用。1.21版本的集群创建节点池时支持绑定安全组，每个节点池最多绑定五个安全组。更新节点池的安全组后，只针对新创的pod生效，建议驱逐节点上原有的pod。
      * 
      * &gt; 若无集群，请先[创建集群](cce_02_0236.xml)。
-     * 
      * &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径
      * 
      * 详细说明请参考华为云API Explorer。
@@ -810,6 +808,40 @@ public class CceClient {
     }
 
     /**
+     * 获取集群访问的地址
+     *
+     * 该API用于通过集群ID获取集群访问的地址，包括PrivateIP(HA集群返回VIP)与PublicIP
+     * &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowClusterEndpointsRequest 请求对象
+     * @return ShowClusterEndpointsResponse
+     */
+    public ShowClusterEndpointsResponse showClusterEndpoints(ShowClusterEndpointsRequest request) {
+        return hcClient.syncInvokeHttp(request, CceMeta.showClusterEndpoints);
+    }
+
+    /**
+     * 获取集群访问的地址
+     *
+     * 该API用于通过集群ID获取集群访问的地址，包括PrivateIP(HA集群返回VIP)与PublicIP
+     * &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowClusterEndpointsRequest 请求对象
+     * @return SyncInvoker<ShowClusterEndpointsRequest, ShowClusterEndpointsResponse>
+     */
+    public SyncInvoker<ShowClusterEndpointsRequest, ShowClusterEndpointsResponse> showClusterEndpointsInvoker(
+        ShowClusterEndpointsRequest request) {
+        return new SyncInvoker<ShowClusterEndpointsRequest, ShowClusterEndpointsResponse>(request,
+            CceMeta.showClusterEndpoints, hcClient);
+    }
+
+    /**
      * 获取任务信息
      *
      * 该API用于获取任务信息。通过某一任务请求下发后返回的jobID来查询指定任务的进度。
@@ -912,7 +944,7 @@ public class CceClient {
     }
 
     /**
-     * 查询CCE服务下的资源配额。
+     * 查询CCE服务下的资源配额
      *
      * 该API用于查询CCE服务下的资源配额。
      * 
@@ -927,7 +959,7 @@ public class CceClient {
     }
 
     /**
-     * 查询CCE服务下的资源配额。
+     * 查询CCE服务下的资源配额
      *
      * 该API用于查询CCE服务下的资源配额。
      * 
@@ -1006,6 +1038,40 @@ public class CceClient {
     }
 
     /**
+     * 绑定、解绑集群公网apiserver地址
+     *
+     * 该API用于通过集群ID绑定、解绑集群公网apiserver地址
+     * &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateClusterEipRequest 请求对象
+     * @return UpdateClusterEipResponse
+     */
+    public UpdateClusterEipResponse updateClusterEip(UpdateClusterEipRequest request) {
+        return hcClient.syncInvokeHttp(request, CceMeta.updateClusterEip);
+    }
+
+    /**
+     * 绑定、解绑集群公网apiserver地址
+     *
+     * 该API用于通过集群ID绑定、解绑集群公网apiserver地址
+     * &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateClusterEipRequest 请求对象
+     * @return SyncInvoker<UpdateClusterEipRequest, UpdateClusterEipResponse>
+     */
+    public SyncInvoker<UpdateClusterEipRequest, UpdateClusterEipResponse> updateClusterEipInvoker(
+        UpdateClusterEipRequest request) {
+        return new SyncInvoker<UpdateClusterEipRequest, UpdateClusterEipResponse>(request, CceMeta.updateClusterEip,
+            hcClient);
+    }
+
+    /**
      * 更新指定的节点
      *
      * 该API用于更新指定的节点。
@@ -1045,9 +1111,7 @@ public class CceClient {
      * 该API用于更新指定的节点池。仅支持集群在处于可用、扩容、缩容状态时调用。
      * 
      * &gt; - 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径
-     * 
-     * &gt; - 当前仅支持更新节点池名称，spec下的initialNodeCount，k8sTags，
-     * taints，login，userTags与节点池的扩缩容配置相关字段。若此次更新未设置相关值，默认更新为初始值。
+     * &gt; - 当前仅支持更新节点池名称，spec下的initialNodeCount，k8sTags，taints，login，userTags与节点池的扩缩容配置相关字段。若此次更新未设置相关值，默认更新为初始值。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1065,9 +1129,7 @@ public class CceClient {
      * 该API用于更新指定的节点池。仅支持集群在处于可用、扩容、缩容状态时调用。
      * 
      * &gt; - 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径
-     * 
-     * &gt; - 当前仅支持更新节点池名称，spec下的initialNodeCount，k8sTags，
-     * taints，login，userTags与节点池的扩缩容配置相关字段。若此次更新未设置相关值，默认更新为初始值。
+     * &gt; - 当前仅支持更新节点池名称，spec下的initialNodeCount，k8sTags，taints，login，userTags与节点池的扩缩容配置相关字段。若此次更新未设置相关值，默认更新为初始值。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1079,6 +1141,36 @@ public class CceClient {
         UpdateNodePoolRequest request) {
         return new SyncInvoker<UpdateNodePoolRequest, UpdateNodePoolResponse>(request, CceMeta.updateNodePool,
             hcClient);
+    }
+
+    /**
+     * 查询API版本信息列表。
+     *
+     * 该API用于查询CCE服务当前支持的API版本信息列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowVersionRequest 请求对象
+     * @return ShowVersionResponse
+     */
+    public ShowVersionResponse showVersion(ShowVersionRequest request) {
+        return hcClient.syncInvokeHttp(request, CceMeta.showVersion);
+    }
+
+    /**
+     * 查询API版本信息列表。
+     *
+     * 该API用于查询CCE服务当前支持的API版本信息列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowVersionRequest 请求对象
+     * @return SyncInvoker<ShowVersionRequest, ShowVersionResponse>
+     */
+    public SyncInvoker<ShowVersionRequest, ShowVersionResponse> showVersionInvoker(ShowVersionRequest request) {
+        return new SyncInvoker<ShowVersionRequest, ShowVersionResponse>(request, CceMeta.showVersion, hcClient);
     }
 
 }

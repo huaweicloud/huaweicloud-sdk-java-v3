@@ -36,6 +36,13 @@ public class CreateEdgeApplicationVersionDTO  {
     
     
     private String description;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="sdk_version")
+    
+    
+    private String sdkVersion;
     /**
      * 应用部署类型，分为docker容器部署类型和process进程部署类型，兼容之前数据，此字段可以为空，为空情况为docker类型
      */
@@ -121,6 +128,13 @@ public class CreateEdgeApplicationVersionDTO  {
     
     
     private DeployTypeEnum deployType;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="deploy_multi_instance")
+    
+    
+    private Boolean deployMultiInstance;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -229,6 +243,28 @@ public class CreateEdgeApplicationVersionDTO  {
 
     
 
+    public CreateEdgeApplicationVersionDTO withSdkVersion(String sdkVersion) {
+        this.sdkVersion = sdkVersion;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 应用集成的边缘升得快版本
+     * @return sdkVersion
+     */
+    public String getSdkVersion() {
+        return sdkVersion;
+    }
+
+    public void setSdkVersion(String sdkVersion) {
+        this.sdkVersion = sdkVersion;
+    }
+
+    
+
     public CreateEdgeApplicationVersionDTO withDeployType(DeployTypeEnum deployType) {
         this.deployType = deployType;
         return this;
@@ -247,6 +283,28 @@ public class CreateEdgeApplicationVersionDTO  {
 
     public void setDeployType(DeployTypeEnum deployType) {
         this.deployType = deployType;
+    }
+
+    
+
+    public CreateEdgeApplicationVersionDTO withDeployMultiInstance(Boolean deployMultiInstance) {
+        this.deployMultiInstance = deployMultiInstance;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 是否允许部署多实例
+     * @return deployMultiInstance
+     */
+    public Boolean getDeployMultiInstance() {
+        return deployMultiInstance;
+    }
+
+    public void setDeployMultiInstance(Boolean deployMultiInstance) {
+        this.deployMultiInstance = deployMultiInstance;
     }
 
     
@@ -481,7 +539,9 @@ public class CreateEdgeApplicationVersionDTO  {
         CreateEdgeApplicationVersionDTO createEdgeApplicationVersionDTO = (CreateEdgeApplicationVersionDTO) o;
         return Objects.equals(this.version, createEdgeApplicationVersionDTO.version) &&
             Objects.equals(this.description, createEdgeApplicationVersionDTO.description) &&
+            Objects.equals(this.sdkVersion, createEdgeApplicationVersionDTO.sdkVersion) &&
             Objects.equals(this.deployType, createEdgeApplicationVersionDTO.deployType) &&
+            Objects.equals(this.deployMultiInstance, createEdgeApplicationVersionDTO.deployMultiInstance) &&
             Objects.equals(this.containerSettings, createEdgeApplicationVersionDTO.containerSettings) &&
             Objects.equals(this.livenessProbe, createEdgeApplicationVersionDTO.livenessProbe) &&
             Objects.equals(this.readinessProbe, createEdgeApplicationVersionDTO.readinessProbe) &&
@@ -494,7 +554,7 @@ public class CreateEdgeApplicationVersionDTO  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(version, description, deployType, containerSettings, livenessProbe, readinessProbe, arch, command, args, outputs, inputs, services);
+        return Objects.hash(version, description, sdkVersion, deployType, deployMultiInstance, containerSettings, livenessProbe, readinessProbe, arch, command, args, outputs, inputs, services);
     }
     @Override
     public String toString() {
@@ -502,7 +562,9 @@ public class CreateEdgeApplicationVersionDTO  {
         sb.append("class CreateEdgeApplicationVersionDTO {\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    sdkVersion: ").append(toIndentedString(sdkVersion)).append("\n");
         sb.append("    deployType: ").append(toIndentedString(deployType)).append("\n");
+        sb.append("    deployMultiInstance: ").append(toIndentedString(deployMultiInstance)).append("\n");
         sb.append("    containerSettings: ").append(toIndentedString(containerSettings)).append("\n");
         sb.append("    livenessProbe: ").append(toIndentedString(livenessProbe)).append("\n");
         sb.append("    readinessProbe: ").append(toIndentedString(readinessProbe)).append("\n");

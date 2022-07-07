@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 预定义标签对象。
+ * 系统标签对象。
  */
 public class SysTags {
 

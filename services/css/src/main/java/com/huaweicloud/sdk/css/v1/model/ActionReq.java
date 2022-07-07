@@ -21,7 +21,7 @@ public class ActionReq {
     }
 
     /**
-     * 集群当前行为。REBOOTING表示重启、GROWING表示扩容、RESTORING表示恢复集群、SNAPSHOTTING表示创建快照。
+     * 集群当前行为。REBOOTING表示重启、GROWING表示扩容、RESTORING表示恢复集群、SNAPSHOTTING表示创建快照。当集群没有任何操作时该值为空。
      * @return action
      */
     public String getAction() {

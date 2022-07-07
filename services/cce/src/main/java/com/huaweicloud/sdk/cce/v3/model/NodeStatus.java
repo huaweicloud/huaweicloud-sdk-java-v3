@@ -156,6 +156,11 @@ public class NodeStatus {
     private String privateIP;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "privateIPv6IP")
+
+    private String privateIPv6IP;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publicIP")
 
     private String publicIP;
@@ -233,6 +238,23 @@ public class NodeStatus {
         this.privateIP = privateIP;
     }
 
+    public NodeStatus withPrivateIPv6IP(String privateIPv6IP) {
+        this.privateIPv6IP = privateIPv6IP;
+        return this;
+    }
+
+    /**
+     * 节点主网卡私有网段IPv6地址。
+     * @return privateIPv6IP
+     */
+    public String getPrivateIPv6IP() {
+        return privateIPv6IP;
+    }
+
+    public void setPrivateIPv6IP(String privateIPv6IP) {
+        this.privateIPv6IP = privateIPv6IP;
+    }
+
     public NodeStatus withPublicIP(String publicIP) {
         this.publicIP = publicIP;
         return this;
@@ -288,13 +310,14 @@ public class NodeStatus {
         return Objects.equals(this.phase, nodeStatus.phase) && Objects.equals(this.jobID, nodeStatus.jobID)
             && Objects.equals(this.serverId, nodeStatus.serverId)
             && Objects.equals(this.privateIP, nodeStatus.privateIP)
+            && Objects.equals(this.privateIPv6IP, nodeStatus.privateIPv6IP)
             && Objects.equals(this.publicIP, nodeStatus.publicIP)
             && Objects.equals(this.deleteStatus, nodeStatus.deleteStatus);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(phase, jobID, serverId, privateIP, publicIP, deleteStatus);
+        return Objects.hash(phase, jobID, serverId, privateIP, privateIPv6IP, publicIP, deleteStatus);
     }
 
     @Override
@@ -305,6 +328,7 @@ public class NodeStatus {
         sb.append("    jobID: ").append(toIndentedString(jobID)).append("\n");
         sb.append("    serverId: ").append(toIndentedString(serverId)).append("\n");
         sb.append("    privateIP: ").append(toIndentedString(privateIP)).append("\n");
+        sb.append("    privateIPv6IP: ").append(toIndentedString(privateIPv6IP)).append("\n");
         sb.append("    publicIP: ").append(toIndentedString(publicIP)).append("\n");
         sb.append("    deleteStatus: ").append(toIndentedString(deleteStatus)).append("\n");
         sb.append("}");

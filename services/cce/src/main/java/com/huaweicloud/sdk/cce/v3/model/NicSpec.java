@@ -34,7 +34,7 @@ public class NicSpec {
     }
 
     /**
-     * 网卡所在子网的ID。  
+     * 网卡所在子网的ID。主网卡创建时若未指定subnetId,将使用集群子网。拓展网卡创建时必须指定subnetId。  
      * @return subnetId
      */
     public String getSubnetId() {
@@ -84,7 +84,7 @@ public class NicSpec {
     }
 
     /**
-     * IP段的CIDR格式，创建的节点IP将属于该IP段内。fixedIps或ipBlock同时只能指定一个。
+     * 主网卡的IP段的CIDR格式，创建的节点IP将属于该IP段内。fixedIps或ipBlock同时只能指定一个。
      * @return ipBlock
      */
     public String getIpBlock() {

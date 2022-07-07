@@ -578,6 +578,36 @@ public class RmsAsyncClient {
     }
 
     /**
+     * 列举高级查询Schema
+     *
+     * List Schemas
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListSchemasRequest 请求对象
+     * @return CompletableFuture<ListSchemasResponse>
+     */
+    public CompletableFuture<ListSchemasResponse> listSchemasAsync(ListSchemasRequest request) {
+        return hcClient.asyncInvokeHttp(request, RmsMeta.listSchemas);
+    }
+
+    /**
+     * 列举高级查询Schema
+     *
+     * List Schemas
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListSchemasRequest 请求对象
+     * @return AsyncInvoker<ListSchemasRequest, ListSchemasResponse>
+     */
+    public AsyncInvoker<ListSchemasRequest, ListSchemasResponse> listSchemasAsyncInvoker(ListSchemasRequest request) {
+        return new AsyncInvoker<ListSchemasRequest, ListSchemasResponse>(request, RmsMeta.listSchemas, hcClient);
+    }
+
+    /**
      * 列出高级查询
      *
      * 列举所有高级查询

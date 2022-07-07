@@ -137,7 +137,7 @@ public class ListL7RulesRequest {
     }
 
     /**
-     * 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。  使用说明： - 必须与limit一起使用。
+     * 是否反向查询，取值： - true：查询上一页。 - false：查询下一页，默认。  使用说明： - 必须与limit一起使用。 - 当page_reverse=true时，若要查询上一页，marker取值为当前页返回值的previous_marker。
      * @return pageReverse
      */
     public Boolean getPageReverse() {
@@ -203,7 +203,7 @@ public class ListL7RulesRequest {
     }
 
     /**
-     * 转发规则的匹配方式。  type为HOST_NAME时可以为EQUAL_TO。  type为PATH时可以为Perl类型的REGEX， STARTS_WITH，EQUAL_TO。  支持多值查询，查询条件格式：*compare_type=xxx&compare_type=xxx*。
+     * 转发匹配方式。取值： - EQUAL_TO 表示精确匹配。 - REGEX 表示正则匹配。 - STARTS_WITH 表示前缀匹配。  支持多值查询，查询条件格式：*compare_type=xxx&compare_type=xxx*。
      * @return compareType
      */
     public List<String> getCompareType() {
@@ -253,7 +253,7 @@ public class ListL7RulesRequest {
     }
 
     /**
-     * 是否反向匹配。固定为false。该字段能更新但不会生效。
+     * 是否反向匹配。使用说明：固定为false。该字段能更新但不会生效。
      * @return invert
      */
     public Boolean getInvert() {
@@ -402,7 +402,7 @@ public class ListL7RulesRequest {
     }
 
     /**
-     * 企业项目ID。  支持多值查询，查询条件格式：*enterprise_project_id=xxx&enterprise_project_id=xxx*。  [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
+     * 企业项目ID。不传时查询default企业项目\"0\"下的资源，鉴权按照default企业项目鉴权；如果传值，则传已存在的企业项目ID或all_granted_eps（表示查询所有企业项目）进行查询。   支持多值查询，查询条件格式：*enterprise_project_id=xxx&enterprise_project_id=xxx*。   [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
      * @return enterpriseProjectId
      */
     public List<String> getEnterpriseProjectId() {

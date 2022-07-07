@@ -36,7 +36,7 @@ public class LoadBalancerStatusHealthMonitor {
     }
 
     /**
-     * 协议类型。取值：TCP、UDP_CONNECT、HTTP、HTTPS。
+     * 协议类型。取值：TCP、UDP_CONNECT或HTTP。
      * @return type
      */
     public String getType() {

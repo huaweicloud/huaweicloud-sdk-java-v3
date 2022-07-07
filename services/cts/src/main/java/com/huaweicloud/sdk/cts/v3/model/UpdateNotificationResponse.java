@@ -300,6 +300,11 @@ public class UpdateNotificationResponse extends SdkResponse {
 
     private Long createTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "filter")
+
+    private Filter filter;
+
     public UpdateNotificationResponse withNotificationName(String notificationName) {
         this.notificationName = notificationName;
         return this;
@@ -504,6 +509,32 @@ public class UpdateNotificationResponse extends SdkResponse {
         this.createTime = createTime;
     }
 
+    public UpdateNotificationResponse withFilter(Filter filter) {
+        this.filter = filter;
+        return this;
+    }
+
+    public UpdateNotificationResponse withFilter(Consumer<Filter> filterSetter) {
+        if (this.filter == null) {
+            this.filter = new Filter();
+            filterSetter.accept(this.filter);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get filter
+     * @return filter
+     */
+    public Filter getFilter() {
+        return filter;
+    }
+
+    public void setFilter(Filter filter) {
+        this.filter = filter;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -522,7 +553,8 @@ public class UpdateNotificationResponse extends SdkResponse {
             && Objects.equals(this.notificationId, updateNotificationResponse.notificationId)
             && Objects.equals(this.notificationType, updateNotificationResponse.notificationType)
             && Objects.equals(this.projectId, updateNotificationResponse.projectId)
-            && Objects.equals(this.createTime, updateNotificationResponse.createTime);
+            && Objects.equals(this.createTime, updateNotificationResponse.createTime)
+            && Objects.equals(this.filter, updateNotificationResponse.filter);
     }
 
     @Override
@@ -536,7 +568,8 @@ public class UpdateNotificationResponse extends SdkResponse {
             notificationId,
             notificationType,
             projectId,
-            createTime);
+            createTime,
+            filter);
     }
 
     @Override
@@ -553,6 +586,7 @@ public class UpdateNotificationResponse extends SdkResponse {
         sb.append("    notificationType: ").append(toIndentedString(notificationType)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+        sb.append("    filter: ").append(toIndentedString(filter)).append("\n");
         sb.append("}");
         return sb.toString();
     }

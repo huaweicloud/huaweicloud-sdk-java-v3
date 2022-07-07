@@ -1482,6 +1482,13 @@ public class CssMeta {
             f -> f.withMarshaller(UpdateUnbindPublicRequest::getClusterId, (req, v) -> {
                 req.setClusterId(v);
             }));
+        builder.<UnBindPublicReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UnBindPublicReq.class),
+            f -> f.withMarshaller(UpdateUnbindPublicRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
 
         // response
 

@@ -48,7 +48,7 @@ public class UpdateLogSettingReq {
     }
 
     /**
-     * 备份路径。
+     * 日志在OBS桶中的备份路径。
      * @return logBasePath
      */
     public String getLogBasePath() {
@@ -65,7 +65,7 @@ public class UpdateLogSettingReq {
     }
 
     /**
-     * OBS 桶。
+     * 用于存储日志的OBS桶的桶名。
      * @return logBucket
      */
     public String getLogBucket() {

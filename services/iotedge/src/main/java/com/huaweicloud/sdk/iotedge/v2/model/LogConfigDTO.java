@@ -12,7 +12,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * IEF日志配置
+ * 日志配置
  */
 public class LogConfigDTO  {
 

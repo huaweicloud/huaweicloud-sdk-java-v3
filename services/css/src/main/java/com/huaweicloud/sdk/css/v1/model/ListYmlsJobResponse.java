@@ -15,41 +15,41 @@ import java.util.function.Consumer;
 public class ListYmlsJobResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "configList")
+    @JsonProperty(value = "configurations")
 
-    private List<ConfigList> configList = null;
+    private List<ConfigurationsRsp> configurations = null;
 
-    public ListYmlsJobResponse withConfigList(List<ConfigList> configList) {
-        this.configList = configList;
+    public ListYmlsJobResponse withConfigurations(List<ConfigurationsRsp> configurations) {
+        this.configurations = configurations;
         return this;
     }
 
-    public ListYmlsJobResponse addConfigListItem(ConfigList configListItem) {
-        if (this.configList == null) {
-            this.configList = new ArrayList<>();
+    public ListYmlsJobResponse addConfigurationsItem(ConfigurationsRsp configurationsItem) {
+        if (this.configurations == null) {
+            this.configurations = new ArrayList<>();
         }
-        this.configList.add(configListItem);
+        this.configurations.add(configurationsItem);
         return this;
     }
 
-    public ListYmlsJobResponse withConfigList(Consumer<List<ConfigList>> configListSetter) {
-        if (this.configList == null) {
-            this.configList = new ArrayList<>();
+    public ListYmlsJobResponse withConfigurations(Consumer<List<ConfigurationsRsp>> configurationsSetter) {
+        if (this.configurations == null) {
+            this.configurations = new ArrayList<>();
         }
-        configListSetter.accept(this.configList);
+        configurationsSetter.accept(this.configurations);
         return this;
     }
 
     /**
-     * 配置列表。
-     * @return configList
+     * 历史修改配置列表。
+     * @return configurations
      */
-    public List<ConfigList> getConfigList() {
-        return configList;
+    public List<ConfigurationsRsp> getConfigurations() {
+        return configurations;
     }
 
-    public void setConfigList(List<ConfigList> configList) {
-        this.configList = configList;
+    public void setConfigurations(List<ConfigurationsRsp> configurations) {
+        this.configurations = configurations;
     }
 
     @Override
@@ -61,19 +61,19 @@ public class ListYmlsJobResponse extends SdkResponse {
             return false;
         }
         ListYmlsJobResponse listYmlsJobResponse = (ListYmlsJobResponse) o;
-        return Objects.equals(this.configList, listYmlsJobResponse.configList);
+        return Objects.equals(this.configurations, listYmlsJobResponse.configurations);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(configList);
+        return Objects.hash(configurations);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListYmlsJobResponse {\n");
-        sb.append("    configList: ").append(toIndentedString(configList)).append("\n");
+        sb.append("    configurations: ").append(toIndentedString(configurations)).append("\n");
         sb.append("}");
         return sb.toString();
     }

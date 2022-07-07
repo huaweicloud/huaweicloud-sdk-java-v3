@@ -132,7 +132,7 @@ public class NodeMetadata {
     }
 
     /**
-     * CCE自有节点注解，非Kubernetes原生annotations，格式为key/value键值对。   示例：  ```  \"annotations\": {   \"key1\" : \"value1\",   \"key2\" : \"value2\" }  ```   > Annotations不用于标识和选择对象。Annotations中的元数据可以是small 或large，structured 或unstructured，并且可以包括标签不允许使用的字符。 
+     * CCE自有节点注解，非Kubernetes原生annotations，格式为key/value键值对。   示例：  ```  \"annotations\": {   \"key1\" : \"value1\",   \"key2\" : \"value2\" }  ```   > Annotations不用于标识和选择对象。Annotations中的元数据可以是small 或large，structured或unstructured，并且可以包括标签不允许使用的字符。 
      * @return annotations
      */
     public Map<String, String> getAnnotations() {

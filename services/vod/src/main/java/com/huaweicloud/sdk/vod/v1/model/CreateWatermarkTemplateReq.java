@@ -466,7 +466,7 @@ public class CreateWatermarkTemplateReq {
     }
 
     /**
-     * 水印开始时间。
+     * 水印开始时间，与\"timeline_duration\"配合使用。 取值范围:[0, END)。\"END\"表示视频结束时间。 单位:秒。 
      * @return timelineStart
      */
     public String getTimelineStart() {
@@ -483,7 +483,7 @@ public class CreateWatermarkTemplateReq {
     }
 
     /**
-     * 水印持续时间。
+     * 水印持续时间，与\"timeline_start\"配合使用。 取值范围:(0,END-开始时间]。\"END\"表示视频结束时间。 单位:秒。 默认:END。 
      * @return timelineDuration
      */
     public String getTimelineDuration() {

@@ -4,10 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -15,41 +12,25 @@ import java.util.function.Consumer;
 public class ListYmlsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "configList")
+    @JsonProperty(value = "configurations")
 
-    private List<ConfigList> configList = null;
+    private Object configurations;
 
-    public ListYmlsResponse withConfigList(List<ConfigList> configList) {
-        this.configList = configList;
-        return this;
-    }
-
-    public ListYmlsResponse addConfigListItem(ConfigList configListItem) {
-        if (this.configList == null) {
-            this.configList = new ArrayList<>();
-        }
-        this.configList.add(configListItem);
-        return this;
-    }
-
-    public ListYmlsResponse withConfigList(Consumer<List<ConfigList>> configListSetter) {
-        if (this.configList == null) {
-            this.configList = new ArrayList<>();
-        }
-        configListSetter.accept(this.configList);
+    public ListYmlsResponse withConfigurations(Object configurations) {
+        this.configurations = configurations;
         return this;
     }
 
     /**
-     * 配置列表。
-     * @return configList
+     * 集群参数配置列表。该对象中key值以具体获取为准，value拥有以下属性。 - id:  参数配置ID。 - key: 参数名称。 - vlaue:  参数值。 - defaultValue:  参数默认值。 - regex:  参数约束限制。 - desc:  参数中文描述。 - type:  参数类型描述。 - moduleDesc: 参数功能中文描述。 - modifyEnable: 参数是否可修改 true： 可以修改。 false：不可修改。 - enableValue: 参数支持修改的值。 - fileName: 参数存在的文件名称。默认为elasticsearch.yml。 - version:  版本信息。 - descENG: 参数英文描述。 - moduleDescENG:  参数功能英文描述。
+     * @return configurations
      */
-    public List<ConfigList> getConfigList() {
-        return configList;
+    public Object getConfigurations() {
+        return configurations;
     }
 
-    public void setConfigList(List<ConfigList> configList) {
-        this.configList = configList;
+    public void setConfigurations(Object configurations) {
+        this.configurations = configurations;
     }
 
     @Override
@@ -61,19 +42,19 @@ public class ListYmlsResponse extends SdkResponse {
             return false;
         }
         ListYmlsResponse listYmlsResponse = (ListYmlsResponse) o;
-        return Objects.equals(this.configList, listYmlsResponse.configList);
+        return Objects.equals(this.configurations, listYmlsResponse.configurations);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(configList);
+        return Objects.hash(configurations);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListYmlsResponse {\n");
-        sb.append("    configList: ").append(toIndentedString(configList)).append("\n");
+        sb.append("    configurations: ").append(toIndentedString(configurations)).append("\n");
         sb.append("}");
         return sb.toString();
     }

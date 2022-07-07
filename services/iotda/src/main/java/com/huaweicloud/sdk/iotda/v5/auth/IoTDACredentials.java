@@ -244,4 +244,9 @@ public class IoTDACredentials extends AbstractCredentials<IoTDACredentials> {
             this.regionId = regionId;
         }
     }
+
+    @Override
+    protected void updateAuthTokenByIdToken(HttpClient httpClient) {
+
+    }
 }
