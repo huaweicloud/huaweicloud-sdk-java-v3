@@ -15,6 +15,16 @@ public class BindingVifDetails {
 
     private Boolean primaryInterface;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "port_filter")
+
+    private Boolean portFilter;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ovs_hybrid_plug")
+
+    private Boolean ovsHybridPlug;
+
     public BindingVifDetails withPrimaryInterface(Boolean primaryInterface) {
         this.primaryInterface = primaryInterface;
         return this;
@@ -32,6 +42,40 @@ public class BindingVifDetails {
         this.primaryInterface = primaryInterface;
     }
 
+    public BindingVifDetails withPortFilter(Boolean portFilter) {
+        this.portFilter = portFilter;
+        return this;
+    }
+
+    /**
+     * 功能说明：表示该网络服务提供端口过滤特性，如安全组和反MAC/IP欺骗。
+     * @return portFilter
+     */
+    public Boolean getPortFilter() {
+        return portFilter;
+    }
+
+    public void setPortFilter(Boolean portFilter) {
+        this.portFilter = portFilter;
+    }
+
+    public BindingVifDetails withOvsHybridPlug(Boolean ovsHybridPlug) {
+        this.ovsHybridPlug = ovsHybridPlug;
+        return this;
+    }
+
+    /**
+     * 用于通知像nova这样的API消费者，应该使用OVS的混合插入策略。
+     * @return ovsHybridPlug
+     */
+    public Boolean getOvsHybridPlug() {
+        return ovsHybridPlug;
+    }
+
+    public void setOvsHybridPlug(Boolean ovsHybridPlug) {
+        this.ovsHybridPlug = ovsHybridPlug;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -41,12 +85,14 @@ public class BindingVifDetails {
             return false;
         }
         BindingVifDetails bindingVifDetails = (BindingVifDetails) o;
-        return Objects.equals(this.primaryInterface, bindingVifDetails.primaryInterface);
+        return Objects.equals(this.primaryInterface, bindingVifDetails.primaryInterface)
+            && Objects.equals(this.portFilter, bindingVifDetails.portFilter)
+            && Objects.equals(this.ovsHybridPlug, bindingVifDetails.ovsHybridPlug);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(primaryInterface);
+        return Objects.hash(primaryInterface, portFilter, ovsHybridPlug);
     }
 
     @Override
@@ -54,6 +100,8 @@ public class BindingVifDetails {
         StringBuilder sb = new StringBuilder();
         sb.append("class BindingVifDetails {\n");
         sb.append("    primaryInterface: ").append(toIndentedString(primaryInterface)).append("\n");
+        sb.append("    portFilter: ").append(toIndentedString(portFilter)).append("\n");
+        sb.append("    ovsHybridPlug: ").append(toIndentedString(ovsHybridPlug)).append("\n");
         sb.append("}");
         return sb.toString();
     }

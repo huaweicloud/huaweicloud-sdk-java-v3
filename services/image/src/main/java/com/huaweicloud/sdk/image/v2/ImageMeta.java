@@ -35,6 +35,59 @@ public class ImageMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RunImageMainObjectDetectionRequest, RunImageMainObjectDetectionResponse> runImageMainObjectDetection =
+        genForrunImageMainObjectDetection();
+
+    private static HttpRequestDef<RunImageMainObjectDetectionRequest, RunImageMainObjectDetectionResponse> genForrunImageMainObjectDetection() {
+        // basic
+        HttpRequestDef.Builder<RunImageMainObjectDetectionRequest, RunImageMainObjectDetectionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    RunImageMainObjectDetectionRequest.class,
+                    RunImageMainObjectDetectionResponse.class)
+                .withName("RunImageMainObjectDetection")
+                .withUri("/v3/{project_id}/image/main-object-detection")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<ImageMainObjectDetectionReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ImageMainObjectDetectionReq.class),
+            f -> f.withMarshaller(RunImageMainObjectDetectionRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RunImageMediaTaggingRequest, RunImageMediaTaggingResponse> runImageMediaTagging =
+        genForrunImageMediaTagging();
+
+    private static HttpRequestDef<RunImageMediaTaggingRequest, RunImageMediaTaggingResponse> genForrunImageMediaTagging() {
+        // basic
+        HttpRequestDef.Builder<RunImageMediaTaggingRequest, RunImageMediaTaggingResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, RunImageMediaTaggingRequest.class, RunImageMediaTaggingResponse.class)
+            .withName("RunImageMediaTagging")
+            .withUri("/v2/{project_id}/image/media-tagging")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<ImageMediaTaggingReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ImageMediaTaggingReq.class),
+            f -> f.withMarshaller(RunImageMediaTaggingRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RunImageTaggingRequest, RunImageTaggingResponse> runImageTagging =
         genForrunImageTagging();
 

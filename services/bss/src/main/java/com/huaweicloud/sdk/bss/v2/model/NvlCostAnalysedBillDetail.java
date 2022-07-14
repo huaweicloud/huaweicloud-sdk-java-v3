@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.bss.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * NvlCostAnalysedBillDetail
@@ -229,6 +232,16 @@ public class NvlCostAnalysedBillDetail {
     @JsonProperty(value = "sub_resource_name")
 
     private String subResourceName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "effective_tag_pairs")
+
+    private List<TagPair> effectiveTagPairs = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cost_unit_pairs")
+
+    private List<CostUnitPair> costUnitPairs = null;
 
     public NvlCostAnalysedBillDetail withSharedMonth(String sharedMonth) {
         this.sharedMonth = sharedMonth;
@@ -978,6 +991,72 @@ public class NvlCostAnalysedBillDetail {
         this.subResourceName = subResourceName;
     }
 
+    public NvlCostAnalysedBillDetail withEffectiveTagPairs(List<TagPair> effectiveTagPairs) {
+        this.effectiveTagPairs = effectiveTagPairs;
+        return this;
+    }
+
+    public NvlCostAnalysedBillDetail addEffectiveTagPairsItem(TagPair effectiveTagPairsItem) {
+        if (this.effectiveTagPairs == null) {
+            this.effectiveTagPairs = new ArrayList<>();
+        }
+        this.effectiveTagPairs.add(effectiveTagPairsItem);
+        return this;
+    }
+
+    public NvlCostAnalysedBillDetail withEffectiveTagPairs(Consumer<List<TagPair>> effectiveTagPairsSetter) {
+        if (this.effectiveTagPairs == null) {
+            this.effectiveTagPairs = new ArrayList<>();
+        }
+        effectiveTagPairsSetter.accept(this.effectiveTagPairs);
+        return this;
+    }
+
+    /**
+     * 成本标签。
+     * @return effectiveTagPairs
+     */
+    public List<TagPair> getEffectiveTagPairs() {
+        return effectiveTagPairs;
+    }
+
+    public void setEffectiveTagPairs(List<TagPair> effectiveTagPairs) {
+        this.effectiveTagPairs = effectiveTagPairs;
+    }
+
+    public NvlCostAnalysedBillDetail withCostUnitPairs(List<CostUnitPair> costUnitPairs) {
+        this.costUnitPairs = costUnitPairs;
+        return this;
+    }
+
+    public NvlCostAnalysedBillDetail addCostUnitPairsItem(CostUnitPair costUnitPairsItem) {
+        if (this.costUnitPairs == null) {
+            this.costUnitPairs = new ArrayList<>();
+        }
+        this.costUnitPairs.add(costUnitPairsItem);
+        return this;
+    }
+
+    public NvlCostAnalysedBillDetail withCostUnitPairs(Consumer<List<CostUnitPair>> costUnitPairsSetter) {
+        if (this.costUnitPairs == null) {
+            this.costUnitPairs = new ArrayList<>();
+        }
+        costUnitPairsSetter.accept(this.costUnitPairs);
+        return this;
+    }
+
+    /**
+     * 成本单元。
+     * @return costUnitPairs
+     */
+    public List<CostUnitPair> getCostUnitPairs() {
+        return costUnitPairs;
+    }
+
+    public void setCostUnitPairs(List<CostUnitPair> costUnitPairs) {
+        this.costUnitPairs = costUnitPairs;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -1032,7 +1111,9 @@ public class NvlCostAnalysedBillDetail {
             && Objects.equals(this.subResourceTypeCode, nvlCostAnalysedBillDetail.subResourceTypeCode)
             && Objects.equals(this.subResourceTypeName, nvlCostAnalysedBillDetail.subResourceTypeName)
             && Objects.equals(this.subResourceId, nvlCostAnalysedBillDetail.subResourceId)
-            && Objects.equals(this.subResourceName, nvlCostAnalysedBillDetail.subResourceName);
+            && Objects.equals(this.subResourceName, nvlCostAnalysedBillDetail.subResourceName)
+            && Objects.equals(this.effectiveTagPairs, nvlCostAnalysedBillDetail.effectiveTagPairs)
+            && Objects.equals(this.costUnitPairs, nvlCostAnalysedBillDetail.costUnitPairs);
     }
 
     @Override
@@ -1080,7 +1161,9 @@ public class NvlCostAnalysedBillDetail {
             subResourceTypeCode,
             subResourceTypeName,
             subResourceId,
-            subResourceName);
+            subResourceName,
+            effectiveTagPairs,
+            costUnitPairs);
     }
 
     @Override
@@ -1139,6 +1222,8 @@ public class NvlCostAnalysedBillDetail {
         sb.append("    subResourceTypeName: ").append(toIndentedString(subResourceTypeName)).append("\n");
         sb.append("    subResourceId: ").append(toIndentedString(subResourceId)).append("\n");
         sb.append("    subResourceName: ").append(toIndentedString(subResourceName)).append("\n");
+        sb.append("    effectiveTagPairs: ").append(toIndentedString(effectiveTagPairs)).append("\n");
+        sb.append("    costUnitPairs: ").append(toIndentedString(costUnitPairs)).append("\n");
         sb.append("}");
         return sb.toString();
     }

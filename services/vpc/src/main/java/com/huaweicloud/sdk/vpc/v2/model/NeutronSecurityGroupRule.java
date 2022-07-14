@@ -139,6 +139,11 @@ public class NeutronSecurityGroupRule {
     private String remoteIpPrefix;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "remote_address_group_id")
+
+    private String remoteAddressGroupId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_group_id")
 
     private String securityGroupId;
@@ -316,6 +321,23 @@ public class NeutronSecurityGroupRule {
         this.remoteIpPrefix = remoteIpPrefix;
     }
 
+    public NeutronSecurityGroupRule withRemoteAddressGroupId(String remoteAddressGroupId) {
+        this.remoteAddressGroupId = remoteAddressGroupId;
+        return this;
+    }
+
+    /**
+     * 功能说明：远端IP地址组ID 约束：和remote_ip_prefix，remote_group_id互斥
+     * @return remoteAddressGroupId
+     */
+    public String getRemoteAddressGroupId() {
+        return remoteAddressGroupId;
+    }
+
+    public void setRemoteAddressGroupId(String remoteAddressGroupId) {
+        this.remoteAddressGroupId = remoteAddressGroupId;
+    }
+
     public NeutronSecurityGroupRule withSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
         return this;
@@ -419,6 +441,7 @@ public class NeutronSecurityGroupRule {
             && Objects.equals(this.protocol, neutronSecurityGroupRule.protocol)
             && Objects.equals(this.remoteGroupId, neutronSecurityGroupRule.remoteGroupId)
             && Objects.equals(this.remoteIpPrefix, neutronSecurityGroupRule.remoteIpPrefix)
+            && Objects.equals(this.remoteAddressGroupId, neutronSecurityGroupRule.remoteAddressGroupId)
             && Objects.equals(this.securityGroupId, neutronSecurityGroupRule.securityGroupId)
             && Objects.equals(this.tenantId, neutronSecurityGroupRule.tenantId)
             && Objects.equals(this.projectId, neutronSecurityGroupRule.projectId)
@@ -437,6 +460,7 @@ public class NeutronSecurityGroupRule {
             protocol,
             remoteGroupId,
             remoteIpPrefix,
+            remoteAddressGroupId,
             securityGroupId,
             tenantId,
             projectId,
@@ -457,6 +481,7 @@ public class NeutronSecurityGroupRule {
         sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
         sb.append("    remoteGroupId: ").append(toIndentedString(remoteGroupId)).append("\n");
         sb.append("    remoteIpPrefix: ").append(toIndentedString(remoteIpPrefix)).append("\n");
+        sb.append("    remoteAddressGroupId: ").append(toIndentedString(remoteAddressGroupId)).append("\n");
         sb.append("    securityGroupId: ").append(toIndentedString(securityGroupId)).append("\n");
         sb.append("    tenantId: ").append(toIndentedString(tenantId)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");

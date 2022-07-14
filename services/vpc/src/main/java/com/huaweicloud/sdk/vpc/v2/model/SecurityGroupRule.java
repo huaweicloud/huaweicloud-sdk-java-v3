@@ -61,6 +61,11 @@ public class SecurityGroupRule {
     private String remoteGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "remote_address_group_id")
+
+    private String remoteAddressGroupId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tenant_id")
 
     private String tenantId;
@@ -235,6 +240,23 @@ public class SecurityGroupRule {
         this.remoteGroupId = remoteGroupId;
     }
 
+    public SecurityGroupRule withRemoteAddressGroupId(String remoteAddressGroupId) {
+        this.remoteAddressGroupId = remoteAddressGroupId;
+        return this;
+    }
+
+    /**
+     * 功能说明：远端IP地址组ID 约束：和remote_ip_prefix，remote_group_id互斥
+     * @return remoteAddressGroupId
+     */
+    public String getRemoteAddressGroupId() {
+        return remoteAddressGroupId;
+    }
+
+    public void setRemoteAddressGroupId(String remoteAddressGroupId) {
+        this.remoteAddressGroupId = remoteAddressGroupId;
+    }
+
     public SecurityGroupRule withTenantId(String tenantId) {
         this.tenantId = tenantId;
         return this;
@@ -271,6 +293,7 @@ public class SecurityGroupRule {
             && Objects.equals(this.portRangeMax, securityGroupRule.portRangeMax)
             && Objects.equals(this.remoteIpPrefix, securityGroupRule.remoteIpPrefix)
             && Objects.equals(this.remoteGroupId, securityGroupRule.remoteGroupId)
+            && Objects.equals(this.remoteAddressGroupId, securityGroupRule.remoteAddressGroupId)
             && Objects.equals(this.tenantId, securityGroupRule.tenantId);
     }
 
@@ -286,6 +309,7 @@ public class SecurityGroupRule {
             portRangeMax,
             remoteIpPrefix,
             remoteGroupId,
+            remoteAddressGroupId,
             tenantId);
     }
 
@@ -303,6 +327,7 @@ public class SecurityGroupRule {
         sb.append("    portRangeMax: ").append(toIndentedString(portRangeMax)).append("\n");
         sb.append("    remoteIpPrefix: ").append(toIndentedString(remoteIpPrefix)).append("\n");
         sb.append("    remoteGroupId: ").append(toIndentedString(remoteGroupId)).append("\n");
+        sb.append("    remoteAddressGroupId: ").append(toIndentedString(remoteAddressGroupId)).append("\n");
         sb.append("    tenantId: ").append(toIndentedString(tenantId)).append("\n");
         sb.append("}");
         return sb.toString();

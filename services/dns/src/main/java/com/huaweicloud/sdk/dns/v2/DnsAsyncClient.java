@@ -1300,9 +1300,9 @@ public class DnsAsyncClient {
     }
 
     /**
-     * 在Private Zone上解关联VPC
+     * 在内网Zone上解关联VPC
      *
-     * 在Private Zone上解关联VPC
+     * 在内网Zone上解关联VPC
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1315,9 +1315,9 @@ public class DnsAsyncClient {
     }
 
     /**
-     * 在Private Zone上解关联VPC
+     * 在内网Zone上解关联VPC
      *
-     * 在Private Zone上解关联VPC
+     * 在内网Zone上解关联VPC
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1428,9 +1428,9 @@ public class DnsAsyncClient {
     }
 
     /**
-     * 查询内网Zone的名称服务器
+     * 查询单个内网Zone的名称服务器
      *
-     * 查询内网Zone的名称服务器
+     * 查询单个内网Zone的名称服务器
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1444,9 +1444,9 @@ public class DnsAsyncClient {
     }
 
     /**
-     * 查询内网Zone的名称服务器
+     * 查询单个内网Zone的名称服务器
      *
-     * 查询内网Zone的名称服务器
+     * 查询单个内网Zone的名称服务器
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1526,9 +1526,9 @@ public class DnsAsyncClient {
     }
 
     /**
-     * 修改单个Zone
+     * 修改单个内网Zone
      *
-     * 修改单个Zone
+     * 修改单个内网Zone
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1541,9 +1541,9 @@ public class DnsAsyncClient {
     }
 
     /**
-     * 修改单个Zone
+     * 修改单个内网Zone
      *
-     * 修改单个Zone
+     * 修改单个内网Zone
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1558,9 +1558,9 @@ public class DnsAsyncClient {
     }
 
     /**
-     * 修改单个Zone
+     * 修改单个公网Zone
      *
-     * 修改单个Zone
+     * 修改单个公网Zone
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1573,9 +1573,9 @@ public class DnsAsyncClient {
     }
 
     /**
-     * 修改单个Zone
+     * 修改单个公网Zone
      *
-     * 修改单个Zone
+     * 修改单个公网Zone
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.

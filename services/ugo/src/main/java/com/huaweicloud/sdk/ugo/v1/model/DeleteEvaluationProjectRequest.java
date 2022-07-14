@@ -21,7 +21,7 @@ public class DeleteEvaluationProjectRequest {
     }
 
     /**
-     * 评估项目ID
+     * 评估项目ID。
      * @return evaluationProjectId
      */
     public String getEvaluationProjectId() {

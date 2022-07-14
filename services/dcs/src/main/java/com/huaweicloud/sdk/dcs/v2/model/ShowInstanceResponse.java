@@ -239,6 +239,16 @@ public class ShowInstanceResponse extends SdkResponse {
 
     private String subStatus;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<ResourceTag> tags = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cpu_type")
+
+    private String cpuType;
+
     public ShowInstanceResponse withVpcName(String vpcName) {
         this.vpcName = vpcName;
         return this;
@@ -1047,6 +1057,56 @@ public class ShowInstanceResponse extends SdkResponse {
         this.subStatus = subStatus;
     }
 
+    public ShowInstanceResponse withTags(List<ResourceTag> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public ShowInstanceResponse addTagsItem(ResourceTag tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public ShowInstanceResponse withTags(Consumer<List<ResourceTag>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * 实例标签键值。
+     * @return tags
+     */
+    public List<ResourceTag> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<ResourceTag> tags) {
+        this.tags = tags;
+    }
+
+    public ShowInstanceResponse withCpuType(String cpuType) {
+        this.cpuType = cpuType;
+        return this;
+    }
+
+    /**
+     * 实例CPU类型，通常为x86_64或aarch64
+     * @return cpuType
+     */
+    public String getCpuType() {
+        return cpuType;
+    }
+
+    public void setCpuType(String cpuType) {
+        this.cpuType = cpuType;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -1100,7 +1160,9 @@ public class ShowInstanceResponse extends SdkResponse {
             && Objects.equals(this.features, showInstanceResponse.features)
             && Objects.equals(this.domainNameInfo, showInstanceResponse.domainNameInfo)
             && Objects.equals(this.transparentClientIpEnable, showInstanceResponse.transparentClientIpEnable)
-            && Objects.equals(this.subStatus, showInstanceResponse.subStatus);
+            && Objects.equals(this.subStatus, showInstanceResponse.subStatus)
+            && Objects.equals(this.tags, showInstanceResponse.tags)
+            && Objects.equals(this.cpuType, showInstanceResponse.cpuType);
     }
 
     @Override
@@ -1149,7 +1211,9 @@ public class ShowInstanceResponse extends SdkResponse {
             features,
             domainNameInfo,
             transparentClientIpEnable,
-            subStatus);
+            subStatus,
+            tags,
+            cpuType);
     }
 
     @Override
@@ -1201,6 +1265,8 @@ public class ShowInstanceResponse extends SdkResponse {
         sb.append("    domainNameInfo: ").append(toIndentedString(domainNameInfo)).append("\n");
         sb.append("    transparentClientIpEnable: ").append(toIndentedString(transparentClientIpEnable)).append("\n");
         sb.append("    subStatus: ").append(toIndentedString(subStatus)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    cpuType: ").append(toIndentedString(cpuType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -222,6 +222,9 @@ public abstract class AbstractCredentials<DerivedT extends AbstractCredentials<D
     }
 
     protected boolean needUpdateSecurityToken() {
+        if (Objects.nonNull(authToken)) {
+            return false;
+        }
         if (Objects.isNull(ak) && Objects.isNull(sk)) {
             return true;
         }

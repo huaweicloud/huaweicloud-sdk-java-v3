@@ -40,6 +40,11 @@ public class HttpPutBody {
 
     private String http2Status;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tls_version")
+
+    private String tlsVersion;
+
     public HttpPutBody withHttpsStatus(String httpsStatus) {
         this.httpsStatus = httpsStatus;
         return this;
@@ -142,6 +147,23 @@ public class HttpPutBody {
         this.http2Status = http2Status;
     }
 
+    public HttpPutBody withTlsVersion(String tlsVersion) {
+        this.tlsVersion = tlsVersion;
+        return this;
+    }
+
+    /**
+     * 传输层安全性协议。目前支持TLSv1.0/1.1/1.2/1.3四个版本的协议。默认全部开启，不可全部关闭，只可开启连续或单个版本号。多版本开启时，使用逗号拼接传输，例：TLSv1.1,TLSv1.2。
+     * @return tlsVersion
+     */
+    public String getTlsVersion() {
+        return tlsVersion;
+    }
+
+    public void setTlsVersion(String tlsVersion) {
+        this.tlsVersion = tlsVersion;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -156,12 +178,19 @@ public class HttpPutBody {
             && Objects.equals(this.certificateValue, httpPutBody.certificateValue)
             && Objects.equals(this.privateKey, httpPutBody.privateKey)
             && Objects.equals(this.certificateSource, httpPutBody.certificateSource)
-            && Objects.equals(this.http2Status, httpPutBody.http2Status);
+            && Objects.equals(this.http2Status, httpPutBody.http2Status)
+            && Objects.equals(this.tlsVersion, httpPutBody.tlsVersion);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(httpsStatus, certificateName, certificateValue, privateKey, certificateSource, http2Status);
+        return Objects.hash(httpsStatus,
+            certificateName,
+            certificateValue,
+            privateKey,
+            certificateSource,
+            http2Status,
+            tlsVersion);
     }
 
     @Override
@@ -174,6 +203,7 @@ public class HttpPutBody {
         sb.append("    privateKey: ").append(toIndentedString(privateKey)).append("\n");
         sb.append("    certificateSource: ").append(toIndentedString(certificateSource)).append("\n");
         sb.append("    http2Status: ").append(toIndentedString(http2Status)).append("\n");
+        sb.append("    tlsVersion: ").append(toIndentedString(tlsVersion)).append("\n");
         sb.append("}");
         return sb.toString();
     }

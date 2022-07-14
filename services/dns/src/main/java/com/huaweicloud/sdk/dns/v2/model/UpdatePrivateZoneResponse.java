@@ -396,7 +396,7 @@ public class UpdatePrivateZoneResponse extends SdkResponse {
     }
 
     /**
-     *   Private zone关联的Router(VPC)信息
+     * 内网Zone关联的Router(VPC)信息
      * @return routers
      */
     public List<RouterWithStatus> getRouters() {

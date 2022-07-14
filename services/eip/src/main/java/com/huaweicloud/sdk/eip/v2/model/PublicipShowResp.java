@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -119,7 +118,7 @@ public class PublicipShowResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
-    private OffsetDateTime createTime;
+    private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
@@ -480,7 +479,7 @@ public class PublicipShowResp {
         this.bandwidthSize = bandwidthSize;
     }
 
-    public PublicipShowResp withCreateTime(OffsetDateTime createTime) {
+    public PublicipShowResp withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
     }
@@ -489,11 +488,11 @@ public class PublicipShowResp {
      * 弹性公网IP申请时间（UTC）
      * @return createTime
      */
-    public OffsetDateTime getCreateTime() {
+    public String getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(OffsetDateTime createTime) {
+    public void setCreateTime(String createTime) {
         this.createTime = createTime;
     }
 

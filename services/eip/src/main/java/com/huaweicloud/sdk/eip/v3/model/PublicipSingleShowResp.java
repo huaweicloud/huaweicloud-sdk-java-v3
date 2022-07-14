@@ -546,7 +546,7 @@ public class PublicipSingleShowResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    private List<TagsInfo> tags = null;
+    private List<String> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "associate_instance_metadata")
@@ -1003,12 +1003,12 @@ public class PublicipSingleShowResp {
         this.fakeNetworkType = fakeNetworkType;
     }
 
-    public PublicipSingleShowResp withTags(List<TagsInfo> tags) {
+    public PublicipSingleShowResp withTags(List<String> tags) {
         this.tags = tags;
         return this;
     }
 
-    public PublicipSingleShowResp addTagsItem(TagsInfo tagsItem) {
+    public PublicipSingleShowResp addTagsItem(String tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -1016,7 +1016,7 @@ public class PublicipSingleShowResp {
         return this;
     }
 
-    public PublicipSingleShowResp withTags(Consumer<List<TagsInfo>> tagsSetter) {
+    public PublicipSingleShowResp withTags(Consumer<List<String>> tagsSetter) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -1028,11 +1028,11 @@ public class PublicipSingleShowResp {
      * 默认不显示。用户标签
      * @return tags
      */
-    public List<TagsInfo> getTags() {
+    public List<String> getTags() {
         return tags;
     }
 
-    public void setTags(List<TagsInfo> tags) {
+    public void setTags(List<String> tags) {
         this.tags = tags;
     }
 

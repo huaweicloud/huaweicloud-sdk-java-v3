@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * 服务配置信息
@@ -35,11 +34,6 @@ public class ObsForwarding {
     @JsonProperty(value = "file_path")
 
     private String filePath;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "file_mapping")
-
-    private FileMapping fileMapping;
 
     public ObsForwarding withRegionName(String regionName) {
         this.regionName = regionName;
@@ -126,32 +120,6 @@ public class ObsForwarding {
         this.filePath = filePath;
     }
 
-    public ObsForwarding withFileMapping(FileMapping fileMapping) {
-        this.fileMapping = fileMapping;
-        return this;
-    }
-
-    public ObsForwarding withFileMapping(Consumer<FileMapping> fileMappingSetter) {
-        if (this.fileMapping == null) {
-            this.fileMapping = new FileMapping();
-            fileMappingSetter.accept(this.fileMapping);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get fileMapping
-     * @return fileMapping
-     */
-    public FileMapping getFileMapping() {
-        return fileMapping;
-    }
-
-    public void setFileMapping(FileMapping fileMapping) {
-        this.fileMapping = fileMapping;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -165,13 +133,12 @@ public class ObsForwarding {
             && Objects.equals(this.projectId, obsForwarding.projectId)
             && Objects.equals(this.bucketName, obsForwarding.bucketName)
             && Objects.equals(this.location, obsForwarding.location)
-            && Objects.equals(this.filePath, obsForwarding.filePath)
-            && Objects.equals(this.fileMapping, obsForwarding.fileMapping);
+            && Objects.equals(this.filePath, obsForwarding.filePath);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(regionName, projectId, bucketName, location, filePath, fileMapping);
+        return Objects.hash(regionName, projectId, bucketName, location, filePath);
     }
 
     @Override
@@ -183,7 +150,6 @@ public class ObsForwarding {
         sb.append("    bucketName: ").append(toIndentedString(bucketName)).append("\n");
         sb.append("    location: ").append(toIndentedString(location)).append("\n");
         sb.append("    filePath: ").append(toIndentedString(filePath)).append("\n");
-        sb.append("    fileMapping: ").append(toIndentedString(fileMapping)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -31,7 +31,7 @@ public class ConfirmTargetDBReq {
     }
 
     /**
-     * 项目ID。
+     * 评估项目ID。
      * @return evaluationProjectId
      */
     public String getEvaluationProjectId() {
@@ -48,7 +48,7 @@ public class ConfirmTargetDBReq {
     }
 
     /**
-     * 目标库类型。
+     * 目标数据库类型。
      * @return targetDbType
      */
     public String getTargetDbType() {
@@ -65,7 +65,7 @@ public class ConfirmTargetDBReq {
     }
 
     /**
-     * 目标库版本。
+     * 目标数据库版本。
      * @return targetDbVersion
      */
     public String getTargetDbVersion() {
