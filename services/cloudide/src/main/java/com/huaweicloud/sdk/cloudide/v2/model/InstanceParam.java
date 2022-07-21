@@ -358,16 +358,6 @@ public class InstanceParam {
     private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "instance_user_domain_name")
-
-    private String instanceUserDomainName;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "instance_user_name")
-
-    private String instanceUserName;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_domain_id")
 
     private String instanceDomainId;
@@ -717,40 +707,6 @@ public class InstanceParam {
         this.vpcId = vpcId;
     }
 
-    public InstanceParam withInstanceUserDomainName(String instanceUserDomainName) {
-        this.instanceUserDomainName = instanceUserDomainName;
-        return this;
-    }
-
-    /**
-     * 实例授权用户租户名
-     * @return instanceUserDomainName
-     */
-    public String getInstanceUserDomainName() {
-        return instanceUserDomainName;
-    }
-
-    public void setInstanceUserDomainName(String instanceUserDomainName) {
-        this.instanceUserDomainName = instanceUserDomainName;
-    }
-
-    public InstanceParam withInstanceUserName(String instanceUserName) {
-        this.instanceUserName = instanceUserName;
-        return this;
-    }
-
-    /**
-     * 实例授权用户名
-     * @return instanceUserName
-     */
-    public String getInstanceUserName() {
-        return instanceUserName;
-    }
-
-    public void setInstanceUserName(String instanceUserName) {
-        this.instanceUserName = instanceUserName;
-    }
-
     public InstanceParam withInstanceDomainId(String instanceDomainId) {
         this.instanceDomainId = instanceDomainId;
         return this;
@@ -810,8 +766,6 @@ public class InstanceParam {
             && Objects.equals(this.stackId, instanceParam.stackId)
             && Objects.equals(this.taskType, instanceParam.taskType) && Objects.equals(this.token, instanceParam.token)
             && Objects.equals(this.vpcId, instanceParam.vpcId)
-            && Objects.equals(this.instanceUserDomainName, instanceParam.instanceUserDomainName)
-            && Objects.equals(this.instanceUserName, instanceParam.instanceUserName)
             && Objects.equals(this.instanceDomainId, instanceParam.instanceDomainId)
             && Objects.equals(this.instanceUserId, instanceParam.instanceUserId);
     }
@@ -836,8 +790,6 @@ public class InstanceParam {
             taskType,
             token,
             vpcId,
-            instanceUserDomainName,
-            instanceUserName,
             instanceDomainId,
             instanceUserId);
     }
@@ -864,8 +816,6 @@ public class InstanceParam {
         sb.append("    taskType: ").append(toIndentedString(taskType)).append("\n");
         sb.append("    token: ").append(toIndentedString(token)).append("\n");
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
-        sb.append("    instanceUserDomainName: ").append(toIndentedString(instanceUserDomainName)).append("\n");
-        sb.append("    instanceUserName: ").append(toIndentedString(instanceUserName)).append("\n");
         sb.append("    instanceDomainId: ").append(toIndentedString(instanceDomainId)).append("\n");
         sb.append("    instanceUserId: ").append(toIndentedString(instanceUserId)).append("\n");
         sb.append("}");

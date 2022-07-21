@@ -305,7 +305,7 @@ public class DomainBody {
     }
 
     /**
-     * 企业项目ID，创建域名归属的项目。注意：当使用子账号调用接口时，该参数必传。
+     * 当用户开启企业项目功能时，该参数生效，表示添加加速域名到该企业项目。注意：当使用子账号调用接口时，该参数必传。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {

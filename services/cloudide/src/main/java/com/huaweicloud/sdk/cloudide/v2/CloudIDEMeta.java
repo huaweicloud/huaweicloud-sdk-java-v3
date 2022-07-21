@@ -492,6 +492,31 @@ public class CloudIDEMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowInstanceStatusInfoRequest, ShowInstanceStatusInfoResponse> showInstanceStatusInfo =
+        genForshowInstanceStatusInfo();
+
+    private static HttpRequestDef<ShowInstanceStatusInfoRequest, ShowInstanceStatusInfoResponse> genForshowInstanceStatusInfo() {
+        // basic
+        HttpRequestDef.Builder<ShowInstanceStatusInfoRequest, ShowInstanceStatusInfoResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowInstanceStatusInfoRequest.class, ShowInstanceStatusInfoResponse.class)
+            .withName("ShowInstanceStatusInfo")
+            .withUri("/v2/instances/{instance_id}/status")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInstanceStatusInfoRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<StartInstanceRequest, StartInstanceResponse> startInstance =
         genForstartInstance();
 

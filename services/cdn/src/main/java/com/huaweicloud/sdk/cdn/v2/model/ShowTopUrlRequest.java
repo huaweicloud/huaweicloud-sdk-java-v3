@@ -135,7 +135,7 @@ public class ShowTopUrlRequest {
     }
 
     /**
-     * 当用户开启企业项目功能时，该参数生效，表示查询资源所属项目，不传表示查询默认项目。注意：当使用子账号调用接口时，该参数必传。
+     * 当用户开启企业项目功能时，该参数生效，表示查询资源所属项目，\"all\"表示所有项目。注意：当使用子账号调用接口时，该参数必传。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {

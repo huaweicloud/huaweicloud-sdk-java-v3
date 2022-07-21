@@ -210,19 +210,9 @@ public class InstanceEdgeParam {
     private String instanceUserDomainId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "instance_user_domain_name")
-
-    private String instanceUserDomainName;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_user_id")
 
     private String instanceUserId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "instance_user_name")
-
-    private String instanceUserName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_temporary")
@@ -417,23 +407,6 @@ public class InstanceEdgeParam {
         this.instanceUserDomainId = instanceUserDomainId;
     }
 
-    public InstanceEdgeParam withInstanceUserDomainName(String instanceUserDomainName) {
-        this.instanceUserDomainName = instanceUserDomainName;
-        return this;
-    }
-
-    /**
-     * 用户租户名
-     * @return instanceUserDomainName
-     */
-    public String getInstanceUserDomainName() {
-        return instanceUserDomainName;
-    }
-
-    public void setInstanceUserDomainName(String instanceUserDomainName) {
-        this.instanceUserDomainName = instanceUserDomainName;
-    }
-
     public InstanceEdgeParam withInstanceUserId(String instanceUserId) {
         this.instanceUserId = instanceUserId;
         return this;
@@ -449,23 +422,6 @@ public class InstanceEdgeParam {
 
     public void setInstanceUserId(String instanceUserId) {
         this.instanceUserId = instanceUserId;
-    }
-
-    public InstanceEdgeParam withInstanceUserName(String instanceUserName) {
-        this.instanceUserName = instanceUserName;
-        return this;
-    }
-
-    /**
-     * 用户名
-     * @return instanceUserName
-     */
-    public String getInstanceUserName() {
-        return instanceUserName;
-    }
-
-    public void setInstanceUserName(String instanceUserName) {
-        this.instanceUserName = instanceUserName;
     }
 
     public InstanceEdgeParam withIsTemporary(Boolean isTemporary) {
@@ -583,9 +539,7 @@ public class InstanceEdgeParam {
             && Objects.equals(this.description, instanceEdgeParam.description)
             && Objects.equals(this.instanceName, instanceEdgeParam.instanceName)
             && Objects.equals(this.instanceUserDomainId, instanceEdgeParam.instanceUserDomainId)
-            && Objects.equals(this.instanceUserDomainName, instanceEdgeParam.instanceUserDomainName)
             && Objects.equals(this.instanceUserId, instanceEdgeParam.instanceUserId)
-            && Objects.equals(this.instanceUserName, instanceEdgeParam.instanceUserName)
             && Objects.equals(this.isTemporary, instanceEdgeParam.isTemporary)
             && Objects.equals(this.plugins, instanceEdgeParam.plugins)
             && Objects.equals(this.pvcQuantity, instanceEdgeParam.pvcQuantity)
@@ -600,9 +554,7 @@ public class InstanceEdgeParam {
             description,
             instanceName,
             instanceUserDomainId,
-            instanceUserDomainName,
             instanceUserId,
-            instanceUserName,
             isTemporary,
             plugins,
             pvcQuantity,
@@ -619,9 +571,7 @@ public class InstanceEdgeParam {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    instanceName: ").append(toIndentedString(instanceName)).append("\n");
         sb.append("    instanceUserDomainId: ").append(toIndentedString(instanceUserDomainId)).append("\n");
-        sb.append("    instanceUserDomainName: ").append(toIndentedString(instanceUserDomainName)).append("\n");
         sb.append("    instanceUserId: ").append(toIndentedString(instanceUserId)).append("\n");
-        sb.append("    instanceUserName: ").append(toIndentedString(instanceUserName)).append("\n");
         sb.append("    isTemporary: ").append(toIndentedString(isTemporary)).append("\n");
         sb.append("    plugins: ").append(toIndentedString(plugins)).append("\n");
         sb.append("    pvcQuantity: ").append(toIndentedString(pvcQuantity)).append("\n");

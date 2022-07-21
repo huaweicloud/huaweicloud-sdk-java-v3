@@ -490,6 +490,38 @@ public class CloudIDEClient {
     }
 
     /**
+     * 查询某个IDE实例的状态
+     *
+     * 查询某个IDE实例的状态
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowInstanceStatusInfoRequest 请求对象
+     * @return ShowInstanceStatusInfoResponse
+     */
+    public ShowInstanceStatusInfoResponse showInstanceStatusInfo(ShowInstanceStatusInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudIDEMeta.showInstanceStatusInfo);
+    }
+
+    /**
+     * 查询某个IDE实例的状态
+     *
+     * 查询某个IDE实例的状态
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowInstanceStatusInfoRequest 请求对象
+     * @return SyncInvoker<ShowInstanceStatusInfoRequest, ShowInstanceStatusInfoResponse>
+     */
+    public SyncInvoker<ShowInstanceStatusInfoRequest, ShowInstanceStatusInfoResponse> showInstanceStatusInfoInvoker(
+        ShowInstanceStatusInfoRequest request) {
+        return new SyncInvoker<ShowInstanceStatusInfoRequest, ShowInstanceStatusInfoResponse>(request,
+            CloudIDEMeta.showInstanceStatusInfo, hcClient);
+    }
+
+    /**
      * 启动IDE实例
      *
      * 启动IDE实例

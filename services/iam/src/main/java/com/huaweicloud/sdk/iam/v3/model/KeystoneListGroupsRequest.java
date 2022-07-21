@@ -43,7 +43,7 @@ public class KeystoneListGroupsRequest {
     }
 
     /**
-     * 用户组名，长度小于等于64字节，获取方式请参见：[获取用户组名](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
+     * 用户组名，长度小于等于128字符，获取方式请参见：[获取用户组名](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
      * @return name
      */
     public String getName() {

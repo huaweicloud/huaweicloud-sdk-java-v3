@@ -35,6 +35,31 @@ public class ImageMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RunImageDescriptionRequest, RunImageDescriptionResponse> runImageDescription =
+        genForrunImageDescription();
+
+    private static HttpRequestDef<RunImageDescriptionRequest, RunImageDescriptionResponse> genForrunImageDescription() {
+        // basic
+        HttpRequestDef.Builder<RunImageDescriptionRequest, RunImageDescriptionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RunImageDescriptionRequest.class, RunImageDescriptionResponse.class)
+                .withName("RunImageDescription")
+                .withUri("/v2/{project_id}/image/description")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<ImageDescriptionReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ImageDescriptionReq.class),
+            f -> f.withMarshaller(RunImageDescriptionRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RunImageMainObjectDetectionRequest, RunImageMainObjectDetectionResponse> runImageMainObjectDetection =
         genForrunImageMainObjectDetection();
 

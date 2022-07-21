@@ -100,7 +100,7 @@ public class ListAlarmHistoriesRequest {
     }
 
     /**
-     * 告警规则状态
+     * 告警规则状态, ok为正常，alarm为告警，invalid为已失效
      * @return status
      */
     public String getStatus() {
@@ -117,7 +117,9 @@ public class ListAlarmHistoriesRequest {
     }
 
     /**
-     * 告警规则等级
+     * 告警级别, 1为紧急，2为重要，3为次要，4为提示
+     * minimum: 1
+     * maximum: 4
      * @return level
      */
     public Integer getLevel() {
@@ -134,7 +136,7 @@ public class ListAlarmHistoriesRequest {
     }
 
     /**
-     * 服务的命名空间
+     * 查询服务的命名空间，各服务命名空间请参考[服务命名空间](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)
      * @return namespace
      */
     public String getNamespace() {
@@ -151,7 +153,7 @@ public class ListAlarmHistoriesRequest {
     }
 
     /**
-     * 告警资源ID，多维度情况使用逗号分隔
+     * 告警资源ID，多维度情况按字母升序排列并使用逗号分隔
      * @return resourceId
      */
     public String getResourceId() {
@@ -168,7 +170,7 @@ public class ListAlarmHistoriesRequest {
     }
 
     /**
-     * 通过时间筛选traces的起始时间(不包括传入时间) 例如：2022-02-10T10:05:46+08:00
+     * 查询告警记录的起始时间，例如：2022-02-10T10:05:46+08:00
      * @return from
      */
     public String getFrom() {
@@ -185,7 +187,7 @@ public class ListAlarmHistoriesRequest {
     }
 
     /**
-     * 通过时间筛选traces的终止时间(不包括传入时间) 例如：2022-02-10T10:05:47+08:00
+     * 查询告警记录的截止时间，例如：2022-02-10T10:05:47+08:00
      * @return to
      */
     public String getTo() {
@@ -202,7 +204,9 @@ public class ListAlarmHistoriesRequest {
     }
 
     /**
-     * 偏移量
+     * 分页偏移量
+     * minimum: 0
+     * maximum: 999
      * @return offset
      */
     public Integer getOffset() {
@@ -219,7 +223,9 @@ public class ListAlarmHistoriesRequest {
     }
 
     /**
-     * 希望的查询的数据量
+     * 分页大小
+     * minimum: 1
+     * maximum: 100
      * @return limit
      */
     public Integer getLimit() {

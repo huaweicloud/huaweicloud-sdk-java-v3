@@ -202,7 +202,7 @@ public class StatisticsAPI {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    private String status;
+    private Integer status;
 
     public StatisticsAPI withMaxLatency(Integer maxLatency) {
         this.maxLatency = maxLatency;
@@ -544,7 +544,7 @@ public class StatisticsAPI {
         this.registerTime = registerTime;
     }
 
-    public StatisticsAPI withStatus(String status) {
+    public StatisticsAPI withStatus(Integer status) {
         this.status = status;
         return this;
     }
@@ -553,11 +553,11 @@ public class StatisticsAPI {
      * 状态
      * @return status
      */
-    public String getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 

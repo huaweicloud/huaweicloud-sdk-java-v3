@@ -19,6 +19,11 @@ public class NeutronListSecurityGroupRulesResponse extends SdkResponse {
 
     private List<NeutronSecurityGroupRule> securityGroupRules = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "security_group_rules_links")
+
+    private List<NeutronPageLink> securityGroupRulesLinks = null;
+
     public NeutronListSecurityGroupRulesResponse withSecurityGroupRules(
         List<NeutronSecurityGroupRule> securityGroupRules) {
         this.securityGroupRules = securityGroupRules;
@@ -55,6 +60,42 @@ public class NeutronListSecurityGroupRulesResponse extends SdkResponse {
         this.securityGroupRules = securityGroupRules;
     }
 
+    public NeutronListSecurityGroupRulesResponse withSecurityGroupRulesLinks(
+        List<NeutronPageLink> securityGroupRulesLinks) {
+        this.securityGroupRulesLinks = securityGroupRulesLinks;
+        return this;
+    }
+
+    public NeutronListSecurityGroupRulesResponse addSecurityGroupRulesLinksItem(
+        NeutronPageLink securityGroupRulesLinksItem) {
+        if (this.securityGroupRulesLinks == null) {
+            this.securityGroupRulesLinks = new ArrayList<>();
+        }
+        this.securityGroupRulesLinks.add(securityGroupRulesLinksItem);
+        return this;
+    }
+
+    public NeutronListSecurityGroupRulesResponse withSecurityGroupRulesLinks(
+        Consumer<List<NeutronPageLink>> securityGroupRulesLinksSetter) {
+        if (this.securityGroupRulesLinks == null) {
+            this.securityGroupRulesLinks = new ArrayList<>();
+        }
+        securityGroupRulesLinksSetter.accept(this.securityGroupRulesLinks);
+        return this;
+    }
+
+    /**
+     * 分页信息
+     * @return securityGroupRulesLinks
+     */
+    public List<NeutronPageLink> getSecurityGroupRulesLinks() {
+        return securityGroupRulesLinks;
+    }
+
+    public void setSecurityGroupRulesLinks(List<NeutronPageLink> securityGroupRulesLinks) {
+        this.securityGroupRulesLinks = securityGroupRulesLinks;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -65,12 +106,14 @@ public class NeutronListSecurityGroupRulesResponse extends SdkResponse {
         }
         NeutronListSecurityGroupRulesResponse neutronListSecurityGroupRulesResponse =
             (NeutronListSecurityGroupRulesResponse) o;
-        return Objects.equals(this.securityGroupRules, neutronListSecurityGroupRulesResponse.securityGroupRules);
+        return Objects.equals(this.securityGroupRules, neutronListSecurityGroupRulesResponse.securityGroupRules)
+            && Objects.equals(this.securityGroupRulesLinks,
+                neutronListSecurityGroupRulesResponse.securityGroupRulesLinks);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(securityGroupRules);
+        return Objects.hash(securityGroupRules, securityGroupRulesLinks);
     }
 
     @Override
@@ -78,6 +121,7 @@ public class NeutronListSecurityGroupRulesResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class NeutronListSecurityGroupRulesResponse {\n");
         sb.append("    securityGroupRules: ").append(toIndentedString(securityGroupRules)).append("\n");
+        sb.append("    securityGroupRulesLinks: ").append(toIndentedString(securityGroupRulesLinks)).append("\n");
         sb.append("}");
         return sb.toString();
     }

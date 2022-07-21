@@ -50,6 +50,38 @@ public class ImageClient {
     }
 
     /**
+     * 图像描述
+     *
+     * 图像描述
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param RunImageDescriptionRequest 请求对象
+     * @return RunImageDescriptionResponse
+     */
+    public RunImageDescriptionResponse runImageDescription(RunImageDescriptionRequest request) {
+        return hcClient.syncInvokeHttp(request, ImageMeta.runImageDescription);
+    }
+
+    /**
+     * 图像描述
+     *
+     * 图像描述
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param RunImageDescriptionRequest 请求对象
+     * @return SyncInvoker<RunImageDescriptionRequest, RunImageDescriptionResponse>
+     */
+    public SyncInvoker<RunImageDescriptionRequest, RunImageDescriptionResponse> runImageDescriptionInvoker(
+        RunImageDescriptionRequest request) {
+        return new SyncInvoker<RunImageDescriptionRequest, RunImageDescriptionResponse>(request,
+            ImageMeta.runImageDescription, hcClient);
+    }
+
+    /**
      * 图像主体识别
      *
      * 检测图像中的主要内容，返回主要内容的坐标信息，这里的主要内容包括两方面：bounding_box和main_object_box

@@ -63,7 +63,9 @@ public class ListAlarmHistoriesResponse extends SdkResponse {
     }
 
     /**
-     * 告警历史列表总数
+     * 告警记录列表总数
+     * minimum: 0
+     * maximum: 2147483647
      * @return count
      */
     public Integer getCount() {

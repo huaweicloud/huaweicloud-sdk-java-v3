@@ -65,7 +65,7 @@ public class KeystoneCreateGroupOption {
     }
 
     /**
-     * 用户组名，长度小于等于64字节。
+     * 用户组名，长度小于等于128字符。
      * @return name
      */
     public String getName() {

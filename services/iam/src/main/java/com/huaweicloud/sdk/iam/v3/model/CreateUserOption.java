@@ -93,7 +93,7 @@ public class CreateUserOption {
     }
 
     /**
-     * IAM用户名。长度5~32字符之间，首位不能为数字，特殊字符只能包含下划线“_”、中划线“-”和空格。
+     * IAM用户名，长度1~64之间，只能包含如下字符：大小写字母、空格、数字或特殊字符（-_.）且不能以数字开头。
      * @return name
      */
     public String getName() {

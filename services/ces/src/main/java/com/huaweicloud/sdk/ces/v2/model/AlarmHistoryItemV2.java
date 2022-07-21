@@ -1,16 +1,21 @@
 package com.huaweicloud.sdk.ces.v2.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 告警历史详细信息
+ * 告警记录详细信息
  */
 public class AlarmHistoryItemV2 {
 
@@ -29,20 +34,269 @@ public class AlarmHistoryItemV2 {
 
     private String name;
 
+    /**
+     * 告警记录的状态，取值为ok，alarm，invalid； ok为正常，alarm为告警，invalid为已失效。
+     */
+    public static final class StatusEnum {
+
+        /**
+         * Enum OK for value: "ok"
+         */
+        public static final StatusEnum OK = new StatusEnum("ok");
+
+        /**
+         * Enum ALARM for value: "alarm"
+         */
+        public static final StatusEnum ALARM = new StatusEnum("alarm");
+
+        /**
+         * Enum INVALID for value: "invalid"
+         */
+        public static final StatusEnum INVALID = new StatusEnum("invalid");
+
+        private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StatusEnum> createStaticFields() {
+            Map<String, StatusEnum> map = new HashMap<>();
+            map.put("ok", OK);
+            map.put("alarm", ALARM);
+            map.put("invalid", INVALID);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        StatusEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static StatusEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            StatusEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new StatusEnum(value);
+            }
+            return result;
+        }
+
+        public static StatusEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            StatusEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof StatusEnum) {
+                return this.value.equals(((StatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    private String status;
+    private StatusEnum status;
+
+    /**
+     * 告警记录的告警级别，值为1,2,3,4；1为紧急，2为重要，3为次要，4为提示。
+     */
+    public static final class LevelEnum {
+
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
+        public static final LevelEnum NUMBER_1 = new LevelEnum(1);
+
+        /**
+         * Enum NUMBER_2 for value: 2
+         */
+        public static final LevelEnum NUMBER_2 = new LevelEnum(2);
+
+        /**
+         * Enum NUMBER_3 for value: 3
+         */
+        public static final LevelEnum NUMBER_3 = new LevelEnum(3);
+
+        /**
+         * Enum NUMBER_4 for value: 4
+         */
+        public static final LevelEnum NUMBER_4 = new LevelEnum(4);
+
+        private static final Map<Integer, LevelEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, LevelEnum> createStaticFields() {
+            Map<Integer, LevelEnum> map = new HashMap<>();
+            map.put(1, NUMBER_1);
+            map.put(2, NUMBER_2);
+            map.put(3, NUMBER_3);
+            map.put(4, NUMBER_4);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        LevelEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static LevelEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            LevelEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new LevelEnum(value);
+            }
+            return result;
+        }
+
+        public static LevelEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            LevelEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof LevelEnum) {
+                return this.value.equals(((LevelEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "level")
 
-    private Integer level;
+    private LevelEnum level;
+
+    /**
+     * 告警类型； 仅针对事件告警的参数，枚举类型：值为EVENT.SYS或者EVENT.CUSTOM
+     */
+    public static final class TypeEnum {
+
+        /**
+         * Enum EVENT_SYS for value: "EVENT.SYS"
+         */
+        public static final TypeEnum EVENT_SYS = new TypeEnum("EVENT.SYS");
+
+        /**
+         * Enum EVENT_CUSTOM for value: "EVENT.CUSTOM"
+         */
+        public static final TypeEnum EVENT_CUSTOM = new TypeEnum("EVENT.CUSTOM");
+
+        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TypeEnum> createStaticFields() {
+            Map<String, TypeEnum> map = new HashMap<>();
+            map.put("EVENT.SYS", EVENT_SYS);
+            map.put("EVENT.CUSTOM", EVENT_CUSTOM);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        TypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            TypeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new TypeEnum(value);
+            }
+            return result;
+        }
+
+        public static TypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            TypeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof TypeEnum) {
+                return this.value.equals(((TypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
-    private String type;
+    private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "action_enabled")
@@ -77,17 +331,17 @@ public class AlarmHistoryItemV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alarm_actions")
 
-    private List<SMNAction> alarmActions = null;
+    private List<Notification> alarmActions = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ok_actions")
 
-    private List<SMNAction> okActions = null;
+    private List<Notification> okActions = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "data_points")
+    @JsonProperty(value = "datapoints")
 
-    private List<Object> dataPoints = null;
+    private List<DataPointInfo> datapoints = null;
 
     public AlarmHistoryItemV2 withRecordId(String recordId) {
         this.recordId = recordId;
@@ -95,7 +349,7 @@ public class AlarmHistoryItemV2 {
     }
 
     /**
-     * 告警历史ID
+     * 告警记录ID
      * @return recordId
      */
     public String getRecordId() {
@@ -140,41 +394,41 @@ public class AlarmHistoryItemV2 {
         this.name = name;
     }
 
-    public AlarmHistoryItemV2 withStatus(String status) {
+    public AlarmHistoryItemV2 withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
     /**
-     * 告警历史的状态，取值为ok，alarm，insufficient_data； ok为正常，alarm为告警，insufficient_data数据不足。
+     * 告警记录的状态，取值为ok，alarm，invalid； ok为正常，alarm为告警，invalid为已失效。
      * @return status
      */
-    public String getStatus() {
+    public StatusEnum getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(StatusEnum status) {
         this.status = status;
     }
 
-    public AlarmHistoryItemV2 withLevel(Integer level) {
+    public AlarmHistoryItemV2 withLevel(LevelEnum level) {
         this.level = level;
         return this;
     }
 
     /**
-     * 告警历史的告警级别，值为1,2,3,4；1为紧急，2为重要，3为次要，4为提示。
+     * 告警记录的告警级别，值为1,2,3,4；1为紧急，2为重要，3为次要，4为提示。
      * @return level
      */
-    public Integer getLevel() {
+    public LevelEnum getLevel() {
         return level;
     }
 
-    public void setLevel(Integer level) {
+    public void setLevel(LevelEnum level) {
         this.level = level;
     }
 
-    public AlarmHistoryItemV2 withType(String type) {
+    public AlarmHistoryItemV2 withType(TypeEnum type) {
         this.type = type;
         return this;
     }
@@ -183,11 +437,11 @@ public class AlarmHistoryItemV2 {
      * 告警类型； 仅针对事件告警的参数，枚举类型：值为EVENT.SYS或者EVENT.CUSTOM
      * @return type
      */
-    public String getType() {
+    public TypeEnum getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(TypeEnum type) {
         this.type = type;
     }
 
@@ -320,12 +574,12 @@ public class AlarmHistoryItemV2 {
         this.additionalInfo = additionalInfo;
     }
 
-    public AlarmHistoryItemV2 withAlarmActions(List<SMNAction> alarmActions) {
+    public AlarmHistoryItemV2 withAlarmActions(List<Notification> alarmActions) {
         this.alarmActions = alarmActions;
         return this;
     }
 
-    public AlarmHistoryItemV2 addAlarmActionsItem(SMNAction alarmActionsItem) {
+    public AlarmHistoryItemV2 addAlarmActionsItem(Notification alarmActionsItem) {
         if (this.alarmActions == null) {
             this.alarmActions = new ArrayList<>();
         }
@@ -333,7 +587,7 @@ public class AlarmHistoryItemV2 {
         return this;
     }
 
-    public AlarmHistoryItemV2 withAlarmActions(Consumer<List<SMNAction>> alarmActionsSetter) {
+    public AlarmHistoryItemV2 withAlarmActions(Consumer<List<Notification>> alarmActionsSetter) {
         if (this.alarmActions == null) {
             this.alarmActions = new ArrayList<>();
         }
@@ -342,23 +596,23 @@ public class AlarmHistoryItemV2 {
     }
 
     /**
-     * 告警触发的动作。  结构如下：  {  \"type\": \"notification\", \"notificationList\": [\"urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\"]  }  type取值： notification：通知。 autoscaling：弹性伸缩。 notificationList：告警状态发生变化时，被通知对象的列表。
+     * 告警触发的动作。  结构如下：  {  \"type\": \"notification\", \"notification_list\": [\"urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\"]  }  type取值： notification：通知。 autoscaling：弹性伸缩。 notification_list：告警状态发生变化时，被通知对象的列表。
      * @return alarmActions
      */
-    public List<SMNAction> getAlarmActions() {
+    public List<Notification> getAlarmActions() {
         return alarmActions;
     }
 
-    public void setAlarmActions(List<SMNAction> alarmActions) {
+    public void setAlarmActions(List<Notification> alarmActions) {
         this.alarmActions = alarmActions;
     }
 
-    public AlarmHistoryItemV2 withOkActions(List<SMNAction> okActions) {
+    public AlarmHistoryItemV2 withOkActions(List<Notification> okActions) {
         this.okActions = okActions;
         return this;
     }
 
-    public AlarmHistoryItemV2 addOkActionsItem(SMNAction okActionsItem) {
+    public AlarmHistoryItemV2 addOkActionsItem(Notification okActionsItem) {
         if (this.okActions == null) {
             this.okActions = new ArrayList<>();
         }
@@ -366,7 +620,7 @@ public class AlarmHistoryItemV2 {
         return this;
     }
 
-    public AlarmHistoryItemV2 withOkActions(Consumer<List<SMNAction>> okActionsSetter) {
+    public AlarmHistoryItemV2 withOkActions(Consumer<List<Notification>> okActionsSetter) {
         if (this.okActions == null) {
             this.okActions = new ArrayList<>();
         }
@@ -375,48 +629,48 @@ public class AlarmHistoryItemV2 {
     }
 
     /**
-     * 告警恢复触发的动作。  结构如下：  {  \"type\": \"notification\", \"notificationList\": [\"urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\"]  } type取值：  notification：通知。  notificationList：告警状态发生变化时，被通知对象的列表。
+     * 告警恢复触发的动作。  结构如下：  {  \"type\": \"notification\", \"notification_list\": [\"urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\"]  } type取值：  notification：通知。  notification_list：告警状态发生变化时，被通知对象的列表。
      * @return okActions
      */
-    public List<SMNAction> getOkActions() {
+    public List<Notification> getOkActions() {
         return okActions;
     }
 
-    public void setOkActions(List<SMNAction> okActions) {
+    public void setOkActions(List<Notification> okActions) {
         this.okActions = okActions;
     }
 
-    public AlarmHistoryItemV2 withDataPoints(List<Object> dataPoints) {
-        this.dataPoints = dataPoints;
+    public AlarmHistoryItemV2 withDatapoints(List<DataPointInfo> datapoints) {
+        this.datapoints = datapoints;
         return this;
     }
 
-    public AlarmHistoryItemV2 addDataPointsItem(Object dataPointsItem) {
-        if (this.dataPoints == null) {
-            this.dataPoints = new ArrayList<>();
+    public AlarmHistoryItemV2 addDatapointsItem(DataPointInfo datapointsItem) {
+        if (this.datapoints == null) {
+            this.datapoints = new ArrayList<>();
         }
-        this.dataPoints.add(dataPointsItem);
+        this.datapoints.add(datapointsItem);
         return this;
     }
 
-    public AlarmHistoryItemV2 withDataPoints(Consumer<List<Object>> dataPointsSetter) {
-        if (this.dataPoints == null) {
-            this.dataPoints = new ArrayList<>();
+    public AlarmHistoryItemV2 withDatapoints(Consumer<List<DataPointInfo>> datapointsSetter) {
+        if (this.datapoints == null) {
+            this.datapoints = new ArrayList<>();
         }
-        dataPointsSetter.accept(this.dataPoints);
+        datapointsSetter.accept(this.datapoints);
         return this;
     }
 
     /**
-     * 计算出该条告警历史的资源监控数据上报时间和监控数值。
-     * @return dataPoints
+     * 计算出该条告警记录的资源监控数据上报时间和监控数值。
+     * @return datapoints
      */
-    public List<Object> getDataPoints() {
-        return dataPoints;
+    public List<DataPointInfo> getDatapoints() {
+        return datapoints;
     }
 
-    public void setDataPoints(List<Object> dataPoints) {
-        this.dataPoints = dataPoints;
+    public void setDatapoints(List<DataPointInfo> datapoints) {
+        this.datapoints = datapoints;
     }
 
     @Override
@@ -442,7 +696,7 @@ public class AlarmHistoryItemV2 {
             && Objects.equals(this.additionalInfo, alarmHistoryItemV2.additionalInfo)
             && Objects.equals(this.alarmActions, alarmHistoryItemV2.alarmActions)
             && Objects.equals(this.okActions, alarmHistoryItemV2.okActions)
-            && Objects.equals(this.dataPoints, alarmHistoryItemV2.dataPoints);
+            && Objects.equals(this.datapoints, alarmHistoryItemV2.datapoints);
     }
 
     @Override
@@ -461,7 +715,7 @@ public class AlarmHistoryItemV2 {
             additionalInfo,
             alarmActions,
             okActions,
-            dataPoints);
+            datapoints);
     }
 
     @Override
@@ -482,7 +736,7 @@ public class AlarmHistoryItemV2 {
         sb.append("    additionalInfo: ").append(toIndentedString(additionalInfo)).append("\n");
         sb.append("    alarmActions: ").append(toIndentedString(alarmActions)).append("\n");
         sb.append("    okActions: ").append(toIndentedString(okActions)).append("\n");
-        sb.append("    dataPoints: ").append(toIndentedString(dataPoints)).append("\n");
+        sb.append("    datapoints: ").append(toIndentedString(datapoints)).append("\n");
         sb.append("}");
         return sb.toString();
     }
