@@ -29,7 +29,7 @@ public class OpenGaussResizeRequest  {
     @JsonProperty(value="is_auto_pay")
     
     
-    private String isAutoPay;
+    private Boolean isAutoPay;
 
     public OpenGaussResizeRequest withFlavorRef(String flavorRef) {
         this.flavorRef = flavorRef;
@@ -53,7 +53,7 @@ public class OpenGaussResizeRequest  {
 
     
 
-    public OpenGaussResizeRequest withIsAutoPay(String isAutoPay) {
+    public OpenGaussResizeRequest withIsAutoPay(Boolean isAutoPay) {
         this.isAutoPay = isAutoPay;
         return this;
     }
@@ -65,11 +65,11 @@ public class OpenGaussResizeRequest  {
      * 创建包周期实例时可指定，表示是否自动从账户中支付，此字段不影响自动续订的支付方式。true，表示自动从账户中支付。false，表示手动从账户中支付，默认为该方式。
      * @return isAutoPay
      */
-    public String getIsAutoPay() {
+    public Boolean getIsAutoPay() {
         return isAutoPay;
     }
 
-    public void setIsAutoPay(String isAutoPay) {
+    public void setIsAutoPay(Boolean isAutoPay) {
         this.isAutoPay = isAutoPay;
     }
 

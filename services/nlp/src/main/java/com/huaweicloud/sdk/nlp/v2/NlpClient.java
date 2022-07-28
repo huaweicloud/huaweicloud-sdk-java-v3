@@ -114,6 +114,38 @@ public class NlpClient {
     }
 
     /**
+     * 成分句法分析
+     *
+     * 识别句子中的成分以及成分之间的层次包含关系。
+     * 在使用本API之前， 需要您完成服务申请， 具体操作流程请参见[申请服务](https://support.huaweicloud.com/api-nlp/nlp_03_0004.html)章节。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param RunConstituencyParserRequest 请求对象
+     * @return RunConstituencyParserResponse
+     */
+    public RunConstituencyParserResponse runConstituencyParser(RunConstituencyParserRequest request) {
+        return hcClient.syncInvokeHttp(request, NlpMeta.runConstituencyParser);
+    }
+
+    /**
+     * 成分句法分析
+     *
+     * 识别句子中的成分以及成分之间的层次包含关系。
+     * 在使用本API之前， 需要您完成服务申请， 具体操作流程请参见[申请服务](https://support.huaweicloud.com/api-nlp/nlp_03_0004.html)章节。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param RunConstituencyParserRequest 请求对象
+     * @return SyncInvoker<RunConstituencyParserRequest, RunConstituencyParserResponse>
+     */
+    public SyncInvoker<RunConstituencyParserRequest, RunConstituencyParserResponse> runConstituencyParserInvoker(RunConstituencyParserRequest request) {
+        return new SyncInvoker<RunConstituencyParserRequest, RunConstituencyParserResponse>(request, NlpMeta.runConstituencyParser, hcClient);
+    }
+
+    /**
      * 依存句法分析
      *
      * 识别句子中词汇与词汇之间的相互依存关系。

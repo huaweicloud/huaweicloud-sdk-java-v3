@@ -90,7 +90,7 @@ public class MysqlProxyNodes  {
 
 
     /**
-     * Proxy节点状态。 取值范围：normal、abnormal、creating和deleted。
+     * Proxy节点状态。 取值范围：ACTIVE、ABNORMAL、BUILD和FAILED。
      * @return status
      */
     public String getStatus() {

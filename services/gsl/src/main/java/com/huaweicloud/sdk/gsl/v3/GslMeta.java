@@ -665,6 +665,31 @@ public class GslMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowMonthUsagesRequest, ShowMonthUsagesResponse> showMonthUsages =
+        genForshowMonthUsages();
+
+    private static HttpRequestDef<ShowMonthUsagesRequest, ShowMonthUsagesResponse> genForshowMonthUsages() {
+        // basic
+        HttpRequestDef.Builder<ShowMonthUsagesRequest, ShowMonthUsagesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ShowMonthUsagesRequest.class, ShowMonthUsagesResponse.class)
+                .withName("ShowMonthUsages")
+                .withUri("/v1/sim-cards/month-usages")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ShowMonthUsageReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowMonthUsageReq.class),
+            f -> f.withMarshaller(ShowMonthUsagesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowRealNamedRequest, ShowRealNamedResponse> showRealNamed =
         genForshowRealNamed();
 

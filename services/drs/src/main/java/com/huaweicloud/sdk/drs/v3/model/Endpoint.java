@@ -16,7 +16,7 @@ import java.util.Objects;
 public class Endpoint {
 
     /**
-     * 数据库类型
+     * 数据库类型，测试连接之后修改调用时必填。
      */
     public static final class DbTypeEnum {
 
@@ -284,7 +284,7 @@ public class Endpoint {
     }
 
     /**
-     * 数据库类型
+     * 数据库类型，测试连接之后修改调用时必填。
      * @return dbType
      */
     public DbTypeEnum getDbType() {

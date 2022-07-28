@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.gaussdb.v3.model.InstanceTagItem;
 import com.huaweicloud.sdk.gaussdb.v3.model.MysqlBackupStrategy;
 import com.huaweicloud.sdk.gaussdb.v3.model.MysqlChargeInfo;
-import com.huaweicloud.sdk.gaussdb.v3.model.MysqlDatastore;
+import com.huaweicloud.sdk.gaussdb.v3.model.MysqlDatastoreWithKernelVersion;
 import com.huaweicloud.sdk.gaussdb.v3.model.MysqlFlavorInfo;
 import com.huaweicloud.sdk.gaussdb.v3.model.MysqlVolumeInfo;
 import java.util.ArrayList;
@@ -86,7 +86,7 @@ public class MysqlInstanceListInfo  {
     @JsonProperty(value="datastore")
     
     
-    private MysqlDatastore datastore;
+    private MysqlDatastoreWithKernelVersion datastore;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -397,14 +397,14 @@ public class MysqlInstanceListInfo  {
 
     
 
-    public MysqlInstanceListInfo withDatastore(MysqlDatastore datastore) {
+    public MysqlInstanceListInfo withDatastore(MysqlDatastoreWithKernelVersion datastore) {
         this.datastore = datastore;
         return this;
     }
 
-    public MysqlInstanceListInfo withDatastore(Consumer<MysqlDatastore> datastoreSetter) {
+    public MysqlInstanceListInfo withDatastore(Consumer<MysqlDatastoreWithKernelVersion> datastoreSetter) {
         if(this.datastore == null ){
-            this.datastore = new MysqlDatastore();
+            this.datastore = new MysqlDatastoreWithKernelVersion();
             datastoreSetter.accept(this.datastore);
         }
         
@@ -416,11 +416,11 @@ public class MysqlInstanceListInfo  {
      * Get datastore
      * @return datastore
      */
-    public MysqlDatastore getDatastore() {
+    public MysqlDatastoreWithKernelVersion getDatastore() {
         return datastore;
     }
 
-    public void setDatastore(MysqlDatastore datastore) {
+    public void setDatastore(MysqlDatastoreWithKernelVersion datastore) {
         this.datastore = datastore;
     }
 

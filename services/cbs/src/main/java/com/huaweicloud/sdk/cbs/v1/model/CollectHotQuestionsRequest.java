@@ -43,7 +43,7 @@ public class CollectHotQuestionsRequest  {
     @JsonProperty(value="top")
     
     
-    private String top;
+    private Integer top;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -132,7 +132,7 @@ public class CollectHotQuestionsRequest  {
 
     
 
-    public CollectHotQuestionsRequest withTop(String top) {
+    public CollectHotQuestionsRequest withTop(Integer top) {
         this.top = top;
         return this;
     }
@@ -144,11 +144,11 @@ public class CollectHotQuestionsRequest  {
      * 热点问题最多显示的个数，默认值为10，取值范围1-20。
      * @return top
      */
-    public String getTop() {
+    public Integer getTop() {
         return top;
     }
 
-    public void setTop(String top) {
+    public void setTop(Integer top) {
         this.top = top;
     }
 

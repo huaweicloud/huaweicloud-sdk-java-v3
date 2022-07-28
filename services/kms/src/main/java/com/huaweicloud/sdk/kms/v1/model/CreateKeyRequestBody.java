@@ -317,6 +317,11 @@ public class CreateKeyRequestBody {
 
     private String sequence;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "keystore_id")
+
+    private String keystoreId;
+
     public CreateKeyRequestBody withKeyAlias(String keyAlias) {
         this.keyAlias = keyAlias;
         return this;
@@ -436,6 +441,23 @@ public class CreateKeyRequestBody {
         this.sequence = sequence;
     }
 
+    public CreateKeyRequestBody withKeystoreId(String keystoreId) {
+        this.keystoreId = keystoreId;
+        return this;
+    }
+
+    /**
+     * 密钥库ID，默认使用KMS默认密钥库
+     * @return keystoreId
+     */
+    public String getKeystoreId() {
+        return keystoreId;
+    }
+
+    public void setKeystoreId(String keystoreId) {
+        this.keystoreId = keystoreId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -451,12 +473,14 @@ public class CreateKeyRequestBody {
             && Objects.equals(this.keyDescription, createKeyRequestBody.keyDescription)
             && Objects.equals(this.origin, createKeyRequestBody.origin)
             && Objects.equals(this.enterpriseProjectId, createKeyRequestBody.enterpriseProjectId)
-            && Objects.equals(this.sequence, createKeyRequestBody.sequence);
+            && Objects.equals(this.sequence, createKeyRequestBody.sequence)
+            && Objects.equals(this.keystoreId, createKeyRequestBody.keystoreId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(keyAlias, keySpec, keyUsage, keyDescription, origin, enterpriseProjectId, sequence);
+        return Objects
+            .hash(keyAlias, keySpec, keyUsage, keyDescription, origin, enterpriseProjectId, sequence, keystoreId);
     }
 
     @Override
@@ -470,6 +494,7 @@ public class CreateKeyRequestBody {
         sb.append("    origin: ").append(toIndentedString(origin)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    sequence: ").append(toIndentedString(sequence)).append("\n");
+        sb.append("    keystoreId: ").append(toIndentedString(keystoreId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

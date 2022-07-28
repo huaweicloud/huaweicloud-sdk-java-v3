@@ -43,7 +43,7 @@ public class MysqlProxyFlavorGroups  {
 
 
     /**
-     * 规格组类型,如x86，arm。
+     * 规格组类型，如x86、arm。
      * @return groupType
      */
     public String getGroupType() {

@@ -9,7 +9,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.gaussdb.v3.model.MysqlBackupStrategy;
-import com.huaweicloud.sdk.gaussdb.v3.model.MysqlDatastore;
+import com.huaweicloud.sdk.gaussdb.v3.model.MysqlDatastoreWithKernelVersion;
+import com.huaweicloud.sdk.gaussdb.v3.model.MysqlInstanceChargeInfo;
 import com.huaweicloud.sdk.gaussdb.v3.model.MysqlInstanceNodeInfo;
 import com.huaweicloud.sdk.gaussdb.v3.model.MysqlProxyInfo;
 import com.huaweicloud.sdk.gaussdb.v3.model.MysqlTags;
@@ -75,6 +76,13 @@ public class MysqlInstanceInfoDetail  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="charge_info")
+    
+    
+    private MysqlInstanceChargeInfo chargeInfo;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_count")
     
     
@@ -85,14 +93,14 @@ public class MysqlInstanceInfoDetail  {
     @JsonProperty(value="datastore")
     
     
-    private MysqlDatastore datastore;
+    private MysqlDatastoreWithKernelVersion datastore;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="backup_used_space")
     
     
-    private Long backupUsedSpace;
+    private Double backupUsedSpace;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -381,6 +389,35 @@ public class MysqlInstanceInfoDetail  {
 
     
 
+    public MysqlInstanceInfoDetail withChargeInfo(MysqlInstanceChargeInfo chargeInfo) {
+        this.chargeInfo = chargeInfo;
+        return this;
+    }
+
+    public MysqlInstanceInfoDetail withChargeInfo(Consumer<MysqlInstanceChargeInfo> chargeInfoSetter) {
+        if(this.chargeInfo == null ){
+            this.chargeInfo = new MysqlInstanceChargeInfo();
+            chargeInfoSetter.accept(this.chargeInfo);
+        }
+        
+        return this;
+    }
+
+
+    /**
+     * Get chargeInfo
+     * @return chargeInfo
+     */
+    public MysqlInstanceChargeInfo getChargeInfo() {
+        return chargeInfo;
+    }
+
+    public void setChargeInfo(MysqlInstanceChargeInfo chargeInfo) {
+        this.chargeInfo = chargeInfo;
+    }
+
+    
+
     public MysqlInstanceInfoDetail withNodeCount(Integer nodeCount) {
         this.nodeCount = nodeCount;
         return this;
@@ -403,14 +440,14 @@ public class MysqlInstanceInfoDetail  {
 
     
 
-    public MysqlInstanceInfoDetail withDatastore(MysqlDatastore datastore) {
+    public MysqlInstanceInfoDetail withDatastore(MysqlDatastoreWithKernelVersion datastore) {
         this.datastore = datastore;
         return this;
     }
 
-    public MysqlInstanceInfoDetail withDatastore(Consumer<MysqlDatastore> datastoreSetter) {
+    public MysqlInstanceInfoDetail withDatastore(Consumer<MysqlDatastoreWithKernelVersion> datastoreSetter) {
         if(this.datastore == null ){
-            this.datastore = new MysqlDatastore();
+            this.datastore = new MysqlDatastoreWithKernelVersion();
             datastoreSetter.accept(this.datastore);
         }
         
@@ -422,17 +459,17 @@ public class MysqlInstanceInfoDetail  {
      * Get datastore
      * @return datastore
      */
-    public MysqlDatastore getDatastore() {
+    public MysqlDatastoreWithKernelVersion getDatastore() {
         return datastore;
     }
 
-    public void setDatastore(MysqlDatastore datastore) {
+    public void setDatastore(MysqlDatastoreWithKernelVersion datastore) {
         this.datastore = datastore;
     }
 
     
 
-    public MysqlInstanceInfoDetail withBackupUsedSpace(Long backupUsedSpace) {
+    public MysqlInstanceInfoDetail withBackupUsedSpace(Double backupUsedSpace) {
         this.backupUsedSpace = backupUsedSpace;
         return this;
     }
@@ -444,11 +481,11 @@ public class MysqlInstanceInfoDetail  {
      * 备份空间使用大小，单位为GB。
      * @return backupUsedSpace
      */
-    public Long getBackupUsedSpace() {
+    public Double getBackupUsedSpace() {
         return backupUsedSpace;
     }
 
-    public void setBackupUsedSpace(Long backupUsedSpace) {
+    public void setBackupUsedSpace(Double backupUsedSpace) {
         this.backupUsedSpace = backupUsedSpace;
     }
 
@@ -951,6 +988,7 @@ public class MysqlInstanceInfoDetail  {
             Objects.equals(this.port, mysqlInstanceInfoDetail.port) &&
             Objects.equals(this.alias, mysqlInstanceInfoDetail.alias) &&
             Objects.equals(this.type, mysqlInstanceInfoDetail.type) &&
+            Objects.equals(this.chargeInfo, mysqlInstanceInfoDetail.chargeInfo) &&
             Objects.equals(this.nodeCount, mysqlInstanceInfoDetail.nodeCount) &&
             Objects.equals(this.datastore, mysqlInstanceInfoDetail.datastore) &&
             Objects.equals(this.backupUsedSpace, mysqlInstanceInfoDetail.backupUsedSpace) &&
@@ -976,7 +1014,7 @@ public class MysqlInstanceInfoDetail  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, projectId, status, port, alias, type, nodeCount, datastore, backupUsedSpace, created, updated, privateWriteIps, publicIps, dbUserName, vpcId, subnetId, securityGroupId, configurationId, backupStrategy, nodes, enterpriseProjectId, timeZone, azMode, masterAzCode, maintenanceWindow, tags, dedicatedResourceId, proxies);
+        return Objects.hash(id, name, projectId, status, port, alias, type, chargeInfo, nodeCount, datastore, backupUsedSpace, created, updated, privateWriteIps, publicIps, dbUserName, vpcId, subnetId, securityGroupId, configurationId, backupStrategy, nodes, enterpriseProjectId, timeZone, azMode, masterAzCode, maintenanceWindow, tags, dedicatedResourceId, proxies);
     }
     @Override
     public String toString() {
@@ -989,6 +1027,7 @@ public class MysqlInstanceInfoDetail  {
         sb.append("    port: ").append(toIndentedString(port)).append("\n");
         sb.append("    alias: ").append(toIndentedString(alias)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    chargeInfo: ").append(toIndentedString(chargeInfo)).append("\n");
         sb.append("    nodeCount: ").append(toIndentedString(nodeCount)).append("\n");
         sb.append("    datastore: ").append(toIndentedString(datastore)).append("\n");
         sb.append("    backupUsedSpace: ").append(toIndentedString(backupUsedSpace)).append("\n");

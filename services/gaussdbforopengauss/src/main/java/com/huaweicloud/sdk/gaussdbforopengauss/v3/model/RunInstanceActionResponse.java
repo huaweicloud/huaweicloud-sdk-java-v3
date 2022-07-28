@@ -26,6 +26,13 @@ public class RunInstanceActionResponse extends SdkResponse {
     
     private String jobId;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="order_id")
+    
+    
+    private String orderId;
+
     public RunInstanceActionResponse withJobId(String jobId) {
         this.jobId = jobId;
         return this;
@@ -35,7 +42,7 @@ public class RunInstanceActionResponse extends SdkResponse {
 
 
     /**
-     * 任务id。
+     * 任务id。按需实例时仅返回任务id。
      * @return jobId
      */
     public String getJobId() {
@@ -44,6 +51,28 @@ public class RunInstanceActionResponse extends SdkResponse {
 
     public void setJobId(String jobId) {
         this.jobId = jobId;
+    }
+
+    
+
+    public RunInstanceActionResponse withOrderId(String orderId) {
+        this.orderId = orderId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 订单id。包周期实例时仅返回订单id。
+     * @return orderId
+     */
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
     }
 
     
@@ -57,17 +86,19 @@ public class RunInstanceActionResponse extends SdkResponse {
             return false;
         }
         RunInstanceActionResponse runInstanceActionResponse = (RunInstanceActionResponse) o;
-        return Objects.equals(this.jobId, runInstanceActionResponse.jobId);
+        return Objects.equals(this.jobId, runInstanceActionResponse.jobId) &&
+            Objects.equals(this.orderId, runInstanceActionResponse.orderId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(jobId);
+        return Objects.hash(jobId, orderId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class RunInstanceActionResponse {\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
+        sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

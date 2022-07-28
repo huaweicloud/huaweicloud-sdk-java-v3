@@ -53,7 +53,7 @@ public class UpdateTaskRulesetItem {
     }
 
     /**
-     * 规则集ID
+     * 规则集ID,通过调用ListTaskRuleset接口，根据响应参数中的template_id获得
      * @return ruleSetId
      */
     public String getRuleSetId() {

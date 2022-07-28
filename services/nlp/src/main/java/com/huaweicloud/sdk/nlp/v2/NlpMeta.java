@@ -94,6 +94,33 @@ public class NlpMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RunConstituencyParserRequest, RunConstituencyParserResponse> runConstituencyParser = genForrunConstituencyParser();
+
+    private static HttpRequestDef<RunConstituencyParserRequest, RunConstituencyParserResponse> genForrunConstituencyParser() {
+        // basic
+        HttpRequestDef.Builder<RunConstituencyParserRequest, RunConstituencyParserResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RunConstituencyParserRequest.class, RunConstituencyParserResponse.class)
+                .withName("RunConstituencyParser")
+                .withUri("/v1/{project_id}/nlp-fundamental/constituency-parser")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ConstituencyParserReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ConstituencyParserReq.class),
+            f -> f.withMarshaller(RunConstituencyParserRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RunDependencyParserRequest, RunDependencyParserResponse> runDependencyParser = genForrunDependencyParser();
 
     private static HttpRequestDef<RunDependencyParserRequest, RunDependencyParserResponse> genForrunDependencyParser() {

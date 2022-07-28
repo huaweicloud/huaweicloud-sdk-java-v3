@@ -456,6 +456,38 @@ public class GslClient {
     }
 
     /**
+     * 月用量统计
+     *
+     * 设备月用量统计
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowMonthUsagesRequest 请求对象
+     * @return ShowMonthUsagesResponse
+     */
+    public ShowMonthUsagesResponse showMonthUsages(ShowMonthUsagesRequest request) {
+        return hcClient.syncInvokeHttp(request, GslMeta.showMonthUsages);
+    }
+
+    /**
+     * 月用量统计
+     *
+     * 设备月用量统计
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowMonthUsagesRequest 请求对象
+     * @return SyncInvoker<ShowMonthUsagesRequest, ShowMonthUsagesResponse>
+     */
+    public SyncInvoker<ShowMonthUsagesRequest, ShowMonthUsagesResponse> showMonthUsagesInvoker(
+        ShowMonthUsagesRequest request) {
+        return new SyncInvoker<ShowMonthUsagesRequest, ShowMonthUsagesResponse>(request, GslMeta.showMonthUsages,
+            hcClient);
+    }
+
+    /**
      * 查询SIM卡实名认证信息
      *
      * 实时查询SIM卡实名认证信息。

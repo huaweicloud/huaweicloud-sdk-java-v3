@@ -99,7 +99,7 @@ public class CreateClusterInfo {
     }
 
     /**
-     * 集群节点数量，取值范围为2~256。
+     * 集群节点数量，集群模式取值范围为3~256，实时数仓（单机模式）取值为1。
      * minimum: 2
      * maximum: 256
      * @return numberOfNode

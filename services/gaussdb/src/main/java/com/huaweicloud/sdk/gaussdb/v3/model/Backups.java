@@ -54,40 +54,40 @@ public class Backups  {
     
     private String endTime;
     /**
-     * 备份状态
+     * 备份状态，取值： - BUILDING：备份中。 - COMPLETED：备份完成。 - FAILED：备份失败。 - AVAILABLE：备份可用。
      */
     public static final class StatusEnum {
 
         
         /**
-         * Enum BUILDING_ for value: "BUILDING：备份中。"
+         * Enum BUILDING for value: "BUILDING"
          */
-        public static final StatusEnum BUILDING_ = new StatusEnum("BUILDING：备份中。");
+        public static final StatusEnum BUILDING = new StatusEnum("BUILDING");
         
         /**
-         * Enum COMPLETED_ for value: "COMPLETED：备份完成。"
+         * Enum COMPLETED for value: "COMPLETED"
          */
-        public static final StatusEnum COMPLETED_ = new StatusEnum("COMPLETED：备份完成。");
+        public static final StatusEnum COMPLETED = new StatusEnum("COMPLETED");
         
         /**
-         * Enum FAILED_ for value: "FAILED：备份失败。"
+         * Enum FAILED for value: "FAILED"
          */
-        public static final StatusEnum FAILED_ = new StatusEnum("FAILED：备份失败。");
+        public static final StatusEnum FAILED = new StatusEnum("FAILED");
         
         /**
-         * Enum AVAILABLE_ for value: "AVAILABLE：备份可用。"
+         * Enum AVAILABLE for value: "AVAILABLE"
          */
-        public static final StatusEnum AVAILABLE_ = new StatusEnum("AVAILABLE：备份可用。");
+        public static final StatusEnum AVAILABLE = new StatusEnum("AVAILABLE");
         
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, StatusEnum> createStaticFields() {
             Map<String, StatusEnum> map = new HashMap<>();
-            map.put("BUILDING：备份中。", BUILDING_);
-            map.put("COMPLETED：备份完成。", COMPLETED_);
-            map.put("FAILED：备份失败。", FAILED_);
-            map.put("AVAILABLE：备份可用。", AVAILABLE_);
+            map.put("BUILDING", BUILDING);
+            map.put("COMPLETED", COMPLETED);
+            map.put("FAILED", FAILED);
+            map.put("AVAILABLE", AVAILABLE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -158,28 +158,28 @@ public class Backups  {
     
     private Integer takeUpTime;
     /**
-     * 备份类型
+     * 备份类型，取值： - auto：自动全量备份。 - manual：手动全量备份
      */
     public static final class TypeEnum {
 
         
         /**
-         * Enum AUTO_ for value: "auto：自动全量备份。"
+         * Enum AUTO for value: "auto"
          */
-        public static final TypeEnum AUTO_ = new TypeEnum("auto：自动全量备份。");
+        public static final TypeEnum AUTO = new TypeEnum("auto");
         
         /**
-         * Enum MANUAL_ for value: "manual：手动全量备份。"
+         * Enum MANUAL for value: "manual"
          */
-        public static final TypeEnum MANUAL_ = new TypeEnum("manual：手动全量备份。");
+        public static final TypeEnum MANUAL = new TypeEnum("manual");
         
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TypeEnum> createStaticFields() {
             Map<String, TypeEnum> map = new HashMap<>();
-            map.put("auto：自动全量备份。", AUTO_);
-            map.put("manual：手动全量备份。", MANUAL_);
+            map.put("auto", AUTO);
+            map.put("manual", MANUAL);
             return Collections.unmodifiableMap(map);
         }
 
@@ -264,34 +264,34 @@ public class Backups  {
     
     private String instanceId;
     /**
-     * 备份级别。当开启一级备份开关时，返回该参数。
+     * 备份级别。当开启一级备份开关时，返回该参数。  取值： - 0：备份正在创建中或者备份失败。 - 1：一级备份。 - 2：二级备份。
      */
     public static final class BackupLevelEnum {
 
         
         /**
-         * Enum _0_ for value: "0：备份正在创建中或者备份失败。"
+         * Enum _0 for value: "0"
          */
-        public static final BackupLevelEnum _0_ = new BackupLevelEnum("0：备份正在创建中或者备份失败。");
+        public static final BackupLevelEnum _0 = new BackupLevelEnum("0");
         
         /**
-         * Enum _1_ for value: "1：一级备份。"
+         * Enum _1 for value: "1"
          */
-        public static final BackupLevelEnum _1_ = new BackupLevelEnum("1：一级备份。");
+        public static final BackupLevelEnum _1 = new BackupLevelEnum("1");
         
         /**
-         * Enum _2_ for value: "2：二级备份。"
+         * Enum _2 for value: "2"
          */
-        public static final BackupLevelEnum _2_ = new BackupLevelEnum("2：二级备份。");
+        public static final BackupLevelEnum _2 = new BackupLevelEnum("2");
         
 
         private static final Map<String, BackupLevelEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, BackupLevelEnum> createStaticFields() {
             Map<String, BackupLevelEnum> map = new HashMap<>();
-            map.put("0：备份正在创建中或者备份失败。", _0_);
-            map.put("1：一级备份。", _1_);
-            map.put("2：二级备份。", _2_);
+            map.put("0", _0);
+            map.put("1", _1);
+            map.put("2", _2);
             return Collections.unmodifiableMap(map);
         }
 
@@ -459,7 +459,7 @@ public class Backups  {
 
 
     /**
-     * 备份状态
+     * 备份状态，取值： - BUILDING：备份中。 - COMPLETED：备份完成。 - FAILED：备份失败。 - AVAILABLE：备份可用。
      * @return status
      */
     public StatusEnum getStatus() {
@@ -503,7 +503,7 @@ public class Backups  {
 
 
     /**
-     * 备份类型
+     * 备份类型，取值： - auto：自动全量备份。 - manual：手动全量备份
      * @return type
      */
     public TypeEnum getType() {
@@ -598,7 +598,7 @@ public class Backups  {
 
 
     /**
-     * 备份级别。当开启一级备份开关时，返回该参数。
+     * 备份级别。当开启一级备份开关时，返回该参数。  取值： - 0：备份正在创建中或者备份失败。 - 1：一级备份。 - 2：二级备份。
      * @return backupLevel
      */
     public BackupLevelEnum getBackupLevel() {

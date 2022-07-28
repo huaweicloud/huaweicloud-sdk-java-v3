@@ -298,6 +298,38 @@ public class KmsAsyncClient {
     }
 
     /**
+     * 创建专属密钥库
+     *
+     * - \&quot;创建租户专属密钥库，专属密钥库使用DHSM实例作为密钥的存储\&quot;
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateKeyStoreRequest 请求对象
+     * @return CompletableFuture<CreateKeyStoreResponse>
+     */
+    public CompletableFuture<CreateKeyStoreResponse> createKeyStoreAsync(CreateKeyStoreRequest request) {
+        return hcClient.asyncInvokeHttp(request, KmsMeta.createKeyStore);
+    }
+
+    /**
+     * 创建专属密钥库
+     *
+     * - \&quot;创建租户专属密钥库，专属密钥库使用DHSM实例作为密钥的存储\&quot;
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateKeyStoreRequest 请求对象
+     * @return AsyncInvoker<CreateKeyStoreRequest, CreateKeyStoreResponse>
+     */
+    public AsyncInvoker<CreateKeyStoreRequest, CreateKeyStoreResponse> createKeyStoreAsyncInvoker(
+        CreateKeyStoreRequest request) {
+        return new AsyncInvoker<CreateKeyStoreRequest, CreateKeyStoreResponse>(request, KmsMeta.createKeyStore,
+            hcClient);
+    }
+
+    /**
      * 添加密钥标签
      *
      * - 功能介绍：添加密钥标签。
@@ -522,6 +554,38 @@ public class KmsAsyncClient {
     }
 
     /**
+     * 删除专属密钥库
+     *
+     * 删除租户专属密钥库
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteKeyStoreRequest 请求对象
+     * @return CompletableFuture<DeleteKeyStoreResponse>
+     */
+    public CompletableFuture<DeleteKeyStoreResponse> deleteKeyStoreAsync(DeleteKeyStoreRequest request) {
+        return hcClient.asyncInvokeHttp(request, KmsMeta.deleteKeyStore);
+    }
+
+    /**
+     * 删除专属密钥库
+     *
+     * 删除租户专属密钥库
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteKeyStoreRequest 请求对象
+     * @return AsyncInvoker<DeleteKeyStoreRequest, DeleteKeyStoreResponse>
+     */
+    public AsyncInvoker<DeleteKeyStoreRequest, DeleteKeyStoreResponse> deleteKeyStoreAsyncInvoker(
+        DeleteKeyStoreRequest request) {
+        return new AsyncInvoker<DeleteKeyStoreRequest, DeleteKeyStoreResponse>(request, KmsMeta.deleteKeyStore,
+            hcClient);
+    }
+
+    /**
      * 删除密钥标签
      *
      * - 功能介绍：删除密钥标签。
@@ -616,6 +680,38 @@ public class KmsAsyncClient {
     }
 
     /**
+     * 禁用专属密钥库
+     *
+     * 禁用租户专属密钥库
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DisableKeyStoreRequest 请求对象
+     * @return CompletableFuture<DisableKeyStoreResponse>
+     */
+    public CompletableFuture<DisableKeyStoreResponse> disableKeyStoreAsync(DisableKeyStoreRequest request) {
+        return hcClient.asyncInvokeHttp(request, KmsMeta.disableKeyStore);
+    }
+
+    /**
+     * 禁用专属密钥库
+     *
+     * 禁用租户专属密钥库
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DisableKeyStoreRequest 请求对象
+     * @return AsyncInvoker<DisableKeyStoreRequest, DisableKeyStoreResponse>
+     */
+    public AsyncInvoker<DisableKeyStoreRequest, DisableKeyStoreResponse> disableKeyStoreAsyncInvoker(
+        DisableKeyStoreRequest request) {
+        return new AsyncInvoker<DisableKeyStoreRequest, DisableKeyStoreResponse>(request, KmsMeta.disableKeyStore,
+            hcClient);
+    }
+
+    /**
      * 启用密钥
      *
      * - 功能介绍：启用密钥，密钥启用后才可以使用。
@@ -682,6 +778,38 @@ public class KmsAsyncClient {
     public AsyncInvoker<EnableKeyRotationRequest, EnableKeyRotationResponse> enableKeyRotationAsyncInvoker(
         EnableKeyRotationRequest request) {
         return new AsyncInvoker<EnableKeyRotationRequest, EnableKeyRotationResponse>(request, KmsMeta.enableKeyRotation,
+            hcClient);
+    }
+
+    /**
+     * 启用专属密钥库
+     *
+     * 启用租户专属密钥库
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param EnableKeyStoreRequest 请求对象
+     * @return CompletableFuture<EnableKeyStoreResponse>
+     */
+    public CompletableFuture<EnableKeyStoreResponse> enableKeyStoreAsync(EnableKeyStoreRequest request) {
+        return hcClient.asyncInvokeHttp(request, KmsMeta.enableKeyStore);
+    }
+
+    /**
+     * 启用专属密钥库
+     *
+     * 启用租户专属密钥库
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param EnableKeyStoreRequest 请求对象
+     * @return AsyncInvoker<EnableKeyStoreRequest, EnableKeyStoreResponse>
+     */
+    public AsyncInvoker<EnableKeyStoreRequest, EnableKeyStoreResponse> enableKeyStoreAsyncInvoker(
+        EnableKeyStoreRequest request) {
+        return new AsyncInvoker<EnableKeyStoreRequest, EnableKeyStoreResponse>(request, KmsMeta.enableKeyStore,
             hcClient);
     }
 
@@ -841,6 +969,37 @@ public class KmsAsyncClient {
     }
 
     /**
+     * 查询专属密钥库列表
+     *
+     * 查询租户专属密钥库列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListKeyStoresRequest 请求对象
+     * @return CompletableFuture<ListKeyStoresResponse>
+     */
+    public CompletableFuture<ListKeyStoresResponse> listKeyStoresAsync(ListKeyStoresRequest request) {
+        return hcClient.asyncInvokeHttp(request, KmsMeta.listKeyStores);
+    }
+
+    /**
+     * 查询专属密钥库列表
+     *
+     * 查询租户专属密钥库列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListKeyStoresRequest 请求对象
+     * @return AsyncInvoker<ListKeyStoresRequest, ListKeyStoresResponse>
+     */
+    public AsyncInvoker<ListKeyStoresRequest, ListKeyStoresResponse> listKeyStoresAsyncInvoker(
+        ListKeyStoresRequest request) {
+        return new AsyncInvoker<ListKeyStoresRequest, ListKeyStoresResponse>(request, KmsMeta.listKeyStores, hcClient);
+    }
+
+    /**
      * 查询密钥列表
      *
      * - 功能介绍：查询用户所有密钥列表。
@@ -994,6 +1153,37 @@ public class KmsAsyncClient {
         ShowKeyRotationStatusRequest request) {
         return new AsyncInvoker<ShowKeyRotationStatusRequest, ShowKeyRotationStatusResponse>(request,
             KmsMeta.showKeyRotationStatus, hcClient);
+    }
+
+    /**
+     * 获取专属密钥库
+     *
+     * 获取租户专属密钥库
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowKeyStoreRequest 请求对象
+     * @return CompletableFuture<ShowKeyStoreResponse>
+     */
+    public CompletableFuture<ShowKeyStoreResponse> showKeyStoreAsync(ShowKeyStoreRequest request) {
+        return hcClient.asyncInvokeHttp(request, KmsMeta.showKeyStore);
+    }
+
+    /**
+     * 获取专属密钥库
+     *
+     * 获取租户专属密钥库
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowKeyStoreRequest 请求对象
+     * @return AsyncInvoker<ShowKeyStoreRequest, ShowKeyStoreResponse>
+     */
+    public AsyncInvoker<ShowKeyStoreRequest, ShowKeyStoreResponse> showKeyStoreAsyncInvoker(
+        ShowKeyStoreRequest request) {
+        return new AsyncInvoker<ShowKeyStoreRequest, ShowKeyStoreResponse>(request, KmsMeta.showKeyStore, hcClient);
     }
 
     /**

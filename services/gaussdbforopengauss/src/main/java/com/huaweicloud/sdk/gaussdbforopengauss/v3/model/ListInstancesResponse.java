@@ -81,7 +81,7 @@ public class ListInstancesResponse extends SdkResponse {
 
 
     /**
-     * 总记录数。
+     * 总记录数 。
      * @return totalCount
      */
     public Integer getTotalCount() {

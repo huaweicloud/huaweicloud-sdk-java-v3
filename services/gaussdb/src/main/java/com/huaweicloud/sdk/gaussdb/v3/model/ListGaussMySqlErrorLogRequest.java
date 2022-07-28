@@ -216,7 +216,7 @@ public class ListGaussMySqlErrorLogRequest  {
 
 
     /**
-     * 日志级别
+     * 日志级别。  取值范围：  - ALL - INFO - LOG - WARNING - ERROR - FATAL - PANIC - NOTE
      * @return level
      */
     public String getLevel() {

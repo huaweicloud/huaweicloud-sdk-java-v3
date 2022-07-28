@@ -1009,6 +1009,57 @@ public class GaussDBMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<SetGaussMySqlProxyWeightRequest, SetGaussMySqlProxyWeightResponse> setGaussMySqlProxyWeight = genForsetGaussMySqlProxyWeight();
+
+    private static HttpRequestDef<SetGaussMySqlProxyWeightRequest, SetGaussMySqlProxyWeightResponse> genForsetGaussMySqlProxyWeight() {
+        // basic
+        HttpRequestDef.Builder<SetGaussMySqlProxyWeightRequest, SetGaussMySqlProxyWeightResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, SetGaussMySqlProxyWeightRequest.class, SetGaussMySqlProxyWeightResponse.class)
+                .withName("SetGaussMySqlProxyWeight")
+                .withUri("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/weight")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetGaussMySqlProxyWeightRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.<String>withRequestField("proxy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetGaussMySqlProxyWeightRequest::getProxyId, (req, v) -> {
+                req.setProxyId(v);
+            })
+        );
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetGaussMySqlProxyWeightRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+        builder.<TaurusModifyProxyWeightRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(TaurusModifyProxyWeightRequest.class),
+            f -> f.withMarshaller(SetGaussMySqlProxyWeightRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<SetGaussMySqlQuotasRequest, SetGaussMySqlQuotasResponse> setGaussMySqlQuotas = genForsetGaussMySqlQuotas();
 
     private static HttpRequestDef<SetGaussMySqlQuotasRequest, SetGaussMySqlQuotasResponse> genForsetGaussMySqlQuotas() {
@@ -1068,6 +1119,41 @@ public class GaussDBMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAuditLogRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDedicatedResourceInfoRequest, ShowDedicatedResourceInfoResponse> showDedicatedResourceInfo = genForshowDedicatedResourceInfo();
+
+    private static HttpRequestDef<ShowDedicatedResourceInfoRequest, ShowDedicatedResourceInfoResponse> genForshowDedicatedResourceInfo() {
+        // basic
+        HttpRequestDef.Builder<ShowDedicatedResourceInfoRequest, ShowDedicatedResourceInfoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDedicatedResourceInfoRequest.class, ShowDedicatedResourceInfoResponse.class)
+                .withName("ShowDedicatedResourceInfo")
+                .withUri("/v3/{project_id}/dedicated-resource/{dedicated_resource_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("dedicated_resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDedicatedResourceInfoRequest::getDedicatedResourceId, (req, v) -> {
+                req.setDedicatedResourceId(v);
+            })
+        );
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDedicatedResourceInfoRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             })
         );

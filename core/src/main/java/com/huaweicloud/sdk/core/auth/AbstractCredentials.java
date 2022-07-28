@@ -67,10 +67,9 @@ public abstract class AbstractCredentials<DerivedT extends AbstractCredentials<D
 
     private Function<HttpRequest, Boolean> derivedPredicate;
 
-    public static final Function<HttpRequest, Boolean> DEFAULT_DERIVED_PREDICATE =
-        httpRequest ->
-            !Constants.DEFAULT_ENDPOINT_REG.matches(
-                httpRequest.getEndpoint().replace(Constants.HTTPS_SCHEME + "://", ""));
+    public static final Function<HttpRequest, Boolean> DEFAULT_DERIVED_PREDICATE = httpRequest ->
+            !httpRequest.getEndpoint().replace(Constants.HTTPS_SCHEME + "://", "")
+                    .matches(Constants.DEFAULT_ENDPOINT_REG);
 
     public abstract void processDerivedAuthParams(String derivedAuthServiceName, String regionId);
 

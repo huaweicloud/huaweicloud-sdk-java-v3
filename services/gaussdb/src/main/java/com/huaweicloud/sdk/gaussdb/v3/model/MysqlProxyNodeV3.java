@@ -159,7 +159,7 @@ public class MysqlProxyNodeV3  {
 
 
     /**
-     * 节点读写分离权重。
+     * 节点读写分离读权重。
      * @return weight
      */
     public Integer getWeight() {

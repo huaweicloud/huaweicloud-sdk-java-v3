@@ -72,7 +72,7 @@ public class CheckDataTransformationReq {
     }
 
     /**
-     * 对象信息
+     * 对象信息，生成加工规则时需要填写。
      * @return objectInfo
      */
     public List<DatabaseObjectVO> getObjectInfo() {

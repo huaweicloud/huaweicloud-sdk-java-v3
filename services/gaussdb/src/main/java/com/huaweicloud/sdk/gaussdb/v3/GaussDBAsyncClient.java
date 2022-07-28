@@ -622,6 +622,36 @@ public class GaussDBAsyncClient {
     }
 
     /**
+     * 设置读写分离权重
+     *
+     * 设置读写分离权重
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SetGaussMySqlProxyWeightRequest 请求对象
+     * @return CompletableFuture<SetGaussMySqlProxyWeightResponse>
+     */
+    public CompletableFuture<SetGaussMySqlProxyWeightResponse> setGaussMySqlProxyWeightAsync(SetGaussMySqlProxyWeightRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBMeta.setGaussMySqlProxyWeight);
+    }
+
+    /**
+     * 设置读写分离权重
+     *
+     * 设置读写分离权重
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SetGaussMySqlProxyWeightRequest 请求对象
+     * @return AsyncInvoker<SetGaussMySqlProxyWeightRequest, SetGaussMySqlProxyWeightResponse>
+     */
+    public AsyncInvoker<SetGaussMySqlProxyWeightRequest, SetGaussMySqlProxyWeightResponse> setGaussMySqlProxyWeightAsyncInvoker(SetGaussMySqlProxyWeightRequest request) {
+        return new AsyncInvoker<SetGaussMySqlProxyWeightRequest, SetGaussMySqlProxyWeightResponse>(request, GaussDBMeta.setGaussMySqlProxyWeight, hcClient);
+    }
+
+    /**
      * 设置租户基于企业项目的资源配额
      *
      * 设置指定企业项目的资源配额。
@@ -679,6 +709,36 @@ public class GaussDBAsyncClient {
      */
     public AsyncInvoker<ShowAuditLogRequest, ShowAuditLogResponse> showAuditLogAsyncInvoker(ShowAuditLogRequest request) {
         return new AsyncInvoker<ShowAuditLogRequest, ShowAuditLogResponse>(request, GaussDBMeta.showAuditLog, hcClient);
+    }
+
+    /**
+     * 查询专属资源信息详情
+     *
+     * 查询专属资源信息详情。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowDedicatedResourceInfoRequest 请求对象
+     * @return CompletableFuture<ShowDedicatedResourceInfoResponse>
+     */
+    public CompletableFuture<ShowDedicatedResourceInfoResponse> showDedicatedResourceInfoAsync(ShowDedicatedResourceInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBMeta.showDedicatedResourceInfo);
+    }
+
+    /**
+     * 查询专属资源信息详情
+     *
+     * 查询专属资源信息详情。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowDedicatedResourceInfoRequest 请求对象
+     * @return AsyncInvoker<ShowDedicatedResourceInfoRequest, ShowDedicatedResourceInfoResponse>
+     */
+    public AsyncInvoker<ShowDedicatedResourceInfoRequest, ShowDedicatedResourceInfoResponse> showDedicatedResourceInfoAsyncInvoker(ShowDedicatedResourceInfoRequest request) {
+        return new AsyncInvoker<ShowDedicatedResourceInfoRequest, ShowDedicatedResourceInfoResponse>(request, GaussDBMeta.showDedicatedResourceInfo, hcClient);
     }
 
     /**
@@ -834,7 +894,7 @@ public class GaussDBAsyncClient {
     /**
      * 获取指定ID的任务信息
      *
-     * 获取指定ID的任务信息。
+     * 获取GaussDB(for MySQL)任务中心指定ID的任务信息。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -849,7 +909,7 @@ public class GaussDBAsyncClient {
     /**
      * 获取指定ID的任务信息
      *
-     * 获取指定ID的任务信息。
+     * 获取GaussDB(for MySQL)任务中心指定ID的任务信息。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.

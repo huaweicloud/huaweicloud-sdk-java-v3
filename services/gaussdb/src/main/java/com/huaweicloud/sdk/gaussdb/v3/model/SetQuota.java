@@ -76,7 +76,7 @@ public class SetQuota  {
 
 
     /**
-     * 实例个数配额。取值范围0~1000。(如果已经存在实例，应该大于已经存在的实例个数)
+     * 实例个数配额。取值范围0~100000。(如果已经存在实例，应该大于已经存在的实例个数)
      * @return instanceQuota
      */
     public Integer getInstanceQuota() {
@@ -98,7 +98,7 @@ public class SetQuota  {
 
 
     /**
-     * CPU核数配额。取值范围0~3600000。(如果已经存在实例，应该大于已经占用的cpu个数)
+     * CPU核数配额。取值范围0~2147483646。(如果已经存在实例，应该大于已经占用的cpu个数)
      * @return vcpusQuota
      */
     public Integer getVcpusQuota() {
@@ -120,7 +120,7 @@ public class SetQuota  {
 
 
     /**
-     * 内存使用配额，单位为GB。取值范围0~19200000。(如果已经存在实例，应该大于已经占用的内存数)
+     * 内存使用配额，单位为GB。取值范围0~2147483646。(如果已经存在实例，应该大于已经占用的内存数)
      * @return ramQuota
      */
     public Integer getRamQuota() {

@@ -480,7 +480,7 @@ public class MysqlInstanceRequest  {
 
 
     /**
-     * 可用区类型,单可用区Single或多可用区multi。
+     * 可用区类型,单可用区single或多可用区multi。
      * @return availabilityZoneMode
      */
     public String getAvailabilityZoneMode() {

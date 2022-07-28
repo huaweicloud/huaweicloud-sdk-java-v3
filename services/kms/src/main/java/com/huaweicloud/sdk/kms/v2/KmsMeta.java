@@ -217,6 +217,31 @@ public class KmsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateKeyStoreRequest, CreateKeyStoreResponse> createKeyStore =
+        genForcreateKeyStore();
+
+    private static HttpRequestDef<CreateKeyStoreRequest, CreateKeyStoreResponse> genForcreateKeyStore() {
+        // basic
+        HttpRequestDef.Builder<CreateKeyStoreRequest, CreateKeyStoreResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateKeyStoreRequest.class, CreateKeyStoreResponse.class)
+                .withName("CreateKeyStore")
+                .withUri("/v1.0/{project_id}/keystores")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<CreateKeyStoreRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateKeyStoreRequestBody.class),
+            f -> f.withMarshaller(CreateKeyStoreRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateKmsTagRequest, CreateKmsTagResponse> createKmsTag = genForcreateKmsTag();
 
     private static HttpRequestDef<CreateKmsTagRequest, CreateKmsTagResponse> genForcreateKmsTag() {
@@ -401,6 +426,31 @@ public class KmsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteKeyStoreRequest, DeleteKeyStoreResponse> deleteKeyStore =
+        genFordeleteKeyStore();
+
+    private static HttpRequestDef<DeleteKeyStoreRequest, DeleteKeyStoreResponse> genFordeleteKeyStore() {
+        // basic
+        HttpRequestDef.Builder<DeleteKeyStoreRequest, DeleteKeyStoreResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteKeyStoreRequest.class, DeleteKeyStoreResponse.class)
+                .withName("DeleteKeyStore")
+                .withUri("/v1.0/{project_id}/keystores/{keystore_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("keystore_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteKeyStoreRequest::getKeystoreId, (req, v) -> {
+                req.setKeystoreId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteTagRequest, DeleteTagResponse> deleteTag = genFordeleteTag();
 
     private static HttpRequestDef<DeleteTagRequest, DeleteTagResponse> genFordeleteTag() {
@@ -481,6 +531,31 @@ public class KmsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DisableKeyStoreRequest, DisableKeyStoreResponse> disableKeyStore =
+        genFordisableKeyStore();
+
+    private static HttpRequestDef<DisableKeyStoreRequest, DisableKeyStoreResponse> genFordisableKeyStore() {
+        // basic
+        HttpRequestDef.Builder<DisableKeyStoreRequest, DisableKeyStoreResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DisableKeyStoreRequest.class, DisableKeyStoreResponse.class)
+                .withName("DisableKeyStore")
+                .withUri("/v1.0/{project_id}/keystores/{keystore_id}/disable")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("keystore_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DisableKeyStoreRequest::getKeystoreId, (req, v) -> {
+                req.setKeystoreId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<EnableKeyRequest, EnableKeyResponse> enableKey = genForenableKey();
 
     private static HttpRequestDef<EnableKeyRequest, EnableKeyResponse> genForenableKey() {
@@ -523,6 +598,31 @@ public class KmsMeta {
             TypeCasts.uncheckedConversion(OperateKeyRequestBody.class),
             f -> f.withMarshaller(EnableKeyRotationRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<EnableKeyStoreRequest, EnableKeyStoreResponse> enableKeyStore =
+        genForenableKeyStore();
+
+    private static HttpRequestDef<EnableKeyStoreRequest, EnableKeyStoreResponse> genForenableKeyStore() {
+        // basic
+        HttpRequestDef.Builder<EnableKeyStoreRequest, EnableKeyStoreResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, EnableKeyStoreRequest.class, EnableKeyStoreResponse.class)
+                .withName("EnableKeyStore")
+                .withUri("/v1.0/{project_id}/keystores/{keystore_id}/enable")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("keystore_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(EnableKeyStoreRequest::getKeystoreId, (req, v) -> {
+                req.setKeystoreId(v);
             }));
 
         // response
@@ -653,6 +753,38 @@ public class KmsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListKeyStoresRequest, ListKeyStoresResponse> listKeyStores =
+        genForlistKeyStores();
+
+    private static HttpRequestDef<ListKeyStoresRequest, ListKeyStoresResponse> genForlistKeyStores() {
+        // basic
+        HttpRequestDef.Builder<ListKeyStoresRequest, ListKeyStoresResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListKeyStoresRequest.class, ListKeyStoresResponse.class)
+                .withName("ListKeyStores")
+                .withUri("/v1.0/{project_id}/keystores")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListKeyStoresRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListKeyStoresRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListKeysRequest, ListKeysResponse> listKeys = genForlistKeys();
 
     private static HttpRequestDef<ListKeysRequest, ListKeysResponse> genForlistKeys() {
@@ -769,6 +901,30 @@ public class KmsMeta {
             TypeCasts.uncheckedConversion(OperateKeyRequestBody.class),
             f -> f.withMarshaller(ShowKeyRotationStatusRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowKeyStoreRequest, ShowKeyStoreResponse> showKeyStore = genForshowKeyStore();
+
+    private static HttpRequestDef<ShowKeyStoreRequest, ShowKeyStoreResponse> genForshowKeyStore() {
+        // basic
+        HttpRequestDef.Builder<ShowKeyStoreRequest, ShowKeyStoreResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowKeyStoreRequest.class, ShowKeyStoreResponse.class)
+                .withName("ShowKeyStore")
+                .withUri("/v1.0/{project_id}/keystores/{keystore_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("keystore_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowKeyStoreRequest::getKeystoreId, (req, v) -> {
+                req.setKeystoreId(v);
             }));
 
         // response

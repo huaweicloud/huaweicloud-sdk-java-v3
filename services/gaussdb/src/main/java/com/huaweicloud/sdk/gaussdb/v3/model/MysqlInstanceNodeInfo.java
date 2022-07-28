@@ -99,6 +99,13 @@ public class MysqlInstanceNodeInfo  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="flavor_id")
+    
+    
+    private String flavorId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="flavor_ref")
     
     
@@ -402,6 +409,28 @@ public class MysqlInstanceNodeInfo  {
 
     
 
+    public MysqlInstanceNodeInfo withFlavorId(String flavorId) {
+        this.flavorId = flavorId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 规格ID。
+     * @return flavorId
+     */
+    public String getFlavorId() {
+        return flavorId;
+    }
+
+    public void setFlavorId(String flavorId) {
+        this.flavorId = flavorId;
+    }
+
+    
+
     public MysqlInstanceNodeInfo withFlavorRef(String flavorRef) {
         this.flavorRef = flavorRef;
         return this;
@@ -554,6 +583,7 @@ public class MysqlInstanceNodeInfo  {
             Objects.equals(this.regionCode, mysqlInstanceNodeInfo.regionCode) &&
             Objects.equals(this.created, mysqlInstanceNodeInfo.created) &&
             Objects.equals(this.updated, mysqlInstanceNodeInfo.updated) &&
+            Objects.equals(this.flavorId, mysqlInstanceNodeInfo.flavorId) &&
             Objects.equals(this.flavorRef, mysqlInstanceNodeInfo.flavorRef) &&
             Objects.equals(this.maxConnections, mysqlInstanceNodeInfo.maxConnections) &&
             Objects.equals(this.vcpus, mysqlInstanceNodeInfo.vcpus) &&
@@ -563,7 +593,7 @@ public class MysqlInstanceNodeInfo  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, type, status, port, privateReadIps, volume, azCode, regionCode, created, updated, flavorRef, maxConnections, vcpus, ram, needRestart, priority);
+        return Objects.hash(id, name, type, status, port, privateReadIps, volume, azCode, regionCode, created, updated, flavorId, flavorRef, maxConnections, vcpus, ram, needRestart, priority);
     }
     @Override
     public String toString() {
@@ -580,6 +610,7 @@ public class MysqlInstanceNodeInfo  {
         sb.append("    regionCode: ").append(toIndentedString(regionCode)).append("\n");
         sb.append("    created: ").append(toIndentedString(created)).append("\n");
         sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
+        sb.append("    flavorId: ").append(toIndentedString(flavorId)).append("\n");
         sb.append("    flavorRef: ").append(toIndentedString(flavorRef)).append("\n");
         sb.append("    maxConnections: ").append(toIndentedString(maxConnections)).append("\n");
         sb.append("    vcpus: ").append(toIndentedString(vcpus)).append("\n");

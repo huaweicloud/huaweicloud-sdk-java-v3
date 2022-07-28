@@ -29,9 +29,9 @@ public class CreateNotificationOption {
     public static final class TopicSceneEnum {
 
         /**
-         * Enum _SCALING_UP for value: "[SCALING_UP"
+         * Enum SCALING_UP for value: "SCALING_UP"
          */
-        public static final TopicSceneEnum _SCALING_UP = new TopicSceneEnum("[SCALING_UP");
+        public static final TopicSceneEnum SCALING_UP = new TopicSceneEnum("SCALING_UP");
 
         /**
          * Enum SCALING_UP_FAIL for value: "SCALING_UP_FAIL"
@@ -49,19 +49,19 @@ public class CreateNotificationOption {
         public static final TopicSceneEnum SCALING_DOWN_FAIL = new TopicSceneEnum("SCALING_DOWN_FAIL");
 
         /**
-         * Enum SCALING_GROUP_ABNORMAL_ for value: "SCALING_GROUP_ABNORMAL]"
+         * Enum SCALING_GROUP_ABNORMAL for value: "SCALING_GROUP_ABNORMAL"
          */
-        public static final TopicSceneEnum SCALING_GROUP_ABNORMAL_ = new TopicSceneEnum("SCALING_GROUP_ABNORMAL]");
+        public static final TopicSceneEnum SCALING_GROUP_ABNORMAL = new TopicSceneEnum("SCALING_GROUP_ABNORMAL");
 
         private static final Map<String, TopicSceneEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TopicSceneEnum> createStaticFields() {
             Map<String, TopicSceneEnum> map = new HashMap<>();
-            map.put("[SCALING_UP", _SCALING_UP);
+            map.put("SCALING_UP", SCALING_UP);
             map.put("SCALING_UP_FAIL", SCALING_UP_FAIL);
             map.put("SCALING_DOWN", SCALING_DOWN);
             map.put("SCALING_DOWN_FAIL", SCALING_DOWN_FAIL);
-            map.put("SCALING_GROUP_ABNORMAL]", SCALING_GROUP_ABNORMAL_);
+            map.put("SCALING_GROUP_ABNORMAL", SCALING_GROUP_ABNORMAL);
             return Collections.unmodifiableMap(map);
         }
 

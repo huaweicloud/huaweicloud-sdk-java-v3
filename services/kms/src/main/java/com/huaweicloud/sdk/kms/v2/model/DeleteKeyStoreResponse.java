@@ -1,19 +1,13 @@
-package com.huaweicloud.sdk.cbs.v1.model;
-
-
-
+package com.huaweicloud.sdk.kms.v2.model;
 
 import com.huaweicloud.sdk.core.SdkResponse;
 
-
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * Response Object
  */
-public class DeleteTbSessionResponse extends SdkResponse {
-
+public class DeleteKeyStoreResponse extends SdkResponse {
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -25,17 +19,18 @@ public class DeleteTbSessionResponse extends SdkResponse {
         }
         return true;
     }
+
     @Override
     public int hashCode() {
         return Objects.hash();
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class DeleteTbSessionResponse {\n");
+        sb.append("class DeleteKeyStoreResponse {\n");
         sb.append("}");
         return sb.toString();
     }
-    
-}
 
+}

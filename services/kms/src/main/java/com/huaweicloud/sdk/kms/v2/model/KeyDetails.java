@@ -362,6 +362,16 @@ public class KeyDetails {
 
     private String sysEnterpriseProjectId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "keystore_id")
+
+    private String keystoreId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "key_label")
+
+    private String keyLabel;
+
     public KeyDetails withKeyId(String keyId) {
         this.keyId = keyId;
         return this;
@@ -634,6 +644,40 @@ public class KeyDetails {
         this.sysEnterpriseProjectId = sysEnterpriseProjectId;
     }
 
+    public KeyDetails withKeystoreId(String keystoreId) {
+        this.keystoreId = keystoreId;
+        return this;
+    }
+
+    /**
+     * 密钥库ID
+     * @return keystoreId
+     */
+    public String getKeystoreId() {
+        return keystoreId;
+    }
+
+    public void setKeystoreId(String keystoreId) {
+        this.keystoreId = keystoreId;
+    }
+
+    public KeyDetails withKeyLabel(String keyLabel) {
+        this.keyLabel = keyLabel;
+        return this;
+    }
+
+    /**
+     * 密钥在加密机中的标签
+     * @return keyLabel
+     */
+    public String getKeyLabel() {
+        return keyLabel;
+    }
+
+    public void setKeyLabel(String keyLabel) {
+        this.keyLabel = keyLabel;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -655,7 +699,9 @@ public class KeyDetails {
             && Objects.equals(this.expirationTime, keyDetails.expirationTime)
             && Objects.equals(this.origin, keyDetails.origin)
             && Objects.equals(this.keyRotationEnabled, keyDetails.keyRotationEnabled)
-            && Objects.equals(this.sysEnterpriseProjectId, keyDetails.sysEnterpriseProjectId);
+            && Objects.equals(this.sysEnterpriseProjectId, keyDetails.sysEnterpriseProjectId)
+            && Objects.equals(this.keystoreId, keyDetails.keystoreId)
+            && Objects.equals(this.keyLabel, keyDetails.keyLabel);
     }
 
     @Override
@@ -675,7 +721,9 @@ public class KeyDetails {
             expirationTime,
             origin,
             keyRotationEnabled,
-            sysEnterpriseProjectId);
+            sysEnterpriseProjectId,
+            keystoreId,
+            keyLabel);
     }
 
     @Override
@@ -698,6 +746,8 @@ public class KeyDetails {
         sb.append("    origin: ").append(toIndentedString(origin)).append("\n");
         sb.append("    keyRotationEnabled: ").append(toIndentedString(keyRotationEnabled)).append("\n");
         sb.append("    sysEnterpriseProjectId: ").append(toIndentedString(sysEnterpriseProjectId)).append("\n");
+        sb.append("    keystoreId: ").append(toIndentedString(keystoreId)).append("\n");
+        sb.append("    keyLabel: ").append(toIndentedString(keyLabel)).append("\n");
         sb.append("}");
         return sb.toString();
     }

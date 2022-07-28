@@ -51,40 +51,40 @@ public class Backup  {
     
     private String beginTime;
     /**
-     * 备份状态
+     * 备份状态，取值： - BUILDING：备份中。 - COMPLETED：备份完成。 - FAILED：备份失败。 - AVAILABLE：备份可用。
      */
     public static final class StatusEnum {
 
         
         /**
-         * Enum BUILDING_ for value: "BUILDING：备份中。"
+         * Enum BUILDING for value: "BUILDING"
          */
-        public static final StatusEnum BUILDING_ = new StatusEnum("BUILDING：备份中。");
+        public static final StatusEnum BUILDING = new StatusEnum("BUILDING");
         
         /**
-         * Enum COMPLETED_ for value: "COMPLETED：备份完成。"
+         * Enum COMPLETED for value: "COMPLETED"
          */
-        public static final StatusEnum COMPLETED_ = new StatusEnum("COMPLETED：备份完成。");
+        public static final StatusEnum COMPLETED = new StatusEnum("COMPLETED");
         
         /**
-         * Enum FAILED_ for value: "FAILED：备份失败。"
+         * Enum FAILED for value: "FAILED"
          */
-        public static final StatusEnum FAILED_ = new StatusEnum("FAILED：备份失败。");
+        public static final StatusEnum FAILED = new StatusEnum("FAILED");
         
         /**
-         * Enum AVAILABLE_ for value: "AVAILABLE：备份可用。"
+         * Enum AVAILABLE for value: "AVAILABLE"
          */
-        public static final StatusEnum AVAILABLE_ = new StatusEnum("AVAILABLE：备份可用。");
+        public static final StatusEnum AVAILABLE = new StatusEnum("AVAILABLE");
         
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, StatusEnum> createStaticFields() {
             Map<String, StatusEnum> map = new HashMap<>();
-            map.put("BUILDING：备份中。", BUILDING_);
-            map.put("COMPLETED：备份完成。", COMPLETED_);
-            map.put("FAILED：备份失败。", FAILED_);
-            map.put("AVAILABLE：备份可用。", AVAILABLE_);
+            map.put("BUILDING", BUILDING);
+            map.put("COMPLETED", COMPLETED);
+            map.put("FAILED", FAILED);
+            map.put("AVAILABLE", AVAILABLE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -148,22 +148,22 @@ public class Backup  {
     
     private StatusEnum status;
     /**
-     * 备份类型，取值：
+     * 备份类型，取值： - manual：手动全量备份。
      */
     public static final class TypeEnum {
 
         
         /**
-         * Enum MANUAL_ for value: "manual：手动全量备份。"
+         * Enum MANUAL for value: "manual"
          */
-        public static final TypeEnum MANUAL_ = new TypeEnum("manual：手动全量备份。");
+        public static final TypeEnum MANUAL = new TypeEnum("manual");
         
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TypeEnum> createStaticFields() {
             Map<String, TypeEnum> map = new HashMap<>();
-            map.put("manual：手动全量备份。", MANUAL_);
+            map.put("manual", MANUAL);
             return Collections.unmodifiableMap(map);
         }
 
@@ -331,7 +331,7 @@ public class Backup  {
 
 
     /**
-     * 备份状态
+     * 备份状态，取值： - BUILDING：备份中。 - COMPLETED：备份完成。 - FAILED：备份失败。 - AVAILABLE：备份可用。
      * @return status
      */
     public StatusEnum getStatus() {
@@ -353,7 +353,7 @@ public class Backup  {
 
 
     /**
-     * 备份类型，取值：
+     * 备份类型，取值： - manual：手动全量备份。
      * @return type
      */
     public TypeEnum getType() {

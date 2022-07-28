@@ -37,8 +37,6 @@ import java.nio.charset.StandardCharsets;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
@@ -66,8 +64,6 @@ public class DerivedAKSKSigner extends AKSKSigner {
         }
 
         // ************* TASK 1: CONSTRUCT CANONICAL REQUEST *************
-        // 设置基准时间
-        Date now = new Date();
         HashMap<String, String> authenticationHeaders = new HashMap<>();
 
         // Step 1: add basic headers required by V4
@@ -79,13 +75,13 @@ public class DerivedAKSKSigner extends AKSKSigner {
 
         // Step 1.2: Add X-Sdk-Date
         String dateTimeStamp;
-        if (!request.haveHeader(Constants.X_SDK_DATE)) {
+        if (request.haveHeader(Constants.X_SDK_DATE)) {
+            dateTimeStamp = request.getHeader(Constants.X_SDK_DATE);
+        } else {
             SimpleDateFormat isoDateFormat = new SimpleDateFormat(ISO_8601_BASIC_FORMAT);
             isoDateFormat.setTimeZone(new SimpleTimeZone(0, "UTC"));
-            dateTimeStamp = isoDateFormat.format(now);
+            dateTimeStamp = isoDateFormat.format(new Date());
             authenticationHeaders.put(Constants.X_SDK_DATE, dateTimeStamp);
-        } else {
-            dateTimeStamp = request.getHeader(Constants.X_SDK_DATE);
         }
 
         // Step 1.3 combine all headers
@@ -151,7 +147,7 @@ public class DerivedAKSKSigner extends AKSKSigner {
         String canonicalRequestHash = BinaryUtils.toHex(sha256(canonicalRequest));
         // ************* TASK 2: CREATE THE STRING TO SIGN*************
         // Match the algorithm to the hashing algorithm you use, either SHA-1 or SHA-256(recommended)
-        String dateStr = LocalDate.now().format(DateTimeFormatter.BASIC_ISO_DATE);
+        String dateStr = dateTimeStamp.substring(0, 8);
         String info = dateStr + "/" + credential.regionId + "/" + credential.derivedAuthServiceName;
         String stringToSign = getStringToSign(V_11_HMAC_SHA_256, dateTimeStamp, info, canonicalRequestHash);
 

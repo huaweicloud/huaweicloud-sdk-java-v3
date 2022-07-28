@@ -34,6 +34,13 @@ public class CreateInstanceResponse extends SdkResponse {
     
     private String jobId;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="order_id")
+    
+    
+    private String orderId;
+
     public CreateInstanceResponse withInstance(OpenGaussInstanceResponse instance) {
         this.instance = instance;
         return this;
@@ -85,6 +92,28 @@ public class CreateInstanceResponse extends SdkResponse {
 
     
 
+    public CreateInstanceResponse withOrderId(String orderId) {
+        this.orderId = orderId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 创建实例的订单ID。  仅创建包周期实例时会返回该参数。
+     * @return orderId
+     */
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -95,11 +124,12 @@ public class CreateInstanceResponse extends SdkResponse {
         }
         CreateInstanceResponse createInstanceResponse = (CreateInstanceResponse) o;
         return Objects.equals(this.instance, createInstanceResponse.instance) &&
-            Objects.equals(this.jobId, createInstanceResponse.jobId);
+            Objects.equals(this.jobId, createInstanceResponse.jobId) &&
+            Objects.equals(this.orderId, createInstanceResponse.orderId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(instance, jobId);
+        return Objects.hash(instance, jobId, orderId);
     }
     @Override
     public String toString() {
@@ -107,6 +137,7 @@ public class CreateInstanceResponse extends SdkResponse {
         sb.append("class CreateInstanceResponse {\n");
         sb.append("    instance: ").append(toIndentedString(instance)).append("\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
+        sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -33,6 +33,13 @@ public class OpenGaussInstanceActionRequest  {
     
     private OpenGaussEnlargeVolume enlargeVolume;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="is_auto_pay")
+    
+    
+    private String isAutoPay;
+
     public OpenGaussInstanceActionRequest withExpandCluster(OpenGaussExpandCluster expandCluster) {
         this.expandCluster = expandCluster;
         return this;
@@ -91,6 +98,28 @@ public class OpenGaussInstanceActionRequest  {
 
     
 
+    public OpenGaussInstanceActionRequest withIsAutoPay(String isAutoPay) {
+        this.isAutoPay = isAutoPay;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 包周期实例时可指定，表示是否自动从账户中支付，此字段不影响自动续订的支付方式。  true，表示自动从账户中支付。 false，表示手动从账户中支付，默认为该方式。
+     * @return isAutoPay
+     */
+    public String getIsAutoPay() {
+        return isAutoPay;
+    }
+
+    public void setIsAutoPay(String isAutoPay) {
+        this.isAutoPay = isAutoPay;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -101,11 +130,12 @@ public class OpenGaussInstanceActionRequest  {
         }
         OpenGaussInstanceActionRequest openGaussInstanceActionRequest = (OpenGaussInstanceActionRequest) o;
         return Objects.equals(this.expandCluster, openGaussInstanceActionRequest.expandCluster) &&
-            Objects.equals(this.enlargeVolume, openGaussInstanceActionRequest.enlargeVolume);
+            Objects.equals(this.enlargeVolume, openGaussInstanceActionRequest.enlargeVolume) &&
+            Objects.equals(this.isAutoPay, openGaussInstanceActionRequest.isAutoPay);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(expandCluster, enlargeVolume);
+        return Objects.hash(expandCluster, enlargeVolume, isAutoPay);
     }
     @Override
     public String toString() {
@@ -113,6 +143,7 @@ public class OpenGaussInstanceActionRequest  {
         sb.append("class OpenGaussInstanceActionRequest {\n");
         sb.append("    expandCluster: ").append(toIndentedString(expandCluster)).append("\n");
         sb.append("    enlargeVolume: ").append(toIndentedString(enlargeVolume)).append("\n");
+        sb.append("    isAutoPay: ").append(toIndentedString(isAutoPay)).append("\n");
         sb.append("}");
         return sb.toString();
     }

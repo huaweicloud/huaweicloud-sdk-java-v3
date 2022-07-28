@@ -295,6 +295,38 @@ public class KmsClient {
     }
 
     /**
+     * 创建专属密钥库
+     *
+     * - \&quot;创建租户专属密钥库，专属密钥库使用DHSM实例作为密钥的存储\&quot;
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateKeyStoreRequest 请求对象
+     * @return CreateKeyStoreResponse
+     */
+    public CreateKeyStoreResponse createKeyStore(CreateKeyStoreRequest request) {
+        return hcClient.syncInvokeHttp(request, KmsMeta.createKeyStore);
+    }
+
+    /**
+     * 创建专属密钥库
+     *
+     * - \&quot;创建租户专属密钥库，专属密钥库使用DHSM实例作为密钥的存储\&quot;
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateKeyStoreRequest 请求对象
+     * @return SyncInvoker<CreateKeyStoreRequest, CreateKeyStoreResponse>
+     */
+    public SyncInvoker<CreateKeyStoreRequest, CreateKeyStoreResponse> createKeyStoreInvoker(
+        CreateKeyStoreRequest request) {
+        return new SyncInvoker<CreateKeyStoreRequest, CreateKeyStoreResponse>(request, KmsMeta.createKeyStore,
+            hcClient);
+    }
+
+    /**
      * 添加密钥标签
      *
      * - 功能介绍：添加密钥标签。
@@ -515,6 +547,38 @@ public class KmsClient {
     }
 
     /**
+     * 删除专属密钥库
+     *
+     * 删除租户专属密钥库
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteKeyStoreRequest 请求对象
+     * @return DeleteKeyStoreResponse
+     */
+    public DeleteKeyStoreResponse deleteKeyStore(DeleteKeyStoreRequest request) {
+        return hcClient.syncInvokeHttp(request, KmsMeta.deleteKeyStore);
+    }
+
+    /**
+     * 删除专属密钥库
+     *
+     * 删除租户专属密钥库
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteKeyStoreRequest 请求对象
+     * @return SyncInvoker<DeleteKeyStoreRequest, DeleteKeyStoreResponse>
+     */
+    public SyncInvoker<DeleteKeyStoreRequest, DeleteKeyStoreResponse> deleteKeyStoreInvoker(
+        DeleteKeyStoreRequest request) {
+        return new SyncInvoker<DeleteKeyStoreRequest, DeleteKeyStoreResponse>(request, KmsMeta.deleteKeyStore,
+            hcClient);
+    }
+
+    /**
      * 删除密钥标签
      *
      * - 功能介绍：删除密钥标签。
@@ -609,6 +673,38 @@ public class KmsClient {
     }
 
     /**
+     * 禁用专属密钥库
+     *
+     * 禁用租户专属密钥库
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DisableKeyStoreRequest 请求对象
+     * @return DisableKeyStoreResponse
+     */
+    public DisableKeyStoreResponse disableKeyStore(DisableKeyStoreRequest request) {
+        return hcClient.syncInvokeHttp(request, KmsMeta.disableKeyStore);
+    }
+
+    /**
+     * 禁用专属密钥库
+     *
+     * 禁用租户专属密钥库
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DisableKeyStoreRequest 请求对象
+     * @return SyncInvoker<DisableKeyStoreRequest, DisableKeyStoreResponse>
+     */
+    public SyncInvoker<DisableKeyStoreRequest, DisableKeyStoreResponse> disableKeyStoreInvoker(
+        DisableKeyStoreRequest request) {
+        return new SyncInvoker<DisableKeyStoreRequest, DisableKeyStoreResponse>(request, KmsMeta.disableKeyStore,
+            hcClient);
+    }
+
+    /**
      * 启用密钥
      *
      * - 功能介绍：启用密钥，密钥启用后才可以使用。
@@ -675,6 +771,38 @@ public class KmsClient {
     public SyncInvoker<EnableKeyRotationRequest, EnableKeyRotationResponse> enableKeyRotationInvoker(
         EnableKeyRotationRequest request) {
         return new SyncInvoker<EnableKeyRotationRequest, EnableKeyRotationResponse>(request, KmsMeta.enableKeyRotation,
+            hcClient);
+    }
+
+    /**
+     * 启用专属密钥库
+     *
+     * 启用租户专属密钥库
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param EnableKeyStoreRequest 请求对象
+     * @return EnableKeyStoreResponse
+     */
+    public EnableKeyStoreResponse enableKeyStore(EnableKeyStoreRequest request) {
+        return hcClient.syncInvokeHttp(request, KmsMeta.enableKeyStore);
+    }
+
+    /**
+     * 启用专属密钥库
+     *
+     * 启用租户专属密钥库
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param EnableKeyStoreRequest 请求对象
+     * @return SyncInvoker<EnableKeyStoreRequest, EnableKeyStoreResponse>
+     */
+    public SyncInvoker<EnableKeyStoreRequest, EnableKeyStoreResponse> enableKeyStoreInvoker(
+        EnableKeyStoreRequest request) {
+        return new SyncInvoker<EnableKeyStoreRequest, EnableKeyStoreResponse>(request, KmsMeta.enableKeyStore,
             hcClient);
     }
 
@@ -833,6 +961,36 @@ public class KmsClient {
     }
 
     /**
+     * 查询专属密钥库列表
+     *
+     * 查询租户专属密钥库列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListKeyStoresRequest 请求对象
+     * @return ListKeyStoresResponse
+     */
+    public ListKeyStoresResponse listKeyStores(ListKeyStoresRequest request) {
+        return hcClient.syncInvokeHttp(request, KmsMeta.listKeyStores);
+    }
+
+    /**
+     * 查询专属密钥库列表
+     *
+     * 查询租户专属密钥库列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListKeyStoresRequest 请求对象
+     * @return SyncInvoker<ListKeyStoresRequest, ListKeyStoresResponse>
+     */
+    public SyncInvoker<ListKeyStoresRequest, ListKeyStoresResponse> listKeyStoresInvoker(ListKeyStoresRequest request) {
+        return new SyncInvoker<ListKeyStoresRequest, ListKeyStoresResponse>(request, KmsMeta.listKeyStores, hcClient);
+    }
+
+    /**
      * 查询密钥列表
      *
      * - 功能介绍：查询用户所有密钥列表。
@@ -984,6 +1142,36 @@ public class KmsClient {
         ShowKeyRotationStatusRequest request) {
         return new SyncInvoker<ShowKeyRotationStatusRequest, ShowKeyRotationStatusResponse>(request,
             KmsMeta.showKeyRotationStatus, hcClient);
+    }
+
+    /**
+     * 获取专属密钥库
+     *
+     * 获取租户专属密钥库
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowKeyStoreRequest 请求对象
+     * @return ShowKeyStoreResponse
+     */
+    public ShowKeyStoreResponse showKeyStore(ShowKeyStoreRequest request) {
+        return hcClient.syncInvokeHttp(request, KmsMeta.showKeyStore);
+    }
+
+    /**
+     * 获取专属密钥库
+     *
+     * 获取租户专属密钥库
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowKeyStoreRequest 请求对象
+     * @return SyncInvoker<ShowKeyStoreRequest, ShowKeyStoreResponse>
+     */
+    public SyncInvoker<ShowKeyStoreRequest, ShowKeyStoreResponse> showKeyStoreInvoker(ShowKeyStoreRequest request) {
+        return new SyncInvoker<ShowKeyStoreRequest, ShowKeyStoreResponse>(request, KmsMeta.showKeyStore, hcClient);
     }
 
     /**
