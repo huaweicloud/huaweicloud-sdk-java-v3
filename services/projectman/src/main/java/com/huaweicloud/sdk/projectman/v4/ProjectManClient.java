@@ -943,6 +943,38 @@ public class ProjectManClient {
     }
 
     /**
+     * 取消领域与项目的关联关系
+     *
+     * 取消领域与项目的关联关系
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CancelProjectDomainRequest 请求对象
+     * @return CancelProjectDomainResponse
+     */
+    public CancelProjectDomainResponse cancelProjectDomain(CancelProjectDomainRequest request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.cancelProjectDomain);
+    }
+
+    /**
+     * 取消领域与项目的关联关系
+     *
+     * 取消领域与项目的关联关系
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CancelProjectDomainRequest 请求对象
+     * @return SyncInvoker<CancelProjectDomainRequest, CancelProjectDomainResponse>
+     */
+    public SyncInvoker<CancelProjectDomainRequest, CancelProjectDomainResponse> cancelProjectDomainInvoker(
+        CancelProjectDomainRequest request) {
+        return new SyncInvoker<CancelProjectDomainRequest, CancelProjectDomainResponse>(request,
+            ProjectManMeta.cancelProjectDomain, hcClient);
+    }
+
+    /**
      * 创建工作项类型自定义字段
      *
      * 创建工作项类型自定义字段
@@ -1035,6 +1067,38 @@ public class ProjectManClient {
         CreateIterationV4Request request) {
         return new SyncInvoker<CreateIterationV4Request, CreateIterationV4Response>(request,
             ProjectManMeta.createIterationV4, hcClient);
+    }
+
+    /**
+     * 创建项目的领域
+     *
+     * 查询项目的领域列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateProjectDomainRequest 请求对象
+     * @return CreateProjectDomainResponse
+     */
+    public CreateProjectDomainResponse createProjectDomain(CreateProjectDomainRequest request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.createProjectDomain);
+    }
+
+    /**
+     * 创建项目的领域
+     *
+     * 查询项目的领域列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateProjectDomainRequest 请求对象
+     * @return SyncInvoker<CreateProjectDomainRequest, CreateProjectDomainResponse>
+     */
+    public SyncInvoker<CreateProjectDomainRequest, CreateProjectDomainResponse> createProjectDomainInvoker(
+        CreateProjectDomainRequest request) {
+        return new SyncInvoker<CreateProjectDomainRequest, CreateProjectDomainResponse>(request,
+            ProjectManMeta.createProjectDomain, hcClient);
     }
 
     /**
@@ -1548,6 +1612,38 @@ public class ProjectManClient {
     }
 
     /**
+     * 查询项目的领域列表
+     *
+     * 查询项目的领域列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListProjectDomainsRequest 请求对象
+     * @return ListProjectDomainsResponse
+     */
+    public ListProjectDomainsResponse listProjectDomains(ListProjectDomainsRequest request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.listProjectDomains);
+    }
+
+    /**
+     * 查询项目的领域列表
+     *
+     * 查询项目的领域列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListProjectDomainsRequest 请求对象
+     * @return SyncInvoker<ListProjectDomainsRequest, ListProjectDomainsResponse>
+     */
+    public SyncInvoker<ListProjectDomainsRequest, ListProjectDomainsResponse> listProjectDomainsInvoker(
+        ListProjectDomainsRequest request) {
+        return new SyncInvoker<ListProjectDomainsRequest, ListProjectDomainsResponse>(request,
+            ProjectManMeta.listProjectDomains, hcClient);
+    }
+
+    /**
      * 查询项目下所有工作项的历史记录
      *
      * 查询项目下所有工作项的历史记录
@@ -1894,6 +1990,38 @@ public class ProjectManClient {
         UpdateIterationV4Request request) {
         return new SyncInvoker<UpdateIterationV4Request, UpdateIterationV4Response>(request,
             ProjectManMeta.updateIterationV4, hcClient);
+    }
+
+    /**
+     * 更新项目的领域
+     *
+     * 更新项目的领域
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateProjectDomainRequest 请求对象
+     * @return UpdateProjectDomainResponse
+     */
+    public UpdateProjectDomainResponse updateProjectDomain(UpdateProjectDomainRequest request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.updateProjectDomain);
+    }
+
+    /**
+     * 更新项目的领域
+     *
+     * 更新项目的领域
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateProjectDomainRequest 请求对象
+     * @return SyncInvoker<UpdateProjectDomainRequest, UpdateProjectDomainResponse>
+     */
+    public SyncInvoker<UpdateProjectDomainRequest, UpdateProjectDomainResponse> updateProjectDomainInvoker(
+        UpdateProjectDomainRequest request) {
+        return new SyncInvoker<UpdateProjectDomainRequest, UpdateProjectDomainResponse>(request,
+            ProjectManMeta.updateProjectDomain, hcClient);
     }
 
     /**

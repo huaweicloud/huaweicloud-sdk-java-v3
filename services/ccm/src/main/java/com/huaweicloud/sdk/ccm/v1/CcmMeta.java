@@ -564,7 +564,7 @@ public class CcmMeta {
                     IssueCertificateAuthorityCertificateRequest.class,
                     IssueCertificateAuthorityCertificateResponse.class)
                 .withName("IssueCertificateAuthorityCertificate")
-                .withUri("/v1/private-certificate-authorities/{ca_id}/issue")
+                .withUri("/v1/private-certificate-authorities/{ca_id}/activate")
                 .withContentType("application/json");
 
         // requests
@@ -677,6 +677,41 @@ public class CcmMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(RestoreCertificateAuthorityRequest::getCaId, (req, v) -> {
                 req.setCaId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RevokeCertificateAuthorityRequest, RevokeCertificateAuthorityResponse> revokeCertificateAuthority =
+        genForrevokeCertificateAuthority();
+
+    private static HttpRequestDef<RevokeCertificateAuthorityRequest, RevokeCertificateAuthorityResponse> genForrevokeCertificateAuthority() {
+        // basic
+        HttpRequestDef.Builder<RevokeCertificateAuthorityRequest, RevokeCertificateAuthorityResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    RevokeCertificateAuthorityRequest.class,
+                    RevokeCertificateAuthorityResponse.class)
+                .withName("RevokeCertificateAuthority")
+                .withUri("/v1/private-certificate-authorities/{ca_id}/revoke")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("ca_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RevokeCertificateAuthorityRequest::getCaId, (req, v) -> {
+                req.setCaId(v);
+            }));
+        builder.<RevokeCertificateRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RevokeCertificateRequestBody.class),
+            f -> f.withMarshaller(RevokeCertificateAuthorityRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response

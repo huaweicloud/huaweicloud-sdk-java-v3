@@ -20,11 +20,6 @@ public class ImageDescriptionReq {
 
     private String url;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "language")
-
-    private String language;
-
     public ImageDescriptionReq withImage(String image) {
         this.image = image;
         return this;
@@ -48,7 +43,7 @@ public class ImageDescriptionReq {
     }
 
     /**
-     * 与image二选一  图片的URL路径，目前支持：  - 公网HTTP/HTTPS URL  - 华为云OBS提供的URL，使用OBS数据需要进行授权。包括对服务授权、临时授权、匿名公开授权。详请参见[配置OBS服务的访问权限](https://support.huaweicloud.com/api-moderation/moderation_03_0020.html)。  > - 接口响应时间依赖于图片的下载时间，如果图片下载时间过长，会返回接口调用失败。 > - 请保证被检测图片所在的存储服务稳定可靠，建议您使用华为云OBS存储。 
+     * 与image二选一  图片的URL路径，目前支持：  - 公网HTTP/HTTPS URL  - 华为云OBS提供的URL，使用OBS数据需要进行授权。包括对服务授权、临时授权、匿名公开授权。详请参见[配置OBS服务的访问权限](https://support.huaweicloud.com/api-image/image_03_0037.html)。  > - 接口响应时间依赖于图片的下载时间，如果图片下载时间过长，会返回接口调用失败。 > - 请保证被检测图片所在的存储服务稳定可靠，建议您使用华为云OBS存储。 
      * @return url
      */
     public String getUrl() {
@@ -57,23 +52,6 @@ public class ImageDescriptionReq {
 
     public void setUrl(String url) {
         this.url = url;
-    }
-
-    public ImageDescriptionReq withLanguage(String language) {
-        this.language = language;
-        return this;
-    }
-
-    /**
-     * zh：返回标签的语言类型为中文。 en：返回标签的语言类型为英文。 默认值为en。 
-     * @return language
-     */
-    public String getLanguage() {
-        return language;
-    }
-
-    public void setLanguage(String language) {
-        this.language = language;
     }
 
     @Override
@@ -86,13 +64,12 @@ public class ImageDescriptionReq {
         }
         ImageDescriptionReq imageDescriptionReq = (ImageDescriptionReq) o;
         return Objects.equals(this.image, imageDescriptionReq.image)
-            && Objects.equals(this.url, imageDescriptionReq.url)
-            && Objects.equals(this.language, imageDescriptionReq.language);
+            && Objects.equals(this.url, imageDescriptionReq.url);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(image, url, language);
+        return Objects.hash(image, url);
     }
 
     @Override
@@ -101,7 +78,6 @@ public class ImageDescriptionReq {
         sb.append("class ImageDescriptionReq {\n");
         sb.append("    image: ").append(toIndentedString(image)).append("\n");
         sb.append("    url: ").append(toIndentedString(url)).append("\n");
-        sb.append("    language: ").append(toIndentedString(language)).append("\n");
         sb.append("}");
         return sb.toString();
     }

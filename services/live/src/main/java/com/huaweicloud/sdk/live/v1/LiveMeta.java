@@ -96,6 +96,36 @@ public class LiveMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateRecordIndexRequest, CreateRecordIndexResponse> createRecordIndex =
+        genForcreateRecordIndex();
+
+    private static HttpRequestDef<CreateRecordIndexRequest, CreateRecordIndexResponse> genForcreateRecordIndex() {
+        // basic
+        HttpRequestDef.Builder<CreateRecordIndexRequest, CreateRecordIndexResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateRecordIndexRequest.class, CreateRecordIndexResponse.class)
+                .withName("CreateRecordIndex")
+                .withUri("/v1/{project_id}/record/indexes")
+                .withContentType("application/json; charset=UTF-8");
+
+        // requests
+        builder.<RecordIndexRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RecordIndexRequestBody.class),
+            f -> f.withMarshaller(CreateRecordIndexRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateRecordIndexResponse::getXRequestId, CreateRecordIndexResponse::setXRequestId));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateRecordRuleRequest, CreateRecordRuleResponse> createRecordRule =
         genForcreateRecordRule();
 

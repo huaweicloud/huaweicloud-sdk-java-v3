@@ -1017,6 +1017,38 @@ public class GaussDBforNoSQLAsyncClient {
     }
 
     /**
+     * 数据库补丁升级
+     *
+     * 升级数据库补丁版本
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpgradeDbVersionRequest 请求对象
+     * @return CompletableFuture<UpgradeDbVersionResponse>
+     */
+    public CompletableFuture<UpgradeDbVersionResponse> upgradeDbVersionAsync(UpgradeDbVersionRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.upgradeDbVersion);
+    }
+
+    /**
+     * 数据库补丁升级
+     *
+     * 升级数据库补丁版本
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpgradeDbVersionRequest 请求对象
+     * @return AsyncInvoker<UpgradeDbVersionRequest, UpgradeDbVersionResponse>
+     */
+    public AsyncInvoker<UpgradeDbVersionRequest, UpgradeDbVersionResponse> upgradeDbVersionAsyncInvoker(
+        UpgradeDbVersionRequest request) {
+        return new AsyncInvoker<UpgradeDbVersionRequest, UpgradeDbVersionResponse>(request,
+            GaussDBforNoSQLMeta.upgradeDbVersion, hcClient);
+    }
+
+    /**
      * 查询当前支持的API版本信息列表
      *
      * 查询当前支持的API版本信息列表。

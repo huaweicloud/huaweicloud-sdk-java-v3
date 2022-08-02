@@ -934,6 +934,38 @@ public class ProjectManMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CancelProjectDomainRequest, CancelProjectDomainResponse> cancelProjectDomain =
+        genForcancelProjectDomain();
+
+    private static HttpRequestDef<CancelProjectDomainRequest, CancelProjectDomainResponse> genForcancelProjectDomain() {
+        // basic
+        HttpRequestDef.Builder<CancelProjectDomainRequest, CancelProjectDomainResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, CancelProjectDomainRequest.class, CancelProjectDomainResponse.class)
+            .withName("CancelProjectDomain")
+            .withUri("/v4/projects/{project_id}/domains/{domain_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CancelProjectDomainRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<String>withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CancelProjectDomainRequest::getDomainId, (req, v) -> {
+                req.setDomainId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateCustomfieldsRequest, CreateCustomfieldsResponse> createCustomfields =
         genForcreateCustomfields();
 
@@ -1022,6 +1054,38 @@ public class ProjectManMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateIterationRequestV4.class),
             f -> f.withMarshaller(CreateIterationV4Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateProjectDomainRequest, CreateProjectDomainResponse> createProjectDomain =
+        genForcreateProjectDomain();
+
+    private static HttpRequestDef<CreateProjectDomainRequest, CreateProjectDomainResponse> genForcreateProjectDomain() {
+        // basic
+        HttpRequestDef.Builder<CreateProjectDomainRequest, CreateProjectDomainResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateProjectDomainRequest.class, CreateProjectDomainResponse.class)
+                .withName("CreateProjectDomain")
+                .withUri("/v4/projects/{project_id}/domain")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateProjectDomainRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<CreateProjectDomainRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateProjectDomainRequestBody.class),
+            f -> f.withMarshaller(CreateProjectDomainRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -1670,6 +1734,45 @@ public class ProjectManMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListProjectDomainsRequest, ListProjectDomainsResponse> listProjectDomains =
+        genForlistProjectDomains();
+
+    private static HttpRequestDef<ListProjectDomainsRequest, ListProjectDomainsResponse> genForlistProjectDomains() {
+        // basic
+        HttpRequestDef.Builder<ListProjectDomainsRequest, ListProjectDomainsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListProjectDomainsRequest.class, ListProjectDomainsResponse.class)
+                .withName("ListProjectDomains")
+                .withUri("/v4/projects/{project_id}/domains")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProjectDomainsRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListProjectDomainsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListProjectDomainsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListProjectIssuesRecordsV4Request, ListProjectIssuesRecordsV4Response> listProjectIssuesRecordsV4 =
         genForlistProjectIssuesRecordsV4();
 
@@ -2038,6 +2141,45 @@ public class ProjectManMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateIterationRequestV4.class),
             f -> f.withMarshaller(UpdateIterationV4Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateProjectDomainRequest, UpdateProjectDomainResponse> updateProjectDomain =
+        genForupdateProjectDomain();
+
+    private static HttpRequestDef<UpdateProjectDomainRequest, UpdateProjectDomainResponse> genForupdateProjectDomain() {
+        // basic
+        HttpRequestDef.Builder<UpdateProjectDomainRequest, UpdateProjectDomainResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateProjectDomainRequest.class, UpdateProjectDomainResponse.class)
+                .withName("UpdateProjectDomain")
+                .withUri("/v4/projects/{project_id}/domains/{domain_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateProjectDomainRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<String>withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateProjectDomainRequest::getDomainId, (req, v) -> {
+                req.setDomainId(v);
+            }));
+        builder.<CreateProjectDomainRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateProjectDomainRequestBody.class),
+            f -> f.withMarshaller(UpdateProjectDomainRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

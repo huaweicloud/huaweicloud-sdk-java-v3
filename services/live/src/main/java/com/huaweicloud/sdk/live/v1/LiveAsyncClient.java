@@ -116,6 +116,38 @@ public class LiveAsyncClient {
     }
 
     /**
+     * 创建录制视频索引文件
+     *
+     * Create Record Index
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateRecordIndexRequest 请求对象
+     * @return CompletableFuture<CreateRecordIndexResponse>
+     */
+    public CompletableFuture<CreateRecordIndexResponse> createRecordIndexAsync(CreateRecordIndexRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.createRecordIndex);
+    }
+
+    /**
+     * 创建录制视频索引文件
+     *
+     * Create Record Index
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateRecordIndexRequest 请求对象
+     * @return AsyncInvoker<CreateRecordIndexRequest, CreateRecordIndexResponse>
+     */
+    public AsyncInvoker<CreateRecordIndexRequest, CreateRecordIndexResponse> createRecordIndexAsyncInvoker(
+        CreateRecordIndexRequest request) {
+        return new AsyncInvoker<CreateRecordIndexRequest, CreateRecordIndexResponse>(request,
+            LiveMeta.createRecordIndex, hcClient);
+    }
+
+    /**
      * 创建录制规则
      *
      * 创建录制规则接口，录制规则对新推送的流生效，对已经推送中的流不生效

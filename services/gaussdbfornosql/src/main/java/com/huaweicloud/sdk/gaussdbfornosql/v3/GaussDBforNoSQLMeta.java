@@ -990,6 +990,31 @@ public class GaussDBforNoSQLMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpgradeDbVersionRequest, UpgradeDbVersionResponse> upgradeDbVersion =
+        genForupgradeDbVersion();
+
+    private static HttpRequestDef<UpgradeDbVersionRequest, UpgradeDbVersionResponse> genForupgradeDbVersion() {
+        // basic
+        HttpRequestDef.Builder<UpgradeDbVersionRequest, UpgradeDbVersionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpgradeDbVersionRequest.class, UpgradeDbVersionResponse.class)
+                .withName("UpgradeDbVersion")
+                .withUri("/v3/{project_id}/instances/{instance_id}/db-upgrade")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpgradeDbVersionRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListApiVersionRequest, ListApiVersionResponse> listApiVersion =
         genForlistApiVersion();
 

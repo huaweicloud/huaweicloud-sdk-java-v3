@@ -122,7 +122,7 @@ public class ListServersDetailsRequest {
     }
 
     /**
-     * 查询返回云服务器当前页面的大小。每页最多返回1000台云服务器的信息。
+     * 查询返回云服务器当前页面的大小。每页默认值是25，最多返回1000台云服务器的信息。
      * minimum: 1
      * maximum: 1000
      * @return limit

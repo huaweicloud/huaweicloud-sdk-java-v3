@@ -49,6 +49,11 @@ public class CreateCertificateRequestBody {
     private List<SubjectAlternativeName> subjectAlternativeNames = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "extended_key_usage")
+
+    private ExtendedKeyUsage extendedKeyUsage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "customized_extension")
 
     private CustomizedExtension customizedExtension;
@@ -225,6 +230,32 @@ public class CreateCertificateRequestBody {
         this.subjectAlternativeNames = subjectAlternativeNames;
     }
 
+    public CreateCertificateRequestBody withExtendedKeyUsage(ExtendedKeyUsage extendedKeyUsage) {
+        this.extendedKeyUsage = extendedKeyUsage;
+        return this;
+    }
+
+    public CreateCertificateRequestBody withExtendedKeyUsage(Consumer<ExtendedKeyUsage> extendedKeyUsageSetter) {
+        if (this.extendedKeyUsage == null) {
+            this.extendedKeyUsage = new ExtendedKeyUsage();
+            extendedKeyUsageSetter.accept(this.extendedKeyUsage);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get extendedKeyUsage
+     * @return extendedKeyUsage
+     */
+    public ExtendedKeyUsage getExtendedKeyUsage() {
+        return extendedKeyUsage;
+    }
+
+    public void setExtendedKeyUsage(ExtendedKeyUsage extendedKeyUsage) {
+        this.extendedKeyUsage = extendedKeyUsage;
+    }
+
     public CreateCertificateRequestBody withCustomizedExtension(CustomizedExtension customizedExtension) {
         this.customizedExtension = customizedExtension;
         return this;
@@ -268,6 +299,7 @@ public class CreateCertificateRequestBody {
             && Objects.equals(this.validity, createCertificateRequestBody.validity)
             && Objects.equals(this.keyUsages, createCertificateRequestBody.keyUsages)
             && Objects.equals(this.subjectAlternativeNames, createCertificateRequestBody.subjectAlternativeNames)
+            && Objects.equals(this.extendedKeyUsage, createCertificateRequestBody.extendedKeyUsage)
             && Objects.equals(this.customizedExtension, createCertificateRequestBody.customizedExtension);
     }
 
@@ -280,6 +312,7 @@ public class CreateCertificateRequestBody {
             validity,
             keyUsages,
             subjectAlternativeNames,
+            extendedKeyUsage,
             customizedExtension);
     }
 
@@ -294,6 +327,7 @@ public class CreateCertificateRequestBody {
         sb.append("    validity: ").append(toIndentedString(validity)).append("\n");
         sb.append("    keyUsages: ").append(toIndentedString(keyUsages)).append("\n");
         sb.append("    subjectAlternativeNames: ").append(toIndentedString(subjectAlternativeNames)).append("\n");
+        sb.append("    extendedKeyUsage: ").append(toIndentedString(extendedKeyUsage)).append("\n");
         sb.append("    customizedExtension: ").append(toIndentedString(customizedExtension)).append("\n");
         sb.append("}");
         return sb.toString();

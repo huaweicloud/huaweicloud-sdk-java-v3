@@ -26,7 +26,7 @@ public class SubjectAlternativeName {
     }
 
     /**
-     * 备用名称类型，当前仅支持DNS与IP。 - **DNS** - **IP**
+     * 备用名称类型，当前仅支持DNS、IP、EMAIL、URI。 - **DNS** - **IP** - **EMAIL** - **URI**
      * @return type
      */
     public String getType() {
@@ -43,7 +43,7 @@ public class SubjectAlternativeName {
     }
 
     /**
-     * 对应备用名称类型的值。   - DNS类型，长度为0~253；   - IP类型，长度为0~39。
+     * 对应备用名称类型的值。   - DNS类型，长度为不超过253；   - IP类型，长度不超过39，支持IPV4、IPV6；   - EMAIL类型，长度不超过256；   - URI类型，长度不超过253。
      * @return value
      */
     public String getValue() {

@@ -216,7 +216,7 @@ public class ListGaussMySqlSlowLogRequest  {
 
 
     /**
-     * 语句类型，取空值，表示查询所有语句类型，也可指定如下日志类型：INSERT、UPDATE、SELECT、DELETE和CREATE
+     * 语句类型，取空值，表示查询所有语句类型，也可指定如下日志类型：INSERT、UPDATE、SELECT、DELETE、ALTER、DROP和CREATE
      * @return type
      */
     public String getType() {

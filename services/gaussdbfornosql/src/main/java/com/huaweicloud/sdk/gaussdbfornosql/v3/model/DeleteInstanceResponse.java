@@ -22,7 +22,7 @@ public class DeleteInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 工作流ID。
+     * 任务ID。
      * @return jobId
      */
     public String getJobId() {

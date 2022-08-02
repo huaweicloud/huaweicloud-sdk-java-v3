@@ -20,6 +20,11 @@ public class ListInstancesDatastoreResult {
 
     private String version;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "patch_available")
+
+    private Boolean patchAvailable;
+
     public ListInstancesDatastoreResult withType(String type) {
         this.type = type;
         return this;
@@ -54,6 +59,23 @@ public class ListInstancesDatastoreResult {
         this.version = version;
     }
 
+    public ListInstancesDatastoreResult withPatchAvailable(Boolean patchAvailable) {
+        this.patchAvailable = patchAvailable;
+        return this;
+    }
+
+    /**
+     * 是否有补丁版本的数据库支持升级，返回true时可以通过升级补丁接口进行数据库升级，否则不允许升级补丁。
+     * @return patchAvailable
+     */
+    public Boolean getPatchAvailable() {
+        return patchAvailable;
+    }
+
+    public void setPatchAvailable(Boolean patchAvailable) {
+        this.patchAvailable = patchAvailable;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -64,12 +86,13 @@ public class ListInstancesDatastoreResult {
         }
         ListInstancesDatastoreResult listInstancesDatastoreResult = (ListInstancesDatastoreResult) o;
         return Objects.equals(this.type, listInstancesDatastoreResult.type)
-            && Objects.equals(this.version, listInstancesDatastoreResult.version);
+            && Objects.equals(this.version, listInstancesDatastoreResult.version)
+            && Objects.equals(this.patchAvailable, listInstancesDatastoreResult.patchAvailable);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, version);
+        return Objects.hash(type, version, patchAvailable);
     }
 
     @Override
@@ -78,6 +101,7 @@ public class ListInstancesDatastoreResult {
         sb.append("class ListInstancesDatastoreResult {\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
+        sb.append("    patchAvailable: ").append(toIndentedString(patchAvailable)).append("\n");
         sb.append("}");
         return sb.toString();
     }
