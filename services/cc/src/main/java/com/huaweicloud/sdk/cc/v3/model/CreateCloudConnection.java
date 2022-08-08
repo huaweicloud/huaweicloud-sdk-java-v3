@@ -31,7 +31,7 @@ public class CreateCloudConnection {
     private String enterpriseProjectId;
 
     /**
-     * 云连接使用场景。|- VPC：虚拟私有云。 ER：虚拟路由器。
+     * 云连接使用场景，有效值： - vpc：虚拟私有云。 - er：企业路由器。
      */
     public static final class UsedSceneEnum {
 
@@ -118,7 +118,7 @@ public class CreateCloudConnection {
     }
 
     /**
-     * 云连接实例的名字。
+     * 云连接实例的名字。只能由中文、英文字母、数字、下划线、中划线、点组成。
      * @return name
      */
     public String getName() {
@@ -135,7 +135,7 @@ public class CreateCloudConnection {
     }
 
     /**
-     * 云连接实例的描述。
+     * 云连接实例的描述。不支持 <>。
      * @return description
      */
     public String getDescription() {
@@ -152,7 +152,7 @@ public class CreateCloudConnection {
     }
 
     /**
-     * 云连接实例所属的企业项目ID。
+     * 云连接实例所属的企业项目ID。企业项目账号必填；非企业项目账号不填。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -169,7 +169,7 @@ public class CreateCloudConnection {
     }
 
     /**
-     * 云连接使用场景。|- VPC：虚拟私有云。 ER：虚拟路由器。
+     * 云连接使用场景，有效值： - vpc：虚拟私有云。 - er：企业路由器。
      * @return usedScene
      */
     public UsedSceneEnum getUsedScene() {

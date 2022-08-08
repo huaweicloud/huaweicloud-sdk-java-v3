@@ -29,7 +29,7 @@ public class CreateNetworkInstance {
     private String description;
 
     /**
-     * 添加到云连接网络实例的类型。|- VPC：虚拟私有云。 VGW：虚拟网关。 ER：虚拟路由器。
+     * 添加到云连接网络实例的类型，有效值： - vpc：虚拟私有云。 - vgw：虚拟网关。 - er：企业路由器。
      */
     public static final class TypeEnum {
 
@@ -152,7 +152,7 @@ public class CreateNetworkInstance {
     }
 
     /**
-     * 网络实例的名字。
+     * 网络实例的名字。只能由中文、英文字母、数字、下划线、中划线、点组成。
      * @return name
      */
     public String getName() {
@@ -169,7 +169,7 @@ public class CreateNetworkInstance {
     }
 
     /**
-     * 网络实例的描述。
+     * 网络实例的描述。不支持 <>。
      * @return description
      */
     public String getDescription() {
@@ -186,7 +186,7 @@ public class CreateNetworkInstance {
     }
 
     /**
-     * 添加到云连接网络实例的类型。|- VPC：虚拟私有云。 VGW：虚拟网关。 ER：虚拟路由器。
+     * 添加到云连接网络实例的类型，有效值： - vpc：虚拟私有云。 - vgw：虚拟网关。 - er：企业路由器。
      * @return type
      */
     public TypeEnum getType() {
@@ -203,7 +203,7 @@ public class CreateNetworkInstance {
     }
 
     /**
-     * 添加到云连接网络实例的ID，VPC或者VGW的ID。
+     * 添加到云连接网络实例的ID，VPC、VGW或者ER的ID。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -220,7 +220,7 @@ public class CreateNetworkInstance {
     }
 
     /**
-     * VPC或者VGW的账户ID。
+     * 网络实例的账户ID。跨账号加载必填；同账号下资源加载不填。
      * @return instanceDomainId
      */
     public String getInstanceDomainId() {
@@ -237,7 +237,7 @@ public class CreateNetworkInstance {
     }
 
     /**
-     * VPC或者VGW的项目ID。
+     * 网络实例的项目ID。
      * @return projectId
      */
     public String getProjectId() {
@@ -254,7 +254,7 @@ public class CreateNetworkInstance {
     }
 
     /**
-     * VPC或者VGW的RegionID。
+     * 网络实例的RegionID。
      * @return regionId
      */
     public String getRegionId() {
@@ -304,7 +304,7 @@ public class CreateNetworkInstance {
     }
 
     /**
-     * VPC或者VGW发布的网段路由列表，ER场景不需要此字段。
+     * 网络实例发布的网段路由列表，ER场景此字段为空。
      * @return cidrs
      */
     public List<String> getCidrs() {

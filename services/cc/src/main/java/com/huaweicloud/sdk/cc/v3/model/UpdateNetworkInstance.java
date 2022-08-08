@@ -34,7 +34,7 @@ public class UpdateNetworkInstance {
     }
 
     /**
-     * 网络实例的名字。
+     * 网络实例的名字。只能由中文、英文字母、数字、下划线、中划线、点组成。
      * @return name
      */
     public String getName() {
@@ -51,7 +51,7 @@ public class UpdateNetworkInstance {
     }
 
     /**
-     * 网络实例的描述。
+     * 网络实例的描述。不支持 <>。
      * @return description
      */
     public String getDescription() {
@@ -84,7 +84,7 @@ public class UpdateNetworkInstance {
     }
 
     /**
-     * VPC或者VGW发布的网段路由列表，ER场景不需要此字段。
+     * 网络实例发布的网段路由列表，ER场景此字段为空。
      * @return cidrs
      */
     public List<String> getCidrs() {

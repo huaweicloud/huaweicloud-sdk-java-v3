@@ -1249,4 +1249,154 @@ public class GaussDBClient {
         return new SyncInvoker<UpdateInstanceMonitorRequest, UpdateInstanceMonitorResponse>(request, GaussDBMeta.updateInstanceMonitor, hcClient);
     }
 
+    /**
+     * 删除SQL限流规则
+     *
+     * 删除SQL限流规则
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteSqlFilterRuleRequest 请求对象
+     * @return DeleteSqlFilterRuleResponse
+     */
+    public DeleteSqlFilterRuleResponse deleteSqlFilterRule(DeleteSqlFilterRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.deleteSqlFilterRule);
+    }
+
+    /**
+     * 删除SQL限流规则
+     *
+     * 删除SQL限流规则
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteSqlFilterRuleRequest 请求对象
+     * @return SyncInvoker<DeleteSqlFilterRuleRequest, DeleteSqlFilterRuleResponse>
+     */
+    public SyncInvoker<DeleteSqlFilterRuleRequest, DeleteSqlFilterRuleResponse> deleteSqlFilterRuleInvoker(DeleteSqlFilterRuleRequest request) {
+        return new SyncInvoker<DeleteSqlFilterRuleRequest, DeleteSqlFilterRuleResponse>(request, GaussDBMeta.deleteSqlFilterRule, hcClient);
+    }
+
+    /**
+     * 设置SQL限流规则
+     *
+     * 设置SQL限流规则
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SetSqlFilterRuleRequest 请求对象
+     * @return SetSqlFilterRuleResponse
+     */
+    public SetSqlFilterRuleResponse setSqlFilterRule(SetSqlFilterRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.setSqlFilterRule);
+    }
+
+    /**
+     * 设置SQL限流规则
+     *
+     * 设置SQL限流规则
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SetSqlFilterRuleRequest 请求对象
+     * @return SyncInvoker<SetSqlFilterRuleRequest, SetSqlFilterRuleResponse>
+     */
+    public SyncInvoker<SetSqlFilterRuleRequest, SetSqlFilterRuleResponse> setSqlFilterRuleInvoker(SetSqlFilterRuleRequest request) {
+        return new SyncInvoker<SetSqlFilterRuleRequest, SetSqlFilterRuleResponse>(request, GaussDBMeta.setSqlFilterRule, hcClient);
+    }
+
+    /**
+     * 查询SQL限流开关状态
+     *
+     * 查询SQL限流开关状态
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowSqlFilterControlRequest 请求对象
+     * @return ShowSqlFilterControlResponse
+     */
+    public ShowSqlFilterControlResponse showSqlFilterControl(ShowSqlFilterControlRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.showSqlFilterControl);
+    }
+
+    /**
+     * 查询SQL限流开关状态
+     *
+     * 查询SQL限流开关状态
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowSqlFilterControlRequest 请求对象
+     * @return SyncInvoker<ShowSqlFilterControlRequest, ShowSqlFilterControlResponse>
+     */
+    public SyncInvoker<ShowSqlFilterControlRequest, ShowSqlFilterControlResponse> showSqlFilterControlInvoker(ShowSqlFilterControlRequest request) {
+        return new SyncInvoker<ShowSqlFilterControlRequest, ShowSqlFilterControlResponse>(request, GaussDBMeta.showSqlFilterControl, hcClient);
+    }
+
+    /**
+     * 查询SQL限流规则
+     *
+     * 查询SQL限流规则
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowSqlFilterRuleRequest 请求对象
+     * @return ShowSqlFilterRuleResponse
+     */
+    public ShowSqlFilterRuleResponse showSqlFilterRule(ShowSqlFilterRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.showSqlFilterRule);
+    }
+
+    /**
+     * 查询SQL限流规则
+     *
+     * 查询SQL限流规则
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowSqlFilterRuleRequest 请求对象
+     * @return SyncInvoker<ShowSqlFilterRuleRequest, ShowSqlFilterRuleResponse>
+     */
+    public SyncInvoker<ShowSqlFilterRuleRequest, ShowSqlFilterRuleResponse> showSqlFilterRuleInvoker(ShowSqlFilterRuleRequest request) {
+        return new SyncInvoker<ShowSqlFilterRuleRequest, ShowSqlFilterRuleResponse>(request, GaussDBMeta.showSqlFilterRule, hcClient);
+    }
+
+    /**
+     * 开启或者关闭SQL限流
+     *
+     * 开启或者关闭SQL限流
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateSqlFilterControlRequest 请求对象
+     * @return UpdateSqlFilterControlResponse
+     */
+    public UpdateSqlFilterControlResponse updateSqlFilterControl(UpdateSqlFilterControlRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.updateSqlFilterControl);
+    }
+
+    /**
+     * 开启或者关闭SQL限流
+     *
+     * 开启或者关闭SQL限流
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateSqlFilterControlRequest 请求对象
+     * @return SyncInvoker<UpdateSqlFilterControlRequest, UpdateSqlFilterControlResponse>
+     */
+    public SyncInvoker<UpdateSqlFilterControlRequest, UpdateSqlFilterControlResponse> updateSqlFilterControlInvoker(UpdateSqlFilterControlRequest request) {
+        return new SyncInvoker<UpdateSqlFilterControlRequest, UpdateSqlFilterControlResponse>(request, GaussDBMeta.updateSqlFilterControl, hcClient);
+    }
+
 }

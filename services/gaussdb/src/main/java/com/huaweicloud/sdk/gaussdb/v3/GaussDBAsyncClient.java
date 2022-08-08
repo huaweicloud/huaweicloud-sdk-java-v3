@@ -1251,4 +1251,154 @@ public class GaussDBAsyncClient {
         return new AsyncInvoker<UpdateInstanceMonitorRequest, UpdateInstanceMonitorResponse>(request, GaussDBMeta.updateInstanceMonitor, hcClient);
     }
 
+    /**
+     * 删除SQL限流规则
+     *
+     * 删除SQL限流规则
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteSqlFilterRuleRequest 请求对象
+     * @return CompletableFuture<DeleteSqlFilterRuleResponse>
+     */
+    public CompletableFuture<DeleteSqlFilterRuleResponse> deleteSqlFilterRuleAsync(DeleteSqlFilterRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBMeta.deleteSqlFilterRule);
+    }
+
+    /**
+     * 删除SQL限流规则
+     *
+     * 删除SQL限流规则
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteSqlFilterRuleRequest 请求对象
+     * @return AsyncInvoker<DeleteSqlFilterRuleRequest, DeleteSqlFilterRuleResponse>
+     */
+    public AsyncInvoker<DeleteSqlFilterRuleRequest, DeleteSqlFilterRuleResponse> deleteSqlFilterRuleAsyncInvoker(DeleteSqlFilterRuleRequest request) {
+        return new AsyncInvoker<DeleteSqlFilterRuleRequest, DeleteSqlFilterRuleResponse>(request, GaussDBMeta.deleteSqlFilterRule, hcClient);
+    }
+
+    /**
+     * 设置SQL限流规则
+     *
+     * 设置SQL限流规则
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SetSqlFilterRuleRequest 请求对象
+     * @return CompletableFuture<SetSqlFilterRuleResponse>
+     */
+    public CompletableFuture<SetSqlFilterRuleResponse> setSqlFilterRuleAsync(SetSqlFilterRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBMeta.setSqlFilterRule);
+    }
+
+    /**
+     * 设置SQL限流规则
+     *
+     * 设置SQL限流规则
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SetSqlFilterRuleRequest 请求对象
+     * @return AsyncInvoker<SetSqlFilterRuleRequest, SetSqlFilterRuleResponse>
+     */
+    public AsyncInvoker<SetSqlFilterRuleRequest, SetSqlFilterRuleResponse> setSqlFilterRuleAsyncInvoker(SetSqlFilterRuleRequest request) {
+        return new AsyncInvoker<SetSqlFilterRuleRequest, SetSqlFilterRuleResponse>(request, GaussDBMeta.setSqlFilterRule, hcClient);
+    }
+
+    /**
+     * 查询SQL限流开关状态
+     *
+     * 查询SQL限流开关状态
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowSqlFilterControlRequest 请求对象
+     * @return CompletableFuture<ShowSqlFilterControlResponse>
+     */
+    public CompletableFuture<ShowSqlFilterControlResponse> showSqlFilterControlAsync(ShowSqlFilterControlRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBMeta.showSqlFilterControl);
+    }
+
+    /**
+     * 查询SQL限流开关状态
+     *
+     * 查询SQL限流开关状态
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowSqlFilterControlRequest 请求对象
+     * @return AsyncInvoker<ShowSqlFilterControlRequest, ShowSqlFilterControlResponse>
+     */
+    public AsyncInvoker<ShowSqlFilterControlRequest, ShowSqlFilterControlResponse> showSqlFilterControlAsyncInvoker(ShowSqlFilterControlRequest request) {
+        return new AsyncInvoker<ShowSqlFilterControlRequest, ShowSqlFilterControlResponse>(request, GaussDBMeta.showSqlFilterControl, hcClient);
+    }
+
+    /**
+     * 查询SQL限流规则
+     *
+     * 查询SQL限流规则
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowSqlFilterRuleRequest 请求对象
+     * @return CompletableFuture<ShowSqlFilterRuleResponse>
+     */
+    public CompletableFuture<ShowSqlFilterRuleResponse> showSqlFilterRuleAsync(ShowSqlFilterRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBMeta.showSqlFilterRule);
+    }
+
+    /**
+     * 查询SQL限流规则
+     *
+     * 查询SQL限流规则
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowSqlFilterRuleRequest 请求对象
+     * @return AsyncInvoker<ShowSqlFilterRuleRequest, ShowSqlFilterRuleResponse>
+     */
+    public AsyncInvoker<ShowSqlFilterRuleRequest, ShowSqlFilterRuleResponse> showSqlFilterRuleAsyncInvoker(ShowSqlFilterRuleRequest request) {
+        return new AsyncInvoker<ShowSqlFilterRuleRequest, ShowSqlFilterRuleResponse>(request, GaussDBMeta.showSqlFilterRule, hcClient);
+    }
+
+    /**
+     * 开启或者关闭SQL限流
+     *
+     * 开启或者关闭SQL限流
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateSqlFilterControlRequest 请求对象
+     * @return CompletableFuture<UpdateSqlFilterControlResponse>
+     */
+    public CompletableFuture<UpdateSqlFilterControlResponse> updateSqlFilterControlAsync(UpdateSqlFilterControlRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBMeta.updateSqlFilterControl);
+    }
+
+    /**
+     * 开启或者关闭SQL限流
+     *
+     * 开启或者关闭SQL限流
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateSqlFilterControlRequest 请求对象
+     * @return AsyncInvoker<UpdateSqlFilterControlRequest, UpdateSqlFilterControlResponse>
+     */
+    public AsyncInvoker<UpdateSqlFilterControlRequest, UpdateSqlFilterControlResponse> updateSqlFilterControlAsyncInvoker(UpdateSqlFilterControlRequest request) {
+        return new AsyncInvoker<UpdateSqlFilterControlRequest, UpdateSqlFilterControlResponse>(request, GaussDBMeta.updateSqlFilterControl, hcClient);
+    }
+
 }

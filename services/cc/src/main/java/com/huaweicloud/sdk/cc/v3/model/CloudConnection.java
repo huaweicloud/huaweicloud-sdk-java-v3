@@ -133,7 +133,7 @@ public class CloudConnection {
     private OffsetDateTime updatedAt;
 
     /**
-     * 云连接使用场景。|- VPC：虚拟私有云。 ER：虚拟路由器。
+     * 云连接使用场景。 - VPC：虚拟私有云。 - ER：企业路由器。
      */
     public static final class UsedSceneEnum {
 
@@ -354,7 +354,7 @@ public class CloudConnection {
     }
 
     /**
-     * 云连接实例的创建时间。
+     * 云连接实例的创建时间。UTC时间格式，yyyy-MM-ddTHH:mm:ss
      * @return createdAt
      */
     public OffsetDateTime getCreatedAt() {
@@ -371,7 +371,7 @@ public class CloudConnection {
     }
 
     /**
-     * 云连接实例的更新时间。
+     * 云连接实例的更新时间。UTC时间格式，yyyy-MM-ddTHH:mm:ss
      * @return updatedAt
      */
     public OffsetDateTime getUpdatedAt() {
@@ -388,7 +388,7 @@ public class CloudConnection {
     }
 
     /**
-     * 云连接使用场景。|- VPC：虚拟私有云。 ER：虚拟路由器。
+     * 云连接使用场景。 - VPC：虚拟私有云。 - ER：企业路由器。
      * @return usedScene
      */
     public UsedSceneEnum getUsedScene() {

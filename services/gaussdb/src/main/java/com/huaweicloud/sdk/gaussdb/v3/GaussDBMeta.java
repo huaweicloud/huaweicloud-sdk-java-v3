@@ -1896,4 +1896,219 @@ public class GaussDBMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteSqlFilterRuleRequest, DeleteSqlFilterRuleResponse> deleteSqlFilterRule = genFordeleteSqlFilterRule();
+
+    private static HttpRequestDef<DeleteSqlFilterRuleRequest, DeleteSqlFilterRuleResponse> genFordeleteSqlFilterRule() {
+        // basic
+        HttpRequestDef.Builder<DeleteSqlFilterRuleRequest, DeleteSqlFilterRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteSqlFilterRuleRequest.class, DeleteSqlFilterRuleResponse.class)
+                .withName("DeleteSqlFilterRule")
+                .withUri("/v3/{project_id}/instances/{instance_id}/sql-filter/rules")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteSqlFilterRuleRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteSqlFilterRuleRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+        builder.<DeleteSqlFilterRuleReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteSqlFilterRuleReq.class),
+            f -> f.withMarshaller(DeleteSqlFilterRuleRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SetSqlFilterRuleRequest, SetSqlFilterRuleResponse> setSqlFilterRule = genForsetSqlFilterRule();
+
+    private static HttpRequestDef<SetSqlFilterRuleRequest, SetSqlFilterRuleResponse> genForsetSqlFilterRule() {
+        // basic
+        HttpRequestDef.Builder<SetSqlFilterRuleRequest, SetSqlFilterRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, SetSqlFilterRuleRequest.class, SetSqlFilterRuleResponse.class)
+                .withName("SetSqlFilterRule")
+                .withUri("/v3/{project_id}/instances/{instance_id}/sql-filter/rules")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetSqlFilterRuleRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetSqlFilterRuleRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+        builder.<OperateSqlFilterRuleReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(OperateSqlFilterRuleReq.class),
+            f -> f.withMarshaller(SetSqlFilterRuleRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSqlFilterControlRequest, ShowSqlFilterControlResponse> showSqlFilterControl = genForshowSqlFilterControl();
+
+    private static HttpRequestDef<ShowSqlFilterControlRequest, ShowSqlFilterControlResponse> genForshowSqlFilterControl() {
+        // basic
+        HttpRequestDef.Builder<ShowSqlFilterControlRequest, ShowSqlFilterControlResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowSqlFilterControlRequest.class, ShowSqlFilterControlResponse.class)
+                .withName("ShowSqlFilterControl")
+                .withUri("/v3/{project_id}/instances/{instance_id}/sql-filter/switch")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSqlFilterControlRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSqlFilterControlRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSqlFilterRuleRequest, ShowSqlFilterRuleResponse> showSqlFilterRule = genForshowSqlFilterRule();
+
+    private static HttpRequestDef<ShowSqlFilterRuleRequest, ShowSqlFilterRuleResponse> genForshowSqlFilterRule() {
+        // basic
+        HttpRequestDef.Builder<ShowSqlFilterRuleRequest, ShowSqlFilterRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowSqlFilterRuleRequest.class, ShowSqlFilterRuleResponse.class)
+                .withName("ShowSqlFilterRule")
+                .withUri("/v3/{project_id}/instances/{instance_id}/sql-filter/rules")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSqlFilterRuleRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.<String>withRequestField("node_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSqlFilterRuleRequest::getNodeId, (req, v) -> {
+                req.setNodeId(v);
+            })
+        );
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSqlFilterRuleRequest::getType, (req, v) -> {
+                req.setType(v);
+            })
+        );
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSqlFilterRuleRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateSqlFilterControlRequest, UpdateSqlFilterControlResponse> updateSqlFilterControl = genForupdateSqlFilterControl();
+
+    private static HttpRequestDef<UpdateSqlFilterControlRequest, UpdateSqlFilterControlResponse> genForupdateSqlFilterControl() {
+        // basic
+        HttpRequestDef.Builder<UpdateSqlFilterControlRequest, UpdateSqlFilterControlResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpdateSqlFilterControlRequest.class, UpdateSqlFilterControlResponse.class)
+                .withName("UpdateSqlFilterControl")
+                .withUri("/v3/{project_id}/instances/{instance_id}/sql-filter/switch")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSqlFilterControlRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSqlFilterControlRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+        builder.<OperateSqlFilterControlReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(OperateSqlFilterControlReq.class),
+            f -> f.withMarshaller(UpdateSqlFilterControlRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
 }

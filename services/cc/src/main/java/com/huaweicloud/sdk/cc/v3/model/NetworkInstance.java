@@ -40,7 +40,7 @@ public class NetworkInstance {
     private String domainId;
 
     /**
-     * 网络实例的状态。ACTIVE：表示状态可用。
+     * 网络实例的状态。 - ACTIVE：处理成功。 - PENDING：处理中。 - ERROR：处理失败。
      */
     public static final class StatusEnum {
 
@@ -126,7 +126,7 @@ public class NetworkInstance {
     private OffsetDateTime updatedAt;
 
     /**
-     * 网络实例的类型。|- VPC：虚拟私有云。 VGW：虚拟网关。 ER：虚拟路由器。
+     * 网络实例的类型。 - VPC：虚拟私有云。 - VGW：虚拟网关。 - ER：企业路由器。
      */
     public static final class TypeEnum {
 
@@ -317,7 +317,7 @@ public class NetworkInstance {
     }
 
     /**
-     * 网络实例的状态。ACTIVE：表示状态可用。
+     * 网络实例的状态。 - ACTIVE：处理成功。 - PENDING：处理中。 - ERROR：处理失败。
      * @return status
      */
     public StatusEnum getStatus() {
@@ -334,7 +334,7 @@ public class NetworkInstance {
     }
 
     /**
-     * 网络实例的创建时间。
+     * 网络实例的创建时间。 UTC时间格式，yyyy-MM-ddTHH:mm:ss
      * @return createdAt
      */
     public OffsetDateTime getCreatedAt() {
@@ -351,7 +351,7 @@ public class NetworkInstance {
     }
 
     /**
-     * 网络实例的更新时间。
+     * 网络实例的更新时间。 UTC时间格式，yyyy-MM-ddTHH:mm:ss
      * @return updatedAt
      */
     public OffsetDateTime getUpdatedAt() {
@@ -368,7 +368,7 @@ public class NetworkInstance {
     }
 
     /**
-     * 网络实例的类型。|- VPC：虚拟私有云。 VGW：虚拟网关。 ER：虚拟路由器。
+     * 网络实例的类型。 - VPC：虚拟私有云。 - VGW：虚拟网关。 - ER：企业路由器。
      * @return type
      */
     public TypeEnum getType() {
@@ -402,7 +402,7 @@ public class NetworkInstance {
     }
 
     /**
-     * VPC或者VGW的ID。
+     * 网络实例的ID。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -419,7 +419,7 @@ public class NetworkInstance {
     }
 
     /**
-     * VPC或者VGW所属账户ID。
+     * 网络实例所属账户ID。
      * @return instanceDomainId
      */
     public String getInstanceDomainId() {
@@ -436,7 +436,7 @@ public class NetworkInstance {
     }
 
     /**
-     * VPC或者VGW所在Region的ID。
+     * 网络实例所在Region的ID。
      * @return regionId
      */
     public String getRegionId() {
@@ -453,7 +453,7 @@ public class NetworkInstance {
     }
 
     /**
-     * VPC或者VGW所在租户的项目ID。
+     * 网络实例所在租户的项目ID。
      * @return projectId
      */
     public String getProjectId() {
@@ -486,7 +486,7 @@ public class NetworkInstance {
     }
 
     /**
-     * VPC或者VGW发布的网段路由列表。
+     * 网络实例发布的网段路由列表，ER场景此字段为空。
      * @return cidrs
      */
     public List<String> getCidrs() {

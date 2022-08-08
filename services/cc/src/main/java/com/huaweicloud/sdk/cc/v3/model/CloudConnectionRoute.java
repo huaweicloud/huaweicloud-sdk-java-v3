@@ -41,7 +41,7 @@ public class CloudConnectionRoute {
     private String instanceId;
 
     /**
-     * 路由条目下一跳指向的网络实例的类型。 |- VPC：虚拟私有云。 VGW：虚拟网关。
+     * 路由条目下一跳指向的网络实例的类型。 - VPC：虚拟私有云。 - VGW：虚拟网关。
      */
     public static final class TypeEnum {
 
@@ -223,7 +223,7 @@ public class CloudConnectionRoute {
     }
 
     /**
-     * 路由条目下一跳指向的网络实例的类型。 |- VPC：虚拟私有云。 VGW：虚拟网关。
+     * 路由条目下一跳指向的网络实例的类型。 - VPC：虚拟私有云。 - VGW：虚拟网关。
      * @return type
      */
     public TypeEnum getType() {

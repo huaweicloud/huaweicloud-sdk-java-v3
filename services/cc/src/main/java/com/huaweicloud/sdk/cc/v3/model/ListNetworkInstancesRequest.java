@@ -395,7 +395,7 @@ public class ListNetworkInstancesRequest {
     }
 
     /**
-     * 根据VPC或者VGW的ID过滤网络实例列表。
+     * 根据网络实例ID过滤网络实例列表。
      * @return instanceId
      */
     public List<String> getInstanceId() {
@@ -428,7 +428,7 @@ public class ListNetworkInstancesRequest {
     }
 
     /**
-     * 根据VPC或者VGW所在的Region过滤网络实例列表。
+     * 根据网络实例所在的Region过滤网络实例列表。
      * @return regionId
      */
     public List<String> getRegionId() {
