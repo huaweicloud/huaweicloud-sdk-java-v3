@@ -35,6 +35,11 @@ public class ShowInstanceResponse extends SdkResponse {
     private String engineVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "description")
+
+    private String description;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "specification")
 
     private String specification;
@@ -110,6 +115,11 @@ public class ShowInstanceResponse extends SdkResponse {
     private String userName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "access_user")
+
+    private String accessUser;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "order_id")
 
     private String orderId;
@@ -138,6 +148,16 @@ public class ShowInstanceResponse extends SdkResponse {
     @JsonProperty(value = "ssl_enable")
 
     private Boolean sslEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ssl_two_way_enable")
+
+    private Boolean sslTwoWayEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cert_replaced")
+
+    private Boolean certReplaced;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
@@ -434,6 +454,11 @@ public class ShowInstanceResponse extends SdkResponse {
     private String restConnectAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_boundwidth")
+
+    private Integer publicBoundwidth;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "message_query_inst_enable")
 
     private Boolean messageQueryInstEnable;
@@ -454,6 +479,11 @@ public class ShowInstanceResponse extends SdkResponse {
     private Boolean traceEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "agent_enable")
+
+    private Boolean agentEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pod_connect_address")
 
     private String podConnectAddress;
@@ -472,6 +502,26 @@ public class ShowInstanceResponse extends SdkResponse {
     @JsonProperty(value = "ces_version")
 
     private String cesVersion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_access_enabled")
+
+    private String publicAccessEnabled;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "node_num")
+
+    private Integer nodeNum;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "new_spec_billing_enable")
+
+    private Boolean newSpecBillingEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "broker_num")
+
+    private Integer brokerNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
@@ -532,6 +582,23 @@ public class ShowInstanceResponse extends SdkResponse {
 
     public void setEngineVersion(String engineVersion) {
         this.engineVersion = engineVersion;
+    }
+
+    public ShowInstanceResponse withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /**
+     * 实例描述。
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public ShowInstanceResponse withSpecification(String specification) {
@@ -642,7 +709,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 实例的状态。
+     * 实例的状态。 [详细状态说明见[实例状态说明](https://support.huaweicloud.com/api-kafka/kafka-api-180514012.html)。](tag:hws)[详细状态说明见[实例状态说明](https://support.huaweicloud.com/intl/zh-cn/api-kafka/kafka-api-180514012.html)。](tag:hws_hk)
      * @return status
      */
     public String getStatus() {
@@ -789,6 +856,23 @@ public class ShowInstanceResponse extends SdkResponse {
         this.userName = userName;
     }
 
+    public ShowInstanceResponse withAccessUser(String accessUser) {
+        this.accessUser = accessUser;
+        return this;
+    }
+
+    /**
+     * 实例访问用户名。
+     * @return accessUser
+     */
+    public String getAccessUser() {
+        return accessUser;
+    }
+
+    public void setAccessUser(String accessUser) {
+        this.accessUser = accessUser;
+    }
+
     public ShowInstanceResponse withOrderId(String orderId) {
         this.orderId = orderId;
         return this;
@@ -863,7 +947,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * Kafka实例的KafkaManager连接地址。
+     * Kafka实例的Kafka Manager连接地址。
      * @return managementConnectAddress
      */
     public String getManagementConnectAddress() {
@@ -889,6 +973,40 @@ public class ShowInstanceResponse extends SdkResponse {
 
     public void setSslEnable(Boolean sslEnable) {
         this.sslEnable = sslEnable;
+    }
+
+    public ShowInstanceResponse withSslTwoWayEnable(Boolean sslTwoWayEnable) {
+        this.sslTwoWayEnable = sslTwoWayEnable;
+        return this;
+    }
+
+    /**
+     * 是否开启双向认证。
+     * @return sslTwoWayEnable
+     */
+    public Boolean getSslTwoWayEnable() {
+        return sslTwoWayEnable;
+    }
+
+    public void setSslTwoWayEnable(Boolean sslTwoWayEnable) {
+        this.sslTwoWayEnable = sslTwoWayEnable;
+    }
+
+    public ShowInstanceResponse withCertReplaced(Boolean certReplaced) {
+        this.certReplaced = certReplaced;
+        return this;
+    }
+
+    /**
+     * 是否能够证书替换。
+     * @return certReplaced
+     */
+    public Boolean getCertReplaced() {
+        return certReplaced;
+    }
+
+    public void setCertReplaced(Boolean certReplaced) {
+        this.certReplaced = certReplaced;
     }
 
     public ShowInstanceResponse withEnterpriseProjectId(String enterpriseProjectId) {
@@ -1219,7 +1337,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 公网带宽。
+     * kafka公网访问带宽。
      * @return publicBandwidth
      */
     public Integer getPublicBandwidth() {
@@ -1337,7 +1455,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 是否开启转储。
+     * 是否开启转储。新规格产品暂不支持开启转储。
      * @return connectorEnable
      */
     public Boolean getConnectorEnable() {
@@ -1397,6 +1515,23 @@ public class ShowInstanceResponse extends SdkResponse {
 
     public void setRestConnectAddress(String restConnectAddress) {
         this.restConnectAddress = restConnectAddress;
+    }
+
+    public ShowInstanceResponse withPublicBoundwidth(Integer publicBoundwidth) {
+        this.publicBoundwidth = publicBoundwidth;
+        return this;
+    }
+
+    /**
+     * kafka公网访问带宽。待删除版本。
+     * @return publicBoundwidth
+     */
+    public Integer getPublicBoundwidth() {
+        return publicBoundwidth;
+    }
+
+    public void setPublicBoundwidth(Integer publicBoundwidth) {
+        this.publicBoundwidth = publicBoundwidth;
     }
 
     public ShowInstanceResponse withMessageQueryInstEnable(Boolean messageQueryInstEnable) {
@@ -1467,6 +1602,23 @@ public class ShowInstanceResponse extends SdkResponse {
         this.traceEnable = traceEnable;
     }
 
+    public ShowInstanceResponse withAgentEnable(Boolean agentEnable) {
+        this.agentEnable = agentEnable;
+        return this;
+    }
+
+    /**
+     * 是否开启代理。
+     * @return agentEnable
+     */
+    public Boolean getAgentEnable() {
+        return agentEnable;
+    }
+
+    public void setAgentEnable(Boolean agentEnable) {
+        this.agentEnable = agentEnable;
+    }
+
     public ShowInstanceResponse withPodConnectAddress(String podConnectAddress) {
         this.podConnectAddress = podConnectAddress;
         return this;
@@ -1535,6 +1687,74 @@ public class ShowInstanceResponse extends SdkResponse {
         this.cesVersion = cesVersion;
     }
 
+    public ShowInstanceResponse withPublicAccessEnabled(String publicAccessEnabled) {
+        this.publicAccessEnabled = publicAccessEnabled;
+        return this;
+    }
+
+    /**
+     * 区分实例什么时候开启的公网访问：true,actived,closed,false。
+     * @return publicAccessEnabled
+     */
+    public String getPublicAccessEnabled() {
+        return publicAccessEnabled;
+    }
+
+    public void setPublicAccessEnabled(String publicAccessEnabled) {
+        this.publicAccessEnabled = publicAccessEnabled;
+    }
+
+    public ShowInstanceResponse withNodeNum(Integer nodeNum) {
+        this.nodeNum = nodeNum;
+        return this;
+    }
+
+    /**
+     * 节点数。
+     * @return nodeNum
+     */
+    public Integer getNodeNum() {
+        return nodeNum;
+    }
+
+    public void setNodeNum(Integer nodeNum) {
+        this.nodeNum = nodeNum;
+    }
+
+    public ShowInstanceResponse withNewSpecBillingEnable(Boolean newSpecBillingEnable) {
+        this.newSpecBillingEnable = newSpecBillingEnable;
+        return this;
+    }
+
+    /**
+     * 是否启用新规格计费。
+     * @return newSpecBillingEnable
+     */
+    public Boolean getNewSpecBillingEnable() {
+        return newSpecBillingEnable;
+    }
+
+    public void setNewSpecBillingEnable(Boolean newSpecBillingEnable) {
+        this.newSpecBillingEnable = newSpecBillingEnable;
+    }
+
+    public ShowInstanceResponse withBrokerNum(Integer brokerNum) {
+        this.brokerNum = brokerNum;
+        return this;
+    }
+
+    /**
+     * 节点数量。
+     * @return brokerNum
+     */
+    public Integer getBrokerNum() {
+        return brokerNum;
+    }
+
+    public void setBrokerNum(Integer brokerNum) {
+        this.brokerNum = brokerNum;
+    }
+
     public ShowInstanceResponse withTags(List<TagEntity> tags) {
         this.tags = tags;
         return this;
@@ -1597,6 +1817,7 @@ public class ShowInstanceResponse extends SdkResponse {
         return Objects.equals(this.name, showInstanceResponse.name)
             && Objects.equals(this.engine, showInstanceResponse.engine)
             && Objects.equals(this.engineVersion, showInstanceResponse.engineVersion)
+            && Objects.equals(this.description, showInstanceResponse.description)
             && Objects.equals(this.specification, showInstanceResponse.specification)
             && Objects.equals(this.storageSpace, showInstanceResponse.storageSpace)
             && Objects.equals(this.partitionNum, showInstanceResponse.partitionNum)
@@ -1612,12 +1833,15 @@ public class ShowInstanceResponse extends SdkResponse {
             && Objects.equals(this.createdAt, showInstanceResponse.createdAt)
             && Objects.equals(this.userId, showInstanceResponse.userId)
             && Objects.equals(this.userName, showInstanceResponse.userName)
+            && Objects.equals(this.accessUser, showInstanceResponse.accessUser)
             && Objects.equals(this.orderId, showInstanceResponse.orderId)
             && Objects.equals(this.maintainBegin, showInstanceResponse.maintainBegin)
             && Objects.equals(this.maintainEnd, showInstanceResponse.maintainEnd)
             && Objects.equals(this.enablePublicip, showInstanceResponse.enablePublicip)
             && Objects.equals(this.managementConnectAddress, showInstanceResponse.managementConnectAddress)
             && Objects.equals(this.sslEnable, showInstanceResponse.sslEnable)
+            && Objects.equals(this.sslTwoWayEnable, showInstanceResponse.sslTwoWayEnable)
+            && Objects.equals(this.certReplaced, showInstanceResponse.certReplaced)
             && Objects.equals(this.enterpriseProjectId, showInstanceResponse.enterpriseProjectId)
             && Objects.equals(this.isLogicalVolume, showInstanceResponse.isLogicalVolume)
             && Objects.equals(this.extendTimes, showInstanceResponse.extendTimes)
@@ -1646,14 +1870,20 @@ public class ShowInstanceResponse extends SdkResponse {
             && Objects.equals(this.connectorId, showInstanceResponse.connectorId)
             && Objects.equals(this.restEnable, showInstanceResponse.restEnable)
             && Objects.equals(this.restConnectAddress, showInstanceResponse.restConnectAddress)
+            && Objects.equals(this.publicBoundwidth, showInstanceResponse.publicBoundwidth)
             && Objects.equals(this.messageQueryInstEnable, showInstanceResponse.messageQueryInstEnable)
             && Objects.equals(this.vpcClientPlain, showInstanceResponse.vpcClientPlain)
             && Objects.equals(this.supportFeatures, showInstanceResponse.supportFeatures)
             && Objects.equals(this.traceEnable, showInstanceResponse.traceEnable)
+            && Objects.equals(this.agentEnable, showInstanceResponse.agentEnable)
             && Objects.equals(this.podConnectAddress, showInstanceResponse.podConnectAddress)
             && Objects.equals(this.diskEncrypted, showInstanceResponse.diskEncrypted)
             && Objects.equals(this.kafkaPrivateConnectAddress, showInstanceResponse.kafkaPrivateConnectAddress)
             && Objects.equals(this.cesVersion, showInstanceResponse.cesVersion)
+            && Objects.equals(this.publicAccessEnabled, showInstanceResponse.publicAccessEnabled)
+            && Objects.equals(this.nodeNum, showInstanceResponse.nodeNum)
+            && Objects.equals(this.newSpecBillingEnable, showInstanceResponse.newSpecBillingEnable)
+            && Objects.equals(this.brokerNum, showInstanceResponse.brokerNum)
             && Objects.equals(this.tags, showInstanceResponse.tags)
             && Objects.equals(this.drEnable, showInstanceResponse.drEnable);
     }
@@ -1663,6 +1893,7 @@ public class ShowInstanceResponse extends SdkResponse {
         return Objects.hash(name,
             engine,
             engineVersion,
+            description,
             specification,
             storageSpace,
             partitionNum,
@@ -1678,12 +1909,15 @@ public class ShowInstanceResponse extends SdkResponse {
             createdAt,
             userId,
             userName,
+            accessUser,
             orderId,
             maintainBegin,
             maintainEnd,
             enablePublicip,
             managementConnectAddress,
             sslEnable,
+            sslTwoWayEnable,
+            certReplaced,
             enterpriseProjectId,
             isLogicalVolume,
             extendTimes,
@@ -1712,14 +1946,20 @@ public class ShowInstanceResponse extends SdkResponse {
             connectorId,
             restEnable,
             restConnectAddress,
+            publicBoundwidth,
             messageQueryInstEnable,
             vpcClientPlain,
             supportFeatures,
             traceEnable,
+            agentEnable,
             podConnectAddress,
             diskEncrypted,
             kafkaPrivateConnectAddress,
             cesVersion,
+            publicAccessEnabled,
+            nodeNum,
+            newSpecBillingEnable,
+            brokerNum,
             tags,
             drEnable);
     }
@@ -1731,6 +1971,7 @@ public class ShowInstanceResponse extends SdkResponse {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    engine: ").append(toIndentedString(engine)).append("\n");
         sb.append("    engineVersion: ").append(toIndentedString(engineVersion)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    specification: ").append(toIndentedString(specification)).append("\n");
         sb.append("    storageSpace: ").append(toIndentedString(storageSpace)).append("\n");
         sb.append("    partitionNum: ").append(toIndentedString(partitionNum)).append("\n");
@@ -1746,12 +1987,15 @@ public class ShowInstanceResponse extends SdkResponse {
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
         sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
+        sb.append("    accessUser: ").append(toIndentedString(accessUser)).append("\n");
         sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("    maintainBegin: ").append(toIndentedString(maintainBegin)).append("\n");
         sb.append("    maintainEnd: ").append(toIndentedString(maintainEnd)).append("\n");
         sb.append("    enablePublicip: ").append(toIndentedString(enablePublicip)).append("\n");
         sb.append("    managementConnectAddress: ").append(toIndentedString(managementConnectAddress)).append("\n");
         sb.append("    sslEnable: ").append(toIndentedString(sslEnable)).append("\n");
+        sb.append("    sslTwoWayEnable: ").append(toIndentedString(sslTwoWayEnable)).append("\n");
+        sb.append("    certReplaced: ").append(toIndentedString(certReplaced)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    isLogicalVolume: ").append(toIndentedString(isLogicalVolume)).append("\n");
         sb.append("    extendTimes: ").append(toIndentedString(extendTimes)).append("\n");
@@ -1780,14 +2024,20 @@ public class ShowInstanceResponse extends SdkResponse {
         sb.append("    connectorId: ").append(toIndentedString(connectorId)).append("\n");
         sb.append("    restEnable: ").append(toIndentedString(restEnable)).append("\n");
         sb.append("    restConnectAddress: ").append(toIndentedString(restConnectAddress)).append("\n");
+        sb.append("    publicBoundwidth: ").append(toIndentedString(publicBoundwidth)).append("\n");
         sb.append("    messageQueryInstEnable: ").append(toIndentedString(messageQueryInstEnable)).append("\n");
         sb.append("    vpcClientPlain: ").append(toIndentedString(vpcClientPlain)).append("\n");
         sb.append("    supportFeatures: ").append(toIndentedString(supportFeatures)).append("\n");
         sb.append("    traceEnable: ").append(toIndentedString(traceEnable)).append("\n");
+        sb.append("    agentEnable: ").append(toIndentedString(agentEnable)).append("\n");
         sb.append("    podConnectAddress: ").append(toIndentedString(podConnectAddress)).append("\n");
         sb.append("    diskEncrypted: ").append(toIndentedString(diskEncrypted)).append("\n");
         sb.append("    kafkaPrivateConnectAddress: ").append(toIndentedString(kafkaPrivateConnectAddress)).append("\n");
         sb.append("    cesVersion: ").append(toIndentedString(cesVersion)).append("\n");
+        sb.append("    publicAccessEnabled: ").append(toIndentedString(publicAccessEnabled)).append("\n");
+        sb.append("    nodeNum: ").append(toIndentedString(nodeNum)).append("\n");
+        sb.append("    newSpecBillingEnable: ").append(toIndentedString(newSpecBillingEnable)).append("\n");
+        sb.append("    brokerNum: ").append(toIndentedString(brokerNum)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    drEnable: ").append(toIndentedString(drEnable)).append("\n");
         sb.append("}");

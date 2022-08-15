@@ -11,12 +11,12 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * 服务器配置
+ * 防护域名的源站服务器配置信息
  */
 public class CloudWafServer {
 
     /**
-     * 对外协议
+     * 客户端请求访问防护域名源站服务器的协议
      */
     public static final class FrontProtocolEnum {
 
@@ -98,7 +98,7 @@ public class CloudWafServer {
     private FrontProtocolEnum frontProtocol;
 
     /**
-     * 源站协议
+     * WAF转发客户端请求到防护域名源站服务器的协议
      */
     public static final class BackProtocolEnum {
 
@@ -178,6 +178,11 @@ public class CloudWafServer {
     @JsonProperty(value = "back_protocol")
 
     private BackProtocolEnum backProtocol;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "weight")
+
+    private Integer weight;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "address")
@@ -277,7 +282,7 @@ public class CloudWafServer {
     }
 
     /**
-     * 对外协议
+     * 客户端请求访问防护域名源站服务器的协议
      * @return frontProtocol
      */
     public FrontProtocolEnum getFrontProtocol() {
@@ -294,7 +299,7 @@ public class CloudWafServer {
     }
 
     /**
-     * 源站协议
+     * WAF转发客户端请求到防护域名源站服务器的协议
      * @return backProtocol
      */
     public BackProtocolEnum getBackProtocol() {
@@ -305,13 +310,30 @@ public class CloudWafServer {
         this.backProtocol = backProtocol;
     }
 
+    public CloudWafServer withWeight(Integer weight) {
+        this.weight = weight;
+        return this;
+    }
+
+    /**
+     * 源站权重，负载均衡算法将按该权重将请求分配给源站，默认值是1，云模式的冗余字段
+     * @return weight
+     */
+    public Integer getWeight() {
+        return weight;
+    }
+
+    public void setWeight(Integer weight) {
+        this.weight = weight;
+    }
+
     public CloudWafServer withAddress(String address) {
         this.address = address;
         return this;
     }
 
     /**
-     * 源站地址
+     * 客户端访问的源站服务器的IP地址
      * @return address
      */
     public String getAddress() {
@@ -328,7 +350,7 @@ public class CloudWafServer {
     }
 
     /**
-     * 源站端口
+     * WAF转发客户端请求到源站服务的业务端口
      * @return port
      */
     public Integer getPort() {
@@ -367,13 +389,14 @@ public class CloudWafServer {
         CloudWafServer cloudWafServer = (CloudWafServer) o;
         return Objects.equals(this.frontProtocol, cloudWafServer.frontProtocol)
             && Objects.equals(this.backProtocol, cloudWafServer.backProtocol)
+            && Objects.equals(this.weight, cloudWafServer.weight)
             && Objects.equals(this.address, cloudWafServer.address) && Objects.equals(this.port, cloudWafServer.port)
             && Objects.equals(this.type, cloudWafServer.type);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(frontProtocol, backProtocol, address, port, type);
+        return Objects.hash(frontProtocol, backProtocol, weight, address, port, type);
     }
 
     @Override
@@ -382,6 +405,7 @@ public class CloudWafServer {
         sb.append("class CloudWafServer {\n");
         sb.append("    frontProtocol: ").append(toIndentedString(frontProtocol)).append("\n");
         sb.append("    backProtocol: ").append(toIndentedString(backProtocol)).append("\n");
+        sb.append("    weight: ").append(toIndentedString(weight)).append("\n");
         sb.append("    address: ").append(toIndentedString(address)).append("\n");
         sb.append("    port: ").append(toIndentedString(port)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");

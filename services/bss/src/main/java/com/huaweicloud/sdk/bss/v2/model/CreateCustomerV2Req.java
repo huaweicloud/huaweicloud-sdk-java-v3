@@ -185,7 +185,7 @@ public class CreateCustomerV2Req {
     }
 
     /**
-     * 合作类型。 1：顾问销售。 仅支持1，如果不传递，默认会创建成代售模式的客户。
+     * 合作类型。 1：顾问销售。 不传递或传递非1的值，默认会创建成代售模式的客户。
      * @return cooperationType
      */
     public String getCooperationType() {
@@ -202,7 +202,7 @@ public class CreateCustomerV2Req {
     }
 
     /**
-     * 精英服务商ID。获取方法请参见[查询精英服务商列表](https://support.huaweicloud.com/api-bpconsole/espp_00003.html)。
+     * 云经销商ID。获取方法请参见[查询云经销商列表](https://support.huaweicloud.com/api-bpconsole/espp_00003.html)。 如果需要创建云经销商的子客户，必须携带该字段。除此之外，此参数不做处理。
      * @return indirectPartnerId
      */
     public String getIndirectPartnerId() {

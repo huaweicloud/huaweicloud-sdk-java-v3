@@ -26,7 +26,7 @@ public class BatchRestartOrDeleteInstanceRespResults {
     }
 
     /**
-     * 操作结果。 - 'success: 操作成功' - 'failed: 操作失败' 
+     * 操作结果。   - success: 操作成功   - failed: 操作失败 
      * @return result
      */
     public String getResult() {

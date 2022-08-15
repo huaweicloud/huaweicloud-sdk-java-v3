@@ -4,9 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -27,14 +25,29 @@ public class DeletePremiumHostResponse extends SdkResponse {
     private String hostname;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "policyid")
+    @JsonProperty(value = "extend")
 
-    private String policyid;
+    private Map<String, String> extend = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region")
 
     private String region;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "flag")
+
+    private Flag flag;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "description")
+
+    private String description;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "policyid")
+
+    private String policyid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protect_status")
@@ -47,19 +60,14 @@ public class DeletePremiumHostResponse extends SdkResponse {
     private Integer accessStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "flag")
+    @JsonProperty(value = "web_tag")
 
-    private Map<String, String> flag = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "mode")
-
-    private String mode;
+    private String webTag;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "pool_ids")
+    @JsonProperty(value = "host_id")
 
-    private List<String> poolIds = null;
+    private String hostId;
 
     public DeletePremiumHostResponse withId(String id) {
         this.id = id;
@@ -95,21 +103,37 @@ public class DeletePremiumHostResponse extends SdkResponse {
         this.hostname = hostname;
     }
 
-    public DeletePremiumHostResponse withPolicyid(String policyid) {
-        this.policyid = policyid;
+    public DeletePremiumHostResponse withExtend(Map<String, String> extend) {
+        this.extend = extend;
+        return this;
+    }
+
+    public DeletePremiumHostResponse putExtendItem(String key, String extendItem) {
+        if (this.extend == null) {
+            this.extend = new HashMap<>();
+        }
+        this.extend.put(key, extendItem);
+        return this;
+    }
+
+    public DeletePremiumHostResponse withExtend(Consumer<Map<String, String>> extendSetter) {
+        if (this.extend == null) {
+            this.extend = new HashMap<>();
+        }
+        extendSetter.accept(this.extend);
         return this;
     }
 
     /**
-     * 策略id
-     * @return policyid
+     * 扩展字段，用于保存防护域名的一些配置信息。
+     * @return extend
      */
-    public String getPolicyid() {
-        return policyid;
+    public Map<String, String> getExtend() {
+        return extend;
     }
 
-    public void setPolicyid(String policyid) {
-        this.policyid = policyid;
+    public void setExtend(Map<String, String> extend) {
+        this.extend = extend;
     }
 
     public DeletePremiumHostResponse withRegion(String region) {
@@ -118,7 +142,7 @@ public class DeletePremiumHostResponse extends SdkResponse {
     }
 
     /**
-     * 区域id
+     * 华为云区域ID，控制台创建的域名会携带此参数，api调用创建的域名此参数为空，可以通过华为云上地区和终端节点文档查询区域ID对应的中文名称
      * @return region
      */
     public String getRegion() {
@@ -127,6 +151,66 @@ public class DeletePremiumHostResponse extends SdkResponse {
 
     public void setRegion(String region) {
         this.region = region;
+    }
+
+    public DeletePremiumHostResponse withFlag(Flag flag) {
+        this.flag = flag;
+        return this;
+    }
+
+    public DeletePremiumHostResponse withFlag(Consumer<Flag> flagSetter) {
+        if (this.flag == null) {
+            this.flag = new Flag();
+            flagSetter.accept(this.flag);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get flag
+     * @return flag
+     */
+    public Flag getFlag() {
+        return flag;
+    }
+
+    public void setFlag(Flag flag) {
+        this.flag = flag;
+    }
+
+    public DeletePremiumHostResponse withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /**
+     * 域名描述
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public DeletePremiumHostResponse withPolicyid(String policyid) {
+        this.policyid = policyid;
+        return this;
+    }
+
+    /**
+     * 防护域名初始绑定的防护策略ID,可以通过策略名称调用查询防护策略列表（ListPolicy）接口查询到对应的策略id
+     * @return policyid
+     */
+    public String getPolicyid() {
+        return policyid;
+    }
+
+    public void setPolicyid(String policyid) {
+        this.policyid = policyid;
     }
 
     public DeletePremiumHostResponse withProtectStatus(Integer protectStatus) {
@@ -152,7 +236,7 @@ public class DeletePremiumHostResponse extends SdkResponse {
     }
 
     /**
-     * 接入状态
+     * 域名接入状态，0表示未接入，1表示已接入
      * @return accessStatus
      */
     public Integer getAccessStatus() {
@@ -163,87 +247,38 @@ public class DeletePremiumHostResponse extends SdkResponse {
         this.accessStatus = accessStatus;
     }
 
-    public DeletePremiumHostResponse withFlag(Map<String, String> flag) {
-        this.flag = flag;
-        return this;
-    }
-
-    public DeletePremiumHostResponse putFlagItem(String key, String flagItem) {
-        if (this.flag == null) {
-            this.flag = new HashMap<>();
-        }
-        this.flag.put(key, flagItem);
-        return this;
-    }
-
-    public DeletePremiumHostResponse withFlag(Consumer<Map<String, String>> flagSetter) {
-        if (this.flag == null) {
-            this.flag = new HashMap<>();
-        }
-        flagSetter.accept(this.flag);
+    public DeletePremiumHostResponse withWebTag(String webTag) {
+        this.webTag = webTag;
         return this;
     }
 
     /**
-     * 特殊标识
-     * @return flag
+     * 网站名称，对应WAF控制台域名详情中的网站名称
+     * @return webTag
      */
-    public Map<String, String> getFlag() {
-        return flag;
+    public String getWebTag() {
+        return webTag;
     }
 
-    public void setFlag(Map<String, String> flag) {
-        this.flag = flag;
+    public void setWebTag(String webTag) {
+        this.webTag = webTag;
     }
 
-    public DeletePremiumHostResponse withMode(String mode) {
-        this.mode = mode;
+    public DeletePremiumHostResponse withHostId(String hostId) {
+        this.hostId = hostId;
         return this;
     }
 
     /**
-     * 特殊模式独享引擎的标识（如elb）
-     * @return mode
+     * 域名id，和id的值是一样的，属于冗余字段
+     * @return hostId
      */
-    public String getMode() {
-        return mode;
+    public String getHostId() {
+        return hostId;
     }
 
-    public void setMode(String mode) {
-        this.mode = mode;
-    }
-
-    public DeletePremiumHostResponse withPoolIds(List<String> poolIds) {
-        this.poolIds = poolIds;
-        return this;
-    }
-
-    public DeletePremiumHostResponse addPoolIdsItem(String poolIdsItem) {
-        if (this.poolIds == null) {
-            this.poolIds = new ArrayList<>();
-        }
-        this.poolIds.add(poolIdsItem);
-        return this;
-    }
-
-    public DeletePremiumHostResponse withPoolIds(Consumer<List<String>> poolIdsSetter) {
-        if (this.poolIds == null) {
-            this.poolIds = new ArrayList<>();
-        }
-        poolIdsSetter.accept(this.poolIds);
-        return this;
-    }
-
-    /**
-     * 特殊模式域名所属独享引擎组
-     * @return poolIds
-     */
-    public List<String> getPoolIds() {
-        return poolIds;
-    }
-
-    public void setPoolIds(List<String> poolIds) {
-        this.poolIds = poolIds;
+    public void setHostId(String hostId) {
+        this.hostId = hostId;
     }
 
     @Override
@@ -257,18 +292,30 @@ public class DeletePremiumHostResponse extends SdkResponse {
         DeletePremiumHostResponse deletePremiumHostResponse = (DeletePremiumHostResponse) o;
         return Objects.equals(this.id, deletePremiumHostResponse.id)
             && Objects.equals(this.hostname, deletePremiumHostResponse.hostname)
-            && Objects.equals(this.policyid, deletePremiumHostResponse.policyid)
+            && Objects.equals(this.extend, deletePremiumHostResponse.extend)
             && Objects.equals(this.region, deletePremiumHostResponse.region)
+            && Objects.equals(this.flag, deletePremiumHostResponse.flag)
+            && Objects.equals(this.description, deletePremiumHostResponse.description)
+            && Objects.equals(this.policyid, deletePremiumHostResponse.policyid)
             && Objects.equals(this.protectStatus, deletePremiumHostResponse.protectStatus)
             && Objects.equals(this.accessStatus, deletePremiumHostResponse.accessStatus)
-            && Objects.equals(this.flag, deletePremiumHostResponse.flag)
-            && Objects.equals(this.mode, deletePremiumHostResponse.mode)
-            && Objects.equals(this.poolIds, deletePremiumHostResponse.poolIds);
+            && Objects.equals(this.webTag, deletePremiumHostResponse.webTag)
+            && Objects.equals(this.hostId, deletePremiumHostResponse.hostId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, hostname, policyid, region, protectStatus, accessStatus, flag, mode, poolIds);
+        return Objects.hash(id,
+            hostname,
+            extend,
+            region,
+            flag,
+            description,
+            policyid,
+            protectStatus,
+            accessStatus,
+            webTag,
+            hostId);
     }
 
     @Override
@@ -277,13 +324,15 @@ public class DeletePremiumHostResponse extends SdkResponse {
         sb.append("class DeletePremiumHostResponse {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    hostname: ").append(toIndentedString(hostname)).append("\n");
-        sb.append("    policyid: ").append(toIndentedString(policyid)).append("\n");
+        sb.append("    extend: ").append(toIndentedString(extend)).append("\n");
         sb.append("    region: ").append(toIndentedString(region)).append("\n");
+        sb.append("    flag: ").append(toIndentedString(flag)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    policyid: ").append(toIndentedString(policyid)).append("\n");
         sb.append("    protectStatus: ").append(toIndentedString(protectStatus)).append("\n");
         sb.append("    accessStatus: ").append(toIndentedString(accessStatus)).append("\n");
-        sb.append("    flag: ").append(toIndentedString(flag)).append("\n");
-        sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
-        sb.append("    poolIds: ").append(toIndentedString(poolIds)).append("\n");
+        sb.append("    webTag: ").append(toIndentedString(webTag)).append("\n");
+        sb.append("    hostId: ").append(toIndentedString(hostId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -24,16 +24,6 @@ public class CertificateBody {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "content")
-
-    private String content;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "key")
-
-    private String key;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expire_time")
 
     private Long expireTime;
@@ -85,40 +75,6 @@ public class CertificateBody {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public CertificateBody withContent(String content) {
-        this.content = content;
-        return this;
-    }
-
-    /**
-     * 证书文件，PEM编码
-     * @return content
-     */
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
-
-    public CertificateBody withKey(String key) {
-        this.key = key;
-        return this;
-    }
-
-    /**
-     * 证书私钥，PEM编码
-     * @return key
-     */
-    public String getKey() {
-        return key;
-    }
-
-    public void setKey(String key) {
-        this.key = key;
     }
 
     public CertificateBody withExpireTime(Long expireTime) {
@@ -215,7 +171,6 @@ public class CertificateBody {
         }
         CertificateBody certificateBody = (CertificateBody) o;
         return Objects.equals(this.id, certificateBody.id) && Objects.equals(this.name, certificateBody.name)
-            && Objects.equals(this.content, certificateBody.content) && Objects.equals(this.key, certificateBody.key)
             && Objects.equals(this.expireTime, certificateBody.expireTime)
             && Objects.equals(this.expStatus, certificateBody.expStatus)
             && Objects.equals(this.timestamp, certificateBody.timestamp)
@@ -224,7 +179,7 @@ public class CertificateBody {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, content, key, expireTime, expStatus, timestamp, bindHost);
+        return Objects.hash(id, name, expireTime, expStatus, timestamp, bindHost);
     }
 
     @Override
@@ -233,8 +188,6 @@ public class CertificateBody {
         sb.append("class CertificateBody {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    content: ").append(toIndentedString(content)).append("\n");
-        sb.append("    key: ").append(toIndentedString(key)).append("\n");
         sb.append("    expireTime: ").append(toIndentedString(expireTime)).append("\n");
         sb.append("    expStatus: ").append(toIndentedString(expStatus)).append("\n");
         sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");

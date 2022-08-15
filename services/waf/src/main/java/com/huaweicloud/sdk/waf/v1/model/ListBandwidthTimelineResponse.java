@@ -17,14 +17,14 @@ public class ListBandwidthTimelineResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private List<StatisticsTimelineItem> body = null;
+    private List<BandwidthStatisticsTimelineItem> body = null;
 
-    public ListBandwidthTimelineResponse withBody(List<StatisticsTimelineItem> body) {
+    public ListBandwidthTimelineResponse withBody(List<BandwidthStatisticsTimelineItem> body) {
         this.body = body;
         return this;
     }
 
-    public ListBandwidthTimelineResponse addBodyItem(StatisticsTimelineItem bodyItem) {
+    public ListBandwidthTimelineResponse addBodyItem(BandwidthStatisticsTimelineItem bodyItem) {
         if (this.body == null) {
             this.body = new ArrayList<>();
         }
@@ -32,7 +32,7 @@ public class ListBandwidthTimelineResponse extends SdkResponse {
         return this;
     }
 
-    public ListBandwidthTimelineResponse withBody(Consumer<List<StatisticsTimelineItem>> bodySetter) {
+    public ListBandwidthTimelineResponse withBody(Consumer<List<BandwidthStatisticsTimelineItem>> bodySetter) {
         if (this.body == null) {
             this.body = new ArrayList<>();
         }
@@ -41,14 +41,14 @@ public class ListBandwidthTimelineResponse extends SdkResponse {
     }
 
     /**
-     * 安全统计的时间线
+     * 安全统计的带宽时间线数据
      * @return body
      */
-    public List<StatisticsTimelineItem> getBody() {
+    public List<BandwidthStatisticsTimelineItem> getBody() {
         return body;
     }
 
-    public void setBody(List<StatisticsTimelineItem> body) {
+    public void setBody(List<BandwidthStatisticsTimelineItem> body) {
         this.body = body;
     }
 

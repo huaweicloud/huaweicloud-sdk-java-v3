@@ -26,7 +26,7 @@ public class QuotaReclaim {
     }
 
     /**
-     * 被回收的精英服务商的代金券额度ID。
+     * 被回收的云经销商的代金券额度ID。
      * @return quotaId
      */
     public String getQuotaId() {

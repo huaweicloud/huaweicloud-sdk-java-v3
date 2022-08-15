@@ -85,7 +85,7 @@ public class ShowClusterRespClusterBrokers {
     }
 
     /**
-     * 节点id。
+     * 节点ID。
      * @return brokerId
      */
     public String getBrokerId() {

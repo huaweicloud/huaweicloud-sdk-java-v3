@@ -37,7 +37,7 @@ public class UpdatePrivacyRuleRequest {
     }
 
     /**
-     * 您可以通过调用企业项目管理服务（EPS)的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id
+     * 您可以通过调用企业项目管理服务（EPS）的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -71,7 +71,7 @@ public class UpdatePrivacyRuleRequest {
     }
 
     /**
-     * privacyRuleId
+     * 隐私屏蔽规则id，您可以通过调用查询隐私屏蔽规则列表（ListPrivacyRule）获取规则id
      * @return ruleId
      */
     public String getRuleId() {

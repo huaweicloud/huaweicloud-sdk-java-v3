@@ -187,7 +187,7 @@ public class CreatePostPaidInstanceReq {
     private EngineVersionEnum engineVersion;
 
     /**
-     * Kafka实例的基准带宽，表示单位时间内传送的最大数据量，单位MB。 取值范围：   - 100MB   - 300MB   - 600MB   - 1200MB
+     * [新规格实例：Kafka实例业务TPS规格，取值范围：   - c6.2u4g.cluster   - c6.4u8g.cluster   - c6.8u16g.cluster   - c6.12u24g.cluster   - c6.16u32g.cluster  老规格实例：](tag:hc,hk) Kafka实例的基准带宽，表示单位时间内传送的最大数据量，单位MB。取值范围：   - 100MB   - 300MB   - 600MB   - 1200MB
      */
     public static final class SpecificationEnum {
 
@@ -211,6 +211,31 @@ public class CreatePostPaidInstanceReq {
          */
         public static final SpecificationEnum _1200MB = new SpecificationEnum("1200MB");
 
+        /**
+         * Enum C6_2U4G_CLUSTER for value: "c6.2u4g.cluster"
+         */
+        public static final SpecificationEnum C6_2U4G_CLUSTER = new SpecificationEnum("c6.2u4g.cluster");
+
+        /**
+         * Enum C6_4U8G_CLUSTER for value: "c6.4u8g.cluster"
+         */
+        public static final SpecificationEnum C6_4U8G_CLUSTER = new SpecificationEnum("c6.4u8g.cluster");
+
+        /**
+         * Enum C6_8U16G_CLUSTER for value: "c6.8u16g.cluster"
+         */
+        public static final SpecificationEnum C6_8U16G_CLUSTER = new SpecificationEnum("c6.8u16g.cluster");
+
+        /**
+         * Enum C6_12U24G_CLUSTER for value: "c6.12u24g.cluster"
+         */
+        public static final SpecificationEnum C6_12U24G_CLUSTER = new SpecificationEnum("c6.12u24g.cluster");
+
+        /**
+         * Enum C6_16U32G_CLUSTER for value: "c6.16u32g.cluster"
+         */
+        public static final SpecificationEnum C6_16U32G_CLUSTER = new SpecificationEnum("c6.16u32g.cluster");
+
         private static final Map<String, SpecificationEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, SpecificationEnum> createStaticFields() {
@@ -219,6 +244,11 @@ public class CreatePostPaidInstanceReq {
             map.put("300MB", _300MB);
             map.put("600MB", _600MB);
             map.put("1200MB", _1200MB);
+            map.put("c6.2u4g.cluster", C6_2U4G_CLUSTER);
+            map.put("c6.4u8g.cluster", C6_4U8G_CLUSTER);
+            map.put("c6.8u16g.cluster", C6_8U16G_CLUSTER);
+            map.put("c6.12u24g.cluster", C6_12U24G_CLUSTER);
+            map.put("c6.16u32g.cluster", C6_16U32G_CLUSTER);
             return Collections.unmodifiableMap(map);
         }
 
@@ -281,14 +311,24 @@ public class CreatePostPaidInstanceReq {
     private SpecificationEnum specification;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "broker_num")
+
+    private Integer brokerNum;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "storage_space")
 
     private Integer storageSpace;
 
     /**
-     * Kafka实例的最大分区数量。   - 参数specification为100MB时，取值300   - 参数specification为300MB时，取值900   - 参数specification为600MB时，取值1800   - 参数specification为1200MB时，取值1800
+     * Kafka实例的最大分区数量。   - 参数specification为100MB时，取值300   - 参数specification为300MB时，取值900   - 参数specification为600MB时，取值1800   - 参数specification为1200MB时，取值1800    [新规格实例此参数无需设置，每种规格对应的分区数上限参考：https://support.huaweicloud.com/productdesc-kafka/Kafka-specification.html](tag:hc,hk)   [新规格实例此参数无需设置，每种规格对应的分区数上限参考：https://support.huaweicloud.com/intl/zh-cn/productdesc-kafka/Kafka-specification.html](tag:hws,hws_hk)
      */
     public static final class PartitionNumEnum {
+
+        /**
+         * Enum NUMBER_250 for value: 250
+         */
+        public static final PartitionNumEnum NUMBER_250 = new PartitionNumEnum(250);
 
         /**
          * Enum NUMBER_300 for value: 300
@@ -296,22 +336,47 @@ public class CreatePostPaidInstanceReq {
         public static final PartitionNumEnum NUMBER_300 = new PartitionNumEnum(300);
 
         /**
+         * Enum NUMBER_500 for value: 500
+         */
+        public static final PartitionNumEnum NUMBER_500 = new PartitionNumEnum(500);
+
+        /**
          * Enum NUMBER_900 for value: 900
          */
         public static final PartitionNumEnum NUMBER_900 = new PartitionNumEnum(900);
+
+        /**
+         * Enum NUMBER_1000 for value: 1000
+         */
+        public static final PartitionNumEnum NUMBER_1000 = new PartitionNumEnum(1000);
+
+        /**
+         * Enum NUMBER_1500 for value: 1500
+         */
+        public static final PartitionNumEnum NUMBER_1500 = new PartitionNumEnum(1500);
 
         /**
          * Enum NUMBER_1800 for value: 1800
          */
         public static final PartitionNumEnum NUMBER_1800 = new PartitionNumEnum(1800);
 
+        /**
+         * Enum NUMBER_2000 for value: 2000
+         */
+        public static final PartitionNumEnum NUMBER_2000 = new PartitionNumEnum(2000);
+
         private static final Map<Integer, PartitionNumEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<Integer, PartitionNumEnum> createStaticFields() {
             Map<Integer, PartitionNumEnum> map = new HashMap<>();
+            map.put(250, NUMBER_250);
             map.put(300, NUMBER_300);
+            map.put(500, NUMBER_500);
             map.put(900, NUMBER_900);
+            map.put(1000, NUMBER_1000);
+            map.put(1500, NUMBER_1500);
             map.put(1800, NUMBER_1800);
+            map.put(2000, NUMBER_2000);
             return Collections.unmodifiableMap(map);
         }
 
@@ -541,9 +606,21 @@ public class CreatePostPaidInstanceReq {
     private Boolean enableAutoTopic;
 
     /**
-     * 存储IO规格。 取值范围：   - 参数specification为100MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra   - 参数specification为300MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra   - 参数specification为600MB时，取值dms.physical.storage.ultra   - 参数specification为1200MB时，取值dms.physical.storage.ultra存储IO规格。如何选择磁盘类型请参考磁盘类型及性能介绍。
+     * 存储IO规格。 [新老规格的实例的存储IO规格不相同，创建实例请选择对应的存储IO规格。 新规格实例取值范围：   - dms.physical.storage.high.v2：使用高IO的磁盘类型。   - dms.physical.storage.ultra.v2：使用超高IO的磁盘类型。  老规格实例取值范围：](tag:hc,hk)   - 参数specification为100MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra   - 参数specification为300MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra   - 参数specification为600MB时，取值dms.physical.storage.ultra   - 参数specification为1200MB时，取值dms.physical.storage.ultra存储IO规格。如何选择磁盘类型请参考磁盘类型及性能介绍。
      */
     public static final class StorageSpecCodeEnum {
+
+        /**
+         * Enum DMS_PHYSICAL_STORAGE_HIGH_V2 for value: "dms.physical.storage.high.v2"
+         */
+        public static final StorageSpecCodeEnum DMS_PHYSICAL_STORAGE_HIGH_V2 =
+            new StorageSpecCodeEnum("dms.physical.storage.high.v2");
+
+        /**
+         * Enum DMS_PHYSICAL_STORAGE_ULTRA_V2 for value: "dms.physical.storage.ultra.v2"
+         */
+        public static final StorageSpecCodeEnum DMS_PHYSICAL_STORAGE_ULTRA_V2 =
+            new StorageSpecCodeEnum("dms.physical.storage.ultra.v2");
 
         /**
          * Enum DMS_PHYSICAL_STORAGE_NORMAL for value: "dms.physical.storage.normal"
@@ -567,6 +644,8 @@ public class CreatePostPaidInstanceReq {
 
         private static Map<String, StorageSpecCodeEnum> createStaticFields() {
             Map<String, StorageSpecCodeEnum> map = new HashMap<>();
+            map.put("dms.physical.storage.high.v2", DMS_PHYSICAL_STORAGE_HIGH_V2);
+            map.put("dms.physical.storage.ultra.v2", DMS_PHYSICAL_STORAGE_ULTRA_V2);
             map.put("dms.physical.storage.normal", DMS_PHYSICAL_STORAGE_NORMAL);
             map.put("dms.physical.storage.high", DMS_PHYSICAL_STORAGE_HIGH);
             map.put("dms.physical.storage.ultra", DMS_PHYSICAL_STORAGE_ULTRA);
@@ -715,7 +794,7 @@ public class CreatePostPaidInstanceReq {
     }
 
     /**
-     * Kafka实例的基准带宽，表示单位时间内传送的最大数据量，单位MB。 取值范围：   - 100MB   - 300MB   - 600MB   - 1200MB
+     * [新规格实例：Kafka实例业务TPS规格，取值范围：   - c6.2u4g.cluster   - c6.4u8g.cluster   - c6.8u16g.cluster   - c6.12u24g.cluster   - c6.16u32g.cluster  老规格实例：](tag:hc,hk) Kafka实例的基准带宽，表示单位时间内传送的最大数据量，单位MB。取值范围：   - 100MB   - 300MB   - 600MB   - 1200MB
      * @return specification
      */
     public SpecificationEnum getSpecification() {
@@ -726,13 +805,30 @@ public class CreatePostPaidInstanceReq {
         this.specification = specification;
     }
 
+    public CreatePostPaidInstanceReq withBrokerNum(Integer brokerNum) {
+        this.brokerNum = brokerNum;
+        return this;
+    }
+
+    /**
+     * 代理个数。 [老规格实例此参数无需设置。 新规格实例取值范围：3 ~ 30。](tag:hc,hk)  [此参数无需设置](tag:hws,hws_hk,otc,ocb,hws_ocb,ctc,sbc,hk_sbc,cmcc)
+     * @return brokerNum
+     */
+    public Integer getBrokerNum() {
+        return brokerNum;
+    }
+
+    public void setBrokerNum(Integer brokerNum) {
+        this.brokerNum = brokerNum;
+    }
+
     public CreatePostPaidInstanceReq withStorageSpace(Integer storageSpace) {
         this.storageSpace = storageSpace;
         return this;
     }
 
     /**
-     * 消息存储空间，单位GB。   - Kafka实例规格为100MB时，存储空间取值范围600GB ~ 90000GB。   - Kafka实例规格为300MB时，存储空间取值范围1200GB ~ 90000GB。   - Kafka实例规格为600MB时，存储空间取值范围2400GB ~ 90000GB。   - Kafka实例规格为1200MB，存储空间取值范围4800GB ~ 90000GB。
+     * 消息存储空间，单位GB。   - Kafka实例规格为100MB时，存储空间取值范围600GB ~ 90000GB。   - Kafka实例规格为300MB时，存储空间取值范围1200GB ~ 90000GB。   - Kafka实例规格为600MB时，存储空间取值范围2400GB ~ 90000GB。   - Kafka实例规格为1200MB，存储空间取值范围4800GB ~ 90000GB   [- Kafka实例规格为c6.2u4g.cluster时，存储空间取值范围600GB ~ 300000GB。   - Kafka实例规格为c6.4u8g.cluster时，存储空间取值范围1200GB ~ 600000GB。   - Kafka实例规格为c6.8u16g.cluster时，存储空间取值范围2400GB ~ 900000GB。   - Kafka实例规格为c6.12u24g.cluster时，存储空间取值范围3600GB ~ 900000GB。   - Kafka实例规格为c6.16u32g.cluster时，存储空间取值范围4800GB ~ 900000GB。](tag:hc,hk)
      * @return storageSpace
      */
     public Integer getStorageSpace() {
@@ -749,7 +845,7 @@ public class CreatePostPaidInstanceReq {
     }
 
     /**
-     * Kafka实例的最大分区数量。   - 参数specification为100MB时，取值300   - 参数specification为300MB时，取值900   - 参数specification为600MB时，取值1800   - 参数specification为1200MB时，取值1800
+     * Kafka实例的最大分区数量。   - 参数specification为100MB时，取值300   - 参数specification为300MB时，取值900   - 参数specification为600MB时，取值1800   - 参数specification为1200MB时，取值1800    [新规格实例此参数无需设置，每种规格对应的分区数上限参考：https://support.huaweicloud.com/productdesc-kafka/Kafka-specification.html](tag:hc,hk)   [新规格实例此参数无需设置，每种规格对应的分区数上限参考：https://support.huaweicloud.com/intl/zh-cn/productdesc-kafka/Kafka-specification.html](tag:hws,hws_hk)
      * @return partitionNum
      */
     public PartitionNumEnum getPartitionNum() {
@@ -884,7 +980,7 @@ public class CreatePostPaidInstanceReq {
     }
 
     /**
-     * 产品标识。
+     * 产品ID。 产品ID可以从**查询产品规格列表**接口查询到，不同局点的产品ID的格式可能不同。 一种是包含字母的产品ID，例如：c6.2u4g.cluster；另一种是全数字格式的产品ID，例如：00300-30308-0--0。
      * @return productId
      */
     public String getProductId() {
@@ -986,7 +1082,7 @@ public class CreatePostPaidInstanceReq {
     }
 
     /**
-     * 表示公网带宽，单位是Mbit/s。 取值范围： - Kafka实例规格为100MB时，公网带宽取值范围3到900，且必须为实例节点个数的倍数。 - Kafka实例规格为300MB时，公网带宽取值范围3到900，且必须为实例节点个数的倍数。 - Kafka实例规格为600MB时，公网带宽取值范围4到1200，且必须为实例节点个数的倍数。 - Kafka实例规格为1200MB时，公网带宽取值范围8到2400，且必须为实例节点个数的倍数。
+     * 表示公网带宽，单位是Mbit/s。  [取值范围： - Kafka实例规格为100MB时，公网带宽取值范围3到900，且必须为实例节点个数的倍数。 - Kafka实例规格为300MB时，公网带宽取值范围3到900，且必须为实例节点个数的倍数。 - Kafka实例规格为600MB时，公网带宽取值范围4到1200，且必须为实例节点个数的倍数。 - Kafka实例规格为1200MB时，公网带宽取值范围8到2400，且必须为实例节点个数的倍数。](tag:hws,hws_hk,otc,ocb,hws_ocb,ctc,sbc,hk_sbc,cmcc) [老规格实例取值范围： - Kafka实例规格为100MB时，公网带宽取值范围3到900，且必须为实例节点个数的倍数。 - Kafka实例规格为300MB时，公网带宽取值范围3到900，且必须为实例节点个数的倍数。 - Kafka实例规格为600MB时，公网带宽取值范围4到1200，且必须为实例节点个数的倍数。 - Kafka实例规格为1200MB时，公网带宽取值范围8到2400，且必须为实例节点个数的倍数。  新规格实例取值范围： - Kafka实例规格为c6.2u4g.cluster时，公网带宽取值范围3到250，且必须为实例节点个数的倍数。 - Kafka实例规格为c6.4u8g.cluster时，公网带宽取值范围3到500，且必须为实例节点个数的倍数。 - Kafka实例规格为c6.8u16g.cluster时，公网带宽取值范围4到1000，且必须为实例节点个数的倍数。 - Kafka实例规格为c6.12u24g.cluster时，公网带宽取值范围8到1500，且必须为实例节点个数的倍数。 - Kafka实例规格为c6.16u32g.cluster时，公网带宽取值范围8到2000，且必须为实例节点个数的倍数。](tag:hc,hk)
      * @return publicBandwidth
      */
     public Integer getPublicBandwidth() {
@@ -1020,7 +1116,7 @@ public class CreatePostPaidInstanceReq {
     }
 
     /**
-     * 是否打开SSL加密访问。 - true：打开SSL加密访问。 - false：不打开SSL加密访问。
+     * 是否打开SSL加密访问。  实例创建后将不支持动态开启和关闭。  - true：打开SSL加密访问。 - false：不打开SSL加密访问。
      * @return sslEnable
      */
     public Boolean getSslEnable() {
@@ -1071,7 +1167,7 @@ public class CreatePostPaidInstanceReq {
     }
 
     /**
-     * 是否打开kafka自动创建topic功能。 - true：开启 - false：关闭  当您选择开启，表示生产或消费一个未创建的Topic时，会自动创建一个包含3个分区和3个副本的Topic。
+     * 是否打开kafka自动创建topic功能。 - true：开启 - false：关闭  当您选择开启，表示生产或消费一个未创建的Topic时，会自动创建一个包含3个分区和3个副本的Topic。  默认是false关闭。
      * @return enableAutoTopic
      */
     public Boolean getEnableAutoTopic() {
@@ -1088,7 +1184,7 @@ public class CreatePostPaidInstanceReq {
     }
 
     /**
-     * 存储IO规格。 取值范围：   - 参数specification为100MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra   - 参数specification为300MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra   - 参数specification为600MB时，取值dms.physical.storage.ultra   - 参数specification为1200MB时，取值dms.physical.storage.ultra存储IO规格。如何选择磁盘类型请参考磁盘类型及性能介绍。
+     * 存储IO规格。 [新老规格的实例的存储IO规格不相同，创建实例请选择对应的存储IO规格。 新规格实例取值范围：   - dms.physical.storage.high.v2：使用高IO的磁盘类型。   - dms.physical.storage.ultra.v2：使用超高IO的磁盘类型。  老规格实例取值范围：](tag:hc,hk)   - 参数specification为100MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra   - 参数specification为300MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra   - 参数specification为600MB时，取值dms.physical.storage.ultra   - 参数specification为1200MB时，取值dms.physical.storage.ultra存储IO规格。如何选择磁盘类型请参考磁盘类型及性能介绍。
      * @return storageSpecCode
      */
     public StorageSpecCodeEnum getStorageSpecCode() {
@@ -1163,6 +1259,7 @@ public class CreatePostPaidInstanceReq {
             && Objects.equals(this.engine, createPostPaidInstanceReq.engine)
             && Objects.equals(this.engineVersion, createPostPaidInstanceReq.engineVersion)
             && Objects.equals(this.specification, createPostPaidInstanceReq.specification)
+            && Objects.equals(this.brokerNum, createPostPaidInstanceReq.brokerNum)
             && Objects.equals(this.storageSpace, createPostPaidInstanceReq.storageSpace)
             && Objects.equals(this.partitionNum, createPostPaidInstanceReq.partitionNum)
             && Objects.equals(this.accessUser, createPostPaidInstanceReq.accessUser)
@@ -1195,6 +1292,7 @@ public class CreatePostPaidInstanceReq {
             engine,
             engineVersion,
             specification,
+            brokerNum,
             storageSpace,
             partitionNum,
             accessUser,
@@ -1229,6 +1327,7 @@ public class CreatePostPaidInstanceReq {
         sb.append("    engine: ").append(toIndentedString(engine)).append("\n");
         sb.append("    engineVersion: ").append(toIndentedString(engineVersion)).append("\n");
         sb.append("    specification: ").append(toIndentedString(specification)).append("\n");
+        sb.append("    brokerNum: ").append(toIndentedString(brokerNum)).append("\n");
         sb.append("    storageSpace: ").append(toIndentedString(storageSpace)).append("\n");
         sb.append("    partitionNum: ").append(toIndentedString(partitionNum)).append("\n");
         sb.append("    accessUser: ").append(toIndentedString(accessUser)).append("\n");

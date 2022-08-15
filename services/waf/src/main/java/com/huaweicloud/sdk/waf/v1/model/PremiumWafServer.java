@@ -11,12 +11,12 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * 服务器配置
+ * 防护域名的源站服务器配置信息
  */
 public class PremiumWafServer {
 
     /**
-     * 对外协议
+     * 客户端请求访问防护域名源站服务器的协议
      */
     public static final class FrontProtocolEnum {
 
@@ -98,7 +98,7 @@ public class PremiumWafServer {
     private FrontProtocolEnum frontProtocol;
 
     /**
-     * 源站协议
+     * WAF转发客户端请求到防护域名源站服务器的协议
      */
     public static final class BackProtocolEnum {
 
@@ -178,6 +178,11 @@ public class PremiumWafServer {
     @JsonProperty(value = "back_protocol")
 
     private BackProtocolEnum backProtocol;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "weight")
+
+    private Integer weight;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "address")
@@ -282,7 +287,7 @@ public class PremiumWafServer {
     }
 
     /**
-     * 对外协议
+     * 客户端请求访问防护域名源站服务器的协议
      * @return frontProtocol
      */
     public FrontProtocolEnum getFrontProtocol() {
@@ -299,7 +304,7 @@ public class PremiumWafServer {
     }
 
     /**
-     * 源站协议
+     * WAF转发客户端请求到防护域名源站服务器的协议
      * @return backProtocol
      */
     public BackProtocolEnum getBackProtocol() {
@@ -310,13 +315,30 @@ public class PremiumWafServer {
         this.backProtocol = backProtocol;
     }
 
+    public PremiumWafServer withWeight(Integer weight) {
+        this.weight = weight;
+        return this;
+    }
+
+    /**
+     * 源站权重，负载均衡算法将按该权重将请求分配给源站，默认值是1，云模式的冗余字段
+     * @return weight
+     */
+    public Integer getWeight() {
+        return weight;
+    }
+
+    public void setWeight(Integer weight) {
+        this.weight = weight;
+    }
+
     public PremiumWafServer withAddress(String address) {
         this.address = address;
         return this;
     }
 
     /**
-     * 源站地址
+     * 客户端访问的源站服务器的IP地址
      * @return address
      */
     public String getAddress() {
@@ -333,7 +355,7 @@ public class PremiumWafServer {
     }
 
     /**
-     * 源站端口
+     * WAF转发客户端请求到源站服务的业务端口
      * @return port
      */
     public Integer getPort() {
@@ -367,7 +389,7 @@ public class PremiumWafServer {
     }
 
     /**
-     * VPC id,通过以下步骤获取VPC id： \\n 1.找到独享引擎所在的虚拟私有云名称，VPC\\子网这一列就是VPC的名称：登录WAF的控制台->单击系统管理->独享引擎->VPC\\子网 \\n 2.登录虚拟私有云 VPC控制台->虚拟私有云->单击虚拟私有云的名称->基本信息的ID
+     * VPC id,通过以下步骤获取VPC id：   - 1.找到独享引擎所在的虚拟私有云名称，VPC\\子网这一列就是VPC的名称：登录WAF的控制台->单击系统管理->独享引擎->VPC\\子网   - 2.登录虚拟私有云 VPC控制台->虚拟私有云->单击虚拟私有云的名称->基本信息的ID
      * @return vpcId
      */
     public String getVpcId() {
@@ -389,6 +411,7 @@ public class PremiumWafServer {
         PremiumWafServer premiumWafServer = (PremiumWafServer) o;
         return Objects.equals(this.frontProtocol, premiumWafServer.frontProtocol)
             && Objects.equals(this.backProtocol, premiumWafServer.backProtocol)
+            && Objects.equals(this.weight, premiumWafServer.weight)
             && Objects.equals(this.address, premiumWafServer.address)
             && Objects.equals(this.port, premiumWafServer.port) && Objects.equals(this.type, premiumWafServer.type)
             && Objects.equals(this.vpcId, premiumWafServer.vpcId);
@@ -396,7 +419,7 @@ public class PremiumWafServer {
 
     @Override
     public int hashCode() {
-        return Objects.hash(frontProtocol, backProtocol, address, port, type, vpcId);
+        return Objects.hash(frontProtocol, backProtocol, weight, address, port, type, vpcId);
     }
 
     @Override
@@ -405,6 +428,7 @@ public class PremiumWafServer {
         sb.append("class PremiumWafServer {\n");
         sb.append("    frontProtocol: ").append(toIndentedString(frontProtocol)).append("\n");
         sb.append("    backProtocol: ").append(toIndentedString(backProtocol)).append("\n");
+        sb.append("    weight: ").append(toIndentedString(weight)).append("\n");
         sb.append("    address: ").append(toIndentedString(address)).append("\n");
         sb.append("    port: ").append(toIndentedString(port)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");

@@ -63,7 +63,7 @@ public class ListPrivacyRuleResponse extends SdkResponse {
     }
 
     /**
-     * 规则
+     * 规则详情数组
      * @return items
      */
     public List<PrivacyResponseBody> getItems() {

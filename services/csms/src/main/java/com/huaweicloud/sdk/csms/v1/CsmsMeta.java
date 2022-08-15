@@ -250,6 +250,31 @@ public class CsmsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DownloadSecretBlobRequest, DownloadSecretBlobResponse> downloadSecretBlob =
+        genFordownloadSecretBlob();
+
+    private static HttpRequestDef<DownloadSecretBlobRequest, DownloadSecretBlobResponse> genFordownloadSecretBlob() {
+        // basic
+        HttpRequestDef.Builder<DownloadSecretBlobRequest, DownloadSecretBlobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DownloadSecretBlobRequest.class, DownloadSecretBlobResponse.class)
+                .withName("DownloadSecretBlob")
+                .withUri("/v1/{project_id}/secrets/{secret_name}/backup")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("secret_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadSecretBlobRequest::getSecretName, (req, v) -> {
+                req.setSecretName(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListProjectSecretsTagsRequest, ListProjectSecretsTagsResponse> listProjectSecretsTags =
         genForlistProjectSecretsTags();
 
@@ -570,6 +595,31 @@ public class CsmsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateSecretStageRequestBody.class),
             f -> f.withMarshaller(UpdateSecretStageRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UploadSecretBlobRequest, UploadSecretBlobResponse> uploadSecretBlob =
+        genForuploadSecretBlob();
+
+    private static HttpRequestDef<UploadSecretBlobRequest, UploadSecretBlobResponse> genForuploadSecretBlob() {
+        // basic
+        HttpRequestDef.Builder<UploadSecretBlobRequest, UploadSecretBlobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UploadSecretBlobRequest.class, UploadSecretBlobResponse.class)
+                .withName("UploadSecretBlob")
+                .withUri("/v1/{project_id}/secrets/restore")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<UploadSecretBlobRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UploadSecretBlobRequestBody.class),
+            f -> f.withMarshaller(UploadSecretBlobRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

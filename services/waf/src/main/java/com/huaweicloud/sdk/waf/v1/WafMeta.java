@@ -850,10 +850,10 @@ public class WafMeta {
             f -> f.withMarshaller(ListBandwidthTimelineRequest::getHosts, (req, v) -> {
                 req.setHosts(v);
             }));
-        builder.<String>withRequestField("instances",
+        builder.<List<String>>withRequestField("instances",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListBandwidthTimelineRequest::getInstances, (req, v) -> {
                 req.setInstances(v);
             }));
@@ -867,13 +867,13 @@ public class WafMeta {
 
         // response
 
-        builder.<List<StatisticsTimelineItem>>withResponseField("body",
+        builder.<List<BandwidthStatisticsTimelineItem>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListBandwidthTimelineResponse::getBody, (response, data) -> {
                 response.setBody(data);
-            }).withInnerContainerType(StatisticsTimelineItem.class));
+            }).withInnerContainerType(BandwidthStatisticsTimelineItem.class));
 
         return builder.build();
     }
@@ -1037,13 +1037,6 @@ public class WafMeta {
             f -> f.withMarshaller(ListEventRequest::getRecent, (req, v) -> {
                 req.setRecent(v);
             }));
-        builder.<List<String>>withRequestField("attacks",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListEventRequest::getAttacks, (req, v) -> {
-                req.setAttacks(v);
-            }));
         builder.<Long>withRequestField("from",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -1057,6 +1050,13 @@ public class WafMeta {
             TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ListEventRequest::getTo, (req, v) -> {
                 req.setTo(v);
+            }));
+        builder.<List<String>>withRequestField("attacks",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListEventRequest::getAttacks, (req, v) -> {
+                req.setAttacks(v);
             }));
         builder.<List<String>>withRequestField("hosts",
             LocationType.Query,
@@ -1304,17 +1304,17 @@ public class WafMeta {
             f -> f.withMarshaller(ListOverviewsClassificationRequest::getTop, (req, v) -> {
                 req.setTop(v);
             }));
-        builder.<String>withRequestField("hosts",
+        builder.<List<String>>withRequestField("hosts",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListOverviewsClassificationRequest::getHosts, (req, v) -> {
                 req.setHosts(v);
             }));
-        builder.<String>withRequestField("instances",
+        builder.<List<String>>withRequestField("instances",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListOverviewsClassificationRequest::getInstances, (req, v) -> {
                 req.setInstances(v);
             }));
@@ -1508,17 +1508,17 @@ public class WafMeta {
             f -> f.withMarshaller(ListQpsTimelineRequest::getTo, (req, v) -> {
                 req.setTo(v);
             }));
-        builder.<String>withRequestField("hosts",
+        builder.<List<String>>withRequestField("hosts",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListQpsTimelineRequest::getHosts, (req, v) -> {
                 req.setHosts(v);
             }));
-        builder.<String>withRequestField("instances",
+        builder.<List<String>>withRequestField("instances",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListQpsTimelineRequest::getInstances, (req, v) -> {
                 req.setInstances(v);
             }));
@@ -1576,17 +1576,17 @@ public class WafMeta {
             f -> f.withMarshaller(ListStatisticsRequest::getTo, (req, v) -> {
                 req.setTo(v);
             }));
-        builder.<String>withRequestField("hosts",
+        builder.<List<String>>withRequestField("hosts",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListStatisticsRequest::getHosts, (req, v) -> {
                 req.setHosts(v);
             }));
-        builder.<String>withRequestField("instances",
+        builder.<List<String>>withRequestField("instances",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListStatisticsRequest::getInstances, (req, v) -> {
                 req.setInstances(v);
             }));
@@ -1651,17 +1651,17 @@ public class WafMeta {
             f -> f.withMarshaller(ListTopAbnormalRequest::getCode, (req, v) -> {
                 req.setCode(v);
             }));
-        builder.<String>withRequestField("hosts",
+        builder.<List<String>>withRequestField("hosts",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListTopAbnormalRequest::getHosts, (req, v) -> {
                 req.setHosts(v);
             }));
-        builder.<String>withRequestField("instances",
+        builder.<List<String>>withRequestField("instances",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListTopAbnormalRequest::getInstances, (req, v) -> {
                 req.setInstances(v);
             }));

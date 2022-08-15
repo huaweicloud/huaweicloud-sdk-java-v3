@@ -115,7 +115,7 @@ public class RenewalResourcesReq {
     }
 
     /**
-     * 到期策略： 1：转按需2：自动退订3：自动续订
+     * 到期策略： 0：进入宽限期/保留期1：转按需2：自动退订3：自动续订
      * minimum: 0
      * maximum: 3
      * @return expirePolicy

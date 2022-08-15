@@ -11,12 +11,12 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * 操作
+ * 防护动作
  */
 public class PolicyAction {
 
     /**
-     * 防护等级（log为仅记录、block为拦截）
+     * web基础防护动作（log为仅记录、block为拦截）
      */
     public static final class CategoryEnum {
 
@@ -103,7 +103,7 @@ public class PolicyAction {
     }
 
     /**
-     * 防护等级（log为仅记录、block为拦截）
+     * web基础防护动作（log为仅记录、block为拦截）
      * @return category
      */
     public CategoryEnum getCategory() {

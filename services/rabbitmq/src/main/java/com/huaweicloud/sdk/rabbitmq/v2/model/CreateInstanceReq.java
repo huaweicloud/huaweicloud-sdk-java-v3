@@ -220,6 +220,100 @@ public class CreateInstanceReq {
 
     private String productId;
 
+    /**
+     * 代理个数。  当产品为单机类型，代理个数只能为1；当产品为集群类型，可选3、5、7个代理个数。  产品类型为single时:   - 1  产品类型为cluster时:   - 3   - 5   - 7
+     */
+    public static final class BrokerNumEnum {
+
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
+        public static final BrokerNumEnum NUMBER_1 = new BrokerNumEnum(1);
+
+        /**
+         * Enum NUMBER_3 for value: 3
+         */
+        public static final BrokerNumEnum NUMBER_3 = new BrokerNumEnum(3);
+
+        /**
+         * Enum NUMBER_5 for value: 5
+         */
+        public static final BrokerNumEnum NUMBER_5 = new BrokerNumEnum(5);
+
+        /**
+         * Enum NUMBER_7 for value: 7
+         */
+        public static final BrokerNumEnum NUMBER_7 = new BrokerNumEnum(7);
+
+        private static final Map<Integer, BrokerNumEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, BrokerNumEnum> createStaticFields() {
+            Map<Integer, BrokerNumEnum> map = new HashMap<>();
+            map.put(1, NUMBER_1);
+            map.put(3, NUMBER_3);
+            map.put(5, NUMBER_5);
+            map.put(7, NUMBER_7);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        BrokerNumEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static BrokerNumEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            BrokerNumEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new BrokerNumEnum(value);
+            }
+            return result;
+        }
+
+        public static BrokerNumEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            BrokerNumEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof BrokerNumEnum) {
+                return this.value.equals(((BrokerNumEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "broker_num")
+
+    private BrokerNumEnum brokerNum;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maintain_begin")
 
@@ -246,35 +340,42 @@ public class CreateInstanceReq {
     private Boolean sslEnable;
 
     /**
-     * 存储IO规格。  取值范围：   - dms.physical.storage.normal：   - dms.physical.storage.high   - dms.physical.storage.ultra
+     * 存储IO规格。  取值范围：   - dms.physical.storage.high.v2   - dms.physical.storage.ultra.v2   - dms.physical.storage.high.dss.v2   - dms.physical.storage.ultra.dss.v2
      */
     public static final class StorageSpecCodeEnum {
 
         /**
-         * Enum DMS_PHYSICAL_STORAGE_NORMAL for value: "dms.physical.storage.normal"
+         * Enum DMS_PHYSICAL_STORAGE_HIGH_V2 for value: "dms.physical.storage.high.v2"
          */
-        public static final StorageSpecCodeEnum DMS_PHYSICAL_STORAGE_NORMAL =
-            new StorageSpecCodeEnum("dms.physical.storage.normal");
+        public static final StorageSpecCodeEnum DMS_PHYSICAL_STORAGE_HIGH_V2 =
+            new StorageSpecCodeEnum("dms.physical.storage.high.v2");
 
         /**
-         * Enum DMS_PHYSICAL_STORAGE_HIGH for value: "dms.physical.storage.high"
+         * Enum DMS_PHYSICAL_STORAGE_ULTRA_V2 for value: "dms.physical.storage.ultra.v2"
          */
-        public static final StorageSpecCodeEnum DMS_PHYSICAL_STORAGE_HIGH =
-            new StorageSpecCodeEnum("dms.physical.storage.high");
+        public static final StorageSpecCodeEnum DMS_PHYSICAL_STORAGE_ULTRA_V2 =
+            new StorageSpecCodeEnum("dms.physical.storage.ultra.v2");
 
         /**
-         * Enum DMS_PHYSICAL_STORAGE_ULTRA for value: "dms.physical.storage.ultra"
+         * Enum DMS_PHYSICAL_STORAGE_HIGH_DSS_V2 for value: "dms.physical.storage.high.dss.v2"
          */
-        public static final StorageSpecCodeEnum DMS_PHYSICAL_STORAGE_ULTRA =
-            new StorageSpecCodeEnum("dms.physical.storage.ultra");
+        public static final StorageSpecCodeEnum DMS_PHYSICAL_STORAGE_HIGH_DSS_V2 =
+            new StorageSpecCodeEnum("dms.physical.storage.high.dss.v2");
+
+        /**
+         * Enum DMS_PHYSICAL_STORAGE_ULTRA_DSS_V2 for value: "dms.physical.storage.ultra.dss.v2"
+         */
+        public static final StorageSpecCodeEnum DMS_PHYSICAL_STORAGE_ULTRA_DSS_V2 =
+            new StorageSpecCodeEnum("dms.physical.storage.ultra.dss.v2");
 
         private static final Map<String, StorageSpecCodeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, StorageSpecCodeEnum> createStaticFields() {
             Map<String, StorageSpecCodeEnum> map = new HashMap<>();
-            map.put("dms.physical.storage.normal", DMS_PHYSICAL_STORAGE_NORMAL);
-            map.put("dms.physical.storage.high", DMS_PHYSICAL_STORAGE_HIGH);
-            map.put("dms.physical.storage.ultra", DMS_PHYSICAL_STORAGE_ULTRA);
+            map.put("dms.physical.storage.high.v2", DMS_PHYSICAL_STORAGE_HIGH_V2);
+            map.put("dms.physical.storage.ultra.v2", DMS_PHYSICAL_STORAGE_ULTRA_V2);
+            map.put("dms.physical.storage.high.dss.v2", DMS_PHYSICAL_STORAGE_HIGH_DSS_V2);
+            map.put("dms.physical.storage.ultra.dss.v2", DMS_PHYSICAL_STORAGE_ULTRA_DSS_V2);
             return Collections.unmodifiableMap(map);
         }
 
@@ -555,7 +656,7 @@ public class CreateInstanceReq {
     }
 
     /**
-     * 产品标识。
+     * 产品标识。  产品ID可以从**查询产品规格列表**接口查询。  如果产品ID为集群类型（即对应的type为cluster），broker_num字段为必选。
      * @return productId
      */
     public String getProductId() {
@@ -564,6 +665,23 @@ public class CreateInstanceReq {
 
     public void setProductId(String productId) {
         this.productId = productId;
+    }
+
+    public CreateInstanceReq withBrokerNum(BrokerNumEnum brokerNum) {
+        this.brokerNum = brokerNum;
+        return this;
+    }
+
+    /**
+     * 代理个数。  当产品为单机类型，代理个数只能为1；当产品为集群类型，可选3、5、7个代理个数。  产品类型为single时:   - 1  产品类型为cluster时:   - 3   - 5   - 7
+     * @return brokerNum
+     */
+    public BrokerNumEnum getBrokerNum() {
+        return brokerNum;
+    }
+
+    public void setBrokerNum(BrokerNumEnum brokerNum) {
+        this.brokerNum = brokerNum;
     }
 
     public CreateInstanceReq withMaintainBegin(String maintainBegin) {
@@ -657,7 +775,7 @@ public class CreateInstanceReq {
     }
 
     /**
-     * 存储IO规格。  取值范围：   - dms.physical.storage.normal：   - dms.physical.storage.high   - dms.physical.storage.ultra
+     * 存储IO规格。  取值范围：   - dms.physical.storage.high.v2   - dms.physical.storage.ultra.v2   - dms.physical.storage.high.dss.v2   - dms.physical.storage.ultra.dss.v2
      * @return storageSpecCode
      */
     public StorageSpecCodeEnum getStorageSpecCode() {
@@ -739,6 +857,7 @@ public class CreateInstanceReq {
             && Objects.equals(this.subnetId, createInstanceReq.subnetId)
             && Objects.equals(this.availableZones, createInstanceReq.availableZones)
             && Objects.equals(this.productId, createInstanceReq.productId)
+            && Objects.equals(this.brokerNum, createInstanceReq.brokerNum)
             && Objects.equals(this.maintainBegin, createInstanceReq.maintainBegin)
             && Objects.equals(this.maintainEnd, createInstanceReq.maintainEnd)
             && Objects.equals(this.enablePublicip, createInstanceReq.enablePublicip)
@@ -763,6 +882,7 @@ public class CreateInstanceReq {
             subnetId,
             availableZones,
             productId,
+            brokerNum,
             maintainBegin,
             maintainEnd,
             enablePublicip,
@@ -789,6 +909,7 @@ public class CreateInstanceReq {
         sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
         sb.append("    availableZones: ").append(toIndentedString(availableZones)).append("\n");
         sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
+        sb.append("    brokerNum: ").append(toIndentedString(brokerNum)).append("\n");
         sb.append("    maintainBegin: ").append(toIndentedString(maintainBegin)).append("\n");
         sb.append("    maintainEnd: ").append(toIndentedString(maintainEnd)).append("\n");
         sb.append("    enablePublicip: ").append(toIndentedString(enablePublicip)).append("\n");

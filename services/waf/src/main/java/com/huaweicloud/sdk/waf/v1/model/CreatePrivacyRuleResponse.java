@@ -27,12 +27,22 @@ public class CreatePrivacyRuleResponse extends SdkResponse {
     private String policyid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "timestamp")
+
+    private Long timestamp;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status")
+
+    private Integer status;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "url")
 
     private String url;
 
     /**
-     * 屏蔽字段
+     * 屏蔽字段   - Params：请求参数   - Cookie：根据Cookie区分的Web访问者   - Header：自定义HTTP首部   - Form：表单参数
      */
     public static final class CategoryEnum {
 
@@ -130,6 +140,11 @@ public class CreatePrivacyRuleResponse extends SdkResponse {
 
     private String index;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "description")
+
+    private String description;
+
     public CreatePrivacyRuleResponse withId(String id) {
         this.id = id;
         return this;
@@ -164,6 +179,40 @@ public class CreatePrivacyRuleResponse extends SdkResponse {
         this.policyid = policyid;
     }
 
+    public CreatePrivacyRuleResponse withTimestamp(Long timestamp) {
+        this.timestamp = timestamp;
+        return this;
+    }
+
+    /**
+     * 创建规则的时间，格式为13位毫秒时间戳
+     * @return timestamp
+     */
+    public Long getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(Long timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    public CreatePrivacyRuleResponse withStatus(Integer status) {
+        this.status = status;
+        return this;
+    }
+
+    /**
+     * 规则状态，0：关闭，1：开启
+     * @return status
+     */
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
     public CreatePrivacyRuleResponse withUrl(String url) {
         this.url = url;
         return this;
@@ -187,7 +236,7 @@ public class CreatePrivacyRuleResponse extends SdkResponse {
     }
 
     /**
-     * 屏蔽字段
+     * 屏蔽字段   - Params：请求参数   - Cookie：根据Cookie区分的Web访问者   - Header：自定义HTTP首部   - Form：表单参数
      * @return category
      */
     public CategoryEnum getCategory() {
@@ -204,7 +253,7 @@ public class CreatePrivacyRuleResponse extends SdkResponse {
     }
 
     /**
-     * 屏蔽字段名
+     * 屏蔽字段名，根据“屏蔽字段”设置字段名，被屏蔽的字段将不会出现在日志中。
      * @return index
      */
     public String getIndex() {
@@ -213,6 +262,23 @@ public class CreatePrivacyRuleResponse extends SdkResponse {
 
     public void setIndex(String index) {
         this.index = index;
+    }
+
+    public CreatePrivacyRuleResponse withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /**
+     * 规则描述，可选参数，设置该规则的备注信息。
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     @Override
@@ -226,14 +292,17 @@ public class CreatePrivacyRuleResponse extends SdkResponse {
         CreatePrivacyRuleResponse createPrivacyRuleResponse = (CreatePrivacyRuleResponse) o;
         return Objects.equals(this.id, createPrivacyRuleResponse.id)
             && Objects.equals(this.policyid, createPrivacyRuleResponse.policyid)
+            && Objects.equals(this.timestamp, createPrivacyRuleResponse.timestamp)
+            && Objects.equals(this.status, createPrivacyRuleResponse.status)
             && Objects.equals(this.url, createPrivacyRuleResponse.url)
             && Objects.equals(this.category, createPrivacyRuleResponse.category)
-            && Objects.equals(this.index, createPrivacyRuleResponse.index);
+            && Objects.equals(this.index, createPrivacyRuleResponse.index)
+            && Objects.equals(this.description, createPrivacyRuleResponse.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, policyid, url, category, index);
+        return Objects.hash(id, policyid, timestamp, status, url, category, index, description);
     }
 
     @Override
@@ -242,9 +311,12 @@ public class CreatePrivacyRuleResponse extends SdkResponse {
         sb.append("class CreatePrivacyRuleResponse {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    policyid: ").append(toIndentedString(policyid)).append("\n");
+        sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    url: ").append(toIndentedString(url)).append("\n");
         sb.append("    category: ").append(toIndentedString(category)).append("\n");
         sb.append("    index: ").append(toIndentedString(index)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");
         return sb.toString();
     }

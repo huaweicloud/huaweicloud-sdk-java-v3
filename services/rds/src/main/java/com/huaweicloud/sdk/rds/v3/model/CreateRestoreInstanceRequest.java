@@ -101,7 +101,7 @@ public class CreateRestoreInstanceRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private InstanceRequest body;
+    private CreateRestoreInstanceRequestBody body;
 
     public CreateRestoreInstanceRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
@@ -122,14 +122,14 @@ public class CreateRestoreInstanceRequest {
         this.xLanguage = xLanguage;
     }
 
-    public CreateRestoreInstanceRequest withBody(InstanceRequest body) {
+    public CreateRestoreInstanceRequest withBody(CreateRestoreInstanceRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public CreateRestoreInstanceRequest withBody(Consumer<InstanceRequest> bodySetter) {
+    public CreateRestoreInstanceRequest withBody(Consumer<CreateRestoreInstanceRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new InstanceRequest();
+            this.body = new CreateRestoreInstanceRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -140,11 +140,11 @@ public class CreateRestoreInstanceRequest {
      * Get body
      * @return body
      */
-    public InstanceRequest getBody() {
+    public CreateRestoreInstanceRequestBody getBody() {
         return body;
     }
 
-    public void setBody(InstanceRequest body) {
+    public void setBody(CreateRestoreInstanceRequestBody body) {
         this.body = body;
     }
 

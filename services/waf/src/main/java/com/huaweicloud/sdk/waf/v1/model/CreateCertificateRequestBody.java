@@ -48,7 +48,7 @@ public class CreateCertificateRequestBody {
     }
 
     /**
-     * 证书文件，仅支持PEM格式的证书和私钥文件，且文件中的换行符应以\\n替换
+     * 证书文件，仅支持PEM格式的证书和私钥文件，且文件中的换行符应以\\n替换，如请求示例所示
      * @return content
      */
     public String getContent() {
@@ -65,7 +65,7 @@ public class CreateCertificateRequestBody {
     }
 
     /**
-     * 证书私钥，仅支持PEM格式的证书和私钥文件，且文件中的换行符应以\\n替换
+     * 证书私钥，仅支持PEM格式的证书和私钥文件，且文件中的换行符应以\\n替换，如请求示例所示
      * @return key
      */
     public String getKey() {

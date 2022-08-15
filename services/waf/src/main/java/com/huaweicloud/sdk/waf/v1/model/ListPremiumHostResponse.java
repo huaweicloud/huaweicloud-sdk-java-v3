@@ -63,7 +63,7 @@ public class ListPremiumHostResponse extends SdkResponse {
     }
 
     /**
-     * 详细的防护域名信息
+     * 详细的防护域名信息数组
      * @return items
      */
     public List<SimplePremiumWafHost> getItems() {

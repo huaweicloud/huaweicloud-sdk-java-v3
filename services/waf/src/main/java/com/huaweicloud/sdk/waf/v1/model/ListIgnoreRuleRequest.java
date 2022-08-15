@@ -36,7 +36,7 @@ public class ListIgnoreRuleRequest {
     }
 
     /**
-     * 您可以通过调用企业项目管理服务（EPS)的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id
+     * 您可以通过调用企业项目管理服务（EPS）的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -53,7 +53,7 @@ public class ListIgnoreRuleRequest {
     }
 
     /**
-     * 防护策略id，您可以通过调用查询防护策略列表（ListPolicy）获取策略id
+     * 防护策略id，通过指定防护策略id来指明查询该防护策略下的全局白名单规则，您可以通过调用查询防护策略列表（ListPolicy）获取策略id
      * @return policyId
      */
     public String getPolicyId() {
@@ -70,7 +70,7 @@ public class ListIgnoreRuleRequest {
     }
 
     /**
-     * 分页查询时，返回第几页数据。范围0-100000，默认值为1，表示返回第1页数据。
+     * 分页查询时，返回第几页数据。默认值为1，表示返回第1页数据。
      * @return page
      */
     public Integer getPage() {

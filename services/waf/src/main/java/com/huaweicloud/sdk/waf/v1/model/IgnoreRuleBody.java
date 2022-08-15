@@ -68,6 +68,11 @@ public class IgnoreRuleBody {
 
     private List<String> domains = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "advanced")
+
+    private List<Advanced> advanced = null;
+
     public IgnoreRuleBody withId(String id) {
         this.id = id;
         return this;
@@ -91,7 +96,7 @@ public class IgnoreRuleBody {
     }
 
     /**
-     * 策略id
+     * 该规则属于的防护策略的id
      * @return policyid
      */
     public String getPolicyid() {
@@ -176,7 +181,7 @@ public class IgnoreRuleBody {
     }
 
     /**
-     * 屏蔽的内置规则id（内置规则id通常可以在Web应用防火墙控制台的防护策略->策略名称->Web基础防护->防护规则中查询，也可以在防护事件的事件详情中查询内置规则id）
+     * 需要屏蔽的规则，可屏蔽一个或者多个，屏蔽多个时使用半角符;分隔   - 当需要屏蔽某一条内置规则时，该参数值为该内置规则id,可以在Web应用防火墙控制台的防护策略->策略名称->Web基础防护的高级设置->防护规则中查询；也可以在防护事件的事件详情中查询内置规则id   - 当需要屏蔽web基础防护某一类规则时，该参数值为需要屏蔽的web基础防护某一类规则名。其中，xss：xxs攻击；webshell：网站木马；vuln：其他类型攻击；sqli：sql注入攻击；robot：恶意爬虫；rfi：远程文件包含；lfi：本地文件包含；cmdi：命令注入攻击   - 当需要屏蔽Web基础防护模块，该参数值为：all   - 当需要屏蔽规则为所有检测模块时，该参数值为：bypass
      * @return rule
      */
     public String getRule() {
@@ -287,6 +292,39 @@ public class IgnoreRuleBody {
         this.domains = domains;
     }
 
+    public IgnoreRuleBody withAdvanced(List<Advanced> advanced) {
+        this.advanced = advanced;
+        return this;
+    }
+
+    public IgnoreRuleBody addAdvancedItem(Advanced advancedItem) {
+        if (this.advanced == null) {
+            this.advanced = new ArrayList<>();
+        }
+        this.advanced.add(advancedItem);
+        return this;
+    }
+
+    public IgnoreRuleBody withAdvanced(Consumer<List<Advanced>> advancedSetter) {
+        if (this.advanced == null) {
+            this.advanced = new ArrayList<>();
+        }
+        advancedSetter.accept(this.advanced);
+        return this;
+    }
+
+    /**
+     * 高级配置项
+     * @return advanced
+     */
+    public List<Advanced> getAdvanced() {
+        return advanced;
+    }
+
+    public void setAdvanced(List<Advanced> advanced) {
+        this.advanced = advanced;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -303,13 +341,24 @@ public class IgnoreRuleBody {
             && Objects.equals(this.rule, ignoreRuleBody.rule) && Objects.equals(this.mode, ignoreRuleBody.mode)
             && Objects.equals(this.urlLogic, ignoreRuleBody.urlLogic)
             && Objects.equals(this.conditions, ignoreRuleBody.conditions)
-            && Objects.equals(this.domains, ignoreRuleBody.domains);
+            && Objects.equals(this.domains, ignoreRuleBody.domains)
+            && Objects.equals(this.advanced, ignoreRuleBody.advanced);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(id, policyid, timestamp, description, status, url, rule, mode, urlLogic, conditions, domains);
+        return Objects.hash(id,
+            policyid,
+            timestamp,
+            description,
+            status,
+            url,
+            rule,
+            mode,
+            urlLogic,
+            conditions,
+            domains,
+            advanced);
     }
 
     @Override
@@ -327,6 +376,7 @@ public class IgnoreRuleBody {
         sb.append("    urlLogic: ").append(toIndentedString(urlLogic)).append("\n");
         sb.append("    conditions: ").append(toIndentedString(conditions)).append("\n");
         sb.append("    domains: ").append(toIndentedString(domains)).append("\n");
+        sb.append("    advanced: ").append(toIndentedString(advanced)).append("\n");
         sb.append("}");
         return sb.toString();
     }

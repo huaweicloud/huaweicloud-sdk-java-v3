@@ -86,7 +86,7 @@ public class ListIssuedPartnerCouponsRequest {
     }
 
     /**
-     * 优惠券ID。
+     * 优惠券ID。此参数不携带或携带值为空时，不作为筛选条件；携带值为空串或携带值为null时，作为筛选条件。
      * @return couponId
      */
     public String getCouponId() {
@@ -103,7 +103,7 @@ public class ListIssuedPartnerCouponsRequest {
     }
 
     /**
-     * 客户账号ID。您可以调用[查询客户列表](https://support.huaweicloud.com/api-bpconsole/mc_00021.html)接口获取customer_id。
+     * 客户账号ID。您可以调用[查询客户列表](https://support.huaweicloud.com/api-bpconsole/mc_00021.html)接口获取customer_id。此参数不携带或携带值为空时，不作为筛选条件；携带值为空串或携带值为null时，作为筛选条件。
      * @return customerId
      */
     public String getCustomerId() {
@@ -120,7 +120,7 @@ public class ListIssuedPartnerCouponsRequest {
     }
 
     /**
-     * 订单ID。
+     * 订单ID。此参数不携带或携带值为空时，不作为筛选条件；携带值为空串或携带值为null时，作为筛选条件。
      * @return orderId
      */
     public String getOrderId() {
@@ -137,7 +137,7 @@ public class ListIssuedPartnerCouponsRequest {
     }
 
     /**
-     * 优惠券类型：1：代金券4：现金券
+     * 优惠券类型。1：代金券4：现金券此参数不携带或携带值为空或携带值为null时，不作为筛选条件。
      * minimum: 1
      * maximum: 4
      * @return couponType
@@ -156,7 +156,7 @@ public class ListIssuedPartnerCouponsRequest {
     }
 
     /**
-     * 客户优惠券实例状态：1：未激活2：可使用3：已使用4：已过期5：已回收
+     * 客户优惠券实例状态：1：未激活2：可使用3：已使用4：已过期5：已回收此参数不携带或携带值为空或携带值为null时，不作为筛选条件。
      * minimum: 1
      * maximum: 5
      * @return status
@@ -175,7 +175,7 @@ public class ListIssuedPartnerCouponsRequest {
     }
 
     /**
-     * 创建时间（开始）。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。输入这个条件，会查询出创建时间大于这个时间的记录。
+     * 创建时间（开始）。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。输入这个条件，会查询出创建时间大于这个时间的记录。此参数不携带或携带值为空时，不作为筛选条件。
      * @return createTimeBegin
      */
     public String getCreateTimeBegin() {
@@ -192,7 +192,7 @@ public class ListIssuedPartnerCouponsRequest {
     }
 
     /**
-     * 创建时间（结束）。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。输入这个条件，会查询出创建时间小于这个时间的记录。
+     * 创建时间（结束）。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。输入这个条件，会查询出创建时间小于这个时间的记录。此参数不携带或携带值为空时，不作为筛选条件。
      * @return createTimeEnd
      */
     public String getCreateTimeEnd() {
@@ -209,7 +209,7 @@ public class ListIssuedPartnerCouponsRequest {
     }
 
     /**
-     * 生效时间（开始）。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。输入这个条件，会查询出生效时间大于这个时间的记录。
+     * 生效时间（开始）。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。输入这个条件，会查询出生效时间大于这个时间的记录。此参数不携带或携带值为空时，不作为筛选条件。
      * @return effectiveTimeBegin
      */
     public String getEffectiveTimeBegin() {
@@ -226,7 +226,7 @@ public class ListIssuedPartnerCouponsRequest {
     }
 
     /**
-     * 生效时间（结束）。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。输入这个条件，会查询出生效时间小于这个时间的记录。
+     * 生效时间（结束）。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。输入这个条件，会查询出生效时间小于这个时间的记录。此参数不携带或携带值为空时，不作为筛选条件。
      * @return effectiveTimeEnd
      */
     public String getEffectiveTimeEnd() {
@@ -243,7 +243,7 @@ public class ListIssuedPartnerCouponsRequest {
     }
 
     /**
-     * 失效时间（开始）。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。输入这个条件，会查询出失效时间大于这个时间的记录。
+     * 失效时间（开始）。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。输入这个条件，会查询出失效时间大于这个时间的记录。此参数不携带或携带值为空时，不作为筛选条件。
      * @return expireTimeBegin
      */
     public String getExpireTimeBegin() {
@@ -260,7 +260,7 @@ public class ListIssuedPartnerCouponsRequest {
     }
 
     /**
-     * 失效时间（结束）。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。输入这个条件，会查询出失效时间小于这个时间的记录。
+     * 失效时间（结束）。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。输入这个条件，会查询出失效时间小于这个时间的记录。此参数不携带或携带值为空时，不作为筛选条件。
      * @return expireTimeEnd
      */
     public String getExpireTimeEnd() {
@@ -315,7 +315,7 @@ public class ListIssuedPartnerCouponsRequest {
     }
 
     /**
-     * 精英服务商ID。获取方法请参见[查询精英服务商列表](https://support.huaweicloud.com/api-bpconsole/espp_00003.html)。华为云伙伴能力中心（一级经销商）查询精英服务商发放给子客户的优惠券时，需要携带该参数；否则只能查询发放给自己子客户的优惠券。
+     * 云经销商ID。获取方法请参见[查询云经销商列表](https://support.huaweicloud.com/api-bpconsole/espp_00003.html)。华为云总经销商（一级经销商）查询云经销商发放给子客户的优惠券时，需要携带该参数；否则只能查询发放给自己子客户的优惠券。
      * @return indirectPartnerId
      */
     public String getIndirectPartnerId() {

@@ -157,7 +157,7 @@ public class ListPartnerAccountChangeRecordsRequest {
     }
 
     /**
-     * 精英服务商ID。获取方法请参见[查询精英服务商列表](https://support.huaweicloud.com/api-bpconsole/espp_00003.html)。 说明： 华为云伙伴能力中心（一级经销商）查询精英服务商（二级经销商）的收支明细时，需携带此参数；否则只能查询自身的收支明细。
+     * 云经销商ID。获取方法请参见[查询云经销商列表](https://support.huaweicloud.com/api-bpconsole/espp_00003.html)。  说明： 华为云总经销商（一级经销商）查询云经销商（二级经销商）的收支明细时，需携带此参数；除此之外，此参数不作处理。否则只能查询自身的收支明细。
      * @return indirectPartnerId
      */
     public String getIndirectPartnerId() {

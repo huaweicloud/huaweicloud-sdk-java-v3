@@ -20,6 +20,105 @@ import java.util.function.Consumer;
 public class ShowInstanceResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "access_user")
+
+    private String accessUser;
+
+    /**
+     * 代理个数。
+     */
+    public static final class BrokerNumEnum {
+
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
+        public static final BrokerNumEnum NUMBER_1 = new BrokerNumEnum(1);
+
+        /**
+         * Enum NUMBER_3 for value: 3
+         */
+        public static final BrokerNumEnum NUMBER_3 = new BrokerNumEnum(3);
+
+        /**
+         * Enum NUMBER_5 for value: 5
+         */
+        public static final BrokerNumEnum NUMBER_5 = new BrokerNumEnum(5);
+
+        /**
+         * Enum NUMBER_7 for value: 7
+         */
+        public static final BrokerNumEnum NUMBER_7 = new BrokerNumEnum(7);
+
+        private static final Map<Integer, BrokerNumEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, BrokerNumEnum> createStaticFields() {
+            Map<Integer, BrokerNumEnum> map = new HashMap<>();
+            map.put(1, NUMBER_1);
+            map.put(3, NUMBER_3);
+            map.put(5, NUMBER_5);
+            map.put(7, NUMBER_7);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        BrokerNumEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static BrokerNumEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            BrokerNumEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new BrokerNumEnum(value);
+            }
+            return result;
+        }
+
+        public static BrokerNumEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            BrokerNumEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof BrokerNumEnum) {
+                return this.value.equals(((BrokerNumEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "broker_num")
+
+    private BrokerNumEnum brokerNum;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
     private String name;
@@ -300,6 +399,40 @@ public class ShowInstanceResponse extends SdkResponse {
     @JsonProperty(value = "tags")
 
     private List<TagEntity> tags = null;
+
+    public ShowInstanceResponse withAccessUser(String accessUser) {
+        this.accessUser = accessUser;
+        return this;
+    }
+
+    /**
+     * 认证用户名，只能由英文字母、数字、中划线组成，长度为4~64的字符。
+     * @return accessUser
+     */
+    public String getAccessUser() {
+        return accessUser;
+    }
+
+    public void setAccessUser(String accessUser) {
+        this.accessUser = accessUser;
+    }
+
+    public ShowInstanceResponse withBrokerNum(BrokerNumEnum brokerNum) {
+        this.brokerNum = brokerNum;
+        return this;
+    }
+
+    /**
+     * 代理个数。
+     * @return brokerNum
+     */
+    public BrokerNumEnum getBrokerNum() {
+        return brokerNum;
+    }
+
+    public void setBrokerNum(BrokerNumEnum brokerNum) {
+        this.brokerNum = brokerNum;
+    }
 
     public ShowInstanceResponse withName(String name) {
         this.name = name;
@@ -1055,7 +1188,9 @@ public class ShowInstanceResponse extends SdkResponse {
             return false;
         }
         ShowInstanceResponse showInstanceResponse = (ShowInstanceResponse) o;
-        return Objects.equals(this.name, showInstanceResponse.name)
+        return Objects.equals(this.accessUser, showInstanceResponse.accessUser)
+            && Objects.equals(this.brokerNum, showInstanceResponse.brokerNum)
+            && Objects.equals(this.name, showInstanceResponse.name)
             && Objects.equals(this.engine, showInstanceResponse.engine)
             && Objects.equals(this.engineVersion, showInstanceResponse.engineVersion)
             && Objects.equals(this.specification, showInstanceResponse.specification)
@@ -1100,7 +1235,9 @@ public class ShowInstanceResponse extends SdkResponse {
 
     @Override
     public int hashCode() {
-        return Objects.hash(name,
+        return Objects.hash(accessUser,
+            brokerNum,
+            name,
             engine,
             engineVersion,
             specification,
@@ -1147,6 +1284,8 @@ public class ShowInstanceResponse extends SdkResponse {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowInstanceResponse {\n");
+        sb.append("    accessUser: ").append(toIndentedString(accessUser)).append("\n");
+        sb.append("    brokerNum: ").append(toIndentedString(brokerNum)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    engine: ").append(toIndentedString(engine)).append("\n");
         sb.append("    engineVersion: ").append(toIndentedString(engineVersion)).append("\n");

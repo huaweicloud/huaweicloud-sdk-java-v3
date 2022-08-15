@@ -524,6 +524,31 @@ public class OcrMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RecognizeMacaoIdCardRequest, RecognizeMacaoIdCardResponse> recognizeMacaoIdCard =
+        genForrecognizeMacaoIdCard();
+
+    private static HttpRequestDef<RecognizeMacaoIdCardRequest, RecognizeMacaoIdCardResponse> genForrecognizeMacaoIdCard() {
+        // basic
+        HttpRequestDef.Builder<RecognizeMacaoIdCardRequest, RecognizeMacaoIdCardResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, RecognizeMacaoIdCardRequest.class, RecognizeMacaoIdCardResponse.class)
+            .withName("RecognizeMacaoIdCard")
+            .withUri("/v2/{project_id}/ocr/macao-id-card")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<MacaoIdCardRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(MacaoIdCardRequestBody.class),
+            f -> f.withMarshaller(RecognizeMacaoIdCardRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RecognizeMainlandTravelPermitRequest, RecognizeMainlandTravelPermitResponse> recognizeMainlandTravelPermit =
         genForrecognizeMainlandTravelPermit();
 

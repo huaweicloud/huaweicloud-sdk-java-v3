@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.waf.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -28,12 +31,12 @@ public class ListQpsTimelineRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hosts")
 
-    private String hosts;
+    private List<String> hosts = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instances")
 
-    private String instances;
+    private List<String> instances = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_by")
@@ -91,8 +94,24 @@ public class ListQpsTimelineRequest {
         this.to = to;
     }
 
-    public ListQpsTimelineRequest withHosts(String hosts) {
+    public ListQpsTimelineRequest withHosts(List<String> hosts) {
         this.hosts = hosts;
+        return this;
+    }
+
+    public ListQpsTimelineRequest addHostsItem(String hostsItem) {
+        if (this.hosts == null) {
+            this.hosts = new ArrayList<>();
+        }
+        this.hosts.add(hostsItem);
+        return this;
+    }
+
+    public ListQpsTimelineRequest withHosts(Consumer<List<String>> hostsSetter) {
+        if (this.hosts == null) {
+            this.hosts = new ArrayList<>();
+        }
+        hostsSetter.accept(this.hosts);
         return this;
     }
 
@@ -100,28 +119,44 @@ public class ListQpsTimelineRequest {
      * 域名id数组，通过查询云模式防护域名列表（ListHost）获取域名id或者通过独享模式域名列表（ListPremiumHost）获取域名id
      * @return hosts
      */
-    public String getHosts() {
+    public List<String> getHosts() {
         return hosts;
     }
 
-    public void setHosts(String hosts) {
+    public void setHosts(List<String> hosts) {
         this.hosts = hosts;
     }
 
-    public ListQpsTimelineRequest withInstances(String instances) {
+    public ListQpsTimelineRequest withInstances(List<String> instances) {
         this.instances = instances;
         return this;
     }
 
+    public ListQpsTimelineRequest addInstancesItem(String instancesItem) {
+        if (this.instances == null) {
+            this.instances = new ArrayList<>();
+        }
+        this.instances.add(instancesItem);
+        return this;
+    }
+
+    public ListQpsTimelineRequest withInstances(Consumer<List<String>> instancesSetter) {
+        if (this.instances == null) {
+            this.instances = new ArrayList<>();
+        }
+        instancesSetter.accept(this.instances);
+        return this;
+    }
+
     /**
-     * 独享实例实例id（仅实例化模式涉及）
+     * 要查询引擎实例列表（仅独享或者ELB实例化模式涉及）
      * @return instances
      */
-    public String getInstances() {
+    public List<String> getInstances() {
         return instances;
     }
 
-    public void setInstances(String instances) {
+    public void setInstances(List<String> instances) {
         this.instances = instances;
     }
 
@@ -131,7 +166,7 @@ public class ListQpsTimelineRequest {
     }
 
     /**
-     * 展示维度，需要按天展示时传\"DAY\"
+     * 展示维度，按天展示时传\"DAY\"；默认不传，按照分钟展示
      * @return groupBy
      */
     public String getGroupBy() {

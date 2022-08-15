@@ -20,18 +20,13 @@ public class CountItem {
 
     private Integer num;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "host")
-
-    private String host;
-
     public CountItem withKey(String key) {
         this.key = key;
         return this;
     }
 
     /**
-     * 类型
+     * 类型，包括请求总量（ACCESS）、Bot攻击防护（CRAWLER）、攻击总量（TOTAL_ATTACK）、Web基础防护（WEB_ATTACK）、精准防护（PRECISE）以及CC攻击防护（CC）
      * @return key
      */
     public String getKey() {
@@ -59,23 +54,6 @@ public class CountItem {
         this.num = num;
     }
 
-    public CountItem withHost(String host) {
-        this.host = host;
-        return this;
-    }
-
-    /**
-     * 域名
-     * @return host
-     */
-    public String getHost() {
-        return host;
-    }
-
-    public void setHost(String host) {
-        this.host = host;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -85,13 +63,12 @@ public class CountItem {
             return false;
         }
         CountItem countItem = (CountItem) o;
-        return Objects.equals(this.key, countItem.key) && Objects.equals(this.num, countItem.num)
-            && Objects.equals(this.host, countItem.host);
+        return Objects.equals(this.key, countItem.key) && Objects.equals(this.num, countItem.num);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(key, num, host);
+        return Objects.hash(key, num);
     }
 
     @Override
@@ -100,7 +77,6 @@ public class CountItem {
         sb.append("class CountItem {\n");
         sb.append("    key: ").append(toIndentedString(key)).append("\n");
         sb.append("    num: ").append(toIndentedString(num)).append("\n");
-        sb.append("    host: ").append(toIndentedString(host)).append("\n");
         sb.append("}");
         return sb.toString();
     }

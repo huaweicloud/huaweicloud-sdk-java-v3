@@ -19,6 +19,11 @@ public class ListRepositoryTagsResponse extends SdkResponse {
 
     private List<ShowReposTagResp> body = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "Content-Range")
+
+    private String contentRange;
+
     public ListRepositoryTagsResponse withBody(List<ShowReposTagResp> body) {
         this.body = body;
         return this;
@@ -52,6 +57,23 @@ public class ListRepositoryTagsResponse extends SdkResponse {
         this.body = body;
     }
 
+    public ListRepositoryTagsResponse withContentRange(String contentRange) {
+        this.contentRange = contentRange;
+        return this;
+    }
+
+    /**
+     * Get contentRange
+     * @return contentRange
+     */
+    public String getContentRange() {
+        return contentRange;
+    }
+
+    public void setContentRange(String contentRange) {
+        this.contentRange = contentRange;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -61,12 +83,13 @@ public class ListRepositoryTagsResponse extends SdkResponse {
             return false;
         }
         ListRepositoryTagsResponse listRepositoryTagsResponse = (ListRepositoryTagsResponse) o;
-        return Objects.equals(this.body, listRepositoryTagsResponse.body);
+        return Objects.equals(this.body, listRepositoryTagsResponse.body)
+            && Objects.equals(this.contentRange, listRepositoryTagsResponse.contentRange);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(body);
+        return Objects.hash(body, contentRange);
     }
 
     @Override
@@ -74,6 +97,7 @@ public class ListRepositoryTagsResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListRepositoryTagsResponse {\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
+        sb.append("    contentRange: ").append(toIndentedString(contentRange)).append("\n");
         sb.append("}");
         return sb.toString();
     }

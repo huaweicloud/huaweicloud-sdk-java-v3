@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.waf.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -38,12 +41,12 @@ public class ListTopAbnormalRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hosts")
 
-    private String hosts;
+    private List<String> hosts = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instances")
 
-    private String instances;
+    private List<String> instances = null;
 
     public ListTopAbnormalRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -51,7 +54,7 @@ public class ListTopAbnormalRequest {
     }
 
     /**
-     * 您可以通过调用企业项目管理服务（EPS)的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id
+     * 您可以通过调用企业项目管理服务（EPS）的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -102,7 +105,7 @@ public class ListTopAbnormalRequest {
     }
 
     /**
-     * 要查询的前几的结果
+     * 要查询的前几的结果，默认值为5，最大值为10。
      * @return top
      */
     public Integer getTop() {
@@ -119,7 +122,7 @@ public class ListTopAbnormalRequest {
     }
 
     /**
-     * 状态码
+     * 要查询的异常状态码，目前支持查询的异常状态码包括404、500以及502。不传该参数默认查询404的状态码。
      * @return code
      */
     public Integer getCode() {
@@ -130,37 +133,69 @@ public class ListTopAbnormalRequest {
         this.code = code;
     }
 
-    public ListTopAbnormalRequest withHosts(String hosts) {
+    public ListTopAbnormalRequest withHosts(List<String> hosts) {
         this.hosts = hosts;
         return this;
     }
 
+    public ListTopAbnormalRequest addHostsItem(String hostsItem) {
+        if (this.hosts == null) {
+            this.hosts = new ArrayList<>();
+        }
+        this.hosts.add(hostsItem);
+        return this;
+    }
+
+    public ListTopAbnormalRequest withHosts(Consumer<List<String>> hostsSetter) {
+        if (this.hosts == null) {
+            this.hosts = new ArrayList<>();
+        }
+        hostsSetter.accept(this.hosts);
+        return this;
+    }
+
     /**
-     * 域名id数组，通过查询云模式防护域名列表（ListHost）获取域名id或者通过独享模式域名列表（ListPremiumHost）获取域名id
+     * 域名id列表，通过查询云模式防护域名列表（ListHost）获取域名id或者通过独享模式域名列表（ListPremiumHost）获取域名id。默认不传，查询该项目下所有防护域名的top业务异常统计信息。
      * @return hosts
      */
-    public String getHosts() {
+    public List<String> getHosts() {
         return hosts;
     }
 
-    public void setHosts(String hosts) {
+    public void setHosts(List<String> hosts) {
         this.hosts = hosts;
     }
 
-    public ListTopAbnormalRequest withInstances(String instances) {
+    public ListTopAbnormalRequest withInstances(List<String> instances) {
         this.instances = instances;
         return this;
     }
 
+    public ListTopAbnormalRequest addInstancesItem(String instancesItem) {
+        if (this.instances == null) {
+            this.instances = new ArrayList<>();
+        }
+        this.instances.add(instancesItem);
+        return this;
+    }
+
+    public ListTopAbnormalRequest withInstances(Consumer<List<String>> instancesSetter) {
+        if (this.instances == null) {
+            this.instances = new ArrayList<>();
+        }
+        instancesSetter.accept(this.instances);
+        return this;
+    }
+
     /**
-     * 要查询实例列表（仅独享模式涉及）
+     * 要查询引擎实例列表
      * @return instances
      */
-    public String getInstances() {
+    public List<String> getInstances() {
         return instances;
     }
 
-    public void setInstances(String instances) {
+    public void setInstances(List<String> instances) {
         this.instances = instances;
     }
 

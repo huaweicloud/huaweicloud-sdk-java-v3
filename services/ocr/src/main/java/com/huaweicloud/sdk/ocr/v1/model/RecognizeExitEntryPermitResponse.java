@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -14,22 +15,31 @@ public class RecognizeExitEntryPermitResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "result")
 
-    private Object result;
+    private ExitEntryPermitResult result;
 
-    public RecognizeExitEntryPermitResponse withResult(Object result) {
+    public RecognizeExitEntryPermitResponse withResult(ExitEntryPermitResult result) {
         this.result = result;
         return this;
     }
 
+    public RecognizeExitEntryPermitResponse withResult(Consumer<ExitEntryPermitResult> resultSetter) {
+        if (this.result == null) {
+            this.result = new ExitEntryPermitResult();
+            resultSetter.accept(this.result);
+        }
+
+        return this;
+    }
+
     /**
-     * 调用成功时表示调用结果。  调用失败时无此字段。 
+     * Get result
      * @return result
      */
-    public Object getResult() {
+    public ExitEntryPermitResult getResult() {
         return result;
     }
 
-    public void setResult(Object result) {
+    public void setResult(ExitEntryPermitResult result) {
         this.result = result;
     }
 

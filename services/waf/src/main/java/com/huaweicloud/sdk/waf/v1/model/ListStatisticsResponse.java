@@ -41,7 +41,7 @@ public class ListStatisticsResponse extends SdkResponse {
     }
 
     /**
-     * 安全统计数据
+     * 安全总览请求与攻击数据
      * @return body
      */
     public List<CountItem> getBody() {

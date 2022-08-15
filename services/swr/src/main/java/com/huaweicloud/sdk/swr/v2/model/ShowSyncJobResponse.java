@@ -19,6 +19,11 @@ public class ShowSyncJobResponse extends SdkResponse {
 
     private List<SyncJob> body = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "Content-Range")
+
+    private String contentRange;
+
     public ShowSyncJobResponse withBody(List<SyncJob> body) {
         this.body = body;
         return this;
@@ -52,6 +57,23 @@ public class ShowSyncJobResponse extends SdkResponse {
         this.body = body;
     }
 
+    public ShowSyncJobResponse withContentRange(String contentRange) {
+        this.contentRange = contentRange;
+        return this;
+    }
+
+    /**
+     * Get contentRange
+     * @return contentRange
+     */
+    public String getContentRange() {
+        return contentRange;
+    }
+
+    public void setContentRange(String contentRange) {
+        this.contentRange = contentRange;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -61,12 +83,13 @@ public class ShowSyncJobResponse extends SdkResponse {
             return false;
         }
         ShowSyncJobResponse showSyncJobResponse = (ShowSyncJobResponse) o;
-        return Objects.equals(this.body, showSyncJobResponse.body);
+        return Objects.equals(this.body, showSyncJobResponse.body)
+            && Objects.equals(this.contentRange, showSyncJobResponse.contentRange);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(body);
+        return Objects.hash(body, contentRange);
     }
 
     @Override
@@ -74,6 +97,7 @@ public class ShowSyncJobResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowSyncJobResponse {\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
+        sb.append("    contentRange: ").append(toIndentedString(contentRange)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -30,7 +30,7 @@ public class ListTopAbnormalResponse extends SdkResponse {
     }
 
     /**
-     * 攻击类型种类
+     * 异常请求数量
      * @return total
      */
     public Integer getTotal() {
@@ -63,7 +63,7 @@ public class ListTopAbnormalResponse extends SdkResponse {
     }
 
     /**
-     * CountItem详细信息
+     * 异常请求信息数组
      * @return items
      */
     public List<UrlCountItem> getItems() {

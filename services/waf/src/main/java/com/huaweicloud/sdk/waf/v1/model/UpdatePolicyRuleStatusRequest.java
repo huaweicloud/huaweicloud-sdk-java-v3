@@ -51,6 +51,16 @@ public class UpdatePolicyRuleStatusRequest {
          */
         public static final RuletypeEnum ANTITAMPER = new RuletypeEnum("antitamper");
 
+        /**
+         * Enum CUSTOM for value: "custom"
+         */
+        public static final RuletypeEnum CUSTOM = new RuletypeEnum("custom");
+
+        /**
+         * Enum IGNORE for value: "ignore"
+         */
+        public static final RuletypeEnum IGNORE = new RuletypeEnum("ignore");
+
         private static final Map<String, RuletypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, RuletypeEnum> createStaticFields() {
@@ -59,6 +69,8 @@ public class UpdatePolicyRuleStatusRequest {
             map.put("geoip", GEOIP);
             map.put("privacy", PRIVACY);
             map.put("antitamper", ANTITAMPER);
+            map.put("custom", CUSTOM);
+            map.put("ignore", IGNORE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -136,7 +148,7 @@ public class UpdatePolicyRuleStatusRequest {
     }
 
     /**
-     * 企业项目id
+     * 您可以通过调用企业项目管理服务（EPS）的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {

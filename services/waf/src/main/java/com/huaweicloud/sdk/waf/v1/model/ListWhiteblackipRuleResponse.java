@@ -30,7 +30,7 @@ public class ListWhiteblackipRuleResponse extends SdkResponse {
     }
 
     /**
-     * 规则条数
+     * 黑白名单规则条数
      * @return total
      */
     public Integer getTotal() {
@@ -63,7 +63,7 @@ public class ListWhiteblackipRuleResponse extends SdkResponse {
     }
 
     /**
-     * 规则
+     * 黑白名单规则列表信息
      * @return items
      */
     public List<WhiteBlackIpResponseBody> getItems() {

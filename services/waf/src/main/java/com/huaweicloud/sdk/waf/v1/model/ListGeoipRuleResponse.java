@@ -30,7 +30,7 @@ public class ListGeoipRuleResponse extends SdkResponse {
     }
 
     /**
-     * 该策略下地理位置封禁数量
+     * 该策略下地理位置控制规则数量
      * @return total
      */
     public Integer getTotal() {
@@ -63,7 +63,7 @@ public class ListGeoipRuleResponse extends SdkResponse {
     }
 
     /**
-     * 地理位置封禁列表
+     * 地理位置控制规则数组
      * @return items
      */
     public List<GeOIpItem> getItems() {

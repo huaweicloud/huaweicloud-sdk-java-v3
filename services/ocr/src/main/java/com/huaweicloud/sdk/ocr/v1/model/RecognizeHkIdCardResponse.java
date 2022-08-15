@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -14,22 +15,31 @@ public class RecognizeHkIdCardResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "result")
 
-    private Object result;
+    private HkIdCardResult result;
 
-    public RecognizeHkIdCardResponse withResult(Object result) {
+    public RecognizeHkIdCardResponse withResult(HkIdCardResult result) {
         this.result = result;
         return this;
     }
 
+    public RecognizeHkIdCardResponse withResult(Consumer<HkIdCardResult> resultSetter) {
+        if (this.result == null) {
+            this.result = new HkIdCardResult();
+            resultSetter.accept(this.result);
+        }
+
+        return this;
+    }
+
     /**
-     * 调用成功时表示调用结果。  调用失败时无此字段。 
+     * Get result
      * @return result
      */
-    public Object getResult() {
+    public HkIdCardResult getResult() {
         return result;
     }
 
-    public void setResult(Object result) {
+    public void setResult(HkIdCardResult result) {
         this.result = result;
     }
 

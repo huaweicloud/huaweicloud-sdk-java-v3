@@ -46,7 +46,7 @@ public class QueryIndirectPartnersReq {
     }
 
     /**
-     * 精英服务商伙伴的账号名。
+     * 云经销商伙伴的账号名。 此参数不携带或携带值为空串或携带值为null时，不作为筛选条件。
      * @return accountName
      */
     public String getAccountName() {
@@ -63,7 +63,7 @@ public class QueryIndirectPartnersReq {
     }
 
     /**
-     * 精英服务商关联华为云伙伴能力中心的开始时间。 UTC时间（包括时区），比如2016-03-28T00:00:00Z
+     * 云经销商关联华为云总经销商的开始时间。 UTC时间（包括时区），比如2016-03-28T00:00:00Z。 此参数不携带或携带值为null时，不作为筛选条件。
      * @return associatedOnBegin
      */
     public String getAssociatedOnBegin() {
@@ -80,7 +80,7 @@ public class QueryIndirectPartnersReq {
     }
 
     /**
-     * 精英服务商关联华为云伙伴能力中心的结束时间。 UTC时间（包括时区），比如2016-03-28T00:00:00Z
+     * 云经销商关联华为云总经销商的结束时间。 UTC时间（包括时区），比如2016-03-28T00:00:00Z。 此参数不携带或携带值为null时，不作为筛选条件。
      * @return associatedOnEnd
      */
     public String getAssociatedOnEnd() {
@@ -135,7 +135,7 @@ public class QueryIndirectPartnersReq {
     }
 
     /**
-     * 精英服务商ID。获取方法请参见[查询精英服务商列表](https://support.huaweicloud.com/api-bpconsole/espp_00003.html)。
+     * 云经销商ID。获取方法请参见[查询精英服务商列表](https://support.huaweicloud.com/api-bpconsole/espp_00003.html)。 如果需要查询具体某个云经销商伙伴，必须携带该字段。除此之外，此参数不做处理。
      * @return indirectPartnerId
      */
     public String getIndirectPartnerId() {

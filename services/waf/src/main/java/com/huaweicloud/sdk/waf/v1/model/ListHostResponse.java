@@ -63,7 +63,7 @@ public class ListHostResponse extends SdkResponse {
     }
 
     /**
-     * 详细的防护域名信息
+     * 详细的云模式防护域名列表信息
      * @return items
      */
     public List<CloudWafHostItem> getItems() {

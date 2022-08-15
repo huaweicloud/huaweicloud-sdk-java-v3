@@ -365,7 +365,7 @@ public class MonthlyBillRecord {
     }
 
     /**
-     * 服务商。 1：华为云2：云市场
+     * 服务商。 1：华为云2：云商店
      * @return providerType
      */
     public Integer getProviderType() {

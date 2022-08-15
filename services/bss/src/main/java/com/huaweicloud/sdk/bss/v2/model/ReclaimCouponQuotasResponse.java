@@ -46,7 +46,7 @@ public class ReclaimCouponQuotasResponse extends SdkResponse {
     }
 
     /**
-     * 回收失败的精英服务商额度信息，具体参见表1，只有HTTP STATUS 200的时候才有这个结构体。
+     * 回收失败的云经销商额度信息，具体参见表1，只有HTTP STATUS 200的时候才有这个结构体。
      * @return errorDetails
      */
     public List<ErrorDetail> getErrorDetails() {
@@ -79,7 +79,7 @@ public class ReclaimCouponQuotasResponse extends SdkResponse {
     }
 
     /**
-     * 回收成功的精英服务商额度信息，具体参见表2，只有HTTP STATUS 200的时候才有这个结构体。
+     * 回收成功的云经销商额度信息，具体参见表2，只有HTTP STATUS 200的时候才有这个结构体。
      * @return simpleQuotaInfos
      */
     public List<QuotaReclaim> getSimpleQuotaInfos() {

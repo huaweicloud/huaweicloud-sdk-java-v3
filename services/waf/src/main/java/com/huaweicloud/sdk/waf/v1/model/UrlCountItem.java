@@ -65,7 +65,7 @@ public class UrlCountItem {
     }
 
     /**
-     * 域名
+     * 防护域名
      * @return host
      */
     public String getHost() {

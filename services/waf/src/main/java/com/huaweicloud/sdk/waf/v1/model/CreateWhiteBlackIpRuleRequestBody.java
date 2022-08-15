@@ -30,6 +30,11 @@ public class CreateWhiteBlackIpRuleRequestBody {
 
     private Integer white;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ip_group_id")
+
+    private String ipGroupId;
+
     public CreateWhiteBlackIpRuleRequestBody withName(String name) {
         this.name = name;
         return this;
@@ -98,6 +103,23 @@ public class CreateWhiteBlackIpRuleRequestBody {
         this.white = white;
     }
 
+    public CreateWhiteBlackIpRuleRequestBody withIpGroupId(String ipGroupId) {
+        this.ipGroupId = ipGroupId;
+        return this;
+    }
+
+    /**
+     * 创建的Ip地址组id，该参数与addr参数只能使用一个；Ip地址组可在控制台中对象管理->地址组管理中添加。
+     * @return ipGroupId
+     */
+    public String getIpGroupId() {
+        return ipGroupId;
+    }
+
+    public void setIpGroupId(String ipGroupId) {
+        this.ipGroupId = ipGroupId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -110,12 +132,13 @@ public class CreateWhiteBlackIpRuleRequestBody {
         return Objects.equals(this.name, createWhiteBlackIpRuleRequestBody.name)
             && Objects.equals(this.addr, createWhiteBlackIpRuleRequestBody.addr)
             && Objects.equals(this.description, createWhiteBlackIpRuleRequestBody.description)
-            && Objects.equals(this.white, createWhiteBlackIpRuleRequestBody.white);
+            && Objects.equals(this.white, createWhiteBlackIpRuleRequestBody.white)
+            && Objects.equals(this.ipGroupId, createWhiteBlackIpRuleRequestBody.ipGroupId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, addr, description, white);
+        return Objects.hash(name, addr, description, white, ipGroupId);
     }
 
     @Override
@@ -126,6 +149,7 @@ public class CreateWhiteBlackIpRuleRequestBody {
         sb.append("    addr: ").append(toIndentedString(addr)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    white: ").append(toIndentedString(white)).append("\n");
+        sb.append("    ipGroupId: ").append(toIndentedString(ipGroupId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

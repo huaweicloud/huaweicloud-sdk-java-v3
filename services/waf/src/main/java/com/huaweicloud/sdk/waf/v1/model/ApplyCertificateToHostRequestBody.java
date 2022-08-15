@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 绑定证书和域名的请求体
+ * 绑定证书和域名的请求体，云模式HTTPS域名id（cloud_host_ids）与独享模式HTTPS域名id（premium_host_ids）至少填一项
  */
 public class ApplyCertificateToHostRequestBody {
 

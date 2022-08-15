@@ -26,7 +26,7 @@ public class ReclaimIndirectPartnerAccountReq {
     }
 
     /**
-     * 精英服务商ID。获取方法请参见[查询精英服务商列表](https://support.huaweicloud.com/api-bpconsole/espp_00003.html)。
+     * 云经销商ID。获取方法请参见[查询云经销商列表](https://support.huaweicloud.com/api-bpconsole/espp_00003.html)。
      * @return indirectPartnerId
      */
     public String getIndirectPartnerId() {
@@ -43,7 +43,7 @@ public class ReclaimIndirectPartnerAccountReq {
     }
 
     /**
-     * 回收金额。 华为云伙伴能力中心回收的精英服务商的账户金额。  说明： 回收金额不能大于精英服务商的账户余额。 单位：元。取值大于0且精确到小数点后2位。
+     * 回收金额。 华为云总经销商回收的云经销商的账户金额。  说明： 回收金额不能大于云经销商的账户余额。 单位：元。取值大于0且精确到小数点后2位。
      * minimum: 0.01
      * maximum: 999999999999
      * @return amount

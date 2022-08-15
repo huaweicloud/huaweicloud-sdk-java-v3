@@ -49,7 +49,7 @@ public class UpdateSecretStageRequest {
     }
 
     /**
-     * 凭据版本状态的名称。
+     * 凭据版本状态的名称。满足 '^[a-zA-Z0-9._-]{1,64}$'
      * @return stageName
      */
     public String getStageName() {

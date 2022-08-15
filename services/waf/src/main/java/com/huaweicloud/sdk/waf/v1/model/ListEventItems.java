@@ -56,6 +56,11 @@ public class ListEventItems {
     private String payload;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "payload_location")
+
+    private String payloadLocation;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "action")
 
     private String action;
@@ -172,7 +177,7 @@ public class ListEventItems {
     }
 
     /**
-     * 源ip
+     * 源ip，Web访问者的IP地址（攻击者IP地址）
      * @return sip
      */
     public String getSip() {
@@ -266,6 +271,23 @@ public class ListEventItems {
 
     public void setPayload(String payload) {
         this.payload = payload;
+    }
+
+    public ListEventItems withPayloadLocation(String payloadLocation) {
+        this.payloadLocation = payloadLocation;
+        return this;
+    }
+
+    /**
+     * 命中的载荷位置
+     * @return payloadLocation
+     */
+    public String getPayloadLocation() {
+        return payloadLocation;
+    }
+
+    public void setPayloadLocation(String payloadLocation) {
+        this.payloadLocation = payloadLocation;
     }
 
     public ListEventItems withAction(String action) {
@@ -486,6 +508,7 @@ public class ListEventItems {
             && Objects.equals(this.host, listEventItems.host) && Objects.equals(this.url, listEventItems.url)
             && Objects.equals(this.attack, listEventItems.attack) && Objects.equals(this.rule, listEventItems.rule)
             && Objects.equals(this.payload, listEventItems.payload)
+            && Objects.equals(this.payloadLocation, listEventItems.payloadLocation)
             && Objects.equals(this.action, listEventItems.action)
             && Objects.equals(this.requestLine, listEventItems.requestLine)
             && Objects.equals(this.headers, listEventItems.headers)
@@ -509,6 +532,7 @@ public class ListEventItems {
             attack,
             rule,
             payload,
+            payloadLocation,
             action,
             requestLine,
             headers,
@@ -536,6 +560,7 @@ public class ListEventItems {
         sb.append("    attack: ").append(toIndentedString(attack)).append("\n");
         sb.append("    rule: ").append(toIndentedString(rule)).append("\n");
         sb.append("    payload: ").append(toIndentedString(payload)).append("\n");
+        sb.append("    payloadLocation: ").append(toIndentedString(payloadLocation)).append("\n");
         sb.append("    action: ").append(toIndentedString(action)).append("\n");
         sb.append("    requestLine: ").append(toIndentedString(requestLine)).append("\n");
         sb.append("    headers: ").append(toIndentedString(headers)).append("\n");

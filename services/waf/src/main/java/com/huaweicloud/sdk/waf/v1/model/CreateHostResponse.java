@@ -1,11 +1,16 @@
 package com.huaweicloud.sdk.waf.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -44,6 +49,94 @@ public class CreateHostResponse extends SdkResponse {
 
     private Integer accessStatus;
 
+    /**
+     * LB负载均衡，仅专业版（原企业版）和铂金版（原旗舰版）支持配置负载均衡算法   - 源IP Hash：将某个IP的请求定向到同一个服务器   - 加权轮询：所有请求将按权重轮流分配给源站服务器   - Session Hash：将某个Session标识的请求定向到同一个源站服务器，请确保在域名添加完毕后配置攻击惩罚的流量标识，否则Session Hash配置不生效
+     */
+    public static final class LbAlgorithmEnum {
+
+        /**
+         * Enum IP_HASH for value: "ip_hash"
+         */
+        public static final LbAlgorithmEnum IP_HASH = new LbAlgorithmEnum("ip_hash");
+
+        /**
+         * Enum ROUND_ROBIN for value: "round_robin"
+         */
+        public static final LbAlgorithmEnum ROUND_ROBIN = new LbAlgorithmEnum("round_robin");
+
+        /**
+         * Enum SESSION_HASH for value: "session_hash"
+         */
+        public static final LbAlgorithmEnum SESSION_HASH = new LbAlgorithmEnum("session_hash");
+
+        private static final Map<String, LbAlgorithmEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, LbAlgorithmEnum> createStaticFields() {
+            Map<String, LbAlgorithmEnum> map = new HashMap<>();
+            map.put("ip_hash", IP_HASH);
+            map.put("round_robin", ROUND_ROBIN);
+            map.put("session_hash", SESSION_HASH);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        LbAlgorithmEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static LbAlgorithmEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            LbAlgorithmEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new LbAlgorithmEnum(value);
+            }
+            return result;
+        }
+
+        public static LbAlgorithmEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            LbAlgorithmEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof LbAlgorithmEnum) {
+                return this.value.equals(((LbAlgorithmEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "lb_algorithm")
+
+    private LbAlgorithmEnum lbAlgorithm;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protocol")
 
@@ -65,11 +158,6 @@ public class CreateHostResponse extends SdkResponse {
     private List<CloudWafServer> server = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "flag")
-
-    private Flag flag;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "proxy")
 
     private Boolean proxy;
@@ -85,9 +173,29 @@ public class CreateHostResponse extends SdkResponse {
     private Boolean exclusiveIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "web_tag")
+
+    private String webTag;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "http2_enable")
 
     private Boolean http2Enable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "block_page")
+
+    private BlockPage blockPage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "flag")
+
+    private Flag flag;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "extend")
+
+    private Map<String, String> extend = null;
 
     public CreateHostResponse withId(String id) {
         this.id = id;
@@ -180,7 +288,7 @@ public class CreateHostResponse extends SdkResponse {
     }
 
     /**
-     * 接入状态
+     * 域名接入状态，0表示未接入，1表示已接入
      * @return accessStatus
      */
     public Integer getAccessStatus() {
@@ -189,6 +297,23 @@ public class CreateHostResponse extends SdkResponse {
 
     public void setAccessStatus(Integer accessStatus) {
         this.accessStatus = accessStatus;
+    }
+
+    public CreateHostResponse withLbAlgorithm(LbAlgorithmEnum lbAlgorithm) {
+        this.lbAlgorithm = lbAlgorithm;
+        return this;
+    }
+
+    /**
+     * LB负载均衡，仅专业版（原企业版）和铂金版（原旗舰版）支持配置负载均衡算法   - 源IP Hash：将某个IP的请求定向到同一个服务器   - 加权轮询：所有请求将按权重轮流分配给源站服务器   - Session Hash：将某个Session标识的请求定向到同一个源站服务器，请确保在域名添加完毕后配置攻击惩罚的流量标识，否则Session Hash配置不生效
+     * @return lbAlgorithm
+     */
+    public LbAlgorithmEnum getLbAlgorithm() {
+        return lbAlgorithm;
+    }
+
+    public void setLbAlgorithm(LbAlgorithmEnum lbAlgorithm) {
+        this.lbAlgorithm = lbAlgorithm;
     }
 
     public CreateHostResponse withProtocol(String protocol) {
@@ -264,7 +389,7 @@ public class CreateHostResponse extends SdkResponse {
     }
 
     /**
-     * 源站信息
+     * 防护域名的源站服务器配置信息
      * @return server
      */
     public List<CloudWafServer> getServer() {
@@ -275,39 +400,13 @@ public class CreateHostResponse extends SdkResponse {
         this.server = server;
     }
 
-    public CreateHostResponse withFlag(Flag flag) {
-        this.flag = flag;
-        return this;
-    }
-
-    public CreateHostResponse withFlag(Consumer<Flag> flagSetter) {
-        if (this.flag == null) {
-            this.flag = new Flag();
-            flagSetter.accept(this.flag);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get flag
-     * @return flag
-     */
-    public Flag getFlag() {
-        return flag;
-    }
-
-    public void setFlag(Flag flag) {
-        this.flag = flag;
-    }
-
     public CreateHostResponse withProxy(Boolean proxy) {
         this.proxy = proxy;
         return this;
     }
 
     /**
-     * 是否开启了代理
+     * 防护域名是否使用代理   - false：不使用代理   - true：使用代理
      * @return proxy
      */
     public Boolean getProxy() {
@@ -341,7 +440,7 @@ public class CreateHostResponse extends SdkResponse {
     }
 
     /**
-     * 是否使用独享ip
+     * 是否使用独享ip   - true：使用独享ip   - false：不实用独享ip
      * @return exclusiveIp
      */
     public Boolean getExclusiveIp() {
@@ -352,13 +451,30 @@ public class CreateHostResponse extends SdkResponse {
         this.exclusiveIp = exclusiveIp;
     }
 
+    public CreateHostResponse withWebTag(String webTag) {
+        this.webTag = webTag;
+        return this;
+    }
+
+    /**
+     * 网站名称，对应WAF控制台域名详情中的网站名称
+     * @return webTag
+     */
+    public String getWebTag() {
+        return webTag;
+    }
+
+    public void setWebTag(String webTag) {
+        this.webTag = webTag;
+    }
+
     public CreateHostResponse withHttp2Enable(Boolean http2Enable) {
         this.http2Enable = http2Enable;
         return this;
     }
 
     /**
-     * 是否支持http2
+     * 是否支持http2   - true：表示支持http2   - false：表示不支持http2
      * @return http2Enable
      */
     public Boolean getHttp2Enable() {
@@ -367,6 +483,91 @@ public class CreateHostResponse extends SdkResponse {
 
     public void setHttp2Enable(Boolean http2Enable) {
         this.http2Enable = http2Enable;
+    }
+
+    public CreateHostResponse withBlockPage(BlockPage blockPage) {
+        this.blockPage = blockPage;
+        return this;
+    }
+
+    public CreateHostResponse withBlockPage(Consumer<BlockPage> blockPageSetter) {
+        if (this.blockPage == null) {
+            this.blockPage = new BlockPage();
+            blockPageSetter.accept(this.blockPage);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get blockPage
+     * @return blockPage
+     */
+    public BlockPage getBlockPage() {
+        return blockPage;
+    }
+
+    public void setBlockPage(BlockPage blockPage) {
+        this.blockPage = blockPage;
+    }
+
+    public CreateHostResponse withFlag(Flag flag) {
+        this.flag = flag;
+        return this;
+    }
+
+    public CreateHostResponse withFlag(Consumer<Flag> flagSetter) {
+        if (this.flag == null) {
+            this.flag = new Flag();
+            flagSetter.accept(this.flag);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get flag
+     * @return flag
+     */
+    public Flag getFlag() {
+        return flag;
+    }
+
+    public void setFlag(Flag flag) {
+        this.flag = flag;
+    }
+
+    public CreateHostResponse withExtend(Map<String, String> extend) {
+        this.extend = extend;
+        return this;
+    }
+
+    public CreateHostResponse putExtendItem(String key, String extendItem) {
+        if (this.extend == null) {
+            this.extend = new HashMap<>();
+        }
+        this.extend.put(key, extendItem);
+        return this;
+    }
+
+    public CreateHostResponse withExtend(Consumer<Map<String, String>> extendSetter) {
+        if (this.extend == null) {
+            this.extend = new HashMap<>();
+        }
+        extendSetter.accept(this.extend);
+        return this;
+    }
+
+    /**
+     * 扩展字段，用于保存防护域名的一些配置信息。
+     * @return extend
+     */
+    public Map<String, String> getExtend() {
+        return extend;
+    }
+
+    public void setExtend(Map<String, String> extend) {
+        this.extend = extend;
     }
 
     @Override
@@ -384,15 +585,19 @@ public class CreateHostResponse extends SdkResponse {
             && Objects.equals(this.accessCode, createHostResponse.accessCode)
             && Objects.equals(this.protectStatus, createHostResponse.protectStatus)
             && Objects.equals(this.accessStatus, createHostResponse.accessStatus)
+            && Objects.equals(this.lbAlgorithm, createHostResponse.lbAlgorithm)
             && Objects.equals(this.protocol, createHostResponse.protocol)
             && Objects.equals(this.certificateid, createHostResponse.certificateid)
             && Objects.equals(this.certificatename, createHostResponse.certificatename)
             && Objects.equals(this.server, createHostResponse.server)
-            && Objects.equals(this.flag, createHostResponse.flag)
             && Objects.equals(this.proxy, createHostResponse.proxy)
             && Objects.equals(this.timestamp, createHostResponse.timestamp)
             && Objects.equals(this.exclusiveIp, createHostResponse.exclusiveIp)
-            && Objects.equals(this.http2Enable, createHostResponse.http2Enable);
+            && Objects.equals(this.webTag, createHostResponse.webTag)
+            && Objects.equals(this.http2Enable, createHostResponse.http2Enable)
+            && Objects.equals(this.blockPage, createHostResponse.blockPage)
+            && Objects.equals(this.flag, createHostResponse.flag)
+            && Objects.equals(this.extend, createHostResponse.extend);
     }
 
     @Override
@@ -403,15 +608,19 @@ public class CreateHostResponse extends SdkResponse {
             accessCode,
             protectStatus,
             accessStatus,
+            lbAlgorithm,
             protocol,
             certificateid,
             certificatename,
             server,
-            flag,
             proxy,
             timestamp,
             exclusiveIp,
-            http2Enable);
+            webTag,
+            http2Enable,
+            blockPage,
+            flag,
+            extend);
     }
 
     @Override
@@ -424,15 +633,19 @@ public class CreateHostResponse extends SdkResponse {
         sb.append("    accessCode: ").append(toIndentedString(accessCode)).append("\n");
         sb.append("    protectStatus: ").append(toIndentedString(protectStatus)).append("\n");
         sb.append("    accessStatus: ").append(toIndentedString(accessStatus)).append("\n");
+        sb.append("    lbAlgorithm: ").append(toIndentedString(lbAlgorithm)).append("\n");
         sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
         sb.append("    certificateid: ").append(toIndentedString(certificateid)).append("\n");
         sb.append("    certificatename: ").append(toIndentedString(certificatename)).append("\n");
         sb.append("    server: ").append(toIndentedString(server)).append("\n");
-        sb.append("    flag: ").append(toIndentedString(flag)).append("\n");
         sb.append("    proxy: ").append(toIndentedString(proxy)).append("\n");
         sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
         sb.append("    exclusiveIp: ").append(toIndentedString(exclusiveIp)).append("\n");
+        sb.append("    webTag: ").append(toIndentedString(webTag)).append("\n");
         sb.append("    http2Enable: ").append(toIndentedString(http2Enable)).append("\n");
+        sb.append("    blockPage: ").append(toIndentedString(blockPage)).append("\n");
+        sb.append("    flag: ").append(toIndentedString(flag)).append("\n");
+        sb.append("    extend: ").append(toIndentedString(extend)).append("\n");
         sb.append("}");
         return sb.toString();
     }

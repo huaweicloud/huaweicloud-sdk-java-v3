@@ -490,6 +490,37 @@ public class BssMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListCostsRequest, ListCostsResponse> listCosts = genForlistCosts();
+
+    private static HttpRequestDef<ListCostsRequest, ListCostsResponse> genForlistCosts() {
+        // basic
+        HttpRequestDef.Builder<ListCostsRequest, ListCostsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListCostsRequest.class, ListCostsResponse.class)
+                .withName("ListCosts")
+                .withUri("/v4/costs/cost-analysed-bills/query")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCostsRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<ListCostsReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListCostsReq.class),
+            f -> f.withMarshaller(ListCostsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListCountiesRequest, ListCountiesResponse> listCounties = genForlistCounties();
 
     private static HttpRequestDef<ListCountiesRequest, ListCountiesResponse> genForlistCounties() {

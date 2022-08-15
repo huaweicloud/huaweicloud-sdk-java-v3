@@ -15,6 +15,11 @@ public class ListNamespacesRequest {
 
     private String namespace;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "filter")
+
+    private String filter;
+
     public ListNamespacesRequest withNamespace(String namespace) {
         this.namespace = namespace;
         return this;
@@ -32,6 +37,23 @@ public class ListNamespacesRequest {
         this.namespace = namespace;
     }
 
+    public ListNamespacesRequest withFilter(String filter) {
+        this.filter = filter;
+        return this;
+    }
+
+    /**
+     * 应填写namespace::{namespace}|mode::{mode}。其中{namespace}是组织名称，{mode}如果不设置，查看有权限的组织列表；设置为visible，查看可见的组织列表（部分组织：仓库有权限，组织没有权限）。
+     * @return filter
+     */
+    public String getFilter() {
+        return filter;
+    }
+
+    public void setFilter(String filter) {
+        this.filter = filter;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -41,12 +63,13 @@ public class ListNamespacesRequest {
             return false;
         }
         ListNamespacesRequest listNamespacesRequest = (ListNamespacesRequest) o;
-        return Objects.equals(this.namespace, listNamespacesRequest.namespace);
+        return Objects.equals(this.namespace, listNamespacesRequest.namespace)
+            && Objects.equals(this.filter, listNamespacesRequest.filter);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(namespace);
+        return Objects.hash(namespace, filter);
     }
 
     @Override
@@ -54,6 +77,7 @@ public class ListNamespacesRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListNamespacesRequest {\n");
         sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");
+        sb.append("    filter: ").append(toIndentedString(filter)).append("\n");
         sb.append("}");
         return sb.toString();
     }

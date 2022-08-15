@@ -124,7 +124,7 @@ public class ShowRepositoryResponse extends SdkResponse {
     }
 
     /**
-     * 命名空间编号
+     * 组织编号
      * @return nsId
      */
     public Long getNsId() {

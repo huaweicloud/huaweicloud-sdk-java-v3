@@ -58,6 +58,11 @@ public class Configs {
 
     private CacheUrlParameterFilter cacheUrlParameterFilter;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ipv6_accelerate")
+
+    private Integer ipv6Accelerate;
+
     public Configs withOriginRequestHeader(List<OriginRequestHeader> originRequestHeader) {
         this.originRequestHeader = originRequestHeader;
         return this;
@@ -80,7 +85,7 @@ public class Configs {
     }
 
     /**
-     * 回源请求头配置
+     * 回源请求头改写 该功能将覆盖原有配置（清空之前的配置），在使用此接口时，请上传全量头部信息。
      * @return originRequestHeader
      */
     public List<OriginRequestHeader> getOriginRequestHeader() {
@@ -113,7 +118,7 @@ public class Configs {
     }
 
     /**
-     * http header配置
+     * http header配置 该功能将覆盖原有配置（清空之前的配置），在使用此接口时，请上传全量头部信息。
      * @return httpResponseHeader
      */
     public List<HttpResponseHeader> getHttpResponseHeader() {
@@ -304,6 +309,23 @@ public class Configs {
         this.cacheUrlParameterFilter = cacheUrlParameterFilter;
     }
 
+    public Configs withIpv6Accelerate(Integer ipv6Accelerate) {
+        this.ipv6Accelerate = ipv6Accelerate;
+        return this;
+    }
+
+    /**
+     * ipv6设置（1：打开；0：关闭）
+     * @return ipv6Accelerate
+     */
+    public Integer getIpv6Accelerate() {
+        return ipv6Accelerate;
+    }
+
+    public void setIpv6Accelerate(Integer ipv6Accelerate) {
+        this.ipv6Accelerate = ipv6Accelerate;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -320,7 +342,8 @@ public class Configs {
             && Objects.equals(this.originProtocol, configs.originProtocol)
             && Objects.equals(this.forceRedirect, configs.forceRedirect)
             && Objects.equals(this.compress, configs.compress)
-            && Objects.equals(this.cacheUrlParameterFilter, configs.cacheUrlParameterFilter);
+            && Objects.equals(this.cacheUrlParameterFilter, configs.cacheUrlParameterFilter)
+            && Objects.equals(this.ipv6Accelerate, configs.ipv6Accelerate);
     }
 
     @Override
@@ -333,7 +356,8 @@ public class Configs {
             originProtocol,
             forceRedirect,
             compress,
-            cacheUrlParameterFilter);
+            cacheUrlParameterFilter,
+            ipv6Accelerate);
     }
 
     @Override
@@ -349,6 +373,7 @@ public class Configs {
         sb.append("    forceRedirect: ").append(toIndentedString(forceRedirect)).append("\n");
         sb.append("    compress: ").append(toIndentedString(compress)).append("\n");
         sb.append("    cacheUrlParameterFilter: ").append(toIndentedString(cacheUrlParameterFilter)).append("\n");
+        sb.append("    ipv6Accelerate: ").append(toIndentedString(ipv6Accelerate)).append("\n");
         sb.append("}");
         return sb.toString();
     }

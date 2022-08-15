@@ -1181,6 +1181,85 @@ public class CdnMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowUrlTaskInfoRequest, ShowUrlTaskInfoResponse> showUrlTaskInfo =
+        genForshowUrlTaskInfo();
+
+    private static HttpRequestDef<ShowUrlTaskInfoRequest, ShowUrlTaskInfoResponse> genForshowUrlTaskInfo() {
+        // basic
+        HttpRequestDef.Builder<ShowUrlTaskInfoRequest, ShowUrlTaskInfoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowUrlTaskInfoRequest.class, ShowUrlTaskInfoResponse.class)
+                .withName("ShowUrlTaskInfo")
+                .withUri("/v1.0/cdn/contentgateway/url-tasks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowUrlTaskInfoRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            }));
+        builder.<Integer>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowUrlTaskInfoRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowUrlTaskInfoRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowUrlTaskInfoRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("url",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowUrlTaskInfoRequest::getUrl, (req, v) -> {
+                req.setUrl(v);
+            }));
+        builder.<String>withRequestField("task_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowUrlTaskInfoRequest::getTaskType, (req, v) -> {
+                req.setTaskType(v);
+            }));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowUrlTaskInfoRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            }));
+        builder.<String>withRequestField("file_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowUrlTaskInfoRequest::getFileType, (req, v) -> {
+                req.setFileType(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowUrlTaskInfoResponse::getXRequestId, ShowUrlTaskInfoResponse::setXRequestId));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateBlackWhiteListRequest, UpdateBlackWhiteListResponse> updateBlackWhiteList =
         genForupdateBlackWhiteList();
 

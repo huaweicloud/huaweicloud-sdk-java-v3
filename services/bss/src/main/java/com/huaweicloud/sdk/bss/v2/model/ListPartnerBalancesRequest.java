@@ -21,7 +21,7 @@ public class ListPartnerBalancesRequest {
     }
 
     /**
-     * 精英服务商ID。获取方法请参见[查询精英服务商列表](https://support.huaweicloud.com/api-bpconsole/espp_00003.html)。华为云伙伴能力中心（一级经销商）查询精英服务商（二级经销商）余额时，需要携带该参数；否则只能查询自己的账户余额。
+     * 云经销商ID。获取方法请参见[查询云经销商列表](https://support.huaweicloud.com/api-bpconsole/espp_00003.html)。华为云总经销商（一级经销商）查询云经销商（二级经销商）余额时，需要携带该参数；除此之外，此参数不做处理。否则只能查询自己的账户余额。
      * @return indirectPartnerId
      */
     public String getIndirectPartnerId() {

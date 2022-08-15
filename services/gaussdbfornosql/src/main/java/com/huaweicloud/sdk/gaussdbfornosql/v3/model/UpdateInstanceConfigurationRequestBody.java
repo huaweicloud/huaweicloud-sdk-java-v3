@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.gaussdbfornosql.v3.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -14,32 +16,38 @@ public class UpdateInstanceConfigurationRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "values")
 
-    private UpdateInstanceConfigurationValuesOption values;
+    private Map<String, String> values = null;
 
-    public UpdateInstanceConfigurationRequestBody withValues(UpdateInstanceConfigurationValuesOption values) {
+    public UpdateInstanceConfigurationRequestBody withValues(Map<String, String> values) {
         this.values = values;
         return this;
     }
 
-    public UpdateInstanceConfigurationRequestBody withValues(
-        Consumer<UpdateInstanceConfigurationValuesOption> valuesSetter) {
+    public UpdateInstanceConfigurationRequestBody putValuesItem(String key, String valuesItem) {
         if (this.values == null) {
-            this.values = new UpdateInstanceConfigurationValuesOption();
-            valuesSetter.accept(this.values);
+            this.values = new HashMap<>();
         }
+        this.values.put(key, valuesItem);
+        return this;
+    }
 
+    public UpdateInstanceConfigurationRequestBody withValues(Consumer<Map<String, String>> valuesSetter) {
+        if (this.values == null) {
+            this.values = new HashMap<>();
+        }
+        valuesSetter.accept(this.values);
         return this;
     }
 
     /**
-     * Get values
+     * 参数值对象，用户基于默认参数模板自定义的参数值。为空时不修改参数值。
      * @return values
      */
-    public UpdateInstanceConfigurationValuesOption getValues() {
+    public Map<String, String> getValues() {
         return values;
     }
 
-    public void setValues(UpdateInstanceConfigurationValuesOption values) {
+    public void setValues(Map<String, String> values) {
         this.values = values;
     }
 

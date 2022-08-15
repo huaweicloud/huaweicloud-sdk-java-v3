@@ -81,7 +81,7 @@ public class ListCustomerOrdersRequest {
     }
 
     /**
-     * 订单ID。 说明： 使用特殊字符进行查询的时候，请注意进行URL编码转换，如“%”的转码应为“%25”。
+     * 订单ID。此参数不携带或携带值为空时，不作为筛选条件。 说明： 使用特殊字符进行查询的时候，请注意进行URL编码转换，如“%”的转码应为“%25”。
      * @return orderId
      */
     public String getOrderId() {
@@ -98,7 +98,7 @@ public class ListCustomerOrdersRequest {
     }
 
     /**
-     * 客户账号ID。您可以调用[查询客户列表](https://support.huaweicloud.com/api-bpconsole/mc_00021.html)接口获取customer_id。
+     * 客户账号ID。您可以调用查询客户列表接口获取customer_id。此参数不携带或携带值为空时，不作为筛选条件。
      * @return customerId
      */
     public String getCustomerId() {
@@ -115,7 +115,7 @@ public class ListCustomerOrdersRequest {
     }
 
     /**
-     * 订单创建开始时间。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。
+     * 订单创建开始时间。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。此参数不携带或携带值为空时，不作为筛选条件。
      * @return createTimeBegin
      */
     public String getCreateTimeBegin() {
@@ -132,7 +132,7 @@ public class ListCustomerOrdersRequest {
     }
 
     /**
-     * 订单创建结束时间。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。
+     * 订单创建结束时间。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。此参数不携带或携带值为空时，不作为筛选条件。
      * @return createTimeEnd
      */
     public String getCreateTimeEnd() {
@@ -149,7 +149,7 @@ public class ListCustomerOrdersRequest {
     }
 
     /**
-     * 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用查询云服务类型列表接口获取。
+     * 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用查询云服务类型列表接口获取。此参数不携带或携带值为空时，不作为筛选条件。
      * @return serviceTypeCode
      */
     public String getServiceTypeCode() {
@@ -166,7 +166,7 @@ public class ListCustomerOrdersRequest {
     }
 
     /**
-     * 订单状态。1：待审核3：处理中4：已取消5：已完成6：待支付9：待确认
+     * 订单状态：1：待审核3：处理中4：已取消5：已完成6：待支付9：待确认此参数不携带或携带值为空时，不作为筛选条件。
      * minimum: 1
      * maximum: 9
      * @return status
@@ -185,7 +185,7 @@ public class ListCustomerOrdersRequest {
     }
 
     /**
-     * 订单类型。1：开通2：续订3：变更4：退订11：按需转包年/包月13：试用14：转商用15：费用调整
+     * 订单类型：1：开通2：续订3：变更4：退订11：按需转包年/包月13：试用14：转商用15：费用调整此参数不携带或携带值为空时，不作为筛选条件。
      * @return orderType
      */
     public String getOrderType() {
@@ -240,7 +240,7 @@ public class ListCustomerOrdersRequest {
     }
 
     /**
-     * 查询的订单列表排序。支持按照创建时间进行排序，带-表示倒序。创建时间：升序为createTime，倒序为-createTime。
+     * 查询的订单列表排序。支持按照创建时间进行排序，带-表示倒序。创建时间：升序为createTime，倒序为-createTime。此参数不携带或携带值为空时，不作为筛选条件。
      * @return orderBy
      */
     public String getOrderBy() {
@@ -257,7 +257,7 @@ public class ListCustomerOrdersRequest {
     }
 
     /**
-     * 订单支付开始时间。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。
+     * 订单支付开始时间。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。此参数不携带或携带值为空时，不作为筛选条件。
      * @return paymentTimeBegin
      */
     public String getPaymentTimeBegin() {
@@ -274,7 +274,7 @@ public class ListCustomerOrdersRequest {
     }
 
     /**
-     * 订单支付结束时间。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。
+     * 订单支付结束时间。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。此参数不携带或携带值为空时，不作为筛选条件。
      * @return paymentTimeEnd
      */
     public String getPaymentTimeEnd() {
@@ -291,7 +291,7 @@ public class ListCustomerOrdersRequest {
     }
 
     /**
-     * 精英服务商ID。获取方法请参见[查询精英服务商列表](https://support.huaweicloud.com/api-bpconsole/espp_00003.html)。华为云伙伴能力中心（一级经销商）查询精英服务商的客户订单列表时，需要携带该参数；否则只能查询自己客户的订单列表。
+     * 云经销商ID。获取方法请参见[查询云经销商列表](https://support.huaweicloud.com/api-bpconsole/espp_00003.html)。华为云总经销商（一级经销商）查询云经销商的客户订单列表时，需要携带该参数；否则只能查询自己客户的订单列表。
      * @return indirectPartnerId
      */
     public String getIndirectPartnerId() {

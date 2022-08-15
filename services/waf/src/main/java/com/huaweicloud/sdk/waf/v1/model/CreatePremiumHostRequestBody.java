@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 创建独享模式域名的请求
+ * 创建独享模式域名的请求体
  */
 public class CreatePremiumHostRequestBody {
 
@@ -42,6 +42,16 @@ public class CreatePremiumHostRequestBody {
     @JsonProperty(value = "server")
 
     private List<PremiumWafServer> server = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "block_page")
+
+    private BlockPage blockPage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "description")
+
+    private String description;
 
     public CreatePremiumHostRequestBody withCertificateid(String certificateid) {
         this.certificateid = certificateid;
@@ -100,7 +110,7 @@ public class CreatePremiumHostRequestBody {
     }
 
     /**
-     * 是否使用代理
+     * 防护域名是否使用代理   - false：不使用代理   - true：使用代理
      * @return proxy
      */
     public Boolean getProxy() {
@@ -117,7 +127,7 @@ public class CreatePremiumHostRequestBody {
     }
 
     /**
-     * 防护域名初始绑定的策略ID,可以通过策略名称调用查询防护策略列表（ListPolicy）接口查询到对应的策略id
+     * 防护域名初始绑定的防护策略ID,可以通过策略名称调用查询防护策略列表（ListPolicy）接口查询到对应的策略id
      * @return policyid
      */
     public String getPolicyid() {
@@ -150,7 +160,7 @@ public class CreatePremiumHostRequestBody {
     }
 
     /**
-     * 服务器配置
+     * 防护域名的源站服务器配置信息
      * @return server
      */
     public List<PremiumWafServer> getServer() {
@@ -159,6 +169,49 @@ public class CreatePremiumHostRequestBody {
 
     public void setServer(List<PremiumWafServer> server) {
         this.server = server;
+    }
+
+    public CreatePremiumHostRequestBody withBlockPage(BlockPage blockPage) {
+        this.blockPage = blockPage;
+        return this;
+    }
+
+    public CreatePremiumHostRequestBody withBlockPage(Consumer<BlockPage> blockPageSetter) {
+        if (this.blockPage == null) {
+            this.blockPage = new BlockPage();
+            blockPageSetter.accept(this.blockPage);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get blockPage
+     * @return blockPage
+     */
+    public BlockPage getBlockPage() {
+        return blockPage;
+    }
+
+    public void setBlockPage(BlockPage blockPage) {
+        this.blockPage = blockPage;
+    }
+
+    public CreatePremiumHostRequestBody withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /**
+     * 防护域名备注
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     @Override
@@ -175,12 +228,14 @@ public class CreatePremiumHostRequestBody {
             && Objects.equals(this.hostname, createPremiumHostRequestBody.hostname)
             && Objects.equals(this.proxy, createPremiumHostRequestBody.proxy)
             && Objects.equals(this.policyid, createPremiumHostRequestBody.policyid)
-            && Objects.equals(this.server, createPremiumHostRequestBody.server);
+            && Objects.equals(this.server, createPremiumHostRequestBody.server)
+            && Objects.equals(this.blockPage, createPremiumHostRequestBody.blockPage)
+            && Objects.equals(this.description, createPremiumHostRequestBody.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(certificateid, certificatename, hostname, proxy, policyid, server);
+        return Objects.hash(certificateid, certificatename, hostname, proxy, policyid, server, blockPage, description);
     }
 
     @Override
@@ -193,6 +248,8 @@ public class CreatePremiumHostRequestBody {
         sb.append("    proxy: ").append(toIndentedString(proxy)).append("\n");
         sb.append("    policyid: ").append(toIndentedString(policyid)).append("\n");
         sb.append("    server: ").append(toIndentedString(server)).append("\n");
+        sb.append("    blockPage: ").append(toIndentedString(blockPage)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");
         return sb.toString();
     }

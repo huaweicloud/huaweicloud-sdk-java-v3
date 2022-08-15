@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.gaussdbfornosql.v3.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -29,7 +31,7 @@ public class CreateConfigurationRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "values")
 
-    private CreateConfigurationValuesOption values;
+    private Map<String, String> values = null;
 
     public CreateConfigurationRequestBody withName(String name) {
         this.name = name;
@@ -91,29 +93,36 @@ public class CreateConfigurationRequestBody {
         this.datastore = datastore;
     }
 
-    public CreateConfigurationRequestBody withValues(CreateConfigurationValuesOption values) {
+    public CreateConfigurationRequestBody withValues(Map<String, String> values) {
         this.values = values;
         return this;
     }
 
-    public CreateConfigurationRequestBody withValues(Consumer<CreateConfigurationValuesOption> valuesSetter) {
+    public CreateConfigurationRequestBody putValuesItem(String key, String valuesItem) {
         if (this.values == null) {
-            this.values = new CreateConfigurationValuesOption();
-            valuesSetter.accept(this.values);
+            this.values = new HashMap<>();
         }
+        this.values.put(key, valuesItem);
+        return this;
+    }
 
+    public CreateConfigurationRequestBody withValues(Consumer<Map<String, String>> valuesSetter) {
+        if (this.values == null) {
+            this.values = new HashMap<>();
+        }
+        valuesSetter.accept(this.values);
         return this;
     }
 
     /**
-     * Get values
+     * 参数值对象，用户基于默认参数模板自定义的参数值。默认不修改参数值。
      * @return values
      */
-    public CreateConfigurationValuesOption getValues() {
+    public Map<String, String> getValues() {
         return values;
     }
 
-    public void setValues(CreateConfigurationValuesOption values) {
+    public void setValues(Map<String, String> values) {
         this.values = values;
     }
 

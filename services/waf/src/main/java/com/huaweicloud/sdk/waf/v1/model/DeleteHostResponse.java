@@ -158,6 +158,11 @@ public class DeleteHostResponse extends SdkResponse {
 
     private PaidTypeEnum paidType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "web_tag")
+
+    private String webTag;
+
     public DeleteHostResponse withId(String id) {
         this.id = id;
         return this;
@@ -232,7 +237,7 @@ public class DeleteHostResponse extends SdkResponse {
     }
 
     /**
-     * 是否开启了代理
+     * 防护域名是否使用代理    - false：不使用代理   - true：使用代理
      * @return proxy
      */
     public Boolean getProxy() {
@@ -377,7 +382,7 @@ public class DeleteHostResponse extends SdkResponse {
     }
 
     /**
-     * 是否使用独享ip
+     * 是否使用独享ip   - true：使用独享ip   - false：不实用独享ip
      * @return exclusiveIp
      */
     public Boolean getExclusiveIp() {
@@ -405,6 +410,23 @@ public class DeleteHostResponse extends SdkResponse {
         this.paidType = paidType;
     }
 
+    public DeleteHostResponse withWebTag(String webTag) {
+        this.webTag = webTag;
+        return this;
+    }
+
+    /**
+     * 网站名称，对应WAF控制台域名详情中的网站名称
+     * @return webTag
+     */
+    public String getWebTag() {
+        return webTag;
+    }
+
+    public void setWebTag(String webTag) {
+        this.webTag = webTag;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -426,7 +448,8 @@ public class DeleteHostResponse extends SdkResponse {
             && Objects.equals(this.protectStatus, deleteHostResponse.protectStatus)
             && Objects.equals(this.accessStatus, deleteHostResponse.accessStatus)
             && Objects.equals(this.exclusiveIp, deleteHostResponse.exclusiveIp)
-            && Objects.equals(this.paidType, deleteHostResponse.paidType);
+            && Objects.equals(this.paidType, deleteHostResponse.paidType)
+            && Objects.equals(this.webTag, deleteHostResponse.webTag);
     }
 
     @Override
@@ -444,7 +467,8 @@ public class DeleteHostResponse extends SdkResponse {
             protectStatus,
             accessStatus,
             exclusiveIp,
-            paidType);
+            paidType,
+            webTag);
     }
 
     @Override
@@ -465,6 +489,7 @@ public class DeleteHostResponse extends SdkResponse {
         sb.append("    accessStatus: ").append(toIndentedString(accessStatus)).append("\n");
         sb.append("    exclusiveIp: ").append(toIndentedString(exclusiveIp)).append("\n");
         sb.append("    paidType: ").append(toIndentedString(paidType)).append("\n");
+        sb.append("    webTag: ").append(toIndentedString(webTag)).append("\n");
         sb.append("}");
         return sb.toString();
     }

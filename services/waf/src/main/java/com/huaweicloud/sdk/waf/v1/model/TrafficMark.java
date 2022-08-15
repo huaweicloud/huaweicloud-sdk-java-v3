@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 流量标识（用于攻击惩罚）
+ * 流量标识（用于攻击惩罚），WAF根据这些配置判断如何在Header中识别客户端IP（代理模式）、如何在Cookie中识别Session、如何在参数中识别User。
  */
 public class TrafficMark {
 
@@ -50,7 +50,7 @@ public class TrafficMark {
     }
 
     /**
-     * 惩罚ip
+     * IP标记，客户端最原始的IP地址的HTTP请求头字段。
      * @return sip
      */
     public List<String> getSip() {
@@ -67,7 +67,7 @@ public class TrafficMark {
     }
 
     /**
-     * cookie
+     * Session标记，用于Cookie恶意请求的攻击惩罚功能。在选择Cookie拦截的攻击惩罚功能前，必须配置该标识
      * @return cookie
      */
     public String getCookie() {
@@ -84,7 +84,7 @@ public class TrafficMark {
     }
 
     /**
-     * 参数
+     * User标记，用于Params恶意请求的攻击惩罚功能。在选择Params拦截的攻击惩罚功能前，必须配置该标识。
      * @return params
      */
     public String getParams() {

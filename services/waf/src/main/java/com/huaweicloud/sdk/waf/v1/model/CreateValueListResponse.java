@@ -44,6 +44,11 @@ public class CreateValueListResponse extends SdkResponse {
 
     private List<String> values = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "producer")
+
+    private Integer producer;
+
     public CreateValueListResponse withId(String id) {
         this.id = id;
         return this;
@@ -162,6 +167,23 @@ public class CreateValueListResponse extends SdkResponse {
         this.values = values;
     }
 
+    public CreateValueListResponse withProducer(Integer producer) {
+        this.producer = producer;
+        return this;
+    }
+
+    /**
+     * 引用表来源：  - 1:表示来源于用户手动创建  - 2:表示来源于智能访问控制自动创建
+     * @return producer
+     */
+    public Integer getProducer() {
+        return producer;
+    }
+
+    public void setProducer(Integer producer) {
+        this.producer = producer;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -176,12 +198,13 @@ public class CreateValueListResponse extends SdkResponse {
             && Objects.equals(this.type, createValueListResponse.type)
             && Objects.equals(this.description, createValueListResponse.description)
             && Objects.equals(this.timestamp, createValueListResponse.timestamp)
-            && Objects.equals(this.values, createValueListResponse.values);
+            && Objects.equals(this.values, createValueListResponse.values)
+            && Objects.equals(this.producer, createValueListResponse.producer);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, type, description, timestamp, values);
+        return Objects.hash(id, name, type, description, timestamp, values, producer);
     }
 
     @Override
@@ -194,6 +217,7 @@ public class CreateValueListResponse extends SdkResponse {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
         sb.append("    values: ").append(toIndentedString(values)).append("\n");
+        sb.append("    producer: ").append(toIndentedString(producer)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -155,7 +155,7 @@ public class ShowEventItems {
     }
 
     /**
-     * 源ip
+     * 源ip，Web访问者的IP地址（攻击者IP地址）
      * @return sip
      */
     public String getSip() {

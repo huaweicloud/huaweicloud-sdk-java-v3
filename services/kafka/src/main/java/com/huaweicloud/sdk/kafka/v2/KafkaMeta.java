@@ -1053,10 +1053,10 @@ public class KafkaMeta {
             f -> f.withMarshaller(ShowInstanceExtendProductInfoRequest::getType, (req, v) -> {
                 req.setType(v);
             }));
-        builder.<String>withRequestField("engine",
+        builder.<ShowInstanceExtendProductInfoRequest.EngineEnum>withRequestField("engine",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowInstanceExtendProductInfoRequest.EngineEnum.class),
             f -> f.withMarshaller(ShowInstanceExtendProductInfoRequest::getEngine, (req, v) -> {
                 req.setEngine(v);
             }));

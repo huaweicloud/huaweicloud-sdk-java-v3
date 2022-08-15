@@ -475,7 +475,7 @@ public class BssAsyncClient {
      *
      * 在伙伴销售平台创建客户时同步创建华为云账号，并将客户在伙伴销售平台上的账号与华为云账号进行映射。同时，创建的华为云账号与伙伴账号关联绑定。
      * 
-     * 华为云伙伴能力中心（一级经销商）可以注册精英服务商伙伴（二级经销商）的子客户。注册完成后，子客户可以自动和精英服务商伙伴绑定。
+     * 华为云总经销商（一级经销商）可以注册云经销商（二级经销商）的子客户。注册完成后，子客户可以自动和云经销商绑定。
      * 
      * &gt;![](public_sys-resources/icon-caution.gif) **注意：** 
      * &gt;-   调用该接口为客户创建华为云账号后，如果想从合作伙伴销售平台跳转至华为云官网，还需要进行SAML认证，具体请参见“[Web UI方式](https://support.huaweicloud.com/api-bpconsole/jac_00001.html)”中的“SAML认证”。
@@ -497,7 +497,7 @@ public class BssAsyncClient {
      *
      * 在伙伴销售平台创建客户时同步创建华为云账号，并将客户在伙伴销售平台上的账号与华为云账号进行映射。同时，创建的华为云账号与伙伴账号关联绑定。
      * 
-     * 华为云伙伴能力中心（一级经销商）可以注册精英服务商伙伴（二级经销商）的子客户。注册完成后，子客户可以自动和精英服务商伙伴绑定。
+     * 华为云总经销商（一级经销商）可以注册云经销商（二级经销商）的子客户。注册完成后，子客户可以自动和云经销商绑定。
      * 
      * &gt;![](public_sys-resources/icon-caution.gif) **注意：** 
      * &gt;-   调用该接口为客户创建华为云账号后，如果想从合作伙伴销售平台跳转至华为云官网，还需要进行SAML认证，具体请参见“[Web UI方式](https://support.huaweicloud.com/api-bpconsole/jac_00001.html)”中的“SAML认证”。
@@ -690,6 +690,36 @@ public class BssAsyncClient {
     }
 
     /**
+     * 查询成本数据
+     *
+     * 客户在自建平台查询成本分析数据。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListCostsRequest 请求对象
+     * @return CompletableFuture<ListCostsResponse>
+     */
+    public CompletableFuture<ListCostsResponse> listCostsAsync(ListCostsRequest request) {
+        return hcClient.asyncInvokeHttp(request, BssMeta.listCosts);
+    }
+
+    /**
+     * 查询成本数据
+     *
+     * 客户在自建平台查询成本分析数据。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListCostsRequest 请求对象
+     * @return AsyncInvoker<ListCostsRequest, ListCostsResponse>
+     */
+    public AsyncInvoker<ListCostsRequest, ListCostsResponse> listCostsAsyncInvoker(ListCostsRequest request) {
+        return new AsyncInvoker<ListCostsRequest, ListCostsResponse>(request, BssMeta.listCosts, hcClient);
+    }
+
+    /**
      * 查询区县信息
      *
      * 伙伴在伙伴销售平台上查询区县信息。
@@ -723,7 +753,7 @@ public class BssAsyncClient {
     /**
      * 查询代金券额度的发放回收记录
      *
-     * 华为云伙伴能力中心（一级经销商）可以查看给精英服务商（二级经销商）发放或回收代金券额度的操作记录。
+     * 华为云总经销商（一级经销商）可以查看给云经销商（二级经销商）发放或回收代金券额度的操作记录。
      * 
      * 一级经销商可以登录伙伴中心，进入“客户业务** **\\&gt; 代金券管理”，选择“代金券额度”页签，单击“操作记录”查看代金券额度的发放和回收记录。
      * 
@@ -744,7 +774,7 @@ public class BssAsyncClient {
     /**
      * 查询代金券额度的发放回收记录
      *
-     * 华为云伙伴能力中心（一级经销商）可以查看给精英服务商（二级经销商）发放或回收代金券额度的操作记录。
+     * 华为云总经销商（一级经销商）可以查看给云经销商（二级经销商）发放或回收代金券额度的操作记录。
      * 
      * 一级经销商可以登录伙伴中心，进入“客户业务** **\\&gt; 代金券管理”，选择“代金券额度”页签，单击“操作记录”查看代金券额度的发放和回收记录。
      * 
@@ -1248,9 +1278,9 @@ public class BssAsyncClient {
     }
 
     /**
-     * 查询精英服务商列表
+     * 查询云经销商列表
      *
-     * 华为云伙伴能力中心（一级经销商）可以查询精英服务商（二级经销商）列表。
+     * 华为云总经销商（一级经销商）可以查询云经销商（二级经销商）列表。
      * 
      * 一级经销商在伙伴中心查询二级经销商列表的方式请参见[这里](https://support.huaweicloud.com/usermanual-bpconsole/dp_120210.html)。
      * 
@@ -1266,9 +1296,9 @@ public class BssAsyncClient {
     }
 
     /**
-     * 查询精英服务商列表
+     * 查询云经销商列表
      *
-     * 华为云伙伴能力中心（一级经销商）可以查询精英服务商（二级经销商）列表。
+     * 华为云总经销商（一级经销商）可以查询云经销商（二级经销商）列表。
      * 
      * 一级经销商在伙伴中心查询二级经销商列表的方式请参见[这里](https://support.huaweicloud.com/usermanual-bpconsole/dp_120210.html)。
      * 
@@ -1287,7 +1317,7 @@ public class BssAsyncClient {
     /**
      * 查询已发放的代金券额度
      *
-     * 华为云伙伴能力中心（一级经销商）可以查看发放给精英服务商（二级经销商）的代金券额度列表。
+     * 华为云总经销商（一级经销商）可以查看发放给云经销商（二级经销商）的代金券额度列表。
      * 
      * 一级经销商登录伙伴中心，进入“客户业务** **\\&gt; 代金券管理”，选择“已发放代金券额度”可查看代金券额度列表。
      * 
@@ -1308,7 +1338,7 @@ public class BssAsyncClient {
     /**
      * 查询已发放的代金券额度
      *
-     * 华为云伙伴能力中心（一级经销商）可以查看发放给精英服务商（二级经销商）的代金券额度列表。
+     * 华为云总经销商（一级经销商）可以查看发放给云经销商（二级经销商）的代金券额度列表。
      * 
      * 一级经销商登录伙伴中心，进入“客户业务** **\\&gt; 代金券管理”，选择“已发放代金券额度”可查看代金券额度列表。
      * 
@@ -1544,7 +1574,7 @@ public class BssAsyncClient {
     /**
      * 查询调账记录
      *
-     * 伙伴在伙伴销售平台查询向客户及关联的精英服务商（二级经销商）拨款或回收的调账记录。
+     * 伙伴在伙伴销售平台查询向客户及关联的云经销商（二级经销商）拨款或回收的调账记录。
      * 
      * 伙伴登录伙伴中心，在“拨款”或“回收”页面，单击“调账记录”，可以查看一级经销商为二级经销商调账的记录。
      * 
@@ -1562,7 +1592,7 @@ public class BssAsyncClient {
     /**
      * 查询调账记录
      *
-     * 伙伴在伙伴销售平台查询向客户及关联的精英服务商（二级经销商）拨款或回收的调账记录。
+     * 伙伴在伙伴销售平台查询向客户及关联的云经销商（二级经销商）拨款或回收的调账记录。
      * 
      * 伙伴登录伙伴中心，在“拨款”或“回收”页面，单击“调账记录”，可以查看一级经销商为二级经销商调账的记录。
      * 
@@ -1579,9 +1609,9 @@ public class BssAsyncClient {
     }
 
     /**
-     * 查询伙伴账户余额
+     * 查询云经销商账户余额
      *
-     * 合作伙伴可以查询伙伴的账户余额。
+     * 华为云总经销商（一级经销商）可以查询关联的云经销商（二级经销商）的账户余额；云经销商伙伴可以查询自己的账户余额。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1594,9 +1624,9 @@ public class BssAsyncClient {
     }
 
     /**
-     * 查询伙伴账户余额
+     * 查询云经销商账户余额
      *
-     * 合作伙伴可以查询伙伴的账户余额。
+     * 华为云总经销商（一级经销商）可以查询关联的云经销商（二级经销商）的账户余额；云经销商伙伴可以查询自己的账户余额。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -2291,9 +2321,9 @@ public class BssAsyncClient {
     }
 
     /**
-     * 回收精英服务商的代金券额度
+     * 回收云经销商的代金券额度
      *
-     * 华为云伙伴能力中心（一级经销商）可以回收已发放给精英服务商（二级经销商）的代金券额度。
+     * 华为云总经销商（一级经销商）可以回收已发放给云经销商（二级经销商）的代金券额度。
      * 
      * 一级经销商在伙伴中心回收已发放给二级经销商的代金券额度请参见[这里](https://support.huaweicloud.com/usermanual-bpconsole/dp_120206.html)。
      * 
@@ -2308,9 +2338,9 @@ public class BssAsyncClient {
     }
 
     /**
-     * 回收精英服务商的代金券额度
+     * 回收云经销商的代金券额度
      *
-     * 华为云伙伴能力中心（一级经销商）可以回收已发放给精英服务商（二级经销商）的代金券额度。
+     * 华为云总经销商（一级经销商）可以回收已发放给云经销商（二级经销商）的代金券额度。
      * 
      * 一级经销商在伙伴中心回收已发放给二级经销商的代金券额度请参见[这里](https://support.huaweicloud.com/usermanual-bpconsole/dp_120206.html)。
      * 
@@ -2327,9 +2357,9 @@ public class BssAsyncClient {
     }
 
     /**
-     * 回收精英服务商账户拨款
+     * 回收云经销商账户拨款
      *
-     * 华为云伙伴能力中心（一级经销商）可以回收精英服务商（二级经销商）的账户余额。
+     * 华为云总经销商（一级经销商）可以回收云经销商（二级经销商）的账户余额。
      * 
      * 一级经销商在伙伴中心回收二级经销商账户拨款请参见[这里](https://support.huaweicloud.com/usermanual-bpconsole/dp_120205.html)。
      * 
@@ -2345,9 +2375,9 @@ public class BssAsyncClient {
     }
 
     /**
-     * 回收精英服务商账户拨款
+     * 回收云经销商账户拨款
      *
-     * 华为云伙伴能力中心（一级经销商）可以回收精英服务商（二级经销商）的账户余额。
+     * 华为云总经销商（一级经销商）可以回收云经销商（二级经销商）的账户余额。
      * 
      * 一级经销商在伙伴中心回收二级经销商账户拨款请参见[这里](https://support.huaweicloud.com/usermanual-bpconsole/dp_120205.html)。
      * 
@@ -2823,9 +2853,9 @@ public class BssAsyncClient {
     }
 
     /**
-     * 向精英服务商发放代金券额度
+     * 向云经销商发放代金券额度
      *
-     * 华为云伙伴能力中心（一级经销商）可以向精英服务商（二级经销商）发放代金券额度。
+     * 华为云总经销商（一级经销商）可以向云经销商（二级经销商）发放代金券额度。
      * 
      * 一级经销商在伙伴中心向二级经销商发放代金券额度请参见[这里](https://support.huaweicloud.com/usermanual-bpconsole/dp_120206.html)。
      * 
@@ -2840,9 +2870,9 @@ public class BssAsyncClient {
     }
 
     /**
-     * 向精英服务商发放代金券额度
+     * 向云经销商发放代金券额度
      *
-     * 华为云伙伴能力中心（一级经销商）可以向精英服务商（二级经销商）发放代金券额度。
+     * 华为云总经销商（一级经销商）可以向云经销商（二级经销商）发放代金券额度。
      * 
      * 一级经销商在伙伴中心向二级经销商发放代金券额度请参见[这里](https://support.huaweicloud.com/usermanual-bpconsole/dp_120206.html)。
      * 
@@ -2896,9 +2926,9 @@ public class BssAsyncClient {
     }
 
     /**
-     * 向精英服务商账户拨款
+     * 向云经销商账户拨款
      *
-     * 华为云伙伴能力中心（一级经销商）可以向精英服务商（二级经销商）账户拨款。
+     * 华为云总经销商（一级经销商）可以向云经销商（二级经销商）账户拨款。
      * 
      * 一级经销商在伙伴中心向二级经销商拨款请参见[这里](https://support.huaweicloud.com/usermanual-bpconsole/dp_120205.html)。
      * 
@@ -2914,9 +2944,9 @@ public class BssAsyncClient {
     }
 
     /**
-     * 向精英服务商账户拨款
+     * 向云经销商账户拨款
      *
-     * 华为云伙伴能力中心（一级经销商）可以向精英服务商（二级经销商）账户拨款。
+     * 华为云总经销商（一级经销商）可以向云经销商（二级经销商）账户拨款。
      * 
      * 一级经销商在伙伴中心向二级经销商拨款请参见[这里](https://support.huaweicloud.com/usermanual-bpconsole/dp_120205.html)。
      * 

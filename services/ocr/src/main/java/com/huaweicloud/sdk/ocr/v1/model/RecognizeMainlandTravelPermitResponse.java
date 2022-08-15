@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -14,22 +15,31 @@ public class RecognizeMainlandTravelPermitResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "result")
 
-    private Object result;
+    private MainlandTravelPermitResult result;
 
-    public RecognizeMainlandTravelPermitResponse withResult(Object result) {
+    public RecognizeMainlandTravelPermitResponse withResult(MainlandTravelPermitResult result) {
         this.result = result;
         return this;
     }
 
+    public RecognizeMainlandTravelPermitResponse withResult(Consumer<MainlandTravelPermitResult> resultSetter) {
+        if (this.result == null) {
+            this.result = new MainlandTravelPermitResult();
+            resultSetter.accept(this.result);
+        }
+
+        return this;
+    }
+
     /**
-     * 调用成功时表示调用结果。  调用失败时无此字段。 
+     * Get result
      * @return result
      */
-    public Object getResult() {
+    public MainlandTravelPermitResult getResult() {
         return result;
     }
 
-    public void setResult(Object result) {
+    public void setResult(MainlandTravelPermitResult result) {
         this.result = result;
     }
 

@@ -1,14 +1,17 @@
-package com.huaweicloud.sdk.gaussdbfornosql.v3.model;
+package com.huaweicloud.sdk.bss.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
- * 参数值对象，用户基于默认参数模板自定义的参数值。默认不修改参数值。
+ * FilterFactor
  */
-public class CreateConfigurationValuesOption {
+public class FilterFactor {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key")
@@ -18,15 +21,15 @@ public class CreateConfigurationValuesOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "value")
 
-    private String value;
+    private List<String> value = null;
 
-    public CreateConfigurationValuesOption withKey(String key) {
+    public FilterFactor withKey(String key) {
         this.key = key;
         return this;
     }
 
     /**
-     * 参数名称。 示例：\"max_connections\":\"10\"中，key值为“max_connections”。 - key为空时，不修改参数值。 - key不为空时，value也不可为空。
+     * |参数名称：维度分组条件| |参数约束及描述：维度分组条件|
      * @return key
      */
     public String getKey() {
@@ -37,20 +40,36 @@ public class CreateConfigurationValuesOption {
         this.key = key;
     }
 
-    public CreateConfigurationValuesOption withValue(String value) {
+    public FilterFactor withValue(List<String> value) {
         this.value = value;
         return this;
     }
 
+    public FilterFactor addValueItem(String valueItem) {
+        if (this.value == null) {
+            this.value = new ArrayList<>();
+        }
+        this.value.add(valueItem);
+        return this;
+    }
+
+    public FilterFactor withValue(Consumer<List<String>> valueSetter) {
+        if (this.value == null) {
+            this.value = new ArrayList<>();
+        }
+        valueSetter.accept(this.value);
+        return this;
+    }
+
     /**
-     * 参数值。 - 示例：\"max_connections\":\"10\"中，value值为“10”。
+     * |参数名称：过滤器值| |参数约束及描述：过滤器值|
      * @return value
      */
-    public String getValue() {
+    public List<String> getValue() {
         return value;
     }
 
-    public void setValue(String value) {
+    public void setValue(List<String> value) {
         this.value = value;
     }
 
@@ -62,9 +81,8 @@ public class CreateConfigurationValuesOption {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        CreateConfigurationValuesOption createConfigurationValuesOption = (CreateConfigurationValuesOption) o;
-        return Objects.equals(this.key, createConfigurationValuesOption.key)
-            && Objects.equals(this.value, createConfigurationValuesOption.value);
+        FilterFactor filterFactor = (FilterFactor) o;
+        return Objects.equals(this.key, filterFactor.key) && Objects.equals(this.value, filterFactor.value);
     }
 
     @Override
@@ -75,7 +93,7 @@ public class CreateConfigurationValuesOption {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class CreateConfigurationValuesOption {\n");
+        sb.append("class FilterFactor {\n");
         sb.append("    key: ").append(toIndentedString(key)).append("\n");
         sb.append("    value: ").append(toIndentedString(value)).append("\n");
         sb.append("}");

@@ -13,6 +13,49 @@ import java.time.OffsetDateTime;
 @SuppressWarnings("unchecked")
 public class GaussDBMeta {
 
+    public static final HttpRequestDef<AddDatabasePermissionRequest, AddDatabasePermissionResponse> addDatabasePermission = genForaddDatabasePermission();
+
+    private static HttpRequestDef<AddDatabasePermissionRequest, AddDatabasePermissionResponse> genForaddDatabasePermission() {
+        // basic
+        HttpRequestDef.Builder<AddDatabasePermissionRequest, AddDatabasePermissionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AddDatabasePermissionRequest.class, AddDatabasePermissionResponse.class)
+                .withName("AddDatabasePermission")
+                .withUri("/v3/{project_id}/instances/{instance_id}/db-users/privilege")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddDatabasePermissionRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddDatabasePermissionRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+        builder.<GrantDatabasePermissionRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(GrantDatabasePermissionRequestBody.class),
+            f -> f.withMarshaller(AddDatabasePermissionRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchTagActionRequest, BatchTagActionResponse> batchTagAction = genForbatchTagAction();
 
     private static HttpRequestDef<BatchTagActionRequest, BatchTagActionResponse> genForbatchTagAction() {
@@ -185,6 +228,92 @@ public class GaussDBMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateGaussMySqlDatabaseRequest, CreateGaussMySqlDatabaseResponse> createGaussMySqlDatabase = genForcreateGaussMySqlDatabase();
+
+    private static HttpRequestDef<CreateGaussMySqlDatabaseRequest, CreateGaussMySqlDatabaseResponse> genForcreateGaussMySqlDatabase() {
+        // basic
+        HttpRequestDef.Builder<CreateGaussMySqlDatabaseRequest, CreateGaussMySqlDatabaseResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateGaussMySqlDatabaseRequest.class, CreateGaussMySqlDatabaseResponse.class)
+                .withName("CreateGaussMySqlDatabase")
+                .withUri("/v3/{project_id}/instances/{instance_id}/databases")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateGaussMySqlDatabaseRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateGaussMySqlDatabaseRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+        builder.<CreateGaussMySqlDatabaseRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateGaussMySqlDatabaseRequestBody.class),
+            f -> f.withMarshaller(CreateGaussMySqlDatabaseRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateGaussMySqlDatabaseUserRequest, CreateGaussMySqlDatabaseUserResponse> createGaussMySqlDatabaseUser = genForcreateGaussMySqlDatabaseUser();
+
+    private static HttpRequestDef<CreateGaussMySqlDatabaseUserRequest, CreateGaussMySqlDatabaseUserResponse> genForcreateGaussMySqlDatabaseUser() {
+        // basic
+        HttpRequestDef.Builder<CreateGaussMySqlDatabaseUserRequest, CreateGaussMySqlDatabaseUserResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateGaussMySqlDatabaseUserRequest.class, CreateGaussMySqlDatabaseUserResponse.class)
+                .withName("CreateGaussMySqlDatabaseUser")
+                .withUri("/v3/{project_id}/instances/{instance_id}/db-users")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateGaussMySqlDatabaseUserRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateGaussMySqlDatabaseUserRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+        builder.<CreateDatabaseUserRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateDatabaseUserRequest.class),
+            f -> f.withMarshaller(CreateGaussMySqlDatabaseUserRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateGaussMySqlInstanceRequest, CreateGaussMySqlInstanceResponse> createGaussMySqlInstance = genForcreateGaussMySqlInstance();
 
     private static HttpRequestDef<CreateGaussMySqlInstanceRequest, CreateGaussMySqlInstanceResponse> genForcreateGaussMySqlInstance() {
@@ -295,6 +424,135 @@ public class GaussDBMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(MysqlCreateReadonlyNodeRequest.class),
             f -> f.withMarshaller(CreateGaussMySqlReadonlyNodeRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDatabasePermissionRequest, DeleteDatabasePermissionResponse> deleteDatabasePermission = genFordeleteDatabasePermission();
+
+    private static HttpRequestDef<DeleteDatabasePermissionRequest, DeleteDatabasePermissionResponse> genFordeleteDatabasePermission() {
+        // basic
+        HttpRequestDef.Builder<DeleteDatabasePermissionRequest, DeleteDatabasePermissionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteDatabasePermissionRequest.class, DeleteDatabasePermissionResponse.class)
+                .withName("DeleteDatabasePermission")
+                .withUri("/v3/{project_id}/instances/{instance_id}/db-users/privilege")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDatabasePermissionRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDatabasePermissionRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+        builder.<DeleteDatabasePermissionRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteDatabasePermissionRequestBody.class),
+            f -> f.withMarshaller(DeleteDatabasePermissionRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteGaussMySqlDatabaseRequest, DeleteGaussMySqlDatabaseResponse> deleteGaussMySqlDatabase = genFordeleteGaussMySqlDatabase();
+
+    private static HttpRequestDef<DeleteGaussMySqlDatabaseRequest, DeleteGaussMySqlDatabaseResponse> genFordeleteGaussMySqlDatabase() {
+        // basic
+        HttpRequestDef.Builder<DeleteGaussMySqlDatabaseRequest, DeleteGaussMySqlDatabaseResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteGaussMySqlDatabaseRequest.class, DeleteGaussMySqlDatabaseResponse.class)
+                .withName("DeleteGaussMySqlDatabase")
+                .withUri("/v3/{project_id}/instances/{instance_id}/databases")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteGaussMySqlDatabaseRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteGaussMySqlDatabaseRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+        builder.<DeleteGaussMySqlDatabaseRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteGaussMySqlDatabaseRequestBody.class),
+            f -> f.withMarshaller(DeleteGaussMySqlDatabaseRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteGaussMySqlDatabaseUserRequest, DeleteGaussMySqlDatabaseUserResponse> deleteGaussMySqlDatabaseUser = genFordeleteGaussMySqlDatabaseUser();
+
+    private static HttpRequestDef<DeleteGaussMySqlDatabaseUserRequest, DeleteGaussMySqlDatabaseUserResponse> genFordeleteGaussMySqlDatabaseUser() {
+        // basic
+        HttpRequestDef.Builder<DeleteGaussMySqlDatabaseUserRequest, DeleteGaussMySqlDatabaseUserResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteGaussMySqlDatabaseUserRequest.class, DeleteGaussMySqlDatabaseUserResponse.class)
+                .withName("DeleteGaussMySqlDatabaseUser")
+                .withUri("/v3/{project_id}/instances/{instance_id}/db-users")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteGaussMySqlDatabaseUserRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteGaussMySqlDatabaseUserRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+        builder.<DeleteDatabaseUserRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteDatabaseUserRequest.class),
+            f -> f.withMarshaller(DeleteGaussMySqlDatabaseUserRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );
@@ -545,6 +803,143 @@ public class GaussDBMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListGaussMySqlConfigurationsRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListGaussMySqlDatabaseRequest, ListGaussMySqlDatabaseResponse> listGaussMySqlDatabase = genForlistGaussMySqlDatabase();
+
+    private static HttpRequestDef<ListGaussMySqlDatabaseRequest, ListGaussMySqlDatabaseResponse> genForlistGaussMySqlDatabase() {
+        // basic
+        HttpRequestDef.Builder<ListGaussMySqlDatabaseRequest, ListGaussMySqlDatabaseResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListGaussMySqlDatabaseRequest.class, ListGaussMySqlDatabaseResponse.class)
+                .withName("ListGaussMySqlDatabase")
+                .withUri("/v3/{project_id}/instances/{instance_id}/databases")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListGaussMySqlDatabaseRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListGaussMySqlDatabaseRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListGaussMySqlDatabaseRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListGaussMySqlDatabaseRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListGaussMySqlDatabaseCharsetsRequest, ListGaussMySqlDatabaseCharsetsResponse> listGaussMySqlDatabaseCharsets = genForlistGaussMySqlDatabaseCharsets();
+
+    private static HttpRequestDef<ListGaussMySqlDatabaseCharsetsRequest, ListGaussMySqlDatabaseCharsetsResponse> genForlistGaussMySqlDatabaseCharsets() {
+        // basic
+        HttpRequestDef.Builder<ListGaussMySqlDatabaseCharsetsRequest, ListGaussMySqlDatabaseCharsetsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListGaussMySqlDatabaseCharsetsRequest.class, ListGaussMySqlDatabaseCharsetsResponse.class)
+                .withName("ListGaussMySqlDatabaseCharsets")
+                .withUri("/v3/{project_id}/instances/{instance_id}/databases/charsets")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListGaussMySqlDatabaseCharsetsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListGaussMySqlDatabaseCharsetsRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListGaussMySqlDatabaseUserRequest, ListGaussMySqlDatabaseUserResponse> listGaussMySqlDatabaseUser = genForlistGaussMySqlDatabaseUser();
+
+    private static HttpRequestDef<ListGaussMySqlDatabaseUserRequest, ListGaussMySqlDatabaseUserResponse> genForlistGaussMySqlDatabaseUser() {
+        // basic
+        HttpRequestDef.Builder<ListGaussMySqlDatabaseUserRequest, ListGaussMySqlDatabaseUserResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListGaussMySqlDatabaseUserRequest.class, ListGaussMySqlDatabaseUserResponse.class)
+                .withName("ListGaussMySqlDatabaseUser")
+                .withUri("/v3/{project_id}/instances/{instance_id}/db-users")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListGaussMySqlDatabaseUserRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListGaussMySqlDatabaseUserRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListGaussMySqlDatabaseUserRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListGaussMySqlDatabaseUserRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             })
         );
@@ -956,6 +1351,49 @@ public class GaussDBMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListProjectTagsRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ResetGaussMySqlDatabasePasswordRequest, ResetGaussMySqlDatabasePasswordResponse> resetGaussMySqlDatabasePassword = genForresetGaussMySqlDatabasePassword();
+
+    private static HttpRequestDef<ResetGaussMySqlDatabasePasswordRequest, ResetGaussMySqlDatabasePasswordResponse> genForresetGaussMySqlDatabasePassword() {
+        // basic
+        HttpRequestDef.Builder<ResetGaussMySqlDatabasePasswordRequest, ResetGaussMySqlDatabasePasswordResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ResetGaussMySqlDatabasePasswordRequest.class, ResetGaussMySqlDatabasePasswordResponse.class)
+                .withName("ResetGaussMySqlDatabasePassword")
+                .withUri("/v3/{project_id}/instances/{instance_id}/db-users/password")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResetGaussMySqlDatabasePasswordRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResetGaussMySqlDatabasePasswordRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+        builder.<ResetDatabasePasswordRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ResetDatabasePasswordRequest.class),
+            f -> f.withMarshaller(ResetGaussMySqlDatabasePasswordRequest::getBody, (req, v) -> {
+                req.setBody(v);
             })
         );
 

@@ -11,12 +11,12 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * WAF支持的认证项
+ * 特殊标识，用于前端使用
  */
 public class Flag {
 
     /**
-     * true:通过pci_3ds标准认证,false:未通过pci_3ds标准认证
+     * 是否开启pci_3ds合规认证   - true：开启   - false：不开启
      */
     public static final class Pci3dsEnum {
 
@@ -98,7 +98,7 @@ public class Flag {
     private Pci3dsEnum pci3ds;
 
     /**
-     * true:通过pci_dss标准认证,false:未通过pci_dss标准认证
+     * 是否开启pci_dss合规认证   - true：开启   - false：不开启
      */
     public static final class PciDssEnum {
 
@@ -262,7 +262,7 @@ public class Flag {
     private CnameEnum cname;
 
     /**
-     * true：WAF支持多可用区容灾,false：WAF不支持多可用区容灾
+     * 域名是否开启ipv6   - true：支持   - false：不支持
      */
     public static final class IsDualAzEnum {
 
@@ -343,13 +343,95 @@ public class Flag {
 
     private IsDualAzEnum isDualAz;
 
+    /**
+     * 域名是否开启ipv6   - true：支持   - false：不支持
+     */
+    public static final class Ipv6Enum {
+
+        /**
+         * Enum TRUE for value: "true"
+         */
+        public static final Ipv6Enum TRUE = new Ipv6Enum("true");
+
+        /**
+         * Enum FALSE for value: "false"
+         */
+        public static final Ipv6Enum FALSE = new Ipv6Enum("false");
+
+        private static final Map<String, Ipv6Enum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, Ipv6Enum> createStaticFields() {
+            Map<String, Ipv6Enum> map = new HashMap<>();
+            map.put("true", TRUE);
+            map.put("false", FALSE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        Ipv6Enum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static Ipv6Enum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            Ipv6Enum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new Ipv6Enum(value);
+            }
+            return result;
+        }
+
+        public static Ipv6Enum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            Ipv6Enum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof Ipv6Enum) {
+                return this.value.equals(((Ipv6Enum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ipv6")
+
+    private Ipv6Enum ipv6;
+
     public Flag withPci3ds(Pci3dsEnum pci3ds) {
         this.pci3ds = pci3ds;
         return this;
     }
 
     /**
-     * true:通过pci_3ds标准认证,false:未通过pci_3ds标准认证
+     * 是否开启pci_3ds合规认证   - true：开启   - false：不开启
      * @return pci3ds
      */
     public Pci3dsEnum getPci3ds() {
@@ -366,7 +448,7 @@ public class Flag {
     }
 
     /**
-     * true:通过pci_dss标准认证,false:未通过pci_dss标准认证
+     * 是否开启pci_dss合规认证   - true：开启   - false：不开启
      * @return pciDss
      */
     public PciDssEnum getPciDss() {
@@ -400,7 +482,7 @@ public class Flag {
     }
 
     /**
-     * true：WAF支持多可用区容灾,false：WAF不支持多可用区容灾
+     * 域名是否开启ipv6   - true：支持   - false：不支持
      * @return isDualAz
      */
     public IsDualAzEnum getIsDualAz() {
@@ -409,6 +491,23 @@ public class Flag {
 
     public void setIsDualAz(IsDualAzEnum isDualAz) {
         this.isDualAz = isDualAz;
+    }
+
+    public Flag withIpv6(Ipv6Enum ipv6) {
+        this.ipv6 = ipv6;
+        return this;
+    }
+
+    /**
+     * 域名是否开启ipv6   - true：支持   - false：不支持
+     * @return ipv6
+     */
+    public Ipv6Enum getIpv6() {
+        return ipv6;
+    }
+
+    public void setIpv6(Ipv6Enum ipv6) {
+        this.ipv6 = ipv6;
     }
 
     @Override
@@ -421,12 +520,13 @@ public class Flag {
         }
         Flag flag = (Flag) o;
         return Objects.equals(this.pci3ds, flag.pci3ds) && Objects.equals(this.pciDss, flag.pciDss)
-            && Objects.equals(this.cname, flag.cname) && Objects.equals(this.isDualAz, flag.isDualAz);
+            && Objects.equals(this.cname, flag.cname) && Objects.equals(this.isDualAz, flag.isDualAz)
+            && Objects.equals(this.ipv6, flag.ipv6);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(pci3ds, pciDss, cname, isDualAz);
+        return Objects.hash(pci3ds, pciDss, cname, isDualAz, ipv6);
     }
 
     @Override
@@ -437,6 +537,7 @@ public class Flag {
         sb.append("    pciDss: ").append(toIndentedString(pciDss)).append("\n");
         sb.append("    cname: ").append(toIndentedString(cname)).append("\n");
         sb.append("    isDualAz: ").append(toIndentedString(isDualAz)).append("\n");
+        sb.append("    ipv6: ").append(toIndentedString(ipv6)).append("\n");
         sb.append("}");
         return sb.toString();
     }

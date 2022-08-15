@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -15,6 +16,11 @@ public class UpdateWhiteblackipRuleResponse extends SdkResponse {
     @JsonProperty(value = "id")
 
     private String id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "name")
+
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policyid")
@@ -36,6 +42,11 @@ public class UpdateWhiteblackipRuleResponse extends SdkResponse {
 
     private Integer white;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ip_group")
+
+    private IpGroup ipGroup;
+
     public UpdateWhiteblackipRuleResponse withId(String id) {
         this.id = id;
         return this;
@@ -51,6 +62,23 @@ public class UpdateWhiteblackipRuleResponse extends SdkResponse {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public UpdateWhiteblackipRuleResponse withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    /**
+     * 黑白名单规则名称
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public UpdateWhiteblackipRuleResponse withPolicyid(String policyid) {
@@ -76,7 +104,7 @@ public class UpdateWhiteblackipRuleResponse extends SdkResponse {
     }
 
     /**
-     * 黑白名单地址
+     * 黑白名单Ip/IP段
      * @return addr
      */
     public String getAddr() {
@@ -121,6 +149,32 @@ public class UpdateWhiteblackipRuleResponse extends SdkResponse {
         this.white = white;
     }
 
+    public UpdateWhiteblackipRuleResponse withIpGroup(IpGroup ipGroup) {
+        this.ipGroup = ipGroup;
+        return this;
+    }
+
+    public UpdateWhiteblackipRuleResponse withIpGroup(Consumer<IpGroup> ipGroupSetter) {
+        if (this.ipGroup == null) {
+            this.ipGroup = new IpGroup();
+            ipGroupSetter.accept(this.ipGroup);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get ipGroup
+     * @return ipGroup
+     */
+    public IpGroup getIpGroup() {
+        return ipGroup;
+    }
+
+    public void setIpGroup(IpGroup ipGroup) {
+        this.ipGroup = ipGroup;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -131,15 +185,17 @@ public class UpdateWhiteblackipRuleResponse extends SdkResponse {
         }
         UpdateWhiteblackipRuleResponse updateWhiteblackipRuleResponse = (UpdateWhiteblackipRuleResponse) o;
         return Objects.equals(this.id, updateWhiteblackipRuleResponse.id)
+            && Objects.equals(this.name, updateWhiteblackipRuleResponse.name)
             && Objects.equals(this.policyid, updateWhiteblackipRuleResponse.policyid)
             && Objects.equals(this.addr, updateWhiteblackipRuleResponse.addr)
             && Objects.equals(this.description, updateWhiteblackipRuleResponse.description)
-            && Objects.equals(this.white, updateWhiteblackipRuleResponse.white);
+            && Objects.equals(this.white, updateWhiteblackipRuleResponse.white)
+            && Objects.equals(this.ipGroup, updateWhiteblackipRuleResponse.ipGroup);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, policyid, addr, description, white);
+        return Objects.hash(id, name, policyid, addr, description, white, ipGroup);
     }
 
     @Override
@@ -147,10 +203,12 @@ public class UpdateWhiteblackipRuleResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateWhiteblackipRuleResponse {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    policyid: ").append(toIndentedString(policyid)).append("\n");
         sb.append("    addr: ").append(toIndentedString(addr)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    white: ").append(toIndentedString(white)).append("\n");
+        sb.append("    ipGroup: ").append(toIndentedString(ipGroup)).append("\n");
         sb.append("}");
         return sb.toString();
     }

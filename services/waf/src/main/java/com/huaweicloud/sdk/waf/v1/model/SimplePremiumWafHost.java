@@ -3,15 +3,13 @@ package com.huaweicloud.sdk.waf.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 独享模式域名部分详情
+ * 独享模式域名信息列表
  */
 public class SimplePremiumWafHost {
 
@@ -24,6 +22,26 @@ public class SimplePremiumWafHost {
     @JsonProperty(value = "hostname")
 
     private String hostname;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "extend")
+
+    private Map<String, String> extend = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "region")
+
+    private String region;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "flag")
+
+    private Flag flag;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "description")
+
+    private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policyid")
@@ -41,19 +59,14 @@ public class SimplePremiumWafHost {
     private Integer accessStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "flag")
+    @JsonProperty(value = "web_tag")
 
-    private Map<String, String> flag = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "mode")
-
-    private String mode;
+    private String webTag;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "pool_ids")
+    @JsonProperty(value = "hostid")
 
-    private List<String> poolIds = null;
+    private String hostid;
 
     public SimplePremiumWafHost withId(String id) {
         this.id = id;
@@ -89,13 +102,106 @@ public class SimplePremiumWafHost {
         this.hostname = hostname;
     }
 
+    public SimplePremiumWafHost withExtend(Map<String, String> extend) {
+        this.extend = extend;
+        return this;
+    }
+
+    public SimplePremiumWafHost putExtendItem(String key, String extendItem) {
+        if (this.extend == null) {
+            this.extend = new HashMap<>();
+        }
+        this.extend.put(key, extendItem);
+        return this;
+    }
+
+    public SimplePremiumWafHost withExtend(Consumer<Map<String, String>> extendSetter) {
+        if (this.extend == null) {
+            this.extend = new HashMap<>();
+        }
+        extendSetter.accept(this.extend);
+        return this;
+    }
+
+    /**
+     * 扩展字段，用于保存防护域名的一些配置信息。
+     * @return extend
+     */
+    public Map<String, String> getExtend() {
+        return extend;
+    }
+
+    public void setExtend(Map<String, String> extend) {
+        this.extend = extend;
+    }
+
+    public SimplePremiumWafHost withRegion(String region) {
+        this.region = region;
+        return this;
+    }
+
+    /**
+     * 华为云区域ID，控制台创建的域名会携带此参数，api调用创建的域名此参数为空，可以通过华为云上地区和终端节点文档查询区域ID对应的中文名称
+     * @return region
+     */
+    public String getRegion() {
+        return region;
+    }
+
+    public void setRegion(String region) {
+        this.region = region;
+    }
+
+    public SimplePremiumWafHost withFlag(Flag flag) {
+        this.flag = flag;
+        return this;
+    }
+
+    public SimplePremiumWafHost withFlag(Consumer<Flag> flagSetter) {
+        if (this.flag == null) {
+            this.flag = new Flag();
+            flagSetter.accept(this.flag);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get flag
+     * @return flag
+     */
+    public Flag getFlag() {
+        return flag;
+    }
+
+    public void setFlag(Flag flag) {
+        this.flag = flag;
+    }
+
+    public SimplePremiumWafHost withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /**
+     * 域名描述
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public SimplePremiumWafHost withPolicyid(String policyid) {
         this.policyid = policyid;
         return this;
     }
 
     /**
-     * 策略id
+     * 防护域名初始绑定的防护策略ID,可以通过策略名称调用查询防护策略列表（ListPolicy）接口查询到对应的策略id
      * @return policyid
      */
     public String getPolicyid() {
@@ -129,7 +235,7 @@ public class SimplePremiumWafHost {
     }
 
     /**
-     * 接入状态
+     * 域名接入状态，0表示未接入，1表示已接入
      * @return accessStatus
      */
     public Integer getAccessStatus() {
@@ -140,87 +246,38 @@ public class SimplePremiumWafHost {
         this.accessStatus = accessStatus;
     }
 
-    public SimplePremiumWafHost withFlag(Map<String, String> flag) {
-        this.flag = flag;
-        return this;
-    }
-
-    public SimplePremiumWafHost putFlagItem(String key, String flagItem) {
-        if (this.flag == null) {
-            this.flag = new HashMap<>();
-        }
-        this.flag.put(key, flagItem);
-        return this;
-    }
-
-    public SimplePremiumWafHost withFlag(Consumer<Map<String, String>> flagSetter) {
-        if (this.flag == null) {
-            this.flag = new HashMap<>();
-        }
-        flagSetter.accept(this.flag);
+    public SimplePremiumWafHost withWebTag(String webTag) {
+        this.webTag = webTag;
         return this;
     }
 
     /**
-     * 特殊标识
-     * @return flag
+     * 网站名称，对应WAF控制台域名详情中的网站名称
+     * @return webTag
      */
-    public Map<String, String> getFlag() {
-        return flag;
+    public String getWebTag() {
+        return webTag;
     }
 
-    public void setFlag(Map<String, String> flag) {
-        this.flag = flag;
+    public void setWebTag(String webTag) {
+        this.webTag = webTag;
     }
 
-    public SimplePremiumWafHost withMode(String mode) {
-        this.mode = mode;
+    public SimplePremiumWafHost withHostid(String hostid) {
+        this.hostid = hostid;
         return this;
     }
 
     /**
-     * 特殊模式独享引擎的标识（如elb）
-     * @return mode
+     * 域名id，和id的值是一样的，属于冗余字段
+     * @return hostid
      */
-    public String getMode() {
-        return mode;
+    public String getHostid() {
+        return hostid;
     }
 
-    public void setMode(String mode) {
-        this.mode = mode;
-    }
-
-    public SimplePremiumWafHost withPoolIds(List<String> poolIds) {
-        this.poolIds = poolIds;
-        return this;
-    }
-
-    public SimplePremiumWafHost addPoolIdsItem(String poolIdsItem) {
-        if (this.poolIds == null) {
-            this.poolIds = new ArrayList<>();
-        }
-        this.poolIds.add(poolIdsItem);
-        return this;
-    }
-
-    public SimplePremiumWafHost withPoolIds(Consumer<List<String>> poolIdsSetter) {
-        if (this.poolIds == null) {
-            this.poolIds = new ArrayList<>();
-        }
-        poolIdsSetter.accept(this.poolIds);
-        return this;
-    }
-
-    /**
-     * 特殊模式域名所属独享引擎组
-     * @return poolIds
-     */
-    public List<String> getPoolIds() {
-        return poolIds;
-    }
-
-    public void setPoolIds(List<String> poolIds) {
-        this.poolIds = poolIds;
+    public void setHostid(String hostid) {
+        this.hostid = hostid;
     }
 
     @Override
@@ -234,17 +291,30 @@ public class SimplePremiumWafHost {
         SimplePremiumWafHost simplePremiumWafHost = (SimplePremiumWafHost) o;
         return Objects.equals(this.id, simplePremiumWafHost.id)
             && Objects.equals(this.hostname, simplePremiumWafHost.hostname)
+            && Objects.equals(this.extend, simplePremiumWafHost.extend)
+            && Objects.equals(this.region, simplePremiumWafHost.region)
+            && Objects.equals(this.flag, simplePremiumWafHost.flag)
+            && Objects.equals(this.description, simplePremiumWafHost.description)
             && Objects.equals(this.policyid, simplePremiumWafHost.policyid)
             && Objects.equals(this.protectStatus, simplePremiumWafHost.protectStatus)
             && Objects.equals(this.accessStatus, simplePremiumWafHost.accessStatus)
-            && Objects.equals(this.flag, simplePremiumWafHost.flag)
-            && Objects.equals(this.mode, simplePremiumWafHost.mode)
-            && Objects.equals(this.poolIds, simplePremiumWafHost.poolIds);
+            && Objects.equals(this.webTag, simplePremiumWafHost.webTag)
+            && Objects.equals(this.hostid, simplePremiumWafHost.hostid);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, hostname, policyid, protectStatus, accessStatus, flag, mode, poolIds);
+        return Objects.hash(id,
+            hostname,
+            extend,
+            region,
+            flag,
+            description,
+            policyid,
+            protectStatus,
+            accessStatus,
+            webTag,
+            hostid);
     }
 
     @Override
@@ -253,12 +323,15 @@ public class SimplePremiumWafHost {
         sb.append("class SimplePremiumWafHost {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    hostname: ").append(toIndentedString(hostname)).append("\n");
+        sb.append("    extend: ").append(toIndentedString(extend)).append("\n");
+        sb.append("    region: ").append(toIndentedString(region)).append("\n");
+        sb.append("    flag: ").append(toIndentedString(flag)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    policyid: ").append(toIndentedString(policyid)).append("\n");
         sb.append("    protectStatus: ").append(toIndentedString(protectStatus)).append("\n");
         sb.append("    accessStatus: ").append(toIndentedString(accessStatus)).append("\n");
-        sb.append("    flag: ").append(toIndentedString(flag)).append("\n");
-        sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
-        sb.append("    poolIds: ").append(toIndentedString(poolIds)).append("\n");
+        sb.append("    webTag: ").append(toIndentedString(webTag)).append("\n");
+        sb.append("    hostid: ").append(toIndentedString(hostid)).append("\n");
         sb.append("}");
         return sb.toString();
     }

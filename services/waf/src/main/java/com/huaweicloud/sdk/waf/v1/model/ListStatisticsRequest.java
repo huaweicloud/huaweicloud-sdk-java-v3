@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.waf.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -28,12 +31,12 @@ public class ListStatisticsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hosts")
 
-    private String hosts;
+    private List<String> hosts = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instances")
 
-    private String instances;
+    private List<String> instances = null;
 
     public ListStatisticsRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -41,7 +44,7 @@ public class ListStatisticsRequest {
     }
 
     /**
-     * 您可以通过调用企业项目管理服务（EPS)的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id
+     * 您可以通过调用企业项目管理服务（EPS）的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -86,8 +89,24 @@ public class ListStatisticsRequest {
         this.to = to;
     }
 
-    public ListStatisticsRequest withHosts(String hosts) {
+    public ListStatisticsRequest withHosts(List<String> hosts) {
         this.hosts = hosts;
+        return this;
+    }
+
+    public ListStatisticsRequest addHostsItem(String hostsItem) {
+        if (this.hosts == null) {
+            this.hosts = new ArrayList<>();
+        }
+        this.hosts.add(hostsItem);
+        return this;
+    }
+
+    public ListStatisticsRequest withHosts(Consumer<List<String>> hostsSetter) {
+        if (this.hosts == null) {
+            this.hosts = new ArrayList<>();
+        }
+        hostsSetter.accept(this.hosts);
         return this;
     }
 
@@ -95,28 +114,44 @@ public class ListStatisticsRequest {
      * 域名id数组，通过查询云模式防护域名列表（ListHost）获取域名id或者通过独享模式域名列表（ListPremiumHost）获取域名id
      * @return hosts
      */
-    public String getHosts() {
+    public List<String> getHosts() {
         return hosts;
     }
 
-    public void setHosts(String hosts) {
+    public void setHosts(List<String> hosts) {
         this.hosts = hosts;
     }
 
-    public ListStatisticsRequest withInstances(String instances) {
+    public ListStatisticsRequest withInstances(List<String> instances) {
         this.instances = instances;
         return this;
     }
 
+    public ListStatisticsRequest addInstancesItem(String instancesItem) {
+        if (this.instances == null) {
+            this.instances = new ArrayList<>();
+        }
+        this.instances.add(instancesItem);
+        return this;
+    }
+
+    public ListStatisticsRequest withInstances(Consumer<List<String>> instancesSetter) {
+        if (this.instances == null) {
+            this.instances = new ArrayList<>();
+        }
+        instancesSetter.accept(this.instances);
+        return this;
+    }
+
     /**
-     * 要查询实例列表
+     * 要查询引擎实例列表
      * @return instances
      */
-    public String getInstances() {
+    public List<String> getInstances() {
         return instances;
     }
 
-    public void setInstances(String instances) {
+    public void setInstances(List<String> instances) {
         this.instances = instances;
     }
 

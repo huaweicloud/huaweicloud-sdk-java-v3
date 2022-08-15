@@ -65,7 +65,7 @@ public class ShowSyncJobRequest {
     }
 
     /**
-     * 应填写 limit::{limit}|offset::{offset}|order::{order} ,其中{limit}为返回条数,{offset}为起始索引,{order}为排序类型，可设置为desc（降序）、asc（升序）
+     * 应填写 limit::{limit}|offset::{offset}|order::{order} ,其中{limit}为返回条数,{offset}为起始索引,注意：offset和limit参数需要配套使用，且必选。{order}为排序类型（可选），可设置为desc（降序）、asc（升序）
      * @return filter
      */
     public String getFilter() {

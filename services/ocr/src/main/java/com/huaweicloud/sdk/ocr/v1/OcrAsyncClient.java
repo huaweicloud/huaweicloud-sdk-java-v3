@@ -761,6 +761,39 @@ public class OcrAsyncClient {
     }
 
     /**
+     * 澳门身份证识别
+     *
+     * 识别澳门身份证图片中的文字内容，并将识别的结果返回给用户。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param RecognizeMacaoIdCardRequest 请求对象
+     * @return CompletableFuture<RecognizeMacaoIdCardResponse>
+     */
+    public CompletableFuture<RecognizeMacaoIdCardResponse> recognizeMacaoIdCardAsync(
+        RecognizeMacaoIdCardRequest request) {
+        return hcClient.asyncInvokeHttp(request, OcrMeta.recognizeMacaoIdCard);
+    }
+
+    /**
+     * 澳门身份证识别
+     *
+     * 识别澳门身份证图片中的文字内容，并将识别的结果返回给用户。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param RecognizeMacaoIdCardRequest 请求对象
+     * @return AsyncInvoker<RecognizeMacaoIdCardRequest, RecognizeMacaoIdCardResponse>
+     */
+    public AsyncInvoker<RecognizeMacaoIdCardRequest, RecognizeMacaoIdCardResponse> recognizeMacaoIdCardAsyncInvoker(
+        RecognizeMacaoIdCardRequest request) {
+        return new AsyncInvoker<RecognizeMacaoIdCardRequest, RecognizeMacaoIdCardResponse>(request,
+            OcrMeta.recognizeMacaoIdCard, hcClient);
+    }
+
+    /**
      * 港澳台居民来往内地通行证识别
      *
      * 识别港澳居民来往内地通行证上的文字内容，并将识别的结构化结果返回给用户。支持港澳居民来往内地通行证和台湾居民来往内地通行证两种卡证。

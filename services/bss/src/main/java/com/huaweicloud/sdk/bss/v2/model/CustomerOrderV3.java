@@ -182,7 +182,7 @@ public class CustomerOrderV3 {
     }
 
     /**
-     * 订单状态。 1：待审核3：处理中4：已取消5：已完成6：待付款9：待确认
+     * 订单状态。 1：待审核2：待退款3：处理中4：已取消5：已完成6：待付款9：待确认10：待发货11：待收货12：待上门取货13：换新中
      * @return status
      */
     public Integer getStatus() {

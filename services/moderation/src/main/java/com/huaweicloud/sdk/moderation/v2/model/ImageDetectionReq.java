@@ -134,11 +134,6 @@ public class ImageDetectionReq {
     private List<CategoriesEnum> categories = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ad_glossaries")
-
-    private List<String> adGlossaries = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ad_categories")
 
     private List<String> adCategories = null;
@@ -237,39 +232,6 @@ public class ImageDetectionReq {
         this.categories = categories;
     }
 
-    public ImageDetectionReq withAdGlossaries(List<String> adGlossaries) {
-        this.adGlossaries = adGlossaries;
-        return this;
-    }
-
-    public ImageDetectionReq addAdGlossariesItem(String adGlossariesItem) {
-        if (this.adGlossaries == null) {
-            this.adGlossaries = new ArrayList<>();
-        }
-        this.adGlossaries.add(adGlossariesItem);
-        return this;
-    }
-
-    public ImageDetectionReq withAdGlossaries(Consumer<List<String>> adGlossariesSetter) {
-        if (this.adGlossaries == null) {
-            this.adGlossaries = new ArrayList<>();
-        }
-        adGlossariesSetter.accept(this.adGlossaries);
-        return this;
-    }
-
-    /**
-     * 检测场景: ad场景自定义词库，配置方式同文本审核自定义词库配置方式 
-     * @return adGlossaries
-     */
-    public List<String> getAdGlossaries() {
-        return adGlossaries;
-    }
-
-    public void setAdGlossaries(List<String> adGlossaries) {
-        this.adGlossaries = adGlossaries;
-    }
-
     public ImageDetectionReq withAdCategories(List<String> adCategories) {
         this.adCategories = adCategories;
         return this;
@@ -349,7 +311,6 @@ public class ImageDetectionReq {
         return Objects.equals(this.url, imageDetectionReq.url) && Objects.equals(this.image, imageDetectionReq.image)
             && Objects.equals(this.moderationRule, imageDetectionReq.moderationRule)
             && Objects.equals(this.categories, imageDetectionReq.categories)
-            && Objects.equals(this.adGlossaries, imageDetectionReq.adGlossaries)
             && Objects.equals(this.adCategories, imageDetectionReq.adCategories)
             && Objects.equals(this.threshold, imageDetectionReq.threshold)
             && Objects.equals(this.showOcrText, imageDetectionReq.showOcrText);
@@ -357,7 +318,7 @@ public class ImageDetectionReq {
 
     @Override
     public int hashCode() {
-        return Objects.hash(url, image, moderationRule, categories, adGlossaries, adCategories, threshold, showOcrText);
+        return Objects.hash(url, image, moderationRule, categories, adCategories, threshold, showOcrText);
     }
 
     @Override
@@ -368,7 +329,6 @@ public class ImageDetectionReq {
         sb.append("    image: ").append(toIndentedString(image)).append("\n");
         sb.append("    moderationRule: ").append(toIndentedString(moderationRule)).append("\n");
         sb.append("    categories: ").append(toIndentedString(categories)).append("\n");
-        sb.append("    adGlossaries: ").append(toIndentedString(adGlossaries)).append("\n");
         sb.append("    adCategories: ").append(toIndentedString(adCategories)).append("\n");
         sb.append("    threshold: ").append(toIndentedString(threshold)).append("\n");
         sb.append("    showOcrText: ").append(toIndentedString(showOcrText)).append("\n");

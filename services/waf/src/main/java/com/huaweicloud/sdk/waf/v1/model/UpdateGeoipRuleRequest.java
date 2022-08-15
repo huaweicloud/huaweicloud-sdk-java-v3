@@ -37,7 +37,7 @@ public class UpdateGeoipRuleRequest {
     }
 
     /**
-     * 您可以通过调用企业项目管理服务（EPS)的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id
+     * 您可以通过调用企业项目管理服务（EPS）的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -71,7 +71,7 @@ public class UpdateGeoipRuleRequest {
     }
 
     /**
-     * 规则id，规则id从查询地理位置规则列表（ListGeoipRule）接口获取，响应体的id字段
+     * 地理位置控制规则id，规则id从查询地理位置规则列表（ListGeoipRule）接口获取，响应体的id字段
      * @return ruleId
      */
     public String getRuleId() {

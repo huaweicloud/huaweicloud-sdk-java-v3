@@ -436,10 +436,10 @@ public class RdsMeta {
             f -> f.withMarshaller(CreateRestoreInstanceRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             }));
-        builder.<InstanceRequest>withRequestField("body",
+        builder.<CreateRestoreInstanceRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(InstanceRequest.class),
+            TypeCasts.uncheckedConversion(CreateRestoreInstanceRequestBody.class),
             f -> f.withMarshaller(CreateRestoreInstanceRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));

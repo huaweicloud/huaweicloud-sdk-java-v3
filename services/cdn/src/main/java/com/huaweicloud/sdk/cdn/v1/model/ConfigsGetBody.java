@@ -58,6 +58,11 @@ public class ConfigsGetBody {
 
     private CacheUrlParameterFilter cacheUrlParameterFilter;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ipv6_accelerate")
+
+    private Integer ipv6Accelerate;
+
     public ConfigsGetBody withOriginRequestHeader(List<OriginRequestHeader> originRequestHeader) {
         this.originRequestHeader = originRequestHeader;
         return this;
@@ -304,6 +309,23 @@ public class ConfigsGetBody {
         this.cacheUrlParameterFilter = cacheUrlParameterFilter;
     }
 
+    public ConfigsGetBody withIpv6Accelerate(Integer ipv6Accelerate) {
+        this.ipv6Accelerate = ipv6Accelerate;
+        return this;
+    }
+
+    /**
+     * ipv6设置（1：打开；0：关闭）
+     * @return ipv6Accelerate
+     */
+    public Integer getIpv6Accelerate() {
+        return ipv6Accelerate;
+    }
+
+    public void setIpv6Accelerate(Integer ipv6Accelerate) {
+        this.ipv6Accelerate = ipv6Accelerate;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -320,7 +342,8 @@ public class ConfigsGetBody {
             && Objects.equals(this.originProtocol, configsGetBody.originProtocol)
             && Objects.equals(this.forceRedirect, configsGetBody.forceRedirect)
             && Objects.equals(this.compress, configsGetBody.compress)
-            && Objects.equals(this.cacheUrlParameterFilter, configsGetBody.cacheUrlParameterFilter);
+            && Objects.equals(this.cacheUrlParameterFilter, configsGetBody.cacheUrlParameterFilter)
+            && Objects.equals(this.ipv6Accelerate, configsGetBody.ipv6Accelerate);
     }
 
     @Override
@@ -333,7 +356,8 @@ public class ConfigsGetBody {
             originProtocol,
             forceRedirect,
             compress,
-            cacheUrlParameterFilter);
+            cacheUrlParameterFilter,
+            ipv6Accelerate);
     }
 
     @Override
@@ -349,6 +373,7 @@ public class ConfigsGetBody {
         sb.append("    forceRedirect: ").append(toIndentedString(forceRedirect)).append("\n");
         sb.append("    compress: ").append(toIndentedString(compress)).append("\n");
         sb.append("    cacheUrlParameterFilter: ").append(toIndentedString(cacheUrlParameterFilter)).append("\n");
+        sb.append("    ipv6Accelerate: ").append(toIndentedString(ipv6Accelerate)).append("\n");
         sb.append("}");
         return sb.toString();
     }

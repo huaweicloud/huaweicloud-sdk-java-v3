@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 超时配置
+ * 超时配置，开启后不支持关闭
  */
 public class TimeoutConfig {
 
@@ -31,7 +31,7 @@ public class TimeoutConfig {
     }
 
     /**
-     * 连接超时配置(秒)
+     * WAF连接源站超时配置
      * @return connectTimeout
      */
     public Integer getConnectTimeout() {
@@ -48,7 +48,7 @@ public class TimeoutConfig {
     }
 
     /**
-     * 发送超时配置(秒)
+     * WAF发送请求到源站超时配置
      * @return sendTimeout
      */
     public Integer getSendTimeout() {
@@ -65,7 +65,7 @@ public class TimeoutConfig {
     }
 
     /**
-     * 接收超时配置(秒)
+     * WAF接收源站响应超时配置
      * @return readTimeout
      */
     public Integer getReadTimeout() {

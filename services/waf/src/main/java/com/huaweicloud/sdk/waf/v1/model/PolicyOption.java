@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 选项
+ * 防护策略检测模块开关选项，如是否开启Web基础防护等
  */
 public class PolicyOption {
 
@@ -140,7 +140,7 @@ public class PolicyOption {
     }
 
     /**
-     * 反爬虫是否开启
+     * 预留参数，改参数值一直为true，用户可忽略该参数值
      * @return crawler
      */
     public Boolean getCrawler() {
@@ -378,7 +378,7 @@ public class PolicyOption {
     }
 
     /**
-     * 防网络机器人攻击是否开启
+     * 网站反爬虫总开关是否开启
      * @return botEnable
      */
     public Boolean getBotEnable() {

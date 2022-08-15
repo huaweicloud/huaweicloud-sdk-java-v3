@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -50,6 +51,11 @@ public class DeleteWhiteBlackIpRuleResponse extends SdkResponse {
     @JsonProperty(value = "white")
 
     private Integer white;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ip_group")
+
+    private IpGroup ipGroup;
 
     public DeleteWhiteBlackIpRuleResponse withId(String id) {
         this.id = id;
@@ -187,6 +193,32 @@ public class DeleteWhiteBlackIpRuleResponse extends SdkResponse {
         this.white = white;
     }
 
+    public DeleteWhiteBlackIpRuleResponse withIpGroup(IpGroup ipGroup) {
+        this.ipGroup = ipGroup;
+        return this;
+    }
+
+    public DeleteWhiteBlackIpRuleResponse withIpGroup(Consumer<IpGroup> ipGroupSetter) {
+        if (this.ipGroup == null) {
+            this.ipGroup = new IpGroup();
+            ipGroupSetter.accept(this.ipGroup);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get ipGroup
+     * @return ipGroup
+     */
+    public IpGroup getIpGroup() {
+        return ipGroup;
+    }
+
+    public void setIpGroup(IpGroup ipGroup) {
+        this.ipGroup = ipGroup;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -203,12 +235,13 @@ public class DeleteWhiteBlackIpRuleResponse extends SdkResponse {
             && Objects.equals(this.description, deleteWhiteBlackIpRuleResponse.description)
             && Objects.equals(this.status, deleteWhiteBlackIpRuleResponse.status)
             && Objects.equals(this.addr, deleteWhiteBlackIpRuleResponse.addr)
-            && Objects.equals(this.white, deleteWhiteBlackIpRuleResponse.white);
+            && Objects.equals(this.white, deleteWhiteBlackIpRuleResponse.white)
+            && Objects.equals(this.ipGroup, deleteWhiteBlackIpRuleResponse.ipGroup);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, policyid, name, timestamp, description, status, addr, white);
+        return Objects.hash(id, policyid, name, timestamp, description, status, addr, white, ipGroup);
     }
 
     @Override
@@ -223,6 +256,7 @@ public class DeleteWhiteBlackIpRuleResponse extends SdkResponse {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    addr: ").append(toIndentedString(addr)).append("\n");
         sb.append("    white: ").append(toIndentedString(white)).append("\n");
+        sb.append("    ipGroup: ").append(toIndentedString(ipGroup)).append("\n");
         sb.append("}");
         return sb.toString();
     }

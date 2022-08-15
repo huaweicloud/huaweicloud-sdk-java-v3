@@ -83,7 +83,7 @@ public class ShowInstanceMessagesRequest {
     }
 
     /**
-     * topic名称。
+     * Topic名称。  Topic名称必现以字母开头且只支持大小写字母、中横线、下划线以及数字。
      * @return topic
      */
     public String getTopic() {
@@ -151,7 +151,7 @@ public class ShowInstanceMessagesRequest {
     }
 
     /**
-     * 分页大小。
+     * 分页大小。取值范围为0~50。
      * @return limit
      */
     public String getLimit() {

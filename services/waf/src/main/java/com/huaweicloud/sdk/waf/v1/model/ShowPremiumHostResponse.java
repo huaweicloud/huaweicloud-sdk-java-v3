@@ -25,29 +25,9 @@ public class ShowPremiumHostResponse extends SdkResponse {
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "policyid")
-
-    private String policyid;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hostname")
 
     private String hostname;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "domainid")
-
-    private String domainid;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "project_id")
-
-    private String projectId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "access_code")
-
-    private String accessCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protocol")
@@ -60,17 +40,22 @@ public class ShowPremiumHostResponse extends SdkResponse {
     private List<PremiumWafServer> server = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "certificateid")
+    @JsonProperty(value = "proxy")
 
-    private String certificateid;
+    private Boolean proxy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "certificatename")
+    @JsonProperty(value = "locked")
 
-    private String certificatename;
+    private Integer locked;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "timestamp")
+
+    private Long timestamp;
 
     /**
-     * 支持最低的TLS版本（TLS v1.0/TLS v1.1/TLS v1.2）,默认为TLS v1.0版本
+     * 配置的最低TLS版本（TLS v1.0/TLS v1.1/TLS v1.2）,默认为TLS v1.0版本，对外协议为https时才有tls参数
      */
     public static final class TlsEnum {
 
@@ -164,7 +149,7 @@ public class ShowPremiumHostResponse extends SdkResponse {
     private TlsEnum tls;
 
     /**
-     * 加密套件（cipher_1，cipher_2，cipher_3，cipher_4，cipher_default）：  cipher_1： 加密算法为ECDHE-ECDSA-AES256-GCM-SHA384:HIGH:!MEDIUM:!LOW:!aNULL:!eNULL:!DES:!MD5:!PSK:!RC4:!kRSA:!SRP:!3DES:!DSS:!EXP:!CAMELLIA:@STRENGTH   cipher_2：加密算法为EECDH+AESGCM:EDH+AESGCM    cipher_3：加密算法为ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-SHA384:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!DH:!EDH    cipher_4：加密算法为ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:AES256-SHA256:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!EDH    cipher_default： 加密算法为ECDHE-RSA-AES256-SHA384:AES256-SHA256:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!DH:!EDH:!AESGCM
+     * 对外协议为https时才有cipher参数，加密套件（cipher_1，cipher_2，cipher_3，cipher_4，cipher_default）：  - cipher_1： 加密算法为ECDHE-ECDSA-AES256-GCM-SHA384:HIGH:!MEDIUM:!LOW:!aNULL:!eNULL:!DES:!MD5:!PSK:!RC4:!kRSA:!SRP:!3DES:!DSS:!EXP:!CAMELLIA:@STRENGTH   - cipher_2：加密算法为EECDH+AESGCM:EDH+AESGCM   - cipher_3：加密算法为ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-SHA384:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!DH:!EDH   - cipher_4：加密算法为ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:AES256-SHA256:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!EDH   - cipher_default： 加密算法为ECDHE-RSA-AES256-SHA384:AES256-SHA256:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!DH:!EDH:!AESGCM
      */
     public static final class CipherEnum {
 
@@ -264,14 +249,49 @@ public class ShowPremiumHostResponse extends SdkResponse {
     private CipherEnum cipher;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "proxy")
+    @JsonProperty(value = "extend")
 
-    private Boolean proxy;
+    private Map<String, String> extend = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "locked")
+    @JsonProperty(value = "flag")
 
-    private Integer locked;
+    private Flag flag;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "description")
+
+    private String description;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "policyid")
+
+    private String policyid;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "domainid")
+
+    private String domainid;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "projectid")
+
+    private String projectid;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "certificateid")
+
+    private String certificateid;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "certificatename")
+
+    private String certificatename;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protect_status")
@@ -284,19 +304,14 @@ public class ShowPremiumHostResponse extends SdkResponse {
     private Integer accessStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "timestamp")
+    @JsonProperty(value = "web_tag")
 
-    private Long timestamp;
+    private String webTag;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "block_page")
 
     private BlockPage blockPage;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "extend")
-
-    private Map<String, String> extend = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "traffic_mark")
@@ -309,19 +324,9 @@ public class ShowPremiumHostResponse extends SdkResponse {
     private TimeoutConfig timeoutConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "flag")
+    @JsonProperty(value = "access_progress")
 
-    private Map<String, String> flag = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "mode")
-
-    private String mode;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "pool_ids")
-
-    private List<String> poolIds = null;
+    private List<AccessProgress> accessProgress = null;
 
     public ShowPremiumHostResponse withId(String id) {
         this.id = id;
@@ -338,23 +343,6 @@ public class ShowPremiumHostResponse extends SdkResponse {
 
     public void setId(String id) {
         this.id = id;
-    }
-
-    public ShowPremiumHostResponse withPolicyid(String policyid) {
-        this.policyid = policyid;
-        return this;
-    }
-
-    /**
-     * 防护域名初始绑定的策略ID,可以通过策略名称调用查询防护策略列表（ListPolicy）接口查询到对应的策略id
-     * @return policyid
-     */
-    public String getPolicyid() {
-        return policyid;
-    }
-
-    public void setPolicyid(String policyid) {
-        this.policyid = policyid;
     }
 
     public ShowPremiumHostResponse withHostname(String hostname) {
@@ -374,64 +362,13 @@ public class ShowPremiumHostResponse extends SdkResponse {
         this.hostname = hostname;
     }
 
-    public ShowPremiumHostResponse withDomainid(String domainid) {
-        this.domainid = domainid;
-        return this;
-    }
-
-    /**
-     * 用户Domain ID
-     * @return domainid
-     */
-    public String getDomainid() {
-        return domainid;
-    }
-
-    public void setDomainid(String domainid) {
-        this.domainid = domainid;
-    }
-
-    public ShowPremiumHostResponse withProjectId(String projectId) {
-        this.projectId = projectId;
-        return this;
-    }
-
-    /**
-     * 用户的project_id
-     * @return projectId
-     */
-    public String getProjectId() {
-        return projectId;
-    }
-
-    public void setProjectId(String projectId) {
-        this.projectId = projectId;
-    }
-
-    public ShowPremiumHostResponse withAccessCode(String accessCode) {
-        this.accessCode = accessCode;
-        return this;
-    }
-
-    /**
-     * cname前缀
-     * @return accessCode
-     */
-    public String getAccessCode() {
-        return accessCode;
-    }
-
-    public void setAccessCode(String accessCode) {
-        this.accessCode = accessCode;
-    }
-
     public ShowPremiumHostResponse withProtocol(String protocol) {
         this.protocol = protocol;
         return this;
     }
 
     /**
-     * http协议类型
+     * 对外协议，客户端（例如浏览器）请求访问网站的协议类型
      * @return protocol
      */
     public String getProtocol() {
@@ -464,7 +401,7 @@ public class ShowPremiumHostResponse extends SdkResponse {
     }
 
     /**
-     * 源站信息
+     * 防护域名的源站服务器配置信息
      * @return server
      */
     public List<PremiumWafServer> getServer() {
@@ -475,81 +412,13 @@ public class ShowPremiumHostResponse extends SdkResponse {
         this.server = server;
     }
 
-    public ShowPremiumHostResponse withCertificateid(String certificateid) {
-        this.certificateid = certificateid;
-        return this;
-    }
-
-    /**
-     * 证书id，通过查询证书列表接口（ListCertificates）接口获取证书id   - 对外协议为HTTP时不需要填写   - 对外协议HTTPS时为必填参数
-     * @return certificateid
-     */
-    public String getCertificateid() {
-        return certificateid;
-    }
-
-    public void setCertificateid(String certificateid) {
-        this.certificateid = certificateid;
-    }
-
-    public ShowPremiumHostResponse withCertificatename(String certificatename) {
-        this.certificatename = certificatename;
-        return this;
-    }
-
-    /**
-     * 证书名   - 对外协议为HTTP时不需要填写   - 对外协议HTTPS时为必填参数
-     * @return certificatename
-     */
-    public String getCertificatename() {
-        return certificatename;
-    }
-
-    public void setCertificatename(String certificatename) {
-        this.certificatename = certificatename;
-    }
-
-    public ShowPremiumHostResponse withTls(TlsEnum tls) {
-        this.tls = tls;
-        return this;
-    }
-
-    /**
-     * 支持最低的TLS版本（TLS v1.0/TLS v1.1/TLS v1.2）,默认为TLS v1.0版本
-     * @return tls
-     */
-    public TlsEnum getTls() {
-        return tls;
-    }
-
-    public void setTls(TlsEnum tls) {
-        this.tls = tls;
-    }
-
-    public ShowPremiumHostResponse withCipher(CipherEnum cipher) {
-        this.cipher = cipher;
-        return this;
-    }
-
-    /**
-     * 加密套件（cipher_1，cipher_2，cipher_3，cipher_4，cipher_default）：  cipher_1： 加密算法为ECDHE-ECDSA-AES256-GCM-SHA384:HIGH:!MEDIUM:!LOW:!aNULL:!eNULL:!DES:!MD5:!PSK:!RC4:!kRSA:!SRP:!3DES:!DSS:!EXP:!CAMELLIA:@STRENGTH   cipher_2：加密算法为EECDH+AESGCM:EDH+AESGCM    cipher_3：加密算法为ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-SHA384:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!DH:!EDH    cipher_4：加密算法为ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:AES256-SHA256:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!EDH    cipher_default： 加密算法为ECDHE-RSA-AES256-SHA384:AES256-SHA256:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!DH:!EDH:!AESGCM
-     * @return cipher
-     */
-    public CipherEnum getCipher() {
-        return cipher;
-    }
-
-    public void setCipher(CipherEnum cipher) {
-        this.cipher = cipher;
-    }
-
     public ShowPremiumHostResponse withProxy(Boolean proxy) {
         this.proxy = proxy;
         return this;
     }
 
     /**
-     * 是否开启了代理
+     * 防护域名是否使用代理   - false：不使用代理   - true：使用代理
      * @return proxy
      */
     public Boolean getProxy() {
@@ -566,7 +435,7 @@ public class ShowPremiumHostResponse extends SdkResponse {
     }
 
     /**
-     * 锁定状态
+     * 预留参数，用于后期设计冻结域名，解锁域名功能，目前暂不支持
      * @return locked
      */
     public Integer getLocked() {
@@ -575,6 +444,235 @@ public class ShowPremiumHostResponse extends SdkResponse {
 
     public void setLocked(Integer locked) {
         this.locked = locked;
+    }
+
+    public ShowPremiumHostResponse withTimestamp(Long timestamp) {
+        this.timestamp = timestamp;
+        return this;
+    }
+
+    /**
+     * 创建防护域名的时间
+     * @return timestamp
+     */
+    public Long getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(Long timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    public ShowPremiumHostResponse withTls(TlsEnum tls) {
+        this.tls = tls;
+        return this;
+    }
+
+    /**
+     * 配置的最低TLS版本（TLS v1.0/TLS v1.1/TLS v1.2）,默认为TLS v1.0版本，对外协议为https时才有tls参数
+     * @return tls
+     */
+    public TlsEnum getTls() {
+        return tls;
+    }
+
+    public void setTls(TlsEnum tls) {
+        this.tls = tls;
+    }
+
+    public ShowPremiumHostResponse withCipher(CipherEnum cipher) {
+        this.cipher = cipher;
+        return this;
+    }
+
+    /**
+     * 对外协议为https时才有cipher参数，加密套件（cipher_1，cipher_2，cipher_3，cipher_4，cipher_default）：  - cipher_1： 加密算法为ECDHE-ECDSA-AES256-GCM-SHA384:HIGH:!MEDIUM:!LOW:!aNULL:!eNULL:!DES:!MD5:!PSK:!RC4:!kRSA:!SRP:!3DES:!DSS:!EXP:!CAMELLIA:@STRENGTH   - cipher_2：加密算法为EECDH+AESGCM:EDH+AESGCM   - cipher_3：加密算法为ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-SHA384:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!DH:!EDH   - cipher_4：加密算法为ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:AES256-SHA256:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!EDH   - cipher_default： 加密算法为ECDHE-RSA-AES256-SHA384:AES256-SHA256:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!DH:!EDH:!AESGCM
+     * @return cipher
+     */
+    public CipherEnum getCipher() {
+        return cipher;
+    }
+
+    public void setCipher(CipherEnum cipher) {
+        this.cipher = cipher;
+    }
+
+    public ShowPremiumHostResponse withExtend(Map<String, String> extend) {
+        this.extend = extend;
+        return this;
+    }
+
+    public ShowPremiumHostResponse putExtendItem(String key, String extendItem) {
+        if (this.extend == null) {
+            this.extend = new HashMap<>();
+        }
+        this.extend.put(key, extendItem);
+        return this;
+    }
+
+    public ShowPremiumHostResponse withExtend(Consumer<Map<String, String>> extendSetter) {
+        if (this.extend == null) {
+            this.extend = new HashMap<>();
+        }
+        extendSetter.accept(this.extend);
+        return this;
+    }
+
+    /**
+     * 扩展字段，用于保存防护域名的一些配置信息。
+     * @return extend
+     */
+    public Map<String, String> getExtend() {
+        return extend;
+    }
+
+    public void setExtend(Map<String, String> extend) {
+        this.extend = extend;
+    }
+
+    public ShowPremiumHostResponse withFlag(Flag flag) {
+        this.flag = flag;
+        return this;
+    }
+
+    public ShowPremiumHostResponse withFlag(Consumer<Flag> flagSetter) {
+        if (this.flag == null) {
+            this.flag = new Flag();
+            flagSetter.accept(this.flag);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get flag
+     * @return flag
+     */
+    public Flag getFlag() {
+        return flag;
+    }
+
+    public void setFlag(Flag flag) {
+        this.flag = flag;
+    }
+
+    public ShowPremiumHostResponse withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /**
+     * 域名描述
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public ShowPremiumHostResponse withPolicyid(String policyid) {
+        this.policyid = policyid;
+        return this;
+    }
+
+    /**
+     * 防护域名初始绑定的策略ID,可以通过策略名称调用查询防护策略列表（ListPolicy）接口查询到对应的策略id
+     * @return policyid
+     */
+    public String getPolicyid() {
+        return policyid;
+    }
+
+    public void setPolicyid(String policyid) {
+        this.policyid = policyid;
+    }
+
+    public ShowPremiumHostResponse withDomainid(String domainid) {
+        this.domainid = domainid;
+        return this;
+    }
+
+    /**
+     * 帐号ID,对应华为云控制台用户名->我的凭证->帐号ID
+     * @return domainid
+     */
+    public String getDomainid() {
+        return domainid;
+    }
+
+    public void setDomainid(String domainid) {
+        this.domainid = domainid;
+    }
+
+    public ShowPremiumHostResponse withProjectid(String projectid) {
+        this.projectid = projectid;
+        return this;
+    }
+
+    /**
+     * 项目ID，对应华为云控制台用户名->我的凭证->项目列表->项目ID
+     * @return projectid
+     */
+    public String getProjectid() {
+        return projectid;
+    }
+
+    public void setProjectid(String projectid) {
+        this.projectid = projectid;
+    }
+
+    public ShowPremiumHostResponse withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目ID，对应华为云控制台用户名->企业->项目管理->点击项目名称->ID
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    public ShowPremiumHostResponse withCertificateid(String certificateid) {
+        this.certificateid = certificateid;
+        return this;
+    }
+
+    /**
+     * https证书id
+     * @return certificateid
+     */
+    public String getCertificateid() {
+        return certificateid;
+    }
+
+    public void setCertificateid(String certificateid) {
+        this.certificateid = certificateid;
+    }
+
+    public ShowPremiumHostResponse withCertificatename(String certificatename) {
+        this.certificatename = certificatename;
+        return this;
+    }
+
+    /**
+     * 证书名称
+     * @return certificatename
+     */
+    public String getCertificatename() {
+        return certificatename;
+    }
+
+    public void setCertificatename(String certificatename) {
+        this.certificatename = certificatename;
     }
 
     public ShowPremiumHostResponse withProtectStatus(Integer protectStatus) {
@@ -600,7 +698,7 @@ public class ShowPremiumHostResponse extends SdkResponse {
     }
 
     /**
-     * 接入状态
+     * 域名接入状态，0表示未接入，1表示已接入
      * @return accessStatus
      */
     public Integer getAccessStatus() {
@@ -611,21 +709,21 @@ public class ShowPremiumHostResponse extends SdkResponse {
         this.accessStatus = accessStatus;
     }
 
-    public ShowPremiumHostResponse withTimestamp(Long timestamp) {
-        this.timestamp = timestamp;
+    public ShowPremiumHostResponse withWebTag(String webTag) {
+        this.webTag = webTag;
         return this;
     }
 
     /**
-     * 创建防护域名的时间
-     * @return timestamp
+     * 网站名称，对应WAF控制台域名详情中的网站名称
+     * @return webTag
      */
-    public Long getTimestamp() {
-        return timestamp;
+    public String getWebTag() {
+        return webTag;
     }
 
-    public void setTimestamp(Long timestamp) {
-        this.timestamp = timestamp;
+    public void setWebTag(String webTag) {
+        this.webTag = webTag;
     }
 
     public ShowPremiumHostResponse withBlockPage(BlockPage blockPage) {
@@ -652,39 +750,6 @@ public class ShowPremiumHostResponse extends SdkResponse {
 
     public void setBlockPage(BlockPage blockPage) {
         this.blockPage = blockPage;
-    }
-
-    public ShowPremiumHostResponse withExtend(Map<String, String> extend) {
-        this.extend = extend;
-        return this;
-    }
-
-    public ShowPremiumHostResponse putExtendItem(String key, String extendItem) {
-        if (this.extend == null) {
-            this.extend = new HashMap<>();
-        }
-        this.extend.put(key, extendItem);
-        return this;
-    }
-
-    public ShowPremiumHostResponse withExtend(Consumer<Map<String, String>> extendSetter) {
-        if (this.extend == null) {
-            this.extend = new HashMap<>();
-        }
-        extendSetter.accept(this.extend);
-        return this;
-    }
-
-    /**
-     * 可扩展属性
-     * @return extend
-     */
-    public Map<String, String> getExtend() {
-        return extend;
-    }
-
-    public void setExtend(Map<String, String> extend) {
-        this.extend = extend;
     }
 
     public ShowPremiumHostResponse withTrafficMark(TrafficMark trafficMark) {
@@ -739,87 +804,37 @@ public class ShowPremiumHostResponse extends SdkResponse {
         this.timeoutConfig = timeoutConfig;
     }
 
-    public ShowPremiumHostResponse withFlag(Map<String, String> flag) {
-        this.flag = flag;
+    public ShowPremiumHostResponse withAccessProgress(List<AccessProgress> accessProgress) {
+        this.accessProgress = accessProgress;
         return this;
     }
 
-    public ShowPremiumHostResponse putFlagItem(String key, String flagItem) {
-        if (this.flag == null) {
-            this.flag = new HashMap<>();
+    public ShowPremiumHostResponse addAccessProgressItem(AccessProgress accessProgressItem) {
+        if (this.accessProgress == null) {
+            this.accessProgress = new ArrayList<>();
         }
-        this.flag.put(key, flagItem);
+        this.accessProgress.add(accessProgressItem);
         return this;
     }
 
-    public ShowPremiumHostResponse withFlag(Consumer<Map<String, String>> flagSetter) {
-        if (this.flag == null) {
-            this.flag = new HashMap<>();
+    public ShowPremiumHostResponse withAccessProgress(Consumer<List<AccessProgress>> accessProgressSetter) {
+        if (this.accessProgress == null) {
+            this.accessProgress = new ArrayList<>();
         }
-        flagSetter.accept(this.flag);
+        accessProgressSetter.accept(this.accessProgress);
         return this;
     }
 
     /**
-     * 域名特殊标记
-     * @return flag
+     * 接入进度，仅用于新版console(前端)使用
+     * @return accessProgress
      */
-    public Map<String, String> getFlag() {
-        return flag;
+    public List<AccessProgress> getAccessProgress() {
+        return accessProgress;
     }
 
-    public void setFlag(Map<String, String> flag) {
-        this.flag = flag;
-    }
-
-    public ShowPremiumHostResponse withMode(String mode) {
-        this.mode = mode;
-        return this;
-    }
-
-    /**
-     * 独享模式特殊域名模式（仅特殊模式需要，如elb）
-     * @return mode
-     */
-    public String getMode() {
-        return mode;
-    }
-
-    public void setMode(String mode) {
-        this.mode = mode;
-    }
-
-    public ShowPremiumHostResponse withPoolIds(List<String> poolIds) {
-        this.poolIds = poolIds;
-        return this;
-    }
-
-    public ShowPremiumHostResponse addPoolIdsItem(String poolIdsItem) {
-        if (this.poolIds == null) {
-            this.poolIds = new ArrayList<>();
-        }
-        this.poolIds.add(poolIdsItem);
-        return this;
-    }
-
-    public ShowPremiumHostResponse withPoolIds(Consumer<List<String>> poolIdsSetter) {
-        if (this.poolIds == null) {
-            this.poolIds = new ArrayList<>();
-        }
-        poolIdsSetter.accept(this.poolIds);
-        return this;
-    }
-
-    /**
-     * 域名关联的组ID（仅特殊模式需要，如elb）
-     * @return poolIds
-     */
-    public List<String> getPoolIds() {
-        return poolIds;
-    }
-
-    public void setPoolIds(List<String> poolIds) {
-        this.poolIds = poolIds;
+    public void setAccessProgress(List<AccessProgress> accessProgress) {
+        this.accessProgress = accessProgress;
     }
 
     @Override
@@ -832,57 +847,59 @@ public class ShowPremiumHostResponse extends SdkResponse {
         }
         ShowPremiumHostResponse showPremiumHostResponse = (ShowPremiumHostResponse) o;
         return Objects.equals(this.id, showPremiumHostResponse.id)
-            && Objects.equals(this.policyid, showPremiumHostResponse.policyid)
             && Objects.equals(this.hostname, showPremiumHostResponse.hostname)
-            && Objects.equals(this.domainid, showPremiumHostResponse.domainid)
-            && Objects.equals(this.projectId, showPremiumHostResponse.projectId)
-            && Objects.equals(this.accessCode, showPremiumHostResponse.accessCode)
             && Objects.equals(this.protocol, showPremiumHostResponse.protocol)
             && Objects.equals(this.server, showPremiumHostResponse.server)
-            && Objects.equals(this.certificateid, showPremiumHostResponse.certificateid)
-            && Objects.equals(this.certificatename, showPremiumHostResponse.certificatename)
-            && Objects.equals(this.tls, showPremiumHostResponse.tls)
-            && Objects.equals(this.cipher, showPremiumHostResponse.cipher)
             && Objects.equals(this.proxy, showPremiumHostResponse.proxy)
             && Objects.equals(this.locked, showPremiumHostResponse.locked)
+            && Objects.equals(this.timestamp, showPremiumHostResponse.timestamp)
+            && Objects.equals(this.tls, showPremiumHostResponse.tls)
+            && Objects.equals(this.cipher, showPremiumHostResponse.cipher)
+            && Objects.equals(this.extend, showPremiumHostResponse.extend)
+            && Objects.equals(this.flag, showPremiumHostResponse.flag)
+            && Objects.equals(this.description, showPremiumHostResponse.description)
+            && Objects.equals(this.policyid, showPremiumHostResponse.policyid)
+            && Objects.equals(this.domainid, showPremiumHostResponse.domainid)
+            && Objects.equals(this.projectid, showPremiumHostResponse.projectid)
+            && Objects.equals(this.enterpriseProjectId, showPremiumHostResponse.enterpriseProjectId)
+            && Objects.equals(this.certificateid, showPremiumHostResponse.certificateid)
+            && Objects.equals(this.certificatename, showPremiumHostResponse.certificatename)
             && Objects.equals(this.protectStatus, showPremiumHostResponse.protectStatus)
             && Objects.equals(this.accessStatus, showPremiumHostResponse.accessStatus)
-            && Objects.equals(this.timestamp, showPremiumHostResponse.timestamp)
+            && Objects.equals(this.webTag, showPremiumHostResponse.webTag)
             && Objects.equals(this.blockPage, showPremiumHostResponse.blockPage)
-            && Objects.equals(this.extend, showPremiumHostResponse.extend)
             && Objects.equals(this.trafficMark, showPremiumHostResponse.trafficMark)
             && Objects.equals(this.timeoutConfig, showPremiumHostResponse.timeoutConfig)
-            && Objects.equals(this.flag, showPremiumHostResponse.flag)
-            && Objects.equals(this.mode, showPremiumHostResponse.mode)
-            && Objects.equals(this.poolIds, showPremiumHostResponse.poolIds);
+            && Objects.equals(this.accessProgress, showPremiumHostResponse.accessProgress);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(id,
-            policyid,
             hostname,
-            domainid,
-            projectId,
-            accessCode,
             protocol,
             server,
-            certificateid,
-            certificatename,
-            tls,
-            cipher,
             proxy,
             locked,
+            timestamp,
+            tls,
+            cipher,
+            extend,
+            flag,
+            description,
+            policyid,
+            domainid,
+            projectid,
+            enterpriseProjectId,
+            certificateid,
+            certificatename,
             protectStatus,
             accessStatus,
-            timestamp,
+            webTag,
             blockPage,
-            extend,
             trafficMark,
             timeoutConfig,
-            flag,
-            mode,
-            poolIds);
+            accessProgress);
     }
 
     @Override
@@ -890,29 +907,30 @@ public class ShowPremiumHostResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowPremiumHostResponse {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
-        sb.append("    policyid: ").append(toIndentedString(policyid)).append("\n");
         sb.append("    hostname: ").append(toIndentedString(hostname)).append("\n");
-        sb.append("    domainid: ").append(toIndentedString(domainid)).append("\n");
-        sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
-        sb.append("    accessCode: ").append(toIndentedString(accessCode)).append("\n");
         sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
         sb.append("    server: ").append(toIndentedString(server)).append("\n");
-        sb.append("    certificateid: ").append(toIndentedString(certificateid)).append("\n");
-        sb.append("    certificatename: ").append(toIndentedString(certificatename)).append("\n");
-        sb.append("    tls: ").append(toIndentedString(tls)).append("\n");
-        sb.append("    cipher: ").append(toIndentedString(cipher)).append("\n");
         sb.append("    proxy: ").append(toIndentedString(proxy)).append("\n");
         sb.append("    locked: ").append(toIndentedString(locked)).append("\n");
+        sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
+        sb.append("    tls: ").append(toIndentedString(tls)).append("\n");
+        sb.append("    cipher: ").append(toIndentedString(cipher)).append("\n");
+        sb.append("    extend: ").append(toIndentedString(extend)).append("\n");
+        sb.append("    flag: ").append(toIndentedString(flag)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    policyid: ").append(toIndentedString(policyid)).append("\n");
+        sb.append("    domainid: ").append(toIndentedString(domainid)).append("\n");
+        sb.append("    projectid: ").append(toIndentedString(projectid)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    certificateid: ").append(toIndentedString(certificateid)).append("\n");
+        sb.append("    certificatename: ").append(toIndentedString(certificatename)).append("\n");
         sb.append("    protectStatus: ").append(toIndentedString(protectStatus)).append("\n");
         sb.append("    accessStatus: ").append(toIndentedString(accessStatus)).append("\n");
-        sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
+        sb.append("    webTag: ").append(toIndentedString(webTag)).append("\n");
         sb.append("    blockPage: ").append(toIndentedString(blockPage)).append("\n");
-        sb.append("    extend: ").append(toIndentedString(extend)).append("\n");
         sb.append("    trafficMark: ").append(toIndentedString(trafficMark)).append("\n");
         sb.append("    timeoutConfig: ").append(toIndentedString(timeoutConfig)).append("\n");
-        sb.append("    flag: ").append(toIndentedString(flag)).append("\n");
-        sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
-        sb.append("    poolIds: ").append(toIndentedString(poolIds)).append("\n");
+        sb.append("    accessProgress: ").append(toIndentedString(accessProgress)).append("\n");
         sb.append("}");
         return sb.toString();
     }

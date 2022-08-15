@@ -319,7 +319,7 @@ public class IssuedCouponQuota {
     }
 
     /**
-     * 精英服务商ID。
+     * 云经销商ID。
      * @return indirectPartnerId
      */
     public String getIndirectPartnerId() {
@@ -336,7 +336,7 @@ public class IssuedCouponQuota {
     }
 
     /**
-     * 精英服务商账号名。
+     * 云经销商账号名。
      * @return indirectPartnerAccountName
      */
     public String getIndirectPartnerAccountName() {
@@ -353,7 +353,7 @@ public class IssuedCouponQuota {
     }
 
     /**
-     * 精英服务商名称。
+     * 云经销商名称。
      * @return indirectPartnerName
      */
     public String getIndirectPartnerName() {
@@ -370,7 +370,7 @@ public class IssuedCouponQuota {
     }
 
     /**
-     * 父额度ID，即华为云伙伴能力中心用于发放给精英服务商代金券额度的额度ID。
+     * 父额度ID，即华为云总经销商用于发放给云经销商代金券额度的额度ID。
      * @return parentQuotaId
      */
     public String getParentQuotaId() {

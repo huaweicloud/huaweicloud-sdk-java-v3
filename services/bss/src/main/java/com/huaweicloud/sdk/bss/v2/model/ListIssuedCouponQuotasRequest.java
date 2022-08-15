@@ -41,7 +41,7 @@ public class ListIssuedCouponQuotasRequest {
     }
 
     /**
-     * 精英服务商的代金券额度ID。获取方法请参见查询优惠券额度。
+     * 云经销商的代金券额度ID。获取方法请参见查询优惠券额度。此参数不携带或携带值为空时，不作为筛选条件。
      * @return quotaId
      */
     public String getQuotaId() {
@@ -58,7 +58,7 @@ public class ListIssuedCouponQuotasRequest {
     }
 
     /**
-     * 精英服务商ID。获取方法请参见[查询精英服务商列表](https://support.huaweicloud.com/api-bpconsole/espp_00003.html)。
+     * 云经销商ID。获取方法请参见[查询云经销商列表](https://support.huaweicloud.com/api-bpconsole/espp_00003.html)。如果需要查询云经销商伙伴的代金券额度，必须携带该字段。除此之外，此参数不做处理。
      * @return indirectPartnerId
      */
     public String getIndirectPartnerId() {
@@ -75,7 +75,7 @@ public class ListIssuedCouponQuotasRequest {
     }
 
     /**
-     * 父额度ID，即华为云伙伴能力中心用于发放给精英服务商代金券额度的额度ID。
+     * 父额度ID，即华为云总经销商用于发放给云经销商代金券额度的额度ID。此参数不携带时，不作为筛选条件；携带值为空或携带值为空串时，作为筛选条件。
      * @return parentQuotaId
      */
     public String getParentQuotaId() {

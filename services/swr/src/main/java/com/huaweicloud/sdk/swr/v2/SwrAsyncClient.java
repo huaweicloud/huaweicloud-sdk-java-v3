@@ -1229,7 +1229,7 @@ public class SwrAsyncClient {
     /**
      * 更新镜像仓库的概要信息
      *
-     * 更新租户命名空间下的镜像概要信息，包括镜像类型、是否公有、描述信息
+     * 更新租户组织下的镜像概要信息，包括镜像类型、是否公有、描述信息
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1244,7 +1244,7 @@ public class SwrAsyncClient {
     /**
      * 更新镜像仓库的概要信息
      *
-     * 更新租户命名空间下的镜像概要信息，包括镜像类型、是否公有、描述信息
+     * 更新租户组织下的镜像概要信息，包括镜像类型、是否公有、描述信息
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.

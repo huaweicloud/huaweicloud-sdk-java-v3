@@ -31,7 +31,7 @@ public class UrlItem {
     }
 
     /**
-     * 路径
+     * url路径
      * @return key
      */
     public String getKey() {

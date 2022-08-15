@@ -48,7 +48,7 @@ public class CustomPage {
     }
 
     /**
-     * 页面内容类型
+     * “自定义”告警页面内容类型，可选择text/html、text/xml和application/json三种类型
      * @return contentType
      */
     public String getContentType() {
@@ -65,7 +65,7 @@ public class CustomPage {
     }
 
     /**
-     * 页面内容
+     * 根据选择的“页面类型”配置对应的页面内容，具体示例可以参考“Web应用防火墙 WAF”用户手册
      * @return content
      */
     public String getContent() {

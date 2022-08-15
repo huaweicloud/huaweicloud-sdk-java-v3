@@ -26,7 +26,7 @@ public class DeleteValueListRequest {
     }
 
     /**
-     * 您可以通过调用企业项目管理服务（EPS)的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id
+     * 您可以通过调用企业项目管理服务（EPS）的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -43,7 +43,7 @@ public class DeleteValueListRequest {
     }
 
     /**
-     * 引用表id，从查询引用表列表接口获取https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=WAF&api=ListValueList
+     * 引用表id，通过查询引用表列表（ListValueList）接口获取
      * @return valuelistid
      */
     public String getValuelistid() {

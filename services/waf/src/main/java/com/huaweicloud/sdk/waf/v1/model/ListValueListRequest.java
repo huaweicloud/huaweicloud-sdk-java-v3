@@ -31,7 +31,7 @@ public class ListValueListRequest {
     }
 
     /**
-     * 分页查询时，返回第几页数据。范围0-100000，默认值为1，表示返回第1页数据。
+     * 分页查询时，返回第几页数据。默认值为1，表示返回第1页数据。
      * @return page
      */
     public Integer getPage() {

@@ -47,7 +47,7 @@ public class DeleteIgnoreRuleResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rule")
 
-    private String rule;
+    private Object rule;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mode")
@@ -63,6 +63,11 @@ public class DeleteIgnoreRuleResponse extends SdkResponse {
     @JsonProperty(value = "conditions")
 
     private List<Condition> conditions = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "advanced")
+
+    private List<Advanced> advanced = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domains")
@@ -171,20 +176,20 @@ public class DeleteIgnoreRuleResponse extends SdkResponse {
         this.url = url;
     }
 
-    public DeleteIgnoreRuleResponse withRule(String rule) {
+    public DeleteIgnoreRuleResponse withRule(Object rule) {
         this.rule = rule;
         return this;
     }
 
     /**
-     * 屏蔽的内置规则id（内置规则id通常可以在Web应用防火墙控制台的防护策略->策略名称->Web基础防护->防护规则中查询，也可以再防护事件的事件详情中查询内置规则id）
+     * 需要屏蔽的规则，可屏蔽一个或者多个，屏蔽多个时使用半角符;分隔   - 当需要屏蔽某一条内置规则时，该参数值为该内置规则id,可以在Web应用防火墙控制台的防护策略->策略名称->Web基础防护的高级设置->防护规则中查询；也可以在防护事件的事件详情中查询内置规则id   - 当需要屏蔽web基础防护某一类规则时，该参数值为需要屏蔽的web基础防护某一类规则名。其中，xss：xxs攻击；webshell：网站木马；vuln：其他类型攻击；sqli：sql注入攻击；robot：恶意爬虫；rfi：远程文件包含；lfi：本地文件包含；cmdi：命令注入攻击   - 当需要屏蔽Web基础防护模块，该参数值为：all   - 当需要屏蔽规则为所有检测模块时，该参数值为：bypass
      * @return rule
      */
-    public String getRule() {
+    public Object getRule() {
         return rule;
     }
 
-    public void setRule(String rule) {
+    public void setRule(Object rule) {
         this.rule = rule;
     }
 
@@ -255,6 +260,39 @@ public class DeleteIgnoreRuleResponse extends SdkResponse {
         this.conditions = conditions;
     }
 
+    public DeleteIgnoreRuleResponse withAdvanced(List<Advanced> advanced) {
+        this.advanced = advanced;
+        return this;
+    }
+
+    public DeleteIgnoreRuleResponse addAdvancedItem(Advanced advancedItem) {
+        if (this.advanced == null) {
+            this.advanced = new ArrayList<>();
+        }
+        this.advanced.add(advancedItem);
+        return this;
+    }
+
+    public DeleteIgnoreRuleResponse withAdvanced(Consumer<List<Advanced>> advancedSetter) {
+        if (this.advanced == null) {
+            this.advanced = new ArrayList<>();
+        }
+        advancedSetter.accept(this.advanced);
+        return this;
+    }
+
+    /**
+     * 高级配置项
+     * @return advanced
+     */
+    public List<Advanced> getAdvanced() {
+        return advanced;
+    }
+
+    public void setAdvanced(List<Advanced> advanced) {
+        this.advanced = advanced;
+    }
+
     public DeleteIgnoreRuleResponse withDomains(List<String> domains) {
         this.domains = domains;
         return this;
@@ -307,13 +345,24 @@ public class DeleteIgnoreRuleResponse extends SdkResponse {
             && Objects.equals(this.mode, deleteIgnoreRuleResponse.mode)
             && Objects.equals(this.urlLogic, deleteIgnoreRuleResponse.urlLogic)
             && Objects.equals(this.conditions, deleteIgnoreRuleResponse.conditions)
+            && Objects.equals(this.advanced, deleteIgnoreRuleResponse.advanced)
             && Objects.equals(this.domains, deleteIgnoreRuleResponse.domains);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(id, policyid, timestamp, description, status, url, rule, mode, urlLogic, conditions, domains);
+        return Objects.hash(id,
+            policyid,
+            timestamp,
+            description,
+            status,
+            url,
+            rule,
+            mode,
+            urlLogic,
+            conditions,
+            advanced,
+            domains);
     }
 
     @Override
@@ -330,6 +379,7 @@ public class DeleteIgnoreRuleResponse extends SdkResponse {
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
         sb.append("    urlLogic: ").append(toIndentedString(urlLogic)).append("\n");
         sb.append("    conditions: ").append(toIndentedString(conditions)).append("\n");
+        sb.append("    advanced: ").append(toIndentedString(advanced)).append("\n");
         sb.append("    domains: ").append(toIndentedString(domains)).append("\n");
         sb.append("}");
         return sb.toString();

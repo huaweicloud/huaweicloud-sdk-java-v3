@@ -30,7 +30,7 @@ public class ListAntitamperRuleResponse extends SdkResponse {
     }
 
     /**
-     * 总条数
+     * 网页防篡改规则总条数
      * @return total
      */
     public Integer getTotal() {
@@ -63,7 +63,7 @@ public class ListAntitamperRuleResponse extends SdkResponse {
     }
 
     /**
-     * 规则
+     * 网页防篡改规则数组
      * @return items
      */
     public List<AntiTamperRuleResponseBody> getItems() {

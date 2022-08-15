@@ -48,7 +48,7 @@ public class ShowPartitionEndMessageRequest {
     }
 
     /**
-     * Topic名称。
+     * Topic名称。  Topic名称必现以字母开头且只支持大小写字母、中横线、下划线以及数字。
      * @return topic
      */
     public String getTopic() {

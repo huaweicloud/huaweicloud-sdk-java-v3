@@ -127,7 +127,7 @@ public class QuotaRecord {
     }
 
     /**
-     * 精英服务商的代金券额度ID。 即华为云伙伴能力中心给精英服务商发放代金券额度时，产生的精英服务商的代金券额度ID，或者从精英服务商回收代金券额度时，精英服务商的代金券额度ID。
+     * 云经销商的代金券额度ID。 即华为云总经销商给云经销商发放代金券额度时，产生的云经销商的代金券额度ID，或者从云经销商回收代金券额度时，云经销商的代金券额度ID。
      * @return quotaId
      */
     public String getQuotaId() {
@@ -144,7 +144,7 @@ public class QuotaRecord {
     }
 
     /**
-     * 父额度ID。 这即华为云伙伴能力中心给精英服务商发放代金券额度时，华为云伙伴能力中心的额度ID，或者从精英服务商回收代金券额度时，回收的华为云伙伴能力中心的额度ID。
+     * 父额度ID。 这即华为云总经销商给云经销商发放代金券额度时，华为云总经销商的额度ID，或者从云经销商回收代金券额度时，回收的华为云总经销商的额度ID。
      * @return parentQuotaId
      */
     public String getParentQuotaId() {
@@ -212,7 +212,7 @@ public class QuotaRecord {
     }
 
     /**
-     * 精英服务商的账号名。
+     * 云经销商的账号名。
      * @return indirectPartnerAccountName
      */
     public String getIndirectPartnerAccountName() {
@@ -229,7 +229,7 @@ public class QuotaRecord {
     }
 
     /**
-     * 精英服务商ID。
+     * 云经销商ID。
      * @return indirectPartnerId
      */
     public String getIndirectPartnerId() {
@@ -246,7 +246,7 @@ public class QuotaRecord {
     }
 
     /**
-     * 精英服务商的公司名称。
+     * 云经销商的公司名称。
      * @return indirectPartnerName
      */
     public String getIndirectPartnerName() {

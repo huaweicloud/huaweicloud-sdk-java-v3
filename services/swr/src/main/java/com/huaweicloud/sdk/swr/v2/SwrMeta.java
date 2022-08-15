@@ -288,6 +288,11 @@ public class SwrMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Swr-Dockerlogin",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateSecretResponse::getXSwrDockerlogin, CreateSecretResponse::setXSwrDockerlogin));
         return builder.build();
     }
 
@@ -757,6 +762,13 @@ public class SwrMeta {
             f -> f.withMarshaller(ListNamespacesRequest::getNamespace, (req, v) -> {
                 req.setNamespace(v);
             }));
+        builder.<String>withRequestField("filter",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNamespacesRequest::getFilter, (req, v) -> {
+                req.setFilter(v);
+            }));
 
         // response
 
@@ -853,6 +865,34 @@ public class SwrMeta {
             f -> f.withMarshaller(ListReposDetailsRequest::getCategory, (req, v) -> {
                 req.setCategory(v);
             }));
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListReposDetailsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListReposDetailsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<String>withRequestField("order_column",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListReposDetailsRequest::getOrderColumn, (req, v) -> {
+                req.setOrderColumn(v);
+            }));
+        builder.<String>withRequestField("order_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListReposDetailsRequest::getOrderType, (req, v) -> {
+                req.setOrderType(v);
+            }));
         builder.<String>withRequestField("filter",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -906,19 +946,19 @@ public class SwrMeta {
             f -> f.withMarshaller(ListRepositoryTagsRequest::getRepository, (req, v) -> {
                 req.setRepository(v);
             }));
-        builder.<String>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRepositoryTagsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListRepositoryTagsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
+            }));
+        builder.<String>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRepositoryTagsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
             }));
         builder.<String>withRequestField("order_column",
             LocationType.Query,
@@ -927,10 +967,10 @@ public class SwrMeta {
             f -> f.withMarshaller(ListRepositoryTagsRequest::getOrderColumn, (req, v) -> {
                 req.setOrderColumn(v);
             }));
-        builder.<ListRepositoryTagsRequest.OrderTypeEnum>withRequestField("order_type",
+        builder.<String>withRequestField("order_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListRepositoryTagsRequest.OrderTypeEnum.class),
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListRepositoryTagsRequest::getOrderType, (req, v) -> {
                 req.setOrderType(v);
             }));
@@ -940,6 +980,13 @@ public class SwrMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListRepositoryTagsRequest::getTag, (req, v) -> {
                 req.setTag(v);
+            }));
+        builder.<String>withRequestField("filter",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRepositoryTagsRequest::getFilter, (req, v) -> {
+                req.setFilter(v);
             }));
 
         // response
@@ -952,6 +999,12 @@ public class SwrMeta {
                 response.setBody(data);
             }).withInnerContainerType(ShowReposTagResp.class));
 
+        builder.<String>withResponseField("Content-Range",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListRepositoryTagsResponse::getContentRange,
+                ListRepositoryTagsResponse::setContentRange));
         return builder.build();
     }
 
@@ -981,19 +1034,12 @@ public class SwrMeta {
             f -> f.withMarshaller(ListRetentionHistoriesRequest::getRepository, (req, v) -> {
                 req.setRepository(v);
             }));
-        builder.<String>withRequestField("offset",
+        builder.<String>withRequestField("filter",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRetentionHistoriesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
-        builder.<String>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRetentionHistoriesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
+            f -> f.withMarshaller(ListRetentionHistoriesRequest::getFilter, (req, v) -> {
+                req.setFilter(v);
             }));
 
         // response
@@ -1059,6 +1105,55 @@ public class SwrMeta {
             .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("namespace",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSharedReposDetailsRequest::getNamespace, (req, v) -> {
+                req.setNamespace(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSharedReposDetailsRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<String>withRequestField("center",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSharedReposDetailsRequest::getCenter, (req, v) -> {
+                req.setCenter(v);
+            }));
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSharedReposDetailsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSharedReposDetailsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<String>withRequestField("order_column",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSharedReposDetailsRequest::getOrderColumn, (req, v) -> {
+                req.setOrderColumn(v);
+            }));
+        builder.<String>withRequestField("order_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSharedReposDetailsRequest::getOrderType, (req, v) -> {
+                req.setOrderType(v);
+            }));
         builder.<String>withRequestField("filter",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -1329,6 +1424,11 @@ public class SwrMeta {
                 response.setBody(data);
             }).withInnerContainerType(SyncJob.class));
 
+        builder.<String>withResponseField("Content-Range",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowSyncJobResponse::getContentRange, ShowSyncJobResponse::setContentRange));
         return builder.build();
     }
 

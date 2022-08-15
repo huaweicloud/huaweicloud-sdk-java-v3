@@ -30,7 +30,7 @@ public class ListIgnoreRuleResponse extends SdkResponse {
     }
 
     /**
-     * 该策略下误报屏蔽规则数量
+     * 该策略下全局白名单规则数量
      * @return total
      */
     public Integer getTotal() {
@@ -63,7 +63,7 @@ public class ListIgnoreRuleResponse extends SdkResponse {
     }
 
     /**
-     * 误报屏蔽规则对象列表
+     * 全局白名单规则信息数组
      * @return items
      */
     public List<IgnoreRuleBody> getItems() {

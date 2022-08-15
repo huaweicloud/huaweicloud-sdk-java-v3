@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.waf.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -33,7 +36,7 @@ public class ListBandwidthTimelineRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instances")
 
-    private String instances;
+    private List<String> instances = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_by")
@@ -46,7 +49,7 @@ public class ListBandwidthTimelineRequest {
     }
 
     /**
-     * 您可以通过调用企业项目管理服务（EPS)的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id
+     * 您可以通过调用企业项目管理服务（EPS）的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -108,20 +111,36 @@ public class ListBandwidthTimelineRequest {
         this.hosts = hosts;
     }
 
-    public ListBandwidthTimelineRequest withInstances(String instances) {
+    public ListBandwidthTimelineRequest withInstances(List<String> instances) {
         this.instances = instances;
         return this;
     }
 
+    public ListBandwidthTimelineRequest addInstancesItem(String instancesItem) {
+        if (this.instances == null) {
+            this.instances = new ArrayList<>();
+        }
+        this.instances.add(instancesItem);
+        return this;
+    }
+
+    public ListBandwidthTimelineRequest withInstances(Consumer<List<String>> instancesSetter) {
+        if (this.instances == null) {
+            this.instances = new ArrayList<>();
+        }
+        instancesSetter.accept(this.instances);
+        return this;
+    }
+
     /**
-     * 要查询实例列表（仅实例化模式涉及）
+     * 要查询引擎实例列表
      * @return instances
      */
-    public String getInstances() {
+    public List<String> getInstances() {
         return instances;
     }
 
-    public void setInstances(String instances) {
+    public void setInstances(List<String> instances) {
         this.instances = instances;
     }
 
@@ -131,7 +150,7 @@ public class ListBandwidthTimelineRequest {
     }
 
     /**
-     * 展示维度，按天展示时传\"DAY\"
+     * 展示维度，按天展示时传\"DAY\"；默认不传，按照分钟展示
      * @return groupBy
      */
     public String getGroupBy() {

@@ -85,7 +85,7 @@ public class AppInfo {
     }
 
     /**
-     * 应用名称
+     * 应用空名称
      * @return appName
      */
     public String getAppName() {

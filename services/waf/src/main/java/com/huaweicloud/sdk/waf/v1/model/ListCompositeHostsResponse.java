@@ -74,7 +74,7 @@ public class ListCompositeHostsResponse extends SdkResponse {
     }
 
     /**
-     * 独享防护域名的数量
+     * 独享模式防护域名的数量
      * @return premiumTotal
      */
     public Integer getPremiumTotal() {

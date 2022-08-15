@@ -34,7 +34,7 @@ public class AdjustCouponQuotasReq {
     }
 
     /**
-     * 华为云伙伴能力中心发放的代金券额度的ID。获取方法请参见查询优惠券额度。
+     * 华为云总经销商发放的代金券额度的ID。获取方法请参见查询优惠券额度。
      * @return quotaId
      */
     public String getQuotaId() {
@@ -67,7 +67,7 @@ public class AdjustCouponQuotasReq {
     }
 
     /**
-     * 精英服务商ID列表。
+     * 云经销商ID列表。
      * @return indirectPartnerIds
      */
     public List<String> getIndirectPartnerIds() {
@@ -84,7 +84,7 @@ public class AdjustCouponQuotasReq {
     }
 
     /**
-     * 华为云伙伴能力中心向精英服务商发放的代金券额度值。 单位：元。取值大于0且精确到小数点后2位。
+     * 华为云总经销商向云经销商发放的代金券额度值。 单位：元。取值大于0且精确到小数点后2位。
      * minimum: 0.01
      * maximum: 1E+8
      * @return quotaAmount

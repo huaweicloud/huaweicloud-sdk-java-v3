@@ -19,6 +19,11 @@ public class CreateSecretResponse extends SdkResponse {
 
     private Map<String, AuthInfo> auths = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Swr-Dockerlogin")
+
+    private String xSwrDockerlogin;
+
     public CreateSecretResponse withAuths(Map<String, AuthInfo> auths) {
         this.auths = auths;
         return this;
@@ -52,6 +57,25 @@ public class CreateSecretResponse extends SdkResponse {
         this.auths = auths;
     }
 
+    public CreateSecretResponse withXSwrDockerlogin(String xSwrDockerlogin) {
+        this.xSwrDockerlogin = xSwrDockerlogin;
+        return this;
+    }
+
+    /**
+     * Get xSwrDockerlogin
+     * @return xSwrDockerlogin
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Swr-Dockerlogin")
+    public String getXSwrDockerlogin() {
+        return xSwrDockerlogin;
+    }
+
+    public void setXSwrDockerlogin(String xSwrDockerlogin) {
+        this.xSwrDockerlogin = xSwrDockerlogin;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -61,12 +85,13 @@ public class CreateSecretResponse extends SdkResponse {
             return false;
         }
         CreateSecretResponse createSecretResponse = (CreateSecretResponse) o;
-        return Objects.equals(this.auths, createSecretResponse.auths);
+        return Objects.equals(this.auths, createSecretResponse.auths)
+            && Objects.equals(this.xSwrDockerlogin, createSecretResponse.xSwrDockerlogin);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(auths);
+        return Objects.hash(auths, xSwrDockerlogin);
     }
 
     @Override
@@ -74,6 +99,7 @@ public class CreateSecretResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateSecretResponse {\n");
         sb.append("    auths: ").append(toIndentedString(auths)).append("\n");
+        sb.append("    xSwrDockerlogin: ").append(toIndentedString(xSwrDockerlogin)).append("\n");
         sb.append("}");
         return sb.toString();
     }

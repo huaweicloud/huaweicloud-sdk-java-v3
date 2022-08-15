@@ -18,6 +18,36 @@ public class GaussDBClient {
 
 
     /**
+     * 授予数据库用户数据库权限
+     *
+     * 授予云数据库 GaussDB(for MySQL)实例数据库用户数据库权限
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param AddDatabasePermissionRequest 请求对象
+     * @return AddDatabasePermissionResponse
+     */
+    public AddDatabasePermissionResponse addDatabasePermission(AddDatabasePermissionRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.addDatabasePermission);
+    }
+
+    /**
+     * 授予数据库用户数据库权限
+     *
+     * 授予云数据库 GaussDB(for MySQL)实例数据库用户数据库权限
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param AddDatabasePermissionRequest 请求对象
+     * @return SyncInvoker<AddDatabasePermissionRequest, AddDatabasePermissionResponse>
+     */
+    public SyncInvoker<AddDatabasePermissionRequest, AddDatabasePermissionResponse> addDatabasePermissionInvoker(AddDatabasePermissionRequest request) {
+        return new SyncInvoker<AddDatabasePermissionRequest, AddDatabasePermissionResponse>(request, GaussDBMeta.addDatabasePermission, hcClient);
+    }
+
+    /**
      * 批量添加或删除标签
      *
      * 批量添加或删除指定实例的标签。
@@ -138,6 +168,66 @@ public class GaussDBClient {
     }
 
     /**
+     * 创建数据库
+     *
+     * 创建云数据库 GaussDB(for MySQL)实例数据库。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateGaussMySqlDatabaseRequest 请求对象
+     * @return CreateGaussMySqlDatabaseResponse
+     */
+    public CreateGaussMySqlDatabaseResponse createGaussMySqlDatabase(CreateGaussMySqlDatabaseRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.createGaussMySqlDatabase);
+    }
+
+    /**
+     * 创建数据库
+     *
+     * 创建云数据库 GaussDB(for MySQL)实例数据库。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateGaussMySqlDatabaseRequest 请求对象
+     * @return SyncInvoker<CreateGaussMySqlDatabaseRequest, CreateGaussMySqlDatabaseResponse>
+     */
+    public SyncInvoker<CreateGaussMySqlDatabaseRequest, CreateGaussMySqlDatabaseResponse> createGaussMySqlDatabaseInvoker(CreateGaussMySqlDatabaseRequest request) {
+        return new SyncInvoker<CreateGaussMySqlDatabaseRequest, CreateGaussMySqlDatabaseResponse>(request, GaussDBMeta.createGaussMySqlDatabase, hcClient);
+    }
+
+    /**
+     * 创建数据库用户
+     *
+     * 创建云数据库 GaussDB(for MySQL)实例数据库用户。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateGaussMySqlDatabaseUserRequest 请求对象
+     * @return CreateGaussMySqlDatabaseUserResponse
+     */
+    public CreateGaussMySqlDatabaseUserResponse createGaussMySqlDatabaseUser(CreateGaussMySqlDatabaseUserRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.createGaussMySqlDatabaseUser);
+    }
+
+    /**
+     * 创建数据库用户
+     *
+     * 创建云数据库 GaussDB(for MySQL)实例数据库用户。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateGaussMySqlDatabaseUserRequest 请求对象
+     * @return SyncInvoker<CreateGaussMySqlDatabaseUserRequest, CreateGaussMySqlDatabaseUserResponse>
+     */
+    public SyncInvoker<CreateGaussMySqlDatabaseUserRequest, CreateGaussMySqlDatabaseUserResponse> createGaussMySqlDatabaseUserInvoker(CreateGaussMySqlDatabaseUserRequest request) {
+        return new SyncInvoker<CreateGaussMySqlDatabaseUserRequest, CreateGaussMySqlDatabaseUserResponse>(request, GaussDBMeta.createGaussMySqlDatabaseUser, hcClient);
+    }
+
+    /**
      * 创建数据库实例
      *
      * 创建云数据库 GaussDB(for MySQL)实例。
@@ -225,6 +315,96 @@ public class GaussDBClient {
      */
     public SyncInvoker<CreateGaussMySqlReadonlyNodeRequest, CreateGaussMySqlReadonlyNodeResponse> createGaussMySqlReadonlyNodeInvoker(CreateGaussMySqlReadonlyNodeRequest request) {
         return new SyncInvoker<CreateGaussMySqlReadonlyNodeRequest, CreateGaussMySqlReadonlyNodeResponse>(request, GaussDBMeta.createGaussMySqlReadonlyNode, hcClient);
+    }
+
+    /**
+     * 删除数据库用户的数据库权限
+     *
+     * 删除云数据库 GaussDB(for MySQL)实例数据库用户的数据库权限
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteDatabasePermissionRequest 请求对象
+     * @return DeleteDatabasePermissionResponse
+     */
+    public DeleteDatabasePermissionResponse deleteDatabasePermission(DeleteDatabasePermissionRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.deleteDatabasePermission);
+    }
+
+    /**
+     * 删除数据库用户的数据库权限
+     *
+     * 删除云数据库 GaussDB(for MySQL)实例数据库用户的数据库权限
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteDatabasePermissionRequest 请求对象
+     * @return SyncInvoker<DeleteDatabasePermissionRequest, DeleteDatabasePermissionResponse>
+     */
+    public SyncInvoker<DeleteDatabasePermissionRequest, DeleteDatabasePermissionResponse> deleteDatabasePermissionInvoker(DeleteDatabasePermissionRequest request) {
+        return new SyncInvoker<DeleteDatabasePermissionRequest, DeleteDatabasePermissionResponse>(request, GaussDBMeta.deleteDatabasePermission, hcClient);
+    }
+
+    /**
+     * 删除数据库
+     *
+     * 删除云数据库 GaussDB(for MySQL)实例数据库。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteGaussMySqlDatabaseRequest 请求对象
+     * @return DeleteGaussMySqlDatabaseResponse
+     */
+    public DeleteGaussMySqlDatabaseResponse deleteGaussMySqlDatabase(DeleteGaussMySqlDatabaseRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.deleteGaussMySqlDatabase);
+    }
+
+    /**
+     * 删除数据库
+     *
+     * 删除云数据库 GaussDB(for MySQL)实例数据库。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteGaussMySqlDatabaseRequest 请求对象
+     * @return SyncInvoker<DeleteGaussMySqlDatabaseRequest, DeleteGaussMySqlDatabaseResponse>
+     */
+    public SyncInvoker<DeleteGaussMySqlDatabaseRequest, DeleteGaussMySqlDatabaseResponse> deleteGaussMySqlDatabaseInvoker(DeleteGaussMySqlDatabaseRequest request) {
+        return new SyncInvoker<DeleteGaussMySqlDatabaseRequest, DeleteGaussMySqlDatabaseResponse>(request, GaussDBMeta.deleteGaussMySqlDatabase, hcClient);
+    }
+
+    /**
+     * 删除数据库用户
+     *
+     * 删除云数据库 GaussDB(for MySQL)实例数据库用户。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteGaussMySqlDatabaseUserRequest 请求对象
+     * @return DeleteGaussMySqlDatabaseUserResponse
+     */
+    public DeleteGaussMySqlDatabaseUserResponse deleteGaussMySqlDatabaseUser(DeleteGaussMySqlDatabaseUserRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.deleteGaussMySqlDatabaseUser);
+    }
+
+    /**
+     * 删除数据库用户
+     *
+     * 删除云数据库 GaussDB(for MySQL)实例数据库用户。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteGaussMySqlDatabaseUserRequest 请求对象
+     * @return SyncInvoker<DeleteGaussMySqlDatabaseUserRequest, DeleteGaussMySqlDatabaseUserResponse>
+     */
+    public SyncInvoker<DeleteGaussMySqlDatabaseUserRequest, DeleteGaussMySqlDatabaseUserResponse> deleteGaussMySqlDatabaseUserInvoker(DeleteGaussMySqlDatabaseUserRequest request) {
+        return new SyncInvoker<DeleteGaussMySqlDatabaseUserRequest, DeleteGaussMySqlDatabaseUserResponse>(request, GaussDBMeta.deleteGaussMySqlDatabaseUser, hcClient);
     }
 
     /**
@@ -410,6 +590,96 @@ public class GaussDBClient {
     }
 
     /**
+     * 查询数据库列表
+     *
+     * 查询 GaussDB(for MySQL)实例数据库。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListGaussMySqlDatabaseRequest 请求对象
+     * @return ListGaussMySqlDatabaseResponse
+     */
+    public ListGaussMySqlDatabaseResponse listGaussMySqlDatabase(ListGaussMySqlDatabaseRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.listGaussMySqlDatabase);
+    }
+
+    /**
+     * 查询数据库列表
+     *
+     * 查询 GaussDB(for MySQL)实例数据库。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListGaussMySqlDatabaseRequest 请求对象
+     * @return SyncInvoker<ListGaussMySqlDatabaseRequest, ListGaussMySqlDatabaseResponse>
+     */
+    public SyncInvoker<ListGaussMySqlDatabaseRequest, ListGaussMySqlDatabaseResponse> listGaussMySqlDatabaseInvoker(ListGaussMySqlDatabaseRequest request) {
+        return new SyncInvoker<ListGaussMySqlDatabaseRequest, ListGaussMySqlDatabaseResponse>(request, GaussDBMeta.listGaussMySqlDatabase, hcClient);
+    }
+
+    /**
+     * 查询数据库可用字符集
+     *
+     * 查询云数据库 GaussDB(for MySQL)实例数据库可用字符集。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListGaussMySqlDatabaseCharsetsRequest 请求对象
+     * @return ListGaussMySqlDatabaseCharsetsResponse
+     */
+    public ListGaussMySqlDatabaseCharsetsResponse listGaussMySqlDatabaseCharsets(ListGaussMySqlDatabaseCharsetsRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.listGaussMySqlDatabaseCharsets);
+    }
+
+    /**
+     * 查询数据库可用字符集
+     *
+     * 查询云数据库 GaussDB(for MySQL)实例数据库可用字符集。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListGaussMySqlDatabaseCharsetsRequest 请求对象
+     * @return SyncInvoker<ListGaussMySqlDatabaseCharsetsRequest, ListGaussMySqlDatabaseCharsetsResponse>
+     */
+    public SyncInvoker<ListGaussMySqlDatabaseCharsetsRequest, ListGaussMySqlDatabaseCharsetsResponse> listGaussMySqlDatabaseCharsetsInvoker(ListGaussMySqlDatabaseCharsetsRequest request) {
+        return new SyncInvoker<ListGaussMySqlDatabaseCharsetsRequest, ListGaussMySqlDatabaseCharsetsResponse>(request, GaussDBMeta.listGaussMySqlDatabaseCharsets, hcClient);
+    }
+
+    /**
+     * 查询数据库用户
+     *
+     * 查询云数据库 GaussDB(for MySQL)实例数据库用户。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListGaussMySqlDatabaseUserRequest 请求对象
+     * @return ListGaussMySqlDatabaseUserResponse
+     */
+    public ListGaussMySqlDatabaseUserResponse listGaussMySqlDatabaseUser(ListGaussMySqlDatabaseUserRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.listGaussMySqlDatabaseUser);
+    }
+
+    /**
+     * 查询数据库用户
+     *
+     * 查询云数据库 GaussDB(for MySQL)实例数据库用户。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListGaussMySqlDatabaseUserRequest 请求对象
+     * @return SyncInvoker<ListGaussMySqlDatabaseUserRequest, ListGaussMySqlDatabaseUserResponse>
+     */
+    public SyncInvoker<ListGaussMySqlDatabaseUserRequest, ListGaussMySqlDatabaseUserResponse> listGaussMySqlDatabaseUserInvoker(ListGaussMySqlDatabaseUserRequest request) {
+        return new SyncInvoker<ListGaussMySqlDatabaseUserRequest, ListGaussMySqlDatabaseUserResponse>(request, GaussDBMeta.listGaussMySqlDatabaseUser, hcClient);
+    }
+
+    /**
      * 查询专属资源池列表
      *
      * 获取专属资源池列表，包括用户开通的所有专属资源池信息。
@@ -587,6 +857,36 @@ public class GaussDBClient {
      */
     public SyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse> listProjectTagsInvoker(ListProjectTagsRequest request) {
         return new SyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse>(request, GaussDBMeta.listProjectTags, hcClient);
+    }
+
+    /**
+     * 修改数据库用户密码
+     *
+     * 修改云数据库 GaussDB(for MySQL)实例数据库用户密码。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ResetGaussMySqlDatabasePasswordRequest 请求对象
+     * @return ResetGaussMySqlDatabasePasswordResponse
+     */
+    public ResetGaussMySqlDatabasePasswordResponse resetGaussMySqlDatabasePassword(ResetGaussMySqlDatabasePasswordRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.resetGaussMySqlDatabasePassword);
+    }
+
+    /**
+     * 修改数据库用户密码
+     *
+     * 修改云数据库 GaussDB(for MySQL)实例数据库用户密码。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ResetGaussMySqlDatabasePasswordRequest 请求对象
+     * @return SyncInvoker<ResetGaussMySqlDatabasePasswordRequest, ResetGaussMySqlDatabasePasswordResponse>
+     */
+    public SyncInvoker<ResetGaussMySqlDatabasePasswordRequest, ResetGaussMySqlDatabasePasswordResponse> resetGaussMySqlDatabasePasswordInvoker(ResetGaussMySqlDatabasePasswordRequest request) {
+        return new SyncInvoker<ResetGaussMySqlDatabasePasswordRequest, ResetGaussMySqlDatabasePasswordResponse>(request, GaussDBMeta.resetGaussMySqlDatabasePassword, hcClient);
     }
 
     /**

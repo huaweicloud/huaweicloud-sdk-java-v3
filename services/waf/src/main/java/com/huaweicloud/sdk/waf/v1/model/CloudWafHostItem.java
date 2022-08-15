@@ -27,6 +27,11 @@ public class CloudWafHostItem {
     private String hostid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "region")
+
+    private String region;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
     private String description;
@@ -40,11 +45,6 @@ public class CloudWafHostItem {
     @JsonProperty(value = "proxy")
 
     private Boolean proxy;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "flag")
-
-    private Flag flag;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hostname")
@@ -158,9 +158,14 @@ public class CloudWafHostItem {
     private PaidTypeEnum paidType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "timeout_config")
+    @JsonProperty(value = "web_tag")
 
-    private TimeoutConfig timeoutConfig;
+    private String webTag;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "flag")
+
+    private Flag flag;
 
     public CloudWafHostItem withId(String id) {
         this.id = id;
@@ -196,13 +201,30 @@ public class CloudWafHostItem {
         this.hostid = hostid;
     }
 
+    public CloudWafHostItem withRegion(String region) {
+        this.region = region;
+        return this;
+    }
+
+    /**
+     * 华为云区域ID，控制台创建的域名会携带此参数，api调用创建的域名此参数为空，可以通过华为云上地区和终端节点文档查询区域ID对应的中文名称
+     * @return region
+     */
+    public String getRegion() {
+        return region;
+    }
+
+    public void setRegion(String region) {
+        this.region = region;
+    }
+
     public CloudWafHostItem withDescription(String description) {
         this.description = description;
         return this;
     }
 
     /**
-     * 描述信息
+     * 域名描述信息，可选参数。
      * @return description
      */
     public String getDescription() {
@@ -219,7 +241,7 @@ public class CloudWafHostItem {
     }
 
     /**
-     * WAF部署模式
+     * WAF部署模式，默认是1，目前仅支持反代模式，冗余参数
      * @return type
      */
     public Integer getType() {
@@ -236,7 +258,7 @@ public class CloudWafHostItem {
     }
 
     /**
-     * 是否开启了代理
+     * 防护域名是否使用代理   - false：不使用代理   - true：使用代理
      * @return proxy
      */
     public Boolean getProxy() {
@@ -245,32 +267,6 @@ public class CloudWafHostItem {
 
     public void setProxy(Boolean proxy) {
         this.proxy = proxy;
-    }
-
-    public CloudWafHostItem withFlag(Flag flag) {
-        this.flag = flag;
-        return this;
-    }
-
-    public CloudWafHostItem withFlag(Consumer<Flag> flagSetter) {
-        if (this.flag == null) {
-            this.flag = new Flag();
-            flagSetter.accept(this.flag);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get flag
-     * @return flag
-     */
-    public Flag getFlag() {
-        return flag;
-    }
-
-    public void setFlag(Flag flag) {
-        this.flag = flag;
     }
 
     public CloudWafHostItem withHostname(String hostname) {
@@ -313,7 +309,7 @@ public class CloudWafHostItem {
     }
 
     /**
-     * 策略id
+     * 防护策略id
      * @return policyid
      */
     public String getPolicyid() {
@@ -364,7 +360,7 @@ public class CloudWafHostItem {
     }
 
     /**
-     * 接入状态
+     * 域名接入状态，0表示未接入，1表示已接入
      * @return accessStatus
      */
     public Integer getAccessStatus() {
@@ -381,7 +377,7 @@ public class CloudWafHostItem {
     }
 
     /**
-     * 是否使用独享ip
+     * 是否使用独享ip   - true：使用独享ip   - false：不实用独享ip
      * @return exclusiveIp
      */
     public Boolean getExclusiveIp() {
@@ -409,30 +405,47 @@ public class CloudWafHostItem {
         this.paidType = paidType;
     }
 
-    public CloudWafHostItem withTimeoutConfig(TimeoutConfig timeoutConfig) {
-        this.timeoutConfig = timeoutConfig;
+    public CloudWafHostItem withWebTag(String webTag) {
+        this.webTag = webTag;
         return this;
     }
 
-    public CloudWafHostItem withTimeoutConfig(Consumer<TimeoutConfig> timeoutConfigSetter) {
-        if (this.timeoutConfig == null) {
-            this.timeoutConfig = new TimeoutConfig();
-            timeoutConfigSetter.accept(this.timeoutConfig);
+    /**
+     * 网站名称，对应WAF控制台域名详情中的网站名称
+     * @return webTag
+     */
+    public String getWebTag() {
+        return webTag;
+    }
+
+    public void setWebTag(String webTag) {
+        this.webTag = webTag;
+    }
+
+    public CloudWafHostItem withFlag(Flag flag) {
+        this.flag = flag;
+        return this;
+    }
+
+    public CloudWafHostItem withFlag(Consumer<Flag> flagSetter) {
+        if (this.flag == null) {
+            this.flag = new Flag();
+            flagSetter.accept(this.flag);
         }
 
         return this;
     }
 
     /**
-     * Get timeoutConfig
-     * @return timeoutConfig
+     * Get flag
+     * @return flag
      */
-    public TimeoutConfig getTimeoutConfig() {
-        return timeoutConfig;
+    public Flag getFlag() {
+        return flag;
     }
 
-    public void setTimeoutConfig(TimeoutConfig timeoutConfig) {
-        this.timeoutConfig = timeoutConfig;
+    public void setFlag(Flag flag) {
+        this.flag = flag;
     }
 
     @Override
@@ -445,9 +458,9 @@ public class CloudWafHostItem {
         }
         CloudWafHostItem cloudWafHostItem = (CloudWafHostItem) o;
         return Objects.equals(this.id, cloudWafHostItem.id) && Objects.equals(this.hostid, cloudWafHostItem.hostid)
+            && Objects.equals(this.region, cloudWafHostItem.region)
             && Objects.equals(this.description, cloudWafHostItem.description)
             && Objects.equals(this.type, cloudWafHostItem.type) && Objects.equals(this.proxy, cloudWafHostItem.proxy)
-            && Objects.equals(this.flag, cloudWafHostItem.flag)
             && Objects.equals(this.hostname, cloudWafHostItem.hostname)
             && Objects.equals(this.accessCode, cloudWafHostItem.accessCode)
             && Objects.equals(this.policyid, cloudWafHostItem.policyid)
@@ -456,17 +469,17 @@ public class CloudWafHostItem {
             && Objects.equals(this.accessStatus, cloudWafHostItem.accessStatus)
             && Objects.equals(this.exclusiveIp, cloudWafHostItem.exclusiveIp)
             && Objects.equals(this.paidType, cloudWafHostItem.paidType)
-            && Objects.equals(this.timeoutConfig, cloudWafHostItem.timeoutConfig);
+            && Objects.equals(this.webTag, cloudWafHostItem.webTag) && Objects.equals(this.flag, cloudWafHostItem.flag);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(id,
             hostid,
+            region,
             description,
             type,
             proxy,
-            flag,
             hostname,
             accessCode,
             policyid,
@@ -475,7 +488,8 @@ public class CloudWafHostItem {
             accessStatus,
             exclusiveIp,
             paidType,
-            timeoutConfig);
+            webTag,
+            flag);
     }
 
     @Override
@@ -484,10 +498,10 @@ public class CloudWafHostItem {
         sb.append("class CloudWafHostItem {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    hostid: ").append(toIndentedString(hostid)).append("\n");
+        sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    proxy: ").append(toIndentedString(proxy)).append("\n");
-        sb.append("    flag: ").append(toIndentedString(flag)).append("\n");
         sb.append("    hostname: ").append(toIndentedString(hostname)).append("\n");
         sb.append("    accessCode: ").append(toIndentedString(accessCode)).append("\n");
         sb.append("    policyid: ").append(toIndentedString(policyid)).append("\n");
@@ -496,7 +510,8 @@ public class CloudWafHostItem {
         sb.append("    accessStatus: ").append(toIndentedString(accessStatus)).append("\n");
         sb.append("    exclusiveIp: ").append(toIndentedString(exclusiveIp)).append("\n");
         sb.append("    paidType: ").append(toIndentedString(paidType)).append("\n");
-        sb.append("    timeoutConfig: ").append(toIndentedString(timeoutConfig)).append("\n");
+        sb.append("    webTag: ").append(toIndentedString(webTag)).append("\n");
+        sb.append("    flag: ").append(toIndentedString(flag)).append("\n");
         sb.append("}");
         return sb.toString();
     }

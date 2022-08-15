@@ -24,7 +24,7 @@ public class ListEventRequest {
     private String enterpriseProjectId;
 
     /**
-     * 查询日志的时间范围,(不能和from、to同时使用)
+     * 查询日志的时间范围（不能和from、to同时使用，同时使用以recent为准），且recent参数与from、to必须使用其中一个。当同时使用recent参数与from、to时，以recent参数为准
      */
     public static final class RecentEnum {
 
@@ -124,11 +124,6 @@ public class ListEventRequest {
     private RecentEnum recent;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "attacks")
-
-    private List<String> attacks = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "from")
 
     private Long from;
@@ -137,6 +132,11 @@ public class ListEventRequest {
     @JsonProperty(value = "to")
 
     private Long to;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "attacks")
+
+    private List<String> attacks = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hosts")
@@ -159,7 +159,7 @@ public class ListEventRequest {
     }
 
     /**
-     * 您可以通过调用企业项目管理服务（EPS)的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id
+     * 您可以通过调用企业项目管理服务（EPS）的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -176,7 +176,7 @@ public class ListEventRequest {
     }
 
     /**
-     * 查询日志的时间范围,(不能和from、to同时使用)
+     * 查询日志的时间范围（不能和from、to同时使用，同时使用以recent为准），且recent参数与from、to必须使用其中一个。当同时使用recent参数与from、to时，以recent参数为准
      * @return recent
      */
     public RecentEnum getRecent() {
@@ -185,39 +185,6 @@ public class ListEventRequest {
 
     public void setRecent(RecentEnum recent) {
         this.recent = recent;
-    }
-
-    public ListEventRequest withAttacks(List<String> attacks) {
-        this.attacks = attacks;
-        return this;
-    }
-
-    public ListEventRequest addAttacksItem(String attacksItem) {
-        if (this.attacks == null) {
-            this.attacks = new ArrayList<>();
-        }
-        this.attacks.add(attacksItem);
-        return this;
-    }
-
-    public ListEventRequest withAttacks(Consumer<List<String>> attacksSetter) {
-        if (this.attacks == null) {
-            this.attacks = new ArrayList<>();
-        }
-        attacksSetter.accept(this.attacks);
-        return this;
-    }
-
-    /**
-     * 攻击类型:   - vuln：其它攻击类型   - sqli： sql注入攻击   - lfi： 本地文件包含  - cmdi：命令注入攻击   - xss：XSS攻击   - robot：恶意爬虫   - rfi：远程文件包含   - custom_custom：精准防护   - cc: cc攻击   - webshell：网站木马   - custom_whiteblackip：黑白名单拦截   - custom_geoip：地理访问控制拦截   - antitamper：防篡改   - anticrawler：反爬虫    - leakage：网站信息防泄漏   - illegal：非法请求 
-     * @return attacks
-     */
-    public List<String> getAttacks() {
-        return attacks;
-    }
-
-    public void setAttacks(List<String> attacks) {
-        this.attacks = attacks;
     }
 
     public ListEventRequest withFrom(Long from) {
@@ -252,6 +219,39 @@ public class ListEventRequest {
 
     public void setTo(Long to) {
         this.to = to;
+    }
+
+    public ListEventRequest withAttacks(List<String> attacks) {
+        this.attacks = attacks;
+        return this;
+    }
+
+    public ListEventRequest addAttacksItem(String attacksItem) {
+        if (this.attacks == null) {
+            this.attacks = new ArrayList<>();
+        }
+        this.attacks.add(attacksItem);
+        return this;
+    }
+
+    public ListEventRequest withAttacks(Consumer<List<String>> attacksSetter) {
+        if (this.attacks == null) {
+            this.attacks = new ArrayList<>();
+        }
+        attacksSetter.accept(this.attacks);
+        return this;
+    }
+
+    /**
+     * 攻击类型:   - vuln：其它攻击类型   - sqli： sql注入攻击   - lfi： 本地文件包含  - cmdi：命令注入攻击   - xss：XSS攻击   - robot：恶意爬虫   - rfi：远程文件包含   - custom_custom：精准防护   - cc: cc攻击   - webshell：网站木马   - custom_whiteblackip：黑白名单拦截   - custom_geoip：地理访问控制拦截   - antitamper：防篡改   - anticrawler：反爬虫    - leakage：网站信息防泄漏   - illegal：非法请求 
+     * @return attacks
+     */
+    public List<String> getAttacks() {
+        return attacks;
+    }
+
+    public void setAttacks(List<String> attacks) {
+        this.attacks = attacks;
     }
 
     public ListEventRequest withHosts(List<String> hosts) {
@@ -293,7 +293,7 @@ public class ListEventRequest {
     }
 
     /**
-     * 分页查询时，返回第几页数据。范围0-100000，默认值为1，表示返回第1页数据。
+     * 分页查询时，返回第几页数据。默认值为1，表示返回第1页数据。
      * @return page
      */
     public Integer getPage() {
@@ -331,16 +331,15 @@ public class ListEventRequest {
         }
         ListEventRequest listEventRequest = (ListEventRequest) o;
         return Objects.equals(this.enterpriseProjectId, listEventRequest.enterpriseProjectId)
-            && Objects.equals(this.recent, listEventRequest.recent)
-            && Objects.equals(this.attacks, listEventRequest.attacks)
-            && Objects.equals(this.from, listEventRequest.from) && Objects.equals(this.to, listEventRequest.to)
+            && Objects.equals(this.recent, listEventRequest.recent) && Objects.equals(this.from, listEventRequest.from)
+            && Objects.equals(this.to, listEventRequest.to) && Objects.equals(this.attacks, listEventRequest.attacks)
             && Objects.equals(this.hosts, listEventRequest.hosts) && Objects.equals(this.page, listEventRequest.page)
             && Objects.equals(this.pagesize, listEventRequest.pagesize);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enterpriseProjectId, recent, attacks, from, to, hosts, page, pagesize);
+        return Objects.hash(enterpriseProjectId, recent, from, to, attacks, hosts, page, pagesize);
     }
 
     @Override
@@ -349,9 +348,9 @@ public class ListEventRequest {
         sb.append("class ListEventRequest {\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    recent: ").append(toIndentedString(recent)).append("\n");
-        sb.append("    attacks: ").append(toIndentedString(attacks)).append("\n");
         sb.append("    from: ").append(toIndentedString(from)).append("\n");
         sb.append("    to: ").append(toIndentedString(to)).append("\n");
+        sb.append("    attacks: ").append(toIndentedString(attacks)).append("\n");
         sb.append("    hosts: ").append(toIndentedString(hosts)).append("\n");
         sb.append("    page: ").append(toIndentedString(page)).append("\n");
         sb.append("    pagesize: ").append(toIndentedString(pagesize)).append("\n");

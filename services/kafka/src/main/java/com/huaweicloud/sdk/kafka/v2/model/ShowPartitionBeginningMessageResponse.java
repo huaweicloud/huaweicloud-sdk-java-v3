@@ -22,9 +22,9 @@ public class ShowPartitionBeginningMessageResponse extends SdkResponse {
     private Integer partition;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "message_offset")
+    @JsonProperty(value = "offset")
 
-    private Integer messageOffset;
+    private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timestamp")
@@ -65,21 +65,21 @@ public class ShowPartitionBeginningMessageResponse extends SdkResponse {
         this.partition = partition;
     }
 
-    public ShowPartitionBeginningMessageResponse withMessageOffset(Integer messageOffset) {
-        this.messageOffset = messageOffset;
+    public ShowPartitionBeginningMessageResponse withOffset(Integer offset) {
+        this.offset = offset;
         return this;
     }
 
     /**
      * 最新消息位置。
-     * @return messageOffset
+     * @return offset
      */
-    public Integer getMessageOffset() {
-        return messageOffset;
+    public Integer getOffset() {
+        return offset;
     }
 
-    public void setMessageOffset(Integer messageOffset) {
-        this.messageOffset = messageOffset;
+    public void setOffset(Integer offset) {
+        this.offset = offset;
     }
 
     public ShowPartitionBeginningMessageResponse withTimestamp(Long timestamp) {
@@ -111,13 +111,13 @@ public class ShowPartitionBeginningMessageResponse extends SdkResponse {
             (ShowPartitionBeginningMessageResponse) o;
         return Objects.equals(this.topic, showPartitionBeginningMessageResponse.topic)
             && Objects.equals(this.partition, showPartitionBeginningMessageResponse.partition)
-            && Objects.equals(this.messageOffset, showPartitionBeginningMessageResponse.messageOffset)
+            && Objects.equals(this.offset, showPartitionBeginningMessageResponse.offset)
             && Objects.equals(this.timestamp, showPartitionBeginningMessageResponse.timestamp);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(topic, partition, messageOffset, timestamp);
+        return Objects.hash(topic, partition, offset, timestamp);
     }
 
     @Override
@@ -126,7 +126,7 @@ public class ShowPartitionBeginningMessageResponse extends SdkResponse {
         sb.append("class ShowPartitionBeginningMessageResponse {\n");
         sb.append("    topic: ").append(toIndentedString(topic)).append("\n");
         sb.append("    partition: ").append(toIndentedString(partition)).append("\n");
-        sb.append("    messageOffset: ").append(toIndentedString(messageOffset)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
         sb.append("}");
         return sb.toString();

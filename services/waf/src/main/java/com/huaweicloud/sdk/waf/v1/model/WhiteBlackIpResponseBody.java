@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * WhiteBlackIpResponseBody
@@ -14,6 +15,11 @@ public class WhiteBlackIpResponseBody {
     @JsonProperty(value = "id")
 
     private String id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "name")
+
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policyid")
@@ -45,6 +51,11 @@ public class WhiteBlackIpResponseBody {
 
     private Integer white;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ip_group")
+
+    private IpGroup ipGroup;
+
     public WhiteBlackIpResponseBody withId(String id) {
         this.id = id;
         return this;
@@ -60,6 +71,23 @@ public class WhiteBlackIpResponseBody {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public WhiteBlackIpResponseBody withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    /**
+     * 黑白名单规则名称
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public WhiteBlackIpResponseBody withPolicyid(String policyid) {
@@ -85,7 +113,7 @@ public class WhiteBlackIpResponseBody {
     }
 
     /**
-     * 创建规则的时间戳
+     * 创建规则的时间戳（毫秒）
      * @return timestamp
      */
     public Long getTimestamp() {
@@ -136,7 +164,7 @@ public class WhiteBlackIpResponseBody {
     }
 
     /**
-     * 黑白名单
+     * Ip/Ip段
      * @return addr
      */
     public String getAddr() {
@@ -164,6 +192,32 @@ public class WhiteBlackIpResponseBody {
         this.white = white;
     }
 
+    public WhiteBlackIpResponseBody withIpGroup(IpGroup ipGroup) {
+        this.ipGroup = ipGroup;
+        return this;
+    }
+
+    public WhiteBlackIpResponseBody withIpGroup(Consumer<IpGroup> ipGroupSetter) {
+        if (this.ipGroup == null) {
+            this.ipGroup = new IpGroup();
+            ipGroupSetter.accept(this.ipGroup);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get ipGroup
+     * @return ipGroup
+     */
+    public IpGroup getIpGroup() {
+        return ipGroup;
+    }
+
+    public void setIpGroup(IpGroup ipGroup) {
+        this.ipGroup = ipGroup;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -174,17 +228,19 @@ public class WhiteBlackIpResponseBody {
         }
         WhiteBlackIpResponseBody whiteBlackIpResponseBody = (WhiteBlackIpResponseBody) o;
         return Objects.equals(this.id, whiteBlackIpResponseBody.id)
+            && Objects.equals(this.name, whiteBlackIpResponseBody.name)
             && Objects.equals(this.policyid, whiteBlackIpResponseBody.policyid)
             && Objects.equals(this.timestamp, whiteBlackIpResponseBody.timestamp)
             && Objects.equals(this.description, whiteBlackIpResponseBody.description)
             && Objects.equals(this.status, whiteBlackIpResponseBody.status)
             && Objects.equals(this.addr, whiteBlackIpResponseBody.addr)
-            && Objects.equals(this.white, whiteBlackIpResponseBody.white);
+            && Objects.equals(this.white, whiteBlackIpResponseBody.white)
+            && Objects.equals(this.ipGroup, whiteBlackIpResponseBody.ipGroup);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, policyid, timestamp, description, status, addr, white);
+        return Objects.hash(id, name, policyid, timestamp, description, status, addr, white, ipGroup);
     }
 
     @Override
@@ -192,12 +248,14 @@ public class WhiteBlackIpResponseBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class WhiteBlackIpResponseBody {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    policyid: ").append(toIndentedString(policyid)).append("\n");
         sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    addr: ").append(toIndentedString(addr)).append("\n");
         sb.append("    white: ").append(toIndentedString(white)).append("\n");
+        sb.append("    ipGroup: ").append(toIndentedString(ipGroup)).append("\n");
         sb.append("}");
         return sb.toString();
     }

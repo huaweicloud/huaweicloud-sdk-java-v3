@@ -36,10 +36,10 @@ public class UpdateHostRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "server")
 
-    private List<UpdateCloudWafServer> server = null;
+    private List<CloudWafServer> server = null;
 
     /**
-    * 支持最低的TLS版本（TLS v1.0/TLS v1.1/TLS v1.2）,默认为TLS v1.0版本
+    * 配置的最低TLS版本（TLS v1.0/TLS v1.1/TLS v1.2）,默认为TLS v1.0版本，对于低于最低TLS版本的请求，将无法正常访问网站
     */
     public static final class TlsEnum {
 
@@ -133,7 +133,7 @@ public class UpdateHostRequestBody {
     private TlsEnum tls;
 
     /**
-     * 加密套件（cipher_1，cipher_2，cipher_3，cipher_4，cipher_default）：  cipher_1： 加密算法为ECDHE-ECDSA-AES256-GCM-SHA384:HIGH:!MEDIUM:!LOW:!aNULL:!eNULL:!DES:!MD5:!PSK:!RC4:!kRSA:!SRP:!3DES:!DSS:!EXP:!CAMELLIA:@STRENGTH   cipher_2：加密算法为EECDH+AESGCM:EDH+AESGCM    cipher_3：加密算法为ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-SHA384:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!DH:!EDH    cipher_4：加密算法为ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:AES256-SHA256:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!EDH    cipher_default： 加密算法为ECDHE-RSA-AES256-SHA384:AES256-SHA256:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!DH:!EDH:!AESGCM
+     * 加密套件（cipher_1，cipher_2，cipher_3，cipher_4，cipher_default）：  - cipher_1： 加密算法为ECDHE-ECDSA-AES256-GCM-SHA384:HIGH:!MEDIUM:!LOW:!aNULL:!eNULL:!DES:!MD5:!PSK:!RC4:!kRSA:!SRP:!3DES:!DSS:!EXP:!CAMELLIA:@STRENGTH   - cipher_2：加密算法为EECDH+AESGCM:EDH+AESGCM   - cipher_3：加密算法为ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-SHA384:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!DH:!EDH   - cipher_4：加密算法为ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:AES256-SHA256:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!EDH   - cipher_default： 加密算法为ECDHE-RSA-AES256-SHA384:AES256-SHA256:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!DH:!EDH:!AESGCM
      */
     public static final class CipherEnum {
 
@@ -233,6 +233,31 @@ public class UpdateHostRequestBody {
     private CipherEnum cipher;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "http2_enable")
+
+    private Boolean http2Enable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ipv6_enable")
+
+    private Boolean ipv6Enable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "web_tag")
+
+    private String webTag;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "exclusive_ip")
+
+    private Boolean exclusiveIp;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "paid_type")
+
+    private String paidType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "block_page")
 
     private BlockPage blockPage;
@@ -245,7 +270,7 @@ public class UpdateHostRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flag")
 
-    private Map<String, String> flag = null;
+    private Flag flag;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extend")
@@ -253,19 +278,9 @@ public class UpdateHostRequestBody {
     private Map<String, String> extend = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "http2_enable")
+    @JsonProperty(value = "circuit_breaker")
 
-    private Boolean http2Enable;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ipv6_enable")
-
-    private Boolean ipv6Enable;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "lb_algorithm")
-
-    private String lbAlgorithm;
+    private CircuitBreaker circuitBreaker;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timeout_config")
@@ -278,7 +293,7 @@ public class UpdateHostRequestBody {
     }
 
     /**
-     * 是否使用代理
+     * 防护域名是否使用代理   - false：不使用代理   - true：使用代理
      * @return proxy
      */
     public Boolean getProxy() {
@@ -295,7 +310,7 @@ public class UpdateHostRequestBody {
     }
 
     /**
-     * 证书id,在对外协议为https的场景下可以使用，可以通过查询证书列表（ListCertificates）接口查询证书id
+     * 证书id，通过查询证书列表接口（ListCertificates）接口获取证书id   - 对外协议为HTTP时不需要填写   - 对外协议HTTPS时为必填参数
      * @return certificateid
      */
     public String getCertificateid() {
@@ -312,7 +327,7 @@ public class UpdateHostRequestBody {
     }
 
     /**
-     * 证书名称,在对外协议为https的场景下可以使用，可以在页面上获取的证书名称，或通过查询证书列表（ListCertificates）接口获取证书名称
+     * 证书名   - 对外协议为HTTP时不需要填写   - 对外协议HTTPS时为必填参数
      * @return certificatename
      */
     public String getCertificatename() {
@@ -323,12 +338,12 @@ public class UpdateHostRequestBody {
         this.certificatename = certificatename;
     }
 
-    public UpdateHostRequestBody withServer(List<UpdateCloudWafServer> server) {
+    public UpdateHostRequestBody withServer(List<CloudWafServer> server) {
         this.server = server;
         return this;
     }
 
-    public UpdateHostRequestBody addServerItem(UpdateCloudWafServer serverItem) {
+    public UpdateHostRequestBody addServerItem(CloudWafServer serverItem) {
         if (this.server == null) {
             this.server = new ArrayList<>();
         }
@@ -336,7 +351,7 @@ public class UpdateHostRequestBody {
         return this;
     }
 
-    public UpdateHostRequestBody withServer(Consumer<List<UpdateCloudWafServer>> serverSetter) {
+    public UpdateHostRequestBody withServer(Consumer<List<CloudWafServer>> serverSetter) {
         if (this.server == null) {
             this.server = new ArrayList<>();
         }
@@ -345,14 +360,14 @@ public class UpdateHostRequestBody {
     }
 
     /**
-     * 服务器配置
+     * 防护域名的源站服务器配置信息
      * @return server
      */
-    public List<UpdateCloudWafServer> getServer() {
+    public List<CloudWafServer> getServer() {
         return server;
     }
 
-    public void setServer(List<UpdateCloudWafServer> server) {
+    public void setServer(List<CloudWafServer> server) {
         this.server = server;
     }
 
@@ -362,7 +377,7 @@ public class UpdateHostRequestBody {
     }
 
     /**
-     * 支持最低的TLS版本（TLS v1.0/TLS v1.1/TLS v1.2）,默认为TLS v1.0版本
+     * 配置的最低TLS版本（TLS v1.0/TLS v1.1/TLS v1.2）,默认为TLS v1.0版本，对于低于最低TLS版本的请求，将无法正常访问网站
      * @return tls
      */
     public TlsEnum getTls() {
@@ -379,7 +394,7 @@ public class UpdateHostRequestBody {
     }
 
     /**
-     * 加密套件（cipher_1，cipher_2，cipher_3，cipher_4，cipher_default）：  cipher_1： 加密算法为ECDHE-ECDSA-AES256-GCM-SHA384:HIGH:!MEDIUM:!LOW:!aNULL:!eNULL:!DES:!MD5:!PSK:!RC4:!kRSA:!SRP:!3DES:!DSS:!EXP:!CAMELLIA:@STRENGTH   cipher_2：加密算法为EECDH+AESGCM:EDH+AESGCM    cipher_3：加密算法为ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-SHA384:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!DH:!EDH    cipher_4：加密算法为ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:AES256-SHA256:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!EDH    cipher_default： 加密算法为ECDHE-RSA-AES256-SHA384:AES256-SHA256:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!DH:!EDH:!AESGCM
+     * 加密套件（cipher_1，cipher_2，cipher_3，cipher_4，cipher_default）：  - cipher_1： 加密算法为ECDHE-ECDSA-AES256-GCM-SHA384:HIGH:!MEDIUM:!LOW:!aNULL:!eNULL:!DES:!MD5:!PSK:!RC4:!kRSA:!SRP:!3DES:!DSS:!EXP:!CAMELLIA:@STRENGTH   - cipher_2：加密算法为EECDH+AESGCM:EDH+AESGCM   - cipher_3：加密算法为ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-SHA384:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!DH:!EDH   - cipher_4：加密算法为ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:AES256-SHA256:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!EDH   - cipher_default： 加密算法为ECDHE-RSA-AES256-SHA384:AES256-SHA256:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!DH:!EDH:!AESGCM
      * @return cipher
      */
     public CipherEnum getCipher() {
@@ -388,6 +403,91 @@ public class UpdateHostRequestBody {
 
     public void setCipher(CipherEnum cipher) {
         this.cipher = cipher;
+    }
+
+    public UpdateHostRequestBody withHttp2Enable(Boolean http2Enable) {
+        this.http2Enable = http2Enable;
+        return this;
+    }
+
+    /**
+     * 是否支持http2   - true：表示支持http2   - false：表示不支持http2
+     * @return http2Enable
+     */
+    public Boolean getHttp2Enable() {
+        return http2Enable;
+    }
+
+    public void setHttp2Enable(Boolean http2Enable) {
+        this.http2Enable = http2Enable;
+    }
+
+    public UpdateHostRequestBody withIpv6Enable(Boolean ipv6Enable) {
+        this.ipv6Enable = ipv6Enable;
+        return this;
+    }
+
+    /**
+     * 是否开启IPv6防护，仅专业版（原企业版）和铂金版（原旗舰版）支持IPv6防护。   - true：开启IPv6防护   - false：关闭IPV6防护
+     * @return ipv6Enable
+     */
+    public Boolean getIpv6Enable() {
+        return ipv6Enable;
+    }
+
+    public void setIpv6Enable(Boolean ipv6Enable) {
+        this.ipv6Enable = ipv6Enable;
+    }
+
+    public UpdateHostRequestBody withWebTag(String webTag) {
+        this.webTag = webTag;
+        return this;
+    }
+
+    /**
+     * 网站名称，对应WAF控制台域名详情中的网站名称
+     * @return webTag
+     */
+    public String getWebTag() {
+        return webTag;
+    }
+
+    public void setWebTag(String webTag) {
+        this.webTag = webTag;
+    }
+
+    public UpdateHostRequestBody withExclusiveIp(Boolean exclusiveIp) {
+        this.exclusiveIp = exclusiveIp;
+        return this;
+    }
+
+    /**
+     * 是否使用独享ip   - true：使用独享ip   - false：不实用独享ip
+     * @return exclusiveIp
+     */
+    public Boolean getExclusiveIp() {
+        return exclusiveIp;
+    }
+
+    public void setExclusiveIp(Boolean exclusiveIp) {
+        this.exclusiveIp = exclusiveIp;
+    }
+
+    public UpdateHostRequestBody withPaidType(String paidType) {
+        this.paidType = paidType;
+        return this;
+    }
+
+    /**
+     * 套餐付费模式，目前只支持prePaid预付款模式
+     * @return paidType
+     */
+    public String getPaidType() {
+        return paidType;
+    }
+
+    public void setPaidType(String paidType) {
+        this.paidType = paidType;
     }
 
     public UpdateHostRequestBody withBlockPage(BlockPage blockPage) {
@@ -442,36 +542,29 @@ public class UpdateHostRequestBody {
         this.trafficMark = trafficMark;
     }
 
-    public UpdateHostRequestBody withFlag(Map<String, String> flag) {
+    public UpdateHostRequestBody withFlag(Flag flag) {
         this.flag = flag;
         return this;
     }
 
-    public UpdateHostRequestBody putFlagItem(String key, String flagItem) {
+    public UpdateHostRequestBody withFlag(Consumer<Flag> flagSetter) {
         if (this.flag == null) {
-            this.flag = new HashMap<>();
+            this.flag = new Flag();
+            flagSetter.accept(this.flag);
         }
-        this.flag.put(key, flagItem);
-        return this;
-    }
 
-    public UpdateHostRequestBody withFlag(Consumer<Map<String, String>> flagSetter) {
-        if (this.flag == null) {
-            this.flag = new HashMap<>();
-        }
-        flagSetter.accept(this.flag);
         return this;
     }
 
     /**
-     * 域名特殊标识
+     * Get flag
      * @return flag
      */
-    public Map<String, String> getFlag() {
+    public Flag getFlag() {
         return flag;
     }
 
-    public void setFlag(Map<String, String> flag) {
+    public void setFlag(Flag flag) {
         this.flag = flag;
     }
 
@@ -497,7 +590,7 @@ public class UpdateHostRequestBody {
     }
 
     /**
-     * 可扩展字段
+     * 扩展字段，用于保存防护域名的一些配置信息。
      * @return extend
      */
     public Map<String, String> getExtend() {
@@ -508,55 +601,30 @@ public class UpdateHostRequestBody {
         this.extend = extend;
     }
 
-    public UpdateHostRequestBody withHttp2Enable(Boolean http2Enable) {
-        this.http2Enable = http2Enable;
+    public UpdateHostRequestBody withCircuitBreaker(CircuitBreaker circuitBreaker) {
+        this.circuitBreaker = circuitBreaker;
+        return this;
+    }
+
+    public UpdateHostRequestBody withCircuitBreaker(Consumer<CircuitBreaker> circuitBreakerSetter) {
+        if (this.circuitBreaker == null) {
+            this.circuitBreaker = new CircuitBreaker();
+            circuitBreakerSetter.accept(this.circuitBreaker);
+        }
+
         return this;
     }
 
     /**
-     * 是否使用HTTP2
-     * @return http2Enable
+     * Get circuitBreaker
+     * @return circuitBreaker
      */
-    public Boolean getHttp2Enable() {
-        return http2Enable;
+    public CircuitBreaker getCircuitBreaker() {
+        return circuitBreaker;
     }
 
-    public void setHttp2Enable(Boolean http2Enable) {
-        this.http2Enable = http2Enable;
-    }
-
-    public UpdateHostRequestBody withIpv6Enable(Boolean ipv6Enable) {
-        this.ipv6Enable = ipv6Enable;
-        return this;
-    }
-
-    /**
-     * 是否开启IPv6防护
-     * @return ipv6Enable
-     */
-    public Boolean getIpv6Enable() {
-        return ipv6Enable;
-    }
-
-    public void setIpv6Enable(Boolean ipv6Enable) {
-        this.ipv6Enable = ipv6Enable;
-    }
-
-    public UpdateHostRequestBody withLbAlgorithm(String lbAlgorithm) {
-        this.lbAlgorithm = lbAlgorithm;
-        return this;
-    }
-
-    /**
-     * 负载均衡算法
-     * @return lbAlgorithm
-     */
-    public String getLbAlgorithm() {
-        return lbAlgorithm;
-    }
-
-    public void setLbAlgorithm(String lbAlgorithm) {
-        this.lbAlgorithm = lbAlgorithm;
+    public void setCircuitBreaker(CircuitBreaker circuitBreaker) {
+        this.circuitBreaker = circuitBreaker;
     }
 
     public UpdateHostRequestBody withTimeoutConfig(TimeoutConfig timeoutConfig) {
@@ -600,13 +668,16 @@ public class UpdateHostRequestBody {
             && Objects.equals(this.server, updateHostRequestBody.server)
             && Objects.equals(this.tls, updateHostRequestBody.tls)
             && Objects.equals(this.cipher, updateHostRequestBody.cipher)
+            && Objects.equals(this.http2Enable, updateHostRequestBody.http2Enable)
+            && Objects.equals(this.ipv6Enable, updateHostRequestBody.ipv6Enable)
+            && Objects.equals(this.webTag, updateHostRequestBody.webTag)
+            && Objects.equals(this.exclusiveIp, updateHostRequestBody.exclusiveIp)
+            && Objects.equals(this.paidType, updateHostRequestBody.paidType)
             && Objects.equals(this.blockPage, updateHostRequestBody.blockPage)
             && Objects.equals(this.trafficMark, updateHostRequestBody.trafficMark)
             && Objects.equals(this.flag, updateHostRequestBody.flag)
             && Objects.equals(this.extend, updateHostRequestBody.extend)
-            && Objects.equals(this.http2Enable, updateHostRequestBody.http2Enable)
-            && Objects.equals(this.ipv6Enable, updateHostRequestBody.ipv6Enable)
-            && Objects.equals(this.lbAlgorithm, updateHostRequestBody.lbAlgorithm)
+            && Objects.equals(this.circuitBreaker, updateHostRequestBody.circuitBreaker)
             && Objects.equals(this.timeoutConfig, updateHostRequestBody.timeoutConfig);
     }
 
@@ -618,13 +689,16 @@ public class UpdateHostRequestBody {
             server,
             tls,
             cipher,
+            http2Enable,
+            ipv6Enable,
+            webTag,
+            exclusiveIp,
+            paidType,
             blockPage,
             trafficMark,
             flag,
             extend,
-            http2Enable,
-            ipv6Enable,
-            lbAlgorithm,
+            circuitBreaker,
             timeoutConfig);
     }
 
@@ -638,13 +712,16 @@ public class UpdateHostRequestBody {
         sb.append("    server: ").append(toIndentedString(server)).append("\n");
         sb.append("    tls: ").append(toIndentedString(tls)).append("\n");
         sb.append("    cipher: ").append(toIndentedString(cipher)).append("\n");
+        sb.append("    http2Enable: ").append(toIndentedString(http2Enable)).append("\n");
+        sb.append("    ipv6Enable: ").append(toIndentedString(ipv6Enable)).append("\n");
+        sb.append("    webTag: ").append(toIndentedString(webTag)).append("\n");
+        sb.append("    exclusiveIp: ").append(toIndentedString(exclusiveIp)).append("\n");
+        sb.append("    paidType: ").append(toIndentedString(paidType)).append("\n");
         sb.append("    blockPage: ").append(toIndentedString(blockPage)).append("\n");
         sb.append("    trafficMark: ").append(toIndentedString(trafficMark)).append("\n");
         sb.append("    flag: ").append(toIndentedString(flag)).append("\n");
         sb.append("    extend: ").append(toIndentedString(extend)).append("\n");
-        sb.append("    http2Enable: ").append(toIndentedString(http2Enable)).append("\n");
-        sb.append("    ipv6Enable: ").append(toIndentedString(ipv6Enable)).append("\n");
-        sb.append("    lbAlgorithm: ").append(toIndentedString(lbAlgorithm)).append("\n");
+        sb.append("    circuitBreaker: ").append(toIndentedString(circuitBreaker)).append("\n");
         sb.append("    timeoutConfig: ").append(toIndentedString(timeoutConfig)).append("\n");
         sb.append("}");
         return sb.toString();

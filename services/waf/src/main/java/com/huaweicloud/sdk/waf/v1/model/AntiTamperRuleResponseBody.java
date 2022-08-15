@@ -68,7 +68,7 @@ public class AntiTamperRuleResponseBody {
     }
 
     /**
-     * 策略id
+     * 该规则所属防护策略的id
      * @return policyid
      */
     public String getPolicyid() {
@@ -85,7 +85,7 @@ public class AntiTamperRuleResponseBody {
     }
 
     /**
-     * 时间戳
+     * 创建规则的时间戳
      * @return timestamp
      */
     public Long getTimestamp() {
@@ -102,7 +102,7 @@ public class AntiTamperRuleResponseBody {
     }
 
     /**
-     * 创建规则的时间戳
+     * 该规则备注
      * @return description
      */
     public String getDescription() {

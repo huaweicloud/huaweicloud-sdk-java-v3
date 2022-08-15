@@ -233,7 +233,7 @@ public class CreatePartnerCouponsReq {
     }
 
     /**
-     * 发券时的备注信息。
+     * 发券时的备注信息。 此参数不携带或携带值为null时，不赋值；携带值为空串时，赋值空串。
      * @return memo
      */
     public String getMemo() {
@@ -250,7 +250,7 @@ public class CreatePartnerCouponsReq {
     }
 
     /**
-     * 精英服务商ID。获取方法请参见[查询精英服务商列表](https://support.huaweicloud.com/api-bpconsole/espp_00003.html)。 精英服务商给子客户发放优惠券时，需要携带该参数。
+     * 云经销商ID。获取方法请参见[查询云经销商列表](https://support.huaweicloud.com/api-bpconsole/espp_00003.html)。云经销商给子客户发放优惠券时，需要携带该参数。除此之外，此参数不做处理。
      * @return indirectPartnerId
      */
     public String getIndirectPartnerId() {

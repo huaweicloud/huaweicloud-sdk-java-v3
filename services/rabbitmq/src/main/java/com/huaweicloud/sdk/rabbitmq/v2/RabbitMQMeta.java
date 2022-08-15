@@ -98,6 +98,41 @@ public class RabbitMQMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreatePostPaidInstanceByEngineRequest, CreatePostPaidInstanceByEngineResponse> createPostPaidInstanceByEngine =
+        genForcreatePostPaidInstanceByEngine();
+
+    private static HttpRequestDef<CreatePostPaidInstanceByEngineRequest, CreatePostPaidInstanceByEngineResponse> genForcreatePostPaidInstanceByEngine() {
+        // basic
+        HttpRequestDef.Builder<CreatePostPaidInstanceByEngineRequest, CreatePostPaidInstanceByEngineResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreatePostPaidInstanceByEngineRequest.class,
+                    CreatePostPaidInstanceByEngineResponse.class)
+                .withName("CreatePostPaidInstanceByEngine")
+                .withUri("/v2/{engine}/{project_id}/instances")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreatePostPaidInstanceByEngineRequest.EngineEnum>withRequestField("engine",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreatePostPaidInstanceByEngineRequest.EngineEnum.class),
+            f -> f.withMarshaller(CreatePostPaidInstanceByEngineRequest::getEngine, (req, v) -> {
+                req.setEngine(v);
+            }));
+        builder.<CreateInstanceReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateInstanceReq.class),
+            f -> f.withMarshaller(CreatePostPaidInstanceByEngineRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteBackgroundTaskRequest, DeleteBackgroundTaskResponse> deleteBackgroundTask =
         genFordeleteBackgroundTask();
 

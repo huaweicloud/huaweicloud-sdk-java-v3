@@ -903,6 +903,38 @@ public class CdnClient {
     }
 
     /**
+     * 查询刷新预热URL记录
+     *
+     * 查询刷新预热URL记录。如需此接口，请提交工单开通
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowUrlTaskInfoRequest 请求对象
+     * @return ShowUrlTaskInfoResponse
+     */
+    public ShowUrlTaskInfoResponse showUrlTaskInfo(ShowUrlTaskInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, CdnMeta.showUrlTaskInfo);
+    }
+
+    /**
+     * 查询刷新预热URL记录
+     *
+     * 查询刷新预热URL记录。如需此接口，请提交工单开通
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowUrlTaskInfoRequest 请求对象
+     * @return SyncInvoker<ShowUrlTaskInfoRequest, ShowUrlTaskInfoResponse>
+     */
+    public SyncInvoker<ShowUrlTaskInfoRequest, ShowUrlTaskInfoResponse> showUrlTaskInfoInvoker(
+        ShowUrlTaskInfoRequest request) {
+        return new SyncInvoker<ShowUrlTaskInfoRequest, ShowUrlTaskInfoResponse>(request, CdnMeta.showUrlTaskInfo,
+            hcClient);
+    }
+
+    /**
      * 设置IP黑白名单
      *
      * 设置域名的IP黑白名单。

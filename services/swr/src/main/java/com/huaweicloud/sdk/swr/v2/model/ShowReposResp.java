@@ -347,7 +347,7 @@ public class ShowReposResp {
     }
 
     /**
-     * 租户的命名空间名称
+     * 租户的组织名称
      * @return namespace
      */
     public String getNamespace() {

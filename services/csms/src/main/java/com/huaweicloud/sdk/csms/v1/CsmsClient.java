@@ -278,6 +278,38 @@ public class CsmsClient {
     }
 
     /**
+     * 下载凭据备份
+     *
+     * 下载指定凭据的备份文件
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DownloadSecretBlobRequest 请求对象
+     * @return DownloadSecretBlobResponse
+     */
+    public DownloadSecretBlobResponse downloadSecretBlob(DownloadSecretBlobRequest request) {
+        return hcClient.syncInvokeHttp(request, CsmsMeta.downloadSecretBlob);
+    }
+
+    /**
+     * 下载凭据备份
+     *
+     * 下载指定凭据的备份文件
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DownloadSecretBlobRequest 请求对象
+     * @return SyncInvoker<DownloadSecretBlobRequest, DownloadSecretBlobResponse>
+     */
+    public SyncInvoker<DownloadSecretBlobRequest, DownloadSecretBlobResponse> downloadSecretBlobInvoker(
+        DownloadSecretBlobRequest request) {
+        return new SyncInvoker<DownloadSecretBlobRequest, DownloadSecretBlobResponse>(request,
+            CsmsMeta.downloadSecretBlob, hcClient);
+    }
+
+    /**
      * 查询项目标签
      *
      * - 功能介绍：查询用户在指定项目下的所有凭据标签集合。
@@ -531,7 +563,7 @@ public class CsmsClient {
      * 查询凭据的版本与凭据值
      *
      * 查询指定凭据版本的信息和版本中的明文凭据值，只能查询ENABLED状态的凭据。
-     * 通过/v1/{project_id}/secrets/{secret_id}/versions/latest可访问凭据最新版本的凭据值。
+     * 通过/v1/{project_id}/secrets/{secret_name}/versions/latest （即将当前接口URL中的{version_id}赋值为latest）可访问凭据最新版本的凭据值。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -547,7 +579,7 @@ public class CsmsClient {
      * 查询凭据的版本与凭据值
      *
      * 查询指定凭据版本的信息和版本中的明文凭据值，只能查询ENABLED状态的凭据。
-     * 通过/v1/{project_id}/secrets/{secret_id}/versions/latest可访问凭据最新版本的凭据值。
+     * 通过/v1/{project_id}/secrets/{secret_name}/versions/latest （即将当前接口URL中的{version_id}赋值为latest）可访问凭据最新版本的凭据值。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -620,6 +652,38 @@ public class CsmsClient {
     public SyncInvoker<UpdateSecretStageRequest, UpdateSecretStageResponse> updateSecretStageInvoker(
         UpdateSecretStageRequest request) {
         return new SyncInvoker<UpdateSecretStageRequest, UpdateSecretStageResponse>(request, CsmsMeta.updateSecretStage,
+            hcClient);
+    }
+
+    /**
+     * 恢复凭据对象
+     *
+     * 通过上传凭据备份文件，恢复凭据对象
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UploadSecretBlobRequest 请求对象
+     * @return UploadSecretBlobResponse
+     */
+    public UploadSecretBlobResponse uploadSecretBlob(UploadSecretBlobRequest request) {
+        return hcClient.syncInvokeHttp(request, CsmsMeta.uploadSecretBlob);
+    }
+
+    /**
+     * 恢复凭据对象
+     *
+     * 通过上传凭据备份文件，恢复凭据对象
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UploadSecretBlobRequest 请求对象
+     * @return SyncInvoker<UploadSecretBlobRequest, UploadSecretBlobResponse>
+     */
+    public SyncInvoker<UploadSecretBlobRequest, UploadSecretBlobResponse> uploadSecretBlobInvoker(
+        UploadSecretBlobRequest request) {
+        return new SyncInvoker<UploadSecretBlobRequest, UploadSecretBlobResponse>(request, CsmsMeta.uploadSecretBlob,
             hcClient);
     }
 

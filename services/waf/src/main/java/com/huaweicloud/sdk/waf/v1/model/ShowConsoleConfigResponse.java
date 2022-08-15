@@ -101,13 +101,53 @@ public class ShowConsoleConfigResponse extends SdkResponse {
 
     private Boolean checkAllHeadersEnable;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "geoip_enable")
+
+    private Boolean geoipEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "load_balance_enable")
+
+    private Boolean loadBalanceEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ipv6_protection_enable")
+
+    private Boolean ipv6ProtectionEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "policy_sharing_enable")
+
+    private Boolean policySharingEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ip_group")
+
+    private Boolean ipGroup;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "robot_action_enable")
+
+    private Boolean robotActionEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "http2_enable")
+
+    private Boolean http2Enable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "timeout_config_enable")
+
+    private Boolean timeoutConfigEnable;
+
     public ShowConsoleConfigResponse withEps(Boolean eps) {
         this.eps = eps;
         return this;
     }
 
     /**
-     * 支持EPS
+     * 是否支持EPS，false：不支持；true：支持
      * @return eps
      */
     public Boolean getEps() {
@@ -124,7 +164,7 @@ public class ShowConsoleConfigResponse extends SdkResponse {
     }
 
     /**
-     * 支持最低的TLS版本（TLS v1.0/TLS v1.1/TLS v1.2）,默认为TLS v1.0版本
+     * 是否支持的TLS版本（TLS v1.0/TLS v1.1/TLS v1.2）,默认为TLS v1.0版本，false：不支持；true：支持
      * @return tls
      */
     public Boolean getTls() {
@@ -141,7 +181,7 @@ public class ShowConsoleConfigResponse extends SdkResponse {
     }
 
     /**
-     * 支持IPV6
+     * 是否支持IPV6，false：不支持；true：支持
      * @return ipv6
      */
     public Boolean getIpv6() {
@@ -158,7 +198,7 @@ public class ShowConsoleConfigResponse extends SdkResponse {
     }
 
     /**
-     * 支持告警
+     * 是否支持告警，false：不支持；true：支持
      * @return alert
      */
     public Boolean getAlert() {
@@ -175,7 +215,7 @@ public class ShowConsoleConfigResponse extends SdkResponse {
     }
 
     /**
-     * 支持精准防护
+     * 是否支持精准防护，false：不支持；true：支持
      * @return custom
      */
     public Boolean getCustom() {
@@ -192,7 +232,7 @@ public class ShowConsoleConfigResponse extends SdkResponse {
     }
 
     /**
-     * 支持ELB模式
+     * 是否支持ELB模式，false：不支持；true：支持
      * @return elbMode
      */
     public Boolean getElbMode() {
@@ -209,7 +249,7 @@ public class ShowConsoleConfigResponse extends SdkResponse {
     }
 
     /**
-     * 支持LTS全量日志
+     * 是否支持LTS全量日志，false：不支持；true：支持
      * @return eventLts
      */
     public Boolean getEventLts() {
@@ -226,7 +266,7 @@ public class ShowConsoleConfigResponse extends SdkResponse {
     }
 
     /**
-     * 支持多DNS解析
+     * 是否支持多DNS解析，false：不支持；true：支持
      * @return multiDns
      */
     public Boolean getMultiDns() {
@@ -243,7 +283,7 @@ public class ShowConsoleConfigResponse extends SdkResponse {
     }
 
     /**
-     * 支持搜索IP
+     * 是否支持搜索IP，false：不支持；true：支持
      * @return searchIp
      */
     public Boolean getSearchIp() {
@@ -260,7 +300,7 @@ public class ShowConsoleConfigResponse extends SdkResponse {
     }
 
     /**
-     * 支持CC增强
+     * 是否支持CC增强，false：不支持；true：支持
      * @return ccEnhance
      */
     public Boolean getCcEnhance() {
@@ -277,7 +317,7 @@ public class ShowConsoleConfigResponse extends SdkResponse {
     }
 
     /**
-     * 支持cname切换
+     * 是否支持cname切换，false：不支持；true：支持
      * @return cnameSwitch
      */
     public Boolean getCnameSwitch() {
@@ -294,7 +334,7 @@ public class ShowConsoleConfigResponse extends SdkResponse {
     }
 
     /**
-     * 支持精准拦截
+     * 是否支持自定义拦截页面，false：不支持，true：支持
      * @return customBlock
      */
     public Boolean getCustomBlock() {
@@ -311,7 +351,7 @@ public class ShowConsoleConfigResponse extends SdkResponse {
     }
 
     /**
-     * 支持误报屏蔽
+     * 是否支持误报屏蔽，false：不支持；true：支持
      * @return advancedIgnore
      */
     public Boolean getAdvancedIgnore() {
@@ -328,7 +368,7 @@ public class ShowConsoleConfigResponse extends SdkResponse {
     }
 
     /**
-     * 支持js反爬虫
+     * 是否支持js反爬虫，false：不支持；true：支持
      * @return jsCrawlerEnable
      */
     public Boolean getJsCrawlerEnable() {
@@ -345,7 +385,7 @@ public class ShowConsoleConfigResponse extends SdkResponse {
     }
 
     /**
-     * 支持深度解析
+     * 是否支持web基础防护深度检测，false：不支持；true：支持
      * @return deepDecodeEnable
      */
     public Boolean getDeepDecodeEnable() {
@@ -362,7 +402,7 @@ public class ShowConsoleConfigResponse extends SdkResponse {
     }
 
     /**
-     * 支持安全总览带宽统计
+     * 是否支持安全总览带宽统计，false：不支持；true：支持
      * @return overviewBandwidth
      */
     public Boolean getOverviewBandwidth() {
@@ -379,7 +419,7 @@ public class ShowConsoleConfigResponse extends SdkResponse {
     }
 
     /**
-     * 支持使用旧cname解析
+     * 是否支持使用旧cname解析，false：不支持；true：支持
      * @return proxyUseOldcname
      */
     public Boolean getProxyUseOldcname() {
@@ -396,7 +436,7 @@ public class ShowConsoleConfigResponse extends SdkResponse {
     }
 
     /**
-     * 支持检查所有的header
+     * 是否支持检查所有的header，false：不支持；true：支持
      * @return checkAllHeadersEnable
      */
     public Boolean getCheckAllHeadersEnable() {
@@ -405,6 +445,142 @@ public class ShowConsoleConfigResponse extends SdkResponse {
 
     public void setCheckAllHeadersEnable(Boolean checkAllHeadersEnable) {
         this.checkAllHeadersEnable = checkAllHeadersEnable;
+    }
+
+    public ShowConsoleConfigResponse withGeoipEnable(Boolean geoipEnable) {
+        this.geoipEnable = geoipEnable;
+        return this;
+    }
+
+    /**
+     * 是否支持地理位置访问控制，false：不支持；true：支持
+     * @return geoipEnable
+     */
+    public Boolean getGeoipEnable() {
+        return geoipEnable;
+    }
+
+    public void setGeoipEnable(Boolean geoipEnable) {
+        this.geoipEnable = geoipEnable;
+    }
+
+    public ShowConsoleConfigResponse withLoadBalanceEnable(Boolean loadBalanceEnable) {
+        this.loadBalanceEnable = loadBalanceEnable;
+        return this;
+    }
+
+    /**
+     * 是否支持域名访问负载均衡配置，false：不支持；true：支持
+     * @return loadBalanceEnable
+     */
+    public Boolean getLoadBalanceEnable() {
+        return loadBalanceEnable;
+    }
+
+    public void setLoadBalanceEnable(Boolean loadBalanceEnable) {
+        this.loadBalanceEnable = loadBalanceEnable;
+    }
+
+    public ShowConsoleConfigResponse withIpv6ProtectionEnable(Boolean ipv6ProtectionEnable) {
+        this.ipv6ProtectionEnable = ipv6ProtectionEnable;
+        return this;
+    }
+
+    /**
+     * 是否支持ipv6防护，false：不支持；true：支持
+     * @return ipv6ProtectionEnable
+     */
+    public Boolean getIpv6ProtectionEnable() {
+        return ipv6ProtectionEnable;
+    }
+
+    public void setIpv6ProtectionEnable(Boolean ipv6ProtectionEnable) {
+        this.ipv6ProtectionEnable = ipv6ProtectionEnable;
+    }
+
+    public ShowConsoleConfigResponse withPolicySharingEnable(Boolean policySharingEnable) {
+        this.policySharingEnable = policySharingEnable;
+        return this;
+    }
+
+    /**
+     * 是否支持策略共享，false：不支持；true：支持
+     * @return policySharingEnable
+     */
+    public Boolean getPolicySharingEnable() {
+        return policySharingEnable;
+    }
+
+    public void setPolicySharingEnable(Boolean policySharingEnable) {
+        this.policySharingEnable = policySharingEnable;
+    }
+
+    public ShowConsoleConfigResponse withIpGroup(Boolean ipGroup) {
+        this.ipGroup = ipGroup;
+        return this;
+    }
+
+    /**
+     * 是否支持ip地址组，false：不支持；true：支持
+     * @return ipGroup
+     */
+    public Boolean getIpGroup() {
+        return ipGroup;
+    }
+
+    public void setIpGroup(Boolean ipGroup) {
+        this.ipGroup = ipGroup;
+    }
+
+    public ShowConsoleConfigResponse withRobotActionEnable(Boolean robotActionEnable) {
+        this.robotActionEnable = robotActionEnable;
+        return this;
+    }
+
+    /**
+     * 是否支持网站反爬虫，false：不支持；true：支持
+     * @return robotActionEnable
+     */
+    public Boolean getRobotActionEnable() {
+        return robotActionEnable;
+    }
+
+    public void setRobotActionEnable(Boolean robotActionEnable) {
+        this.robotActionEnable = robotActionEnable;
+    }
+
+    public ShowConsoleConfigResponse withHttp2Enable(Boolean http2Enable) {
+        this.http2Enable = http2Enable;
+        return this;
+    }
+
+    /**
+     * 是否支持http2，false：不支持；true：支持
+     * @return http2Enable
+     */
+    public Boolean getHttp2Enable() {
+        return http2Enable;
+    }
+
+    public void setHttp2Enable(Boolean http2Enable) {
+        this.http2Enable = http2Enable;
+    }
+
+    public ShowConsoleConfigResponse withTimeoutConfigEnable(Boolean timeoutConfigEnable) {
+        this.timeoutConfigEnable = timeoutConfigEnable;
+        return this;
+    }
+
+    /**
+     * 是否支持超时配置，false：不支持；true：支持
+     * @return timeoutConfigEnable
+     */
+    public Boolean getTimeoutConfigEnable() {
+        return timeoutConfigEnable;
+    }
+
+    public void setTimeoutConfigEnable(Boolean timeoutConfigEnable) {
+        this.timeoutConfigEnable = timeoutConfigEnable;
     }
 
     @Override
@@ -433,7 +609,15 @@ public class ShowConsoleConfigResponse extends SdkResponse {
             && Objects.equals(this.deepDecodeEnable, showConsoleConfigResponse.deepDecodeEnable)
             && Objects.equals(this.overviewBandwidth, showConsoleConfigResponse.overviewBandwidth)
             && Objects.equals(this.proxyUseOldcname, showConsoleConfigResponse.proxyUseOldcname)
-            && Objects.equals(this.checkAllHeadersEnable, showConsoleConfigResponse.checkAllHeadersEnable);
+            && Objects.equals(this.checkAllHeadersEnable, showConsoleConfigResponse.checkAllHeadersEnable)
+            && Objects.equals(this.geoipEnable, showConsoleConfigResponse.geoipEnable)
+            && Objects.equals(this.loadBalanceEnable, showConsoleConfigResponse.loadBalanceEnable)
+            && Objects.equals(this.ipv6ProtectionEnable, showConsoleConfigResponse.ipv6ProtectionEnable)
+            && Objects.equals(this.policySharingEnable, showConsoleConfigResponse.policySharingEnable)
+            && Objects.equals(this.ipGroup, showConsoleConfigResponse.ipGroup)
+            && Objects.equals(this.robotActionEnable, showConsoleConfigResponse.robotActionEnable)
+            && Objects.equals(this.http2Enable, showConsoleConfigResponse.http2Enable)
+            && Objects.equals(this.timeoutConfigEnable, showConsoleConfigResponse.timeoutConfigEnable);
     }
 
     @Override
@@ -455,7 +639,15 @@ public class ShowConsoleConfigResponse extends SdkResponse {
             deepDecodeEnable,
             overviewBandwidth,
             proxyUseOldcname,
-            checkAllHeadersEnable);
+            checkAllHeadersEnable,
+            geoipEnable,
+            loadBalanceEnable,
+            ipv6ProtectionEnable,
+            policySharingEnable,
+            ipGroup,
+            robotActionEnable,
+            http2Enable,
+            timeoutConfigEnable);
     }
 
     @Override
@@ -480,6 +672,14 @@ public class ShowConsoleConfigResponse extends SdkResponse {
         sb.append("    overviewBandwidth: ").append(toIndentedString(overviewBandwidth)).append("\n");
         sb.append("    proxyUseOldcname: ").append(toIndentedString(proxyUseOldcname)).append("\n");
         sb.append("    checkAllHeadersEnable: ").append(toIndentedString(checkAllHeadersEnable)).append("\n");
+        sb.append("    geoipEnable: ").append(toIndentedString(geoipEnable)).append("\n");
+        sb.append("    loadBalanceEnable: ").append(toIndentedString(loadBalanceEnable)).append("\n");
+        sb.append("    ipv6ProtectionEnable: ").append(toIndentedString(ipv6ProtectionEnable)).append("\n");
+        sb.append("    policySharingEnable: ").append(toIndentedString(policySharingEnable)).append("\n");
+        sb.append("    ipGroup: ").append(toIndentedString(ipGroup)).append("\n");
+        sb.append("    robotActionEnable: ").append(toIndentedString(robotActionEnable)).append("\n");
+        sb.append("    http2Enable: ").append(toIndentedString(http2Enable)).append("\n");
+        sb.append("    timeoutConfigEnable: ").append(toIndentedString(timeoutConfigEnable)).append("\n");
         sb.append("}");
         return sb.toString();
     }

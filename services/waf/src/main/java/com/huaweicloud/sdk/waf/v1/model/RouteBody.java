@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 修改路由body
+ * 单个路由线路详细信息
  */
 public class RouteBody {
 
@@ -34,7 +34,7 @@ public class RouteBody {
     }
 
     /**
-     * cname后缀
+     * WAF集群的cname后缀
      * @return cname
      */
     public String getCname() {
@@ -51,7 +51,7 @@ public class RouteBody {
     }
 
     /**
-     * 名称
+     * WAF集群名称
      * @return name
      */
     public String getName() {
@@ -84,7 +84,7 @@ public class RouteBody {
     }
 
     /**
-     * 路由信息
+     * 防护域名源站服务器信息列表
      * @return servers
      */
     public List<RouteServerBody> getServers() {

@@ -71,7 +71,7 @@ public class ShowRepoDomainsResponse {
     }
 
     /**
-     * 命名空间
+     * 组织
      * @return namespace
      */
     public String getNamespace() {

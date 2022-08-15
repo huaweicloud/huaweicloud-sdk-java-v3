@@ -142,7 +142,7 @@ public class ListCustomerBillsFeeRecordsRequest {
     }
 
     /**
-     * 服务商。1：华为云2：云市场为空时查询包含华为云和云市场在内的全部服务商。
+     * 服务商。1：华为云2：云商店为空时查询包含华为云和云商店在内的全部服务商。此参数不携带或携带值为空时，不作为筛选条件。
      * minimum: 1
      * maximum: 2
      * @return providerType

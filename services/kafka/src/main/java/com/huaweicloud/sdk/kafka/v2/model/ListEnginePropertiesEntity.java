@@ -50,6 +50,11 @@ public class ListEnginePropertiesEntity {
 
     private String maxTpsPerBroker;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "product_alias")
+
+    private String productAlias;
+
     public ListEnginePropertiesEntity withMaxPartitionPerBroker(String maxPartitionPerBroker) {
         this.maxPartitionPerBroker = maxPartitionPerBroker;
         return this;
@@ -186,6 +191,23 @@ public class ListEnginePropertiesEntity {
         this.maxTpsPerBroker = maxTpsPerBroker;
     }
 
+    public ListEnginePropertiesEntity withProductAlias(String productAlias) {
+        this.productAlias = productAlias;
+        return this;
+    }
+
+    /**
+     * product_id的别名。
+     * @return productAlias
+     */
+    public String getProductAlias() {
+        return productAlias;
+    }
+
+    public void setProductAlias(String productAlias) {
+        this.productAlias = productAlias;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -202,7 +224,8 @@ public class ListEnginePropertiesEntity {
             && Objects.equals(this.minBroker, listEnginePropertiesEntity.minBroker)
             && Objects.equals(this.maxBandwidthPerBroker, listEnginePropertiesEntity.maxBandwidthPerBroker)
             && Objects.equals(this.minStoragePerNode, listEnginePropertiesEntity.minStoragePerNode)
-            && Objects.equals(this.maxTpsPerBroker, listEnginePropertiesEntity.maxTpsPerBroker);
+            && Objects.equals(this.maxTpsPerBroker, listEnginePropertiesEntity.maxTpsPerBroker)
+            && Objects.equals(this.productAlias, listEnginePropertiesEntity.productAlias);
     }
 
     @Override
@@ -214,7 +237,8 @@ public class ListEnginePropertiesEntity {
             minBroker,
             maxBandwidthPerBroker,
             minStoragePerNode,
-            maxTpsPerBroker);
+            maxTpsPerBroker,
+            productAlias);
     }
 
     @Override
@@ -229,6 +253,7 @@ public class ListEnginePropertiesEntity {
         sb.append("    maxBandwidthPerBroker: ").append(toIndentedString(maxBandwidthPerBroker)).append("\n");
         sb.append("    minStoragePerNode: ").append(toIndentedString(minStoragePerNode)).append("\n");
         sb.append("    maxTpsPerBroker: ").append(toIndentedString(maxTpsPerBroker)).append("\n");
+        sb.append("    productAlias: ").append(toIndentedString(productAlias)).append("\n");
         sb.append("}");
         return sb.toString();
     }

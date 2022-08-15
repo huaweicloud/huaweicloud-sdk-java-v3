@@ -65,7 +65,7 @@ public class DomainItem {
     }
 
     /**
-     * 网站名称
+     * 网站名称，对应WAF控制台域名详情中的网站名称
      * @return webTag
      */
     public String getWebTag() {

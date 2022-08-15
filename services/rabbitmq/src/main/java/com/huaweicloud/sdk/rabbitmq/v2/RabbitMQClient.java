@@ -124,6 +124,39 @@ public class RabbitMQClient {
     }
 
     /**
+     * 创建实例(按需)
+     *
+     * 创建实例，该接口创建的实例为按需计费的方式。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreatePostPaidInstanceByEngineRequest 请求对象
+     * @return CreatePostPaidInstanceByEngineResponse
+     */
+    public CreatePostPaidInstanceByEngineResponse createPostPaidInstanceByEngine(
+        CreatePostPaidInstanceByEngineRequest request) {
+        return hcClient.syncInvokeHttp(request, RabbitMQMeta.createPostPaidInstanceByEngine);
+    }
+
+    /**
+     * 创建实例(按需)
+     *
+     * 创建实例，该接口创建的实例为按需计费的方式。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreatePostPaidInstanceByEngineRequest 请求对象
+     * @return SyncInvoker<CreatePostPaidInstanceByEngineRequest, CreatePostPaidInstanceByEngineResponse>
+     */
+    public SyncInvoker<CreatePostPaidInstanceByEngineRequest, CreatePostPaidInstanceByEngineResponse> createPostPaidInstanceByEngineInvoker(
+        CreatePostPaidInstanceByEngineRequest request) {
+        return new SyncInvoker<CreatePostPaidInstanceByEngineRequest, CreatePostPaidInstanceByEngineResponse>(request,
+            RabbitMQMeta.createPostPaidInstanceByEngine, hcClient);
+    }
+
+    /**
      * 删除后台任务管理中的指定记录
      *
      * 删除后台任务管理中的指定记录。

@@ -1,15 +1,20 @@
 package com.huaweicloud.sdk.waf.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 引用表
+ * 单个引用表信息
  */
 public class ValueListResponseBody {
 
@@ -23,10 +28,135 @@ public class ValueListResponseBody {
 
     private String name;
 
+    /**
+     * 引用表类型
+     */
+    public static final class TypeEnum {
+
+        /**
+         * Enum URL for value: "url"
+         */
+        public static final TypeEnum URL = new TypeEnum("url");
+
+        /**
+         * Enum PARAMS for value: "params"
+         */
+        public static final TypeEnum PARAMS = new TypeEnum("params");
+
+        /**
+         * Enum IP for value: "ip"
+         */
+        public static final TypeEnum IP = new TypeEnum("ip");
+
+        /**
+         * Enum COOKIE for value: "cookie"
+         */
+        public static final TypeEnum COOKIE = new TypeEnum("cookie");
+
+        /**
+         * Enum REFERER for value: "referer"
+         */
+        public static final TypeEnum REFERER = new TypeEnum("referer");
+
+        /**
+         * Enum USER_AGENT for value: "user-agent"
+         */
+        public static final TypeEnum USER_AGENT = new TypeEnum("user-agent");
+
+        /**
+         * Enum HEADER for value: "header"
+         */
+        public static final TypeEnum HEADER = new TypeEnum("header");
+
+        /**
+         * Enum RESPONSE_CODE for value: "response_code"
+         */
+        public static final TypeEnum RESPONSE_CODE = new TypeEnum("response_code");
+
+        /**
+         * Enum RESPONSE_HEADER for value: "response_header"
+         */
+        public static final TypeEnum RESPONSE_HEADER = new TypeEnum("response_header");
+
+        /**
+         * Enum RESPONSE_BODY for value: "response_body"
+         */
+        public static final TypeEnum RESPONSE_BODY = new TypeEnum("response_body");
+
+        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TypeEnum> createStaticFields() {
+            Map<String, TypeEnum> map = new HashMap<>();
+            map.put("url", URL);
+            map.put("params", PARAMS);
+            map.put("ip", IP);
+            map.put("cookie", COOKIE);
+            map.put("referer", REFERER);
+            map.put("user-agent", USER_AGENT);
+            map.put("header", HEADER);
+            map.put("response_code", RESPONSE_CODE);
+            map.put("response_header", RESPONSE_HEADER);
+            map.put("response_body", RESPONSE_BODY);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        TypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            TypeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new TypeEnum(value);
+            }
+            return result;
+        }
+
+        public static TypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            TypeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof TypeEnum) {
+                return this.value.equals(((TypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
-    private String type;
+    private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timestamp")
@@ -82,7 +212,7 @@ public class ValueListResponseBody {
         this.name = name;
     }
 
-    public ValueListResponseBody withType(String type) {
+    public ValueListResponseBody withType(TypeEnum type) {
         this.type = type;
         return this;
     }
@@ -91,11 +221,11 @@ public class ValueListResponseBody {
      * 引用表类型
      * @return type
      */
-    public String getType() {
+    public TypeEnum getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(TypeEnum type) {
         this.type = type;
     }
 

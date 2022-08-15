@@ -22,7 +22,7 @@ public class BatchUpdateRecordSetWithLineResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "recordsets")
 
-    private List<QueryRecordSetWithLineAndTagsResp> recordsets = null;
+    private List<QueryRecordSetWithLineResp> recordsets = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metadata")
@@ -55,12 +55,12 @@ public class BatchUpdateRecordSetWithLineResponse extends SdkResponse {
         this.links = links;
     }
 
-    public BatchUpdateRecordSetWithLineResponse withRecordsets(List<QueryRecordSetWithLineAndTagsResp> recordsets) {
+    public BatchUpdateRecordSetWithLineResponse withRecordsets(List<QueryRecordSetWithLineResp> recordsets) {
         this.recordsets = recordsets;
         return this;
     }
 
-    public BatchUpdateRecordSetWithLineResponse addRecordsetsItem(QueryRecordSetWithLineAndTagsResp recordsetsItem) {
+    public BatchUpdateRecordSetWithLineResponse addRecordsetsItem(QueryRecordSetWithLineResp recordsetsItem) {
         if (this.recordsets == null) {
             this.recordsets = new ArrayList<>();
         }
@@ -69,7 +69,7 @@ public class BatchUpdateRecordSetWithLineResponse extends SdkResponse {
     }
 
     public BatchUpdateRecordSetWithLineResponse withRecordsets(
-        Consumer<List<QueryRecordSetWithLineAndTagsResp>> recordsetsSetter) {
+        Consumer<List<QueryRecordSetWithLineResp>> recordsetsSetter) {
         if (this.recordsets == null) {
             this.recordsets = new ArrayList<>();
         }
@@ -81,11 +81,11 @@ public class BatchUpdateRecordSetWithLineResponse extends SdkResponse {
      * Get recordsets
      * @return recordsets
      */
-    public List<QueryRecordSetWithLineAndTagsResp> getRecordsets() {
+    public List<QueryRecordSetWithLineResp> getRecordsets() {
         return recordsets;
     }
 
-    public void setRecordsets(List<QueryRecordSetWithLineAndTagsResp> recordsets) {
+    public void setRecordsets(List<QueryRecordSetWithLineResp> recordsets) {
         this.recordsets = recordsets;
     }
 

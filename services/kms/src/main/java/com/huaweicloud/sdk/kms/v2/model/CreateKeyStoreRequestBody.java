@@ -48,7 +48,7 @@ public class CreateKeyStoreRequestBody {
     }
 
     /**
-     * DHSM集群Id，集群当前未创建专属密钥库。
+     * DHSM集群Id，要求集群当前未创建专属密钥库。
      * @return hsmClusterId
      */
     public String getHsmClusterId() {

@@ -26,7 +26,7 @@ public class QuotaSimpleInfo {
     }
 
     /**
-     * 精英服务商ID。
+     * 云经销商ID。
      * @return id
      */
     public String getId() {
@@ -43,7 +43,7 @@ public class QuotaSimpleInfo {
     }
 
     /**
-     * 分配给精英服务商的代金券额度ID。
+     * 分配给云经销商的代金券额度ID。
      * @return quotaId
      */
     public String getQuotaId() {

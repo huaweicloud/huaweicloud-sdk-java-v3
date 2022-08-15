@@ -64,7 +64,7 @@ public class ListIndirectPartnersResponse extends SdkResponse {
     }
 
     /**
-     * 精英服务商列表，具体参见表1。
+     * 云经销商列表，具体参见表1。
      * @return indirectPartners
      */
     public List<IndirectPartnerInfo> getIndirectPartners() {

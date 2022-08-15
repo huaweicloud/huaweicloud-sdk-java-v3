@@ -41,7 +41,7 @@ public class ListQpsTimelineResponse extends SdkResponse {
     }
 
     /**
-     * 安全统计的时间线
+     * 安全总览的Qps时间线统计数据
      * @return body
      */
     public List<StatisticsTimelineItem> getBody() {

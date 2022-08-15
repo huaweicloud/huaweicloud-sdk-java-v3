@@ -349,7 +349,7 @@ public class ListSubCustomerBillDetailRequest {
     }
 
     /**
-     * 精英服务商ID。获取方法请参见[查询精英服务商列表](https://support.huaweicloud.com/api-bpconsole/espp_00003.html)。 说明： 华为云伙伴能力中心可以查询名下所有子客户消费（包括精英服务商子客户）。如果是普通经销商，那么此处可以为空。
+     * 云经销商ID。获取方法请参见[查询云经销商列表](https://support.huaweicloud.com/api-bpconsole/espp_00003.html)。  说明： 华为云总经销商可以查询名下所有子客户消费（包括云经销商子客户）。如果是普通经销商，那么此处可以为空。如果华为云总经销商需要查询客户在云经销商关联期间的消费，需要携带该字段；除此之外，此参数不做处理。否则只能查询该客户在与自己关联期间的消费。
      * @return indirectPartnerId
      */
     public String getIndirectPartnerId() {

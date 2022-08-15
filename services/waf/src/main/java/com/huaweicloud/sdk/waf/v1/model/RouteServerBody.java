@@ -1,19 +1,101 @@
 package com.huaweicloud.sdk.waf.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
- * 类型
+ * 防护域名源站服务器信息
  */
 public class RouteServerBody {
+
+    /**
+     * WAF转发客户端请求到防护域名源站服务器的协议
+     */
+    public static final class BackProtocolEnum {
+
+        /**
+         * Enum HTTP for value: "HTTP"
+         */
+        public static final BackProtocolEnum HTTP = new BackProtocolEnum("HTTP");
+
+        /**
+         * Enum HTTPS for value: "HTTPS"
+         */
+        public static final BackProtocolEnum HTTPS = new BackProtocolEnum("HTTPS");
+
+        private static final Map<String, BackProtocolEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, BackProtocolEnum> createStaticFields() {
+            Map<String, BackProtocolEnum> map = new HashMap<>();
+            map.put("HTTP", HTTP);
+            map.put("HTTPS", HTTPS);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        BackProtocolEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static BackProtocolEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            BackProtocolEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new BackProtocolEnum(value);
+            }
+            return result;
+        }
+
+        public static BackProtocolEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            BackProtocolEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof BackProtocolEnum) {
+                return this.value.equals(((BackProtocolEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "back_protocol")
 
-    private String backProtocol;
+    private BackProtocolEnum backProtocol;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "address")
@@ -25,20 +107,20 @@ public class RouteServerBody {
 
     private Integer port;
 
-    public RouteServerBody withBackProtocol(String backProtocol) {
+    public RouteServerBody withBackProtocol(BackProtocolEnum backProtocol) {
         this.backProtocol = backProtocol;
         return this;
     }
 
     /**
-     * 后端协议
+     * WAF转发客户端请求到防护域名源站服务器的协议
      * @return backProtocol
      */
-    public String getBackProtocol() {
+    public BackProtocolEnum getBackProtocol() {
         return backProtocol;
     }
 
-    public void setBackProtocol(String backProtocol) {
+    public void setBackProtocol(BackProtocolEnum backProtocol) {
         this.backProtocol = backProtocol;
     }
 
@@ -48,7 +130,7 @@ public class RouteServerBody {
     }
 
     /**
-     * 后端ip地址
+     * 客户端访问的源站服务器的IP地址
      * @return address
      */
     public String getAddress() {
@@ -65,7 +147,7 @@ public class RouteServerBody {
     }
 
     /**
-     * 端口信息
+     * WAF转发客户端请求到源站服务的业务端口
      * @return port
      */
     public Integer getPort() {

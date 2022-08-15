@@ -31,7 +31,7 @@ public class DeletePrivacyRuleRequest {
     }
 
     /**
-     * 您可以通过调用企业项目管理服务（EPS)的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id
+     * 您可以通过调用企业项目管理服务（EPS）的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -65,7 +65,7 @@ public class DeletePrivacyRuleRequest {
     }
 
     /**
-     * 隐私屏蔽规则id，从查询隐私屏蔽防护规则接口https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=WAF&api=ListPrivacyRule获取
+     * 隐私屏蔽规则id，您可以通过调用查询隐私屏蔽规则列表（ListPrivacyRule）获取规则id
      * @return ruleId
      */
     public String getRuleId() {

@@ -35,11 +35,6 @@ public class UpdateValueListResponse extends SdkResponse {
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "timestamp")
-
-    private Long timestamp;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "values")
 
     private List<String> values = null;
@@ -117,23 +112,6 @@ public class UpdateValueListResponse extends SdkResponse {
         this.description = description;
     }
 
-    public UpdateValueListResponse withTimestamp(Long timestamp) {
-        this.timestamp = timestamp;
-        return this;
-    }
-
-    /**
-     * 引用表时间戳
-     * @return timestamp
-     */
-    public Long getTimestamp() {
-        return timestamp;
-    }
-
-    public void setTimestamp(Long timestamp) {
-        this.timestamp = timestamp;
-    }
-
     public UpdateValueListResponse withValues(List<String> values) {
         this.values = values;
         return this;
@@ -173,7 +151,7 @@ public class UpdateValueListResponse extends SdkResponse {
     }
 
     /**
-     * 引用表来源：  - 1:表示来源于用户手动创建  - 2:表示来源于moduleX自动创建
+     * 引用表来源：  - 1:表示来源于用户手动创建  - 2:表示来源于智能访问控制自动创建
      * @return producer
      */
     public Integer getProducer() {
@@ -197,14 +175,13 @@ public class UpdateValueListResponse extends SdkResponse {
             && Objects.equals(this.name, updateValueListResponse.name)
             && Objects.equals(this.type, updateValueListResponse.type)
             && Objects.equals(this.description, updateValueListResponse.description)
-            && Objects.equals(this.timestamp, updateValueListResponse.timestamp)
             && Objects.equals(this.values, updateValueListResponse.values)
             && Objects.equals(this.producer, updateValueListResponse.producer);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, type, description, timestamp, values, producer);
+        return Objects.hash(id, name, type, description, values, producer);
     }
 
     @Override
@@ -215,7 +192,6 @@ public class UpdateValueListResponse extends SdkResponse {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
-        sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
         sb.append("    values: ").append(toIndentedString(values)).append("\n");
         sb.append("    producer: ").append(toIndentedString(producer)).append("\n");
         sb.append("}");

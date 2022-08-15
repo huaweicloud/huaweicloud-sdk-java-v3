@@ -10,7 +10,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.ges.v1.model.EdgesetPath1;
 import com.huaweicloud.sdk.ges.v1.model.SchemaPath1;
-import com.huaweicloud.sdk.ges.v1.model.SysTagsRes;
 import com.huaweicloud.sdk.ges.v1.model.VertexsetPath1;
 import java.util.ArrayList;
 import java.util.List;
@@ -126,7 +125,7 @@ public class Graph1  {
     @JsonProperty(value="sys_tags")
     
     
-    private List<SysTagsRes> sysTags = null;
+    private List<String> sysTags = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -247,6 +246,41 @@ public class Graph1  {
     
     private Boolean enableFulltextIndex;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="enableHyG")
+    
+    
+    private Boolean enableHyG;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="trafficIpList")
+    
+    
+    private List<String> trafficIpList = null;
+    
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="cryptAlgorithm")
+    
+    
+    private String cryptAlgorithm;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="enableHttps")
+    
+    
+    private Boolean enableHttps;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="tags")
+    
+    
+    private List<Object> tags = null;
+    
     public Graph1 withId(String id) {
         this.id = id;
         return this;
@@ -597,13 +631,13 @@ public class Graph1  {
 
     
 
-    public Graph1 withSysTags(List<SysTagsRes> sysTags) {
+    public Graph1 withSysTags(List<String> sysTags) {
         this.sysTags = sysTags;
         return this;
     }
 
     
-    public Graph1 addSysTagsItem(SysTagsRes sysTagsItem) {
+    public Graph1 addSysTagsItem(String sysTagsItem) {
         if(this.sysTags == null) {
             this.sysTags = new ArrayList<>();
         }
@@ -611,7 +645,7 @@ public class Graph1  {
         return this;
     }
 
-    public Graph1 withSysTags(Consumer<List<SysTagsRes>> sysTagsSetter) {
+    public Graph1 withSysTags(Consumer<List<String>> sysTagsSetter) {
         if(this.sysTags == null) {
             this.sysTags = new ArrayList<>();
         }
@@ -623,11 +657,11 @@ public class Graph1  {
      * 企业项目信息，如果未指定则不开启，默认不开启。
      * @return sysTags
      */
-    public List<SysTagsRes> getSysTags() {
+    public List<String> getSysTags() {
         return sysTags;
     }
 
-    public void setSysTags(List<SysTagsRes> sysTags) {
+    public void setSysTags(List<String> sysTags) {
         this.sysTags = sysTags;
     }
 
@@ -1007,6 +1041,144 @@ public class Graph1  {
 
     
 
+    public Graph1 withEnableHyG(Boolean enableHyG) {
+        this.enableHyG = enableHyG;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 是否启用HyG，该参数只对千亿规格图生效
+     * @return enableHyG
+     */
+    public Boolean getEnableHyG() {
+        return enableHyG;
+    }
+
+    public void setEnableHyG(Boolean enableHyG) {
+        this.enableHyG = enableHyG;
+    }
+
+    
+
+    public Graph1 withTrafficIpList(List<String> trafficIpList) {
+        this.trafficIpList = trafficIpList;
+        return this;
+    }
+
+    
+    public Graph1 addTrafficIpListItem(String trafficIpListItem) {
+        if(this.trafficIpList == null) {
+            this.trafficIpList = new ArrayList<>();
+        }
+        this.trafficIpList.add(trafficIpListItem);
+        return this;
+    }
+
+    public Graph1 withTrafficIpList(Consumer<List<String>> trafficIpListSetter) {
+        if(this.trafficIpList == null) {
+            this.trafficIpList = new ArrayList<>();
+        }
+        trafficIpListSetter.accept(this.trafficIpList);
+        return this;
+    }
+
+    /**
+     * 图实例私有网络访问物理地址列表。为了防止浮动IP切换造成业务闪断，我们推荐您通过轮询的方式使用物理IP访问图实例。
+     * @return trafficIpList
+     */
+    public List<String> getTrafficIpList() {
+        return trafficIpList;
+    }
+
+    public void setTrafficIpList(List<String> trafficIpList) {
+        this.trafficIpList = trafficIpList;
+    }
+
+    
+
+    public Graph1 withCryptAlgorithm(String cryptAlgorithm) {
+        this.cryptAlgorithm = cryptAlgorithm;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 图实例加密算法，取值为：  - generalCipher：国际算法 - SMcompatible：商密算法（兼容国际）
+     * @return cryptAlgorithm
+     */
+    public String getCryptAlgorithm() {
+        return cryptAlgorithm;
+    }
+
+    public void setCryptAlgorithm(String cryptAlgorithm) {
+        this.cryptAlgorithm = cryptAlgorithm;
+    }
+
+    
+
+    public Graph1 withEnableHttps(Boolean enableHttps) {
+        this.enableHttps = enableHttps;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 是否开启安全模式，开启安全模式会对性能有较大影响。
+     * @return enableHttps
+     */
+    public Boolean getEnableHttps() {
+        return enableHttps;
+    }
+
+    public void setEnableHttps(Boolean enableHttps) {
+        this.enableHttps = enableHttps;
+    }
+
+    
+
+    public Graph1 withTags(List<Object> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    
+    public Graph1 addTagsItem(Object tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public Graph1 withTags(Consumer<List<Object>> tagsSetter) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * 标签列表，每个标签用<key,value>键值对表示。
+     * @return tags
+     */
+    public List<Object> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<Object> tags) {
+        this.tags = tags;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -1047,11 +1219,16 @@ public class Graph1  {
             Objects.equals(this.masterKeyId, graph1.masterKeyId) &&
             Objects.equals(this.masterKeyName, graph1.masterKeyName) &&
             Objects.equals(this.enableRBAC, graph1.enableRBAC) &&
-            Objects.equals(this.enableFulltextIndex, graph1.enableFulltextIndex);
+            Objects.equals(this.enableFulltextIndex, graph1.enableFulltextIndex) &&
+            Objects.equals(this.enableHyG, graph1.enableHyG) &&
+            Objects.equals(this.trafficIpList, graph1.trafficIpList) &&
+            Objects.equals(this.cryptAlgorithm, graph1.cryptAlgorithm) &&
+            Objects.equals(this.enableHttps, graph1.enableHttps) &&
+            Objects.equals(this.tags, graph1.tags);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, createdBy, isMultiAz, regionCode, azCode, schemaPath, edgesetPath, edgesetFormat, edgesetDefaultLabel, vertexsetPath, vertexsetFormat, vertexsetDefaultLabel, dataStoreVersion, sysTags, status, actionProgress, graphSizeTypeIndex, vpcId, subnetId, securityGroupId, replication, created, updated, privateIp, publicIp, arch, encrypted, masterKeyId, masterKeyName, enableRBAC, enableFulltextIndex);
+        return Objects.hash(id, name, createdBy, isMultiAz, regionCode, azCode, schemaPath, edgesetPath, edgesetFormat, edgesetDefaultLabel, vertexsetPath, vertexsetFormat, vertexsetDefaultLabel, dataStoreVersion, sysTags, status, actionProgress, graphSizeTypeIndex, vpcId, subnetId, securityGroupId, replication, created, updated, privateIp, publicIp, arch, encrypted, masterKeyId, masterKeyName, enableRBAC, enableFulltextIndex, enableHyG, trafficIpList, cryptAlgorithm, enableHttps, tags);
     }
     @Override
     public String toString() {
@@ -1089,6 +1266,11 @@ public class Graph1  {
         sb.append("    masterKeyName: ").append(toIndentedString(masterKeyName)).append("\n");
         sb.append("    enableRBAC: ").append(toIndentedString(enableRBAC)).append("\n");
         sb.append("    enableFulltextIndex: ").append(toIndentedString(enableFulltextIndex)).append("\n");
+        sb.append("    enableHyG: ").append(toIndentedString(enableHyG)).append("\n");
+        sb.append("    trafficIpList: ").append(toIndentedString(trafficIpList)).append("\n");
+        sb.append("    cryptAlgorithm: ").append(toIndentedString(cryptAlgorithm)).append("\n");
+        sb.append("    enableHttps: ").append(toIndentedString(enableHttps)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

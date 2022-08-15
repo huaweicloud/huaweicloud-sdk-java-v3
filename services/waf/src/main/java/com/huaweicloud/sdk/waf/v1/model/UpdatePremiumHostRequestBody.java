@@ -34,7 +34,7 @@ public class UpdatePremiumHostRequestBody {
     private String certificatename;
 
     /**
-     * 支持最低的TLS版本
+     * 配置的最低TLS版本（TLS v1.0/TLS v1.1/TLS v1.2）,默认为TLS v1.0版本，对于低于最低TLS版本的请求，将无法正常访问网站
      */
     public static final class TlsEnum {
 
@@ -128,7 +128,7 @@ public class UpdatePremiumHostRequestBody {
     private TlsEnum tls;
 
     /**
-     * 加密套件（cipher_1，cipher_2，cipher_3，cipher_4，cipher_default）：  cipher_1： 加密算法为ECDHE-ECDSA-AES256-GCM-SHA384:HIGH:!MEDIUM:!LOW:!aNULL:!eNULL:!DES:!MD5:!PSK:!RC4:!kRSA:!SRP:!3DES:!DSS:!EXP:!CAMELLIA:@STRENGTH   cipher_2：加密算法为EECDH+AESGCM:EDH+AESGCM    cipher_3：加密算法为ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-SHA384:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!DH:!EDH    cipher_4：加密算法为ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:AES256-SHA256:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!EDH    cipher_default： 加密算法为ECDHE-RSA-AES256-SHA384:AES256-SHA256:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!DH:!EDH:!AESGCM
+     * 加密套件（cipher_1，cipher_2，cipher_3，cipher_4，cipher_default）：  - cipher_1： 加密算法为ECDHE-ECDSA-AES256-GCM-SHA384:HIGH:!MEDIUM:!LOW:!aNULL:!eNULL:!DES:!MD5:!PSK:!RC4:!kRSA:!SRP:!3DES:!DSS:!EXP:!CAMELLIA:@STRENGTH   - cipher_2：加密算法为EECDH+AESGCM:EDH+AESGCM   - cipher_3：加密算法为ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-SHA384:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!DH:!EDH   - cipher_4：加密算法为ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:AES256-SHA256:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!EDH   - cipher_default： 加密算法为ECDHE-RSA-AES256-SHA384:AES256-SHA256:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!DH:!EDH:!AESGCM
      */
     public static final class CipherEnum {
 
@@ -268,16 +268,6 @@ public class UpdatePremiumHostRequestBody {
     private TrafficMark trafficMark;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "flag")
-
-    private Map<String, String> flag = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "extend")
-
-    private Map<String, String> extend = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "circuit_breaker")
 
     private CircuitBreaker circuitBreaker;
@@ -293,7 +283,7 @@ public class UpdatePremiumHostRequestBody {
     }
 
     /**
-     * 是否使用代理
+     * 防护域名是否使用代理   - false：不使用代理   - true：使用代理
      * @return proxy
      */
     public Boolean getProxy() {
@@ -310,7 +300,7 @@ public class UpdatePremiumHostRequestBody {
     }
 
     /**
-     * https证书id，通过查询证书列表接口（ListCertificates）接口获取证书id
+     * 证书id，通过查询证书列表接口（ListCertificates）接口获取证书id   - 对外协议为HTTP时不需要填写   - 对外协议HTTPS时为必填参数
      * @return certificateid
      */
     public String getCertificateid() {
@@ -327,7 +317,7 @@ public class UpdatePremiumHostRequestBody {
     }
 
     /**
-     * https证书名称，通过查询证书列表接口（ListCertificates）接口获取证书id
+     * 证书名   - 对外协议为HTTP时不需要填写   - 对外协议HTTPS时为必填参数
      * @return certificatename
      */
     public String getCertificatename() {
@@ -344,7 +334,7 @@ public class UpdatePremiumHostRequestBody {
     }
 
     /**
-     * 支持最低的TLS版本
+     * 配置的最低TLS版本（TLS v1.0/TLS v1.1/TLS v1.2）,默认为TLS v1.0版本，对于低于最低TLS版本的请求，将无法正常访问网站
      * @return tls
      */
     public TlsEnum getTls() {
@@ -361,7 +351,7 @@ public class UpdatePremiumHostRequestBody {
     }
 
     /**
-     * 加密套件（cipher_1，cipher_2，cipher_3，cipher_4，cipher_default）：  cipher_1： 加密算法为ECDHE-ECDSA-AES256-GCM-SHA384:HIGH:!MEDIUM:!LOW:!aNULL:!eNULL:!DES:!MD5:!PSK:!RC4:!kRSA:!SRP:!3DES:!DSS:!EXP:!CAMELLIA:@STRENGTH   cipher_2：加密算法为EECDH+AESGCM:EDH+AESGCM    cipher_3：加密算法为ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-SHA384:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!DH:!EDH    cipher_4：加密算法为ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:AES256-SHA256:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!EDH    cipher_default： 加密算法为ECDHE-RSA-AES256-SHA384:AES256-SHA256:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!DH:!EDH:!AESGCM
+     * 加密套件（cipher_1，cipher_2，cipher_3，cipher_4，cipher_default）：  - cipher_1： 加密算法为ECDHE-ECDSA-AES256-GCM-SHA384:HIGH:!MEDIUM:!LOW:!aNULL:!eNULL:!DES:!MD5:!PSK:!RC4:!kRSA:!SRP:!3DES:!DSS:!EXP:!CAMELLIA:@STRENGTH   - cipher_2：加密算法为EECDH+AESGCM:EDH+AESGCM   - cipher_3：加密算法为ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-SHA384:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!DH:!EDH   - cipher_4：加密算法为ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:AES256-SHA256:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!EDH   - cipher_default： 加密算法为ECDHE-RSA-AES256-SHA384:AES256-SHA256:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!DH:!EDH:!AESGCM
      * @return cipher
      */
     public CipherEnum getCipher() {
@@ -395,7 +385,7 @@ public class UpdatePremiumHostRequestBody {
     }
 
     /**
-     * 是否锁定
+     * 预留参数，用于后期设计冻结域名，解锁域名功能，目前暂不支持
      * @return locked
      */
     public Integer getLocked() {
@@ -412,7 +402,7 @@ public class UpdatePremiumHostRequestBody {
     }
 
     /**
-     * 防护状态
+     * 域名防护状态：  - -1：bypass，该域名的请求直接到达其后端服务器，不再经过WAF  - 0：暂停防护，WAF只转发该域名的请求，不做攻击检测  - 1：开启防护，WAF根据您配置的策略进行攻击检测
      * @return protectStatus
      */
     public Integer getProtectStatus() {
@@ -429,7 +419,7 @@ public class UpdatePremiumHostRequestBody {
     }
 
     /**
-     * 接入状态
+     * 域名接入状态，0表示未接入，1表示已接入
      * @return accessStatus
      */
     public Integer getAccessStatus() {
@@ -479,7 +469,7 @@ public class UpdatePremiumHostRequestBody {
     }
 
     /**
-     * 域名关联的组ID（仅特殊模式需要，如elb）
+     * 特殊模式域名所属独享引擎组（仅特殊模式需要，如elb）
      * @return poolIds
      */
     public List<String> getPoolIds() {
@@ -540,72 +530,6 @@ public class UpdatePremiumHostRequestBody {
 
     public void setTrafficMark(TrafficMark trafficMark) {
         this.trafficMark = trafficMark;
-    }
-
-    public UpdatePremiumHostRequestBody withFlag(Map<String, String> flag) {
-        this.flag = flag;
-        return this;
-    }
-
-    public UpdatePremiumHostRequestBody putFlagItem(String key, String flagItem) {
-        if (this.flag == null) {
-            this.flag = new HashMap<>();
-        }
-        this.flag.put(key, flagItem);
-        return this;
-    }
-
-    public UpdatePremiumHostRequestBody withFlag(Consumer<Map<String, String>> flagSetter) {
-        if (this.flag == null) {
-            this.flag = new HashMap<>();
-        }
-        flagSetter.accept(this.flag);
-        return this;
-    }
-
-    /**
-     * 域名特殊标识
-     * @return flag
-     */
-    public Map<String, String> getFlag() {
-        return flag;
-    }
-
-    public void setFlag(Map<String, String> flag) {
-        this.flag = flag;
-    }
-
-    public UpdatePremiumHostRequestBody withExtend(Map<String, String> extend) {
-        this.extend = extend;
-        return this;
-    }
-
-    public UpdatePremiumHostRequestBody putExtendItem(String key, String extendItem) {
-        if (this.extend == null) {
-            this.extend = new HashMap<>();
-        }
-        this.extend.put(key, extendItem);
-        return this;
-    }
-
-    public UpdatePremiumHostRequestBody withExtend(Consumer<Map<String, String>> extendSetter) {
-        if (this.extend == null) {
-            this.extend = new HashMap<>();
-        }
-        extendSetter.accept(this.extend);
-        return this;
-    }
-
-    /**
-     * 可扩展字段
-     * @return extend
-     */
-    public Map<String, String> getExtend() {
-        return extend;
-    }
-
-    public void setExtend(Map<String, String> extend) {
-        this.extend = extend;
     }
 
     public UpdatePremiumHostRequestBody withCircuitBreaker(CircuitBreaker circuitBreaker) {
@@ -682,8 +606,6 @@ public class UpdatePremiumHostRequestBody {
             && Objects.equals(this.poolIds, updatePremiumHostRequestBody.poolIds)
             && Objects.equals(this.blockPage, updatePremiumHostRequestBody.blockPage)
             && Objects.equals(this.trafficMark, updatePremiumHostRequestBody.trafficMark)
-            && Objects.equals(this.flag, updatePremiumHostRequestBody.flag)
-            && Objects.equals(this.extend, updatePremiumHostRequestBody.extend)
             && Objects.equals(this.circuitBreaker, updatePremiumHostRequestBody.circuitBreaker)
             && Objects.equals(this.timeoutConfig, updatePremiumHostRequestBody.timeoutConfig);
     }
@@ -703,8 +625,6 @@ public class UpdatePremiumHostRequestBody {
             poolIds,
             blockPage,
             trafficMark,
-            flag,
-            extend,
             circuitBreaker,
             timeoutConfig);
     }
@@ -726,8 +646,6 @@ public class UpdatePremiumHostRequestBody {
         sb.append("    poolIds: ").append(toIndentedString(poolIds)).append("\n");
         sb.append("    blockPage: ").append(toIndentedString(blockPage)).append("\n");
         sb.append("    trafficMark: ").append(toIndentedString(trafficMark)).append("\n");
-        sb.append("    flag: ").append(toIndentedString(flag)).append("\n");
-        sb.append("    extend: ").append(toIndentedString(extend)).append("\n");
         sb.append("    circuitBreaker: ").append(toIndentedString(circuitBreaker)).append("\n");
         sb.append("    timeoutConfig: ").append(toIndentedString(timeoutConfig)).append("\n");
         sb.append("}");

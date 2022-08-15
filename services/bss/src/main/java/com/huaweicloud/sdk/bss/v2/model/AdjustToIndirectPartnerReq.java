@@ -26,7 +26,7 @@ public class AdjustToIndirectPartnerReq {
     }
 
     /**
-     * 精英服务商ID。获取方法请参见[查询精英服务商列表](https://support.huaweicloud.com/api-bpconsole/espp_00003.html)。
+     * 云经销商ID。获取方法请参见[查询云经销商列表](https://support.huaweicloud.com/api-bpconsole/espp_00003.html)。
      * @return indirectPartnerId
      */
     public String getIndirectPartnerId() {
@@ -43,7 +43,7 @@ public class AdjustToIndirectPartnerReq {
     }
 
     /**
-     * 华为云伙伴能力中心向精英服务商拨款的金额。 单位：元。取值大于0且精确到小数点后2位。
+     * 华为云总经销商向云经销商拨款的金额。 单位：元。取值大于0且精确到小数点后2位。
      * minimum: 0
      * maximum: 999999999.99
      * @return amount

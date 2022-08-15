@@ -223,7 +223,7 @@ public class QuerySubCustomerListReq {
     }
 
     /**
-     * 精英服务商ID。获取方法请参见[查询精英服务商列表](https://support.huaweicloud.com/api-bpconsole/espp_00003.html)。如果需要查询精英服务商伙伴的子客户列表，必须携带该字段。
+     * 云经销商ID。获取方法请参见[查询云经销商列表](https://support.huaweicloud.com/api-bpconsole/espp_00003.html)。如果需要查询云经销商的子客户列表，必须携带该字段。除此之外，此参数不做处理。
      * @return indirectPartnerId
      */
     public String getIndirectPartnerId() {

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 更新黑白名单规则body
+ * 更新黑白名单规则请求体，其中请求体中必须包含name、white以及addr或者ip_group_id中一个
  */
 public class UpdateWhiteBlackIpRuleRequestBody {
 
@@ -29,6 +29,11 @@ public class UpdateWhiteBlackIpRuleRequestBody {
     @JsonProperty(value = "white")
 
     private Integer white;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ip_group_id")
+
+    private String ipGroupId;
 
     public UpdateWhiteBlackIpRuleRequestBody withName(String name) {
         this.name = name;
@@ -98,6 +103,23 @@ public class UpdateWhiteBlackIpRuleRequestBody {
         this.white = white;
     }
 
+    public UpdateWhiteBlackIpRuleRequestBody withIpGroupId(String ipGroupId) {
+        this.ipGroupId = ipGroupId;
+        return this;
+    }
+
+    /**
+     * 创建的Ip地址组id，该参数与addr参数使用一个即可；Ip地址组可在控制台中对象管理->地址组管理中添加。
+     * @return ipGroupId
+     */
+    public String getIpGroupId() {
+        return ipGroupId;
+    }
+
+    public void setIpGroupId(String ipGroupId) {
+        this.ipGroupId = ipGroupId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -110,12 +132,13 @@ public class UpdateWhiteBlackIpRuleRequestBody {
         return Objects.equals(this.name, updateWhiteBlackIpRuleRequestBody.name)
             && Objects.equals(this.addr, updateWhiteBlackIpRuleRequestBody.addr)
             && Objects.equals(this.description, updateWhiteBlackIpRuleRequestBody.description)
-            && Objects.equals(this.white, updateWhiteBlackIpRuleRequestBody.white);
+            && Objects.equals(this.white, updateWhiteBlackIpRuleRequestBody.white)
+            && Objects.equals(this.ipGroupId, updateWhiteBlackIpRuleRequestBody.ipGroupId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, addr, description, white);
+        return Objects.hash(name, addr, description, white, ipGroupId);
     }
 
     @Override
@@ -126,6 +149,7 @@ public class UpdateWhiteBlackIpRuleRequestBody {
         sb.append("    addr: ").append(toIndentedString(addr)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    white: ").append(toIndentedString(white)).append("\n");
+        sb.append("    ipGroupId: ").append(toIndentedString(ipGroupId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

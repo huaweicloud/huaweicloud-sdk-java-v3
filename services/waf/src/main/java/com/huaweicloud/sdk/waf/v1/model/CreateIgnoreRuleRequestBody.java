@@ -34,6 +34,11 @@ public class CreateIgnoreRuleRequestBody {
     private String rule;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "advanced")
+
+    private List<Advanced> advanced = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
     private String description;
@@ -127,7 +132,7 @@ public class CreateIgnoreRuleRequestBody {
     }
 
     /**
-     * 屏蔽的内置规则id（内置规则id通常可以在Web应用防火墙控制台的防护策略->策略名称->Web基础防护->防护规则中查询，也可以在防护事件的事件详情中看到查询规则id）
+     * 需要屏蔽的规则，可屏蔽一个或者多个，屏蔽多个时使用半角符;分隔   - 当需要屏蔽某一条内置规则时，该参数值为该内置规则id,可以在Web应用防火墙控制台的防护策略->策略名称->Web基础防护的高级设置->防护规则中查询；也可以在防护事件的事件详情中查询内置规则id   - 当需要屏蔽web基础防护某一类规则时，该参数值为需要屏蔽的web基础防护某一类规则名。其中，xss：xxs攻击；webshell：网站木马；vuln：其他类型攻击；sqli：sql注入攻击；robot：恶意爬虫；rfi：远程文件包含；lfi：本地文件包含；cmdi：命令注入攻击   - 当需要屏蔽Web基础防护模块，该参数值为：all   - 当需要屏蔽规则为所有检测模块时，该参数值为：bypass
      * @return rule
      */
     public String getRule() {
@@ -136,6 +141,39 @@ public class CreateIgnoreRuleRequestBody {
 
     public void setRule(String rule) {
         this.rule = rule;
+    }
+
+    public CreateIgnoreRuleRequestBody withAdvanced(List<Advanced> advanced) {
+        this.advanced = advanced;
+        return this;
+    }
+
+    public CreateIgnoreRuleRequestBody addAdvancedItem(Advanced advancedItem) {
+        if (this.advanced == null) {
+            this.advanced = new ArrayList<>();
+        }
+        this.advanced.add(advancedItem);
+        return this;
+    }
+
+    public CreateIgnoreRuleRequestBody withAdvanced(Consumer<List<Advanced>> advancedSetter) {
+        if (this.advanced == null) {
+            this.advanced = new ArrayList<>();
+        }
+        advancedSetter.accept(this.advanced);
+        return this;
+    }
+
+    /**
+     * 高级配置项
+     * @return advanced
+     */
+    public List<Advanced> getAdvanced() {
+        return advanced;
+    }
+
+    public void setAdvanced(List<Advanced> advanced) {
+        this.advanced = advanced;
     }
 
     public CreateIgnoreRuleRequestBody withDescription(String description) {
@@ -168,12 +206,13 @@ public class CreateIgnoreRuleRequestBody {
             && Objects.equals(this.conditions, createIgnoreRuleRequestBody.conditions)
             && Objects.equals(this.mode, createIgnoreRuleRequestBody.mode)
             && Objects.equals(this.rule, createIgnoreRuleRequestBody.rule)
+            && Objects.equals(this.advanced, createIgnoreRuleRequestBody.advanced)
             && Objects.equals(this.description, createIgnoreRuleRequestBody.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(domain, conditions, mode, rule, description);
+        return Objects.hash(domain, conditions, mode, rule, advanced, description);
     }
 
     @Override
@@ -184,6 +223,7 @@ public class CreateIgnoreRuleRequestBody {
         sb.append("    conditions: ").append(toIndentedString(conditions)).append("\n");
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
         sb.append("    rule: ").append(toIndentedString(rule)).append("\n");
+        sb.append("    advanced: ").append(toIndentedString(advanced)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");
         return sb.toString();
