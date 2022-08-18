@@ -15,11 +15,6 @@ import java.util.function.Consumer;
 public class ListDependenciesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "count")
-
-    private Integer count;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dependencies")
 
     private List<ListDependenciesResult> dependencies = null;
@@ -29,22 +24,10 @@ public class ListDependenciesResponse extends SdkResponse {
 
     private Long nextMarker;
 
-    public ListDependenciesResponse withCount(Integer count) {
-        this.count = count;
-        return this;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "count")
 
-    /**
-     * 依赖包总数。
-     * @return count
-     */
-    public Integer getCount() {
-        return count;
-    }
-
-    public void setCount(Integer count) {
-        this.count = count;
-    }
+    private Long count;
 
     public ListDependenciesResponse withDependencies(List<ListDependenciesResult> dependencies) {
         this.dependencies = dependencies;
@@ -68,7 +51,7 @@ public class ListDependenciesResponse extends SdkResponse {
     }
 
     /**
-     * 依赖包列表。
+     * 依赖包列表
      * @return dependencies
      */
     public List<ListDependenciesResult> getDependencies() {
@@ -85,7 +68,7 @@ public class ListDependenciesResponse extends SdkResponse {
     }
 
     /**
-     * 下次读取位置。
+     * 下次读取位置
      * @return nextMarker
      */
     public Long getNextMarker() {
@@ -94,6 +77,23 @@ public class ListDependenciesResponse extends SdkResponse {
 
     public void setNextMarker(Long nextMarker) {
         this.nextMarker = nextMarker;
+    }
+
+    public ListDependenciesResponse withCount(Long count) {
+        this.count = count;
+        return this;
+    }
+
+    /**
+     * 依赖包总数
+     * @return count
+     */
+    public Long getCount() {
+        return count;
+    }
+
+    public void setCount(Long count) {
+        this.count = count;
     }
 
     @Override
@@ -105,23 +105,23 @@ public class ListDependenciesResponse extends SdkResponse {
             return false;
         }
         ListDependenciesResponse listDependenciesResponse = (ListDependenciesResponse) o;
-        return Objects.equals(this.count, listDependenciesResponse.count)
-            && Objects.equals(this.dependencies, listDependenciesResponse.dependencies)
-            && Objects.equals(this.nextMarker, listDependenciesResponse.nextMarker);
+        return Objects.equals(this.dependencies, listDependenciesResponse.dependencies)
+            && Objects.equals(this.nextMarker, listDependenciesResponse.nextMarker)
+            && Objects.equals(this.count, listDependenciesResponse.count);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(count, dependencies, nextMarker);
+        return Objects.hash(dependencies, nextMarker, count);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListDependenciesResponse {\n");
-        sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("    dependencies: ").append(toIndentedString(dependencies)).append("\n");
         sb.append("    nextMarker: ").append(toIndentedString(nextMarker)).append("\n");
+        sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -1,13 +1,8 @@
 package com.huaweicloud.sdk.functiongraph.v2.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -20,93 +15,10 @@ public class ListFunctionStatisticsRequest {
 
     private String funcUrn;
 
-    /**
-     * 获取最近多少分钟内函数执行的指标。
-     */
-    public static final class PeriodEnum {
-
-        /**
-         * Enum _5 for value: "5"
-         */
-        public static final PeriodEnum _5 = new PeriodEnum("5");
-
-        /**
-         * Enum _15 for value: "15"
-         */
-        public static final PeriodEnum _15 = new PeriodEnum("15");
-
-        /**
-         * Enum _60 for value: "60"
-         */
-        public static final PeriodEnum _60 = new PeriodEnum("60");
-
-        private static final Map<String, PeriodEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, PeriodEnum> createStaticFields() {
-            Map<String, PeriodEnum> map = new HashMap<>();
-            map.put("5", _5);
-            map.put("15", _15);
-            map.put("60", _60);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        PeriodEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static PeriodEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            PeriodEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PeriodEnum(value);
-            }
-            return result;
-        }
-
-        public static PeriodEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            PeriodEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof PeriodEnum) {
-                return this.value.equals(((PeriodEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "period")
 
-    private PeriodEnum period;
+    private String period;
 
     public ListFunctionStatisticsRequest withFuncUrn(String funcUrn) {
         this.funcUrn = funcUrn;
@@ -125,7 +37,7 @@ public class ListFunctionStatisticsRequest {
         this.funcUrn = funcUrn;
     }
 
-    public ListFunctionStatisticsRequest withPeriod(PeriodEnum period) {
+    public ListFunctionStatisticsRequest withPeriod(String period) {
         this.period = period;
         return this;
     }
@@ -134,11 +46,11 @@ public class ListFunctionStatisticsRequest {
      * 获取最近多少分钟内函数执行的指标。
      * @return period
      */
-    public PeriodEnum getPeriod() {
+    public String getPeriod() {
         return period;
     }
 
-    public void setPeriod(PeriodEnum period) {
+    public void setPeriod(String period) {
         this.period = period;
     }
 

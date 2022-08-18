@@ -18,7 +18,7 @@ public class MonthUsed {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "value")
 
-    private Float value;
+    private Integer value;
 
     public MonthUsed withDate(String date) {
         this.date = date;
@@ -37,7 +37,7 @@ public class MonthUsed {
         this.date = date;
     }
 
-    public MonthUsed withValue(Float value) {
+    public MonthUsed withValue(Integer value) {
         this.value = value;
         return this;
     }
@@ -46,11 +46,11 @@ public class MonthUsed {
      * 使用量
      * @return value
      */
-    public Float getValue() {
+    public Integer getValue() {
         return value;
     }
 
-    public void setValue(Float value) {
+    public void setValue(Integer value) {
         this.value = value;
     }
 

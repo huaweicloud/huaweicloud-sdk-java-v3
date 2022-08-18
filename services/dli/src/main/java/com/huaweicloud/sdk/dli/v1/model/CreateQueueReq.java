@@ -68,6 +68,11 @@ public class CreateQueueReq {
 
     private List<JobsTags> tags = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "elastic_resource_pool_name")
+
+    private String elasticResourcePoolName;
+
     public CreateQueueReq withQueueName(String queueName) {
         this.queueName = queueName;
         return this;
@@ -287,6 +292,23 @@ public class CreateQueueReq {
         this.tags = tags;
     }
 
+    public CreateQueueReq withElasticResourcePoolName(String elasticResourcePoolName) {
+        this.elasticResourcePoolName = elasticResourcePoolName;
+        return this;
+    }
+
+    /**
+     * 新建的弹性资源池名称，名称只能包含数字、小写英文字母和下划线，但不能是纯数字，且不能以下划线开头。长度限制：1~128个字符。
+     * @return elasticResourcePoolName
+     */
+    public String getElasticResourcePoolName() {
+        return elasticResourcePoolName;
+    }
+
+    public void setElasticResourcePoolName(String elasticResourcePoolName) {
+        this.elasticResourcePoolName = elasticResourcePoolName;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -305,7 +327,8 @@ public class CreateQueueReq {
             && Objects.equals(this.platform, createQueueReq.platform)
             && Objects.equals(this.resourceMode, createQueueReq.resourceMode)
             && Objects.equals(this.labels, createQueueReq.labels)
-            && Objects.equals(this.feature, createQueueReq.feature) && Objects.equals(this.tags, createQueueReq.tags);
+            && Objects.equals(this.feature, createQueueReq.feature) && Objects.equals(this.tags, createQueueReq.tags)
+            && Objects.equals(this.elasticResourcePoolName, createQueueReq.elasticResourcePoolName);
     }
 
     @Override
@@ -320,7 +343,8 @@ public class CreateQueueReq {
             resourceMode,
             labels,
             feature,
-            tags);
+            tags,
+            elasticResourcePoolName);
     }
 
     @Override
@@ -338,6 +362,7 @@ public class CreateQueueReq {
         sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    feature: ").append(toIndentedString(feature)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    elasticResourcePoolName: ").append(toIndentedString(elasticResourcePoolName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

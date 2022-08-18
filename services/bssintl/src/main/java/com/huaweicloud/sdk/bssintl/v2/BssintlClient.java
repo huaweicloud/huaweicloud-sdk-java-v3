@@ -372,6 +372,36 @@ public class BssintlClient {
     }
 
     /**
+     * 查询成本数据
+     *
+     * 客户在自建平台查询成本分析数据。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListCostsRequest 请求对象
+     * @return ListCostsResponse
+     */
+    public ListCostsResponse listCosts(ListCostsRequest request) {
+        return hcClient.syncInvokeHttp(request, BssintlMeta.listCosts);
+    }
+
+    /**
+     * 查询成本数据
+     *
+     * 客户在自建平台查询成本分析数据。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListCostsRequest 请求对象
+     * @return SyncInvoker<ListCostsRequest, ListCostsResponse>
+     */
+    public SyncInvoker<ListCostsRequest, ListCostsResponse> listCostsInvoker(ListCostsRequest request) {
+        return new SyncInvoker<ListCostsRequest, ListCostsResponse>(request, BssintlMeta.listCosts, hcClient);
+    }
+
+    /**
      * 查询客户按需资源列表
      *
      * 功能描述：客户在伙伴销售平台查询已开通的按需资源
@@ -564,6 +594,42 @@ public class BssintlClient {
         ListFreeResourceUsagesRequest request) {
         return new SyncInvoker<ListFreeResourceUsagesRequest, ListFreeResourceUsagesResponse>(request,
             BssintlMeta.listFreeResourceUsages, hcClient);
+    }
+
+    /**
+     * 查询云经销商列表
+     *
+     * 华为云总经销商（一级经销商）可以查询云经销商（二级经销商）列表。
+     * 
+     * 一级经销商在伙伴中心查询二级经销商列表的方式请参见[这里](https://support.huaweicloud.com/usermanual-bpconsole/dp_120210.html)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListIndirectPartnersRequest 请求对象
+     * @return ListIndirectPartnersResponse
+     */
+    public ListIndirectPartnersResponse listIndirectPartners(ListIndirectPartnersRequest request) {
+        return hcClient.syncInvokeHttp(request, BssintlMeta.listIndirectPartners);
+    }
+
+    /**
+     * 查询云经销商列表
+     *
+     * 华为云总经销商（一级经销商）可以查询云经销商（二级经销商）列表。
+     * 
+     * 一级经销商在伙伴中心查询二级经销商列表的方式请参见[这里](https://support.huaweicloud.com/usermanual-bpconsole/dp_120210.html)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListIndirectPartnersRequest 请求对象
+     * @return SyncInvoker<ListIndirectPartnersRequest, ListIndirectPartnersResponse>
+     */
+    public SyncInvoker<ListIndirectPartnersRequest, ListIndirectPartnersResponse> listIndirectPartnersInvoker(
+        ListIndirectPartnersRequest request) {
+        return new SyncInvoker<ListIndirectPartnersRequest, ListIndirectPartnersResponse>(request,
+            BssintlMeta.listIndirectPartners, hcClient);
     }
 
     /**

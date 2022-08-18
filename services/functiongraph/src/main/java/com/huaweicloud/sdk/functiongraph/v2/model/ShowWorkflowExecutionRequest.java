@@ -20,6 +20,11 @@ public class ShowWorkflowExecutionRequest {
 
     private String executionId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Get-Workflow-Full-History-Data")
+
+    private Boolean xGetWorkflowFullHistoryData;
+
     public ShowWorkflowExecutionRequest withWorkflowId(String workflowId) {
         this.workflowId = workflowId;
         return this;
@@ -54,6 +59,25 @@ public class ShowWorkflowExecutionRequest {
         this.executionId = executionId;
     }
 
+    public ShowWorkflowExecutionRequest withXGetWorkflowFullHistoryData(Boolean xGetWorkflowFullHistoryData) {
+        this.xGetWorkflowFullHistoryData = xGetWorkflowFullHistoryData;
+        return this;
+    }
+
+    /**
+     * 获取函数流执行详情完整输出值
+     * @return xGetWorkflowFullHistoryData
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Get-Workflow-Full-History-Data")
+    public Boolean getXGetWorkflowFullHistoryData() {
+        return xGetWorkflowFullHistoryData;
+    }
+
+    public void setXGetWorkflowFullHistoryData(Boolean xGetWorkflowFullHistoryData) {
+        this.xGetWorkflowFullHistoryData = xGetWorkflowFullHistoryData;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -64,12 +88,13 @@ public class ShowWorkflowExecutionRequest {
         }
         ShowWorkflowExecutionRequest showWorkflowExecutionRequest = (ShowWorkflowExecutionRequest) o;
         return Objects.equals(this.workflowId, showWorkflowExecutionRequest.workflowId)
-            && Objects.equals(this.executionId, showWorkflowExecutionRequest.executionId);
+            && Objects.equals(this.executionId, showWorkflowExecutionRequest.executionId) && Objects
+                .equals(this.xGetWorkflowFullHistoryData, showWorkflowExecutionRequest.xGetWorkflowFullHistoryData);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(workflowId, executionId);
+        return Objects.hash(workflowId, executionId, xGetWorkflowFullHistoryData);
     }
 
     @Override
@@ -78,6 +103,9 @@ public class ShowWorkflowExecutionRequest {
         sb.append("class ShowWorkflowExecutionRequest {\n");
         sb.append("    workflowId: ").append(toIndentedString(workflowId)).append("\n");
         sb.append("    executionId: ").append(toIndentedString(executionId)).append("\n");
+        sb.append("    xGetWorkflowFullHistoryData: ")
+            .append(toIndentedString(xGetWorkflowFullHistoryData))
+            .append("\n");
         sb.append("}");
         return sb.toString();
     }

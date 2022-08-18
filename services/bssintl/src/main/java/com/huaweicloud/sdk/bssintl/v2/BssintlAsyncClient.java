@@ -378,6 +378,36 @@ public class BssintlAsyncClient {
     }
 
     /**
+     * 查询成本数据
+     *
+     * 客户在自建平台查询成本分析数据。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListCostsRequest 请求对象
+     * @return CompletableFuture<ListCostsResponse>
+     */
+    public CompletableFuture<ListCostsResponse> listCostsAsync(ListCostsRequest request) {
+        return hcClient.asyncInvokeHttp(request, BssintlMeta.listCosts);
+    }
+
+    /**
+     * 查询成本数据
+     *
+     * 客户在自建平台查询成本分析数据。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListCostsRequest 请求对象
+     * @return AsyncInvoker<ListCostsRequest, ListCostsResponse>
+     */
+    public AsyncInvoker<ListCostsRequest, ListCostsResponse> listCostsAsyncInvoker(ListCostsRequest request) {
+        return new AsyncInvoker<ListCostsRequest, ListCostsResponse>(request, BssintlMeta.listCosts, hcClient);
+    }
+
+    /**
      * 查询客户按需资源列表
      *
      * 功能描述：客户在伙伴销售平台查询已开通的按需资源
@@ -572,6 +602,43 @@ public class BssintlAsyncClient {
         ListFreeResourceUsagesRequest request) {
         return new AsyncInvoker<ListFreeResourceUsagesRequest, ListFreeResourceUsagesResponse>(request,
             BssintlMeta.listFreeResourceUsages, hcClient);
+    }
+
+    /**
+     * 查询云经销商列表
+     *
+     * 华为云总经销商（一级经销商）可以查询云经销商（二级经销商）列表。
+     * 
+     * 一级经销商在伙伴中心查询二级经销商列表的方式请参见[这里](https://support.huaweicloud.com/usermanual-bpconsole/dp_120210.html)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListIndirectPartnersRequest 请求对象
+     * @return CompletableFuture<ListIndirectPartnersResponse>
+     */
+    public CompletableFuture<ListIndirectPartnersResponse> listIndirectPartnersAsync(
+        ListIndirectPartnersRequest request) {
+        return hcClient.asyncInvokeHttp(request, BssintlMeta.listIndirectPartners);
+    }
+
+    /**
+     * 查询云经销商列表
+     *
+     * 华为云总经销商（一级经销商）可以查询云经销商（二级经销商）列表。
+     * 
+     * 一级经销商在伙伴中心查询二级经销商列表的方式请参见[这里](https://support.huaweicloud.com/usermanual-bpconsole/dp_120210.html)。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListIndirectPartnersRequest 请求对象
+     * @return AsyncInvoker<ListIndirectPartnersRequest, ListIndirectPartnersResponse>
+     */
+    public AsyncInvoker<ListIndirectPartnersRequest, ListIndirectPartnersResponse> listIndirectPartnersAsyncInvoker(
+        ListIndirectPartnersRequest request) {
+        return new AsyncInvoker<ListIndirectPartnersRequest, ListIndirectPartnersResponse>(request,
+            BssintlMeta.listIndirectPartners, hcClient);
     }
 
     /**

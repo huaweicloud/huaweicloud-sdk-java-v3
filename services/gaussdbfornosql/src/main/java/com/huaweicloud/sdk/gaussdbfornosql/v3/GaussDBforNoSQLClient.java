@@ -82,6 +82,41 @@ public class GaussDBforNoSQLClient {
     }
 
     /**
+     * 校验实例是否可以与指定实例建立/解除容灾关系
+     *
+     * 校验实例是否可以与指定实例建立/解除容灾关系。若接口返回成功，表示可以与指定实例建立/解除容灾关系。
+     * 该接口需要对建立/解除容灾关系的两个实例各调用一次，2次调用都响应成功才能进行容灾关系的搭建/解除。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CheckDisasterRecoveryOperationRequest 请求对象
+     * @return CheckDisasterRecoveryOperationResponse
+     */
+    public CheckDisasterRecoveryOperationResponse checkDisasterRecoveryOperation(
+        CheckDisasterRecoveryOperationRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.checkDisasterRecoveryOperation);
+    }
+
+    /**
+     * 校验实例是否可以与指定实例建立/解除容灾关系
+     *
+     * 校验实例是否可以与指定实例建立/解除容灾关系。若接口返回成功，表示可以与指定实例建立/解除容灾关系。
+     * 该接口需要对建立/解除容灾关系的两个实例各调用一次，2次调用都响应成功才能进行容灾关系的搭建/解除。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CheckDisasterRecoveryOperationRequest 请求对象
+     * @return SyncInvoker<CheckDisasterRecoveryOperationRequest, CheckDisasterRecoveryOperationResponse>
+     */
+    public SyncInvoker<CheckDisasterRecoveryOperationRequest, CheckDisasterRecoveryOperationResponse> checkDisasterRecoveryOperationInvoker(
+        CheckDisasterRecoveryOperationRequest request) {
+        return new SyncInvoker<CheckDisasterRecoveryOperationRequest, CheckDisasterRecoveryOperationResponse>(request,
+            GaussDBforNoSQLMeta.checkDisasterRecoveryOperation, hcClient);
+    }
+
+    /**
      * 创建参数模板
      *
      * 创建参数模板。
@@ -111,6 +146,38 @@ public class GaussDBforNoSQLClient {
         CreateConfigurationRequest request) {
         return new SyncInvoker<CreateConfigurationRequest, CreateConfigurationResponse>(request,
             GaussDBforNoSQLMeta.createConfiguration, hcClient);
+    }
+
+    /**
+     * 搭建实例与特定实例的容灾关系
+     *
+     * 搭建实例与特定实例的容灾关系。 该接口需要对搭建容灾关系的两个实例分别各调用一次，2次接口都调用成功才能成功搭建容灾关系。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateDisasterRecoveryRequest 请求对象
+     * @return CreateDisasterRecoveryResponse
+     */
+    public CreateDisasterRecoveryResponse createDisasterRecovery(CreateDisasterRecoveryRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.createDisasterRecovery);
+    }
+
+    /**
+     * 搭建实例与特定实例的容灾关系
+     *
+     * 搭建实例与特定实例的容灾关系。 该接口需要对搭建容灾关系的两个实例分别各调用一次，2次接口都调用成功才能成功搭建容灾关系。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateDisasterRecoveryRequest 请求对象
+     * @return SyncInvoker<CreateDisasterRecoveryRequest, CreateDisasterRecoveryResponse>
+     */
+    public SyncInvoker<CreateDisasterRecoveryRequest, CreateDisasterRecoveryResponse> createDisasterRecoveryInvoker(
+        CreateDisasterRecoveryRequest request) {
+        return new SyncInvoker<CreateDisasterRecoveryRequest, CreateDisasterRecoveryResponse>(request,
+            GaussDBforNoSQLMeta.createDisasterRecovery, hcClient);
     }
 
     /**
@@ -175,6 +242,38 @@ public class GaussDBforNoSQLClient {
         DeleteConfigurationRequest request) {
         return new SyncInvoker<DeleteConfigurationRequest, DeleteConfigurationResponse>(request,
             GaussDBforNoSQLMeta.deleteConfiguration, hcClient);
+    }
+
+    /**
+     * 解除实例与特定实例的容灾关系
+     *
+     * 解除实例与特定实例的容灾关系。 该接口需要对搭建容灾关系的两个实例分别各调用一次，2次接口都调用成功才能成功解除容灾关系。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteDisasterRecoveryRequest 请求对象
+     * @return DeleteDisasterRecoveryResponse
+     */
+    public DeleteDisasterRecoveryResponse deleteDisasterRecovery(DeleteDisasterRecoveryRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.deleteDisasterRecovery);
+    }
+
+    /**
+     * 解除实例与特定实例的容灾关系
+     *
+     * 解除实例与特定实例的容灾关系。 该接口需要对搭建容灾关系的两个实例分别各调用一次，2次接口都调用成功才能成功解除容灾关系。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteDisasterRecoveryRequest 请求对象
+     * @return SyncInvoker<DeleteDisasterRecoveryRequest, DeleteDisasterRecoveryResponse>
+     */
+    public SyncInvoker<DeleteDisasterRecoveryRequest, DeleteDisasterRecoveryResponse> deleteDisasterRecoveryInvoker(
+        DeleteDisasterRecoveryRequest request) {
+        return new SyncInvoker<DeleteDisasterRecoveryRequest, DeleteDisasterRecoveryResponse>(request,
+            GaussDBforNoSQLMeta.deleteDisasterRecovery, hcClient);
     }
 
     /**

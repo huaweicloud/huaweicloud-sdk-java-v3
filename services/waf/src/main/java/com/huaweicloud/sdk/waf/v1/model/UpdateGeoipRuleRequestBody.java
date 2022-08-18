@@ -25,6 +25,11 @@ public class UpdateGeoipRuleRequestBody {
 
     private Integer white;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "description")
+
+    private String description;
+
     public UpdateGeoipRuleRequestBody withName(String name) {
         this.name = name;
         return this;
@@ -76,6 +81,23 @@ public class UpdateGeoipRuleRequestBody {
         this.white = white;
     }
 
+    public UpdateGeoipRuleRequestBody withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /**
+     * 规则描述
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -87,12 +109,13 @@ public class UpdateGeoipRuleRequestBody {
         UpdateGeoipRuleRequestBody updateGeoipRuleRequestBody = (UpdateGeoipRuleRequestBody) o;
         return Objects.equals(this.name, updateGeoipRuleRequestBody.name)
             && Objects.equals(this.geoip, updateGeoipRuleRequestBody.geoip)
-            && Objects.equals(this.white, updateGeoipRuleRequestBody.white);
+            && Objects.equals(this.white, updateGeoipRuleRequestBody.white)
+            && Objects.equals(this.description, updateGeoipRuleRequestBody.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, geoip, white);
+        return Objects.hash(name, geoip, white, description);
     }
 
     @Override
@@ -102,6 +125,7 @@ public class UpdateGeoipRuleRequestBody {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    geoip: ").append(toIndentedString(geoip)).append("\n");
         sb.append("    white: ").append(toIndentedString(white)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");
         return sb.toString();
     }

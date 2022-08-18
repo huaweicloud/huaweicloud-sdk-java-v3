@@ -125,7 +125,7 @@ public class ListCustomerBillsFeeRecordsRequest {
     }
 
     /**
-     * 查询的流水账单所在账期，格式为YYYY-MM。
+     * 查询的流水账单所在账期，东八区时间，格式为YYYY-MM。
      * @return billCycle
      */
     public String getBillCycle() {
@@ -161,7 +161,7 @@ public class ListCustomerBillsFeeRecordsRequest {
     }
 
     /**
-     * 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用[查询云服务类型列表](https://support.huaweicloud.com/api-oce/zh-cn_topic_0000001256679455.html)接口获取。
+     * 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用[查询云服务类型列表](https://support.huaweicloud.com/api-oce/zh-cn_topic_0000001256679455.html)接口获取。此参数不携带或携带值为空时，不作为筛选条件。
      * @return serviceTypeCode
      */
     public String getServiceTypeCode() {
@@ -178,7 +178,7 @@ public class ListCustomerBillsFeeRecordsRequest {
     }
 
     /**
-     * 资源类型编码，例如ECS的VM为“hws.resource.type.vm”。您可以调用[查询资源类型列表](https://support.huaweicloud.com/api-oce/zh-cn_topic_0000001256519451.html)接口获取。
+     * 资源类型编码，例如ECS的VM为“hws.resource.type.vm”。您可以调用[查询资源类型列表](https://support.huaweicloud.com/api-oce/zh-cn_topic_0000001256519451.html)接口获取。此参数不携带或携带值为空时，不作为筛选条件。
      * @return resourceTypeCode
      */
     public String getResourceTypeCode() {
@@ -195,7 +195,7 @@ public class ListCustomerBillsFeeRecordsRequest {
     }
 
     /**
-     * 云服务区编码，例如：“cn-north-1”。具体请参见[地区和终端节点](https://developer.huaweicloud.com/endpoint)对应云服务的“区域”列的值。
+     * 云服务区编码，例如：“cn-north-1”。具体请参见[地区和终端节点](https://developer.huaweicloud.com/endpoint)对应云服务的“区域”列的值。此参数不携带或携带值为空时，不作为筛选条件。
      * @return regionCode
      */
     public String getRegionCode() {
@@ -212,7 +212,7 @@ public class ListCustomerBillsFeeRecordsRequest {
     }
 
     /**
-     * 计费模式：1 : 包年/包月3：按需10：预留实例
+     * 计费模式：1 : 包年/包月3：按需10：预留实例 此参数不携带或携带值为空时，不作为筛选条件。
      * minimum: 1
      * maximum: 10
      * @return chargingMode
@@ -231,7 +231,7 @@ public class ListCustomerBillsFeeRecordsRequest {
     }
 
     /**
-     * 账单类型：1：消费-新购2：消费-续订3：消费-变更4：退款-退订5：消费-使用8：消费-自动续订9：调账-补偿14：消费-服务支持计划月末扣费16：调账-扣费18：消费-按月付费20：退款-变更
+     * 账单类型：1：消费-新购2：消费-续订3：消费-变更4：退款-退订5：消费-使用8：消费-自动续订9：调账-补偿14：消费-服务支持计划月末扣费16：调账-扣费18：消费-按月付费20：退款-变更 此参数不携带或携带值为空时，不作为筛选条件。
      * minimum: 1
      * maximum: 20
      * @return billType
@@ -250,7 +250,7 @@ public class ListCustomerBillsFeeRecordsRequest {
     }
 
     /**
-     * 订单ID或交易ID。账单类型为1、2、3、4和8时此处为订单ID。账单类型为其它场景时此处为交易ID，为扣费维度的唯一标识。例如非月末扣费时为应收ID；月末扣费时为账单ID。
+     * 订单ID或交易ID。账单类型为1、2、3、4和8时此处为订单ID。账单类型为其它场景时此处为交易ID，为扣费维度的唯一标识。例如非月末扣费时为应收ID；月末扣费时为账单ID。此参数不携带或携带值为空时，不作为筛选条件。
      * @return tradeId
      */
     public String getTradeId() {
@@ -267,7 +267,7 @@ public class ListCustomerBillsFeeRecordsRequest {
     }
 
     /**
-     * 企业项目标识（企业项目ID）。default项目对应ID：0未归集（表示该云服务不支持企业项目管理能力）项目对应ID：-1其余项目对应ID获取方法请参见[如何获取企业项目ID](https://support.huaweicloud.com/usermanual-em/zh-cn_topic_0126101490.html)。
+     * 企业项目标识（企业项目ID）。default项目对应ID：0未归集（表示该云服务不支持企业项目管理能力）项目对应ID：-1其余项目对应ID获取方法请参见[如何获取企业项目ID](https://support.huaweicloud.com/usermanual-em/zh-cn_topic_0126101490.html)。此参数不携带或携带值为空时，不作为筛选条件。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -284,7 +284,7 @@ public class ListCustomerBillsFeeRecordsRequest {
     }
 
     /**
-     * 返回是否包含应付金额为0的记录。true：包含false：不包含
+     * 返回是否包含应付金额为0的记录。true：包含false：不包含此参数不携带或携带值为空时，不作为筛选条件。
      * @return includeZeroRecord
      */
     public Boolean getIncludeZeroRecord() {
@@ -301,7 +301,7 @@ public class ListCustomerBillsFeeRecordsRequest {
     }
 
     /**
-     * 支付状态。1：已支付2：未结清3：未出账
+     * 支付状态。1：已支付2：未结清3：未出账此参数不携带或携带值为空时，不作为筛选条件。
      * minimum: 1
      * maximum: 3
      * @return status
@@ -320,7 +320,7 @@ public class ListCustomerBillsFeeRecordsRequest {
     }
 
     /**
-     * 查询流水账单的方式。oneself：客户自己sub_customer：企业子客户all：客户自己和企业子客户默认为all，如果没有企业子客户，取值为all时查询的是客户自己的流水账单。
+     * 查询流水账单的方式。oneself：客户自己sub_customer：企业子客户all：客户自己和企业子客户 此参数不携带或携带值为空时，默认值为“all”，如果没有企业子客户，取值为all时查询的是客户自己的流水账单。
      * @return method
      */
     public String getMethod() {
@@ -392,7 +392,7 @@ public class ListCustomerBillsFeeRecordsRequest {
     }
 
     /**
-     * 查询的流水账单的开始日期，格式为YYYY-MM-DD。 说明： 必须和bill_cycle（即流水账单的所在账期）在同一个月。bill_date_begin和bill_date_end两个参数必须同时出现，否则仅按照bill_cycle（即流水账单的所在账期）进行查询。
+     * 查询的流水账单的开始日期，东八区时间，格式为YYYY-MM-DD。此参数不携带或携带值为空时，不作为筛选条件。 说明： 必须和bill_cycle（即流水账单的所在账期）在同一个月。bill_date_begin和bill_date_end两个参数必须同时出现，否则仅按照bill_cycle（即流水账单的所在账期）进行查询。
      * @return billDateBegin
      */
     public String getBillDateBegin() {
@@ -409,7 +409,7 @@ public class ListCustomerBillsFeeRecordsRequest {
     }
 
     /**
-     * 查询的流水账单的结束日期，格式为YYYY-MM-DD。 说明： 必须和bill_cycle（即流水账单的所在账期）在同一个月。bill_date_begin和bill_date_end两个参数必须同时出现，否则仅按照bill_cycle（即流水账单的所在账期）进行查询。
+     * 查询的流水账单的结束日期，东八区时间，格式为YYYY-MM-DD。此参数不携带或携带值为空时，不作为筛选条件。 说明： 必须和bill_cycle（即流水账单的所在账期）在同一个月。bill_date_begin和bill_date_end两个参数必须同时出现，否则仅按照bill_cycle（即流水账单的所在账期）进行查询。
      * @return billDateEnd
      */
     public String getBillDateEnd() {

@@ -133,7 +133,7 @@ public class CreatePartnerCouponsReq {
     }
 
     /**
-     * 生效时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
+     * 生效时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。 此参数不携带或携带值为null时，赋值为发放优惠券额度的生效时间。
      * @return validTime
      */
     public String getValidTime() {
@@ -150,7 +150,7 @@ public class CreatePartnerCouponsReq {
     }
 
     /**
-     * 失效时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
+     * 失效时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。 此参数不携带或携带值为null时，赋值为发放优惠券额度的失效时间。
      * @return expireTime
      */
     public String getExpireTime() {

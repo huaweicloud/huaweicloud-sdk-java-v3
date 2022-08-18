@@ -64,9 +64,9 @@ public class IgnoreRuleBody {
     private List<Condition> conditions = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "domains")
+    @JsonProperty(value = "domain")
 
-    private List<String> domains = null;
+    private List<String> domain = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "advanced")
@@ -259,37 +259,37 @@ public class IgnoreRuleBody {
         this.conditions = conditions;
     }
 
-    public IgnoreRuleBody withDomains(List<String> domains) {
-        this.domains = domains;
+    public IgnoreRuleBody withDomain(List<String> domain) {
+        this.domain = domain;
         return this;
     }
 
-    public IgnoreRuleBody addDomainsItem(String domainsItem) {
-        if (this.domains == null) {
-            this.domains = new ArrayList<>();
+    public IgnoreRuleBody addDomainItem(String domainItem) {
+        if (this.domain == null) {
+            this.domain = new ArrayList<>();
         }
-        this.domains.add(domainsItem);
+        this.domain.add(domainItem);
         return this;
     }
 
-    public IgnoreRuleBody withDomains(Consumer<List<String>> domainsSetter) {
-        if (this.domains == null) {
-            this.domains = new ArrayList<>();
+    public IgnoreRuleBody withDomain(Consumer<List<String>> domainSetter) {
+        if (this.domain == null) {
+            this.domain = new ArrayList<>();
         }
-        domainsSetter.accept(this.domains);
+        domainSetter.accept(this.domain);
         return this;
     }
 
     /**
      * 防护域名或防护网站
-     * @return domains
+     * @return domain
      */
-    public List<String> getDomains() {
-        return domains;
+    public List<String> getDomain() {
+        return domain;
     }
 
-    public void setDomains(List<String> domains) {
-        this.domains = domains;
+    public void setDomain(List<String> domain) {
+        this.domain = domain;
     }
 
     public IgnoreRuleBody withAdvanced(List<Advanced> advanced) {
@@ -341,7 +341,7 @@ public class IgnoreRuleBody {
             && Objects.equals(this.rule, ignoreRuleBody.rule) && Objects.equals(this.mode, ignoreRuleBody.mode)
             && Objects.equals(this.urlLogic, ignoreRuleBody.urlLogic)
             && Objects.equals(this.conditions, ignoreRuleBody.conditions)
-            && Objects.equals(this.domains, ignoreRuleBody.domains)
+            && Objects.equals(this.domain, ignoreRuleBody.domain)
             && Objects.equals(this.advanced, ignoreRuleBody.advanced);
     }
 
@@ -357,7 +357,7 @@ public class IgnoreRuleBody {
             mode,
             urlLogic,
             conditions,
-            domains,
+            domain,
             advanced);
     }
 
@@ -375,7 +375,7 @@ public class IgnoreRuleBody {
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
         sb.append("    urlLogic: ").append(toIndentedString(urlLogic)).append("\n");
         sb.append("    conditions: ").append(toIndentedString(conditions)).append("\n");
-        sb.append("    domains: ").append(toIndentedString(domains)).append("\n");
+        sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
         sb.append("    advanced: ").append(toIndentedString(advanced)).append("\n");
         sb.append("}");
         return sb.toString();

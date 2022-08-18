@@ -529,6 +529,87 @@ public class VodMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateTemplateGroupCollectionRequest, CreateTemplateGroupCollectionResponse> createTemplateGroupCollection =
+        genForcreateTemplateGroupCollection();
+
+    private static HttpRequestDef<CreateTemplateGroupCollectionRequest, CreateTemplateGroupCollectionResponse> genForcreateTemplateGroupCollection() {
+        // basic
+        HttpRequestDef.Builder<CreateTemplateGroupCollectionRequest, CreateTemplateGroupCollectionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateTemplateGroupCollectionRequest.class,
+                    CreateTemplateGroupCollectionResponse.class)
+                .withName("CreateTemplateGroupCollection")
+                .withUri("/v1.0/{project_id}/asset/template-collection/transcodings")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateTemplateGroupCollectionRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateTemplateGroupCollectionRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            }));
+        builder.<TransTemplateGroupCollection>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(TransTemplateGroupCollection.class),
+            f -> f.withMarshaller(CreateTemplateGroupCollectionRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateTranscodeTemplateRequest, CreateTranscodeTemplateResponse> createTranscodeTemplate =
+        genForcreateTranscodeTemplate();
+
+    private static HttpRequestDef<CreateTranscodeTemplateRequest, CreateTranscodeTemplateResponse> genForcreateTranscodeTemplate() {
+        // basic
+        HttpRequestDef.Builder<CreateTranscodeTemplateRequest, CreateTranscodeTemplateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateTranscodeTemplateRequest.class, CreateTranscodeTemplateResponse.class)
+            .withName("CreateTranscodeTemplate")
+            .withUri("/v2/{project_id}/asset/template/transcodings")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateTranscodeTemplateRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateTranscodeTemplateRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            }));
+        builder.<CreateTranscodeTemplate>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateTranscodeTemplate.class),
+            f -> f.withMarshaller(CreateTranscodeTemplateRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateWatermarkTemplateRequest, CreateWatermarkTemplateResponse> createWatermarkTemplate =
         genForcreateWatermarkTemplate();
 
@@ -683,6 +764,87 @@ public class VodMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteTemplateGroupRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteTemplateGroupCollectionRequest, DeleteTemplateGroupCollectionResponse> deleteTemplateGroupCollection =
+        genFordeleteTemplateGroupCollection();
+
+    private static HttpRequestDef<DeleteTemplateGroupCollectionRequest, DeleteTemplateGroupCollectionResponse> genFordeleteTemplateGroupCollection() {
+        // basic
+        HttpRequestDef.Builder<DeleteTemplateGroupCollectionRequest, DeleteTemplateGroupCollectionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteTemplateGroupCollectionRequest.class,
+                    DeleteTemplateGroupCollectionResponse.class)
+                .withName("DeleteTemplateGroupCollection")
+                .withUri("/v1.0/{project_id}/asset/template-collection/transcodings")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("group_collection_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTemplateGroupCollectionRequest::getGroupCollectionId, (req, v) -> {
+                req.setGroupCollectionId(v);
+            }));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTemplateGroupCollectionRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTemplateGroupCollectionRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteTranscodeTemplateRequest, DeleteTranscodeTemplateResponse> deleteTranscodeTemplate =
+        genFordeleteTranscodeTemplate();
+
+    private static HttpRequestDef<DeleteTranscodeTemplateRequest, DeleteTranscodeTemplateResponse> genFordeleteTranscodeTemplate() {
+        // basic
+        HttpRequestDef.Builder<DeleteTranscodeTemplateRequest, DeleteTranscodeTemplateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteTranscodeTemplateRequest.class, DeleteTranscodeTemplateResponse.class)
+            .withName("DeleteTranscodeTemplate")
+            .withUri("/v2/{project_id}/asset/template/transcodings")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTranscodeTemplateRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            }));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTranscodeTemplateRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTranscodeTemplateRequest::getXSdkDate, (req, v) -> {
                 req.setXSdkDate(v);
             }));
 
@@ -1006,6 +1168,62 @@ public class VodMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListTemplateGroupCollectionRequest, ListTemplateGroupCollectionResponse> listTemplateGroupCollection =
+        genForlistTemplateGroupCollection();
+
+    private static HttpRequestDef<ListTemplateGroupCollectionRequest, ListTemplateGroupCollectionResponse> genForlistTemplateGroupCollection() {
+        // basic
+        HttpRequestDef.Builder<ListTemplateGroupCollectionRequest, ListTemplateGroupCollectionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListTemplateGroupCollectionRequest.class,
+                    ListTemplateGroupCollectionResponse.class)
+                .withName("ListTemplateGroupCollection")
+                .withUri("/v1.0/{project_id}/asset/template-collection/transcodings")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("group_collection_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTemplateGroupCollectionRequest::getGroupCollectionId, (req, v) -> {
+                req.setGroupCollectionId(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTemplateGroupCollectionRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTemplateGroupCollectionRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTemplateGroupCollectionRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTemplateGroupCollectionRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListTopStatisticsRequest, ListTopStatisticsResponse> listTopStatistics =
         genForlistTopStatistics();
 
@@ -1044,6 +1262,73 @@ public class VodMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTopStatisticsRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTranscodeTemplateRequest, ListTranscodeTemplateResponse> listTranscodeTemplate =
+        genForlistTranscodeTemplate();
+
+    private static HttpRequestDef<ListTranscodeTemplateRequest, ListTranscodeTemplateResponse> genForlistTranscodeTemplate() {
+        // basic
+        HttpRequestDef.Builder<ListTranscodeTemplateRequest, ListTranscodeTemplateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListTranscodeTemplateRequest.class, ListTranscodeTemplateResponse.class)
+            .withName("ListTranscodeTemplate")
+            .withUri("/v2/{project_id}/asset/template/transcodings")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTranscodeTemplateRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            }));
+        builder.<Boolean>withRequestField("is_default",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListTranscodeTemplateRequest::getIsDefault, (req, v) -> {
+                req.setIsDefault(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTranscodeTemplateRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTranscodeTemplateRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("query_string",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTranscodeTemplateRequest::getQueryString, (req, v) -> {
+                req.setQueryString(v);
+            }));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTranscodeTemplateRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTranscodeTemplateRequest::getXSdkDate, (req, v) -> {
                 req.setXSdkDate(v);
             }));
 
@@ -1881,6 +2166,87 @@ public class VodMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModifyTransTemplateGroup.class),
             f -> f.withMarshaller(UpdateTemplateGroupRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateTemplateGroupCollectionRequest, UpdateTemplateGroupCollectionResponse> updateTemplateGroupCollection =
+        genForupdateTemplateGroupCollection();
+
+    private static HttpRequestDef<UpdateTemplateGroupCollectionRequest, UpdateTemplateGroupCollectionResponse> genForupdateTemplateGroupCollection() {
+        // basic
+        HttpRequestDef.Builder<UpdateTemplateGroupCollectionRequest, UpdateTemplateGroupCollectionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateTemplateGroupCollectionRequest.class,
+                    UpdateTemplateGroupCollectionResponse.class)
+                .withName("UpdateTemplateGroupCollection")
+                .withUri("/v1.0/{project_id}/asset/template-collection/transcodings")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateTemplateGroupCollectionRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateTemplateGroupCollectionRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            }));
+        builder.<ModifyTemplateGroupCollection>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ModifyTemplateGroupCollection.class),
+            f -> f.withMarshaller(UpdateTemplateGroupCollectionRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateTranscodeTemplateRequest, UpdateTranscodeTemplateResponse> updateTranscodeTemplate =
+        genForupdateTranscodeTemplate();
+
+    private static HttpRequestDef<UpdateTranscodeTemplateRequest, UpdateTranscodeTemplateResponse> genForupdateTranscodeTemplate() {
+        // basic
+        HttpRequestDef.Builder<UpdateTranscodeTemplateRequest, UpdateTranscodeTemplateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateTranscodeTemplateRequest.class, UpdateTranscodeTemplateResponse.class)
+            .withName("UpdateTranscodeTemplate")
+            .withUri("/v2/{project_id}/asset/template/transcodings")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateTranscodeTemplateRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateTranscodeTemplateRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            }));
+        builder.<ModifyTransTemplate>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ModifyTransTemplate.class),
+            f -> f.withMarshaller(UpdateTranscodeTemplateRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

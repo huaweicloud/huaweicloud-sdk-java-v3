@@ -430,6 +430,26 @@ public class CreateFunctionResponse extends SdkResponse {
 
     private String enterpriseProjectId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_dynamic_memory")
+
+    private Boolean enableDynamicMemory;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_stateful_function")
+
+    private Boolean isStatefulFunction;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_auth_in_header")
+
+    private Boolean enableAuthInHeader;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "custom_image")
+
+    private CustomImage customImage;
+
     public CreateFunctionResponse withFuncUrn(String funcUrn) {
         this.funcUrn = funcUrn;
         return this;
@@ -1017,6 +1037,83 @@ public class CreateFunctionResponse extends SdkResponse {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public CreateFunctionResponse withEnableDynamicMemory(Boolean enableDynamicMemory) {
+        this.enableDynamicMemory = enableDynamicMemory;
+        return this;
+    }
+
+    /**
+     * 是否启动动态内存配置
+     * @return enableDynamicMemory
+     */
+    public Boolean getEnableDynamicMemory() {
+        return enableDynamicMemory;
+    }
+
+    public void setEnableDynamicMemory(Boolean enableDynamicMemory) {
+        this.enableDynamicMemory = enableDynamicMemory;
+    }
+
+    public CreateFunctionResponse withIsStatefulFunction(Boolean isStatefulFunction) {
+        this.isStatefulFunction = isStatefulFunction;
+        return this;
+    }
+
+    /**
+     * 是否支持有状态，如果需要支持，需要固定传参为true，v2版本支持
+     * @return isStatefulFunction
+     */
+    public Boolean getIsStatefulFunction() {
+        return isStatefulFunction;
+    }
+
+    public void setIsStatefulFunction(Boolean isStatefulFunction) {
+        this.isStatefulFunction = isStatefulFunction;
+    }
+
+    public CreateFunctionResponse withEnableAuthInHeader(Boolean enableAuthInHeader) {
+        this.enableAuthInHeader = enableAuthInHeader;
+        return this;
+    }
+
+    /**
+     * 是否允许在请求头中添加鉴权信息
+     * @return enableAuthInHeader
+     */
+    public Boolean getEnableAuthInHeader() {
+        return enableAuthInHeader;
+    }
+
+    public void setEnableAuthInHeader(Boolean enableAuthInHeader) {
+        this.enableAuthInHeader = enableAuthInHeader;
+    }
+
+    public CreateFunctionResponse withCustomImage(CustomImage customImage) {
+        this.customImage = customImage;
+        return this;
+    }
+
+    public CreateFunctionResponse withCustomImage(Consumer<CustomImage> customImageSetter) {
+        if (this.customImage == null) {
+            this.customImage = new CustomImage();
+            customImageSetter.accept(this.customImage);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get customImage
+     * @return customImage
+     */
+    public CustomImage getCustomImage() {
+        return customImage;
+    }
+
+    public void setCustomImage(CustomImage customImage) {
+        this.customImage = customImage;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -1057,7 +1154,11 @@ public class CreateFunctionResponse extends SdkResponse {
             && Objects.equals(this.extendConfig, createFunctionResponse.extendConfig)
             && Objects.equals(this.initializerHandler, createFunctionResponse.initializerHandler)
             && Objects.equals(this.initializerTimeout, createFunctionResponse.initializerTimeout)
-            && Objects.equals(this.enterpriseProjectId, createFunctionResponse.enterpriseProjectId);
+            && Objects.equals(this.enterpriseProjectId, createFunctionResponse.enterpriseProjectId)
+            && Objects.equals(this.enableDynamicMemory, createFunctionResponse.enableDynamicMemory)
+            && Objects.equals(this.isStatefulFunction, createFunctionResponse.isStatefulFunction)
+            && Objects.equals(this.enableAuthInHeader, createFunctionResponse.enableAuthInHeader)
+            && Objects.equals(this.customImage, createFunctionResponse.customImage);
     }
 
     @Override
@@ -1093,7 +1194,11 @@ public class CreateFunctionResponse extends SdkResponse {
             extendConfig,
             initializerHandler,
             initializerTimeout,
-            enterpriseProjectId);
+            enterpriseProjectId,
+            enableDynamicMemory,
+            isStatefulFunction,
+            enableAuthInHeader,
+            customImage);
     }
 
     @Override
@@ -1132,6 +1237,10 @@ public class CreateFunctionResponse extends SdkResponse {
         sb.append("    initializerHandler: ").append(toIndentedString(initializerHandler)).append("\n");
         sb.append("    initializerTimeout: ").append(toIndentedString(initializerTimeout)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    enableDynamicMemory: ").append(toIndentedString(enableDynamicMemory)).append("\n");
+        sb.append("    isStatefulFunction: ").append(toIndentedString(isStatefulFunction)).append("\n");
+        sb.append("    enableAuthInHeader: ").append(toIndentedString(enableAuthInHeader)).append("\n");
+        sb.append("    customImage: ").append(toIndentedString(customImage)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -78,7 +78,7 @@ public class UpdatePostalReq {
     }
 
     /**
-     * 收件人姓名。
+     * 收件人姓名。 此参数不携带或携带值为null时，取值不更新。
      * @return recipient
      */
     public String getRecipient() {
@@ -95,7 +95,7 @@ public class UpdatePostalReq {
     }
 
     /**
-     * 省/自治区/直辖市。例如：江苏省。
+     * 省/自治区/直辖市。例如：江苏省。 此参数不携带或携带值为null时，取值不更新。
      * @return province
      */
     public String getProvince() {
@@ -112,7 +112,7 @@ public class UpdatePostalReq {
     }
 
     /**
-     * 市/区。例如：南京市。
+     * 市/区。例如：南京市。 此参数不携带或携带值为null时，取值不更新。
      * @return city
      */
     public String getCity() {
@@ -129,7 +129,7 @@ public class UpdatePostalReq {
     }
 
     /**
-     * 区。例如：雨花区。
+     * 区。例如：雨花区。 此参数不携带或携带值为null时，取值不更新。
      * @return district
      */
     public String getDistrict() {
@@ -146,7 +146,7 @@ public class UpdatePostalReq {
     }
 
     /**
-     * 邮寄详细地址。
+     * 邮寄详细地址。 此参数不携带或携带值为null时，取值不更新。
      * @return address
      */
     public String getAddress() {
@@ -163,7 +163,7 @@ public class UpdatePostalReq {
     }
 
     /**
-     * 邮寄地址所在邮编。
+     * 邮寄地址所在邮编。 此参数不携带或携带值为null时，取值不更新。
      * @return zipcode
      */
     public String getZipcode() {
@@ -180,7 +180,7 @@ public class UpdatePostalReq {
     }
 
     /**
-     * 手机号码，不带国家码。
+     * 手机号码，不带国家码。 此参数不携带或携带值为null时，取值不更新。
      * @return mobilePhone
      */
     public String getMobilePhone() {
@@ -197,7 +197,7 @@ public class UpdatePostalReq {
     }
 
     /**
-     * 是否默认地址，默认为0。 1：默认地址0：非默认地址
+     * 是否默认地址，默认值为“0：非默认地址”。 1：默认地址0：非默认地址
      * minimum: 0
      * maximum: 1
      * @return isDefault

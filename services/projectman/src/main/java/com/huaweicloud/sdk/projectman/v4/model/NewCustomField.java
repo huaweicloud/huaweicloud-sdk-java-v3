@@ -16,6 +16,11 @@ public class NewCustomField {
     private String customField;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "field_name")
+
+    private String fieldName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "value")
 
     private String value;
@@ -35,6 +40,23 @@ public class NewCustomField {
 
     public void setCustomField(String customField) {
         this.customField = customField;
+    }
+
+    public NewCustomField withFieldName(String fieldName) {
+        this.fieldName = fieldName;
+        return this;
+    }
+
+    /**
+     * 自定义字段名称
+     * @return fieldName
+     */
+    public String getFieldName() {
+        return fieldName;
+    }
+
+    public void setFieldName(String fieldName) {
+        this.fieldName = fieldName;
     }
 
     public NewCustomField withValue(String value) {
@@ -64,12 +86,13 @@ public class NewCustomField {
         }
         NewCustomField newCustomField = (NewCustomField) o;
         return Objects.equals(this.customField, newCustomField.customField)
+            && Objects.equals(this.fieldName, newCustomField.fieldName)
             && Objects.equals(this.value, newCustomField.value);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(customField, value);
+        return Objects.hash(customField, fieldName, value);
     }
 
     @Override
@@ -77,6 +100,7 @@ public class NewCustomField {
         StringBuilder sb = new StringBuilder();
         sb.append("class NewCustomField {\n");
         sb.append("    customField: ").append(toIndentedString(customField)).append("\n");
+        sb.append("    fieldName: ").append(toIndentedString(fieldName)).append("\n");
         sb.append("    value: ").append(toIndentedString(value)).append("\n");
         sb.append("}");
         return sb.toString();

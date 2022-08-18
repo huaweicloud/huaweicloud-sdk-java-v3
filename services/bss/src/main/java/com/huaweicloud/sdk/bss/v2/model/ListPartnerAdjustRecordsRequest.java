@@ -73,7 +73,7 @@ public class ListPartnerAdjustRecordsRequest {
     }
 
     /**
-     * 操作类型。SOURCE_OPERATION_BEADJUST：拨款,SOURCE_OPERATION_BERETRIEVE：回收,SOURCE_OPERATION_BEUNBIND：解绑回收,不传递默认查询所有类型。
+     * 操作类型。SOURCE_OPERATION_BEADJUST：拨款,SOURCE_OPERATION_BERETRIEVE：回收,SOURCE_OPERATION_BEUNBIND：解绑回收,此参数不携带或携带值为空时，默认查询所有类型。
      * @return operationType
      */
     public String getOperationType() {
@@ -90,7 +90,7 @@ public class ListPartnerAdjustRecordsRequest {
     }
 
     /**
-     * 调账起始时间。UTC时间，格式为：2016-03-28T14:45:38Z
+     * 调账起始时间。UTC时间，格式为：2016-03-28T14:45:38Z。此参数不携带或携带值为空时，不作为筛选条件。
      * @return operationTimeBegin
      */
     public String getOperationTimeBegin() {
@@ -107,7 +107,7 @@ public class ListPartnerAdjustRecordsRequest {
     }
 
     /**
-     * 调账截止时间。UTC时间，格式为：2016-03-28T14:45:38Z
+     * 调账截止时间。UTC时间，格式为：2016-03-28T14:45:38Z。此参数不携带或携带值为空时，不作为筛选条件。
      * @return operationTimeEnd
      */
     public String getOperationTimeEnd() {
@@ -124,7 +124,7 @@ public class ListPartnerAdjustRecordsRequest {
     }
 
     /**
-     * 事务ID。
+     * 事务ID。此参数不携带或携带值为空时，不作为筛选条件。
      * @return transId
      */
     public String getTransId() {

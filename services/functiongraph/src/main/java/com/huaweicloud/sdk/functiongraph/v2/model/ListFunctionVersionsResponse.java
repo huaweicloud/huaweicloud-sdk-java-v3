@@ -85,7 +85,7 @@ public class ListFunctionVersionsResponse extends SdkResponse {
     }
 
     /**
-     * 函数版本总数
+     * 版本总数
      * @return count
      */
     public Long getCount() {

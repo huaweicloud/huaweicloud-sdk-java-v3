@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.math.BigDecimal;
 import java.util.Objects;
 
 /**
@@ -21,16 +20,6 @@ public class CreateEventResponse extends SdkResponse {
     @JsonProperty(value = "name")
 
     private String name;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "content")
-
-    private String content;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "last_modified")
-
-    private BigDecimal lastModified;
 
     public CreateEventResponse withId(String id) {
         this.id = id;
@@ -66,40 +55,6 @@ public class CreateEventResponse extends SdkResponse {
         this.name = name;
     }
 
-    public CreateEventResponse withContent(String content) {
-        this.content = content;
-        return this;
-    }
-
-    /**
-     * 测试事件content。
-     * @return content
-     */
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
-
-    public CreateEventResponse withLastModified(BigDecimal lastModified) {
-        this.lastModified = lastModified;
-        return this;
-    }
-
-    /**
-     * 上次修改的时间。
-     * @return lastModified
-     */
-    public BigDecimal getLastModified() {
-        return lastModified;
-    }
-
-    public void setLastModified(BigDecimal lastModified) {
-        this.lastModified = lastModified;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -109,14 +64,12 @@ public class CreateEventResponse extends SdkResponse {
             return false;
         }
         CreateEventResponse createEventResponse = (CreateEventResponse) o;
-        return Objects.equals(this.id, createEventResponse.id) && Objects.equals(this.name, createEventResponse.name)
-            && Objects.equals(this.content, createEventResponse.content)
-            && Objects.equals(this.lastModified, createEventResponse.lastModified);
+        return Objects.equals(this.id, createEventResponse.id) && Objects.equals(this.name, createEventResponse.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, content, lastModified);
+        return Objects.hash(id, name);
     }
 
     @Override
@@ -125,8 +78,6 @@ public class CreateEventResponse extends SdkResponse {
         sb.append("class CreateEventResponse {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    content: ").append(toIndentedString(content)).append("\n");
-        sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
         sb.append("}");
         return sb.toString();
     }

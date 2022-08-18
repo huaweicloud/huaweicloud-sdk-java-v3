@@ -514,6 +514,11 @@ public class ListFunctionResult {
 
     private TypeEnum type;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "fail_count")
+
+    private Integer failCount;
+
     public ListFunctionResult withFuncUrn(String funcUrn) {
         this.funcUrn = funcUrn;
         return this;
@@ -1101,6 +1106,23 @@ public class ListFunctionResult {
         this.type = type;
     }
 
+    public ListFunctionResult withFailCount(Integer failCount) {
+        this.failCount = failCount;
+        return this;
+    }
+
+    /**
+     * 函数最近1天内执行失败的次数。
+     * @return failCount
+     */
+    public Integer getFailCount() {
+        return failCount;
+    }
+
+    public void setFailCount(Integer failCount) {
+        this.failCount = failCount;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -1143,7 +1165,8 @@ public class ListFunctionResult {
             && Objects.equals(this.longTime, listFunctionResult.longTime)
             && Objects.equals(this.logGroupId, listFunctionResult.logGroupId)
             && Objects.equals(this.logStreamId, listFunctionResult.logStreamId)
-            && Objects.equals(this.type, listFunctionResult.type);
+            && Objects.equals(this.type, listFunctionResult.type)
+            && Objects.equals(this.failCount, listFunctionResult.failCount);
     }
 
     @Override
@@ -1181,7 +1204,8 @@ public class ListFunctionResult {
             longTime,
             logGroupId,
             logStreamId,
-            type);
+            type,
+            failCount);
     }
 
     @Override
@@ -1222,6 +1246,7 @@ public class ListFunctionResult {
         sb.append("    logGroupId: ").append(toIndentedString(logGroupId)).append("\n");
         sb.append("    logStreamId: ").append(toIndentedString(logStreamId)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    failCount: ").append(toIndentedString(failCount)).append("\n");
         sb.append("}");
         return sb.toString();
     }

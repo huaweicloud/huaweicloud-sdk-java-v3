@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.dli.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 查询所有队列的响应参数。
@@ -88,7 +91,7 @@ public class ListQueuesRespQueues {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "labels")
 
-    private String labels;
+    private List<String> labels = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "feature")
@@ -370,8 +373,24 @@ public class ListQueuesRespQueues {
         this.isRestarting = isRestarting;
     }
 
-    public ListQueuesRespQueues withLabels(String labels) {
+    public ListQueuesRespQueues withLabels(List<String> labels) {
         this.labels = labels;
+        return this;
+    }
+
+    public ListQueuesRespQueues addLabelsItem(String labelsItem) {
+        if (this.labels == null) {
+            this.labels = new ArrayList<>();
+        }
+        this.labels.add(labelsItem);
+        return this;
+    }
+
+    public ListQueuesRespQueues withLabels(Consumer<List<String>> labelsSetter) {
+        if (this.labels == null) {
+            this.labels = new ArrayList<>();
+        }
+        labelsSetter.accept(this.labels);
         return this;
     }
 
@@ -379,11 +398,11 @@ public class ListQueuesRespQueues {
      * 创建队列的标签信息，目前包括队列是否跨AZ的标签信息的Json字符串。目前只支持值为“2”，即创建两个队列
      * @return labels
      */
-    public String getLabels() {
+    public List<String> getLabels() {
         return labels;
     }
 
-    public void setLabels(String labels) {
+    public void setLabels(List<String> labels) {
         this.labels = labels;
     }
 

@@ -75,7 +75,7 @@ public class ListResourceUsageRequest {
     }
 
     /**
-     * 账期，格式为yyyy-MM。
+     * 账期，东八区时间，格式为yyyy-MM。
      * @return billCycle
      */
     public String getBillCycle() {

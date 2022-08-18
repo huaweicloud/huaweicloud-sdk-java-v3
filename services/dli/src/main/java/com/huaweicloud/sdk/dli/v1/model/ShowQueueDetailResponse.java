@@ -22,6 +22,11 @@ public class ShowQueueDetailResponse extends SdkResponse {
     private String message;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "queue_id")
+
+    private String queueId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "queueName")
 
     private String queueName;
@@ -91,6 +96,11 @@ public class ShowQueueDetailResponse extends SdkResponse {
 
     private Long cuScaleInLimit;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "elastic_resource_pool_name")
+
+    private String elasticResourcePoolName;
+
     public ShowQueueDetailResponse withIsSuccess(Boolean isSuccess) {
         this.isSuccess = isSuccess;
         return this;
@@ -123,6 +133,23 @@ public class ShowQueueDetailResponse extends SdkResponse {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public ShowQueueDetailResponse withQueueId(String queueId) {
+        this.queueId = queueId;
+        return this;
+    }
+
+    /**
+     * 队列ID。
+     * @return queueId
+     */
+    public String getQueueId() {
+        return queueId;
+    }
+
+    public void setQueueId(String queueId) {
+        this.queueId = queueId;
     }
 
     public ShowQueueDetailResponse withQueueName(String queueName) {
@@ -363,6 +390,23 @@ public class ShowQueueDetailResponse extends SdkResponse {
         this.cuScaleInLimit = cuScaleInLimit;
     }
 
+    public ShowQueueDetailResponse withElasticResourcePoolName(String elasticResourcePoolName) {
+        this.elasticResourcePoolName = elasticResourcePoolName;
+        return this;
+    }
+
+    /**
+     * 弹性资源池名称。
+     * @return elasticResourcePoolName
+     */
+    public String getElasticResourcePoolName() {
+        return elasticResourcePoolName;
+    }
+
+    public void setElasticResourcePoolName(String elasticResourcePoolName) {
+        this.elasticResourcePoolName = elasticResourcePoolName;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -374,6 +418,7 @@ public class ShowQueueDetailResponse extends SdkResponse {
         ShowQueueDetailResponse showQueueDetailResponse = (ShowQueueDetailResponse) o;
         return Objects.equals(this.isSuccess, showQueueDetailResponse.isSuccess)
             && Objects.equals(this.message, showQueueDetailResponse.message)
+            && Objects.equals(this.queueId, showQueueDetailResponse.queueId)
             && Objects.equals(this.queueName, showQueueDetailResponse.queueName)
             && Objects.equals(this.description, showQueueDetailResponse.description)
             && Objects.equals(this.owner, showQueueDetailResponse.owner)
@@ -387,13 +432,15 @@ public class ShowQueueDetailResponse extends SdkResponse {
             && Objects.equals(this.enterpriseProjectId, showQueueDetailResponse.enterpriseProjectId)
             && Objects.equals(this.cuSpec, showQueueDetailResponse.cuSpec)
             && Objects.equals(this.cuScaleOutLimit, showQueueDetailResponse.cuScaleOutLimit)
-            && Objects.equals(this.cuScaleInLimit, showQueueDetailResponse.cuScaleInLimit);
+            && Objects.equals(this.cuScaleInLimit, showQueueDetailResponse.cuScaleInLimit)
+            && Objects.equals(this.elasticResourcePoolName, showQueueDetailResponse.elasticResourcePoolName);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(isSuccess,
             message,
+            queueId,
             queueName,
             description,
             owner,
@@ -407,7 +454,8 @@ public class ShowQueueDetailResponse extends SdkResponse {
             enterpriseProjectId,
             cuSpec,
             cuScaleOutLimit,
-            cuScaleInLimit);
+            cuScaleInLimit,
+            elasticResourcePoolName);
     }
 
     @Override
@@ -416,6 +464,7 @@ public class ShowQueueDetailResponse extends SdkResponse {
         sb.append("class ShowQueueDetailResponse {\n");
         sb.append("    isSuccess: ").append(toIndentedString(isSuccess)).append("\n");
         sb.append("    message: ").append(toIndentedString(message)).append("\n");
+        sb.append("    queueId: ").append(toIndentedString(queueId)).append("\n");
         sb.append("    queueName: ").append(toIndentedString(queueName)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    owner: ").append(toIndentedString(owner)).append("\n");
@@ -430,6 +479,7 @@ public class ShowQueueDetailResponse extends SdkResponse {
         sb.append("    cuSpec: ").append(toIndentedString(cuSpec)).append("\n");
         sb.append("    cuScaleOutLimit: ").append(toIndentedString(cuScaleOutLimit)).append("\n");
         sb.append("    cuScaleInLimit: ").append(toIndentedString(cuScaleInLimit)).append("\n");
+        sb.append("    elasticResourcePoolName: ").append(toIndentedString(elasticResourcePoolName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

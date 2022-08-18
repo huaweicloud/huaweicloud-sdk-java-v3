@@ -241,7 +241,7 @@ public class CustomerPostalAddressV2 {
     }
 
     /**
-     * 是否默认地址，默认为0。 1：默认地址0：非默认地址
+     * 是否默认地址，默认值为“0：非默认地址”。 1：默认地址0：非默认地址
      * @return isDefault
      */
     public Integer getIsDefault() {

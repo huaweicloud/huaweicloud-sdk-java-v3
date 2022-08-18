@@ -19,7 +19,7 @@ public class UpdateWorkFlowRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private UpdateWorkflowRequestBody body;
+    private WorkflowCreateBody body;
 
     public UpdateWorkFlowRequest withWorkflowId(String workflowId) {
         this.workflowId = workflowId;
@@ -38,14 +38,14 @@ public class UpdateWorkFlowRequest {
         this.workflowId = workflowId;
     }
 
-    public UpdateWorkFlowRequest withBody(UpdateWorkflowRequestBody body) {
+    public UpdateWorkFlowRequest withBody(WorkflowCreateBody body) {
         this.body = body;
         return this;
     }
 
-    public UpdateWorkFlowRequest withBody(Consumer<UpdateWorkflowRequestBody> bodySetter) {
+    public UpdateWorkFlowRequest withBody(Consumer<WorkflowCreateBody> bodySetter) {
         if (this.body == null) {
-            this.body = new UpdateWorkflowRequestBody();
+            this.body = new WorkflowCreateBody();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class UpdateWorkFlowRequest {
      * Get body
      * @return body
      */
-    public UpdateWorkflowRequestBody getBody() {
+    public WorkflowCreateBody getBody() {
         return body;
     }
 
-    public void setBody(UpdateWorkflowRequestBody body) {
+    public void setBody(WorkflowCreateBody body) {
         this.body = body;
     }
 

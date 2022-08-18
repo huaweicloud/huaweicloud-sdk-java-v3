@@ -62,7 +62,7 @@ public class ReclaimCouponQuotasReq {
     }
 
     /**
-     * 回收时的备注。
+     * 回收时的备注。 此参数不携带或携带值为null时，不赋值；携带值为空串时，赋值空串。
      * @return remark
      */
     public String getRemark() {

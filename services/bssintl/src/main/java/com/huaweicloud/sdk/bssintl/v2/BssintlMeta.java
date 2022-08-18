@@ -307,6 +307,37 @@ public class BssintlMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListCostsRequest, ListCostsResponse> listCosts = genForlistCosts();
+
+    private static HttpRequestDef<ListCostsRequest, ListCostsResponse> genForlistCosts() {
+        // basic
+        HttpRequestDef.Builder<ListCostsRequest, ListCostsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListCostsRequest.class, ListCostsResponse.class)
+                .withName("ListCosts")
+                .withUri("/v4/costs/cost-analysed-bills/query")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCostsRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<ListCostsReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListCostsReq.class),
+            f -> f.withMarshaller(ListCostsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListCustomerOnDemandResourcesRequest, ListCustomerOnDemandResourcesResponse> listCustomerOnDemandResources =
         genForlistCustomerOnDemandResources();
 
@@ -661,6 +692,31 @@ public class BssintlMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListFreeResourceUsagesReq.class),
             f -> f.withMarshaller(ListFreeResourceUsagesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListIndirectPartnersRequest, ListIndirectPartnersResponse> listIndirectPartners =
+        genForlistIndirectPartners();
+
+    private static HttpRequestDef<ListIndirectPartnersRequest, ListIndirectPartnersResponse> genForlistIndirectPartners() {
+        // basic
+        HttpRequestDef.Builder<ListIndirectPartnersRequest, ListIndirectPartnersResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ListIndirectPartnersRequest.class, ListIndirectPartnersResponse.class)
+            .withName("ListIndirectPartners")
+            .withUri("/v2/partners/indirect-partners/query")
+            .withContentType("application/json");
+
+        // requests
+        builder.<QueryIndirectPartnersReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(QueryIndirectPartnersReq.class),
+            f -> f.withMarshaller(ListIndirectPartnersRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -1415,6 +1471,13 @@ public class BssintlMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowSubCustomerBudgetRequest::getCustomerId, (req, v) -> {
                 req.setCustomerId(v);
+            }));
+        builder.<String>withRequestField("indirect_partner_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSubCustomerBudgetRequest::getIndirectPartnerId, (req, v) -> {
+                req.setIndirectPartnerId(v);
             }));
 
         // response

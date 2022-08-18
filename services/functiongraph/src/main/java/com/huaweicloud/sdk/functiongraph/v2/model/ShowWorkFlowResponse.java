@@ -50,7 +50,7 @@ public class ShowWorkFlowResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "definition")
 
-    private CreateWorkflowRequestBody definition;
+    private WorkflowCreateBody definition;
 
     public ShowWorkFlowResponse withId(String id) {
         this.id = id;
@@ -75,7 +75,7 @@ public class ShowWorkFlowResponse extends SdkResponse {
     }
 
     /**
-     * 唯一标识ID，流程URN
+     * 函数工作流URN, 格式为： urn:fss:<region_id>:<project_id>:workflow:\\<package\\>:<workflow_name>:\\<version\\> 注意： package当前只支持default version当前只支持latest
      * @return workflowUrn
      */
     public String getWorkflowUrn() {
@@ -171,14 +171,14 @@ public class ShowWorkFlowResponse extends SdkResponse {
         this.ltsStreamId = ltsStreamId;
     }
 
-    public ShowWorkFlowResponse withDefinition(CreateWorkflowRequestBody definition) {
+    public ShowWorkFlowResponse withDefinition(WorkflowCreateBody definition) {
         this.definition = definition;
         return this;
     }
 
-    public ShowWorkFlowResponse withDefinition(Consumer<CreateWorkflowRequestBody> definitionSetter) {
+    public ShowWorkFlowResponse withDefinition(Consumer<WorkflowCreateBody> definitionSetter) {
         if (this.definition == null) {
-            this.definition = new CreateWorkflowRequestBody();
+            this.definition = new WorkflowCreateBody();
             definitionSetter.accept(this.definition);
         }
 
@@ -189,11 +189,11 @@ public class ShowWorkFlowResponse extends SdkResponse {
      * Get definition
      * @return definition
      */
-    public CreateWorkflowRequestBody getDefinition() {
+    public WorkflowCreateBody getDefinition() {
         return definition;
     }
 
-    public void setDefinition(CreateWorkflowRequestBody definition) {
+    public void setDefinition(WorkflowCreateBody definition) {
         this.definition = definition;
     }
 

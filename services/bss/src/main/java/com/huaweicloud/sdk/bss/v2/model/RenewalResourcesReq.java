@@ -60,7 +60,7 @@ public class RenewalResourcesReq {
     }
 
     /**
-     * 资源ID列表。 只支持传入主资源ID，最多100个资源ID。 哪些资源是主资源请根据“查询客户包年/包月资源列表”接口响应参数中的“is_main_resource”来标识。
+     * 资源ID列表。 只支持传入主资源ID，最多10个资源ID。 哪些资源是主资源请根据“查询客户包年/包月资源列表”接口响应参数中的“is_main_resource”来标识。
      * @return resourceIds
      */
     public List<String> getResourceIds() {
@@ -134,7 +134,7 @@ public class RenewalResourcesReq {
     }
 
     /**
-     * 是否自动支付。 0：否1：是 不填写的话，默认值是0，不自动支付。
+     * 是否自动支付。 0：否1：是 此参数不携带或携带值为null时，默认值为“0：否”，即不自动支付。
      * minimum: 0
      * maximum: 1
      * @return isAutoPay

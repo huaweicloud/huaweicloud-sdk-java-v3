@@ -16,6 +16,11 @@ public class AsyncInvokeReservedFunctionResponse extends SdkResponse {
 
     private String instanceId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "Content-Type")
+
+    private String contentType;
+
     public AsyncInvokeReservedFunctionResponse withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -33,6 +38,23 @@ public class AsyncInvokeReservedFunctionResponse extends SdkResponse {
         this.instanceId = instanceId;
     }
 
+    public AsyncInvokeReservedFunctionResponse withContentType(String contentType) {
+        this.contentType = contentType;
+        return this;
+    }
+
+    /**
+     * Get contentType
+     * @return contentType
+     */
+    public String getContentType() {
+        return contentType;
+    }
+
+    public void setContentType(String contentType) {
+        this.contentType = contentType;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -43,12 +65,13 @@ public class AsyncInvokeReservedFunctionResponse extends SdkResponse {
         }
         AsyncInvokeReservedFunctionResponse asyncInvokeReservedFunctionResponse =
             (AsyncInvokeReservedFunctionResponse) o;
-        return Objects.equals(this.instanceId, asyncInvokeReservedFunctionResponse.instanceId);
+        return Objects.equals(this.instanceId, asyncInvokeReservedFunctionResponse.instanceId)
+            && Objects.equals(this.contentType, asyncInvokeReservedFunctionResponse.contentType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId);
+        return Objects.hash(instanceId, contentType);
     }
 
     @Override
@@ -56,6 +79,7 @@ public class AsyncInvokeReservedFunctionResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class AsyncInvokeReservedFunctionResponse {\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    contentType: ").append(toIndentedString(contentType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -63,6 +63,11 @@ public class ProjectTemplates {
 
     private Long templateId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "arch")
+
+    private String arch;
+
     public ProjectTemplates withDescription(String description) {
         this.description = description;
         return this;
@@ -260,6 +265,23 @@ public class ProjectTemplates {
         this.templateId = templateId;
     }
 
+    public ProjectTemplates withArch(String arch) {
+        this.arch = arch;
+        return this;
+    }
+
+    /**
+     * cpu架构
+     * @return arch
+     */
+    public String getArch() {
+        return arch;
+    }
+
+    public void setArch(String arch) {
+        this.arch = arch;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -276,12 +298,14 @@ public class ProjectTemplates {
             && Objects.equals(this.projectType, projectTemplates.projectType)
             && Objects.equals(this.region, projectTemplates.region)
             && Objects.equals(this.source, projectTemplates.source) && Objects.equals(this.tags, projectTemplates.tags)
-            && Objects.equals(this.templateId, projectTemplates.templateId);
+            && Objects.equals(this.templateId, projectTemplates.templateId)
+            && Objects.equals(this.arch, projectTemplates.arch);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(description, displayName, logo, name, path, projectType, region, source, tags, templateId);
+        return Objects
+            .hash(description, displayName, logo, name, path, projectType, region, source, tags, templateId, arch);
     }
 
     @Override
@@ -298,6 +322,7 @@ public class ProjectTemplates {
         sb.append("    source: ").append(toIndentedString(source)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    templateId: ").append(toIndentedString(templateId)).append("\n");
+        sb.append("    arch: ").append(toIndentedString(arch)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -35,6 +35,11 @@ public class IdCardRequestBody {
 
     private Boolean returnTextLocation;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "detect_reproduce")
+
+    private Boolean detectReproduce;
+
     public IdCardRequestBody withImage(String image) {
         this.image = image;
         return this;
@@ -120,6 +125,23 @@ public class IdCardRequestBody {
         this.returnTextLocation = returnTextLocation;
     }
 
+    public IdCardRequestBody withDetectReproduce(Boolean detectReproduce) {
+        this.detectReproduce = detectReproduce;
+        return this;
+    }
+
+    /**
+     * 返回判断身份证图像是否经过翻拍的开关，默认false，可选值如下所示：  - true ：返回身份证图像是否经过翻拍  - false：不返回身份证图像是否经过翻拍 
+     * @return detectReproduce
+     */
+    public Boolean getDetectReproduce() {
+        return detectReproduce;
+    }
+
+    public void setDetectReproduce(Boolean detectReproduce) {
+        this.detectReproduce = detectReproduce;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -132,12 +154,13 @@ public class IdCardRequestBody {
         return Objects.equals(this.image, idCardRequestBody.image) && Objects.equals(this.url, idCardRequestBody.url)
             && Objects.equals(this.side, idCardRequestBody.side)
             && Objects.equals(this.returnVerification, idCardRequestBody.returnVerification)
-            && Objects.equals(this.returnTextLocation, idCardRequestBody.returnTextLocation);
+            && Objects.equals(this.returnTextLocation, idCardRequestBody.returnTextLocation)
+            && Objects.equals(this.detectReproduce, idCardRequestBody.detectReproduce);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(image, url, side, returnVerification, returnTextLocation);
+        return Objects.hash(image, url, side, returnVerification, returnTextLocation, detectReproduce);
     }
 
     @Override
@@ -149,6 +172,7 @@ public class IdCardRequestBody {
         sb.append("    side: ").append(toIndentedString(side)).append("\n");
         sb.append("    returnVerification: ").append(toIndentedString(returnVerification)).append("\n");
         sb.append("    returnTextLocation: ").append(toIndentedString(returnTextLocation)).append("\n");
+        sb.append("    detectReproduce: ").append(toIndentedString(detectReproduce)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -56,7 +56,7 @@ public class ListFreeResourceInfosReq {
     }
 
     /**
-     * 云服务区编码，例如：“cn-north-1”。具体请参见地区和终端节点对应云服务的“区域”列的值。
+     * 云服务区编码，例如：“cn-north-1”。具体请参见地区和终端节点对应云服务的“区域”列的值。 此参数不携带或携带值为空串或携带值为null时，不作为筛选条件。
      * @return regionCode
      */
     public String getRegionCode() {
@@ -73,7 +73,7 @@ public class ListFreeResourceInfosReq {
     }
 
     /**
-     * 订单ID。
+     * 订单ID。 此参数不携带或携带值为空串或携带值为null时，不作为筛选条件。
      * @return orderId
      */
     public String getOrderId() {
@@ -90,7 +90,7 @@ public class ListFreeResourceInfosReq {
     }
 
     /**
-     * 产品ID，即资源包ID。
+     * 产品ID，即资源包ID。 此参数不携带或携带值为空串或携带值为null时，不作为筛选条件。
      * @return productId
      */
     public String getProductId() {
@@ -107,7 +107,7 @@ public class ListFreeResourceInfosReq {
     }
 
     /**
-     * 产品名称，即资源包名称。
+     * 产品名称，即资源包名称。 此参数不携带或携带值为空串或携带值为null时，不作为筛选条件。
      * @return productName
      */
     public String getProductName() {
@@ -124,7 +124,7 @@ public class ListFreeResourceInfosReq {
     }
 
     /**
-     * 企业项目ID。
+     * 企业项目ID。 此参数不携带或携带值为空串或携带值为null时，不作为筛选条件。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -141,7 +141,7 @@ public class ListFreeResourceInfosReq {
     }
 
     /**
-     * 状态： 0：未生效1：生效中2：已用完3：已失效4：已退订
+     * 状态： 0：未生效1：生效中2：已用完3：已失效4：已退订 此参数不携带或携带值为空串或携带值为null时，不作为筛选条件。
      * minimum: 0
      * maximum: 4
      * @return status

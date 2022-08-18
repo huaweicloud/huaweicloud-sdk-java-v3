@@ -65,7 +65,7 @@ public class SendVerificationCodeV2Req {
     }
 
     /**
-     * 发送验证码的超时时间。 如果不填的话，采用系统默认超时时间5分钟。 单位：分钟
+     * 发送验证码的超时时间。 此参数不携带或携带值为null时，采用系统默认超时时间5分钟。 单位：分钟。
      * minimum: 1
      * maximum: 2147483647
      * @return timeout
@@ -101,7 +101,7 @@ public class SendVerificationCodeV2Req {
     }
 
     /**
-     * 根据该参数的取值选择发送短信验证码的语言。 zh-cn：中文en-us：英文
+     * 根据该参数的取值选择发送短信验证码的语言。此参数默认值为“zh-cn：中文”。 zh-cn：中文en-us：英文
      * @return lang
      */
     public String getLang() {
@@ -118,7 +118,7 @@ public class SendVerificationCodeV2Req {
     }
 
     /**
-     * 验证码使用的场景，目前支持如下场景： 29：注册场景18：个人银行卡实名认证场景 不填写默认为29。
+     * 验证码使用的场景，目前支持如下场景： 29：注册场景18：个人银行卡实名认证场景 此参数不携带或携带值为null时，默认值为“29：注册场景”。
      * minimum: 18
      * maximum: 29
      * @return scene
@@ -137,7 +137,7 @@ public class SendVerificationCodeV2Req {
     }
 
     /**
-     * 客户账号ID。您可以调用[查询客户列表](https://support.huaweicloud.com/api-bpconsole/mc_00021.html)接口获取customer_id。 如果scene=18的时候必填。
+     * 客户账号ID。您可以调用[查询客户列表](https://support.huaweicloud.com/api-bpconsole/mc_00021.html)接口获取customer_id。 当scene=18时此参数必填；除此之外此参数非必填，不携带或携带值为null时均不做处理。
      * @return customerId
      */
     public String getCustomerId() {

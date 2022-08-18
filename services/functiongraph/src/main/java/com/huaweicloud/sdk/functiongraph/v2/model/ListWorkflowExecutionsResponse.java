@@ -17,14 +17,14 @@ public class ListWorkflowExecutionsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "executions")
 
-    private List<ListWorkflowExecutionResult> executions = null;
+    private List<FlowExecutionBrief> executions = null;
 
-    public ListWorkflowExecutionsResponse withExecutions(List<ListWorkflowExecutionResult> executions) {
+    public ListWorkflowExecutionsResponse withExecutions(List<FlowExecutionBrief> executions) {
         this.executions = executions;
         return this;
     }
 
-    public ListWorkflowExecutionsResponse addExecutionsItem(ListWorkflowExecutionResult executionsItem) {
+    public ListWorkflowExecutionsResponse addExecutionsItem(FlowExecutionBrief executionsItem) {
         if (this.executions == null) {
             this.executions = new ArrayList<>();
         }
@@ -32,7 +32,7 @@ public class ListWorkflowExecutionsResponse extends SdkResponse {
         return this;
     }
 
-    public ListWorkflowExecutionsResponse withExecutions(Consumer<List<ListWorkflowExecutionResult>> executionsSetter) {
+    public ListWorkflowExecutionsResponse withExecutions(Consumer<List<FlowExecutionBrief>> executionsSetter) {
         if (this.executions == null) {
             this.executions = new ArrayList<>();
         }
@@ -44,11 +44,11 @@ public class ListWorkflowExecutionsResponse extends SdkResponse {
      * 流程执行信息列表
      * @return executions
      */
-    public List<ListWorkflowExecutionResult> getExecutions() {
+    public List<FlowExecutionBrief> getExecutions() {
         return executions;
     }
 
-    public void setExecutions(List<ListWorkflowExecutionResult> executions) {
+    public void setExecutions(List<FlowExecutionBrief> executions) {
         this.executions = executions;
     }
 

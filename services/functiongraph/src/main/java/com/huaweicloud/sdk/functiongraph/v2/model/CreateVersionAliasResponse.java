@@ -43,7 +43,7 @@ public class CreateVersionAliasResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "additional_version_weights")
 
-    private Map<String, Integer> additionalVersionWeights = null;
+    private Map<String, Long> additionalVersionWeights = null;
 
     public CreateVersionAliasResponse withName(String name) {
         this.name = name;
@@ -130,13 +130,12 @@ public class CreateVersionAliasResponse extends SdkResponse {
         this.aliasUrn = aliasUrn;
     }
 
-    public CreateVersionAliasResponse withAdditionalVersionWeights(Map<String, Integer> additionalVersionWeights) {
+    public CreateVersionAliasResponse withAdditionalVersionWeights(Map<String, Long> additionalVersionWeights) {
         this.additionalVersionWeights = additionalVersionWeights;
         return this;
     }
 
-    public CreateVersionAliasResponse putAdditionalVersionWeightsItem(String key,
-        Integer additionalVersionWeightsItem) {
+    public CreateVersionAliasResponse putAdditionalVersionWeightsItem(String key, Long additionalVersionWeightsItem) {
         if (this.additionalVersionWeights == null) {
             this.additionalVersionWeights = new HashMap<>();
         }
@@ -145,7 +144,7 @@ public class CreateVersionAliasResponse extends SdkResponse {
     }
 
     public CreateVersionAliasResponse withAdditionalVersionWeights(
-        Consumer<Map<String, Integer>> additionalVersionWeightsSetter) {
+        Consumer<Map<String, Long>> additionalVersionWeightsSetter) {
         if (this.additionalVersionWeights == null) {
             this.additionalVersionWeights = new HashMap<>();
         }
@@ -157,11 +156,11 @@ public class CreateVersionAliasResponse extends SdkResponse {
      * 灰度版本信息
      * @return additionalVersionWeights
      */
-    public Map<String, Integer> getAdditionalVersionWeights() {
+    public Map<String, Long> getAdditionalVersionWeights() {
         return additionalVersionWeights;
     }
 
-    public void setAdditionalVersionWeights(Map<String, Integer> additionalVersionWeights) {
+    public void setAdditionalVersionWeights(Map<String, Long> additionalVersionWeights) {
         this.additionalVersionWeights = additionalVersionWeights;
     }
 

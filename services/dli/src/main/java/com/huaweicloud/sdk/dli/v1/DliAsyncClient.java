@@ -309,6 +309,39 @@ public class DliAsyncClient {
     }
 
     /**
+     * 关联队列到弹性资源池
+     *
+     * 关联队列到弹性资源池
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param AssociateQueueToElasticResourcePoolRequest 请求对象
+     * @return CompletableFuture<AssociateQueueToElasticResourcePoolResponse>
+     */
+    public CompletableFuture<AssociateQueueToElasticResourcePoolResponse> associateQueueToElasticResourcePoolAsync(
+        AssociateQueueToElasticResourcePoolRequest request) {
+        return hcClient.asyncInvokeHttp(request, DliMeta.associateQueueToElasticResourcePool);
+    }
+
+    /**
+     * 关联队列到弹性资源池
+     *
+     * 关联队列到弹性资源池
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param AssociateQueueToElasticResourcePoolRequest 请求对象
+     * @return AsyncInvoker<AssociateQueueToElasticResourcePoolRequest, AssociateQueueToElasticResourcePoolResponse>
+     */
+    public AsyncInvoker<AssociateQueueToElasticResourcePoolRequest, AssociateQueueToElasticResourcePoolResponse> associateQueueToElasticResourcePoolAsyncInvoker(
+        AssociateQueueToElasticResourcePoolRequest request) {
+        return new AsyncInvoker<AssociateQueueToElasticResourcePoolRequest, AssociateQueueToElasticResourcePoolResponse>(
+            request, DliMeta.associateQueueToElasticResourcePool, hcClient);
+    }
+
+    /**
      * 边缘Flink作业状态信息上报
      *
      * 该API用于处理边缘Flink作业状态上报信息

@@ -161,7 +161,7 @@ public class MonthlyBillRecord {
     }
 
     /**
-     * 流水账单所在账期，格式为YYYY-MM。
+     * 流水账单所在账期，东八区时间，格式为YYYY-MM。
      * @return billCycle
      */
     public String getBillCycle() {

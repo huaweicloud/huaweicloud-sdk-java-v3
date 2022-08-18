@@ -36,7 +36,7 @@ public class StatUsageInfo {
     }
 
     /**
-     * 统计时间点，格式为YYYY-MM-DDTHH:MM:SSZ，UTC时间。
+     * 统计时间点，UTC时间，格式为YYYY-MM-DDTHH:MM:SSZ。
      * @return statTime
      */
     public String getStatTime() {

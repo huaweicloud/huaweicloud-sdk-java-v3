@@ -67,7 +67,7 @@ public class PayCustomerOrderReq {
     }
 
     /**
-     * 优惠券ID列表，目前仅支持传递一个优惠券ID。 请从“查询订单可用优惠券”接口的响应参数中获取。 具体参见表1。
+     * 优惠券ID列表，目前支持传递最多三个优惠券ID。 请从“查询订单可用优惠券”接口的响应参数中获取。 具体参见表1。
      * @return couponInfos
      */
     public List<CouponSimpleInfoOrderPay> getCouponInfos() {

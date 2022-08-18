@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 分页结构体。
+ * PageInfo
  */
 public class PageInfo {
 
@@ -31,8 +31,7 @@ public class PageInfo {
     }
 
     /**
-     * 返回下一页查询地址。
-     * minimum: 0
+     * 下一次读取位置
      * @return nextMarker
      */
     public Long getNextMarker() {
@@ -49,8 +48,7 @@ public class PageInfo {
     }
 
     /**
-     * 返回前一页查询地址。
-     * minimum: 0
+     * 上一次读取位置
      * @return previousMarker
      */
     public Long getPreviousMarker() {
@@ -67,8 +65,7 @@ public class PageInfo {
     }
 
     /**
-     * 本页返回条目数量。
-     * minimum: 0
+     * 当前页总数
      * @return currentCount
      */
     public Long getCurrentCount() {

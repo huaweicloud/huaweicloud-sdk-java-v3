@@ -537,6 +537,16 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
 
     private String domainNames;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_auth_in_header")
+
+    private Boolean enableAuthInHeader;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "custom_image")
+
+    private CustomImage customImage;
+
     public UpdateFunctionConfigResponse withFuncUrn(String funcUrn) {
         this.funcUrn = funcUrn;
         return this;
@@ -1226,6 +1236,49 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
         this.domainNames = domainNames;
     }
 
+    public UpdateFunctionConfigResponse withEnableAuthInHeader(Boolean enableAuthInHeader) {
+        this.enableAuthInHeader = enableAuthInHeader;
+        return this;
+    }
+
+    /**
+     * 是否允许在请求头中添加鉴权信息
+     * @return enableAuthInHeader
+     */
+    public Boolean getEnableAuthInHeader() {
+        return enableAuthInHeader;
+    }
+
+    public void setEnableAuthInHeader(Boolean enableAuthInHeader) {
+        this.enableAuthInHeader = enableAuthInHeader;
+    }
+
+    public UpdateFunctionConfigResponse withCustomImage(CustomImage customImage) {
+        this.customImage = customImage;
+        return this;
+    }
+
+    public UpdateFunctionConfigResponse withCustomImage(Consumer<CustomImage> customImageSetter) {
+        if (this.customImage == null) {
+            this.customImage = new CustomImage();
+            customImageSetter.accept(this.customImage);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get customImage
+     * @return customImage
+     */
+    public CustomImage getCustomImage() {
+        return customImage;
+    }
+
+    public void setCustomImage(CustomImage customImage) {
+        this.customImage = customImage;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -1272,7 +1325,9 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
             && Objects.equals(this.type, updateFunctionConfigResponse.type)
             && Objects.equals(this.enableDynamicMemory, updateFunctionConfigResponse.enableDynamicMemory)
             && Objects.equals(this.isStatefulFunction, updateFunctionConfigResponse.isStatefulFunction)
-            && Objects.equals(this.domainNames, updateFunctionConfigResponse.domainNames);
+            && Objects.equals(this.domainNames, updateFunctionConfigResponse.domainNames)
+            && Objects.equals(this.enableAuthInHeader, updateFunctionConfigResponse.enableAuthInHeader)
+            && Objects.equals(this.customImage, updateFunctionConfigResponse.customImage);
     }
 
     @Override
@@ -1314,7 +1369,9 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
             type,
             enableDynamicMemory,
             isStatefulFunction,
-            domainNames);
+            domainNames,
+            enableAuthInHeader,
+            customImage);
     }
 
     @Override
@@ -1359,6 +1416,8 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
         sb.append("    enableDynamicMemory: ").append(toIndentedString(enableDynamicMemory)).append("\n");
         sb.append("    isStatefulFunction: ").append(toIndentedString(isStatefulFunction)).append("\n");
         sb.append("    domainNames: ").append(toIndentedString(domainNames)).append("\n");
+        sb.append("    enableAuthInHeader: ").append(toIndentedString(enableAuthInHeader)).append("\n");
+        sb.append("    customImage: ").append(toIndentedString(customImage)).append("\n");
         sb.append("}");
         return sb.toString();
     }

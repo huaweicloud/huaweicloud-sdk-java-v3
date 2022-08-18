@@ -455,6 +455,72 @@ public class VodAsyncClient {
     }
 
     /**
+     * 创建转码模板组集合
+     *
+     * 创建转码模板组集合
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateTemplateGroupCollectionRequest 请求对象
+     * @return CompletableFuture<CreateTemplateGroupCollectionResponse>
+     */
+    public CompletableFuture<CreateTemplateGroupCollectionResponse> createTemplateGroupCollectionAsync(
+        CreateTemplateGroupCollectionRequest request) {
+        return hcClient.asyncInvokeHttp(request, VodMeta.createTemplateGroupCollection);
+    }
+
+    /**
+     * 创建转码模板组集合
+     *
+     * 创建转码模板组集合
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateTemplateGroupCollectionRequest 请求对象
+     * @return AsyncInvoker<CreateTemplateGroupCollectionRequest, CreateTemplateGroupCollectionResponse>
+     */
+    public AsyncInvoker<CreateTemplateGroupCollectionRequest, CreateTemplateGroupCollectionResponse> createTemplateGroupCollectionAsyncInvoker(
+        CreateTemplateGroupCollectionRequest request) {
+        return new AsyncInvoker<CreateTemplateGroupCollectionRequest, CreateTemplateGroupCollectionResponse>(request,
+            VodMeta.createTemplateGroupCollection, hcClient);
+    }
+
+    /**
+     * 创建自定义转码模板
+     *
+     * 创建自定义转码模板。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateTranscodeTemplateRequest 请求对象
+     * @return CompletableFuture<CreateTranscodeTemplateResponse>
+     */
+    public CompletableFuture<CreateTranscodeTemplateResponse> createTranscodeTemplateAsync(
+        CreateTranscodeTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, VodMeta.createTranscodeTemplate);
+    }
+
+    /**
+     * 创建自定义转码模板
+     *
+     * 创建自定义转码模板。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateTranscodeTemplateRequest 请求对象
+     * @return AsyncInvoker<CreateTranscodeTemplateRequest, CreateTranscodeTemplateResponse>
+     */
+    public AsyncInvoker<CreateTranscodeTemplateRequest, CreateTranscodeTemplateResponse> createTranscodeTemplateAsyncInvoker(
+        CreateTranscodeTemplateRequest request) {
+        return new AsyncInvoker<CreateTranscodeTemplateRequest, CreateTranscodeTemplateResponse>(request,
+            VodMeta.createTranscodeTemplate, hcClient);
+    }
+
+    /**
      * 创建水印模板
      *
      * 创建水印模板。
@@ -580,6 +646,72 @@ public class VodAsyncClient {
         DeleteTemplateGroupRequest request) {
         return new AsyncInvoker<DeleteTemplateGroupRequest, DeleteTemplateGroupResponse>(request,
             VodMeta.deleteTemplateGroup, hcClient);
+    }
+
+    /**
+     * 删除转码模板组集合
+     *
+     * 删除转码模板组集合
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteTemplateGroupCollectionRequest 请求对象
+     * @return CompletableFuture<DeleteTemplateGroupCollectionResponse>
+     */
+    public CompletableFuture<DeleteTemplateGroupCollectionResponse> deleteTemplateGroupCollectionAsync(
+        DeleteTemplateGroupCollectionRequest request) {
+        return hcClient.asyncInvokeHttp(request, VodMeta.deleteTemplateGroupCollection);
+    }
+
+    /**
+     * 删除转码模板组集合
+     *
+     * 删除转码模板组集合
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteTemplateGroupCollectionRequest 请求对象
+     * @return AsyncInvoker<DeleteTemplateGroupCollectionRequest, DeleteTemplateGroupCollectionResponse>
+     */
+    public AsyncInvoker<DeleteTemplateGroupCollectionRequest, DeleteTemplateGroupCollectionResponse> deleteTemplateGroupCollectionAsyncInvoker(
+        DeleteTemplateGroupCollectionRequest request) {
+        return new AsyncInvoker<DeleteTemplateGroupCollectionRequest, DeleteTemplateGroupCollectionResponse>(request,
+            VodMeta.deleteTemplateGroupCollection, hcClient);
+    }
+
+    /**
+     * 删除自定义模板
+     *
+     * 删除自定义模板
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteTranscodeTemplateRequest 请求对象
+     * @return CompletableFuture<DeleteTranscodeTemplateResponse>
+     */
+    public CompletableFuture<DeleteTranscodeTemplateResponse> deleteTranscodeTemplateAsync(
+        DeleteTranscodeTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, VodMeta.deleteTranscodeTemplate);
+    }
+
+    /**
+     * 删除自定义模板
+     *
+     * 删除自定义模板
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteTranscodeTemplateRequest 请求对象
+     * @return AsyncInvoker<DeleteTranscodeTemplateRequest, DeleteTranscodeTemplateResponse>
+     */
+    public AsyncInvoker<DeleteTranscodeTemplateRequest, DeleteTranscodeTemplateResponse> deleteTranscodeTemplateAsyncInvoker(
+        DeleteTranscodeTemplateRequest request) {
+        return new AsyncInvoker<DeleteTranscodeTemplateRequest, DeleteTranscodeTemplateResponse>(request,
+            VodMeta.deleteTranscodeTemplate, hcClient);
     }
 
     /**
@@ -743,6 +875,39 @@ public class VodAsyncClient {
     }
 
     /**
+     * 查询自定义模板组集合
+     *
+     * 查询转码模板组集合
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListTemplateGroupCollectionRequest 请求对象
+     * @return CompletableFuture<ListTemplateGroupCollectionResponse>
+     */
+    public CompletableFuture<ListTemplateGroupCollectionResponse> listTemplateGroupCollectionAsync(
+        ListTemplateGroupCollectionRequest request) {
+        return hcClient.asyncInvokeHttp(request, VodMeta.listTemplateGroupCollection);
+    }
+
+    /**
+     * 查询自定义模板组集合
+     *
+     * 查询转码模板组集合
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListTemplateGroupCollectionRequest 请求对象
+     * @return AsyncInvoker<ListTemplateGroupCollectionRequest, ListTemplateGroupCollectionResponse>
+     */
+    public AsyncInvoker<ListTemplateGroupCollectionRequest, ListTemplateGroupCollectionResponse> listTemplateGroupCollectionAsyncInvoker(
+        ListTemplateGroupCollectionRequest request) {
+        return new AsyncInvoker<ListTemplateGroupCollectionRequest, ListTemplateGroupCollectionResponse>(request,
+            VodMeta.listTemplateGroupCollection, hcClient);
+    }
+
+    /**
      * 查询TopN媒资信息
      *
      * 查询指定域名在指定日期播放次数排名Top 100的媒资统计数据。
@@ -772,6 +937,39 @@ public class VodAsyncClient {
         ListTopStatisticsRequest request) {
         return new AsyncInvoker<ListTopStatisticsRequest, ListTopStatisticsResponse>(request, VodMeta.listTopStatistics,
             hcClient);
+    }
+
+    /**
+     * 查询转码模板列表
+     *
+     * 查询转码模板列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListTranscodeTemplateRequest 请求对象
+     * @return CompletableFuture<ListTranscodeTemplateResponse>
+     */
+    public CompletableFuture<ListTranscodeTemplateResponse> listTranscodeTemplateAsync(
+        ListTranscodeTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, VodMeta.listTranscodeTemplate);
+    }
+
+    /**
+     * 查询转码模板列表
+     *
+     * 查询转码模板列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListTranscodeTemplateRequest 请求对象
+     * @return AsyncInvoker<ListTranscodeTemplateRequest, ListTranscodeTemplateResponse>
+     */
+    public AsyncInvoker<ListTranscodeTemplateRequest, ListTranscodeTemplateResponse> listTranscodeTemplateAsyncInvoker(
+        ListTranscodeTemplateRequest request) {
+        return new AsyncInvoker<ListTranscodeTemplateRequest, ListTranscodeTemplateResponse>(request,
+            VodMeta.listTranscodeTemplate, hcClient);
     }
 
     /**
@@ -1340,6 +1538,72 @@ public class VodAsyncClient {
         UpdateTemplateGroupRequest request) {
         return new AsyncInvoker<UpdateTemplateGroupRequest, UpdateTemplateGroupResponse>(request,
             VodMeta.updateTemplateGroup, hcClient);
+    }
+
+    /**
+     * 修改转码模板组集合
+     *
+     * 修改转码模板组结合
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateTemplateGroupCollectionRequest 请求对象
+     * @return CompletableFuture<UpdateTemplateGroupCollectionResponse>
+     */
+    public CompletableFuture<UpdateTemplateGroupCollectionResponse> updateTemplateGroupCollectionAsync(
+        UpdateTemplateGroupCollectionRequest request) {
+        return hcClient.asyncInvokeHttp(request, VodMeta.updateTemplateGroupCollection);
+    }
+
+    /**
+     * 修改转码模板组集合
+     *
+     * 修改转码模板组结合
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateTemplateGroupCollectionRequest 请求对象
+     * @return AsyncInvoker<UpdateTemplateGroupCollectionRequest, UpdateTemplateGroupCollectionResponse>
+     */
+    public AsyncInvoker<UpdateTemplateGroupCollectionRequest, UpdateTemplateGroupCollectionResponse> updateTemplateGroupCollectionAsyncInvoker(
+        UpdateTemplateGroupCollectionRequest request) {
+        return new AsyncInvoker<UpdateTemplateGroupCollectionRequest, UpdateTemplateGroupCollectionResponse>(request,
+            VodMeta.updateTemplateGroupCollection, hcClient);
+    }
+
+    /**
+     * 修改转码模板
+     *
+     * 修改转码模板
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateTranscodeTemplateRequest 请求对象
+     * @return CompletableFuture<UpdateTranscodeTemplateResponse>
+     */
+    public CompletableFuture<UpdateTranscodeTemplateResponse> updateTranscodeTemplateAsync(
+        UpdateTranscodeTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, VodMeta.updateTranscodeTemplate);
+    }
+
+    /**
+     * 修改转码模板
+     *
+     * 修改转码模板
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateTranscodeTemplateRequest 请求对象
+     * @return AsyncInvoker<UpdateTranscodeTemplateRequest, UpdateTranscodeTemplateResponse>
+     */
+    public AsyncInvoker<UpdateTranscodeTemplateRequest, UpdateTranscodeTemplateResponse> updateTranscodeTemplateAsyncInvoker(
+        UpdateTranscodeTemplateRequest request) {
+        return new AsyncInvoker<UpdateTranscodeTemplateRequest, UpdateTranscodeTemplateResponse>(request,
+            VodMeta.updateTranscodeTemplate, hcClient);
     }
 
     /**

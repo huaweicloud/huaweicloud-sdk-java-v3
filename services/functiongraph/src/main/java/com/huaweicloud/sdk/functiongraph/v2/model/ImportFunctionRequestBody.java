@@ -30,6 +30,11 @@ public class ImportFunctionRequestBody {
 
     private String fileCode;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "package")
+
+    private String _package;
+
     public ImportFunctionRequestBody withFuncName(String funcName) {
         this.funcName = funcName;
         return this;
@@ -98,6 +103,23 @@ public class ImportFunctionRequestBody {
         this.fileCode = fileCode;
     }
 
+    public ImportFunctionRequestBody withPackage(String _package) {
+        this._package = _package;
+        return this;
+    }
+
+    /**
+     * 应用名称，默认为default
+     * @return _package
+     */
+    public String getPackage() {
+        return _package;
+    }
+
+    public void setPackage(String _package) {
+        this._package = _package;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -110,12 +132,13 @@ public class ImportFunctionRequestBody {
         return Objects.equals(this.funcName, importFunctionRequestBody.funcName)
             && Objects.equals(this.fileName, importFunctionRequestBody.fileName)
             && Objects.equals(this.fileType, importFunctionRequestBody.fileType)
-            && Objects.equals(this.fileCode, importFunctionRequestBody.fileCode);
+            && Objects.equals(this.fileCode, importFunctionRequestBody.fileCode)
+            && Objects.equals(this._package, importFunctionRequestBody._package);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(funcName, fileName, fileType, fileCode);
+        return Objects.hash(funcName, fileName, fileType, fileCode, _package);
     }
 
     @Override
@@ -126,6 +149,7 @@ public class ImportFunctionRequestBody {
         sb.append("    fileName: ").append(toIndentedString(fileName)).append("\n");
         sb.append("    fileType: ").append(toIndentedString(fileType)).append("\n");
         sb.append("    fileCode: ").append(toIndentedString(fileCode)).append("\n");
+        sb.append("    _package: ").append(toIndentedString(_package)).append("\n");
         sb.append("}");
         return sb.toString();
     }

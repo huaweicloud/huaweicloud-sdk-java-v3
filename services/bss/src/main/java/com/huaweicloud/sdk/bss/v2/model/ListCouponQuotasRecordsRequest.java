@@ -90,7 +90,7 @@ public class ListCouponQuotasRecordsRequest {
     }
 
     /**
-     * 查询条件：操作起始时间。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。
+     * 查询条件：操作起始时间。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。此参数不携带或携带值为空时，不作为筛选条件。
      * @return operationTimeBegin
      */
     public String getOperationTimeBegin() {
@@ -107,7 +107,7 @@ public class ListCouponQuotasRecordsRequest {
     }
 
     /**
-     * 查询条件：操作截止时间。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。
+     * 查询条件：操作截止时间。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。此参数不携带或携带值为空时，不作为筛选条件。
      * @return operationTimeEnd
      */
     public String getOperationTimeEnd() {
@@ -141,7 +141,7 @@ public class ListCouponQuotasRecordsRequest {
     }
 
     /**
-     * 操作类型。10：发放额度11：回收额度
+     * 操作类型。10：发放额度11：回收额度此参数不携带或携带值为空或携带值为空串时，不作为筛选条件。
      * @return operationType
      */
     public String getOperationType() {

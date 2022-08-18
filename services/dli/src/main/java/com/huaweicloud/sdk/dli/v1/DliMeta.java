@@ -294,6 +294,41 @@ public class DliMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<AssociateQueueToElasticResourcePoolRequest, AssociateQueueToElasticResourcePoolResponse> associateQueueToElasticResourcePool =
+        genForassociateQueueToElasticResourcePool();
+
+    private static HttpRequestDef<AssociateQueueToElasticResourcePoolRequest, AssociateQueueToElasticResourcePoolResponse> genForassociateQueueToElasticResourcePool() {
+        // basic
+        HttpRequestDef.Builder<AssociateQueueToElasticResourcePoolRequest, AssociateQueueToElasticResourcePoolResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    AssociateQueueToElasticResourcePoolRequest.class,
+                    AssociateQueueToElasticResourcePoolResponse.class)
+                .withName("AssociateQueueToElasticResourcePool")
+                .withUri("/v3/{project_id}/elastic-resource-pools/{elastic_resource_pool_name}/queues")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("elastic_resource_pool_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AssociateQueueToElasticResourcePoolRequest::getElasticResourcePoolName, (req, v) -> {
+                req.setElasticResourcePoolName(v);
+            }));
+        builder.<AssociateQueueToElasticResourcePoolIfno>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AssociateQueueToElasticResourcePoolIfno.class),
+            f -> f.withMarshaller(AssociateQueueToElasticResourcePoolRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ChangeFlinkJobStatusReportRequest, ChangeFlinkJobStatusReportResponse> changeFlinkJobStatusReport =
         genForchangeFlinkJobStatusReport();
 

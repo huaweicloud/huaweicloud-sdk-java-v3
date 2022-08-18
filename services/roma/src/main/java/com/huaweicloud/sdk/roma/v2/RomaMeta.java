@@ -4764,6 +4764,20 @@ public class RomaMeta {
             f -> f.withMarshaller(ListNotificationRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListNotificationRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListNotificationRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
         builder.<String>withRequestField("app_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,

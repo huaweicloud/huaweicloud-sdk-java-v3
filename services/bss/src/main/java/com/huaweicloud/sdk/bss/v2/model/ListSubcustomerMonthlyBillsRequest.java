@@ -90,7 +90,7 @@ public class ListSubcustomerMonthlyBillsRequest {
     }
 
     /**
-     * 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用[查询云服务类型列表](https://support.huaweicloud.com/api-bpconsole/zh-cn_topic_0000001256679455.html)接口获取。
+     * 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用[查询云服务类型列表](https://support.huaweicloud.com/api-bpconsole/zh-cn_topic_0000001256679455.html)接口获取。此参数不携带或携带值为空时，不作为筛选条件。
      * @return cloudServiceType
      */
     public String getCloudServiceType() {
@@ -162,7 +162,7 @@ public class ListSubcustomerMonthlyBillsRequest {
     }
 
     /**
-     * 账单类型。0：消费1：退订2：华为核销
+     * 账单类型。0：消费1：退订2：华为核销 此参数不携带或携带值为空时，不作为筛选条件。
      * @return billType
      */
     public String getBillType() {

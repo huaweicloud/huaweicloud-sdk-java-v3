@@ -22,7 +22,7 @@ public class Trigger {
     private String triggerName;
 
     /**
-     * 触发器类型
+     * 触发器类型 FLOWTIMER：定时触发器 SMN：SMN触发器 APIG：APIG触发器(共享版) APIG_DE：APIG触发器(专享版) OBS：OBS触发器
      */
     public static final class TriggerTypeEnum {
 
@@ -30,6 +30,21 @@ public class Trigger {
          * Enum FLOWTIMER for value: "FLOWTIMER"
          */
         public static final TriggerTypeEnum FLOWTIMER = new TriggerTypeEnum("FLOWTIMER");
+
+        /**
+         * Enum SMN for value: "SMN"
+         */
+        public static final TriggerTypeEnum SMN = new TriggerTypeEnum("SMN");
+
+        /**
+         * Enum APIG for value: "APIG"
+         */
+        public static final TriggerTypeEnum APIG = new TriggerTypeEnum("APIG");
+
+        /**
+         * Enum APIG_DE for value: "APIG_DE"
+         */
+        public static final TriggerTypeEnum APIG_DE = new TriggerTypeEnum("APIG_DE");
 
         /**
          * Enum OBS for value: "OBS"
@@ -41,6 +56,9 @@ public class Trigger {
         private static Map<String, TriggerTypeEnum> createStaticFields() {
             Map<String, TriggerTypeEnum> map = new HashMap<>();
             map.put("FLOWTIMER", FLOWTIMER);
+            map.put("SMN", SMN);
+            map.put("APIG", APIG);
+            map.put("APIG_DE", APIG_DE);
             map.put("OBS", OBS);
             return Collections.unmodifiableMap(map);
         }
@@ -136,7 +154,7 @@ public class Trigger {
     }
 
     /**
-     * 触发器类型
+     * 触发器类型 FLOWTIMER：定时触发器 SMN：SMN触发器 APIG：APIG触发器(共享版) APIG_DE：APIG触发器(专享版) OBS：OBS触发器
      * @return triggerType
      */
     public TriggerTypeEnum getTriggerType() {
@@ -153,7 +171,7 @@ public class Trigger {
     }
 
     /**
-     * 是否启用
+     * 是否启用触发器
      * @return enabled
      */
     public Boolean getEnabled() {

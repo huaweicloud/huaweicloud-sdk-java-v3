@@ -16,6 +16,16 @@ public class ListNotificationRequest {
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Integer offset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_id")
 
     private String appId;
@@ -35,6 +45,44 @@ public class ListNotificationRequest {
 
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
+    }
+
+    public ListNotificationRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * 每页显示条目数量，最大数量999，超过999后只返回999
+     * minimum: 0
+     * maximum: 999
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
+    public ListNotificationRequest withOffset(Integer offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /**
+     * 分页查询，分页的偏移量，表示从此偏移量开始查询，偏移量小于0时，自动转换为0
+     * minimum: 0
+     * maximum: 999999
+     * @return offset
+     */
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
     }
 
     public ListNotificationRequest withAppId(String appId) {
@@ -64,12 +112,14 @@ public class ListNotificationRequest {
         }
         ListNotificationRequest listNotificationRequest = (ListNotificationRequest) o;
         return Objects.equals(this.instanceId, listNotificationRequest.instanceId)
+            && Objects.equals(this.limit, listNotificationRequest.limit)
+            && Objects.equals(this.offset, listNotificationRequest.offset)
             && Objects.equals(this.appId, listNotificationRequest.appId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, appId);
+        return Objects.hash(instanceId, limit, offset, appId);
     }
 
     @Override
@@ -77,6 +127,8 @@ public class ListNotificationRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListNotificationRequest {\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
         sb.append("}");
         return sb.toString();

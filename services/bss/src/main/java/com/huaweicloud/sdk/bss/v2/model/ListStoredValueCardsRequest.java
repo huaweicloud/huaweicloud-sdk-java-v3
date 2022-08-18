@@ -55,7 +55,7 @@ public class ListStoredValueCardsRequest {
     }
 
     /**
-     * 储值卡ID。
+     * 储值卡ID。此参数不携带或携带值为空时，不作为筛选条件。
      * @return cardId
      */
     public String getCardId() {

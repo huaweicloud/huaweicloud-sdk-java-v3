@@ -74,6 +74,41 @@ public class GaussDBforNoSQLMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CheckDisasterRecoveryOperationRequest, CheckDisasterRecoveryOperationResponse> checkDisasterRecoveryOperation =
+        genForcheckDisasterRecoveryOperation();
+
+    private static HttpRequestDef<CheckDisasterRecoveryOperationRequest, CheckDisasterRecoveryOperationResponse> genForcheckDisasterRecoveryOperation() {
+        // basic
+        HttpRequestDef.Builder<CheckDisasterRecoveryOperationRequest, CheckDisasterRecoveryOperationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CheckDisasterRecoveryOperationRequest.class,
+                    CheckDisasterRecoveryOperationResponse.class)
+                .withName("CheckDisasterRecoveryOperation")
+                .withUri("/v3/{project_id}/instances/{instance_id}/disaster-recovery/precheck")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckDisasterRecoveryOperationRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<PrecheckDisasterRecoveryOperationBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PrecheckDisasterRecoveryOperationBody.class),
+            f -> f.withMarshaller(CheckDisasterRecoveryOperationRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateConfigurationRequest, CreateConfigurationResponse> createConfiguration =
         genForcreateConfiguration();
 
@@ -91,6 +126,38 @@ public class GaussDBforNoSQLMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateConfigurationRequestBody.class),
             f -> f.withMarshaller(CreateConfigurationRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateDisasterRecoveryRequest, CreateDisasterRecoveryResponse> createDisasterRecovery =
+        genForcreateDisasterRecovery();
+
+    private static HttpRequestDef<CreateDisasterRecoveryRequest, CreateDisasterRecoveryResponse> genForcreateDisasterRecovery() {
+        // basic
+        HttpRequestDef.Builder<CreateDisasterRecoveryRequest, CreateDisasterRecoveryResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateDisasterRecoveryRequest.class, CreateDisasterRecoveryResponse.class)
+            .withName("CreateDisasterRecovery")
+            .withUri("/v3/{project_id}/instances/{instance_id}/disaster-recovery/construction")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDisasterRecoveryRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<ConstructDisasterRecoveryBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ConstructDisasterRecoveryBody.class),
+            f -> f.withMarshaller(CreateDisasterRecoveryRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -142,6 +209,31 @@ public class GaussDBforNoSQLMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteConfigurationRequest::getConfigId, (req, v) -> {
                 req.setConfigId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDisasterRecoveryRequest, DeleteDisasterRecoveryResponse> deleteDisasterRecovery =
+        genFordeleteDisasterRecovery();
+
+    private static HttpRequestDef<DeleteDisasterRecoveryRequest, DeleteDisasterRecoveryResponse> genFordeleteDisasterRecovery() {
+        // basic
+        HttpRequestDef.Builder<DeleteDisasterRecoveryRequest, DeleteDisasterRecoveryResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, DeleteDisasterRecoveryRequest.class, DeleteDisasterRecoveryResponse.class)
+            .withName("DeleteDisasterRecovery")
+            .withUri("/v3/{project_id}/instances/{instance_id}/disaster-recovery/deconstruction")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDisasterRecoveryRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
             }));
 
         // response

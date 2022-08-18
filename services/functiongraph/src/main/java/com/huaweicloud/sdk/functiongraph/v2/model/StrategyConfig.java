@@ -26,7 +26,7 @@ public class StrategyConfig {
     }
 
     /**
-     * 0：函数被禁用;-1：函数被启用。
+     * 单函数最大实例数，v1取值0和-1，v2取值-1到1000
      * @return concurrency
      */
     public Integer getConcurrency() {
@@ -43,7 +43,7 @@ public class StrategyConfig {
     }
 
     /**
-     * 函数并发数
+     * 单实例最大并发数，v2版本才支持，取值-1到200000
      * @return concurrentNum
      */
     public Integer getConcurrentNum() {

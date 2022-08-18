@@ -75,7 +75,7 @@ public class QueryResourcesReq {
     }
 
     /**
-     * 资源ID列表。 查询指定资源ID的资源（当only_main_resource=0时，查询指定资源及其附属资源）。最大支持50个ID同时作为条件查询，多个ID以英文逗号分隔。  说明： 资源ID是指开通资源以后，云服务针对该资源分配的标志，譬如云主机ECS的资源ID是server_id。
+     * 资源ID列表。 查询指定资源ID的资源（当only_main_resource=0时，查询指定资源及其附属资源）。最大支持50个ID同时作为条件查询。 此参数不携带或携带值为空列表时，不作为筛选条件，返回其他条件匹配的记录。  说明： 资源ID是指开通资源以后，云服务针对该资源分配的标志，譬如云主机ECS的资源ID是server_id。
      * @return resourceIds
      */
     public List<String> getResourceIds() {
@@ -92,7 +92,7 @@ public class QueryResourcesReq {
     }
 
     /**
-     * 订单号。查询指定订单下的资源。  说明： 使用特殊字符进行查询的时候，请注意进行URL编码转换，如“%”的转码应为“%25”。
+     * 订单号。查询指定订单下的资源。 此参数不携带或携带值为空串或携带值为null时，不作为筛选条件，返回其他条件匹配的记录。  说明： 使用特殊字符进行查询的时候，请注意进行URL编码转换，如“%”的转码应为“%25”。
      * @return orderId
      */
     public String getOrderId() {
@@ -144,7 +144,7 @@ public class QueryResourcesReq {
     }
 
     /**
-     * 资源状态。 查询指定状态的资源。多个状态以英文逗号分隔。 2：使用中4：已冻结5：已过期
+     * 资源状态。 查询指定状态的资源。多个状态以英文逗号分隔。 2：使用中4：已冻结5：已过期 此参数不携带或携带值为空列表时，不作为筛选条件，返回所有状态的资源列表。
      * @return statusList
      */
     public List<Integer> getStatusList() {
@@ -199,7 +199,7 @@ public class QueryResourcesReq {
     }
 
     /**
-     * 查询指定时间段内失效的资源列表，时间段的起始时间，UTC时间。
+     * 查询指定时间段内失效的资源列表，时间段的起始时间，UTC时间。 此参数不携带或携带值为空串或携带值为null时，不作为筛选条件，返回其他条件匹配的记录。
      * @return expireTimeBegin
      */
     public String getExpireTimeBegin() {
@@ -216,7 +216,7 @@ public class QueryResourcesReq {
     }
 
     /**
-     * 查询指定时间段内失效的资源列表，时间段的结束时间，UTC时间。
+     * 查询指定时间段内失效的资源列表，时间段的结束时间，UTC时间。 此参数不携带或携带值为空串或携带值为null时，不作为筛选条件，返回其他条件匹配的记录。
      * @return expireTimeEnd
      */
     public String getExpireTimeEnd() {

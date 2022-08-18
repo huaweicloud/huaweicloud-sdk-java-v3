@@ -16,14 +16,14 @@ public class IssueDetailCustomField {
     private String customField;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "value")
-
-    private String value;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "field_name")
 
     private String fieldName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "value")
+
+    private String value;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "field_type")
@@ -52,23 +52,6 @@ public class IssueDetailCustomField {
         this.customField = customField;
     }
 
-    public IssueDetailCustomField withValue(String value) {
-        this.value = value;
-        return this;
-    }
-
-    /**
-     * 自定义属性对应的值，多个值以英文逗号区分开
-     * @return value
-     */
-    public String getValue() {
-        return value;
-    }
-
-    public void setValue(String value) {
-        this.value = value;
-    }
-
     public IssueDetailCustomField withFieldName(String fieldName) {
         this.fieldName = fieldName;
         return this;
@@ -84,6 +67,23 @@ public class IssueDetailCustomField {
 
     public void setFieldName(String fieldName) {
         this.fieldName = fieldName;
+    }
+
+    public IssueDetailCustomField withValue(String value) {
+        this.value = value;
+        return this;
+    }
+
+    /**
+     * 自定义属性对应的值，多个值以英文逗号区分开
+     * @return value
+     */
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
     }
 
     public IssueDetailCustomField withFieldType(String fieldType) {
@@ -130,15 +130,15 @@ public class IssueDetailCustomField {
         }
         IssueDetailCustomField issueDetailCustomField = (IssueDetailCustomField) o;
         return Objects.equals(this.customField, issueDetailCustomField.customField)
-            && Objects.equals(this.value, issueDetailCustomField.value)
             && Objects.equals(this.fieldName, issueDetailCustomField.fieldName)
+            && Objects.equals(this.value, issueDetailCustomField.value)
             && Objects.equals(this.fieldType, issueDetailCustomField.fieldType)
             && Objects.equals(this.description, issueDetailCustomField.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(customField, value, fieldName, fieldType, description);
+        return Objects.hash(customField, fieldName, value, fieldType, description);
     }
 
     @Override
@@ -146,8 +146,8 @@ public class IssueDetailCustomField {
         StringBuilder sb = new StringBuilder();
         sb.append("class IssueDetailCustomField {\n");
         sb.append("    customField: ").append(toIndentedString(customField)).append("\n");
-        sb.append("    value: ").append(toIndentedString(value)).append("\n");
         sb.append("    fieldName: ").append(toIndentedString(fieldName)).append("\n");
+        sb.append("    value: ").append(toIndentedString(value)).append("\n");
         sb.append("    fieldType: ").append(toIndentedString(fieldType)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");

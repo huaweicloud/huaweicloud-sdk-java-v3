@@ -532,6 +532,21 @@ public class ShowFunctionConfigResponse extends SdkResponse {
 
     private Boolean enableDynamicMemory;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_stateful_function")
+
+    private Boolean isStatefulFunction;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_auth_in_header")
+
+    private Boolean enableAuthInHeader;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "custom_image")
+
+    private CustomImage customImage;
+
     public ShowFunctionConfigResponse withFuncUrn(String funcUrn) {
         this.funcUrn = funcUrn;
         return this;
@@ -1220,6 +1235,66 @@ public class ShowFunctionConfigResponse extends SdkResponse {
         this.enableDynamicMemory = enableDynamicMemory;
     }
 
+    public ShowFunctionConfigResponse withIsStatefulFunction(Boolean isStatefulFunction) {
+        this.isStatefulFunction = isStatefulFunction;
+        return this;
+    }
+
+    /**
+     * 是否支持有状态，如果需要支持，需要固定传参为true，v2版本支持
+     * @return isStatefulFunction
+     */
+    public Boolean getIsStatefulFunction() {
+        return isStatefulFunction;
+    }
+
+    public void setIsStatefulFunction(Boolean isStatefulFunction) {
+        this.isStatefulFunction = isStatefulFunction;
+    }
+
+    public ShowFunctionConfigResponse withEnableAuthInHeader(Boolean enableAuthInHeader) {
+        this.enableAuthInHeader = enableAuthInHeader;
+        return this;
+    }
+
+    /**
+     * 是否允许在请求头中添加鉴权信息
+     * @return enableAuthInHeader
+     */
+    public Boolean getEnableAuthInHeader() {
+        return enableAuthInHeader;
+    }
+
+    public void setEnableAuthInHeader(Boolean enableAuthInHeader) {
+        this.enableAuthInHeader = enableAuthInHeader;
+    }
+
+    public ShowFunctionConfigResponse withCustomImage(CustomImage customImage) {
+        this.customImage = customImage;
+        return this;
+    }
+
+    public ShowFunctionConfigResponse withCustomImage(Consumer<CustomImage> customImageSetter) {
+        if (this.customImage == null) {
+            this.customImage = new CustomImage();
+            customImageSetter.accept(this.customImage);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get customImage
+     * @return customImage
+     */
+    public CustomImage getCustomImage() {
+        return customImage;
+    }
+
+    public void setCustomImage(CustomImage customImage) {
+        this.customImage = customImage;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -1265,7 +1340,10 @@ public class ShowFunctionConfigResponse extends SdkResponse {
             && Objects.equals(this.logGroupId, showFunctionConfigResponse.logGroupId)
             && Objects.equals(this.logStreamId, showFunctionConfigResponse.logStreamId)
             && Objects.equals(this.type, showFunctionConfigResponse.type)
-            && Objects.equals(this.enableDynamicMemory, showFunctionConfigResponse.enableDynamicMemory);
+            && Objects.equals(this.enableDynamicMemory, showFunctionConfigResponse.enableDynamicMemory)
+            && Objects.equals(this.isStatefulFunction, showFunctionConfigResponse.isStatefulFunction)
+            && Objects.equals(this.enableAuthInHeader, showFunctionConfigResponse.enableAuthInHeader)
+            && Objects.equals(this.customImage, showFunctionConfigResponse.customImage);
     }
 
     @Override
@@ -1306,7 +1384,10 @@ public class ShowFunctionConfigResponse extends SdkResponse {
             logGroupId,
             logStreamId,
             type,
-            enableDynamicMemory);
+            enableDynamicMemory,
+            isStatefulFunction,
+            enableAuthInHeader,
+            customImage);
     }
 
     @Override
@@ -1350,6 +1431,9 @@ public class ShowFunctionConfigResponse extends SdkResponse {
         sb.append("    logStreamId: ").append(toIndentedString(logStreamId)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    enableDynamicMemory: ").append(toIndentedString(enableDynamicMemory)).append("\n");
+        sb.append("    isStatefulFunction: ").append(toIndentedString(isStatefulFunction)).append("\n");
+        sb.append("    enableAuthInHeader: ").append(toIndentedString(enableAuthInHeader)).append("\n");
+        sb.append("    customImage: ").append(toIndentedString(customImage)).append("\n");
         sb.append("}");
         return sb.toString();
     }

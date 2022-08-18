@@ -78,6 +78,12 @@ public class FunctionGraphMeta {
 
         // response
 
+        builder.<String>withResponseField("Content-Type",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(AsyncInvokeReservedFunctionResponse::getContentType,
+                AsyncInvokeReservedFunctionResponse::setContentType));
         return builder.build();
     }
 
@@ -121,10 +127,10 @@ public class FunctionGraphMeta {
             .withContentType("application/json");
 
         // requests
-        builder.<BatchDeleteWorkflowsRequestBody>withRequestField("body",
+        builder.<WorkflowDeleteBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(BatchDeleteWorkflowsRequestBody.class),
+            TypeCasts.uncheckedConversion(WorkflowDeleteBody.class),
             f -> f.withMarshaller(BatchDeleteWorkflowsRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
@@ -355,10 +361,10 @@ public class FunctionGraphMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<CreateWorkflowRequestBody>withRequestField("body",
+        builder.<WorkflowCreateBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreateWorkflowRequestBody.class),
+            TypeCasts.uncheckedConversion(WorkflowCreateBody.class),
             f -> f.withMarshaller(CreateWorkflowRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
@@ -404,19 +410,19 @@ public class FunctionGraphMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("event_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEventRequest::getEventId, (req, v) -> {
-                req.setEventId(v);
-            }));
         builder.<String>withRequestField("function_urn",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteEventRequest::getFunctionUrn, (req, v) -> {
                 req.setFunctionUrn(v);
+            }));
+        builder.<String>withRequestField("event_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteEventRequest::getEventId, (req, v) -> {
+                req.setEventId(v);
             }));
 
         // response
@@ -599,10 +605,10 @@ public class FunctionGraphMeta {
             f -> f.withMarshaller(ExportFunctionRequest::getCode, (req, v) -> {
                 req.setCode(v);
             }));
-        builder.<ExportFunctionRequest.TypeEnum>withRequestField("type",
+        builder.<String>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ExportFunctionRequest.TypeEnum.class),
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ExportFunctionRequest::getType, (req, v) -> {
                 req.setType(v);
             }));
@@ -683,6 +689,73 @@ public class FunctionGraphMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListAsyncInvocationsRequest, ListAsyncInvocationsResponse> listAsyncInvocations =
+        genForlistAsyncInvocations();
+
+    private static HttpRequestDef<ListAsyncInvocationsRequest, ListAsyncInvocationsResponse> genForlistAsyncInvocations() {
+        // basic
+        HttpRequestDef.Builder<ListAsyncInvocationsRequest, ListAsyncInvocationsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListAsyncInvocationsRequest.class, ListAsyncInvocationsResponse.class)
+            .withName("ListAsyncInvocations")
+            .withUri("/v2/{project_id}/fgs/functions/{function_urn}/async-invocations")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("function_urn",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAsyncInvocationsRequest::getFunctionUrn, (req, v) -> {
+                req.setFunctionUrn(v);
+            }));
+        builder.<String>withRequestField("request_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAsyncInvocationsRequest::getRequestId, (req, v) -> {
+                req.setRequestId(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAsyncInvocationsRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAsyncInvocationsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAsyncInvocationsRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            }));
+        builder.<OffsetDateTime>withRequestField("query_begin_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(OffsetDateTime.class),
+            f -> f.withMarshaller(ListAsyncInvocationsRequest::getQueryBeginTime, (req, v) -> {
+                req.setQueryBeginTime(v);
+            }));
+        builder.<OffsetDateTime>withRequestField("query_end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(OffsetDateTime.class),
+            f -> f.withMarshaller(ListAsyncInvocationsRequest::getQueryEndTime, (req, v) -> {
+                req.setQueryEndTime(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListDependenciesRequest, ListDependenciesResponse> listDependencies =
         genForlistDependencies();
 
@@ -695,17 +768,38 @@ public class FunctionGraphMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<ListDependenciesRequest.DependencyTypeEnum>withRequestField("dependency_type",
+        builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListDependenciesRequest.DependencyTypeEnum.class),
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDependenciesRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+        builder.<String>withRequestField("maxitems",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDependenciesRequest::getMaxitems, (req, v) -> {
+                req.setMaxitems(v);
+            }));
+        builder.<String>withRequestField("ispublic",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDependenciesRequest::getIspublic, (req, v) -> {
+                req.setIspublic(v);
+            }));
+        builder.<String>withRequestField("dependency_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDependenciesRequest::getDependencyType, (req, v) -> {
                 req.setDependencyType(v);
             }));
-        builder.<ListDependenciesRequest.RuntimeEnum>withRequestField("runtime",
+        builder.<String>withRequestField("runtime",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListDependenciesRequest.RuntimeEnum.class),
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDependenciesRequest::getRuntime, (req, v) -> {
                 req.setRuntime(v);
             }));
@@ -715,13 +809,6 @@ public class FunctionGraphMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDependenciesRequest::getName, (req, v) -> {
                 req.setName(v);
-            }));
-        builder.<String>withRequestField("marker",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDependenciesRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
             }));
         builder.<String>withRequestField("limit",
             LocationType.Query,
@@ -753,76 +840,6 @@ public class FunctionGraphMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListEventsRequest::getFunctionUrn, (req, v) -> {
                 req.setFunctionUrn(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListFunctionAsyncInvocationsRequest, ListFunctionAsyncInvocationsResponse> listFunctionAsyncInvocations =
-        genForlistFunctionAsyncInvocations();
-
-    private static HttpRequestDef<ListFunctionAsyncInvocationsRequest, ListFunctionAsyncInvocationsResponse> genForlistFunctionAsyncInvocations() {
-        // basic
-        HttpRequestDef.Builder<ListFunctionAsyncInvocationsRequest, ListFunctionAsyncInvocationsResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.GET,
-                    ListFunctionAsyncInvocationsRequest.class,
-                    ListFunctionAsyncInvocationsResponse.class)
-                .withName("ListFunctionAsyncInvocations")
-                .withUri("/v2/{project_id}/fgs/functions/{function_urn}/async-invocations")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("function_urn",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFunctionAsyncInvocationsRequest::getFunctionUrn, (req, v) -> {
-                req.setFunctionUrn(v);
-            }));
-        builder.<String>withRequestField("request_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFunctionAsyncInvocationsRequest::getRequestId, (req, v) -> {
-                req.setRequestId(v);
-            }));
-        builder.<String>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFunctionAsyncInvocationsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
-        builder.<String>withRequestField("marker",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFunctionAsyncInvocationsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
-        builder.<ListFunctionAsyncInvocationsRequest.StatusEnum>withRequestField("status",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListFunctionAsyncInvocationsRequest.StatusEnum.class),
-            f -> f.withMarshaller(ListFunctionAsyncInvocationsRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
-        builder.<OffsetDateTime>withRequestField("query_begin_time",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(OffsetDateTime.class),
-            f -> f.withMarshaller(ListFunctionAsyncInvocationsRequest::getQueryBeginTime, (req, v) -> {
-                req.setQueryBeginTime(v);
-            }));
-        builder.<OffsetDateTime>withRequestField("query_end_time",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(OffsetDateTime.class),
-            f -> f.withMarshaller(ListFunctionAsyncInvocationsRequest::getQueryEndTime, (req, v) -> {
-                req.setQueryEndTime(v);
             }));
 
         // response
@@ -891,10 +908,10 @@ public class FunctionGraphMeta {
             f -> f.withMarshaller(ListFunctionStatisticsRequest::getFuncUrn, (req, v) -> {
                 req.setFuncUrn(v);
             }));
-        builder.<ListFunctionStatisticsRequest.PeriodEnum>withRequestField("period",
+        builder.<String>withRequestField("period",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ListFunctionStatisticsRequest.PeriodEnum.class),
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListFunctionStatisticsRequest::getPeriod, (req, v) -> {
                 req.setPeriod(v);
             }));
@@ -1058,10 +1075,10 @@ public class FunctionGraphMeta {
             f -> f.withMarshaller(ListStatisticsRequest::getPeriod, (req, v) -> {
                 req.setPeriod(v);
             }));
-        builder.<ListStatisticsRequest.OptionEnum>withRequestField("option",
+        builder.<String>withRequestField("option",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListStatisticsRequest.OptionEnum.class),
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListStatisticsRequest::getOption, (req, v) -> {
                 req.setOption(v);
             }));
@@ -1100,6 +1117,58 @@ public class FunctionGraphMeta {
             f -> f.withMarshaller(ListVersionAliasesResponse::getBody, (response, data) -> {
                 response.setBody(data);
             }).withInnerContainerType(ListVersionAliasResult.class));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListWorkflowRequest, ListWorkflowResponse> listWorkflow = genForlistWorkflow();
+
+    private static HttpRequestDef<ListWorkflowRequest, ListWorkflowResponse> genForlistWorkflow() {
+        // basic
+        HttpRequestDef.Builder<ListWorkflowRequest, ListWorkflowResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListWorkflowRequest.class, ListWorkflowResponse.class)
+                .withName("ListWorkflow")
+                .withUri("/v2/{project_id}/fgs/workflows")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workflow_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWorkflowRequest::getWorkflowName, (req, v) -> {
+                req.setWorkflowName(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListWorkflowRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListWorkflowRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<String>withRequestField("enterprise_project",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWorkflowRequest::getEnterpriseProject, (req, v) -> {
+                req.setEnterpriseProject(v);
+            }));
+        builder.<String>withRequestField("mode",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWorkflowRequest::getMode, (req, v) -> {
+                req.setMode(v);
+            }));
+
+        // response
 
         return builder.build();
     }
@@ -1157,45 +1226,6 @@ public class FunctionGraphMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListWorkflowsRequest, ListWorkflowsResponse> listWorkflows =
-        genForlistWorkflows();
-
-    private static HttpRequestDef<ListWorkflowsRequest, ListWorkflowsResponse> genForlistWorkflows() {
-        // basic
-        HttpRequestDef.Builder<ListWorkflowsRequest, ListWorkflowsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListWorkflowsRequest.class, ListWorkflowsResponse.class)
-                .withName("ListWorkflows")
-                .withUri("/v2/{project_id}/fgs/workflows")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("workflow_name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListWorkflowsRequest::getWorkflowName, (req, v) -> {
-                req.setWorkflowName(v);
-            }));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListWorkflowsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListWorkflowsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<RetryWorkFlowRequest, RetryWorkFlowResponse> retryWorkFlow =
         genForretryWorkFlow();
 
@@ -1228,14 +1258,13 @@ public class FunctionGraphMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowDependencyRequest, ShowDependencyResponse> showDependency =
-        genForshowDependency();
+    public static final HttpRequestDef<ShowDependcyRequest, ShowDependcyResponse> showDependcy = genForshowDependcy();
 
-    private static HttpRequestDef<ShowDependencyRequest, ShowDependencyResponse> genForshowDependency() {
+    private static HttpRequestDef<ShowDependcyRequest, ShowDependcyResponse> genForshowDependcy() {
         // basic
-        HttpRequestDef.Builder<ShowDependencyRequest, ShowDependencyResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowDependencyRequest.class, ShowDependencyResponse.class)
-                .withName("ShowDependency")
+        HttpRequestDef.Builder<ShowDependcyRequest, ShowDependcyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDependcyRequest.class, ShowDependcyResponse.class)
+                .withName("ShowDependcy")
                 .withUri("/v2/{project_id}/fgs/dependencies/{depend_id}")
                 .withContentType("application/json");
 
@@ -1244,7 +1273,7 @@ public class FunctionGraphMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDependencyRequest::getDependId, (req, v) -> {
+            f -> f.withMarshaller(ShowDependcyRequest::getDependId, (req, v) -> {
                 req.setDependId(v);
             }));
 
@@ -1264,19 +1293,19 @@ public class FunctionGraphMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("event_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEventRequest::getEventId, (req, v) -> {
-                req.setEventId(v);
-            }));
         builder.<String>withRequestField("function_urn",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowEventRequest::getFunctionUrn, (req, v) -> {
                 req.setFunctionUrn(v);
+            }));
+        builder.<String>withRequestField("event_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowEventRequest::getEventId, (req, v) -> {
+                req.setEventId(v);
             }));
 
         // response
@@ -1617,6 +1646,13 @@ public class FunctionGraphMeta {
             f -> f.withMarshaller(ShowWorkflowExecutionRequest::getExecutionId, (req, v) -> {
                 req.setExecutionId(v);
             }));
+        builder.<Boolean>withRequestField("X-Get-Workflow-Full-History-Data",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ShowWorkflowExecutionRequest::getXGetWorkflowFullHistoryData, (req, v) -> {
+                req.setXGetWorkflowFullHistoryData(v);
+            }));
 
         // response
 
@@ -1645,10 +1681,10 @@ public class FunctionGraphMeta {
             f -> f.withMarshaller(StartSyncWorkflowExecutionRequest::getWorkflowId, (req, v) -> {
                 req.setWorkflowId(v);
             }));
-        builder.<StartSyncWorkflowExecutionRequestBody>withRequestField("body",
+        builder.<FlowExecuteBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(StartSyncWorkflowExecutionRequestBody.class),
+            TypeCasts.uncheckedConversion(FlowExecuteBody.class),
             f -> f.withMarshaller(StartSyncWorkflowExecutionRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
@@ -1691,10 +1727,17 @@ public class FunctionGraphMeta {
             f -> f.withMarshaller(StartWorkflowExecutionRequest::getXWorkflowRunID, (req, v) -> {
                 req.setXWorkflowRunID(v);
             }));
-        builder.<StartWorkflowExecutionRequestBody>withRequestField("body",
+        builder.<String>withRequestField("X-WorkflowRun-MergeFnParameters",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartWorkflowExecutionRequest::getXWorkflowRunMergeFnParameters, (req, v) -> {
+                req.setXWorkflowRunMergeFnParameters(v);
+            }));
+        builder.<FlowExecuteBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(StartWorkflowExecutionRequestBody.class),
+            TypeCasts.uncheckedConversion(FlowExecuteBody.class),
             f -> f.withMarshaller(StartWorkflowExecutionRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
@@ -1735,14 +1778,14 @@ public class FunctionGraphMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateDependencyRequest, UpdateDependencyResponse> updateDependency =
-        genForupdateDependency();
+    public static final HttpRequestDef<UpdateDependcyRequest, UpdateDependcyResponse> updateDependcy =
+        genForupdateDependcy();
 
-    private static HttpRequestDef<UpdateDependencyRequest, UpdateDependencyResponse> genForupdateDependency() {
+    private static HttpRequestDef<UpdateDependcyRequest, UpdateDependcyResponse> genForupdateDependcy() {
         // basic
-        HttpRequestDef.Builder<UpdateDependencyRequest, UpdateDependencyResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, UpdateDependencyRequest.class, UpdateDependencyResponse.class)
-                .withName("UpdateDependency")
+        HttpRequestDef.Builder<UpdateDependcyRequest, UpdateDependcyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateDependcyRequest.class, UpdateDependcyResponse.class)
+                .withName("UpdateDependcy")
                 .withUri("/v2/{project_id}/fgs/dependencies/{depend_id}")
                 .withContentType("application/json");
 
@@ -1751,14 +1794,14 @@ public class FunctionGraphMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDependencyRequest::getDependId, (req, v) -> {
+            f -> f.withMarshaller(UpdateDependcyRequest::getDependId, (req, v) -> {
                 req.setDependId(v);
             }));
         builder.<UpdateDependencyRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateDependencyRequestBody.class),
-            f -> f.withMarshaller(UpdateDependencyRequest::getBody, (req, v) -> {
+            f -> f.withMarshaller(UpdateDependcyRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -1778,19 +1821,19 @@ public class FunctionGraphMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("event_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEventRequest::getEventId, (req, v) -> {
-                req.setEventId(v);
-            }));
         builder.<String>withRequestField("function_urn",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateEventRequest::getFunctionUrn, (req, v) -> {
                 req.setFunctionUrn(v);
+            }));
+        builder.<String>withRequestField("event_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateEventRequest::getEventId, (req, v) -> {
+                req.setEventId(v);
             }));
         builder.<UpdateEventRequestBody>withRequestField("body",
             LocationType.Body,
@@ -1939,17 +1982,17 @@ public class FunctionGraphMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateFunctionReservedInstancesRequest, UpdateFunctionReservedInstancesResponse> updateFunctionReservedInstances =
-        genForupdateFunctionReservedInstances();
+    public static final HttpRequestDef<UpdateFunctionReservedInstancesCountRequest, UpdateFunctionReservedInstancesCountResponse> updateFunctionReservedInstancesCount =
+        genForupdateFunctionReservedInstancesCount();
 
-    private static HttpRequestDef<UpdateFunctionReservedInstancesRequest, UpdateFunctionReservedInstancesResponse> genForupdateFunctionReservedInstances() {
+    private static HttpRequestDef<UpdateFunctionReservedInstancesCountRequest, UpdateFunctionReservedInstancesCountResponse> genForupdateFunctionReservedInstancesCount() {
         // basic
-        HttpRequestDef.Builder<UpdateFunctionReservedInstancesRequest, UpdateFunctionReservedInstancesResponse> builder =
+        HttpRequestDef.Builder<UpdateFunctionReservedInstancesCountRequest, UpdateFunctionReservedInstancesCountResponse> builder =
             HttpRequestDef
                 .builder(HttpMethod.PUT,
-                    UpdateFunctionReservedInstancesRequest.class,
-                    UpdateFunctionReservedInstancesResponse.class)
-                .withName("UpdateFunctionReservedInstances")
+                    UpdateFunctionReservedInstancesCountRequest.class,
+                    UpdateFunctionReservedInstancesCountResponse.class)
+                .withName("UpdateFunctionReservedInstancesCount")
                 .withUri("/v2/{project_id}/fgs/functions/{function_urn}/reservedinstances")
                 .withContentType("application/json");
 
@@ -1958,14 +2001,14 @@ public class FunctionGraphMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateFunctionReservedInstancesRequest::getFunctionUrn, (req, v) -> {
+            f -> f.withMarshaller(UpdateFunctionReservedInstancesCountRequest::getFunctionUrn, (req, v) -> {
                 req.setFunctionUrn(v);
             }));
-        builder.<UpdateFunctionReservedInstancesRequestBody>withRequestField("body",
+        builder.<UpdateFunctionReservedInstancesCountRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(UpdateFunctionReservedInstancesRequestBody.class),
-            f -> f.withMarshaller(UpdateFunctionReservedInstancesRequest::getBody, (req, v) -> {
+            TypeCasts.uncheckedConversion(UpdateFunctionReservedInstancesCountRequestBody.class),
+            f -> f.withMarshaller(UpdateFunctionReservedInstancesCountRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -2110,10 +2153,10 @@ public class FunctionGraphMeta {
             f -> f.withMarshaller(UpdateWorkFlowRequest::getWorkflowId, (req, v) -> {
                 req.setWorkflowId(v);
             }));
-        builder.<UpdateWorkflowRequestBody>withRequestField("body",
+        builder.<WorkflowCreateBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(UpdateWorkflowRequestBody.class),
+            TypeCasts.uncheckedConversion(WorkflowCreateBody.class),
             f -> f.withMarshaller(UpdateWorkFlowRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));

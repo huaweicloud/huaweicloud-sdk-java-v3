@@ -46,7 +46,7 @@ public class ListEnterpriseSubCustomersRequest {
     }
 
     /**
-     * 企业子账号的账号名。根据fuzzy_query取值决定是否按模糊查询。
+     * 企业子账号的账号名。根据fuzzy_query取值决定是否按模糊查询。此参数不携带或携带值为空时，不作为筛选条件；携带值为空串时，作为筛选条件。
      * @return subCustomerAccountName
      */
     public String getSubCustomerAccountName() {
@@ -63,7 +63,7 @@ public class ListEnterpriseSubCustomersRequest {
     }
 
     /**
-     * 企业子账号的显示名称。不限制特殊字符。根据fuzzy_query取值决定是否按模糊查询。
+     * 企业子账号的显示名称。不限制特殊字符。根据fuzzy_query取值决定是否按模糊查询。此参数不携带或携带值为空时，不作为筛选条件；携带值为空串时，作为筛选条件。
      * @return subCustomerDisplayName
      */
     public String getSubCustomerDisplayName() {
@@ -80,7 +80,7 @@ public class ListEnterpriseSubCustomersRequest {
     }
 
     /**
-     * 企业子账号的显示名称、用户名是否按模糊查询。0：不按模糊查询1：按模糊查询默认值为0。
+     * 企业子账号的显示名称、用户名是否按模糊查询。默认值为“0：不按模糊查询”。0：不按模糊查询1：按模糊查询
      * minimum: 0
      * maximum: 1
      * @return fuzzyQuery
@@ -137,7 +137,7 @@ public class ListEnterpriseSubCustomersRequest {
     }
 
     /**
-     * 子账号归属的组织单元ID。
+     * 子账号归属的组织单元ID。此参数不携带或携带值为空时，不作为筛选条件。
      * @return orgId
      */
     public String getOrgId() {

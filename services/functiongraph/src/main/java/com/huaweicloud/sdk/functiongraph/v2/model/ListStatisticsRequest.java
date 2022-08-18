@@ -16,7 +16,7 @@ import java.util.Objects;
 public class ListStatisticsRequest {
 
     /**
-     * 参数过滤器。
+     * 参数过滤器。 monitor_data: 查询统计信息。 monthly_report：查询月度统计信息。
      */
     public static final class FilterEnum {
 
@@ -102,99 +102,10 @@ public class ListStatisticsRequest {
 
     private String period;
 
-    /**
-     * 月度统计的维度，filter参数取值为monthly_report时才生效。 - \"0\":表示统计本月。 - \"1\":表示统计上月。 - \"2\":表示统计最近三个月。 - \"3\":表示统计最近六个月。 - 当取值不在以上范围时，默认取\"0”。
-     */
-    public static final class OptionEnum {
-
-        /**
-         * Enum _0 for value: "0"
-         */
-        public static final OptionEnum _0 = new OptionEnum("0");
-
-        /**
-         * Enum _1 for value: "1"
-         */
-        public static final OptionEnum _1 = new OptionEnum("1");
-
-        /**
-         * Enum _2 for value: "2"
-         */
-        public static final OptionEnum _2 = new OptionEnum("2");
-
-        /**
-         * Enum _3 for value: "3"
-         */
-        public static final OptionEnum _3 = new OptionEnum("3");
-
-        private static final Map<String, OptionEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, OptionEnum> createStaticFields() {
-            Map<String, OptionEnum> map = new HashMap<>();
-            map.put("0", _0);
-            map.put("1", _1);
-            map.put("2", _2);
-            map.put("3", _3);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        OptionEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static OptionEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            OptionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OptionEnum(value);
-            }
-            return result;
-        }
-
-        public static OptionEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            OptionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof OptionEnum) {
-                return this.value.equals(((OptionEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "option")
 
-    private OptionEnum option;
+    private String option;
 
     public ListStatisticsRequest withFilter(FilterEnum filter) {
         this.filter = filter;
@@ -202,7 +113,7 @@ public class ListStatisticsRequest {
     }
 
     /**
-     * 参数过滤器。
+     * 参数过滤器。 monitor_data: 查询统计信息。 monthly_report：查询月度统计信息。
      * @return filter
      */
     public FilterEnum getFilter() {
@@ -219,7 +130,7 @@ public class ListStatisticsRequest {
     }
 
     /**
-     * 时间段单位为分钟，与filter参数配合使用。
+     * 时间段单位为分钟，与filter参数metric配合使用。
      * @return period
      */
     public String getPeriod() {
@@ -230,20 +141,20 @@ public class ListStatisticsRequest {
         this.period = period;
     }
 
-    public ListStatisticsRequest withOption(OptionEnum option) {
+    public ListStatisticsRequest withOption(String option) {
         this.option = option;
         return this;
     }
 
     /**
-     * 月度统计的维度，filter参数取值为monthly_report时才生效。 - \"0\":表示统计本月。 - \"1\":表示统计上月。 - \"2\":表示统计最近三个月。 - \"3\":表示统计最近六个月。 - 当取值不在以上范围时，默认取\"0”。
+     * 月度统计的维度，filter参数取值为monthly_report时才生效。 当取值不在以上范围时，默认取\"0\"。 - \"0\": 表示统计本月。 - \"1\": 表示统计上月。 - \"2\": 表示统计最近三个月。 - \"3\": 表示统计最近六个月。
      * @return option
      */
-    public OptionEnum getOption() {
+    public String getOption() {
         return option;
     }
 
-    public void setOption(OptionEnum option) {
+    public void setOption(String option) {
         this.option = option;
     }
 

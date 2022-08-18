@@ -947,6 +947,31 @@ public class EcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListServersByTagRequest, ListServersByTagResponse> listServersByTag =
+        genForlistServersByTag();
+
+    private static HttpRequestDef<ListServersByTagRequest, ListServersByTagResponse> genForlistServersByTag() {
+        // basic
+        HttpRequestDef.Builder<ListServersByTagRequest, ListServersByTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListServersByTagRequest.class, ListServersByTagResponse.class)
+                .withName("ListServersByTag")
+                .withUri("/v1/{project_id}/cloudservers/resource_instances/action")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<ListServersByTagRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListServersByTagRequestBody.class),
+            f -> f.withMarshaller(ListServersByTagRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListServersDetailsRequest, ListServersDetailsResponse> listServersDetails =
         genForlistServersDetails();
 

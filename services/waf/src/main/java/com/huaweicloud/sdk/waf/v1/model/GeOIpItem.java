@@ -16,6 +16,11 @@ public class GeOIpItem {
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "policyid")
+
+    private String policyid;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
     private String name;
@@ -55,6 +60,23 @@ public class GeOIpItem {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public GeOIpItem withPolicyid(String policyid) {
+        this.policyid = policyid;
+        return this;
+    }
+
+    /**
+     * 策略id
+     * @return policyid
+     */
+    public String getPolicyid() {
+        return policyid;
+    }
+
+    public void setPolicyid(String policyid) {
+        this.policyid = policyid;
     }
 
     public GeOIpItem withName(String name) {
@@ -151,14 +173,15 @@ public class GeOIpItem {
             return false;
         }
         GeOIpItem geOIpItem = (GeOIpItem) o;
-        return Objects.equals(this.id, geOIpItem.id) && Objects.equals(this.name, geOIpItem.name)
-            && Objects.equals(this.geoip, geOIpItem.geoip) && Objects.equals(this.white, geOIpItem.white)
-            && Objects.equals(this.status, geOIpItem.status) && Objects.equals(this.timestamp, geOIpItem.timestamp);
+        return Objects.equals(this.id, geOIpItem.id) && Objects.equals(this.policyid, geOIpItem.policyid)
+            && Objects.equals(this.name, geOIpItem.name) && Objects.equals(this.geoip, geOIpItem.geoip)
+            && Objects.equals(this.white, geOIpItem.white) && Objects.equals(this.status, geOIpItem.status)
+            && Objects.equals(this.timestamp, geOIpItem.timestamp);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, geoip, white, status, timestamp);
+        return Objects.hash(id, policyid, name, geoip, white, status, timestamp);
     }
 
     @Override
@@ -166,6 +189,7 @@ public class GeOIpItem {
         StringBuilder sb = new StringBuilder();
         sb.append("class GeOIpItem {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    policyid: ").append(toIndentedString(policyid)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    geoip: ").append(toIndentedString(geoip)).append("\n");
         sb.append("    white: ").append(toIndentedString(white)).append("\n");

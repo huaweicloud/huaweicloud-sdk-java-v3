@@ -66,6 +66,11 @@ public class IdCardResult {
 
     private Object textLocation;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "detect_reproduce_result")
+
+    private Boolean detectReproduceResult;
+
     public IdCardResult withName(String name) {
         this.name = name;
         return this;
@@ -262,6 +267,23 @@ public class IdCardResult {
         this.textLocation = textLocation;
     }
 
+    public IdCardResult withDetectReproduceResult(Boolean detectReproduceResult) {
+        this.detectReproduceResult = detectReproduceResult;
+        return this;
+    }
+
+    /**
+     * 判断身份证图像是否经过翻拍，“true”表示是翻拍，“false”表示未经过翻拍。仅在输入参数detect_reproduce为true时，返回该字段。 
+     * @return detectReproduceResult
+     */
+    public Boolean getDetectReproduceResult() {
+        return detectReproduceResult;
+    }
+
+    public void setDetectReproduceResult(Boolean detectReproduceResult) {
+        this.detectReproduceResult = detectReproduceResult;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -277,7 +299,8 @@ public class IdCardResult {
             && Objects.equals(this.issue, idCardResult.issue) && Objects.equals(this.validFrom, idCardResult.validFrom)
             && Objects.equals(this.validTo, idCardResult.validTo)
             && Objects.equals(this.verificationResult, idCardResult.verificationResult)
-            && Objects.equals(this.textLocation, idCardResult.textLocation);
+            && Objects.equals(this.textLocation, idCardResult.textLocation)
+            && Objects.equals(this.detectReproduceResult, idCardResult.detectReproduceResult);
     }
 
     @Override
@@ -292,7 +315,8 @@ public class IdCardResult {
             validFrom,
             validTo,
             verificationResult,
-            textLocation);
+            textLocation,
+            detectReproduceResult);
     }
 
     @Override
@@ -310,6 +334,7 @@ public class IdCardResult {
         sb.append("    validTo: ").append(toIndentedString(validTo)).append("\n");
         sb.append("    verificationResult: ").append(toIndentedString(verificationResult)).append("\n");
         sb.append("    textLocation: ").append(toIndentedString(textLocation)).append("\n");
+        sb.append("    detectReproduceResult: ").append(toIndentedString(detectReproduceResult)).append("\n");
         sb.append("}");
         return sb.toString();
     }

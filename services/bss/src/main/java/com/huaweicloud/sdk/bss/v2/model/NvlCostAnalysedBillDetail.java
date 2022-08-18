@@ -249,7 +249,7 @@ public class NvlCostAnalysedBillDetail {
     }
 
     /**
-     * 查询分摊成本的月份。 格式为YYYY-MM，按照东八区截取。
+     * 查询分摊成本的月份。 格式为YYYY-MM，按照东八区时间截取。
      * @return sharedMonth
      */
     public String getSharedMonth() {
@@ -266,7 +266,7 @@ public class NvlCostAnalysedBillDetail {
     }
 
     /**
-     * 账期。 格式：YYYY-MM。按照东八区截取。
+     * 账期。 格式：YYYY-MM。按照东八区时间截取。
      * @return billCycle
      */
     public String getBillCycle() {

@@ -14,16 +14,16 @@ public class CreateWorkflowRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private CreateWorkflowRequestBody body;
+    private WorkflowCreateBody body;
 
-    public CreateWorkflowRequest withBody(CreateWorkflowRequestBody body) {
+    public CreateWorkflowRequest withBody(WorkflowCreateBody body) {
         this.body = body;
         return this;
     }
 
-    public CreateWorkflowRequest withBody(Consumer<CreateWorkflowRequestBody> bodySetter) {
+    public CreateWorkflowRequest withBody(Consumer<WorkflowCreateBody> bodySetter) {
         if (this.body == null) {
-            this.body = new CreateWorkflowRequestBody();
+            this.body = new WorkflowCreateBody();
             bodySetter.accept(this.body);
         }
 
@@ -34,11 +34,11 @@ public class CreateWorkflowRequest {
      * Get body
      * @return body
      */
-    public CreateWorkflowRequestBody getBody() {
+    public WorkflowCreateBody getBody() {
         return body;
     }
 
-    public void setBody(CreateWorkflowRequestBody body) {
+    public void setBody(WorkflowCreateBody body) {
         this.body = body;
     }
 

@@ -166,7 +166,7 @@ public class MonthlyBillRes {
     }
 
     /**
-     * 资源详单数据所在账期，格式为YYYY-MM。 例如2020-01。
+     * 资源详单数据所在账期，东八区时间，格式为YYYY-MM。 例如2020-01。
      * @return cycle
      */
     public String getCycle() {
@@ -183,7 +183,7 @@ public class MonthlyBillRes {
     }
 
     /**
-     * 消费日期，格式为YYYY-MM-DD。  说明： 当statistic_type=2时该字段才有值，否则返回null。
+     * 消费日期，东八区时间，格式为YYYY-MM-DD。  说明： 当statistic_type=2时该字段才有值，否则返回null。
      * @return billDate
      */
     public String getBillDate() {

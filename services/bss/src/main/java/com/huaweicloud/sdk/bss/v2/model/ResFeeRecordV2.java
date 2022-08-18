@@ -256,7 +256,7 @@ public class ResFeeRecordV2 {
     }
 
     /**
-     * 资源消费记录的日期。 格式：YYYY-MM-DD。按照东八区截取。
+     * 资源消费记录的日期。 格式：YYYY-MM-DD。按照东八区时间截取。
      * @return billDate
      */
     public String getBillDate() {

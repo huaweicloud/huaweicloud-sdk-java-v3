@@ -77,6 +77,36 @@ public class CreateFunctionTriggerResponse extends SdkResponse {
          */
         public static final TriggerTypeCodeEnum KAFKA = new TriggerTypeCodeEnum("KAFKA");
 
+        /**
+         * Enum RABBITMQ for value: "RABBITMQ"
+         */
+        public static final TriggerTypeCodeEnum RABBITMQ = new TriggerTypeCodeEnum("RABBITMQ");
+
+        /**
+         * Enum DEDICATEDGATEWAY for value: "DEDICATEDGATEWAY"
+         */
+        public static final TriggerTypeCodeEnum DEDICATEDGATEWAY = new TriggerTypeCodeEnum("DEDICATEDGATEWAY");
+
+        /**
+         * Enum OPENSOURCEKAFKA for value: "OPENSOURCEKAFKA"
+         */
+        public static final TriggerTypeCodeEnum OPENSOURCEKAFKA = new TriggerTypeCodeEnum("OPENSOURCEKAFKA");
+
+        /**
+         * Enum APIC for value: "APIC"
+         */
+        public static final TriggerTypeCodeEnum APIC = new TriggerTypeCodeEnum("APIC");
+
+        /**
+         * Enum GAUSSMONGO for value: "GAUSSMONGO"
+         */
+        public static final TriggerTypeCodeEnum GAUSSMONGO = new TriggerTypeCodeEnum("GAUSSMONGO");
+
+        /**
+         * Enum EVENTGRID for value: "EVENTGRID"
+         */
+        public static final TriggerTypeCodeEnum EVENTGRID = new TriggerTypeCodeEnum("EVENTGRID");
+
         private static final Map<String, TriggerTypeCodeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TriggerTypeCodeEnum> createStaticFields() {
@@ -91,6 +121,12 @@ public class CreateFunctionTriggerResponse extends SdkResponse {
             map.put("OBS", OBS);
             map.put("SMN", SMN);
             map.put("KAFKA", KAFKA);
+            map.put("RABBITMQ", RABBITMQ);
+            map.put("DEDICATEDGATEWAY", DEDICATEDGATEWAY);
+            map.put("OPENSOURCEKAFKA", OPENSOURCEKAFKA);
+            map.put("APIC", APIC);
+            map.put("GAUSSMONGO", GAUSSMONGO);
+            map.put("EVENTGRID", EVENTGRID);
             return Collections.unmodifiableMap(map);
         }
 
@@ -153,7 +189,7 @@ public class CreateFunctionTriggerResponse extends SdkResponse {
     private TriggerTypeCodeEnum triggerTypeCode;
 
     /**
-     * \"触发器状态\"  - ACTIVE: 启用状态。 - DISABLED: 禁用状态。
+     * \"触发器状态\"  - ACTIVE: 启用状态。 - DISABLE: 禁用状态。
      */
     public static final class TriggerStatusEnum {
 
@@ -163,16 +199,16 @@ public class CreateFunctionTriggerResponse extends SdkResponse {
         public static final TriggerStatusEnum ACTIVE = new TriggerStatusEnum("ACTIVE");
 
         /**
-         * Enum DISABLED for value: "DISABLED"
+         * Enum DISABLE for value: "DISABLE"
          */
-        public static final TriggerStatusEnum DISABLED = new TriggerStatusEnum("DISABLED");
+        public static final TriggerStatusEnum DISABLE = new TriggerStatusEnum("DISABLE");
 
         private static final Map<String, TriggerStatusEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TriggerStatusEnum> createStaticFields() {
             Map<String, TriggerStatusEnum> map = new HashMap<>();
             map.put("ACTIVE", ACTIVE);
-            map.put("DISABLED", DISABLED);
+            map.put("DISABLE", DISABLE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -289,7 +325,7 @@ public class CreateFunctionTriggerResponse extends SdkResponse {
     }
 
     /**
-     * \"触发器状态\"  - ACTIVE: 启用状态。 - DISABLED: 禁用状态。
+     * \"触发器状态\"  - ACTIVE: 启用状态。 - DISABLE: 禁用状态。
      * @return triggerStatus
      */
     public TriggerStatusEnum getTriggerStatus() {

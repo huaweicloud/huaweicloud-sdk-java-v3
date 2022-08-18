@@ -14,16 +14,16 @@ public class BatchDeleteWorkflowsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private BatchDeleteWorkflowsRequestBody body;
+    private WorkflowDeleteBody body;
 
-    public BatchDeleteWorkflowsRequest withBody(BatchDeleteWorkflowsRequestBody body) {
+    public BatchDeleteWorkflowsRequest withBody(WorkflowDeleteBody body) {
         this.body = body;
         return this;
     }
 
-    public BatchDeleteWorkflowsRequest withBody(Consumer<BatchDeleteWorkflowsRequestBody> bodySetter) {
+    public BatchDeleteWorkflowsRequest withBody(Consumer<WorkflowDeleteBody> bodySetter) {
         if (this.body == null) {
-            this.body = new BatchDeleteWorkflowsRequestBody();
+            this.body = new WorkflowDeleteBody();
             bodySetter.accept(this.body);
         }
 
@@ -34,11 +34,11 @@ public class BatchDeleteWorkflowsRequest {
      * Get body
      * @return body
      */
-    public BatchDeleteWorkflowsRequestBody getBody() {
+    public WorkflowDeleteBody getBody() {
         return body;
     }
 
-    public void setBody(BatchDeleteWorkflowsRequestBody body) {
+    public void setBody(WorkflowDeleteBody body) {
         this.body = body;
     }
 

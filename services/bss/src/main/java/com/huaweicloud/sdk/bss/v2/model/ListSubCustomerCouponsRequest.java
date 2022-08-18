@@ -249,7 +249,7 @@ public class ListSubCustomerCouponsRequest {
     }
 
     /**
-     * 云经销商（二级经销商）ID。华为云总经销商（一级经销商）查询云经销商名下的优惠券时，需要携带该参数；否则只能查询自己的优惠券列表。
+     * 云经销商（二级经销商）ID。华为云总经销商（一级经销商）查询云经销商名下的优惠券时，需要携带该参数；除此之外，此参数不做处理。否则只能查询自己的优惠券列表。
      * @return indirectPartnerId
      */
     public String getIndirectPartnerId() {

@@ -15,6 +15,11 @@ public class ShowSubCustomerBudgetRequest {
 
     private String customerId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "indirect_partner_id")
+
+    private String indirectPartnerId;
+
     public ShowSubCustomerBudgetRequest withCustomerId(String customerId) {
         this.customerId = customerId;
         return this;
@@ -32,6 +37,23 @@ public class ShowSubCustomerBudgetRequest {
         this.customerId = customerId;
     }
 
+    public ShowSubCustomerBudgetRequest withIndirectPartnerId(String indirectPartnerId) {
+        this.indirectPartnerId = indirectPartnerId;
+        return this;
+    }
+
+    /**
+     * 云经销商ID。获取方法请参见查询云经销商列表。如果需要查询云经销商的子客户列表，必须携带该字段。除此之外，此参数不做处理。
+     * @return indirectPartnerId
+     */
+    public String getIndirectPartnerId() {
+        return indirectPartnerId;
+    }
+
+    public void setIndirectPartnerId(String indirectPartnerId) {
+        this.indirectPartnerId = indirectPartnerId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -41,12 +63,13 @@ public class ShowSubCustomerBudgetRequest {
             return false;
         }
         ShowSubCustomerBudgetRequest showSubCustomerBudgetRequest = (ShowSubCustomerBudgetRequest) o;
-        return Objects.equals(this.customerId, showSubCustomerBudgetRequest.customerId);
+        return Objects.equals(this.customerId, showSubCustomerBudgetRequest.customerId)
+            && Objects.equals(this.indirectPartnerId, showSubCustomerBudgetRequest.indirectPartnerId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(customerId);
+        return Objects.hash(customerId, indirectPartnerId);
     }
 
     @Override
@@ -54,6 +77,7 @@ public class ShowSubCustomerBudgetRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowSubCustomerBudgetRequest {\n");
         sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
+        sb.append("    indirectPartnerId: ").append(toIndentedString(indirectPartnerId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -56,7 +56,7 @@ public class SendSmVerificationCodeReq {
     }
 
     /**
-     * 超时时间，不指定时默认为10分钟。 单位：分钟
+     * 超时时间，默认值为10分钟。 单位：分钟
      * minimum: 0
      * maximum: 100
      * @return timeout
@@ -75,7 +75,7 @@ public class SendSmVerificationCodeReq {
     }
 
     /**
-     * 发送的短信的语言。 zh-cn: 中文en-us: 英语 不设置默认为偏好设置的默认语言。
+     * 发送的短信的语言。 zh-cn: 中文en-us: 英语 默认为偏好设置的默认语言。
      * @return language
      */
     public String getLanguage() {

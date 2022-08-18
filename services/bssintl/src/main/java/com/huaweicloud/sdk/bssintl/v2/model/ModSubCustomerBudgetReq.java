@@ -25,6 +25,11 @@ public class ModSubCustomerBudgetReq {
 
     private String cancelPartnerFrozen;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "indirect_partner_id")
+
+    private String indirectPartnerId;
+
     public ModSubCustomerBudgetReq withCustomerId(String customerId) {
         this.customerId = customerId;
         return this;
@@ -78,6 +83,23 @@ public class ModSubCustomerBudgetReq {
         this.cancelPartnerFrozen = cancelPartnerFrozen;
     }
 
+    public ModSubCustomerBudgetReq withIndirectPartnerId(String indirectPartnerId) {
+        this.indirectPartnerId = indirectPartnerId;
+        return this;
+    }
+
+    /**
+     * 云经销商ID。获取方法请参见查询云经销商列表。如果需要查询云经销商的子客户列表，必须携带该字段。除此之外，此参数不做处理。
+     * @return indirectPartnerId
+     */
+    public String getIndirectPartnerId() {
+        return indirectPartnerId;
+    }
+
+    public void setIndirectPartnerId(String indirectPartnerId) {
+        this.indirectPartnerId = indirectPartnerId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -89,12 +111,13 @@ public class ModSubCustomerBudgetReq {
         ModSubCustomerBudgetReq modSubCustomerBudgetReq = (ModSubCustomerBudgetReq) o;
         return Objects.equals(this.customerId, modSubCustomerBudgetReq.customerId)
             && Objects.equals(this.budgetAmount, modSubCustomerBudgetReq.budgetAmount)
-            && Objects.equals(this.cancelPartnerFrozen, modSubCustomerBudgetReq.cancelPartnerFrozen);
+            && Objects.equals(this.cancelPartnerFrozen, modSubCustomerBudgetReq.cancelPartnerFrozen)
+            && Objects.equals(this.indirectPartnerId, modSubCustomerBudgetReq.indirectPartnerId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(customerId, budgetAmount, cancelPartnerFrozen);
+        return Objects.hash(customerId, budgetAmount, cancelPartnerFrozen, indirectPartnerId);
     }
 
     @Override
@@ -104,6 +127,7 @@ public class ModSubCustomerBudgetReq {
         sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
         sb.append("    budgetAmount: ").append(toIndentedString(budgetAmount)).append("\n");
         sb.append("    cancelPartnerFrozen: ").append(toIndentedString(cancelPartnerFrozen)).append("\n");
+        sb.append("    indirectPartnerId: ").append(toIndentedString(indirectPartnerId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

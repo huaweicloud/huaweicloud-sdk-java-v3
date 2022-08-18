@@ -1,13 +1,8 @@
 package com.huaweicloud.sdk.functiongraph.v2.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -30,87 +25,10 @@ public class ExportFunctionRequest {
 
     private Boolean code;
 
-    /**
-     * 兼容老的方式，type=code代表导出代码,type=config代码导出配置
-     */
-    public static final class TypeEnum {
-
-        /**
-         * Enum TYPE for value: "type"
-         */
-        public static final TypeEnum TYPE = new TypeEnum("type");
-
-        /**
-         * Enum CODE for value: "code"
-         */
-        public static final TypeEnum CODE = new TypeEnum("code");
-
-        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, TypeEnum> createStaticFields() {
-            Map<String, TypeEnum> map = new HashMap<>();
-            map.put("type", TYPE);
-            map.put("code", CODE);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        TypeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static TypeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
-        }
-
-        public static TypeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof TypeEnum) {
-                return this.value.equals(((TypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
-    private TypeEnum type;
+    private String type;
 
     public ExportFunctionRequest withFunctionUrn(String functionUrn) {
         this.functionUrn = functionUrn;
@@ -118,7 +36,7 @@ public class ExportFunctionRequest {
     }
 
     /**
-     * 函数的URN（Uniform Resource Name），唯一标识函数。
+     * 函数的URN，详细解释见FunctionGraph函数模型的描述。
      * @return functionUrn
      */
     public String getFunctionUrn() {
@@ -163,7 +81,7 @@ public class ExportFunctionRequest {
         this.code = code;
     }
 
-    public ExportFunctionRequest withType(TypeEnum type) {
+    public ExportFunctionRequest withType(String type) {
         this.type = type;
         return this;
     }
@@ -172,11 +90,11 @@ public class ExportFunctionRequest {
      * 兼容老的方式，type=code代表导出代码,type=config代码导出配置
      * @return type
      */
-    public TypeEnum getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(TypeEnum type) {
+    public void setType(String type) {
         this.type = type;
     }
 

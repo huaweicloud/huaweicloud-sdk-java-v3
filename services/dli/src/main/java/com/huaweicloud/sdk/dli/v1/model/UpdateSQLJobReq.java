@@ -131,7 +131,7 @@ public class UpdateSQLJobReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "runtime_config")
 
-    private List<JobsRuntimeConfig> runtimeConfig = null;
+    private String runtimeConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operator_config")
@@ -550,24 +550,8 @@ public class UpdateSQLJobReq {
         this.resumeMaxNum = resumeMaxNum;
     }
 
-    public UpdateSQLJobReq withRuntimeConfig(List<JobsRuntimeConfig> runtimeConfig) {
+    public UpdateSQLJobReq withRuntimeConfig(String runtimeConfig) {
         this.runtimeConfig = runtimeConfig;
-        return this;
-    }
-
-    public UpdateSQLJobReq addRuntimeConfigItem(JobsRuntimeConfig runtimeConfigItem) {
-        if (this.runtimeConfig == null) {
-            this.runtimeConfig = new ArrayList<>();
-        }
-        this.runtimeConfig.add(runtimeConfigItem);
-        return this;
-    }
-
-    public UpdateSQLJobReq withRuntimeConfig(Consumer<List<JobsRuntimeConfig>> runtimeConfigSetter) {
-        if (this.runtimeConfig == null) {
-            this.runtimeConfig = new ArrayList<>();
-        }
-        runtimeConfigSetter.accept(this.runtimeConfig);
         return this;
     }
 
@@ -575,11 +559,11 @@ public class UpdateSQLJobReq {
      * Flink作业运行时自定义优化参数。
      * @return runtimeConfig
      */
-    public List<JobsRuntimeConfig> getRuntimeConfig() {
+    public String getRuntimeConfig() {
         return runtimeConfig;
     }
 
-    public void setRuntimeConfig(List<JobsRuntimeConfig> runtimeConfig) {
+    public void setRuntimeConfig(String runtimeConfig) {
         this.runtimeConfig = runtimeConfig;
     }
 

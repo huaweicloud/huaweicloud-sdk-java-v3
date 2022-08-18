@@ -50,6 +50,11 @@ public class QuerySubCustomerListReq {
 
     private String associatedOnEnd;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "indirect_partner_id")
+
+    private String indirectPartnerId;
+
     public QuerySubCustomerListReq withAccountName(String accountName) {
         this.accountName = accountName;
         return this;
@@ -190,6 +195,23 @@ public class QuerySubCustomerListReq {
         this.associatedOnEnd = associatedOnEnd;
     }
 
+    public QuerySubCustomerListReq withIndirectPartnerId(String indirectPartnerId) {
+        this.indirectPartnerId = indirectPartnerId;
+        return this;
+    }
+
+    /**
+     * 云经销商ID。获取方法请参见查询云经销商列表。如果需要查询云经销商的子客户列表，必须携带该字段。除此之外，此参数不做处理。
+     * @return indirectPartnerId
+     */
+    public String getIndirectPartnerId() {
+        return indirectPartnerId;
+    }
+
+    public void setIndirectPartnerId(String indirectPartnerId) {
+        this.indirectPartnerId = indirectPartnerId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -206,13 +228,21 @@ public class QuerySubCustomerListReq {
             && Objects.equals(this.label, querySubCustomerListReq.label)
             && Objects.equals(this.associationType, querySubCustomerListReq.associationType)
             && Objects.equals(this.associatedOnBegin, querySubCustomerListReq.associatedOnBegin)
-            && Objects.equals(this.associatedOnEnd, querySubCustomerListReq.associatedOnEnd);
+            && Objects.equals(this.associatedOnEnd, querySubCustomerListReq.associatedOnEnd)
+            && Objects.equals(this.indirectPartnerId, querySubCustomerListReq.indirectPartnerId);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(accountName, customer, offset, limit, label, associationType, associatedOnBegin, associatedOnEnd);
+        return Objects.hash(accountName,
+            customer,
+            offset,
+            limit,
+            label,
+            associationType,
+            associatedOnBegin,
+            associatedOnEnd,
+            indirectPartnerId);
     }
 
     @Override
@@ -227,6 +257,7 @@ public class QuerySubCustomerListReq {
         sb.append("    associationType: ").append(toIndentedString(associationType)).append("\n");
         sb.append("    associatedOnBegin: ").append(toIndentedString(associatedOnBegin)).append("\n");
         sb.append("    associatedOnEnd: ").append(toIndentedString(associatedOnEnd)).append("\n");
+        sb.append("    indirectPartnerId: ").append(toIndentedString(indirectPartnerId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

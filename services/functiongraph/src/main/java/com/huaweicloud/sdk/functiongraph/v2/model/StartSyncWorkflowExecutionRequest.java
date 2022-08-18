@@ -19,7 +19,7 @@ public class StartSyncWorkflowExecutionRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private StartSyncWorkflowExecutionRequestBody body;
+    private FlowExecuteBody body;
 
     public StartSyncWorkflowExecutionRequest withWorkflowId(String workflowId) {
         this.workflowId = workflowId;
@@ -27,7 +27,7 @@ public class StartSyncWorkflowExecutionRequest {
     }
 
     /**
-     * 函数工作流ID
+     * 函数流定义ID
      * @return workflowId
      */
     public String getWorkflowId() {
@@ -38,14 +38,14 @@ public class StartSyncWorkflowExecutionRequest {
         this.workflowId = workflowId;
     }
 
-    public StartSyncWorkflowExecutionRequest withBody(StartSyncWorkflowExecutionRequestBody body) {
+    public StartSyncWorkflowExecutionRequest withBody(FlowExecuteBody body) {
         this.body = body;
         return this;
     }
 
-    public StartSyncWorkflowExecutionRequest withBody(Consumer<StartSyncWorkflowExecutionRequestBody> bodySetter) {
+    public StartSyncWorkflowExecutionRequest withBody(Consumer<FlowExecuteBody> bodySetter) {
         if (this.body == null) {
-            this.body = new StartSyncWorkflowExecutionRequestBody();
+            this.body = new FlowExecuteBody();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class StartSyncWorkflowExecutionRequest {
      * Get body
      * @return body
      */
-    public StartSyncWorkflowExecutionRequestBody getBody() {
+    public FlowExecuteBody getBody() {
         return body;
     }
 
-    public void setBody(StartSyncWorkflowExecutionRequestBody body) {
+    public void setBody(FlowExecuteBody body) {
         this.body = body;
     }
 

@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * 依赖包信息。
+ * ListDependenciesResult
  */
 public class ListDependenciesResult {
 
@@ -31,7 +31,7 @@ public class ListDependenciesResult {
     private String link;
 
     /**
-     * FunctionGraph函数的执行环境 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Python3.9: Python语言3.9版本。 Go1.8: Go语言1.8版本。 Go1.x: Go语言1.x版本。 Java8: Java语言8版本。 Java11: Java语言11版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 Node.js10.16: Nodejs语言10.16版本。 Node.js12.13: Nodejs语言12.13版本。 Node.js14.18: Nodejs语言14.18版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本
+     * FunctionGraph函数的执行环境 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Python3.9: Python语言3.9版本。 Go1.8: Go语言1.8版本。 Go1.x: Go语言1.x版本。 Java8: Java语言8版本。 Java11: Java语言11版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 Nodejs10.16: Nodejs语言10.16版本。 Nodejs12.13: Nodejs语言12.13版本。 Nodejs14.18: Nodejs语言14.18版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本
      */
     public static final class RuntimeEnum {
 
@@ -212,14 +212,24 @@ public class ListDependenciesResult {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "file_name")
+
+    private String fileName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "file_name")
+    @JsonProperty(value = "version")
 
-    private String fileName;
+    private Long version;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "last_modified")
+
+    private Long lastModified;
 
     public ListDependenciesResult withId(String id) {
         this.id = id;
@@ -227,7 +237,7 @@ public class ListDependenciesResult {
     }
 
     /**
-     * 依赖包ID。
+     * 依赖包ID
      * @return id
      */
     public String getId() {
@@ -244,7 +254,7 @@ public class ListDependenciesResult {
     }
 
     /**
-     * 依赖包拥有者。
+     * 依赖包拥有者，public标识为公共依赖包
      * @return owner
      */
     public String getOwner() {
@@ -261,7 +271,7 @@ public class ListDependenciesResult {
     }
 
     /**
-     * 依赖包在obs的存储地址。
+     * 依赖包在obs的存储地址
      * @return link
      */
     public String getLink() {
@@ -278,7 +288,7 @@ public class ListDependenciesResult {
     }
 
     /**
-     * FunctionGraph函数的执行环境 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Python3.9: Python语言3.9版本。 Go1.8: Go语言1.8版本。 Go1.x: Go语言1.x版本。 Java8: Java语言8版本。 Java11: Java语言11版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 Node.js10.16: Nodejs语言10.16版本。 Node.js12.13: Nodejs语言12.13版本。 Node.js14.18: Nodejs语言14.18版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本
+     * FunctionGraph函数的执行环境 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Python3.9: Python语言3.9版本。 Go1.8: Go语言1.8版本。 Go1.x: Go语言1.x版本。 Java8: Java语言8版本。 Java11: Java语言11版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 Nodejs10.16: Nodejs语言10.16版本。 Nodejs12.13: Nodejs语言12.13版本。 Nodejs14.18: Nodejs语言14.18版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本
      * @return runtime
      */
     public RuntimeEnum getRuntime() {
@@ -295,7 +305,7 @@ public class ListDependenciesResult {
     }
 
     /**
-     * 依赖包唯一标志。
+     * 依赖包唯一标志
      * @return etag
      */
     public String getEtag() {
@@ -312,7 +322,7 @@ public class ListDependenciesResult {
     }
 
     /**
-     * 依赖包大小。
+     * 依赖包大小
      * @return size
      */
     public Long getSize() {
@@ -329,7 +339,7 @@ public class ListDependenciesResult {
     }
 
     /**
-     * 依赖包名。
+     * 依赖包名
      * @return name
      */
     public String getName() {
@@ -338,6 +348,23 @@ public class ListDependenciesResult {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public ListDependenciesResult withFileName(String fileName) {
+        this.fileName = fileName;
+        return this;
+    }
+
+    /**
+     * 依赖包文件名
+     * @return fileName
+     */
+    public String getFileName() {
+        return fileName;
+    }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
     }
 
     public ListDependenciesResult withDescription(String description) {
@@ -357,21 +384,38 @@ public class ListDependenciesResult {
         this.description = description;
     }
 
-    public ListDependenciesResult withFileName(String fileName) {
-        this.fileName = fileName;
+    public ListDependenciesResult withVersion(Long version) {
+        this.version = version;
         return this;
     }
 
     /**
-     * 依赖包文件名。
-     * @return fileName
+     * 依赖包版本号
+     * @return version
      */
-    public String getFileName() {
-        return fileName;
+    public Long getVersion() {
+        return version;
     }
 
-    public void setFileName(String fileName) {
-        this.fileName = fileName;
+    public void setVersion(Long version) {
+        this.version = version;
+    }
+
+    public ListDependenciesResult withLastModified(Long lastModified) {
+        this.lastModified = lastModified;
+        return this;
+    }
+
+    /**
+     * 依赖包更新时间
+     * @return lastModified
+     */
+    public Long getLastModified() {
+        return lastModified;
+    }
+
+    public void setLastModified(Long lastModified) {
+        this.lastModified = lastModified;
     }
 
     @Override
@@ -390,13 +434,15 @@ public class ListDependenciesResult {
             && Objects.equals(this.etag, listDependenciesResult.etag)
             && Objects.equals(this.size, listDependenciesResult.size)
             && Objects.equals(this.name, listDependenciesResult.name)
+            && Objects.equals(this.fileName, listDependenciesResult.fileName)
             && Objects.equals(this.description, listDependenciesResult.description)
-            && Objects.equals(this.fileName, listDependenciesResult.fileName);
+            && Objects.equals(this.version, listDependenciesResult.version)
+            && Objects.equals(this.lastModified, listDependenciesResult.lastModified);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, owner, link, runtime, etag, size, name, description, fileName);
+        return Objects.hash(id, owner, link, runtime, etag, size, name, fileName, description, version, lastModified);
     }
 
     @Override
@@ -410,8 +456,10 @@ public class ListDependenciesResult {
         sb.append("    etag: ").append(toIndentedString(etag)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    fileName: ").append(toIndentedString(fileName)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    version: ").append(toIndentedString(version)).append("\n");
+        sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
         sb.append("}");
         return sb.toString();
     }

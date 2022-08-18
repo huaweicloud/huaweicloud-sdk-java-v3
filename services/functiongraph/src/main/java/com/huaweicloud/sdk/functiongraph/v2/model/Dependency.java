@@ -16,11 +16,6 @@ import java.util.Objects;
 public class Dependency {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "id")
-
-    private String id;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "owner")
 
     private String owner;
@@ -221,23 +216,6 @@ public class Dependency {
 
     private String fileName;
 
-    public Dependency withId(String id) {
-        this.id = id;
-        return this;
-    }
-
-    /**
-     * 依赖包id。
-     * @return id
-     */
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
     public Dependency withOwner(String owner) {
         this.owner = owner;
         return this;
@@ -383,23 +361,22 @@ public class Dependency {
             return false;
         }
         Dependency dependency = (Dependency) o;
-        return Objects.equals(this.id, dependency.id) && Objects.equals(this.owner, dependency.owner)
-            && Objects.equals(this.link, dependency.link) && Objects.equals(this.runtime, dependency.runtime)
-            && Objects.equals(this.etag, dependency.etag) && Objects.equals(this.size, dependency.size)
-            && Objects.equals(this.name, dependency.name) && Objects.equals(this.description, dependency.description)
+        return Objects.equals(this.owner, dependency.owner) && Objects.equals(this.link, dependency.link)
+            && Objects.equals(this.runtime, dependency.runtime) && Objects.equals(this.etag, dependency.etag)
+            && Objects.equals(this.size, dependency.size) && Objects.equals(this.name, dependency.name)
+            && Objects.equals(this.description, dependency.description)
             && Objects.equals(this.fileName, dependency.fileName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, owner, link, runtime, etag, size, name, description, fileName);
+        return Objects.hash(owner, link, runtime, etag, size, name, description, fileName);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class Dependency {\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    owner: ").append(toIndentedString(owner)).append("\n");
         sb.append("    link: ").append(toIndentedString(link)).append("\n");
         sb.append("    runtime: ").append(toIndentedString(runtime)).append("\n");

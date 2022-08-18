@@ -21,7 +21,7 @@ public class ShowFunctionTriggerRequest {
     private String functionUrn;
 
     /**
-     * Gets or Sets triggerTypeCode
+     * 触发器类型代码。
      */
     public static final class TriggerTypeCodeEnum {
 
@@ -75,6 +75,36 @@ public class ShowFunctionTriggerRequest {
          */
         public static final TriggerTypeCodeEnum KAFKA = new TriggerTypeCodeEnum("KAFKA");
 
+        /**
+         * Enum RABBITMQ for value: "RABBITMQ"
+         */
+        public static final TriggerTypeCodeEnum RABBITMQ = new TriggerTypeCodeEnum("RABBITMQ");
+
+        /**
+         * Enum DEDICATEDGATEWAY for value: "DEDICATEDGATEWAY"
+         */
+        public static final TriggerTypeCodeEnum DEDICATEDGATEWAY = new TriggerTypeCodeEnum("DEDICATEDGATEWAY");
+
+        /**
+         * Enum OPENSOURCEKAFKA for value: "OPENSOURCEKAFKA"
+         */
+        public static final TriggerTypeCodeEnum OPENSOURCEKAFKA = new TriggerTypeCodeEnum("OPENSOURCEKAFKA");
+
+        /**
+         * Enum APIC for value: "APIC"
+         */
+        public static final TriggerTypeCodeEnum APIC = new TriggerTypeCodeEnum("APIC");
+
+        /**
+         * Enum GAUSSMONGO for value: "GAUSSMONGO"
+         */
+        public static final TriggerTypeCodeEnum GAUSSMONGO = new TriggerTypeCodeEnum("GAUSSMONGO");
+
+        /**
+         * Enum EVENTGRID for value: "EVENTGRID"
+         */
+        public static final TriggerTypeCodeEnum EVENTGRID = new TriggerTypeCodeEnum("EVENTGRID");
+
         private static final Map<String, TriggerTypeCodeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TriggerTypeCodeEnum> createStaticFields() {
@@ -89,6 +119,12 @@ public class ShowFunctionTriggerRequest {
             map.put("OBS", OBS);
             map.put("SMN", SMN);
             map.put("KAFKA", KAFKA);
+            map.put("RABBITMQ", RABBITMQ);
+            map.put("DEDICATEDGATEWAY", DEDICATEDGATEWAY);
+            map.put("OPENSOURCEKAFKA", OPENSOURCEKAFKA);
+            map.put("APIC", APIC);
+            map.put("GAUSSMONGO", GAUSSMONGO);
+            map.put("EVENTGRID", EVENTGRID);
             return Collections.unmodifiableMap(map);
         }
 
@@ -178,7 +214,7 @@ public class ShowFunctionTriggerRequest {
     }
 
     /**
-     * Get triggerTypeCode
+     * 触发器类型代码。
      * @return triggerTypeCode
      */
     public TriggerTypeCodeEnum getTriggerTypeCode() {
@@ -195,7 +231,7 @@ public class ShowFunctionTriggerRequest {
     }
 
     /**
-     * Get triggerId
+     * 触发器编码。
      * @return triggerId
      */
     public String getTriggerId() {

@@ -9,6 +9,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * CreateFunctionTriggerRequestBody
@@ -61,9 +62,44 @@ public class CreateFunctionTriggerRequestBody {
         public static final TriggerTypeCodeEnum OBS = new TriggerTypeCodeEnum("OBS");
 
         /**
+         * Enum SMN for value: "SMN"
+         */
+        public static final TriggerTypeCodeEnum SMN = new TriggerTypeCodeEnum("SMN");
+
+        /**
          * Enum KAFKA for value: "KAFKA"
          */
         public static final TriggerTypeCodeEnum KAFKA = new TriggerTypeCodeEnum("KAFKA");
+
+        /**
+         * Enum RABBITMQ for value: "RABBITMQ"
+         */
+        public static final TriggerTypeCodeEnum RABBITMQ = new TriggerTypeCodeEnum("RABBITMQ");
+
+        /**
+         * Enum DEDICATEDGATEWAY for value: "DEDICATEDGATEWAY"
+         */
+        public static final TriggerTypeCodeEnum DEDICATEDGATEWAY = new TriggerTypeCodeEnum("DEDICATEDGATEWAY");
+
+        /**
+         * Enum OPENSOURCEKAFKA for value: "OPENSOURCEKAFKA"
+         */
+        public static final TriggerTypeCodeEnum OPENSOURCEKAFKA = new TriggerTypeCodeEnum("OPENSOURCEKAFKA");
+
+        /**
+         * Enum APIC for value: "APIC"
+         */
+        public static final TriggerTypeCodeEnum APIC = new TriggerTypeCodeEnum("APIC");
+
+        /**
+         * Enum GAUSSMONGO for value: "GAUSSMONGO"
+         */
+        public static final TriggerTypeCodeEnum GAUSSMONGO = new TriggerTypeCodeEnum("GAUSSMONGO");
+
+        /**
+         * Enum EVENTGRID for value: "EVENTGRID"
+         */
+        public static final TriggerTypeCodeEnum EVENTGRID = new TriggerTypeCodeEnum("EVENTGRID");
 
         private static final Map<String, TriggerTypeCodeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -77,7 +113,14 @@ public class CreateFunctionTriggerRequestBody {
             map.put("DIS", DIS);
             map.put("LTS", LTS);
             map.put("OBS", OBS);
+            map.put("SMN", SMN);
             map.put("KAFKA", KAFKA);
+            map.put("RABBITMQ", RABBITMQ);
+            map.put("DEDICATEDGATEWAY", DEDICATEDGATEWAY);
+            map.put("OPENSOURCEKAFKA", OPENSOURCEKAFKA);
+            map.put("APIC", APIC);
+            map.put("GAUSSMONGO", GAUSSMONGO);
+            map.put("EVENTGRID", EVENTGRID);
             return Collections.unmodifiableMap(map);
         }
 
@@ -229,7 +272,7 @@ public class CreateFunctionTriggerRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_data")
 
-    private Object eventData;
+    private Map<String, String> eventData = null;
 
     public CreateFunctionTriggerRequestBody withTriggerTypeCode(TriggerTypeCodeEnum triggerTypeCode) {
         this.triggerTypeCode = triggerTypeCode;
@@ -282,8 +325,24 @@ public class CreateFunctionTriggerRequestBody {
         this.eventTypeCode = eventTypeCode;
     }
 
-    public CreateFunctionTriggerRequestBody withEventData(Object eventData) {
+    public CreateFunctionTriggerRequestBody withEventData(Map<String, String> eventData) {
         this.eventData = eventData;
+        return this;
+    }
+
+    public CreateFunctionTriggerRequestBody putEventDataItem(String key, String eventDataItem) {
+        if (this.eventData == null) {
+            this.eventData = new HashMap<>();
+        }
+        this.eventData.put(key, eventDataItem);
+        return this;
+    }
+
+    public CreateFunctionTriggerRequestBody withEventData(Consumer<Map<String, String>> eventDataSetter) {
+        if (this.eventData == null) {
+            this.eventData = new HashMap<>();
+        }
+        eventDataSetter.accept(this.eventData);
         return this;
     }
 
@@ -291,11 +350,11 @@ public class CreateFunctionTriggerRequestBody {
      * 事件结构体。
      * @return eventData
      */
-    public Object getEventData() {
+    public Map<String, String> getEventData() {
         return eventData;
     }
 
-    public void setEventData(Object eventData) {
+    public void setEventData(Map<String, String> eventData) {
         this.eventData = eventData;
     }
 

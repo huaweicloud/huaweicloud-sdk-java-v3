@@ -12,6 +12,11 @@ import java.util.Objects;
 public class ShowLtsLogDetailsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_name")
+
+    private String groupName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_id")
 
     private String groupId;
@@ -25,6 +30,23 @@ public class ShowLtsLogDetailsResponse extends SdkResponse {
     @JsonProperty(value = "stream_name")
 
     private String streamName;
+
+    public ShowLtsLogDetailsResponse withGroupName(String groupName) {
+        this.groupName = groupName;
+        return this;
+    }
+
+    /**
+     * 日志组名称
+     * @return groupName
+     */
+    public String getGroupName() {
+        return groupName;
+    }
+
+    public void setGroupName(String groupName) {
+        this.groupName = groupName;
+    }
 
     public ShowLtsLogDetailsResponse withGroupId(String groupId) {
         this.groupId = groupId;
@@ -86,20 +108,22 @@ public class ShowLtsLogDetailsResponse extends SdkResponse {
             return false;
         }
         ShowLtsLogDetailsResponse showLtsLogDetailsResponse = (ShowLtsLogDetailsResponse) o;
-        return Objects.equals(this.groupId, showLtsLogDetailsResponse.groupId)
+        return Objects.equals(this.groupName, showLtsLogDetailsResponse.groupName)
+            && Objects.equals(this.groupId, showLtsLogDetailsResponse.groupId)
             && Objects.equals(this.streamId, showLtsLogDetailsResponse.streamId)
             && Objects.equals(this.streamName, showLtsLogDetailsResponse.streamName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(groupId, streamId, streamName);
+        return Objects.hash(groupName, groupId, streamId, streamName);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowLtsLogDetailsResponse {\n");
+        sb.append("    groupName: ").append(toIndentedString(groupName)).append("\n");
         sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("    streamId: ").append(toIndentedString(streamId)).append("\n");
         sb.append("    streamName: ").append(toIndentedString(streamName)).append("\n");

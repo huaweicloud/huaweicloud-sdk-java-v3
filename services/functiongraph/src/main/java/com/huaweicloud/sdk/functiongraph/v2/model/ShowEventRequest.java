@@ -11,31 +11,14 @@ import java.util.Objects;
 public class ShowEventRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "event_id")
-
-    private String eventId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "function_urn")
 
     private String functionUrn;
 
-    public ShowEventRequest withEventId(String eventId) {
-        this.eventId = eventId;
-        return this;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "event_id")
 
-    /**
-     * 事件ID。
-     * @return eventId
-     */
-    public String getEventId() {
-        return eventId;
-    }
-
-    public void setEventId(String eventId) {
-        this.eventId = eventId;
-    }
+    private String eventId;
 
     public ShowEventRequest withFunctionUrn(String functionUrn) {
         this.functionUrn = functionUrn;
@@ -43,7 +26,7 @@ public class ShowEventRequest {
     }
 
     /**
-     * 函数的URN（Uniform Resource Name），唯一标识函数。
+     * 函数的URN，详细解释见FunctionGraph函数模型的描述。
      * @return functionUrn
      */
     public String getFunctionUrn() {
@@ -52,6 +35,23 @@ public class ShowEventRequest {
 
     public void setFunctionUrn(String functionUrn) {
         this.functionUrn = functionUrn;
+    }
+
+    public ShowEventRequest withEventId(String eventId) {
+        this.eventId = eventId;
+        return this;
+    }
+
+    /**
+     * 测试事件ID
+     * @return eventId
+     */
+    public String getEventId() {
+        return eventId;
+    }
+
+    public void setEventId(String eventId) {
+        this.eventId = eventId;
     }
 
     @Override
@@ -63,21 +63,21 @@ public class ShowEventRequest {
             return false;
         }
         ShowEventRequest showEventRequest = (ShowEventRequest) o;
-        return Objects.equals(this.eventId, showEventRequest.eventId)
-            && Objects.equals(this.functionUrn, showEventRequest.functionUrn);
+        return Objects.equals(this.functionUrn, showEventRequest.functionUrn)
+            && Objects.equals(this.eventId, showEventRequest.eventId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(eventId, functionUrn);
+        return Objects.hash(functionUrn, eventId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowEventRequest {\n");
-        sb.append("    eventId: ").append(toIndentedString(eventId)).append("\n");
         sb.append("    functionUrn: ").append(toIndentedString(functionUrn)).append("\n");
+        sb.append("    eventId: ").append(toIndentedString(eventId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

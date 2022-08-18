@@ -138,7 +138,7 @@ public class StartSyncWorkflowExecutionResponse extends SdkResponse {
     }
 
     /**
-     * 错误码
+     * 流程实例ID
      * @return executionId
      */
     public String getExecutionId() {

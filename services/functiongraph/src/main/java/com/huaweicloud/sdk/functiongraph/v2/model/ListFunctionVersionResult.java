@@ -48,7 +48,7 @@ public class ListFunctionVersionResult {
     private String _package;
 
     /**
-     * FunctionGraph函数的执行环境 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Python3.9: Python语言3.9版本。 Go1.8: Go语言1.8版本。 Go1.x: Go语言1.x版本。 Java8: Java语言8版本。 Java11: Java语言11版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 Node.js10.16: Nodejs语言10.16版本。 Node.js12.13: Nodejs语言12.13版本。 Node.js14.18: Nodejs语言14.18版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本
+     * FunctionGraph函数的执行环境 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Python3.9: Python语言3.9版本。 Go1.8: Go语言1.8版本。 Go1.x: Go语言1.x版本。 Java8: Java语言8版本。 Java11: Java语言11版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 Node.js10.16: Nodejs语言10.16版本。 Node.js12.13: Nodejs语言12.13版本。 Nodejs14.18: Nodejs语言14.18版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本
      */
     public static final class RuntimeEnum {
 
@@ -418,16 +418,6 @@ public class ListFunctionVersionResult {
     private Boolean longTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "log_group_id")
-
-    private String logGroupId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "log_stream_id")
-
-    private String logStreamId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "function_async_config")
 
     private FunctionAsyncConfig functionAsyncConfig;
@@ -451,6 +441,26 @@ public class ListFunctionVersionResult {
     @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_stateful_function")
+
+    private Boolean isStatefulFunction;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_auth_in_header")
+
+    private Boolean enableAuthInHeader;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "custom_image")
+
+    private CustomImage customImage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "reserved_instance_idle_mode")
+
+    private Boolean reservedInstanceIdleMode;
 
     public ListFunctionVersionResult withFuncUrn(String funcUrn) {
         this.funcUrn = funcUrn;
@@ -560,7 +570,7 @@ public class ListFunctionVersionResult {
     }
 
     /**
-     * FunctionGraph函数的执行环境 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Python3.9: Python语言3.9版本。 Go1.8: Go语言1.8版本。 Go1.x: Go语言1.x版本。 Java8: Java语言8版本。 Java11: Java语言11版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 Node.js10.16: Nodejs语言10.16版本。 Node.js12.13: Nodejs语言12.13版本。 Node.js14.18: Nodejs语言14.18版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本
+     * FunctionGraph函数的执行环境 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Python3.9: Python语言3.9版本。 Go1.8: Go语言1.8版本。 Go1.x: Go语言1.x版本。 Java8: Java语言8版本。 Java11: Java语言11版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 Node.js10.16: Nodejs语言10.16版本。 Node.js12.13: Nodejs语言12.13版本。 Nodejs14.18: Nodejs语言14.18版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本
      * @return runtime
      */
     public RuntimeEnum getRuntime() {
@@ -866,7 +876,7 @@ public class ListFunctionVersionResult {
     }
 
     /**
-     * Get concurrency
+     * 0：函数被禁用;-1：函数被启用。
      * @return concurrency
      */
     public Integer getConcurrency() {
@@ -883,7 +893,7 @@ public class ListFunctionVersionResult {
     }
 
     /**
-     * Get concurrentNum
+     * 并发实例数
      * @return concurrentNum
      */
     public Integer getConcurrentNum() {
@@ -969,40 +979,6 @@ public class ListFunctionVersionResult {
 
     public void setLongTime(Boolean longTime) {
         this.longTime = longTime;
-    }
-
-    public ListFunctionVersionResult withLogGroupId(String logGroupId) {
-        this.logGroupId = logGroupId;
-        return this;
-    }
-
-    /**
-     * 自定义日志查询组id
-     * @return logGroupId
-     */
-    public String getLogGroupId() {
-        return logGroupId;
-    }
-
-    public void setLogGroupId(String logGroupId) {
-        this.logGroupId = logGroupId;
-    }
-
-    public ListFunctionVersionResult withLogStreamId(String logStreamId) {
-        this.logStreamId = logStreamId;
-        return this;
-    }
-
-    /**
-     * 自定义日志查询流id
-     * @return logStreamId
-     */
-    public String getLogStreamId() {
-        return logStreamId;
-    }
-
-    public void setLogStreamId(String logStreamId) {
-        this.logStreamId = logStreamId;
     }
 
     public ListFunctionVersionResult withFunctionAsyncConfig(FunctionAsyncConfig functionAsyncConfig) {
@@ -1099,6 +1075,83 @@ public class ListFunctionVersionResult {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public ListFunctionVersionResult withIsStatefulFunction(Boolean isStatefulFunction) {
+        this.isStatefulFunction = isStatefulFunction;
+        return this;
+    }
+
+    /**
+     * 是否支持有状态，如果需要支持，需要固定传参为true，v2版本支持
+     * @return isStatefulFunction
+     */
+    public Boolean getIsStatefulFunction() {
+        return isStatefulFunction;
+    }
+
+    public void setIsStatefulFunction(Boolean isStatefulFunction) {
+        this.isStatefulFunction = isStatefulFunction;
+    }
+
+    public ListFunctionVersionResult withEnableAuthInHeader(Boolean enableAuthInHeader) {
+        this.enableAuthInHeader = enableAuthInHeader;
+        return this;
+    }
+
+    /**
+     * 是否允许在请求头中添加鉴权信息
+     * @return enableAuthInHeader
+     */
+    public Boolean getEnableAuthInHeader() {
+        return enableAuthInHeader;
+    }
+
+    public void setEnableAuthInHeader(Boolean enableAuthInHeader) {
+        this.enableAuthInHeader = enableAuthInHeader;
+    }
+
+    public ListFunctionVersionResult withCustomImage(CustomImage customImage) {
+        this.customImage = customImage;
+        return this;
+    }
+
+    public ListFunctionVersionResult withCustomImage(Consumer<CustomImage> customImageSetter) {
+        if (this.customImage == null) {
+            this.customImage = new CustomImage();
+            customImageSetter.accept(this.customImage);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get customImage
+     * @return customImage
+     */
+    public CustomImage getCustomImage() {
+        return customImage;
+    }
+
+    public void setCustomImage(CustomImage customImage) {
+        this.customImage = customImage;
+    }
+
+    public ListFunctionVersionResult withReservedInstanceIdleMode(Boolean reservedInstanceIdleMode) {
+        this.reservedInstanceIdleMode = reservedInstanceIdleMode;
+        return this;
+    }
+
+    /**
+     * 是否开启预留实例闲置模式
+     * @return reservedInstanceIdleMode
+     */
+    public Boolean getReservedInstanceIdleMode() {
+        return reservedInstanceIdleMode;
+    }
+
+    public void setReservedInstanceIdleMode(Boolean reservedInstanceIdleMode) {
+        this.reservedInstanceIdleMode = reservedInstanceIdleMode;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -1138,13 +1191,15 @@ public class ListFunctionVersionResult {
             && Objects.equals(this.initializerHandler, listFunctionVersionResult.initializerHandler)
             && Objects.equals(this.initializerTimeout, listFunctionVersionResult.initializerTimeout)
             && Objects.equals(this.longTime, listFunctionVersionResult.longTime)
-            && Objects.equals(this.logGroupId, listFunctionVersionResult.logGroupId)
-            && Objects.equals(this.logStreamId, listFunctionVersionResult.logStreamId)
             && Objects.equals(this.functionAsyncConfig, listFunctionVersionResult.functionAsyncConfig)
             && Objects.equals(this.type, listFunctionVersionResult.type)
             && Objects.equals(this.enableCloudDebug, listFunctionVersionResult.enableCloudDebug)
             && Objects.equals(this.enableDynamicMemory, listFunctionVersionResult.enableDynamicMemory)
-            && Objects.equals(this.enterpriseProjectId, listFunctionVersionResult.enterpriseProjectId);
+            && Objects.equals(this.enterpriseProjectId, listFunctionVersionResult.enterpriseProjectId)
+            && Objects.equals(this.isStatefulFunction, listFunctionVersionResult.isStatefulFunction)
+            && Objects.equals(this.enableAuthInHeader, listFunctionVersionResult.enableAuthInHeader)
+            && Objects.equals(this.customImage, listFunctionVersionResult.customImage)
+            && Objects.equals(this.reservedInstanceIdleMode, listFunctionVersionResult.reservedInstanceIdleMode);
     }
 
     @Override
@@ -1179,13 +1234,15 @@ public class ListFunctionVersionResult {
             initializerHandler,
             initializerTimeout,
             longTime,
-            logGroupId,
-            logStreamId,
             functionAsyncConfig,
             type,
             enableCloudDebug,
             enableDynamicMemory,
-            enterpriseProjectId);
+            enterpriseProjectId,
+            isStatefulFunction,
+            enableAuthInHeader,
+            customImage,
+            reservedInstanceIdleMode);
     }
 
     @Override
@@ -1222,13 +1279,15 @@ public class ListFunctionVersionResult {
         sb.append("    initializerHandler: ").append(toIndentedString(initializerHandler)).append("\n");
         sb.append("    initializerTimeout: ").append(toIndentedString(initializerTimeout)).append("\n");
         sb.append("    longTime: ").append(toIndentedString(longTime)).append("\n");
-        sb.append("    logGroupId: ").append(toIndentedString(logGroupId)).append("\n");
-        sb.append("    logStreamId: ").append(toIndentedString(logStreamId)).append("\n");
         sb.append("    functionAsyncConfig: ").append(toIndentedString(functionAsyncConfig)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    enableCloudDebug: ").append(toIndentedString(enableCloudDebug)).append("\n");
         sb.append("    enableDynamicMemory: ").append(toIndentedString(enableDynamicMemory)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    isStatefulFunction: ").append(toIndentedString(isStatefulFunction)).append("\n");
+        sb.append("    enableAuthInHeader: ").append(toIndentedString(enableAuthInHeader)).append("\n");
+        sb.append("    customImage: ").append(toIndentedString(customImage)).append("\n");
+        sb.append("    reservedInstanceIdleMode: ").append(toIndentedString(reservedInstanceIdleMode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -86,7 +86,7 @@ public class QueryCustomerOnDemandResourcesReq {
     }
 
     /**
-     * 云服务区编码，例如：“cn-north-1”。具体请参见地区和终端节点对应云服务的“区域”列的值。
+     * 云服务区编码，例如：“cn-north-1”。具体请参见地区和终端节点对应云服务的“区域”列的值。 此参数不携带或携带值为空串或携带值为null时，不作为筛选条件。
      * @return regionCode
      */
     public String getRegionCode() {
@@ -103,7 +103,7 @@ public class QueryCustomerOnDemandResourcesReq {
     }
 
     /**
-     * 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用查询云服务类型列表接口获取。
+     * 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用查询云服务类型列表接口获取。 此参数不携带或携带值为空串或携带值为null时，不作为筛选条件。
      * @return serviceTypeCode
      */
     public String getServiceTypeCode() {
@@ -136,7 +136,7 @@ public class QueryCustomerOnDemandResourcesReq {
     }
 
     /**
-     * 资源ID批量查询。 用于查询指定资源ID对应的资源。 最多支持同时传递50个ID的列表。
+     * 资源ID批量查询。 用于查询指定资源ID对应的资源。 最多支持同时传递50个ID的列表。 此参数不携带或携带值为空列表或携带值为null时，不作为筛选条件。
      * @return resourceIds
      */
     public List<String> getResourceIds() {
@@ -153,7 +153,7 @@ public class QueryCustomerOnDemandResourcesReq {
     }
 
     /**
-     * 生效时间的开始时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。 其中，HH范围是0～23，mm和ss范围是0～59。
+     * 生效时间的开始时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。 其中，HH范围是0～23，mm和ss范围是0～59。 此参数不携带或携带值为空串或携带值为null时，不作为筛选条件。
      * @return effectiveTimeBegin
      */
     public String getEffectiveTimeBegin() {
@@ -170,7 +170,7 @@ public class QueryCustomerOnDemandResourcesReq {
     }
 
     /**
-     * 生效时间的结束时间 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。 其中，HH范围是0～23，mm和ss范围是0～59。
+     * 生效时间的结束时间 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。 其中，HH范围是0～23，mm和ss范围是0～59。 此参数不携带或携带值为空串或携带值为null时，不作为筛选条件。
      * @return effectiveTimeEnd
      */
     public String getEffectiveTimeEnd() {
@@ -225,7 +225,7 @@ public class QueryCustomerOnDemandResourcesReq {
     }
 
     /**
-     * 资源状态： 1：正常（已开通）2：宽限期3：冻结中4：变更中5：正在关闭6：已关闭
+     * 资源状态： 1：正常（已开通）2：宽限期3：冻结中4：变更中5：正在关闭6：已关闭 此参数不携带或携带值为null时，不作为筛选条件。
      * minimum: 1
      * maximum: 6
      * @return status

@@ -86,7 +86,7 @@ public class QueryResRecordsDetailReq {
     }
 
     /**
-     * 查询的资源详单所在账期，格式为YYYY-MM。 示例：2019-01。  说明： 不支持2019年1月份之前的资源详单。
+     * 查询的资源详单所在账期，东八区时间，格式为YYYY-MM。 示例：2019-01。  说明： 不支持2019年1月份之前的资源详单。
      * @return cycle
      */
     public String getCycle() {
@@ -103,7 +103,7 @@ public class QueryResRecordsDetailReq {
     }
 
     /**
-     * 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用查询云服务类型列表接口获取。
+     * 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用查询云服务类型列表接口获取。 此参数不携带或携带值为空串或携带值为null时，不作为筛选条件。
      * @return cloudServiceType
      */
     public String getCloudServiceType() {
@@ -120,7 +120,7 @@ public class QueryResRecordsDetailReq {
     }
 
     /**
-     * 资源类型编码，例如ECS的VM为“hws.resource.type.vm”。您可以调用查询资源类型列表接口获取。
+     * 资源类型编码，例如ECS的VM为“hws.resource.type.vm”。您可以调用查询资源类型列表接口获取。 此参数不携带或携带值为空串或携带值为null时，不作为筛选条件。
      * @return resourceType
      */
     public String getResourceType() {
@@ -137,7 +137,7 @@ public class QueryResRecordsDetailReq {
     }
 
     /**
-     * 云服务区编码，例如：“cn-north-1”。具体请参见地区和终端节点对应云服务的“区域”列的值。
+     * 云服务区编码，例如：“cn-north-1”。具体请参见地区和终端节点对应云服务的“区域”列的值。 此参数不携带或携带值为空串或携带值为null时，不作为筛选条件。
      * @return region
      */
     public String getRegion() {
@@ -154,7 +154,7 @@ public class QueryResRecordsDetailReq {
     }
 
     /**
-     * 资源实例ID。
+     * 资源实例ID。 此参数不携带或携带值为空串或携带值为null时，不作为筛选条件。
      * @return resInstanceId
      */
     public String getResInstanceId() {
@@ -171,7 +171,7 @@ public class QueryResRecordsDetailReq {
     }
 
     /**
-     * 计费模式： 1 : 包年/包月3：按需10：预留实例
+     * 计费模式： 1 : 包年/包月3：按需10：预留实例 此参数不携带或者携带值为null时，返回所有计费模式的资源详单数据记录。
      * minimum: 1
      * maximum: 10
      * @return chargeMode
@@ -190,7 +190,7 @@ public class QueryResRecordsDetailReq {
     }
 
     /**
-     * 账单类型： 1：消费-新购2：消费-续订3：消费-变更4：退款-退订5：消费-使用8：消费-自动续订9：调账-补偿14：消费-服务支持计划月末扣费16：调账-扣费18：消费-按月付费20：退款-变更
+     * 账单类型： 1：消费-新购2：消费-续订3：消费-变更4：退款-退订5：消费-使用8：消费-自动续订9：调账-补偿14：消费-服务支持计划月末扣费16：调账-扣费18：消费-按月付费20：退款-变更 此参数不携带或者携带值为null时，返回所有账单类型的资源详单数据记录。
      * minimum: 1
      * maximum: 127
      * @return billType
@@ -209,7 +209,7 @@ public class QueryResRecordsDetailReq {
     }
 
     /**
-     * 企业项目标识（企业项目ID）。 default项目对应ID：0未归集（表示该云服务不支持企业项目管理能力）项目对应ID：-1其余项目对应ID获取方法请参见[如何获取企业项目ID](https://support.huaweicloud.com/usermanual-em/zh-cn_topic_0126101490.html)。
+     * 企业项目标识（企业项目ID）。 default项目对应ID：0未归集（表示该云服务不支持企业项目管理能力）项目对应ID：-1其余项目对应ID获取方法请参见[如何获取企业项目ID](https://support.huaweicloud.com/usermanual-em/zh-cn_topic_0126101490.html)。此参数不携带或携带值为空串或携带值为null时，不作为筛选条件。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -226,7 +226,7 @@ public class QueryResRecordsDetailReq {
     }
 
     /**
-     * 返回是否包含应付金额为0的记录。 true: 包含false: 不包含
+     * 返回是否包含应付金额为0的记录。 true: 包含false: 不包含 此参数不携带或携带值为空串或携带值为null时，不作为筛选条件。
      * @return includeZeroRecord
      */
     public Boolean getIncludeZeroRecord() {
@@ -281,7 +281,7 @@ public class QueryResRecordsDetailReq {
     }
 
     /**
-     * 查询方式。 oneself：客户自己sub_customer：企业子客户all：客户自己和企业子客户 默认为all，如果没有企业子客户，all的时候也是查询客户自己的数据。
+     * 查询方式。 oneself：客户自己sub_customer：企业子客户all：客户自己和企业子客户 此参数不携带或携带值为空串或携带值为null时，默认值为“all”，如果没有企业子客户，all的时候也是查询客户自己的数据。
      * @return method
      */
     public String getMethod() {

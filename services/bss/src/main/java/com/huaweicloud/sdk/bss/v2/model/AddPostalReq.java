@@ -141,7 +141,7 @@ public class AddPostalReq {
     }
 
     /**
-     * 邮寄地址所在邮编。
+     * 邮寄地址所在邮编。 此参数不携带或携带值为null时，不赋值。
      * @return zipcode
      */
     public String getZipcode() {
@@ -175,7 +175,7 @@ public class AddPostalReq {
     }
 
     /**
-     * 是否默认地址，默认为0。 1：默认地址0：非默认地址
+     * 是否默认地址，默认值为“0：非默认地址”。 1：默认地址0：非默认地址
      * minimum: 0
      * maximum: 1
      * @return isDefault

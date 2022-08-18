@@ -110,7 +110,7 @@ public class ChangeEnterpriseRealnameAuthsReq {
     }
 
     /**
-     * 单位证件类型： 0：企业营业执照1：事业单位法人证书2：社会团体法人登记证书3：行政执法主体资格证4：组织机构代码证99：其他
+     * 单位证件类型： 0：企业营业执照1：事业单位法人证书2：社会团体法人登记证书3：行政执法主体资格证4：组织机构代码证99：其他 此参数不携带或携带值为null时，不赋值。
      * minimum: 0
      * maximum: 99
      * @return certificateType
@@ -196,7 +196,7 @@ public class ChangeEnterpriseRealnameAuthsReq {
     }
 
     /**
-     * 实名认证填写的注册国家。国家的两位字母简码。 例如：注册国家为“中国”请填写“CN”。
+     * 实名认证填写的注册国家。国家的两位字母简码。 例如：注册国家为“中国”请填写“CN”。 此参数不携带或携带值为null时，不赋值；携带值为空串时，赋值空串。
      * @return regCountry
      */
     public String getRegCountry() {
@@ -213,7 +213,7 @@ public class ChangeEnterpriseRealnameAuthsReq {
     }
 
     /**
-     * 实名认证企业注册地址。
+     * 实名认证企业注册地址。 此参数不携带或携带值为null时，不赋值；携带值为空串时，赋值空串。
      * @return regAddress
      */
     public String getRegAddress() {
