@@ -3,7 +3,6 @@ package com.huaweicloud.sdk.live.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.net.URI;
 import java.time.OffsetDateTime;
 import java.util.Objects;
 
@@ -40,7 +39,7 @@ public class RecordIndexRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "object")
 
-    private URI _object;
+    private String _object;
 
     public RecordIndexRequestBody withPublishDomain(String publishDomain) {
         this.publishDomain = publishDomain;
@@ -127,7 +126,7 @@ public class RecordIndexRequestBody {
         this.endTime = endTime;
     }
 
-    public RecordIndexRequestBody withObject(URI _object) {
+    public RecordIndexRequestBody withObject(String _object) {
         this._object = _object;
         return this;
     }
@@ -136,11 +135,11 @@ public class RecordIndexRequestBody {
      * \"m3u8文件在OBS中的储存路径。支持下列字符串的转义   - {publish_domain}   - {app}   - {stream}   - {start_time}   - {end_time} 其中{start_time},{end_time}为返回结果的实际时间。 默认值为Index/{publish_domain}/{app}/{stream}/{stream}-{start_time}-{end_time}\"
      * @return _object
      */
-    public URI getObject() {
+    public String getObject() {
         return _object;
     }
 
-    public void setObject(URI _object) {
+    public void setObject(String _object) {
         this._object = _object;
     }
 

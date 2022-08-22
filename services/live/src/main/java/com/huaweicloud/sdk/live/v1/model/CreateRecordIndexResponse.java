@@ -6,7 +6,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.net.URI;
 import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.HashMap;
@@ -159,7 +158,7 @@ public class CreateRecordIndexResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "object")
 
-    private URI _object;
+    private String _object;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Request-Id")
@@ -359,7 +358,7 @@ public class CreateRecordIndexResponse extends SdkResponse {
         this.bucket = bucket;
     }
 
-    public CreateRecordIndexResponse withObject(URI _object) {
+    public CreateRecordIndexResponse withObject(String _object) {
         this._object = _object;
         return this;
     }
@@ -368,11 +367,11 @@ public class CreateRecordIndexResponse extends SdkResponse {
      * m3u8文件路径。默认Index/{publish_domain}/{app}/{stream}-{start_time}-{end_time}
      * @return _object
      */
-    public URI getObject() {
+    public String getObject() {
         return _object;
     }
 
-    public void setObject(URI _object) {
+    public void setObject(String _object) {
         this._object = _object;
     }
 

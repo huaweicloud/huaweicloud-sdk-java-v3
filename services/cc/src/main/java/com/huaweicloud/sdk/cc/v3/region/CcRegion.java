@@ -14,6 +14,8 @@ public class CcRegion {
 
     public static final Region CN_NORTH_4 = new Region("cn-north-4", "https://cc.myhuaweicloud.com");
 
+    public static final Region CN_NORTH_1 = new Region("cn-north-1", "https://ccaas.cn-north-1.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("CC");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -21,6 +23,7 @@ public class CcRegion {
     private static Map<String, Region> createStaticFields() {
         Map<String, Region> map = new HashMap<>();
         map.put("cn-north-4", CN_NORTH_4);
+        map.put("cn-north-1", CN_NORTH_1);
         return Collections.unmodifiableMap(map);
     }
 
