@@ -16,6 +16,11 @@ public class UpdateGeoipRuleRequestBody {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "description")
+
+    private String description;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "geoip")
 
     private String geoip;
@@ -24,11 +29,6 @@ public class UpdateGeoipRuleRequestBody {
     @JsonProperty(value = "white")
 
     private Integer white;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "description")
-
-    private String description;
 
     public UpdateGeoipRuleRequestBody withName(String name) {
         this.name = name;
@@ -45,6 +45,23 @@ public class UpdateGeoipRuleRequestBody {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public UpdateGeoipRuleRequestBody withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /**
+     * 描述
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public UpdateGeoipRuleRequestBody withGeoip(String geoip) {
@@ -81,23 +98,6 @@ public class UpdateGeoipRuleRequestBody {
         this.white = white;
     }
 
-    public UpdateGeoipRuleRequestBody withDescription(String description) {
-        this.description = description;
-        return this;
-    }
-
-    /**
-     * 规则描述
-     * @return description
-     */
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -108,14 +108,14 @@ public class UpdateGeoipRuleRequestBody {
         }
         UpdateGeoipRuleRequestBody updateGeoipRuleRequestBody = (UpdateGeoipRuleRequestBody) o;
         return Objects.equals(this.name, updateGeoipRuleRequestBody.name)
+            && Objects.equals(this.description, updateGeoipRuleRequestBody.description)
             && Objects.equals(this.geoip, updateGeoipRuleRequestBody.geoip)
-            && Objects.equals(this.white, updateGeoipRuleRequestBody.white)
-            && Objects.equals(this.description, updateGeoipRuleRequestBody.description);
+            && Objects.equals(this.white, updateGeoipRuleRequestBody.white);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, geoip, white, description);
+        return Objects.hash(name, description, geoip, white);
     }
 
     @Override
@@ -123,9 +123,9 @@ public class UpdateGeoipRuleRequestBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateGeoipRuleRequestBody {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    geoip: ").append(toIndentedString(geoip)).append("\n");
         sb.append("    white: ").append(toIndentedString(white)).append("\n");
-        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");
         return sb.toString();
     }

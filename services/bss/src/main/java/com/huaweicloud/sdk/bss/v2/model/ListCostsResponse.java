@@ -35,7 +35,7 @@ public class ListCostsResponse extends SdkResponse {
     }
 
     /**
-     * 货币。 USD：美元
+     * 货币。 CNY：人民币
      * @return currency
      */
     public String getCurrency() {

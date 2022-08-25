@@ -2778,6 +2778,27 @@ public class DliMeta {
             f -> f.withMarshaller(ListQueuesRequest::getTags, (req, v) -> {
                 req.setTags(v);
             }));
+        builder.<Integer>withRequestField("page-size",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListQueuesRequest::getPageSize, (req, v) -> {
+                req.setPageSize(v);
+            }));
+        builder.<Integer>withRequestField("current-page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListQueuesRequest::getCurrentPage, (req, v) -> {
+                req.setCurrentPage(v);
+            }));
+        builder.<String>withRequestField("order",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListQueuesRequest::getOrder, (req, v) -> {
+                req.setOrder(v);
+            }));
 
         // response
 

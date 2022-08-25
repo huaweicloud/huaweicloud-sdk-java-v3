@@ -135,7 +135,7 @@ public class QueryIndirectPartnersReq {
     }
 
     /**
-     * 云经销商ID。获取方法请参见查询云经销商列表。 如果需要查询具体某个云经销商伙伴，必须携带该字段。除此之外，此参数不做处理。
+     * 云经销商ID。如果需要查询具体某个云经销商伙伴，必须携带该字段。除此之外，此参数不做处理。
      * @return indirectPartnerId
      */
     public String getIndirectPartnerId() {

@@ -35,6 +35,16 @@ public class UpdateCertificateOption {
 
     private String domain;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enc_certificate")
+
+    private String encCertificate;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enc_private_key")
+
+    private String encPrivateKey;
+
     public UpdateCertificateOption withCertificate(String certificate) {
         this.certificate = certificate;
         return this;
@@ -120,6 +130,40 @@ public class UpdateCertificateOption {
         this.domain = domain;
     }
 
+    public UpdateCertificateOption withEncCertificate(String encCertificate) {
+        this.encCertificate = encCertificate;
+        return this;
+    }
+
+    /**
+     * HTTPS协议使用的SM加密证书内容。 取值：PEM编码格式。 使用说明：仅type为server_sm时有效。 最大长度65536字符。 支持证书链，最大11层(含证书和证书链)。
+     * @return encCertificate
+     */
+    public String getEncCertificate() {
+        return encCertificate;
+    }
+
+    public void setEncCertificate(String encCertificate) {
+        this.encCertificate = encCertificate;
+    }
+
+    public UpdateCertificateOption withEncPrivateKey(String encPrivateKey) {
+        this.encPrivateKey = encPrivateKey;
+        return this;
+    }
+
+    /**
+     * HTTPS协议使用的SM加密证书内容。 取值：PEM编码格式。 使用说明：仅type为server_sm时有效。 最大长度8192字符。
+     * @return encPrivateKey
+     */
+    public String getEncPrivateKey() {
+        return encPrivateKey;
+    }
+
+    public void setEncPrivateKey(String encPrivateKey) {
+        this.encPrivateKey = encPrivateKey;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -133,12 +177,14 @@ public class UpdateCertificateOption {
             && Objects.equals(this.description, updateCertificateOption.description)
             && Objects.equals(this.name, updateCertificateOption.name)
             && Objects.equals(this.privateKey, updateCertificateOption.privateKey)
-            && Objects.equals(this.domain, updateCertificateOption.domain);
+            && Objects.equals(this.domain, updateCertificateOption.domain)
+            && Objects.equals(this.encCertificate, updateCertificateOption.encCertificate)
+            && Objects.equals(this.encPrivateKey, updateCertificateOption.encPrivateKey);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(certificate, description, name, privateKey, domain);
+        return Objects.hash(certificate, description, name, privateKey, domain, encCertificate, encPrivateKey);
     }
 
     @Override
@@ -150,6 +196,8 @@ public class UpdateCertificateOption {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    privateKey: ").append(toIndentedString(privateKey)).append("\n");
         sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
+        sb.append("    encCertificate: ").append(toIndentedString(encCertificate)).append("\n");
+        sb.append("    encPrivateKey: ").append(toIndentedString(encPrivateKey)).append("\n");
         sb.append("}");
         return sb.toString();
     }

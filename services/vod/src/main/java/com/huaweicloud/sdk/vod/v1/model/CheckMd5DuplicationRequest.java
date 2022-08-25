@@ -23,7 +23,7 @@ public class CheckMd5DuplicationRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
 
-    private Integer size;
+    private Long size;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "md5")
@@ -66,7 +66,7 @@ public class CheckMd5DuplicationRequest {
         this.xSdkDate = xSdkDate;
     }
 
-    public CheckMd5DuplicationRequest withSize(Integer size) {
+    public CheckMd5DuplicationRequest withSize(Long size) {
         this.size = size;
         return this;
     }
@@ -75,11 +75,11 @@ public class CheckMd5DuplicationRequest {
      * 文件大小
      * @return size
      */
-    public Integer getSize() {
+    public Long getSize() {
         return size;
     }
 
-    public void setSize(Integer size) {
+    public void setSize(Long size) {
         this.size = size;
     }
 

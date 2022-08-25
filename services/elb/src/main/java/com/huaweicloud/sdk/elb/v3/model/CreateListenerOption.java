@@ -79,6 +79,11 @@ public class CreateListenerOption {
     private List<String> sniContainerRefs = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sni_match_algo")
+
+    private String sniMatchAlgo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
     private List<Tag> tags = null;
@@ -381,6 +386,23 @@ public class CreateListenerOption {
         this.sniContainerRefs = sniContainerRefs;
     }
 
+    public CreateListenerOption withSniMatchAlgo(String sniMatchAlgo) {
+        this.sniMatchAlgo = sniMatchAlgo;
+        return this;
+    }
+
+    /**
+     * 监听器使用的SNI证书泛域名匹配方式。 longest_suffix表示最长尾缀匹配，wildcard表示标准域名分级匹配。 默认为wildcard。
+     * @return sniMatchAlgo
+     */
+    public String getSniMatchAlgo() {
+        return sniMatchAlgo;
+    }
+
+    public void setSniMatchAlgo(String sniMatchAlgo) {
+        this.sniMatchAlgo = sniMatchAlgo;
+    }
+
     public CreateListenerOption withTags(List<Tag> tags) {
         this.tags = tags;
         return this;
@@ -628,6 +650,7 @@ public class CreateListenerOption {
             && Objects.equals(this.protocol, createListenerOption.protocol)
             && Objects.equals(this.protocolPort, createListenerOption.protocolPort)
             && Objects.equals(this.sniContainerRefs, createListenerOption.sniContainerRefs)
+            && Objects.equals(this.sniMatchAlgo, createListenerOption.sniMatchAlgo)
             && Objects.equals(this.tags, createListenerOption.tags)
             && Objects.equals(this.tlsCiphersPolicy, createListenerOption.tlsCiphersPolicy)
             && Objects.equals(this.securityPolicyId, createListenerOption.securityPolicyId)
@@ -656,6 +679,7 @@ public class CreateListenerOption {
             protocol,
             protocolPort,
             sniContainerRefs,
+            sniMatchAlgo,
             tags,
             tlsCiphersPolicy,
             securityPolicyId,
@@ -686,6 +710,7 @@ public class CreateListenerOption {
         sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
         sb.append("    protocolPort: ").append(toIndentedString(protocolPort)).append("\n");
         sb.append("    sniContainerRefs: ").append(toIndentedString(sniContainerRefs)).append("\n");
+        sb.append("    sniMatchAlgo: ").append(toIndentedString(sniMatchAlgo)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    tlsCiphersPolicy: ").append(toIndentedString(tlsCiphersPolicy)).append("\n");
         sb.append("    securityPolicyId: ").append(toIndentedString(securityPolicyId)).append("\n");

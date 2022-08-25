@@ -105,10 +105,10 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<Integer>withRequestField("size",
+        builder.<Long>withRequestField("size",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Integer.class),
+            TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(CheckMd5DuplicationRequest::getSize, (req, v) -> {
                 req.setSize(v);
             }));

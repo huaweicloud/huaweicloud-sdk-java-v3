@@ -34,6 +34,11 @@ public class CdmCreateClusterReqCluster {
     private Datastore datastore;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "extended_properties")
+
+    private ExtendedProperties extendedProperties;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scheduleOffTime")
 
     private String scheduleOffTime;
@@ -151,6 +156,32 @@ public class CdmCreateClusterReqCluster {
         this.datastore = datastore;
     }
 
+    public CdmCreateClusterReqCluster withExtendedProperties(ExtendedProperties extendedProperties) {
+        this.extendedProperties = extendedProperties;
+        return this;
+    }
+
+    public CdmCreateClusterReqCluster withExtendedProperties(Consumer<ExtendedProperties> extendedPropertiesSetter) {
+        if (this.extendedProperties == null) {
+            this.extendedProperties = new ExtendedProperties();
+            extendedPropertiesSetter.accept(this.extendedProperties);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get extendedProperties
+     * @return extendedProperties
+     */
+    public ExtendedProperties getExtendedProperties() {
+        return extendedProperties;
+    }
+
+    public void setExtendedProperties(ExtendedProperties extendedProperties) {
+        this.extendedProperties = extendedProperties;
+    }
+
     public CdmCreateClusterReqCluster withScheduleOffTime(String scheduleOffTime) {
         this.scheduleOffTime = scheduleOffTime;
         return this;
@@ -265,6 +296,7 @@ public class CdmCreateClusterReqCluster {
             && Objects.equals(this.isScheduleBootOff, cdmCreateClusterReqCluster.isScheduleBootOff)
             && Objects.equals(this.instances, cdmCreateClusterReqCluster.instances)
             && Objects.equals(this.datastore, cdmCreateClusterReqCluster.datastore)
+            && Objects.equals(this.extendedProperties, cdmCreateClusterReqCluster.extendedProperties)
             && Objects.equals(this.scheduleOffTime, cdmCreateClusterReqCluster.scheduleOffTime)
             && Objects.equals(this.vpcId, cdmCreateClusterReqCluster.vpcId)
             && Objects.equals(this.name, cdmCreateClusterReqCluster.name)
@@ -278,6 +310,7 @@ public class CdmCreateClusterReqCluster {
             isScheduleBootOff,
             instances,
             datastore,
+            extendedProperties,
             scheduleOffTime,
             vpcId,
             name,
@@ -293,6 +326,7 @@ public class CdmCreateClusterReqCluster {
         sb.append("    isScheduleBootOff: ").append(toIndentedString(isScheduleBootOff)).append("\n");
         sb.append("    instances: ").append(toIndentedString(instances)).append("\n");
         sb.append("    datastore: ").append(toIndentedString(datastore)).append("\n");
+        sb.append("    extendedProperties: ").append(toIndentedString(extendedProperties)).append("\n");
         sb.append("    scheduleOffTime: ").append(toIndentedString(scheduleOffTime)).append("\n");
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");

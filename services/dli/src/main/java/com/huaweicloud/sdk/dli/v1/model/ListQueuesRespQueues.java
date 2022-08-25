@@ -14,6 +14,11 @@ import java.util.function.Consumer;
 public class ListQueuesRespQueues {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "queue_id")
+
+    private String queueId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "queue_name")
 
     private String queueName;
@@ -117,6 +122,28 @@ public class ListQueuesRespQueues {
     @JsonProperty(value = "cu_scale_in_limit")
 
     private Long cuScaleInLimit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "elastic_resource_pool_name")
+
+    private String elasticResourcePoolName;
+
+    public ListQueuesRespQueues withQueueId(String queueId) {
+        this.queueId = queueId;
+        return this;
+    }
+
+    /**
+     * 队列ID。
+     * @return queueId
+     */
+    public String getQueueId() {
+        return queueId;
+    }
+
+    public void setQueueId(String queueId) {
+        this.queueId = queueId;
+    }
 
     public ListQueuesRespQueues withQueueName(String queueName) {
         this.queueName = queueName;
@@ -491,6 +518,23 @@ public class ListQueuesRespQueues {
         this.cuScaleInLimit = cuScaleInLimit;
     }
 
+    public ListQueuesRespQueues withElasticResourcePoolName(String elasticResourcePoolName) {
+        this.elasticResourcePoolName = elasticResourcePoolName;
+        return this;
+    }
+
+    /**
+     * 弹性资源池名称。
+     * @return elasticResourcePoolName
+     */
+    public String getElasticResourcePoolName() {
+        return elasticResourcePoolName;
+    }
+
+    public void setElasticResourcePoolName(String elasticResourcePoolName) {
+        this.elasticResourcePoolName = elasticResourcePoolName;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -500,7 +544,8 @@ public class ListQueuesRespQueues {
             return false;
         }
         ListQueuesRespQueues listQueuesRespQueues = (ListQueuesRespQueues) o;
-        return Objects.equals(this.queueName, listQueuesRespQueues.queueName)
+        return Objects.equals(this.queueId, listQueuesRespQueues.queueId)
+            && Objects.equals(this.queueName, listQueuesRespQueues.queueName)
             && Objects.equals(this.description, listQueuesRespQueues.description)
             && Objects.equals(this.owner, listQueuesRespQueues.owner)
             && Objects.equals(this.createTime, listQueuesRespQueues.createTime)
@@ -520,12 +565,14 @@ public class ListQueuesRespQueues {
             && Objects.equals(this.queueResourceType, listQueuesRespQueues.queueResourceType)
             && Objects.equals(this.cuSpec, listQueuesRespQueues.cuSpec)
             && Objects.equals(this.cuScaleOutLimit, listQueuesRespQueues.cuScaleOutLimit)
-            && Objects.equals(this.cuScaleInLimit, listQueuesRespQueues.cuScaleInLimit);
+            && Objects.equals(this.cuScaleInLimit, listQueuesRespQueues.cuScaleInLimit)
+            && Objects.equals(this.elasticResourcePoolName, listQueuesRespQueues.elasticResourcePoolName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(queueName,
+        return Objects.hash(queueId,
+            queueName,
             description,
             owner,
             createTime,
@@ -545,13 +592,15 @@ public class ListQueuesRespQueues {
             queueResourceType,
             cuSpec,
             cuScaleOutLimit,
-            cuScaleInLimit);
+            cuScaleInLimit,
+            elasticResourcePoolName);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListQueuesRespQueues {\n");
+        sb.append("    queueId: ").append(toIndentedString(queueId)).append("\n");
         sb.append("    queueName: ").append(toIndentedString(queueName)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    owner: ").append(toIndentedString(owner)).append("\n");
@@ -573,6 +622,7 @@ public class ListQueuesRespQueues {
         sb.append("    cuSpec: ").append(toIndentedString(cuSpec)).append("\n");
         sb.append("    cuScaleOutLimit: ").append(toIndentedString(cuScaleOutLimit)).append("\n");
         sb.append("    cuScaleInLimit: ").append(toIndentedString(cuScaleInLimit)).append("\n");
+        sb.append("    elasticResourcePoolName: ").append(toIndentedString(elasticResourcePoolName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

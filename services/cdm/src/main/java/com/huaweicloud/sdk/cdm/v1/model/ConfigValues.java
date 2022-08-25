@@ -18,6 +18,11 @@ public class ConfigValues {
 
     private List<Configs> configs = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "extended-configs")
+
+    private ExtendedConfigs extendedConfigs;
+
     public ConfigValues withConfigs(List<Configs> configs) {
         this.configs = configs;
         return this;
@@ -51,6 +56,32 @@ public class ConfigValues {
         this.configs = configs;
     }
 
+    public ConfigValues withExtendedConfigs(ExtendedConfigs extendedConfigs) {
+        this.extendedConfigs = extendedConfigs;
+        return this;
+    }
+
+    public ConfigValues withExtendedConfigs(Consumer<ExtendedConfigs> extendedConfigsSetter) {
+        if (this.extendedConfigs == null) {
+            this.extendedConfigs = new ExtendedConfigs();
+            extendedConfigsSetter.accept(this.extendedConfigs);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get extendedConfigs
+     * @return extendedConfigs
+     */
+    public ExtendedConfigs getExtendedConfigs() {
+        return extendedConfigs;
+    }
+
+    public void setExtendedConfigs(ExtendedConfigs extendedConfigs) {
+        this.extendedConfigs = extendedConfigs;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -60,12 +91,13 @@ public class ConfigValues {
             return false;
         }
         ConfigValues configValues = (ConfigValues) o;
-        return Objects.equals(this.configs, configValues.configs);
+        return Objects.equals(this.configs, configValues.configs)
+            && Objects.equals(this.extendedConfigs, configValues.extendedConfigs);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(configs);
+        return Objects.hash(configs, extendedConfigs);
     }
 
     @Override
@@ -73,6 +105,7 @@ public class ConfigValues {
         StringBuilder sb = new StringBuilder();
         sb.append("class ConfigValues {\n");
         sb.append("    configs: ").append(toIndentedString(configs)).append("\n");
+        sb.append("    extendedConfigs: ").append(toIndentedString(extendedConfigs)).append("\n");
         sb.append("}");
         return sb.toString();
     }

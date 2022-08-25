@@ -103,11 +103,6 @@ public class PrepaidUpdateOption {
     private ChangeModeEnum changeMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "cloud_service_console_url")
-
-    private String cloudServiceConsoleUrl;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "period_num")
 
     private Integer periodNum;
@@ -228,23 +223,6 @@ public class PrepaidUpdateOption {
         this.changeMode = changeMode;
     }
 
-    public PrepaidUpdateOption withCloudServiceConsoleUrl(String cloudServiceConsoleUrl) {
-        this.cloudServiceConsoleUrl = cloudServiceConsoleUrl;
-        return this;
-    }
-
-    /**
-     * 云服务引导URL。 订购订单支付完成后，支付成功的页面嵌入该url的内容。 console传，用户侧api文档不可见该字段。
-     * @return cloudServiceConsoleUrl
-     */
-    public String getCloudServiceConsoleUrl() {
-        return cloudServiceConsoleUrl;
-    }
-
-    public void setCloudServiceConsoleUrl(String cloudServiceConsoleUrl) {
-        this.cloudServiceConsoleUrl = cloudServiceConsoleUrl;
-    }
-
     public PrepaidUpdateOption withPeriodNum(Integer periodNum) {
         this.periodNum = periodNum;
         return this;
@@ -292,14 +270,13 @@ public class PrepaidUpdateOption {
         PrepaidUpdateOption prepaidUpdateOption = (PrepaidUpdateOption) o;
         return Objects.equals(this.autoPay, prepaidUpdateOption.autoPay)
             && Objects.equals(this.changeMode, prepaidUpdateOption.changeMode)
-            && Objects.equals(this.cloudServiceConsoleUrl, prepaidUpdateOption.cloudServiceConsoleUrl)
             && Objects.equals(this.periodNum, prepaidUpdateOption.periodNum)
             && Objects.equals(this.periodType, prepaidUpdateOption.periodType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(autoPay, changeMode, cloudServiceConsoleUrl, periodNum, periodType);
+        return Objects.hash(autoPay, changeMode, periodNum, periodType);
     }
 
     @Override
@@ -308,7 +285,6 @@ public class PrepaidUpdateOption {
         sb.append("class PrepaidUpdateOption {\n");
         sb.append("    autoPay: ").append(toIndentedString(autoPay)).append("\n");
         sb.append("    changeMode: ").append(toIndentedString(changeMode)).append("\n");
-        sb.append("    cloudServiceConsoleUrl: ").append(toIndentedString(cloudServiceConsoleUrl)).append("\n");
         sb.append("    periodNum: ").append(toIndentedString(periodNum)).append("\n");
         sb.append("    periodType: ").append(toIndentedString(periodType)).append("\n");
         sb.append("}");

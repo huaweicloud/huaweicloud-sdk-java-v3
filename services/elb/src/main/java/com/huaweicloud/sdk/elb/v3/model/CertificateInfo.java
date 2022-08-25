@@ -70,6 +70,16 @@ public class CertificateInfo {
 
     private String projectId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enc_certificate")
+
+    private String encCertificate;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enc_private_key")
+
+    private String encPrivateKey;
+
     public CertificateInfo withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
@@ -274,6 +284,40 @@ public class CertificateInfo {
         this.projectId = projectId;
     }
 
+    public CertificateInfo withEncCertificate(String encCertificate) {
+        this.encCertificate = encCertificate;
+        return this;
+    }
+
+    /**
+     * HTTPS协议使用的SM加密证书内容。  取值：PEM编码格式。  注意：仅在当前局点的SM加密证书特性开启才会返回该字段。
+     * @return encCertificate
+     */
+    public String getEncCertificate() {
+        return encCertificate;
+    }
+
+    public void setEncCertificate(String encCertificate) {
+        this.encCertificate = encCertificate;
+    }
+
+    public CertificateInfo withEncPrivateKey(String encPrivateKey) {
+        this.encPrivateKey = encPrivateKey;
+        return this;
+    }
+
+    /**
+     * HTTPS协议使用的SM加密证书私钥。  取值：PEM编码格式。  注意：仅在当前局点的SM加密证书特性开启才会返回该字段。
+     * @return encPrivateKey
+     */
+    public String getEncPrivateKey() {
+        return encPrivateKey;
+    }
+
+    public void setEncPrivateKey(String encPrivateKey) {
+        this.encPrivateKey = encPrivateKey;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -293,7 +337,9 @@ public class CertificateInfo {
             && Objects.equals(this.createdAt, certificateInfo.createdAt)
             && Objects.equals(this.updatedAt, certificateInfo.updatedAt)
             && Objects.equals(this.expireTime, certificateInfo.expireTime)
-            && Objects.equals(this.projectId, certificateInfo.projectId);
+            && Objects.equals(this.projectId, certificateInfo.projectId)
+            && Objects.equals(this.encCertificate, certificateInfo.encCertificate)
+            && Objects.equals(this.encPrivateKey, certificateInfo.encPrivateKey);
     }
 
     @Override
@@ -309,7 +355,9 @@ public class CertificateInfo {
             createdAt,
             updatedAt,
             expireTime,
-            projectId);
+            projectId,
+            encCertificate,
+            encPrivateKey);
     }
 
     @Override
@@ -328,6 +376,8 @@ public class CertificateInfo {
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("    expireTime: ").append(toIndentedString(expireTime)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
+        sb.append("    encCertificate: ").append(toIndentedString(encCertificate)).append("\n");
+        sb.append("    encPrivateKey: ").append(toIndentedString(encPrivateKey)).append("\n");
         sb.append("}");
         return sb.toString();
     }

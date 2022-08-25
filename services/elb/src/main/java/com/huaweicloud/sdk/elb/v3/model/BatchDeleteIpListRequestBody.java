@@ -9,19 +9,19 @@ import java.util.function.Consumer;
 /**
  * This is a auto create Response Object
  */
-public class BatchDeleteIpGroupIpListRequestBody {
+public class BatchDeleteIpListRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ipgroup")
 
     private BatchDeleteIpListOption ipgroup;
 
-    public BatchDeleteIpGroupIpListRequestBody withIpgroup(BatchDeleteIpListOption ipgroup) {
+    public BatchDeleteIpListRequestBody withIpgroup(BatchDeleteIpListOption ipgroup) {
         this.ipgroup = ipgroup;
         return this;
     }
 
-    public BatchDeleteIpGroupIpListRequestBody withIpgroup(Consumer<BatchDeleteIpListOption> ipgroupSetter) {
+    public BatchDeleteIpListRequestBody withIpgroup(Consumer<BatchDeleteIpListOption> ipgroupSetter) {
         if (this.ipgroup == null) {
             this.ipgroup = new BatchDeleteIpListOption();
             ipgroupSetter.accept(this.ipgroup);
@@ -50,9 +50,8 @@ public class BatchDeleteIpGroupIpListRequestBody {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        BatchDeleteIpGroupIpListRequestBody batchDeleteIpGroupIpListRequestBody =
-            (BatchDeleteIpGroupIpListRequestBody) o;
-        return Objects.equals(this.ipgroup, batchDeleteIpGroupIpListRequestBody.ipgroup);
+        BatchDeleteIpListRequestBody batchDeleteIpListRequestBody = (BatchDeleteIpListRequestBody) o;
+        return Objects.equals(this.ipgroup, batchDeleteIpListRequestBody.ipgroup);
     }
 
     @Override
@@ -63,7 +62,7 @@ public class BatchDeleteIpGroupIpListRequestBody {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class BatchDeleteIpGroupIpListRequestBody {\n");
+        sb.append("class BatchDeleteIpListRequestBody {\n");
         sb.append("    ipgroup: ").append(toIndentedString(ipgroup)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -33,6 +33,11 @@ public class WebImageRequestBody {
 
     private List<String> extractType = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "detect_font")
+
+    private Boolean detectFont;
+
     public WebImageRequestBody withImage(String image) {
         this.image = image;
         return this;
@@ -117,6 +122,23 @@ public class WebImageRequestBody {
         this.extractType = extractType;
     }
 
+    public WebImageRequestBody withDetectFont(Boolean detectFont) {
+        this.detectFont = detectFont;
+        return this;
+    }
+
+    /**
+     * 为Boolean类型，若不传该字段，默认不检测切片字体，为True时，将检测切片的字体类型，并返回最相似的5种字体名称。 
+     * @return detectFont
+     */
+    public Boolean getDetectFont() {
+        return detectFont;
+    }
+
+    public void setDetectFont(Boolean detectFont) {
+        this.detectFont = detectFont;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -129,12 +151,13 @@ public class WebImageRequestBody {
         return Objects.equals(this.image, webImageRequestBody.image)
             && Objects.equals(this.url, webImageRequestBody.url)
             && Objects.equals(this.detectDirection, webImageRequestBody.detectDirection)
-            && Objects.equals(this.extractType, webImageRequestBody.extractType);
+            && Objects.equals(this.extractType, webImageRequestBody.extractType)
+            && Objects.equals(this.detectFont, webImageRequestBody.detectFont);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(image, url, detectDirection, extractType);
+        return Objects.hash(image, url, detectDirection, extractType, detectFont);
     }
 
     @Override
@@ -145,6 +168,7 @@ public class WebImageRequestBody {
         sb.append("    url: ").append(toIndentedString(url)).append("\n");
         sb.append("    detectDirection: ").append(toIndentedString(detectDirection)).append("\n");
         sb.append("    extractType: ").append(toIndentedString(extractType)).append("\n");
+        sb.append("    detectFont: ").append(toIndentedString(detectFont)).append("\n");
         sb.append("}");
         return sb.toString();
     }

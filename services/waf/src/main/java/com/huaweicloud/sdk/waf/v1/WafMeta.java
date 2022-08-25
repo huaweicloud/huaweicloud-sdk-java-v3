@@ -1543,6 +1543,74 @@ public class WafMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListRequestTimelineRequest, ListRequestTimelineResponse> listRequestTimeline =
+        genForlistRequestTimeline();
+
+    private static HttpRequestDef<ListRequestTimelineRequest, ListRequestTimelineResponse> genForlistRequestTimeline() {
+        // basic
+        HttpRequestDef.Builder<ListRequestTimelineRequest, ListRequestTimelineResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListRequestTimelineRequest.class, ListRequestTimelineResponse.class)
+                .withName("ListRequestTimeline")
+                .withUri("/v1/{project_id}/waf/overviews/request/timeline")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRequestTimelineRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<Long>withRequestField("from",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListRequestTimelineRequest::getFrom, (req, v) -> {
+                req.setFrom(v);
+            }));
+        builder.<Long>withRequestField("to",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListRequestTimelineRequest::getTo, (req, v) -> {
+                req.setTo(v);
+            }));
+        builder.<List<String>>withRequestField("hosts",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListRequestTimelineRequest::getHosts, (req, v) -> {
+                req.setHosts(v);
+            }));
+        builder.<List<String>>withRequestField("instances",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListRequestTimelineRequest::getInstances, (req, v) -> {
+                req.setInstances(v);
+            }));
+        builder.<String>withRequestField("group_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRequestTimelineRequest::getGroupBy, (req, v) -> {
+                req.setGroupBy(v);
+            }));
+
+        // response
+
+        builder.<List<StatisticsTimelineItem>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListRequestTimelineResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }).withInnerContainerType(StatisticsTimelineItem.class));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListStatisticsRequest, ListStatisticsResponse> listStatistics =
         genForlistStatistics();
 

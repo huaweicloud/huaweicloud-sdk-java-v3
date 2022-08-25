@@ -30,6 +30,11 @@ public class ListElasticResourcePoolsResponse extends SdkResponse {
     private Integer count;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "elastic_resource_pool_name")
+
+    private String elasticResourcePoolName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "elastic_resource_pools")
 
     private List<ElasticResourcePoolsResponse> elasticResourcePools = null;
@@ -85,6 +90,23 @@ public class ListElasticResourcePoolsResponse extends SdkResponse {
         this.count = count;
     }
 
+    public ListElasticResourcePoolsResponse withElasticResourcePoolName(String elasticResourcePoolName) {
+        this.elasticResourcePoolName = elasticResourcePoolName;
+        return this;
+    }
+
+    /**
+     * 弹性资源池名称
+     * @return elasticResourcePoolName
+     */
+    public String getElasticResourcePoolName() {
+        return elasticResourcePoolName;
+    }
+
+    public void setElasticResourcePoolName(String elasticResourcePoolName) {
+        this.elasticResourcePoolName = elasticResourcePoolName;
+    }
+
     public ListElasticResourcePoolsResponse withElasticResourcePools(
         List<ElasticResourcePoolsResponse> elasticResourcePools) {
         this.elasticResourcePools = elasticResourcePools;
@@ -133,12 +155,13 @@ public class ListElasticResourcePoolsResponse extends SdkResponse {
         return Objects.equals(this.isSuccess, listElasticResourcePoolsResponse.isSuccess)
             && Objects.equals(this.message, listElasticResourcePoolsResponse.message)
             && Objects.equals(this.count, listElasticResourcePoolsResponse.count)
+            && Objects.equals(this.elasticResourcePoolName, listElasticResourcePoolsResponse.elasticResourcePoolName)
             && Objects.equals(this.elasticResourcePools, listElasticResourcePoolsResponse.elasticResourcePools);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(isSuccess, message, count, elasticResourcePools);
+        return Objects.hash(isSuccess, message, count, elasticResourcePoolName, elasticResourcePools);
     }
 
     @Override
@@ -148,6 +171,7 @@ public class ListElasticResourcePoolsResponse extends SdkResponse {
         sb.append("    isSuccess: ").append(toIndentedString(isSuccess)).append("\n");
         sb.append("    message: ").append(toIndentedString(message)).append("\n");
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
+        sb.append("    elasticResourcePoolName: ").append(toIndentedString(elasticResourcePoolName)).append("\n");
         sb.append("    elasticResourcePools: ").append(toIndentedString(elasticResourcePools)).append("\n");
         sb.append("}");
         return sb.toString();

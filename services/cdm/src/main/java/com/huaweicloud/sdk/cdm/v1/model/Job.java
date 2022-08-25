@@ -245,9 +245,19 @@ public class Job {
     private Integer writeRows;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "files_writte")
+    @JsonProperty(value = "rows_written")
 
-    private Integer filesWritte;
+    private Integer rowsWritten;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "rows_read")
+
+    private Long rowsRead;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "files_written")
+
+    private Integer filesWritten;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_incrementing")
@@ -773,7 +783,7 @@ public class Job {
     }
 
     /**
-     * 写入行数
+     * 写入数据行数
      * @return writeRows
      */
     public Integer getWriteRows() {
@@ -784,21 +794,55 @@ public class Job {
         this.writeRows = writeRows;
     }
 
-    public Job withFilesWritte(Integer filesWritte) {
-        this.filesWritte = filesWritte;
+    public Job withRowsWritten(Integer rowsWritten) {
+        this.rowsWritten = rowsWritten;
+        return this;
+    }
+
+    /**
+     * 写入行数
+     * @return rowsWritten
+     */
+    public Integer getRowsWritten() {
+        return rowsWritten;
+    }
+
+    public void setRowsWritten(Integer rowsWritten) {
+        this.rowsWritten = rowsWritten;
+    }
+
+    public Job withRowsRead(Long rowsRead) {
+        this.rowsRead = rowsRead;
+        return this;
+    }
+
+    /**
+     * 读取的行数
+     * @return rowsRead
+     */
+    public Long getRowsRead() {
+        return rowsRead;
+    }
+
+    public void setRowsRead(Long rowsRead) {
+        this.rowsRead = rowsRead;
+    }
+
+    public Job withFilesWritten(Integer filesWritten) {
+        this.filesWritten = filesWritten;
         return this;
     }
 
     /**
      * 写入文件数
-     * @return filesWritte
+     * @return filesWritten
      */
-    public Integer getFilesWritte() {
-        return filesWritte;
+    public Integer getFilesWritten() {
+        return filesWritten;
     }
 
-    public void setFilesWritte(Integer filesWritte) {
-        this.filesWritte = filesWritte;
+    public void setFilesWritten(Integer filesWritten) {
+        this.filesWritten = filesWritten;
     }
 
     public Job withIsIncrementing(Boolean isIncrementing) {
@@ -880,7 +924,8 @@ public class Job {
             && Objects.equals(this.isUseSql, job.isUseSql) && Objects.equals(this.updateRows, job.updateRows)
             && Objects.equals(this.groupName, job.groupName) && Objects.equals(this.bytesRead, job.bytesRead)
             && Objects.equals(this.executeUpdateDate, job.executeUpdateDate)
-            && Objects.equals(this.writeRows, job.writeRows) && Objects.equals(this.filesWritte, job.filesWritte)
+            && Objects.equals(this.writeRows, job.writeRows) && Objects.equals(this.rowsWritten, job.rowsWritten)
+            && Objects.equals(this.rowsRead, job.rowsRead) && Objects.equals(this.filesWritten, job.filesWritten)
             && Objects.equals(this.isIncrementing, job.isIncrementing)
             && Objects.equals(this.executeCreateDate, job.executeCreateDate) && Objects.equals(this.status, job.status);
     }
@@ -916,7 +961,9 @@ public class Job {
             bytesRead,
             executeUpdateDate,
             writeRows,
-            filesWritte,
+            rowsWritten,
+            rowsRead,
+            filesWritten,
             isIncrementing,
             executeCreateDate,
             status);
@@ -955,7 +1002,9 @@ public class Job {
         sb.append("    bytesRead: ").append(toIndentedString(bytesRead)).append("\n");
         sb.append("    executeUpdateDate: ").append(toIndentedString(executeUpdateDate)).append("\n");
         sb.append("    writeRows: ").append(toIndentedString(writeRows)).append("\n");
-        sb.append("    filesWritte: ").append(toIndentedString(filesWritte)).append("\n");
+        sb.append("    rowsWritten: ").append(toIndentedString(rowsWritten)).append("\n");
+        sb.append("    rowsRead: ").append(toIndentedString(rowsRead)).append("\n");
+        sb.append("    filesWritten: ").append(toIndentedString(filesWritten)).append("\n");
         sb.append("    isIncrementing: ").append(toIndentedString(isIncrementing)).append("\n");
         sb.append("    executeCreateDate: ").append(toIndentedString(executeCreateDate)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");

@@ -83,6 +83,16 @@ public class WebImageWordsBlockList {
 
     private String detailAddress;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "font_list")
+
+    private List<String> fontList = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "font_scores")
+
+    private List<Float> fontScores = null;
+
     public WebImageWordsBlockList withWords(String words) {
         this.words = words;
         return this;
@@ -337,6 +347,72 @@ public class WebImageWordsBlockList {
         this.detailAddress = detailAddress;
     }
 
+    public WebImageWordsBlockList withFontList(List<String> fontList) {
+        this.fontList = fontList;
+        return this;
+    }
+
+    public WebImageWordsBlockList addFontListItem(String fontListItem) {
+        if (this.fontList == null) {
+            this.fontList = new ArrayList<>();
+        }
+        this.fontList.add(fontListItem);
+        return this;
+    }
+
+    public WebImageWordsBlockList withFontList(Consumer<List<String>> fontListSetter) {
+        if (this.fontList == null) {
+            this.fontList = new ArrayList<>();
+        }
+        fontListSetter.accept(this.fontList);
+        return this;
+    }
+
+    /**
+     * 文字块所属字体类型，列表形式，表示与文字块的文字最接近的字体类型。 
+     * @return fontList
+     */
+    public List<String> getFontList() {
+        return fontList;
+    }
+
+    public void setFontList(List<String> fontList) {
+        this.fontList = fontList;
+    }
+
+    public WebImageWordsBlockList withFontScores(List<Float> fontScores) {
+        this.fontScores = fontScores;
+        return this;
+    }
+
+    public WebImageWordsBlockList addFontScoresItem(Float fontScoresItem) {
+        if (this.fontScores == null) {
+            this.fontScores = new ArrayList<>();
+        }
+        this.fontScores.add(fontScoresItem);
+        return this;
+    }
+
+    public WebImageWordsBlockList withFontScores(Consumer<List<Float>> fontScoresSetter) {
+        if (this.fontScores == null) {
+            this.fontScores = new ArrayList<>();
+        }
+        fontScoresSetter.accept(this.fontScores);
+        return this;
+    }
+
+    /**
+     * 文字块所属字体类型的概率，列表形式，与font_list一一对应，表示文字块的文字属于某种字体类型的概率。 
+     * @return fontScores
+     */
+    public List<Float> getFontScores() {
+        return fontScores;
+    }
+
+    public void setFontScores(List<Float> fontScores) {
+        this.fontScores = fontScores;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -359,7 +435,9 @@ public class WebImageWordsBlockList {
             && Objects.equals(this.province, webImageWordsBlockList.province)
             && Objects.equals(this.city, webImageWordsBlockList.city)
             && Objects.equals(this.district, webImageWordsBlockList.district)
-            && Objects.equals(this.detailAddress, webImageWordsBlockList.detailAddress);
+            && Objects.equals(this.detailAddress, webImageWordsBlockList.detailAddress)
+            && Objects.equals(this.fontList, webImageWordsBlockList.fontList)
+            && Objects.equals(this.fontScores, webImageWordsBlockList.fontScores);
     }
 
     @Override
@@ -377,7 +455,9 @@ public class WebImageWordsBlockList {
             province,
             city,
             district,
-            detailAddress);
+            detailAddress,
+            fontList,
+            fontScores);
     }
 
     @Override
@@ -398,6 +478,8 @@ public class WebImageWordsBlockList {
         sb.append("    city: ").append(toIndentedString(city)).append("\n");
         sb.append("    district: ").append(toIndentedString(district)).append("\n");
         sb.append("    detailAddress: ").append(toIndentedString(detailAddress)).append("\n");
+        sb.append("    fontList: ").append(toIndentedString(fontList)).append("\n");
+        sb.append("    fontScores: ").append(toIndentedString(fontScores)).append("\n");
         sb.append("}");
         return sb.toString();
     }

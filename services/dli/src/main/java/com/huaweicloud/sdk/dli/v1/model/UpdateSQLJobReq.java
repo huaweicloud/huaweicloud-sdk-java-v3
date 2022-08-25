@@ -143,6 +143,11 @@ public class UpdateSQLJobReq {
 
     private String staticEstimatorConfig;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "flink_version")
+
+    private String flinkVersion;
+
     public UpdateSQLJobReq withName(String name) {
         this.name = name;
         return this;
@@ -601,6 +606,23 @@ public class UpdateSQLJobReq {
         this.staticEstimatorConfig = staticEstimatorConfig;
     }
 
+    public UpdateSQLJobReq withFlinkVersion(String flinkVersion) {
+        this.flinkVersion = flinkVersion;
+        return this;
+    }
+
+    /**
+     * Flink版本。当前只支持1.10和1.12。
+     * @return flinkVersion
+     */
+    public String getFlinkVersion() {
+        return flinkVersion;
+    }
+
+    public void setFlinkVersion(String flinkVersion) {
+        this.flinkVersion = flinkVersion;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -634,7 +656,8 @@ public class UpdateSQLJobReq {
             && Objects.equals(this.resumeMaxNum, updateSQLJobReq.resumeMaxNum)
             && Objects.equals(this.runtimeConfig, updateSQLJobReq.runtimeConfig)
             && Objects.equals(this.operatorConfig, updateSQLJobReq.operatorConfig)
-            && Objects.equals(this.staticEstimatorConfig, updateSQLJobReq.staticEstimatorConfig);
+            && Objects.equals(this.staticEstimatorConfig, updateSQLJobReq.staticEstimatorConfig)
+            && Objects.equals(this.flinkVersion, updateSQLJobReq.flinkVersion);
     }
 
     @Override
@@ -664,7 +687,8 @@ public class UpdateSQLJobReq {
             resumeMaxNum,
             runtimeConfig,
             operatorConfig,
-            staticEstimatorConfig);
+            staticEstimatorConfig,
+            flinkVersion);
     }
 
     @Override
@@ -697,6 +721,7 @@ public class UpdateSQLJobReq {
         sb.append("    runtimeConfig: ").append(toIndentedString(runtimeConfig)).append("\n");
         sb.append("    operatorConfig: ").append(toIndentedString(operatorConfig)).append("\n");
         sb.append("    staticEstimatorConfig: ").append(toIndentedString(staticEstimatorConfig)).append("\n");
+        sb.append("    flinkVersion: ").append(toIndentedString(flinkVersion)).append("\n");
         sb.append("}");
         return sb.toString();
     }

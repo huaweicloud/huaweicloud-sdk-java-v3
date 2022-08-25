@@ -31,7 +31,7 @@ public class TimeCondition {
     }
 
     /**
-     * |参数名称：时间单位1：天2：月| |参数的约束及描述：时间单位1：天2：月|
+     * 时间单位。1：天2：月
      * minimum: 1
      * maximum: 2
      * @return timeMeasureId
@@ -50,7 +50,7 @@ public class TimeCondition {
     }
 
     /**
-     * |参数名称：查询开始时间，必须是日期格式。当time_measure_id值为1或为空时，格式为YYYY-MM-DD当time_measure_id值为2时，格式为YYYY-MM| |参数约束及描述：查询开始时间，必须是日期格式。当time_measure_id值为1或为空时，格式为YYYY-MM-DD当time_measure_id值为2时，格式为YYYY-MM|
+     * 查询开始时间，必须是日期格式。当time_measure_id值为1或为空时，格式为YYYY-MM-DD当time_measure_id值为2时，格式为YYYY-MM
      * @return beginTime
      */
     public String getBeginTime() {
@@ -67,7 +67,7 @@ public class TimeCondition {
     }
 
     /**
-     * |参数名称：查询结束时间：必须是日期格式。当time_measure_id值为1或为空时，格式为YYYY-MM-DD当time_measure_id值为2时，格式为YYYY-MM| |参数约束及描述：查询结束时间：必须是日期格式。当time_measure_id值为1或为空时，格式为YYYY-MM-DD当time_measure_id值为2时，格式为YYYY-MM|
+     * 查询结束时间：必须是日期格式。当time_measure_id值为1或为空时，格式为YYYY-MM-DD当time_measure_id值为2时，格式为YYYY-MM
      * @return endTime
      */
     public String getEndTime() {

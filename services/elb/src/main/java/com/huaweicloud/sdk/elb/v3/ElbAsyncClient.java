@@ -414,39 +414,6 @@ public class ElbAsyncClient {
     }
 
     /**
-     * 创建主备后端服务器组
-     *
-     * 创建主备后端服务器组。
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param CreateMasterSlavePoolRequest 请求对象
-     * @return CompletableFuture<CreateMasterSlavePoolResponse>
-     */
-    public CompletableFuture<CreateMasterSlavePoolResponse> createMasterSlavePoolAsync(
-        CreateMasterSlavePoolRequest request) {
-        return hcClient.asyncInvokeHttp(request, ElbMeta.createMasterSlavePool);
-    }
-
-    /**
-     * 创建主备后端服务器组
-     *
-     * 创建主备后端服务器组。
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param CreateMasterSlavePoolRequest 请求对象
-     * @return AsyncInvoker<CreateMasterSlavePoolRequest, CreateMasterSlavePoolResponse>
-     */
-    public AsyncInvoker<CreateMasterSlavePoolRequest, CreateMasterSlavePoolResponse> createMasterSlavePoolAsyncInvoker(
-        CreateMasterSlavePoolRequest request) {
-        return new AsyncInvoker<CreateMasterSlavePoolRequest, CreateMasterSlavePoolResponse>(request,
-            ElbMeta.createMasterSlavePool, hcClient);
-    }
-
-    /**
      * 创建后端服务器
      *
      * 创建后端服务器。
@@ -760,39 +727,6 @@ public class ElbAsyncClient {
     public AsyncInvoker<DeleteLogtankRequest, DeleteLogtankResponse> deleteLogtankAsyncInvoker(
         DeleteLogtankRequest request) {
         return new AsyncInvoker<DeleteLogtankRequest, DeleteLogtankResponse>(request, ElbMeta.deleteLogtank, hcClient);
-    }
-
-    /**
-     * 删除主备后端服务器组
-     *
-     * 删除主备后端服务器组。
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param DeleteMasterSlavePoolRequest 请求对象
-     * @return CompletableFuture<DeleteMasterSlavePoolResponse>
-     */
-    public CompletableFuture<DeleteMasterSlavePoolResponse> deleteMasterSlavePoolAsync(
-        DeleteMasterSlavePoolRequest request) {
-        return hcClient.asyncInvokeHttp(request, ElbMeta.deleteMasterSlavePool);
-    }
-
-    /**
-     * 删除主备后端服务器组
-     *
-     * 删除主备后端服务器组。
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param DeleteMasterSlavePoolRequest 请求对象
-     * @return AsyncInvoker<DeleteMasterSlavePoolRequest, DeleteMasterSlavePoolResponse>
-     */
-    public AsyncInvoker<DeleteMasterSlavePoolRequest, DeleteMasterSlavePoolResponse> deleteMasterSlavePoolAsyncInvoker(
-        DeleteMasterSlavePoolRequest request) {
-        return new AsyncInvoker<DeleteMasterSlavePoolRequest, DeleteMasterSlavePoolResponse>(request,
-            ElbMeta.deleteMasterSlavePool, hcClient);
     }
 
     /**
@@ -1214,39 +1148,6 @@ public class ElbAsyncClient {
     public AsyncInvoker<ListLogtanksRequest, ListLogtanksResponse> listLogtanksAsyncInvoker(
         ListLogtanksRequest request) {
         return new AsyncInvoker<ListLogtanksRequest, ListLogtanksResponse>(request, ElbMeta.listLogtanks, hcClient);
-    }
-
-    /**
-     * 查询主备后端服务器组列表
-     *
-     * 主备后端服务器组列表。
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param ListMasterSlavePoolsRequest 请求对象
-     * @return CompletableFuture<ListMasterSlavePoolsResponse>
-     */
-    public CompletableFuture<ListMasterSlavePoolsResponse> listMasterSlavePoolsAsync(
-        ListMasterSlavePoolsRequest request) {
-        return hcClient.asyncInvokeHttp(request, ElbMeta.listMasterSlavePools);
-    }
-
-    /**
-     * 查询主备后端服务器组列表
-     *
-     * 主备后端服务器组列表。
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param ListMasterSlavePoolsRequest 请求对象
-     * @return AsyncInvoker<ListMasterSlavePoolsRequest, ListMasterSlavePoolsResponse>
-     */
-    public AsyncInvoker<ListMasterSlavePoolsRequest, ListMasterSlavePoolsResponse> listMasterSlavePoolsAsyncInvoker(
-        ListMasterSlavePoolsRequest request) {
-        return new AsyncInvoker<ListMasterSlavePoolsRequest, ListMasterSlavePoolsResponse>(request,
-            ElbMeta.listMasterSlavePools, hcClient);
     }
 
     /**
@@ -1694,38 +1595,6 @@ public class ElbAsyncClient {
      */
     public AsyncInvoker<ShowLogtankRequest, ShowLogtankResponse> showLogtankAsyncInvoker(ShowLogtankRequest request) {
         return new AsyncInvoker<ShowLogtankRequest, ShowLogtankResponse>(request, ElbMeta.showLogtank, hcClient);
-    }
-
-    /**
-     * 查询主备后端服务器组详情
-     *
-     * 主备后端服务器组详情。
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param ShowMasterSlavePoolRequest 请求对象
-     * @return CompletableFuture<ShowMasterSlavePoolResponse>
-     */
-    public CompletableFuture<ShowMasterSlavePoolResponse> showMasterSlavePoolAsync(ShowMasterSlavePoolRequest request) {
-        return hcClient.asyncInvokeHttp(request, ElbMeta.showMasterSlavePool);
-    }
-
-    /**
-     * 查询主备后端服务器组详情
-     *
-     * 主备后端服务器组详情。
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param ShowMasterSlavePoolRequest 请求对象
-     * @return AsyncInvoker<ShowMasterSlavePoolRequest, ShowMasterSlavePoolResponse>
-     */
-    public AsyncInvoker<ShowMasterSlavePoolRequest, ShowMasterSlavePoolResponse> showMasterSlavePoolAsyncInvoker(
-        ShowMasterSlavePoolRequest request) {
-        return new AsyncInvoker<ShowMasterSlavePoolRequest, ShowMasterSlavePoolResponse>(request,
-            ElbMeta.showMasterSlavePool, hcClient);
     }
 
     /**

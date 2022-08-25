@@ -1,10 +1,15 @@
 package com.huaweicloud.sdk.elb.v3.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -82,6 +87,88 @@ public class UpdateLoadBalancerOption {
     @JsonProperty(value = "autoscaling")
 
     private UpdateLoadbalancerAutoscalingOption autoscaling;
+
+    /**
+     * WAF故障时的流量处理策略。discard:丢弃，forward: 转发到后端（默认）   使用说明：只有绑定了waf的LB实例，该字段才会生效。
+     */
+    public static final class WafFailureActionEnum {
+
+        /**
+         * Enum DISCARD for value: "discard"
+         */
+        public static final WafFailureActionEnum DISCARD = new WafFailureActionEnum("discard");
+
+        /**
+         * Enum FORWARD for value: "forward"
+         */
+        public static final WafFailureActionEnum FORWARD = new WafFailureActionEnum("forward");
+
+        private static final Map<String, WafFailureActionEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, WafFailureActionEnum> createStaticFields() {
+            Map<String, WafFailureActionEnum> map = new HashMap<>();
+            map.put("discard", DISCARD);
+            map.put("forward", FORWARD);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        WafFailureActionEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static WafFailureActionEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            WafFailureActionEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new WafFailureActionEnum(value);
+            }
+            return result;
+        }
+
+        public static WafFailureActionEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            WafFailureActionEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof WafFailureActionEnum) {
+                return this.value.equals(((WafFailureActionEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "waf_failure_action")
+
+    private WafFailureActionEnum wafFailureAction;
 
     public UpdateLoadBalancerOption withName(String name) {
         this.name = name;
@@ -364,6 +451,23 @@ public class UpdateLoadBalancerOption {
         this.autoscaling = autoscaling;
     }
 
+    public UpdateLoadBalancerOption withWafFailureAction(WafFailureActionEnum wafFailureAction) {
+        this.wafFailureAction = wafFailureAction;
+        return this;
+    }
+
+    /**
+     * WAF故障时的流量处理策略。discard:丢弃，forward: 转发到后端（默认）   使用说明：只有绑定了waf的LB实例，该字段才会生效。
+     * @return wafFailureAction
+     */
+    public WafFailureActionEnum getWafFailureAction() {
+        return wafFailureAction;
+    }
+
+    public void setWafFailureAction(WafFailureActionEnum wafFailureAction) {
+        this.wafFailureAction = wafFailureAction;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -386,7 +490,8 @@ public class UpdateLoadBalancerOption {
             && Objects.equals(this.elbVirsubnetIds, updateLoadBalancerOption.elbVirsubnetIds)
             && Objects.equals(this.deletionProtectionEnable, updateLoadBalancerOption.deletionProtectionEnable)
             && Objects.equals(this.prepaidOptions, updateLoadBalancerOption.prepaidOptions)
-            && Objects.equals(this.autoscaling, updateLoadBalancerOption.autoscaling);
+            && Objects.equals(this.autoscaling, updateLoadBalancerOption.autoscaling)
+            && Objects.equals(this.wafFailureAction, updateLoadBalancerOption.wafFailureAction);
     }
 
     @Override
@@ -404,7 +509,8 @@ public class UpdateLoadBalancerOption {
             elbVirsubnetIds,
             deletionProtectionEnable,
             prepaidOptions,
-            autoscaling);
+            autoscaling,
+            wafFailureAction);
     }
 
     @Override
@@ -425,6 +531,7 @@ public class UpdateLoadBalancerOption {
         sb.append("    deletionProtectionEnable: ").append(toIndentedString(deletionProtectionEnable)).append("\n");
         sb.append("    prepaidOptions: ").append(toIndentedString(prepaidOptions)).append("\n");
         sb.append("    autoscaling: ").append(toIndentedString(autoscaling)).append("\n");
+        sb.append("    wafFailureAction: ").append(toIndentedString(wafFailureAction)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -59,6 +59,11 @@ public class UpdateListenerOption {
     private List<String> sniContainerRefs = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sni_match_algo")
+
+    private String sniMatchAlgo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tls_ciphers_policy")
 
     private String tlsCiphersPolicy;
@@ -286,6 +291,23 @@ public class UpdateListenerOption {
         this.sniContainerRefs = sniContainerRefs;
     }
 
+    public UpdateListenerOption withSniMatchAlgo(String sniMatchAlgo) {
+        this.sniMatchAlgo = sniMatchAlgo;
+        return this;
+    }
+
+    /**
+     * 监听器使用的SNI证书泛域名匹配方式。 longest_suffix表示最长尾缀匹配，wildcard表示标准域名分级匹配。 默认为wildcard。
+     * @return sniMatchAlgo
+     */
+    public String getSniMatchAlgo() {
+        return sniMatchAlgo;
+    }
+
+    public void setSniMatchAlgo(String sniMatchAlgo) {
+        this.sniMatchAlgo = sniMatchAlgo;
+    }
+
     public UpdateListenerOption withTlsCiphersPolicy(String tlsCiphersPolicy) {
         this.tlsCiphersPolicy = tlsCiphersPolicy;
         return this;
@@ -496,6 +518,7 @@ public class UpdateListenerOption {
             && Objects.equals(this.insertHeaders, updateListenerOption.insertHeaders)
             && Objects.equals(this.name, updateListenerOption.name)
             && Objects.equals(this.sniContainerRefs, updateListenerOption.sniContainerRefs)
+            && Objects.equals(this.sniMatchAlgo, updateListenerOption.sniMatchAlgo)
             && Objects.equals(this.tlsCiphersPolicy, updateListenerOption.tlsCiphersPolicy)
             && Objects.equals(this.securityPolicyId, updateListenerOption.securityPolicyId)
             && Objects.equals(this.enableMemberRetry, updateListenerOption.enableMemberRetry)
@@ -519,6 +542,7 @@ public class UpdateListenerOption {
             insertHeaders,
             name,
             sniContainerRefs,
+            sniMatchAlgo,
             tlsCiphersPolicy,
             securityPolicyId,
             enableMemberRetry,
@@ -544,6 +568,7 @@ public class UpdateListenerOption {
         sb.append("    insertHeaders: ").append(toIndentedString(insertHeaders)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    sniContainerRefs: ").append(toIndentedString(sniContainerRefs)).append("\n");
+        sb.append("    sniMatchAlgo: ").append(toIndentedString(sniMatchAlgo)).append("\n");
         sb.append("    tlsCiphersPolicy: ").append(toIndentedString(tlsCiphersPolicy)).append("\n");
         sb.append("    securityPolicyId: ").append(toIndentedString(securityPolicyId)).append("\n");
         sb.append("    enableMemberRetry: ").append(toIndentedString(enableMemberRetry)).append("\n");

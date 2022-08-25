@@ -4,7 +4,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -97,6 +99,16 @@ public class ElasticResourcePoolsResponse {
     @JsonProperty(value = "charging_mode")
 
     private Integer chargingMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "manager")
+
+    private String manager;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "label")
+
+    private Map<String, String> label = null;
 
     public ElasticResourcePoolsResponse withUpdateTime(Integer updateTime) {
         this.updateTime = updateTime;
@@ -403,6 +415,56 @@ public class ElasticResourcePoolsResponse {
         this.chargingMode = chargingMode;
     }
 
+    public ElasticResourcePoolsResponse withManager(String manager) {
+        this.manager = manager;
+        return this;
+    }
+
+    /**
+     * 弹性资源池类型
+     * @return manager
+     */
+    public String getManager() {
+        return manager;
+    }
+
+    public void setManager(String manager) {
+        this.manager = manager;
+    }
+
+    public ElasticResourcePoolsResponse withLabel(Map<String, String> label) {
+        this.label = label;
+        return this;
+    }
+
+    public ElasticResourcePoolsResponse putLabelItem(String key, String labelItem) {
+        if (this.label == null) {
+            this.label = new HashMap<>();
+        }
+        this.label.put(key, labelItem);
+        return this;
+    }
+
+    public ElasticResourcePoolsResponse withLabel(Consumer<Map<String, String>> labelSetter) {
+        if (this.label == null) {
+            this.label = new HashMap<>();
+        }
+        labelSetter.accept(this.label);
+        return this;
+    }
+
+    /**
+     * 标识弹性资源池，目前只支持 开发者标签，\"label\": {\"billing_spec_code\":\"developer\"}
+     * @return label
+     */
+    public Map<String, String> getLabel() {
+        return label;
+    }
+
+    public void setLabel(Map<String, String> label) {
+        this.label = label;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -428,7 +490,9 @@ public class ElasticResourcePoolsResponse {
             && Objects.equals(this.failReason, elasticResourcePoolsResponse.failReason)
             && Objects.equals(this.enterpriseProjectId, elasticResourcePoolsResponse.enterpriseProjectId)
             && Objects.equals(this.prepayCu, elasticResourcePoolsResponse.prepayCu)
-            && Objects.equals(this.chargingMode, elasticResourcePoolsResponse.chargingMode);
+            && Objects.equals(this.chargingMode, elasticResourcePoolsResponse.chargingMode)
+            && Objects.equals(this.manager, elasticResourcePoolsResponse.manager)
+            && Objects.equals(this.label, elasticResourcePoolsResponse.label);
     }
 
     @Override
@@ -449,7 +513,9 @@ public class ElasticResourcePoolsResponse {
             failReason,
             enterpriseProjectId,
             prepayCu,
-            chargingMode);
+            chargingMode,
+            manager,
+            label);
     }
 
     @Override
@@ -473,6 +539,8 @@ public class ElasticResourcePoolsResponse {
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    prepayCu: ").append(toIndentedString(prepayCu)).append("\n");
         sb.append("    chargingMode: ").append(toIndentedString(chargingMode)).append("\n");
+        sb.append("    manager: ").append(toIndentedString(manager)).append("\n");
+        sb.append("    label: ").append(toIndentedString(label)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -1,44 +1,54 @@
-package com.huaweicloud.sdk.elb.v3.model;
+package com.huaweicloud.sdk.waf.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * Request Object
+ * Response Object
  */
-public class CreateMasterSlavePoolRequest {
+public class ListRequestTimelineResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private CreateMasterSlavePoolRequestBody body;
+    private List<StatisticsTimelineItem> body = null;
 
-    public CreateMasterSlavePoolRequest withBody(CreateMasterSlavePoolRequestBody body) {
+    public ListRequestTimelineResponse withBody(List<StatisticsTimelineItem> body) {
         this.body = body;
         return this;
     }
 
-    public CreateMasterSlavePoolRequest withBody(Consumer<CreateMasterSlavePoolRequestBody> bodySetter) {
+    public ListRequestTimelineResponse addBodyItem(StatisticsTimelineItem bodyItem) {
         if (this.body == null) {
-            this.body = new CreateMasterSlavePoolRequestBody();
-            bodySetter.accept(this.body);
+            this.body = new ArrayList<>();
         }
+        this.body.add(bodyItem);
+        return this;
+    }
 
+    public ListRequestTimelineResponse withBody(Consumer<List<StatisticsTimelineItem>> bodySetter) {
+        if (this.body == null) {
+            this.body = new ArrayList<>();
+        }
+        bodySetter.accept(this.body);
         return this;
     }
 
     /**
-     * Get body
+     * 安全统计的请求时间线数据
      * @return body
      */
-    public CreateMasterSlavePoolRequestBody getBody() {
+    public List<StatisticsTimelineItem> getBody() {
         return body;
     }
 
-    public void setBody(CreateMasterSlavePoolRequestBody body) {
+    public void setBody(List<StatisticsTimelineItem> body) {
         this.body = body;
     }
 
@@ -50,8 +60,8 @@ public class CreateMasterSlavePoolRequest {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        CreateMasterSlavePoolRequest createMasterSlavePoolRequest = (CreateMasterSlavePoolRequest) o;
-        return Objects.equals(this.body, createMasterSlavePoolRequest.body);
+        ListRequestTimelineResponse listRequestTimelineResponse = (ListRequestTimelineResponse) o;
+        return Objects.equals(this.body, listRequestTimelineResponse.body);
     }
 
     @Override
@@ -62,7 +72,7 @@ public class CreateMasterSlavePoolRequest {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class CreateMasterSlavePoolRequest {\n");
+        sb.append("class ListRequestTimelineResponse {\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

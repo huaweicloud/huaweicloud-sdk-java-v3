@@ -88,6 +88,11 @@ public class ListMembersRequest {
 
     private List<String> memberType = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_id")
+
+    private List<String> instanceId = null;
+
     public ListMembersRequest withPoolId(String poolId) {
         this.poolId = poolId;
         return this;
@@ -505,6 +510,39 @@ public class ListMembersRequest {
         this.memberType = memberType;
     }
 
+    public ListMembersRequest withInstanceId(List<String> instanceId) {
+        this.instanceId = instanceId;
+        return this;
+    }
+
+    public ListMembersRequest addInstanceIdItem(String instanceIdItem) {
+        if (this.instanceId == null) {
+            this.instanceId = new ArrayList<>();
+        }
+        this.instanceId.add(instanceIdItem);
+        return this;
+    }
+
+    public ListMembersRequest withInstanceId(Consumer<List<String>> instanceIdSetter) {
+        if (this.instanceId == null) {
+            this.instanceId = new ArrayList<>();
+        }
+        instanceIdSetter.accept(this.instanceId);
+        return this;
+    }
+
+    /**
+     * member关联的ECS实例ID，空表示跨VPC场景的member。  支持多值查询，查询条件格式：*instance_id=xxx&instance_id=xxx*。
+     * @return instanceId
+     */
+    public List<String> getInstanceId() {
+        return instanceId;
+    }
+
+    public void setInstanceId(List<String> instanceId) {
+        this.instanceId = instanceId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -528,7 +566,8 @@ public class ListMembersRequest {
             && Objects.equals(this.operatingStatus, listMembersRequest.operatingStatus)
             && Objects.equals(this.enterpriseProjectId, listMembersRequest.enterpriseProjectId)
             && Objects.equals(this.ipVersion, listMembersRequest.ipVersion)
-            && Objects.equals(this.memberType, listMembersRequest.memberType);
+            && Objects.equals(this.memberType, listMembersRequest.memberType)
+            && Objects.equals(this.instanceId, listMembersRequest.instanceId);
     }
 
     @Override
@@ -547,7 +586,8 @@ public class ListMembersRequest {
             operatingStatus,
             enterpriseProjectId,
             ipVersion,
-            memberType);
+            memberType,
+            instanceId);
     }
 
     @Override
@@ -569,6 +609,7 @@ public class ListMembersRequest {
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    ipVersion: ").append(toIndentedString(ipVersion)).append("\n");
         sb.append("    memberType: ").append(toIndentedString(memberType)).append("\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

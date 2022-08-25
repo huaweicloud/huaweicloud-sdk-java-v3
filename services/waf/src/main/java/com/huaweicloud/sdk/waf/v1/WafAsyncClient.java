@@ -1133,6 +1133,38 @@ public class WafAsyncClient {
     }
 
     /**
+     * 查询安全总览中请求次数时间线统计数据
+     *
+     * 查询安全总览中请求次数时间线统计数据。需要注意的是，安全总览相关的接口，暂时不能支持任意时间的查询。只能支持 console上显示的 昨天，今天，3天，7天和30天 数据查询。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListRequestTimelineRequest 请求对象
+     * @return CompletableFuture<ListRequestTimelineResponse>
+     */
+    public CompletableFuture<ListRequestTimelineResponse> listRequestTimelineAsync(ListRequestTimelineRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.listRequestTimeline);
+    }
+
+    /**
+     * 查询安全总览中请求次数时间线统计数据
+     *
+     * 查询安全总览中请求次数时间线统计数据。需要注意的是，安全总览相关的接口，暂时不能支持任意时间的查询。只能支持 console上显示的 昨天，今天，3天，7天和30天 数据查询。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListRequestTimelineRequest 请求对象
+     * @return AsyncInvoker<ListRequestTimelineRequest, ListRequestTimelineResponse>
+     */
+    public AsyncInvoker<ListRequestTimelineRequest, ListRequestTimelineResponse> listRequestTimelineAsyncInvoker(
+        ListRequestTimelineRequest request) {
+        return new AsyncInvoker<ListRequestTimelineRequest, ListRequestTimelineResponse>(request,
+            WafMeta.listRequestTimeline, hcClient);
+    }
+
+    /**
      * 查询安全总览请求与攻击数量
      *
      * 查询安全总览请求与攻击数量。需要注意的是，安全总览相关的接口，暂时不能支持任意时间的查询。只能支持 console上显示的 昨天，今天，3天，7天和30天 数据查询。

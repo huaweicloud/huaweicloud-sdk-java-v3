@@ -148,6 +148,11 @@ public class CreateSQLJobReq {
 
     private List<JobsTags> tags = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "flink_version")
+
+    private String flinkVersion;
+
     public CreateSQLJobReq withName(String name) {
         this.name = name;
         return this;
@@ -639,6 +644,23 @@ public class CreateSQLJobReq {
         this.tags = tags;
     }
 
+    public CreateSQLJobReq withFlinkVersion(String flinkVersion) {
+        this.flinkVersion = flinkVersion;
+        return this;
+    }
+
+    /**
+     * Flink版本。当前只支持1.10和1.12。
+     * @return flinkVersion
+     */
+    public String getFlinkVersion() {
+        return flinkVersion;
+    }
+
+    public void setFlinkVersion(String flinkVersion) {
+        this.flinkVersion = flinkVersion;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -673,7 +695,8 @@ public class CreateSQLJobReq {
             && Objects.equals(this.resumeCheckpoint, createSQLJobReq.resumeCheckpoint)
             && Objects.equals(this.resumeMaxNum, createSQLJobReq.resumeMaxNum)
             && Objects.equals(this.runtimeConfig, createSQLJobReq.runtimeConfig)
-            && Objects.equals(this.tags, createSQLJobReq.tags);
+            && Objects.equals(this.tags, createSQLJobReq.tags)
+            && Objects.equals(this.flinkVersion, createSQLJobReq.flinkVersion);
     }
 
     @Override
@@ -704,7 +727,8 @@ public class CreateSQLJobReq {
             resumeCheckpoint,
             resumeMaxNum,
             runtimeConfig,
-            tags);
+            tags,
+            flinkVersion);
     }
 
     @Override
@@ -738,6 +762,7 @@ public class CreateSQLJobReq {
         sb.append("    resumeMaxNum: ").append(toIndentedString(resumeMaxNum)).append("\n");
         sb.append("    runtimeConfig: ").append(toIndentedString(runtimeConfig)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    flinkVersion: ").append(toIndentedString(flinkVersion)).append("\n");
         sb.append("}");
         return sb.toString();
     }

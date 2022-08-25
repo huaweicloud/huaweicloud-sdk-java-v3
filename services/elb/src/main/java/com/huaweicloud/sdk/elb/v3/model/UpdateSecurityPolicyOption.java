@@ -181,16 +181,6 @@ public class UpdateSecurityPolicyOption {
          */
         public static final CiphersEnum TLS_AES_128_CCM_8_SHA256 = new CiphersEnum("TLS_AES_128_CCM_8_SHA256");
 
-        /**
-         * Enum ECC_SM4_SM3 for value: "ECC-SM4-SM3"
-         */
-        public static final CiphersEnum ECC_SM4_SM3 = new CiphersEnum("ECC-SM4-SM3");
-
-        /**
-         * Enum ECDHE_SM4_SM3 for value: "ECDHE-SM4-SM3"
-         */
-        public static final CiphersEnum ECDHE_SM4_SM3 = new CiphersEnum("ECDHE-SM4-SM3");
-
         private static final Map<String, CiphersEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, CiphersEnum> createStaticFields() {
@@ -223,8 +213,6 @@ public class UpdateSecurityPolicyOption {
             map.put("TLS_CHACHA20_POLY1305_SHA256", TLS_CHACHA20_POLY1305_SHA256);
             map.put("TLS_AES_128_CCM_SHA256", TLS_AES_128_CCM_SHA256);
             map.put("TLS_AES_128_CCM_8_SHA256", TLS_AES_128_CCM_8_SHA256);
-            map.put("ECC-SM4-SM3", ECC_SM4_SM3);
-            map.put("ECDHE-SM4-SM3", ECDHE_SM4_SM3);
             return Collections.unmodifiableMap(map);
         }
 

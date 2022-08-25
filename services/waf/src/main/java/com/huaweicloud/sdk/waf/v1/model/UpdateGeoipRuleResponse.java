@@ -22,6 +22,11 @@ public class UpdateGeoipRuleResponse extends SdkResponse {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "description")
+
+    private String description;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policyid")
 
     private String policyid;
@@ -68,6 +73,23 @@ public class UpdateGeoipRuleResponse extends SdkResponse {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public UpdateGeoipRuleResponse withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /**
+     * 描述
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public UpdateGeoipRuleResponse withPolicyid(String policyid) {
@@ -132,6 +154,7 @@ public class UpdateGeoipRuleResponse extends SdkResponse {
         UpdateGeoipRuleResponse updateGeoipRuleResponse = (UpdateGeoipRuleResponse) o;
         return Objects.equals(this.id, updateGeoipRuleResponse.id)
             && Objects.equals(this.name, updateGeoipRuleResponse.name)
+            && Objects.equals(this.description, updateGeoipRuleResponse.description)
             && Objects.equals(this.policyid, updateGeoipRuleResponse.policyid)
             && Objects.equals(this.geoip, updateGeoipRuleResponse.geoip)
             && Objects.equals(this.white, updateGeoipRuleResponse.white);
@@ -139,7 +162,7 @@ public class UpdateGeoipRuleResponse extends SdkResponse {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, policyid, geoip, white);
+        return Objects.hash(id, name, description, policyid, geoip, white);
     }
 
     @Override
@@ -148,6 +171,7 @@ public class UpdateGeoipRuleResponse extends SdkResponse {
         sb.append("class UpdateGeoipRuleResponse {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    policyid: ").append(toIndentedString(policyid)).append("\n");
         sb.append("    geoip: ").append(toIndentedString(geoip)).append("\n");
         sb.append("    white: ").append(toIndentedString(white)).append("\n");

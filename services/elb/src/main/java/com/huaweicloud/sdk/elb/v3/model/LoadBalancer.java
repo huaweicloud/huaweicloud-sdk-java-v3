@@ -285,6 +285,11 @@ public class LoadBalancer {
 
     private String publicBorderGroup;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "waf_failure_action")
+
+    private String wafFailureAction;
+
     public LoadBalancer withId(String id) {
         this.id = id;
         return this;
@@ -929,7 +934,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 下联面子网网络ID列表。可以通过GET https://{VPC_Endpoint}/v1/{project_id}/subnets  响应参数中的id得到。  [  若不指定该字段，则会在当前负载均衡器所在的VPC中任意选一个子网，优选双栈网络。](tag:hws,hws_hk,ocb,tlf,ctc,hcs,sbc,g42,tm,cmcc,hk_g42,mix,hk_sbc,hws_ocb,fcs)   若指定多个下联面子网，则按顺序优先使用第一个子网来为负载均衡器下联面端口分配ip地址。   下联面子网必须属于该LB所在的VPC。
+     * 下联面子网的网络ID列表。
      * @return elbVirsubnetIds
      */
     public List<String> getElbVirsubnetIds() {
@@ -1077,6 +1082,23 @@ public class LoadBalancer {
         this.publicBorderGroup = publicBorderGroup;
     }
 
+    public LoadBalancer withWafFailureAction(String wafFailureAction) {
+        this.wafFailureAction = wafFailureAction;
+        return this;
+    }
+
+    /**
+     * WAF故障时的流量处理策略。discard:丢弃，forward: 转发到后端（默认）   使用说明：只有绑定了waf的LB实例，该字段才会生效。
+     * @return wafFailureAction
+     */
+    public String getWafFailureAction() {
+        return wafFailureAction;
+    }
+
+    public void setWafFailureAction(String wafFailureAction) {
+        this.wafFailureAction = wafFailureAction;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -1118,7 +1140,8 @@ public class LoadBalancer {
             && Objects.equals(this.ipv6Bandwidth, loadBalancer.ipv6Bandwidth)
             && Objects.equals(this.deletionProtectionEnable, loadBalancer.deletionProtectionEnable)
             && Objects.equals(this.autoscaling, loadBalancer.autoscaling)
-            && Objects.equals(this.publicBorderGroup, loadBalancer.publicBorderGroup);
+            && Objects.equals(this.publicBorderGroup, loadBalancer.publicBorderGroup)
+            && Objects.equals(this.wafFailureAction, loadBalancer.wafFailureAction);
     }
 
     @Override
@@ -1160,7 +1183,8 @@ public class LoadBalancer {
             ipv6Bandwidth,
             deletionProtectionEnable,
             autoscaling,
-            publicBorderGroup);
+            publicBorderGroup,
+            wafFailureAction);
     }
 
     @Override
@@ -1205,6 +1229,7 @@ public class LoadBalancer {
         sb.append("    deletionProtectionEnable: ").append(toIndentedString(deletionProtectionEnable)).append("\n");
         sb.append("    autoscaling: ").append(toIndentedString(autoscaling)).append("\n");
         sb.append("    publicBorderGroup: ").append(toIndentedString(publicBorderGroup)).append("\n");
+        sb.append("    wafFailureAction: ").append(toIndentedString(wafFailureAction)).append("\n");
         sb.append("}");
         return sb.toString();
     }

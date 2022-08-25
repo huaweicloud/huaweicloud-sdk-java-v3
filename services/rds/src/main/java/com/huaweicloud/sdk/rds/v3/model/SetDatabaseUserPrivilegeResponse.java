@@ -1,4 +1,4 @@
-package com.huaweicloud.sdk.elb.v3.model;
+package com.huaweicloud.sdk.rds.v3.model;
 
 import com.huaweicloud.sdk.core.SdkResponse;
 
@@ -7,7 +7,7 @@ import java.util.Objects;
 /**
  * Response Object
  */
-public class DeleteMasterSlavePoolResponse extends SdkResponse {
+public class SetDatabaseUserPrivilegeResponse extends SdkResponse {
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -28,7 +28,7 @@ public class DeleteMasterSlavePoolResponse extends SdkResponse {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class DeleteMasterSlavePoolResponse {\n");
+        sb.append("class SetDatabaseUserPrivilegeResponse {\n");
         sb.append("}");
         return sb.toString();
     }

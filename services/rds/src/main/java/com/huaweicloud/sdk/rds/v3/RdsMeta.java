@@ -4161,6 +4161,46 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<SetDatabaseUserPrivilegeRequest, SetDatabaseUserPrivilegeResponse> setDatabaseUserPrivilege =
+        genForsetDatabaseUserPrivilege();
+
+    private static HttpRequestDef<SetDatabaseUserPrivilegeRequest, SetDatabaseUserPrivilegeResponse> genForsetDatabaseUserPrivilege() {
+        // basic
+        HttpRequestDef.Builder<SetDatabaseUserPrivilegeRequest, SetDatabaseUserPrivilegeResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, SetDatabaseUserPrivilegeRequest.class, SetDatabaseUserPrivilegeResponse.class)
+                .withName("SetDatabaseUserPrivilege")
+                .withUri("/v3/{project_id}/instances/{instance_id}/user-privilege")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetDatabaseUserPrivilegeRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetDatabaseUserPrivilegeRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<SetDatabaseUserPrivilegeReqV3>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SetDatabaseUserPrivilegeReqV3.class),
+            f -> f.withMarshaller(SetDatabaseUserPrivilegeRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<SetPostgresqlDbUserPwdRequest, SetPostgresqlDbUserPwdResponse> setPostgresqlDbUserPwd =
         genForsetPostgresqlDbUserPwd();
 

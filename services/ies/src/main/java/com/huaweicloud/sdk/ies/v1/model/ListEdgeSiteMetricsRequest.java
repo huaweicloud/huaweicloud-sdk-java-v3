@@ -21,7 +21,7 @@ public class ListEdgeSiteMetricsRequest {
     private String siteId;
 
     /**
-     * 指定维度查询 - site_id: 按站点维度，查询站点下计算、存储资源容量信息 - flavor: 按规格维度，查询站点下各flavor的计算资源使用情况
+     * 指定维度查询 - site_id: 按站点维度，查询站点下计算、存储资源容量信息 - flavor: 按规格维度，查询站点下各flavor的计算资源使用情况 - storage: 按存储维度，查询站点下各存储资源类型的使用情况 - flavor_capacity: 按规格容量维度，查询站点下各规格可发放数量预测
      */
     public static final class DimEnum {
 
@@ -35,12 +35,24 @@ public class ListEdgeSiteMetricsRequest {
          */
         public static final DimEnum FLAVOR = new DimEnum("flavor");
 
+        /**
+         * Enum STORAGE for value: "storage"
+         */
+        public static final DimEnum STORAGE = new DimEnum("storage");
+
+        /**
+         * Enum FLAVOR_CAPACITY for value: "flavor_capacity"
+         */
+        public static final DimEnum FLAVOR_CAPACITY = new DimEnum("flavor_capacity");
+
         private static final Map<String, DimEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, DimEnum> createStaticFields() {
             Map<String, DimEnum> map = new HashMap<>();
             map.put("site_id", SITE_ID);
             map.put("flavor", FLAVOR);
+            map.put("storage", STORAGE);
+            map.put("flavor_capacity", FLAVOR_CAPACITY);
             return Collections.unmodifiableMap(map);
         }
 
@@ -125,7 +137,7 @@ public class ListEdgeSiteMetricsRequest {
     }
 
     /**
-     * 指定维度查询 - site_id: 按站点维度，查询站点下计算、存储资源容量信息 - flavor: 按规格维度，查询站点下各flavor的计算资源使用情况
+     * 指定维度查询 - site_id: 按站点维度，查询站点下计算、存储资源容量信息 - flavor: 按规格维度，查询站点下各flavor的计算资源使用情况 - storage: 按存储维度，查询站点下各存储资源类型的使用情况 - flavor_capacity: 按规格容量维度，查询站点下各规格可发放数量预测
      * @return dim
      */
     public DimEnum getDim() {

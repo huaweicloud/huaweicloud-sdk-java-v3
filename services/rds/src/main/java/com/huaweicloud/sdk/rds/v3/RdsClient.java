@@ -3292,6 +3292,38 @@ public class RdsClient {
     }
 
     /**
+     * 设置数据库用户权限
+     *
+     * 设置数据库用户权限：只读或可读写。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SetDatabaseUserPrivilegeRequest 请求对象
+     * @return SetDatabaseUserPrivilegeResponse
+     */
+    public SetDatabaseUserPrivilegeResponse setDatabaseUserPrivilege(SetDatabaseUserPrivilegeRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.setDatabaseUserPrivilege);
+    }
+
+    /**
+     * 设置数据库用户权限
+     *
+     * 设置数据库用户权限：只读或可读写。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SetDatabaseUserPrivilegeRequest 请求对象
+     * @return SyncInvoker<SetDatabaseUserPrivilegeRequest, SetDatabaseUserPrivilegeResponse>
+     */
+    public SyncInvoker<SetDatabaseUserPrivilegeRequest, SetDatabaseUserPrivilegeResponse> setDatabaseUserPrivilegeInvoker(
+        SetDatabaseUserPrivilegeRequest request) {
+        return new SyncInvoker<SetDatabaseUserPrivilegeRequest, SetDatabaseUserPrivilegeResponse>(request,
+            RdsMeta.setDatabaseUserPrivilege, hcClient);
+    }
+
+    /**
      * 重置数据库帐号密码
      *
      * 重置指定数据库帐号的密码。

@@ -30,6 +30,21 @@ public class ListQueuesRequest {
 
     private String tags;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "page-size")
+
+    private Integer pageSize;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "current-page")
+
+    private Integer currentPage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "order")
+
+    private String order;
+
     public ListQueuesRequest withWithPriv(Boolean withPriv) {
         this.withPriv = withPriv;
         return this;
@@ -98,6 +113,57 @@ public class ListQueuesRequest {
         this.tags = tags;
     }
 
+    public ListQueuesRequest withPageSize(Integer pageSize) {
+        this.pageSize = pageSize;
+        return this;
+    }
+
+    /**
+     * 每页显示的最大结果行数，默认值Integer.MAX_VALUE（也即不分页）
+     * @return pageSize
+     */
+    public Integer getPageSize() {
+        return pageSize;
+    }
+
+    public void setPageSize(Integer pageSize) {
+        this.pageSize = pageSize;
+    }
+
+    public ListQueuesRequest withCurrentPage(Integer currentPage) {
+        this.currentPage = currentPage;
+        return this;
+    }
+
+    /**
+     * 当前页码，默认为第一页。
+     * @return currentPage
+     */
+    public Integer getCurrentPage() {
+        return currentPage;
+    }
+
+    public void setCurrentPage(Integer currentPage) {
+        this.currentPage = currentPage;
+    }
+
+    public ListQueuesRequest withOrder(String order) {
+        this.order = order;
+        return this;
+    }
+
+    /**
+     * 指定队列排序方式，默认为queue_name_asc（队列名称升序），支持queue_name_asc（队列名称升序）、queue_name_desc（队列名称降序）、cu_asc（CU数升序）、cu_desc（CU数降序）四种排序方式。
+     * @return order
+     */
+    public String getOrder() {
+        return order;
+    }
+
+    public void setOrder(String order) {
+        this.order = order;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -110,12 +176,15 @@ public class ListQueuesRequest {
         return Objects.equals(this.withPriv, listQueuesRequest.withPriv)
             && Objects.equals(this.withChargeInfo, listQueuesRequest.withChargeInfo)
             && Objects.equals(this.queueType, listQueuesRequest.queueType)
-            && Objects.equals(this.tags, listQueuesRequest.tags);
+            && Objects.equals(this.tags, listQueuesRequest.tags)
+            && Objects.equals(this.pageSize, listQueuesRequest.pageSize)
+            && Objects.equals(this.currentPage, listQueuesRequest.currentPage)
+            && Objects.equals(this.order, listQueuesRequest.order);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(withPriv, withChargeInfo, queueType, tags);
+        return Objects.hash(withPriv, withChargeInfo, queueType, tags, pageSize, currentPage, order);
     }
 
     @Override
@@ -126,6 +195,9 @@ public class ListQueuesRequest {
         sb.append("    withChargeInfo: ").append(toIndentedString(withChargeInfo)).append("\n");
         sb.append("    queueType: ").append(toIndentedString(queueType)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
+        sb.append("    currentPage: ").append(toIndentedString(currentPage)).append("\n");
+        sb.append("    order: ").append(toIndentedString(order)).append("\n");
         sb.append("}");
         return sb.toString();
     }

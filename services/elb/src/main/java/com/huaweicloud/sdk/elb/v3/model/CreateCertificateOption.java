@@ -137,6 +137,16 @@ public class CreateCertificateOption {
 
     private String enterpriseProjectId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enc_certificate")
+
+    private String encCertificate;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enc_private_key")
+
+    private String encPrivateKey;
+
     public CreateCertificateOption withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
@@ -194,7 +204,7 @@ public class CreateCertificateOption {
     }
 
     /**
-     * 服务器证书所签域名。该字段仅type为server或server_sm时有效。  总长度为0-1024，由若干普通域名或泛域名组成，域名之间以\",\"分割，不超过30个域名。  普通域名：由若干字符串组成，字符串间以\".\"分割，单个字符串长度不超过63个字符，只能包含英文字母、数字或\"-\"，且必须以字母或数字开头和结尾。例：www.test.com；  泛域名：在普通域名的基础上仅允许首字母为\"\"。例：.test.com
+     *  服务器证书所签域名。该字段仅type为server时有效。 总长度为0-1024，由若干普通域名或泛域名组成，域名之间以\",\"分割，不超过30个域名。  普通域名：由若干字符串组成，字符串间以\".\"分割，单个字符串长度不超过63个字符，只能包含英文字母、数字或\"-\"，且必须以字母或数字开头和结尾。例：www.test.com；  泛域名：在普通域名的基础上仅允许首字母为\"\"。例：.test.com
      * @return domain
      */
     public String getDomain() {
@@ -290,6 +300,40 @@ public class CreateCertificateOption {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public CreateCertificateOption withEncCertificate(String encCertificate) {
+        this.encCertificate = encCertificate;
+        return this;
+    }
+
+    /**
+     * HTTPS协议使用的SM加密证书内容。 取值：PEM编码格式。 使用说明：仅type为server_sm时有效且必选。 最大长度65536字符。 支持证书链，最大11层(含证书和证书链)。
+     * @return encCertificate
+     */
+    public String getEncCertificate() {
+        return encCertificate;
+    }
+
+    public void setEncCertificate(String encCertificate) {
+        this.encCertificate = encCertificate;
+    }
+
+    public CreateCertificateOption withEncPrivateKey(String encPrivateKey) {
+        this.encPrivateKey = encPrivateKey;
+        return this;
+    }
+
+    /**
+     * HTTPS协议使用的SM加密证书私钥。 取值：PEM编码格式。 使用说明：仅type为server_sm时有效且必选。 最大长度8192字符。
+     * @return encPrivateKey
+     */
+    public String getEncPrivateKey() {
+        return encPrivateKey;
+    }
+
+    public void setEncPrivateKey(String encPrivateKey) {
+        this.encPrivateKey = encPrivateKey;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -307,7 +351,9 @@ public class CreateCertificateOption {
             && Objects.equals(this.privateKey, createCertificateOption.privateKey)
             && Objects.equals(this.projectId, createCertificateOption.projectId)
             && Objects.equals(this.type, createCertificateOption.type)
-            && Objects.equals(this.enterpriseProjectId, createCertificateOption.enterpriseProjectId);
+            && Objects.equals(this.enterpriseProjectId, createCertificateOption.enterpriseProjectId)
+            && Objects.equals(this.encCertificate, createCertificateOption.encCertificate)
+            && Objects.equals(this.encPrivateKey, createCertificateOption.encPrivateKey);
     }
 
     @Override
@@ -320,7 +366,9 @@ public class CreateCertificateOption {
             privateKey,
             projectId,
             type,
-            enterpriseProjectId);
+            enterpriseProjectId,
+            encCertificate,
+            encPrivateKey);
     }
 
     @Override
@@ -336,6 +384,8 @@ public class CreateCertificateOption {
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    encCertificate: ").append(toIndentedString(encCertificate)).append("\n");
+        sb.append("    encPrivateKey: ").append(toIndentedString(encPrivateKey)).append("\n");
         sb.append("}");
         return sb.toString();
     }
