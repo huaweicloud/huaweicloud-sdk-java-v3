@@ -2425,6 +2425,13 @@ public class RdsMeta {
             f -> f.withMarshaller(StartFailoverRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             }));
+        builder.<FailoverRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(FailoverRequest.class),
+            f -> f.withMarshaller(StartFailoverRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
 
         // response
 
@@ -3644,6 +3651,45 @@ public class RdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DbUserPwdRequest.class),
             f -> f.withMarshaller(SetDbUserPwdRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SetReadOnlySwitchRequest, SetReadOnlySwitchResponse> setReadOnlySwitch =
+        genForsetReadOnlySwitch();
+
+    private static HttpRequestDef<SetReadOnlySwitchRequest, SetReadOnlySwitchResponse> genForsetReadOnlySwitch() {
+        // basic
+        HttpRequestDef.Builder<SetReadOnlySwitchRequest, SetReadOnlySwitchResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, SetReadOnlySwitchRequest.class, SetReadOnlySwitchResponse.class)
+                .withName("SetReadOnlySwitch")
+                .withUri("/v3/{project_id}/instances/{instance_id}/readonly-status")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetReadOnlySwitchRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetReadOnlySwitchRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<MysqlReadOnlySwitch>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(MysqlReadOnlySwitch.class),
+            f -> f.withMarshaller(SetReadOnlySwitchRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

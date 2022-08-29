@@ -2929,6 +2929,38 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 设置数据库用户只读参数
+     *
+     * 根据业务需求，设置数据库用户只读
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SetReadOnlySwitchRequest 请求对象
+     * @return CompletableFuture<SetReadOnlySwitchResponse>
+     */
+    public CompletableFuture<SetReadOnlySwitchResponse> setReadOnlySwitchAsync(SetReadOnlySwitchRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.setReadOnlySwitch);
+    }
+
+    /**
+     * 设置数据库用户只读参数
+     *
+     * 根据业务需求，设置数据库用户只读
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SetReadOnlySwitchRequest 请求对象
+     * @return AsyncInvoker<SetReadOnlySwitchRequest, SetReadOnlySwitchResponse>
+     */
+    public AsyncInvoker<SetReadOnlySwitchRequest, SetReadOnlySwitchResponse> setReadOnlySwitchAsyncInvoker(
+        SetReadOnlySwitchRequest request) {
+        return new AsyncInvoker<SetReadOnlySwitchRequest, SetReadOnlySwitchResponse>(request, RdsMeta.setReadOnlySwitch,
+            hcClient);
+    }
+
+    /**
      * 修改指定实例的数据库备注
      *
      * 修改指定实例中的数据库备注。

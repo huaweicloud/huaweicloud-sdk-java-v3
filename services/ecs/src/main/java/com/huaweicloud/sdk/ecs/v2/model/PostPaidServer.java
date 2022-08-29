@@ -31,6 +31,11 @@ public class PostPaidServer {
     private String availabilityZone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "batch_create_in_multi_az")
+
+    private Boolean batchCreateInMultiAz;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "count")
 
     private Integer count;
@@ -174,6 +179,23 @@ public class PostPaidServer {
 
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
+    }
+
+    public PostPaidServer withBatchCreateInMultiAz(Boolean batchCreateInMultiAz) {
+        this.batchCreateInMultiAz = batchCreateInMultiAz;
+        return this;
+    }
+
+    /**
+     * 是否支持随机多AZ部署。  - “true”：批量创建的ecs部署在多个AZ上 - “false”：批量创建的ecs部署在单个AZ上  > 说明： >  > 当availability_zone为空时该字段生效。
+     * @return batchCreateInMultiAz
+     */
+    public Boolean getBatchCreateInMultiAz() {
+        return batchCreateInMultiAz;
+    }
+
+    public void setBatchCreateInMultiAz(Boolean batchCreateInMultiAz) {
+        this.batchCreateInMultiAz = batchCreateInMultiAz;
     }
 
     public PostPaidServer withCount(Integer count) {
@@ -644,6 +666,7 @@ public class PostPaidServer {
         return Objects.equals(this.autoTerminateTime, postPaidServer.autoTerminateTime)
             && Objects.equals(this.adminPass, postPaidServer.adminPass)
             && Objects.equals(this.availabilityZone, postPaidServer.availabilityZone)
+            && Objects.equals(this.batchCreateInMultiAz, postPaidServer.batchCreateInMultiAz)
             && Objects.equals(this.count, postPaidServer.count)
             && Objects.equals(this.dataVolumes, postPaidServer.dataVolumes)
             && Objects.equals(this.extendparam, postPaidServer.extendparam)
@@ -668,6 +691,7 @@ public class PostPaidServer {
         return Objects.hash(autoTerminateTime,
             adminPass,
             availabilityZone,
+            batchCreateInMultiAz,
             count,
             dataVolumes,
             extendparam,
@@ -696,6 +720,7 @@ public class PostPaidServer {
         sb.append("    autoTerminateTime: ").append(toIndentedString(autoTerminateTime)).append("\n");
         sb.append("    adminPass: ").append(toIndentedString(adminPass)).append("\n");
         sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
+        sb.append("    batchCreateInMultiAz: ").append(toIndentedString(batchCreateInMultiAz)).append("\n");
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("    dataVolumes: ").append(toIndentedString(dataVolumes)).append("\n");
         sb.append("    extendparam: ").append(toIndentedString(extendparam)).append("\n");

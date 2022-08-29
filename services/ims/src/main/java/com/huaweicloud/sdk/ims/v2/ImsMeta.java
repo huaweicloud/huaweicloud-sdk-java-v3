@@ -950,6 +950,55 @@ public class ImsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowJobRequest, ShowJobResponse> showJob = genForshowJob();
+
+    private static HttpRequestDef<ShowJobRequest, ShowJobResponse> genForshowJob() {
+        // basic
+        HttpRequestDef.Builder<ShowJobRequest, ShowJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowJobRequest.class, ShowJobResponse.class)
+                .withName("ShowJob")
+                .withUri("/v1/{project_id}/jobs/{job_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowJobRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowJobProgressRequest, ShowJobProgressResponse> showJobProgress =
+        genForshowJobProgress();
+
+    private static HttpRequestDef<ShowJobProgressRequest, ShowJobProgressResponse> genForshowJobProgress() {
+        // basic
+        HttpRequestDef.Builder<ShowJobProgressRequest, ShowJobProgressResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowJobProgressRequest.class, ShowJobProgressResponse.class)
+                .withName("ShowJobProgress")
+                .withUri("/v1/cloudimages/job/{job_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowJobProgressRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateImageRequest, UpdateImageResponse> updateImage = genForupdateImage();
 
     private static HttpRequestDef<UpdateImageRequest, UpdateImageResponse> genForupdateImage() {
@@ -1015,30 +1064,6 @@ public class ImsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowVersionRequest::getVersion, (req, v) -> {
                 req.setVersion(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowJobRequest, ShowJobResponse> showJob = genForshowJob();
-
-    private static HttpRequestDef<ShowJobRequest, ShowJobResponse> genForshowJob() {
-        // basic
-        HttpRequestDef.Builder<ShowJobRequest, ShowJobResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowJobRequest.class, ShowJobResponse.class)
-                .withName("ShowJob")
-                .withUri("/v1/{project_id}/jobs/{job_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("job_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowJobRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
             }));
 
         // response

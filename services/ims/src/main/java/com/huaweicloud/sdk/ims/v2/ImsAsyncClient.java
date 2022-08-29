@@ -766,6 +766,68 @@ public class ImsAsyncClient {
     }
 
     /**
+     * 查询job状态
+     *
+     * 该接口为扩展接口，主要用于查询异步接口执行情况，比如查询导出镜像任务的执行状态。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowJobRequest 请求对象
+     * @return CompletableFuture<ShowJobResponse>
+     */
+    public CompletableFuture<ShowJobResponse> showJobAsync(ShowJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, ImsMeta.showJob);
+    }
+
+    /**
+     * 查询job状态
+     *
+     * 该接口为扩展接口，主要用于查询异步接口执行情况，比如查询导出镜像任务的执行状态。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowJobRequest 请求对象
+     * @return AsyncInvoker<ShowJobRequest, ShowJobResponse>
+     */
+    public AsyncInvoker<ShowJobRequest, ShowJobResponse> showJobAsyncInvoker(ShowJobRequest request) {
+        return new AsyncInvoker<ShowJobRequest, ShowJobResponse>(request, ImsMeta.showJob, hcClient);
+    }
+
+    /**
+     * 异步任务进度查询
+     *
+     * 该接口为扩展接口，主要用于查询异步任务进度。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowJobProgressRequest 请求对象
+     * @return CompletableFuture<ShowJobProgressResponse>
+     */
+    public CompletableFuture<ShowJobProgressResponse> showJobProgressAsync(ShowJobProgressRequest request) {
+        return hcClient.asyncInvokeHttp(request, ImsMeta.showJobProgress);
+    }
+
+    /**
+     * 异步任务进度查询
+     *
+     * 该接口为扩展接口，主要用于查询异步任务进度。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowJobProgressRequest 请求对象
+     * @return AsyncInvoker<ShowJobProgressRequest, ShowJobProgressResponse>
+     */
+    public AsyncInvoker<ShowJobProgressRequest, ShowJobProgressResponse> showJobProgressAsyncInvoker(
+        ShowJobProgressRequest request) {
+        return new AsyncInvoker<ShowJobProgressRequest, ShowJobProgressResponse>(request, ImsMeta.showJobProgress,
+            hcClient);
+    }
+
+    /**
      * 更新镜像信息
      *
      * 更新镜像信息接口，主要用于镜像属性的修改。当前仅支持可用（active）状态的镜像更新相关信息。
@@ -854,36 +916,6 @@ public class ImsAsyncClient {
      */
     public AsyncInvoker<ShowVersionRequest, ShowVersionResponse> showVersionAsyncInvoker(ShowVersionRequest request) {
         return new AsyncInvoker<ShowVersionRequest, ShowVersionResponse>(request, ImsMeta.showVersion, hcClient);
-    }
-
-    /**
-     * 查询job状态
-     *
-     * 该接口为扩展接口，主要用于查询异步接口执行情况，比如查询导出镜像任务的执行状态。
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param ShowJobRequest 请求对象
-     * @return CompletableFuture<ShowJobResponse>
-     */
-    public CompletableFuture<ShowJobResponse> showJobAsync(ShowJobRequest request) {
-        return hcClient.asyncInvokeHttp(request, ImsMeta.showJob);
-    }
-
-    /**
-     * 查询job状态
-     *
-     * 该接口为扩展接口，主要用于查询异步接口执行情况，比如查询导出镜像任务的执行状态。
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param ShowJobRequest 请求对象
-     * @return AsyncInvoker<ShowJobRequest, ShowJobResponse>
-     */
-    public AsyncInvoker<ShowJobRequest, ShowJobResponse> showJobAsyncInvoker(ShowJobRequest request) {
-        return new AsyncInvoker<ShowJobRequest, ShowJobResponse>(request, ImsMeta.showJob, hcClient);
     }
 
     /**

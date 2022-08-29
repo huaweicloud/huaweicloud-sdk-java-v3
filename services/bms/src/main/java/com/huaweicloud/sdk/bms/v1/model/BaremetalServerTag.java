@@ -43,7 +43,7 @@ public class BaremetalServerTag {
     }
 
     /**
-     * 值列表。  - 最多10个value。  - value不允许重复。  - 每个值最大长度255个unicode字符。  - 如果values为空则表示any_value。  - value之间为或的关系。
+     * 值列表。  - 最多20个value。  - value不允许重复。  - 每个值最大长度255个unicode字符。  - 如果values为空则表示any_value。  - value之间为或的关系。
      * @return value
      */
     public String getValue() {

@@ -9,6 +9,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -102,6 +103,11 @@ public class StartFailoverRequest {
 
     private String instanceId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "body")
+
+    private FailoverRequest body;
+
     public StartFailoverRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -138,6 +144,32 @@ public class StartFailoverRequest {
         this.instanceId = instanceId;
     }
 
+    public StartFailoverRequest withBody(FailoverRequest body) {
+        this.body = body;
+        return this;
+    }
+
+    public StartFailoverRequest withBody(Consumer<FailoverRequest> bodySetter) {
+        if (this.body == null) {
+            this.body = new FailoverRequest();
+            bodySetter.accept(this.body);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get body
+     * @return body
+     */
+    public FailoverRequest getBody() {
+        return body;
+    }
+
+    public void setBody(FailoverRequest body) {
+        this.body = body;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -148,12 +180,13 @@ public class StartFailoverRequest {
         }
         StartFailoverRequest startFailoverRequest = (StartFailoverRequest) o;
         return Objects.equals(this.xLanguage, startFailoverRequest.xLanguage)
-            && Objects.equals(this.instanceId, startFailoverRequest.instanceId);
+            && Objects.equals(this.instanceId, startFailoverRequest.instanceId)
+            && Objects.equals(this.body, startFailoverRequest.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xLanguage, instanceId);
+        return Objects.hash(xLanguage, instanceId, body);
     }
 
     @Override
@@ -162,6 +195,7 @@ public class StartFailoverRequest {
         sb.append("class StartFailoverRequest {\n");
         sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();
     }

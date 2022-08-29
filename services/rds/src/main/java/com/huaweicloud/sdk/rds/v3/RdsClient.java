@@ -2892,6 +2892,38 @@ public class RdsClient {
     }
 
     /**
+     * 设置数据库用户只读参数
+     *
+     * 根据业务需求，设置数据库用户只读
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SetReadOnlySwitchRequest 请求对象
+     * @return SetReadOnlySwitchResponse
+     */
+    public SetReadOnlySwitchResponse setReadOnlySwitch(SetReadOnlySwitchRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.setReadOnlySwitch);
+    }
+
+    /**
+     * 设置数据库用户只读参数
+     *
+     * 根据业务需求，设置数据库用户只读
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SetReadOnlySwitchRequest 请求对象
+     * @return SyncInvoker<SetReadOnlySwitchRequest, SetReadOnlySwitchResponse>
+     */
+    public SyncInvoker<SetReadOnlySwitchRequest, SetReadOnlySwitchResponse> setReadOnlySwitchInvoker(
+        SetReadOnlySwitchRequest request) {
+        return new SyncInvoker<SetReadOnlySwitchRequest, SetReadOnlySwitchResponse>(request, RdsMeta.setReadOnlySwitch,
+            hcClient);
+    }
+
+    /**
      * 修改指定实例的数据库备注
      *
      * 修改指定实例中的数据库备注。
