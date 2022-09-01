@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ugo.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,20 +14,28 @@ public class UnSupportedItem {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "reason")
 
+    @JacksonXmlProperty(localName = "reason")
+
     private String reason;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "suggestion")
+
+    @JacksonXmlProperty(localName = "suggestion")
 
     private String suggestion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "line_number")
 
+    @JacksonXmlProperty(localName = "line_number")
+
     private Integer lineNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "position")
+
+    @JacksonXmlProperty(localName = "position")
 
     private Integer position;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cbr.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class OpExtendInfoCommon {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "progress")
 
+    @JacksonXmlProperty(localName = "progress")
+
     private Integer progress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "request_id")
 
+    @JacksonXmlProperty(localName = "request_id")
+
     private String requestId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_id")
+
+    @JacksonXmlProperty(localName = "task_id")
 
     private String taskId;
 

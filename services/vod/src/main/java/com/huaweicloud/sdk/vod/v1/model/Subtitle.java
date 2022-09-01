@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -17,6 +18,8 @@ public class Subtitle {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
+
+    @JacksonXmlProperty(localName = "id")
 
     private Integer id;
 
@@ -93,6 +96,8 @@ public class Subtitle {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
+
+    @JacksonXmlProperty(localName = "type")
 
     private TypeEnum type;
 
@@ -176,15 +181,21 @@ public class Subtitle {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "language")
 
+    @JacksonXmlProperty(localName = "language")
+
     private LanguageEnum language;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "md5")
 
+    @JacksonXmlProperty(localName = "md5")
+
     private String md5;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
+
+    @JacksonXmlProperty(localName = "description")
 
     private String description;
 

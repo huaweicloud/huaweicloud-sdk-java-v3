@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -203,45 +204,63 @@ public class MetaData {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "codec")
 
+    @JacksonXmlProperty(localName = "codec")
+
     private CodecEnum codec;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "duration")
+
+    @JacksonXmlProperty(localName = "duration")
 
     private Long duration;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "video_size")
 
+    @JacksonXmlProperty(localName = "video_size")
+
     private Long videoSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "width")
+
+    @JacksonXmlProperty(localName = "width")
 
     private Long width;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hight")
 
+    @JacksonXmlProperty(localName = "hight")
+
     private Long hight;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bit_rate")
+
+    @JacksonXmlProperty(localName = "bit_rate")
 
     private Long bitRate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "frame_rate")
 
+    @JacksonXmlProperty(localName = "frame_rate")
+
     private Long frameRate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quality")
 
+    @JacksonXmlProperty(localName = "quality")
+
     private String quality;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "audio_channels")
+
+    @JacksonXmlProperty(localName = "audio_channels")
 
     private Integer audioChannels;
 

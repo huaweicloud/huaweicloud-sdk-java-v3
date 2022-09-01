@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,30 +22,42 @@ public class CreateDeviceRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parent_device_id")
 
+    @JacksonXmlProperty(localName = "parent_device_id")
+
     private Integer parentDeviceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "product")
+
+    @JacksonXmlProperty(localName = "product")
 
     private ProductReferer product;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "password")
 
+    @JacksonXmlProperty(localName = "password")
+
     private String password;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "device_name")
+
+    @JacksonXmlProperty(localName = "device_name")
 
     private String deviceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "node_id")
 
+    @JacksonXmlProperty(localName = "node_id")
+
     private String nodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_id")
+
+    @JacksonXmlProperty(localName = "app_id")
 
     private String appId;
 
@@ -128,15 +141,21 @@ public class CreateDeviceRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
+    @JacksonXmlProperty(localName = "description")
+
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
+
+    @JacksonXmlProperty(localName = "tags")
 
     private List<String> tags = null;
 

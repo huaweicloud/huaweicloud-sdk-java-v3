@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cpts.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,25 +15,35 @@ public class UpdateTaskStatusRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cluster_id")
 
+    @JacksonXmlProperty(localName = "cluster_id")
+
     private Integer clusterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cluster_type")
+
+    @JacksonXmlProperty(localName = "cluster_type")
 
     private String clusterType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "without_package")
 
+    @JacksonXmlProperty(localName = "without_package")
+
     private Integer withoutPackage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "network_info")
 
+    @JacksonXmlProperty(localName = "network_info")
+
     private NetworkInfo networkInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
+
+    @JacksonXmlProperty(localName = "status")
 
     private Integer status;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.live.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,35 +14,49 @@ public class ListHistoryStreamsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain")
 
+    @JacksonXmlProperty(localName = "domain")
+
     private String domain;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app")
+
+    @JacksonXmlProperty(localName = "app")
 
     private String app;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stream")
 
+    @JacksonXmlProperty(localName = "stream")
+
     private String stream;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
+
+    @JacksonXmlProperty(localName = "start_time")
 
     private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time")
 
+    @JacksonXmlProperty(localName = "end_time")
+
     private String endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
+    @JacksonXmlProperty(localName = "offset")
+
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
+
+    @JacksonXmlProperty(localName = "limit")
 
     private Integer limit;
 

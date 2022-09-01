@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.bcs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,20 +14,28 @@ public class HandleNotificationInvitee {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "invitee_bcs_id")
 
+    @JacksonXmlProperty(localName = "invitee_bcs_id")
+
     private String inviteeBcsId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "invitee_bcs_name")
+
+    @JacksonXmlProperty(localName = "invitee_bcs_name")
 
     private String inviteeBcsName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "invitee_project_id")
 
+    @JacksonXmlProperty(localName = "invitee_project_id")
+
     private String inviteeProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "invitee_user_id")
+
+    @JacksonXmlProperty(localName = "invitee_user_id")
 
     private String inviteeUserId;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.functiongraph.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,10 +15,14 @@ public class UpdateDependcyRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "depend_id")
 
+    @JacksonXmlProperty(localName = "depend_id")
+
     private String dependId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
+
+    @JacksonXmlProperty(localName = "body")
 
     private UpdateDependencyRequestBody body;
 

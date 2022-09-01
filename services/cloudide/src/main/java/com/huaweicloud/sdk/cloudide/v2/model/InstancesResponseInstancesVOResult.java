@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -17,6 +18,8 @@ public class InstancesResponseInstancesVOResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "link")
+
+    @JacksonXmlProperty(localName = "link")
 
     private String link;
 
@@ -100,15 +103,21 @@ public class InstancesResponseInstancesVOResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "arch")
 
+    @JacksonXmlProperty(localName = "arch")
+
     private ArchEnum arch;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "private")
+
+    @JacksonXmlProperty(localName = "private")
 
     private Boolean _private;
 

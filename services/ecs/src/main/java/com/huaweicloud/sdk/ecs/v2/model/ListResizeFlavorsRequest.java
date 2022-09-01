@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,15 +19,21 @@ public class ListResizeFlavorsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_uuid")
 
+    @JacksonXmlProperty(localName = "instance_uuid")
+
     private String instanceUuid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
+    @JacksonXmlProperty(localName = "limit")
+
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "marker")
+
+    @JacksonXmlProperty(localName = "marker")
 
     private String marker;
 
@@ -109,6 +116,8 @@ public class ListResizeFlavorsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sort_dir")
+
+    @JacksonXmlProperty(localName = "sort_dir")
 
     private SortDirEnum sortDir;
 
@@ -216,15 +225,21 @@ public class ListResizeFlavorsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sort_key")
 
+    @JacksonXmlProperty(localName = "sort_key")
+
     private SortKeyEnum sortKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_flavor_id")
 
+    @JacksonXmlProperty(localName = "source_flavor_id")
+
     private String sourceFlavorId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_flavor_name")
+
+    @JacksonXmlProperty(localName = "source_flavor_name")
 
     private String sourceFlavorName;
 

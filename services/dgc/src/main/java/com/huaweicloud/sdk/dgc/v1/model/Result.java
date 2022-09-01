@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.dgc.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,20 +14,28 @@ public class Result {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "message")
 
+    @JacksonXmlProperty(localName = "message")
+
     private String message;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rowCount")
+
+    @JacksonXmlProperty(localName = "rowCount")
 
     private Integer rowCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rows")
 
+    @JacksonXmlProperty(localName = "rows")
+
     private String rows;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "schema")
+
+    @JacksonXmlProperty(localName = "schema")
 
     private String schema;
 

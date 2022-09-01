@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.oms.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class DstNodeResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bucket")
 
+    @JacksonXmlProperty(localName = "bucket")
+
     private String bucket;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region")
 
+    @JacksonXmlProperty(localName = "region")
+
     private String region;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "save_prefix")
+
+    @JacksonXmlProperty(localName = "save_prefix")
 
     private String savePrefix;
 

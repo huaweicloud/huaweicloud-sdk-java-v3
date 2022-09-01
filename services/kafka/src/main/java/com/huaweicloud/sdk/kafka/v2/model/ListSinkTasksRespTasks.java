@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.kafka.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,30 +14,42 @@ public class ListSinkTasksRespTasks {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_id")
 
+    @JacksonXmlProperty(localName = "task_id")
+
     private String taskId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_name")
+
+    @JacksonXmlProperty(localName = "task_name")
 
     private String taskName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "destination_type")
 
+    @JacksonXmlProperty(localName = "destination_type")
+
     private String destinationType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
+
+    @JacksonXmlProperty(localName = "create_time")
 
     private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "topics")
+
+    @JacksonXmlProperty(localName = "topics")
 
     private String topics;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ecs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,130 +17,182 @@ public class ServerLimits {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maxImageMeta")
 
+    @JacksonXmlProperty(localName = "maxImageMeta")
+
     private Integer maxImageMeta;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maxPersonality")
+
+    @JacksonXmlProperty(localName = "maxPersonality")
 
     private Integer maxPersonality;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maxPersonalitySize")
 
+    @JacksonXmlProperty(localName = "maxPersonalitySize")
+
     private Integer maxPersonalitySize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maxSecurityGroupRules")
+
+    @JacksonXmlProperty(localName = "maxSecurityGroupRules")
 
     private Integer maxSecurityGroupRules;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maxSecurityGroups")
 
+    @JacksonXmlProperty(localName = "maxSecurityGroups")
+
     private Integer maxSecurityGroups;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maxServerGroupMembers")
+
+    @JacksonXmlProperty(localName = "maxServerGroupMembers")
 
     private Integer maxServerGroupMembers;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maxServerGroups")
 
+    @JacksonXmlProperty(localName = "maxServerGroups")
+
     private Integer maxServerGroups;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maxServerMeta")
+
+    @JacksonXmlProperty(localName = "maxServerMeta")
 
     private Integer maxServerMeta;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maxTotalCores")
 
+    @JacksonXmlProperty(localName = "maxTotalCores")
+
     private Integer maxTotalCores;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maxTotalFloatingIps")
+
+    @JacksonXmlProperty(localName = "maxTotalFloatingIps")
 
     private Integer maxTotalFloatingIps;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maxTotalInstances")
 
+    @JacksonXmlProperty(localName = "maxTotalInstances")
+
     private Integer maxTotalInstances;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maxTotalKeypairs")
+
+    @JacksonXmlProperty(localName = "maxTotalKeypairs")
 
     private Integer maxTotalKeypairs;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maxTotalRAMSize")
 
+    @JacksonXmlProperty(localName = "maxTotalRAMSize")
+
     private Integer maxTotalRAMSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "totalCoresUsed")
+
+    @JacksonXmlProperty(localName = "totalCoresUsed")
 
     private Integer totalCoresUsed;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "totalFloatingIpsUsed")
 
+    @JacksonXmlProperty(localName = "totalFloatingIpsUsed")
+
     private Integer totalFloatingIpsUsed;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "totalInstancesUsed")
+
+    @JacksonXmlProperty(localName = "totalInstancesUsed")
 
     private Integer totalInstancesUsed;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "totalRAMUsed")
 
+    @JacksonXmlProperty(localName = "totalRAMUsed")
+
     private Integer totalRAMUsed;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "totalSecurityGroupsUsed")
+
+    @JacksonXmlProperty(localName = "totalSecurityGroupsUsed")
 
     private Integer totalSecurityGroupsUsed;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "totalServerGroupsUsed")
 
+    @JacksonXmlProperty(localName = "totalServerGroupsUsed")
+
     private Integer totalServerGroupsUsed;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maxTotalSpotInstances")
+
+    @JacksonXmlProperty(localName = "maxTotalSpotInstances")
 
     private Integer maxTotalSpotInstances;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maxTotalSpotCores")
 
+    @JacksonXmlProperty(localName = "maxTotalSpotCores")
+
     private Integer maxTotalSpotCores;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maxTotalSpotRAMSize")
+
+    @JacksonXmlProperty(localName = "maxTotalSpotRAMSize")
 
     private Integer maxTotalSpotRAMSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "totalSpotInstancesUsed")
 
+    @JacksonXmlProperty(localName = "totalSpotInstancesUsed")
+
     private Integer totalSpotInstancesUsed;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "totalSpotCoresUsed")
+
+    @JacksonXmlProperty(localName = "totalSpotCoresUsed")
 
     private Integer totalSpotCoresUsed;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "totalSpotRAMUsed")
 
+    @JacksonXmlProperty(localName = "totalSpotRAMUsed")
+
     private Integer totalSpotRAMUsed;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit_by_flavor")
+
+    @JacksonXmlProperty(localName = "limit_by_flavor")
 
     private List<ProjectFlavorLimit> limitByFlavor = null;
 

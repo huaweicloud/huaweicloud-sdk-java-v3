@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.projectman.v4.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,40 +15,56 @@ public class ListProjectsV4ResponseBodyProjects {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_num_id")
 
+    @JacksonXmlProperty(localName = "project_num_id")
+
     private Integer projectNumId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
+
+    @JacksonXmlProperty(localName = "project_id")
 
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_name")
 
+    @JacksonXmlProperty(localName = "project_name")
+
     private String projectName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
+
+    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_time")
 
+    @JacksonXmlProperty(localName = "created_time")
+
     private Long createdTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_time")
+
+    @JacksonXmlProperty(localName = "updated_time")
 
     private Long updatedTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_type")
 
+    @JacksonXmlProperty(localName = "project_type")
+
     private String projectType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "creator")
+
+    @JacksonXmlProperty(localName = "creator")
 
     private ListProjectsV4ResponseBodyCreator creator;
 

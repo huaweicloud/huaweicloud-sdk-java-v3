@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.res.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class Offline {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_url")
 
+    @JacksonXmlProperty(localName = "user_url")
+
     private String userUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "item_url")
 
+    @JacksonXmlProperty(localName = "item_url")
+
     private String itemUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "behavior_url")
+
+    @JacksonXmlProperty(localName = "behavior_url")
 
     private String behaviorUrl;
 

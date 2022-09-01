@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -20,6 +21,8 @@ public class Node {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
@@ -187,45 +190,63 @@ public class Node {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nodeType")
 
+    @JacksonXmlProperty(localName = "nodeType")
+
     private NodeTypeEnum nodeType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "location")
+
+    @JacksonXmlProperty(localName = "location")
 
     private Location location;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "preNodeNames")
 
+    @JacksonXmlProperty(localName = "preNodeNames")
+
     private String preNodeNames;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "condition")
+
+    @JacksonXmlProperty(localName = "condition")
 
     private List<Condition> condition = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nodeProperties")
 
+    @JacksonXmlProperty(localName = "nodeProperties")
+
     private String nodeProperties;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pollingInterval")
+
+    @JacksonXmlProperty(localName = "pollingInterval")
 
     private Integer pollingInterval;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maxExecutionTime")
 
+    @JacksonXmlProperty(localName = "maxExecutionTime")
+
     private Integer maxExecutionTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "retryTimes")
 
+    @JacksonXmlProperty(localName = "retryTimes")
+
     private Integer retryTimes;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "retryInterval")
+
+    @JacksonXmlProperty(localName = "retryInterval")
 
     private Integer retryInterval;
 
@@ -315,15 +336,21 @@ public class Node {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "failPolicy")
 
+    @JacksonXmlProperty(localName = "failPolicy")
+
     private FailPolicyEnum failPolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "eventTrigger")
 
+    @JacksonXmlProperty(localName = "eventTrigger")
+
     private Event eventTrigger;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cronTrigger")
+
+    @JacksonXmlProperty(localName = "cronTrigger")
 
     private Cron cronTrigger;
 

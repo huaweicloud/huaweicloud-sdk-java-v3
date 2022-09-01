@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.kafka.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,35 +17,49 @@ public class DiskusageEntity {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "broker_name")
 
+    @JacksonXmlProperty(localName = "broker_name")
+
     private String brokerName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_disk_size")
+
+    @JacksonXmlProperty(localName = "data_disk_size")
 
     private String dataDiskSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_disk_use")
 
+    @JacksonXmlProperty(localName = "data_disk_use")
+
     private String dataDiskUse;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_disk_free")
+
+    @JacksonXmlProperty(localName = "data_disk_free")
 
     private String dataDiskFree;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_disk_use_percentage")
 
+    @JacksonXmlProperty(localName = "data_disk_use_percentage")
+
     private String dataDiskUsePercentage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "topic_list")
+
+    @JacksonXmlProperty(localName = "topic_list")
 
     private List<DiskusageTopicEntity> topicList = null;
 

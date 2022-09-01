@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cpts.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,30 +17,42 @@ public class VariableDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_size")
 
+    @JacksonXmlProperty(localName = "file_size")
+
     private Integer fileSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
+
+    @JacksonXmlProperty(localName = "id")
 
     private Integer id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_quoted")
 
+    @JacksonXmlProperty(localName = "is_quoted")
+
     private Boolean isQuoted;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "variable")
 
+    @JacksonXmlProperty(localName = "variable")
+
     private List<Object> variable = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "variable_type")
+
+    @JacksonXmlProperty(localName = "variable_type")
 
     private Integer variableType;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.waf.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,40 +17,56 @@ public class CreatePremiumHostRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "certificateid")
 
+    @JacksonXmlProperty(localName = "certificateid")
+
     private String certificateid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "certificatename")
+
+    @JacksonXmlProperty(localName = "certificatename")
 
     private String certificatename;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hostname")
 
+    @JacksonXmlProperty(localName = "hostname")
+
     private String hostname;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "proxy")
+
+    @JacksonXmlProperty(localName = "proxy")
 
     private Boolean proxy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policyid")
 
+    @JacksonXmlProperty(localName = "policyid")
+
     private String policyid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "server")
+
+    @JacksonXmlProperty(localName = "server")
 
     private List<PremiumWafServer> server = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "block_page")
 
+    @JacksonXmlProperty(localName = "block_page")
+
     private BlockPage blockPage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
+
+    @JacksonXmlProperty(localName = "description")
 
     private String description;
 

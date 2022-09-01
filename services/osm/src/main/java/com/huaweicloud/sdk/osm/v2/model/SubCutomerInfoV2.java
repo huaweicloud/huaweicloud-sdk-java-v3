@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.osm.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,30 +14,42 @@ public class SubCutomerInfoV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mobile")
 
+    @JacksonXmlProperty(localName = "mobile")
+
     private String mobile;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "email")
+
+    @JacksonXmlProperty(localName = "email")
 
     private String email;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "customer_id")
 
+    @JacksonXmlProperty(localName = "customer_id")
+
     private String customerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_id")
+
+    @JacksonXmlProperty(localName = "domain_id")
 
     private String domainId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "customer_name")
 
+    @JacksonXmlProperty(localName = "customer_name")
+
     private String customerName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "area_code")
+
+    @JacksonXmlProperty(localName = "area_code")
 
     private String areaCode;
 

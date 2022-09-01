@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cce.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,30 +14,42 @@ public class QuotaResource {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quotaKey")
 
+    @JacksonXmlProperty(localName = "quotaKey")
+
     private String quotaKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quotaLimit")
+
+    @JacksonXmlProperty(localName = "quotaLimit")
 
     private Integer quotaLimit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "used")
 
+    @JacksonXmlProperty(localName = "used")
+
     private Integer used;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "unit")
+
+    @JacksonXmlProperty(localName = "unit")
 
     private String unit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "regionId")
 
+    @JacksonXmlProperty(localName = "regionId")
+
     private String regionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "availabilityZoneId")
+
+    @JacksonXmlProperty(localName = "availabilityZoneId")
 
     private String availabilityZoneId;
 

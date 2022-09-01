@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cce.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class ClusterCert {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "server")
 
+    @JacksonXmlProperty(localName = "server")
+
     private String server;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "certificate-authority-data")
 
+    @JacksonXmlProperty(localName = "certificate-authority-data")
+
     private String certificateAuthorityData;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "insecure-skip-tls-verify")
+
+    @JacksonXmlProperty(localName = "insecure-skip-tls-verify")
 
     private Boolean insecureSkipTlsVerify;
 

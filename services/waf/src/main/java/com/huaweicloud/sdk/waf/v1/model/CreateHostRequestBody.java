@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,45 +22,63 @@ public class CreateHostRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hostname")
 
+    @JacksonXmlProperty(localName = "hostname")
+
     private String hostname;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policyid")
+
+    @JacksonXmlProperty(localName = "policyid")
 
     private String policyid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "server")
 
+    @JacksonXmlProperty(localName = "server")
+
     private List<CloudWafServer> server = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "certificateid")
+
+    @JacksonXmlProperty(localName = "certificateid")
 
     private String certificateid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "certificatename")
 
+    @JacksonXmlProperty(localName = "certificatename")
+
     private String certificatename;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "web_tag")
+
+    @JacksonXmlProperty(localName = "web_tag")
 
     private String webTag;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "exclusive_ip")
 
+    @JacksonXmlProperty(localName = "exclusive_ip")
+
     private Boolean exclusiveIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "paid_type")
 
+    @JacksonXmlProperty(localName = "paid_type")
+
     private String paidType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "proxy")
+
+    @JacksonXmlProperty(localName = "proxy")
 
     private Boolean proxy;
 
@@ -149,10 +168,14 @@ public class CreateHostRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lb_algorithm")
 
+    @JacksonXmlProperty(localName = "lb_algorithm")
+
     private LbAlgorithmEnum lbAlgorithm;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
+
+    @JacksonXmlProperty(localName = "description")
 
     private String description;
 

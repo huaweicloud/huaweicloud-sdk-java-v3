@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,20 +19,28 @@ public class KeyDetails {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key_id")
 
+    @JacksonXmlProperty(localName = "key_id")
+
     private String keyId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_id")
+
+    @JacksonXmlProperty(localName = "domain_id")
 
     private String domainId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key_alias")
 
+    @JacksonXmlProperty(localName = "key_alias")
+
     private String keyAlias;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "realm")
+
+    @JacksonXmlProperty(localName = "realm")
 
     private String realm;
 
@@ -151,6 +160,8 @@ public class KeyDetails {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key_spec")
 
+    @JacksonXmlProperty(localName = "key_spec")
+
     private KeySpecEnum keySpec;
 
     /**
@@ -233,40 +244,56 @@ public class KeyDetails {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key_usage")
 
+    @JacksonXmlProperty(localName = "key_usage")
+
     private KeyUsageEnum keyUsage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key_description")
+
+    @JacksonXmlProperty(localName = "key_description")
 
     private String keyDescription;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "creation_date")
 
+    @JacksonXmlProperty(localName = "creation_date")
+
     private String creationDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scheduled_deletion_date")
+
+    @JacksonXmlProperty(localName = "scheduled_deletion_date")
 
     private String scheduledDeletionDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key_state")
 
+    @JacksonXmlProperty(localName = "key_state")
+
     private String keyState;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "default_key_flag")
+
+    @JacksonXmlProperty(localName = "default_key_flag")
 
     private String defaultKeyFlag;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key_type")
 
+    @JacksonXmlProperty(localName = "key_type")
+
     private String keyType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expiration_time")
+
+    @JacksonXmlProperty(localName = "expiration_time")
 
     private String expirationTime;
 
@@ -350,25 +377,35 @@ public class KeyDetails {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "origin")
 
+    @JacksonXmlProperty(localName = "origin")
+
     private OriginEnum origin;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key_rotation_enabled")
+
+    @JacksonXmlProperty(localName = "key_rotation_enabled")
 
     private String keyRotationEnabled;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sys_enterprise_project_id")
 
+    @JacksonXmlProperty(localName = "sys_enterprise_project_id")
+
     private String sysEnterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "keystore_id")
 
+    @JacksonXmlProperty(localName = "keystore_id")
+
     private String keystoreId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key_label")
+
+    @JacksonXmlProperty(localName = "key_label")
 
     private String keyLabel;
 

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -21,6 +22,8 @@ public class ListApiRuntimeDefinitionV2Response extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
@@ -104,10 +107,14 @@ public class ListApiRuntimeDefinitionV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
+    @JacksonXmlProperty(localName = "type")
+
     private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
+
+    @JacksonXmlProperty(localName = "version")
 
     private String version;
 
@@ -196,6 +203,8 @@ public class ListApiRuntimeDefinitionV2Response extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "req_protocol")
+
+    @JacksonXmlProperty(localName = "req_protocol")
 
     private ReqProtocolEnum reqProtocol;
 
@@ -315,10 +324,14 @@ public class ListApiRuntimeDefinitionV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "req_method")
 
+    @JacksonXmlProperty(localName = "req_method")
+
     private ReqMethodEnum reqMethod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "req_uri")
+
+    @JacksonXmlProperty(localName = "req_uri")
 
     private String reqUri;
 
@@ -414,15 +427,21 @@ public class ListApiRuntimeDefinitionV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auth_type")
 
+    @JacksonXmlProperty(localName = "auth_type")
+
     private AuthTypeEnum authType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auth_opt")
 
+    @JacksonXmlProperty(localName = "auth_opt")
+
     private AuthOpt authOpt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cors")
+
+    @JacksonXmlProperty(localName = "cors")
 
     private Boolean cors;
 
@@ -505,6 +524,8 @@ public class ListApiRuntimeDefinitionV2Response extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "match_mode")
+
+    @JacksonXmlProperty(localName = "match_mode")
 
     private MatchModeEnum matchMode;
 
@@ -594,60 +615,84 @@ public class ListApiRuntimeDefinitionV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "backend_type")
 
+    @JacksonXmlProperty(localName = "backend_type")
+
     private BackendTypeEnum backendType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remark")
+
+    @JacksonXmlProperty(localName = "remark")
 
     private String remark;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_id")
 
+    @JacksonXmlProperty(localName = "group_id")
+
     private String groupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body_remark")
+
+    @JacksonXmlProperty(localName = "body_remark")
 
     private String bodyRemark;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "result_normal_sample")
 
+    @JacksonXmlProperty(localName = "result_normal_sample")
+
     private String resultNormalSample;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "result_failure_sample")
+
+    @JacksonXmlProperty(localName = "result_failure_sample")
 
     private String resultFailureSample;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "authorizer_id")
 
+    @JacksonXmlProperty(localName = "authorizer_id")
+
     private String authorizerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
+
+    @JacksonXmlProperty(localName = "tags")
 
     private List<String> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "response_id")
 
+    @JacksonXmlProperty(localName = "response_id")
+
     private String responseId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "roma_app_id")
+
+    @JacksonXmlProperty(localName = "roma_app_id")
 
     private String romaAppId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_name")
 
+    @JacksonXmlProperty(localName = "domain_name")
+
     private String domainName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tag")
+
+    @JacksonXmlProperty(localName = "tag")
 
     private String tag;
 
@@ -743,45 +788,63 @@ public class ListApiRuntimeDefinitionV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "content_type")
 
+    @JacksonXmlProperty(localName = "content_type")
+
     private ContentTypeEnum contentType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
+
+    @JacksonXmlProperty(localName = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_name")
 
+    @JacksonXmlProperty(localName = "group_name")
+
     private String groupName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "run_env_name")
+
+    @JacksonXmlProperty(localName = "run_env_name")
 
     private String runEnvName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "run_env_id")
 
+    @JacksonXmlProperty(localName = "run_env_id")
+
     private String runEnvId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publish_id")
+
+    @JacksonXmlProperty(localName = "publish_id")
 
     private String publishId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sl_domain")
 
+    @JacksonXmlProperty(localName = "sl_domain")
+
     private String slDomain;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sl_domains")
 
+    @JacksonXmlProperty(localName = "sl_domains")
+
     private List<String> slDomains = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "req_params")
+
+    @JacksonXmlProperty(localName = "req_params")
 
     private List<ReqParam> reqParams = null;
 

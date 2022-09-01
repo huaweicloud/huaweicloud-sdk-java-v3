@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.rms.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,10 +15,14 @@ public class UpdateStoredQueryRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "query_id")
 
+    @JacksonXmlProperty(localName = "query_id")
+
     private String queryId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
+
+    @JacksonXmlProperty(localName = "body")
 
     private StoredQueryRequestBody body;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.servicestage.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -17,15 +18,21 @@ public class ShowJobDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_count")
 
+    @JacksonXmlProperty(localName = "task_count")
+
     private Integer taskCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job")
 
+    @JacksonXmlProperty(localName = "job")
+
     private JobInfo job;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tasks")
+
+    @JacksonXmlProperty(localName = "tasks")
 
     private List<TaskInfo> tasks = null;
 

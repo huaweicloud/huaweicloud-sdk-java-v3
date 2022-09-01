@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,30 +14,42 @@ public class QueryDeviceTypeResultDTO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
+    @JacksonXmlProperty(localName = "type")
+
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "model")
+
+    @JacksonXmlProperty(localName = "model")
 
     private String model;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enableActiveCode")
 
+    @JacksonXmlProperty(localName = "enableActiveCode")
+
     private Boolean enableActiveCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resolution")
+
+    @JacksonXmlProperty(localName = "resolution")
 
     private String resolution;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "supportProjectionCode")
 
+    @JacksonXmlProperty(localName = "supportProjectionCode")
+
     private Boolean supportProjectionCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "supportSVC")
+
+    @JacksonXmlProperty(localName = "supportSVC")
 
     private Boolean supportSVC;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ief.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,10 +17,14 @@ public class DeploymentResources {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limits")
 
+    @JacksonXmlProperty(localName = "limits")
+
     private Map<String, String> limits = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "requests")
+
+    @JacksonXmlProperty(localName = "requests")
 
     private Map<String, String> requests = null;
 

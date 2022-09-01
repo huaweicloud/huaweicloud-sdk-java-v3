@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,10 +19,14 @@ public class TaskMonitorInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_id")
 
+    @JacksonXmlProperty(localName = "task_id")
+
     private String taskId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_name")
+
+    @JacksonXmlProperty(localName = "task_name")
 
     private String taskName;
 
@@ -105,6 +110,8 @@ public class TaskMonitorInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_type")
 
+    @JacksonXmlProperty(localName = "task_type")
+
     private TaskTypeEnum taskType;
 
     /**
@@ -187,20 +194,28 @@ public class TaskMonitorInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last_execute_time")
+
+    @JacksonXmlProperty(localName = "last_execute_time")
 
     private Long lastExecuteTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "use_quartz_cron")
 
+    @JacksonXmlProperty(localName = "use_quartz_cron")
+
     private Boolean useQuartzCron;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cron")
+
+    @JacksonXmlProperty(localName = "cron")
 
     private String cron;
 
@@ -302,10 +317,14 @@ public class TaskMonitorInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "period")
 
+    @JacksonXmlProperty(localName = "period")
+
     private PeriodEnum period;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dispatch_interval")
+
+    @JacksonXmlProperty(localName = "dispatch_interval")
 
     private Integer dispatchInterval;
 
@@ -394,6 +413,8 @@ public class TaskMonitorInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "position")
+
+    @JacksonXmlProperty(localName = "position")
 
     private PositionEnum position;
 
@@ -501,35 +522,49 @@ public class TaskMonitorInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "execute_status")
 
+    @JacksonXmlProperty(localName = "execute_status")
+
     private ExecuteStatusEnum executeStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_app_id")
+
+    @JacksonXmlProperty(localName = "source_app_id")
 
     private String sourceAppId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_app_name")
 
+    @JacksonXmlProperty(localName = "source_app_name")
+
     private String sourceAppName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_instance_id")
+
+    @JacksonXmlProperty(localName = "source_instance_id")
 
     private String sourceInstanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_app_id")
 
+    @JacksonXmlProperty(localName = "target_app_id")
+
     private String targetAppId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_app_name")
 
+    @JacksonXmlProperty(localName = "target_app_name")
+
     private String targetAppName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_instance_id")
+
+    @JacksonXmlProperty(localName = "target_instance_id")
 
     private String targetInstanceId;
 
@@ -607,15 +642,21 @@ public class TaskMonitorInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ext_type")
 
+    @JacksonXmlProperty(localName = "ext_type")
+
     private ExtTypeEnum extType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
+    @JacksonXmlProperty(localName = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_tag")
+
+    @JacksonXmlProperty(localName = "task_tag")
 
     private String taskTag;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.res.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,15 +15,21 @@ public class Nearline {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "item_topic")
 
+    @JacksonXmlProperty(localName = "item_topic")
+
     private Topic itemTopic;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_topic")
 
+    @JacksonXmlProperty(localName = "user_topic")
+
     private Topic userTopic;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "behavior_topic")
+
+    @JacksonXmlProperty(localName = "behavior_topic")
 
     private Topic behaviorTopic;
 

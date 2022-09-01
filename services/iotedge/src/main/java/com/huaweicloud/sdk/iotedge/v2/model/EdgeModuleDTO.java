@@ -16,6 +16,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -29,6 +31,7 @@ public class EdgeModuleDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edge_app_id")
     
+    @JacksonXmlProperty(localName = "edge_app_id")
     
     private String edgeAppId;
 
@@ -36,6 +39,7 @@ public class EdgeModuleDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="app_version")
     
+    @JacksonXmlProperty(localName = "app_version")
     
     private String appVersion;
     /**
@@ -163,6 +167,7 @@ public class EdgeModuleDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="state")
     
+    @JacksonXmlProperty(localName = "state")
     
     private StateEnum state;
 
@@ -170,6 +175,7 @@ public class EdgeModuleDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="control_status")
     
+    @JacksonXmlProperty(localName = "control_status")
     
     private String controlStatus;
 
@@ -177,6 +183,7 @@ public class EdgeModuleDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_id")
     
+    @JacksonXmlProperty(localName = "node_id")
     
     private String nodeId;
 
@@ -184,6 +191,7 @@ public class EdgeModuleDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="module_name")
     
+    @JacksonXmlProperty(localName = "module_name")
     
     private String moduleName;
 
@@ -191,6 +199,7 @@ public class EdgeModuleDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="module_id")
     
+    @JacksonXmlProperty(localName = "module_id")
     
     private String moduleId;
 
@@ -198,6 +207,7 @@ public class EdgeModuleDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
+    @JacksonXmlProperty(localName = "create_time")
     
     private String createTime;
 
@@ -205,6 +215,7 @@ public class EdgeModuleDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_time")
     
+    @JacksonXmlProperty(localName = "update_time")
     
     private String updateTime;
     /**
@@ -296,6 +307,7 @@ public class EdgeModuleDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="app_type")
     
+    @JacksonXmlProperty(localName = "app_type")
     
     private AppTypeEnum appType;
     /**
@@ -405,6 +417,7 @@ public class EdgeModuleDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="function_type")
     
+    @JacksonXmlProperty(localName = "function_type")
     
     private FunctionTypeEnum functionType;
 

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -98,15 +99,21 @@ public class Rule {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template")
 
+    @JacksonXmlProperty(localName = "template")
+
     private TemplateEnum template;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "params")
 
+    @JacksonXmlProperty(localName = "params")
+
     private Object params;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tag_selectors")
+
+    @JacksonXmlProperty(localName = "tag_selectors")
 
     private List<TagSelector> tagSelectors = null;
 

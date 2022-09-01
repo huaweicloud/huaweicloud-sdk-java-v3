@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.bssintl.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -17,65 +18,91 @@ public class ListMonthlyExpendituresResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_code")
 
+    @JacksonXmlProperty(localName = "error_code")
+
     private String errorCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_msg")
+
+    @JacksonXmlProperty(localName = "error_msg")
 
     private String errorMsg;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "currency")
 
+    @JacksonXmlProperty(localName = "currency")
+
     private String currency;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_count")
+
+    @JacksonXmlProperty(localName = "total_count")
 
     private Integer totalCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_amount")
 
+    @JacksonXmlProperty(localName = "total_amount")
+
     private Double totalAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "debt_amount")
+
+    @JacksonXmlProperty(localName = "debt_amount")
 
     private Double debtAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "coupon_amount")
 
+    @JacksonXmlProperty(localName = "coupon_amount")
+
     private Double couponAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cashcoupon_amount")
+
+    @JacksonXmlProperty(localName = "cashcoupon_amount")
 
     private Double cashcouponAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "storedcard_amount")
 
+    @JacksonXmlProperty(localName = "storedcard_amount")
+
     private Double storedcardAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "debit_amount")
+
+    @JacksonXmlProperty(localName = "debit_amount")
 
     private Double debitAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "credit_amount")
 
+    @JacksonXmlProperty(localName = "credit_amount")
+
     private Double creditAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "measure_id")
 
+    @JacksonXmlProperty(localName = "measure_id")
+
     private Integer measureId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bill_sums")
+
+    @JacksonXmlProperty(localName = "bill_sums")
 
     private List<BillSumRecordInfo> billSums = null;
 

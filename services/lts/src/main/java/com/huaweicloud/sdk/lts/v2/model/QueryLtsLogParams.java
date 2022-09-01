@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -19,35 +20,49 @@ public class QueryLtsLogParams {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
+    @JacksonXmlProperty(localName = "start_time")
+
     private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time")
+
+    @JacksonXmlProperty(localName = "end_time")
 
     private String endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "labels")
 
+    @JacksonXmlProperty(localName = "labels")
+
     private Map<String, String> labels = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_count")
+
+    @JacksonXmlProperty(localName = "is_count")
 
     private Boolean isCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "keywords")
 
+    @JacksonXmlProperty(localName = "keywords")
+
     private String keywords;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "line_num")
 
+    @JacksonXmlProperty(localName = "line_num")
+
     private String lineNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_desc")
+
+    @JacksonXmlProperty(localName = "is_desc")
 
     private Boolean isDesc;
 
@@ -131,15 +146,21 @@ public class QueryLtsLogParams {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "search_type")
 
+    @JacksonXmlProperty(localName = "search_type")
+
     private SearchTypeEnum searchType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
+    @JacksonXmlProperty(localName = "limit")
+
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "highlight")
+
+    @JacksonXmlProperty(localName = "highlight")
 
     private Boolean highlight;
 

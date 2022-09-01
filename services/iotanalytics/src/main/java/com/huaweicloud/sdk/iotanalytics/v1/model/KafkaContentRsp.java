@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.iotanalytics.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,25 +17,35 @@ public class KafkaContentRsp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "connection_type")
 
+    @JacksonXmlProperty(localName = "connection_type")
+
     private String connectionType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_id")
+
+    @JacksonXmlProperty(localName = "instance_id")
 
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpcep_infos")
 
+    @JacksonXmlProperty(localName = "vpcep_infos")
+
     private List<VpcepInfoRsp> vpcepInfos = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "broker_infos")
 
+    @JacksonXmlProperty(localName = "broker_infos")
+
     private List<KafkaBrokerInfo> brokerInfos = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auth_info")
+
+    @JacksonXmlProperty(localName = "auth_info")
 
     private KafkaAuthInfo authInfo;
 

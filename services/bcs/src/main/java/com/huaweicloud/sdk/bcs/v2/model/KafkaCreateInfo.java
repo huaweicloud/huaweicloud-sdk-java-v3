@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.bcs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class KafkaCreateInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "spec")
 
+    @JacksonXmlProperty(localName = "spec")
+
     private String spec;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "storage")
 
+    @JacksonXmlProperty(localName = "storage")
+
     private Long storage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "az")
+
+    @JacksonXmlProperty(localName = "az")
 
     private String az;
 

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -22,10 +23,14 @@ public class ShowEngineJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private Integer id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "engine_id")
+
+    @JacksonXmlProperty(localName = "engine_id")
 
     private String engineId;
 
@@ -121,10 +126,14 @@ public class ShowEngineJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
+    @JacksonXmlProperty(localName = "type")
+
     private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
+
+    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
@@ -226,35 +235,49 @@ public class ShowEngineJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scheduling")
+
+    @JacksonXmlProperty(localName = "scheduling")
 
     private Integer scheduling;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_user")
 
+    @JacksonXmlProperty(localName = "create_user")
+
     private String createUser;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
+
+    @JacksonXmlProperty(localName = "start_time")
 
     private Long startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time")
 
+    @JacksonXmlProperty(localName = "end_time")
+
     private Long endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "context")
 
+    @JacksonXmlProperty(localName = "context")
+
     private String context;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tasks")
+
+    @JacksonXmlProperty(localName = "tasks")
 
     private List<TaskSteps> tasks = null;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class ShowCorpBasicInfoRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Request-Id")
 
+    @JacksonXmlProperty(localName = "X-Request-Id")
+
     private String xRequestId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "Accept-Language")
+
+    @JacksonXmlProperty(localName = "Accept-Language")
 
     private String acceptLanguage;
 

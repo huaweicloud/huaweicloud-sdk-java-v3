@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.dds.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,10 +17,14 @@ public class DownloadErrorlogRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_name_list")
 
+    @JacksonXmlProperty(localName = "file_name_list")
+
     private List<String> fileNameList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "node_id_list")
+
+    @JacksonXmlProperty(localName = "node_id_list")
 
     private List<String> nodeIdList = null;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ccm.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,25 +14,35 @@ public class ExtendedKeyUsage {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "server_auth")
 
+    @JacksonXmlProperty(localName = "server_auth")
+
     private Boolean serverAuth;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "client_auth")
+
+    @JacksonXmlProperty(localName = "client_auth")
 
     private Boolean clientAuth;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "code_signing")
 
+    @JacksonXmlProperty(localName = "code_signing")
+
     private Boolean codeSigning;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "email_protection")
 
+    @JacksonXmlProperty(localName = "email_protection")
+
     private Boolean emailProtection;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time_stamping")
+
+    @JacksonXmlProperty(localName = "time_stamping")
 
     private Boolean timeStamping;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.iotda.v5.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,25 +15,35 @@ public class ChannelDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "http_forwarding")
 
+    @JacksonXmlProperty(localName = "http_forwarding")
+
     private HttpForwarding httpForwarding;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dis_forwarding")
+
+    @JacksonXmlProperty(localName = "dis_forwarding")
 
     private DisForwarding disForwarding;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "obs_forwarding")
 
+    @JacksonXmlProperty(localName = "obs_forwarding")
+
     private ObsForwarding obsForwarding;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "amqp_forwarding")
 
+    @JacksonXmlProperty(localName = "amqp_forwarding")
+
     private AmqpForwarding amqpForwarding;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dms_kafka_forwarding")
+
+    @JacksonXmlProperty(localName = "dms_kafka_forwarding")
 
     private DmsKafkaForwarding dmsKafkaForwarding;
 

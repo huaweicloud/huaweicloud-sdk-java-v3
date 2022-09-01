@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.mpc.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,30 +15,42 @@ public class QualityEnhanceVideo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "video_denoise")
 
+    @JacksonXmlProperty(localName = "video_denoise")
+
     private VideoDenoise videoDenoise;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "video_sharp")
+
+    @JacksonXmlProperty(localName = "video_sharp")
 
     private VideoSharp videoSharp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "video_contrast")
 
+    @JacksonXmlProperty(localName = "video_contrast")
+
     private VideoContrast videoContrast;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "video_superresolution")
+
+    @JacksonXmlProperty(localName = "video_superresolution")
 
     private VideoSuperresolution videoSuperresolution;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "video_deblock")
 
+    @JacksonXmlProperty(localName = "video_deblock")
+
     private VideoDeblock videoDeblock;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "video_saturation")
+
+    @JacksonXmlProperty(localName = "video_saturation")
 
     private VideoSaturation videoSaturation;
 

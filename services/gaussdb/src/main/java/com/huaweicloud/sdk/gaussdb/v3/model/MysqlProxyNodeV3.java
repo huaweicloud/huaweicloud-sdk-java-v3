@@ -11,6 +11,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.gaussdb.v3.model.MysqlProxyAvailable;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -24,6 +26,7 @@ public class MysqlProxyNodeV3  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
+    @JacksonXmlProperty(localName = "id")
     
     private String id;
 
@@ -31,6 +34,7 @@ public class MysqlProxyNodeV3  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_id")
     
+    @JacksonXmlProperty(localName = "instance_id")
     
     private String instanceId;
 
@@ -38,6 +42,7 @@ public class MysqlProxyNodeV3  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
+    @JacksonXmlProperty(localName = "status")
     
     private String status;
 
@@ -45,6 +50,7 @@ public class MysqlProxyNodeV3  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
+    @JacksonXmlProperty(localName = "name")
     
     private String name;
 
@@ -52,6 +58,7 @@ public class MysqlProxyNodeV3  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="weight")
     
+    @JacksonXmlProperty(localName = "weight")
     
     private Integer weight;
 
@@ -59,6 +66,7 @@ public class MysqlProxyNodeV3  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="availability_zone")
     
+    @JacksonXmlProperty(localName = "availability_zone")
     
     private List<MysqlProxyAvailable> availabilityZone = null;
     

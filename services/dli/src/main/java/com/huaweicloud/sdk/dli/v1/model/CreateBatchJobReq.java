@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,90 +22,126 @@ public class CreateBatchJobReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file")
 
+    @JacksonXmlProperty(localName = "file")
+
     private String file;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "class_name")
+
+    @JacksonXmlProperty(localName = "class_name")
 
     private String className;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cluster_name")
 
+    @JacksonXmlProperty(localName = "cluster_name")
+
     private String clusterName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "args")
+
+    @JacksonXmlProperty(localName = "args")
 
     private List<String> args = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sc_type")
 
+    @JacksonXmlProperty(localName = "sc_type")
+
     private String scType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "jars")
+
+    @JacksonXmlProperty(localName = "jars")
 
     private List<String> jars = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "python_files")
 
+    @JacksonXmlProperty(localName = "python_files")
+
     private List<String> pythonFiles = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "files")
+
+    @JacksonXmlProperty(localName = "files")
 
     private List<String> files = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "modules")
 
+    @JacksonXmlProperty(localName = "modules")
+
     private List<String> modules = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resources")
+
+    @JacksonXmlProperty(localName = "resources")
 
     private List<CreateSessionReqResource> resources = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "groups")
 
+    @JacksonXmlProperty(localName = "groups")
+
     private List<CreateSessionReqGroup> groups = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "conf")
+
+    @JacksonXmlProperty(localName = "conf")
 
     private List<Object> conf = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "driver_memory")
+
+    @JacksonXmlProperty(localName = "driver_memory")
 
     private String driverMemory;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "driver_cores")
 
+    @JacksonXmlProperty(localName = "driver_cores")
+
     private Integer driverCores;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "executor_memory")
+
+    @JacksonXmlProperty(localName = "executor_memory")
 
     private String executorMemory;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "executor_cores")
 
+    @JacksonXmlProperty(localName = "executor_cores")
+
     private Integer executorCores;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "num_executors")
+
+    @JacksonXmlProperty(localName = "num_executors")
 
     private Integer numExecutors;
 
@@ -194,40 +231,56 @@ public class CreateBatchJobReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "feature")
 
+    @JacksonXmlProperty(localName = "feature")
+
     private FeatureEnum feature;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "spark_version")
+
+    @JacksonXmlProperty(localName = "spark_version")
 
     private String sparkVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "queue")
 
+    @JacksonXmlProperty(localName = "queue")
+
     private String queue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auto_recovery")
+
+    @JacksonXmlProperty(localName = "auto_recovery")
 
     private Boolean autoRecovery;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_retry_times")
 
+    @JacksonXmlProperty(localName = "max_retry_times")
+
     private Integer maxRetryTimes;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image")
+
+    @JacksonXmlProperty(localName = "image")
 
     private String image;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "catalog_name")
 
+    @JacksonXmlProperty(localName = "catalog_name")
+
     private String catalogName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "obs_bucket")
+
+    @JacksonXmlProperty(localName = "obs_bucket")
 
     private String obsBucket;
 

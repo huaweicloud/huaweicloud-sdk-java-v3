@@ -8,6 +8,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -21,6 +23,7 @@ public class ListGaussMySqlInstancesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
+    @JacksonXmlProperty(localName = "X-Language")
     
     private String xLanguage;
 
@@ -28,6 +31,7 @@ public class ListGaussMySqlInstancesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
+    @JacksonXmlProperty(localName = "id")
     
     private String id;
 
@@ -35,6 +39,7 @@ public class ListGaussMySqlInstancesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
+    @JacksonXmlProperty(localName = "name")
     
     private String name;
 
@@ -42,6 +47,7 @@ public class ListGaussMySqlInstancesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
+    @JacksonXmlProperty(localName = "type")
     
     private String type;
 
@@ -49,6 +55,7 @@ public class ListGaussMySqlInstancesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="datastore_type")
     
+    @JacksonXmlProperty(localName = "datastore_type")
     
     private String datastoreType;
 
@@ -56,6 +63,7 @@ public class ListGaussMySqlInstancesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vpc_id")
     
+    @JacksonXmlProperty(localName = "vpc_id")
     
     private String vpcId;
 
@@ -63,6 +71,7 @@ public class ListGaussMySqlInstancesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="subnet_id")
     
+    @JacksonXmlProperty(localName = "subnet_id")
     
     private String subnetId;
 
@@ -70,6 +79,7 @@ public class ListGaussMySqlInstancesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="private_ip")
     
+    @JacksonXmlProperty(localName = "private_ip")
     
     private String privateIp;
 
@@ -77,6 +87,7 @@ public class ListGaussMySqlInstancesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
+    @JacksonXmlProperty(localName = "offset")
     
     private Integer offset;
 
@@ -84,6 +95,7 @@ public class ListGaussMySqlInstancesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
+    @JacksonXmlProperty(localName = "limit")
     
     private Integer limit;
 
@@ -91,6 +103,7 @@ public class ListGaussMySqlInstancesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
+    @JacksonXmlProperty(localName = "tags")
     
     private String tags;
 

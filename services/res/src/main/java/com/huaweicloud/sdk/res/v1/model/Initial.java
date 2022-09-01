@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -101,25 +102,35 @@ public class Initial {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "initial_method")
 
+    @JacksonXmlProperty(localName = "initial_method")
+
     private InitialMethodEnum initialMethod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mean_value")
+
+    @JacksonXmlProperty(localName = "mean_value")
 
     private Double meanValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "standard_deviation")
 
+    @JacksonXmlProperty(localName = "standard_deviation")
+
     private Double standardDeviation;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "min_value")
 
+    @JacksonXmlProperty(localName = "min_value")
+
     private Double minValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_value")
+
+    @JacksonXmlProperty(localName = "max_value")
 
     private Double maxValue;
 

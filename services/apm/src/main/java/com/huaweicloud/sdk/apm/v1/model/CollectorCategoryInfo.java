@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.apm.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,20 +14,28 @@ public class CollectorCategoryInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "category_id")
 
+    @JacksonXmlProperty(localName = "category_id")
+
     private Integer categoryId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "category_name")
+
+    @JacksonXmlProperty(localName = "category_name")
 
     private String categoryName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "display_name")
 
+    @JacksonXmlProperty(localName = "display_name")
+
     private String displayName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sequence")
+
+    @JacksonXmlProperty(localName = "sequence")
 
     private Integer sequence;
 

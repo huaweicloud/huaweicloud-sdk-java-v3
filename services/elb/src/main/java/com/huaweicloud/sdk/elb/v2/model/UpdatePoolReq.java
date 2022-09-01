@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.elb.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,25 +15,35 @@ public class UpdatePoolReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lb_algorithm")
 
+    @JacksonXmlProperty(localName = "lb_algorithm")
+
     private String lbAlgorithm;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
+    @JacksonXmlProperty(localName = "description")
+
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "admin_state_up")
 
+    @JacksonXmlProperty(localName = "admin_state_up")
+
     private Boolean adminStateUp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "session_persistence")
+
+    @JacksonXmlProperty(localName = "session_persistence")
 
     private SessionPersistence sessionPersistence;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.eps.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,25 +17,35 @@ public class ResqEpResouce {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "projects")
 
+    @JacksonXmlProperty(localName = "projects")
+
     private List<String> projects = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_types")
+
+    @JacksonXmlProperty(localName = "resource_types")
 
     private List<String> resourceTypes = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
+    @JacksonXmlProperty(localName = "offset")
+
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
+    @JacksonXmlProperty(localName = "limit")
+
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "matches")
+
+    @JacksonXmlProperty(localName = "matches")
 
     private List<Match> matches = null;
 

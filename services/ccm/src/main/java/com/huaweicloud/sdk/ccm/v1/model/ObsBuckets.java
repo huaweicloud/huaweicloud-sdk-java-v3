@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ccm.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class ObsBuckets {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bucket_name")
 
+    @JacksonXmlProperty(localName = "bucket_name")
+
     private String bucketName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
+
+    @JacksonXmlProperty(localName = "create_time")
 
     private Long createTime;
 

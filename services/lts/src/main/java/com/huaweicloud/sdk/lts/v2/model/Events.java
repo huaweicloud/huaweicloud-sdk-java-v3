@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.lts.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,40 +15,56 @@ public class Events {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "annotations")
 
+    @JacksonXmlProperty(localName = "annotations")
+
     private Annotations annotations;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metadata")
+
+    @JacksonXmlProperty(localName = "metadata")
 
     private Metadata metadata;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "arrives_at")
 
+    @JacksonXmlProperty(localName = "arrives_at")
+
     private Long arrivesAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ends_at")
+
+    @JacksonXmlProperty(localName = "ends_at")
 
     private Long endsAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "starts_at")
+
+    @JacksonXmlProperty(localName = "starts_at")
 
     private Long startsAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timeout")
 
+    @JacksonXmlProperty(localName = "timeout")
+
     private Long timeout;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
+
+    @JacksonXmlProperty(localName = "type")
 
     private String type;
 

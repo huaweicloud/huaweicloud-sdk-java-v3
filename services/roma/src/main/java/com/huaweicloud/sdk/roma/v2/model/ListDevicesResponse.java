@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.roma.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -17,35 +18,49 @@ public class ListDevicesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total")
 
+    @JacksonXmlProperty(localName = "total")
+
     private Integer total;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
+
+    @JacksonXmlProperty(localName = "size")
 
     private Integer size;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "connect_address")
 
+    @JacksonXmlProperty(localName = "connect_address")
+
     private String connectAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ssl_connect_address")
+
+    @JacksonXmlProperty(localName = "ssl_connect_address")
 
     private String sslConnectAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ipv6_connect_address")
 
+    @JacksonXmlProperty(localName = "ipv6_connect_address")
+
     private String ipv6ConnectAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ipv6_ssl_connect_address")
 
+    @JacksonXmlProperty(localName = "ipv6_ssl_connect_address")
+
     private String ipv6SslConnectAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "items")
+
+    @JacksonXmlProperty(localName = "items")
 
     private List<Device> items = null;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.sdrs.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -14,6 +15,8 @@ public class UpdateReplicationNameResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "replication")
+
+    @JacksonXmlProperty(localName = "replication")
 
     private ShowReplicationParams replication;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.vas.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,15 +17,21 @@ public class TaskOutputHostingForDisplay {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "obs")
 
+    @JacksonXmlProperty(localName = "obs")
+
     private List<TaskOutputHostingForDisplayObs> obs = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "result_json_overdue_at")
 
+    @JacksonXmlProperty(localName = "result_json_overdue_at")
+
     private Long resultJsonOverdueAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_category")
+
+    @JacksonXmlProperty(localName = "data_category")
 
     private List<String> dataCategory = null;
 

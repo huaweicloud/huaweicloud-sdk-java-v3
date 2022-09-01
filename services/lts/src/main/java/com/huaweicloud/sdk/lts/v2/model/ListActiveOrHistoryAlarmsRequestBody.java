@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.lts.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,40 +17,56 @@ public class ListActiveOrHistoryAlarmsRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "step")
 
+    @JacksonXmlProperty(localName = "step")
+
     private Integer step;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "whether_custom_field")
+
+    @JacksonXmlProperty(localName = "whether_custom_field")
 
     private Boolean whetherCustomField;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
+    @JacksonXmlProperty(localName = "start_time")
+
     private Long startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time")
+
+    @JacksonXmlProperty(localName = "end_time")
 
     private Long endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time_range")
 
+    @JacksonXmlProperty(localName = "time_range")
+
     private String timeRange;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "search")
+
+    @JacksonXmlProperty(localName = "search")
 
     private String search;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alarm_level_ids")
 
+    @JacksonXmlProperty(localName = "alarm_level_ids")
+
     private List<String> alarmLevelIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sort")
+
+    @JacksonXmlProperty(localName = "sort")
 
     private Sort sort;
 

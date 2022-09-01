@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.iam.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class CreateMfaDeviceRespon {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "serial_number")
 
+    @JacksonXmlProperty(localName = "serial_number")
+
     private String serialNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "base32_string_seed")
+
+    @JacksonXmlProperty(localName = "base32_string_seed")
 
     private String base32StringSeed;
 

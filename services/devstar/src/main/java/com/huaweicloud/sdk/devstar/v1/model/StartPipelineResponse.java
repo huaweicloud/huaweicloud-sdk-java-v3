@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Collections;
@@ -18,6 +19,8 @@ public class StartPipelineResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
+
+    @JacksonXmlProperty(localName = "id")
 
     private String id;
 
@@ -100,6 +103,8 @@ public class StartPipelineResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "result")
+
+    @JacksonXmlProperty(localName = "result")
 
     private ResultEnum result;
 

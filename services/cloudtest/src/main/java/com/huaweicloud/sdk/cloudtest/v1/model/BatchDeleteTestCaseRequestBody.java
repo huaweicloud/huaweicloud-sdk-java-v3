@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cloudtest.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,10 +17,14 @@ public class BatchDeleteTestCaseRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_id")
 
+    @JacksonXmlProperty(localName = "service_id")
+
     private Integer serviceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "testcase_id_list")
+
+    @JacksonXmlProperty(localName = "testcase_id_list")
 
     private List<String> testcaseIdList = null;
 

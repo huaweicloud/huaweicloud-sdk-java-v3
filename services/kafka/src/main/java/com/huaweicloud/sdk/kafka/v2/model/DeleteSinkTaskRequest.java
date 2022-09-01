@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.kafka.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class DeleteSinkTaskRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "connector_id")
 
+    @JacksonXmlProperty(localName = "connector_id")
+
     private String connectorId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_id")
+
+    @JacksonXmlProperty(localName = "task_id")
 
     private String taskId;
 

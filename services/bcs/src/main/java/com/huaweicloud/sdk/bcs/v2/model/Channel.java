@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.bcs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.HashMap;
 import java.util.List;
@@ -17,30 +18,42 @@ public class Channel {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
+
+    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
+    @JacksonXmlProperty(localName = "create_time")
+
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "consensus")
+
+    @JacksonXmlProperty(localName = "consensus")
 
     private String consensus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "peers")
 
+    @JacksonXmlProperty(localName = "peers")
+
     private Map<String, List<String>> peers = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "consensusNodes")
+
+    @JacksonXmlProperty(localName = "consensusNodes")
 
     private Map<String, List<String>> consensusNodes = null;
 

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -101,6 +102,8 @@ public class InstInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "engine_type")
 
+    @JacksonXmlProperty(localName = "engine_type")
+
     private EngineTypeEnum engineType;
 
     /**
@@ -177,20 +180,28 @@ public class InstInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "inst_type")
 
+    @JacksonXmlProperty(localName = "inst_type")
+
     private InstTypeEnum instType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip")
+
+    @JacksonXmlProperty(localName = "ip")
 
     private String ip;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "public_ip")
 
+    @JacksonXmlProperty(localName = "public_ip")
+
     private String publicIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
+
+    @JacksonXmlProperty(localName = "start_time")
 
     private String startTime;
 
@@ -274,10 +285,14 @@ public class InstInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volume_size")
+
+    @JacksonXmlProperty(localName = "volume_size")
 
     private Integer volumeSize;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -17,60 +18,84 @@ public class ShowDatasourceConnectionResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_success")
 
+    @JacksonXmlProperty(localName = "is_success")
+
     private Boolean isSuccess;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "message")
+
+    @JacksonXmlProperty(localName = "message")
 
     private String message;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "connection_id")
 
+    @JacksonXmlProperty(localName = "connection_id")
+
     private String connectionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "destination")
+
+    @JacksonXmlProperty(localName = "destination")
 
     private String destination;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "state")
 
+    @JacksonXmlProperty(localName = "state")
+
     private String state;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "process")
+
+    @JacksonXmlProperty(localName = "process")
 
     private Double process;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "connection_url")
+
+    @JacksonXmlProperty(localName = "connection_url")
 
     private String connectionUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cluster_name")
 
+    @JacksonXmlProperty(localName = "cluster_name")
+
     private String clusterName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service")
+
+    @JacksonXmlProperty(localName = "service")
 
     private String service;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
+    @JacksonXmlProperty(localName = "create_time")
+
     private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "available_queue_info")
+
+    @JacksonXmlProperty(localName = "available_queue_info")
 
     private List<ShowDatasourceConnectionRespAvailableQueueInfo> availableQueueInfo = null;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.elb.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,25 +15,35 @@ public class CreateLoadBalancerPublicIpOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip_version")
 
+    @JacksonXmlProperty(localName = "ip_version")
+
     private Integer ipVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "network_type")
+
+    @JacksonXmlProperty(localName = "network_type")
 
     private String networkType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "billing_info")
 
+    @JacksonXmlProperty(localName = "billing_info")
+
     private String billingInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
+    @JacksonXmlProperty(localName = "description")
+
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bandwidth")
+
+    @JacksonXmlProperty(localName = "bandwidth")
 
     private CreateLoadBalancerBandwidthOption bandwidth;
 

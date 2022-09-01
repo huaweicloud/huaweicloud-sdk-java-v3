@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.projectman.v4.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +16,8 @@ public class MetricRequestV2Dividend {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "custom_fields")
+
+    @JacksonXmlProperty(localName = "custom_fields")
 
     private List<MetricRequestV2DividendCustomFields> customFields = null;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cloudpipeline.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,25 +17,35 @@ public class Workflow {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parameter")
 
+    @JacksonXmlProperty(localName = "parameter")
+
     private List<PipelineParam> parameter = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source")
+
+    @JacksonXmlProperty(localName = "source")
 
     private List<Source> source = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
 
+    @JacksonXmlProperty(localName = "project_id")
+
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_name")
+
+    @JacksonXmlProperty(localName = "project_name")
 
     private String projectName;
 

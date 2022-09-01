@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -20,6 +21,8 @@ public class CreateNotificationOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "topic_urn")
+
+    @JacksonXmlProperty(localName = "topic_urn")
 
     private String topicUrn;
 
@@ -120,6 +123,8 @@ public class CreateNotificationOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "topic_scene")
+
+    @JacksonXmlProperty(localName = "topic_scene")
 
     private List<TopicSceneEnum> topicScene = null;
 

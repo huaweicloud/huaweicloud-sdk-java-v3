@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.live.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class HttpCode {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "code")
 
+    @JacksonXmlProperty(localName = "code")
+
     private Integer code;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "count")
 
+    @JacksonXmlProperty(localName = "count")
+
     private Integer count;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "proportion")
+
+    @JacksonXmlProperty(localName = "proportion")
 
     private Double proportion;
 

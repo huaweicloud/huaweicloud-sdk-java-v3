@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cloudtable.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,45 +15,63 @@ public class Cluster {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auth_mode")
 
+    @JacksonXmlProperty(localName = "auth_mode")
+
     private String authMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_lemon")
+
+    @JacksonXmlProperty(localName = "enable_lemon")
 
     private Boolean enableLemon;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_openTSDB")
 
+    @JacksonXmlProperty(localName = "enable_openTSDB")
+
     private Boolean enableOpenTSDB;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance")
+
+    @JacksonXmlProperty(localName = "instance")
 
     private Instance instance;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "storage_size")
+
+    @JacksonXmlProperty(localName = "storage_size")
 
     private Integer storageSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "storage_type")
 
+    @JacksonXmlProperty(localName = "storage_type")
+
     private String storageType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_id")
 
+    @JacksonXmlProperty(localName = "vpc_id")
+
     private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "datastore")
+
+    @JacksonXmlProperty(localName = "datastore")
 
     private Datastore datastore;
 

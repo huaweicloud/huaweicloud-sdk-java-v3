@@ -12,6 +12,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -25,6 +27,7 @@ public class ShowProductConfigResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="service_id")
     
+    @JacksonXmlProperty(localName = "service_id")
     
     private String serviceId;
 
@@ -32,6 +35,7 @@ public class ShowProductConfigResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="service_type")
     
+    @JacksonXmlProperty(localName = "service_type")
     
     private String serviceType;
 
@@ -39,6 +43,7 @@ public class ShowProductConfigResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
+    @JacksonXmlProperty(localName = "description")
     
     private String description;
 
@@ -46,6 +51,7 @@ public class ShowProductConfigResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="properties")
     
+    @JacksonXmlProperty(localName = "properties")
     
     private List<Object> properties = null;
     

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,25 +15,35 @@ public class QueryCorpResultDTO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "basicInfo")
 
+    @JacksonXmlProperty(localName = "basicInfo")
+
     private QueryCorpBasicResultDTO basicInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "adminInfo")
+
+    @JacksonXmlProperty(localName = "adminInfo")
 
     private QueryAdminResultDTO adminInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resInfo")
 
+    @JacksonXmlProperty(localName = "resInfo")
+
     private QueryCorpResResultDTO resInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "groupDTO")
 
+    @JacksonXmlProperty(localName = "groupDTO")
+
     private OrgGroupDTO groupDTO;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
+
+    @JacksonXmlProperty(localName = "id")
 
     private String id;
 

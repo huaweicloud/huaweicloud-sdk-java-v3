@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.iotanalytics.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,30 +14,42 @@ public class ModelArtsContentRsp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "serviceName")
 
+    @JacksonXmlProperty(localName = "serviceName")
+
     private String serviceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "accessAddress")
+
+    @JacksonXmlProperty(localName = "accessAddress")
 
     private String accessAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "verifyBody")
 
+    @JacksonXmlProperty(localName = "verifyBody")
+
     private String verifyBody;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ak")
+
+    @JacksonXmlProperty(localName = "ak")
 
     private String ak;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sk")
 
+    @JacksonXmlProperty(localName = "sk")
+
     private String sk;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "projectId")
+
+    @JacksonXmlProperty(localName = "projectId")
 
     private String projectId;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.waf.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.math.BigDecimal;
 import java.util.Objects;
@@ -14,35 +15,49 @@ public class CircuitBreaker {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "switch")
 
+    @JacksonXmlProperty(localName = "switch")
+
     private Boolean _switch;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dead_num")
+
+    @JacksonXmlProperty(localName = "dead_num")
 
     private Integer deadNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dead_ratio")
 
+    @JacksonXmlProperty(localName = "dead_ratio")
+
     private BigDecimal deadRatio;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "block_time")
+
+    @JacksonXmlProperty(localName = "block_time")
 
     private Integer blockTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "superposition_num")
 
+    @JacksonXmlProperty(localName = "superposition_num")
+
     private Integer superpositionNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "suspend_num")
 
+    @JacksonXmlProperty(localName = "suspend_num")
+
     private Integer suspendNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sus_block_time")
+
+    @JacksonXmlProperty(localName = "sus_block_time")
 
     private Integer susBlockTime;
 

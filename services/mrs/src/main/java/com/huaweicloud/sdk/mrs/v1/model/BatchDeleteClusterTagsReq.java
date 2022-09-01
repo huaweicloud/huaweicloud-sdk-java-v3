@@ -15,6 +15,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -100,6 +102,7 @@ public class BatchDeleteClusterTagsReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="action")
     
+    @JacksonXmlProperty(localName = "action")
     
     private ActionEnum action;
 
@@ -107,6 +110,7 @@ public class BatchDeleteClusterTagsReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
+    @JacksonXmlProperty(localName = "tags")
     
     private List<Tag> tags = null;
     

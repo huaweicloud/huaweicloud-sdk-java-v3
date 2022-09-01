@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.eps.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,20 +14,28 @@ public class Errors {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_code")
 
+    @JacksonXmlProperty(localName = "error_code")
+
     private String errorCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_msg")
+
+    @JacksonXmlProperty(localName = "error_msg")
 
     private String errorMsg;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
 
+    @JacksonXmlProperty(localName = "project_id")
+
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_type")
+
+    @JacksonXmlProperty(localName = "resource_type")
 
     private String resourceType;
 

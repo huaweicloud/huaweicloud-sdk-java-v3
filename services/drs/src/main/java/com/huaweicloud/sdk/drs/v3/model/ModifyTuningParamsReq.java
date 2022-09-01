@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.drs.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,25 +17,35 @@ public class ModifyTuningParamsReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "full_sync")
 
+    @JacksonXmlProperty(localName = "full_sync")
+
     private Map<String, String> fullSync = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "incre_capture")
+
+    @JacksonXmlProperty(localName = "incre_capture")
 
     private Map<String, String> increCapture = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "incre_apply")
 
+    @JacksonXmlProperty(localName = "incre_apply")
+
     private Map<String, String> increApply = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "incre_relay")
 
+    @JacksonXmlProperty(localName = "incre_relay")
+
     private Map<String, String> increRelay = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "recovery")
+
+    @JacksonXmlProperty(localName = "recovery")
 
     private Boolean recovery;
 

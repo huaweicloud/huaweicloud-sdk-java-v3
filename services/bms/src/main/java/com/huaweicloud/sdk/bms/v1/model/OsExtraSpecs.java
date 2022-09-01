@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -89,6 +90,8 @@ public class OsExtraSpecs {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_type")
 
+    @JacksonXmlProperty(localName = "resource_type")
+
     private ResourceTypeEnum resourceType;
 
     /**
@@ -171,20 +174,28 @@ public class OsExtraSpecs {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "capabilities:cpu_arch")
 
+    @JacksonXmlProperty(localName = "capabilities:cpu_arch")
+
     private CapabilitiesCpuArchEnum capabilitiesCpuArch;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "baremetal:disk_detail")
+
+    @JacksonXmlProperty(localName = "baremetal:disk_detail")
 
     private String baremetalDiskDetail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "capabilities:hypervisor_type")
 
+    @JacksonXmlProperty(localName = "capabilities:hypervisor_type")
+
     private String capabilitiesHypervisorType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "baremetal:__support_evs")
+
+    @JacksonXmlProperty(localName = "baremetal:__support_evs")
 
     private String baremetalSupportEvs;
 
@@ -268,30 +279,42 @@ public class OsExtraSpecs {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "baremetal:extBootType")
 
+    @JacksonXmlProperty(localName = "baremetal:extBootType")
+
     private BaremetalExtBootTypeEnum baremetalExtBootType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "capabilities:board_type")
+
+    @JacksonXmlProperty(localName = "capabilities:board_type")
 
     private String capabilitiesBoardType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "baremetal:net_num")
 
+    @JacksonXmlProperty(localName = "baremetal:net_num")
+
     private String baremetalNetNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "baremetal:netcard_detail")
+
+    @JacksonXmlProperty(localName = "baremetal:netcard_detail")
 
     private String baremetalNetcardDetail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "baremetal:cpu_detail")
 
+    @JacksonXmlProperty(localName = "baremetal:cpu_detail")
+
     private String baremetalCpuDetail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "baremetal:memory_detail")
+
+    @JacksonXmlProperty(localName = "baremetal:memory_detail")
 
     private String baremetalMemoryDetail;
 
@@ -393,10 +416,14 @@ public class OsExtraSpecs {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cond:operation:status")
 
+    @JacksonXmlProperty(localName = "cond:operation:status")
+
     private CondOperationStatusEnum condOperationStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cond:operation:az")
+
+    @JacksonXmlProperty(localName = "cond:operation:az")
 
     private String condOperationAz;
 

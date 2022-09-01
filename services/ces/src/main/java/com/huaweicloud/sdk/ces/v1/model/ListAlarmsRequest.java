@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ces.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class ListAlarmsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
+    @JacksonXmlProperty(localName = "limit")
+
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "order")
 
+    @JacksonXmlProperty(localName = "order")
+
     private String order;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start")
+
+    @JacksonXmlProperty(localName = "start")
 
     private String start;
 

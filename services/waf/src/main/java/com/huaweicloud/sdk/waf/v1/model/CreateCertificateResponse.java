@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.waf.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -17,40 +18,56 @@ public class CreateCertificateResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "content")
 
+    @JacksonXmlProperty(localName = "content")
+
     private String content;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key")
+
+    @JacksonXmlProperty(localName = "key")
 
     private String key;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expire_time")
 
+    @JacksonXmlProperty(localName = "expire_time")
+
     private Long expireTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "exp_status")
+
+    @JacksonXmlProperty(localName = "exp_status")
 
     private Integer expStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timestamp")
 
+    @JacksonXmlProperty(localName = "timestamp")
+
     private Long timestamp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bind_host")
+
+    @JacksonXmlProperty(localName = "bind_host")
 
     private List<BindHost> bindHost = null;
 

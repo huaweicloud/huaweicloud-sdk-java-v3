@@ -8,6 +8,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -21,6 +23,7 @@ public class EdgeDeviceAuthInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auth_type")
     
+    @JacksonXmlProperty(localName = "auth_type")
     
     private String authType;
 
@@ -28,6 +31,7 @@ public class EdgeDeviceAuthInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="secret")
     
+    @JacksonXmlProperty(localName = "secret")
     
     private String secret;
 
@@ -35,6 +39,7 @@ public class EdgeDeviceAuthInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="fingerprint")
     
+    @JacksonXmlProperty(localName = "fingerprint")
     
     private String fingerprint;
 
@@ -42,6 +47,7 @@ public class EdgeDeviceAuthInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="secure_access")
     
+    @JacksonXmlProperty(localName = "secure_access")
     
     private Boolean secureAccess;
 
@@ -49,6 +55,7 @@ public class EdgeDeviceAuthInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="timeout")
     
+    @JacksonXmlProperty(localName = "timeout")
     
     private Integer timeout;
 

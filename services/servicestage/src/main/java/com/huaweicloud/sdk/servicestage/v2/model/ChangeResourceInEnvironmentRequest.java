@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.servicestage.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,10 +15,14 @@ public class ChangeResourceInEnvironmentRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "environment_id")
 
+    @JacksonXmlProperty(localName = "environment_id")
+
     private String environmentId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
+
+    @JacksonXmlProperty(localName = "body")
 
     private EnvironmentResourceModify body;
 

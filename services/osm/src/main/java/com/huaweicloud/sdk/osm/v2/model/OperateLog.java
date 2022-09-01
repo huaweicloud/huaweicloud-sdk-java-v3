@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.osm.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class OperateLog {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "oper")
 
+    @JacksonXmlProperty(localName = "oper")
+
     private String oper;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operate_time")
+
+    @JacksonXmlProperty(localName = "operate_time")
 
     private String operateTime;
 

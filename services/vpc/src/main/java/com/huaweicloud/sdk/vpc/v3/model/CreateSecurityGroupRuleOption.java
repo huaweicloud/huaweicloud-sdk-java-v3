@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.vpc.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,55 +14,77 @@ public class CreateSecurityGroupRuleOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_group_id")
 
+    @JacksonXmlProperty(localName = "security_group_id")
+
     private String securityGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
+
+    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "direction")
 
+    @JacksonXmlProperty(localName = "direction")
+
     private String direction;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ethertype")
+
+    @JacksonXmlProperty(localName = "ethertype")
 
     private String ethertype;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protocol")
 
+    @JacksonXmlProperty(localName = "protocol")
+
     private String protocol;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "multiport")
+
+    @JacksonXmlProperty(localName = "multiport")
 
     private String multiport;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remote_ip_prefix")
 
+    @JacksonXmlProperty(localName = "remote_ip_prefix")
+
     private String remoteIpPrefix;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remote_group_id")
+
+    @JacksonXmlProperty(localName = "remote_group_id")
 
     private String remoteGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remote_address_group_id")
 
+    @JacksonXmlProperty(localName = "remote_address_group_id")
+
     private String remoteAddressGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "action")
 
+    @JacksonXmlProperty(localName = "action")
+
     private String action;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "priority")
+
+    @JacksonXmlProperty(localName = "priority")
 
     private String priority;
 

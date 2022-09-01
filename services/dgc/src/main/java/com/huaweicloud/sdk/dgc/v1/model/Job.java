@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.dgc.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class Job {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "path")
 
+    @JacksonXmlProperty(localName = "path")
+
     private String path;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "params")
+
+    @JacksonXmlProperty(localName = "params")
 
     private Object params;
 

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -20,6 +21,8 @@ public class QueryTranscodingsTaskResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_id")
+
+    @JacksonXmlProperty(localName = "task_id")
 
     private String taskId;
 
@@ -133,80 +136,112 @@ public class QueryTranscodingsTaskResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
+
+    @JacksonXmlProperty(localName = "create_time")
 
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time")
 
+    @JacksonXmlProperty(localName = "end_time")
+
     private String endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trans_template_id")
+
+    @JacksonXmlProperty(localName = "trans_template_id")
 
     private List<Integer> transTemplateId = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "input")
 
+    @JacksonXmlProperty(localName = "input")
+
     private ObsObjInfo input;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "output")
+
+    @JacksonXmlProperty(localName = "output")
 
     private ObsObjInfo output;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "output_file_name")
 
+    @JacksonXmlProperty(localName = "output_file_name")
+
     private List<String> outputFileName = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_data")
+
+    @JacksonXmlProperty(localName = "user_data")
 
     private String userData;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_code")
 
+    @JacksonXmlProperty(localName = "error_code")
+
     private String errorCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
+
+    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tips")
 
+    @JacksonXmlProperty(localName = "tips")
+
     private String tips;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "transcode_detail")
+
+    @JacksonXmlProperty(localName = "transcode_detail")
 
     private TranscodeDetail transcodeDetail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "thumbnail_output")
 
+    @JacksonXmlProperty(localName = "thumbnail_output")
+
     private ObsObjInfo thumbnailOutput;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "thumbnail_outputname")
+
+    @JacksonXmlProperty(localName = "thumbnail_outputname")
 
     private String thumbnailOutputname;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pic_info")
 
+    @JacksonXmlProperty(localName = "pic_info")
+
     private List<PicInfo> picInfo = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "av_parameters")
+
+    @JacksonXmlProperty(localName = "av_parameters")
 
     private List<AvParameters> avParameters = null;
 

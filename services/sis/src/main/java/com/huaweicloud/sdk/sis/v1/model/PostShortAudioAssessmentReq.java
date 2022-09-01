@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.sis.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,15 +15,21 @@ public class PostShortAudioAssessmentReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "config")
 
+    @JacksonXmlProperty(localName = "config")
+
     private AudioConfig config;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "audio_data")
 
+    @JacksonXmlProperty(localName = "audio_data")
+
     private String audioData;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ref_text")
+
+    @JacksonXmlProperty(localName = "ref_text")
 
     private String refText;
 

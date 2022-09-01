@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.vpc.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -17,10 +18,14 @@ public class NeutronListSecurityGroupRulesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_group_rules")
 
+    @JacksonXmlProperty(localName = "security_group_rules")
+
     private List<NeutronSecurityGroupRule> securityGroupRules = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_group_rules_links")
+
+    @JacksonXmlProperty(localName = "security_group_rules_links")
 
     private List<NeutronPageLink> securityGroupRulesLinks = null;
 

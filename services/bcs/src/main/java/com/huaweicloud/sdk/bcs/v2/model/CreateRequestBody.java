@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.bcs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,155 +17,217 @@ public class CreateRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version_type")
+
+    @JacksonXmlProperty(localName = "version_type")
 
     private Long versionType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fabric_version")
 
+    @JacksonXmlProperty(localName = "fabric_version")
+
     private String fabricVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "blockchain_type")
+
+    @JacksonXmlProperty(localName = "blockchain_type")
 
     private String blockchainType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "consensus")
 
+    @JacksonXmlProperty(localName = "consensus")
+
     private String consensus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sign_algorithm")
+
+    @JacksonXmlProperty(localName = "sign_algorithm")
 
     private String signAlgorithm;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
+    @JacksonXmlProperty(localName = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volume_type")
+
+    @JacksonXmlProperty(localName = "volume_type")
 
     private String volumeType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "evs_disk_type")
 
+    @JacksonXmlProperty(localName = "evs_disk_type")
+
     private String evsDiskType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "org_disk_size")
+
+    @JacksonXmlProperty(localName = "org_disk_size")
 
     private Long orgDiskSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "database_type")
 
+    @JacksonXmlProperty(localName = "database_type")
+
     private String databaseType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_password")
+
+    @JacksonXmlProperty(localName = "resource_password")
 
     private String resourcePassword;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "orderer_node_number")
 
+    @JacksonXmlProperty(localName = "orderer_node_number")
+
     private Long ordererNodeNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "use_eip")
+
+    @JacksonXmlProperty(localName = "use_eip")
 
     private Boolean useEip;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bandwidth_size")
 
+    @JacksonXmlProperty(localName = "bandwidth_size")
+
     private Long bandwidthSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cluster_type")
+
+    @JacksonXmlProperty(localName = "cluster_type")
 
     private String clusterType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_new_cluster")
 
+    @JacksonXmlProperty(localName = "create_new_cluster")
+
     private Boolean createNewCluster;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cce_cluster_info")
+
+    @JacksonXmlProperty(localName = "cce_cluster_info")
 
     private CCEClusterInfo cceClusterInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cce_create_info")
 
+    @JacksonXmlProperty(localName = "cce_create_info")
+
     private CCECreateInfo cceCreateInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ief_deploy_mode")
+
+    @JacksonXmlProperty(localName = "ief_deploy_mode")
 
     private Long iefDeployMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ief_nodes_info")
 
+    @JacksonXmlProperty(localName = "ief_nodes_info")
+
     private List<IEFNode> iefNodesInfo = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "peer_orgs")
+
+    @JacksonXmlProperty(localName = "peer_orgs")
 
     private List<OrgPeer> peerOrgs = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "channels")
 
+    @JacksonXmlProperty(localName = "channels")
+
     private List<ChannelInfoV2> channels = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "couchdb_info")
+
+    @JacksonXmlProperty(localName = "couchdb_info")
 
     private CouchDb couchdbInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "turbo_info")
 
+    @JacksonXmlProperty(localName = "turbo_info")
+
     private TurboInfo turboInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "block_info")
+
+    @JacksonXmlProperty(localName = "block_info")
 
     private CreateRequestBodyBlockInfo blockInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "kafka_create_info")
 
+    @JacksonXmlProperty(localName = "kafka_create_info")
+
     private KafkaCreateInfo kafkaCreateInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tc3_need")
+
+    @JacksonXmlProperty(localName = "tc3_need")
 
     private Boolean tc3Need;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "restful_api_support")
 
+    @JacksonXmlProperty(localName = "restful_api_support")
+
     private Boolean restfulApiSupport;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_invitee")
 
+    @JacksonXmlProperty(localName = "is_invitee")
+
     private Boolean isInvitee;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "invitor_infos")
+
+    @JacksonXmlProperty(localName = "invitor_infos")
 
     private InvitorInfos invitorInfos;
 

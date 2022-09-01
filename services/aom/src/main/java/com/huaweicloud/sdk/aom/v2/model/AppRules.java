@@ -11,6 +11,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.aom.v2.model.AppRulesSpec;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -24,6 +26,7 @@ public class AppRules  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="createTime")
     
+    @JacksonXmlProperty(localName = "createTime")
     
     private String createTime;
 
@@ -31,6 +34,7 @@ public class AppRules  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enable")
     
+    @JacksonXmlProperty(localName = "enable")
     
     private Boolean enable;
 
@@ -38,6 +42,7 @@ public class AppRules  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="eventName")
     
+    @JacksonXmlProperty(localName = "eventName")
     
     private String eventName;
 
@@ -45,6 +50,7 @@ public class AppRules  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="hostid")
     
+    @JacksonXmlProperty(localName = "hostid")
     
     private List<String> hostid = null;
     
@@ -52,6 +58,7 @@ public class AppRules  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
+    @JacksonXmlProperty(localName = "id")
     
     private String id;
 
@@ -59,6 +66,7 @@ public class AppRules  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
+    @JacksonXmlProperty(localName = "name")
     
     private String name;
 
@@ -66,6 +74,7 @@ public class AppRules  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="projectid")
     
+    @JacksonXmlProperty(localName = "projectid")
     
     private String projectid;
 
@@ -73,6 +82,7 @@ public class AppRules  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="spec")
     
+    @JacksonXmlProperty(localName = "spec")
     
     private AppRulesSpec spec;
 

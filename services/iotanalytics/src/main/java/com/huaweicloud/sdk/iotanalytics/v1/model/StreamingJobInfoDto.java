@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.iotanalytics.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,55 +14,77 @@ public class StreamingJobInfoDto {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_id")
 
+    @JacksonXmlProperty(localName = "job_id")
+
     private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_name")
+
+    @JacksonXmlProperty(localName = "job_name")
 
     private String jobName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_input_type")
 
+    @JacksonXmlProperty(localName = "job_input_type")
+
     private String jobInputType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_description")
+
+    @JacksonXmlProperty(localName = "job_description")
 
     private String jobDescription;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_state")
 
+    @JacksonXmlProperty(localName = "job_state")
+
     private String jobState;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
+
+    @JacksonXmlProperty(localName = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rtu")
 
+    @JacksonXmlProperty(localName = "rtu")
+
     private Integer rtu;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_time")
+
+    @JacksonXmlProperty(localName = "created_time")
 
     private String createdTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "modified_time")
 
+    @JacksonXmlProperty(localName = "modified_time")
+
     private String modifiedTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_id")
 
+    @JacksonXmlProperty(localName = "user_id")
+
     private String userId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "has_savepoint")
+
+    @JacksonXmlProperty(localName = "has_savepoint")
 
     private Boolean hasSavepoint;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.codecraft.v5.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class RegisterInfoRequestModel {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "competition_id")
 
+    @JacksonXmlProperty(localName = "competition_id")
+
     private String competitionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stage_id")
 
+    @JacksonXmlProperty(localName = "stage_id")
+
     private String stageId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_id")
+
+    @JacksonXmlProperty(localName = "domain_id")
 
     private String domainId;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.functiongraph.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class UpdateTracingRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tracing_ak")
 
+    @JacksonXmlProperty(localName = "tracing_ak")
+
     private String tracingAk;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tracing_sk")
+
+    @JacksonXmlProperty(localName = "tracing_sk")
 
     private String tracingSk;
 

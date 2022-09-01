@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cloudpipeline.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,55 +14,77 @@ public class ListPipelineSimpleInfoRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pipeline_name")
 
+    @JacksonXmlProperty(localName = "pipeline_name")
+
     private String pipelineName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_ids")
+
+    @JacksonXmlProperty(localName = "project_ids")
 
     private String projectIds;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "creator_ids")
 
+    @JacksonXmlProperty(localName = "creator_ids")
+
     private String creatorIds;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "executor_ids")
+
+    @JacksonXmlProperty(localName = "executor_ids")
 
     private String executorIds;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "outcome")
+
+    @JacksonXmlProperty(localName = "outcome")
 
     private String outcome;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sort_key")
 
+    @JacksonXmlProperty(localName = "sort_key")
+
     private String sortKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sort_dir")
+
+    @JacksonXmlProperty(localName = "sort_dir")
 
     private String sortDir;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "git_url")
 
+    @JacksonXmlProperty(localName = "git_url")
+
     private String gitUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
+    @JacksonXmlProperty(localName = "offset")
+
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
+
+    @JacksonXmlProperty(localName = "limit")
 
     private Integer limit;
 

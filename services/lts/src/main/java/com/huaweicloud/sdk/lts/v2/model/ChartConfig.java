@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.lts.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class ChartConfig {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "can_sort")
 
+    @JacksonXmlProperty(localName = "can_sort")
+
     private Boolean canSort;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "can_search")
 
+    @JacksonXmlProperty(localName = "can_search")
+
     private Boolean canSearch;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page_size")
+
+    @JacksonXmlProperty(localName = "page_size")
 
     private Integer pageSize;
 

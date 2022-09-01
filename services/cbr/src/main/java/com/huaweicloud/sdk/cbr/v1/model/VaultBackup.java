@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cbr.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,10 +15,14 @@ public class VaultBackup {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parameters")
 
+    @JacksonXmlProperty(localName = "parameters")
+
     private CheckpointParam parameters;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vault_id")
+
+    @JacksonXmlProperty(localName = "vault_id")
 
     private String vaultId;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.codecheck.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class TaskCheckSettingsItem {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cfg_key")
 
+    @JacksonXmlProperty(localName = "cfg_key")
+
     private String cfgKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cfg_value")
+
+    @JacksonXmlProperty(localName = "cfg_value")
 
     private String cfgValue;
 

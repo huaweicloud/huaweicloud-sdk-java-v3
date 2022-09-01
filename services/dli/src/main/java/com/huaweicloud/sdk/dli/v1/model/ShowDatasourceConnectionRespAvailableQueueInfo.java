@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -107,25 +108,35 @@ public class ShowDatasourceConnectionRespAvailableQueueInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "err_msg")
 
+    @JacksonXmlProperty(localName = "err_msg")
+
     private String errMsg;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
 
+    @JacksonXmlProperty(localName = "update_time")
+
     private Long updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "uuid")
+
+    @JacksonXmlProperty(localName = "uuid")
 
     private String uuid;
 

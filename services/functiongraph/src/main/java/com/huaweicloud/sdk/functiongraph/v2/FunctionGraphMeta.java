@@ -686,6 +686,11 @@ public class FunctionGraphMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Cff-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(InvokeFunctionResponse::getXCffRequestId, InvokeFunctionResponse::setXCffRequestId));
         return builder.build();
     }
 
@@ -942,7 +947,6 @@ public class FunctionGraphMeta {
             }));
 
         // response
-
         builder.<List<ListFunctionTriggerResult>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -1109,7 +1113,6 @@ public class FunctionGraphMeta {
             }));
 
         // response
-
         builder.<List<ListVersionAliasResult>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.bcs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,25 +14,35 @@ public class MemberInvitor {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "invitor_bcs_id")
 
+    @JacksonXmlProperty(localName = "invitor_bcs_id")
+
     private String invitorBcsId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "invitor_bcs_name")
+
+    @JacksonXmlProperty(localName = "invitor_bcs_name")
 
     private String invitorBcsName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "invitor_project_id")
 
+    @JacksonXmlProperty(localName = "invitor_project_id")
+
     private String invitorProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "invitor_user_id")
 
+    @JacksonXmlProperty(localName = "invitor_user_id")
+
     private String invitorUserId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "invitor_username")
+
+    @JacksonXmlProperty(localName = "invitor_username")
 
     private String invitorUsername;
 

@@ -3737,6 +3737,45 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateDbUserCommentRequest, UpdateDbUserCommentResponse> updateDbUserComment =
+        genForupdateDbUserComment();
+
+    private static HttpRequestDef<UpdateDbUserCommentRequest, UpdateDbUserCommentResponse> genForupdateDbUserComment() {
+        // basic
+        HttpRequestDef.Builder<UpdateDbUserCommentRequest, UpdateDbUserCommentResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateDbUserCommentRequest.class, UpdateDbUserCommentResponse.class)
+                .withName("UpdateDbUserComment")
+                .withUri("/v3/{project_id}/instances/{instance_id}/db-users/{user_name}/comment")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDbUserCommentRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("user_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDbUserCommentRequest::getUserName, (req, v) -> {
+                req.setUserName(v);
+            }));
+        builder.<UpdateDbUserReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateDbUserReq.class),
+            f -> f.withMarshaller(UpdateDbUserCommentRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<AllowDbPrivilegeRequest, AllowDbPrivilegeResponse> allowDbPrivilege =
         genForallowDbPrivilege();
 

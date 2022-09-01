@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.projectman.v4.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class AddApplyJoinProjectForAgcRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "Domain-Id")
 
+    @JacksonXmlProperty(localName = "Domain-Id")
+
     private String domainId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "User-Id")
 
+    @JacksonXmlProperty(localName = "User-Id")
+
     private String userId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
+
+    @JacksonXmlProperty(localName = "project_id")
 
     private String projectId;
 

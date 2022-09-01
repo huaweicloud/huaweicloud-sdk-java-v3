@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.css.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,30 +14,42 @@ public class Setting {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "workers")
 
+    @JacksonXmlProperty(localName = "workers")
+
     private Integer workers;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "batchSize")
+
+    @JacksonXmlProperty(localName = "batchSize")
 
     private Integer batchSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "batchDelayMs")
 
+    @JacksonXmlProperty(localName = "batchDelayMs")
+
     private Integer batchDelayMs;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "queueType")
+
+    @JacksonXmlProperty(localName = "queueType")
 
     private String queueType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "queueCheckPointWrites")
 
+    @JacksonXmlProperty(localName = "queueCheckPointWrites")
+
     private Integer queueCheckPointWrites;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "queueMaxBytesMb")
+
+    @JacksonXmlProperty(localName = "queueMaxBytesMb")
 
     private Integer queueMaxBytesMb;
 

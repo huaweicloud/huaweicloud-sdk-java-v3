@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.bcs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,60 +14,84 @@ public class InvitorInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "invitor_id")
 
+    @JacksonXmlProperty(localName = "invitor_id")
+
     private String invitorId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "invitor_name")
+
+    @JacksonXmlProperty(localName = "invitor_name")
 
     private String invitorName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "invitor_bcs_id")
 
+    @JacksonXmlProperty(localName = "invitor_bcs_id")
+
     private String invitorBcsId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "invitor_bcs_name")
+
+    @JacksonXmlProperty(localName = "invitor_bcs_name")
 
     private String invitorBcsName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "invitor_consensus")
 
+    @JacksonXmlProperty(localName = "invitor_consensus")
+
     private String invitorConsensus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "invitor_project_id")
+
+    @JacksonXmlProperty(localName = "invitor_project_id")
 
     private String invitorProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "invitor_cluster_type")
 
+    @JacksonXmlProperty(localName = "invitor_cluster_type")
+
     private String invitorClusterType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "invitor_database_type")
+
+    @JacksonXmlProperty(localName = "invitor_database_type")
 
     private String invitorDatabaseType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "invitor_signature_algorithm")
 
+    @JacksonXmlProperty(localName = "invitor_signature_algorithm")
+
     private String invitorSignatureAlgorithm;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "invitor_fabric_version")
+
+    @JacksonXmlProperty(localName = "invitor_fabric_version")
 
     private String invitorFabricVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "order_fade_enabled")
 
+    @JacksonXmlProperty(localName = "order_fade_enabled")
+
     private Boolean orderFadeEnabled;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "order_fade_cache")
+
+    @JacksonXmlProperty(localName = "order_fade_cache")
 
     private Long orderFadeCache;
 

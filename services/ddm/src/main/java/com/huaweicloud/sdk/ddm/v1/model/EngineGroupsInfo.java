@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ddm.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,20 +17,28 @@ public class EngineGroupsInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
 
+    @JacksonXmlProperty(localName = "version")
+
     private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "supportAzs")
+
+    @JacksonXmlProperty(localName = "supportAzs")
 
     private List<SupportAzsInfo> supportAzs = null;
 

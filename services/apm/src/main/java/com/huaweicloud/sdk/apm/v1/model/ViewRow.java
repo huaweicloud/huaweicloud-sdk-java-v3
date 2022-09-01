@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.apm.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,10 +17,14 @@ public class ViewRow {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "view_list")
 
+    @JacksonXmlProperty(localName = "view_list")
+
     private List<ViewBase> viewList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "title")
+
+    @JacksonXmlProperty(localName = "title")
 
     private String title;
 

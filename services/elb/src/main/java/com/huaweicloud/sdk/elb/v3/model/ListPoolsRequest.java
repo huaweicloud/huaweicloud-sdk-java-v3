@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.elb.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,100 +17,140 @@ public class ListPoolsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "marker")
 
+    @JacksonXmlProperty(localName = "marker")
+
     private String marker;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
+
+    @JacksonXmlProperty(localName = "limit")
 
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page_reverse")
 
+    @JacksonXmlProperty(localName = "page_reverse")
+
     private Boolean pageReverse;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
+
+    @JacksonXmlProperty(localName = "description")
 
     private List<String> description = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "admin_state_up")
 
+    @JacksonXmlProperty(localName = "admin_state_up")
+
     private Boolean adminStateUp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "healthmonitor_id")
+
+    @JacksonXmlProperty(localName = "healthmonitor_id")
 
     private List<String> healthmonitorId = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private List<String> id = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private List<String> name = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "loadbalancer_id")
 
+    @JacksonXmlProperty(localName = "loadbalancer_id")
+
     private List<String> loadbalancerId = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protocol")
+
+    @JacksonXmlProperty(localName = "protocol")
 
     private List<String> protocol = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lb_algorithm")
 
+    @JacksonXmlProperty(localName = "lb_algorithm")
+
     private List<String> lbAlgorithm = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
+
+    @JacksonXmlProperty(localName = "enterprise_project_id")
 
     private List<String> enterpriseProjectId = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip_version")
 
+    @JacksonXmlProperty(localName = "ip_version")
+
     private List<String> ipVersion = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "member_address")
+
+    @JacksonXmlProperty(localName = "member_address")
 
     private List<String> memberAddress = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "member_device_id")
 
+    @JacksonXmlProperty(localName = "member_device_id")
+
     private List<String> memberDeviceId = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "member_deletion_protection_enable")
+
+    @JacksonXmlProperty(localName = "member_deletion_protection_enable")
 
     private Boolean memberDeletionProtectionEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "listener_id")
 
+    @JacksonXmlProperty(localName = "listener_id")
+
     private List<String> listenerId = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "member_instance_id")
+
+    @JacksonXmlProperty(localName = "member_instance_id")
 
     private List<String> memberInstanceId = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_id")
 
+    @JacksonXmlProperty(localName = "vpc_id")
+
     private List<String> vpcId = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
+
+    @JacksonXmlProperty(localName = "type")
 
     private List<String> type = null;
 

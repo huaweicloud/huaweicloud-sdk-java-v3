@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.frs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.http.FormDataFilePart;
 import com.huaweicloud.sdk.core.http.FormDataPart;
 import com.huaweicloud.sdk.core.http.SdkFormDataBody;
@@ -17,31 +18,42 @@ import java.util.Objects;
 public class SearchFaceByFileRequestBody implements SdkFormDataBody {
 
     @JsonProperty(value = "image_file", access = JsonProperty.Access.WRITE_ONLY)
+    @JacksonXmlProperty(localName = "image_file")
 
     private FormDataFilePart imageFile;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "top_n")
 
+    @JacksonXmlProperty(localName = "top_n")
+
     private Integer topN;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "threshold")
+
+    @JacksonXmlProperty(localName = "threshold")
 
     private Double threshold;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sort")
 
+    @JacksonXmlProperty(localName = "sort")
+
     private String sort;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "filter")
 
+    @JacksonXmlProperty(localName = "filter")
+
     private String filter;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "return_fields")
+
+    @JacksonXmlProperty(localName = "return_fields")
 
     private String returnFields;
 

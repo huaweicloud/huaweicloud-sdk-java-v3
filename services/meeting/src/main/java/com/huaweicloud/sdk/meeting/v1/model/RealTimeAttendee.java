@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,30 +14,42 @@ public class RealTimeAttendee {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "accountID")
 
+    @JacksonXmlProperty(localName = "accountID")
+
     private String accountID;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "userUUID")
+
+    @JacksonXmlProperty(localName = "userUUID")
 
     private String userUUID;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "phone")
+
+    @JacksonXmlProperty(localName = "phone")
 
     private String phone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "phoneLeft")
 
+    @JacksonXmlProperty(localName = "phoneLeft")
+
     private String phoneLeft;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "phoneRight")
+
+    @JacksonXmlProperty(localName = "phoneRight")
 
     private String phoneRight;
 

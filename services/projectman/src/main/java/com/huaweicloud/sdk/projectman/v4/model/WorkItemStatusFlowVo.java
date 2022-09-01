@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.projectman.v4.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,60 +17,84 @@ public class WorkItemStatusFlowVo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parent_name")
 
+    @JacksonXmlProperty(localName = "parent_name")
+
     private String parentName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parent_type")
+
+    @JacksonXmlProperty(localName = "parent_type")
 
     private String parentType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status_id")
 
+    @JacksonXmlProperty(localName = "status_id")
+
     private String statusId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status_type")
 
+    @JacksonXmlProperty(localName = "status_type")
+
     private String statusType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "direct_to")
+
+    @JacksonXmlProperty(localName = "direct_to")
 
     private List<StatusFlowDirectToVo> directTo = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "assign_to")
 
+    @JacksonXmlProperty(localName = "assign_to")
+
     private String assignTo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "comment")
+
+    @JacksonXmlProperty(localName = "comment")
 
     private String comment;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "required_assign")
 
+    @JacksonXmlProperty(localName = "required_assign")
+
     private Boolean requiredAssign;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "required_notes")
+
+    @JacksonXmlProperty(localName = "required_notes")
 
     private Boolean requiredNotes;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "field_type")
 
+    @JacksonXmlProperty(localName = "field_type")
+
     private Boolean fieldType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parent_id")
+
+    @JacksonXmlProperty(localName = "parent_id")
 
     private String parentId;
 

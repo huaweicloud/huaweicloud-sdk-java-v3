@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.iotda.v5.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class ShowDeviceRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "Instance-Id")
 
+    @JacksonXmlProperty(localName = "Instance-Id")
+
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "device_id")
+
+    @JacksonXmlProperty(localName = "device_id")
 
     private String deviceId;
 

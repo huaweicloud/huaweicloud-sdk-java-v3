@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.gsl.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -12,6 +13,8 @@ public class DeleteTagRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tag_id")
+
+    @JacksonXmlProperty(localName = "tag_id")
 
     private Long tagId;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cbr.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,20 +14,28 @@ public class CbcOrderResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cloudServiceId")
 
+    @JacksonXmlProperty(localName = "cloudServiceId")
+
     private String cloudServiceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "orderId")
+
+    @JacksonXmlProperty(localName = "orderId")
 
     private String orderId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subscribeResult")
 
+    @JacksonXmlProperty(localName = "subscribeResult")
+
     private Integer subscribeResult;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resourceId")
+
+    @JacksonXmlProperty(localName = "resourceId")
 
     private String resourceId;
 

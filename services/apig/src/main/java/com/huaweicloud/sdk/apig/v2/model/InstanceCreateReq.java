@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,25 +22,35 @@ public class InstanceCreateReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
+    @JacksonXmlProperty(localName = "description")
+
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maintain_begin")
+
+    @JacksonXmlProperty(localName = "maintain_begin")
 
     private String maintainBegin;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maintain_end")
 
+    @JacksonXmlProperty(localName = "maintain_end")
+
     private String maintainEnd;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_name")
 
+    @JacksonXmlProperty(localName = "instance_name")
+
     private String instanceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_id")
+
+    @JacksonXmlProperty(localName = "instance_id")
 
     private String instanceId;
 
@@ -159,45 +170,63 @@ public class InstanceCreateReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "spec_id")
 
+    @JacksonXmlProperty(localName = "spec_id")
+
     private SpecIdEnum specId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_id")
+
+    @JacksonXmlProperty(localName = "vpc_id")
 
     private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subnet_id")
 
+    @JacksonXmlProperty(localName = "subnet_id")
+
     private String subnetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_group_id")
+
+    @JacksonXmlProperty(localName = "security_group_id")
 
     private String securityGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "eip_id")
 
+    @JacksonXmlProperty(localName = "eip_id")
+
     private String eipId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
+
+    @JacksonXmlProperty(localName = "enterprise_project_id")
 
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "available_zone_ids")
 
+    @JacksonXmlProperty(localName = "available_zone_ids")
+
     private List<String> availableZoneIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bandwidth_size")
 
+    @JacksonXmlProperty(localName = "bandwidth_size")
+
     private Integer bandwidthSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ipv6_enable")
+
+    @JacksonXmlProperty(localName = "ipv6_enable")
 
     private Boolean ipv6Enable;
 
@@ -280,6 +309,8 @@ public class InstanceCreateReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "loadbalancer_provider")
+
+    @JacksonXmlProperty(localName = "loadbalancer_provider")
 
     private LoadbalancerProviderEnum loadbalancerProvider;
 

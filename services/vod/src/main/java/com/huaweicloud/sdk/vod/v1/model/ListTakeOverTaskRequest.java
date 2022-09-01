@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.vod.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,30 +14,42 @@ public class ListTakeOverTaskRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "Authorization")
 
+    @JacksonXmlProperty(localName = "Authorization")
+
     private String authorization;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Sdk-Date")
+
+    @JacksonXmlProperty(localName = "X-Sdk-Date")
 
     private String xSdkDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_id")
+
+    @JacksonXmlProperty(localName = "task_id")
 
     private String taskId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page")
 
+    @JacksonXmlProperty(localName = "page")
+
     private Integer page;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
+
+    @JacksonXmlProperty(localName = "size")
 
     private Integer size;
 

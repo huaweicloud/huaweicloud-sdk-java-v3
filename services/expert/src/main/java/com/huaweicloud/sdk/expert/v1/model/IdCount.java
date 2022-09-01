@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.expert.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class IdCount {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "paper_id")
 
+    @JacksonXmlProperty(localName = "paper_id")
+
     private String paperId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "count")
+
+    @JacksonXmlProperty(localName = "count")
 
     private Integer count;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.osm.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,25 +14,35 @@ public class IncidentProductCategoryV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "incident_product_category_id")
 
+    @JacksonXmlProperty(localName = "incident_product_category_id")
+
     private String incidentProductCategoryId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "incident_product_category_name")
+
+    @JacksonXmlProperty(localName = "incident_product_category_name")
 
     private String incidentProductCategoryName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "incident_product_category_desc")
 
+    @JacksonXmlProperty(localName = "incident_product_category_desc")
+
     private String incidentProductCategoryDesc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "incident_product_category_acronym")
 
+    @JacksonXmlProperty(localName = "incident_product_category_acronym")
+
     private String incidentProductCategoryAcronym;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "can_use_support_plan")
+
+    @JacksonXmlProperty(localName = "can_use_support_plan")
 
     private Boolean canUseSupportPlan;
 

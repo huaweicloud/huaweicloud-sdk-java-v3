@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.iotanalytics.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -15,30 +16,42 @@ public class UpdateDataSourceResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
+    @JacksonXmlProperty(localName = "type")
+
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "content")
+
+    @JacksonXmlProperty(localName = "content")
 
     private ContentDetailRsp content;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_time")
 
+    @JacksonXmlProperty(localName = "created_time")
+
     private String createdTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "modified_time")
+
+    @JacksonXmlProperty(localName = "modified_time")
 
     private String modifiedTime;
 

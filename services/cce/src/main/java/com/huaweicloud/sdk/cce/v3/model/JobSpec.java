@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cce.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -18,30 +19,42 @@ public class JobSpec {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
+    @JacksonXmlProperty(localName = "type")
+
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "clusterUID")
+
+    @JacksonXmlProperty(localName = "clusterUID")
 
     private String clusterUID;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resourceID")
 
+    @JacksonXmlProperty(localName = "resourceID")
+
     private String resourceID;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resourceName")
+
+    @JacksonXmlProperty(localName = "resourceName")
 
     private String resourceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extendParam")
 
+    @JacksonXmlProperty(localName = "extendParam")
+
     private Map<String, String> extendParam = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subJobs")
+
+    @JacksonXmlProperty(localName = "subJobs")
 
     private List<Job> subJobs = null;
 

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -17,6 +18,8 @@ public class CommonInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pvc")
+
+    @JacksonXmlProperty(localName = "pvc")
 
     private Boolean pvc;
 
@@ -99,6 +102,8 @@ public class CommonInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "video_codec")
+
+    @JacksonXmlProperty(localName = "video_codec")
 
     private VideoCodecEnum videoCodec;
 
@@ -194,10 +199,14 @@ public class CommonInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "audio_codec")
 
+    @JacksonXmlProperty(localName = "audio_codec")
+
     private AudioCodecEnum audioCodec;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_black_cut")
+
+    @JacksonXmlProperty(localName = "is_black_cut")
 
     private Boolean isBlackCut;
 
@@ -311,15 +320,21 @@ public class CommonInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "format")
 
+    @JacksonXmlProperty(localName = "format")
+
     private FormatEnum format;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hls_interval")
 
+    @JacksonXmlProperty(localName = "hls_interval")
+
     private Integer hlsInterval;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "upsample")
+
+    @JacksonXmlProperty(localName = "upsample")
 
     private Boolean upsample;
 
@@ -408,6 +423,8 @@ public class CommonInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "adaptation")
+
+    @JacksonXmlProperty(localName = "adaptation")
 
     private AdaptationEnum adaptation;
 

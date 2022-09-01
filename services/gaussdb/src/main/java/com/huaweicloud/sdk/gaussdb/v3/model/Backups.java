@@ -17,6 +17,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.gaussdb.v3.model.MysqlDatastore;
 import java.util.HashMap;
 import java.util.Map;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -30,6 +32,7 @@ public class Backups  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
+    @JacksonXmlProperty(localName = "id")
     
     private String id;
 
@@ -37,6 +40,7 @@ public class Backups  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
+    @JacksonXmlProperty(localName = "name")
     
     private String name;
 
@@ -44,6 +48,7 @@ public class Backups  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="begin_time")
     
+    @JacksonXmlProperty(localName = "begin_time")
     
     private String beginTime;
 
@@ -51,6 +56,7 @@ public class Backups  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="end_time")
     
+    @JacksonXmlProperty(localName = "end_time")
     
     private String endTime;
     /**
@@ -148,6 +154,7 @@ public class Backups  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
+    @JacksonXmlProperty(localName = "status")
     
     private StatusEnum status;
 
@@ -155,6 +162,7 @@ public class Backups  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="take_up_time")
     
+    @JacksonXmlProperty(localName = "take_up_time")
     
     private Integer takeUpTime;
     /**
@@ -240,6 +248,7 @@ public class Backups  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
+    @JacksonXmlProperty(localName = "type")
     
     private TypeEnum type;
 
@@ -247,6 +256,7 @@ public class Backups  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="size")
     
+    @JacksonXmlProperty(localName = "size")
     
     private Long size;
 
@@ -254,6 +264,7 @@ public class Backups  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="datastore")
     
+    @JacksonXmlProperty(localName = "datastore")
     
     private MysqlDatastore datastore;
 
@@ -261,6 +272,7 @@ public class Backups  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_id")
     
+    @JacksonXmlProperty(localName = "instance_id")
     
     private String instanceId;
     /**
@@ -352,6 +364,7 @@ public class Backups  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="backup_level")
     
+    @JacksonXmlProperty(localName = "backup_level")
     
     private BackupLevelEnum backupLevel;
 
@@ -359,6 +372,7 @@ public class Backups  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
+    @JacksonXmlProperty(localName = "description")
     
     private String description;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.dds.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class DatastoreResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "node_type")
 
+    @JacksonXmlProperty(localName = "node_type")
+
     private String nodeType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
+
+    @JacksonXmlProperty(localName = "version")
 
     private String version;
 

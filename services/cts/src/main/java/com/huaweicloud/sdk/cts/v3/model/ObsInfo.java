@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cts.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,25 +14,35 @@ public class ObsInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bucket_name")
 
+    @JacksonXmlProperty(localName = "bucket_name")
+
     private String bucketName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_prefix_name")
+
+    @JacksonXmlProperty(localName = "file_prefix_name")
 
     private String filePrefixName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_obs_created")
 
+    @JacksonXmlProperty(localName = "is_obs_created")
+
     private Boolean isObsCreated;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_authorized_bucket")
 
+    @JacksonXmlProperty(localName = "is_authorized_bucket")
+
     private Boolean isAuthorizedBucket;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bucket_lifecycle")
+
+    @JacksonXmlProperty(localName = "bucket_lifecycle")
 
     private Long bucketLifecycle;
 

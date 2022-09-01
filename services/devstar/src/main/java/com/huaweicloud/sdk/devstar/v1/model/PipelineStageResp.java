@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.devstar.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class PipelineStageResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "display_name")
 
+    @JacksonXmlProperty(localName = "display_name")
+
     private String displayName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "result")
+
+    @JacksonXmlProperty(localName = "result")
 
     private String result;
 

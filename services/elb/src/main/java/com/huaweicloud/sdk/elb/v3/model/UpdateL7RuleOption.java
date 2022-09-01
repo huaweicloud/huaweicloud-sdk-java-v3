@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.elb.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,30 +17,42 @@ public class UpdateL7RuleOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "admin_state_up")
 
+    @JacksonXmlProperty(localName = "admin_state_up")
+
     private Boolean adminStateUp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "compare_type")
+
+    @JacksonXmlProperty(localName = "compare_type")
 
     private String compareType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "invert")
 
+    @JacksonXmlProperty(localName = "invert")
+
     private Boolean invert;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key")
+
+    @JacksonXmlProperty(localName = "key")
 
     private String key;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "value")
 
+    @JacksonXmlProperty(localName = "value")
+
     private String value;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "conditions")
+
+    @JacksonXmlProperty(localName = "conditions")
 
     private List<UpdateRuleCondition> conditions = null;
 

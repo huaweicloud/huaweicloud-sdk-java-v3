@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cph.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -17,65 +18,91 @@ public class ShowCloudPhoneDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "request_id")
 
+    @JacksonXmlProperty(localName = "request_id")
+
     private String requestId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "phone_name")
+
+    @JacksonXmlProperty(localName = "phone_name")
 
     private String phoneName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "server_id")
 
+    @JacksonXmlProperty(localName = "server_id")
+
     private String serverId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "phone_id")
+
+    @JacksonXmlProperty(localName = "phone_id")
 
     private String phoneId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image_id")
 
+    @JacksonXmlProperty(localName = "image_id")
+
     private String imageId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vnc_enable")
+
+    @JacksonXmlProperty(localName = "vnc_enable")
 
     private String vncEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "phone_model_name")
 
+    @JacksonXmlProperty(localName = "phone_model_name")
+
     private String phoneModelName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
+
+    @JacksonXmlProperty(localName = "status")
 
     private Integer status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "access_infos")
 
+    @JacksonXmlProperty(localName = "access_infos")
+
     private List<Object> accessInfos = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "property")
+
+    @JacksonXmlProperty(localName = "property")
 
     private String property;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metadata")
 
+    @JacksonXmlProperty(localName = "metadata")
+
     private Object metadata;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
+    @JacksonXmlProperty(localName = "create_time")
+
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
+
+    @JacksonXmlProperty(localName = "update_time")
 
     private String updateTime;
 

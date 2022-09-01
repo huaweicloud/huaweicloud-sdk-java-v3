@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,10 +19,14 @@ public class PortItem {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "port")
 
+    @JacksonXmlProperty(localName = "port")
+
     private Integer port;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service")
+
+    @JacksonXmlProperty(localName = "service")
 
     private String service;
 
@@ -105,6 +110,8 @@ public class PortItem {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protocol")
 
+    @JacksonXmlProperty(localName = "protocol")
+
     private ProtocolEnum protocol;
 
     /**
@@ -186,6 +193,8 @@ public class PortItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
+
+    @JacksonXmlProperty(localName = "status")
 
     private StatusEnum status;
 

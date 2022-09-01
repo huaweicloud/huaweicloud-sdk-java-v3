@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.iec.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,75 +15,105 @@ public class PublicIp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
+
+    @JacksonXmlProperty(localName = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "port_id")
 
+    @JacksonXmlProperty(localName = "port_id")
+
     private String portId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "public_ip_address")
+
+    @JacksonXmlProperty(localName = "public_ip_address")
 
     private String publicIpAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "private_ip_address")
 
+    @JacksonXmlProperty(localName = "private_ip_address")
+
     private String privateIpAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
+
+    @JacksonXmlProperty(localName = "create_time")
 
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bandwidth_id")
 
+    @JacksonXmlProperty(localName = "bandwidth_id")
+
     private String bandwidthId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bandwidth_name")
+
+    @JacksonXmlProperty(localName = "bandwidth_name")
 
     private String bandwidthName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bandwidth_share_type")
 
+    @JacksonXmlProperty(localName = "bandwidth_share_type")
+
     private String bandwidthShareType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bandwidth_size")
+
+    @JacksonXmlProperty(localName = "bandwidth_size")
 
     private Integer bandwidthSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip_version")
 
+    @JacksonXmlProperty(localName = "ip_version")
+
     private Integer ipVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "site_id")
+
+    @JacksonXmlProperty(localName = "site_id")
 
     private String siteId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "site_info")
 
+    @JacksonXmlProperty(localName = "site_info")
+
     private String siteInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operator")
 
+    @JacksonXmlProperty(localName = "operator")
+
     private Operator operator;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
+
+    @JacksonXmlProperty(localName = "type")
 
     private String type;
 

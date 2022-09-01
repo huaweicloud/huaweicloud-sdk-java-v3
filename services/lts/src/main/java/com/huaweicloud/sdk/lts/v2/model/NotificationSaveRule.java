@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -98,20 +99,28 @@ public class NotificationSaveRule {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "language")
 
+    @JacksonXmlProperty(localName = "language")
+
     private LanguageEnum language;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timezone")
+
+    @JacksonXmlProperty(localName = "timezone")
 
     private String timezone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_name")
 
+    @JacksonXmlProperty(localName = "user_name")
+
     private String userName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "topics")
+
+    @JacksonXmlProperty(localName = "topics")
 
     private List<Topics> topics = null;
 

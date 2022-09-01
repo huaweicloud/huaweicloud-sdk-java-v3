@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.tms.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,10 +15,14 @@ public class ModifyPrefineTag {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "new_tag")
 
+    @JacksonXmlProperty(localName = "new_tag")
+
     private PredefineTagRequest newTag;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "old_tag")
+
+    @JacksonXmlProperty(localName = "old_tag")
 
     private PredefineTagRequest oldTag;
 

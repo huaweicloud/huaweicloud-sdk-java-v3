@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cloudide.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,55 +17,77 @@ public class ProjectTemplates {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
+    @JacksonXmlProperty(localName = "description")
+
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "display_name")
+
+    @JacksonXmlProperty(localName = "display_name")
 
     private String displayName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "logo")
 
+    @JacksonXmlProperty(localName = "logo")
+
     private String logo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "path")
 
+    @JacksonXmlProperty(localName = "path")
+
     private String path;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_type")
+
+    @JacksonXmlProperty(localName = "project_type")
 
     private String projectType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region")
 
+    @JacksonXmlProperty(localName = "region")
+
     private String region;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source")
+
+    @JacksonXmlProperty(localName = "source")
 
     private SourceStorage source;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
+    @JacksonXmlProperty(localName = "tags")
+
     private List<String> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template_id")
 
+    @JacksonXmlProperty(localName = "template_id")
+
     private Long templateId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "arch")
+
+    @JacksonXmlProperty(localName = "arch")
 
     private String arch;
 

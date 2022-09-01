@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.iec.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,50 +14,70 @@ public class OsExtraSpecs {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cond:operation:status")
 
+    @JacksonXmlProperty(localName = "cond:operation:status")
+
     private String condOperationStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ecs:generation")
+
+    @JacksonXmlProperty(localName = "ecs:generation")
 
     private String ecsGeneration;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ecs:performancetype")
 
+    @JacksonXmlProperty(localName = "ecs:performancetype")
+
     private String ecsPerformancetype;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ecs:virtualization_env_types")
+
+    @JacksonXmlProperty(localName = "ecs:virtualization_env_types")
 
     private String ecsVirtualizationEnvTypes;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "info:cpu:name")
 
+    @JacksonXmlProperty(localName = "info:cpu:name")
+
     private String infoCpuName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "info:gpu:name")
+
+    @JacksonXmlProperty(localName = "info:gpu:name")
 
     private String infoGpuName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pci_passthrough:alias")
 
+    @JacksonXmlProperty(localName = "pci_passthrough:alias")
+
     private String pciPassthroughAlias;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pci_passthrough:enable_gpu")
+
+    @JacksonXmlProperty(localName = "pci_passthrough:enable_gpu")
 
     private String pciPassthroughEnableGpu;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pci_passthrough:gpu_specs")
 
+    @JacksonXmlProperty(localName = "pci_passthrough:gpu_specs")
+
     private String pciPassthroughGpuSpecs;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_type")
+
+    @JacksonXmlProperty(localName = "resource_type")
 
     private String resourceType;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ief.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,35 +14,49 @@ public class LogConfigs {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
+
+    @JacksonXmlProperty(localName = "size")
 
     private Integer size;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "level")
 
+    @JacksonXmlProperty(localName = "level")
+
     private String level;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rotate_num")
+
+    @JacksonXmlProperty(localName = "rotate_num")
 
     private Integer rotateNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rotate_period")
 
+    @JacksonXmlProperty(localName = "rotate_period")
+
     private String rotatePeriod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
+    @JacksonXmlProperty(localName = "type")
+
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "component")
+
+    @JacksonXmlProperty(localName = "component")
 
     private String component;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.codehub.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -14,35 +15,49 @@ public class ShowStatisticalDataResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "repoName")
 
+    @JacksonXmlProperty(localName = "repoName")
+
     private String repoName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "commitCount")
+
+    @JacksonXmlProperty(localName = "commitCount")
 
     private Integer commitCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "repoSize")
 
+    @JacksonXmlProperty(localName = "repoSize")
+
     private String repoSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lastCommitTime")
+
+    @JacksonXmlProperty(localName = "lastCommitTime")
 
     private String lastCommitTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "codeLines")
 
+    @JacksonXmlProperty(localName = "codeLines")
+
     private Integer codeLines;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "branchCount")
 
+    @JacksonXmlProperty(localName = "branchCount")
+
     private Integer branchCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "archiveUrl")
+
+    @JacksonXmlProperty(localName = "archiveUrl")
 
     private String archiveUrl;
 

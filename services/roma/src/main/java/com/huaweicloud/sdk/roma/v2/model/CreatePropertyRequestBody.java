@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,10 +19,14 @@ public class CreatePropertyRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "property_name")
 
+    @JacksonXmlProperty(localName = "property_name")
+
     private String propertyName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
+
+    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
@@ -123,6 +128,8 @@ public class CreatePropertyRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_type")
 
+    @JacksonXmlProperty(localName = "data_type")
+
     private DataTypeEnum dataType;
 
     /**
@@ -205,35 +212,49 @@ public class CreatePropertyRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "required")
 
+    @JacksonXmlProperty(localName = "required")
+
     private RequiredEnum required;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "min")
+
+    @JacksonXmlProperty(localName = "min")
 
     private String min;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max")
 
+    @JacksonXmlProperty(localName = "max")
+
     private String max;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "step")
+
+    @JacksonXmlProperty(localName = "step")
 
     private String step;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_length")
 
+    @JacksonXmlProperty(localName = "max_length")
+
     private Integer maxLength;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "unit")
 
+    @JacksonXmlProperty(localName = "unit")
+
     private String unit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enum_list")
+
+    @JacksonXmlProperty(localName = "enum_list")
 
     private String enumList;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.apm.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -13,6 +14,8 @@ public class ShowClobDetailResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "clob_string")
+
+    @JacksonXmlProperty(localName = "clob_string")
 
     private String clobString;
 

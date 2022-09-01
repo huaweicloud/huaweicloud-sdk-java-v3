@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.codehub.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class ProjectRepository {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "projectUuid")
 
+    @JacksonXmlProperty(localName = "projectUuid")
+
     private String projectUuid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "repositoryUuid")
+
+    @JacksonXmlProperty(localName = "repositoryUuid")
 
     private String repositoryUuid;
 

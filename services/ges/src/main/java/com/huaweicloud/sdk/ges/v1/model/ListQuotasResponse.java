@@ -11,6 +11,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.ges.v1.model.GesQuotaResp;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -24,6 +26,7 @@ public class ListQuotasResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="errorMessage")
     
+    @JacksonXmlProperty(localName = "errorMessage")
     
     private String errorMessage;
 
@@ -31,6 +34,7 @@ public class ListQuotasResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="errorCode")
     
+    @JacksonXmlProperty(localName = "errorCode")
     
     private String errorCode;
 
@@ -38,6 +42,7 @@ public class ListQuotasResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="quotas")
     
+    @JacksonXmlProperty(localName = "quotas")
     
     private GesQuotaResp quotas;
 

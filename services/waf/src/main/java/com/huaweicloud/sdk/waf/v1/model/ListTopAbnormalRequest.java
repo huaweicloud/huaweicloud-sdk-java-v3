@@ -2,11 +2,9 @@ package com.huaweicloud.sdk.waf.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -16,37 +14,51 @@ public class ListTopAbnormalRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
+    @JacksonXmlProperty(localName = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "from")
+
+    @JacksonXmlProperty(localName = "from")
 
     private Long from;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "to")
 
+    @JacksonXmlProperty(localName = "to")
+
     private Long to;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "top")
+
+    @JacksonXmlProperty(localName = "top")
 
     private Integer top;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "code")
 
+    @JacksonXmlProperty(localName = "code")
+
     private Integer code;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hosts")
 
-    private List<String> hosts = null;
+    @JacksonXmlProperty(localName = "hosts")
+
+    private String hosts;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instances")
 
-    private List<String> instances = null;
+    @JacksonXmlProperty(localName = "instances")
+
+    private String instances;
 
     public ListTopAbnormalRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -133,69 +145,37 @@ public class ListTopAbnormalRequest {
         this.code = code;
     }
 
-    public ListTopAbnormalRequest withHosts(List<String> hosts) {
+    public ListTopAbnormalRequest withHosts(String hosts) {
         this.hosts = hosts;
-        return this;
-    }
-
-    public ListTopAbnormalRequest addHostsItem(String hostsItem) {
-        if (this.hosts == null) {
-            this.hosts = new ArrayList<>();
-        }
-        this.hosts.add(hostsItem);
-        return this;
-    }
-
-    public ListTopAbnormalRequest withHosts(Consumer<List<String>> hostsSetter) {
-        if (this.hosts == null) {
-            this.hosts = new ArrayList<>();
-        }
-        hostsSetter.accept(this.hosts);
         return this;
     }
 
     /**
-     * 域名id列表，通过查询云模式防护域名列表（ListHost）获取域名id或者通过独享模式域名列表（ListPremiumHost）获取域名id。默认不传，查询该项目下所有防护域名的top业务异常统计信息。
+     * 域名id，通过查询云模式防护域名列表（ListHost）获取域名id或者通过独享模式域名列表（ListPremiumHost）获取域名id。默认不传，查询该项目下所有防护域名的top业务异常统计信息。
      * @return hosts
      */
-    public List<String> getHosts() {
+    public String getHosts() {
         return hosts;
     }
 
-    public void setHosts(List<String> hosts) {
+    public void setHosts(String hosts) {
         this.hosts = hosts;
     }
 
-    public ListTopAbnormalRequest withInstances(List<String> instances) {
+    public ListTopAbnormalRequest withInstances(String instances) {
         this.instances = instances;
         return this;
     }
 
-    public ListTopAbnormalRequest addInstancesItem(String instancesItem) {
-        if (this.instances == null) {
-            this.instances = new ArrayList<>();
-        }
-        this.instances.add(instancesItem);
-        return this;
-    }
-
-    public ListTopAbnormalRequest withInstances(Consumer<List<String>> instancesSetter) {
-        if (this.instances == null) {
-            this.instances = new ArrayList<>();
-        }
-        instancesSetter.accept(this.instances);
-        return this;
-    }
-
     /**
-     * 要查询引擎实例列表
+     * 要查询引擎实例id
      * @return instances
      */
-    public List<String> getInstances() {
+    public String getInstances() {
         return instances;
     }
 
-    public void setInstances(List<String> instances) {
+    public void setInstances(String instances) {
         this.instances = instances;
     }
 

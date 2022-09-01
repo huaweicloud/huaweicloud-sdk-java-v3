@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,25 +19,35 @@ public class UrlDomain {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain")
+
+    @JacksonXmlProperty(localName = "domain")
 
     private String domain;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cname_status")
 
+    @JacksonXmlProperty(localName = "cname_status")
+
     private Integer cnameStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ssl_id")
 
+    @JacksonXmlProperty(localName = "ssl_id")
+
     private String sslId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ssl_name")
+
+    @JacksonXmlProperty(localName = "ssl_name")
 
     private String sslName;
 
@@ -119,6 +130,8 @@ public class UrlDomain {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "min_ssl_version")
+
+    @JacksonXmlProperty(localName = "min_ssl_version")
 
     private MinSslVersionEnum minSslVersion;
 

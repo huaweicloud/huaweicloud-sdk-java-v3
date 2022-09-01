@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.iotda.v5.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,20 +14,28 @@ public class SimplifyDevice {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "device_id")
 
+    @JacksonXmlProperty(localName = "device_id")
+
     private String deviceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "node_id")
+
+    @JacksonXmlProperty(localName = "node_id")
 
     private String nodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "device_name")
 
+    @JacksonXmlProperty(localName = "device_name")
+
     private String deviceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "product_id")
+
+    @JacksonXmlProperty(localName = "product_id")
 
     private String productId;
 

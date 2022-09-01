@@ -6,6 +6,7 @@ import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.aom.v2.model.*;
+
 import java.util.List;
 import java.util.Map;
 import java.time.OffsetDateTime;
@@ -34,7 +35,6 @@ public class AomMeta {
         );
 
         // response
-        
 
 
         return builder.build();
@@ -61,7 +61,6 @@ public class AomMeta {
         );
 
         // response
-        
 
 
         return builder.build();
@@ -88,7 +87,6 @@ public class AomMeta {
         );
 
         // response
-        
 
 
         return builder.build();
@@ -123,7 +121,6 @@ public class AomMeta {
         );
 
         // response
-        
 
 
         return builder.build();
@@ -150,7 +147,6 @@ public class AomMeta {
         );
 
         // response
-        
         builder.<String>withResponseField(
             "body",
             LocationType.Body,
@@ -186,7 +182,6 @@ public class AomMeta {
         );
 
         // response
-        
         builder.<String>withResponseField(
             "body",
             LocationType.Body,
@@ -222,7 +217,6 @@ public class AomMeta {
         );
 
         // response
-        
 
 
         return builder.build();
@@ -257,7 +251,6 @@ public class AomMeta {
         );
 
         // response
-        
 
 
         return builder.build();
@@ -292,7 +285,6 @@ public class AomMeta {
         );
 
         // response
-        
 
 
         return builder.build();
@@ -327,7 +319,6 @@ public class AomMeta {
         );
 
         // response
-        
 
 
         return builder.build();
@@ -378,7 +369,6 @@ public class AomMeta {
         );
 
         // response
-        
 
 
         return builder.build();
@@ -413,7 +403,6 @@ public class AomMeta {
         );
 
         // response
-        
 
 
         return builder.build();
@@ -456,7 +445,6 @@ public class AomMeta {
         );
 
         // response
-        
 
 
         return builder.build();
@@ -483,7 +471,6 @@ public class AomMeta {
         );
 
         // response
-        
 
 
         return builder.build();
@@ -526,7 +513,6 @@ public class AomMeta {
         );
 
         // response
-        
 
 
         return builder.build();
@@ -553,7 +539,6 @@ public class AomMeta {
         );
 
         // response
-        
 
 
         return builder.build();
@@ -588,7 +573,6 @@ public class AomMeta {
         );
 
         // response
-        
 
 
         return builder.build();
@@ -615,7 +599,6 @@ public class AomMeta {
         );
 
         // response
-        
 
 
         return builder.build();
@@ -650,7 +633,6 @@ public class AomMeta {
         );
 
         // response
-        
 
 
         return builder.build();
@@ -685,7 +667,6 @@ public class AomMeta {
         );
 
         // response
-        
 
 
         return builder.build();
@@ -712,7 +693,6 @@ public class AomMeta {
         );
 
         // response
-        
 
 
         return builder.build();
@@ -731,7 +711,6 @@ public class AomMeta {
         // requests
 
         // response
-        
 
 
         return builder.build();
@@ -750,7 +729,6 @@ public class AomMeta {
         // requests
 
         // response
-        
 
 
         return builder.build();
@@ -769,7 +747,6 @@ public class AomMeta {
         // requests
 
         // response
-        
 
 
         return builder.build();
@@ -820,7 +797,6 @@ public class AomMeta {
         );
 
         // response
-        
 
 
         return builder.build();
@@ -871,7 +847,6 @@ public class AomMeta {
         );
 
         // response
-        
 
 
         return builder.build();

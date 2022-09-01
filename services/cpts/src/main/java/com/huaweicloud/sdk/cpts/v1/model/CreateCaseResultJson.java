@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cpts.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -12,6 +13,8 @@ public class CreateCaseResultJson {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_case_id")
+
+    @JacksonXmlProperty(localName = "task_case_id")
 
     private Integer taskCaseId;
 

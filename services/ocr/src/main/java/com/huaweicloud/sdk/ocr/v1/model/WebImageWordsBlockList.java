@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ocr.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,80 +17,112 @@ public class WebImageWordsBlockList {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "words")
 
+    @JacksonXmlProperty(localName = "words")
+
     private String words;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confidence")
+
+    @JacksonXmlProperty(localName = "confidence")
 
     private Float confidence;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "location")
 
+    @JacksonXmlProperty(localName = "location")
+
     private List<List<Integer>> location = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extracted_data")
+
+    @JacksonXmlProperty(localName = "extracted_data")
 
     private Object extractedData;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "contact_info")
 
+    @JacksonXmlProperty(localName = "contact_info")
+
     private Object contactInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image_size")
+
+    @JacksonXmlProperty(localName = "image_size")
 
     private Object imageSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "height")
 
+    @JacksonXmlProperty(localName = "height")
+
     private Integer height;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "width")
+
+    @JacksonXmlProperty(localName = "width")
 
     private Integer width;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "phone")
+
+    @JacksonXmlProperty(localName = "phone")
 
     private String phone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "province")
 
+    @JacksonXmlProperty(localName = "province")
+
     private String province;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "city")
+
+    @JacksonXmlProperty(localName = "city")
 
     private String city;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "district")
 
+    @JacksonXmlProperty(localName = "district")
+
     private String district;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "detail_address")
+
+    @JacksonXmlProperty(localName = "detail_address")
 
     private String detailAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "font_list")
 
+    @JacksonXmlProperty(localName = "font_list")
+
     private List<String> fontList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "font_scores")
+
+    @JacksonXmlProperty(localName = "font_scores")
 
     private List<Float> fontScores = null;
 

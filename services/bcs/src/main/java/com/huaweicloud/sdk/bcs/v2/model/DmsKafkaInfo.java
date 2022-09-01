@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.bcs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,15 +17,21 @@ public class DmsKafkaInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "addr")
 
+    @JacksonXmlProperty(localName = "addr")
+
     private List<String> addr = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "order_fade_enable")
 
+    @JacksonXmlProperty(localName = "order_fade_enable")
+
     private Boolean orderFadeEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "order_fade_cache")
+
+    @JacksonXmlProperty(localName = "order_fade_cache")
 
     private Long orderFadeCache;
 

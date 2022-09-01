@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,10 +19,14 @@ public class AppQuotaCreate {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "call_limits")
+
+    @JacksonXmlProperty(localName = "call_limits")
 
     private Integer callLimits;
 
@@ -117,20 +122,28 @@ public class AppQuotaCreate {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time_unit")
 
+    @JacksonXmlProperty(localName = "time_unit")
+
     private TimeUnitEnum timeUnit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time_interval")
+
+    @JacksonXmlProperty(localName = "time_interval")
 
     private Integer timeInterval;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "reset_time")
 
+    @JacksonXmlProperty(localName = "reset_time")
+
     private String resetTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remark")
+
+    @JacksonXmlProperty(localName = "remark")
 
     private String remark;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cdm.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,110 +17,154 @@ public class ClusterDetailInstance {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flavor")
 
+    @JacksonXmlProperty(localName = "flavor")
+
     private ClusterDetailInstanceFlavor flavor;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volume")
+
+    @JacksonXmlProperty(localName = "volume")
 
     private ClusterDetailInstanceVolume volume;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "actions")
+
+    @JacksonXmlProperty(localName = "actions")
 
     private List<String> actions = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
+    @JacksonXmlProperty(localName = "type")
+
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
+
+    @JacksonXmlProperty(localName = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "isFrozen")
+
+    @JacksonXmlProperty(localName = "isFrozen")
 
     private String isFrozen;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "components")
 
+    @JacksonXmlProperty(localName = "components")
+
     private String components;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "config_status")
+
+    @JacksonXmlProperty(localName = "config_status")
 
     private String configStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "role")
 
+    @JacksonXmlProperty(localName = "role")
+
     private String role;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group")
+
+    @JacksonXmlProperty(localName = "group")
 
     private String group;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "links")
 
+    @JacksonXmlProperty(localName = "links")
+
     private List<ClusterLinks> links = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "paramsGroupId")
+
+    @JacksonXmlProperty(localName = "paramsGroupId")
 
     private String paramsGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publicIp")
 
+    @JacksonXmlProperty(localName = "publicIp")
+
     private String publicIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "manageIp")
+
+    @JacksonXmlProperty(localName = "manageIp")
 
     private String manageIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trafficIp")
 
+    @JacksonXmlProperty(localName = "trafficIp")
+
     private String trafficIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "shard_id")
+
+    @JacksonXmlProperty(localName = "shard_id")
 
     private String shardId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "manage_fix_ip")
 
+    @JacksonXmlProperty(localName = "manage_fix_ip")
+
     private String manageFixIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "private_ip")
+
+    @JacksonXmlProperty(localName = "private_ip")
 
     private String privateIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "internal_ip")
 
+    @JacksonXmlProperty(localName = "internal_ip")
+
     private String internalIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource")
+
+    @JacksonXmlProperty(localName = "resource")
 
     private List<Resource> resource = null;
 

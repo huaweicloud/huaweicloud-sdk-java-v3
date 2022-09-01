@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ocr.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,60 +14,84 @@ public class MyanmarDriverLicenseConfidence {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "card_number")
 
+    @JacksonXmlProperty(localName = "card_number")
+
     private Float cardNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "card_number_en")
+
+    @JacksonXmlProperty(localName = "card_number_en")
 
     private Float cardNumberEn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private Float name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name_en")
+
+    @JacksonXmlProperty(localName = "name_en")
 
     private Float nameEn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nrc_id")
 
+    @JacksonXmlProperty(localName = "nrc_id")
+
     private Float nrcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nrc_id_en")
+
+    @JacksonXmlProperty(localName = "nrc_id_en")
 
     private Float nrcIdEn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "Birth")
 
+    @JacksonXmlProperty(localName = "Birth")
+
     private Float birth;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "birth_en")
+
+    @JacksonXmlProperty(localName = "birth_en")
 
     private Float birthEn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "blood_group")
 
+    @JacksonXmlProperty(localName = "blood_group")
+
     private Float bloodGroup;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "blood_group_en")
+
+    @JacksonXmlProperty(localName = "blood_group_en")
 
     private Float bloodGroupEn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expiried_date")
 
+    @JacksonXmlProperty(localName = "expiried_date")
+
     private Float expiriedDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expiried_date_en")
+
+    @JacksonXmlProperty(localName = "expiried_date_en")
 
     private Float expiriedDateEn;
 

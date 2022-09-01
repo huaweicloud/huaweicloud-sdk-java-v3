@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -17,135 +18,189 @@ public class UpdateUserResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "userAccount")
+
+    @JacksonXmlProperty(localName = "userAccount")
 
     private String userAccount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "englishName")
+
+    @JacksonXmlProperty(localName = "englishName")
 
     private String englishName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "phone")
 
+    @JacksonXmlProperty(localName = "phone")
+
     private String phone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "country")
+
+    @JacksonXmlProperty(localName = "country")
 
     private String country;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "email")
 
+    @JacksonXmlProperty(localName = "email")
+
     private String email;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sipNum")
+
+    @JacksonXmlProperty(localName = "sipNum")
 
     private String sipNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vmrList")
 
+    @JacksonXmlProperty(localName = "vmrList")
+
     private List<UserVmrDTO> vmrList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deptCode")
+
+    @JacksonXmlProperty(localName = "deptCode")
 
     private String deptCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deptName")
 
+    @JacksonXmlProperty(localName = "deptName")
+
     private String deptName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deptNamePath")
+
+    @JacksonXmlProperty(localName = "deptNamePath")
 
     private String deptNamePath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "userType")
 
+    @JacksonXmlProperty(localName = "userType")
+
     private Integer userType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "adminType")
+
+    @JacksonXmlProperty(localName = "adminType")
 
     private Integer adminType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "signature")
 
+    @JacksonXmlProperty(localName = "signature")
+
     private String signature;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "title")
+
+    @JacksonXmlProperty(localName = "title")
 
     private String title;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "desc")
 
+    @JacksonXmlProperty(localName = "desc")
+
     private String desc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "corp")
+
+    @JacksonXmlProperty(localName = "corp")
 
     private CorpBasicInfoDTO corp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "function")
 
+    @JacksonXmlProperty(localName = "function")
+
     private UserFunctionDTO function;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "devType")
+
+    @JacksonXmlProperty(localName = "devType")
 
     private QueryDeviceInfoResultDTO devType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private Integer status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sortLevel")
+
+    @JacksonXmlProperty(localName = "sortLevel")
 
     private Integer sortLevel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hidePhone")
 
+    @JacksonXmlProperty(localName = "hidePhone")
+
     private Boolean hidePhone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "visionAccount")
+
+    @JacksonXmlProperty(localName = "visionAccount")
 
     private String visionAccount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "thirdAccount")
 
+    @JacksonXmlProperty(localName = "thirdAccount")
+
     private String thirdAccount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "license")
 
+    @JacksonXmlProperty(localName = "license")
+
     private Integer license;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "activeTime")
+
+    @JacksonXmlProperty(localName = "activeTime")
 
     private Long activeTime;
 

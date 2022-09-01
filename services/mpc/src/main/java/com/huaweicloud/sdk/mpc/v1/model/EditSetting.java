@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.mpc.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,45 +17,63 @@ public class EditSetting {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timeline_start")
 
+    @JacksonXmlProperty(localName = "timeline_start")
+
     private String timelineStart;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timeline_end")
+
+    @JacksonXmlProperty(localName = "timeline_end")
 
     private String timelineEnd;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trans_template_id")
 
+    @JacksonXmlProperty(localName = "trans_template_id")
+
     private Integer transTemplateId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "av_parameter")
+
+    @JacksonXmlProperty(localName = "av_parameter")
 
     private AvParameters avParameter;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mosaics")
 
+    @JacksonXmlProperty(localName = "mosaics")
+
     private List<MosaicInfo> mosaics = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image_watermarks")
+
+    @JacksonXmlProperty(localName = "image_watermarks")
 
     private List<ImageWatermarkSetting> imageWatermarks = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "heads")
 
+    @JacksonXmlProperty(localName = "heads")
+
     private List<ObsObjInfo> heads = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tails")
 
+    @JacksonXmlProperty(localName = "tails")
+
     private List<ObsObjInfo> tails = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "output")
+
+    @JacksonXmlProperty(localName = "output")
 
     private ObsObjInfo output;
 

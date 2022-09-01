@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,45 +19,63 @@ public class DomainItem {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "high")
 
+    @JacksonXmlProperty(localName = "high")
+
     private Integer high;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "middle")
+
+    @JacksonXmlProperty(localName = "middle")
 
     private Integer middle;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "low")
 
+    @JacksonXmlProperty(localName = "low")
+
     private Integer low;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hint")
+
+    @JacksonXmlProperty(localName = "hint")
 
     private Integer hint;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_id")
 
+    @JacksonXmlProperty(localName = "domain_id")
+
     private String domainId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "top_level_domain_id")
+
+    @JacksonXmlProperty(localName = "top_level_domain_id")
 
     private String topLevelDomainId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_name")
 
+    @JacksonXmlProperty(localName = "domain_name")
+
     private String domainName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alias")
 
+    @JacksonXmlProperty(localName = "alias")
+
     private String alias;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
+
+    @JacksonXmlProperty(localName = "create_time")
 
     private String createTime;
 
@@ -158,6 +177,8 @@ public class DomainItem {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auth_status")
 
+    @JacksonXmlProperty(localName = "auth_status")
+
     private AuthStatusEnum authStatus;
 
     /**
@@ -239,6 +260,8 @@ public class DomainItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protocol_type")
+
+    @JacksonXmlProperty(localName = "protocol_type")
 
     private ProtocolTypeEnum protocolType;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cloudtest.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class AttributeChange {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "new_value")
 
+    @JacksonXmlProperty(localName = "new_value")
+
     private String newValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "old_value")
 
+    @JacksonXmlProperty(localName = "old_value")
+
     private String oldValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "attribute_type")
+
+    @JacksonXmlProperty(localName = "attribute_type")
 
     private String attributeType;
 

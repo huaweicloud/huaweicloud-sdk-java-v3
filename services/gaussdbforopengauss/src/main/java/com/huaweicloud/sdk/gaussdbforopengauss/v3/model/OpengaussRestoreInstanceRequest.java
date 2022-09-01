@@ -12,6 +12,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.OpenGaussBackupStrategy;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.OpenGaussChargeInfo;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.OpenGaussVolume;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.RestorePoint;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -25,6 +27,7 @@ public class OpengaussRestoreInstanceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
+    @JacksonXmlProperty(localName = "name")
     
     private String name;
 
@@ -32,6 +35,7 @@ public class OpengaussRestoreInstanceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="availability_zone")
     
+    @JacksonXmlProperty(localName = "availability_zone")
     
     private String availabilityZone;
 
@@ -39,6 +43,7 @@ public class OpengaussRestoreInstanceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="flavor_ref")
     
+    @JacksonXmlProperty(localName = "flavor_ref")
     
     private String flavorRef;
 
@@ -46,6 +51,7 @@ public class OpengaussRestoreInstanceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="volume")
     
+    @JacksonXmlProperty(localName = "volume")
     
     private OpenGaussVolume volume;
 
@@ -53,6 +59,7 @@ public class OpengaussRestoreInstanceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="disk_encryption_id")
     
+    @JacksonXmlProperty(localName = "disk_encryption_id")
     
     private String diskEncryptionId;
 
@@ -60,6 +67,7 @@ public class OpengaussRestoreInstanceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vpc_id")
     
+    @JacksonXmlProperty(localName = "vpc_id")
     
     private String vpcId;
 
@@ -67,6 +75,7 @@ public class OpengaussRestoreInstanceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="subnet_id")
     
+    @JacksonXmlProperty(localName = "subnet_id")
     
     private String subnetId;
 
@@ -74,6 +83,7 @@ public class OpengaussRestoreInstanceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="security_group_id")
     
+    @JacksonXmlProperty(localName = "security_group_id")
     
     private String securityGroupId;
 
@@ -81,6 +91,7 @@ public class OpengaussRestoreInstanceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="password")
     
+    @JacksonXmlProperty(localName = "password")
     
     private String password;
 
@@ -88,6 +99,7 @@ public class OpengaussRestoreInstanceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="charge_info")
     
+    @JacksonXmlProperty(localName = "charge_info")
     
     private OpenGaussChargeInfo chargeInfo;
 
@@ -95,6 +107,7 @@ public class OpengaussRestoreInstanceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="restore_point")
     
+    @JacksonXmlProperty(localName = "restore_point")
     
     private RestorePoint restorePoint;
 
@@ -102,6 +115,7 @@ public class OpengaussRestoreInstanceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="backup_strategy")
     
+    @JacksonXmlProperty(localName = "backup_strategy")
     
     private OpenGaussBackupStrategy backupStrategy;
 
@@ -109,6 +123,7 @@ public class OpengaussRestoreInstanceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enable_parallel_restore")
     
+    @JacksonXmlProperty(localName = "enable_parallel_restore")
     
     private Boolean enableParallelRestore;
 
@@ -116,6 +131,7 @@ public class OpengaussRestoreInstanceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="configuration_id")
     
+    @JacksonXmlProperty(localName = "configuration_id")
     
     private String configurationId;
 
@@ -123,6 +139,7 @@ public class OpengaussRestoreInstanceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_id")
     
+    @JacksonXmlProperty(localName = "enterprise_project_id")
     
     private String enterpriseProjectId;
 
@@ -130,6 +147,7 @@ public class OpengaussRestoreInstanceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="port")
     
+    @JacksonXmlProperty(localName = "port")
     
     private String port;
 
@@ -137,6 +155,7 @@ public class OpengaussRestoreInstanceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="time_zone")
     
+    @JacksonXmlProperty(localName = "time_zone")
     
     private String timeZone;
 
@@ -144,6 +163,7 @@ public class OpengaussRestoreInstanceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enable_force_switch")
     
+    @JacksonXmlProperty(localName = "enable_force_switch")
     
     private Boolean enableForceSwitch;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class RestResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "returnCode")
 
+    @JacksonXmlProperty(localName = "returnCode")
+
     private Integer returnCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "returnDesc")
+
+    @JacksonXmlProperty(localName = "returnDesc")
 
     private String returnDesc;
 

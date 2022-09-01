@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.devstar.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,25 +14,35 @@ public class Reference {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "title")
 
+    @JacksonXmlProperty(localName = "title")
+
     private String title;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "url")
+
+    @JacksonXmlProperty(localName = "url")
 
     private String url;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
+    @JacksonXmlProperty(localName = "type")
+
     private Integer type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "productshort")
 
+    @JacksonXmlProperty(localName = "productshort")
+
     private String productshort;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_valid")
+
+    @JacksonXmlProperty(localName = "is_valid")
 
     private Boolean isValid;
 

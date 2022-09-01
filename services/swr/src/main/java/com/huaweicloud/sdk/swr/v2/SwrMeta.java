@@ -89,7 +89,6 @@ public class SwrMeta {
             }));
 
         // response
-
         builder.<List<String>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -731,7 +730,6 @@ public class SwrMeta {
             }));
 
         // response
-
         builder.<List<SyncRepo>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -820,7 +818,6 @@ public class SwrMeta {
             }));
 
         // response
-
         builder.<List<ShowRepoDomainsResponse>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -902,7 +899,6 @@ public class SwrMeta {
             }));
 
         // response
-
         builder.<List<ShowReposResp>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -990,7 +986,6 @@ public class SwrMeta {
             }));
 
         // response
-
         builder.<List<ShowReposTagResp>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -1081,7 +1076,6 @@ public class SwrMeta {
             }));
 
         // response
-
         builder.<List<Retention>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -1163,7 +1157,6 @@ public class SwrMeta {
             }));
 
         // response
-
         builder.<List<ShowReposResp>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -1209,7 +1202,6 @@ public class SwrMeta {
             }));
 
         // response
-
         builder.<List<Trigger>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -1415,7 +1407,6 @@ public class SwrMeta {
             }));
 
         // response
-
         builder.<List<SyncJob>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,

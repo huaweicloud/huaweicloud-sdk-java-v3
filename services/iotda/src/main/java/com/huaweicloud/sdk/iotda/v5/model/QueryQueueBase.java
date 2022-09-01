@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.iotda.v5.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,20 +14,28 @@ public class QueryQueueBase {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "queue_id")
 
+    @JacksonXmlProperty(localName = "queue_id")
+
     private String queueId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "queue_name")
+
+    @JacksonXmlProperty(localName = "queue_name")
 
     private String queueName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
+    @JacksonXmlProperty(localName = "create_time")
+
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last_modify_time")
+
+    @JacksonXmlProperty(localName = "last_modify_time")
 
     private String lastModifyTime;
 

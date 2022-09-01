@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cpts.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,75 +17,105 @@ public class ContentInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body_type")
 
+    @JacksonXmlProperty(localName = "body_type")
+
     private Integer bodyType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bodys")
+
+    @JacksonXmlProperty(localName = "bodys")
 
     private List<Object> bodys = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "check_end_length")
 
+    @JacksonXmlProperty(localName = "check_end_length")
+
     private String checkEndLength;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "check_end_str")
+
+    @JacksonXmlProperty(localName = "check_end_str")
 
     private String checkEndStr;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "check_end_type")
 
+    @JacksonXmlProperty(localName = "check_end_type")
+
     private String checkEndType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "connect_timeout")
+
+    @JacksonXmlProperty(localName = "connect_timeout")
 
     private Integer connectTimeout;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "connect_type")
 
+    @JacksonXmlProperty(localName = "connect_type")
+
     private Integer connectType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "headers")
+
+    @JacksonXmlProperty(localName = "headers")
 
     private List<ContentHeader> headers = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "http_version")
 
+    @JacksonXmlProperty(localName = "http_version")
+
     private String httpVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "method")
+
+    @JacksonXmlProperty(localName = "method")
 
     private String method;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protocol_type")
+
+    @JacksonXmlProperty(localName = "protocol_type")
 
     private Integer protocolType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "return_timeout")
 
+    @JacksonXmlProperty(localName = "return_timeout")
+
     private Integer returnTimeout;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "return_timeout_param")
 
+    @JacksonXmlProperty(localName = "return_timeout_param")
+
     private String returnTimeoutParam;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "url")
+
+    @JacksonXmlProperty(localName = "url")
 
     private String url;
 

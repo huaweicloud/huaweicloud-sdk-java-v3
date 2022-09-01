@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,15 +19,21 @@ public class OnlineInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publish_domain")
 
+    @JacksonXmlProperty(localName = "publish_domain")
+
     private String publishDomain;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app")
 
+    @JacksonXmlProperty(localName = "app")
+
     private String app;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stream")
+
+    @JacksonXmlProperty(localName = "stream")
 
     private String stream;
 
@@ -110,6 +117,8 @@ public class OnlineInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "video_codec")
 
+    @JacksonXmlProperty(localName = "video_codec")
+
     private VideoCodecEnum videoCodec;
 
     /**
@@ -186,40 +195,56 @@ public class OnlineInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "audio_codec")
 
+    @JacksonXmlProperty(localName = "audio_codec")
+
     private AudioCodecEnum audioCodec;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "video_frame_rate")
+
+    @JacksonXmlProperty(localName = "video_frame_rate")
 
     private Long videoFrameRate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "audio_frame_rate")
 
+    @JacksonXmlProperty(localName = "audio_frame_rate")
+
     private Long audioFrameRate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "video_bitrate")
+
+    @JacksonXmlProperty(localName = "video_bitrate")
 
     private Long videoBitrate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "audio_bitrate")
 
+    @JacksonXmlProperty(localName = "audio_bitrate")
+
     private Long audioBitrate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resolution")
+
+    @JacksonXmlProperty(localName = "resolution")
 
     private String resolution;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "client_ip")
 
+    @JacksonXmlProperty(localName = "client_ip")
+
     private String clientIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
+
+    @JacksonXmlProperty(localName = "start_time")
 
     private String startTime;
 

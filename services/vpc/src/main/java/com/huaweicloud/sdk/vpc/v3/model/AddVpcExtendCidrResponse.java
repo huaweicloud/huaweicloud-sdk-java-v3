@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.vpc.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -15,10 +16,14 @@ public class AddVpcExtendCidrResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc")
 
+    @JacksonXmlProperty(localName = "vpc")
+
     private Vpc vpc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "request_id")
+
+    @JacksonXmlProperty(localName = "request_id")
 
     private String requestId;
 

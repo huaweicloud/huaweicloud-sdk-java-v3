@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.projectman.v4.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,50 +15,70 @@ public class GetProjectInfoV4ResultProject {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_num_id")
 
+    @JacksonXmlProperty(localName = "project_num_id")
+
     private Integer projectNumId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
+
+    @JacksonXmlProperty(localName = "project_id")
 
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_on")
+
+    @JacksonXmlProperty(localName = "created_on")
 
     private Long createdOn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_on")
 
+    @JacksonXmlProperty(localName = "updated_on")
+
     private Long updatedOn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_type")
+
+    @JacksonXmlProperty(localName = "project_type")
 
     private String projectType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "archive")
 
+    @JacksonXmlProperty(localName = "archive")
+
     private Integer archive;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_id")
+
+    @JacksonXmlProperty(localName = "enterprise_id")
 
     private String enterpriseId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_code")
 
+    @JacksonXmlProperty(localName = "project_code")
+
     private String projectCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "creator")
+
+    @JacksonXmlProperty(localName = "creator")
 
     private GetProjectInfoV4ResultProjectCreator creator;
 

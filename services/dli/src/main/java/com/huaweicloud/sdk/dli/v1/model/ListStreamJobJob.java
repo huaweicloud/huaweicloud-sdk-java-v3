@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,110 +15,154 @@ public class ListStreamJobJob {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_id")
 
+    @JacksonXmlProperty(localName = "job_id")
+
     private Long jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "desc")
 
+    @JacksonXmlProperty(localName = "desc")
+
     private String desc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "username")
+
+    @JacksonXmlProperty(localName = "username")
 
     private String username;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_type")
 
+    @JacksonXmlProperty(localName = "job_type")
+
     private String jobType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
+
+    @JacksonXmlProperty(localName = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status_desc")
 
+    @JacksonXmlProperty(localName = "status_desc")
+
     private String statusDesc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
+
+    @JacksonXmlProperty(localName = "create_time")
 
     private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
+    @JacksonXmlProperty(localName = "start_time")
+
     private Long startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "duration")
+
+    @JacksonXmlProperty(localName = "duration")
 
     private Long duration;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "root_id")
 
+    @JacksonXmlProperty(localName = "root_id")
+
     private Long rootId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_id")
+
+    @JacksonXmlProperty(localName = "user_id")
 
     private String userId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
 
+    @JacksonXmlProperty(localName = "project_id")
+
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sql_body")
+
+    @JacksonXmlProperty(localName = "sql_body")
 
     private String sqlBody;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "run_mode")
 
+    @JacksonXmlProperty(localName = "run_mode")
+
     private String runMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_config")
+
+    @JacksonXmlProperty(localName = "job_config")
 
     private ShowStreamJobListJobConfig jobConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "main_class")
 
+    @JacksonXmlProperty(localName = "main_class")
+
     private String mainClass;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "entrypoint_args")
+
+    @JacksonXmlProperty(localName = "entrypoint_args")
 
     private String entrypointArgs;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "execution_graph")
 
+    @JacksonXmlProperty(localName = "execution_graph")
+
     private String executionGraph;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
+
+    @JacksonXmlProperty(localName = "update_time")
 
     private Long updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "graph_editor_enabled")
 
+    @JacksonXmlProperty(localName = "graph_editor_enabled")
+
     private Boolean graphEditorEnabled;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "has_savepoint")
+
+    @JacksonXmlProperty(localName = "has_savepoint")
 
     private Boolean hasSavepoint;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.sdrs.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,30 +14,42 @@ public class SubJobEntities {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "replication_pair_id")
 
+    @JacksonXmlProperty(localName = "replication_pair_id")
+
     private String replicationPairId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volume_ids")
+
+    @JacksonXmlProperty(localName = "volume_ids")
 
     private String volumeIds;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "server_group_id")
 
+    @JacksonXmlProperty(localName = "server_group_id")
+
     private String serverGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protected_instance_id")
+
+    @JacksonXmlProperty(localName = "protected_instance_id")
 
     private String protectedInstanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "native_server_id")
 
+    @JacksonXmlProperty(localName = "native_server_id")
+
     private String nativeServerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nic_id")
+
+    @JacksonXmlProperty(localName = "nic_id")
 
     private String nicId;
 

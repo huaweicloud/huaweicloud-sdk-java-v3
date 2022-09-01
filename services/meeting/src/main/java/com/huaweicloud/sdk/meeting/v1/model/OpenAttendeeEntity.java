@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,40 +14,56 @@ public class OpenAttendeeEntity {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "appId")
 
+    @JacksonXmlProperty(localName = "appId")
+
     private String appId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "userAccount")
+
+    @JacksonXmlProperty(localName = "userAccount")
 
     private String userAccount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "userName")
 
+    @JacksonXmlProperty(localName = "userName")
+
     private String userName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deptName")
+
+    @JacksonXmlProperty(localName = "deptName")
 
     private String deptName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "phone")
 
+    @JacksonXmlProperty(localName = "phone")
+
     private String phone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "email")
+
+    @JacksonXmlProperty(localName = "email")
 
     private String email;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sms")
 
+    @JacksonXmlProperty(localName = "sms")
+
     private String sms;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "isHardTerminal")
+
+    @JacksonXmlProperty(localName = "isHardTerminal")
 
     private Boolean isHardTerminal;
 

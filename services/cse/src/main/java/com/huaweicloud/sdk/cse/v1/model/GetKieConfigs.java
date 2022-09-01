@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cse.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,40 +14,56 @@ public class GetKieConfigs {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key")
+
+    @JacksonXmlProperty(localName = "key")
 
     private String key;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "labels")
 
+    @JacksonXmlProperty(localName = "labels")
+
     private Object labels;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "value")
+
+    @JacksonXmlProperty(localName = "value")
 
     private String value;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "value_type")
 
+    @JacksonXmlProperty(localName = "value_type")
+
     private String valueType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
+
+    @JacksonXmlProperty(localName = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
+    @JacksonXmlProperty(localName = "create_time")
+
     private Integer createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
+
+    @JacksonXmlProperty(localName = "update_time")
 
     private Integer updateTime;
 

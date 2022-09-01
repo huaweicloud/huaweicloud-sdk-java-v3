@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,20 +19,28 @@ public class MigrationProject {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "migration_project_id")
 
+    @JacksonXmlProperty(localName = "migration_project_id")
+
     private Integer migrationProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "migration_project_name")
+
+    @JacksonXmlProperty(localName = "migration_project_name")
 
     private String migrationProjectName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "evaluation_project_id")
 
+    @JacksonXmlProperty(localName = "evaluation_project_id")
+
     private Integer evaluationProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "evaluation_project_name")
+
+    @JacksonXmlProperty(localName = "evaluation_project_name")
 
     private String evaluationProjectName;
 
@@ -114,6 +123,8 @@ public class MigrationProject {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "migration_project_status")
+
+    @JacksonXmlProperty(localName = "migration_project_status")
 
     private MigrationProjectStatusEnum migrationProjectStatus;
 
@@ -215,20 +226,28 @@ public class MigrationProject {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "permission_check_status")
 
+    @JacksonXmlProperty(localName = "permission_check_status")
+
     private PermissionCheckStatusEnum permissionCheckStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_id")
+
+    @JacksonXmlProperty(localName = "resource_id")
 
     private String resourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_time")
 
+    @JacksonXmlProperty(localName = "created_time")
+
     private String createdTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_time")
+
+    @JacksonXmlProperty(localName = "updated_time")
 
     private String updatedTime;
 

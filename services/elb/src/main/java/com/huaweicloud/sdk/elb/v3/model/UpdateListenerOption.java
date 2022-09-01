@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.elb.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,100 +17,140 @@ public class UpdateListenerOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "admin_state_up")
 
+    @JacksonXmlProperty(localName = "admin_state_up")
+
     private Boolean adminStateUp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "client_ca_tls_container_ref")
+
+    @JacksonXmlProperty(localName = "client_ca_tls_container_ref")
 
     private String clientCaTlsContainerRef;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "default_pool_id")
 
+    @JacksonXmlProperty(localName = "default_pool_id")
+
     private String defaultPoolId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "default_tls_container_ref")
+
+    @JacksonXmlProperty(localName = "default_tls_container_ref")
 
     private String defaultTlsContainerRef;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
+    @JacksonXmlProperty(localName = "description")
+
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "http2_enable")
+
+    @JacksonXmlProperty(localName = "http2_enable")
 
     private Boolean http2Enable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "insert_headers")
 
+    @JacksonXmlProperty(localName = "insert_headers")
+
     private ListenerInsertHeaders insertHeaders;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sni_container_refs")
 
+    @JacksonXmlProperty(localName = "sni_container_refs")
+
     private List<String> sniContainerRefs = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sni_match_algo")
+
+    @JacksonXmlProperty(localName = "sni_match_algo")
 
     private String sniMatchAlgo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tls_ciphers_policy")
 
+    @JacksonXmlProperty(localName = "tls_ciphers_policy")
+
     private String tlsCiphersPolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_policy_id")
+
+    @JacksonXmlProperty(localName = "security_policy_id")
 
     private String securityPolicyId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_member_retry")
 
+    @JacksonXmlProperty(localName = "enable_member_retry")
+
     private Boolean enableMemberRetry;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "member_timeout")
+
+    @JacksonXmlProperty(localName = "member_timeout")
 
     private Integer memberTimeout;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "client_timeout")
 
+    @JacksonXmlProperty(localName = "client_timeout")
+
     private Integer clientTimeout;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "keepalive_timeout")
+
+    @JacksonXmlProperty(localName = "keepalive_timeout")
 
     private Integer keepaliveTimeout;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ipgroup")
 
+    @JacksonXmlProperty(localName = "ipgroup")
+
     private UpdateListenerIpGroupOption ipgroup;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "transparent_client_ip_enable")
+
+    @JacksonXmlProperty(localName = "transparent_client_ip_enable")
 
     private Boolean transparentClientIpEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enhance_l7policy_enable")
 
+    @JacksonXmlProperty(localName = "enhance_l7policy_enable")
+
     private Boolean enhanceL7policyEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quic_config")
+
+    @JacksonXmlProperty(localName = "quic_config")
 
     private UpdateListenerQuicConfigOption quicConfig;
 

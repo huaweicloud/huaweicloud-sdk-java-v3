@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ces.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,30 +14,42 @@ public class DatapointForBatchMetric {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max")
 
+    @JacksonXmlProperty(localName = "max")
+
     private Double max;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "min")
+
+    @JacksonXmlProperty(localName = "min")
 
     private Double min;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "average")
 
+    @JacksonXmlProperty(localName = "average")
+
     private Double average;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sum")
+
+    @JacksonXmlProperty(localName = "sum")
 
     private Double sum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "variance")
 
+    @JacksonXmlProperty(localName = "variance")
+
     private Double variance;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timestamp")
+
+    @JacksonXmlProperty(localName = "timestamp")
 
     private Long timestamp;
 

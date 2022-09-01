@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,20 +22,28 @@ public class ApiPolicyRespBase {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "conditions")
 
+    @JacksonXmlProperty(localName = "conditions")
+
     private List<ConditionResp> conditions = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "backend_params")
+
+    @JacksonXmlProperty(localName = "backend_params")
 
     private List<BackendParam> backendParams = null;
 
@@ -118,10 +127,14 @@ public class ApiPolicyRespBase {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "effect_mode")
 
+    @JacksonXmlProperty(localName = "effect_mode")
+
     private EffectModeEnum effectMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "authorizer_id")
+
+    @JacksonXmlProperty(localName = "authorizer_id")
 
     private String authorizerId;
 

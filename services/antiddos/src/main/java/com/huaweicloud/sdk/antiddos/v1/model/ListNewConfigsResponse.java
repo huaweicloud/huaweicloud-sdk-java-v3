@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.antiddos.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -17,20 +18,28 @@ public class ListNewConfigsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "traffic_limited_list")
 
+    @JacksonXmlProperty(localName = "traffic_limited_list")
+
     private List<TriggerBpsDict> trafficLimitedList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "http_limited_list")
+
+    @JacksonXmlProperty(localName = "http_limited_list")
 
     private List<TriggerQpsDict> httpLimitedList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "connection_limited_list")
 
+    @JacksonXmlProperty(localName = "connection_limited_list")
+
     private List<CleanLimitDict> connectionLimitedList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extend_ddos_config")
+
+    @JacksonXmlProperty(localName = "extend_ddos_config")
 
     private List<ExtendDDoSSet> extendDdosConfig = null;
 

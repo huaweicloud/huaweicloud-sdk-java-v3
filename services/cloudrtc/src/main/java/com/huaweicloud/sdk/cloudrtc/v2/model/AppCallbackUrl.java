@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,10 +22,14 @@ public class AppCallbackUrl {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "url")
 
+    @JacksonXmlProperty(localName = "url")
+
     private String url;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auth_key")
+
+    @JacksonXmlProperty(localName = "auth_key")
 
     private String authKey;
 
@@ -110,10 +115,14 @@ public class AppCallbackUrl {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "notify_event_subscription")
 
+    @JacksonXmlProperty(localName = "notify_event_subscription")
+
     private List<NotifyEventSubscriptionEnum> notifyEventSubscription = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
+
+    @JacksonXmlProperty(localName = "update_time")
 
     private String updateTime;
 

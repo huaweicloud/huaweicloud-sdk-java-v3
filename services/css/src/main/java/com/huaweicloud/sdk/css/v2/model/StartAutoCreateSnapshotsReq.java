@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.css.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,20 +14,28 @@ public class StartAutoCreateSnapshotsReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "indices")
 
+    @JacksonXmlProperty(localName = "indices")
+
     private String indices;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "keepday")
+
+    @JacksonXmlProperty(localName = "keepday")
 
     private Integer keepday;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "period")
 
+    @JacksonXmlProperty(localName = "period")
+
     private String period;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "prefix")
+
+    @JacksonXmlProperty(localName = "prefix")
 
     private String prefix;
 

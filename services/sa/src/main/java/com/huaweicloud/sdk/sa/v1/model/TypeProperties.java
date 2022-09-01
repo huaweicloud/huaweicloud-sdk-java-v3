@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.sa.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class TypeProperties {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "killchain")
 
+    @JacksonXmlProperty(localName = "killchain")
+
     private String killchain;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ttps")
 
+    @JacksonXmlProperty(localName = "ttps")
+
     private String ttps;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "effects")
+
+    @JacksonXmlProperty(localName = "effects")
 
     private String effects;
 

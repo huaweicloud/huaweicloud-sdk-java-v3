@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.res.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,15 +17,21 @@ public class EtlBasicParameter {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_features")
 
+    @JacksonXmlProperty(localName = "user_features")
+
     private List<FeatureTransformation> userFeatures = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "item_features")
 
+    @JacksonXmlProperty(localName = "item_features")
+
     private List<FeatureTransformation> itemFeatures = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rank_etl_filter")
+
+    @JacksonXmlProperty(localName = "rank_etl_filter")
 
     private RankETLFilter rankEtlFilter;
 

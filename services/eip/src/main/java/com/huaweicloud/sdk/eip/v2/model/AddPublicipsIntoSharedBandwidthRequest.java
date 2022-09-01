@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.eip.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,10 +15,14 @@ public class AddPublicipsIntoSharedBandwidthRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bandwidth_id")
 
+    @JacksonXmlProperty(localName = "bandwidth_id")
+
     private String bandwidthId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
+
+    @JacksonXmlProperty(localName = "body")
 
     private AddPublicipsIntoSharedBandwidthRequestBody body;
 

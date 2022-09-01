@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ecs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -18,105 +19,147 @@ public class UpdateServerResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tenant_id")
 
+    @JacksonXmlProperty(localName = "tenant_id")
+
     private String tenantId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image")
+
+    @JacksonXmlProperty(localName = "image")
 
     private String image;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "accessIPv4")
 
+    @JacksonXmlProperty(localName = "accessIPv4")
+
     private String accessIPv4;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "accessIPv6")
+
+    @JacksonXmlProperty(localName = "accessIPv6")
 
     private String accessIPv6;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metadata")
 
+    @JacksonXmlProperty(localName = "metadata")
+
     private Map<String, String> metadata = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "addresses")
+
+    @JacksonXmlProperty(localName = "addresses")
 
     private Map<String, List<UpdateServerAddress>> addresses = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created")
 
+    @JacksonXmlProperty(localName = "created")
+
     private String created;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hostId")
+
+    @JacksonXmlProperty(localName = "hostId")
 
     private String hostId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flavor")
 
+    @JacksonXmlProperty(localName = "flavor")
+
     private SimpleFlavor flavor;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "OS-DCF:diskConfig")
+
+    @JacksonXmlProperty(localName = "OS-DCF:diskConfig")
 
     private String osDCFDiskConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_id")
 
+    @JacksonXmlProperty(localName = "user_id")
+
     private String userId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "progress")
 
+    @JacksonXmlProperty(localName = "progress")
+
     private Integer progress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "links")
+
+    @JacksonXmlProperty(localName = "links")
 
     private List<Link> links = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated")
+
+    @JacksonXmlProperty(localName = "updated")
 
     private String updated;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "locked")
 
+    @JacksonXmlProperty(localName = "locked")
+
     private Boolean locked;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
+
+    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
+    @JacksonXmlProperty(localName = "tags")
+
     private List<String> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "OS-EXT-SRV-ATTR:hostname")
+
+    @JacksonXmlProperty(localName = "OS-EXT-SRV-ATTR:hostname")
 
     private String osEXTSRVATTRHostname;
 

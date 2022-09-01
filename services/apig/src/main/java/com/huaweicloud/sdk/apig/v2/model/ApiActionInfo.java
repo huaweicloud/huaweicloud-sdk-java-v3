@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -95,20 +96,28 @@ public class ApiActionInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "action")
 
+    @JacksonXmlProperty(localName = "action")
+
     private ActionEnum action;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "env_id")
+
+    @JacksonXmlProperty(localName = "env_id")
 
     private String envId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "api_id")
 
+    @JacksonXmlProperty(localName = "api_id")
+
     private String apiId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remark")
+
+    @JacksonXmlProperty(localName = "remark")
 
     private String remark;
 

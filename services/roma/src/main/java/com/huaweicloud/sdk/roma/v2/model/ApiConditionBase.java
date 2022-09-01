@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -17,6 +18,8 @@ public class ApiConditionBase {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "req_param_name")
+
+    @JacksonXmlProperty(localName = "req_param_name")
 
     private String reqParamName;
 
@@ -99,6 +102,8 @@ public class ApiConditionBase {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sys_param_name")
+
+    @JacksonXmlProperty(localName = "sys_param_name")
 
     private SysParamNameEnum sysParamName;
 
@@ -188,6 +193,8 @@ public class ApiConditionBase {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "condition_type")
 
+    @JacksonXmlProperty(localName = "condition_type")
+
     private ConditionTypeEnum conditionType;
 
     /**
@@ -270,10 +277,14 @@ public class ApiConditionBase {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "condition_origin")
 
+    @JacksonXmlProperty(localName = "condition_origin")
+
     private ConditionOriginEnum conditionOrigin;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "condition_value")
+
+    @JacksonXmlProperty(localName = "condition_value")
 
     private String conditionValue;
 

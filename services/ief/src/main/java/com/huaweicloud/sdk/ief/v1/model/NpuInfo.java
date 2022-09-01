@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ief.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,20 +14,28 @@ public class NpuInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
+
+    @JacksonXmlProperty(localName = "type")
 
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "capacity")
 
+    @JacksonXmlProperty(localName = "capacity")
+
     private String capacity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "driver_version")
+
+    @JacksonXmlProperty(localName = "driver_version")
 
     private String driverVersion;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,35 +14,49 @@ public class StatisticConferenceDataItem {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time")
 
+    @JacksonXmlProperty(localName = "time")
+
     private String time;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confCount")
+
+    @JacksonXmlProperty(localName = "confCount")
 
     private String confCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confDuration")
 
+    @JacksonXmlProperty(localName = "confDuration")
+
     private String confDuration;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "attendeeCount")
+
+    @JacksonXmlProperty(localName = "attendeeCount")
 
     private String attendeeCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confConcurrentUsedCount")
 
+    @JacksonXmlProperty(localName = "confConcurrentUsedCount")
+
     private String confConcurrentUsedCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "conf24hCount")
 
+    @JacksonXmlProperty(localName = "conf24hCount")
+
     private String conf24hCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "conf24hAttendeeCount")
+
+    @JacksonXmlProperty(localName = "conf24hAttendeeCount")
 
     private String conf24hAttendeeCount;
 

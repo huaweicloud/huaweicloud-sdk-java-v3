@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cce.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class JobStatus {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "phase")
 
+    @JacksonXmlProperty(localName = "phase")
+
     private String phase;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "reason")
+
+    @JacksonXmlProperty(localName = "reason")
 
     private String reason;
 

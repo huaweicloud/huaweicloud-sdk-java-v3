@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,25 +14,35 @@ public class ModMemberDTO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "englishName")
+
+    @JacksonXmlProperty(localName = "englishName")
 
     private String englishName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "signature")
 
+    @JacksonXmlProperty(localName = "signature")
+
     private String signature;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "title")
 
+    @JacksonXmlProperty(localName = "title")
+
     private String title;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "desc")
+
+    @JacksonXmlProperty(localName = "desc")
 
     private String desc;
 

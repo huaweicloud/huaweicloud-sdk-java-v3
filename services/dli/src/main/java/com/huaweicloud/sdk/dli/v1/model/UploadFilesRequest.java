@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,10 +15,14 @@ public class UploadFilesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "USER_ID")
 
+    @JacksonXmlProperty(localName = "USER_ID")
+
     private String userId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
+
+    @JacksonXmlProperty(localName = "body")
 
     private UploadGroupPackageReq body;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.devstar.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class DeleteApplicationV4Request {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "application_id")
 
+    @JacksonXmlProperty(localName = "application_id")
+
     private String applicationId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_delete_repository")
 
+    @JacksonXmlProperty(localName = "is_delete_repository")
+
     private Boolean isDeleteRepository;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pipeline_ids")
+
+    @JacksonXmlProperty(localName = "pipeline_ids")
 
     private String pipelineIds;
 

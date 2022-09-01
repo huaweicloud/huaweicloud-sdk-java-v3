@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.sis.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,15 +17,21 @@ public class TranscriberResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "text")
 
+    @JacksonXmlProperty(localName = "text")
+
     private String text;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "analysis_info")
 
+    @JacksonXmlProperty(localName = "analysis_info")
+
     private AnalysisInfoResult analysisInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "word_info")
+
+    @JacksonXmlProperty(localName = "word_info")
 
     private List<WordInfo> wordInfo = null;
 

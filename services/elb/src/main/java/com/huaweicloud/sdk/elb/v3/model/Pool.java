@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.elb.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,95 +17,133 @@ public class Pool {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "admin_state_up")
 
+    @JacksonXmlProperty(localName = "admin_state_up")
+
     private Boolean adminStateUp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
+
+    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "healthmonitor_id")
 
+    @JacksonXmlProperty(localName = "healthmonitor_id")
+
     private String healthmonitorId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
+
+    @JacksonXmlProperty(localName = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lb_algorithm")
 
+    @JacksonXmlProperty(localName = "lb_algorithm")
+
     private String lbAlgorithm;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "listeners")
+
+    @JacksonXmlProperty(localName = "listeners")
 
     private List<ListenerRef> listeners = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "loadbalancers")
 
+    @JacksonXmlProperty(localName = "loadbalancers")
+
     private List<LoadBalancerRef> loadbalancers = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "members")
+
+    @JacksonXmlProperty(localName = "members")
 
     private List<MemberRef> members = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
+
+    @JacksonXmlProperty(localName = "project_id")
 
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protocol")
 
+    @JacksonXmlProperty(localName = "protocol")
+
     private String protocol;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "session_persistence")
+
+    @JacksonXmlProperty(localName = "session_persistence")
 
     private SessionPersistence sessionPersistence;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip_version")
 
+    @JacksonXmlProperty(localName = "ip_version")
+
     private String ipVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "slow_start")
+
+    @JacksonXmlProperty(localName = "slow_start")
 
     private SlowStart slowStart;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "member_deletion_protection_enable")
 
+    @JacksonXmlProperty(localName = "member_deletion_protection_enable")
+
     private Boolean memberDeletionProtectionEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
+
+    @JacksonXmlProperty(localName = "created_at")
 
     private String createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_at")
 
+    @JacksonXmlProperty(localName = "updated_at")
+
     private String updatedAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_id")
 
+    @JacksonXmlProperty(localName = "vpc_id")
+
     private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
+
+    @JacksonXmlProperty(localName = "type")
 
     private String type;
 

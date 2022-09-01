@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,90 +14,126 @@ public class AuthorizeConfigInfoRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enableSSO")
 
+    @JacksonXmlProperty(localName = "enableSSO")
+
     private Boolean enableSSO;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain")
+
+    @JacksonXmlProperty(localName = "domain")
 
     private String domain;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "authorizeUrl")
 
+    @JacksonXmlProperty(localName = "authorizeUrl")
+
     private String authorizeUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "getTokenUrl")
+
+    @JacksonXmlProperty(localName = "getTokenUrl")
 
     private String getTokenUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "clientId")
 
+    @JacksonXmlProperty(localName = "clientId")
+
     private String clientId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "clientSecret")
+
+    @JacksonXmlProperty(localName = "clientSecret")
 
     private String clientSecret;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scope")
 
+    @JacksonXmlProperty(localName = "scope")
+
     private String scope;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "accFieldName")
+
+    @JacksonXmlProperty(localName = "accFieldName")
 
     private String accFieldName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "getUserInfoUrl")
 
+    @JacksonXmlProperty(localName = "getUserInfoUrl")
+
     private String getUserInfoUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "oauth2ServerType")
+
+    @JacksonXmlProperty(localName = "oauth2ServerType")
 
     private Integer oauth2ServerType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pcSchemaUrl")
 
+    @JacksonXmlProperty(localName = "pcSchemaUrl")
+
     private String pcSchemaUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "androidSchemaUrl")
+
+    @JacksonXmlProperty(localName = "androidSchemaUrl")
 
     private String androidSchemaUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "iosSchemaUrl")
 
+    @JacksonXmlProperty(localName = "iosSchemaUrl")
+
     private String iosSchemaUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "thirdName")
+
+    @JacksonXmlProperty(localName = "thirdName")
 
     private String thirdName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "thirdEmail")
 
+    @JacksonXmlProperty(localName = "thirdEmail")
+
     private String thirdEmail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "thirdMobile")
+
+    @JacksonXmlProperty(localName = "thirdMobile")
 
     private String thirdMobile;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "thirdAccessToken")
 
+    @JacksonXmlProperty(localName = "thirdAccessToken")
+
     private String thirdAccessToken;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "thirdHeadImgUrl")
+
+    @JacksonXmlProperty(localName = "thirdHeadImgUrl")
 
     private String thirdHeadImgUrl;
 

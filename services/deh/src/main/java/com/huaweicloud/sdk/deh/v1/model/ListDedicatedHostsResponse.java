@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.deh.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -17,10 +18,14 @@ public class ListDedicatedHostsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dedicated_hosts")
 
+    @JacksonXmlProperty(localName = "dedicated_hosts")
+
     private List<RespDedicatedHost> dedicatedHosts = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total")
+
+    @JacksonXmlProperty(localName = "total")
 
     private Integer total;
 

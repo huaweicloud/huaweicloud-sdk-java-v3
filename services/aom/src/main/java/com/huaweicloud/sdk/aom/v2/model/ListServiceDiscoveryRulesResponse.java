@@ -13,6 +13,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.aom.v2.model.AppRules;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -26,6 +28,7 @@ public class ListServiceDiscoveryRulesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="appRules")
     
+    @JacksonXmlProperty(localName = "appRules")
     
     private List<AppRules> appRules = null;
     
@@ -33,6 +36,7 @@ public class ListServiceDiscoveryRulesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="errorCode")
     
+    @JacksonXmlProperty(localName = "errorCode")
     
     private String errorCode;
 
@@ -40,6 +44,7 @@ public class ListServiceDiscoveryRulesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="errorMessage")
     
+    @JacksonXmlProperty(localName = "errorMessage")
     
     private String errorMessage;
 

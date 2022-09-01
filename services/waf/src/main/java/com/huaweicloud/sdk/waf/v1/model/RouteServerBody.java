@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -95,15 +96,21 @@ public class RouteServerBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "back_protocol")
 
+    @JacksonXmlProperty(localName = "back_protocol")
+
     private BackProtocolEnum backProtocol;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "address")
 
+    @JacksonXmlProperty(localName = "address")
+
     private String address;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "port")
+
+    @JacksonXmlProperty(localName = "port")
 
     private Integer port;
 

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,25 +19,35 @@ public class CreateProductRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_id")
 
+    @JacksonXmlProperty(localName = "app_id")
+
     private String appId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "manufacturer_id")
 
+    @JacksonXmlProperty(localName = "manufacturer_id")
+
     private String manufacturerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "manufacturer_name")
 
+    @JacksonXmlProperty(localName = "manufacturer_name")
+
     private String manufacturerName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "model")
+
+    @JacksonXmlProperty(localName = "model")
 
     private String model;
 
@@ -120,10 +131,14 @@ public class CreateProductRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "product_type")
 
+    @JacksonXmlProperty(localName = "product_type")
+
     private ProductTypeEnum productType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
+
+    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
@@ -213,20 +228,28 @@ public class CreateProductRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protocol_type")
 
+    @JacksonXmlProperty(localName = "protocol_type")
+
     private ProtocolTypeEnum protocolType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "device_type")
+
+    @JacksonXmlProperty(localName = "device_type")
 
     private String deviceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template_id")
 
+    @JacksonXmlProperty(localName = "template_id")
+
     private Integer templateId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
+
+    @JacksonXmlProperty(localName = "version")
 
     private String version;
 
@@ -309,6 +332,8 @@ public class CreateProductRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_format")
+
+    @JacksonXmlProperty(localName = "data_format")
 
     private DataFormatEnum dataFormat;
 

@@ -10,6 +10,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -23,6 +25,7 @@ public class CreateInstanceReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
+    @JacksonXmlProperty(localName = "name")
     
     private String name;
 
@@ -30,6 +33,7 @@ public class CreateInstanceReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="model")
     
+    @JacksonXmlProperty(localName = "model")
     
     private String model;
 
@@ -37,6 +41,7 @@ public class CreateInstanceReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
+    @JacksonXmlProperty(localName = "description")
     
     private String description;
 
@@ -44,6 +49,7 @@ public class CreateInstanceReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="level")
     
+    @JacksonXmlProperty(localName = "level")
     
     private Integer level;
 
@@ -51,6 +57,7 @@ public class CreateInstanceReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
+    @JacksonXmlProperty(localName = "tags")
     
     private List<String> tags = null;
     

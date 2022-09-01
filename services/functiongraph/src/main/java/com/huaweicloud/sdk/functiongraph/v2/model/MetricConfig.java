@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.functiongraph.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,20 +14,28 @@ public class MetricConfig {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
+
+    @JacksonXmlProperty(localName = "type")
 
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "threshold")
 
+    @JacksonXmlProperty(localName = "threshold")
+
     private Integer threshold;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "min")
+
+    @JacksonXmlProperty(localName = "min")
 
     private Integer min;
 

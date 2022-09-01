@@ -877,7 +877,6 @@ public class SmsMeta {
             }));
 
         // response
-
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -979,7 +978,6 @@ public class SmsMeta {
             }));
 
         // response
-
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.rds.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -18,15 +19,21 @@ public class Storage {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "az_status")
 
+    @JacksonXmlProperty(localName = "az_status")
+
     private Map<String, String> azStatus = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "support_compute_group_type")
+
+    @JacksonXmlProperty(localName = "support_compute_group_type")
 
     private List<String> supportComputeGroupType = null;
 

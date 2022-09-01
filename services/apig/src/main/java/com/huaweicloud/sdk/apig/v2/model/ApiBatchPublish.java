@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.apig.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,15 +17,21 @@ public class ApiBatchPublish {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "apis")
 
+    @JacksonXmlProperty(localName = "apis")
+
     private List<String> apis = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "env_id")
 
+    @JacksonXmlProperty(localName = "env_id")
+
     private String envId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remark")
+
+    @JacksonXmlProperty(localName = "remark")
 
     private String remark;
 

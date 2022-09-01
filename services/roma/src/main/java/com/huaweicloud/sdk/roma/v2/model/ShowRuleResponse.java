@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -22,30 +23,42 @@ public class ShowRuleResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "permissions")
 
+    @JacksonXmlProperty(localName = "permissions")
+
     private List<String> permissions = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rule_id")
+
+    @JacksonXmlProperty(localName = "rule_id")
 
     private Integer ruleId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_id")
+
+    @JacksonXmlProperty(localName = "app_id")
 
     private String appId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_name")
 
+    @JacksonXmlProperty(localName = "app_name")
+
     private String appName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
+
+    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
@@ -129,6 +142,8 @@ public class ShowRuleResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private StatusEnum status;
 
     /**
@@ -211,40 +226,56 @@ public class ShowRuleResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_parsing_status")
 
+    @JacksonXmlProperty(localName = "data_parsing_status")
+
     private DataParsingStatusEnum dataParsingStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sql_field")
+
+    @JacksonXmlProperty(localName = "sql_field")
 
     private String sqlField;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sql_where")
 
+    @JacksonXmlProperty(localName = "sql_where")
+
     private String sqlWhere;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rule_express")
+
+    @JacksonXmlProperty(localName = "rule_express")
 
     private String ruleExpress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_user")
 
+    @JacksonXmlProperty(localName = "created_user")
+
     private CreatedUser createdUser;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last_updated_user")
+
+    @JacksonXmlProperty(localName = "last_updated_user")
 
     private LastUpdatedUser lastUpdatedUser;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_datetime")
 
+    @JacksonXmlProperty(localName = "created_datetime")
+
     private Long createdDatetime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last_updated_datetime")
+
+    @JacksonXmlProperty(localName = "last_updated_datetime")
 
     private Long lastUpdatedDatetime;
 

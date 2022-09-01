@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.res.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -17,30 +18,42 @@ public class ListResResourceSpecResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offline_spec")
 
+    @JacksonXmlProperty(localName = "offline_spec")
+
     private List<String> offlineSpec = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nearline_spec")
+
+    @JacksonXmlProperty(localName = "nearline_spec")
 
     private List<String> nearlineSpec = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deep_learning_spec")
 
+    @JacksonXmlProperty(localName = "deep_learning_spec")
+
     private List<String> deepLearningSpec = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_success")
+
+    @JacksonXmlProperty(localName = "is_success")
 
     private Boolean isSuccess;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "message")
 
+    @JacksonXmlProperty(localName = "message")
+
     private String message;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_code")
+
+    @JacksonXmlProperty(localName = "error_code")
 
     private String errorCode;
 

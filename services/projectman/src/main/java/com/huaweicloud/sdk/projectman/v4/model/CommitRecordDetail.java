@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.projectman.v4.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,50 +15,70 @@ public class CommitRecordDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "repository_id")
 
+    @JacksonXmlProperty(localName = "repository_id")
+
     private String repositoryId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "branch_name")
+
+    @JacksonXmlProperty(localName = "branch_name")
 
     private String branchName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "commit_id")
 
+    @JacksonXmlProperty(localName = "commit_id")
+
     private String commitId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "commit_short_id")
+
+    @JacksonXmlProperty(localName = "commit_short_id")
 
     private String commitShortId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "commit_msg")
 
+    @JacksonXmlProperty(localName = "commit_msg")
+
     private String commitMsg;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "commit_url")
+
+    @JacksonXmlProperty(localName = "commit_url")
 
     private String commitUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user")
 
+    @JacksonXmlProperty(localName = "user")
+
     private SimpleUser user;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
+
+    @JacksonXmlProperty(localName = "type")
 
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_date")
 
+    @JacksonXmlProperty(localName = "create_date")
+
     private String createDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_date")
+
+    @JacksonXmlProperty(localName = "update_date")
 
     private String updateDate;
 

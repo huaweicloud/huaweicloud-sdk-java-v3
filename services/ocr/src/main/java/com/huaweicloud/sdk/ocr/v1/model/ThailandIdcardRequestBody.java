@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ocr.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,30 +14,42 @@ public class ThailandIdcardRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image")
 
+    @JacksonXmlProperty(localName = "image")
+
     private String image;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "url")
+
+    @JacksonXmlProperty(localName = "url")
 
     private String url;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "side")
 
+    @JacksonXmlProperty(localName = "side")
+
     private String side;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "return_portrait_image")
+
+    @JacksonXmlProperty(localName = "return_portrait_image")
 
     private Boolean returnPortraitImage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "return_portrait_location")
 
+    @JacksonXmlProperty(localName = "return_portrait_location")
+
     private Boolean returnPortraitLocation;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "return_idcard_type")
+
+    @JacksonXmlProperty(localName = "return_idcard_type")
 
     private Boolean returnIdcardType;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ief.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,50 +17,70 @@ public class Tags {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
+    @JacksonXmlProperty(localName = "tags")
+
     private List<Tag> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags_any")
+
+    @JacksonXmlProperty(localName = "tags_any")
 
     private List<Tag> tagsAny = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "not_tags")
 
+    @JacksonXmlProperty(localName = "not_tags")
+
     private List<Tag> notTags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "not_tags_any")
+
+    @JacksonXmlProperty(localName = "not_tags_any")
 
     private List<Tag> notTagsAny = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
+    @JacksonXmlProperty(localName = "limit")
+
     private String limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
+
+    @JacksonXmlProperty(localName = "offset")
 
     private String offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "action")
 
+    @JacksonXmlProperty(localName = "action")
+
     private String action;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "matches")
+
+    @JacksonXmlProperty(localName = "matches")
 
     private List<Matches> matches = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "console")
 
+    @JacksonXmlProperty(localName = "console")
+
     private Boolean console;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sorted")
+
+    @JacksonXmlProperty(localName = "sorted")
 
     private Sorted sorted;
 

@@ -13,6 +13,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ConfigurationParameter;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -26,6 +28,7 @@ public class ShowInstanceConfigurationResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="datastore_version")
     
+    @JacksonXmlProperty(localName = "datastore_version")
     
     private String datastoreVersion;
 
@@ -33,6 +36,7 @@ public class ShowInstanceConfigurationResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="datastore_name")
     
+    @JacksonXmlProperty(localName = "datastore_name")
     
     private String datastoreName;
 
@@ -40,6 +44,7 @@ public class ShowInstanceConfigurationResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created")
     
+    @JacksonXmlProperty(localName = "created")
     
     private String created;
 
@@ -47,6 +52,7 @@ public class ShowInstanceConfigurationResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="updated")
     
+    @JacksonXmlProperty(localName = "updated")
     
     private String updated;
 
@@ -54,6 +60,7 @@ public class ShowInstanceConfigurationResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="configuration_parameters")
     
+    @JacksonXmlProperty(localName = "configuration_parameters")
     
     private List<ConfigurationParameter> configurationParameters = null;
     

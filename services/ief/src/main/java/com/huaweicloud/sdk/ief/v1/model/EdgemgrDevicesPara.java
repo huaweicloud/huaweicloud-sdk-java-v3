@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ief.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,10 +17,14 @@ public class EdgemgrDevicesPara {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
+    @JacksonXmlProperty(localName = "description")
+
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "attributes")
+
+    @JacksonXmlProperty(localName = "attributes")
 
     private Map<String, ValueInAttributes> attributes = null;
 

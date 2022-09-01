@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ecs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class ResetServerPasswordOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "new_password")
 
+    @JacksonXmlProperty(localName = "new_password")
+
     private String newPassword;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_check_password")
+
+    @JacksonXmlProperty(localName = "is_check_password")
 
     private Boolean isCheckPassword;
 

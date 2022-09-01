@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.gsl.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -14,10 +15,14 @@ public class ShowRealNamedResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "iccid")
 
+    @JacksonXmlProperty(localName = "iccid")
+
     private String iccid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "real_named")
+
+    @JacksonXmlProperty(localName = "real_named")
 
     private Boolean realNamed;
 

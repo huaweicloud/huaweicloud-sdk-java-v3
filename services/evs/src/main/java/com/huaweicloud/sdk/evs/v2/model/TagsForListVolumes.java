@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.evs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,10 +17,14 @@ public class TagsForListVolumes {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key")
 
+    @JacksonXmlProperty(localName = "key")
+
     private String key;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "values")
+
+    @JacksonXmlProperty(localName = "values")
 
     private List<String> values = null;
 

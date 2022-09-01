@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,10 +22,14 @@ public class ImportConnectionReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "path")
 
+    @JacksonXmlProperty(localName = "path")
+
     private String path;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "params")
+
+    @JacksonXmlProperty(localName = "params")
 
     private List<ConnectionParam> params = null;
 
@@ -107,6 +112,8 @@ public class ImportConnectionReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sameNamePolicy")
+
+    @JacksonXmlProperty(localName = "sameNamePolicy")
 
     private SameNamePolicyEnum sameNamePolicy;
 

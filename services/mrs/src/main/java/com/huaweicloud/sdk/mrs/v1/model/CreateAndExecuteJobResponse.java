@@ -13,6 +13,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -26,6 +28,7 @@ public class CreateAndExecuteJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="templated")
     
+    @JacksonXmlProperty(localName = "templated")
     
     private Boolean templated;
 
@@ -33,6 +36,7 @@ public class CreateAndExecuteJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created_at")
     
+    @JacksonXmlProperty(localName = "created_at")
     
     private Long createdAt;
 
@@ -40,6 +44,7 @@ public class CreateAndExecuteJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="updated_at")
     
+    @JacksonXmlProperty(localName = "updated_at")
     
     private Long updatedAt;
 
@@ -47,6 +52,7 @@ public class CreateAndExecuteJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
+    @JacksonXmlProperty(localName = "id")
     
     private String id;
 
@@ -54,6 +60,7 @@ public class CreateAndExecuteJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tenant_id")
     
+    @JacksonXmlProperty(localName = "tenant_id")
     
     private String tenantId;
 
@@ -61,6 +68,7 @@ public class CreateAndExecuteJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_id")
     
+    @JacksonXmlProperty(localName = "job_id")
     
     private String jobId;
 
@@ -68,6 +76,7 @@ public class CreateAndExecuteJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_name")
     
+    @JacksonXmlProperty(localName = "job_name")
     
     private String jobName;
 
@@ -75,6 +84,7 @@ public class CreateAndExecuteJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="input_id")
     
+    @JacksonXmlProperty(localName = "input_id")
     
     private String inputId;
 
@@ -82,6 +92,7 @@ public class CreateAndExecuteJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="output_id")
     
+    @JacksonXmlProperty(localName = "output_id")
     
     private String outputId;
 
@@ -89,6 +100,7 @@ public class CreateAndExecuteJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="start_time")
     
+    @JacksonXmlProperty(localName = "start_time")
     
     private Long startTime;
 
@@ -96,6 +108,7 @@ public class CreateAndExecuteJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="end_time")
     
+    @JacksonXmlProperty(localName = "end_time")
     
     private Long endTime;
 
@@ -103,6 +116,7 @@ public class CreateAndExecuteJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cluster_id")
     
+    @JacksonXmlProperty(localName = "cluster_id")
     
     private String clusterId;
 
@@ -110,6 +124,7 @@ public class CreateAndExecuteJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="engine_job_id")
     
+    @JacksonXmlProperty(localName = "engine_job_id")
     
     private String engineJobId;
 
@@ -117,6 +132,7 @@ public class CreateAndExecuteJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="return_code")
     
+    @JacksonXmlProperty(localName = "return_code")
     
     private String returnCode;
 
@@ -124,6 +140,7 @@ public class CreateAndExecuteJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="is_public")
     
+    @JacksonXmlProperty(localName = "is_public")
     
     private Boolean isPublic;
 
@@ -131,6 +148,7 @@ public class CreateAndExecuteJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="is_protected")
     
+    @JacksonXmlProperty(localName = "is_protected")
     
     private Boolean isProtected;
 
@@ -138,6 +156,7 @@ public class CreateAndExecuteJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="group_id")
     
+    @JacksonXmlProperty(localName = "group_id")
     
     private String groupId;
 
@@ -145,6 +164,7 @@ public class CreateAndExecuteJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="jar_path")
     
+    @JacksonXmlProperty(localName = "jar_path")
     
     private String jarPath;
 
@@ -152,6 +172,7 @@ public class CreateAndExecuteJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="input")
     
+    @JacksonXmlProperty(localName = "input")
     
     private String input;
 
@@ -159,6 +180,7 @@ public class CreateAndExecuteJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="output")
     
+    @JacksonXmlProperty(localName = "output")
     
     private String output;
 
@@ -166,6 +188,7 @@ public class CreateAndExecuteJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_log")
     
+    @JacksonXmlProperty(localName = "job_log")
     
     private String jobLog;
 
@@ -173,6 +196,7 @@ public class CreateAndExecuteJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_type")
     
+    @JacksonXmlProperty(localName = "job_type")
     
     private Integer jobType;
 
@@ -180,6 +204,7 @@ public class CreateAndExecuteJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="file_action")
     
+    @JacksonXmlProperty(localName = "file_action")
     
     private String fileAction;
 
@@ -187,6 +212,7 @@ public class CreateAndExecuteJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="arguments")
     
+    @JacksonXmlProperty(localName = "arguments")
     
     private String arguments;
 
@@ -194,6 +220,7 @@ public class CreateAndExecuteJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="hql")
     
+    @JacksonXmlProperty(localName = "hql")
     
     private String hql;
 
@@ -201,6 +228,7 @@ public class CreateAndExecuteJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_state")
     
+    @JacksonXmlProperty(localName = "job_state")
     
     private Integer jobState;
 
@@ -208,6 +236,7 @@ public class CreateAndExecuteJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_final_status")
     
+    @JacksonXmlProperty(localName = "job_final_status")
     
     private Integer jobFinalStatus;
 
@@ -215,6 +244,7 @@ public class CreateAndExecuteJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="hive_script_path")
     
+    @JacksonXmlProperty(localName = "hive_script_path")
     
     private String hiveScriptPath;
 
@@ -222,6 +252,7 @@ public class CreateAndExecuteJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_by")
     
+    @JacksonXmlProperty(localName = "create_by")
     
     private String createBy;
 
@@ -229,6 +260,7 @@ public class CreateAndExecuteJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="finished_step")
     
+    @JacksonXmlProperty(localName = "finished_step")
     
     private Integer finishedStep;
 
@@ -236,6 +268,7 @@ public class CreateAndExecuteJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_main_id")
     
+    @JacksonXmlProperty(localName = "job_main_id")
     
     private String jobMainId;
 
@@ -243,6 +276,7 @@ public class CreateAndExecuteJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_step_id")
     
+    @JacksonXmlProperty(localName = "job_step_id")
     
     private String jobStepId;
 
@@ -250,6 +284,7 @@ public class CreateAndExecuteJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="postpone_at")
     
+    @JacksonXmlProperty(localName = "postpone_at")
     
     private Long postponeAt;
 
@@ -257,6 +292,7 @@ public class CreateAndExecuteJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="step_name")
     
+    @JacksonXmlProperty(localName = "step_name")
     
     private String stepName;
 
@@ -264,6 +300,7 @@ public class CreateAndExecuteJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="step_num")
     
+    @JacksonXmlProperty(localName = "step_num")
     
     private Integer stepNum;
 
@@ -271,6 +308,7 @@ public class CreateAndExecuteJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="task_num")
     
+    @JacksonXmlProperty(localName = "task_num")
     
     private Integer taskNum;
 
@@ -278,6 +316,7 @@ public class CreateAndExecuteJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_by")
     
+    @JacksonXmlProperty(localName = "update_by")
     
     private String updateBy;
 
@@ -285,6 +324,7 @@ public class CreateAndExecuteJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="credentials")
     
+    @JacksonXmlProperty(localName = "credentials")
     
     private String credentials;
 
@@ -292,6 +332,7 @@ public class CreateAndExecuteJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="user_id")
     
+    @JacksonXmlProperty(localName = "user_id")
     
     private String userId;
 
@@ -299,6 +340,7 @@ public class CreateAndExecuteJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_configs")
     
+    @JacksonXmlProperty(localName = "job_configs")
     
     private Map<String, Object> jobConfigs = null;
     
@@ -306,6 +348,7 @@ public class CreateAndExecuteJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="extra")
     
+    @JacksonXmlProperty(localName = "extra")
     
     private Map<String, Object> extra = null;
     
@@ -313,6 +356,7 @@ public class CreateAndExecuteJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="data_source_urls")
     
+    @JacksonXmlProperty(localName = "data_source_urls")
     
     private Map<String, Object> dataSourceUrls = null;
     
@@ -320,6 +364,7 @@ public class CreateAndExecuteJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="info")
     
+    @JacksonXmlProperty(localName = "info")
     
     private Map<String, Object> info = null;
     

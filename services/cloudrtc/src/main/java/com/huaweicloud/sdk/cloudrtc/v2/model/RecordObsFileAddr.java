@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -89,20 +90,28 @@ public class RecordObsFileAddr {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "location")
 
+    @JacksonXmlProperty(localName = "location")
+
     private LocationEnum location;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
+
+    @JacksonXmlProperty(localName = "project_id")
 
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bucket")
 
+    @JacksonXmlProperty(localName = "bucket")
+
     private String bucket;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "object")
+
+    @JacksonXmlProperty(localName = "object")
 
     private String _object;
 

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -101,40 +102,56 @@ public class FirewallRule {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "action")
 
+    @JacksonXmlProperty(localName = "action")
+
     private ActionEnum action;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
+
+    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "destination_ip_address")
 
+    @JacksonXmlProperty(localName = "destination_ip_address")
+
     private String destinationIpAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "destination_port")
+
+    @JacksonXmlProperty(localName = "destination_port")
 
     private String destinationPort;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enabled")
 
+    @JacksonXmlProperty(localName = "enabled")
+
     private Boolean enabled;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
+
+    @JacksonXmlProperty(localName = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip_version")
 
+    @JacksonXmlProperty(localName = "ip_version")
+
     private Integer ipVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
@@ -223,6 +240,8 @@ public class FirewallRule {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operate_type")
+
+    @JacksonXmlProperty(localName = "operate_type")
 
     private OperateTypeEnum operateType;
 
@@ -318,15 +337,21 @@ public class FirewallRule {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protocol")
 
+    @JacksonXmlProperty(localName = "protocol")
+
     private ProtocolEnum protocol;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_ip_address")
 
+    @JacksonXmlProperty(localName = "source_ip_address")
+
     private String sourceIpAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_port")
+
+    @JacksonXmlProperty(localName = "source_port")
 
     private String sourcePort;
 

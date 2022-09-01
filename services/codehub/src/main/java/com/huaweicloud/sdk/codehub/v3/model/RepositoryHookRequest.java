@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.codehub.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,20 +17,28 @@ public class RepositoryHookRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hook_url")
 
+    @JacksonXmlProperty(localName = "hook_url")
+
     private String hookUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service")
+
+    @JacksonXmlProperty(localName = "service")
 
     private String service;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "token")
 
+    @JacksonXmlProperty(localName = "token")
+
     private String token;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hook_events")
+
+    @JacksonXmlProperty(localName = "hook_events")
 
     private List<String> hookEvents = null;
 

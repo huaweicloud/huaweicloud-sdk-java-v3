@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.hss.v5.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,35 +14,49 @@ public class SecurityCheckHostInfoResponseInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_id")
 
+    @JacksonXmlProperty(localName = "host_id")
+
     private String hostId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_name")
+
+    @JacksonXmlProperty(localName = "host_name")
 
     private String hostName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_public_ip")
 
+    @JacksonXmlProperty(localName = "host_public_ip")
+
     private String hostPublicIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_private_ip")
+
+    @JacksonXmlProperty(localName = "host_private_ip")
 
     private String hostPrivateIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scan_time")
 
+    @JacksonXmlProperty(localName = "scan_time")
+
     private Long scanTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "failed_num")
 
+    @JacksonXmlProperty(localName = "failed_num")
+
     private Integer failedNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "passed_num")
+
+    @JacksonXmlProperty(localName = "passed_num")
 
     private Integer passedNum;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.kafka.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -16,6 +17,8 @@ public class ShowMaintainWindowsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maintain_windows")
+
+    @JacksonXmlProperty(localName = "maintain_windows")
 
     private List<MaintainWindowsEntity> maintainWindows = null;
 

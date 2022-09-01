@@ -12,6 +12,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.cbs.v1.model.ReplyRatesIntervals;
 import com.huaweicloud.sdk.cbs.v1.model.ReplyRatesTotal;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -25,6 +27,7 @@ public class CollectReplyRatesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="interval")
     
+    @JacksonXmlProperty(localName = "interval")
     
     private String interval;
 
@@ -32,6 +35,7 @@ public class CollectReplyRatesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="time_zone")
     
+    @JacksonXmlProperty(localName = "time_zone")
     
     private String timeZone;
 
@@ -39,6 +43,7 @@ public class CollectReplyRatesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="total")
     
+    @JacksonXmlProperty(localName = "total")
     
     private ReplyRatesTotal total;
 
@@ -46,6 +51,7 @@ public class CollectReplyRatesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="intervals")
     
+    @JacksonXmlProperty(localName = "intervals")
     
     private ReplyRatesIntervals intervals;
 
@@ -53,6 +59,7 @@ public class CollectReplyRatesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="startutc")
     
+    @JacksonXmlProperty(localName = "startutc")
     
     private Long startutc;
 
@@ -60,6 +67,7 @@ public class CollectReplyRatesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="endutc")
     
+    @JacksonXmlProperty(localName = "endutc")
     
     private Long endutc;
 

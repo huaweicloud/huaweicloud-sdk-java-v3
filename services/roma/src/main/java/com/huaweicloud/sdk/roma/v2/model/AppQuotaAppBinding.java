@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.roma.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.time.OffsetDateTime;
 import java.util.Objects;
@@ -14,15 +15,21 @@ public class AppQuotaAppBinding {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_quota_id")
 
+    @JacksonXmlProperty(localName = "app_quota_id")
+
     private String appQuotaId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_id")
 
+    @JacksonXmlProperty(localName = "app_id")
+
     private String appId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bound_time")
+
+    @JacksonXmlProperty(localName = "bound_time")
 
     private OffsetDateTime boundTime;
 

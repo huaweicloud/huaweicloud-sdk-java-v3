@@ -2,11 +2,9 @@ package com.huaweicloud.sdk.waf.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -16,30 +14,42 @@ public class ListBandwidthTimelineRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
+    @JacksonXmlProperty(localName = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "from")
+
+    @JacksonXmlProperty(localName = "from")
 
     private Long from;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "to")
 
+    @JacksonXmlProperty(localName = "to")
+
     private Long to;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hosts")
+
+    @JacksonXmlProperty(localName = "hosts")
 
     private String hosts;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instances")
 
-    private List<String> instances = null;
+    @JacksonXmlProperty(localName = "instances")
+
+    private String instances;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_by")
+
+    @JacksonXmlProperty(localName = "group_by")
 
     private String groupBy;
 
@@ -100,7 +110,7 @@ public class ListBandwidthTimelineRequest {
     }
 
     /**
-     * 域名id数组，通过查询云模式防护域名列表（ListHost）获取域名id或者通过独享模式域名列表（ListPremiumHost）获取域名id
+     * 域名id，通过查询云模式防护域名列表（ListHost）获取域名id或者通过独享模式域名列表（ListPremiumHost）获取域名id
      * @return hosts
      */
     public String getHosts() {
@@ -111,36 +121,20 @@ public class ListBandwidthTimelineRequest {
         this.hosts = hosts;
     }
 
-    public ListBandwidthTimelineRequest withInstances(List<String> instances) {
+    public ListBandwidthTimelineRequest withInstances(String instances) {
         this.instances = instances;
         return this;
     }
 
-    public ListBandwidthTimelineRequest addInstancesItem(String instancesItem) {
-        if (this.instances == null) {
-            this.instances = new ArrayList<>();
-        }
-        this.instances.add(instancesItem);
-        return this;
-    }
-
-    public ListBandwidthTimelineRequest withInstances(Consumer<List<String>> instancesSetter) {
-        if (this.instances == null) {
-            this.instances = new ArrayList<>();
-        }
-        instancesSetter.accept(this.instances);
-        return this;
-    }
-
     /**
-     * 要查询引擎实例列表
+     * 要查询引擎实例id
      * @return instances
      */
-    public List<String> getInstances() {
+    public String getInstances() {
         return instances;
     }
 
-    public void setInstances(List<String> instances) {
+    public void setInstances(String instances) {
         this.instances = instances;
     }
 

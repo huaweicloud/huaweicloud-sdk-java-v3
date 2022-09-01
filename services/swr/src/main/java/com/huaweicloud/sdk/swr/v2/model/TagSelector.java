@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.swr.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class TagSelector {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "kind")
 
+    @JacksonXmlProperty(localName = "kind")
+
     private String kind;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pattern")
+
+    @JacksonXmlProperty(localName = "pattern")
 
     private String pattern;
 

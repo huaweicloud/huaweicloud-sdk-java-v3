@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.lts.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,20 +15,28 @@ public class AomMappingRequestInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
 
+    @JacksonXmlProperty(localName = "project_id")
+
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rule_name")
+
+    @JacksonXmlProperty(localName = "rule_name")
 
     private String ruleName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rule_id")
 
+    @JacksonXmlProperty(localName = "rule_id")
+
     private String ruleId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rule_info")
+
+    @JacksonXmlProperty(localName = "rule_info")
 
     private AomMappingRuleInfo ruleInfo;
 

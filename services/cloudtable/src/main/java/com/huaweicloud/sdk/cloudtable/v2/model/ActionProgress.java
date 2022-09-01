@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cloudtable.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,25 +14,35 @@ public class ActionProgress {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "CREATING")
 
+    @JacksonXmlProperty(localName = "CREATING")
+
     private String creating;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "GROWING")
+
+    @JacksonXmlProperty(localName = "GROWING")
 
     private String growing;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "RESTORING")
 
+    @JacksonXmlProperty(localName = "RESTORING")
+
     private String restoring;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "SNAPSHOTTING")
 
+    @JacksonXmlProperty(localName = "SNAPSHOTTING")
+
     private String snapshotting;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "REPAIRING")
+
+    @JacksonXmlProperty(localName = "REPAIRING")
 
     private String repairing;
 

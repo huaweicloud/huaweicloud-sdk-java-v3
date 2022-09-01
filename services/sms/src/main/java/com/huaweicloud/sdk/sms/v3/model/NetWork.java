@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.sms.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,35 +14,49 @@ public class NetWork {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip")
+
+    @JacksonXmlProperty(localName = "ip")
 
     private String ip;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "netmask")
 
+    @JacksonXmlProperty(localName = "netmask")
+
     private String netmask;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "gateway")
+
+    @JacksonXmlProperty(localName = "gateway")
 
     private String gateway;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mtu")
 
+    @JacksonXmlProperty(localName = "mtu")
+
     private Integer mtu;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mac")
 
+    @JacksonXmlProperty(localName = "mac")
+
     private String mac;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
+
+    @JacksonXmlProperty(localName = "id")
 
     private String id;
 

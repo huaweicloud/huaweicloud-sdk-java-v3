@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.codecheck.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,20 +14,28 @@ public class StatisticSeverityV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "critical")
 
+    @JacksonXmlProperty(localName = "critical")
+
     private Integer critical;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "major")
+
+    @JacksonXmlProperty(localName = "major")
 
     private Integer major;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "minor")
 
+    @JacksonXmlProperty(localName = "minor")
+
     private Integer minor;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "suggestion")
+
+    @JacksonXmlProperty(localName = "suggestion")
 
     private Integer suggestion;
 

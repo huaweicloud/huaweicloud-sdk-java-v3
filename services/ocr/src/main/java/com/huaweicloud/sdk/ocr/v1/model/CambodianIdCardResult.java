@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ocr.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,90 +17,126 @@ public class CambodianIdCardResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id_number")
 
+    @JacksonXmlProperty(localName = "id_number")
+
     private String idNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name_kh")
+
+    @JacksonXmlProperty(localName = "name_kh")
 
     private String nameKh;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name_en")
 
+    @JacksonXmlProperty(localName = "name_en")
+
     private String nameEn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "birth_date")
+
+    @JacksonXmlProperty(localName = "birth_date")
 
     private String birthDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sex")
 
+    @JacksonXmlProperty(localName = "sex")
+
     private String sex;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "height")
+
+    @JacksonXmlProperty(localName = "height")
 
     private String height;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "birth_place")
 
+    @JacksonXmlProperty(localName = "birth_place")
+
     private String birthPlace;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "address")
+
+    @JacksonXmlProperty(localName = "address")
 
     private String address;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "issue_date")
 
+    @JacksonXmlProperty(localName = "issue_date")
+
     private String issueDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expiry_date")
+
+    @JacksonXmlProperty(localName = "expiry_date")
 
     private String expiryDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
+    @JacksonXmlProperty(localName = "description")
+
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "machine_code1")
+
+    @JacksonXmlProperty(localName = "machine_code1")
 
     private String machineCode1;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "machine_code2")
 
+    @JacksonXmlProperty(localName = "machine_code2")
+
     private String machineCode2;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "machine_code3")
+
+    @JacksonXmlProperty(localName = "machine_code3")
 
     private String machineCode3;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "portrait_image")
 
+    @JacksonXmlProperty(localName = "portrait_image")
+
     private String portraitImage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "portrait_location")
+
+    @JacksonXmlProperty(localName = "portrait_location")
 
     private List<List<Integer>> portraitLocation = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "idcard_type")
 
+    @JacksonXmlProperty(localName = "idcard_type")
+
     private String idcardType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confidence")
+
+    @JacksonXmlProperty(localName = "confidence")
 
     private Object confidence;
 

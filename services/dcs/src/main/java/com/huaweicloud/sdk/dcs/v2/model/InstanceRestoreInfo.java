@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,50 +19,70 @@ public class InstanceRestoreInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "backup_id")
 
+    @JacksonXmlProperty(localName = "backup_id")
+
     private String backupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "restore_id")
+
+    @JacksonXmlProperty(localName = "restore_id")
 
     private String restoreId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "backup_name")
 
+    @JacksonXmlProperty(localName = "backup_name")
+
     private String backupName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_at")
+
+    @JacksonXmlProperty(localName = "updated_at")
 
     private String updatedAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "restore_remark")
 
+    @JacksonXmlProperty(localName = "restore_remark")
+
     private String restoreRemark;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
+
+    @JacksonXmlProperty(localName = "created_at")
 
     private String createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "progress")
 
+    @JacksonXmlProperty(localName = "progress")
+
     private String progress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_code")
+
+    @JacksonXmlProperty(localName = "error_code")
 
     private String errorCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "restore_name")
 
+    @JacksonXmlProperty(localName = "restore_name")
+
     private String restoreName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "backup_remark")
+
+    @JacksonXmlProperty(localName = "backup_remark")
 
     private String backupRemark;
 
@@ -156,6 +177,8 @@ public class InstanceRestoreInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
+
+    @JacksonXmlProperty(localName = "status")
 
     private StatusEnum status;
 

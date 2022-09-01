@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.devstar.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,30 +14,42 @@ public class RepositoryBasicInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "uuid")
 
+    @JacksonXmlProperty(localName = "uuid")
+
     private String uuid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
+
+    @JacksonXmlProperty(localName = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "https_url")
+
+    @JacksonXmlProperty(localName = "https_url")
 
     private String httpsUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ssh_url")
 
+    @JacksonXmlProperty(localName = "ssh_url")
+
     private String sshUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "web_url")
+
+    @JacksonXmlProperty(localName = "web_url")
 
     private String webUrl;
 

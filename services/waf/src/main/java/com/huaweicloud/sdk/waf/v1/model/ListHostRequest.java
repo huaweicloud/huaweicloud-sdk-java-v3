@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.waf.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,25 +14,35 @@ public class ListHostRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
+    @JacksonXmlProperty(localName = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page")
+
+    @JacksonXmlProperty(localName = "page")
 
     private Integer page;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pagesize")
 
+    @JacksonXmlProperty(localName = "pagesize")
+
     private Integer pagesize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hostname")
 
+    @JacksonXmlProperty(localName = "hostname")
+
     private String hostname;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policyname")
+
+    @JacksonXmlProperty(localName = "policyname")
 
     private String policyname;
 

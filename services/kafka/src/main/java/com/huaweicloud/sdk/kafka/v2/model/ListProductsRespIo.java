@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.kafka.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,25 +17,35 @@ public class ListProductsRespIo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "io_type")
 
+    @JacksonXmlProperty(localName = "io_type")
+
     private String ioType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "storage_spec_code")
+
+    @JacksonXmlProperty(localName = "storage_spec_code")
 
     private String storageSpecCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "available_zones")
 
+    @JacksonXmlProperty(localName = "available_zones")
+
     private List<String> availableZones = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "unavailable_zones")
 
+    @JacksonXmlProperty(localName = "unavailable_zones")
+
     private List<String> unavailableZones = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volume_type")
+
+    @JacksonXmlProperty(localName = "volume_type")
 
     private String volumeType;
 

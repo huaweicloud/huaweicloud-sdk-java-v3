@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.iotanalytics.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,55 +15,77 @@ public class ContentDetailReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "iotda_content")
 
+    @JacksonXmlProperty(localName = "iotda_content")
+
     private IotdaContentReq iotdaContent;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "obs_content")
+
+    @JacksonXmlProperty(localName = "obs_content")
 
     private ObsContentReq obsContent;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dis_content")
 
+    @JacksonXmlProperty(localName = "dis_content")
+
     private DisContentReq disContent;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "smn_content")
+
+    @JacksonXmlProperty(localName = "smn_content")
 
     private SmnContentReq smnContent;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "function_graph_content")
 
+    @JacksonXmlProperty(localName = "function_graph_content")
+
     private FunctionGraphContentReq functionGraphContent;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "model_arts_content")
+
+    @JacksonXmlProperty(localName = "model_arts_content")
 
     private ModelArtsContentReq modelArtsContent;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dcs_content")
 
+    @JacksonXmlProperty(localName = "dcs_content")
+
     private DcsContentReq dcsContent;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "kafka_content")
+
+    @JacksonXmlProperty(localName = "kafka_content")
 
     private KafkaContentReq kafkaContent;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "api_content")
 
+    @JacksonXmlProperty(localName = "api_content")
+
     private ApiContentReq apiContent;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "node_content")
 
+    @JacksonXmlProperty(localName = "node_content")
+
     private NodeContentReq nodeContent;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "edge_content")
+
+    @JacksonXmlProperty(localName = "edge_content")
 
     private EdgeContentReq edgeContent;
 

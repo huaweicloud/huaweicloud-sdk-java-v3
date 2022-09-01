@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.apig.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.time.OffsetDateTime;
@@ -15,35 +16,49 @@ public class ChangeApiVersionV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publish_id")
 
+    @JacksonXmlProperty(localName = "publish_id")
+
     private String publishId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "api_id")
+
+    @JacksonXmlProperty(localName = "api_id")
 
     private String apiId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "api_name")
 
+    @JacksonXmlProperty(localName = "api_name")
+
     private String apiName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "env_id")
+
+    @JacksonXmlProperty(localName = "env_id")
 
     private String envId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remark")
 
+    @JacksonXmlProperty(localName = "remark")
+
     private String remark;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publish_time")
 
+    @JacksonXmlProperty(localName = "publish_time")
+
     private OffsetDateTime publishTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version_id")
+
+    @JacksonXmlProperty(localName = "version_id")
 
     private String versionId;
 

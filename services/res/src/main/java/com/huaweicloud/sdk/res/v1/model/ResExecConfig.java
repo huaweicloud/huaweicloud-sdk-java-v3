@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.res.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,10 +17,14 @@ public class ResExecConfig {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "spark_calc_spec")
 
+    @JacksonXmlProperty(localName = "spark_calc_spec")
+
     private SparkCalcSpec sparkCalcSpec;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "spark_option_confs")
+
+    @JacksonXmlProperty(localName = "spark_option_confs")
 
     private List<SparkOptionConf> sparkOptionConfs = null;
 

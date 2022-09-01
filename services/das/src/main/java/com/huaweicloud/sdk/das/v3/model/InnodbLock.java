@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.das.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,50 +14,70 @@ public class InnodbLock {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lock_id")
 
+    @JacksonXmlProperty(localName = "lock_id")
+
     private String lockId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lock_trx_id")
+
+    @JacksonXmlProperty(localName = "lock_trx_id")
 
     private String lockTrxId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lock_mode")
 
+    @JacksonXmlProperty(localName = "lock_mode")
+
     private String lockMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lock_type")
+
+    @JacksonXmlProperty(localName = "lock_type")
 
     private String lockType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lock_table")
 
+    @JacksonXmlProperty(localName = "lock_table")
+
     private String lockTable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lock_index")
+
+    @JacksonXmlProperty(localName = "lock_index")
 
     private String lockIndex;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lock_space")
 
+    @JacksonXmlProperty(localName = "lock_space")
+
     private String lockSpace;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lock_page")
+
+    @JacksonXmlProperty(localName = "lock_page")
 
     private String lockPage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lock_rec")
 
+    @JacksonXmlProperty(localName = "lock_rec")
+
     private String lockRec;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lock_data")
+
+    @JacksonXmlProperty(localName = "lock_data")
 
     private String lockData;
 

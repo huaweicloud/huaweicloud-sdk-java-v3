@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,65 +17,91 @@ public class QueryDeptResultDTO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deptCode")
 
+    @JacksonXmlProperty(localName = "deptCode")
+
     private String deptCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deptLevel")
+
+    @JacksonXmlProperty(localName = "deptLevel")
 
     private Integer deptLevel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deptName")
 
+    @JacksonXmlProperty(localName = "deptName")
+
     private String deptName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deptNamePath")
+
+    @JacksonXmlProperty(localName = "deptNamePath")
 
     private String deptNamePath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "isLeafNode")
 
+    @JacksonXmlProperty(localName = "isLeafNode")
+
     private Boolean isLeafNode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parentDeptCode")
+
+    @JacksonXmlProperty(localName = "parentDeptCode")
 
     private String parentDeptCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deptCodePath")
 
+    @JacksonXmlProperty(localName = "deptCodePath")
+
     private String deptCodePath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "note")
+
+    @JacksonXmlProperty(localName = "note")
 
     private String note;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "corpId")
 
+    @JacksonXmlProperty(localName = "corpId")
+
     private String corpId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "inPermission")
+
+    @JacksonXmlProperty(localName = "inPermission")
 
     private String inPermission;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "outPermission")
 
+    @JacksonXmlProperty(localName = "outPermission")
+
     private String outPermission;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "designatedOutDeptCodes")
 
+    @JacksonXmlProperty(localName = "designatedOutDeptCodes")
+
     private List<IdMarkDTO> designatedOutDeptCodes = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sortLevel")
+
+    @JacksonXmlProperty(localName = "sortLevel")
 
     private Integer sortLevel;
 

@@ -107,7 +107,7 @@ public class CssMeta {
         HttpRequestDef.Builder<CreateClustersTagsRequest, CreateClustersTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateClustersTagsRequest.class, CreateClustersTagsResponse.class)
                 .withName("CreateClustersTags")
-                .withUri("/v1.0/{project_id}/css-cluster/{cluster_id}/tags")
+                .withUri("/v1.0/{project_id}/{resource_type}/{cluster_id}/tags")
                 .withContentType("application/json");
 
         // requests
@@ -117,6 +117,13 @@ public class CssMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateClustersTagsRequest::getClusterId, (req, v) -> {
                 req.setClusterId(v);
+            }));
+        builder.<String>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateClustersTagsRequest::getResourceType, (req, v) -> {
+                req.setResourceType(v);
             }));
         builder.<TagReq>withRequestField("body",
             LocationType.Body,
@@ -253,7 +260,7 @@ public class CssMeta {
         HttpRequestDef.Builder<DeleteClustersTagsRequest, DeleteClustersTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteClustersTagsRequest.class, DeleteClustersTagsResponse.class)
                 .withName("DeleteClustersTags")
-                .withUri("/v1.0/{project_id}/css-cluster/{cluster_id}/tags/{key}")
+                .withUri("/v1.0/{project_id}/{resource_type}/{cluster_id}/tags/{key}")
                 .withContentType("application/json");
 
         // requests
@@ -263,6 +270,13 @@ public class CssMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteClustersTagsRequest::getClusterId, (req, v) -> {
                 req.setClusterId(v);
+            }));
+        builder.<String>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteClustersTagsRequest::getResourceType, (req, v) -> {
+                req.setResourceType(v);
             }));
         builder.<String>withRequestField("key",
             LocationType.Path,
@@ -391,10 +405,17 @@ public class CssMeta {
         HttpRequestDef.Builder<ListClustersTagsRequest, ListClustersTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListClustersTagsRequest.class, ListClustersTagsResponse.class)
                 .withName("ListClustersTags")
-                .withUri("/v1.0/{project_id}/css-cluster/tags")
+                .withUri("/v1.0/{project_id}/{resource_type}/tags")
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListClustersTagsRequest::getResourceType, (req, v) -> {
+                req.setResourceType(v);
+            }));
 
         // response
 
@@ -669,7 +690,7 @@ public class CssMeta {
         HttpRequestDef.Builder<ShowClusterTagRequest, ShowClusterTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowClusterTagRequest.class, ShowClusterTagResponse.class)
                 .withName("ShowClusterTag")
-                .withUri("/v1.0/{project_id}/css-cluster/{cluster_id}/tags")
+                .withUri("/v1.0/{project_id}/{resource_type}/{cluster_id}/tags")
                 .withContentType("application/json");
 
         // requests
@@ -679,6 +700,13 @@ public class CssMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowClusterTagRequest::getClusterId, (req, v) -> {
                 req.setClusterId(v);
+            }));
+        builder.<String>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowClusterTagRequest::getResourceType, (req, v) -> {
+                req.setResourceType(v);
             }));
 
         // response
@@ -1075,7 +1103,7 @@ public class CssMeta {
         HttpRequestDef.Builder<UpdateBatchClustersTagsRequest, UpdateBatchClustersTagsResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, UpdateBatchClustersTagsRequest.class, UpdateBatchClustersTagsResponse.class)
             .withName("UpdateBatchClustersTags")
-            .withUri("/v1.0/{project_id}/css-cluster/{cluster_id}/tags/action")
+            .withUri("/v1.0/{project_id}/{resource_type}/{cluster_id}/tags/action")
             .withContentType("application/json");
 
         // requests
@@ -1085,6 +1113,13 @@ public class CssMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateBatchClustersTagsRequest::getClusterId, (req, v) -> {
                 req.setClusterId(v);
+            }));
+        builder.<String>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateBatchClustersTagsRequest::getResourceType, (req, v) -> {
+                req.setResourceType(v);
             }));
         builder.<BatchAddOrDeleteTagOnClusterReq>withRequestField("body",
             LocationType.Body,
@@ -1255,10 +1290,10 @@ public class CssMeta {
             f -> f.withMarshaller(UpdateFlavorByTypeRequest::getTypes, (req, v) -> {
                 req.setTypes(v);
             }));
-        builder.<UpdateFlavorReq>withRequestField("body",
+        builder.<UpdateFlavorByTypeReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(UpdateFlavorReq.class),
+            TypeCasts.uncheckedConversion(UpdateFlavorByTypeReq.class),
             f -> f.withMarshaller(UpdateFlavorByTypeRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
@@ -1354,10 +1389,10 @@ public class CssMeta {
             f -> f.withMarshaller(UpdatePublicBandWidthRequest::getClusterId, (req, v) -> {
                 req.setClusterId(v);
             }));
-        builder.<BindPublicReqEip>withRequestField("body",
+        builder.<BindPublicReqEipReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(BindPublicReqEip.class),
+            TypeCasts.uncheckedConversion(BindPublicReqEipReq.class),
             f -> f.withMarshaller(UpdatePublicBandWidthRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));

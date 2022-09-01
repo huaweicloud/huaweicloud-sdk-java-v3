@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.apig.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -14,15 +15,21 @@ public class ListApiQuantitiesV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_num")
 
+    @JacksonXmlProperty(localName = "instance_num")
+
     private Integer instanceNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nums_on_release")
 
+    @JacksonXmlProperty(localName = "nums_on_release")
+
     private Integer numsOnRelease;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nums_off_release")
+
+    @JacksonXmlProperty(localName = "nums_off_release")
 
     private Integer numsOffRelease;
 

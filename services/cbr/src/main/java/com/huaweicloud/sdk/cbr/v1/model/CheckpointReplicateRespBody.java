@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cbr.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,40 +17,56 @@ public class CheckpointReplicateRespBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "backups")
 
+    @JacksonXmlProperty(localName = "backups")
+
     private List<CheckpointReplicateRespbackups> backups = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "destination_project_id")
+
+    @JacksonXmlProperty(localName = "destination_project_id")
 
     private String destinationProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "destination_region")
 
+    @JacksonXmlProperty(localName = "destination_region")
+
     private String destinationRegion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "destination_vault_id")
+
+    @JacksonXmlProperty(localName = "destination_vault_id")
 
     private String destinationVaultId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
 
+    @JacksonXmlProperty(localName = "project_id")
+
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "provider_id")
+
+    @JacksonXmlProperty(localName = "provider_id")
 
     private String providerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_region")
 
+    @JacksonXmlProperty(localName = "source_region")
+
     private String sourceRegion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vault_id")
+
+    @JacksonXmlProperty(localName = "vault_id")
 
     private String vaultId;
 

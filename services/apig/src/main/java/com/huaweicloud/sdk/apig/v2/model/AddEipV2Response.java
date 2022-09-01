@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.apig.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -14,20 +15,28 @@ public class AddEipV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "eip_id")
 
+    @JacksonXmlProperty(localName = "eip_id")
+
     private String eipId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "eip_address")
+
+    @JacksonXmlProperty(localName = "eip_address")
 
     private String eipAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "eip_status")
 
+    @JacksonXmlProperty(localName = "eip_status")
+
     private String eipStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "eip_ipv6_address")
+
+    @JacksonXmlProperty(localName = "eip_ipv6_address")
 
     private String eipIpv6Address;
 

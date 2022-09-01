@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ecs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,75 +17,105 @@ public class Flavor {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vcpus")
 
+    @JacksonXmlProperty(localName = "vcpus")
+
     private String vcpus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ram")
+
+    @JacksonXmlProperty(localName = "ram")
 
     private Integer ram;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "disk")
 
+    @JacksonXmlProperty(localName = "disk")
+
     private String disk;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "swap")
+
+    @JacksonXmlProperty(localName = "swap")
 
     private String swap;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "OS-FLV-EXT-DATA:ephemeral")
 
+    @JacksonXmlProperty(localName = "OS-FLV-EXT-DATA:ephemeral")
+
     private Integer osFLVEXTDATAEphemeral;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "OS-FLV-DISABLED:disabled")
+
+    @JacksonXmlProperty(localName = "OS-FLV-DISABLED:disabled")
 
     private Boolean osFLVDISABLEDDisabled;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rxtx_factor")
 
+    @JacksonXmlProperty(localName = "rxtx_factor")
+
     private Float rxtxFactor;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rxtx_quota")
+
+    @JacksonXmlProperty(localName = "rxtx_quota")
 
     private String rxtxQuota;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rxtx_cap")
 
+    @JacksonXmlProperty(localName = "rxtx_cap")
+
     private String rxtxCap;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os-flavor-access:is_public")
+
+    @JacksonXmlProperty(localName = "os-flavor-access:is_public")
 
     private Boolean osFlavorAccessIsPublic;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "links")
 
+    @JacksonXmlProperty(localName = "links")
+
     private List<FlavorLink> links = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os_extra_specs")
 
+    @JacksonXmlProperty(localName = "os_extra_specs")
+
     private FlavorExtraSpec osExtraSpecs;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "attachableQuantity")
+
+    @JacksonXmlProperty(localName = "attachableQuantity")
 
     private ServerAttachableQuantity attachableQuantity;
 

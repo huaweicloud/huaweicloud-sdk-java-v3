@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.roma.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class InnerLatencyStats {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_inner_latency")
 
+    @JacksonXmlProperty(localName = "max_inner_latency")
+
     private Integer maxInnerLatency;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "avg_inner_latency")
+
+    @JacksonXmlProperty(localName = "avg_inner_latency")
 
     private Float avgInnerLatency;
 

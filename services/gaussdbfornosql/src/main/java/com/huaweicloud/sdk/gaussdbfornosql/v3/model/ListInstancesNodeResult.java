@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.gaussdbfornosql.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,50 +14,70 @@ public class ListInstancesNodeResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "role")
+
+    @JacksonXmlProperty(localName = "role")
 
     private String role;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subnet_id")
 
+    @JacksonXmlProperty(localName = "subnet_id")
+
     private String subnetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "private_ip")
+
+    @JacksonXmlProperty(localName = "private_ip")
 
     private String privateIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "public_ip")
 
+    @JacksonXmlProperty(localName = "public_ip")
+
     private String publicIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "spec_code")
+
+    @JacksonXmlProperty(localName = "spec_code")
 
     private String specCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "availability_zone")
 
+    @JacksonXmlProperty(localName = "availability_zone")
+
     private String availabilityZone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "support_reduce")
+
+    @JacksonXmlProperty(localName = "support_reduce")
 
     private Boolean supportReduce;
 

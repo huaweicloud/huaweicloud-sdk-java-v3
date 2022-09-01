@@ -10,6 +10,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.OpenGaussEnlargeVolume;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.OpenGaussExpandCluster;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -23,6 +25,7 @@ public class OpenGaussInstanceActionRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="expand_cluster")
     
+    @JacksonXmlProperty(localName = "expand_cluster")
     
     private OpenGaussExpandCluster expandCluster;
 
@@ -30,6 +33,7 @@ public class OpenGaussInstanceActionRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enlarge_volume")
     
+    @JacksonXmlProperty(localName = "enlarge_volume")
     
     private OpenGaussEnlargeVolume enlargeVolume;
 
@@ -37,6 +41,7 @@ public class OpenGaussInstanceActionRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="is_auto_pay")
     
+    @JacksonXmlProperty(localName = "is_auto_pay")
     
     private String isAutoPay;
 

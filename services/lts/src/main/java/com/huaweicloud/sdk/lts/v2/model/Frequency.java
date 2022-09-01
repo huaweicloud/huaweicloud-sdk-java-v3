@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -113,25 +114,35 @@ public class Frequency {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
+    @JacksonXmlProperty(localName = "type")
+
     private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cron_expr")
+
+    @JacksonXmlProperty(localName = "cron_expr")
 
     private String cronExpr;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hour_of_day")
 
+    @JacksonXmlProperty(localName = "hour_of_day")
+
     private Integer hourOfDay;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "day_of_week")
 
+    @JacksonXmlProperty(localName = "day_of_week")
+
     private Integer dayOfWeek;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fixed_rate")
+
+    @JacksonXmlProperty(localName = "fixed_rate")
 
     private Integer fixedRate;
 
@@ -214,6 +225,8 @@ public class Frequency {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fixed_rate_unit")
+
+    @JacksonXmlProperty(localName = "fixed_rate_unit")
 
     private FixedRateUnitEnum fixedRateUnit;
 

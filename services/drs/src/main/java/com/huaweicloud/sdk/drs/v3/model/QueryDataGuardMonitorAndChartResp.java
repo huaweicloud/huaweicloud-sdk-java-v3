@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.drs.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,10 +15,14 @@ public class QueryDataGuardMonitorAndChartResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_guard_minitor")
+
+    @JacksonXmlProperty(localName = "data_guard_minitor")
 
     private QueryDataGuardMonitorResponse dataGuardMinitor;
 

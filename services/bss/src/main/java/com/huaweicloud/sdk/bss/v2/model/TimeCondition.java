@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.bss.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class TimeCondition {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time_measure_id")
 
+    @JacksonXmlProperty(localName = "time_measure_id")
+
     private Integer timeMeasureId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "begin_time")
 
+    @JacksonXmlProperty(localName = "begin_time")
+
     private String beginTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time")
+
+    @JacksonXmlProperty(localName = "end_time")
 
     private String endTime;
 

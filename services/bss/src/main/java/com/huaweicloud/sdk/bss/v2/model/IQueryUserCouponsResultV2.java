@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.bss.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,140 +17,196 @@ public class IQueryUserCouponsResultV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "coupon_id")
 
+    @JacksonXmlProperty(localName = "coupon_id")
+
     private String couponId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "coupon_code")
+
+    @JacksonXmlProperty(localName = "coupon_code")
 
     private String couponCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private Integer status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "customer_id")
+
+    @JacksonXmlProperty(localName = "customer_id")
 
     private String customerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "coupon_type")
 
+    @JacksonXmlProperty(localName = "coupon_type")
+
     private Integer couponType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "measure_id")
+
+    @JacksonXmlProperty(localName = "measure_id")
 
     private Integer measureId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "face_value")
 
+    @JacksonXmlProperty(localName = "face_value")
+
     private Double faceValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "valid_time")
+
+    @JacksonXmlProperty(localName = "valid_time")
 
     private String validTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expire_time")
 
+    @JacksonXmlProperty(localName = "expire_time")
+
     private String expireTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "order_id")
+
+    @JacksonXmlProperty(localName = "order_id")
 
     private String orderId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "promotion_plan_id")
 
+    @JacksonXmlProperty(localName = "promotion_plan_id")
+
     private String promotionPlanId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "plan_name")
+
+    @JacksonXmlProperty(localName = "plan_name")
 
     private String planName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "plan_desc")
 
+    @JacksonXmlProperty(localName = "plan_desc")
+
     private String planDesc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "media_type")
+
+    @JacksonXmlProperty(localName = "media_type")
 
     private Integer mediaType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fetch_method")
 
+    @JacksonXmlProperty(localName = "fetch_method")
+
     private Integer fetchMethod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "use_limits")
+
+    @JacksonXmlProperty(localName = "use_limits")
 
     private List<ICouponUseLimitInfoV2> useLimits = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "active_time")
 
+    @JacksonXmlProperty(localName = "active_time")
+
     private String activeTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "reserve_time")
+
+    @JacksonXmlProperty(localName = "reserve_time")
 
     private String reserveTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "promotion_id")
 
+    @JacksonXmlProperty(localName = "promotion_id")
+
     private String promotionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
+
+    @JacksonXmlProperty(localName = "create_time")
 
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "coupon_version")
 
+    @JacksonXmlProperty(localName = "coupon_version")
+
     private Integer couponVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "balance")
+
+    @JacksonXmlProperty(localName = "balance")
 
     private Double balance;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lock_order_id")
 
+    @JacksonXmlProperty(localName = "lock_order_id")
+
     private String lockOrderId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "coupon_usage")
+
+    @JacksonXmlProperty(localName = "coupon_usage")
 
     private String couponUsage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_frozen")
 
+    @JacksonXmlProperty(localName = "is_frozen")
+
     private String isFrozen;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "currency")
+
+    @JacksonXmlProperty(localName = "currency")
 
     private String currency;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extend_param1")
 
+    @JacksonXmlProperty(localName = "extend_param1")
+
     private String extendParam1;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_id")
+
+    @JacksonXmlProperty(localName = "source_id")
 
     private String sourceId;
 

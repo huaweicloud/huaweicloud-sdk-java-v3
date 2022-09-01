@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,15 +19,21 @@ public class ListKeysRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
+    @JacksonXmlProperty(localName = "limit")
+
     private String limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "marker")
 
+    @JacksonXmlProperty(localName = "marker")
+
     private String marker;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key_state")
+
+    @JacksonXmlProperty(localName = "key_state")
 
     private String keyState;
 
@@ -152,10 +159,14 @@ public class ListKeysRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key_spec")
 
+    @JacksonXmlProperty(localName = "key_spec")
+
     private KeySpecEnum keySpec;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sequence")
+
+    @JacksonXmlProperty(localName = "sequence")
 
     private String sequence;
 

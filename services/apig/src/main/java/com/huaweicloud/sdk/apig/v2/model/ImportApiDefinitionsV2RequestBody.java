@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.http.FormDataFilePart;
 import com.huaweicloud.sdk.core.http.FormDataPart;
 import com.huaweicloud.sdk.core.http.SdkFormDataBody;
@@ -23,10 +24,14 @@ public class ImportApiDefinitionsV2RequestBody implements SdkFormDataBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_create_group")
 
+    @JacksonXmlProperty(localName = "is_create_group")
+
     private Boolean isCreateGroup;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_id")
+
+    @JacksonXmlProperty(localName = "group_id")
 
     private String groupId;
 
@@ -110,15 +115,21 @@ public class ImportApiDefinitionsV2RequestBody implements SdkFormDataBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extend_mode")
 
+    @JacksonXmlProperty(localName = "extend_mode")
+
     private ExtendModeEnum extendMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "simple_mode")
 
+    @JacksonXmlProperty(localName = "simple_mode")
+
     private Boolean simpleMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mock_mode")
+
+    @JacksonXmlProperty(localName = "mock_mode")
 
     private Boolean mockMode;
 
@@ -202,9 +213,12 @@ public class ImportApiDefinitionsV2RequestBody implements SdkFormDataBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "api_mode")
 
+    @JacksonXmlProperty(localName = "api_mode")
+
     private ApiModeEnum apiMode;
 
     @JsonProperty(value = "file_name", access = JsonProperty.Access.WRITE_ONLY)
+    @JacksonXmlProperty(localName = "file_name")
 
     private FormDataFilePart fileName;
 

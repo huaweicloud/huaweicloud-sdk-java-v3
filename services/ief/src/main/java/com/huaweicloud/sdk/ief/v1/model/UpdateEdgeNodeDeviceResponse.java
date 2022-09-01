@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ief.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -15,20 +16,28 @@ public class UpdateEdgeNodeDeviceResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "delete_connector")
 
+    @JacksonXmlProperty(localName = "delete_connector")
+
     private Boolean deleteConnector;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deploy_connector")
+
+    @JacksonXmlProperty(localName = "deploy_connector")
 
     private Boolean deployConnector;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deployment_id")
 
+    @JacksonXmlProperty(localName = "deployment_id")
+
     private String deploymentId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_devices")
+
+    @JacksonXmlProperty(localName = "update_devices")
 
     private NodeDevice updateDevices;
 

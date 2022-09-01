@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -95,15 +96,21 @@ public class ExternalAccessesCreate {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protocol")
 
+    @JacksonXmlProperty(localName = "protocol")
+
     private ProtocolEnum protocol;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "address")
 
+    @JacksonXmlProperty(localName = "address")
+
     private String address;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "forward_port")
+
+    @JacksonXmlProperty(localName = "forward_port")
 
     private Integer forwardPort;
 

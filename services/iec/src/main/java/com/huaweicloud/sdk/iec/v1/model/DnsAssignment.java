@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.iec.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class DnsAssignment {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fqdn")
 
+    @JacksonXmlProperty(localName = "fqdn")
+
     private String fqdn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hostname")
 
+    @JacksonXmlProperty(localName = "hostname")
+
     private String hostname;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip_address")
+
+    @JacksonXmlProperty(localName = "ip_address")
 
     private String ipAddress;
 

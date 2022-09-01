@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.rds.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -18,45 +19,63 @@ public class Flavor {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vcpus")
+
+    @JacksonXmlProperty(localName = "vcpus")
 
     private String vcpus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ram")
 
+    @JacksonXmlProperty(localName = "ram")
+
     private Integer ram;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "spec_code")
+
+    @JacksonXmlProperty(localName = "spec_code")
 
     private String specCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_mode")
 
+    @JacksonXmlProperty(localName = "instance_mode")
+
     private String instanceMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "az_status")
+
+    @JacksonXmlProperty(localName = "az_status")
 
     private Map<String, String> azStatus = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "az_desc")
 
+    @JacksonXmlProperty(localName = "az_desc")
+
     private Map<String, String> azDesc = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version_name")
 
+    @JacksonXmlProperty(localName = "version_name")
+
     private List<String> versionName = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_type")
+
+    @JacksonXmlProperty(localName = "group_type")
 
     private String groupType;
 

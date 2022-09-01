@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.oms.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class BandwidthPolicyDto {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end")
 
+    @JacksonXmlProperty(localName = "end")
+
     private String end;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_bandwidth")
 
+    @JacksonXmlProperty(localName = "max_bandwidth")
+
     private Long maxBandwidth;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start")
+
+    @JacksonXmlProperty(localName = "start")
 
     private String start;
 

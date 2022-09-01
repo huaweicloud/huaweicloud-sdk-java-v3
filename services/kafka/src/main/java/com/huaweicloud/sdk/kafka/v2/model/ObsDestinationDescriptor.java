@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,10 +19,14 @@ public class ObsDestinationDescriptor {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "topics")
 
+    @JacksonXmlProperty(localName = "topics")
+
     private String topics;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "topics_regex")
+
+    @JacksonXmlProperty(localName = "topics_regex")
 
     private String topicsRegex;
 
@@ -105,6 +110,8 @@ public class ObsDestinationDescriptor {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "consumer_strategy")
 
+    @JacksonXmlProperty(localName = "consumer_strategy")
+
     private ConsumerStrategyEnum consumerStrategy;
 
     /**
@@ -181,40 +188,56 @@ public class ObsDestinationDescriptor {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "destination_file_type")
 
+    @JacksonXmlProperty(localName = "destination_file_type")
+
     private DestinationFileTypeEnum destinationFileType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "access_key")
+
+    @JacksonXmlProperty(localName = "access_key")
 
     private String accessKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "secret_key")
 
+    @JacksonXmlProperty(localName = "secret_key")
+
     private String secretKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "obs_bucket_name")
+
+    @JacksonXmlProperty(localName = "obs_bucket_name")
 
     private String obsBucketName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "obs_path")
 
+    @JacksonXmlProperty(localName = "obs_path")
+
     private String obsPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "partition_format")
+
+    @JacksonXmlProperty(localName = "partition_format")
 
     private String partitionFormat;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "record_delimiter")
 
+    @JacksonXmlProperty(localName = "record_delimiter")
+
     private String recordDelimiter;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deliver_time_interval")
+
+    @JacksonXmlProperty(localName = "deliver_time_interval")
 
     private Integer deliverTimeInterval;
 

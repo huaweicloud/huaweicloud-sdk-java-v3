@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.projectman.v4.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class NewCustomField {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "custom_field")
 
+    @JacksonXmlProperty(localName = "custom_field")
+
     private String customField;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "field_name")
 
+    @JacksonXmlProperty(localName = "field_name")
+
     private String fieldName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "value")
+
+    @JacksonXmlProperty(localName = "value")
 
     private String value;
 

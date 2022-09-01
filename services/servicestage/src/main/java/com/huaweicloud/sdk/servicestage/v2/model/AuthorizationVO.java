@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.servicestage.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,50 +14,70 @@ public class AuthorizationVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "repo_type")
+
+    @JacksonXmlProperty(localName = "repo_type")
 
     private String repoType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "repo_host")
 
+    @JacksonXmlProperty(localName = "repo_host")
+
     private String repoHost;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "repo_home")
+
+    @JacksonXmlProperty(localName = "repo_home")
 
     private String repoHome;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "repo_user")
 
+    @JacksonXmlProperty(localName = "repo_user")
+
     private String repoUser;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "avartar")
+
+    @JacksonXmlProperty(localName = "avartar")
 
     private String avartar;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "token_type")
 
+    @JacksonXmlProperty(localName = "token_type")
+
     private String tokenType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
+
+    @JacksonXmlProperty(localName = "create_time")
 
     private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
 
+    @JacksonXmlProperty(localName = "update_time")
+
     private Long updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
+
+    @JacksonXmlProperty(localName = "status")
 
     private Integer status;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.smn.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,10 +15,14 @@ public class PublishAppMessageRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "endpoint_urn")
 
+    @JacksonXmlProperty(localName = "endpoint_urn")
+
     private String endpointUrn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
+
+    @JacksonXmlProperty(localName = "body")
 
     private PublishAppMessageRequestBody body;
 

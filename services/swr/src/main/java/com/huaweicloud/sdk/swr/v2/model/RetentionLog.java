@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.swr.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,35 +14,49 @@ public class RetentionLog {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
 
+    @JacksonXmlProperty(localName = "created_at")
+
     private String createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
+
+    @JacksonXmlProperty(localName = "id")
 
     private Integer id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "namespace")
 
+    @JacksonXmlProperty(localName = "namespace")
+
     private String namespace;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "repo")
+
+    @JacksonXmlProperty(localName = "repo")
 
     private String repo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "retention_id")
 
+    @JacksonXmlProperty(localName = "retention_id")
+
     private Integer retentionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rule_type")
 
+    @JacksonXmlProperty(localName = "rule_type")
+
     private String ruleType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tag")
+
+    @JacksonXmlProperty(localName = "tag")
 
     private String tag;
 

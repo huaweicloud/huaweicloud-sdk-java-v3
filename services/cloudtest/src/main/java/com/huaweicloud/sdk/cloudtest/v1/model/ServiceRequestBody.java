@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cloudtest.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class ServiceRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_name")
 
+    @JacksonXmlProperty(localName = "service_name")
+
     private String serviceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "server_host")
+
+    @JacksonXmlProperty(localName = "server_host")
 
     private String serverHost;
 

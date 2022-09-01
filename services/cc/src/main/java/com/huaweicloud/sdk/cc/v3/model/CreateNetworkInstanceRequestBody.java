@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cc.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -13,6 +14,8 @@ public class CreateNetworkInstanceRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "network_instance")
+
+    @JacksonXmlProperty(localName = "network_instance")
 
     private CreateNetworkInstance networkInstance;
 

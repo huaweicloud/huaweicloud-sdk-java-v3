@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.servicestage.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,40 +14,56 @@ public class ExternalAccesses {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protocol")
+
+    @JacksonXmlProperty(localName = "protocol")
 
     private ExternalAccessProtocol protocol;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "address")
 
+    @JacksonXmlProperty(localName = "address")
+
     private String address;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "forward_port")
+
+    @JacksonXmlProperty(localName = "forward_port")
 
     private Integer forwardPort;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
+    @JacksonXmlProperty(localName = "type")
+
     private ExternalAccessType type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
+
+    @JacksonXmlProperty(localName = "status")
 
     private ExternalAccessStatus status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
+    @JacksonXmlProperty(localName = "create_time")
+
     private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
+
+    @JacksonXmlProperty(localName = "update_time")
 
     private Long updateTime;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.dws.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class PublicEndpoints {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "public_connect_info")
 
+    @JacksonXmlProperty(localName = "public_connect_info")
+
     private String publicConnectInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "jdbc_url")
+
+    @JacksonXmlProperty(localName = "jdbc_url")
 
     private String jdbcUrl;
 

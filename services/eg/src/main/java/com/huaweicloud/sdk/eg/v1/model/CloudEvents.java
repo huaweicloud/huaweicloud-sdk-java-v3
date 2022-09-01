@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.eg.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,45 +14,63 @@ public class CloudEvents {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source")
+
+    @JacksonXmlProperty(localName = "source")
 
     private String source;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "specversion")
 
+    @JacksonXmlProperty(localName = "specversion")
+
     private String specversion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
+
+    @JacksonXmlProperty(localName = "type")
 
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "datacontenttype")
 
+    @JacksonXmlProperty(localName = "datacontenttype")
+
     private String datacontenttype;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dataschema")
+
+    @JacksonXmlProperty(localName = "dataschema")
 
     private String dataschema;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
+    @JacksonXmlProperty(localName = "data")
+
     private Object data;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time")
 
+    @JacksonXmlProperty(localName = "time")
+
     private String time;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subject")
+
+    @JacksonXmlProperty(localName = "subject")
 
     private String subject;
 

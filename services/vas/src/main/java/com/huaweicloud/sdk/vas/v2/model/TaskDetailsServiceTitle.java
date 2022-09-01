@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.vas.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class TaskDetailsServiceTitle {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "zh")
 
+    @JacksonXmlProperty(localName = "zh")
+
     private String zh;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "en")
+
+    @JacksonXmlProperty(localName = "en")
 
     private String en;
 

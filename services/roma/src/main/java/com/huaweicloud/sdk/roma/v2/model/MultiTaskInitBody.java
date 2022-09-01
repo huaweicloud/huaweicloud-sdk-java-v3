@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.roma.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,25 +15,35 @@ public class MultiTaskInitBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ext_info")
 
+    @JacksonXmlProperty(localName = "ext_info")
+
     private MultiTaskInitBodyExtInfo extInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_datasource_id")
+
+    @JacksonXmlProperty(localName = "source_datasource_id")
 
     private String sourceDatasourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_datasource_id")
 
+    @JacksonXmlProperty(localName = "target_datasource_id")
+
     private String targetDatasourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_id")
 
+    @JacksonXmlProperty(localName = "task_id")
+
     private String taskId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auto_mapping")
+
+    @JacksonXmlProperty(localName = "auto_mapping")
 
     private Boolean autoMapping;
 

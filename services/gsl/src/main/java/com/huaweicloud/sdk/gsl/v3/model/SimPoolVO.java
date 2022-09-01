@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.gsl.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.time.OffsetDateTime;
 import java.util.Objects;
@@ -14,80 +15,112 @@ public class SimPoolVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private Long id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pool_name")
+
+    @JacksonXmlProperty(localName = "pool_name")
 
     private String poolName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "price_plan_name")
 
+    @JacksonXmlProperty(localName = "price_plan_name")
+
     private String pricePlanName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "price_plan_id")
+
+    @JacksonXmlProperty(localName = "price_plan_id")
 
     private String pricePlanId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "effective_time")
 
+    @JacksonXmlProperty(localName = "effective_time")
+
     private OffsetDateTime effectiveTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expired_time")
+
+    @JacksonXmlProperty(localName = "expired_time")
 
     private OffsetDateTime expiredTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "billing_cycle")
 
+    @JacksonXmlProperty(localName = "billing_cycle")
+
     private String billingCycle;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flow_total")
+
+    @JacksonXmlProperty(localName = "flow_total")
 
     private Double flowTotal;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flow_used")
 
+    @JacksonXmlProperty(localName = "flow_used")
+
     private Double flowUsed;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flow_left")
+
+    @JacksonXmlProperty(localName = "flow_left")
 
     private Double flowLeft;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quantity")
 
+    @JacksonXmlProperty(localName = "quantity")
+
     private Integer quantity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "modify_time")
+
+    @JacksonXmlProperty(localName = "modify_time")
 
     private OffsetDateTime modifyTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "activated_sim_quantity")
 
+    @JacksonXmlProperty(localName = "activated_sim_quantity")
+
     private Integer activatedSimQuantity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "inactive_sim_quantity")
+
+    @JacksonXmlProperty(localName = "inactive_sim_quantity")
 
     private Integer inactiveSimQuantity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "disassembled_sim_quantity")
 
+    @JacksonXmlProperty(localName = "disassembled_sim_quantity")
+
     private Integer disassembledSimQuantity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "order_ids")
+
+    @JacksonXmlProperty(localName = "order_ids")
 
     private String orderIds;
 

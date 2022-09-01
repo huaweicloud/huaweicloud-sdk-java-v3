@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.hss.v5.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,180 +14,252 @@ public class EventProcessResponseInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "process_name")
 
+    @JacksonXmlProperty(localName = "process_name")
+
     private String processName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "process_path")
+
+    @JacksonXmlProperty(localName = "process_path")
 
     private String processPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "process_pid")
 
+    @JacksonXmlProperty(localName = "process_pid")
+
     private Integer processPid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "process_uid")
+
+    @JacksonXmlProperty(localName = "process_uid")
 
     private Integer processUid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "process_username")
 
+    @JacksonXmlProperty(localName = "process_username")
+
     private String processUsername;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "process_cmdline")
+
+    @JacksonXmlProperty(localName = "process_cmdline")
 
     private String processCmdline;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "process_filename")
 
+    @JacksonXmlProperty(localName = "process_filename")
+
     private String processFilename;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "process_start_time")
+
+    @JacksonXmlProperty(localName = "process_start_time")
 
     private Long processStartTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "process_gid")
 
+    @JacksonXmlProperty(localName = "process_gid")
+
     private Integer processGid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "process_egid")
+
+    @JacksonXmlProperty(localName = "process_egid")
 
     private Integer processEgid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "process_euid")
 
+    @JacksonXmlProperty(localName = "process_euid")
+
     private Integer processEuid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parent_process_name")
+
+    @JacksonXmlProperty(localName = "parent_process_name")
 
     private String parentProcessName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parent_process_path")
 
+    @JacksonXmlProperty(localName = "parent_process_path")
+
     private String parentProcessPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parent_process_pid")
+
+    @JacksonXmlProperty(localName = "parent_process_pid")
 
     private Integer parentProcessPid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parent_process_uid")
 
+    @JacksonXmlProperty(localName = "parent_process_uid")
+
     private Integer parentProcessUid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parent_process_cmdline")
+
+    @JacksonXmlProperty(localName = "parent_process_cmdline")
 
     private String parentProcessCmdline;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parent_process_filename")
 
+    @JacksonXmlProperty(localName = "parent_process_filename")
+
     private String parentProcessFilename;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parent_process_start_time")
+
+    @JacksonXmlProperty(localName = "parent_process_start_time")
 
     private Long parentProcessStartTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parent_process_gid")
 
+    @JacksonXmlProperty(localName = "parent_process_gid")
+
     private Integer parentProcessGid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parent_process_egid")
+
+    @JacksonXmlProperty(localName = "parent_process_egid")
 
     private Integer parentProcessEgid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parent_process_euid")
 
+    @JacksonXmlProperty(localName = "parent_process_euid")
+
     private Integer parentProcessEuid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "child_process_name")
+
+    @JacksonXmlProperty(localName = "child_process_name")
 
     private String childProcessName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "child_process_path")
 
+    @JacksonXmlProperty(localName = "child_process_path")
+
     private String childProcessPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "child_process_pid")
+
+    @JacksonXmlProperty(localName = "child_process_pid")
 
     private Integer childProcessPid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "child_process_uid")
 
+    @JacksonXmlProperty(localName = "child_process_uid")
+
     private Integer childProcessUid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "child_process_cmdline")
+
+    @JacksonXmlProperty(localName = "child_process_cmdline")
 
     private String childProcessCmdline;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "child_process_filename")
 
+    @JacksonXmlProperty(localName = "child_process_filename")
+
     private String childProcessFilename;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "child_process_start_time")
+
+    @JacksonXmlProperty(localName = "child_process_start_time")
 
     private Long childProcessStartTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "child_process_gid")
 
+    @JacksonXmlProperty(localName = "child_process_gid")
+
     private Integer childProcessGid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "child_process_egid")
+
+    @JacksonXmlProperty(localName = "child_process_egid")
 
     private Integer childProcessEgid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "child_process_euid")
 
+    @JacksonXmlProperty(localName = "child_process_euid")
+
     private Integer childProcessEuid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "virt_cmd")
+
+    @JacksonXmlProperty(localName = "virt_cmd")
 
     private String virtCmd;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "virt_process_name")
 
+    @JacksonXmlProperty(localName = "virt_process_name")
+
     private String virtProcessName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "escape_mode")
+
+    @JacksonXmlProperty(localName = "escape_mode")
 
     private String escapeMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "escape_cmd")
 
+    @JacksonXmlProperty(localName = "escape_cmd")
+
     private String escapeCmd;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "process_hash")
+
+    @JacksonXmlProperty(localName = "process_hash")
 
     private String processHash;
 

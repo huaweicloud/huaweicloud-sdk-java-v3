@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.iotda.v5.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,25 +14,35 @@ public class AsyncDeviceCommandRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_id")
 
+    @JacksonXmlProperty(localName = "service_id")
+
     private String serviceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "command_name")
+
+    @JacksonXmlProperty(localName = "command_name")
 
     private String commandName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "paras")
 
+    @JacksonXmlProperty(localName = "paras")
+
     private Object paras;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expire_time")
 
+    @JacksonXmlProperty(localName = "expire_time")
+
     private Integer expireTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "send_strategy")
+
+    @JacksonXmlProperty(localName = "send_strategy")
 
     private String sendStrategy;
 

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -17,6 +18,8 @@ public class InvitationDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "invited_user")
+
+    @JacksonXmlProperty(localName = "invited_user")
 
     private String invitedUser;
 
@@ -112,10 +115,14 @@ public class InvitationDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "invited_bcs_id")
+
+    @JacksonXmlProperty(localName = "invited_bcs_id")
 
     private String invitedBcsId;
 

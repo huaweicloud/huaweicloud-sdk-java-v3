@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.vcm.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class OutputDis {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stream_name")
 
+    @JacksonXmlProperty(localName = "stream_name")
+
     private String streamName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_category")
+
+    @JacksonXmlProperty(localName = "data_category")
 
     private String dataCategory;
 

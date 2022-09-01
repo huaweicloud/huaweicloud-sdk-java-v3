@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.elb.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,100 +17,140 @@ public class Member {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
 
+    @JacksonXmlProperty(localName = "project_id")
+
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pool_id")
+
+    @JacksonXmlProperty(localName = "pool_id")
 
     private String poolId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "admin_state_up")
 
+    @JacksonXmlProperty(localName = "admin_state_up")
+
     private Boolean adminStateUp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subnet_cidr_id")
+
+    @JacksonXmlProperty(localName = "subnet_cidr_id")
 
     private String subnetCidrId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protocol_port")
 
+    @JacksonXmlProperty(localName = "protocol_port")
+
     private Integer protocolPort;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "weight")
+
+    @JacksonXmlProperty(localName = "weight")
 
     private Integer weight;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "address")
 
+    @JacksonXmlProperty(localName = "address")
+
     private String address;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip_version")
+
+    @JacksonXmlProperty(localName = "ip_version")
 
     private String ipVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "device_owner")
 
+    @JacksonXmlProperty(localName = "device_owner")
+
     private String deviceOwner;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "device_id")
+
+    @JacksonXmlProperty(localName = "device_id")
 
     private String deviceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operating_status")
 
+    @JacksonXmlProperty(localName = "operating_status")
+
     private String operatingStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
+
+    @JacksonXmlProperty(localName = "status")
 
     private List<MemberStatus> status = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "loadbalancer_id")
 
+    @JacksonXmlProperty(localName = "loadbalancer_id")
+
     private String loadbalancerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "loadbalancers")
+
+    @JacksonXmlProperty(localName = "loadbalancers")
 
     private List<ResourceID> loadbalancers = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
 
+    @JacksonXmlProperty(localName = "created_at")
+
     private String createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_at")
+
+    @JacksonXmlProperty(localName = "updated_at")
 
     private String updatedAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "member_type")
 
+    @JacksonXmlProperty(localName = "member_type")
+
     private String memberType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_id")
+
+    @JacksonXmlProperty(localName = "instance_id")
 
     private String instanceId;
 

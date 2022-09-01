@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,15 +19,21 @@ public class ListDependenciesResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "owner")
 
+    @JacksonXmlProperty(localName = "owner")
+
     private String owner;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "link")
+
+    @JacksonXmlProperty(localName = "link")
 
     private String link;
 
@@ -194,42 +201,44 @@ public class ListDependenciesResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "runtime")
 
+    @JacksonXmlProperty(localName = "runtime")
+
     private RuntimeEnum runtime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "etag")
+
+    @JacksonXmlProperty(localName = "etag")
 
     private String etag;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
 
+    @JacksonXmlProperty(localName = "size")
+
     private Long size;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_name")
 
+    @JacksonXmlProperty(localName = "file_name")
+
     private String fileName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
+    @JacksonXmlProperty(localName = "description")
+
     private String description;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "version")
-
-    private Long version;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "last_modified")
-
-    private Long lastModified;
 
     public ListDependenciesResult withId(String id) {
         this.id = id;
@@ -384,40 +393,6 @@ public class ListDependenciesResult {
         this.description = description;
     }
 
-    public ListDependenciesResult withVersion(Long version) {
-        this.version = version;
-        return this;
-    }
-
-    /**
-     * 依赖包版本号
-     * @return version
-     */
-    public Long getVersion() {
-        return version;
-    }
-
-    public void setVersion(Long version) {
-        this.version = version;
-    }
-
-    public ListDependenciesResult withLastModified(Long lastModified) {
-        this.lastModified = lastModified;
-        return this;
-    }
-
-    /**
-     * 依赖包更新时间
-     * @return lastModified
-     */
-    public Long getLastModified() {
-        return lastModified;
-    }
-
-    public void setLastModified(Long lastModified) {
-        this.lastModified = lastModified;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -435,14 +410,12 @@ public class ListDependenciesResult {
             && Objects.equals(this.size, listDependenciesResult.size)
             && Objects.equals(this.name, listDependenciesResult.name)
             && Objects.equals(this.fileName, listDependenciesResult.fileName)
-            && Objects.equals(this.description, listDependenciesResult.description)
-            && Objects.equals(this.version, listDependenciesResult.version)
-            && Objects.equals(this.lastModified, listDependenciesResult.lastModified);
+            && Objects.equals(this.description, listDependenciesResult.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, owner, link, runtime, etag, size, name, fileName, description, version, lastModified);
+        return Objects.hash(id, owner, link, runtime, etag, size, name, fileName, description);
     }
 
     @Override
@@ -458,8 +431,6 @@ public class ListDependenciesResult {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    fileName: ").append(toIndentedString(fileName)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
-        sb.append("    version: ").append(toIndentedString(version)).append("\n");
-        sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
         sb.append("}");
         return sb.toString();
     }

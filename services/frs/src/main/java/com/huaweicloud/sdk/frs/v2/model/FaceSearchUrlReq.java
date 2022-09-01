@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.frs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,30 +18,42 @@ public class FaceSearchUrlReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "filter")
 
+    @JacksonXmlProperty(localName = "filter")
+
     private String filter;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "top_n")
+
+    @JacksonXmlProperty(localName = "top_n")
 
     private Integer topN;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image_url")
 
+    @JacksonXmlProperty(localName = "image_url")
+
     private String imageUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "return_fields")
+
+    @JacksonXmlProperty(localName = "return_fields")
 
     private List<String> returnFields = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "threshold")
 
+    @JacksonXmlProperty(localName = "threshold")
+
     private Double threshold;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sort")
+
+    @JacksonXmlProperty(localName = "sort")
 
     private List<Map<String, String>> sort = null;
 

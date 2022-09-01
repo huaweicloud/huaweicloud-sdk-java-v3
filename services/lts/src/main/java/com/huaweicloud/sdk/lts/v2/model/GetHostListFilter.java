@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,10 +22,14 @@ public class GetHostListFilter {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_name_list")
 
+    @JacksonXmlProperty(localName = "host_name_list")
+
     private List<String> hostNameList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_ip_list")
+
+    @JacksonXmlProperty(localName = "host_ip_list")
 
     private List<String> hostIpList = null;
 
@@ -180,10 +185,14 @@ public class GetHostListFilter {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_status")
 
+    @JacksonXmlProperty(localName = "host_status")
+
     private HostStatusEnum hostStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_version")
+
+    @JacksonXmlProperty(localName = "host_version")
 
     private String hostVersion;
 

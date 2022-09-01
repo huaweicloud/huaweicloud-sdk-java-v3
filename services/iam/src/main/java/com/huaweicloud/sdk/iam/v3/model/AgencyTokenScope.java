@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.iam.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,10 +15,14 @@ public class AgencyTokenScope {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain")
 
+    @JacksonXmlProperty(localName = "domain")
+
     private AgencyTokenScopeDomain domain;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project")
+
+    @JacksonXmlProperty(localName = "project")
 
     private AgencyTokenScopeProject project;
 

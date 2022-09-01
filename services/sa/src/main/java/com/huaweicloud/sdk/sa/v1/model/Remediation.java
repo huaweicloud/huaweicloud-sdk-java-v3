@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.sa.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class Remediation {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "recommendation")
 
+    @JacksonXmlProperty(localName = "recommendation")
+
     private String recommendation;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "url")
+
+    @JacksonXmlProperty(localName = "url")
 
     private String url;
 

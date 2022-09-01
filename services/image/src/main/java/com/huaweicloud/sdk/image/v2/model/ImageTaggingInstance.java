@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.image.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class ImageTaggingInstance {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bounding_box")
 
+    @JacksonXmlProperty(localName = "bounding_box")
+
     private Object boundingBox;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confidence")
+
+    @JacksonXmlProperty(localName = "confidence")
 
     private String confidence;
 

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,40 +19,56 @@ public class SqlRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_time_range_relative")
 
+    @JacksonXmlProperty(localName = "is_time_range_relative")
+
     private Boolean isTimeRangeRelative;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_stream_id")
+
+    @JacksonXmlProperty(localName = "log_stream_id")
 
     private String logStreamId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_stream_name")
 
+    @JacksonXmlProperty(localName = "log_stream_name")
+
     private String logStreamName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_group_id")
+
+    @JacksonXmlProperty(localName = "log_group_id")
 
     private String logGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_group_name")
 
+    @JacksonXmlProperty(localName = "log_group_name")
+
     private String logGroupName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sql")
+
+    @JacksonXmlProperty(localName = "sql")
 
     private String sql;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sql_request_title")
 
+    @JacksonXmlProperty(localName = "sql_request_title")
+
     private String sqlRequestTitle;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "search_time_range")
+
+    @JacksonXmlProperty(localName = "search_time_range")
 
     private Integer searchTimeRange;
 
@@ -134,6 +151,8 @@ public class SqlRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "search_time_range_unit")
+
+    @JacksonXmlProperty(localName = "search_time_range_unit")
 
     private SearchTimeRangeUnitEnum searchTimeRangeUnit;
 

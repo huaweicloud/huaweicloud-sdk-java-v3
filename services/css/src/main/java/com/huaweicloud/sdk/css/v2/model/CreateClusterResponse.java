@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.css.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -15,7 +16,16 @@ public class CreateClusterResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cluster")
 
+    @JacksonXmlProperty(localName = "cluster")
+
     private CreateClusterResp cluster;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ordeId")
+
+    @JacksonXmlProperty(localName = "ordeId")
+
+    private String ordeId;
 
     public CreateClusterResponse withCluster(CreateClusterResp cluster) {
         this.cluster = cluster;
@@ -43,6 +53,23 @@ public class CreateClusterResponse extends SdkResponse {
         this.cluster = cluster;
     }
 
+    public CreateClusterResponse withOrdeId(String ordeId) {
+        this.ordeId = ordeId;
+        return this;
+    }
+
+    /**
+     * 订单号。只有包周期集群拥有该参数。
+     * @return ordeId
+     */
+    public String getOrdeId() {
+        return ordeId;
+    }
+
+    public void setOrdeId(String ordeId) {
+        this.ordeId = ordeId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -52,12 +79,13 @@ public class CreateClusterResponse extends SdkResponse {
             return false;
         }
         CreateClusterResponse createClusterResponse = (CreateClusterResponse) o;
-        return Objects.equals(this.cluster, createClusterResponse.cluster);
+        return Objects.equals(this.cluster, createClusterResponse.cluster)
+            && Objects.equals(this.ordeId, createClusterResponse.ordeId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(cluster);
+        return Objects.hash(cluster, ordeId);
     }
 
     @Override
@@ -65,6 +93,7 @@ public class CreateClusterResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateClusterResponse {\n");
         sb.append("    cluster: ").append(toIndentedString(cluster)).append("\n");
+        sb.append("    ordeId: ").append(toIndentedString(ordeId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

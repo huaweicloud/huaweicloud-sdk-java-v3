@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ocr.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,60 +17,84 @@ public class BusinessCardResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private List<String> name = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "title")
+
+    @JacksonXmlProperty(localName = "title")
 
     private List<String> title = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "company")
 
+    @JacksonXmlProperty(localName = "company")
+
     private List<String> company = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "department")
+
+    @JacksonXmlProperty(localName = "department")
 
     private List<String> department = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "phone")
 
+    @JacksonXmlProperty(localName = "phone")
+
     private List<String> phone = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "address")
+
+    @JacksonXmlProperty(localName = "address")
 
     private List<String> address = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "email")
 
+    @JacksonXmlProperty(localName = "email")
+
     private List<String> email = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fax")
+
+    @JacksonXmlProperty(localName = "fax")
 
     private List<String> fax = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "postcode")
 
+    @JacksonXmlProperty(localName = "postcode")
+
     private List<String> postcode = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "website")
+
+    @JacksonXmlProperty(localName = "website")
 
     private List<String> website = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extra_info_list")
 
+    @JacksonXmlProperty(localName = "extra_info_list")
+
     private List<ExtraInfoList> extraInfoList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "adjusted_image")
+
+    @JacksonXmlProperty(localName = "adjusted_image")
 
     private String adjustedImage;
 

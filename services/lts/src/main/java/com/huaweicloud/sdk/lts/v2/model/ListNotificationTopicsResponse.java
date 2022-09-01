@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.lts.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -17,15 +18,21 @@ public class ListNotificationTopicsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "request_id")
 
+    @JacksonXmlProperty(localName = "request_id")
+
     private String requestId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "topic_count")
 
+    @JacksonXmlProperty(localName = "topic_count")
+
     private Integer topicCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "topics")
+
+    @JacksonXmlProperty(localName = "topics")
 
     private List<Topics> topics = null;
 

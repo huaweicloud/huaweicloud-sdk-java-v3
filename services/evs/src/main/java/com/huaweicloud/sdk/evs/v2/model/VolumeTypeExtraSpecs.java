@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.evs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,25 +14,35 @@ public class VolumeTypeExtraSpecs {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "RESKEY:availability_zones")
 
+    @JacksonXmlProperty(localName = "RESKEY:availability_zones")
+
     private String reSKEYAvailabilityZones;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "availability-zone")
+
+    @JacksonXmlProperty(localName = "availability-zone")
 
     private String availabilityZone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os-vendor-extended:sold_out_availability_zones")
 
+    @JacksonXmlProperty(localName = "os-vendor-extended:sold_out_availability_zones")
+
     private String osVendorExtendedSoldOutAvailabilityZones;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volume_backend_name")
 
+    @JacksonXmlProperty(localName = "volume_backend_name")
+
     private String volumeBackendName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "HW:availability_zone")
+
+    @JacksonXmlProperty(localName = "HW:availability_zone")
 
     private String hwAvailabilityZone;
 

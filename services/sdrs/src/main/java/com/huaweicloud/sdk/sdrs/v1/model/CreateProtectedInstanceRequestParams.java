@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,45 +22,63 @@ public class CreateProtectedInstanceRequestParams {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "server_group_id")
 
+    @JacksonXmlProperty(localName = "server_group_id")
+
     private String serverGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "server_id")
+
+    @JacksonXmlProperty(localName = "server_id")
 
     private String serverId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
+
+    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cluster_id")
 
+    @JacksonXmlProperty(localName = "cluster_id")
+
     private String clusterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "primary_subnet_id")
+
+    @JacksonXmlProperty(localName = "primary_subnet_id")
 
     private String primarySubnetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "primary_ip_address")
 
+    @JacksonXmlProperty(localName = "primary_ip_address")
+
     private String primaryIpAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
+    @JacksonXmlProperty(localName = "tags")
+
     private List<ResourceTag> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flavorRef")
+
+    @JacksonXmlProperty(localName = "flavorRef")
 
     private String flavorRef;
 
@@ -143,10 +162,14 @@ public class CreateProtectedInstanceRequestParams {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tenancy")
 
+    @JacksonXmlProperty(localName = "tenancy")
+
     private TenancyEnum tenancy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dedicated_host_id")
+
+    @JacksonXmlProperty(localName = "dedicated_host_id")
 
     private String dedicatedHostId;
 

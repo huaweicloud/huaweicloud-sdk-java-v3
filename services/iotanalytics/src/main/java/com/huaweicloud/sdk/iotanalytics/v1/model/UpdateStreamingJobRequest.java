@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.iotanalytics.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,15 +17,21 @@ public class UpdateStreamingJobRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "check")
 
+    @JacksonXmlProperty(localName = "check")
+
     private Boolean check;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_id")
 
+    @JacksonXmlProperty(localName = "job_id")
+
     private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
+
+    @JacksonXmlProperty(localName = "body")
 
     private Map<String, Object> body = null;
 

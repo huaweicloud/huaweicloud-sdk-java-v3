@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.iotda.v5.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,15 +15,21 @@ public class AddActionReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rule_id")
 
+    @JacksonXmlProperty(localName = "rule_id")
+
     private String ruleId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "channel")
 
+    @JacksonXmlProperty(localName = "channel")
+
     private String channel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "channel_detail")
+
+    @JacksonXmlProperty(localName = "channel_detail")
 
     private ChannelDetail channelDetail;
 

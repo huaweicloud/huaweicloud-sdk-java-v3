@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,40 +19,56 @@ public class PostMigProjectBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
+
+    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "isdefault")
 
+    @JacksonXmlProperty(localName = "isdefault")
+
     private Boolean isdefault;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region")
+
+    @JacksonXmlProperty(localName = "region")
 
     private String region;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_target_server")
 
+    @JacksonXmlProperty(localName = "start_target_server")
+
     private Boolean startTargetServer;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "speed_limit")
+
+    @JacksonXmlProperty(localName = "speed_limit")
 
     private Integer speedLimit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "use_public_ip")
 
+    @JacksonXmlProperty(localName = "use_public_ip")
+
     private Boolean usePublicIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "exist_server")
+
+    @JacksonXmlProperty(localName = "exist_server")
 
     private Boolean existServer;
 
@@ -135,15 +152,21 @@ public class PostMigProjectBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
+    @JacksonXmlProperty(localName = "type")
+
     private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project")
 
+    @JacksonXmlProperty(localName = "enterprise_project")
+
     private String enterpriseProject;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "syncing")
+
+    @JacksonXmlProperty(localName = "syncing")
 
     private Boolean syncing;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,10 +17,14 @@ public class UploadGroupPackageReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "paths")
 
+    @JacksonXmlProperty(localName = "paths")
+
     private List<String> paths = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group")
+
+    @JacksonXmlProperty(localName = "group")
 
     private String group;
 

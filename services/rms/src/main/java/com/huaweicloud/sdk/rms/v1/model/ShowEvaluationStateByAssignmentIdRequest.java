@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.rms.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -12,6 +13,8 @@ public class ShowEvaluationStateByAssignmentIdRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_assignment_id")
+
+    @JacksonXmlProperty(localName = "policy_assignment_id")
 
     private String policyAssignmentId;
 

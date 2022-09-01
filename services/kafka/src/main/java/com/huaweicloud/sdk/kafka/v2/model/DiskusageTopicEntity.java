@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.kafka.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,20 +14,28 @@ public class DiskusageTopicEntity {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
 
+    @JacksonXmlProperty(localName = "size")
+
     private String size;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "topic_name")
+
+    @JacksonXmlProperty(localName = "topic_name")
 
     private String topicName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "topic_partition")
 
+    @JacksonXmlProperty(localName = "topic_partition")
+
     private String topicPartition;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "percentage")
+
+    @JacksonXmlProperty(localName = "percentage")
 
     private Double percentage;
 

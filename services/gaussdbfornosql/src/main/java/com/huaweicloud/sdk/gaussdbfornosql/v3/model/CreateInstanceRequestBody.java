@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.gaussdbfornosql.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,80 +17,112 @@ public class CreateInstanceRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "datastore")
+
+    @JacksonXmlProperty(localName = "datastore")
 
     private DatastoreOption datastore;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region")
 
+    @JacksonXmlProperty(localName = "region")
+
     private String region;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "availability_zone")
+
+    @JacksonXmlProperty(localName = "availability_zone")
 
     private String availabilityZone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_id")
 
+    @JacksonXmlProperty(localName = "vpc_id")
+
     private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subnet_id")
+
+    @JacksonXmlProperty(localName = "subnet_id")
 
     private String subnetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_group_id")
 
+    @JacksonXmlProperty(localName = "security_group_id")
+
     private String securityGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "password")
+
+    @JacksonXmlProperty(localName = "password")
 
     private String password;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mode")
 
+    @JacksonXmlProperty(localName = "mode")
+
     private String mode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flavor")
+
+    @JacksonXmlProperty(localName = "flavor")
 
     private List<CreateInstanceFlavorOption> flavor = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "configuration_id")
 
+    @JacksonXmlProperty(localName = "configuration_id")
+
     private String configurationId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "backup_strategy")
+
+    @JacksonXmlProperty(localName = "backup_strategy")
 
     private BackupStrategyOption backupStrategy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
+    @JacksonXmlProperty(localName = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dedicated_resource_id")
+
+    @JacksonXmlProperty(localName = "dedicated_resource_id")
 
     private String dedicatedResourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ssl_option")
 
+    @JacksonXmlProperty(localName = "ssl_option")
+
     private String sslOption;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "charge_info")
+
+    @JacksonXmlProperty(localName = "charge_info")
 
     private ChargeInfoOption chargeInfo;
 

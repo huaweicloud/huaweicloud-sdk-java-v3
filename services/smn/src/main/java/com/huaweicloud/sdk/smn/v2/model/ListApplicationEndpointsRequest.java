@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.smn.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,30 +14,42 @@ public class ListApplicationEndpointsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "application_urn")
 
+    @JacksonXmlProperty(localName = "application_urn")
+
     private String applicationUrn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
+
+    @JacksonXmlProperty(localName = "offset")
 
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
+    @JacksonXmlProperty(localName = "limit")
+
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enabled")
+
+    @JacksonXmlProperty(localName = "enabled")
 
     private String enabled;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "token")
 
+    @JacksonXmlProperty(localName = "token")
+
     private String token;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_data")
+
+    @JacksonXmlProperty(localName = "user_data")
 
     private String userData;
 

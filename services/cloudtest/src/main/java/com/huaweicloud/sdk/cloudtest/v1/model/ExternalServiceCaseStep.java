@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cloudtest.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class ExternalServiceCaseStep {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expect_result")
 
+    @JacksonXmlProperty(localName = "expect_result")
+
     private String expectResult;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "test_step")
+
+    @JacksonXmlProperty(localName = "test_step")
 
     private String testStep;
 

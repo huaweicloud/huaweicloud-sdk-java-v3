@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,50 +19,70 @@ public class TreeNode {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parent")
+
+    @JacksonXmlProperty(localName = "parent")
 
     private String parent;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "real_id")
 
+    @JacksonXmlProperty(localName = "real_id")
+
     private Long realId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "display_name")
 
+    @JacksonXmlProperty(localName = "display_name")
+
     private String displayName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_name")
+
+    @JacksonXmlProperty(localName = "app_name")
 
     private String appName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_id")
 
+    @JacksonXmlProperty(localName = "app_id")
+
     private Long appId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_admin")
+
+    @JacksonXmlProperty(localName = "is_admin")
 
     private Boolean isAdmin;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_root")
 
+    @JacksonXmlProperty(localName = "is_root")
+
     private Boolean isRoot;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "business_id")
+
+    @JacksonXmlProperty(localName = "business_id")
 
     private Long businessId;
 
@@ -157,15 +178,21 @@ public class TreeNode {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "node_type")
 
+    @JacksonXmlProperty(localName = "node_type")
+
     private NodeTypeEnum nodeType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region")
 
+    @JacksonXmlProperty(localName = "region")
+
     private String region;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_default")
+
+    @JacksonXmlProperty(localName = "is_default")
 
     private Boolean isDefault;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.functiongraph.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,25 +15,35 @@ public class StartWorkflowExecutionRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "workflow_id")
 
+    @JacksonXmlProperty(localName = "workflow_id")
+
     private String workflowId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Create-Time")
+
+    @JacksonXmlProperty(localName = "X-Create-Time")
 
     private String xCreateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-WorkflowRun-ID")
 
+    @JacksonXmlProperty(localName = "X-WorkflowRun-ID")
+
     private String xWorkflowRunID;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-WorkflowRun-MergeFnParameters")
 
+    @JacksonXmlProperty(localName = "X-WorkflowRun-MergeFnParameters")
+
     private String xWorkflowRunMergeFnParameters;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
+
+    @JacksonXmlProperty(localName = "body")
 
     private FlowExecuteBody body;
 

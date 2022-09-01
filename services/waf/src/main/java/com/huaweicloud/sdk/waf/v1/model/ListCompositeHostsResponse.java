@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.waf.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -17,20 +18,28 @@ public class ListCompositeHostsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total")
 
+    @JacksonXmlProperty(localName = "total")
+
     private Integer total;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cloud_total")
+
+    @JacksonXmlProperty(localName = "cloud_total")
 
     private Integer cloudTotal;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "premium_total")
 
+    @JacksonXmlProperty(localName = "premium_total")
+
     private Integer premiumTotal;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "items")
+
+    @JacksonXmlProperty(localName = "items")
 
     private List<CompositeHostResponse> items = null;
 

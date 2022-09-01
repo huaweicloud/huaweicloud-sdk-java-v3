@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.sms.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,20 +17,28 @@ public class PutSourceServerBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "migprojectid")
+
+    @JacksonXmlProperty(localName = "migprojectid")
 
     private String migprojectid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "disks")
 
+    @JacksonXmlProperty(localName = "disks")
+
     private List<PutDisk> disks = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volume_groups")
+
+    @JacksonXmlProperty(localName = "volume_groups")
 
     private List<PutVolumeGroups> volumeGroups = null;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class ShowQueueDetailRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "queue_type")
 
+    @JacksonXmlProperty(localName = "queue_type")
+
     private String queueType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "queue_name")
+
+    @JacksonXmlProperty(localName = "queue_name")
 
     private String queueName;
 

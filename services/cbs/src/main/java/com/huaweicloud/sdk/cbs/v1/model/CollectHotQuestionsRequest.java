@@ -8,6 +8,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -21,6 +23,7 @@ public class CollectHotQuestionsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="qabot_id")
     
+    @JacksonXmlProperty(localName = "qabot_id")
     
     private String qabotId;
 
@@ -28,6 +31,7 @@ public class CollectHotQuestionsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="start_time")
     
+    @JacksonXmlProperty(localName = "start_time")
     
     private String startTime;
 
@@ -35,6 +39,7 @@ public class CollectHotQuestionsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="end_time")
     
+    @JacksonXmlProperty(localName = "end_time")
     
     private String endTime;
 
@@ -42,6 +47,7 @@ public class CollectHotQuestionsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="top")
     
+    @JacksonXmlProperty(localName = "top")
     
     private Integer top;
 
@@ -49,6 +55,7 @@ public class CollectHotQuestionsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="domain")
     
+    @JacksonXmlProperty(localName = "domain")
     
     private String domain;
 
@@ -56,6 +63,7 @@ public class CollectHotQuestionsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="domain_id")
     
+    @JacksonXmlProperty(localName = "domain_id")
     
     private String domainId;
 
@@ -63,6 +71,7 @@ public class CollectHotQuestionsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="exclude")
     
+    @JacksonXmlProperty(localName = "exclude")
     
     private Boolean exclude;
 

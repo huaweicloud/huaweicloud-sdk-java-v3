@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.bcs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,35 +17,49 @@ public class SubDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "substep_name")
 
+    @JacksonXmlProperty(localName = "substep_name")
+
     private String substepName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "detail")
+
+    @JacksonXmlProperty(localName = "detail")
 
     private String detail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "message")
+
+    @JacksonXmlProperty(localName = "message")
 
     private List<String> message = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
+    @JacksonXmlProperty(localName = "start_time")
+
     private Long startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time")
 
+    @JacksonXmlProperty(localName = "end_time")
+
     private Long endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "serial_num")
+
+    @JacksonXmlProperty(localName = "serial_num")
 
     private Long serialNum;
 

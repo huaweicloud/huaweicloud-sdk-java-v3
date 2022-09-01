@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.oms.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,45 +17,63 @@ public class SrcNodeReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cloud_type")
 
+    @JacksonXmlProperty(localName = "cloud_type")
+
     private String cloudType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region")
+
+    @JacksonXmlProperty(localName = "region")
 
     private String region;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ak")
 
+    @JacksonXmlProperty(localName = "ak")
+
     private String ak;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sk")
+
+    @JacksonXmlProperty(localName = "sk")
 
     private String sk;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_token")
 
+    @JacksonXmlProperty(localName = "security_token")
+
     private String securityToken;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_id")
+
+    @JacksonXmlProperty(localName = "app_id")
 
     private String appId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bucket")
 
+    @JacksonXmlProperty(localName = "bucket")
+
     private String bucket;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "object_key")
 
+    @JacksonXmlProperty(localName = "object_key")
+
     private List<String> objectKey = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "list_file")
+
+    @JacksonXmlProperty(localName = "list_file")
 
     private ListFile listFile;
 

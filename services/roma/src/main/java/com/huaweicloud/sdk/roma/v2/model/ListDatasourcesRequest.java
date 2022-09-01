@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,15 +19,21 @@ public class ListDatasourcesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_id")
 
+    @JacksonXmlProperty(localName = "instance_id")
+
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
+    @JacksonXmlProperty(localName = "limit")
+
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
+
+    @JacksonXmlProperty(localName = "offset")
 
     private Integer offset;
 
@@ -308,10 +315,14 @@ public class ListDatasourcesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "datasource_type")
 
+    @JacksonXmlProperty(localName = "datasource_type")
+
     private DatasourceTypeEnum datasourceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sort_field")
+
+    @JacksonXmlProperty(localName = "sort_field")
 
     private String sortField;
 
@@ -395,20 +406,28 @@ public class ListDatasourcesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sort_type")
 
+    @JacksonXmlProperty(localName = "sort_type")
+
     private SortTypeEnum sortType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_id")
 
+    @JacksonXmlProperty(localName = "app_id")
+
     private String appId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "custom_plugin_id")
+
+    @JacksonXmlProperty(localName = "custom_plugin_id")
 
     private String customPluginId;
 

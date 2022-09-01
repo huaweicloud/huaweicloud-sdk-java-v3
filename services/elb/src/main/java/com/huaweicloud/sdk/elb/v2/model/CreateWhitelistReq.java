@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.elb.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,20 +14,28 @@ public class CreateWhitelistReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tenant_id")
 
+    @JacksonXmlProperty(localName = "tenant_id")
+
     private String tenantId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "listener_id")
+
+    @JacksonXmlProperty(localName = "listener_id")
 
     private String listenerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_whitelist")
 
+    @JacksonXmlProperty(localName = "enable_whitelist")
+
     private Boolean enableWhitelist;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "whitelist")
+
+    @JacksonXmlProperty(localName = "whitelist")
 
     private String whitelist;
 

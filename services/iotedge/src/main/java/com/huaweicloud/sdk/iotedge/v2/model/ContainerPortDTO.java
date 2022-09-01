@@ -8,6 +8,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -21,6 +23,7 @@ public class ContainerPortDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="container_port")
     
+    @JacksonXmlProperty(localName = "container_port")
     
     private Integer containerPort;
 
@@ -28,6 +31,7 @@ public class ContainerPortDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="host_port")
     
+    @JacksonXmlProperty(localName = "host_port")
     
     private Integer hostPort;
 
@@ -35,6 +39,7 @@ public class ContainerPortDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="host_ip")
     
+    @JacksonXmlProperty(localName = "host_ip")
     
     private String hostIp;
 

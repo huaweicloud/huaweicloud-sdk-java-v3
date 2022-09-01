@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.elb.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,90 +14,126 @@ public class ListListenersRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
+    @JacksonXmlProperty(localName = "limit")
+
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "marker")
+
+    @JacksonXmlProperty(localName = "marker")
 
     private String marker;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page_reverse")
 
+    @JacksonXmlProperty(localName = "page_reverse")
+
     private Boolean pageReverse;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
+
+    @JacksonXmlProperty(localName = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
+
+    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "loadbalancer_id")
 
+    @JacksonXmlProperty(localName = "loadbalancer_id")
+
     private String loadbalancerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "connection_limit")
+
+    @JacksonXmlProperty(localName = "connection_limit")
 
     private Integer connectionLimit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "admin_state_up")
 
+    @JacksonXmlProperty(localName = "admin_state_up")
+
     private Boolean adminStateUp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "default_pool_id")
+
+    @JacksonXmlProperty(localName = "default_pool_id")
 
     private String defaultPoolId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "default_tls_container_ref")
 
+    @JacksonXmlProperty(localName = "default_tls_container_ref")
+
     private String defaultTlsContainerRef;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "client_ca_tls_container_ref")
+
+    @JacksonXmlProperty(localName = "client_ca_tls_container_ref")
 
     private String clientCaTlsContainerRef;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protocol")
 
+    @JacksonXmlProperty(localName = "protocol")
+
     private String protocol;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protocol_port")
+
+    @JacksonXmlProperty(localName = "protocol_port")
 
     private Integer protocolPort;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tls_ciphers_policy")
 
+    @JacksonXmlProperty(localName = "tls_ciphers_policy")
+
     private String tlsCiphersPolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tls_container_id")
+
+    @JacksonXmlProperty(localName = "tls_container_id")
 
     private String tlsContainerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "http2_enable")
 
+    @JacksonXmlProperty(localName = "http2_enable")
+
     private Boolean http2Enable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
+
+    @JacksonXmlProperty(localName = "enterprise_project_id")
 
     private String enterpriseProjectId;
 

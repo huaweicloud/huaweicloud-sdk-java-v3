@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -17,40 +18,56 @@ public class UploadResourcesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_name")
 
+    @JacksonXmlProperty(localName = "group_name")
+
     private String groupName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
+
+    @JacksonXmlProperty(localName = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resources")
 
+    @JacksonXmlProperty(localName = "resources")
+
     private List<String> resources = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
+
+    @JacksonXmlProperty(localName = "create_time")
 
     private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
 
+    @JacksonXmlProperty(localName = "update_time")
+
     private Long updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_async")
+
+    @JacksonXmlProperty(localName = "is_async")
 
     private Boolean isAsync;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "owner")
 
+    @JacksonXmlProperty(localName = "owner")
+
     private String owner;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "details")
+
+    @JacksonXmlProperty(localName = "details")
 
     private List<UploadPackageGroupDetailsResp> details = null;
 

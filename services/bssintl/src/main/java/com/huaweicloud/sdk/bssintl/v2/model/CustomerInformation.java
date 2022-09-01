@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.bssintl.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,75 +17,105 @@ public class CustomerInformation {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "customer")
 
+    @JacksonXmlProperty(localName = "customer")
+
     private String customer;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "account_name")
+
+    @JacksonXmlProperty(localName = "account_name")
 
     private String accountName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "customer_id")
 
+    @JacksonXmlProperty(localName = "customer_id")
+
     private String customerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "associated_on")
+
+    @JacksonXmlProperty(localName = "associated_on")
 
     private String associatedOn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "association_type")
 
+    @JacksonXmlProperty(localName = "association_type")
+
     private String associationType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "label")
+
+    @JacksonXmlProperty(localName = "label")
 
     private String label;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "telephone")
 
+    @JacksonXmlProperty(localName = "telephone")
+
     private String telephone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "verified_status")
+
+    @JacksonXmlProperty(localName = "verified_status")
 
     private String verifiedStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "country_code")
 
+    @JacksonXmlProperty(localName = "country_code")
+
     private String countryCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "customer_type")
+
+    @JacksonXmlProperty(localName = "customer_type")
 
     private Integer customerType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_frozen")
 
+    @JacksonXmlProperty(localName = "is_frozen")
+
     private Integer isFrozen;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "account_managers")
+
+    @JacksonXmlProperty(localName = "account_managers")
 
     private List<AccountManager> accountManagers = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "xaccount_id")
 
+    @JacksonXmlProperty(localName = "xaccount_id")
+
     private String xaccountId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "xaccount_type")
 
+    @JacksonXmlProperty(localName = "xaccount_type")
+
     private String xaccountType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "customer_level")
+
+    @JacksonXmlProperty(localName = "customer_level")
 
     private String customerLevel;
 

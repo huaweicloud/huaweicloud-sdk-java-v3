@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -17,6 +18,8 @@ public class PostPaidServerEipBandwidth {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
+
+    @JacksonXmlProperty(localName = "size")
 
     private Integer size;
 
@@ -100,15 +103,21 @@ public class PostPaidServerEipBandwidth {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sharetype")
 
+    @JacksonXmlProperty(localName = "sharetype")
+
     private SharetypeEnum sharetype;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "chargemode")
 
+    @JacksonXmlProperty(localName = "chargemode")
+
     private String chargemode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
+
+    @JacksonXmlProperty(localName = "id")
 
     private String id;
 

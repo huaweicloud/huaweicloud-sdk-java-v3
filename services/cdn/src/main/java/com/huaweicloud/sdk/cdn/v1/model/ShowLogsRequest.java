@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cdn.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,25 +14,35 @@ public class ShowLogsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_name")
 
+    @JacksonXmlProperty(localName = "domain_name")
+
     private String domainName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "query_date")
+
+    @JacksonXmlProperty(localName = "query_date")
 
     private Long queryDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page_size")
 
+    @JacksonXmlProperty(localName = "page_size")
+
     private Integer pageSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page_number")
 
+    @JacksonXmlProperty(localName = "page_number")
+
     private Integer pageNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
+
+    @JacksonXmlProperty(localName = "enterprise_project_id")
 
     private String enterpriseProjectId;
 

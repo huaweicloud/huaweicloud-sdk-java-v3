@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.devstar.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,30 +14,42 @@ public class ProjectV3 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
 
+    @JacksonXmlProperty(localName = "project_id")
+
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region_id")
 
+    @JacksonXmlProperty(localName = "region_id")
+
     private String regionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region_name")
+
+    @JacksonXmlProperty(localName = "region_name")
 
     private String regionName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "management_permission")
 
+    @JacksonXmlProperty(localName = "management_permission")
+
     private Boolean managementPermission;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_stock")
+
+    @JacksonXmlProperty(localName = "is_stock")
 
     private Boolean isStock;
 

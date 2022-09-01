@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.gsl.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.time.OffsetDateTime;
 import java.util.Objects;
@@ -14,110 +15,154 @@ public class SimPricePlanVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private Long id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "account_id")
+
+    @JacksonXmlProperty(localName = "account_id")
 
     private String accountId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sim_card_id")
 
+    @JacksonXmlProperty(localName = "sim_card_id")
+
     private Long simCardId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
+
+    @JacksonXmlProperty(localName = "status")
 
     private Integer status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "price_plan_id")
 
+    @JacksonXmlProperty(localName = "price_plan_id")
+
     private String pricePlanId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cid")
+
+    @JacksonXmlProperty(localName = "cid")
 
     private String cid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "order_id")
 
+    @JacksonXmlProperty(localName = "order_id")
+
     private String orderId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
+
+    @JacksonXmlProperty(localName = "create_time")
 
     private OffsetDateTime createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "active_time")
 
+    @JacksonXmlProperty(localName = "active_time")
+
     private OffsetDateTime activeTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stop_time")
+
+    @JacksonXmlProperty(localName = "stop_time")
 
     private OffsetDateTime stopTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flow_total")
 
+    @JacksonXmlProperty(localName = "flow_total")
+
     private Double flowTotal;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flow_used")
+
+    @JacksonXmlProperty(localName = "flow_used")
 
     private Double flowUsed;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flow_left")
 
+    @JacksonXmlProperty(localName = "flow_left")
+
     private Double flowLeft;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "using")
+
+    @JacksonXmlProperty(localName = "using")
 
     private String using;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "price_plan_name")
 
+    @JacksonXmlProperty(localName = "price_plan_name")
+
     private String pricePlanName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
+
+    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "package_type")
 
+    @JacksonXmlProperty(localName = "package_type")
+
     private Integer packageType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "effect_type")
+
+    @JacksonXmlProperty(localName = "effect_type")
 
     private Integer effectType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "silent_period_day")
 
+    @JacksonXmlProperty(localName = "silent_period_day")
+
     private Integer silentPeriodDay;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "silent_period_unit")
+
+    @JacksonXmlProperty(localName = "silent_period_unit")
 
     private Integer silentPeriodUnit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auto_renew")
 
+    @JacksonXmlProperty(localName = "auto_renew")
+
     private Integer autoRenew;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "location_desc")
+
+    @JacksonXmlProperty(localName = "location_desc")
 
     private String locationDesc;
 

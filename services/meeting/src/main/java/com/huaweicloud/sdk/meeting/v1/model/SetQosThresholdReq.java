@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,25 +15,35 @@ public class SetQosThresholdReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "latency")
 
+    @JacksonXmlProperty(localName = "latency")
+
     private SetThresholdData latency;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "jitter")
+
+    @JacksonXmlProperty(localName = "jitter")
 
     private SetThresholdData jitter;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "packetLoss")
 
+    @JacksonXmlProperty(localName = "packetLoss")
+
     private SetPacketThresholdData packetLoss;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "clientCpuMax")
 
+    @JacksonXmlProperty(localName = "clientCpuMax")
+
     private SetCPUThresholdData clientCpuMax;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "systemCpuMax")
+
+    @JacksonXmlProperty(localName = "systemCpuMax")
 
     private SetCPUThresholdData systemCpuMax;
 

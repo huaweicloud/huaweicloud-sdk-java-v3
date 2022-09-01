@@ -13,6 +13,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.mrs.v1.model.Trigger;
 import java.util.HashMap;
 import java.util.Map;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -26,6 +28,7 @@ public class Rules  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
+    @JacksonXmlProperty(localName = "name")
     
     private String name;
 
@@ -33,6 +36,7 @@ public class Rules  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
+    @JacksonXmlProperty(localName = "description")
     
     private String description;
     /**
@@ -118,6 +122,7 @@ public class Rules  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="adjustment_type")
     
+    @JacksonXmlProperty(localName = "adjustment_type")
     
     private AdjustmentTypeEnum adjustmentType;
 
@@ -125,6 +130,7 @@ public class Rules  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cool_down_minutes")
     
+    @JacksonXmlProperty(localName = "cool_down_minutes")
     
     private Integer coolDownMinutes;
 
@@ -132,6 +138,7 @@ public class Rules  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="scaling_adjustment")
     
+    @JacksonXmlProperty(localName = "scaling_adjustment")
     
     private Integer scalingAdjustment;
 
@@ -139,6 +146,7 @@ public class Rules  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="trigger")
     
+    @JacksonXmlProperty(localName = "trigger")
     
     private Trigger trigger;
 

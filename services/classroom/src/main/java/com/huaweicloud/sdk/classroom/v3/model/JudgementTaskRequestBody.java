@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -20,6 +21,8 @@ public class JudgementTaskRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "notify_url")
+
+    @JacksonXmlProperty(localName = "notify_url")
 
     private String notifyUrl;
 
@@ -97,15 +100,21 @@ public class JudgementTaskRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "code_type")
 
+    @JacksonXmlProperty(localName = "code_type")
+
     private CodeTypeEnum codeType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_code")
 
+    @JacksonXmlProperty(localName = "source_code")
+
     private String sourceCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
+
+    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
@@ -201,10 +210,14 @@ public class JudgementTaskRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "runtime_type")
 
+    @JacksonXmlProperty(localName = "runtime_type")
+
     private RuntimeTypeEnum runtimeType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timeout")
+
+    @JacksonXmlProperty(localName = "timeout")
 
     private Integer timeout;
 
@@ -306,10 +319,14 @@ public class JudgementTaskRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "output_type")
 
+    @JacksonXmlProperty(localName = "output_type")
+
     private OutputTypeEnum outputType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "testcases")
+
+    @JacksonXmlProperty(localName = "testcases")
 
     private List<JudgementCaseInfo> testcases = null;
 

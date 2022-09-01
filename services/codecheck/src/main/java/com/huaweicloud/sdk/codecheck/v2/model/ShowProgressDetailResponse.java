@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.codecheck.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -15,10 +16,14 @@ public class ShowProgressDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_status")
 
+    @JacksonXmlProperty(localName = "task_status")
+
     private Integer taskStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "progress")
+
+    @JacksonXmlProperty(localName = "progress")
 
     private ProgressDetailV2 progress;
 

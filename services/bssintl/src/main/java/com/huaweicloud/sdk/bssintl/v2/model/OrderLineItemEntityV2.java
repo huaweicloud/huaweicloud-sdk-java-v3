@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.bssintl.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,85 +15,119 @@ public class OrderLineItemEntityV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "order_line_item_id")
 
+    @JacksonXmlProperty(localName = "order_line_item_id")
+
     private String orderLineItemId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_type_code")
+
+    @JacksonXmlProperty(localName = "service_type_code")
 
     private String serviceTypeCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_type_name")
 
+    @JacksonXmlProperty(localName = "service_type_name")
+
     private String serviceTypeName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "product_id")
+
+    @JacksonXmlProperty(localName = "product_id")
 
     private String productId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "product_spec_desc")
 
+    @JacksonXmlProperty(localName = "product_spec_desc")
+
     private String productSpecDesc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "period_type")
+
+    @JacksonXmlProperty(localName = "period_type")
 
     private Integer periodType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "period_num")
 
+    @JacksonXmlProperty(localName = "period_num")
+
     private Integer periodNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "effective_time")
+
+    @JacksonXmlProperty(localName = "effective_time")
 
     private String effectiveTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expire_time")
 
+    @JacksonXmlProperty(localName = "expire_time")
+
     private String expireTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subscription_num")
+
+    @JacksonXmlProperty(localName = "subscription_num")
 
     private Integer subscriptionNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "amount_after_discount")
 
+    @JacksonXmlProperty(localName = "amount_after_discount")
+
     private Double amountAfterDiscount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "official_amount")
+
+    @JacksonXmlProperty(localName = "official_amount")
 
     private Double officialAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "amount_info")
 
+    @JacksonXmlProperty(localName = "amount_info")
+
     private AmountInfomationV2 amountInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "currency")
+
+    @JacksonXmlProperty(localName = "currency")
 
     private String currency;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "category_code")
 
+    @JacksonXmlProperty(localName = "category_code")
+
     private String categoryCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "product_owner_service")
 
+    @JacksonXmlProperty(localName = "product_owner_service")
+
     private String productOwnerService;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "commercial_resource")
+
+    @JacksonXmlProperty(localName = "commercial_resource")
 
     private String commercialResource;
 

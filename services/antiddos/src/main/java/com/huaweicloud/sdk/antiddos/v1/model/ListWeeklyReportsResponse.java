@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.antiddos.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -17,15 +18,21 @@ public class ListWeeklyReportsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ddos_intercept_times")
 
+    @JacksonXmlProperty(localName = "ddos_intercept_times")
+
     private Integer ddosInterceptTimes;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "weekdata")
 
+    @JacksonXmlProperty(localName = "weekdata")
+
     private List<WeeklyCount> weekdata = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "top10")
+
+    @JacksonXmlProperty(localName = "top10")
 
     private List<WeeklyTop10> top10 = null;
 

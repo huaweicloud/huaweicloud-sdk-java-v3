@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -20,6 +21,8 @@ public class ChangeLoadbalancerChargeModeRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "loadbalancer_ids")
+
+    @JacksonXmlProperty(localName = "loadbalancer_ids")
 
     private List<String> loadbalancerIds = null;
 
@@ -97,10 +100,14 @@ public class ChangeLoadbalancerChargeModeRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "charge_mode")
 
+    @JacksonXmlProperty(localName = "charge_mode")
+
     private ChargeModeEnum chargeMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "prepaid_options")
+
+    @JacksonXmlProperty(localName = "prepaid_options")
 
     private PrepaidChangeChargeModeOption prepaidOptions;
 

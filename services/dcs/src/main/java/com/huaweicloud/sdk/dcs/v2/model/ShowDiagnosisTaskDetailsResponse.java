@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.dcs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -17,15 +18,21 @@ public class ShowDiagnosisTaskDetailsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "abnormal_item_sum")
 
+    @JacksonXmlProperty(localName = "abnormal_item_sum")
+
     private Integer abnormalItemSum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "failed_item_sum")
 
+    @JacksonXmlProperty(localName = "failed_item_sum")
+
     private Integer failedItemSum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "diagnosis_node_report_list")
+
+    @JacksonXmlProperty(localName = "diagnosis_node_report_list")
 
     private List<DiagnosisNodeReport> diagnosisNodeReportList = null;
 

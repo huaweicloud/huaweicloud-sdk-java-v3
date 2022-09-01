@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.osm.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class AccessoryLimitVo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit_count")
 
+    @JacksonXmlProperty(localName = "limit_count")
+
     private String limitCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit_size")
 
+    @JacksonXmlProperty(localName = "limit_size")
+
     private String limitSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit_file_type")
+
+    @JacksonXmlProperty(localName = "limit_file_type")
 
     private String limitFileType;
 

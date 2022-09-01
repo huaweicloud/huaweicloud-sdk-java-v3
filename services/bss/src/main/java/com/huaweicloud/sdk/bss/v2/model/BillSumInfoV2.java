@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.bss.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,65 +17,91 @@ public class BillSumInfoV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "customer_id")
 
+    @JacksonXmlProperty(localName = "customer_id")
+
     private String customerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cloud_service_type")
+
+    @JacksonXmlProperty(localName = "cloud_service_type")
 
     private String cloudServiceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cloud_service_type_name")
 
+    @JacksonXmlProperty(localName = "cloud_service_type_name")
+
     private String cloudServiceTypeName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bill_type")
+
+    @JacksonXmlProperty(localName = "bill_type")
 
     private String billType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "charge_mode")
 
+    @JacksonXmlProperty(localName = "charge_mode")
+
     private String chargeMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "amount")
+
+    @JacksonXmlProperty(localName = "amount")
 
     private Double amount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "debt_amount")
 
+    @JacksonXmlProperty(localName = "debt_amount")
+
     private Double debtAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "adjustment_amount")
+
+    @JacksonXmlProperty(localName = "adjustment_amount")
 
     private Double adjustmentAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "discount_amount")
 
+    @JacksonXmlProperty(localName = "discount_amount")
+
     private Double discountAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "measure_id")
+
+    @JacksonXmlProperty(localName = "measure_id")
 
     private Integer measureId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "account_details")
 
+    @JacksonXmlProperty(localName = "account_details")
+
     private List<BalanceTypeDeductSumV2> accountDetails = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_type_code")
 
+    @JacksonXmlProperty(localName = "resource_type_code")
+
     private String resourceTypeCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_type_name")
+
+    @JacksonXmlProperty(localName = "resource_type_name")
 
     private String resourceTypeName;
 

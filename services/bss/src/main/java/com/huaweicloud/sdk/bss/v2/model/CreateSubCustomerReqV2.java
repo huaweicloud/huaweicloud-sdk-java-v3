@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.bss.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,25 +17,35 @@ public class CreateSubCustomerReqV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "party_id")
 
+    @JacksonXmlProperty(localName = "party_id")
+
     private String partyId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "display_name")
+
+    @JacksonXmlProperty(localName = "display_name")
 
     private String displayName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sub_customer_association_type")
 
+    @JacksonXmlProperty(localName = "sub_customer_association_type")
+
     private Integer subCustomerAssociationType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "permission_ids")
 
+    @JacksonXmlProperty(localName = "permission_ids")
+
     private List<String> permissionIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "new_sub_customer")
+
+    @JacksonXmlProperty(localName = "new_sub_customer")
 
     private NewCustomerV2 newSubCustomer;
 

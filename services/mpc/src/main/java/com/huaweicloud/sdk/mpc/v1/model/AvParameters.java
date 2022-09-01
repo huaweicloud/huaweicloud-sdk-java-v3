@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.mpc.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,15 +15,21 @@ public class AvParameters {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "video")
 
+    @JacksonXmlProperty(localName = "video")
+
     private VideoParameters video;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "audio")
 
+    @JacksonXmlProperty(localName = "audio")
+
     private Audio audio;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "common")
+
+    @JacksonXmlProperty(localName = "common")
 
     private Common common;
 

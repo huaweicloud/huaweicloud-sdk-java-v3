@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.res.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,20 +14,28 @@ public class SpecsConfig {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offline")
 
+    @JacksonXmlProperty(localName = "offline")
+
     private String offline;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nearline")
+
+    @JacksonXmlProperty(localName = "nearline")
 
     private String nearline;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rank")
 
+    @JacksonXmlProperty(localName = "rank")
+
     private String rank;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "online_tps")
+
+    @JacksonXmlProperty(localName = "online_tps")
 
     private Integer onlineTps;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.osm.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,50 +14,70 @@ public class ListTransportHistoriesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "authorization_id")
 
+    @JacksonXmlProperty(localName = "authorization_id")
+
     private Long authorizationId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "authorization_detail_id")
+
+    @JacksonXmlProperty(localName = "authorization_detail_id")
 
     private Long authorizationDetailId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_id")
 
+    @JacksonXmlProperty(localName = "group_id")
+
     private String groupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "session_id")
+
+    @JacksonXmlProperty(localName = "session_id")
 
     private Long sessionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sort")
 
+    @JacksonXmlProperty(localName = "sort")
+
     private Integer sort;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
+
+    @JacksonXmlProperty(localName = "offset")
 
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
+    @JacksonXmlProperty(localName = "limit")
+
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Site")
+
+    @JacksonXmlProperty(localName = "X-Site")
 
     private Integer xSite;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Language")
 
+    @JacksonXmlProperty(localName = "X-Language")
+
     private String xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Time-Zone")
+
+    @JacksonXmlProperty(localName = "X-Time-Zone")
 
     private String xTimeZone;
 

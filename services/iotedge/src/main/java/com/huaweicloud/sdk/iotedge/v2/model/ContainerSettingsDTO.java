@@ -14,6 +14,8 @@ import com.huaweicloud.sdk.iotedge.v2.model.ResourceDTO;
 import com.huaweicloud.sdk.iotedge.v2.model.VolumeDTO;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -27,6 +29,7 @@ public class ContainerSettingsDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="configs")
     
+    @JacksonXmlProperty(localName = "configs")
     
     private ContainerConfigsDTO configs;
 
@@ -34,6 +37,7 @@ public class ContainerSettingsDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="image_url")
     
+    @JacksonXmlProperty(localName = "image_url")
     
     private String imageUrl;
 
@@ -41,6 +45,7 @@ public class ContainerSettingsDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="envs")
     
+    @JacksonXmlProperty(localName = "envs")
     
     private Object envs;
 
@@ -48,6 +53,7 @@ public class ContainerSettingsDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="volumes")
     
+    @JacksonXmlProperty(localName = "volumes")
     
     private List<VolumeDTO> volumes = null;
     
@@ -55,6 +61,7 @@ public class ContainerSettingsDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resources")
     
+    @JacksonXmlProperty(localName = "resources")
     
     private ResourceDTO resources;
 
@@ -62,6 +69,7 @@ public class ContainerSettingsDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ext_devices")
     
+    @JacksonXmlProperty(localName = "ext_devices")
     
     private List<ExtDevice> extDevices = null;
     

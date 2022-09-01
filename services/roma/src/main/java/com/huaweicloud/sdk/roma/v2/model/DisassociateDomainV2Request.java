@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.roma.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class DisassociateDomainV2Request {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_id")
 
+    @JacksonXmlProperty(localName = "instance_id")
+
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_id")
 
+    @JacksonXmlProperty(localName = "group_id")
+
     private String groupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_id")
+
+    @JacksonXmlProperty(localName = "domain_id")
 
     private String domainId;
 

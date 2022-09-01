@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.iotanalytics.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.HashMap;
@@ -17,20 +18,28 @@ public class UpdatePipelineJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pipeline_id")
 
+    @JacksonXmlProperty(localName = "pipeline_id")
+
     private String pipelineId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pipeline_state")
+
+    @JacksonXmlProperty(localName = "pipeline_state")
 
     private String pipelineState;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "check_info")
+
+    @JacksonXmlProperty(localName = "check_info")
 
     private Map<String, Object> checkInfo = null;
 

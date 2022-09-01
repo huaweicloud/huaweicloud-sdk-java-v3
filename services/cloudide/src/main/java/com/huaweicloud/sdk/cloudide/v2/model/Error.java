@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cloudide.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class Error {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "code")
 
+    @JacksonXmlProperty(localName = "code")
+
     private String code;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "reason")
+
+    @JacksonXmlProperty(localName = "reason")
 
     private String reason;
 

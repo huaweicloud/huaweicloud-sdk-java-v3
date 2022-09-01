@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,15 +22,21 @@ public class Grants {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key_id")
 
+    @JacksonXmlProperty(localName = "key_id")
+
     private String keyId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "grant_id")
 
+    @JacksonXmlProperty(localName = "grant_id")
+
     private String grantId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "grantee_principal")
+
+    @JacksonXmlProperty(localName = "grantee_principal")
 
     private String granteePrincipal;
 
@@ -113,30 +120,42 @@ public class Grants {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "grantee_principal_type")
 
+    @JacksonXmlProperty(localName = "grantee_principal_type")
+
     private GranteePrincipalTypeEnum granteePrincipalType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operations")
+
+    @JacksonXmlProperty(localName = "operations")
 
     private List<String> operations = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "issuing_principal")
 
+    @JacksonXmlProperty(localName = "issuing_principal")
+
     private String issuingPrincipal;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "creation_date")
+
+    @JacksonXmlProperty(localName = "creation_date")
 
     private String creationDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "retiring_principal")
+
+    @JacksonXmlProperty(localName = "retiring_principal")
 
     private String retiringPrincipal;
 

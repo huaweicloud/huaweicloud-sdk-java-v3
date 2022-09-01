@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.codecheck.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,215 +14,301 @@ public class MetricInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "code_size")
 
+    @JacksonXmlProperty(localName = "code_size")
+
     private String codeSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "raw_lines")
+
+    @JacksonXmlProperty(localName = "raw_lines")
 
     private String rawLines;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "methods_total")
 
+    @JacksonXmlProperty(localName = "methods_total")
+
     private String methodsTotal;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cyclomatic_complexity_total")
+
+    @JacksonXmlProperty(localName = "cyclomatic_complexity_total")
 
     private String cyclomaticComplexityTotal;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cyclomatic_complexity_per_method")
 
+    @JacksonXmlProperty(localName = "cyclomatic_complexity_per_method")
+
     private String cyclomaticComplexityPerMethod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maximum_cyclomatic_complexity")
+
+    @JacksonXmlProperty(localName = "maximum_cyclomatic_complexity")
 
     private String maximumCyclomaticComplexity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "huge_cyclomatic_complexity_total")
 
+    @JacksonXmlProperty(localName = "huge_cyclomatic_complexity_total")
+
     private String hugeCyclomaticComplexityTotal;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "huge_cyclomatic_complexity_ratio")
+
+    @JacksonXmlProperty(localName = "huge_cyclomatic_complexity_ratio")
 
     private String hugeCyclomaticComplexityRatio;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cca_cyclomatic_complexity_total")
 
+    @JacksonXmlProperty(localName = "cca_cyclomatic_complexity_total")
+
     private String ccaCyclomaticComplexityTotal;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cca_cyclomatic_complexity_per_method")
+
+    @JacksonXmlProperty(localName = "cca_cyclomatic_complexity_per_method")
 
     private String ccaCyclomaticComplexityPerMethod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maximum_cca_cyclomatic_complexity")
 
+    @JacksonXmlProperty(localName = "maximum_cca_cyclomatic_complexity")
+
     private String maximumCcaCyclomaticComplexity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "huge_cca_cyclomatic_complexity_total")
+
+    @JacksonXmlProperty(localName = "huge_cca_cyclomatic_complexity_total")
 
     private String hugeCcaCyclomaticComplexityTotal;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cyclomatic_complexity_adequacy")
 
+    @JacksonXmlProperty(localName = "cyclomatic_complexity_adequacy")
+
     private String cyclomaticComplexityAdequacy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maximum_depth")
+
+    @JacksonXmlProperty(localName = "maximum_depth")
 
     private String maximumDepth;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "huge_depth_total")
 
+    @JacksonXmlProperty(localName = "huge_depth_total")
+
     private String hugeDepthTotal;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "huge_depth_ratio")
+
+    @JacksonXmlProperty(localName = "huge_depth_ratio")
 
     private String hugeDepthRatio;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "method_lines")
 
+    @JacksonXmlProperty(localName = "method_lines")
+
     private String methodLines;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lines_per_method")
+
+    @JacksonXmlProperty(localName = "lines_per_method")
 
     private String linesPerMethod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "huge_method_total")
 
+    @JacksonXmlProperty(localName = "huge_method_total")
+
     private String hugeMethodTotal;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "huge_method_ratio")
+
+    @JacksonXmlProperty(localName = "huge_method_ratio")
 
     private String hugeMethodRatio;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "files_total")
 
+    @JacksonXmlProperty(localName = "files_total")
+
     private String filesTotal;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "folders_total")
+
+    @JacksonXmlProperty(localName = "folders_total")
 
     private String foldersTotal;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lines_per_file")
 
+    @JacksonXmlProperty(localName = "lines_per_file")
+
     private String linesPerFile;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "huge_headerfile_total")
+
+    @JacksonXmlProperty(localName = "huge_headerfile_total")
 
     private String hugeHeaderfileTotal;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "huge_headerfile_ratio")
 
+    @JacksonXmlProperty(localName = "huge_headerfile_ratio")
+
     private String hugeHeaderfileRatio;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "huge_non_headerfile_total")
+
+    @JacksonXmlProperty(localName = "huge_non_headerfile_total")
 
     private String hugeNonHeaderfileTotal;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "huge_non_headerfile_ratio")
 
+    @JacksonXmlProperty(localName = "huge_non_headerfile_ratio")
+
     private String hugeNonHeaderfileRatio;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "huge_folder_total")
+
+    @JacksonXmlProperty(localName = "huge_folder_total")
 
     private String hugeFolderTotal;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "huge_folder_ratio")
 
+    @JacksonXmlProperty(localName = "huge_folder_ratio")
+
     private String hugeFolderRatio;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_duplication_total")
+
+    @JacksonXmlProperty(localName = "file_duplication_total")
 
     private String fileDuplicationTotal;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_duplication_ratio")
 
+    @JacksonXmlProperty(localName = "file_duplication_ratio")
+
     private String fileDuplicationRatio;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "non_hfile_duplication_total")
+
+    @JacksonXmlProperty(localName = "non_hfile_duplication_total")
 
     private String nonHfileDuplicationTotal;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "non_hfile_duplication_ratio")
 
+    @JacksonXmlProperty(localName = "non_hfile_duplication_ratio")
+
     private String nonHfileDuplicationRatio;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "code_duplication_total")
+
+    @JacksonXmlProperty(localName = "code_duplication_total")
 
     private String codeDuplicationTotal;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "code_duplication_ratio")
 
+    @JacksonXmlProperty(localName = "code_duplication_ratio")
+
     private String codeDuplicationRatio;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "non_hfile_code_duplication_total")
+
+    @JacksonXmlProperty(localName = "non_hfile_code_duplication_total")
 
     private String nonHfileCodeDuplicationTotal;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "non_hfile_code_duplication_ratio")
 
+    @JacksonXmlProperty(localName = "non_hfile_code_duplication_ratio")
+
     private String nonHfileCodeDuplicationRatio;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "unsafe_functions_total")
+
+    @JacksonXmlProperty(localName = "unsafe_functions_total")
 
     private String unsafeFunctionsTotal;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "unsafe_functions_kloc")
 
+    @JacksonXmlProperty(localName = "unsafe_functions_kloc")
+
     private String unsafeFunctionsKloc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "redundant_code_total")
+
+    @JacksonXmlProperty(localName = "redundant_code_total")
 
     private String redundantCodeTotal;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "redundant_code_kloc")
 
+    @JacksonXmlProperty(localName = "redundant_code_kloc")
+
     private String redundantCodeKloc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "warning_suppression_total")
 
+    @JacksonXmlProperty(localName = "warning_suppression_total")
+
     private String warningSuppressionTotal;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "warning_suppression_kloc")
+
+    @JacksonXmlProperty(localName = "warning_suppression_kloc")
 
     private String warningSuppressionKloc;
 

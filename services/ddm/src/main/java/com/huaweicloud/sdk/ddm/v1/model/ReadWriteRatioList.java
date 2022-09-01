@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ddm.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,30 +14,42 @@ public class ReadWriteRatioList {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "schema")
 
+    @JacksonXmlProperty(localName = "schema")
+
     private String schema;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "table")
+
+    @JacksonXmlProperty(localName = "table")
 
     private String table;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "readCount")
 
+    @JacksonXmlProperty(localName = "readCount")
+
     private String readCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "writeCount")
+
+    @JacksonXmlProperty(localName = "writeCount")
 
     private String writeCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "relationTables")
 
+    @JacksonXmlProperty(localName = "relationTables")
+
     private String relationTables;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lastUpdated")
+
+    @JacksonXmlProperty(localName = "lastUpdated")
 
     private String lastUpdated;
 

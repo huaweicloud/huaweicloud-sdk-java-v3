@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cloudrtc.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,20 +14,28 @@ public class ShowUrlAuthRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "Authorization")
 
+    @JacksonXmlProperty(localName = "Authorization")
+
     private String authorization;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Sdk-Date")
+
+    @JacksonXmlProperty(localName = "X-Sdk-Date")
 
     private String xSdkDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Project-Id")
 
+    @JacksonXmlProperty(localName = "X-Project-Id")
+
     private String xProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_id")
+
+    @JacksonXmlProperty(localName = "app_id")
 
     private String appId;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class RestRenamePartReqBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "participantID")
 
+    @JacksonXmlProperty(localName = "participantID")
+
     private String participantID;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "number")
 
+    @JacksonXmlProperty(localName = "number")
+
     private String number;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "newName")
+
+    @JacksonXmlProperty(localName = "newName")
 
     private String newName;
 

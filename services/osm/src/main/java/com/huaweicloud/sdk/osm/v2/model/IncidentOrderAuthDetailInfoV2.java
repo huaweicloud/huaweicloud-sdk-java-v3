@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.osm.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,35 +14,49 @@ public class IncidentOrderAuthDetailInfoV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private Long id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "port")
+
+    @JacksonXmlProperty(localName = "port")
 
     private Integer port;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "account")
 
+    @JacksonXmlProperty(localName = "account")
+
     private String account;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
+
+    @JacksonXmlProperty(localName = "type")
 
     private Integer type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_id")
 
+    @JacksonXmlProperty(localName = "instance_id")
+
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_name")
 
+    @JacksonXmlProperty(localName = "instance_name")
+
     private String instanceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region_id")
+
+    @JacksonXmlProperty(localName = "region_id")
 
     private String regionId;
 

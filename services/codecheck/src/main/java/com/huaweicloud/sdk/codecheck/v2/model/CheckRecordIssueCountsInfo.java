@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.codecheck.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,20 +14,28 @@ public class CheckRecordIssueCountsInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "critical")
 
+    @JacksonXmlProperty(localName = "critical")
+
     private Integer critical;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "serious")
+
+    @JacksonXmlProperty(localName = "serious")
 
     private Integer serious;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "normal")
 
+    @JacksonXmlProperty(localName = "normal")
+
     private Integer normal;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "prompt")
+
+    @JacksonXmlProperty(localName = "prompt")
 
     private Integer prompt;
 

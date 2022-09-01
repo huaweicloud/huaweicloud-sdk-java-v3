@@ -83,7 +83,6 @@ public class VcmMeta {
             }));
 
         // response
-
         builder.<List<CreateAudioJobResponseBody>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -116,7 +115,6 @@ public class VcmMeta {
             }));
 
         // response
-
         builder.<List<CreateVideoJobResponseBody>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,

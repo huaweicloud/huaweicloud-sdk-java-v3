@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,6 +19,8 @@ public class Trigger {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trigger_name")
+
+    @JacksonXmlProperty(localName = "trigger_name")
 
     private String triggerName;
 
@@ -119,15 +122,21 @@ public class Trigger {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trigger_type")
 
+    @JacksonXmlProperty(localName = "trigger_type")
+
     private TriggerTypeEnum triggerType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enabled")
 
+    @JacksonXmlProperty(localName = "enabled")
+
     private Boolean enabled;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trigger_config")
+
+    @JacksonXmlProperty(localName = "trigger_config")
 
     private OBSTriggerConfig triggerConfig;
 

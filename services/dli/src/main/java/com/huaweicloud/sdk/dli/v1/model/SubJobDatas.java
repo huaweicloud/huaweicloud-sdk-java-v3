@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -18,100 +19,140 @@ public class SubJobDatas {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private Integer id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
+    @JacksonXmlProperty(localName = "description")
+
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "submission_time")
+
+    @JacksonXmlProperty(localName = "submission_time")
 
     private String submissionTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "completion_time")
 
+    @JacksonXmlProperty(localName = "completion_time")
+
     private String completionTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stage_ids")
+
+    @JacksonXmlProperty(localName = "stage_ids")
 
     private List<Integer> stageIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_group")
 
+    @JacksonXmlProperty(localName = "job_group")
+
     private String jobGroup;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
+
+    @JacksonXmlProperty(localName = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "num_tasks")
 
+    @JacksonXmlProperty(localName = "num_tasks")
+
     private Integer numTasks;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "num_active_tasks")
+
+    @JacksonXmlProperty(localName = "num_active_tasks")
 
     private Integer numActiveTasks;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "num_completed_tasks")
 
+    @JacksonXmlProperty(localName = "num_completed_tasks")
+
     private Integer numCompletedTasks;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "num_skipped_tasks")
+
+    @JacksonXmlProperty(localName = "num_skipped_tasks")
 
     private Integer numSkippedTasks;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "num_failed_tasks")
 
+    @JacksonXmlProperty(localName = "num_failed_tasks")
+
     private Integer numFailedTasks;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "num_killed_tasks")
+
+    @JacksonXmlProperty(localName = "num_killed_tasks")
 
     private Integer numKilledTasks;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "num_completed_indices")
 
+    @JacksonXmlProperty(localName = "num_completed_indices")
+
     private Integer numCompletedIndices;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "num_active_stages")
+
+    @JacksonXmlProperty(localName = "num_active_stages")
 
     private Integer numActiveStages;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "num_completed_stages")
 
+    @JacksonXmlProperty(localName = "num_completed_stages")
+
     private Integer numCompletedStages;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "num_skipped_stages")
+
+    @JacksonXmlProperty(localName = "num_skipped_stages")
 
     private Integer numSkippedStages;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "num_failed_stages")
 
+    @JacksonXmlProperty(localName = "num_failed_stages")
+
     private Integer numFailedStages;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "killed_tasks_summary")
+
+    @JacksonXmlProperty(localName = "killed_tasks_summary")
 
     private Map<String, Integer> killedTasksSummary = null;
 

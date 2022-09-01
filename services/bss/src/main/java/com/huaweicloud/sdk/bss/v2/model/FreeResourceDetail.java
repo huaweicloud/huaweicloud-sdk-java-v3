@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.bss.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,50 +14,70 @@ public class FreeResourceDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "free_resource_id")
 
+    @JacksonXmlProperty(localName = "free_resource_id")
+
     private String freeResourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "free_resource_type_name")
+
+    @JacksonXmlProperty(localName = "free_resource_type_name")
 
     private String freeResourceTypeName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quota_reuse_cycle")
 
+    @JacksonXmlProperty(localName = "quota_reuse_cycle")
+
     private Integer quotaReuseCycle;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quota_reuse_cycle_type")
+
+    @JacksonXmlProperty(localName = "quota_reuse_cycle_type")
 
     private Integer quotaReuseCycleType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "usage_type_name")
 
+    @JacksonXmlProperty(localName = "usage_type_name")
+
     private String usageTypeName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
+
+    @JacksonXmlProperty(localName = "start_time")
 
     private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time")
 
+    @JacksonXmlProperty(localName = "end_time")
+
     private String endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "amount")
+
+    @JacksonXmlProperty(localName = "amount")
 
     private Double amount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "original_amount")
 
+    @JacksonXmlProperty(localName = "original_amount")
+
     private Double originalAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "measure_id")
+
+    @JacksonXmlProperty(localName = "measure_id")
 
     private Integer measureId;
 

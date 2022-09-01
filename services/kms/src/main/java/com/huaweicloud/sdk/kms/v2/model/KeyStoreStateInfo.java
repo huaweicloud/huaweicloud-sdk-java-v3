@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.kms.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class KeyStoreStateInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "keystore_id")
 
+    @JacksonXmlProperty(localName = "keystore_id")
+
     private String keystoreId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "keystore_state")
+
+    @JacksonXmlProperty(localName = "keystore_state")
 
     private String keystoreState;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.eip.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class ShowPublicipPoolRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publicip_pool_id")
 
+    @JacksonXmlProperty(localName = "publicip_pool_id")
+
     private String publicipPoolId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fields")
+
+    @JacksonXmlProperty(localName = "fields")
 
     private String fields;
 

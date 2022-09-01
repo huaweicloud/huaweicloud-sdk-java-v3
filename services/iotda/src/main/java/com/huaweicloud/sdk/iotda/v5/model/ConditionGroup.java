@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.iotda.v5.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,15 +17,21 @@ public class ConditionGroup {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "conditions")
 
+    @JacksonXmlProperty(localName = "conditions")
+
     private List<RuleCondition> conditions = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "logic")
 
+    @JacksonXmlProperty(localName = "logic")
+
     private String logic;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time_range")
+
+    @JacksonXmlProperty(localName = "time_range")
 
     private TimeRange timeRange;
 

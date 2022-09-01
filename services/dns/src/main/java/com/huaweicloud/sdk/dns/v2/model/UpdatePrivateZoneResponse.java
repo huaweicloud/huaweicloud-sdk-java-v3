@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.dns.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -17,80 +18,112 @@ public class UpdatePrivateZoneResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
+    @JacksonXmlProperty(localName = "description")
+
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "email")
+
+    @JacksonXmlProperty(localName = "email")
 
     private String email;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "zone_type")
 
+    @JacksonXmlProperty(localName = "zone_type")
+
     private String zoneType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ttl")
+
+    @JacksonXmlProperty(localName = "ttl")
 
     private Integer ttl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "serial")
 
+    @JacksonXmlProperty(localName = "serial")
+
     private Integer serial;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
+
+    @JacksonXmlProperty(localName = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "record_num")
 
+    @JacksonXmlProperty(localName = "record_num")
+
     private Integer recordNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pool_id")
+
+    @JacksonXmlProperty(localName = "pool_id")
 
     private String poolId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
 
+    @JacksonXmlProperty(localName = "project_id")
+
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
+
+    @JacksonXmlProperty(localName = "created_at")
 
     private String createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_at")
 
+    @JacksonXmlProperty(localName = "updated_at")
+
     private String updatedAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "links")
+
+    @JacksonXmlProperty(localName = "links")
 
     private PageLink links;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "masters")
 
+    @JacksonXmlProperty(localName = "masters")
+
     private List<String> masters = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "routers")
+
+    @JacksonXmlProperty(localName = "routers")
 
     private List<RouterWithStatus> routers = null;
 

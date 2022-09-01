@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.kafka.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,45 +17,63 @@ public class ListEngineProductsEntity {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
+    @JacksonXmlProperty(localName = "type")
+
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "product_id")
+
+    @JacksonXmlProperty(localName = "product_id")
 
     private String productId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ecs_flavor_id")
 
+    @JacksonXmlProperty(localName = "ecs_flavor_id")
+
     private String ecsFlavorId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "billing_code")
+
+    @JacksonXmlProperty(localName = "billing_code")
 
     private String billingCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "arch_types")
 
+    @JacksonXmlProperty(localName = "arch_types")
+
     private List<String> archTypes = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "charging_mode")
+
+    @JacksonXmlProperty(localName = "charging_mode")
 
     private List<String> chargingMode = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ios")
 
+    @JacksonXmlProperty(localName = "ios")
+
     private List<ListEngineIosEntity> ios = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "support_features")
 
+    @JacksonXmlProperty(localName = "support_features")
+
     private List<ListEngineSupportFeaturesEntity> supportFeatures = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "properties")
+
+    @JacksonXmlProperty(localName = "properties")
 
     private ListEnginePropertiesEntity properties;
 

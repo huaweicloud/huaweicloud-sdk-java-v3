@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -140,20 +141,28 @@ public class DiagnosisItem {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private NameEnum name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cause_ids")
+
+    @JacksonXmlProperty(localName = "cause_ids")
 
     private List<ConclusionItem> causeIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "impact_ids")
 
+    @JacksonXmlProperty(localName = "impact_ids")
+
     private List<ConclusionItem> impactIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "advice_ids")
+
+    @JacksonXmlProperty(localName = "advice_ids")
 
     private List<ConclusionItem> adviceIds = null;
 
@@ -242,6 +251,8 @@ public class DiagnosisItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "result")
+
+    @JacksonXmlProperty(localName = "result")
 
     private ResultEnum result;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.rms.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class TrackerSMNChannelConfigBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region_id")
 
+    @JacksonXmlProperty(localName = "region_id")
+
     private String regionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
 
+    @JacksonXmlProperty(localName = "project_id")
+
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "topic_urn")
+
+    @JacksonXmlProperty(localName = "topic_urn")
 
     private String topicUrn;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cloudpipeline.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,35 +14,49 @@ public class SlaveRegister {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cluster_id")
 
+    @JacksonXmlProperty(localName = "cluster_id")
+
     private String clusterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "slave_name")
+
+    @JacksonXmlProperty(localName = "slave_name")
 
     private String slaveName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "work_dir")
 
+    @JacksonXmlProperty(localName = "work_dir")
+
     private String workDir;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "label")
+
+    @JacksonXmlProperty(localName = "label")
 
     private String label;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
 
+    @JacksonXmlProperty(localName = "version")
+
     private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "retry")
 
+    @JacksonXmlProperty(localName = "retry")
+
     private Boolean retry;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "owner_type")
+
+    @JacksonXmlProperty(localName = "owner_type")
 
     private String ownerType;
 

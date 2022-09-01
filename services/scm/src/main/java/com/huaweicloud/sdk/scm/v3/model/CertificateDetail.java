@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.scm.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,80 +14,112 @@ public class CertificateDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain")
 
+    @JacksonXmlProperty(localName = "domain")
+
     private String domain;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sans")
+
+    @JacksonXmlProperty(localName = "sans")
 
     private String sans;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "signature_algorithm")
 
+    @JacksonXmlProperty(localName = "signature_algorithm")
+
     private String signatureAlgorithm;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deploy_support")
+
+    @JacksonXmlProperty(localName = "deploy_support")
 
     private Boolean deploySupport;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
+    @JacksonXmlProperty(localName = "type")
+
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "brand")
+
+    @JacksonXmlProperty(localName = "brand")
 
     private String brand;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expire_time")
 
+    @JacksonXmlProperty(localName = "expire_time")
+
     private String expireTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_type")
+
+    @JacksonXmlProperty(localName = "domain_type")
 
     private String domainType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "validity_period")
 
+    @JacksonXmlProperty(localName = "validity_period")
+
     private Integer validityPeriod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
+
+    @JacksonXmlProperty(localName = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_count")
 
+    @JacksonXmlProperty(localName = "domain_count")
+
     private Integer domainCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "wildcard_count")
+
+    @JacksonXmlProperty(localName = "wildcard_count")
 
     private Integer wildcardCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
+    @JacksonXmlProperty(localName = "description")
+
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
+
+    @JacksonXmlProperty(localName = "enterprise_project_id")
 
     private String enterpriseProjectId;
 

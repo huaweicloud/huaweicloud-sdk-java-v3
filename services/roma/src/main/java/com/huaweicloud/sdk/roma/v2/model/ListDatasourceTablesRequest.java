@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,10 +19,14 @@ public class ListDatasourceTablesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_id")
 
+    @JacksonXmlProperty(localName = "instance_id")
+
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "datasource_id")
+
+    @JacksonXmlProperty(localName = "datasource_id")
 
     private String datasourceId;
 
@@ -105,20 +110,28 @@ public class ListDatasourceTablesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "position")
 
+    @JacksonXmlProperty(localName = "position")
+
     private PositionEnum position;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "db_name")
+
+    @JacksonXmlProperty(localName = "db_name")
 
     private String dbName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "db_schema")
 
+    @JacksonXmlProperty(localName = "db_schema")
+
     private String dbSchema;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "filter")
+
+    @JacksonXmlProperty(localName = "filter")
 
     private String filter;
 

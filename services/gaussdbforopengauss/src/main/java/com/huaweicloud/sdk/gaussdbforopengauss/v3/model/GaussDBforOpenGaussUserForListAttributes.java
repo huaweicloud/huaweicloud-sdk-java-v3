@@ -8,6 +8,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -21,6 +23,7 @@ public class GaussDBforOpenGaussUserForListAttributes  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rolsuper")
     
+    @JacksonXmlProperty(localName = "rolsuper")
     
     private Boolean rolsuper;
 
@@ -28,6 +31,7 @@ public class GaussDBforOpenGaussUserForListAttributes  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rolinherit")
     
+    @JacksonXmlProperty(localName = "rolinherit")
     
     private Boolean rolinherit;
 
@@ -35,6 +39,7 @@ public class GaussDBforOpenGaussUserForListAttributes  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rolcreaterole")
     
+    @JacksonXmlProperty(localName = "rolcreaterole")
     
     private Boolean rolcreaterole;
 
@@ -42,6 +47,7 @@ public class GaussDBforOpenGaussUserForListAttributes  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rolcreatedb")
     
+    @JacksonXmlProperty(localName = "rolcreatedb")
     
     private Boolean rolcreatedb;
 
@@ -49,6 +55,7 @@ public class GaussDBforOpenGaussUserForListAttributes  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rolcanlogin")
     
+    @JacksonXmlProperty(localName = "rolcanlogin")
     
     private Boolean rolcanlogin;
 
@@ -56,6 +63,7 @@ public class GaussDBforOpenGaussUserForListAttributes  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rolconnlimit")
     
+    @JacksonXmlProperty(localName = "rolconnlimit")
     
     private Integer rolconnlimit;
 
@@ -63,6 +71,7 @@ public class GaussDBforOpenGaussUserForListAttributes  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rolreplication")
     
+    @JacksonXmlProperty(localName = "rolreplication")
     
     private Boolean rolreplication;
 
@@ -70,6 +79,7 @@ public class GaussDBforOpenGaussUserForListAttributes  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rolbypassrls")
     
+    @JacksonXmlProperty(localName = "rolbypassrls")
     
     private Boolean rolbypassrls;
 

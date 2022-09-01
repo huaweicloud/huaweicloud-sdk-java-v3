@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -22,15 +23,21 @@ public class CreateRecordRuleResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rule_id")
 
+    @JacksonXmlProperty(localName = "rule_id")
+
     private String ruleId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_id")
 
+    @JacksonXmlProperty(localName = "app_id")
+
     private String appId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "obs_addr")
+
+    @JacksonXmlProperty(localName = "obs_addr")
 
     private RecordObsFileAddr obsAddr;
 
@@ -114,30 +121,42 @@ public class CreateRecordRuleResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "record_formats")
 
+    @JacksonXmlProperty(localName = "record_formats")
+
     private List<RecordFormatsEnum> recordFormats = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hls_config")
+
+    @JacksonXmlProperty(localName = "hls_config")
 
     private HLSRecordConfig hlsConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mp4_config")
 
+    @JacksonXmlProperty(localName = "mp4_config")
+
     private MP4RecordConfig mp4Config;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
+
+    @JacksonXmlProperty(localName = "create_time")
 
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
 
+    @JacksonXmlProperty(localName = "update_time")
+
     private String updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-request-Id")
+
+    @JacksonXmlProperty(localName = "X-request-Id")
 
     private String xRequestId;
 

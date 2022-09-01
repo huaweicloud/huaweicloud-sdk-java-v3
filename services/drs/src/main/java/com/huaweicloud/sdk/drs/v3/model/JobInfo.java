@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,10 +22,14 @@ public class JobInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
@@ -233,15 +238,21 @@ public class JobInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
+    @JacksonXmlProperty(localName = "description")
+
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
+
+    @JacksonXmlProperty(localName = "create_time")
 
     private String createTime;
 
@@ -345,6 +356,8 @@ public class JobInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "engine_type")
 
+    @JacksonXmlProperty(localName = "engine_type")
+
     private EngineTypeEnum engineType;
 
     /**
@@ -433,10 +446,14 @@ public class JobInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "net_type")
 
+    @JacksonXmlProperty(localName = "net_type")
+
     private NetTypeEnum netType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "billing_tag")
+
+    @JacksonXmlProperty(localName = "billing_tag")
 
     private Boolean billingTag;
 
@@ -519,6 +536,8 @@ public class JobInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_direction")
+
+    @JacksonXmlProperty(localName = "job_direction")
 
     private JobDirectionEnum jobDirection;
 
@@ -608,6 +627,8 @@ public class JobInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "db_use_type")
 
+    @JacksonXmlProperty(localName = "db_use_type")
+
     private DbUseTypeEnum dbUseType;
 
     /**
@@ -696,15 +717,21 @@ public class JobInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_type")
 
+    @JacksonXmlProperty(localName = "task_type")
+
     private TaskTypeEnum taskType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "children")
 
+    @JacksonXmlProperty(localName = "children")
+
     private List<ChildrenJobInfo> children = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "node_newFramework")
+
+    @JacksonXmlProperty(localName = "node_newFramework")
 
     private Boolean nodeNewFramework;
 

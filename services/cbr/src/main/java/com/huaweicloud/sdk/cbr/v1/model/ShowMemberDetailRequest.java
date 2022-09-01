@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cbr.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class ShowMemberDetailRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "backup_id")
 
+    @JacksonXmlProperty(localName = "backup_id")
+
     private String backupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "member_id")
+
+    @JacksonXmlProperty(localName = "member_id")
 
     private String memberId;
 

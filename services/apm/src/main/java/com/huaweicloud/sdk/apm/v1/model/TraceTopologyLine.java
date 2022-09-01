@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.apm.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,35 +15,49 @@ public class TraceTopologyLine {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_node_id")
 
+    @JacksonXmlProperty(localName = "start_node_id")
+
     private Long startNodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_node_id")
+
+    @JacksonXmlProperty(localName = "end_node_id")
 
     private Long endNodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "span_id")
 
+    @JacksonXmlProperty(localName = "span_id")
+
     private String spanId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "client_info")
+
+    @JacksonXmlProperty(localName = "client_info")
 
     private TraceTopologyLineInfo clientInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "server_info")
 
+    @JacksonXmlProperty(localName = "server_info")
+
     private TraceTopologyLineInfo serverInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hint")
+
+    @JacksonXmlProperty(localName = "hint")
 
     private String hint;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.clouddeploy.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,10 +17,14 @@ public class EnvExecutionBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "params")
 
+    @JacksonXmlProperty(localName = "params")
+
     private List<DynamicConfigInfo> params = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "record_id")
+
+    @JacksonXmlProperty(localName = "record_id")
 
     private String recordId;
 

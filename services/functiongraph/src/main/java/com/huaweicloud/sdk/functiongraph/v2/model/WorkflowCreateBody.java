@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,40 +22,56 @@ public class WorkflowCreateBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
+
+    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start")
 
+    @JacksonXmlProperty(localName = "start")
+
     private String start;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "triggers")
+
+    @JacksonXmlProperty(localName = "triggers")
 
     private List<Trigger> triggers = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "functions")
 
+    @JacksonXmlProperty(localName = "functions")
+
     private List<Function> functions = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "states")
+
+    @JacksonXmlProperty(localName = "states")
 
     private List<OperationState> states = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "constants")
 
+    @JacksonXmlProperty(localName = "constants")
+
     private Object constants;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "retries")
+
+    @JacksonXmlProperty(localName = "retries")
 
     private List<Retry> retries = null;
 
@@ -138,15 +155,21 @@ public class WorkflowCreateBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mode")
 
+    @JacksonXmlProperty(localName = "mode")
+
     private ModeEnum mode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "express_config")
 
+    @JacksonXmlProperty(localName = "express_config")
+
     private ExpressConfig expressConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
+
+    @JacksonXmlProperty(localName = "enterprise_project_id")
 
     private String enterpriseProjectId;
 

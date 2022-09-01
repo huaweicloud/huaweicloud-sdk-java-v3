@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.live.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.time.OffsetDateTime;
 import java.util.Objects;
@@ -14,30 +15,42 @@ public class RecordIndexRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publish_domain")
 
+    @JacksonXmlProperty(localName = "publish_domain")
+
     private String publishDomain;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app")
+
+    @JacksonXmlProperty(localName = "app")
 
     private String app;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stream")
 
+    @JacksonXmlProperty(localName = "stream")
+
     private String stream;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
+
+    @JacksonXmlProperty(localName = "start_time")
 
     private OffsetDateTime startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time")
 
+    @JacksonXmlProperty(localName = "end_time")
+
     private OffsetDateTime endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "object")
+
+    @JacksonXmlProperty(localName = "object")
 
     private String _object;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.bcs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,20 +17,28 @@ public class OprecordCluster {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cluster_type")
 
+    @JacksonXmlProperty(localName = "cluster_type")
+
     private String clusterType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cluster_id")
 
+    @JacksonXmlProperty(localName = "cluster_id")
+
     private String clusterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "node_infos")
+
+    @JacksonXmlProperty(localName = "node_infos")
 
     private List<NodeInfo> nodeInfos = null;
 

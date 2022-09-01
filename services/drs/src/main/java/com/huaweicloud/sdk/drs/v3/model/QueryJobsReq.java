@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -19,10 +20,14 @@ public class QueryJobsReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cur_page")
 
+    @JacksonXmlProperty(localName = "cur_page")
+
     private Integer curPage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "per_page")
+
+    @JacksonXmlProperty(localName = "per_page")
 
     private Integer perPage;
 
@@ -112,6 +117,8 @@ public class QueryJobsReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "db_use_type")
 
+    @JacksonXmlProperty(localName = "db_use_type")
+
     private DbUseTypeEnum dbUseType;
 
     /**
@@ -200,15 +207,21 @@ public class QueryJobsReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "engine_type")
 
+    @JacksonXmlProperty(localName = "engine_type")
+
     private EngineTypeEnum engineType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
+    @JacksonXmlProperty(localName = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
@@ -298,10 +311,14 @@ public class QueryJobsReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "net_type")
 
+    @JacksonXmlProperty(localName = "net_type")
+
     private NetTypeEnum netType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_name")
+
+    @JacksonXmlProperty(localName = "service_name")
 
     private String serviceName;
 
@@ -507,10 +524,14 @@ public class QueryJobsReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
+
+    @JacksonXmlProperty(localName = "tags")
 
     private Map<String, String> tags = null;
 

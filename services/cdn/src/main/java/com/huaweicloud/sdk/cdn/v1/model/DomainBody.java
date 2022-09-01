@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -20,6 +21,8 @@ public class DomainBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_name")
+
+    @JacksonXmlProperty(localName = "domain_name")
 
     private String domainName;
 
@@ -115,10 +118,14 @@ public class DomainBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "business_type")
 
+    @JacksonXmlProperty(localName = "business_type")
+
     private BusinessTypeEnum businessType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sources")
+
+    @JacksonXmlProperty(localName = "sources")
 
     private List<Sources> sources = null;
 
@@ -208,10 +215,14 @@ public class DomainBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_area")
 
+    @JacksonXmlProperty(localName = "service_area")
+
     private ServiceAreaEnum serviceArea;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
+
+    @JacksonXmlProperty(localName = "enterprise_project_id")
 
     private String enterpriseProjectId;
 

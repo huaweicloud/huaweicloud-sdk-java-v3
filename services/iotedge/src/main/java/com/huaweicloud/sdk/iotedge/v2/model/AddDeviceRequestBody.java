@@ -9,6 +9,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.iotedge.v2.model.EdgeDeviceAuthInfo;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -22,6 +24,7 @@ public class AddDeviceRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_id")
     
+    @JacksonXmlProperty(localName = "node_id")
     
     private String nodeId;
 
@@ -29,6 +32,7 @@ public class AddDeviceRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="device_name")
     
+    @JacksonXmlProperty(localName = "device_name")
     
     private String deviceName;
 
@@ -36,6 +40,7 @@ public class AddDeviceRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="product_id")
     
+    @JacksonXmlProperty(localName = "product_id")
     
     private String productId;
 
@@ -43,6 +48,7 @@ public class AddDeviceRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auth_info")
     
+    @JacksonXmlProperty(localName = "auth_info")
     
     private EdgeDeviceAuthInfo authInfo;
 
@@ -50,6 +56,7 @@ public class AddDeviceRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
+    @JacksonXmlProperty(localName = "description")
     
     private String description;
 
@@ -57,6 +64,7 @@ public class AddDeviceRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="gateway_id")
     
+    @JacksonXmlProperty(localName = "gateway_id")
     
     private String gatewayId;
 
@@ -64,6 +72,7 @@ public class AddDeviceRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="space_id")
     
+    @JacksonXmlProperty(localName = "space_id")
     
     private String spaceId;
 
@@ -71,6 +80,7 @@ public class AddDeviceRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="extension_info")
     
+    @JacksonXmlProperty(localName = "extension_info")
     
     private Object extensionInfo;
 
@@ -78,6 +88,7 @@ public class AddDeviceRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="config")
     
+    @JacksonXmlProperty(localName = "config")
     
     private Object config;
 

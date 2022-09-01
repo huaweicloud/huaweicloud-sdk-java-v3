@@ -8,6 +8,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -21,6 +23,7 @@ public class ListRangeQueryAomPromPostRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="query")
     
+    @JacksonXmlProperty(localName = "query")
     
     private String query;
 
@@ -28,6 +31,7 @@ public class ListRangeQueryAomPromPostRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="start")
     
+    @JacksonXmlProperty(localName = "start")
     
     private String start;
 
@@ -35,6 +39,7 @@ public class ListRangeQueryAomPromPostRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="end")
     
+    @JacksonXmlProperty(localName = "end")
     
     private String end;
 
@@ -42,6 +47,7 @@ public class ListRangeQueryAomPromPostRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="step")
     
+    @JacksonXmlProperty(localName = "step")
     
     private String step;
 

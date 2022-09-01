@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.sa.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,90 +14,126 @@ public class ThreatIntelProperties {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_md5")
 
+    @JacksonXmlProperty(localName = "file_md5")
+
     private String fileMd5;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_sha1")
+
+    @JacksonXmlProperty(localName = "file_sha1")
 
     private String fileSha1;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_sha256")
 
+    @JacksonXmlProperty(localName = "file_sha256")
+
     private String fileSha256;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_name")
+
+    @JacksonXmlProperty(localName = "file_name")
 
     private String fileName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
+    @JacksonXmlProperty(localName = "create_time")
+
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_class")
+
+    @JacksonXmlProperty(localName = "file_class")
 
     private String fileClass;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_family")
 
+    @JacksonXmlProperty(localName = "file_family")
+
     private String fileFamily;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_maltype")
+
+    @JacksonXmlProperty(localName = "file_maltype")
 
     private String fileMaltype;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip_resolves_to_refs")
 
+    @JacksonXmlProperty(localName = "ip_resolves_to_refs")
+
     private String ipResolvesToRefs;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "belongs_to_refs")
+
+    @JacksonXmlProperty(localName = "belongs_to_refs")
 
     private String belongsToRefs;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip_location")
 
+    @JacksonXmlProperty(localName = "ip_location")
+
     private String ipLocation;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_family")
+
+    @JacksonXmlProperty(localName = "domain_family")
 
     private String domainFamily;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_resolves_to_refs")
 
+    @JacksonXmlProperty(localName = "domain_resolves_to_refs")
+
     private String domainResolvesToRefs;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_dns_type")
+
+    @JacksonXmlProperty(localName = "domain_dns_type")
 
     private String domainDnsType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "url_host")
 
+    @JacksonXmlProperty(localName = "url_host")
+
     private String urlHost;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "url_resolves_to_refs")
+
+    @JacksonXmlProperty(localName = "url_resolves_to_refs")
 
     private String urlResolvesToRefs;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "display_name")
 
+    @JacksonXmlProperty(localName = "display_name")
+
     private String displayName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "url_belongs_to_ref")
+
+    @JacksonXmlProperty(localName = "url_belongs_to_ref")
 
     private String urlBelongsToRef;
 

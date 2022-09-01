@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -17,6 +18,8 @@ public class ShowDocWatermarkByAddressRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region_id")
+
+    @JacksonXmlProperty(localName = "region_id")
 
     private String regionId;
 
@@ -112,15 +115,21 @@ public class ShowDocWatermarkByAddressRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "doc_type")
 
+    @JacksonXmlProperty(localName = "doc_type")
+
     private DocTypeEnum docType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "src_file")
 
+    @JacksonXmlProperty(localName = "src_file")
+
     private String srcFile;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_password")
+
+    @JacksonXmlProperty(localName = "file_password")
 
     private String filePassword;
 

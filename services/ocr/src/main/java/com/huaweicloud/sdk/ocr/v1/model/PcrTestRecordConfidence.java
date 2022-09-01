@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ocr.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,20 +14,28 @@ public class PcrTestRecordConfidence {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private Float name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sampling_time")
+
+    @JacksonXmlProperty(localName = "sampling_time")
 
     private Float samplingTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "test_time")
 
+    @JacksonXmlProperty(localName = "test_time")
+
     private Float testTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "test_result")
+
+    @JacksonXmlProperty(localName = "test_result")
 
     private Float testResult;
 

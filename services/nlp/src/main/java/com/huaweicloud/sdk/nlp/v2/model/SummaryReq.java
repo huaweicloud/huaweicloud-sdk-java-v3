@@ -12,6 +12,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -25,6 +27,7 @@ public class SummaryReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="content")
     
+    @JacksonXmlProperty(localName = "content")
     
     private String content;
     /**
@@ -110,6 +113,7 @@ public class SummaryReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="lang")
     
+    @JacksonXmlProperty(localName = "lang")
     
     private LangEnum lang;
 
@@ -117,6 +121,7 @@ public class SummaryReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="length_limit")
     
+    @JacksonXmlProperty(localName = "length_limit")
     
     private Float lengthLimit;
 
@@ -124,6 +129,7 @@ public class SummaryReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="title")
     
+    @JacksonXmlProperty(localName = "title")
     
     private String title;
 

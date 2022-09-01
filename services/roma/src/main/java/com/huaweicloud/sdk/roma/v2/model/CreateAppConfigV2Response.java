@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.roma.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.time.OffsetDateTime;
@@ -15,35 +16,49 @@ public class CreateAppConfigV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_id")
+
+    @JacksonXmlProperty(localName = "app_id")
 
     private String appId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "config_type")
 
+    @JacksonXmlProperty(localName = "config_type")
+
     private String configType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "config_name")
+
+    @JacksonXmlProperty(localName = "config_name")
 
     private String configName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "config_value")
 
+    @JacksonXmlProperty(localName = "config_value")
+
     private String configValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
 
+    @JacksonXmlProperty(localName = "update_time")
+
     private OffsetDateTime updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
+
+    @JacksonXmlProperty(localName = "description")
 
     private String description;
 

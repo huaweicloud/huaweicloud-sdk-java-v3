@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -101,10 +102,14 @@ public class KeystoneListEndpointsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "interface")
 
+    @JacksonXmlProperty(localName = "interface")
+
     private InterfaceEnum _interface;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_id")
+
+    @JacksonXmlProperty(localName = "service_id")
 
     private String serviceId;
 

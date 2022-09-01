@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.rds.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class PostgresqlUserWithPrivilege {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "readonly")
 
+    @JacksonXmlProperty(localName = "readonly")
+
     private Boolean readonly;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "schema_name")
+
+    @JacksonXmlProperty(localName = "schema_name")
 
     private String schemaName;
 

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,20 +22,28 @@ public class ModifyJobReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_id")
 
+    @JacksonXmlProperty(localName = "job_id")
+
     private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
+
+    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alarm_notify")
+
+    @JacksonXmlProperty(localName = "alarm_notify")
 
     private AlarmNotifyInfo alarmNotify;
 
@@ -124,15 +133,21 @@ public class ModifyJobReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_type")
 
+    @JacksonXmlProperty(localName = "task_type")
+
     private TaskTypeEnum taskType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_endpoint")
 
+    @JacksonXmlProperty(localName = "source_endpoint")
+
     private Endpoint sourceEndpoint;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_endpoint")
+
+    @JacksonXmlProperty(localName = "target_endpoint")
 
     private Endpoint targetEndpoint;
 
@@ -209,6 +224,8 @@ public class ModifyJobReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "node_type")
+
+    @JacksonXmlProperty(localName = "node_type")
 
     private NodeTypeEnum nodeType;
 
@@ -298,6 +315,8 @@ public class ModifyJobReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "engine_type")
 
+    @JacksonXmlProperty(localName = "engine_type")
+
     private EngineTypeEnum engineType;
 
     /**
@@ -386,15 +405,21 @@ public class ModifyJobReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "net_type")
 
+    @JacksonXmlProperty(localName = "net_type")
+
     private NetTypeEnum netType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "store_db_info")
 
+    @JacksonXmlProperty(localName = "store_db_info")
+
     private Boolean storeDbInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_recreate")
+
+    @JacksonXmlProperty(localName = "is_recreate")
 
     private Boolean isRecreate;
 
@@ -484,20 +509,28 @@ public class ModifyJobReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_direction")
 
+    @JacksonXmlProperty(localName = "job_direction")
+
     private JobDirectionEnum jobDirection;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_target_readonly")
+
+    @JacksonXmlProperty(localName = "is_target_readonly")
 
     private Boolean isTargetReadonly;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "replace_definer")
 
+    @JacksonXmlProperty(localName = "replace_definer")
+
     private Boolean replaceDefiner;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
+
+    @JacksonXmlProperty(localName = "tags")
 
     private List<ResourceTag> tags = null;
 
@@ -587,10 +620,14 @@ public class ModifyJobReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "db_use_type")
 
+    @JacksonXmlProperty(localName = "db_use_type")
+
     private DbUseTypeEnum dbUseType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "product_id")
+
+    @JacksonXmlProperty(localName = "product_id")
 
     private String productId;
 

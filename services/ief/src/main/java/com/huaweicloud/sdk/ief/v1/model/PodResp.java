@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ief.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,70 +17,98 @@ public class PodResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "configs")
 
+    @JacksonXmlProperty(localName = "configs")
+
     private PodConfigs configs;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "affinity")
+
+    @JacksonXmlProperty(localName = "affinity")
 
     private Affinity affinity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "init_containers")
 
+    @JacksonXmlProperty(localName = "init_containers")
+
     private List<ContainerResp> initContainers = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "containers")
+
+    @JacksonXmlProperty(localName = "containers")
 
     private List<ContainerResp> containers = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "node_id")
 
+    @JacksonXmlProperty(localName = "node_id")
+
     private String nodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deployment_id")
+
+    @JacksonXmlProperty(localName = "deployment_id")
 
     private String deploymentId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
 
+    @JacksonXmlProperty(localName = "project_id")
+
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "reason")
+
+    @JacksonXmlProperty(localName = "reason")
 
     private String reason;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "message")
 
+    @JacksonXmlProperty(localName = "message")
+
     private String message;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
+
+    @JacksonXmlProperty(localName = "created_at")
 
     private String createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_at")
 
+    @JacksonXmlProperty(localName = "updated_at")
+
     private String updatedAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "state")
+
+    @JacksonXmlProperty(localName = "state")
 
     private String state;
 

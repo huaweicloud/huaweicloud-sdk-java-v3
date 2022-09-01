@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -101,15 +102,21 @@ public class BackendParam {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "origin")
 
+    @JacksonXmlProperty(localName = "origin")
+
     private OriginEnum origin;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remark")
+
+    @JacksonXmlProperty(localName = "remark")
 
     private String remark;
 
@@ -199,20 +206,28 @@ public class BackendParam {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "location")
 
+    @JacksonXmlProperty(localName = "location")
+
     private LocationEnum location;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "value")
+
+    @JacksonXmlProperty(localName = "value")
 
     private String value;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "req_param_id")
+
+    @JacksonXmlProperty(localName = "req_param_id")
 
     private String reqParamId;
 

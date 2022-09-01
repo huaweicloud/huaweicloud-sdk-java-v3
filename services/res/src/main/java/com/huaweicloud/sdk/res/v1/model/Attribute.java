@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.res.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,15 +17,21 @@ public class Attribute {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_type")
 
+    @JacksonXmlProperty(localName = "data_type")
+
     private String dataType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "other_uses")
+
+    @JacksonXmlProperty(localName = "other_uses")
 
     private List<String> otherUses = null;
 

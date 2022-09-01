@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.elb.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,65 +17,91 @@ public class ListL7RulesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "l7policy_id")
 
+    @JacksonXmlProperty(localName = "l7policy_id")
+
     private String l7policyId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
+
+    @JacksonXmlProperty(localName = "limit")
 
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "marker")
 
+    @JacksonXmlProperty(localName = "marker")
+
     private String marker;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page_reverse")
+
+    @JacksonXmlProperty(localName = "page_reverse")
 
     private Boolean pageReverse;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private List<String> id = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "compare_type")
+
+    @JacksonXmlProperty(localName = "compare_type")
 
     private List<String> compareType = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "provisioning_status")
 
+    @JacksonXmlProperty(localName = "provisioning_status")
+
     private List<String> provisioningStatus = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "invert")
+
+    @JacksonXmlProperty(localName = "invert")
 
     private Boolean invert;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "admin_state_up")
 
+    @JacksonXmlProperty(localName = "admin_state_up")
+
     private Boolean adminStateUp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "value")
+
+    @JacksonXmlProperty(localName = "value")
 
     private List<String> value = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key")
 
+    @JacksonXmlProperty(localName = "key")
+
     private List<String> key = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
+    @JacksonXmlProperty(localName = "type")
+
     private List<String> type = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
+
+    @JacksonXmlProperty(localName = "enterprise_project_id")
 
     private List<String> enterpriseProjectId = null;
 

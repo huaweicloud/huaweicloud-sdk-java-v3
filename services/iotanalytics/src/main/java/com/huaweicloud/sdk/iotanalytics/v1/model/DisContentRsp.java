@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.iotanalytics.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,20 +14,28 @@ public class DisContentRsp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "streamName")
 
+    @JacksonXmlProperty(localName = "streamName")
+
     private String streamName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ak")
+
+    @JacksonXmlProperty(localName = "ak")
 
     private String ak;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sk")
 
+    @JacksonXmlProperty(localName = "sk")
+
     private String sk;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "projectId")
+
+    @JacksonXmlProperty(localName = "projectId")
 
     private String projectId;
 

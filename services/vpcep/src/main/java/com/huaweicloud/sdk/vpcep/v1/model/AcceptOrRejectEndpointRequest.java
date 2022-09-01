@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.vpcep.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,10 +15,14 @@ public class AcceptOrRejectEndpointRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_endpoint_service_id")
 
+    @JacksonXmlProperty(localName = "vpc_endpoint_service_id")
+
     private String vpcEndpointServiceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
+
+    @JacksonXmlProperty(localName = "body")
 
     private AcceptOrRejectEndpointRequestBody body;
 

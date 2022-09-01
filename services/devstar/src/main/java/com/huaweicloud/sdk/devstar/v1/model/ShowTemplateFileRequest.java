@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -95,15 +96,21 @@ public class ShowTemplateFileRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Language")
 
+    @JacksonXmlProperty(localName = "X-Language")
+
     private XLanguageEnum xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template_id")
 
+    @JacksonXmlProperty(localName = "template_id")
+
     private String templateId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_path")
+
+    @JacksonXmlProperty(localName = "file_path")
 
     private String filePath;
 
@@ -186,6 +193,8 @@ public class ShowTemplateFileRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
+
+    @JacksonXmlProperty(localName = "type")
 
     private TypeEnum type;
 

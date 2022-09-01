@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cce.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,15 +17,21 @@ public class EniNetwork {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "eniSubnetId")
 
+    @JacksonXmlProperty(localName = "eniSubnetId")
+
     private String eniSubnetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "eniSubnetCIDR")
 
+    @JacksonXmlProperty(localName = "eniSubnetCIDR")
+
     private String eniSubnetCIDR;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subnets")
+
+    @JacksonXmlProperty(localName = "subnets")
 
     private List<NetworkSubnet> subnets = null;
 

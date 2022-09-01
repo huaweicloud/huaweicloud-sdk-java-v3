@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class ImportReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "zip_file")
 
+    @JacksonXmlProperty(localName = "zip_file")
+
     private String zipFile;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_cover")
+
+    @JacksonXmlProperty(localName = "is_cover")
 
     private Boolean isCover;
 

@@ -13,6 +13,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.cbs.v1.model.ChatAnswers;
 import com.huaweicloud.sdk.cbs.v1.model.QaBotAnswers;
 import com.huaweicloud.sdk.cbs.v1.model.TaskBotAnswers;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -26,6 +28,7 @@ public class ExecuteSessionResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="reply_type")
     
+    @JacksonXmlProperty(localName = "reply_type")
     
     private Integer replyType;
 
@@ -33,6 +36,7 @@ public class ExecuteSessionResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="qabot_answers")
     
+    @JacksonXmlProperty(localName = "qabot_answers")
     
     private QaBotAnswers qabotAnswers;
 
@@ -40,6 +44,7 @@ public class ExecuteSessionResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="chat_answers")
     
+    @JacksonXmlProperty(localName = "chat_answers")
     
     private ChatAnswers chatAnswers;
 
@@ -47,6 +52,7 @@ public class ExecuteSessionResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="taskbot_answers")
     
+    @JacksonXmlProperty(localName = "taskbot_answers")
     
     private TaskBotAnswers taskbotAnswers;
 
@@ -54,6 +60,7 @@ public class ExecuteSessionResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="request_id")
     
+    @JacksonXmlProperty(localName = "request_id")
     
     private String requestId;
 

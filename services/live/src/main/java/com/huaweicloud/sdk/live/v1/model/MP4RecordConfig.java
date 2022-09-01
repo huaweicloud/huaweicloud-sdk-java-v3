@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.live.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class MP4RecordConfig {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "record_cycle")
 
+    @JacksonXmlProperty(localName = "record_cycle")
+
     private Integer recordCycle;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "record_prefix")
 
+    @JacksonXmlProperty(localName = "record_prefix")
+
     private String recordPrefix;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "record_max_duration_to_merge_file")
+
+    @JacksonXmlProperty(localName = "record_max_duration_to_merge_file")
 
     private Integer recordMaxDurationToMergeFile;
 

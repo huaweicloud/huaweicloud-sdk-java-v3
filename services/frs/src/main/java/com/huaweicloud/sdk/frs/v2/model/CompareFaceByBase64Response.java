@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.frs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -15,15 +16,21 @@ public class CompareFaceByBase64Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image1_face")
 
+    @JacksonXmlProperty(localName = "image1_face")
+
     private CompareFace image1Face;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image2_face")
 
+    @JacksonXmlProperty(localName = "image2_face")
+
     private CompareFace image2Face;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "similarity")
+
+    @JacksonXmlProperty(localName = "similarity")
 
     private Double similarity;
 

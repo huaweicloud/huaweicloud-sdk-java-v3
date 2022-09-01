@@ -11,6 +11,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.aom.v2.model.MetricQueryMeritcParam;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -24,6 +26,7 @@ public class QueryMetricDataParam  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metrics")
     
+    @JacksonXmlProperty(localName = "metrics")
     
     private List<MetricQueryMeritcParam> metrics = null;
     
@@ -31,6 +34,7 @@ public class QueryMetricDataParam  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="period")
     
+    @JacksonXmlProperty(localName = "period")
     
     private Integer period;
 
@@ -38,6 +42,7 @@ public class QueryMetricDataParam  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="statistics")
     
+    @JacksonXmlProperty(localName = "statistics")
     
     private List<String> statistics = null;
     
@@ -45,6 +50,7 @@ public class QueryMetricDataParam  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="timerange")
     
+    @JacksonXmlProperty(localName = "timerange")
     
     private String timerange;
 

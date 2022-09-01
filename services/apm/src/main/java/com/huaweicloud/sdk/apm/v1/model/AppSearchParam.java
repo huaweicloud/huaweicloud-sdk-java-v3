@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.apm.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,25 +14,35 @@ public class AppSearchParam {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "business_id")
 
+    @JacksonXmlProperty(localName = "business_id")
+
     private Long businessId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region")
+
+    @JacksonXmlProperty(localName = "region")
 
     private String region;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page")
 
+    @JacksonXmlProperty(localName = "page")
+
     private Integer page;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page_size")
 
+    @JacksonXmlProperty(localName = "page_size")
+
     private Integer pageSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "keyword")
+
+    @JacksonXmlProperty(localName = "keyword")
 
     private String keyword;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ief.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,20 +17,28 @@ public class AppConfigs {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "privileged")
 
+    @JacksonXmlProperty(localName = "privileged")
+
     private Boolean privileged;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_network")
+
+    @JacksonXmlProperty(localName = "host_network")
 
     private Boolean hostNetwork;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "restart_policy")
 
+    @JacksonXmlProperty(localName = "restart_policy")
+
     private String restartPolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ports")
+
+    @JacksonXmlProperty(localName = "ports")
 
     private List<Ports> ports = null;
 

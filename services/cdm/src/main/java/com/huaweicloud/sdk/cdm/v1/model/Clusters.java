@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cdm.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,120 +17,168 @@ public class Clusters {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "customerConfig")
 
+    @JacksonXmlProperty(localName = "customerConfig")
+
     private CustomerConfig customerConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "datastore")
+
+    @JacksonXmlProperty(localName = "datastore")
 
     private Datastore datastore;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instances")
 
+    @JacksonXmlProperty(localName = "instances")
+
     private List<ClusterDetailInstance> instances = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "azName")
+
+    @JacksonXmlProperty(localName = "azName")
 
     private String azName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dbuser")
 
+    @JacksonXmlProperty(localName = "dbuser")
+
     private String dbuser;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flavorName")
+
+    @JacksonXmlProperty(localName = "flavorName")
 
     private String flavorName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "recentEvent")
 
+    @JacksonXmlProperty(localName = "recentEvent")
+
     private Integer recentEvent;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "isAutoOff")
+
+    @JacksonXmlProperty(localName = "isAutoOff")
 
     private Boolean isAutoOff;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "isScheduleBootOff")
 
+    @JacksonXmlProperty(localName = "isScheduleBootOff")
+
     private Boolean isScheduleBootOff;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "clusterMode")
+
+    @JacksonXmlProperty(localName = "clusterMode")
 
     private String clusterMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "namespace")
 
+    @JacksonXmlProperty(localName = "namespace")
+
     private String namespace;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task")
+
+    @JacksonXmlProperty(localName = "task")
 
     private ClusterTask task;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publicEndpoint")
 
+    @JacksonXmlProperty(localName = "publicEndpoint")
+
     private String publicEndpoint;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "actionProgress")
+
+    @JacksonXmlProperty(localName = "actionProgress")
 
     private ActionProgress actionProgress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created")
 
+    @JacksonXmlProperty(localName = "created")
+
     private String created;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bakExpectedStartTime")
+
+    @JacksonXmlProperty(localName = "bakExpectedStartTime")
 
     private String bakExpectedStartTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bakKeepDay")
 
+    @JacksonXmlProperty(localName = "bakKeepDay")
+
     private Integer bakKeepDay;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "statusDetail")
 
+    @JacksonXmlProperty(localName = "statusDetail")
+
     private String statusDetail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
+
+    @JacksonXmlProperty(localName = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "isFrozen")
 
+    @JacksonXmlProperty(localName = "isFrozen")
+
     private String isFrozen;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated")
+
+    @JacksonXmlProperty(localName = "updated")
 
     private String updated;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "failedReasons")
+
+    @JacksonXmlProperty(localName = "failedReasons")
 
     private FailedReasons failedReasons;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.dcs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,10 +17,14 @@ public class Whitelist {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_name")
 
+    @JacksonXmlProperty(localName = "group_name")
+
     private String groupName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip_list")
+
+    @JacksonXmlProperty(localName = "ip_list")
 
     private List<String> ipList = null;
 

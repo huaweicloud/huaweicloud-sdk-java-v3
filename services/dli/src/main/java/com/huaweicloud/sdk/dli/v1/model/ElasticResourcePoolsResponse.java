@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -18,95 +19,133 @@ public class ElasticResourcePoolsResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
 
+    @JacksonXmlProperty(localName = "update_time")
+
     private Integer updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "queues")
+
+    @JacksonXmlProperty(localName = "queues")
 
     private List<String> queues = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "owner")
 
+    @JacksonXmlProperty(localName = "owner")
+
     private String owner;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "elastic_resource_pool_name")
+
+    @JacksonXmlProperty(localName = "elastic_resource_pool_name")
 
     private String elasticResourcePoolName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
+    @JacksonXmlProperty(localName = "description")
+
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_cu")
+
+    @JacksonXmlProperty(localName = "max_cu")
 
     private Integer maxCu;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "min_cu")
 
+    @JacksonXmlProperty(localName = "min_cu")
+
     private Integer minCu;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "actual_cu")
+
+    @JacksonXmlProperty(localName = "actual_cu")
 
     private Integer actualCu;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cidr_in_vpc")
 
+    @JacksonXmlProperty(localName = "cidr_in_vpc")
+
     private String cidrInVpc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
+
+    @JacksonXmlProperty(localName = "create_time")
 
     private Integer createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "current_cu")
 
+    @JacksonXmlProperty(localName = "current_cu")
+
     private Integer currentCu;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
+
+    @JacksonXmlProperty(localName = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_id")
 
+    @JacksonXmlProperty(localName = "resource_id")
+
     private String resourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fail_reason")
+
+    @JacksonXmlProperty(localName = "fail_reason")
 
     private String failReason;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
+    @JacksonXmlProperty(localName = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "prepay_cu")
+
+    @JacksonXmlProperty(localName = "prepay_cu")
 
     private Integer prepayCu;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "charging_mode")
 
+    @JacksonXmlProperty(localName = "charging_mode")
+
     private Integer chargingMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "manager")
 
+    @JacksonXmlProperty(localName = "manager")
+
     private String manager;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "label")
+
+    @JacksonXmlProperty(localName = "label")
 
     private Map<String, String> label = null;
 

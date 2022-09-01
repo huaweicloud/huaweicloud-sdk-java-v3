@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cc.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,15 +17,21 @@ public class UpdateNetworkInstance {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
+    @JacksonXmlProperty(localName = "description")
+
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cidrs")
+
+    @JacksonXmlProperty(localName = "cidrs")
 
     private List<String> cidrs = null;
 
@@ -84,7 +91,7 @@ public class UpdateNetworkInstance {
     }
 
     /**
-     * 网络实例发布的网段路由列表，ER场景此字段为空。
+     * 网络实例发布的网段路由列表。
      * @return cidrs
      */
     public List<String> getCidrs() {

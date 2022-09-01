@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.iam.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,15 +17,21 @@ public class RulesRemote {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
+    @JacksonXmlProperty(localName = "type")
+
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "any_one_of")
 
+    @JacksonXmlProperty(localName = "any_one_of")
+
     private List<String> anyOneOf = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "not_any_of")
+
+    @JacksonXmlProperty(localName = "not_any_of")
 
     private List<String> notAnyOf = null;
 

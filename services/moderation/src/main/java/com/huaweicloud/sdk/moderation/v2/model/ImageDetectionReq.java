@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,15 +22,21 @@ public class ImageDetectionReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "url")
 
+    @JacksonXmlProperty(localName = "url")
+
     private String url;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image")
 
+    @JacksonXmlProperty(localName = "image")
+
     private String image;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "moderation_rule")
+
+    @JacksonXmlProperty(localName = "moderation_rule")
 
     private String moderationRule;
 
@@ -131,20 +138,28 @@ public class ImageDetectionReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "categories")
 
+    @JacksonXmlProperty(localName = "categories")
+
     private List<CategoriesEnum> categories = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ad_categories")
+
+    @JacksonXmlProperty(localName = "ad_categories")
 
     private List<String> adCategories = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "threshold")
 
+    @JacksonXmlProperty(localName = "threshold")
+
     private Float threshold;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "show_ocr_text")
+
+    @JacksonXmlProperty(localName = "show_ocr_text")
 
     private Boolean showOcrText;
 

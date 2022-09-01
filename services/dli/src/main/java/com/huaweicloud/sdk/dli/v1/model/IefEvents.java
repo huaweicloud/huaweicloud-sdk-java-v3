@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,30 +14,42 @@ public class IefEvents {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_type")
 
+    @JacksonXmlProperty(localName = "event_type")
+
     private String eventType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operation")
+
+    @JacksonXmlProperty(localName = "operation")
 
     private String operation;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timestamp")
 
+    @JacksonXmlProperty(localName = "timestamp")
+
     private Integer timestamp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "topic")
+
+    @JacksonXmlProperty(localName = "topic")
 
     private String topic;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "attributes")
+
+    @JacksonXmlProperty(localName = "attributes")
 
     private String attributes;
 

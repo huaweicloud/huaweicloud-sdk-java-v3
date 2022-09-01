@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cph.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class CreateNet2CloudPhoneServerRequestBodyPorts {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "listen_port")
 
+    @JacksonXmlProperty(localName = "listen_port")
+
     private Integer listenPort;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "internet_accessible")
+
+    @JacksonXmlProperty(localName = "internet_accessible")
 
     private String internetAccessible;
 

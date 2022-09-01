@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,10 +17,14 @@ public class RunJobInBatch {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resume_savepoint")
 
+    @JacksonXmlProperty(localName = "resume_savepoint")
+
     private Boolean resumeSavepoint;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_ids")
+
+    @JacksonXmlProperty(localName = "job_ids")
 
     private List<Long> jobIds = null;
 

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -22,15 +23,21 @@ public class ShowEngineResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
+
+    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
@@ -114,25 +121,35 @@ public class ShowEngineResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auth_type")
 
+    @JacksonXmlProperty(localName = "auth_type")
+
     private AuthTypeEnum authType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flavor")
+
+    @JacksonXmlProperty(localName = "flavor")
 
     private String flavor;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "payment")
 
+    @JacksonXmlProperty(localName = "payment")
+
     private String payment;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
 
+    @JacksonXmlProperty(localName = "version")
+
     private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "latest_version")
+
+    @JacksonXmlProperty(localName = "latest_version")
 
     private String latestVersion;
 
@@ -276,50 +293,70 @@ public class ShowEngineResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "be_default")
+
+    @JacksonXmlProperty(localName = "be_default")
 
     private Boolean beDefault;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_user")
 
+    @JacksonXmlProperty(localName = "create_user")
+
     private String createUser;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
+
+    @JacksonXmlProperty(localName = "create_time")
 
     private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cce_spec")
 
+    @JacksonXmlProperty(localName = "cce_spec")
+
     private Spec cceSpec;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "external_entrypoint")
+
+    @JacksonXmlProperty(localName = "external_entrypoint")
 
     private EngineExternalEntrypoint externalEntrypoint;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "reference")
 
+    @JacksonXmlProperty(localName = "reference")
+
     private EngineReference reference;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "latest_job_id")
+
+    @JacksonXmlProperty(localName = "latest_job_id")
 
     private Integer latestJobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
+    @JacksonXmlProperty(localName = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_name")
+
+    @JacksonXmlProperty(localName = "enterprise_project_name")
 
     private String enterpriseProjectName;
 
@@ -415,6 +452,8 @@ public class ShowEngineResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "engine_additional_actions")
 
+    @JacksonXmlProperty(localName = "engine_additional_actions")
+
     private List<EngineAdditionalActionsEnum> engineAdditionalActions = null;
 
     /**
@@ -503,6 +542,8 @@ public class ShowEngineResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "spec_type")
 
+    @JacksonXmlProperty(localName = "spec_type")
+
     private SpecTypeEnum specType;
 
     /**
@@ -585,15 +626,21 @@ public class ShowEngineResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
+    @JacksonXmlProperty(localName = "type")
+
     private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
 
+    @JacksonXmlProperty(localName = "project_id")
+
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vm_ids")
+
+    @JacksonXmlProperty(localName = "vm_ids")
 
     private List<String> vmIds = null;
 

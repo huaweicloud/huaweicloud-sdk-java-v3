@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.apig.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -17,65 +18,91 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "common_name")
 
+    @JacksonXmlProperty(localName = "common_name")
+
     private String commonName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "san")
+
+    @JacksonXmlProperty(localName = "san")
 
     private List<String> san = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
 
+    @JacksonXmlProperty(localName = "version")
+
     private Integer version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "organization")
+
+    @JacksonXmlProperty(localName = "organization")
 
     private List<String> organization = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "organizational_unit")
 
+    @JacksonXmlProperty(localName = "organizational_unit")
+
     private List<String> organizationalUnit = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "locality")
+
+    @JacksonXmlProperty(localName = "locality")
 
     private List<String> locality = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "state")
 
+    @JacksonXmlProperty(localName = "state")
+
     private List<String> state = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "country")
+
+    @JacksonXmlProperty(localName = "country")
 
     private List<String> country = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "not_before")
 
+    @JacksonXmlProperty(localName = "not_before")
+
     private String notBefore;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "not_after")
+
+    @JacksonXmlProperty(localName = "not_after")
 
     private String notAfter;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "serial_number")
 
+    @JacksonXmlProperty(localName = "serial_number")
+
     private String serialNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "issuer")
 
+    @JacksonXmlProperty(localName = "issuer")
+
     private List<String> issuer = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "signature_algorithm")
+
+    @JacksonXmlProperty(localName = "signature_algorithm")
 
     private String signatureAlgorithm;
 

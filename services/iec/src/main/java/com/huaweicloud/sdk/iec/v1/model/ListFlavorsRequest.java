@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.iec.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,45 +14,63 @@ public class ListFlavorsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
+    @JacksonXmlProperty(localName = "offset")
+
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
+
+    @JacksonXmlProperty(localName = "limit")
 
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "area")
+
+    @JacksonXmlProperty(localName = "area")
 
     private String area;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "province")
 
+    @JacksonXmlProperty(localName = "province")
+
     private String province;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "city")
+
+    @JacksonXmlProperty(localName = "city")
 
     private String city;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operator")
 
+    @JacksonXmlProperty(localName = "operator")
+
     private String operator;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "site_ids")
+
+    @JacksonXmlProperty(localName = "site_ids")
 
     private String siteIds;
 

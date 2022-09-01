@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,35 +19,49 @@ public class ListSitesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
+    @JacksonXmlProperty(localName = "limit")
+
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
+
+    @JacksonXmlProperty(localName = "offset")
 
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "area")
+
+    @JacksonXmlProperty(localName = "area")
 
     private String area;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "province")
 
+    @JacksonXmlProperty(localName = "province")
+
     private String province;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "city")
 
+    @JacksonXmlProperty(localName = "city")
+
     private String city;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flavor")
+
+    @JacksonXmlProperty(localName = "flavor")
 
     private String flavor;
 
@@ -129,6 +144,8 @@ public class ListSitesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volume_type")
+
+    @JacksonXmlProperty(localName = "volume_type")
 
     private VolumeTypeEnum volumeType;
 

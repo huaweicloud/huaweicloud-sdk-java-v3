@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.evs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -17,100 +18,140 @@ public class UpdateVolumeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "attachments")
 
+    @JacksonXmlProperty(localName = "attachments")
+
     private List<Attachment> attachments = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "availability_zone")
+
+    @JacksonXmlProperty(localName = "availability_zone")
 
     private String availabilityZone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bootable")
 
+    @JacksonXmlProperty(localName = "bootable")
+
     private String bootable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
+
+    @JacksonXmlProperty(localName = "created_at")
 
     private String createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "links")
+
+    @JacksonXmlProperty(localName = "links")
 
     private List<Link> links = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metadata")
 
+    @JacksonXmlProperty(localName = "metadata")
+
     private VolumeMetadata metadata;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "multiattach")
+
+    @JacksonXmlProperty(localName = "multiattach")
 
     private Boolean multiattach;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os-vol-host-attr:host")
+
+    @JacksonXmlProperty(localName = "os-vol-host-attr:host")
 
     private String osVolHostAttrHost;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os-vol-tenant-attr:tenant_id")
 
+    @JacksonXmlProperty(localName = "os-vol-tenant-attr:tenant_id")
+
     private String osVolTenantAttrTenantId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "shareable")
+
+    @JacksonXmlProperty(localName = "shareable")
 
     private String shareable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
 
+    @JacksonXmlProperty(localName = "size")
+
     private Integer size;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "snapshot_id")
+
+    @JacksonXmlProperty(localName = "snapshot_id")
 
     private String snapshotId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_volid")
 
+    @JacksonXmlProperty(localName = "source_volid")
+
     private String sourceVolid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
+
+    @JacksonXmlProperty(localName = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volume_image_metadata")
 
+    @JacksonXmlProperty(localName = "volume_image_metadata")
+
     private Object volumeImageMetadata;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volume_type")
+
+    @JacksonXmlProperty(localName = "volume_type")
 
     private String volumeType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
+    @JacksonXmlProperty(localName = "description")
+
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os-volume-replication:extended_status")
+
+    @JacksonXmlProperty(localName = "os-volume-replication:extended_status")
 
     private String osVolumeReplicationExtendedStatus;
 

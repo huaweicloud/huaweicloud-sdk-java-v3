@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.waf.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -17,60 +18,84 @@ public class DeleteIgnoreRuleResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policyid")
+
+    @JacksonXmlProperty(localName = "policyid")
 
     private String policyid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timestamp")
 
+    @JacksonXmlProperty(localName = "timestamp")
+
     private Long timestamp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
+
+    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private Integer status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "url")
+
+    @JacksonXmlProperty(localName = "url")
 
     private String url;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rule")
 
+    @JacksonXmlProperty(localName = "rule")
+
     private Object rule;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mode")
+
+    @JacksonXmlProperty(localName = "mode")
 
     private Integer mode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "url_logic")
 
+    @JacksonXmlProperty(localName = "url_logic")
+
     private String urlLogic;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "conditions")
+
+    @JacksonXmlProperty(localName = "conditions")
 
     private List<Condition> conditions = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "advanced")
 
+    @JacksonXmlProperty(localName = "advanced")
+
     private List<Advanced> advanced = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domains")
+
+    @JacksonXmlProperty(localName = "domains")
 
     private List<String> domains = null;
 

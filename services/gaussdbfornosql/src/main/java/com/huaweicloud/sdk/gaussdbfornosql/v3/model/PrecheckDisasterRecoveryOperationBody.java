@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.gaussdbfornosql.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,10 +15,14 @@ public class PrecheckDisasterRecoveryOperationBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operation")
 
+    @JacksonXmlProperty(localName = "operation")
+
     private String operation;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "disaster_recovery_instance")
+
+    @JacksonXmlProperty(localName = "disaster_recovery_instance")
 
     private PrecheckDisasterRecoveryInstance disasterRecoveryInstance;
 

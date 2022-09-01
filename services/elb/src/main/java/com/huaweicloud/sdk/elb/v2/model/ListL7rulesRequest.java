@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.elb.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,60 +14,84 @@ public class ListL7rulesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
+    @JacksonXmlProperty(localName = "limit")
+
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "marker")
+
+    @JacksonXmlProperty(localName = "marker")
 
     private String marker;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page_reverse")
 
+    @JacksonXmlProperty(localName = "page_reverse")
+
     private Boolean pageReverse;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "l7policy_id")
+
+    @JacksonXmlProperty(localName = "l7policy_id")
 
     private String l7policyId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "admin_state_up")
+
+    @JacksonXmlProperty(localName = "admin_state_up")
 
     private Boolean adminStateUp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
+    @JacksonXmlProperty(localName = "type")
+
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "compare_type")
+
+    @JacksonXmlProperty(localName = "compare_type")
 
     private String compareType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "invert")
 
+    @JacksonXmlProperty(localName = "invert")
+
     private Boolean invert;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key")
+
+    @JacksonXmlProperty(localName = "key")
 
     private String key;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "value")
 
+    @JacksonXmlProperty(localName = "value")
+
     private String value;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "provisioning_status")
+
+    @JacksonXmlProperty(localName = "provisioning_status")
 
     private String provisioningStatus;
 

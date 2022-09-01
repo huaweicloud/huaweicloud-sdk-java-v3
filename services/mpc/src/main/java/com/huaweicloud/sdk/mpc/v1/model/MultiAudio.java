@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.mpc.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,15 +17,21 @@ public class MultiAudio {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tracks_info")
 
+    @JacksonXmlProperty(localName = "tracks_info")
+
     private List<TracksInfo> tracksInfo = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "audio_files")
 
+    @JacksonXmlProperty(localName = "audio_files")
+
     private List<AudioFile> audioFiles = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "default_language")
+
+    @JacksonXmlProperty(localName = "default_language")
 
     private String defaultLanguage;
 

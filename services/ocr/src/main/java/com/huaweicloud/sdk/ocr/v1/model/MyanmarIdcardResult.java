@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ocr.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,90 +17,126 @@ public class MyanmarIdcardResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "side")
 
+    @JacksonXmlProperty(localName = "side")
+
     private String side;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "class")
+
+    @JacksonXmlProperty(localName = "class")
 
     private String propertyClass;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nrc_id")
 
+    @JacksonXmlProperty(localName = "nrc_id")
+
     private String nrcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "issue_date")
+
+    @JacksonXmlProperty(localName = "issue_date")
 
     private String issueDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "father_name")
+
+    @JacksonXmlProperty(localName = "father_name")
 
     private String fatherName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "birth")
 
+    @JacksonXmlProperty(localName = "birth")
+
     private String birth;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bloodlines_religion")
+
+    @JacksonXmlProperty(localName = "bloodlines_religion")
 
     private String bloodlinesReligion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "height")
 
+    @JacksonXmlProperty(localName = "height")
+
     private String height;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "blood_group")
+
+    @JacksonXmlProperty(localName = "blood_group")
 
     private String bloodGroup;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "card_id")
 
+    @JacksonXmlProperty(localName = "card_id")
+
     private String cardId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nrc_id_back")
+
+    @JacksonXmlProperty(localName = "nrc_id_back")
 
     private String nrcIdBack;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "profession")
 
+    @JacksonXmlProperty(localName = "profession")
+
     private String profession;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "address")
+
+    @JacksonXmlProperty(localName = "address")
 
     private String address;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confidence")
 
+    @JacksonXmlProperty(localName = "confidence")
+
     private MyanmarIdcardConfidence confidence;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "portrait_image")
+
+    @JacksonXmlProperty(localName = "portrait_image")
 
     private String portraitImage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "portrait_location")
 
+    @JacksonXmlProperty(localName = "portrait_location")
+
     private List<List<Integer>> portraitLocation = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "idcard_type")
+
+    @JacksonXmlProperty(localName = "idcard_type")
 
     private String idcardType;
 

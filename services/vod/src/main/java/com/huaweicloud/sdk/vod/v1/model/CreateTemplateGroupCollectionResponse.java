@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.vod.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -13,6 +14,8 @@ public class CreateTemplateGroupCollectionResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_collection_id")
+
+    @JacksonXmlProperty(localName = "group_collection_id")
 
     private String groupCollectionId;
 

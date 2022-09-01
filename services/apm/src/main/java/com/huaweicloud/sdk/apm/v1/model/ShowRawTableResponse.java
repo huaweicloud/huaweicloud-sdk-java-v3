@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -22,10 +23,14 @@ public class ShowRawTableResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "row_list")
 
+    @JacksonXmlProperty(localName = "row_list")
+
     private List<FrontRow> rowList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "latest_data_Time")
+
+    @JacksonXmlProperty(localName = "latest_data_Time")
 
     private String latestDataTime;
 
@@ -109,20 +114,28 @@ public class ShowRawTableResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "table_direction")
 
+    @JacksonXmlProperty(localName = "table_direction")
+
     private TableDirectionEnum tableDirection;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "result_id")
+
+    @JacksonXmlProperty(localName = "result_id")
 
     private String resultId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "real_start_time")
 
+    @JacksonXmlProperty(localName = "real_start_time")
+
     private Long realStartTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "real_end_time")
+
+    @JacksonXmlProperty(localName = "real_end_time")
 
     private Long realEndTime;
 

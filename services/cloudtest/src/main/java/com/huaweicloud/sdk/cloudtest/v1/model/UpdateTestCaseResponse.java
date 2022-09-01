@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cloudtest.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -15,65 +16,91 @@ public class UpdateTestCaseResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "testcase_id")
 
+    @JacksonXmlProperty(localName = "testcase_id")
+
     private String testcaseId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
+
+    @JacksonXmlProperty(localName = "project_id")
 
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_id")
 
+    @JacksonXmlProperty(localName = "service_id")
+
     private Integer serviceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "testcase_number")
 
+    @JacksonXmlProperty(localName = "testcase_number")
+
     private String testcaseNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rank_id")
+
+    @JacksonXmlProperty(localName = "rank_id")
 
     private String rankId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status_id")
 
+    @JacksonXmlProperty(localName = "status_id")
+
     private String statusId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "assigned_user")
+
+    @JacksonXmlProperty(localName = "assigned_user")
 
     private AssignedUserInfo assignedUser;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "execute_count")
 
+    @JacksonXmlProperty(localName = "execute_count")
+
     private Integer executeCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "result_id")
+
+    @JacksonXmlProperty(localName = "result_id")
 
     private String resultId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extend_info")
 
+    @JacksonXmlProperty(localName = "extend_info")
+
     private ExtendInfo extendInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_code")
 
+    @JacksonXmlProperty(localName = "error_code")
+
     private String errorCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_msg")
+
+    @JacksonXmlProperty(localName = "error_msg")
 
     private String errorMsg;
 

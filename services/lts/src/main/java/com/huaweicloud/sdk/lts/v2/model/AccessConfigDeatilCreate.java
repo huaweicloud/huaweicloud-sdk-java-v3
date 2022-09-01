@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.lts.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,20 +17,28 @@ public class AccessConfigDeatilCreate {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "paths")
 
+    @JacksonXmlProperty(localName = "paths")
+
     private List<String> paths = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "black_paths")
+
+    @JacksonXmlProperty(localName = "black_paths")
 
     private List<String> blackPaths = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "format")
 
+    @JacksonXmlProperty(localName = "format")
+
     private AccessConfigFormatCreate format;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "windows_log_info")
+
+    @JacksonXmlProperty(localName = "windows_log_info")
 
     private AccessConfigWindowsLogInfoCreate windowsLogInfo;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.codehub.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,55 +14,77 @@ public class CreateRepoRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "import_members")
 
+    @JacksonXmlProperty(localName = "import_members")
+
     private Integer importMembers;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_uuid")
 
+    @JacksonXmlProperty(localName = "project_uuid")
+
     private String projectUuid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template_id")
+
+    @JacksonXmlProperty(localName = "template_id")
 
     private String templateId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "visibility_level")
 
+    @JacksonXmlProperty(localName = "visibility_level")
+
     private Integer visibilityLevel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "import_url")
+
+    @JacksonXmlProperty(localName = "import_url")
 
     private String importUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
+    @JacksonXmlProperty(localName = "description")
+
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "gitignore_id")
+
+    @JacksonXmlProperty(localName = "gitignore_id")
 
     private String gitignoreId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "license_id")
 
+    @JacksonXmlProperty(localName = "license_id")
+
     private Integer licenseId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_readme")
 
+    @JacksonXmlProperty(localName = "enable_readme")
+
     private Integer enableReadme;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "caller")
+
+    @JacksonXmlProperty(localName = "caller")
 
     private String caller;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ecs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,15 +17,21 @@ public class ServerSchedulerHints {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group")
 
+    @JacksonXmlProperty(localName = "group")
+
     private List<String> group = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tenancy")
 
+    @JacksonXmlProperty(localName = "tenancy")
+
     private List<String> tenancy = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dedicated_host_id")
+
+    @JacksonXmlProperty(localName = "dedicated_host_id")
 
     private List<String> dedicatedHostId = null;
 

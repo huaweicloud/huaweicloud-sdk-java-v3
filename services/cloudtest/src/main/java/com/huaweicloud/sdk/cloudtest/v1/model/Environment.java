@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cloudtest.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,20 +14,28 @@ public class Environment {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "environment_id")
 
+    @JacksonXmlProperty(localName = "environment_id")
+
     private String environmentId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "environment_name")
+
+    @JacksonXmlProperty(localName = "environment_name")
 
     private String environmentName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "environment_description")
 
+    @JacksonXmlProperty(localName = "environment_description")
+
     private String environmentDescription;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_default")
+
+    @JacksonXmlProperty(localName = "is_default")
 
     private Boolean isDefault;
 

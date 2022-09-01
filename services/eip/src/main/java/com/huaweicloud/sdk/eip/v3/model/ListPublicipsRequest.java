@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,20 +22,28 @@ public class ListPublicipsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "marker")
 
+    @JacksonXmlProperty(localName = "marker")
+
     private String marker;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
+
+    @JacksonXmlProperty(localName = "offset")
 
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
+    @JacksonXmlProperty(localName = "limit")
+
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fields")
+
+    @JacksonXmlProperty(localName = "fields")
 
     private List<String> fields = null;
 
@@ -148,6 +157,8 @@ public class ListPublicipsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sort_key")
 
+    @JacksonXmlProperty(localName = "sort_key")
+
     private SortKeyEnum sortKey;
 
     /**
@@ -230,10 +241,14 @@ public class ListPublicipsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sort_dir")
 
+    @JacksonXmlProperty(localName = "sort_dir")
+
     private SortDirEnum sortDir;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
+
+    @JacksonXmlProperty(localName = "id")
 
     private List<String> id = null;
 
@@ -317,25 +332,35 @@ public class ListPublicipsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip_version")
 
+    @JacksonXmlProperty(localName = "ip_version")
+
     private List<IpVersionEnum> ipVersion = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "public_ip_address")
+
+    @JacksonXmlProperty(localName = "public_ip_address")
 
     private List<String> publicIpAddress = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "public_ip_address_like")
 
+    @JacksonXmlProperty(localName = "public_ip_address_like")
+
     private String publicIpAddressLike;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "public_ipv6_address")
 
+    @JacksonXmlProperty(localName = "public_ipv6_address")
+
     private List<String> publicIpv6Address = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "public_ipv6_address_like")
+
+    @JacksonXmlProperty(localName = "public_ipv6_address_like")
 
     private String publicIpv6AddressLike;
 
@@ -424,6 +449,8 @@ public class ListPublicipsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
+
+    @JacksonXmlProperty(localName = "type")
 
     private List<TypeEnum> type = null;
 
@@ -531,10 +558,14 @@ public class ListPublicipsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "network_type")
 
+    @JacksonXmlProperty(localName = "network_type")
+
     private List<NetworkTypeEnum> networkType = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publicip_pool_name")
+
+    @JacksonXmlProperty(localName = "publicip_pool_name")
 
     private List<String> publicipPoolName = null;
 
@@ -630,85 +661,119 @@ public class ListPublicipsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private List<StatusEnum> status = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alias_like")
+
+    @JacksonXmlProperty(localName = "alias_like")
 
     private String aliasLike;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alias")
 
+    @JacksonXmlProperty(localName = "alias")
+
     private List<String> alias = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
+
+    @JacksonXmlProperty(localName = "description")
 
     private List<String> description = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vnic.private_ip_address")
 
+    @JacksonXmlProperty(localName = "vnic.private_ip_address")
+
     private List<String> vnicPrivateIpAddress = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vnic.private_ip_address_like")
+
+    @JacksonXmlProperty(localName = "vnic.private_ip_address_like")
 
     private String vnicPrivateIpAddressLike;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vnic.device_id")
 
+    @JacksonXmlProperty(localName = "vnic.device_id")
+
     private List<String> vnicDeviceId = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vnic.device_owner")
+
+    @JacksonXmlProperty(localName = "vnic.device_owner")
 
     private List<String> vnicDeviceOwner = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vnic.vpc_id")
 
+    @JacksonXmlProperty(localName = "vnic.vpc_id")
+
     private List<String> vnicVpcId = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vnic.port_id")
+
+    @JacksonXmlProperty(localName = "vnic.port_id")
 
     private List<String> vnicPortId = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vnic.device_owner_prefixlike")
 
+    @JacksonXmlProperty(localName = "vnic.device_owner_prefixlike")
+
     private String vnicDeviceOwnerPrefixlike;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vnic.instance_type")
+
+    @JacksonXmlProperty(localName = "vnic.instance_type")
 
     private List<String> vnicInstanceType = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vnic.instance_id")
 
+    @JacksonXmlProperty(localName = "vnic.instance_id")
+
     private List<String> vnicInstanceId = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bandwidth.id")
+
+    @JacksonXmlProperty(localName = "bandwidth.id")
 
     private List<String> bandwidthId = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bandwidth.name")
 
+    @JacksonXmlProperty(localName = "bandwidth.name")
+
     private List<String> bandwidthName = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bandwidth.name_like")
 
+    @JacksonXmlProperty(localName = "bandwidth.name_like")
+
     private List<String> bandwidthNameLike = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bandwidth.size")
+
+    @JacksonXmlProperty(localName = "bandwidth.size")
 
     private List<Integer> bandwidthSize = null;
 
@@ -791,6 +856,8 @@ public class ListPublicipsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bandwidth.share_type")
+
+    @JacksonXmlProperty(localName = "bandwidth.share_type")
 
     private List<BandwidthShareTypeEnum> bandwidthShareType = null;
 
@@ -880,10 +947,14 @@ public class ListPublicipsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bandwidth.charge_mode")
 
+    @JacksonXmlProperty(localName = "bandwidth.charge_mode")
+
     private List<BandwidthChargeModeEnum> bandwidthChargeMode = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "billing_info")
+
+    @JacksonXmlProperty(localName = "billing_info")
 
     private List<String> billingInfo = null;
 
@@ -966,6 +1037,8 @@ public class ListPublicipsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "billing_mode")
+
+    @JacksonXmlProperty(localName = "billing_mode")
 
     private BillingModeEnum billingMode;
 
@@ -1067,25 +1140,35 @@ public class ListPublicipsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "associate_instance_type")
 
+    @JacksonXmlProperty(localName = "associate_instance_type")
+
     private List<AssociateInstanceTypeEnum> associateInstanceType = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "associate_instance_id")
+
+    @JacksonXmlProperty(localName = "associate_instance_id")
 
     private List<String> associateInstanceId = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
+    @JacksonXmlProperty(localName = "enterprise_project_id")
+
     private List<String> enterpriseProjectId = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "public_border_group")
 
+    @JacksonXmlProperty(localName = "public_border_group")
+
     private List<String> publicBorderGroup = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "allow_share_bandwidth_type_any")
+
+    @JacksonXmlProperty(localName = "allow_share_bandwidth_type_any")
 
     private List<String> allowShareBandwidthTypeAny = null;
 

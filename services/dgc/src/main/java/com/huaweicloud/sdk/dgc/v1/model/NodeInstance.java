@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.dgc.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,60 +14,84 @@ public class NodeInstance {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nodeName")
 
+    @JacksonXmlProperty(localName = "nodeName")
+
     private String nodeName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
+
+    @JacksonXmlProperty(localName = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "planTime")
 
+    @JacksonXmlProperty(localName = "planTime")
+
     private Integer planTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "startTime")
+
+    @JacksonXmlProperty(localName = "startTime")
 
     private Integer startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "endTime")
 
+    @JacksonXmlProperty(localName = "endTime")
+
     private Integer endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "executeTime")
+
+    @JacksonXmlProperty(localName = "executeTime")
 
     private Integer executeTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nodeType")
 
+    @JacksonXmlProperty(localName = "nodeType")
+
     private String nodeType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "retryTimes")
+
+    @JacksonXmlProperty(localName = "retryTimes")
 
     private Integer retryTimes;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instanceId")
 
+    @JacksonXmlProperty(localName = "instanceId")
+
     private Integer instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "inputRowCount")
+
+    @JacksonXmlProperty(localName = "inputRowCount")
 
     private Integer inputRowCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "outputRowCount")
 
+    @JacksonXmlProperty(localName = "outputRowCount")
+
     private Integer outputRowCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "logPath")
+
+    @JacksonXmlProperty(localName = "logPath")
 
     private String logPath;
 

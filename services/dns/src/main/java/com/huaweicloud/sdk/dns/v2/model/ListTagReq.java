@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.dns.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,40 +17,56 @@ public class ListTagReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
+    @JacksonXmlProperty(localName = "tags")
+
     private List<TagValues> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags_any")
+
+    @JacksonXmlProperty(localName = "tags_any")
 
     private List<TagValues> tagsAny = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "not_tags")
 
+    @JacksonXmlProperty(localName = "not_tags")
+
     private List<TagValues> notTags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "not_tags_any")
+
+    @JacksonXmlProperty(localName = "not_tags_any")
 
     private List<TagValues> notTagsAny = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
+    @JacksonXmlProperty(localName = "limit")
+
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
+
+    @JacksonXmlProperty(localName = "offset")
 
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "action")
 
+    @JacksonXmlProperty(localName = "action")
+
     private String action;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "matches")
+
+    @JacksonXmlProperty(localName = "matches")
 
     private List<Match> matches = null;
 

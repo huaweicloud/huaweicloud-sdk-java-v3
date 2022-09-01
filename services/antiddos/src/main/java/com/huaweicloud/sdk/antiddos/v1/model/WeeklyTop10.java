@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.antiddos.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class WeeklyTop10 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "floating_ip_address")
 
+    @JacksonXmlProperty(localName = "floating_ip_address")
+
     private String floatingIpAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "times")
+
+    @JacksonXmlProperty(localName = "times")
 
     private Integer times;
 

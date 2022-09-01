@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.time.OffsetDateTime;
 import java.util.Collections;
@@ -19,10 +20,14 @@ public class ApiBindAclInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "acl_id")
 
+    @JacksonXmlProperty(localName = "acl_id")
+
     private String aclId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "acl_name")
+
+    @JacksonXmlProperty(localName = "acl_name")
 
     private String aclName;
 
@@ -106,6 +111,8 @@ public class ApiBindAclInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "entity_type")
 
+    @JacksonXmlProperty(localName = "entity_type")
+
     private EntityTypeEnum entityType;
 
     /**
@@ -188,30 +195,42 @@ public class ApiBindAclInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "acl_type")
 
+    @JacksonXmlProperty(localName = "acl_type")
+
     private AclTypeEnum aclType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "acl_value")
+
+    @JacksonXmlProperty(localName = "acl_value")
 
     private String aclValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "env_id")
 
+    @JacksonXmlProperty(localName = "env_id")
+
     private String envId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "env_name")
+
+    @JacksonXmlProperty(localName = "env_name")
 
     private String envName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bind_id")
 
+    @JacksonXmlProperty(localName = "bind_id")
+
     private String bindId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bind_time")
+
+    @JacksonXmlProperty(localName = "bind_time")
 
     private OffsetDateTime bindTime;
 

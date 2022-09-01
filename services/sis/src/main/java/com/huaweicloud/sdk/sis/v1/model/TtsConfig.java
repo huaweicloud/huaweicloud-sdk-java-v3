@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -101,6 +102,8 @@ public class TtsConfig {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "audio_format")
 
+    @JacksonXmlProperty(localName = "audio_format")
+
     private AudioFormatEnum audioFormat;
 
     /**
@@ -182,6 +185,8 @@ public class TtsConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sample_rate")
+
+    @JacksonXmlProperty(localName = "sample_rate")
 
     private SampleRateEnum sampleRate;
 
@@ -416,20 +421,28 @@ public class TtsConfig {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "property")
 
+    @JacksonXmlProperty(localName = "property")
+
     private PropertyEnum property;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "speed")
+
+    @JacksonXmlProperty(localName = "speed")
 
     private Integer speed;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pitch")
 
+    @JacksonXmlProperty(localName = "pitch")
+
     private Integer pitch;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volume")
+
+    @JacksonXmlProperty(localName = "volume")
 
     private Integer volume;
 

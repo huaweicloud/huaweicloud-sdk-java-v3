@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cpts.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -17,20 +18,28 @@ public class ShowTaskSetResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "code")
 
+    @JacksonXmlProperty(localName = "code")
+
     private String code;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extend")
+
+    @JacksonXmlProperty(localName = "extend")
 
     private List<String> extend = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "message")
 
+    @JacksonXmlProperty(localName = "message")
+
     private String message;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tasks")
+
+    @JacksonXmlProperty(localName = "tasks")
 
     private List<Task> tasks = null;
 

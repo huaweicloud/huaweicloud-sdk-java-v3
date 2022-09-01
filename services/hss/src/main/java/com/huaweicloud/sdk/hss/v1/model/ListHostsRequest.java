@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.hss.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,60 +14,84 @@ public class ListHostsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
 
+    @JacksonXmlProperty(localName = "version")
+
     private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "agent_status")
+
+    @JacksonXmlProperty(localName = "agent_status")
 
     private String agentStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_status")
 
+    @JacksonXmlProperty(localName = "host_status")
+
     private String hostStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protect_status")
+
+    @JacksonXmlProperty(localName = "protect_status")
 
     private String protectStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "detect_result")
 
+    @JacksonXmlProperty(localName = "detect_result")
+
     private String detectResult;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_name")
+
+    @JacksonXmlProperty(localName = "host_name")
 
     private String hostName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_ip")
 
+    @JacksonXmlProperty(localName = "host_ip")
+
     private String hostIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "public_ip")
+
+    @JacksonXmlProperty(localName = "public_ip")
 
     private String publicIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os_type")
 
+    @JacksonXmlProperty(localName = "os_type")
+
     private String osType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "charging_mode")
+
+    @JacksonXmlProperty(localName = "charging_mode")
 
     private String chargingMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
+    @JacksonXmlProperty(localName = "limit")
+
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
+
+    @JacksonXmlProperty(localName = "offset")
 
     private Integer offset;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.live.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -17,10 +18,14 @@ public class ListSingleStreamFramerateResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "framerate_info_list")
 
+    @JacksonXmlProperty(localName = "framerate_info_list")
+
     private List<V2FramerateInfo> framerateInfoList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Request-Id")
+
+    @JacksonXmlProperty(localName = "X-Request-Id")
 
     private String xRequestId;
 

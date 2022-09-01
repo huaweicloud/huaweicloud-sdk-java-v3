@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.rds.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,20 +14,28 @@ public class GetOffSiteBackupPolicy {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "backup_type")
 
+    @JacksonXmlProperty(localName = "backup_type")
+
     private String backupType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "keep_days")
+
+    @JacksonXmlProperty(localName = "keep_days")
 
     private Integer keepDays;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "destination_region")
 
+    @JacksonXmlProperty(localName = "destination_region")
+
     private String destinationRegion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "destination_project_id")
+
+    @JacksonXmlProperty(localName = "destination_project_id")
 
     private String destinationProjectId;
 

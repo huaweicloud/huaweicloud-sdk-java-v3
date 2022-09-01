@@ -8,6 +8,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -21,6 +23,7 @@ public class JobQueryBean  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_id")
     
+    @JacksonXmlProperty(localName = "job_id")
     
     private String jobId;
 
@@ -28,6 +31,7 @@ public class JobQueryBean  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="user")
     
+    @JacksonXmlProperty(localName = "user")
     
     private String user;
 
@@ -35,6 +39,7 @@ public class JobQueryBean  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_name")
     
+    @JacksonXmlProperty(localName = "job_name")
     
     private String jobName;
 
@@ -42,6 +47,7 @@ public class JobQueryBean  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_result")
     
+    @JacksonXmlProperty(localName = "job_result")
     
     private String jobResult;
 
@@ -49,6 +55,7 @@ public class JobQueryBean  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_state")
     
+    @JacksonXmlProperty(localName = "job_state")
     
     private String jobState;
 
@@ -56,6 +63,7 @@ public class JobQueryBean  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_progress")
     
+    @JacksonXmlProperty(localName = "job_progress")
     
     private Float jobProgress;
 
@@ -63,6 +71,7 @@ public class JobQueryBean  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_type")
     
+    @JacksonXmlProperty(localName = "job_type")
     
     private String jobType;
 
@@ -70,6 +79,7 @@ public class JobQueryBean  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="started_time")
     
+    @JacksonXmlProperty(localName = "started_time")
     
     private Long startedTime;
 
@@ -77,6 +87,7 @@ public class JobQueryBean  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="submitted_time")
     
+    @JacksonXmlProperty(localName = "submitted_time")
     
     private Long submittedTime;
 
@@ -84,6 +95,7 @@ public class JobQueryBean  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="finished_time")
     
+    @JacksonXmlProperty(localName = "finished_time")
     
     private Long finishedTime;
 
@@ -91,6 +103,7 @@ public class JobQueryBean  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="elapsed_time")
     
+    @JacksonXmlProperty(localName = "elapsed_time")
     
     private Long elapsedTime;
 
@@ -98,6 +111,7 @@ public class JobQueryBean  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="arguments")
     
+    @JacksonXmlProperty(localName = "arguments")
     
     private String arguments;
 
@@ -105,6 +119,7 @@ public class JobQueryBean  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="launcher_id")
     
+    @JacksonXmlProperty(localName = "launcher_id")
     
     private String launcherId;
 
@@ -112,6 +127,7 @@ public class JobQueryBean  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="properties")
     
+    @JacksonXmlProperty(localName = "properties")
     
     private String properties;
 
@@ -119,6 +135,7 @@ public class JobQueryBean  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="app_id")
     
+    @JacksonXmlProperty(localName = "app_id")
     
     private String appId;
 
@@ -126,6 +143,7 @@ public class JobQueryBean  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tracking_url")
     
+    @JacksonXmlProperty(localName = "tracking_url")
     
     private String trackingUrl;
 
@@ -133,6 +151,7 @@ public class JobQueryBean  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="queue")
     
+    @JacksonXmlProperty(localName = "queue")
     
     private String queue;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cdn.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,50 +17,70 @@ public class ConfigsGetBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "origin_request_header")
 
+    @JacksonXmlProperty(localName = "origin_request_header")
+
     private List<OriginRequestHeader> originRequestHeader = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "http_response_header")
+
+    @JacksonXmlProperty(localName = "http_response_header")
 
     private List<HttpResponseHeader> httpResponseHeader = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "url_auth")
 
+    @JacksonXmlProperty(localName = "url_auth")
+
     private UrlAuthGetBody urlAuth;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "https")
+
+    @JacksonXmlProperty(localName = "https")
 
     private HttpGetBody https;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sources")
 
+    @JacksonXmlProperty(localName = "sources")
+
     private List<SourcesConfig> sources = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "origin_protocol")
+
+    @JacksonXmlProperty(localName = "origin_protocol")
 
     private String originProtocol;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "force_redirect")
 
+    @JacksonXmlProperty(localName = "force_redirect")
+
     private ForceRedirectConfig forceRedirect;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "compress")
+
+    @JacksonXmlProperty(localName = "compress")
 
     private Compress compress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cache_url_parameter_filter")
 
+    @JacksonXmlProperty(localName = "cache_url_parameter_filter")
+
     private CacheUrlParameterFilter cacheUrlParameterFilter;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ipv6_accelerate")
+
+    @JacksonXmlProperty(localName = "ipv6_accelerate")
 
     private Integer ipv6Accelerate;
 

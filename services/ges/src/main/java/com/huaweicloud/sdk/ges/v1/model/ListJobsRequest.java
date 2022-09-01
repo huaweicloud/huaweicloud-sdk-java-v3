@@ -8,6 +8,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -21,6 +23,7 @@ public class ListJobsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="endTime")
     
+    @JacksonXmlProperty(localName = "endTime")
     
     private String endTime;
 
@@ -28,6 +31,7 @@ public class ListJobsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="graph_name")
     
+    @JacksonXmlProperty(localName = "graph_name")
     
     private String graphName;
 
@@ -35,6 +39,7 @@ public class ListJobsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
+    @JacksonXmlProperty(localName = "limit")
     
     private String limit;
 
@@ -42,6 +47,7 @@ public class ListJobsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
+    @JacksonXmlProperty(localName = "offset")
     
     private String offset;
 
@@ -49,6 +55,7 @@ public class ListJobsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="startTime")
     
+    @JacksonXmlProperty(localName = "startTime")
     
     private String startTime;
 
@@ -56,6 +63,7 @@ public class ListJobsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
+    @JacksonXmlProperty(localName = "status")
     
     private String status;
 

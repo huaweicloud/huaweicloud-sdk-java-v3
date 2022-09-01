@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,10 +19,14 @@ public class VpcBase {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "port")
+
+    @JacksonXmlProperty(localName = "port")
 
     private Integer port;
 
@@ -117,6 +122,8 @@ public class VpcBase {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "balance_strategy")
 
+    @JacksonXmlProperty(localName = "balance_strategy")
+
     private BalanceStrategyEnum balanceStrategy;
 
     /**
@@ -199,10 +206,14 @@ public class VpcBase {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "member_type")
 
+    @JacksonXmlProperty(localName = "member_type")
+
     private MemberTypeEnum memberType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dict_code")
+
+    @JacksonXmlProperty(localName = "dict_code")
 
     private String dictCode;
 

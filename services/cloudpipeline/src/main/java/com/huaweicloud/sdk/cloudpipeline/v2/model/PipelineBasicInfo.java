@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cloudpipeline.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,55 +14,77 @@ public class PipelineBasicInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
 
+    @JacksonXmlProperty(localName = "project_id")
+
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_name")
+
+    @JacksonXmlProperty(localName = "project_name")
 
     private String projectName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pipeline_id")
 
+    @JacksonXmlProperty(localName = "pipeline_id")
+
     private String pipelineId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pipeline_name")
+
+    @JacksonXmlProperty(localName = "pipeline_name")
 
     private String pipelineName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "creator_id")
 
+    @JacksonXmlProperty(localName = "creator_id")
+
     private String creatorId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "creator_name")
+
+    @JacksonXmlProperty(localName = "creator_name")
 
     private String creatorName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "executor_id")
 
+    @JacksonXmlProperty(localName = "executor_id")
+
     private String executorId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "executor_name")
+
+    @JacksonXmlProperty(localName = "executor_name")
 
     private String executorName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
+    @JacksonXmlProperty(localName = "start_time")
+
     private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
+    @JacksonXmlProperty(localName = "create_time")
+
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "watched")
+
+    @JacksonXmlProperty(localName = "watched")
 
     private String watched;
 

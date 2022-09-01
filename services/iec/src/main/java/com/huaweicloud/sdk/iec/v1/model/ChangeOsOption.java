@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.iec.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,15 +15,21 @@ public class ChangeOsOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image_id")
 
+    @JacksonXmlProperty(localName = "image_id")
+
     private String imageId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metadata")
 
+    @JacksonXmlProperty(localName = "metadata")
+
     private ChangeOsMetadata metadata;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key_name")
+
+    @JacksonXmlProperty(localName = "key_name")
 
     private String keyName;
 

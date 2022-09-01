@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cts.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class Lts {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_lts_enabled")
 
+    @JacksonXmlProperty(localName = "is_lts_enabled")
+
     private Boolean isLtsEnabled;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_group_name")
 
+    @JacksonXmlProperty(localName = "log_group_name")
+
     private String logGroupName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_topic_name")
+
+    @JacksonXmlProperty(localName = "log_topic_name")
 
     private String logTopicName;
 

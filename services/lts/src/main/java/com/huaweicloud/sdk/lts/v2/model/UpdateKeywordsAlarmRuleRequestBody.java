@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,25 +22,35 @@ public class UpdateKeywordsAlarmRuleRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "keywords_alarm_rule_id")
 
+    @JacksonXmlProperty(localName = "keywords_alarm_rule_id")
+
     private String keywordsAlarmRuleId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "keywords_alarm_rule_name")
+
+    @JacksonXmlProperty(localName = "keywords_alarm_rule_name")
 
     private String keywordsAlarmRuleName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "keywords_alarm_rule_description")
 
+    @JacksonXmlProperty(localName = "keywords_alarm_rule_description")
+
     private String keywordsAlarmRuleDescription;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "keywords_requests")
 
+    @JacksonXmlProperty(localName = "keywords_requests")
+
     private List<KeywordsRequest> keywordsRequests = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "frequency")
+
+    @JacksonXmlProperty(localName = "frequency")
 
     private Frequency frequency;
 
@@ -135,10 +146,14 @@ public class UpdateKeywordsAlarmRuleRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "keywords_alarm_level")
 
+    @JacksonXmlProperty(localName = "keywords_alarm_level")
+
     private KeywordsAlarmLevelEnum keywordsAlarmLevel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "keywords_alarm_send")
+
+    @JacksonXmlProperty(localName = "keywords_alarm_send")
 
     private Boolean keywordsAlarmSend;
 
@@ -234,15 +249,21 @@ public class UpdateKeywordsAlarmRuleRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "keywords_alarm_send_code")
 
+    @JacksonXmlProperty(localName = "keywords_alarm_send_code")
+
     private KeywordsAlarmSendCodeEnum keywordsAlarmSendCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_id")
 
+    @JacksonXmlProperty(localName = "domain_id")
+
     private String domainId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "notification_save_rule")
+
+    @JacksonXmlProperty(localName = "notification_save_rule")
 
     private NotificationSaveRule notificationSaveRule;
 

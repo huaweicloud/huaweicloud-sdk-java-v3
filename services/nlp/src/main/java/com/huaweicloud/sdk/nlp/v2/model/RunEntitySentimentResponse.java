@@ -10,6 +10,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -23,6 +25,7 @@ public class RunEntitySentimentResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="content")
     
+    @JacksonXmlProperty(localName = "content")
     
     private String content;
 
@@ -30,6 +33,7 @@ public class RunEntitySentimentResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="entity")
     
+    @JacksonXmlProperty(localName = "entity")
     
     private String entity;
 
@@ -37,6 +41,7 @@ public class RunEntitySentimentResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="label")
     
+    @JacksonXmlProperty(localName = "label")
     
     private Integer label;
 
@@ -44,6 +49,7 @@ public class RunEntitySentimentResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="confidence")
     
+    @JacksonXmlProperty(localName = "confidence")
     
     private Double confidence;
 
@@ -51,6 +57,7 @@ public class RunEntitySentimentResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="error_code")
     
+    @JacksonXmlProperty(localName = "error_code")
     
     private String errorCode;
 
@@ -58,6 +65,7 @@ public class RunEntitySentimentResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="error_msg")
     
+    @JacksonXmlProperty(localName = "error_msg")
     
     private String errorMsg;
 

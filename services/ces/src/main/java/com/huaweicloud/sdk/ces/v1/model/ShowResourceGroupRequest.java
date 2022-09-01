@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ces.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,30 +14,42 @@ public class ShowResourceGroupRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_id")
 
+    @JacksonXmlProperty(localName = "group_id")
+
     private String groupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
+
+    @JacksonXmlProperty(localName = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "namespace")
 
+    @JacksonXmlProperty(localName = "namespace")
+
     private String namespace;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dname")
+
+    @JacksonXmlProperty(localName = "dname")
 
     private String dname;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start")
 
+    @JacksonXmlProperty(localName = "start")
+
     private String start;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
+
+    @JacksonXmlProperty(localName = "limit")
 
     private String limit;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.roma.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,35 +14,49 @@ public class CreateDictionary {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remark")
+
+    @JacksonXmlProperty(localName = "remark")
 
     private String remark;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "code")
 
+    @JacksonXmlProperty(localName = "code")
+
     private String code;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "order")
+
+    @JacksonXmlProperty(localName = "order")
 
     private Integer order;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extend_one")
 
+    @JacksonXmlProperty(localName = "extend_one")
+
     private String extendOne;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extend_two")
 
+    @JacksonXmlProperty(localName = "extend_two")
+
     private String extendTwo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parent_code")
+
+    @JacksonXmlProperty(localName = "parent_code")
 
     private String parentCode;
 

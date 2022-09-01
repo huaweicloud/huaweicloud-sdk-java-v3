@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ecs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class Hypervisor {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hypervisor_type")
 
+    @JacksonXmlProperty(localName = "hypervisor_type")
+
     private String hypervisorType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "csd_hypervisor")
+
+    @JacksonXmlProperty(localName = "csd_hypervisor")
 
     private String csdHypervisor;
 

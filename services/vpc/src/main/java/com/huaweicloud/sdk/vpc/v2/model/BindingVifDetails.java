@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.vpc.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class BindingVifDetails {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "primary_interface")
 
+    @JacksonXmlProperty(localName = "primary_interface")
+
     private Boolean primaryInterface;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "port_filter")
 
+    @JacksonXmlProperty(localName = "port_filter")
+
     private Boolean portFilter;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ovs_hybrid_plug")
+
+    @JacksonXmlProperty(localName = "ovs_hybrid_plug")
 
     private Boolean ovsHybridPlug;
 

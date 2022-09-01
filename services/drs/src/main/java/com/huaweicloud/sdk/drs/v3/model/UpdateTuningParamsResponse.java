@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.drs.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -17,25 +18,35 @@ public class UpdateTuningParamsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "full_sync")
 
+    @JacksonXmlProperty(localName = "full_sync")
+
     private List<TuningParameter> fullSync = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "incre_capture")
+
+    @JacksonXmlProperty(localName = "incre_capture")
 
     private List<TuningParameter> increCapture = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "incre_apply")
 
+    @JacksonXmlProperty(localName = "incre_apply")
+
     private List<TuningParameter> increApply = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "incre_relay")
 
+    @JacksonXmlProperty(localName = "incre_relay")
+
     private List<TuningParameter> increRelay = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "modify_result")
+
+    @JacksonXmlProperty(localName = "modify_result")
 
     private String modifyResult;
 

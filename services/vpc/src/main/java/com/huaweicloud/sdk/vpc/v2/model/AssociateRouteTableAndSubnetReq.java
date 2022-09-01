@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.vpc.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,10 +17,14 @@ public class AssociateRouteTableAndSubnetReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "associate")
 
+    @JacksonXmlProperty(localName = "associate")
+
     private List<String> associate = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "disassociate")
+
+    @JacksonXmlProperty(localName = "disassociate")
 
     private List<String> disassociate = null;
 

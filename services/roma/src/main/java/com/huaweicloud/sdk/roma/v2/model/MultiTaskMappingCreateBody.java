@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.roma.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,40 +17,56 @@ public class MultiTaskMappingCreateBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ext_info")
 
+    @JacksonXmlProperty(localName = "ext_info")
+
     private MultiTaskInitElementExtInfo extInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_datasource_id")
+
+    @JacksonXmlProperty(localName = "source_datasource_id")
 
     private String sourceDatasourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_datasource_id")
 
+    @JacksonXmlProperty(localName = "target_datasource_id")
+
     private String targetDatasourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_columns")
+
+    @JacksonXmlProperty(localName = "source_columns")
 
     private List<MultiTaskColumnInfo> sourceColumns = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_columns")
 
+    @JacksonXmlProperty(localName = "target_columns")
+
     private List<MultiTaskColumnInfo> targetColumns = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_table")
+
+    @JacksonXmlProperty(localName = "source_table")
 
     private String sourceTable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_table")
 
+    @JacksonXmlProperty(localName = "target_table")
+
     private String targetTable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mapping_columns")
+
+    @JacksonXmlProperty(localName = "mapping_columns")
 
     private List<MappingInfo> mappingColumns = null;
 

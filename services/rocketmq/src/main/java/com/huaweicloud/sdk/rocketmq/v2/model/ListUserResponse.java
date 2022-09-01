@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.rocketmq.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.math.BigDecimal;
@@ -18,10 +19,14 @@ public class ListUserResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "users")
 
+    @JacksonXmlProperty(localName = "users")
+
     private List<User> users = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total")
+
+    @JacksonXmlProperty(localName = "total")
 
     private BigDecimal total;
 

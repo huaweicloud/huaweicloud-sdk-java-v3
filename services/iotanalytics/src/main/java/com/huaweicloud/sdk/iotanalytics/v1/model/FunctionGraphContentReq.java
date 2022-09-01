@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.iotanalytics.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,35 +14,49 @@ public class FunctionGraphContentReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "function_name")
 
+    @JacksonXmlProperty(localName = "function_name")
+
     private String functionName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "orig_url")
+
+    @JacksonXmlProperty(localName = "orig_url")
 
     private String origUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "final_url")
 
+    @JacksonXmlProperty(localName = "final_url")
+
     private String finalUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "verify_body")
+
+    @JacksonXmlProperty(localName = "verify_body")
 
     private String verifyBody;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ak")
 
+    @JacksonXmlProperty(localName = "ak")
+
     private String ak;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sk")
 
+    @JacksonXmlProperty(localName = "sk")
+
     private String sk;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
+
+    @JacksonXmlProperty(localName = "project_id")
 
     private String projectId;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cce.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -18,15 +19,21 @@ public class NodeSpecUpdate {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "taints")
 
+    @JacksonXmlProperty(localName = "taints")
+
     private List<Taint> taints = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "k8sTags")
 
+    @JacksonXmlProperty(localName = "k8sTags")
+
     private Map<String, String> k8sTags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "userTags")
+
+    @JacksonXmlProperty(localName = "userTags")
 
     private List<UserTag> userTags = null;
 

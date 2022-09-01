@@ -11,6 +11,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.cbs.v1.model.DocQueryAnswerDetail;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -24,6 +26,7 @@ public class DocBotAnswers  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="answer")
     
+    @JacksonXmlProperty(localName = "answer")
     
     private String answer;
 
@@ -31,6 +34,7 @@ public class DocBotAnswers  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="score")
     
+    @JacksonXmlProperty(localName = "score")
     
     private Double score;
 
@@ -38,6 +42,7 @@ public class DocBotAnswers  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="question")
     
+    @JacksonXmlProperty(localName = "question")
     
     private String question;
 
@@ -45,6 +50,7 @@ public class DocBotAnswers  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="answer_detail")
     
+    @JacksonXmlProperty(localName = "answer_detail")
     
     private DocQueryAnswerDetail answerDetail;
 
@@ -52,6 +58,7 @@ public class DocBotAnswers  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="details")
     
+    @JacksonXmlProperty(localName = "details")
     
     private List<DocQueryAnswerDetail> details = null;
     

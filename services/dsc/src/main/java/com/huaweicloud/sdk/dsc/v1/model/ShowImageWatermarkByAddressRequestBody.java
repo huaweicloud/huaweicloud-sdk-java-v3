@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.dsc.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class ShowImageWatermarkByAddressRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region_id")
 
+    @JacksonXmlProperty(localName = "region_id")
+
     private String regionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "src_file")
 
+    @JacksonXmlProperty(localName = "src_file")
+
     private String srcFile;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mark_len")
+
+    @JacksonXmlProperty(localName = "mark_len")
 
     private Integer markLen;
 

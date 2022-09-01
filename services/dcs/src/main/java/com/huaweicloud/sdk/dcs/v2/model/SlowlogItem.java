@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.dcs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,25 +14,35 @@ public class SlowlogItem {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private Integer id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "command")
+
+    @JacksonXmlProperty(localName = "command")
 
     private String command;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
+    @JacksonXmlProperty(localName = "start_time")
+
     private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "duration")
 
+    @JacksonXmlProperty(localName = "duration")
+
     private String duration;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "shard_name")
+
+    @JacksonXmlProperty(localName = "shard_name")
 
     private String shardName;
 

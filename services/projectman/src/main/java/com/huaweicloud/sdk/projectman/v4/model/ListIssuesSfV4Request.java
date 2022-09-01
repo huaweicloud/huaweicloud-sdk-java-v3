@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,15 +19,21 @@ public class ListIssuesSfV4Request {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
 
+    @JacksonXmlProperty(localName = "project_id")
+
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
+    @JacksonXmlProperty(localName = "offset")
+
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
+
+    @JacksonXmlProperty(localName = "limit")
 
     private Integer limit;
 
@@ -134,15 +141,21 @@ public class ListIssuesSfV4Request {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tracker_id")
 
+    @JacksonXmlProperty(localName = "tracker_id")
+
     private TrackerIdEnum trackerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_time_interval")
 
+    @JacksonXmlProperty(localName = "created_time_interval")
+
     private String createdTimeInterval;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_time_interval")
+
+    @JacksonXmlProperty(localName = "updated_time_interval")
 
     private String updatedTimeInterval;
 

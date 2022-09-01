@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cloudpipeline.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -17,60 +18,84 @@ public class ShowPipleineStatusResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pipeline_id")
 
+    @JacksonXmlProperty(localName = "pipeline_id")
+
     private String pipelineId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pipeline_name")
+
+    @JacksonXmlProperty(localName = "pipeline_name")
 
     private String pipelineName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "executor")
 
+    @JacksonXmlProperty(localName = "executor")
+
     private String executor;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "build_id")
+
+    @JacksonXmlProperty(localName = "build_id")
 
     private String buildId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
+    @JacksonXmlProperty(localName = "start_time")
+
     private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time")
+
+    @JacksonXmlProperty(localName = "end_time")
 
     private String endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parameters")
 
+    @JacksonXmlProperty(localName = "parameters")
+
     private List<PipelineParameter> parameters = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "states")
+
+    @JacksonXmlProperty(localName = "states")
 
     private List<PipelineStateStatus> states = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "elapsed_time")
 
+    @JacksonXmlProperty(localName = "elapsed_time")
+
     private String elapsedTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
+
+    @JacksonXmlProperty(localName = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "outcome")
 
+    @JacksonXmlProperty(localName = "outcome")
+
     private String outcome;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "detail_url")
+
+    @JacksonXmlProperty(localName = "detail_url")
 
     private String detailUrl;
 

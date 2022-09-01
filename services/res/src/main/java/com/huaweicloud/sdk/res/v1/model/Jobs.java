@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.res.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,65 +15,91 @@ public class Jobs {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "category")
 
+    @JacksonXmlProperty(localName = "category")
+
     private String category;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "config_info")
+
+    @JacksonXmlProperty(localName = "config_info")
 
     private String configInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
+    @JacksonXmlProperty(localName = "description")
+
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_id")
+
+    @JacksonXmlProperty(localName = "job_id")
 
     private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_name")
 
+    @JacksonXmlProperty(localName = "job_name")
+
     private String jobName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_type")
+
+    @JacksonXmlProperty(localName = "job_type")
 
     private String jobType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "next_schedule_time")
 
+    @JacksonXmlProperty(localName = "next_schedule_time")
+
     private Integer nextScheduleTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "platform")
+
+    @JacksonXmlProperty(localName = "platform")
 
     private String platform;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_id")
 
+    @JacksonXmlProperty(localName = "resource_id")
+
     private String resourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "schedule")
+
+    @JacksonXmlProperty(localName = "schedule")
 
     private String schedule;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "workspace_id")
 
+    @JacksonXmlProperty(localName = "workspace_id")
+
     private String workspaceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_config")
+
+    @JacksonXmlProperty(localName = "job_config")
 
     private JobConfig jobConfig;
 

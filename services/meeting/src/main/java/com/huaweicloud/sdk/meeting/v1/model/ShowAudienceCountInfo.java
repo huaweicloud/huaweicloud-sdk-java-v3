@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class ShowAudienceCountInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "showAudienceMode")
 
+    @JacksonXmlProperty(localName = "showAudienceMode")
+
     private Integer showAudienceMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "baseAudienceCount")
 
+    @JacksonXmlProperty(localName = "baseAudienceCount")
+
     private Integer baseAudienceCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "multiple")
+
+    @JacksonXmlProperty(localName = "multiple")
 
     private Double multiple;
 

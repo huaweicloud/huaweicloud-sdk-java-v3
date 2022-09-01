@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -19,10 +20,14 @@ public class ApiDebugInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
+    @JacksonXmlProperty(localName = "body")
+
     private String body;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "header")
+
+    @JacksonXmlProperty(localName = "header")
 
     private Map<String, String> header = null;
 
@@ -136,45 +141,63 @@ public class ApiDebugInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "method")
 
+    @JacksonXmlProperty(localName = "method")
+
     private MethodEnum method;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mode")
+
+    @JacksonXmlProperty(localName = "mode")
 
     private String mode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "path")
 
+    @JacksonXmlProperty(localName = "path")
+
     private String path;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "query")
+
+    @JacksonXmlProperty(localName = "query")
 
     private Map<String, String> query = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scheme")
 
+    @JacksonXmlProperty(localName = "scheme")
+
     private String scheme;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_key")
+
+    @JacksonXmlProperty(localName = "app_key")
 
     private String appKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_secret")
 
+    @JacksonXmlProperty(localName = "app_secret")
+
     private String appSecret;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain")
 
+    @JacksonXmlProperty(localName = "domain")
+
     private String domain;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stage")
+
+    @JacksonXmlProperty(localName = "stage")
 
     private String stage;
 

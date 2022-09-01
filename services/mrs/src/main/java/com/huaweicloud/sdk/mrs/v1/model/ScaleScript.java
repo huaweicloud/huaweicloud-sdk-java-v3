@@ -16,6 +16,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -29,6 +31,7 @@ public class ScaleScript  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
+    @JacksonXmlProperty(localName = "name")
     
     private String name;
 
@@ -36,6 +39,7 @@ public class ScaleScript  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="uri")
     
+    @JacksonXmlProperty(localName = "uri")
     
     private String uri;
 
@@ -43,6 +47,7 @@ public class ScaleScript  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="parameters")
     
+    @JacksonXmlProperty(localName = "parameters")
     
     private String parameters;
 
@@ -50,6 +55,7 @@ public class ScaleScript  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="nodes")
     
+    @JacksonXmlProperty(localName = "nodes")
     
     private List<String> nodes = null;
     
@@ -57,6 +63,7 @@ public class ScaleScript  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="active_master")
     
+    @JacksonXmlProperty(localName = "active_master")
     
     private Boolean activeMaster;
     /**
@@ -142,6 +149,7 @@ public class ScaleScript  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="fail_action")
     
+    @JacksonXmlProperty(localName = "fail_action")
     
     private FailActionEnum failAction;
     /**
@@ -239,6 +247,7 @@ public class ScaleScript  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="action_stage")
     
+    @JacksonXmlProperty(localName = "action_stage")
     
     private ActionStageEnum actionStage;
 

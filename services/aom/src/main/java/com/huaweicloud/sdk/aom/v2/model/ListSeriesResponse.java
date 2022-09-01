@@ -14,6 +14,8 @@ import com.huaweicloud.sdk.aom.v2.model.MetaDataSeries;
 import com.huaweicloud.sdk.aom.v2.model.SeriesQueryItemResult;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -27,6 +29,7 @@ public class ListSeriesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="series")
     
+    @JacksonXmlProperty(localName = "series")
     
     private List<SeriesQueryItemResult> series = null;
     
@@ -34,6 +37,7 @@ public class ListSeriesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="meta_data")
     
+    @JacksonXmlProperty(localName = "meta_data")
     
     private MetaDataSeries metaData;
 

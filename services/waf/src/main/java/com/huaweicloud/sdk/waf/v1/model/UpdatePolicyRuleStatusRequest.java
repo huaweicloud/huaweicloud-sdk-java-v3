@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -19,10 +20,14 @@ public class UpdatePolicyRuleStatusRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
+    @JacksonXmlProperty(localName = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_id")
+
+    @JacksonXmlProperty(localName = "policy_id")
 
     private String policyId;
 
@@ -130,15 +135,21 @@ public class UpdatePolicyRuleStatusRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ruletype")
 
+    @JacksonXmlProperty(localName = "ruletype")
+
     private RuletypeEnum ruletype;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rule_id")
 
+    @JacksonXmlProperty(localName = "rule_id")
+
     private String ruleId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
+
+    @JacksonXmlProperty(localName = "body")
 
     private UpdatePolicyRuleStatusRequestBody body;
 

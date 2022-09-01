@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.codehub.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,30 +15,42 @@ public class LogsTree {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "blob_id")
 
+    @JacksonXmlProperty(localName = "blob_id")
+
     private String blobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "commit")
+
+    @JacksonXmlProperty(localName = "commit")
 
     private Commit commit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_name")
 
+    @JacksonXmlProperty(localName = "file_name")
+
     private String fileName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_path")
+
+    @JacksonXmlProperty(localName = "file_path")
 
     private String filePath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "md5")
 
+    @JacksonXmlProperty(localName = "md5")
+
     private String md5;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
+
+    @JacksonXmlProperty(localName = "type")
 
     private String type;
 

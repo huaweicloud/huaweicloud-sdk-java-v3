@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -17,6 +18,8 @@ public class SourceWithPort {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip_or_domain")
+
+    @JacksonXmlProperty(localName = "ip_or_domain")
 
     private String ipOrDomain;
 
@@ -106,25 +109,35 @@ public class SourceWithPort {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "origin_type")
 
+    @JacksonXmlProperty(localName = "origin_type")
+
     private OriginTypeEnum originType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "active_standby")
+
+    @JacksonXmlProperty(localName = "active_standby")
 
     private Integer activeStandby;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_obs_web_hosting")
 
+    @JacksonXmlProperty(localName = "enable_obs_web_hosting")
+
     private Integer enableObsWebHosting;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "http_port")
 
+    @JacksonXmlProperty(localName = "http_port")
+
     private Integer httpPort;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "https_port")
+
+    @JacksonXmlProperty(localName = "https_port")
 
     private Integer httpsPort;
 

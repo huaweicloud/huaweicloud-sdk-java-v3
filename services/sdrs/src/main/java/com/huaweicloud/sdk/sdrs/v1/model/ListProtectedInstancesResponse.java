@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.sdrs.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -17,10 +18,14 @@ public class ListProtectedInstancesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protected_instances")
 
+    @JacksonXmlProperty(localName = "protected_instances")
+
     private List<ShowProtectedInstanceParams> protectedInstances = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "count")
+
+    @JacksonXmlProperty(localName = "count")
 
     private Integer count;
 

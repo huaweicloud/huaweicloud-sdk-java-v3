@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cloudbuild.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -14,15 +15,21 @@ public class RunJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "octopus_job_name")
 
+    @JacksonXmlProperty(localName = "octopus_job_name")
+
     private String octopusJobName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "actual_build_number")
 
+    @JacksonXmlProperty(localName = "actual_build_number")
+
     private String actualBuildNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "daily_build_number")
+
+    @JacksonXmlProperty(localName = "daily_build_number")
 
     private String dailyBuildNumber;
 

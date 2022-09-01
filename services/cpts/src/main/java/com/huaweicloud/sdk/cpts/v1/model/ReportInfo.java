@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cpts.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,25 +15,35 @@ public class ReportInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "brokens")
 
+    @JacksonXmlProperty(localName = "brokens")
+
     private ReportbrokensInfo brokens;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "details")
+
+    @JacksonXmlProperty(localName = "details")
 
     private ReportdetailsInfo details;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "outline")
 
+    @JacksonXmlProperty(localName = "outline")
+
     private ReportoutlineInfo outline;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rtproportion")
 
+    @JacksonXmlProperty(localName = "rtproportion")
+
     private String rtproportion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "taskInfo")
+
+    @JacksonXmlProperty(localName = "taskInfo")
 
     private ReportTaskInfo taskInfo;
 

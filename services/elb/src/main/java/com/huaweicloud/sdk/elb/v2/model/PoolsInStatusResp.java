@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.elb.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,30 +17,42 @@ public class PoolsInStatusResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "members")
 
+    @JacksonXmlProperty(localName = "members")
+
     private List<MembersInStatusResp> members = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operating_status")
+
+    @JacksonXmlProperty(localName = "operating_status")
 
     private String operatingStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "provisioning_status")
 
+    @JacksonXmlProperty(localName = "provisioning_status")
+
     private String provisioningStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "healthmonitor")
+
+    @JacksonXmlProperty(localName = "healthmonitor")
 
     private HealthmonitorsInStatusResp healthmonitor;
 

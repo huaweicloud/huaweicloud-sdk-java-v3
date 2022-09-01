@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.osm.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,80 +17,112 @@ public class ListCasesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "search_key")
 
+    @JacksonXmlProperty(localName = "search_key")
+
     private List<String> searchKey = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "label_id_list")
+
+    @JacksonXmlProperty(localName = "label_id_list")
 
     private List<String> labelIdList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_key")
 
+    @JacksonXmlProperty(localName = "app_key")
+
     private String appKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "incident_id")
+
+    @JacksonXmlProperty(localName = "incident_id")
 
     private String incidentId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "query_start_time")
 
+    @JacksonXmlProperty(localName = "query_start_time")
+
     private String queryStartTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "query_end_time")
+
+    @JacksonXmlProperty(localName = "query_end_time")
 
     private String queryEndTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private Integer status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "incident_status")
+
+    @JacksonXmlProperty(localName = "incident_status")
 
     private String incidentStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "x_customer_id")
 
+    @JacksonXmlProperty(localName = "x_customer_id")
+
     private String xCustomerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "x_customer_name")
+
+    @JacksonXmlProperty(localName = "x_customer_name")
 
     private String xCustomerName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_id")
 
+    @JacksonXmlProperty(localName = "group_id")
+
     private String groupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
+
+    @JacksonXmlProperty(localName = "offset")
 
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
+    @JacksonXmlProperty(localName = "limit")
+
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Site")
+
+    @JacksonXmlProperty(localName = "X-Site")
 
     private Integer xSite;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Language")
 
+    @JacksonXmlProperty(localName = "X-Language")
+
     private String xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Time-Zone")
+
+    @JacksonXmlProperty(localName = "X-Time-Zone")
 
     private String xTimeZone;
 

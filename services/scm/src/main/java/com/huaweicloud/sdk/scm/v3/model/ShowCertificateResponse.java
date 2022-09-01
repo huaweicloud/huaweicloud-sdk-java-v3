@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.scm.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -17,105 +18,147 @@ public class ShowCertificateResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
+
+    @JacksonXmlProperty(localName = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "order_id")
 
+    @JacksonXmlProperty(localName = "order_id")
+
     private String orderId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
+    @JacksonXmlProperty(localName = "type")
+
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "brand")
+
+    @JacksonXmlProperty(localName = "brand")
 
     private String brand;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "push_support")
 
+    @JacksonXmlProperty(localName = "push_support")
+
     private String pushSupport;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "revoke_reason")
+
+    @JacksonXmlProperty(localName = "revoke_reason")
 
     private String revokeReason;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "signature_algorithm")
 
+    @JacksonXmlProperty(localName = "signature_algorithm")
+
     private String signatureAlgorithm;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "issue_time")
+
+    @JacksonXmlProperty(localName = "issue_time")
 
     private String issueTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "not_before")
 
+    @JacksonXmlProperty(localName = "not_before")
+
     private String notBefore;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "not_after")
+
+    @JacksonXmlProperty(localName = "not_after")
 
     private String notAfter;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "validity_period")
 
+    @JacksonXmlProperty(localName = "validity_period")
+
     private Integer validityPeriod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "validation_method")
+
+    @JacksonXmlProperty(localName = "validation_method")
 
     private String validationMethod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_type")
 
+    @JacksonXmlProperty(localName = "domain_type")
+
     private String domainType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain")
+
+    @JacksonXmlProperty(localName = "domain")
 
     private String domain;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sans")
 
+    @JacksonXmlProperty(localName = "sans")
+
     private String sans;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_count")
+
+    @JacksonXmlProperty(localName = "domain_count")
 
     private Integer domainCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "wildcard_count")
 
+    @JacksonXmlProperty(localName = "wildcard_count")
+
     private Integer wildcardCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
+    @JacksonXmlProperty(localName = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "authentification")
+
+    @JacksonXmlProperty(localName = "authentification")
 
     private List<Authentification> authentification = null;
 

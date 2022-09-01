@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,15 +22,19 @@ public class CreateNetworkInstance {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
+    @JacksonXmlProperty(localName = "description")
+
     private String description;
 
     /**
-     * 添加到云连接网络实例的类型，有效值： - vpc：虚拟私有云。 - vgw：虚拟网关。 - er：企业路由器。
+     * 添加到云连接网络实例的类型，有效值： - vpc：虚拟私有云。 - vgw：虚拟网关。
      */
     public static final class TypeEnum {
 
@@ -43,18 +48,12 @@ public class CreateNetworkInstance {
          */
         public static final TypeEnum VGW = new TypeEnum("vgw");
 
-        /**
-         * Enum ER for value: "er"
-         */
-        public static final TypeEnum ER = new TypeEnum("er");
-
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TypeEnum> createStaticFields() {
             Map<String, TypeEnum> map = new HashMap<>();
             map.put("vpc", VPC);
             map.put("vgw", VGW);
-            map.put("er", ER);
             return Collections.unmodifiableMap(map);
         }
 
@@ -114,35 +113,49 @@ public class CreateNetworkInstance {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
+    @JacksonXmlProperty(localName = "type")
+
     private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_id")
+
+    @JacksonXmlProperty(localName = "instance_id")
 
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_domain_id")
 
+    @JacksonXmlProperty(localName = "instance_domain_id")
+
     private String instanceDomainId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
+
+    @JacksonXmlProperty(localName = "project_id")
 
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region_id")
 
+    @JacksonXmlProperty(localName = "region_id")
+
     private String regionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cloud_connection_id")
 
+    @JacksonXmlProperty(localName = "cloud_connection_id")
+
     private String cloudConnectionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cidrs")
+
+    @JacksonXmlProperty(localName = "cidrs")
 
     private List<String> cidrs = null;
 
@@ -186,7 +199,7 @@ public class CreateNetworkInstance {
     }
 
     /**
-     * 添加到云连接网络实例的类型，有效值： - vpc：虚拟私有云。 - vgw：虚拟网关。 - er：企业路由器。
+     * 添加到云连接网络实例的类型，有效值： - vpc：虚拟私有云。 - vgw：虚拟网关。
      * @return type
      */
     public TypeEnum getType() {
@@ -203,7 +216,7 @@ public class CreateNetworkInstance {
     }
 
     /**
-     * 添加到云连接网络实例的ID，VPC、VGW或者ER的ID。
+     * 添加到云连接网络实例的ID，VPC或者VGW的ID。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -304,7 +317,7 @@ public class CreateNetworkInstance {
     }
 
     /**
-     * 网络实例发布的网段路由列表，ER场景此字段为空。
+     * 网络实例发布的网段路由列表。
      * @return cidrs
      */
     public List<String> getCidrs() {

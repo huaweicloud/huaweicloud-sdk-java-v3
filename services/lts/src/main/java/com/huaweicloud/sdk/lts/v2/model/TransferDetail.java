@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -125,75 +126,105 @@ public class TransferDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "obs_period")
 
+    @JacksonXmlProperty(localName = "obs_period")
+
     private ObsPeriodEnum obsPeriod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "obs_encrypted_id")
+
+    @JacksonXmlProperty(localName = "obs_encrypted_id")
 
     private String obsEncryptedId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "obs_prefix_name")
 
+    @JacksonXmlProperty(localName = "obs_prefix_name")
+
     private String obsPrefixName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "obs_period_unit")
+
+    @JacksonXmlProperty(localName = "obs_period_unit")
 
     private String obsPeriodUnit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "obs_transfer_path")
 
+    @JacksonXmlProperty(localName = "obs_transfer_path")
+
     private String obsTransferPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "obs_eps_id")
+
+    @JacksonXmlProperty(localName = "obs_eps_id")
 
     private String obsEpsId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "obs_bucket_name")
 
+    @JacksonXmlProperty(localName = "obs_bucket_name")
+
     private String obsBucketName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "obs_encrypted_enable")
+
+    @JacksonXmlProperty(localName = "obs_encrypted_enable")
 
     private Boolean obsEncryptedEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "obs_dir_pre_fix_name")
 
+    @JacksonXmlProperty(localName = "obs_dir_pre_fix_name")
+
     private String obsDirPreFixName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dis_id")
+
+    @JacksonXmlProperty(localName = "dis_id")
 
     private String disId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dis_name")
 
+    @JacksonXmlProperty(localName = "dis_name")
+
     private String disName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "kafka_id")
+
+    @JacksonXmlProperty(localName = "kafka_id")
 
     private String kafkaId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "kafka_topic")
 
+    @JacksonXmlProperty(localName = "kafka_topic")
+
     private String kafkaTopic;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "obs_time_zone")
 
+    @JacksonXmlProperty(localName = "obs_time_zone")
+
     private String obsTimeZone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "obs_time_zone_id")
+
+    @JacksonXmlProperty(localName = "obs_time_zone_id")
 
     private String obsTimeZoneId;
 

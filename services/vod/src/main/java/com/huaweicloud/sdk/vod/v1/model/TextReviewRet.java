@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -101,20 +102,28 @@ public class TextReviewRet {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "suggestion")
 
+    @JacksonXmlProperty(localName = "suggestion")
+
     private SuggestionEnum suggestion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "politics")
+
+    @JacksonXmlProperty(localName = "politics")
 
     private String politics;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "porn")
 
+    @JacksonXmlProperty(localName = "porn")
+
     private String porn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "abuse")
+
+    @JacksonXmlProperty(localName = "abuse")
 
     private String abuse;
 

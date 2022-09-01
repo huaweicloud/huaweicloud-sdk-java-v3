@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,70 +22,98 @@ public class CreateImageRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_images")
 
+    @JacksonXmlProperty(localName = "data_images")
+
     private List<CreateDataImage> dataImages = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
+
+    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
+    @JacksonXmlProperty(localName = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image_tags")
+
+    @JacksonXmlProperty(localName = "image_tags")
 
     private List<TagKeyValue> imageTags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_id")
 
+    @JacksonXmlProperty(localName = "instance_id")
+
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
+    @JacksonXmlProperty(localName = "tags")
+
     private List<String> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_ram")
+
+    @JacksonXmlProperty(localName = "max_ram")
 
     private Integer maxRam;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "min_ram")
 
+    @JacksonXmlProperty(localName = "min_ram")
+
     private Integer minRam;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os_version")
+
+    @JacksonXmlProperty(localName = "os_version")
 
     private String osVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image_url")
 
+    @JacksonXmlProperty(localName = "image_url")
+
     private String imageUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "min_disk")
+
+    @JacksonXmlProperty(localName = "min_disk")
 
     private Integer minDisk;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_config")
 
+    @JacksonXmlProperty(localName = "is_config")
+
     private Boolean isConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cmk_id")
+
+    @JacksonXmlProperty(localName = "cmk_id")
 
     private String cmkId;
 
@@ -180,10 +209,14 @@ public class CreateImageRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
+    @JacksonXmlProperty(localName = "type")
+
     private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_quick_import")
+
+    @JacksonXmlProperty(localName = "is_quick_import")
 
     private Boolean isQuickImport;
 
@@ -267,10 +300,14 @@ public class CreateImageRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "architecture")
 
+    @JacksonXmlProperty(localName = "architecture")
+
     private ArchitectureEnum architecture;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volume_id")
+
+    @JacksonXmlProperty(localName = "volume_id")
 
     private String volumeId;
 

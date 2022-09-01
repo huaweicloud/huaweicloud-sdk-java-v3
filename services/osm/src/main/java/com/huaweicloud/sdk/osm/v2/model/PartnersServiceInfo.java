@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.osm.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,25 +14,35 @@ public class PartnersServiceInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "customer_id")
 
+    @JacksonXmlProperty(localName = "customer_id")
+
     private String customerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "customer_name")
+
+    @JacksonXmlProperty(localName = "customer_name")
 
     private String customerName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_time_zone")
 
+    @JacksonXmlProperty(localName = "service_time_zone")
+
     private String serviceTimeZone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_time_day")
 
+    @JacksonXmlProperty(localName = "service_time_day")
+
     private String serviceTimeDay;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_time_hour")
+
+    @JacksonXmlProperty(localName = "service_time_hour")
 
     private String serviceTimeHour;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.dgc.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,25 +14,35 @@ public class BasicInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "owner")
 
+    @JacksonXmlProperty(localName = "owner")
+
     private String owner;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "priority")
+
+    @JacksonXmlProperty(localName = "priority")
 
     private String priority;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "executeUser")
 
+    @JacksonXmlProperty(localName = "executeUser")
+
     private String executeUser;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instanceTimeout")
 
+    @JacksonXmlProperty(localName = "instanceTimeout")
+
     private String instanceTimeout;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "customFields")
+
+    @JacksonXmlProperty(localName = "customFields")
 
     private Object customFields;
 

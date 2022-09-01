@@ -469,6 +469,13 @@ public class BssintlMeta {
             f -> f.withMarshaller(ListCustomerOrdersRequest::getPaymentTimeEnd, (req, v) -> {
                 req.setPaymentTimeEnd(v);
             }));
+        builder.<String>withRequestField("indirect_partner_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCustomerOrdersRequest::getIndirectPartnerId, (req, v) -> {
+                req.setIndirectPartnerId(v);
+            }));
 
         // response
 
@@ -1386,6 +1393,13 @@ public class BssintlMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowCustomerOrderDetailsRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
+            }));
+        builder.<String>withRequestField("indirect_partner_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCustomerOrderDetailsRequest::getIndirectPartnerId, (req, v) -> {
+                req.setIndirectPartnerId(v);
             }));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,

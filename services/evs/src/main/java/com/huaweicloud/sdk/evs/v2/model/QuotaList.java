@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.evs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,95 +15,133 @@ public class QuotaList {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "backup_gigabytes")
 
+    @JacksonXmlProperty(localName = "backup_gigabytes")
+
     private QuotaDetailBackupGigabytes backupGigabytes;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "backups")
+
+    @JacksonXmlProperty(localName = "backups")
 
     private QuotaDetailBackups backups;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "gigabytes")
 
+    @JacksonXmlProperty(localName = "gigabytes")
+
     private QuotaDetailGigabytes gigabytes;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
+
+    @JacksonXmlProperty(localName = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "snapshots")
 
+    @JacksonXmlProperty(localName = "snapshots")
+
     private QuotaDetailSnapshots snapshots;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volumes")
+
+    @JacksonXmlProperty(localName = "volumes")
 
     private QuotaDetailVolumes volumes;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "gigabytes_SATA")
 
+    @JacksonXmlProperty(localName = "gigabytes_SATA")
+
     private QuotaDetailGigabytesSATA gigabytesSATA;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "snapshots_SATA")
+
+    @JacksonXmlProperty(localName = "snapshots_SATA")
 
     private QuotaDetailSnapshotsSATA snapshotsSATA;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volumes_SATA")
 
+    @JacksonXmlProperty(localName = "volumes_SATA")
+
     private QuotaDetailVolumesSATA volumesSATA;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "gigabytes_SAS")
+
+    @JacksonXmlProperty(localName = "gigabytes_SAS")
 
     private QuotaDetailGigabytesSAS gigabytesSAS;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "snapshots_SAS")
 
+    @JacksonXmlProperty(localName = "snapshots_SAS")
+
     private QuotaDetailSnapshotsSAS snapshotsSAS;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volumes_SAS")
+
+    @JacksonXmlProperty(localName = "volumes_SAS")
 
     private QuotaDetailVolumesSAS volumesSAS;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "gigabytes_SSD")
 
+    @JacksonXmlProperty(localName = "gigabytes_SSD")
+
     private QuotaDetailGigabytesSSD gigabytesSSD;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "snapshots_SSD")
+
+    @JacksonXmlProperty(localName = "snapshots_SSD")
 
     private QuotaDetailSnapshotsSSD snapshotsSSD;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volumes_SSD")
 
+    @JacksonXmlProperty(localName = "volumes_SSD")
+
     private QuotaDetailVolumesSSD volumesSSD;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "gigabytes_GPSSD")
+
+    @JacksonXmlProperty(localName = "gigabytes_GPSSD")
 
     private QuotaDetailGigabytesGPSSD gigabytesGPSSD;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "snapshots_GPSSD")
 
+    @JacksonXmlProperty(localName = "snapshots_GPSSD")
+
     private QuotaDetailSnapshotsGPSSD snapshotsGPSSD;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volumes_GPSSD")
 
+    @JacksonXmlProperty(localName = "volumes_GPSSD")
+
     private QuotaDetailVolumesGPSSD volumesGPSSD;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "per_volume_gigabytes")
+
+    @JacksonXmlProperty(localName = "per_volume_gigabytes")
 
     private QuotaDetailPerVolumeGigabytes perVolumeGigabytes;
 

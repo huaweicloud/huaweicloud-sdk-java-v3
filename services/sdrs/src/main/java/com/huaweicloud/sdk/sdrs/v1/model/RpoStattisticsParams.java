@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,15 +19,21 @@ public class RpoStattisticsParams {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "point_time")
 
+    @JacksonXmlProperty(localName = "point_time")
+
     private String pointTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_num")
+
+    @JacksonXmlProperty(localName = "resource_num")
 
     private Integer resourceNum;
 
@@ -104,15 +111,21 @@ public class RpoStattisticsParams {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_type")
 
+    @JacksonXmlProperty(localName = "resource_type")
+
     private ResourceTypeEnum resourceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
 
+    @JacksonXmlProperty(localName = "created_at")
+
     private String createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_at")
+
+    @JacksonXmlProperty(localName = "updated_at")
 
     private String updatedAt;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cbr.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,30 +14,42 @@ public class CheckpointReplicateParam {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auto_trigger")
 
+    @JacksonXmlProperty(localName = "auto_trigger")
+
     private Boolean autoTrigger;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "destination_project_id")
+
+    @JacksonXmlProperty(localName = "destination_project_id")
 
     private String destinationProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "destination_region")
 
+    @JacksonXmlProperty(localName = "destination_region")
+
     private String destinationRegion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "destination_vault_id")
+
+    @JacksonXmlProperty(localName = "destination_vault_id")
 
     private String destinationVaultId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_acceleration")
 
+    @JacksonXmlProperty(localName = "enable_acceleration")
+
     private Boolean enableAcceleration;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vault_id")
+
+    @JacksonXmlProperty(localName = "vault_id")
 
     private String vaultId;
 

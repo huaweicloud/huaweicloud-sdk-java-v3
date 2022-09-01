@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -92,15 +93,21 @@ public class CreatePortOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "device_owner")
 
+    @JacksonXmlProperty(localName = "device_owner")
+
     private DeviceOwnerEnum deviceOwner;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "network_id")
 
+    @JacksonXmlProperty(localName = "network_id")
+
     private String networkId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fixed_ips")
+
+    @JacksonXmlProperty(localName = "fixed_ips")
 
     private List<FixedIp> fixedIps = null;
 

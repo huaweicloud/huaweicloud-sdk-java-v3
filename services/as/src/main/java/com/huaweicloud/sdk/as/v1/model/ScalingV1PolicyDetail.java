@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -19,20 +20,28 @@ public class ScalingV1PolicyDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scaling_group_id")
 
+    @JacksonXmlProperty(localName = "scaling_group_id")
+
     private String scalingGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scaling_policy_name")
+
+    @JacksonXmlProperty(localName = "scaling_policy_name")
 
     private String scalingPolicyName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scaling_policy_id")
 
+    @JacksonXmlProperty(localName = "scaling_policy_id")
+
     private String scalingPolicyId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_status")
+
+    @JacksonXmlProperty(localName = "policy_status")
 
     private String policyStatus;
 
@@ -122,30 +131,42 @@ public class ScalingV1PolicyDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scaling_policy_type")
 
+    @JacksonXmlProperty(localName = "scaling_policy_type")
+
     private ScalingPolicyTypeEnum scalingPolicyType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alarm_id")
+
+    @JacksonXmlProperty(localName = "alarm_id")
 
     private String alarmId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scheduled_policy")
 
+    @JacksonXmlProperty(localName = "scheduled_policy")
+
     private ScheduledPolicy scheduledPolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scaling_policy_action")
+
+    @JacksonXmlProperty(localName = "scaling_policy_action")
 
     private ScalingPolicyActionV1 scalingPolicyAction;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cool_down_time")
 
+    @JacksonXmlProperty(localName = "cool_down_time")
+
     private Integer coolDownTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
+
+    @JacksonXmlProperty(localName = "create_time")
 
     private String createTime;
 

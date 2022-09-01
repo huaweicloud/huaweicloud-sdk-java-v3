@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.bss.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,25 +14,35 @@ public class NewCustomerV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "customer_name")
 
+    @JacksonXmlProperty(localName = "customer_name")
+
     private String customerName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mobile_phone")
+
+    @JacksonXmlProperty(localName = "mobile_phone")
 
     private String mobilePhone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "use_pri_mobile_phone")
 
+    @JacksonXmlProperty(localName = "use_pri_mobile_phone")
+
     private String usePriMobilePhone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "password")
 
+    @JacksonXmlProperty(localName = "password")
+
     private String password;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "verification_code")
+
+    @JacksonXmlProperty(localName = "verification_code")
 
     private String verificationCode;
 

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,20 +22,28 @@ public class LtsStructTemplateInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "demo_fields")
 
+    @JacksonXmlProperty(localName = "demo_fields")
+
     private List<StructFieldInfo> demoFields = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tag_fields")
+
+    @JacksonXmlProperty(localName = "tag_fields")
 
     private List<TagField> tagFields = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "content")
 
+    @JacksonXmlProperty(localName = "content")
+
     private String content;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_group_id")
+
+    @JacksonXmlProperty(localName = "log_group_id")
 
     private String logGroupId;
 
@@ -136,35 +145,49 @@ public class LtsStructTemplateInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parse_type")
 
+    @JacksonXmlProperty(localName = "parse_type")
+
     private ParseTypeEnum parseType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_stream_id")
+
+    @JacksonXmlProperty(localName = "log_stream_id")
 
     private String logStreamId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
 
+    @JacksonXmlProperty(localName = "project_id")
+
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "regex_rules")
+
+    @JacksonXmlProperty(localName = "regex_rules")
 
     private String regexRules;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "layers")
 
+    @JacksonXmlProperty(localName = "layers")
+
     private Integer layers;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tokenizer")
 
+    @JacksonXmlProperty(localName = "tokenizer")
+
     private String tokenizer;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_format")
+
+    @JacksonXmlProperty(localName = "log_format")
 
     private String logFormat;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.apig.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +16,8 @@ public class VpcMemberCreate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "members")
+
+    @JacksonXmlProperty(localName = "members")
 
     private List<MemberInfo> members = null;
 

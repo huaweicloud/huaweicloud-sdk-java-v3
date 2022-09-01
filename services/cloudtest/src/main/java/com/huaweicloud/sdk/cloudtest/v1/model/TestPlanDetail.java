@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cloudtest.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.time.LocalDate;
 import java.util.Objects;
@@ -15,70 +16,98 @@ public class TestPlanDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "plan_id")
 
+    @JacksonXmlProperty(localName = "plan_id")
+
     private String planId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_date")
 
+    @JacksonXmlProperty(localName = "start_date")
+
     private LocalDate startDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_date")
+
+    @JacksonXmlProperty(localName = "end_date")
 
     private LocalDate endDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "finish_date")
 
+    @JacksonXmlProperty(localName = "finish_date")
+
     private LocalDate finishDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
+
+    @JacksonXmlProperty(localName = "project_id")
 
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "current_stage")
 
+    @JacksonXmlProperty(localName = "current_stage")
+
     private String currentStage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expire_day")
+
+    @JacksonXmlProperty(localName = "expire_day")
 
     private String expireDay;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "creator")
 
+    @JacksonXmlProperty(localName = "creator")
+
     private TestPlanDetailCreator creator;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "owner")
+
+    @JacksonXmlProperty(localName = "owner")
 
     private TestPlanDetailOwner owner;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "design_stage")
 
+    @JacksonXmlProperty(localName = "design_stage")
+
     private TestPlanDetailDesignStage designStage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "execute_stage")
+
+    @JacksonXmlProperty(localName = "execute_stage")
 
     private TestPlanDetailExecuteStage executeStage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "report_stage")
 
+    @JacksonXmlProperty(localName = "report_stage")
+
     private TestPlanDetailReportStage reportStage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "iteration")
+
+    @JacksonXmlProperty(localName = "iteration")
 
     private NameAndId iteration;
 

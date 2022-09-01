@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,70 +22,98 @@ public class UpdateLoadBalancerOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "admin_state_up")
+
+    @JacksonXmlProperty(localName = "admin_state_up")
 
     private Boolean adminStateUp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
+    @JacksonXmlProperty(localName = "description")
+
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ipv6_vip_virsubnet_id")
+
+    @JacksonXmlProperty(localName = "ipv6_vip_virsubnet_id")
 
     private String ipv6VipVirsubnetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vip_subnet_cidr_id")
 
+    @JacksonXmlProperty(localName = "vip_subnet_cidr_id")
+
     private String vipSubnetCidrId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vip_address")
+
+    @JacksonXmlProperty(localName = "vip_address")
 
     private String vipAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "l4_flavor_id")
 
+    @JacksonXmlProperty(localName = "l4_flavor_id")
+
     private String l4FlavorId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "l7_flavor_id")
+
+    @JacksonXmlProperty(localName = "l7_flavor_id")
 
     private String l7FlavorId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ipv6_bandwidth")
 
+    @JacksonXmlProperty(localName = "ipv6_bandwidth")
+
     private BandwidthRef ipv6Bandwidth;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip_target_enable")
+
+    @JacksonXmlProperty(localName = "ip_target_enable")
 
     private Boolean ipTargetEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "elb_virsubnet_ids")
 
+    @JacksonXmlProperty(localName = "elb_virsubnet_ids")
+
     private List<String> elbVirsubnetIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deletion_protection_enable")
+
+    @JacksonXmlProperty(localName = "deletion_protection_enable")
 
     private Boolean deletionProtectionEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "prepaid_options")
 
+    @JacksonXmlProperty(localName = "prepaid_options")
+
     private PrepaidUpdateOption prepaidOptions;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "autoscaling")
+
+    @JacksonXmlProperty(localName = "autoscaling")
 
     private UpdateLoadbalancerAutoscalingOption autoscaling;
 
@@ -167,6 +196,8 @@ public class UpdateLoadBalancerOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "waf_failure_action")
+
+    @JacksonXmlProperty(localName = "waf_failure_action")
 
     private WafFailureActionEnum wafFailureAction;
 

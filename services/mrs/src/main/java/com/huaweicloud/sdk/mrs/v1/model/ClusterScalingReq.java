@@ -12,6 +12,8 @@ import com.huaweicloud.sdk.mrs.v1.model.ClusterScalingParams;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -25,6 +27,7 @@ public class ClusterScalingReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="service_id")
     
+    @JacksonXmlProperty(localName = "service_id")
     
     private String serviceId;
 
@@ -32,6 +35,7 @@ public class ClusterScalingReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="plan_id")
     
+    @JacksonXmlProperty(localName = "plan_id")
     
     private String planId;
 
@@ -39,6 +43,7 @@ public class ClusterScalingReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="parameters")
     
+    @JacksonXmlProperty(localName = "parameters")
     
     private ClusterScalingParams parameters;
 
@@ -46,6 +51,7 @@ public class ClusterScalingReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="previous_values")
     
+    @JacksonXmlProperty(localName = "previous_values")
     
     private Map<String, String> previousValues = null;
     

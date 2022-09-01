@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cloudtest.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,20 +14,28 @@ public class CreateTestSuitByRepoFileInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "testsuite_name")
 
+    @JacksonXmlProperty(localName = "testsuite_name")
+
     private String testsuiteName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "repository_id")
+
+    @JacksonXmlProperty(localName = "repository_id")
 
     private String repositoryId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "repository_branch")
 
+    @JacksonXmlProperty(localName = "repository_branch")
+
     private String repositoryBranch;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_path")
+
+    @JacksonXmlProperty(localName = "file_path")
 
     private String filePath;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cpts.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class ListVariablesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "variable_type")
 
+    @JacksonXmlProperty(localName = "variable_type")
+
     private Integer variableType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "test_suite_id")
+
+    @JacksonXmlProperty(localName = "test_suite_id")
 
     private Integer testSuiteId;
 

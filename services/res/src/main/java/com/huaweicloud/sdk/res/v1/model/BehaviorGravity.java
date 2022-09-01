@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.res.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class BehaviorGravity {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "weaken_factor")
 
+    @JacksonXmlProperty(localName = "weaken_factor")
+
     private Double weakenFactor;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "view_type")
 
+    @JacksonXmlProperty(localName = "view_type")
+
     private String viewType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "algo_type")
+
+    @JacksonXmlProperty(localName = "algo_type")
 
     private String algoType;
 

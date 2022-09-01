@@ -13,6 +13,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListGaussMySqlDatabaseUser;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -26,6 +28,7 @@ public class ListGaussMySqlDatabaseUserResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="users")
     
+    @JacksonXmlProperty(localName = "users")
     
     private List<ListGaussMySqlDatabaseUser> users = null;
     
@@ -33,6 +36,7 @@ public class ListGaussMySqlDatabaseUserResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="total_count")
     
+    @JacksonXmlProperty(localName = "total_count")
     
     private Integer totalCount;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.projectman.v4.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,30 +14,42 @@ public class IssueRecordV4Details {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "property")
 
+    @JacksonXmlProperty(localName = "property")
+
     private String property;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "old_value")
+
+    @JacksonXmlProperty(localName = "old_value")
 
     private String oldValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "new_value")
 
+    @JacksonXmlProperty(localName = "new_value")
+
     private String newValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operation")
+
+    @JacksonXmlProperty(localName = "operation")
 
     private String operation;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private Integer id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 

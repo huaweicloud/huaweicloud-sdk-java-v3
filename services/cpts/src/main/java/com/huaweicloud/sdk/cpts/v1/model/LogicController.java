@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cpts.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class LogicController {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "for_loop_params")
 
+    @JacksonXmlProperty(localName = "for_loop_params")
+
     private String forLoopParams;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "condition")
+
+    @JacksonXmlProperty(localName = "condition")
 
     private String condition;
 

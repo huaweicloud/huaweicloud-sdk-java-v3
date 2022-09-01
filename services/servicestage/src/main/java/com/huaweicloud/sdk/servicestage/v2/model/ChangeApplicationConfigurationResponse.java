@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.servicestage.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -15,15 +16,21 @@ public class ChangeApplicationConfigurationResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "application_id")
 
+    @JacksonXmlProperty(localName = "application_id")
+
     private String applicationId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "environment_id")
 
+    @JacksonXmlProperty(localName = "environment_id")
+
     private String environmentId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "configuration")
+
+    @JacksonXmlProperty(localName = "configuration")
 
     private ApplicationListConfigConfiguration _configuration;
 

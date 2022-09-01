@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,10 +22,14 @@ public class LdApiCreate {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "path")
+
+    @JacksonXmlProperty(localName = "path")
 
     private String path;
 
@@ -120,15 +125,21 @@ public class LdApiCreate {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "method")
 
+    @JacksonXmlProperty(localName = "method")
+
     private MethodEnum method;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
+    @JacksonXmlProperty(localName = "description")
+
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
+
+    @JacksonXmlProperty(localName = "version")
 
     private String version;
 
@@ -218,25 +229,35 @@ public class LdApiCreate {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "content_type")
 
+    @JacksonXmlProperty(localName = "content_type")
+
     private ContentTypeEnum contentType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "api_signature_id")
+
+    @JacksonXmlProperty(localName = "api_signature_id")
 
     private String apiSignatureId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "roma_app_id")
 
+    @JacksonXmlProperty(localName = "roma_app_id")
+
     private String romaAppId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "return_format")
 
+    @JacksonXmlProperty(localName = "return_format")
+
     private Boolean returnFormat;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parameters")
+
+    @JacksonXmlProperty(localName = "parameters")
 
     private List<LdApiParameter> parameters = null;
 

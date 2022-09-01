@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.lts.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class CreateTransferRequestBodyLogStreams {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_stream_id")
 
+    @JacksonXmlProperty(localName = "log_stream_id")
+
     private String logStreamId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_stream_name")
+
+    @JacksonXmlProperty(localName = "log_stream_name")
 
     private String logStreamName;
 

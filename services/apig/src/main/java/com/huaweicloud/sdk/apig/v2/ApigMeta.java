@@ -2177,7 +2177,6 @@ public class ApigMeta {
             }));
 
         // response
-
         builder.<Map<String, ResponseInfoResp>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -2530,7 +2529,6 @@ public class ApigMeta {
             }));
 
         // response
-
         builder.<Map<String, ResponseInfoResp>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,35 +14,49 @@ public class StatisticUserDataItem {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time")
 
+    @JacksonXmlProperty(localName = "time")
+
     private String time;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "userLoginCount")
+
+    @JacksonXmlProperty(localName = "userLoginCount")
 
     private String userLoginCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "userPCLoginCount")
 
+    @JacksonXmlProperty(localName = "userPCLoginCount")
+
     private String userPCLoginCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "userMobileLoginCount")
+
+    @JacksonXmlProperty(localName = "userMobileLoginCount")
 
     private String userMobileLoginCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "userActivatedCount")
 
+    @JacksonXmlProperty(localName = "userActivatedCount")
+
     private String userActivatedCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "userLoginDevicesName")
 
+    @JacksonXmlProperty(localName = "userLoginDevicesName")
+
     private String userLoginDevicesName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "userLoginDevicesCount")
+
+    @JacksonXmlProperty(localName = "userLoginDevicesCount")
 
     private String userLoginDevicesCount;
 

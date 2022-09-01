@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.rds.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,55 +14,77 @@ public class SlowLog {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "count")
 
+    @JacksonXmlProperty(localName = "count")
+
     private String count;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time")
+
+    @JacksonXmlProperty(localName = "time")
 
     private String time;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lock_time")
 
+    @JacksonXmlProperty(localName = "lock_time")
+
     private String lockTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rows_sent")
+
+    @JacksonXmlProperty(localName = "rows_sent")
 
     private String rowsSent;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rows_examined")
 
+    @JacksonXmlProperty(localName = "rows_examined")
+
     private String rowsExamined;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "database")
+
+    @JacksonXmlProperty(localName = "database")
 
     private String database;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "users")
 
+    @JacksonXmlProperty(localName = "users")
+
     private String users;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "query_sample")
+
+    @JacksonXmlProperty(localName = "query_sample")
 
     private String querySample;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
+    @JacksonXmlProperty(localName = "type")
+
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
+    @JacksonXmlProperty(localName = "start_time")
+
     private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "client_ip")
+
+    @JacksonXmlProperty(localName = "client_ip")
 
     private String clientIp;
 

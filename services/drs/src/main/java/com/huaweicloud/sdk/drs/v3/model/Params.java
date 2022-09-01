@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -95,10 +96,14 @@ public class Params {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "compare_result")
 
+    @JacksonXmlProperty(localName = "compare_result")
+
     private CompareResultEnum compareResult;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_type")
+
+    @JacksonXmlProperty(localName = "data_type")
 
     private String dataType;
 
@@ -182,10 +187,14 @@ public class Params {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group")
 
+    @JacksonXmlProperty(localName = "group")
+
     private GroupEnum group;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key")
+
+    @JacksonXmlProperty(localName = "key")
 
     private String key;
 
@@ -269,30 +278,42 @@ public class Params {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "need_restart")
 
+    @JacksonXmlProperty(localName = "need_restart")
+
     private NeedRestartEnum needRestart;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_value")
+
+    @JacksonXmlProperty(localName = "source_value")
 
     private String sourceValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_value")
 
+    @JacksonXmlProperty(localName = "target_value")
+
     private String targetValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "value_range")
+
+    @JacksonXmlProperty(localName = "value_range")
 
     private String valueRange;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_code")
 
+    @JacksonXmlProperty(localName = "error_code")
+
     private String errorCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_message")
+
+    @JacksonXmlProperty(localName = "error_message")
 
     private String errorMessage;
 

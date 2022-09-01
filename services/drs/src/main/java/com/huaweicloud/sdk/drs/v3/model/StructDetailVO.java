@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.drs.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,25 +14,35 @@ public class StructDetailVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "progress")
 
+    @JacksonXmlProperty(localName = "progress")
+
     private Integer progress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "src_DB")
+
+    @JacksonXmlProperty(localName = "src_DB")
 
     private String srcDB;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "src_TB")
 
+    @JacksonXmlProperty(localName = "src_TB")
+
     private String srcTB;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dst_DB")
 
+    @JacksonXmlProperty(localName = "dst_DB")
+
     private String dstDB;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dst_TB")
+
+    @JacksonXmlProperty(localName = "dst_TB")
 
     private String dstTB;
 

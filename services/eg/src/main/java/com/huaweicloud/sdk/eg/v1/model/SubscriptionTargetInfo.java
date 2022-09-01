@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.eg.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,35 +15,49 @@ public class SubscriptionTargetInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "provider_type")
 
+    @JacksonXmlProperty(localName = "provider_type")
+
     private String providerType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "detail")
+
+    @JacksonXmlProperty(localName = "detail")
 
     private Object detail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "transform")
 
+    @JacksonXmlProperty(localName = "transform")
+
     private SubscriptionTargetInfoTransform transform;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_time")
 
+    @JacksonXmlProperty(localName = "created_time")
+
     private String createdTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_time")
+
+    @JacksonXmlProperty(localName = "updated_time")
 
     private String updatedTime;
 

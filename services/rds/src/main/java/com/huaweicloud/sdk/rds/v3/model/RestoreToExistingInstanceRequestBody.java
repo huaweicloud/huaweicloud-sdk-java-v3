@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.rds.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,10 +15,14 @@ public class RestoreToExistingInstanceRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source")
 
+    @JacksonXmlProperty(localName = "source")
+
     private RestoreToExistingInstanceRequestBodySource source;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target")
+
+    @JacksonXmlProperty(localName = "target")
 
     private RestoreToExistingInstanceRequestBodyTarget target;
 

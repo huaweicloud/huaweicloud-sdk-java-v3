@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.codehub.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,105 +14,147 @@ public class RepoInfoV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
 
+    @JacksonXmlProperty(localName = "created_at")
+
     private String createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "creator_name")
+
+    @JacksonXmlProperty(localName = "creator_name")
 
     private String creatorName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_name")
 
+    @JacksonXmlProperty(localName = "domain_name")
+
     private String domainName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_name")
+
+    @JacksonXmlProperty(localName = "group_name")
 
     private String groupName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "https_url")
 
+    @JacksonXmlProperty(localName = "https_url")
+
     private String httpsUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "iam_user_uuid")
+
+    @JacksonXmlProperty(localName = "iam_user_uuid")
 
     private String iamUserUuid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_owner")
 
+    @JacksonXmlProperty(localName = "is_owner")
+
     private Integer isOwner;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lfs_size")
+
+    @JacksonXmlProperty(localName = "lfs_size")
 
     private String lfsSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_is_deleted")
 
+    @JacksonXmlProperty(localName = "project_is_deleted")
+
     private String projectIsDeleted;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_uuid")
+
+    @JacksonXmlProperty(localName = "project_uuid")
 
     private String projectUuid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "repository_id")
 
+    @JacksonXmlProperty(localName = "repository_id")
+
     private Integer repositoryId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "repository_name")
+
+    @JacksonXmlProperty(localName = "repository_name")
 
     private String repositoryName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "repository_size")
 
+    @JacksonXmlProperty(localName = "repository_size")
+
     private String repositorySize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "repository_uuid")
+
+    @JacksonXmlProperty(localName = "repository_uuid")
 
     private String repositoryUuid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ssh_url")
 
+    @JacksonXmlProperty(localName = "ssh_url")
+
     private String sshUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "star")
+
+    @JacksonXmlProperty(localName = "star")
 
     private Boolean star;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private Integer status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_at")
+
+    @JacksonXmlProperty(localName = "updated_at")
 
     private String updatedAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "userRole")
 
+    @JacksonXmlProperty(localName = "userRole")
+
     private Integer userRole;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "visibility_level")
 
+    @JacksonXmlProperty(localName = "visibility_level")
+
     private Integer visibilityLevel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "web_url")
+
+    @JacksonXmlProperty(localName = "web_url")
 
     private String webUrl;
 

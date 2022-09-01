@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,30 +14,42 @@ public class ListBatchesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cluster_name")
 
+    @JacksonXmlProperty(localName = "cluster_name")
+
     private String clusterName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "queue_name")
+
+    @JacksonXmlProperty(localName = "queue_name")
 
     private String queueName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job-id")
 
+    @JacksonXmlProperty(localName = "job-id")
+
     private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "from")
+
+    @JacksonXmlProperty(localName = "from")
 
     private Integer from;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
 
+    @JacksonXmlProperty(localName = "size")
+
     private Integer size;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "state")
+
+    @JacksonXmlProperty(localName = "state")
 
     private String state;
 

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,10 +19,14 @@ public class ListTasksDetailsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_name")
 
+    @JacksonXmlProperty(localName = "service_name")
+
     private String serviceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_version")
+
+    @JacksonXmlProperty(localName = "service_version")
 
     private String serviceVersion;
 
@@ -183,25 +188,35 @@ public class ListTasksDetailsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "state")
 
+    @JacksonXmlProperty(localName = "state")
+
     private StateEnum state;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name_like")
+
+    @JacksonXmlProperty(localName = "name_like")
 
     private String nameLike;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id_like")
 
+    @JacksonXmlProperty(localName = "id_like")
+
     private String idLike;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_since")
 
+    @JacksonXmlProperty(localName = "created_since")
+
     private Long createdSince;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_until")
+
+    @JacksonXmlProperty(localName = "created_until")
 
     private Long createdUntil;
 
@@ -309,15 +324,21 @@ public class ListTasksDetailsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "order")
 
+    @JacksonXmlProperty(localName = "order")
+
     private OrderEnum order;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
+    @JacksonXmlProperty(localName = "offset")
+
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
+
+    @JacksonXmlProperty(localName = "limit")
 
     private Integer limit;
 

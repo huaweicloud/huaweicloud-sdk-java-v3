@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ces.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,15 +15,21 @@ public class TemplateItem {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metric_name")
 
+    @JacksonXmlProperty(localName = "metric_name")
+
     private String metricName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "condition")
 
+    @JacksonXmlProperty(localName = "condition")
+
     private AlarmTemplateCondition condition;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alarm_level")
+
+    @JacksonXmlProperty(localName = "alarm_level")
 
     private Integer alarmLevel;
 

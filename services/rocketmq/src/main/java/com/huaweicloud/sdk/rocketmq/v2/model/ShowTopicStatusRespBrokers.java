@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.rocketmq.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,10 +17,14 @@ public class ShowTopicStatusRespBrokers {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "queues")
 
+    @JacksonXmlProperty(localName = "queues")
+
     private List<ShowTopicStatusRespQueues> queues = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "broker_name")
+
+    @JacksonXmlProperty(localName = "broker_name")
 
     private String brokerName;
 

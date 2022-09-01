@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.rds.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,15 +17,21 @@ public class PostgresqlUserForList {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "attributes")
 
+    @JacksonXmlProperty(localName = "attributes")
+
     private Object attributes;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "memberof")
+
+    @JacksonXmlProperty(localName = "memberof")
 
     private List<String> memberof = null;
 

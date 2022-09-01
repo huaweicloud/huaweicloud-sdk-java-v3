@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,185 +22,259 @@ public class ConferenceInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "conferenceID")
 
+    @JacksonXmlProperty(localName = "conferenceID")
+
     private String conferenceID;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subject")
+
+    @JacksonXmlProperty(localName = "subject")
 
     private String subject;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
 
+    @JacksonXmlProperty(localName = "size")
+
     private Integer size;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timeZoneID")
+
+    @JacksonXmlProperty(localName = "timeZoneID")
 
     private String timeZoneID;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "startTime")
 
+    @JacksonXmlProperty(localName = "startTime")
+
     private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "endTime")
+
+    @JacksonXmlProperty(localName = "endTime")
 
     private String endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mediaTypes")
 
+    @JacksonXmlProperty(localName = "mediaTypes")
+
     private String mediaTypes;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "conferenceState")
+
+    @JacksonXmlProperty(localName = "conferenceState")
 
     private String conferenceState;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "language")
 
+    @JacksonXmlProperty(localName = "language")
+
     private String language;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "accessNumber")
+
+    @JacksonXmlProperty(localName = "accessNumber")
 
     private String accessNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "passwordEntry")
 
+    @JacksonXmlProperty(localName = "passwordEntry")
+
     private List<PasswordEntry> passwordEntry = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "userUUID")
+
+    @JacksonXmlProperty(localName = "userUUID")
 
     private String userUUID;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scheduserName")
 
+    @JacksonXmlProperty(localName = "scheduserName")
+
     private String scheduserName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "conferenceType")
+
+    @JacksonXmlProperty(localName = "conferenceType")
 
     private Integer conferenceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confType")
 
+    @JacksonXmlProperty(localName = "confType")
+
     private String confType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cycleParams")
+
+    @JacksonXmlProperty(localName = "cycleParams")
 
     private CycleParams cycleParams;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "isAutoMute")
 
+    @JacksonXmlProperty(localName = "isAutoMute")
+
     private Integer isAutoMute;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "isAutoRecord")
+
+    @JacksonXmlProperty(localName = "isAutoRecord")
 
     private Integer isAutoRecord;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "chairJoinUri")
 
+    @JacksonXmlProperty(localName = "chairJoinUri")
+
     private String chairJoinUri;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "guestJoinUri")
+
+    @JacksonXmlProperty(localName = "guestJoinUri")
 
     private String guestJoinUri;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "audienceJoinUri")
 
+    @JacksonXmlProperty(localName = "audienceJoinUri")
+
     private String audienceJoinUri;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "recordType")
+
+    @JacksonXmlProperty(localName = "recordType")
 
     private Integer recordType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auxAddress")
 
+    @JacksonXmlProperty(localName = "auxAddress")
+
     private String auxAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "liveAddress")
+
+    @JacksonXmlProperty(localName = "liveAddress")
 
     private String liveAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "recordAuxStream")
 
+    @JacksonXmlProperty(localName = "recordAuxStream")
+
     private Integer recordAuxStream;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "recordAuthType")
+
+    @JacksonXmlProperty(localName = "recordAuthType")
 
     private Integer recordAuthType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "liveUrl")
 
+    @JacksonXmlProperty(localName = "liveUrl")
+
     private String liveUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confConfigInfo")
+
+    @JacksonXmlProperty(localName = "confConfigInfo")
 
     private RestConfConfigDTO confConfigInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vmrFlag")
 
+    @JacksonXmlProperty(localName = "vmrFlag")
+
     private Integer vmrFlag;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "isHasRecordFile")
+
+    @JacksonXmlProperty(localName = "isHasRecordFile")
 
     private Boolean isHasRecordFile;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vmrConferenceID")
 
+    @JacksonXmlProperty(localName = "vmrConferenceID")
+
     private String vmrConferenceID;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confUUID")
+
+    @JacksonXmlProperty(localName = "confUUID")
 
     private String confUUID;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "partAttendeeInfo")
 
+    @JacksonXmlProperty(localName = "partAttendeeInfo")
+
     private List<PartAttendee> partAttendeeInfo = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "terminlCount")
+
+    @JacksonXmlProperty(localName = "terminlCount")
 
     private Integer terminlCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "normalCount")
 
+    @JacksonXmlProperty(localName = "normalCount")
+
     private Integer normalCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deptName")
 
+    @JacksonXmlProperty(localName = "deptName")
+
     private String deptName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vmrID")
+
+    @JacksonXmlProperty(localName = "vmrID")
 
     private String vmrID;
 
@@ -289,15 +364,21 @@ public class ConferenceInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "role")
 
+    @JacksonXmlProperty(localName = "role")
+
     private RoleEnum role;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "webinar")
 
+    @JacksonXmlProperty(localName = "webinar")
+
     private Boolean webinar;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "multiStreamFlag")
+
+    @JacksonXmlProperty(localName = "multiStreamFlag")
 
     private Integer multiStreamFlag;
 
@@ -381,30 +462,42 @@ public class ConferenceInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confMode")
 
+    @JacksonXmlProperty(localName = "confMode")
+
     private ConfModeEnum confMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scheduleVmr")
+
+    @JacksonXmlProperty(localName = "scheduleVmr")
 
     private Boolean scheduleVmr;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "concurrentParticipants")
 
+    @JacksonXmlProperty(localName = "concurrentParticipants")
+
     private Integer concurrentParticipants;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "picDisplay")
+
+    @JacksonXmlProperty(localName = "picDisplay")
 
     private MultiPicDisplayDO picDisplay;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subConfs")
 
+    @JacksonXmlProperty(localName = "subConfs")
+
     private List<CycleSubConf> subConfs = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cycleSubConfID")
+
+    @JacksonXmlProperty(localName = "cycleSubConfID")
 
     private String cycleSubConfID;
 

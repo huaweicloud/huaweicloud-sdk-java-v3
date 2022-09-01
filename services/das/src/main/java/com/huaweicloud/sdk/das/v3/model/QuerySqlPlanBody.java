@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.das.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class QuerySqlPlanBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "db_user_id")
 
+    @JacksonXmlProperty(localName = "db_user_id")
+
     private String dbUserId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "database")
 
+    @JacksonXmlProperty(localName = "database")
+
     private String database;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sql")
+
+    @JacksonXmlProperty(localName = "sql")
 
     private String sql;
 

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,15 +19,21 @@ public class GetHostListInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_id")
 
+    @JacksonXmlProperty(localName = "host_id")
+
     private String hostId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_ip")
 
+    @JacksonXmlProperty(localName = "host_ip")
+
     private String hostIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_name")
+
+    @JacksonXmlProperty(localName = "host_name")
 
     private String hostName;
 
@@ -182,6 +189,8 @@ public class GetHostListInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_status")
 
+    @JacksonXmlProperty(localName = "host_status")
+
     private HostStatusEnum hostStatus;
 
     /**
@@ -264,15 +273,21 @@ public class GetHostListInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_type")
 
+    @JacksonXmlProperty(localName = "host_type")
+
     private HostTypeEnum hostType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_version")
 
+    @JacksonXmlProperty(localName = "host_version")
+
     private String hostVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
+
+    @JacksonXmlProperty(localName = "update_time")
 
     private Long updateTime;
 

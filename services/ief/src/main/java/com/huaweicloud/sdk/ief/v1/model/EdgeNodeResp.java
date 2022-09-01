@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ief.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,255 +17,357 @@ public class EdgeNodeResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
+    @JacksonXmlProperty(localName = "description")
+
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
+
+    @JacksonXmlProperty(localName = "created_at")
 
     private String createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_at")
 
+    @JacksonXmlProperty(localName = "updated_at")
+
     private String updatedAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
+
+    @JacksonXmlProperty(localName = "project_id")
 
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "private_key")
 
+    @JacksonXmlProperty(localName = "private_key")
+
     private String privateKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "certificate")
+
+    @JacksonXmlProperty(localName = "certificate")
 
     private String certificate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ca")
 
+    @JacksonXmlProperty(localName = "ca")
+
     private String ca;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "state")
+
+    @JacksonXmlProperty(localName = "state")
 
     private String state;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "package")
 
+    @JacksonXmlProperty(localName = "package")
+
     private String _package;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "master_addr")
+
+    @JacksonXmlProperty(localName = "master_addr")
 
     private String masterAddr;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cpu")
 
+    @JacksonXmlProperty(localName = "cpu")
+
     private Integer cpu;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "memory")
+
+    @JacksonXmlProperty(localName = "memory")
 
     private Integer memory;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os_name")
 
+    @JacksonXmlProperty(localName = "os_name")
+
     private String osName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os_version")
+
+    @JacksonXmlProperty(localName = "os_version")
 
     private String osVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pause_docker_image")
 
+    @JacksonXmlProperty(localName = "pause_docker_image")
+
     private String pauseDockerImage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "arch")
+
+    @JacksonXmlProperty(localName = "arch")
 
     private String arch;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os_type")
 
+    @JacksonXmlProperty(localName = "os_type")
+
     private String osType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deployment_num")
+
+    @JacksonXmlProperty(localName = "deployment_num")
 
     private Integer deploymentNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_gpu")
 
+    @JacksonXmlProperty(localName = "enable_gpu")
+
     private Boolean enableGpu;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_configs")
+
+    @JacksonXmlProperty(localName = "log_configs")
 
     private List<LogConfigs> logConfigs = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "device_infos")
 
+    @JacksonXmlProperty(localName = "device_infos")
+
     private List<DeviceInfos> deviceInfos = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "edged_version")
+
+    @JacksonXmlProperty(localName = "edged_version")
 
     private String edgedVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "gpu_num")
 
+    @JacksonXmlProperty(localName = "gpu_num")
+
     private Integer gpuNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_ips")
+
+    @JacksonXmlProperty(localName = "host_ips")
 
     private List<String> hostIps = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "relation")
 
+    @JacksonXmlProperty(localName = "relation")
+
     private String relation;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "comment")
+
+    @JacksonXmlProperty(localName = "comment")
 
     private String comment;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "gpu_info")
 
+    @JacksonXmlProperty(localName = "gpu_info")
+
     private List<GpuInfo> gpuInfo = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "device_num")
+
+    @JacksonXmlProperty(localName = "device_num")
 
     private Integer deviceNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_npu")
 
+    @JacksonXmlProperty(localName = "enable_npu")
+
     private Boolean enableNpu;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "npu_type")
+
+    @JacksonXmlProperty(localName = "npu_type")
 
     private String npuType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nics")
 
+    @JacksonXmlProperty(localName = "nics")
+
     private List<Nics> nics = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_name")
+
+    @JacksonXmlProperty(localName = "host_name")
 
     private String hostName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ief_node_version")
 
+    @JacksonXmlProperty(localName = "ief_node_version")
+
     private String iefNodeVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "upgrade_flag")
+
+    @JacksonXmlProperty(localName = "upgrade_flag")
 
     private Boolean upgradeFlag;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "product_id")
 
+    @JacksonXmlProperty(localName = "product_id")
+
     private String productId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_ids")
+
+    @JacksonXmlProperty(localName = "group_ids")
 
     private List<String> groupIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "upgrade_history")
 
+    @JacksonXmlProperty(localName = "upgrade_history")
+
     private List<UpgradeHistory> upgradeHistory = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "attributes")
+
+    @JacksonXmlProperty(localName = "attributes")
 
     private List<Attributes> attributes = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "docker_enable")
 
+    @JacksonXmlProperty(localName = "docker_enable")
+
     private Boolean dockerEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mqtt_mode")
+
+    @JacksonXmlProperty(localName = "mqtt_mode")
 
     private String mqttMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mqtt_external")
 
+    @JacksonXmlProperty(localName = "mqtt_external")
+
     private String mqttExternal;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mqtt_internal")
+
+    @JacksonXmlProperty(localName = "mqtt_internal")
 
     private String mqttInternal;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "node_type")
 
+    @JacksonXmlProperty(localName = "node_type")
+
     private String nodeType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ntp_configs")
+
+    @JacksonXmlProperty(localName = "ntp_configs")
 
     private NtpConfigs ntpConfigs;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_reason")
 
+    @JacksonXmlProperty(localName = "error_reason")
+
     private String errorReason;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
+
+    @JacksonXmlProperty(localName = "tags")
 
     private List<ResourceTag> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "npu_num")
 
+    @JacksonXmlProperty(localName = "npu_num")
+
     private Integer npuNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "npu_info")
 
+    @JacksonXmlProperty(localName = "npu_info")
+
     private List<NpuInfo> npuInfo = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "container_runtime_version")
+
+    @JacksonXmlProperty(localName = "container_runtime_version")
 
     private String containerRuntimeVersion;
 

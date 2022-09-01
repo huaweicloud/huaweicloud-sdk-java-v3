@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ocr.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,55 +14,77 @@ public class ItineraryList {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "departure_station")
 
+    @JacksonXmlProperty(localName = "departure_station")
+
     private String departureStation;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "destination_station")
+
+    @JacksonXmlProperty(localName = "destination_station")
 
     private String destinationStation;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "carrier")
 
+    @JacksonXmlProperty(localName = "carrier")
+
     private String carrier;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flight")
+
+    @JacksonXmlProperty(localName = "flight")
 
     private String flight;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cabin_class")
 
+    @JacksonXmlProperty(localName = "cabin_class")
+
     private String cabinClass;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "date")
+
+    @JacksonXmlProperty(localName = "date")
 
     private String date;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time")
 
+    @JacksonXmlProperty(localName = "time")
+
     private String time;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fare_basis")
+
+    @JacksonXmlProperty(localName = "fare_basis")
 
     private String fareBasis;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "effective_date")
 
+    @JacksonXmlProperty(localName = "effective_date")
+
     private String effectiveDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expiry_date")
 
+    @JacksonXmlProperty(localName = "expiry_date")
+
     private String expiryDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "baggage_allowance")
+
+    @JacksonXmlProperty(localName = "baggage_allowance")
 
     private String baggageAllowance;
 

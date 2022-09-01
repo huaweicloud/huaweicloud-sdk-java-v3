@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cloudpipeline.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,60 +17,84 @@ public class TemplateParam {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "required")
 
+    @JacksonXmlProperty(localName = "required")
+
     private String required;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "visible")
+
+    @JacksonXmlProperty(localName = "visible")
 
     private String visible;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "value")
+
+    @JacksonXmlProperty(localName = "value")
 
     private String value;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
+    @JacksonXmlProperty(localName = "description")
+
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "paramtype")
+
+    @JacksonXmlProperty(localName = "paramtype")
 
     private String paramtype;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "display_type")
 
+    @JacksonXmlProperty(localName = "display_type")
+
     private String displayType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "display_name")
+
+    @JacksonXmlProperty(localName = "display_name")
 
     private String displayName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_static")
 
+    @JacksonXmlProperty(localName = "is_static")
+
     private Boolean isStatic;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_default")
+
+    @JacksonXmlProperty(localName = "is_default")
 
     private Boolean isDefault;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limits")
 
+    @JacksonXmlProperty(localName = "limits")
+
     private List<ParamTypeLimits> limits = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "constraints")
+
+    @JacksonXmlProperty(localName = "constraints")
 
     private List<Constraint> constraints = null;
 

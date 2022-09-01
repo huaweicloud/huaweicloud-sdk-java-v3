@@ -16,6 +16,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -29,6 +31,7 @@ public class SegmentRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="text")
     
+    @JacksonXmlProperty(localName = "text")
     
     private String text;
     /**
@@ -114,6 +117,7 @@ public class SegmentRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="pos_switch")
     
+    @JacksonXmlProperty(localName = "pos_switch")
     
     private PosSwitchEnum posSwitch;
     /**
@@ -199,6 +203,7 @@ public class SegmentRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="lang")
     
+    @JacksonXmlProperty(localName = "lang")
     
     private LangEnum lang;
     /**
@@ -284,6 +289,7 @@ public class SegmentRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="criterion")
     
+    @JacksonXmlProperty(localName = "criterion")
     
     private CriterionEnum criterion;
 

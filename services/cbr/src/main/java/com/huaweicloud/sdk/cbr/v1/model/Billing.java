@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -17,6 +18,8 @@ public class Billing {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "allocated")
+
+    @JacksonXmlProperty(localName = "allocated")
 
     private Integer allocated;
 
@@ -100,6 +103,8 @@ public class Billing {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "charging_mode")
 
+    @JacksonXmlProperty(localName = "charging_mode")
+
     private ChargingModeEnum chargingMode;
 
     /**
@@ -181,6 +186,8 @@ public class Billing {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cloud_type")
+
+    @JacksonXmlProperty(localName = "cloud_type")
 
     private CloudTypeEnum cloudType;
 
@@ -264,6 +271,8 @@ public class Billing {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "consistent_level")
 
+    @JacksonXmlProperty(localName = "consistent_level")
+
     private ConsistentLevelEnum consistentLevel;
 
     /**
@@ -346,15 +355,21 @@ public class Billing {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "object_type")
 
+    @JacksonXmlProperty(localName = "object_type")
+
     private ObjectTypeEnum objectType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "order_id")
 
+    @JacksonXmlProperty(localName = "order_id")
+
     private String orderId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "product_id")
+
+    @JacksonXmlProperty(localName = "product_id")
 
     private String productId;
 
@@ -444,10 +459,14 @@ public class Billing {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protect_type")
 
+    @JacksonXmlProperty(localName = "protect_type")
+
     private ProtectTypeEnum protectType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
+
+    @JacksonXmlProperty(localName = "size")
 
     private Integer size;
 
@@ -530,6 +549,8 @@ public class Billing {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "spec_code")
+
+    @JacksonXmlProperty(localName = "spec_code")
 
     private SpecCodeEnum specCode;
 
@@ -631,20 +652,28 @@ public class Billing {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "storage_unit")
+
+    @JacksonXmlProperty(localName = "storage_unit")
 
     private String storageUnit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "used")
 
+    @JacksonXmlProperty(localName = "used")
+
     private Integer used;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "frozen_scene")
+
+    @JacksonXmlProperty(localName = "frozen_scene")
 
     private String frozenScene;
 

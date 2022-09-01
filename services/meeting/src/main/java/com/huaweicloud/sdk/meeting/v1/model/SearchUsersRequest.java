@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,45 +22,63 @@ public class SearchUsersRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Request-Id")
 
+    @JacksonXmlProperty(localName = "X-Request-Id")
+
     private String xRequestId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "Accept-Language")
+
+    @JacksonXmlProperty(localName = "Accept-Language")
 
     private String acceptLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
+    @JacksonXmlProperty(localName = "offset")
+
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
+
+    @JacksonXmlProperty(localName = "limit")
 
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "searchKey")
 
+    @JacksonXmlProperty(localName = "searchKey")
+
     private String searchKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sortField")
+
+    @JacksonXmlProperty(localName = "sortField")
 
     private String sortField;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "isAsc")
 
+    @JacksonXmlProperty(localName = "isAsc")
+
     private Boolean isAsc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deptCode")
 
+    @JacksonXmlProperty(localName = "deptCode")
+
     private String deptCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enableSubDept")
+
+    @JacksonXmlProperty(localName = "enableSubDept")
 
     private Boolean enableSubDept;
 
@@ -143,25 +162,35 @@ public class SearchUsersRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "adminType")
 
+    @JacksonXmlProperty(localName = "adminType")
+
     private AdminTypeEnum adminType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enableRoom")
+
+    @JacksonXmlProperty(localName = "enableRoom")
 
     private Boolean enableRoom;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "userType")
 
+    @JacksonXmlProperty(localName = "userType")
+
     private List<Integer> userType = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private Integer status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "containsUnActive")
+
+    @JacksonXmlProperty(localName = "containsUnActive")
 
     private Boolean containsUnActive;
 

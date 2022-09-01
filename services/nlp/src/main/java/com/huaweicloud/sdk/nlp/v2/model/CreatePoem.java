@@ -12,6 +12,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -25,6 +27,7 @@ public class CreatePoem  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="title")
     
+    @JacksonXmlProperty(localName = "title")
     
     private String title;
     /**
@@ -122,6 +125,7 @@ public class CreatePoem  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
+    @JacksonXmlProperty(localName = "type")
     
     private TypeEnum type;
 
@@ -129,6 +133,7 @@ public class CreatePoem  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="acrostic")
     
+    @JacksonXmlProperty(localName = "acrostic")
     
     private Boolean acrostic;
 

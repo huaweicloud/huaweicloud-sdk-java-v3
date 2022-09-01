@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ces.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,50 +14,70 @@ public class ListAlarmHistoriesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_id")
 
+    @JacksonXmlProperty(localName = "group_id")
+
     private String groupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alarm_id")
+
+    @JacksonXmlProperty(localName = "alarm_id")
 
     private String alarmId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alarm_name")
 
+    @JacksonXmlProperty(localName = "alarm_name")
+
     private String alarmName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alarm_status")
+
+    @JacksonXmlProperty(localName = "alarm_status")
 
     private String alarmStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alarm_level")
 
+    @JacksonXmlProperty(localName = "alarm_level")
+
     private String alarmLevel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "namespace")
+
+    @JacksonXmlProperty(localName = "namespace")
 
     private String namespace;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "from")
 
+    @JacksonXmlProperty(localName = "from")
+
     private String from;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "to")
+
+    @JacksonXmlProperty(localName = "to")
 
     private String to;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start")
 
+    @JacksonXmlProperty(localName = "start")
+
     private String start;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
+
+    @JacksonXmlProperty(localName = "limit")
 
     private String limit;
 

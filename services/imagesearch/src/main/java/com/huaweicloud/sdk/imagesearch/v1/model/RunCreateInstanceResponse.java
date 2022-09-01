@@ -16,6 +16,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -29,6 +31,7 @@ public class RunCreateInstanceResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="domain")
     
+    @JacksonXmlProperty(localName = "domain")
     
     private String domain;
 
@@ -36,6 +39,7 @@ public class RunCreateInstanceResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="desc")
     
+    @JacksonXmlProperty(localName = "desc")
     
     private String desc;
 
@@ -43,6 +47,7 @@ public class RunCreateInstanceResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="registerDate")
     
+    @JacksonXmlProperty(localName = "registerDate")
     
     private Long registerDate;
 
@@ -50,6 +55,7 @@ public class RunCreateInstanceResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="expiredDate")
     
+    @JacksonXmlProperty(localName = "expiredDate")
     
     private Long expiredDate;
 
@@ -57,6 +63,7 @@ public class RunCreateInstanceResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="level")
     
+    @JacksonXmlProperty(localName = "level")
     
     private Integer level;
 
@@ -64,6 +71,7 @@ public class RunCreateInstanceResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
+    @JacksonXmlProperty(localName = "tags")
     
     private List<String> tags = null;
         /**
@@ -179,6 +187,7 @@ public class RunCreateInstanceResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
+    @JacksonXmlProperty(localName = "status")
     
     private StatusEnum status;
 
@@ -186,6 +195,7 @@ public class RunCreateInstanceResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instanceName")
     
+    @JacksonXmlProperty(localName = "instanceName")
     
     private String instanceName;
 

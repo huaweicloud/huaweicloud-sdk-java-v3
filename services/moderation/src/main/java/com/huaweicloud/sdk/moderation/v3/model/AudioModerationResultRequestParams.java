@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.moderation.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,20 +17,28 @@ public class AudioModerationResultRequestParams {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_type")
 
+    @JacksonXmlProperty(localName = "event_type")
+
     private String eventType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
+
+    @JacksonXmlProperty(localName = "data")
 
     private AudioModerationResultRequestParamsData data;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "callback")
 
+    @JacksonXmlProperty(localName = "callback")
+
     private String callback;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "categories")
+
+    @JacksonXmlProperty(localName = "categories")
 
     private List<String> categories = null;
 

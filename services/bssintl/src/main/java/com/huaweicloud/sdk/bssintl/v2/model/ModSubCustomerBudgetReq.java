@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.bssintl.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,20 +14,28 @@ public class ModSubCustomerBudgetReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "customer_id")
 
+    @JacksonXmlProperty(localName = "customer_id")
+
     private String customerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "budget_amount")
+
+    @JacksonXmlProperty(localName = "budget_amount")
 
     private Double budgetAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cancel_partner_frozen")
 
+    @JacksonXmlProperty(localName = "cancel_partner_frozen")
+
     private String cancelPartnerFrozen;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "indirect_partner_id")
+
+    @JacksonXmlProperty(localName = "indirect_partner_id")
 
     private String indirectPartnerId;
 

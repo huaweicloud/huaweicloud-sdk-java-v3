@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cloudrtc.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class AppCallbackUrlReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "url")
 
+    @JacksonXmlProperty(localName = "url")
+
     private String url;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auth_key")
+
+    @JacksonXmlProperty(localName = "auth_key")
 
     private String authKey;
 

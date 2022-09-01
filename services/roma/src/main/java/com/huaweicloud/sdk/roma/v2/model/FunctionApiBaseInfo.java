@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,10 +19,14 @@ public class FunctionApiBaseInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "function_urn")
 
+    @JacksonXmlProperty(localName = "function_urn")
+
     private String functionUrn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remark")
+
+    @JacksonXmlProperty(localName = "remark")
 
     private String remark;
 
@@ -105,20 +110,28 @@ public class FunctionApiBaseInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "invocation_type")
 
+    @JacksonXmlProperty(localName = "invocation_type")
+
     private InvocationTypeEnum invocationType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
+
+    @JacksonXmlProperty(localName = "version")
 
     private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timeout")
 
+    @JacksonXmlProperty(localName = "timeout")
+
     private Integer timeout;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "authorizer_id")
+
+    @JacksonXmlProperty(localName = "authorizer_id")
 
     private String authorizerId;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.bss.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,45 +14,63 @@ public class AdjustRecordV3 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "customer_id")
 
+    @JacksonXmlProperty(localName = "customer_id")
+
     private String customerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "customer_name")
+
+    @JacksonXmlProperty(localName = "customer_name")
 
     private String customerName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operation_type")
 
+    @JacksonXmlProperty(localName = "operation_type")
+
     private String operationType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "amount")
+
+    @JacksonXmlProperty(localName = "amount")
 
     private String amount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "currency")
 
+    @JacksonXmlProperty(localName = "currency")
+
     private String currency;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "apply_scene")
+
+    @JacksonXmlProperty(localName = "apply_scene")
 
     private String applyScene;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operation_time")
 
+    @JacksonXmlProperty(localName = "operation_time")
+
     private String operationTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "measure_id")
 
+    @JacksonXmlProperty(localName = "measure_id")
+
     private Integer measureId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trans_id")
+
+    @JacksonXmlProperty(localName = "trans_id")
 
     private String transId;
 

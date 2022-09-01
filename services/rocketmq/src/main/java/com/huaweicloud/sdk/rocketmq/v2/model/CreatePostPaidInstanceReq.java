@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,10 +22,14 @@ public class CreatePostPaidInstanceReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
+
+    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
@@ -102,6 +107,8 @@ public class CreatePostPaidInstanceReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "engine")
 
+    @JacksonXmlProperty(localName = "engine")
+
     private EngineEnum engine;
 
     /**
@@ -178,30 +185,42 @@ public class CreatePostPaidInstanceReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "engine_version")
 
+    @JacksonXmlProperty(localName = "engine_version")
+
     private EngineVersionEnum engineVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "storage_space")
+
+    @JacksonXmlProperty(localName = "storage_space")
 
     private Integer storageSpace;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_id")
 
+    @JacksonXmlProperty(localName = "vpc_id")
+
     private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subnet_id")
+
+    @JacksonXmlProperty(localName = "subnet_id")
 
     private String subnetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_group_id")
 
+    @JacksonXmlProperty(localName = "security_group_id")
+
     private String securityGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "available_zones")
+
+    @JacksonXmlProperty(localName = "available_zones")
 
     private List<String> availableZones = null;
 
@@ -297,10 +316,14 @@ public class CreatePostPaidInstanceReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "product_id")
 
+    @JacksonXmlProperty(localName = "product_id")
+
     private ProductIdEnum productId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ssl_enable")
+
+    @JacksonXmlProperty(localName = "ssl_enable")
 
     private Boolean sslEnable;
 
@@ -386,25 +409,35 @@ public class CreatePostPaidInstanceReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "storage_spec_code")
 
+    @JacksonXmlProperty(localName = "storage_spec_code")
+
     private StorageSpecCodeEnum storageSpecCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ipv6_enable")
+
+    @JacksonXmlProperty(localName = "ipv6_enable")
 
     private Boolean ipv6Enable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_publicip")
 
+    @JacksonXmlProperty(localName = "enable_publicip")
+
     private Boolean enablePublicip;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publicip_id")
 
+    @JacksonXmlProperty(localName = "publicip_id")
+
     private String publicipId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "broker_num")
+
+    @JacksonXmlProperty(localName = "broker_num")
 
     private Integer brokerNum;
 

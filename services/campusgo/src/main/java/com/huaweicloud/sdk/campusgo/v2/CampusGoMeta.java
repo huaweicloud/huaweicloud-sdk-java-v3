@@ -39,7 +39,6 @@ public class CampusGoMeta {
             }));
 
         // response
-
         builder.<List<CreateResponseBody>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cloudpipeline.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,50 +17,70 @@ public class PipelineExecuteStates {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "result")
 
+    @JacksonXmlProperty(localName = "result")
+
     private String result;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
+
+    @JacksonXmlProperty(localName = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stages")
 
+    @JacksonXmlProperty(localName = "stages")
+
     private List<Stages> stages = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "executor")
+
+    @JacksonXmlProperty(localName = "executor")
 
     private String executor;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pipeline_name")
 
+    @JacksonXmlProperty(localName = "pipeline_name")
+
     private String pipelineName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pipeline_id")
+
+    @JacksonXmlProperty(localName = "pipeline_id")
 
     private String pipelineId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "detail_url")
 
+    @JacksonXmlProperty(localName = "detail_url")
+
     private String detailUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "modify_url")
+
+    @JacksonXmlProperty(localName = "modify_url")
 
     private String modifyUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
+    @JacksonXmlProperty(localName = "start_time")
+
     private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time")
+
+    @JacksonXmlProperty(localName = "end_time")
 
     private String endTime;
 

@@ -14,6 +14,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -27,6 +29,7 @@ public class EventQueryParam2Sort  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="order_by")
     
+    @JacksonXmlProperty(localName = "order_by")
     
     private List<String> orderBy = null;
         /**
@@ -112,6 +115,7 @@ public class EventQueryParam2Sort  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="order")
     
+    @JacksonXmlProperty(localName = "order")
     
     private OrderEnum order;
 

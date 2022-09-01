@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
@@ -21,6 +22,8 @@ public class AuthorizerResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
@@ -104,6 +107,8 @@ public class AuthorizerResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
+    @JacksonXmlProperty(localName = "type")
+
     private TypeEnum type;
 
     /**
@@ -180,55 +185,77 @@ public class AuthorizerResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "authorizer_type")
 
+    @JacksonXmlProperty(localName = "authorizer_type")
+
     private AuthorizerTypeEnum authorizerType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "authorizer_uri")
+
+    @JacksonXmlProperty(localName = "authorizer_uri")
 
     private String authorizerUri;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "identities")
 
+    @JacksonXmlProperty(localName = "identities")
+
     private List<Identity> identities = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ttl")
+
+    @JacksonXmlProperty(localName = "ttl")
 
     private Integer ttl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_data")
 
+    @JacksonXmlProperty(localName = "user_data")
+
     private String userData;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ld_api_id")
+
+    @JacksonXmlProperty(localName = "ld_api_id")
 
     private String ldApiId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "need_body")
 
+    @JacksonXmlProperty(localName = "need_body")
+
     private Boolean needBody;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
+
+    @JacksonXmlProperty(localName = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
+    @JacksonXmlProperty(localName = "create_time")
+
     private OffsetDateTime createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "roma_app_id")
 
+    @JacksonXmlProperty(localName = "roma_app_id")
+
     private String romaAppId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "roma_app_name")
+
+    @JacksonXmlProperty(localName = "roma_app_name")
 
     private String romaAppName;
 

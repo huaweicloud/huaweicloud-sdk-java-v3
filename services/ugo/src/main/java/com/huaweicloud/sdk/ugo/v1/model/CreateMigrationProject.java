@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ugo.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,20 +15,28 @@ public class CreateMigrationProject {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "migration_project_name")
 
+    @JacksonXmlProperty(localName = "migration_project_name")
+
     private String migrationProjectName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "evaluation_project_id")
+
+    @JacksonXmlProperty(localName = "evaluation_project_id")
 
     private Integer evaluationProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_db_info")
 
+    @JacksonXmlProperty(localName = "target_db_info")
+
     private TargetDBInfo targetDbInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "open_gauss_config")
+
+    @JacksonXmlProperty(localName = "open_gauss_config")
 
     private OpenGaussConfig openGaussConfig;
 

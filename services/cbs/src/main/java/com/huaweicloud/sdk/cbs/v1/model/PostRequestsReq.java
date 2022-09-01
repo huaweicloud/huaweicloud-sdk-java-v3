@@ -11,6 +11,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.cbs.v1.model.ModelExtends;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -24,6 +26,7 @@ public class PostRequestsReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="extends")
     
+    @JacksonXmlProperty(localName = "extends")
     
     private ModelExtends _extends;
 
@@ -31,6 +34,7 @@ public class PostRequestsReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="chat_enable")
     
+    @JacksonXmlProperty(localName = "chat_enable")
     
     private Boolean chatEnable;
 
@@ -38,6 +42,7 @@ public class PostRequestsReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="user_id")
     
+    @JacksonXmlProperty(localName = "user_id")
     
     private String userId;
 
@@ -45,6 +50,7 @@ public class PostRequestsReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="question")
     
+    @JacksonXmlProperty(localName = "question")
     
     private String question;
 
@@ -52,6 +58,7 @@ public class PostRequestsReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="session_id")
     
+    @JacksonXmlProperty(localName = "session_id")
     
     private String sessionId;
 
@@ -59,6 +66,7 @@ public class PostRequestsReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="query_types")
     
+    @JacksonXmlProperty(localName = "query_types")
     
     private List<Integer> queryTypes = null;
     

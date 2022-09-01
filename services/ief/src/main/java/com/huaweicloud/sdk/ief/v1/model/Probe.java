@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ief.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,20 +15,28 @@ public class Probe {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "exec")
 
+    @JacksonXmlProperty(localName = "exec")
+
     private Exec exec;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "http_get")
+
+    @JacksonXmlProperty(localName = "http_get")
 
     private HttpGetDetail httpGet;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "initial_delay_seconds")
 
+    @JacksonXmlProperty(localName = "initial_delay_seconds")
+
     private Integer initialDelaySeconds;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timeout_seconds")
+
+    @JacksonXmlProperty(localName = "timeout_seconds")
 
     private Integer timeoutSeconds;
 

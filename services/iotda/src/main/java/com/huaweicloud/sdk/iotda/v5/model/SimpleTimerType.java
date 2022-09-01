@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.iotda.v5.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class SimpleTimerType {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
+    @JacksonXmlProperty(localName = "start_time")
+
     private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "repeat_interval")
 
+    @JacksonXmlProperty(localName = "repeat_interval")
+
     private Integer repeatInterval;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "repeat_count")
+
+    @JacksonXmlProperty(localName = "repeat_count")
 
     private Integer repeatCount;
 

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,30 +19,42 @@ public class PostAndPutFloatingIpResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fixed_ip_address")
 
+    @JacksonXmlProperty(localName = "fixed_ip_address")
+
     private String fixedIpAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "floating_ip_address")
+
+    @JacksonXmlProperty(localName = "floating_ip_address")
 
     private String floatingIpAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "floating_network_id")
 
+    @JacksonXmlProperty(localName = "floating_network_id")
+
     private String floatingNetworkId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
+
+    @JacksonXmlProperty(localName = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "port_id")
 
+    @JacksonXmlProperty(localName = "port_id")
+
     private String portId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "router_id")
+
+    @JacksonXmlProperty(localName = "router_id")
 
     private String routerId;
 
@@ -131,20 +144,28 @@ public class PostAndPutFloatingIpResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tenant_id")
+
+    @JacksonXmlProperty(localName = "tenant_id")
 
     private String tenantId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dns_name")
 
+    @JacksonXmlProperty(localName = "dns_name")
+
     private String dnsName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dns_domain")
+
+    @JacksonXmlProperty(localName = "dns_domain")
 
     private String dnsDomain;
 

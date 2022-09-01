@@ -11,6 +11,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.gaussdb.v3.model.MysqlInstanceNodeVolumeInfo;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -24,6 +26,7 @@ public class MysqlInstanceNodeInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
+    @JacksonXmlProperty(localName = "id")
     
     private String id;
 
@@ -31,6 +34,7 @@ public class MysqlInstanceNodeInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
+    @JacksonXmlProperty(localName = "name")
     
     private String name;
 
@@ -38,6 +42,7 @@ public class MysqlInstanceNodeInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
+    @JacksonXmlProperty(localName = "type")
     
     private String type;
 
@@ -45,6 +50,7 @@ public class MysqlInstanceNodeInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
+    @JacksonXmlProperty(localName = "status")
     
     private String status;
 
@@ -52,6 +58,7 @@ public class MysqlInstanceNodeInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="port")
     
+    @JacksonXmlProperty(localName = "port")
     
     private Integer port;
 
@@ -59,6 +66,7 @@ public class MysqlInstanceNodeInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="private_read_ips")
     
+    @JacksonXmlProperty(localName = "private_read_ips")
     
     private List<String> privateReadIps = null;
     
@@ -66,6 +74,7 @@ public class MysqlInstanceNodeInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="volume")
     
+    @JacksonXmlProperty(localName = "volume")
     
     private MysqlInstanceNodeVolumeInfo volume;
 
@@ -73,6 +82,7 @@ public class MysqlInstanceNodeInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="az_code")
     
+    @JacksonXmlProperty(localName = "az_code")
     
     private String azCode;
 
@@ -80,6 +90,7 @@ public class MysqlInstanceNodeInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="region_code")
     
+    @JacksonXmlProperty(localName = "region_code")
     
     private String regionCode;
 
@@ -87,6 +98,7 @@ public class MysqlInstanceNodeInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created")
     
+    @JacksonXmlProperty(localName = "created")
     
     private String created;
 
@@ -94,6 +106,7 @@ public class MysqlInstanceNodeInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="updated")
     
+    @JacksonXmlProperty(localName = "updated")
     
     private String updated;
 
@@ -101,6 +114,7 @@ public class MysqlInstanceNodeInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="flavor_id")
     
+    @JacksonXmlProperty(localName = "flavor_id")
     
     private String flavorId;
 
@@ -108,6 +122,7 @@ public class MysqlInstanceNodeInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="flavor_ref")
     
+    @JacksonXmlProperty(localName = "flavor_ref")
     
     private String flavorRef;
 
@@ -115,6 +130,7 @@ public class MysqlInstanceNodeInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="max_connections")
     
+    @JacksonXmlProperty(localName = "max_connections")
     
     private String maxConnections;
 
@@ -122,6 +138,7 @@ public class MysqlInstanceNodeInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vcpus")
     
+    @JacksonXmlProperty(localName = "vcpus")
     
     private String vcpus;
 
@@ -129,6 +146,7 @@ public class MysqlInstanceNodeInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ram")
     
+    @JacksonXmlProperty(localName = "ram")
     
     private String ram;
 
@@ -136,6 +154,7 @@ public class MysqlInstanceNodeInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="need_restart")
     
+    @JacksonXmlProperty(localName = "need_restart")
     
     private Boolean needRestart;
 
@@ -143,6 +162,7 @@ public class MysqlInstanceNodeInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="priority")
     
+    @JacksonXmlProperty(localName = "priority")
     
     private Integer priority;
 

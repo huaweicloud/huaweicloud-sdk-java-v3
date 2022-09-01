@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ocr.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,25 +14,35 @@ public class ExitEntryPermitEndorsementInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "endorsement_type")
 
+    @JacksonXmlProperty(localName = "endorsement_type")
+
     private String endorsementType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "valid_round_trips")
+
+    @JacksonXmlProperty(localName = "valid_round_trips")
 
     private String validRoundTrips;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "endorsement_valid_period")
 
+    @JacksonXmlProperty(localName = "endorsement_valid_period")
+
     private String endorsementValidPeriod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remark")
 
+    @JacksonXmlProperty(localName = "remark")
+
     private String remark;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "issue_info")
+
+    @JacksonXmlProperty(localName = "issue_info")
 
     private String issueInfo;
 

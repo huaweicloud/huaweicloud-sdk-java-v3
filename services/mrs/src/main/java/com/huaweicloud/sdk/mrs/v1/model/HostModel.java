@@ -11,6 +11,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.mrs.v1.model.TagPlain;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -24,6 +26,7 @@ public class HostModel  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
+    @JacksonXmlProperty(localName = "id")
     
     private String id;
 
@@ -31,6 +34,7 @@ public class HostModel  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
+    @JacksonXmlProperty(localName = "name")
     
     private String name;
 
@@ -38,6 +42,7 @@ public class HostModel  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ip")
     
+    @JacksonXmlProperty(localName = "ip")
     
     private String ip;
 
@@ -45,6 +50,7 @@ public class HostModel  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="availability_zone_id")
     
+    @JacksonXmlProperty(localName = "availability_zone_id")
     
     private String availabilityZoneId;
 
@@ -52,6 +58,7 @@ public class HostModel  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
+    @JacksonXmlProperty(localName = "tags")
     
     private List<TagPlain> tags = null;
     
@@ -59,6 +66,7 @@ public class HostModel  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
+    @JacksonXmlProperty(localName = "status")
     
     private String status;
 
@@ -66,6 +74,7 @@ public class HostModel  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="flavor")
     
+    @JacksonXmlProperty(localName = "flavor")
     
     private String flavor;
 
@@ -73,6 +82,7 @@ public class HostModel  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
+    @JacksonXmlProperty(localName = "type")
     
     private String type;
 
@@ -80,6 +90,7 @@ public class HostModel  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="mem")
     
+    @JacksonXmlProperty(localName = "mem")
     
     private String mem;
 
@@ -87,6 +98,7 @@ public class HostModel  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cpu")
     
+    @JacksonXmlProperty(localName = "cpu")
     
     private String cpu;
 
@@ -94,6 +106,7 @@ public class HostModel  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="root_volume_size")
     
+    @JacksonXmlProperty(localName = "root_volume_size")
     
     private String rootVolumeSize;
 
@@ -101,6 +114,7 @@ public class HostModel  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="data_volume_type")
     
+    @JacksonXmlProperty(localName = "data_volume_type")
     
     private String dataVolumeType;
 
@@ -108,6 +122,7 @@ public class HostModel  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="data_volume_size")
     
+    @JacksonXmlProperty(localName = "data_volume_size")
     
     private Integer dataVolumeSize;
 
@@ -115,6 +130,7 @@ public class HostModel  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="data_volume_count")
     
+    @JacksonXmlProperty(localName = "data_volume_count")
     
     private Integer dataVolumeCount;
 

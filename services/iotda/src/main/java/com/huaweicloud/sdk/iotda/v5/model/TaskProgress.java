@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.iotda.v5.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,35 +14,49 @@ public class TaskProgress {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total")
 
+    @JacksonXmlProperty(localName = "total")
+
     private Integer total;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "processing")
+
+    @JacksonXmlProperty(localName = "processing")
 
     private Integer processing;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "success")
 
+    @JacksonXmlProperty(localName = "success")
+
     private Integer success;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fail")
+
+    @JacksonXmlProperty(localName = "fail")
 
     private Integer fail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "waitting")
 
+    @JacksonXmlProperty(localName = "waitting")
+
     private Integer waitting;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fail_wait_retry")
 
+    @JacksonXmlProperty(localName = "fail_wait_retry")
+
     private Integer failWaitRetry;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stopped")
+
+    @JacksonXmlProperty(localName = "stopped")
 
     private Integer stopped;
 

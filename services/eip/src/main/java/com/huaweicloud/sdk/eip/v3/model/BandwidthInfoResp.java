@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,10 +19,14 @@ public class BandwidthInfoResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bandwidth_name")
 
+    @JacksonXmlProperty(localName = "bandwidth_name")
+
     private String bandwidthName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bandwidth_number")
+
+    @JacksonXmlProperty(localName = "bandwidth_number")
 
     private Integer bandwidthNumber;
 
@@ -105,10 +110,14 @@ public class BandwidthInfoResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bandwidth_type")
 
+    @JacksonXmlProperty(localName = "bandwidth_type")
+
     private BandwidthTypeEnum bandwidthType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bandwidth_id")
+
+    @JacksonXmlProperty(localName = "bandwidth_id")
 
     private String bandwidthId;
 

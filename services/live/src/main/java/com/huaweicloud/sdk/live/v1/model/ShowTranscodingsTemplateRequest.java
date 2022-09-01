@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.live.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,20 +14,28 @@ public class ShowTranscodingsTemplateRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain")
 
+    @JacksonXmlProperty(localName = "domain")
+
     private String domain;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_name")
+
+    @JacksonXmlProperty(localName = "app_name")
 
     private String appName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page")
 
+    @JacksonXmlProperty(localName = "page")
+
     private Integer page;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
+
+    @JacksonXmlProperty(localName = "size")
 
     private Integer size;
 

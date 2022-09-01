@@ -11,6 +11,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.aom.v2.model.Dimension;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -24,6 +26,7 @@ public class QueryAlarmResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="action_enabled")
     
+    @JacksonXmlProperty(localName = "action_enabled")
     
     private Boolean actionEnabled;
 
@@ -31,6 +34,7 @@ public class QueryAlarmResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="alarm_actions")
     
+    @JacksonXmlProperty(localName = "alarm_actions")
     
     private List<String> alarmActions = null;
     
@@ -38,6 +42,7 @@ public class QueryAlarmResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="alarm_advice")
     
+    @JacksonXmlProperty(localName = "alarm_advice")
     
     private String alarmAdvice;
 
@@ -45,6 +50,7 @@ public class QueryAlarmResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="alarm_description")
     
+    @JacksonXmlProperty(localName = "alarm_description")
     
     private String alarmDescription;
 
@@ -52,6 +58,7 @@ public class QueryAlarmResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="alarm_level")
     
+    @JacksonXmlProperty(localName = "alarm_level")
     
     private String alarmLevel;
 
@@ -59,6 +66,7 @@ public class QueryAlarmResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="alarm_rule_id")
     
+    @JacksonXmlProperty(localName = "alarm_rule_id")
     
     private String alarmRuleId;
 
@@ -66,6 +74,7 @@ public class QueryAlarmResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="alarm_rule_name")
     
+    @JacksonXmlProperty(localName = "alarm_rule_name")
     
     private String alarmRuleName;
 
@@ -73,6 +82,7 @@ public class QueryAlarmResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="comparison_operator")
     
+    @JacksonXmlProperty(localName = "comparison_operator")
     
     private String comparisonOperator;
 
@@ -80,6 +90,7 @@ public class QueryAlarmResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dimensions")
     
+    @JacksonXmlProperty(localName = "dimensions")
     
     private List<Dimension> dimensions = null;
     
@@ -87,6 +98,7 @@ public class QueryAlarmResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="evaluation_periods")
     
+    @JacksonXmlProperty(localName = "evaluation_periods")
     
     private Integer evaluationPeriods;
 
@@ -94,6 +106,7 @@ public class QueryAlarmResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id_turn_on")
     
+    @JacksonXmlProperty(localName = "id_turn_on")
     
     private Boolean idTurnOn;
 
@@ -101,6 +114,7 @@ public class QueryAlarmResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="insufficient_data_actions")
     
+    @JacksonXmlProperty(localName = "insufficient_data_actions")
     
     private List<String> insufficientDataActions = null;
     
@@ -108,6 +122,7 @@ public class QueryAlarmResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metric_name")
     
+    @JacksonXmlProperty(localName = "metric_name")
     
     private String metricName;
 
@@ -115,6 +130,7 @@ public class QueryAlarmResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="namespace")
     
+    @JacksonXmlProperty(localName = "namespace")
     
     private String namespace;
 
@@ -122,6 +138,7 @@ public class QueryAlarmResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ok_actions")
     
+    @JacksonXmlProperty(localName = "ok_actions")
     
     private List<String> okActions = null;
     
@@ -129,6 +146,7 @@ public class QueryAlarmResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="period")
     
+    @JacksonXmlProperty(localName = "period")
     
     private Integer period;
 
@@ -136,6 +154,7 @@ public class QueryAlarmResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="policy_name")
     
+    @JacksonXmlProperty(localName = "policy_name")
     
     private String policyName;
 
@@ -143,6 +162,7 @@ public class QueryAlarmResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resources")
     
+    @JacksonXmlProperty(localName = "resources")
     
     private List<String> resources = null;
     
@@ -150,6 +170,7 @@ public class QueryAlarmResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="state_reason")
     
+    @JacksonXmlProperty(localName = "state_reason")
     
     private String stateReason;
 
@@ -157,6 +178,7 @@ public class QueryAlarmResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="state_updated_timestamp")
     
+    @JacksonXmlProperty(localName = "state_updated_timestamp")
     
     private String stateUpdatedTimestamp;
 
@@ -164,6 +186,7 @@ public class QueryAlarmResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="state_value")
     
+    @JacksonXmlProperty(localName = "state_value")
     
     private String stateValue;
 
@@ -171,6 +194,7 @@ public class QueryAlarmResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="statistic")
     
+    @JacksonXmlProperty(localName = "statistic")
     
     private String statistic;
 
@@ -178,6 +202,7 @@ public class QueryAlarmResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="threshold")
     
+    @JacksonXmlProperty(localName = "threshold")
     
     private String threshold;
 
@@ -185,6 +210,7 @@ public class QueryAlarmResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
+    @JacksonXmlProperty(localName = "type")
     
     private String type;
 
@@ -192,6 +218,7 @@ public class QueryAlarmResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="unit")
     
+    @JacksonXmlProperty(localName = "unit")
     
     private String unit;
 

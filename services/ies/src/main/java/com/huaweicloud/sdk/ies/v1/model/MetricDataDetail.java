@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ies.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.time.OffsetDateTime;
 import java.util.Objects;
@@ -15,20 +16,28 @@ public class MetricDataDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "value")
+
+    @JacksonXmlProperty(localName = "value")
 
     private Long value;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "read_at")
 
+    @JacksonXmlProperty(localName = "read_at")
+
     private OffsetDateTime readAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dimension")
+
+    @JacksonXmlProperty(localName = "dimension")
 
     private MetricDataDetailDimension dimension;
 

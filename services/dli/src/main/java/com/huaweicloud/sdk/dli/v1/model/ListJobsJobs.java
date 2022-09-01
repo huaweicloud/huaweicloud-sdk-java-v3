@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,30 +22,42 @@ public class ListJobsJobs {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_id")
 
+    @JacksonXmlProperty(localName = "job_id")
+
     private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_type")
+
+    @JacksonXmlProperty(localName = "job_type")
 
     private String jobType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "queue_name")
 
+    @JacksonXmlProperty(localName = "queue_name")
+
     private String queueName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "owner")
+
+    @JacksonXmlProperty(localName = "owner")
 
     private String owner;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
+    @JacksonXmlProperty(localName = "start_time")
+
     private Long startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "duration")
+
+    @JacksonXmlProperty(localName = "duration")
 
     private Integer duration;
 
@@ -146,55 +159,77 @@ public class ListJobsJobs {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "input_row_count")
+
+    @JacksonXmlProperty(localName = "input_row_count")
 
     private Long inputRowCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bad_row_count")
 
+    @JacksonXmlProperty(localName = "bad_row_count")
+
     private Long badRowCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "input_size")
+
+    @JacksonXmlProperty(localName = "input_size")
 
     private Long inputSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "result_count")
 
+    @JacksonXmlProperty(localName = "result_count")
+
     private Integer resultCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "database_name")
+
+    @JacksonXmlProperty(localName = "database_name")
 
     private String databaseName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "table_name")
 
+    @JacksonXmlProperty(localName = "table_name")
+
     private String tableName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "with_column_header")
+
+    @JacksonXmlProperty(localName = "with_column_header")
 
     private Boolean withColumnHeader;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "detail")
 
+    @JacksonXmlProperty(localName = "detail")
+
     private String detail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "statement")
 
+    @JacksonXmlProperty(localName = "statement")
+
     private String statement;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
+
+    @JacksonXmlProperty(localName = "tags")
 
     private List<JobsTags> tags = null;
 

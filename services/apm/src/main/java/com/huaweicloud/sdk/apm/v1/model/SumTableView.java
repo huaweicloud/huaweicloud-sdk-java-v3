@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -104,20 +105,28 @@ public class SumTableView {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "view_type")
 
+    @JacksonXmlProperty(localName = "view_type")
+
     private ViewTypeEnum viewType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "collector_name")
+
+    @JacksonXmlProperty(localName = "collector_name")
 
     private String collectorName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metric_set")
 
+    @JacksonXmlProperty(localName = "metric_set")
+
     private String metricSet;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "title")
+
+    @JacksonXmlProperty(localName = "title")
 
     private String title;
 
@@ -201,40 +210,56 @@ public class SumTableView {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "table_direction")
 
+    @JacksonXmlProperty(localName = "table_direction")
+
     private TableDirectionEnum tableDirection;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_by")
+
+    @JacksonXmlProperty(localName = "group_by")
 
     private String groupBy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "filter")
 
+    @JacksonXmlProperty(localName = "filter")
+
     private String filter;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "field_item_list")
+
+    @JacksonXmlProperty(localName = "field_item_list")
 
     private List<FieldItem> fieldItemList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "span")
 
+    @JacksonXmlProperty(localName = "span")
+
     private Boolean span;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "span_field")
+
+    @JacksonXmlProperty(localName = "span_field")
 
     private String spanField;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "order_by")
 
+    @JacksonXmlProperty(localName = "order_by")
+
     private String orderBy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "latest")
+
+    @JacksonXmlProperty(localName = "latest")
 
     private Boolean latest;
 

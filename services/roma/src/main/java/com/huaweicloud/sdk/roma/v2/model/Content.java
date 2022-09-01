@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -98,35 +99,49 @@ public class Content {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "gauss100_version")
 
+    @JacksonXmlProperty(localName = "gauss100_version")
+
     private Gauss100VersionEnum gauss100Version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host")
+
+    @JacksonXmlProperty(localName = "host")
 
     private String host;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "port")
 
+    @JacksonXmlProperty(localName = "port")
+
     private String port;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "database_name")
+
+    @JacksonXmlProperty(localName = "database_name")
 
     private String databaseName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "redis_database")
 
+    @JacksonXmlProperty(localName = "redis_database")
+
     private String redisDatabase;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_name")
 
+    @JacksonXmlProperty(localName = "user_name")
+
     private String userName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "password")
+
+    @JacksonXmlProperty(localName = "password")
 
     private String password;
 
@@ -216,6 +231,8 @@ public class Content {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mode")
 
+    @JacksonXmlProperty(localName = "mode")
+
     private ModeEnum mode;
 
     /**
@@ -298,15 +315,21 @@ public class Content {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cdc_mode")
 
+    @JacksonXmlProperty(localName = "cdc_mode")
+
     private CdcModeEnum cdcMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "multi_oracle_address")
 
+    @JacksonXmlProperty(localName = "multi_oracle_address")
+
     private List<MultiOracleAddress> multiOracleAddress = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "oracle_service_name")
+
+    @JacksonXmlProperty(localName = "oracle_service_name")
 
     private String oracleServiceName;
 
@@ -390,6 +413,8 @@ public class Content {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ftp_connect_mode")
 
+    @JacksonXmlProperty(localName = "ftp_connect_mode")
+
     private FtpConnectModeEnum ftpConnectMode;
 
     /**
@@ -472,35 +497,49 @@ public class Content {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ftp_protocol")
 
+    @JacksonXmlProperty(localName = "ftp_protocol")
+
     private FtpProtocolEnum ftpProtocol;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "address")
+
+    @JacksonXmlProperty(localName = "address")
 
     private String address;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ak")
 
+    @JacksonXmlProperty(localName = "ak")
+
     private String ak;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sk")
+
+    @JacksonXmlProperty(localName = "sk")
 
     private String sk;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bucket_name")
 
+    @JacksonXmlProperty(localName = "bucket_name")
+
     private String bucketName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "https")
 
+    @JacksonXmlProperty(localName = "https")
+
     private Boolean https;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "url")
+
+    @JacksonXmlProperty(localName = "url")
 
     private String url;
 
@@ -602,6 +641,8 @@ public class Content {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "api_method")
 
+    @JacksonXmlProperty(localName = "api_method")
+
     private ApiMethodEnum apiMethod;
 
     /**
@@ -684,45 +725,63 @@ public class Content {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auth_method")
 
+    @JacksonXmlProperty(localName = "auth_method")
+
     private AuthMethodEnum authMethod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "api_auth_detail")
+
+    @JacksonXmlProperty(localName = "api_auth_detail")
 
     private ApiAuthDetail apiAuthDetail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "broker")
 
+    @JacksonXmlProperty(localName = "broker")
+
     private String broker;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ssl_enable")
+
+    @JacksonXmlProperty(localName = "ssl_enable")
 
     private Boolean sslEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ssl_username")
 
+    @JacksonXmlProperty(localName = "ssl_username")
+
     private String sslUsername;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ssl_password")
+
+    @JacksonXmlProperty(localName = "ssl_password")
 
     private String sslPassword;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mongodb_auth_source")
 
+    @JacksonXmlProperty(localName = "mongodb_auth_source")
+
     private String mongodbAuthSource;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mongodb_cluster_enable")
 
+    @JacksonXmlProperty(localName = "mongodb_cluster_enable")
+
     private Boolean mongodbClusterEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mongodb_replica_set")
+
+    @JacksonXmlProperty(localName = "mongodb_replica_set")
 
     private String mongodbReplicaSet;
 
@@ -1034,20 +1093,28 @@ public class Content {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "encoding")
 
+    @JacksonXmlProperty(localName = "encoding")
+
     private EncodingEnum encoding;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mysql_timeout")
+
+    @JacksonXmlProperty(localName = "mysql_timeout")
 
     private Integer mysqlTimeout;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trust_store_password")
 
+    @JacksonXmlProperty(localName = "trust_store_password")
+
     private String trustStorePassword;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trust_store")
+
+    @JacksonXmlProperty(localName = "trust_store")
 
     private String trustStore;
 
@@ -1131,6 +1198,8 @@ public class Content {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trust_store_file_type")
 
+    @JacksonXmlProperty(localName = "trust_store_file_type")
+
     private TrustStoreFileTypeEnum trustStoreFileType;
 
     /**
@@ -1213,10 +1282,14 @@ public class Content {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ssl_auth_method")
 
+    @JacksonXmlProperty(localName = "ssl_auth_method")
+
     private SslAuthMethodEnum sslAuthMethod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key_store")
+
+    @JacksonXmlProperty(localName = "key_store")
 
     private String keyStore;
 
@@ -1300,20 +1373,28 @@ public class Content {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key_store_file_type")
 
+    @JacksonXmlProperty(localName = "key_store_file_type")
+
     private KeyStoreFileTypeEnum keyStoreFileType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key_store_password")
+
+    @JacksonXmlProperty(localName = "key_store_password")
 
     private String keyStorePassword;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key_store_key_password")
 
+    @JacksonXmlProperty(localName = "key_store_key_password")
+
     private String keyStoreKeyPassword;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dis_tunnel_name")
+
+    @JacksonXmlProperty(localName = "dis_tunnel_name")
 
     private String disTunnelName;
 
@@ -1390,6 +1471,8 @@ public class Content {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dis_data_type")
+
+    @JacksonXmlProperty(localName = "dis_data_type")
 
     private DisDataTypeEnum disDataType;
 
@@ -1473,20 +1556,28 @@ public class Content {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dis_setting_type")
 
+    @JacksonXmlProperty(localName = "dis_setting_type")
+
     private DisSettingTypeEnum disSettingType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dis_endpoint")
+
+    @JacksonXmlProperty(localName = "dis_endpoint")
 
     private String disEndpoint;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dis_region")
 
+    @JacksonXmlProperty(localName = "dis_region")
+
     private String disRegion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dis_source_project_id")
+
+    @JacksonXmlProperty(localName = "dis_source_project_id")
 
     private String disSourceProjectId;
 
@@ -1570,15 +1661,21 @@ public class Content {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hl7_position")
 
+    @JacksonXmlProperty(localName = "hl7_position")
+
     private Hl7PositionEnum hl7Position;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hl7_whitelist_enable")
 
+    @JacksonXmlProperty(localName = "hl7_whitelist_enable")
+
     private Boolean hl7WhitelistEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hl7_whitelist")
+
+    @JacksonXmlProperty(localName = "hl7_whitelist")
 
     private String hl7Whitelist;
 
@@ -1662,10 +1759,14 @@ public class Content {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ldap_security_auth_type")
 
+    @JacksonXmlProperty(localName = "ldap_security_auth_type")
+
     private LdapSecurityAuthTypeEnum ldapSecurityAuthType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rabbitmq_virtual_host")
+
+    @JacksonXmlProperty(localName = "rabbitmq_virtual_host")
 
     private String rabbitmqVirtualHost;
 
@@ -1743,15 +1844,21 @@ public class Content {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rabbitmq_ssl_protocol")
 
+    @JacksonXmlProperty(localName = "rabbitmq_ssl_protocol")
+
     private RabbitmqSslProtocolEnum rabbitmqSslProtocol;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sap_client")
 
+    @JacksonXmlProperty(localName = "sap_client")
+
     private String sapClient;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sap_sysnr")
+
+    @JacksonXmlProperty(localName = "sap_sysnr")
 
     private String sapSysnr;
 
@@ -1834,6 +1941,8 @@ public class Content {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "snmp_network_protocol")
+
+    @JacksonXmlProperty(localName = "snmp_network_protocol")
 
     private SnmpNetworkProtocolEnum snmpNetworkProtocol;
 
@@ -1923,60 +2032,84 @@ public class Content {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "snmp_version")
 
+    @JacksonXmlProperty(localName = "snmp_version")
+
     private SnmpVersionEnum snmpVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "snmp_community")
+
+    @JacksonXmlProperty(localName = "snmp_community")
 
     private String snmpCommunity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ibmmq_ccs_id")
 
+    @JacksonXmlProperty(localName = "ibmmq_ccs_id")
+
     private String ibmmqCcsId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ibmmq_queue_manager")
+
+    @JacksonXmlProperty(localName = "ibmmq_queue_manager")
 
     private String ibmmqQueueManager;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ibmmq_channel")
 
+    @JacksonXmlProperty(localName = "ibmmq_channel")
+
     private String ibmmqChannel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ibmmq_cipher_suite")
+
+    @JacksonXmlProperty(localName = "ibmmq_cipher_suite")
 
     private String ibmmqCipherSuite;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hdfs_path")
 
+    @JacksonXmlProperty(localName = "hdfs_path")
+
     private String hdfsPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "principal_name")
+
+    @JacksonXmlProperty(localName = "principal_name")
 
     private String principalName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "config_file_name")
 
+    @JacksonXmlProperty(localName = "config_file_name")
+
     private String configFileName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "config_file_content")
+
+    @JacksonXmlProperty(localName = "config_file_content")
 
     private String configFileContent;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "connection_instance_id")
 
+    @JacksonXmlProperty(localName = "connection_instance_id")
+
     private String connectionInstanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "connector_params")
+
+    @JacksonXmlProperty(localName = "connector_params")
 
     private Object connectorParams;
 

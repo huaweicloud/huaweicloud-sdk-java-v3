@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.moderation.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,20 +17,28 @@ public class ImageDetectionResultBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "detail")
 
+    @JacksonXmlProperty(localName = "detail")
+
     private ImageDetectionResultDetail detail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "suggestion")
+
+    @JacksonXmlProperty(localName = "suggestion")
 
     private String suggestion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "category_suggestions")
 
+    @JacksonXmlProperty(localName = "category_suggestions")
+
     private Map<String, String> categorySuggestions = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ocr_text")
+
+    @JacksonXmlProperty(localName = "ocr_text")
 
     private String ocrText;
 

@@ -183,7 +183,6 @@ public class DmsMeta {
             }));
 
         // response
-
         builder.<List<ConsumeDeadlettersMessage>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -258,7 +257,6 @@ public class DmsMeta {
             }));
 
         // response
-
         builder.<List<ConsumeMessage>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,

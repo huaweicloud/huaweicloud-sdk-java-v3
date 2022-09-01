@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,6 +19,8 @@ public class RestoreExistingInstanceRequestBodySource {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_id")
+
+    @JacksonXmlProperty(localName = "instance_id")
 
     private String instanceId;
 
@@ -101,25 +104,35 @@ public class RestoreExistingInstanceRequestBodySource {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
+    @JacksonXmlProperty(localName = "type")
+
     private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "backup_id")
+
+    @JacksonXmlProperty(localName = "backup_id")
 
     private String backupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "restore_time")
 
+    @JacksonXmlProperty(localName = "restore_time")
+
     private Integer restoreTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "database_name")
 
+    @JacksonXmlProperty(localName = "database_name")
+
     private Map<String, String> databaseName = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "restore_all_database")
+
+    @JacksonXmlProperty(localName = "restore_all_database")
 
     private Boolean restoreAllDatabase;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.iam.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,40 +14,56 @@ public class KeystoneListPermissionsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_id")
+
+    @JacksonXmlProperty(localName = "domain_id")
 
     private String domainId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page")
 
+    @JacksonXmlProperty(localName = "page")
+
     private Integer page;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "per_page")
+
+    @JacksonXmlProperty(localName = "per_page")
 
     private Integer perPage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "permission_type")
 
+    @JacksonXmlProperty(localName = "permission_type")
+
     private String permissionType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "display_name")
+
+    @JacksonXmlProperty(localName = "display_name")
 
     private String displayName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
+    @JacksonXmlProperty(localName = "type")
+
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "catalog")
+
+    @JacksonXmlProperty(localName = "catalog")
 
     private String catalog;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ief.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class DeleteEdgeNodeCertsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "node_id")
 
+    @JacksonXmlProperty(localName = "node_id")
+
     private String nodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cert_id")
 
+    @JacksonXmlProperty(localName = "cert_id")
+
     private String certId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ief-instance-id")
+
+    @JacksonXmlProperty(localName = "ief-instance-id")
 
     private String iefInstanceId;
 

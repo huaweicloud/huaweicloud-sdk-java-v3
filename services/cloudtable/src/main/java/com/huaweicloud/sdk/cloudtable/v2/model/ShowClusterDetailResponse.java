@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cloudtable.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -17,135 +18,189 @@ public class ShowClusterDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "actions")
 
+    @JacksonXmlProperty(localName = "actions")
+
     private List<String> actions = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "datastore")
+
+    @JacksonXmlProperty(localName = "datastore")
 
     private Datastore datastore;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_openTSDB")
 
+    @JacksonXmlProperty(localName = "enable_openTSDB")
+
     private Boolean enableOpenTSDB;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_lemon")
+
+    @JacksonXmlProperty(localName = "enable_lemon")
 
     private Boolean enableLemon;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cluster_name")
 
+    @JacksonXmlProperty(localName = "cluster_name")
+
     private String clusterName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cu_num")
+
+    @JacksonXmlProperty(localName = "cu_num")
 
     private String cuNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tsd_num")
 
+    @JacksonXmlProperty(localName = "tsd_num")
+
     private String tsdNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lemon_num")
+
+    @JacksonXmlProperty(localName = "lemon_num")
 
     private String lemonNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "storage_type")
 
+    @JacksonXmlProperty(localName = "storage_type")
+
     private String storageType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "storage_quota")
+
+    @JacksonXmlProperty(localName = "storage_quota")
 
     private String storageQuota;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "used_storage_size")
 
+    @JacksonXmlProperty(localName = "used_storage_size")
+
     private String usedStorageSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auth_mode")
+
+    @JacksonXmlProperty(localName = "auth_mode")
 
     private Boolean authMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_dfv")
 
+    @JacksonXmlProperty(localName = "enable_dfv")
+
     private Boolean enableDfv;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated")
+
+    @JacksonXmlProperty(localName = "updated")
 
     private String updated;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created")
 
+    @JacksonXmlProperty(localName = "created")
+
     private String created;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cluster_id")
+
+    @JacksonXmlProperty(localName = "cluster_id")
 
     private String clusterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "openTSDB_link")
+
+    @JacksonXmlProperty(localName = "openTSDB_link")
 
     private String openTSDBLink;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tsd_public_endpoint")
 
+    @JacksonXmlProperty(localName = "tsd_public_endpoint")
+
     private String tsdPublicEndpoint;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lemon_link")
+
+    @JacksonXmlProperty(localName = "lemon_link")
 
     private String lemonLink;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "zookeeper_link")
 
+    @JacksonXmlProperty(localName = "zookeeper_link")
+
     private String zookeeperLink;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hbase_public_endpoint")
+
+    @JacksonXmlProperty(localName = "hbase_public_endpoint")
 
     private String hbasePublicEndpoint;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_frozen")
 
+    @JacksonXmlProperty(localName = "is_frozen")
+
     private String isFrozen;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_id")
+
+    @JacksonXmlProperty(localName = "vpc_id")
 
     private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sub_net_id")
 
+    @JacksonXmlProperty(localName = "sub_net_id")
+
     private String subNetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_group_id")
 
+    @JacksonXmlProperty(localName = "security_group_id")
+
     private String securityGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "availability_zone")
+
+    @JacksonXmlProperty(localName = "availability_zone")
 
     private String availabilityZone;
 

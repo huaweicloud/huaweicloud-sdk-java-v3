@@ -1,35 +1,38 @@
-package com.huaweicloud.sdk.css.v1.model;
+package com.huaweicloud.sdk.iam.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
 /**
- * ActionReq
+ * 联邦用户在本系统中的用户名称
  */
-public class ActionReq {
+public class RulesLocalUser {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "action")
+    @JsonProperty(value = "name")
 
-    private String action;
+    @JacksonXmlProperty(localName = "name")
 
-    public ActionReq withAction(String action) {
-        this.action = action;
+    private String name;
+
+    public RulesLocalUser withName(String name) {
+        this.name = name;
         return this;
     }
 
     /**
-     * 集群当前行为。REBOOTING表示重启、GROWING表示扩容、RESTORING表示恢复集群、SNAPSHOTTING表示创建快照。当集群没有任何操作时该值为空。
-     * @return action
+     * 联邦用户在本系统中的用户名称
+     * @return name
      */
-    public String getAction() {
-        return action;
+    public String getName() {
+        return name;
     }
 
-    public void setAction(String action) {
-        this.action = action;
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
@@ -40,20 +43,20 @@ public class ActionReq {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        ActionReq actionReq = (ActionReq) o;
-        return Objects.equals(this.action, actionReq.action);
+        RulesLocalUser rulesLocalUser = (RulesLocalUser) o;
+        return Objects.equals(this.name, rulesLocalUser.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(action);
+        return Objects.hash(name);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class ActionReq {\n");
-        sb.append("    action: ").append(toIndentedString(action)).append("\n");
+        sb.append("class RulesLocalUser {\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("}");
         return sb.toString();
     }

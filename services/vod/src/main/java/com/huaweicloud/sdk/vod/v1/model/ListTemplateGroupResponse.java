@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.vod.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -17,20 +18,28 @@ public class ListTemplateGroupResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template_group_list")
 
+    @JacksonXmlProperty(localName = "template_group_list")
+
     private List<TemplateGroup> templateGroupList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total")
+
+    @JacksonXmlProperty(localName = "total")
 
     private Integer total;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_code")
 
+    @JacksonXmlProperty(localName = "error_code")
+
     private String errorCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_msg")
+
+    @JacksonXmlProperty(localName = "error_msg")
 
     private String errorMsg;
 

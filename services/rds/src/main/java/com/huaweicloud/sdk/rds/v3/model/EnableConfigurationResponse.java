@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.rds.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -17,20 +18,28 @@ public class EnableConfigurationResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "configuration_id")
 
+    @JacksonXmlProperty(localName = "configuration_id")
+
     private String configurationId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "configuration_name")
+
+    @JacksonXmlProperty(localName = "configuration_name")
 
     private String configurationName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "success")
 
+    @JacksonXmlProperty(localName = "success")
+
     private Boolean success;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "apply_results")
+
+    @JacksonXmlProperty(localName = "apply_results")
 
     private List<ApplyConfigurationResponseApplyResults> applyResults = null;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cpts.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,120 +14,168 @@ public class ReportoutlineInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "avgResponseTime")
 
+    @JacksonXmlProperty(localName = "avgResponseTime")
+
     private Double avgResponseTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "branchId")
+
+    @JacksonXmlProperty(localName = "branchId")
 
     private String branchId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "branchName")
 
+    @JacksonXmlProperty(localName = "branchName")
+
     private String branchName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "caseRetry")
+
+    @JacksonXmlProperty(localName = "caseRetry")
 
     private Double caseRetry;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "completeNum")
 
+    @JacksonXmlProperty(localName = "completeNum")
+
     private Double completeNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "duration")
+
+    @JacksonXmlProperty(localName = "duration")
 
     private Double duration;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "endTime")
 
+    @JacksonXmlProperty(localName = "endTime")
+
     private String endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "executedNum")
+
+    @JacksonXmlProperty(localName = "executedNum")
 
     private Double executedNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "iterationUri")
 
+    @JacksonXmlProperty(localName = "iterationUri")
+
     private String iterationUri;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "kpiCaseCount")
+
+    @JacksonXmlProperty(localName = "kpiCaseCount")
 
     private Double kpiCaseCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "kpiCaseExecuteCount")
 
+    @JacksonXmlProperty(localName = "kpiCaseExecuteCount")
+
     private Double kpiCaseExecuteCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "kpiCasePassCount")
+
+    @JacksonXmlProperty(localName = "kpiCasePassCount")
 
     private Double kpiCasePassCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maxUsers")
 
+    @JacksonXmlProperty(localName = "maxUsers")
+
     private Double maxUsers;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "passNum")
+
+    @JacksonXmlProperty(localName = "passNum")
 
     private Double passNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stage")
 
+    @JacksonXmlProperty(localName = "stage")
+
     private Double stage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stageName")
+
+    @JacksonXmlProperty(localName = "stageName")
 
     private String stageName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "startTime")
 
+    @JacksonXmlProperty(localName = "startTime")
+
     private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "successRate")
+
+    @JacksonXmlProperty(localName = "successRate")
 
     private Double successRate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "taskStatus")
 
+    @JacksonXmlProperty(localName = "taskStatus")
+
     private Double taskStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "totalNum")
+
+    @JacksonXmlProperty(localName = "totalNum")
 
     private Double totalNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tps")
 
+    @JacksonXmlProperty(localName = "tps")
+
     private Double tps;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "versionUri")
+
+    @JacksonXmlProperty(localName = "versionUri")
 
     private String versionUri;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "projectId")
 
+    @JacksonXmlProperty(localName = "projectId")
+
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "serviceId")
+
+    @JacksonXmlProperty(localName = "serviceId")
 
     private String serviceId;
 

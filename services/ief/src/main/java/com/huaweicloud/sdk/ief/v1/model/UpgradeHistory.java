@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ief.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,30 +14,42 @@ public class UpgradeHistory {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private Integer id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "from_version")
+
+    @JacksonXmlProperty(localName = "from_version")
 
     private String fromVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "to_version")
 
+    @JacksonXmlProperty(localName = "to_version")
+
     private String toVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "upgrade_time")
+
+    @JacksonXmlProperty(localName = "upgrade_time")
 
     private Integer upgradeTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "result")
 
+    @JacksonXmlProperty(localName = "result")
+
     private String result;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dur_time")
+
+    @JacksonXmlProperty(localName = "dur_time")
 
     private Integer durTime;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.servicestage.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,20 +14,28 @@ public class ReferResourceCreate {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
+
+    @JacksonXmlProperty(localName = "type")
 
     private ResourceType type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "refer_alias")
 
+    @JacksonXmlProperty(localName = "refer_alias")
+
     private String referAlias;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parameters")
+
+    @JacksonXmlProperty(localName = "parameters")
 
     private Object parameters;
 

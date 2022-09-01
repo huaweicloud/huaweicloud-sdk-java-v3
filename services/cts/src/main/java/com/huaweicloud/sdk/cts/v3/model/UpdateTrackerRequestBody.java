@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -96,10 +97,14 @@ public class UpdateTrackerRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tracker_type")
 
+    @JacksonXmlProperty(localName = "tracker_type")
+
     private TrackerTypeEnum trackerType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tracker_name")
+
+    @JacksonXmlProperty(localName = "tracker_name")
 
     private String trackerName;
 
@@ -183,35 +188,49 @@ public class UpdateTrackerRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_lts_enabled")
+
+    @JacksonXmlProperty(localName = "is_lts_enabled")
 
     private Boolean isLtsEnabled;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "obs_info")
 
+    @JacksonXmlProperty(localName = "obs_info")
+
     private TrackerObsInfo obsInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_support_trace_files_encryption")
+
+    @JacksonXmlProperty(localName = "is_support_trace_files_encryption")
 
     private Boolean isSupportTraceFilesEncryption;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "kms_id")
 
+    @JacksonXmlProperty(localName = "kms_id")
+
     private String kmsId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_support_validate")
 
+    @JacksonXmlProperty(localName = "is_support_validate")
+
     private Boolean isSupportValidate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_bucket")
+
+    @JacksonXmlProperty(localName = "data_bucket")
 
     private DataBucket dataBucket;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.bssintl.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,47 +17,72 @@ public class QueryCustomerOnDemandResourcesReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "customer_id")
 
+    @JacksonXmlProperty(localName = "customer_id")
+
     private String customerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region_code")
+
+    @JacksonXmlProperty(localName = "region_code")
 
     private String regionCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_type_code")
 
+    @JacksonXmlProperty(localName = "service_type_code")
+
     private String serviceTypeCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_ids")
+
+    @JacksonXmlProperty(localName = "resource_ids")
 
     private List<String> resourceIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "effective_time_begin")
 
+    @JacksonXmlProperty(localName = "effective_time_begin")
+
     private String effectiveTimeBegin;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "effective_time_end")
+
+    @JacksonXmlProperty(localName = "effective_time_end")
 
     private String effectiveTimeEnd;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
+    @JacksonXmlProperty(localName = "offset")
+
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
+
+    @JacksonXmlProperty(localName = "limit")
 
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private Integer status;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "indirect_partner_id")
+
+    @JacksonXmlProperty(localName = "indirect_partner_id")
+
+    private String indirectPartnerId;
 
     public QueryCustomerOnDemandResourcesReq withCustomerId(String customerId) {
         this.customerId = customerId;
@@ -233,6 +259,23 @@ public class QueryCustomerOnDemandResourcesReq {
         this.status = status;
     }
 
+    public QueryCustomerOnDemandResourcesReq withIndirectPartnerId(String indirectPartnerId) {
+        this.indirectPartnerId = indirectPartnerId;
+        return this;
+    }
+
+    /**
+     * 云经销商ID。如果需要查询云经销商子客户的按需资源列表，必须携带该字段，除此之外，此参数不做处理。否则只能查询自己的子客户按需资源。
+     * @return indirectPartnerId
+     */
+    public String getIndirectPartnerId() {
+        return indirectPartnerId;
+    }
+
+    public void setIndirectPartnerId(String indirectPartnerId) {
+        this.indirectPartnerId = indirectPartnerId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -250,7 +293,8 @@ public class QueryCustomerOnDemandResourcesReq {
             && Objects.equals(this.effectiveTimeEnd, queryCustomerOnDemandResourcesReq.effectiveTimeEnd)
             && Objects.equals(this.offset, queryCustomerOnDemandResourcesReq.offset)
             && Objects.equals(this.limit, queryCustomerOnDemandResourcesReq.limit)
-            && Objects.equals(this.status, queryCustomerOnDemandResourcesReq.status);
+            && Objects.equals(this.status, queryCustomerOnDemandResourcesReq.status)
+            && Objects.equals(this.indirectPartnerId, queryCustomerOnDemandResourcesReq.indirectPartnerId);
     }
 
     @Override
@@ -263,7 +307,8 @@ public class QueryCustomerOnDemandResourcesReq {
             effectiveTimeEnd,
             offset,
             limit,
-            status);
+            status,
+            indirectPartnerId);
     }
 
     @Override
@@ -279,6 +324,7 @@ public class QueryCustomerOnDemandResourcesReq {
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    indirectPartnerId: ").append(toIndentedString(indirectPartnerId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.iotda.v5.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,30 +14,42 @@ public class Cmd {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "command_name")
 
+    @JacksonXmlProperty(localName = "command_name")
+
     private String commandName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "command_body")
+
+    @JacksonXmlProperty(localName = "command_body")
 
     private Object commandBody;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_id")
 
+    @JacksonXmlProperty(localName = "service_id")
+
     private String serviceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "buffer_timeout")
+
+    @JacksonXmlProperty(localName = "buffer_timeout")
 
     private Integer bufferTimeout;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "response_timeout")
 
+    @JacksonXmlProperty(localName = "response_timeout")
+
     private Integer responseTimeout;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mode")
+
+    @JacksonXmlProperty(localName = "mode")
 
     private String mode;
 

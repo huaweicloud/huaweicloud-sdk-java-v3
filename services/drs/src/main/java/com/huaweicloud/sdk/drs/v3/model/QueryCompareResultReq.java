@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.drs.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,30 +14,42 @@ public class QueryCompareResultReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_id")
 
+    @JacksonXmlProperty(localName = "job_id")
+
     private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "object_level_compare_id")
+
+    @JacksonXmlProperty(localName = "object_level_compare_id")
 
     private String objectLevelCompareId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "line_compare_id")
 
+    @JacksonXmlProperty(localName = "line_compare_id")
+
     private String lineCompareId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "content_compare_id")
+
+    @JacksonXmlProperty(localName = "content_compare_id")
 
     private String contentCompareId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "current_page")
 
+    @JacksonXmlProperty(localName = "current_page")
+
     private Integer currentPage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "per_page")
+
+    @JacksonXmlProperty(localName = "per_page")
 
     private Integer perPage;
 

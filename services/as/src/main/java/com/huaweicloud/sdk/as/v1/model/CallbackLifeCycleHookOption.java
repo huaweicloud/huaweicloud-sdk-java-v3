@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,15 +19,21 @@ public class CallbackLifeCycleHookOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lifecycle_action_key")
 
+    @JacksonXmlProperty(localName = "lifecycle_action_key")
+
     private String lifecycleActionKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_id")
 
+    @JacksonXmlProperty(localName = "instance_id")
+
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lifecycle_hook_name")
+
+    @JacksonXmlProperty(localName = "lifecycle_hook_name")
 
     private String lifecycleHookName;
 
@@ -115,6 +122,8 @@ public class CallbackLifeCycleHookOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lifecycle_action_result")
+
+    @JacksonXmlProperty(localName = "lifecycle_action_result")
 
     private LifecycleActionResultEnum lifecycleActionResult;
 

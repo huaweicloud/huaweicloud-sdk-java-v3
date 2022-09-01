@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.bssintl.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class ServiceTypes {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_type_name")
 
+    @JacksonXmlProperty(localName = "service_type_name")
+
     private String serviceTypeName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_type_code")
 
+    @JacksonXmlProperty(localName = "service_type_code")
+
     private String serviceTypeCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "abbreviation")
+
+    @JacksonXmlProperty(localName = "abbreviation")
 
     private String abbreviation;
 

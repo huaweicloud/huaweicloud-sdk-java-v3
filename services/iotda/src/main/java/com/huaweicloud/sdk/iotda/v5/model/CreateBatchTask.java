@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.iotda.v5.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -18,40 +19,56 @@ public class CreateBatchTask {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_id")
 
+    @JacksonXmlProperty(localName = "app_id")
+
     private String appId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_name")
+
+    @JacksonXmlProperty(localName = "task_name")
 
     private String taskName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_type")
 
+    @JacksonXmlProperty(localName = "task_type")
+
     private String taskType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "targets")
+
+    @JacksonXmlProperty(localName = "targets")
 
     private List<String> targets = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "targets_filter")
 
+    @JacksonXmlProperty(localName = "targets_filter")
+
     private Map<String, Object> targetsFilter = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "document")
+
+    @JacksonXmlProperty(localName = "document")
 
     private Object document;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_policy")
 
+    @JacksonXmlProperty(localName = "task_policy")
+
     private TaskPolicy taskPolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "document_source")
+
+    @JacksonXmlProperty(localName = "document_source")
 
     private String documentSource;
 

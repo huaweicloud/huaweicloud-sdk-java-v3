@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.antiddos.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,30 +14,42 @@ public class ExtendDDoSSet {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "SetID")
 
+    @JacksonXmlProperty(localName = "SetID")
+
     private Long setID;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "new_connection_limited")
+
+    @JacksonXmlProperty(localName = "new_connection_limited")
 
     private Long newConnectionLimited;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_connection_limited")
 
+    @JacksonXmlProperty(localName = "total_connection_limited")
+
     private Long totalConnectionLimited;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "http_packet_per_second")
+
+    @JacksonXmlProperty(localName = "http_packet_per_second")
 
     private Long httpPacketPerSecond;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "traffic_per_second")
 
+    @JacksonXmlProperty(localName = "traffic_per_second")
+
     private Long trafficPerSecond;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "packet_per_second")
+
+    @JacksonXmlProperty(localName = "packet_per_second")
 
     private Long packetPerSecond;
 

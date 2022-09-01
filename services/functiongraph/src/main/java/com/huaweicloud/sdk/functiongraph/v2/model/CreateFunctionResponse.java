@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.time.OffsetDateTime;
@@ -23,30 +24,42 @@ public class CreateFunctionResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "func_urn")
 
+    @JacksonXmlProperty(localName = "func_urn")
+
     private String funcUrn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "func_name")
+
+    @JacksonXmlProperty(localName = "func_name")
 
     private String funcName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_id")
 
+    @JacksonXmlProperty(localName = "domain_id")
+
     private String domainId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "namespace")
+
+    @JacksonXmlProperty(localName = "namespace")
 
     private String namespace;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_name")
 
+    @JacksonXmlProperty(localName = "project_name")
+
     private String projectName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "package")
+
+    @JacksonXmlProperty(localName = "package")
 
     private String _package;
 
@@ -214,25 +227,35 @@ public class CreateFunctionResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "runtime")
 
+    @JacksonXmlProperty(localName = "runtime")
+
     private RuntimeEnum runtime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timeout")
+
+    @JacksonXmlProperty(localName = "timeout")
 
     private Integer timeout;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "handler")
 
+    @JacksonXmlProperty(localName = "handler")
+
     private String handler;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "memory_size")
 
+    @JacksonXmlProperty(localName = "memory_size")
+
     private Integer memorySize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cpu")
+
+    @JacksonXmlProperty(localName = "cpu")
 
     private Integer cpu;
 
@@ -328,125 +351,175 @@ public class CreateFunctionResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "code_type")
 
+    @JacksonXmlProperty(localName = "code_type")
+
     private CodeTypeEnum codeType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "code_url")
+
+    @JacksonXmlProperty(localName = "code_url")
 
     private String codeUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "code_filename")
 
+    @JacksonXmlProperty(localName = "code_filename")
+
     private String codeFilename;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "code_size")
+
+    @JacksonXmlProperty(localName = "code_size")
 
     private Long codeSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_data")
 
+    @JacksonXmlProperty(localName = "user_data")
+
     private String userData;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "encrypted_user_data")
+
+    @JacksonXmlProperty(localName = "encrypted_user_data")
 
     private String encryptedUserData;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "digest")
 
+    @JacksonXmlProperty(localName = "digest")
+
     private String digest;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
+
+    @JacksonXmlProperty(localName = "version")
 
     private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image_name")
 
+    @JacksonXmlProperty(localName = "image_name")
+
     private String imageName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "xrole")
+
+    @JacksonXmlProperty(localName = "xrole")
 
     private String xrole;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_xrole")
 
+    @JacksonXmlProperty(localName = "app_xrole")
+
     private String appXrole;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
+
+    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last_modified")
 
+    @JacksonXmlProperty(localName = "last_modified")
+
     private OffsetDateTime lastModified;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "func_vpc")
+
+    @JacksonXmlProperty(localName = "func_vpc")
 
     private FuncVpc funcVpc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mount_config")
 
+    @JacksonXmlProperty(localName = "mount_config")
+
     private MountConfig mountConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "depend_list")
+
+    @JacksonXmlProperty(localName = "depend_list")
 
     private List<String> dependList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "strategy_config")
 
+    @JacksonXmlProperty(localName = "strategy_config")
+
     private StrategyConfig strategyConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extend_config")
+
+    @JacksonXmlProperty(localName = "extend_config")
 
     private String extendConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "initializer_handler")
 
+    @JacksonXmlProperty(localName = "initializer_handler")
+
     private String initializerHandler;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "initializer_timeout")
+
+    @JacksonXmlProperty(localName = "initializer_timeout")
 
     private Integer initializerTimeout;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
+    @JacksonXmlProperty(localName = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_dynamic_memory")
+
+    @JacksonXmlProperty(localName = "enable_dynamic_memory")
 
     private Boolean enableDynamicMemory;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_stateful_function")
 
+    @JacksonXmlProperty(localName = "is_stateful_function")
+
     private Boolean isStatefulFunction;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_auth_in_header")
 
+    @JacksonXmlProperty(localName = "enable_auth_in_header")
+
     private Boolean enableAuthInHeader;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "custom_image")
+
+    @JacksonXmlProperty(localName = "custom_image")
 
     private CustomImage customImage;
 

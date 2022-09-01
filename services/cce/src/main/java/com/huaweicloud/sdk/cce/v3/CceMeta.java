@@ -296,7 +296,6 @@ public class CceMeta {
             }));
 
         // response
-
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,

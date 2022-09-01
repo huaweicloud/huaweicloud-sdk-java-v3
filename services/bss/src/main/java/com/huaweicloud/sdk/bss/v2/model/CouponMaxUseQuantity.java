@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.bss.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class CouponMaxUseQuantity {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "coupon_type")
 
+    @JacksonXmlProperty(localName = "coupon_type")
+
     private Integer couponType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "coupon_group")
 
+    @JacksonXmlProperty(localName = "coupon_group")
+
     private Integer couponGroup;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "use_quantity_value")
+
+    @JacksonXmlProperty(localName = "use_quantity_value")
 
     private Integer useQuantityValue;
 

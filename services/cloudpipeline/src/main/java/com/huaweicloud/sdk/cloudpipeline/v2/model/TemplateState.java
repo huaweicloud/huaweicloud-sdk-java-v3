@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cloudpipeline.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,75 +17,105 @@ public class TemplateState {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
+    @JacksonXmlProperty(localName = "type")
+
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "module_or_template_id")
 
+    @JacksonXmlProperty(localName = "module_or_template_id")
+
     private String moduleOrTemplateId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "module_or_template_name")
+
+    @JacksonXmlProperty(localName = "module_or_template_name")
 
     private String moduleOrTemplateName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "display_name")
 
+    @JacksonXmlProperty(localName = "display_name")
+
     private String displayName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dsl_method")
+
+    @JacksonXmlProperty(localName = "dsl_method")
 
     private String dslMethod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parameters")
 
+    @JacksonXmlProperty(localName = "parameters")
+
     private Map<String, Object> parameters = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_manual_execution")
+
+    @JacksonXmlProperty(localName = "is_manual_execution")
 
     private Boolean isManualExecution;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_parameter_validate")
 
+    @JacksonXmlProperty(localName = "job_parameter_validate")
+
     private Boolean jobParameterValidate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_show_codehub_url")
+
+    @JacksonXmlProperty(localName = "is_show_codehub_url")
 
     private Boolean isShowCodehubUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_execute")
 
+    @JacksonXmlProperty(localName = "is_execute")
+
     private Boolean isExecute;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_id")
+
+    @JacksonXmlProperty(localName = "job_id")
 
     private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_name")
 
+    @JacksonXmlProperty(localName = "job_name")
+
     private String jobName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
 
+    @JacksonXmlProperty(localName = "project_id")
+
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "execution_mode")
+
+    @JacksonXmlProperty(localName = "execution_mode")
 
     private String executionMode;
 

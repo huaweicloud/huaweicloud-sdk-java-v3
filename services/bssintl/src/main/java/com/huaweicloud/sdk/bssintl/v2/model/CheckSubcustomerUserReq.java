@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.bssintl.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class CheckSubcustomerUserReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "search_type")
 
+    @JacksonXmlProperty(localName = "search_type")
+
     private String searchType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "search_value")
+
+    @JacksonXmlProperty(localName = "search_value")
 
     private String searchValue;
 

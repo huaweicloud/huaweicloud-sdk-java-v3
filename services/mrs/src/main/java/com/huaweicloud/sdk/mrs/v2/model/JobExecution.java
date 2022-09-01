@@ -12,6 +12,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -25,6 +27,7 @@ public class JobExecution  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_type")
     
+    @JacksonXmlProperty(localName = "job_type")
     
     private String jobType;
 
@@ -32,6 +35,7 @@ public class JobExecution  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_name")
     
+    @JacksonXmlProperty(localName = "job_name")
     
     private String jobName;
 
@@ -39,6 +43,7 @@ public class JobExecution  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="arguments")
     
+    @JacksonXmlProperty(localName = "arguments")
     
     private List<String> arguments = null;
     
@@ -46,6 +51,7 @@ public class JobExecution  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="properties")
     
+    @JacksonXmlProperty(localName = "properties")
     
     private Map<String, String> properties = null;
     

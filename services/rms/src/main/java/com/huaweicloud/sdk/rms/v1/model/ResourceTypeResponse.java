@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.rms.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,35 +17,49 @@ public class ResourceTypeResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "display_name")
+
+    @JacksonXmlProperty(localName = "display_name")
 
     private String displayName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "global")
 
+    @JacksonXmlProperty(localName = "global")
+
     private Boolean global;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "regions")
+
+    @JacksonXmlProperty(localName = "regions")
 
     private List<String> regions = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "console_endpoint_id")
 
+    @JacksonXmlProperty(localName = "console_endpoint_id")
+
     private String consoleEndpointId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "console_list_url")
 
+    @JacksonXmlProperty(localName = "console_list_url")
+
     private String consoleListUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "console_detail_url")
+
+    @JacksonXmlProperty(localName = "console_detail_url")
 
     private String consoleDetailUrl;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.rocketmq.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,15 +17,21 @@ public class ExportDlqMessageReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "topic")
 
+    @JacksonXmlProperty(localName = "topic")
+
     private String topic;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "msg_id_list")
 
+    @JacksonXmlProperty(localName = "msg_id_list")
+
     private List<String> msgIdList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "uniq_key_list")
+
+    @JacksonXmlProperty(localName = "uniq_key_list")
 
     private List<String> uniqKeyList = null;
 

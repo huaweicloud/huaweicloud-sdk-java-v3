@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.dcs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,40 +15,56 @@ public class ModifyInstanceBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
+
+    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "port")
 
+    @JacksonXmlProperty(localName = "port")
+
     private Integer port;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rename_commands")
+
+    @JacksonXmlProperty(localName = "rename_commands")
 
     private RenameCommandResp renameCommands;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maintain_begin")
 
+    @JacksonXmlProperty(localName = "maintain_begin")
+
     private String maintainBegin;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maintain_end")
+
+    @JacksonXmlProperty(localName = "maintain_end")
 
     private String maintainEnd;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_group_id")
 
+    @JacksonXmlProperty(localName = "security_group_id")
+
     private String securityGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_backup_policy")
+
+    @JacksonXmlProperty(localName = "instance_backup_policy")
 
     private BackupPolicy instanceBackupPolicy;
 

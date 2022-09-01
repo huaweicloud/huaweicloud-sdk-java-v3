@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cloudide.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,20 +14,28 @@ public class AccountStatus {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cur_org_create_role")
 
+    @JacksonXmlProperty(localName = "cur_org_create_role")
+
     private Boolean curOrgCreateRole;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cur_org_open")
+
+    @JacksonXmlProperty(localName = "cur_org_open")
 
     private Boolean curOrgOpen;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "has_free_trial")
 
+    @JacksonXmlProperty(localName = "has_free_trial")
+
     private Boolean hasFreeTrial;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "show_manage")
+
+    @JacksonXmlProperty(localName = "show_manage")
 
     private Boolean showManage;
 

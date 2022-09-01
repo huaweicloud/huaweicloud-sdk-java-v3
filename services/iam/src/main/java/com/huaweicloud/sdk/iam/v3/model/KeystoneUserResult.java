@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.iam.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,55 +15,77 @@ public class KeystoneUserResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pwd_status")
 
+    @JacksonXmlProperty(localName = "pwd_status")
+
     private Boolean pwdStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_id")
+
+    @JacksonXmlProperty(localName = "domain_id")
 
     private String domainId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last_project_id")
 
+    @JacksonXmlProperty(localName = "last_project_id")
+
     private String lastProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
+    @JacksonXmlProperty(localName = "description")
+
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "password_expires_at")
+
+    @JacksonXmlProperty(localName = "password_expires_at")
 
     private String passwordExpiresAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "links")
 
+    @JacksonXmlProperty(localName = "links")
+
     private Links links;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
+
+    @JacksonXmlProperty(localName = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enabled")
 
+    @JacksonXmlProperty(localName = "enabled")
+
     private Boolean enabled;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pwd_strength")
 
+    @JacksonXmlProperty(localName = "pwd_strength")
+
     private String pwdStrength;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extra")
+
+    @JacksonXmlProperty(localName = "extra")
 
     private KeystoneUserResultExtra extra;
 

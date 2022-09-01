@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cloudrtc.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -15,15 +16,21 @@ public class UpdateUrlAuthResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_id")
 
+    @JacksonXmlProperty(localName = "app_id")
+
     private String appId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "authentication")
 
+    @JacksonXmlProperty(localName = "authentication")
+
     private AppAuth authentication;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-request-Id")
+
+    @JacksonXmlProperty(localName = "X-request-Id")
 
     private String xRequestId;
 

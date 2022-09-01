@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,30 +19,42 @@ public class CreateScoresRequestModel {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "competition_id")
 
+    @JacksonXmlProperty(localName = "competition_id")
+
     private String competitionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stage_id")
+
+    @JacksonXmlProperty(localName = "stage_id")
 
     private String stageId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "works_id")
 
+    @JacksonXmlProperty(localName = "works_id")
+
     private Integer worksId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "works_kind")
 
+    @JacksonXmlProperty(localName = "works_kind")
+
     private String worksKind;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "score")
+
+    @JacksonXmlProperty(localName = "score")
 
     private Double score;
 
@@ -125,30 +138,42 @@ public class CreateScoresRequestModel {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_time")
+
+    @JacksonXmlProperty(localName = "created_time")
 
     private String createdTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "note")
 
+    @JacksonXmlProperty(localName = "note")
+
     private String note;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "message")
+
+    @JacksonXmlProperty(localName = "message")
 
     private String message;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_id")
 
+    @JacksonXmlProperty(localName = "domain_id")
+
     private String domainId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_id")
+
+    @JacksonXmlProperty(localName = "user_id")
 
     private String userId;
 

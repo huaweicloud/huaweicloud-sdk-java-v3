@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ocr.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,20 +14,28 @@ public class QualificationCategory {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "category")
 
+    @JacksonXmlProperty(localName = "category")
+
     private String category;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "initial_issue_date")
+
+    @JacksonXmlProperty(localName = "initial_issue_date")
 
     private String initialIssueDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "issue_date")
 
+    @JacksonXmlProperty(localName = "issue_date")
+
     private String issueDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expiry_date")
+
+    @JacksonXmlProperty(localName = "expiry_date")
 
     private String expiryDate;
 

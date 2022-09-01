@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.sa.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.math.BigDecimal;
 import java.util.Objects;
@@ -14,20 +15,28 @@ public class Geo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "latitude")
 
+    @JacksonXmlProperty(localName = "latitude")
+
     private BigDecimal latitude;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "longitude")
+
+    @JacksonXmlProperty(localName = "longitude")
 
     private BigDecimal longitude;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "city_code")
 
+    @JacksonXmlProperty(localName = "city_code")
+
     private String cityCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "country_code")
+
+    @JacksonXmlProperty(localName = "country_code")
 
     private String countryCode;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.iam.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,70 +14,98 @@ public class ShowDomainRoleAssignmentsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_id")
 
+    @JacksonXmlProperty(localName = "domain_id")
+
     private String domainId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "role_id")
+
+    @JacksonXmlProperty(localName = "role_id")
 
     private String roleId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subject")
 
+    @JacksonXmlProperty(localName = "subject")
+
     private String subject;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subject.user_id")
+
+    @JacksonXmlProperty(localName = "subject.user_id")
 
     private String subjectUserId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subject.group_id")
 
+    @JacksonXmlProperty(localName = "subject.group_id")
+
     private String subjectGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subject.agency_id")
+
+    @JacksonXmlProperty(localName = "subject.agency_id")
 
     private String subjectAgencyId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scope")
 
+    @JacksonXmlProperty(localName = "scope")
+
     private String scope;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scope.project_id")
+
+    @JacksonXmlProperty(localName = "scope.project_id")
 
     private String scopeProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scope.domain_id")
 
+    @JacksonXmlProperty(localName = "scope.domain_id")
+
     private String scopeDomainId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scope.enterprise_projects_id")
+
+    @JacksonXmlProperty(localName = "scope.enterprise_projects_id")
 
     private String scopeEnterpriseProjectsId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_inherited")
 
+    @JacksonXmlProperty(localName = "is_inherited")
+
     private Boolean isInherited;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "include_group")
+
+    @JacksonXmlProperty(localName = "include_group")
 
     private Boolean includeGroup;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page")
 
+    @JacksonXmlProperty(localName = "page")
+
     private String page;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "per_page")
+
+    @JacksonXmlProperty(localName = "per_page")
 
     private String perPage;
 

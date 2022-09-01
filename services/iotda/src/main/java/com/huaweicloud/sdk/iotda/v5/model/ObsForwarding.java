@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.iotda.v5.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,25 +14,35 @@ public class ObsForwarding {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region_name")
 
+    @JacksonXmlProperty(localName = "region_name")
+
     private String regionName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
+
+    @JacksonXmlProperty(localName = "project_id")
 
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bucket_name")
 
+    @JacksonXmlProperty(localName = "bucket_name")
+
     private String bucketName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "location")
 
+    @JacksonXmlProperty(localName = "location")
+
     private String location;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_path")
+
+    @JacksonXmlProperty(localName = "file_path")
 
     private String filePath;
 

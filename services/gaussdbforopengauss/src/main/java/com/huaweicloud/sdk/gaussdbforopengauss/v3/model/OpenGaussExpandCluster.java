@@ -12,6 +12,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.OpenGaussCoordinators;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.OpenGaussShard;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -25,6 +27,7 @@ public class OpenGaussExpandCluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="coordinators")
     
+    @JacksonXmlProperty(localName = "coordinators")
     
     private List<OpenGaussCoordinators> coordinators = null;
     
@@ -32,6 +35,7 @@ public class OpenGaussExpandCluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="shard")
     
+    @JacksonXmlProperty(localName = "shard")
     
     private OpenGaussShard shard;
 

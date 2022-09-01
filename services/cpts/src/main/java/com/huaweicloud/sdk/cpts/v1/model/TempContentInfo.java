@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cpts.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,25 +17,35 @@ public class TempContentInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "content_id")
 
+    @JacksonXmlProperty(localName = "content_id")
+
     private Integer contentId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "content")
+
+    @JacksonXmlProperty(localName = "content")
 
     private List<Content> content = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "index")
 
+    @JacksonXmlProperty(localName = "index")
+
     private Integer index;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
+    @JacksonXmlProperty(localName = "data")
+
     private Object data;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_type")
+
+    @JacksonXmlProperty(localName = "data_type")
 
     private Integer dataType;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.hss.v5.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,45 +14,63 @@ public class EventDetailResponseInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "agent_id")
 
+    @JacksonXmlProperty(localName = "agent_id")
+
     private String agentId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "process_pid")
+
+    @JacksonXmlProperty(localName = "process_pid")
 
     private Integer processPid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_parent")
 
+    @JacksonXmlProperty(localName = "is_parent")
+
     private Boolean isParent;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_hash")
+
+    @JacksonXmlProperty(localName = "file_hash")
 
     private String fileHash;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_path")
 
+    @JacksonXmlProperty(localName = "file_path")
+
     private String filePath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_attr")
+
+    @JacksonXmlProperty(localName = "file_attr")
 
     private String fileAttr;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "private_ip")
 
+    @JacksonXmlProperty(localName = "private_ip")
+
     private String privateIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "login_ip")
 
+    @JacksonXmlProperty(localName = "login_ip")
+
     private String loginIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "login_user_name")
+
+    @JacksonXmlProperty(localName = "login_user_name")
 
     private String loginUserName;
 

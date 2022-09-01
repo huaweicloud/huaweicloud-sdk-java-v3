@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.time.OffsetDateTime;
 import java.util.Collections;
@@ -18,6 +19,8 @@ public class ThrottleApiBinding {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publish_id")
+
+    @JacksonXmlProperty(localName = "publish_id")
 
     private String publishId;
 
@@ -107,20 +110,28 @@ public class ThrottleApiBinding {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scope")
 
+    @JacksonXmlProperty(localName = "scope")
+
     private ScopeEnum scope;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "strategy_id")
+
+    @JacksonXmlProperty(localName = "strategy_id")
 
     private String strategyId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "apply_time")
 
+    @JacksonXmlProperty(localName = "apply_time")
+
     private OffsetDateTime applyTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
+
+    @JacksonXmlProperty(localName = "id")
 
     private String id;
 

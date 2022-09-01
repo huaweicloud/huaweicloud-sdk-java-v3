@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -22,20 +23,28 @@ public class ShowNotificationTemplateResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
+
+    @JacksonXmlProperty(localName = "type")
 
     private List<String> type = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "desc")
 
+    @JacksonXmlProperty(localName = "desc")
+
     private String desc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source")
+
+    @JacksonXmlProperty(localName = "source")
 
     private String source;
 
@@ -119,25 +128,35 @@ public class ShowNotificationTemplateResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "locale")
 
+    @JacksonXmlProperty(localName = "locale")
+
     private LocaleEnum locale;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "templates")
+
+    @JacksonXmlProperty(localName = "templates")
 
     private List<SubTemplate> templates = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
+    @JacksonXmlProperty(localName = "create_time")
+
     private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "modify_time")
 
+    @JacksonXmlProperty(localName = "modify_time")
+
     private Long modifyTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
+
+    @JacksonXmlProperty(localName = "project_id")
 
     private String projectId;
 

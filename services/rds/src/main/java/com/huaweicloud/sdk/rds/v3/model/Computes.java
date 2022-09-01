@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.rds.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,10 +17,14 @@ public class Computes {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_type")
 
+    @JacksonXmlProperty(localName = "group_type")
+
     private String groupType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "compute_flavors")
+
+    @JacksonXmlProperty(localName = "compute_flavors")
 
     private List<ScaleFlavors> computeFlavors = null;
 

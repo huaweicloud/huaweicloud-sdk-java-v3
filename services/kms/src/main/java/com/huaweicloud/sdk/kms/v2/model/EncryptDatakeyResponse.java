@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.kms.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -14,15 +15,21 @@ public class EncryptDatakeyResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key_id")
 
+    @JacksonXmlProperty(localName = "key_id")
+
     private String keyId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cipher_text")
 
+    @JacksonXmlProperty(localName = "cipher_text")
+
     private String cipherText;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "datakey_length")
+
+    @JacksonXmlProperty(localName = "datakey_length")
 
     private String datakeyLength;
 

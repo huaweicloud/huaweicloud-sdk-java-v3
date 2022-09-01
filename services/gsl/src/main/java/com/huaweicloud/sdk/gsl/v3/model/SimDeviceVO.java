@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.gsl.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.time.OffsetDateTime;
 import java.util.Objects;
@@ -14,190 +15,266 @@ public class SimDeviceVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sim_card_id")
 
+    @JacksonXmlProperty(localName = "sim_card_id")
+
     private Long simCardId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "account_id")
+
+    @JacksonXmlProperty(localName = "account_id")
 
     private String accountId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cid")
 
+    @JacksonXmlProperty(localName = "cid")
+
     private String cid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sim_pool_id")
+
+    @JacksonXmlProperty(localName = "sim_pool_id")
 
     private Long simPoolId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "imei")
 
+    @JacksonXmlProperty(localName = "imei")
+
     private String imei;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sim_status")
+
+    @JacksonXmlProperty(localName = "sim_status")
 
     private Integer simStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "device_status")
 
+    @JacksonXmlProperty(localName = "device_status")
+
     private Integer deviceStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "device_model")
+
+    @JacksonXmlProperty(localName = "device_model")
 
     private String deviceModel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "act_date")
 
+    @JacksonXmlProperty(localName = "act_date")
+
     private OffsetDateTime actDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "device_status_date")
+
+    @JacksonXmlProperty(localName = "device_status_date")
 
     private OffsetDateTime deviceStatusDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "node_id")
 
+    @JacksonXmlProperty(localName = "node_id")
+
     private String nodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "iccid")
+
+    @JacksonXmlProperty(localName = "iccid")
 
     private String iccid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "network_type")
 
+    @JacksonXmlProperty(localName = "network_type")
+
     private String networkType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dbm")
+
+    @JacksonXmlProperty(localName = "dbm")
 
     private String dbm;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "signal_level")
 
+    @JacksonXmlProperty(localName = "signal_level")
+
     private String signalLevel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sim_type")
+
+    @JacksonXmlProperty(localName = "sim_type")
 
     private Integer simType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tag_names")
 
+    @JacksonXmlProperty(localName = "tag_names")
+
     private String tagNames;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "order_id")
+
+    @JacksonXmlProperty(localName = "order_id")
 
     private Long orderId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expire_time")
 
+    @JacksonXmlProperty(localName = "expire_time")
+
     private OffsetDateTime expireTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "price_plan_name")
+
+    @JacksonXmlProperty(localName = "price_plan_name")
 
     private String pricePlanName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sim_price_plan_id")
 
+    @JacksonXmlProperty(localName = "sim_price_plan_id")
+
     private Long simPricePlanId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flow_left")
+
+    @JacksonXmlProperty(localName = "flow_left")
 
     private Double flowLeft;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flow_used")
 
+    @JacksonXmlProperty(localName = "flow_used")
+
     private Double flowUsed;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operator_status")
+
+    @JacksonXmlProperty(localName = "operator_status")
 
     private Integer operatorStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "msisdn")
 
+    @JacksonXmlProperty(localName = "msisdn")
+
     private String msisdn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "imsi")
+
+    @JacksonXmlProperty(localName = "imsi")
 
     private String imsi;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "customer_attribute1")
 
+    @JacksonXmlProperty(localName = "customer_attribute1")
+
     private String customerAttribute1;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "customer_attribute2")
+
+    @JacksonXmlProperty(localName = "customer_attribute2")
 
     private String customerAttribute2;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "customer_attribute3")
 
+    @JacksonXmlProperty(localName = "customer_attribute3")
+
     private String customerAttribute3;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "customer_attribute4")
+
+    @JacksonXmlProperty(localName = "customer_attribute4")
 
     private String customerAttribute4;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "customer_attribute5")
 
+    @JacksonXmlProperty(localName = "customer_attribute5")
+
     private String customerAttribute5;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "customer_attribute6")
+
+    @JacksonXmlProperty(localName = "customer_attribute6")
 
     private String customerAttribute6;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "real_named")
 
+    @JacksonXmlProperty(localName = "real_named")
+
     private Boolean realNamed;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cut_net_flag")
+
+    @JacksonXmlProperty(localName = "cut_net_flag")
 
     private Boolean cutNetFlag;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "exceed_cut_net_flag")
 
+    @JacksonXmlProperty(localName = "exceed_cut_net_flag")
+
     private Boolean exceedCutNetFlag;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "exceed_cut_net_quota")
+
+    @JacksonXmlProperty(localName = "exceed_cut_net_quota")
 
     private Integer exceedCutNetQuota;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "imei_bind_remain_times")
 
+    @JacksonXmlProperty(localName = "imei_bind_remain_times")
+
     private Integer imeiBindRemainTimes;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "speed_value")
+
+    @JacksonXmlProperty(localName = "speed_value")
 
     private Integer speedValue;
 

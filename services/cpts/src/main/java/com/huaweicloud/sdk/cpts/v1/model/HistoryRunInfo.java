@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cpts.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,30 +17,42 @@ public class HistoryRunInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "run_id")
+
+    @JacksonXmlProperty(localName = "run_id")
 
     private Double runId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "run_type")
 
+    @JacksonXmlProperty(localName = "run_type")
+
     private Double runType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
+
+    @JacksonXmlProperty(localName = "start_time")
 
     private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "continue_time")
 
+    @JacksonXmlProperty(localName = "continue_time")
+
     private Double continueTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "temp_names")
+
+    @JacksonXmlProperty(localName = "temp_names")
 
     private List<TempName> tempNames = null;
 

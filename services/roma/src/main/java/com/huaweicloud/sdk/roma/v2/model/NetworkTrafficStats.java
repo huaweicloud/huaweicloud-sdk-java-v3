@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.roma.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class NetworkTrafficStats {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "output_throughput")
 
+    @JacksonXmlProperty(localName = "output_throughput")
+
     private Long outputThroughput;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "input_throughput")
+
+    @JacksonXmlProperty(localName = "input_throughput")
 
     private Long inputThroughput;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.csms.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class ShowSecretStageRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "secret_name")
 
+    @JacksonXmlProperty(localName = "secret_name")
+
     private String secretName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stage_name")
+
+    @JacksonXmlProperty(localName = "stage_name")
 
     private String stageName;
 

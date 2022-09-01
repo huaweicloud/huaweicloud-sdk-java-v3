@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.live.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,10 +17,14 @@ public class TranscodeData {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "spec_list")
 
+    @JacksonXmlProperty(localName = "spec_list")
+
     private List<TranscodeSpec> specList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time")
+
+    @JacksonXmlProperty(localName = "time")
 
     private String time;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.eip.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -17,15 +18,21 @@ public class ListShareBandwidthTypesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "share_bandwidth_types")
 
+    @JacksonXmlProperty(localName = "share_bandwidth_types")
+
     private List<ShareBandwidthTypeShowResp> shareBandwidthTypes = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "request_id")
 
+    @JacksonXmlProperty(localName = "request_id")
+
     private String requestId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page_info")
+
+    @JacksonXmlProperty(localName = "page_info")
 
     private PageInfoOption pageInfo;
 

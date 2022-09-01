@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.lts.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -17,25 +18,35 @@ public class DeleteTransferResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_group_id")
 
+    @JacksonXmlProperty(localName = "log_group_id")
+
     private String logGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_group_name")
+
+    @JacksonXmlProperty(localName = "log_group_name")
 
     private String logGroupName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_streams")
 
+    @JacksonXmlProperty(localName = "log_streams")
+
     private List<CreateTransferResponseBodyLogStreams> logStreams = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_transfer_id")
 
+    @JacksonXmlProperty(localName = "log_transfer_id")
+
     private String logTransferId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_transfer_info")
+
+    @JacksonXmlProperty(localName = "log_transfer_info")
 
     private CreateTransferResponseBodyLogTransferInfo logTransferInfo;
 

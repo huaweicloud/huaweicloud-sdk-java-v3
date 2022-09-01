@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.codehub.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,15 +15,21 @@ public class AddProtectBranchV2Request {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "repository_id")
 
+    @JacksonXmlProperty(localName = "repository_id")
+
     private Integer repositoryId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "branch_name")
 
+    @JacksonXmlProperty(localName = "branch_name")
+
     private String branchName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
+
+    @JacksonXmlProperty(localName = "body")
 
     private AddProtectRequest body;
 

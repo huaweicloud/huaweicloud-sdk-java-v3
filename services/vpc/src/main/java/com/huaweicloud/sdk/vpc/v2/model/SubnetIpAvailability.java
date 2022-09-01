@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.vpc.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,30 +14,42 @@ public class SubnetIpAvailability {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "used_ips")
 
+    @JacksonXmlProperty(localName = "used_ips")
+
     private Integer usedIps;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subnet_id")
+
+    @JacksonXmlProperty(localName = "subnet_id")
 
     private String subnetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subnet_name")
 
+    @JacksonXmlProperty(localName = "subnet_name")
+
     private String subnetName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip_version")
+
+    @JacksonXmlProperty(localName = "ip_version")
 
     private Integer ipVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cidr")
 
+    @JacksonXmlProperty(localName = "cidr")
+
     private String cidr;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_ips")
+
+    @JacksonXmlProperty(localName = "total_ips")
 
     private Integer totalIps;
 

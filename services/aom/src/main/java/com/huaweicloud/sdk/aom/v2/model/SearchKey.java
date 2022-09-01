@@ -8,6 +8,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -21,6 +23,7 @@ public class SearchKey  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="appName")
     
+    @JacksonXmlProperty(localName = "appName")
     
     private String appName;
 
@@ -28,6 +31,7 @@ public class SearchKey  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="clusterId")
     
+    @JacksonXmlProperty(localName = "clusterId")
     
     private String clusterId;
 
@@ -35,6 +39,7 @@ public class SearchKey  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="hostIP")
     
+    @JacksonXmlProperty(localName = "hostIP")
     
     private String hostIP;
 
@@ -42,6 +47,7 @@ public class SearchKey  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="nameSpace")
     
+    @JacksonXmlProperty(localName = "nameSpace")
     
     private String nameSpace;
 
@@ -49,6 +55,7 @@ public class SearchKey  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="pathFile")
     
+    @JacksonXmlProperty(localName = "pathFile")
     
     private String pathFile;
 
@@ -56,6 +63,7 @@ public class SearchKey  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="podName")
     
+    @JacksonXmlProperty(localName = "podName")
     
     private String podName;
 

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -17,6 +18,8 @@ public class ExportImageRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bucket_url")
+
+    @JacksonXmlProperty(localName = "bucket_url")
 
     private String bucketUrl;
 
@@ -112,10 +115,14 @@ public class ExportImageRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_format")
 
+    @JacksonXmlProperty(localName = "file_format")
+
     private FileFormatEnum fileFormat;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_quick_export")
+
+    @JacksonXmlProperty(localName = "is_quick_export")
 
     private Boolean isQuickExport;
 

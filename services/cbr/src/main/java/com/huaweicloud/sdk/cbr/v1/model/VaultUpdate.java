@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cbr.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,35 +15,49 @@ public class VaultUpdate {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "billing")
 
+    @JacksonXmlProperty(localName = "billing")
+
     private BillingUpdate billing;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auto_bind")
 
+    @JacksonXmlProperty(localName = "auto_bind")
+
     private Boolean autoBind;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bind_rules")
+
+    @JacksonXmlProperty(localName = "bind_rules")
 
     private VaultBindRules bindRules;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auto_expand")
 
+    @JacksonXmlProperty(localName = "auto_expand")
+
     private Boolean autoExpand;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "smn_notify")
 
+    @JacksonXmlProperty(localName = "smn_notify")
+
     private Boolean smnNotify;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "threshold")
+
+    @JacksonXmlProperty(localName = "threshold")
 
     private Integer threshold;
 

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,6 +19,8 @@ public class UpdateTriggerRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "function_urn")
+
+    @JacksonXmlProperty(localName = "function_urn")
 
     private String functionUrn;
 
@@ -185,15 +188,21 @@ public class UpdateTriggerRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trigger_type_code")
 
+    @JacksonXmlProperty(localName = "trigger_type_code")
+
     private TriggerTypeCodeEnum triggerTypeCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trigger_id")
 
+    @JacksonXmlProperty(localName = "trigger_id")
+
     private String triggerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
+
+    @JacksonXmlProperty(localName = "body")
 
     private UpdateTriggerRequestBody body;
 

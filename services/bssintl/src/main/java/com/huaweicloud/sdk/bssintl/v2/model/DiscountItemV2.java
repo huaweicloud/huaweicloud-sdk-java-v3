@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.bssintl.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class DiscountItemV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "discount_type")
 
+    @JacksonXmlProperty(localName = "discount_type")
+
     private String discountType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "discount_amount")
+
+    @JacksonXmlProperty(localName = "discount_amount")
 
     private Double discountAmount;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,15 +17,21 @@ public class ProjectPrivilege {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "object")
 
+    @JacksonXmlProperty(localName = "object")
+
     private String _object;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "applicant_project_id")
 
+    @JacksonXmlProperty(localName = "applicant_project_id")
+
     private String applicantProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "privileges")
+
+    @JacksonXmlProperty(localName = "privileges")
 
     private List<String> privileges = null;
 

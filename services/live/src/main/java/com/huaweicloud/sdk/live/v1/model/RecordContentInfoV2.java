@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.time.LocalDate;
 import java.util.Collections;
@@ -20,20 +21,28 @@ public class RecordContentInfoV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publish_domain")
 
+    @JacksonXmlProperty(localName = "publish_domain")
+
     private String publishDomain;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_name")
+
+    @JacksonXmlProperty(localName = "file_name")
 
     private String fileName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app")
 
+    @JacksonXmlProperty(localName = "app")
+
     private String app;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stream")
+
+    @JacksonXmlProperty(localName = "stream")
 
     private String stream;
 
@@ -122,6 +131,8 @@ public class RecordContentInfoV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "record_format")
+
+    @JacksonXmlProperty(localName = "record_format")
 
     private RecordFormatEnum recordFormat;
 
@@ -217,35 +228,49 @@ public class RecordContentInfoV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "record_type")
 
+    @JacksonXmlProperty(localName = "record_type")
+
     private RecordTypeEnum recordType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "obs_addr")
+
+    @JacksonXmlProperty(localName = "obs_addr")
 
     private RecordObsFileAddr obsAddr;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vod_info")
 
+    @JacksonXmlProperty(localName = "vod_info")
+
     private VodInfoV2 vodInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "download_url")
+
+    @JacksonXmlProperty(localName = "download_url")
 
     private String downloadUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
+    @JacksonXmlProperty(localName = "start_time")
+
     private LocalDate startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time")
 
+    @JacksonXmlProperty(localName = "end_time")
+
     private LocalDate endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "duration")
+
+    @JacksonXmlProperty(localName = "duration")
 
     private Integer duration;
 

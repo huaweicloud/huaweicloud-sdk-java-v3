@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.rocketmq.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class ResetConsumeOffsetRespQueues {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "broker_name")
 
+    @JacksonXmlProperty(localName = "broker_name")
+
     private String brokerName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "queue_id")
 
+    @JacksonXmlProperty(localName = "queue_id")
+
     private Integer queueId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timestamp_offset")
+
+    @JacksonXmlProperty(localName = "timestamp_offset")
 
     private Long timestampOffset;
 

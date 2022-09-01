@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cloudide.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,15 +17,21 @@ public class SourceStorage {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "location")
 
+    @JacksonXmlProperty(localName = "location")
+
     private String location;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parameters")
 
+    @JacksonXmlProperty(localName = "parameters")
+
     private Map<String, String> parameters = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
+
+    @JacksonXmlProperty(localName = "type")
 
     private String type;
 

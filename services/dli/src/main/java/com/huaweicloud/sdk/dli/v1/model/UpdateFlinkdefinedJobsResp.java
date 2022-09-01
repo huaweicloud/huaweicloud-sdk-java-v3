@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,120 +17,168 @@ public class UpdateFlinkdefinedJobsResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "desc")
+
+    @JacksonXmlProperty(localName = "desc")
 
     private String desc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "queue_name")
 
+    @JacksonXmlProperty(localName = "queue_name")
+
     private String queueName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cu_number")
+
+    @JacksonXmlProperty(localName = "cu_number")
 
     private Integer cuNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "manager_cu_number")
 
+    @JacksonXmlProperty(localName = "manager_cu_number")
+
     private Integer managerCuNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parallel_number")
+
+    @JacksonXmlProperty(localName = "parallel_number")
 
     private Integer parallelNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_enabled")
 
+    @JacksonXmlProperty(localName = "log_enabled")
+
     private Boolean logEnabled;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "obs_bucket")
+
+    @JacksonXmlProperty(localName = "obs_bucket")
 
     private String obsBucket;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "smn_topic")
 
+    @JacksonXmlProperty(localName = "smn_topic")
+
     private String smnTopic;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "main_class")
+
+    @JacksonXmlProperty(localName = "main_class")
 
     private String mainClass;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "entrypoint_args")
 
+    @JacksonXmlProperty(localName = "entrypoint_args")
+
     private String entrypointArgs;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "restart_when_exception")
+
+    @JacksonXmlProperty(localName = "restart_when_exception")
 
     private Boolean restartWhenException;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "entrypoint")
 
+    @JacksonXmlProperty(localName = "entrypoint")
+
     private String entrypoint;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dependency_jars")
+
+    @JacksonXmlProperty(localName = "dependency_jars")
 
     private List<String> dependencyJars = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dependency_files")
 
+    @JacksonXmlProperty(localName = "dependency_files")
+
     private List<String> dependencyFiles = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tm_cus")
+
+    @JacksonXmlProperty(localName = "tm_cus")
 
     private Integer tmCus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tm_slot_num")
 
+    @JacksonXmlProperty(localName = "tm_slot_num")
+
     private Integer tmSlotNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "feature")
+
+    @JacksonXmlProperty(localName = "feature")
 
     private String feature;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flink_version")
 
+    @JacksonXmlProperty(localName = "flink_version")
+
     private String flinkVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image")
+
+    @JacksonXmlProperty(localName = "image")
 
     private String image;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resume_checkpoint")
 
+    @JacksonXmlProperty(localName = "resume_checkpoint")
+
     private Boolean resumeCheckpoint;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resume_max_num")
+
+    @JacksonXmlProperty(localName = "resume_max_num")
 
     private Integer resumeMaxNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "checkpoint_path")
 
+    @JacksonXmlProperty(localName = "checkpoint_path")
+
     private String checkpointPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "runtime_config")
+
+    @JacksonXmlProperty(localName = "runtime_config")
 
     private String runtimeConfig;
 

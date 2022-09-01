@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.functiongraph.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,30 +14,42 @@ public class FuncVpc {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_name")
 
+    @JacksonXmlProperty(localName = "vpc_name")
+
     private String vpcName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_id")
+
+    @JacksonXmlProperty(localName = "vpc_id")
 
     private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subnet_name")
 
+    @JacksonXmlProperty(localName = "subnet_name")
+
     private String subnetName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subnet_id")
+
+    @JacksonXmlProperty(localName = "subnet_id")
 
     private String subnetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cidr")
 
+    @JacksonXmlProperty(localName = "cidr")
+
     private String cidr;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "gateway")
+
+    @JacksonXmlProperty(localName = "gateway")
 
     private String gateway;
 

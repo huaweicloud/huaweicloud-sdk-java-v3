@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,155 +22,217 @@ public class LoadBalancer {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
+
+    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "provisioning_status")
 
+    @JacksonXmlProperty(localName = "provisioning_status")
+
     private String provisioningStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "admin_state_up")
+
+    @JacksonXmlProperty(localName = "admin_state_up")
 
     private Boolean adminStateUp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "provider")
 
+    @JacksonXmlProperty(localName = "provider")
+
     private String provider;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pools")
+
+    @JacksonXmlProperty(localName = "pools")
 
     private List<PoolRef> pools = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "listeners")
 
+    @JacksonXmlProperty(localName = "listeners")
+
     private List<ListenerRef> listeners = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operating_status")
+
+    @JacksonXmlProperty(localName = "operating_status")
 
     private String operatingStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
+
+    @JacksonXmlProperty(localName = "project_id")
 
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vip_subnet_cidr_id")
 
+    @JacksonXmlProperty(localName = "vip_subnet_cidr_id")
+
     private String vipSubnetCidrId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vip_address")
+
+    @JacksonXmlProperty(localName = "vip_address")
 
     private String vipAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vip_port_id")
 
+    @JacksonXmlProperty(localName = "vip_port_id")
+
     private String vipPortId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
+
+    @JacksonXmlProperty(localName = "tags")
 
     private List<Tag> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
 
+    @JacksonXmlProperty(localName = "created_at")
+
     private String createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_at")
+
+    @JacksonXmlProperty(localName = "updated_at")
 
     private String updatedAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "guaranteed")
 
+    @JacksonXmlProperty(localName = "guaranteed")
+
     private Boolean guaranteed;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_id")
+
+    @JacksonXmlProperty(localName = "vpc_id")
 
     private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "eips")
 
+    @JacksonXmlProperty(localName = "eips")
+
     private List<EipInfo> eips = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ipv6_vip_address")
+
+    @JacksonXmlProperty(localName = "ipv6_vip_address")
 
     private String ipv6VipAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ipv6_vip_virsubnet_id")
 
+    @JacksonXmlProperty(localName = "ipv6_vip_virsubnet_id")
+
     private String ipv6VipVirsubnetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ipv6_vip_port_id")
+
+    @JacksonXmlProperty(localName = "ipv6_vip_port_id")
 
     private String ipv6VipPortId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "availability_zone_list")
 
+    @JacksonXmlProperty(localName = "availability_zone_list")
+
     private List<String> availabilityZoneList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
+
+    @JacksonXmlProperty(localName = "enterprise_project_id")
 
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "l4_flavor_id")
 
+    @JacksonXmlProperty(localName = "l4_flavor_id")
+
     private String l4FlavorId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "l4_scale_flavor_id")
+
+    @JacksonXmlProperty(localName = "l4_scale_flavor_id")
 
     private String l4ScaleFlavorId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "l7_flavor_id")
 
+    @JacksonXmlProperty(localName = "l7_flavor_id")
+
     private String l7FlavorId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "l7_scale_flavor_id")
+
+    @JacksonXmlProperty(localName = "l7_scale_flavor_id")
 
     private String l7ScaleFlavorId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publicips")
 
+    @JacksonXmlProperty(localName = "publicips")
+
     private List<PublicIpInfo> publicips = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "global_eips")
 
+    @JacksonXmlProperty(localName = "global_eips")
+
     private List<GlobalEipInfo> globalEips = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "elb_virsubnet_ids")
+
+    @JacksonXmlProperty(localName = "elb_virsubnet_ids")
 
     private List<String> elbVirsubnetIds = null;
 
@@ -253,40 +316,56 @@ public class LoadBalancer {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "elb_virsubnet_type")
 
+    @JacksonXmlProperty(localName = "elb_virsubnet_type")
+
     private ElbVirsubnetTypeEnum elbVirsubnetType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip_target_enable")
+
+    @JacksonXmlProperty(localName = "ip_target_enable")
 
     private Boolean ipTargetEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "frozen_scene")
 
+    @JacksonXmlProperty(localName = "frozen_scene")
+
     private String frozenScene;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ipv6_bandwidth")
+
+    @JacksonXmlProperty(localName = "ipv6_bandwidth")
 
     private BandwidthRef ipv6Bandwidth;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deletion_protection_enable")
 
+    @JacksonXmlProperty(localName = "deletion_protection_enable")
+
     private Boolean deletionProtectionEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "autoscaling")
+
+    @JacksonXmlProperty(localName = "autoscaling")
 
     private AutoscalingRef autoscaling;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "public_border_group")
 
+    @JacksonXmlProperty(localName = "public_border_group")
+
     private String publicBorderGroup;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "waf_failure_action")
+
+    @JacksonXmlProperty(localName = "waf_failure_action")
 
     private String wafFailureAction;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.css.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,20 +14,28 @@ public class RestoreSnapshotReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "targetCluster")
 
+    @JacksonXmlProperty(localName = "targetCluster")
+
     private String targetCluster;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "indices")
+
+    @JacksonXmlProperty(localName = "indices")
 
     private String indices;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "renamePattern")
 
+    @JacksonXmlProperty(localName = "renamePattern")
+
     private String renamePattern;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "renameReplacement")
+
+    @JacksonXmlProperty(localName = "renameReplacement")
 
     private String renameReplacement;
 

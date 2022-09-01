@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.csms.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class PageInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "next_marker")
 
+    @JacksonXmlProperty(localName = "next_marker")
+
     private String nextMarker;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "previous_marker")
 
+    @JacksonXmlProperty(localName = "previous_marker")
+
     private String previousMarker;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "current_count")
+
+    @JacksonXmlProperty(localName = "current_count")
 
     private Integer currentCount;
 

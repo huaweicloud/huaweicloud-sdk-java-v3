@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.drs.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,35 +14,49 @@ public class ConfigTransformationVo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "db_table_name")
 
+    @JacksonXmlProperty(localName = "db_table_name")
+
     private String dbTableName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "db_name")
+
+    @JacksonXmlProperty(localName = "db_name")
 
     private String dbName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "table_name")
 
+    @JacksonXmlProperty(localName = "table_name")
+
     private String tableName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "col_names")
+
+    @JacksonXmlProperty(localName = "col_names")
 
     private String colNames;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "prim_key_or_index")
 
+    @JacksonXmlProperty(localName = "prim_key_or_index")
+
     private String primKeyOrIndex;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "indexs")
 
+    @JacksonXmlProperty(localName = "indexs")
+
     private String indexs;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "values")
+
+    @JacksonXmlProperty(localName = "values")
 
     private String values;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.iam.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class Links {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "self")
 
+    @JacksonXmlProperty(localName = "self")
+
     private String self;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "previous")
 
+    @JacksonXmlProperty(localName = "previous")
+
     private String previous;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "next")
+
+    @JacksonXmlProperty(localName = "next")
 
     private String next;
 

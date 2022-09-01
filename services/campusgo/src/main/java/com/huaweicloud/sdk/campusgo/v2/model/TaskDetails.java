@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.time.OffsetDateTime;
 import java.util.Collections;
@@ -20,60 +21,84 @@ public class TaskDetails {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "creator")
 
+    @JacksonXmlProperty(localName = "creator")
+
     private String creator;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
+
+    @JacksonXmlProperty(localName = "project_id")
 
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
+    @JacksonXmlProperty(localName = "description")
+
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_name")
+
+    @JacksonXmlProperty(localName = "service_name")
 
     private String serviceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_version")
 
+    @JacksonXmlProperty(localName = "service_version")
+
     private String serviceVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_title")
+
+    @JacksonXmlProperty(localName = "service_title")
 
     private TaskDetailsServiceTitle serviceTitle;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "edge_pool_id")
 
+    @JacksonXmlProperty(localName = "edge_pool_id")
+
     private String edgePoolId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_order_id")
+
+    @JacksonXmlProperty(localName = "resource_order_id")
 
     private String resourceOrderId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
 
+    @JacksonXmlProperty(localName = "created_at")
+
     private OffsetDateTime createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_at")
+
+    @JacksonXmlProperty(localName = "updated_at")
 
     private OffsetDateTime updatedAt;
 
@@ -235,30 +260,42 @@ public class TaskDetails {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "state")
 
+    @JacksonXmlProperty(localName = "state")
+
     private StateEnum state;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
+
+    @JacksonXmlProperty(localName = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error")
 
+    @JacksonXmlProperty(localName = "error")
+
     private TaskDetailsError error;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "input")
+
+    @JacksonXmlProperty(localName = "input")
 
     private TaskInput input;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "output")
 
+    @JacksonXmlProperty(localName = "output")
+
     private TaskOutputForDisplay output;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_config")
+
+    @JacksonXmlProperty(localName = "service_config")
 
     private TaskServiceConfig serviceConfig;
 

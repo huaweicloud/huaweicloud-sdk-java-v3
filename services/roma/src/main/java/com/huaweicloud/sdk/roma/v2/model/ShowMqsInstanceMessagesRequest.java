@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.roma.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,65 +14,91 @@ public class ShowMqsInstanceMessagesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_id")
 
+    @JacksonXmlProperty(localName = "instance_id")
+
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "topic")
+
+    @JacksonXmlProperty(localName = "topic")
 
     private String topic;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "asc")
 
+    @JacksonXmlProperty(localName = "asc")
+
     private Boolean asc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
+
+    @JacksonXmlProperty(localName = "start_time")
 
     private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time")
 
+    @JacksonXmlProperty(localName = "end_time")
+
     private String endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
+
+    @JacksonXmlProperty(localName = "limit")
 
     private String limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
+    @JacksonXmlProperty(localName = "offset")
+
     private String offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "download")
+
+    @JacksonXmlProperty(localName = "download")
 
     private Boolean download;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "message_offset")
 
+    @JacksonXmlProperty(localName = "message_offset")
+
     private String messageOffset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "partition")
+
+    @JacksonXmlProperty(localName = "partition")
 
     private String partition;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key")
 
+    @JacksonXmlProperty(localName = "key")
+
     private String key;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "message_id")
 
+    @JacksonXmlProperty(localName = "message_id")
+
     private String messageId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tag")
+
+    @JacksonXmlProperty(localName = "tag")
 
     private String tag;
 

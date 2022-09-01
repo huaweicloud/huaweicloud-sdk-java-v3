@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.res.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,20 +14,28 @@ public class CustomizeParameter {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alias")
 
+    @JacksonXmlProperty(localName = "alias")
+
     private String alias;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "behavior_type")
+
+    @JacksonXmlProperty(localName = "behavior_type")
 
     private String behaviorType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "threshold")
 
+    @JacksonXmlProperty(localName = "threshold")
+
     private Double threshold;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deduplication")
+
+    @JacksonXmlProperty(localName = "deduplication")
 
     private String deduplication;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.waf.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,30 +17,42 @@ public class ListRequestTimelineRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
+    @JacksonXmlProperty(localName = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "from")
+
+    @JacksonXmlProperty(localName = "from")
 
     private Long from;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "to")
 
+    @JacksonXmlProperty(localName = "to")
+
     private Long to;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hosts")
+
+    @JacksonXmlProperty(localName = "hosts")
 
     private List<String> hosts = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instances")
 
+    @JacksonXmlProperty(localName = "instances")
+
     private List<String> instances = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_by")
+
+    @JacksonXmlProperty(localName = "group_by")
 
     private String groupBy;
 
@@ -116,7 +129,7 @@ public class ListRequestTimelineRequest {
     }
 
     /**
-     * 域名id数组，通过查询云模式防护域名列表（ListHost）获取域名id或者通过独享模式域名列表（ListPremiumHost）获取域名id。默认不传，查询该项目下所有防护域名的top业务异常统计信息。当有需要传多个域名时，传参参考请求示例。
+     * 域名id，通过查询云模式防护域名列表（ListHost）获取域名id或者通过独享模式域名列表（ListPremiumHost）获取域名id。默认不传，查询该项目下所有防护域名的top业务异常统计信息。
      * @return hosts
      */
     public List<String> getHosts() {
@@ -149,7 +162,7 @@ public class ListRequestTimelineRequest {
     }
 
     /**
-     * 要查询引擎实例列表
+     * 要查询引擎实例id
      * @return instances
      */
     public List<String> getInstances() {

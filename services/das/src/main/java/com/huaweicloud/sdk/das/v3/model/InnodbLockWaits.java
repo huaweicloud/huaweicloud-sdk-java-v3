@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.das.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,20 +14,28 @@ public class InnodbLockWaits {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "requesting_trx_id")
 
+    @JacksonXmlProperty(localName = "requesting_trx_id")
+
     private String requestingTrxId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "requested_lock_id")
+
+    @JacksonXmlProperty(localName = "requested_lock_id")
 
     private String requestedLockId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "blocking_trx_id")
 
+    @JacksonXmlProperty(localName = "blocking_trx_id")
+
     private String blockingTrxId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "blocking_lock_id")
+
+    @JacksonXmlProperty(localName = "blocking_lock_id")
 
     private String blockingLockId;
 

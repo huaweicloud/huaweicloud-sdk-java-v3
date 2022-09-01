@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.functiongraph.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,10 +17,14 @@ public class MountConfig {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mount_user")
 
+    @JacksonXmlProperty(localName = "mount_user")
+
     private MountUser mountUser;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "func_mounts")
+
+    @JacksonXmlProperty(localName = "func_mounts")
 
     private List<FuncMount> funcMounts = null;
 

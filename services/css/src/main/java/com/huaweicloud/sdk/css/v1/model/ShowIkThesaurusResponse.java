@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.css.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -14,50 +15,70 @@ public class ShowIkThesaurusResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bucket")
+
+    @JacksonXmlProperty(localName = "bucket")
 
     private String bucket;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mainObj")
 
+    @JacksonXmlProperty(localName = "mainObj")
+
     private String mainObj;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stopObj")
+
+    @JacksonXmlProperty(localName = "stopObj")
 
     private String stopObj;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "synonymObj")
 
+    @JacksonXmlProperty(localName = "synonymObj")
+
     private String synonymObj;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updateTime")
+
+    @JacksonXmlProperty(localName = "updateTime")
 
     private String updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updateDetails")
 
+    @JacksonXmlProperty(localName = "updateDetails")
+
     private String updateDetails;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "clusterId")
+
+    @JacksonXmlProperty(localName = "clusterId")
 
     private String clusterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operateStatus")
 
+    @JacksonXmlProperty(localName = "operateStatus")
+
     private String operateStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
+
+    @JacksonXmlProperty(localName = "id")
 
     private String id;
 

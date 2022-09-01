@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -88,6 +89,8 @@ public class SqlConvertReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_db_type")
+
+    @JacksonXmlProperty(localName = "source_db_type")
 
     private SourceDbTypeEnum sourceDbType;
 
@@ -182,6 +185,8 @@ public class SqlConvertReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_db_type")
+
+    @JacksonXmlProperty(localName = "target_db_type")
 
     private TargetDbTypeEnum targetDbType;
 
@@ -283,10 +288,14 @@ public class SqlConvertReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_db_version")
 
+    @JacksonXmlProperty(localName = "target_db_version")
+
     private TargetDbVersionEnum targetDbVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sql_statement")
+
+    @JacksonXmlProperty(localName = "sql_statement")
 
     private String sqlStatement;
 

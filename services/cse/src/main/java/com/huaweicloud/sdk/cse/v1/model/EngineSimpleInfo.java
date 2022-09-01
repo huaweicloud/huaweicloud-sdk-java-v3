@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,20 +22,28 @@ public class EngineSimpleInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterpris_project_id")
 
+    @JacksonXmlProperty(localName = "enterpris_project_id")
+
     private String enterprisProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_name")
+
+    @JacksonXmlProperty(localName = "enterprise_project_name")
 
     private String enterpriseProjectName;
 
@@ -118,10 +127,14 @@ public class EngineSimpleInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
+    @JacksonXmlProperty(localName = "type")
+
     private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
+
+    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
@@ -217,10 +230,14 @@ public class EngineSimpleInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flavor")
 
+    @JacksonXmlProperty(localName = "flavor")
+
     private FlavorEnum flavor;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "payment")
+
+    @JacksonXmlProperty(localName = "payment")
 
     private String payment;
 
@@ -303,6 +320,8 @@ public class EngineSimpleInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auth_type")
+
+    @JacksonXmlProperty(localName = "auth_type")
 
     private AuthTypeEnum authType;
 
@@ -446,65 +465,91 @@ public class EngineSimpleInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "external_address")
+
+    @JacksonXmlProperty(localName = "external_address")
 
     private String externalAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_endpoint")
 
+    @JacksonXmlProperty(localName = "service_endpoint")
+
     private Map<String, EntrypointItem> serviceEndpoint = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "public_address")
+
+    @JacksonXmlProperty(localName = "public_address")
 
     private String publicAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "public_service_endpoint")
 
+    @JacksonXmlProperty(localName = "public_service_endpoint")
+
     private Map<String, EntrypointItem> publicServiceEndpoint = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_instance")
+
+    @JacksonXmlProperty(localName = "total_instance")
 
     private Integer totalInstance;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "used_instance")
 
+    @JacksonXmlProperty(localName = "used_instance")
+
     private Integer usedInstance;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "available_instance")
+
+    @JacksonXmlProperty(localName = "available_instance")
 
     private Integer availableInstance;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
 
+    @JacksonXmlProperty(localName = "version")
+
     private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "latest_version")
+
+    @JacksonXmlProperty(localName = "latest_version")
 
     private String latestVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
+    @JacksonXmlProperty(localName = "create_time")
+
     private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "due_to")
 
+    @JacksonXmlProperty(localName = "due_to")
+
     private Long dueTo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "latest_job_id")
+
+    @JacksonXmlProperty(localName = "latest_job_id")
 
     private Integer latestJobId;
 
@@ -600,6 +645,8 @@ public class EngineSimpleInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "engine_additional_actions")
 
+    @JacksonXmlProperty(localName = "engine_additional_actions")
+
     private List<EngineAdditionalActionsEnum> engineAdditionalActions = null;
 
     /**
@@ -688,10 +735,14 @@ public class EngineSimpleInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "spec_type")
 
+    @JacksonXmlProperty(localName = "spec_type")
+
     private SpecTypeEnum specType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "reference")
+
+    @JacksonXmlProperty(localName = "reference")
 
     private EngineReference reference;
 

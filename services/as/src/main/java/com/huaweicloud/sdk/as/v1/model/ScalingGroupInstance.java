@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.time.OffsetDateTime;
 import java.util.Collections;
@@ -19,20 +20,28 @@ public class ScalingGroupInstance {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_id")
 
+    @JacksonXmlProperty(localName = "instance_id")
+
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_name")
+
+    @JacksonXmlProperty(localName = "instance_name")
 
     private String instanceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scaling_group_id")
 
+    @JacksonXmlProperty(localName = "scaling_group_id")
+
     private String scalingGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scaling_group_name")
+
+    @JacksonXmlProperty(localName = "scaling_group_name")
 
     private String scalingGroupName;
 
@@ -134,6 +143,8 @@ public class ScalingGroupInstance {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "life_cycle_state")
 
+    @JacksonXmlProperty(localName = "life_cycle_state")
+
     private LifeCycleStateEnum lifeCycleState;
 
     /**
@@ -222,25 +233,35 @@ public class ScalingGroupInstance {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "health_status")
 
+    @JacksonXmlProperty(localName = "health_status")
+
     private HealthStatusEnum healthStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scaling_configuration_name")
+
+    @JacksonXmlProperty(localName = "scaling_configuration_name")
 
     private String scalingConfigurationName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scaling_configuration_id")
 
+    @JacksonXmlProperty(localName = "scaling_configuration_id")
+
     private String scalingConfigurationId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
+    @JacksonXmlProperty(localName = "create_time")
+
     private OffsetDateTime createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protect_from_scaling_down")
+
+    @JacksonXmlProperty(localName = "protect_from_scaling_down")
 
     private Boolean protectFromScalingDown;
 

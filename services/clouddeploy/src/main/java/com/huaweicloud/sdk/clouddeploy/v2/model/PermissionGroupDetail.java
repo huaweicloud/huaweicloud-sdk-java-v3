@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.clouddeploy.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,25 +14,35 @@ public class PermissionGroupDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "can_view")
 
+    @JacksonXmlProperty(localName = "can_view")
+
     private Boolean canView;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "can_edit")
+
+    @JacksonXmlProperty(localName = "can_edit")
 
     private Boolean canEdit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "can_delete")
 
+    @JacksonXmlProperty(localName = "can_delete")
+
     private Boolean canDelete;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "can_add_host")
 
+    @JacksonXmlProperty(localName = "can_add_host")
+
     private Boolean canAddHost;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "can_manage")
+
+    @JacksonXmlProperty(localName = "can_manage")
 
     private Boolean canManage;
 

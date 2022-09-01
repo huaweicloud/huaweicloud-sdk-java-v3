@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ddm.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class ReduceRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "node_number")
 
+    @JacksonXmlProperty(localName = "node_number")
+
     private Integer nodeNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_id")
+
+    @JacksonXmlProperty(localName = "group_id")
 
     private String groupId;
 

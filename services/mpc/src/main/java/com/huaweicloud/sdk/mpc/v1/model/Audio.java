@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -101,25 +102,35 @@ public class Audio {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "output_policy")
 
+    @JacksonXmlProperty(localName = "output_policy")
+
     private OutputPolicyEnum outputPolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "codec")
+
+    @JacksonXmlProperty(localName = "codec")
 
     private Integer codec;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sample_rate")
 
+    @JacksonXmlProperty(localName = "sample_rate")
+
     private Integer sampleRate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bitrate")
 
+    @JacksonXmlProperty(localName = "bitrate")
+
     private Integer bitrate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "channels")
+
+    @JacksonXmlProperty(localName = "channels")
 
     private Integer channels;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ecs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -18,115 +19,161 @@ public class PostPaidServer {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auto_terminate_time")
 
+    @JacksonXmlProperty(localName = "auto_terminate_time")
+
     private String autoTerminateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "adminPass")
+
+    @JacksonXmlProperty(localName = "adminPass")
 
     private String adminPass;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "availability_zone")
 
+    @JacksonXmlProperty(localName = "availability_zone")
+
     private String availabilityZone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "batch_create_in_multi_az")
+
+    @JacksonXmlProperty(localName = "batch_create_in_multi_az")
 
     private Boolean batchCreateInMultiAz;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "count")
 
+    @JacksonXmlProperty(localName = "count")
+
     private Integer count;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_volumes")
+
+    @JacksonXmlProperty(localName = "data_volumes")
 
     private List<PostPaidServerDataVolume> dataVolumes = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extendparam")
 
+    @JacksonXmlProperty(localName = "extendparam")
+
     private PostPaidServerExtendParam extendparam;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flavorRef")
+
+    @JacksonXmlProperty(localName = "flavorRef")
 
     private String flavorRef;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "imageRef")
 
+    @JacksonXmlProperty(localName = "imageRef")
+
     private String imageRef;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "isAutoRename")
+
+    @JacksonXmlProperty(localName = "isAutoRename")
 
     private Boolean isAutoRename;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key_name")
 
+    @JacksonXmlProperty(localName = "key_name")
+
     private String keyName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metadata")
+
+    @JacksonXmlProperty(localName = "metadata")
 
     private Map<String, String> metadata = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nics")
+
+    @JacksonXmlProperty(localName = "nics")
 
     private List<PostPaidServerNic> nics = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os:scheduler_hints")
 
+    @JacksonXmlProperty(localName = "os:scheduler_hints")
+
     private PostPaidServerSchedulerHints osSchedulerHints;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publicip")
+
+    @JacksonXmlProperty(localName = "publicip")
 
     private PostPaidServerPublicip publicip;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "root_volume")
 
+    @JacksonXmlProperty(localName = "root_volume")
+
     private PostPaidServerRootVolume rootVolume;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_groups")
+
+    @JacksonXmlProperty(localName = "security_groups")
 
     private List<PostPaidServerSecurityGroup> securityGroups = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "server_tags")
 
+    @JacksonXmlProperty(localName = "server_tags")
+
     private List<PostPaidServerTag> serverTags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
+
+    @JacksonXmlProperty(localName = "tags")
 
     private List<String> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_data")
 
+    @JacksonXmlProperty(localName = "user_data")
+
     private String userData;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpcid")
 
+    @JacksonXmlProperty(localName = "vpcid")
+
     private String vpcid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
+
+    @JacksonXmlProperty(localName = "description")
 
     private String description;
 

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
@@ -22,20 +23,28 @@ public class NetworkInstance {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
+    @JacksonXmlProperty(localName = "description")
+
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_id")
+
+    @JacksonXmlProperty(localName = "domain_id")
 
     private String domainId;
 
@@ -113,20 +122,26 @@ public class NetworkInstance {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
+
+    @JacksonXmlProperty(localName = "created_at")
 
     private OffsetDateTime createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_at")
 
+    @JacksonXmlProperty(localName = "updated_at")
+
     private OffsetDateTime updatedAt;
 
     /**
-     * 网络实例的类型。 - VPC：虚拟私有云。 - VGW：虚拟网关。 - ER：企业路由器。
+     * 网络实例的类型。 - VPC：虚拟私有云。 - VGW：虚拟网关。
      */
     public static final class TypeEnum {
 
@@ -140,18 +155,12 @@ public class NetworkInstance {
          */
         public static final TypeEnum VGW = new TypeEnum("vgw");
 
-        /**
-         * Enum ER for value: "er"
-         */
-        public static final TypeEnum ER = new TypeEnum("er");
-
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TypeEnum> createStaticFields() {
             Map<String, TypeEnum> map = new HashMap<>();
             map.put("vpc", VPC);
             map.put("vgw", VGW);
-            map.put("er", ER);
             return Collections.unmodifiableMap(map);
         }
 
@@ -211,35 +220,49 @@ public class NetworkInstance {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
+    @JacksonXmlProperty(localName = "type")
+
     private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cloud_connection_id")
+
+    @JacksonXmlProperty(localName = "cloud_connection_id")
 
     private String cloudConnectionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_id")
 
+    @JacksonXmlProperty(localName = "instance_id")
+
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_domain_id")
+
+    @JacksonXmlProperty(localName = "instance_domain_id")
 
     private String instanceDomainId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region_id")
 
+    @JacksonXmlProperty(localName = "region_id")
+
     private String regionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
 
+    @JacksonXmlProperty(localName = "project_id")
+
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cidrs")
+
+    @JacksonXmlProperty(localName = "cidrs")
 
     private List<String> cidrs = null;
 
@@ -368,7 +391,7 @@ public class NetworkInstance {
     }
 
     /**
-     * 网络实例的类型。 - VPC：虚拟私有云。 - VGW：虚拟网关。 - ER：企业路由器。
+     * 网络实例的类型。 - VPC：虚拟私有云。 - VGW：虚拟网关。
      * @return type
      */
     public TypeEnum getType() {
@@ -486,7 +509,7 @@ public class NetworkInstance {
     }
 
     /**
-     * 网络实例发布的网段路由列表，ER场景此字段为空。
+     * 网络实例发布的网段路由列表。
      * @return cidrs
      */
     public List<String> getCidrs() {

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -19,10 +20,14 @@ public class Spec {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private Long id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "engine_id")
+
+    @JacksonXmlProperty(localName = "engine_id")
 
     private String engineId;
 
@@ -112,40 +117,56 @@ public class Spec {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "spec_type")
 
+    @JacksonXmlProperty(localName = "spec_type")
+
     private SpecTypeEnum specType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cluster")
+
+    @JacksonXmlProperty(localName = "cluster")
 
     private String cluster;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cluster_id")
 
+    @JacksonXmlProperty(localName = "cluster_id")
+
     private String clusterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cluster_nodes")
+
+    @JacksonXmlProperty(localName = "cluster_nodes")
 
     private SpecClusterNode clusterNodes;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flavor")
 
+    @JacksonXmlProperty(localName = "flavor")
+
     private String flavor;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region")
+
+    @JacksonXmlProperty(localName = "region")
 
     private String region;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
 
+    @JacksonXmlProperty(localName = "version")
+
     private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extend_param")
+
+    @JacksonXmlProperty(localName = "extend_param")
 
     private String extendParam;
 

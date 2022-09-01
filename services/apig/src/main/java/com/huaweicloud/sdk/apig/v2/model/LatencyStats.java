@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.apig.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class LatencyStats {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_latency")
 
+    @JacksonXmlProperty(localName = "max_latency")
+
     private Integer maxLatency;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "avg_latency")
+
+    @JacksonXmlProperty(localName = "avg_latency")
 
     private Float avgLatency;
 

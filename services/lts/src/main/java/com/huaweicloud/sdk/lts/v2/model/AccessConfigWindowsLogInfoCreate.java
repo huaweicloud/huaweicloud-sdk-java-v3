@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -110,10 +111,14 @@ public class AccessConfigWindowsLogInfoCreate {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "categorys")
 
+    @JacksonXmlProperty(localName = "categorys")
+
     private List<CategorysEnum> categorys = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time_offset")
+
+    @JacksonXmlProperty(localName = "time_offset")
 
     private AccessConfigTimeOffsetCreate timeOffset;
 
@@ -214,6 +219,8 @@ public class AccessConfigWindowsLogInfoCreate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_level")
+
+    @JacksonXmlProperty(localName = "event_level")
 
     private List<EventLevelEnum> eventLevel = null;
 

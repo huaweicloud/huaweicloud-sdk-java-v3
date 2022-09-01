@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.gsl.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,20 +14,28 @@ public class ListSimPricePlansRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sim_card_id")
 
+    @JacksonXmlProperty(localName = "sim_card_id")
+
     private Long simCardId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "real_time")
+
+    @JacksonXmlProperty(localName = "real_time")
 
     private Boolean realTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
+    @JacksonXmlProperty(localName = "limit")
+
     private Long limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
+
+    @JacksonXmlProperty(localName = "offset")
 
     private Long offset;
 

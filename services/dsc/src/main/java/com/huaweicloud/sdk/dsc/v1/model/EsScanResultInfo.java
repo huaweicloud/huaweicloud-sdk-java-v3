@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.dsc.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,35 +17,49 @@ public class EsScanResultInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_id")
 
+    @JacksonXmlProperty(localName = "task_id")
+
     private String taskId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "index_name")
+
+    @JacksonXmlProperty(localName = "index_name")
 
     private String indexName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type_id")
 
+    @JacksonXmlProperty(localName = "type_id")
+
     private String typeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type_name")
+
+    @JacksonXmlProperty(localName = "type_name")
 
     private String typeName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "risk_level")
 
+    @JacksonXmlProperty(localName = "risk_level")
+
     private Integer riskLevel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sensitive_data_type")
 
+    @JacksonXmlProperty(localName = "sensitive_data_type")
+
     private List<String> sensitiveDataType = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "match_info")
+
+    @JacksonXmlProperty(localName = "match_info")
 
     private List<EsMatchInfo> matchInfo = null;
 

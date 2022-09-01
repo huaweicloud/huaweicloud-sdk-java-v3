@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ief.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,10 +17,14 @@ public class AffinityPodAntiAffinity {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "preferredDuringSchedulingIgnoredDuringExecution")
 
+    @JacksonXmlProperty(localName = "preferredDuringSchedulingIgnoredDuringExecution")
+
     private List<WeightPodAffinityTerms> preferredDuringSchedulingIgnoredDuringExecution = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "requiredDuringSchedulingIgnoredDuringExecution")
+
+    @JacksonXmlProperty(localName = "requiredDuringSchedulingIgnoredDuringExecution")
 
     private List<PodAffinityTerm> requiredDuringSchedulingIgnoredDuringExecution = null;
 

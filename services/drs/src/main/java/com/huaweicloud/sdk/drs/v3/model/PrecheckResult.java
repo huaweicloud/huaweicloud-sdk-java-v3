@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -20,6 +21,8 @@ public class PrecheckResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "item")
+
+    @JacksonXmlProperty(localName = "item")
 
     private String item;
 
@@ -109,30 +112,42 @@ public class PrecheckResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "result")
 
+    @JacksonXmlProperty(localName = "result")
+
     private ResultEnum result;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "failed_reason")
+
+    @JacksonXmlProperty(localName = "failed_reason")
 
     private String failedReason;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
+    @JacksonXmlProperty(localName = "data")
+
     private String data;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "raw_error_msg")
+
+    @JacksonXmlProperty(localName = "raw_error_msg")
 
     private String rawErrorMsg;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group")
 
+    @JacksonXmlProperty(localName = "group")
+
     private String group;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "failed_sub_jobs")
+
+    @JacksonXmlProperty(localName = "failed_sub_jobs")
 
     private List<PrecheckFailSubJobVO> failedSubJobs = null;
 

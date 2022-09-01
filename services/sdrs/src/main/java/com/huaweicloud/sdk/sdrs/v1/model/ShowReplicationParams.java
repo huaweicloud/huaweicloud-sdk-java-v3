@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,75 +22,105 @@ public class ShowReplicationParams {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
+    @JacksonXmlProperty(localName = "description")
+
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
+
+    @JacksonXmlProperty(localName = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volume_ids")
 
+    @JacksonXmlProperty(localName = "volume_ids")
+
     private String volumeIds;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "attachment")
+
+    @JacksonXmlProperty(localName = "attachment")
 
     private List<ReplicationAttachment> attachment = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
 
+    @JacksonXmlProperty(localName = "created_at")
+
     private String createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_at")
+
+    @JacksonXmlProperty(localName = "updated_at")
 
     private String updatedAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "replication_model")
 
+    @JacksonXmlProperty(localName = "replication_model")
+
     private String replicationModel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "progress")
+
+    @JacksonXmlProperty(localName = "progress")
 
     private Integer progress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "failure_detail")
 
+    @JacksonXmlProperty(localName = "failure_detail")
+
     private String failureDetail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "record_metadata")
+
+    @JacksonXmlProperty(localName = "record_metadata")
 
     private ReplicationRecordMetadata recordMetadata;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fault_level")
 
+    @JacksonXmlProperty(localName = "fault_level")
+
     private String faultLevel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "server_group_id")
 
+    @JacksonXmlProperty(localName = "server_group_id")
+
     private String serverGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "priority_station")
+
+    @JacksonXmlProperty(localName = "priority_station")
 
     private String priorityStation;
 
@@ -184,6 +215,8 @@ public class ShowReplicationParams {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "replication_status")
+
+    @JacksonXmlProperty(localName = "replication_status")
 
     private ReplicationStatusEnum replicationStatus;
 

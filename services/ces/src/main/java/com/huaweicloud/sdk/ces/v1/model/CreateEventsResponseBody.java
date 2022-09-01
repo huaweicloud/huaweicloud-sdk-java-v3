@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ces.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class CreateEventsResponseBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_id")
 
+    @JacksonXmlProperty(localName = "event_id")
+
     private String eventId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_name")
+
+    @JacksonXmlProperty(localName = "event_name")
 
     private String eventName;
 

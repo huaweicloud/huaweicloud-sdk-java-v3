@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,45 +19,63 @@ public class NovaListServersDetailsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "changes-since")
 
+    @JacksonXmlProperty(localName = "changes-since")
+
     private String changesSince;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flavor")
+
+    @JacksonXmlProperty(localName = "flavor")
 
     private String flavor;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image")
 
+    @JacksonXmlProperty(localName = "image")
+
     private String image;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip")
+
+    @JacksonXmlProperty(localName = "ip")
 
     private String ip;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
+    @JacksonXmlProperty(localName = "limit")
+
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "marker")
+
+    @JacksonXmlProperty(localName = "marker")
 
     private String marker;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "not-tags")
 
+    @JacksonXmlProperty(localName = "not-tags")
+
     private String notTags;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "reservation_id")
+
+    @JacksonXmlProperty(localName = "reservation_id")
 
     private String reservationId;
 
@@ -193,6 +212,8 @@ public class NovaListServersDetailsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sort_key")
+
+    @JacksonXmlProperty(localName = "sort_key")
 
     private SortKeyEnum sortKey;
 
@@ -348,15 +369,21 @@ public class NovaListServersDetailsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
+    @JacksonXmlProperty(localName = "tags")
+
     private String tags;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "OpenStack-API-Version")
+
+    @JacksonXmlProperty(localName = "OpenStack-API-Version")
 
     private String openStackAPIVersion;
 

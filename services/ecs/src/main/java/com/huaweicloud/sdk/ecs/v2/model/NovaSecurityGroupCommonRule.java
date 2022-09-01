@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ecs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,35 +15,49 @@ public class NovaSecurityGroupCommonRule {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "from_port")
 
+    @JacksonXmlProperty(localName = "from_port")
+
     private Integer fromPort;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group")
+
+    @JacksonXmlProperty(localName = "group")
 
     private NovaSecurityGroupCommonGroup group;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip_protocol")
+
+    @JacksonXmlProperty(localName = "ip_protocol")
 
     private String ipProtocol;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip_range")
 
+    @JacksonXmlProperty(localName = "ip_range")
+
     private NovaSecurityGroupCommonIpRange ipRange;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parent_group_id")
 
+    @JacksonXmlProperty(localName = "parent_group_id")
+
     private String parentGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "to_port")
+
+    @JacksonXmlProperty(localName = "to_port")
 
     private Integer toPort;
 

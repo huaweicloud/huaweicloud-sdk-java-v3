@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.servicestage.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,60 +15,84 @@ public class ComponentView {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "application_id")
+
+    @JacksonXmlProperty(localName = "application_id")
 
     private String applicationId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "runtime")
+
+    @JacksonXmlProperty(localName = "runtime")
 
     private RuntimeType runtime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "category")
 
+    @JacksonXmlProperty(localName = "category")
+
     private ComponentCategory category;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sub_category")
+
+    @JacksonXmlProperty(localName = "sub_category")
 
     private ComponentSubCategory subCategory;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
+    @JacksonXmlProperty(localName = "description")
+
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
+
+    @JacksonXmlProperty(localName = "status")
 
     private Integer status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source")
 
+    @JacksonXmlProperty(localName = "source")
+
     private SourceObject source;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "creator")
+
+    @JacksonXmlProperty(localName = "creator")
 
     private String creator;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
+    @JacksonXmlProperty(localName = "create_time")
+
     private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
+
+    @JacksonXmlProperty(localName = "update_time")
 
     private Long updateTime;
 

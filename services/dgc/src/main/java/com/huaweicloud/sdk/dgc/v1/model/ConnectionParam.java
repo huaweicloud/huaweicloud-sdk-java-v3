@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -17,6 +18,8 @@ public class ConnectionParam {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
@@ -124,10 +127,14 @@ public class ConnectionParam {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "connectionType")
 
+    @JacksonXmlProperty(localName = "connectionType")
+
     private ConnectionTypeEnum connectionType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "params")
+
+    @JacksonXmlProperty(localName = "params")
 
     private Object params;
 

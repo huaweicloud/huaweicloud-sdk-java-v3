@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.mpc.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class TracksInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "channel_layout")
 
+    @JacksonXmlProperty(localName = "channel_layout")
+
     private String channelLayout;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "language")
+
+    @JacksonXmlProperty(localName = "language")
 
     private String language;
 

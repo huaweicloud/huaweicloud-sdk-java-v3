@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.mpc.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,25 +17,35 @@ public class MultiConcatInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "inputs")
 
+    @JacksonXmlProperty(localName = "inputs")
+
     private List<ObsObjInfo> inputs = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trans_template_ids")
+
+    @JacksonXmlProperty(localName = "trans_template_ids")
 
     private List<Integer> transTemplateIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "av_parameters")
 
+    @JacksonXmlProperty(localName = "av_parameters")
+
     private List<AvParameters> avParameters = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "output")
 
+    @JacksonXmlProperty(localName = "output")
+
     private ObsObjInfo output;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image_watermark_settings")
+
+    @JacksonXmlProperty(localName = "image_watermark_settings")
 
     private List<ImageWatermarkSetting> imageWatermarkSettings = null;
 

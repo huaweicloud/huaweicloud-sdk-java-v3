@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.codehub.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,50 +15,70 @@ public class AddProtectResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "commit")
+
+    @JacksonXmlProperty(localName = "commit")
 
     private CommitRepoV2 commit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protected")
 
+    @JacksonXmlProperty(localName = "protected")
+
     private Boolean _protected;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "developers_can_push")
+
+    @JacksonXmlProperty(localName = "developers_can_push")
 
     private Boolean developersCanPush;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "developers_can_merge")
 
+    @JacksonXmlProperty(localName = "developers_can_merge")
+
     private Boolean developersCanMerge;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "master_can_push")
+
+    @JacksonXmlProperty(localName = "master_can_push")
 
     private Boolean masterCanPush;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "master_can_merge")
 
+    @JacksonXmlProperty(localName = "master_can_merge")
+
     private Boolean masterCanMerge;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "no_one_can_push")
+
+    @JacksonXmlProperty(localName = "no_one_can_push")
 
     private Boolean noOneCanPush;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "no_one_can_merge")
 
+    @JacksonXmlProperty(localName = "no_one_can_merge")
+
     private Boolean noOneCanMerge;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "in_an_opened_merge_request")
+
+    @JacksonXmlProperty(localName = "in_an_opened_merge_request")
 
     private Boolean inAnOpenedMergeRequest;
 

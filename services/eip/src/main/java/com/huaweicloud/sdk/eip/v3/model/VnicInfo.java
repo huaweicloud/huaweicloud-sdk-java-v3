@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.eip.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,55 +14,77 @@ public class VnicInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "private_ip_address")
 
+    @JacksonXmlProperty(localName = "private_ip_address")
+
     private String privateIpAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "device_id")
+
+    @JacksonXmlProperty(localName = "device_id")
 
     private String deviceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "device_owner")
 
+    @JacksonXmlProperty(localName = "device_owner")
+
     private String deviceOwner;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_id")
+
+    @JacksonXmlProperty(localName = "vpc_id")
 
     private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "port_id")
 
+    @JacksonXmlProperty(localName = "port_id")
+
     private String portId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "port_profile")
+
+    @JacksonXmlProperty(localName = "port_profile")
 
     private String portProfile;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mac")
 
+    @JacksonXmlProperty(localName = "mac")
+
     private String mac;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vtep")
+
+    @JacksonXmlProperty(localName = "vtep")
 
     private String vtep;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vni")
 
+    @JacksonXmlProperty(localName = "vni")
+
     private String vni;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_id")
 
+    @JacksonXmlProperty(localName = "instance_id")
+
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_type")
+
+    @JacksonXmlProperty(localName = "instance_type")
 
     private String instanceType;
 

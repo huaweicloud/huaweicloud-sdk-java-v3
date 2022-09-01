@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.rds.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -17,15 +18,21 @@ public class ShowInformationAboutDatabaseProxyResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "proxy")
 
+    @JacksonXmlProperty(localName = "proxy")
+
     private Proxy proxy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "master_instance")
 
+    @JacksonXmlProperty(localName = "master_instance")
+
     private MasterInstance masterInstance;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "readonly_instances")
+
+    @JacksonXmlProperty(localName = "readonly_instances")
 
     private List<ReadonlyInstances> readonlyInstances = null;
 

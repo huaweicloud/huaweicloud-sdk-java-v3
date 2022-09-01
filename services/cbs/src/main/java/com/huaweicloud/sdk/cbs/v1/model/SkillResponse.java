@@ -13,6 +13,8 @@ import com.huaweicloud.sdk.cbs.v1.model.Frame;
 import com.huaweicloud.sdk.cbs.v1.model.RelatedIntention;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -26,6 +28,7 @@ public class SkillResponse  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="skill_id")
     
+    @JacksonXmlProperty(localName = "skill_id")
     
     private String skillId;
 
@@ -33,6 +36,7 @@ public class SkillResponse  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="skill_version")
     
+    @JacksonXmlProperty(localName = "skill_version")
     
     private String skillVersion;
 
@@ -40,6 +44,7 @@ public class SkillResponse  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="frame")
     
+    @JacksonXmlProperty(localName = "frame")
     
     private Frame frame;
 
@@ -47,6 +52,7 @@ public class SkillResponse  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="candidate")
     
+    @JacksonXmlProperty(localName = "candidate")
     
     private CandidateIntention candidate;
 
@@ -54,6 +60,7 @@ public class SkillResponse  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="locked")
     
+    @JacksonXmlProperty(localName = "locked")
     
     private Boolean locked;
 
@@ -61,6 +68,7 @@ public class SkillResponse  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="related_intenions")
     
+    @JacksonXmlProperty(localName = "related_intenions")
     
     private List<RelatedIntention> relatedIntenions = null;
     

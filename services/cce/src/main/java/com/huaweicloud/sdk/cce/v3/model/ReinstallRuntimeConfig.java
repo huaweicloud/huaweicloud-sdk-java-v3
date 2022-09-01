@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cce.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,10 +15,14 @@ public class ReinstallRuntimeConfig {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dockerBaseSize")
 
+    @JacksonXmlProperty(localName = "dockerBaseSize")
+
     private Integer dockerBaseSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "runtime")
+
+    @JacksonXmlProperty(localName = "runtime")
 
     private Runtime runtime;
 

@@ -8,6 +8,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -21,6 +23,7 @@ public class DedicatedComputeInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vcpus_total")
     
+    @JacksonXmlProperty(localName = "vcpus_total")
     
     private Integer vcpusTotal;
 
@@ -28,6 +31,7 @@ public class DedicatedComputeInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vcpus_used")
     
+    @JacksonXmlProperty(localName = "vcpus_used")
     
     private Integer vcpusUsed;
 
@@ -35,6 +39,7 @@ public class DedicatedComputeInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ram_total")
     
+    @JacksonXmlProperty(localName = "ram_total")
     
     private Integer ramTotal;
 
@@ -42,6 +47,7 @@ public class DedicatedComputeInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ram_used")
     
+    @JacksonXmlProperty(localName = "ram_used")
     
     private Integer ramUsed;
 
@@ -49,6 +55,7 @@ public class DedicatedComputeInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="spec_code")
     
+    @JacksonXmlProperty(localName = "spec_code")
     
     private String specCode;
 
@@ -56,6 +63,7 @@ public class DedicatedComputeInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="host_num")
     
+    @JacksonXmlProperty(localName = "host_num")
     
     private Integer hostNum;
 

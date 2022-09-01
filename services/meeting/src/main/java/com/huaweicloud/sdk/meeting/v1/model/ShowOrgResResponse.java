@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -14,35 +15,49 @@ public class ShowOrgResResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "usedRecStorage")
 
+    @JacksonXmlProperty(localName = "usedRecStorage")
+
     private Double usedRecStorage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "usedAccountsCount")
+
+    @JacksonXmlProperty(localName = "usedAccountsCount")
 
     private Integer usedAccountsCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "usedLiveCount")
 
+    @JacksonXmlProperty(localName = "usedLiveCount")
+
     private Integer usedLiveCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confCount")
+
+    @JacksonXmlProperty(localName = "confCount")
 
     private Integer confCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confLength")
 
+    @JacksonXmlProperty(localName = "confLength")
+
     private Long confLength;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "activeAttendeeCount")
 
+    @JacksonXmlProperty(localName = "activeAttendeeCount")
+
     private Integer activeAttendeeCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "totalAttendeeCount")
+
+    @JacksonXmlProperty(localName = "totalAttendeeCount")
 
     private Integer totalAttendeeCount;
 

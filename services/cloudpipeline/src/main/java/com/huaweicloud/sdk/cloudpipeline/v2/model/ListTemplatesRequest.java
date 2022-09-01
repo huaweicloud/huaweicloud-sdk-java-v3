@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cloudpipeline.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,40 +14,56 @@ public class ListTemplatesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Language")
 
+    @JacksonXmlProperty(localName = "X-Language")
+
     private String xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template_type")
+
+    @JacksonXmlProperty(localName = "template_type")
 
     private String templateType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_build_in")
 
+    @JacksonXmlProperty(localName = "is_build_in")
+
     private String isBuildIn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
+
+    @JacksonXmlProperty(localName = "offset")
 
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
+    @JacksonXmlProperty(localName = "limit")
+
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sort")
 
+    @JacksonXmlProperty(localName = "sort")
+
     private String sort;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "asc")
+
+    @JacksonXmlProperty(localName = "asc")
 
     private String asc;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cdn.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,35 +14,49 @@ public class SourcesConfig {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "origin_addr")
 
+    @JacksonXmlProperty(localName = "origin_addr")
+
     private String originAddr;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "origin_type")
+
+    @JacksonXmlProperty(localName = "origin_type")
 
     private String originType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "priority")
 
+    @JacksonXmlProperty(localName = "priority")
+
     private Integer priority;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "obs_web_hosting_status")
+
+    @JacksonXmlProperty(localName = "obs_web_hosting_status")
 
     private String obsWebHostingStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "http_port")
 
+    @JacksonXmlProperty(localName = "http_port")
+
     private Integer httpPort;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "https_port")
 
+    @JacksonXmlProperty(localName = "https_port")
+
     private Integer httpsPort;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_name")
+
+    @JacksonXmlProperty(localName = "host_name")
 
     private String hostName;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.dds.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class AttachEipRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "public_ip_id")
 
+    @JacksonXmlProperty(localName = "public_ip_id")
+
     private String publicIpId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "public_ip")
+
+    @JacksonXmlProperty(localName = "public_ip")
 
     private String publicIp;
 

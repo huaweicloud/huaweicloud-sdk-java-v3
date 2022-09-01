@@ -8,6 +8,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -21,6 +23,7 @@ public class FileStatusV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="path_suffix")
     
+    @JacksonXmlProperty(localName = "path_suffix")
     
     private String pathSuffix;
 
@@ -28,6 +31,7 @@ public class FileStatusV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="owner")
     
+    @JacksonXmlProperty(localName = "owner")
     
     private String owner;
 
@@ -35,6 +39,7 @@ public class FileStatusV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="group")
     
+    @JacksonXmlProperty(localName = "group")
     
     private String group;
 
@@ -42,6 +47,7 @@ public class FileStatusV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="permission")
     
+    @JacksonXmlProperty(localName = "permission")
     
     private String permission;
 
@@ -49,6 +55,7 @@ public class FileStatusV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="replication")
     
+    @JacksonXmlProperty(localName = "replication")
     
     private Integer replication;
 
@@ -56,6 +63,7 @@ public class FileStatusV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="block_size")
     
+    @JacksonXmlProperty(localName = "block_size")
     
     private Integer blockSize;
 
@@ -63,6 +71,7 @@ public class FileStatusV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="length")
     
+    @JacksonXmlProperty(localName = "length")
     
     private Integer length;
 
@@ -70,6 +79,7 @@ public class FileStatusV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
+    @JacksonXmlProperty(localName = "type")
     
     private String type;
 
@@ -77,6 +87,7 @@ public class FileStatusV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="children_num")
     
+    @JacksonXmlProperty(localName = "children_num")
     
     private Integer childrenNum;
 
@@ -84,6 +95,7 @@ public class FileStatusV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="access_time")
     
+    @JacksonXmlProperty(localName = "access_time")
     
     private Long accessTime;
 
@@ -91,6 +103,7 @@ public class FileStatusV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="modification_time")
     
+    @JacksonXmlProperty(localName = "modification_time")
     
     private Long modificationTime;
 

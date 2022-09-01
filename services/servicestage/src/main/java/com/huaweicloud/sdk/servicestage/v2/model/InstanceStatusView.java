@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.servicestage.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,30 +14,42 @@ public class InstanceStatusView {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private InstanceStatusType status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "available_replica")
+
+    @JacksonXmlProperty(localName = "available_replica")
 
     private Integer availableReplica;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "replica")
 
+    @JacksonXmlProperty(localName = "replica")
+
     private Integer replica;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fail_detail")
+
+    @JacksonXmlProperty(localName = "fail_detail")
 
     private InstanceFailDetail failDetail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last_job_id")
 
+    @JacksonXmlProperty(localName = "last_job_id")
+
     private String lastJobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
+
+    @JacksonXmlProperty(localName = "enterprise_project_id")
 
     private String enterpriseProjectId;
 

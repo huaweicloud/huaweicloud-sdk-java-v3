@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cpts.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,35 +17,49 @@ public class TempRunningData {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "content_method_url")
 
+    @JacksonXmlProperty(localName = "content_method_url")
+
     private List<String> contentMethodUrl = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "crawler_status")
+
+    @JacksonXmlProperty(localName = "crawler_status")
 
     private Integer crawlerStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "related_temp_running_id")
 
+    @JacksonXmlProperty(localName = "related_temp_running_id")
+
     private Integer relatedTempRunningId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_run_info_id")
+
+    @JacksonXmlProperty(localName = "task_run_info_id")
 
     private Integer taskRunInfoId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "temp_id")
 
+    @JacksonXmlProperty(localName = "temp_id")
+
     private Integer tempId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "temp_name")
 
+    @JacksonXmlProperty(localName = "temp_name")
+
     private String tempName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "temp_running_status")
+
+    @JacksonXmlProperty(localName = "temp_running_status")
 
     private Integer tempRunningStatus;
 

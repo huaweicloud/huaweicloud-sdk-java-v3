@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.antiddos.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,40 +14,56 @@ public class UpdateAlertConfigRequestBodyWarnConfig {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "antiDDoS")
 
+    @JacksonXmlProperty(localName = "antiDDoS")
+
     private Boolean antiDDoS;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "back_doors")
+
+    @JacksonXmlProperty(localName = "back_doors")
 
     private Boolean backDoors;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bruce_force")
 
+    @JacksonXmlProperty(localName = "bruce_force")
+
     private Boolean bruceForce;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "high_privilege")
+
+    @JacksonXmlProperty(localName = "high_privilege")
 
     private Boolean highPrivilege;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remote_login")
 
+    @JacksonXmlProperty(localName = "remote_login")
+
     private Boolean remoteLogin;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "send_frequency")
+
+    @JacksonXmlProperty(localName = "send_frequency")
 
     private Integer sendFrequency;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "waf")
 
+    @JacksonXmlProperty(localName = "waf")
+
     private Boolean waf;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "weak_password")
+
+    @JacksonXmlProperty(localName = "weak_password")
 
     private Boolean weakPassword;
 

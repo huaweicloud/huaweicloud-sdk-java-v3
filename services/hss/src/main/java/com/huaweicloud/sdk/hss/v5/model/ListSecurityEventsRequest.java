@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.hss.v5.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,75 +17,105 @@ public class ListSecurityEventsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region")
 
+    @JacksonXmlProperty(localName = "region")
+
     private String region;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
+
+    @JacksonXmlProperty(localName = "enterprise_project_id")
 
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last_days")
 
+    @JacksonXmlProperty(localName = "last_days")
+
     private Integer lastDays;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_name")
+
+    @JacksonXmlProperty(localName = "host_name")
 
     private String hostName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_id")
 
+    @JacksonXmlProperty(localName = "host_id")
+
     private String hostId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "private_ip")
+
+    @JacksonXmlProperty(localName = "private_ip")
 
     private String privateIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "container_name")
 
+    @JacksonXmlProperty(localName = "container_name")
+
     private String containerName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
+
+    @JacksonXmlProperty(localName = "offset")
 
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
+    @JacksonXmlProperty(localName = "limit")
+
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_types")
+
+    @JacksonXmlProperty(localName = "event_types")
 
     private List<Integer> eventTypes = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "handle_status")
 
+    @JacksonXmlProperty(localName = "handle_status")
+
     private String handleStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "severity")
+
+    @JacksonXmlProperty(localName = "severity")
 
     private String severity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "category")
 
+    @JacksonXmlProperty(localName = "category")
+
     private String category;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "begin_time")
 
+    @JacksonXmlProperty(localName = "begin_time")
+
     private String beginTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time")
+
+    @JacksonXmlProperty(localName = "end_time")
 
     private String endTime;
 

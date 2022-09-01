@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.mpc.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,25 +14,35 @@ public class PaneSetting {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pane_id")
 
+    @JacksonXmlProperty(localName = "pane_id")
+
     private String paneId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "x")
+
+    @JacksonXmlProperty(localName = "x")
 
     private String x;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "y")
 
+    @JacksonXmlProperty(localName = "y")
+
     private String y;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "width")
 
+    @JacksonXmlProperty(localName = "width")
+
     private String width;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "height")
+
+    @JacksonXmlProperty(localName = "height")
 
     private String height;
 

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -95,6 +96,8 @@ public class CreatePrePaidPublicipExtendParamOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "charge_mode")
 
+    @JacksonXmlProperty(localName = "charge_mode")
+
     private ChargeModeEnum chargeMode;
 
     /**
@@ -177,20 +180,28 @@ public class CreatePrePaidPublicipExtendParamOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "period_type")
 
+    @JacksonXmlProperty(localName = "period_type")
+
     private PeriodTypeEnum periodType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "period_num")
+
+    @JacksonXmlProperty(localName = "period_num")
 
     private Integer periodNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_auto_renew")
 
+    @JacksonXmlProperty(localName = "is_auto_renew")
+
     private Boolean isAutoRenew;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_auto_pay")
+
+    @JacksonXmlProperty(localName = "is_auto_pay")
 
     private Boolean isAutoPay;
 

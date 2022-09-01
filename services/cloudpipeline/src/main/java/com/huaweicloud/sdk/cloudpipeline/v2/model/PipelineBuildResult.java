@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cloudpipeline.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,40 +14,56 @@ public class PipelineBuildResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "build_id")
 
+    @JacksonXmlProperty(localName = "build_id")
+
     private String buildId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "elapse_time")
+
+    @JacksonXmlProperty(localName = "elapse_time")
 
     private String elapseTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time")
 
+    @JacksonXmlProperty(localName = "end_time")
+
     private String endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "outcome")
+
+    @JacksonXmlProperty(localName = "outcome")
 
     private String outcome;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pipeline_id")
 
+    @JacksonXmlProperty(localName = "pipeline_id")
+
     private String pipelineId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pipeline_name")
+
+    @JacksonXmlProperty(localName = "pipeline_name")
 
     private String pipelineName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
+    @JacksonXmlProperty(localName = "start_time")
+
     private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
+
+    @JacksonXmlProperty(localName = "status")
 
     private String status;
 

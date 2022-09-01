@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.drs.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,20 +15,28 @@ public class QueryStructProcessResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_id")
 
+    @JacksonXmlProperty(localName = "job_id")
+
     private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_code")
+
+    @JacksonXmlProperty(localName = "error_code")
 
     private String errorCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_message")
 
+    @JacksonXmlProperty(localName = "error_message")
+
     private String errorMessage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "struct_process")
+
+    @JacksonXmlProperty(localName = "struct_process")
 
     private StructProcessResp structProcess;
 

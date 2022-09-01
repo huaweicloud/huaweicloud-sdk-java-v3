@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.kafka.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,30 +17,42 @@ public class ShowGroupsRespGroup {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_id")
 
+    @JacksonXmlProperty(localName = "group_id")
+
     private String groupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "state")
+
+    @JacksonXmlProperty(localName = "state")
 
     private String state;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "coordinator_id")
 
+    @JacksonXmlProperty(localName = "coordinator_id")
+
     private Integer coordinatorId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "members")
+
+    @JacksonXmlProperty(localName = "members")
 
     private List<ShowGroupsRespGroupMembers> members = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_message_offsets")
 
+    @JacksonXmlProperty(localName = "group_message_offsets")
+
     private List<ShowGroupsRespGroupGroupMessageOffsets> groupMessageOffsets = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "assignment_strategy")
+
+    @JacksonXmlProperty(localName = "assignment_strategy")
 
     private String assignmentStrategy;
 

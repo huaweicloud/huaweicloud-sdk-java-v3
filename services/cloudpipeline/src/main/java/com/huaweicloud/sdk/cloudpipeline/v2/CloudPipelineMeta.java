@@ -41,7 +41,6 @@ public class CloudPipelineMeta {
             }));
 
         // response
-
         builder.<List<PipelineExecuteStates>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,

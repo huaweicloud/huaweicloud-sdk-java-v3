@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ief.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,15 +17,21 @@ public class PodAffinityTerm {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "labelSelector")
 
+    @JacksonXmlProperty(localName = "labelSelector")
+
     private PodAffinityTermLabelSelector labelSelector;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "namespaces")
 
+    @JacksonXmlProperty(localName = "namespaces")
+
     private List<String> namespaces = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "topologyKey")
+
+    @JacksonXmlProperty(localName = "topologyKey")
 
     private String topologyKey;
 

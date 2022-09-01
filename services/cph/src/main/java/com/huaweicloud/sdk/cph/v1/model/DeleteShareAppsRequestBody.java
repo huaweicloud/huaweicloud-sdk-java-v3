@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cph.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,10 +17,14 @@ public class DeleteShareAppsRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "package_name")
 
+    @JacksonXmlProperty(localName = "package_name")
+
     private String packageName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "server_ids")
+
+    @JacksonXmlProperty(localName = "server_ids")
 
     private List<String> serverIds = null;
 

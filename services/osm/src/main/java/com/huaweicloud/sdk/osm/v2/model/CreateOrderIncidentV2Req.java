@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.osm.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -18,90 +19,126 @@ public class CreateOrderIncidentV2Req {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "incident_sub_type_id")
 
+    @JacksonXmlProperty(localName = "incident_sub_type_id")
+
     private String incidentSubTypeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "product_category_id")
+
+    @JacksonXmlProperty(localName = "product_category_id")
 
     private String productCategoryId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "business_type_id")
 
+    @JacksonXmlProperty(localName = "business_type_id")
+
     private String businessTypeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region_id")
+
+    @JacksonXmlProperty(localName = "region_id")
 
     private String regionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "simple_description")
 
+    @JacksonXmlProperty(localName = "simple_description")
+
     private String simpleDescription;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_id")
+
+    @JacksonXmlProperty(localName = "source_id")
 
     private String sourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_authorized")
 
+    @JacksonXmlProperty(localName = "is_authorized")
+
     private Integer isAuthorized;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "authorization_content")
+
+    @JacksonXmlProperty(localName = "authorization_content")
 
     private String authorizationContent;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remind_mobile")
 
+    @JacksonXmlProperty(localName = "remind_mobile")
+
     private String remindMobile;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remind_mail")
+
+    @JacksonXmlProperty(localName = "remind_mail")
 
     private String remindMail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remind_time")
 
+    @JacksonXmlProperty(localName = "remind_time")
+
     private String remindTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
+
+    @JacksonXmlProperty(localName = "project_id")
 
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "accessory_ids")
 
+    @JacksonXmlProperty(localName = "accessory_ids")
+
     private List<String> accessoryIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extends_map")
+
+    @JacksonXmlProperty(localName = "extends_map")
 
     private Map<String, Object> extendsMap = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extension_map")
 
+    @JacksonXmlProperty(localName = "extension_map")
+
     private Map<String, Object> extensionMap = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "severity_id")
+
+    @JacksonXmlProperty(localName = "severity_id")
 
     private String severityId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "verify_code")
 
+    @JacksonXmlProperty(localName = "verify_code")
+
     private String verifyCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "area_code")
+
+    @JacksonXmlProperty(localName = "area_code")
 
     private String areaCode;
 

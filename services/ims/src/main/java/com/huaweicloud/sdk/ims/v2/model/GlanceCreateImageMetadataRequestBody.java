@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,10 +22,14 @@ public class GlanceCreateImageMetadataRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__os_version")
 
+    @JacksonXmlProperty(localName = "__os_version")
+
     private String osVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "container_format")
+
+    @JacksonXmlProperty(localName = "container_format")
 
     private String containerFormat;
 
@@ -126,35 +131,49 @@ public class GlanceCreateImageMetadataRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "disk_format")
 
+    @JacksonXmlProperty(localName = "disk_format")
+
     private DiskFormatEnum diskFormat;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "min_disk")
+
+    @JacksonXmlProperty(localName = "min_disk")
 
     private Integer minDisk;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "min_ram")
 
+    @JacksonXmlProperty(localName = "min_ram")
+
     private Integer minRam;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protected")
 
+    @JacksonXmlProperty(localName = "protected")
+
     private Boolean _protected;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
+    @JacksonXmlProperty(localName = "tags")
+
     private List<String> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "visibility")
+
+    @JacksonXmlProperty(localName = "visibility")
 
     private String visibility;
 

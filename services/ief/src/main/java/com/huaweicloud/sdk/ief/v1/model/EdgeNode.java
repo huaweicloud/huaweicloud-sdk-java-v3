@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ief.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,55 +17,77 @@ public class EdgeNode {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
+
+    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_gpu")
 
+    @JacksonXmlProperty(localName = "enable_gpu")
+
     private Boolean enableGpu;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_configs")
+
+    @JacksonXmlProperty(localName = "log_configs")
 
     private List<LogConfigs> logConfigs = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "device_infos")
 
+    @JacksonXmlProperty(localName = "device_infos")
+
     private List<DeviceInfos> deviceInfos = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_npu")
+
+    @JacksonXmlProperty(localName = "enable_npu")
 
     private Boolean enableNpu;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "npu_type")
 
+    @JacksonXmlProperty(localName = "npu_type")
+
     private String npuType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "attributes")
+
+    @JacksonXmlProperty(localName = "attributes")
 
     private List<Attributes> attributes = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_docker")
 
+    @JacksonXmlProperty(localName = "enable_docker")
+
     private Boolean enableDocker;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
+    @JacksonXmlProperty(localName = "tags")
+
     private List<NodeResTag> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mqtt_config")
+
+    @JacksonXmlProperty(localName = "mqtt_config")
 
     private MqttConfigs mqttConfig;
 

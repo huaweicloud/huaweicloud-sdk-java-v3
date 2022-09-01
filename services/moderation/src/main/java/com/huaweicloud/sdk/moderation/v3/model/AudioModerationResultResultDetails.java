@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -20,6 +21,8 @@ public class AudioModerationResultResultDetails {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
+
+    @JacksonXmlProperty(localName = "start_time")
 
     private Integer startTime;
 
@@ -103,25 +106,35 @@ public class AudioModerationResultResultDetails {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "suggestion")
 
+    @JacksonXmlProperty(localName = "suggestion")
+
     private SuggestionEnum suggestion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time")
+
+    @JacksonXmlProperty(localName = "end_time")
 
     private Integer endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "label")
 
+    @JacksonXmlProperty(localName = "label")
+
     private String label;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "audio_text")
 
+    @JacksonXmlProperty(localName = "audio_text")
+
     private String audioText;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "segments")
+
+    @JacksonXmlProperty(localName = "segments")
 
     private List<AudioModerationResultResultSegments> segments = null;
 

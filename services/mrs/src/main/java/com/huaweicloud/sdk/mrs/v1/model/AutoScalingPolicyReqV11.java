@@ -13,6 +13,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.mrs.v1.model.AutoScalingPolicy;
 import java.util.HashMap;
 import java.util.Map;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -98,6 +100,7 @@ public class AutoScalingPolicyReqV11  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_group")
     
+    @JacksonXmlProperty(localName = "node_group")
     
     private NodeGroupEnum nodeGroup;
 
@@ -105,6 +108,7 @@ public class AutoScalingPolicyReqV11  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auto_scaling_policy")
     
+    @JacksonXmlProperty(localName = "auto_scaling_policy")
     
     private AutoScalingPolicy autoScalingPolicy;
 

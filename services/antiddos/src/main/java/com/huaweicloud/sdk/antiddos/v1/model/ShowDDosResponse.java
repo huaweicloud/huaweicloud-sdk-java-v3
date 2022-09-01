@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.antiddos.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -14,25 +15,35 @@ public class ShowDDosResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_L7")
 
+    @JacksonXmlProperty(localName = "enable_L7")
+
     private Boolean enableL7;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "traffic_pos_id")
+
+    @JacksonXmlProperty(localName = "traffic_pos_id")
 
     private Long trafficPosId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "http_request_pos_id")
 
+    @JacksonXmlProperty(localName = "http_request_pos_id")
+
     private Long httpRequestPosId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cleaning_access_pos_id")
 
+    @JacksonXmlProperty(localName = "cleaning_access_pos_id")
+
     private Long cleaningAccessPosId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_type_id")
+
+    @JacksonXmlProperty(localName = "app_type_id")
 
     private Long appTypeId;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.iotda.v5.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class Strategy {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trigger")
 
+    @JacksonXmlProperty(localName = "trigger")
+
     private String trigger;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_valid_time")
+
+    @JacksonXmlProperty(localName = "event_valid_time")
 
     private Integer eventValidTime;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.vod.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,40 +17,56 @@ public class CreateTakeOverTaskReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bucket")
 
+    @JacksonXmlProperty(localName = "bucket")
+
     private String bucket;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "object")
+
+    @JacksonXmlProperty(localName = "object")
 
     private String _object;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "suffix")
 
+    @JacksonXmlProperty(localName = "suffix")
+
     private List<String> suffix = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template_group_name")
+
+    @JacksonXmlProperty(localName = "template_group_name")
 
     private String templateGroupName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "workflow_name")
 
+    @JacksonXmlProperty(localName = "workflow_name")
+
     private String workflowName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_type")
+
+    @JacksonXmlProperty(localName = "host_type")
 
     private Integer hostType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "output_bucket")
 
+    @JacksonXmlProperty(localName = "output_bucket")
+
     private String outputBucket;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "output_path")
+
+    @JacksonXmlProperty(localName = "output_path")
 
     private String outputPath;
 

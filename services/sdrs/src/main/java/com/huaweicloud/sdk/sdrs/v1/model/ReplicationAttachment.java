@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.sdrs.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class ReplicationAttachment {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protected_instance")
 
+    @JacksonXmlProperty(localName = "protected_instance")
+
     private String protectedInstance;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "device")
+
+    @JacksonXmlProperty(localName = "device")
 
     private String device;
 

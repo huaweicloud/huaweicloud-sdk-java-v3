@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ocr.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,60 +17,84 @@ public class InsurancePolicyResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bank_name")
 
+    @JacksonXmlProperty(localName = "bank_name")
+
     private String bankName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bill_number")
+
+    @JacksonXmlProperty(localName = "bill_number")
 
     private InsurancePolicyDetail billNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "company")
 
+    @JacksonXmlProperty(localName = "company")
+
     private InsurancePolicyDetail company;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "effective_date")
+
+    @JacksonXmlProperty(localName = "effective_date")
 
     private InsurancePolicyDetail effectiveDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "applicant_name")
 
+    @JacksonXmlProperty(localName = "applicant_name")
+
     private InsurancePolicyDetail applicantName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "applicant_sex")
+
+    @JacksonXmlProperty(localName = "applicant_sex")
 
     private InsurancePolicyDetail applicantSex;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "applicant_birthday")
 
+    @JacksonXmlProperty(localName = "applicant_birthday")
+
     private InsurancePolicyDetail applicantBirthday;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "applicant_id_type")
+
+    @JacksonXmlProperty(localName = "applicant_id_type")
 
     private InsurancePolicyDetail applicantIdType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "applicant_id_number")
 
+    @JacksonXmlProperty(localName = "applicant_id_number")
+
     private InsurancePolicyDetail applicantIdNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "insurant_list")
+
+    @JacksonXmlProperty(localName = "insurant_list")
 
     private List<InsurantItem> insurantList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "beneficiary_list")
 
+    @JacksonXmlProperty(localName = "beneficiary_list")
+
     private List<BeneficiaryItem> beneficiaryList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "insurance_list")
+
+    @JacksonXmlProperty(localName = "insurance_list")
 
     private List<InsuranceItem> insuranceList = null;
 

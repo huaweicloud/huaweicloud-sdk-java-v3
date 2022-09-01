@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.kms.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,10 +15,14 @@ public class DeleteSecretForScheduleRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "secret_id")
 
+    @JacksonXmlProperty(localName = "secret_id")
+
     private String secretId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
+
+    @JacksonXmlProperty(localName = "body")
 
     private DeleteSecretForScheduleRequestBody body;
 

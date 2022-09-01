@@ -10,6 +10,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.iotedge.v2.model.AccessRomaInfo;
 import com.huaweicloud.sdk.iotedge.v2.model.AuthAkSkInfo;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -23,6 +25,7 @@ public class UpdateNaRequestDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
+    @JacksonXmlProperty(localName = "name")
     
     private String name;
 
@@ -30,6 +33,7 @@ public class UpdateNaRequestDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
+    @JacksonXmlProperty(localName = "description")
     
     private String description;
 
@@ -37,6 +41,7 @@ public class UpdateNaRequestDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="endpoint")
     
+    @JacksonXmlProperty(localName = "endpoint")
     
     private String endpoint;
 
@@ -44,6 +49,7 @@ public class UpdateNaRequestDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auth_type")
     
+    @JacksonXmlProperty(localName = "auth_type")
     
     private String authType;
 
@@ -51,6 +57,7 @@ public class UpdateNaRequestDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auth_aksk_info")
     
+    @JacksonXmlProperty(localName = "auth_aksk_info")
     
     private AuthAkSkInfo authAkskInfo;
 
@@ -58,6 +65,7 @@ public class UpdateNaRequestDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="access_type")
     
+    @JacksonXmlProperty(localName = "access_type")
     
     private String accessType;
 
@@ -65,6 +73,7 @@ public class UpdateNaRequestDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="access_roma_info")
     
+    @JacksonXmlProperty(localName = "access_roma_info")
     
     private AccessRomaInfo accessRomaInfo;
 

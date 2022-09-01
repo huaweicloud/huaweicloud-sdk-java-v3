@@ -6,6 +6,7 @@ import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.cbs.v1.model.*;
+
 import java.util.List;
 import java.util.Map;
 import java.time.OffsetDateTime;
@@ -82,7 +83,6 @@ public class CbsMeta {
         );
 
         // response
-        
 
 
         return builder.build();
@@ -133,7 +133,6 @@ public class CbsMeta {
         );
 
         // response
-        
 
 
         return builder.build();
@@ -200,7 +199,6 @@ public class CbsMeta {
         );
 
         // response
-        
 
 
         return builder.build();
@@ -259,7 +257,6 @@ public class CbsMeta {
         );
 
         // response
-        
 
 
         return builder.build();
@@ -286,7 +283,6 @@ public class CbsMeta {
         );
 
         // response
-        
 
 
         return builder.build();
@@ -321,7 +317,6 @@ public class CbsMeta {
         );
 
         // response
-        
 
 
         return builder.build();
@@ -356,7 +351,6 @@ public class CbsMeta {
         );
 
         // response
-        
 
 
         return builder.build();
@@ -399,7 +393,6 @@ public class CbsMeta {
         );
 
         // response
-        
 
 
         return builder.build();
@@ -434,7 +427,6 @@ public class CbsMeta {
         );
 
         // response
-        
 
 
         return builder.build();
@@ -469,7 +461,6 @@ public class CbsMeta {
         );
 
         // response
-        
 
 
         return builder.build();
@@ -512,7 +503,6 @@ public class CbsMeta {
         );
 
         // response
-        
 
 
         return builder.build();

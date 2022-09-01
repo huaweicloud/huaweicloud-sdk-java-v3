@@ -9,6 +9,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.iotedge.v2.model.UpdateEdgeAppVersionDTO;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -22,6 +24,7 @@ public class UpdateEdgeApplicationVersionRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edge_app_id")
     
+    @JacksonXmlProperty(localName = "edge_app_id")
     
     private String edgeAppId;
 
@@ -29,6 +32,7 @@ public class UpdateEdgeApplicationVersionRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="version")
     
+    @JacksonXmlProperty(localName = "version")
     
     private String version;
 
@@ -36,6 +40,7 @@ public class UpdateEdgeApplicationVersionRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
+    @JacksonXmlProperty(localName = "body")
     
     private UpdateEdgeAppVersionDTO body;
 

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,30 +22,42 @@ public class TemplateRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_template")
+
+    @JacksonXmlProperty(localName = "is_template")
 
     private Boolean isTemplate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region")
 
+    @JacksonXmlProperty(localName = "region")
+
     private String region;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "projectid")
+
+    @JacksonXmlProperty(localName = "projectid")
 
     private String projectid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_server_name")
 
+    @JacksonXmlProperty(localName = "target_server_name")
+
     private String targetServerName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "availability_zone")
+
+    @JacksonXmlProperty(localName = "availability_zone")
 
     private String availabilityZone;
 
@@ -134,35 +147,49 @@ public class TemplateRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volumetype")
 
+    @JacksonXmlProperty(localName = "volumetype")
+
     private VolumetypeEnum volumetype;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flavor")
+
+    @JacksonXmlProperty(localName = "flavor")
 
     private String flavor;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc")
 
+    @JacksonXmlProperty(localName = "vpc")
+
     private VpcObject vpc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nics")
+
+    @JacksonXmlProperty(localName = "nics")
 
     private List<Nics> nics = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_groups")
 
+    @JacksonXmlProperty(localName = "security_groups")
+
     private List<SgObject> securityGroups = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publicip")
 
+    @JacksonXmlProperty(localName = "publicip")
+
     private PublicIp publicip;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "disk")
+
+    @JacksonXmlProperty(localName = "disk")
 
     private List<TemplateDisk> disk = null;
 
@@ -252,10 +279,14 @@ public class TemplateRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_volume_type")
 
+    @JacksonXmlProperty(localName = "data_volume_type")
+
     private DataVolumeTypeEnum dataVolumeType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_password")
+
+    @JacksonXmlProperty(localName = "target_password")
 
     private String targetPassword;
 

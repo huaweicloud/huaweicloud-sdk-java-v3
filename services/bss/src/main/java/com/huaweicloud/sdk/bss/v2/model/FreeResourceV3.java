@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.bss.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,25 +14,35 @@ public class FreeResourceV3 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "free_resource_id")
 
+    @JacksonXmlProperty(localName = "free_resource_id")
+
     private String freeResourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "usage_type_name")
+
+    @JacksonXmlProperty(localName = "usage_type_name")
 
     private String usageTypeName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "amount")
 
+    @JacksonXmlProperty(localName = "amount")
+
     private String amount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "original_amount")
 
+    @JacksonXmlProperty(localName = "original_amount")
+
     private String originalAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "measure_id")
+
+    @JacksonXmlProperty(localName = "measure_id")
 
     private Integer measureId;
 

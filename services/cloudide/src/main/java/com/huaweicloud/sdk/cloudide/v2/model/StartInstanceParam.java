@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cloudide.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -18,10 +19,14 @@ public class StartInstanceParam {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "plugin_enable_list")
 
+    @JacksonXmlProperty(localName = "plugin_enable_list")
+
     private List<String> pluginEnableList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "plugin_vars")
+
+    @JacksonXmlProperty(localName = "plugin_vars")
 
     private Map<String, String> pluginVars = null;
 

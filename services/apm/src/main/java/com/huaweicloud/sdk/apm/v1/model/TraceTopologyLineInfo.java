@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.apm.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,20 +14,28 @@ public class TraceTopologyLineInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
+    @JacksonXmlProperty(localName = "start_time")
+
     private Long startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time_used")
+
+    @JacksonXmlProperty(localName = "time_used")
 
     private Long timeUsed;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "argument")
 
+    @JacksonXmlProperty(localName = "argument")
+
     private String argument;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_id")
+
+    @JacksonXmlProperty(localName = "event_id")
 
     private String eventId;
 

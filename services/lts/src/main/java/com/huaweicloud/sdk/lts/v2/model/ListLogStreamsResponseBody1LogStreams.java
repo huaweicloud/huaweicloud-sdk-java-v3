@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.lts.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,25 +17,35 @@ public class ListLogStreamsResponseBody1LogStreams {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "creation_time")
 
+    @JacksonXmlProperty(localName = "creation_time")
+
     private Long creationTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_stream_id")
+
+    @JacksonXmlProperty(localName = "log_stream_id")
 
     private String logStreamId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_stream_name")
 
+    @JacksonXmlProperty(localName = "log_stream_name")
+
     private String logStreamName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tag")
 
+    @JacksonXmlProperty(localName = "tag")
+
     private Map<String, String> tag = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "filter_count")
+
+    @JacksonXmlProperty(localName = "filter_count")
 
     private Integer filterCount;
 

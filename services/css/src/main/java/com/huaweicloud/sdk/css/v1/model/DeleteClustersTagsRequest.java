@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.css.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,21 @@ public class DeleteClustersTagsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cluster_id")
 
+    @JacksonXmlProperty(localName = "cluster_id")
+
     private String clusterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resource_type")
+
+    @JacksonXmlProperty(localName = "resource_type")
+
+    private String resourceType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key")
+
+    @JacksonXmlProperty(localName = "key")
 
     private String key;
 
@@ -35,6 +47,23 @@ public class DeleteClustersTagsRequest {
 
     public void setClusterId(String clusterId) {
         this.clusterId = clusterId;
+    }
+
+    public DeleteClustersTagsRequest withResourceType(String resourceType) {
+        this.resourceType = resourceType;
+        return this;
+    }
+
+    /**
+     * 资源类型，当前固定值为“css-cluster”，表示是集群类型。
+     * @return resourceType
+     */
+    public String getResourceType() {
+        return resourceType;
+    }
+
+    public void setResourceType(String resourceType) {
+        this.resourceType = resourceType;
     }
 
     public DeleteClustersTagsRequest withKey(String key) {
@@ -64,12 +93,13 @@ public class DeleteClustersTagsRequest {
         }
         DeleteClustersTagsRequest deleteClustersTagsRequest = (DeleteClustersTagsRequest) o;
         return Objects.equals(this.clusterId, deleteClustersTagsRequest.clusterId)
+            && Objects.equals(this.resourceType, deleteClustersTagsRequest.resourceType)
             && Objects.equals(this.key, deleteClustersTagsRequest.key);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clusterId, key);
+        return Objects.hash(clusterId, resourceType, key);
     }
 
     @Override
@@ -77,6 +107,7 @@ public class DeleteClustersTagsRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class DeleteClustersTagsRequest {\n");
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
+        sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
         sb.append("    key: ").append(toIndentedString(key)).append("\n");
         sb.append("}");
         return sb.toString();

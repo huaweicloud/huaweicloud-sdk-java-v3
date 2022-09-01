@@ -14,6 +14,8 @@ import com.huaweicloud.sdk.aom.v2.model.MetaData;
 import com.huaweicloud.sdk.aom.v2.model.QueryAlarmResult;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -27,6 +29,7 @@ public class ListAlarmRuleResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="meta_data")
     
+    @JacksonXmlProperty(localName = "meta_data")
     
     private MetaData metaData;
 
@@ -34,6 +37,7 @@ public class ListAlarmRuleResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="thresholds")
     
+    @JacksonXmlProperty(localName = "thresholds")
     
     private List<QueryAlarmResult> thresholds = null;
     

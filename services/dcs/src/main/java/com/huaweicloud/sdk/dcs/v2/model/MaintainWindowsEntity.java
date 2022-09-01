@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.dcs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,20 +14,28 @@ public class MaintainWindowsEntity {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "seq")
 
+    @JacksonXmlProperty(localName = "seq")
+
     private Integer seq;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "default")
+
+    @JacksonXmlProperty(localName = "default")
 
     private Boolean _default;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "begin")
 
+    @JacksonXmlProperty(localName = "begin")
+
     private String begin;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end")
+
+    @JacksonXmlProperty(localName = "end")
 
     private String end;
 

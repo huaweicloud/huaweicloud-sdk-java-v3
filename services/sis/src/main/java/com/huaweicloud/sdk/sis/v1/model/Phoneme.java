@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.sis.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,30 +15,42 @@ public class Phoneme {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "arpa")
 
+    @JacksonXmlProperty(localName = "arpa")
+
     private String arpa;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ipa")
+
+    @JacksonXmlProperty(localName = "ipa")
 
     private String ipa;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
+    @JacksonXmlProperty(localName = "start_time")
+
     private Float startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time")
+
+    @JacksonXmlProperty(localName = "end_time")
 
     private Float endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fluency")
 
+    @JacksonXmlProperty(localName = "fluency")
+
     private PhonemeFluency fluency;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pronunciation")
+
+    @JacksonXmlProperty(localName = "pronunciation")
 
     private PhonemePronunciation pronunciation;
 

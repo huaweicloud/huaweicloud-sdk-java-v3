@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,10 +19,14 @@ public class ProductTopic {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "product_id")
 
+    @JacksonXmlProperty(localName = "product_id")
+
     private Integer productId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "topic_id")
+
+    @JacksonXmlProperty(localName = "topic_id")
 
     private String topicId;
 
@@ -105,20 +110,28 @@ public class ProductTopic {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "permission")
 
+    @JacksonXmlProperty(localName = "permission")
+
     private PermissionEnum permission;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "topic_name")
+
+    @JacksonXmlProperty(localName = "topic_name")
 
     private String topicName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
 
+    @JacksonXmlProperty(localName = "version")
+
     private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
+
+    @JacksonXmlProperty(localName = "description")
 
     private String description;
 

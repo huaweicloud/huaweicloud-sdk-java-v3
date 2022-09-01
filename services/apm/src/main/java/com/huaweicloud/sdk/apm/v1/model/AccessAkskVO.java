@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.apm.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.time.LocalDate;
 import java.util.Objects;
@@ -14,40 +15,56 @@ public class AccessAkskVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private Integer id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "gmt_create")
+
+    @JacksonXmlProperty(localName = "gmt_create")
 
     private LocalDate gmtCreate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "gmt_modify")
 
+    @JacksonXmlProperty(localName = "gmt_modify")
+
     private LocalDate gmtModify;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "inner_domain_id")
+
+    @JacksonXmlProperty(localName = "inner_domain_id")
 
     private Integer innerDomainId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ak")
 
+    @JacksonXmlProperty(localName = "ak")
+
     private String ak;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sk")
+
+    @JacksonXmlProperty(localName = "sk")
 
     private String sk;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "descp")
+
+    @JacksonXmlProperty(localName = "descp")
 
     private String descp;
 

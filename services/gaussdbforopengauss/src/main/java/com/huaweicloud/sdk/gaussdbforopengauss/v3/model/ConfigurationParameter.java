@@ -12,6 +12,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -25,6 +27,7 @@ public class ConfigurationParameter  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
+    @JacksonXmlProperty(localName = "name")
     
     private String name;
 
@@ -32,6 +35,7 @@ public class ConfigurationParameter  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="value")
     
+    @JacksonXmlProperty(localName = "value")
     
     private String value;
 
@@ -39,6 +43,7 @@ public class ConfigurationParameter  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="restart_required")
     
+    @JacksonXmlProperty(localName = "restart_required")
     
     private Boolean restartRequired;
 
@@ -46,6 +51,7 @@ public class ConfigurationParameter  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="value_range")
     
+    @JacksonXmlProperty(localName = "value_range")
     
     private String valueRange;
     /**
@@ -149,6 +155,7 @@ public class ConfigurationParameter  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
+    @JacksonXmlProperty(localName = "type")
     
     private TypeEnum type;
 
@@ -156,6 +163,7 @@ public class ConfigurationParameter  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
+    @JacksonXmlProperty(localName = "description")
     
     private String description;
 

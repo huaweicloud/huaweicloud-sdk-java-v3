@@ -8,6 +8,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -21,6 +23,7 @@ public class SearchBoxDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="x")
     
+    @JacksonXmlProperty(localName = "x")
     
     private Integer x;
 
@@ -28,6 +31,7 @@ public class SearchBoxDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="y")
     
+    @JacksonXmlProperty(localName = "y")
     
     private Integer y;
 
@@ -35,6 +39,7 @@ public class SearchBoxDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="width")
     
+    @JacksonXmlProperty(localName = "width")
     
     private Integer width;
 
@@ -42,6 +47,7 @@ public class SearchBoxDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="height")
     
+    @JacksonXmlProperty(localName = "height")
     
     private Integer height;
 

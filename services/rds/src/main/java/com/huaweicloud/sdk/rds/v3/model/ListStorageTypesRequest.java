@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -17,6 +18,8 @@ public class ListStorageTypesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Language")
+
+    @JacksonXmlProperty(localName = "X-Language")
 
     private String xLanguage;
 
@@ -106,10 +109,14 @@ public class ListStorageTypesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "database_name")
 
+    @JacksonXmlProperty(localName = "database_name")
+
     private DatabaseNameEnum databaseName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version_name")
+
+    @JacksonXmlProperty(localName = "version_name")
 
     private String versionName;
 
@@ -198,6 +205,8 @@ public class ListStorageTypesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ha_mode")
+
+    @JacksonXmlProperty(localName = "ha_mode")
 
     private HaModeEnum haMode;
 

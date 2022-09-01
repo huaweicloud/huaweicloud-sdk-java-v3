@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.res.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,10 +17,14 @@ public class BehaviorsConfig {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "positive_behaviors")
 
+    @JacksonXmlProperty(localName = "positive_behaviors")
+
     private List<BehaviorWeights> positiveBehaviors = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "negative_behaviors")
+
+    @JacksonXmlProperty(localName = "negative_behaviors")
 
     private List<BehaviorWeights> negativeBehaviors = null;
 

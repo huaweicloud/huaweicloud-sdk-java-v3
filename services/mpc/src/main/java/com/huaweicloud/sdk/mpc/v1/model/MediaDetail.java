@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.mpc.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,25 +17,35 @@ public class MediaDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "features")
 
+    @JacksonXmlProperty(localName = "features")
+
     private List<String> features = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "origin_para")
+
+    @JacksonXmlProperty(localName = "origin_para")
 
     private OriginPara originPara;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "output_video_paras")
 
+    @JacksonXmlProperty(localName = "output_video_paras")
+
     private List<OutputVideoPara> outputVideoParas = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "output_thumbnail_para")
 
+    @JacksonXmlProperty(localName = "output_thumbnail_para")
+
     private OutputThumbnailPara outputThumbnailPara;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "output_watermark_paras")
+
+    @JacksonXmlProperty(localName = "output_watermark_paras")
 
     private OutputWatermarkPara outputWatermarkParas;
 

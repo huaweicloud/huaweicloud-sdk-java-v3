@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,40 +19,56 @@ public class WatermarkTemplate {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dx")
 
+    @JacksonXmlProperty(localName = "dx")
+
     private String dx;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dy")
+
+    @JacksonXmlProperty(localName = "dy")
 
     private String dy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "referpos")
 
+    @JacksonXmlProperty(localName = "referpos")
+
     private String referpos;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timeline_start")
+
+    @JacksonXmlProperty(localName = "timeline_start")
 
     private String timelineStart;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timeline_duration")
 
+    @JacksonXmlProperty(localName = "timeline_duration")
+
     private String timelineDuration;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image_process")
+
+    @JacksonXmlProperty(localName = "image_process")
 
     private String imageProcess;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "width")
 
+    @JacksonXmlProperty(localName = "width")
+
     private String width;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "height")
+
+    @JacksonXmlProperty(localName = "height")
 
     private String height;
 
@@ -135,20 +152,28 @@ public class WatermarkTemplate {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "base")
 
+    @JacksonXmlProperty(localName = "base")
+
     private BaseEnum base;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template_id")
+
+    @JacksonXmlProperty(localName = "template_id")
 
     private Integer templateId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template_name")
 
+    @JacksonXmlProperty(localName = "template_name")
+
     private String templateName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
+
+    @JacksonXmlProperty(localName = "type")
 
     private String type;
 

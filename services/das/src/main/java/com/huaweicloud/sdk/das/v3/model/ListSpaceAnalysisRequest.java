@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,10 +19,14 @@ public class ListSpaceAnalysisRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_id")
 
+    @JacksonXmlProperty(localName = "instance_id")
+
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Language")
+
+    @JacksonXmlProperty(localName = "X-Language")
 
     private String xLanguage;
 
@@ -105,25 +110,35 @@ public class ListSpaceAnalysisRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "object_type")
 
+    @JacksonXmlProperty(localName = "object_type")
+
     private ObjectTypeEnum objectType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "database_id")
+
+    @JacksonXmlProperty(localName = "database_id")
 
     private String databaseId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
+    @JacksonXmlProperty(localName = "offset")
+
     private String offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
+    @JacksonXmlProperty(localName = "limit")
+
     private String limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "show_instance_info")
+
+    @JacksonXmlProperty(localName = "show_instance_info")
 
     private String showInstanceInfo;
 
@@ -206,6 +221,8 @@ public class ListSpaceAnalysisRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "datastore_type")
+
+    @JacksonXmlProperty(localName = "datastore_type")
 
     private DatastoreTypeEnum datastoreType;
 

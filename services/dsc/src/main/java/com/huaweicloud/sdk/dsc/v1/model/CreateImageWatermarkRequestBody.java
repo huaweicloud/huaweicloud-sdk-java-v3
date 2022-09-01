@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.dsc.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.http.FormDataFilePart;
 import com.huaweicloud.sdk.core.http.FormDataPart;
 import com.huaweicloud.sdk.core.http.SdkFormDataBody;
@@ -17,15 +18,19 @@ import java.util.Objects;
 public class CreateImageWatermarkRequestBody implements SdkFormDataBody {
 
     @JsonProperty(value = "file", access = JsonProperty.Access.WRITE_ONLY)
+    @JacksonXmlProperty(localName = "file")
 
     private FormDataFilePart file;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "blind_watermark")
 
+    @JacksonXmlProperty(localName = "blind_watermark")
+
     private String blindWatermark;
 
     @JsonProperty(value = "image_watermark", access = JsonProperty.Access.WRITE_ONLY)
+    @JacksonXmlProperty(localName = "image_watermark")
 
     private FormDataFilePart imageWatermark;
 

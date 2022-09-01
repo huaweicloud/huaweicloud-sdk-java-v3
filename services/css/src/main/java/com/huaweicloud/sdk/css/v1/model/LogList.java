@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.css.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class LogList {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "content")
 
+    @JacksonXmlProperty(localName = "content")
+
     private String content;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "date")
 
+    @JacksonXmlProperty(localName = "date")
+
     private String date;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "level")
+
+    @JacksonXmlProperty(localName = "level")
 
     private String level;
 
@@ -48,7 +55,7 @@ public class LogList {
     }
 
     /**
-     * 当条日志记录时间，格式为ISO8601：CCYY-MM-DDThh:mm:ss。
+     * 日期。
      * @return date
      */
     public String getDate() {

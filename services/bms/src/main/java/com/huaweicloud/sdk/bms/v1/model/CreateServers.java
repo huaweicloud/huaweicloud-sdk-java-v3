@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.bms.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,90 +18,126 @@ public class CreateServers {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "imageRef")
 
+    @JacksonXmlProperty(localName = "imageRef")
+
     private UUID imageRef;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flavorRef")
+
+    @JacksonXmlProperty(localName = "flavorRef")
 
     private String flavorRef;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metadata")
+
+    @JacksonXmlProperty(localName = "metadata")
 
     private MetaDataInfo metadata;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_data")
 
+    @JacksonXmlProperty(localName = "user_data")
+
     private String userData;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "adminPass")
+
+    @JacksonXmlProperty(localName = "adminPass")
 
     private String adminPass;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key_name")
 
+    @JacksonXmlProperty(localName = "key_name")
+
     private String keyName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_groups")
+
+    @JacksonXmlProperty(localName = "security_groups")
 
     private List<SecurityGroupsInfo> securityGroups = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nics")
 
+    @JacksonXmlProperty(localName = "nics")
+
     private List<Nics> nics = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "availability_zone")
+
+    @JacksonXmlProperty(localName = "availability_zone")
 
     private String availabilityZone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpcid")
 
+    @JacksonXmlProperty(localName = "vpcid")
+
     private UUID vpcid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publicip")
+
+    @JacksonXmlProperty(localName = "publicip")
 
     private PublicIp publicip;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "count")
 
+    @JacksonXmlProperty(localName = "count")
+
     private Integer count;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "root_volume")
+
+    @JacksonXmlProperty(localName = "root_volume")
 
     private RootVolume rootVolume;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_volumes")
 
+    @JacksonXmlProperty(localName = "data_volumes")
+
     private List<DataVolumes> dataVolumes = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extendparam")
+
+    @JacksonXmlProperty(localName = "extendparam")
 
     private ExtendParam extendparam;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "schedulerHints")
 
+    @JacksonXmlProperty(localName = "schedulerHints")
+
     private CreateSchedulerHints schedulerHints;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "server_tags")
+
+    @JacksonXmlProperty(localName = "server_tags")
 
     private List<SystemTags> serverTags = null;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.campusgo.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,20 +14,28 @@ public class TaskInputVcn {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip")
 
+    @JacksonXmlProperty(localName = "ip")
+
     private String ip;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "port")
+
+    @JacksonXmlProperty(localName = "port")
 
     private Integer port;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "username")
 
+    @JacksonXmlProperty(localName = "username")
+
     private String username;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "password")
+
+    @JacksonXmlProperty(localName = "password")
 
     private String password;
 

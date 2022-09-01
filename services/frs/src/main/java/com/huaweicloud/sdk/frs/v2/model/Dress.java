@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.frs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class Dress {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "glass")
 
+    @JacksonXmlProperty(localName = "glass")
+
     private String glass;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hat")
+
+    @JacksonXmlProperty(localName = "hat")
 
     private String hat;
 

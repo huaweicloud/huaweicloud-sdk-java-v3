@@ -106,7 +106,6 @@ public class CesMeta {
             }).withInnerContainerType(EventItem.class));
 
         // response
-
         builder.<List<CreateEventsResponseBody>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,

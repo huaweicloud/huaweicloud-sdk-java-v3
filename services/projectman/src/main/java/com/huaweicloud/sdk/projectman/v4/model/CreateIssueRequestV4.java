@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.projectman.v4.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,90 +17,126 @@ public class CreateIssueRequestV4 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "actual_work_hours")
 
+    @JacksonXmlProperty(localName = "actual_work_hours")
+
     private Double actualWorkHours;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "assigned_id")
+
+    @JacksonXmlProperty(localName = "assigned_id")
 
     private Integer assignedId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "begin_time")
 
+    @JacksonXmlProperty(localName = "begin_time")
+
     private String beginTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
+
+    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "developer_id")
 
+    @JacksonXmlProperty(localName = "developer_id")
+
     private Integer developerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_id")
+
+    @JacksonXmlProperty(localName = "domain_id")
 
     private Integer domainId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "done_ratio")
 
+    @JacksonXmlProperty(localName = "done_ratio")
+
     private Integer doneRatio;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time")
+
+    @JacksonXmlProperty(localName = "end_time")
 
     private String endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expected_work_hours")
 
+    @JacksonXmlProperty(localName = "expected_work_hours")
+
     private Double expectedWorkHours;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "iteration_id")
+
+    @JacksonXmlProperty(localName = "iteration_id")
 
     private Integer iterationId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "module_id")
 
+    @JacksonXmlProperty(localName = "module_id")
+
     private Integer moduleId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parent_issue_id")
 
+    @JacksonXmlProperty(localName = "parent_issue_id")
+
     private Integer parentIssueId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "priority_id")
+
+    @JacksonXmlProperty(localName = "priority_id")
 
     private Integer priorityId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "severity_id")
 
+    @JacksonXmlProperty(localName = "severity_id")
+
     private Integer severityId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status_id")
+
+    @JacksonXmlProperty(localName = "status_id")
 
     private Integer statusId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tracker_id")
 
+    @JacksonXmlProperty(localName = "tracker_id")
+
     private Integer trackerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "new_custom_fields")
+
+    @JacksonXmlProperty(localName = "new_custom_fields")
 
     private List<NewCustomField> newCustomFields = null;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.bss.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,50 +14,70 @@ public class CreateCustomerV2Req {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_name")
 
+    @JacksonXmlProperty(localName = "domain_name")
+
     private String domainName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mobile_phone")
+
+    @JacksonXmlProperty(localName = "mobile_phone")
 
     private String mobilePhone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "verification_code")
 
+    @JacksonXmlProperty(localName = "verification_code")
+
     private String verificationCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "xaccount_id")
+
+    @JacksonXmlProperty(localName = "xaccount_id")
 
     private String xaccountId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "xaccount_type")
 
+    @JacksonXmlProperty(localName = "xaccount_type")
+
     private String xaccountType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "password")
+
+    @JacksonXmlProperty(localName = "password")
 
     private String password;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_close_market_ms")
 
+    @JacksonXmlProperty(localName = "is_close_market_ms")
+
     private String isCloseMarketMs;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cooperation_type")
+
+    @JacksonXmlProperty(localName = "cooperation_type")
 
     private String cooperationType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "indirect_partner_id")
 
+    @JacksonXmlProperty(localName = "indirect_partner_id")
+
     private String indirectPartnerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "include_association_result")
+
+    @JacksonXmlProperty(localName = "include_association_result")
 
     private Boolean includeAssociationResult;
 

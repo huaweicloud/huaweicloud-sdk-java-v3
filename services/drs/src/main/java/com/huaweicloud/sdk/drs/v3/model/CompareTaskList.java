@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,10 +19,14 @@ public class CompareTaskList {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "compare_task_id")
 
+    @JacksonXmlProperty(localName = "compare_task_id")
+
     private String compareTaskId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "compare_type")
+
+    @JacksonXmlProperty(localName = "compare_type")
 
     private String compareType;
 
@@ -143,15 +148,21 @@ public class CompareTaskList {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "compare_task_status")
 
+    @JacksonXmlProperty(localName = "compare_task_status")
+
     private CompareTaskStatusEnum compareTaskStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
+    @JacksonXmlProperty(localName = "create_time")
+
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time")
+
+    @JacksonXmlProperty(localName = "end_time")
 
     private String endTime;
 

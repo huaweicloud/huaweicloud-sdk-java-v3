@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -22,20 +23,28 @@ public class RecordCallbackConfig {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publish_domain")
+
+    @JacksonXmlProperty(localName = "publish_domain")
 
     private String publishDomain;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app")
 
+    @JacksonXmlProperty(localName = "app")
+
     private String app;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "notify_callback_url")
+
+    @JacksonXmlProperty(localName = "notify_callback_url")
 
     private String notifyCallbackUrl;
 
@@ -134,6 +143,8 @@ public class RecordCallbackConfig {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "notify_event_subscription")
 
+    @JacksonXmlProperty(localName = "notify_event_subscription")
+
     private List<NotifyEventSubscriptionEnum> notifyEventSubscription = null;
 
     /**
@@ -216,15 +227,21 @@ public class RecordCallbackConfig {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sign_type")
 
+    @JacksonXmlProperty(localName = "sign_type")
+
     private SignTypeEnum signType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
+    @JacksonXmlProperty(localName = "create_time")
+
     private LocalDate createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
+
+    @JacksonXmlProperty(localName = "update_time")
 
     private LocalDate updateTime;
 

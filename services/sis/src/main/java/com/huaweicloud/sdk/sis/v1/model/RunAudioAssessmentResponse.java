@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.sis.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -17,35 +18,49 @@ public class RunAudioAssessmentResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "score")
 
+    @JacksonXmlProperty(localName = "score")
+
     private Float score;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "completeness")
+
+    @JacksonXmlProperty(localName = "completeness")
 
     private Float completeness;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "duration")
 
+    @JacksonXmlProperty(localName = "duration")
+
     private Float duration;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pronunciation")
+
+    @JacksonXmlProperty(localName = "pronunciation")
 
     private Pronunciation pronunciation;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fluency")
 
+    @JacksonXmlProperty(localName = "fluency")
+
     private Fluency fluency;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "words")
 
+    @JacksonXmlProperty(localName = "words")
+
     private List<Word> words = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "traceId")
+
+    @JacksonXmlProperty(localName = "traceId")
 
     private String traceId;
 

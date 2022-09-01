@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,20 +15,28 @@ public class QosInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
+    @JacksonXmlProperty(localName = "type")
+
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "send")
+
+    @JacksonXmlProperty(localName = "send")
 
     private QosSendReceiveInfo send;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "receive")
 
+    @JacksonXmlProperty(localName = "receive")
+
     private QosSendReceiveInfo receive;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cpu")
+
+    @JacksonXmlProperty(localName = "cpu")
 
     private QosCpuInfo cpu;
 

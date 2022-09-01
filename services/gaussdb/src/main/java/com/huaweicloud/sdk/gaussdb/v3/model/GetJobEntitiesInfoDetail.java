@@ -4,6 +4,8 @@ package com.huaweicloud.sdk.gaussdb.v3.model;
 
 
 
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,15 +22,21 @@ public class ModDeptDTO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deptName")
 
+    @JacksonXmlProperty(localName = "deptName")
+
     private String deptName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parentDeptCode")
 
+    @JacksonXmlProperty(localName = "parentDeptCode")
+
     private String parentDeptCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "note")
+
+    @JacksonXmlProperty(localName = "note")
 
     private String note;
 
@@ -124,6 +131,8 @@ public class ModDeptDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "inPermission")
+
+    @JacksonXmlProperty(localName = "inPermission")
 
     private InPermissionEnum inPermission;
 
@@ -220,15 +229,21 @@ public class ModDeptDTO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "outPermission")
 
+    @JacksonXmlProperty(localName = "outPermission")
+
     private OutPermissionEnum outPermission;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "designatedOutDeptCodes")
 
+    @JacksonXmlProperty(localName = "designatedOutDeptCodes")
+
     private List<String> designatedOutDeptCodes = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sortLevel")
+
+    @JacksonXmlProperty(localName = "sortLevel")
 
     private Integer sortLevel;
 

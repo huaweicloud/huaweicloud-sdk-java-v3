@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.bcs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -15,30 +16,42 @@ public class ShowBlockchainStatusResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bcs")
 
+    @JacksonXmlProperty(localName = "bcs")
+
     private Detail bcs;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "eip")
+
+    @JacksonXmlProperty(localName = "eip")
 
     private Detail eip;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sfs")
 
+    @JacksonXmlProperty(localName = "sfs")
+
     private Detail sfs;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "obs")
+
+    @JacksonXmlProperty(localName = "obs")
 
     private Detail obs;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "kafka")
 
+    @JacksonXmlProperty(localName = "kafka")
+
     private Detail kafka;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cce")
+
+    @JacksonXmlProperty(localName = "cce")
 
     private ComCCE cce;
 

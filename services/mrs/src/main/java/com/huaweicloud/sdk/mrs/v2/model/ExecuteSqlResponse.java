@@ -12,6 +12,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -25,6 +27,7 @@ public class ExecuteSqlResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
+    @JacksonXmlProperty(localName = "id")
     
     private String id;
 
@@ -32,6 +35,7 @@ public class ExecuteSqlResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="message")
     
+    @JacksonXmlProperty(localName = "message")
     
     private String message;
 
@@ -39,6 +43,7 @@ public class ExecuteSqlResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="statement")
     
+    @JacksonXmlProperty(localName = "statement")
     
     private String statement;
 
@@ -46,6 +51,7 @@ public class ExecuteSqlResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
+    @JacksonXmlProperty(localName = "status")
     
     private String status;
 
@@ -53,6 +59,7 @@ public class ExecuteSqlResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="result_location")
     
+    @JacksonXmlProperty(localName = "result_location")
     
     private String resultLocation;
 
@@ -60,6 +67,7 @@ public class ExecuteSqlResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="content")
     
+    @JacksonXmlProperty(localName = "content")
     
     private List<List<String>> content = null;
     

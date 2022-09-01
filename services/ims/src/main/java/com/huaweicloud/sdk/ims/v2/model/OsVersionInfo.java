@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ims.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,25 +14,35 @@ public class OsVersionInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "platform")
 
+    @JacksonXmlProperty(localName = "platform")
+
     private String platform;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os_version_key")
+
+    @JacksonXmlProperty(localName = "os_version_key")
 
     private String osVersionKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os_version")
 
+    @JacksonXmlProperty(localName = "os_version")
+
     private String osVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os_bit")
 
+    @JacksonXmlProperty(localName = "os_bit")
+
     private Integer osBit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os_type")
+
+    @JacksonXmlProperty(localName = "os_type")
 
     private String osType;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.res.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -12,6 +13,8 @@ public class ErrorCount {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "empty")
+
+    @JacksonXmlProperty(localName = "empty")
 
     private Boolean empty;
 

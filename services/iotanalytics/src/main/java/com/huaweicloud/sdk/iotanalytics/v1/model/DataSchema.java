@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.iotanalytics.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.math.BigDecimal;
 import java.util.Objects;
@@ -14,25 +15,35 @@ public class DataSchema {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "min")
 
+    @JacksonXmlProperty(localName = "min")
+
     private BigDecimal min;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max")
+
+    @JacksonXmlProperty(localName = "max")
 
     private BigDecimal max;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "min_length")
 
+    @JacksonXmlProperty(localName = "min_length")
+
     private Integer minLength;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_length")
 
+    @JacksonXmlProperty(localName = "max_length")
+
     private Integer maxLength;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_type")
+
+    @JacksonXmlProperty(localName = "data_type")
 
     private String dataType;
 

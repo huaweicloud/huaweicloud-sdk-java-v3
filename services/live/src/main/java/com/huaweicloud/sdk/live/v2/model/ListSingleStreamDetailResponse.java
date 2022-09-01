@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.live.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -17,35 +18,49 @@ public class ListSingleStreamDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publish_domain")
 
+    @JacksonXmlProperty(localName = "publish_domain")
+
     private String publishDomain;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app")
+
+    @JacksonXmlProperty(localName = "app")
 
     private String app;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stream")
 
+    @JacksonXmlProperty(localName = "stream")
+
     private String stream;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "video_framerate")
+
+    @JacksonXmlProperty(localName = "video_framerate")
 
     private List<StreamDetail> videoFramerate = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "video_bitrate")
 
+    @JacksonXmlProperty(localName = "video_bitrate")
+
     private List<StreamDetail> videoBitrate = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "audio_framerate")
 
+    @JacksonXmlProperty(localName = "audio_framerate")
+
     private List<StreamDetail> audioFramerate = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Request-Id")
+
+    @JacksonXmlProperty(localName = "X-Request-Id")
 
     private String xRequestId;
 

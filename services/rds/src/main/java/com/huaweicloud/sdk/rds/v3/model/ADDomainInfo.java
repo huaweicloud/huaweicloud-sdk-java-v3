@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.rds.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class ADDomainInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_admin_account_name")
 
+    @JacksonXmlProperty(localName = "domain_admin_account_name")
+
     private String domainAdminAccountName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_admin_pwd")
+
+    @JacksonXmlProperty(localName = "domain_admin_pwd")
 
     private String domainAdminPwd;
 

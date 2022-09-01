@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.live.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,10 +15,14 @@ public class UpdateStreamForbiddenRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "specify_project")
 
+    @JacksonXmlProperty(localName = "specify_project")
+
     private String specifyProject;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
+
+    @JacksonXmlProperty(localName = "body")
 
     private StreamForbiddenSetting body;
 

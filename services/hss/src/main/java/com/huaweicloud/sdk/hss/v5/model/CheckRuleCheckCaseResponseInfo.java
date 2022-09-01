@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.hss.v5.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class CheckRuleCheckCaseResponseInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "check_description")
 
+    @JacksonXmlProperty(localName = "check_description")
+
     private String checkDescription;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "current_value")
 
+    @JacksonXmlProperty(localName = "current_value")
+
     private String currentValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "suggest_value")
+
+    @JacksonXmlProperty(localName = "suggest_value")
 
     private String suggestValue;
 

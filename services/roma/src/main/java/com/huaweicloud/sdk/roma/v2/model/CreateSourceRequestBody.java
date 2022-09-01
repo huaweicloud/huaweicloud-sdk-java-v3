@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,15 +19,21 @@ public class CreateSourceRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "product_id")
 
+    @JacksonXmlProperty(localName = "product_id")
+
     private Integer productId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "device_id")
 
+    @JacksonXmlProperty(localName = "device_id")
+
     private Integer deviceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "topic")
+
+    @JacksonXmlProperty(localName = "topic")
 
     private String topic;
 
@@ -110,6 +117,8 @@ public class CreateSourceRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_base64")
 
+    @JacksonXmlProperty(localName = "is_base64")
+
     private IsBase64Enum isBase64;
 
     /**
@@ -191,6 +200,8 @@ public class CreateSourceRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "contain_device_info")
+
+    @JacksonXmlProperty(localName = "contain_device_info")
 
     private ContainDeviceInfoEnum containDeviceInfo;
 

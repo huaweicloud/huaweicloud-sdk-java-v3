@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -22,10 +23,14 @@ public class UpdateHostGroupResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_group_id")
 
+    @JacksonXmlProperty(localName = "host_group_id")
+
     private String hostGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_group_name")
+
+    @JacksonXmlProperty(localName = "host_group_name")
 
     private String hostGroupName;
 
@@ -109,25 +114,35 @@ public class UpdateHostGroupResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_group_type")
 
+    @JacksonXmlProperty(localName = "host_group_type")
+
     private HostGroupTypeEnum hostGroupType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_id_list")
+
+    @JacksonXmlProperty(localName = "host_id_list")
 
     private List<String> hostIdList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_group_tag")
 
+    @JacksonXmlProperty(localName = "host_group_tag")
+
     private List<HostGroupTag> hostGroupTag = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
+    @JacksonXmlProperty(localName = "create_time")
+
     private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
+
+    @JacksonXmlProperty(localName = "update_time")
 
     private Long updateTime;
 

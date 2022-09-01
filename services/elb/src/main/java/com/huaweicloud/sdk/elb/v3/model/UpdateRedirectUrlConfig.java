@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -101,25 +102,35 @@ public class UpdateRedirectUrlConfig {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protocol")
 
+    @JacksonXmlProperty(localName = "protocol")
+
     private ProtocolEnum protocol;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host")
+
+    @JacksonXmlProperty(localName = "host")
 
     private String host;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "port")
 
+    @JacksonXmlProperty(localName = "port")
+
     private String port;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "path")
 
+    @JacksonXmlProperty(localName = "path")
+
     private String path;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "query")
+
+    @JacksonXmlProperty(localName = "query")
 
     private String query;
 
@@ -220,6 +231,8 @@ public class UpdateRedirectUrlConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status_code")
+
+    @JacksonXmlProperty(localName = "status_code")
 
     private StatusCodeEnum statusCode;
 

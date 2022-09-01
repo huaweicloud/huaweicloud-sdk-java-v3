@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.codehub.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,40 +17,56 @@ public class CreateCommitRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "branch")
 
+    @JacksonXmlProperty(localName = "branch")
+
     private String branch;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "commit_message")
+
+    @JacksonXmlProperty(localName = "commit_message")
 
     private String commitMessage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_branch")
 
+    @JacksonXmlProperty(localName = "start_branch")
+
     private String startBranch;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "actions")
+
+    @JacksonXmlProperty(localName = "actions")
 
     private List<CommitAction> actions = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "author_email")
 
+    @JacksonXmlProperty(localName = "author_email")
+
     private String authorEmail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "author_name")
+
+    @JacksonXmlProperty(localName = "author_name")
 
     private String authorName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stats")
 
+    @JacksonXmlProperty(localName = "stats")
+
     private Boolean stats;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "force")
+
+    @JacksonXmlProperty(localName = "force")
 
     private String force;
 

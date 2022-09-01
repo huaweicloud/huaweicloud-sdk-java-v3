@@ -14,6 +14,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -27,6 +29,7 @@ public class Backup  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
+    @JacksonXmlProperty(localName = "id")
     
     private String id;
 
@@ -34,6 +37,7 @@ public class Backup  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
+    @JacksonXmlProperty(localName = "name")
     
     private String name;
 
@@ -41,6 +45,7 @@ public class Backup  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
+    @JacksonXmlProperty(localName = "description")
     
     private String description;
 
@@ -48,6 +53,7 @@ public class Backup  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="begin_time")
     
+    @JacksonXmlProperty(localName = "begin_time")
     
     private String beginTime;
     /**
@@ -145,6 +151,7 @@ public class Backup  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
+    @JacksonXmlProperty(localName = "status")
     
     private StatusEnum status;
     /**
@@ -224,6 +231,7 @@ public class Backup  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
+    @JacksonXmlProperty(localName = "type")
     
     private TypeEnum type;
 
@@ -231,6 +239,7 @@ public class Backup  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_id")
     
+    @JacksonXmlProperty(localName = "instance_id")
     
     private String instanceId;
 

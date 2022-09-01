@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.iotanalytics.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,20 +14,28 @@ public class StartJobRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_id")
 
+    @JacksonXmlProperty(localName = "job_id")
+
     private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parallel")
+
+    @JacksonXmlProperty(localName = "parallel")
 
     private Integer parallel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rtu")
 
+    @JacksonXmlProperty(localName = "rtu")
+
     private Integer rtu;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resume_savepoint")
+
+    @JacksonXmlProperty(localName = "resume_savepoint")
 
     private Boolean resumeSavepoint;
 

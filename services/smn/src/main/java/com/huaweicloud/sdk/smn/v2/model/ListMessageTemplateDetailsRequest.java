@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.smn.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -12,6 +13,8 @@ public class ListMessageTemplateDetailsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "message_template_id")
+
+    @JacksonXmlProperty(localName = "message_template_id")
 
     private String messageTemplateId;
 

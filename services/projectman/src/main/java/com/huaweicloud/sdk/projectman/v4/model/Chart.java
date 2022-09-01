@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.projectman.v4.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,30 +14,42 @@ public class Chart {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "date")
 
+    @JacksonXmlProperty(localName = "date")
+
     private String date;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "finished_num")
+
+    @JacksonXmlProperty(localName = "finished_num")
 
     private Integer finishedNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "iteration_id")
 
+    @JacksonXmlProperty(localName = "iteration_id")
+
     private Integer iterationId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_num_id")
+
+    @JacksonXmlProperty(localName = "project_num_id")
 
     private Integer projectNumId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remaining_num")
 
+    @JacksonXmlProperty(localName = "remaining_num")
+
     private Integer remainingNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total")
+
+    @JacksonXmlProperty(localName = "total")
 
     private Integer total;
 

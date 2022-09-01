@@ -107,7 +107,6 @@ public class GslMeta {
             }));
 
         // response
-
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -140,7 +139,6 @@ public class GslMeta {
             }));
 
         // response
-
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -173,7 +171,6 @@ public class GslMeta {
             }));
 
         // response
-
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -206,7 +203,6 @@ public class GslMeta {
             }));
 
         // response
-
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -292,7 +288,6 @@ public class GslMeta {
             }));
 
         // response
-
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -920,7 +915,6 @@ public class GslMeta {
             }));
 
         // response
-
         builder.<List<SimCardsFlowVO>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -974,7 +968,6 @@ public class GslMeta {
             }));
 
         // response
-
         builder.<List<SimPricePlanVO>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -1006,7 +999,6 @@ public class GslMeta {
             }));
 
         // response
-
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -1062,7 +1054,6 @@ public class GslMeta {
             }));
 
         // response
-
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,

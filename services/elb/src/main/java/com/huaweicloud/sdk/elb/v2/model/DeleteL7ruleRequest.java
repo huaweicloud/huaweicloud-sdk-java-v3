@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.elb.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class DeleteL7ruleRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "l7policy_id")
 
+    @JacksonXmlProperty(localName = "l7policy_id")
+
     private String l7policyId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "l7rule_id")
+
+    @JacksonXmlProperty(localName = "l7rule_id")
 
     private String l7ruleId;
 

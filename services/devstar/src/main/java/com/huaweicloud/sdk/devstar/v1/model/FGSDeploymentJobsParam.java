@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.devstar.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class FGSDeploymentJobsParam {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_id")
 
+    @JacksonXmlProperty(localName = "file_id")
+
     private String fileId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "handler")
+
+    @JacksonXmlProperty(localName = "handler")
 
     private String handler;
 

@@ -10,6 +10,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -23,6 +25,7 @@ public class DiscoveryRule  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="checkContent")
     
+    @JacksonXmlProperty(localName = "checkContent")
     
     private List<String> checkContent = null;
     
@@ -30,6 +33,7 @@ public class DiscoveryRule  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="checkMode")
     
+    @JacksonXmlProperty(localName = "checkMode")
     
     private String checkMode;
 
@@ -37,6 +41,7 @@ public class DiscoveryRule  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="checkType")
     
+    @JacksonXmlProperty(localName = "checkType")
     
     private String checkType;
 

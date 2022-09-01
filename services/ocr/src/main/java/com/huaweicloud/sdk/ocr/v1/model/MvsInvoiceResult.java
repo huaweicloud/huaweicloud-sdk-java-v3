@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ocr.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,170 +14,238 @@ public class MvsInvoiceResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "code")
 
+    @JacksonXmlProperty(localName = "code")
+
     private String code;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "number")
+
+    @JacksonXmlProperty(localName = "number")
 
     private String number;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "machine_printed_code")
 
+    @JacksonXmlProperty(localName = "machine_printed_code")
+
     private String machinePrintedCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "machine_printed_number")
+
+    @JacksonXmlProperty(localName = "machine_printed_number")
 
     private String machinePrintedNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "issue_date")
 
+    @JacksonXmlProperty(localName = "issue_date")
+
     private String issueDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "machine_number")
+
+    @JacksonXmlProperty(localName = "machine_number")
 
     private String machineNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "buyer_name")
 
+    @JacksonXmlProperty(localName = "buyer_name")
+
     private String buyerName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "buyer_organization_number")
+
+    @JacksonXmlProperty(localName = "buyer_organization_number")
 
     private String buyerOrganizationNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "buyer_id")
 
+    @JacksonXmlProperty(localName = "buyer_id")
+
     private String buyerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "seller_name")
+
+    @JacksonXmlProperty(localName = "seller_name")
 
     private String sellerName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "seller_phone")
 
+    @JacksonXmlProperty(localName = "seller_phone")
+
     private String sellerPhone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "seller_id")
+
+    @JacksonXmlProperty(localName = "seller_id")
 
     private String sellerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "seller_account")
 
+    @JacksonXmlProperty(localName = "seller_account")
+
     private String sellerAccount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "seller_address")
+
+    @JacksonXmlProperty(localName = "seller_address")
 
     private String sellerAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "seller_bank")
 
+    @JacksonXmlProperty(localName = "seller_bank")
+
     private String sellerBank;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vehicle_type")
+
+    @JacksonXmlProperty(localName = "vehicle_type")
 
     private String vehicleType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "brand_model")
 
+    @JacksonXmlProperty(localName = "brand_model")
+
     private String brandModel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "manufacturing_location")
+
+    @JacksonXmlProperty(localName = "manufacturing_location")
 
     private String manufacturingLocation;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quality_certificate")
 
+    @JacksonXmlProperty(localName = "quality_certificate")
+
     private String qualityCertificate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "import_certificate")
+
+    @JacksonXmlProperty(localName = "import_certificate")
 
     private String importCertificate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "inspection_number")
 
+    @JacksonXmlProperty(localName = "inspection_number")
+
     private String inspectionNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "engine_number")
+
+    @JacksonXmlProperty(localName = "engine_number")
 
     private String engineNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vehicle_identification_number")
 
+    @JacksonXmlProperty(localName = "vehicle_identification_number")
+
     private String vehicleIdentificationNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tonnage")
+
+    @JacksonXmlProperty(localName = "tonnage")
 
     private String tonnage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "seating_capacity")
 
+    @JacksonXmlProperty(localName = "seating_capacity")
+
     private String seatingCapacity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tax_authority")
+
+    @JacksonXmlProperty(localName = "tax_authority")
 
     private String taxAuthority;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tax_authority_code")
 
+    @JacksonXmlProperty(localName = "tax_authority_code")
+
     private String taxAuthorityCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tax_payment_receipt")
+
+    @JacksonXmlProperty(localName = "tax_payment_receipt")
 
     private String taxPaymentReceipt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tax_rate")
 
+    @JacksonXmlProperty(localName = "tax_rate")
+
     private String taxRate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tax")
+
+    @JacksonXmlProperty(localName = "tax")
 
     private String tax;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tax_exclusive_price")
 
+    @JacksonXmlProperty(localName = "tax_exclusive_price")
+
     private String taxExclusivePrice;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total")
+
+    @JacksonXmlProperty(localName = "total")
 
     private String total;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_chinese")
 
+    @JacksonXmlProperty(localName = "total_chinese")
+
     private String totalChinese;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fiscal_code")
+
+    @JacksonXmlProperty(localName = "fiscal_code")
 
     private String fiscalCode;
 

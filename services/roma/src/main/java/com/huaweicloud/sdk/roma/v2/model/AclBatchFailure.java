@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.roma.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,20 +14,28 @@ public class AclBatchFailure {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "acl_id")
 
+    @JacksonXmlProperty(localName = "acl_id")
+
     private String aclId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "acl_name")
+
+    @JacksonXmlProperty(localName = "acl_name")
 
     private String aclName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_code")
 
+    @JacksonXmlProperty(localName = "error_code")
+
     private String errorCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_msg")
+
+    @JacksonXmlProperty(localName = "error_msg")
 
     private String errorMsg;
 

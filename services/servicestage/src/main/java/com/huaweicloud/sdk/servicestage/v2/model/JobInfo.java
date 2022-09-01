@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -17,6 +18,8 @@ public class JobInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "CREATED_BY")
+
+    @JacksonXmlProperty(localName = "CREATED_BY")
 
     private String createdBy;
 
@@ -106,40 +109,56 @@ public class JobInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "EXECUTION_STATUS")
 
+    @JacksonXmlProperty(localName = "EXECUTION_STATUS")
+
     private ExecutionStatusEnum executionStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "JOB_DESC")
+
+    @JacksonXmlProperty(localName = "JOB_DESC")
 
     private String jobDesc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "JOB_ID")
 
+    @JacksonXmlProperty(localName = "JOB_ID")
+
     private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "JOB_NAME")
+
+    @JacksonXmlProperty(localName = "JOB_NAME")
 
     private String jobName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "JOB_TYPE")
 
+    @JacksonXmlProperty(localName = "JOB_TYPE")
+
     private String jobType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ORDER_ID")
+
+    @JacksonXmlProperty(localName = "ORDER_ID")
 
     private String orderId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "PROJECT_ID")
 
+    @JacksonXmlProperty(localName = "PROJECT_ID")
+
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "SERVICE_INSTANCE_ID")
+
+    @JacksonXmlProperty(localName = "SERVICE_INSTANCE_ID")
 
     private String serviceInstanceId;
 

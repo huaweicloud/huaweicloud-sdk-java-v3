@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -17,6 +18,8 @@ public class CoditionResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "req_param_name")
+
+    @JacksonXmlProperty(localName = "req_param_name")
 
     private String reqParamName;
 
@@ -106,6 +109,8 @@ public class CoditionResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "condition_type")
 
+    @JacksonXmlProperty(localName = "condition_type")
+
     private ConditionTypeEnum conditionType;
 
     /**
@@ -188,25 +193,35 @@ public class CoditionResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "condition_origin")
 
+    @JacksonXmlProperty(localName = "condition_origin")
+
     private ConditionOriginEnum conditionOrigin;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "condition_value")
+
+    @JacksonXmlProperty(localName = "condition_value")
 
     private String conditionValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "req_param_id")
 
+    @JacksonXmlProperty(localName = "req_param_id")
+
     private String reqParamId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "req_param_location")
+
+    @JacksonXmlProperty(localName = "req_param_location")
 
     private String reqParamLocation;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.projectman.v4.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,50 +15,70 @@ public class IssueAttrHistoryRecord {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "field_key")
 
+    @JacksonXmlProperty(localName = "field_key")
+
     private String fieldKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "field_name")
+
+    @JacksonXmlProperty(localName = "field_name")
 
     private String fieldName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private Long id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "issue_id")
+
+    @JacksonXmlProperty(localName = "issue_id")
 
     private Long issueId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "new_value")
 
+    @JacksonXmlProperty(localName = "new_value")
+
     private String newValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "old_value")
+
+    @JacksonXmlProperty(localName = "old_value")
 
     private String oldValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operated_time")
 
+    @JacksonXmlProperty(localName = "operated_time")
+
     private Long operatedTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operation")
+
+    @JacksonXmlProperty(localName = "operation")
 
     private String operation;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operator")
 
+    @JacksonXmlProperty(localName = "operator")
+
     private IssueUser operator;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "property")
+
+    @JacksonXmlProperty(localName = "property")
 
     private String property;
 

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,15 +19,21 @@ public class VulnItem {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vuln_id")
 
+    @JacksonXmlProperty(localName = "vuln_id")
+
     private String vulnId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_id")
 
+    @JacksonXmlProperty(localName = "domain_id")
+
     private String domainId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "url")
+
+    @JacksonXmlProperty(localName = "url")
 
     private String url;
 
@@ -122,6 +129,8 @@ public class VulnItem {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "severity")
 
+    @JacksonXmlProperty(localName = "severity")
+
     private SeverityEnum severity;
 
     /**
@@ -210,55 +219,77 @@ public class VulnItem {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vuln_status")
 
+    @JacksonXmlProperty(localName = "vuln_status")
+
     private VulnStatusEnum vulnStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vuln_class")
+
+    @JacksonXmlProperty(localName = "vuln_class")
 
     private String vulnClass;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vuln_type")
 
+    @JacksonXmlProperty(localName = "vuln_type")
+
     private String vulnType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
+
+    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "advice")
 
+    @JacksonXmlProperty(localName = "advice")
+
     private String advice;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hit_details")
+
+    @JacksonXmlProperty(localName = "hit_details")
 
     private String hitDetails;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "request")
 
+    @JacksonXmlProperty(localName = "request")
+
     private String request;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "response")
+
+    @JacksonXmlProperty(localName = "response")
 
     private String response;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "provider")
 
+    @JacksonXmlProperty(localName = "provider")
+
     private String provider;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "reason")
 
+    @JacksonXmlProperty(localName = "reason")
+
     private String reason;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "find_time")
+
+    @JacksonXmlProperty(localName = "find_time")
 
     private String findTime;
 

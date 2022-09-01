@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.lts.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,25 +17,35 @@ public class GetAccessConfigListRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "access_config_name_list")
 
+    @JacksonXmlProperty(localName = "access_config_name_list")
+
     private List<String> accessConfigNameList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_group_name_list")
+
+    @JacksonXmlProperty(localName = "host_group_name_list")
 
     private List<String> hostGroupNameList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_group_name_list")
 
+    @JacksonXmlProperty(localName = "log_group_name_list")
+
     private List<String> logGroupNameList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_stream_name_list")
 
+    @JacksonXmlProperty(localName = "log_stream_name_list")
+
     private List<String> logStreamNameList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "access_config_tag_list")
+
+    @JacksonXmlProperty(localName = "access_config_tag_list")
 
     private List<AccessConfigTag> accessConfigTagList = null;
 

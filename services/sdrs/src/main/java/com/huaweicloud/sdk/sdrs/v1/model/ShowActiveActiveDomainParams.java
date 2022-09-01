@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.sdrs.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,30 +15,42 @@ public class ShowActiveActiveDomainParams {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
+    @JacksonXmlProperty(localName = "description")
+
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sold_out")
+
+    @JacksonXmlProperty(localName = "sold_out")
 
     private Boolean soldOut;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "local_replication_cluster")
 
+    @JacksonXmlProperty(localName = "local_replication_cluster")
+
     private ReplicationClusterParams localReplicationCluster;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remote_replication_cluster")
+
+    @JacksonXmlProperty(localName = "remote_replication_cluster")
 
     private ReplicationClusterParams remoteReplicationCluster;
 

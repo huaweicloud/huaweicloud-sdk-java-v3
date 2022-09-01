@@ -8,6 +8,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -21,6 +23,7 @@ public class Backup  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
+    @JacksonXmlProperty(localName = "id")
     
     private String id;
 
@@ -28,6 +31,7 @@ public class Backup  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
+    @JacksonXmlProperty(localName = "name")
     
     private String name;
 
@@ -35,6 +39,7 @@ public class Backup  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="backupMethod")
     
+    @JacksonXmlProperty(localName = "backupMethod")
     
     private String backupMethod;
 
@@ -42,6 +47,7 @@ public class Backup  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="graphId")
     
+    @JacksonXmlProperty(localName = "graphId")
     
     private String graphId;
 
@@ -49,6 +55,7 @@ public class Backup  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="graphName")
     
+    @JacksonXmlProperty(localName = "graphName")
     
     private String graphName;
 
@@ -56,6 +63,7 @@ public class Backup  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="graphStatus")
     
+    @JacksonXmlProperty(localName = "graphStatus")
     
     private String graphStatus;
 
@@ -63,6 +71,7 @@ public class Backup  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="graphSizeTypeIndex")
     
+    @JacksonXmlProperty(localName = "graphSizeTypeIndex")
     
     private String graphSizeTypeIndex;
 
@@ -70,6 +79,7 @@ public class Backup  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dataStoreVersion")
     
+    @JacksonXmlProperty(localName = "dataStoreVersion")
     
     private String dataStoreVersion;
 
@@ -77,6 +87,7 @@ public class Backup  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="arch")
     
+    @JacksonXmlProperty(localName = "arch")
     
     private String arch;
 
@@ -84,6 +95,7 @@ public class Backup  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
+    @JacksonXmlProperty(localName = "status")
     
     private String status;
 
@@ -91,6 +103,7 @@ public class Backup  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="startTimestamp")
     
+    @JacksonXmlProperty(localName = "startTimestamp")
     
     private Long startTimestamp;
 
@@ -98,6 +111,7 @@ public class Backup  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="startTime")
     
+    @JacksonXmlProperty(localName = "startTime")
     
     private String startTime;
 
@@ -105,6 +119,7 @@ public class Backup  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="endTimestamp")
     
+    @JacksonXmlProperty(localName = "endTimestamp")
     
     private Long endTimestamp;
 
@@ -112,6 +127,7 @@ public class Backup  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="endTime")
     
+    @JacksonXmlProperty(localName = "endTime")
     
     private String endTime;
 
@@ -119,6 +135,7 @@ public class Backup  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="size")
     
+    @JacksonXmlProperty(localName = "size")
     
     private Long size;
 
@@ -126,6 +143,7 @@ public class Backup  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="duration")
     
+    @JacksonXmlProperty(localName = "duration")
     
     private Long duration;
 
@@ -133,6 +151,7 @@ public class Backup  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="encrypted")
     
+    @JacksonXmlProperty(localName = "encrypted")
     
     private Boolean encrypted;
 

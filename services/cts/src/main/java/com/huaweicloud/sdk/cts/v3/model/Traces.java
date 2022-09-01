@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -19,10 +20,14 @@ public class Traces {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_id")
 
+    @JacksonXmlProperty(localName = "resource_id")
+
     private String resourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trace_name")
+
+    @JacksonXmlProperty(localName = "trace_name")
 
     private String traceName;
 
@@ -112,95 +117,133 @@ public class Traces {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trace_rating")
 
+    @JacksonXmlProperty(localName = "trace_rating")
+
     private TraceRatingEnum traceRating;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trace_type")
+
+    @JacksonXmlProperty(localName = "trace_type")
 
     private String traceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "request")
 
+    @JacksonXmlProperty(localName = "request")
+
     private String request;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "response")
+
+    @JacksonXmlProperty(localName = "response")
 
     private String response;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "code")
 
+    @JacksonXmlProperty(localName = "code")
+
     private String code;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "api_version")
+
+    @JacksonXmlProperty(localName = "api_version")
 
     private String apiVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "message")
 
+    @JacksonXmlProperty(localName = "message")
+
     private String message;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "record_time")
+
+    @JacksonXmlProperty(localName = "record_time")
 
     private Long recordTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trace_id")
 
+    @JacksonXmlProperty(localName = "trace_id")
+
     private String traceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time")
+
+    @JacksonXmlProperty(localName = "time")
 
     private Long time;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user")
 
+    @JacksonXmlProperty(localName = "user")
+
     private UserInfo user;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_type")
+
+    @JacksonXmlProperty(localName = "service_type")
 
     private String serviceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_type")
 
+    @JacksonXmlProperty(localName = "resource_type")
+
     private String resourceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_ip")
+
+    @JacksonXmlProperty(localName = "source_ip")
 
     private String sourceIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_name")
 
+    @JacksonXmlProperty(localName = "resource_name")
+
     private String resourceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "request_id")
+
+    @JacksonXmlProperty(localName = "request_id")
 
     private String requestId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "location_info")
 
+    @JacksonXmlProperty(localName = "location_info")
+
     private String locationInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "endpoint")
 
+    @JacksonXmlProperty(localName = "endpoint")
+
     private String endpoint;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_url")
+
+    @JacksonXmlProperty(localName = "resource_url")
 
     private String resourceUrl;
 

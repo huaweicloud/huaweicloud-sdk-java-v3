@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.swr.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -17,25 +18,35 @@ public class ShowNamespaceAuthResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private Integer id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "creator_name")
 
+    @JacksonXmlProperty(localName = "creator_name")
+
     private String creatorName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "self_auth")
 
+    @JacksonXmlProperty(localName = "self_auth")
+
     private UserAuth selfAuth;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "others_auths")
+
+    @JacksonXmlProperty(localName = "others_auths")
 
     private List<UserAuth> othersAuths = null;
 

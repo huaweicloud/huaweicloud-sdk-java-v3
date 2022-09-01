@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,15 +22,21 @@ public class NovaCreateServersResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "links")
 
+    @JacksonXmlProperty(localName = "links")
+
     private List<NovaLink> links = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_groups")
+
+    @JacksonXmlProperty(localName = "security_groups")
 
     private List<NovaServerSecurityGroup> securityGroups = null;
 
@@ -113,15 +120,21 @@ public class NovaCreateServersResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "OS-DCF:diskConfig")
 
+    @JacksonXmlProperty(localName = "OS-DCF:diskConfig")
+
     private OsDCFDiskConfigEnum osDCFDiskConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "reservation_id")
 
+    @JacksonXmlProperty(localName = "reservation_id")
+
     private String reservationId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "adminPass")
+
+    @JacksonXmlProperty(localName = "adminPass")
 
     private String adminPass;
 

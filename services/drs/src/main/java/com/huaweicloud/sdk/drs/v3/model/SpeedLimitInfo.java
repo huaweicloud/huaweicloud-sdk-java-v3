@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.drs.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,20 +14,28 @@ public class SpeedLimitInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "begin")
 
+    @JacksonXmlProperty(localName = "begin")
+
     private String begin;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end")
+
+    @JacksonXmlProperty(localName = "end")
 
     private String end;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "speed")
 
+    @JacksonXmlProperty(localName = "speed")
+
     private String speed;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_utc")
+
+    @JacksonXmlProperty(localName = "is_utc")
 
     private Boolean isUtc;
 

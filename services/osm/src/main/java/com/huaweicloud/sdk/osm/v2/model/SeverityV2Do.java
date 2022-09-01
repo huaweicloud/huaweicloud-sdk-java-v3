@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.osm.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class SeverityV2Do {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "language")
 
+    @JacksonXmlProperty(localName = "language")
+
     private String language;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "severity_name")
 
+    @JacksonXmlProperty(localName = "severity_name")
+
     private String severityName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "severity_id")
+
+    @JacksonXmlProperty(localName = "severity_id")
 
     private String severityId;
 

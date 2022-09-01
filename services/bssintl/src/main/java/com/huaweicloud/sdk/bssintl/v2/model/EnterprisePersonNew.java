@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.bssintl.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class EnterprisePersonNew {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "legel_name")
 
+    @JacksonXmlProperty(localName = "legel_name")
+
     private String legelName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "legel_id_number")
 
+    @JacksonXmlProperty(localName = "legel_id_number")
+
     private String legelIdNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "certifier_role")
+
+    @JacksonXmlProperty(localName = "certifier_role")
 
     private String certifierRole;
 

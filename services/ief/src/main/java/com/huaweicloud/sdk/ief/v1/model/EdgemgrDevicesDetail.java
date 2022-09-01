@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ief.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,45 +17,63 @@ public class EdgemgrDevicesDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
+    @JacksonXmlProperty(localName = "description")
+
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "attributes")
+
+    @JacksonXmlProperty(localName = "attributes")
 
     private Map<String, ValueInAttributes> attributes = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "connection_type")
 
+    @JacksonXmlProperty(localName = "connection_type")
+
     private String connectionType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "access_protocol")
+
+    @JacksonXmlProperty(localName = "access_protocol")
 
     private String accessProtocol;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "twin")
 
+    @JacksonXmlProperty(localName = "twin")
+
     private Map<String, ValueInTwin> twin = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "access_config")
 
+    @JacksonXmlProperty(localName = "access_config")
+
     private AccessConfig accessConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "property_visitors")
+
+    @JacksonXmlProperty(localName = "property_visitors")
 
     private Map<String, ValueInPropertyVisitors> propertyVisitors = null;
 

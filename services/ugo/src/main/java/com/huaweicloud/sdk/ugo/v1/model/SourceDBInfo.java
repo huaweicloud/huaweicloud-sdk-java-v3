@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,15 +19,21 @@ public class SourceDBInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "connection_string")
 
+    @JacksonXmlProperty(localName = "connection_string")
+
     private String connectionString;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_name")
 
+    @JacksonXmlProperty(localName = "user_name")
+
     private String userName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "password")
+
+    @JacksonXmlProperty(localName = "password")
 
     private String password;
 
@@ -103,6 +110,8 @@ public class SourceDBInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_db_type")
+
+    @JacksonXmlProperty(localName = "source_db_type")
 
     private SourceDbTypeEnum sourceDbType;
 
@@ -197,6 +206,8 @@ public class SourceDBInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_db_version")
+
+    @JacksonXmlProperty(localName = "source_db_version")
 
     private SourceDbVersionEnum sourceDbVersion;
 

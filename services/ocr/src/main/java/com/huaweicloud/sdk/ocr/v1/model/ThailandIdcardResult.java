@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ocr.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,100 +17,140 @@ public class ThailandIdcardResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "side")
 
+    @JacksonXmlProperty(localName = "side")
+
     private String side;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id_number")
+
+    @JacksonXmlProperty(localName = "id_number")
 
     private String idNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name_th")
 
+    @JacksonXmlProperty(localName = "name_th")
+
     private String nameTh;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "first_name_en")
+
+    @JacksonXmlProperty(localName = "first_name_en")
 
     private String firstNameEn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last_name_en")
 
+    @JacksonXmlProperty(localName = "last_name_en")
+
     private String lastNameEn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "date_of_birth_th")
+
+    @JacksonXmlProperty(localName = "date_of_birth_th")
 
     private String dateOfBirthTh;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "date_of_birth_en")
 
+    @JacksonXmlProperty(localName = "date_of_birth_en")
+
     private String dateOfBirthEn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "religion_th")
+
+    @JacksonXmlProperty(localName = "religion_th")
 
     private String religionTh;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "address_th")
 
+    @JacksonXmlProperty(localName = "address_th")
+
     private String addressTh;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "date_of_issue_th")
+
+    @JacksonXmlProperty(localName = "date_of_issue_th")
 
     private String dateOfIssueTh;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "date_of_issue_en")
 
+    @JacksonXmlProperty(localName = "date_of_issue_en")
+
     private String dateOfIssueEn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "date_of_expiry_th")
+
+    @JacksonXmlProperty(localName = "date_of_expiry_th")
 
     private String dateOfExpiryTh;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "date_of_expiry_en")
 
+    @JacksonXmlProperty(localName = "date_of_expiry_en")
+
     private String dateOfExpiryEn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "serial_number")
+
+    @JacksonXmlProperty(localName = "serial_number")
 
     private String serialNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "card_number")
 
+    @JacksonXmlProperty(localName = "card_number")
+
     private String cardNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "laser_number")
+
+    @JacksonXmlProperty(localName = "laser_number")
 
     private String laserNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confidence")
 
+    @JacksonXmlProperty(localName = "confidence")
+
     private ThailandIdcardConfidence confidence;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "portrait_image")
+
+    @JacksonXmlProperty(localName = "portrait_image")
 
     private String portraitImage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "portrait_location")
 
+    @JacksonXmlProperty(localName = "portrait_location")
+
     private List<List<Integer>> portraitLocation = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "idcard_type")
+
+    @JacksonXmlProperty(localName = "idcard_type")
 
     private String idcardType;
 

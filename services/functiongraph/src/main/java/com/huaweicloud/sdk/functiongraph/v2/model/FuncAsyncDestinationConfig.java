@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.functiongraph.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,10 +15,14 @@ public class FuncAsyncDestinationConfig {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "on_success")
 
+    @JacksonXmlProperty(localName = "on_success")
+
     private FuncDestinationConfig onSuccess;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "on_failure")
+
+    @JacksonXmlProperty(localName = "on_failure")
 
     private FuncDestinationConfig onFailure;
 

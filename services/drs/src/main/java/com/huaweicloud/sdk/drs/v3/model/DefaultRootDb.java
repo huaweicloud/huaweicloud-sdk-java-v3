@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.drs.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class DefaultRootDb {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "db_name")
 
+    @JacksonXmlProperty(localName = "db_name")
+
     private String dbName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "db_encoding")
+
+    @JacksonXmlProperty(localName = "db_encoding")
 
     private String dbEncoding;
 

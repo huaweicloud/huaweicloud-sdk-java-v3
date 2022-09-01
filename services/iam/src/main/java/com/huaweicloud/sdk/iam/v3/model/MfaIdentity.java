@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -98,15 +99,21 @@ public class MfaIdentity {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "methods")
 
+    @JacksonXmlProperty(localName = "methods")
+
     private List<MethodsEnum> methods = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "password")
 
+    @JacksonXmlProperty(localName = "password")
+
     private PwdPassword password;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "totp")
+
+    @JacksonXmlProperty(localName = "totp")
 
     private MfaTotp totp;
 

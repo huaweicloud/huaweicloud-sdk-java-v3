@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cloudrtc.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,10 +15,14 @@ public class AppCallbacks {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "push_callback")
 
+    @JacksonXmlProperty(localName = "push_callback")
+
     private AppCallbackUrl pushCallback;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "record_callback")
+
+    @JacksonXmlProperty(localName = "record_callback")
 
     private AppCallbackUrl recordCallback;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cloudtest.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,70 +15,98 @@ public class TestPlanIssueDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
 
+    @JacksonXmlProperty(localName = "project_id")
+
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "plan_id")
+
+    @JacksonXmlProperty(localName = "plan_id")
 
     private String planId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "workitem_id")
 
+    @JacksonXmlProperty(localName = "workitem_id")
+
     private String workitemId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parent_issue")
+
+    @JacksonXmlProperty(localName = "parent_issue")
 
     private String parentIssue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_date")
 
+    @JacksonXmlProperty(localName = "start_date")
+
     private String startDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_date")
+
+    @JacksonXmlProperty(localName = "end_date")
 
     private String endDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region_id")
+
+    @JacksonXmlProperty(localName = "region_id")
 
     private String regionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "owner")
 
+    @JacksonXmlProperty(localName = "owner")
+
     private NameAndId owner;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "severity")
+
+    @JacksonXmlProperty(localName = "severity")
 
     private NameAndId severity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private NameAndId status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tracker")
+
+    @JacksonXmlProperty(localName = "tracker")
 
     private NameAndId tracker;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "iteration")
 
+    @JacksonXmlProperty(localName = "iteration")
+
     private NameAndId iteration;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "module")
+
+    @JacksonXmlProperty(localName = "module")
 
     private NameAndId module;
 

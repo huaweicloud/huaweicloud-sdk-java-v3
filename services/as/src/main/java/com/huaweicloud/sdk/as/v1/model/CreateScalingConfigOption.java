@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.as.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,10 +15,14 @@ public class CreateScalingConfigOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scaling_configuration_name")
 
+    @JacksonXmlProperty(localName = "scaling_configuration_name")
+
     private String scalingConfigurationName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_config")
+
+    @JacksonXmlProperty(localName = "instance_config")
 
     private InstanceConfig instanceConfig;
 

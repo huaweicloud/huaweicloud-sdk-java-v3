@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Collections;
@@ -20,10 +21,14 @@ public class ShowTasksResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_name")
 
+    @JacksonXmlProperty(localName = "task_name")
+
     private String taskName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "url")
+
+    @JacksonXmlProperty(localName = "url")
 
     private String url;
 
@@ -107,35 +112,49 @@ public class ShowTasksResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_type")
 
+    @JacksonXmlProperty(localName = "task_type")
+
     private TaskTypeEnum taskType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_id")
+
+    @JacksonXmlProperty(localName = "task_id")
 
     private String taskId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_name")
 
+    @JacksonXmlProperty(localName = "domain_name")
+
     private String domainName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_settings")
+
+    @JacksonXmlProperty(localName = "task_settings")
 
     private TaskSettings taskSettings;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
+    @JacksonXmlProperty(localName = "create_time")
+
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
+    @JacksonXmlProperty(localName = "start_time")
+
     private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time")
+
+    @JacksonXmlProperty(localName = "end_time")
 
     private String endTime;
 
@@ -237,6 +256,8 @@ public class ShowTasksResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_status")
 
+    @JacksonXmlProperty(localName = "task_status")
+
     private TaskStatusEnum taskStatus;
 
     /**
@@ -325,25 +346,35 @@ public class ShowTasksResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "schedule_status")
 
+    @JacksonXmlProperty(localName = "schedule_status")
+
     private ScheduleStatusEnum scheduleStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "progress")
+
+    @JacksonXmlProperty(localName = "progress")
 
     private Integer progress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "reason")
 
+    @JacksonXmlProperty(localName = "reason")
+
     private String reason;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pack_num")
 
+    @JacksonXmlProperty(localName = "pack_num")
+
     private Long packNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "score")
+
+    @JacksonXmlProperty(localName = "score")
 
     private Integer score;
 
@@ -433,10 +464,14 @@ public class ShowTasksResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "safe_level")
 
+    @JacksonXmlProperty(localName = "safe_level")
+
     private SafeLevelEnum safeLevel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "statistics")
+
+    @JacksonXmlProperty(localName = "statistics")
 
     private VulnsLevel statistics;
 

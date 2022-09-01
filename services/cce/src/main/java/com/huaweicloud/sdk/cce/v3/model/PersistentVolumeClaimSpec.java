@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,10 +22,14 @@ public class PersistentVolumeClaimSpec {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volumeID")
 
+    @JacksonXmlProperty(localName = "volumeID")
+
     private String volumeID;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "storageType")
+
+    @JacksonXmlProperty(localName = "storageType")
 
     private String storageType;
 
@@ -108,25 +113,35 @@ public class PersistentVolumeClaimSpec {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "accessModes")
 
+    @JacksonXmlProperty(localName = "accessModes")
+
     private List<AccessModesEnum> accessModes = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "storageClassName")
+
+    @JacksonXmlProperty(localName = "storageClassName")
 
     private String storageClassName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volumeName")
 
+    @JacksonXmlProperty(localName = "volumeName")
+
     private String volumeName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resources")
 
+    @JacksonXmlProperty(localName = "resources")
+
     private ResourceRequirements resources;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volumeMode")
+
+    @JacksonXmlProperty(localName = "volumeMode")
 
     private String volumeMode;
 

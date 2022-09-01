@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.clouddeploy.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,15 +17,21 @@ public class TasksSuccessRateQuery {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_date")
 
+    @JacksonXmlProperty(localName = "start_date")
+
     private String startDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_date")
 
+    @JacksonXmlProperty(localName = "end_date")
+
     private String endDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_ids")
+
+    @JacksonXmlProperty(localName = "task_ids")
 
     private List<String> taskIds = null;
 

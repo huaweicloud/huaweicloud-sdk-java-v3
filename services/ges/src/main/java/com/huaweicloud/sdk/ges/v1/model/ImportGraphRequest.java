@@ -13,6 +13,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.ges.v1.model.ImportGraphReq;
 import java.util.HashMap;
 import java.util.Map;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -26,6 +28,7 @@ public class ImportGraphRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="graph_id")
     
+    @JacksonXmlProperty(localName = "graph_id")
     
     private String graphId;
     /**
@@ -105,6 +108,7 @@ public class ImportGraphRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="action_id")
     
+    @JacksonXmlProperty(localName = "action_id")
     
     private ActionIdEnum actionId;
 
@@ -112,6 +116,7 @@ public class ImportGraphRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
+    @JacksonXmlProperty(localName = "body")
     
     private ImportGraphReq body;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -15,90 +16,126 @@ public class UpdateTokenResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "accessToken")
 
+    @JacksonXmlProperty(localName = "accessToken")
+
     private String accessToken;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tokenIp")
+
+    @JacksonXmlProperty(localName = "tokenIp")
 
     private String tokenIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "validPeriod")
 
+    @JacksonXmlProperty(localName = "validPeriod")
+
     private Long validPeriod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expireTime")
+
+    @JacksonXmlProperty(localName = "expireTime")
 
     private Long expireTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "createTime")
 
+    @JacksonXmlProperty(localName = "createTime")
+
     private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user")
+
+    @JacksonXmlProperty(localName = "user")
 
     private UserInfo user;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "clientType")
 
+    @JacksonXmlProperty(localName = "clientType")
+
     private Integer clientType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "forceLoginInd")
+
+    @JacksonXmlProperty(localName = "forceLoginInd")
 
     private Integer forceLoginInd;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "firstLogin")
 
+    @JacksonXmlProperty(localName = "firstLogin")
+
     private Boolean firstLogin;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pwdExpired")
+
+    @JacksonXmlProperty(localName = "pwdExpired")
 
     private Boolean pwdExpired;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "daysPwdAvailable")
 
+    @JacksonXmlProperty(localName = "daysPwdAvailable")
+
     private Integer daysPwdAvailable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "proxyToken")
+
+    @JacksonXmlProperty(localName = "proxyToken")
 
     private ProxyTokenDTO proxyToken;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "delayDelete")
 
+    @JacksonXmlProperty(localName = "delayDelete")
+
     private Boolean delayDelete;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tokenType")
+
+    @JacksonXmlProperty(localName = "tokenType")
 
     private Integer tokenType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "refreshToken")
 
+    @JacksonXmlProperty(localName = "refreshToken")
+
     private String refreshToken;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "refreshValidPeriod")
+
+    @JacksonXmlProperty(localName = "refreshValidPeriod")
 
     private Long refreshValidPeriod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "refreshExpireTime")
 
+    @JacksonXmlProperty(localName = "refreshExpireTime")
+
     private Long refreshExpireTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "refreshCreateTime")
+
+    @JacksonXmlProperty(localName = "refreshCreateTime")
 
     private Long refreshCreateTime;
 

@@ -9,6 +9,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.aom.v2.model.SeriesAPIQueryItemParam;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -22,6 +24,7 @@ public class ListSeriesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
+    @JacksonXmlProperty(localName = "limit")
     
     private String limit;
 
@@ -29,6 +32,7 @@ public class ListSeriesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
+    @JacksonXmlProperty(localName = "offset")
     
     private String offset;
 
@@ -36,6 +40,7 @@ public class ListSeriesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
+    @JacksonXmlProperty(localName = "body")
     
     private SeriesAPIQueryItemParam body;
 

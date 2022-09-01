@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.das.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,20 +17,28 @@ public class DeleteProcessReqBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "db_user_id")
 
+    @JacksonXmlProperty(localName = "db_user_id")
+
     private String dbUserId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "process_ids")
+
+    @JacksonXmlProperty(localName = "process_ids")
 
     private List<String> processIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user")
 
+    @JacksonXmlProperty(localName = "user")
+
     private String user;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "database")
+
+    @JacksonXmlProperty(localName = "database")
 
     private String database;
 

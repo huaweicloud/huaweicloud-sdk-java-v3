@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.swr.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class DeleteImageSyncRepoRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remoteRegionId")
 
+    @JacksonXmlProperty(localName = "remoteRegionId")
+
     private String remoteRegionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remoteNamespace")
+
+    @JacksonXmlProperty(localName = "remoteNamespace")
 
     private String remoteNamespace;
 

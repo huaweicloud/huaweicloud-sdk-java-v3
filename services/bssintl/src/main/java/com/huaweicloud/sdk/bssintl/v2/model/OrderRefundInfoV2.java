@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.bssintl.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,50 +14,70 @@ public class OrderRefundInfoV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "amount")
+
+    @JacksonXmlProperty(localName = "amount")
 
     private Double amount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "measure_id")
 
+    @JacksonXmlProperty(localName = "measure_id")
+
     private String measureId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "customer_id")
+
+    @JacksonXmlProperty(localName = "customer_id")
 
     private String customerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_type_code")
 
+    @JacksonXmlProperty(localName = "resource_type_code")
+
     private String resourceTypeCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_type_code")
+
+    @JacksonXmlProperty(localName = "service_type_code")
 
     private String serviceTypeCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_type_name")
 
+    @JacksonXmlProperty(localName = "resource_type_name")
+
     private String resourceTypeName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_type_name")
+
+    @JacksonXmlProperty(localName = "service_type_name")
 
     private String serviceTypeName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region_code")
 
+    @JacksonXmlProperty(localName = "region_code")
+
     private String regionCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "base_order_id")
+
+    @JacksonXmlProperty(localName = "base_order_id")
 
     private String baseOrderId;
 

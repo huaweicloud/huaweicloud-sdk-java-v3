@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.http.FormDataFilePart;
 import com.huaweicloud.sdk.core.http.FormDataPart;
 import com.huaweicloud.sdk.core.http.SdkFormDataBody;
@@ -100,6 +101,8 @@ public class ImportLiveDataApiDefinitionsV2RequestBody implements SdkFormDataBod
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extend_mode")
 
+    @JacksonXmlProperty(localName = "extend_mode")
+
     private ExtendModeEnum extendMode;
 
     /**
@@ -182,9 +185,12 @@ public class ImportLiveDataApiDefinitionsV2RequestBody implements SdkFormDataBod
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "api_mode")
 
+    @JacksonXmlProperty(localName = "api_mode")
+
     private ApiModeEnum apiMode;
 
     @JsonProperty(value = "file_name", access = JsonProperty.Access.WRITE_ONLY)
+    @JacksonXmlProperty(localName = "file_name")
 
     private FormDataFilePart fileName;
 

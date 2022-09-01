@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,10 +19,14 @@ public class DatabaseInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parent_id")
+
+    @JacksonXmlProperty(localName = "parent_id")
 
     private String parentId;
 
@@ -117,20 +122,28 @@ public class DatabaseInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "object_type")
 
+    @JacksonXmlProperty(localName = "object_type")
+
     private ObjectTypeEnum objectType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "object_name")
+
+    @JacksonXmlProperty(localName = "object_name")
 
     private String objectName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "object_alias_name")
 
+    @JacksonXmlProperty(localName = "object_alias_name")
+
     private String objectAliasName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "select")
+
+    @JacksonXmlProperty(localName = "select")
 
     private String select;
 

@@ -8,6 +8,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -21,6 +23,7 @@ public class ListExecuteJobRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="page_size")
     
+    @JacksonXmlProperty(localName = "page_size")
     
     private String pageSize;
 
@@ -28,6 +31,7 @@ public class ListExecuteJobRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="current_page")
     
+    @JacksonXmlProperty(localName = "current_page")
     
     private String currentPage;
 
@@ -35,6 +39,7 @@ public class ListExecuteJobRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_name")
     
+    @JacksonXmlProperty(localName = "job_name")
     
     private String jobName;
 
@@ -42,6 +47,7 @@ public class ListExecuteJobRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cluster_id")
     
+    @JacksonXmlProperty(localName = "cluster_id")
     
     private String clusterId;
 
@@ -49,6 +55,7 @@ public class ListExecuteJobRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="state")
     
+    @JacksonXmlProperty(localName = "state")
     
     private String state;
 
@@ -56,6 +63,7 @@ public class ListExecuteJobRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
+    @JacksonXmlProperty(localName = "id")
     
     private String id;
 

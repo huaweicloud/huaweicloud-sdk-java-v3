@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.roma.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,70 +17,98 @@ public class ListInstanceTopicsRespTopics {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policiesOnly")
 
+    @JacksonXmlProperty(localName = "policiesOnly")
+
     private Boolean policiesOnly;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "replication")
 
+    @JacksonXmlProperty(localName = "replication")
+
     private Integer replication;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "partition")
+
+    @JacksonXmlProperty(localName = "partition")
 
     private Integer partition;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "retention_time")
 
+    @JacksonXmlProperty(localName = "retention_time")
+
     private Integer retentionTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sync_message_flush")
+
+    @JacksonXmlProperty(localName = "sync_message_flush")
 
     private Boolean syncMessageFlush;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sync_replication")
 
+    @JacksonXmlProperty(localName = "sync_replication")
+
     private Boolean syncReplication;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_id")
+
+    @JacksonXmlProperty(localName = "app_id")
 
     private String appId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_name")
 
+    @JacksonXmlProperty(localName = "app_name")
+
     private String appName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "permissions")
+
+    @JacksonXmlProperty(localName = "permissions")
 
     private List<String> permissions = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "external_configs")
 
+    @JacksonXmlProperty(localName = "external_configs")
+
     private Object externalConfigs;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
+
+    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sensitive_word")
 
+    @JacksonXmlProperty(localName = "sensitive_word")
+
     private String sensitiveWord;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "topic_type")
+
+    @JacksonXmlProperty(localName = "topic_type")
 
     private Integer topicType;
 

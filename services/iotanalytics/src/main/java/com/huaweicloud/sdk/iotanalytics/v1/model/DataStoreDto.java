@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.iotanalytics.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class DataStoreDto {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_store_id")
 
+    @JacksonXmlProperty(localName = "data_store_id")
+
     private String dataStoreId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_store_group_id")
 
+    @JacksonXmlProperty(localName = "data_store_group_id")
+
     private String dataStoreGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "product_id")
+
+    @JacksonXmlProperty(localName = "product_id")
 
     private String productId;
 

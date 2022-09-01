@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.drs.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,10 +17,14 @@ public class CompareObjectInfoWithToken {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "db_name")
 
+    @JacksonXmlProperty(localName = "db_name")
+
     private String dbName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "table_name_with_token")
+
+    @JacksonXmlProperty(localName = "table_name_with_token")
 
     private List<CompareTableInfoWithToken> tableNameWithToken = null;
 

@@ -1106,7 +1106,6 @@ public class DliMeta {
             }));
 
         // response
-
         builder.<List<CommonResp>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -1313,7 +1312,6 @@ public class DliMeta {
             }));
 
         // response
-
         builder.<List<CommonResp>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,

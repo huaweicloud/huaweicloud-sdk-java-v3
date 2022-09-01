@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cloudbuild.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class Scm {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "build_tag")
 
+    @JacksonXmlProperty(localName = "build_tag")
+
     private String buildTag;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "build_commit_id")
+
+    @JacksonXmlProperty(localName = "build_commit_id")
 
     private String buildCommitId;
 

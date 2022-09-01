@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.roma.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,10 +17,14 @@ public class VpcMemberModify {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "members")
 
+    @JacksonXmlProperty(localName = "members")
+
     private List<MemberInfo> members = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "member_group_name")
+
+    @JacksonXmlProperty(localName = "member_group_name")
 
     private String memberGroupName;
 

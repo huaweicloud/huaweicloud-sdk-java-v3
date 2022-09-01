@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.bss.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,40 +17,56 @@ public class QueryResourcesReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_ids")
 
+    @JacksonXmlProperty(localName = "resource_ids")
+
     private List<String> resourceIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "order_id")
+
+    @JacksonXmlProperty(localName = "order_id")
 
     private String orderId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "only_main_resource")
 
+    @JacksonXmlProperty(localName = "only_main_resource")
+
     private Integer onlyMainResource;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status_list")
+
+    @JacksonXmlProperty(localName = "status_list")
 
     private List<Integer> statusList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
+    @JacksonXmlProperty(localName = "offset")
+
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
+
+    @JacksonXmlProperty(localName = "limit")
 
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expire_time_begin")
 
+    @JacksonXmlProperty(localName = "expire_time_begin")
+
     private String expireTimeBegin;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expire_time_end")
+
+    @JacksonXmlProperty(localName = "expire_time_end")
 
     private String expireTimeEnd;
 

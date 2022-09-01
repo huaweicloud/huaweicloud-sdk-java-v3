@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.apm.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,75 +17,105 @@ public class TagParam {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tag_id")
 
+    @JacksonXmlProperty(localName = "tag_id")
+
     private Long tagId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tag_name")
+
+    @JacksonXmlProperty(localName = "tag_name")
 
     private String tagName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "env_id")
 
+    @JacksonXmlProperty(localName = "env_id")
+
     private Long envId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "descp")
+
+    @JacksonXmlProperty(localName = "descp")
 
     private String descp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "business_id")
 
+    @JacksonXmlProperty(localName = "business_id")
+
     private Long businessId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "env_id_list")
+
+    @JacksonXmlProperty(localName = "env_id_list")
 
     private List<Long> envIdList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tag_id_list")
 
+    @JacksonXmlProperty(localName = "tag_id_list")
+
     private List<Long> tagIdList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "keyword")
+
+    @JacksonXmlProperty(localName = "keyword")
 
     private String keyword;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page_enable")
 
+    @JacksonXmlProperty(localName = "page_enable")
+
     private Boolean pageEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page_number")
+
+    @JacksonXmlProperty(localName = "page_number")
 
     private Integer pageNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page_size")
 
+    @JacksonXmlProperty(localName = "page_size")
+
     private Integer pageSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "add_env_id_list")
+
+    @JacksonXmlProperty(localName = "add_env_id_list")
 
     private List<Long> addEnvIdList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "add_tag_id_list")
 
+    @JacksonXmlProperty(localName = "add_tag_id_list")
+
     private List<Long> addTagIdList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remove_tag_id_list")
 
+    @JacksonXmlProperty(localName = "remove_tag_id_list")
+
     private List<Long> removeTagIdList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remove_env_id_list")
+
+    @JacksonXmlProperty(localName = "remove_env_id_list")
 
     private List<Long> removeEnvIdList = null;
 

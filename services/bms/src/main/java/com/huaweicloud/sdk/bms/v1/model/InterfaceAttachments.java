@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -105,35 +106,49 @@ public class InterfaceAttachments {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "port_state")
 
+    @JacksonXmlProperty(localName = "port_state")
+
     private PortStateEnum portState;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fixed_ips")
+
+    @JacksonXmlProperty(localName = "fixed_ips")
 
     private List<FixedIps> fixedIps = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "net_id")
 
+    @JacksonXmlProperty(localName = "net_id")
+
     private UUID netId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "port_id")
+
+    @JacksonXmlProperty(localName = "port_id")
 
     private UUID portId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mac_addr")
 
+    @JacksonXmlProperty(localName = "mac_addr")
+
     private String macAddr;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "driver_mode")
 
+    @JacksonXmlProperty(localName = "driver_mode")
+
     private String driverMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pci_address")
+
+    @JacksonXmlProperty(localName = "pci_address")
 
     private String pciAddress;
 

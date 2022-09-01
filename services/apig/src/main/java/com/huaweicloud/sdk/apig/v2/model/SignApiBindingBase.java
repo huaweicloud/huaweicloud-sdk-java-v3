@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.apig.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.time.OffsetDateTime;
 import java.util.Objects;
@@ -14,60 +15,84 @@ public class SignApiBindingBase {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publish_id")
 
+    @JacksonXmlProperty(localName = "publish_id")
+
     private String publishId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "api_id")
+
+    @JacksonXmlProperty(localName = "api_id")
 
     private String apiId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_name")
 
+    @JacksonXmlProperty(localName = "group_name")
+
     private String groupName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "binding_time")
+
+    @JacksonXmlProperty(localName = "binding_time")
 
     private OffsetDateTime bindingTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "env_id")
 
+    @JacksonXmlProperty(localName = "env_id")
+
     private String envId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "env_name")
+
+    @JacksonXmlProperty(localName = "env_name")
 
     private String envName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "api_type")
 
+    @JacksonXmlProperty(localName = "api_type")
+
     private Integer apiType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "api_name")
+
+    @JacksonXmlProperty(localName = "api_name")
 
     private String apiName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "api_remark")
+
+    @JacksonXmlProperty(localName = "api_remark")
 
     private String apiRemark;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sign_id")
 
+    @JacksonXmlProperty(localName = "sign_id")
+
     private String signId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sign_name")
+
+    @JacksonXmlProperty(localName = "sign_name")
 
     private String signName;
 

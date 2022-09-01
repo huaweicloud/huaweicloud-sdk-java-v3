@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cloudrtc.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class RealtimeScaleDimensionValue {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dimension")
 
+    @JacksonXmlProperty(localName = "dimension")
+
     private String dimension;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "online_users")
+
+    @JacksonXmlProperty(localName = "online_users")
 
     private Long onlineUsers;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.iotanalytics.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,10 +15,14 @@ public class KafkaAuthInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_protocol")
 
+    @JacksonXmlProperty(localName = "security_protocol")
+
     private String securityProtocol;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sasl_plain_auth_info")
+
+    @JacksonXmlProperty(localName = "sasl_plain_auth_info")
 
     private SaslPlainAuthInfo saslPlainAuthInfo;
 

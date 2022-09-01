@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.res.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,120 +17,168 @@ public class JobConfig {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nearline_recall_param")
 
+    @JacksonXmlProperty(localName = "nearline_recall_param")
+
     private NearLineRecallParam nearlineRecallParam;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_recommended_num")
+
+    @JacksonXmlProperty(localName = "max_recommended_num")
 
     private Integer maxRecommendedNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "match_feature_pairs")
 
+    @JacksonXmlProperty(localName = "match_feature_pairs")
+
     private List<MatchFeaturePair> matchFeaturePairs = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "striping")
+
+    @JacksonXmlProperty(localName = "striping")
 
     private Striping striping;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "match_type")
 
+    @JacksonXmlProperty(localName = "match_type")
+
     private String matchType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "matrix_factorization")
+
+    @JacksonXmlProperty(localName = "matrix_factorization")
 
     private MatrixFactorization matrixFactorization;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "behavior_frequencys")
 
+    @JacksonXmlProperty(localName = "behavior_frequencys")
+
     private List<BehaviorFrequency> behaviorFrequencys = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_path")
+
+    @JacksonXmlProperty(localName = "file_path")
 
     private String filePath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ucb_param")
 
+    @JacksonXmlProperty(localName = "ucb_param")
+
     private UcbParam ucbParam;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "behavior_gravity")
+
+    @JacksonXmlProperty(localName = "behavior_gravity")
 
     private BehaviorGravity behaviorGravity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "category")
 
+    @JacksonXmlProperty(localName = "category")
+
     private Category category;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "behavior_logic")
+
+    @JacksonXmlProperty(localName = "behavior_logic")
 
     private String behaviorLogic;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "features_engineering")
 
+    @JacksonXmlProperty(localName = "features_engineering")
+
     private EtlBasicParameter featuresEngineering;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sample_param")
+
+    @JacksonXmlProperty(localName = "sample_param")
 
     private SampleParam sampleParam;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deep_learning_parameters")
 
+    @JacksonXmlProperty(localName = "deep_learning_parameters")
+
     private DeepLearingParam deepLearningParameters;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "algorithm_specify_parameters")
+
+    @JacksonXmlProperty(localName = "algorithm_specify_parameters")
 
     private AlgorithmSpecifyParameters algorithmSpecifyParameters;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "load_widetable")
 
+    @JacksonXmlProperty(localName = "load_widetable")
+
     private Boolean loadWidetable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "load_profile")
+
+    @JacksonXmlProperty(localName = "load_profile")
 
     private Boolean loadProfile;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "save_mode")
 
+    @JacksonXmlProperty(localName = "save_mode")
+
     private String saveMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "indicators")
+
+    @JacksonXmlProperty(localName = "indicators")
 
     private List<Indicator> indicators = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offline_rank_job_name")
 
+    @JacksonXmlProperty(localName = "offline_rank_job_name")
+
     private String offlineRankJobName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_interval")
+
+    @JacksonXmlProperty(localName = "update_interval")
 
     private Integer updateInterval;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "optimizer")
 
+    @JacksonXmlProperty(localName = "optimizer")
+
     private Optimizer optimizer;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flows")
+
+    @JacksonXmlProperty(localName = "flows")
 
     private Flow flows;
 

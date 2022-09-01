@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -95,6 +96,8 @@ public class CloudWafServer {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "front_protocol")
 
+    @JacksonXmlProperty(localName = "front_protocol")
+
     private FrontProtocolEnum frontProtocol;
 
     /**
@@ -177,20 +180,28 @@ public class CloudWafServer {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "back_protocol")
 
+    @JacksonXmlProperty(localName = "back_protocol")
+
     private BackProtocolEnum backProtocol;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "weight")
+
+    @JacksonXmlProperty(localName = "weight")
 
     private Integer weight;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "address")
 
+    @JacksonXmlProperty(localName = "address")
+
     private String address;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "port")
+
+    @JacksonXmlProperty(localName = "port")
 
     private Integer port;
 
@@ -273,6 +284,8 @@ public class CloudWafServer {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
+
+    @JacksonXmlProperty(localName = "type")
 
     private TypeEnum type;
 

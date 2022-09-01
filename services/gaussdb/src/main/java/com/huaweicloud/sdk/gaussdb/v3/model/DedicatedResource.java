@@ -15,6 +15,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -28,6 +30,7 @@ public class DedicatedResource  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
+    @JacksonXmlProperty(localName = "id")
     
     private String id;
 
@@ -35,6 +38,7 @@ public class DedicatedResource  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_name")
     
+    @JacksonXmlProperty(localName = "resource_name")
     
     private String resourceName;
 
@@ -42,6 +46,7 @@ public class DedicatedResource  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="engine_name")
     
+    @JacksonXmlProperty(localName = "engine_name")
     
     private String engineName;
 
@@ -49,6 +54,7 @@ public class DedicatedResource  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="architecture")
     
+    @JacksonXmlProperty(localName = "architecture")
     
     private String architecture;
     /**
@@ -146,6 +152,7 @@ public class DedicatedResource  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
+    @JacksonXmlProperty(localName = "status")
     
     private StatusEnum status;
 
@@ -153,6 +160,7 @@ public class DedicatedResource  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="capacity")
     
+    @JacksonXmlProperty(localName = "capacity")
     
     private DedicatedResourceCapacity capacity;
 
@@ -160,6 +168,7 @@ public class DedicatedResource  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="availability_zone")
     
+    @JacksonXmlProperty(localName = "availability_zone")
     
     private List<String> availabilityZone = null;
     

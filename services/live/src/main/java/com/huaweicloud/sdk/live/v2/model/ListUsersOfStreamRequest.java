@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,30 +22,42 @@ public class ListUsersOfStreamRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "play_domain")
 
+    @JacksonXmlProperty(localName = "play_domain")
+
     private String playDomain;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app")
+
+    @JacksonXmlProperty(localName = "app")
 
     private String app;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stream")
 
+    @JacksonXmlProperty(localName = "stream")
+
     private String stream;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "isp")
+
+    @JacksonXmlProperty(localName = "isp")
 
     private List<String> isp = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "country")
 
+    @JacksonXmlProperty(localName = "country")
+
     private List<String> country = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region")
+
+    @JacksonXmlProperty(localName = "region")
 
     private List<String> region = null;
 
@@ -128,6 +141,8 @@ public class ListUsersOfStreamRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protocol")
 
+    @JacksonXmlProperty(localName = "protocol")
+
     private ProtocolEnum protocol;
 
     /**
@@ -210,15 +225,21 @@ public class ListUsersOfStreamRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "interval")
 
+    @JacksonXmlProperty(localName = "interval")
+
     private IntervalEnum interval;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
+    @JacksonXmlProperty(localName = "start_time")
+
     private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time")
+
+    @JacksonXmlProperty(localName = "end_time")
 
     private String endTime;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cbr.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,45 +15,63 @@ public class OpExtraInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "backup")
 
+    @JacksonXmlProperty(localName = "backup")
+
     private OpExtendInfoBckup backup;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "common")
+
+    @JacksonXmlProperty(localName = "common")
 
     private OpExtendInfoCommon common;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "delete")
 
+    @JacksonXmlProperty(localName = "delete")
+
     private OpExtendInfoDelete delete;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sync")
+
+    @JacksonXmlProperty(localName = "sync")
 
     private OpExtendInfoSync sync;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remove_resources")
 
+    @JacksonXmlProperty(localName = "remove_resources")
+
     private OpExtendInfoRemoveResources removeResources;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "replication")
+
+    @JacksonXmlProperty(localName = "replication")
 
     private OpExtendInfoReplication replication;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource")
 
+    @JacksonXmlProperty(localName = "resource")
+
     private Resource resource;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "restore")
 
+    @JacksonXmlProperty(localName = "restore")
+
     private OpExtendInfoRestore restore;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vault_delete")
+
+    @JacksonXmlProperty(localName = "vault_delete")
 
     private OpExtendInfoVaultDelete vaultDelete;
 

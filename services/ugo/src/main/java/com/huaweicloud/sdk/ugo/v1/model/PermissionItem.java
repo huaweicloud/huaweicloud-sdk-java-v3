@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ugo.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,35 +17,49 @@ public class PermissionItem {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "permission_type")
 
+    @JacksonXmlProperty(localName = "permission_type")
+
     private String permissionType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "schema_name")
+
+    @JacksonXmlProperty(localName = "schema_name")
 
     private String schemaName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
+    @JacksonXmlProperty(localName = "description")
+
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
+
+    @JacksonXmlProperty(localName = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "failed_reason")
 
+    @JacksonXmlProperty(localName = "failed_reason")
+
     private String failedReason;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "failed_detail")
 
+    @JacksonXmlProperty(localName = "failed_detail")
+
     private String failedDetail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "suggest_solution")
+
+    @JacksonXmlProperty(localName = "suggest_solution")
 
     private List<String> suggestSolution = null;
 

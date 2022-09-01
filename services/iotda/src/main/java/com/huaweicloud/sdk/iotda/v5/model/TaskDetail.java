@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.iotda.v5.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,20 +15,28 @@ public class TaskDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target")
 
+    @JacksonXmlProperty(localName = "target")
+
     private String target;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
+
+    @JacksonXmlProperty(localName = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "output")
 
+    @JacksonXmlProperty(localName = "output")
+
     private String output;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error")
+
+    @JacksonXmlProperty(localName = "error")
 
     private ErrorInfo error;
 

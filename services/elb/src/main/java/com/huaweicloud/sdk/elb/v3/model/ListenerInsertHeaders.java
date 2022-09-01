@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.elb.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,20 +14,28 @@ public class ListenerInsertHeaders {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Forwarded-ELB-IP")
 
+    @JacksonXmlProperty(localName = "X-Forwarded-ELB-IP")
+
     private Boolean xForwardedELBIP;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Forwarded-Port")
+
+    @JacksonXmlProperty(localName = "X-Forwarded-Port")
 
     private Boolean xForwardedPort;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Forwarded-For-Port")
 
+    @JacksonXmlProperty(localName = "X-Forwarded-For-Port")
+
     private Boolean xForwardedForPort;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Forwarded-Host")
+
+    @JacksonXmlProperty(localName = "X-Forwarded-Host")
 
     private Boolean xForwardedHost;
 

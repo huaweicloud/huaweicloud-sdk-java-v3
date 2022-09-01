@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,65 +14,91 @@ public class ListMeetingFileResponseDTO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fileCode")
 
+    @JacksonXmlProperty(localName = "fileCode")
+
     private String fileCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "topic")
+
+    @JacksonXmlProperty(localName = "topic")
 
     private String topic;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fileId")
 
+    @JacksonXmlProperty(localName = "fileId")
+
     private String fileId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fileName")
+
+    @JacksonXmlProperty(localName = "fileName")
 
     private String fileName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fileSize")
 
+    @JacksonXmlProperty(localName = "fileSize")
+
     private Long fileSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "thumbnailFileId")
+
+    @JacksonXmlProperty(localName = "thumbnailFileId")
 
     private String thumbnailFileId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "thumbnailFileName")
 
+    @JacksonXmlProperty(localName = "thumbnailFileName")
+
     private String thumbnailFileName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "thumbnailFileSize")
+
+    @JacksonXmlProperty(localName = "thumbnailFileSize")
 
     private Long thumbnailFileSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pdfFileId")
 
+    @JacksonXmlProperty(localName = "pdfFileId")
+
     private String pdfFileId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pdfFileName")
+
+    @JacksonXmlProperty(localName = "pdfFileName")
 
     private String pdfFileName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pdfFileSize")
 
+    @JacksonXmlProperty(localName = "pdfFileSize")
+
     private Long pdfFileSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "userId")
 
+    @JacksonXmlProperty(localName = "userId")
+
     private String userId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "creationTimestamp")
+
+    @JacksonXmlProperty(localName = "creationTimestamp")
 
     private Long creationTimestamp;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.elb.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class ListenerIpGroup {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ipgroup_id")
 
+    @JacksonXmlProperty(localName = "ipgroup_id")
+
     private String ipgroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_ipgroup")
 
+    @JacksonXmlProperty(localName = "enable_ipgroup")
+
     private Boolean enableIpgroup;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
+
+    @JacksonXmlProperty(localName = "type")
 
     private String type;
 

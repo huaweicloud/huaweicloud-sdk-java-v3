@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,10 +19,14 @@ public class QualityInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "templateName")
 
+    @JacksonXmlProperty(localName = "templateName")
+
     private String templateName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quality")
+
+    @JacksonXmlProperty(localName = "quality")
 
     private String quality;
 
@@ -105,6 +110,8 @@ public class QualityInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "PVC")
 
+    @JacksonXmlProperty(localName = "PVC")
+
     private PvcEnum pvc;
 
     /**
@@ -186,6 +193,8 @@ public class QualityInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hdlb")
+
+    @JacksonXmlProperty(localName = "hdlb")
 
     private HdlbEnum hdlb;
 
@@ -269,25 +278,35 @@ public class QualityInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "codec")
 
+    @JacksonXmlProperty(localName = "codec")
+
     private CodecEnum codec;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "width")
+
+    @JacksonXmlProperty(localName = "width")
 
     private Integer width;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "height")
 
+    @JacksonXmlProperty(localName = "height")
+
     private Integer height;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bitrate")
 
+    @JacksonXmlProperty(localName = "bitrate")
+
     private Integer bitrate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "video_frame_rate")
+
+    @JacksonXmlProperty(localName = "video_frame_rate")
 
     private Integer videoFrameRate;
 
@@ -377,15 +396,21 @@ public class QualityInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protocol")
 
+    @JacksonXmlProperty(localName = "protocol")
+
     private ProtocolEnum protocol;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "iFrameInterval")
 
+    @JacksonXmlProperty(localName = "iFrameInterval")
+
     private Integer iFrameInterval;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "gop")
+
+    @JacksonXmlProperty(localName = "gop")
 
     private Integer gop;
 

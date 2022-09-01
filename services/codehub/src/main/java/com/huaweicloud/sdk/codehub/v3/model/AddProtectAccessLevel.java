@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.codehub.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class AddProtectAccessLevel {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "push_access_level")
 
+    @JacksonXmlProperty(localName = "push_access_level")
+
     private Integer pushAccessLevel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "merge_access_level")
+
+    @JacksonXmlProperty(localName = "merge_access_level")
 
     private Integer mergeAccessLevel;
 

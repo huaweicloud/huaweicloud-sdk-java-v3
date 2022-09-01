@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ocr.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,75 +14,105 @@ public class PassportResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "passport_type")
 
+    @JacksonXmlProperty(localName = "passport_type")
+
     private String passportType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "country_code")
+
+    @JacksonXmlProperty(localName = "country_code")
 
     private String countryCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "passport_number")
 
+    @JacksonXmlProperty(localName = "passport_number")
+
     private String passportNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nationality")
+
+    @JacksonXmlProperty(localName = "nationality")
 
     private String nationality;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "surname")
 
+    @JacksonXmlProperty(localName = "surname")
+
     private String surname;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "given_name")
+
+    @JacksonXmlProperty(localName = "given_name")
 
     private String givenName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sex")
 
+    @JacksonXmlProperty(localName = "sex")
+
     private String sex;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "date_of_birth")
+
+    @JacksonXmlProperty(localName = "date_of_birth")
 
     private String dateOfBirth;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "date_of_expiry")
 
+    @JacksonXmlProperty(localName = "date_of_expiry")
+
     private String dateOfExpiry;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "date_of_issue")
+
+    @JacksonXmlProperty(localName = "date_of_issue")
 
     private String dateOfIssue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "place_of_birth")
 
+    @JacksonXmlProperty(localName = "place_of_birth")
+
     private String placeOfBirth;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "place_of_issue")
+
+    @JacksonXmlProperty(localName = "place_of_issue")
 
     private String placeOfIssue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "issuing_authority")
 
+    @JacksonXmlProperty(localName = "issuing_authority")
+
     private String issuingAuthority;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confidence")
 
+    @JacksonXmlProperty(localName = "confidence")
+
     private Object confidence;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extra_info")
+
+    @JacksonXmlProperty(localName = "extra_info")
 
     private Object extraInfo;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.waf.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,10 +17,14 @@ public class ApplyCertificateToHostRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cloud_host_ids")
 
+    @JacksonXmlProperty(localName = "cloud_host_ids")
+
     private List<String> cloudHostIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "premium_host_ids")
+
+    @JacksonXmlProperty(localName = "premium_host_ids")
 
     private List<String> premiumHostIds = null;
 

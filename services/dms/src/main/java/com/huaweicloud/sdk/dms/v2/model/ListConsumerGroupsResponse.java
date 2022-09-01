@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -22,15 +23,21 @@ public class ListConsumerGroupsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "queue_id")
 
+    @JacksonXmlProperty(localName = "queue_id")
+
     private String queueId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "queue_name")
 
+    @JacksonXmlProperty(localName = "queue_name")
+
     private String queueName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "groups")
+
+    @JacksonXmlProperty(localName = "groups")
 
     private List<ListQueueGroupsRespGroups> groups = null;
 
@@ -113,6 +120,8 @@ public class ListConsumerGroupsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "redrive_policy")
+
+    @JacksonXmlProperty(localName = "redrive_policy")
 
     private RedrivePolicyEnum redrivePolicy;
 

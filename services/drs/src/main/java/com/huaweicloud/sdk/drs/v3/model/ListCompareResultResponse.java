@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.drs.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -15,35 +16,49 @@ public class ListCompareResultResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_id")
 
+    @JacksonXmlProperty(localName = "job_id")
+
     private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "object_level_compare_results")
+
+    @JacksonXmlProperty(localName = "object_level_compare_results")
 
     private ObjectCompareResult objectLevelCompareResults;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "line_compare_results")
 
+    @JacksonXmlProperty(localName = "line_compare_results")
+
     private LineCompareResult lineCompareResults;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "content_compare_results")
+
+    @JacksonXmlProperty(localName = "content_compare_results")
 
     private ContentCompareResult contentCompareResults;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "compare_task_list_results")
 
+    @JacksonXmlProperty(localName = "compare_task_list_results")
+
     private CompareTaskListResult compareTaskListResults;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_code")
 
+    @JacksonXmlProperty(localName = "error_code")
+
     private String errorCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_msg")
+
+    @JacksonXmlProperty(localName = "error_msg")
 
     private String errorMsg;
 

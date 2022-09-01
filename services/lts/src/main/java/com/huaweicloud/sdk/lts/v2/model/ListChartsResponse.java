@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Collections;
@@ -20,15 +21,21 @@ public class ListChartsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sql")
 
+    @JacksonXmlProperty(localName = "sql")
+
     private String sql;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "title")
+
+    @JacksonXmlProperty(localName = "title")
 
     private String title;
 
@@ -130,30 +137,42 @@ public class ListChartsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
+    @JacksonXmlProperty(localName = "type")
+
     private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_group_id")
+
+    @JacksonXmlProperty(localName = "log_group_id")
 
     private String logGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_group_name")
 
+    @JacksonXmlProperty(localName = "log_group_name")
+
     private String logGroupName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_stream_id")
+
+    @JacksonXmlProperty(localName = "log_stream_id")
 
     private String logStreamId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_stream_name")
 
+    @JacksonXmlProperty(localName = "log_stream_name")
+
     private String logStreamName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "config")
+
+    @JacksonXmlProperty(localName = "config")
 
     private ChartConfig config;
 

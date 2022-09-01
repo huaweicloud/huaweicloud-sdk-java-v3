@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ugo.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -17,15 +18,21 @@ public class ListVerificationProgressResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_objects_count")
 
+    @JacksonXmlProperty(localName = "total_objects_count")
+
     private Integer totalObjectsCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "completed_objects_count")
 
+    @JacksonXmlProperty(localName = "completed_objects_count")
+
     private Integer completedObjectsCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "objects_list")
+
+    @JacksonXmlProperty(localName = "objects_list")
 
     private List<DatabaseObject> objectsList = null;
 

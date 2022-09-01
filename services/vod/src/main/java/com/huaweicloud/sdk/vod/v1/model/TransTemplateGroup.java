@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -20,6 +21,8 @@ public class TransTemplateGroup {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
@@ -103,6 +106,8 @@ public class TransTemplateGroup {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private StatusEnum status;
 
     /**
@@ -179,30 +184,42 @@ public class TransTemplateGroup {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
+    @JacksonXmlProperty(localName = "type")
+
     private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auto_encrypt")
+
+    @JacksonXmlProperty(localName = "auto_encrypt")
 
     private Integer autoEncrypt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quality_info_list")
 
+    @JacksonXmlProperty(localName = "quality_info_list")
+
     private List<QualityInfo> qualityInfoList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "common")
+
+    @JacksonXmlProperty(localName = "common")
 
     private Common common;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "watermark_template_ids")
 
+    @JacksonXmlProperty(localName = "watermark_template_ids")
+
     private List<String> watermarkTemplateIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
+
+    @JacksonXmlProperty(localName = "description")
 
     private String description;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.oms.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,40 +14,56 @@ public class StartTaskReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "src_ak")
 
+    @JacksonXmlProperty(localName = "src_ak")
+
     private String srcAk;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "src_sk")
+
+    @JacksonXmlProperty(localName = "src_sk")
 
     private String srcSk;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "src_security_token")
 
+    @JacksonXmlProperty(localName = "src_security_token")
+
     private String srcSecurityToken;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dst_ak")
+
+    @JacksonXmlProperty(localName = "dst_ak")
 
     private String dstAk;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dst_sk")
 
+    @JacksonXmlProperty(localName = "dst_sk")
+
     private String dstSk;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dst_security_token")
+
+    @JacksonXmlProperty(localName = "dst_security_token")
 
     private String dstSecurityToken;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_cdn_authentication_key")
 
+    @JacksonXmlProperty(localName = "source_cdn_authentication_key")
+
     private String sourceCdnAuthenticationKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "migrate_failed_object")
+
+    @JacksonXmlProperty(localName = "migrate_failed_object")
 
     private Boolean migrateFailedObject;
 

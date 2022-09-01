@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ces.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,25 +17,35 @@ public class CreateAlarmTemplateRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template_name")
 
+    @JacksonXmlProperty(localName = "template_name")
+
     private String templateName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template_description")
+
+    @JacksonXmlProperty(localName = "template_description")
 
     private String templateDescription;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "namespace")
 
+    @JacksonXmlProperty(localName = "namespace")
+
     private String namespace;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dimension_name")
 
+    @JacksonXmlProperty(localName = "dimension_name")
+
     private String dimensionName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template_items")
+
+    @JacksonXmlProperty(localName = "template_items")
 
     private List<TemplateItem> templateItems = null;
 

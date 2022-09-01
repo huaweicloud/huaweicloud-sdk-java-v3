@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.dds.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,30 +14,42 @@ public class Flavor {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "engine_name")
 
+    @JacksonXmlProperty(localName = "engine_name")
+
     private String engineName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
+
+    @JacksonXmlProperty(localName = "type")
 
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vcpus")
 
+    @JacksonXmlProperty(localName = "vcpus")
+
     private String vcpus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ram")
+
+    @JacksonXmlProperty(localName = "ram")
 
     private String ram;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "spec_code")
 
+    @JacksonXmlProperty(localName = "spec_code")
+
     private String specCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "az_status")
+
+    @JacksonXmlProperty(localName = "az_status")
 
     private Object azStatus;
 

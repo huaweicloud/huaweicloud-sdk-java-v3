@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class CheckSQLGramarReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sql")
 
+    @JacksonXmlProperty(localName = "sql")
+
     private String sql;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "currentdb")
+
+    @JacksonXmlProperty(localName = "currentdb")
 
     private String currentdb;
 

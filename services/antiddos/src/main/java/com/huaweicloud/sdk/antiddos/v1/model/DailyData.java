@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.antiddos.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,35 +14,49 @@ public class DailyData {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "period_start")
 
+    @JacksonXmlProperty(localName = "period_start")
+
     private Long periodStart;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bps_in")
+
+    @JacksonXmlProperty(localName = "bps_in")
 
     private Integer bpsIn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bps_attack")
 
+    @JacksonXmlProperty(localName = "bps_attack")
+
     private Long bpsAttack;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_bps")
+
+    @JacksonXmlProperty(localName = "total_bps")
 
     private Long totalBps;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pps_in")
 
+    @JacksonXmlProperty(localName = "pps_in")
+
     private Long ppsIn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pps_attack")
 
+    @JacksonXmlProperty(localName = "pps_attack")
+
     private Long ppsAttack;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_pps")
+
+    @JacksonXmlProperty(localName = "total_pps")
 
     private Long totalPps;
 

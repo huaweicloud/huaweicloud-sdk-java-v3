@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.iotda.v5.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class TaskPolicy {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "schedule_time")
 
+    @JacksonXmlProperty(localName = "schedule_time")
+
     private String scheduleTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "retry_count")
 
+    @JacksonXmlProperty(localName = "retry_count")
+
     private Integer retryCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "retry_interval")
+
+    @JacksonXmlProperty(localName = "retry_interval")
 
     private Integer retryInterval;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.roma.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,20 +14,28 @@ public class MemberGroupCreate {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "member_group_name")
 
+    @JacksonXmlProperty(localName = "member_group_name")
+
     private String memberGroupName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "member_group_remark")
+
+    @JacksonXmlProperty(localName = "member_group_remark")
 
     private String memberGroupRemark;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "member_group_weight")
 
+    @JacksonXmlProperty(localName = "member_group_weight")
+
     private Integer memberGroupWeight;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dict_code")
+
+    @JacksonXmlProperty(localName = "dict_code")
 
     private String dictCode;
 

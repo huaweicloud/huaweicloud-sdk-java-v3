@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -17,60 +18,84 @@ public class ShowRecordingDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confUUID")
 
+    @JacksonXmlProperty(localName = "confUUID")
+
     private String confUUID;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confID")
+
+    @JacksonXmlProperty(localName = "confID")
 
     private String confID;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "url")
 
+    @JacksonXmlProperty(localName = "url")
+
     private List<String> url = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rcdTime")
+
+    @JacksonXmlProperty(localName = "rcdTime")
 
     private Integer rcdTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rcdSize")
 
+    @JacksonXmlProperty(localName = "rcdSize")
+
     private Integer rcdSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subject")
+
+    @JacksonXmlProperty(localName = "subject")
 
     private String subject;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scheduserName")
 
+    @JacksonXmlProperty(localName = "scheduserName")
+
     private String scheduserName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "startTime")
+
+    @JacksonXmlProperty(localName = "startTime")
 
     private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "isDecodeFinish")
 
+    @JacksonXmlProperty(localName = "isDecodeFinish")
+
     private Boolean isDecodeFinish;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "decodeEndTime")
+
+    @JacksonXmlProperty(localName = "decodeEndTime")
 
     private Long decodeEndTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "available")
 
+    @JacksonXmlProperty(localName = "available")
+
     private Boolean available;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "recordAuthType")
+
+    @JacksonXmlProperty(localName = "recordAuthType")
 
     private Integer recordAuthType;
 

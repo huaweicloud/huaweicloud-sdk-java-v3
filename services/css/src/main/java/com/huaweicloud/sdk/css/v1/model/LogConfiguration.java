@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.css.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,45 +14,63 @@ public class LogConfiguration {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "clusterId")
+
+    @JacksonXmlProperty(localName = "clusterId")
 
     private String clusterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "obsBucket")
 
+    @JacksonXmlProperty(localName = "obsBucket")
+
     private String obsBucket;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "agency")
+
+    @JacksonXmlProperty(localName = "agency")
 
     private String agency;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updateAt")
 
+    @JacksonXmlProperty(localName = "updateAt")
+
     private Long updateAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "basePath")
+
+    @JacksonXmlProperty(localName = "basePath")
 
     private String basePath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "autoEnable")
 
+    @JacksonXmlProperty(localName = "autoEnable")
+
     private Boolean autoEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "period")
 
+    @JacksonXmlProperty(localName = "period")
+
     private String period;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "logSwitch")
+
+    @JacksonXmlProperty(localName = "logSwitch")
 
     private Boolean logSwitch;
 
@@ -129,7 +148,7 @@ public class LogConfiguration {
     }
 
     /**
-     * 更新时间。格式为：Unix时间戳格式
+     * 更新时间。格式为：Unix时间戳格式。
      * @return updateAt
      */
     public Long getUpdateAt() {

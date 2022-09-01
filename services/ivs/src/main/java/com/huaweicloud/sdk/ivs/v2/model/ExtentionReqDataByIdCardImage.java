@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ivs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class ExtentionReqDataByIdCardImage {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "idcard_image1")
 
+    @JacksonXmlProperty(localName = "idcard_image1")
+
     private String idcardImage1;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "idcard_image2")
+
+    @JacksonXmlProperty(localName = "idcard_image2")
 
     private String idcardImage2;
 

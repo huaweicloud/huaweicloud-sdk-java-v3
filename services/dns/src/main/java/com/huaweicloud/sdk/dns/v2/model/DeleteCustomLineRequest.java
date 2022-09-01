@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.dns.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -12,6 +13,8 @@ public class DeleteCustomLineRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "line_id")
+
+    @JacksonXmlProperty(localName = "line_id")
 
     private String lineId;
 

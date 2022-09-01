@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.css.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,15 +17,21 @@ public class BatchAddOrDeleteTagOnClusterReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "action")
 
+    @JacksonXmlProperty(localName = "action")
+
     private String action;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
+    @JacksonXmlProperty(localName = "tags")
+
     private List<Tag> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sysTags")
+
+    @JacksonXmlProperty(localName = "sysTags")
 
     private List<SysTags> sysTags = null;
 
@@ -100,7 +107,7 @@ public class BatchAddOrDeleteTagOnClusterReq {
     }
 
     /**
-     * 系统标签列表。 - op_service权限可以访问，和tags二选一。 - 目前TMS调用时只包含一个resource_tag结构体 ，key固定为：_sys_enterprise_project_id。 - value是UUID或0,value为0表示默认企业项目。 - 现在仅支持create操作。
+     * 系统标签列表。 - key固定为：_sys_enterprise_project_id。 - value是UUID或0,value为0表示默认企业项目。
      * @return sysTags
      */
     public List<SysTags> getSysTags() {

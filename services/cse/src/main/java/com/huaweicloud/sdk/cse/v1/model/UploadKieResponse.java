@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cse.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -17,10 +18,14 @@ public class UploadKieResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "success")
 
+    @JacksonXmlProperty(localName = "success")
+
     private List<GetKieConfigs> success = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "failure")
+
+    @JacksonXmlProperty(localName = "failure")
 
     private List<UploadKieRespFailure> failure = null;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.vpcep.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,25 +17,35 @@ public class UpdateEndpointServiceRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "approval_enabled")
 
+    @JacksonXmlProperty(localName = "approval_enabled")
+
     private Boolean approvalEnabled;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_name")
+
+    @JacksonXmlProperty(localName = "service_name")
 
     private String serviceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ports")
 
+    @JacksonXmlProperty(localName = "ports")
+
     private List<PortList> ports = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "port_id")
 
+    @JacksonXmlProperty(localName = "port_id")
+
     private String portId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vip_port_id")
+
+    @JacksonXmlProperty(localName = "vip_port_id")
 
     private String vipPortId;
 

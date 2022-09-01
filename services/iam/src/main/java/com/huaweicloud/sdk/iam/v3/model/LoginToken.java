@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.iam.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,45 +15,63 @@ public class LoginToken {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_id")
 
+    @JacksonXmlProperty(localName = "domain_id")
+
     private String domainId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expires_at")
+
+    @JacksonXmlProperty(localName = "expires_at")
 
     private String expiresAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "method")
 
+    @JacksonXmlProperty(localName = "method")
+
     private String method;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_id")
+
+    @JacksonXmlProperty(localName = "user_id")
 
     private String userId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_name")
 
+    @JacksonXmlProperty(localName = "user_name")
+
     private String userName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "session_id")
+
+    @JacksonXmlProperty(localName = "session_id")
 
     private String sessionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "session_user_id")
 
+    @JacksonXmlProperty(localName = "session_user_id")
+
     private String sessionUserId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "session_name")
 
+    @JacksonXmlProperty(localName = "session_name")
+
     private String sessionName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "assumed_by")
+
+    @JacksonXmlProperty(localName = "assumed_by")
 
     private LoginTokenAssumedBy assumedBy;
 

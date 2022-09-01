@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cph.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class UpdateKeypairRequestBodyServers {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "keypair_name")
 
+    @JacksonXmlProperty(localName = "keypair_name")
+
     private String keypairName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "server_id")
+
+    @JacksonXmlProperty(localName = "server_id")
 
     private String serverId;
 

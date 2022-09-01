@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.gsl.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,80 +14,112 @@ public class ProPricePlanVo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "price_plan_id")
 
+    @JacksonXmlProperty(localName = "price_plan_id")
+
     private String pricePlanId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "price_plan_name")
+
+    @JacksonXmlProperty(localName = "price_plan_name")
 
     private String pricePlanName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
+    @JacksonXmlProperty(localName = "description")
+
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flow_total")
+
+    @JacksonXmlProperty(localName = "flow_total")
 
     private Long flowTotal;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "package_type")
 
+    @JacksonXmlProperty(localName = "package_type")
+
     private Integer packageType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "period")
+
+    @JacksonXmlProperty(localName = "period")
 
     private Integer period;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "period_type")
 
+    @JacksonXmlProperty(localName = "period_type")
+
     private Integer periodType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "effect_type")
+
+    @JacksonXmlProperty(localName = "effect_type")
 
     private Integer effectType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "silent_period_day")
 
+    @JacksonXmlProperty(localName = "silent_period_day")
+
     private Integer silentPeriodDay;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "silent_period_unit")
+
+    @JacksonXmlProperty(localName = "silent_period_unit")
 
     private Integer silentPeriodUnit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auto_renew")
 
+    @JacksonXmlProperty(localName = "auto_renew")
+
     private Boolean autoRenew;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "location_desc")
+
+    @JacksonXmlProperty(localName = "location_desc")
 
     private String locationDesc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "location_type")
 
+    @JacksonXmlProperty(localName = "location_type")
+
     private Integer locationType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sim_type")
+
+    @JacksonXmlProperty(localName = "sim_type")
 
     private Integer simType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "carrier_type")
 
+    @JacksonXmlProperty(localName = "carrier_type")
+
     private Integer carrierType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "price")
+
+    @JacksonXmlProperty(localName = "price")
 
     private Integer price;
 

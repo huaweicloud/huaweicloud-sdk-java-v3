@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.projectman.v4.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,30 +15,42 @@ public class ProjectChildModule {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "module_id")
 
+    @JacksonXmlProperty(localName = "module_id")
+
     private Integer moduleId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "module_name")
+
+    @JacksonXmlProperty(localName = "module_name")
 
     private String moduleName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "owner")
 
+    @JacksonXmlProperty(localName = "owner")
+
     private ModuleOwner owner;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deepth")
+
+    @JacksonXmlProperty(localName = "deepth")
 
     private Integer deepth;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_parent")
 
+    @JacksonXmlProperty(localName = "is_parent")
+
     private Boolean isParent;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parent_module_id")
+
+    @JacksonXmlProperty(localName = "parent_module_id")
 
     private Integer parentModuleId;
 

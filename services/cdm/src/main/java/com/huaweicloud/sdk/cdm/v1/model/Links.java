@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cdm.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,45 +15,63 @@ public class Links {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "link-config-values")
 
+    @JacksonXmlProperty(localName = "link-config-values")
+
     private LinksLinkconfigvalues linkConfigValues;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "creation-user")
+
+    @JacksonXmlProperty(localName = "creation-user")
 
     private String creationUser;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
+
+    @JacksonXmlProperty(localName = "id")
 
     private Integer id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "creation-date")
 
+    @JacksonXmlProperty(localName = "creation-date")
+
     private Long creationDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "connector-name")
+
+    @JacksonXmlProperty(localName = "connector-name")
 
     private String connectorName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update-date")
 
+    @JacksonXmlProperty(localName = "update-date")
+
     private Long updateDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enabled")
 
+    @JacksonXmlProperty(localName = "enabled")
+
     private Boolean enabled;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update-user")
+
+    @JacksonXmlProperty(localName = "update-user")
 
     private String updateUser;
 

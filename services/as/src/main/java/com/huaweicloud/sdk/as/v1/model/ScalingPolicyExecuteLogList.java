@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -104,10 +105,14 @@ public class ScalingPolicyExecuteLogList {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "failed_reason")
+
+    @JacksonXmlProperty(localName = "failed_reason")
 
     private String failedReason;
 
@@ -203,25 +208,35 @@ public class ScalingPolicyExecuteLogList {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "execute_type")
 
+    @JacksonXmlProperty(localName = "execute_type")
+
     private ExecuteTypeEnum executeType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "execute_time")
+
+    @JacksonXmlProperty(localName = "execute_time")
 
     private String executeTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tenant_id")
 
+    @JacksonXmlProperty(localName = "tenant_id")
+
     private String tenantId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scaling_policy_id")
+
+    @JacksonXmlProperty(localName = "scaling_policy_id")
 
     private String scalingPolicyId;
 
@@ -305,25 +320,35 @@ public class ScalingPolicyExecuteLogList {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scaling_resource_type")
 
+    @JacksonXmlProperty(localName = "scaling_resource_type")
+
     private ScalingResourceTypeEnum scalingResourceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scaling_resource_id")
+
+    @JacksonXmlProperty(localName = "scaling_resource_id")
 
     private String scalingResourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "old_value")
 
+    @JacksonXmlProperty(localName = "old_value")
+
     private String oldValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "desire_value")
 
+    @JacksonXmlProperty(localName = "desire_value")
+
     private String desireValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit_value")
+
+    @JacksonXmlProperty(localName = "limit_value")
 
     private String limitValue;
 
@@ -413,15 +438,21 @@ public class ScalingPolicyExecuteLogList {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
+    @JacksonXmlProperty(localName = "type")
+
     private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_records")
 
+    @JacksonXmlProperty(localName = "job_records")
+
     private List<JobRecords> jobRecords = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "meta_data")
+
+    @JacksonXmlProperty(localName = "meta_data")
 
     private EipMetaData metaData;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class ImportRspJob {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "old_job_id")
 
+    @JacksonXmlProperty(localName = "old_job_id")
+
     private Long oldJobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "new_job_id")
 
+    @JacksonXmlProperty(localName = "new_job_id")
+
     private Long newJobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remark")
+
+    @JacksonXmlProperty(localName = "remark")
 
     private String remark;
 

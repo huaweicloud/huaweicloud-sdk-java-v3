@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,10 +19,14 @@ public class MixLayoutPane {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private Integer id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_id")
+
+    @JacksonXmlProperty(localName = "user_id")
 
     private String userId;
 
@@ -105,30 +110,42 @@ public class MixLayoutPane {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "video_type")
 
+    @JacksonXmlProperty(localName = "video_type")
+
     private VideoTypeEnum videoType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "x")
+
+    @JacksonXmlProperty(localName = "x")
 
     private Float x;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "y")
 
+    @JacksonXmlProperty(localName = "y")
+
     private Float y;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "width")
+
+    @JacksonXmlProperty(localName = "width")
 
     private Float width;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "height")
 
+    @JacksonXmlProperty(localName = "height")
+
     private Float height;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "zorder")
+
+    @JacksonXmlProperty(localName = "zorder")
 
     private Integer zorder;
 
@@ -212,6 +229,8 @@ public class MixLayoutPane {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "crop_mode")
 
+    @JacksonXmlProperty(localName = "crop_mode")
+
     private CropModeEnum cropMode;
 
     /**
@@ -293,6 +312,8 @@ public class MixLayoutPane {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "filling_policy")
+
+    @JacksonXmlProperty(localName = "filling_policy")
 
     private FillingPolicyEnum fillingPolicy;
 

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -17,6 +18,8 @@ public class ListAllScalingV2PoliciesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scaling_resource_id")
+
+    @JacksonXmlProperty(localName = "scaling_resource_id")
 
     private String scalingResourceId;
 
@@ -100,10 +103,14 @@ public class ListAllScalingV2PoliciesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scaling_resource_type")
 
+    @JacksonXmlProperty(localName = "scaling_resource_type")
+
     private ScalingResourceTypeEnum scalingResourceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scaling_policy_name")
+
+    @JacksonXmlProperty(localName = "scaling_policy_name")
 
     private String scalingPolicyName;
 
@@ -193,20 +200,28 @@ public class ListAllScalingV2PoliciesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scaling_policy_type")
 
+    @JacksonXmlProperty(localName = "scaling_policy_type")
+
     private ScalingPolicyTypeEnum scalingPolicyType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scaling_policy_id")
+
+    @JacksonXmlProperty(localName = "scaling_policy_id")
 
     private String scalingPolicyId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_number")
 
+    @JacksonXmlProperty(localName = "start_number")
+
     private Integer startNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
+
+    @JacksonXmlProperty(localName = "limit")
 
     private Integer limit;
 
@@ -296,6 +311,8 @@ public class ListAllScalingV2PoliciesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sort_by")
 
+    @JacksonXmlProperty(localName = "sort_by")
+
     private SortByEnum sortBy;
 
     /**
@@ -378,15 +395,21 @@ public class ListAllScalingV2PoliciesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "order")
 
+    @JacksonXmlProperty(localName = "order")
+
     private OrderEnum order;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
+    @JacksonXmlProperty(localName = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alarm_id")
+
+    @JacksonXmlProperty(localName = "alarm_id")
 
     private String alarmId;
 

@@ -11,6 +11,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.gaussdb.v3.model.MysqlProxyNodes;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -24,6 +26,7 @@ public class MysqlProxy  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="pool_id")
     
+    @JacksonXmlProperty(localName = "pool_id")
     
     private String poolId;
 
@@ -31,6 +34,7 @@ public class MysqlProxy  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
+    @JacksonXmlProperty(localName = "status")
     
     private String status;
 
@@ -38,6 +42,7 @@ public class MysqlProxy  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="address")
     
+    @JacksonXmlProperty(localName = "address")
     
     private String address;
 
@@ -45,6 +50,7 @@ public class MysqlProxy  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="port")
     
+    @JacksonXmlProperty(localName = "port")
     
     private Integer port;
 
@@ -52,6 +58,7 @@ public class MysqlProxy  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="pool_status")
     
+    @JacksonXmlProperty(localName = "pool_status")
     
     private String poolStatus;
 
@@ -59,6 +66,7 @@ public class MysqlProxy  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="delay_threshold_in_seconds")
     
+    @JacksonXmlProperty(localName = "delay_threshold_in_seconds")
     
     private Integer delayThresholdInSeconds;
 
@@ -66,6 +74,7 @@ public class MysqlProxy  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="elb_vip")
     
+    @JacksonXmlProperty(localName = "elb_vip")
     
     private String elbVip;
 
@@ -73,6 +82,7 @@ public class MysqlProxy  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="eip")
     
+    @JacksonXmlProperty(localName = "eip")
     
     private String eip;
 
@@ -80,6 +90,7 @@ public class MysqlProxy  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vcpus")
     
+    @JacksonXmlProperty(localName = "vcpus")
     
     private String vcpus;
 
@@ -87,6 +98,7 @@ public class MysqlProxy  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ram")
     
+    @JacksonXmlProperty(localName = "ram")
     
     private String ram;
 
@@ -94,6 +106,7 @@ public class MysqlProxy  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_num")
     
+    @JacksonXmlProperty(localName = "node_num")
     
     private Integer nodeNum;
 
@@ -101,6 +114,7 @@ public class MysqlProxy  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="mode")
     
+    @JacksonXmlProperty(localName = "mode")
     
     private String mode;
 
@@ -108,6 +122,7 @@ public class MysqlProxy  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="nodes")
     
+    @JacksonXmlProperty(localName = "nodes")
     
     private List<MysqlProxyNodes> nodes = null;
     
@@ -115,6 +130,7 @@ public class MysqlProxy  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="flavor_ref")
     
+    @JacksonXmlProperty(localName = "flavor_ref")
     
     private String flavorRef;
 
@@ -122,6 +138,7 @@ public class MysqlProxy  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
+    @JacksonXmlProperty(localName = "name")
     
     private String name;
 

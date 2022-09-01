@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.dsc.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,10 +17,14 @@ public class EsScanResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total")
 
+    @JacksonXmlProperty(localName = "total")
+
     private Integer total;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "db_scan_results")
+
+    @JacksonXmlProperty(localName = "db_scan_results")
 
     private List<EsScanResultInfo> dbScanResults = null;
 

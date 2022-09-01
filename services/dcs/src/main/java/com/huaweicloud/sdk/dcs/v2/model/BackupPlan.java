@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.dcs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,20 +17,28 @@ public class BackupPlan {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timezone_offset")
 
+    @JacksonXmlProperty(localName = "timezone_offset")
+
     private String timezoneOffset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "backup_at")
+
+    @JacksonXmlProperty(localName = "backup_at")
 
     private List<Integer> backupAt = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "period_type")
 
+    @JacksonXmlProperty(localName = "period_type")
+
     private String periodType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "begin_at")
+
+    @JacksonXmlProperty(localName = "begin_at")
 
     private String beginAt;
 

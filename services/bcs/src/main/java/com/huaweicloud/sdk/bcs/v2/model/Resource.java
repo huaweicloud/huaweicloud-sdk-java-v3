@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.bcs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,35 +14,49 @@ public class Resource {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
+    @JacksonXmlProperty(localName = "type")
+
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "unit")
+
+    @JacksonXmlProperty(localName = "unit")
 
     private String unit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "min")
 
+    @JacksonXmlProperty(localName = "min")
+
     private Long min;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max")
+
+    @JacksonXmlProperty(localName = "max")
 
     private Long max;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quota")
 
+    @JacksonXmlProperty(localName = "quota")
+
     private Long quota;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "used")
 
+    @JacksonXmlProperty(localName = "used")
+
     private Long used;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "free")
+
+    @JacksonXmlProperty(localName = "free")
 
     private Long free;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.rds.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,10 +17,14 @@ public class RestoreDatabasesInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "database")
 
+    @JacksonXmlProperty(localName = "database")
+
     private String database;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tables")
+
+    @JacksonXmlProperty(localName = "tables")
 
     private List<RestoreTableInfo> tables = null;
 

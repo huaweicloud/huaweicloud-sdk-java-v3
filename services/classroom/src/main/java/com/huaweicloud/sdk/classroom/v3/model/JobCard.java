@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.classroom.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,50 +14,70 @@ public class JobCard {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_id")
+
+    @JacksonXmlProperty(localName = "job_id")
 
     private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_send")
 
+    @JacksonXmlProperty(localName = "is_send")
+
     private String isSend;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time")
+
+    @JacksonXmlProperty(localName = "end_time")
 
     private String endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "average_score")
 
+    @JacksonXmlProperty(localName = "average_score")
+
     private String averageScore;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "submit_job_num")
+
+    @JacksonXmlProperty(localName = "submit_job_num")
 
     private Integer submitJobNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_status")
 
+    @JacksonXmlProperty(localName = "create_status")
+
     private String createStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "send_type")
+
+    @JacksonXmlProperty(localName = "send_type")
 
     private String sendType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_score_visibility")
 
+    @JacksonXmlProperty(localName = "is_score_visibility")
+
     private String isScoreVisibility;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "send_time")
+
+    @JacksonXmlProperty(localName = "send_time")
 
     private String sendTime;
 

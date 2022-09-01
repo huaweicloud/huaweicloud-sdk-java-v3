@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,30 +17,42 @@ public class QosSendReceiveInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bitrate")
 
+    @JacksonXmlProperty(localName = "bitrate")
+
     private List<QosDataNoThrElement> bitrate = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "latency")
+
+    @JacksonXmlProperty(localName = "latency")
 
     private List<QosDataElement> latency = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "jitter")
 
+    @JacksonXmlProperty(localName = "jitter")
+
     private List<QosDataElement> jitter = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "packet_loss_max")
+
+    @JacksonXmlProperty(localName = "packet_loss_max")
 
     private List<QosDataElement> packetLossMax = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resolution")
 
+    @JacksonXmlProperty(localName = "resolution")
+
     private List<QosDataNoThrElement> resolution = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "frame")
+
+    @JacksonXmlProperty(localName = "frame")
 
     private List<QosDataNoThrElement> frame = null;
 

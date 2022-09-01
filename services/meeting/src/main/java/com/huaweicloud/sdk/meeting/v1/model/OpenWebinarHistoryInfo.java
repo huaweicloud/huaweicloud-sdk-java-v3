@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,95 +14,133 @@ public class OpenWebinarHistoryInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "conferenceId")
 
+    @JacksonXmlProperty(localName = "conferenceId")
+
     private String conferenceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confUUID")
+
+    @JacksonXmlProperty(localName = "confUUID")
 
     private String confUUID;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subject")
 
+    @JacksonXmlProperty(localName = "subject")
+
     private String subject;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scheduserName")
+
+    @JacksonXmlProperty(localName = "scheduserName")
 
     private String scheduserName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "moderator")
 
+    @JacksonXmlProperty(localName = "moderator")
+
     private String moderator;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deptName")
+
+    @JacksonXmlProperty(localName = "deptName")
 
     private String deptName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timeZoneId")
 
+    @JacksonXmlProperty(localName = "timeZoneId")
+
     private Integer timeZoneId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "startTime")
+
+    @JacksonXmlProperty(localName = "startTime")
 
     private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "duration")
 
+    @JacksonXmlProperty(localName = "duration")
+
     private Integer duration;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "actualStartTime")
+
+    @JacksonXmlProperty(localName = "actualStartTime")
 
     private String actualStartTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "endTime")
 
+    @JacksonXmlProperty(localName = "endTime")
+
     private String endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "actualDuration")
+
+    @JacksonXmlProperty(localName = "actualDuration")
 
     private Integer actualDuration;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "attendeeCount")
 
+    @JacksonXmlProperty(localName = "attendeeCount")
+
     private Integer attendeeCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "chairCount")
+
+    @JacksonXmlProperty(localName = "chairCount")
 
     private Integer chairCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "guestCount")
 
+    @JacksonXmlProperty(localName = "guestCount")
+
     private Integer guestCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "audienceCount")
+
+    @JacksonXmlProperty(localName = "audienceCount")
 
     private Integer audienceCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vmrId")
 
+    @JacksonXmlProperty(localName = "vmrId")
+
     private String vmrId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vmrPkgAudienceParties")
 
+    @JacksonXmlProperty(localName = "vmrPkgAudienceParties")
+
     private Integer vmrPkgAudienceParties;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vmrPkgName")
+
+    @JacksonXmlProperty(localName = "vmrPkgName")
 
     private String vmrPkgName;
 

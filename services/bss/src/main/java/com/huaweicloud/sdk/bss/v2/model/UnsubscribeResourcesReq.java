@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.bss.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,20 +17,28 @@ public class UnsubscribeResourcesReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_ids")
 
+    @JacksonXmlProperty(localName = "resource_ids")
+
     private List<String> resourceIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "unsubscribe_type")
+
+    @JacksonXmlProperty(localName = "unsubscribe_type")
 
     private Integer unsubscribeType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "unsubscribe_reason_type")
 
+    @JacksonXmlProperty(localName = "unsubscribe_reason_type")
+
     private Integer unsubscribeReasonType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "unsubscribe_reason")
+
+    @JacksonXmlProperty(localName = "unsubscribe_reason")
 
     private String unsubscribeReason;
 

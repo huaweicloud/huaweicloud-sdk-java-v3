@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.css.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,35 +14,49 @@ public class EsflavorsVersionsFlavorsResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cpu")
 
+    @JacksonXmlProperty(localName = "cpu")
+
     private Integer cpu;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ram")
+
+    @JacksonXmlProperty(localName = "ram")
 
     private Integer ram;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region")
+
+    @JacksonXmlProperty(localName = "region")
 
     private String region;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "diskrange")
 
+    @JacksonXmlProperty(localName = "diskrange")
+
     private String diskrange;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "availableAZ")
 
+    @JacksonXmlProperty(localName = "availableAZ")
+
     private String availableAZ;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flavor_id")
+
+    @JacksonXmlProperty(localName = "flavor_id")
 
     private String flavorId;
 

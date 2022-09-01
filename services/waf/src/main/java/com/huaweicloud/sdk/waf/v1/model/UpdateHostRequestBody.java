@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,20 +22,28 @@ public class UpdateHostRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "proxy")
 
+    @JacksonXmlProperty(localName = "proxy")
+
     private Boolean proxy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "certificateid")
+
+    @JacksonXmlProperty(localName = "certificateid")
 
     private String certificateid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "certificatename")
 
+    @JacksonXmlProperty(localName = "certificatename")
+
     private String certificatename;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "server")
+
+    @JacksonXmlProperty(localName = "server")
 
     private List<CloudWafServer> server = null;
 
@@ -129,6 +138,8 @@ public class UpdateHostRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tls")
+
+    @JacksonXmlProperty(localName = "tls")
 
     private TlsEnum tls;
 
@@ -230,60 +241,84 @@ public class UpdateHostRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cipher")
 
+    @JacksonXmlProperty(localName = "cipher")
+
     private CipherEnum cipher;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "http2_enable")
+
+    @JacksonXmlProperty(localName = "http2_enable")
 
     private Boolean http2Enable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ipv6_enable")
 
+    @JacksonXmlProperty(localName = "ipv6_enable")
+
     private Boolean ipv6Enable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "web_tag")
+
+    @JacksonXmlProperty(localName = "web_tag")
 
     private String webTag;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "exclusive_ip")
 
+    @JacksonXmlProperty(localName = "exclusive_ip")
+
     private Boolean exclusiveIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "paid_type")
+
+    @JacksonXmlProperty(localName = "paid_type")
 
     private String paidType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "block_page")
 
+    @JacksonXmlProperty(localName = "block_page")
+
     private BlockPage blockPage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "traffic_mark")
+
+    @JacksonXmlProperty(localName = "traffic_mark")
 
     private TrafficMark trafficMark;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flag")
 
+    @JacksonXmlProperty(localName = "flag")
+
     private Flag flag;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extend")
+
+    @JacksonXmlProperty(localName = "extend")
 
     private Map<String, String> extend = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "circuit_breaker")
 
+    @JacksonXmlProperty(localName = "circuit_breaker")
+
     private CircuitBreaker circuitBreaker;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timeout_config")
+
+    @JacksonXmlProperty(localName = "timeout_config")
 
     private TimeoutConfig timeoutConfig;
 

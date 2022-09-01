@@ -133,7 +133,6 @@ public class DdmMeta {
             }));
 
         // response
-
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -621,7 +620,6 @@ public class DdmMeta {
             }));
 
         // response
-
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,

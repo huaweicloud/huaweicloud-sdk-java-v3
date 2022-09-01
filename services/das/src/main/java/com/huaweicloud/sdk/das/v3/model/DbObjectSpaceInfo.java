@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -95,35 +96,49 @@ public class DbObjectSpaceInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "object_type")
 
+    @JacksonXmlProperty(localName = "object_type")
+
     private ObjectTypeEnum objectType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "object_name")
+
+    @JacksonXmlProperty(localName = "object_name")
 
     private String objectName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "object_id")
 
+    @JacksonXmlProperty(localName = "object_id")
+
     private String objectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "used_size")
+
+    @JacksonXmlProperty(localName = "used_size")
 
     private Long usedSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_size")
 
+    @JacksonXmlProperty(localName = "data_size")
+
     private Long dataSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "index_size")
 
+    @JacksonXmlProperty(localName = "index_size")
+
     private Long indexSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "estimated_rows")
+
+    @JacksonXmlProperty(localName = "estimated_rows")
 
     private Long estimatedRows;
 

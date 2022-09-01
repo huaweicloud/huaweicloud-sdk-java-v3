@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.dcs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -14,35 +15,49 @@ public class ShowMigrationTaskStatsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "full_migration_progress")
 
+    @JacksonXmlProperty(localName = "full_migration_progress")
+
     private String fullMigrationProgress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
+
+    @JacksonXmlProperty(localName = "offset")
 
     private String offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_dbsize")
 
+    @JacksonXmlProperty(localName = "source_dbsize")
+
     private String sourceDbsize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_dbsize")
+
+    @JacksonXmlProperty(localName = "target_dbsize")
 
     private String targetDbsize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_input_kbps")
 
+    @JacksonXmlProperty(localName = "target_input_kbps")
+
     private String targetInputKbps;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_ops")
 
+    @JacksonXmlProperty(localName = "target_ops")
+
     private String targetOps;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_migrating")
+
+    @JacksonXmlProperty(localName = "is_migrating")
 
     private Boolean isMigrating;
 

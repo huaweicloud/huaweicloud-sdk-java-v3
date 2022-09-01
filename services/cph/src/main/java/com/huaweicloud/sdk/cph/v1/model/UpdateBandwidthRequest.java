@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cph.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,10 +15,14 @@ public class UpdateBandwidthRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "band_width_id")
 
+    @JacksonXmlProperty(localName = "band_width_id")
+
     private String bandWidthId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
+
+    @JacksonXmlProperty(localName = "body")
 
     private UpdateBandwidthRequestBody body;
 

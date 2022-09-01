@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,10 +22,14 @@ public class TasksResponseBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
@@ -108,6 +113,8 @@ public class TasksResponseBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
+    @JacksonXmlProperty(localName = "type")
+
     private TypeEnum type;
 
     /**
@@ -190,20 +197,28 @@ public class TasksResponseBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os_type")
 
+    @JacksonXmlProperty(localName = "os_type")
+
     private OsTypeEnum osType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "state")
+
+    @JacksonXmlProperty(localName = "state")
 
     private String state;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "estimate_complete_time")
 
+    @JacksonXmlProperty(localName = "estimate_complete_time")
+
     private Long estimateCompleteTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_date")
+
+    @JacksonXmlProperty(localName = "create_date")
 
     private Long createDate;
 
@@ -293,60 +308,84 @@ public class TasksResponseBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "priority")
 
+    @JacksonXmlProperty(localName = "priority")
+
     private PriorityEnum priority;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "speed_limit")
+
+    @JacksonXmlProperty(localName = "speed_limit")
 
     private Integer speedLimit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "migrate_speed")
 
+    @JacksonXmlProperty(localName = "migrate_speed")
+
     private Double migrateSpeed;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "compress_rate")
+
+    @JacksonXmlProperty(localName = "compress_rate")
 
     private Double compressRate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_target_server")
 
+    @JacksonXmlProperty(localName = "start_target_server")
+
     private Boolean startTargetServer;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_json")
+
+    @JacksonXmlProperty(localName = "error_json")
 
     private String errorJson;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_time")
 
+    @JacksonXmlProperty(localName = "total_time")
+
     private Long totalTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "migration_ip")
+
+    @JacksonXmlProperty(localName = "migration_ip")
 
     private String migrationIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sub_tasks")
 
+    @JacksonXmlProperty(localName = "sub_tasks")
+
     private List<SubTaskAssociatedWithTask> subTasks = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_server")
+
+    @JacksonXmlProperty(localName = "source_server")
 
     private SourceServerAssociatedWithTask sourceServer;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
+    @JacksonXmlProperty(localName = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_server")
+
+    @JacksonXmlProperty(localName = "target_server")
 
     private TargetServerAssociatedWithTask targetServer;
 
@@ -484,15 +523,21 @@ public class TasksResponseBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_collect_status")
 
+    @JacksonXmlProperty(localName = "log_collect_status")
+
     private LogCollectStatusEnum logCollectStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "clone_server")
 
+    @JacksonXmlProperty(localName = "clone_server")
+
     private CloneServerBrief cloneServer;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "syncing")
+
+    @JacksonXmlProperty(localName = "syncing")
 
     private Boolean syncing;
 

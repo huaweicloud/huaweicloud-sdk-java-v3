@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.rocketmq.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -17,10 +18,14 @@ public class ListBrokersRespBrokers {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ids")
 
+    @JacksonXmlProperty(localName = "ids")
+
     private List<BigDecimal> ids = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "broker_name")
+
+    @JacksonXmlProperty(localName = "broker_name")
 
     private String brokerName;
 

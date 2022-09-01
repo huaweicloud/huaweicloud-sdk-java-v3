@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,20 +15,28 @@ public class LockViewRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "conferenceID")
 
+    @JacksonXmlProperty(localName = "conferenceID")
+
     private String conferenceID;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "participantID")
+
+    @JacksonXmlProperty(localName = "participantID")
 
     private String participantID;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Conference-Authorization")
 
+    @JacksonXmlProperty(localName = "X-Conference-Authorization")
+
     private String xConferenceAuthorization;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
+
+    @JacksonXmlProperty(localName = "body")
 
     private RestLockSiteViewReqBody body;
 

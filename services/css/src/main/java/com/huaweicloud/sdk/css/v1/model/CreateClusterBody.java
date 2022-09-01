@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.css.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,55 +17,77 @@ public class CreateClusterBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance")
 
+    @JacksonXmlProperty(localName = "instance")
+
     private CreateClusterInstanceBody instance;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "datastore")
+
+    @JacksonXmlProperty(localName = "datastore")
 
     private CreateClusterDatastoreBody datastore;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instanceNum")
+
+    @JacksonXmlProperty(localName = "instanceNum")
 
     private Integer instanceNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "backupStrategy")
 
+    @JacksonXmlProperty(localName = "backupStrategy")
+
     private CreateClusterBackupStrategyBody backupStrategy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "httpsEnable")
+
+    @JacksonXmlProperty(localName = "httpsEnable")
 
     private Boolean httpsEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "authorityEnable")
 
+    @JacksonXmlProperty(localName = "authorityEnable")
+
     private Boolean authorityEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "adminPwd")
+
+    @JacksonXmlProperty(localName = "adminPwd")
 
     private String adminPwd;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
+    @JacksonXmlProperty(localName = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
+    @JacksonXmlProperty(localName = "tags")
+
     private List<CreateClusterTagsBody> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "payInfo")
+
+    @JacksonXmlProperty(localName = "payInfo")
 
     private PayInfoBody payInfo;
 

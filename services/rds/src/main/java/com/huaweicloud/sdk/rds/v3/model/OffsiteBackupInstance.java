@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.rds.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,40 +15,56 @@ public class OffsiteBackupInstance {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_region")
 
+    @JacksonXmlProperty(localName = "source_region")
+
     private String sourceRegion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_project_id")
+
+    @JacksonXmlProperty(localName = "source_project_id")
 
     private String sourceProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "datastore")
 
+    @JacksonXmlProperty(localName = "datastore")
+
     private ParaGroupDatastore datastore;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "destination_region")
+
+    @JacksonXmlProperty(localName = "destination_region")
 
     private String destinationRegion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "destination_project_id")
 
+    @JacksonXmlProperty(localName = "destination_project_id")
+
     private String destinationProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "keep_days")
+
+    @JacksonXmlProperty(localName = "keep_days")
 
     private Long keepDays;
 

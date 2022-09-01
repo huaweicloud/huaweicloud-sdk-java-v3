@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.sms.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,40 +14,56 @@ public class PhysicalVolumes {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "device_use")
 
+    @JacksonXmlProperty(localName = "device_use")
+
     private String deviceUse;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_system")
+
+    @JacksonXmlProperty(localName = "file_system")
 
     private String fileSystem;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "index")
 
+    @JacksonXmlProperty(localName = "index")
+
     private Integer index;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mount_point")
+
+    @JacksonXmlProperty(localName = "mount_point")
 
     private String mountPoint;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
+
+    @JacksonXmlProperty(localName = "size")
 
     private Long size;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "used_size")
 
+    @JacksonXmlProperty(localName = "used_size")
+
     private Long usedSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "uuid")
+
+    @JacksonXmlProperty(localName = "uuid")
 
     private String uuid;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.res.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,20 +14,28 @@ public class MatchFeaturePair {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_feature_name")
 
+    @JacksonXmlProperty(localName = "user_feature_name")
+
     private String userFeatureName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "item_feature_name")
+
+    @JacksonXmlProperty(localName = "item_feature_name")
 
     private String itemFeatureName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "weight")
 
+    @JacksonXmlProperty(localName = "weight")
+
     private Double weight;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "match_count")
+
+    @JacksonXmlProperty(localName = "match_count")
 
     private Boolean matchCount;
 

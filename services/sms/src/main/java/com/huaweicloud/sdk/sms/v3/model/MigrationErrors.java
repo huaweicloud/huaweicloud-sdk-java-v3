@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.sms.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,30 +14,42 @@ public class MigrationErrors {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_json")
 
+    @JacksonXmlProperty(localName = "error_json")
+
     private String errorJson;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_name")
+
+    @JacksonXmlProperty(localName = "host_name")
 
     private String hostName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_id")
+
+    @JacksonXmlProperty(localName = "source_id")
 
     private String sourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_ip")
 
+    @JacksonXmlProperty(localName = "source_ip")
+
     private String sourceIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_ip")
+
+    @JacksonXmlProperty(localName = "target_ip")
 
     private String targetIp;
 

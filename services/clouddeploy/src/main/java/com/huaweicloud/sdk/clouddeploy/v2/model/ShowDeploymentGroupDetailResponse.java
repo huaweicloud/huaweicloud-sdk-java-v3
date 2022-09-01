@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.clouddeploy.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -15,80 +16,112 @@ public class ShowDeploymentGroupDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_id")
 
+    @JacksonXmlProperty(localName = "group_id")
+
     private String groupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_time")
+
+    @JacksonXmlProperty(localName = "created_time")
 
     private String createdTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_time")
 
+    @JacksonXmlProperty(localName = "updated_time")
+
     private String updatedTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_count")
+
+    @JacksonXmlProperty(localName = "host_count")
 
     private Integer hostCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_name")
 
+    @JacksonXmlProperty(localName = "project_name")
+
     private String projectName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region_name")
 
+    @JacksonXmlProperty(localName = "region_name")
+
     private String regionName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
+
+    @JacksonXmlProperty(localName = "project_id")
 
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os")
 
+    @JacksonXmlProperty(localName = "os")
+
     private String os;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auto_connection_test_switch")
+
+    @JacksonXmlProperty(localName = "auto_connection_test_switch")
 
     private Integer autoConnectionTestSwitch;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "slave_cluster_id")
 
+    @JacksonXmlProperty(localName = "slave_cluster_id")
+
     private String slaveClusterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nick_name")
+
+    @JacksonXmlProperty(localName = "nick_name")
 
     private String nickName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_by")
 
+    @JacksonXmlProperty(localName = "created_by")
+
     private UserInfo createdBy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_by")
+
+    @JacksonXmlProperty(localName = "update_by")
 
     private UserInfo updateBy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
+    @JacksonXmlProperty(localName = "description")
+
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "permission")
+
+    @JacksonXmlProperty(localName = "permission")
 
     private PermissionGroupDetail permission;
 

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,35 +22,49 @@ public class TaskInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_id")
 
+    @JacksonXmlProperty(localName = "task_id")
+
     private String taskId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
 
+    @JacksonXmlProperty(localName = "project_id")
+
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_name")
+
+    @JacksonXmlProperty(localName = "project_name")
 
     private String projectName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deploy_system")
 
+    @JacksonXmlProperty(localName = "deploy_system")
+
     private String deploySystem;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
+    @JacksonXmlProperty(localName = "create_time")
+
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
+
+    @JacksonXmlProperty(localName = "update_time")
 
     private String updateTime;
 
@@ -133,100 +148,140 @@ public class TaskInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "state")
 
+    @JacksonXmlProperty(localName = "state")
+
     private StateEnum state;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "execution_time")
+
+    @JacksonXmlProperty(localName = "execution_time")
 
     private String executionTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
+    @JacksonXmlProperty(localName = "description")
+
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_defaut_permission")
+
+    @JacksonXmlProperty(localName = "is_defaut_permission")
 
     private Boolean isDefautPermission;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template_id")
 
+    @JacksonXmlProperty(localName = "template_id")
+
     private String templateId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "owner")
+
+    @JacksonXmlProperty(localName = "owner")
 
     private String owner;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nick_name")
 
+    @JacksonXmlProperty(localName = "nick_name")
+
     private String nickName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "owner_id")
+
+    @JacksonXmlProperty(localName = "owner_id")
 
     private String ownerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tenant_id")
 
+    @JacksonXmlProperty(localName = "tenant_id")
+
     private String tenantId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tenant_name")
+
+    @JacksonXmlProperty(localName = "tenant_name")
 
     private String tenantName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "slave_cluster_id")
 
+    @JacksonXmlProperty(localName = "slave_cluster_id")
+
     private String slaveClusterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_care")
+
+    @JacksonXmlProperty(localName = "is_care")
 
     private Boolean isCare;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "can_modify")
 
+    @JacksonXmlProperty(localName = "can_modify")
+
     private Boolean canModify;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "can_delete")
+
+    @JacksonXmlProperty(localName = "can_delete")
 
     private Boolean canDelete;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "can_view")
 
+    @JacksonXmlProperty(localName = "can_view")
+
     private Boolean canView;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "can_execute")
+
+    @JacksonXmlProperty(localName = "can_execute")
 
     private Boolean canExecute;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "can_copy")
 
+    @JacksonXmlProperty(localName = "can_copy")
+
     private Boolean canCopy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "can_manage")
+
+    @JacksonXmlProperty(localName = "can_manage")
 
     private Boolean canManage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_component_list")
 
+    @JacksonXmlProperty(localName = "app_component_list")
+
     private List<AppComponentDao> appComponentList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "role_id")
+
+    @JacksonXmlProperty(localName = "role_id")
 
     private Integer roleId;
 

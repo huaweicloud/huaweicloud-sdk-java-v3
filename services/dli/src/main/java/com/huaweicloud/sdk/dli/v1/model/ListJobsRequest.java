@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,20 +19,28 @@ public class ListJobsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page-size")
 
+    @JacksonXmlProperty(localName = "page-size")
+
     private Integer pageSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "current-page")
+
+    @JacksonXmlProperty(localName = "current-page")
 
     private Integer currentPage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start")
 
+    @JacksonXmlProperty(localName = "start")
+
     private Long start;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end")
+
+    @JacksonXmlProperty(localName = "end")
 
     private Long end;
 
@@ -139,30 +148,42 @@ public class ListJobsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job-type")
 
+    @JacksonXmlProperty(localName = "job-type")
+
     private JobTypeEnum jobType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job-status")
+
+    @JacksonXmlProperty(localName = "job-status")
 
     private String jobStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "db_name")
 
+    @JacksonXmlProperty(localName = "db_name")
+
     private String dbName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "table_name")
+
+    @JacksonXmlProperty(localName = "table_name")
 
     private String tableName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "queue_name")
 
+    @JacksonXmlProperty(localName = "queue_name")
+
     private String queueName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sql_pattern")
+
+    @JacksonXmlProperty(localName = "sql_pattern")
 
     private String sqlPattern;
 
@@ -258,10 +279,14 @@ public class ListJobsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "order")
 
+    @JacksonXmlProperty(localName = "order")
+
     private OrderEnum order;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "engine-type")
+
+    @JacksonXmlProperty(localName = "engine-type")
 
     private String engineType;
 

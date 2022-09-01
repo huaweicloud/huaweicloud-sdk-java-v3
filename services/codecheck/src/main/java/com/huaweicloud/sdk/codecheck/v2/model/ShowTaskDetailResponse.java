@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.codecheck.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.math.BigDecimal;
@@ -15,145 +16,203 @@ public class ShowTaskDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_id")
 
+    @JacksonXmlProperty(localName = "task_id")
+
     private String taskId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_name")
+
+    @JacksonXmlProperty(localName = "task_name")
 
     private String taskName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "creator_id")
 
+    @JacksonXmlProperty(localName = "creator_id")
+
     private String creatorId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "git_url")
+
+    @JacksonXmlProperty(localName = "git_url")
 
     private String gitUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "git_branch")
 
+    @JacksonXmlProperty(localName = "git_branch")
+
     private String gitBranch;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last_check_time")
+
+    @JacksonXmlProperty(localName = "last_check_time")
 
     private String lastCheckTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "code_line_total")
 
+    @JacksonXmlProperty(localName = "code_line_total")
+
     private Integer codeLineTotal;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "code_line")
+
+    @JacksonXmlProperty(localName = "code_line")
 
     private Integer codeLine;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "code_quality")
 
+    @JacksonXmlProperty(localName = "code_quality")
+
     private BigDecimal codeQuality;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "issue_count")
+
+    @JacksonXmlProperty(localName = "issue_count")
 
     private Integer issueCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "risk_coefficient")
 
+    @JacksonXmlProperty(localName = "risk_coefficient")
+
     private BigDecimal riskCoefficient;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "duplication_ratio")
+
+    @JacksonXmlProperty(localName = "duplication_ratio")
 
     private String duplicationRatio;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "complexity_count")
 
+    @JacksonXmlProperty(localName = "complexity_count")
+
     private Integer complexityCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "duplicated_lines")
+
+    @JacksonXmlProperty(localName = "duplicated_lines")
 
     private Integer duplicatedLines;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "comment_lines")
 
+    @JacksonXmlProperty(localName = "comment_lines")
+
     private Integer commentLines;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "comment_ratio")
+
+    @JacksonXmlProperty(localName = "comment_ratio")
 
     private String commentRatio;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "duplicated_blocks")
 
+    @JacksonXmlProperty(localName = "duplicated_blocks")
+
     private Integer duplicatedBlocks;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last_exec_time")
+
+    @JacksonXmlProperty(localName = "last_exec_time")
 
     private String lastExecTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "check_type")
 
+    @JacksonXmlProperty(localName = "check_type")
+
     private String checkType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
+
+    @JacksonXmlProperty(localName = "created_at")
 
     private String createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cyclomatic_complexity_per_method")
 
+    @JacksonXmlProperty(localName = "cyclomatic_complexity_per_method")
+
     private String cyclomaticComplexityPerMethod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cyclomatic_complexity_per_file")
+
+    @JacksonXmlProperty(localName = "cyclomatic_complexity_per_file")
 
     private String cyclomaticComplexityPerFile;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "critical_count")
 
+    @JacksonXmlProperty(localName = "critical_count")
+
     private String criticalCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "major_count")
+
+    @JacksonXmlProperty(localName = "major_count")
 
     private String majorCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "minor_count")
 
+    @JacksonXmlProperty(localName = "minor_count")
+
     private String minorCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "suggestion_count")
+
+    @JacksonXmlProperty(localName = "suggestion_count")
 
     private String suggestionCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_access")
 
+    @JacksonXmlProperty(localName = "is_access")
+
     private String isAccess;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trigger_type")
 
+    @JacksonXmlProperty(localName = "trigger_type")
+
     private String triggerType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_duplication_ratio")
+
+    @JacksonXmlProperty(localName = "file_duplication_ratio")
 
     private String fileDuplicationRatio;
 

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Collections;
@@ -20,15 +21,21 @@ public class ShowMigrationTaskResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_id")
 
+    @JacksonXmlProperty(localName = "task_id")
+
     private String taskId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_name")
 
+    @JacksonXmlProperty(localName = "task_name")
+
     private String taskName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
+
+    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
@@ -124,6 +131,8 @@ public class ShowMigrationTaskResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private StatusEnum status;
 
     /**
@@ -205,6 +214,8 @@ public class ShowMigrationTaskResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "migration_type")
+
+    @JacksonXmlProperty(localName = "migration_type")
 
     private MigrationTypeEnum migrationType;
 
@@ -290,15 +301,21 @@ public class ShowMigrationTaskResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "migration_method")
 
+    @JacksonXmlProperty(localName = "migration_method")
+
     private MigrationMethodEnum migrationMethod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ecs_tenant_private_ip")
 
+    @JacksonXmlProperty(localName = "ecs_tenant_private_ip")
+
     private String ecsTenantPrivateIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "backup_files")
+
+    @JacksonXmlProperty(localName = "backup_files")
 
     private BackupFilesBody backupFiles;
 
@@ -382,25 +399,35 @@ public class ShowMigrationTaskResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "network_type")
 
+    @JacksonXmlProperty(localName = "network_type")
+
     private NetworkTypeEnum networkType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_instance")
+
+    @JacksonXmlProperty(localName = "source_instance")
 
     private SourceInstanceBody sourceInstance;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_instance")
 
+    @JacksonXmlProperty(localName = "target_instance")
+
     private TargetInstanceBody targetInstance;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
 
+    @JacksonXmlProperty(localName = "created_at")
+
     private String createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_at")
+
+    @JacksonXmlProperty(localName = "updated_at")
 
     private String updatedAt;
 

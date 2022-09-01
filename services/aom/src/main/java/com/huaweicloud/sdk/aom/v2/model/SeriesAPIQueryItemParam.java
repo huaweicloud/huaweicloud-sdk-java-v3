@@ -11,6 +11,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.aom.v2.model.QuerySeriesOptionParam;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -24,6 +26,7 @@ public class SeriesAPIQueryItemParam  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="series")
     
+    @JacksonXmlProperty(localName = "series")
     
     private List<QuerySeriesOptionParam> series = null;
     

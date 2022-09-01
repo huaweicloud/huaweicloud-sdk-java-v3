@@ -111,7 +111,6 @@ public class DgcMeta {
             }));
 
         // response
-
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,

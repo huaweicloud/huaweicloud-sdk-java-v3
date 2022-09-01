@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,35 +14,49 @@ public class ListQueuesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "with-priv")
 
+    @JacksonXmlProperty(localName = "with-priv")
+
     private Boolean withPriv;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "with-charge-info")
+
+    @JacksonXmlProperty(localName = "with-charge-info")
 
     private Boolean withChargeInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "queue_type")
 
+    @JacksonXmlProperty(localName = "queue_type")
+
     private String queueType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
+
+    @JacksonXmlProperty(localName = "tags")
 
     private String tags;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page-size")
 
+    @JacksonXmlProperty(localName = "page-size")
+
     private Integer pageSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "current-page")
 
+    @JacksonXmlProperty(localName = "current-page")
+
     private Integer currentPage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "order")
+
+    @JacksonXmlProperty(localName = "order")
 
     private String order;
 

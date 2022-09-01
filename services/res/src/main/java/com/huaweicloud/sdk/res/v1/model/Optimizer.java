@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -101,40 +102,56 @@ public class Optimizer {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
+    @JacksonXmlProperty(localName = "type")
+
     private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "learning_rate")
+
+    @JacksonXmlProperty(localName = "learning_rate")
 
     private Double learningRate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "initial_accumulator_value")
 
+    @JacksonXmlProperty(localName = "initial_accumulator_value")
+
     private Double initialAccumulatorValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lambda1")
+
+    @JacksonXmlProperty(localName = "lambda1")
 
     private Double lambda1;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lambda2")
 
+    @JacksonXmlProperty(localName = "lambda2")
+
     private Double lambda2;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "epsilon")
+
+    @JacksonXmlProperty(localName = "epsilon")
 
     private Double epsilon;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "decay_rate")
 
+    @JacksonXmlProperty(localName = "decay_rate")
+
     private Double decayRate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "decay_steps")
+
+    @JacksonXmlProperty(localName = "decay_steps")
 
     private Double decaySteps;
 

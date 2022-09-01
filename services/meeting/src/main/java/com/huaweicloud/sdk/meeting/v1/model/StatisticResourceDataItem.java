@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,30 +14,42 @@ public class StatisticResourceDataItem {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time")
 
+    @JacksonXmlProperty(localName = "time")
+
     private String time;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vmrParties")
+
+    @JacksonXmlProperty(localName = "vmrParties")
 
     private String vmrParties;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maxConcurrencyVmrCount")
 
+    @JacksonXmlProperty(localName = "maxConcurrencyVmrCount")
+
     private String maxConcurrencyVmrCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "livePortUsedCount")
+
+    @JacksonXmlProperty(localName = "livePortUsedCount")
 
     private String livePortUsedCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "recordUsedSize")
 
+    @JacksonXmlProperty(localName = "recordUsedSize")
+
     private String recordUsedSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pstnUsedDuration")
+
+    @JacksonXmlProperty(localName = "pstnUsedDuration")
 
     private String pstnUsedDuration;
 

@@ -269,7 +269,6 @@ public class CloudtestMeta {
             }));
 
         // response
-
         builder.<List<TestPlanIssueDetail>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -323,7 +322,6 @@ public class CloudtestMeta {
             }));
 
         // response
-
         builder.<List<TestPlanJournalList>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -383,7 +381,6 @@ public class CloudtestMeta {
             }));
 
         // response
-
         builder.<List<TestPlanDetail>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -443,7 +440,6 @@ public class CloudtestMeta {
             }));
 
         // response
-
         builder.<List<TestPlanDetail>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,

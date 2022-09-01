@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.devstar.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,80 +17,112 @@ public class TemplateQueryV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "category")
 
+    @JacksonXmlProperty(localName = "category")
+
     private List<String> category = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "keyword")
+
+    @JacksonXmlProperty(localName = "keyword")
 
     private String keyword;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sort_by")
 
+    @JacksonXmlProperty(localName = "sort_by")
+
     private String sortBy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "label")
+
+    @JacksonXmlProperty(localName = "label")
 
     private String label;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "my_templates")
 
+    @JacksonXmlProperty(localName = "my_templates")
+
     private Boolean myTemplates;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
+
+    @JacksonXmlProperty(localName = "status")
 
     private Integer status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status_array")
 
+    @JacksonXmlProperty(localName = "status_array")
+
     private List<Integer> statusArray = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "has_notices")
+
+    @JacksonXmlProperty(localName = "has_notices")
 
     private Boolean hasNotices;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "productshorts")
 
+    @JacksonXmlProperty(localName = "productshorts")
+
     private List<String> productshorts = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
+
+    @JacksonXmlProperty(localName = "offset")
 
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
+    @JacksonXmlProperty(localName = "limit")
+
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tag_ids")
+
+    @JacksonXmlProperty(localName = "tag_ids")
 
     private List<String> tagIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "types")
 
+    @JacksonXmlProperty(localName = "types")
+
     private List<Integer> types = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_static")
+
+    @JacksonXmlProperty(localName = "is_static")
 
     private Integer isStatic;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "platform_source")
 
+    @JacksonXmlProperty(localName = "platform_source")
+
     private List<Integer> platformSource = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tag_names")
+
+    @JacksonXmlProperty(localName = "tag_names")
 
     private List<String> tagNames = null;
 

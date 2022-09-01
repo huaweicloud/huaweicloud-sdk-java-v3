@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.bss.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,30 +14,42 @@ public class SendVerificationCodeV2Req {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "receiver_type")
 
+    @JacksonXmlProperty(localName = "receiver_type")
+
     private Integer receiverType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timeout")
+
+    @JacksonXmlProperty(localName = "timeout")
 
     private Integer timeout;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mobile_phone")
 
+    @JacksonXmlProperty(localName = "mobile_phone")
+
     private String mobilePhone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lang")
+
+    @JacksonXmlProperty(localName = "lang")
 
     private String lang;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scene")
 
+    @JacksonXmlProperty(localName = "scene")
+
     private Integer scene;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "customer_id")
+
+    @JacksonXmlProperty(localName = "customer_id")
 
     private String customerId;
 

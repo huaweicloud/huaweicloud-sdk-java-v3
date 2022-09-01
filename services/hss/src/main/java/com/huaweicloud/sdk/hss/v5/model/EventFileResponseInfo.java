@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.hss.v5.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,105 +14,147 @@ public class EventFileResponseInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_path")
 
+    @JacksonXmlProperty(localName = "file_path")
+
     private String filePath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_alias")
+
+    @JacksonXmlProperty(localName = "file_alias")
 
     private String fileAlias;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_size")
 
+    @JacksonXmlProperty(localName = "file_size")
+
     private Integer fileSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_mtime")
+
+    @JacksonXmlProperty(localName = "file_mtime")
 
     private Long fileMtime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_atime")
 
+    @JacksonXmlProperty(localName = "file_atime")
+
     private Long fileAtime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_ctime")
+
+    @JacksonXmlProperty(localName = "file_ctime")
 
     private Long fileCtime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_hash")
 
+    @JacksonXmlProperty(localName = "file_hash")
+
     private String fileHash;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_md5")
+
+    @JacksonXmlProperty(localName = "file_md5")
 
     private String fileMd5;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_sha256")
 
+    @JacksonXmlProperty(localName = "file_sha256")
+
     private String fileSha256;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_type")
+
+    @JacksonXmlProperty(localName = "file_type")
 
     private String fileType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_content")
 
+    @JacksonXmlProperty(localName = "file_content")
+
     private String fileContent;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_attr")
+
+    @JacksonXmlProperty(localName = "file_attr")
 
     private String fileAttr;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_operation")
 
+    @JacksonXmlProperty(localName = "file_operation")
+
     private Integer fileOperation;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_action")
+
+    @JacksonXmlProperty(localName = "file_action")
 
     private String fileAction;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_change_attr")
 
+    @JacksonXmlProperty(localName = "file_change_attr")
+
     private String fileChangeAttr;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_new_path")
+
+    @JacksonXmlProperty(localName = "file_new_path")
 
     private String fileNewPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_desc")
 
+    @JacksonXmlProperty(localName = "file_desc")
+
     private String fileDesc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_key_word")
+
+    @JacksonXmlProperty(localName = "file_key_word")
 
     private String fileKeyWord;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_dir")
 
+    @JacksonXmlProperty(localName = "is_dir")
+
     private Boolean isDir;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fd_info")
 
+    @JacksonXmlProperty(localName = "fd_info")
+
     private String fdInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fd_count")
+
+    @JacksonXmlProperty(localName = "fd_count")
 
     private Integer fdCount;
 

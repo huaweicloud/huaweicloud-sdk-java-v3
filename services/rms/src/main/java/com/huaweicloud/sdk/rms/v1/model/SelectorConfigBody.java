@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.rms.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,10 +17,14 @@ public class SelectorConfigBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "all_supported")
 
+    @JacksonXmlProperty(localName = "all_supported")
+
     private Boolean allSupported;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_types")
+
+    @JacksonXmlProperty(localName = "resource_types")
 
     private List<String> resourceTypes = null;
 

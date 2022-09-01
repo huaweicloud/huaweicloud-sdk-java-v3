@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
@@ -22,15 +23,21 @@ public class AlarmHistoryItemV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "record_id")
 
+    @JacksonXmlProperty(localName = "record_id")
+
     private String recordId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alarm_id")
 
+    @JacksonXmlProperty(localName = "alarm_id")
+
     private String alarmId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
@@ -119,6 +126,8 @@ public class AlarmHistoryItemV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
+
+    @JacksonXmlProperty(localName = "status")
 
     private StatusEnum status;
 
@@ -214,6 +223,8 @@ public class AlarmHistoryItemV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "level")
 
+    @JacksonXmlProperty(localName = "level")
+
     private LevelEnum level;
 
     /**
@@ -296,50 +307,70 @@ public class AlarmHistoryItemV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
+    @JacksonXmlProperty(localName = "type")
+
     private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "action_enabled")
+
+    @JacksonXmlProperty(localName = "action_enabled")
 
     private Boolean actionEnabled;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "begin_time")
 
+    @JacksonXmlProperty(localName = "begin_time")
+
     private OffsetDateTime beginTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time")
+
+    @JacksonXmlProperty(localName = "end_time")
 
     private OffsetDateTime endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metric")
 
+    @JacksonXmlProperty(localName = "metric")
+
     private Metric metric;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "condition")
+
+    @JacksonXmlProperty(localName = "condition")
 
     private AlarmCondition condition;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "additional_info")
 
+    @JacksonXmlProperty(localName = "additional_info")
+
     private AdditionalInfo additionalInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alarm_actions")
+
+    @JacksonXmlProperty(localName = "alarm_actions")
 
     private List<Notification> alarmActions = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ok_actions")
 
+    @JacksonXmlProperty(localName = "ok_actions")
+
     private List<Notification> okActions = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "datapoints")
+
+    @JacksonXmlProperty(localName = "datapoints")
 
     private List<DataPointInfo> datapoints = null;
 

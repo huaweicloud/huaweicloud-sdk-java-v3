@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -20,6 +21,8 @@ public class ListEventRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
+
+    @JacksonXmlProperty(localName = "enterprise_project_id")
 
     private String enterpriseProjectId;
 
@@ -121,35 +124,49 @@ public class ListEventRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "recent")
 
+    @JacksonXmlProperty(localName = "recent")
+
     private RecentEnum recent;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "from")
+
+    @JacksonXmlProperty(localName = "from")
 
     private Long from;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "to")
 
+    @JacksonXmlProperty(localName = "to")
+
     private Long to;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "attacks")
+
+    @JacksonXmlProperty(localName = "attacks")
 
     private List<String> attacks = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hosts")
 
+    @JacksonXmlProperty(localName = "hosts")
+
     private List<String> hosts = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page")
 
+    @JacksonXmlProperty(localName = "page")
+
     private Integer page;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pagesize")
+
+    @JacksonXmlProperty(localName = "pagesize")
 
     private Integer pagesize;
 

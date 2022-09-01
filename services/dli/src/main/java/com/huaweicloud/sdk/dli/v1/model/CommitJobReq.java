@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,25 +17,35 @@ public class CommitJobReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sql")
 
+    @JacksonXmlProperty(localName = "sql")
+
     private String sql;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "currentdb")
+
+    @JacksonXmlProperty(localName = "currentdb")
 
     private String currentdb;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "queue_name")
 
+    @JacksonXmlProperty(localName = "queue_name")
+
     private String queueName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "conf")
 
+    @JacksonXmlProperty(localName = "conf")
+
     private List<String> conf = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
+
+    @JacksonXmlProperty(localName = "tags")
 
     private List<JobsTags> tags = null;
 

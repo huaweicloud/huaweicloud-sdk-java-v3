@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.bcs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,125 +17,175 @@ public class BasicInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
 
+    @JacksonXmlProperty(localName = "version")
+
     private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_type")
+
+    @JacksonXmlProperty(localName = "service_type")
 
     private String serviceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "purchase_type")
 
+    @JacksonXmlProperty(localName = "purchase_type")
+
     private String purchaseType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sign_algorithm")
+
+    @JacksonXmlProperty(localName = "sign_algorithm")
 
     private String signAlgorithm;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "consensus")
 
+    @JacksonXmlProperty(localName = "consensus")
+
     private String consensus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "charging_mode")
+
+    @JacksonXmlProperty(localName = "charging_mode")
 
     private Long chargingMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version_type")
 
+    @JacksonXmlProperty(localName = "version_type")
+
     private Long versionType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "database_type")
+
+    @JacksonXmlProperty(localName = "database_type")
 
     private String databaseType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cluster_id")
 
+    @JacksonXmlProperty(localName = "cluster_id")
+
     private String clusterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cluster_name")
+
+    @JacksonXmlProperty(localName = "cluster_name")
 
     private String clusterName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cluster_type")
 
+    @JacksonXmlProperty(localName = "cluster_type")
+
     private String clusterType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cluster_az")
+
+    @JacksonXmlProperty(localName = "cluster_az")
 
     private String clusterAz;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_time")
 
+    @JacksonXmlProperty(localName = "created_time")
+
     private String createdTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deploy_type")
+
+    @JacksonXmlProperty(localName = "deploy_type")
 
     private String deployType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_cross_region")
 
+    @JacksonXmlProperty(localName = "is_cross_region")
+
     private Boolean isCrossRegion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_support_rollback")
+
+    @JacksonXmlProperty(localName = "is_support_rollback")
 
     private Boolean isSupportRollback;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_support_restful")
 
+    @JacksonXmlProperty(localName = "is_support_restful")
+
     private Boolean isSupportRestful;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_old_service")
+
+    @JacksonXmlProperty(localName = "is_old_service")
 
     private Boolean isOldService;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "old_service_version")
 
+    @JacksonXmlProperty(localName = "old_service_version")
+
     private String oldServiceVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "agent_portal_addrs")
+
+    @JacksonXmlProperty(localName = "agent_portal_addrs")
 
     private List<String> agentPortalAddrs = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "process_status")
 
+    @JacksonXmlProperty(localName = "process_status")
+
     private String processStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "order_status")
+
+    @JacksonXmlProperty(localName = "order_status")
 
     private Long orderStatus;
 

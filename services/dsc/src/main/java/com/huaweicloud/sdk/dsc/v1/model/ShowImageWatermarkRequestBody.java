@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.dsc.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.http.FormDataFilePart;
 import com.huaweicloud.sdk.core.http.FormDataPart;
 import com.huaweicloud.sdk.core.http.SdkFormDataBody;
@@ -17,11 +18,14 @@ import java.util.Objects;
 public class ShowImageWatermarkRequestBody implements SdkFormDataBody {
 
     @JsonProperty(value = "file", access = JsonProperty.Access.WRITE_ONLY)
+    @JacksonXmlProperty(localName = "file")
 
     private FormDataFilePart file;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mark_len")
+
+    @JacksonXmlProperty(localName = "mark_len")
 
     private String markLen;
 

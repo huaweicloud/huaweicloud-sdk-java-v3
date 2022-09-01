@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.gaussdbfornosql.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class DedicatedResourceCapacity {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vcpus")
 
+    @JacksonXmlProperty(localName = "vcpus")
+
     private Integer vcpus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ram")
 
+    @JacksonXmlProperty(localName = "ram")
+
     private Integer ram;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volume")
+
+    @JacksonXmlProperty(localName = "volume")
 
     private Integer volume;
 

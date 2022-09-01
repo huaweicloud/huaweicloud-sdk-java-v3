@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.devstar.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,35 +17,49 @@ public class TemplateJobInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "application_name")
 
+    @JacksonXmlProperty(localName = "application_name")
+
     private String applicationName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template_id")
+
+    @JacksonXmlProperty(localName = "template_id")
 
     private String templateId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_name")
 
+    @JacksonXmlProperty(localName = "project_name")
+
     private String projectName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "repo_type")
+
+    @JacksonXmlProperty(localName = "repo_type")
 
     private Integer repoType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "properties")
 
+    @JacksonXmlProperty(localName = "properties")
+
     private Object properties;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template_dependencies")
 
+    @JacksonXmlProperty(localName = "template_dependencies")
+
     private List<String> templateDependencies = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "repo_info")
+
+    @JacksonXmlProperty(localName = "repo_info")
 
     private RepositoryInfo repoInfo;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,35 +14,49 @@ public class ConfAttendeeRecordInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "displayName")
 
+    @JacksonXmlProperty(localName = "displayName")
+
     private String displayName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "callNumber")
+
+    @JacksonXmlProperty(localName = "callNumber")
 
     private String callNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deviceType")
 
+    @JacksonXmlProperty(localName = "deviceType")
+
     private String deviceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "joinTime")
+
+    @JacksonXmlProperty(localName = "joinTime")
 
     private Long joinTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "leftTime")
 
+    @JacksonXmlProperty(localName = "leftTime")
+
     private Long leftTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mediaType")
 
+    @JacksonXmlProperty(localName = "mediaType")
+
     private String mediaType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deptName")
+
+    @JacksonXmlProperty(localName = "deptName")
 
     private String deptName;
 

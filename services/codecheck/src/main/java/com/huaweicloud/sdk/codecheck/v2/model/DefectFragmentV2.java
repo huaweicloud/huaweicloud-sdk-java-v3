@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.codecheck.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,20 +14,28 @@ public class DefectFragmentV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "line_num")
 
+    @JacksonXmlProperty(localName = "line_num")
+
     private String lineNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "line_content")
+
+    @JacksonXmlProperty(localName = "line_content")
 
     private String lineContent;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_offset")
 
+    @JacksonXmlProperty(localName = "start_offset")
+
     private Integer startOffset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_offset")
+
+    @JacksonXmlProperty(localName = "end_offset")
 
     private Integer endOffset;
 

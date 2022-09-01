@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.iec.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,15 +17,21 @@ public class CoverageResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "coverage_policy")
 
+    @JacksonXmlProperty(localName = "coverage_policy")
+
     private String coveragePolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "coverage_level")
 
+    @JacksonXmlProperty(localName = "coverage_level")
+
     private String coverageLevel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "coverage_sites")
+
+    @JacksonXmlProperty(localName = "coverage_sites")
 
     private List<CoverageSiteResp> coverageSites = null;
 

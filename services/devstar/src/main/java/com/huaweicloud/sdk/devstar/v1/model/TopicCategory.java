@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.devstar.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,20 +14,28 @@ public class TopicCategory {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "topic_id")
 
+    @JacksonXmlProperty(localName = "topic_id")
+
     private String topicId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "topic_name")
+
+    @JacksonXmlProperty(localName = "topic_name")
 
     private String topicName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "category_id")
 
+    @JacksonXmlProperty(localName = "category_id")
+
     private String categoryId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "category_name")
+
+    @JacksonXmlProperty(localName = "category_name")
 
     private String categoryName;
 

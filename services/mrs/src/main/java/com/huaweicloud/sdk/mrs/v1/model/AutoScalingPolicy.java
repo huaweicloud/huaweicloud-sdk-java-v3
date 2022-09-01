@@ -13,6 +13,8 @@ import com.huaweicloud.sdk.mrs.v1.model.Rules;
 import com.huaweicloud.sdk.mrs.v1.model.ScaleScript;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -26,6 +28,7 @@ public class AutoScalingPolicy  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auto_scaling_enable")
     
+    @JacksonXmlProperty(localName = "auto_scaling_enable")
     
     private Boolean autoScalingEnable;
 
@@ -33,6 +36,7 @@ public class AutoScalingPolicy  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="min_capacity")
     
+    @JacksonXmlProperty(localName = "min_capacity")
     
     private Integer minCapacity;
 
@@ -40,6 +44,7 @@ public class AutoScalingPolicy  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="max_capacity")
     
+    @JacksonXmlProperty(localName = "max_capacity")
     
     private Integer maxCapacity;
 
@@ -47,6 +52,7 @@ public class AutoScalingPolicy  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resources_plans")
     
+    @JacksonXmlProperty(localName = "resources_plans")
     
     private List<ResourcesPlan> resourcesPlans = null;
     
@@ -54,6 +60,7 @@ public class AutoScalingPolicy  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rules")
     
+    @JacksonXmlProperty(localName = "rules")
     
     private List<Rules> rules = null;
     
@@ -61,6 +68,7 @@ public class AutoScalingPolicy  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="exec_scripts")
     
+    @JacksonXmlProperty(localName = "exec_scripts")
     
     private List<ScaleScript> execScripts = null;
     

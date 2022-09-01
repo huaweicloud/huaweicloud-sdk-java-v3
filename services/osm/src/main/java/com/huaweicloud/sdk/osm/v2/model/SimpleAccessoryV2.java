@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.osm.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class SimpleAccessoryV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "accessory_id")
 
+    @JacksonXmlProperty(localName = "accessory_id")
+
     private String accessoryId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_actual_name")
+
+    @JacksonXmlProperty(localName = "file_actual_name")
 
     private String fileActualName;
 

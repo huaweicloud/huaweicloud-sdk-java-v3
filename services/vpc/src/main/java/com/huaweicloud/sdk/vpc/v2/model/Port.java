@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,35 +22,49 @@ public class Port {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "network_id")
 
+    @JacksonXmlProperty(localName = "network_id")
+
     private String networkId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "admin_state_up")
+
+    @JacksonXmlProperty(localName = "admin_state_up")
 
     private Boolean adminStateUp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mac_address")
 
+    @JacksonXmlProperty(localName = "mac_address")
+
     private String macAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fixed_ips")
 
+    @JacksonXmlProperty(localName = "fixed_ips")
+
     private List<FixedIp> fixedIps = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "device_id")
+
+    @JacksonXmlProperty(localName = "device_id")
 
     private String deviceId;
 
@@ -147,10 +162,14 @@ public class Port {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "device_owner")
 
+    @JacksonXmlProperty(localName = "device_owner")
+
     private DeviceOwnerEnum deviceOwner;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tenant_id")
+
+    @JacksonXmlProperty(localName = "tenant_id")
 
     private String tenantId;
 
@@ -240,65 +259,91 @@ public class Port {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_groups")
+
+    @JacksonXmlProperty(localName = "security_groups")
 
     private List<String> securityGroups = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "allowed_address_pairs")
 
+    @JacksonXmlProperty(localName = "allowed_address_pairs")
+
     private List<AllowedAddressPair> allowedAddressPairs = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extra_dhcp_opts")
+
+    @JacksonXmlProperty(localName = "extra_dhcp_opts")
 
     private List<ExtraDhcpOpt> extraDhcpOpts = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "binding:vnic_type")
 
+    @JacksonXmlProperty(localName = "binding:vnic_type")
+
     private String bindingVnicType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dns_assignment")
+
+    @JacksonXmlProperty(localName = "dns_assignment")
 
     private List<DnsAssignMent> dnsAssignment = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dns_name")
 
+    @JacksonXmlProperty(localName = "dns_name")
+
     private String dnsName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "binding:vif_details")
+
+    @JacksonXmlProperty(localName = "binding:vif_details")
 
     private BindingVifDetails bindingVifDetails;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "binding:profile")
 
+    @JacksonXmlProperty(localName = "binding:profile")
+
     private Object bindingProfile;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_id")
+
+    @JacksonXmlProperty(localName = "instance_id")
 
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_type")
 
+    @JacksonXmlProperty(localName = "instance_type")
+
     private String instanceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "port_security_enabled")
 
+    @JacksonXmlProperty(localName = "port_security_enabled")
+
     private Boolean portSecurityEnabled;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "zone_id")
+
+    @JacksonXmlProperty(localName = "zone_id")
 
     private String zoneId;
 

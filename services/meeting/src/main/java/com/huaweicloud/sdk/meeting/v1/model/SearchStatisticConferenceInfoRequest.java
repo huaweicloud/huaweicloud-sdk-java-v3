@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,10 +19,14 @@ public class SearchStatisticConferenceInfoRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
+    @JacksonXmlProperty(localName = "offset")
+
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
+
+    @JacksonXmlProperty(localName = "limit")
 
     private Integer limit;
 
@@ -105,15 +110,21 @@ public class SearchStatisticConferenceInfoRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timeUnit")
 
+    @JacksonXmlProperty(localName = "timeUnit")
+
     private TimeUnitEnum timeUnit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "startTime")
 
+    @JacksonXmlProperty(localName = "startTime")
+
     private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "endTime")
+
+    @JacksonXmlProperty(localName = "endTime")
 
     private String endTime;
 
@@ -196,6 +207,8 @@ public class SearchStatisticConferenceInfoRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "category")
+
+    @JacksonXmlProperty(localName = "category")
 
     private CategoryEnum category;
 

@@ -12,6 +12,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -25,6 +27,7 @@ public class DependencyParserRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="text")
     
+    @JacksonXmlProperty(localName = "text")
     
     private String text;
     /**
@@ -104,6 +107,7 @@ public class DependencyParserRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="lang")
     
+    @JacksonXmlProperty(localName = "lang")
     
     private LangEnum lang;
 

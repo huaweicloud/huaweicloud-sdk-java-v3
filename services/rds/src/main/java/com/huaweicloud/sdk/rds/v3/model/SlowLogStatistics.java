@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.rds.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,50 +14,70 @@ public class SlowLogStatistics {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "count")
 
+    @JacksonXmlProperty(localName = "count")
+
     private String count;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time")
+
+    @JacksonXmlProperty(localName = "time")
 
     private String time;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lockTime")
 
+    @JacksonXmlProperty(localName = "lockTime")
+
     private String lockTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rowsSent")
+
+    @JacksonXmlProperty(localName = "rowsSent")
 
     private Long rowsSent;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rowsExamined")
 
+    @JacksonXmlProperty(localName = "rowsExamined")
+
     private Long rowsExamined;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "database")
+
+    @JacksonXmlProperty(localName = "database")
 
     private String database;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "users")
 
+    @JacksonXmlProperty(localName = "users")
+
     private String users;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "querySample")
+
+    @JacksonXmlProperty(localName = "querySample")
 
     private String querySample;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
+    @JacksonXmlProperty(localName = "type")
+
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "clientIP")
+
+    @JacksonXmlProperty(localName = "clientIP")
 
     private String clientIP;
 

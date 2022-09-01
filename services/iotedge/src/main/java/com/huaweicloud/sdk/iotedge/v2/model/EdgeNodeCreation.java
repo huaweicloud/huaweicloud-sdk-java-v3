@@ -13,6 +13,8 @@ import com.huaweicloud.sdk.iotedge.v2.model.EdgeAppInstanceDTO;
 import com.huaweicloud.sdk.iotedge.v2.model.LogConfigDTO;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -26,6 +28,7 @@ public class EdgeNodeCreation  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edge_node_id")
     
+    @JacksonXmlProperty(localName = "edge_node_id")
     
     private String edgeNodeId;
 
@@ -33,6 +36,7 @@ public class EdgeNodeCreation  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
+    @JacksonXmlProperty(localName = "name")
     
     private String name;
 
@@ -40,6 +44,7 @@ public class EdgeNodeCreation  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
+    @JacksonXmlProperty(localName = "type")
     
     private String type;
 
@@ -47,6 +52,7 @@ public class EdgeNodeCreation  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="verify_code")
     
+    @JacksonXmlProperty(localName = "verify_code")
     
     private String verifyCode;
 
@@ -54,6 +60,7 @@ public class EdgeNodeCreation  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="time_out")
     
+    @JacksonXmlProperty(localName = "time_out")
     
     private Integer timeOut;
 
@@ -61,6 +68,7 @@ public class EdgeNodeCreation  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="arch")
     
+    @JacksonXmlProperty(localName = "arch")
     
     private String arch;
 
@@ -68,6 +76,7 @@ public class EdgeNodeCreation  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_id")
     
+    @JacksonXmlProperty(localName = "instance_id")
     
     private String instanceId;
 
@@ -75,6 +84,7 @@ public class EdgeNodeCreation  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="space_id")
     
+    @JacksonXmlProperty(localName = "space_id")
     
     private String spaceId;
 
@@ -82,6 +92,7 @@ public class EdgeNodeCreation  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_ids")
     
+    @JacksonXmlProperty(localName = "resource_ids")
     
     private List<String> resourceIds = null;
     
@@ -89,6 +100,7 @@ public class EdgeNodeCreation  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="security_level")
     
+    @JacksonXmlProperty(localName = "security_level")
     
     private String securityLevel;
 
@@ -96,6 +108,7 @@ public class EdgeNodeCreation  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="storage_period")
     
+    @JacksonXmlProperty(localName = "storage_period")
     
     private Integer storagePeriod;
 
@@ -103,6 +116,7 @@ public class EdgeNodeCreation  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ai_card_type")
     
+    @JacksonXmlProperty(localName = "ai_card_type")
     
     private String aiCardType;
 
@@ -110,6 +124,7 @@ public class EdgeNodeCreation  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="base_path")
     
+    @JacksonXmlProperty(localName = "base_path")
     
     private BasePathDTO basePath;
 
@@ -117,6 +132,7 @@ public class EdgeNodeCreation  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="log_configs")
     
+    @JacksonXmlProperty(localName = "log_configs")
     
     private List<LogConfigDTO> logConfigs = null;
     
@@ -124,6 +140,7 @@ public class EdgeNodeCreation  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="apps")
     
+    @JacksonXmlProperty(localName = "apps")
     
     private List<EdgeAppInstanceDTO> apps = null;
     
@@ -131,6 +148,7 @@ public class EdgeNodeCreation  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="hardware_model")
     
+    @JacksonXmlProperty(localName = "hardware_model")
     
     private String hardwareModel;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.codecraft.v5.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class ListWorksResponseModel {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "works_id")
 
+    @JacksonXmlProperty(localName = "works_id")
+
     private String worksId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_id")
 
+    @JacksonXmlProperty(localName = "domain_id")
+
     private String domainId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "team_id")
+
+    @JacksonXmlProperty(localName = "team_id")
 
     private String teamId;
 

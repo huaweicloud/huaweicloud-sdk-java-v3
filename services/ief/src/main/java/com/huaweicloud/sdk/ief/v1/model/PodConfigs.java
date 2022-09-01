@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ief.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,25 +14,35 @@ public class PodConfigs {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_network")
 
+    @JacksonXmlProperty(localName = "host_network")
+
     private Boolean hostNetwork;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_pid")
+
+    @JacksonXmlProperty(localName = "host_pid")
 
     private Boolean hostPid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "migration")
 
+    @JacksonXmlProperty(localName = "migration")
+
     private Boolean migration;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "restart_policy")
 
+    @JacksonXmlProperty(localName = "restart_policy")
+
     private String restartPolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "toleration_seconds")
+
+    @JacksonXmlProperty(localName = "toleration_seconds")
 
     private Integer tolerationSeconds;
 

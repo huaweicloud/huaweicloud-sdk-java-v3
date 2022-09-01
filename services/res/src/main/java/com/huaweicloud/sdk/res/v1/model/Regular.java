@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -17,6 +18,8 @@ public class Regular {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "l2_regularization")
+
+    @JacksonXmlProperty(localName = "l2_regularization")
 
     private Double l2Regularization;
 
@@ -100,20 +103,28 @@ public class Regular {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "regular_loss_compute_mode")
 
+    @JacksonXmlProperty(localName = "regular_loss_compute_mode")
+
     private RegularLossComputeModeEnum regularLossComputeMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "embed_l2_regularization")
+
+    @JacksonXmlProperty(localName = "embed_l2_regularization")
 
     private Double embedL2Regularization;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "wide_l2_regularization")
 
+    @JacksonXmlProperty(localName = "wide_l2_regularization")
+
     private Double wideL2Regularization;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "structure_l2_regularization")
+
+    @JacksonXmlProperty(localName = "structure_l2_regularization")
 
     private Double structureL2Regularization;
 

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -95,10 +96,14 @@ public class PrePaidServerExtendParam {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "chargingMode")
 
+    @JacksonXmlProperty(localName = "chargingMode")
+
     private ChargingModeEnum chargingMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "regionID")
+
+    @JacksonXmlProperty(localName = "regionID")
 
     private String regionID;
 
@@ -182,10 +187,14 @@ public class PrePaidServerExtendParam {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "periodType")
 
+    @JacksonXmlProperty(localName = "periodType")
+
     private PeriodTypeEnum periodType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "periodNum")
+
+    @JacksonXmlProperty(localName = "periodNum")
 
     private Integer periodNum;
 
@@ -269,6 +278,8 @@ public class PrePaidServerExtendParam {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "isAutoRenew")
 
+    @JacksonXmlProperty(localName = "isAutoRenew")
+
     private IsAutoRenewEnum isAutoRenew;
 
     /**
@@ -351,35 +362,49 @@ public class PrePaidServerExtendParam {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "isAutoPay")
 
+    @JacksonXmlProperty(localName = "isAutoPay")
+
     private IsAutoPayEnum isAutoPay;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
+
+    @JacksonXmlProperty(localName = "enterprise_project_id")
 
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "support_auto_recovery")
 
+    @JacksonXmlProperty(localName = "support_auto_recovery")
+
     private Boolean supportAutoRecovery;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "marketType")
+
+    @JacksonXmlProperty(localName = "marketType")
 
     private String marketType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "spotPrice")
 
+    @JacksonXmlProperty(localName = "spotPrice")
+
     private String spotPrice;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "diskPrior")
 
+    @JacksonXmlProperty(localName = "diskPrior")
+
     private String diskPrior;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "spot_duration_hours")
+
+    @JacksonXmlProperty(localName = "spot_duration_hours")
 
     private Integer spotDurationHours;
 
@@ -457,10 +482,14 @@ public class PrePaidServerExtendParam {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "interruption_policy")
 
+    @JacksonXmlProperty(localName = "interruption_policy")
+
     private InterruptionPolicyEnum interruptionPolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "spot_duration_count")
+
+    @JacksonXmlProperty(localName = "spot_duration_count")
 
     private Integer spotDurationCount;
 

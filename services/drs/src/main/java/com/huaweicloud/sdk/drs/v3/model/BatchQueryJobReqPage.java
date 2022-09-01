@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.drs.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,10 +17,14 @@ public class BatchQueryJobReqPage {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "jobs")
 
+    @JacksonXmlProperty(localName = "jobs")
+
     private List<String> jobs = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page_req")
+
+    @JacksonXmlProperty(localName = "page_req")
 
     private PageReq pageReq;
 

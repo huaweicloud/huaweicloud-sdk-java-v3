@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.iotda.v5.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class RoutingRuleSubject {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource")
 
+    @JacksonXmlProperty(localName = "resource")
+
     private String resource;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event")
+
+    @JacksonXmlProperty(localName = "event")
 
     private String event;
 

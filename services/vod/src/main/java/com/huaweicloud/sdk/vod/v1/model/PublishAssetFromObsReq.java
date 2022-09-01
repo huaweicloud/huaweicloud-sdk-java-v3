@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -258,80 +259,112 @@ public class PublishAssetFromObsReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "video_type")
 
+    @JacksonXmlProperty(localName = "video_type")
+
     private VideoTypeEnum videoType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "title")
+
+    @JacksonXmlProperty(localName = "title")
 
     private String title;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
+    @JacksonXmlProperty(localName = "description")
+
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "category_id")
+
+    @JacksonXmlProperty(localName = "category_id")
 
     private Integer categoryId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
+    @JacksonXmlProperty(localName = "tags")
+
     private String tags;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auto_publish")
+
+    @JacksonXmlProperty(localName = "auto_publish")
 
     private Integer autoPublish;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template_group_name")
 
+    @JacksonXmlProperty(localName = "template_group_name")
+
     private String templateGroupName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auto_encrypt")
+
+    @JacksonXmlProperty(localName = "auto_encrypt")
 
     private Integer autoEncrypt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auto_preheat")
 
+    @JacksonXmlProperty(localName = "auto_preheat")
+
     private Integer autoPreheat;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "thumbnail")
+
+    @JacksonXmlProperty(localName = "thumbnail")
 
     private Thumbnail thumbnail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "review")
 
+    @JacksonXmlProperty(localName = "review")
+
     private Review review;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "workflow_name")
+
+    @JacksonXmlProperty(localName = "workflow_name")
 
     private String workflowName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "input")
 
+    @JacksonXmlProperty(localName = "input")
+
     private FileAddr input;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "storage_mode")
+
+    @JacksonXmlProperty(localName = "storage_mode")
 
     private Integer storageMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "output_bucket")
 
+    @JacksonXmlProperty(localName = "output_bucket")
+
     private String outputBucket;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "output_path")
+
+    @JacksonXmlProperty(localName = "output_path")
 
     private String outputPath;
 

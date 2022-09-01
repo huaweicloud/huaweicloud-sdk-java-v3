@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,35 +14,49 @@ public class BaseUser {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "contact")
+
+    @JacksonXmlProperty(localName = "contact")
 
     private String contact;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "country")
 
+    @JacksonXmlProperty(localName = "country")
+
     private String country;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deptCode")
+
+    @JacksonXmlProperty(localName = "deptCode")
 
     private String deptCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "title")
 
+    @JacksonXmlProperty(localName = "title")
+
     private String title;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sortLevel")
 
+    @JacksonXmlProperty(localName = "sortLevel")
+
     private Integer sortLevel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "desc")
+
+    @JacksonXmlProperty(localName = "desc")
 
     private String desc;
 

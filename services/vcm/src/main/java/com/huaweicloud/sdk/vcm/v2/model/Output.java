@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.vcm.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,25 +15,35 @@ public class Output {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "obs")
 
+    @JacksonXmlProperty(localName = "obs")
+
     private OutputObs obs;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hosting")
+
+    @JacksonXmlProperty(localName = "hosting")
 
     private OutputHosting hosting;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dis")
 
+    @JacksonXmlProperty(localName = "dis")
+
     private OutputDis dis;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "webhook")
 
+    @JacksonXmlProperty(localName = "webhook")
+
     private OutputWebhook webhook;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "localpath")
+
+    @JacksonXmlProperty(localName = "localpath")
 
     private OutputLocalpath localpath;
 

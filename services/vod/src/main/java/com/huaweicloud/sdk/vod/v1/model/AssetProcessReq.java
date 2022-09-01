@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.vod.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,25 +17,35 @@ public class AssetProcessReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "asset_id")
 
+    @JacksonXmlProperty(localName = "asset_id")
+
     private String assetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template_group_name")
+
+    @JacksonXmlProperty(localName = "template_group_name")
 
     private String templateGroupName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auto_encrypt")
 
+    @JacksonXmlProperty(localName = "auto_encrypt")
+
     private Integer autoEncrypt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "thumbnail")
 
+    @JacksonXmlProperty(localName = "thumbnail")
+
     private Thumbnail thumbnail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subtitle_id")
+
+    @JacksonXmlProperty(localName = "subtitle_id")
 
     private List<Integer> subtitleId = null;
 

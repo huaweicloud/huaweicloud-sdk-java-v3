@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -19,10 +20,14 @@ public class CreateScalingPolicyV2Option {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scaling_policy_name")
 
+    @JacksonXmlProperty(localName = "scaling_policy_name")
+
     private String scalingPolicyName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scaling_resource_id")
+
+    @JacksonXmlProperty(localName = "scaling_resource_id")
 
     private String scalingResourceId;
 
@@ -105,6 +110,8 @@ public class CreateScalingPolicyV2Option {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scaling_resource_type")
+
+    @JacksonXmlProperty(localName = "scaling_resource_type")
 
     private ScalingResourceTypeEnum scalingResourceType;
 
@@ -194,30 +201,42 @@ public class CreateScalingPolicyV2Option {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scaling_policy_type")
 
+    @JacksonXmlProperty(localName = "scaling_policy_type")
+
     private ScalingPolicyTypeEnum scalingPolicyType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alarm_id")
+
+    @JacksonXmlProperty(localName = "alarm_id")
 
     private String alarmId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scheduled_policy")
 
+    @JacksonXmlProperty(localName = "scheduled_policy")
+
     private ScheduledPolicy scheduledPolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scaling_policy_action")
+
+    @JacksonXmlProperty(localName = "scaling_policy_action")
 
     private ScalingPolicyActionV2 scalingPolicyAction;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cool_down_time")
 
+    @JacksonXmlProperty(localName = "cool_down_time")
+
     private Integer coolDownTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
+
+    @JacksonXmlProperty(localName = "description")
 
     private String description;
 

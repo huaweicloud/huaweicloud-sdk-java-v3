@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.lts.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,25 +17,35 @@ public class LogGroup {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "creation_time")
 
+    @JacksonXmlProperty(localName = "creation_time")
+
     private Long creationTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_group_name")
+
+    @JacksonXmlProperty(localName = "log_group_name")
 
     private String logGroupName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_group_id")
 
+    @JacksonXmlProperty(localName = "log_group_id")
+
     private String logGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ttl_in_days")
 
+    @JacksonXmlProperty(localName = "ttl_in_days")
+
     private Integer ttlInDays;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tag")
+
+    @JacksonXmlProperty(localName = "tag")
 
     private Map<String, String> tag = null;
 

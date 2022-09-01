@@ -9,6 +9,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.iotedge.v2.model.ConfirmIaConfigsRequestBody;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -22,6 +24,7 @@ public class BatchConfirmConfigsNewRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_id")
     
+    @JacksonXmlProperty(localName = "node_id")
     
     private String nodeId;
 
@@ -29,6 +32,7 @@ public class BatchConfirmConfigsNewRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ia_id")
     
+    @JacksonXmlProperty(localName = "ia_id")
     
     private String iaId;
 
@@ -36,6 +40,7 @@ public class BatchConfirmConfigsNewRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
+    @JacksonXmlProperty(localName = "body")
     
     private ConfirmIaConfigsRequestBody body;
 

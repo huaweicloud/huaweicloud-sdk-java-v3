@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.bcs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.HashMap;
 import java.util.List;
@@ -17,35 +18,49 @@ public class CfgRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "chaincode_name")
 
+    @JacksonXmlProperty(localName = "chaincode_name")
+
     private String chaincodeName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cert_path")
+
+    @JacksonXmlProperty(localName = "cert_path")
 
     private String certPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "channel_name")
 
+    @JacksonXmlProperty(localName = "channel_name")
+
     private String channelName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "peer_orgs")
+
+    @JacksonXmlProperty(localName = "peer_orgs")
 
     private Map<String, List<String>> peerOrgs = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "union_info")
 
+    @JacksonXmlProperty(localName = "union_info")
+
     private Map<String, List<String>> unionInfo = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_multi_chan")
 
+    @JacksonXmlProperty(localName = "is_multi_chan")
+
     private Boolean isMultiChan;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "channel_chaincode")
+
+    @JacksonXmlProperty(localName = "channel_chaincode")
 
     private Map<String, List<String>> channelChaincode = null;
 

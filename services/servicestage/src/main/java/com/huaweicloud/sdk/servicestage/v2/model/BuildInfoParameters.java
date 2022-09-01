@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.servicestage.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class BuildInfoParameters {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "build_cmd")
 
+    @JacksonXmlProperty(localName = "build_cmd")
+
     private String buildCmd;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dockerfile_path")
 
+    @JacksonXmlProperty(localName = "dockerfile_path")
+
     private String dockerfilePath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "artifact_namespace")
+
+    @JacksonXmlProperty(localName = "artifact_namespace")
 
     private String artifactNamespace;
 

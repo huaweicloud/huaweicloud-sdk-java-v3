@@ -14,6 +14,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.DedicatedComputeInfo;
 import com.huaweicloud.sdk.gaussdb.v3.model.DedicatedStorageInfo;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -27,6 +29,7 @@ public class ShowDedicatedResourceInfoResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
+    @JacksonXmlProperty(localName = "id")
     
     private String id;
 
@@ -34,6 +37,7 @@ public class ShowDedicatedResourceInfoResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
+    @JacksonXmlProperty(localName = "name")
     
     private String name;
 
@@ -41,6 +45,7 @@ public class ShowDedicatedResourceInfoResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="engine_name")
     
+    @JacksonXmlProperty(localName = "engine_name")
     
     private String engineName;
 
@@ -48,6 +53,7 @@ public class ShowDedicatedResourceInfoResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="availability_zone_ids")
     
+    @JacksonXmlProperty(localName = "availability_zone_ids")
     
     private List<String> availabilityZoneIds = null;
     
@@ -55,6 +61,7 @@ public class ShowDedicatedResourceInfoResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="architecture")
     
+    @JacksonXmlProperty(localName = "architecture")
     
     private String architecture;
 
@@ -62,6 +69,7 @@ public class ShowDedicatedResourceInfoResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
+    @JacksonXmlProperty(localName = "status")
     
     private String status;
 
@@ -69,6 +77,7 @@ public class ShowDedicatedResourceInfoResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dedicated_compute_info")
     
+    @JacksonXmlProperty(localName = "dedicated_compute_info")
     
     private DedicatedComputeInfo dedicatedComputeInfo;
 
@@ -76,6 +85,7 @@ public class ShowDedicatedResourceInfoResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dedicated_storage_info")
     
+    @JacksonXmlProperty(localName = "dedicated_storage_info")
     
     private DedicatedStorageInfo dedicatedStorageInfo;
 

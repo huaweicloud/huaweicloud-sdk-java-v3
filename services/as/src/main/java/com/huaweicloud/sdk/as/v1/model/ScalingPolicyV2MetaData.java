@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.as.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class ScalingPolicyV2MetaData {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metadata_bandwidth_share_type")
 
+    @JacksonXmlProperty(localName = "metadata_bandwidth_share_type")
+
     private String metadataBandwidthShareType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metadata_eip_id")
 
+    @JacksonXmlProperty(localName = "metadata_eip_id")
+
     private String metadataEipId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metadata_eip_address")
+
+    @JacksonXmlProperty(localName = "metadata_eip_address")
 
     private String metadataEipAddress;
 

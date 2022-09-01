@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ecs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,15 +17,21 @@ public class DeleteServersRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "delete_publicip")
 
+    @JacksonXmlProperty(localName = "delete_publicip")
+
     private Boolean deletePublicip;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "delete_volume")
 
+    @JacksonXmlProperty(localName = "delete_volume")
+
     private Boolean deleteVolume;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "servers")
+
+    @JacksonXmlProperty(localName = "servers")
 
     private List<ServerId> servers = null;
 

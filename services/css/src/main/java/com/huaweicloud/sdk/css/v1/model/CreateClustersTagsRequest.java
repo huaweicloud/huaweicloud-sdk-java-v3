@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.css.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,10 +15,21 @@ public class CreateClustersTagsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cluster_id")
 
+    @JacksonXmlProperty(localName = "cluster_id")
+
     private String clusterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resource_type")
+
+    @JacksonXmlProperty(localName = "resource_type")
+
+    private String resourceType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
+
+    @JacksonXmlProperty(localName = "body")
 
     private TagReq body;
 
@@ -36,6 +48,23 @@ public class CreateClustersTagsRequest {
 
     public void setClusterId(String clusterId) {
         this.clusterId = clusterId;
+    }
+
+    public CreateClustersTagsRequest withResourceType(String resourceType) {
+        this.resourceType = resourceType;
+        return this;
+    }
+
+    /**
+     * 资源类型，当前固定值为“css-cluster”，表示是集群类型。
+     * @return resourceType
+     */
+    public String getResourceType() {
+        return resourceType;
+    }
+
+    public void setResourceType(String resourceType) {
+        this.resourceType = resourceType;
     }
 
     public CreateClustersTagsRequest withBody(TagReq body) {
@@ -74,12 +103,13 @@ public class CreateClustersTagsRequest {
         }
         CreateClustersTagsRequest createClustersTagsRequest = (CreateClustersTagsRequest) o;
         return Objects.equals(this.clusterId, createClustersTagsRequest.clusterId)
+            && Objects.equals(this.resourceType, createClustersTagsRequest.resourceType)
             && Objects.equals(this.body, createClustersTagsRequest.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clusterId, body);
+        return Objects.hash(clusterId, resourceType, body);
     }
 
     @Override
@@ -87,6 +117,7 @@ public class CreateClustersTagsRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateClustersTagsRequest {\n");
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
+        sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

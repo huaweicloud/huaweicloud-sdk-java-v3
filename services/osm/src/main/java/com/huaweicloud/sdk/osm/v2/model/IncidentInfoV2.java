@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.osm.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
@@ -17,55 +18,77 @@ public class IncidentInfoV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "xcustomer_id")
 
+    @JacksonXmlProperty(localName = "xcustomer_id")
+
     private String xcustomerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "xcustomer_name")
+
+    @JacksonXmlProperty(localName = "xcustomer_name")
 
     private String xcustomerName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private Integer status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "incident_id")
+
+    @JacksonXmlProperty(localName = "incident_id")
 
     private String incidentId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "business_type_name")
 
+    @JacksonXmlProperty(localName = "business_type_name")
+
     private String businessTypeName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "incident_type_name")
+
+    @JacksonXmlProperty(localName = "incident_type_name")
 
     private String incidentTypeName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "customer_id")
 
+    @JacksonXmlProperty(localName = "customer_id")
+
     private String customerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dc_name")
+
+    @JacksonXmlProperty(localName = "dc_name")
 
     private String dcName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "simple_description")
 
+    @JacksonXmlProperty(localName = "simple_description")
+
     private String simpleDescription;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
+    @JacksonXmlProperty(localName = "create_time")
+
     private OffsetDateTime createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "label_list")
+
+    @JacksonXmlProperty(localName = "label_list")
 
     private List<LabelInfo> labelList = null;
 

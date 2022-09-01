@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,20 +19,28 @@ public class MemberBase {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host")
 
+    @JacksonXmlProperty(localName = "host")
+
     private String host;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "weight")
+
+    @JacksonXmlProperty(localName = "weight")
 
     private Integer weight;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_backup")
 
+    @JacksonXmlProperty(localName = "is_backup")
+
     private Boolean isBackup;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "member_group_name")
+
+    @JacksonXmlProperty(localName = "member_group_name")
 
     private String memberGroupName;
 
@@ -115,10 +124,14 @@ public class MemberBase {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "port")
+
+    @JacksonXmlProperty(localName = "port")
 
     private Integer port;
 

@@ -927,7 +927,6 @@ public class VodMeta {
             }));
 
         // response
-
         builder.<List<QueryCategoryRsp>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,

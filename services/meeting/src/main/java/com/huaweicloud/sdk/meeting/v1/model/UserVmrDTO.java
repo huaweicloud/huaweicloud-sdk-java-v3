@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,40 +19,56 @@ public class UserVmrDTO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vmrId")
+
+    @JacksonXmlProperty(localName = "vmrId")
 
     private String vmrId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vmrName")
 
+    @JacksonXmlProperty(localName = "vmrName")
+
     private String vmrName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vmrMode")
+
+    @JacksonXmlProperty(localName = "vmrMode")
 
     private Integer vmrMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vmrPkgId")
 
+    @JacksonXmlProperty(localName = "vmrPkgId")
+
     private String vmrPkgId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vmrPkgName")
+
+    @JacksonXmlProperty(localName = "vmrPkgName")
 
     private String vmrPkgName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vmrPkgParties")
 
+    @JacksonXmlProperty(localName = "vmrPkgParties")
+
     private Integer vmrPkgParties;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vmrPkgLength")
+
+    @JacksonXmlProperty(localName = "vmrPkgLength")
 
     private Integer vmrPkgLength;
 
@@ -140,6 +157,8 @@ public class UserVmrDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
+
+    @JacksonXmlProperty(localName = "status")
 
     private StatusEnum status;
 

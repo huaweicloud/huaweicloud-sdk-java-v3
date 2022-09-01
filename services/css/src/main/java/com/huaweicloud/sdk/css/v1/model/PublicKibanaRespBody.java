@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.css.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,15 +15,21 @@ public class PublicKibanaRespBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "eipSize")
 
+    @JacksonXmlProperty(localName = "eipSize")
+
     private Integer eipSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "elbWhiteList")
+    @JsonProperty(value = "elbWhiteListResp")
 
-    private KibanaElbWhiteListResp elbWhiteList;
+    @JacksonXmlProperty(localName = "elbWhiteListResp")
+
+    private KibanaElbWhiteListResp elbWhiteListResp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publicKibanaIp")
+
+    @JacksonXmlProperty(localName = "publicKibanaIp")
 
     private String publicKibanaIp;
 
@@ -43,30 +50,30 @@ public class PublicKibanaRespBody {
         this.eipSize = eipSize;
     }
 
-    public PublicKibanaRespBody withElbWhiteList(KibanaElbWhiteListResp elbWhiteList) {
-        this.elbWhiteList = elbWhiteList;
+    public PublicKibanaRespBody withElbWhiteListResp(KibanaElbWhiteListResp elbWhiteListResp) {
+        this.elbWhiteListResp = elbWhiteListResp;
         return this;
     }
 
-    public PublicKibanaRespBody withElbWhiteList(Consumer<KibanaElbWhiteListResp> elbWhiteListSetter) {
-        if (this.elbWhiteList == null) {
-            this.elbWhiteList = new KibanaElbWhiteListResp();
-            elbWhiteListSetter.accept(this.elbWhiteList);
+    public PublicKibanaRespBody withElbWhiteListResp(Consumer<KibanaElbWhiteListResp> elbWhiteListRespSetter) {
+        if (this.elbWhiteListResp == null) {
+            this.elbWhiteListResp = new KibanaElbWhiteListResp();
+            elbWhiteListRespSetter.accept(this.elbWhiteListResp);
         }
 
         return this;
     }
 
     /**
-     * Get elbWhiteList
-     * @return elbWhiteList
+     * Get elbWhiteListResp
+     * @return elbWhiteListResp
      */
-    public KibanaElbWhiteListResp getElbWhiteList() {
-        return elbWhiteList;
+    public KibanaElbWhiteListResp getElbWhiteListResp() {
+        return elbWhiteListResp;
     }
 
-    public void setElbWhiteList(KibanaElbWhiteListResp elbWhiteList) {
-        this.elbWhiteList = elbWhiteList;
+    public void setElbWhiteListResp(KibanaElbWhiteListResp elbWhiteListResp) {
+        this.elbWhiteListResp = elbWhiteListResp;
     }
 
     public PublicKibanaRespBody withPublicKibanaIp(String publicKibanaIp) {
@@ -96,13 +103,13 @@ public class PublicKibanaRespBody {
         }
         PublicKibanaRespBody publicKibanaRespBody = (PublicKibanaRespBody) o;
         return Objects.equals(this.eipSize, publicKibanaRespBody.eipSize)
-            && Objects.equals(this.elbWhiteList, publicKibanaRespBody.elbWhiteList)
+            && Objects.equals(this.elbWhiteListResp, publicKibanaRespBody.elbWhiteListResp)
             && Objects.equals(this.publicKibanaIp, publicKibanaRespBody.publicKibanaIp);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(eipSize, elbWhiteList, publicKibanaIp);
+        return Objects.hash(eipSize, elbWhiteListResp, publicKibanaIp);
     }
 
     @Override
@@ -110,7 +117,7 @@ public class PublicKibanaRespBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class PublicKibanaRespBody {\n");
         sb.append("    eipSize: ").append(toIndentedString(eipSize)).append("\n");
-        sb.append("    elbWhiteList: ").append(toIndentedString(elbWhiteList)).append("\n");
+        sb.append("    elbWhiteListResp: ").append(toIndentedString(elbWhiteListResp)).append("\n");
         sb.append("    publicKibanaIp: ").append(toIndentedString(publicKibanaIp)).append("\n");
         sb.append("}");
         return sb.toString();

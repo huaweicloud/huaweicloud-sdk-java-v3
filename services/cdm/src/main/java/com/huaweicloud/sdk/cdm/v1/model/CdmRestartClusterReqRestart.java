@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cdm.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,30 +14,42 @@ public class CdmRestartClusterReqRestart {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "restartDelayTime")
 
+    @JacksonXmlProperty(localName = "restartDelayTime")
+
     private Integer restartDelayTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "restartMode")
+
+    @JacksonXmlProperty(localName = "restartMode")
 
     private String restartMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "restartLevel")
 
+    @JacksonXmlProperty(localName = "restartLevel")
+
     private String restartLevel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
+
+    @JacksonXmlProperty(localName = "type")
 
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance")
 
+    @JacksonXmlProperty(localName = "instance")
+
     private String instance;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group")
+
+    @JacksonXmlProperty(localName = "group")
 
     private String group;
 

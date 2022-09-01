@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.das.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,30 +14,42 @@ public class InstanceSpaceInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_size")
 
+    @JacksonXmlProperty(localName = "total_size")
+
     private Long totalSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "used_size")
+
+    @JacksonXmlProperty(localName = "used_size")
 
     private Long usedSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_size")
 
+    @JacksonXmlProperty(localName = "data_size")
+
     private Long dataSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_size")
+
+    @JacksonXmlProperty(localName = "log_size")
 
     private Long logSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "avg_daily_growth")
 
+    @JacksonXmlProperty(localName = "avg_daily_growth")
+
     private Long avgDailyGrowth;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last_result_time")
+
+    @JacksonXmlProperty(localName = "last_result_time")
 
     private Long lastResultTime;
 

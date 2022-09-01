@@ -13,6 +13,8 @@ import com.huaweicloud.sdk.mrs.v1.model.ComponentAmb;
 import com.huaweicloud.sdk.mrs.v1.model.NodeGroupV10;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -26,6 +28,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="clusterId")
     
+    @JacksonXmlProperty(localName = "clusterId")
     
     private String clusterId;
 
@@ -33,6 +36,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="clusterName")
     
+    @JacksonXmlProperty(localName = "clusterName")
     
     private String clusterName;
 
@@ -40,6 +44,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="totalNodeNum")
     
+    @JacksonXmlProperty(localName = "totalNodeNum")
     
     private String totalNodeNum;
 
@@ -47,6 +52,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="clusterState")
     
+    @JacksonXmlProperty(localName = "clusterState")
     
     private String clusterState;
 
@@ -54,6 +60,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="stageDesc")
     
+    @JacksonXmlProperty(localName = "stageDesc")
     
     private String stageDesc;
 
@@ -61,6 +68,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="createAt")
     
+    @JacksonXmlProperty(localName = "createAt")
     
     private String createAt;
 
@@ -68,6 +76,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="updateAt")
     
+    @JacksonXmlProperty(localName = "updateAt")
     
     private String updateAt;
 
@@ -75,6 +84,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="chargingStartTime")
     
+    @JacksonXmlProperty(localName = "chargingStartTime")
     
     private String chargingStartTime;
 
@@ -82,6 +92,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="billingType")
     
+    @JacksonXmlProperty(localName = "billingType")
     
     private String billingType;
 
@@ -89,6 +100,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dataCenter")
     
+    @JacksonXmlProperty(localName = "dataCenter")
     
     private String dataCenter;
 
@@ -96,6 +108,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vpc")
     
+    @JacksonXmlProperty(localName = "vpc")
     
     private String vpc;
 
@@ -103,6 +116,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vpcId")
     
+    @JacksonXmlProperty(localName = "vpcId")
     
     private String vpcId;
 
@@ -110,6 +124,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="duration")
     
+    @JacksonXmlProperty(localName = "duration")
     
     private String duration;
 
@@ -117,6 +132,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="fee")
     
+    @JacksonXmlProperty(localName = "fee")
     
     private String fee;
 
@@ -124,6 +140,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="hadoopVersion")
     
+    @JacksonXmlProperty(localName = "hadoopVersion")
     
     private String hadoopVersion;
 
@@ -131,6 +148,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="componentList")
     
+    @JacksonXmlProperty(localName = "componentList")
     
     private List<ComponentAmb> componentList = null;
     
@@ -138,6 +156,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="externalIp")
     
+    @JacksonXmlProperty(localName = "externalIp")
     
     private String externalIp;
 
@@ -145,6 +164,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="externalAlternateIp")
     
+    @JacksonXmlProperty(localName = "externalAlternateIp")
     
     private String externalAlternateIp;
 
@@ -152,6 +172,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="internalIp")
     
+    @JacksonXmlProperty(localName = "internalIp")
     
     private String internalIp;
 
@@ -159,6 +180,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="deploymentId")
     
+    @JacksonXmlProperty(localName = "deploymentId")
     
     private String deploymentId;
 
@@ -166,6 +188,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="remark")
     
+    @JacksonXmlProperty(localName = "remark")
     
     private String remark;
 
@@ -173,6 +196,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="orderId")
     
+    @JacksonXmlProperty(localName = "orderId")
     
     private String orderId;
 
@@ -180,6 +204,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="azId")
     
+    @JacksonXmlProperty(localName = "azId")
     
     private String azId;
 
@@ -187,6 +212,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="azName")
     
+    @JacksonXmlProperty(localName = "azName")
     
     private String azName;
 
@@ -194,6 +220,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="azCode")
     
+    @JacksonXmlProperty(localName = "azCode")
     
     private String azCode;
 
@@ -201,6 +228,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="availabilityZoneId")
     
+    @JacksonXmlProperty(localName = "availabilityZoneId")
     
     private String availabilityZoneId;
 
@@ -208,6 +236,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instanceId")
     
+    @JacksonXmlProperty(localName = "instanceId")
     
     private String instanceId;
 
@@ -215,6 +244,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vnc")
     
+    @JacksonXmlProperty(localName = "vnc")
     
     private String vnc;
 
@@ -222,6 +252,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tenantId")
     
+    @JacksonXmlProperty(localName = "tenantId")
     
     private String tenantId;
 
@@ -229,6 +260,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="volumeSize")
     
+    @JacksonXmlProperty(localName = "volumeSize")
     
     private Integer volumeSize;
 
@@ -236,6 +268,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="volumeType")
     
+    @JacksonXmlProperty(localName = "volumeType")
     
     private String volumeType;
 
@@ -243,6 +276,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="subnetId")
     
+    @JacksonXmlProperty(localName = "subnetId")
     
     private String subnetId;
 
@@ -250,6 +284,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="subnetName")
     
+    @JacksonXmlProperty(localName = "subnetName")
     
     private String subnetName;
 
@@ -257,6 +292,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="securityGroupsId")
     
+    @JacksonXmlProperty(localName = "securityGroupsId")
     
     private String securityGroupsId;
 
@@ -264,6 +300,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="slaveSecurityGroupsId")
     
+    @JacksonXmlProperty(localName = "slaveSecurityGroupsId")
     
     private String slaveSecurityGroupsId;
 
@@ -271,6 +308,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="bootstrapScripts")
     
+    @JacksonXmlProperty(localName = "bootstrapScripts")
     
     private List<BootstrapScriptResp> bootstrapScripts = null;
     
@@ -278,6 +316,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="safeMode")
     
+    @JacksonXmlProperty(localName = "safeMode")
     
     private Integer safeMode;
 
@@ -285,6 +324,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="clusterVersion")
     
+    @JacksonXmlProperty(localName = "clusterVersion")
     
     private String clusterVersion;
 
@@ -292,6 +332,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="nodePublicCertName")
     
+    @JacksonXmlProperty(localName = "nodePublicCertName")
     
     private String nodePublicCertName;
 
@@ -299,6 +340,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="masterNodeIp")
     
+    @JacksonXmlProperty(localName = "masterNodeIp")
     
     private String masterNodeIp;
 
@@ -306,6 +348,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="privateIpFirst")
     
+    @JacksonXmlProperty(localName = "privateIpFirst")
     
     private String privateIpFirst;
 
@@ -313,6 +356,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="errorInfo")
     
+    @JacksonXmlProperty(localName = "errorInfo")
     
     private String errorInfo;
 
@@ -320,6 +364,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
+    @JacksonXmlProperty(localName = "tags")
     
     private String tags;
 
@@ -327,6 +372,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="masterNodeNum")
     
+    @JacksonXmlProperty(localName = "masterNodeNum")
     
     private String masterNodeNum;
 
@@ -334,6 +380,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="coreNodeNum")
     
+    @JacksonXmlProperty(localName = "coreNodeNum")
     
     private String coreNodeNum;
 
@@ -341,6 +388,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="masterNodeSize")
     
+    @JacksonXmlProperty(localName = "masterNodeSize")
     
     private String masterNodeSize;
 
@@ -348,6 +396,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="coreNodeSize")
     
+    @JacksonXmlProperty(localName = "coreNodeSize")
     
     private String coreNodeSize;
 
@@ -355,6 +404,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="masterNodeProductId")
     
+    @JacksonXmlProperty(localName = "masterNodeProductId")
     
     private String masterNodeProductId;
 
@@ -362,6 +412,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="masterNodeSpecId")
     
+    @JacksonXmlProperty(localName = "masterNodeSpecId")
     
     private String masterNodeSpecId;
 
@@ -369,6 +420,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="coreNodeProductId")
     
+    @JacksonXmlProperty(localName = "coreNodeProductId")
     
     private String coreNodeProductId;
 
@@ -376,6 +428,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="coreNodeSpecId")
     
+    @JacksonXmlProperty(localName = "coreNodeSpecId")
     
     private String coreNodeSpecId;
 
@@ -383,6 +436,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="masterDataVolumeType")
     
+    @JacksonXmlProperty(localName = "masterDataVolumeType")
     
     private String masterDataVolumeType;
 
@@ -390,6 +444,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="masterDataVolumeSize")
     
+    @JacksonXmlProperty(localName = "masterDataVolumeSize")
     
     private Integer masterDataVolumeSize;
 
@@ -397,6 +452,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="masterDataVolumeCount")
     
+    @JacksonXmlProperty(localName = "masterDataVolumeCount")
     
     private Integer masterDataVolumeCount;
 
@@ -404,6 +460,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="coreDataVolumeType")
     
+    @JacksonXmlProperty(localName = "coreDataVolumeType")
     
     private String coreDataVolumeType;
 
@@ -411,6 +468,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="coreDataVolumeSize")
     
+    @JacksonXmlProperty(localName = "coreDataVolumeSize")
     
     private Integer coreDataVolumeSize;
 
@@ -418,6 +476,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="coreDataVolumeCount")
     
+    @JacksonXmlProperty(localName = "coreDataVolumeCount")
     
     private Integer coreDataVolumeCount;
 
@@ -425,6 +484,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterpriseProjectId")
     
+    @JacksonXmlProperty(localName = "enterpriseProjectId")
     
     private String enterpriseProjectId;
 
@@ -432,6 +492,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="isMrsManagerFinish")
     
+    @JacksonXmlProperty(localName = "isMrsManagerFinish")
     
     private Boolean isMrsManagerFinish;
 
@@ -439,6 +500,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="clusterType")
     
+    @JacksonXmlProperty(localName = "clusterType")
     
     private Integer clusterType;
 
@@ -446,6 +508,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="logCollection")
     
+    @JacksonXmlProperty(localName = "logCollection")
     
     private Integer logCollection;
 
@@ -453,6 +516,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="periodType")
     
+    @JacksonXmlProperty(localName = "periodType")
     
     private Integer periodType;
 
@@ -460,6 +524,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="scale")
     
+    @JacksonXmlProperty(localName = "scale")
     
     private String scale;
 
@@ -467,6 +532,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="nodeGroups")
     
+    @JacksonXmlProperty(localName = "nodeGroups")
     
     private List<NodeGroupV10> nodeGroups = null;
     
@@ -474,6 +540,7 @@ public class Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="taskNodeGroups")
     
+    @JacksonXmlProperty(localName = "taskNodeGroups")
     
     private List<NodeGroupV10> taskNodeGroups = null;
     

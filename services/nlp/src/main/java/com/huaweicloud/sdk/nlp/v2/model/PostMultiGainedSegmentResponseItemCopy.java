@@ -15,6 +15,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -28,6 +30,7 @@ public class PostMultiGainedSegmentResponseItemCopy  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="content")
     
+    @JacksonXmlProperty(localName = "content")
     
     private String content;
     /**
@@ -113,6 +116,7 @@ public class PostMultiGainedSegmentResponseItemCopy  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
+    @JacksonXmlProperty(localName = "type")
     
     private TypeEnum type;
 
@@ -120,6 +124,7 @@ public class PostMultiGainedSegmentResponseItemCopy  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sub_contents")
     
+    @JacksonXmlProperty(localName = "sub_contents")
     
     private List<PostMultiGainedSegmentResponseItem> subContents = null;
     

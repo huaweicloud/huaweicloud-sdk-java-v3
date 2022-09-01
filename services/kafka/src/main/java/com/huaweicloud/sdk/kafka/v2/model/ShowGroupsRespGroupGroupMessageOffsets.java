@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.kafka.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,25 +14,35 @@ public class ShowGroupsRespGroupGroupMessageOffsets {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "partition")
 
+    @JacksonXmlProperty(localName = "partition")
+
     private Integer partition;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lag")
+
+    @JacksonXmlProperty(localName = "lag")
 
     private Integer lag;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "topic")
 
+    @JacksonXmlProperty(localName = "topic")
+
     private String topic;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "message_current_offset")
 
+    @JacksonXmlProperty(localName = "message_current_offset")
+
     private Integer messageCurrentOffset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "message_log_end_offset")
+
+    @JacksonXmlProperty(localName = "message_log_end_offset")
 
     private Integer messageLogEndOffset;
 

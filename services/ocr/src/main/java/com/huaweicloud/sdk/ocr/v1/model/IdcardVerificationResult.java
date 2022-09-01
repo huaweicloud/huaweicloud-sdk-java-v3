@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ocr.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,20 +14,28 @@ public class IdcardVerificationResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "valid_number")
 
+    @JacksonXmlProperty(localName = "valid_number")
+
     private Boolean validNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "valid_birth")
+
+    @JacksonXmlProperty(localName = "valid_birth")
 
     private Boolean validBirth;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "valid_sex")
 
+    @JacksonXmlProperty(localName = "valid_sex")
+
     private Boolean validSex;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "valid_date")
+
+    @JacksonXmlProperty(localName = "valid_date")
 
     private Boolean validDate;
 

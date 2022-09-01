@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,10 +22,14 @@ public class AttributeInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rank_feature_pairs")
 
+    @JacksonXmlProperty(localName = "rank_feature_pairs")
+
     private List<RankFeaturePair> rankFeaturePairs = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "numerical_attrs")
+
+    @JacksonXmlProperty(localName = "numerical_attrs")
 
     private List<NumericalAttr> numericalAttrs = null;
 
@@ -107,6 +112,8 @@ public class AttributeInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "num_statistics_type")
+
+    @JacksonXmlProperty(localName = "num_statistics_type")
 
     private NumStatisticsTypeEnum numStatisticsType;
 

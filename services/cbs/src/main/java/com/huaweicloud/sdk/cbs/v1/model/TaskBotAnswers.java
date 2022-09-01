@@ -11,6 +11,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.cbs.v1.model.SkillResponse;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -24,6 +26,7 @@ public class TaskBotAnswers  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="answer")
     
+    @JacksonXmlProperty(localName = "answer")
     
     private String answer;
 
@@ -31,6 +34,7 @@ public class TaskBotAnswers  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="skill_id")
     
+    @JacksonXmlProperty(localName = "skill_id")
     
     private String skillId;
 
@@ -38,6 +42,7 @@ public class TaskBotAnswers  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="skill_responses")
     
+    @JacksonXmlProperty(localName = "skill_responses")
     
     private List<SkillResponse> skillResponses = null;
     

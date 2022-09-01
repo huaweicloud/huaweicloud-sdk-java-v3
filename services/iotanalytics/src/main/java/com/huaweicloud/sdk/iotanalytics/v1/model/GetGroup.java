@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.iotanalytics.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,55 +14,77 @@ public class GetGroup {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_id")
 
+    @JacksonXmlProperty(localName = "group_id")
+
     private String groupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
+    @JacksonXmlProperty(localName = "description")
+
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "warm_data_usage")
+
+    @JacksonXmlProperty(localName = "warm_data_usage")
 
     private Long warmDataUsage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_store_count")
 
+    @JacksonXmlProperty(localName = "data_store_count")
+
     private Long dataStoreCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cold_data_usage")
+
+    @JacksonXmlProperty(localName = "cold_data_usage")
 
     private Long coldDataUsage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "warm_data_retention_policy")
 
+    @JacksonXmlProperty(localName = "warm_data_retention_policy")
+
     private String warmDataRetentionPolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cold_data_retention_policy")
+
+    @JacksonXmlProperty(localName = "cold_data_retention_policy")
 
     private String coldDataRetentionPolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_time")
 
+    @JacksonXmlProperty(localName = "created_time")
+
     private String createdTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "modified_time")
 
+    @JacksonXmlProperty(localName = "modified_time")
+
     private String modifiedTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
+
+    @JacksonXmlProperty(localName = "type")
 
     private String type;
 

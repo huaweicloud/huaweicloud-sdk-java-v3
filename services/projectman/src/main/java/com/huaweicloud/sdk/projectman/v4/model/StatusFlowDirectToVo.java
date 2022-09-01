@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.projectman.v4.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,35 +14,49 @@ public class StatusFlowDirectToVo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parent_name")
 
+    @JacksonXmlProperty(localName = "parent_name")
+
     private String parentName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parent_type")
+
+    @JacksonXmlProperty(localName = "parent_type")
 
     private String parentType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status_id")
 
+    @JacksonXmlProperty(localName = "status_id")
+
     private String statusId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status_type")
 
+    @JacksonXmlProperty(localName = "status_type")
+
     private String statusType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enabled")
 
+    @JacksonXmlProperty(localName = "enabled")
+
     private Boolean enabled;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parent_id")
+
+    @JacksonXmlProperty(localName = "parent_id")
 
     private String parentId;
 

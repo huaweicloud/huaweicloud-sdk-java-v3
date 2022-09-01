@@ -10,6 +10,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -23,6 +25,7 @@ public class DeleteAlarmRulesBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="alarm_rules")
     
+    @JacksonXmlProperty(localName = "alarm_rules")
     
     private List<String> alarmRules = null;
     

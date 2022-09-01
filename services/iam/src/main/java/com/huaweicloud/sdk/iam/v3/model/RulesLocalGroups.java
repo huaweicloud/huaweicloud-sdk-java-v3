@@ -2,34 +2,37 @@ package com.huaweicloud.sdk.iam.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
 /**
- * 
+ * 联邦用户在本系统中所属用户组列表
  */
-public class ProtectPolicyResult {
+public class RulesLocalGroups {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "operation_protection")
+    @JsonProperty(value = "name")
 
-    private Boolean operationProtection;
+    @JacksonXmlProperty(localName = "name")
 
-    public ProtectPolicyResult withOperationProtection(Boolean operationProtection) {
-        this.operationProtection = operationProtection;
+    private String name;
+
+    public RulesLocalGroups withName(String name) {
+        this.name = name;
         return this;
     }
 
     /**
-     * 是否开启操作保护，开启为\"true\"，未开启为\"false\"。
-     * @return operationProtection
+     * 联邦用户在本系统中所属用户组列表
+     * @return name
      */
-    public Boolean getOperationProtection() {
-        return operationProtection;
+    public String getName() {
+        return name;
     }
 
-    public void setOperationProtection(Boolean operationProtection) {
-        this.operationProtection = operationProtection;
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
@@ -40,20 +43,20 @@ public class ProtectPolicyResult {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        ProtectPolicyResult protectPolicyResult = (ProtectPolicyResult) o;
-        return Objects.equals(this.operationProtection, protectPolicyResult.operationProtection);
+        RulesLocalGroups rulesLocalGroups = (RulesLocalGroups) o;
+        return Objects.equals(this.name, rulesLocalGroups.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(operationProtection);
+        return Objects.hash(name);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class ProtectPolicyResult {\n");
-        sb.append("    operationProtection: ").append(toIndentedString(operationProtection)).append("\n");
+        sb.append("class RulesLocalGroups {\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("}");
         return sb.toString();
     }

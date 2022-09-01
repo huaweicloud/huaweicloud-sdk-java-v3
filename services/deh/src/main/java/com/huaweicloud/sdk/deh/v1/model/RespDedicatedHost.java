@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,10 +22,14 @@ public class RespDedicatedHost {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dedicated_host_id")
 
+    @JacksonXmlProperty(localName = "dedicated_host_id")
+
     private String dedicatedHostId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
@@ -108,20 +113,28 @@ public class RespDedicatedHost {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auto_placement")
 
+    @JacksonXmlProperty(localName = "auto_placement")
+
     private AutoPlacementEnum autoPlacement;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "availability_zone")
+
+    @JacksonXmlProperty(localName = "availability_zone")
 
     private String availabilityZone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
 
+    @JacksonXmlProperty(localName = "project_id")
+
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_properties")
+
+    @JacksonXmlProperty(localName = "host_properties")
 
     private RespHostProperty hostProperties;
 
@@ -211,45 +224,63 @@ public class RespDedicatedHost {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "state")
 
+    @JacksonXmlProperty(localName = "state")
+
     private StateEnum state;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "available_vcpus")
+
+    @JacksonXmlProperty(localName = "available_vcpus")
 
     private Integer availableVcpus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "available_memory")
 
+    @JacksonXmlProperty(localName = "available_memory")
+
     private Integer availableMemory;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "allocated_at")
+
+    @JacksonXmlProperty(localName = "allocated_at")
 
     private String allocatedAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "released_at")
 
+    @JacksonXmlProperty(localName = "released_at")
+
     private String releasedAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_total")
+
+    @JacksonXmlProperty(localName = "instance_total")
 
     private Integer instanceTotal;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_uuids")
 
+    @JacksonXmlProperty(localName = "instance_uuids")
+
     private List<String> instanceUuids = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
+    @JacksonXmlProperty(localName = "tags")
+
     private Object tags;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sys_tags")
+
+    @JacksonXmlProperty(localName = "sys_tags")
 
     private Object sysTags;
 

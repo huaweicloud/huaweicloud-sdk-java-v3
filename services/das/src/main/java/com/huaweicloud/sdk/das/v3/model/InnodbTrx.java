@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.das.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,60 +17,84 @@ public class InnodbTrx {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trx_id")
 
+    @JacksonXmlProperty(localName = "trx_id")
+
     private String trxId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trx_state")
+
+    @JacksonXmlProperty(localName = "trx_state")
 
     private String trxState;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trx_started")
 
+    @JacksonXmlProperty(localName = "trx_started")
+
     private String trxStarted;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trx_wait_started")
+
+    @JacksonXmlProperty(localName = "trx_wait_started")
 
     private String trxWaitStarted;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trx_mysql_thread_id")
 
+    @JacksonXmlProperty(localName = "trx_mysql_thread_id")
+
     private String trxMysqlThreadId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trx_query")
+
+    @JacksonXmlProperty(localName = "trx_query")
 
     private String trxQuery;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trx_tables_locked")
 
+    @JacksonXmlProperty(localName = "trx_tables_locked")
+
     private String trxTablesLocked;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trx_rows_locked")
+
+    @JacksonXmlProperty(localName = "trx_rows_locked")
 
     private String trxRowsLocked;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trx_rows_modified")
 
+    @JacksonXmlProperty(localName = "trx_rows_modified")
+
     private String trxRowsModified;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trx_isolation_level")
+
+    @JacksonXmlProperty(localName = "trx_isolation_level")
 
     private String trxIsolationLevel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "innodb_wait_locks")
 
+    @JacksonXmlProperty(localName = "innodb_wait_locks")
+
     private List<InnodbLock> innodbWaitLocks = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "innodb_hold_locks")
+
+    @JacksonXmlProperty(localName = "innodb_hold_locks")
 
     private List<InnodbLock> innodbHoldLocks = null;
 

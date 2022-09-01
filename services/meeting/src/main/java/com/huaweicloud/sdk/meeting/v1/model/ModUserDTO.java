@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,50 +19,70 @@ public class ModUserDTO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "englishName")
+
+    @JacksonXmlProperty(localName = "englishName")
 
     private String englishName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "phone")
 
+    @JacksonXmlProperty(localName = "phone")
+
     private String phone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "country")
+
+    @JacksonXmlProperty(localName = "country")
 
     private String country;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "email")
 
+    @JacksonXmlProperty(localName = "email")
+
     private String email;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vmrId")
+
+    @JacksonXmlProperty(localName = "vmrId")
 
     private String vmrId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deptCode")
 
+    @JacksonXmlProperty(localName = "deptCode")
+
     private String deptCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "signature")
+
+    @JacksonXmlProperty(localName = "signature")
 
     private String signature;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "title")
 
+    @JacksonXmlProperty(localName = "title")
+
     private String title;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "desc")
+
+    @JacksonXmlProperty(localName = "desc")
 
     private String desc;
 
@@ -145,15 +166,21 @@ public class ModUserDTO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sortLevel")
 
+    @JacksonXmlProperty(localName = "sortLevel")
+
     private Integer sortLevel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hidePhone")
+
+    @JacksonXmlProperty(localName = "hidePhone")
 
     private Boolean hidePhone;
 

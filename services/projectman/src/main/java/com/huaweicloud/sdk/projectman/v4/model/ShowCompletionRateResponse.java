@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.projectman.v4.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -14,30 +15,42 @@ public class ShowCompletionRateResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dividend_value")
 
+    @JacksonXmlProperty(localName = "dividend_value")
+
     private String dividendValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "divisor_value")
+
+    @JacksonXmlProperty(localName = "divisor_value")
 
     private String divisorValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metric_name")
 
+    @JacksonXmlProperty(localName = "metric_name")
+
     private String metricName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metric_value")
+
+    @JacksonXmlProperty(localName = "metric_value")
 
     private String metricValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
 
+    @JacksonXmlProperty(localName = "project_id")
+
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_name")
+
+    @JacksonXmlProperty(localName = "project_name")
 
     private String projectName;
 

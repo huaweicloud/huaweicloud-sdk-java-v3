@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -17,6 +18,8 @@ public class JudgementCaseResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "output")
+
+    @JacksonXmlProperty(localName = "output")
 
     private String output;
 
@@ -117,6 +120,8 @@ public class JudgementCaseResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "case_status")
+
+    @JacksonXmlProperty(localName = "case_status")
 
     private CaseStatusEnum caseStatus;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.iam.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,15 +17,21 @@ public class RolePolicy {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "Depends")
 
+    @JacksonXmlProperty(localName = "Depends")
+
     private List<PolicyDepends> depends = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "Statement")
 
+    @JacksonXmlProperty(localName = "Statement")
+
     private List<PolicyStatement> statement = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "Version")
+
+    @JacksonXmlProperty(localName = "Version")
 
     private String version;
 

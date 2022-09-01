@@ -11,6 +11,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -24,6 +26,7 @@ public class MysqlFlavorsInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vcpus")
     
+    @JacksonXmlProperty(localName = "vcpus")
     
     private String vcpus;
 
@@ -31,6 +34,7 @@ public class MysqlFlavorsInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ram")
     
+    @JacksonXmlProperty(localName = "ram")
     
     private String ram;
 
@@ -38,6 +42,7 @@ public class MysqlFlavorsInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
+    @JacksonXmlProperty(localName = "type")
     
     private String type;
 
@@ -45,6 +50,7 @@ public class MysqlFlavorsInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
+    @JacksonXmlProperty(localName = "id")
     
     private String id;
 
@@ -52,6 +58,7 @@ public class MysqlFlavorsInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="spec_code")
     
+    @JacksonXmlProperty(localName = "spec_code")
     
     private String specCode;
 
@@ -59,6 +66,7 @@ public class MysqlFlavorsInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="version_name")
     
+    @JacksonXmlProperty(localName = "version_name")
     
     private String versionName;
 
@@ -66,6 +74,7 @@ public class MysqlFlavorsInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_mode")
     
+    @JacksonXmlProperty(localName = "instance_mode")
     
     private String instanceMode;
 
@@ -73,6 +82,7 @@ public class MysqlFlavorsInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="az_status")
     
+    @JacksonXmlProperty(localName = "az_status")
     
     private Map<String, String> azStatus = null;
     

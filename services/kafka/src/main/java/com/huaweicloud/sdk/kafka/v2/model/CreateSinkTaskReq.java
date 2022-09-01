@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -90,10 +91,14 @@ public class CreateSinkTaskReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_type")
 
+    @JacksonXmlProperty(localName = "source_type")
+
     private SourceTypeEnum sourceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_name")
+
+    @JacksonXmlProperty(localName = "task_name")
 
     private String taskName;
 
@@ -171,10 +176,14 @@ public class CreateSinkTaskReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "destination_type")
 
+    @JacksonXmlProperty(localName = "destination_type")
+
     private DestinationTypeEnum destinationType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "obs_destination_descriptor")
+
+    @JacksonXmlProperty(localName = "obs_destination_descriptor")
 
     private ObsDestinationDescriptor obsDestinationDescriptor;
 

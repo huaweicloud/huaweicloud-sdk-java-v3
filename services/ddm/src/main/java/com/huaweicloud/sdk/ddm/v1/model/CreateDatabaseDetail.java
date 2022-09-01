@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -20,6 +21,8 @@ public class CreateDatabaseDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
@@ -103,20 +106,28 @@ public class CreateDatabaseDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "shard_mode")
 
+    @JacksonXmlProperty(localName = "shard_mode")
+
     private ShardModeEnum shardMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "shard_number")
+
+    @JacksonXmlProperty(localName = "shard_number")
 
     private Integer shardNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "shard_unit")
 
+    @JacksonXmlProperty(localName = "shard_unit")
+
     private Integer shardUnit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "used_rds")
+
+    @JacksonXmlProperty(localName = "used_rds")
 
     private List<DatabaseInstabcesParam> usedRds = null;
 

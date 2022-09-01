@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.apig.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,20 +14,28 @@ public class EnvVariableCreate {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "variable_value")
 
+    @JacksonXmlProperty(localName = "variable_value")
+
     private String variableValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "env_id")
+
+    @JacksonXmlProperty(localName = "env_id")
 
     private String envId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_id")
 
+    @JacksonXmlProperty(localName = "group_id")
+
     private String groupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "variable_name")
+
+    @JacksonXmlProperty(localName = "variable_name")
 
     private String variableName;
 

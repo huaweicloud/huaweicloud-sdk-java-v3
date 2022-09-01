@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.eip.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -15,15 +16,21 @@ public class CreatePrePaidPublicipResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publicip")
 
+    @JacksonXmlProperty(localName = "publicip")
+
     private PublicipCreateResp publicip;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "order_id")
 
+    @JacksonXmlProperty(localName = "order_id")
+
     private String orderId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publicip_id")
+
+    @JacksonXmlProperty(localName = "publicip_id")
 
     private String publicipId;
 

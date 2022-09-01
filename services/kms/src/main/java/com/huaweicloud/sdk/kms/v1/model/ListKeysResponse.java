@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -22,15 +23,21 @@ public class ListKeysResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "keys")
 
+    @JacksonXmlProperty(localName = "keys")
+
     private List<String> keys = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key_details")
 
+    @JacksonXmlProperty(localName = "key_details")
+
     private List<KeyDetails> keyDetails = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "next_marker")
+
+    @JacksonXmlProperty(localName = "next_marker")
 
     private String nextMarker;
 
@@ -114,10 +121,14 @@ public class ListKeysResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "truncated")
 
+    @JacksonXmlProperty(localName = "truncated")
+
     private TruncatedEnum truncated;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total")
+
+    @JacksonXmlProperty(localName = "total")
 
     private Integer total;
 

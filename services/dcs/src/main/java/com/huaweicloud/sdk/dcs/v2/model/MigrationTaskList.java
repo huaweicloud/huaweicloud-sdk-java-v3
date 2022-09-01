@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,10 +19,14 @@ public class MigrationTaskList {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_id")
 
+    @JacksonXmlProperty(localName = "task_id")
+
     private String taskId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_name")
+
+    @JacksonXmlProperty(localName = "task_name")
 
     private String taskName;
 
@@ -117,6 +122,8 @@ public class MigrationTaskList {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private StatusEnum status;
 
     /**
@@ -198,6 +205,8 @@ public class MigrationTaskList {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "migration_type")
+
+    @JacksonXmlProperty(localName = "migration_type")
 
     private MigrationTypeEnum migrationType;
 
@@ -283,45 +292,63 @@ public class MigrationTaskList {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "migration_method")
 
+    @JacksonXmlProperty(localName = "migration_method")
+
     private MigrationMethodEnum migrationMethod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ecs_tenant_private_ip")
+
+    @JacksonXmlProperty(localName = "ecs_tenant_private_ip")
 
     private String ecsTenantPrivateIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_source")
 
+    @JacksonXmlProperty(localName = "data_source")
+
     private String dataSource;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_instance_name")
+
+    @JacksonXmlProperty(localName = "source_instance_name")
 
     private String sourceInstanceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_instance_id")
 
+    @JacksonXmlProperty(localName = "source_instance_id")
+
     private String sourceInstanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_instance_addrs")
+
+    @JacksonXmlProperty(localName = "target_instance_addrs")
 
     private String targetInstanceAddrs;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_instance_name")
 
+    @JacksonXmlProperty(localName = "target_instance_name")
+
     private String targetInstanceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_instance_id")
 
+    @JacksonXmlProperty(localName = "target_instance_id")
+
     private String targetInstanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
+
+    @JacksonXmlProperty(localName = "created_at")
 
     private String createdAt;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ces.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,25 +17,35 @@ public class BatchListMetricDataRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metrics")
 
+    @JacksonXmlProperty(localName = "metrics")
+
     private List<MetricInfo> metrics = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "period")
+
+    @JacksonXmlProperty(localName = "period")
 
     private String period;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "filter")
 
+    @JacksonXmlProperty(localName = "filter")
+
     private String filter;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "from")
 
+    @JacksonXmlProperty(localName = "from")
+
     private Long from;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "to")
+
+    @JacksonXmlProperty(localName = "to")
 
     private Long to;
 

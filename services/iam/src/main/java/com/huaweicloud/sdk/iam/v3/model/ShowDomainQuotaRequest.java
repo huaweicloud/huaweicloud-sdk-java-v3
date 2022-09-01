@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,10 +19,12 @@ public class ShowDomainQuotaRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_id")
 
+    @JacksonXmlProperty(localName = "domain_id")
+
     private String domainId;
 
     /**
-     * 查询配额的类型，取值范围为：user, group, idp, agency, policy, assigment_group_mp, assigment_agency_mp, assigment_group_ep, assigment_user_ep。
+     * 查询配额的类型，取值范围为：user, group, idp, agency, policy, assigment_group_mp, assigment_agency_mp, assigment_group_ep, assigment_user_ep, mapping。
      */
     public static final class TypeEnum {
 
@@ -70,6 +73,11 @@ public class ShowDomainQuotaRequest {
          */
         public static final TypeEnum ASSIGMENT_USER_EP = new TypeEnum("assigment_user_ep");
 
+        /**
+         * Enum MAPPING for value: "mapping"
+         */
+        public static final TypeEnum MAPPING = new TypeEnum("mapping");
+
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TypeEnum> createStaticFields() {
@@ -83,6 +91,7 @@ public class ShowDomainQuotaRequest {
             map.put("assigment_agency_mp", ASSIGMENT_AGENCY_MP);
             map.put("assigment_group_ep", ASSIGMENT_GROUP_EP);
             map.put("assigment_user_ep", ASSIGMENT_USER_EP);
+            map.put("mapping", MAPPING);
             return Collections.unmodifiableMap(map);
         }
 
@@ -142,6 +151,8 @@ public class ShowDomainQuotaRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
+    @JacksonXmlProperty(localName = "type")
+
     private TypeEnum type;
 
     public ShowDomainQuotaRequest withDomainId(String domainId) {
@@ -167,7 +178,7 @@ public class ShowDomainQuotaRequest {
     }
 
     /**
-     * 查询配额的类型，取值范围为：user, group, idp, agency, policy, assigment_group_mp, assigment_agency_mp, assigment_group_ep, assigment_user_ep。
+     * 查询配额的类型，取值范围为：user, group, idp, agency, policy, assigment_group_mp, assigment_agency_mp, assigment_group_ep, assigment_user_ep, mapping。
      * @return type
      */
     public TypeEnum getType() {

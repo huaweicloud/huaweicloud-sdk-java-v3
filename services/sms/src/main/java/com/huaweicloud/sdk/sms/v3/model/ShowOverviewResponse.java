@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.sms.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -14,20 +15,28 @@ public class ShowOverviewResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "waiting")
 
+    @JacksonXmlProperty(localName = "waiting")
+
     private Integer waiting;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "replicating")
+
+    @JacksonXmlProperty(localName = "replicating")
 
     private Integer replicating;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "syncing")
 
+    @JacksonXmlProperty(localName = "syncing")
+
     private Integer syncing;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "other")
+
+    @JacksonXmlProperty(localName = "other")
 
     private Integer other;
 

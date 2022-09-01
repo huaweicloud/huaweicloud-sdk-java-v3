@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cdn.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class CompressRules {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "compress_type")
 
+    @JacksonXmlProperty(localName = "compress_type")
+
     private String compressType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "compress_file_type")
+
+    @JacksonXmlProperty(localName = "compress_file_type")
 
     private String compressFileType;
 

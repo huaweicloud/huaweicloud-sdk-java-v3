@@ -14,6 +14,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -27,6 +29,7 @@ public class PostSentenceEmbeddingReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sentences")
     
+    @JacksonXmlProperty(localName = "sentences")
     
     private List<String> sentences = null;
         /**
@@ -106,6 +109,7 @@ public class PostSentenceEmbeddingReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="domain")
     
+    @JacksonXmlProperty(localName = "domain")
     
     private DomainEnum domain;
 

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -22,25 +23,35 @@ public class ShowJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nodes")
+
+    @JacksonXmlProperty(localName = "nodes")
 
     private List<Node> nodes = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "schedule")
 
+    @JacksonXmlProperty(localName = "schedule")
+
     private Schedule schedule;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "params")
 
+    @JacksonXmlProperty(localName = "params")
+
     private List<JobParam> params = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "directory")
+
+    @JacksonXmlProperty(localName = "directory")
 
     private String directory;
 
@@ -124,10 +135,14 @@ public class ShowJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "jobType")
 
+    @JacksonXmlProperty(localName = "jobType")
+
     private JobTypeEnum jobType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "basicConfig")
+
+    @JacksonXmlProperty(localName = "basicConfig")
 
     private BasicInfo basicConfig;
 

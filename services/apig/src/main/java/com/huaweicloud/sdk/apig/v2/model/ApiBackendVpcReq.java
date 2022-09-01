@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.apig.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class ApiBackendVpcReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_channel_proxy_host")
 
+    @JacksonXmlProperty(localName = "vpc_channel_proxy_host")
+
     private String vpcChannelProxyHost;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_channel_id")
+
+    @JacksonXmlProperty(localName = "vpc_channel_id")
 
     private String vpcChannelId;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.bss.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,30 +14,42 @@ public class StatUsageSummaryInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_id")
 
+    @JacksonXmlProperty(localName = "resource_id")
+
     private String resourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "actual_days")
+
+    @JacksonXmlProperty(localName = "actual_days")
 
     private String actualDays;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "band_width")
 
+    @JacksonXmlProperty(localName = "band_width")
+
     private String bandWidth;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "monthly_guaranteed_band_width")
+
+    @JacksonXmlProperty(localName = "monthly_guaranteed_band_width")
 
     private String monthlyGuaranteedBandWidth;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "monthly_peak_band_width")
 
+    @JacksonXmlProperty(localName = "monthly_peak_band_width")
+
     private String monthlyPeakBandWidth;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "band_width_measure_id")
+
+    @JacksonXmlProperty(localName = "band_width_measure_id")
 
     private Integer bandWidthMeasureId;
 

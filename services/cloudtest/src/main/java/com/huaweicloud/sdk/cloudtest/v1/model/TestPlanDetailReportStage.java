@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cloudtest.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -12,6 +13,8 @@ public class TestPlanDetailReportStage {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "case_complete_rate")
+
+    @JacksonXmlProperty(localName = "case_complete_rate")
 
     private String caseCompleteRate;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cpts.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,50 +15,70 @@ public class DebugCaseResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
+    @JacksonXmlProperty(localName = "body")
+
     private String body;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "errorReason")
+
+    @JacksonXmlProperty(localName = "errorReason")
 
     private String errorReason;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "header")
 
+    @JacksonXmlProperty(localName = "header")
+
     private DebugCaseResultHeader header;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "responseTime")
 
+    @JacksonXmlProperty(localName = "responseTime")
+
     private Integer responseTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "result")
+
+    @JacksonXmlProperty(localName = "result")
 
     private Integer result;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "returnBody")
 
+    @JacksonXmlProperty(localName = "returnBody")
+
     private String returnBody;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "returnHeader")
+
+    @JacksonXmlProperty(localName = "returnHeader")
 
     private DebugCaseReturnHeader returnHeader;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "statusCode")
 
+    @JacksonXmlProperty(localName = "statusCode")
+
     private String statusCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "url")
+
+    @JacksonXmlProperty(localName = "url")
 
     private String url;
 

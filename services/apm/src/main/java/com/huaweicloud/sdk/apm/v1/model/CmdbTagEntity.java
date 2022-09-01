@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.apm.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -17,45 +18,63 @@ public class CmdbTagEntity {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "business_id")
+
+    @JacksonXmlProperty(localName = "business_id")
 
     private Long businessId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "uuid")
 
+    @JacksonXmlProperty(localName = "uuid")
+
     private String uuid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "descp")
+
+    @JacksonXmlProperty(localName = "descp")
 
     private String descp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "creator_id")
 
+    @JacksonXmlProperty(localName = "creator_id")
+
     private Long creatorId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "env_id_list")
+
+    @JacksonXmlProperty(localName = "env_id_list")
 
     private List<Long> envIdList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private Long id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "gmt_create")
 
+    @JacksonXmlProperty(localName = "gmt_create")
+
     private LocalDate gmtCreate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "gmt_modify")
+
+    @JacksonXmlProperty(localName = "gmt_modify")
 
     private LocalDate gmtModify;
 

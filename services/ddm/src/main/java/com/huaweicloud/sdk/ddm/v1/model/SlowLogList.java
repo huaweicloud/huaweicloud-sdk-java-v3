@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ddm.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,35 +14,49 @@ public class SlowLogList {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "users")
 
+    @JacksonXmlProperty(localName = "users")
+
     private String users;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "database")
+
+    @JacksonXmlProperty(localName = "database")
 
     private String database;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "querySample")
 
+    @JacksonXmlProperty(localName = "querySample")
+
     private String querySample;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "logTime")
+
+    @JacksonXmlProperty(localName = "logTime")
 
     private String logTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time")
 
+    @JacksonXmlProperty(localName = "time")
+
     private String time;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "shards")
 
+    @JacksonXmlProperty(localName = "shards")
+
     private String shards;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rowsExamined")
+
+    @JacksonXmlProperty(localName = "rowsExamined")
 
     private String rowsExamined;
 

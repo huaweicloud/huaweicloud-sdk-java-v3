@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ocr.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,105 +14,147 @@ public class TaxiInvoiceResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "location")
 
+    @JacksonXmlProperty(localName = "location")
+
     private String location;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "code")
+
+    @JacksonXmlProperty(localName = "code")
 
     private String code;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "number")
 
+    @JacksonXmlProperty(localName = "number")
+
     private String number;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "phone_number")
+
+    @JacksonXmlProperty(localName = "phone_number")
 
     private String phoneNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "company")
 
+    @JacksonXmlProperty(localName = "company")
+
     private String company;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "taxi_number")
+
+    @JacksonXmlProperty(localName = "taxi_number")
 
     private String taxiNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "certificate_number")
 
+    @JacksonXmlProperty(localName = "certificate_number")
+
     private String certificateNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "identification_number")
+
+    @JacksonXmlProperty(localName = "identification_number")
 
     private String identificationNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "date")
 
+    @JacksonXmlProperty(localName = "date")
+
     private String date;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "boarding_time")
+
+    @JacksonXmlProperty(localName = "boarding_time")
 
     private String boardingTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alighting_time")
 
+    @JacksonXmlProperty(localName = "alighting_time")
+
     private String alightingTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time")
+
+    @JacksonXmlProperty(localName = "time")
 
     private String time;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "unit_price")
 
+    @JacksonXmlProperty(localName = "unit_price")
+
     private String unitPrice;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "distance")
+
+    @JacksonXmlProperty(localName = "distance")
 
     private String distance;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "waiting_time")
 
+    @JacksonXmlProperty(localName = "waiting_time")
+
     private String waitingTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fare")
+
+    @JacksonXmlProperty(localName = "fare")
 
     private String fare;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fuel_oil_surcharge")
 
+    @JacksonXmlProperty(localName = "fuel_oil_surcharge")
+
     private String fuelOilSurcharge;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "call_service_surcharge")
+
+    @JacksonXmlProperty(localName = "call_service_surcharge")
 
     private String callServiceSurcharge;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total")
 
+    @JacksonXmlProperty(localName = "total")
+
     private String total;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confidence")
 
+    @JacksonXmlProperty(localName = "confidence")
+
     private Object confidence;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "text_location")
+
+    @JacksonXmlProperty(localName = "text_location")
 
     private Object textLocation;
 

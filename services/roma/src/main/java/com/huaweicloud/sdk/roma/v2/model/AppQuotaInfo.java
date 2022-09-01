@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.time.OffsetDateTime;
 import java.util.Collections;
@@ -19,15 +20,21 @@ public class AppQuotaInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_quota_id")
 
+    @JacksonXmlProperty(localName = "app_quota_id")
+
     private String appQuotaId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "call_limits")
+
+    @JacksonXmlProperty(localName = "call_limits")
 
     private Integer callLimits;
 
@@ -123,30 +130,42 @@ public class AppQuotaInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time_unit")
 
+    @JacksonXmlProperty(localName = "time_unit")
+
     private TimeUnitEnum timeUnit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time_interval")
+
+    @JacksonXmlProperty(localName = "time_interval")
 
     private Integer timeInterval;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remark")
 
+    @JacksonXmlProperty(localName = "remark")
+
     private String remark;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "reset_time")
+
+    @JacksonXmlProperty(localName = "reset_time")
 
     private String resetTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
+    @JacksonXmlProperty(localName = "create_time")
+
     private OffsetDateTime createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bound_app_num")
+
+    @JacksonXmlProperty(localName = "bound_app_num")
 
     private Integer boundAppNum;
 

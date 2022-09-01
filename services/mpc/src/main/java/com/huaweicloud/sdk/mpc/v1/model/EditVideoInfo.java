@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -107,15 +108,21 @@ public class EditVideoInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "reference")
 
+    @JacksonXmlProperty(localName = "reference")
+
     private ReferenceEnum reference;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "width")
 
+    @JacksonXmlProperty(localName = "width")
+
     private Integer width;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "height")
+
+    @JacksonXmlProperty(localName = "height")
 
     private Integer height;
 
@@ -199,15 +206,21 @@ public class EditVideoInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "codec")
 
+    @JacksonXmlProperty(localName = "codec")
+
     private CodecEnum codec;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bitrate")
 
+    @JacksonXmlProperty(localName = "bitrate")
+
     private Integer bitrate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "frame_rate")
+
+    @JacksonXmlProperty(localName = "frame_rate")
 
     private Integer frameRate;
 

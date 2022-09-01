@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.iec.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class AllowedAddressPair {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip_address")
 
+    @JacksonXmlProperty(localName = "ip_address")
+
     private String ipAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mac_address")
+
+    @JacksonXmlProperty(localName = "mac_address")
 
     private String macAddress;
 

@@ -9,6 +9,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.iotedge.v2.model.MqttConnectionInfo;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -22,6 +24,7 @@ public class UpdateExternalEntityReqDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="protocol")
     
+    @JacksonXmlProperty(localName = "protocol")
     
     private String protocol;
 
@@ -29,6 +32,7 @@ public class UpdateExternalEntityReqDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="connection_type")
     
+    @JacksonXmlProperty(localName = "connection_type")
     
     private String connectionType;
 
@@ -36,6 +40,7 @@ public class UpdateExternalEntityReqDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="mqtt_connection_info")
     
+    @JacksonXmlProperty(localName = "mqtt_connection_info")
     
     private MqttConnectionInfo mqttConnectionInfo;
 

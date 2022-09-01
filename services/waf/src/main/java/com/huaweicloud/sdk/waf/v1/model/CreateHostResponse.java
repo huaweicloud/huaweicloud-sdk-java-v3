@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -22,30 +23,42 @@ public class CreateHostResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hostname")
+
+    @JacksonXmlProperty(localName = "hostname")
 
     private String hostname;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policyid")
 
+    @JacksonXmlProperty(localName = "policyid")
+
     private String policyid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "access_code")
+
+    @JacksonXmlProperty(localName = "access_code")
 
     private String accessCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protect_status")
 
+    @JacksonXmlProperty(localName = "protect_status")
+
     private Integer protectStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "access_status")
+
+    @JacksonXmlProperty(localName = "access_status")
 
     private Integer accessStatus;
 
@@ -135,65 +148,91 @@ public class CreateHostResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lb_algorithm")
 
+    @JacksonXmlProperty(localName = "lb_algorithm")
+
     private LbAlgorithmEnum lbAlgorithm;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protocol")
+
+    @JacksonXmlProperty(localName = "protocol")
 
     private String protocol;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "certificateid")
 
+    @JacksonXmlProperty(localName = "certificateid")
+
     private String certificateid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "certificatename")
+
+    @JacksonXmlProperty(localName = "certificatename")
 
     private String certificatename;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "server")
 
+    @JacksonXmlProperty(localName = "server")
+
     private List<CloudWafServer> server = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "proxy")
+
+    @JacksonXmlProperty(localName = "proxy")
 
     private Boolean proxy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timestamp")
 
+    @JacksonXmlProperty(localName = "timestamp")
+
     private Long timestamp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "exclusive_ip")
+
+    @JacksonXmlProperty(localName = "exclusive_ip")
 
     private Boolean exclusiveIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "web_tag")
 
+    @JacksonXmlProperty(localName = "web_tag")
+
     private String webTag;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "http2_enable")
+
+    @JacksonXmlProperty(localName = "http2_enable")
 
     private Boolean http2Enable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "block_page")
 
+    @JacksonXmlProperty(localName = "block_page")
+
     private BlockPage blockPage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flag")
 
+    @JacksonXmlProperty(localName = "flag")
+
     private Flag flag;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extend")
+
+    @JacksonXmlProperty(localName = "extend")
 
     private Map<String, String> extend = null;
 

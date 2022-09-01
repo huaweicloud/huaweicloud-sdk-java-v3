@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.bssintl.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -14,35 +15,49 @@ public class ListPostpaidBillSumResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bill_cycle")
 
+    @JacksonXmlProperty(localName = "bill_cycle")
+
     private String billCycle;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "initial_amount_due")
+
+    @JacksonXmlProperty(localName = "initial_amount_due")
 
     private Double initialAmountDue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "consume_amount")
 
+    @JacksonXmlProperty(localName = "consume_amount")
+
     private Double consumeAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "refunds")
+
+    @JacksonXmlProperty(localName = "refunds")
 
     private Double refunds;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "adjustments")
 
+    @JacksonXmlProperty(localName = "adjustments")
+
     private Double adjustments;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tax_amount")
 
+    @JacksonXmlProperty(localName = "tax_amount")
+
     private Double taxAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "currency")
+
+    @JacksonXmlProperty(localName = "currency")
 
     private String currency;
 

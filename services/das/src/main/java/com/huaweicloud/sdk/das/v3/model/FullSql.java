@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.das.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,70 +14,98 @@ public class FullSql {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sql")
 
+    @JacksonXmlProperty(localName = "sql")
+
     private String sql;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operate_type")
+
+    @JacksonXmlProperty(localName = "operate_type")
 
     private String operateType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_no")
+
+    @JacksonXmlProperty(localName = "error_no")
 
     private String errorNo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "database")
 
+    @JacksonXmlProperty(localName = "database")
+
     private String database;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "client")
+
+    @JacksonXmlProperty(localName = "client")
 
     private String client;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "thread_id")
 
+    @JacksonXmlProperty(localName = "thread_id")
+
     private String threadId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user")
+
+    @JacksonXmlProperty(localName = "user")
 
     private String user;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "execute_at")
 
+    @JacksonXmlProperty(localName = "execute_at")
+
     private Long executeAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "query_time")
+
+    @JacksonXmlProperty(localName = "query_time")
 
     private Double queryTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lock_time")
 
+    @JacksonXmlProperty(localName = "lock_time")
+
     private Double lockTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rows_examined")
+
+    @JacksonXmlProperty(localName = "rows_examined")
 
     private Long rowsExamined;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rows_sent")
 
+    @JacksonXmlProperty(localName = "rows_sent")
+
     private Long rowsSent;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rows_affected")
+
+    @JacksonXmlProperty(localName = "rows_affected")
 
     private Long rowsAffected;
 

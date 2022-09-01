@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -90,25 +91,35 @@ public class MetadataList {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "chargingMode")
 
+    @JacksonXmlProperty(localName = "chargingMode")
+
     private ChargingModeEnum chargingMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metering.order_id")
+
+    @JacksonXmlProperty(localName = "metering.order_id")
 
     private String meteringOrderId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metering.product_id")
 
+    @JacksonXmlProperty(localName = "metering.product_id")
+
     private String meteringProductId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_id")
 
+    @JacksonXmlProperty(localName = "vpc_id")
+
     private UUID vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metering.image_id")
+
+    @JacksonXmlProperty(localName = "metering.image_id")
 
     private UUID meteringImageId;
 
@@ -198,30 +209,42 @@ public class MetadataList {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metering.imagetype")
 
+    @JacksonXmlProperty(localName = "metering.imagetype")
+
     private MeteringImagetypeEnum meteringImagetype;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "baremetalPortIDList")
+
+    @JacksonXmlProperty(localName = "baremetalPortIDList")
 
     private String baremetalPortIDList;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metering.resourcespeccode")
 
+    @JacksonXmlProperty(localName = "metering.resourcespeccode")
+
     private String meteringResourcespeccode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metering.resourcetype")
+
+    @JacksonXmlProperty(localName = "metering.resourcetype")
 
     private String meteringResourcetype;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image_name")
 
+    @JacksonXmlProperty(localName = "image_name")
+
     private String imageName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "op_svc_userid")
+
+    @JacksonXmlProperty(localName = "op_svc_userid")
 
     private String opSvcUserid;
 
@@ -305,10 +328,14 @@ public class MetadataList {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os_type")
 
+    @JacksonXmlProperty(localName = "os_type")
+
     private OsTypeEnum osType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__bms_support_evs")
+
+    @JacksonXmlProperty(localName = "__bms_support_evs")
 
     private String bmsSupportEvs;
 
@@ -391,6 +418,8 @@ public class MetadataList {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os_bit")
+
+    @JacksonXmlProperty(localName = "os_bit")
 
     private OsBitEnum osBit;
 

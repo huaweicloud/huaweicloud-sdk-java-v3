@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.rocketmq.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.math.BigDecimal;
@@ -18,30 +19,42 @@ public class ListInstanceConsumerGroupsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total")
 
+    @JacksonXmlProperty(localName = "total")
+
     private BigDecimal total;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "groups")
+
+    @JacksonXmlProperty(localName = "groups")
 
     private List<ConsumerGroup> groups = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max")
 
+    @JacksonXmlProperty(localName = "max")
+
     private BigDecimal max;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remaining")
+
+    @JacksonXmlProperty(localName = "remaining")
 
     private BigDecimal remaining;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "next_offset")
 
+    @JacksonXmlProperty(localName = "next_offset")
+
     private BigDecimal nextOffset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "previous_offset")
+
+    @JacksonXmlProperty(localName = "previous_offset")
 
     private BigDecimal previousOffset;
 

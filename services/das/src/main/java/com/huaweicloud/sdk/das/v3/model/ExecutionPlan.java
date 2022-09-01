@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.das.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,60 +14,84 @@ public class ExecutionPlan {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "select_type")
+
+    @JacksonXmlProperty(localName = "select_type")
 
     private String selectType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "table")
 
+    @JacksonXmlProperty(localName = "table")
+
     private String table;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "partitions")
+
+    @JacksonXmlProperty(localName = "partitions")
 
     private String partitions;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
+    @JacksonXmlProperty(localName = "type")
+
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "possible_keys")
+
+    @JacksonXmlProperty(localName = "possible_keys")
 
     private String possibleKeys;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key")
 
+    @JacksonXmlProperty(localName = "key")
+
     private String key;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key_len")
+
+    @JacksonXmlProperty(localName = "key_len")
 
     private String keyLen;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ref")
 
+    @JacksonXmlProperty(localName = "ref")
+
     private String ref;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rows")
+
+    @JacksonXmlProperty(localName = "rows")
 
     private String rows;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "filtered")
 
+    @JacksonXmlProperty(localName = "filtered")
+
     private String filtered;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extra")
+
+    @JacksonXmlProperty(localName = "extra")
 
     private String extra;
 

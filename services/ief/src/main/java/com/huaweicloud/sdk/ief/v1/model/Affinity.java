@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ief.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,15 +15,21 @@ public class Affinity {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nodeAffinity")
 
+    @JacksonXmlProperty(localName = "nodeAffinity")
+
     private AffinityNodeAffinity nodeAffinity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "podAffinity")
 
+    @JacksonXmlProperty(localName = "podAffinity")
+
     private AffinityPodAffinity podAffinity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "podAntiAffinity")
+
+    @JacksonXmlProperty(localName = "podAntiAffinity")
 
     private AffinityPodAntiAffinity podAntiAffinity;
 

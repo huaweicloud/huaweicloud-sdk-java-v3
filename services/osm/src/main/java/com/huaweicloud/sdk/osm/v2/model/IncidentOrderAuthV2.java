@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.osm.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.time.OffsetDateTime;
 import java.util.Objects;
@@ -14,65 +15,91 @@ public class IncidentOrderAuthV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private Long id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
+
+    @JacksonXmlProperty(localName = "status")
 
     private Integer status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "incident_id")
 
+    @JacksonXmlProperty(localName = "incident_id")
+
     private String incidentId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "simple_description")
+
+    @JacksonXmlProperty(localName = "simple_description")
 
     private String simpleDescription;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_type_name")
 
+    @JacksonXmlProperty(localName = "resource_type_name")
+
     private String resourceTypeName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "visit_type_name")
+
+    @JacksonXmlProperty(localName = "visit_type_name")
 
     private String visitTypeName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
+    @JacksonXmlProperty(localName = "create_time")
+
     private OffsetDateTime createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auth_effective_time")
+
+    @JacksonXmlProperty(localName = "auth_effective_time")
 
     private OffsetDateTime authEffectiveTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auth_expire_time")
 
+    @JacksonXmlProperty(localName = "auth_expire_time")
+
     private OffsetDateTime authExpireTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "reject_reason")
+
+    @JacksonXmlProperty(localName = "reject_reason")
 
     private String rejectReason;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "customer_id")
 
+    @JacksonXmlProperty(localName = "customer_id")
+
     private String customerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "x_customer_id")
 
+    @JacksonXmlProperty(localName = "x_customer_id")
+
     private String xCustomerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "x_customer_name")
+
+    @JacksonXmlProperty(localName = "x_customer_name")
 
     private String xCustomerName;
 

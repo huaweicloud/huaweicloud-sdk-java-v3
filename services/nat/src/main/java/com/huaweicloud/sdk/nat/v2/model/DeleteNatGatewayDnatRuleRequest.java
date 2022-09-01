@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.nat.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class DeleteNatGatewayDnatRuleRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nat_gateway_id")
 
+    @JacksonXmlProperty(localName = "nat_gateway_id")
+
     private String natGatewayId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dnat_rule_id")
+
+    @JacksonXmlProperty(localName = "dnat_rule_id")
 
     private String dnatRuleId;
 

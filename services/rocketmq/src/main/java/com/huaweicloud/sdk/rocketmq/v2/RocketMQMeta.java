@@ -284,7 +284,6 @@ public class RocketMQMeta {
             }));
 
         // response
-
         builder.<List<Message>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,

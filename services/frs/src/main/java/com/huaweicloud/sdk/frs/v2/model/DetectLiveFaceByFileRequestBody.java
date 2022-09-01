@@ -1,6 +1,7 @@
 package com.huaweicloud.sdk.frs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.http.FormDataFilePart;
 import com.huaweicloud.sdk.core.http.FormDataPart;
 import com.huaweicloud.sdk.core.http.SdkFormDataBody;
@@ -16,6 +17,7 @@ import java.util.Objects;
 public class DetectLiveFaceByFileRequestBody implements SdkFormDataBody {
 
     @JsonProperty(value = "image_file", access = JsonProperty.Access.WRITE_ONLY)
+    @JacksonXmlProperty(localName = "image_file")
 
     private FormDataFilePart imageFile;
 

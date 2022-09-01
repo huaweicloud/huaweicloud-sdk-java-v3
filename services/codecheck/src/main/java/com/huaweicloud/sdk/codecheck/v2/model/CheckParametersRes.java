@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.codecheck.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,15 +17,21 @@ public class CheckParametersRes {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "check_id")
 
+    @JacksonXmlProperty(localName = "check_id")
+
     private Integer checkId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "checker_configs")
+
+    @JacksonXmlProperty(localName = "checker_configs")
 
     private List<CheckConfigsItem> checkerConfigs = null;
 

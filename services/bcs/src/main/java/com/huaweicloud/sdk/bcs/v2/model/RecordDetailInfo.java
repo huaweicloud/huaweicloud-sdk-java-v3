@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.bcs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -18,65 +19,91 @@ public class RecordDetailInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operation_id")
 
+    @JacksonXmlProperty(localName = "operation_id")
+
     private String operationId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_type")
+
+    @JacksonXmlProperty(localName = "resource_type")
 
     private String resourceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operation_type")
 
+    @JacksonXmlProperty(localName = "operation_type")
+
     private String operationType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_id")
+
+    @JacksonXmlProperty(localName = "domain_id")
 
     private String domainId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
 
+    @JacksonXmlProperty(localName = "project_id")
+
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "blockchain_id")
+
+    @JacksonXmlProperty(localName = "blockchain_id")
 
     private String blockchainId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "blockchain_name")
 
+    @JacksonXmlProperty(localName = "blockchain_name")
+
     private String blockchainName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cluster_info")
+
+    @JacksonXmlProperty(localName = "cluster_info")
 
     private OprecordCluster clusterInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operation_process")
 
+    @JacksonXmlProperty(localName = "operation_process")
+
     private Map<String, ProcessInfo> operationProcess = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "record_time")
+
+    @JacksonXmlProperty(localName = "record_time")
 
     private Long recordTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operation_status")
 
+    @JacksonXmlProperty(localName = "operation_status")
+
     private String operationStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "message")
 
+    @JacksonXmlProperty(localName = "message")
+
     private List<String> message = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "desc")
+
+    @JacksonXmlProperty(localName = "desc")
 
     private String desc;
 

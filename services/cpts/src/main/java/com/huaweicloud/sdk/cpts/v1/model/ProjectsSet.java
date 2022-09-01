@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cpts.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
@@ -17,40 +18,56 @@ public class ProjectsSet {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "CreateTime")
 
+    @JacksonXmlProperty(localName = "CreateTime")
+
     private OffsetDateTime createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "UpdateTime")
+
+    @JacksonXmlProperty(localName = "UpdateTime")
 
     private OffsetDateTime updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
+    @JacksonXmlProperty(localName = "description")
+
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
+
+    @JacksonXmlProperty(localName = "id")
 
     private Integer id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
+
+    @JacksonXmlProperty(localName = "status")
 
     private Integer status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "external_params")
 
+    @JacksonXmlProperty(localName = "external_params")
+
     private Object externalParams;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "variables_no_file")
+
+    @JacksonXmlProperty(localName = "variables_no_file")
 
     private List<String> variablesNoFile = null;
 

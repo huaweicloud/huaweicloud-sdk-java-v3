@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.functiongraph.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class StopWorkFlowRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "workflow_id")
 
+    @JacksonXmlProperty(localName = "workflow_id")
+
     private String workflowId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "execution_id")
+
+    @JacksonXmlProperty(localName = "execution_id")
 
     private String executionId;
 

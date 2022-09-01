@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.dns.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,20 +17,28 @@ public class BatchCreateRecordSetWithLine {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "line")
 
+    @JacksonXmlProperty(localName = "line")
+
     private String line;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ttl")
+
+    @JacksonXmlProperty(localName = "ttl")
 
     private Integer ttl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "weight")
 
+    @JacksonXmlProperty(localName = "weight")
+
     private Integer weight;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "records")
+
+    @JacksonXmlProperty(localName = "records")
 
     private List<String> records = null;
 

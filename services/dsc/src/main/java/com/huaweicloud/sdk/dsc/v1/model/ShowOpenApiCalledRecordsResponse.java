@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.dsc.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -17,25 +18,35 @@ public class ShowOpenApiCalledRecordsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total")
 
+    @JacksonXmlProperty(localName = "total")
+
     private Integer total;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "succeed")
+
+    @JacksonXmlProperty(localName = "succeed")
 
     private Integer succeed;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "failed")
 
+    @JacksonXmlProperty(localName = "failed")
+
     private Integer failed;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "openapi_called_records")
 
+    @JacksonXmlProperty(localName = "openapi_called_records")
+
     private List<OpenApiCalledRecord> openapiCalledRecords = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "next_marker")
+
+    @JacksonXmlProperty(localName = "next_marker")
 
     private String nextMarker;
 

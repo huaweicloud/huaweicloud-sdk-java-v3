@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
@@ -105,90 +106,126 @@ public class ScalingActivityLogV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
+
+    @JacksonXmlProperty(localName = "start_time")
 
     private OffsetDateTime startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time")
 
+    @JacksonXmlProperty(localName = "end_time")
+
     private OffsetDateTime endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
+
+    @JacksonXmlProperty(localName = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_removed_list")
 
+    @JacksonXmlProperty(localName = "instance_removed_list")
+
     private List<ScalingInstance> instanceRemovedList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_deleted_list")
+
+    @JacksonXmlProperty(localName = "instance_deleted_list")
 
     private List<ScalingInstance> instanceDeletedList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_added_list")
 
+    @JacksonXmlProperty(localName = "instance_added_list")
+
     private List<ScalingInstance> instanceAddedList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_failed_list")
+
+    @JacksonXmlProperty(localName = "instance_failed_list")
 
     private List<ScalingInstance> instanceFailedList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_standby_list")
 
+    @JacksonXmlProperty(localName = "instance_standby_list")
+
     private List<ScalingInstance> instanceStandbyList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scaling_value")
+
+    @JacksonXmlProperty(localName = "scaling_value")
 
     private String scalingValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
+    @JacksonXmlProperty(localName = "description")
+
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_value")
+
+    @JacksonXmlProperty(localName = "instance_value")
 
     private Integer instanceValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "desire_value")
 
+    @JacksonXmlProperty(localName = "desire_value")
+
     private Integer desireValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lb_bind_success_list")
+
+    @JacksonXmlProperty(localName = "lb_bind_success_list")
 
     private List<ModifyLb> lbBindSuccessList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lb_bind_failed_list")
 
+    @JacksonXmlProperty(localName = "lb_bind_failed_list")
+
     private List<ModifyLb> lbBindFailedList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lb_unbind_success_list")
+
+    @JacksonXmlProperty(localName = "lb_unbind_success_list")
 
     private List<ModifyLb> lbUnbindSuccessList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lb_unbind_failed_list")
 
+    @JacksonXmlProperty(localName = "lb_unbind_failed_list")
+
     private List<ModifyLb> lbUnbindFailedList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
+
+    @JacksonXmlProperty(localName = "type")
 
     private String type;
 

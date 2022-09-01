@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.mpc.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,35 +17,49 @@ public class TemplateGroup {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_id")
 
+    @JacksonXmlProperty(localName = "group_id")
+
     private String groupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template_ids")
 
+    @JacksonXmlProperty(localName = "template_ids")
+
     private List<Integer> templateIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "videos")
+
+    @JacksonXmlProperty(localName = "videos")
 
     private List<VideoAndTemplate> videos = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "audio")
 
+    @JacksonXmlProperty(localName = "audio")
+
     private Audio audio;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "video_common")
 
+    @JacksonXmlProperty(localName = "video_common")
+
     private VideoCommon videoCommon;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "common")
+
+    @JacksonXmlProperty(localName = "common")
 
     private Common common;
 

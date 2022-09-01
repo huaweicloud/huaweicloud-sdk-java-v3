@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.kafka.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,35 +14,49 @@ public class ShowClusterRespClusterBrokers {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host")
 
+    @JacksonXmlProperty(localName = "host")
+
     private String host;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "port")
+
+    @JacksonXmlProperty(localName = "port")
 
     private Integer port;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "broker_id")
 
+    @JacksonXmlProperty(localName = "broker_id")
+
     private String brokerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_controller")
+
+    @JacksonXmlProperty(localName = "is_controller")
 
     private Boolean isController;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
 
+    @JacksonXmlProperty(localName = "version")
+
     private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "register_time")
 
+    @JacksonXmlProperty(localName = "register_time")
+
     private Long registerTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_health")
+
+    @JacksonXmlProperty(localName = "is_health")
 
     private Boolean isHealth;
 

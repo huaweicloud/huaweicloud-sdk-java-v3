@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -96,6 +97,8 @@ public class BillingCreate {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cloud_type")
 
+    @JacksonXmlProperty(localName = "cloud_type")
+
     private CloudTypeEnum cloudType;
 
     /**
@@ -177,6 +180,8 @@ public class BillingCreate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "consistent_level")
+
+    @JacksonXmlProperty(localName = "consistent_level")
 
     private ConsistentLevelEnum consistentLevel;
 
@@ -266,6 +271,8 @@ public class BillingCreate {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "object_type")
 
+    @JacksonXmlProperty(localName = "object_type")
+
     private ObjectTypeEnum objectType;
 
     /**
@@ -348,10 +355,14 @@ public class BillingCreate {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protect_type")
 
+    @JacksonXmlProperty(localName = "protect_type")
+
     private ProtectTypeEnum protectType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
+
+    @JacksonXmlProperty(localName = "size")
 
     private Integer size;
 
@@ -435,6 +446,8 @@ public class BillingCreate {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "charging_mode")
 
+    @JacksonXmlProperty(localName = "charging_mode")
+
     private ChargingModeEnum chargingMode;
 
     /**
@@ -517,30 +530,42 @@ public class BillingCreate {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "period_type")
 
+    @JacksonXmlProperty(localName = "period_type")
+
     private PeriodTypeEnum periodType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "period_num")
+
+    @JacksonXmlProperty(localName = "period_num")
 
     private Integer periodNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_auto_renew")
 
+    @JacksonXmlProperty(localName = "is_auto_renew")
+
     private Boolean isAutoRenew;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_auto_pay")
+
+    @JacksonXmlProperty(localName = "is_auto_pay")
 
     private Boolean isAutoPay;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "console_url")
 
+    @JacksonXmlProperty(localName = "console_url")
+
     private String consoleUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extra_info")
+
+    @JacksonXmlProperty(localName = "extra_info")
 
     private BillbingCreateExtraInfo extraInfo;
 

@@ -14,6 +14,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -105,6 +107,7 @@ public class OpenGaussChargeInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="charge_mode")
     
+    @JacksonXmlProperty(localName = "charge_mode")
     
     private ChargeModeEnum chargeMode;
     /**
@@ -190,6 +193,7 @@ public class OpenGaussChargeInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="period_type")
     
+    @JacksonXmlProperty(localName = "period_type")
     
     private PeriodTypeEnum periodType;
 
@@ -197,6 +201,7 @@ public class OpenGaussChargeInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="period_num")
     
+    @JacksonXmlProperty(localName = "period_num")
     
     private Integer periodNum;
 
@@ -204,6 +209,7 @@ public class OpenGaussChargeInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="is_auto_renew")
     
+    @JacksonXmlProperty(localName = "is_auto_renew")
     
     private Boolean isAutoRenew;
 
@@ -211,6 +217,7 @@ public class OpenGaussChargeInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="is_auto_pay")
     
+    @JacksonXmlProperty(localName = "is_auto_pay")
     
     private Boolean isAutoPay;
 

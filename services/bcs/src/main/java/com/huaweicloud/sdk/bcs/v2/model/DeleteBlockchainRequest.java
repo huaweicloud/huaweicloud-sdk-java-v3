@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.bcs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,35 +14,49 @@ public class DeleteBlockchainRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "blockchain_id")
 
+    @JacksonXmlProperty(localName = "blockchain_id")
+
     private String blockchainId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_delete_storage")
+
+    @JacksonXmlProperty(localName = "is_delete_storage")
 
     private Boolean isDeleteStorage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_delete_obs")
 
+    @JacksonXmlProperty(localName = "is_delete_obs")
+
     private Boolean isDeleteObs;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_delete_resource")
+
+    @JacksonXmlProperty(localName = "is_delete_resource")
 
     private Boolean isDeleteResource;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_delete_ief")
 
+    @JacksonXmlProperty(localName = "is_delete_ief")
+
     private Boolean isDeleteIef;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_delete_lightpeer")
 
+    @JacksonXmlProperty(localName = "is_delete_lightpeer")
+
     private String isDeleteLightpeer;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ief_nodes_id")
+
+    @JacksonXmlProperty(localName = "ief_nodes_id")
 
     private String iefNodesId;
 

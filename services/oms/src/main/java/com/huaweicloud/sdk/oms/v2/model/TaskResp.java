@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,120 +22,168 @@ public class TaskResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bandwidth_policy")
 
+    @JacksonXmlProperty(localName = "bandwidth_policy")
+
     private List<BandwidthPolicyDto> bandwidthPolicy = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "complete_size")
+
+    @JacksonXmlProperty(localName = "complete_size")
 
     private Long completeSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
+    @JacksonXmlProperty(localName = "description")
+
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dst_node")
+
+    @JacksonXmlProperty(localName = "dst_node")
 
     private DstNodeResp dstNode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_failed_object_recording")
 
+    @JacksonXmlProperty(localName = "enable_failed_object_recording")
+
     private Boolean enableFailedObjectRecording;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_kms")
+
+    @JacksonXmlProperty(localName = "enable_kms")
 
     private Boolean enableKms;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_restore")
 
+    @JacksonXmlProperty(localName = "enable_restore")
+
     private Boolean enableRestore;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_reason")
+
+    @JacksonXmlProperty(localName = "error_reason")
 
     private ErrorReasonResp errorReason;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "failed_num")
 
+    @JacksonXmlProperty(localName = "failed_num")
+
     private Long failedNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "failed_object_record")
+
+    @JacksonXmlProperty(localName = "failed_object_record")
 
     private FailedObjectRecordDto failedObjectRecord;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_id")
 
+    @JacksonXmlProperty(localName = "group_id")
+
     private String groupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
+
+    @JacksonXmlProperty(localName = "id")
 
     private Long id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_query_over")
 
+    @JacksonXmlProperty(localName = "is_query_over")
+
     private Boolean isQueryOver;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "left_time")
+
+    @JacksonXmlProperty(localName = "left_time")
 
     private Long leftTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "migrate_since")
 
+    @JacksonXmlProperty(localName = "migrate_since")
+
     private Long migrateSince;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "migrate_speed")
+
+    @JacksonXmlProperty(localName = "migrate_speed")
 
     private Long migrateSpeed;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "progress")
+
+    @JacksonXmlProperty(localName = "progress")
 
     private Double progress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "real_size")
 
+    @JacksonXmlProperty(localName = "real_size")
+
     private Long realSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "skipped_num")
+
+    @JacksonXmlProperty(localName = "skipped_num")
 
     private Long skippedNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "src_node")
 
+    @JacksonXmlProperty(localName = "src_node")
+
     private SrcNodeResp srcNode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
+
+    @JacksonXmlProperty(localName = "start_time")
 
     private Long startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private Integer status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "successful_num")
+
+    @JacksonXmlProperty(localName = "successful_num")
 
     private Long successfulNum;
 
@@ -230,6 +279,8 @@ public class TaskResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_type")
 
+    @JacksonXmlProperty(localName = "task_type")
+
     private TaskTypeEnum taskType;
 
     /**
@@ -318,40 +369,56 @@ public class TaskResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_type")
 
+    @JacksonXmlProperty(localName = "group_type")
+
     private GroupTypeEnum groupType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_num")
+
+    @JacksonXmlProperty(localName = "total_num")
 
     private Long totalNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_size")
 
+    @JacksonXmlProperty(localName = "total_size")
+
     private Long totalSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_time")
+
+    @JacksonXmlProperty(localName = "total_time")
 
     private Long totalTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "smn_info")
 
+    @JacksonXmlProperty(localName = "smn_info")
+
     private SmnInfo smnInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_cdn")
+
+    @JacksonXmlProperty(localName = "source_cdn")
 
     private SourceCdnResp sourceCdn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "success_record_error_reason")
 
+    @JacksonXmlProperty(localName = "success_record_error_reason")
+
     private String successRecordErrorReason;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "skip_record_error_reason")
+
+    @JacksonXmlProperty(localName = "skip_record_error_reason")
 
     private String skipRecordErrorReason;
 

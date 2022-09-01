@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.roma.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class Calculation {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "never_connected")
 
+    @JacksonXmlProperty(localName = "never_connected")
+
     private Integer neverConnected;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "online")
 
+    @JacksonXmlProperty(localName = "online")
+
     private Integer online;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offline")
+
+    @JacksonXmlProperty(localName = "offline")
 
     private Integer offline;
 

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,10 +19,14 @@ public class ChildrenJobInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "billing_tag")
 
+    @JacksonXmlProperty(localName = "billing_tag")
+
     private Boolean billingTag;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
+
+    @JacksonXmlProperty(localName = "create_time")
 
     private String createTime;
 
@@ -111,10 +116,14 @@ public class ChildrenJobInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "db_use_type")
 
+    @JacksonXmlProperty(localName = "db_use_type")
+
     private DbUseTypeEnum dbUseType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
+
+    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
@@ -218,15 +227,21 @@ public class ChildrenJobInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "engine_type")
 
+    @JacksonXmlProperty(localName = "engine_type")
+
     private EngineTypeEnum engineType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_msg")
 
+    @JacksonXmlProperty(localName = "error_msg")
+
     private String errorMsg;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
+
+    @JacksonXmlProperty(localName = "id")
 
     private String id;
 
@@ -316,10 +331,14 @@ public class ChildrenJobInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_direction")
 
+    @JacksonXmlProperty(localName = "job_direction")
+
     private JobDirectionEnum jobDirection;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
@@ -409,15 +428,21 @@ public class ChildrenJobInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "net_type")
 
+    @JacksonXmlProperty(localName = "net_type")
+
     private NetTypeEnum netType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "node_newFramework")
 
+    @JacksonXmlProperty(localName = "node_newFramework")
+
     private Boolean nodeNewFramework;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
+
+    @JacksonXmlProperty(localName = "status")
 
     private String status;
 
@@ -506,6 +531,8 @@ public class ChildrenJobInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_type")
+
+    @JacksonXmlProperty(localName = "task_type")
 
     private TaskTypeEnum taskType;
 

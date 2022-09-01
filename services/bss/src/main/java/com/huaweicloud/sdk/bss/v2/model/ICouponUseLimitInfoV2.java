@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.bss.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,35 +14,49 @@ public class ICouponUseLimitInfoV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "use_limiti_info_id")
 
+    @JacksonXmlProperty(localName = "use_limiti_info_id")
+
     private String useLimitiInfoId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit_key")
+
+    @JacksonXmlProperty(localName = "limit_key")
 
     private String limitKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "value1")
 
+    @JacksonXmlProperty(localName = "value1")
+
     private String value1;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "value2")
+
+    @JacksonXmlProperty(localName = "value2")
 
     private String value2;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "value_unit")
 
+    @JacksonXmlProperty(localName = "value_unit")
+
     private String valueUnit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit_type")
 
+    @JacksonXmlProperty(localName = "limit_type")
+
     private String limitType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "promotion_plan_id")
+
+    @JacksonXmlProperty(localName = "promotion_plan_id")
 
     private String promotionPlanId;
 

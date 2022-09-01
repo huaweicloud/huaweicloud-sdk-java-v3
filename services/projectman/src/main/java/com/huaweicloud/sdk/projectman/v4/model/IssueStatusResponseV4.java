@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.projectman.v4.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,30 +14,42 @@ public class IssueStatusResponseV4 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "closed_num")
 
+    @JacksonXmlProperty(localName = "closed_num")
+
     private Integer closedNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "new_num")
+
+    @JacksonXmlProperty(localName = "new_num")
 
     private Integer newNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "process_num")
 
+    @JacksonXmlProperty(localName = "process_num")
+
     private Integer processNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rejected_num")
+
+    @JacksonXmlProperty(localName = "rejected_num")
 
     private Integer rejectedNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "solved_num")
 
+    @JacksonXmlProperty(localName = "solved_num")
+
     private Integer solvedNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "test_num")
+
+    @JacksonXmlProperty(localName = "test_num")
 
     private Integer testNum;
 

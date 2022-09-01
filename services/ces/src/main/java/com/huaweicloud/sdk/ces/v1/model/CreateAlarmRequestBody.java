@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,35 +22,49 @@ public class CreateAlarmRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alarm_name")
 
+    @JacksonXmlProperty(localName = "alarm_name")
+
     private String alarmName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alarm_description")
+
+    @JacksonXmlProperty(localName = "alarm_description")
 
     private String alarmDescription;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metric")
 
+    @JacksonXmlProperty(localName = "metric")
+
     private MetricForAlarm metric;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "condition")
+
+    @JacksonXmlProperty(localName = "condition")
 
     private Condition condition;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alarm_enabled")
 
+    @JacksonXmlProperty(localName = "alarm_enabled")
+
     private Boolean alarmEnabled;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alarm_action_enabled")
 
+    @JacksonXmlProperty(localName = "alarm_action_enabled")
+
     private Boolean alarmActionEnabled;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alarm_level")
+
+    @JacksonXmlProperty(localName = "alarm_level")
 
     private Integer alarmLevel;
 
@@ -139,25 +154,35 @@ public class CreateAlarmRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alarm_type")
 
+    @JacksonXmlProperty(localName = "alarm_type")
+
     private AlarmTypeEnum alarmType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alarm_actions")
+
+    @JacksonXmlProperty(localName = "alarm_actions")
 
     private List<AlarmActions> alarmActions = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "insufficientdata_actions")
 
+    @JacksonXmlProperty(localName = "insufficientdata_actions")
+
     private List<AlarmActions> insufficientdataActions = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ok_actions")
 
+    @JacksonXmlProperty(localName = "ok_actions")
+
     private List<AlarmActions> okActions = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
+
+    @JacksonXmlProperty(localName = "enterprise_project_id")
 
     private String enterpriseProjectId;
 

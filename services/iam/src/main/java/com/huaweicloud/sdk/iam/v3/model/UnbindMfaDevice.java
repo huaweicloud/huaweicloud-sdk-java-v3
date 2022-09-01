@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.iam.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class UnbindMfaDevice {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_id")
 
+    @JacksonXmlProperty(localName = "user_id")
+
     private String userId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "authentication_code")
 
+    @JacksonXmlProperty(localName = "authentication_code")
+
     private String authenticationCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "serial_number")
+
+    @JacksonXmlProperty(localName = "serial_number")
 
     private String serialNumber;
 
@@ -48,7 +55,7 @@ public class UnbindMfaDevice {
     }
 
     /**
-     * • 管理员为IAM用户解绑MFA设备：填写6位任意验证码，不做校验。 • IAM用户为自己解绑MFA设备：填写虚拟MFA验证码。
+     * 管理员为IAM用户解绑MFA设备：填写6位任意验证码，不做校验。IAM用户为自己解绑MFA设备：填写虚拟MFA验证码。
      * @return authenticationCode
      */
     public String getAuthenticationCode() {

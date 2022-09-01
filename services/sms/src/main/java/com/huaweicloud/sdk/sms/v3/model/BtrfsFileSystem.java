@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.sms.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,80 +17,112 @@ public class BtrfsFileSystem {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "label")
+
+    @JacksonXmlProperty(localName = "label")
 
     private String label;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "uuid")
 
+    @JacksonXmlProperty(localName = "uuid")
+
     private String uuid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "device")
+
+    @JacksonXmlProperty(localName = "device")
 
     private String device;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
 
+    @JacksonXmlProperty(localName = "size")
+
     private Long size;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nodesize")
+
+    @JacksonXmlProperty(localName = "nodesize")
 
     private Long nodesize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sectorsize")
 
+    @JacksonXmlProperty(localName = "sectorsize")
+
     private Integer sectorsize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_profile")
+
+    @JacksonXmlProperty(localName = "data_profile")
 
     private String dataProfile;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "system_profile")
 
+    @JacksonXmlProperty(localName = "system_profile")
+
     private String systemProfile;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metadata_profile")
+
+    @JacksonXmlProperty(localName = "metadata_profile")
 
     private String metadataProfile;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "global_reserve1")
 
+    @JacksonXmlProperty(localName = "global_reserve1")
+
     private String globalReserve1;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "g_vol_used_size")
+
+    @JacksonXmlProperty(localName = "g_vol_used_size")
 
     private Long gVolUsedSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "default_subvolid")
 
+    @JacksonXmlProperty(localName = "default_subvolid")
+
     private String defaultSubvolid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "default_subvol_name")
+
+    @JacksonXmlProperty(localName = "default_subvol_name")
 
     private String defaultSubvolName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "default_subvol_mountpath")
 
+    @JacksonXmlProperty(localName = "default_subvol_mountpath")
+
     private String defaultSubvolMountpath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subvolumn")
+
+    @JacksonXmlProperty(localName = "subvolumn")
 
     private List<BtrfsSubvolumn> subvolumn = null;
 

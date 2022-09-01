@@ -8,6 +8,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -21,6 +23,7 @@ public class LogConfigDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="size")
     
+    @JacksonXmlProperty(localName = "size")
     
     private Integer size;
 
@@ -28,6 +31,7 @@ public class LogConfigDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="level")
     
+    @JacksonXmlProperty(localName = "level")
     
     private String level;
 
@@ -35,6 +39,7 @@ public class LogConfigDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rotate_num")
     
+    @JacksonXmlProperty(localName = "rotate_num")
     
     private Integer rotateNum;
 
@@ -42,6 +47,7 @@ public class LogConfigDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rotate_period")
     
+    @JacksonXmlProperty(localName = "rotate_period")
     
     private String rotatePeriod;
 
@@ -49,6 +55,7 @@ public class LogConfigDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
+    @JacksonXmlProperty(localName = "type")
     
     private String type;
 
@@ -56,6 +63,7 @@ public class LogConfigDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="component")
     
+    @JacksonXmlProperty(localName = "component")
     
     private String component;
 

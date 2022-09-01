@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.css.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -15,41 +16,43 @@ import java.util.function.Consumer;
 public class ListYmlsJobResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "configurations")
+    @JsonProperty(value = "configList")
 
-    private List<ConfigurationsRsp> configurations = null;
+    @JacksonXmlProperty(localName = "configList")
 
-    public ListYmlsJobResponse withConfigurations(List<ConfigurationsRsp> configurations) {
-        this.configurations = configurations;
+    private List<ConfigListRsp> configList = null;
+
+    public ListYmlsJobResponse withConfigList(List<ConfigListRsp> configList) {
+        this.configList = configList;
         return this;
     }
 
-    public ListYmlsJobResponse addConfigurationsItem(ConfigurationsRsp configurationsItem) {
-        if (this.configurations == null) {
-            this.configurations = new ArrayList<>();
+    public ListYmlsJobResponse addConfigListItem(ConfigListRsp configListItem) {
+        if (this.configList == null) {
+            this.configList = new ArrayList<>();
         }
-        this.configurations.add(configurationsItem);
+        this.configList.add(configListItem);
         return this;
     }
 
-    public ListYmlsJobResponse withConfigurations(Consumer<List<ConfigurationsRsp>> configurationsSetter) {
-        if (this.configurations == null) {
-            this.configurations = new ArrayList<>();
+    public ListYmlsJobResponse withConfigList(Consumer<List<ConfigListRsp>> configListSetter) {
+        if (this.configList == null) {
+            this.configList = new ArrayList<>();
         }
-        configurationsSetter.accept(this.configurations);
+        configListSetter.accept(this.configList);
         return this;
     }
 
     /**
      * 历史修改配置列表。
-     * @return configurations
+     * @return configList
      */
-    public List<ConfigurationsRsp> getConfigurations() {
-        return configurations;
+    public List<ConfigListRsp> getConfigList() {
+        return configList;
     }
 
-    public void setConfigurations(List<ConfigurationsRsp> configurations) {
-        this.configurations = configurations;
+    public void setConfigList(List<ConfigListRsp> configList) {
+        this.configList = configList;
     }
 
     @Override
@@ -61,19 +64,19 @@ public class ListYmlsJobResponse extends SdkResponse {
             return false;
         }
         ListYmlsJobResponse listYmlsJobResponse = (ListYmlsJobResponse) o;
-        return Objects.equals(this.configurations, listYmlsJobResponse.configurations);
+        return Objects.equals(this.configList, listYmlsJobResponse.configList);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(configurations);
+        return Objects.hash(configList);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListYmlsJobResponse {\n");
-        sb.append("    configurations: ").append(toIndentedString(configurations)).append("\n");
+        sb.append("    configList: ").append(toIndentedString(configList)).append("\n");
         sb.append("}");
         return sb.toString();
     }

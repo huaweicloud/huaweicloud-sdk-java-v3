@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cloudtest.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,25 +17,35 @@ public class TestPlanJournalDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated")
 
+    @JacksonXmlProperty(localName = "updated")
+
     private List<AttributeChange> updated = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "added")
+
+    @JacksonXmlProperty(localName = "added")
 
     private List<NameAndId> added = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deleted")
 
+    @JacksonXmlProperty(localName = "deleted")
+
     private List<NameAndId> deleted = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "journalized_type")
 
+    @JacksonXmlProperty(localName = "journalized_type")
+
     private String journalizedType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
+
+    @JacksonXmlProperty(localName = "type")
 
     private String type;
 

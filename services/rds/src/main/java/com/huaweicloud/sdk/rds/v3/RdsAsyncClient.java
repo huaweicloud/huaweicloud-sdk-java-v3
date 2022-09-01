@@ -2993,6 +2993,38 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 修改数据库用户名备注
+     *
+     * 修改数据库用户名备注
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateDbUserCommentRequest 请求对象
+     * @return CompletableFuture<UpdateDbUserCommentResponse>
+     */
+    public CompletableFuture<UpdateDbUserCommentResponse> updateDbUserCommentAsync(UpdateDbUserCommentRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.updateDbUserComment);
+    }
+
+    /**
+     * 修改数据库用户名备注
+     *
+     * 修改数据库用户名备注
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateDbUserCommentRequest 请求对象
+     * @return AsyncInvoker<UpdateDbUserCommentRequest, UpdateDbUserCommentResponse>
+     */
+    public AsyncInvoker<UpdateDbUserCommentRequest, UpdateDbUserCommentResponse> updateDbUserCommentAsyncInvoker(
+        UpdateDbUserCommentRequest request) {
+        return new AsyncInvoker<UpdateDbUserCommentRequest, UpdateDbUserCommentResponse>(request,
+            RdsMeta.updateDbUserComment, hcClient);
+    }
+
+    /**
      * 授权数据库帐号
      *
      * 在指定实例的数据库中, 设置帐号的权限。

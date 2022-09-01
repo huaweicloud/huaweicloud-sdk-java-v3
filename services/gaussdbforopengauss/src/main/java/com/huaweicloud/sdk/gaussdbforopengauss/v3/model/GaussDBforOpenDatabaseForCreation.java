@@ -8,6 +8,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -21,6 +23,7 @@ public class GaussDBforOpenDatabaseForCreation  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
+    @JacksonXmlProperty(localName = "name")
     
     private String name;
 
@@ -28,6 +31,7 @@ public class GaussDBforOpenDatabaseForCreation  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="character_set")
     
+    @JacksonXmlProperty(localName = "character_set")
     
     private String characterSet;
 
@@ -35,6 +39,7 @@ public class GaussDBforOpenDatabaseForCreation  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="owner")
     
+    @JacksonXmlProperty(localName = "owner")
     
     private String owner;
 
@@ -42,6 +47,7 @@ public class GaussDBforOpenDatabaseForCreation  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="template")
     
+    @JacksonXmlProperty(localName = "template")
     
     private String template;
 
@@ -49,6 +55,7 @@ public class GaussDBforOpenDatabaseForCreation  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="lc_collate")
     
+    @JacksonXmlProperty(localName = "lc_collate")
     
     private String lcCollate;
 
@@ -56,6 +63,7 @@ public class GaussDBforOpenDatabaseForCreation  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="lc_ctype")
     
+    @JacksonXmlProperty(localName = "lc_ctype")
     
     private String lcCtype;
 

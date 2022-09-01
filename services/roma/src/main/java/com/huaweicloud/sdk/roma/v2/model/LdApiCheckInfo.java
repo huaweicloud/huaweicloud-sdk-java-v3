@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -95,10 +96,14 @@ public class LdApiCheckInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
+    @JacksonXmlProperty(localName = "type")
+
     private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ld_api_name")
+
+    @JacksonXmlProperty(localName = "ld_api_name")
 
     private String ldApiName;
 
@@ -194,15 +199,21 @@ public class LdApiCheckInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ld_api_method")
 
+    @JacksonXmlProperty(localName = "ld_api_method")
+
     private LdApiMethodEnum ldApiMethod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ld_api_path")
 
+    @JacksonXmlProperty(localName = "ld_api_path")
+
     private String ldApiPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "roma_app_id")
+
+    @JacksonXmlProperty(localName = "roma_app_id")
 
     private String romaAppId;
 

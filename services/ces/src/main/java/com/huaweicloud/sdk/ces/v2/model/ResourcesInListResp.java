@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ces.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,15 +17,21 @@ public class ResourcesInListResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_group_id")
 
+    @JacksonXmlProperty(localName = "resource_group_id")
+
     private String resourceGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_group_name")
 
+    @JacksonXmlProperty(localName = "resource_group_name")
+
     private String resourceGroupName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dimensions")
+
+    @JacksonXmlProperty(localName = "dimensions")
 
     private List<MetricDimension> dimensions = null;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.dgc.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,25 +17,35 @@ public class Cron {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "startTime")
 
+    @JacksonXmlProperty(localName = "startTime")
+
     private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "endTime")
+
+    @JacksonXmlProperty(localName = "endTime")
 
     private String endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expression")
 
+    @JacksonXmlProperty(localName = "expression")
+
     private String expression;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dependPrePeriod")
 
+    @JacksonXmlProperty(localName = "dependPrePeriod")
+
     private Boolean dependPrePeriod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dependJobs")
+
+    @JacksonXmlProperty(localName = "dependJobs")
 
     private List<DependJob> dependJobs = null;
 

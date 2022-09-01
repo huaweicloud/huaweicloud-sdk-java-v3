@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -98,35 +99,49 @@ public class Thumbnail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
+    @JacksonXmlProperty(localName = "type")
+
     private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time")
+
+    @JacksonXmlProperty(localName = "time")
 
     private Integer time;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dots")
 
+    @JacksonXmlProperty(localName = "dots")
+
     private List<Integer> dots = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cover_position")
+
+    @JacksonXmlProperty(localName = "cover_position")
 
     private Integer coverPosition;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "format")
 
+    @JacksonXmlProperty(localName = "format")
+
     private Integer format;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "aspect_ratio")
 
+    @JacksonXmlProperty(localName = "aspect_ratio")
+
     private Integer aspectRatio;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_length")
+
+    @JacksonXmlProperty(localName = "max_length")
 
     private Integer maxLength;
 

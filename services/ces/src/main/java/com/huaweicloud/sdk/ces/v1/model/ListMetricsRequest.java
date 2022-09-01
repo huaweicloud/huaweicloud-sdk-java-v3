@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,30 +19,42 @@ public class ListMetricsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dim.0")
 
+    @JacksonXmlProperty(localName = "dim.0")
+
     private String dim0;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dim.1")
+
+    @JacksonXmlProperty(localName = "dim.1")
 
     private String dim1;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dim.2")
 
+    @JacksonXmlProperty(localName = "dim.2")
+
     private String dim2;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
+
+    @JacksonXmlProperty(localName = "limit")
 
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metric_name")
 
+    @JacksonXmlProperty(localName = "metric_name")
+
     private String metricName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "namespace")
+
+    @JacksonXmlProperty(localName = "namespace")
 
     private String namespace;
 
@@ -125,10 +138,14 @@ public class ListMetricsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "order")
 
+    @JacksonXmlProperty(localName = "order")
+
     private OrderEnum order;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start")
+
+    @JacksonXmlProperty(localName = "start")
 
     private String start;
 

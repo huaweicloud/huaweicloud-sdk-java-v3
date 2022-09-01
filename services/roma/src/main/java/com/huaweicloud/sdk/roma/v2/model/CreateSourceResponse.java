@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Collections;
@@ -19,30 +20,42 @@ public class CreateSourceResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_id")
 
+    @JacksonXmlProperty(localName = "source_id")
+
     private Integer sourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "product_id")
+
+    @JacksonXmlProperty(localName = "product_id")
 
     private Integer productId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "device_id")
 
+    @JacksonXmlProperty(localName = "device_id")
+
     private Integer deviceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "topic")
+
+    @JacksonXmlProperty(localName = "topic")
 
     private String topic;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "device_name")
 
+    @JacksonXmlProperty(localName = "device_name")
+
     private String deviceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "product_name")
+
+    @JacksonXmlProperty(localName = "product_name")
 
     private String productName;
 
@@ -126,6 +139,8 @@ public class CreateSourceResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_base64")
 
+    @JacksonXmlProperty(localName = "is_base64")
+
     private IsBase64Enum isBase64;
 
     /**
@@ -207,6 +222,8 @@ public class CreateSourceResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "contain_device_info")
+
+    @JacksonXmlProperty(localName = "contain_device_info")
 
     private ContainDeviceInfoEnum containDeviceInfo;
 

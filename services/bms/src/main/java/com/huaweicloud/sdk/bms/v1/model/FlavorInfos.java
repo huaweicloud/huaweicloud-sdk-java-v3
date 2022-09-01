@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.bms.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,25 +14,35 @@ public class FlavorInfos {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "disk")
 
+    @JacksonXmlProperty(localName = "disk")
+
     private String disk;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vcpus")
 
+    @JacksonXmlProperty(localName = "vcpus")
+
     private String vcpus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ram")
+
+    @JacksonXmlProperty(localName = "ram")
 
     private String ram;
 

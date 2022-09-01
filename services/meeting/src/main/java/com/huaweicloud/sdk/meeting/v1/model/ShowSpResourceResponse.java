@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -17,70 +18,98 @@ public class ShowSpResourceResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "te1080pHardCount")
 
+    @JacksonXmlProperty(localName = "te1080pHardCount")
+
     private ResDetailDTO te1080pHardCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "te720pHardCount")
+
+    @JacksonXmlProperty(localName = "te720pHardCount")
 
     private ResDetailDTO te720pHardCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "teSoftCount")
 
+    @JacksonXmlProperty(localName = "teSoftCount")
+
     private ResDetailDTO teSoftCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "roomCount")
+
+    @JacksonXmlProperty(localName = "roomCount")
 
     private ResDetailDTO roomCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "recordCapability")
 
+    @JacksonXmlProperty(localName = "recordCapability")
+
     private ResDetailDTO recordCapability;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confCallCount")
+
+    @JacksonXmlProperty(localName = "confCallCount")
 
     private ResDetailDTO confCallCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "liveCount")
 
+    @JacksonXmlProperty(localName = "liveCount")
+
     private ResDetailDTO liveCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "corpCount")
+
+    @JacksonXmlProperty(localName = "corpCount")
 
     private ResDetailDTO corpCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "thirdPartyHardCount")
 
+    @JacksonXmlProperty(localName = "thirdPartyHardCount")
+
     private ResDetailDTO thirdPartyHardCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hwVisionCount")
+
+    @JacksonXmlProperty(localName = "hwVisionCount")
 
     private ResDetailDTO hwVisionCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ideaHubCount")
 
+    @JacksonXmlProperty(localName = "ideaHubCount")
+
     private ResDetailDTO ideaHubCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enablePstn")
+
+    @JacksonXmlProperty(localName = "enablePstn")
 
     private Boolean enablePstn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enableSMS")
 
+    @JacksonXmlProperty(localName = "enableSMS")
+
     private Boolean enableSMS;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "groupList")
+
+    @JacksonXmlProperty(localName = "groupList")
 
     private List<QueryCorpGroupDTO> groupList = null;
 

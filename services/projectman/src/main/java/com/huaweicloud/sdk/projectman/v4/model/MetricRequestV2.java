@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.projectman.v4.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,20 +15,28 @@ public class MetricRequestV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "date_range")
 
+    @JacksonXmlProperty(localName = "date_range")
+
     private String dateRange;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metric_type")
+
+    @JacksonXmlProperty(localName = "metric_type")
 
     private String metricType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dividend")
 
+    @JacksonXmlProperty(localName = "dividend")
+
     private MetricRequestV2Dividend dividend;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "divisor")
+
+    @JacksonXmlProperty(localName = "divisor")
 
     private Object divisor;
 

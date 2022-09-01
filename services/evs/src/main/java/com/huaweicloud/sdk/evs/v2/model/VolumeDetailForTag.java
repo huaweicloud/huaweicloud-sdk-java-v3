@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.evs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -18,165 +19,231 @@ public class VolumeDetailForTag {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "links")
+
+    @JacksonXmlProperty(localName = "links")
 
     private List<Link> links = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
+
+    @JacksonXmlProperty(localName = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "attachments")
 
+    @JacksonXmlProperty(localName = "attachments")
+
     private List<Attachment> attachments = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "availability_zone")
+
+    @JacksonXmlProperty(localName = "availability_zone")
 
     private String availabilityZone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os-vol-host-attr:host")
 
+    @JacksonXmlProperty(localName = "os-vol-host-attr:host")
+
     private String osVolHostAttrHost;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_volid")
+
+    @JacksonXmlProperty(localName = "source_volid")
 
     private String sourceVolid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "snapshot_id")
 
+    @JacksonXmlProperty(localName = "snapshot_id")
+
     private String snapshotId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
+
+    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
 
+    @JacksonXmlProperty(localName = "created_at")
+
     private String createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os-vol-tenant-attr:tenant_id")
+
+    @JacksonXmlProperty(localName = "os-vol-tenant-attr:tenant_id")
 
     private String osVolTenantAttrTenantId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volume_image_metadata")
 
+    @JacksonXmlProperty(localName = "volume_image_metadata")
+
     private Map<String, Object> volumeImageMetadata = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volume_type")
+
+    @JacksonXmlProperty(localName = "volume_type")
 
     private String volumeType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
 
+    @JacksonXmlProperty(localName = "size")
+
     private Integer size;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "consistencygroup_id")
+
+    @JacksonXmlProperty(localName = "consistencygroup_id")
 
     private String consistencygroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bootable")
 
+    @JacksonXmlProperty(localName = "bootable")
+
     private String bootable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metadata")
+
+    @JacksonXmlProperty(localName = "metadata")
 
     private VolumeMetadata metadata;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_at")
 
+    @JacksonXmlProperty(localName = "updated_at")
+
     private String updatedAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "encrypted")
+
+    @JacksonXmlProperty(localName = "encrypted")
 
     private Boolean encrypted;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "replication_status")
 
+    @JacksonXmlProperty(localName = "replication_status")
+
     private String replicationStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os-volume-replication:extended_status")
+
+    @JacksonXmlProperty(localName = "os-volume-replication:extended_status")
 
     private String osVolumeReplicationExtendedStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os-vol-mig-status-attr:migstat")
 
+    @JacksonXmlProperty(localName = "os-vol-mig-status-attr:migstat")
+
     private String osVolMigStatusAttrMigstat;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os-vol-mig-status-attr:name_id")
+
+    @JacksonXmlProperty(localName = "os-vol-mig-status-attr:name_id")
 
     private String osVolMigStatusAttrNameId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "shareable")
 
+    @JacksonXmlProperty(localName = "shareable")
+
     private Boolean shareable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_id")
+
+    @JacksonXmlProperty(localName = "user_id")
 
     private String userId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_type")
 
+    @JacksonXmlProperty(localName = "service_type")
+
     private String serviceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "multiattach")
+
+    @JacksonXmlProperty(localName = "multiattach")
 
     private Boolean multiattach;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dedicated_storage_id")
 
+    @JacksonXmlProperty(localName = "dedicated_storage_id")
+
     private String dedicatedStorageId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dedicated_storage_name")
+
+    @JacksonXmlProperty(localName = "dedicated_storage_name")
 
     private String dedicatedStorageName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
+    @JacksonXmlProperty(localName = "tags")
+
     private Map<String, String> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "wwn")
 
+    @JacksonXmlProperty(localName = "wwn")
+
     private String wwn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
+
+    @JacksonXmlProperty(localName = "enterprise_project_id")
 
     private String enterpriseProjectId;
 

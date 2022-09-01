@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.roma.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,25 +14,35 @@ public class RequestCountStats {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "req_count")
 
+    @JacksonXmlProperty(localName = "req_count")
+
     private Integer reqCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "req_count2xx")
+
+    @JacksonXmlProperty(localName = "req_count2xx")
 
     private Integer reqCount2xx;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "req_count4xx")
 
+    @JacksonXmlProperty(localName = "req_count4xx")
+
     private Integer reqCount4xx;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "req_count5xx")
 
+    @JacksonXmlProperty(localName = "req_count5xx")
+
     private Integer reqCount5xx;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "req_count_error")
+
+    @JacksonXmlProperty(localName = "req_count_error")
 
     private Integer reqCountError;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.vod.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,20 +17,28 @@ public class ThumbnailInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sample")
 
+    @JacksonXmlProperty(localName = "sample")
+
     private List<ThumbnailRsp> sample = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dots")
+
+    @JacksonXmlProperty(localName = "dots")
 
     private List<ThumbnailRsp> dots = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "exec_desc")
 
+    @JacksonXmlProperty(localName = "exec_desc")
+
     private String execDesc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "thumbnail_status")
+
+    @JacksonXmlProperty(localName = "thumbnail_status")
 
     private String thumbnailStatus;
 

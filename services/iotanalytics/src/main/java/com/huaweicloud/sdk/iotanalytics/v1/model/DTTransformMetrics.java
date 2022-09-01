@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.iotanalytics.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,15 +17,21 @@ public class DTTransformMetrics {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "inputs")
 
+    @JacksonXmlProperty(localName = "inputs")
+
     private List<MetricInput> inputs = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expression")
 
+    @JacksonXmlProperty(localName = "expression")
+
     private String expression;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metric_name")
+
+    @JacksonXmlProperty(localName = "metric_name")
 
     private String metricName;
 

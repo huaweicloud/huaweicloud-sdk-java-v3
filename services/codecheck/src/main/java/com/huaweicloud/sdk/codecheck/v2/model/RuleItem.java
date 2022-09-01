@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.codecheck.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,35 +17,49 @@ public class RuleItem {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rule_id")
 
+    @JacksonXmlProperty(localName = "rule_id")
+
     private String ruleId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rule_language")
+
+    @JacksonXmlProperty(localName = "rule_language")
 
     private String ruleLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rule_name")
 
+    @JacksonXmlProperty(localName = "rule_name")
+
     private String ruleName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rule_severity")
+
+    @JacksonXmlProperty(localName = "rule_severity")
 
     private String ruleSeverity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rule_tages")
 
+    @JacksonXmlProperty(localName = "rule_tages")
+
     private String ruleTages;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "checked")
 
+    @JacksonXmlProperty(localName = "checked")
+
     private String checked;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rule_config_list")
+
+    @JacksonXmlProperty(localName = "rule_config_list")
 
     private List<RuleConfig> ruleConfigList = null;
 

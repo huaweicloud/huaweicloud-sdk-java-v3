@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.css.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,17 +15,23 @@ public class UpdateFlavorByTypeRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cluster_id")
 
+    @JacksonXmlProperty(localName = "cluster_id")
+
     private String clusterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "types")
+
+    @JacksonXmlProperty(localName = "types")
 
     private String types;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private UpdateFlavorReq body;
+    @JacksonXmlProperty(localName = "body")
+
+    private UpdateFlavorByTypeReq body;
 
     public UpdateFlavorByTypeRequest withClusterId(String clusterId) {
         this.clusterId = clusterId;
@@ -60,14 +67,14 @@ public class UpdateFlavorByTypeRequest {
         this.types = types;
     }
 
-    public UpdateFlavorByTypeRequest withBody(UpdateFlavorReq body) {
+    public UpdateFlavorByTypeRequest withBody(UpdateFlavorByTypeReq body) {
         this.body = body;
         return this;
     }
 
-    public UpdateFlavorByTypeRequest withBody(Consumer<UpdateFlavorReq> bodySetter) {
+    public UpdateFlavorByTypeRequest withBody(Consumer<UpdateFlavorByTypeReq> bodySetter) {
         if (this.body == null) {
-            this.body = new UpdateFlavorReq();
+            this.body = new UpdateFlavorByTypeReq();
             bodySetter.accept(this.body);
         }
 
@@ -78,11 +85,11 @@ public class UpdateFlavorByTypeRequest {
      * Get body
      * @return body
      */
-    public UpdateFlavorReq getBody() {
+    public UpdateFlavorByTypeReq getBody() {
         return body;
     }
 
-    public void setBody(UpdateFlavorReq body) {
+    public void setBody(UpdateFlavorByTypeReq body) {
         this.body = body;
     }
 

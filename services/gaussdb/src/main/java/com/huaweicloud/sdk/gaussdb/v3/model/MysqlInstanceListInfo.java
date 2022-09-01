@@ -16,6 +16,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.MysqlFlavorInfo;
 import com.huaweicloud.sdk.gaussdb.v3.model.MysqlVolumeInfo;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -29,6 +31,7 @@ public class MysqlInstanceListInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
+    @JacksonXmlProperty(localName = "id")
     
     private String id;
 
@@ -36,6 +39,7 @@ public class MysqlInstanceListInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
+    @JacksonXmlProperty(localName = "name")
     
     private String name;
 
@@ -43,6 +47,7 @@ public class MysqlInstanceListInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
+    @JacksonXmlProperty(localName = "status")
     
     private String status;
 
@@ -50,6 +55,7 @@ public class MysqlInstanceListInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="private_ips")
     
+    @JacksonXmlProperty(localName = "private_ips")
     
     private List<String> privateIps = null;
     
@@ -57,6 +63,7 @@ public class MysqlInstanceListInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="public_ips")
     
+    @JacksonXmlProperty(localName = "public_ips")
     
     private List<String> publicIps = null;
     
@@ -64,6 +71,7 @@ public class MysqlInstanceListInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="port")
     
+    @JacksonXmlProperty(localName = "port")
     
     private String port;
 
@@ -71,6 +79,7 @@ public class MysqlInstanceListInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
+    @JacksonXmlProperty(localName = "type")
     
     private String type;
 
@@ -78,6 +87,7 @@ public class MysqlInstanceListInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="region")
     
+    @JacksonXmlProperty(localName = "region")
     
     private String region;
 
@@ -85,6 +95,7 @@ public class MysqlInstanceListInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="datastore")
     
+    @JacksonXmlProperty(localName = "datastore")
     
     private MysqlDatastoreWithKernelVersion datastore;
 
@@ -92,6 +103,7 @@ public class MysqlInstanceListInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created")
     
+    @JacksonXmlProperty(localName = "created")
     
     private String created;
 
@@ -99,6 +111,7 @@ public class MysqlInstanceListInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="updated")
     
+    @JacksonXmlProperty(localName = "updated")
     
     private String updated;
 
@@ -106,6 +119,7 @@ public class MysqlInstanceListInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="db_user_name")
     
+    @JacksonXmlProperty(localName = "db_user_name")
     
     private String dbUserName;
 
@@ -113,6 +127,7 @@ public class MysqlInstanceListInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vpc_id")
     
+    @JacksonXmlProperty(localName = "vpc_id")
     
     private String vpcId;
 
@@ -120,6 +135,7 @@ public class MysqlInstanceListInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="subnet_id")
     
+    @JacksonXmlProperty(localName = "subnet_id")
     
     private String subnetId;
 
@@ -127,6 +143,7 @@ public class MysqlInstanceListInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="security_group_id")
     
+    @JacksonXmlProperty(localName = "security_group_id")
     
     private String securityGroupId;
 
@@ -134,6 +151,7 @@ public class MysqlInstanceListInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="flavor_ref")
     
+    @JacksonXmlProperty(localName = "flavor_ref")
     
     private String flavorRef;
 
@@ -141,6 +159,7 @@ public class MysqlInstanceListInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="flavor_info")
     
+    @JacksonXmlProperty(localName = "flavor_info")
     
     private MysqlFlavorInfo flavorInfo;
 
@@ -148,6 +167,7 @@ public class MysqlInstanceListInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="volume")
     
+    @JacksonXmlProperty(localName = "volume")
     
     private MysqlVolumeInfo volume;
 
@@ -155,6 +175,7 @@ public class MysqlInstanceListInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="backup_strategy")
     
+    @JacksonXmlProperty(localName = "backup_strategy")
     
     private MysqlBackupStrategy backupStrategy;
 
@@ -162,6 +183,7 @@ public class MysqlInstanceListInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_id")
     
+    @JacksonXmlProperty(localName = "enterprise_project_id")
     
     private String enterpriseProjectId;
 
@@ -169,6 +191,7 @@ public class MysqlInstanceListInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="time_zone")
     
+    @JacksonXmlProperty(localName = "time_zone")
     
     private String timeZone;
 
@@ -176,6 +199,7 @@ public class MysqlInstanceListInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="charge_info")
     
+    @JacksonXmlProperty(localName = "charge_info")
     
     private MysqlChargeInfo chargeInfo;
 
@@ -183,6 +207,7 @@ public class MysqlInstanceListInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dedicated_resource_id")
     
+    @JacksonXmlProperty(localName = "dedicated_resource_id")
     
     private String dedicatedResourceId;
 
@@ -190,6 +215,7 @@ public class MysqlInstanceListInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
+    @JacksonXmlProperty(localName = "tags")
     
     private List<InstanceTagItem> tags = null;
     

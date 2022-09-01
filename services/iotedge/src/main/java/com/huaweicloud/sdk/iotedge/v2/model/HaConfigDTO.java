@@ -9,6 +9,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.iotedge.v2.model.ActiveStandbyConfigDTO;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -22,6 +24,7 @@ public class HaConfigDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ha_type")
     
+    @JacksonXmlProperty(localName = "ha_type")
     
     private String haType;
 
@@ -29,6 +32,7 @@ public class HaConfigDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="active_standby_config")
     
+    @JacksonXmlProperty(localName = "active_standby_config")
     
     private ActiveStandbyConfigDTO activeStandbyConfig;
 

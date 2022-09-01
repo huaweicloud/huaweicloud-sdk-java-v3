@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.lts.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class FieldModel {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "field_name")
 
+    @JacksonXmlProperty(localName = "field_name")
+
     private String fieldName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_analysis")
+
+    @JacksonXmlProperty(localName = "is_analysis")
 
     private Boolean isAnalysis;
 

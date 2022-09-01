@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ocr.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,35 +14,49 @@ public class BankcardResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bank_name")
 
+    @JacksonXmlProperty(localName = "bank_name")
+
     private String bankName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "card_number")
+
+    @JacksonXmlProperty(localName = "card_number")
 
     private String cardNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "issue_date")
 
+    @JacksonXmlProperty(localName = "issue_date")
+
     private String issueDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expiry_date")
+
+    @JacksonXmlProperty(localName = "expiry_date")
 
     private String expiryDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
+    @JacksonXmlProperty(localName = "type")
+
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confidence")
 
+    @JacksonXmlProperty(localName = "confidence")
+
     private Object confidence;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "text_location")
+
+    @JacksonXmlProperty(localName = "text_location")
 
     private Object textLocation;
 

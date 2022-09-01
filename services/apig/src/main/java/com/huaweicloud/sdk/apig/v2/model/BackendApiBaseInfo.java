@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,10 +19,14 @@ public class BackendApiBaseInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "authorizer_id")
 
+    @JacksonXmlProperty(localName = "authorizer_id")
+
     private String authorizerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "url_domain")
+
+    @JacksonXmlProperty(localName = "url_domain")
 
     private String urlDomain;
 
@@ -105,10 +110,14 @@ public class BackendApiBaseInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "req_protocol")
 
+    @JacksonXmlProperty(localName = "req_protocol")
+
     private ReqProtocolEnum reqProtocol;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remark")
+
+    @JacksonXmlProperty(localName = "remark")
 
     private String remark;
 
@@ -228,25 +237,35 @@ public class BackendApiBaseInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "req_method")
 
+    @JacksonXmlProperty(localName = "req_method")
+
     private ReqMethodEnum reqMethod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
+
+    @JacksonXmlProperty(localName = "version")
 
     private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "req_uri")
 
+    @JacksonXmlProperty(localName = "req_uri")
+
     private String reqUri;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timeout")
 
+    @JacksonXmlProperty(localName = "timeout")
+
     private Integer timeout;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_client_ssl")
+
+    @JacksonXmlProperty(localName = "enable_client_ssl")
 
     private Boolean enableClientSsl;
 

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,10 +22,14 @@ public class BandwidthResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bandwidth_type")
 
+    @JacksonXmlProperty(localName = "bandwidth_type")
+
     private String bandwidthType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "billing_info")
+
+    @JacksonXmlProperty(localName = "billing_info")
 
     private String billingInfo;
 
@@ -114,20 +119,28 @@ public class BandwidthResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "charge_mode")
 
+    @JacksonXmlProperty(localName = "charge_mode")
+
     private ChargeModeEnum chargeMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
+
+    @JacksonXmlProperty(localName = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publicip_info")
+
+    @JacksonXmlProperty(localName = "publicip_info")
 
     private List<PublicipInfoResp> publicipInfo = null;
 
@@ -211,20 +224,28 @@ public class BandwidthResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "share_type")
 
+    @JacksonXmlProperty(localName = "share_type")
+
     private ShareTypeEnum shareType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
+
+    @JacksonXmlProperty(localName = "size")
 
     private Integer size;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tenant_id")
 
+    @JacksonXmlProperty(localName = "tenant_id")
+
     private String tenantId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
+
+    @JacksonXmlProperty(localName = "enterprise_project_id")
 
     private String enterpriseProjectId;
 
@@ -308,35 +329,49 @@ public class BandwidthResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_bandwidth_rules")
+
+    @JacksonXmlProperty(localName = "enable_bandwidth_rules")
 
     private Boolean enableBandwidthRules;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rule_quota")
 
+    @JacksonXmlProperty(localName = "rule_quota")
+
     private Integer ruleQuota;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bandwidth_rules")
+
+    @JacksonXmlProperty(localName = "bandwidth_rules")
 
     private List<BandWidthRules> bandwidthRules = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
 
+    @JacksonXmlProperty(localName = "created_at")
+
     private String createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_at")
 
+    @JacksonXmlProperty(localName = "updated_at")
+
     private String updatedAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "public_border_group")
+
+    @JacksonXmlProperty(localName = "public_border_group")
 
     private String publicBorderGroup;
 

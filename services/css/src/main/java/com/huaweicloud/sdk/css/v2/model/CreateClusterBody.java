@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.css.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,70 +17,98 @@ public class CreateClusterBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "backupStrategy")
+
+    @JacksonXmlProperty(localName = "backupStrategy")
 
     private CreateClusterBackupStrategyBody backupStrategy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "roles")
 
+    @JacksonXmlProperty(localName = "roles")
+
     private List<CreateClusterRolesBody> roles = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nics")
+
+    @JacksonXmlProperty(localName = "nics")
 
     private CreateClusterInstanceNicsBody nics;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
+    @JacksonXmlProperty(localName = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
+
+    @JacksonXmlProperty(localName = "tags")
 
     private List<CreateClusterTagsBody> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "availability_zone")
 
+    @JacksonXmlProperty(localName = "availability_zone")
+
     private String availabilityZone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "datastore")
+
+    @JacksonXmlProperty(localName = "datastore")
 
     private CreateClusterDatastoreBody datastore;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "authorityEnable")
 
+    @JacksonXmlProperty(localName = "authorityEnable")
+
     private Boolean authorityEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "httpsEnable")
+
+    @JacksonXmlProperty(localName = "httpsEnable")
 
     private Boolean httpsEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "adminPwd")
 
+    @JacksonXmlProperty(localName = "adminPwd")
+
     private String adminPwd;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publicIPReq")
+
+    @JacksonXmlProperty(localName = "publicIPReq")
 
     private CreateClusterPublicIpReq publicIPReq;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "loadBalance")
 
+    @JacksonXmlProperty(localName = "loadBalance")
+
     private CreateClusterLoadBalance loadBalance;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publicKibanaReq")
+
+    @JacksonXmlProperty(localName = "publicKibanaReq")
 
     private CreateClusterPublicKibanaReq publicKibanaReq;
 

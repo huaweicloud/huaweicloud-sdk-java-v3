@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -138,35 +139,49 @@ public class NodeStatus {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "phase")
 
+    @JacksonXmlProperty(localName = "phase")
+
     private PhaseEnum phase;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "jobID")
+
+    @JacksonXmlProperty(localName = "jobID")
 
     private String jobID;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "serverId")
 
+    @JacksonXmlProperty(localName = "serverId")
+
     private String serverId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "privateIP")
+
+    @JacksonXmlProperty(localName = "privateIP")
 
     private String privateIP;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "privateIPv6IP")
 
+    @JacksonXmlProperty(localName = "privateIPv6IP")
+
     private String privateIPv6IP;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publicIP")
 
+    @JacksonXmlProperty(localName = "publicIP")
+
     private String publicIP;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deleteStatus")
+
+    @JacksonXmlProperty(localName = "deleteStatus")
 
     private DeleteStatus deleteStatus;
 

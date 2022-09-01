@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.hss.v5.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -14,35 +15,49 @@ public class ShowRiskConfigDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "severity")
 
+    @JacksonXmlProperty(localName = "severity")
+
     private String severity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "check_type_desc")
+
+    @JacksonXmlProperty(localName = "check_type_desc")
 
     private String checkTypeDesc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "check_rule_num")
 
+    @JacksonXmlProperty(localName = "check_rule_num")
+
     private Integer checkRuleNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "failed_rule_num")
+
+    @JacksonXmlProperty(localName = "failed_rule_num")
 
     private Integer failedRuleNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "passed_rule_num")
 
+    @JacksonXmlProperty(localName = "passed_rule_num")
+
     private Integer passedRuleNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ignored_rule_num")
 
+    @JacksonXmlProperty(localName = "ignored_rule_num")
+
     private Integer ignoredRuleNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_num")
+
+    @JacksonXmlProperty(localName = "host_num")
 
     private Long hostNum;
 

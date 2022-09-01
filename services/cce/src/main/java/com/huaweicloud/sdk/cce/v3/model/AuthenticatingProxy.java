@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cce.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class AuthenticatingProxy {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ca")
 
+    @JacksonXmlProperty(localName = "ca")
+
     private String ca;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cert")
 
+    @JacksonXmlProperty(localName = "cert")
+
     private String cert;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "privateKey")
+
+    @JacksonXmlProperty(localName = "privateKey")
 
     private String privateKey;
 

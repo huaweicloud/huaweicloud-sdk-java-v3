@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ugo.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -15,70 +16,98 @@ public class ShowEvaluationProjectDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_db_size")
 
+    @JacksonXmlProperty(localName = "source_db_size")
+
     private String sourceDbSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_db_schema")
+
+    @JacksonXmlProperty(localName = "source_db_schema")
 
     private Long sourceDbSchema;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_db_cpu")
 
+    @JacksonXmlProperty(localName = "source_db_cpu")
+
     private String sourceDbCpu;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_db_character_set")
+
+    @JacksonXmlProperty(localName = "source_db_character_set")
 
     private String sourceDbCharacterSet;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_db_os")
 
+    @JacksonXmlProperty(localName = "source_db_os")
+
     private String sourceDbOs;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_db_instance_num")
+
+    @JacksonXmlProperty(localName = "source_db_instance_num")
 
     private Integer sourceDbInstanceNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_db_ram")
 
+    @JacksonXmlProperty(localName = "source_db_ram")
+
     private String sourceDbRam;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_db_info")
+
+    @JacksonXmlProperty(localName = "source_db_info")
 
     private SourceDB sourceDbInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_db_phy_ram")
 
+    @JacksonXmlProperty(localName = "source_db_phy_ram")
+
     private String sourceDbPhyRam;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_db_version")
+
+    @JacksonXmlProperty(localName = "source_db_version")
 
     private String sourceDbVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_db_conf")
 
+    @JacksonXmlProperty(localName = "source_db_conf")
+
     private String sourceDbConf;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_db_clock")
+
+    @JacksonXmlProperty(localName = "source_db_clock")
 
     private String sourceDbClock;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "evaluation_project_id")
 
+    @JacksonXmlProperty(localName = "evaluation_project_id")
+
     private Integer evaluationProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "evaluation_project_name")
+
+    @JacksonXmlProperty(localName = "evaluation_project_name")
 
     private String evaluationProjectName;
 

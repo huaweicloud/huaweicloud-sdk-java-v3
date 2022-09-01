@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.vss.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.HashMap;
@@ -17,40 +18,56 @@ public class ShowDomainSettingsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_id")
 
+    @JacksonXmlProperty(localName = "domain_id")
+
     private String domainId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "login_url")
+
+    @JacksonXmlProperty(localName = "login_url")
 
     private String loginUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "login_username")
 
+    @JacksonXmlProperty(localName = "login_username")
+
     private String loginUsername;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "login_password")
+
+    @JacksonXmlProperty(localName = "login_password")
 
     private String loginPassword;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "login_cookies")
 
+    @JacksonXmlProperty(localName = "login_cookies")
+
     private String loginCookies;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "verify_url")
+
+    @JacksonXmlProperty(localName = "verify_url")
 
     private String verifyUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "http_headers")
 
+    @JacksonXmlProperty(localName = "http_headers")
+
     private Map<String, String> httpHeaders = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_name")
+
+    @JacksonXmlProperty(localName = "domain_name")
 
     private String domainName;
 

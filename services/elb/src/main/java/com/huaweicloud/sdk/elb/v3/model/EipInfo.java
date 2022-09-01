@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.elb.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class EipInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "eip_id")
 
+    @JacksonXmlProperty(localName = "eip_id")
+
     private String eipId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "eip_address")
 
+    @JacksonXmlProperty(localName = "eip_address")
+
     private String eipAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip_version")
+
+    @JacksonXmlProperty(localName = "ip_version")
 
     private Integer ipVersion;
 

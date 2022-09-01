@@ -54,7 +54,6 @@ public class CodeCheckMeta {
             }));
 
         // response
-
         builder.<List<CheckParametersRes>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -454,7 +453,6 @@ public class CodeCheckMeta {
             }));
 
         // response
-
         builder.<List<ListTaskRulesetRes>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,

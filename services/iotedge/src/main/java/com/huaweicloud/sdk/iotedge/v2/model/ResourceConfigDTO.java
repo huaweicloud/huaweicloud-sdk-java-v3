@@ -8,6 +8,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -21,6 +23,7 @@ public class ResourceConfigDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cpu")
     
+    @JacksonXmlProperty(localName = "cpu")
     
     private Float cpu;
 
@@ -28,6 +31,7 @@ public class ResourceConfigDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="memory")
     
+    @JacksonXmlProperty(localName = "memory")
     
     private Float memory;
 
@@ -35,6 +39,7 @@ public class ResourceConfigDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="gpu")
     
+    @JacksonXmlProperty(localName = "gpu")
     
     private Float gpu;
 
@@ -42,6 +47,7 @@ public class ResourceConfigDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="npu")
     
+    @JacksonXmlProperty(localName = "npu")
     
     private Float npu;
 

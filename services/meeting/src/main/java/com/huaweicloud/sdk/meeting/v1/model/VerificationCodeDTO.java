@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class VerificationCodeDTO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "contact")
 
+    @JacksonXmlProperty(localName = "contact")
+
     private String contact;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "verificationCode")
 
+    @JacksonXmlProperty(localName = "verificationCode")
+
     private String verificationCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "country")
+
+    @JacksonXmlProperty(localName = "country")
 
     private String country;
 

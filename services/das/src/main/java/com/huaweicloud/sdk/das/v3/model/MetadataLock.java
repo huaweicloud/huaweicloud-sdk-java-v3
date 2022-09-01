@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.das.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,85 +17,119 @@ public class MetadataLock {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "thread_id")
 
+    @JacksonXmlProperty(localName = "thread_id")
+
     private String threadId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lock_status")
+
+    @JacksonXmlProperty(localName = "lock_status")
 
     private String lockStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lock_mode")
 
+    @JacksonXmlProperty(localName = "lock_mode")
+
     private String lockMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lock_type")
+
+    @JacksonXmlProperty(localName = "lock_type")
 
     private String lockType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lock_duration")
 
+    @JacksonXmlProperty(localName = "lock_duration")
+
     private String lockDuration;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "table_schema")
+
+    @JacksonXmlProperty(localName = "table_schema")
 
     private String tableSchema;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "table_name")
 
+    @JacksonXmlProperty(localName = "table_name")
+
     private String tableName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user")
+
+    @JacksonXmlProperty(localName = "user")
 
     private String user;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time")
 
+    @JacksonXmlProperty(localName = "time")
+
     private String time;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host")
+
+    @JacksonXmlProperty(localName = "host")
 
     private String host;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "database")
 
+    @JacksonXmlProperty(localName = "database")
+
     private String database;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "command")
+
+    @JacksonXmlProperty(localName = "command")
 
     private String command;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "state")
 
+    @JacksonXmlProperty(localName = "state")
+
     private String state;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sql")
+
+    @JacksonXmlProperty(localName = "sql")
 
     private String sql;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trx_exec_time")
 
+    @JacksonXmlProperty(localName = "trx_exec_time")
+
     private String trxExecTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "block_process")
 
+    @JacksonXmlProperty(localName = "block_process")
+
     private List<Process> blockProcess = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "wait_process")
+
+    @JacksonXmlProperty(localName = "wait_process")
 
     private List<Process> waitProcess = null;
 

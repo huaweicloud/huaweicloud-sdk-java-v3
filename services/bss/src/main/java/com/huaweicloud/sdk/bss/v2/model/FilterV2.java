@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.bss.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,10 +15,14 @@ public class FilterV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operator")
 
+    @JacksonXmlProperty(localName = "operator")
+
     private Integer operator;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "filter_factor")
+
+    @JacksonXmlProperty(localName = "filter_factor")
 
     private FilterFactor filterFactor;
 

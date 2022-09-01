@@ -47,7 +47,6 @@ public class RomaMeta {
             }));
 
         // response
-
         builder.<List<Device>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -1988,7 +1987,6 @@ public class RomaMeta {
             }));
 
         // response
-
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -3125,7 +3123,6 @@ public class RomaMeta {
             }));
 
         // response
-
         builder.<List<MultiTaskInitElement>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -5518,7 +5515,6 @@ public class RomaMeta {
             }));
 
         // response
-
         builder.<List<ShadowService>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -11606,7 +11602,7 @@ public class RomaMeta {
             HttpRequestDef.builder(HttpMethod.POST, ImportAssetRequest.class, ImportAssetResponse.class)
                 .withName("ImportAsset")
                 .withUri("/v2/{project_id}/instances/{instance_id}/assets/import")
-                .withContentType("application/zip");
+                .withContentType("multipart/form-data");
 
         // requests
         builder.<String>withRequestField("instance_id",
@@ -11616,10 +11612,10 @@ public class RomaMeta {
             f -> f.withMarshaller(ImportAssetRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             }));
-        builder.<byte[]>withRequestField("body",
+        builder.<ImportAssetRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(byte[].class),
+            TypeCasts.uncheckedConversion(ImportAssetRequestBody.class),
             f -> f.withMarshaller(ImportAssetRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
@@ -11637,7 +11633,7 @@ public class RomaMeta {
         HttpRequestDef.Builder<CheckDictionaryRequest, CheckDictionaryResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, CheckDictionaryRequest.class, CheckDictionaryResponse.class)
                 .withName("CheckDictionary")
-                .withUri("/v2/{project_id}/instances/{instance_id}/dictionaries/{dict_id}")
+                .withUri("/v2{project_id}/instances/{instance_id}/dictionaries/{dict_id}")
                 .withContentType("application/json");
 
         // requests
@@ -11701,7 +11697,7 @@ public class RomaMeta {
         HttpRequestDef.Builder<DeleteDictionaryRequest, DeleteDictionaryResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteDictionaryRequest.class, DeleteDictionaryResponse.class)
                 .withName("DeleteDictionary")
-                .withUri("/v2/{project_id}/instances/{instance_id}/dictionaries/{dict_id}")
+                .withUri("/v2{project_id}/instances/{instance_id}/dictionaries/{dict_id}")
                 .withContentType("application/json");
 
         // requests
@@ -11793,7 +11789,7 @@ public class RomaMeta {
         HttpRequestDef.Builder<UpdateDictionaryRequest, UpdateDictionaryResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateDictionaryRequest.class, UpdateDictionaryResponse.class)
                 .withName("UpdateDictionary")
-                .withUri("/v2/{project_id}/instances/{instance_id}/dictionaries/{dict_id}")
+                .withUri("/v2{project_id}/instances/{instance_id}/dictionaries/{dict_id}")
                 .withContentType("application/json;charset=UTF-8");
 
         // requests

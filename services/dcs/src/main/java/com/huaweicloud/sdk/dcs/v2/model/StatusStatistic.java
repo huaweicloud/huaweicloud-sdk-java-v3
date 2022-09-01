@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.dcs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,65 +14,91 @@ public class StatusStatistic {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "paying_count")
 
+    @JacksonXmlProperty(localName = "paying_count")
+
     private Integer payingCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "freezing_count")
+
+    @JacksonXmlProperty(localName = "freezing_count")
 
     private Integer freezingCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "migrating_count")
 
+    @JacksonXmlProperty(localName = "migrating_count")
+
     private Integer migratingCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flushing_count")
+
+    @JacksonXmlProperty(localName = "flushing_count")
 
     private Integer flushingCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "upgrading_count")
 
+    @JacksonXmlProperty(localName = "upgrading_count")
+
     private Integer upgradingCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "restoring_count")
+
+    @JacksonXmlProperty(localName = "restoring_count")
 
     private Integer restoringCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extending_count")
 
+    @JacksonXmlProperty(localName = "extending_count")
+
     private Integer extendingCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "creating_count")
+
+    @JacksonXmlProperty(localName = "creating_count")
 
     private Integer creatingCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "running_count")
 
+    @JacksonXmlProperty(localName = "running_count")
+
     private Integer runningCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_count")
+
+    @JacksonXmlProperty(localName = "error_count")
 
     private Integer errorCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "frozen_count")
 
+    @JacksonXmlProperty(localName = "frozen_count")
+
     private Integer frozenCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "createfailed_count")
 
+    @JacksonXmlProperty(localName = "createfailed_count")
+
     private Integer createfailedCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "restarting_count")
+
+    @JacksonXmlProperty(localName = "restarting_count")
 
     private Integer restartingCount;
 

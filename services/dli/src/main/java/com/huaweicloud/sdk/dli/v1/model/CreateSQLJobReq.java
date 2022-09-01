@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,140 +17,196 @@ public class CreateSQLJobReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "desc")
+
+    @JacksonXmlProperty(localName = "desc")
 
     private String desc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template_id")
 
+    @JacksonXmlProperty(localName = "template_id")
+
     private Long templateId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "queue_name")
+
+    @JacksonXmlProperty(localName = "queue_name")
 
     private String queueName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sql_body")
 
+    @JacksonXmlProperty(localName = "sql_body")
+
     private String sqlBody;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "run_mode")
+
+    @JacksonXmlProperty(localName = "run_mode")
 
     private String runMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cu_number")
 
+    @JacksonXmlProperty(localName = "cu_number")
+
     private Integer cuNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parallel_number")
+
+    @JacksonXmlProperty(localName = "parallel_number")
 
     private Integer parallelNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "checkpoint_enabled")
 
+    @JacksonXmlProperty(localName = "checkpoint_enabled")
+
     private Boolean checkpointEnabled;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "checkpoint_mode")
+
+    @JacksonXmlProperty(localName = "checkpoint_mode")
 
     private Integer checkpointMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "checkpoint_interval")
 
+    @JacksonXmlProperty(localName = "checkpoint_interval")
+
     private Integer checkpointInterval;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "obs_bucket")
+
+    @JacksonXmlProperty(localName = "obs_bucket")
 
     private String obsBucket;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_enabled")
 
+    @JacksonXmlProperty(localName = "log_enabled")
+
     private Boolean logEnabled;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "smn_topic")
+
+    @JacksonXmlProperty(localName = "smn_topic")
 
     private String smnTopic;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "restart_when_exception")
 
+    @JacksonXmlProperty(localName = "restart_when_exception")
+
     private Boolean restartWhenException;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "idle_state_retention")
+
+    @JacksonXmlProperty(localName = "idle_state_retention")
 
     private Integer idleStateRetention;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_type")
 
+    @JacksonXmlProperty(localName = "job_type")
+
     private String jobType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "edge_group_ids")
+
+    @JacksonXmlProperty(localName = "edge_group_ids")
 
     private List<String> edgeGroupIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dirty_data_strategy")
 
+    @JacksonXmlProperty(localName = "dirty_data_strategy")
+
     private String dirtyDataStrategy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "udf_jar_url")
+
+    @JacksonXmlProperty(localName = "udf_jar_url")
 
     private String udfJarUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "manager_cu_number")
 
+    @JacksonXmlProperty(localName = "manager_cu_number")
+
     private Integer managerCuNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tm_cus")
+
+    @JacksonXmlProperty(localName = "tm_cus")
 
     private Integer tmCus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tm_slot_num")
 
+    @JacksonXmlProperty(localName = "tm_slot_num")
+
     private Integer tmSlotNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resume_checkpoint")
+
+    @JacksonXmlProperty(localName = "resume_checkpoint")
 
     private Boolean resumeCheckpoint;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resume_max_num")
 
+    @JacksonXmlProperty(localName = "resume_max_num")
+
     private Integer resumeMaxNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "runtime_config")
+
+    @JacksonXmlProperty(localName = "runtime_config")
 
     private String runtimeConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
+    @JacksonXmlProperty(localName = "tags")
+
     private List<JobsTags> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flink_version")
+
+    @JacksonXmlProperty(localName = "flink_version")
 
     private String flinkVersion;
 

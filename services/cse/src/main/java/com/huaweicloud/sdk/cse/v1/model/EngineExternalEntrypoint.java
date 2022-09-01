@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cse.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,20 +17,28 @@ public class EngineExternalEntrypoint {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "external_address")
 
+    @JacksonXmlProperty(localName = "external_address")
+
     private String externalAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "public_address")
+
+    @JacksonXmlProperty(localName = "public_address")
 
     private String publicAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_endpoint")
 
+    @JacksonXmlProperty(localName = "service_endpoint")
+
     private Map<String, EntrypointItem> serviceEndpoint = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "public_service_endpoint")
+
+    @JacksonXmlProperty(localName = "public_service_endpoint")
 
     private Map<String, EntrypointItem> publicServiceEndpoint = null;
 

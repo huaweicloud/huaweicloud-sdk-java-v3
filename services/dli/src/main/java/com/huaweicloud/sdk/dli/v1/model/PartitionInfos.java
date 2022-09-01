@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,40 +17,56 @@ public class PartitionInfos {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "partition_name")
 
+    @JacksonXmlProperty(localName = "partition_name")
+
     private String partitionName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
+
+    @JacksonXmlProperty(localName = "create_time")
 
     private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last_access_time")
 
+    @JacksonXmlProperty(localName = "last_access_time")
+
     private Long lastAccessTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "locations")
+
+    @JacksonXmlProperty(localName = "locations")
 
     private List<String> locations = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last_ddl_time")
 
+    @JacksonXmlProperty(localName = "last_ddl_time")
+
     private Long lastDdlTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "num_rows")
+
+    @JacksonXmlProperty(localName = "num_rows")
 
     private Long numRows;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "num_files")
 
+    @JacksonXmlProperty(localName = "num_files")
+
     private Long numFiles;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_size")
+
+    @JacksonXmlProperty(localName = "total_size")
 
     private Long totalSize;
 

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,45 +22,63 @@ public class AssetSummary {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "asset_id")
 
+    @JacksonXmlProperty(localName = "asset_id")
+
     private String assetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "title")
+
+    @JacksonXmlProperty(localName = "title")
 
     private String title;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
+    @JacksonXmlProperty(localName = "description")
+
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "duration")
+
+    @JacksonXmlProperty(localName = "duration")
 
     private Integer duration;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
 
+    @JacksonXmlProperty(localName = "size")
+
     private Long size;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "original_url")
+
+    @JacksonXmlProperty(localName = "original_url")
 
     private String originalUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "category")
 
+    @JacksonXmlProperty(localName = "category")
+
     private String category;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "covers")
 
+    @JacksonXmlProperty(localName = "covers")
+
     private List<CoverInfo> covers = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
+
+    @JacksonXmlProperty(localName = "create_time")
 
     private String createTime;
 
@@ -161,6 +180,8 @@ public class AssetSummary {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "asset_status")
 
+    @JacksonXmlProperty(localName = "asset_status")
+
     private AssetStatusEnum assetStatus;
 
     /**
@@ -261,6 +282,8 @@ public class AssetSummary {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "transcode_status")
 
+    @JacksonXmlProperty(localName = "transcode_status")
+
     private TranscodeStatusEnum transcodeStatus;
 
     /**
@@ -354,6 +377,8 @@ public class AssetSummary {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "thumbnail_status")
+
+    @JacksonXmlProperty(localName = "thumbnail_status")
 
     private ThumbnailStatusEnum thumbnailStatus;
 
@@ -461,15 +486,21 @@ public class AssetSummary {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "review_status")
 
+    @JacksonXmlProperty(localName = "review_status")
+
     private ReviewStatusEnum reviewStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "exec_desc")
 
+    @JacksonXmlProperty(localName = "exec_desc")
+
     private String execDesc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "media_type")
+
+    @JacksonXmlProperty(localName = "media_type")
 
     private String mediaType;
 

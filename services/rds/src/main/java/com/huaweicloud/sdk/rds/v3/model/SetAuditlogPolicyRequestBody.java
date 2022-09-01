@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.rds.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class SetAuditlogPolicyRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "keep_days")
 
+    @JacksonXmlProperty(localName = "keep_days")
+
     private Integer keepDays;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "reserve_auditlogs")
+
+    @JacksonXmlProperty(localName = "reserve_auditlogs")
 
     private Boolean reserveAuditlogs;
 
@@ -43,7 +48,7 @@ public class SetAuditlogPolicyRequestBody {
     }
 
     /**
-     * 仅关闭审计日志策略时有效。  - true（默认），表示关闭审计日志策略的同时，保留历史审计日志。 - false，表示关闭审计日志策略的同时，删除已有的历史审计日志。
+     * 仅关闭审计日志策略时有效。  - true（默认），表示关闭审计日志策略的同时，延迟删除已有的历史审计日志。 - false，表示关闭审计日志策略的同时，删除已有的历史审计日志。
      * @return reserveAuditlogs
      */
     public Boolean getReserveAuditlogs() {

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.apm.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -18,190 +19,266 @@ public class SpanEventInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "env_name")
 
+    @JacksonXmlProperty(localName = "env_name")
+
     private String envName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_name")
+
+    @JacksonXmlProperty(localName = "app_name")
 
     private String appName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "indent")
 
+    @JacksonXmlProperty(localName = "indent")
+
     private Integer indent;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region")
+
+    @JacksonXmlProperty(localName = "region")
 
     private String region;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_name")
 
+    @JacksonXmlProperty(localName = "host_name")
+
     private String hostName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip_address")
+
+    @JacksonXmlProperty(localName = "ip_address")
 
     private String ipAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_name")
 
+    @JacksonXmlProperty(localName = "instance_name")
+
     private String instanceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_id")
+
+    @JacksonXmlProperty(localName = "event_id")
 
     private String eventId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "next_spanId")
 
+    @JacksonXmlProperty(localName = "next_spanId")
+
     private String nextSpanId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_event_id")
+
+    @JacksonXmlProperty(localName = "source_event_id")
 
     private String sourceEventId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "method")
 
+    @JacksonXmlProperty(localName = "method")
+
     private String method;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "children_event_count")
+
+    @JacksonXmlProperty(localName = "children_event_count")
 
     private Integer childrenEventCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "discard")
 
+    @JacksonXmlProperty(localName = "discard")
+
     private List<DiscardInfo> discard = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "argument")
+
+    @JacksonXmlProperty(localName = "argument")
 
     private String argument;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "attachment")
 
+    @JacksonXmlProperty(localName = "attachment")
+
     private Map<String, String> attachment = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "global_trace_id")
+
+    @JacksonXmlProperty(localName = "global_trace_id")
 
     private String globalTraceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "global_path")
 
+    @JacksonXmlProperty(localName = "global_path")
+
     private String globalPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trace_id")
+
+    @JacksonXmlProperty(localName = "trace_id")
 
     private String traceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "span_id")
 
+    @JacksonXmlProperty(localName = "span_id")
+
     private String spanId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "env_id")
+
+    @JacksonXmlProperty(localName = "env_id")
 
     private Long envId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_id")
 
+    @JacksonXmlProperty(localName = "instance_id")
+
     private Long instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_id")
+
+    @JacksonXmlProperty(localName = "app_id")
 
     private Long appId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "biz_id")
 
+    @JacksonXmlProperty(localName = "biz_id")
+
     private Long bizId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_id")
+
+    @JacksonXmlProperty(localName = "domain_id")
 
     private Integer domainId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source")
 
+    @JacksonXmlProperty(localName = "source")
+
     private String source;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "real_source")
+
+    @JacksonXmlProperty(localName = "real_source")
 
     private String realSource;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
+    @JacksonXmlProperty(localName = "start_time")
+
     private Long startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time_used")
+
+    @JacksonXmlProperty(localName = "time_used")
 
     private Long timeUsed;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "code")
 
+    @JacksonXmlProperty(localName = "code")
+
     private Integer code;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "class_name")
+
+    @JacksonXmlProperty(localName = "class_name")
 
     private String className;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_async")
 
+    @JacksonXmlProperty(localName = "is_async")
+
     private Boolean isAsync;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
+
+    @JacksonXmlProperty(localName = "tags")
 
     private Map<String, String> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "has_error")
 
+    @JacksonXmlProperty(localName = "has_error")
+
     private Boolean hasError;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_reasons")
+
+    @JacksonXmlProperty(localName = "error_reasons")
 
     private String errorReasons;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
+    @JacksonXmlProperty(localName = "type")
+
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "http_method")
+
+    @JacksonXmlProperty(localName = "http_method")
 
     private String httpMethod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "biz_code")
 
+    @JacksonXmlProperty(localName = "biz_code")
+
     private String bizCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
+
+    @JacksonXmlProperty(localName = "id")
 
     private String id;
 

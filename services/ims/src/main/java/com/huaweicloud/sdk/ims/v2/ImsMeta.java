@@ -766,7 +766,6 @@ public class ImsMeta {
             }));
 
         // response
-
         builder.<List<ListOsVersionsResponseBody>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,

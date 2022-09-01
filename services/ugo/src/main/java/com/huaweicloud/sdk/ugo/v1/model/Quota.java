@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ugo.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class Quota {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_type")
 
+    @JacksonXmlProperty(localName = "project_type")
+
     private String projectType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quota")
 
+    @JacksonXmlProperty(localName = "quota")
+
     private Integer quota;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "used")
+
+    @JacksonXmlProperty(localName = "used")
 
     private Integer used;
 

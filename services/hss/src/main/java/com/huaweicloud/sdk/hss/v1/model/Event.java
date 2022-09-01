@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.hss.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,40 +14,56 @@ public class Event {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_id")
 
+    @JacksonXmlProperty(localName = "host_id")
+
     private String hostId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_name")
+
+    @JacksonXmlProperty(localName = "host_name")
 
     private String hostName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_type")
 
+    @JacksonXmlProperty(localName = "event_type")
+
     private String eventType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "occur_time")
+
+    @JacksonXmlProperty(localName = "occur_time")
 
     private Long occurTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "handle_time")
 
+    @JacksonXmlProperty(localName = "handle_time")
+
     private Long handleTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "handle_status")
+
+    @JacksonXmlProperty(localName = "handle_status")
 
     private String handleStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "handle_method")
 
+    @JacksonXmlProperty(localName = "handle_method")
+
     private String handleMethod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "append_info")
+
+    @JacksonXmlProperty(localName = "append_info")
 
     private Object appendInfo;
 

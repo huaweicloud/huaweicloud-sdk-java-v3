@@ -11,6 +11,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.ges.v1.model.Label;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -24,6 +26,7 @@ public class GesMetaData  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="labels")
     
+    @JacksonXmlProperty(localName = "labels")
     
     private List<Label> labels = null;
     

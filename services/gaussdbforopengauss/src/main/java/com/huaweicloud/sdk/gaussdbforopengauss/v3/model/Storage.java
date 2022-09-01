@@ -12,6 +12,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -25,6 +27,7 @@ public class Storage  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
+    @JacksonXmlProperty(localName = "name")
     
     private String name;
 
@@ -32,6 +35,7 @@ public class Storage  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="az_status")
     
+    @JacksonXmlProperty(localName = "az_status")
     
     private Map<String, String> azStatus = null;
     
@@ -39,6 +43,7 @@ public class Storage  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="support_compute_group_type")
     
+    @JacksonXmlProperty(localName = "support_compute_group_type")
     
     private List<String> supportComputeGroupType = null;
     

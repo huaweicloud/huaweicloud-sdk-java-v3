@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.elb.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +16,8 @@ public class BatchUpdatePoliciesPriorityRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "l7policies")
+
+    @JacksonXmlProperty(localName = "l7policies")
 
     private List<BatchUpdatePriorityRequestBody> l7policies = null;
 

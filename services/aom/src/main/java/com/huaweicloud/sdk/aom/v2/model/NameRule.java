@@ -12,6 +12,8 @@ import com.huaweicloud.sdk.aom.v2.model.AppNameRule;
 import com.huaweicloud.sdk.aom.v2.model.ApplicationNameRule;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -25,6 +27,7 @@ public class NameRule  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="appNameRule")
     
+    @JacksonXmlProperty(localName = "appNameRule")
     
     private List<AppNameRule> appNameRule = null;
     
@@ -32,6 +35,7 @@ public class NameRule  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="applicationNameRule")
     
+    @JacksonXmlProperty(localName = "applicationNameRule")
     
     private List<ApplicationNameRule> applicationNameRule = null;
     

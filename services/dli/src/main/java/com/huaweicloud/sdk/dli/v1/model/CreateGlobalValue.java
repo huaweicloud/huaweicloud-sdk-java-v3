@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,25 +14,35 @@ public class CreateGlobalValue {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "var_name")
 
+    @JacksonXmlProperty(localName = "var_name")
+
     private String varName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "var_value")
+
+    @JacksonXmlProperty(localName = "var_value")
 
     private String varValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
 
+    @JacksonXmlProperty(localName = "project_id")
+
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_id")
 
+    @JacksonXmlProperty(localName = "user_id")
+
     private String userId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
+
+    @JacksonXmlProperty(localName = "id")
 
     private Integer id;
 

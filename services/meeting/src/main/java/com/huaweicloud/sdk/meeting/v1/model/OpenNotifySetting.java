@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class OpenNotifySetting {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enableCalendar")
 
+    @JacksonXmlProperty(localName = "enableCalendar")
+
     private String enableCalendar;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enableSms")
 
+    @JacksonXmlProperty(localName = "enableSms")
+
     private String enableSms;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enableEmail")
+
+    @JacksonXmlProperty(localName = "enableEmail")
 
     private String enableEmail;
 

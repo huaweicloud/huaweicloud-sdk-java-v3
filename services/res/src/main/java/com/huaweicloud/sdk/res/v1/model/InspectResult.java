@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.res.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,20 +14,28 @@ public class InspectResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
+    @JacksonXmlProperty(localName = "type")
+
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "count_num")
+
+    @JacksonXmlProperty(localName = "count_num")
 
     private Integer countNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "multiplicity")
 
+    @JacksonXmlProperty(localName = "multiplicity")
+
     private Double multiplicity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "legal_rate")
+
+    @JacksonXmlProperty(localName = "legal_rate")
 
     private Double legalRate;
 

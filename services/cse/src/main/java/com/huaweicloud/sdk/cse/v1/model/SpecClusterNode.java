@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cse.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +16,8 @@ public class SpecClusterNode {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cluster_nodes")
+
+    @JacksonXmlProperty(localName = "cluster_nodes")
 
     private List<ClusterNode> clusterNodes = null;
 

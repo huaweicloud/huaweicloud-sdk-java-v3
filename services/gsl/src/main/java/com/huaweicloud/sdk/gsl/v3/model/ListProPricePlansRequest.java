@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.gsl.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,40 +14,56 @@ public class ListProPricePlansRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
+    @JacksonXmlProperty(localName = "limit")
+
     private Long limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
+
+    @JacksonXmlProperty(localName = "offset")
 
     private Long offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "main_search_key")
 
+    @JacksonXmlProperty(localName = "main_search_key")
+
     private String mainSearchKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flow_total")
+
+    @JacksonXmlProperty(localName = "flow_total")
 
     private Long flowTotal;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "network_type")
 
+    @JacksonXmlProperty(localName = "network_type")
+
     private Long networkType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "location_type")
+
+    @JacksonXmlProperty(localName = "location_type")
 
     private Long locationType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "carrier_type")
 
+    @JacksonXmlProperty(localName = "carrier_type")
+
     private Integer carrierType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "country_type")
+
+    @JacksonXmlProperty(localName = "country_type")
 
     private Long countryType;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.osm.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
@@ -17,40 +18,56 @@ public class IncidentMessageV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
+    @JacksonXmlProperty(localName = "type")
+
     private Integer type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "replier")
+
+    @JacksonXmlProperty(localName = "replier")
 
     private String replier;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "content")
 
+    @JacksonXmlProperty(localName = "content")
+
     private String content;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "message_id")
+
+    @JacksonXmlProperty(localName = "message_id")
 
     private String messageId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "replier_name")
 
+    @JacksonXmlProperty(localName = "replier_name")
+
     private String replierName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
+
+    @JacksonXmlProperty(localName = "create_time")
 
     private OffsetDateTime createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_first_message")
 
+    @JacksonXmlProperty(localName = "is_first_message")
+
     private Integer isFirstMessage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "accessory_list")
+
+    @JacksonXmlProperty(localName = "accessory_list")
 
     private List<SimpleAccessoryV2> accessoryList = null;
 

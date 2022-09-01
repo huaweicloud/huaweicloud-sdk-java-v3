@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.lts.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,50 +17,70 @@ public class CreateLogDumpObsRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_group_id")
 
+    @JacksonXmlProperty(localName = "log_group_id")
+
     private String logGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_stream_ids")
+
+    @JacksonXmlProperty(localName = "log_stream_ids")
 
     private List<String> logStreamIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "obs_bucket_name")
 
+    @JacksonXmlProperty(localName = "obs_bucket_name")
+
     private String obsBucketName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
+
+    @JacksonXmlProperty(localName = "type")
 
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "storage_format")
 
+    @JacksonXmlProperty(localName = "storage_format")
+
     private String storageFormat;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "switch_on")
+
+    @JacksonXmlProperty(localName = "switch_on")
 
     private Boolean switchOn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "prefix_name")
 
+    @JacksonXmlProperty(localName = "prefix_name")
+
     private String prefixName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dir_prefix_name")
+
+    @JacksonXmlProperty(localName = "dir_prefix_name")
 
     private String dirPrefixName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "period")
 
+    @JacksonXmlProperty(localName = "period")
+
     private Integer period;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "period_unit")
+
+    @JacksonXmlProperty(localName = "period_unit")
 
     private String periodUnit;
 

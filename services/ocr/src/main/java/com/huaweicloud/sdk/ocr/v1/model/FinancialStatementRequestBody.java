@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ocr.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,35 +14,49 @@ public class FinancialStatementRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image")
 
+    @JacksonXmlProperty(localName = "image")
+
     private String image;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "url")
+
+    @JacksonXmlProperty(localName = "url")
 
     private String url;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "return_text_location")
 
+    @JacksonXmlProperty(localName = "return_text_location")
+
     private Boolean returnTextLocation;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "return_confidence")
+
+    @JacksonXmlProperty(localName = "return_confidence")
 
     private Boolean returnConfidence;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "return_excel")
 
+    @JacksonXmlProperty(localName = "return_excel")
+
     private Boolean returnExcel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "return_table_location")
 
+    @JacksonXmlProperty(localName = "return_table_location")
+
     private Boolean returnTableLocation;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "return_image_size")
+
+    @JacksonXmlProperty(localName = "return_image_size")
 
     private Boolean returnImageSize;
 

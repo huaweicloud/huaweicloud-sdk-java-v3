@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cbr.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,30 +17,42 @@ public class CheckpointParam {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auto_trigger")
 
+    @JacksonXmlProperty(localName = "auto_trigger")
+
     private Boolean autoTrigger;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
+
+    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "incremental")
 
+    @JacksonXmlProperty(localName = "incremental")
+
     private Boolean incremental;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resources")
 
+    @JacksonXmlProperty(localName = "resources")
+
     private List<String> resources = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_details")
+
+    @JacksonXmlProperty(localName = "resource_details")
 
     private List<Resource> resourceDetails = null;
 

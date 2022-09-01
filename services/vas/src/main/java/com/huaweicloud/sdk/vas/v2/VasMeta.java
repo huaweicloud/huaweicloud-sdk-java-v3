@@ -39,7 +39,6 @@ public class VasMeta {
             }));
 
         // response
-
         builder.<List<CreateResponseBody>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,

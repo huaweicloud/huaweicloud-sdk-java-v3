@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.iotanalytics.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,35 +14,49 @@ public class ListBatchJobsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
+    @JacksonXmlProperty(localName = "offset")
+
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
+
+    @JacksonXmlProperty(localName = "limit")
 
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "has_schedule")
 
+    @JacksonXmlProperty(localName = "has_schedule")
+
     private Boolean hasSchedule;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_name")
+
+    @JacksonXmlProperty(localName = "job_name")
 
     private String jobName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "schedule_status")
 
+    @JacksonXmlProperty(localName = "schedule_status")
+
     private String scheduleStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "order_by")
 
+    @JacksonXmlProperty(localName = "order_by")
+
     private String orderBy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "order")
+
+    @JacksonXmlProperty(localName = "order")
 
     private String order;
 

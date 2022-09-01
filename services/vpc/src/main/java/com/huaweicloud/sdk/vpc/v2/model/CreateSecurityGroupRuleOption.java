@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.vpc.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,45 +14,63 @@ public class CreateSecurityGroupRuleOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_group_id")
 
+    @JacksonXmlProperty(localName = "security_group_id")
+
     private String securityGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
+
+    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "direction")
 
+    @JacksonXmlProperty(localName = "direction")
+
     private String direction;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ethertype")
+
+    @JacksonXmlProperty(localName = "ethertype")
 
     private String ethertype;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protocol")
 
+    @JacksonXmlProperty(localName = "protocol")
+
     private String protocol;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "port_range_min")
+
+    @JacksonXmlProperty(localName = "port_range_min")
 
     private Integer portRangeMin;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "port_range_max")
 
+    @JacksonXmlProperty(localName = "port_range_max")
+
     private Integer portRangeMax;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remote_ip_prefix")
 
+    @JacksonXmlProperty(localName = "remote_ip_prefix")
+
     private String remoteIpPrefix;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remote_group_id")
+
+    @JacksonXmlProperty(localName = "remote_group_id")
 
     private String remoteGroupId;
 

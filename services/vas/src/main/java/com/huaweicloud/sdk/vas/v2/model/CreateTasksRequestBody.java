@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.vas.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,45 +15,63 @@ public class CreateTasksRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
+
+    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_version")
 
+    @JacksonXmlProperty(localName = "service_version")
+
     private String serviceVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "edge_pool_id")
+
+    @JacksonXmlProperty(localName = "edge_pool_id")
 
     private String edgePoolId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_order_id")
 
+    @JacksonXmlProperty(localName = "resource_order_id")
+
     private String resourceOrderId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timing")
+
+    @JacksonXmlProperty(localName = "timing")
 
     private TaskTiming timing;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "input")
 
+    @JacksonXmlProperty(localName = "input")
+
     private TaskInput input;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "output")
 
+    @JacksonXmlProperty(localName = "output")
+
     private TaskOutput output;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_config")
+
+    @JacksonXmlProperty(localName = "service_config")
 
     private TaskServiceConfig serviceConfig;
 

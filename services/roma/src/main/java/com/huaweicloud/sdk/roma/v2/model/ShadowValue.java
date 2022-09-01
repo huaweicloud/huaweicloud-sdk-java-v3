@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.roma.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class ShadowValue {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "property_name")
 
+    @JacksonXmlProperty(localName = "property_name")
+
     private String propertyName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "property_value")
 
+    @JacksonXmlProperty(localName = "property_value")
+
     private String propertyValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "property_updated_date")
+
+    @JacksonXmlProperty(localName = "property_updated_date")
 
     private Long propertyUpdatedDate;
 

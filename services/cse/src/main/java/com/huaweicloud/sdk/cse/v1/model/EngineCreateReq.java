@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,10 +22,14 @@ public class EngineCreateReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
+
+    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
@@ -101,6 +106,8 @@ public class EngineCreateReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "payment")
+
+    @JacksonXmlProperty(localName = "payment")
 
     private PaymentEnum payment;
 
@@ -196,10 +203,14 @@ public class EngineCreateReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flavor")
 
+    @JacksonXmlProperty(localName = "flavor")
+
     private FlavorEnum flavor;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "azList")
+
+    @JacksonXmlProperty(localName = "azList")
 
     private List<String> azList = null;
 
@@ -283,30 +294,42 @@ public class EngineCreateReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "authType")
 
+    @JacksonXmlProperty(localName = "authType")
+
     private AuthTypeEnum authType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc")
+
+    @JacksonXmlProperty(localName = "vpc")
 
     private String vpc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "networkId")
 
+    @JacksonXmlProperty(localName = "networkId")
+
     private String networkId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subnetCidr")
+
+    @JacksonXmlProperty(localName = "subnetCidr")
 
     private String subnetCidr;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publicIpId")
 
+    @JacksonXmlProperty(localName = "publicIpId")
+
     private String publicIpId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auth_cred")
+
+    @JacksonXmlProperty(localName = "auth_cred")
 
     private EngineRbacPwd authCred;
 
@@ -390,10 +413,14 @@ public class EngineCreateReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "specType")
 
+    @JacksonXmlProperty(localName = "specType")
+
     private SpecTypeEnum specType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "inputs")
+
+    @JacksonXmlProperty(localName = "inputs")
 
     private Map<String, String> inputs = null;
 

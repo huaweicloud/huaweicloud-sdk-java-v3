@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.iam.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class UpdateUserInformationOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "email")
 
+    @JacksonXmlProperty(localName = "email")
+
     private String email;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mobile")
+
+    @JacksonXmlProperty(localName = "mobile")
 
     private String mobile;
 

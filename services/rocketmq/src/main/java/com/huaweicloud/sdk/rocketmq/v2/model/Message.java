@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.rocketmq.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -17,70 +18,98 @@ public class Message {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "msg_id")
 
+    @JacksonXmlProperty(localName = "msg_id")
+
     private String msgId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_id")
+
+    @JacksonXmlProperty(localName = "instance_id")
 
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "topic")
 
+    @JacksonXmlProperty(localName = "topic")
+
     private String topic;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "store_timestamp")
+
+    @JacksonXmlProperty(localName = "store_timestamp")
 
     private BigDecimal storeTimestamp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "born_timestamp")
 
+    @JacksonXmlProperty(localName = "born_timestamp")
+
     private BigDecimal bornTimestamp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "reconsume_times")
+
+    @JacksonXmlProperty(localName = "reconsume_times")
 
     private String reconsumeTimes;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
+    @JacksonXmlProperty(localName = "body")
+
     private String body;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body_crc")
+
+    @JacksonXmlProperty(localName = "body_crc")
 
     private BigDecimal bodyCrc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "store_size")
 
+    @JacksonXmlProperty(localName = "store_size")
+
     private BigDecimal storeSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "property_list")
+
+    @JacksonXmlProperty(localName = "property_list")
 
     private List<MessagePropertyList> propertyList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "born_host")
 
+    @JacksonXmlProperty(localName = "born_host")
+
     private String bornHost;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "store_host")
+
+    @JacksonXmlProperty(localName = "store_host")
 
     private String storeHost;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "queue_id")
 
+    @JacksonXmlProperty(localName = "queue_id")
+
     private String queueId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "queue_offset")
+
+    @JacksonXmlProperty(localName = "queue_offset")
 
     private String queueOffset;
 

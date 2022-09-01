@@ -9,6 +9,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteDatabasePermissionRequestBody;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -22,6 +24,7 @@ public class DeleteDatabasePermissionRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
+    @JacksonXmlProperty(localName = "X-Language")
     
     private String xLanguage;
 
@@ -29,6 +32,7 @@ public class DeleteDatabasePermissionRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_id")
     
+    @JacksonXmlProperty(localName = "instance_id")
     
     private String instanceId;
 
@@ -36,6 +40,7 @@ public class DeleteDatabasePermissionRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
+    @JacksonXmlProperty(localName = "body")
     
     private DeleteDatabasePermissionRequestBody body;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.apig.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class LocalName {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "en_us")
 
+    @JacksonXmlProperty(localName = "en_us")
+
     private String enUs;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "zh_cn")
+
+    @JacksonXmlProperty(localName = "zh_cn")
 
     private String zhCn;
 

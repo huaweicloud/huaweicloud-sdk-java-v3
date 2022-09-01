@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,35 +19,49 @@ public class TaskInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "CREATED_AT")
 
+    @JacksonXmlProperty(localName = "CREATED_AT")
+
     private String createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "LAST_HEALTH_CHECK")
+
+    @JacksonXmlProperty(localName = "LAST_HEALTH_CHECK")
 
     private String lastHealthCheck;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "MESSAGES")
 
+    @JacksonXmlProperty(localName = "MESSAGES")
+
     private String messages;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "OWNER_ID")
+
+    @JacksonXmlProperty(localName = "OWNER_ID")
 
     private String ownerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "TASK_ID")
 
+    @JacksonXmlProperty(localName = "TASK_ID")
+
     private String taskId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "TASK_INDEX")
 
+    @JacksonXmlProperty(localName = "TASK_INDEX")
+
     private Integer taskIndex;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "TASK_NAME")
+
+    @JacksonXmlProperty(localName = "TASK_NAME")
 
     private String taskName;
 
@@ -142,10 +157,14 @@ public class TaskInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "TASK_STATUS")
 
+    @JacksonXmlProperty(localName = "TASK_STATUS")
+
     private TaskStatusEnum taskStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "TASK_TYPE")
+
+    @JacksonXmlProperty(localName = "TASK_TYPE")
 
     private String taskType;
 

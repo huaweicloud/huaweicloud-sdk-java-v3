@@ -1,6 +1,7 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.http.FormDataFilePart;
 import com.huaweicloud.sdk.core.http.FormDataPart;
 import com.huaweicloud.sdk.core.http.SdkFormDataBody;
@@ -16,6 +17,7 @@ import java.util.Objects;
 public class ImportMqsInstanceTopicRequestBody implements SdkFormDataBody {
 
     @JsonProperty(value = "upload_file_name", access = JsonProperty.Access.WRITE_ONLY)
+    @JacksonXmlProperty(localName = "upload_file_name")
 
     private FormDataFilePart uploadFileName;
 

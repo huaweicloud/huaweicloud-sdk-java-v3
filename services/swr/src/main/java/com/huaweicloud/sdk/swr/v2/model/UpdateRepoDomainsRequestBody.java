@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.swr.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class UpdateRepoDomainsRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "permit")
 
+    @JacksonXmlProperty(localName = "permit")
+
     private String permit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deadline")
 
+    @JacksonXmlProperty(localName = "deadline")
+
     private String deadline;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
+
+    @JacksonXmlProperty(localName = "description")
 
     private String description;
 

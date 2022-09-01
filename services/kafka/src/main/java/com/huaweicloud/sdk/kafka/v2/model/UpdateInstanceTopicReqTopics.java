@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.kafka.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,25 +14,35 @@ public class UpdateInstanceTopicReqTopics {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "retention_time")
+
+    @JacksonXmlProperty(localName = "retention_time")
 
     private Integer retentionTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sync_replication")
 
+    @JacksonXmlProperty(localName = "sync_replication")
+
     private Boolean syncReplication;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sync_message_flush")
 
+    @JacksonXmlProperty(localName = "sync_message_flush")
+
     private Boolean syncMessageFlush;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "new_partition_numbers")
+
+    @JacksonXmlProperty(localName = "new_partition_numbers")
 
     private Integer newPartitionNumbers;
 

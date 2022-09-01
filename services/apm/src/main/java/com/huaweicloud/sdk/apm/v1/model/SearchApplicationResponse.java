@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.apm.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -19,15 +20,21 @@ public class SearchApplicationResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_info_list")
 
+    @JacksonXmlProperty(localName = "app_info_list")
+
     private List<AppInfo> appInfoList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_total_count")
 
+    @JacksonXmlProperty(localName = "app_total_count")
+
     private Integer appTotalCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_info_map")
+
+    @JacksonXmlProperty(localName = "app_info_map")
 
     private Map<String, AppInfo> appInfoMap = null;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ecs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,165 +14,231 @@ public class FlavorExtraSpec {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ecs:performancetype")
 
+    @JacksonXmlProperty(localName = "ecs:performancetype")
+
     private String ecsPerformancetype;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hw:numa_nodes")
+
+    @JacksonXmlProperty(localName = "hw:numa_nodes")
 
     private String hwNumaNodes;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_type")
 
+    @JacksonXmlProperty(localName = "resource_type")
+
     private String resourceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hpet_support")
+
+    @JacksonXmlProperty(localName = "hpet_support")
 
     private String hpetSupport;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_vnic:type")
 
+    @JacksonXmlProperty(localName = "instance_vnic:type")
+
     private String instanceVnicType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_vnic:instance_bandwidth")
+
+    @JacksonXmlProperty(localName = "instance_vnic:instance_bandwidth")
 
     private String instanceVnicInstanceBandwidth;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_vnic:max_count")
 
+    @JacksonXmlProperty(localName = "instance_vnic:max_count")
+
     private String instanceVnicMaxCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quota:local_disk")
+
+    @JacksonXmlProperty(localName = "quota:local_disk")
 
     private String quotaLocalDisk;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quota:nvme_ssd")
 
+    @JacksonXmlProperty(localName = "quota:nvme_ssd")
+
     private String quotaNvmeSsd;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extra_spec:io:persistent_grant")
+
+    @JacksonXmlProperty(localName = "extra_spec:io:persistent_grant")
 
     private String extraSpecIoPersistentGrant;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ecs:generation")
 
+    @JacksonXmlProperty(localName = "ecs:generation")
+
     private String ecsGeneration;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ecs:virtualization_env_types")
+
+    @JacksonXmlProperty(localName = "ecs:virtualization_env_types")
 
     private String ecsVirtualizationEnvTypes;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pci_passthrough:enable_gpu")
 
+    @JacksonXmlProperty(localName = "pci_passthrough:enable_gpu")
+
     private String pciPassthroughEnableGpu;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pci_passthrough:gpu_specs")
+
+    @JacksonXmlProperty(localName = "pci_passthrough:gpu_specs")
 
     private String pciPassthroughGpuSpecs;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pci_passthrough:alias")
 
+    @JacksonXmlProperty(localName = "pci_passthrough:alias")
+
     private String pciPassthroughAlias;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cond:operation:status")
+
+    @JacksonXmlProperty(localName = "cond:operation:status")
 
     private String condOperationStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cond:operation:az")
 
+    @JacksonXmlProperty(localName = "cond:operation:az")
+
     private String condOperationAz;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quota:max_rate")
+
+    @JacksonXmlProperty(localName = "quota:max_rate")
 
     private String quotaMaxRate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quota:min_rate")
 
+    @JacksonXmlProperty(localName = "quota:min_rate")
+
     private String quotaMinRate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quota:max_pps")
+
+    @JacksonXmlProperty(localName = "quota:max_pps")
 
     private String quotaMaxPps;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cond:operation:charge")
 
+    @JacksonXmlProperty(localName = "cond:operation:charge")
+
     private String condOperationCharge;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cond:operation:charge:stop")
+
+    @JacksonXmlProperty(localName = "cond:operation:charge:stop")
 
     private String condOperationChargeStop;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cond:spot:operation:az")
 
+    @JacksonXmlProperty(localName = "cond:spot:operation:az")
+
     private String condSpotOperationAz;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cond:operation:roles")
+
+    @JacksonXmlProperty(localName = "cond:operation:roles")
 
     private String condOperationRoles;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cond:spot:operation:status")
 
+    @JacksonXmlProperty(localName = "cond:spot:operation:status")
+
     private String condSpotOperationStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cond:network")
+
+    @JacksonXmlProperty(localName = "cond:network")
 
     private String condNetwork;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cond:storage")
 
+    @JacksonXmlProperty(localName = "cond:storage")
+
     private String condStorage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cond:compute:live_resizable")
+
+    @JacksonXmlProperty(localName = "cond:compute:live_resizable")
 
     private String condComputeLiveResizable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cond:compute")
 
+    @JacksonXmlProperty(localName = "cond:compute")
+
     private String condCompute;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "info:gpu:name")
+
+    @JacksonXmlProperty(localName = "info:gpu:name")
 
     private String infoGpuName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "info:cpu:name")
 
+    @JacksonXmlProperty(localName = "info:cpu:name")
+
     private String infoCpuName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quota:gpu")
 
+    @JacksonXmlProperty(localName = "quota:gpu")
+
     private String quotaGpu;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ecs:instance_architecture")
+
+    @JacksonXmlProperty(localName = "ecs:instance_architecture")
 
     private String ecsInstanceArchitecture;
 

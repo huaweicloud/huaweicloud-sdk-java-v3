@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.functiongraph.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -15,40 +16,56 @@ public class ShowWorkFlowResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "workflow_urn")
+
+    @JacksonXmlProperty(localName = "workflow_urn")
 
     private String workflowUrn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_time")
 
+    @JacksonXmlProperty(localName = "created_time")
+
     private String createdTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_time")
+
+    @JacksonXmlProperty(localName = "updated_time")
 
     private String updatedTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_by")
 
+    @JacksonXmlProperty(localName = "created_by")
+
     private String createdBy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lts_group_id")
+
+    @JacksonXmlProperty(localName = "lts_group_id")
 
     private String ltsGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lts_stream_id")
 
+    @JacksonXmlProperty(localName = "lts_stream_id")
+
     private String ltsStreamId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "definition")
+
+    @JacksonXmlProperty(localName = "definition")
 
     private WorkflowCreateBody definition;
 

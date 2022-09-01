@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.functiongraph.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -14,57 +15,65 @@ public class CreateDependencyResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "owner")
+
+    @JacksonXmlProperty(localName = "owner")
 
     private String owner;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "link")
 
+    @JacksonXmlProperty(localName = "link")
+
     private String link;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "runtime")
+
+    @JacksonXmlProperty(localName = "runtime")
 
     private String runtime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "etag")
 
+    @JacksonXmlProperty(localName = "etag")
+
     private String etag;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
+
+    @JacksonXmlProperty(localName = "size")
 
     private Long size;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
+
+    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_name")
 
+    @JacksonXmlProperty(localName = "file_name")
+
     private String fileName;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "version")
-
-    private Long version;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "last_modified")
-
-    private Long lastModified;
 
     public CreateDependencyResponse withId(String id) {
         this.id = id;
@@ -219,40 +228,6 @@ public class CreateDependencyResponse extends SdkResponse {
         this.fileName = fileName;
     }
 
-    public CreateDependencyResponse withVersion(Long version) {
-        this.version = version;
-        return this;
-    }
-
-    /**
-     * 依赖包版本号
-     * @return version
-     */
-    public Long getVersion() {
-        return version;
-    }
-
-    public void setVersion(Long version) {
-        this.version = version;
-    }
-
-    public CreateDependencyResponse withLastModified(Long lastModified) {
-        this.lastModified = lastModified;
-        return this;
-    }
-
-    /**
-     * 依赖包更新时间
-     * @return lastModified
-     */
-    public Long getLastModified() {
-        return lastModified;
-    }
-
-    public void setLastModified(Long lastModified) {
-        this.lastModified = lastModified;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -270,14 +245,12 @@ public class CreateDependencyResponse extends SdkResponse {
             && Objects.equals(this.size, createDependencyResponse.size)
             && Objects.equals(this.name, createDependencyResponse.name)
             && Objects.equals(this.description, createDependencyResponse.description)
-            && Objects.equals(this.fileName, createDependencyResponse.fileName)
-            && Objects.equals(this.version, createDependencyResponse.version)
-            && Objects.equals(this.lastModified, createDependencyResponse.lastModified);
+            && Objects.equals(this.fileName, createDependencyResponse.fileName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, owner, link, runtime, etag, size, name, description, fileName, version, lastModified);
+        return Objects.hash(id, owner, link, runtime, etag, size, name, description, fileName);
     }
 
     @Override
@@ -293,8 +266,6 @@ public class CreateDependencyResponse extends SdkResponse {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    fileName: ").append(toIndentedString(fileName)).append("\n");
-        sb.append("    version: ").append(toIndentedString(version)).append("\n");
-        sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
         sb.append("}");
         return sb.toString();
     }

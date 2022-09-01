@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.iotda.v5.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,45 +14,63 @@ public class DeviceMessage {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "message_id")
 
+    @JacksonXmlProperty(localName = "message_id")
+
     private String messageId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "message")
 
+    @JacksonXmlProperty(localName = "message")
+
     private Object message;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "encoding")
+
+    @JacksonXmlProperty(localName = "encoding")
 
     private String encoding;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "payload_format")
 
+    @JacksonXmlProperty(localName = "payload_format")
+
     private String payloadFormat;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "topic")
+
+    @JacksonXmlProperty(localName = "topic")
 
     private String topic;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_time")
 
+    @JacksonXmlProperty(localName = "created_time")
+
     private String createdTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "finished_time")
+
+    @JacksonXmlProperty(localName = "finished_time")
 
     private String finishedTime;
 

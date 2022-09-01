@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ocr.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,65 +14,91 @@ public class TransportationLicenseResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "owner_name")
 
+    @JacksonXmlProperty(localName = "owner_name")
+
     private String ownerName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "license_number")
+
+    @JacksonXmlProperty(localName = "license_number")
 
     private String licenseNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vehicle_number")
 
+    @JacksonXmlProperty(localName = "vehicle_number")
+
     private String vehicleNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vehicle_type")
+
+    @JacksonXmlProperty(localName = "vehicle_type")
 
     private String vehicleType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maximum_capacity")
 
+    @JacksonXmlProperty(localName = "maximum_capacity")
+
     private String maximumCapacity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vehicle_size")
+
+    @JacksonXmlProperty(localName = "vehicle_size")
 
     private String vehicleSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "issuing_authority")
 
+    @JacksonXmlProperty(localName = "issuing_authority")
+
     private String issuingAuthority;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "issue_date")
+
+    @JacksonXmlProperty(localName = "issue_date")
 
     private String issueDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "owner_address")
 
+    @JacksonXmlProperty(localName = "owner_address")
+
     private String ownerAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "economic_type")
+
+    @JacksonXmlProperty(localName = "economic_type")
 
     private String economicType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "business_certificate")
 
+    @JacksonXmlProperty(localName = "business_certificate")
+
     private String businessCertificate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "business_scope")
 
+    @JacksonXmlProperty(localName = "business_scope")
+
     private String businessScope;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confidence")
+
+    @JacksonXmlProperty(localName = "confidence")
 
     private Object confidence;
 

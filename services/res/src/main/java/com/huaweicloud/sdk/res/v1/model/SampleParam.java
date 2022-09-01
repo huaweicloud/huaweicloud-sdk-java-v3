@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.res.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class SampleParam {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "divide_type")
 
+    @JacksonXmlProperty(localName = "divide_type")
+
     private String divideType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "train_rate")
 
+    @JacksonXmlProperty(localName = "train_rate")
+
     private Double trainRate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "test_rate")
+
+    @JacksonXmlProperty(localName = "test_rate")
 
     private Double testRate;
 

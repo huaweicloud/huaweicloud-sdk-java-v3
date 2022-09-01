@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cloudbuild.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class ShowJobListByProjectIdRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
 
+    @JacksonXmlProperty(localName = "project_id")
+
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page_index")
 
+    @JacksonXmlProperty(localName = "page_index")
+
     private Integer pageIndex;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page_size")
+
+    @JacksonXmlProperty(localName = "page_size")
 
     private Integer pageSize;
 

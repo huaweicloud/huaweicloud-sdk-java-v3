@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.time.OffsetDateTime;
 import java.util.Collections;
@@ -20,10 +21,14 @@ public class PublicipUpdateResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bandwidth_id")
 
+    @JacksonXmlProperty(localName = "bandwidth_id")
+
     private String bandwidthId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bandwidth_name")
+
+    @JacksonXmlProperty(localName = "bandwidth_name")
 
     private String bandwidthName;
 
@@ -107,45 +112,63 @@ public class PublicipUpdateResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bandwidth_share_type")
 
+    @JacksonXmlProperty(localName = "bandwidth_share_type")
+
     private BandwidthShareTypeEnum bandwidthShareType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bandwidth_size")
+
+    @JacksonXmlProperty(localName = "bandwidth_size")
 
     private Integer bandwidthSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
+    @JacksonXmlProperty(localName = "create_time")
+
     private OffsetDateTime createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
+
+    @JacksonXmlProperty(localName = "enterprise_project_id")
 
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "port_id")
+
+    @JacksonXmlProperty(localName = "port_id")
 
     private String portId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "private_ip_address")
 
+    @JacksonXmlProperty(localName = "private_ip_address")
+
     private String privateIpAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "profile")
 
+    @JacksonXmlProperty(localName = "profile")
+
     private ProfileResp profile;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "public_ip_address")
+
+    @JacksonXmlProperty(localName = "public_ip_address")
 
     private String publicIpAddress;
 
@@ -295,20 +318,28 @@ public class PublicipUpdateResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tenant_id")
+
+    @JacksonXmlProperty(localName = "tenant_id")
 
     private String tenantId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
+    @JacksonXmlProperty(localName = "type")
+
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "public_ipv6_address")
+
+    @JacksonXmlProperty(localName = "public_ipv6_address")
 
     private String publicIpv6Address;
 
@@ -392,10 +423,14 @@ public class PublicipUpdateResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip_version")
 
+    @JacksonXmlProperty(localName = "ip_version")
+
     private IpVersionEnum ipVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alias")
+
+    @JacksonXmlProperty(localName = "alias")
 
     private String alias;
 

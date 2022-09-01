@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,20 +22,28 @@ public class StructConfig {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_group_id")
 
+    @JacksonXmlProperty(localName = "log_group_id")
+
     private String logGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_stream_id")
+
+    @JacksonXmlProperty(localName = "log_stream_id")
 
     private String logStreamId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template_id")
 
+    @JacksonXmlProperty(localName = "template_id")
+
     private String templateId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template_name")
+
+    @JacksonXmlProperty(localName = "template_name")
 
     private String templateName;
 
@@ -118,20 +127,28 @@ public class StructConfig {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template_type")
 
+    @JacksonXmlProperty(localName = "template_type")
+
     private TemplateTypeEnum templateType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "demo_fields")
+
+    @JacksonXmlProperty(localName = "demo_fields")
 
     private List<FieldModel> demoFields = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tag_fields")
 
+    @JacksonXmlProperty(localName = "tag_fields")
+
     private List<FieldModel> tagFields = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quick_analysis")
+
+    @JacksonXmlProperty(localName = "quick_analysis")
 
     private Boolean quickAnalysis;
 

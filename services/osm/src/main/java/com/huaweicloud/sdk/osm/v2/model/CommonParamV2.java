@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.osm.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,20 +14,28 @@ public class CommonParamV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "param_key")
 
+    @JacksonXmlProperty(localName = "param_key")
+
     private String paramKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "param_name")
+
+    @JacksonXmlProperty(localName = "param_name")
 
     private String paramName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_show")
 
+    @JacksonXmlProperty(localName = "is_show")
+
     private Integer isShow;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_required")
+
+    @JacksonXmlProperty(localName = "is_required")
 
     private Integer isRequired;
 

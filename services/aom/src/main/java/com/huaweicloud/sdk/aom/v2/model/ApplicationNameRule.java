@@ -10,6 +10,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -23,6 +25,7 @@ public class ApplicationNameRule  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="nameType")
     
+    @JacksonXmlProperty(localName = "nameType")
     
     private String nameType;
 
@@ -30,6 +33,7 @@ public class ApplicationNameRule  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="args")
     
+    @JacksonXmlProperty(localName = "args")
     
     private List<String> args = null;
     
@@ -37,6 +41,7 @@ public class ApplicationNameRule  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="value")
     
+    @JacksonXmlProperty(localName = "value")
     
     private List<String> value = null;
     

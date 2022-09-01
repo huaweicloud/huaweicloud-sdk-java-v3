@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.apig.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.time.OffsetDateTime;
 import java.util.Objects;
@@ -14,50 +15,70 @@ public class AclBindApiInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "api_id")
 
+    @JacksonXmlProperty(localName = "api_id")
+
     private String apiId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "api_name")
+
+    @JacksonXmlProperty(localName = "api_name")
 
     private String apiName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "api_type")
 
+    @JacksonXmlProperty(localName = "api_type")
+
     private Long apiType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "api_remark")
+
+    @JacksonXmlProperty(localName = "api_remark")
 
     private String apiRemark;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "env_id")
 
+    @JacksonXmlProperty(localName = "env_id")
+
     private String envId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "env_name")
+
+    @JacksonXmlProperty(localName = "env_name")
 
     private String envName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bind_id")
 
+    @JacksonXmlProperty(localName = "bind_id")
+
     private String bindId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_name")
+
+    @JacksonXmlProperty(localName = "group_name")
 
     private String groupName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bind_time")
 
+    @JacksonXmlProperty(localName = "bind_time")
+
     private OffsetDateTime bindTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publish_id")
+
+    @JacksonXmlProperty(localName = "publish_id")
 
     private String publishId;
 

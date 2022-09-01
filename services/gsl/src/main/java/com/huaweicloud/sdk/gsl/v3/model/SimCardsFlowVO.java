@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.gsl.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,45 +14,63 @@ public class SimCardsFlowVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private Long id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "account_id")
+
+    @JacksonXmlProperty(localName = "account_id")
 
     private String accountId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sim_card_id")
 
+    @JacksonXmlProperty(localName = "sim_card_id")
+
     private Long simCardId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "price_plan_id")
+
+    @JacksonXmlProperty(localName = "price_plan_id")
 
     private String pricePlanId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "price_plan_name")
 
+    @JacksonXmlProperty(localName = "price_plan_name")
+
     private String pricePlanName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "iccid")
+
+    @JacksonXmlProperty(localName = "iccid")
 
     private String iccid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flow_total")
 
+    @JacksonXmlProperty(localName = "flow_total")
+
     private Double flowTotal;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flow_used")
 
+    @JacksonXmlProperty(localName = "flow_used")
+
     private Double flowUsed;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flow_left")
+
+    @JacksonXmlProperty(localName = "flow_left")
 
     private Double flowLeft;
 

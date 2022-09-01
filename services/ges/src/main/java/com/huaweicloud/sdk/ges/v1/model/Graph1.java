@@ -13,6 +13,8 @@ import com.huaweicloud.sdk.ges.v1.model.SchemaPath1;
 import com.huaweicloud.sdk.ges.v1.model.VertexsetPath1;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -26,6 +28,7 @@ public class Graph1  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
+    @JacksonXmlProperty(localName = "id")
     
     private String id;
 
@@ -33,6 +36,7 @@ public class Graph1  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
+    @JacksonXmlProperty(localName = "name")
     
     private String name;
 
@@ -40,6 +44,7 @@ public class Graph1  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="createdBy")
     
+    @JacksonXmlProperty(localName = "createdBy")
     
     private String createdBy;
 
@@ -47,6 +52,7 @@ public class Graph1  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="isMultiAz")
     
+    @JacksonXmlProperty(localName = "isMultiAz")
     
     private String isMultiAz;
 
@@ -54,6 +60,7 @@ public class Graph1  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="regionCode")
     
+    @JacksonXmlProperty(localName = "regionCode")
     
     private String regionCode;
 
@@ -61,6 +68,7 @@ public class Graph1  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="azCode")
     
+    @JacksonXmlProperty(localName = "azCode")
     
     private String azCode;
 
@@ -68,6 +76,7 @@ public class Graph1  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="schemaPath")
     
+    @JacksonXmlProperty(localName = "schemaPath")
     
     private List<SchemaPath1> schemaPath = null;
     
@@ -75,6 +84,7 @@ public class Graph1  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edgesetPath")
     
+    @JacksonXmlProperty(localName = "edgesetPath")
     
     private List<EdgesetPath1> edgesetPath = null;
     
@@ -82,6 +92,7 @@ public class Graph1  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edgesetFormat")
     
+    @JacksonXmlProperty(localName = "edgesetFormat")
     
     private String edgesetFormat;
 
@@ -89,6 +100,7 @@ public class Graph1  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edgesetDefaultLabel")
     
+    @JacksonXmlProperty(localName = "edgesetDefaultLabel")
     
     private String edgesetDefaultLabel;
 
@@ -96,6 +108,7 @@ public class Graph1  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vertexsetPath")
     
+    @JacksonXmlProperty(localName = "vertexsetPath")
     
     private List<VertexsetPath1> vertexsetPath = null;
     
@@ -103,6 +116,7 @@ public class Graph1  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vertexsetFormat")
     
+    @JacksonXmlProperty(localName = "vertexsetFormat")
     
     private String vertexsetFormat;
 
@@ -110,6 +124,7 @@ public class Graph1  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vertexsetDefaultLabel")
     
+    @JacksonXmlProperty(localName = "vertexsetDefaultLabel")
     
     private String vertexsetDefaultLabel;
 
@@ -117,6 +132,7 @@ public class Graph1  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dataStoreVersion")
     
+    @JacksonXmlProperty(localName = "dataStoreVersion")
     
     private String dataStoreVersion;
 
@@ -124,6 +140,7 @@ public class Graph1  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sys_tags")
     
+    @JacksonXmlProperty(localName = "sys_tags")
     
     private List<String> sysTags = null;
     
@@ -131,6 +148,7 @@ public class Graph1  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
+    @JacksonXmlProperty(localName = "status")
     
     private String status;
 
@@ -138,6 +156,7 @@ public class Graph1  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="actionProgress")
     
+    @JacksonXmlProperty(localName = "actionProgress")
     
     private String actionProgress;
 
@@ -145,6 +164,7 @@ public class Graph1  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="graphSizeTypeIndex")
     
+    @JacksonXmlProperty(localName = "graphSizeTypeIndex")
     
     private String graphSizeTypeIndex;
 
@@ -152,6 +172,7 @@ public class Graph1  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vpcId")
     
+    @JacksonXmlProperty(localName = "vpcId")
     
     private String vpcId;
 
@@ -159,6 +180,7 @@ public class Graph1  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="subnetId")
     
+    @JacksonXmlProperty(localName = "subnetId")
     
     private String subnetId;
 
@@ -166,6 +188,7 @@ public class Graph1  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="securityGroupId")
     
+    @JacksonXmlProperty(localName = "securityGroupId")
     
     private String securityGroupId;
 
@@ -173,6 +196,7 @@ public class Graph1  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="replication")
     
+    @JacksonXmlProperty(localName = "replication")
     
     private Integer replication;
 
@@ -180,6 +204,7 @@ public class Graph1  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created")
     
+    @JacksonXmlProperty(localName = "created")
     
     private String created;
 
@@ -187,6 +212,7 @@ public class Graph1  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="updated")
     
+    @JacksonXmlProperty(localName = "updated")
     
     private String updated;
 
@@ -194,6 +220,7 @@ public class Graph1  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="privateIp")
     
+    @JacksonXmlProperty(localName = "privateIp")
     
     private String privateIp;
 
@@ -201,6 +228,7 @@ public class Graph1  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="publicIp")
     
+    @JacksonXmlProperty(localName = "publicIp")
     
     private String publicIp;
 
@@ -208,6 +236,7 @@ public class Graph1  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="arch")
     
+    @JacksonXmlProperty(localName = "arch")
     
     private String arch;
 
@@ -215,6 +244,7 @@ public class Graph1  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="encrypted")
     
+    @JacksonXmlProperty(localName = "encrypted")
     
     private Boolean encrypted;
 
@@ -222,6 +252,7 @@ public class Graph1  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="masterKeyId")
     
+    @JacksonXmlProperty(localName = "masterKeyId")
     
     private String masterKeyId;
 
@@ -229,6 +260,7 @@ public class Graph1  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="masterKeyName")
     
+    @JacksonXmlProperty(localName = "masterKeyName")
     
     private String masterKeyName;
 
@@ -236,6 +268,7 @@ public class Graph1  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enableRBAC")
     
+    @JacksonXmlProperty(localName = "enableRBAC")
     
     private Boolean enableRBAC;
 
@@ -243,6 +276,7 @@ public class Graph1  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enableFulltextIndex")
     
+    @JacksonXmlProperty(localName = "enableFulltextIndex")
     
     private Boolean enableFulltextIndex;
 
@@ -250,6 +284,7 @@ public class Graph1  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enableHyG")
     
+    @JacksonXmlProperty(localName = "enableHyG")
     
     private Boolean enableHyG;
 
@@ -257,6 +292,7 @@ public class Graph1  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="trafficIpList")
     
+    @JacksonXmlProperty(localName = "trafficIpList")
     
     private List<String> trafficIpList = null;
     
@@ -264,6 +300,7 @@ public class Graph1  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cryptAlgorithm")
     
+    @JacksonXmlProperty(localName = "cryptAlgorithm")
     
     private String cryptAlgorithm;
 
@@ -271,6 +308,7 @@ public class Graph1  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enableHttps")
     
+    @JacksonXmlProperty(localName = "enableHttps")
     
     private Boolean enableHttps;
 
@@ -278,6 +316,7 @@ public class Graph1  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
+    @JacksonXmlProperty(localName = "tags")
     
     private List<Object> tags = null;
     

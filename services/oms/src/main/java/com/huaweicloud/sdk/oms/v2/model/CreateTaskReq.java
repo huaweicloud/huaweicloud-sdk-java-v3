@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -110,55 +111,77 @@ public class CreateTaskReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_type")
 
+    @JacksonXmlProperty(localName = "task_type")
+
     private TaskTypeEnum taskType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "src_node")
+
+    @JacksonXmlProperty(localName = "src_node")
 
     private SrcNodeReq srcNode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dst_node")
 
+    @JacksonXmlProperty(localName = "dst_node")
+
     private DstNodeReq dstNode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_kms")
+
+    @JacksonXmlProperty(localName = "enable_kms")
 
     private Boolean enableKms;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
+    @JacksonXmlProperty(localName = "description")
+
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "migrate_since")
+
+    @JacksonXmlProperty(localName = "migrate_since")
 
     private Long migrateSince;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bandwidth_policy")
 
+    @JacksonXmlProperty(localName = "bandwidth_policy")
+
     private List<BandwidthPolicyDto> bandwidthPolicy = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_cdn")
+
+    @JacksonXmlProperty(localName = "source_cdn")
 
     private SourceCdnReq sourceCdn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "smn_config")
 
+    @JacksonXmlProperty(localName = "smn_config")
+
     private SmnConfig smnConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_restore")
 
+    @JacksonXmlProperty(localName = "enable_restore")
+
     private Boolean enableRestore;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_failed_object_recording")
+
+    @JacksonXmlProperty(localName = "enable_failed_object_recording")
 
     private Boolean enableFailedObjectRecording;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cbr.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,25 +14,35 @@ public class ReplicationRecordsExtraInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "progress")
 
+    @JacksonXmlProperty(localName = "progress")
+
     private Integer progress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fail_code")
+
+    @JacksonXmlProperty(localName = "fail_code")
 
     private String failCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fail_reason")
 
+    @JacksonXmlProperty(localName = "fail_reason")
+
     private String failReason;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auto_trigger")
 
+    @JacksonXmlProperty(localName = "auto_trigger")
+
     private Boolean autoTrigger;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "destinatio_vault_id")
+
+    @JacksonXmlProperty(localName = "destinatio_vault_id")
 
     private String destinatioVaultId;
 

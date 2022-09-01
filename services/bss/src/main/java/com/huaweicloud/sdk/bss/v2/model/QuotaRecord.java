@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.bss.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,60 +14,84 @@ public class QuotaRecord {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operator")
+
+    @JacksonXmlProperty(localName = "operator")
 
     private String operator;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operation_type")
 
+    @JacksonXmlProperty(localName = "operation_type")
+
     private String operationType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quota_id")
+
+    @JacksonXmlProperty(localName = "quota_id")
 
     private String quotaId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parent_quota_id")
 
+    @JacksonXmlProperty(localName = "parent_quota_id")
+
     private String parentQuotaId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "amount")
+
+    @JacksonXmlProperty(localName = "amount")
 
     private Double amount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operation_time")
 
+    @JacksonXmlProperty(localName = "operation_time")
+
     private String operationTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "result")
+
+    @JacksonXmlProperty(localName = "result")
 
     private String result;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "indirect_partner_account_name")
 
+    @JacksonXmlProperty(localName = "indirect_partner_account_name")
+
     private String indirectPartnerAccountName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "indirect_partner_id")
+
+    @JacksonXmlProperty(localName = "indirect_partner_id")
 
     private String indirectPartnerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "indirect_partner_name")
 
+    @JacksonXmlProperty(localName = "indirect_partner_name")
+
     private String indirectPartnerName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remark")
+
+    @JacksonXmlProperty(localName = "remark")
 
     private String remark;
 

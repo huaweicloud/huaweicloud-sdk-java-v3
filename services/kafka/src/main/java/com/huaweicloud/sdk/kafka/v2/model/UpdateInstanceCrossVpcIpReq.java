@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.kafka.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -15,6 +16,8 @@ public class UpdateInstanceCrossVpcIpReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "advertised_ip_contents")
+
+    @JacksonXmlProperty(localName = "advertised_ip_contents")
 
     private Map<String, String> advertisedIpContents = null;
 

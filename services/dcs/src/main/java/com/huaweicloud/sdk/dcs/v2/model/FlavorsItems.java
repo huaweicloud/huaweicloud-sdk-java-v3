@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.dcs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,80 +17,112 @@ public class FlavorsItems {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "spec_code")
 
+    @JacksonXmlProperty(localName = "spec_code")
+
     private String specCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cloud_service_type_code")
+
+    @JacksonXmlProperty(localName = "cloud_service_type_code")
 
     private String cloudServiceTypeCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cloud_resource_type_code")
 
+    @JacksonXmlProperty(localName = "cloud_resource_type_code")
+
     private String cloudResourceTypeCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cache_mode")
+
+    @JacksonXmlProperty(localName = "cache_mode")
 
     private String cacheMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "engine")
 
+    @JacksonXmlProperty(localName = "engine")
+
     private String engine;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "engine_version")
+
+    @JacksonXmlProperty(localName = "engine_version")
 
     private String engineVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "product_type")
 
+    @JacksonXmlProperty(localName = "product_type")
+
     private String productType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cpu_type")
+
+    @JacksonXmlProperty(localName = "cpu_type")
 
     private String cpuType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "storage_type")
 
+    @JacksonXmlProperty(localName = "storage_type")
+
     private String storageType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "capacity")
+
+    @JacksonXmlProperty(localName = "capacity")
 
     private List<String> capacity = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "billing_mode")
 
+    @JacksonXmlProperty(localName = "billing_mode")
+
     private List<String> billingMode = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tenant_ip_count")
+
+    @JacksonXmlProperty(localName = "tenant_ip_count")
 
     private Integer tenantIpCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pricing_type")
 
+    @JacksonXmlProperty(localName = "pricing_type")
+
     private String pricingType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_dec")
+
+    @JacksonXmlProperty(localName = "is_dec")
 
     private Boolean isDec;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "attrs")
 
+    @JacksonXmlProperty(localName = "attrs")
+
     private List<AttrsObject> attrs = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flavors_available_zones")
+
+    @JacksonXmlProperty(localName = "flavors_available_zones")
 
     private List<FlavorAzObject> flavorsAvailableZones = null;
 

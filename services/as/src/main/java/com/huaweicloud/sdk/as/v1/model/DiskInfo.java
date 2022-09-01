@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,6 +19,8 @@ public class DiskInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
+
+    @JacksonXmlProperty(localName = "size")
 
     private Integer size;
 
@@ -125,6 +128,8 @@ public class DiskInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volume_type")
 
+    @JacksonXmlProperty(localName = "volume_type")
+
     private VolumeTypeEnum volumeType;
 
     /**
@@ -207,25 +212,35 @@ public class DiskInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "disk_type")
 
+    @JacksonXmlProperty(localName = "disk_type")
+
     private DiskTypeEnum diskType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dedicated_storage_id")
+
+    @JacksonXmlProperty(localName = "dedicated_storage_id")
 
     private String dedicatedStorageId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_disk_image_id")
 
+    @JacksonXmlProperty(localName = "data_disk_image_id")
+
     private String dataDiskImageId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "snapshot_id")
 
+    @JacksonXmlProperty(localName = "snapshot_id")
+
     private String snapshotId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metadata")
+
+    @JacksonXmlProperty(localName = "metadata")
 
     private MetaData metadata;
 

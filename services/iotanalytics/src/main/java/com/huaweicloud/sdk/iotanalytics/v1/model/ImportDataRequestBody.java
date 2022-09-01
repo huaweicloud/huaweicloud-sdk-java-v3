@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.iotanalytics.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,55 +14,77 @@ public class ImportDataRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_path")
 
+    @JacksonXmlProperty(localName = "data_path")
+
     private String dataPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_type")
+
+    @JacksonXmlProperty(localName = "data_type")
 
     private String dataType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "table_id")
 
+    @JacksonXmlProperty(localName = "table_id")
+
     private String tableId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "with_column_header")
+
+    @JacksonXmlProperty(localName = "with_column_header")
 
     private String withColumnHeader;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "delimiter")
 
+    @JacksonXmlProperty(localName = "delimiter")
+
     private String delimiter;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quote_char")
+
+    @JacksonXmlProperty(localName = "quote_char")
 
     private String quoteChar;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "escape_char")
 
+    @JacksonXmlProperty(localName = "escape_char")
+
     private String escapeChar;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "date_format")
+
+    @JacksonXmlProperty(localName = "date_format")
 
     private String dateFormat;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bad_records_path")
 
+    @JacksonXmlProperty(localName = "bad_records_path")
+
     private String badRecordsPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timestamp_format")
 
+    @JacksonXmlProperty(localName = "timestamp_format")
+
     private String timestampFormat;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "computing_resource_id")
+
+    @JacksonXmlProperty(localName = "computing_resource_id")
 
     private String computingResourceId;
 

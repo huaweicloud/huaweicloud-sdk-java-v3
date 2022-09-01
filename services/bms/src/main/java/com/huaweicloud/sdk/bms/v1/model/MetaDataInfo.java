@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.bms.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,20 +14,28 @@ public class MetaDataInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "op_svc_userid")
 
+    @JacksonXmlProperty(localName = "op_svc_userid")
+
     private String opSvcUserid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "admin_pass")
+
+    @JacksonXmlProperty(localName = "admin_pass")
 
     private String adminPass;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "BYOL")
 
+    @JacksonXmlProperty(localName = "BYOL")
+
     private String byol;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "agency_name")
+
+    @JacksonXmlProperty(localName = "agency_name")
 
     private String agencyName;
 

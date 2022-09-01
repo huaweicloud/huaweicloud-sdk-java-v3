@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ecs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,20 +14,28 @@ public class ServerAttachableQuantity {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "free_scsi")
 
+    @JacksonXmlProperty(localName = "free_scsi")
+
     private Integer freeScsi;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "free_blk")
+
+    @JacksonXmlProperty(localName = "free_blk")
 
     private Integer freeBlk;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "free_disk")
 
+    @JacksonXmlProperty(localName = "free_disk")
+
     private Integer freeDisk;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "free_nic")
+
+    @JacksonXmlProperty(localName = "free_nic")
 
     private Integer freeNic;
 

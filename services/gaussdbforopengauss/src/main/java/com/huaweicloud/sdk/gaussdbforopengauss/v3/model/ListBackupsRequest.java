@@ -12,6 +12,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -25,6 +27,7 @@ public class ListBackupsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
+    @JacksonXmlProperty(localName = "X-Language")
     
     private String xLanguage;
 
@@ -32,6 +35,7 @@ public class ListBackupsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_id")
     
+    @JacksonXmlProperty(localName = "instance_id")
     
     private String instanceId;
 
@@ -39,6 +43,7 @@ public class ListBackupsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="backup_id")
     
+    @JacksonXmlProperty(localName = "backup_id")
     
     private String backupId;
     /**
@@ -124,6 +129,7 @@ public class ListBackupsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="backup_type")
     
+    @JacksonXmlProperty(localName = "backup_type")
     
     private BackupTypeEnum backupType;
 
@@ -131,6 +137,7 @@ public class ListBackupsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
+    @JacksonXmlProperty(localName = "offset")
     
     private Integer offset;
 
@@ -138,6 +145,7 @@ public class ListBackupsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
+    @JacksonXmlProperty(localName = "limit")
     
     private Integer limit;
 
@@ -145,6 +153,7 @@ public class ListBackupsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="begin_time")
     
+    @JacksonXmlProperty(localName = "begin_time")
     
     private String beginTime;
 
@@ -152,6 +161,7 @@ public class ListBackupsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="end_time")
     
+    @JacksonXmlProperty(localName = "end_time")
     
     private String endTime;
 

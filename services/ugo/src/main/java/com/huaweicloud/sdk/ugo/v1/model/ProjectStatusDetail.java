@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ugo.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,20 +14,28 @@ public class ProjectStatusDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "object_collection_status")
 
+    @JacksonXmlProperty(localName = "object_collection_status")
+
     private String objectCollectionStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "object_collection_progress")
+
+    @JacksonXmlProperty(localName = "object_collection_progress")
 
     private String objectCollectionProgress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pre_migration_status")
 
+    @JacksonXmlProperty(localName = "pre_migration_status")
+
     private String preMigrationStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pre_migration_progress")
+
+    @JacksonXmlProperty(localName = "pre_migration_progress")
 
     private String preMigrationProgress;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,25 +14,35 @@ public class QueryVmrPkgResResultDTO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vmrPkgId")
 
+    @JacksonXmlProperty(localName = "vmrPkgId")
+
     private String vmrPkgId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vmrName")
+
+    @JacksonXmlProperty(localName = "vmrName")
 
     private String vmrName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vmrPkgParties")
 
+    @JacksonXmlProperty(localName = "vmrPkgParties")
+
     private Integer vmrPkgParties;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vmrPkgCount")
 
+    @JacksonXmlProperty(localName = "vmrPkgCount")
+
     private Integer vmrPkgCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vmrPkgUsedCount")
+
+    @JacksonXmlProperty(localName = "vmrPkgUsedCount")
 
     private Integer vmrPkgUsedCount;
 

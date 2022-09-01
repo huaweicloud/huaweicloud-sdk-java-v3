@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.swr.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,20 +14,28 @@ public class ShowQuota {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quota_limit")
 
+    @JacksonXmlProperty(localName = "quota_limit")
+
     private Integer quotaLimit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quota_key")
+
+    @JacksonXmlProperty(localName = "quota_key")
 
     private String quotaKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "unit")
 
+    @JacksonXmlProperty(localName = "unit")
+
     private String unit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "used")
+
+    @JacksonXmlProperty(localName = "used")
 
     private Integer used;
 

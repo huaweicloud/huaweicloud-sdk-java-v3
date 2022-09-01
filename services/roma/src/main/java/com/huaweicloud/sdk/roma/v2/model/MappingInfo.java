@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.roma.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,30 +14,42 @@ public class MappingInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_column")
 
+    @JacksonXmlProperty(localName = "source_column")
+
     private String sourceColumn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_column_type")
+
+    @JacksonXmlProperty(localName = "source_column_type")
 
     private String sourceColumnType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_column_length")
 
+    @JacksonXmlProperty(localName = "source_column_length")
+
     private String sourceColumnLength;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_column")
+
+    @JacksonXmlProperty(localName = "target_column")
 
     private String targetColumn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_column_type")
 
+    @JacksonXmlProperty(localName = "target_column_type")
+
     private String targetColumnType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_column_length")
+
+    @JacksonXmlProperty(localName = "target_column_length")
 
     private String targetColumnLength;
 

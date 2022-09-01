@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.devstar.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,40 +14,56 @@ public class TemplateProductExt {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "productshort")
+
+    @JacksonXmlProperty(localName = "productshort")
 
     private String productshort;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "product_name")
 
+    @JacksonXmlProperty(localName = "product_name")
+
     private String productName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "home_link")
+
+    @JacksonXmlProperty(localName = "home_link")
 
     private String homeLink;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "api_link")
 
+    @JacksonXmlProperty(localName = "api_link")
+
     private String apiLink;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sdk_link")
+
+    @JacksonXmlProperty(localName = "sdk_link")
 
     private String sdkLink;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "doc_link")
 
+    @JacksonXmlProperty(localName = "doc_link")
+
     private String docLink;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "logo_link")
+
+    @JacksonXmlProperty(localName = "logo_link")
 
     private String logoLink;
 

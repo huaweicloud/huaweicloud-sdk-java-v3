@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -155,6 +156,8 @@ public class Config {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "audio_format")
 
+    @JacksonXmlProperty(localName = "audio_format")
+
     private AudioFormatEnum audioFormat;
 
     /**
@@ -267,6 +270,8 @@ public class Config {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "property")
 
+    @JacksonXmlProperty(localName = "property")
+
     private PropertyEnum property;
 
     /**
@@ -349,10 +354,14 @@ public class Config {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "add_punc")
 
+    @JacksonXmlProperty(localName = "add_punc")
+
     private AddPuncEnum addPunc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vocabulary_id")
+
+    @JacksonXmlProperty(localName = "vocabulary_id")
 
     private String vocabularyId;
 
@@ -436,6 +445,8 @@ public class Config {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "digit_norm")
 
+    @JacksonXmlProperty(localName = "digit_norm")
+
     private DigitNormEnum digitNorm;
 
     /**
@@ -517,6 +528,8 @@ public class Config {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "need_word_info")
+
+    @JacksonXmlProperty(localName = "need_word_info")
 
     private NeedWordInfoEnum needWordInfo;
 

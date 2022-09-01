@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cloudbuild.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.math.BigDecimal;
 import java.util.Objects;
@@ -14,85 +15,119 @@ public class Job {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_name")
+
+    @JacksonXmlProperty(localName = "job_name")
 
     private String jobName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_creator")
 
+    @JacksonXmlProperty(localName = "job_creator")
+
     private String jobCreator;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_name")
+
+    @JacksonXmlProperty(localName = "user_name")
 
     private String userName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last_build_time")
 
+    @JacksonXmlProperty(localName = "last_build_time")
+
     private BigDecimal lastBuildTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "health_score")
+
+    @JacksonXmlProperty(localName = "health_score")
 
     private Integer healthScore;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_code")
 
+    @JacksonXmlProperty(localName = "source_code")
+
     private String sourceCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last_build_status")
+
+    @JacksonXmlProperty(localName = "last_build_status")
 
     private String lastBuildStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_finished")
 
+    @JacksonXmlProperty(localName = "is_finished")
+
     private Boolean isFinished;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "disabled")
+
+    @JacksonXmlProperty(localName = "disabled")
 
     private Boolean disabled;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "favorite")
 
+    @JacksonXmlProperty(localName = "favorite")
+
     private Boolean favorite;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_modify")
+
+    @JacksonXmlProperty(localName = "is_modify")
 
     private Boolean isModify;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_delete")
 
+    @JacksonXmlProperty(localName = "is_delete")
+
     private Boolean isDelete;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_execute")
+
+    @JacksonXmlProperty(localName = "is_execute")
 
     private Boolean isExecute;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_copy")
 
+    @JacksonXmlProperty(localName = "is_copy")
+
     private Boolean isCopy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_forbidden")
 
+    @JacksonXmlProperty(localName = "is_forbidden")
+
     private Boolean isForbidden;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_view")
+
+    @JacksonXmlProperty(localName = "is_view")
 
     private Boolean isView;
 

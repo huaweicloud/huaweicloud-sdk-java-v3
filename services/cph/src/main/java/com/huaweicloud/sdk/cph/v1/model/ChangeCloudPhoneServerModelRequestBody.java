@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cph.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,15 +15,21 @@ public class ChangeCloudPhoneServerModelRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "server_id")
 
+    @JacksonXmlProperty(localName = "server_id")
+
     private String serverId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "server_model_name")
 
+    @JacksonXmlProperty(localName = "server_model_name")
+
     private String serverModelName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extend_param")
+
+    @JacksonXmlProperty(localName = "extend_param")
 
     private ChangeCloudPhoneServerModelRequestBodyExtendParam extendParam;
 

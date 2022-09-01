@@ -13,6 +13,8 @@ import com.huaweicloud.sdk.aom.v2.model.LogPathRule;
 import com.huaweicloud.sdk.aom.v2.model.NameRule;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -26,6 +28,7 @@ public class AppRulesSpec  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="appType")
     
+    @JacksonXmlProperty(localName = "appType")
     
     private String appType;
 
@@ -33,6 +36,7 @@ public class AppRulesSpec  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="attrList")
     
+    @JacksonXmlProperty(localName = "attrList")
     
     private List<String> attrList = null;
     
@@ -40,6 +44,7 @@ public class AppRulesSpec  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="detectLog")
     
+    @JacksonXmlProperty(localName = "detectLog")
     
     private String detectLog;
 
@@ -47,6 +52,7 @@ public class AppRulesSpec  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="discoveryRule")
     
+    @JacksonXmlProperty(localName = "discoveryRule")
     
     private List<DiscoveryRule> discoveryRule = null;
     
@@ -54,6 +60,7 @@ public class AppRulesSpec  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="isDefaultRule")
     
+    @JacksonXmlProperty(localName = "isDefaultRule")
     
     private String isDefaultRule;
 
@@ -61,6 +68,7 @@ public class AppRulesSpec  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="isDetect")
     
+    @JacksonXmlProperty(localName = "isDetect")
     
     private String isDetect;
 
@@ -68,6 +76,7 @@ public class AppRulesSpec  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="logFileFix")
     
+    @JacksonXmlProperty(localName = "logFileFix")
     
     private List<String> logFileFix = null;
     
@@ -75,6 +84,7 @@ public class AppRulesSpec  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="logPathRule")
     
+    @JacksonXmlProperty(localName = "logPathRule")
     
     private List<LogPathRule> logPathRule = null;
     
@@ -82,6 +92,7 @@ public class AppRulesSpec  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="nameRule")
     
+    @JacksonXmlProperty(localName = "nameRule")
     
     private NameRule nameRule;
 
@@ -89,6 +100,7 @@ public class AppRulesSpec  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="priority")
     
+    @JacksonXmlProperty(localName = "priority")
     
     private Integer priority;
 

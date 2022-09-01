@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cph.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,55 +17,77 @@ public class CreateCloudPhoneServerRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "server_name")
 
+    @JacksonXmlProperty(localName = "server_name")
+
     private String serverName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "server_model_name")
+
+    @JacksonXmlProperty(localName = "server_model_name")
 
     private String serverModelName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "phone_model_name")
 
+    @JacksonXmlProperty(localName = "phone_model_name")
+
     private String phoneModelName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image_id")
+
+    @JacksonXmlProperty(localName = "image_id")
 
     private String imageId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "count")
 
+    @JacksonXmlProperty(localName = "count")
+
     private Integer count;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "keypair_name")
+
+    @JacksonXmlProperty(localName = "keypair_name")
 
     private String keypairName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ports")
 
+    @JacksonXmlProperty(localName = "ports")
+
     private List<CreateCloudPhoneServerRequestBodyPorts> ports = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "band_width")
+
+    @JacksonXmlProperty(localName = "band_width")
 
     private CreateCloudPhoneServerRequestBodyBandWidth bandWidth;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extend_param")
 
+    @JacksonXmlProperty(localName = "extend_param")
+
     private CreateCloudPhoneServerRequestBodyExtendParam extendParam;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vnc_enable")
 
+    @JacksonXmlProperty(localName = "vnc_enable")
+
     private String vncEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subnet_cidr")
+
+    @JacksonXmlProperty(localName = "subnet_cidr")
 
     private String subnetCidr;
 

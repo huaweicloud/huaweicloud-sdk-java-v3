@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
@@ -23,70 +24,98 @@ public class ServerDetails {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private UUID id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_id")
+
+    @JacksonXmlProperty(localName = "user_id")
 
     private String userId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created")
+
+    @JacksonXmlProperty(localName = "created")
 
     private OffsetDateTime created;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated")
 
+    @JacksonXmlProperty(localName = "updated")
+
     private OffsetDateTime updated;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tenant_id")
+
+    @JacksonXmlProperty(localName = "tenant_id")
 
     private String tenantId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hostId")
 
+    @JacksonXmlProperty(localName = "hostId")
+
     private String hostId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "addresses")
+
+    @JacksonXmlProperty(localName = "addresses")
 
     private Map<String, List<AddressInfo>> addresses = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key_name")
 
+    @JacksonXmlProperty(localName = "key_name")
+
     private String keyName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image")
+
+    @JacksonXmlProperty(localName = "image")
 
     private ImageInfo image;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flavor")
 
+    @JacksonXmlProperty(localName = "flavor")
+
     private FlavorInfos flavor;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_groups")
+
+    @JacksonXmlProperty(localName = "security_groups")
 
     private List<SecurityGroupsList> securityGroups = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "accessIPv4")
 
+    @JacksonXmlProperty(localName = "accessIPv4")
+
     private String accessIPv4;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "accessIPv6")
+
+    @JacksonXmlProperty(localName = "accessIPv6")
 
     private String accessIPv6;
 
@@ -188,20 +217,28 @@ public class ServerDetails {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "progress")
+
+    @JacksonXmlProperty(localName = "progress")
 
     private Integer progress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "config_drive")
 
+    @JacksonXmlProperty(localName = "config_drive")
+
     private String configDrive;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metadata")
+
+    @JacksonXmlProperty(localName = "metadata")
 
     private MetadataList metadata;
 
@@ -322,6 +359,8 @@ public class ServerDetails {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "OS-EXT-STS:task_state")
 
+    @JacksonXmlProperty(localName = "OS-EXT-STS:task_state")
+
     private OsEXTSTSTaskStateEnum osEXTSTSTaskState;
 
     /**
@@ -416,30 +455,42 @@ public class ServerDetails {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "OS-EXT-STS:vm_state")
 
+    @JacksonXmlProperty(localName = "OS-EXT-STS:vm_state")
+
     private OsEXTSTSVmStateEnum osEXTSTSVmState;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "OS-EXT-SRV-ATTR:host")
+
+    @JacksonXmlProperty(localName = "OS-EXT-SRV-ATTR:host")
 
     private String osEXTSRVATTRHost;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "OS-EXT-SRV-ATTR:instance_name")
 
+    @JacksonXmlProperty(localName = "OS-EXT-SRV-ATTR:instance_name")
+
     private String osEXTSRVATTRInstanceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "OS-EXT-STS:power_state")
+
+    @JacksonXmlProperty(localName = "OS-EXT-STS:power_state")
 
     private Integer osEXTSTSPowerState;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "OS-EXT-SRV-ATTR:hypervisor_hostname")
 
+    @JacksonXmlProperty(localName = "OS-EXT-SRV-ATTR:hypervisor_hostname")
+
     private String osEXTSRVATTRHypervisorHostname;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "OS-EXT-AZ:availability_zone")
+
+    @JacksonXmlProperty(localName = "OS-EXT-AZ:availability_zone")
 
     private String osEXTAZAvailabilityZone;
 
@@ -523,30 +574,42 @@ public class ServerDetails {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "OS-DCF:diskConfig")
 
+    @JacksonXmlProperty(localName = "OS-DCF:diskConfig")
+
     private OsDCFDiskConfigEnum osDCFDiskConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fault")
+
+    @JacksonXmlProperty(localName = "fault")
 
     private Fault fault;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "OS-SRV-USG:launched_at")
 
+    @JacksonXmlProperty(localName = "OS-SRV-USG:launched_at")
+
     private OffsetDateTime osSRVUSGLaunchedAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "OS-SRV-USG:terminated_at")
+
+    @JacksonXmlProperty(localName = "OS-SRV-USG:terminated_at")
 
     private OffsetDateTime osSRVUSGTerminatedAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os-extended-volumes:volumes_attached")
 
+    @JacksonXmlProperty(localName = "os-extended-volumes:volumes_attached")
+
     private List<OsExtendedVolumesInfo> osExtendedVolumesVolumesAttached = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
+
+    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
@@ -642,65 +705,91 @@ public class ServerDetails {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_status")
 
+    @JacksonXmlProperty(localName = "host_status")
+
     private HostStatusEnum hostStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "OS-EXT-SRV-ATTR:hostname")
+
+    @JacksonXmlProperty(localName = "OS-EXT-SRV-ATTR:hostname")
 
     private String osEXTSRVATTRHostname;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "OS-EXT-SRV-ATTR:reservation_id")
 
+    @JacksonXmlProperty(localName = "OS-EXT-SRV-ATTR:reservation_id")
+
     private String osEXTSRVATTRReservationId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "OS-EXT-SRV-ATTR:launch_index")
+
+    @JacksonXmlProperty(localName = "OS-EXT-SRV-ATTR:launch_index")
 
     private Integer osEXTSRVATTRLaunchIndex;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "OS-EXT-SRV-ATTR:kernel_id")
 
+    @JacksonXmlProperty(localName = "OS-EXT-SRV-ATTR:kernel_id")
+
     private UUID osEXTSRVATTRKernelId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "OS-EXT-SRV-ATTR:ramdisk_id")
+
+    @JacksonXmlProperty(localName = "OS-EXT-SRV-ATTR:ramdisk_id")
 
     private UUID osEXTSRVATTRRamdiskId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "OS-EXT-SRV-ATTR:root_device_name")
 
+    @JacksonXmlProperty(localName = "OS-EXT-SRV-ATTR:root_device_name")
+
     private String osEXTSRVATTRRootDeviceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "OS-EXT-SRV-ATTR:user_data")
+
+    @JacksonXmlProperty(localName = "OS-EXT-SRV-ATTR:user_data")
 
     private String osEXTSRVATTRUserData;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "locked")
 
+    @JacksonXmlProperty(localName = "locked")
+
     private Boolean locked;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
+
+    @JacksonXmlProperty(localName = "tags")
 
     private List<String> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os:scheduler_hints")
 
+    @JacksonXmlProperty(localName = "os:scheduler_hints")
+
     private SchedulerHints osSchedulerHints;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
+    @JacksonXmlProperty(localName = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sys_tags")
+
+    @JacksonXmlProperty(localName = "sys_tags")
 
     private List<SystemTags> sysTags = null;
 

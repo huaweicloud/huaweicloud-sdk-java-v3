@@ -161,7 +161,7 @@ public class FunctionGraphAsyncClient {
     /**
      * 停止函数异步调用请求
      *
-     * 停止函数异步调用请求
+     * -| 停止函数异步调用请求 当前仅支持recursive为false且force为true的参数。针对1：N的函数做并发异步调用 停止异步请求时实例同时在执行的其他请求也会被一并停止并返回4208 function invocation canceled 目前仅支持广州和贵阳一
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -177,7 +177,7 @@ public class FunctionGraphAsyncClient {
     /**
      * 停止函数异步调用请求
      *
-     * 停止函数异步调用请求
+     * -| 停止函数异步调用请求 当前仅支持recursive为false且force为true的参数。针对1：N的函数做并发异步调用 停止异步请求时实例同时在执行的其他请求也会被一并停止并返回4208 function invocation canceled 目前仅支持广州和贵阳一
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.

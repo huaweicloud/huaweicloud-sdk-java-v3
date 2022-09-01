@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ugo.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,10 +17,14 @@ public class SchemaInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_select_all_schemas")
 
+    @JacksonXmlProperty(localName = "is_select_all_schemas")
+
     private Boolean isSelectAllSchemas;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "schemas_list")
+
+    @JacksonXmlProperty(localName = "schemas_list")
 
     private List<String> schemasList = null;
 

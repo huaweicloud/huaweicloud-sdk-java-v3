@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.iam.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -15,16 +16,20 @@ public class ShowDomainProtectPolicyResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protect_policy")
 
-    private ProtectPolicyResult protectPolicy;
+    @JacksonXmlProperty(localName = "protect_policy")
 
-    public ShowDomainProtectPolicyResponse withProtectPolicy(ProtectPolicyResult protectPolicy) {
+    private ShowDomainProtectPolicyResponseBodyProtectPolicy protectPolicy;
+
+    public ShowDomainProtectPolicyResponse withProtectPolicy(
+        ShowDomainProtectPolicyResponseBodyProtectPolicy protectPolicy) {
         this.protectPolicy = protectPolicy;
         return this;
     }
 
-    public ShowDomainProtectPolicyResponse withProtectPolicy(Consumer<ProtectPolicyResult> protectPolicySetter) {
+    public ShowDomainProtectPolicyResponse withProtectPolicy(
+        Consumer<ShowDomainProtectPolicyResponseBodyProtectPolicy> protectPolicySetter) {
         if (this.protectPolicy == null) {
-            this.protectPolicy = new ProtectPolicyResult();
+            this.protectPolicy = new ShowDomainProtectPolicyResponseBodyProtectPolicy();
             protectPolicySetter.accept(this.protectPolicy);
         }
 
@@ -35,11 +40,11 @@ public class ShowDomainProtectPolicyResponse extends SdkResponse {
      * Get protectPolicy
      * @return protectPolicy
      */
-    public ProtectPolicyResult getProtectPolicy() {
+    public ShowDomainProtectPolicyResponseBodyProtectPolicy getProtectPolicy() {
         return protectPolicy;
     }
 
-    public void setProtectPolicy(ProtectPolicyResult protectPolicy) {
+    public void setProtectPolicy(ShowDomainProtectPolicyResponseBodyProtectPolicy protectPolicy) {
         this.protectPolicy = protectPolicy;
     }
 

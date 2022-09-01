@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -17,6 +18,8 @@ public class QueryAvailableNodeTypeReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "engine_type")
+
+    @JacksonXmlProperty(localName = "engine_type")
 
     private String engineType;
 
@@ -106,6 +109,8 @@ public class QueryAvailableNodeTypeReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "db_use_type")
 
+    @JacksonXmlProperty(localName = "db_use_type")
+
     private DbUseTypeEnum dbUseType;
 
     /**
@@ -194,15 +199,21 @@ public class QueryAvailableNodeTypeReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_direction")
 
+    @JacksonXmlProperty(localName = "job_direction")
+
     private JobDirectionEnum jobDirection;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "node_type")
 
+    @JacksonXmlProperty(localName = "node_type")
+
     private String nodeType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "multi_write")
+
+    @JacksonXmlProperty(localName = "multi_write")
 
     private String multiWrite;
 

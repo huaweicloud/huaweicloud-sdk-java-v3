@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.kafka.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -17,25 +18,35 @@ public class ShowCesHierarchyResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dimensions")
 
+    @JacksonXmlProperty(localName = "dimensions")
+
     private List<ShowCeshierarchyRespDimensions> dimensions = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_ids")
+
+    @JacksonXmlProperty(localName = "instance_ids")
 
     private List<ShowCeshierarchyRespInstanceIds> instanceIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nodes")
 
+    @JacksonXmlProperty(localName = "nodes")
+
     private List<ShowCeshierarchyRespNodes> nodes = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "queues")
 
+    @JacksonXmlProperty(localName = "queues")
+
     private List<ShowCeshierarchyRespQueues> queues = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "groups")
+
+    @JacksonXmlProperty(localName = "groups")
 
     private List<ShowCeshierarchyRespGroups> groups = null;
 

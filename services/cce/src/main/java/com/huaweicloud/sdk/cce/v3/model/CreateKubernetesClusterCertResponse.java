@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cce.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -17,40 +18,56 @@ public class CreateKubernetesClusterCertResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "kind")
 
+    @JacksonXmlProperty(localName = "kind")
+
     private String kind;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "apiVersion")
+
+    @JacksonXmlProperty(localName = "apiVersion")
 
     private String apiVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "preferences")
 
+    @JacksonXmlProperty(localName = "preferences")
+
     private Object preferences;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "clusters")
+
+    @JacksonXmlProperty(localName = "clusters")
 
     private List<Clusters> clusters = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "users")
 
+    @JacksonXmlProperty(localName = "users")
+
     private List<Users> users = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "contexts")
+
+    @JacksonXmlProperty(localName = "contexts")
 
     private List<Contexts> contexts = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "current-context")
 
+    @JacksonXmlProperty(localName = "current-context")
+
     private String currentContext;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "Port-ID")
+
+    @JacksonXmlProperty(localName = "Port-ID")
 
     private String portID;
 

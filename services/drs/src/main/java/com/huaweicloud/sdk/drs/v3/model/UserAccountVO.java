@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.drs.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,45 +17,63 @@ public class UserAccountVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "account")
+
+    @JacksonXmlProperty(localName = "account")
 
     private String account;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "comment")
 
+    @JacksonXmlProperty(localName = "comment")
+
     private String comment;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_transfer")
+
+    @JacksonXmlProperty(localName = "is_transfer")
 
     private Boolean isTransfer;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "privileges")
 
+    @JacksonXmlProperty(localName = "privileges")
+
     private List<String> privileges = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "password")
+
+    @JacksonXmlProperty(localName = "password")
 
     private String password;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_set_password")
 
+    @JacksonXmlProperty(localName = "is_set_password")
+
     private Boolean isSetPassword;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "roles")
 
+    @JacksonXmlProperty(localName = "roles")
+
     private List<String> roles = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "selected")
+
+    @JacksonXmlProperty(localName = "selected")
 
     private Boolean selected;
 

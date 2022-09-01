@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ddm.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,10 +15,14 @@ public class CreateInstanceReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance")
 
+    @JacksonXmlProperty(localName = "instance")
+
     private CreateInstanceDetail instance;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extend_param")
+
+    @JacksonXmlProperty(localName = "extend_param")
 
     private CreateInstanceExtendParam extendParam;
 

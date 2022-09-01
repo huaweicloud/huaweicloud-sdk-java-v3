@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.iotanalytics.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,60 +14,84 @@ public class SqlJobRunDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sql_type")
 
+    @JacksonXmlProperty(localName = "sql_type")
+
     private String sqlType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
+
+    @JacksonXmlProperty(localName = "start_time")
 
     private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "duration")
 
+    @JacksonXmlProperty(localName = "duration")
+
     private Long duration;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "input_row_count")
+
+    @JacksonXmlProperty(localName = "input_row_count")
 
     private Long inputRowCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bad_row_count")
 
+    @JacksonXmlProperty(localName = "bad_row_count")
+
     private Long badRowCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "input_size")
+
+    @JacksonXmlProperty(localName = "input_size")
 
     private Long inputSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "result_count")
 
+    @JacksonXmlProperty(localName = "result_count")
+
     private Long resultCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "table_name")
+
+    @JacksonXmlProperty(localName = "table_name")
 
     private String tableName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "with_column_header")
 
+    @JacksonXmlProperty(localName = "with_column_header")
+
     private Boolean withColumnHeader;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "detail")
+
+    @JacksonXmlProperty(localName = "detail")
 
     private String detail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "statement")
 
+    @JacksonXmlProperty(localName = "statement")
+
     private String statement;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "message")
+
+    @JacksonXmlProperty(localName = "message")
 
     private String message;
 

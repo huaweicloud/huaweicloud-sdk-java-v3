@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.eip.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -13,6 +14,8 @@ public class DisassociatePublicipsRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publicip")
+
+    @JacksonXmlProperty(localName = "publicip")
 
     private DisassociatePublicipsOption publicip;
 

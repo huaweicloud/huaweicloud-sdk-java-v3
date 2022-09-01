@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,20 +19,28 @@ public class InstanceHangingInfos {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lifecycle_hook_name")
 
+    @JacksonXmlProperty(localName = "lifecycle_hook_name")
+
     private String lifecycleHookName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lifecycle_action_key")
+
+    @JacksonXmlProperty(localName = "lifecycle_action_key")
 
     private String lifecycleActionKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_id")
 
+    @JacksonXmlProperty(localName = "instance_id")
+
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scaling_group_id")
+
+    @JacksonXmlProperty(localName = "scaling_group_id")
 
     private String scalingGroupId;
 
@@ -121,15 +130,21 @@ public class InstanceHangingInfos {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lifecycle_hook_status")
 
+    @JacksonXmlProperty(localName = "lifecycle_hook_status")
+
     private LifecycleHookStatusEnum lifecycleHookStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timeout")
 
+    @JacksonXmlProperty(localName = "timeout")
+
     private String timeout;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "default_result")
+
+    @JacksonXmlProperty(localName = "default_result")
 
     private String defaultResult;
 

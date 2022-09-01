@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,15 +19,21 @@ public class UpdateAgencyOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trust_domain_id")
 
+    @JacksonXmlProperty(localName = "trust_domain_id")
+
     private String trustDomainId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trust_domain_name")
 
+    @JacksonXmlProperty(localName = "trust_domain_name")
+
     private String trustDomainName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
+
+    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
@@ -109,6 +116,8 @@ public class UpdateAgencyOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "duration")
+
+    @JacksonXmlProperty(localName = "duration")
 
     private DurationEnum duration;
 

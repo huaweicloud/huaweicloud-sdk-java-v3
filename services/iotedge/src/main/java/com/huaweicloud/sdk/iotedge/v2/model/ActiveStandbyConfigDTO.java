@@ -8,6 +8,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -21,6 +23,7 @@ public class ActiveStandbyConfigDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="work_node")
     
+    @JacksonXmlProperty(localName = "work_node")
     
     private String workNode;
 
@@ -28,6 +31,7 @@ public class ActiveStandbyConfigDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="master_interface_name")
     
+    @JacksonXmlProperty(localName = "master_interface_name")
     
     private String masterInterfaceName;
 
@@ -35,6 +39,7 @@ public class ActiveStandbyConfigDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="slave_interface_name")
     
+    @JacksonXmlProperty(localName = "slave_interface_name")
     
     private String slaveInterfaceName;
 
@@ -42,6 +47,7 @@ public class ActiveStandbyConfigDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="virtual_ip_address")
     
+    @JacksonXmlProperty(localName = "virtual_ip_address")
     
     private String virtualIpAddress;
 

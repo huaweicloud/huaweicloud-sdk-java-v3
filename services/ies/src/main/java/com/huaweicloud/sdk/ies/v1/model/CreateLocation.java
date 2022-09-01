@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -19,20 +20,28 @@ public class CreateLocation {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "province")
+
+    @JacksonXmlProperty(localName = "province")
 
     private String province;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "city")
 
+    @JacksonXmlProperty(localName = "city")
+
     private String city;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "district")
+
+    @JacksonXmlProperty(localName = "district")
 
     private String district;
 
@@ -110,15 +119,21 @@ public class CreateLocation {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "country")
 
+    @JacksonXmlProperty(localName = "country")
+
     private CountryEnum country;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "condition")
 
+    @JacksonXmlProperty(localName = "condition")
+
     private Condition condition;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
+
+    @JacksonXmlProperty(localName = "description")
 
     private String description;
 

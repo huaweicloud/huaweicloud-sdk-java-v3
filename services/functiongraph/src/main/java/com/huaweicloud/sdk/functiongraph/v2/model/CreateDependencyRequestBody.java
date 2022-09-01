@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,15 +19,21 @@ public class CreateDependencyRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "depend_file")
 
+    @JacksonXmlProperty(localName = "depend_file")
+
     private String dependFile;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "depend_link")
 
+    @JacksonXmlProperty(localName = "depend_link")
+
     private String dependLink;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "depend_type")
+
+    @JacksonXmlProperty(localName = "depend_type")
 
     private String dependType;
 
@@ -194,15 +201,21 @@ public class CreateDependencyRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "runtime")
 
+    @JacksonXmlProperty(localName = "runtime")
+
     private RuntimeEnum runtime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
+
+    @JacksonXmlProperty(localName = "description")
 
     private String description;
 

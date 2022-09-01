@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.apm.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,35 +14,49 @@ public class AppInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "env_name")
 
+    @JacksonXmlProperty(localName = "env_name")
+
     private String envName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "env_id")
+
+    @JacksonXmlProperty(localName = "env_id")
 
     private Long envId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_name")
 
+    @JacksonXmlProperty(localName = "app_name")
+
     private String appName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_id")
+
+    @JacksonXmlProperty(localName = "app_id")
 
     private Long appId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "online_count")
 
+    @JacksonXmlProperty(localName = "online_count")
+
     private Integer onlineCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "disable_count")
 
+    @JacksonXmlProperty(localName = "disable_count")
+
     private Integer disableCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offline_count")
+
+    @JacksonXmlProperty(localName = "offline_count")
 
     private Integer offlineCount;
 

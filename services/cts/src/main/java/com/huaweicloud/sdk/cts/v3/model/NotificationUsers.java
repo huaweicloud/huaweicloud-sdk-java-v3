@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cts.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,10 +17,14 @@ public class NotificationUsers {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_group")
 
+    @JacksonXmlProperty(localName = "user_group")
+
     private String userGroup;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_list")
+
+    @JacksonXmlProperty(localName = "user_list")
 
     private List<String> userList = null;
 

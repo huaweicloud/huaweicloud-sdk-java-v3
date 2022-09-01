@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ces.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,90 +17,126 @@ public class AlarmHistoryInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alarm_id")
 
+    @JacksonXmlProperty(localName = "alarm_id")
+
     private String alarmId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alarm_name")
+
+    @JacksonXmlProperty(localName = "alarm_name")
 
     private String alarmName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alarm_description")
 
+    @JacksonXmlProperty(localName = "alarm_description")
+
     private String alarmDescription;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metric")
+
+    @JacksonXmlProperty(localName = "metric")
 
     private MetricInfo metric;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "condition")
 
+    @JacksonXmlProperty(localName = "condition")
+
     private Condition condition;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alarm_level")
+
+    @JacksonXmlProperty(localName = "alarm_level")
 
     private Integer alarmLevel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alarm_type")
 
+    @JacksonXmlProperty(localName = "alarm_type")
+
     private String alarmType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alarm_enabled")
+
+    @JacksonXmlProperty(localName = "alarm_enabled")
 
     private Boolean alarmEnabled;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alarm_action_enabled")
 
+    @JacksonXmlProperty(localName = "alarm_action_enabled")
+
     private Boolean alarmActionEnabled;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alarm_actions")
+
+    @JacksonXmlProperty(localName = "alarm_actions")
 
     private List<AlarmActions> alarmActions = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ok_actions")
 
+    @JacksonXmlProperty(localName = "ok_actions")
+
     private List<AlarmActions> okActions = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "insufficientdata_actions")
+
+    @JacksonXmlProperty(localName = "insufficientdata_actions")
 
     private List<AlarmActions> insufficientdataActions = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
 
+    @JacksonXmlProperty(localName = "update_time")
+
     private Long updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
+
+    @JacksonXmlProperty(localName = "enterprise_project_id")
 
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trigger_time")
 
+    @JacksonXmlProperty(localName = "trigger_time")
+
     private Long triggerTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alarm_status")
+
+    @JacksonXmlProperty(localName = "alarm_status")
 
     private String alarmStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "datapoints")
 
+    @JacksonXmlProperty(localName = "datapoints")
+
     private List<DataPointForAlarmHistory> datapoints = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "additional_info")
+
+    @JacksonXmlProperty(localName = "additional_info")
 
     private AdditionalInfo additionalInfo;
 

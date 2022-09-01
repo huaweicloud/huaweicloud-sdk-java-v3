@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.css.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,20 +15,28 @@ public class CreateClusterRolesBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flavorRef")
 
+    @JacksonXmlProperty(localName = "flavorRef")
+
     private String flavorRef;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volume")
+
+    @JacksonXmlProperty(localName = "volume")
 
     private CreateClusterInstanceVolumeBody volume;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
+    @JacksonXmlProperty(localName = "type")
+
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instanceNum")
+
+    @JacksonXmlProperty(localName = "instanceNum")
 
     private Integer instanceNum;
 

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -22,25 +23,35 @@ public class UpdateKeywordsAlarmRuleResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "keywords_alarm_rule_id")
 
+    @JacksonXmlProperty(localName = "keywords_alarm_rule_id")
+
     private String keywordsAlarmRuleId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "keywords_alarm_rule_name")
+
+    @JacksonXmlProperty(localName = "keywords_alarm_rule_name")
 
     private String keywordsAlarmRuleName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "keywords_alarm_rule_description")
 
+    @JacksonXmlProperty(localName = "keywords_alarm_rule_description")
+
     private String keywordsAlarmRuleDescription;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "keywords_requests")
 
+    @JacksonXmlProperty(localName = "keywords_requests")
+
     private List<KeywordsRequest> keywordsRequests = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "frequency")
+
+    @JacksonXmlProperty(localName = "frequency")
 
     private Frequency frequency;
 
@@ -136,50 +147,70 @@ public class UpdateKeywordsAlarmRuleResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "keywords_alarm_level")
 
+    @JacksonXmlProperty(localName = "keywords_alarm_level")
+
     private KeywordsAlarmLevelEnum keywordsAlarmLevel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "keywords_alarm_send")
+
+    @JacksonXmlProperty(localName = "keywords_alarm_send")
 
     private Boolean keywordsAlarmSend;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_id")
 
+    @JacksonXmlProperty(localName = "domain_id")
+
     private String domainId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
+
+    @JacksonXmlProperty(localName = "create_time")
 
     private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
 
+    @JacksonXmlProperty(localName = "update_time")
+
     private Long updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "language")
+
+    @JacksonXmlProperty(localName = "language")
 
     private String language;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "projectId")
 
+    @JacksonXmlProperty(localName = "projectId")
+
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "topics")
+
+    @JacksonXmlProperty(localName = "topics")
 
     private List<Topics> topics = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "condition_expression")
 
+    @JacksonXmlProperty(localName = "condition_expression")
+
     private String conditionExpression;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "indexId")
+
+    @JacksonXmlProperty(localName = "indexId")
 
     private String indexId;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.sa.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class Severity {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "label")
 
+    @JacksonXmlProperty(localName = "label")
+
     private String label;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "normalize_score")
 
+    @JacksonXmlProperty(localName = "normalize_score")
+
     private Integer normalizeScore;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "original_score")
+
+    @JacksonXmlProperty(localName = "original_score")
 
     private Integer originalScore;
 

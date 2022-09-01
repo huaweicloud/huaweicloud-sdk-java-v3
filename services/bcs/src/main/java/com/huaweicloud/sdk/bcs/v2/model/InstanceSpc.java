@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.bcs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class InstanceSpc {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "org_peer_max_num")
 
+    @JacksonXmlProperty(localName = "org_peer_max_num")
+
     private Long orgPeerMaxNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "orderer_max_num")
 
+    @JacksonXmlProperty(localName = "orderer_max_num")
+
     private Long ordererMaxNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "member_max_num")
+
+    @JacksonXmlProperty(localName = "member_max_num")
 
     private Integer memberMaxNum;
 

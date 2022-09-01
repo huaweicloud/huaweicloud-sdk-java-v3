@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.hss.v5.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,45 +14,63 @@ public class PwdPolicyInfoResponseInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_id")
 
+    @JacksonXmlProperty(localName = "host_id")
+
     private String hostId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_name")
+
+    @JacksonXmlProperty(localName = "host_name")
 
     private String hostName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_ip")
 
+    @JacksonXmlProperty(localName = "host_ip")
+
     private String hostIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "min_length")
+
+    @JacksonXmlProperty(localName = "min_length")
 
     private Boolean minLength;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "uppercase_letter")
 
+    @JacksonXmlProperty(localName = "uppercase_letter")
+
     private Boolean uppercaseLetter;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lowercase_letter")
+
+    @JacksonXmlProperty(localName = "lowercase_letter")
 
     private Boolean lowercaseLetter;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "number")
 
+    @JacksonXmlProperty(localName = "number")
+
     private Boolean number;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "special_character")
 
+    @JacksonXmlProperty(localName = "special_character")
+
     private Boolean specialCharacter;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "suggestion")
+
+    @JacksonXmlProperty(localName = "suggestion")
 
     private String suggestion;
 

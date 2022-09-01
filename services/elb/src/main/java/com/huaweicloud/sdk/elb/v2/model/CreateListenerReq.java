@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -20,6 +21,8 @@ public class CreateListenerReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "loadbalancer_id")
+
+    @JacksonXmlProperty(localName = "loadbalancer_id")
 
     private String loadbalancerId;
 
@@ -115,65 +118,91 @@ public class CreateListenerReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protocol")
 
+    @JacksonXmlProperty(localName = "protocol")
+
     private ProtocolEnum protocol;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protocol_port")
+
+    @JacksonXmlProperty(localName = "protocol_port")
 
     private Integer protocolPort;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tenant_id")
 
+    @JacksonXmlProperty(localName = "tenant_id")
+
     private String tenantId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
+    @JacksonXmlProperty(localName = "description")
+
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "admin_state_up")
+
+    @JacksonXmlProperty(localName = "admin_state_up")
 
     private Boolean adminStateUp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "connection_limit")
 
+    @JacksonXmlProperty(localName = "connection_limit")
+
     private Integer connectionLimit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "http2_enable")
+
+    @JacksonXmlProperty(localName = "http2_enable")
 
     private Boolean http2Enable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "default_pool_id")
 
+    @JacksonXmlProperty(localName = "default_pool_id")
+
     private String defaultPoolId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "default_tls_container_ref")
+
+    @JacksonXmlProperty(localName = "default_tls_container_ref")
 
     private String defaultTlsContainerRef;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "client_ca_tls_container_ref")
 
+    @JacksonXmlProperty(localName = "client_ca_tls_container_ref")
+
     private String clientCaTlsContainerRef;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sni_container_refs")
 
+    @JacksonXmlProperty(localName = "sni_container_refs")
+
     private List<String> sniContainerRefs = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "insert_headers")
+
+    @JacksonXmlProperty(localName = "insert_headers")
 
     private InsertHeader insertHeaders;
 
@@ -268,6 +297,8 @@ public class CreateListenerReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tls_ciphers_policy")
+
+    @JacksonXmlProperty(localName = "tls_ciphers_policy")
 
     private TlsCiphersPolicyEnum tlsCiphersPolicy;
 

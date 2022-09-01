@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cdm.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,20 +15,28 @@ public class CdmCreateClusterReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cluster")
 
+    @JacksonXmlProperty(localName = "cluster")
+
     private CdmCreateClusterReqCluster cluster;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auto_remind")
+
+    @JacksonXmlProperty(localName = "auto_remind")
 
     private Boolean autoRemind;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "phone_num")
 
+    @JacksonXmlProperty(localName = "phone_num")
+
     private String phoneNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "email")
+
+    @JacksonXmlProperty(localName = "email")
 
     private String email;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cloudrtc.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,75 +14,105 @@ public class RtcHistoryQualityTimeValue {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "date")
 
+    @JacksonXmlProperty(localName = "date")
+
     private String date;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "join_success_rate")
+
+    @JacksonXmlProperty(localName = "join_success_rate")
 
     private Double joinSuccessRate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "join_success_in5secs_rate")
 
+    @JacksonXmlProperty(localName = "join_success_in5secs_rate")
+
     private Double joinSuccessIn5secsRate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "video_freeze_rate")
+
+    @JacksonXmlProperty(localName = "video_freeze_rate")
 
     private Double videoFreezeRate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "audio_freeze_rate")
 
+    @JacksonXmlProperty(localName = "audio_freeze_rate")
+
     private Double audioFreezeRate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "first_video_recv_time")
+
+    @JacksonXmlProperty(localName = "first_video_recv_time")
 
     private Long firstVideoRecvTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "first_audio_recv_time")
 
+    @JacksonXmlProperty(localName = "first_audio_recv_time")
+
     private Long firstAudioRecvTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pull_stream_success_rate")
+
+    @JacksonXmlProperty(localName = "pull_stream_success_rate")
 
     private Double pullStreamSuccessRate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "push_stream_success_rate")
 
+    @JacksonXmlProperty(localName = "push_stream_success_rate")
+
     private Double pushStreamSuccessRate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "video_upstream_excellent_trans_rate")
+
+    @JacksonXmlProperty(localName = "video_upstream_excellent_trans_rate")
 
     private Double videoUpstreamExcellentTransRate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "audio_upstream_excellent_trans_rate")
 
+    @JacksonXmlProperty(localName = "audio_upstream_excellent_trans_rate")
+
     private Double audioUpstreamExcellentTransRate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "video_excellent_trans_rate")
+
+    @JacksonXmlProperty(localName = "video_excellent_trans_rate")
 
     private Double videoExcellentTransRate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "audio_excellent_trans_rate")
 
+    @JacksonXmlProperty(localName = "audio_excellent_trans_rate")
+
     private Double audioExcellentTransRate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "video_trans_delay")
 
+    @JacksonXmlProperty(localName = "video_trans_delay")
+
     private Double videoTransDelay;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "audio_trans_delay")
+
+    @JacksonXmlProperty(localName = "audio_trans_delay")
 
     private Double audioTransDelay;
 

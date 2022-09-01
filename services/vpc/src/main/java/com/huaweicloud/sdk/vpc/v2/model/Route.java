@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.vpc.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class Route {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "destination")
 
+    @JacksonXmlProperty(localName = "destination")
+
     private String destination;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nexthop")
+
+    @JacksonXmlProperty(localName = "nexthop")
 
     private String nexthop;
 

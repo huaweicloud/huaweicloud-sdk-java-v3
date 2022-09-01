@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -125,30 +126,42 @@ public class AlarmCondition {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "period")
 
+    @JacksonXmlProperty(localName = "period")
+
     private PeriodEnum period;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "filter")
+
+    @JacksonXmlProperty(localName = "filter")
 
     private String filter;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "comparison_operator")
 
+    @JacksonXmlProperty(localName = "comparison_operator")
+
     private String comparisonOperator;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "value")
+
+    @JacksonXmlProperty(localName = "value")
 
     private Double value;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "unit")
 
+    @JacksonXmlProperty(localName = "unit")
+
     private String unit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "count")
+
+    @JacksonXmlProperty(localName = "count")
 
     private Integer count;
 
@@ -273,6 +286,8 @@ public class AlarmCondition {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "suppress_duration")
+
+    @JacksonXmlProperty(localName = "suppress_duration")
 
     private SuppressDurationEnum suppressDuration;
 

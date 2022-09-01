@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.iec.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,45 +14,63 @@ public class GeoLocation {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "area")
+
+    @JacksonXmlProperty(localName = "area")
 
     private String area;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "city")
 
+    @JacksonXmlProperty(localName = "city")
+
     private String city;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "country")
+
+    @JacksonXmlProperty(localName = "country")
 
     private String country;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "i18n_area")
 
+    @JacksonXmlProperty(localName = "i18n_area")
+
     private String i18nArea;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "i18n_city")
+
+    @JacksonXmlProperty(localName = "i18n_city")
 
     private String i18nCity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "i18n_country")
 
+    @JacksonXmlProperty(localName = "i18n_country")
+
     private String i18nCountry;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "i18n_province")
 
+    @JacksonXmlProperty(localName = "i18n_province")
+
     private String i18nProvince;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "province")
+
+    @JacksonXmlProperty(localName = "province")
 
     private String province;
 

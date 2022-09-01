@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.bss.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,20 +14,28 @@ public class IncentiveAndDiscountPolicy {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_type_code")
 
+    @JacksonXmlProperty(localName = "service_type_code")
+
     private String serviceTypeCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_type_name")
+
+    @JacksonXmlProperty(localName = "service_type_name")
 
     private String serviceTypeName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "incentive_policy")
 
+    @JacksonXmlProperty(localName = "incentive_policy")
+
     private String incentivePolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "allow_discount")
+
+    @JacksonXmlProperty(localName = "allow_discount")
 
     private String allowDiscount;
 

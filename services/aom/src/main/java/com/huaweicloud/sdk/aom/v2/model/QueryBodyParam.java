@@ -9,6 +9,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.aom.v2.model.SearchKey;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -22,6 +24,7 @@ public class QueryBodyParam  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="category")
     
+    @JacksonXmlProperty(localName = "category")
     
     private String category;
 
@@ -29,6 +32,7 @@ public class QueryBodyParam  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="endTime")
     
+    @JacksonXmlProperty(localName = "endTime")
     
     private Long endTime;
 
@@ -36,6 +40,7 @@ public class QueryBodyParam  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="hideSyslog")
     
+    @JacksonXmlProperty(localName = "hideSyslog")
     
     private Integer hideSyslog;
 
@@ -43,6 +48,7 @@ public class QueryBodyParam  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="keyWord")
     
+    @JacksonXmlProperty(localName = "keyWord")
     
     private String keyWord;
 
@@ -50,6 +56,7 @@ public class QueryBodyParam  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="lineNum")
     
+    @JacksonXmlProperty(localName = "lineNum")
     
     private String lineNum;
 
@@ -57,6 +64,7 @@ public class QueryBodyParam  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="pageSize/size")
     
+    @JacksonXmlProperty(localName = "pageSize/size")
     
     private String pageSizeSize;
 
@@ -64,6 +72,7 @@ public class QueryBodyParam  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="searchKey")
     
+    @JacksonXmlProperty(localName = "searchKey")
     
     private SearchKey searchKey;
 
@@ -71,6 +80,7 @@ public class QueryBodyParam  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="startTime")
     
+    @JacksonXmlProperty(localName = "startTime")
     
     private Long startTime;
 
@@ -78,6 +88,7 @@ public class QueryBodyParam  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
+    @JacksonXmlProperty(localName = "type")
     
     private String type;
 
@@ -85,6 +96,7 @@ public class QueryBodyParam  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="isDesc")
     
+    @JacksonXmlProperty(localName = "isDesc")
     
     private Boolean isDesc;
 

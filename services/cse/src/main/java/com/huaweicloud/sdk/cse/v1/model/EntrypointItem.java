@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,20 +19,28 @@ public class EntrypointItem {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "master_entrypoint")
 
+    @JacksonXmlProperty(localName = "master_entrypoint")
+
     private String masterEntrypoint;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "master_entrypoint_ipv6")
+
+    @JacksonXmlProperty(localName = "master_entrypoint_ipv6")
 
     private String masterEntrypointIpv6;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "slave_entrypoint")
 
+    @JacksonXmlProperty(localName = "slave_entrypoint")
+
     private String slaveEntrypoint;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "slave_entrypoint_ipv6")
+
+    @JacksonXmlProperty(localName = "slave_entrypoint_ipv6")
 
     private String slaveEntrypointIpv6;
 
@@ -114,6 +123,8 @@ public class EntrypointItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
+
+    @JacksonXmlProperty(localName = "type")
 
     private TypeEnum type;
 

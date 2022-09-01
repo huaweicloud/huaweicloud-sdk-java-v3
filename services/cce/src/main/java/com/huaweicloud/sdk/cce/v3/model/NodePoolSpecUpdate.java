@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cce.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,15 +15,21 @@ public class NodePoolSpecUpdate {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nodeTemplate")
 
+    @JacksonXmlProperty(localName = "nodeTemplate")
+
     private NodeSpecUpdate nodeTemplate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "initialNodeCount")
 
+    @JacksonXmlProperty(localName = "initialNodeCount")
+
     private Integer initialNodeCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "autoscaling")
+
+    @JacksonXmlProperty(localName = "autoscaling")
 
     private NodePoolNodeAutoscaling autoscaling;
 

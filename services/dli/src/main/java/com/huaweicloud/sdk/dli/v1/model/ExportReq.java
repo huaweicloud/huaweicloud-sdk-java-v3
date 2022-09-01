@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,15 +17,21 @@ public class ExportReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "obs_dir")
 
+    @JacksonXmlProperty(localName = "obs_dir")
+
     private String obsDir;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_selected")
 
+    @JacksonXmlProperty(localName = "is_selected")
+
     private Boolean isSelected;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_selected")
+
+    @JacksonXmlProperty(localName = "job_selected")
 
     private List<Long> jobSelected = null;
 

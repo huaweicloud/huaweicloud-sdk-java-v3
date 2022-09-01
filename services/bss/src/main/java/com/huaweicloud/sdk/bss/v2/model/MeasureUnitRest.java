@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.bss.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,20 +14,28 @@ public class MeasureUnitRest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "measure_id")
 
+    @JacksonXmlProperty(localName = "measure_id")
+
     private Integer measureId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "measure_name")
+
+    @JacksonXmlProperty(localName = "measure_name")
 
     private String measureName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "abbreviation")
 
+    @JacksonXmlProperty(localName = "abbreviation")
+
     private String abbreviation;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "measure_type")
+
+    @JacksonXmlProperty(localName = "measure_type")
 
     private Integer measureType;
 

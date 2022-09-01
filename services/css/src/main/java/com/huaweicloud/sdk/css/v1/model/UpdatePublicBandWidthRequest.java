@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.css.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,12 +15,16 @@ public class UpdatePublicBandWidthRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cluster_id")
 
+    @JacksonXmlProperty(localName = "cluster_id")
+
     private String clusterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private BindPublicReqEip body;
+    @JacksonXmlProperty(localName = "body")
+
+    private BindPublicReqEipReq body;
 
     public UpdatePublicBandWidthRequest withClusterId(String clusterId) {
         this.clusterId = clusterId;
@@ -38,14 +43,14 @@ public class UpdatePublicBandWidthRequest {
         this.clusterId = clusterId;
     }
 
-    public UpdatePublicBandWidthRequest withBody(BindPublicReqEip body) {
+    public UpdatePublicBandWidthRequest withBody(BindPublicReqEipReq body) {
         this.body = body;
         return this;
     }
 
-    public UpdatePublicBandWidthRequest withBody(Consumer<BindPublicReqEip> bodySetter) {
+    public UpdatePublicBandWidthRequest withBody(Consumer<BindPublicReqEipReq> bodySetter) {
         if (this.body == null) {
-            this.body = new BindPublicReqEip();
+            this.body = new BindPublicReqEipReq();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +61,11 @@ public class UpdatePublicBandWidthRequest {
      * Get body
      * @return body
      */
-    public BindPublicReqEip getBody() {
+    public BindPublicReqEipReq getBody() {
         return body;
     }
 
-    public void setBody(BindPublicReqEip body) {
+    public void setBody(BindPublicReqEipReq body) {
         this.body = body;
     }
 

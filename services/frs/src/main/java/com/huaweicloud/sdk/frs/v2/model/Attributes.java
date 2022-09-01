@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.frs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,55 +15,77 @@ public class Attributes {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dress")
 
+    @JacksonXmlProperty(localName = "dress")
+
     private Dress dress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "glass")
+
+    @JacksonXmlProperty(localName = "glass")
 
     private String glass;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hat")
 
+    @JacksonXmlProperty(localName = "hat")
+
     private String hat;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "age")
+
+    @JacksonXmlProperty(localName = "age")
 
     private Integer age;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mask")
 
+    @JacksonXmlProperty(localName = "mask")
+
     private String mask;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "beard")
+
+    @JacksonXmlProperty(localName = "beard")
 
     private String beard;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "phototype")
 
+    @JacksonXmlProperty(localName = "phototype")
+
     private String phototype;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quality")
+
+    @JacksonXmlProperty(localName = "quality")
 
     private FaceQuality quality;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hair")
 
+    @JacksonXmlProperty(localName = "hair")
+
     private String hair;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expression")
 
+    @JacksonXmlProperty(localName = "expression")
+
     private AttributesExpression expression;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "face_angle")
+
+    @JacksonXmlProperty(localName = "face_angle")
 
     private Integer faceAngle;
 

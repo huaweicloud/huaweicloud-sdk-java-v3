@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cce.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -18,25 +19,35 @@ public class ReinstallK8sOptionsConfig {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "labels")
 
+    @JacksonXmlProperty(localName = "labels")
+
     private Map<String, String> labels = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "taints")
+
+    @JacksonXmlProperty(localName = "taints")
 
     private List<Taint> taints = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maxPods")
 
+    @JacksonXmlProperty(localName = "maxPods")
+
     private Integer maxPods;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nicMultiqueue")
 
+    @JacksonXmlProperty(localName = "nicMultiqueue")
+
     private String nicMultiqueue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nicThreshold")
+
+    @JacksonXmlProperty(localName = "nicThreshold")
 
     private String nicThreshold;
 

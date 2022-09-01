@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.dcs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,45 +14,63 @@ public class InstanceStatistic {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "input_kbps")
 
+    @JacksonXmlProperty(localName = "input_kbps")
+
     private String inputKbps;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "output_kbps")
+
+    @JacksonXmlProperty(localName = "output_kbps")
 
     private String outputKbps;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_id")
 
+    @JacksonXmlProperty(localName = "instance_id")
+
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "keys")
+
+    @JacksonXmlProperty(localName = "keys")
 
     private Long keys;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "used_memory")
 
+    @JacksonXmlProperty(localName = "used_memory")
+
     private Long usedMemory;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_memory")
+
+    @JacksonXmlProperty(localName = "max_memory")
 
     private Long maxMemory;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cmd_get_count")
 
+    @JacksonXmlProperty(localName = "cmd_get_count")
+
     private Long cmdGetCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cmd_set_count")
 
+    @JacksonXmlProperty(localName = "cmd_set_count")
+
     private Long cmdSetCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "used_cpu")
+
+    @JacksonXmlProperty(localName = "used_cpu")
 
     private String usedCpu;
 

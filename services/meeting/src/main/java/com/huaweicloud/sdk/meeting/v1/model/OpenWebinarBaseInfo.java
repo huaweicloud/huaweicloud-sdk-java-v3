@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,105 +14,147 @@ public class OpenWebinarBaseInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "conferenceId")
 
+    @JacksonXmlProperty(localName = "conferenceId")
+
     private String conferenceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "corpId")
+
+    @JacksonXmlProperty(localName = "corpId")
 
     private String corpId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subject")
 
+    @JacksonXmlProperty(localName = "subject")
+
     private String subject;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
+
+    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "startTime")
 
+    @JacksonXmlProperty(localName = "startTime")
+
     private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "duration")
+
+    @JacksonXmlProperty(localName = "duration")
 
     private Integer duration;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timeZoneId")
 
+    @JacksonXmlProperty(localName = "timeZoneId")
+
     private Integer timeZoneId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "state")
+
+    @JacksonXmlProperty(localName = "state")
 
     private MeetingStatus state;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scheduserId")
 
+    @JacksonXmlProperty(localName = "scheduserId")
+
     private String scheduserId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deptName")
+
+    @JacksonXmlProperty(localName = "deptName")
 
     private String deptName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scheduserName")
 
+    @JacksonXmlProperty(localName = "scheduserName")
+
     private String scheduserName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vmrPkgName")
+
+    @JacksonXmlProperty(localName = "vmrPkgName")
 
     private String vmrPkgName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "callRestriction")
 
+    @JacksonXmlProperty(localName = "callRestriction")
+
     private Boolean callRestriction;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scope")
+
+    @JacksonXmlProperty(localName = "scope")
 
     private Integer scope;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "audienceScope")
 
+    @JacksonXmlProperty(localName = "audienceScope")
+
     private Integer audienceScope;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "chairJoinUri")
+
+    @JacksonXmlProperty(localName = "chairJoinUri")
 
     private String chairJoinUri;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "chairPasswd")
 
+    @JacksonXmlProperty(localName = "chairPasswd")
+
     private String chairPasswd;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "guestJoinUri")
+
+    @JacksonXmlProperty(localName = "guestJoinUri")
 
     private String guestJoinUri;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "guestPasswd")
 
+    @JacksonXmlProperty(localName = "guestPasswd")
+
     private String guestPasswd;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "audienceJoinUri")
 
+    @JacksonXmlProperty(localName = "audienceJoinUri")
+
     private String audienceJoinUri;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "audiencePasswd")
+
+    @JacksonXmlProperty(localName = "audiencePasswd")
 
     private String audiencePasswd;
 

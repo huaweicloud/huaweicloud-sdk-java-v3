@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.apig.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class VpcBaseInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ecs_id")
 
+    @JacksonXmlProperty(localName = "ecs_id")
+
     private String ecsId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ecs_name")
 
+    @JacksonXmlProperty(localName = "ecs_name")
+
     private String ecsName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cascade_flag")
+
+    @JacksonXmlProperty(localName = "cascade_flag")
 
     private Boolean cascadeFlag;
 

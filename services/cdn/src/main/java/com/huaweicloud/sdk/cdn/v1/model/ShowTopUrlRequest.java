@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,20 +19,28 @@ public class ShowTopUrlRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
+    @JacksonXmlProperty(localName = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
+
+    @JacksonXmlProperty(localName = "start_time")
 
     private Long startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time")
 
+    @JacksonXmlProperty(localName = "end_time")
+
     private Long endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_name")
+
+    @JacksonXmlProperty(localName = "domain_name")
 
     private String domainName;
 
@@ -115,6 +124,8 @@ public class ShowTopUrlRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_area")
 
+    @JacksonXmlProperty(localName = "service_area")
+
     private ServiceAreaEnum serviceArea;
 
     /**
@@ -196,6 +207,8 @@ public class ShowTopUrlRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stat_type")
+
+    @JacksonXmlProperty(localName = "stat_type")
 
     private StatTypeEnum statType;
 

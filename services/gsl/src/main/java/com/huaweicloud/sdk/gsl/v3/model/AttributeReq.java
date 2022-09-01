@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.gsl.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,35 +14,49 @@ public class AttributeReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sim_card_id")
 
+    @JacksonXmlProperty(localName = "sim_card_id")
+
     private Long simCardId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "customer_attribute1")
+
+    @JacksonXmlProperty(localName = "customer_attribute1")
 
     private String customerAttribute1;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "customer_attribute2")
 
+    @JacksonXmlProperty(localName = "customer_attribute2")
+
     private String customerAttribute2;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "customer_attribute3")
+
+    @JacksonXmlProperty(localName = "customer_attribute3")
 
     private String customerAttribute3;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "customer_attribute4")
 
+    @JacksonXmlProperty(localName = "customer_attribute4")
+
     private String customerAttribute4;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "customer_attribute5")
 
+    @JacksonXmlProperty(localName = "customer_attribute5")
+
     private String customerAttribute5;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "customer_attribute6")
+
+    @JacksonXmlProperty(localName = "customer_attribute6")
 
     private String customerAttribute6;
 

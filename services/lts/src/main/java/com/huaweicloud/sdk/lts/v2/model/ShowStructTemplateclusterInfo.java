@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.lts.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class ShowStructTemplateclusterInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cluster_name")
 
+    @JacksonXmlProperty(localName = "cluster_name")
+
     private String clusterName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "kafka_bootstrap_servers")
 
+    @JacksonXmlProperty(localName = "kafka_bootstrap_servers")
+
     private String kafkaBootstrapServers;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "kafka_ssl_enable")
+
+    @JacksonXmlProperty(localName = "kafka_ssl_enable")
 
     private Boolean kafkaSslEnable;
 

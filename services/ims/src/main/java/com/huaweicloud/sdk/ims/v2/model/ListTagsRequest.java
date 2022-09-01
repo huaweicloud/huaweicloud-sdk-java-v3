@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,10 +19,14 @@ public class ListTagsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
+    @JacksonXmlProperty(localName = "limit")
+
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page")
+
+    @JacksonXmlProperty(localName = "page")
 
     private Integer page;
 
@@ -111,10 +116,14 @@ public class ListTagsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__imagetype")
 
+    @JacksonXmlProperty(localName = "__imagetype")
+
     private ImagetypeEnum imagetype;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
+
+    @JacksonXmlProperty(localName = "id")
 
     private String id;
 
@@ -216,20 +225,28 @@ public class ListTagsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "min_disk")
 
+    @JacksonXmlProperty(localName = "min_disk")
+
     private Integer minDisk;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__platform")
+
+    @JacksonXmlProperty(localName = "__platform")
 
     private String platform;
 
@@ -319,6 +336,8 @@ public class ListTagsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__os_type")
 
+    @JacksonXmlProperty(localName = "__os_type")
+
     private OsTypeEnum osType;
 
     /**
@@ -406,6 +425,8 @@ public class ListTagsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "member_status")
+
+    @JacksonXmlProperty(localName = "member_status")
 
     private MemberStatusEnum memberStatus;
 
@@ -495,10 +516,14 @@ public class ListTagsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "virtual_env_type")
 
+    @JacksonXmlProperty(localName = "virtual_env_type")
+
     private VirtualEnvTypeEnum virtualEnvType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
+
+    @JacksonXmlProperty(localName = "enterprise_project_id")
 
     private String enterpriseProjectId;
 
@@ -582,15 +607,21 @@ public class ListTagsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "architecture")
 
+    @JacksonXmlProperty(localName = "architecture")
+
     private ArchitectureEnum architecture;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
 
+    @JacksonXmlProperty(localName = "created_at")
+
     private String createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_at")
+
+    @JacksonXmlProperty(localName = "updated_at")
 
     private String updatedAt;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.devstar.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,10 +17,14 @@ public class TemplatesInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template_ids")
 
+    @JacksonXmlProperty(localName = "template_ids")
+
     private List<String> templateIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "platform_source")
+
+    @JacksonXmlProperty(localName = "platform_source")
 
     private Integer platformSource;
 

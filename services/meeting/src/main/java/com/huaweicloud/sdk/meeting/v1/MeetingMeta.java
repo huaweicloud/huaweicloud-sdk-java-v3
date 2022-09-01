@@ -1345,7 +1345,6 @@ public class MeetingMeta {
             }));
 
         // response
-
         builder.<List<ConferenceInfo>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -1431,7 +1430,6 @@ public class MeetingMeta {
             }));
 
         // response
-
         builder.<List<ConferenceInfo>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -3492,7 +3490,6 @@ public class MeetingMeta {
             }));
 
         // response
-
         builder.<List<QueryDeptResultDTO>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -5268,7 +5265,6 @@ public class MeetingMeta {
             }).withInnerContainerType(String.class));
 
         // response
-
         builder.<List<UserStatusDTO>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -5308,7 +5304,6 @@ public class MeetingMeta {
             }));
 
         // response
-
         builder.<List<QueryDeviceTypeResultDTO>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -6573,7 +6568,6 @@ public class MeetingMeta {
             }));
 
         // response
-
         builder.<List<ConferenceInfo>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -6848,7 +6842,6 @@ public class MeetingMeta {
             }));
 
         // response
-
         builder.<List<ConferenceInfo>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,

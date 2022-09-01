@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.mpc.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,15 +15,21 @@ public class Thumbnail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tar")
 
+    @JacksonXmlProperty(localName = "tar")
+
     private Integer tar;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "out")
 
+    @JacksonXmlProperty(localName = "out")
+
     private ObsObjInfo out;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "params")
+
+    @JacksonXmlProperty(localName = "params")
 
     private ThumbnailPara params;
 

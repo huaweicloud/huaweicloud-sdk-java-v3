@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,35 +19,49 @@ public class ContentCompareDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_db_name")
 
+    @JacksonXmlProperty(localName = "source_db_name")
+
     private String sourceDbName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_db_name")
+
+    @JacksonXmlProperty(localName = "target_db_name")
 
     private String targetDbName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_table_name")
 
+    @JacksonXmlProperty(localName = "source_table_name")
+
     private String sourceTableName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_table_name")
+
+    @JacksonXmlProperty(localName = "target_table_name")
 
     private String targetTableName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_row_num")
 
+    @JacksonXmlProperty(localName = "source_row_num")
+
     private Integer sourceRowNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_row_num")
 
+    @JacksonXmlProperty(localName = "target_row_num")
+
     private Integer targetRowNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "diff_row_num")
+
+    @JacksonXmlProperty(localName = "diff_row_num")
 
     private Integer diffRowNum;
 
@@ -162,6 +177,8 @@ public class ContentCompareDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "line_compare_result")
+
+    @JacksonXmlProperty(localName = "line_compare_result")
 
     private LineCompareResultEnum lineCompareResult;
 
@@ -279,10 +296,14 @@ public class ContentCompareDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "content_compare_result")
 
+    @JacksonXmlProperty(localName = "content_compare_result")
+
     private ContentCompareResultEnum contentCompareResult;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "message")
+
+    @JacksonXmlProperty(localName = "message")
 
     private String message;
 

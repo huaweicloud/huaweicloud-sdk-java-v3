@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.eg.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class DeleteSubscriptionTargetRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subscription_id")
 
+    @JacksonXmlProperty(localName = "subscription_id")
+
     private String subscriptionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_id")
+
+    @JacksonXmlProperty(localName = "target_id")
 
     private String targetId;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cloudbuild.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -14,40 +15,56 @@ public class ShowLastHistoryResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "record_id")
 
+    @JacksonXmlProperty(localName = "record_id")
+
     private String recordId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_id")
+
+    @JacksonXmlProperty(localName = "job_id")
 
     private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_name")
 
+    @JacksonXmlProperty(localName = "job_name")
+
     private String jobName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "build_number")
+
+    @JacksonXmlProperty(localName = "build_number")
 
     private Integer buildNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
+    @JacksonXmlProperty(localName = "start_time")
+
     private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time")
+
+    @JacksonXmlProperty(localName = "end_time")
 
     private String endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "result")
 
+    @JacksonXmlProperty(localName = "result")
+
     private String result;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "commit_id")
+
+    @JacksonXmlProperty(localName = "commit_id")
 
     private String commitId;
 

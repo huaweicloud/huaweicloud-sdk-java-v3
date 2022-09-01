@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.bms.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.UUID;
@@ -15,10 +16,14 @@ public class PublicIp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private UUID id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "eip")
+
+    @JacksonXmlProperty(localName = "eip")
 
     private Eip eip;
 

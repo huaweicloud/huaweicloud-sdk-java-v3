@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.waf.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class TimeoutConfig {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "connect_timeout")
 
+    @JacksonXmlProperty(localName = "connect_timeout")
+
     private Integer connectTimeout;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "send_timeout")
 
+    @JacksonXmlProperty(localName = "send_timeout")
+
     private Integer sendTimeout;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "read_timeout")
+
+    @JacksonXmlProperty(localName = "read_timeout")
 
     private Integer readTimeout;
 

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -102,10 +103,14 @@ public class CreatePersonalAuthRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "repo_type")
 
+    @JacksonXmlProperty(localName = "repo_type")
+
     private RepoTypeEnum repoType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
+
+    @JacksonXmlProperty(localName = "body")
 
     private AccessToken body;
 

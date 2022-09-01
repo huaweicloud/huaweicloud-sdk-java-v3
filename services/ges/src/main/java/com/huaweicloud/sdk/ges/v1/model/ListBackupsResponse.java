@@ -13,6 +13,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.ges.v1.model.Backup;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -26,6 +28,7 @@ public class ListBackupsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="errorMessage")
     
+    @JacksonXmlProperty(localName = "errorMessage")
     
     private String errorMessage;
 
@@ -33,6 +36,7 @@ public class ListBackupsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="errorCode")
     
+    @JacksonXmlProperty(localName = "errorCode")
     
     private String errorCode;
 
@@ -40,6 +44,7 @@ public class ListBackupsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="backupCount")
     
+    @JacksonXmlProperty(localName = "backupCount")
     
     private Integer backupCount;
 
@@ -47,6 +52,7 @@ public class ListBackupsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="backupList")
     
+    @JacksonXmlProperty(localName = "backupList")
     
     private List<Backup> backupList = null;
     

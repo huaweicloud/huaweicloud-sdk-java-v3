@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.antiddos.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,25 +14,35 @@ public class WeeklyCount {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ddos_intercept_times")
 
+    @JacksonXmlProperty(localName = "ddos_intercept_times")
+
     private Integer ddosInterceptTimes;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ddos_blackhole_times")
+
+    @JacksonXmlProperty(localName = "ddos_blackhole_times")
 
     private Integer ddosBlackholeTimes;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_attack_bps")
 
+    @JacksonXmlProperty(localName = "max_attack_bps")
+
     private Integer maxAttackBps;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_attack_conns")
 
+    @JacksonXmlProperty(localName = "max_attack_conns")
+
     private Integer maxAttackConns;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "period_start_date")
+
+    @JacksonXmlProperty(localName = "period_start_date")
 
     private Long periodStartDate;
 

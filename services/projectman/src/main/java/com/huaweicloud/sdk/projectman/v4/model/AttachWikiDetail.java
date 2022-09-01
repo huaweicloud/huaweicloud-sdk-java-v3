@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.projectman.v4.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,35 +15,49 @@ public class AttachWikiDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "issue_id")
 
+    @JacksonXmlProperty(localName = "issue_id")
+
     private Integer issueId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "wiki_title")
+
+    @JacksonXmlProperty(localName = "wiki_title")
 
     private String wikiTitle;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "wiki_author")
 
+    @JacksonXmlProperty(localName = "wiki_author")
+
     private SimpleUser wikiAuthor;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project")
+
+    @JacksonXmlProperty(localName = "project")
 
     private SimpleProject project;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_date")
 
+    @JacksonXmlProperty(localName = "created_date")
+
     private String createdDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "wiki_id")
 
+    @JacksonXmlProperty(localName = "wiki_id")
+
     private String wikiId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region")
+
+    @JacksonXmlProperty(localName = "region")
 
     private String region;
 

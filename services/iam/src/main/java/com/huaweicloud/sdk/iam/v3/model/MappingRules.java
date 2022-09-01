@@ -2,34 +2,38 @@ package com.huaweicloud.sdk.iam.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 
+ * MappingRules
  */
 public class MappingRules {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "local")
 
-    private List<Map<String, RulesLocalAdditional>> local = null;
+    @JacksonXmlProperty(localName = "local")
+
+    private List<RulesLocal> local = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remote")
 
+    @JacksonXmlProperty(localName = "remote")
+
     private List<RulesRemote> remote = null;
 
-    public MappingRules withLocal(List<Map<String, RulesLocalAdditional>> local) {
+    public MappingRules withLocal(List<RulesLocal> local) {
         this.local = local;
         return this;
     }
 
-    public MappingRules addLocalItem(Map<String, RulesLocalAdditional> localItem) {
+    public MappingRules addLocalItem(RulesLocal localItem) {
         if (this.local == null) {
             this.local = new ArrayList<>();
         }
@@ -37,7 +41,7 @@ public class MappingRules {
         return this;
     }
 
-    public MappingRules withLocal(Consumer<List<Map<String, RulesLocalAdditional>>> localSetter) {
+    public MappingRules withLocal(Consumer<List<RulesLocal>> localSetter) {
         if (this.local == null) {
             this.local = new ArrayList<>();
         }
@@ -46,14 +50,14 @@ public class MappingRules {
     }
 
     /**
-     * 表示联邦用户在本系统中的用户信息。 user：联邦用户在本系统中的用户名称。group：联邦用户在本系统中所属用户组。 
+     * 表示联邦用户在本系统中的用户信息。 user：联邦用户在本系统中的用户名称。group：联邦用户在本系统中所属用户组。
      * @return local
      */
-    public List<Map<String, RulesLocalAdditional>> getLocal() {
+    public List<RulesLocal> getLocal() {
         return local;
     }
 
-    public void setLocal(List<Map<String, RulesLocalAdditional>> local) {
+    public void setLocal(List<RulesLocal> local) {
         this.local = local;
     }
 

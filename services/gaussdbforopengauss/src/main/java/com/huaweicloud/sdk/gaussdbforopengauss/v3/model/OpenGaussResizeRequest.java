@@ -8,6 +8,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -21,6 +23,7 @@ public class OpenGaussResizeRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="flavor_ref")
     
+    @JacksonXmlProperty(localName = "flavor_ref")
     
     private String flavorRef;
 
@@ -28,6 +31,7 @@ public class OpenGaussResizeRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="is_auto_pay")
     
+    @JacksonXmlProperty(localName = "is_auto_pay")
     
     private Boolean isAutoPay;
 

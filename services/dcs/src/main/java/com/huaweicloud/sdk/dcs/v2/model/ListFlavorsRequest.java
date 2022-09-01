@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,25 +19,35 @@ public class ListFlavorsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_id")
 
+    @JacksonXmlProperty(localName = "instance_id")
+
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "spec_code")
+
+    @JacksonXmlProperty(localName = "spec_code")
 
     private String specCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cache_mode")
 
+    @JacksonXmlProperty(localName = "cache_mode")
+
     private String cacheMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "engine")
 
+    @JacksonXmlProperty(localName = "engine")
+
     private String engine;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "engine_version")
+
+    @JacksonXmlProperty(localName = "engine_version")
 
     private String engineVersion;
 
@@ -120,10 +131,14 @@ public class ListFlavorsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cpu_type")
 
+    @JacksonXmlProperty(localName = "cpu_type")
+
     private CpuTypeEnum cpuType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "capacity")
+
+    @JacksonXmlProperty(localName = "capacity")
 
     private String capacity;
 

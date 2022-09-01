@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,15 +22,21 @@ public class NodePoolStatus {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "currentNode")
 
+    @JacksonXmlProperty(localName = "currentNode")
+
     private Integer currentNode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "creatingNode")
 
+    @JacksonXmlProperty(localName = "creatingNode")
+
     private Integer creatingNode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deletingNode")
+
+    @JacksonXmlProperty(localName = "deletingNode")
 
     private Integer deletingNode;
 
@@ -131,15 +138,21 @@ public class NodePoolStatus {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "phase")
 
+    @JacksonXmlProperty(localName = "phase")
+
     private PhaseEnum phase;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "jobId")
 
+    @JacksonXmlProperty(localName = "jobId")
+
     private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "conditions")
+
+    @JacksonXmlProperty(localName = "conditions")
 
     private List<NodePoolCondition> conditions = null;
 

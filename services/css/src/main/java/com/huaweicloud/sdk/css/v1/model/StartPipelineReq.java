@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.css.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,10 +17,14 @@ public class StartPipelineReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "keepAlive")
 
+    @JacksonXmlProperty(localName = "keepAlive")
+
     private Boolean keepAlive;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "names")
+
+    @JacksonXmlProperty(localName = "names")
 
     private List<String> names = null;
 
@@ -29,7 +34,7 @@ public class StartPipelineReq {
     }
 
     /**
-     * 是否保持常驻。  - true: 开启保持常驻。 - false: 关闭保持常驻。 开启“保持常驻”适用于需要长期运行的业务。开启“保持常驻”以后，将会在每个节点上面配置一个守护进程，当logstash服务出现故障的时候，会主动拉起并修复。“保持常驻”不适用于短期运行的业务，因为多次主动拉起logstash服务会导致数据迁移重复。
+     * 是否保持常驻。   - true: 开启保持常驻。  - false: 关闭保持常驻。  开启“保持常驻”适用于需要长期运行的业务。开启“保持常驻”以后，将会在每个节点上面配置一个守护进程，当logstash服务出现故障的时候，会主动拉起并修复。“保持常驻”不适用于短期运行的业务，因为多次主动拉起logstash服务会导致数据迁移重复。
      * @return keepAlive
      */
     public Boolean getKeepAlive() {

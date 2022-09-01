@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.iotanalytics.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -17,65 +18,91 @@ public class CreateTableResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "table_id")
 
+    @JacksonXmlProperty(localName = "table_id")
+
     private String tableId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "table_name")
+
+    @JacksonXmlProperty(localName = "table_name")
 
     private String tableName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "table_alias")
 
+    @JacksonXmlProperty(localName = "table_alias")
+
     private String tableAlias;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_time")
+
+    @JacksonXmlProperty(localName = "created_time")
 
     private String createdTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "modified_time")
 
+    @JacksonXmlProperty(localName = "modified_time")
+
     private String modifiedTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_location")
+
+    @JacksonXmlProperty(localName = "data_location")
 
     private String dataLocation;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_type")
 
+    @JacksonXmlProperty(localName = "data_type")
+
     private String dataType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_source")
+
+    @JacksonXmlProperty(localName = "data_source")
 
     private String dataSource;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "table_type")
 
+    @JacksonXmlProperty(localName = "table_type")
+
     private String tableType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
+
+    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "partition_columns")
 
+    @JacksonXmlProperty(localName = "partition_columns")
+
     private List<String> partitionColumns = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_store_id")
 
+    @JacksonXmlProperty(localName = "data_store_id")
+
     private String dataStoreId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
+
+    @JacksonXmlProperty(localName = "tags")
 
     private String tags;
 

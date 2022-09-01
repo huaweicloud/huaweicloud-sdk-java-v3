@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.elb.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,30 +14,42 @@ public class FlavorInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "connection")
 
+    @JacksonXmlProperty(localName = "connection")
+
     private Integer connection;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cps")
+
+    @JacksonXmlProperty(localName = "cps")
 
     private Integer cps;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "qps")
 
+    @JacksonXmlProperty(localName = "qps")
+
     private Integer qps;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bandwidth")
+
+    @JacksonXmlProperty(localName = "bandwidth")
 
     private Integer bandwidth;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lcu")
 
+    @JacksonXmlProperty(localName = "lcu")
+
     private Integer lcu;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "https_cps")
+
+    @JacksonXmlProperty(localName = "https_cps")
 
     private Integer httpsCps;
 

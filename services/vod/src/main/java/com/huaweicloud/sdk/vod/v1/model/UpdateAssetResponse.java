@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.vod.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -17,20 +18,28 @@ public class UpdateAssetResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "asset_id")
 
+    @JacksonXmlProperty(localName = "asset_id")
+
     private String assetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "video_upload_url")
+
+    @JacksonXmlProperty(localName = "video_upload_url")
 
     private String videoUploadUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cover_upload_url")
 
+    @JacksonXmlProperty(localName = "cover_upload_url")
+
     private String coverUploadUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subtitle_upload_urls")
+
+    @JacksonXmlProperty(localName = "subtitle_upload_urls")
 
     private List<String> subtitleUploadUrls = null;
 

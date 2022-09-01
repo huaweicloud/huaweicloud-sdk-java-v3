@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ugo.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -17,35 +18,49 @@ public class ListPermissionCheckResultResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_count")
 
+    @JacksonXmlProperty(localName = "total_count")
+
     private Integer totalCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "passed_permission_items")
+
+    @JacksonXmlProperty(localName = "passed_permission_items")
 
     private List<PermissionItem> passedPermissionItems = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alarm_permission_items")
 
+    @JacksonXmlProperty(localName = "alarm_permission_items")
+
     private List<PermissionItem> alarmPermissionItems = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "failed_permission_items")
+
+    @JacksonXmlProperty(localName = "failed_permission_items")
 
     private List<PermissionItem> failedPermissionItems = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "passed_count")
 
+    @JacksonXmlProperty(localName = "passed_count")
+
     private Integer passedCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alarm_count")
 
+    @JacksonXmlProperty(localName = "alarm_count")
+
     private Integer alarmCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "failed_count")
+
+    @JacksonXmlProperty(localName = "failed_count")
 
     private Integer failedCount;
 

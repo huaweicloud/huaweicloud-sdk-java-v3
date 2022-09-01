@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ivs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,20 +14,28 @@ public class StandardRespDataByNameAndId {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "verification_result")
 
+    @JacksonXmlProperty(localName = "verification_result")
+
     private String verificationResult;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "verification_message")
+
+    @JacksonXmlProperty(localName = "verification_message")
 
     private String verificationMessage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "verification_code")
 
+    @JacksonXmlProperty(localName = "verification_code")
+
     private Integer verificationCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "similarity")
+
+    @JacksonXmlProperty(localName = "similarity")
 
     private String similarity;
 

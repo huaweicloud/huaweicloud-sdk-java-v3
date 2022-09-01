@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,40 +15,56 @@ public class RestScheduleCycleConfDTO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cycleSubConfID")
 
+    @JacksonXmlProperty(localName = "cycleSubConfID")
+
     private String cycleSubConfID;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mediaTypes")
+
+    @JacksonXmlProperty(localName = "mediaTypes")
 
     private String mediaTypes;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "startTime")
 
+    @JacksonXmlProperty(localName = "startTime")
+
     private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "length")
+
+    @JacksonXmlProperty(localName = "length")
 
     private Integer length;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "isAutoRecord")
 
+    @JacksonXmlProperty(localName = "isAutoRecord")
+
     private Integer isAutoRecord;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confConfigInfo")
+
+    @JacksonXmlProperty(localName = "confConfigInfo")
 
     private CycleSubConfConfigDTO confConfigInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "recordAuthType")
 
+    @JacksonXmlProperty(localName = "recordAuthType")
+
     private Integer recordAuthType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
+
+    @JacksonXmlProperty(localName = "description")
 
     private String description;
 

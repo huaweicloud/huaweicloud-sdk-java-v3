@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ugo.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -17,15 +18,21 @@ public class RunSqlConversionResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_support_conversion")
 
+    @JacksonXmlProperty(localName = "is_support_conversion")
+
     private Boolean isSupportConversion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "converted_sql_statement")
 
+    @JacksonXmlProperty(localName = "converted_sql_statement")
+
     private String convertedSqlStatement;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "unsupported_items")
+
+    @JacksonXmlProperty(localName = "unsupported_items")
 
     private List<UnSupportedItem> unsupportedItems = null;
 

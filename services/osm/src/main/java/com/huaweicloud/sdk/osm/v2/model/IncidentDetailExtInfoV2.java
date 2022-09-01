@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.osm.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,35 +14,49 @@ public class IncidentDetailExtInfoV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "area_code")
 
+    @JacksonXmlProperty(localName = "area_code")
+
     private String areaCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remind_mobile")
+
+    @JacksonXmlProperty(localName = "remind_mobile")
 
     private String remindMobile;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remind_mail")
 
+    @JacksonXmlProperty(localName = "remind_mail")
+
     private String remindMail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "contact_type")
+
+    @JacksonXmlProperty(localName = "contact_type")
 
     private String contactType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remind_time")
 
+    @JacksonXmlProperty(localName = "remind_time")
+
     private String remindTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cc_email")
 
+    @JacksonXmlProperty(localName = "cc_email")
+
     private String ccEmail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "commodity_id")
+
+    @JacksonXmlProperty(localName = "commodity_id")
 
     private String commodityId;
 

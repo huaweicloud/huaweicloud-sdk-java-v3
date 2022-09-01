@@ -2,8 +2,10 @@ package com.huaweicloud.sdk.roma.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -13,12 +15,16 @@ public class ImportAssetRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_id")
 
+    @JacksonXmlProperty(localName = "instance_id")
+
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private byte[] body;
+    @JacksonXmlProperty(localName = "body")
+
+    private ImportAssetRequestBody body;
 
     public ImportAssetRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -37,8 +43,17 @@ public class ImportAssetRequest {
         this.instanceId = instanceId;
     }
 
-    public ImportAssetRequest withBody(byte[] body) {
+    public ImportAssetRequest withBody(ImportAssetRequestBody body) {
         this.body = body;
+        return this;
+    }
+
+    public ImportAssetRequest withBody(Consumer<ImportAssetRequestBody> bodySetter) {
+        if (this.body == null) {
+            this.body = new ImportAssetRequestBody();
+            bodySetter.accept(this.body);
+        }
+
         return this;
     }
 
@@ -46,11 +61,11 @@ public class ImportAssetRequest {
      * Get body
      * @return body
      */
-    public byte[] getBody() {
+    public ImportAssetRequestBody getBody() {
         return body;
     }
 
-    public void setBody(byte[] body) {
+    public void setBody(ImportAssetRequestBody body) {
         this.body = body;
     }
 

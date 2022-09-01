@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.codehub.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.time.OffsetDateTime;
 import java.util.Objects;
@@ -14,45 +15,63 @@ public class RepoStatistics {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "add_lines")
 
+    @JacksonXmlProperty(localName = "add_lines")
+
     private Integer addLines;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "branch")
+
+    @JacksonXmlProperty(localName = "branch")
 
     private String branch;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "commit_count")
 
+    @JacksonXmlProperty(localName = "commit_count")
+
     private Integer commitCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
+
+    @JacksonXmlProperty(localName = "created_at")
 
     private OffsetDateTime createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "delete_lines")
 
+    @JacksonXmlProperty(localName = "delete_lines")
+
     private Integer deleteLines;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
+
+    @JacksonXmlProperty(localName = "id")
 
     private Integer id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
 
+    @JacksonXmlProperty(localName = "project_id")
+
     private Integer projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_at")
 
+    @JacksonXmlProperty(localName = "updated_at")
+
     private OffsetDateTime updatedAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_name")
+
+    @JacksonXmlProperty(localName = "user_name")
 
     private String userName;
 

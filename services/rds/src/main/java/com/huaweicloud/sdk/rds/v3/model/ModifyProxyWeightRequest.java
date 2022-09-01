@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.rds.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,10 +17,14 @@ public class ModifyProxyWeightRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "master_weight")
 
+    @JacksonXmlProperty(localName = "master_weight")
+
     private String masterWeight;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "readonly_instances")
+
+    @JacksonXmlProperty(localName = "readonly_instances")
 
     private List<ProxyReadonlyInstances> readonlyInstances = null;
 

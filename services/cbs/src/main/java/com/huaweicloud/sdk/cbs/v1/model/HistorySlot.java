@@ -11,6 +11,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.cbs.v1.model.HistorySlotWord;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -24,6 +26,7 @@ public class HistorySlot  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="slot_name")
     
+    @JacksonXmlProperty(localName = "slot_name")
     
     private String slotName;
 
@@ -31,6 +34,7 @@ public class HistorySlot  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="slot_values")
     
+    @JacksonXmlProperty(localName = "slot_values")
     
     private List<HistorySlotWord> slotValues = null;
     
@@ -38,6 +42,7 @@ public class HistorySlot  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="slot_identification")
     
+    @JacksonXmlProperty(localName = "slot_identification")
     
     private String slotIdentification;
 

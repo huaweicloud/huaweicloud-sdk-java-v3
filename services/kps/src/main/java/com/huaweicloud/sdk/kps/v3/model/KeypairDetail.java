@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,10 +19,14 @@ public class KeypairDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
+
+    @JacksonXmlProperty(localName = "id")
 
     private Long id;
 
@@ -105,6 +110,8 @@ public class KeypairDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
+    @JacksonXmlProperty(localName = "type")
+
     private TypeEnum type;
 
     /**
@@ -187,55 +194,77 @@ public class KeypairDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scope")
 
+    @JacksonXmlProperty(localName = "scope")
+
     private ScopeEnum scope;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "public_key")
+
+    @JacksonXmlProperty(localName = "public_key")
 
     private String publicKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fingerprint")
 
+    @JacksonXmlProperty(localName = "fingerprint")
+
     private String fingerprint;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_key_protection")
+
+    @JacksonXmlProperty(localName = "is_key_protection")
 
     private Boolean isKeyProtection;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deleted")
 
+    @JacksonXmlProperty(localName = "deleted")
+
     private Boolean deleted;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
+
+    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_id")
 
+    @JacksonXmlProperty(localName = "user_id")
+
     private String userId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
+
+    @JacksonXmlProperty(localName = "create_time")
 
     private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "delete_time")
 
+    @JacksonXmlProperty(localName = "delete_time")
+
     private Long deleteTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
 
+    @JacksonXmlProperty(localName = "update_time")
+
     private Long updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "frozen_state")
+
+    @JacksonXmlProperty(localName = "frozen_state")
 
     private Integer frozenState;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.bssintl.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,22 +14,37 @@ public class ShowCustomerOrderDetailsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Language")
 
+    @JacksonXmlProperty(localName = "X-Language")
+
     private String xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "order_id")
+
+    @JacksonXmlProperty(localName = "order_id")
 
     private String orderId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
+    @JacksonXmlProperty(localName = "limit")
+
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
+    @JacksonXmlProperty(localName = "offset")
+
     private Integer offset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "indirect_partner_id")
+
+    @JacksonXmlProperty(localName = "indirect_partner_id")
+
+    private String indirectPartnerId;
 
     public ShowCustomerOrderDetailsRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
@@ -104,6 +120,23 @@ public class ShowCustomerOrderDetailsRequest {
         this.offset = offset;
     }
 
+    public ShowCustomerOrderDetailsRequest withIndirectPartnerId(String indirectPartnerId) {
+        this.indirectPartnerId = indirectPartnerId;
+        return this;
+    }
+
+    /**
+     * 云经销商ID。华为云总经销商（一级经销商）查询云经销商的客户订单详情时，需要携带该参数；除此之外，此参数不做处理。否则只能查询自己客户的订单详情。
+     * @return indirectPartnerId
+     */
+    public String getIndirectPartnerId() {
+        return indirectPartnerId;
+    }
+
+    public void setIndirectPartnerId(String indirectPartnerId) {
+        this.indirectPartnerId = indirectPartnerId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -116,12 +149,13 @@ public class ShowCustomerOrderDetailsRequest {
         return Objects.equals(this.xLanguage, showCustomerOrderDetailsRequest.xLanguage)
             && Objects.equals(this.orderId, showCustomerOrderDetailsRequest.orderId)
             && Objects.equals(this.limit, showCustomerOrderDetailsRequest.limit)
-            && Objects.equals(this.offset, showCustomerOrderDetailsRequest.offset);
+            && Objects.equals(this.offset, showCustomerOrderDetailsRequest.offset)
+            && Objects.equals(this.indirectPartnerId, showCustomerOrderDetailsRequest.indirectPartnerId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xLanguage, orderId, limit, offset);
+        return Objects.hash(xLanguage, orderId, limit, offset, indirectPartnerId);
     }
 
     @Override
@@ -132,6 +166,7 @@ public class ShowCustomerOrderDetailsRequest {
         sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    indirectPartnerId: ").append(toIndentedString(indirectPartnerId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

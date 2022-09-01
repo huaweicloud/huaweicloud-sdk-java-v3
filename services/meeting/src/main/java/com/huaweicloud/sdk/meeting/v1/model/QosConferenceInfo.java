@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,80 +14,112 @@ public class QosConferenceInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confUUID")
 
+    @JacksonXmlProperty(localName = "confUUID")
+
     private String confUUID;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "conferenceID")
+
+    @JacksonXmlProperty(localName = "conferenceID")
 
     private String conferenceID;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subject")
 
+    @JacksonXmlProperty(localName = "subject")
+
     private String subject;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scheduserName")
+
+    @JacksonXmlProperty(localName = "scheduserName")
 
     private String scheduserName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deptName")
 
+    @JacksonXmlProperty(localName = "deptName")
+
     private String deptName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alarm")
+
+    @JacksonXmlProperty(localName = "alarm")
 
     private String alarm;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "audioAlarm")
 
+    @JacksonXmlProperty(localName = "audioAlarm")
+
     private String audioAlarm;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "videoAlarm")
+
+    @JacksonXmlProperty(localName = "videoAlarm")
 
     private String videoAlarm;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "screenAlarm")
 
+    @JacksonXmlProperty(localName = "screenAlarm")
+
     private String screenAlarm;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cpuAlarm")
+
+    @JacksonXmlProperty(localName = "cpuAlarm")
 
     private String cpuAlarm;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timeZoneID")
 
+    @JacksonXmlProperty(localName = "timeZoneID")
+
     private String timeZoneID;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "startTime")
+
+    @JacksonXmlProperty(localName = "startTime")
 
     private Long startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "endTime")
 
+    @JacksonXmlProperty(localName = "endTime")
+
     private Long endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "duration")
+
+    @JacksonXmlProperty(localName = "duration")
 
     private Integer duration;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "participants")
 
+    @JacksonXmlProperty(localName = "participants")
+
     private Integer participants;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "webinar")
+
+    @JacksonXmlProperty(localName = "webinar")
 
     private Boolean webinar;
 

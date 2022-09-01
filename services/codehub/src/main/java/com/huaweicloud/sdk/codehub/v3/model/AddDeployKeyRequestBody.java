@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.codehub.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,20 +14,28 @@ public class AddDeployKeyRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "application")
 
+    @JacksonXmlProperty(localName = "application")
+
     private String application;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "can_push")
+
+    @JacksonXmlProperty(localName = "can_push")
 
     private Boolean canPush;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key")
 
+    @JacksonXmlProperty(localName = "key")
+
     private String key;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key_title")
+
+    @JacksonXmlProperty(localName = "key_title")
 
     private String keyTitle;
 

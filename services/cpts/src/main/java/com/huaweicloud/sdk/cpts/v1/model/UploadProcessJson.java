@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cpts.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,10 +17,14 @@ public class UploadProcessJson {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "details")
 
+    @JacksonXmlProperty(localName = "details")
+
     private List<UploadProcessJsonDetail> details = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "process_status")
+
+    @JacksonXmlProperty(localName = "process_status")
 
     private Integer processStatus;
 

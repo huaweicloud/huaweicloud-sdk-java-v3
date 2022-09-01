@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.sdrs.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,25 +14,35 @@ public class ResizeProtectedInstanceRequestParams {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flavorRef")
 
+    @JacksonXmlProperty(localName = "flavorRef")
+
     private String flavorRef;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "production_flavorRef")
+
+    @JacksonXmlProperty(localName = "production_flavorRef")
 
     private String productionFlavorRef;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dr_flavorRef")
 
+    @JacksonXmlProperty(localName = "dr_flavorRef")
+
     private String drFlavorRef;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "production_dedicated_host_id")
 
+    @JacksonXmlProperty(localName = "production_dedicated_host_id")
+
     private String productionDedicatedHostId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dr_dedicated_host_id")
+
+    @JacksonXmlProperty(localName = "dr_dedicated_host_id")
 
     private String drDedicatedHostId;
 

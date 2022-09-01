@@ -16,6 +16,8 @@ import com.huaweicloud.sdk.iotedge.v2.model.LogConfigDTO;
 import com.huaweicloud.sdk.iotedge.v2.model.Nic;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -29,6 +31,7 @@ public class ShowEdgeNodeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="log_configs")
     
+    @JacksonXmlProperty(localName = "log_configs")
     
     private List<LogConfigDTO> logConfigs = null;
     
@@ -36,6 +39,7 @@ public class ShowEdgeNodeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ha_config")
     
+    @JacksonXmlProperty(localName = "ha_config")
     
     private HaConfigDTO haConfig;
 
@@ -43,6 +47,7 @@ public class ShowEdgeNodeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edge_node_id")
     
+    @JacksonXmlProperty(localName = "edge_node_id")
     
     private String edgeNodeId;
 
@@ -50,6 +55,7 @@ public class ShowEdgeNodeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_id")
     
+    @JacksonXmlProperty(localName = "instance_id")
     
     private String instanceId;
 
@@ -57,6 +63,7 @@ public class ShowEdgeNodeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="product_id")
     
+    @JacksonXmlProperty(localName = "product_id")
     
     private String productId;
 
@@ -64,6 +71,7 @@ public class ShowEdgeNodeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="product_name")
     
+    @JacksonXmlProperty(localName = "product_name")
     
     private String productName;
 
@@ -71,6 +79,7 @@ public class ShowEdgeNodeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="space_id")
     
+    @JacksonXmlProperty(localName = "space_id")
     
     private String spaceId;
 
@@ -78,6 +87,7 @@ public class ShowEdgeNodeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_spec_types")
     
+    @JacksonXmlProperty(localName = "resource_spec_types")
     
     private List<String> resourceSpecTypes = null;
     
@@ -85,6 +95,7 @@ public class ShowEdgeNodeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_ids")
     
+    @JacksonXmlProperty(localName = "resource_ids")
     
     private List<String> resourceIds = null;
     
@@ -92,6 +103,7 @@ public class ShowEdgeNodeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ips")
     
+    @JacksonXmlProperty(localName = "ips")
     
     private List<String> ips = null;
     
@@ -99,6 +111,7 @@ public class ShowEdgeNodeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
+    @JacksonXmlProperty(localName = "name")
     
     private String name;
 
@@ -106,6 +119,7 @@ public class ShowEdgeNodeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="state")
     
+    @JacksonXmlProperty(localName = "state")
     
     private String state;
 
@@ -113,6 +127,7 @@ public class ShowEdgeNodeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="software_version")
     
+    @JacksonXmlProperty(localName = "software_version")
     
     private String softwareVersion;
 
@@ -120,6 +135,7 @@ public class ShowEdgeNodeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
+    @JacksonXmlProperty(localName = "create_time")
     
     private String createTime;
 
@@ -127,6 +143,7 @@ public class ShowEdgeNodeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_time")
     
+    @JacksonXmlProperty(localName = "update_time")
     
     private String updateTime;
 
@@ -134,6 +151,7 @@ public class ShowEdgeNodeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="os_name")
     
+    @JacksonXmlProperty(localName = "os_name")
     
     private String osName;
 
@@ -141,6 +159,7 @@ public class ShowEdgeNodeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="arch")
     
+    @JacksonXmlProperty(localName = "arch")
     
     private String arch;
 
@@ -148,6 +167,7 @@ public class ShowEdgeNodeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="host_name")
     
+    @JacksonXmlProperty(localName = "host_name")
     
     private String hostName;
 
@@ -155,6 +175,7 @@ public class ShowEdgeNodeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="nics")
     
+    @JacksonXmlProperty(localName = "nics")
     
     private List<Nic> nics = null;
     
@@ -162,6 +183,7 @@ public class ShowEdgeNodeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="specification")
     
+    @JacksonXmlProperty(localName = "specification")
     
     private String specification;
 
@@ -169,6 +191,7 @@ public class ShowEdgeNodeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ai_card_type")
     
+    @JacksonXmlProperty(localName = "ai_card_type")
     
     private String aiCardType;
 
@@ -176,6 +199,7 @@ public class ShowEdgeNodeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="container_version")
     
+    @JacksonXmlProperty(localName = "container_version")
     
     private String containerVersion;
 
@@ -183,6 +207,7 @@ public class ShowEdgeNodeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
+    @JacksonXmlProperty(localName = "type")
     
     private String type;
 
@@ -190,6 +215,7 @@ public class ShowEdgeNodeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="security_level")
     
+    @JacksonXmlProperty(localName = "security_level")
     
     private String securityLevel;
 
@@ -197,6 +223,7 @@ public class ShowEdgeNodeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="storage_period")
     
+    @JacksonXmlProperty(localName = "storage_period")
     
     private Integer storagePeriod;
 
@@ -204,6 +231,7 @@ public class ShowEdgeNodeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="base_path")
     
+    @JacksonXmlProperty(localName = "base_path")
     
     private BasePathDTO basePath;
 
@@ -211,6 +239,7 @@ public class ShowEdgeNodeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="hardware_model")
     
+    @JacksonXmlProperty(localName = "hardware_model")
     
     private String hardwareModel;
 

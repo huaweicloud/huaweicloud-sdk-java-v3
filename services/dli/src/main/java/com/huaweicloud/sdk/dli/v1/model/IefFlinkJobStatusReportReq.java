@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,15 +17,21 @@ public class IefFlinkJobStatusReportReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "jobs")
 
+    @JacksonXmlProperty(localName = "jobs")
+
     private List<Jobs> jobs = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "msg_confirm_topic")
 
+    @JacksonXmlProperty(localName = "msg_confirm_topic")
+
     private String msgConfirmTopic;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "message_id")
+
+    @JacksonXmlProperty(localName = "message_id")
 
     private String messageId;
 

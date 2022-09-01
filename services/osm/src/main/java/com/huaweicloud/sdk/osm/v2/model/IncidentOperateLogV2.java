@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.osm.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.time.OffsetDateTime;
 import java.util.Objects;
@@ -14,45 +15,63 @@ public class IncidentOperateLogV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "incident_log_id")
 
+    @JacksonXmlProperty(localName = "incident_log_id")
+
     private String incidentLogId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "incident_id")
+
+    @JacksonXmlProperty(localName = "incident_id")
 
     private String incidentId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operate_type")
 
+    @JacksonXmlProperty(localName = "operate_type")
+
     private Integer operateType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operator_type")
+
+    @JacksonXmlProperty(localName = "operator_type")
 
     private Integer operatorType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operator_id")
 
+    @JacksonXmlProperty(localName = "operator_id")
+
     private String operatorId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operator_name")
+
+    @JacksonXmlProperty(localName = "operator_name")
 
     private String operatorName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operate_desc")
 
+    @JacksonXmlProperty(localName = "operate_desc")
+
     private String operateDesc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operate_time")
 
+    @JacksonXmlProperty(localName = "operate_time")
+
     private String operateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timestamp_operate_time")
+
+    @JacksonXmlProperty(localName = "timestamp_operate_time")
 
     private OffsetDateTime timestampOperateTime;
 

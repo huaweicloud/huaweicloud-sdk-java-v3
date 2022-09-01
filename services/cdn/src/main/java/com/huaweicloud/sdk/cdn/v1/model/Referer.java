@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cdn.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class Referer {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "referer_type")
 
+    @JacksonXmlProperty(localName = "referer_type")
+
     private Integer refererType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "referer_list")
 
+    @JacksonXmlProperty(localName = "referer_list")
+
     private String refererList;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "include_empty")
+
+    @JacksonXmlProperty(localName = "include_empty")
 
     private Boolean includeEmpty;
 

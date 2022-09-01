@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cloudpipeline.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,15 +17,21 @@ public class TemplateCddl {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flow")
 
+    @JacksonXmlProperty(localName = "flow")
+
     private Map<String, Map<String, String>> flow = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "states")
 
+    @JacksonXmlProperty(localName = "states")
+
     private Map<String, TemplateState> states = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "workflow")
+
+    @JacksonXmlProperty(localName = "workflow")
 
     private Workflow workflow;
 

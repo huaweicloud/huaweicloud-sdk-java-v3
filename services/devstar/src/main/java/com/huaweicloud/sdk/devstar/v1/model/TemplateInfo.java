@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.devstar.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,190 +17,266 @@ public class TemplateInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "title")
+
+    @JacksonXmlProperty(localName = "title")
 
     private String title;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
+    @JacksonXmlProperty(localName = "description")
+
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "productshorts")
+
+    @JacksonXmlProperty(localName = "productshorts")
 
     private List<String> productshorts = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "products")
 
+    @JacksonXmlProperty(localName = "products")
+
     private List<TemplateProductExt> products = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "topic")
+
+    @JacksonXmlProperty(localName = "topic")
 
     private List<TopicCategory> topic = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "creator_id")
 
+    @JacksonXmlProperty(localName = "creator_id")
+
     private String creatorId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "creator")
+
+    @JacksonXmlProperty(localName = "creator")
 
     private String creator;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nickname")
 
+    @JacksonXmlProperty(localName = "nickname")
+
     private String nickname;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "score")
+
+    @JacksonXmlProperty(localName = "score")
 
     private Integer score;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "label")
 
+    @JacksonXmlProperty(localName = "label")
+
     private String label;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "store")
+
+    @JacksonXmlProperty(localName = "store")
 
     private Integer store;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "store_info")
 
+    @JacksonXmlProperty(localName = "store_info")
+
     private String storeInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
+
+    @JacksonXmlProperty(localName = "status")
 
     private Integer status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "view_count")
 
+    @JacksonXmlProperty(localName = "view_count")
+
     private Integer viewCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "usage_count")
+
+    @JacksonXmlProperty(localName = "usage_count")
 
     private Integer usageCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
 
+    @JacksonXmlProperty(localName = "created_at")
+
     private String createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_at")
+
+    @JacksonXmlProperty(localName = "updated_at")
 
     private String updatedAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "published_at")
 
+    @JacksonXmlProperty(localName = "published_at")
+
     private String publishedAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "favorite_state")
+
+    @JacksonXmlProperty(localName = "favorite_state")
 
     private Integer favoriteState;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
+    @JacksonXmlProperty(localName = "tags")
+
     private List<TagInfo> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
+
+    @JacksonXmlProperty(localName = "type")
 
     private Integer type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_static")
 
+    @JacksonXmlProperty(localName = "is_static")
+
     private Integer isStatic;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maintainers")
+
+    @JacksonXmlProperty(localName = "maintainers")
 
     private List<String> maintainers = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pipeline_template")
 
+    @JacksonXmlProperty(localName = "pipeline_template")
+
     private PipelineTemplateInfo pipelineTemplate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "platform_source")
+
+    @JacksonXmlProperty(localName = "platform_source")
 
     private Integer platformSource;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "references")
 
+    @JacksonXmlProperty(localName = "references")
+
     private List<Reference> references = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "properties")
+
+    @JacksonXmlProperty(localName = "properties")
 
     private Object properties;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dependencies")
 
+    @JacksonXmlProperty(localName = "dependencies")
+
     private List<Object> dependencies = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dependency_type")
+
+    @JacksonXmlProperty(localName = "dependency_type")
 
     private String dependencyType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "forum_id")
 
+    @JacksonXmlProperty(localName = "forum_id")
+
     private Integer forumId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_size")
+
+    @JacksonXmlProperty(localName = "file_size")
 
     private Integer fileSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deployment")
 
+    @JacksonXmlProperty(localName = "deployment")
+
     private Object deployment;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_id")
+
+    @JacksonXmlProperty(localName = "update_id")
 
     private String updateId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_support_cloudide")
 
+    @JacksonXmlProperty(localName = "is_support_cloudide")
+
     private Boolean isSupportCloudide;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "has_notices")
+
+    @JacksonXmlProperty(localName = "has_notices")
 
     private Boolean hasNotices;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dependents")
 
+    @JacksonXmlProperty(localName = "dependents")
+
     private List<Dependent> dependents = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dependent_services")
+
+    @JacksonXmlProperty(localName = "dependent_services")
 
     private String dependentServices;
 

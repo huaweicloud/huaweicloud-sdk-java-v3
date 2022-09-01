@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,70 +22,98 @@ public class Subnet {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
+    @JacksonXmlProperty(localName = "description")
+
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cidr")
+
+    @JacksonXmlProperty(localName = "cidr")
 
     private String cidr;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "gateway_ip")
 
+    @JacksonXmlProperty(localName = "gateway_ip")
+
     private String gatewayIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ipv6_enable")
+
+    @JacksonXmlProperty(localName = "ipv6_enable")
 
     private Boolean ipv6Enable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cidr_v6")
 
+    @JacksonXmlProperty(localName = "cidr_v6")
+
     private String cidrV6;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "gateway_ip_v6")
+
+    @JacksonXmlProperty(localName = "gateway_ip_v6")
 
     private String gatewayIpV6;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dhcp_enable")
 
+    @JacksonXmlProperty(localName = "dhcp_enable")
+
     private Boolean dhcpEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "primary_dns")
+
+    @JacksonXmlProperty(localName = "primary_dns")
 
     private String primaryDns;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "secondary_dns")
 
+    @JacksonXmlProperty(localName = "secondary_dns")
+
     private String secondaryDns;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dnsList")
+
+    @JacksonXmlProperty(localName = "dnsList")
 
     private List<String> dnsList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "availability_zone")
 
+    @JacksonXmlProperty(localName = "availability_zone")
+
     private String availabilityZone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_id")
+
+    @JacksonXmlProperty(localName = "vpc_id")
 
     private String vpcId;
 
@@ -174,30 +203,42 @@ public class Subnet {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "neutron_network_id")
+
+    @JacksonXmlProperty(localName = "neutron_network_id")
 
     private String neutronNetworkId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "neutron_subnet_id")
 
+    @JacksonXmlProperty(localName = "neutron_subnet_id")
+
     private String neutronSubnetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "neutron_subnet_id_v6")
+
+    @JacksonXmlProperty(localName = "neutron_subnet_id_v6")
 
     private String neutronSubnetIdV6;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extra_dhcp_opts")
 
+    @JacksonXmlProperty(localName = "extra_dhcp_opts")
+
     private List<ExtraDhcpOption> extraDhcpOpts = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scope")
+
+    @JacksonXmlProperty(localName = "scope")
 
     private String scope;
 

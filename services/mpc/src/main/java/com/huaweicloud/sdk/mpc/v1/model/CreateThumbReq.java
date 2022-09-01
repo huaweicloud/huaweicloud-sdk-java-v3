@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.mpc.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,35 +15,49 @@ public class CreateThumbReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "input")
 
+    @JacksonXmlProperty(localName = "input")
+
     private ObsObjInfo input;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "output")
+
+    @JacksonXmlProperty(localName = "output")
 
     private ObsObjInfo output;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_data")
 
+    @JacksonXmlProperty(localName = "user_data")
+
     private String userData;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "thumbnail_para")
+
+    @JacksonXmlProperty(localName = "thumbnail_para")
 
     private ThumbnailPara thumbnailPara;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tar")
 
+    @JacksonXmlProperty(localName = "tar")
+
     private Integer tar;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sync")
 
+    @JacksonXmlProperty(localName = "sync")
+
     private Integer sync;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "original_dir")
+
+    @JacksonXmlProperty(localName = "original_dir")
 
     private Integer originalDir;
 

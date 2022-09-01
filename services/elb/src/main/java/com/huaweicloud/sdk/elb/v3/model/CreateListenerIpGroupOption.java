@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,10 +19,14 @@ public class CreateListenerIpGroupOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ipgroup_id")
 
+    @JacksonXmlProperty(localName = "ipgroup_id")
+
     private String ipgroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_ipgroup")
+
+    @JacksonXmlProperty(localName = "enable_ipgroup")
 
     private Boolean enableIpgroup;
 
@@ -104,6 +109,8 @@ public class CreateListenerIpGroupOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
+
+    @JacksonXmlProperty(localName = "type")
 
     private TypeEnum type;
 

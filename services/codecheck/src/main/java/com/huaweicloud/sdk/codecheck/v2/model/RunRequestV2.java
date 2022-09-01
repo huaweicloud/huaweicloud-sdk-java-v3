@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.codecheck.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,20 +14,28 @@ public class RunRequestV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "username")
 
+    @JacksonXmlProperty(localName = "username")
+
     private String username;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "access_token")
+
+    @JacksonXmlProperty(localName = "access_token")
 
     private String accessToken;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "git_url")
 
+    @JacksonXmlProperty(localName = "git_url")
+
     private String gitUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "git_branch")
+
+    @JacksonXmlProperty(localName = "git_branch")
 
     private String gitBranch;
 

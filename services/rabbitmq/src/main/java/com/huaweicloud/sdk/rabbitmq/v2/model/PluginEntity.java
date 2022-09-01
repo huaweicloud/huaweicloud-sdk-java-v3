@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.rabbitmq.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,20 +14,28 @@ public class PluginEntity {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "running")
 
+    @JacksonXmlProperty(localName = "running")
+
     private Boolean running;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable")
+
+    @JacksonXmlProperty(localName = "enable")
 
     private Boolean enable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
+
+    @JacksonXmlProperty(localName = "version")
 
     private String version;
 

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,25 +22,35 @@ public class DiagnosisNodeReport {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "node_ip")
 
+    @JacksonXmlProperty(localName = "node_ip")
+
     private String nodeIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "az_code")
+
+    @JacksonXmlProperty(localName = "az_code")
 
     private String azCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_name")
 
+    @JacksonXmlProperty(localName = "group_name")
+
     private String groupName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "abnormal_sum")
 
+    @JacksonXmlProperty(localName = "abnormal_sum")
+
     private Integer abnormalSum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "failed_sum")
+
+    @JacksonXmlProperty(localName = "failed_sum")
 
     private Integer failedSum;
 
@@ -123,15 +134,21 @@ public class DiagnosisNodeReport {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "role")
 
+    @JacksonXmlProperty(localName = "role")
+
     private RoleEnum role;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "diagnosis_dimension_list")
 
+    @JacksonXmlProperty(localName = "diagnosis_dimension_list")
+
     private List<DiagnosisDimension> diagnosisDimensionList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "command_time_taken_list")
+
+    @JacksonXmlProperty(localName = "command_time_taken_list")
 
     private CommandTimeTakenList commandTimeTakenList;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.bcs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,25 +17,35 @@ public class ProcessInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "step_name")
 
+    @JacksonXmlProperty(localName = "step_name")
+
     private String stepName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
+
+    @JacksonXmlProperty(localName = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "detail")
 
+    @JacksonXmlProperty(localName = "detail")
+
     private String detail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sub_steps")
 
+    @JacksonXmlProperty(localName = "sub_steps")
+
     private Map<String, SubDetail> subSteps = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "serial_num")
+
+    @JacksonXmlProperty(localName = "serial_num")
 
     private Long serialNum;
 

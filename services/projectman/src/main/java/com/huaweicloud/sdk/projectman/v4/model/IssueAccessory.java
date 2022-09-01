@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.projectman.v4.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,50 +14,70 @@ public class IssueAccessory {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "attachment_id")
 
+    @JacksonXmlProperty(localName = "attachment_id")
+
     private Integer attachmentId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "issue_id")
+
+    @JacksonXmlProperty(localName = "issue_id")
 
     private Integer issueId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "creator_num_id")
 
+    @JacksonXmlProperty(localName = "creator_num_id")
+
     private Integer creatorNumId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_date")
+
+    @JacksonXmlProperty(localName = "created_date")
 
     private String createdDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_name")
 
+    @JacksonXmlProperty(localName = "file_name")
+
     private String fileName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "container_type")
+
+    @JacksonXmlProperty(localName = "container_type")
 
     private String containerType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "disk_file_name")
 
+    @JacksonXmlProperty(localName = "disk_file_name")
+
     private String diskFileName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "digest")
+
+    @JacksonXmlProperty(localName = "digest")
 
     private String digest;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "disk_directory")
 
+    @JacksonXmlProperty(localName = "disk_directory")
+
     private String diskDirectory;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "creator_id")
+
+    @JacksonXmlProperty(localName = "creator_id")
 
     private String creatorId;
 

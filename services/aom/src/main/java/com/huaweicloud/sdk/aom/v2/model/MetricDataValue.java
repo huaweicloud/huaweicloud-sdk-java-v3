@@ -12,6 +12,8 @@ import com.huaweicloud.sdk.aom.v2.model.MetricDataPoints;
 import com.huaweicloud.sdk.aom.v2.model.MetricQueryMeritcParam;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -25,6 +27,7 @@ public class MetricDataValue  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dataPoints")
     
+    @JacksonXmlProperty(localName = "dataPoints")
     
     private List<MetricDataPoints> dataPoints = null;
     
@@ -32,6 +35,7 @@ public class MetricDataValue  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metric")
     
+    @JacksonXmlProperty(localName = "metric")
     
     private MetricQueryMeritcParam metric;
 

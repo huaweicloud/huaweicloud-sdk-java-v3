@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,40 +14,56 @@ public class SearchCorpDirRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Request-Id")
 
+    @JacksonXmlProperty(localName = "X-Request-Id")
+
     private String xRequestId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "Accept-Language")
+
+    @JacksonXmlProperty(localName = "Accept-Language")
 
     private String acceptLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
+    @JacksonXmlProperty(localName = "offset")
+
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
+
+    @JacksonXmlProperty(localName = "limit")
 
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "searchKey")
 
+    @JacksonXmlProperty(localName = "searchKey")
+
     private String searchKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deptCode")
+
+    @JacksonXmlProperty(localName = "deptCode")
 
     private String deptCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "querySubDept")
 
+    @JacksonXmlProperty(localName = "querySubDept")
+
     private Boolean querySubDept;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "searchScope")
+
+    @JacksonXmlProperty(localName = "searchScope")
 
     private String searchScope;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cpts.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,50 +17,70 @@ public class CaseInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "case_id")
 
+    @JacksonXmlProperty(localName = "case_id")
+
     private Integer caseId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "case_name")
+
+    @JacksonXmlProperty(localName = "case_name")
 
     private String caseName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "case_type")
 
+    @JacksonXmlProperty(localName = "case_type")
+
     private Integer caseType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "contents")
+
+    @JacksonXmlProperty(localName = "contents")
 
     private List<Contents> contents = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "for_loop_params")
 
+    @JacksonXmlProperty(localName = "for_loop_params")
+
     private List<Object> forLoopParams = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "increase_setting")
+
+    @JacksonXmlProperty(localName = "increase_setting")
 
     private List<Object> increaseSetting = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stages")
 
+    @JacksonXmlProperty(localName = "stages")
+
     private List<Object> stages = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
+
+    @JacksonXmlProperty(localName = "status")
 
     private Integer status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "temp_id")
 
+    @JacksonXmlProperty(localName = "temp_id")
+
     private Integer tempId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sort")
+
+    @JacksonXmlProperty(localName = "sort")
 
     private Integer sort;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.bssintl.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,25 +17,35 @@ public class RenewalResourcesReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_ids")
 
+    @JacksonXmlProperty(localName = "resource_ids")
+
     private List<String> resourceIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "period_type")
+
+    @JacksonXmlProperty(localName = "period_type")
 
     private Integer periodType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "period_num")
 
+    @JacksonXmlProperty(localName = "period_num")
+
     private Integer periodNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expire_policy")
 
+    @JacksonXmlProperty(localName = "expire_policy")
+
     private Integer expirePolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_auto_pay")
+
+    @JacksonXmlProperty(localName = "is_auto_pay")
 
     private Integer isAutoPay;
 

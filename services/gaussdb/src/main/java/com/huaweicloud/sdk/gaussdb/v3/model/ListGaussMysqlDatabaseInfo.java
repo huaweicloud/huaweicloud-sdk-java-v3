@@ -11,6 +11,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.gaussdb.v3.model.GaussMySqlDatabaseInfo;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -24,6 +26,7 @@ public class ListGaussMysqlDatabaseInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
+    @JacksonXmlProperty(localName = "name")
     
     private String name;
 
@@ -31,6 +34,7 @@ public class ListGaussMysqlDatabaseInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="charset")
     
+    @JacksonXmlProperty(localName = "charset")
     
     private String charset;
 
@@ -38,6 +42,7 @@ public class ListGaussMysqlDatabaseInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="users")
     
+    @JacksonXmlProperty(localName = "users")
     
     private List<GaussMySqlDatabaseInfo> users = null;
     

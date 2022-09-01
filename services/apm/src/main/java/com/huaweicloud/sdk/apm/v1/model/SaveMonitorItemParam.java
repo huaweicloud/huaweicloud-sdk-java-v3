@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.apm.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,20 +17,28 @@ public class SaveMonitorItemParam {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "monitor_item_id")
 
+    @JacksonXmlProperty(localName = "monitor_item_id")
+
     private Long monitorItemId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "interval")
+
+    @JacksonXmlProperty(localName = "interval")
 
     private Integer interval;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "env_id")
 
+    @JacksonXmlProperty(localName = "env_id")
+
     private Integer envId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "config_value_list")
+
+    @JacksonXmlProperty(localName = "config_value_list")
 
     private List<ConfigItem> configValueList = null;
 

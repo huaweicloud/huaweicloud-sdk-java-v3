@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.moderation.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,20 +17,28 @@ public class RunModerationAudioRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
+    @JacksonXmlProperty(localName = "data")
+
     private String data;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "url")
+
+    @JacksonXmlProperty(localName = "url")
 
     private String url;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "config")
 
+    @JacksonXmlProperty(localName = "config")
+
     private RunModerationAudioRequestBodyConfig config;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "categories")
+
+    @JacksonXmlProperty(localName = "categories")
 
     private List<String> categories = null;
 

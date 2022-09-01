@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.sa.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.UUID;
@@ -15,140 +16,196 @@ public class Event {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
 
+    @JacksonXmlProperty(localName = "version")
+
     private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "environment")
+
+    @JacksonXmlProperty(localName = "environment")
 
     private Environment environment;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_source")
 
+    @JacksonXmlProperty(localName = "data_source")
+
     private DataSource dataSource;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "first_observed_time")
+
+    @JacksonXmlProperty(localName = "first_observed_time")
 
     private String firstObservedTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last_observed_time")
 
+    @JacksonXmlProperty(localName = "last_observed_time")
+
     private String lastObservedTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
+
+    @JacksonXmlProperty(localName = "create_time")
 
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "arrive_time")
 
+    @JacksonXmlProperty(localName = "arrive_time")
+
     private String arriveTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_id")
+
+    @JacksonXmlProperty(localName = "event_id")
 
     private UUID eventId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "title")
 
+    @JacksonXmlProperty(localName = "title")
+
     private String title;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
+
+    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_url")
 
+    @JacksonXmlProperty(localName = "source_url")
+
     private String sourceUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "count")
+
+    @JacksonXmlProperty(localName = "count")
 
     private Integer count;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confidence")
 
+    @JacksonXmlProperty(localName = "confidence")
+
     private Integer confidence;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "severity")
+
+    @JacksonXmlProperty(localName = "severity")
 
     private Severity severity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "criticality")
 
+    @JacksonXmlProperty(localName = "criticality")
+
     private Integer criticality;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
+
+    @JacksonXmlProperty(localName = "type")
 
     private Type type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "compliance")
 
+    @JacksonXmlProperty(localName = "compliance")
+
     private Compliance compliance;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "network")
+
+    @JacksonXmlProperty(localName = "network")
 
     private Network network;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vulnerability_patch")
 
+    @JacksonXmlProperty(localName = "vulnerability_patch")
+
     private VulnerabilityPatch vulnerabilityPatch;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "malware")
+
+    @JacksonXmlProperty(localName = "malware")
 
     private Malware malware;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "threat_intel")
 
+    @JacksonXmlProperty(localName = "threat_intel")
+
     private ThreatIntel threatIntel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource")
+
+    @JacksonXmlProperty(localName = "resource")
 
     private Resource resource;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remediation")
 
+    @JacksonXmlProperty(localName = "remediation")
+
     private Remediation remediation;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_source_fields")
+
+    @JacksonXmlProperty(localName = "data_source_fields")
 
     private Object dataSourceFields;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "verification_state")
 
+    @JacksonXmlProperty(localName = "verification_state")
+
     private String verificationState;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "handle_status")
+
+    @JacksonXmlProperty(localName = "handle_status")
 
     private String handleStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "phase")
 
+    @JacksonXmlProperty(localName = "phase")
+
     private String phase;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sla")
+
+    @JacksonXmlProperty(localName = "sla")
 
     private Integer sla;
 

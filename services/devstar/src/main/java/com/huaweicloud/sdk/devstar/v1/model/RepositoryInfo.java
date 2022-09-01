@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.devstar.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,45 +14,63 @@ public class RepositoryInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
+
+    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
 
+    @JacksonXmlProperty(localName = "project_id")
+
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region_id")
+
+    @JacksonXmlProperty(localName = "region_id")
 
     private String regionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "gitignore")
 
+    @JacksonXmlProperty(localName = "gitignore")
+
     private String gitignore;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "member_permission")
+
+    @JacksonXmlProperty(localName = "member_permission")
 
     private Integer memberPermission;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "readme_permission")
 
+    @JacksonXmlProperty(localName = "readme_permission")
+
     private Integer readmePermission;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "visibility_level")
 
+    @JacksonXmlProperty(localName = "visibility_level")
+
     private Integer visibilityLevel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "license_id")
+
+    @JacksonXmlProperty(localName = "license_id")
 
     private Integer licenseId;
 

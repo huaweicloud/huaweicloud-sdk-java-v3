@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.rds.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,12 +14,23 @@ public class UserForCreation {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "password")
 
+    @JacksonXmlProperty(localName = "password")
+
     private String password;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "comment")
+
+    @JacksonXmlProperty(localName = "comment")
+
+    private String comment;
 
     public UserForCreation withName(String name) {
         this.name = name;
@@ -54,6 +66,23 @@ public class UserForCreation {
         this.password = password;
     }
 
+    public UserForCreation withComment(String comment) {
+        this.comment = comment;
+        return this;
+    }
+
+    /**
+     * 数据库用户备注。 取值范围：长度1~512个字符。目前仅支持MySQL 8.0.25及以上版本。
+     * @return comment
+     */
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -64,12 +93,13 @@ public class UserForCreation {
         }
         UserForCreation userForCreation = (UserForCreation) o;
         return Objects.equals(this.name, userForCreation.name)
-            && Objects.equals(this.password, userForCreation.password);
+            && Objects.equals(this.password, userForCreation.password)
+            && Objects.equals(this.comment, userForCreation.comment);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, password);
+        return Objects.hash(name, password, comment);
     }
 
     @Override
@@ -78,6 +108,7 @@ public class UserForCreation {
         sb.append("class UserForCreation {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    password: ").append(toIndentedString(password)).append("\n");
+        sb.append("    comment: ").append(toIndentedString(comment)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.rds.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,195 +17,273 @@ public class InstanceResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
+
+    @JacksonXmlProperty(localName = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_ssl")
 
+    @JacksonXmlProperty(localName = "enable_ssl")
+
     private Boolean enableSsl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "private_ips")
+
+    @JacksonXmlProperty(localName = "private_ips")
 
     private List<String> privateIps = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "private_dns_names")
 
+    @JacksonXmlProperty(localName = "private_dns_names")
+
     private List<String> privateDnsNames = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "public_ips")
+
+    @JacksonXmlProperty(localName = "public_ips")
 
     private List<String> publicIps = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
+    @JacksonXmlProperty(localName = "type")
+
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created")
+
+    @JacksonXmlProperty(localName = "created")
 
     private String created;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated")
 
+    @JacksonXmlProperty(localName = "updated")
+
     private String updated;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "db_user_name")
+
+    @JacksonXmlProperty(localName = "db_user_name")
 
     private String dbUserName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "switch_strategy")
 
+    @JacksonXmlProperty(localName = "switch_strategy")
+
     private String switchStrategy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maintenance_window")
+
+    @JacksonXmlProperty(localName = "maintenance_window")
 
     private String maintenanceWindow;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nodes")
 
+    @JacksonXmlProperty(localName = "nodes")
+
     private List<NodeResponse> nodes = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "related_instance")
+
+    @JacksonXmlProperty(localName = "related_instance")
 
     private List<RelatedInstance> relatedInstance = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "datastore")
+
+    @JacksonXmlProperty(localName = "datastore")
 
     private Datastore datastore;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ha")
 
+    @JacksonXmlProperty(localName = "ha")
+
     private HaResponse ha;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "port")
+
+    @JacksonXmlProperty(localName = "port")
 
     private Integer port;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "backup_strategy")
 
+    @JacksonXmlProperty(localName = "backup_strategy")
+
     private BackupStrategyForResponse backupStrategy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
+
+    @JacksonXmlProperty(localName = "enterprise_project_id")
 
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "disk_encryption_id")
 
+    @JacksonXmlProperty(localName = "disk_encryption_id")
+
     private String diskEncryptionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flavor_ref")
+
+    @JacksonXmlProperty(localName = "flavor_ref")
 
     private String flavorRef;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cpu")
 
+    @JacksonXmlProperty(localName = "cpu")
+
     private String cpu;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mem")
+
+    @JacksonXmlProperty(localName = "mem")
 
     private String mem;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volume")
 
+    @JacksonXmlProperty(localName = "volume")
+
     private Volume volume;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region")
+
+    @JacksonXmlProperty(localName = "region")
 
     private String region;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_id")
 
+    @JacksonXmlProperty(localName = "vpc_id")
+
     private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subnet_id")
+
+    @JacksonXmlProperty(localName = "subnet_id")
 
     private String subnetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_group_id")
 
+    @JacksonXmlProperty(localName = "security_group_id")
+
     private String securityGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "charge_info")
+
+    @JacksonXmlProperty(localName = "charge_info")
 
     private ChargeInfoResponse chargeInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time_zone")
 
+    @JacksonXmlProperty(localName = "time_zone")
+
     private String timeZone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
+
+    @JacksonXmlProperty(localName = "tags")
 
     private List<TagResponse> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "backup_used_space")
 
+    @JacksonXmlProperty(localName = "backup_used_space")
+
     private Double backupUsedSpace;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "storage_used_space")
+
+    @JacksonXmlProperty(localName = "storage_used_space")
 
     private Double storageUsedSpace;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "order_id")
 
+    @JacksonXmlProperty(localName = "order_id")
+
     private String orderId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "associated_with_ddm")
+
+    @JacksonXmlProperty(localName = "associated_with_ddm")
 
     private Boolean associatedWithDdm;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alias")
 
+    @JacksonXmlProperty(localName = "alias")
+
     private String alias;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_iops")
 
+    @JacksonXmlProperty(localName = "max_iops")
+
     private Long maxIops;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expiration_time")
+
+    @JacksonXmlProperty(localName = "expiration_time")
 
     private String expirationTime;
 

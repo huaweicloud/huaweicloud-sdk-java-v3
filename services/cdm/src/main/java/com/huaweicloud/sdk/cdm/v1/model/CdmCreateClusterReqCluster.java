@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cdm.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,50 +17,70 @@ public class CdmCreateClusterReqCluster {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scheduleBootTime")
 
+    @JacksonXmlProperty(localName = "scheduleBootTime")
+
     private String scheduleBootTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "isScheduleBootOff")
+
+    @JacksonXmlProperty(localName = "isScheduleBootOff")
 
     private Boolean isScheduleBootOff;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instances")
 
+    @JacksonXmlProperty(localName = "instances")
+
     private List<Instance> instances = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "datastore")
+
+    @JacksonXmlProperty(localName = "datastore")
 
     private Datastore datastore;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extended_properties")
 
+    @JacksonXmlProperty(localName = "extended_properties")
+
     private ExtendedProperties extendedProperties;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scheduleOffTime")
+
+    @JacksonXmlProperty(localName = "scheduleOffTime")
 
     private String scheduleOffTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpcId")
 
+    @JacksonXmlProperty(localName = "vpcId")
+
     private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sys_tags")
 
+    @JacksonXmlProperty(localName = "sys_tags")
+
     private List<SysTags> sysTags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "isAutoOff")
+
+    @JacksonXmlProperty(localName = "isAutoOff")
 
     private Boolean isAutoOff;
 

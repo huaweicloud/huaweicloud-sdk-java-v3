@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cpts.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,55 +17,77 @@ public class UpdateTaskRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private Integer id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
+    @JacksonXmlProperty(localName = "description")
+
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
+
+    @JacksonXmlProperty(localName = "project_id")
 
     private Integer projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "run_status")
 
+    @JacksonXmlProperty(localName = "run_status")
+
     private Integer runStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "run_type")
+
+    @JacksonXmlProperty(localName = "run_type")
 
     private Integer runType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_run_info")
 
+    @JacksonXmlProperty(localName = "task_run_info")
+
     private TaskRunInfo taskRunInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "case_list")
+
+    @JacksonXmlProperty(localName = "case_list")
 
     private List<CaseInfo> caseList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operate_mode")
 
+    @JacksonXmlProperty(localName = "operate_mode")
+
     private Integer operateMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bench_concurrent")
 
+    @JacksonXmlProperty(localName = "bench_concurrent")
+
     private Integer benchConcurrent;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "related_temp_running_data")
+
+    @JacksonXmlProperty(localName = "related_temp_running_data")
 
     private List<RelatedTempRunningData> relatedTempRunningData = null;
 

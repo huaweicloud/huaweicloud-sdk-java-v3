@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -19,10 +20,14 @@ public class OsExtendedVolumesInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private UUID id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "delete_on_termination")
+
+    @JacksonXmlProperty(localName = "delete_on_termination")
 
     private String deleteOnTermination;
 
@@ -106,10 +111,14 @@ public class OsExtendedVolumesInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bootIndex")
 
+    @JacksonXmlProperty(localName = "bootIndex")
+
     private BootIndexEnum bootIndex;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "device")
+
+    @JacksonXmlProperty(localName = "device")
 
     private String device;
 

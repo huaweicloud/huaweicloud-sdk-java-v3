@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -95,20 +96,28 @@ public class ResourcePrice {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "arch")
 
+    @JacksonXmlProperty(localName = "arch")
+
     private ArchEnum arch;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "price")
+
+    @JacksonXmlProperty(localName = "price")
 
     private Float price;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
 
+    @JacksonXmlProperty(localName = "size")
+
     private String size;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
+
+    @JacksonXmlProperty(localName = "type")
 
     private String type;
 

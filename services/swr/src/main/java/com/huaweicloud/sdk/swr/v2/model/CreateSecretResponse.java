@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.swr.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.HashMap;
@@ -17,10 +18,14 @@ public class CreateSecretResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auths")
 
+    @JacksonXmlProperty(localName = "auths")
+
     private Map<String, AuthInfo> auths = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Swr-Dockerlogin")
+
+    @JacksonXmlProperty(localName = "X-Swr-Dockerlogin")
 
     private String xSwrDockerlogin;
 

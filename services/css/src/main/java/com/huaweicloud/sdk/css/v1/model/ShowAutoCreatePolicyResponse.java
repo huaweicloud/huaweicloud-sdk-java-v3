@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.css.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -14,35 +15,49 @@ public class ShowAutoCreatePolicyResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "keepday")
 
+    @JacksonXmlProperty(localName = "keepday")
+
     private Integer keepday;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "period")
+
+    @JacksonXmlProperty(localName = "period")
 
     private String period;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "prefix")
 
+    @JacksonXmlProperty(localName = "prefix")
+
     private String prefix;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bucket")
+
+    @JacksonXmlProperty(localName = "bucket")
 
     private String bucket;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "basePath")
 
+    @JacksonXmlProperty(localName = "basePath")
+
     private String basePath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "agency")
 
+    @JacksonXmlProperty(localName = "agency")
+
     private String agency;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable")
+
+    @JacksonXmlProperty(localName = "enable")
 
     private String enable;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,70 +14,98 @@ public class StatisticParticipateDataItem {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time")
 
+    @JacksonXmlProperty(localName = "time")
+
     private String time;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confUserName")
+
+    @JacksonXmlProperty(localName = "confUserName")
 
     private String confUserName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confUserAccount")
 
+    @JacksonXmlProperty(localName = "confUserAccount")
+
     private String confUserAccount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confUserDeptName")
+
+    @JacksonXmlProperty(localName = "confUserDeptName")
 
     private String confUserDeptName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confUserCount")
 
+    @JacksonXmlProperty(localName = "confUserCount")
+
     private String confUserCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confUserDuration")
+
+    @JacksonXmlProperty(localName = "confUserDuration")
 
     private String confUserDuration;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confHardTerminalName")
 
+    @JacksonXmlProperty(localName = "confHardTerminalName")
+
     private String confHardTerminalName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confHardTerminalModel")
+
+    @JacksonXmlProperty(localName = "confHardTerminalModel")
 
     private String confHardTerminalModel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confHardTerminalUserId")
 
+    @JacksonXmlProperty(localName = "confHardTerminalUserId")
+
     private String confHardTerminalUserId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confHardTerminalCount")
+
+    @JacksonXmlProperty(localName = "confHardTerminalCount")
 
     private String confHardTerminalCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confHardTerminalDuration")
 
+    @JacksonXmlProperty(localName = "confHardTerminalDuration")
+
     private String confHardTerminalDuration;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deviceType")
+
+    @JacksonXmlProperty(localName = "deviceType")
 
     private String deviceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deviceVersion")
 
+    @JacksonXmlProperty(localName = "deviceVersion")
+
     private String deviceVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deviceAttendanceCount")
+
+    @JacksonXmlProperty(localName = "deviceAttendanceCount")
 
     private String deviceAttendanceCount;
 

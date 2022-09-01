@@ -2,50 +2,65 @@ package com.huaweicloud.sdk.css.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
 /**
- * ConfigurationsRsp
+ * ConfigListRsp
  */
-public class ConfigurationsRsp {
+public class ConfigListRsp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
+
+    @JacksonXmlProperty(localName = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "clusterId")
 
+    @JacksonXmlProperty(localName = "clusterId")
+
     private String clusterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "createAt")
+
+    @JacksonXmlProperty(localName = "createAt")
 
     private String createAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "finishedAt")
+
+    @JacksonXmlProperty(localName = "finishedAt")
 
     private String finishedAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "modifyDeleteReset")
 
+    @JacksonXmlProperty(localName = "modifyDeleteReset")
+
     private String modifyDeleteReset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "failedMsg")
 
+    @JacksonXmlProperty(localName = "failedMsg")
+
     private String failedMsg;
 
-    public ConfigurationsRsp withId(String id) {
+    public ConfigListRsp withId(String id) {
         this.id = id;
         return this;
     }
@@ -62,7 +77,7 @@ public class ConfigurationsRsp {
         this.id = id;
     }
 
-    public ConfigurationsRsp withClusterId(String clusterId) {
+    public ConfigListRsp withClusterId(String clusterId) {
         this.clusterId = clusterId;
         return this;
     }
@@ -79,7 +94,7 @@ public class ConfigurationsRsp {
         this.clusterId = clusterId;
     }
 
-    public ConfigurationsRsp withCreateAt(String createAt) {
+    public ConfigListRsp withCreateAt(String createAt) {
         this.createAt = createAt;
         return this;
     }
@@ -96,7 +111,7 @@ public class ConfigurationsRsp {
         this.createAt = createAt;
     }
 
-    public ConfigurationsRsp withStatus(String status) {
+    public ConfigListRsp withStatus(String status) {
         this.status = status;
         return this;
     }
@@ -113,7 +128,7 @@ public class ConfigurationsRsp {
         this.status = status;
     }
 
-    public ConfigurationsRsp withFinishedAt(String finishedAt) {
+    public ConfigListRsp withFinishedAt(String finishedAt) {
         this.finishedAt = finishedAt;
         return this;
     }
@@ -130,7 +145,7 @@ public class ConfigurationsRsp {
         this.finishedAt = finishedAt;
     }
 
-    public ConfigurationsRsp withModifyDeleteReset(String modifyDeleteReset) {
+    public ConfigListRsp withModifyDeleteReset(String modifyDeleteReset) {
         this.modifyDeleteReset = modifyDeleteReset;
         return this;
     }
@@ -147,7 +162,7 @@ public class ConfigurationsRsp {
         this.modifyDeleteReset = modifyDeleteReset;
     }
 
-    public ConfigurationsRsp withFailedMsg(String failedMsg) {
+    public ConfigListRsp withFailedMsg(String failedMsg) {
         this.failedMsg = failedMsg;
         return this;
     }
@@ -172,14 +187,13 @@ public class ConfigurationsRsp {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        ConfigurationsRsp configurationsRsp = (ConfigurationsRsp) o;
-        return Objects.equals(this.id, configurationsRsp.id)
-            && Objects.equals(this.clusterId, configurationsRsp.clusterId)
-            && Objects.equals(this.createAt, configurationsRsp.createAt)
-            && Objects.equals(this.status, configurationsRsp.status)
-            && Objects.equals(this.finishedAt, configurationsRsp.finishedAt)
-            && Objects.equals(this.modifyDeleteReset, configurationsRsp.modifyDeleteReset)
-            && Objects.equals(this.failedMsg, configurationsRsp.failedMsg);
+        ConfigListRsp configListRsp = (ConfigListRsp) o;
+        return Objects.equals(this.id, configListRsp.id) && Objects.equals(this.clusterId, configListRsp.clusterId)
+            && Objects.equals(this.createAt, configListRsp.createAt)
+            && Objects.equals(this.status, configListRsp.status)
+            && Objects.equals(this.finishedAt, configListRsp.finishedAt)
+            && Objects.equals(this.modifyDeleteReset, configListRsp.modifyDeleteReset)
+            && Objects.equals(this.failedMsg, configListRsp.failedMsg);
     }
 
     @Override
@@ -190,7 +204,7 @@ public class ConfigurationsRsp {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class ConfigurationsRsp {\n");
+        sb.append("class ConfigListRsp {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
         sb.append("    createAt: ").append(toIndentedString(createAt)).append("\n");

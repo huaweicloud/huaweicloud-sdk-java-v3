@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,100 +17,140 @@ public class RestScheduleConfDTO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "startTime")
 
+    @JacksonXmlProperty(localName = "startTime")
+
     private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "length")
+
+    @JacksonXmlProperty(localName = "length")
 
     private Integer length;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subject")
 
+    @JacksonXmlProperty(localName = "subject")
+
     private String subject;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mediaTypes")
+
+    @JacksonXmlProperty(localName = "mediaTypes")
 
     private String mediaTypes;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "groupuri")
 
+    @JacksonXmlProperty(localName = "groupuri")
+
     private String groupuri;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "attendees")
+
+    @JacksonXmlProperty(localName = "attendees")
 
     private List<RestAttendeeDTO> attendees = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "isAutoRecord")
 
+    @JacksonXmlProperty(localName = "isAutoRecord")
+
     private Integer isAutoRecord;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "encryptMode")
+
+    @JacksonXmlProperty(localName = "encryptMode")
 
     private Integer encryptMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "language")
 
+    @JacksonXmlProperty(localName = "language")
+
     private String language;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timeZoneID")
+
+    @JacksonXmlProperty(localName = "timeZoneID")
 
     private String timeZoneID;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "recordType")
 
+    @JacksonXmlProperty(localName = "recordType")
+
     private Integer recordType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "liveAddress")
+
+    @JacksonXmlProperty(localName = "liveAddress")
 
     private String liveAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auxAddress")
 
+    @JacksonXmlProperty(localName = "auxAddress")
+
     private String auxAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "recordAuxStream")
+
+    @JacksonXmlProperty(localName = "recordAuxStream")
 
     private Integer recordAuxStream;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confConfigInfo")
 
+    @JacksonXmlProperty(localName = "confConfigInfo")
+
     private RestConfConfigDTO confConfigInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "recordAuthType")
+
+    @JacksonXmlProperty(localName = "recordAuthType")
 
     private Integer recordAuthType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vmrFlag")
 
+    @JacksonXmlProperty(localName = "vmrFlag")
+
     private Integer vmrFlag;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cycleParams")
+
+    @JacksonXmlProperty(localName = "cycleParams")
 
     private CycleParams cycleParams;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vmrID")
 
+    @JacksonXmlProperty(localName = "vmrID")
+
     private String vmrID;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "concurrentParticipants")
+
+    @JacksonXmlProperty(localName = "concurrentParticipants")
 
     private Integer concurrentParticipants;
 

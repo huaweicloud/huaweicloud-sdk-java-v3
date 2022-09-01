@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,10 +19,14 @@ public class BusinessRiskItem {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "risk_id")
 
+    @JacksonXmlProperty(localName = "risk_id")
+
     private String riskId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "risk_url")
+
+    @JacksonXmlProperty(localName = "risk_url")
 
     private String riskUrl;
 
@@ -123,15 +128,21 @@ public class BusinessRiskItem {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "risk_type")
 
+    @JacksonXmlProperty(localName = "risk_type")
+
     private RiskTypeEnum riskType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "find_time")
 
+    @JacksonXmlProperty(localName = "find_time")
+
     private String findTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "risk_content")
+
+    @JacksonXmlProperty(localName = "risk_content")
 
     private String riskContent;
 
@@ -220,6 +231,8 @@ public class BusinessRiskItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "risk_status")
+
+    @JacksonXmlProperty(localName = "risk_status")
 
     private RiskStatusEnum riskStatus;
 

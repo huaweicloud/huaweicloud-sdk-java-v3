@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.kms.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,30 +14,42 @@ public class KeystoreDetails {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "keystore_id")
 
+    @JacksonXmlProperty(localName = "keystore_id")
+
     private String keystoreId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_id")
+
+    @JacksonXmlProperty(localName = "domain_id")
 
     private String domainId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "keystore_alias")
 
+    @JacksonXmlProperty(localName = "keystore_alias")
+
     private String keystoreAlias;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "keystore_type")
+
+    @JacksonXmlProperty(localName = "keystore_type")
 
     private String keystoreType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hsm_cluster_id")
 
+    @JacksonXmlProperty(localName = "hsm_cluster_id")
+
     private String hsmClusterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
+
+    @JacksonXmlProperty(localName = "create_time")
 
     private String createTime;
 

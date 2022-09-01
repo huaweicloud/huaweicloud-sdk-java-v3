@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.gsl.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.time.OffsetDateTime;
 import java.util.Objects;
@@ -14,35 +15,49 @@ public class CmAttributeVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private Long id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "default_attr_name_cn")
+
+    @JacksonXmlProperty(localName = "default_attr_name_cn")
 
     private String defaultAttrNameCn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "default_attr_name_en")
 
+    @JacksonXmlProperty(localName = "default_attr_name_en")
+
     private String defaultAttrNameEn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cust_attr_name")
+
+    @JacksonXmlProperty(localName = "cust_attr_name")
 
     private String custAttrName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private Integer status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
+    @JacksonXmlProperty(localName = "create_time")
+
     private OffsetDateTime createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "modify_time")
+
+    @JacksonXmlProperty(localName = "modify_time")
 
     private OffsetDateTime modifyTime;
 

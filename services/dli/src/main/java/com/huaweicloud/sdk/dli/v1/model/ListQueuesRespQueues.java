@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,115 +17,161 @@ public class ListQueuesRespQueues {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "queue_id")
 
+    @JacksonXmlProperty(localName = "queue_id")
+
     private String queueId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "queue_name")
+
+    @JacksonXmlProperty(localName = "queue_name")
 
     private String queueName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
+    @JacksonXmlProperty(localName = "description")
+
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "owner")
+
+    @JacksonXmlProperty(localName = "owner")
 
     private String owner;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
+    @JacksonXmlProperty(localName = "create_time")
+
     private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "queue_type")
+
+    @JacksonXmlProperty(localName = "queue_type")
 
     private String queueType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cu_count")
 
+    @JacksonXmlProperty(localName = "cu_count")
+
     private Integer cuCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "charging_mode")
+
+    @JacksonXmlProperty(localName = "charging_mode")
 
     private Integer chargingMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_id")
 
+    @JacksonXmlProperty(localName = "resource_id")
+
     private String resourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
+
+    @JacksonXmlProperty(localName = "enterprise_project_id")
 
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cidr_in_vpc")
 
+    @JacksonXmlProperty(localName = "cidr_in_vpc")
+
     private String cidrInVpc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cidr_in_mgntsubnet")
+
+    @JacksonXmlProperty(localName = "cidr_in_mgntsubnet")
 
     private String cidrInMgntsubnet;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cidr_in_subnet")
 
+    @JacksonXmlProperty(localName = "cidr_in_subnet")
+
     private String cidrInSubnet;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_mode")
+
+    @JacksonXmlProperty(localName = "resource_mode")
 
     private Integer resourceMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "platform")
 
+    @JacksonXmlProperty(localName = "platform")
+
     private String platform;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_restarting")
+
+    @JacksonXmlProperty(localName = "is_restarting")
 
     private Boolean isRestarting;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "labels")
 
+    @JacksonXmlProperty(localName = "labels")
+
     private List<String> labels = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "feature")
+
+    @JacksonXmlProperty(localName = "feature")
 
     private String feature;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "queue_resource_type")
 
+    @JacksonXmlProperty(localName = "queue_resource_type")
+
     private String queueResourceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cu_spec")
+
+    @JacksonXmlProperty(localName = "cu_spec")
 
     private Long cuSpec;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cu_scale_out_limit")
 
+    @JacksonXmlProperty(localName = "cu_scale_out_limit")
+
     private Long cuScaleOutLimit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cu_scale_in_limit")
 
+    @JacksonXmlProperty(localName = "cu_scale_in_limit")
+
     private Long cuScaleInLimit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "elastic_resource_pool_name")
+
+    @JacksonXmlProperty(localName = "elastic_resource_pool_name")
 
     private String elasticResourcePoolName;
 

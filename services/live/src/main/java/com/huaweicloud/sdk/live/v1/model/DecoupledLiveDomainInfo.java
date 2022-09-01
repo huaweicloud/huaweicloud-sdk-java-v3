@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.time.OffsetDateTime;
 import java.util.Collections;
@@ -18,6 +19,8 @@ public class DecoupledLiveDomainInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain")
+
+    @JacksonXmlProperty(localName = "domain")
 
     private String domain;
 
@@ -100,6 +103,8 @@ public class DecoupledLiveDomainInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_type")
+
+    @JacksonXmlProperty(localName = "domain_type")
 
     private DomainTypeEnum domainType;
 
@@ -225,15 +230,21 @@ public class DecoupledLiveDomainInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vendor")
 
+    @JacksonXmlProperty(localName = "vendor")
+
     private VendorEnum vendor;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region")
 
+    @JacksonXmlProperty(localName = "region")
+
     private String region;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_cname")
+
+    @JacksonXmlProperty(localName = "domain_cname")
 
     private String domainCname;
 
@@ -323,20 +334,28 @@ public class DecoupledLiveDomainInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "related_domain")
+
+    @JacksonXmlProperty(localName = "related_domain")
 
     private String relatedDomain;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
+    @JacksonXmlProperty(localName = "create_time")
+
     private OffsetDateTime createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status_describe")
+
+    @JacksonXmlProperty(localName = "status_describe")
 
     private String statusDescribe;
 
@@ -425,6 +444,8 @@ public class DecoupledLiveDomainInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_area")
+
+    @JacksonXmlProperty(localName = "service_area")
 
     private ServiceAreaEnum serviceArea;
 

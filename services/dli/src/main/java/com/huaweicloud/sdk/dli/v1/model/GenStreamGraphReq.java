@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,55 +14,77 @@ public class GenStreamGraphReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sql_body")
 
+    @JacksonXmlProperty(localName = "sql_body")
+
     private String sqlBody;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cu_number")
+
+    @JacksonXmlProperty(localName = "cu_number")
 
     private Integer cuNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "manager_cu_number")
 
+    @JacksonXmlProperty(localName = "manager_cu_number")
+
     private Integer managerCuNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parallel_number")
+
+    @JacksonXmlProperty(localName = "parallel_number")
 
     private Integer parallelNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tm_cus")
 
+    @JacksonXmlProperty(localName = "tm_cus")
+
     private Integer tmCus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tm_slot_num")
+
+    @JacksonXmlProperty(localName = "tm_slot_num")
 
     private Integer tmSlotNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operator_config")
 
+    @JacksonXmlProperty(localName = "operator_config")
+
     private String operatorConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "static_estimator")
+
+    @JacksonXmlProperty(localName = "static_estimator")
 
     private Boolean staticEstimator;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_type")
 
+    @JacksonXmlProperty(localName = "job_type")
+
     private String jobType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "graph_type")
 
+    @JacksonXmlProperty(localName = "graph_type")
+
     private String graphType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "static_estimator_config")
+
+    @JacksonXmlProperty(localName = "static_estimator_config")
 
     private String staticEstimatorConfig;
 

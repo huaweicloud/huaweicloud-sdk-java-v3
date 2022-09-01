@@ -16,6 +16,8 @@ import com.huaweicloud.sdk.cbs.v1.model.KbqaAnswers;
 import com.huaweicloud.sdk.cbs.v1.model.QaBotAnswersNew;
 import com.huaweicloud.sdk.cbs.v1.model.TableQaAnswers;
 import com.huaweicloud.sdk.cbs.v1.model.TaskBotAnswers;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -29,6 +31,7 @@ public class ExecuteQaChatResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="reply_type")
     
+    @JacksonXmlProperty(localName = "reply_type")
     
     private Integer replyType;
 
@@ -36,6 +39,7 @@ public class ExecuteQaChatResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="qabot_answers")
     
+    @JacksonXmlProperty(localName = "qabot_answers")
     
     private QaBotAnswersNew qabotAnswers;
 
@@ -43,6 +47,7 @@ public class ExecuteQaChatResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="chat_answers")
     
+    @JacksonXmlProperty(localName = "chat_answers")
     
     private ChatAnswers chatAnswers;
 
@@ -50,6 +55,7 @@ public class ExecuteQaChatResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="taskbot_answers")
     
+    @JacksonXmlProperty(localName = "taskbot_answers")
     
     private TaskBotAnswers taskbotAnswers;
 
@@ -57,6 +63,7 @@ public class ExecuteQaChatResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="docqa_answers")
     
+    @JacksonXmlProperty(localName = "docqa_answers")
     
     private DocBotAnswers docqaAnswers;
 
@@ -64,6 +71,7 @@ public class ExecuteQaChatResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tableqa_answers")
     
+    @JacksonXmlProperty(localName = "tableqa_answers")
     
     private TableQaAnswers tableqaAnswers;
 
@@ -71,6 +79,7 @@ public class ExecuteQaChatResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="session_id")
     
+    @JacksonXmlProperty(localName = "session_id")
     
     private String sessionId;
 
@@ -78,6 +87,7 @@ public class ExecuteQaChatResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="kbqa_answers")
     
+    @JacksonXmlProperty(localName = "kbqa_answers")
     
     private KbqaAnswers kbqaAnswers;
 
@@ -85,6 +95,7 @@ public class ExecuteQaChatResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="request_id")
     
+    @JacksonXmlProperty(localName = "request_id")
     
     private String requestId;
 

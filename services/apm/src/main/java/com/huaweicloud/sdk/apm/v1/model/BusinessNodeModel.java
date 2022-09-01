@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.apm.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.time.LocalDate;
 import java.util.Objects;
@@ -14,45 +15,63 @@ public class BusinessNodeModel {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "default")
 
+    @JacksonXmlProperty(localName = "default")
+
     private Boolean _default;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "display_name")
+
+    @JacksonXmlProperty(localName = "display_name")
 
     private String displayName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "eps_id")
 
+    @JacksonXmlProperty(localName = "eps_id")
+
     private String epsId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "gmt_create")
+
+    @JacksonXmlProperty(localName = "gmt_create")
 
     private LocalDate gmtCreate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "gmt_modify")
 
+    @JacksonXmlProperty(localName = "gmt_modify")
+
     private LocalDate gmtModify;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
+
+    @JacksonXmlProperty(localName = "id")
 
     private Long id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "inner_domain_id")
 
+    @JacksonXmlProperty(localName = "inner_domain_id")
+
     private Integer innerDomainId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_default")
 
+    @JacksonXmlProperty(localName = "is_default")
+
     private Boolean isDefault;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 

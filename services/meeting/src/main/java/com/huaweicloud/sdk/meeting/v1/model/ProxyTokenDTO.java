@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,30 +14,42 @@ public class ProxyTokenDTO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "accessToken")
 
+    @JacksonXmlProperty(localName = "accessToken")
+
     private String accessToken;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "longAccessToken")
+
+    @JacksonXmlProperty(localName = "longAccessToken")
 
     private String longAccessToken;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "validPeriod")
 
+    @JacksonXmlProperty(localName = "validPeriod")
+
     private Long validPeriod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "middleEndUrl")
+
+    @JacksonXmlProperty(localName = "middleEndUrl")
 
     private String middleEndUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "middleEndInnerUrl")
 
+    @JacksonXmlProperty(localName = "middleEndInnerUrl")
+
     private String middleEndInnerUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enableRerouting")
+
+    @JacksonXmlProperty(localName = "enableRerouting")
 
     private Boolean enableRerouting;
 

@@ -15,6 +15,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -28,6 +30,7 @@ public class OpenMysqlProxyRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="flavor_ref")
     
+    @JacksonXmlProperty(localName = "flavor_ref")
     
     private String flavorRef;
 
@@ -35,6 +38,7 @@ public class OpenMysqlProxyRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_num")
     
+    @JacksonXmlProperty(localName = "node_num")
     
     private Integer nodeNum;
 
@@ -42,6 +46,7 @@ public class OpenMysqlProxyRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="proxy_name")
     
+    @JacksonXmlProperty(localName = "proxy_name")
     
     private String proxyName;
     /**
@@ -127,6 +132,7 @@ public class OpenMysqlProxyRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="proxy_mode")
     
+    @JacksonXmlProperty(localName = "proxy_mode")
     
     private ProxyModeEnum proxyMode;
 
@@ -134,6 +140,7 @@ public class OpenMysqlProxyRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="nodes_read_weight")
     
+    @JacksonXmlProperty(localName = "nodes_read_weight")
     
     private List<NodesWeight> nodesReadWeight = null;
     

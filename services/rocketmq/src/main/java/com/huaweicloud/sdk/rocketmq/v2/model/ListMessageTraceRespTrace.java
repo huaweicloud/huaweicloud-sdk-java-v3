@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.math.BigDecimal;
 import java.util.Collections;
@@ -18,6 +19,8 @@ public class ListMessageTraceRespTrace {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "success")
+
+    @JacksonXmlProperty(localName = "success")
 
     private Boolean success;
 
@@ -107,75 +110,105 @@ public class ListMessageTraceRespTrace {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trace_type")
 
+    @JacksonXmlProperty(localName = "trace_type")
+
     private TraceTypeEnum traceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timestamp")
+
+    @JacksonXmlProperty(localName = "timestamp")
 
     private BigDecimal timestamp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_name")
 
+    @JacksonXmlProperty(localName = "group_name")
+
     private String groupName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cost_time")
+
+    @JacksonXmlProperty(localName = "cost_time")
 
     private BigDecimal costTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "request_id")
 
+    @JacksonXmlProperty(localName = "request_id")
+
     private String requestId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "consume_status")
+
+    @JacksonXmlProperty(localName = "consume_status")
 
     private BigDecimal consumeStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "topic")
 
+    @JacksonXmlProperty(localName = "topic")
+
     private String topic;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "msg_id")
+
+    @JacksonXmlProperty(localName = "msg_id")
 
     private String msgId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset_msg_id")
 
+    @JacksonXmlProperty(localName = "offset_msg_id")
+
     private String offsetMsgId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
+
+    @JacksonXmlProperty(localName = "tags")
 
     private String tags;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "keys")
 
+    @JacksonXmlProperty(localName = "keys")
+
     private String keys;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "store_host")
+
+    @JacksonXmlProperty(localName = "store_host")
 
     private String storeHost;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "client_host")
 
+    @JacksonXmlProperty(localName = "client_host")
+
     private String clientHost;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "retry_times")
 
+    @JacksonXmlProperty(localName = "retry_times")
+
     private String retryTimes;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body_length")
+
+    @JacksonXmlProperty(localName = "body_length")
 
     private BigDecimal bodyLength;
 
@@ -271,6 +304,8 @@ public class ListMessageTraceRespTrace {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "msg_type")
 
+    @JacksonXmlProperty(localName = "msg_type")
+
     private MsgTypeEnum msgType;
 
     /**
@@ -359,15 +394,21 @@ public class ListMessageTraceRespTrace {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "transaction_state")
 
+    @JacksonXmlProperty(localName = "transaction_state")
+
     private TransactionStateEnum transactionState;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "transaction_id")
 
+    @JacksonXmlProperty(localName = "transaction_id")
+
     private String transactionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "from_transaction_check")
+
+    @JacksonXmlProperty(localName = "from_transaction_check")
 
     private Boolean fromTransactionCheck;
 

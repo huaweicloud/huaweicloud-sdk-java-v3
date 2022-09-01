@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ocr.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,45 +14,63 @@ public class WaybillElectronicResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "code")
 
+    @JacksonXmlProperty(localName = "code")
+
     private String code;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "receiver_name")
+
+    @JacksonXmlProperty(localName = "receiver_name")
 
     private String receiverName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "receiver_phone")
 
+    @JacksonXmlProperty(localName = "receiver_phone")
+
     private String receiverPhone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "receiver_address")
+
+    @JacksonXmlProperty(localName = "receiver_address")
 
     private String receiverAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sender_name")
 
+    @JacksonXmlProperty(localName = "sender_name")
+
     private String senderName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sender_phone")
+
+    @JacksonXmlProperty(localName = "sender_phone")
 
     private String senderPhone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sender_address")
 
+    @JacksonXmlProperty(localName = "sender_address")
+
     private String senderAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "waybill_number")
 
+    @JacksonXmlProperty(localName = "waybill_number")
+
     private String waybillNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confidence")
+
+    @JacksonXmlProperty(localName = "confidence")
 
     private Object confidence;
 

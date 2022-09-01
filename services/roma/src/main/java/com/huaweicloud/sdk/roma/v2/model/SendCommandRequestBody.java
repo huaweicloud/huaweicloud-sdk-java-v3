@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.roma.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,20 +17,28 @@ public class SendCommandRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_id")
 
+    @JacksonXmlProperty(localName = "service_id")
+
     private Integer serviceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "command_id")
+
+    @JacksonXmlProperty(localName = "command_id")
 
     private Integer commandId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_sync")
 
+    @JacksonXmlProperty(localName = "is_sync")
+
     private Boolean isSync;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "requests")
+
+    @JacksonXmlProperty(localName = "requests")
 
     private List<RequestParameter> requests = null;
 

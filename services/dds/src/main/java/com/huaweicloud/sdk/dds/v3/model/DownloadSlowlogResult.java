@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.dds.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,30 +14,42 @@ public class DownloadSlowlogResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "node_name")
 
+    @JacksonXmlProperty(localName = "node_name")
+
     private String nodeName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_name")
+
+    @JacksonXmlProperty(localName = "file_name")
 
     private String fileName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_size")
+
+    @JacksonXmlProperty(localName = "file_size")
 
     private String fileSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_link")
 
+    @JacksonXmlProperty(localName = "file_link")
+
     private String fileLink;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_at")
+
+    @JacksonXmlProperty(localName = "update_at")
 
     private Long updateAt;
 

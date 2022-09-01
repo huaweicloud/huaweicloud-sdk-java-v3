@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.kafka.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,25 +14,35 @@ public class ShowSinkTaskDetailRespPartitions {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "partition_id")
 
+    @JacksonXmlProperty(localName = "partition_id")
+
     private String partitionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
+
+    @JacksonXmlProperty(localName = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last_transfer_offset")
 
+    @JacksonXmlProperty(localName = "last_transfer_offset")
+
     private String lastTransferOffset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_end_offset")
 
+    @JacksonXmlProperty(localName = "log_end_offset")
+
     private String logEndOffset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lag")
+
+    @JacksonXmlProperty(localName = "lag")
 
     private String lag;
 

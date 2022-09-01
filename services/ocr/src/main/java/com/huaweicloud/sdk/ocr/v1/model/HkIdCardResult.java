@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ocr.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,65 +17,91 @@ public class HkIdCardResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name_en")
+
+    @JacksonXmlProperty(localName = "name_en")
 
     private String nameEn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sex")
 
+    @JacksonXmlProperty(localName = "sex")
+
     private String sex;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "birth_date")
+
+    @JacksonXmlProperty(localName = "birth_date")
 
     private String birthDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "number")
 
+    @JacksonXmlProperty(localName = "number")
+
     private String number;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "symbols")
+
+    @JacksonXmlProperty(localName = "symbols")
 
     private String symbols;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name_telegraph_code")
 
+    @JacksonXmlProperty(localName = "name_telegraph_code")
+
     private String nameTelegraphCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "permanent")
+
+    @JacksonXmlProperty(localName = "permanent")
 
     private Boolean permanent;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "initial_issue_date")
 
+    @JacksonXmlProperty(localName = "initial_issue_date")
+
     private String initialIssueDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "issue_date")
+
+    @JacksonXmlProperty(localName = "issue_date")
 
     private String issueDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "portrait_location")
 
+    @JacksonXmlProperty(localName = "portrait_location")
+
     private List<List<Integer>> portraitLocation = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "portrait_image")
 
+    @JacksonXmlProperty(localName = "portrait_image")
+
     private String portraitImage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confidence")
+
+    @JacksonXmlProperty(localName = "confidence")
 
     private Object confidence;
 

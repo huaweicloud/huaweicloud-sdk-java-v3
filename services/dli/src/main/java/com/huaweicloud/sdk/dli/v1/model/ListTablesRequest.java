@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,35 +14,49 @@ public class ListTablesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "database_name")
 
+    @JacksonXmlProperty(localName = "database_name")
+
     private String databaseName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "keyword")
+
+    @JacksonXmlProperty(localName = "keyword")
 
     private String keyword;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "with-detail")
 
+    @JacksonXmlProperty(localName = "with-detail")
+
     private Boolean withDetail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page-size")
+
+    @JacksonXmlProperty(localName = "page-size")
 
     private Integer pageSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "current-page")
 
+    @JacksonXmlProperty(localName = "current-page")
+
     private Integer currentPage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "with-priv")
 
+    @JacksonXmlProperty(localName = "with-priv")
+
     private Boolean withPriv;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "table-type")
+
+    @JacksonXmlProperty(localName = "table-type")
 
     private String tableType;
 

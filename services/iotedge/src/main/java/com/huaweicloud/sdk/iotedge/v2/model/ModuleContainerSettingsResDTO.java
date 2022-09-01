@@ -9,6 +9,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.iotedge.v2.model.ContainerConfigsResDTO;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -22,6 +24,7 @@ public class ModuleContainerSettingsResDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="configs")
     
+    @JacksonXmlProperty(localName = "configs")
     
     private ContainerConfigsResDTO configs;
 

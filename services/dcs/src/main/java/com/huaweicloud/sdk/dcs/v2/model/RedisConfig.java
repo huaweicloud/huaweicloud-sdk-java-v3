@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.dcs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,15 +14,21 @@ public class RedisConfig {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "param_value")
 
+    @JacksonXmlProperty(localName = "param_value")
+
     private String paramValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "param_name")
 
+    @JacksonXmlProperty(localName = "param_name")
+
     private String paramName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "param_id")
+
+    @JacksonXmlProperty(localName = "param_id")
 
     private String paramId;
 

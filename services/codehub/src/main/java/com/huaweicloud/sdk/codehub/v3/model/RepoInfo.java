@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.codehub.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,55 +14,77 @@ public class RepoInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "createAt")
 
+    @JacksonXmlProperty(localName = "createAt")
+
     private String createAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "groupName")
+
+    @JacksonXmlProperty(localName = "groupName")
 
     private String groupName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "httpUrl")
 
+    @JacksonXmlProperty(localName = "httpUrl")
+
     private String httpUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
+
+    @JacksonXmlProperty(localName = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "projectId")
+
+    @JacksonXmlProperty(localName = "projectId")
 
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "projectIsDelete")
 
+    @JacksonXmlProperty(localName = "projectIsDelete")
+
     private String projectIsDelete;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "repoId")
+
+    @JacksonXmlProperty(localName = "repoId")
 
     private String repoId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sshUrl")
 
+    @JacksonXmlProperty(localName = "sshUrl")
+
     private String sshUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "visibilityLevel")
 
+    @JacksonXmlProperty(localName = "visibilityLevel")
+
     private Integer visibilityLevel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "webUrl")
+
+    @JacksonXmlProperty(localName = "webUrl")
 
     private String webUrl;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.kafka.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,40 +17,56 @@ public class ShowClusterRespCluster {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "controller")
 
+    @JacksonXmlProperty(localName = "controller")
+
     private String controller;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "brokers")
+
+    @JacksonXmlProperty(localName = "brokers")
 
     private List<ShowClusterRespClusterBrokers> brokers = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "topics_count")
 
+    @JacksonXmlProperty(localName = "topics_count")
+
     private Integer topicsCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "partitions_count")
+
+    @JacksonXmlProperty(localName = "partitions_count")
 
     private Integer partitionsCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "online_partitions_count")
 
+    @JacksonXmlProperty(localName = "online_partitions_count")
+
     private Integer onlinePartitionsCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "replicas_count")
+
+    @JacksonXmlProperty(localName = "replicas_count")
 
     private Integer replicasCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "isr_replicas_count")
 
+    @JacksonXmlProperty(localName = "isr_replicas_count")
+
     private Integer isrReplicasCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "consumers_count")
+
+    @JacksonXmlProperty(localName = "consumers_count")
 
     private Integer consumersCount;
 

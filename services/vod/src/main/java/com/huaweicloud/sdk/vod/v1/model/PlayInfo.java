@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.vod.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,20 +15,28 @@ public class PlayInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "play_type")
 
+    @JacksonXmlProperty(localName = "play_type")
+
     private String playType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "url")
+
+    @JacksonXmlProperty(localName = "url")
 
     private String url;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "encrypted")
 
+    @JacksonXmlProperty(localName = "encrypted")
+
     private Integer encrypted;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "meta_data")
+
+    @JacksonXmlProperty(localName = "meta_data")
 
     private MetaData metaData;
 

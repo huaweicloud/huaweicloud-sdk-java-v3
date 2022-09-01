@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.drs.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,95 +14,133 @@ public class QueryDataGuardMonitorResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bandwidth")
 
+    @JacksonXmlProperty(localName = "bandwidth")
+
     private String bandwidth;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cpuUsed_percent")
+
+    @JacksonXmlProperty(localName = "cpuUsed_percent")
 
     private String cpuUsedPercent;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dst_delay")
 
+    @JacksonXmlProperty(localName = "dst_delay")
+
     private Long dstDelay;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dst_io")
+
+    @JacksonXmlProperty(localName = "dst_io")
 
     private String dstIo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dst_normal")
 
+    @JacksonXmlProperty(localName = "dst_normal")
+
     private Boolean dstNormal;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dst_offset")
+
+    @JacksonXmlProperty(localName = "dst_offset")
 
     private String dstOffset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dst_rps")
 
+    @JacksonXmlProperty(localName = "dst_rps")
+
     private String dstRps;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mem_used_inMB")
+
+    @JacksonXmlProperty(localName = "mem_used_inMB")
 
     private String memUsedInMB;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "node_mem_inMB")
 
+    @JacksonXmlProperty(localName = "node_mem_inMB")
+
     private Long nodeMemInMB;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "node_offset")
+
+    @JacksonXmlProperty(localName = "node_offset")
 
     private String nodeOffset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "node_volume_inGB")
 
+    @JacksonXmlProperty(localName = "node_volume_inGB")
+
     private Long nodeVolumeInGB;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sr_delay")
+
+    @JacksonXmlProperty(localName = "sr_delay")
 
     private Long srDelay;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sr_offset")
 
+    @JacksonXmlProperty(localName = "sr_offset")
+
     private String srOffset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "src_io")
+
+    @JacksonXmlProperty(localName = "src_io")
 
     private String srcIo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "src_normal")
 
+    @JacksonXmlProperty(localName = "src_normal")
+
     private Boolean srcNormal;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "src_rps")
+
+    @JacksonXmlProperty(localName = "src_rps")
 
     private String srcRps;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trans_inMB")
 
+    @JacksonXmlProperty(localName = "trans_inMB")
+
     private String transInMB;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trans_lines")
 
+    @JacksonXmlProperty(localName = "trans_lines")
+
     private String transLines;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volume_used_inGB")
+
+    @JacksonXmlProperty(localName = "volume_used_inGB")
 
     private String volumeUsedInGB;
 

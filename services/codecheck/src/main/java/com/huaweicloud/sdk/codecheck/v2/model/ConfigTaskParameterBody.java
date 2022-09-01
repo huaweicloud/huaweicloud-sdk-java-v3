@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.codecheck.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,25 +17,35 @@ public class ConfigTaskParameterBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "check_id")
 
+    @JacksonXmlProperty(localName = "check_id")
+
     private Integer checkId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ruleset_id")
+
+    @JacksonXmlProperty(localName = "ruleset_id")
 
     private String rulesetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "language")
 
+    @JacksonXmlProperty(localName = "language")
+
     private String language;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
+    @JacksonXmlProperty(localName = "status")
+
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_check_settings")
+
+    @JacksonXmlProperty(localName = "task_check_settings")
 
     private List<TaskCheckSettingsItem> taskCheckSettings = null;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ugo.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,35 +14,49 @@ public class DatabaseObject {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "object_type")
 
+    @JacksonXmlProperty(localName = "object_type")
+
     private String objectType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_count")
+
+    @JacksonXmlProperty(localName = "total_count")
 
     private Long totalCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "succeed_count")
 
+    @JacksonXmlProperty(localName = "succeed_count")
+
     private Long succeedCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "failed_count")
+
+    @JacksonXmlProperty(localName = "failed_count")
 
     private Long failedCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ignored_count")
 
+    @JacksonXmlProperty(localName = "ignored_count")
+
     private Long ignoredCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "manual_count")
 
+    @JacksonXmlProperty(localName = "manual_count")
+
     private Long manualCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "success_rate")
+
+    @JacksonXmlProperty(localName = "success_rate")
 
     private String successRate;
 

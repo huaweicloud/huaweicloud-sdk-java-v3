@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.classroom.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.math.BigDecimal;
@@ -15,85 +16,119 @@ public class ShowClassroomDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
+
+    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "announcement")
 
+    @JacksonXmlProperty(localName = "announcement")
+
     private String announcement;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "announcement_time")
+
+    @JacksonXmlProperty(localName = "announcement_time")
 
     private String announcementTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
+    @JacksonXmlProperty(localName = "create_time")
+
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
+
+    @JacksonXmlProperty(localName = "update_time")
 
     private String updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "teacher")
 
+    @JacksonXmlProperty(localName = "teacher")
+
     private String teacher;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "credit")
+
+    @JacksonXmlProperty(localName = "credit")
 
     private BigDecimal credit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
+    @JacksonXmlProperty(localName = "start_time")
+
     private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time")
+
+    @JacksonXmlProperty(localName = "end_time")
 
     private String endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "role")
 
+    @JacksonXmlProperty(localName = "role")
+
     private String role;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "school")
+
+    @JacksonXmlProperty(localName = "school")
 
     private String school;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "content_count")
 
+    @JacksonXmlProperty(localName = "content_count")
+
     private Integer contentCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "courseware_count")
+
+    @JacksonXmlProperty(localName = "courseware_count")
 
     private Integer coursewareCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_count")
 
+    @JacksonXmlProperty(localName = "job_count")
+
     private Integer jobCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "member_count")
 
+    @JacksonXmlProperty(localName = "member_count")
+
     private Integer memberCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
+
+    @JacksonXmlProperty(localName = "status")
 
     private String status;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.kafka.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,10 +14,14 @@ public class ResizeInstanceReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "new_spec_code")
 
+    @JacksonXmlProperty(localName = "new_spec_code")
+
     private String newSpecCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "new_storage_space")
+
+    @JacksonXmlProperty(localName = "new_storage_space")
 
     private Integer newStorageSpace;
 

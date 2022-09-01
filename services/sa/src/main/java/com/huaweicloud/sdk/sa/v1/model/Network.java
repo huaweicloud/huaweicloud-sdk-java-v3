@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.sa.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,50 +15,70 @@ public class Network {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "direction")
 
+    @JacksonXmlProperty(localName = "direction")
+
     private String direction;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protocol")
+
+    @JacksonXmlProperty(localName = "protocol")
 
     private String protocol;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "src_ip")
 
+    @JacksonXmlProperty(localName = "src_ip")
+
     private String srcIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "src_port")
+
+    @JacksonXmlProperty(localName = "src_port")
 
     private Integer srcPort;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "src_domain")
 
+    @JacksonXmlProperty(localName = "src_domain")
+
     private String srcDomain;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "src_geo")
+
+    @JacksonXmlProperty(localName = "src_geo")
 
     private Geo srcGeo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "destc_ip")
 
+    @JacksonXmlProperty(localName = "destc_ip")
+
     private String destcIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dest_port")
+
+    @JacksonXmlProperty(localName = "dest_port")
 
     private Integer destPort;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dest_domain")
 
+    @JacksonXmlProperty(localName = "dest_domain")
+
     private String destDomain;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dest_geo")
+
+    @JacksonXmlProperty(localName = "dest_geo")
 
     private Geo destGeo;
 

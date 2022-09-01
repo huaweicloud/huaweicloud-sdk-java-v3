@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.css.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,16 +15,18 @@ public class UnBindPublicReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "eip")
 
-    private BindPublicReqEip eip;
+    @JacksonXmlProperty(localName = "eip")
 
-    public UnBindPublicReq withEip(BindPublicReqEip eip) {
+    private BindPublicReqEipReq eip;
+
+    public UnBindPublicReq withEip(BindPublicReqEipReq eip) {
         this.eip = eip;
         return this;
     }
 
-    public UnBindPublicReq withEip(Consumer<BindPublicReqEip> eipSetter) {
+    public UnBindPublicReq withEip(Consumer<BindPublicReqEipReq> eipSetter) {
         if (this.eip == null) {
-            this.eip = new BindPublicReqEip();
+            this.eip = new BindPublicReqEipReq();
             eipSetter.accept(this.eip);
         }
 
@@ -34,11 +37,11 @@ public class UnBindPublicReq {
      * Get eip
      * @return eip
      */
-    public BindPublicReqEip getEip() {
+    public BindPublicReqEipReq getEip() {
         return eip;
     }
 
-    public void setEip(BindPublicReqEip eip) {
+    public void setEip(BindPublicReqEipReq eip) {
         this.eip = eip;
     }
 

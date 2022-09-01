@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.mpc.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,15 +17,21 @@ public class Subtitle {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "input")
 
+    @JacksonXmlProperty(localName = "input")
+
     private ObsObjInfo input;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "inputs")
 
+    @JacksonXmlProperty(localName = "inputs")
+
     private List<MulInputFileInfo> inputs = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subtitle_type")
+
+    @JacksonXmlProperty(localName = "subtitle_type")
 
     private Integer subtitleType;
 

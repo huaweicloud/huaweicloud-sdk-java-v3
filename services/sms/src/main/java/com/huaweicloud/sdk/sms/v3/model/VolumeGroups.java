@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.sms.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,25 +17,35 @@ public class VolumeGroups {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "components")
 
+    @JacksonXmlProperty(localName = "components")
+
     private String components;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "free_size")
+
+    @JacksonXmlProperty(localName = "free_size")
 
     private Long freeSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "logical_volumes")
 
+    @JacksonXmlProperty(localName = "logical_volumes")
+
     private List<LogicalVolumes> logicalVolumes = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
+
+    @JacksonXmlProperty(localName = "size")
 
     private Long size;
 

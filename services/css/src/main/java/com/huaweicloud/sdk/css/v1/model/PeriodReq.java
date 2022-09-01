@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.css.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,25 +14,35 @@ public class PeriodReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "periodType")
 
+    @JacksonXmlProperty(localName = "periodType")
+
     private Integer periodType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "periodNum")
+
+    @JacksonXmlProperty(localName = "periodNum")
 
     private Integer periodNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "isAutoRenew")
 
+    @JacksonXmlProperty(localName = "isAutoRenew")
+
     private Integer isAutoRenew;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "isAutoPay")
 
+    @JacksonXmlProperty(localName = "isAutoPay")
+
     private Integer isAutoPay;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "consoleURL")
+
+    @JacksonXmlProperty(localName = "consoleURL")
 
     private String consoleURL;
 
@@ -92,7 +103,7 @@ public class PeriodReq {
     }
 
     /**
-     *  是否自动支付。下单订购后，是否自动从客户的华为云账户中支付，而不需要客户手动去进行支付。该参数适用于包周期集群。  - 1: 是（会自动选择折扣和优惠券进行优惠，然后自动从客户华为云账户中支付），自动支付失败后会生成订单成功(该订单应付金额是优惠后金额)、但订单状态为“待支付”，等待客户手动支付(手动支付时，客户还可以修改系统自动选择的折扣和优惠券)。  - 0: 否（需要客户手动去支付，客户可以选择折扣和优惠券）。默认值为“0”。
+     *  是否自动支付。下单订购后，是否自动从客户的华为云账户中支付，而不需要客户手动去进行支付。该参数适用于包周期集群。   - 1: 是（会自动选择折扣和优惠券进行优惠，然后自动从客户华为云账户中支付），自动支付失败后会生成订单成功(该订单应付金额是优惠后金额)、但订单状态为“待支付”，等待客户手动支付(手动支付时，客户还可以修改系统自动选择的折扣和优惠券)。   - 0: 否（需要客户手动去支付，客户可以选择折扣和优惠券）。默认值为“0”。
      * @return isAutoPay
      */
     public Integer getIsAutoPay() {

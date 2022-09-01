@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.projectman.v4.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,10 +15,14 @@ public class IssueCompletionRateV4IssueCompletionRates {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "issue_status")
 
+    @JacksonXmlProperty(localName = "issue_status")
+
     private IssueCompletionRateV4IssueStatus issueStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tracker_id")
+
+    @JacksonXmlProperty(localName = "tracker_id")
 
     private Integer trackerId;
 

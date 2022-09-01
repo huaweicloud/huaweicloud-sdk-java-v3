@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,65 +17,91 @@ public class CreateTableReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "table_name")
 
+    @JacksonXmlProperty(localName = "table_name")
+
     private String tableName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_location")
+
+    @JacksonXmlProperty(localName = "data_location")
 
     private String dataLocation;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
+    @JacksonXmlProperty(localName = "description")
+
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "columns")
+
+    @JacksonXmlProperty(localName = "columns")
 
     private List<CreateTableReqColumn> columns = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "select_statement")
 
+    @JacksonXmlProperty(localName = "select_statement")
+
     private String selectStatement;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_type")
+
+    @JacksonXmlProperty(localName = "data_type")
 
     private String dataType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_path")
 
+    @JacksonXmlProperty(localName = "data_path")
+
     private String dataPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "with_column_header")
+
+    @JacksonXmlProperty(localName = "with_column_header")
 
     private Boolean withColumnHeader;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "delimiter")
 
+    @JacksonXmlProperty(localName = "delimiter")
+
     private String delimiter;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quote_char")
+
+    @JacksonXmlProperty(localName = "quote_char")
 
     private String quoteChar;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "escape_char")
 
+    @JacksonXmlProperty(localName = "escape_char")
+
     private String escapeChar;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "date_format")
 
+    @JacksonXmlProperty(localName = "date_format")
+
     private String dateFormat;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timestamp_format")
+
+    @JacksonXmlProperty(localName = "timestamp_format")
 
     private String timestampFormat;
 

@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.css.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,125 +17,175 @@ public class ClusterList {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "datastore")
 
+    @JacksonXmlProperty(localName = "datastore")
+
     private ClusterListDatastore datastore;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instances")
+
+    @JacksonXmlProperty(localName = "instances")
 
     private List<ClusterListInstances> instances = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publicKibanaResp")
 
-    private KibanaElbWhiteListResp publicKibanaResp;
+    @JacksonXmlProperty(localName = "publicKibanaResp")
+
+    private PublicKibanaRespBody publicKibanaResp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "elbWhiteList")
+
+    @JacksonXmlProperty(localName = "elbWhiteList")
 
     private ElbWhiteListResp elbWhiteList;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated")
 
+    @JacksonXmlProperty(localName = "updated")
+
     private String updated;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
+
+    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publicIp")
 
+    @JacksonXmlProperty(localName = "publicIp")
+
     private String publicIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created")
+
+    @JacksonXmlProperty(localName = "created")
 
     private String created;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
+    @JacksonXmlProperty(localName = "id")
+
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
+
+    @JacksonXmlProperty(localName = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "endpoint")
 
+    @JacksonXmlProperty(localName = "endpoint")
+
     private String endpoint;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpcId")
+
+    @JacksonXmlProperty(localName = "vpcId")
 
     private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subnetId")
 
+    @JacksonXmlProperty(localName = "subnetId")
+
     private String subnetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "securityGroupId")
+
+    @JacksonXmlProperty(localName = "securityGroupId")
 
     private String securityGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bandwidthSize")
 
+    @JacksonXmlProperty(localName = "bandwidthSize")
+
     private Integer bandwidthSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "httpsEnable")
+
+    @JacksonXmlProperty(localName = "httpsEnable")
 
     private Boolean httpsEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "authorityEnable")
 
+    @JacksonXmlProperty(localName = "authorityEnable")
+
     private Boolean authorityEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "diskEncrypted")
+
+    @JacksonXmlProperty(localName = "diskEncrypted")
 
     private Boolean diskEncrypted;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "backupAvailable")
 
+    @JacksonXmlProperty(localName = "backupAvailable")
+
     private Boolean backupAvailable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "actionProgress")
+
+    @JacksonXmlProperty(localName = "actionProgress")
 
     private Object actionProgress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "actions")
 
+    @JacksonXmlProperty(localName = "actions")
+
     private List<String> actions = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterpriseProjectId")
+
+    @JacksonXmlProperty(localName = "enterpriseProjectId")
 
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
+    @JacksonXmlProperty(localName = "tags")
+
     private List<ClusterListTags> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "failed_reasons")
 
+    @JacksonXmlProperty(localName = "failed_reasons")
+
     private ClusterListFailedReasons failedReasons;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "period")
+
+    @JacksonXmlProperty(localName = "period")
 
     private Boolean period;
 
@@ -197,14 +248,14 @@ public class ClusterList {
         this.instances = instances;
     }
 
-    public ClusterList withPublicKibanaResp(KibanaElbWhiteListResp publicKibanaResp) {
+    public ClusterList withPublicKibanaResp(PublicKibanaRespBody publicKibanaResp) {
         this.publicKibanaResp = publicKibanaResp;
         return this;
     }
 
-    public ClusterList withPublicKibanaResp(Consumer<KibanaElbWhiteListResp> publicKibanaRespSetter) {
+    public ClusterList withPublicKibanaResp(Consumer<PublicKibanaRespBody> publicKibanaRespSetter) {
         if (this.publicKibanaResp == null) {
-            this.publicKibanaResp = new KibanaElbWhiteListResp();
+            this.publicKibanaResp = new PublicKibanaRespBody();
             publicKibanaRespSetter.accept(this.publicKibanaResp);
         }
 
@@ -215,11 +266,11 @@ public class ClusterList {
      * Get publicKibanaResp
      * @return publicKibanaResp
      */
-    public KibanaElbWhiteListResp getPublicKibanaResp() {
+    public PublicKibanaRespBody getPublicKibanaResp() {
         return publicKibanaResp;
     }
 
-    public void setPublicKibanaResp(KibanaElbWhiteListResp publicKibanaResp) {
+    public void setPublicKibanaResp(PublicKibanaRespBody publicKibanaResp) {
         this.publicKibanaResp = publicKibanaResp;
     }
 

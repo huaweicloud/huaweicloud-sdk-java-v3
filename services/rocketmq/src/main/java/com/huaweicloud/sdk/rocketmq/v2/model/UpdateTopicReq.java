@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.math.BigDecimal;
 import java.util.Collections;
@@ -19,10 +20,14 @@ public class UpdateTopicReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "read_queue_num")
 
+    @JacksonXmlProperty(localName = "read_queue_num")
+
     private BigDecimal readQueueNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "write_queue_num")
+
+    @JacksonXmlProperty(localName = "write_queue_num")
 
     private BigDecimal writeQueueNum;
 
@@ -111,6 +116,8 @@ public class UpdateTopicReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "permission")
+
+    @JacksonXmlProperty(localName = "permission")
 
     private PermissionEnum permission;
 

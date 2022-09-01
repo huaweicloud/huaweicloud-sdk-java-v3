@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -20,6 +21,8 @@ public class AudioCreateRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
+
+    @JacksonXmlProperty(localName = "data")
 
     private AudioInputBody data;
 
@@ -139,6 +142,8 @@ public class AudioCreateRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_type")
 
+    @JacksonXmlProperty(localName = "event_type")
+
     private EventTypeEnum eventType;
 
     /**
@@ -239,10 +244,14 @@ public class AudioCreateRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "categories")
 
+    @JacksonXmlProperty(localName = "categories")
+
     private List<CategoriesEnum> categories = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "callback")
+
+    @JacksonXmlProperty(localName = "callback")
 
     private String callback;
 

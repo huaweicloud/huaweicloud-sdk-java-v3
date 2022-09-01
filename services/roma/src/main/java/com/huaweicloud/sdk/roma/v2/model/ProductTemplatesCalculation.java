@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.roma.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -12,6 +13,8 @@ public class ProductTemplatesCalculation {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "product_templates_numbers")
+
+    @JacksonXmlProperty(localName = "product_templates_numbers")
 
     private Integer productTemplatesNumbers;
 

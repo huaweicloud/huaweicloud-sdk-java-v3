@@ -14,6 +14,8 @@ import com.huaweicloud.sdk.cbs.v1.model.SessionStatsIntervals;
 import com.huaweicloud.sdk.cbs.v1.model.SessionStatsTotal;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -27,6 +29,7 @@ public class CollectSessionStatsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="interval")
     
+    @JacksonXmlProperty(localName = "interval")
     
     private String interval;
 
@@ -34,6 +37,7 @@ public class CollectSessionStatsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="time_zone")
     
+    @JacksonXmlProperty(localName = "time_zone")
     
     private String timeZone;
 
@@ -41,6 +45,7 @@ public class CollectSessionStatsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="total")
     
+    @JacksonXmlProperty(localName = "total")
     
     private SessionStatsTotal total;
 
@@ -48,6 +53,7 @@ public class CollectSessionStatsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="intervals")
     
+    @JacksonXmlProperty(localName = "intervals")
     
     private List<SessionStatsIntervals> intervals = null;
     
@@ -55,6 +61,7 @@ public class CollectSessionStatsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="startutc")
     
+    @JacksonXmlProperty(localName = "startutc")
     
     private Long startutc;
 
@@ -62,6 +69,7 @@ public class CollectSessionStatsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="endutc")
     
+    @JacksonXmlProperty(localName = "endutc")
     
     private Long endutc;
 

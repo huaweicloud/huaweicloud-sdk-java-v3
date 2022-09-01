@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.projectman.v4.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,20 +17,28 @@ public class WorkitemStatusRecords {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "work_item_record_id")
 
+    @JacksonXmlProperty(localName = "work_item_record_id")
+
     private String workItemRecordId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "work_item_id")
+
+    @JacksonXmlProperty(localName = "work_item_id")
 
     private String workItemId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
 
+    @JacksonXmlProperty(localName = "project_id")
+
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "work_item_statuses")
+
+    @JacksonXmlProperty(localName = "work_item_statuses")
 
     private List<WorkitemStatus> workItemStatuses = null;
 
