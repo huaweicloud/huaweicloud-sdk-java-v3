@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,8 +20,6 @@ public class RecordRuleReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "obs_addr")
-
-    @JacksonXmlProperty(localName = "obs_addr")
 
     private RecordObsFileAddr obsAddr;
 
@@ -106,21 +103,15 @@ public class RecordRuleReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "record_formats")
 
-    @JacksonXmlProperty(localName = "record_formats")
-
     private List<RecordFormatsEnum> recordFormats = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hls_config")
 
-    @JacksonXmlProperty(localName = "hls_config")
-
     private HLSRecordConfig hlsConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mp4_config")
-
-    @JacksonXmlProperty(localName = "mp4_config")
 
     private MP4RecordConfig mp4Config;
 

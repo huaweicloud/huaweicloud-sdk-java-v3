@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.vcm.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,28 +13,20 @@ public class VideoJobResponseHostingResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
-    @JacksonXmlProperty(localName = "data")
-
     private String data;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "obs")
-
-    @JacksonXmlProperty(localName = "obs")
 
     private Object obs;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    @JacksonXmlProperty(localName = "status")
-
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "result_json_overdue_at")
-
-    @JacksonXmlProperty(localName = "result_json_overdue_at")
 
     private String resultJsonOverdueAt;
 

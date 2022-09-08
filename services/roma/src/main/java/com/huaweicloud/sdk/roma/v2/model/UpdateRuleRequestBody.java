@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -19,14 +18,10 @@ public class UpdateRuleRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
-    @JacksonXmlProperty(localName = "name")
-
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
-
-    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
@@ -110,8 +105,6 @@ public class UpdateRuleRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    @JacksonXmlProperty(localName = "status")
-
     private StatusEnum status;
 
     /**
@@ -194,21 +187,15 @@ public class UpdateRuleRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_parsing_status")
 
-    @JacksonXmlProperty(localName = "data_parsing_status")
-
     private DataParsingStatusEnum dataParsingStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sql_field")
 
-    @JacksonXmlProperty(localName = "sql_field")
-
     private String sqlField;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sql_where")
-
-    @JacksonXmlProperty(localName = "sql_where")
 
     private String sqlWhere;
 

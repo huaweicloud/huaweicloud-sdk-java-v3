@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dcs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,44 +13,37 @@ public class RunlogItem {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_name")
-
-    @JacksonXmlProperty(localName = "file_name")
 
     private String fileName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_name")
 
-    @JacksonXmlProperty(localName = "group_name")
-
     private String groupName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "replication_ip")
-
-    @JacksonXmlProperty(localName = "replication_ip")
 
     private String replicationIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    @JacksonXmlProperty(localName = "status")
-
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time")
 
-    @JacksonXmlProperty(localName = "time")
-
     private String time;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "backupId")
+
+    private String backupId;
 
     public RunlogItem withId(String id) {
         this.id = id;
@@ -155,6 +147,23 @@ public class RunlogItem {
         this.time = time;
     }
 
+    public RunlogItem withBackupId(String backupId) {
+        this.backupId = backupId;
+        return this;
+    }
+
+    /**
+     * 日志文件的ID
+     * @return backupId
+     */
+    public String getBackupId() {
+        return backupId;
+    }
+
+    public void setBackupId(String backupId) {
+        this.backupId = backupId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -167,12 +176,13 @@ public class RunlogItem {
         return Objects.equals(this.id, runlogItem.id) && Objects.equals(this.fileName, runlogItem.fileName)
             && Objects.equals(this.groupName, runlogItem.groupName)
             && Objects.equals(this.replicationIp, runlogItem.replicationIp)
-            && Objects.equals(this.status, runlogItem.status) && Objects.equals(this.time, runlogItem.time);
+            && Objects.equals(this.status, runlogItem.status) && Objects.equals(this.time, runlogItem.time)
+            && Objects.equals(this.backupId, runlogItem.backupId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, fileName, groupName, replicationIp, status, time);
+        return Objects.hash(id, fileName, groupName, replicationIp, status, time, backupId);
     }
 
     @Override
@@ -185,6 +195,7 @@ public class RunlogItem {
         sb.append("    replicationIp: ").append(toIndentedString(replicationIp)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    time: ").append(toIndentedString(time)).append("\n");
+        sb.append("    backupId: ").append(toIndentedString(backupId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

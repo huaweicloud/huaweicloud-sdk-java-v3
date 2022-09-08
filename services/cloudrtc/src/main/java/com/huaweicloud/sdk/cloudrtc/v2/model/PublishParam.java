@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cloudrtc.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,8 +15,6 @@ public class PublishParam {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rtmp_urls")
-
-    @JacksonXmlProperty(localName = "rtmp_urls")
 
     private List<String> rtmpUrls = null;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.waf.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,21 +13,15 @@ public class DeleteWhiteBlackIpRuleRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
-    @JacksonXmlProperty(localName = "enterprise_project_id")
-
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_id")
 
-    @JacksonXmlProperty(localName = "policy_id")
-
     private String policyId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rule_id")
-
-    @JacksonXmlProperty(localName = "rule_id")
 
     private String ruleId;
 

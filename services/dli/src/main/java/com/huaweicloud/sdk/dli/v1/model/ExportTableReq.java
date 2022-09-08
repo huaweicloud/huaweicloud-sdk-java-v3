@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,56 +13,40 @@ public class ExportTableReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_path")
 
-    @JacksonXmlProperty(localName = "data_path")
-
     private String dataPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_type")
-
-    @JacksonXmlProperty(localName = "data_type")
 
     private String dataType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "database_name")
 
-    @JacksonXmlProperty(localName = "database_name")
-
     private String databaseName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "table_name")
-
-    @JacksonXmlProperty(localName = "table_name")
 
     private String tableName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "compress")
 
-    @JacksonXmlProperty(localName = "compress")
-
     private String compress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "queue_name")
-
-    @JacksonXmlProperty(localName = "queue_name")
 
     private String queueName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "export_mode")
 
-    @JacksonXmlProperty(localName = "export_mode")
-
     private String exportMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "with_column_header")
-
-    @JacksonXmlProperty(localName = "with_column_header")
 
     private Boolean withColumnHeader;
 

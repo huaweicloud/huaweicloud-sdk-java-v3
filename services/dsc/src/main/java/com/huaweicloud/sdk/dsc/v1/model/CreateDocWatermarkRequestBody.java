@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.http.FormDataFilePart;
 import com.huaweicloud.sdk.core.http.FormDataPart;
 import com.huaweicloud.sdk.core.http.SdkFormDataBody;
@@ -113,73 +112,53 @@ public class CreateDocWatermarkRequestBody implements SdkFormDataBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "doc_type")
 
-    @JacksonXmlProperty(localName = "doc_type")
-
     private DocTypeEnum docType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_password")
-
-    @JacksonXmlProperty(localName = "file_password")
 
     private String filePassword;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "marked_file_password")
 
-    @JacksonXmlProperty(localName = "marked_file_password")
-
     private String markedFilePassword;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "readonly_password")
-
-    @JacksonXmlProperty(localName = "readonly_password")
 
     private String readonlyPassword;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "visible_watermark")
 
-    @JacksonXmlProperty(localName = "visible_watermark")
-
     private String visibleWatermark;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "font_size")
-
-    @JacksonXmlProperty(localName = "font_size")
 
     private String fontSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rotation")
 
-    @JacksonXmlProperty(localName = "rotation")
-
     private String rotation;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "opacity")
-
-    @JacksonXmlProperty(localName = "opacity")
 
     private String opacity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "blind_watermark")
 
-    @JacksonXmlProperty(localName = "blind_watermark")
-
     private String blindWatermark;
 
     @JsonProperty(value = "file", access = JsonProperty.Access.WRITE_ONLY)
-    @JacksonXmlProperty(localName = "file")
 
     private FormDataFilePart file;
 
     @JsonProperty(value = "image_mark", access = JsonProperty.Access.WRITE_ONLY)
-    @JacksonXmlProperty(localName = "image_mark")
 
     private FormDataFilePart imageMark;
 
@@ -262,8 +241,6 @@ public class CreateDocWatermarkRequestBody implements SdkFormDataBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "visible_type")
-
-    @JacksonXmlProperty(localName = "visible_type")
 
     private VisibleTypeEnum visibleType;
 

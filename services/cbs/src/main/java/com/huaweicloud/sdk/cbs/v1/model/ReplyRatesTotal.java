@@ -8,8 +8,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -23,7 +21,6 @@ public class ReplyRatesTotal  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="question_count")
     
-    @JacksonXmlProperty(localName = "question_count")
     
     private Long questionCount;
 
@@ -31,7 +28,6 @@ public class ReplyRatesTotal  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="direct_count")
     
-    @JacksonXmlProperty(localName = "direct_count")
     
     private Long directCount;
 
@@ -39,7 +35,6 @@ public class ReplyRatesTotal  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="recommend_count")
     
-    @JacksonXmlProperty(localName = "recommend_count")
     
     private Long recommendCount;
 
@@ -47,7 +42,6 @@ public class ReplyRatesTotal  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="notmatch_count")
     
-    @JacksonXmlProperty(localName = "notmatch_count")
     
     private Long notmatchCount;
 
@@ -55,7 +49,6 @@ public class ReplyRatesTotal  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="direct_rate")
     
-    @JacksonXmlProperty(localName = "direct_rate")
     
     private Double directRate;
 
@@ -63,7 +56,6 @@ public class ReplyRatesTotal  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="recommend_rate")
     
-    @JacksonXmlProperty(localName = "recommend_rate")
     
     private Double recommendRate;
 
@@ -71,7 +63,6 @@ public class ReplyRatesTotal  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="notmatch_rate")
     
-    @JacksonXmlProperty(localName = "notmatch_rate")
     
     private Double notmatchRate;
 
@@ -79,7 +70,6 @@ public class ReplyRatesTotal  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dialog_count")
     
-    @JacksonXmlProperty(localName = "dialog_count")
     
     private Long dialogCount;
 
@@ -87,7 +77,6 @@ public class ReplyRatesTotal  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dialog_rate")
     
-    @JacksonXmlProperty(localName = "dialog_rate")
     
     private Double dialogRate;
 
@@ -95,7 +84,6 @@ public class ReplyRatesTotal  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="invalid_count")
     
-    @JacksonXmlProperty(localName = "invalid_count")
     
     private Long invalidCount;
 
@@ -103,7 +91,6 @@ public class ReplyRatesTotal  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="invalid_rate")
     
-    @JacksonXmlProperty(localName = "invalid_rate")
     
     private Double invalidRate;
 
@@ -111,7 +98,6 @@ public class ReplyRatesTotal  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="chat_count")
     
-    @JacksonXmlProperty(localName = "chat_count")
     
     private Long chatCount;
 
@@ -119,7 +105,6 @@ public class ReplyRatesTotal  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="chat_rate")
     
-    @JacksonXmlProperty(localName = "chat_rate")
     
     private Double chatRate;
 

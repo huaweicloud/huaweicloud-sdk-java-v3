@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.ocr.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,133 +13,95 @@ public class TrainTicketResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ticket_id")
 
-    @JacksonXmlProperty(localName = "ticket_id")
-
     private String ticketId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "check_port")
-
-    @JacksonXmlProperty(localName = "check_port")
 
     private String checkPort;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "train_number")
 
-    @JacksonXmlProperty(localName = "train_number")
-
     private String trainNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "departure_station")
-
-    @JacksonXmlProperty(localName = "departure_station")
 
     private String departureStation;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "destination_station")
 
-    @JacksonXmlProperty(localName = "destination_station")
-
     private String destinationStation;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "departure_station_en")
-
-    @JacksonXmlProperty(localName = "departure_station_en")
 
     private String departureStationEn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "destination_station_en")
 
-    @JacksonXmlProperty(localName = "destination_station_en")
-
     private String destinationStationEn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "departure_time")
-
-    @JacksonXmlProperty(localName = "departure_time")
 
     private String departureTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "seat_number")
 
-    @JacksonXmlProperty(localName = "seat_number")
-
     private String seatNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ticket_price")
-
-    @JacksonXmlProperty(localName = "ticket_price")
 
     private String ticketPrice;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sale_method")
 
-    @JacksonXmlProperty(localName = "sale_method")
-
     private String saleMethod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "seat_category")
-
-    @JacksonXmlProperty(localName = "seat_category")
 
     private String seatCategory;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ticket_changing")
 
-    @JacksonXmlProperty(localName = "ticket_changing")
-
     private String ticketChanging;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id_number")
-
-    @JacksonXmlProperty(localName = "id_number")
 
     private String idNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
-    @JacksonXmlProperty(localName = "name")
-
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_id")
-
-    @JacksonXmlProperty(localName = "log_id")
 
     private String logId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sale_location")
 
-    @JacksonXmlProperty(localName = "sale_location")
-
     private String saleLocation;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confidence")
 
-    @JacksonXmlProperty(localName = "confidence")
-
     private Object confidence;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "text_location")
-
-    @JacksonXmlProperty(localName = "text_location")
 
     private Object textLocation;
 

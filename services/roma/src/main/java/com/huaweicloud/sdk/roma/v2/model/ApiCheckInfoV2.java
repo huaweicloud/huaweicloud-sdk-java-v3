@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,8 +17,6 @@ public class ApiCheckInfoV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
-
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
@@ -139,14 +136,10 @@ public class ApiCheckInfoV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "req_method")
 
-    @JacksonXmlProperty(localName = "req_method")
-
     private ReqMethodEnum reqMethod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "req_uri")
-
-    @JacksonXmlProperty(localName = "req_uri")
 
     private String reqUri;
 
@@ -230,28 +223,20 @@ public class ApiCheckInfoV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "match_mode")
 
-    @JacksonXmlProperty(localName = "match_mode")
-
     private MatchModeEnum matchMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_id")
-
-    @JacksonXmlProperty(localName = "group_id")
 
     private String groupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "roma_app_id")
 
-    @JacksonXmlProperty(localName = "roma_app_id")
-
     private String romaAppId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "api_id")
-
-    @JacksonXmlProperty(localName = "api_id")
 
     private String apiId;
 
@@ -334,8 +319,6 @@ public class ApiCheckInfoV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
-
-    @JacksonXmlProperty(localName = "type")
 
     private TypeEnum type;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dgc.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,14 +14,10 @@ public class UpdateConnectionRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "connection_name")
 
-    @JacksonXmlProperty(localName = "connection_name")
-
     private String connectionName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
-
-    @JacksonXmlProperty(localName = "body")
 
     private ConnectionInfo body;
 

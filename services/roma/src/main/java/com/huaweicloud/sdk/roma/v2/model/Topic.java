@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -19,21 +18,15 @@ public class Topic {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private Integer id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
-    @JacksonXmlProperty(localName = "name")
-
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
-
-    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
@@ -117,8 +110,6 @@ public class Topic {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "permission")
 
-    @JacksonXmlProperty(localName = "permission")
-
     private PermissionEnum permission;
 
     /**
@@ -200,8 +191,6 @@ public class Topic {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_private")
-
-    @JacksonXmlProperty(localName = "is_private")
 
     private IsPrivateEnum isPrivate;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cloudtest.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,35 +14,25 @@ public class UpdateTestCaseRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
-    @JacksonXmlProperty(localName = "name")
-
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_id")
-
-    @JacksonXmlProperty(localName = "service_id")
 
     private Integer serviceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rank_id")
 
-    @JacksonXmlProperty(localName = "rank_id")
-
     private String rankId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "testcase_number")
 
-    @JacksonXmlProperty(localName = "testcase_number")
-
     private String testcaseNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extend_info")
-
-    @JacksonXmlProperty(localName = "extend_info")
 
     private ExternalServiceBizCase extendInfo;
 

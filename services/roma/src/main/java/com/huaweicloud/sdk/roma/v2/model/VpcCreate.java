@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,14 +21,10 @@ public class VpcCreate {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
-    @JacksonXmlProperty(localName = "name")
-
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "port")
-
-    @JacksonXmlProperty(localName = "port")
 
     private Integer port;
 
@@ -125,8 +120,6 @@ public class VpcCreate {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "balance_strategy")
 
-    @JacksonXmlProperty(localName = "balance_strategy")
-
     private BalanceStrategyEnum balanceStrategy;
 
     /**
@@ -209,35 +202,25 @@ public class VpcCreate {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "member_type")
 
-    @JacksonXmlProperty(localName = "member_type")
-
     private MemberTypeEnum memberType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dict_code")
-
-    @JacksonXmlProperty(localName = "dict_code")
 
     private String dictCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "member_groups")
 
-    @JacksonXmlProperty(localName = "member_groups")
-
     private List<MemberGroupCreate> memberGroups = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "members")
 
-    @JacksonXmlProperty(localName = "members")
-
     private List<MemberInfo> members = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_health_config")
-
-    @JacksonXmlProperty(localName = "vpc_health_config")
 
     private VpcHealthConfig vpcHealthConfig;
 

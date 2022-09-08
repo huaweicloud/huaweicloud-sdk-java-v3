@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -19,8 +18,6 @@ public class MaskStrategies {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
-
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
@@ -152,14 +149,10 @@ public class MaskStrategies {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "algorithm")
 
-    @JacksonXmlProperty(localName = "algorithm")
-
     private AlgorithmEnum algorithm;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parameters")
-
-    @JacksonXmlProperty(localName = "parameters")
 
     private Map<String, Object> parameters = null;
 

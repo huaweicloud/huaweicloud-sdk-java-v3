@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,56 +21,40 @@ public class ListSimCardsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "main_search_type")
 
-    @JacksonXmlProperty(localName = "main_search_type")
-
     private Integer mainSearchType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "main_search_key")
-
-    @JacksonXmlProperty(localName = "main_search_key")
 
     private String mainSearchKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
-    @JacksonXmlProperty(localName = "limit")
-
     private Long limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
-
-    @JacksonXmlProperty(localName = "offset")
 
     private Long offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sim_status")
 
-    @JacksonXmlProperty(localName = "sim_status")
-
     private Integer simStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "device_status")
-
-    @JacksonXmlProperty(localName = "device_status")
 
     private Integer deviceStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tag_id")
 
-    @JacksonXmlProperty(localName = "tag_id")
-
     private List<Long> tagId = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sim_type")
-
-    @JacksonXmlProperty(localName = "sim_type")
 
     private Integer simType;
 
@@ -154,8 +137,6 @@ public class ListSimCardsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "order")
-
-    @JacksonXmlProperty(localName = "order")
 
     private OrderEnum order;
 
@@ -257,105 +238,75 @@ public class ListSimCardsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sort")
 
-    @JacksonXmlProperty(localName = "sort")
-
     private SortEnum sort;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "msisdn")
-
-    @JacksonXmlProperty(localName = "msisdn")
 
     private String msisdn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "customer_attribute1")
 
-    @JacksonXmlProperty(localName = "customer_attribute1")
-
     private String customerAttribute1;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "customer_attribute2")
-
-    @JacksonXmlProperty(localName = "customer_attribute2")
 
     private String customerAttribute2;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "customer_attribute3")
 
-    @JacksonXmlProperty(localName = "customer_attribute3")
-
     private String customerAttribute3;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "customer_attribute4")
-
-    @JacksonXmlProperty(localName = "customer_attribute4")
 
     private String customerAttribute4;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "customer_attribute5")
 
-    @JacksonXmlProperty(localName = "customer_attribute5")
-
     private String customerAttribute5;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "customer_attribute6")
-
-    @JacksonXmlProperty(localName = "customer_attribute6")
 
     private String customerAttribute6;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "min_used_flow")
 
-    @JacksonXmlProperty(localName = "min_used_flow")
-
     private Long minUsedFlow;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_used_flow")
-
-    @JacksonXmlProperty(localName = "max_used_flow")
 
     private Long maxUsedFlow;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "min_left_flow")
 
-    @JacksonXmlProperty(localName = "min_left_flow")
-
     private Long minLeftFlow;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_left_flow")
-
-    @JacksonXmlProperty(localName = "max_left_flow")
 
     private Long maxLeftFlow;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "real_named")
 
-    @JacksonXmlProperty(localName = "real_named")
-
     private Boolean realNamed;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "order_id")
 
-    @JacksonXmlProperty(localName = "order_id")
-
     private Long orderId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "filter_downtime_period")
-
-    @JacksonXmlProperty(localName = "filter_downtime_period")
 
     private Boolean filterDowntimePeriod;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.frs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,35 +13,25 @@ public class FaceQuality {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_score")
 
-    @JacksonXmlProperty(localName = "total_score")
-
     private Double totalScore;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "blur")
-
-    @JacksonXmlProperty(localName = "blur")
 
     private Double blur;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pose")
 
-    @JacksonXmlProperty(localName = "pose")
-
     private Double pose;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "occlusion")
 
-    @JacksonXmlProperty(localName = "occlusion")
-
     private Double occlusion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "illumination")
-
-    @JacksonXmlProperty(localName = "illumination")
 
     private Double illumination;
 

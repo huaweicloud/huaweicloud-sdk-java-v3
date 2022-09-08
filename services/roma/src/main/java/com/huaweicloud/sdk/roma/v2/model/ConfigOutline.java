@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.time.OffsetDateTime;
 import java.util.Collections;
@@ -19,8 +18,6 @@ public class ConfigOutline {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "config_id")
-
-    @JacksonXmlProperty(localName = "config_id")
 
     private String configId;
 
@@ -416,28 +413,20 @@ public class ConfigOutline {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "config_name")
 
-    @JacksonXmlProperty(localName = "config_name")
-
     private ConfigNameEnum configName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "config_value")
-
-    @JacksonXmlProperty(localName = "config_value")
 
     private String configValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "config_time")
 
-    @JacksonXmlProperty(localName = "config_time")
-
     private OffsetDateTime configTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remark")
-
-    @JacksonXmlProperty(localName = "remark")
 
     private String remark;
 

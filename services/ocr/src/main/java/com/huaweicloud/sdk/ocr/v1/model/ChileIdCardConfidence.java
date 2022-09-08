@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.ocr.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,63 +13,45 @@ public class ChileIdCardConfidence {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "surname")
 
-    @JacksonXmlProperty(localName = "surname")
-
     private Float surname;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "given_name")
-
-    @JacksonXmlProperty(localName = "given_name")
 
     private Float givenName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nationality")
 
-    @JacksonXmlProperty(localName = "nationality")
-
     private Float nationality;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sex")
-
-    @JacksonXmlProperty(localName = "sex")
 
     private Float sex;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "birth")
 
-    @JacksonXmlProperty(localName = "birth")
-
     private Float birth;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "issue_date")
-
-    @JacksonXmlProperty(localName = "issue_date")
 
     private Float issueDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expiry_date")
 
-    @JacksonXmlProperty(localName = "expiry_date")
-
     private Float expiryDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "document_number")
 
-    @JacksonXmlProperty(localName = "document_number")
-
     private Float documentNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "number")
-
-    @JacksonXmlProperty(localName = "number")
 
     private Float number;
 

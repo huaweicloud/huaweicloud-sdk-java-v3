@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,91 +13,65 @@ public class CorpBasicInfoDTO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
-
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "address")
 
-    @JacksonXmlProperty(localName = "address")
-
     private String address;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "adminName")
-
-    @JacksonXmlProperty(localName = "adminName")
 
     private String adminName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "account")
 
-    @JacksonXmlProperty(localName = "account")
-
     private String account;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "phone")
-
-    @JacksonXmlProperty(localName = "phone")
 
     private String phone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "country")
 
-    @JacksonXmlProperty(localName = "country")
-
     private String country;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "email")
-
-    @JacksonXmlProperty(localName = "email")
 
     private String email;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enableSMS")
 
-    @JacksonXmlProperty(localName = "enableSMS")
-
     private Boolean enableSMS;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enableCloudDisk")
-
-    @JacksonXmlProperty(localName = "enableCloudDisk")
 
     private Boolean enableCloudDisk;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enablePstn")
 
-    @JacksonXmlProperty(localName = "enablePstn")
-
     private Boolean enablePstn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "autoUserCreate")
 
-    @JacksonXmlProperty(localName = "autoUserCreate")
-
     private Boolean autoUserCreate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "corpType")
-
-    @JacksonXmlProperty(localName = "corpType")
 
     private Integer corpType;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.res.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,49 +14,35 @@ public class UpdateResSceneRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "category")
 
-    @JacksonXmlProperty(localName = "category")
-
     private String category;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "datasource_id")
-
-    @JacksonXmlProperty(localName = "datasource_id")
 
     private String datasourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ds_config")
 
-    @JacksonXmlProperty(localName = "ds_config")
-
     private DsConfig dsConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scene_name")
-
-    @JacksonXmlProperty(localName = "scene_name")
 
     private String sceneName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "specs_config")
 
-    @JacksonXmlProperty(localName = "specs_config")
-
     private SpecsConfig specsConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
-    @JacksonXmlProperty(localName = "type")
-
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_type")
-
-    @JacksonXmlProperty(localName = "service_type")
 
     private String serviceType;
 

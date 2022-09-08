@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.ims.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,21 +14,15 @@ public class AddOrUpdateTagsRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image_id")
 
-    @JacksonXmlProperty(localName = "image_id")
-
     private String imageId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tag")
 
-    @JacksonXmlProperty(localName = "tag")
-
     private String tag;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image_tag")
-
-    @JacksonXmlProperty(localName = "image_tag")
 
     private ResourceTag imageTag;
 

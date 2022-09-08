@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,224 +21,160 @@ public class ShowInstanceResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
-    @JacksonXmlProperty(localName = "name")
-
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "engine")
-
-    @JacksonXmlProperty(localName = "engine")
 
     private String engine;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "engine_version")
 
-    @JacksonXmlProperty(localName = "engine_version")
-
     private String engineVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
-
-    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "specification")
 
-    @JacksonXmlProperty(localName = "specification")
-
     private String specification;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "storage_space")
-
-    @JacksonXmlProperty(localName = "storage_space")
 
     private Integer storageSpace;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "partition_num")
 
-    @JacksonXmlProperty(localName = "partition_num")
-
     private String partitionNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "used_storage_space")
-
-    @JacksonXmlProperty(localName = "used_storage_space")
 
     private Integer usedStorageSpace;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "connect_address")
 
-    @JacksonXmlProperty(localName = "connect_address")
-
     private String connectAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "port")
-
-    @JacksonXmlProperty(localName = "port")
 
     private Integer port;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    @JacksonXmlProperty(localName = "status")
-
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_id")
-
-    @JacksonXmlProperty(localName = "instance_id")
 
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_spec_code")
 
-    @JacksonXmlProperty(localName = "resource_spec_code")
-
     private String resourceSpecCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "charging_mode")
-
-    @JacksonXmlProperty(localName = "charging_mode")
 
     private Integer chargingMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_id")
 
-    @JacksonXmlProperty(localName = "vpc_id")
-
     private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_name")
-
-    @JacksonXmlProperty(localName = "vpc_name")
 
     private String vpcName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
 
-    @JacksonXmlProperty(localName = "created_at")
-
     private String createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_id")
-
-    @JacksonXmlProperty(localName = "user_id")
 
     private String userId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_name")
 
-    @JacksonXmlProperty(localName = "user_name")
-
     private String userName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "access_user")
-
-    @JacksonXmlProperty(localName = "access_user")
 
     private String accessUser;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "order_id")
 
-    @JacksonXmlProperty(localName = "order_id")
-
     private String orderId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maintain_begin")
-
-    @JacksonXmlProperty(localName = "maintain_begin")
 
     private String maintainBegin;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maintain_end")
 
-    @JacksonXmlProperty(localName = "maintain_end")
-
     private String maintainEnd;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_publicip")
-
-    @JacksonXmlProperty(localName = "enable_publicip")
 
     private Boolean enablePublicip;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "management_connect_address")
 
-    @JacksonXmlProperty(localName = "management_connect_address")
-
     private String managementConnectAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ssl_enable")
-
-    @JacksonXmlProperty(localName = "ssl_enable")
 
     private Boolean sslEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ssl_two_way_enable")
 
-    @JacksonXmlProperty(localName = "ssl_two_way_enable")
-
     private Boolean sslTwoWayEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cert_replaced")
-
-    @JacksonXmlProperty(localName = "cert_replaced")
 
     private Boolean certReplaced;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
-    @JacksonXmlProperty(localName = "enterprise_project_id")
-
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_logical_volume")
-
-    @JacksonXmlProperty(localName = "is_logical_volume")
 
     private Boolean isLogicalVolume;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extend_times")
 
-    @JacksonXmlProperty(localName = "extend_times")
-
     private Integer extendTimes;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_auto_topic")
-
-    @JacksonXmlProperty(localName = "enable_auto_topic")
 
     private Boolean enableAutoTopic;
 
@@ -323,84 +258,60 @@ public class ShowInstanceResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
-    @JacksonXmlProperty(localName = "type")
-
     private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "product_id")
-
-    @JacksonXmlProperty(localName = "product_id")
 
     private String productId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_group_id")
 
-    @JacksonXmlProperty(localName = "security_group_id")
-
     private String securityGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_group_name")
-
-    @JacksonXmlProperty(localName = "security_group_name")
 
     private String securityGroupName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subnet_id")
 
-    @JacksonXmlProperty(localName = "subnet_id")
-
     private String subnetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "available_zones")
-
-    @JacksonXmlProperty(localName = "available_zones")
 
     private List<String> availableZones = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_storage_space")
 
-    @JacksonXmlProperty(localName = "total_storage_space")
-
     private Integer totalStorageSpace;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "public_connect_address")
-
-    @JacksonXmlProperty(localName = "public_connect_address")
 
     private String publicConnectAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "storage_resource_id")
 
-    @JacksonXmlProperty(localName = "storage_resource_id")
-
     private String storageResourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "storage_spec_code")
-
-    @JacksonXmlProperty(localName = "storage_spec_code")
 
     private String storageSpecCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_type")
 
-    @JacksonXmlProperty(localName = "service_type")
-
     private String serviceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "storage_type")
-
-    @JacksonXmlProperty(localName = "storage_type")
 
     private String storageType;
 
@@ -484,196 +395,140 @@ public class ShowInstanceResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "retention_policy")
 
-    @JacksonXmlProperty(localName = "retention_policy")
-
     private RetentionPolicyEnum retentionPolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "kafka_public_status")
-
-    @JacksonXmlProperty(localName = "kafka_public_status")
 
     private String kafkaPublicStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "public_bandwidth")
 
-    @JacksonXmlProperty(localName = "public_bandwidth")
-
     private Integer publicBandwidth;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "kafka_manager_user")
-
-    @JacksonXmlProperty(localName = "kafka_manager_user")
 
     private String kafkaManagerUser;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_log_collection")
 
-    @JacksonXmlProperty(localName = "enable_log_collection")
-
     private Boolean enableLogCollection;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cross_vpc_info")
-
-    @JacksonXmlProperty(localName = "cross_vpc_info")
 
     private String crossVpcInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ipv6_enable")
 
-    @JacksonXmlProperty(localName = "ipv6_enable")
-
     private Boolean ipv6Enable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ipv6_connect_addresses")
-
-    @JacksonXmlProperty(localName = "ipv6_connect_addresses")
 
     private List<String> ipv6ConnectAddresses = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "connector_enable")
 
-    @JacksonXmlProperty(localName = "connector_enable")
-
     private Boolean connectorEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "connector_id")
-
-    @JacksonXmlProperty(localName = "connector_id")
 
     private String connectorId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rest_enable")
 
-    @JacksonXmlProperty(localName = "rest_enable")
-
     private Boolean restEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rest_connect_address")
-
-    @JacksonXmlProperty(localName = "rest_connect_address")
 
     private String restConnectAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "public_boundwidth")
 
-    @JacksonXmlProperty(localName = "public_boundwidth")
-
     private Integer publicBoundwidth;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "message_query_inst_enable")
-
-    @JacksonXmlProperty(localName = "message_query_inst_enable")
 
     private Boolean messageQueryInstEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_client_plain")
 
-    @JacksonXmlProperty(localName = "vpc_client_plain")
-
     private Boolean vpcClientPlain;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "support_features")
-
-    @JacksonXmlProperty(localName = "support_features")
 
     private String supportFeatures;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trace_enable")
 
-    @JacksonXmlProperty(localName = "trace_enable")
-
     private Boolean traceEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "agent_enable")
-
-    @JacksonXmlProperty(localName = "agent_enable")
 
     private Boolean agentEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pod_connect_address")
 
-    @JacksonXmlProperty(localName = "pod_connect_address")
-
     private String podConnectAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "disk_encrypted")
-
-    @JacksonXmlProperty(localName = "disk_encrypted")
 
     private Boolean diskEncrypted;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "kafka_private_connect_address")
 
-    @JacksonXmlProperty(localName = "kafka_private_connect_address")
-
     private String kafkaPrivateConnectAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ces_version")
-
-    @JacksonXmlProperty(localName = "ces_version")
 
     private String cesVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "public_access_enabled")
 
-    @JacksonXmlProperty(localName = "public_access_enabled")
-
     private String publicAccessEnabled;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "node_num")
-
-    @JacksonXmlProperty(localName = "node_num")
 
     private Integer nodeNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "new_spec_billing_enable")
 
-    @JacksonXmlProperty(localName = "new_spec_billing_enable")
-
     private Boolean newSpecBillingEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "broker_num")
-
-    @JacksonXmlProperty(localName = "broker_num")
 
     private Integer brokerNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    @JacksonXmlProperty(localName = "tags")
-
     private List<TagEntity> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dr_enable")
-
-    @JacksonXmlProperty(localName = "dr_enable")
 
     private Boolean drEnable;
 

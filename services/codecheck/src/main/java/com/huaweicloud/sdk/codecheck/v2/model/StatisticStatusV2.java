@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.codecheck.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,21 +13,15 @@ public class StatisticStatusV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "unresolved")
 
-    @JacksonXmlProperty(localName = "unresolved")
-
     private Integer unresolved;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resolved")
 
-    @JacksonXmlProperty(localName = "resolved")
-
     private Integer resolved;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dismissed")
-
-    @JacksonXmlProperty(localName = "dismissed")
 
     private Integer dismissed;
 

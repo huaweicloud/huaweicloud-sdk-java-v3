@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.elb.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -18,14 +17,10 @@ public class ListCertificatesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "certificates")
 
-    @JacksonXmlProperty(localName = "certificates")
-
     private List<CertificateResp> certificates = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_num")
-
-    @JacksonXmlProperty(localName = "instance_num")
 
     private Integer instanceNum;
 

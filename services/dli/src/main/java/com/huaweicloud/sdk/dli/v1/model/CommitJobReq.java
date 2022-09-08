@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,37 +16,27 @@ public class CommitJobReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sql")
 
-    @JacksonXmlProperty(localName = "sql")
-
     private String sql;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "currentdb")
-
-    @JacksonXmlProperty(localName = "currentdb")
 
     private String currentdb;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "queue_name")
 
-    @JacksonXmlProperty(localName = "queue_name")
-
     private String queueName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "conf")
-
-    @JacksonXmlProperty(localName = "conf")
 
     private List<String> conf = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    @JacksonXmlProperty(localName = "tags")
-
-    private List<JobsTags> tags = null;
+    private List<TmsTagEntity> tags = null;
 
     public CommitJobReq withSql(String sql) {
         this.sql = sql;
@@ -89,7 +78,7 @@ public class CommitJobReq {
     }
 
     /**
-     * 待提交作业的队列名称，名称只能包含数字、英文字母和下划线，但不能是纯数字，且不能以下划线开头。长度限制：1~128个字符。 说明：  队列名称不区分大小写，系统会自动转换为小写。
+     * 待提交作业的队列名称，名称只能包含数字、英文字母和下划线，但不能是纯数字，且不能以下划线开头。
      * @return queueName
      */
     public String getQueueName() {
@@ -133,12 +122,12 @@ public class CommitJobReq {
         this.conf = conf;
     }
 
-    public CommitJobReq withTags(List<JobsTags> tags) {
+    public CommitJobReq withTags(List<TmsTagEntity> tags) {
         this.tags = tags;
         return this;
     }
 
-    public CommitJobReq addTagsItem(JobsTags tagsItem) {
+    public CommitJobReq addTagsItem(TmsTagEntity tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -146,7 +135,7 @@ public class CommitJobReq {
         return this;
     }
 
-    public CommitJobReq withTags(Consumer<List<JobsTags>> tagsSetter) {
+    public CommitJobReq withTags(Consumer<List<TmsTagEntity>> tagsSetter) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -155,14 +144,14 @@ public class CommitJobReq {
     }
 
     /**
-     * 作业的标签。具体请参考表tags。
+     * 作业标签
      * @return tags
      */
-    public List<JobsTags> getTags() {
+    public List<TmsTagEntity> getTags() {
         return tags;
     }
 
-    public void setTags(List<JobsTags> tags) {
+    public void setTags(List<TmsTagEntity> tags) {
         this.tags = tags;
     }
 

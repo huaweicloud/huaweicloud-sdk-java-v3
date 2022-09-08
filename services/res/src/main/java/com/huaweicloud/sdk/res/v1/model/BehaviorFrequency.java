@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.res.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,28 +13,20 @@ public class BehaviorFrequency {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "behavior_type")
 
-    @JacksonXmlProperty(localName = "behavior_type")
-
     private String behaviorType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lower_limit")
-
-    @JacksonXmlProperty(localName = "lower_limit")
 
     private Integer lowerLimit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "upper_limit")
 
-    @JacksonXmlProperty(localName = "upper_limit")
-
     private Integer upperLimit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time_interval")
-
-    @JacksonXmlProperty(localName = "time_interval")
 
     private Integer timeInterval;
 

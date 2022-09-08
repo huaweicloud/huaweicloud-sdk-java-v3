@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.iotanalytics.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,91 +16,65 @@ public class PipelineJobInfoDto {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pipeline_id")
 
-    @JacksonXmlProperty(localName = "pipeline_id")
-
     private String pipelineId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pipeline_name")
-
-    @JacksonXmlProperty(localName = "pipeline_name")
 
     private String pipelineName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_source_id")
 
-    @JacksonXmlProperty(localName = "data_source_id")
-
     private String dataSourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_store_list")
-
-    @JacksonXmlProperty(localName = "data_store_list")
 
     private List<DataStoreDto> dataStoreList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pipeline_description")
 
-    @JacksonXmlProperty(localName = "pipeline_description")
-
     private String pipelineDescription;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tag_list")
-
-    @JacksonXmlProperty(localName = "tag_list")
 
     private List<TagInfoDto> tagList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pipeline_state")
 
-    @JacksonXmlProperty(localName = "pipeline_state")
-
     private String pipelineState;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
-
-    @JacksonXmlProperty(localName = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rtu")
 
-    @JacksonXmlProperty(localName = "rtu")
-
     private Integer rtu;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_time")
-
-    @JacksonXmlProperty(localName = "created_time")
 
     private String createdTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "modified_time")
 
-    @JacksonXmlProperty(localName = "modified_time")
-
     private String modifiedTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_id")
 
-    @JacksonXmlProperty(localName = "user_id")
-
     private String userId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "has_savepoint")
-
-    @JacksonXmlProperty(localName = "has_savepoint")
 
     private Boolean hasSavepoint;
 

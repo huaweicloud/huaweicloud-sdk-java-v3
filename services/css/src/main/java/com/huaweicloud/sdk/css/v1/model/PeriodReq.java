@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.css.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,35 +13,25 @@ public class PeriodReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "periodType")
 
-    @JacksonXmlProperty(localName = "periodType")
-
     private Integer periodType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "periodNum")
-
-    @JacksonXmlProperty(localName = "periodNum")
 
     private Integer periodNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "isAutoRenew")
 
-    @JacksonXmlProperty(localName = "isAutoRenew")
-
     private Integer isAutoRenew;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "isAutoPay")
 
-    @JacksonXmlProperty(localName = "isAutoPay")
-
     private Integer isAutoPay;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "consoleURL")
-
-    @JacksonXmlProperty(localName = "consoleURL")
 
     private String consoleURL;
 

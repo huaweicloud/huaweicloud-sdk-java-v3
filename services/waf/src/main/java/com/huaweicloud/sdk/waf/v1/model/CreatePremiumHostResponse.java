@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -23,14 +22,10 @@ public class CreatePremiumHostResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hostname")
-
-    @JacksonXmlProperty(localName = "hostname")
 
     private String hostname;
 
@@ -120,35 +115,25 @@ public class CreatePremiumHostResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protocol")
 
-    @JacksonXmlProperty(localName = "protocol")
-
     private ProtocolEnum protocol;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "server")
-
-    @JacksonXmlProperty(localName = "server")
 
     private List<PremiumWafServer> server = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "proxy")
 
-    @JacksonXmlProperty(localName = "proxy")
-
     private Boolean proxy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "locked")
 
-    @JacksonXmlProperty(localName = "locked")
-
     private Integer locked;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timestamp")
-
-    @JacksonXmlProperty(localName = "timestamp")
 
     private Long timestamp;
 
@@ -243,8 +228,6 @@ public class CreatePremiumHostResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tls")
-
-    @JacksonXmlProperty(localName = "tls")
 
     private TlsEnum tls;
 
@@ -346,77 +329,55 @@ public class CreatePremiumHostResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cipher")
 
-    @JacksonXmlProperty(localName = "cipher")
-
     private CipherEnum cipher;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extend")
-
-    @JacksonXmlProperty(localName = "extend")
 
     private Map<String, String> extend = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flag")
 
-    @JacksonXmlProperty(localName = "flag")
-
     private Flag flag;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
-
-    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policyid")
 
-    @JacksonXmlProperty(localName = "policyid")
-
     private String policyid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domainid")
-
-    @JacksonXmlProperty(localName = "domainid")
 
     private String domainid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "projectid")
 
-    @JacksonXmlProperty(localName = "projectid")
-
     private String projectid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
-
-    @JacksonXmlProperty(localName = "enterprise_project_id")
 
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protect_status")
 
-    @JacksonXmlProperty(localName = "protect_status")
-
     private Integer protectStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "access_status")
 
-    @JacksonXmlProperty(localName = "access_status")
-
     private Integer accessStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "block_page")
-
-    @JacksonXmlProperty(localName = "block_page")
 
     private BlockPage blockPage;
 

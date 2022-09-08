@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -20,14 +19,10 @@ public class CreateFunctionRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "func_name")
 
-    @JacksonXmlProperty(localName = "func_name")
-
     private String funcName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "package")
-
-    @JacksonXmlProperty(localName = "package")
 
     private String _package;
 
@@ -195,28 +190,20 @@ public class CreateFunctionRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "runtime")
 
-    @JacksonXmlProperty(localName = "runtime")
-
     private RuntimeEnum runtime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timeout")
-
-    @JacksonXmlProperty(localName = "timeout")
 
     private Integer timeout;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "handler")
 
-    @JacksonXmlProperty(localName = "handler")
-
     private String handler;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "memory_size")
-
-    @JacksonXmlProperty(localName = "memory_size")
 
     private Integer memorySize;
 
@@ -312,77 +299,55 @@ public class CreateFunctionRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "code_type")
 
-    @JacksonXmlProperty(localName = "code_type")
-
     private CodeTypeEnum codeType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "code_url")
-
-    @JacksonXmlProperty(localName = "code_url")
 
     private String codeUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "code_filename")
 
-    @JacksonXmlProperty(localName = "code_filename")
-
     private String codeFilename;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_data")
-
-    @JacksonXmlProperty(localName = "user_data")
 
     private String userData;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "xrole")
 
-    @JacksonXmlProperty(localName = "xrole")
-
     private String xrole;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_xrole")
-
-    @JacksonXmlProperty(localName = "app_xrole")
 
     private String appXrole;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
-    @JacksonXmlProperty(localName = "description")
-
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "func_code")
-
-    @JacksonXmlProperty(localName = "func_code")
 
     private FuncCode funcCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "initializer_handler")
 
-    @JacksonXmlProperty(localName = "initializer_handler")
-
     private String initializerHandler;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "initializer_timeout")
 
-    @JacksonXmlProperty(localName = "initializer_timeout")
-
     private Integer initializerTimeout;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
-
-    @JacksonXmlProperty(localName = "enterprise_project_id")
 
     private String enterpriseProjectId;
 
@@ -465,8 +430,6 @@ public class CreateFunctionRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
-
-    @JacksonXmlProperty(localName = "type")
 
     private TypeEnum type;
 

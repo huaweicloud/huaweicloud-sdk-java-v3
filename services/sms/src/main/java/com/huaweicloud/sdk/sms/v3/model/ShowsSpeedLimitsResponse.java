@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.sms.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -17,8 +16,6 @@ public class ShowsSpeedLimitsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "speed_limit")
-
-    @JacksonXmlProperty(localName = "speed_limit")
 
     private List<SpeedLimitlJson> speedLimit = null;
 

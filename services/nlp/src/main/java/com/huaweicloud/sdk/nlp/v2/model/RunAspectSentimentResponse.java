@@ -13,8 +13,6 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.nlp.v2.model.AspectOpinion;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -28,7 +26,6 @@ public class RunAspectSentimentResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="text")
     
-    @JacksonXmlProperty(localName = "text")
     
     private String text;
 
@@ -36,7 +33,6 @@ public class RunAspectSentimentResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="label")
     
-    @JacksonXmlProperty(localName = "label")
     
     private Integer label;
 
@@ -44,7 +40,6 @@ public class RunAspectSentimentResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="confidence")
     
-    @JacksonXmlProperty(localName = "confidence")
     
     private Float confidence;
 
@@ -52,7 +47,6 @@ public class RunAspectSentimentResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="aspect_opinions")
     
-    @JacksonXmlProperty(localName = "aspect_opinions")
     
     private List<AspectOpinion> aspectOpinions = null;
     
@@ -60,7 +54,6 @@ public class RunAspectSentimentResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="error_code")
     
-    @JacksonXmlProperty(localName = "error_code")
     
     private String errorCode;
 
@@ -68,7 +61,6 @@ public class RunAspectSentimentResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="error_msg")
     
-    @JacksonXmlProperty(localName = "error_msg")
     
     private String errorMsg;
 

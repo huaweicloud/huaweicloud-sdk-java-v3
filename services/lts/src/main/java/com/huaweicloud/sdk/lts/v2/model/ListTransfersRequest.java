@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -102,35 +101,25 @@ public class ListTransfersRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_transfer_type")
 
-    @JacksonXmlProperty(localName = "log_transfer_type")
-
     private LogTransferTypeEnum logTransferType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_group_name")
-
-    @JacksonXmlProperty(localName = "log_group_name")
 
     private String logGroupName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_stream_name")
 
-    @JacksonXmlProperty(localName = "log_stream_name")
-
     private String logStreamName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
-    @JacksonXmlProperty(localName = "offset")
-
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
-
-    @JacksonXmlProperty(localName = "limit")
 
     private Integer limit;
 

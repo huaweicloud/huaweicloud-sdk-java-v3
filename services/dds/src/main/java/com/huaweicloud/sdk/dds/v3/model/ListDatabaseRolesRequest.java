@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dds.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,35 +13,25 @@ public class ListDatabaseRolesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_id")
 
-    @JacksonXmlProperty(localName = "instance_id")
-
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "role_name")
-
-    @JacksonXmlProperty(localName = "role_name")
 
     private String roleName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "db_name")
 
-    @JacksonXmlProperty(localName = "db_name")
-
     private String dbName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
-    @JacksonXmlProperty(localName = "offset")
-
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
-
-    @JacksonXmlProperty(localName = "limit")
 
     private Integer limit;
 

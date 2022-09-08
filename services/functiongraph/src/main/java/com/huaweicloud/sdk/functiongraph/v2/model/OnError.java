@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.functiongraph.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,21 +13,15 @@ public class OnError {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error")
 
-    @JacksonXmlProperty(localName = "error")
-
     private String error;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "transition")
 
-    @JacksonXmlProperty(localName = "transition")
-
     private String transition;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "retry_ref")
-
-    @JacksonXmlProperty(localName = "retry_ref")
 
     private String retryRef;
 

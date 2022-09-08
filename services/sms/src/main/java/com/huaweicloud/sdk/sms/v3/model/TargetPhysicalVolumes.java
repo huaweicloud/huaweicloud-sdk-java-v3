@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -102,56 +101,40 @@ public class TargetPhysicalVolumes {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "device_use")
 
-    @JacksonXmlProperty(localName = "device_use")
-
     private DeviceUseEnum deviceUse;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_system")
-
-    @JacksonXmlProperty(localName = "file_system")
 
     private String fileSystem;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "index")
 
-    @JacksonXmlProperty(localName = "index")
-
     private Integer index;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mount_point")
-
-    @JacksonXmlProperty(localName = "mount_point")
 
     private String mountPoint;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
-    @JacksonXmlProperty(localName = "name")
-
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
-
-    @JacksonXmlProperty(localName = "size")
 
     private Long size;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "used_size")
 
-    @JacksonXmlProperty(localName = "used_size")
-
     private Long usedSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "uuid")
-
-    @JacksonXmlProperty(localName = "uuid")
 
     private String uuid;
 

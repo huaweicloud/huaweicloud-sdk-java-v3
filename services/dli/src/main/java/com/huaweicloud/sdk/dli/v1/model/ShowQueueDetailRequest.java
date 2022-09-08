@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -12,35 +11,9 @@ import java.util.Objects;
 public class ShowQueueDetailRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "queue_type")
-
-    @JacksonXmlProperty(localName = "queue_type")
-
-    private String queueType;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "queue_name")
 
-    @JacksonXmlProperty(localName = "queue_name")
-
     private String queueName;
-
-    public ShowQueueDetailRequest withQueueType(String queueType) {
-        this.queueType = queueType;
-        return this;
-    }
-
-    /**
-     * 队列的类型,。有如下三种类型： sql general all 如果不指定，默认为sql。
-     * @return queueType
-     */
-    public String getQueueType() {
-        return queueType;
-    }
-
-    public void setQueueType(String queueType) {
-        this.queueType = queueType;
-    }
 
     public ShowQueueDetailRequest withQueueName(String queueName) {
         this.queueName = queueName;
@@ -68,20 +41,18 @@ public class ShowQueueDetailRequest {
             return false;
         }
         ShowQueueDetailRequest showQueueDetailRequest = (ShowQueueDetailRequest) o;
-        return Objects.equals(this.queueType, showQueueDetailRequest.queueType)
-            && Objects.equals(this.queueName, showQueueDetailRequest.queueName);
+        return Objects.equals(this.queueName, showQueueDetailRequest.queueName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(queueType, queueName);
+        return Objects.hash(queueName);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowQueueDetailRequest {\n");
-        sb.append("    queueType: ").append(toIndentedString(queueType)).append("\n");
         sb.append("    queueName: ").append(toIndentedString(queueName)).append("\n");
         sb.append("}");
         return sb.toString();

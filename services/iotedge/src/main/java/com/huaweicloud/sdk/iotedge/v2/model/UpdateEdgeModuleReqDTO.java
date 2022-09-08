@@ -9,8 +9,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.iotedge.v2.model.ContainerSettingsReqDTO;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -24,7 +22,6 @@ public class UpdateEdgeModuleReqDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="app_version")
     
-    @JacksonXmlProperty(localName = "app_version")
     
     private String appVersion;
 
@@ -32,7 +29,6 @@ public class UpdateEdgeModuleReqDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="module_name")
     
-    @JacksonXmlProperty(localName = "module_name")
     
     private String moduleName;
 
@@ -40,7 +36,6 @@ public class UpdateEdgeModuleReqDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="container_settings")
     
-    @JacksonXmlProperty(localName = "container_settings")
     
     private ContainerSettingsReqDTO containerSettings;
 

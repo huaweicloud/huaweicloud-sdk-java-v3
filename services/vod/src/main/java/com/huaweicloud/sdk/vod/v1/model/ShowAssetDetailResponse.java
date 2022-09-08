@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.vod.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -16,35 +15,25 @@ public class ShowAssetDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "asset_id")
 
-    @JacksonXmlProperty(localName = "asset_id")
-
     private String assetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "base_info")
-
-    @JacksonXmlProperty(localName = "base_info")
 
     private BaseInfo baseInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "transcode_info")
 
-    @JacksonXmlProperty(localName = "transcode_info")
-
     private TranscodeInfo transcodeInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "thumbnail_info")
 
-    @JacksonXmlProperty(localName = "thumbnail_info")
-
     private ThumbnailInfo thumbnailInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "review_info")
-
-    @JacksonXmlProperty(localName = "review_info")
 
     private ReviewInfo reviewInfo;
 

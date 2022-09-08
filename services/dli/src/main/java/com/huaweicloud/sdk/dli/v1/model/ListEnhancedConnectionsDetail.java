@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,65 +16,47 @@ public class ListEnhancedConnectionsDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
-
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    @JacksonXmlProperty(localName = "status")
-
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "available_queue_info")
-
-    @JacksonXmlProperty(localName = "available_queue_info")
 
     private List<EnhancedConnectionQueueInfo> availableQueueInfo = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dest_vpc_id")
 
-    @JacksonXmlProperty(localName = "dest_vpc_id")
-
     private String destVpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dest_network_id")
-
-    @JacksonXmlProperty(localName = "dest_network_id")
 
     private String destNetworkId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
-    @JacksonXmlProperty(localName = "create_time")
-
     private Long createTime;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "isPrivis")
-
-    @JacksonXmlProperty(localName = "isPrivis")
-
-    private Boolean isPrivis;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hosts")
 
-    @JacksonXmlProperty(localName = "hosts")
-
     private List<EnhancedConnectionsHost> hosts = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "isPrivis")
+
+    private Boolean isPrivis;
 
     public ListEnhancedConnectionsDetail withId(String id) {
         this.id = id;
@@ -213,23 +194,6 @@ public class ListEnhancedConnectionsDetail {
         this.createTime = createTime;
     }
 
-    public ListEnhancedConnectionsDetail withIsPrivis(Boolean isPrivis) {
-        this.isPrivis = isPrivis;
-        return this;
-    }
-
-    /**
-     * 该增强跨源连接如果做过项目赋权，则该字段是\"false\"，否则为\"true\"。
-     * @return isPrivis
-     */
-    public Boolean getIsPrivis() {
-        return isPrivis;
-    }
-
-    public void setIsPrivis(Boolean isPrivis) {
-        this.isPrivis = isPrivis;
-    }
-
     public ListEnhancedConnectionsDetail withHosts(List<EnhancedConnectionsHost> hosts) {
         this.hosts = hosts;
         return this;
@@ -263,6 +227,23 @@ public class ListEnhancedConnectionsDetail {
         this.hosts = hosts;
     }
 
+    public ListEnhancedConnectionsDetail withIsPrivis(Boolean isPrivis) {
+        this.isPrivis = isPrivis;
+        return this;
+    }
+
+    /**
+     * 该增强跨源连接如果做过项目赋权，则该字段是\"false\"，否则为\"true\"。
+     * @return isPrivis
+     */
+    public Boolean getIsPrivis() {
+        return isPrivis;
+    }
+
+    public void setIsPrivis(Boolean isPrivis) {
+        this.isPrivis = isPrivis;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -279,14 +260,14 @@ public class ListEnhancedConnectionsDetail {
             && Objects.equals(this.destVpcId, listEnhancedConnectionsDetail.destVpcId)
             && Objects.equals(this.destNetworkId, listEnhancedConnectionsDetail.destNetworkId)
             && Objects.equals(this.createTime, listEnhancedConnectionsDetail.createTime)
-            && Objects.equals(this.isPrivis, listEnhancedConnectionsDetail.isPrivis)
-            && Objects.equals(this.hosts, listEnhancedConnectionsDetail.hosts);
+            && Objects.equals(this.hosts, listEnhancedConnectionsDetail.hosts)
+            && Objects.equals(this.isPrivis, listEnhancedConnectionsDetail.isPrivis);
     }
 
     @Override
     public int hashCode() {
         return Objects
-            .hash(id, name, status, availableQueueInfo, destVpcId, destNetworkId, createTime, isPrivis, hosts);
+            .hash(id, name, status, availableQueueInfo, destVpcId, destNetworkId, createTime, hosts, isPrivis);
     }
 
     @Override
@@ -300,8 +281,8 @@ public class ListEnhancedConnectionsDetail {
         sb.append("    destVpcId: ").append(toIndentedString(destVpcId)).append("\n");
         sb.append("    destNetworkId: ").append(toIndentedString(destNetworkId)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
-        sb.append("    isPrivis: ").append(toIndentedString(isPrivis)).append("\n");
         sb.append("    hosts: ").append(toIndentedString(hosts)).append("\n");
+        sb.append("    isPrivis: ").append(toIndentedString(isPrivis)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cdn.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,56 +14,40 @@ public class HttpInfoRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cert_name")
 
-    @JacksonXmlProperty(localName = "cert_name")
-
     private String certName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "https_status")
-
-    @JacksonXmlProperty(localName = "https_status")
 
     private Integer httpsStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "certificate")
 
-    @JacksonXmlProperty(localName = "certificate")
-
     private String certificate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "private_key")
-
-    @JacksonXmlProperty(localName = "private_key")
 
     private String privateKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "http2")
 
-    @JacksonXmlProperty(localName = "http2")
-
     private Integer http2;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "certificate_type")
-
-    @JacksonXmlProperty(localName = "certificate_type")
 
     private Integer certificateType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "force_redirect_https")
 
-    @JacksonXmlProperty(localName = "force_redirect_https")
-
     private Integer forceRedirectHttps;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "force_redirect_config")
-
-    @JacksonXmlProperty(localName = "force_redirect_config")
 
     private ForceRedirect forceRedirectConfig;
 

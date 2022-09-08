@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.iotda.v5.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,63 +16,45 @@ public class UpdateProduct {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_id")
 
-    @JacksonXmlProperty(localName = "app_id")
-
     private String appId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
-
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "device_type")
 
-    @JacksonXmlProperty(localName = "device_type")
-
     private String deviceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protocol_type")
-
-    @JacksonXmlProperty(localName = "protocol_type")
 
     private String protocolType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_format")
 
-    @JacksonXmlProperty(localName = "data_format")
-
     private String dataFormat;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_capabilities")
-
-    @JacksonXmlProperty(localName = "service_capabilities")
 
     private List<ServiceCapability> serviceCapabilities = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "manufacturer_name")
 
-    @JacksonXmlProperty(localName = "manufacturer_name")
-
     private String manufacturerName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "industry")
 
-    @JacksonXmlProperty(localName = "industry")
-
     private String industry;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
-
-    @JacksonXmlProperty(localName = "description")
 
     private String description;
 

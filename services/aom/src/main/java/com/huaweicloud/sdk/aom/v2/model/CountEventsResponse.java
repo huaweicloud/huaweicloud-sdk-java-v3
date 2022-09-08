@@ -13,8 +13,6 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.aom.v2.model.EventSeries;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -28,7 +26,6 @@ public class CountEventsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="step")
     
-    @JacksonXmlProperty(localName = "step")
     
     private Long step;
 
@@ -36,7 +33,6 @@ public class CountEventsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="timestamps")
     
-    @JacksonXmlProperty(localName = "timestamps")
     
     private List<Long> timestamps = null;
     
@@ -44,7 +40,6 @@ public class CountEventsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="series")
     
-    @JacksonXmlProperty(localName = "series")
     
     private List<EventSeries> series = null;
     

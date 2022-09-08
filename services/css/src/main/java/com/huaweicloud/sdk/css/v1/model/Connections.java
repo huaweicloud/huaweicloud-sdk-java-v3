@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.css.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,49 +13,35 @@ public class Connections {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
-
-    @JacksonXmlProperty(localName = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maxSession")
 
-    @JacksonXmlProperty(localName = "maxSession")
-
     private String maxSession;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "specificationName")
-
-    @JacksonXmlProperty(localName = "specificationName")
 
     private String specificationName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
 
-    @JacksonXmlProperty(localName = "created_at")
-
     private String createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_at")
 
-    @JacksonXmlProperty(localName = "update_at")
-
     private String updateAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_id")
-
-    @JacksonXmlProperty(localName = "domain_id")
 
     private String domainId;
 

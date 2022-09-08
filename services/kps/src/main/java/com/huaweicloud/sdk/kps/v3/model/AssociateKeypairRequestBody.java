@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.kps.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,14 +14,10 @@ public class AssociateKeypairRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "keypair_name")
 
-    @JacksonXmlProperty(localName = "keypair_name")
-
     private String keypairName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "server")
-
-    @JacksonXmlProperty(localName = "server")
 
     private EcsServerInfo server;
 

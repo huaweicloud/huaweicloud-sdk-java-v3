@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.sms.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -16,14 +15,10 @@ public class ShowCommandResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "command_name")
 
-    @JacksonXmlProperty(localName = "command_name")
-
     private String commandName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "command_param")
-
-    @JacksonXmlProperty(localName = "command_param")
 
     private ComandParam commandParam;
 

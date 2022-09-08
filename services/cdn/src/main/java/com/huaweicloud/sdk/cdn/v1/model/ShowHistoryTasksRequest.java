@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -19,21 +18,15 @@ public class ShowHistoryTasksRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
-    @JacksonXmlProperty(localName = "enterprise_project_id")
-
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page_size")
 
-    @JacksonXmlProperty(localName = "page_size")
-
     private Integer pageSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page_number")
-
-    @JacksonXmlProperty(localName = "page_number")
 
     private Integer pageNumber;
 
@@ -117,35 +110,25 @@ public class ShowHistoryTasksRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    @JacksonXmlProperty(localName = "status")
-
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_date")
-
-    @JacksonXmlProperty(localName = "start_date")
 
     private Long startDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_date")
 
-    @JacksonXmlProperty(localName = "end_date")
-
     private Long endDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "order_field")
 
-    @JacksonXmlProperty(localName = "order_field")
-
     private String orderField;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "order_type")
-
-    @JacksonXmlProperty(localName = "order_type")
 
     private String orderType;
 
@@ -228,8 +211,6 @@ public class ShowHistoryTasksRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_type")
-
-    @JacksonXmlProperty(localName = "file_type")
 
     private FileTypeEnum fileType;
 

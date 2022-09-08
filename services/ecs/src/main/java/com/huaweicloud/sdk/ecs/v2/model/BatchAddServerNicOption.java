@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.ecs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,35 +16,25 @@ public class BatchAddServerNicOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subnet_id")
 
-    @JacksonXmlProperty(localName = "subnet_id")
-
     private String subnetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_groups")
-
-    @JacksonXmlProperty(localName = "security_groups")
 
     private List<ServerNicSecurityGroup> securityGroups = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip_address")
 
-    @JacksonXmlProperty(localName = "ip_address")
-
     private String ipAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ipv6_enable")
 
-    @JacksonXmlProperty(localName = "ipv6_enable")
-
     private Boolean ipv6Enable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ipv6_bandwidth")
-
-    @JacksonXmlProperty(localName = "ipv6_bandwidth")
 
     private Ipv6Bandwidth ipv6Bandwidth;
 

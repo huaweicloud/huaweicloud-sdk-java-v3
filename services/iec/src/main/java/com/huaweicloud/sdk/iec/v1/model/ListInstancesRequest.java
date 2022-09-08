@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.iec.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,63 +13,45 @@ public class ListInstancesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
-    @JacksonXmlProperty(localName = "offset")
-
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
-
-    @JacksonXmlProperty(localName = "limit")
 
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    @JacksonXmlProperty(localName = "status")
-
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
-
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "area")
 
-    @JacksonXmlProperty(localName = "area")
-
     private String area;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "province")
-
-    @JacksonXmlProperty(localName = "province")
 
     private String province;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "city")
 
-    @JacksonXmlProperty(localName = "city")
-
     private String city;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "edgecloud_id")
 
-    @JacksonXmlProperty(localName = "edgecloud_id")
-
     private String edgecloudId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "site_id")
-
-    @JacksonXmlProperty(localName = "site_id")
 
     private String siteId;
 

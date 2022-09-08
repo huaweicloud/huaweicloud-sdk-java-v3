@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.lts.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,28 +13,20 @@ public class Annotations {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "message")
 
-    @JacksonXmlProperty(localName = "message")
-
     private String message;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_info")
-
-    @JacksonXmlProperty(localName = "log_info")
 
     private String logInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "current_value")
 
-    @JacksonXmlProperty(localName = "current_value")
-
     private String currentValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "old_annotations")
-
-    @JacksonXmlProperty(localName = "old_annotations")
 
     private String oldAnnotations;
 

@@ -11,8 +11,6 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.gaussdb.v3.model.TagItem;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -26,7 +24,6 @@ public class BatchOperateInstanceTagRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="action")
     
-    @JacksonXmlProperty(localName = "action")
     
     private String action;
 
@@ -34,7 +31,6 @@ public class BatchOperateInstanceTagRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    @JacksonXmlProperty(localName = "tags")
     
     private List<TagItem> tags = null;
     

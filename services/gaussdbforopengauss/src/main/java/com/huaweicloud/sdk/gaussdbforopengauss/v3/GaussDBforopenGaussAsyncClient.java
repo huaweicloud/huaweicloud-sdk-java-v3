@@ -862,6 +862,36 @@ public class GaussDBforopenGaussAsyncClient {
     }
 
     /**
+     * 获取指定ID的任务信息。
+     *
+     * 获取指定ID的任务信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowJobDetailRequest 请求对象
+     * @return CompletableFuture<ShowJobDetailResponse>
+     */
+    public CompletableFuture<ShowJobDetailResponse> showJobDetailAsync(ShowJobDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.showJobDetail);
+    }
+
+    /**
+     * 获取指定ID的任务信息。
+     *
+     * 获取指定ID的任务信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowJobDetailRequest 请求对象
+     * @return AsyncInvoker<ShowJobDetailRequest, ShowJobDetailResponse>
+     */
+    public AsyncInvoker<ShowJobDetailRequest, ShowJobDetailResponse> showJobDetailAsyncInvoker(ShowJobDetailRequest request) {
+        return new AsyncInvoker<ShowJobDetailRequest, ShowJobDetailResponse>(request, GaussDBforopenGaussMeta.showJobDetail, hcClient);
+    }
+
+    /**
      * 分片节点主备切换。
      *
      * 支持用户对单个或多个DN分片做主备切换，同一分组内只能指定一个新的备节点进行升主操作。

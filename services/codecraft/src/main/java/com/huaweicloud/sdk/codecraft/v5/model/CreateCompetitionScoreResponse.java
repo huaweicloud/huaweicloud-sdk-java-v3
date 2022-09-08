@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.codecraft.v5.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -14,8 +13,6 @@ public class CreateCompetitionScoreResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "works_id")
-
-    @JacksonXmlProperty(localName = "works_id")
 
     private String worksId;
 

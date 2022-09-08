@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.kafka.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,56 +13,40 @@ public class ShowSinkTaskDetailRespObsDestinationDescriptor {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "consumer_strategy")
 
-    @JacksonXmlProperty(localName = "consumer_strategy")
-
     private String consumerStrategy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "destination_file_type")
-
-    @JacksonXmlProperty(localName = "destination_file_type")
 
     private String destinationFileType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "obs_bucket_name")
 
-    @JacksonXmlProperty(localName = "obs_bucket_name")
-
     private String obsBucketName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "obs_path")
-
-    @JacksonXmlProperty(localName = "obs_path")
 
     private String obsPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "partition_format")
 
-    @JacksonXmlProperty(localName = "partition_format")
-
     private String partitionFormat;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "record_delimiter")
-
-    @JacksonXmlProperty(localName = "record_delimiter")
 
     private String recordDelimiter;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deliver_time_interval")
 
-    @JacksonXmlProperty(localName = "deliver_time_interval")
-
     private Integer deliverTimeInterval;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "obs_part_size")
-
-    @JacksonXmlProperty(localName = "obs_part_size")
 
     private Long obsPartSize;
 

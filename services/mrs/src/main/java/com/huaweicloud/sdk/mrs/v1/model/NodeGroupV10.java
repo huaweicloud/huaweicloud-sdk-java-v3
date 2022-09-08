@@ -12,8 +12,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -27,7 +25,6 @@ public class NodeGroupV10  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="GroupName")
     
-    @JacksonXmlProperty(localName = "GroupName")
     
     private String groupName;
 
@@ -35,7 +32,6 @@ public class NodeGroupV10  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="NodeNum")
     
-    @JacksonXmlProperty(localName = "NodeNum")
     
     private Integer nodeNum;
 
@@ -43,7 +39,6 @@ public class NodeGroupV10  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="NodeSize")
     
-    @JacksonXmlProperty(localName = "NodeSize")
     
     private String nodeSize;
 
@@ -51,7 +46,6 @@ public class NodeGroupV10  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="NodeSpecId")
     
-    @JacksonXmlProperty(localName = "NodeSpecId")
     
     private String nodeSpecId;
 
@@ -59,7 +53,6 @@ public class NodeGroupV10  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="VmProductId")
     
-    @JacksonXmlProperty(localName = "VmProductId")
     
     private String vmProductId;
 
@@ -67,7 +60,6 @@ public class NodeGroupV10  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="VmSpecCode")
     
-    @JacksonXmlProperty(localName = "VmSpecCode")
     
     private String vmSpecCode;
 
@@ -75,7 +67,6 @@ public class NodeGroupV10  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="NodeProductId")
     
-    @JacksonXmlProperty(localName = "NodeProductId")
     
     private String nodeProductId;
 
@@ -83,7 +74,6 @@ public class NodeGroupV10  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="RootVolumeSize")
     
-    @JacksonXmlProperty(localName = "RootVolumeSize")
     
     private Integer rootVolumeSize;
 
@@ -91,7 +81,6 @@ public class NodeGroupV10  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="RootVolumeProductId")
     
-    @JacksonXmlProperty(localName = "RootVolumeProductId")
     
     private String rootVolumeProductId;
 
@@ -99,7 +88,6 @@ public class NodeGroupV10  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="RootVolumeType")
     
-    @JacksonXmlProperty(localName = "RootVolumeType")
     
     private String rootVolumeType;
 
@@ -107,7 +95,6 @@ public class NodeGroupV10  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="RootVolumeResourceSpecCode")
     
-    @JacksonXmlProperty(localName = "RootVolumeResourceSpecCode")
     
     private String rootVolumeResourceSpecCode;
 
@@ -115,7 +102,6 @@ public class NodeGroupV10  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="RootVolumeResourceType")
     
-    @JacksonXmlProperty(localName = "RootVolumeResourceType")
     
     private String rootVolumeResourceType;
     /**
@@ -213,7 +199,6 @@ public class NodeGroupV10  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="DataVolumeType")
     
-    @JacksonXmlProperty(localName = "DataVolumeType")
     
     private DataVolumeTypeEnum dataVolumeType;
 
@@ -221,7 +206,6 @@ public class NodeGroupV10  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="DataVolumeCount")
     
-    @JacksonXmlProperty(localName = "DataVolumeCount")
     
     private Integer dataVolumeCount;
 
@@ -229,7 +213,6 @@ public class NodeGroupV10  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="DataVolumeSize")
     
-    @JacksonXmlProperty(localName = "DataVolumeSize")
     
     private Integer dataVolumeSize;
 
@@ -237,7 +220,6 @@ public class NodeGroupV10  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="DataVolumeProductId")
     
-    @JacksonXmlProperty(localName = "DataVolumeProductId")
     
     private String dataVolumeProductId;
 
@@ -245,7 +227,6 @@ public class NodeGroupV10  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="DataVolumeResourceSpecCode")
     
-    @JacksonXmlProperty(localName = "DataVolumeResourceSpecCode")
     
     private String dataVolumeResourceSpecCode;
 
@@ -253,7 +234,6 @@ public class NodeGroupV10  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="DataVolumeResourceType")
     
-    @JacksonXmlProperty(localName = "DataVolumeResourceType")
     
     private String dataVolumeResourceType;
 

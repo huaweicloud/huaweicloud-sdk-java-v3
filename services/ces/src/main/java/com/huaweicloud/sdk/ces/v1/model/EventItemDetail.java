@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -19,28 +18,20 @@ public class EventItemDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "content")
 
-    @JacksonXmlProperty(localName = "content")
-
     private String content;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_id")
-
-    @JacksonXmlProperty(localName = "group_id")
 
     private String groupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_id")
 
-    @JacksonXmlProperty(localName = "resource_id")
-
     private String resourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_name")
-
-    @JacksonXmlProperty(localName = "resource_name")
 
     private String resourceName;
 
@@ -129,8 +120,6 @@ public class EventItemDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_state")
-
-    @JacksonXmlProperty(localName = "event_state")
 
     private EventStateEnum eventState;
 
@@ -226,14 +215,10 @@ public class EventItemDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_level")
 
-    @JacksonXmlProperty(localName = "event_level")
-
     private EventLevelEnum eventLevel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_user")
-
-    @JacksonXmlProperty(localName = "event_user")
 
     private String eventUser;
 

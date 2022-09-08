@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.sms.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,21 +16,15 @@ public class PutDiskInfoReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "disks")
 
-    @JacksonXmlProperty(localName = "disks")
-
     private List<ServerDisk> disks = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volumegroups")
 
-    @JacksonXmlProperty(localName = "volumegroups")
-
     private List<VolumeGroups> volumegroups = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "btrfs_list")
-
-    @JacksonXmlProperty(localName = "btrfs_list")
 
     private List<BtrfsFileSystem> btrfsList = null;
 

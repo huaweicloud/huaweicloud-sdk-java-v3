@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.ocr.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,49 +16,35 @@ public class GeneralTableWordsBlockList {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "words")
 
-    @JacksonXmlProperty(localName = "words")
-
     private String words;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confidence")
-
-    @JacksonXmlProperty(localName = "confidence")
 
     private Float confidence;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "location")
 
-    @JacksonXmlProperty(localName = "location")
-
     private List<List<Integer>> location = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "words_list")
-
-    @JacksonXmlProperty(localName = "words_list")
 
     private List<WordsListIem> wordsList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rows")
 
-    @JacksonXmlProperty(localName = "rows")
-
     private List<Integer> rows = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "columns")
 
-    @JacksonXmlProperty(localName = "columns")
-
     private List<Integer> columns = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cell_location")
-
-    @JacksonXmlProperty(localName = "cell_location")
 
     private List<List<Integer>> cellLocation = null;
 

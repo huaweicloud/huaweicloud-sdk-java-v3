@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.projectman.v4.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,126 +16,90 @@ public class ListIssueRequestV4 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "assigned_ids")
 
-    @JacksonXmlProperty(localName = "assigned_ids")
-
     private List<Integer> assignedIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "creator_ids")
-
-    @JacksonXmlProperty(localName = "creator_ids")
 
     private List<Integer> creatorIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "developer_ids")
 
-    @JacksonXmlProperty(localName = "developer_ids")
-
     private List<Integer> developerIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_ids")
-
-    @JacksonXmlProperty(localName = "domain_ids")
 
     private List<Integer> domainIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "done_ratios")
 
-    @JacksonXmlProperty(localName = "done_ratios")
-
     private List<Integer> doneRatios = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "iteration_ids")
-
-    @JacksonXmlProperty(localName = "iteration_ids")
 
     private List<Integer> iterationIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
-    @JacksonXmlProperty(localName = "limit")
-
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
-
-    @JacksonXmlProperty(localName = "offset")
 
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "module_ids")
 
-    @JacksonXmlProperty(localName = "module_ids")
-
     private List<Integer> moduleIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "priority_ids")
-
-    @JacksonXmlProperty(localName = "priority_ids")
 
     private List<Integer> priorityIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "query_type")
 
-    @JacksonXmlProperty(localName = "query_type")
-
     private String queryType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "severity_ids")
-
-    @JacksonXmlProperty(localName = "severity_ids")
 
     private List<Integer> severityIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status_ids")
 
-    @JacksonXmlProperty(localName = "status_ids")
-
     private List<Integer> statusIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "story_point_ids")
-
-    @JacksonXmlProperty(localName = "story_point_ids")
 
     private List<Integer> storyPointIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tracker_ids")
 
-    @JacksonXmlProperty(localName = "tracker_ids")
-
     private List<Integer> trackerIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "include_deleted")
-
-    @JacksonXmlProperty(localName = "include_deleted")
 
     private Boolean includeDeleted;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_time_interval")
 
-    @JacksonXmlProperty(localName = "updated_time_interval")
-
     private String updatedTimeInterval;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "custom_fields")
-
-    @JacksonXmlProperty(localName = "custom_fields")
 
     private List<ListIssueRequestV4CustomFields> customFields = null;
 

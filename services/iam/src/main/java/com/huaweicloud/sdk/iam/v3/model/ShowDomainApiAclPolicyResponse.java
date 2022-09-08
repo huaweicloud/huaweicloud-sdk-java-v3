@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.iam.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -15,8 +14,6 @@ public class ShowDomainApiAclPolicyResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "api_acl_policy")
-
-    @JacksonXmlProperty(localName = "api_acl_policy")
 
     private AclPolicyResult apiAclPolicy;
 

@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -103,245 +102,175 @@ public class Job {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_type")
 
-    @JacksonXmlProperty(localName = "job_type")
-
     private JobTypeEnum jobType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "from-connector-name")
-
-    @JacksonXmlProperty(localName = "from-connector-name")
 
     private String fromConnectorName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "to-config-values")
 
-    @JacksonXmlProperty(localName = "to-config-values")
-
     private ConfigValues toConfigValues;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "to-link-name")
-
-    @JacksonXmlProperty(localName = "to-link-name")
 
     private String toLinkName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "driver-config-values")
 
-    @JacksonXmlProperty(localName = "driver-config-values")
-
     private ConfigValues driverConfigValues;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "from-config-values")
-
-    @JacksonXmlProperty(localName = "from-config-values")
 
     private ConfigValues fromConfigValues;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "to-connector-name")
 
-    @JacksonXmlProperty(localName = "to-connector-name")
-
     private String toConnectorName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
-
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "from-link-name")
 
-    @JacksonXmlProperty(localName = "from-link-name")
-
     private String fromLinkName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "creation-user")
-
-    @JacksonXmlProperty(localName = "creation-user")
 
     private String creationUser;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "creation-date")
 
-    @JacksonXmlProperty(localName = "creation-date")
-
     private Long creationDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update-date")
-
-    @JacksonXmlProperty(localName = "update-date")
 
     private Long updateDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_incre_job")
 
-    @JacksonXmlProperty(localName = "is_incre_job")
-
     private Boolean isIncreJob;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flag")
-
-    @JacksonXmlProperty(localName = "flag")
 
     private Integer flag;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "files_read")
 
-    @JacksonXmlProperty(localName = "files_read")
-
     private Integer filesRead;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update-user")
-
-    @JacksonXmlProperty(localName = "update-user")
 
     private String updateUser;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "external_id")
 
-    @JacksonXmlProperty(localName = "external_id")
-
     private String externalId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
-
-    @JacksonXmlProperty(localName = "type")
 
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "execute_start_date")
 
-    @JacksonXmlProperty(localName = "execute_start_date")
-
     private Long executeStartDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "delete_rows")
-
-    @JacksonXmlProperty(localName = "delete_rows")
 
     private Integer deleteRows;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enabled")
 
-    @JacksonXmlProperty(localName = "enabled")
-
     private Boolean enabled;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bytes_written")
-
-    @JacksonXmlProperty(localName = "bytes_written")
 
     private Long bytesWritten;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private Integer id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_use_sql")
-
-    @JacksonXmlProperty(localName = "is_use_sql")
 
     private Boolean isUseSql;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_rows")
 
-    @JacksonXmlProperty(localName = "update_rows")
-
     private Integer updateRows;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_name")
-
-    @JacksonXmlProperty(localName = "group_name")
 
     private String groupName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bytes_read")
 
-    @JacksonXmlProperty(localName = "bytes_read")
-
     private Long bytesRead;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "execute_update_date")
-
-    @JacksonXmlProperty(localName = "execute_update_date")
 
     private Long executeUpdateDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "write_rows")
 
-    @JacksonXmlProperty(localName = "write_rows")
-
     private Integer writeRows;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rows_written")
-
-    @JacksonXmlProperty(localName = "rows_written")
 
     private Integer rowsWritten;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rows_read")
 
-    @JacksonXmlProperty(localName = "rows_read")
-
     private Long rowsRead;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "files_written")
-
-    @JacksonXmlProperty(localName = "files_written")
 
     private Integer filesWritten;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_incrementing")
 
-    @JacksonXmlProperty(localName = "is_incrementing")
-
     private Boolean isIncrementing;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "execute_create_date")
 
-    @JacksonXmlProperty(localName = "execute_create_date")
-
     private Long executeCreateDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
-
-    @JacksonXmlProperty(localName = "status")
 
     private String status;
 

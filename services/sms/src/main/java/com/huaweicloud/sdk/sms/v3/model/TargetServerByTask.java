@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.sms.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,35 +16,25 @@ public class TargetServerByTask {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "btrfs_list")
 
-    @JacksonXmlProperty(localName = "btrfs_list")
-
     private List<BtrfsFileSystem> btrfsList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "disks")
-
-    @JacksonXmlProperty(localName = "disks")
 
     private List<TargetDisks> disks = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
-    @JacksonXmlProperty(localName = "name")
-
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vm_id")
 
-    @JacksonXmlProperty(localName = "vm_id")
-
     private String vmId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volume_groups")
-
-    @JacksonXmlProperty(localName = "volume_groups")
 
     private List<VolumeGroups> volumeGroups = null;
 

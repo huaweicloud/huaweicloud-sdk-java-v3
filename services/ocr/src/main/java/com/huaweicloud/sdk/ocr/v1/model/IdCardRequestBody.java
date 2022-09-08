@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.ocr.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,42 +13,30 @@ public class IdCardRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image")
 
-    @JacksonXmlProperty(localName = "image")
-
     private String image;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "url")
-
-    @JacksonXmlProperty(localName = "url")
 
     private String url;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "side")
 
-    @JacksonXmlProperty(localName = "side")
-
     private String side;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "return_verification")
-
-    @JacksonXmlProperty(localName = "return_verification")
 
     private Boolean returnVerification;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "return_text_location")
 
-    @JacksonXmlProperty(localName = "return_text_location")
-
     private Boolean returnTextLocation;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "detect_reproduce")
-
-    @JacksonXmlProperty(localName = "detect_reproduce")
 
     private Boolean detectReproduce;
 

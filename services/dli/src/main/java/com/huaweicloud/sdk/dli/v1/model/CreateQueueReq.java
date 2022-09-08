@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,84 +16,60 @@ public class CreateQueueReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "queue_name")
 
-    @JacksonXmlProperty(localName = "queue_name")
-
     private String queueName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "queue_type")
-
-    @JacksonXmlProperty(localName = "queue_type")
 
     private String queueType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
-    @JacksonXmlProperty(localName = "description")
-
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cu_count")
-
-    @JacksonXmlProperty(localName = "cu_count")
 
     private Integer cuCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "charging_mode")
 
-    @JacksonXmlProperty(localName = "charging_mode")
-
     private Integer chargingMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
-
-    @JacksonXmlProperty(localName = "enterprise_project_id")
 
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "platform")
 
-    @JacksonXmlProperty(localName = "platform")
-
     private String platform;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_mode")
-
-    @JacksonXmlProperty(localName = "resource_mode")
 
     private Integer resourceMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "labels")
 
-    @JacksonXmlProperty(localName = "labels")
-
     private List<Object> labels = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "feature")
-
-    @JacksonXmlProperty(localName = "feature")
 
     private String feature;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    @JacksonXmlProperty(localName = "tags")
-
-    private List<JobsTags> tags = null;
+    private List<TmsTagEntity> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "elastic_resource_pool_name")
-
-    @JacksonXmlProperty(localName = "elastic_resource_pool_name")
 
     private String elasticResourcePoolName;
 
@@ -104,7 +79,7 @@ public class CreateQueueReq {
     }
 
     /**
-     * 新建的队列名称，名称只能包含数字、英文字母和下划线，但不能是纯数字，且不能以下划线开头。长度限制：1~128个字符。 说明：  队列名称不区分大小写，系统会自动转换为小写。
+     * 新建的队列名称，名称只能包含数字、英文字母和下划线，但不能是纯数字，且不能以下划线开头。长度限制：1~128个字符。\\n说明： \\n队列名称不区分大小写，系统会自动转换为小写。
      * @return queueName
      */
     public String getQueueName() {
@@ -284,12 +259,12 @@ public class CreateQueueReq {
         this.feature = feature;
     }
 
-    public CreateQueueReq withTags(List<JobsTags> tags) {
+    public CreateQueueReq withTags(List<TmsTagEntity> tags) {
         this.tags = tags;
         return this;
     }
 
-    public CreateQueueReq addTagsItem(JobsTags tagsItem) {
+    public CreateQueueReq addTagsItem(TmsTagEntity tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -297,7 +272,7 @@ public class CreateQueueReq {
         return this;
     }
 
-    public CreateQueueReq withTags(Consumer<List<JobsTags>> tagsSetter) {
+    public CreateQueueReq withTags(Consumer<List<TmsTagEntity>> tagsSetter) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -306,14 +281,14 @@ public class CreateQueueReq {
     }
 
     /**
-     * 队列的标签。具体请参考表tags。
+     * 标签
      * @return tags
      */
-    public List<JobsTags> getTags() {
+    public List<TmsTagEntity> getTags() {
         return tags;
     }
 
-    public void setTags(List<JobsTags> tags) {
+    public void setTags(List<TmsTagEntity> tags) {
         this.tags = tags;
     }
 

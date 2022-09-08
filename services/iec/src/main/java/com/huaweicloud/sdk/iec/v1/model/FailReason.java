@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.iec.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,14 +13,10 @@ public class FailReason {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fail_code")
 
-    @JacksonXmlProperty(localName = "fail_code")
-
     private String failCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fail_message")
-
-    @JacksonXmlProperty(localName = "fail_message")
 
     private String failMessage;
 

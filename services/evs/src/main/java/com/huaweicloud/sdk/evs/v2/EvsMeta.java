@@ -74,6 +74,97 @@ public class EvsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CinderAcceptVolumeTransferRequest, CinderAcceptVolumeTransferResponse> cinderAcceptVolumeTransfer =
+        genForcinderAcceptVolumeTransfer();
+
+    private static HttpRequestDef<CinderAcceptVolumeTransferRequest, CinderAcceptVolumeTransferResponse> genForcinderAcceptVolumeTransfer() {
+        // basic
+        HttpRequestDef.Builder<CinderAcceptVolumeTransferRequest, CinderAcceptVolumeTransferResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CinderAcceptVolumeTransferRequest.class,
+                    CinderAcceptVolumeTransferResponse.class)
+                .withName("CinderAcceptVolumeTransfer")
+                .withUri("/v2/{project_id}/os-volume-transfer/{transfer_id}/accept")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("transfer_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CinderAcceptVolumeTransferRequest::getTransferId, (req, v) -> {
+                req.setTransferId(v);
+            }));
+        builder.<CinderAcceptVolumeTransferRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CinderAcceptVolumeTransferRequestBody.class),
+            f -> f.withMarshaller(CinderAcceptVolumeTransferRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CinderCreateVolumeTransferRequest, CinderCreateVolumeTransferResponse> cinderCreateVolumeTransfer =
+        genForcinderCreateVolumeTransfer();
+
+    private static HttpRequestDef<CinderCreateVolumeTransferRequest, CinderCreateVolumeTransferResponse> genForcinderCreateVolumeTransfer() {
+        // basic
+        HttpRequestDef.Builder<CinderCreateVolumeTransferRequest, CinderCreateVolumeTransferResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CinderCreateVolumeTransferRequest.class,
+                    CinderCreateVolumeTransferResponse.class)
+                .withName("CinderCreateVolumeTransfer")
+                .withUri("/v2/{project_id}/os-volume-transfer")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<CinderCreateVolumeTransferRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CinderCreateVolumeTransferRequestBody.class),
+            f -> f.withMarshaller(CinderCreateVolumeTransferRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CinderDeleteVolumeTransferRequest, CinderDeleteVolumeTransferResponse> cinderDeleteVolumeTransfer =
+        genForcinderDeleteVolumeTransfer();
+
+    private static HttpRequestDef<CinderDeleteVolumeTransferRequest, CinderDeleteVolumeTransferResponse> genForcinderDeleteVolumeTransfer() {
+        // basic
+        HttpRequestDef.Builder<CinderDeleteVolumeTransferRequest, CinderDeleteVolumeTransferResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    CinderDeleteVolumeTransferRequest.class,
+                    CinderDeleteVolumeTransferResponse.class)
+                .withName("CinderDeleteVolumeTransfer")
+                .withUri("/v2/{project_id}/os-volume-transfer/{transfer_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("transfer_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CinderDeleteVolumeTransferRequest::getTransferId, (req, v) -> {
+                req.setTransferId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CinderListAvailabilityZonesRequest, CinderListAvailabilityZonesResponse> cinderListAvailabilityZones =
         genForcinderListAvailabilityZones();
 
@@ -127,6 +218,41 @@ public class EvsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CinderListVolumeTransfersRequest, CinderListVolumeTransfersResponse> cinderListVolumeTransfers =
+        genForcinderListVolumeTransfers();
+
+    private static HttpRequestDef<CinderListVolumeTransfersRequest, CinderListVolumeTransfersResponse> genForcinderListVolumeTransfers() {
+        // basic
+        HttpRequestDef.Builder<CinderListVolumeTransfersRequest, CinderListVolumeTransfersResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    CinderListVolumeTransfersRequest.class,
+                    CinderListVolumeTransfersResponse.class)
+                .withName("CinderListVolumeTransfers")
+                .withUri("/v2/{project_id}/os-volume-transfer")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(CinderListVolumeTransfersRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(CinderListVolumeTransfersRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CinderListVolumeTypesRequest, CinderListVolumeTypesResponse> cinderListVolumeTypes =
         genForcinderListVolumeTypes();
 
@@ -139,6 +265,32 @@ public class EvsMeta {
             .withContentType("application/json");
 
         // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CinderShowVolumeTransferRequest, CinderShowVolumeTransferResponse> cinderShowVolumeTransfer =
+        genForcinderShowVolumeTransfer();
+
+    private static HttpRequestDef<CinderShowVolumeTransferRequest, CinderShowVolumeTransferResponse> genForcinderShowVolumeTransfer() {
+        // basic
+        HttpRequestDef.Builder<CinderShowVolumeTransferRequest, CinderShowVolumeTransferResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, CinderShowVolumeTransferRequest.class, CinderShowVolumeTransferResponse.class)
+                .withName("CinderShowVolumeTransfer")
+                .withUri("/v2/{project_id}/os-volume-transfer/{transfer_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("transfer_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CinderShowVolumeTransferRequest::getTransferId, (req, v) -> {
+                req.setTransferId(v);
+            }));
 
         // response
 
@@ -740,6 +892,47 @@ public class EvsMeta {
             TypeCasts.uncheckedConversion(UpdateVolumeRequestBody.class),
             f -> f.withMarshaller(UpdateVolumeRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListVersionsRequest, ListVersionsResponse> listVersions = genForlistVersions();
+
+    private static HttpRequestDef<ListVersionsRequest, ListVersionsResponse> genForlistVersions() {
+        // basic
+        HttpRequestDef.Builder<ListVersionsRequest, ListVersionsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListVersionsRequest.class, ListVersionsResponse.class)
+                .withName("ListVersions")
+                .withUri("/")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowVersionRequest, ShowVersionResponse> showVersion = genForshowVersion();
+
+    private static HttpRequestDef<ShowVersionRequest, ShowVersionResponse> genForshowVersion() {
+        // basic
+        HttpRequestDef.Builder<ShowVersionRequest, ShowVersionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowVersionRequest.class, ShowVersionResponse.class)
+                .withName("ShowVersion")
+                .withUri("/{version}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ShowVersionRequest.VersionEnum>withRequestField("version",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowVersionRequest.VersionEnum.class),
+            f -> f.withMarshaller(ShowVersionRequest::getVersion, (req, v) -> {
+                req.setVersion(v);
             }));
 
         // response

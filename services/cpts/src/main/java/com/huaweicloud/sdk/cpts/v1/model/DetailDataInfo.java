@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cpts.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,406 +13,290 @@ public class DetailDataInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "averageRespTime")
 
-    @JacksonXmlProperty(localName = "averageRespTime")
-
     private Double averageRespTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "avgRecBytes")
-
-    @JacksonXmlProperty(localName = "avgRecBytes")
 
     private Double avgRecBytes;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "avgSentBytes")
 
-    @JacksonXmlProperty(localName = "avgSentBytes")
-
     private Double avgSentBytes;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "avgTranRespTime")
-
-    @JacksonXmlProperty(localName = "avgTranRespTime")
 
     private Double avgTranRespTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "caseUri")
 
-    @JacksonXmlProperty(localName = "caseUri")
-
     private String caseUri;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "createTime")
-
-    @JacksonXmlProperty(localName = "createTime")
 
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "currentThreadNum")
 
-    @JacksonXmlProperty(localName = "currentThreadNum")
-
     private Double currentThreadNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "detailId")
-
-    @JacksonXmlProperty(localName = "detailId")
 
     private String detailId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "endTime")
 
-    @JacksonXmlProperty(localName = "endTime")
-
     private String endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "errorCount")
-
-    @JacksonXmlProperty(localName = "errorCount")
 
     private Double errorCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "errorEventsCount")
 
-    @JacksonXmlProperty(localName = "errorEventsCount")
-
     private Double errorEventsCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "failedAssert")
-
-    @JacksonXmlProperty(localName = "failedAssert")
 
     private Double failedAssert;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "failedOthers")
 
-    @JacksonXmlProperty(localName = "failedOthers")
-
     private Double failedOthers;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "failedParsed")
-
-    @JacksonXmlProperty(localName = "failedParsed")
 
     private Double failedParsed;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "failedRefused")
 
-    @JacksonXmlProperty(localName = "failedRefused")
-
     private Double failedRefused;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "failedTimeout")
-
-    @JacksonXmlProperty(localName = "failedTimeout")
 
     private Double failedTimeout;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "isAW")
-
-    @JacksonXmlProperty(localName = "isAW")
 
     private Boolean isAW;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max")
 
-    @JacksonXmlProperty(localName = "max")
-
     private Double max;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maxRecBytes")
-
-    @JacksonXmlProperty(localName = "maxRecBytes")
 
     private Double maxRecBytes;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maxRespTime")
 
-    @JacksonXmlProperty(localName = "maxRespTime")
-
     private Double maxRespTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maxSentBytes")
-
-    @JacksonXmlProperty(localName = "maxSentBytes")
 
     private Double maxSentBytes;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maxTranRespTime")
 
-    @JacksonXmlProperty(localName = "maxTranRespTime")
-
     private Double maxTranRespTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "min")
-
-    @JacksonXmlProperty(localName = "min")
 
     private Double min;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "minNetworkTraffic")
 
-    @JacksonXmlProperty(localName = "minNetworkTraffic")
-
     private Double minNetworkTraffic;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
-
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "requests")
 
-    @JacksonXmlProperty(localName = "requests")
-
     private Double requests;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "result")
-
-    @JacksonXmlProperty(localName = "result")
 
     private Double result;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "startTime")
 
-    @JacksonXmlProperty(localName = "startTime")
-
     private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
-
-    @JacksonXmlProperty(localName = "status")
 
     private Double status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "successCount")
 
-    @JacksonXmlProperty(localName = "successCount")
-
     private Double successCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "successRate")
-
-    @JacksonXmlProperty(localName = "successRate")
 
     private Double successRate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sum1xx")
 
-    @JacksonXmlProperty(localName = "sum1xx")
-
     private Double sum1xx;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sum2xx")
-
-    @JacksonXmlProperty(localName = "sum2xx")
 
     private Double sum2xx;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sum3xx")
 
-    @JacksonXmlProperty(localName = "sum3xx")
-
     private Double sum3xx;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sum4xx")
-
-    @JacksonXmlProperty(localName = "sum4xx")
 
     private Double sum4xx;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sum5xx")
 
-    @JacksonXmlProperty(localName = "sum5xx")
-
     private Double sum5xx;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "taskId")
-
-    @JacksonXmlProperty(localName = "taskId")
 
     private String taskId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "taskProjectId")
 
-    @JacksonXmlProperty(localName = "taskProjectId")
-
     private String taskProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "taskStatus")
-
-    @JacksonXmlProperty(localName = "taskStatus")
 
     private Double taskStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "testCaseUri")
 
-    @JacksonXmlProperty(localName = "testCaseUri")
-
     private String testCaseUri;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tp50")
-
-    @JacksonXmlProperty(localName = "tp50")
 
     private Double tp50;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tp75")
 
-    @JacksonXmlProperty(localName = "tp75")
-
     private Double tp75;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tp90")
-
-    @JacksonXmlProperty(localName = "tp90")
 
     private Double tp90;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tp95")
 
-    @JacksonXmlProperty(localName = "tp95")
-
     private Double tp95;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tp99")
-
-    @JacksonXmlProperty(localName = "tp99")
 
     private Double tp99;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tps")
 
-    @JacksonXmlProperty(localName = "tps")
-
     private Double tps;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tranTPS")
-
-    @JacksonXmlProperty(localName = "tranTPS")
 
     private Double tranTPS;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "transactionId")
 
-    @JacksonXmlProperty(localName = "transactionId")
-
     private String transactionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "transactionSuccess")
-
-    @JacksonXmlProperty(localName = "transactionSuccess")
 
     private Double transactionSuccess;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "transactionalSuccessRate")
 
-    @JacksonXmlProperty(localName = "transactionalSuccessRate")
-
     private Double transactionalSuccessRate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "transactionalTps")
-
-    @JacksonXmlProperty(localName = "transactionalTps")
 
     private Double transactionalTps;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "transactionalTpsSuccess")
 
-    @JacksonXmlProperty(localName = "transactionalTpsSuccess")
-
     private Double transactionalTpsSuccess;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "transactions")
-
-    @JacksonXmlProperty(localName = "transactions")
 
     private Double transactions;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updateTime")
 
-    @JacksonXmlProperty(localName = "updateTime")
-
     private String updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vum")
-
-    @JacksonXmlProperty(localName = "vum")
 
     private Double vum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "avgNetworkTraffic")
 
-    @JacksonXmlProperty(localName = "avgNetworkTraffic")
-
     private Double avgNetworkTraffic;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maxNetworkTraffic")
-
-    @JacksonXmlProperty(localName = "maxNetworkTraffic")
 
     private Double maxNetworkTraffic;
 

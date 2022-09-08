@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.moderation.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,14 +14,10 @@ public class RunModerationAudioResponseBodyResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "detail")
 
-    @JacksonXmlProperty(localName = "detail")
-
     private RunModerationAudioResponseBodyResultDetail detail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "suggestion")
-
-    @JacksonXmlProperty(localName = "suggestion")
 
     private String suggestion;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.iotanalytics.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,14 +16,10 @@ public class CreateRunRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "computing_resource_id")
 
-    @JacksonXmlProperty(localName = "computing_resource_id")
-
     private String computingResourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "conf")
-
-    @JacksonXmlProperty(localName = "conf")
 
     private List<String> conf = null;
 

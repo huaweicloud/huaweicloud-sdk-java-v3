@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.codecheck.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,21 +16,15 @@ public class CustomAttributesRule {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rule_id")
 
-    @JacksonXmlProperty(localName = "rule_id")
-
     private String ruleId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "value")
 
-    @JacksonXmlProperty(localName = "value")
-
     private String value;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rule_config_list")
-
-    @JacksonXmlProperty(localName = "rule_config_list")
 
     private List<RuleConfig> ruleConfigList = null;
 

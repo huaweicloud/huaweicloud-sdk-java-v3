@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.time.OffsetDateTime;
 import java.util.Collections;
@@ -20,35 +19,25 @@ public class CloudConnection {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
-
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
-    @JacksonXmlProperty(localName = "description")
-
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_id")
 
-    @JacksonXmlProperty(localName = "domain_id")
-
     private String domainId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
-
-    @JacksonXmlProperty(localName = "enterprise_project_id")
 
     private String enterpriseProjectId;
 
@@ -126,28 +115,20 @@ public class CloudConnection {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    @JacksonXmlProperty(localName = "status")
-
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "admin_state_up")
-
-    @JacksonXmlProperty(localName = "admin_state_up")
 
     private Boolean adminStateUp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
 
-    @JacksonXmlProperty(localName = "created_at")
-
     private OffsetDateTime createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_at")
-
-    @JacksonXmlProperty(localName = "updated_at")
 
     private OffsetDateTime updatedAt;
 
@@ -225,28 +206,20 @@ public class CloudConnection {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "used_scene")
 
-    @JacksonXmlProperty(localName = "used_scene")
-
     private UsedSceneEnum usedScene;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "network_instance_number")
-
-    @JacksonXmlProperty(localName = "network_instance_number")
 
     private Integer networkInstanceNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bandwidth_package_number")
 
-    @JacksonXmlProperty(localName = "bandwidth_package_number")
-
     private Integer bandwidthPackageNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "inter_region_bandwidth_number")
-
-    @JacksonXmlProperty(localName = "inter_region_bandwidth_number")
 
     private Integer interRegionBandwidthNumber;
 

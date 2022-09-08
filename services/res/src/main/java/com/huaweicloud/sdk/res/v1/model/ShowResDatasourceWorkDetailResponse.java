@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.res.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -18,63 +17,45 @@ public class ShowResDatasourceWorkDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_count")
 
-    @JacksonXmlProperty(localName = "error_count")
-
     private ErrorCount errorCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_struct")
-
-    @JacksonXmlProperty(localName = "data_struct")
 
     private DataStruct dataStruct;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_samples")
 
-    @JacksonXmlProperty(localName = "error_samples")
-
     private List<ErrorSample> errorSamples = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "inspect_result")
-
-    @JacksonXmlProperty(localName = "inspect_result")
 
     private List<InspectResult> inspectResult = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_success")
 
-    @JacksonXmlProperty(localName = "is_success")
-
     private Boolean isSuccess;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "message")
-
-    @JacksonXmlProperty(localName = "message")
 
     private String message;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "legal_rate")
 
-    @JacksonXmlProperty(localName = "legal_rate")
-
     private Double legalRate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "inspect_rst_generated_time")
 
-    @JacksonXmlProperty(localName = "inspect_rst_generated_time")
-
     private String inspectRstGeneratedTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "final_report")
-
-    @JacksonXmlProperty(localName = "final_report")
 
     private FinalReport finalReport;
 

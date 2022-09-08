@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,35 +13,25 @@ public class WebHookConfigRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "corpId")
 
-    @JacksonXmlProperty(localName = "corpId")
-
     private String corpId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "spId")
-
-    @JacksonXmlProperty(localName = "spId")
 
     private String spId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subscriberId")
 
-    @JacksonXmlProperty(localName = "subscriberId")
-
     private String subscriberId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subscriberKey")
 
-    @JacksonXmlProperty(localName = "subscriberKey")
-
     private String subscriberKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "url")
-
-    @JacksonXmlProperty(localName = "url")
 
     private String url;
 

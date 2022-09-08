@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.iam.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,42 +14,30 @@ public class RoleAssignmentBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user")
 
-    @JacksonXmlProperty(localName = "user")
-
     private RoleUserAssignmentId user;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "role")
-
-    @JacksonXmlProperty(localName = "role")
 
     private RoleAssignmentId role;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group")
 
-    @JacksonXmlProperty(localName = "group")
-
     private RoleGroupAssignmentId group;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "agency")
-
-    @JacksonXmlProperty(localName = "agency")
 
     private RoleAgencyAssignmentId agency;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scope")
 
-    @JacksonXmlProperty(localName = "scope")
-
     private RoleAssignmentScope scope;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_inherited")
-
-    @JacksonXmlProperty(localName = "is_inherited")
 
     private Boolean isInherited;
 

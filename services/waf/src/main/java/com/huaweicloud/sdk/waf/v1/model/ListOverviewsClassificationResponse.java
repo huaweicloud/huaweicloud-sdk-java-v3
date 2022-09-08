@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.waf.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -16,35 +15,25 @@ public class ListOverviewsClassificationResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain")
 
-    @JacksonXmlProperty(localName = "domain")
-
     private DomainClassificationItem domain;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "attack_type")
-
-    @JacksonXmlProperty(localName = "attack_type")
 
     private AttackTypeClassificationItem attackType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip")
 
-    @JacksonXmlProperty(localName = "ip")
-
     private IpClassificationItem ip;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "url")
 
-    @JacksonXmlProperty(localName = "url")
-
     private UrlClassificationItem url;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "geo")
-
-    @JacksonXmlProperty(localName = "geo")
 
     private GeoClassificationItem geo;
 

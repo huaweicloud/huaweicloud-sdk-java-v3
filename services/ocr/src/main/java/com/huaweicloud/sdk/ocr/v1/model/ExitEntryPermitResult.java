@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.ocr.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,119 +16,85 @@ public class ExitEntryPermitResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
-    @JacksonXmlProperty(localName = "name")
-
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name_en")
-
-    @JacksonXmlProperty(localName = "name_en")
 
     private String nameEn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sex")
 
-    @JacksonXmlProperty(localName = "sex")
-
     private String sex;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "birth_date")
-
-    @JacksonXmlProperty(localName = "birth_date")
 
     private String birthDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "number")
 
-    @JacksonXmlProperty(localName = "number")
-
     private String number;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "issuing_authority")
-
-    @JacksonXmlProperty(localName = "issuing_authority")
 
     private String issuingAuthority;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "issue_place")
 
-    @JacksonXmlProperty(localName = "issue_place")
-
     private String issuePlace;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "valid_period")
-
-    @JacksonXmlProperty(localName = "valid_period")
 
     private String validPeriod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "machine_code")
 
-    @JacksonXmlProperty(localName = "machine_code")
-
     private String machineCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "portrait_image")
-
-    @JacksonXmlProperty(localName = "portrait_image")
 
     private String portraitImage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "portrait_location")
 
-    @JacksonXmlProperty(localName = "portrait_location")
-
     private List<List<Integer>> portraitLocation = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
-
-    @JacksonXmlProperty(localName = "type")
 
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "side")
 
-    @JacksonXmlProperty(localName = "side")
-
     private String side;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "endorsement_info_hk")
-
-    @JacksonXmlProperty(localName = "endorsement_info_hk")
 
     private ExitEntryPermitEndorsementInfo endorsementInfoHk;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "endorsement_info_mo")
 
-    @JacksonXmlProperty(localName = "endorsement_info_mo")
-
     private ExitEntryPermitEndorsementInfo endorsementInfoMo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "endorsement_info_tw")
 
-    @JacksonXmlProperty(localName = "endorsement_info_tw")
-
     private ExitEntryPermitEndorsementInfo endorsementInfoTw;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confidence")
-
-    @JacksonXmlProperty(localName = "confidence")
 
     private ExitEntryPermitConfidence confidence;
 

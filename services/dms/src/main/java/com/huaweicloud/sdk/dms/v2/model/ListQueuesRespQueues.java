@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dms.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,84 +13,60 @@ public class ListQueuesRespQueues {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
-
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created")
 
-    @JacksonXmlProperty(localName = "created")
-
     private Long created;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
-
-    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "queue_mode")
 
-    @JacksonXmlProperty(localName = "queue_mode")
-
     private String queueMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "reservation")
-
-    @JacksonXmlProperty(localName = "reservation")
 
     private Integer reservation;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_msg_size_byte")
 
-    @JacksonXmlProperty(localName = "max_msg_size_byte")
-
     private Integer maxMsgSizeByte;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "produced_messages")
-
-    @JacksonXmlProperty(localName = "produced_messages")
 
     private Integer producedMessages;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "redrive_policy")
 
-    @JacksonXmlProperty(localName = "redrive_policy")
-
     private String redrivePolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_consume_count")
-
-    @JacksonXmlProperty(localName = "max_consume_count")
 
     private Integer maxConsumeCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_count")
 
-    @JacksonXmlProperty(localName = "group_count")
-
     private Integer groupCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "eff_date")
-
-    @JacksonXmlProperty(localName = "eff_date")
 
     private Long effDate;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,42 +13,30 @@ public class IefEvents {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_type")
 
-    @JacksonXmlProperty(localName = "event_type")
-
     private String eventType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operation")
-
-    @JacksonXmlProperty(localName = "operation")
 
     private String operation;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timestamp")
 
-    @JacksonXmlProperty(localName = "timestamp")
-
-    private Integer timestamp;
+    private Long timestamp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "topic")
-
-    @JacksonXmlProperty(localName = "topic")
 
     private String topic;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
-    @JacksonXmlProperty(localName = "name")
-
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "attributes")
-
-    @JacksonXmlProperty(localName = "attributes")
 
     private String attributes;
 
@@ -87,7 +74,7 @@ public class IefEvents {
         this.operation = operation;
     }
 
-    public IefEvents withTimestamp(Integer timestamp) {
+    public IefEvents withTimestamp(Long timestamp) {
         this.timestamp = timestamp;
         return this;
     }
@@ -96,11 +83,11 @@ public class IefEvents {
      * 事件产生的时间戳
      * @return timestamp
      */
-    public Integer getTimestamp() {
+    public Long getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(Integer timestamp) {
+    public void setTimestamp(Long timestamp) {
         this.timestamp = timestamp;
     }
 

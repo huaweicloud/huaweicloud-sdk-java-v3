@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,8 +17,6 @@ public class SourceCdnReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "authentication_key")
-
-    @JacksonXmlProperty(localName = "authentication_key")
 
     private String authenticationKey;
 
@@ -129,14 +126,10 @@ public class SourceCdnReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "authentication_type")
 
-    @JacksonXmlProperty(localName = "authentication_type")
-
     private AuthenticationTypeEnum authenticationType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain")
-
-    @JacksonXmlProperty(localName = "domain")
 
     private String domain;
 
@@ -219,8 +212,6 @@ public class SourceCdnReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protocol")
-
-    @JacksonXmlProperty(localName = "protocol")
 
     private ProtocolEnum protocol;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.moderation.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.math.BigDecimal;
 import java.util.Objects;
@@ -15,14 +14,10 @@ public class PornModerationResultDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confidence")
 
-    @JacksonXmlProperty(localName = "confidence")
-
     private BigDecimal confidence;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "label")
-
-    @JacksonXmlProperty(localName = "label")
 
     private String label;
 

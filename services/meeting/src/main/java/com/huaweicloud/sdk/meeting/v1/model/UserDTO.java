@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,126 +16,90 @@ public class UserDTO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "statusCode")
-
-    @JacksonXmlProperty(localName = "statusCode")
 
     private Integer statusCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "account")
 
-    @JacksonXmlProperty(localName = "account")
-
     private String account;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
-
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "englishName")
 
-    @JacksonXmlProperty(localName = "englishName")
-
     private String englishName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "email")
-
-    @JacksonXmlProperty(localName = "email")
 
     private String email;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "phone")
 
-    @JacksonXmlProperty(localName = "phone")
-
     private String phone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deptName")
-
-    @JacksonXmlProperty(localName = "deptName")
 
     private String deptName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "number")
 
-    @JacksonXmlProperty(localName = "number")
-
     private String number;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updateTime")
-
-    @JacksonXmlProperty(localName = "updateTime")
 
     private Long updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "isHardTerminal")
 
-    @JacksonXmlProperty(localName = "isHardTerminal")
-
     private Boolean isHardTerminal;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vmrId")
-
-    @JacksonXmlProperty(localName = "vmrId")
 
     private String vmrId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "signature")
 
-    @JacksonXmlProperty(localName = "signature")
-
     private String signature;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "title")
-
-    @JacksonXmlProperty(localName = "title")
 
     private String title;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
-    @JacksonXmlProperty(localName = "description")
-
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hidePhone")
-
-    @JacksonXmlProperty(localName = "hidePhone")
 
     private Boolean hidePhone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
-    @JacksonXmlProperty(localName = "type")
-
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deptCodes")
-
-    @JacksonXmlProperty(localName = "deptCodes")
 
     private List<String> deptCodes = null;
 

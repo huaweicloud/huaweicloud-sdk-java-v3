@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.live.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -18,21 +17,15 @@ public class ListTranscodeDataResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "transcode_data_list")
 
-    @JacksonXmlProperty(localName = "transcode_data_list")
-
     private List<TranscodeData> transcodeDataList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "summary_list")
 
-    @JacksonXmlProperty(localName = "summary_list")
-
     private List<TranscodeSummary> summaryList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Request-Id")
-
-    @JacksonXmlProperty(localName = "X-Request-Id")
 
     private String xRequestId;
 

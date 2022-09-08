@@ -8,8 +8,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -23,7 +21,6 @@ public class ShowGaussMySqlQuotasRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    @JacksonXmlProperty(localName = "X-Language")
     
     private String xLanguage;
 
@@ -31,7 +28,6 @@ public class ShowGaussMySqlQuotasRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    @JacksonXmlProperty(localName = "offset")
     
     private String offset;
 
@@ -39,7 +35,6 @@ public class ShowGaussMySqlQuotasRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    @JacksonXmlProperty(localName = "limit")
     
     private String limit;
 
@@ -47,7 +42,6 @@ public class ShowGaussMySqlQuotasRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_name")
     
-    @JacksonXmlProperty(localName = "enterprise_project_name")
     
     private String enterpriseProjectName;
 

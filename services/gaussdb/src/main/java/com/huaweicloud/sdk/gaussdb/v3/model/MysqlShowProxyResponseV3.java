@@ -12,8 +12,6 @@ import com.huaweicloud.sdk.gaussdb.v3.model.MysqlProxyNodeV3;
 import com.huaweicloud.sdk.gaussdb.v3.model.MysqlProxyV3;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -27,7 +25,6 @@ public class MysqlShowProxyResponseV3  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="proxy")
     
-    @JacksonXmlProperty(localName = "proxy")
     
     private MysqlProxyV3 proxy;
 
@@ -35,7 +32,6 @@ public class MysqlShowProxyResponseV3  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="master_node")
     
-    @JacksonXmlProperty(localName = "master_node")
     
     private MysqlProxyNodeV3 masterNode;
 
@@ -43,7 +39,6 @@ public class MysqlShowProxyResponseV3  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="readonly_nodes")
     
-    @JacksonXmlProperty(localName = "readonly_nodes")
     
     private List<MysqlProxyNodeV3> readonlyNodes = null;
     

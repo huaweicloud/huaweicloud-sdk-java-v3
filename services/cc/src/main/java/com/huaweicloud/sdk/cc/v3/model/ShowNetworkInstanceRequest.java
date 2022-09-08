@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cc.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,8 +12,6 @@ public class ShowNetworkInstanceRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
-
-    @JacksonXmlProperty(localName = "id")
 
     private String id;
 

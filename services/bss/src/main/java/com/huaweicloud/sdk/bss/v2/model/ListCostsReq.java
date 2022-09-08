@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.bss.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,49 +16,35 @@ public class ListCostsReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time_condition")
 
-    @JacksonXmlProperty(localName = "time_condition")
-
     private TimeCondition timeCondition;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "groupby")
-
-    @JacksonXmlProperty(localName = "groupby")
 
     private List<GroupBy> groupby = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cost_type")
 
-    @JacksonXmlProperty(localName = "cost_type")
-
     private String costType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "amount_type")
-
-    @JacksonXmlProperty(localName = "amount_type")
 
     private String amountType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
-    @JacksonXmlProperty(localName = "offset")
-
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
-    @JacksonXmlProperty(localName = "limit")
-
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "filters")
-
-    @JacksonXmlProperty(localName = "filters")
 
     private List<FilterV2> filters = null;
 

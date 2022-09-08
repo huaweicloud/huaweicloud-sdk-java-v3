@@ -2,10 +2,10 @@ package com.huaweicloud.sdk.codehub.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -13,171 +13,87 @@ import java.util.Objects;
 public class ShowStatisticalDataResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "repoName")
+    @JsonProperty(value = "error")
 
-    @JacksonXmlProperty(localName = "repoName")
-
-    private String repoName;
+    private Error error;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "commitCount")
+    @JsonProperty(value = "result")
 
-    @JacksonXmlProperty(localName = "commitCount")
-
-    private Integer commitCount;
+    private RepositoryStatisticsVO result;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "repoSize")
+    @JsonProperty(value = "status")
 
-    @JacksonXmlProperty(localName = "repoSize")
+    private String status;
 
-    private String repoSize;
+    public ShowStatisticalDataResponse withError(Error error) {
+        this.error = error;
+        return this;
+    }
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "lastCommitTime")
+    public ShowStatisticalDataResponse withError(Consumer<Error> errorSetter) {
+        if (this.error == null) {
+            this.error = new Error();
+            errorSetter.accept(this.error);
+        }
 
-    @JacksonXmlProperty(localName = "lastCommitTime")
-
-    private String lastCommitTime;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "codeLines")
-
-    @JacksonXmlProperty(localName = "codeLines")
-
-    private Integer codeLines;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "branchCount")
-
-    @JacksonXmlProperty(localName = "branchCount")
-
-    private Integer branchCount;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "archiveUrl")
-
-    @JacksonXmlProperty(localName = "archiveUrl")
-
-    private String archiveUrl;
-
-    public ShowStatisticalDataResponse withRepoName(String repoName) {
-        this.repoName = repoName;
         return this;
     }
 
     /**
-     * 仓库名称
-     * @return repoName
+     * Get error
+     * @return error
      */
-    public String getRepoName() {
-        return repoName;
+    public Error getError() {
+        return error;
     }
 
-    public void setRepoName(String repoName) {
-        this.repoName = repoName;
+    public void setError(Error error) {
+        this.error = error;
     }
 
-    public ShowStatisticalDataResponse withCommitCount(Integer commitCount) {
-        this.commitCount = commitCount;
+    public ShowStatisticalDataResponse withResult(RepositoryStatisticsVO result) {
+        this.result = result;
+        return this;
+    }
+
+    public ShowStatisticalDataResponse withResult(Consumer<RepositoryStatisticsVO> resultSetter) {
+        if (this.result == null) {
+            this.result = new RepositoryStatisticsVO();
+            resultSetter.accept(this.result);
+        }
+
         return this;
     }
 
     /**
-     * 提交次数
-     * @return commitCount
+     * Get result
+     * @return result
      */
-    public Integer getCommitCount() {
-        return commitCount;
+    public RepositoryStatisticsVO getResult() {
+        return result;
     }
 
-    public void setCommitCount(Integer commitCount) {
-        this.commitCount = commitCount;
+    public void setResult(RepositoryStatisticsVO result) {
+        this.result = result;
     }
 
-    public ShowStatisticalDataResponse withRepoSize(String repoSize) {
-        this.repoSize = repoSize;
+    public ShowStatisticalDataResponse withStatus(String status) {
+        this.status = status;
         return this;
     }
 
     /**
-     * 仓库容量
-     * @return repoSize
+     * 响应状态
+     * @return status
      */
-    public String getRepoSize() {
-        return repoSize;
+    public String getStatus() {
+        return status;
     }
 
-    public void setRepoSize(String repoSize) {
-        this.repoSize = repoSize;
-    }
-
-    public ShowStatisticalDataResponse withLastCommitTime(String lastCommitTime) {
-        this.lastCommitTime = lastCommitTime;
-        return this;
-    }
-
-    /**
-     * 最近一次提交时间
-     * @return lastCommitTime
-     */
-    public String getLastCommitTime() {
-        return lastCommitTime;
-    }
-
-    public void setLastCommitTime(String lastCommitTime) {
-        this.lastCommitTime = lastCommitTime;
-    }
-
-    public ShowStatisticalDataResponse withCodeLines(Integer codeLines) {
-        this.codeLines = codeLines;
-        return this;
-    }
-
-    /**
-     * 代码行数
-     * @return codeLines
-     */
-    public Integer getCodeLines() {
-        return codeLines;
-    }
-
-    public void setCodeLines(Integer codeLines) {
-        this.codeLines = codeLines;
-    }
-
-    public ShowStatisticalDataResponse withBranchCount(Integer branchCount) {
-        this.branchCount = branchCount;
-        return this;
-    }
-
-    /**
-     * 分支数量
-     * @return branchCount
-     */
-    public Integer getBranchCount() {
-        return branchCount;
-    }
-
-    public void setBranchCount(Integer branchCount) {
-        this.branchCount = branchCount;
-    }
-
-    public ShowStatisticalDataResponse withArchiveUrl(String archiveUrl) {
-        this.archiveUrl = archiveUrl;
-        return this;
-    }
-
-    /**
-     * 代码仓下载地址
-     * @return archiveUrl
-     */
-    public String getArchiveUrl() {
-        return archiveUrl;
-    }
-
-    public void setArchiveUrl(String archiveUrl) {
-        this.archiveUrl = archiveUrl;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     @Override
@@ -189,31 +105,23 @@ public class ShowStatisticalDataResponse extends SdkResponse {
             return false;
         }
         ShowStatisticalDataResponse showStatisticalDataResponse = (ShowStatisticalDataResponse) o;
-        return Objects.equals(this.repoName, showStatisticalDataResponse.repoName)
-            && Objects.equals(this.commitCount, showStatisticalDataResponse.commitCount)
-            && Objects.equals(this.repoSize, showStatisticalDataResponse.repoSize)
-            && Objects.equals(this.lastCommitTime, showStatisticalDataResponse.lastCommitTime)
-            && Objects.equals(this.codeLines, showStatisticalDataResponse.codeLines)
-            && Objects.equals(this.branchCount, showStatisticalDataResponse.branchCount)
-            && Objects.equals(this.archiveUrl, showStatisticalDataResponse.archiveUrl);
+        return Objects.equals(this.error, showStatisticalDataResponse.error)
+            && Objects.equals(this.result, showStatisticalDataResponse.result)
+            && Objects.equals(this.status, showStatisticalDataResponse.status);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(repoName, commitCount, repoSize, lastCommitTime, codeLines, branchCount, archiveUrl);
+        return Objects.hash(error, result, status);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowStatisticalDataResponse {\n");
-        sb.append("    repoName: ").append(toIndentedString(repoName)).append("\n");
-        sb.append("    commitCount: ").append(toIndentedString(commitCount)).append("\n");
-        sb.append("    repoSize: ").append(toIndentedString(repoSize)).append("\n");
-        sb.append("    lastCommitTime: ").append(toIndentedString(lastCommitTime)).append("\n");
-        sb.append("    codeLines: ").append(toIndentedString(codeLines)).append("\n");
-        sb.append("    branchCount: ").append(toIndentedString(branchCount)).append("\n");
-        sb.append("    archiveUrl: ").append(toIndentedString(archiveUrl)).append("\n");
+        sb.append("    error: ").append(toIndentedString(error)).append("\n");
+        sb.append("    result: ").append(toIndentedString(result)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("}");
         return sb.toString();
     }

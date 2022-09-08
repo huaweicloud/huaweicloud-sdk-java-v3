@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cloudide.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,35 +13,25 @@ public class ListOrgInstancesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_temporary")
 
-    @JacksonXmlProperty(localName = "is_temporary")
-
     private Boolean isTemporary;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
-
-    @JacksonXmlProperty(localName = "limit")
 
     private Long limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
-    @JacksonXmlProperty(localName = "offset")
-
     private Long offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "org_id")
 
-    @JacksonXmlProperty(localName = "org_id")
-
     private String orgId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "search")
-
-    @JacksonXmlProperty(localName = "search")
 
     private String search;
 

@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -20,14 +19,10 @@ public class Task {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_id")
 
-    @JacksonXmlProperty(localName = "job_id")
-
     private Integer jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
-
-    @JacksonXmlProperty(localName = "id")
 
     private Long id;
 
@@ -123,35 +118,25 @@ public class Task {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
-    @JacksonXmlProperty(localName = "type")
-
     private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "assigned")
-
-    @JacksonXmlProperty(localName = "assigned")
 
     private String assigned;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_name")
 
-    @JacksonXmlProperty(localName = "task_name")
-
     private String taskName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "engine_name")
 
-    @JacksonXmlProperty(localName = "engine_name")
-
     private String engineName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_order")
-
-    @JacksonXmlProperty(localName = "task_order")
 
     private Integer taskOrder;
 
@@ -253,63 +238,45 @@ public class Task {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    @JacksonXmlProperty(localName = "status")
-
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
-
-    @JacksonXmlProperty(localName = "start_time")
 
     private Long startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time")
 
-    @JacksonXmlProperty(localName = "end_time")
-
     private Long endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
-
-    @JacksonXmlProperty(localName = "create_time")
 
     private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
 
-    @JacksonXmlProperty(localName = "update_time")
-
     private Long updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timeout")
-
-    @JacksonXmlProperty(localName = "timeout")
 
     private Integer timeout;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log")
 
-    @JacksonXmlProperty(localName = "log")
-
     private String log;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "output")
 
-    @JacksonXmlProperty(localName = "output")
-
     private String output;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_executor_brief")
-
-    @JacksonXmlProperty(localName = "task_executor_brief")
 
     private TaskExecutorBrief taskExecutorBrief;
 

@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.math.BigDecimal;
@@ -24,14 +23,10 @@ public class ShowOneTopicResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_read_queue_num")
 
-    @JacksonXmlProperty(localName = "total_read_queue_num")
-
     private BigDecimal totalReadQueueNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_write_queue_num")
-
-    @JacksonXmlProperty(localName = "total_write_queue_num")
 
     private BigDecimal totalWriteQueueNum;
 
@@ -121,14 +116,10 @@ public class ShowOneTopicResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "permission")
 
-    @JacksonXmlProperty(localName = "permission")
-
     private PermissionEnum permission;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "brokers")
-
-    @JacksonXmlProperty(localName = "brokers")
 
     private List<TopicBrokers> brokers = null;
 

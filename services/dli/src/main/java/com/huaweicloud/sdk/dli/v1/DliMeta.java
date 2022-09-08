@@ -124,19 +124,19 @@ public class DliMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFlinkTemplatesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListFlinkTemplatesRequest::getName, (req, v) -> {
                 req.setName(v);
-            }));
-        builder.<String>withRequestField("tags",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFlinkTemplatesRequest::getTags, (req, v) -> {
-                req.setTags(v);
             }));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
@@ -152,12 +152,12 @@ public class DliMeta {
             f -> f.withMarshaller(ListFlinkTemplatesRequest::getOrder, (req, v) -> {
                 req.setOrder(v);
             }));
-        builder.<Integer>withRequestField("limit",
+        builder.<String>withRequestField("tags",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListFlinkTemplatesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFlinkTemplatesRequest::getTags, (req, v) -> {
+                req.setTags(v);
             }));
 
         // response
@@ -804,6 +804,13 @@ public class DliMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDatasourceConnectionsRequest::getTags, (req, v) -> {
+                req.setTags(v);
+            }));
 
         // response
 
@@ -932,6 +939,13 @@ public class DliMeta {
             f -> f.withMarshaller(ListEnhancedConnectionsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
             }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEnhancedConnectionsRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
         builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -946,12 +960,12 @@ public class DliMeta {
             f -> f.withMarshaller(ListEnhancedConnectionsRequest::getStatus, (req, v) -> {
                 req.setStatus(v);
             }));
-        builder.<String>withRequestField("name",
+        builder.<String>withRequestField("tags",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEnhancedConnectionsRequest::getName, (req, v) -> {
-                req.setName(v);
+            f -> f.withMarshaller(ListEnhancedConnectionsRequest::getTags, (req, v) -> {
+                req.setTags(v);
             }));
 
         // response
@@ -971,75 +985,12 @@ public class DliMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFlinkJobsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
-        builder.<String>withRequestField("user_name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFlinkJobsRequest::getUserName, (req, v) -> {
-                req.setUserName(v);
-            }));
-        builder.<String>withRequestField("queue_name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFlinkJobsRequest::getQueueName, (req, v) -> {
-                req.setQueueName(v);
-            }));
-        builder.<String>withRequestField("status",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFlinkJobsRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
         builder.<String>withRequestField("job_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListFlinkJobsRequest::getJobType, (req, v) -> {
                 req.setJobType(v);
-            }));
-        builder.<String>withRequestField("tags",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFlinkJobsRequest::getTags, (req, v) -> {
-                req.setTags(v);
-            }));
-        builder.<String>withRequestField("sys_enterprise_project_name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFlinkJobsRequest::getSysEnterpriseProjectName, (req, v) -> {
-                req.setSysEnterpriseProjectName(v);
-            }));
-        builder.<Boolean>withRequestField("show_detail",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListFlinkJobsRequest::getShowDetail, (req, v) -> {
-                req.setShowDetail(v);
-            }));
-        builder.<String>withRequestField("order",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFlinkJobsRequest::getOrder, (req, v) -> {
-                req.setOrder(v);
-            }));
-        builder.<Long>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListFlinkJobsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
             }));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
@@ -1048,12 +999,75 @@ public class DliMeta {
             f -> f.withMarshaller(ListFlinkJobsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
             }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFlinkJobsRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListFlinkJobsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<String>withRequestField("order",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFlinkJobsRequest::getOrder, (req, v) -> {
+                req.setOrder(v);
+            }));
+        builder.<String>withRequestField("queue_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFlinkJobsRequest::getQueueName, (req, v) -> {
+                req.setQueueName(v);
+            }));
         builder.<Long>withRequestField("root_job_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ListFlinkJobsRequest::getRootJobId, (req, v) -> {
                 req.setRootJobId(v);
+            }));
+        builder.<Boolean>withRequestField("show_detail",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListFlinkJobsRequest::getShowDetail, (req, v) -> {
+                req.setShowDetail(v);
+            }));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFlinkJobsRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            }));
+        builder.<String>withRequestField("sys_enterprise_project_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFlinkJobsRequest::getSysEnterpriseProjectName, (req, v) -> {
+                req.setSysEnterpriseProjectName(v);
+            }));
+        builder.<String>withRequestField("tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFlinkJobsRequest::getTags, (req, v) -> {
+                req.setTags(v);
+            }));
+        builder.<String>withRequestField("user_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFlinkJobsRequest::getUserName, (req, v) -> {
+                req.setUserName(v);
             }));
 
         // response
@@ -1576,7 +1590,7 @@ public class DliMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("USER_ID",
+        builder.<String>withRequestField("USER-ID",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
@@ -1646,19 +1660,12 @@ public class DliMeta {
             f -> f.withMarshaller(ListBatchesRequest::getClusterName, (req, v) -> {
                 req.setClusterName(v);
             }));
-        builder.<String>withRequestField("queue_name",
+        builder.<Long>withRequestField("end",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBatchesRequest::getQueueName, (req, v) -> {
-                req.setQueueName(v);
-            }));
-        builder.<String>withRequestField("job-id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBatchesRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListBatchesRequest::getEnd, (req, v) -> {
+                req.setEnd(v);
             }));
         builder.<Integer>withRequestField("from",
             LocationType.Query,
@@ -1667,12 +1674,40 @@ public class DliMeta {
             f -> f.withMarshaller(ListBatchesRequest::getFrom, (req, v) -> {
                 req.setFrom(v);
             }));
+        builder.<String>withRequestField("job-id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBatchesRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+        builder.<String>withRequestField("order",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBatchesRequest::getOrder, (req, v) -> {
+                req.setOrder(v);
+            }));
+        builder.<String>withRequestField("queue_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBatchesRequest::getQueueName, (req, v) -> {
+                req.setQueueName(v);
+            }));
         builder.<Integer>withRequestField("size",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListBatchesRequest::getSize, (req, v) -> {
                 req.setSize(v);
+            }));
+        builder.<Long>withRequestField("start",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListBatchesRequest::getStart, (req, v) -> {
+                req.setStart(v);
             }));
         builder.<String>withRequestField("state",
             LocationType.Query,
@@ -1769,6 +1804,13 @@ public class DliMeta {
             f -> f.withMarshaller(ShowBatchLogRequest::getFrom, (req, v) -> {
                 req.setFrom(v);
             }));
+        builder.<Integer>withRequestField("index",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowBatchLogRequest::getIndex, (req, v) -> {
+                req.setIndex(v);
+            }));
         builder.<Integer>withRequestField("size",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -1782,13 +1824,6 @@ public class DliMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowBatchLogRequest::getType, (req, v) -> {
                 req.setType(v);
-            }));
-        builder.<Integer>withRequestField("index",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowBatchLogRequest::getIndex, (req, v) -> {
-                req.setIndex(v);
             }));
 
         // response
@@ -1892,7 +1927,7 @@ public class DliMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("USER_ID",
+        builder.<String>withRequestField("USER-ID",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
@@ -1923,7 +1958,7 @@ public class DliMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("USER_ID",
+        builder.<String>withRequestField("USER-ID",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
@@ -1955,7 +1990,7 @@ public class DliMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("USER_ID",
+        builder.<String>withRequestField("USER-ID",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
@@ -1987,7 +2022,7 @@ public class DliMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("USER_ID",
+        builder.<String>withRequestField("USER-ID",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
@@ -2100,19 +2135,19 @@ public class DliMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("queue_name",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ChangeQueuePlanRequest::getQueueName, (req, v) -> {
-                req.setQueueName(v);
-            }));
         builder.<String>withRequestField("plan_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ChangeQueuePlanRequest::getPlanId, (req, v) -> {
                 req.setPlanId(v);
+            }));
+        builder.<String>withRequestField("queue_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeQueuePlanRequest::getQueueName, (req, v) -> {
+                req.setQueueName(v);
             }));
         builder.<SetQueuePlanReq>withRequestField("body",
             LocationType.Body,
@@ -2208,30 +2243,23 @@ public class DliMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateJobResultRequest, CreateJobResultResponse> createJobResult =
-        genForcreateJobResult();
+    public static final HttpRequestDef<CreateDownloadJobRequest, CreateDownloadJobResponse> createDownloadJob =
+        genForcreateDownloadJob();
 
-    private static HttpRequestDef<CreateJobResultRequest, CreateJobResultResponse> genForcreateJobResult() {
+    private static HttpRequestDef<CreateDownloadJobRequest, CreateDownloadJobResponse> genForcreateDownloadJob() {
         // basic
-        HttpRequestDef.Builder<CreateJobResultRequest, CreateJobResultResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateJobResultRequest.class, CreateJobResultResponse.class)
-                .withName("CreateJobResult")
-                .withUri("/v1.0/{project_id}/jobs/{job_id}/export-result")
+        HttpRequestDef.Builder<CreateDownloadJobRequest, CreateDownloadJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateDownloadJobRequest.class, CreateDownloadJobResponse.class)
+                .withName("CreateDownloadJob")
+                .withUri("/v1/{project_id}/downloaders")
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("job_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateJobResultRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
-        builder.<ExportResultReq>withRequestField("body",
+        builder.<String>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ExportResultReq.class),
-            f -> f.withMarshaller(CreateJobResultRequest::getBody, (req, v) -> {
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDownloadJobRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -2346,19 +2374,19 @@ public class DliMeta {
             f -> f.withMarshaller(DeleteDatabaseRequest::getDatabaseName, (req, v) -> {
                 req.setDatabaseName(v);
             }));
-        builder.<Boolean>withRequestField("cascade",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(DeleteDatabaseRequest::getCascade, (req, v) -> {
-                req.setCascade(v);
-            }));
         builder.<Boolean>withRequestField("async",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(DeleteDatabaseRequest::getAsync, (req, v) -> {
                 req.setAsync(v);
+            }));
+        builder.<Boolean>withRequestField("cascade",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(DeleteDatabaseRequest::getCascade, (req, v) -> {
+                req.setCascade(v);
             }));
 
         // response
@@ -2402,19 +2430,19 @@ public class DliMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("queue_name",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteQueuePlanRequest::getQueueName, (req, v) -> {
-                req.setQueueName(v);
-            }));
         builder.<Long>withRequestField("plan_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(DeleteQueuePlanRequest::getPlanId, (req, v) -> {
                 req.setPlanId(v);
+            }));
+        builder.<String>withRequestField("queue_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteQueuePlanRequest::getQueueName, (req, v) -> {
+                req.setQueueName(v);
             }));
 
         // response
@@ -2484,6 +2512,38 @@ public class DliMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ExportJobResultRequest, ExportJobResultResponse> exportJobResult =
+        genForexportJobResult();
+
+    private static HttpRequestDef<ExportJobResultRequest, ExportJobResultResponse> genForexportJobResult() {
+        // basic
+        HttpRequestDef.Builder<ExportJobResultRequest, ExportJobResultResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ExportJobResultRequest.class, ExportJobResultResponse.class)
+                .withName("ExportJobResult")
+                .withUri("/v1.0/{project_id}/jobs/{job_id}/export-result")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportJobResultRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+        builder.<ExportResultReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ExportResultReq.class),
+            f -> f.withMarshaller(ExportJobResultRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ImportDataRequest, ImportDataResponse> importData = genForimportData();
 
     private static HttpRequestDef<ImportDataRequest, ImportDataResponse> genForimportData() {
@@ -2501,6 +2561,73 @@ public class DliMeta {
             TypeCasts.uncheckedConversion(ImportTableReq.class),
             f -> f.withMarshaller(ImportDataRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAllTablesRequest, ListAllTablesResponse> listAllTables =
+        genForlistAllTables();
+
+    private static HttpRequestDef<ListAllTablesRequest, ListAllTablesResponse> genForlistAllTables() {
+        // basic
+        HttpRequestDef.Builder<ListAllTablesRequest, ListAllTablesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAllTablesRequest.class, ListAllTablesResponse.class)
+                .withName("ListAllTables")
+                .withUri("/v1.0/{project_id}/databases/{database_name}/tables")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("database_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAllTablesRequest::getDatabaseName, (req, v) -> {
+                req.setDatabaseName(v);
+            }));
+        builder.<Integer>withRequestField("current-page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAllTablesRequest::getCurrentPage, (req, v) -> {
+                req.setCurrentPage(v);
+            }));
+        builder.<String>withRequestField("keyword",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAllTablesRequest::getKeyword, (req, v) -> {
+                req.setKeyword(v);
+            }));
+        builder.<Integer>withRequestField("page-size",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAllTablesRequest::getPageSize, (req, v) -> {
+                req.setPageSize(v);
+            }));
+        builder.<String>withRequestField("table-type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAllTablesRequest::getTableType, (req, v) -> {
+                req.setTableType(v);
+            }));
+        builder.<Boolean>withRequestField("with-detail",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListAllTablesRequest::getWithDetail, (req, v) -> {
+                req.setWithDetail(v);
+            }));
+        builder.<Boolean>withRequestField("with-priv",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListAllTablesRequest::getWithPriv, (req, v) -> {
+                req.setWithPriv(v);
             }));
 
         // response
@@ -2545,19 +2672,12 @@ public class DliMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<Boolean>withRequestField("with-priv",
+        builder.<String>withRequestField("keyword",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListDatabasesRequest::getWithPriv, (req, v) -> {
-                req.setWithPriv(v);
-            }));
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDatabasesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDatabasesRequest::getKeyword, (req, v) -> {
+                req.setKeyword(v);
             }));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
@@ -2566,12 +2686,12 @@ public class DliMeta {
             f -> f.withMarshaller(ListDatabasesRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
             }));
-        builder.<String>withRequestField("keyword",
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDatabasesRequest::getKeyword, (req, v) -> {
-                req.setKeyword(v);
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDatabasesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
             }));
         builder.<String>withRequestField("tags",
             LocationType.Query,
@@ -2579,6 +2699,13 @@ public class DliMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDatabasesRequest::getTags, (req, v) -> {
                 req.setTags(v);
+            }));
+        builder.<Boolean>withRequestField("with-priv",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListDatabasesRequest::getWithPriv, (req, v) -> {
+                req.setWithPriv(v);
             }));
 
         // response
@@ -2597,47 +2724,12 @@ public class DliMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<Integer>withRequestField("page-size",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListJobsRequest::getPageSize, (req, v) -> {
-                req.setPageSize(v);
-            }));
         builder.<Integer>withRequestField("current-page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListJobsRequest::getCurrentPage, (req, v) -> {
                 req.setCurrentPage(v);
-            }));
-        builder.<Long>withRequestField("start",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListJobsRequest::getStart, (req, v) -> {
-                req.setStart(v);
-            }));
-        builder.<Long>withRequestField("end",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListJobsRequest::getEnd, (req, v) -> {
-                req.setEnd(v);
-            }));
-        builder.<ListJobsRequest.JobTypeEnum>withRequestField("job-type",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListJobsRequest.JobTypeEnum.class),
-            f -> f.withMarshaller(ListJobsRequest::getJobType, (req, v) -> {
-                req.setJobType(v);
-            }));
-        builder.<String>withRequestField("job-status",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListJobsRequest::getJobStatus, (req, v) -> {
-                req.setJobStatus(v);
             }));
         builder.<String>withRequestField("db_name",
             LocationType.Query,
@@ -2646,12 +2738,54 @@ public class DliMeta {
             f -> f.withMarshaller(ListJobsRequest::getDbName, (req, v) -> {
                 req.setDbName(v);
             }));
-        builder.<String>withRequestField("table_name",
+        builder.<Long>withRequestField("end",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListJobsRequest::getEnd, (req, v) -> {
+                req.setEnd(v);
+            }));
+        builder.<String>withRequestField("engine-type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListJobsRequest::getTableName, (req, v) -> {
-                req.setTableName(v);
+            f -> f.withMarshaller(ListJobsRequest::getEngineType, (req, v) -> {
+                req.setEngineType(v);
+            }));
+        builder.<String>withRequestField("job-status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListJobsRequest::getJobStatus, (req, v) -> {
+                req.setJobStatus(v);
+            }));
+        builder.<ListJobsRequest.JobTypeEnum>withRequestField("job-type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListJobsRequest.JobTypeEnum.class),
+            f -> f.withMarshaller(ListJobsRequest::getJobType, (req, v) -> {
+                req.setJobType(v);
+            }));
+        builder.<ListJobsRequest.OrderEnum>withRequestField("order",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListJobsRequest.OrderEnum.class),
+            f -> f.withMarshaller(ListJobsRequest::getOrder, (req, v) -> {
+                req.setOrder(v);
+            }));
+        builder.<String>withRequestField("owner",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListJobsRequest::getOwner, (req, v) -> {
+                req.setOwner(v);
+            }));
+        builder.<Integer>withRequestField("page-size",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListJobsRequest::getPageSize, (req, v) -> {
+                req.setPageSize(v);
             }));
         builder.<String>withRequestField("queue_name",
             LocationType.Query,
@@ -2667,19 +2801,26 @@ public class DliMeta {
             f -> f.withMarshaller(ListJobsRequest::getSqlPattern, (req, v) -> {
                 req.setSqlPattern(v);
             }));
-        builder.<ListJobsRequest.OrderEnum>withRequestField("order",
+        builder.<Long>withRequestField("start",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListJobsRequest.OrderEnum.class),
-            f -> f.withMarshaller(ListJobsRequest::getOrder, (req, v) -> {
-                req.setOrder(v);
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListJobsRequest::getStart, (req, v) -> {
+                req.setStart(v);
             }));
-        builder.<String>withRequestField("engine-type",
+        builder.<String>withRequestField("table_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListJobsRequest::getEngineType, (req, v) -> {
-                req.setEngineType(v);
+            f -> f.withMarshaller(ListJobsRequest::getTableName, (req, v) -> {
+                req.setTableName(v);
+            }));
+        builder.<String>withRequestField("tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListJobsRequest::getTags, (req, v) -> {
+                req.setTags(v);
             }));
 
         // response
@@ -2748,20 +2889,6 @@ public class DliMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<Boolean>withRequestField("with-priv",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListQueuesRequest::getWithPriv, (req, v) -> {
-                req.setWithPriv(v);
-            }));
-        builder.<Boolean>withRequestField("with-charge-info",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListQueuesRequest::getWithChargeInfo, (req, v) -> {
-                req.setWithChargeInfo(v);
-            }));
         builder.<String>withRequestField("queue_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -2776,26 +2903,19 @@ public class DliMeta {
             f -> f.withMarshaller(ListQueuesRequest::getTags, (req, v) -> {
                 req.setTags(v);
             }));
-        builder.<Integer>withRequestField("page-size",
+        builder.<Boolean>withRequestField("with-charge-info",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListQueuesRequest::getPageSize, (req, v) -> {
-                req.setPageSize(v);
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListQueuesRequest::getWithChargeInfo, (req, v) -> {
+                req.setWithChargeInfo(v);
             }));
-        builder.<Integer>withRequestField("current-page",
+        builder.<Boolean>withRequestField("with-priv",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListQueuesRequest::getCurrentPage, (req, v) -> {
-                req.setCurrentPage(v);
-            }));
-        builder.<String>withRequestField("order",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListQueuesRequest::getOrder, (req, v) -> {
-                req.setOrder(v);
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListQueuesRequest::getWithPriv, (req, v) -> {
+                req.setWithPriv(v);
             }));
 
         // response
@@ -2867,72 +2987,6 @@ public class DliMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTableUsersRequest::getTableName, (req, v) -> {
                 req.setTableName(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListTablesRequest, ListTablesResponse> listTables = genForlistTables();
-
-    private static HttpRequestDef<ListTablesRequest, ListTablesResponse> genForlistTables() {
-        // basic
-        HttpRequestDef.Builder<ListTablesRequest, ListTablesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListTablesRequest.class, ListTablesResponse.class)
-                .withName("ListTables")
-                .withUri("/v1.0/{project_id}/databases/{database_name}/tables")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("database_name",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTablesRequest::getDatabaseName, (req, v) -> {
-                req.setDatabaseName(v);
-            }));
-        builder.<String>withRequestField("keyword",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTablesRequest::getKeyword, (req, v) -> {
-                req.setKeyword(v);
-            }));
-        builder.<Boolean>withRequestField("with-detail",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListTablesRequest::getWithDetail, (req, v) -> {
-                req.setWithDetail(v);
-            }));
-        builder.<Integer>withRequestField("page-size",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTablesRequest::getPageSize, (req, v) -> {
-                req.setPageSize(v);
-            }));
-        builder.<Integer>withRequestField("current-page",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTablesRequest::getCurrentPage, (req, v) -> {
-                req.setCurrentPage(v);
-            }));
-        builder.<Boolean>withRequestField("with-priv",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListTablesRequest::getWithPriv, (req, v) -> {
-                req.setWithPriv(v);
-            }));
-        builder.<String>withRequestField("table-type",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTablesRequest::getTableType, (req, v) -> {
-                req.setTableType(v);
             }));
 
         // response
@@ -3172,19 +3226,19 @@ public class DliMeta {
             .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("task_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowNodeConnectivityRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
         builder.<String>withRequestField("queue_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowNodeConnectivityRequest::getQueueName, (req, v) -> {
                 req.setQueueName(v);
+            }));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowNodeConnectivityRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
             }));
 
         // response
@@ -3210,20 +3264,6 @@ public class DliMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowObjectUserRequest::getObject, (req, v) -> {
                 req.setObject(v);
-            }));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowObjectUserRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowObjectUserRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
             }));
 
         // response
@@ -3295,13 +3335,6 @@ public class DliMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowQueueDetailRequest::getQueueName, (req, v) -> {
                 req.setQueueName(v);
-            }));
-        builder.<String>withRequestField("queue_type",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowQueueDetailRequest::getQueueType, (req, v) -> {
-                req.setQueueType(v);
             }));
 
         // response
@@ -3404,6 +3437,45 @@ public class DliMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UpdateQueueCidrReq.class),
             f -> f.withMarshaller(UpdateQueueCidrRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateTableOwnerRequest, UpdateTableOwnerResponse> updateTableOwner =
+        genForupdateTableOwner();
+
+    private static HttpRequestDef<UpdateTableOwnerRequest, UpdateTableOwnerResponse> genForupdateTableOwner() {
+        // basic
+        HttpRequestDef.Builder<UpdateTableOwnerRequest, UpdateTableOwnerResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateTableOwnerRequest.class, UpdateTableOwnerResponse.class)
+                .withName("UpdateTableOwner")
+                .withUri("/v1.0/{project_id}/databases/{database_name}/tables/{table_name}/owner")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("database_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateTableOwnerRequest::getDatabaseName, (req, v) -> {
+                req.setDatabaseName(v);
+            }));
+        builder.<String>withRequestField("table_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateTableOwnerRequest::getTableName, (req, v) -> {
+                req.setTableName(v);
+            }));
+        builder.<UpdateDatabaseOwnerReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateDatabaseOwnerReq.class),
+            f -> f.withMarshaller(UpdateTableOwnerRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

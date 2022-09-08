@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.lts.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,16 +13,17 @@ public class CreateLogStreamParams {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_stream_name")
 
-    @JacksonXmlProperty(localName = "log_stream_name")
-
     private String logStreamName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_name")
 
-    @JacksonXmlProperty(localName = "enterprise_project_name")
-
     private String enterpriseProjectName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ttl_in_days")
+
+    private Integer ttlInDays;
 
     public CreateLogStreamParams withLogStreamName(String logStreamName) {
         this.logStreamName = logStreamName;
@@ -59,6 +59,25 @@ public class CreateLogStreamParams {
         this.enterpriseProjectName = enterpriseProjectName;
     }
 
+    public CreateLogStreamParams withTtlInDays(Integer ttlInDays) {
+        this.ttlInDays = ttlInDays;
+        return this;
+    }
+
+    /**
+     * 日志存储时间（天），取值范围：1-365。
+     * minimum: 1
+     * maximum: 365
+     * @return ttlInDays
+     */
+    public Integer getTtlInDays() {
+        return ttlInDays;
+    }
+
+    public void setTtlInDays(Integer ttlInDays) {
+        this.ttlInDays = ttlInDays;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -69,12 +88,13 @@ public class CreateLogStreamParams {
         }
         CreateLogStreamParams createLogStreamParams = (CreateLogStreamParams) o;
         return Objects.equals(this.logStreamName, createLogStreamParams.logStreamName)
-            && Objects.equals(this.enterpriseProjectName, createLogStreamParams.enterpriseProjectName);
+            && Objects.equals(this.enterpriseProjectName, createLogStreamParams.enterpriseProjectName)
+            && Objects.equals(this.ttlInDays, createLogStreamParams.ttlInDays);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(logStreamName, enterpriseProjectName);
+        return Objects.hash(logStreamName, enterpriseProjectName, ttlInDays);
     }
 
     @Override
@@ -83,6 +103,7 @@ public class CreateLogStreamParams {
         sb.append("class CreateLogStreamParams {\n");
         sb.append("    logStreamName: ").append(toIndentedString(logStreamName)).append("\n");
         sb.append("    enterpriseProjectName: ").append(toIndentedString(enterpriseProjectName)).append("\n");
+        sb.append("    ttlInDays: ").append(toIndentedString(ttlInDays)).append("\n");
         sb.append("}");
         return sb.toString();
     }

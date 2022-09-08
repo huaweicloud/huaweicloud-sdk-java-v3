@@ -12,8 +12,6 @@ import com.huaweicloud.sdk.cbs.v1.model.CurrentSlot;
 import com.huaweicloud.sdk.cbs.v1.model.HistorySlot;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -27,7 +25,6 @@ public class Frame  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="intention")
     
-    @JacksonXmlProperty(localName = "intention")
     
     private String intention;
 
@@ -35,7 +32,6 @@ public class Frame  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="confidence")
     
-    @JacksonXmlProperty(localName = "confidence")
     
     private Double confidence;
 
@@ -43,7 +39,6 @@ public class Frame  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="current_slots")
     
-    @JacksonXmlProperty(localName = "current_slots")
     
     private List<CurrentSlot> currentSlots = null;
     
@@ -51,7 +46,6 @@ public class Frame  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="history_slots")
     
-    @JacksonXmlProperty(localName = "history_slots")
     
     private List<HistorySlot> historySlots = null;
     
@@ -59,7 +53,6 @@ public class Frame  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="reply")
     
-    @JacksonXmlProperty(localName = "reply")
     
     private String reply;
 
@@ -67,7 +60,6 @@ public class Frame  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="task_complete")
     
-    @JacksonXmlProperty(localName = "task_complete")
     
     private Boolean taskComplete;
 
@@ -75,7 +67,6 @@ public class Frame  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="flow_complete")
     
-    @JacksonXmlProperty(localName = "flow_complete")
     
     private Boolean flowComplete;
 
@@ -83,7 +74,6 @@ public class Frame  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="candidate_words")
     
-    @JacksonXmlProperty(localName = "candidate_words")
     
     private List<String> candidateWords = null;
     
@@ -91,7 +81,6 @@ public class Frame  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="intention_alias")
     
-    @JacksonXmlProperty(localName = "intention_alias")
     
     private String intentionAlias;
 

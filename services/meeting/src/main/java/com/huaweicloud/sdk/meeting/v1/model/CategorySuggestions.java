@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,21 +13,15 @@ public class CategorySuggestions {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "politics")
 
-    @JacksonXmlProperty(localName = "politics")
-
     private String politics;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "terrorism")
 
-    @JacksonXmlProperty(localName = "terrorism")
-
     private String terrorism;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "porn")
-
-    @JacksonXmlProperty(localName = "porn")
 
     private String porn;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.elb.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,14 +13,10 @@ public class IpInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip")
 
-    @JacksonXmlProperty(localName = "ip")
-
     private String ip;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
-
-    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
@@ -31,7 +26,7 @@ public class IpInfo {
     }
 
     /**
-     * IP地址组中的IP地址。 [ 不支持IPv6，请勿设置为IPv6地址。](tag:dt,dt_test)
+     * IP地址组中的IP地址。  [不支持IPv6，请勿设置为IPv6地址。](tag:dt,dt_test)
      * @return ip
      */
     public String getIp() {

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.ces.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,14 +13,10 @@ public class DataPointInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time")
 
-    @JacksonXmlProperty(localName = "time")
-
     private String time;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "value")
-
-    @JacksonXmlProperty(localName = "value")
 
     private Double value;
 

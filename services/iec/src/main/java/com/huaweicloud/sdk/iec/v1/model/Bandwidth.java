@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -93,8 +92,6 @@ public class Bandwidth {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bandwidth_type")
 
-    @JacksonXmlProperty(localName = "bandwidth_type")
-
     private BandwidthTypeEnum bandwidthType;
 
     /**
@@ -171,42 +168,30 @@ public class Bandwidth {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "charge_mode")
 
-    @JacksonXmlProperty(localName = "charge_mode")
-
     private ChargeModeEnum chargeMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
-
-    @JacksonXmlProperty(localName = "create_time")
 
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
-
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operator")
 
-    @JacksonXmlProperty(localName = "operator")
-
     private Operator operator;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publicip_info")
-
-    @JacksonXmlProperty(localName = "publicip_info")
 
     private List<PublicipInfo> publicipInfo = null;
 
@@ -284,28 +269,20 @@ public class Bandwidth {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "share_type")
 
-    @JacksonXmlProperty(localName = "share_type")
-
     private ShareTypeEnum shareType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "site_id")
-
-    @JacksonXmlProperty(localName = "site_id")
 
     private String siteId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "site_info")
 
-    @JacksonXmlProperty(localName = "site_info")
-
     private String siteInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
-
-    @JacksonXmlProperty(localName = "size")
 
     private Integer size;
 
@@ -389,21 +366,15 @@ public class Bandwidth {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    @JacksonXmlProperty(localName = "status")
-
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
 
-    @JacksonXmlProperty(localName = "update_time")
-
     private String updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pool_id")
-
-    @JacksonXmlProperty(localName = "pool_id")
 
     private String poolId;
 

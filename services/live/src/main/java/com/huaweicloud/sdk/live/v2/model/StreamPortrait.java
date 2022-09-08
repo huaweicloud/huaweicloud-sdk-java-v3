@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.live.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,56 +13,40 @@ public class StreamPortrait {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time")
 
-    @JacksonXmlProperty(localName = "time")
-
     private String time;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flow")
-
-    @JacksonXmlProperty(localName = "flow")
 
     private Long flow;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "play_duration")
 
-    @JacksonXmlProperty(localName = "play_duration")
-
     private Long playDuration;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "request_count")
-
-    @JacksonXmlProperty(localName = "request_count")
 
     private Long requestCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_count")
 
-    @JacksonXmlProperty(localName = "user_count")
-
     private Long userCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "peak_user_count")
-
-    @JacksonXmlProperty(localName = "peak_user_count")
 
     private Long peakUserCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "peak_bandwidth")
 
-    @JacksonXmlProperty(localName = "peak_bandwidth")
-
     private Long peakBandwidth;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "push_duration")
-
-    @JacksonXmlProperty(localName = "push_duration")
 
     private Long pushDuration;
 

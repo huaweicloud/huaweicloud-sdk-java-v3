@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.ugo.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,21 +13,15 @@ public class ConfirmTargetDBReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "evaluation_project_id")
 
-    @JacksonXmlProperty(localName = "evaluation_project_id")
-
     private String evaluationProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_db_type")
 
-    @JacksonXmlProperty(localName = "target_db_type")
-
     private String targetDbType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_db_version")
-
-    @JacksonXmlProperty(localName = "target_db_version")
 
     private String targetDbVersion;
 

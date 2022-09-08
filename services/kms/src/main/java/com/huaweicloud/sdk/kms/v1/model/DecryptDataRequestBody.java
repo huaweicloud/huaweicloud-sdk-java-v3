@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -19,14 +18,10 @@ public class DecryptDataRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cipher_text")
 
-    @JacksonXmlProperty(localName = "cipher_text")
-
     private String cipherText;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "encryption_context")
-
-    @JacksonXmlProperty(localName = "encryption_context")
 
     private Object encryptionContext;
 
@@ -124,21 +119,15 @@ public class DecryptDataRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "encryption_algorithm")
 
-    @JacksonXmlProperty(localName = "encryption_algorithm")
-
     private EncryptionAlgorithmEnum encryptionAlgorithm;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key_id")
 
-    @JacksonXmlProperty(localName = "key_id")
-
     private String keyId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sequence")
-
-    @JacksonXmlProperty(localName = "sequence")
 
     private String sequence;
 

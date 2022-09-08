@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,93 +16,67 @@ public class CreateTableReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "table_name")
 
-    @JacksonXmlProperty(localName = "table_name")
-
     private String tableName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_location")
-
-    @JacksonXmlProperty(localName = "data_location")
 
     private String dataLocation;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
-    @JacksonXmlProperty(localName = "description")
-
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "columns")
 
-    @JacksonXmlProperty(localName = "columns")
-
     private List<CreateTableReqColumn> columns = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "select_statement")
-
-    @JacksonXmlProperty(localName = "select_statement")
-
-    private String selectStatement;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_type")
-
-    @JacksonXmlProperty(localName = "data_type")
 
     private String dataType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_path")
 
-    @JacksonXmlProperty(localName = "data_path")
-
     private String dataPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "with_column_header")
-
-    @JacksonXmlProperty(localName = "with_column_header")
 
     private Boolean withColumnHeader;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "delimiter")
 
-    @JacksonXmlProperty(localName = "delimiter")
-
     private String delimiter;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quote_char")
-
-    @JacksonXmlProperty(localName = "quote_char")
 
     private String quoteChar;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "escape_char")
 
-    @JacksonXmlProperty(localName = "escape_char")
-
     private String escapeChar;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "date_format")
-
-    @JacksonXmlProperty(localName = "date_format")
 
     private String dateFormat;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timestamp_format")
 
-    @JacksonXmlProperty(localName = "timestamp_format")
-
     private String timestampFormat;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "select_statement")
+
+    private String selectStatement;
 
     public CreateTableReq withTableName(String tableName) {
         this.tableName = tableName;
@@ -128,7 +101,7 @@ public class CreateTableReq {
     }
 
     /**
-     * 数据存储的地方，分OBS表和DLI表。
+     * 数据存储的地方，分VIEW视图，OBS表和DLI表。
      * @return dataLocation
      */
     public String getDataLocation() {
@@ -178,7 +151,7 @@ public class CreateTableReq {
     }
 
     /**
-     * 新增表的列。
+     * OBS表和DLI表必选参数。新增表的列。
      * @return columns
      */
     public List<CreateTableReqColumn> getColumns() {
@@ -187,23 +160,6 @@ public class CreateTableReq {
 
     public void setColumns(List<CreateTableReqColumn> columns) {
         this.columns = columns;
-    }
-
-    public CreateTableReq withSelectStatement(String selectStatement) {
-        this.selectStatement = selectStatement;
-        return this;
-    }
-
-    /**
-     * 创建视图时依赖的查找语句。查找语句中的表需要附加所属数据库，即 “数据库.数据表”格式。data_location为VIEW时填写。
-     * @return selectStatement
-     */
-    public String getSelectStatement() {
-        return selectStatement;
-    }
-
-    public void setSelectStatement(String selectStatement) {
-        this.selectStatement = selectStatement;
     }
 
     public CreateTableReq withDataType(String dataType) {
@@ -342,6 +298,23 @@ public class CreateTableReq {
         this.timestampFormat = timestampFormat;
     }
 
+    public CreateTableReq withSelectStatement(String selectStatement) {
+        this.selectStatement = selectStatement;
+        return this;
+    }
+
+    /**
+     * VIEW视图必选参数，创建视图时的数据选择语句。语句中涉及表需要使用“表=库名.表名”的格式
+     * @return selectStatement
+     */
+    public String getSelectStatement() {
+        return selectStatement;
+    }
+
+    public void setSelectStatement(String selectStatement) {
+        this.selectStatement = selectStatement;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -355,7 +328,6 @@ public class CreateTableReq {
             && Objects.equals(this.dataLocation, createTableReq.dataLocation)
             && Objects.equals(this.description, createTableReq.description)
             && Objects.equals(this.columns, createTableReq.columns)
-            && Objects.equals(this.selectStatement, createTableReq.selectStatement)
             && Objects.equals(this.dataType, createTableReq.dataType)
             && Objects.equals(this.dataPath, createTableReq.dataPath)
             && Objects.equals(this.withColumnHeader, createTableReq.withColumnHeader)
@@ -363,7 +335,8 @@ public class CreateTableReq {
             && Objects.equals(this.quoteChar, createTableReq.quoteChar)
             && Objects.equals(this.escapeChar, createTableReq.escapeChar)
             && Objects.equals(this.dateFormat, createTableReq.dateFormat)
-            && Objects.equals(this.timestampFormat, createTableReq.timestampFormat);
+            && Objects.equals(this.timestampFormat, createTableReq.timestampFormat)
+            && Objects.equals(this.selectStatement, createTableReq.selectStatement);
     }
 
     @Override
@@ -372,7 +345,6 @@ public class CreateTableReq {
             dataLocation,
             description,
             columns,
-            selectStatement,
             dataType,
             dataPath,
             withColumnHeader,
@@ -380,7 +352,8 @@ public class CreateTableReq {
             quoteChar,
             escapeChar,
             dateFormat,
-            timestampFormat);
+            timestampFormat,
+            selectStatement);
     }
 
     @Override
@@ -391,7 +364,6 @@ public class CreateTableReq {
         sb.append("    dataLocation: ").append(toIndentedString(dataLocation)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    columns: ").append(toIndentedString(columns)).append("\n");
-        sb.append("    selectStatement: ").append(toIndentedString(selectStatement)).append("\n");
         sb.append("    dataType: ").append(toIndentedString(dataType)).append("\n");
         sb.append("    dataPath: ").append(toIndentedString(dataPath)).append("\n");
         sb.append("    withColumnHeader: ").append(toIndentedString(withColumnHeader)).append("\n");
@@ -400,6 +372,7 @@ public class CreateTableReq {
         sb.append("    escapeChar: ").append(toIndentedString(escapeChar)).append("\n");
         sb.append("    dateFormat: ").append(toIndentedString(dateFormat)).append("\n");
         sb.append("    timestampFormat: ").append(toIndentedString(timestampFormat)).append("\n");
+        sb.append("    selectStatement: ").append(toIndentedString(selectStatement)).append("\n");
         sb.append("}");
         return sb.toString();
     }

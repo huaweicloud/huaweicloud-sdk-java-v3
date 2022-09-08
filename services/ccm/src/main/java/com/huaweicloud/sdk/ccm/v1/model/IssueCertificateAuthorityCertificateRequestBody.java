@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.ccm.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,28 +14,20 @@ public class IssueCertificateAuthorityCertificateRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "issuer_id")
 
-    @JacksonXmlProperty(localName = "issuer_id")
-
     private String issuerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "path_length")
-
-    @JacksonXmlProperty(localName = "path_length")
 
     private Integer pathLength;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "signature_algorithm")
 
-    @JacksonXmlProperty(localName = "signature_algorithm")
-
     private String signatureAlgorithm;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "validity")
-
-    @JacksonXmlProperty(localName = "validity")
 
     private Validity validity;
 

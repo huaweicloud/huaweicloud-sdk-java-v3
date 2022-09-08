@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.as.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,28 +13,20 @@ public class LbaasListener {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "listener_id")
 
-    @JacksonXmlProperty(localName = "listener_id")
-
     private String listenerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pool_id")
-
-    @JacksonXmlProperty(localName = "pool_id")
 
     private String poolId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protocol_port")
 
-    @JacksonXmlProperty(localName = "protocol_port")
-
     private Integer protocolPort;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "weight")
-
-    @JacksonXmlProperty(localName = "weight")
 
     private Integer weight;
 

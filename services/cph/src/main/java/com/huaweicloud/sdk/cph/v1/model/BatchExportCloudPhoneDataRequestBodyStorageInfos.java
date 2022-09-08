@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cph.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,35 +16,25 @@ public class BatchExportCloudPhoneDataRequestBodyStorageInfos {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "phone_id")
 
-    @JacksonXmlProperty(localName = "phone_id")
-
     private String phoneId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "include_files")
-
-    @JacksonXmlProperty(localName = "include_files")
 
     private List<String> includeFiles = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "exclude_files")
 
-    @JacksonXmlProperty(localName = "exclude_files")
-
     private List<String> excludeFiles = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bucket_name")
 
-    @JacksonXmlProperty(localName = "bucket_name")
-
     private String bucketName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "object_path")
-
-    @JacksonXmlProperty(localName = "object_path")
 
     private String objectPath;
 

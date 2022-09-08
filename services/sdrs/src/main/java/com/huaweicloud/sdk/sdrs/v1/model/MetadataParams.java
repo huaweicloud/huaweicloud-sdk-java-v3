@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.sdrs.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,8 +12,6 @@ public class MetadataParams {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__system__frozen")
-
-    @JacksonXmlProperty(localName = "__system__frozen")
 
     private String systemFrozen;
 

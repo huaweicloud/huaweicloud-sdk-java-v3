@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.servicestage.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,42 +14,30 @@ public class UpdateFileRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Repo-Auth")
 
-    @JacksonXmlProperty(localName = "X-Repo-Auth")
-
     private String xRepoAuth;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "namespace")
-
-    @JacksonXmlProperty(localName = "namespace")
 
     private String namespace;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project")
 
-    @JacksonXmlProperty(localName = "project")
-
     private String project;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "path")
-
-    @JacksonXmlProperty(localName = "path")
 
     private String path;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ref")
 
-    @JacksonXmlProperty(localName = "ref")
-
     private String ref;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
-
-    @JacksonXmlProperty(localName = "body")
 
     private FileUpdate body;
 

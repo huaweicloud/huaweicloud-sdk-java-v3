@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.codehub.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,56 +13,40 @@ public class DiffCommitInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "old_path")
 
-    @JacksonXmlProperty(localName = "old_path")
-
     private String oldPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "new_path")
-
-    @JacksonXmlProperty(localName = "new_path")
 
     private String newPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "a_mode")
 
-    @JacksonXmlProperty(localName = "a_mode")
-
     private String aMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "b_mode")
-
-    @JacksonXmlProperty(localName = "b_mode")
 
     private String bMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "new_file")
 
-    @JacksonXmlProperty(localName = "new_file")
-
     private Boolean newFile;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "renamed_file")
-
-    @JacksonXmlProperty(localName = "renamed_file")
 
     private Boolean renamedFile;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deleted_file")
 
-    @JacksonXmlProperty(localName = "deleted_file")
-
     private Boolean deletedFile;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "diff")
-
-    @JacksonXmlProperty(localName = "diff")
 
     private Boolean diff;
 

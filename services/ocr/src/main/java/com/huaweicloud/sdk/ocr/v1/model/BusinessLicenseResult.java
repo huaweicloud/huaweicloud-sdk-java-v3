@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.ocr.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,77 +13,55 @@ public class BusinessLicenseResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "registration_number")
 
-    @JacksonXmlProperty(localName = "registration_number")
-
     private String registrationNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
-
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
-    @JacksonXmlProperty(localName = "type")
-
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "address")
-
-    @JacksonXmlProperty(localName = "address")
 
     private String address;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "legal_representative")
 
-    @JacksonXmlProperty(localName = "legal_representative")
-
     private String legalRepresentative;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "registered_capital")
-
-    @JacksonXmlProperty(localName = "registered_capital")
 
     private String registeredCapital;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "found_date")
 
-    @JacksonXmlProperty(localName = "found_date")
-
     private String foundDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "business_term")
-
-    @JacksonXmlProperty(localName = "business_term")
 
     private String businessTerm;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "business_scope")
 
-    @JacksonXmlProperty(localName = "business_scope")
-
     private String businessScope;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "issue_date")
 
-    @JacksonXmlProperty(localName = "issue_date")
-
     private String issueDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confidence")
-
-    @JacksonXmlProperty(localName = "confidence")
 
     private Object confidence;
 

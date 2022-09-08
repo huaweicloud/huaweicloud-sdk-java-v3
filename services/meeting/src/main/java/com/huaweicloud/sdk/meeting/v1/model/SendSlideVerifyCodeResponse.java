@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -15,35 +14,25 @@ public class SendSlideVerifyCodeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "shadowImage")
 
-    @JacksonXmlProperty(localName = "shadowImage")
-
     private String shadowImage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cutImage")
-
-    @JacksonXmlProperty(localName = "cutImage")
 
     private String cutImage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pointY")
 
-    @JacksonXmlProperty(localName = "pointY")
-
     private Integer pointY;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "token")
 
-    @JacksonXmlProperty(localName = "token")
-
     private String token;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expire")
-
-    @JacksonXmlProperty(localName = "expire")
 
     private Integer expire;
 

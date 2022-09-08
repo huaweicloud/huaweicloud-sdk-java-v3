@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.ddm.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,70 +16,50 @@ public class GetDatabaseResponseBean {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
-    @JacksonXmlProperty(localName = "name")
-
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created")
-
-    @JacksonXmlProperty(localName = "created")
 
     private String created;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    @JacksonXmlProperty(localName = "status")
-
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated")
-
-    @JacksonXmlProperty(localName = "updated")
 
     private String updated;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "databases")
 
-    @JacksonXmlProperty(localName = "databases")
-
     private List<GetDatabases> databases = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "shard_mode")
-
-    @JacksonXmlProperty(localName = "shard_mode")
 
     private String shardMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "shard_number")
 
-    @JacksonXmlProperty(localName = "shard_number")
-
     private Integer shardNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "shard_unit")
-
-    @JacksonXmlProperty(localName = "shard_unit")
 
     private Integer shardUnit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dataVips")
 
-    @JacksonXmlProperty(localName = "dataVips")
-
     private List<String> dataVips = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "used_rds")
-
-    @JacksonXmlProperty(localName = "used_rds")
 
     private List<GetDatabaseUsedRds> usedRds = null;
 

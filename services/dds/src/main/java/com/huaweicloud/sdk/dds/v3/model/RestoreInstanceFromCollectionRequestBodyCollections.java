@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dds.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,21 +13,15 @@ public class RestoreInstanceFromCollectionRequestBodyCollections {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "old_name")
 
-    @JacksonXmlProperty(localName = "old_name")
-
     private String oldName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "new_name")
 
-    @JacksonXmlProperty(localName = "new_name")
-
     private String newName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "restore_collection_time")
-
-    @JacksonXmlProperty(localName = "restore_collection_time")
 
     private String restoreCollectionTime;
 

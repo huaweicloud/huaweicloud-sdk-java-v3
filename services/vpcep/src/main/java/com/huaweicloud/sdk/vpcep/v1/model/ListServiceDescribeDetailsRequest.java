@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.vpcep.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,14 +13,10 @@ public class ListServiceDescribeDetailsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "endpoint_service_name")
 
-    @JacksonXmlProperty(localName = "endpoint_service_name")
-
     private String endpointServiceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
-
-    @JacksonXmlProperty(localName = "id")
 
     private String id;
 

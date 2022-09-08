@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -12,35 +11,14 @@ import java.util.Objects;
 public class DeleteQueuePlanRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "queue_name")
-
-    @JacksonXmlProperty(localName = "queue_name")
-
-    private String queueName;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "plan_id")
-
-    @JacksonXmlProperty(localName = "plan_id")
 
     private Long planId;
 
-    public DeleteQueuePlanRequest withQueueName(String queueName) {
-        this.queueName = queueName;
-        return this;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "queue_name")
 
-    /**
-     * 待删除定时扩缩计划的队列名称
-     * @return queueName
-     */
-    public String getQueueName() {
-        return queueName;
-    }
-
-    public void setQueueName(String queueName) {
-        this.queueName = queueName;
-    }
+    private String queueName;
 
     public DeleteQueuePlanRequest withPlanId(Long planId) {
         this.planId = planId;
@@ -59,6 +37,23 @@ public class DeleteQueuePlanRequest {
         this.planId = planId;
     }
 
+    public DeleteQueuePlanRequest withQueueName(String queueName) {
+        this.queueName = queueName;
+        return this;
+    }
+
+    /**
+     * 待删除定时扩缩计划的队列名称
+     * @return queueName
+     */
+    public String getQueueName() {
+        return queueName;
+    }
+
+    public void setQueueName(String queueName) {
+        this.queueName = queueName;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -68,21 +63,21 @@ public class DeleteQueuePlanRequest {
             return false;
         }
         DeleteQueuePlanRequest deleteQueuePlanRequest = (DeleteQueuePlanRequest) o;
-        return Objects.equals(this.queueName, deleteQueuePlanRequest.queueName)
-            && Objects.equals(this.planId, deleteQueuePlanRequest.planId);
+        return Objects.equals(this.planId, deleteQueuePlanRequest.planId)
+            && Objects.equals(this.queueName, deleteQueuePlanRequest.queueName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(queueName, planId);
+        return Objects.hash(planId, queueName);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class DeleteQueuePlanRequest {\n");
-        sb.append("    queueName: ").append(toIndentedString(queueName)).append("\n");
         sb.append("    planId: ").append(toIndentedString(planId)).append("\n");
+        sb.append("    queueName: ").append(toIndentedString(queueName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

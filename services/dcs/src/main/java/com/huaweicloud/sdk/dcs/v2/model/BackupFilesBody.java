@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -93,28 +92,20 @@ public class BackupFilesBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_source")
 
-    @JacksonXmlProperty(localName = "file_source")
-
     private FileSourceEnum fileSource;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bucket_name")
-
-    @JacksonXmlProperty(localName = "bucket_name")
 
     private String bucketName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "files")
 
-    @JacksonXmlProperty(localName = "files")
-
     private List<Files> files = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "backup_id")
-
-    @JacksonXmlProperty(localName = "backup_id")
 
     private String backupId;
 

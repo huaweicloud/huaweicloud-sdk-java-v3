@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,8 +17,6 @@ public class CreateDatakeyRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key_id")
-
-    @JacksonXmlProperty(localName = "key_id")
 
     private String keyId;
 
@@ -103,21 +100,15 @@ public class CreateDatakeyRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key_spec")
 
-    @JacksonXmlProperty(localName = "key_spec")
-
     private KeySpecEnum keySpec;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "datakey_length")
 
-    @JacksonXmlProperty(localName = "datakey_length")
-
     private String datakeyLength;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sequence")
-
-    @JacksonXmlProperty(localName = "sequence")
 
     private String sequence;
 

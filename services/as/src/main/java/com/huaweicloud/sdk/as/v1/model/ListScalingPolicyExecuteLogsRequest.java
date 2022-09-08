@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -19,14 +18,10 @@ public class ListScalingPolicyExecuteLogsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scaling_policy_id")
 
-    @JacksonXmlProperty(localName = "scaling_policy_id")
-
     private String scalingPolicyId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_id")
-
-    @JacksonXmlProperty(localName = "log_id")
 
     private String logId;
 
@@ -110,14 +105,10 @@ public class ListScalingPolicyExecuteLogsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scaling_resource_type")
 
-    @JacksonXmlProperty(localName = "scaling_resource_type")
-
     private ScalingResourceTypeEnum scalingResourceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scaling_resource_id")
-
-    @JacksonXmlProperty(localName = "scaling_resource_id")
 
     private String scalingResourceId;
 
@@ -213,35 +204,25 @@ public class ListScalingPolicyExecuteLogsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "execute_type")
 
-    @JacksonXmlProperty(localName = "execute_type")
-
     private ExecuteTypeEnum executeType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
-
-    @JacksonXmlProperty(localName = "start_time")
 
     private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time")
 
-    @JacksonXmlProperty(localName = "end_time")
-
     private String endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_number")
 
-    @JacksonXmlProperty(localName = "start_number")
-
     private Integer startNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
-
-    @JacksonXmlProperty(localName = "limit")
 
     private Integer limit;
 

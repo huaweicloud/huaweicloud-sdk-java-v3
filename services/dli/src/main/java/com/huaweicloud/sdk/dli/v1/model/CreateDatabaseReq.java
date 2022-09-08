@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,30 +16,22 @@ public class CreateDatabaseReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "database_name")
 
-    @JacksonXmlProperty(localName = "database_name")
-
     private String databaseName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
-
-    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
-    @JacksonXmlProperty(localName = "enterprise_project_id")
-
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    @JacksonXmlProperty(localName = "tags")
-
-    private List<JobsTags> tags = null;
+    private List<TmsTagEntity> tags = null;
 
     public CreateDatabaseReq withDatabaseName(String databaseName) {
         this.databaseName = databaseName;
@@ -93,12 +84,12 @@ public class CreateDatabaseReq {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    public CreateDatabaseReq withTags(List<JobsTags> tags) {
+    public CreateDatabaseReq withTags(List<TmsTagEntity> tags) {
         this.tags = tags;
         return this;
     }
 
-    public CreateDatabaseReq addTagsItem(JobsTags tagsItem) {
+    public CreateDatabaseReq addTagsItem(TmsTagEntity tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -106,7 +97,7 @@ public class CreateDatabaseReq {
         return this;
     }
 
-    public CreateDatabaseReq withTags(Consumer<List<JobsTags>> tagsSetter) {
+    public CreateDatabaseReq withTags(Consumer<List<TmsTagEntity>> tagsSetter) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -115,14 +106,14 @@ public class CreateDatabaseReq {
     }
 
     /**
-     * 数据库的标签。具体请参考表tags。
+     * 标签
      * @return tags
      */
-    public List<JobsTags> getTags() {
+    public List<TmsTagEntity> getTags() {
         return tags;
     }
 
-    public void setTags(List<JobsTags> tags) {
+    public void setTags(List<TmsTagEntity> tags) {
         this.tags = tags;
     }
 

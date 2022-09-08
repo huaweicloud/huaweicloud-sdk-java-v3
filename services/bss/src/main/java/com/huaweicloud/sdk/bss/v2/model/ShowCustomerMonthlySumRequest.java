@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.bss.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,49 +13,35 @@ public class ShowCustomerMonthlySumRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bill_cycle")
 
-    @JacksonXmlProperty(localName = "bill_cycle")
-
     private String billCycle;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_type_code")
-
-    @JacksonXmlProperty(localName = "service_type_code")
 
     private String serviceTypeCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
-    @JacksonXmlProperty(localName = "enterprise_project_id")
-
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
-
-    @JacksonXmlProperty(localName = "offset")
 
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
-    @JacksonXmlProperty(localName = "limit")
-
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "method")
 
-    @JacksonXmlProperty(localName = "method")
-
     private String method;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sub_customer_id")
-
-    @JacksonXmlProperty(localName = "sub_customer_id")
 
     private String subCustomerId;
 

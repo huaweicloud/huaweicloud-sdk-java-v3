@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.gaussdbfornosql.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -18,14 +17,10 @@ public class ListSlowLogsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "slow_log_list")
 
-    @JacksonXmlProperty(localName = "slow_log_list")
-
     private List<SlowlogResult> slowLogList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_record")
-
-    @JacksonXmlProperty(localName = "total_record")
 
     private Integer totalRecord;
 

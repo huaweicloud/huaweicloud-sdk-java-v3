@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.kms.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,28 +16,20 @@ public class ActionResources {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_id")
 
-    @JacksonXmlProperty(localName = "resource_id")
-
     private String resourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_detail")
-
-    @JacksonXmlProperty(localName = "resource_detail")
 
     private KeyDetails resourceDetail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_name")
 
-    @JacksonXmlProperty(localName = "resource_name")
-
     private String resourceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
-
-    @JacksonXmlProperty(localName = "tags")
 
     private List<TagItem> tags = null;
 

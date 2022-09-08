@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -127,42 +126,30 @@ public class PrePaidServerDataVolume {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volumetype")
 
-    @JacksonXmlProperty(localName = "volumetype")
-
     private VolumetypeEnum volumetype;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
-
-    @JacksonXmlProperty(localName = "size")
 
     private Integer size;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "shareable")
 
-    @JacksonXmlProperty(localName = "shareable")
-
     private Boolean shareable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "multiattach")
-
-    @JacksonXmlProperty(localName = "multiattach")
 
     private Boolean multiattach;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hw:passthrough")
 
-    @JacksonXmlProperty(localName = "hw:passthrough")
-
     private Boolean hwPassthrough;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extendparam")
-
-    @JacksonXmlProperty(localName = "extendparam")
 
     private PrePaidServerDataVolumeExtendParam extendparam;
 
@@ -240,28 +227,20 @@ public class PrePaidServerDataVolume {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cluster_type")
 
-    @JacksonXmlProperty(localName = "cluster_type")
-
     private ClusterTypeEnum clusterType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cluster_id")
-
-    @JacksonXmlProperty(localName = "cluster_id")
 
     private String clusterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metadata")
 
-    @JacksonXmlProperty(localName = "metadata")
-
     private PrePaidServerDataVolumeMetadata metadata;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_image_id")
-
-    @JacksonXmlProperty(localName = "data_image_id")
 
     private String dataImageId;
 

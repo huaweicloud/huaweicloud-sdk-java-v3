@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.ugo.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,14 +16,10 @@ public class ObjectTypeInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_select_all_objects_type")
 
-    @JacksonXmlProperty(localName = "is_select_all_objects_type")
-
     private Boolean isSelectAllObjectsType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "objects_type_list")
-
-    @JacksonXmlProperty(localName = "objects_type_list")
 
     private List<String> objectsTypeList = null;
 

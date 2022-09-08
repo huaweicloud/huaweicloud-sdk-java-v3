@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,51 +16,37 @@ public class CreateEnhancedConnectionsReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
-    @JacksonXmlProperty(localName = "name")
-
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dest_vpc_id")
-
-    @JacksonXmlProperty(localName = "dest_vpc_id")
 
     private String destVpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dest_network_id")
 
-    @JacksonXmlProperty(localName = "dest_network_id")
-
     private String destNetworkId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "queues")
-
-    @JacksonXmlProperty(localName = "queues")
 
     private List<String> queues = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hosts")
 
-    @JacksonXmlProperty(localName = "hosts")
-
     private List<EnhancedConnectionsHost> hosts = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "routetable_id")
-
-    @JacksonXmlProperty(localName = "routetable_id")
 
     private String routetableId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    @JacksonXmlProperty(localName = "tags")
-
-    private List<JobsTags> tags = null;
+    private List<TmsTagEntity> tags = null;
 
     public CreateEnhancedConnectionsReq withName(String name) {
         this.name = name;
@@ -197,12 +182,12 @@ public class CreateEnhancedConnectionsReq {
         this.routetableId = routetableId;
     }
 
-    public CreateEnhancedConnectionsReq withTags(List<JobsTags> tags) {
+    public CreateEnhancedConnectionsReq withTags(List<TmsTagEntity> tags) {
         this.tags = tags;
         return this;
     }
 
-    public CreateEnhancedConnectionsReq addTagsItem(JobsTags tagsItem) {
+    public CreateEnhancedConnectionsReq addTagsItem(TmsTagEntity tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -210,7 +195,7 @@ public class CreateEnhancedConnectionsReq {
         return this;
     }
 
-    public CreateEnhancedConnectionsReq withTags(Consumer<List<JobsTags>> tagsSetter) {
+    public CreateEnhancedConnectionsReq withTags(Consumer<List<TmsTagEntity>> tagsSetter) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -219,14 +204,14 @@ public class CreateEnhancedConnectionsReq {
     }
 
     /**
-     * 作业的标签。具体请参考表tags。
+     * 标签
      * @return tags
      */
-    public List<JobsTags> getTags() {
+    public List<TmsTagEntity> getTags() {
         return tags;
     }
 
-    public void setTags(List<JobsTags> tags) {
+    public void setTags(List<TmsTagEntity> tags) {
         this.tags = tags;
     }
 

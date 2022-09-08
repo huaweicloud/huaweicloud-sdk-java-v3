@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.iotanalytics.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -19,21 +18,15 @@ public class LastAssetPropertyValueRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    @JacksonXmlProperty(localName = "tags")
-
     private Map<String, Object> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "property_filter")
 
-    @JacksonXmlProperty(localName = "property_filter")
-
     private List<PropertyFilter> propertyFilter = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "property_names")
-
-    @JacksonXmlProperty(localName = "property_names")
 
     private List<String> propertyNames = null;
 

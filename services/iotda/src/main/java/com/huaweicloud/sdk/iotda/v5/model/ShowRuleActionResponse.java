@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.iotda.v5.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -16,35 +15,25 @@ public class ShowRuleActionResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "action_id")
 
-    @JacksonXmlProperty(localName = "action_id")
-
     private String actionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rule_id")
-
-    @JacksonXmlProperty(localName = "rule_id")
 
     private String ruleId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_id")
 
-    @JacksonXmlProperty(localName = "app_id")
-
     private String appId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "channel")
 
-    @JacksonXmlProperty(localName = "channel")
-
     private String channel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "channel_detail")
-
-    @JacksonXmlProperty(localName = "channel_detail")
 
     private ChannelDetail channelDetail;
 

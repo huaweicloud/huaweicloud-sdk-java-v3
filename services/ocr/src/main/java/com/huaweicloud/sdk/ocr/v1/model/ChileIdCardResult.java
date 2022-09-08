@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.ocr.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,70 +16,50 @@ public class ChileIdCardResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "surname")
 
-    @JacksonXmlProperty(localName = "surname")
-
     private List<String> surname = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "given_name")
-
-    @JacksonXmlProperty(localName = "given_name")
 
     private String givenName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nationality")
 
-    @JacksonXmlProperty(localName = "nationality")
-
     private String nationality;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sex")
-
-    @JacksonXmlProperty(localName = "sex")
 
     private String sex;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "birth")
 
-    @JacksonXmlProperty(localName = "birth")
-
     private String birth;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "issue_date")
-
-    @JacksonXmlProperty(localName = "issue_date")
 
     private String issueDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expiry_date")
 
-    @JacksonXmlProperty(localName = "expiry_date")
-
     private String expiryDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "document_number")
-
-    @JacksonXmlProperty(localName = "document_number")
 
     private String documentNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "number")
 
-    @JacksonXmlProperty(localName = "number")
-
     private String number;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confidence")
-
-    @JacksonXmlProperty(localName = "confidence")
 
     private ChileIdCardConfidence confidence;
 

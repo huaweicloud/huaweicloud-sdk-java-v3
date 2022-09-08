@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.bss.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,49 +13,35 @@ public class ListPartnerAccountChangeRecordsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "balance_type")
 
-    @JacksonXmlProperty(localName = "balance_type")
-
     private String balanceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trade_type")
-
-    @JacksonXmlProperty(localName = "trade_type")
 
     private String tradeType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trade_time_begin")
 
-    @JacksonXmlProperty(localName = "trade_time_begin")
-
     private String tradeTimeBegin;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trade_time_end")
-
-    @JacksonXmlProperty(localName = "trade_time_end")
 
     private String tradeTimeEnd;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
-    @JacksonXmlProperty(localName = "offset")
-
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
-    @JacksonXmlProperty(localName = "limit")
-
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "indirect_partner_id")
-
-    @JacksonXmlProperty(localName = "indirect_partner_id")
 
     private String indirectPartnerId;
 

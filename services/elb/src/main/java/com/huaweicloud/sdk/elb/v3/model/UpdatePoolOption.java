@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.elb.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,63 +14,45 @@ public class UpdatePoolOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "admin_state_up")
 
-    @JacksonXmlProperty(localName = "admin_state_up")
-
     private Boolean adminStateUp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
-
-    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lb_algorithm")
 
-    @JacksonXmlProperty(localName = "lb_algorithm")
-
     private String lbAlgorithm;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
-
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "session_persistence")
 
-    @JacksonXmlProperty(localName = "session_persistence")
-
     private UpdatePoolSessionPersistenceOption sessionPersistence;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "slow_start")
-
-    @JacksonXmlProperty(localName = "slow_start")
 
     private UpdatePoolSlowStartOption slowStart;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "member_deletion_protection_enable")
 
-    @JacksonXmlProperty(localName = "member_deletion_protection_enable")
-
     private Boolean memberDeletionProtectionEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_id")
 
-    @JacksonXmlProperty(localName = "vpc_id")
-
     private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
-
-    @JacksonXmlProperty(localName = "type")
 
     private String type;
 
@@ -81,7 +62,7 @@ public class UpdatePoolOption {
     }
 
     /**
-     * 后端云服务器组的管理状态，只支持更新为true。 [ 不支持该字段，请勿使用。](tag:dt,dt_test)
+     * 后端云服务器组的管理状态，只支持更新为true。  [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
      * @return adminStateUp
      */
     public Boolean getAdminStateUp() {

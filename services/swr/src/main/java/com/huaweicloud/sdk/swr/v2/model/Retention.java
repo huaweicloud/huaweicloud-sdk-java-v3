@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.swr.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,28 +16,20 @@ public class Retention {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "algorithm")
 
-    @JacksonXmlProperty(localName = "algorithm")
-
     private String algorithm;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
-
-    @JacksonXmlProperty(localName = "id")
 
     private Integer id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rules")
 
-    @JacksonXmlProperty(localName = "rules")
-
     private List<Rule> rules = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scope")
-
-    @JacksonXmlProperty(localName = "scope")
 
     private String scope;
 

@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -20,14 +19,10 @@ public class ProfileInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "local_network_port")
 
-    @JacksonXmlProperty(localName = "local_network_port")
-
     private String localNetworkPort;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "standalone")
-
-    @JacksonXmlProperty(localName = "standalone")
 
     private Boolean standalone;
 
@@ -129,21 +124,15 @@ public class ProfileInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "notify_status")
 
-    @JacksonXmlProperty(localName = "notify_status")
-
     private NotifyStatusEnum notifyStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
-    @JacksonXmlProperty(localName = "create_time")
-
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fake_network_type")
-
-    @JacksonXmlProperty(localName = "fake_network_type")
 
     private Boolean fakeNetworkType;
 
@@ -221,21 +210,15 @@ public class ProfileInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_source")
 
-    @JacksonXmlProperty(localName = "create_source")
-
     private CreateSourceEnum createSource;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ecs_id")
 
-    @JacksonXmlProperty(localName = "ecs_id")
-
     private String ecsId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lock_status")
-
-    @JacksonXmlProperty(localName = "lock_status")
 
     private String lockStatus;
 
@@ -319,14 +302,10 @@ public class ProfileInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "freezed_status")
 
-    @JacksonXmlProperty(localName = "freezed_status")
-
     private FreezedStatusEnum freezedStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bandwith_info")
-
-    @JacksonXmlProperty(localName = "bandwith_info")
 
     private BandwidthInfoResp bandwithInfo;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.ief.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,133 +14,95 @@ public class AccessConfig {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protocol_type")
 
-    @JacksonXmlProperty(localName = "protocol_type")
-
     private ValueInAttributes protocolType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protocol_name")
-
-    @JacksonXmlProperty(localName = "protocol_name")
 
     private ValueInAttributes protocolName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "slave_id")
 
-    @JacksonXmlProperty(localName = "slave_id")
-
     private ValueInAttributes slaveId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip")
-
-    @JacksonXmlProperty(localName = "ip")
 
     private ValueInAttributes ip;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "port")
 
-    @JacksonXmlProperty(localName = "port")
-
     private ValueInAttributes port;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "serial_port")
-
-    @JacksonXmlProperty(localName = "serial_port")
 
     private ValueInAttributes serialPort;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "baud_rate")
 
-    @JacksonXmlProperty(localName = "baud_rate")
-
     private ValueInAttributes baudRate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_bits")
-
-    @JacksonXmlProperty(localName = "data_bits")
 
     private ValueInAttributes dataBits;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stop_bits")
 
-    @JacksonXmlProperty(localName = "stop_bits")
-
     private ValueInAttributes stopBits;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parity_bits")
-
-    @JacksonXmlProperty(localName = "parity_bits")
 
     private ValueInAttributes parityBits;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "url")
 
-    @JacksonXmlProperty(localName = "url")
-
     private ValueInAttributes url;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sec_mode")
-
-    @JacksonXmlProperty(localName = "sec_mode")
 
     private ValueInAttributes secMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sec_policy")
 
-    @JacksonXmlProperty(localName = "sec_policy")
-
     private ValueInAttributes secPolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auth_type")
-
-    @JacksonXmlProperty(localName = "auth_type")
 
     private ValueInAttributes authType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "username")
 
-    @JacksonXmlProperty(localName = "username")
-
     private ValueInAttributes username;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "password")
-
-    @JacksonXmlProperty(localName = "password")
 
     private ValueInAttributes password;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "private_key")
 
-    @JacksonXmlProperty(localName = "private_key")
-
     private ValueInAttributes privateKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "certificate")
 
-    @JacksonXmlProperty(localName = "certificate")
-
     private ValueInAttributes certificate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timeout")
-
-    @JacksonXmlProperty(localName = "timeout")
 
     private ValueInAttributes timeout;
 

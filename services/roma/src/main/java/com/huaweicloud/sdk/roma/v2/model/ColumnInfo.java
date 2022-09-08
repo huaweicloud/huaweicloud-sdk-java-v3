@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.roma.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,56 +13,40 @@ public class ColumnInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "field_name")
 
-    @JacksonXmlProperty(localName = "field_name")
-
     private String fieldName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "field_type")
-
-    @JacksonXmlProperty(localName = "field_type")
 
     private String fieldType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "field_length")
 
-    @JacksonXmlProperty(localName = "field_length")
-
     private String fieldLength;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "null_able")
-
-    @JacksonXmlProperty(localName = "null_able")
 
     private String nullAble;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_partition")
 
-    @JacksonXmlProperty(localName = "is_partition")
-
     private Boolean isPartition;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "primary")
-
-    @JacksonXmlProperty(localName = "primary")
 
     private String primary;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "unique")
 
-    @JacksonXmlProperty(localName = "unique")
-
     private String unique;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "decimal_digits")
-
-    @JacksonXmlProperty(localName = "decimal_digits")
 
     private String decimalDigits;
 

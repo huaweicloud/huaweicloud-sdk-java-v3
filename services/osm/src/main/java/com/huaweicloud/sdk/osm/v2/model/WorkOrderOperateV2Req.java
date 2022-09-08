@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.osm.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,28 +16,20 @@ public class WorkOrderOperateV2Req {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "judgement")
 
-    @JacksonXmlProperty(localName = "judgement")
-
     private String judgement;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operate_desc")
-
-    @JacksonXmlProperty(localName = "operate_desc")
 
     private String operateDesc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_id")
 
-    @JacksonXmlProperty(localName = "group_id")
-
     private String groupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "incident_satisfaction_list")
-
-    @JacksonXmlProperty(localName = "incident_satisfaction_list")
 
     private List<IncidentSatisfactionV2Do> incidentSatisfactionList = null;
 

@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,8 +20,6 @@ public class ApiPolicyFunctionResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "function_urn")
-
-    @JacksonXmlProperty(localName = "function_urn")
 
     private String functionUrn;
 
@@ -106,28 +103,20 @@ public class ApiPolicyFunctionResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "invocation_type")
 
-    @JacksonXmlProperty(localName = "invocation_type")
-
     private InvocationTypeEnum invocationType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
-
-    @JacksonXmlProperty(localName = "version")
 
     private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timeout")
 
-    @JacksonXmlProperty(localName = "timeout")
-
     private Integer timeout;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
-
-    @JacksonXmlProperty(localName = "id")
 
     private String id;
 
@@ -211,35 +200,25 @@ public class ApiPolicyFunctionResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "effect_mode")
 
-    @JacksonXmlProperty(localName = "effect_mode")
-
     private EffectModeEnum effectMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
-
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "backend_params")
 
-    @JacksonXmlProperty(localName = "backend_params")
-
     private List<BackendParam> backendParams = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "conditions")
 
-    @JacksonXmlProperty(localName = "conditions")
-
     private List<CoditionResp> conditions = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "authorizer_id")
-
-    @JacksonXmlProperty(localName = "authorizer_id")
 
     private String authorizerId;
 

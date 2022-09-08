@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.codecheck.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,84 +16,60 @@ public class CreateTaskRequestV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "check_type")
 
-    @JacksonXmlProperty(localName = "check_type")
-
     private List<String> checkType = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "git_url")
-
-    @JacksonXmlProperty(localName = "git_url")
 
     private String gitUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "git_branch")
 
-    @JacksonXmlProperty(localName = "git_branch")
-
     private String gitBranch;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "language")
-
-    @JacksonXmlProperty(localName = "language")
 
     private List<String> language = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rule_sets")
 
-    @JacksonXmlProperty(localName = "rule_sets")
-
     private List<RuleSetV2> ruleSets = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_type")
-
-    @JacksonXmlProperty(localName = "task_type")
 
     private String taskType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "username")
 
-    @JacksonXmlProperty(localName = "username")
-
     private String username;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "access_token")
-
-    @JacksonXmlProperty(localName = "access_token")
 
     private String accessToken;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "endpoint_id")
 
-    @JacksonXmlProperty(localName = "endpoint_id")
-
     private String endpointId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "inc_config")
-
-    @JacksonXmlProperty(localName = "inc_config")
 
     private IncConfigV2 incConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_fossbot")
 
-    @JacksonXmlProperty(localName = "enable_fossbot")
-
     private Boolean enableFossbot;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_pool_id")
-
-    @JacksonXmlProperty(localName = "resource_pool_id")
 
     private String resourcePoolId;
 

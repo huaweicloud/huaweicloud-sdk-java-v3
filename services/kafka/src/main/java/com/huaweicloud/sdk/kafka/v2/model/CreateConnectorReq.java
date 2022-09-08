@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -108,21 +107,15 @@ public class CreateConnectorReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "specification")
 
-    @JacksonXmlProperty(localName = "specification")
-
     private SpecificationEnum specification;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "node_cnt")
 
-    @JacksonXmlProperty(localName = "node_cnt")
-
     private String nodeCnt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "spec_code")
-
-    @JacksonXmlProperty(localName = "spec_code")
 
     private String specCode;
 

@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -23,70 +22,50 @@ public class ShowDeviceResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "permissions")
 
-    @JacksonXmlProperty(localName = "permissions")
-
     private List<String> permissions = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
-
-    @JacksonXmlProperty(localName = "id")
 
     private Integer id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parent_device_id")
 
-    @JacksonXmlProperty(localName = "parent_device_id")
-
     private Integer parentDeviceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parent_device_name")
-
-    @JacksonXmlProperty(localName = "parent_device_name")
 
     private String parentDeviceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "product")
 
-    @JacksonXmlProperty(localName = "product")
-
     private ProductReferer product;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "device_name")
-
-    @JacksonXmlProperty(localName = "device_name")
 
     private String deviceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_id")
 
-    @JacksonXmlProperty(localName = "instance_id")
-
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "client_id")
-
-    @JacksonXmlProperty(localName = "client_id")
 
     private String clientId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "node_id")
 
-    @JacksonXmlProperty(localName = "node_id")
-
     private String nodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_name")
-
-    @JacksonXmlProperty(localName = "app_name")
 
     private String appName;
 
@@ -169,8 +148,6 @@ public class ShowDeviceResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
-
-    @JacksonXmlProperty(localName = "status")
 
     private StatusEnum status;
 
@@ -260,98 +237,70 @@ public class ShowDeviceResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "online_status")
 
-    @JacksonXmlProperty(localName = "online_status")
-
     private OnlineStatusEnum onlineStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
-
-    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "authentication")
 
-    @JacksonXmlProperty(localName = "authentication")
-
     private Authentication authentication;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_user")
-
-    @JacksonXmlProperty(localName = "created_user")
 
     private CreatedUser createdUser;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last_updated_user")
 
-    @JacksonXmlProperty(localName = "last_updated_user")
-
     private LastUpdatedUser lastUpdatedUser;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
-
-    @JacksonXmlProperty(localName = "tags")
 
     private List<String> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_datetime")
 
-    @JacksonXmlProperty(localName = "created_datetime")
-
     private Long createdDatetime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last_updated_datetime")
-
-    @JacksonXmlProperty(localName = "last_updated_datetime")
 
     private Long lastUpdatedDatetime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "connect_address")
 
-    @JacksonXmlProperty(localName = "connect_address")
-
     private String connectAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ssl_connect_address")
-
-    @JacksonXmlProperty(localName = "ssl_connect_address")
 
     private String sslConnectAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ipv6_connect_address")
 
-    @JacksonXmlProperty(localName = "ipv6_connect_address")
-
     private String ipv6ConnectAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ipv6_ssl_connect_address")
-
-    @JacksonXmlProperty(localName = "ipv6_ssl_connect_address")
 
     private String ipv6SslConnectAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last_login_datetime")
 
-    @JacksonXmlProperty(localName = "last_login_datetime")
-
     private Long lastLoginDatetime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "node_type")
-
-    @JacksonXmlProperty(localName = "node_type")
 
     private Integer nodeType;
 
@@ -441,35 +390,25 @@ public class ShowDeviceResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "device_type")
 
-    @JacksonXmlProperty(localName = "device_type")
-
     private DeviceTypeEnum deviceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "client_ip")
-
-    @JacksonXmlProperty(localName = "client_ip")
 
     private String clientIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "keep_alive")
 
-    @JacksonXmlProperty(localName = "keep_alive")
-
     private String keepAlive;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last_active_time")
 
-    @JacksonXmlProperty(localName = "last_active_time")
-
     private Long lastActiveTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
-
-    @JacksonXmlProperty(localName = "version")
 
     private String version;
 
@@ -559,14 +498,10 @@ public class ShowDeviceResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "plugin_id")
 
-    @JacksonXmlProperty(localName = "plugin_id")
-
     private PluginIdEnum pluginId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_id")
-
-    @JacksonXmlProperty(localName = "app_id")
 
     private String appId;
 

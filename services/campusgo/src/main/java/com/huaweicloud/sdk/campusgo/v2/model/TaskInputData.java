@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.campusgo.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.net.URI;
 import java.util.Objects;
@@ -16,77 +15,55 @@ public class TaskInputData {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stream_name")
 
-    @JacksonXmlProperty(localName = "stream_name")
-
     private String streamName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bucket")
-
-    @JacksonXmlProperty(localName = "bucket")
 
     private String bucket;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "path")
 
-    @JacksonXmlProperty(localName = "path")
-
     private String path;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "url")
-
-    @JacksonXmlProperty(localName = "url")
 
     private URI url;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "headers")
 
-    @JacksonXmlProperty(localName = "headers")
-
     private Object headers;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "certificate_check")
-
-    @JacksonXmlProperty(localName = "certificate_check")
 
     private Boolean certificateCheck;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rtsp_path_in_response")
 
-    @JacksonXmlProperty(localName = "rtsp_path_in_response")
-
     private String rtspPathInResponse;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "device_id")
-
-    @JacksonXmlProperty(localName = "device_id")
 
     private String deviceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stream_type")
 
-    @JacksonXmlProperty(localName = "stream_type")
-
     private Integer streamType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private UUID id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "index")
-
-    @JacksonXmlProperty(localName = "index")
 
     private Integer index;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,147 +16,105 @@ public class ShowStreamJobListJobConfig {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "checkpoint_enabled")
 
-    @JacksonXmlProperty(localName = "checkpoint_enabled")
-
     private Boolean checkpointEnabled;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "checkpoint_mode")
-
-    @JacksonXmlProperty(localName = "checkpoint_mode")
 
     private String checkpointMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "checkpoint_interval")
 
-    @JacksonXmlProperty(localName = "checkpoint_interval")
-
     private Integer checkpointInterval;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_enabled")
-
-    @JacksonXmlProperty(localName = "log_enabled")
 
     private Boolean logEnabled;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "obs_bucket")
 
-    @JacksonXmlProperty(localName = "obs_bucket")
-
     private String obsBucket;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "smn_topic")
-
-    @JacksonXmlProperty(localName = "smn_topic")
 
     private String smnTopic;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "edge_group_ids")
 
-    @JacksonXmlProperty(localName = "edge_group_ids")
-
     private List<String> edgeGroupIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "root_id")
-
-    @JacksonXmlProperty(localName = "root_id")
 
     private Integer rootId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "manager_cu_number")
 
-    @JacksonXmlProperty(localName = "manager_cu_number")
-
     private Integer managerCuNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cu_number")
-
-    @JacksonXmlProperty(localName = "cu_number")
 
     private Integer cuNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parallel_number")
 
-    @JacksonXmlProperty(localName = "parallel_number")
-
     private Integer parallelNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "restart_when_exception")
-
-    @JacksonXmlProperty(localName = "restart_when_exception")
 
     private Boolean restartWhenException;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "idle_state_retention")
 
-    @JacksonXmlProperty(localName = "idle_state_retention")
-
     private Integer idleStateRetention;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "udf_jar_url")
-
-    @JacksonXmlProperty(localName = "udf_jar_url")
 
     private String udfJarUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dirty_data_strategy")
 
-    @JacksonXmlProperty(localName = "dirty_data_strategy")
-
     private String dirtyDataStrategy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "entrypoint")
-
-    @JacksonXmlProperty(localName = "entrypoint")
 
     private String entrypoint;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dependency_jars")
 
-    @JacksonXmlProperty(localName = "dependency_jars")
-
     private List<String> dependencyJars = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dependency_files")
-
-    @JacksonXmlProperty(localName = "dependency_files")
 
     private List<String> dependencyFiles = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "executor_number")
 
-    @JacksonXmlProperty(localName = "executor_number")
-
     private Integer executorNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "executor_cu_number")
 
-    @JacksonXmlProperty(localName = "executor_cu_number")
-
     private Integer executorCuNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resume_checkpoint")
-
-    @JacksonXmlProperty(localName = "resume_checkpoint")
 
     private Boolean resumeCheckpoint;
 

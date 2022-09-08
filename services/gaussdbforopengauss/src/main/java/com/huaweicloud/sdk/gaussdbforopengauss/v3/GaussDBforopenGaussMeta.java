@@ -1270,6 +1270,32 @@ public class GaussDBforopenGaussMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowJobDetailRequest, ShowJobDetailResponse> showJobDetail = genForshowJobDetail();
+
+    private static HttpRequestDef<ShowJobDetailRequest, ShowJobDetailResponse> genForshowJobDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowJobDetailRequest, ShowJobDetailResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowJobDetailRequest.class, ShowJobDetailResponse.class)
+                .withName("ShowJobDetail")
+                .withUri("/v3/{project_id}/jobs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowJobDetailRequest::getId, (req, v) -> {
+                req.setId(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<SwitchShardRequest, SwitchShardResponse> switchShard = genForswitchShard();
 
     private static HttpRequestDef<SwitchShardRequest, SwitchShardResponse> genForswitchShard() {

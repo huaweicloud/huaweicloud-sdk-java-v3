@@ -13,8 +13,6 @@ import com.huaweicloud.sdk.mrs.v2.model.ChargeInfo;
 import com.huaweicloud.sdk.mrs.v2.model.Volume;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -28,7 +26,6 @@ public class NodeGroupV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="group_name")
     
-    @JacksonXmlProperty(localName = "group_name")
     
     private String groupName;
 
@@ -36,7 +33,6 @@ public class NodeGroupV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_num")
     
-    @JacksonXmlProperty(localName = "node_num")
     
     private Integer nodeNum;
 
@@ -44,7 +40,6 @@ public class NodeGroupV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_size")
     
-    @JacksonXmlProperty(localName = "node_size")
     
     private String nodeSize;
 
@@ -52,7 +47,6 @@ public class NodeGroupV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="root_volume")
     
-    @JacksonXmlProperty(localName = "root_volume")
     
     private Volume rootVolume;
 
@@ -60,7 +54,6 @@ public class NodeGroupV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="data_volume")
     
-    @JacksonXmlProperty(localName = "data_volume")
     
     private Volume dataVolume;
 
@@ -68,7 +61,6 @@ public class NodeGroupV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="data_volume_count")
     
-    @JacksonXmlProperty(localName = "data_volume_count")
     
     private Integer dataVolumeCount;
 
@@ -76,7 +68,6 @@ public class NodeGroupV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="charge_info")
     
-    @JacksonXmlProperty(localName = "charge_info")
     
     private ChargeInfo chargeInfo;
 
@@ -84,7 +75,6 @@ public class NodeGroupV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auto_scaling_policy")
     
-    @JacksonXmlProperty(localName = "auto_scaling_policy")
     
     private AutoScalingPolicy autoScalingPolicy;
 
@@ -92,7 +82,6 @@ public class NodeGroupV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="assigned_roles")
     
-    @JacksonXmlProperty(localName = "assigned_roles")
     
     private List<String> assignedRoles = null;
     

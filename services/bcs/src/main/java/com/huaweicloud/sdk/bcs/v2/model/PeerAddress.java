@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.bcs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,14 +13,10 @@ public class PeerAddress {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_port")
 
-    @JacksonXmlProperty(localName = "domain_port")
-
     private String domainPort;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip_port")
-
-    @JacksonXmlProperty(localName = "ip_port")
 
     private String ipPort;
 

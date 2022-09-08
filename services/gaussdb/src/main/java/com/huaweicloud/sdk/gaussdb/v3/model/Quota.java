@@ -8,8 +8,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -23,7 +21,6 @@ public class Quota  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_id")
     
-    @JacksonXmlProperty(localName = "enterprise_project_id")
     
     private String enterpriseProjectId;
 
@@ -31,7 +28,6 @@ public class Quota  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_name")
     
-    @JacksonXmlProperty(localName = "enterprise_project_name")
     
     private String enterpriseProjectName;
 
@@ -39,7 +35,6 @@ public class Quota  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_quota")
     
-    @JacksonXmlProperty(localName = "instance_quota")
     
     private Integer instanceQuota;
 
@@ -47,7 +42,6 @@ public class Quota  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vcpus_quota")
     
-    @JacksonXmlProperty(localName = "vcpus_quota")
     
     private Integer vcpusQuota;
 
@@ -55,7 +49,6 @@ public class Quota  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ram_quota")
     
-    @JacksonXmlProperty(localName = "ram_quota")
     
     private Integer ramQuota;
 
@@ -63,7 +56,6 @@ public class Quota  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="availability_instance_quota")
     
-    @JacksonXmlProperty(localName = "availability_instance_quota")
     
     private Integer availabilityInstanceQuota;
 
@@ -71,7 +63,6 @@ public class Quota  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="availability_vcpus_quota")
     
-    @JacksonXmlProperty(localName = "availability_vcpus_quota")
     
     private Integer availabilityVcpusQuota;
 
@@ -79,7 +70,6 @@ public class Quota  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="availability_ram_quota")
     
-    @JacksonXmlProperty(localName = "availability_ram_quota")
     
     private Integer availabilityRamQuota;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.drs.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,28 +16,20 @@ public class ContentCompareDiff {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_select_sql")
 
-    @JacksonXmlProperty(localName = "target_select_sql")
-
     private String targetSelectSql;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_select_sql")
-
-    @JacksonXmlProperty(localName = "source_select_sql")
 
     private String sourceSelectSql;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_key_value")
 
-    @JacksonXmlProperty(localName = "source_key_value")
-
     private List<String> sourceKeyValue = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_key_value")
-
-    @JacksonXmlProperty(localName = "target_key_value")
 
     private List<String> targetKeyValue = null;
 

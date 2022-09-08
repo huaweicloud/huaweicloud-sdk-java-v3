@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -18,100 +17,77 @@ public class CreateBatchJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "state")
-
-    @JacksonXmlProperty(localName = "state")
 
     private String state;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "appId")
 
-    @JacksonXmlProperty(localName = "appId")
-
     private List<String> appId = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log")
-
-    @JacksonXmlProperty(localName = "log")
 
     private List<String> log = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sc_type")
 
-    @JacksonXmlProperty(localName = "sc_type")
-
     private String scType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cluster_name")
-
-    @JacksonXmlProperty(localName = "cluster_name")
 
     private String clusterName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
-    @JacksonXmlProperty(localName = "create_time")
-
     private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
-
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "owner")
 
-    @JacksonXmlProperty(localName = "owner")
-
     private String owner;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "proxyUser")
-
-    @JacksonXmlProperty(localName = "proxyUser")
 
     private String proxyUser;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "kind")
 
-    @JacksonXmlProperty(localName = "kind")
-
     private String kind;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "queue")
-
-    @JacksonXmlProperty(localName = "queue")
 
     private String queue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image")
 
-    @JacksonXmlProperty(localName = "image")
-
     private String image;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
 
-    @JacksonXmlProperty(localName = "update_time")
-
     private Long updateTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "duration")
+
+    private Long duration;
 
     public CreateBatchJobResponse withId(String id) {
         this.id = id;
@@ -383,6 +359,23 @@ public class CreateBatchJobResponse extends SdkResponse {
         this.updateTime = updateTime;
     }
 
+    public CreateBatchJobResponse withDuration(Long duration) {
+        this.duration = duration;
+        return this;
+    }
+
+    /**
+     * 作业运行时长，单位毫秒。
+     * @return duration
+     */
+    public Long getDuration() {
+        return duration;
+    }
+
+    public void setDuration(Long duration) {
+        this.duration = duration;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -405,7 +398,8 @@ public class CreateBatchJobResponse extends SdkResponse {
             && Objects.equals(this.kind, createBatchJobResponse.kind)
             && Objects.equals(this.queue, createBatchJobResponse.queue)
             && Objects.equals(this.image, createBatchJobResponse.image)
-            && Objects.equals(this.updateTime, createBatchJobResponse.updateTime);
+            && Objects.equals(this.updateTime, createBatchJobResponse.updateTime)
+            && Objects.equals(this.duration, createBatchJobResponse.duration);
     }
 
     @Override
@@ -423,7 +417,8 @@ public class CreateBatchJobResponse extends SdkResponse {
             kind,
             queue,
             image,
-            updateTime);
+            updateTime,
+            duration);
     }
 
     @Override
@@ -444,6 +439,7 @@ public class CreateBatchJobResponse extends SdkResponse {
         sb.append("    queue: ").append(toIndentedString(queue)).append("\n");
         sb.append("    image: ").append(toIndentedString(image)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
+        sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
         sb.append("}");
         return sb.toString();
     }

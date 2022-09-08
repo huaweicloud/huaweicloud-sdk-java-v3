@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.time.LocalDate;
 import java.util.Collections;
@@ -20,14 +19,10 @@ public class BriefTaskRespBean {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_id")
 
-    @JacksonXmlProperty(localName = "task_id")
-
     private String taskId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_name")
-
-    @JacksonXmlProperty(localName = "task_name")
 
     private String taskName;
 
@@ -111,8 +106,6 @@ public class BriefTaskRespBean {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_type")
 
-    @JacksonXmlProperty(localName = "task_type")
-
     private TaskTypeEnum taskType;
 
     /**
@@ -195,84 +188,60 @@ public class BriefTaskRespBean {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    @JacksonXmlProperty(localName = "status")
-
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_date")
-
-    @JacksonXmlProperty(localName = "created_date")
 
     private LocalDate createdDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
 
-    @JacksonXmlProperty(localName = "version")
-
     private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last_modified_time")
-
-    @JacksonXmlProperty(localName = "last_modified_time")
 
     private Long lastModifiedTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "execute_status")
 
-    @JacksonXmlProperty(localName = "execute_status")
-
     private String executeStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_app_id")
-
-    @JacksonXmlProperty(localName = "source_app_id")
 
     private String sourceAppId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_app_id")
 
-    @JacksonXmlProperty(localName = "target_app_id")
-
     private String targetAppId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_instance_id")
-
-    @JacksonXmlProperty(localName = "source_instance_id")
 
     private String sourceInstanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_instance_id")
 
-    @JacksonXmlProperty(localName = "target_instance_id")
-
     private String targetInstanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ext_type")
-
-    @JacksonXmlProperty(localName = "ext_type")
 
     private String extType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
-    @JacksonXmlProperty(localName = "enterprise_project_id")
-
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_tag")
-
-    @JacksonXmlProperty(localName = "task_tag")
 
     private String taskTag;
 

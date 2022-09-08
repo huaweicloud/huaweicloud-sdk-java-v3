@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.gsl.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,14 +13,10 @@ public class FlowUsageVo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "billing_cycle")
 
-    @JacksonXmlProperty(localName = "billing_cycle")
-
     private String billingCycle;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flow_used")
-
-    @JacksonXmlProperty(localName = "flow_used")
 
     private Double flowUsed;
 

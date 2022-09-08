@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.moderation.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,28 +16,20 @@ public class TextDetectionResultDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "suggestion")
 
-    @JacksonXmlProperty(localName = "suggestion")
-
     private String suggestion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "label")
-
-    @JacksonXmlProperty(localName = "label")
 
     private String label;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confidence")
 
-    @JacksonXmlProperty(localName = "confidence")
-
     private Float confidence;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "segments")
-
-    @JacksonXmlProperty(localName = "segments")
 
     private List<SegmentResult> segments = null;
 

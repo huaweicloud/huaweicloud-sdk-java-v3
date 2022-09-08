@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.scm.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -15,35 +14,25 @@ public class ExportCertificateResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "certificate")
 
-    @JacksonXmlProperty(localName = "certificate")
-
     private String certificate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "certificate_chain")
-
-    @JacksonXmlProperty(localName = "certificate_chain")
 
     private String certificateChain;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "private_key")
 
-    @JacksonXmlProperty(localName = "private_key")
-
     private String privateKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enc_certificate")
 
-    @JacksonXmlProperty(localName = "enc_certificate")
-
     private String encCertificate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enc_private_key")
-
-    @JacksonXmlProperty(localName = "enc_private_key")
 
     private String encPrivateKey;
 

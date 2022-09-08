@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.iotda.v5.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,28 +14,20 @@ public class RuleCondition {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
-    @JacksonXmlProperty(localName = "type")
-
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "device_property_condition")
-
-    @JacksonXmlProperty(localName = "device_property_condition")
 
     private DeviceDataCondition devicePropertyCondition;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "simple_timer_condition")
 
-    @JacksonXmlProperty(localName = "simple_timer_condition")
-
     private SimpleTimerType simpleTimerCondition;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "daily_timer_condition")
-
-    @JacksonXmlProperty(localName = "daily_timer_condition")
 
     private DailyTimerType dailyTimerCondition;
 

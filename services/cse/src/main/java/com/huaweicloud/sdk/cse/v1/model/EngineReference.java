@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cse.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -19,70 +18,50 @@ public class EngineReference {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc")
 
-    @JacksonXmlProperty(localName = "vpc")
-
     private String vpc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "az_list")
-
-    @JacksonXmlProperty(localName = "az_list")
 
     private List<String> azList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "network_id")
 
-    @JacksonXmlProperty(localName = "network_id")
-
     private String networkId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subnet_cidr")
-
-    @JacksonXmlProperty(localName = "subnet_cidr")
 
     private String subnetCidr;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subnet_cidr_v6")
 
-    @JacksonXmlProperty(localName = "subnet_cidr_v6")
-
     private String subnetCidrV6;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subnet_gateway")
-
-    @JacksonXmlProperty(localName = "subnet_gateway")
 
     private String subnetGateway;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "public_ip_id")
 
-    @JacksonXmlProperty(localName = "public_ip_id")
-
     private String publicIpId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_limit")
-
-    @JacksonXmlProperty(localName = "service_limit")
 
     private Integer serviceLimit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_limit")
 
-    @JacksonXmlProperty(localName = "instance_limit")
-
     private Integer instanceLimit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "inputs")
-
-    @JacksonXmlProperty(localName = "inputs")
 
     private Map<String, String> inputs = null;
 

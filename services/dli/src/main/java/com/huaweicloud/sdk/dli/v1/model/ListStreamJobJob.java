@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,154 +14,110 @@ public class ListStreamJobJob {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_id")
 
-    @JacksonXmlProperty(localName = "job_id")
-
     private Long jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
-
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "desc")
 
-    @JacksonXmlProperty(localName = "desc")
-
     private String desc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "username")
+    @JsonProperty(value = "user_name")
 
-    @JacksonXmlProperty(localName = "username")
-
-    private String username;
+    private String userName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_type")
-
-    @JacksonXmlProperty(localName = "job_type")
 
     private String jobType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    @JacksonXmlProperty(localName = "status")
-
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status_desc")
-
-    @JacksonXmlProperty(localName = "status_desc")
 
     private String statusDesc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
-    @JacksonXmlProperty(localName = "create_time")
-
     private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
-
-    @JacksonXmlProperty(localName = "start_time")
 
     private Long startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "duration")
 
-    @JacksonXmlProperty(localName = "duration")
-
     private Long duration;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "root_id")
-
-    @JacksonXmlProperty(localName = "root_id")
 
     private Long rootId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_id")
 
-    @JacksonXmlProperty(localName = "user_id")
-
     private String userId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
-
-    @JacksonXmlProperty(localName = "project_id")
 
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sql_body")
 
-    @JacksonXmlProperty(localName = "sql_body")
-
     private String sqlBody;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "run_mode")
-
-    @JacksonXmlProperty(localName = "run_mode")
 
     private String runMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_config")
 
-    @JacksonXmlProperty(localName = "job_config")
-
     private ShowStreamJobListJobConfig jobConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "main_class")
-
-    @JacksonXmlProperty(localName = "main_class")
 
     private String mainClass;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "entrypoint_args")
 
-    @JacksonXmlProperty(localName = "entrypoint_args")
-
     private String entrypointArgs;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "execution_graph")
-
-    @JacksonXmlProperty(localName = "execution_graph")
 
     private String executionGraph;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
 
-    @JacksonXmlProperty(localName = "update_time")
-
     private Long updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "graph_editor_enabled")
 
-    @JacksonXmlProperty(localName = "graph_editor_enabled")
-
     private Boolean graphEditorEnabled;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "has_savepoint")
-
-    @JacksonXmlProperty(localName = "has_savepoint")
 
     private Boolean hasSavepoint;
 
@@ -217,21 +172,21 @@ public class ListStreamJobJob {
         this.desc = desc;
     }
 
-    public ListStreamJobJob withUsername(String username) {
-        this.username = username;
+    public ListStreamJobJob withUserName(String userName) {
+        this.userName = userName;
         return this;
     }
 
     /**
      * 用户名，当“show_detail”为“false”时独有。
-     * @return username
+     * @return userName
      */
-    public String getUsername() {
-        return username;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public ListStreamJobJob withJobType(String jobType) {
@@ -560,7 +515,7 @@ public class ListStreamJobJob {
         ListStreamJobJob listStreamJobJob = (ListStreamJobJob) o;
         return Objects.equals(this.jobId, listStreamJobJob.jobId) && Objects.equals(this.name, listStreamJobJob.name)
             && Objects.equals(this.desc, listStreamJobJob.desc)
-            && Objects.equals(this.username, listStreamJobJob.username)
+            && Objects.equals(this.userName, listStreamJobJob.userName)
             && Objects.equals(this.jobType, listStreamJobJob.jobType)
             && Objects.equals(this.status, listStreamJobJob.status)
             && Objects.equals(this.statusDesc, listStreamJobJob.statusDesc)
@@ -586,7 +541,7 @@ public class ListStreamJobJob {
         return Objects.hash(jobId,
             name,
             desc,
-            username,
+            userName,
             jobType,
             status,
             statusDesc,
@@ -614,7 +569,7 @@ public class ListStreamJobJob {
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    desc: ").append(toIndentedString(desc)).append("\n");
-        sb.append("    username: ").append(toIndentedString(username)).append("\n");
+        sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
         sb.append("    jobType: ").append(toIndentedString(jobType)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    statusDesc: ").append(toIndentedString(statusDesc)).append("\n");

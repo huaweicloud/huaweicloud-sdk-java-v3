@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cce.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,28 +16,20 @@ public class MigrateNodesSpec {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os")
 
-    @JacksonXmlProperty(localName = "os")
-
     private String os;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extendParam")
-
-    @JacksonXmlProperty(localName = "extendParam")
 
     private MigrateNodeExtendParam extendParam;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "login")
 
-    @JacksonXmlProperty(localName = "login")
-
     private Login login;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nodes")
-
-    @JacksonXmlProperty(localName = "nodes")
 
     private List<NodeItem> nodes = null;
 

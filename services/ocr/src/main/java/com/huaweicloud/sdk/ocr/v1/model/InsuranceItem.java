@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.ocr.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,42 +14,30 @@ public class InsuranceItem {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "insurance_name")
 
-    @JacksonXmlProperty(localName = "insurance_name")
-
     private InsurancePolicyDetail insuranceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "insurance_period")
-
-    @JacksonXmlProperty(localName = "insurance_period")
 
     private InsurancePolicyDetail insurancePeriod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "insurance_amount")
 
-    @JacksonXmlProperty(localName = "insurance_amount")
-
     private InsurancePolicyDetail insuranceAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "payment_frequency")
-
-    @JacksonXmlProperty(localName = "payment_frequency")
 
     private InsurancePolicyDetail paymentFrequency;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "payment_period")
 
-    @JacksonXmlProperty(localName = "payment_period")
-
     private InsurancePolicyDetail paymentPeriod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "payment_amount")
-
-    @JacksonXmlProperty(localName = "payment_amount")
 
     private InsurancePolicyDetail paymentAmount;
 

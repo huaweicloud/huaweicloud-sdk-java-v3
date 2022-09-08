@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -198,49 +197,35 @@ public class UpdateTaskSpeedReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subtask_name")
 
-    @JacksonXmlProperty(localName = "subtask_name")
-
     private SubtaskNameEnum subtaskName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "progress")
-
-    @JacksonXmlProperty(localName = "progress")
 
     private Integer progress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "replicatesize")
 
-    @JacksonXmlProperty(localName = "replicatesize")
-
     private Long replicatesize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "totalsize")
-
-    @JacksonXmlProperty(localName = "totalsize")
 
     private Long totalsize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "process_trace")
 
-    @JacksonXmlProperty(localName = "process_trace")
-
     private String processTrace;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "migrate_speed")
 
-    @JacksonXmlProperty(localName = "migrate_speed")
-
     private Double migrateSpeed;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "compress_rate")
-
-    @JacksonXmlProperty(localName = "compress_rate")
 
     private Double compressRate;
 

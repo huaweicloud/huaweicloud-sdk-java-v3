@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.roma.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -15,35 +14,25 @@ public class ListLiveDataQuotaV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "datasource")
 
-    @JacksonXmlProperty(localName = "datasource")
-
     private String datasource;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "api")
-
-    @JacksonXmlProperty(localName = "api")
 
     private String api;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scripts")
 
-    @JacksonXmlProperty(localName = "scripts")
-
     private String scripts;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "datasource_used")
 
-    @JacksonXmlProperty(localName = "datasource_used")
-
     private String datasourceUsed;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "api_used")
-
-    @JacksonXmlProperty(localName = "api_used")
 
     private String apiUsed;
 

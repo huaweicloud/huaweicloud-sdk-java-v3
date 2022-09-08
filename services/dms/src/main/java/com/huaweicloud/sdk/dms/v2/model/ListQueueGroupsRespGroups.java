@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dms.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,49 +13,35 @@ public class ListQueueGroupsRespGroups {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
-
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "produced_messages")
 
-    @JacksonXmlProperty(localName = "produced_messages")
-
     private Integer producedMessages;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "consumed_messages")
-
-    @JacksonXmlProperty(localName = "consumed_messages")
 
     private Integer consumedMessages;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "available_messages")
 
-    @JacksonXmlProperty(localName = "available_messages")
-
     private Integer availableMessages;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "produced_deadletters")
 
-    @JacksonXmlProperty(localName = "produced_deadletters")
-
     private Integer producedDeadletters;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "available_deadletters")
-
-    @JacksonXmlProperty(localName = "available_deadletters")
 
     private Integer availableDeadletters;
 

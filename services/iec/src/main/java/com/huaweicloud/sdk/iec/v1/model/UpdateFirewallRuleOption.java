@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.iec.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,14 +14,10 @@ public class UpdateFirewallRuleOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "egress_firewall_policy")
 
-    @JacksonXmlProperty(localName = "egress_firewall_policy")
-
     private FirewallPolicy egressFirewallPolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ingress_firewall_policy")
-
-    @JacksonXmlProperty(localName = "ingress_firewall_policy")
 
     private FirewallPolicy ingressFirewallPolicy;
 

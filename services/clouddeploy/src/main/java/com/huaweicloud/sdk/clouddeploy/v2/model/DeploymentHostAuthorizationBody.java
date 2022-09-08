@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -19,21 +18,15 @@ public class DeploymentHostAuthorizationBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "username")
 
-    @JacksonXmlProperty(localName = "username")
-
     private String username;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "password")
 
-    @JacksonXmlProperty(localName = "password")
-
     private String password;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "private_key")
-
-    @JacksonXmlProperty(localName = "private_key")
 
     private String privateKey;
 
@@ -116,8 +109,6 @@ public class DeploymentHostAuthorizationBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trusted_type")
-
-    @JacksonXmlProperty(localName = "trusted_type")
 
     private TrustedTypeEnum trustedType;
 

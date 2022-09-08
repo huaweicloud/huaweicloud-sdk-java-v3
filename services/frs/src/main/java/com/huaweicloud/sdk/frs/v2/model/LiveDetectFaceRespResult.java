@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.frs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,21 +13,15 @@ public class LiveDetectFaceRespResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alive")
 
-    @JacksonXmlProperty(localName = "alive")
-
     private Boolean alive;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confidence")
 
-    @JacksonXmlProperty(localName = "confidence")
-
     private Double confidence;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "picture")
-
-    @JacksonXmlProperty(localName = "picture")
 
     private String picture;
 

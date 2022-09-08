@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.roma.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,14 +13,10 @@ public class RequestParameter {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parameter_name")
 
-    @JacksonXmlProperty(localName = "parameter_name")
-
     private String parameterName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parameter_value")
-
-    @JacksonXmlProperty(localName = "parameter_value")
 
     private String parameterValue;
 

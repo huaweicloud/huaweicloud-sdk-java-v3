@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.ocr.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,98 +13,70 @@ public class ExitEntryPermitConfidence {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
-    @JacksonXmlProperty(localName = "name")
-
     private Float name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name_en")
-
-    @JacksonXmlProperty(localName = "name_en")
 
     private Float nameEn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "birth_date")
 
-    @JacksonXmlProperty(localName = "birth_date")
-
     private Float birthDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sex")
-
-    @JacksonXmlProperty(localName = "sex")
 
     private Float sex;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "number")
 
-    @JacksonXmlProperty(localName = "number")
-
     private Float number;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "valid_period")
-
-    @JacksonXmlProperty(localName = "valid_period")
 
     private Float validPeriod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "issuing_authority")
 
-    @JacksonXmlProperty(localName = "issuing_authority")
-
     private Float issuingAuthority;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "issue_place")
-
-    @JacksonXmlProperty(localName = "issue_place")
 
     private Float issuePlace;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "machine_code")
 
-    @JacksonXmlProperty(localName = "machine_code")
-
     private Float machineCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
-
-    @JacksonXmlProperty(localName = "type")
 
     private Float type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "side")
 
-    @JacksonXmlProperty(localName = "side")
-
     private Float side;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "endorsement_info_hk")
-
-    @JacksonXmlProperty(localName = "endorsement_info_hk")
 
     private Object endorsementInfoHk;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "endorsement_info_mo")
 
-    @JacksonXmlProperty(localName = "endorsement_info_mo")
-
     private Object endorsementInfoMo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "endorsement_info_tw")
-
-    @JacksonXmlProperty(localName = "endorsement_info_tw")
 
     private Object endorsementInfoTw;
 

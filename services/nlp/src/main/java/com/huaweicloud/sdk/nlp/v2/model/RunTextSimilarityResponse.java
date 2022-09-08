@@ -10,8 +10,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -25,7 +23,6 @@ public class RunTextSimilarityResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="similarity")
     
-    @JacksonXmlProperty(localName = "similarity")
     
     private Float similarity;
 
@@ -33,7 +30,6 @@ public class RunTextSimilarityResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="error_code")
     
-    @JacksonXmlProperty(localName = "error_code")
     
     private String errorCode;
 
@@ -41,7 +37,6 @@ public class RunTextSimilarityResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="error_msg")
     
-    @JacksonXmlProperty(localName = "error_msg")
     
     private String errorMsg;
 

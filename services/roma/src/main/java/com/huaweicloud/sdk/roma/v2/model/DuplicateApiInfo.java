@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -19,35 +18,25 @@ public class DuplicateApiInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "api_id")
 
-    @JacksonXmlProperty(localName = "api_id")
-
     private String apiId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "api_name")
-
-    @JacksonXmlProperty(localName = "api_name")
 
     private String apiName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_name")
 
-    @JacksonXmlProperty(localName = "group_name")
-
     private String groupName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_id")
 
-    @JacksonXmlProperty(localName = "group_id")
-
     private String groupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remark")
-
-    @JacksonXmlProperty(localName = "remark")
 
     private String remark;
 
@@ -130,8 +119,6 @@ public class DuplicateApiInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "api_type")
-
-    @JacksonXmlProperty(localName = "api_type")
 
     private ApiTypeEnum apiType;
 

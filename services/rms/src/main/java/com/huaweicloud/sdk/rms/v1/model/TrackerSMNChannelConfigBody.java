@@ -2,33 +2,26 @@ package com.huaweicloud.sdk.rms.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
 /**
- * SMN通道设置对象
+ * SMN通道设置对象。跨帐号授予SMN主题发送通知的权限请参考《用户指南- 资源记录器- 开启/配置/修改资源记录器》中的“跨帐号授权”内容。
  */
 public class TrackerSMNChannelConfigBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region_id")
 
-    @JacksonXmlProperty(localName = "region_id")
-
     private String regionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
 
-    @JacksonXmlProperty(localName = "project_id")
-
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "topic_urn")
-
-    @JacksonXmlProperty(localName = "topic_urn")
 
     private String topicUrn;
 

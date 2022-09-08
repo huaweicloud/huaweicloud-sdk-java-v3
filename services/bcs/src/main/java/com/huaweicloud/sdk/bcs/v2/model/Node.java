@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.bcs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,14 +16,10 @@ public class Node {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip_port")
 
-    @JacksonXmlProperty(localName = "ip_port")
-
     private String ipPort;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "channels")
-
-    @JacksonXmlProperty(localName = "channels")
 
     private List<String> channels = null;
 

@@ -14,8 +14,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -29,7 +27,6 @@ public class ShowJobExeListNewRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cluster_id")
     
-    @JacksonXmlProperty(localName = "cluster_id")
     
     private String clusterId;
 
@@ -37,7 +34,6 @@ public class ShowJobExeListNewRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_name")
     
-    @JacksonXmlProperty(localName = "job_name")
     
     private String jobName;
 
@@ -45,7 +41,6 @@ public class ShowJobExeListNewRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_id")
     
-    @JacksonXmlProperty(localName = "job_id")
     
     private String jobId;
 
@@ -53,7 +48,6 @@ public class ShowJobExeListNewRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="user")
     
-    @JacksonXmlProperty(localName = "user")
     
     private String user;
 
@@ -61,7 +55,6 @@ public class ShowJobExeListNewRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_type")
     
-    @JacksonXmlProperty(localName = "job_type")
     
     private String jobType;
     /**
@@ -183,7 +176,6 @@ public class ShowJobExeListNewRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_state")
     
-    @JacksonXmlProperty(localName = "job_state")
     
     private JobStateEnum jobState;
     /**
@@ -281,7 +273,6 @@ public class ShowJobExeListNewRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_result")
     
-    @JacksonXmlProperty(localName = "job_result")
     
     private JobResultEnum jobResult;
 
@@ -289,7 +280,6 @@ public class ShowJobExeListNewRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="queue")
     
-    @JacksonXmlProperty(localName = "queue")
     
     private String queue;
 
@@ -297,7 +287,6 @@ public class ShowJobExeListNewRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    @JacksonXmlProperty(localName = "limit")
     
     private String limit;
 
@@ -305,7 +294,6 @@ public class ShowJobExeListNewRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    @JacksonXmlProperty(localName = "offset")
     
     private String offset;
 
@@ -313,7 +301,6 @@ public class ShowJobExeListNewRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sort_by")
     
-    @JacksonXmlProperty(localName = "sort_by")
     
     private String sortBy;
 
@@ -321,7 +308,6 @@ public class ShowJobExeListNewRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="submitted_time_begin")
     
-    @JacksonXmlProperty(localName = "submitted_time_begin")
     
     private Long submittedTimeBegin;
 
@@ -329,7 +315,6 @@ public class ShowJobExeListNewRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="submitted_time_end")
     
-    @JacksonXmlProperty(localName = "submitted_time_end")
     
     private Long submittedTimeEnd;
 

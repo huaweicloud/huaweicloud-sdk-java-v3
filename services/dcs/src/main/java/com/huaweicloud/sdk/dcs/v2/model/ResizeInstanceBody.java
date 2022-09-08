@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,28 +21,20 @@ public class ResizeInstanceBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "spec_code")
 
-    @JacksonXmlProperty(localName = "spec_code")
-
     private String specCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "new_capacity")
-
-    @JacksonXmlProperty(localName = "new_capacity")
 
     private Integer newCapacity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bss_param")
 
-    @JacksonXmlProperty(localName = "bss_param")
-
     private BssParamEntity bssParam;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "reserved_ip")
-
-    @JacksonXmlProperty(localName = "reserved_ip")
 
     private List<String> reservedIp = null;
 
@@ -127,28 +118,20 @@ public class ResizeInstanceBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "change_type")
 
-    @JacksonXmlProperty(localName = "change_type")
-
     private ChangeTypeEnum changeType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "available_zones")
-
-    @JacksonXmlProperty(localName = "available_zones")
 
     private List<String> availableZones = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "node_list")
 
-    @JacksonXmlProperty(localName = "node_list")
-
     private List<String> nodeList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "execute_immediately")
-
-    @JacksonXmlProperty(localName = "execute_immediately")
 
     private Boolean executeImmediately;
 

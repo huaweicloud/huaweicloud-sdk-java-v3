@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.ecs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,21 +16,15 @@ public class BatchResetServersPasswordRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "new_password")
 
-    @JacksonXmlProperty(localName = "new_password")
-
     private String newPassword;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dry_run")
 
-    @JacksonXmlProperty(localName = "dry_run")
-
     private Boolean dryRun;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "servers")
-
-    @JacksonXmlProperty(localName = "servers")
 
     private List<ServerId> servers = null;
 

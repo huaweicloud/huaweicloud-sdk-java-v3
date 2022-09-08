@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -105,42 +104,30 @@ public class PictureReviewRet {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "suggestion")
 
-    @JacksonXmlProperty(localName = "suggestion")
-
     private SuggestionEnum suggestion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
-
-    @JacksonXmlProperty(localName = "offset")
 
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "url")
 
-    @JacksonXmlProperty(localName = "url")
-
     private String url;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "politics")
-
-    @JacksonXmlProperty(localName = "politics")
 
     private List<ReviewDetail> politics = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "terrorism")
 
-    @JacksonXmlProperty(localName = "terrorism")
-
     private List<ReviewDetail> terrorism = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "porn")
-
-    @JacksonXmlProperty(localName = "porn")
 
     private List<ReviewDetail> porn = null;
 

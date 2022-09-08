@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -18,28 +17,20 @@ public class ListJobsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_success")
 
-    @JacksonXmlProperty(localName = "is_success")
-
     private Boolean isSuccess;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "message")
-
-    @JacksonXmlProperty(localName = "message")
 
     private String message;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_count")
 
-    @JacksonXmlProperty(localName = "job_count")
-
     private Integer jobCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "jobs")
-
-    @JacksonXmlProperty(localName = "jobs")
 
     private List<ListJobsJobs> jobs = null;
 
@@ -116,7 +107,7 @@ public class ListJobsResponse extends SdkResponse {
     }
 
     /**
-     * 作业信息。具体参数请参见表jobs
+     * 作业信息。
      * @return jobs
      */
     public List<ListJobsJobs> getJobs() {

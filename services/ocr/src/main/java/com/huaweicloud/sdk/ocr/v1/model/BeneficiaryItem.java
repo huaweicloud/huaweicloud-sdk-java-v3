@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.ocr.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,28 +14,20 @@ public class BeneficiaryItem {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "beneficiary_name")
 
-    @JacksonXmlProperty(localName = "beneficiary_name")
-
     private InsurancePolicyDetail beneficiaryName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "beneficiary_type")
-
-    @JacksonXmlProperty(localName = "beneficiary_type")
 
     private InsurancePolicyDetail beneficiaryType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "beneficiary_order")
 
-    @JacksonXmlProperty(localName = "beneficiary_order")
-
     private InsurancePolicyDetail beneficiaryOrder;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "beneficiary_share")
-
-    @JacksonXmlProperty(localName = "beneficiary_share")
 
     private InsurancePolicyDetail beneficiaryShare;
 

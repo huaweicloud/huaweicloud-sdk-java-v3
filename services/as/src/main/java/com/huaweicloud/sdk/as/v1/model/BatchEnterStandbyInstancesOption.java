@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,8 +20,6 @@ public class BatchEnterStandbyInstancesOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instances_id")
-
-    @JacksonXmlProperty(localName = "instances_id")
 
     private List<String> instancesId = null;
 
@@ -106,8 +103,6 @@ public class BatchEnterStandbyInstancesOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_delete")
 
-    @JacksonXmlProperty(localName = "instance_delete")
-
     private InstanceDeleteEnum instanceDelete;
 
     /**
@@ -183,8 +178,6 @@ public class BatchEnterStandbyInstancesOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "action")
-
-    @JacksonXmlProperty(localName = "action")
 
     private ActionEnum action;
 
@@ -267,8 +260,6 @@ public class BatchEnterStandbyInstancesOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_append")
-
-    @JacksonXmlProperty(localName = "instance_append")
 
     private InstanceAppendEnum instanceAppend;
 

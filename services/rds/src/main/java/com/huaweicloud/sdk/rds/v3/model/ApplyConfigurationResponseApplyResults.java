@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.rds.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,28 +13,20 @@ public class ApplyConfigurationResponseApplyResults {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_id")
 
-    @JacksonXmlProperty(localName = "instance_id")
-
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_name")
-
-    @JacksonXmlProperty(localName = "instance_name")
 
     private String instanceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "restart_required")
 
-    @JacksonXmlProperty(localName = "restart_required")
-
     private Boolean restartRequired;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "success")
-
-    @JacksonXmlProperty(localName = "success")
 
     private Boolean success;
 

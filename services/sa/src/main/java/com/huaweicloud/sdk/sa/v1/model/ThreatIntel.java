@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.sa.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,77 +14,55 @@ public class ThreatIntel {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "indicator_type")
-
-    @JacksonXmlProperty(localName = "indicator_type")
 
     private String indicatorType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "labels")
 
-    @JacksonXmlProperty(localName = "labels")
-
     private String labels;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confidence")
-
-    @JacksonXmlProperty(localName = "confidence")
 
     private Integer confidence;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "information_source")
 
-    @JacksonXmlProperty(localName = "information_source")
-
     private String informationSource;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "severity")
-
-    @JacksonXmlProperty(localName = "severity")
 
     private Integer severity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
-    @JacksonXmlProperty(localName = "description")
-
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "modified")
-
-    @JacksonXmlProperty(localName = "modified")
 
     private String modified;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "valid_from")
 
-    @JacksonXmlProperty(localName = "valid_from")
-
     private String validFrom;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "valid_until")
 
-    @JacksonXmlProperty(localName = "valid_until")
-
     private String validUntil;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "properties")
-
-    @JacksonXmlProperty(localName = "properties")
 
     private ThreatIntelProperties properties;
 

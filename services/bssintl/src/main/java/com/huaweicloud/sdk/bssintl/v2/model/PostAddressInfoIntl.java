@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.bssintl.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,28 +13,20 @@ public class PostAddressInfoIntl {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "address")
 
-    @JacksonXmlProperty(localName = "address")
-
     private String address;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "recipients")
-
-    @JacksonXmlProperty(localName = "recipients")
 
     private String recipients;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "zipCode")
 
-    @JacksonXmlProperty(localName = "zipCode")
-
     private String zipCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mobilePhone")
-
-    @JacksonXmlProperty(localName = "mobilePhone")
 
     private String mobilePhone;
 

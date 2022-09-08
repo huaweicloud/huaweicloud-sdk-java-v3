@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.bms.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,14 +14,10 @@ public class ReinstallBaremetalServerOsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "server_id")
 
-    @JacksonXmlProperty(localName = "server_id")
-
     private String serverId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
-
-    @JacksonXmlProperty(localName = "body")
 
     private OsReinstallBody body;
 

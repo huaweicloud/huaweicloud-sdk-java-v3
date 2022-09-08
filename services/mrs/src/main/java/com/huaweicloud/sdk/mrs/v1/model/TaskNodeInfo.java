@@ -12,8 +12,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -27,7 +25,6 @@ public class TaskNodeInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_size")
     
-    @JacksonXmlProperty(localName = "node_size")
     
     private String nodeSize;
     /**
@@ -125,7 +122,6 @@ public class TaskNodeInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="data_volume_type")
     
-    @JacksonXmlProperty(localName = "data_volume_type")
     
     private DataVolumeTypeEnum dataVolumeType;
 
@@ -133,7 +129,6 @@ public class TaskNodeInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="data_volume_count")
     
-    @JacksonXmlProperty(localName = "data_volume_count")
     
     private Integer dataVolumeCount;
 
@@ -141,7 +136,6 @@ public class TaskNodeInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="data_volume_size")
     
-    @JacksonXmlProperty(localName = "data_volume_size")
     
     private Integer dataVolumeSize;
 

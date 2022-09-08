@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.vss.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,28 +13,20 @@ public class VulnsLevel {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "high")
 
-    @JacksonXmlProperty(localName = "high")
-
     private Integer high;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "middle")
-
-    @JacksonXmlProperty(localName = "middle")
 
     private Integer middle;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "low")
 
-    @JacksonXmlProperty(localName = "low")
-
     private Integer low;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hint")
-
-    @JacksonXmlProperty(localName = "hint")
 
     private Integer hint;
 

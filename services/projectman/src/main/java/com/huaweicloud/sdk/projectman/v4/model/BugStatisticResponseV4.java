@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.projectman.v4.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,49 +13,35 @@ public class BugStatisticResponseV4 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "critical_num")
 
-    @JacksonXmlProperty(localName = "critical_num")
-
     private Integer criticalNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "defect_index")
-
-    @JacksonXmlProperty(localName = "defect_index")
 
     private Double defectIndex;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "module")
 
-    @JacksonXmlProperty(localName = "module")
-
     private String module;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "normal_num")
-
-    @JacksonXmlProperty(localName = "normal_num")
 
     private Integer normalNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "serious_num")
 
-    @JacksonXmlProperty(localName = "serious_num")
-
     private Integer seriousNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tip_num")
 
-    @JacksonXmlProperty(localName = "tip_num")
-
     private Integer tipNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total")
-
-    @JacksonXmlProperty(localName = "total")
 
     private Integer total;
 

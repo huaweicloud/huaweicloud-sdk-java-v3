@@ -9,8 +9,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.ges.v1.model.ParallelEdge;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -24,7 +22,6 @@ public class Parameters  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="schemaPath")
     
-    @JacksonXmlProperty(localName = "schemaPath")
     
     private String schemaPath;
 
@@ -32,7 +29,6 @@ public class Parameters  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edgesetPath")
     
-    @JacksonXmlProperty(localName = "edgesetPath")
     
     private String edgesetPath;
 
@@ -40,7 +36,6 @@ public class Parameters  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edgesetFormat")
     
-    @JacksonXmlProperty(localName = "edgesetFormat")
     
     private String edgesetFormat;
 
@@ -48,7 +43,6 @@ public class Parameters  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edgesetDefaultLabel")
     
-    @JacksonXmlProperty(localName = "edgesetDefaultLabel")
     
     private String edgesetDefaultLabel;
 
@@ -56,7 +50,6 @@ public class Parameters  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vertexsetPath")
     
-    @JacksonXmlProperty(localName = "vertexsetPath")
     
     private String vertexsetPath;
 
@@ -64,7 +57,6 @@ public class Parameters  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vertexsetFormat")
     
-    @JacksonXmlProperty(localName = "vertexsetFormat")
     
     private String vertexsetFormat;
 
@@ -72,7 +64,6 @@ public class Parameters  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vertexsetDefaultLabel")
     
-    @JacksonXmlProperty(localName = "vertexsetDefaultLabel")
     
     private String vertexsetDefaultLabel;
 
@@ -80,7 +71,6 @@ public class Parameters  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="logDir")
     
-    @JacksonXmlProperty(localName = "logDir")
     
     private String logDir;
 
@@ -88,7 +78,6 @@ public class Parameters  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="parallelEdge")
     
-    @JacksonXmlProperty(localName = "parallelEdge")
     
     private ParallelEdge parallelEdge;
 

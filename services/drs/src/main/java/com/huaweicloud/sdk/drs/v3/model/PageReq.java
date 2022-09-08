@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.drs.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,14 +13,10 @@ public class PageReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cur_page")
 
-    @JacksonXmlProperty(localName = "cur_page")
-
     private Integer curPage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "per_page")
-
-    @JacksonXmlProperty(localName = "per_page")
 
     private Integer perPage;
 

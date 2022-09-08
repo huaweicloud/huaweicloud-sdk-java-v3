@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.ecs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -19,63 +18,45 @@ public class NovaServerFlavor {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "links")
-
-    @JacksonXmlProperty(localName = "links")
 
     private List<NovaLink> links = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vcpus")
 
-    @JacksonXmlProperty(localName = "vcpus")
-
     private Integer vcpus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ram")
-
-    @JacksonXmlProperty(localName = "ram")
 
     private Integer ram;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "disk")
 
-    @JacksonXmlProperty(localName = "disk")
-
     private Integer disk;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ephemeral")
-
-    @JacksonXmlProperty(localName = "ephemeral")
 
     private Integer ephemeral;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "swap")
 
-    @JacksonXmlProperty(localName = "swap")
-
     private Integer swap;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "original_name")
 
-    @JacksonXmlProperty(localName = "original_name")
-
     private String originalName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extra_specs")
-
-    @JacksonXmlProperty(localName = "extra_specs")
 
     private Map<String, String> extraSpecs = null;
 

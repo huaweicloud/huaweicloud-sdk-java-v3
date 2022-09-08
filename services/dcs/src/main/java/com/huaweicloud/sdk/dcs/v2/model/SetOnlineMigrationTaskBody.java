@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -99,8 +98,6 @@ public class SetOnlineMigrationTaskBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "migration_method")
 
-    @JacksonXmlProperty(localName = "migration_method")
-
     private MigrationMethodEnum migrationMethod;
 
     /**
@@ -183,28 +180,20 @@ public class SetOnlineMigrationTaskBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resume_mode")
 
-    @JacksonXmlProperty(localName = "resume_mode")
-
     private ResumeModeEnum resumeMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bandwidth_limit_mb")
-
-    @JacksonXmlProperty(localName = "bandwidth_limit_mb")
 
     private String bandwidthLimitMb;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_instance")
 
-    @JacksonXmlProperty(localName = "source_instance")
-
     private ConfigMigrationInstanceBody sourceInstance;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_instance")
-
-    @JacksonXmlProperty(localName = "target_instance")
 
     private ConfigMigrationInstanceBody targetInstance;
 

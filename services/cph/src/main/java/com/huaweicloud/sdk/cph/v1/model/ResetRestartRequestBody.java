@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cph.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,14 +16,10 @@ public class ResetRestartRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image_id")
 
-    @JacksonXmlProperty(localName = "image_id")
-
     private String imageId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "phones")
-
-    @JacksonXmlProperty(localName = "phones")
 
     private List<ResetRestartRequestBodyPhones> phones = null;
 

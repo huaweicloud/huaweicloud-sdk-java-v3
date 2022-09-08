@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.bssintl.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,112 +16,80 @@ public class FreeResourcePackageV3 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "order_instance_id")
 
-    @JacksonXmlProperty(localName = "order_instance_id")
-
     private String orderInstanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "order_id")
-
-    @JacksonXmlProperty(localName = "order_id")
 
     private String orderId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "product_id")
 
-    @JacksonXmlProperty(localName = "product_id")
-
     private String productId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "product_name")
-
-    @JacksonXmlProperty(localName = "product_name")
 
     private String productName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
-    @JacksonXmlProperty(localName = "enterprise_project_id")
-
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_scope")
-
-    @JacksonXmlProperty(localName = "enterprise_project_scope")
 
     private Integer enterpriseProjectScope;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "effective_time")
 
-    @JacksonXmlProperty(localName = "effective_time")
-
     private String effectiveTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expire_time")
-
-    @JacksonXmlProperty(localName = "expire_time")
 
     private String expireTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    @JacksonXmlProperty(localName = "status")
-
     private Integer status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_type_code")
-
-    @JacksonXmlProperty(localName = "service_type_code")
 
     private String serviceTypeCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_type_name")
 
-    @JacksonXmlProperty(localName = "service_type_name")
-
     private String serviceTypeName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region_code")
-
-    @JacksonXmlProperty(localName = "region_code")
 
     private String regionCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_type")
 
-    @JacksonXmlProperty(localName = "source_type")
-
     private Integer sourceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bundle_type")
-
-    @JacksonXmlProperty(localName = "bundle_type")
 
     private String bundleType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quota_reuse_mode")
 
-    @JacksonXmlProperty(localName = "quota_reuse_mode")
-
     private Integer quotaReuseMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "free_resources")
-
-    @JacksonXmlProperty(localName = "free_resources")
 
     private List<FreeResourceV3> freeResources = null;
 

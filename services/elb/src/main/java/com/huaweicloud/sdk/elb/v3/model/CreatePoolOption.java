@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.elb.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,91 +14,65 @@ public class CreatePoolOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "admin_state_up")
 
-    @JacksonXmlProperty(localName = "admin_state_up")
-
     private Boolean adminStateUp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
-
-    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lb_algorithm")
 
-    @JacksonXmlProperty(localName = "lb_algorithm")
-
     private String lbAlgorithm;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "listener_id")
-
-    @JacksonXmlProperty(localName = "listener_id")
 
     private String listenerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "loadbalancer_id")
 
-    @JacksonXmlProperty(localName = "loadbalancer_id")
-
     private String loadbalancerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
-
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
 
-    @JacksonXmlProperty(localName = "project_id")
-
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protocol")
-
-    @JacksonXmlProperty(localName = "protocol")
 
     private String protocol;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "session_persistence")
 
-    @JacksonXmlProperty(localName = "session_persistence")
-
     private CreatePoolSessionPersistenceOption sessionPersistence;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "slow_start")
-
-    @JacksonXmlProperty(localName = "slow_start")
 
     private CreatePoolSlowStartOption slowStart;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "member_deletion_protection_enable")
 
-    @JacksonXmlProperty(localName = "member_deletion_protection_enable")
-
     private Boolean memberDeletionProtectionEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_id")
 
-    @JacksonXmlProperty(localName = "vpc_id")
-
     private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
-
-    @JacksonXmlProperty(localName = "type")
 
     private String type;
 

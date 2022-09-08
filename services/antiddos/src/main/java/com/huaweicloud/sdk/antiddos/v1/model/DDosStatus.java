@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.antiddos.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,56 +13,40 @@ public class DDosStatus {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "floating_ip_id")
 
-    @JacksonXmlProperty(localName = "floating_ip_id")
-
     private String floatingIpId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "floating_ip_address")
-
-    @JacksonXmlProperty(localName = "floating_ip_address")
 
     private String floatingIpAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "network_type")
 
-    @JacksonXmlProperty(localName = "network_type")
-
     private String networkType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
-
-    @JacksonXmlProperty(localName = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "blackhole_endtime")
 
-    @JacksonXmlProperty(localName = "blackhole_endtime")
-
     private Long blackholeEndtime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protect_type")
-
-    @JacksonXmlProperty(localName = "protect_type")
 
     private String protectType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "traffic_threshold")
 
-    @JacksonXmlProperty(localName = "traffic_threshold")
-
     private Long trafficThreshold;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "http_threshold")
-
-    @JacksonXmlProperty(localName = "http_threshold")
 
     private Long httpThreshold;
 

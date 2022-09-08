@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,77 +14,55 @@ public class QueryOrgVmrResultDTO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vmrId")
-
-    @JacksonXmlProperty(localName = "vmrId")
 
     private String vmrId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vmrName")
 
-    @JacksonXmlProperty(localName = "vmrName")
-
     private String vmrName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vmrPkgName")
-
-    @JacksonXmlProperty(localName = "vmrPkgName")
 
     private String vmrPkgName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vmrPkgParties")
 
-    @JacksonXmlProperty(localName = "vmrPkgParties")
-
     private Integer vmrPkgParties;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maxAudienceParties")
-
-    @JacksonXmlProperty(localName = "maxAudienceParties")
 
     private Integer maxAudienceParties;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "member")
 
-    @JacksonXmlProperty(localName = "member")
-
     private IdMarkDTO member;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "device")
-
-    @JacksonXmlProperty(localName = "device")
 
     private IdMarkDTO device;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    @JacksonXmlProperty(localName = "status")
-
     private Integer status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expireDate")
 
-    @JacksonXmlProperty(localName = "expireDate")
-
     private Long expireDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "commercialMaxAudienceParties")
-
-    @JacksonXmlProperty(localName = "commercialMaxAudienceParties")
 
     private Integer commercialMaxAudienceParties;
 

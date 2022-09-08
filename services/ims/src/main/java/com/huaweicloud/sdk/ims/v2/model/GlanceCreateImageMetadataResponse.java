@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -23,28 +22,20 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "visibility")
 
-    @JacksonXmlProperty(localName = "visibility")
-
     private String visibility;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
-
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protected")
 
-    @JacksonXmlProperty(localName = "protected")
-
     private Boolean _protected;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "container_format")
-
-    @JacksonXmlProperty(localName = "container_format")
 
     private String containerFormat;
 
@@ -140,28 +131,20 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "disk_format")
 
-    @JacksonXmlProperty(localName = "disk_format")
-
     private DiskFormatEnum diskFormat;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
-
-    @JacksonXmlProperty(localName = "tags")
 
     private List<String> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "min_ram")
 
-    @JacksonXmlProperty(localName = "min_ram")
-
     private Integer minRam;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "min_disk")
-
-    @JacksonXmlProperty(localName = "min_disk")
 
     private Integer minDisk;
 
@@ -263,77 +246,55 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    @JacksonXmlProperty(localName = "status")
-
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
-
-    @JacksonXmlProperty(localName = "created_at")
 
     private String createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_at")
 
-    @JacksonXmlProperty(localName = "updated_at")
-
     private String updatedAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "self")
-
-    @JacksonXmlProperty(localName = "self")
 
     private String self;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file")
-
-    @JacksonXmlProperty(localName = "file")
 
     private String file;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "schema")
 
-    @JacksonXmlProperty(localName = "schema")
-
     private String schema;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__image_source_type")
-
-    @JacksonXmlProperty(localName = "__image_source_type")
 
     private String imageSourceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__image_size")
 
-    @JacksonXmlProperty(localName = "__image_size")
-
     private String imageSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__isregistered")
 
-    @JacksonXmlProperty(localName = "__isregistered")
-
     private String isregistered;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__os_version")
-
-    @JacksonXmlProperty(localName = "__os_version")
 
     private String osVersion;
 
@@ -423,14 +384,10 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__os_type")
 
-    @JacksonXmlProperty(localName = "__os_type")
-
     private OsTypeEnum osType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__platform")
-
-    @JacksonXmlProperty(localName = "__platform")
 
     private String platform;
 
@@ -514,14 +471,10 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__os_bit")
 
-    @JacksonXmlProperty(localName = "__os_bit")
-
     private OsBitEnum osBit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__imagetype")
-
-    @JacksonXmlProperty(localName = "__imagetype")
 
     private String imagetype;
 
@@ -611,49 +564,35 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "virtual_env_type")
 
-    @JacksonXmlProperty(localName = "virtual_env_type")
-
     private VirtualEnvTypeEnum virtualEnvType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "owner")
-
-    @JacksonXmlProperty(localName = "owner")
 
     private String owner;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "virtual_size")
 
-    @JacksonXmlProperty(localName = "virtual_size")
-
     private Integer virtualSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "properties")
-
-    @JacksonXmlProperty(localName = "properties")
 
     private Object properties;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__root_origin")
 
-    @JacksonXmlProperty(localName = "__root_origin")
-
     private String rootOrigin;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "checksum")
 
-    @JacksonXmlProperty(localName = "checksum")
-
     private String checksum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
-
-    @JacksonXmlProperty(localName = "size")
 
     private Long size;
 

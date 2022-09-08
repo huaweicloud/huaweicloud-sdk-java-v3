@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -20,14 +19,10 @@ public class InputSetting {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "input")
 
-    @JacksonXmlProperty(localName = "input")
-
     private ObsObjInfo input;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pane_id")
-
-    @JacksonXmlProperty(localName = "pane_id")
 
     private String paneId;
 
@@ -110,8 +105,6 @@ public class InputSetting {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "audio_policy")
-
-    @JacksonXmlProperty(localName = "audio_policy")
 
     private AudioPolicyEnum audioPolicy;
 

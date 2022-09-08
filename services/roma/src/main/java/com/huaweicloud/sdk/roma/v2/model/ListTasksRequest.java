@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -19,35 +18,25 @@ public class ListTasksRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_id")
 
-    @JacksonXmlProperty(localName = "instance_id")
-
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
-
-    @JacksonXmlProperty(localName = "limit")
 
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
-    @JacksonXmlProperty(localName = "offset")
-
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_id")
 
-    @JacksonXmlProperty(localName = "task_id")
-
     private String taskId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
-
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
@@ -131,8 +120,6 @@ public class ListTasksRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    @JacksonXmlProperty(localName = "status")
-
     private StatusEnum status;
 
     /**
@@ -215,21 +202,15 @@ public class ListTasksRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_type")
 
-    @JacksonXmlProperty(localName = "task_type")
-
     private TaskTypeEnum taskType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_datasource_id")
 
-    @JacksonXmlProperty(localName = "source_datasource_id")
-
     private String sourceDatasourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_datasource_id")
-
-    @JacksonXmlProperty(localName = "target_datasource_id")
 
     private String targetDatasourceId;
 
@@ -313,8 +294,6 @@ public class ListTasksRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sort_field")
 
-    @JacksonXmlProperty(localName = "sort_field")
-
     private SortFieldEnum sortField;
 
     /**
@@ -397,35 +376,25 @@ public class ListTasksRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sort_type")
 
-    @JacksonXmlProperty(localName = "sort_type")
-
     private SortTypeEnum sortType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "execute_status")
-
-    @JacksonXmlProperty(localName = "execute_status")
 
     private String executeStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_app_id")
 
-    @JacksonXmlProperty(localName = "source_app_id")
-
     private String sourceAppId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_app_id")
 
-    @JacksonXmlProperty(localName = "target_app_id")
-
     private String targetAppId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_tag")
-
-    @JacksonXmlProperty(localName = "task_tag")
 
     private String taskTag;
 

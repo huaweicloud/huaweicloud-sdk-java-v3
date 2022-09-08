@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,35 +21,25 @@ public class BackupExtendInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auto_trigger")
 
-    @JacksonXmlProperty(localName = "auto_trigger")
-
     private Boolean autoTrigger;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bootable")
-
-    @JacksonXmlProperty(localName = "bootable")
 
     private Boolean bootable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "incremental")
 
-    @JacksonXmlProperty(localName = "incremental")
-
     private Boolean incremental;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "snapshot_id")
 
-    @JacksonXmlProperty(localName = "snapshot_id")
-
     private String snapshotId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "support_lld")
-
-    @JacksonXmlProperty(localName = "support_lld")
 
     private Boolean supportLld;
 
@@ -140,35 +129,25 @@ public class BackupExtendInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "supported_restore_mode")
 
-    @JacksonXmlProperty(localName = "supported_restore_mode")
-
     private SupportedRestoreModeEnum supportedRestoreMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os_images_data")
-
-    @JacksonXmlProperty(localName = "os_images_data")
 
     private List<ImageData> osImagesData = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "contain_system_disk")
 
-    @JacksonXmlProperty(localName = "contain_system_disk")
-
     private Boolean containSystemDisk;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "encrypted")
 
-    @JacksonXmlProperty(localName = "encrypted")
-
     private Boolean encrypted;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "system_disk")
-
-    @JacksonXmlProperty(localName = "system_disk")
 
     private Boolean systemDisk;
 

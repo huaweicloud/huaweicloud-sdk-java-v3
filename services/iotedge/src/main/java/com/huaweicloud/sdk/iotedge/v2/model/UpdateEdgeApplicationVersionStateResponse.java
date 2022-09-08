@@ -16,8 +16,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -31,7 +29,6 @@ public class UpdateEdgeApplicationVersionStateResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edge_app_id")
     
-    @JacksonXmlProperty(localName = "edge_app_id")
     
     private String edgeAppId;
 
@@ -39,7 +36,6 @@ public class UpdateEdgeApplicationVersionStateResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="version")
     
-    @JacksonXmlProperty(localName = "version")
     
     private String version;
 
@@ -47,7 +43,6 @@ public class UpdateEdgeApplicationVersionStateResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sdk_version")
     
-    @JacksonXmlProperty(localName = "sdk_version")
     
     private String sdkVersion;
 
@@ -55,7 +50,6 @@ public class UpdateEdgeApplicationVersionStateResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
-    @JacksonXmlProperty(localName = "description")
     
     private String description;
 
@@ -63,7 +57,6 @@ public class UpdateEdgeApplicationVersionStateResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="deploy_type")
     
-    @JacksonXmlProperty(localName = "deploy_type")
     
     private String deployType;
 
@@ -71,7 +64,6 @@ public class UpdateEdgeApplicationVersionStateResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="deploy_multi_instance")
     
-    @JacksonXmlProperty(localName = "deploy_multi_instance")
     
     private Boolean deployMultiInstance;
 
@@ -79,7 +71,6 @@ public class UpdateEdgeApplicationVersionStateResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    @JacksonXmlProperty(localName = "create_time")
     
     private String createTime;
 
@@ -87,7 +78,6 @@ public class UpdateEdgeApplicationVersionStateResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_time")
     
-    @JacksonXmlProperty(localName = "update_time")
     
     private String updateTime;
     /**
@@ -179,7 +169,6 @@ public class UpdateEdgeApplicationVersionStateResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="state")
     
-    @JacksonXmlProperty(localName = "state")
     
     private StateEnum state;
 
@@ -187,7 +176,6 @@ public class UpdateEdgeApplicationVersionStateResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="arch")
     
-    @JacksonXmlProperty(localName = "arch")
     
     private List<String> arch = null;
     
@@ -195,7 +183,6 @@ public class UpdateEdgeApplicationVersionStateResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="publish_time")
     
-    @JacksonXmlProperty(localName = "publish_time")
     
     private String publishTime;
 
@@ -203,7 +190,6 @@ public class UpdateEdgeApplicationVersionStateResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="off_shelf_time")
     
-    @JacksonXmlProperty(localName = "off_shelf_time")
     
     private String offShelfTime;
 

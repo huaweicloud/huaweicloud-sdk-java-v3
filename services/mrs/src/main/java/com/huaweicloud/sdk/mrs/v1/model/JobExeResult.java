@@ -8,8 +8,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -23,7 +21,6 @@ public class JobExeResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    @JacksonXmlProperty(localName = "id")
     
     private String id;
 
@@ -31,7 +28,6 @@ public class JobExeResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_at")
     
-    @JacksonXmlProperty(localName = "create_at")
     
     private Long createAt;
 
@@ -39,7 +35,6 @@ public class JobExeResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_at")
     
-    @JacksonXmlProperty(localName = "update_at")
     
     private Long updateAt;
 
@@ -47,7 +42,6 @@ public class JobExeResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tenant_id")
     
-    @JacksonXmlProperty(localName = "tenant_id")
     
     private String tenantId;
 
@@ -55,7 +49,6 @@ public class JobExeResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_id")
     
-    @JacksonXmlProperty(localName = "job_id")
     
     private String jobId;
 
@@ -63,7 +56,6 @@ public class JobExeResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_name")
     
-    @JacksonXmlProperty(localName = "job_name")
     
     private String jobName;
 
@@ -71,7 +63,6 @@ public class JobExeResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="start_time")
     
-    @JacksonXmlProperty(localName = "start_time")
     
     private Long startTime;
 
@@ -79,7 +70,6 @@ public class JobExeResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="end_time")
     
-    @JacksonXmlProperty(localName = "end_time")
     
     private Long endTime;
 
@@ -87,7 +77,6 @@ public class JobExeResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cluster_id")
     
-    @JacksonXmlProperty(localName = "cluster_id")
     
     private String clusterId;
 
@@ -95,7 +84,6 @@ public class JobExeResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="group_id")
     
-    @JacksonXmlProperty(localName = "group_id")
     
     private String groupId;
 
@@ -103,7 +91,6 @@ public class JobExeResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="jar_path")
     
-    @JacksonXmlProperty(localName = "jar_path")
     
     private String jarPath;
 
@@ -111,7 +98,6 @@ public class JobExeResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="input")
     
-    @JacksonXmlProperty(localName = "input")
     
     private String input;
 
@@ -119,7 +105,6 @@ public class JobExeResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="output")
     
-    @JacksonXmlProperty(localName = "output")
     
     private String output;
 
@@ -127,7 +112,6 @@ public class JobExeResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_log")
     
-    @JacksonXmlProperty(localName = "job_log")
     
     private String jobLog;
 
@@ -135,7 +119,6 @@ public class JobExeResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_type")
     
-    @JacksonXmlProperty(localName = "job_type")
     
     private Integer jobType;
 
@@ -143,7 +126,6 @@ public class JobExeResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="file_action")
     
-    @JacksonXmlProperty(localName = "file_action")
     
     private String fileAction;
 
@@ -151,7 +133,6 @@ public class JobExeResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="arguments")
     
-    @JacksonXmlProperty(localName = "arguments")
     
     private String arguments;
 
@@ -159,7 +140,6 @@ public class JobExeResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="hql")
     
-    @JacksonXmlProperty(localName = "hql")
     
     private String hql;
 
@@ -167,7 +147,6 @@ public class JobExeResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_state")
     
-    @JacksonXmlProperty(localName = "job_state")
     
     private Integer jobState;
 
@@ -175,7 +154,6 @@ public class JobExeResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_final_status")
     
-    @JacksonXmlProperty(localName = "job_final_status")
     
     private Integer jobFinalStatus;
 
@@ -183,7 +161,6 @@ public class JobExeResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="hive_script_path")
     
-    @JacksonXmlProperty(localName = "hive_script_path")
     
     private String hiveScriptPath;
 
@@ -191,7 +168,6 @@ public class JobExeResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_by")
     
-    @JacksonXmlProperty(localName = "create_by")
     
     private String createBy;
 
@@ -199,7 +175,6 @@ public class JobExeResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="finished_step")
     
-    @JacksonXmlProperty(localName = "finished_step")
     
     private Integer finishedStep;
 
@@ -207,7 +182,6 @@ public class JobExeResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_main_id")
     
-    @JacksonXmlProperty(localName = "job_main_id")
     
     private String jobMainId;
 
@@ -215,7 +189,6 @@ public class JobExeResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_step_id")
     
-    @JacksonXmlProperty(localName = "job_step_id")
     
     private String jobStepId;
 
@@ -223,7 +196,6 @@ public class JobExeResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="postpone_at")
     
-    @JacksonXmlProperty(localName = "postpone_at")
     
     private Long postponeAt;
 
@@ -231,7 +203,6 @@ public class JobExeResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="step_name")
     
-    @JacksonXmlProperty(localName = "step_name")
     
     private String stepName;
 
@@ -239,7 +210,6 @@ public class JobExeResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="step_num")
     
-    @JacksonXmlProperty(localName = "step_num")
     
     private Integer stepNum;
 
@@ -247,7 +217,6 @@ public class JobExeResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="task_num")
     
-    @JacksonXmlProperty(localName = "task_num")
     
     private Integer taskNum;
 
@@ -255,7 +224,6 @@ public class JobExeResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_by")
     
-    @JacksonXmlProperty(localName = "update_by")
     
     private String updateBy;
 
@@ -263,7 +231,6 @@ public class JobExeResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="spend_time")
     
-    @JacksonXmlProperty(localName = "spend_time")
     
     private Float spendTime;
 
@@ -271,7 +238,6 @@ public class JobExeResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="step_seq")
     
-    @JacksonXmlProperty(localName = "step_seq")
     
     private Integer stepSeq;
 
@@ -279,7 +245,6 @@ public class JobExeResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="progress")
     
-    @JacksonXmlProperty(localName = "progress")
     
     private String progress;
 

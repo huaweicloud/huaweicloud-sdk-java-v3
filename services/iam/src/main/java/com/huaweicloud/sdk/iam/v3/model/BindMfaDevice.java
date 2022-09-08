@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.iam.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,28 +13,20 @@ public class BindMfaDevice {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_id")
 
-    @JacksonXmlProperty(localName = "user_id")
-
     private String userId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "serial_number")
-
-    @JacksonXmlProperty(localName = "serial_number")
 
     private String serialNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "authentication_code_first")
 
-    @JacksonXmlProperty(localName = "authentication_code_first")
-
     private String authenticationCodeFirst;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "authentication_code_second")
-
-    @JacksonXmlProperty(localName = "authentication_code_second")
 
     private String authenticationCodeSecond;
 

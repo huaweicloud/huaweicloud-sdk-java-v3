@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -19,14 +18,10 @@ public class ShowSinkTaskDetailRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "connector_id")
 
-    @JacksonXmlProperty(localName = "connector_id")
-
     private String connectorId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_id")
-
-    @JacksonXmlProperty(localName = "task_id")
 
     private String taskId;
 
@@ -109,8 +104,6 @@ public class ShowSinkTaskDetailRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "topic-info")
-
-    @JacksonXmlProperty(localName = "topic-info")
 
     private TopicInfoEnum topicInfo;
 

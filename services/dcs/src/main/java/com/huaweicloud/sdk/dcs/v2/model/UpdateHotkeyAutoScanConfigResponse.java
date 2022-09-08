@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dcs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -18,28 +17,20 @@ public class UpdateHotkeyAutoScanConfigResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_id")
 
-    @JacksonXmlProperty(localName = "instance_id")
-
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_auto_scan")
-
-    @JacksonXmlProperty(localName = "enable_auto_scan")
 
     private Boolean enableAutoScan;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "schedule_at")
 
-    @JacksonXmlProperty(localName = "schedule_at")
-
     private List<String> scheduleAt = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_at")
-
-    @JacksonXmlProperty(localName = "updated_at")
 
     private String updatedAt;
 

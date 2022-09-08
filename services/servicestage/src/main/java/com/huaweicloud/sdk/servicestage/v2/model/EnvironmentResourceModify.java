@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.servicestage.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,21 +16,15 @@ public class EnvironmentResourceModify {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "add_base_resources")
 
-    @JacksonXmlProperty(localName = "add_base_resources")
-
     private List<Resource> addBaseResources = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "add_optional_resources")
 
-    @JacksonXmlProperty(localName = "add_optional_resources")
-
     private List<Resource> addOptionalResources = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remove_resources")
-
-    @JacksonXmlProperty(localName = "remove_resources")
 
     private List<Resource> removeResources = null;
 

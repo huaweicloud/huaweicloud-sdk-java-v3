@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.swr.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,28 +14,20 @@ public class UpdateRetentionRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "namespace")
 
-    @JacksonXmlProperty(localName = "namespace")
-
     private String namespace;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "repository")
-
-    @JacksonXmlProperty(localName = "repository")
 
     private String repository;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "retention_id")
 
-    @JacksonXmlProperty(localName = "retention_id")
-
     private Integer retentionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
-
-    @JacksonXmlProperty(localName = "body")
 
     private UpdateRetentionRequestBody body;
 

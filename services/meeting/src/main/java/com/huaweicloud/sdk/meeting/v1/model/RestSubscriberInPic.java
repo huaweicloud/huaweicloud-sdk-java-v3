@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,21 +16,15 @@ public class RestSubscriberInPic {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "index")
 
-    @JacksonXmlProperty(localName = "index")
-
     private Integer index;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subscriber")
 
-    @JacksonXmlProperty(localName = "subscriber")
-
     private List<String> subscriber = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "isAssistStream")
-
-    @JacksonXmlProperty(localName = "isAssistStream")
 
     private Integer isAssistStream;
 

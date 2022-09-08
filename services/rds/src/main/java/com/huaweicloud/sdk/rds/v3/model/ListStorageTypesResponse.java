@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.rds.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -18,14 +17,10 @@ public class ListStorageTypesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "storage_type")
 
-    @JacksonXmlProperty(localName = "storage_type")
-
     private List<Storage> storageType = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dsspool_info")
-
-    @JacksonXmlProperty(localName = "dsspool_info")
 
     private List<DssPoolInfo> dsspoolInfo = null;
 

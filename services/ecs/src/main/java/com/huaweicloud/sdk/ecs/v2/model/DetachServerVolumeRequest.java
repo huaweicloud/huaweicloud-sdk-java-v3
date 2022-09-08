@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -19,14 +18,10 @@ public class DetachServerVolumeRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "server_id")
 
-    @JacksonXmlProperty(localName = "server_id")
-
     private String serverId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volume_id")
-
-    @JacksonXmlProperty(localName = "volume_id")
 
     private String volumeId;
 
@@ -109,8 +104,6 @@ public class DetachServerVolumeRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "delete_flag")
-
-    @JacksonXmlProperty(localName = "delete_flag")
 
     private DeleteFlagEnum deleteFlag;
 

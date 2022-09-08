@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.bss.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,70 +13,50 @@ public class CouponRecordV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operation_type")
-
-    @JacksonXmlProperty(localName = "operation_type")
 
     private String operationType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quota_id")
 
-    @JacksonXmlProperty(localName = "quota_id")
-
     private String quotaId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quota_type")
-
-    @JacksonXmlProperty(localName = "quota_type")
 
     private Integer quotaType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "coupon_id")
 
-    @JacksonXmlProperty(localName = "coupon_id")
-
     private String couponId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "customer_id")
-
-    @JacksonXmlProperty(localName = "customer_id")
 
     private String customerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operation_amount")
 
-    @JacksonXmlProperty(localName = "operation_amount")
-
     private Double operationAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operation_time")
-
-    @JacksonXmlProperty(localName = "operation_time")
 
     private String operationTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "result")
 
-    @JacksonXmlProperty(localName = "result")
-
     private String result;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remark")
-
-    @JacksonXmlProperty(localName = "remark")
 
     private String remark;
 

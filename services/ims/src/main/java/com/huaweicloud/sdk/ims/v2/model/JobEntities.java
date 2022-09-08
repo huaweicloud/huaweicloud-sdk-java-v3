@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.ims.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,35 +16,25 @@ public class JobEntities {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image_id")
 
-    @JacksonXmlProperty(localName = "image_id")
-
     private String imageId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "current_task")
-
-    @JacksonXmlProperty(localName = "current_task")
 
     private String currentTask;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image_name")
 
-    @JacksonXmlProperty(localName = "image_name")
-
     private String imageName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "process_percent")
 
-    @JacksonXmlProperty(localName = "process_percent")
-
     private Double processPercent;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "results")
-
-    @JacksonXmlProperty(localName = "results")
 
     private List<JobEntitiesResult> results = null;
 

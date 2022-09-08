@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.mpc.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,14 +16,10 @@ public class TranscodeDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "multitask_info")
 
-    @JacksonXmlProperty(localName = "multitask_info")
-
     private List<MultiTaskInfo> multitaskInfo = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "input_file")
-
-    @JacksonXmlProperty(localName = "input_file")
 
     private SourceInfo inputFile;
 

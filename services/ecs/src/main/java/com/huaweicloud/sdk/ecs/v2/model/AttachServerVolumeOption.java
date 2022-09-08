@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.ecs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,28 +13,25 @@ public class AttachServerVolumeOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "device")
 
-    @JacksonXmlProperty(localName = "device")
-
     private String device;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volumeId")
-
-    @JacksonXmlProperty(localName = "volumeId")
 
     private String volumeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volume_type")
 
-    @JacksonXmlProperty(localName = "volume_type")
-
     private String volumeType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "hw:passthrough")
+    @JsonProperty(value = "count")
 
-    @JacksonXmlProperty(localName = "hw:passthrough")
+    private Integer count;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "hw:passthrough")
 
     private String hwPassthrough;
 
@@ -90,6 +86,23 @@ public class AttachServerVolumeOption {
         this.volumeType = volumeType;
     }
 
+    public AttachServerVolumeOption withCount(Integer count) {
+        this.count = count;
+        return this;
+    }
+
+    /**
+     * 云硬盘的个数。  该字段于dry_run为true并且volumeId不存在时有效，如果该字段不存在，默认为1。
+     * @return count
+     */
+    public Integer getCount() {
+        return count;
+    }
+
+    public void setCount(Integer count) {
+        this.count = count;
+    }
+
     public AttachServerVolumeOption withHwPassthrough(String hwPassthrough) {
         this.hwPassthrough = hwPassthrough;
         return this;
@@ -119,12 +132,13 @@ public class AttachServerVolumeOption {
         return Objects.equals(this.device, attachServerVolumeOption.device)
             && Objects.equals(this.volumeId, attachServerVolumeOption.volumeId)
             && Objects.equals(this.volumeType, attachServerVolumeOption.volumeType)
+            && Objects.equals(this.count, attachServerVolumeOption.count)
             && Objects.equals(this.hwPassthrough, attachServerVolumeOption.hwPassthrough);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(device, volumeId, volumeType, hwPassthrough);
+        return Objects.hash(device, volumeId, volumeType, count, hwPassthrough);
     }
 
     @Override
@@ -134,6 +148,7 @@ public class AttachServerVolumeOption {
         sb.append("    device: ").append(toIndentedString(device)).append("\n");
         sb.append("    volumeId: ").append(toIndentedString(volumeId)).append("\n");
         sb.append("    volumeType: ").append(toIndentedString(volumeType)).append("\n");
+        sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("    hwPassthrough: ").append(toIndentedString(hwPassthrough)).append("\n");
         sb.append("}");
         return sb.toString();

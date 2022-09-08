@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,21 +13,15 @@ public class ValidateTokenReqDTO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "token")
 
-    @JacksonXmlProperty(localName = "token")
-
     private String token;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "needGenNewToken")
 
-    @JacksonXmlProperty(localName = "needGenNewToken")
-
     private Boolean needGenNewToken;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "needAccountInfo")
-
-    @JacksonXmlProperty(localName = "needAccountInfo")
 
     private Boolean needAccountInfo;
 

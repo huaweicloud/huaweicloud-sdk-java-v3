@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -99,8 +98,6 @@ public class CreateDataLevelCompareReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "conflict_policy")
 
-    @JacksonXmlProperty(localName = "conflict_policy")
-
     private ConflictPolicyEnum conflictPolicy;
 
     /**
@@ -183,8 +180,6 @@ public class CreateDataLevelCompareReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "compare_type")
 
-    @JacksonXmlProperty(localName = "compare_type")
-
     private CompareTypeEnum compareType;
 
     /**
@@ -261,28 +256,20 @@ public class CreateDataLevelCompareReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "compare_mode")
 
-    @JacksonXmlProperty(localName = "compare_mode")
-
     private CompareModeEnum compareMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
-
-    @JacksonXmlProperty(localName = "start_time")
 
     private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "compare_object_infos")
 
-    @JacksonXmlProperty(localName = "compare_object_infos")
-
     private List<CompareObjectInfo> compareObjectInfos = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "compare_object_infos_with_token")
-
-    @JacksonXmlProperty(localName = "compare_object_infos_with_token")
 
     private List<CompareObjectInfoWithToken> compareObjectInfosWithToken = null;
 

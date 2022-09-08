@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.bss.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,21 +16,15 @@ public class AdjustCouponQuotasReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quota_id")
 
-    @JacksonXmlProperty(localName = "quota_id")
-
     private String quotaId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "indirect_partner_ids")
 
-    @JacksonXmlProperty(localName = "indirect_partner_ids")
-
     private List<String> indirectPartnerIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quota_amount")
-
-    @JacksonXmlProperty(localName = "quota_amount")
 
     private Double quotaAmount;
 

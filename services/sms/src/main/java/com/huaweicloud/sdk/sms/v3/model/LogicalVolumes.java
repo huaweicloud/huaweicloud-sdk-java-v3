@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.sms.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,63 +13,45 @@ public class LogicalVolumes {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "block_count")
 
-    @JacksonXmlProperty(localName = "block_count")
-
     private Integer blockCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "block_size")
-
-    @JacksonXmlProperty(localName = "block_size")
 
     private Long blockSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_system")
 
-    @JacksonXmlProperty(localName = "file_system")
-
     private String fileSystem;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "inode_size")
-
-    @JacksonXmlProperty(localName = "inode_size")
 
     private Integer inodeSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mount_point")
 
-    @JacksonXmlProperty(localName = "mount_point")
-
     private String mountPoint;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
-
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
 
-    @JacksonXmlProperty(localName = "size")
-
     private Long size;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "used_size")
 
-    @JacksonXmlProperty(localName = "used_size")
-
     private Long usedSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "free_size")
-
-    @JacksonXmlProperty(localName = "free_size")
 
     private Long freeSize;
 

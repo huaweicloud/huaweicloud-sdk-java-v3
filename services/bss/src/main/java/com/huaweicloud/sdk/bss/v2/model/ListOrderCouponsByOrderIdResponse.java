@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.bss.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -18,21 +17,15 @@ public class ListOrderCouponsByOrderIdResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "count")
 
-    @JacksonXmlProperty(localName = "count")
-
     private Integer count;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_coupons")
 
-    @JacksonXmlProperty(localName = "user_coupons")
-
     private List<CouponInfoV2> userCoupons = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "coupon_max_use_quantity")
-
-    @JacksonXmlProperty(localName = "coupon_max_use_quantity")
 
     private List<CouponMaxUseQuantity> couponMaxUseQuantity = null;
 

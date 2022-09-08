@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -99,42 +98,30 @@ public class NodePoolSpec {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
-    @JacksonXmlProperty(localName = "type")
-
     private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nodeTemplate")
-
-    @JacksonXmlProperty(localName = "nodeTemplate")
 
     private NodeSpec nodeTemplate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "initialNodeCount")
 
-    @JacksonXmlProperty(localName = "initialNodeCount")
-
     private Integer initialNodeCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "autoscaling")
-
-    @JacksonXmlProperty(localName = "autoscaling")
 
     private NodePoolNodeAutoscaling autoscaling;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nodeManagement")
 
-    @JacksonXmlProperty(localName = "nodeManagement")
-
     private NodeManagement nodeManagement;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "podSecurityGroups")
-
-    @JacksonXmlProperty(localName = "podSecurityGroups")
 
     private List<SecurityID> podSecurityGroups = null;
 

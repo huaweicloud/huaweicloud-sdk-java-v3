@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.swr.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,77 +13,55 @@ public class SyncRepo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "createdAt")
 
-    @JacksonXmlProperty(localName = "createdAt")
-
     private String createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domainID")
-
-    @JacksonXmlProperty(localName = "domainID")
 
     private String domainID;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domainName")
 
-    @JacksonXmlProperty(localName = "domainName")
-
     private String domainName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
-
-    @JacksonXmlProperty(localName = "id")
 
     private Integer id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "namespace")
 
-    @JacksonXmlProperty(localName = "namespace")
-
     private String namespace;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "override")
-
-    @JacksonXmlProperty(localName = "override")
 
     private Boolean override;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remoteNamespace")
 
-    @JacksonXmlProperty(localName = "remoteNamespace")
-
     private String remoteNamespace;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remoteRegionId")
-
-    @JacksonXmlProperty(localName = "remoteRegionId")
 
     private String remoteRegionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "repoName")
 
-    @JacksonXmlProperty(localName = "repoName")
-
     private String repoName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "syncAuto")
 
-    @JacksonXmlProperty(localName = "syncAuto")
-
     private Boolean syncAuto;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updatedAt")
-
-    @JacksonXmlProperty(localName = "updatedAt")
 
     private String updatedAt;
 

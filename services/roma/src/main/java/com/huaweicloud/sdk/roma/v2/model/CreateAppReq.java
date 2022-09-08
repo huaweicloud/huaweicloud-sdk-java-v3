@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.roma.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,35 +13,25 @@ public class CreateAppReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
-    @JacksonXmlProperty(localName = "name")
-
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remark")
-
-    @JacksonXmlProperty(localName = "remark")
 
     private String remark;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key")
 
-    @JacksonXmlProperty(localName = "key")
-
     private String key;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "secret")
 
-    @JacksonXmlProperty(localName = "secret")
-
     private String secret;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "favorite")
-
-    @JacksonXmlProperty(localName = "favorite")
 
     private Boolean favorite;
 

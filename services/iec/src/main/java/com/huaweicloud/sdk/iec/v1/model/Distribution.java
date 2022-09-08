@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.iec.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,56 +13,40 @@ public class Distribution {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "area")
 
-    @JacksonXmlProperty(localName = "area")
-
     private String area;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "city")
-
-    @JacksonXmlProperty(localName = "city")
 
     private String city;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operator")
 
-    @JacksonXmlProperty(localName = "operator")
-
     private String operator;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "province")
-
-    @JacksonXmlProperty(localName = "province")
 
     private String province;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "site_id")
 
-    @JacksonXmlProperty(localName = "site_id")
-
     private String siteId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pool_id")
-
-    @JacksonXmlProperty(localName = "pool_id")
 
     private String poolId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stack_count")
 
-    @JacksonXmlProperty(localName = "stack_count")
-
     private Integer stackCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "city_short_name")
-
-    @JacksonXmlProperty(localName = "city_short_name")
 
     private String cityShortName;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cdn.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -18,28 +17,20 @@ public class ShowUrlTaskInfoResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total")
 
-    @JacksonXmlProperty(localName = "total")
-
     private Integer total;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "count")
 
-    @JacksonXmlProperty(localName = "count")
-
     private Integer count;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "results")
+    @JsonProperty(value = "result")
 
-    @JacksonXmlProperty(localName = "results")
-
-    private List<Urls> results = null;
+    private List<Urls> result = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-request-id")
-
-    @JacksonXmlProperty(localName = "X-request-id")
 
     private String xRequestId;
 
@@ -77,37 +68,37 @@ public class ShowUrlTaskInfoResponse extends SdkResponse {
         this.count = count;
     }
 
-    public ShowUrlTaskInfoResponse withResults(List<Urls> results) {
-        this.results = results;
+    public ShowUrlTaskInfoResponse withResult(List<Urls> result) {
+        this.result = result;
         return this;
     }
 
-    public ShowUrlTaskInfoResponse addResultsItem(Urls resultsItem) {
-        if (this.results == null) {
-            this.results = new ArrayList<>();
+    public ShowUrlTaskInfoResponse addResultItem(Urls resultItem) {
+        if (this.result == null) {
+            this.result = new ArrayList<>();
         }
-        this.results.add(resultsItem);
+        this.result.add(resultItem);
         return this;
     }
 
-    public ShowUrlTaskInfoResponse withResults(Consumer<List<Urls>> resultsSetter) {
-        if (this.results == null) {
-            this.results = new ArrayList<>();
+    public ShowUrlTaskInfoResponse withResult(Consumer<List<Urls>> resultSetter) {
+        if (this.result == null) {
+            this.result = new ArrayList<>();
         }
-        resultsSetter.accept(this.results);
+        resultSetter.accept(this.result);
         return this;
     }
 
     /**
      * url信息
-     * @return results
+     * @return result
      */
-    public List<Urls> getResults() {
-        return results;
+    public List<Urls> getResult() {
+        return result;
     }
 
-    public void setResults(List<Urls> results) {
-        this.results = results;
+    public void setResult(List<Urls> result) {
+        this.result = result;
     }
 
     public ShowUrlTaskInfoResponse withXRequestId(String xRequestId) {
@@ -140,13 +131,13 @@ public class ShowUrlTaskInfoResponse extends SdkResponse {
         ShowUrlTaskInfoResponse showUrlTaskInfoResponse = (ShowUrlTaskInfoResponse) o;
         return Objects.equals(this.total, showUrlTaskInfoResponse.total)
             && Objects.equals(this.count, showUrlTaskInfoResponse.count)
-            && Objects.equals(this.results, showUrlTaskInfoResponse.results)
+            && Objects.equals(this.result, showUrlTaskInfoResponse.result)
             && Objects.equals(this.xRequestId, showUrlTaskInfoResponse.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(total, count, results, xRequestId);
+        return Objects.hash(total, count, result, xRequestId);
     }
 
     @Override
@@ -155,7 +146,7 @@ public class ShowUrlTaskInfoResponse extends SdkResponse {
         sb.append("class ShowUrlTaskInfoResponse {\n");
         sb.append("    total: ").append(toIndentedString(total)).append("\n");
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
-        sb.append("    results: ").append(toIndentedString(results)).append("\n");
+        sb.append("    result: ").append(toIndentedString(result)).append("\n");
         sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.hss.v5.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,56 +13,40 @@ public class CheckRuleRiskInfoResponseInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "severity")
 
-    @JacksonXmlProperty(localName = "severity")
-
     private String severity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "check_type")
-
-    @JacksonXmlProperty(localName = "check_type")
 
     private String checkType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "standard")
 
-    @JacksonXmlProperty(localName = "standard")
-
     private String standard;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "check_rule_name")
-
-    @JacksonXmlProperty(localName = "check_rule_name")
 
     private String checkRuleName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "check_rule_id")
 
-    @JacksonXmlProperty(localName = "check_rule_id")
-
     private String checkRuleId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_num")
-
-    @JacksonXmlProperty(localName = "host_num")
 
     private Integer hostNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scan_result")
 
-    @JacksonXmlProperty(localName = "scan_result")
-
     private String scanResult;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
-
-    @JacksonXmlProperty(localName = "status")
 
     private String status;
 

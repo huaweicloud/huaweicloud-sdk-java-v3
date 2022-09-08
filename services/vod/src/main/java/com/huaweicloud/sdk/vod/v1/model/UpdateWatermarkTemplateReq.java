@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -19,28 +18,20 @@ public class UpdateWatermarkTemplateReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
-
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dx")
 
-    @JacksonXmlProperty(localName = "dx")
-
     private String dx;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dy")
-
-    @JacksonXmlProperty(localName = "dy")
 
     private String dy;
 
@@ -136,21 +127,15 @@ public class UpdateWatermarkTemplateReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "position")
 
-    @JacksonXmlProperty(localName = "position")
-
     private PositionEnum position;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "width")
 
-    @JacksonXmlProperty(localName = "width")
-
     private String width;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "height")
-
-    @JacksonXmlProperty(localName = "height")
 
     private String height;
 
@@ -233,8 +218,6 @@ public class UpdateWatermarkTemplateReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "watermark_type")
-
-    @JacksonXmlProperty(localName = "watermark_type")
 
     private WatermarkTypeEnum watermarkType;
 
@@ -324,21 +307,15 @@ public class UpdateWatermarkTemplateReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image_process")
 
-    @JacksonXmlProperty(localName = "image_process")
-
     private ImageProcessEnum imageProcess;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timeline_start")
 
-    @JacksonXmlProperty(localName = "timeline_start")
-
     private String timelineStart;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timeline_duration")
-
-    @JacksonXmlProperty(localName = "timeline_duration")
 
     private String timelineDuration;
 

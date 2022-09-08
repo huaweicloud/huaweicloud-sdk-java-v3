@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,8 +17,6 @@ public class FunctionRef {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ref_name")
-
-    @JacksonXmlProperty(localName = "ref_name")
 
     private String refName;
 
@@ -97,14 +94,10 @@ public class FunctionRef {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "invoke_mode")
 
-    @JacksonXmlProperty(localName = "invoke_mode")
-
     private InvokeModeEnum invokeMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "arguments")
-
-    @JacksonXmlProperty(localName = "arguments")
 
     private Object arguments;
 

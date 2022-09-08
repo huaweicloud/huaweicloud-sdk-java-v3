@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,8 +17,6 @@ public class SearchQosParticipantDetailRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confUUID")
-
-    @JacksonXmlProperty(localName = "confUUID")
 
     private String confUUID;
 
@@ -103,14 +100,10 @@ public class SearchQosParticipantDetailRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confType")
 
-    @JacksonXmlProperty(localName = "confType")
-
     private ConfTypeEnum confType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "participantID")
-
-    @JacksonXmlProperty(localName = "participantID")
 
     private String participantID;
 
@@ -205,8 +198,6 @@ public class SearchQosParticipantDetailRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "qosType")
-
-    @JacksonXmlProperty(localName = "qosType")
 
     private QosTypeEnum qosType;
 

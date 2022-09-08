@@ -1736,6 +1736,13 @@ public class CssMeta {
             f -> f.withMarshaller(UpdateCloseKibanaRequest::getClusterId, (req, v) -> {
                 req.setClusterId(v);
             }));
+        builder.<CloseKibanaPublicReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CloseKibanaPublicReq.class),
+            f -> f.withMarshaller(UpdateCloseKibanaRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
 
         // response
 

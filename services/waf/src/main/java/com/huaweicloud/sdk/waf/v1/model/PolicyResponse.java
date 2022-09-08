@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.waf.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -19,84 +18,60 @@ public class PolicyResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
-
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "level")
 
-    @JacksonXmlProperty(localName = "level")
-
     private Integer level;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "full_detection")
-
-    @JacksonXmlProperty(localName = "full_detection")
 
     private Boolean fullDetection;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "robot_action")
 
-    @JacksonXmlProperty(localName = "robot_action")
-
     private Action robotAction;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "action")
-
-    @JacksonXmlProperty(localName = "action")
 
     private PolicyAction action;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "options")
 
-    @JacksonXmlProperty(localName = "options")
-
     private PolicyOption options;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "modulex_options")
-
-    @JacksonXmlProperty(localName = "modulex_options")
 
     private Map<String, Object> modulexOptions = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hosts")
 
-    @JacksonXmlProperty(localName = "hosts")
-
     private List<String> hosts = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bind_host")
-
-    @JacksonXmlProperty(localName = "bind_host")
 
     private List<BindHost> bindHost = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extend")
 
-    @JacksonXmlProperty(localName = "extend")
-
     private Map<String, String> extend = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timestamp")
-
-    @JacksonXmlProperty(localName = "timestamp")
 
     private Long timestamp;
 

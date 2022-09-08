@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.as.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,42 +13,30 @@ public class ListScalingV2PoliciesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scaling_resource_id")
 
-    @JacksonXmlProperty(localName = "scaling_resource_id")
-
     private String scalingResourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scaling_policy_name")
-
-    @JacksonXmlProperty(localName = "scaling_policy_name")
 
     private String scalingPolicyName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scaling_policy_type")
 
-    @JacksonXmlProperty(localName = "scaling_policy_type")
-
     private String scalingPolicyType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scaling_policy_id")
-
-    @JacksonXmlProperty(localName = "scaling_policy_id")
 
     private String scalingPolicyId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_number")
 
-    @JacksonXmlProperty(localName = "start_number")
-
     private Integer startNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
-
-    @JacksonXmlProperty(localName = "limit")
 
     private Integer limit;
 

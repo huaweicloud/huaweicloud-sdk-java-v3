@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.iotda.v5.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,63 +13,45 @@ public class ListRoutingRulesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "Instance-Id")
 
-    @JacksonXmlProperty(localName = "Instance-Id")
-
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource")
-
-    @JacksonXmlProperty(localName = "resource")
 
     private String resource;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event")
 
-    @JacksonXmlProperty(localName = "event")
-
     private String event;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_type")
-
-    @JacksonXmlProperty(localName = "app_type")
 
     private String appType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_id")
 
-    @JacksonXmlProperty(localName = "app_id")
-
     private String appId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rule_name")
-
-    @JacksonXmlProperty(localName = "rule_name")
 
     private String ruleName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
-    @JacksonXmlProperty(localName = "limit")
-
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "marker")
 
-    @JacksonXmlProperty(localName = "marker")
-
     private String marker;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
-
-    @JacksonXmlProperty(localName = "offset")
 
     private Integer offset;
 

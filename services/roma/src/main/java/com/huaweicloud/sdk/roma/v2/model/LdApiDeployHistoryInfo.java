@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.roma.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.time.OffsetDateTime;
 import java.util.Objects;
@@ -16,49 +15,35 @@ public class LdApiDeployHistoryInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ld_api_id")
-
-    @JacksonXmlProperty(localName = "ld_api_id")
 
     private String ldApiId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_id")
 
-    @JacksonXmlProperty(localName = "group_id")
-
     private String groupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "env_id")
-
-    @JacksonXmlProperty(localName = "env_id")
 
     private String envId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "api_id")
 
-    @JacksonXmlProperty(localName = "api_id")
-
     private String apiId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deploy_time")
 
-    @JacksonXmlProperty(localName = "deploy_time")
-
     private OffsetDateTime deployTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "api_definition")
-
-    @JacksonXmlProperty(localName = "api_definition")
 
     private LdApiInfo apiDefinition;
 

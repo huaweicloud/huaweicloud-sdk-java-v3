@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.nat.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,8 +15,6 @@ public class BatchCreateNatGatewayDnatRulesRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dnat_rules")
-
-    @JacksonXmlProperty(localName = "dnat_rules")
 
     private List<CreateNatGatewayDnatOption> dnatRules = null;
 

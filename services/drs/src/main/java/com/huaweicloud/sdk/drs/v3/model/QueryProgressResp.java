@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -20,21 +19,15 @@ public class QueryProgressResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_id")
 
-    @JacksonXmlProperty(localName = "job_id")
-
     private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "progress")
 
-    @JacksonXmlProperty(localName = "progress")
-
     private String progress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "incre_trans_delay")
-
-    @JacksonXmlProperty(localName = "incre_trans_delay")
 
     private String increTransDelay;
 
@@ -124,49 +117,35 @@ public class QueryProgressResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_mode")
 
-    @JacksonXmlProperty(localName = "task_mode")
-
     private TaskModeEnum taskMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "transfer_status")
-
-    @JacksonXmlProperty(localName = "transfer_status")
 
     private String transferStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "process_time")
 
-    @JacksonXmlProperty(localName = "process_time")
-
     private String processTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remaining_time")
-
-    @JacksonXmlProperty(localName = "remaining_time")
 
     private String remainingTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "progress_map")
 
-    @JacksonXmlProperty(localName = "progress_map")
-
     private Map<String, ProgressInfo> progressMap = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_code")
 
-    @JacksonXmlProperty(localName = "error_code")
-
     private String errorCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_msg")
-
-    @JacksonXmlProperty(localName = "error_msg")
 
     private String errorMsg;
 

@@ -13,8 +13,6 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.iotedge.v2.model.BasePathDTO;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -28,7 +26,6 @@ public class CreateEdgeNodeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edge_node_id")
     
-    @JacksonXmlProperty(localName = "edge_node_id")
     
     private String edgeNodeId;
 
@@ -36,7 +33,6 @@ public class CreateEdgeNodeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    @JacksonXmlProperty(localName = "name")
     
     private String name;
 
@@ -44,7 +40,6 @@ public class CreateEdgeNodeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_id")
     
-    @JacksonXmlProperty(localName = "instance_id")
     
     private String instanceId;
 
@@ -52,7 +47,6 @@ public class CreateEdgeNodeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="space_id")
     
-    @JacksonXmlProperty(localName = "space_id")
     
     private String spaceId;
 
@@ -60,7 +54,6 @@ public class CreateEdgeNodeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="product_id")
     
-    @JacksonXmlProperty(localName = "product_id")
     
     private String productId;
 
@@ -68,7 +61,6 @@ public class CreateEdgeNodeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="product_name")
     
-    @JacksonXmlProperty(localName = "product_name")
     
     private String productName;
 
@@ -76,7 +68,6 @@ public class CreateEdgeNodeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="state")
     
-    @JacksonXmlProperty(localName = "state")
     
     private String state;
 
@@ -84,7 +75,6 @@ public class CreateEdgeNodeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    @JacksonXmlProperty(localName = "type")
     
     private String type;
 
@@ -92,7 +82,6 @@ public class CreateEdgeNodeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="installer_version")
     
-    @JacksonXmlProperty(localName = "installer_version")
     
     private String installerVersion;
 
@@ -100,7 +89,6 @@ public class CreateEdgeNodeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="base_path")
     
-    @JacksonXmlProperty(localName = "base_path")
     
     private BasePathDTO basePath;
 
@@ -108,7 +96,6 @@ public class CreateEdgeNodeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_ids")
     
-    @JacksonXmlProperty(localName = "resource_ids")
     
     private List<String> resourceIds = null;
     
@@ -116,7 +103,6 @@ public class CreateEdgeNodeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ips")
     
-    @JacksonXmlProperty(localName = "ips")
     
     private List<String> ips = null;
     
@@ -124,7 +110,6 @@ public class CreateEdgeNodeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    @JacksonXmlProperty(localName = "create_time")
     
     private String createTime;
 
@@ -132,7 +117,6 @@ public class CreateEdgeNodeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="hardware_model")
     
-    @JacksonXmlProperty(localName = "hardware_model")
     
     private String hardwareModel;
 

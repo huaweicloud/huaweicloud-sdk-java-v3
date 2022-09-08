@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -19,14 +18,10 @@ public class CreateDocWatermarkByAddressRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region_id")
 
-    @JacksonXmlProperty(localName = "region_id")
-
     private String regionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "src_file")
-
-    @JacksonXmlProperty(localName = "src_file")
 
     private String srcFile;
 
@@ -122,35 +117,25 @@ public class CreateDocWatermarkByAddressRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "doc_type")
 
-    @JacksonXmlProperty(localName = "doc_type")
-
     private DocTypeEnum docType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dst_file")
-
-    @JacksonXmlProperty(localName = "dst_file")
 
     private String dstFile;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "blind_watermark")
 
-    @JacksonXmlProperty(localName = "blind_watermark")
-
     private String blindWatermark;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "visible_watermark")
 
-    @JacksonXmlProperty(localName = "visible_watermark")
-
     private String visibleWatermark;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image_mark")
-
-    @JacksonXmlProperty(localName = "image_mark")
 
     private String imageMark;
 
@@ -234,49 +219,35 @@ public class CreateDocWatermarkByAddressRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "visible_type")
 
-    @JacksonXmlProperty(localName = "visible_type")
-
     private VisibleTypeEnum visibleType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_password")
-
-    @JacksonXmlProperty(localName = "file_password")
 
     private String filePassword;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "marked_file_password")
 
-    @JacksonXmlProperty(localName = "marked_file_password")
-
     private String markedFilePassword;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "readonly_password")
-
-    @JacksonXmlProperty(localName = "readonly_password")
 
     private String readonlyPassword;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "front")
 
-    @JacksonXmlProperty(localName = "front")
-
     private Integer front;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rotation")
 
-    @JacksonXmlProperty(localName = "rotation")
-
     private Integer rotation;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "opacity")
-
-    @JacksonXmlProperty(localName = "opacity")
 
     private Float opacity;
 

@@ -1,11 +1,15 @@
 package com.huaweicloud.sdk.dli.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -17,37 +21,99 @@ public class CreateTemplateReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
-    @JacksonXmlProperty(localName = "name")
-
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "desc")
-
-    @JacksonXmlProperty(localName = "desc")
 
     private String desc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sql_body")
 
-    @JacksonXmlProperty(localName = "sql_body")
-
     private String sqlBody;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "job_type")
-
-    @JacksonXmlProperty(localName = "job_type")
-
-    private String jobType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    @JacksonXmlProperty(localName = "tags")
+    private List<TmsTagEntity> tags = null;
 
-    private List<JobsTags> tags = null;
+    /**
+    * 作业模板的类型，默认为flink_sql_job，仅支持flink_sql_job和flink_opensource_sql_job
+    */
+    public static final class JobTypeEnum {
+
+        /**
+         * Enum FLINK_SQL_JOB_FLINK_OPENSOURCE_SQL_JOB for value: "flink_sql_job，flink_opensource_sql_job"
+         */
+        public static final JobTypeEnum FLINK_SQL_JOB_FLINK_OPENSOURCE_SQL_JOB =
+            new JobTypeEnum("flink_sql_job，flink_opensource_sql_job");
+
+        private static final Map<String, JobTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, JobTypeEnum> createStaticFields() {
+            Map<String, JobTypeEnum> map = new HashMap<>();
+            map.put("flink_sql_job，flink_opensource_sql_job", FLINK_SQL_JOB_FLINK_OPENSOURCE_SQL_JOB);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        JobTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static JobTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            JobTypeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new JobTypeEnum(value);
+            }
+            return result;
+        }
+
+        public static JobTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            JobTypeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof JobTypeEnum) {
+                return this.value.equals(((JobTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "job_type")
+
+    private JobTypeEnum jobType;
 
     public CreateTemplateReq withName(String name) {
         this.name = name;
@@ -100,29 +166,12 @@ public class CreateTemplateReq {
         this.sqlBody = sqlBody;
     }
 
-    public CreateTemplateReq withJobType(String jobType) {
-        this.jobType = jobType;
-        return this;
-    }
-
-    /**
-     * Flink作业模板类型。默认值为\"flink_sql_job\"，若填写则只能为\"flink_sql_job\"或者\"flink_opensource_sql_job\"。
-     * @return jobType
-     */
-    public String getJobType() {
-        return jobType;
-    }
-
-    public void setJobType(String jobType) {
-        this.jobType = jobType;
-    }
-
-    public CreateTemplateReq withTags(List<JobsTags> tags) {
+    public CreateTemplateReq withTags(List<TmsTagEntity> tags) {
         this.tags = tags;
         return this;
     }
 
-    public CreateTemplateReq addTagsItem(JobsTags tagsItem) {
+    public CreateTemplateReq addTagsItem(TmsTagEntity tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -130,7 +179,7 @@ public class CreateTemplateReq {
         return this;
     }
 
-    public CreateTemplateReq withTags(Consumer<List<JobsTags>> tagsSetter) {
+    public CreateTemplateReq withTags(Consumer<List<TmsTagEntity>> tagsSetter) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -139,15 +188,32 @@ public class CreateTemplateReq {
     }
 
     /**
-     * Flink作业模板的标签。具体请参考表tags。
+     * 标签
      * @return tags
      */
-    public List<JobsTags> getTags() {
+    public List<TmsTagEntity> getTags() {
         return tags;
     }
 
-    public void setTags(List<JobsTags> tags) {
+    public void setTags(List<TmsTagEntity> tags) {
         this.tags = tags;
+    }
+
+    public CreateTemplateReq withJobType(JobTypeEnum jobType) {
+        this.jobType = jobType;
+        return this;
+    }
+
+    /**
+     * 作业模板的类型，默认为flink_sql_job，仅支持flink_sql_job和flink_opensource_sql_job
+     * @return jobType
+     */
+    public JobTypeEnum getJobType() {
+        return jobType;
+    }
+
+    public void setJobType(JobTypeEnum jobType) {
+        this.jobType = jobType;
     }
 
     @Override
@@ -161,13 +227,13 @@ public class CreateTemplateReq {
         CreateTemplateReq createTemplateReq = (CreateTemplateReq) o;
         return Objects.equals(this.name, createTemplateReq.name) && Objects.equals(this.desc, createTemplateReq.desc)
             && Objects.equals(this.sqlBody, createTemplateReq.sqlBody)
-            && Objects.equals(this.jobType, createTemplateReq.jobType)
-            && Objects.equals(this.tags, createTemplateReq.tags);
+            && Objects.equals(this.tags, createTemplateReq.tags)
+            && Objects.equals(this.jobType, createTemplateReq.jobType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, desc, sqlBody, jobType, tags);
+        return Objects.hash(name, desc, sqlBody, tags, jobType);
     }
 
     @Override
@@ -177,8 +243,8 @@ public class CreateTemplateReq {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    desc: ").append(toIndentedString(desc)).append("\n");
         sb.append("    sqlBody: ").append(toIndentedString(sqlBody)).append("\n");
-        sb.append("    jobType: ").append(toIndentedString(jobType)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    jobType: ").append(toIndentedString(jobType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

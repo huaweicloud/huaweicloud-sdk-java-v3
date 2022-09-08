@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -19,21 +18,15 @@ public class UpdateFalsePositiveRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vuln_id")
 
-    @JacksonXmlProperty(localName = "vuln_id")
-
     private String vulnId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "provider")
 
-    @JacksonXmlProperty(localName = "provider")
-
     private String provider;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "reason")
-
-    @JacksonXmlProperty(localName = "reason")
 
     private String reason;
 
@@ -116,8 +109,6 @@ public class UpdateFalsePositiveRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vuln_status")
-
-    @JacksonXmlProperty(localName = "vuln_status")
 
     private VulnStatusEnum vulnStatus;
 

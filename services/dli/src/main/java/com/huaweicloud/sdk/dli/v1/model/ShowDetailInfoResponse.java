@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -18,135 +17,97 @@ public class ShowDetailInfoResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_success")
 
-    @JacksonXmlProperty(localName = "is_success")
-
     private Boolean isSuccess;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "message")
-
-    @JacksonXmlProperty(localName = "message")
 
     private String message;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_id")
 
-    @JacksonXmlProperty(localName = "job_id")
-
     private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "owner")
-
-    @JacksonXmlProperty(localName = "owner")
 
     private String owner;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
-    @JacksonXmlProperty(localName = "start_time")
-
     private Long startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "duration")
-
-    @JacksonXmlProperty(localName = "duration")
 
     private Long duration;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "export_mode")
 
-    @JacksonXmlProperty(localName = "export_mode")
-
     private String exportMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "database_name")
-
-    @JacksonXmlProperty(localName = "database_name")
 
     private String databaseName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "table_name")
 
-    @JacksonXmlProperty(localName = "table_name")
-
     private String tableName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_path")
-
-    @JacksonXmlProperty(localName = "data_path")
 
     private String dataPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_type")
 
-    @JacksonXmlProperty(localName = "data_type")
-
     private String dataType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "with_column_header")
-
-    @JacksonXmlProperty(localName = "with_column_header")
 
     private Boolean withColumnHeader;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "delimiter")
 
-    @JacksonXmlProperty(localName = "delimiter")
-
     private String delimiter;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quote_char")
-
-    @JacksonXmlProperty(localName = "quote_char")
 
     private String quoteChar;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "escape_char")
 
-    @JacksonXmlProperty(localName = "escape_char")
-
     private String escapeChar;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "date_format")
-
-    @JacksonXmlProperty(localName = "date_format")
 
     private String dateFormat;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timestamp_format")
 
-    @JacksonXmlProperty(localName = "timestamp_format")
-
     private String timestampFormat;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "compress")
-
-    @JacksonXmlProperty(localName = "compress")
 
     private String compress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    @JacksonXmlProperty(localName = "tags")
-
-    private List<JobsTags> tags = null;
+    private List<TmsTagEntity> tags = null;
 
     public ShowDetailInfoResponse withIsSuccess(Boolean isSuccess) {
         this.isSuccess = isSuccess;
@@ -454,12 +415,12 @@ public class ShowDetailInfoResponse extends SdkResponse {
         this.compress = compress;
     }
 
-    public ShowDetailInfoResponse withTags(List<JobsTags> tags) {
+    public ShowDetailInfoResponse withTags(List<TmsTagEntity> tags) {
         this.tags = tags;
         return this;
     }
 
-    public ShowDetailInfoResponse addTagsItem(JobsTags tagsItem) {
+    public ShowDetailInfoResponse addTagsItem(TmsTagEntity tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -467,7 +428,7 @@ public class ShowDetailInfoResponse extends SdkResponse {
         return this;
     }
 
-    public ShowDetailInfoResponse withTags(Consumer<List<JobsTags>> tagsSetter) {
+    public ShowDetailInfoResponse withTags(Consumer<List<TmsTagEntity>> tagsSetter) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -476,14 +437,14 @@ public class ShowDetailInfoResponse extends SdkResponse {
     }
 
     /**
-     * 作业的标签。具体请参考表tags。
+     * 作业标签
      * @return tags
      */
-    public List<JobsTags> getTags() {
+    public List<TmsTagEntity> getTags() {
         return tags;
     }
 
-    public void setTags(List<JobsTags> tags) {
+    public void setTags(List<TmsTagEntity> tags) {
         this.tags = tags;
     }
 

@@ -38,6 +38,34 @@ public class ModerationMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RunCreateVideoModerationJobRequest, RunCreateVideoModerationJobResponse> runCreateVideoModerationJob =
+        genForrunCreateVideoModerationJob();
+
+    private static HttpRequestDef<RunCreateVideoModerationJobRequest, RunCreateVideoModerationJobResponse> genForrunCreateVideoModerationJob() {
+        // basic
+        HttpRequestDef.Builder<RunCreateVideoModerationJobRequest, RunCreateVideoModerationJobResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    RunCreateVideoModerationJobRequest.class,
+                    RunCreateVideoModerationJobResponse.class)
+                .withName("RunCreateVideoModerationJob")
+                .withUri("/v3/{project_id}/moderation/video/jobs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<VideoCreateRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(VideoCreateRequest.class),
+            f -> f.withMarshaller(RunCreateVideoModerationJobRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RunQueryAudioModerationJobRequest, RunQueryAudioModerationJobResponse> runQueryAudioModerationJob =
         genForrunQueryAudioModerationJob();
 
@@ -58,6 +86,34 @@ public class ModerationMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(RunQueryAudioModerationJobRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RunQueryVideoModerationJobRequest, RunQueryVideoModerationJobResponse> runQueryVideoModerationJob =
+        genForrunQueryVideoModerationJob();
+
+    private static HttpRequestDef<RunQueryVideoModerationJobRequest, RunQueryVideoModerationJobResponse> genForrunQueryVideoModerationJob() {
+        // basic
+        HttpRequestDef.Builder<RunQueryVideoModerationJobRequest, RunQueryVideoModerationJobResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    RunQueryVideoModerationJobRequest.class,
+                    RunQueryVideoModerationJobResponse.class)
+                .withName("RunQueryVideoModerationJob")
+                .withUri("/v3/{project_id}/moderation/video/jobs/{job_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RunQueryVideoModerationJobRequest::getJobId, (req, v) -> {
                 req.setJobId(v);
             }));
 

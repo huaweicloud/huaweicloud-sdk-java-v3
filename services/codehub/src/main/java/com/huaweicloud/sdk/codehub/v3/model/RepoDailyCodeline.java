@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.codehub.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,21 +13,15 @@ public class RepoDailyCodeline {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "additions")
 
-    @JacksonXmlProperty(localName = "additions")
-
     private Integer additions;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "date")
 
-    @JacksonXmlProperty(localName = "date")
-
     private String date;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deletions")
-
-    @JacksonXmlProperty(localName = "deletions")
 
     private Integer deletions;
 

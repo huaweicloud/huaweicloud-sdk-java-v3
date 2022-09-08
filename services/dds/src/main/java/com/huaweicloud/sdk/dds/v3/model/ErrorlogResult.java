@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dds.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,28 +13,20 @@ public class ErrorlogResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "node_name")
 
-    @JacksonXmlProperty(localName = "node_name")
-
     private String nodeName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "level")
-
-    @JacksonXmlProperty(localName = "level")
 
     private String level;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time")
 
-    @JacksonXmlProperty(localName = "time")
-
     private String time;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "content")
-
-    @JacksonXmlProperty(localName = "content")
 
     private String content;
 

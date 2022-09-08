@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.drs.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -16,35 +15,25 @@ public class CreateCompareTaskResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_id")
 
-    @JacksonXmlProperty(localName = "job_id")
-
     private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "object_level_compare_create_result")
-
-    @JacksonXmlProperty(localName = "object_level_compare_create_result")
 
     private CreateCompareTaskResult objectLevelCompareCreateResult;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_level_compare_create_result")
 
-    @JacksonXmlProperty(localName = "data_level_compare_create_result")
-
     private CreateCompareTaskResult dataLevelCompareCreateResult;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_code")
 
-    @JacksonXmlProperty(localName = "error_code")
-
     private String errorCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_msg")
-
-    @JacksonXmlProperty(localName = "error_msg")
 
     private String errorMsg;
 

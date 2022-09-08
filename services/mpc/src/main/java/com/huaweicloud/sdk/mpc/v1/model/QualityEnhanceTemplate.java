@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.mpc.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,21 +14,15 @@ public class QualityEnhanceTemplate {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template_name")
 
-    @JacksonXmlProperty(localName = "template_name")
-
     private String templateName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template_description")
 
-    @JacksonXmlProperty(localName = "template_description")
-
     private String templateDescription;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "video")
-
-    @JacksonXmlProperty(localName = "video")
 
     private QualityEnhanceVideo video;
 

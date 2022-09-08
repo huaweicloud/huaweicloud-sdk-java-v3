@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.mpc.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,35 +14,25 @@ public class WatermarkRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "input")
 
-    @JacksonXmlProperty(localName = "input")
-
     private ObsObjInfo input;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template_id")
-
-    @JacksonXmlProperty(localName = "template_id")
 
     private String templateId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "text_context")
 
-    @JacksonXmlProperty(localName = "text_context")
-
     private String textContext;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image_watermark")
 
-    @JacksonXmlProperty(localName = "image_watermark")
-
     private ImageWatermark imageWatermark;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "text_watermark")
-
-    @JacksonXmlProperty(localName = "text_watermark")
 
     private TextWatermark textWatermark;
 

@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -19,28 +18,20 @@ public class PublicipInfoResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publicip_address")
 
-    @JacksonXmlProperty(localName = "publicip_address")
-
     private String publicipAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publicip_id")
-
-    @JacksonXmlProperty(localName = "publicip_id")
 
     private String publicipId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publicip_type")
 
-    @JacksonXmlProperty(localName = "publicip_type")
-
     private String publicipType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publicipv6_address")
-
-    @JacksonXmlProperty(localName = "publicipv6_address")
 
     private String publicipv6Address;
 
@@ -123,8 +114,6 @@ public class PublicipInfoResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip_version")
-
-    @JacksonXmlProperty(localName = "ip_version")
 
     private IpVersionEnum ipVersion;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.res.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,14 +13,10 @@ public class UcbParam {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alpha")
 
-    @JacksonXmlProperty(localName = "alpha")
-
     private Double alpha;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "min_used_num")
-
-    @JacksonXmlProperty(localName = "min_used_num")
 
     private Integer minUsedNum;
 

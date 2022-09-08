@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.bcs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,14 +13,10 @@ public class BatchRemovePeersFromChannelRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "org_name")
 
-    @JacksonXmlProperty(localName = "org_name")
-
     private String orgName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "peers")
-
-    @JacksonXmlProperty(localName = "peers")
 
     private Integer peers;
 

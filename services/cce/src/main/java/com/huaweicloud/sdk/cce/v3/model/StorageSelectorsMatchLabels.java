@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cce.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,35 +13,25 @@ public class StorageSelectorsMatchLabels {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
 
-    @JacksonXmlProperty(localName = "size")
-
     private String size;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volumeType")
-
-    @JacksonXmlProperty(localName = "volumeType")
 
     private String volumeType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metadataEncrypted")
 
-    @JacksonXmlProperty(localName = "metadataEncrypted")
-
     private String metadataEncrypted;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metadataCmkid")
 
-    @JacksonXmlProperty(localName = "metadataCmkid")
-
     private String metadataCmkid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "count")
-
-    @JacksonXmlProperty(localName = "count")
 
     private String count;
 

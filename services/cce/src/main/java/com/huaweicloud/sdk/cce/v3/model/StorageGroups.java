@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cce.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,28 +16,20 @@ public class StorageGroups {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
-    @JacksonXmlProperty(localName = "name")
-
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cceManaged")
-
-    @JacksonXmlProperty(localName = "cceManaged")
 
     private Boolean cceManaged;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "selectorNames")
 
-    @JacksonXmlProperty(localName = "selectorNames")
-
     private List<String> selectorNames = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "virtualSpaces")
-
-    @JacksonXmlProperty(localName = "virtualSpaces")
 
     private List<VirtualSpace> virtualSpaces = null;
 

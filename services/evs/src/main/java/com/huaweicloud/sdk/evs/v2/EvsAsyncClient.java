@@ -92,6 +92,107 @@ public class EvsAsyncClient {
     }
 
     /**
+     * 接受云硬盘过户
+     *
+     * 通过云硬盘过户记录ID以及身份认证密钥来接受云硬盘过户。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CinderAcceptVolumeTransferRequest 请求对象
+     * @return CompletableFuture<CinderAcceptVolumeTransferResponse>
+     */
+    public CompletableFuture<CinderAcceptVolumeTransferResponse> cinderAcceptVolumeTransferAsync(
+        CinderAcceptVolumeTransferRequest request) {
+        return hcClient.asyncInvokeHttp(request, EvsMeta.cinderAcceptVolumeTransfer);
+    }
+
+    /**
+     * 接受云硬盘过户
+     *
+     * 通过云硬盘过户记录ID以及身份认证密钥来接受云硬盘过户。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CinderAcceptVolumeTransferRequest 请求对象
+     * @return AsyncInvoker<CinderAcceptVolumeTransferRequest, CinderAcceptVolumeTransferResponse>
+     */
+    public AsyncInvoker<CinderAcceptVolumeTransferRequest, CinderAcceptVolumeTransferResponse> cinderAcceptVolumeTransferAsyncInvoker(
+        CinderAcceptVolumeTransferRequest request) {
+        return new AsyncInvoker<CinderAcceptVolumeTransferRequest, CinderAcceptVolumeTransferResponse>(request,
+            EvsMeta.cinderAcceptVolumeTransfer, hcClient);
+    }
+
+    /**
+     * 创建云硬盘过户
+     *
+     * 指定云硬盘来创建云硬盘过户记录，创建成功后，会返回过户记录ID以及身份认证密钥。
+     * 云硬盘在过户过程中的状态变化如下：创建云硬盘过户后，云硬盘状态由“available”变为“awaiting-transfer”。当云硬盘过户被接收后，云硬盘状态变为“available”。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CinderCreateVolumeTransferRequest 请求对象
+     * @return CompletableFuture<CinderCreateVolumeTransferResponse>
+     */
+    public CompletableFuture<CinderCreateVolumeTransferResponse> cinderCreateVolumeTransferAsync(
+        CinderCreateVolumeTransferRequest request) {
+        return hcClient.asyncInvokeHttp(request, EvsMeta.cinderCreateVolumeTransfer);
+    }
+
+    /**
+     * 创建云硬盘过户
+     *
+     * 指定云硬盘来创建云硬盘过户记录，创建成功后，会返回过户记录ID以及身份认证密钥。
+     * 云硬盘在过户过程中的状态变化如下：创建云硬盘过户后，云硬盘状态由“available”变为“awaiting-transfer”。当云硬盘过户被接收后，云硬盘状态变为“available”。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CinderCreateVolumeTransferRequest 请求对象
+     * @return AsyncInvoker<CinderCreateVolumeTransferRequest, CinderCreateVolumeTransferResponse>
+     */
+    public AsyncInvoker<CinderCreateVolumeTransferRequest, CinderCreateVolumeTransferResponse> cinderCreateVolumeTransferAsyncInvoker(
+        CinderCreateVolumeTransferRequest request) {
+        return new AsyncInvoker<CinderCreateVolumeTransferRequest, CinderCreateVolumeTransferResponse>(request,
+            EvsMeta.cinderCreateVolumeTransfer, hcClient);
+    }
+
+    /**
+     * 删除云硬盘过户
+     *
+     * 当云硬盘过户未被接受时，您可以删除云硬盘过户记录，接受后则无法执行删除操作。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CinderDeleteVolumeTransferRequest 请求对象
+     * @return CompletableFuture<CinderDeleteVolumeTransferResponse>
+     */
+    public CompletableFuture<CinderDeleteVolumeTransferResponse> cinderDeleteVolumeTransferAsync(
+        CinderDeleteVolumeTransferRequest request) {
+        return hcClient.asyncInvokeHttp(request, EvsMeta.cinderDeleteVolumeTransfer);
+    }
+
+    /**
+     * 删除云硬盘过户
+     *
+     * 当云硬盘过户未被接受时，您可以删除云硬盘过户记录，接受后则无法执行删除操作。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CinderDeleteVolumeTransferRequest 请求对象
+     * @return AsyncInvoker<CinderDeleteVolumeTransferRequest, CinderDeleteVolumeTransferResponse>
+     */
+    public AsyncInvoker<CinderDeleteVolumeTransferRequest, CinderDeleteVolumeTransferResponse> cinderDeleteVolumeTransferAsyncInvoker(
+        CinderDeleteVolumeTransferRequest request) {
+        return new AsyncInvoker<CinderDeleteVolumeTransferRequest, CinderDeleteVolumeTransferResponse>(request,
+            EvsMeta.cinderDeleteVolumeTransfer, hcClient);
+    }
+
+    /**
      * 查询所有的可用分区信息
      *
      * 查询所有的可用分区信息。
@@ -157,6 +258,39 @@ public class EvsAsyncClient {
     }
 
     /**
+     * 查询云硬盘过户记录列表概要
+     *
+     * 查询当前租户下所有云硬盘的过户记录列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CinderListVolumeTransfersRequest 请求对象
+     * @return CompletableFuture<CinderListVolumeTransfersResponse>
+     */
+    public CompletableFuture<CinderListVolumeTransfersResponse> cinderListVolumeTransfersAsync(
+        CinderListVolumeTransfersRequest request) {
+        return hcClient.asyncInvokeHttp(request, EvsMeta.cinderListVolumeTransfers);
+    }
+
+    /**
+     * 查询云硬盘过户记录列表概要
+     *
+     * 查询当前租户下所有云硬盘的过户记录列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CinderListVolumeTransfersRequest 请求对象
+     * @return AsyncInvoker<CinderListVolumeTransfersRequest, CinderListVolumeTransfersResponse>
+     */
+    public AsyncInvoker<CinderListVolumeTransfersRequest, CinderListVolumeTransfersResponse> cinderListVolumeTransfersAsyncInvoker(
+        CinderListVolumeTransfersRequest request) {
+        return new AsyncInvoker<CinderListVolumeTransfersRequest, CinderListVolumeTransfersResponse>(request,
+            EvsMeta.cinderListVolumeTransfers, hcClient);
+    }
+
+    /**
      * 查询云硬盘类型列表
      *
      * 查询云硬盘类型列表。
@@ -187,6 +321,39 @@ public class EvsAsyncClient {
         CinderListVolumeTypesRequest request) {
         return new AsyncInvoker<CinderListVolumeTypesRequest, CinderListVolumeTypesResponse>(request,
             EvsMeta.cinderListVolumeTypes, hcClient);
+    }
+
+    /**
+     * 查询单个云硬盘过户记录详情
+     *
+     * 查询单个云硬盘的过户记录详情，比如过户记录创建时间、ID以及名称等信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CinderShowVolumeTransferRequest 请求对象
+     * @return CompletableFuture<CinderShowVolumeTransferResponse>
+     */
+    public CompletableFuture<CinderShowVolumeTransferResponse> cinderShowVolumeTransferAsync(
+        CinderShowVolumeTransferRequest request) {
+        return hcClient.asyncInvokeHttp(request, EvsMeta.cinderShowVolumeTransfer);
+    }
+
+    /**
+     * 查询单个云硬盘过户记录详情
+     *
+     * 查询单个云硬盘的过户记录详情，比如过户记录创建时间、ID以及名称等信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CinderShowVolumeTransferRequest 请求对象
+     * @return AsyncInvoker<CinderShowVolumeTransferRequest, CinderShowVolumeTransferResponse>
+     */
+    public AsyncInvoker<CinderShowVolumeTransferRequest, CinderShowVolumeTransferResponse> cinderShowVolumeTransferAsyncInvoker(
+        CinderShowVolumeTransferRequest request) {
+        return new AsyncInvoker<CinderShowVolumeTransferRequest, CinderShowVolumeTransferResponse>(request,
+            EvsMeta.cinderShowVolumeTransfer, hcClient);
     }
 
     /**
@@ -709,6 +876,67 @@ public class EvsAsyncClient {
     public AsyncInvoker<UpdateVolumeRequest, UpdateVolumeResponse> updateVolumeAsyncInvoker(
         UpdateVolumeRequest request) {
         return new AsyncInvoker<UpdateVolumeRequest, UpdateVolumeResponse>(request, EvsMeta.updateVolume, hcClient);
+    }
+
+    /**
+     * 查询接口版本信息列表
+     *
+     * 查询接口版本信息列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListVersionsRequest 请求对象
+     * @return CompletableFuture<ListVersionsResponse>
+     */
+    public CompletableFuture<ListVersionsResponse> listVersionsAsync(ListVersionsRequest request) {
+        return hcClient.asyncInvokeHttp(request, EvsMeta.listVersions);
+    }
+
+    /**
+     * 查询接口版本信息列表
+     *
+     * 查询接口版本信息列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListVersionsRequest 请求对象
+     * @return AsyncInvoker<ListVersionsRequest, ListVersionsResponse>
+     */
+    public AsyncInvoker<ListVersionsRequest, ListVersionsResponse> listVersionsAsyncInvoker(
+        ListVersionsRequest request) {
+        return new AsyncInvoker<ListVersionsRequest, ListVersionsResponse>(request, EvsMeta.listVersions, hcClient);
+    }
+
+    /**
+     * 查询API接口的版本信息
+     *
+     * 查询接口的指定版本信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowVersionRequest 请求对象
+     * @return CompletableFuture<ShowVersionResponse>
+     */
+    public CompletableFuture<ShowVersionResponse> showVersionAsync(ShowVersionRequest request) {
+        return hcClient.asyncInvokeHttp(request, EvsMeta.showVersion);
+    }
+
+    /**
+     * 查询API接口的版本信息
+     *
+     * 查询接口的指定版本信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowVersionRequest 请求对象
+     * @return AsyncInvoker<ShowVersionRequest, ShowVersionResponse>
+     */
+    public AsyncInvoker<ShowVersionRequest, ShowVersionResponse> showVersionAsyncInvoker(ShowVersionRequest request) {
+        return new AsyncInvoker<ShowVersionRequest, ShowVersionResponse>(request, EvsMeta.showVersion, hcClient);
     }
 
 }

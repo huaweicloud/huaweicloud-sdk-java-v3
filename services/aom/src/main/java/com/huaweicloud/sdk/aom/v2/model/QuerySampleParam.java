@@ -11,8 +11,6 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.aom.v2.model.QuerySample;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -26,7 +24,6 @@ public class QuerySampleParam  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="samples")
     
-    @JacksonXmlProperty(localName = "samples")
     
     private List<QuerySample> samples = null;
     
@@ -34,7 +31,6 @@ public class QuerySampleParam  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="statistics")
     
-    @JacksonXmlProperty(localName = "statistics")
     
     private List<String> statistics = null;
     
@@ -42,7 +38,6 @@ public class QuerySampleParam  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="period")
     
-    @JacksonXmlProperty(localName = "period")
     
     private Integer period;
 
@@ -50,7 +45,6 @@ public class QuerySampleParam  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="time_range")
     
-    @JacksonXmlProperty(localName = "time_range")
     
     private String timeRange;
 

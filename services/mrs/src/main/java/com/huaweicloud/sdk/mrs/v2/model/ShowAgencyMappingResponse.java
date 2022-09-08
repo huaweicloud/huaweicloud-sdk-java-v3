@@ -13,8 +13,6 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.mrs.v2.model.AgencyMapping;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -28,7 +26,6 @@ public class ShowAgencyMappingResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="agency_mappings")
     
-    @JacksonXmlProperty(localName = "agency_mappings")
     
     private List<AgencyMapping> agencyMappings = null;
     

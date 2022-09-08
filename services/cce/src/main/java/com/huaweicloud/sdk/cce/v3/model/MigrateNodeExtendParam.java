@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cce.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,35 +13,25 @@ public class MigrateNodeExtendParam {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maxPods")
 
-    @JacksonXmlProperty(localName = "maxPods")
-
     private Integer maxPods;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "DockerLVMConfigOverride")
-
-    @JacksonXmlProperty(localName = "DockerLVMConfigOverride")
 
     private String dockerLVMConfigOverride;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alpha.cce/preInstall")
 
-    @JacksonXmlProperty(localName = "alpha.cce/preInstall")
-
     private String alphaCcePreInstall;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alpha.cce/postInstall")
 
-    @JacksonXmlProperty(localName = "alpha.cce/postInstall")
-
     private String alphaCcePostInstall;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alpha.cce/NodeImageID")
-
-    @JacksonXmlProperty(localName = "alpha.cce/NodeImageID")
 
     private String alphaCceNodeImageID;
 

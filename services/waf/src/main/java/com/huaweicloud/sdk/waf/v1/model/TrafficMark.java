@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.waf.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,21 +16,15 @@ public class TrafficMark {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sip")
 
-    @JacksonXmlProperty(localName = "sip")
-
     private List<String> sip = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cookie")
 
-    @JacksonXmlProperty(localName = "cookie")
-
     private String cookie;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "params")
-
-    @JacksonXmlProperty(localName = "params")
 
     private String params;
 

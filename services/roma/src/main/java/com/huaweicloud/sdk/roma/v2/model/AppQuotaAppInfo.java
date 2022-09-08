@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.roma.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.time.OffsetDateTime;
 import java.util.Objects;
@@ -15,70 +14,50 @@ public class AppQuotaAppInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_id")
 
-    @JacksonXmlProperty(localName = "app_id")
-
     private String appId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
-
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    @JacksonXmlProperty(localName = "status")
-
     private Integer status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_key")
-
-    @JacksonXmlProperty(localName = "app_key")
 
     private String appKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remark")
 
-    @JacksonXmlProperty(localName = "remark")
-
     private String remark;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "register_time")
-
-    @JacksonXmlProperty(localName = "register_time")
 
     private OffsetDateTime registerTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
 
-    @JacksonXmlProperty(localName = "update_time")
-
     private OffsetDateTime updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_quota_id")
-
-    @JacksonXmlProperty(localName = "app_quota_id")
 
     private String appQuotaId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_quota_name")
 
-    @JacksonXmlProperty(localName = "app_quota_name")
-
     private String appQuotaName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bound_time")
-
-    @JacksonXmlProperty(localName = "bound_time")
 
     private OffsetDateTime boundTime;
 

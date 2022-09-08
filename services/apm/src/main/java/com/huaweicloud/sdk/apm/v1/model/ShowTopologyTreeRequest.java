@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.apm.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,35 +13,25 @@ public class ShowTopologyTreeRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region_id")
 
-    @JacksonXmlProperty(localName = "region_id")
-
     private String regionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "business_id")
-
-    @JacksonXmlProperty(localName = "business_id")
 
     private Long businessId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "env_tag_id")
 
-    @JacksonXmlProperty(localName = "env_tag_id")
-
     private Long envTagId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "env_keyword")
 
-    @JacksonXmlProperty(localName = "env_keyword")
-
     private String envKeyword;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "x-business-id")
-
-    @JacksonXmlProperty(localName = "x-business-id")
 
     private Long xBusinessId;
 

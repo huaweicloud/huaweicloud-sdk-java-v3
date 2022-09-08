@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,14 +21,10 @@ public class AlgorithmSpecifyParameters {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "latent_vector_length")
 
-    @JacksonXmlProperty(localName = "latent_vector_length")
-
     private Integer latentVectorLength;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "architecture")
-
-    @JacksonXmlProperty(localName = "architecture")
 
     private List<Integer> architecture = null;
 
@@ -119,77 +114,55 @@ public class AlgorithmSpecifyParameters {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "active_function")
 
-    @JacksonXmlProperty(localName = "active_function")
-
     private ActiveFunctionEnum activeFunction;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "value_keep_probability")
-
-    @JacksonXmlProperty(localName = "value_keep_probability")
 
     private Double valueKeepProbability;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "embed_size")
 
-    @JacksonXmlProperty(localName = "embed_size")
-
     private List<Integer> embedSize = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mlp_architecture")
-
-    @JacksonXmlProperty(localName = "mlp_architecture")
 
     private List<Integer> mlpArchitecture = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_order")
 
-    @JacksonXmlProperty(localName = "max_order")
-
     private Integer maxOrder;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hash_sizes")
-
-    @JacksonXmlProperty(localName = "hash_sizes")
 
     private List<Integer> hashSizes = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hash_compensation")
 
-    @JacksonXmlProperty(localName = "hash_compensation")
-
     private List<Double> hashCompensation = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "use_wide_part")
-
-    @JacksonXmlProperty(localName = "use_wide_part")
 
     private Boolean useWidePart;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "structure_optimizer")
 
-    @JacksonXmlProperty(localName = "structure_optimizer")
-
     private Optimizer structureOptimizer;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "merge_multi_hot")
 
-    @JacksonXmlProperty(localName = "merge_multi_hot")
-
     private Boolean mergeMultiHot;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fix_structure")
-
-    @JacksonXmlProperty(localName = "fix_structure")
 
     private Boolean fixStructure;
 

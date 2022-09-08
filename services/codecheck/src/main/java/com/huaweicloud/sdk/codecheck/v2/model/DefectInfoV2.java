@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.codecheck.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,84 +16,60 @@ public class DefectInfoV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "defect_id")
 
-    @JacksonXmlProperty(localName = "defect_id")
-
     private String defectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "defect_checker_name")
-
-    @JacksonXmlProperty(localName = "defect_checker_name")
 
     private String defectCheckerName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "defect_status")
 
-    @JacksonXmlProperty(localName = "defect_status")
-
     private String defectStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rule_system_tags")
-
-    @JacksonXmlProperty(localName = "rule_system_tags")
 
     private String ruleSystemTags;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rule_name")
 
-    @JacksonXmlProperty(localName = "rule_name")
-
     private String ruleName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "line_number")
-
-    @JacksonXmlProperty(localName = "line_number")
 
     private String lineNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "defect_content")
 
-    @JacksonXmlProperty(localName = "defect_content")
-
     private String defectContent;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "defect_level")
-
-    @JacksonXmlProperty(localName = "defect_level")
 
     private String defectLevel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_path")
 
-    @JacksonXmlProperty(localName = "file_path")
-
     private String filePath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
-
-    @JacksonXmlProperty(localName = "created_at")
 
     private String createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "issue_key")
 
-    @JacksonXmlProperty(localName = "issue_key")
-
     private String issueKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fragment")
-
-    @JacksonXmlProperty(localName = "fragment")
 
     private List<DefectFragmentV2> fragment = null;
 

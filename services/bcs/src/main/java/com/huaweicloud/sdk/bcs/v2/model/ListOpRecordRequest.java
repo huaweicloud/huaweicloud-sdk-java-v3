@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,8 +17,6 @@ public class ListOpRecordRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "blockchain_id")
-
-    @JacksonXmlProperty(localName = "blockchain_id")
 
     private String blockchainId;
 
@@ -121,8 +118,6 @@ public class ListOpRecordRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operation_status")
 
-    @JacksonXmlProperty(localName = "operation_status")
-
     private OperationStatusEnum operationStatus;
 
     /**
@@ -222,8 +217,6 @@ public class ListOpRecordRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_type")
-
-    @JacksonXmlProperty(localName = "resource_type")
 
     private ResourceTypeEnum resourceType;
 
@@ -343,14 +336,10 @@ public class ListOpRecordRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operation_type")
 
-    @JacksonXmlProperty(localName = "operation_type")
-
     private OperationTypeEnum operationType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operation_id")
-
-    @JacksonXmlProperty(localName = "operation_id")
 
     private String operationId;
 

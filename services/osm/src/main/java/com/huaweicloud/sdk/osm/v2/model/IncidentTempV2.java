@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.osm.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,21 +13,15 @@ public class IncidentTempV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "incident_template_id")
 
-    @JacksonXmlProperty(localName = "incident_template_id")
-
     private String incidentTemplateId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "incident_template_name")
 
-    @JacksonXmlProperty(localName = "incident_template_name")
-
     private String incidentTemplateName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "incident_template_content")
-
-    @JacksonXmlProperty(localName = "incident_template_content")
 
     private String incidentTemplateContent;
 

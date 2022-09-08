@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.res.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,21 +13,15 @@ public class RankETLFilter {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "filter_type")
 
-    @JacksonXmlProperty(localName = "filter_type")
-
     private String filterType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time_type")
 
-    @JacksonXmlProperty(localName = "time_type")
-
     private String timeType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_monday_first")
-
-    @JacksonXmlProperty(localName = "is_monday_first")
 
     private Boolean isMondayFirst;
 

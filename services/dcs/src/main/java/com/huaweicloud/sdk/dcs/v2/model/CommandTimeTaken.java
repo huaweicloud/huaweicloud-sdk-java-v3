@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dcs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,35 +13,25 @@ public class CommandTimeTaken {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "calls_sum")
 
-    @JacksonXmlProperty(localName = "calls_sum")
-
     private Integer callsSum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "usec_sum")
-
-    @JacksonXmlProperty(localName = "usec_sum")
 
     private Double usecSum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "command_name")
 
-    @JacksonXmlProperty(localName = "command_name")
-
     private String commandName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "per_usec")
 
-    @JacksonXmlProperty(localName = "per_usec")
-
     private String perUsec;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "average_usec")
-
-    @JacksonXmlProperty(localName = "average_usec")
 
     private Double averageUsec;
 

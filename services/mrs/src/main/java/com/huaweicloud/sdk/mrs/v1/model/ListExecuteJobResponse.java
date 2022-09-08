@@ -13,8 +13,6 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.mrs.v1.model.JobExeResult;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -28,7 +26,6 @@ public class ListExecuteJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="totalRecord")
     
-    @JacksonXmlProperty(localName = "totalRecord")
     
     private Integer totalRecord;
 
@@ -36,7 +33,6 @@ public class ListExecuteJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_executions")
     
-    @JacksonXmlProperty(localName = "job_executions")
     
     private List<JobExeResult> jobExecutions = null;
     

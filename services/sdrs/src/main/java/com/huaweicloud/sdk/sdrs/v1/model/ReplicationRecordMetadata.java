@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -19,21 +18,15 @@ public class ReplicationRecordMetadata {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "multiattach")
 
-    @JacksonXmlProperty(localName = "multiattach")
-
     private Boolean multiattach;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bootable")
 
-    @JacksonXmlProperty(localName = "bootable")
-
     private Boolean bootable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volume_size")
-
-    @JacksonXmlProperty(localName = "volume_size")
 
     private Integer volumeSize;
 
@@ -134,8 +127,6 @@ public class ReplicationRecordMetadata {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volume_type")
-
-    @JacksonXmlProperty(localName = "volume_type")
 
     private VolumeTypeEnum volumeType;
 

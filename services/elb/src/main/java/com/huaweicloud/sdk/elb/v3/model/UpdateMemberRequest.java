@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.elb.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,21 +14,15 @@ public class UpdateMemberRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "member_id")
 
-    @JacksonXmlProperty(localName = "member_id")
-
     private String memberId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pool_id")
 
-    @JacksonXmlProperty(localName = "pool_id")
-
     private String poolId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
-
-    @JacksonXmlProperty(localName = "body")
 
     private UpdateMemberRequestBody body;
 

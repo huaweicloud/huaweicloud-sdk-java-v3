@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.rabbitmq.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,28 +16,20 @@ public class ListEngineIosEntity {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "io_spec")
 
-    @JacksonXmlProperty(localName = "io_spec")
-
     private String ioSpec;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
-
-    @JacksonXmlProperty(localName = "type")
 
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "available_zones")
 
-    @JacksonXmlProperty(localName = "available_zones")
-
     private List<String> availableZones = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "unavailable_zones")
-
-    @JacksonXmlProperty(localName = "unavailable_zones")
 
     private List<String> unavailableZones = null;
 

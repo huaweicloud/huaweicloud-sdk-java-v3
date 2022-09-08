@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cloudtest.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,84 +16,60 @@ public class ExtendInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "author")
 
-    @JacksonXmlProperty(localName = "author")
-
     private ExtendAuthorInfo author;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updator")
-
-    @JacksonXmlProperty(localName = "updator")
 
     private ExtendAuthorInfo updator;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain")
 
-    @JacksonXmlProperty(localName = "domain")
-
     private AssignedUserInfo domain;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
-
-    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "preparation")
 
-    @JacksonXmlProperty(localName = "preparation")
-
     private String preparation;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "steps")
-
-    @JacksonXmlProperty(localName = "steps")
 
     private List<ExternalServiceCaseStep> steps = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "label_list")
 
-    @JacksonXmlProperty(localName = "label_list")
-
     private List<AssignedUserInfo> labelList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "defect_list")
-
-    @JacksonXmlProperty(localName = "defect_list")
 
     private List<AssignedUserInfo> defectList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "module")
 
-    @JacksonXmlProperty(localName = "module")
-
     private AssignedUserInfo module;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "issue")
-
-    @JacksonXmlProperty(localName = "issue")
 
     private AssignedUserInfo issue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "test_version_id")
 
-    @JacksonXmlProperty(localName = "test_version_id")
-
     private String testVersionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fixed_version")
-
-    @JacksonXmlProperty(localName = "fixed_version")
 
     private AssignedUserInfo fixedVersion;
 

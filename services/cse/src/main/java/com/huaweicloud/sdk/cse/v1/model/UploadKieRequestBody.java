@@ -1,7 +1,6 @@
 package com.huaweicloud.sdk.cse.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.http.FormDataFilePart;
 import com.huaweicloud.sdk.core.http.FormDataPart;
 import com.huaweicloud.sdk.core.http.SdkFormDataBody;
@@ -17,7 +16,6 @@ import java.util.Objects;
 public class UploadKieRequestBody implements SdkFormDataBody {
 
     @JsonProperty(value = "upload_file", access = JsonProperty.Access.WRITE_ONLY)
-    @JacksonXmlProperty(localName = "upload_file")
 
     private FormDataFilePart uploadFile;
 

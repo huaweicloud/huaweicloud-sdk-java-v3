@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.elb.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,140 +16,100 @@ public class UpdateListenerOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "admin_state_up")
 
-    @JacksonXmlProperty(localName = "admin_state_up")
-
     private Boolean adminStateUp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "client_ca_tls_container_ref")
-
-    @JacksonXmlProperty(localName = "client_ca_tls_container_ref")
 
     private String clientCaTlsContainerRef;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "default_pool_id")
 
-    @JacksonXmlProperty(localName = "default_pool_id")
-
     private String defaultPoolId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "default_tls_container_ref")
-
-    @JacksonXmlProperty(localName = "default_tls_container_ref")
 
     private String defaultTlsContainerRef;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
-    @JacksonXmlProperty(localName = "description")
-
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "http2_enable")
-
-    @JacksonXmlProperty(localName = "http2_enable")
 
     private Boolean http2Enable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "insert_headers")
 
-    @JacksonXmlProperty(localName = "insert_headers")
-
     private ListenerInsertHeaders insertHeaders;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
-
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sni_container_refs")
 
-    @JacksonXmlProperty(localName = "sni_container_refs")
-
     private List<String> sniContainerRefs = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sni_match_algo")
-
-    @JacksonXmlProperty(localName = "sni_match_algo")
 
     private String sniMatchAlgo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tls_ciphers_policy")
 
-    @JacksonXmlProperty(localName = "tls_ciphers_policy")
-
     private String tlsCiphersPolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_policy_id")
-
-    @JacksonXmlProperty(localName = "security_policy_id")
 
     private String securityPolicyId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_member_retry")
 
-    @JacksonXmlProperty(localName = "enable_member_retry")
-
     private Boolean enableMemberRetry;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "member_timeout")
-
-    @JacksonXmlProperty(localName = "member_timeout")
 
     private Integer memberTimeout;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "client_timeout")
 
-    @JacksonXmlProperty(localName = "client_timeout")
-
     private Integer clientTimeout;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "keepalive_timeout")
-
-    @JacksonXmlProperty(localName = "keepalive_timeout")
 
     private Integer keepaliveTimeout;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ipgroup")
 
-    @JacksonXmlProperty(localName = "ipgroup")
-
     private UpdateListenerIpGroupOption ipgroup;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "transparent_client_ip_enable")
-
-    @JacksonXmlProperty(localName = "transparent_client_ip_enable")
 
     private Boolean transparentClientIpEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enhance_l7policy_enable")
 
-    @JacksonXmlProperty(localName = "enhance_l7policy_enable")
-
     private Boolean enhanceL7policyEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quic_config")
-
-    @JacksonXmlProperty(localName = "quic_config")
 
     private UpdateListenerQuicConfigOption quicConfig;
 
@@ -355,7 +314,7 @@ public class UpdateListenerOption {
     }
 
     /**
-     * 监听器使用的安全策略。  [取值：tls-1-0-inherit,tls-1-0, tls-1-1, tls-1-2,tls-1-2-strict，tls-1-2-fs，tls-1-0-with-1-3, tls-1-2-fs-with-1-3, hybrid-policy-1-0，默认：tls-1-0。](tag:hws,hws_hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42) [取值：tls-1-0, tls-1-1, tls-1-2, tls-1-2-strict，默认：tls-1-0。](tag:dt,dt_test,hcso_dt)  [使用说明： - 仅对HTTPS协议类型的监听器且关联LB为独享型时有效。  - QUIC监听器不支持该字段。  - 若同时设置了security_policy_id和tls_ciphers_policy，则仅security_policy_id生效。  - 加密套件的优先顺序为ecc套件、rsa套件、tls1.3协议的套件（即支持ecc又支持rsa）](tag:hws,hws_hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42,dt,dt_test)  [使用说明： - 仅对HTTPS协议类型的监听器有效](tag:hcso_dt)
+     * 监听器使用的安全策略。  [取值：tls-1-0-inherit,tls-1-0, tls-1-1, tls-1-2,tls-1-2-strict，tls-1-2-fs，tls-1-0-with-1-3, tls-1-2-fs-with-1-3, hybrid-policy-1-0，默认：tls-1-0。](tag:hws,hws_hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42,dt,dt_test) [取值：tls-1-0, tls-1-1, tls-1-2, tls-1-2-strict，默认：tls-1-0。](tag:hcso_dt)  [使用说明： - 仅对HTTPS协议类型的监听器且关联LB为独享型时有效。 - QUIC监听器不支持该字段。 - 若同时设置了security_policy_id和tls_ciphers_policy，则仅security_policy_id生效。 - 加密套件的优先顺序为ecc套件、rsa套件、tls1.3协议的套件（即支持ecc又支持rsa）](tag:hws,hws_hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42,dt,dt_test) [使用说明： - 仅对HTTPS协议类型的监听器有效](tag:hcso_dt)
      * @return tlsCiphersPolicy
      */
     public String getTlsCiphersPolicy() {
@@ -372,7 +331,7 @@ public class UpdateListenerOption {
     }
 
     /**
-     * 自定义安全策略的ID。  [使用说明： - 仅对HTTPS协议类型的监听器且关联LB为独享型时有效。  - QUIC监听器不支持该字段。  - 若同时设置了security_policy_id和tls_ciphers_policy，则仅security_policy_id生效。  - 加密套件的优先顺序为ecc套件、rsa套件、tls1.3协议的套件（即支持ecc又支持rsa）](tag:hws,hws_hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42,dt,dt_test)  [使用说明： - 仅对HTTPS协议类型的监听器有效](tag:hcso_dt)
+     * 自定义安全策略的ID。  [使用说明： - 仅对HTTPS协议类型的监听器且关联LB为独享型时有效。 - QUIC监听器不支持该字段。 - 若同时设置了security_policy_id和tls_ciphers_policy，则仅security_policy_id生效。 - 加密套件的优先顺序为ecc套件、rsa套件、tls1.3协议的套件（即支持ecc又支持rsa）](tag:hws,hws_hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42,dt,dt_test)  [使用说明： - 仅对HTTPS协议类型的监听器有效](tag:hcso_dt)
      * @return securityPolicyId
      */
     public String getSecurityPolicyId() {
@@ -389,7 +348,7 @@ public class UpdateListenerOption {
     }
 
     /**
-     * 是否开启后端服务器的重试。取值：true 开启重试，false 不开启重试。默认：true。   [使用说明：  - 若关联是共享型LB，仅在protocol为HTTP、TERMINATED_HTTPS时才能传入该字段。  - 若关联是独享型LB，仅在protocol为HTTP、HTTPS和QUIC时才能传入该字段。](tag:hws,hws_hk,ocb,tlf,ctc,hcs,sbc,g42,tm,cmcc,hk_g42,mix,hk_sbc,hws_ocb,fcs,dt,dt_test)  [使用说明：  - 仅在protocol为HTTP、HTTPS和QUIC时才能传入该字段。](tag:hcso_dt)
+     * 是否开启后端服务器的重试。取值：true 开启重试，false 不开启重试。默认：true。  [使用说明： - 若关联是共享型LB，仅在protocol为HTTP、TERMINATED_HTTPS时才能传入该字段。 - 若关联是独享型LB，仅在protocol为HTTP、HTTPS和QUIC时才能传入该字段。](tag:hws,hws_hk,ocb,tlf,ctc,hcs,sbc,g42,tm,cmcc,hk_g42,mix,hk_sbc,hws_ocb,fcs,dt,dt_test) [使用说明： - 仅在protocol为HTTP、HTTPS和QUIC时才能传入该字段。](tag:hcso_dt)
      * @return enableMemberRetry
      */
     public Boolean getEnableMemberRetry() {
@@ -487,7 +446,7 @@ public class UpdateListenerOption {
     }
 
     /**
-     * 是否透传客户端IP地址。开启后客户端IP地址将透传到后端服务器。[仅作用于共享型LB的TCP/UDP监听器。取值：  - 共享型LB的TCP/UDP监听器可设置为true或false，不传默认为false。  - 共享型LB的HTTP/HTTPS监听器只支持设置为true，不传默认为true。  - 独享型负载均衡器所有协议的监听器只支持设置为true，不传默认为true。   使用说明：  - 开启特性后，ELB和后端服务器之间直接使用真实的IP访问，需要确保已正确设置服务器的安全组以及访问控制策略。  - 开启特性后，不支持同一台服务器既作为后端服务器又作为客户端的场景。  - 开启特性后，不支持变更后端服务器规格。](tag:hws,hws_hk,ocb,tlf,ctc,hcs,sbc,g42,tm,cmcc,hk_g42,mix,hk_sbc,hws_ocb,fcs,dt,dt_test)   [当前所有协议的监听器只设支持置为true，不传默认为true。](tag:hcso_dt)
+     * 是否透传客户端IP地址。开启后客户端IP地址将透传到后端服务器。 [仅作用于共享型LB的TCP/UDP监听器。取值： - 共享型LB的TCP/UDP监听器可设置为true或false，不传默认为false。 - 共享型LB的HTTP/HTTPS监听器只支持设置为true，不传默认为true。 - 独享型负载均衡器所有协议的监听器只支持设置为true，不传默认为true。  使用说明： - 开启特性后，ELB和后端服务器之间直接使用真实的IP访问，需要确保已正确设置服务器的安全组以及访问控制策略。 - 开启特性后，不支持同一台服务器既作为后端服务器又作为客户端的场景。 - 开启特性后，不支持变更后端服务器规格。](tag:hws,hws_hk,ocb,tlf,ctc,hcs,sbc,g42,tm,cmcc,hk_g42,mix,hk_sbc,hws_ocb,fcs,dt,dt_test)  [当前所有协议的监听器只设支持置为true，不传默认为true。](tag:hcso_dt)
      * @return transparentClientIpEnable
      */
     public Boolean getTransparentClientIpEnable() {

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.iam.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,49 +13,35 @@ public class LoginPolicyOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "account_validity_period")
 
-    @JacksonXmlProperty(localName = "account_validity_period")
-
     private Integer accountValidityPeriod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "custom_info_for_login")
-
-    @JacksonXmlProperty(localName = "custom_info_for_login")
 
     private String customInfoForLogin;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lockout_duration")
 
-    @JacksonXmlProperty(localName = "lockout_duration")
-
     private Integer lockoutDuration;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "login_failed_times")
-
-    @JacksonXmlProperty(localName = "login_failed_times")
 
     private Integer loginFailedTimes;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "period_with_login_failures")
 
-    @JacksonXmlProperty(localName = "period_with_login_failures")
-
     private Integer periodWithLoginFailures;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "session_timeout")
 
-    @JacksonXmlProperty(localName = "session_timeout")
-
     private Integer sessionTimeout;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "show_recent_login_info")
-
-    @JacksonXmlProperty(localName = "show_recent_login_info")
 
     private Boolean showRecentLoginInfo;
 

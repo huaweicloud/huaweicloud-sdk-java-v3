@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.das.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -18,21 +17,15 @@ public class ListSpaceAnalysisResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total")
 
-    @JacksonXmlProperty(localName = "total")
-
     private Long total;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "db_objects")
 
-    @JacksonXmlProperty(localName = "db_objects")
-
     private List<DbObjectSpaceInfo> dbObjects = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_info")
-
-    @JacksonXmlProperty(localName = "instance_info")
 
     private InstanceSpaceInfo instanceInfo;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.ocr.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,21 +16,15 @@ public class GeneralTableResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "words_region_count")
 
-    @JacksonXmlProperty(localName = "words_region_count")
-
     private Integer wordsRegionCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "words_region_list")
 
-    @JacksonXmlProperty(localName = "words_region_list")
-
     private List<WordsRegionList> wordsRegionList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "excel")
-
-    @JacksonXmlProperty(localName = "excel")
 
     private String excel;
 

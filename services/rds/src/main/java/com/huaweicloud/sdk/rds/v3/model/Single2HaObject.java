@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.rds.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,28 +14,20 @@ public class Single2HaObject {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "az_code_new_node")
 
-    @JacksonXmlProperty(localName = "az_code_new_node")
-
     private String azCodeNewNode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dsspool_id")
-
-    @JacksonXmlProperty(localName = "dsspool_id")
 
     private String dsspoolId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_auto_pay")
 
-    @JacksonXmlProperty(localName = "is_auto_pay")
-
     private Boolean isAutoPay;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ad_domain_info")
-
-    @JacksonXmlProperty(localName = "ad_domain_info")
 
     private ADDomainInfo adDomainInfo;
 

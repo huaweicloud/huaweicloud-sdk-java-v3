@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.tms.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.time.OffsetDateTime;
 import java.util.Objects;
@@ -15,21 +14,15 @@ public class PredefineTag {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key")
 
-    @JacksonXmlProperty(localName = "key")
-
     private String key;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "value")
 
-    @JacksonXmlProperty(localName = "value")
-
     private String value;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
-
-    @JacksonXmlProperty(localName = "update_time")
 
     private OffsetDateTime updateTime;
 

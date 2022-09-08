@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dws.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,21 +16,15 @@ public class NodeTypes {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "spec_name")
 
-    @JacksonXmlProperty(localName = "spec_name")
-
     private String specName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "detail")
 
-    @JacksonXmlProperty(localName = "detail")
-
     private List<Detail> detail = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
-
-    @JacksonXmlProperty(localName = "id")
 
     private String id;
 

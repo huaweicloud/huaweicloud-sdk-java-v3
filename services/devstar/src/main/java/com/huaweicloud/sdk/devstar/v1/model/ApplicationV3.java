@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,91 +21,65 @@ public class ApplicationV3 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
-
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
-    @JacksonXmlProperty(localName = "description")
-
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region_id")
-
-    @JacksonXmlProperty(localName = "region_id")
 
     private String regionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region_name")
 
-    @JacksonXmlProperty(localName = "region_name")
-
     private String regionName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
-
-    @JacksonXmlProperty(localName = "project_id")
 
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_name")
 
-    @JacksonXmlProperty(localName = "project_name")
-
     private String projectName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "icon")
-
-    @JacksonXmlProperty(localName = "icon")
 
     private String icon;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pipeline_creation_result")
 
-    @JacksonXmlProperty(localName = "pipeline_creation_result")
-
     private List<PipelineCreationResult> pipelineCreationResult = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "repository_creation_result")
-
-    @JacksonXmlProperty(localName = "repository_creation_result")
 
     private RepositoryCreationResult repositoryCreationResult;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "environment_creation_result")
 
-    @JacksonXmlProperty(localName = "environment_creation_result")
-
     private List<String> environmentCreationResult = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template_types")
 
-    @JacksonXmlProperty(localName = "template_types")
-
     private List<TemplateType> templateTypes = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template_deployment")
-
-    @JacksonXmlProperty(localName = "template_deployment")
 
     private String templateDeployment;
 
@@ -202,35 +175,25 @@ public class ApplicationV3 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deploy_type")
 
-    @JacksonXmlProperty(localName = "deploy_type")
-
     private DeployTypeEnum deployType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "creator_name")
-
-    @JacksonXmlProperty(localName = "creator_name")
 
     private String creatorName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
 
-    @JacksonXmlProperty(localName = "created_at")
-
     private String createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_at")
 
-    @JacksonXmlProperty(localName = "updated_at")
-
     private String updatedAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
-
-    @JacksonXmlProperty(localName = "version")
 
     private String version;
 

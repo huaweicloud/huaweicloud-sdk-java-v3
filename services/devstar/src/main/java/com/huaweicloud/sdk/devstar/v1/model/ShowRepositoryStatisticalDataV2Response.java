@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.devstar.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -15,56 +14,40 @@ public class ShowRepositoryStatisticalDataV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
-    @JacksonXmlProperty(localName = "name")
-
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "commit_number")
-
-    @JacksonXmlProperty(localName = "commit_number")
 
     private Integer commitNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "git_repo_cap")
 
-    @JacksonXmlProperty(localName = "git_repo_cap")
-
     private String gitRepoCap;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last_commit_time")
-
-    @JacksonXmlProperty(localName = "last_commit_time")
 
     private String lastCommitTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "code_lines")
 
-    @JacksonXmlProperty(localName = "code_lines")
-
     private Integer codeLines;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "branch_number")
-
-    @JacksonXmlProperty(localName = "branch_number")
 
     private Integer branchNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "detail_url")
 
-    @JacksonXmlProperty(localName = "detail_url")
-
     private String detailUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "download_url")
-
-    @JacksonXmlProperty(localName = "download_url")
 
     private String downloadUrl;
 

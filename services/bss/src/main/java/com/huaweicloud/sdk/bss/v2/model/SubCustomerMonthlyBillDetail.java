@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.bss.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,280 +13,200 @@ public class SubCustomerMonthlyBillDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bill_cycle")
 
-    @JacksonXmlProperty(localName = "bill_cycle")
-
     private String billCycle;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "customer_id")
-
-    @JacksonXmlProperty(localName = "customer_id")
 
     private String customerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "association_type")
 
-    @JacksonXmlProperty(localName = "association_type")
-
     private String associationType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_type_code")
-
-    @JacksonXmlProperty(localName = "service_type_code")
 
     private String serviceTypeCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_type_code")
 
-    @JacksonXmlProperty(localName = "resource_type_code")
-
     private String resourceTypeCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_type_name")
-
-    @JacksonXmlProperty(localName = "service_type_name")
 
     private String serviceTypeName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_type_name")
 
-    @JacksonXmlProperty(localName = "resource_type_name")
-
     private String resourceTypeName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "charging_mode")
-
-    @JacksonXmlProperty(localName = "charging_mode")
 
     private Integer chargingMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trade_time")
 
-    @JacksonXmlProperty(localName = "trade_time")
-
     private String tradeTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trade_id")
-
-    @JacksonXmlProperty(localName = "trade_id")
 
     private String tradeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bill_detail_type")
 
-    @JacksonXmlProperty(localName = "bill_detail_type")
-
     private Integer billDetailType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_id")
-
-    @JacksonXmlProperty(localName = "resource_id")
 
     private String resourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_name")
 
-    @JacksonXmlProperty(localName = "resource_name")
-
     private String resourceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "product_spec_desc")
-
-    @JacksonXmlProperty(localName = "product_spec_desc")
 
     private String productSpecDesc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region_code")
 
-    @JacksonXmlProperty(localName = "region_code")
-
     private String regionCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "product_id")
-
-    @JacksonXmlProperty(localName = "product_id")
 
     private String productId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "product_name")
 
-    @JacksonXmlProperty(localName = "product_name")
-
     private String productName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_tag")
-
-    @JacksonXmlProperty(localName = "resource_tag")
 
     private String resourceTag;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "consume_time")
 
-    @JacksonXmlProperty(localName = "consume_time")
-
     private String consumeTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "usage_type")
-
-    @JacksonXmlProperty(localName = "usage_type")
 
     private String usageType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "usage_amount")
 
-    @JacksonXmlProperty(localName = "usage_amount")
-
     private Double usageAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "usage_measure_id")
-
-    @JacksonXmlProperty(localName = "usage_measure_id")
 
     private Integer usageMeasureId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "free_resource_usage")
 
-    @JacksonXmlProperty(localName = "free_resource_usage")
-
     private Double freeResourceUsage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "free_resource_measure_id")
-
-    @JacksonXmlProperty(localName = "free_resource_measure_id")
 
     private Integer freeResourceMeasureId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ri_usage")
 
-    @JacksonXmlProperty(localName = "ri_usage")
-
     private Double riUsage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ri_usage_measure_id")
-
-    @JacksonXmlProperty(localName = "ri_usage_measure_id")
 
     private Integer riUsageMeasureId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "official_amount")
 
-    @JacksonXmlProperty(localName = "official_amount")
-
     private Double officialAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "official_discount_amount")
-
-    @JacksonXmlProperty(localName = "official_discount_amount")
 
     private Double officialDiscountAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "payment_amount")
 
-    @JacksonXmlProperty(localName = "payment_amount")
-
     private Double paymentAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cash_amount")
-
-    @JacksonXmlProperty(localName = "cash_amount")
 
     private Double cashAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "credit_amount")
 
-    @JacksonXmlProperty(localName = "credit_amount")
-
     private Double creditAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "coupon_amount")
-
-    @JacksonXmlProperty(localName = "coupon_amount")
 
     private Double couponAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flexipurchase_coupon_amount")
 
-    @JacksonXmlProperty(localName = "flexipurchase_coupon_amount")
-
     private Double flexipurchaseCouponAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stored_value_card_amount")
-
-    @JacksonXmlProperty(localName = "stored_value_card_amount")
 
     private Double storedValueCardAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "debt_amount")
 
-    @JacksonXmlProperty(localName = "debt_amount")
-
     private Double debtAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "writeoff_amount")
-
-    @JacksonXmlProperty(localName = "writeoff_amount")
 
     private Double writeoffAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "period_type")
 
-    @JacksonXmlProperty(localName = "period_type")
-
     private Integer periodType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "account_manager_id")
-
-    @JacksonXmlProperty(localName = "account_manager_id")
 
     private String accountManagerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "partner_id")
 
-    @JacksonXmlProperty(localName = "partner_id")
-
     private String partnerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region_name")
-
-    @JacksonXmlProperty(localName = "region_name")
 
     private String regionName;
 

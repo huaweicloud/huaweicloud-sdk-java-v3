@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.codehub.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,42 +13,30 @@ public class DevstarRepoInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "uuid")
 
-    @JacksonXmlProperty(localName = "uuid")
-
     private String uuid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "repo_id")
-
-    @JacksonXmlProperty(localName = "repo_id")
 
     private String repoId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "repo_name")
 
-    @JacksonXmlProperty(localName = "repo_name")
-
     private String repoName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ssh_url")
-
-    @JacksonXmlProperty(localName = "ssh_url")
 
     private String sshUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "code_url")
 
-    @JacksonXmlProperty(localName = "code_url")
-
     private String codeUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "detail_url")
-
-    @JacksonXmlProperty(localName = "detail_url")
 
     private String detailUrl;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.apm.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,28 +13,20 @@ public class ShowEventDetailRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trace_id")
 
-    @JacksonXmlProperty(localName = "trace_id")
-
     private String traceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "span_id")
-
-    @JacksonXmlProperty(localName = "span_id")
 
     private String spanId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_id")
 
-    @JacksonXmlProperty(localName = "event_id")
-
     private String eventId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "env_id")
-
-    @JacksonXmlProperty(localName = "env_id")
 
     private Long envId;
 

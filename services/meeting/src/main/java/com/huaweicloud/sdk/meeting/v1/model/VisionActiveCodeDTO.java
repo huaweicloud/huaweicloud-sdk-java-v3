@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,49 +13,35 @@ public class VisionActiveCodeDTO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "devType")
 
-    @JacksonXmlProperty(localName = "devType")
-
     private String devType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deptCode")
-
-    @JacksonXmlProperty(localName = "deptCode")
 
     private String deptCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "devName")
 
-    @JacksonXmlProperty(localName = "devName")
-
     private String devName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
-
-    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "smsNumber")
 
-    @JacksonXmlProperty(localName = "smsNumber")
-
     private String smsNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "country")
 
-    @JacksonXmlProperty(localName = "country")
-
     private String country;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "emailAddr")
-
-    @JacksonXmlProperty(localName = "emailAddr")
 
     private String emailAddr;
 

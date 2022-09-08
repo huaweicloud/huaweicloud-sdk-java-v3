@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.ugo.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,91 +14,65 @@ public class EvaluationProject {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "evaluation_project_id")
 
-    @JacksonXmlProperty(localName = "evaluation_project_id")
-
     private Integer evaluationProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "evaluation_project_name")
-
-    @JacksonXmlProperty(localName = "evaluation_project_name")
 
     private String evaluationProjectName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "evaluation_project_status")
 
-    @JacksonXmlProperty(localName = "evaluation_project_status")
-
     private String evaluationProjectStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_status_detail")
-
-    @JacksonXmlProperty(localName = "project_status_detail")
 
     private ProjectStatusDetail projectStatusDetail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_db_type")
 
-    @JacksonXmlProperty(localName = "source_db_type")
-
     private String sourceDbType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_db_version")
-
-    @JacksonXmlProperty(localName = "source_db_version")
 
     private String sourceDbVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_db_type")
 
-    @JacksonXmlProperty(localName = "target_db_type")
-
     private String targetDbType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_db_version")
-
-    @JacksonXmlProperty(localName = "target_db_version")
 
     private String targetDbVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "collect_size")
 
-    @JacksonXmlProperty(localName = "collect_size")
-
     private Long collectSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_id")
-
-    @JacksonXmlProperty(localName = "resource_id")
 
     private String resourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_time")
 
-    @JacksonXmlProperty(localName = "created_time")
-
     private String createdTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_time")
 
-    @JacksonXmlProperty(localName = "updated_time")
-
     private String updatedTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_reason")
-
-    @JacksonXmlProperty(localName = "error_reason")
 
     private String errorReason;
 

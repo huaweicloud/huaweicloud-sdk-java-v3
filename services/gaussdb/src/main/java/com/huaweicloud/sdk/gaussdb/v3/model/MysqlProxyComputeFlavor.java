@@ -8,8 +8,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -23,7 +21,6 @@ public class MysqlProxyComputeFlavor  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vcpus")
     
-    @JacksonXmlProperty(localName = "vcpus")
     
     private String vcpus;
 
@@ -31,7 +28,6 @@ public class MysqlProxyComputeFlavor  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ram")
     
-    @JacksonXmlProperty(localName = "ram")
     
     private String ram;
 
@@ -39,7 +35,6 @@ public class MysqlProxyComputeFlavor  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="db_type")
     
-    @JacksonXmlProperty(localName = "db_type")
     
     private String dbType;
 
@@ -47,7 +42,6 @@ public class MysqlProxyComputeFlavor  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    @JacksonXmlProperty(localName = "id")
     
     private String id;
 
@@ -55,7 +49,6 @@ public class MysqlProxyComputeFlavor  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="spec_code")
     
-    @JacksonXmlProperty(localName = "spec_code")
     
     private String specCode;
 
@@ -63,7 +56,6 @@ public class MysqlProxyComputeFlavor  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="az_status")
     
-    @JacksonXmlProperty(localName = "az_status")
     
     private Object azStatus;
 

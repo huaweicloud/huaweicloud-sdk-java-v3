@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.bss.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,63 +13,45 @@ public class UpdatePostalReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "address_id")
 
-    @JacksonXmlProperty(localName = "address_id")
-
     private String addressId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "recipient")
-
-    @JacksonXmlProperty(localName = "recipient")
 
     private String recipient;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "province")
 
-    @JacksonXmlProperty(localName = "province")
-
     private String province;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "city")
-
-    @JacksonXmlProperty(localName = "city")
 
     private String city;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "district")
 
-    @JacksonXmlProperty(localName = "district")
-
     private String district;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "address")
-
-    @JacksonXmlProperty(localName = "address")
 
     private String address;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "zipcode")
 
-    @JacksonXmlProperty(localName = "zipcode")
-
     private String zipcode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mobile_phone")
 
-    @JacksonXmlProperty(localName = "mobile_phone")
-
     private String mobilePhone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_default")
-
-    @JacksonXmlProperty(localName = "is_default")
 
     private Integer isDefault;
 

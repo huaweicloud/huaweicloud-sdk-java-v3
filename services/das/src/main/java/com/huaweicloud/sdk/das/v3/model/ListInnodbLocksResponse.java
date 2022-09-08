@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.das.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -18,21 +17,15 @@ public class ListInnodbLocksResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "innodb_trx")
 
-    @JacksonXmlProperty(localName = "innodb_trx")
-
     private List<InnodbTrx> innodbTrx = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "innodb_lock_waits")
 
-    @JacksonXmlProperty(localName = "innodb_lock_waits")
-
     private List<InnodbLockWaits> innodbLockWaits = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "count")
-
-    @JacksonXmlProperty(localName = "count")
 
     private Integer count;
 

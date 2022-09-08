@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cph.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,98 +16,70 @@ public class CreateNet2CloudPhoneServerRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "server_name")
 
-    @JacksonXmlProperty(localName = "server_name")
-
     private String serverName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "server_model_name")
-
-    @JacksonXmlProperty(localName = "server_model_name")
 
     private String serverModelName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "phone_model_name")
 
-    @JacksonXmlProperty(localName = "phone_model_name")
-
     private String phoneModelName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image_id")
-
-    @JacksonXmlProperty(localName = "image_id")
 
     private String imageId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "count")
 
-    @JacksonXmlProperty(localName = "count")
-
     private Integer count;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "keypair_name")
-
-    @JacksonXmlProperty(localName = "keypair_name")
 
     private String keypairName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "br_cidr")
 
-    @JacksonXmlProperty(localName = "br_cidr")
-
     private String brCidr;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ports")
-
-    @JacksonXmlProperty(localName = "ports")
 
     private List<CreateNet2CloudPhoneServerRequestBodyPorts> ports = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extend_param")
 
-    @JacksonXmlProperty(localName = "extend_param")
-
     private CreateNet2CloudPhoneServerRequestBodyExtendParam extendParam;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tenant_vpc_id")
-
-    @JacksonXmlProperty(localName = "tenant_vpc_id")
 
     private String tenantVpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nics")
 
-    @JacksonXmlProperty(localName = "nics")
-
     private List<CreateNet2CloudPhoneServerRequestBodyNics> nics = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "public_ip")
-
-    @JacksonXmlProperty(localName = "public_ip")
 
     private CreateNet2CloudPhoneServerRequestBodyPublicIp publicIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "band_width")
 
-    @JacksonXmlProperty(localName = "band_width")
-
     private CreateNet2CloudPhoneServerRequestBodyBandWidth bandWidth;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "availability_zone")
-
-    @JacksonXmlProperty(localName = "availability_zone")
 
     private String availabilityZone;
 

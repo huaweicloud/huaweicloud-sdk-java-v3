@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -19,56 +18,40 @@ public class PublicationResponseBase {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lastUpdatedBy")
-
-    @JacksonXmlProperty(localName = "lastUpdatedBy")
 
     private String lastUpdatedBy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "createTime")
 
-    @JacksonXmlProperty(localName = "createTime")
-
     private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updateTime")
-
-    @JacksonXmlProperty(localName = "updateTime")
 
     private Long updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publishName")
 
-    @JacksonXmlProperty(localName = "publishName")
-
     private String publishName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publishScope")
-
-    @JacksonXmlProperty(localName = "publishScope")
 
     private String publishScope;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "startTime")
 
-    @JacksonXmlProperty(localName = "startTime")
-
     private Long startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "endTime")
-
-    @JacksonXmlProperty(localName = "endTime")
 
     private Long endTime;
 
@@ -157,8 +140,6 @@ public class PublicationResponseBase {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publishStatus")
-
-    @JacksonXmlProperty(localName = "publishStatus")
 
     private PublishStatusEnum publishStatus;
 

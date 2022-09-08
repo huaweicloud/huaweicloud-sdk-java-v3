@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,8 +17,6 @@ public class UpdatePoolSessionPersistenceOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cookie_name")
-
-    @JacksonXmlProperty(localName = "cookie_name")
 
     private String cookieName;
 
@@ -109,14 +106,10 @@ public class UpdatePoolSessionPersistenceOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
-    @JacksonXmlProperty(localName = "type")
-
     private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "persistence_timeout")
-
-    @JacksonXmlProperty(localName = "persistence_timeout")
 
     private Integer persistenceTimeout;
 
@@ -126,7 +119,7 @@ public class UpdatePoolSessionPersistenceOption {
     }
 
     /**
-     * cookie名称。  格式：仅支持字母、数字、中划线(-)、下划线(_)和点号(.)。  [使用说明：  - 只有当type为APP_COOKIE时才有效。](tag:hws,hws_hk,ocb,tlf,ctc,hcs,sbc,g42,tm,cmcc,hk_g42,mix,hk_sbc,hws_ocb,fcs,dt,dt_test)  [不支持该字段，请勿使用。](tag:hcso_dt)
+     * cookie名称。  格式：仅支持字母、数字、中划线(-)、下划线(_)和点号(.)。  [使用说明： - 只有当type为APP_COOKIE时才有效。](tag:hws,hws_hk,ocb,tlf,ctc,hcs,sbc,g42,tm,cmcc,hk_g42,mix,hk_sbc,hws_ocb,fcs,dt,dt_test)  [不支持该字段，请勿使用。](tag:hcso_dt)
      * @return cookieName
      */
     public String getCookieName() {

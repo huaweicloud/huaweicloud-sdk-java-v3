@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dsc.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,21 +17,15 @@ public class ExtractedDatabaseWatermark {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "watermark_key")
 
-    @JacksonXmlProperty(localName = "watermark_key")
-
     private String watermarkKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "columns")
 
-    @JacksonXmlProperty(localName = "columns")
-
     private List<Columns> columns = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
-
-    @JacksonXmlProperty(localName = "data")
 
     private List<Map<String, Object>> data = null;
 

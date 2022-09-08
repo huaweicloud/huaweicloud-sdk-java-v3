@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
@@ -23,35 +22,25 @@ public class ApiAuthRelations {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "api_id")
 
-    @JacksonXmlProperty(localName = "api_id")
-
     private String apiId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auth_result")
-
-    @JacksonXmlProperty(localName = "auth_result")
 
     private AuthResult authResult;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auth_time")
 
-    @JacksonXmlProperty(localName = "auth_time")
-
     private OffsetDateTime authTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_id")
-
-    @JacksonXmlProperty(localName = "app_id")
 
     private String appId;
 
@@ -135,8 +124,6 @@ public class ApiAuthRelations {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auth_role")
 
-    @JacksonXmlProperty(localName = "auth_role")
-
     private AuthRoleEnum authRole;
 
     /**
@@ -219,28 +206,20 @@ public class ApiAuthRelations {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auth_tunnel")
 
-    @JacksonXmlProperty(localName = "auth_tunnel")
-
     private AuthTunnelEnum authTunnel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auth_whitelist")
-
-    @JacksonXmlProperty(localName = "auth_whitelist")
 
     private List<String> authWhitelist = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auth_blacklist")
 
-    @JacksonXmlProperty(localName = "auth_blacklist")
-
     private List<String> authBlacklist = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "visit_params")
-
-    @JacksonXmlProperty(localName = "visit_params")
 
     private String visitParams;
 

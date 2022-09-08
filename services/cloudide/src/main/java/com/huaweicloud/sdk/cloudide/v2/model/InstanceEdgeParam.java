@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -98,8 +97,6 @@ public class InstanceEdgeParam {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "arch")
-
-    @JacksonXmlProperty(localName = "arch")
 
     private ArchEnum arch;
 
@@ -195,49 +192,35 @@ public class InstanceEdgeParam {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cpu_memory")
 
-    @JacksonXmlProperty(localName = "cpu_memory")
-
     private CpuMemoryEnum cpuMemory;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
-
-    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_name")
 
-    @JacksonXmlProperty(localName = "instance_name")
-
     private String instanceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_user_domain_id")
-
-    @JacksonXmlProperty(localName = "instance_user_domain_id")
 
     private String instanceUserDomainId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_user_id")
 
-    @JacksonXmlProperty(localName = "instance_user_id")
-
     private String instanceUserId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_temporary")
 
-    @JacksonXmlProperty(localName = "is_temporary")
-
     private Boolean isTemporary;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "plugins")
-
-    @JacksonXmlProperty(localName = "plugins")
 
     private List<Plugin> plugins = null;
 
@@ -327,21 +310,15 @@ public class InstanceEdgeParam {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pvc_quantity")
 
-    @JacksonXmlProperty(localName = "pvc_quantity")
-
     private PvcQuantityEnum pvcQuantity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "refresh_time")
 
-    @JacksonXmlProperty(localName = "refresh_time")
-
     private String refreshTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stack_id")
-
-    @JacksonXmlProperty(localName = "stack_id")
 
     private String stackId;
 

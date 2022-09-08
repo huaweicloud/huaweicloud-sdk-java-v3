@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,112 +21,80 @@ public class NovaCreateServersOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auto_terminate_time")
 
-    @JacksonXmlProperty(localName = "auto_terminate_time")
-
     private String autoTerminateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "imageRef")
-
-    @JacksonXmlProperty(localName = "imageRef")
 
     private String imageRef;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flavorRef")
 
-    @JacksonXmlProperty(localName = "flavorRef")
-
     private String flavorRef;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
-
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metadata")
 
-    @JacksonXmlProperty(localName = "metadata")
-
     private Map<String, String> metadata = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "adminPass")
-
-    @JacksonXmlProperty(localName = "adminPass")
 
     private String adminPass;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "block_device_mapping_v2")
 
-    @JacksonXmlProperty(localName = "block_device_mapping_v2")
-
     private List<NovaServerBlockDeviceMapping> blockDeviceMappingV2 = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "config_drive")
-
-    @JacksonXmlProperty(localName = "config_drive")
 
     private String configDrive;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_groups")
 
-    @JacksonXmlProperty(localName = "security_groups")
-
     private List<NovaServerSecurityGroup> securityGroups = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "networks")
-
-    @JacksonXmlProperty(localName = "networks")
 
     private List<NovaServerNetwork> networks = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key_name")
 
-    @JacksonXmlProperty(localName = "key_name")
-
     private String keyName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_data")
-
-    @JacksonXmlProperty(localName = "user_data")
 
     private String userData;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "availability_zone")
 
-    @JacksonXmlProperty(localName = "availability_zone")
-
     private String availabilityZone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "return_reservation_id")
-
-    @JacksonXmlProperty(localName = "return_reservation_id")
 
     private Boolean returnReservationId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "min_count")
 
-    @JacksonXmlProperty(localName = "min_count")
-
     private Integer minCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_count")
-
-    @JacksonXmlProperty(localName = "max_count")
 
     private Integer maxCount;
 
@@ -211,14 +178,10 @@ public class NovaCreateServersOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "OS-DCF:diskConfig")
 
-    @JacksonXmlProperty(localName = "OS-DCF:diskConfig")
-
     private OsDCFDiskConfigEnum osDCFDiskConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
-
-    @JacksonXmlProperty(localName = "description")
 
     private String description;
 

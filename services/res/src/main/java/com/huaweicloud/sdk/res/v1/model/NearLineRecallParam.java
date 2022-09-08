@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.res.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,35 +16,25 @@ public class NearLineRecallParam {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time_limit")
 
-    @JacksonXmlProperty(localName = "time_limit")
-
     private Boolean timeLimit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timeFeature")
-
-    @JacksonXmlProperty(localName = "timeFeature")
 
     private String timeFeature;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "retainDays")
 
-    @JacksonXmlProperty(localName = "retainDays")
-
     private Integer retainDays;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "recall_fileds")
 
-    @JacksonXmlProperty(localName = "recall_fileds")
-
     private List<RecallFiled> recallFileds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "itemCF_job_name")
-
-    @JacksonXmlProperty(localName = "itemCF_job_name")
 
     private String itemCFJobName;
 

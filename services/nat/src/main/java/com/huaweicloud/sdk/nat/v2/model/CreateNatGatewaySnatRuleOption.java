@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.nat.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,42 +13,30 @@ public class CreateNatGatewaySnatRuleOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nat_gateway_id")
 
-    @JacksonXmlProperty(localName = "nat_gateway_id")
-
     private String natGatewayId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cidr")
-
-    @JacksonXmlProperty(localName = "cidr")
 
     private String cidr;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "network_id")
 
-    @JacksonXmlProperty(localName = "network_id")
-
     private String networkId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
-
-    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_type")
 
-    @JacksonXmlProperty(localName = "source_type")
-
     private Integer sourceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "floating_ip_id")
-
-    @JacksonXmlProperty(localName = "floating_ip_id")
 
     private String floatingIpId;
 

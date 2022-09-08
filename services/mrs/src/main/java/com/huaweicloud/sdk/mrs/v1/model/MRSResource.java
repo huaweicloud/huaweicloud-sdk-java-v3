@@ -11,8 +11,6 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.mrs.v1.model.TagPlain;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -26,7 +24,6 @@ public class MRSResource  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_id")
     
-    @JacksonXmlProperty(localName = "resource_id")
     
     private String resourceId;
 
@@ -34,7 +31,6 @@ public class MRSResource  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_detail")
     
-    @JacksonXmlProperty(localName = "resource_detail")
     
     private String resourceDetail;
 
@@ -42,7 +38,6 @@ public class MRSResource  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    @JacksonXmlProperty(localName = "tags")
     
     private List<TagPlain> tags = null;
     
@@ -50,7 +45,6 @@ public class MRSResource  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_name")
     
-    @JacksonXmlProperty(localName = "resource_name")
     
     private String resourceName;
 

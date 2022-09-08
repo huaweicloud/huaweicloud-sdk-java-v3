@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.codehub.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,49 +13,35 @@ public class ListCommitsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "repo_id")
 
-    @JacksonXmlProperty(localName = "repo_id")
-
     private Integer repoId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ref_name")
-
-    @JacksonXmlProperty(localName = "ref_name")
 
     private String refName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "since")
 
-    @JacksonXmlProperty(localName = "since")
-
     private String since;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "until")
-
-    @JacksonXmlProperty(localName = "until")
 
     private String until;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "path")
 
-    @JacksonXmlProperty(localName = "path")
-
     private String path;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "all")
 
-    @JacksonXmlProperty(localName = "all")
-
     private Boolean all;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "with_stats")
-
-    @JacksonXmlProperty(localName = "with_stats")
 
     private Boolean withStats;
 

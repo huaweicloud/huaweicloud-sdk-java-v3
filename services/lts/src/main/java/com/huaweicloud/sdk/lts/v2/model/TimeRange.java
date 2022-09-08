@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.lts.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,35 +13,25 @@ public class TimeRange {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sql_time_zone")
 
-    @JacksonXmlProperty(localName = "sql_time_zone")
-
     private String sqlTimeZone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
-
-    @JacksonXmlProperty(localName = "start_time")
 
     private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time")
 
-    @JacksonXmlProperty(localName = "end_time")
-
     private String endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time_gt")
 
-    @JacksonXmlProperty(localName = "start_time_gt")
-
     private Boolean startTimeGt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time_lt")
-
-    @JacksonXmlProperty(localName = "end_time_lt")
 
     private Boolean endTimeLt;
 

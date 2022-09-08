@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.evs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,49 +13,35 @@ public class Attachment {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "attached_at")
 
-    @JacksonXmlProperty(localName = "attached_at")
-
     private String attachedAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "attachment_id")
-
-    @JacksonXmlProperty(localName = "attachment_id")
 
     private String attachmentId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "device")
 
-    @JacksonXmlProperty(localName = "device")
-
     private String device;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_name")
-
-    @JacksonXmlProperty(localName = "host_name")
 
     private String hostName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "server_id")
 
-    @JacksonXmlProperty(localName = "server_id")
-
     private String serverId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volume_id")
-
-    @JacksonXmlProperty(localName = "volume_id")
 
     private String volumeId;
 

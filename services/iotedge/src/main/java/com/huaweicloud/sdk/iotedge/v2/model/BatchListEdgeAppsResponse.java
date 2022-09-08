@@ -14,8 +14,6 @@ import com.huaweicloud.sdk.iotedge.v2.model.PageInfoDTO;
 import com.huaweicloud.sdk.iotedge.v2.model.QueryApplicationBriefResponseDTO;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -29,7 +27,6 @@ public class BatchListEdgeAppsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="count")
     
-    @JacksonXmlProperty(localName = "count")
     
     private Integer count;
 
@@ -37,7 +34,6 @@ public class BatchListEdgeAppsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="page_info")
     
-    @JacksonXmlProperty(localName = "page_info")
     
     private PageInfoDTO pageInfo;
 
@@ -45,7 +41,6 @@ public class BatchListEdgeAppsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edge_apps")
     
-    @JacksonXmlProperty(localName = "edge_apps")
     
     private List<QueryApplicationBriefResponseDTO> edgeApps = null;
     

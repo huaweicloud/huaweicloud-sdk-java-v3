@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.iotda.v5.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,21 +13,15 @@ public class NetAddress {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip")
 
-    @JacksonXmlProperty(localName = "ip")
-
     private String ip;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "port")
 
-    @JacksonXmlProperty(localName = "port")
-
     private Integer port;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain")
-
-    @JacksonXmlProperty(localName = "domain")
 
     private String domain;
 

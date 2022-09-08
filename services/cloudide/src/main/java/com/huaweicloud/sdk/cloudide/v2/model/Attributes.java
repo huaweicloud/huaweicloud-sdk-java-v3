@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cloudide.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,21 +13,15 @@ public class Attributes {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cpu_limit")
 
-    @JacksonXmlProperty(localName = "cpu_limit")
-
     private String cpuLimit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "memory_limit_bytes")
 
-    @JacksonXmlProperty(localName = "memory_limit_bytes")
-
     private String memoryLimitBytes;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pvc_quantity")
-
-    @JacksonXmlProperty(localName = "pvc_quantity")
 
     private String pvcQuantity;
 

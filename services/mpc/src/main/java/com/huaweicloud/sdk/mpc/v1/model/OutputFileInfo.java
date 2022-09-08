@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.mpc.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,21 +14,15 @@ public class OutputFileInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "output_file_name")
 
-    @JacksonXmlProperty(localName = "output_file_name")
-
     private String outputFileName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "exec_description")
 
-    @JacksonXmlProperty(localName = "exec_description")
-
     private String execDescription;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "meta_data")
-
-    @JacksonXmlProperty(localName = "meta_data")
 
     private SourceInfo metaData;
 

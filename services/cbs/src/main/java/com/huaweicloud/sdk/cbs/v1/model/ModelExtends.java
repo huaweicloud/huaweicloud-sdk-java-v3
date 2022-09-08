@@ -11,8 +11,6 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.cbs.v1.model.Tag;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -26,7 +24,6 @@ public class ModelExtends  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tag_ids")
     
-    @JacksonXmlProperty(localName = "tag_ids")
     
     private Tag tagIds;
 
@@ -34,7 +31,6 @@ public class ModelExtends  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="domain_ids")
     
-    @JacksonXmlProperty(localName = "domain_ids")
     
     private List<String> domainIds = null;
     
@@ -42,7 +38,6 @@ public class ModelExtends  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="source")
     
-    @JacksonXmlProperty(localName = "source")
     
     private String source;
 
@@ -50,7 +45,6 @@ public class ModelExtends  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="return_all_answers")
     
-    @JacksonXmlProperty(localName = "return_all_answers")
     
     private Boolean returnAllAnswers;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.ies.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,21 +13,15 @@ public class UpdateCondition {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "environment")
 
-    @JacksonXmlProperty(localName = "environment")
-
     private Integer environment;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "space")
 
-    @JacksonXmlProperty(localName = "space")
-
     private Integer space;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "transport")
-
-    @JacksonXmlProperty(localName = "transport")
 
     private Integer transport;
 

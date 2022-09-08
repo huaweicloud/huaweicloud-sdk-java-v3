@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.swr.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -15,126 +14,90 @@ public class ShowRepositoryResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private Long id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ns_id")
-
-    @JacksonXmlProperty(localName = "ns_id")
 
     private Long nsId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
-    @JacksonXmlProperty(localName = "name")
-
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "category")
-
-    @JacksonXmlProperty(localName = "category")
 
     private String category;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
-    @JacksonXmlProperty(localName = "description")
-
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "creator_id")
-
-    @JacksonXmlProperty(localName = "creator_id")
 
     private String creatorId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "creator_name")
 
-    @JacksonXmlProperty(localName = "creator_name")
-
     private String creatorName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
-
-    @JacksonXmlProperty(localName = "size")
 
     private Long size;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_public")
 
-    @JacksonXmlProperty(localName = "is_public")
-
     private Boolean isPublic;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "num_images")
-
-    @JacksonXmlProperty(localName = "num_images")
 
     private Long numImages;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "num_download")
 
-    @JacksonXmlProperty(localName = "num_download")
-
     private Long numDownload;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "url")
-
-    @JacksonXmlProperty(localName = "url")
 
     private String url;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "path")
 
-    @JacksonXmlProperty(localName = "path")
-
     private String path;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "internal_path")
-
-    @JacksonXmlProperty(localName = "internal_path")
 
     private String internalPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created")
 
-    @JacksonXmlProperty(localName = "created")
-
     private String created;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated")
-
-    @JacksonXmlProperty(localName = "updated")
 
     private String updated;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_id")
 
-    @JacksonXmlProperty(localName = "domain_id")
-
     private String domainId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "priority")
-
-    @JacksonXmlProperty(localName = "priority")
 
     private Integer priority;
 

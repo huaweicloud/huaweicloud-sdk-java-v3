@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.bssintl.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,98 +16,70 @@ public class BillSumRecordInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "customer_id")
 
-    @JacksonXmlProperty(localName = "customer_id")
-
     private String customerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_type_code")
-
-    @JacksonXmlProperty(localName = "resource_type_code")
 
     private String resourceTypeCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region_code")
 
-    @JacksonXmlProperty(localName = "region_code")
-
     private String regionCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cloud_service_type_code")
-
-    @JacksonXmlProperty(localName = "cloud_service_type_code")
 
     private String cloudServiceTypeCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "consume_time")
 
-    @JacksonXmlProperty(localName = "consume_time")
-
     private String consumeTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pay_method")
-
-    @JacksonXmlProperty(localName = "pay_method")
 
     private String payMethod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "consume_amount")
 
-    @JacksonXmlProperty(localName = "consume_amount")
-
     private Double consumeAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "debt")
-
-    @JacksonXmlProperty(localName = "debt")
 
     private Double debt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "discount")
 
-    @JacksonXmlProperty(localName = "discount")
-
     private Double discount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "measure_id")
-
-    @JacksonXmlProperty(localName = "measure_id")
 
     private Integer measureId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bill_type")
 
-    @JacksonXmlProperty(localName = "bill_type")
-
     private Integer billType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "account_details")
-
-    @JacksonXmlProperty(localName = "account_details")
 
     private List<BalanceTypePay> accountDetails = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "discount_detail_infos")
 
-    @JacksonXmlProperty(localName = "discount_detail_infos")
-
     private List<DiscountDetailInfo> discountDetailInfos = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterpriseProjectId")
-
-    @JacksonXmlProperty(localName = "enterpriseProjectId")
 
     private String enterpriseProjectId;
 

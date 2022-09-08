@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.osm.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,35 +16,25 @@ public class DeleteCaseLabelsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "case_id")
 
-    @JacksonXmlProperty(localName = "case_id")
-
     private String caseId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "label_ids")
-
-    @JacksonXmlProperty(localName = "label_ids")
 
     private List<Integer> labelIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Site")
 
-    @JacksonXmlProperty(localName = "X-Site")
-
     private Integer xSite;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Language")
 
-    @JacksonXmlProperty(localName = "X-Language")
-
     private String xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Time-Zone")
-
-    @JacksonXmlProperty(localName = "X-Time-Zone")
 
     private String xTimeZone;
 

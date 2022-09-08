@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.rds.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,21 +13,15 @@ public class SetDatabaseUserPrivilegeReqV3 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "all_users")
 
-    @JacksonXmlProperty(localName = "all_users")
-
     private Boolean allUsers;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_name")
 
-    @JacksonXmlProperty(localName = "user_name")
-
     private String userName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "readonly")
-
-    @JacksonXmlProperty(localName = "readonly")
 
     private Boolean readonly;
 

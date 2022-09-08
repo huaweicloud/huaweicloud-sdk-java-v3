@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,70 +21,50 @@ public class UpdateScalingGroupOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scaling_group_name")
 
-    @JacksonXmlProperty(localName = "scaling_group_name")
-
     private String scalingGroupName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "desire_instance_number")
-
-    @JacksonXmlProperty(localName = "desire_instance_number")
 
     private Integer desireInstanceNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "min_instance_number")
 
-    @JacksonXmlProperty(localName = "min_instance_number")
-
     private Integer minInstanceNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_instance_number")
-
-    @JacksonXmlProperty(localName = "max_instance_number")
 
     private Integer maxInstanceNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cool_down_time")
 
-    @JacksonXmlProperty(localName = "cool_down_time")
-
     private Integer coolDownTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "available_zones")
-
-    @JacksonXmlProperty(localName = "available_zones")
 
     private List<String> availableZones = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "networks")
 
-    @JacksonXmlProperty(localName = "networks")
-
     private List<Networks> networks = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_groups")
-
-    @JacksonXmlProperty(localName = "security_groups")
 
     private List<SecurityGroup> securityGroups = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lb_listener_id")
 
-    @JacksonXmlProperty(localName = "lb_listener_id")
-
     private String lbListenerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lbaas_listeners")
-
-    @JacksonXmlProperty(localName = "lbaas_listeners")
 
     private List<LbaasListeners> lbaasListeners = null;
 
@@ -169,21 +148,15 @@ public class UpdateScalingGroupOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "health_periodic_audit_method")
 
-    @JacksonXmlProperty(localName = "health_periodic_audit_method")
-
     private HealthPeriodicAuditMethodEnum healthPeriodicAuditMethod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "health_periodic_audit_time")
 
-    @JacksonXmlProperty(localName = "health_periodic_audit_time")
-
     private Integer healthPeriodicAuditTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "health_periodic_audit_grace_period")
-
-    @JacksonXmlProperty(localName = "health_periodic_audit_grace_period")
 
     private Integer healthPeriodicAuditGracePeriod;
 
@@ -281,63 +254,45 @@ public class UpdateScalingGroupOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_terminate_policy")
 
-    @JacksonXmlProperty(localName = "instance_terminate_policy")
-
     private InstanceTerminatePolicyEnum instanceTerminatePolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scaling_configuration_id")
-
-    @JacksonXmlProperty(localName = "scaling_configuration_id")
 
     private String scalingConfigurationId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "notifications")
 
-    @JacksonXmlProperty(localName = "notifications")
-
     private List<String> notifications = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "delete_publicip")
-
-    @JacksonXmlProperty(localName = "delete_publicip")
 
     private Boolean deletePublicip;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "delete_volume")
 
-    @JacksonXmlProperty(localName = "delete_volume")
-
     private Boolean deleteVolume;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
-
-    @JacksonXmlProperty(localName = "enterprise_project_id")
 
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "multi_az_priority_policy")
 
-    @JacksonXmlProperty(localName = "multi_az_priority_policy")
-
     private String multiAzPriorityPolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "iam_agency_name")
 
-    @JacksonXmlProperty(localName = "iam_agency_name")
-
     private String iamAgencyName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
-
-    @JacksonXmlProperty(localName = "description")
 
     private String description;
 

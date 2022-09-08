@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -97,14 +96,10 @@ public class InstancesVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "arch")
 
-    @JacksonXmlProperty(localName = "arch")
-
     private ArchEnum arch;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "attributes")
-
-    @JacksonXmlProperty(localName = "attributes")
 
     private Attributes attributes;
 
@@ -200,105 +195,75 @@ public class InstancesVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cpu_memory")
 
-    @JacksonXmlProperty(localName = "cpu_memory")
-
     private CpuMemoryEnum cpuMemory;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_time")
-
-    @JacksonXmlProperty(localName = "created_time")
 
     private String createdTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
-    @JacksonXmlProperty(localName = "description")
-
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "display_name")
-
-    @JacksonXmlProperty(localName = "display_name")
 
     private String displayName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_name")
 
-    @JacksonXmlProperty(localName = "domain_name")
-
     private String domainName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
-
-    @JacksonXmlProperty(localName = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_temporary")
 
-    @JacksonXmlProperty(localName = "is_temporary")
-
     private Boolean isTemporary;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "label")
-
-    @JacksonXmlProperty(localName = "label")
 
     private String label;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "link")
 
-    @JacksonXmlProperty(localName = "link")
-
     private String link;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
-
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "organization_id")
 
-    @JacksonXmlProperty(localName = "organization_id")
-
     private String organizationId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "owner_id")
-
-    @JacksonXmlProperty(localName = "owner_id")
 
     private String ownerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "owner_name")
 
-    @JacksonXmlProperty(localName = "owner_name")
-
     private String ownerName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "platform_id")
 
-    @JacksonXmlProperty(localName = "platform_id")
-
     private Long platformId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "private")
-
-    @JacksonXmlProperty(localName = "private")
 
     private Boolean _private;
 
@@ -388,42 +353,30 @@ public class InstancesVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pvc_quantity")
 
-    @JacksonXmlProperty(localName = "pvc_quantity")
-
     private PvcQuantityEnum pvcQuantity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "refresh_interval")
-
-    @JacksonXmlProperty(localName = "refresh_interval")
 
     private Long refreshInterval;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region")
 
-    @JacksonXmlProperty(localName = "region")
-
     private String region;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "server_map")
-
-    @JacksonXmlProperty(localName = "server_map")
 
     private Map<String, String> serverMap = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "server_url")
 
-    @JacksonXmlProperty(localName = "server_url")
-
     private String serverUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stack_id")
-
-    @JacksonXmlProperty(localName = "stack_id")
 
     private String stackId;
 
@@ -543,35 +496,25 @@ public class InstancesVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    @JacksonXmlProperty(localName = "status")
-
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_time")
-
-    @JacksonXmlProperty(localName = "updated_time")
 
     private String updatedTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "visitor_id")
 
-    @JacksonXmlProperty(localName = "visitor_id")
-
     private String visitorId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "visitor_name")
 
-    @JacksonXmlProperty(localName = "visitor_name")
-
     private String visitorName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "visitor_domain_name")
-
-    @JacksonXmlProperty(localName = "visitor_domain_name")
 
     private String visitorDomainName;
 

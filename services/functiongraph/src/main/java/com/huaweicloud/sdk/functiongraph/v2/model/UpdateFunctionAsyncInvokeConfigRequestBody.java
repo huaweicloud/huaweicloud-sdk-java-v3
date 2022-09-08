@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.functiongraph.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,28 +14,20 @@ public class UpdateFunctionAsyncInvokeConfigRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_async_event_age_in_seconds")
 
-    @JacksonXmlProperty(localName = "max_async_event_age_in_seconds")
-
     private Integer maxAsyncEventAgeInSeconds;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_async_retry_attempts")
-
-    @JacksonXmlProperty(localName = "max_async_retry_attempts")
 
     private Integer maxAsyncRetryAttempts;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "destination_config")
 
-    @JacksonXmlProperty(localName = "destination_config")
-
     private FuncAsyncDestinationConfig destinationConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_async_status_log")
-
-    @JacksonXmlProperty(localName = "enable_async_status_log")
 
     private Boolean enableAsyncStatusLog;
 

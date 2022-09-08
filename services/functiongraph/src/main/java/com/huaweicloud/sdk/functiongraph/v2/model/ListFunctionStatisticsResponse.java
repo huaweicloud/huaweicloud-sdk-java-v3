@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.functiongraph.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -18,42 +17,30 @@ public class ListFunctionStatisticsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "count")
 
-    @JacksonXmlProperty(localName = "count")
-
     private List<SlaReportsValue> count = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "duration")
-
-    @JacksonXmlProperty(localName = "duration")
 
     private List<SlaReportsValue> duration = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fail_count")
 
-    @JacksonXmlProperty(localName = "fail_count")
-
     private List<SlaReportsValue> failCount = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_duration")
-
-    @JacksonXmlProperty(localName = "max_duration")
 
     private List<SlaReportsValue> maxDuration = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "min_duration")
 
-    @JacksonXmlProperty(localName = "min_duration")
-
     private List<SlaReportsValue> minDuration = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "reject_count")
-
-    @JacksonXmlProperty(localName = "reject_count")
 
     private List<SlaReportsValue> rejectCount = null;
 

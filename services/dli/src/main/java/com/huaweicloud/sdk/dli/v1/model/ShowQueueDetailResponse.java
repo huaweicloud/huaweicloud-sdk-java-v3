@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -15,128 +14,62 @@ public class ShowQueueDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_success")
 
-    @JacksonXmlProperty(localName = "is_success")
-
     private Boolean isSuccess;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "message")
-
-    @JacksonXmlProperty(localName = "message")
 
     private String message;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "queue_id")
 
-    @JacksonXmlProperty(localName = "queue_id")
-
-    private String queueId;
+    private Long queueId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "queueName")
-
-    @JacksonXmlProperty(localName = "queueName")
+    @JsonProperty(value = "queue_name")
 
     private String queueName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
-    @JacksonXmlProperty(localName = "description")
-
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "owner")
-
-    @JacksonXmlProperty(localName = "owner")
 
     private String owner;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
-    @JacksonXmlProperty(localName = "create_time")
-
     private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "cuCount")
-
-    @JacksonXmlProperty(localName = "cuCount")
+    @JsonProperty(value = "cu_count")
 
     private Integer cuCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "chargingMode")
-
-    @JacksonXmlProperty(localName = "chargingMode")
+    @JsonProperty(value = "charging_mode")
 
     private Integer chargingMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_id")
 
-    @JacksonXmlProperty(localName = "resource_id")
-
     private String resourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "queueType")
-
-    @JacksonXmlProperty(localName = "queueType")
-
-    private String queueType;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "resource_type")
-
-    @JacksonXmlProperty(localName = "resource_type")
-
-    private String resourceType;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_mode")
-
-    @JacksonXmlProperty(localName = "resource_mode")
 
     private Integer resourceMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
-    @JacksonXmlProperty(localName = "enterprise_project_id")
-
     private String enterpriseProjectId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "cu_spec")
-
-    @JacksonXmlProperty(localName = "cu_spec")
-
-    private Long cuSpec;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "cu_scale_out_limit")
-
-    @JacksonXmlProperty(localName = "cu_scale_out_limit")
-
-    private Long cuScaleOutLimit;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "cu_scale_in_limit")
-
-    @JacksonXmlProperty(localName = "cu_scale_in_limit")
-
-    private Long cuScaleInLimit;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "elastic_resource_pool_name")
-
-    @JacksonXmlProperty(localName = "elastic_resource_pool_name")
-
-    private String elasticResourcePoolName;
 
     public ShowQueueDetailResponse withIsSuccess(Boolean isSuccess) {
         this.isSuccess = isSuccess;
@@ -172,7 +105,7 @@ public class ShowQueueDetailResponse extends SdkResponse {
         this.message = message;
     }
 
-    public ShowQueueDetailResponse withQueueId(String queueId) {
+    public ShowQueueDetailResponse withQueueId(Long queueId) {
         this.queueId = queueId;
         return this;
     }
@@ -181,11 +114,11 @@ public class ShowQueueDetailResponse extends SdkResponse {
      * 队列ID。
      * @return queueId
      */
-    public String getQueueId() {
+    public Long getQueueId() {
         return queueId;
     }
 
-    public void setQueueId(String queueId) {
+    public void setQueueId(Long queueId) {
         this.queueId = queueId;
     }
 
@@ -308,40 +241,6 @@ public class ShowQueueDetailResponse extends SdkResponse {
         this.resourceId = resourceId;
     }
 
-    public ShowQueueDetailResponse withQueueType(String queueType) {
-        this.queueType = queueType;
-        return this;
-    }
-
-    /**
-     * 队列的资源ID。
-     * @return queueType
-     */
-    public String getQueueType() {
-        return queueType;
-    }
-
-    public void setQueueType(String queueType) {
-        this.queueType = queueType;
-    }
-
-    public ShowQueueDetailResponse withResourceType(String resourceType) {
-        this.resourceType = resourceType;
-        return this;
-    }
-
-    /**
-     * 队列的资源ID。
-     * @return resourceType
-     */
-    public String getResourceType() {
-        return resourceType;
-    }
-
-    public void setResourceType(String resourceType) {
-        this.resourceType = resourceType;
-    }
-
     public ShowQueueDetailResponse withResourceMode(Integer resourceMode) {
         this.resourceMode = resourceMode;
         return this;
@@ -376,74 +275,6 @@ public class ShowQueueDetailResponse extends SdkResponse {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    public ShowQueueDetailResponse withCuSpec(Long cuSpec) {
-        this.cuSpec = cuSpec;
-        return this;
-    }
-
-    /**
-     * 队列的规格大小。对于包周期队列，表示包周期部分的CU值；对于按需队列，表示用户购买队列时的初始值。
-     * @return cuSpec
-     */
-    public Long getCuSpec() {
-        return cuSpec;
-    }
-
-    public void setCuSpec(Long cuSpec) {
-        this.cuSpec = cuSpec;
-    }
-
-    public ShowQueueDetailResponse withCuScaleOutLimit(Long cuScaleOutLimit) {
-        this.cuScaleOutLimit = cuScaleOutLimit;
-        return this;
-    }
-
-    /**
-     * 当前队列弹性扩缩容的CU值上限。
-     * @return cuScaleOutLimit
-     */
-    public Long getCuScaleOutLimit() {
-        return cuScaleOutLimit;
-    }
-
-    public void setCuScaleOutLimit(Long cuScaleOutLimit) {
-        this.cuScaleOutLimit = cuScaleOutLimit;
-    }
-
-    public ShowQueueDetailResponse withCuScaleInLimit(Long cuScaleInLimit) {
-        this.cuScaleInLimit = cuScaleInLimit;
-        return this;
-    }
-
-    /**
-     * 当前队列弹性扩缩容的CU值下限。
-     * @return cuScaleInLimit
-     */
-    public Long getCuScaleInLimit() {
-        return cuScaleInLimit;
-    }
-
-    public void setCuScaleInLimit(Long cuScaleInLimit) {
-        this.cuScaleInLimit = cuScaleInLimit;
-    }
-
-    public ShowQueueDetailResponse withElasticResourcePoolName(String elasticResourcePoolName) {
-        this.elasticResourcePoolName = elasticResourcePoolName;
-        return this;
-    }
-
-    /**
-     * 弹性资源池名称。
-     * @return elasticResourcePoolName
-     */
-    public String getElasticResourcePoolName() {
-        return elasticResourcePoolName;
-    }
-
-    public void setElasticResourcePoolName(String elasticResourcePoolName) {
-        this.elasticResourcePoolName = elasticResourcePoolName;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -463,14 +294,8 @@ public class ShowQueueDetailResponse extends SdkResponse {
             && Objects.equals(this.cuCount, showQueueDetailResponse.cuCount)
             && Objects.equals(this.chargingMode, showQueueDetailResponse.chargingMode)
             && Objects.equals(this.resourceId, showQueueDetailResponse.resourceId)
-            && Objects.equals(this.queueType, showQueueDetailResponse.queueType)
-            && Objects.equals(this.resourceType, showQueueDetailResponse.resourceType)
             && Objects.equals(this.resourceMode, showQueueDetailResponse.resourceMode)
-            && Objects.equals(this.enterpriseProjectId, showQueueDetailResponse.enterpriseProjectId)
-            && Objects.equals(this.cuSpec, showQueueDetailResponse.cuSpec)
-            && Objects.equals(this.cuScaleOutLimit, showQueueDetailResponse.cuScaleOutLimit)
-            && Objects.equals(this.cuScaleInLimit, showQueueDetailResponse.cuScaleInLimit)
-            && Objects.equals(this.elasticResourcePoolName, showQueueDetailResponse.elasticResourcePoolName);
+            && Objects.equals(this.enterpriseProjectId, showQueueDetailResponse.enterpriseProjectId);
     }
 
     @Override
@@ -485,14 +310,8 @@ public class ShowQueueDetailResponse extends SdkResponse {
             cuCount,
             chargingMode,
             resourceId,
-            queueType,
-            resourceType,
             resourceMode,
-            enterpriseProjectId,
-            cuSpec,
-            cuScaleOutLimit,
-            cuScaleInLimit,
-            elasticResourcePoolName);
+            enterpriseProjectId);
     }
 
     @Override
@@ -509,14 +328,8 @@ public class ShowQueueDetailResponse extends SdkResponse {
         sb.append("    cuCount: ").append(toIndentedString(cuCount)).append("\n");
         sb.append("    chargingMode: ").append(toIndentedString(chargingMode)).append("\n");
         sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
-        sb.append("    queueType: ").append(toIndentedString(queueType)).append("\n");
-        sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
         sb.append("    resourceMode: ").append(toIndentedString(resourceMode)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
-        sb.append("    cuSpec: ").append(toIndentedString(cuSpec)).append("\n");
-        sb.append("    cuScaleOutLimit: ").append(toIndentedString(cuScaleOutLimit)).append("\n");
-        sb.append("    cuScaleInLimit: ").append(toIndentedString(cuScaleInLimit)).append("\n");
-        sb.append("    elasticResourcePoolName: ").append(toIndentedString(elasticResourcePoolName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

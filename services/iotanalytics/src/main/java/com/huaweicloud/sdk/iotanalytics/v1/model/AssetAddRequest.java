@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.iotanalytics.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,42 +16,30 @@ public class AssetAddRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "asset_model_id")
 
-    @JacksonXmlProperty(localName = "asset_model_id")
-
     private String assetModelId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
-
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "display_name")
 
-    @JacksonXmlProperty(localName = "display_name")
-
     private String displayName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parent")
-
-    @JacksonXmlProperty(localName = "parent")
 
     private String parent;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "properties")
 
-    @JacksonXmlProperty(localName = "properties")
-
     private List<PropertyRequest> properties = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "analyses")
-
-    @JacksonXmlProperty(localName = "analyses")
 
     private List<AnalysisRequest> analyses = null;
 

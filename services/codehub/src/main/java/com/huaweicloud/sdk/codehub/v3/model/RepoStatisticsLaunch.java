@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.codehub.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,21 +13,15 @@ public class RepoStatisticsLaunch {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "can_statistics")
 
-    @JacksonXmlProperty(localName = "can_statistics")
-
     private Boolean canStatistics;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "join_id")
 
-    @JacksonXmlProperty(localName = "join_id")
-
     private String joinId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "message")
-
-    @JacksonXmlProperty(localName = "message")
 
     private String message;
 

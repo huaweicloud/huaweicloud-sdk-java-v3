@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,28 +21,20 @@ public class TaskTargetServer {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vm_id")
-
-    @JacksonXmlProperty(localName = "vm_id")
 
     private String vmId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
-    @JacksonXmlProperty(localName = "name")
-
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip")
-
-    @JacksonXmlProperty(localName = "ip")
 
     private String ip;
 
@@ -127,56 +118,40 @@ public class TaskTargetServer {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os_type")
 
-    @JacksonXmlProperty(localName = "os_type")
-
     private OsTypeEnum osType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os_version")
-
-    @JacksonXmlProperty(localName = "os_version")
 
     private String osVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "system_dir")
 
-    @JacksonXmlProperty(localName = "system_dir")
-
     private String systemDir;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "disks")
-
-    @JacksonXmlProperty(localName = "disks")
 
     private List<TargetDisk> disks = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volume_groups")
 
-    @JacksonXmlProperty(localName = "volume_groups")
-
     private List<VolumeGroups> volumeGroups = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "btrfs_list")
-
-    @JacksonXmlProperty(localName = "btrfs_list")
 
     private List<String> btrfsList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image_disk_id")
 
-    @JacksonXmlProperty(localName = "image_disk_id")
-
     private String imageDiskId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cutovered_snapshot_ids")
-
-    @JacksonXmlProperty(localName = "cutovered_snapshot_ids")
 
     private String cutoveredSnapshotIds;
 

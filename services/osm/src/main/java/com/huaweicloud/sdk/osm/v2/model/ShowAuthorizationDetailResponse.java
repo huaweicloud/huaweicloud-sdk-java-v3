@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.osm.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.time.OffsetDateTime;
@@ -19,126 +18,90 @@ public class ShowAuthorizationDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private Long id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
-
-    @JacksonXmlProperty(localName = "status")
 
     private Integer status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "incident_id")
 
-    @JacksonXmlProperty(localName = "incident_id")
-
     private String incidentId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "simple_description")
-
-    @JacksonXmlProperty(localName = "simple_description")
 
     private String simpleDescription;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_type_id")
 
-    @JacksonXmlProperty(localName = "resource_type_id")
-
     private String resourceTypeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_type_name")
-
-    @JacksonXmlProperty(localName = "resource_type_name")
 
     private String resourceTypeName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "visit_type_id")
 
-    @JacksonXmlProperty(localName = "visit_type_id")
-
     private String visitTypeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "visit_type_name")
-
-    @JacksonXmlProperty(localName = "visit_type_name")
 
     private String visitTypeName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auth_effective_time")
 
-    @JacksonXmlProperty(localName = "auth_effective_time")
-
     private OffsetDateTime authEffectiveTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auth_expire_time")
-
-    @JacksonXmlProperty(localName = "auth_expire_time")
 
     private OffsetDateTime authExpireTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "reject_reason")
 
-    @JacksonXmlProperty(localName = "reject_reason")
-
     private String rejectReason;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "incident_auth_detail_list")
-
-    @JacksonXmlProperty(localName = "incident_auth_detail_list")
 
     private List<IncidentOrderAuthDetailInfoV2> incidentAuthDetailList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "xcustomer_name")
 
-    @JacksonXmlProperty(localName = "xcustomer_name")
-
     private String xcustomerName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auth_handler_name")
-
-    @JacksonXmlProperty(localName = "auth_handler_name")
 
     private String authHandlerName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "agency_name")
 
-    @JacksonXmlProperty(localName = "agency_name")
-
     private String agencyName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auth_describe")
-
-    @JacksonXmlProperty(localName = "auth_describe")
 
     private String authDescribe;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "content_type_id")
 
-    @JacksonXmlProperty(localName = "content_type_id")
-
     private String contentTypeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "content_type_name")
-
-    @JacksonXmlProperty(localName = "content_type_name")
 
     private String contentTypeName;
 

@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -102,77 +101,55 @@ public class VideoCommon {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "output_policy")
 
-    @JacksonXmlProperty(localName = "output_policy")
-
     private OutputPolicyEnum outputPolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "codec")
-
-    @JacksonXmlProperty(localName = "codec")
 
     private Integer codec;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "profile")
 
-    @JacksonXmlProperty(localName = "profile")
-
     private Integer profile;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "level")
-
-    @JacksonXmlProperty(localName = "level")
 
     private Integer level;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "preset")
 
-    @JacksonXmlProperty(localName = "preset")
-
     private Integer preset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ref_frames_count")
-
-    @JacksonXmlProperty(localName = "ref_frames_count")
 
     private Integer refFramesCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_iframes_interval")
 
-    @JacksonXmlProperty(localName = "max_iframes_interval")
-
     private Integer maxIframesInterval;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bframes_count")
-
-    @JacksonXmlProperty(localName = "bframes_count")
 
     private Integer bframesCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "frame_rate")
 
-    @JacksonXmlProperty(localName = "frame_rate")
-
     private Integer frameRate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "aspect_ratio")
 
-    @JacksonXmlProperty(localName = "aspect_ratio")
-
     private Integer aspectRatio;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "black_cut")
-
-    @JacksonXmlProperty(localName = "black_cut")
 
     private Integer blackCut;
 

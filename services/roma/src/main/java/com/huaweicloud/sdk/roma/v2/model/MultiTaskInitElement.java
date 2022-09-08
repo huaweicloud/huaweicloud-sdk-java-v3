@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.roma.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,126 +16,90 @@ public class MultiTaskInitElement {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ext_info")
 
-    @JacksonXmlProperty(localName = "ext_info")
-
     private MultiTaskInitElementExtInfo extInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_id")
-
-    @JacksonXmlProperty(localName = "task_id")
 
     private String taskId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_datasource_id")
 
-    @JacksonXmlProperty(localName = "source_datasource_id")
-
     private String sourceDatasourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_datasource_id")
-
-    @JacksonXmlProperty(localName = "target_datasource_id")
 
     private String targetDatasourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_group")
 
-    @JacksonXmlProperty(localName = "source_group")
-
     private String sourceGroup;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_group")
-
-    @JacksonXmlProperty(localName = "target_group")
 
     private String targetGroup;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_ds_id")
 
-    @JacksonXmlProperty(localName = "source_ds_id")
-
     private String sourceDsId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_ds_id")
-
-    @JacksonXmlProperty(localName = "target_ds_id")
 
     private String targetDsId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_instance_id")
 
-    @JacksonXmlProperty(localName = "source_instance_id")
-
     private String sourceInstanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_instance_id")
-
-    @JacksonXmlProperty(localName = "target_instance_id")
 
     private String targetInstanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_app_id")
 
-    @JacksonXmlProperty(localName = "source_app_id")
-
     private String sourceAppId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_app_id")
-
-    @JacksonXmlProperty(localName = "target_app_id")
 
     private String targetAppId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_datasource_name")
 
-    @JacksonXmlProperty(localName = "source_datasource_name")
-
     private String sourceDatasourceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_datasource_name")
-
-    @JacksonXmlProperty(localName = "target_datasource_name")
 
     private String targetDatasourceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_datasource_type")
 
-    @JacksonXmlProperty(localName = "source_datasource_type")
-
     private String sourceDatasourceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_datasource_type")
-
-    @JacksonXmlProperty(localName = "target_datasource_type")
 
     private String targetDatasourceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mappings")
 
-    @JacksonXmlProperty(localName = "mappings")
-
     private List<MultiTaskMappingElement> mappings = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mappings_total_count")
-
-    @JacksonXmlProperty(localName = "mappings_total_count")
 
     private Long mappingsTotalCount;
 

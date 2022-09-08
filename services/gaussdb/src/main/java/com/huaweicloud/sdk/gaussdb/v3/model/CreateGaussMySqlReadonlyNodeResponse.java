@@ -12,8 +12,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -27,7 +25,6 @@ public class CreateGaussMySqlReadonlyNodeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_id")
     
-    @JacksonXmlProperty(localName = "instance_id")
     
     private String instanceId;
 
@@ -35,7 +32,6 @@ public class CreateGaussMySqlReadonlyNodeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_names")
     
-    @JacksonXmlProperty(localName = "node_names")
     
     private List<String> nodeNames = null;
     
@@ -43,7 +39,6 @@ public class CreateGaussMySqlReadonlyNodeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_id")
     
-    @JacksonXmlProperty(localName = "job_id")
     
     private String jobId;
 
@@ -51,7 +46,6 @@ public class CreateGaussMySqlReadonlyNodeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="order_id")
     
-    @JacksonXmlProperty(localName = "order_id")
     
     private String orderId;
 

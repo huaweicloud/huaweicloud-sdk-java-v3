@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -111,49 +110,35 @@ public class TaskTiming {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
-    @JacksonXmlProperty(localName = "type")
-
     private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timezone")
-
-    @JacksonXmlProperty(localName = "timezone")
 
     private String timezone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "days_of_week")
 
-    @JacksonXmlProperty(localName = "days_of_week")
-
     private List<Integer> daysOfWeek = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "days_of_month")
-
-    @JacksonXmlProperty(localName = "days_of_month")
 
     private List<Integer> daysOfMonth = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "date")
 
-    @JacksonXmlProperty(localName = "date")
-
     private String date;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "periods")
 
-    @JacksonXmlProperty(localName = "periods")
-
     private List<TaskTimingPeriods> periods = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "frequency")
-
-    @JacksonXmlProperty(localName = "frequency")
 
     private TaskTimingFrequency frequency;
 

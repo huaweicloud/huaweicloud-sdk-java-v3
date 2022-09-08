@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.eg.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,21 +16,15 @@ public class SubscriptionUpdateReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
-    @JacksonXmlProperty(localName = "description")
-
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sources")
 
-    @JacksonXmlProperty(localName = "sources")
-
     private List<SubscriptionSource> sources = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "targets")
-
-    @JacksonXmlProperty(localName = "targets")
 
     private List<SubscriptionTarget> targets = null;
 

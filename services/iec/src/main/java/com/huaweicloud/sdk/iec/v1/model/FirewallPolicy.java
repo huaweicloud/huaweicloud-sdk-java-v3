@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.iec.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,35 +16,25 @@ public class FirewallPolicy {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
-
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "firewall_rules")
 
-    @JacksonXmlProperty(localName = "firewall_rules")
-
     private List<FirewallRule> firewallRules = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "insert_after")
 
-    @JacksonXmlProperty(localName = "insert_after")
-
     private String insertAfter;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "insert_before")
-
-    @JacksonXmlProperty(localName = "insert_before")
 
     private String insertBefore;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.osm.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,28 +16,20 @@ public class CreateMessageDoV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "content")
 
-    @JacksonXmlProperty(localName = "content")
-
     private String content;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_authorized")
-
-    @JacksonXmlProperty(localName = "is_authorized")
 
     private Integer isAuthorized;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "authorization_content")
 
-    @JacksonXmlProperty(localName = "authorization_content")
-
     private String authorizationContent;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "accessory_ids")
-
-    @JacksonXmlProperty(localName = "accessory_ids")
 
     private List<String> accessoryIds = null;
 

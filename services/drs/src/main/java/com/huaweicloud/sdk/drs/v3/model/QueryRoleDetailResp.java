@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.drs.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,42 +16,30 @@ public class QueryRoleDetailResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "role")
 
-    @JacksonXmlProperty(localName = "role")
-
     private String role;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "comment")
-
-    @JacksonXmlProperty(localName = "comment")
 
     private String comment;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_transfer")
 
-    @JacksonXmlProperty(localName = "is_transfer")
-
     private Boolean isTransfer;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "privileges")
-
-    @JacksonXmlProperty(localName = "privileges")
 
     private String privileges;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "inherits_roles")
 
-    @JacksonXmlProperty(localName = "inherits_roles")
-
     private List<String> inheritsRoles = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "selected")
-
-    @JacksonXmlProperty(localName = "selected")
 
     private Boolean selected;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.iotanalytics.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,28 +14,20 @@ public class AnalysisRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
-    @JacksonXmlProperty(localName = "name")
-
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "transform")
-
-    @JacksonXmlProperty(localName = "transform")
 
     private DTTransformRequest transform;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "aggregate")
 
-    @JacksonXmlProperty(localName = "aggregate")
-
     private DTAggregateRequest aggregate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stream")
-
-    @JacksonXmlProperty(localName = "stream")
 
     private DTStreamRequest stream;
 

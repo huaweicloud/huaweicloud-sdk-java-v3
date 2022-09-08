@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.servicestage.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,35 +13,25 @@ public class TemplateView {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template_name")
 
-    @JacksonXmlProperty(localName = "template_name")
-
     private Template templateName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template_desc")
-
-    @JacksonXmlProperty(localName = "template_desc")
 
     private String templateDesc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_type")
 
-    @JacksonXmlProperty(localName = "source_type")
-
     private String sourceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_repo_url")
 
-    @JacksonXmlProperty(localName = "source_repo_url")
-
     private String sourceRepoUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "runtime")
-
-    @JacksonXmlProperty(localName = "runtime")
 
     private RuntimeType runtime;
 

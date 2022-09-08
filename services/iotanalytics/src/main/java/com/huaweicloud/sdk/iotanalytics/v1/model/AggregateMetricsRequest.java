@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.iotanalytics.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -19,49 +18,35 @@ public class AggregateMetricsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time_span")
 
-    @JacksonXmlProperty(localName = "time_span")
-
     private TimeSpanDT timeSpan;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "interval")
-
-    @JacksonXmlProperty(localName = "interval")
 
     private String interval;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
-    @JacksonXmlProperty(localName = "offset")
-
     private String offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
-
-    @JacksonXmlProperty(localName = "tags")
 
     private Map<String, Object> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "property_filter")
 
-    @JacksonXmlProperty(localName = "property_filter")
-
     private List<PropertyFilter> propertyFilter = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metrics")
 
-    @JacksonXmlProperty(localName = "metrics")
-
     private List<DTAggregateMetrics> metrics = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
-
-    @JacksonXmlProperty(localName = "limit")
 
     private Integer limit;
 

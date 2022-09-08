@@ -14,8 +14,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -29,7 +27,6 @@ public class BootstrapScriptResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    @JacksonXmlProperty(localName = "name")
     
     private String name;
 
@@ -37,7 +34,6 @@ public class BootstrapScriptResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="uri")
     
-    @JacksonXmlProperty(localName = "uri")
     
     private String uri;
 
@@ -45,7 +41,6 @@ public class BootstrapScriptResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="parameters")
     
-    @JacksonXmlProperty(localName = "parameters")
     
     private String parameters;
 
@@ -53,7 +48,6 @@ public class BootstrapScriptResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="nodes")
     
-    @JacksonXmlProperty(localName = "nodes")
     
     private List<String> nodes = null;
     
@@ -61,7 +55,6 @@ public class BootstrapScriptResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="active_master")
     
-    @JacksonXmlProperty(localName = "active_master")
     
     private Boolean activeMaster;
     /**
@@ -147,7 +140,6 @@ public class BootstrapScriptResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="fail_action")
     
-    @JacksonXmlProperty(localName = "fail_action")
     
     private FailActionEnum failAction;
 
@@ -155,7 +147,6 @@ public class BootstrapScriptResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="before_component_start")
     
-    @JacksonXmlProperty(localName = "before_component_start")
     
     private Boolean beforeComponentStart;
 
@@ -163,7 +154,6 @@ public class BootstrapScriptResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="start_time")
     
-    @JacksonXmlProperty(localName = "start_time")
     
     private Long startTime;
 
@@ -171,7 +161,6 @@ public class BootstrapScriptResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="state")
     
-    @JacksonXmlProperty(localName = "state")
     
     private String state;
 

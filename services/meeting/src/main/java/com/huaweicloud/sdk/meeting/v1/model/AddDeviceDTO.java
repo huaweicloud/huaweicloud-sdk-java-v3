@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -19,21 +18,15 @@ public class AddDeviceDTO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
-    @JacksonXmlProperty(localName = "name")
-
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "model")
 
-    @JacksonXmlProperty(localName = "model")
-
     private String model;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sn")
-
-    @JacksonXmlProperty(localName = "sn")
 
     private String sn;
 
@@ -123,42 +116,30 @@ public class AddDeviceDTO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "prjCodeMode")
 
-    @JacksonXmlProperty(localName = "prjCodeMode")
-
     private PrjCodeModeEnum prjCodeMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deptCode")
-
-    @JacksonXmlProperty(localName = "deptCode")
 
     private String deptCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "phone")
 
-    @JacksonXmlProperty(localName = "phone")
-
     private String phone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "country")
-
-    @JacksonXmlProperty(localName = "country")
 
     private String country;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "email")
 
-    @JacksonXmlProperty(localName = "email")
-
     private String email;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
-
-    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
@@ -242,14 +223,10 @@ public class AddDeviceDTO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    @JacksonXmlProperty(localName = "status")
-
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sendNotify")
-
-    @JacksonXmlProperty(localName = "sendNotify")
 
     private String sendNotify;
 

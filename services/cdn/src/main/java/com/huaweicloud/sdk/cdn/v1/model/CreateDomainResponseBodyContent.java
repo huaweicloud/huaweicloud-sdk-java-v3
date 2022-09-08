@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cdn.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,126 +16,90 @@ public class CreateDomainResponseBodyContent {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_name")
-
-    @JacksonXmlProperty(localName = "domain_name")
 
     private String domainName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "business_type")
 
-    @JacksonXmlProperty(localName = "business_type")
-
     private String businessType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_area")
-
-    @JacksonXmlProperty(localName = "service_area")
 
     private String serviceArea;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_domain_id")
 
-    @JacksonXmlProperty(localName = "user_domain_id")
-
     private String userDomainId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_status")
-
-    @JacksonXmlProperty(localName = "domain_status")
 
     private String domainStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cname")
 
-    @JacksonXmlProperty(localName = "cname")
-
     private String cname;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sources")
-
-    @JacksonXmlProperty(localName = "sources")
 
     private List<Sources> sources = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_origin_host")
 
-    @JacksonXmlProperty(localName = "domain_origin_host")
-
     private DomainOriginHost domainOriginHost;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "https_status")
-
-    @JacksonXmlProperty(localName = "https_status")
 
     private Integer httpsStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
-    @JacksonXmlProperty(localName = "create_time")
-
     private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "modify_time")
-
-    @JacksonXmlProperty(localName = "modify_time")
 
     private Long modifyTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "disabled")
 
-    @JacksonXmlProperty(localName = "disabled")
-
     private Integer disabled;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "locked")
-
-    @JacksonXmlProperty(localName = "locked")
 
     private Integer locked;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "range_status")
 
-    @JacksonXmlProperty(localName = "range_status")
-
     private String rangeStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "follow_status")
-
-    @JacksonXmlProperty(localName = "follow_status")
 
     private String followStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "origin_status")
 
-    @JacksonXmlProperty(localName = "origin_status")
-
     private String originStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auto_refresh_preheat")
-
-    @JacksonXmlProperty(localName = "auto_refresh_preheat")
 
     private Integer autoRefreshPreheat;
 

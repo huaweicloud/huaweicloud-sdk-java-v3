@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -19,42 +18,30 @@ public class CreateProtectionGroupRequestParams {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
-    @JacksonXmlProperty(localName = "name")
-
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
-
-    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_availability_zone")
 
-    @JacksonXmlProperty(localName = "source_availability_zone")
-
     private String sourceAvailabilityZone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_availability_zone")
-
-    @JacksonXmlProperty(localName = "target_availability_zone")
 
     private String targetAvailabilityZone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_id")
 
-    @JacksonXmlProperty(localName = "domain_id")
-
     private String domainId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_vpc_id")
-
-    @JacksonXmlProperty(localName = "source_vpc_id")
 
     private String sourceVpcId;
 
@@ -131,8 +118,6 @@ public class CreateProtectionGroupRequestParams {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dr_type")
-
-    @JacksonXmlProperty(localName = "dr_type")
 
     private DrTypeEnum drType;
 

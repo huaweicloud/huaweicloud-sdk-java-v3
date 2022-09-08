@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,14 +21,10 @@ public class DataBucketQuery {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_bucket_name")
 
-    @JacksonXmlProperty(localName = "data_bucket_name")
-
     private String dataBucketName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "search_enabled")
-
-    @JacksonXmlProperty(localName = "search_enabled")
 
     private Boolean searchEnabled;
 
@@ -112,8 +107,6 @@ public class DataBucketQuery {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_event")
-
-    @JacksonXmlProperty(localName = "data_event")
 
     private List<DataEventEnum> dataEvent = null;
 

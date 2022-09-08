@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -99,8 +98,6 @@ public class ClusterSpec {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "category")
 
-    @JacksonXmlProperty(localName = "category")
-
     private CategoryEnum category;
 
     /**
@@ -183,105 +180,75 @@ public class ClusterSpec {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
-    @JacksonXmlProperty(localName = "type")
-
     private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flavor")
-
-    @JacksonXmlProperty(localName = "flavor")
 
     private String flavor;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
 
-    @JacksonXmlProperty(localName = "version")
-
     private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "platformVersion")
-
-    @JacksonXmlProperty(localName = "platformVersion")
 
     private String platformVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
-    @JacksonXmlProperty(localName = "description")
-
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "customSan")
-
-    @JacksonXmlProperty(localName = "customSan")
 
     private List<String> customSan = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ipv6enable")
 
-    @JacksonXmlProperty(localName = "ipv6enable")
-
     private Boolean ipv6enable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hostNetwork")
-
-    @JacksonXmlProperty(localName = "hostNetwork")
 
     private HostNetwork hostNetwork;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "containerNetwork")
 
-    @JacksonXmlProperty(localName = "containerNetwork")
-
     private ContainerNetwork containerNetwork;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "eniNetwork")
-
-    @JacksonXmlProperty(localName = "eniNetwork")
 
     private EniNetwork eniNetwork;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "authentication")
 
-    @JacksonXmlProperty(localName = "authentication")
-
     private Authentication authentication;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "billingMode")
-
-    @JacksonXmlProperty(localName = "billingMode")
 
     private Integer billingMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "masters")
 
-    @JacksonXmlProperty(localName = "masters")
-
     private List<MasterSpec> masters = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "kubernetesSvcIpRange")
 
-    @JacksonXmlProperty(localName = "kubernetesSvcIpRange")
-
     private String kubernetesSvcIpRange;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "clusterTags")
-
-    @JacksonXmlProperty(localName = "clusterTags")
 
     private List<ResourceTag> clusterTags = null;
 
@@ -365,28 +332,20 @@ public class ClusterSpec {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "kubeProxyMode")
 
-    @JacksonXmlProperty(localName = "kubeProxyMode")
-
     private KubeProxyModeEnum kubeProxyMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "az")
-
-    @JacksonXmlProperty(localName = "az")
 
     private String az;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extendParam")
 
-    @JacksonXmlProperty(localName = "extendParam")
-
     private ClusterExtendParam extendParam;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "supportIstio")
-
-    @JacksonXmlProperty(localName = "supportIstio")
 
     private Boolean supportIstio;
 

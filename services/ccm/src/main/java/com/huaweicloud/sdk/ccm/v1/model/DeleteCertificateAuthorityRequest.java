@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.ccm.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,14 +13,10 @@ public class DeleteCertificateAuthorityRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ca_id")
 
-    @JacksonXmlProperty(localName = "ca_id")
-
     private String caId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pending_days")
-
-    @JacksonXmlProperty(localName = "pending_days")
 
     private String pendingDays;
 

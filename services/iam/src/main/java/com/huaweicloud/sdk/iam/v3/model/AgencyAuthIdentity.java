@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -93,21 +92,15 @@ public class AgencyAuthIdentity {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "methods")
 
-    @JacksonXmlProperty(localName = "methods")
-
     private List<MethodsEnum> methods = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "assume_role")
 
-    @JacksonXmlProperty(localName = "assume_role")
-
     private IdentityAssumerole assumeRole;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy")
-
-    @JacksonXmlProperty(localName = "policy")
 
     private ServicePolicy policy;
 

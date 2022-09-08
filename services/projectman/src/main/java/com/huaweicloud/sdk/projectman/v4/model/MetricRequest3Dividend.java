@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.projectman.v4.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,182 +13,130 @@ public class MetricRequest3Dividend {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "on_time")
 
-    @JacksonXmlProperty(localName = "on_time")
-
     private String onTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "custom_field16")
-
-    @JacksonXmlProperty(localName = "custom_field16")
 
     private String customField16;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "custom_field17")
 
-    @JacksonXmlProperty(localName = "custom_field17")
-
     private String customField17;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "custom_field18")
-
-    @JacksonXmlProperty(localName = "custom_field18")
 
     private String customField18;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "custom_field19")
 
-    @JacksonXmlProperty(localName = "custom_field19")
-
     private String customField19;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "custom_field20")
-
-    @JacksonXmlProperty(localName = "custom_field20")
 
     private String customField20;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "custom_field21")
 
-    @JacksonXmlProperty(localName = "custom_field21")
-
     private String customField21;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "custom_field22")
-
-    @JacksonXmlProperty(localName = "custom_field22")
 
     private String customField22;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "custom_field23")
 
-    @JacksonXmlProperty(localName = "custom_field23")
-
     private String customField23;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "custom_field24")
-
-    @JacksonXmlProperty(localName = "custom_field24")
 
     private String customField24;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "custom_field25")
 
-    @JacksonXmlProperty(localName = "custom_field25")
-
     private String customField25;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "custom_field26")
-
-    @JacksonXmlProperty(localName = "custom_field26")
 
     private String customField26;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "custom_field27")
 
-    @JacksonXmlProperty(localName = "custom_field27")
-
     private String customField27;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "custom_field28")
-
-    @JacksonXmlProperty(localName = "custom_field28")
 
     private String customField28;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "custom_field29")
 
-    @JacksonXmlProperty(localName = "custom_field29")
-
     private String customField29;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "custom_field30")
-
-    @JacksonXmlProperty(localName = "custom_field30")
 
     private String customField30;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "custom_field31")
 
-    @JacksonXmlProperty(localName = "custom_field31")
-
     private String customField31;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "custom_field32")
-
-    @JacksonXmlProperty(localName = "custom_field32")
 
     private String customField32;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "custom_field33")
 
-    @JacksonXmlProperty(localName = "custom_field33")
-
     private String customField33;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "custom_field34")
-
-    @JacksonXmlProperty(localName = "custom_field34")
 
     private String customField34;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "custom_field35")
 
-    @JacksonXmlProperty(localName = "custom_field35")
-
     private String customField35;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "custom_field36")
-
-    @JacksonXmlProperty(localName = "custom_field36")
 
     private String customField36;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "custom_field37")
 
-    @JacksonXmlProperty(localName = "custom_field37")
-
     private String customField37;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "custom_field38")
-
-    @JacksonXmlProperty(localName = "custom_field38")
 
     private String customField38;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "custom_field39")
 
-    @JacksonXmlProperty(localName = "custom_field39")
-
     private String customField39;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "custom_field40")
-
-    @JacksonXmlProperty(localName = "custom_field40")
 
     private String customField40;
 

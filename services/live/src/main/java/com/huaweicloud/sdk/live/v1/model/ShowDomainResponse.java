@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.live.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.math.BigDecimal;
@@ -19,14 +18,10 @@ public class ShowDomainResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total")
 
-    @JacksonXmlProperty(localName = "total")
-
     private BigDecimal total;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_info")
-
-    @JacksonXmlProperty(localName = "domain_info")
 
     private List<DecoupledLiveDomainInfo> domainInfo = null;
 

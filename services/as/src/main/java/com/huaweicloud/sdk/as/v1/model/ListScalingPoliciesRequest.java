@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -19,14 +18,10 @@ public class ListScalingPoliciesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scaling_group_id")
 
-    @JacksonXmlProperty(localName = "scaling_group_id")
-
     private String scalingGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scaling_policy_name")
-
-    @JacksonXmlProperty(localName = "scaling_policy_name")
 
     private String scalingPolicyName;
 
@@ -116,28 +111,20 @@ public class ListScalingPoliciesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scaling_policy_type")
 
-    @JacksonXmlProperty(localName = "scaling_policy_type")
-
     private ScalingPolicyTypeEnum scalingPolicyType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scaling_policy_id")
-
-    @JacksonXmlProperty(localName = "scaling_policy_id")
 
     private String scalingPolicyId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_number")
 
-    @JacksonXmlProperty(localName = "start_number")
-
     private Integer startNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
-
-    @JacksonXmlProperty(localName = "limit")
 
     private Integer limit;
 

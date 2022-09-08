@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.codehub.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.time.OffsetDateTime;
 import java.util.Objects;
@@ -15,91 +14,65 @@ public class RepoHook {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "build_events")
 
-    @JacksonXmlProperty(localName = "build_events")
-
     private Boolean buildEvents;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
-
-    @JacksonXmlProperty(localName = "created_at")
 
     private OffsetDateTime createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_ssl_verification")
 
-    @JacksonXmlProperty(localName = "enable_ssl_verification")
-
     private Boolean enableSslVerification;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
-
-    @JacksonXmlProperty(localName = "id")
 
     private Integer id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "issues_events")
 
-    @JacksonXmlProperty(localName = "issues_events")
-
     private Boolean issuesEvents;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "merge_requests_events")
-
-    @JacksonXmlProperty(localName = "merge_requests_events")
 
     private Boolean mergeRequestsEvents;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "note_events")
 
-    @JacksonXmlProperty(localName = "note_events")
-
     private Boolean noteEvents;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pipeline_events")
-
-    @JacksonXmlProperty(localName = "pipeline_events")
 
     private Boolean pipelineEvents;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
 
-    @JacksonXmlProperty(localName = "project_id")
-
     private Integer projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "push_events")
-
-    @JacksonXmlProperty(localName = "push_events")
 
     private Boolean pushEvents;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "repository_update_events")
 
-    @JacksonXmlProperty(localName = "repository_update_events")
-
     private Boolean repositoryUpdateEvents;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tag_push_events")
 
-    @JacksonXmlProperty(localName = "tag_push_events")
-
     private Boolean tagPushEvents;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "wiki_page_events")
-
-    @JacksonXmlProperty(localName = "wiki_page_events")
 
     private Boolean wikiPageEvents;
 

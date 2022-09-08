@@ -8,8 +8,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -23,7 +21,6 @@ public class DocQueryAnswerDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="answer")
     
-    @JacksonXmlProperty(localName = "answer")
     
     private String answer;
 
@@ -31,7 +28,6 @@ public class DocQueryAnswerDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="doc_id")
     
-    @JacksonXmlProperty(localName = "doc_id")
     
     private String docId;
 
@@ -39,7 +35,6 @@ public class DocQueryAnswerDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="end_index")
     
-    @JacksonXmlProperty(localName = "end_index")
     
     private Integer endIndex;
 
@@ -47,7 +42,6 @@ public class DocQueryAnswerDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="paragraph_score")
     
-    @JacksonXmlProperty(localName = "paragraph_score")
     
     private Double paragraphScore;
 
@@ -55,7 +49,6 @@ public class DocQueryAnswerDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="paragraph_text")
     
-    @JacksonXmlProperty(localName = "paragraph_text")
     
     private String paragraphText;
 
@@ -63,7 +56,6 @@ public class DocQueryAnswerDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="phrase_score")
     
-    @JacksonXmlProperty(localName = "phrase_score")
     
     private Double phraseScore;
 
@@ -71,7 +63,6 @@ public class DocQueryAnswerDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="start_index")
     
-    @JacksonXmlProperty(localName = "start_index")
     
     private Integer startIndex;
 
@@ -79,7 +70,6 @@ public class DocQueryAnswerDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="total_score")
     
-    @JacksonXmlProperty(localName = "total_score")
     
     private Double totalScore;
 
@@ -87,7 +77,6 @@ public class DocQueryAnswerDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="paragraph_number")
     
-    @JacksonXmlProperty(localName = "paragraph_number")
     
     private Integer paragraphNumber;
 

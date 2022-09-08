@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cloudpipeline.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -19,154 +18,110 @@ public class TemplateView {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template_id")
 
-    @JacksonXmlProperty(localName = "template_id")
-
     private String templateId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template_name")
-
-    @JacksonXmlProperty(localName = "template_name")
 
     private String templateName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template_type")
 
-    @JacksonXmlProperty(localName = "template_type")
-
     private String templateType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template_url")
-
-    @JacksonXmlProperty(localName = "template_url")
 
     private String templateUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_id")
 
-    @JacksonXmlProperty(localName = "user_id")
-
     private String userId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_name")
-
-    @JacksonXmlProperty(localName = "user_name")
 
     private String userName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_id")
 
-    @JacksonXmlProperty(localName = "domain_id")
-
     private String domainId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_name")
-
-    @JacksonXmlProperty(localName = "domain_name")
 
     private String domainName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_build_in")
 
-    @JacksonXmlProperty(localName = "is_build_in")
-
     private Boolean isBuildIn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region")
-
-    @JacksonXmlProperty(localName = "region")
 
     private String region;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
 
-    @JacksonXmlProperty(localName = "project_id")
-
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_name")
-
-    @JacksonXmlProperty(localName = "project_name")
 
     private String projectName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
-    @JacksonXmlProperty(localName = "create_time")
-
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last_modify_time")
-
-    @JacksonXmlProperty(localName = "last_modify_time")
 
     private String lastModifyTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_watch")
 
-    @JacksonXmlProperty(localName = "is_watch")
-
     private Boolean isWatch;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
-
-    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parameter")
 
-    @JacksonXmlProperty(localName = "parameter")
-
     private List<TemplateParam> parameter = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flow")
-
-    @JacksonXmlProperty(localName = "flow")
 
     private Map<String, Map<String, String>> flow = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "states")
 
-    @JacksonXmlProperty(localName = "states")
-
     private Map<String, TemplateState> states = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "can_update")
-
-    @JacksonXmlProperty(localName = "can_update")
 
     private Boolean canUpdate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "can_delete")
 
-    @JacksonXmlProperty(localName = "can_delete")
-
     private Boolean canDelete;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "need_hub")
-
-    @JacksonXmlProperty(localName = "need_hub")
 
     private Boolean needHub;
 

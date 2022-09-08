@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.time.OffsetDateTime;
@@ -24,14 +23,10 @@ public class CreateApiGroupV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
-
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
@@ -109,105 +104,75 @@ public class CreateApiGroupV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    @JacksonXmlProperty(localName = "status")
-
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sl_domain")
-
-    @JacksonXmlProperty(localName = "sl_domain")
 
     private String slDomain;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "register_time")
 
-    @JacksonXmlProperty(localName = "register_time")
-
     private OffsetDateTime registerTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
-
-    @JacksonXmlProperty(localName = "update_time")
 
     private OffsetDateTime updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "on_sell_status")
 
-    @JacksonXmlProperty(localName = "on_sell_status")
-
     private Integer onSellStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "url_domains")
-
-    @JacksonXmlProperty(localName = "url_domains")
 
     private List<UrlDomain> urlDomains = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sl_domains")
 
-    @JacksonXmlProperty(localName = "sl_domains")
-
     private List<String> slDomains = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remark")
-
-    @JacksonXmlProperty(localName = "remark")
 
     private String remark;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "call_limits")
 
-    @JacksonXmlProperty(localName = "call_limits")
-
     private Integer callLimits;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time_interval")
-
-    @JacksonXmlProperty(localName = "time_interval")
 
     private Integer timeInterval;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time_unit")
 
-    @JacksonXmlProperty(localName = "time_unit")
-
     private String timeUnit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_default")
-
-    @JacksonXmlProperty(localName = "is_default")
 
     private Integer isDefault;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
 
-    @JacksonXmlProperty(localName = "version")
-
     private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "roma_app_id")
 
-    @JacksonXmlProperty(localName = "roma_app_id")
-
     private String romaAppId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "roma_app_name")
-
-    @JacksonXmlProperty(localName = "roma_app_name")
 
     private String romaAppName;
 

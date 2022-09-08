@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.osm.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,84 +13,60 @@ public class ListHasVerifiedContactsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "contact_way")
 
-    @JacksonXmlProperty(localName = "contact_way")
-
     private Integer contactWay;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "customer_id")
-
-    @JacksonXmlProperty(localName = "customer_id")
 
     private String customerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sub_customer_id")
 
-    @JacksonXmlProperty(localName = "sub_customer_id")
-
     private String subCustomerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expired_time")
-
-    @JacksonXmlProperty(localName = "expired_time")
 
     private String expiredTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "verified_id")
 
-    @JacksonXmlProperty(localName = "verified_id")
-
     private String verifiedId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "contact_value")
-
-    @JacksonXmlProperty(localName = "contact_value")
 
     private String contactValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "area_code")
 
-    @JacksonXmlProperty(localName = "area_code")
-
     private String areaCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
-
-    @JacksonXmlProperty(localName = "offset")
 
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
-    @JacksonXmlProperty(localName = "limit")
-
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Site")
-
-    @JacksonXmlProperty(localName = "X-Site")
 
     private Integer xSite;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Language")
 
-    @JacksonXmlProperty(localName = "X-Language")
-
     private String xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Time-Zone")
-
-    @JacksonXmlProperty(localName = "X-Time-Zone")
 
     private String xTimeZone;
 

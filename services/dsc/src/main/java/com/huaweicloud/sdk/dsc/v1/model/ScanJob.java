@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,8 +20,6 @@ public class ScanJob {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
-
-    @JacksonXmlProperty(localName = "create_time")
 
     private Long createTime;
 
@@ -118,49 +115,35 @@ public class ScanJob {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cycle")
 
-    @JacksonXmlProperty(localName = "cycle")
-
     private CycleEnum cycle;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
-
-    @JacksonXmlProperty(localName = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last_run_time")
 
-    @JacksonXmlProperty(localName = "last_run_time")
-
     private Long lastRunTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last_scan_risk")
-
-    @JacksonXmlProperty(localName = "last_scan_risk")
 
     private String lastScanRisk;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
-    @JacksonXmlProperty(localName = "name")
-
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "open")
 
-    @JacksonXmlProperty(localName = "open")
-
     private Boolean open;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rule_groups")
-
-    @JacksonXmlProperty(localName = "rule_groups")
 
     private List<String> ruleGroups = null;
 
@@ -274,28 +257,20 @@ public class ScanJob {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    @JacksonXmlProperty(localName = "status")
-
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "topic_urn")
-
-    @JacksonXmlProperty(localName = "topic_urn")
 
     private String topicUrn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "use_nlp")
 
-    @JacksonXmlProperty(localName = "use_nlp")
-
     private Boolean useNlp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
-
-    @JacksonXmlProperty(localName = "start_time")
 
     private Long startTime;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.css.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,14 +13,10 @@ public class CreateClusterInstanceVolumeBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volume_type")
 
-    @JacksonXmlProperty(localName = "volume_type")
-
     private String volumeType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
-
-    @JacksonXmlProperty(localName = "size")
 
     private Integer size;
 
@@ -48,7 +43,7 @@ public class CreateClusterInstanceVolumeBody {
     }
 
     /**
-     * 卷大小，必须为大于0且为4和10的公倍数。 单位：GB。
+     * 卷大小，必须为大于0且为4和10的公倍数。 单位：GB。   >ess-master节点和ess-client节点默认大小为40G，且不可更改。
      * @return size
      */
     public Integer getSize() {

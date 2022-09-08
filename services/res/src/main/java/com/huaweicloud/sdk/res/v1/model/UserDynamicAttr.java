@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.res.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,14 +14,10 @@ public class UserDynamicAttr {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_interested_attrs")
 
-    @JacksonXmlProperty(localName = "user_interested_attrs")
-
     private Attribute userInterestedAttrs;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_interested_action_type")
-
-    @JacksonXmlProperty(localName = "user_interested_action_type")
 
     private Attribute userInterestedActionType;
 

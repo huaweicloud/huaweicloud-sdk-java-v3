@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.hilens.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,70 +13,50 @@ public class GetDeviceAlarmArrayObject {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
-
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alarm_id")
 
-    @JacksonXmlProperty(localName = "alarm_id")
-
     private Integer alarmId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "level")
-
-    @JacksonXmlProperty(localName = "level")
 
     private String level;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "platform")
 
-    @JacksonXmlProperty(localName = "platform")
-
     private String platform;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "impact")
-
-    @JacksonXmlProperty(localName = "impact")
 
     private String impact;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "detail")
 
-    @JacksonXmlProperty(localName = "detail")
-
     private String detail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "reason")
-
-    @JacksonXmlProperty(localName = "reason")
 
     private String reason;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deal_suggestion")
 
-    @JacksonXmlProperty(localName = "deal_suggestion")
-
     private String dealSuggestion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
-
-    @JacksonXmlProperty(localName = "create_time")
 
     private Long createTime;
 

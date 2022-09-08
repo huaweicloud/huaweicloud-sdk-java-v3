@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cdn.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,21 +13,15 @@ public class DomainOriginHost {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_id")
 
-    @JacksonXmlProperty(localName = "domain_id")
-
     private String domainId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "origin_host_type")
 
-    @JacksonXmlProperty(localName = "origin_host_type")
-
     private String originHostType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "customize_domain")
-
-    @JacksonXmlProperty(localName = "customize_domain")
 
     private String customizeDomain;
 

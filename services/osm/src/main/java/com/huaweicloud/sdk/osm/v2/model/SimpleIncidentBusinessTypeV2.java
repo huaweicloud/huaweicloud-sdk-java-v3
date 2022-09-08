@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.osm.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,28 +13,20 @@ public class SimpleIncidentBusinessTypeV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "business_type_id")
 
-    @JacksonXmlProperty(localName = "business_type_id")
-
     private String businessTypeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "business_type_name")
-
-    @JacksonXmlProperty(localName = "business_type_name")
 
     private String businessTypeName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "case_type")
 
-    @JacksonXmlProperty(localName = "case_type")
-
     private String caseType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "can_use_support_plan")
-
-    @JacksonXmlProperty(localName = "can_use_support_plan")
 
     private Boolean canUseSupportPlan;
 

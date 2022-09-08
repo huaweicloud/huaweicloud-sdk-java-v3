@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dcs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -18,49 +17,35 @@ public class ListMonitoredObjectsOfInstanceResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "router")
 
-    @JacksonXmlProperty(localName = "router")
-
     private List<String> router = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "children")
-
-    @JacksonXmlProperty(localName = "children")
 
     private List<DimChild> children = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instances")
 
-    @JacksonXmlProperty(localName = "instances")
-
     private List<InstancesMonitoredObject> instances = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dcs_cluster_redis_node")
-
-    @JacksonXmlProperty(localName = "dcs_cluster_redis_node")
 
     private List<ClusterRedisNodeMonitoredObject> dcsClusterRedisNode = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dcs_cluster_proxy_node")
 
-    @JacksonXmlProperty(localName = "dcs_cluster_proxy_node")
-
     private List<ProxyNodeMonitoredObject> dcsClusterProxyNode = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dcs_cluster_proxy2_node")
 
-    @JacksonXmlProperty(localName = "dcs_cluster_proxy2_node")
-
     private List<Proxy2NodeMonitoredObject> dcsClusterProxy2Node = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total")
-
-    @JacksonXmlProperty(localName = "total")
 
     private Integer total;
 

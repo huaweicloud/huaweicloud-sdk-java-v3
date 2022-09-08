@@ -8,8 +8,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -23,7 +21,6 @@ public class QaBotAnswer  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="qa_pair_id")
     
-    @JacksonXmlProperty(localName = "qa_pair_id")
     
     private String qaPairId;
 
@@ -31,7 +28,6 @@ public class QaBotAnswer  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="st_question")
     
-    @JacksonXmlProperty(localName = "st_question")
     
     private String stQuestion;
 
@@ -39,7 +35,6 @@ public class QaBotAnswer  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="answer")
     
-    @JacksonXmlProperty(localName = "answer")
     
     private String answer;
 
@@ -47,7 +42,6 @@ public class QaBotAnswer  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="score")
     
-    @JacksonXmlProperty(localName = "score")
     
     private Double score;
 
@@ -55,7 +49,6 @@ public class QaBotAnswer  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="domain")
     
-    @JacksonXmlProperty(localName = "domain")
     
     private String domain;
 
@@ -63,7 +56,6 @@ public class QaBotAnswer  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="top_score_question")
     
-    @JacksonXmlProperty(localName = "top_score_question")
     
     private String topScoreQuestion;
 

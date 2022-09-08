@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.iotanalytics.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -18,105 +17,75 @@ public class CreateAssetNewResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "asset_id")
 
-    @JacksonXmlProperty(localName = "asset_id")
-
     private String assetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "asset_model_id")
-
-    @JacksonXmlProperty(localName = "asset_model_id")
 
     private String assetModelId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "asset_model_name")
 
-    @JacksonXmlProperty(localName = "asset_model_name")
-
     private String assetModelName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
-
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "display_name")
 
-    @JacksonXmlProperty(localName = "display_name")
-
     private String displayName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "properties")
-
-    @JacksonXmlProperty(localName = "properties")
 
     private List<PropertyResponse> properties = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "analyses")
 
-    @JacksonXmlProperty(localName = "analyses")
-
     private List<AnalysisResponse> analyses = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "root")
-
-    @JacksonXmlProperty(localName = "root")
 
     private String root;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parent")
 
-    @JacksonXmlProperty(localName = "parent")
-
     private String parent;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "children")
-
-    @JacksonXmlProperty(localName = "children")
 
     private List<String> children = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "state")
 
-    @JacksonXmlProperty(localName = "state")
-
     private String state;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publish_state")
-
-    @JacksonXmlProperty(localName = "publish_state")
 
     private String publishState;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_time")
 
-    @JacksonXmlProperty(localName = "created_time")
-
     private String createdTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "modified_time")
 
-    @JacksonXmlProperty(localName = "modified_time")
-
     private String modifiedTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "published_time")
-
-    @JacksonXmlProperty(localName = "published_time")
 
     private String publishedTime;
 

@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,35 +21,25 @@ public class InstanceReplicationListInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "replication_role")
 
-    @JacksonXmlProperty(localName = "replication_role")
-
     private String replicationRole;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "replication_ip")
-
-    @JacksonXmlProperty(localName = "replication_ip")
 
     private String replicationIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_replication")
 
-    @JacksonXmlProperty(localName = "is_replication")
-
     private Boolean isReplication;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "replication_id")
 
-    @JacksonXmlProperty(localName = "replication_id")
-
     private String replicationId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "node_id")
-
-    @JacksonXmlProperty(localName = "node_id")
 
     private String nodeId;
 
@@ -134,21 +123,15 @@ public class InstanceReplicationListInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    @JacksonXmlProperty(localName = "status")
-
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "az_code")
 
-    @JacksonXmlProperty(localName = "az_code")
-
     private String azCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dimensions")
-
-    @JacksonXmlProperty(localName = "dimensions")
 
     private List<InstanceReplicationDimensionsInfo> dimensions = null;
 

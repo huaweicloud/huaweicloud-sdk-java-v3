@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.lts.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,14 +14,10 @@ public class AccessConfigFormatCreate {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "single")
 
-    @JacksonXmlProperty(localName = "single")
-
     private AccessConfigFormatSingleCreate single;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "multi")
-
-    @JacksonXmlProperty(localName = "multi")
 
     private AccessConfigFormatMutilCreate multi;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.kafka.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,28 +16,20 @@ public class ShowGroupsRespGroupMembers {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host")
 
-    @JacksonXmlProperty(localName = "host")
-
     private String host;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "assignment")
-
-    @JacksonXmlProperty(localName = "assignment")
 
     private List<ShowGroupsRespGroupAssignment> assignment = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "member_id")
 
-    @JacksonXmlProperty(localName = "member_id")
-
     private String memberId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "client_id")
-
-    @JacksonXmlProperty(localName = "client_id")
 
     private String clientId;
 

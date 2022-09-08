@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -96,28 +95,20 @@ public class Privateip {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    @JacksonXmlProperty(localName = "status")
-
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
-
-    @JacksonXmlProperty(localName = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subnet_id")
 
-    @JacksonXmlProperty(localName = "subnet_id")
-
     private String subnetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tenant_id")
-
-    @JacksonXmlProperty(localName = "tenant_id")
 
     private String tenantId;
 
@@ -208,14 +199,10 @@ public class Privateip {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "device_owner")
 
-    @JacksonXmlProperty(localName = "device_owner")
-
     private DeviceOwnerEnum deviceOwner;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip_address")
-
-    @JacksonXmlProperty(localName = "ip_address")
 
     private String ipAddress;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.waf.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -15,182 +14,130 @@ public class ShowConsoleConfigResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "eps")
 
-    @JacksonXmlProperty(localName = "eps")
-
     private Boolean eps;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tls")
-
-    @JacksonXmlProperty(localName = "tls")
 
     private Boolean tls;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ipv6")
 
-    @JacksonXmlProperty(localName = "ipv6")
-
     private Boolean ipv6;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alert")
-
-    @JacksonXmlProperty(localName = "alert")
 
     private Boolean alert;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "custom")
 
-    @JacksonXmlProperty(localName = "custom")
-
     private Boolean custom;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "elb_mode")
-
-    @JacksonXmlProperty(localName = "elb_mode")
 
     private Boolean elbMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_lts")
 
-    @JacksonXmlProperty(localName = "event_lts")
-
     private Boolean eventLts;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "multi_dns")
-
-    @JacksonXmlProperty(localName = "multi_dns")
 
     private Boolean multiDns;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "search_ip")
 
-    @JacksonXmlProperty(localName = "search_ip")
-
     private Boolean searchIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cc_enhance")
-
-    @JacksonXmlProperty(localName = "cc_enhance")
 
     private Boolean ccEnhance;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cname_switch")
 
-    @JacksonXmlProperty(localName = "cname_switch")
-
     private Boolean cnameSwitch;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "custom_block")
-
-    @JacksonXmlProperty(localName = "custom_block")
 
     private Boolean customBlock;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "advanced_ignore")
 
-    @JacksonXmlProperty(localName = "advanced_ignore")
-
     private Boolean advancedIgnore;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "js_crawler_enable")
-
-    @JacksonXmlProperty(localName = "js_crawler_enable")
 
     private Boolean jsCrawlerEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deep_decode_enable")
 
-    @JacksonXmlProperty(localName = "deep_decode_enable")
-
     private Boolean deepDecodeEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "overview_bandwidth")
-
-    @JacksonXmlProperty(localName = "overview_bandwidth")
 
     private Boolean overviewBandwidth;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "proxy_use_oldcname")
 
-    @JacksonXmlProperty(localName = "proxy_use_oldcname")
-
     private Boolean proxyUseOldcname;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "check_all_headers_enable")
-
-    @JacksonXmlProperty(localName = "check_all_headers_enable")
 
     private Boolean checkAllHeadersEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "geoip_enable")
 
-    @JacksonXmlProperty(localName = "geoip_enable")
-
     private Boolean geoipEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "load_balance_enable")
-
-    @JacksonXmlProperty(localName = "load_balance_enable")
 
     private Boolean loadBalanceEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ipv6_protection_enable")
 
-    @JacksonXmlProperty(localName = "ipv6_protection_enable")
-
     private Boolean ipv6ProtectionEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_sharing_enable")
-
-    @JacksonXmlProperty(localName = "policy_sharing_enable")
 
     private Boolean policySharingEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip_group")
 
-    @JacksonXmlProperty(localName = "ip_group")
-
     private Boolean ipGroup;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "robot_action_enable")
-
-    @JacksonXmlProperty(localName = "robot_action_enable")
 
     private Boolean robotActionEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "http2_enable")
 
-    @JacksonXmlProperty(localName = "http2_enable")
-
     private Boolean http2Enable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timeout_config_enable")
-
-    @JacksonXmlProperty(localName = "timeout_config_enable")
 
     private Boolean timeoutConfigEnable;
 

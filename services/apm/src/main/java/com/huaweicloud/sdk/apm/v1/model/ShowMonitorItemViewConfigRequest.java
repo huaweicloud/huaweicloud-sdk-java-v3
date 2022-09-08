@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.apm.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,21 +13,15 @@ public class ShowMonitorItemViewConfigRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "env_id")
 
-    @JacksonXmlProperty(localName = "env_id")
-
     private Long envId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "collector_id")
 
-    @JacksonXmlProperty(localName = "collector_id")
-
     private Long collectorId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "x-business-id")
-
-    @JacksonXmlProperty(localName = "x-business-id")
 
     private Long xBusinessId;
 

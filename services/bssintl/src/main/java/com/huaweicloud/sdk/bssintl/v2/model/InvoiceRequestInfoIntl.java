@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.bssintl.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,154 +16,110 @@ public class InvoiceRequestInfoIntl {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "requestId")
 
-    @JacksonXmlProperty(localName = "requestId")
-
     private String requestId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cancelReason")
-
-    @JacksonXmlProperty(localName = "cancelReason")
 
     private String cancelReason;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "titleType")
 
-    @JacksonXmlProperty(localName = "titleType")
-
     private Integer titleType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "channelType")
-
-    @JacksonXmlProperty(localName = "channelType")
 
     private Integer channelType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "invoiceType")
 
-    @JacksonXmlProperty(localName = "invoiceType")
-
     private Integer invoiceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "invoiceTitle")
-
-    @JacksonXmlProperty(localName = "invoiceTitle")
 
     private String invoiceTitle;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "invoiceAmount")
 
-    @JacksonXmlProperty(localName = "invoiceAmount")
-
     private Double invoiceAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "invoiceMethod")
-
-    @JacksonXmlProperty(localName = "invoiceMethod")
 
     private Integer invoiceMethod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "invoiceClass")
 
-    @JacksonXmlProperty(localName = "invoiceClass")
-
     private Integer invoiceClass;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "invoiceState")
-
-    @JacksonXmlProperty(localName = "invoiceState")
 
     private Integer invoiceState;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "applyOpera")
 
-    @JacksonXmlProperty(localName = "applyOpera")
-
     private String applyOpera;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "addressInfo")
-
-    @JacksonXmlProperty(localName = "addressInfo")
 
     private PostAddressInfoIntl addressInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "applyTime")
 
-    @JacksonXmlProperty(localName = "applyTime")
-
     private String applyTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "invoiceMode")
-
-    @JacksonXmlProperty(localName = "invoiceMode")
 
     private String invoiceMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "email")
 
-    @JacksonXmlProperty(localName = "email")
-
     private String email;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "requestMode")
-
-    @JacksonXmlProperty(localName = "requestMode")
 
     private String requestMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "srcRequestId")
 
-    @JacksonXmlProperty(localName = "srcRequestId")
-
     private String srcRequestId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "salesId")
-
-    @JacksonXmlProperty(localName = "salesId")
 
     private String salesId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "invoiceNo")
 
-    @JacksonXmlProperty(localName = "invoiceNo")
-
     private String invoiceNo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tradeType")
-
-    @JacksonXmlProperty(localName = "tradeType")
 
     private Integer tradeType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "billCycle")
 
-    @JacksonXmlProperty(localName = "billCycle")
-
     private String billCycle;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "taxList")
-
-    @JacksonXmlProperty(localName = "taxList")
 
     private List<TaxInfo> taxList = null;
 

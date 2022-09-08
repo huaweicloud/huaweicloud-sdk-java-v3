@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.codehub.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,77 +13,55 @@ public class GetTemplatesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "platform")
 
-    @JacksonXmlProperty(localName = "platform")
-
     private String platform;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "language")
-
-    @JacksonXmlProperty(localName = "language")
 
     private String language;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pipeline")
 
-    @JacksonXmlProperty(localName = "pipeline")
-
     private String pipeline;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "entertype")
-
-    @JacksonXmlProperty(localName = "entertype")
 
     private String entertype;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "search")
 
-    @JacksonXmlProperty(localName = "search")
-
     private String search;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dateorder")
-
-    @JacksonXmlProperty(localName = "dateorder")
 
     private String dateorder;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "usedtimeorder")
 
-    @JacksonXmlProperty(localName = "usedtimeorder")
-
     private String usedtimeorder;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
-
-    @JacksonXmlProperty(localName = "type")
 
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region")
 
-    @JacksonXmlProperty(localName = "region")
-
     private String region;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page_no")
 
-    @JacksonXmlProperty(localName = "page_no")
-
     private Integer pageNo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page_size")
-
-    @JacksonXmlProperty(localName = "page_size")
 
     private Integer pageSize;
 

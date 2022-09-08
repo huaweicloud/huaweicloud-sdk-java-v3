@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -20,21 +19,15 @@ public class IndividualStreamJobReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "room_id")
 
-    @JacksonXmlProperty(localName = "room_id")
-
     private String roomId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_id")
 
-    @JacksonXmlProperty(localName = "user_id")
-
     private String userId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_record_audio")
-
-    @JacksonXmlProperty(localName = "is_record_audio")
 
     private Boolean isRecordAudio;
 
@@ -117,8 +110,6 @@ public class IndividualStreamJobReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "video_type")
-
-    @JacksonXmlProperty(localName = "video_type")
 
     private VideoTypeEnum videoType;
 
@@ -214,28 +205,20 @@ public class IndividualStreamJobReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "select_stream_type")
 
-    @JacksonXmlProperty(localName = "select_stream_type")
-
     private SelectStreamTypeEnum selectStreamType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_idle_time")
-
-    @JacksonXmlProperty(localName = "max_idle_time")
 
     private Integer maxIdleTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publish_param")
 
-    @JacksonXmlProperty(localName = "publish_param")
-
     private PublishParam publishParam;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "record_param")
-
-    @JacksonXmlProperty(localName = "record_param")
 
     private RecordParam recordParam;
 

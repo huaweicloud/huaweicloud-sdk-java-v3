@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.bssintl.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,21 +16,15 @@ public class UnfreezeSubCustomersReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "customer_ids")
 
-    @JacksonXmlProperty(localName = "customer_ids")
-
     private List<String> customerIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "reason")
 
-    @JacksonXmlProperty(localName = "reason")
-
     private String reason;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "indirect_partner_id")
-
-    @JacksonXmlProperty(localName = "indirect_partner_id")
 
     private String indirectPartnerId;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cloudtable.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,105 +16,75 @@ public class ClusterDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "action_progress")
 
-    @JacksonXmlProperty(localName = "action_progress")
-
     private ActionProgress actionProgress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "actions")
-
-    @JacksonXmlProperty(localName = "actions")
 
     private List<String> actions = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auth_mode")
 
-    @JacksonXmlProperty(localName = "auth_mode")
-
     private String authMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "az_code")
-
-    @JacksonXmlProperty(localName = "az_code")
 
     private String azCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cluster_id")
 
-    @JacksonXmlProperty(localName = "cluster_id")
-
     private String clusterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cluster_name")
-
-    @JacksonXmlProperty(localName = "cluster_name")
 
     private String clusterName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created")
 
-    @JacksonXmlProperty(localName = "created")
-
     private String created;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_dfv")
-
-    @JacksonXmlProperty(localName = "enable_dfv")
 
     private String enableDfv;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_free")
 
-    @JacksonXmlProperty(localName = "enable_free")
-
     private String enableFree;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_lemon")
-
-    @JacksonXmlProperty(localName = "enable_lemon")
 
     private String enableLemon;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_openTSDB")
 
-    @JacksonXmlProperty(localName = "enable_openTSDB")
-
     private String enableOpenTSDB;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
-
-    @JacksonXmlProperty(localName = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    @JacksonXmlProperty(localName = "tags")
-
     private String tags;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
 
-    @JacksonXmlProperty(localName = "version")
-
     private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "zookeeper_link")
-
-    @JacksonXmlProperty(localName = "zookeeper_link")
 
     private String zookeeperLink;
 

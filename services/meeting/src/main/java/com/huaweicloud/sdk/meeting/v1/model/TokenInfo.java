@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,77 +16,55 @@ public class TokenInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "token")
 
-    @JacksonXmlProperty(localName = "token")
-
     private String token;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tmpWsToken")
-
-    @JacksonXmlProperty(localName = "tmpWsToken")
 
     private String tmpWsToken;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "wsURL")
 
-    @JacksonXmlProperty(localName = "wsURL")
-
     private String wsURL;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "role")
-
-    @JacksonXmlProperty(localName = "role")
 
     private Integer role;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expireTime")
 
-    @JacksonXmlProperty(localName = "expireTime")
-
     private Long expireTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "userID")
-
-    @JacksonXmlProperty(localName = "userID")
 
     private String userID;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "orgID")
 
-    @JacksonXmlProperty(localName = "orgID")
-
     private String orgID;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "participantID")
-
-    @JacksonXmlProperty(localName = "participantID")
 
     private String participantID;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confTokenExpireTime")
 
-    @JacksonXmlProperty(localName = "confTokenExpireTime")
-
     private Integer confTokenExpireTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vmrCurrentConfID")
 
-    @JacksonXmlProperty(localName = "vmrCurrentConfID")
-
     private String vmrCurrentConfID;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "supportNotifyType")
-
-    @JacksonXmlProperty(localName = "supportNotifyType")
 
     private List<String> supportNotifyType = null;
 

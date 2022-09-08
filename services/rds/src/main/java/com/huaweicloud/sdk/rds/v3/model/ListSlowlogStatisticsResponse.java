@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.rds.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -18,42 +17,30 @@ public class ListSlowlogStatisticsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pageNumber")
 
-    @JacksonXmlProperty(localName = "pageNumber")
-
     private Integer pageNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pageRecord")
-
-    @JacksonXmlProperty(localName = "pageRecord")
 
     private Integer pageRecord;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "slowLogList")
 
-    @JacksonXmlProperty(localName = "slowLogList")
-
     private List<SlowLogStatistics> slowLogList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "totalRecord")
-
-    @JacksonXmlProperty(localName = "totalRecord")
 
     private Integer totalRecord;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "startTime")
 
-    @JacksonXmlProperty(localName = "startTime")
-
     private Long startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "endTime")
-
-    @JacksonXmlProperty(localName = "endTime")
 
     private Long endTime;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dgc.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,35 +13,25 @@ public class Event {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "eventType")
 
-    @JacksonXmlProperty(localName = "eventType")
-
     private String eventType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "channel")
-
-    @JacksonXmlProperty(localName = "channel")
 
     private String channel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "failPolicy")
 
-    @JacksonXmlProperty(localName = "failPolicy")
-
     private String failPolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "concurrent")
 
-    @JacksonXmlProperty(localName = "concurrent")
-
     private Integer concurrent;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "readPolicy")
-
-    @JacksonXmlProperty(localName = "readPolicy")
 
     private String readPolicy;
 

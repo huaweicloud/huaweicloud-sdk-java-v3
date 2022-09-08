@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cce.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -17,28 +16,20 @@ public class InstanceRequestSpec {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
 
-    @JacksonXmlProperty(localName = "version")
-
     private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "clusterID")
-
-    @JacksonXmlProperty(localName = "clusterID")
 
     private String clusterID;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "values")
 
-    @JacksonXmlProperty(localName = "values")
-
     private Map<String, Object> values = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "addonTemplateName")
-
-    @JacksonXmlProperty(localName = "addonTemplateName")
 
     private String addonTemplateName;
 

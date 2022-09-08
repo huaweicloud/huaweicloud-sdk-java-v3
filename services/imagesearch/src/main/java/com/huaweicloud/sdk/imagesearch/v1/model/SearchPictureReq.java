@@ -9,8 +9,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.imagesearch.v1.model.SearchBoxDetail;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -24,7 +22,6 @@ public class SearchPictureReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="file")
     
-    @JacksonXmlProperty(localName = "file")
     
     private String file;
 
@@ -32,7 +29,6 @@ public class SearchPictureReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="path")
     
-    @JacksonXmlProperty(localName = "path")
     
     private String path;
 
@@ -40,7 +36,6 @@ public class SearchPictureReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    @JacksonXmlProperty(localName = "limit")
     
     private Integer limit;
 
@@ -48,7 +43,6 @@ public class SearchPictureReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    @JacksonXmlProperty(localName = "offset")
     
     private Integer offset;
 
@@ -56,7 +50,6 @@ public class SearchPictureReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    @JacksonXmlProperty(localName = "tags")
     
     private Object tags;
 
@@ -64,7 +57,6 @@ public class SearchPictureReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="is_crop")
     
-    @JacksonXmlProperty(localName = "is_crop")
     
     private Boolean isCrop;
 
@@ -72,7 +64,6 @@ public class SearchPictureReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="box")
     
-    @JacksonXmlProperty(localName = "box")
     
     private SearchBoxDetail box;
 

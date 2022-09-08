@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.iotda.v5.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,35 +13,25 @@ public class UpdateRuleReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rule_name")
 
-    @JacksonXmlProperty(localName = "rule_name")
-
     private String ruleName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
-
-    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "select")
 
-    @JacksonXmlProperty(localName = "select")
-
     private String select;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "where")
 
-    @JacksonXmlProperty(localName = "where")
-
     private String where;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "active")
-
-    @JacksonXmlProperty(localName = "active")
 
     private Boolean active;
 

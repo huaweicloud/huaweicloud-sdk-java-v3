@@ -10,6 +10,31 @@ import com.huaweicloud.sdk.core.http.LocationType;
 @SuppressWarnings("unchecked")
 public class CdnMeta {
 
+    public static final HttpRequestDef<BatchDeleteTagsRequest, BatchDeleteTagsResponse> batchDeleteTags =
+        genForbatchDeleteTags();
+
+    private static HttpRequestDef<BatchDeleteTagsRequest, BatchDeleteTagsResponse> genForbatchDeleteTags() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteTagsRequest, BatchDeleteTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchDeleteTagsRequest.class, BatchDeleteTagsResponse.class)
+                .withName("BatchDeleteTags")
+                .withUri("/v1.0/cdn/configuration/tags/batch-delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<DeleteTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteTagsRequestBody.class),
+            f -> f.withMarshaller(BatchDeleteTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateDomainRequest, CreateDomainResponse> createDomain = genForcreateDomain();
 
     private static HttpRequestDef<CreateDomainRequest, CreateDomainResponse> genForcreateDomain() {
@@ -90,6 +115,30 @@ public class CdnMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RefreshTaskRequest.class),
             f -> f.withMarshaller(CreateRefreshTasksRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateTagsRequest, CreateTagsResponse> createTags = genForcreateTags();
+
+    private static HttpRequestDef<CreateTagsRequest, CreateTagsResponse> genForcreateTags() {
+        // basic
+        HttpRequestDef.Builder<CreateTagsRequest, CreateTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateTagsRequest.class, CreateTagsResponse.class)
+                .withName("CreateTags")
+                .withUri("/v1.0/cdn/configuration/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateTagsRequestBody.class),
+            f -> f.withMarshaller(CreateTagsRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -1115,6 +1164,30 @@ public class CdnMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowResponseHeaderRequest::getEnterpriseProjectId, (req, v) -> {
                 req.setEnterpriseProjectId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTagsRequest, ShowTagsResponse> showTags = genForshowTags();
+
+    private static HttpRequestDef<ShowTagsRequest, ShowTagsResponse> genForshowTags() {
+        // basic
+        HttpRequestDef.Builder<ShowTagsRequest, ShowTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowTagsRequest.class, ShowTagsResponse.class)
+                .withName("ShowTags")
+                .withUri("/v1.0/cdn/configuration/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTagsRequest::getResourceId, (req, v) -> {
+                req.setResourceId(v);
             }));
 
         // response

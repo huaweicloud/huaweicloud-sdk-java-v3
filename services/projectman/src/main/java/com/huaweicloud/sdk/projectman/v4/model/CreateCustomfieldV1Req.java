@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.projectman.v4.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,35 +13,25 @@ public class CreateCustomfieldV1Req {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
-    @JacksonXmlProperty(localName = "name")
-
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
-
-    @JacksonXmlProperty(localName = "type")
 
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "options")
 
-    @JacksonXmlProperty(localName = "options")
-
     private String options;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "memo")
 
-    @JacksonXmlProperty(localName = "memo")
-
     private String memo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scrum_type")
-
-    @JacksonXmlProperty(localName = "scrum_type")
 
     private String scrumType;
 

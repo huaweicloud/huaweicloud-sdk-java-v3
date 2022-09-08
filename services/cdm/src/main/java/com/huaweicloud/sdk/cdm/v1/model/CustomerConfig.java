@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cdm.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,70 +13,50 @@ public class CustomerConfig {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "failureRemind")
 
-    @JacksonXmlProperty(localName = "failureRemind")
-
     private String failureRemind;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "clusterName")
-
-    @JacksonXmlProperty(localName = "clusterName")
 
     private String clusterName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "serviceProvider")
 
-    @JacksonXmlProperty(localName = "serviceProvider")
-
     private String serviceProvider;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "localDisk")
-
-    @JacksonXmlProperty(localName = "localDisk")
 
     private String localDisk;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ssl")
 
-    @JacksonXmlProperty(localName = "ssl")
-
     private String ssl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "createFrom")
-
-    @JacksonXmlProperty(localName = "createFrom")
 
     private String createFrom;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resourceId")
 
-    @JacksonXmlProperty(localName = "resourceId")
-
     private String resourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flavorType")
-
-    @JacksonXmlProperty(localName = "flavorType")
 
     private String flavorType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "workSpaceId")
 
-    @JacksonXmlProperty(localName = "workSpaceId")
-
     private String workSpaceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trial")
-
-    @JacksonXmlProperty(localName = "trial")
 
     private String trial;
 

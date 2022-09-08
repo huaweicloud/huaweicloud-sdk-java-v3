@@ -149,6 +149,38 @@ public class CodeHubClient {
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
      *
+     * @param ListFilesByQueryRequest 请求对象
+     * @return ListFilesByQueryResponse
+     */
+    public ListFilesByQueryResponse listFilesByQuery(ListFilesByQueryRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeHubMeta.listFilesByQuery);
+    }
+
+    /**
+     * 查询某个仓库的文件信息
+     *
+     * 获取仓库中文件的信息，如名称、大小、内容。请注意，文件内容是Base64编码的。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListFilesByQueryRequest 请求对象
+     * @return SyncInvoker<ListFilesByQueryRequest, ListFilesByQueryResponse>
+     */
+    public SyncInvoker<ListFilesByQueryRequest, ListFilesByQueryResponse> listFilesByQueryInvoker(
+        ListFilesByQueryRequest request) {
+        return new SyncInvoker<ListFilesByQueryRequest, ListFilesByQueryResponse>(request, CodeHubMeta.listFilesByQuery,
+            hcClient);
+    }
+
+    /**
+     * 查询某个仓库的文件信息
+     *
+     * 获取仓库中文件的信息，如名称、大小、内容。请注意，文件内容是Base64编码的。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
      * @param ShowFileRequest 请求对象
      * @return ShowFileResponse
      */
@@ -270,7 +302,7 @@ public class CodeHubClient {
     /**
      * 校验指定项目下的仓库名
      *
-     * 一般创建仓库时调用。通过传入项目uuid,仓库名，调用CoudeHubAdapter接口，查询数据库来判断仓库是否重名。
+     * 一般创建仓库时调用。通过传入项目uuid,仓库名，来判断仓库是否重名。仓库存在result:false,仓库不存在result:true。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -285,7 +317,7 @@ public class CodeHubClient {
     /**
      * 校验指定项目下的仓库名
      *
-     * 一般创建仓库时调用。通过传入项目uuid,仓库名，调用CoudeHubAdapter接口，查询数据库来判断仓库是否重名。
+     * 一般创建仓库时调用。通过传入项目uuid,仓库名，来判断仓库是否重名。仓库存在result:false,仓库不存在result:true。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -740,6 +772,38 @@ public class CodeHubClient {
     }
 
     /**
+     * 获取仓库分支列表
+     *
+     * 获取仓库分支列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListBranchesByRepositoryIdRequest 请求对象
+     * @return ListBranchesByRepositoryIdResponse
+     */
+    public ListBranchesByRepositoryIdResponse listBranchesByRepositoryId(ListBranchesByRepositoryIdRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeHubMeta.listBranchesByRepositoryId);
+    }
+
+    /**
+     * 获取仓库分支列表
+     *
+     * 获取仓库分支列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListBranchesByRepositoryIdRequest 请求对象
+     * @return SyncInvoker<ListBranchesByRepositoryIdRequest, ListBranchesByRepositoryIdResponse>
+     */
+    public SyncInvoker<ListBranchesByRepositoryIdRequest, ListBranchesByRepositoryIdResponse> listBranchesByRepositoryIdInvoker(
+        ListBranchesByRepositoryIdRequest request) {
+        return new SyncInvoker<ListBranchesByRepositoryIdRequest, ListBranchesByRepositoryIdResponse>(request,
+            CodeHubMeta.listBranchesByRepositoryId, hcClient);
+    }
+
+    /**
      * 获取仓库上一次的提交统计信息
      *
      * 获取仓库上一次的提交统计信息
@@ -799,6 +863,38 @@ public class CodeHubClient {
      */
     public SyncInvoker<ListFilesRequest, ListFilesResponse> listFilesInvoker(ListFilesRequest request) {
         return new SyncInvoker<ListFilesRequest, ListFilesResponse>(request, CodeHubMeta.listFiles, hcClient);
+    }
+
+    /**
+     * 获取仓库合并请求列表
+     *
+     * 获取仓库合并请求列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListMergeRequestRequest 请求对象
+     * @return ListMergeRequestResponse
+     */
+    public ListMergeRequestResponse listMergeRequest(ListMergeRequestRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeHubMeta.listMergeRequest);
+    }
+
+    /**
+     * 获取仓库合并请求列表
+     *
+     * 获取仓库合并请求列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListMergeRequestRequest 请求对象
+     * @return SyncInvoker<ListMergeRequestRequest, ListMergeRequestResponse>
+     */
+    public SyncInvoker<ListMergeRequestRequest, ListMergeRequestResponse> listMergeRequestInvoker(
+        ListMergeRequestRequest request) {
+        return new SyncInvoker<ListMergeRequestRequest, ListMergeRequestResponse>(request, CodeHubMeta.listMergeRequest,
+            hcClient);
     }
 
     /**
@@ -1182,6 +1278,38 @@ public class CodeHubClient {
     }
 
     /**
+     * 获取仓库合并请求详情
+     *
+     * 获取仓库合并请求详情
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowMergeRequestRequest 请求对象
+     * @return ShowMergeRequestResponse
+     */
+    public ShowMergeRequestResponse showMergeRequest(ShowMergeRequestRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeHubMeta.showMergeRequest);
+    }
+
+    /**
+     * 获取仓库合并请求详情
+     *
+     * 获取仓库合并请求详情
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowMergeRequestRequest 请求对象
+     * @return SyncInvoker<ShowMergeRequestRequest, ShowMergeRequestResponse>
+     */
+    public SyncInvoker<ShowMergeRequestRequest, ShowMergeRequestResponse> showMergeRequestInvoker(
+        ShowMergeRequestRequest request) {
+        return new SyncInvoker<ShowMergeRequestRequest, ShowMergeRequestResponse>(request, CodeHubMeta.showMergeRequest,
+            hcClient);
+    }
+
+    /**
      * 根据仓库名组名获取仓库短id，用以拼接与commitid对应提交详情页面url
      *
      * 获取仓库短id,用于获取仓库详情页面url
@@ -1246,7 +1374,7 @@ public class CodeHubClient {
     /**
      * 查询某个仓库的详细信息
      *
-     * 根据仓库UUID获取仓库信息仓库信息。返回 包含id，name，组名，仓库访问URL。
+     * 根据仓库UUID(由CreateRepository接口返回)获取仓库信息仓库信息。返回 包含id，name，组名，仓库访问URL。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1261,7 +1389,7 @@ public class CodeHubClient {
     /**
      * 查询某个仓库的详细信息
      *
-     * 根据仓库UUID获取仓库信息仓库信息。返回 包含id，name，组名，仓库访问URL。
+     * 根据仓库UUID(由CreateRepository接口返回)获取仓库信息仓库信息。返回 包含id，name，组名，仓库访问URL。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1587,6 +1715,70 @@ public class CodeHubClient {
         ValidateHttpsInfoV2Request request) {
         return new SyncInvoker<ValidateHttpsInfoV2Request, ValidateHttpsInfoV2Response>(request,
             CodeHubMeta.validateHttpsInfoV2, hcClient);
+    }
+
+    /**
+     * 创建分支
+     *
+     * 根据仓库id在指定仓库中创建分支
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateNewBranchRequest 请求对象
+     * @return CreateNewBranchResponse
+     */
+    public CreateNewBranchResponse createNewBranch(CreateNewBranchRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeHubMeta.createNewBranch);
+    }
+
+    /**
+     * 创建分支
+     *
+     * 根据仓库id在指定仓库中创建分支
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateNewBranchRequest 请求对象
+     * @return SyncInvoker<CreateNewBranchRequest, CreateNewBranchResponse>
+     */
+    public SyncInvoker<CreateNewBranchRequest, CreateNewBranchResponse> createNewBranchInvoker(
+        CreateNewBranchRequest request) {
+        return new SyncInvoker<CreateNewBranchRequest, CreateNewBranchResponse>(request, CodeHubMeta.createNewBranch,
+            hcClient);
+    }
+
+    /**
+     * 分支关联工作项
+     *
+     * 分支关联工作项
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param AssociateIssuesRequest 请求对象
+     * @return AssociateIssuesResponse
+     */
+    public AssociateIssuesResponse associateIssues(AssociateIssuesRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeHubMeta.associateIssues);
+    }
+
+    /**
+     * 分支关联工作项
+     *
+     * 分支关联工作项
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param AssociateIssuesRequest 请求对象
+     * @return SyncInvoker<AssociateIssuesRequest, AssociateIssuesResponse>
+     */
+    public SyncInvoker<AssociateIssuesRequest, AssociateIssuesResponse> associateIssuesInvoker(
+        AssociateIssuesRequest request) {
+        return new SyncInvoker<AssociateIssuesRequest, AssociateIssuesResponse>(request, CodeHubMeta.associateIssues,
+            hcClient);
     }
 
     /**

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.bss.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,63 +16,45 @@ public class CreatePartnerCouponsReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quota_id")
 
-    @JacksonXmlProperty(localName = "quota_id")
-
     private String quotaId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "customer_ids")
-
-    @JacksonXmlProperty(localName = "customer_ids")
 
     private List<String> customerIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "face_value")
 
-    @JacksonXmlProperty(localName = "face_value")
-
     private Double faceValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "valid_time")
-
-    @JacksonXmlProperty(localName = "valid_time")
 
     private String validTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expire_time")
 
-    @JacksonXmlProperty(localName = "expire_time")
-
     private String expireTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cloud_service_types")
-
-    @JacksonXmlProperty(localName = "cloud_service_types")
 
     private List<String> cloudServiceTypes = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "product_ids")
 
-    @JacksonXmlProperty(localName = "product_ids")
-
     private List<String> productIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "memo")
 
-    @JacksonXmlProperty(localName = "memo")
-
     private String memo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "indirect_partner_id")
-
-    @JacksonXmlProperty(localName = "indirect_partner_id")
 
     private String indirectPartnerId;
 

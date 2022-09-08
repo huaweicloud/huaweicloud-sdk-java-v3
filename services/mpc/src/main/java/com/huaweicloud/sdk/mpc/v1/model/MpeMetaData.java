@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.mpc.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,91 +13,65 @@ public class MpeMetaData {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pack_type")
 
-    @JacksonXmlProperty(localName = "pack_type")
-
     private String packType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "duration")
-
-    @JacksonXmlProperty(localName = "duration")
 
     private Double duration;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "video_size")
 
-    @JacksonXmlProperty(localName = "video_size")
-
     private Long videoSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "width")
-
-    @JacksonXmlProperty(localName = "width")
 
     private Integer width;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "height")
 
-    @JacksonXmlProperty(localName = "height")
-
     private Integer height;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bit_rate")
-
-    @JacksonXmlProperty(localName = "bit_rate")
 
     private Integer bitRate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "audio_bit_rate")
 
-    @JacksonXmlProperty(localName = "audio_bit_rate")
-
     private Integer audioBitRate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "frame_rate")
-
-    @JacksonXmlProperty(localName = "frame_rate")
 
     private Integer frameRate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "codec_name")
 
-    @JacksonXmlProperty(localName = "codec_name")
-
     private String codecName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "audio_codec_name")
-
-    @JacksonXmlProperty(localName = "audio_codec_name")
 
     private String audioCodecName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "channels")
 
-    @JacksonXmlProperty(localName = "channels")
-
     private Integer channels;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sample")
 
-    @JacksonXmlProperty(localName = "sample")
-
     private Integer sample;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_audio")
-
-    @JacksonXmlProperty(localName = "is_audio")
 
     private Boolean isAudio;
 

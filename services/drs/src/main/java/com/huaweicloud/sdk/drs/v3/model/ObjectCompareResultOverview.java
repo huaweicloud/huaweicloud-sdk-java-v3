@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -198,8 +197,6 @@ public class ObjectCompareResultOverview {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "object_type")
 
-    @JacksonXmlProperty(localName = "object_type")
-
     private ObjectTypeEnum objectType;
 
     /**
@@ -316,28 +313,20 @@ public class ObjectCompareResultOverview {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "object_compare_result")
 
-    @JacksonXmlProperty(localName = "object_compare_result")
-
     private ObjectCompareResultEnum objectCompareResult;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_count")
-
-    @JacksonXmlProperty(localName = "target_count")
 
     private Integer targetCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_count")
 
-    @JacksonXmlProperty(localName = "source_count")
-
     private Integer sourceCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "diff_count")
-
-    @JacksonXmlProperty(localName = "diff_count")
 
     private Integer diffCount;
 

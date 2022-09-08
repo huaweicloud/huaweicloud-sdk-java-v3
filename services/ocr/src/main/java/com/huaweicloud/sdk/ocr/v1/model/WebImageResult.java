@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.ocr.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,14 +16,10 @@ public class WebImageResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "words_block_count")
 
-    @JacksonXmlProperty(localName = "words_block_count")
-
     private Integer wordsBlockCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "words_block_list")
-
-    @JacksonXmlProperty(localName = "words_block_list")
 
     private List<WebImageWordsBlockList> wordsBlockList = null;
 

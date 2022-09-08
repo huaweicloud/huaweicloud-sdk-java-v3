@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -18,70 +17,50 @@ public class ShowDescribeTableResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_success")
 
-    @JacksonXmlProperty(localName = "is_success")
-
     private Boolean isSuccess;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "message")
-
-    @JacksonXmlProperty(localName = "message")
 
     private String message;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "column_count")
 
-    @JacksonXmlProperty(localName = "column_count")
-
     private Integer columnCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "columns")
-
-    @JacksonXmlProperty(localName = "columns")
 
     private List<CreateTableReqColumn> columns = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "table_type")
 
-    @JacksonXmlProperty(localName = "table_type")
-
     private String tableType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_type")
-
-    @JacksonXmlProperty(localName = "data_type")
 
     private String dataType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_location")
 
-    @JacksonXmlProperty(localName = "data_location")
-
     private String dataLocation;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "storage_properties")
-
-    @JacksonXmlProperty(localName = "storage_properties")
 
     private List<Object> storageProperties = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "table_comment")
 
-    @JacksonXmlProperty(localName = "table_comment")
-
     private String tableComment;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_table_sql")
-
-    @JacksonXmlProperty(localName = "create_table_sql")
 
     private String createTableSql;
 

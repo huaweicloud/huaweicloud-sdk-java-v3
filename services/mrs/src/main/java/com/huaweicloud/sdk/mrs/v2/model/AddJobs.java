@@ -8,8 +8,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -23,7 +21,6 @@ public class AddJobs  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_type")
     
-    @JacksonXmlProperty(localName = "job_type")
     
     private Integer jobType;
 
@@ -31,7 +28,6 @@ public class AddJobs  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_name")
     
-    @JacksonXmlProperty(localName = "job_name")
     
     private String jobName;
 
@@ -39,7 +35,6 @@ public class AddJobs  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="jar_path")
     
-    @JacksonXmlProperty(localName = "jar_path")
     
     private String jarPath;
 
@@ -47,7 +42,6 @@ public class AddJobs  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="arguments")
     
-    @JacksonXmlProperty(localName = "arguments")
     
     private String arguments;
 
@@ -55,7 +49,6 @@ public class AddJobs  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="input")
     
-    @JacksonXmlProperty(localName = "input")
     
     private String input;
 
@@ -63,7 +56,6 @@ public class AddJobs  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="output")
     
-    @JacksonXmlProperty(localName = "output")
     
     private String output;
 
@@ -71,7 +63,6 @@ public class AddJobs  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_log")
     
-    @JacksonXmlProperty(localName = "job_log")
     
     private String jobLog;
 
@@ -79,7 +70,6 @@ public class AddJobs  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="hive_script_path")
     
-    @JacksonXmlProperty(localName = "hive_script_path")
     
     private String hiveScriptPath;
 
@@ -87,7 +77,6 @@ public class AddJobs  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="hql")
     
-    @JacksonXmlProperty(localName = "hql")
     
     private String hql;
 
@@ -95,7 +84,6 @@ public class AddJobs  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="shutdown_cluster")
     
-    @JacksonXmlProperty(localName = "shutdown_cluster")
     
     private Boolean shutdownCluster;
 
@@ -103,7 +91,6 @@ public class AddJobs  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="submit_job_once_cluster_run")
     
-    @JacksonXmlProperty(localName = "submit_job_once_cluster_run")
     
     private Boolean submitJobOnceClusterRun;
 
@@ -111,7 +98,6 @@ public class AddJobs  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="file_action")
     
-    @JacksonXmlProperty(localName = "file_action")
     
     private String fileAction;
 

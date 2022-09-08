@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,217 +21,160 @@ public class LoadBalancer {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
-
-    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "provisioning_status")
 
-    @JacksonXmlProperty(localName = "provisioning_status")
-
     private String provisioningStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "admin_state_up")
-
-    @JacksonXmlProperty(localName = "admin_state_up")
 
     private Boolean adminStateUp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "provider")
 
-    @JacksonXmlProperty(localName = "provider")
-
     private String provider;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pools")
-
-    @JacksonXmlProperty(localName = "pools")
 
     private List<PoolRef> pools = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "listeners")
 
-    @JacksonXmlProperty(localName = "listeners")
-
     private List<ListenerRef> listeners = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operating_status")
-
-    @JacksonXmlProperty(localName = "operating_status")
 
     private String operatingStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
-    @JacksonXmlProperty(localName = "name")
-
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
-
-    @JacksonXmlProperty(localName = "project_id")
 
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vip_subnet_cidr_id")
 
-    @JacksonXmlProperty(localName = "vip_subnet_cidr_id")
-
     private String vipSubnetCidrId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vip_address")
-
-    @JacksonXmlProperty(localName = "vip_address")
 
     private String vipAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vip_port_id")
 
-    @JacksonXmlProperty(localName = "vip_port_id")
-
     private String vipPortId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
-
-    @JacksonXmlProperty(localName = "tags")
 
     private List<Tag> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
 
-    @JacksonXmlProperty(localName = "created_at")
-
     private String createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_at")
-
-    @JacksonXmlProperty(localName = "updated_at")
 
     private String updatedAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "guaranteed")
 
-    @JacksonXmlProperty(localName = "guaranteed")
-
     private Boolean guaranteed;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_id")
-
-    @JacksonXmlProperty(localName = "vpc_id")
 
     private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "eips")
 
-    @JacksonXmlProperty(localName = "eips")
-
     private List<EipInfo> eips = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ipv6_vip_address")
-
-    @JacksonXmlProperty(localName = "ipv6_vip_address")
 
     private String ipv6VipAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ipv6_vip_virsubnet_id")
 
-    @JacksonXmlProperty(localName = "ipv6_vip_virsubnet_id")
-
     private String ipv6VipVirsubnetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ipv6_vip_port_id")
-
-    @JacksonXmlProperty(localName = "ipv6_vip_port_id")
 
     private String ipv6VipPortId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "availability_zone_list")
 
-    @JacksonXmlProperty(localName = "availability_zone_list")
-
     private List<String> availabilityZoneList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
-    @JacksonXmlProperty(localName = "enterprise_project_id")
-
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "l4_flavor_id")
+    @JsonProperty(value = "billing_info")
 
-    @JacksonXmlProperty(localName = "l4_flavor_id")
+    private String billingInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "l4_flavor_id")
 
     private String l4FlavorId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "l4_scale_flavor_id")
 
-    @JacksonXmlProperty(localName = "l4_scale_flavor_id")
-
     private String l4ScaleFlavorId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "l7_flavor_id")
-
-    @JacksonXmlProperty(localName = "l7_flavor_id")
 
     private String l7FlavorId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "l7_scale_flavor_id")
 
-    @JacksonXmlProperty(localName = "l7_scale_flavor_id")
-
     private String l7ScaleFlavorId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publicips")
-
-    @JacksonXmlProperty(localName = "publicips")
 
     private List<PublicIpInfo> publicips = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "global_eips")
 
-    @JacksonXmlProperty(localName = "global_eips")
-
     private List<GlobalEipInfo> globalEips = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "elb_virsubnet_ids")
-
-    @JacksonXmlProperty(localName = "elb_virsubnet_ids")
 
     private List<String> elbVirsubnetIds = null;
 
@@ -316,56 +258,40 @@ public class LoadBalancer {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "elb_virsubnet_type")
 
-    @JacksonXmlProperty(localName = "elb_virsubnet_type")
-
     private ElbVirsubnetTypeEnum elbVirsubnetType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip_target_enable")
-
-    @JacksonXmlProperty(localName = "ip_target_enable")
 
     private Boolean ipTargetEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "frozen_scene")
 
-    @JacksonXmlProperty(localName = "frozen_scene")
-
     private String frozenScene;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ipv6_bandwidth")
-
-    @JacksonXmlProperty(localName = "ipv6_bandwidth")
 
     private BandwidthRef ipv6Bandwidth;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deletion_protection_enable")
 
-    @JacksonXmlProperty(localName = "deletion_protection_enable")
-
     private Boolean deletionProtectionEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "autoscaling")
-
-    @JacksonXmlProperty(localName = "autoscaling")
 
     private AutoscalingRef autoscaling;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "public_border_group")
 
-    @JacksonXmlProperty(localName = "public_border_group")
-
     private String publicBorderGroup;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "waf_failure_action")
-
-    @JacksonXmlProperty(localName = "waf_failure_action")
 
     private String wafFailureAction;
 
@@ -695,7 +621,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 是否独享型LB，取值： - false：共享型。 - true：独享型。
+     * 是否独享型LB。取值： - false：共享型。 - true：独享型。
      * @return guaranteed
      */
     public Boolean getGuaranteed() {
@@ -762,7 +688,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 双栈类型负载均衡器的IPv6地址。 [ 不支持IPv6，请勿使用。](tag:dt,dt_test)
+     * 双栈类型负载均衡器的IPv6地址。  [不支持IPv6，请勿使用。](tag:dt,dt_test)
      * @return ipv6VipAddress
      */
     public String getIpv6VipAddress() {
@@ -779,7 +705,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 双栈类型负载均衡器所在子网的IPv6网络ID。 [ 不支持IPv6，请勿使用。](tag:dt,dt_test)
+     * 双栈类型负载均衡器所在子网的IPv6网络ID。  [不支持IPv6，请勿使用。](tag:dt,dt_test)
      * @return ipv6VipVirsubnetId
      */
     public String getIpv6VipVirsubnetId() {
@@ -796,7 +722,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 双栈类型负载均衡器的IPv6对应的port ID。 [ 不支持IPv6，请勿使用。](tag:dt,dt_test)
+     * 双栈类型负载均衡器的IPv6对应的port ID。  [不支持IPv6，请勿使用。](tag:dt,dt_test)
      * @return ipv6VipPortId
      */
     public String getIpv6VipPortId() {
@@ -855,6 +781,23 @@ public class LoadBalancer {
 
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    public LoadBalancer withBillingInfo(String billingInfo) {
+        this.billingInfo = billingInfo;
+        return this;
+    }
+
+    /**
+     * 资源账单信息。取值： - 空：按需计费。 - 非空：包周期计费， 包周期计费billing_info字段的格式为：order_id:product_id:region_id:project_id，如： CS2107161019CDJZZ:OFFI569702121789763584:az:057ef081eb00d2732fd1c01a9be75e6f  [不支持该字段，请勿使用](tag:dt,dt_test,hcso_dt)
+     * @return billingInfo
+     */
+    public String getBillingInfo() {
+        return billingInfo;
+    }
+
+    public void setBillingInfo(String billingInfo) {
+        this.billingInfo = billingInfo;
     }
 
     public LoadBalancer withL4FlavorId(String l4FlavorId) {
@@ -1047,7 +990,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 是否启用跨VPC后端转发。取值： - true：开启、 - false：不开启。  仅独享型负载均衡器支持该特性。  开启跨VPC后端转发后，后端服务器组不仅支持添加云上VPC内的服务器，还支持添加其他VPC、其他公有云、云下数据中心的服务器。 [ 不支持该字段，请勿使用。](tag:dt,dt_test)
+     * 是否启用跨VPC后端转发。取值： - true：开启、 - false：不开启。  [仅独享型负载均衡器支持该特性。](tag:hws,hws_hk,ocb,tlf,ctc,hcs,sbc,g42,tm,cmcc,hk_g42,mix,hk_sbc,hws_ocb,fcs,dt,dt_test)  开启跨VPC后端转发后，后端服务器组不仅支持添加云上VPC内的服务器，还支持添加其他VPC、其他公有云、云下数据中心的服务器。  使用说明： - 开启不能关闭。
      * @return ipTargetEnable
      */
     public Boolean getIpTargetEnable() {
@@ -1064,7 +1007,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 负载均衡器的冻结场景。若负载均衡器有多个冻结场景，用逗号分隔。取值： - POLICE：公安冻结场景。 - ILLEGAL：违规冻结场景。 - VERIFY：客户未实名认证冻结场景。 - RTNER：合作伙伴冻结（合作伙伴冻结子客户资源）。 - REAR：欠费冻结场景。  [不支持该字段，请勿使用。](tag:dt,dt_test)
+     * 负载均衡器的冻结场景。若负载均衡器有多个冻结场景，用逗号分隔。取值： - POLICE：公安冻结场景。 - ILLEGAL：违规冻结场景。 - VERIFY：客户未实名认证冻结场景。 - RTNER：合作伙伴冻结（合作伙伴冻结子客户资源）。 - REAR：欠费冻结场景。  [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
      * @return frozenScene
      */
     public String getFrozenScene() {
@@ -1107,7 +1050,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 是否开启删除保护，取值： - false：不开启。 - true：开启。 >退场时需要先关闭所有资源的删除保护开关。  仅当前局点启用删除保护特性后才会返回该字段。
+     * 是否开启删除保护。取值： - false：不开启。 - true：开启。 >退场时需要先关闭所有资源的删除保护开关。  仅当前局点启用删除保护特性后才会返回该字段。
      * @return deletionProtectionEnable
      */
     public Boolean getDeletionProtectionEnable() {
@@ -1206,6 +1149,7 @@ public class LoadBalancer {
             && Objects.equals(this.ipv6VipPortId, loadBalancer.ipv6VipPortId)
             && Objects.equals(this.availabilityZoneList, loadBalancer.availabilityZoneList)
             && Objects.equals(this.enterpriseProjectId, loadBalancer.enterpriseProjectId)
+            && Objects.equals(this.billingInfo, loadBalancer.billingInfo)
             && Objects.equals(this.l4FlavorId, loadBalancer.l4FlavorId)
             && Objects.equals(this.l4ScaleFlavorId, loadBalancer.l4ScaleFlavorId)
             && Objects.equals(this.l7FlavorId, loadBalancer.l7FlavorId)
@@ -1249,6 +1193,7 @@ public class LoadBalancer {
             ipv6VipPortId,
             availabilityZoneList,
             enterpriseProjectId,
+            billingInfo,
             l4FlavorId,
             l4ScaleFlavorId,
             l7FlavorId,
@@ -1294,6 +1239,7 @@ public class LoadBalancer {
         sb.append("    ipv6VipPortId: ").append(toIndentedString(ipv6VipPortId)).append("\n");
         sb.append("    availabilityZoneList: ").append(toIndentedString(availabilityZoneList)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    billingInfo: ").append(toIndentedString(billingInfo)).append("\n");
         sb.append("    l4FlavorId: ").append(toIndentedString(l4FlavorId)).append("\n");
         sb.append("    l4ScaleFlavorId: ").append(toIndentedString(l4ScaleFlavorId)).append("\n");
         sb.append("    l7FlavorId: ").append(toIndentedString(l7FlavorId)).append("\n");

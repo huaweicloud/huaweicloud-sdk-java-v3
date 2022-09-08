@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cse.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -18,16 +17,12 @@ public class UploadKieResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "success")
 
-    @JacksonXmlProperty(localName = "success")
-
     private List<GetKieConfigs> success = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "failure")
 
-    @JacksonXmlProperty(localName = "failure")
-
-    private List<UploadKieRespFailure> failure = null;
+    private List<DocFailedOfUpload> failure = null;
 
     public UploadKieResponse withSuccess(List<GetKieConfigs> success) {
         this.success = success;
@@ -62,12 +57,12 @@ public class UploadKieResponse extends SdkResponse {
         this.success = success;
     }
 
-    public UploadKieResponse withFailure(List<UploadKieRespFailure> failure) {
+    public UploadKieResponse withFailure(List<DocFailedOfUpload> failure) {
         this.failure = failure;
         return this;
     }
 
-    public UploadKieResponse addFailureItem(UploadKieRespFailure failureItem) {
+    public UploadKieResponse addFailureItem(DocFailedOfUpload failureItem) {
         if (this.failure == null) {
             this.failure = new ArrayList<>();
         }
@@ -75,7 +70,7 @@ public class UploadKieResponse extends SdkResponse {
         return this;
     }
 
-    public UploadKieResponse withFailure(Consumer<List<UploadKieRespFailure>> failureSetter) {
+    public UploadKieResponse withFailure(Consumer<List<DocFailedOfUpload>> failureSetter) {
         if (this.failure == null) {
             this.failure = new ArrayList<>();
         }
@@ -87,11 +82,11 @@ public class UploadKieResponse extends SdkResponse {
      * 导入失败的配置项及其错误列表。
      * @return failure
      */
-    public List<UploadKieRespFailure> getFailure() {
+    public List<DocFailedOfUpload> getFailure() {
         return failure;
     }
 
-    public void setFailure(List<UploadKieRespFailure> failure) {
+    public void setFailure(List<DocFailedOfUpload> failure) {
         this.failure = failure;
     }
 

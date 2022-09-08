@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,8 +17,6 @@ public class SyncPolicyReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_id")
-
-    @JacksonXmlProperty(localName = "job_id")
 
     private String jobId;
 
@@ -109,8 +106,6 @@ public class SyncPolicyReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "conflict_policy")
 
-    @JacksonXmlProperty(localName = "conflict_policy")
-
     private ConflictPolicyEnum conflictPolicy;
 
     /**
@@ -187,21 +182,15 @@ public class SyncPolicyReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "filter_ddl_policy")
 
-    @JacksonXmlProperty(localName = "filter_ddl_policy")
-
     private FilterDdlPolicyEnum filterDdlPolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ddl_trans")
 
-    @JacksonXmlProperty(localName = "ddl_trans")
-
     private Boolean ddlTrans;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "index_trans")
-
-    @JacksonXmlProperty(localName = "index_trans")
 
     private Boolean indexTrans;
 
@@ -297,14 +286,10 @@ public class SyncPolicyReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "topic_policy")
 
-    @JacksonXmlProperty(localName = "topic_policy")
-
     private TopicPolicyEnum topicPolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "topic")
-
-    @JacksonXmlProperty(localName = "topic")
 
     private String topic;
 
@@ -400,8 +385,6 @@ public class SyncPolicyReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "partition_policy")
 
-    @JacksonXmlProperty(localName = "partition_policy")
-
     private PartitionPolicyEnum partitionPolicy;
 
     /**
@@ -484,49 +467,35 @@ public class SyncPolicyReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "kafka_data_format")
 
-    @JacksonXmlProperty(localName = "kafka_data_format")
-
     private KafkaDataFormatEnum kafkaDataFormat;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "topic_name_format")
-
-    @JacksonXmlProperty(localName = "topic_name_format")
 
     private String topicNameFormat;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "partitions_num")
 
-    @JacksonXmlProperty(localName = "partitions_num")
-
     private String partitionsNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "replication_factor")
-
-    @JacksonXmlProperty(localName = "replication_factor")
 
     private String replicationFactor;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_fill_materialized_view")
 
-    @JacksonXmlProperty(localName = "is_fill_materialized_view")
-
     private Boolean isFillMaterializedView;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "export_snapshot")
 
-    @JacksonXmlProperty(localName = "export_snapshot")
-
     private Boolean exportSnapshot;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "slot_name")
-
-    @JacksonXmlProperty(localName = "slot_name")
 
     private String slotName;
 

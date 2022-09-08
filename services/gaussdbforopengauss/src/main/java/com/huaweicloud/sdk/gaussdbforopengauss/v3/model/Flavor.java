@@ -12,8 +12,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -27,7 +25,6 @@ public class Flavor  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vcpus")
     
-    @JacksonXmlProperty(localName = "vcpus")
     
     private String vcpus;
 
@@ -35,7 +32,6 @@ public class Flavor  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ram")
     
-    @JacksonXmlProperty(localName = "ram")
     
     private String ram;
 
@@ -43,7 +39,6 @@ public class Flavor  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="spec_code")
     
-    @JacksonXmlProperty(localName = "spec_code")
     
     private String specCode;
 
@@ -51,7 +46,6 @@ public class Flavor  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="availability_zone")
     
-    @JacksonXmlProperty(localName = "availability_zone")
     
     private List<String> availabilityZone = null;
     
@@ -59,7 +53,6 @@ public class Flavor  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="az_status")
     
-    @JacksonXmlProperty(localName = "az_status")
     
     private Map<String, String> azStatus = null;
     
@@ -67,7 +60,6 @@ public class Flavor  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="version")
     
-    @JacksonXmlProperty(localName = "version")
     
     private String version;
 
@@ -75,7 +67,6 @@ public class Flavor  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    @JacksonXmlProperty(localName = "name")
     
     private String name;
 
@@ -83,7 +74,6 @@ public class Flavor  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="group_type")
     
-    @JacksonXmlProperty(localName = "group_type")
     
     private String groupType;
 

@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.time.LocalDate;
 import java.time.OffsetDateTime;
@@ -24,42 +23,30 @@ public class BackupResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "checkpoint_id")
 
-    @JacksonXmlProperty(localName = "checkpoint_id")
-
     private String checkpointId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
-
-    @JacksonXmlProperty(localName = "created_at")
 
     private OffsetDateTime createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
-    @JacksonXmlProperty(localName = "description")
-
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expired_at")
-
-    @JacksonXmlProperty(localName = "expired_at")
 
     private OffsetDateTime expiredAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extend_info")
 
-    @JacksonXmlProperty(localName = "extend_info")
-
     private BackupExtendInfo extendInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
-
-    @JacksonXmlProperty(localName = "id")
 
     private String id;
 
@@ -143,63 +130,45 @@ public class BackupResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image_type")
 
-    @JacksonXmlProperty(localName = "image_type")
-
     private ImageTypeEnum imageType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
-
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parent_id")
 
-    @JacksonXmlProperty(localName = "parent_id")
-
     private String parentId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
-
-    @JacksonXmlProperty(localName = "project_id")
 
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protected_at")
 
-    @JacksonXmlProperty(localName = "protected_at")
-
     private LocalDate protectedAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_az")
-
-    @JacksonXmlProperty(localName = "resource_az")
 
     private String resourceAz;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_id")
 
-    @JacksonXmlProperty(localName = "resource_id")
-
     private String resourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_name")
 
-    @JacksonXmlProperty(localName = "resource_name")
-
     private String resourceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_size")
-
-    @JacksonXmlProperty(localName = "resource_size")
 
     private Integer resourceSize;
 
@@ -282,8 +251,6 @@ public class BackupResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_type")
-
-    @JacksonXmlProperty(localName = "resource_type")
 
     private ResourceTypeEnum resourceType;
 
@@ -403,42 +370,30 @@ public class BackupResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    @JacksonXmlProperty(localName = "status")
-
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_at")
-
-    @JacksonXmlProperty(localName = "updated_at")
 
     private OffsetDateTime updatedAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vault_id")
 
-    @JacksonXmlProperty(localName = "vault_id")
-
     private String vaultId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "replication_records")
-
-    @JacksonXmlProperty(localName = "replication_records")
 
     private List<ReplicationRecordGet> replicationRecords = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
-    @JacksonXmlProperty(localName = "enterprise_project_id")
-
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "provider_id")
-
-    @JacksonXmlProperty(localName = "provider_id")
 
     private String providerId;
 

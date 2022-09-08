@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.hss.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,161 +13,115 @@ public class Host {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "agent_id")
 
-    @JacksonXmlProperty(localName = "agent_id")
-
     private String agentId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_id")
-
-    @JacksonXmlProperty(localName = "host_id")
 
     private String hostId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_name")
 
-    @JacksonXmlProperty(localName = "host_name")
-
     private String hostName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_ip")
-
-    @JacksonXmlProperty(localName = "host_ip")
 
     private String hostIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "public_ip")
 
-    @JacksonXmlProperty(localName = "public_ip")
-
     private String publicIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_name")
-
-    @JacksonXmlProperty(localName = "enterprise_project_name")
 
     private String enterpriseProjectName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_name")
 
-    @JacksonXmlProperty(localName = "group_name")
-
     private String groupName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expire_time")
-
-    @JacksonXmlProperty(localName = "expire_time")
 
     private Long expireTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_group_name")
 
-    @JacksonXmlProperty(localName = "policy_group_name")
-
     private String policyGroupName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_status")
-
-    @JacksonXmlProperty(localName = "host_status")
 
     private String hostStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "agent_status")
 
-    @JacksonXmlProperty(localName = "agent_status")
-
     private String agentStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
-
-    @JacksonXmlProperty(localName = "version")
 
     private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protect_status")
 
-    @JacksonXmlProperty(localName = "protect_status")
-
     private String protectStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os_image")
-
-    @JacksonXmlProperty(localName = "os_image")
 
     private String osImage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os_type")
 
-    @JacksonXmlProperty(localName = "os_type")
-
     private String osType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os_bit")
-
-    @JacksonXmlProperty(localName = "os_bit")
 
     private String osBit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "detect_result")
 
-    @JacksonXmlProperty(localName = "detect_result")
-
     private String detectResult;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "risk_port_num")
-
-    @JacksonXmlProperty(localName = "risk_port_num")
 
     private Integer riskPortNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "risk_vul_num")
 
-    @JacksonXmlProperty(localName = "risk_vul_num")
-
     private Integer riskVulNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "risk_intrusion_num")
-
-    @JacksonXmlProperty(localName = "risk_intrusion_num")
 
     private Integer riskIntrusionNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "risk_baseline_num")
 
-    @JacksonXmlProperty(localName = "risk_baseline_num")
-
     private Integer riskBaselineNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "charging_mode")
 
-    @JacksonXmlProperty(localName = "charging_mode")
-
     private String chargingMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_id")
-
-    @JacksonXmlProperty(localName = "resource_id")
 
     private String resourceId;
 

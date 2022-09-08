@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dms.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,35 +13,25 @@ public class ListConsumerGroupsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "queue_id")
 
-    @JacksonXmlProperty(localName = "queue_id")
-
     private String queueId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "include_deadletter")
-
-    @JacksonXmlProperty(localName = "include_deadletter")
 
     private Boolean includeDeadletter;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "include_messages_num")
 
-    @JacksonXmlProperty(localName = "include_messages_num")
-
     private Boolean includeMessagesNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page_size")
 
-    @JacksonXmlProperty(localName = "page_size")
-
     private Integer pageSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "current_page")
-
-    @JacksonXmlProperty(localName = "current_page")
 
     private Integer currentPage;
 

@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -19,35 +18,25 @@ public class UpdateOpenIdConnectConfig {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "access_mode")
 
-    @JacksonXmlProperty(localName = "access_mode")
-
     private String accessMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "idp_url")
-
-    @JacksonXmlProperty(localName = "idp_url")
 
     private String idpUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "client_id")
 
-    @JacksonXmlProperty(localName = "client_id")
-
     private String clientId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "authorization_endpoint")
 
-    @JacksonXmlProperty(localName = "authorization_endpoint")
-
     private String authorizationEndpoint;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scope")
-
-    @JacksonXmlProperty(localName = "scope")
 
     private String scope;
 
@@ -124,8 +113,6 @@ public class UpdateOpenIdConnectConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "response_type")
-
-    @JacksonXmlProperty(localName = "response_type")
 
     private ResponseTypeEnum responseType;
 
@@ -209,14 +196,10 @@ public class UpdateOpenIdConnectConfig {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "response_mode")
 
-    @JacksonXmlProperty(localName = "response_mode")
-
     private ResponseModeEnum responseMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "signing_key")
-
-    @JacksonXmlProperty(localName = "signing_key")
 
     private String signingKey;
 

@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -15,49 +14,37 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * ListJobsJobs
+ * 作业信息。
  */
 public class ListJobsJobs {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_id")
 
-    @JacksonXmlProperty(localName = "job_id")
-
     private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_type")
-
-    @JacksonXmlProperty(localName = "job_type")
 
     private String jobType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "queue_name")
 
-    @JacksonXmlProperty(localName = "queue_name")
-
     private String queueName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "owner")
-
-    @JacksonXmlProperty(localName = "owner")
 
     private String owner;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
-    @JacksonXmlProperty(localName = "start_time")
-
     private Long startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "duration")
-
-    @JacksonXmlProperty(localName = "duration")
 
     private Integer duration;
 
@@ -159,79 +146,67 @@ public class ListJobsJobs {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    @JacksonXmlProperty(localName = "status")
-
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "input_row_count")
-
-    @JacksonXmlProperty(localName = "input_row_count")
 
     private Long inputRowCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bad_row_count")
 
-    @JacksonXmlProperty(localName = "bad_row_count")
-
     private Long badRowCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "input_size")
-
-    @JacksonXmlProperty(localName = "input_size")
 
     private Long inputSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "result_count")
 
-    @JacksonXmlProperty(localName = "result_count")
-
     private Integer resultCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "database_name")
-
-    @JacksonXmlProperty(localName = "database_name")
 
     private String databaseName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "table_name")
 
-    @JacksonXmlProperty(localName = "table_name")
-
     private String tableName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "with_column_header")
-
-    @JacksonXmlProperty(localName = "with_column_header")
 
     private Boolean withColumnHeader;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "detail")
 
-    @JacksonXmlProperty(localName = "detail")
-
     private String detail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "statement")
-
-    @JacksonXmlProperty(localName = "statement")
 
     private String statement;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    @JacksonXmlProperty(localName = "tags")
+    private List<TmsTagEntity> tags = null;
 
-    private List<JobsTags> tags = null;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "message")
+
+    private String message;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "end_time")
+
+    private Long endTime;
 
     public ListJobsJobs withJobId(String jobId) {
         this.jobId = jobId;
@@ -505,12 +480,12 @@ public class ListJobsJobs {
         this.statement = statement;
     }
 
-    public ListJobsJobs withTags(List<JobsTags> tags) {
+    public ListJobsJobs withTags(List<TmsTagEntity> tags) {
         this.tags = tags;
         return this;
     }
 
-    public ListJobsJobs addTagsItem(JobsTags tagsItem) {
+    public ListJobsJobs addTagsItem(TmsTagEntity tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -518,7 +493,7 @@ public class ListJobsJobs {
         return this;
     }
 
-    public ListJobsJobs withTags(Consumer<List<JobsTags>> tagsSetter) {
+    public ListJobsJobs withTags(Consumer<List<TmsTagEntity>> tagsSetter) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -527,15 +502,49 @@ public class ListJobsJobs {
     }
 
     /**
-     * 作业标签。具体请参考表tags。
+     * 作业标签
      * @return tags
      */
-    public List<JobsTags> getTags() {
+    public List<TmsTagEntity> getTags() {
         return tags;
     }
 
-    public void setTags(List<JobsTags> tags) {
+    public void setTags(List<TmsTagEntity> tags) {
         this.tags = tags;
+    }
+
+    public ListJobsJobs withMessage(String message) {
+        this.message = message;
+        return this;
+    }
+
+    /**
+     * 系统提示信息。
+     * @return message
+     */
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public ListJobsJobs withEndTime(Long endTime) {
+        this.endTime = endTime;
+        return this;
+    }
+
+    /**
+     * 作业结束的时间。是单位为“毫秒”的时间戳。
+     * @return endTime
+     */
+    public Long getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(Long endTime) {
+        this.endTime = endTime;
     }
 
     @Override
@@ -559,7 +568,8 @@ public class ListJobsJobs {
             && Objects.equals(this.tableName, listJobsJobs.tableName)
             && Objects.equals(this.withColumnHeader, listJobsJobs.withColumnHeader)
             && Objects.equals(this.detail, listJobsJobs.detail)
-            && Objects.equals(this.statement, listJobsJobs.statement) && Objects.equals(this.tags, listJobsJobs.tags);
+            && Objects.equals(this.statement, listJobsJobs.statement) && Objects.equals(this.tags, listJobsJobs.tags)
+            && Objects.equals(this.message, listJobsJobs.message) && Objects.equals(this.endTime, listJobsJobs.endTime);
     }
 
     @Override
@@ -580,7 +590,9 @@ public class ListJobsJobs {
             withColumnHeader,
             detail,
             statement,
-            tags);
+            tags,
+            message,
+            endTime);
     }
 
     @Override
@@ -604,6 +616,8 @@ public class ListJobsJobs {
         sb.append("    detail: ").append(toIndentedString(detail)).append("\n");
         sb.append("    statement: ").append(toIndentedString(statement)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    message: ").append(toIndentedString(message)).append("\n");
+        sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

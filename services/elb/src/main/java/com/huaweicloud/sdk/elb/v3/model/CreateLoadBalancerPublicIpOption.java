@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.elb.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,35 +14,25 @@ public class CreateLoadBalancerPublicIpOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip_version")
 
-    @JacksonXmlProperty(localName = "ip_version")
-
     private Integer ipVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "network_type")
-
-    @JacksonXmlProperty(localName = "network_type")
 
     private String networkType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "billing_info")
 
-    @JacksonXmlProperty(localName = "billing_info")
-
     private String billingInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
-    @JacksonXmlProperty(localName = "description")
-
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bandwidth")
-
-    @JacksonXmlProperty(localName = "bandwidth")
 
     private CreateLoadBalancerBandwidthOption bandwidth;
 
@@ -53,7 +42,7 @@ public class CreateLoadBalancerPublicIpOption {
     }
 
     /**
-     * IP版本。取值：4表示IPv4，6表示IPv6。 [ 不支持IPv6，请勿设置为6。](tag:dt,dt_test)
+     * IP版本。取值：4表示IPv4，6表示IPv6。  [不支持IPv6，请勿设置为6。](tag:dt,dt_test)
      * @return ipVersion
      */
     public Integer getIpVersion() {
@@ -87,7 +76,7 @@ public class CreateLoadBalancerPublicIpOption {
     }
 
     /**
-     * 资源账单信息，取值：  - 空：按需计费。  - 非空：包周期计费。  [不支持该字段，请勿使用](tag:dt,dt_test,hcso_dt)
+     * 资源账单信息。取值：  - 空：按需计费。  - 非空：包周期计费。  [不支持该字段，请勿使用](tag:dt,dt_test,hcso_dt)
      * @return billingInfo
      */
     public String getBillingInfo() {

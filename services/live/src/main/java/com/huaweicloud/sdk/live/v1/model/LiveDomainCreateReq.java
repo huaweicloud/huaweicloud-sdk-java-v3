@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,8 +17,6 @@ public class LiveDomainCreateReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain")
-
-    @JacksonXmlProperty(localName = "domain")
 
     private String domain;
 
@@ -103,14 +100,10 @@ public class LiveDomainCreateReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_type")
 
-    @JacksonXmlProperty(localName = "domain_type")
-
     private DomainTypeEnum domainType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region")
-
-    @JacksonXmlProperty(localName = "region")
 
     private String region;
 
@@ -199,8 +192,6 @@ public class LiveDomainCreateReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_area")
-
-    @JacksonXmlProperty(localName = "service_area")
 
     private ServiceAreaEnum serviceArea;
 

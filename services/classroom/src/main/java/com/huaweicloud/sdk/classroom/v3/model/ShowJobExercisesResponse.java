@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.classroom.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -18,14 +17,10 @@ public class ShowJobExercisesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_exercises")
 
-    @JacksonXmlProperty(localName = "group_exercises")
-
     private List<ExerciseGroup> groupExercises = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total")
-
-    @JacksonXmlProperty(localName = "total")
 
     private Integer total;
 

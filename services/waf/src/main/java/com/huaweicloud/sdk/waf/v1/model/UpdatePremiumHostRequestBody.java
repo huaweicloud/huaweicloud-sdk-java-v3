@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,21 +21,15 @@ public class UpdatePremiumHostRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "proxy")
 
-    @JacksonXmlProperty(localName = "proxy")
-
     private Boolean proxy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "certificateid")
 
-    @JacksonXmlProperty(localName = "certificateid")
-
     private String certificateid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "certificatename")
-
-    @JacksonXmlProperty(localName = "certificatename")
 
     private String certificatename;
 
@@ -131,8 +124,6 @@ public class UpdatePremiumHostRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tls")
-
-    @JacksonXmlProperty(localName = "tls")
 
     private TlsEnum tls;
 
@@ -234,77 +225,55 @@ public class UpdatePremiumHostRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cipher")
 
-    @JacksonXmlProperty(localName = "cipher")
-
     private CipherEnum cipher;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mode")
-
-    @JacksonXmlProperty(localName = "mode")
 
     private String mode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "locked")
 
-    @JacksonXmlProperty(localName = "locked")
-
     private Integer locked;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protect_status")
-
-    @JacksonXmlProperty(localName = "protect_status")
 
     private Integer protectStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "access_status")
 
-    @JacksonXmlProperty(localName = "access_status")
-
     private Integer accessStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timestamp")
-
-    @JacksonXmlProperty(localName = "timestamp")
 
     private Integer timestamp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pool_ids")
 
-    @JacksonXmlProperty(localName = "pool_ids")
-
     private List<String> poolIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "block_page")
-
-    @JacksonXmlProperty(localName = "block_page")
 
     private BlockPage blockPage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "traffic_mark")
 
-    @JacksonXmlProperty(localName = "traffic_mark")
-
     private TrafficMark trafficMark;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "circuit_breaker")
 
-    @JacksonXmlProperty(localName = "circuit_breaker")
-
     private CircuitBreaker circuitBreaker;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timeout_config")
-
-    @JacksonXmlProperty(localName = "timeout_config")
 
     private TimeoutConfig timeoutConfig;
 

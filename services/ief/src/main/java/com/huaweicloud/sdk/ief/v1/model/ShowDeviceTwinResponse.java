@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.ief.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -16,21 +15,15 @@ public class ShowDeviceTwinResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "property_visitors")
 
-    @JacksonXmlProperty(localName = "property_visitors")
-
     private ValueInPropertyVisitors propertyVisitors;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "twin")
 
-    @JacksonXmlProperty(localName = "twin")
-
     private ValueInTwinResponse twin;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "access_protocol")
-
-    @JacksonXmlProperty(localName = "access_protocol")
 
     private String accessProtocol;
 

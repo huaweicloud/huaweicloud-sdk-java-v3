@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.deh.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -13,8 +12,6 @@ public class RespInstanceCapacity {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flavor")
-
-    @JacksonXmlProperty(localName = "flavor")
 
     private String flavor;
 

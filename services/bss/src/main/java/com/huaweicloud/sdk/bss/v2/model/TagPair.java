@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.bss.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,14 +13,10 @@ public class TagPair {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tag_key")
 
-    @JacksonXmlProperty(localName = "tag_key")
-
     private String tagKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tag_value")
-
-    @JacksonXmlProperty(localName = "tag_value")
 
     private String tagValue;
 

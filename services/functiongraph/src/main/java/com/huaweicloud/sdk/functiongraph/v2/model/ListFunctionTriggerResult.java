@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.time.OffsetDateTime;
 import java.util.Collections;
@@ -19,8 +18,6 @@ public class ListFunctionTriggerResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trigger_id")
-
-    @JacksonXmlProperty(localName = "trigger_id")
 
     private String triggerId;
 
@@ -188,8 +185,6 @@ public class ListFunctionTriggerResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trigger_type_code")
 
-    @JacksonXmlProperty(localName = "trigger_type_code")
-
     private TriggerTypeCodeEnum triggerTypeCode;
 
     /**
@@ -272,28 +267,20 @@ public class ListFunctionTriggerResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trigger_status")
 
-    @JacksonXmlProperty(localName = "trigger_status")
-
     private TriggerStatusEnum triggerStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_data")
-
-    @JacksonXmlProperty(localName = "event_data")
 
     private Object eventData;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last_updated_time")
 
-    @JacksonXmlProperty(localName = "last_updated_time")
-
     private OffsetDateTime lastUpdatedTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_time")
-
-    @JacksonXmlProperty(localName = "created_time")
 
     private OffsetDateTime createdTime;
 

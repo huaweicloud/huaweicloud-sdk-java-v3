@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dds.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,14 +13,10 @@ public class RolesOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "role_db_name")
 
-    @JacksonXmlProperty(localName = "role_db_name")
-
     private String roleDbName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "role_name")
-
-    @JacksonXmlProperty(localName = "role_name")
 
     private String roleName;
 

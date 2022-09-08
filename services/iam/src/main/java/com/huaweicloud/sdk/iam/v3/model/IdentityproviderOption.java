@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.iam.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,21 +13,15 @@ public class IdentityproviderOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sso_type")
 
-    @JacksonXmlProperty(localName = "sso_type")
-
     private String ssoType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
-    @JacksonXmlProperty(localName = "description")
-
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enabled")
-
-    @JacksonXmlProperty(localName = "enabled")
 
     private Boolean enabled;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.codehub.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,42 +16,30 @@ public class RepoCommitStatistics {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "all_branch_commits_count")
 
-    @JacksonXmlProperty(localName = "all_branch_commits_count")
-
     private Integer allBranchCommitsCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "codelines")
-
-    @JacksonXmlProperty(localName = "codelines")
 
     private List<RepoDailyCodeline> codelines = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "count")
 
-    @JacksonXmlProperty(localName = "count")
-
     private Integer count;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event")
-
-    @JacksonXmlProperty(localName = "event")
 
     private RepoStatisticsEvent event;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "statistics")
 
-    @JacksonXmlProperty(localName = "statistics")
-
     private List<RepoStatistics> statistics = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total")
-
-    @JacksonXmlProperty(localName = "total")
 
     private Integer total;
 

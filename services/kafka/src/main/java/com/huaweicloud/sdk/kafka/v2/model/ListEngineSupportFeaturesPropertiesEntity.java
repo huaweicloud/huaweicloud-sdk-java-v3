@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.kafka.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,28 +13,20 @@ public class ListEngineSupportFeaturesPropertiesEntity {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_task")
 
-    @JacksonXmlProperty(localName = "max_task")
-
     private String maxTask;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "min_task")
-
-    @JacksonXmlProperty(localName = "min_task")
 
     private String minTask;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_node")
 
-    @JacksonXmlProperty(localName = "max_node")
-
     private String maxNode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "min_node")
-
-    @JacksonXmlProperty(localName = "min_node")
 
     private String minNode;
 

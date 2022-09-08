@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,196 +16,140 @@ public class CreateSQLJobReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
-    @JacksonXmlProperty(localName = "name")
-
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "desc")
-
-    @JacksonXmlProperty(localName = "desc")
 
     private String desc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template_id")
 
-    @JacksonXmlProperty(localName = "template_id")
-
     private Long templateId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "queue_name")
-
-    @JacksonXmlProperty(localName = "queue_name")
 
     private String queueName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sql_body")
 
-    @JacksonXmlProperty(localName = "sql_body")
-
     private String sqlBody;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "run_mode")
-
-    @JacksonXmlProperty(localName = "run_mode")
 
     private String runMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cu_number")
 
-    @JacksonXmlProperty(localName = "cu_number")
-
     private Integer cuNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parallel_number")
-
-    @JacksonXmlProperty(localName = "parallel_number")
 
     private Integer parallelNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "checkpoint_enabled")
 
-    @JacksonXmlProperty(localName = "checkpoint_enabled")
-
     private Boolean checkpointEnabled;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "checkpoint_mode")
-
-    @JacksonXmlProperty(localName = "checkpoint_mode")
 
     private Integer checkpointMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "checkpoint_interval")
 
-    @JacksonXmlProperty(localName = "checkpoint_interval")
-
     private Integer checkpointInterval;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "obs_bucket")
-
-    @JacksonXmlProperty(localName = "obs_bucket")
 
     private String obsBucket;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_enabled")
 
-    @JacksonXmlProperty(localName = "log_enabled")
-
     private Boolean logEnabled;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "smn_topic")
-
-    @JacksonXmlProperty(localName = "smn_topic")
 
     private String smnTopic;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "restart_when_exception")
 
-    @JacksonXmlProperty(localName = "restart_when_exception")
-
     private Boolean restartWhenException;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "idle_state_retention")
-
-    @JacksonXmlProperty(localName = "idle_state_retention")
 
     private Integer idleStateRetention;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_type")
 
-    @JacksonXmlProperty(localName = "job_type")
-
     private String jobType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "edge_group_ids")
-
-    @JacksonXmlProperty(localName = "edge_group_ids")
 
     private List<String> edgeGroupIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dirty_data_strategy")
 
-    @JacksonXmlProperty(localName = "dirty_data_strategy")
-
     private String dirtyDataStrategy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "udf_jar_url")
-
-    @JacksonXmlProperty(localName = "udf_jar_url")
 
     private String udfJarUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "manager_cu_number")
 
-    @JacksonXmlProperty(localName = "manager_cu_number")
-
     private Integer managerCuNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tm_cus")
-
-    @JacksonXmlProperty(localName = "tm_cus")
 
     private Integer tmCus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tm_slot_num")
 
-    @JacksonXmlProperty(localName = "tm_slot_num")
-
     private Integer tmSlotNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "resume_checkpoint")
+    @JsonProperty(value = "tags")
 
-    @JacksonXmlProperty(localName = "resume_checkpoint")
+    private List<TmsTagEntity> tags = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resume_checkpoint")
 
     private Boolean resumeCheckpoint;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resume_max_num")
 
-    @JacksonXmlProperty(localName = "resume_max_num")
-
     private Integer resumeMaxNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "runtime_config")
 
-    @JacksonXmlProperty(localName = "runtime_config")
-
     private String runtimeConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "tags")
-
-    @JacksonXmlProperty(localName = "tags")
-
-    private List<JobsTags> tags = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flink_version")
-
-    @JacksonXmlProperty(localName = "flink_version")
 
     private String flinkVersion;
 
@@ -250,7 +193,7 @@ public class CreateSQLJobReq {
     }
 
     /**
-     * 模板Id。 如果template_id和sql_body都不为空，优先sql_body；如果template_id不空，sql_body为空，以template_id内容填充sql_body。
+     * 模板Id。  如果template_id和sql_body都不为空，优先sql_body；如果template_id不空，sql_body为空，以template_id内容填充sql_body。
      * @return templateId
      */
     public Long getTemplateId() {
@@ -617,6 +560,39 @@ public class CreateSQLJobReq {
         this.tmSlotNum = tmSlotNum;
     }
 
+    public CreateSQLJobReq withTags(List<TmsTagEntity> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public CreateSQLJobReq addTagsItem(TmsTagEntity tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public CreateSQLJobReq withTags(Consumer<List<TmsTagEntity>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * 标签
+     * @return tags
+     */
+    public List<TmsTagEntity> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<TmsTagEntity> tags) {
+        this.tags = tags;
+    }
+
     public CreateSQLJobReq withResumeCheckpoint(Boolean resumeCheckpoint) {
         this.resumeCheckpoint = resumeCheckpoint;
         return this;
@@ -668,39 +644,6 @@ public class CreateSQLJobReq {
         this.runtimeConfig = runtimeConfig;
     }
 
-    public CreateSQLJobReq withTags(List<JobsTags> tags) {
-        this.tags = tags;
-        return this;
-    }
-
-    public CreateSQLJobReq addTagsItem(JobsTags tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
-        this.tags.add(tagsItem);
-        return this;
-    }
-
-    public CreateSQLJobReq withTags(Consumer<List<JobsTags>> tagsSetter) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
-        tagsSetter.accept(this.tags);
-        return this;
-    }
-
-    /**
-     * Flink SQL作业的标签。具体请参考表tags。
-     * @return tags
-     */
-    public List<JobsTags> getTags() {
-        return tags;
-    }
-
-    public void setTags(List<JobsTags> tags) {
-        this.tags = tags;
-    }
-
     public CreateSQLJobReq withFlinkVersion(String flinkVersion) {
         this.flinkVersion = flinkVersion;
         return this;
@@ -749,10 +692,10 @@ public class CreateSQLJobReq {
             && Objects.equals(this.managerCuNumber, createSQLJobReq.managerCuNumber)
             && Objects.equals(this.tmCus, createSQLJobReq.tmCus)
             && Objects.equals(this.tmSlotNum, createSQLJobReq.tmSlotNum)
+            && Objects.equals(this.tags, createSQLJobReq.tags)
             && Objects.equals(this.resumeCheckpoint, createSQLJobReq.resumeCheckpoint)
             && Objects.equals(this.resumeMaxNum, createSQLJobReq.resumeMaxNum)
             && Objects.equals(this.runtimeConfig, createSQLJobReq.runtimeConfig)
-            && Objects.equals(this.tags, createSQLJobReq.tags)
             && Objects.equals(this.flinkVersion, createSQLJobReq.flinkVersion);
     }
 
@@ -781,10 +724,10 @@ public class CreateSQLJobReq {
             managerCuNumber,
             tmCus,
             tmSlotNum,
+            tags,
             resumeCheckpoint,
             resumeMaxNum,
             runtimeConfig,
-            tags,
             flinkVersion);
     }
 
@@ -815,10 +758,10 @@ public class CreateSQLJobReq {
         sb.append("    managerCuNumber: ").append(toIndentedString(managerCuNumber)).append("\n");
         sb.append("    tmCus: ").append(toIndentedString(tmCus)).append("\n");
         sb.append("    tmSlotNum: ").append(toIndentedString(tmSlotNum)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    resumeCheckpoint: ").append(toIndentedString(resumeCheckpoint)).append("\n");
         sb.append("    resumeMaxNum: ").append(toIndentedString(resumeMaxNum)).append("\n");
         sb.append("    runtimeConfig: ").append(toIndentedString(runtimeConfig)).append("\n");
-        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    flinkVersion: ").append(toIndentedString(flinkVersion)).append("\n");
         sb.append("}");
         return sb.toString();

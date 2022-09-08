@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.image.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,42 +16,30 @@ public class ImageTaggingItemBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confidence")
 
-    @JacksonXmlProperty(localName = "confidence")
-
     private String confidence;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
-
-    @JacksonXmlProperty(localName = "type")
 
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tag")
 
-    @JacksonXmlProperty(localName = "tag")
-
     private String tag;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "i18n_tag")
-
-    @JacksonXmlProperty(localName = "i18n_tag")
 
     private ImageTaggingItemBodyI18nTag i18nTag;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "i18n_type")
 
-    @JacksonXmlProperty(localName = "i18n_type")
-
     private ImageTaggingItemBodyI18nType i18nType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instances")
-
-    @JacksonXmlProperty(localName = "instances")
 
     private List<ImageTaggingInstance> instances = null;
 

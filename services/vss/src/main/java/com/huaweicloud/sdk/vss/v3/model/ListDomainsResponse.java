@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.vss.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -18,21 +17,15 @@ public class ListDomainsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total")
 
-    @JacksonXmlProperty(localName = "total")
-
     private Integer total;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "top_level_domain_num")
 
-    @JacksonXmlProperty(localName = "top_level_domain_num")
-
     private Integer topLevelDomainNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domains")
-
-    @JacksonXmlProperty(localName = "domains")
 
     private List<DomainItem> domains = null;
 

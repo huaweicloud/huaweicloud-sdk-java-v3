@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.image.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,21 +13,15 @@ public class CelebrityRecognitionReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image")
 
-    @JacksonXmlProperty(localName = "image")
-
     private String image;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "url")
 
-    @JacksonXmlProperty(localName = "url")
-
     private String url;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "threshold")
-
-    @JacksonXmlProperty(localName = "threshold")
 
     private Float threshold;
 

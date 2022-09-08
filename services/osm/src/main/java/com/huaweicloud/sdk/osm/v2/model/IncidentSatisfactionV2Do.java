@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.osm.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,49 +13,35 @@ public class IncidentSatisfactionV2Do {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "value")
 
-    @JacksonXmlProperty(localName = "value")
-
     private Integer value;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "satisfaction_id")
-
-    @JacksonXmlProperty(localName = "satisfaction_id")
 
     private Integer satisfactionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "satisfaction_value")
 
-    @JacksonXmlProperty(localName = "satisfaction_value")
-
     private Integer satisfactionValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "satisfaction_name")
-
-    @JacksonXmlProperty(localName = "satisfaction_name")
 
     private String satisfactionName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "per_value")
 
-    @JacksonXmlProperty(localName = "per_value")
-
     private Integer perValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sat_category_id")
 
-    @JacksonXmlProperty(localName = "sat_category_id")
-
     private String satCategoryId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sat_category_name")
-
-    @JacksonXmlProperty(localName = "sat_category_name")
 
     private String satCategoryName;
 

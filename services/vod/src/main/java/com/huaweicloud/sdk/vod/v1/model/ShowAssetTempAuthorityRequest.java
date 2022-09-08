@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.vod.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,63 +13,45 @@ public class ShowAssetTempAuthorityRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "Authorization")
 
-    @JacksonXmlProperty(localName = "Authorization")
-
     private String authorization;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Sdk-Date")
-
-    @JacksonXmlProperty(localName = "X-Sdk-Date")
 
     private String xSdkDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "http_verb")
 
-    @JacksonXmlProperty(localName = "http_verb")
-
     private String httpVerb;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bucket")
-
-    @JacksonXmlProperty(localName = "bucket")
 
     private String bucket;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "object_key")
 
-    @JacksonXmlProperty(localName = "object_key")
-
     private String objectKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "content_type")
-
-    @JacksonXmlProperty(localName = "content_type")
 
     private String contentType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "content_md5")
 
-    @JacksonXmlProperty(localName = "content_md5")
-
     private String contentMd5;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "upload_id")
 
-    @JacksonXmlProperty(localName = "upload_id")
-
     private String uploadId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "part_number")
-
-    @JacksonXmlProperty(localName = "part_number")
 
     private Integer partNumber;
 

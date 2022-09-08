@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cbr.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,28 +13,20 @@ public class OpExtendInfoRestore {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "backup_id")
 
-    @JacksonXmlProperty(localName = "backup_id")
-
     private String backupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "backup_name")
-
-    @JacksonXmlProperty(localName = "backup_name")
 
     private String backupName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_resource_id")
 
-    @JacksonXmlProperty(localName = "target_resource_id")
-
     private String targetResourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_resource_name")
-
-    @JacksonXmlProperty(localName = "target_resource_name")
 
     private String targetResourceName;
 

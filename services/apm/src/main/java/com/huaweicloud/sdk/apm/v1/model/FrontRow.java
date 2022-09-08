@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.apm.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,28 +16,20 @@ public class FrontRow {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cell_list")
 
-    @JacksonXmlProperty(localName = "cell_list")
-
     private List<FrontCell> cellList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "filter")
-
-    @JacksonXmlProperty(localName = "filter")
 
     private String filter;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "header")
 
-    @JacksonXmlProperty(localName = "header")
-
     private Boolean header;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tx_id")
-
-    @JacksonXmlProperty(localName = "tx_id")
 
     private Long txId;
 

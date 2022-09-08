@@ -10,8 +10,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -25,7 +23,6 @@ public class UpdateExternalEntityResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_id")
     
-    @JacksonXmlProperty(localName = "node_id")
     
     private String nodeId;
 
@@ -33,7 +30,6 @@ public class UpdateExternalEntityResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="space_id")
     
-    @JacksonXmlProperty(localName = "space_id")
     
     private String spaceId;
 
@@ -41,7 +37,6 @@ public class UpdateExternalEntityResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="external_id")
     
-    @JacksonXmlProperty(localName = "external_id")
     
     private String externalId;
 
@@ -49,7 +44,6 @@ public class UpdateExternalEntityResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="protocol")
     
-    @JacksonXmlProperty(localName = "protocol")
     
     private String protocol;
 
@@ -57,7 +51,6 @@ public class UpdateExternalEntityResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="connection_type")
     
-    @JacksonXmlProperty(localName = "connection_type")
     
     private String connectionType;
 
@@ -65,7 +58,6 @@ public class UpdateExternalEntityResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    @JacksonXmlProperty(localName = "create_time")
     
     private String createTime;
 
@@ -73,7 +65,6 @@ public class UpdateExternalEntityResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="last_modify_time")
     
-    @JacksonXmlProperty(localName = "last_modify_time")
     
     private String lastModifyTime;
 

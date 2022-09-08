@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,77 +21,55 @@ public class InstanceConfig {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_id")
 
-    @JacksonXmlProperty(localName = "instance_id")
-
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flavorRef")
-
-    @JacksonXmlProperty(localName = "flavorRef")
 
     private String flavorRef;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "imageRef")
 
-    @JacksonXmlProperty(localName = "imageRef")
-
     private String imageRef;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "disk")
-
-    @JacksonXmlProperty(localName = "disk")
 
     private List<DiskInfo> disk = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key_name")
 
-    @JacksonXmlProperty(localName = "key_name")
-
     private String keyName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "personality")
-
-    @JacksonXmlProperty(localName = "personality")
 
     private List<PersonalityInfo> personality = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "public_ip")
 
-    @JacksonXmlProperty(localName = "public_ip")
-
     private PublicIp publicIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_data")
-
-    @JacksonXmlProperty(localName = "user_data")
 
     private String userData;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metadata")
 
-    @JacksonXmlProperty(localName = "metadata")
-
     private VmMetaData metadata;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_groups")
 
-    @JacksonXmlProperty(localName = "security_groups")
-
     private List<SecurityGroups> securityGroups = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "server_group_id")
-
-    @JacksonXmlProperty(localName = "server_group_id")
 
     private String serverGroupId;
 
@@ -170,14 +147,10 @@ public class InstanceConfig {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tenancy")
 
-    @JacksonXmlProperty(localName = "tenancy")
-
     private TenancyEnum tenancy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dedicated_host_id")
-
-    @JacksonXmlProperty(localName = "dedicated_host_id")
 
     private String dedicatedHostId;
 
@@ -261,8 +234,6 @@ public class InstanceConfig {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "multi_flavor_priority_policy")
 
-    @JacksonXmlProperty(localName = "multi_flavor_priority_policy")
-
     private MultiFlavorPriorityPolicyEnum multiFlavorPriorityPolicy;
 
     /**
@@ -338,8 +309,6 @@ public class InstanceConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "market_type")
-
-    @JacksonXmlProperty(localName = "market_type")
 
     private MarketTypeEnum marketType;
 

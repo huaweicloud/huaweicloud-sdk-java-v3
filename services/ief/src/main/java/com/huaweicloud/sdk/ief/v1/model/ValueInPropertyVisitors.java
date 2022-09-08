@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.ief.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,98 +14,70 @@ public class ValueInPropertyVisitors {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "register_type")
 
-    @JacksonXmlProperty(localName = "register_type")
-
     private ValueInAttributes registerType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "access_mode")
-
-    @JacksonXmlProperty(localName = "access_mode")
 
     private ValueInAttributes accessMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "register_index")
 
-    @JacksonXmlProperty(localName = "register_index")
-
     private ValueInAttributes registerIndex;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "register_num")
-
-    @JacksonXmlProperty(localName = "register_num")
 
     private ValueInAttributes registerNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scale_index")
 
-    @JacksonXmlProperty(localName = "scale_index")
-
     private ValueInAttributes scaleIndex;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "original_datatype")
-
-    @JacksonXmlProperty(localName = "original_datatype")
 
     private ValueInAttributes originalDatatype;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expected_datatype")
 
-    @JacksonXmlProperty(localName = "expected_datatype")
-
     private ValueInAttributes expectedDatatype;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_registerswap")
-
-    @JacksonXmlProperty(localName = "is_registerswap")
 
     private ValueInAttributes isRegisterswap;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_swap")
 
-    @JacksonXmlProperty(localName = "is_swap")
-
     private ValueInAttributes isSwap;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sample_interval")
-
-    @JacksonXmlProperty(localName = "sample_interval")
 
     private ValueInAttributes sampleInterval;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_min")
 
-    @JacksonXmlProperty(localName = "data_min")
-
     private ValueInAttributes dataMin;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_max")
-
-    @JacksonXmlProperty(localName = "data_max")
 
     private ValueInAttributes dataMax;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "node_id")
 
-    @JacksonXmlProperty(localName = "node_id")
-
     private ValueInAttributes nodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "browse_name")
-
-    @JacksonXmlProperty(localName = "browse_name")
 
     private ValueInAttributes browseName;
 

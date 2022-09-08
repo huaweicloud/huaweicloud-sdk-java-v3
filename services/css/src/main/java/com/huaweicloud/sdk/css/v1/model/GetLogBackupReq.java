@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.css.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,21 +13,15 @@ public class GetLogBackupReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instanceName")
 
-    @JacksonXmlProperty(localName = "instanceName")
-
     private String instanceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "level")
 
-    @JacksonXmlProperty(localName = "level")
-
     private String level;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "logType")
-
-    @JacksonXmlProperty(localName = "logType")
 
     private String logType;
 

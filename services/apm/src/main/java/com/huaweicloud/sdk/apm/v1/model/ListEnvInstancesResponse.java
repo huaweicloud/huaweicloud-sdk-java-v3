@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.apm.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -18,35 +17,25 @@ public class ListEnvInstancesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_info_list")
 
-    @JacksonXmlProperty(localName = "instance_info_list")
-
     private List<InstanceInfo> instanceInfoList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_count")
-
-    @JacksonXmlProperty(localName = "total_count")
 
     private Integer totalCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "online_count")
 
-    @JacksonXmlProperty(localName = "online_count")
-
     private Integer onlineCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offline_count")
 
-    @JacksonXmlProperty(localName = "offline_count")
-
     private Integer offlineCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "disable_count")
-
-    @JacksonXmlProperty(localName = "disable_count")
 
     private Integer disableCount;
 

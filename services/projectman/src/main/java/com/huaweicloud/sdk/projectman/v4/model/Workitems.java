@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.projectman.v4.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,203 +16,145 @@ public class Workitems {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
-
-    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "actual_work_hours")
 
-    @JacksonXmlProperty(localName = "actual_work_hours")
-
     private Double actualWorkHours;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "assigned_user")
-
-    @JacksonXmlProperty(localName = "assigned_user")
 
     private WorkitemUser assignedUser;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "author")
 
-    @JacksonXmlProperty(localName = "author")
-
     private WorkitemUser author;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "begin_time")
-
-    @JacksonXmlProperty(localName = "begin_time")
 
     private String beginTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_time")
 
-    @JacksonXmlProperty(localName = "created_time")
-
     private String createdTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
-
-    @JacksonXmlProperty(localName = "tags")
 
     private List<WorkitemsTags> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "developer")
 
-    @JacksonXmlProperty(localName = "developer")
-
     private WorkitemUser developer;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "assigned_cc_user")
-
-    @JacksonXmlProperty(localName = "assigned_cc_user")
 
     private List<WorkitemUser> assignedCcUser = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "discover_version")
 
-    @JacksonXmlProperty(localName = "discover_version")
-
     private String discoverVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time")
-
-    @JacksonXmlProperty(localName = "end_time")
 
     private String endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "done_ratio")
 
-    @JacksonXmlProperty(localName = "done_ratio")
-
     private String doneRatio;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expected_work_hours")
-
-    @JacksonXmlProperty(localName = "expected_work_hours")
 
     private Double expectedWorkHours;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "order")
 
-    @JacksonXmlProperty(localName = "order")
-
     private String order;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parent_work_item_id")
-
-    @JacksonXmlProperty(localName = "parent_work_item_id")
 
     private String parentWorkItemId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "release_version")
 
-    @JacksonXmlProperty(localName = "release_version")
-
     private String releaseVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "story_point")
-
-    @JacksonXmlProperty(localName = "story_point")
 
     private String storyPoint;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain")
 
-    @JacksonXmlProperty(localName = "domain")
-
     private WorkitemsDomain domain;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "iteration")
-
-    @JacksonXmlProperty(localName = "iteration")
 
     private WorkitemsIteration iteration;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "module")
 
-    @JacksonXmlProperty(localName = "module")
-
     private WorkitemsModule module;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "priority")
-
-    @JacksonXmlProperty(localName = "priority")
 
     private String priority;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "severity")
 
-    @JacksonXmlProperty(localName = "severity")
-
     private String severity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
-
-    @JacksonXmlProperty(localName = "status")
 
     private WorkitemsStatus status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subject")
 
-    @JacksonXmlProperty(localName = "subject")
-
     private String subject;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_time")
-
-    @JacksonXmlProperty(localName = "updated_time")
 
     private String updatedTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sequence")
 
-    @JacksonXmlProperty(localName = "sequence")
-
     private String sequence;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "important")
 
-    @JacksonXmlProperty(localName = "important")
-
     private String important;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "custom_fields")
-
-    @JacksonXmlProperty(localName = "custom_fields")
 
     private List<WorkitemCustomField> customFields = null;
 

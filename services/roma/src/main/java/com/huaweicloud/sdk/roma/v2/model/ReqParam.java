@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,8 +17,6 @@ public class ReqParam {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
-
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
@@ -102,8 +99,6 @@ public class ReqParam {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
-
-    @JacksonXmlProperty(localName = "type")
 
     private TypeEnum type;
 
@@ -193,21 +188,15 @@ public class ReqParam {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "location")
 
-    @JacksonXmlProperty(localName = "location")
-
     private LocationEnum location;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "default_value")
 
-    @JacksonXmlProperty(localName = "default_value")
-
     private String defaultValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sample_value")
-
-    @JacksonXmlProperty(localName = "sample_value")
 
     private String sampleValue;
 
@@ -291,8 +280,6 @@ public class ReqParam {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "required")
 
-    @JacksonXmlProperty(localName = "required")
-
     private RequiredEnum required;
 
     /**
@@ -375,63 +362,45 @@ public class ReqParam {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "valid_enable")
 
-    @JacksonXmlProperty(localName = "valid_enable")
-
     private ValidEnableEnum validEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remark")
-
-    @JacksonXmlProperty(localName = "remark")
 
     private String remark;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enumerations")
 
-    @JacksonXmlProperty(localName = "enumerations")
-
     private String enumerations;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "min_num")
-
-    @JacksonXmlProperty(localName = "min_num")
 
     private Integer minNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_num")
 
-    @JacksonXmlProperty(localName = "max_num")
-
     private Integer maxNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "min_size")
-
-    @JacksonXmlProperty(localName = "min_size")
 
     private Integer minSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_size")
 
-    @JacksonXmlProperty(localName = "max_size")
-
     private Integer maxSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "regular")
 
-    @JacksonXmlProperty(localName = "regular")
-
     private String regular;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "json_schema")
-
-    @JacksonXmlProperty(localName = "json_schema")
 
     private String jsonSchema;
 
@@ -515,14 +484,10 @@ public class ReqParam {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pass_through")
 
-    @JacksonXmlProperty(localName = "pass_through")
-
     private PassThroughEnum passThrough;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
-
-    @JacksonXmlProperty(localName = "id")
 
     private String id;
 

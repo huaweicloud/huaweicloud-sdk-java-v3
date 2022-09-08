@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.vas.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,28 +13,20 @@ public class TaskTimingFrequency {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "interval")
 
-    @JacksonXmlProperty(localName = "interval")
-
     private Integer interval;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "duration")
-
-    @JacksonXmlProperty(localName = "duration")
 
     private Integer duration;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "begin_at")
 
-    @JacksonXmlProperty(localName = "begin_at")
-
     private String beginAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_at")
-
-    @JacksonXmlProperty(localName = "end_at")
 
     private String endAt;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dcs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,21 +14,15 @@ public class BackupPolicy {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "backup_type")
 
-    @JacksonXmlProperty(localName = "backup_type")
-
     private String backupType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "save_days")
 
-    @JacksonXmlProperty(localName = "save_days")
-
     private Integer saveDays;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "periodical_backup_plan")
-
-    @JacksonXmlProperty(localName = "periodical_backup_plan")
 
     private BackupPlan periodicalBackupPlan;
 

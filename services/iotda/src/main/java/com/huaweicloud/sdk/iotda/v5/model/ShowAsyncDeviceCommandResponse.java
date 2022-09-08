@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.iotda.v5.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -15,91 +14,65 @@ public class ShowAsyncDeviceCommandResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "device_id")
 
-    @JacksonXmlProperty(localName = "device_id")
-
     private String deviceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "command_id")
-
-    @JacksonXmlProperty(localName = "command_id")
 
     private String commandId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_id")
 
-    @JacksonXmlProperty(localName = "service_id")
-
     private String serviceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "command_name")
-
-    @JacksonXmlProperty(localName = "command_name")
 
     private String commandName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "paras")
 
-    @JacksonXmlProperty(localName = "paras")
-
     private Object paras;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expire_time")
-
-    @JacksonXmlProperty(localName = "expire_time")
 
     private Integer expireTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    @JacksonXmlProperty(localName = "status")
-
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "result")
-
-    @JacksonXmlProperty(localName = "result")
 
     private Object result;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_time")
 
-    @JacksonXmlProperty(localName = "created_time")
-
     private String createdTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sent_time")
-
-    @JacksonXmlProperty(localName = "sent_time")
 
     private String sentTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "delivered_time")
 
-    @JacksonXmlProperty(localName = "delivered_time")
-
     private String deliveredTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "send_strategy")
 
-    @JacksonXmlProperty(localName = "send_strategy")
-
     private String sendStrategy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "response_time")
-
-    @JacksonXmlProperty(localName = "response_time")
 
     private String responseTime;
 

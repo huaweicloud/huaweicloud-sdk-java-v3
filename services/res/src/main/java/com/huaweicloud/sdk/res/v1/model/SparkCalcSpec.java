@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.res.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,35 +13,25 @@ public class SparkCalcSpec {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "driver_memory")
 
-    @JacksonXmlProperty(localName = "driver_memory")
-
     private String driverMemory;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "driver_cores")
-
-    @JacksonXmlProperty(localName = "driver_cores")
 
     private Integer driverCores;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "executor_memory")
 
-    @JacksonXmlProperty(localName = "executor_memory")
-
     private String executorMemory;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "executor_cores")
 
-    @JacksonXmlProperty(localName = "executor_cores")
-
     private Integer executorCores;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "num_executors")
-
-    @JacksonXmlProperty(localName = "num_executors")
 
     private Integer numExecutors;
 

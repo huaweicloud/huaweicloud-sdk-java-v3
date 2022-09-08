@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,56 +21,40 @@ public class Subnet {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
-
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cidr")
 
-    @JacksonXmlProperty(localName = "cidr")
-
     private String cidr;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dnsList")
-
-    @JacksonXmlProperty(localName = "dnsList")
 
     private List<String> dnsList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "gateway_ip")
 
-    @JacksonXmlProperty(localName = "gateway_ip")
-
     private String gatewayIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dhcp_enable")
-
-    @JacksonXmlProperty(localName = "dhcp_enable")
 
     private Boolean dhcpEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "primary_dns")
 
-    @JacksonXmlProperty(localName = "primary_dns")
-
     private String primaryDns;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "secondary_dns")
-
-    @JacksonXmlProperty(localName = "secondary_dns")
 
     private String secondaryDns;
 
@@ -161,42 +144,30 @@ public class Subnet {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    @JacksonXmlProperty(localName = "status")
-
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_id")
-
-    @JacksonXmlProperty(localName = "vpc_id")
 
     private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "site_id")
 
-    @JacksonXmlProperty(localName = "site_id")
-
     private String siteId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "site_info")
-
-    @JacksonXmlProperty(localName = "site_info")
 
     private String siteInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "neutron_network_id")
 
-    @JacksonXmlProperty(localName = "neutron_network_id")
-
     private String neutronNetworkId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "neutron_subnet_id")
-
-    @JacksonXmlProperty(localName = "neutron_subnet_id")
 
     private String neutronSubnetId;
 

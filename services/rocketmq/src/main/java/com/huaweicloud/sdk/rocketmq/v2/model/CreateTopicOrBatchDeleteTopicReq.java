@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -23,21 +22,15 @@ public class CreateTopicOrBatchDeleteTopicReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
-    @JacksonXmlProperty(localName = "name")
-
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "brokers")
 
-    @JacksonXmlProperty(localName = "brokers")
-
     private List<String> brokers = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "queue_num")
-
-    @JacksonXmlProperty(localName = "queue_num")
 
     private BigDecimal queueNum;
 
@@ -127,14 +120,10 @@ public class CreateTopicOrBatchDeleteTopicReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "permission")
 
-    @JacksonXmlProperty(localName = "permission")
-
     private PermissionEnum permission;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "topics")
-
-    @JacksonXmlProperty(localName = "topics")
 
     private List<String> topics = null;
 

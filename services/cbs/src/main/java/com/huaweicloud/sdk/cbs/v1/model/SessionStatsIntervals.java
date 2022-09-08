@@ -8,8 +8,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -23,7 +21,6 @@ public class SessionStatsIntervals  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="start")
     
-    @JacksonXmlProperty(localName = "start")
     
     private String start;
 
@@ -31,7 +28,6 @@ public class SessionStatsIntervals  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="session_count")
     
-    @JacksonXmlProperty(localName = "session_count")
     
     private Long sessionCount;
 
@@ -39,7 +35,6 @@ public class SessionStatsIntervals  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="user_count")
     
-    @JacksonXmlProperty(localName = "user_count")
     
     private Long userCount;
 
@@ -47,7 +42,6 @@ public class SessionStatsIntervals  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="avg_request_count")
     
-    @JacksonXmlProperty(localName = "avg_request_count")
     
     private Double avgRequestCount;
 
@@ -55,7 +49,6 @@ public class SessionStatsIntervals  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="avg_session_time")
     
-    @JacksonXmlProperty(localName = "avg_session_time")
     
     private Double avgSessionTime;
 

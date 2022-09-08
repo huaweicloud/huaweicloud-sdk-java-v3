@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,28 +13,20 @@ public class PacketThresholdData {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "receiving")
 
-    @JacksonXmlProperty(localName = "receiving")
-
     private Integer receiving;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "receivingDefault")
-
-    @JacksonXmlProperty(localName = "receivingDefault")
 
     private Integer receivingDefault;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sending")
 
-    @JacksonXmlProperty(localName = "sending")
-
     private Integer sending;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sendingDefault")
-
-    @JacksonXmlProperty(localName = "sendingDefault")
 
     private Integer sendingDefault;
 

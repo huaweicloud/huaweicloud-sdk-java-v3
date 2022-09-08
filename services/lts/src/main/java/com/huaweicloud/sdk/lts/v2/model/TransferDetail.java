@@ -4,12 +4,14 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 日志转储详细信息
@@ -126,107 +128,82 @@ public class TransferDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "obs_period")
 
-    @JacksonXmlProperty(localName = "obs_period")
-
     private ObsPeriodEnum obsPeriod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "obs_encrypted_id")
-
-    @JacksonXmlProperty(localName = "obs_encrypted_id")
 
     private String obsEncryptedId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "obs_prefix_name")
 
-    @JacksonXmlProperty(localName = "obs_prefix_name")
-
     private String obsPrefixName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "obs_period_unit")
-
-    @JacksonXmlProperty(localName = "obs_period_unit")
 
     private String obsPeriodUnit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "obs_transfer_path")
 
-    @JacksonXmlProperty(localName = "obs_transfer_path")
-
     private String obsTransferPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "obs_eps_id")
-
-    @JacksonXmlProperty(localName = "obs_eps_id")
 
     private String obsEpsId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "obs_bucket_name")
 
-    @JacksonXmlProperty(localName = "obs_bucket_name")
-
     private String obsBucketName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "obs_encrypted_enable")
-
-    @JacksonXmlProperty(localName = "obs_encrypted_enable")
 
     private Boolean obsEncryptedEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "obs_dir_pre_fix_name")
 
-    @JacksonXmlProperty(localName = "obs_dir_pre_fix_name")
-
     private String obsDirPreFixName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dis_id")
-
-    @JacksonXmlProperty(localName = "dis_id")
 
     private String disId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dis_name")
 
-    @JacksonXmlProperty(localName = "dis_name")
-
     private String disName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "kafka_id")
-
-    @JacksonXmlProperty(localName = "kafka_id")
 
     private String kafkaId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "kafka_topic")
 
-    @JacksonXmlProperty(localName = "kafka_topic")
-
     private String kafkaTopic;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "obs_time_zone")
-
-    @JacksonXmlProperty(localName = "obs_time_zone")
 
     private String obsTimeZone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "obs_time_zone_id")
 
-    @JacksonXmlProperty(localName = "obs_time_zone_id")
-
     private String obsTimeZoneId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<String> tags = null;
 
     public TransferDetail withObsPeriod(ObsPeriodEnum obsPeriod) {
         this.obsPeriod = obsPeriod;
@@ -483,6 +460,39 @@ public class TransferDetail {
         this.obsTimeZoneId = obsTimeZoneId;
     }
 
+    public TransferDetail withTags(List<String> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public TransferDetail addTagsItem(String tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public TransferDetail withTags(Consumer<List<String>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * 若开启tag投递，该字段必须包含主机信息：hostIP、hostId、hostName、pathFile、collectTime；  公共字段有：logStreamName、regionName、logGroupName、projectId，为可选填；  开启转储标签：streamTag，可选填
+     * @return tags
+     */
+    public List<String> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<String> tags) {
+        this.tags = tags;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -505,7 +515,8 @@ public class TransferDetail {
             && Objects.equals(this.kafkaId, transferDetail.kafkaId)
             && Objects.equals(this.kafkaTopic, transferDetail.kafkaTopic)
             && Objects.equals(this.obsTimeZone, transferDetail.obsTimeZone)
-            && Objects.equals(this.obsTimeZoneId, transferDetail.obsTimeZoneId);
+            && Objects.equals(this.obsTimeZoneId, transferDetail.obsTimeZoneId)
+            && Objects.equals(this.tags, transferDetail.tags);
     }
 
     @Override
@@ -524,7 +535,8 @@ public class TransferDetail {
             kafkaId,
             kafkaTopic,
             obsTimeZone,
-            obsTimeZoneId);
+            obsTimeZoneId,
+            tags);
     }
 
     @Override
@@ -546,6 +558,7 @@ public class TransferDetail {
         sb.append("    kafkaTopic: ").append(toIndentedString(kafkaTopic)).append("\n");
         sb.append("    obsTimeZone: ").append(toIndentedString(obsTimeZone)).append("\n");
         sb.append("    obsTimeZoneId: ").append(toIndentedString(obsTimeZoneId)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

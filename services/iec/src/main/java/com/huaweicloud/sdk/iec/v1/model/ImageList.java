@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -19,14 +18,10 @@ public class ImageList {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
-
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
@@ -128,8 +123,6 @@ public class ImageList {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    @JacksonXmlProperty(localName = "status")
-
     private StatusEnum status;
 
     /**
@@ -230,91 +223,65 @@ public class ImageList {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "disk_format")
 
-    @JacksonXmlProperty(localName = "disk_format")
-
     private DiskFormatEnum diskFormat;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "min_disk")
-
-    @JacksonXmlProperty(localName = "min_disk")
 
     private Integer minDisk;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "min_ram")
 
-    @JacksonXmlProperty(localName = "min_ram")
-
     private Integer minRam;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "owner")
-
-    @JacksonXmlProperty(localName = "owner")
 
     private String owner;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protected")
 
-    @JacksonXmlProperty(localName = "protected")
-
     private Boolean _protected;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "visibility")
-
-    @JacksonXmlProperty(localName = "visibility")
 
     private String visibility;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
 
-    @JacksonXmlProperty(localName = "created_at")
-
     private String createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_at")
-
-    @JacksonXmlProperty(localName = "updated_at")
 
     private String updatedAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "self")
 
-    @JacksonXmlProperty(localName = "self")
-
     private String self;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deleted")
-
-    @JacksonXmlProperty(localName = "deleted")
 
     private Boolean deleted;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "virtual_env_type")
 
-    @JacksonXmlProperty(localName = "virtual_env_type")
-
     private String virtualEnvType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deleted_at")
 
-    @JacksonXmlProperty(localName = "deleted_at")
-
     private String deletedAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "relation_job_id")
-
-    @JacksonXmlProperty(localName = "relation_job_id")
 
     private String relationJobId;
 
@@ -398,14 +365,10 @@ public class ImageList {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__imagetype")
 
-    @JacksonXmlProperty(localName = "__imagetype")
-
     private ImagetypeEnum imagetype;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__platform")
-
-    @JacksonXmlProperty(localName = "__platform")
 
     private String platform;
 
@@ -495,77 +458,55 @@ public class ImageList {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__os_type")
 
-    @JacksonXmlProperty(localName = "__os_type")
-
     private OsTypeEnum osType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__os_version")
-
-    @JacksonXmlProperty(localName = "__os_version")
 
     private String osVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__isregistered")
 
-    @JacksonXmlProperty(localName = "__isregistered")
-
     private Boolean isregistered;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__support_kvm")
-
-    @JacksonXmlProperty(localName = "__support_kvm")
 
     private String supportKvm;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__support_kvm_gpu_type")
 
-    @JacksonXmlProperty(localName = "__support_kvm_gpu_type")
-
     private String supportKvmGpuType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__support_kvm_ascend_310")
-
-    @JacksonXmlProperty(localName = "__support_kvm_ascend_310")
 
     private String supportKvmAscend310;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__support_kvm_hi1822_hiovs")
 
-    @JacksonXmlProperty(localName = "__support_kvm_hi1822_hiovs")
-
     private String supportKvmHi1822Hiovs;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__support_arm")
-
-    @JacksonXmlProperty(localName = "__support_arm")
 
     private String supportArm;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hw_firmware_type")
 
-    @JacksonXmlProperty(localName = "hw_firmware_type")
-
     private String hwFirmwareType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_source")
 
-    @JacksonXmlProperty(localName = "data_source")
-
     private String dataSource;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__support_gpu_t4")
-
-    @JacksonXmlProperty(localName = "__support_gpu_t4")
 
     private String supportGpuT4;
 

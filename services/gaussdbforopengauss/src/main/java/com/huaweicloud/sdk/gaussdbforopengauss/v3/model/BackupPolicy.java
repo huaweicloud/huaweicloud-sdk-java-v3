@@ -8,8 +8,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -23,7 +21,6 @@ public class BackupPolicy  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="keep_days")
     
-    @JacksonXmlProperty(localName = "keep_days")
     
     private Integer keepDays;
 
@@ -31,7 +28,6 @@ public class BackupPolicy  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="start_time")
     
-    @JacksonXmlProperty(localName = "start_time")
     
     private String startTime;
 
@@ -39,7 +35,6 @@ public class BackupPolicy  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="period")
     
-    @JacksonXmlProperty(localName = "period")
     
     private String period;
 
@@ -47,9 +42,29 @@ public class BackupPolicy  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="differential_period")
     
-    @JacksonXmlProperty(localName = "differential_period")
     
     private String differentialPeriod;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="rate_limit")
+    
+    
+    private Integer rateLimit;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="prefetch_block")
+    
+    
+    private Integer prefetchBlock;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="filesplit_size")
+    
+    
+    private Integer filesplitSize;
 
     public BackupPolicy withKeepDays(Integer keepDays) {
         this.keepDays = keepDays;
@@ -139,6 +154,78 @@ public class BackupPolicy  {
 
     
 
+    public BackupPolicy withRateLimit(Integer rateLimit) {
+        this.rateLimit = rateLimit;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 备份限速  取值范围：0 ~ 1024
+     * minimum: 0
+     * maximum: 1024
+     * @return rateLimit
+     */
+    public Integer getRateLimit() {
+        return rateLimit;
+    }
+
+    public void setRateLimit(Integer rateLimit) {
+        this.rateLimit = rateLimit;
+    }
+
+    
+
+    public BackupPolicy withPrefetchBlock(Integer prefetchBlock) {
+        this.prefetchBlock = prefetchBlock;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 控制差量备份时读取磁盘上表文件差量修改页面的预取页面个数。当差量修改页面非常集中时（如数据导入场景），可以适当调大该值；当差量修改页面非常分散时（如随机更新），可以适当调小该值。  取值范围：1 ~ 8192
+     * minimum: 1
+     * maximum: 8192
+     * @return prefetchBlock
+     */
+    public Integer getPrefetchBlock() {
+        return prefetchBlock;
+    }
+
+    public void setPrefetchBlock(Integer prefetchBlock) {
+        this.prefetchBlock = prefetchBlock;
+    }
+
+    
+
+    public BackupPolicy withFilesplitSize(Integer filesplitSize) {
+        this.filesplitSize = filesplitSize;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 全量、差量备份时产生的备份文件会根据分片大小进行拆分，可设置范围为0~1024GB，设置需为4的倍数，默认4GB，0GB表示不限制大小。  取值范围：0 ~ 1024
+     * minimum: 0
+     * maximum: 1024
+     * @return filesplitSize
+     */
+    public Integer getFilesplitSize() {
+        return filesplitSize;
+    }
+
+    public void setFilesplitSize(Integer filesplitSize) {
+        this.filesplitSize = filesplitSize;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -151,11 +238,14 @@ public class BackupPolicy  {
         return Objects.equals(this.keepDays, backupPolicy.keepDays) &&
             Objects.equals(this.startTime, backupPolicy.startTime) &&
             Objects.equals(this.period, backupPolicy.period) &&
-            Objects.equals(this.differentialPeriod, backupPolicy.differentialPeriod);
+            Objects.equals(this.differentialPeriod, backupPolicy.differentialPeriod) &&
+            Objects.equals(this.rateLimit, backupPolicy.rateLimit) &&
+            Objects.equals(this.prefetchBlock, backupPolicy.prefetchBlock) &&
+            Objects.equals(this.filesplitSize, backupPolicy.filesplitSize);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(keepDays, startTime, period, differentialPeriod);
+        return Objects.hash(keepDays, startTime, period, differentialPeriod, rateLimit, prefetchBlock, filesplitSize);
     }
     @Override
     public String toString() {
@@ -165,6 +255,9 @@ public class BackupPolicy  {
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    period: ").append(toIndentedString(period)).append("\n");
         sb.append("    differentialPeriod: ").append(toIndentedString(differentialPeriod)).append("\n");
+        sb.append("    rateLimit: ").append(toIndentedString(rateLimit)).append("\n");
+        sb.append("    prefetchBlock: ").append(toIndentedString(prefetchBlock)).append("\n");
+        sb.append("    filesplitSize: ").append(toIndentedString(filesplitSize)).append("\n");
         sb.append("}");
         return sb.toString();
     }

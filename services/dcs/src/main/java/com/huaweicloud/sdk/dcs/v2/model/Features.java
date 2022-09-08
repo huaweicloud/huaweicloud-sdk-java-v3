@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dcs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,21 +13,15 @@ public class Features {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "support_acl")
 
-    @JacksonXmlProperty(localName = "support_acl")
-
     private Boolean supportAcl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "support_transparent_client_ip")
 
-    @JacksonXmlProperty(localName = "support_transparent_client_ip")
-
     private Boolean supportTransparentClientIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "support_ssl")
-
-    @JacksonXmlProperty(localName = "support_ssl")
 
     private Boolean supportSsl;
 

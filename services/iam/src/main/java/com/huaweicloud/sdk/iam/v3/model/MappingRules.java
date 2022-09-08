@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.iam.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,14 +16,10 @@ public class MappingRules {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "local")
 
-    @JacksonXmlProperty(localName = "local")
-
     private List<RulesLocal> local = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remote")
-
-    @JacksonXmlProperty(localName = "remote")
 
     private List<RulesRemote> remote = null;
 

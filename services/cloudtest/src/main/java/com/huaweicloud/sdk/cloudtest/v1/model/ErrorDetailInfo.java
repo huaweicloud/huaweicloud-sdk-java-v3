@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cloudtest.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,8 +15,6 @@ public class ErrorDetailInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "failed")
-
-    @JacksonXmlProperty(localName = "failed")
 
     private List<ErrorCaseInfoBean> failed = null;
 

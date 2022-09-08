@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.roma.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,28 +13,20 @@ public class TaskStatisticDetails {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "running_tasks_count")
 
-    @JacksonXmlProperty(localName = "running_tasks_count")
-
     private Integer runningTasksCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "abnormal_tasks_count")
-
-    @JacksonXmlProperty(localName = "abnormal_tasks_count")
 
     private Integer abnormalTasksCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "terminated_tasks_count")
 
-    @JacksonXmlProperty(localName = "terminated_tasks_count")
-
     private Integer terminatedTasksCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "completed_tasks_count")
-
-    @JacksonXmlProperty(localName = "completed_tasks_count")
 
     private Integer completedTasksCount;
 

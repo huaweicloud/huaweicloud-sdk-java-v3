@@ -12,8 +12,6 @@ import com.huaweicloud.sdk.aom.v2.model.MetricDataPoints;
 import com.huaweicloud.sdk.aom.v2.model.QuerySample;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -27,7 +25,6 @@ public class SampleDataValue  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sample")
     
-    @JacksonXmlProperty(localName = "sample")
     
     private QuerySample sample;
 
@@ -35,7 +32,6 @@ public class SampleDataValue  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="data_points")
     
-    @JacksonXmlProperty(localName = "data_points")
     
     private List<MetricDataPoints> dataPoints = null;
     

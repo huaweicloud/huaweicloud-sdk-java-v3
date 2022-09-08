@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,8 +17,6 @@ public class CreateKeyRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key_alias")
-
-    @JacksonXmlProperty(localName = "key_alias")
 
     private String keyAlias;
 
@@ -139,8 +136,6 @@ public class CreateKeyRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key_spec")
 
-    @JacksonXmlProperty(localName = "key_spec")
-
     private KeySpecEnum keySpec;
 
     /**
@@ -223,14 +218,10 @@ public class CreateKeyRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key_usage")
 
-    @JacksonXmlProperty(localName = "key_usage")
-
     private KeyUsageEnum keyUsage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key_description")
-
-    @JacksonXmlProperty(localName = "key_description")
 
     private String keyDescription;
 
@@ -314,28 +305,20 @@ public class CreateKeyRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "origin")
 
-    @JacksonXmlProperty(localName = "origin")
-
     private OriginEnum origin;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
-
-    @JacksonXmlProperty(localName = "enterprise_project_id")
 
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sequence")
 
-    @JacksonXmlProperty(localName = "sequence")
-
     private String sequence;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "keystore_id")
-
-    @JacksonXmlProperty(localName = "keystore_id")
 
     private String keystoreId;
 

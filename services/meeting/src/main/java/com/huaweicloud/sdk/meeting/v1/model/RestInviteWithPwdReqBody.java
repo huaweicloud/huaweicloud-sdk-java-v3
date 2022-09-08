@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,42 +13,30 @@ public class RestInviteWithPwdReqBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "callNum")
 
-    @JacksonXmlProperty(localName = "callNum")
-
     private String callNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "orgID")
-
-    @JacksonXmlProperty(localName = "orgID")
 
     private String orgID;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confID")
 
-    @JacksonXmlProperty(localName = "confID")
-
     private String confID;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pwd")
-
-    @JacksonXmlProperty(localName = "pwd")
 
     private String pwd;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "numBelongsType")
 
-    @JacksonXmlProperty(localName = "numBelongsType")
-
     private Integer numBelongsType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "isNotOverlayPidName")
-
-    @JacksonXmlProperty(localName = "isNotOverlayPidName")
 
     private Boolean isNotOverlayPidName;
 

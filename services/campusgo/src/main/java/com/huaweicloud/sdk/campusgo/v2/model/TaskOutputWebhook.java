@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.campusgo.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.net.URI;
 import java.util.ArrayList;
@@ -18,21 +17,15 @@ public class TaskOutputWebhook {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "url")
 
-    @JacksonXmlProperty(localName = "url")
-
     private URI url;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "headers")
 
-    @JacksonXmlProperty(localName = "headers")
-
     private Object headers;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_category")
-
-    @JacksonXmlProperty(localName = "data_category")
 
     private List<String> dataCategory = null;
 

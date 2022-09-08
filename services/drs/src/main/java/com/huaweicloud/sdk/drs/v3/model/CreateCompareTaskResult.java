@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.drs.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,21 +13,15 @@ public class CreateCompareTaskResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "compare_task_id")
 
-    @JacksonXmlProperty(localName = "compare_task_id")
-
     private String compareTaskId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_code")
 
-    @JacksonXmlProperty(localName = "error_code")
-
     private String errorCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_msg")
-
-    @JacksonXmlProperty(localName = "error_msg")
 
     private String errorMsg;
 

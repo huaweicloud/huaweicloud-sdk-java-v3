@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -108,8 +107,6 @@ public class NovaServerBlockDeviceMapping {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_type")
 
-    @JacksonXmlProperty(localName = "source_type")
-
     private SourceTypeEnum sourceType;
 
     /**
@@ -186,56 +183,40 @@ public class NovaServerBlockDeviceMapping {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "destination_type")
 
-    @JacksonXmlProperty(localName = "destination_type")
-
     private DestinationTypeEnum destinationType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "guest_format")
-
-    @JacksonXmlProperty(localName = "guest_format")
 
     private String guestFormat;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "device_name")
 
-    @JacksonXmlProperty(localName = "device_name")
-
     private String deviceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "delete_on_termination")
-
-    @JacksonXmlProperty(localName = "delete_on_termination")
 
     private Boolean deleteOnTermination;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "boot_index")
 
-    @JacksonXmlProperty(localName = "boot_index")
-
     private String bootIndex;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "uuid")
-
-    @JacksonXmlProperty(localName = "uuid")
 
     private String uuid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volume_size")
 
-    @JacksonXmlProperty(localName = "volume_size")
-
     private Integer volumeSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volume_type")
-
-    @JacksonXmlProperty(localName = "volume_type")
 
     private String volumeType;
 

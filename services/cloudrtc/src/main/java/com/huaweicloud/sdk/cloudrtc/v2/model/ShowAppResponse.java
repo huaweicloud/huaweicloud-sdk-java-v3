@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Collections;
@@ -21,21 +20,15 @@ public class ShowAppResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_name")
 
-    @JacksonXmlProperty(localName = "app_name")
-
     private String appName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_id")
 
-    @JacksonXmlProperty(localName = "app_id")
-
     private String appId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "state")
-
-    @JacksonXmlProperty(localName = "state")
 
     private AppState state;
 
@@ -125,56 +118,40 @@ public class ShowAppResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scope")
 
-    @JacksonXmlProperty(localName = "scope")
-
     private ScopeEnum scope;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tenant_name")
-
-    @JacksonXmlProperty(localName = "tenant_name")
 
     private String tenantName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain")
 
-    @JacksonXmlProperty(localName = "domain")
-
     private String domain;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
-
-    @JacksonXmlProperty(localName = "create_time")
 
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "authentication")
 
-    @JacksonXmlProperty(localName = "authentication")
-
     private AppAuth authentication;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "callbacks")
-
-    @JacksonXmlProperty(localName = "callbacks")
 
     private AppCallbacks callbacks;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auto_record_mode")
 
-    @JacksonXmlProperty(localName = "auto_record_mode")
-
     private AppAutoRecordMode autoRecordMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-request-Id")
-
-    @JacksonXmlProperty(localName = "X-request-Id")
 
     private String xRequestId;
 

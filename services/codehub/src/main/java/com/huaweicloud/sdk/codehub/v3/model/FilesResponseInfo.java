@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.codehub.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,56 +13,40 @@ public class FilesResponseInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_name")
 
-    @JacksonXmlProperty(localName = "file_name")
-
     private String fileName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_path")
-
-    @JacksonXmlProperty(localName = "file_path")
 
     private String filePath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
 
-    @JacksonXmlProperty(localName = "size")
-
     private String size;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "encoding")
-
-    @JacksonXmlProperty(localName = "encoding")
 
     private String encoding;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ref")
 
-    @JacksonXmlProperty(localName = "ref")
-
     private String ref;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "blob_id")
-
-    @JacksonXmlProperty(localName = "blob_id")
 
     private String blobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_type")
 
-    @JacksonXmlProperty(localName = "file_type")
-
     private String fileType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "content")
-
-    @JacksonXmlProperty(localName = "content")
 
     private String content;
 

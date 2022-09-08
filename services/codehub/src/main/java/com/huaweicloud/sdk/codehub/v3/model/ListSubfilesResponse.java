@@ -2,11 +2,8 @@ package com.huaweicloud.sdk.codehub.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -16,67 +13,87 @@ import java.util.function.Consumer;
 public class ListSubfilesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "trees")
+    @JsonProperty(value = "error")
 
-    @JacksonXmlProperty(localName = "trees")
-
-    private List<LogsTree> trees = null;
+    private Error error;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "total")
+    @JsonProperty(value = "result")
 
-    @JacksonXmlProperty(localName = "total")
+    private LogsTreeList result;
 
-    private Integer total;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status")
 
-    public ListSubfilesResponse withTrees(List<LogsTree> trees) {
-        this.trees = trees;
+    private String status;
+
+    public ListSubfilesResponse withError(Error error) {
+        this.error = error;
         return this;
     }
 
-    public ListSubfilesResponse addTreesItem(LogsTree treesItem) {
-        if (this.trees == null) {
-            this.trees = new ArrayList<>();
+    public ListSubfilesResponse withError(Consumer<Error> errorSetter) {
+        if (this.error == null) {
+            this.error = new Error();
+            errorSetter.accept(this.error);
         }
-        this.trees.add(treesItem);
-        return this;
-    }
 
-    public ListSubfilesResponse withTrees(Consumer<List<LogsTree>> treesSetter) {
-        if (this.trees == null) {
-            this.trees = new ArrayList<>();
-        }
-        treesSetter.accept(this.trees);
         return this;
     }
 
     /**
-     * 文件日志树
-     * @return trees
+     * Get error
+     * @return error
      */
-    public List<LogsTree> getTrees() {
-        return trees;
+    public Error getError() {
+        return error;
     }
 
-    public void setTrees(List<LogsTree> trees) {
-        this.trees = trees;
+    public void setError(Error error) {
+        this.error = error;
     }
 
-    public ListSubfilesResponse withTotal(Integer total) {
-        this.total = total;
+    public ListSubfilesResponse withResult(LogsTreeList result) {
+        this.result = result;
+        return this;
+    }
+
+    public ListSubfilesResponse withResult(Consumer<LogsTreeList> resultSetter) {
+        if (this.result == null) {
+            this.result = new LogsTreeList();
+            resultSetter.accept(this.result);
+        }
+
         return this;
     }
 
     /**
-     * 记录总数
-     * @return total
+     * Get result
+     * @return result
      */
-    public Integer getTotal() {
-        return total;
+    public LogsTreeList getResult() {
+        return result;
     }
 
-    public void setTotal(Integer total) {
-        this.total = total;
+    public void setResult(LogsTreeList result) {
+        this.result = result;
+    }
+
+    public ListSubfilesResponse withStatus(String status) {
+        this.status = status;
+        return this;
+    }
+
+    /**
+     * 响应状态
+     * @return status
+     */
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     @Override
@@ -88,21 +105,23 @@ public class ListSubfilesResponse extends SdkResponse {
             return false;
         }
         ListSubfilesResponse listSubfilesResponse = (ListSubfilesResponse) o;
-        return Objects.equals(this.trees, listSubfilesResponse.trees)
-            && Objects.equals(this.total, listSubfilesResponse.total);
+        return Objects.equals(this.error, listSubfilesResponse.error)
+            && Objects.equals(this.result, listSubfilesResponse.result)
+            && Objects.equals(this.status, listSubfilesResponse.status);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(trees, total);
+        return Objects.hash(error, result, status);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListSubfilesResponse {\n");
-        sb.append("    trees: ").append(toIndentedString(trees)).append("\n");
-        sb.append("    total: ").append(toIndentedString(total)).append("\n");
+        sb.append("    error: ").append(toIndentedString(error)).append("\n");
+        sb.append("    result: ").append(toIndentedString(result)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.gsl.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,21 +16,15 @@ public class BatchSetTagsReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_temp_id")
 
-    @JacksonXmlProperty(localName = "file_temp_id")
-
     private Long fileTempId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sim_card_ids")
 
-    @JacksonXmlProperty(localName = "sim_card_ids")
-
     private List<Long> simCardIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tag_ids")
-
-    @JacksonXmlProperty(localName = "tag_ids")
 
     private List<Long> tagIds = null;
 

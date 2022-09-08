@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.bss.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,35 +13,25 @@ public class TransferEnterpriseMultiAccountReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "customer_id")
 
-    @JacksonXmlProperty(localName = "customer_id")
-
     private String customerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "amount")
-
-    @JacksonXmlProperty(localName = "amount")
 
     private String amount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trans_id")
 
-    @JacksonXmlProperty(localName = "trans_id")
-
     private String transId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "balance_type")
 
-    @JacksonXmlProperty(localName = "balance_type")
-
     private String balanceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expire_time")
-
-    @JacksonXmlProperty(localName = "expire_time")
 
     private String expireTime;
 

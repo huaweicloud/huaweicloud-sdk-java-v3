@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cloudpipeline.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,77 +16,55 @@ public class Source {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "codehub_name")
 
-    @JacksonXmlProperty(localName = "codehub_name")
-
     private String codehubName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "branches")
-
-    @JacksonXmlProperty(localName = "branches")
 
     private List<String> branches = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scm_type")
 
-    @JacksonXmlProperty(localName = "scm_type")
-
     private String scmType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hook_flag")
-
-    @JacksonXmlProperty(localName = "hook_flag")
 
     private Boolean hookFlag;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "branch")
 
-    @JacksonXmlProperty(localName = "branch")
-
     private String branch;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "git_url")
-
-    @JacksonXmlProperty(localName = "git_url")
 
     private String gitUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "codehub_id")
 
-    @JacksonXmlProperty(localName = "codehub_id")
-
     private String codehubId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "web_url")
-
-    @JacksonXmlProperty(localName = "web_url")
 
     private String webUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "branch_list")
 
-    @JacksonXmlProperty(localName = "branch_list")
-
     private List<String> branchList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "init_id")
 
-    @JacksonXmlProperty(localName = "init_id")
-
     private String initId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "disable")
-
-    @JacksonXmlProperty(localName = "disable")
 
     private Boolean disable;
 

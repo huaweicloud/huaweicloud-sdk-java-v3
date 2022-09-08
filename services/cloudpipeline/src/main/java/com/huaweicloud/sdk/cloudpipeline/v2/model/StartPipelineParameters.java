@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cloudpipeline.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,8 +15,6 @@ public class StartPipelineParameters {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "build_params")
-
-    @JacksonXmlProperty(localName = "build_params")
 
     private List<StartPipelineBuildParams> buildParams = null;
 

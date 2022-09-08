@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.ecs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,21 +14,15 @@ public class PostPaidServerEip {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "iptype")
 
-    @JacksonXmlProperty(localName = "iptype")
-
     private String iptype;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bandwidth")
 
-    @JacksonXmlProperty(localName = "bandwidth")
-
     private PostPaidServerEipBandwidth bandwidth;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extendparam")
-
-    @JacksonXmlProperty(localName = "extendparam")
 
     private PostPaidServerEipExtendParam extendparam;
 

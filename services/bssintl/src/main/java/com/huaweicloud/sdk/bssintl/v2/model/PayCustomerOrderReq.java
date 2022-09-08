@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.bssintl.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,21 +16,15 @@ public class PayCustomerOrderReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "order_id")
 
-    @JacksonXmlProperty(localName = "order_id")
-
     private String orderId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "coupon_infos")
 
-    @JacksonXmlProperty(localName = "coupon_infos")
-
     private List<CouponSimpleInfoOrderPay> couponInfos = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "discount_infos")
-
-    @JacksonXmlProperty(localName = "discount_infos")
 
     private List<DiscountSimpleInfo> discountInfos = null;
 

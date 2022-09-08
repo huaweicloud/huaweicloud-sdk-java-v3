@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -103,21 +102,15 @@ public class Schedule {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scheType")
 
-    @JacksonXmlProperty(localName = "scheType")
-
     private ScheTypeEnum scheType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cron")
 
-    @JacksonXmlProperty(localName = "cron")
-
     private Cron cron;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event")
-
-    @JacksonXmlProperty(localName = "event")
 
     private Event event;
 

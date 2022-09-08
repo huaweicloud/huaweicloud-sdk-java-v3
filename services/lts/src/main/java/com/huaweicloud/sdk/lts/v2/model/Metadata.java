@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.lts.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,56 +13,40 @@ public class Metadata {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_type")
 
-    @JacksonXmlProperty(localName = "event_type")
-
     private String eventType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_id")
-
-    @JacksonXmlProperty(localName = "event_id")
 
     private String eventId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_severity")
 
-    @JacksonXmlProperty(localName = "event_severity")
-
     private String eventSeverity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_name")
-
-    @JacksonXmlProperty(localName = "event_name")
 
     private String eventName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_type")
 
-    @JacksonXmlProperty(localName = "resource_type")
-
     private String resourceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_id")
-
-    @JacksonXmlProperty(localName = "resource_id")
 
     private String resourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_provider")
 
-    @JacksonXmlProperty(localName = "resource_provider")
-
     private String resourceProvider;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lts_alarm_type")
-
-    @JacksonXmlProperty(localName = "lts_alarm_type")
 
     private String ltsAlarmType;
 

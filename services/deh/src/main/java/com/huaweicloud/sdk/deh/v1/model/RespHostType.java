@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.deh.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,14 +13,10 @@ public class RespHostType {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_type")
 
-    @JacksonXmlProperty(localName = "host_type")
-
     private String hostType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_type_name")
-
-    @JacksonXmlProperty(localName = "host_type_name")
 
     private String hostTypeName;
 

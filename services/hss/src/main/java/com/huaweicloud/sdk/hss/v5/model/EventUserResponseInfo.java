@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.hss.v5.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,119 +13,85 @@ public class EventUserResponseInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_id")
 
-    @JacksonXmlProperty(localName = "user_id")
-
     private Integer userId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_gid")
-
-    @JacksonXmlProperty(localName = "user_gid")
 
     private Integer userGid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_name")
 
-    @JacksonXmlProperty(localName = "user_name")
-
     private String userName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_group_name")
-
-    @JacksonXmlProperty(localName = "user_group_name")
 
     private String userGroupName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_home_dir")
 
-    @JacksonXmlProperty(localName = "user_home_dir")
-
     private String userHomeDir;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "login_ip")
-
-    @JacksonXmlProperty(localName = "login_ip")
 
     private String loginIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_type")
 
-    @JacksonXmlProperty(localName = "service_type")
-
     private String serviceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_port")
-
-    @JacksonXmlProperty(localName = "service_port")
 
     private Integer servicePort;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "login_mode")
 
-    @JacksonXmlProperty(localName = "login_mode")
-
     private Integer loginMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "login_last_time")
-
-    @JacksonXmlProperty(localName = "login_last_time")
 
     private Long loginLastTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "login_fail_count")
 
-    @JacksonXmlProperty(localName = "login_fail_count")
-
     private Integer loginFailCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pwd_hash")
-
-    @JacksonXmlProperty(localName = "pwd_hash")
 
     private String pwdHash;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pwd_with_fuzzing")
 
-    @JacksonXmlProperty(localName = "pwd_with_fuzzing")
-
     private String pwdWithFuzzing;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pwd_used_days")
-
-    @JacksonXmlProperty(localName = "pwd_used_days")
 
     private Integer pwdUsedDays;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pwd_min_days")
 
-    @JacksonXmlProperty(localName = "pwd_min_days")
-
     private Integer pwdMinDays;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pwd_max_days")
 
-    @JacksonXmlProperty(localName = "pwd_max_days")
-
     private Integer pwdMaxDays;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pwd_warn_left_days")
-
-    @JacksonXmlProperty(localName = "pwd_warn_left_days")
 
     private Integer pwdWarnLeftDays;
 

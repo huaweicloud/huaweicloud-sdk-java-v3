@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.ddm.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,98 +13,70 @@ public class ComputeFlavors {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "typeCode")
-
-    @JacksonXmlProperty(localName = "typeCode")
 
     private String typeCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "code")
 
-    @JacksonXmlProperty(localName = "code")
-
     private String code;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "iaasCode")
-
-    @JacksonXmlProperty(localName = "iaasCode")
 
     private String iaasCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cpu")
 
-    @JacksonXmlProperty(localName = "cpu")
-
     private String cpu;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mem")
-
-    @JacksonXmlProperty(localName = "mem")
 
     private String mem;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maxConnections")
 
-    @JacksonXmlProperty(localName = "maxConnections")
-
     private String maxConnections;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "serverType")
-
-    @JacksonXmlProperty(localName = "serverType")
 
     private String serverType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "architecture")
 
-    @JacksonXmlProperty(localName = "architecture")
-
     private String architecture;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "azStatus")
-
-    @JacksonXmlProperty(localName = "azStatus")
 
     private Object azStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "regionStatus")
 
-    @JacksonXmlProperty(localName = "regionStatus")
-
     private String regionStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "groupType")
-
-    @JacksonXmlProperty(localName = "groupType")
 
     private String groupType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dbType")
 
-    @JacksonXmlProperty(localName = "dbType")
-
     private String dbType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extendFields")
-
-    @JacksonXmlProperty(localName = "extendFields")
 
     private Object extendFields;
 

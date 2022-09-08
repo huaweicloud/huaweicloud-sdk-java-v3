@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.bss.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,28 +16,20 @@ public class SendSmVerificationCodeReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mobile_phone")
 
-    @JacksonXmlProperty(localName = "mobile_phone")
-
     private String mobilePhone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timeout")
-
-    @JacksonXmlProperty(localName = "timeout")
 
     private Integer timeout;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "language")
 
-    @JacksonXmlProperty(localName = "language")
-
     private String language;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sm_template_args")
-
-    @JacksonXmlProperty(localName = "sm_template_args")
 
     private List<TemplateArgs> smTemplateArgs = null;
 

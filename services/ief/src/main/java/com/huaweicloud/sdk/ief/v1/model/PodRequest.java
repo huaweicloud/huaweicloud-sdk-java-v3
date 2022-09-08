@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.ief.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,28 +16,20 @@ public class PodRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "configs")
 
-    @JacksonXmlProperty(localName = "configs")
-
     private PodConfigs configs;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "affinity")
-
-    @JacksonXmlProperty(localName = "affinity")
 
     private Affinity affinity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "init_containers")
 
-    @JacksonXmlProperty(localName = "init_containers")
-
     private List<ContainerDef> initContainers = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "containers")
-
-    @JacksonXmlProperty(localName = "containers")
 
     private List<ContainerDef> containers = null;
 

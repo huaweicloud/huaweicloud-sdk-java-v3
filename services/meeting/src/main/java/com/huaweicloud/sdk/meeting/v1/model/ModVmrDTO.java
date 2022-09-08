@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,35 +13,25 @@ public class ModVmrDTO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vmrName")
 
-    @JacksonXmlProperty(localName = "vmrName")
-
     private String vmrName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "gustPwd")
-
-    @JacksonXmlProperty(localName = "gustPwd")
 
     private String gustPwd;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "chairPwd")
 
-    @JacksonXmlProperty(localName = "chairPwd")
-
     private String chairPwd;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "allowGustFirst")
 
-    @JacksonXmlProperty(localName = "allowGustFirst")
-
     private Boolean allowGustFirst;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "gustFirstNotice")
-
-    @JacksonXmlProperty(localName = "gustFirstNotice")
 
     private Boolean gustFirstNotice;
 

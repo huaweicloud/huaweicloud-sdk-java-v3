@@ -14,8 +14,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -29,7 +27,6 @@ public class RelationModel  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="key")
     
-    @JacksonXmlProperty(localName = "key")
     
     private String key;
 
@@ -37,7 +34,6 @@ public class RelationModel  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="value")
     
-    @JacksonXmlProperty(localName = "value")
     
     private List<String> value = null;
         /**
@@ -129,7 +125,6 @@ public class RelationModel  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="relation")
     
-    @JacksonXmlProperty(localName = "relation")
     
     private RelationEnum relation;
 

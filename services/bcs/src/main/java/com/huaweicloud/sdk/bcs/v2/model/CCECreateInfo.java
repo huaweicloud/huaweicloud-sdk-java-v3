@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.bcs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,42 +13,30 @@ public class CCECreateInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "node_num")
 
-    @JacksonXmlProperty(localName = "node_num")
-
     private Long nodeNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "node_flavor")
-
-    @JacksonXmlProperty(localName = "node_flavor")
 
     private String nodeFlavor;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cce_flavor")
 
-    @JacksonXmlProperty(localName = "cce_flavor")
-
     private String cceFlavor;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "init_node_pwd")
-
-    @JacksonXmlProperty(localName = "init_node_pwd")
 
     private String initNodePwd;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "az")
 
-    @JacksonXmlProperty(localName = "az")
-
     private String az;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cluster_platform_type")
-
-    @JacksonXmlProperty(localName = "cluster_platform_type")
 
     private String clusterPlatformType;
 

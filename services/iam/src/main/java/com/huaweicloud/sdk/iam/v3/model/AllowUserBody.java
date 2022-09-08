@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.iam.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,28 +13,20 @@ public class AllowUserBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "manage_accesskey")
 
-    @JacksonXmlProperty(localName = "manage_accesskey")
-
     private Boolean manageAccesskey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "manage_email")
-
-    @JacksonXmlProperty(localName = "manage_email")
 
     private Boolean manageEmail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "manage_mobile")
 
-    @JacksonXmlProperty(localName = "manage_mobile")
-
     private Boolean manageMobile;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "manage_password")
-
-    @JacksonXmlProperty(localName = "manage_password")
 
     private Boolean managePassword;
 

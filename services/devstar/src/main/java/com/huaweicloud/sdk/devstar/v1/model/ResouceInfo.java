@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.devstar.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,56 +13,40 @@ public class ResouceInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
-    @JacksonXmlProperty(localName = "name")
-
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
-
-    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "home_link")
 
-    @JacksonXmlProperty(localName = "home_link")
-
     private String homeLink;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subscribe_link")
-
-    @JacksonXmlProperty(localName = "subscribe_link")
 
     private String subscribeLink;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
-    @JacksonXmlProperty(localName = "type")
-
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "reference_price")
-
-    @JacksonXmlProperty(localName = "reference_price")
 
     private String referencePrice;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "price_details_link")
 
-    @JacksonXmlProperty(localName = "price_details_link")
-
     private String priceDetailsLink;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "specifications")
-
-    @JacksonXmlProperty(localName = "specifications")
 
     private Object specifications;
 

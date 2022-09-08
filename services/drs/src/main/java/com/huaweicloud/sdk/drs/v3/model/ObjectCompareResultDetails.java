@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.drs.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,35 +13,25 @@ public class ObjectCompareResultDetails {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_db_name")
 
-    @JacksonXmlProperty(localName = "source_db_name")
-
     private String sourceDbName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_db_name")
-
-    @JacksonXmlProperty(localName = "target_db_name")
 
     private String targetDbName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_db_value")
 
-    @JacksonXmlProperty(localName = "source_db_value")
-
     private String sourceDbValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_db_value")
 
-    @JacksonXmlProperty(localName = "target_db_value")
-
     private String targetDbValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_message")
-
-    @JacksonXmlProperty(localName = "error_message")
 
     private String errorMessage;
 

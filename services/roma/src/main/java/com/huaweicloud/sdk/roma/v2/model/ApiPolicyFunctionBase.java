@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,8 +17,6 @@ public class ApiPolicyFunctionBase {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "function_urn")
-
-    @JacksonXmlProperty(localName = "function_urn")
 
     private String functionUrn;
 
@@ -103,21 +100,15 @@ public class ApiPolicyFunctionBase {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "invocation_type")
 
-    @JacksonXmlProperty(localName = "invocation_type")
-
     private InvocationTypeEnum invocationType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timeout")
 
-    @JacksonXmlProperty(localName = "timeout")
-
     private Integer timeout;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
-
-    @JacksonXmlProperty(localName = "version")
 
     private String version;
 

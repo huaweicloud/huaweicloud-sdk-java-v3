@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.swr.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,84 +13,60 @@ public class CreateTriggerRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "action")
 
-    @JacksonXmlProperty(localName = "action")
-
     private String action;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_type")
-
-    @JacksonXmlProperty(localName = "app_type")
 
     private String appType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "application")
 
-    @JacksonXmlProperty(localName = "application")
-
     private String application;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cluster_id")
-
-    @JacksonXmlProperty(localName = "cluster_id")
 
     private String clusterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cluster_name")
 
-    @JacksonXmlProperty(localName = "cluster_name")
-
     private String clusterName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cluster_ns")
-
-    @JacksonXmlProperty(localName = "cluster_ns")
 
     private String clusterNs;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "condition")
 
-    @JacksonXmlProperty(localName = "condition")
-
     private String condition;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "container")
-
-    @JacksonXmlProperty(localName = "container")
 
     private String container;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable")
 
-    @JacksonXmlProperty(localName = "enable")
-
     private String enable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
-
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trigger_mode")
 
-    @JacksonXmlProperty(localName = "trigger_mode")
-
     private String triggerMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trigger_type")
-
-    @JacksonXmlProperty(localName = "trigger_type")
 
     private String triggerType;
 

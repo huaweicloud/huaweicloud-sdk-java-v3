@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -150,8 +149,6 @@ public class ApiAuthDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auth_method")
 
-    @JacksonXmlProperty(localName = "auth_method")
-
     private AuthMethodEnum authMethod;
 
     /**
@@ -240,91 +237,65 @@ public class ApiAuthDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_auth_type")
 
-    @JacksonXmlProperty(localName = "app_auth_type")
-
     private AppAuthTypeEnum appAuthType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_name")
-
-    @JacksonXmlProperty(localName = "user_name")
 
     private String userName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "password")
 
-    @JacksonXmlProperty(localName = "password")
-
     private String password;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_key")
-
-    @JacksonXmlProperty(localName = "app_key")
 
     private String appKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_secret")
 
-    @JacksonXmlProperty(localName = "app_secret")
-
     private String appSecret;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "secret")
-
-    @JacksonXmlProperty(localName = "secret")
 
     private String secret;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alt_ip")
 
-    @JacksonXmlProperty(localName = "alt_ip")
-
     private String altIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "access_token_url")
-
-    @JacksonXmlProperty(localName = "access_token_url")
 
     private String accessTokenUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "client_id")
 
-    @JacksonXmlProperty(localName = "client_id")
-
     private String clientId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "client_secret")
-
-    @JacksonXmlProperty(localName = "client_secret")
 
     private String clientSecret;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scope")
 
-    @JacksonXmlProperty(localName = "scope")
-
     private String scope;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "authorization")
 
-    @JacksonXmlProperty(localName = "authorization")
-
     private String authorization;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "grant_type")
-
-    @JacksonXmlProperty(localName = "grant_type")
 
     private String grantType;
 

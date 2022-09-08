@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.mpc.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,35 +13,25 @@ public class AudioInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "codec")
 
-    @JacksonXmlProperty(localName = "codec")
-
     private String codec;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sample")
-
-    @JacksonXmlProperty(localName = "sample")
 
     private Integer sample;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "channels")
 
-    @JacksonXmlProperty(localName = "channels")
-
     private Integer channels;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bitrate")
 
-    @JacksonXmlProperty(localName = "bitrate")
-
     private Integer bitrate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bitrate_bps")
-
-    @JacksonXmlProperty(localName = "bitrate_bps")
 
     private Long bitrateBps;
 

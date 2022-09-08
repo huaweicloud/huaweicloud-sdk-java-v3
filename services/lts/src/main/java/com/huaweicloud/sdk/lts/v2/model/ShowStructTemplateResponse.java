@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.lts.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -18,84 +17,60 @@ public class ShowStructTemplateResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "demoFields")
 
-    @JacksonXmlProperty(localName = "demoFields")
-
     private List<StructFieldInfoReturn> demoFields = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tagFields")
-
-    @JacksonXmlProperty(localName = "tagFields")
 
     private List<TagFieldsInfo> tagFields = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "demoLog")
 
-    @JacksonXmlProperty(localName = "demoLog")
-
     private String demoLog;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "demoLabel")
-
-    @JacksonXmlProperty(localName = "demoLabel")
 
     private String demoLabel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "logGroupId")
-
-    @JacksonXmlProperty(localName = "logGroupId")
 
     private String logGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rule")
 
-    @JacksonXmlProperty(localName = "rule")
-
     private ShowStructTemplateRule rule;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cluster_info")
-
-    @JacksonXmlProperty(localName = "cluster_info")
 
     private ShowStructTemplateclusterInfo clusterInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "logStreamId")
 
-    @JacksonXmlProperty(localName = "logStreamId")
-
     private String logStreamId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "projectId")
-
-    @JacksonXmlProperty(localName = "projectId")
 
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "templateName")
 
-    @JacksonXmlProperty(localName = "templateName")
-
     private String templateName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "regex")
-
-    @JacksonXmlProperty(localName = "regex")
 
     private String regex;
 

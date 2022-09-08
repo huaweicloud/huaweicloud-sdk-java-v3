@@ -2,27 +2,22 @@ package com.huaweicloud.sdk.css.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * Kibana公网访问信息
+ * Kibana公网访问信息。只有在authorityEnable设置为true时该参数配置生效。
  */
 public class CreateClusterPublicKibanaReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "eipSize")
 
-    @JacksonXmlProperty(localName = "eipSize")
-
     private Integer eipSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "elbWhiteList")
-
-    @JacksonXmlProperty(localName = "elbWhiteList")
 
     private CreateClusterPublicKibanaElbWhiteList elbWhiteList;
 

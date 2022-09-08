@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.sms.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,42 +13,30 @@ public class BtrfsSubvolumn {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "uuid")
 
-    @JacksonXmlProperty(localName = "uuid")
-
     private String uuid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_snapshot")
-
-    @JacksonXmlProperty(localName = "is_snapshot")
 
     private String isSnapshot;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subvol_id")
 
-    @JacksonXmlProperty(localName = "subvol_id")
-
     private String subvolId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parent_id")
-
-    @JacksonXmlProperty(localName = "parent_id")
 
     private String parentId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subvol_name")
 
-    @JacksonXmlProperty(localName = "subvol_name")
-
     private String subvolName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subvol_mount_path")
-
-    @JacksonXmlProperty(localName = "subvol_mount_path")
 
     private String subvolMountPath;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.classroom.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -15,49 +14,35 @@ public class ShowJobDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "accept_job_num")
 
-    @JacksonXmlProperty(localName = "accept_job_num")
-
     private Integer acceptJobNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time")
-
-    @JacksonXmlProperty(localName = "end_time")
 
     private String endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_answer_visibility")
 
-    @JacksonXmlProperty(localName = "is_answer_visibility")
-
     private String isAnswerVisibility;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_score_visibility")
-
-    @JacksonXmlProperty(localName = "is_score_visibility")
 
     private String isScoreVisibility;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "average_score")
 
-    @JacksonXmlProperty(localName = "average_score")
-
     private String averageScore;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "score_job_num")
 
-    @JacksonXmlProperty(localName = "score_job_num")
-
     private Integer scoreJobNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "submit_job_num")
-
-    @JacksonXmlProperty(localName = "submit_job_num")
 
     private Integer submitJobNum;
 

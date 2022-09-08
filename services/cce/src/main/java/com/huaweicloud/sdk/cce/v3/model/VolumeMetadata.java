@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cce.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,14 +13,10 @@ public class VolumeMetadata {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__system__encrypted")
 
-    @JacksonXmlProperty(localName = "__system__encrypted")
-
     private String systemEncrypted;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__system__cmkid")
-
-    @JacksonXmlProperty(localName = "__system__cmkid")
 
     private String systemCmkid;
 

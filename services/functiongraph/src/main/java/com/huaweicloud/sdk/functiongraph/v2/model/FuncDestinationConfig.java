@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -108,14 +107,10 @@ public class FuncDestinationConfig {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "destination")
 
-    @JacksonXmlProperty(localName = "destination")
-
     private DestinationEnum destination;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "param")
-
-    @JacksonXmlProperty(localName = "param")
 
     private String param;
 

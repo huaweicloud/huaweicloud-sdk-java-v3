@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.apig.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,21 +16,15 @@ public class ApiAuthCreate {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "env_id")
 
-    @JacksonXmlProperty(localName = "env_id")
-
     private String envId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_ids")
 
-    @JacksonXmlProperty(localName = "app_ids")
-
     private List<String> appIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "api_ids")
-
-    @JacksonXmlProperty(localName = "api_ids")
 
     private List<String> apiIds = null;
 

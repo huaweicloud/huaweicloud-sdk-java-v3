@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,8 +17,6 @@ public class CreateQueueReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
-
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
@@ -115,14 +112,10 @@ public class CreateQueueReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "queue_mode")
 
-    @JacksonXmlProperty(localName = "queue_mode")
-
     private QueueModeEnum queueMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
-
-    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
@@ -206,21 +199,15 @@ public class CreateQueueReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "redrive_policy")
 
-    @JacksonXmlProperty(localName = "redrive_policy")
-
     private RedrivePolicyEnum redrivePolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_consume_count")
 
-    @JacksonXmlProperty(localName = "max_consume_count")
-
     private Integer maxConsumeCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "retention_hours")
-
-    @JacksonXmlProperty(localName = "retention_hours")
 
     private Integer retentionHours;
 

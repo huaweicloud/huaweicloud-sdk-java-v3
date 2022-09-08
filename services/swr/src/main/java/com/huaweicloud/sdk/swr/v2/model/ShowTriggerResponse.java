@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.swr.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -18,105 +17,75 @@ public class ShowTriggerResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "action")
 
-    @JacksonXmlProperty(localName = "action")
-
     private String action;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_type")
-
-    @JacksonXmlProperty(localName = "app_type")
 
     private String appType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "application")
 
-    @JacksonXmlProperty(localName = "application")
-
     private String application;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cluster_id")
-
-    @JacksonXmlProperty(localName = "cluster_id")
 
     private String clusterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cluster_name")
 
-    @JacksonXmlProperty(localName = "cluster_name")
-
     private String clusterName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cluster_ns")
-
-    @JacksonXmlProperty(localName = "cluster_ns")
 
     private String clusterNs;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "condition")
 
-    @JacksonXmlProperty(localName = "condition")
-
     private String condition;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "container")
-
-    @JacksonXmlProperty(localName = "container")
 
     private String container;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
 
-    @JacksonXmlProperty(localName = "created_at")
-
     private String createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "creator_name")
-
-    @JacksonXmlProperty(localName = "creator_name")
 
     private String creatorName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable")
 
-    @JacksonXmlProperty(localName = "enable")
-
     private String enable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
-
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trigger_history")
 
-    @JacksonXmlProperty(localName = "trigger_history")
-
     private List<TriggerHistories> triggerHistory = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trigger_mode")
 
-    @JacksonXmlProperty(localName = "trigger_mode")
-
     private String triggerMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trigger_type")
-
-    @JacksonXmlProperty(localName = "trigger_type")
 
     private String triggerType;
 

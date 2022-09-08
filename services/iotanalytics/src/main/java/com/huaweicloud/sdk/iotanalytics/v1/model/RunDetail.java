@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.iotanalytics.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,21 +14,15 @@ public class RunDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "detail_id")
 
-    @JacksonXmlProperty(localName = "detail_id")
-
     private String detailId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    @JacksonXmlProperty(localName = "status")
-
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sql_job")
-
-    @JacksonXmlProperty(localName = "sql_job")
 
     private SqlJobRunDetail sqlJob;
 

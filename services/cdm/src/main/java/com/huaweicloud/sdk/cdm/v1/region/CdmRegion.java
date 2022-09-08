@@ -29,7 +29,15 @@ public class CdmRegion {
         new Region("ap-southeast-1", "https://cdm.ap-southeast-1.myhuaweicloud.com");
 
     public static final Region CN_SOUTHWEST_2 =
-        new Region("cn-southwest-2", "https://cdm.ap-southwest-2.myhuaweicloud.com");
+        new Region("cn-southwest-2", "https://cdm.cn-southwest-2.myhuaweicloud.com");
+
+    public static final Region SA_BRAZIL_1 = new Region("sa-brazil-1", "https://cdm.sa-brazil-1.myhuaweicloud.com");
+
+    public static final Region AF_SOUTH_1 = new Region("af-south-1", "https://cdm.af-south-1.myhuaweicloud.com");
+
+    public static final Region CN_SOUTH_2 = new Region("cn-south-2", "https://cdm.cn-south-2.myhuaweicloud.com");
+
+    public static final Region LA_SOUTH_2 = new Region("la-south-2", "https://cdm.la-south-2.myhuaweicloud.com");
 
     public static final Region CN_NORTH_9 = new Region("cn-north-9", "https://cdm.cn-north-9.myhuaweicloud.com");
 
@@ -52,6 +60,10 @@ public class CdmRegion {
         map.put("ap-southeast-2", AP_SOUTHEAST_2);
         map.put("ap-southeast-1", AP_SOUTHEAST_1);
         map.put("cn-southwest-2", CN_SOUTHWEST_2);
+        map.put("sa-brazil-1", SA_BRAZIL_1);
+        map.put("af-south-1", AF_SOUTH_1);
+        map.put("cn-south-2", CN_SOUTH_2);
+        map.put("la-south-2", LA_SOUTH_2);
         map.put("cn-north-9", CN_NORTH_9);
         map.put("cn-north-2", CN_NORTH_2);
         map.put("ap-southeast-3", AP_SOUTHEAST_3);

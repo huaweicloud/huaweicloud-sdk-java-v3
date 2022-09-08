@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cpts.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,21 +13,15 @@ public class ShowReportRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_run_id")
 
-    @JacksonXmlProperty(localName = "task_run_id")
-
     private Integer taskRunId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "case_run_id")
 
-    @JacksonXmlProperty(localName = "case_run_id")
-
     private Integer caseRunId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "brokens_limit_count")
-
-    @JacksonXmlProperty(localName = "brokens_limit_count")
 
     private Integer brokensLimitCount;
 

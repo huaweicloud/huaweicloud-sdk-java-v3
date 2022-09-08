@@ -8,8 +8,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -23,7 +21,6 @@ public class Slot  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="word")
     
-    @JacksonXmlProperty(localName = "word")
     
     private String word;
 
@@ -31,7 +28,6 @@ public class Slot  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tag")
     
-    @JacksonXmlProperty(localName = "tag")
     
     private String tag;
 
@@ -39,7 +35,6 @@ public class Slot  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    @JacksonXmlProperty(localName = "offset")
     
     private Integer offset;
 
@@ -47,7 +42,6 @@ public class Slot  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="length")
     
-    @JacksonXmlProperty(localName = "length")
     
     private Integer length;
 
@@ -55,7 +49,6 @@ public class Slot  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="normalized_word")
     
-    @JacksonXmlProperty(localName = "normalized_word")
     
     private String normalizedWord;
 

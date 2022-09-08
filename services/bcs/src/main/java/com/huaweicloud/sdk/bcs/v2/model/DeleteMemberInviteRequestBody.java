@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.bcs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,21 +16,15 @@ public class DeleteMemberInviteRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bcs_id")
 
-    @JacksonXmlProperty(localName = "bcs_id")
-
     private String bcsId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "channel_name")
 
-    @JacksonXmlProperty(localName = "channel_name")
-
     private String channelName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "invited_userinfo")
-
-    @JacksonXmlProperty(localName = "invited_userinfo")
 
     private List<InvitationDetail> invitedUserinfo = null;
 

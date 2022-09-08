@@ -11,8 +11,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.iotedge.v2.model.AccessRomaBriefInfo;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -26,7 +24,6 @@ public class UpdateNaResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="na_id")
     
-    @JacksonXmlProperty(localName = "na_id")
     
     private String naId;
 
@@ -34,7 +31,6 @@ public class UpdateNaResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    @JacksonXmlProperty(localName = "name")
     
     private String name;
 
@@ -42,7 +38,6 @@ public class UpdateNaResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
-    @JacksonXmlProperty(localName = "description")
     
     private String description;
 
@@ -50,7 +45,6 @@ public class UpdateNaResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="endpoint")
     
-    @JacksonXmlProperty(localName = "endpoint")
     
     private String endpoint;
 
@@ -58,7 +52,6 @@ public class UpdateNaResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auth_type")
     
-    @JacksonXmlProperty(localName = "auth_type")
     
     private String authType;
 
@@ -66,7 +59,6 @@ public class UpdateNaResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="access_type")
     
-    @JacksonXmlProperty(localName = "access_type")
     
     private String accessType;
 
@@ -74,7 +66,6 @@ public class UpdateNaResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="access_roma_info")
     
-    @JacksonXmlProperty(localName = "access_roma_info")
     
     private AccessRomaBriefInfo accessRomaInfo;
 
@@ -82,7 +73,6 @@ public class UpdateNaResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    @JacksonXmlProperty(localName = "create_time")
     
     private String createTime;
 
@@ -90,7 +80,6 @@ public class UpdateNaResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_time")
     
-    @JacksonXmlProperty(localName = "update_time")
     
     private String updateTime;
 

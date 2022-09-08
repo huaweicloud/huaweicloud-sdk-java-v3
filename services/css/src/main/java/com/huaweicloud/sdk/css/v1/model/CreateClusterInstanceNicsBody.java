@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.css.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,21 +13,15 @@ public class CreateClusterInstanceNicsBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpcId")
 
-    @JacksonXmlProperty(localName = "vpcId")
-
     private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "netId")
 
-    @JacksonXmlProperty(localName = "netId")
-
     private String netId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "securityGroupId")
-
-    @JacksonXmlProperty(localName = "securityGroupId")
 
     private String securityGroupId;
 

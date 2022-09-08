@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.osm.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,98 +13,70 @@ public class ExtendsParamV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tips")
 
-    @JacksonXmlProperty(localName = "tips")
-
     private String tips;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "required")
-
-    @JacksonXmlProperty(localName = "required")
 
     private Integer required;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "length")
 
-    @JacksonXmlProperty(localName = "length")
-
     private Integer length;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "language")
-
-    @JacksonXmlProperty(localName = "language")
 
     private String language;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "param_key")
 
-    @JacksonXmlProperty(localName = "param_key")
-
     private String paramKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "param_name")
-
-    @JacksonXmlProperty(localName = "param_name")
 
     private String paramName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "param_type")
 
-    @JacksonXmlProperty(localName = "param_type")
-
     private Integer paramType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "param_desc")
-
-    @JacksonXmlProperty(localName = "param_desc")
 
     private String paramDesc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "default_value")
 
-    @JacksonXmlProperty(localName = "default_value")
-
     private String defaultValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_value")
-
-    @JacksonXmlProperty(localName = "max_value")
 
     private Long maxValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "min_value")
 
-    @JacksonXmlProperty(localName = "min_value")
-
     private Long minValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "select_item")
-
-    @JacksonXmlProperty(localName = "select_item")
 
     private String selectItem;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_show")
 
-    @JacksonXmlProperty(localName = "is_show")
-
     private Integer isShow;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_sensitive")
-
-    @JacksonXmlProperty(localName = "is_sensitive")
 
     private Integer isSensitive;
 

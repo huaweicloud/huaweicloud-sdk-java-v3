@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.ocr.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,70 +13,50 @@ public class TollInvoiceResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "code")
 
-    @JacksonXmlProperty(localName = "code")
-
     private String code;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "number")
-
-    @JacksonXmlProperty(localName = "number")
 
     private String number;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "entry")
 
-    @JacksonXmlProperty(localName = "entry")
-
     private String entry;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "exit")
-
-    @JacksonXmlProperty(localName = "exit")
 
     private String exit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "amount")
 
-    @JacksonXmlProperty(localName = "amount")
-
     private String amount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cashier")
-
-    @JacksonXmlProperty(localName = "cashier")
 
     private String cashier;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vehicle_type")
 
-    @JacksonXmlProperty(localName = "vehicle_type")
-
     private String vehicleType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "date")
-
-    @JacksonXmlProperty(localName = "date")
 
     private String date;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time")
 
-    @JacksonXmlProperty(localName = "time")
-
     private String time;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confidence")
-
-    @JacksonXmlProperty(localName = "confidence")
 
     private Object confidence;
 

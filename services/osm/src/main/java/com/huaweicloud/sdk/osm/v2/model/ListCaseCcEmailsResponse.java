@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.osm.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -18,14 +17,10 @@ public class ListCaseCcEmailsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cc_email_info")
 
-    @JacksonXmlProperty(localName = "cc_email_info")
-
     private IncidentOrderCCEmailInfoV2 ccEmailInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mc_email_infos")
-
-    @JacksonXmlProperty(localName = "mc_email_infos")
 
     private List<String> mcEmailInfos = null;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.eip.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,14 +14,10 @@ public class UpdatePrePaidBandwidthRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bandwidth")
 
-    @JacksonXmlProperty(localName = "bandwidth")
-
     private UpdatePrePaidBandwidthOption bandwidth;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extendParam")
-
-    @JacksonXmlProperty(localName = "extendParam")
 
     private UpdatePrePaidBandwidthExtendParamOption extendParam;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.res.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -19,91 +18,65 @@ public class FinalReport {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "generated_time")
 
-    @JacksonXmlProperty(localName = "generated_time")
-
     private String generatedTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "wide_table_num")
-
-    @JacksonXmlProperty(localName = "wide_table_num")
 
     private Long wideTableNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_complete_degree")
 
-    @JacksonXmlProperty(localName = "user_complete_degree")
-
     private Double userCompleteDegree;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "item_complete_degree")
-
-    @JacksonXmlProperty(localName = "item_complete_degree")
 
     private Double itemCompleteDegree;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bhv_count")
 
-    @JacksonXmlProperty(localName = "bhv_count")
-
     private Map<String, Long> bhvCount = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_long_feature_report")
-
-    @JacksonXmlProperty(localName = "user_long_feature_report")
 
     private List<NumFeatureReport> userLongFeatureReport = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_float_feature_report")
 
-    @JacksonXmlProperty(localName = "user_float_feature_report")
-
     private List<NumFeatureReport> userFloatFeatureReport = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_str_feature_report")
-
-    @JacksonXmlProperty(localName = "user_str_feature_report")
 
     private List<StrFeatureReport> userStrFeatureReport = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_strArray_feature_report")
 
-    @JacksonXmlProperty(localName = "user_strArray_feature_report")
-
     private List<StrFeatureReport> userStrArrayFeatureReport = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "item_long_feature_report")
-
-    @JacksonXmlProperty(localName = "item_long_feature_report")
 
     private List<NumFeatureReport> itemLongFeatureReport = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "item_float_feature_report")
 
-    @JacksonXmlProperty(localName = "item_float_feature_report")
-
     private List<NumFeatureReport> itemFloatFeatureReport = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "item_str_feature_report")
 
-    @JacksonXmlProperty(localName = "item_str_feature_report")
-
     private List<StrFeatureReport> itemStrFeatureReport = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "item_strArray_feature_report")
-
-    @JacksonXmlProperty(localName = "item_strArray_feature_report")
 
     private List<StrFeatureReport> itemStrArrayFeatureReport = null;
 

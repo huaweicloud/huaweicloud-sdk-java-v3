@@ -16,8 +16,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -31,7 +29,6 @@ public class ListResourceReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    @JacksonXmlProperty(localName = "tags")
     
     private List<TagWithMultiValue> tags = null;
     
@@ -39,7 +36,6 @@ public class ListResourceReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags_any")
     
-    @JacksonXmlProperty(localName = "tags_any")
     
     private List<TagWithMultiValue> tagsAny = null;
     
@@ -47,7 +43,6 @@ public class ListResourceReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="not_tags")
     
-    @JacksonXmlProperty(localName = "not_tags")
     
     private List<TagWithMultiValue> notTags = null;
     
@@ -55,7 +50,6 @@ public class ListResourceReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="not_tags_any")
     
-    @JacksonXmlProperty(localName = "not_tags_any")
     
     private List<TagWithMultiValue> notTagsAny = null;
         /**
@@ -141,7 +135,6 @@ public class ListResourceReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="action")
     
-    @JacksonXmlProperty(localName = "action")
     
     private ActionEnum action;
 
@@ -149,7 +142,6 @@ public class ListResourceReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    @JacksonXmlProperty(localName = "limit")
     
     private Integer limit;
 
@@ -157,7 +149,6 @@ public class ListResourceReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    @JacksonXmlProperty(localName = "offset")
     
     private Integer offset;
 
@@ -165,7 +156,6 @@ public class ListResourceReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="matches")
     
-    @JacksonXmlProperty(localName = "matches")
     
     private List<Match> matches = null;
     

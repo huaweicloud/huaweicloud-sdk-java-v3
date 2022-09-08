@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.ocr.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,133 +16,95 @@ public class QualificationCertificateResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id_number")
 
-    @JacksonXmlProperty(localName = "id_number")
-
     private String idNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "assessment_date")
-
-    @JacksonXmlProperty(localName = "assessment_date")
 
     private String assessmentDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "certificate_number")
 
-    @JacksonXmlProperty(localName = "certificate_number")
-
     private String certificateNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_number")
-
-    @JacksonXmlProperty(localName = "file_number")
 
     private String fileNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "union_card_number")
 
-    @JacksonXmlProperty(localName = "union_card_number")
-
     private String unionCardNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "continuing_education_info")
-
-    @JacksonXmlProperty(localName = "continuing_education_info")
 
     private String continuingEducationInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sex")
 
-    @JacksonXmlProperty(localName = "sex")
-
     private String sex;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "phone_number")
-
-    @JacksonXmlProperty(localName = "phone_number")
 
     private String phoneNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "registration_date")
 
-    @JacksonXmlProperty(localName = "registration_date")
-
     private String registrationDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "work_unit")
-
-    @JacksonXmlProperty(localName = "work_unit")
 
     private String workUnit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "integrity_assessment_info")
 
-    @JacksonXmlProperty(localName = "integrity_assessment_info")
-
     private String integrityAssessmentInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nationality")
-
-    @JacksonXmlProperty(localName = "nationality")
 
     private String nationality;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
-    @JacksonXmlProperty(localName = "name")
-
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "address")
-
-    @JacksonXmlProperty(localName = "address")
 
     private String address;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "driving_class")
 
-    @JacksonXmlProperty(localName = "driving_class")
-
     private String drivingClass;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "issuing_authority")
-
-    @JacksonXmlProperty(localName = "issuing_authority")
 
     private String issuingAuthority;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "birth_date")
 
-    @JacksonXmlProperty(localName = "birth_date")
-
     private String birthDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "qualification_category_list")
 
-    @JacksonXmlProperty(localName = "qualification_category_list")
-
     private List<QualificationCategory> qualificationCategoryList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confidence")
-
-    @JacksonXmlProperty(localName = "confidence")
 
     private QualificationConfidence confidence;
 

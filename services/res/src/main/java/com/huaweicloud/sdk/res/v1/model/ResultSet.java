@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.res.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,63 +13,45 @@ public class ResultSet {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "availability")
 
-    @JacksonXmlProperty(localName = "availability")
-
     private Integer availability;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "category")
-
-    @JacksonXmlProperty(localName = "category")
 
     private String category;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_id")
 
-    @JacksonXmlProperty(localName = "job_id")
-
     private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_type")
-
-    @JacksonXmlProperty(localName = "job_type")
 
     private String jobType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rec_id")
 
-    @JacksonXmlProperty(localName = "rec_id")
-
     private String recId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rec_type")
-
-    @JacksonXmlProperty(localName = "rec_type")
 
     private String recType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scene_id")
 
-    @JacksonXmlProperty(localName = "scene_id")
-
     private String sceneId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "table_name")
 
-    @JacksonXmlProperty(localName = "table_name")
-
     private String tableName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "workspace_id")
-
-    @JacksonXmlProperty(localName = "workspace_id")
 
     private String workspaceId;
 

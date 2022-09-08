@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.bcs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -20,98 +19,70 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "basic_info")
 
-    @JacksonXmlProperty(localName = "basic_info")
-
     private BasicInfo basicInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "channels")
-
-    @JacksonXmlProperty(localName = "channels")
 
     private List<ChannelInfo> channels = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "peer_info")
 
-    @JacksonXmlProperty(localName = "peer_info")
-
     private List<PeerInfo> peerInfo = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "light_peer_info")
-
-    @JacksonXmlProperty(localName = "light_peer_info")
 
     private List<PeerInfo> lightPeerInfo = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "orderer_info")
 
-    @JacksonXmlProperty(localName = "orderer_info")
-
     private PeerInfo ordererInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "couch_db_info")
-
-    @JacksonXmlProperty(localName = "couch_db_info")
 
     private CouchDBInfo couchDbInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dms_kafka_info")
 
-    @JacksonXmlProperty(localName = "dms_kafka_info")
-
     private DmsKafkaInfo dmsKafkaInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ief_info")
-
-    @JacksonXmlProperty(localName = "ief_info")
 
     private IefInfo iefInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sfs_info")
 
-    @JacksonXmlProperty(localName = "sfs_info")
-
     private SfsInfo sfsInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "agent_info")
-
-    @JacksonXmlProperty(localName = "agent_info")
 
     private PeerInfo agentInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "restapi_info")
 
-    @JacksonXmlProperty(localName = "restapi_info")
-
     private PeerInfo restapiInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "evs_pvc_info")
-
-    @JacksonXmlProperty(localName = "evs_pvc_info")
 
     private Map<String, Map<String, String>> evsPvcInfo = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tc3_taskserver_info")
 
-    @JacksonXmlProperty(localName = "tc3_taskserver_info")
-
     private PeerInfo tc3TaskserverInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "obs_bucket_info")
-
-    @JacksonXmlProperty(localName = "obs_bucket_info")
 
     private OBSInfo obsBucketInfo;
 

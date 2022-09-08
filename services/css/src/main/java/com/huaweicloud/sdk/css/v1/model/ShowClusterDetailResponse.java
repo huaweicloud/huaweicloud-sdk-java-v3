@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.css.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -18,182 +17,130 @@ public class ShowClusterDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "datastore")
 
-    @JacksonXmlProperty(localName = "datastore")
-
     private ClusterDetailDatastore datastore;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instances")
-
-    @JacksonXmlProperty(localName = "instances")
 
     private List<ClusterDetailInstances> instances = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publicKibanaResp")
 
-    @JacksonXmlProperty(localName = "publicKibanaResp")
-
     private PublicKibanaRespBody publicKibanaResp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "elbWhiteList")
-
-    @JacksonXmlProperty(localName = "elbWhiteList")
 
     private ElbWhiteListResp elbWhiteList;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated")
 
-    @JacksonXmlProperty(localName = "updated")
-
     private String updated;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
-
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publicIp")
 
-    @JacksonXmlProperty(localName = "publicIp")
-
     private String publicIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created")
-
-    @JacksonXmlProperty(localName = "created")
 
     private String created;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
-
-    @JacksonXmlProperty(localName = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "endpoint")
 
-    @JacksonXmlProperty(localName = "endpoint")
-
     private String endpoint;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpcId")
-
-    @JacksonXmlProperty(localName = "vpcId")
 
     private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subnetId")
 
-    @JacksonXmlProperty(localName = "subnetId")
-
     private String subnetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "securityGroupId")
-
-    @JacksonXmlProperty(localName = "securityGroupId")
 
     private String securityGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpcepIp")
 
-    @JacksonXmlProperty(localName = "vpcepIp")
-
     private String vpcepIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bandwidthSize")
-
-    @JacksonXmlProperty(localName = "bandwidthSize")
 
     private Integer bandwidthSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "httpsEnable")
 
-    @JacksonXmlProperty(localName = "httpsEnable")
-
     private Boolean httpsEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "diskEncrypted")
-
-    @JacksonXmlProperty(localName = "diskEncrypted")
 
     private Boolean diskEncrypted;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "authorityEnable")
 
-    @JacksonXmlProperty(localName = "authorityEnable")
-
     private Boolean authorityEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "backupAvailable")
-
-    @JacksonXmlProperty(localName = "backupAvailable")
 
     private Boolean backupAvailable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "actionProgress")
 
-    @JacksonXmlProperty(localName = "actionProgress")
-
     private Object actionProgress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "actions")
 
-    @JacksonXmlProperty(localName = "actions")
-
-    private List<Object> actions = null;
+    private List<String> actions = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterpriseProjectId")
-
-    @JacksonXmlProperty(localName = "enterpriseProjectId")
 
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    @JacksonXmlProperty(localName = "tags")
-
     private List<ClusterDetailTags> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "failed_reasons")
 
-    @JacksonXmlProperty(localName = "failed_reasons")
-
     private ClusterDetailFailedReasons failedReasons;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "period")
-
-    @JacksonXmlProperty(localName = "period")
 
     private Boolean period;
 
@@ -597,12 +544,12 @@ public class ShowClusterDetailResponse extends SdkResponse {
         this.actionProgress = actionProgress;
     }
 
-    public ShowClusterDetailResponse withActions(List<Object> actions) {
+    public ShowClusterDetailResponse withActions(List<String> actions) {
         this.actions = actions;
         return this;
     }
 
-    public ShowClusterDetailResponse addActionsItem(Object actionsItem) {
+    public ShowClusterDetailResponse addActionsItem(String actionsItem) {
         if (this.actions == null) {
             this.actions = new ArrayList<>();
         }
@@ -610,7 +557,7 @@ public class ShowClusterDetailResponse extends SdkResponse {
         return this;
     }
 
-    public ShowClusterDetailResponse withActions(Consumer<List<Object>> actionsSetter) {
+    public ShowClusterDetailResponse withActions(Consumer<List<String>> actionsSetter) {
         if (this.actions == null) {
             this.actions = new ArrayList<>();
         }
@@ -622,11 +569,11 @@ public class ShowClusterDetailResponse extends SdkResponse {
      * 集群当前行为。REBOOTING表示重启、GROWING表示扩容、RESTORING表示恢复集群、SNAPSHOTTING表示创建快照等。
      * @return actions
      */
-    public List<Object> getActions() {
+    public List<String> getActions() {
         return actions;
     }
 
-    public void setActions(List<Object> actions) {
+    public void setActions(List<String> actions) {
         this.actions = actions;
     }
 

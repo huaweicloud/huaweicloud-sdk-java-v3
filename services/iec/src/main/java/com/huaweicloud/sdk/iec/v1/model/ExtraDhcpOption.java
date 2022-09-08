@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.iec.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,14 +13,10 @@ public class ExtraDhcpOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "opt_name")
 
-    @JacksonXmlProperty(localName = "opt_name")
-
     private String optName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "opt_value")
-
-    @JacksonXmlProperty(localName = "opt_value")
 
     private String optValue;
 

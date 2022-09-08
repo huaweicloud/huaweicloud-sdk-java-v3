@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,14 +21,10 @@ public class NodesInfoResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "logical_node_id")
 
-    @JacksonXmlProperty(localName = "logical_node_id")
-
     private String logicalNodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
-
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
@@ -131,14 +126,10 @@ public class NodesInfoResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    @JacksonXmlProperty(localName = "status")
-
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "az_code")
-
-    @JacksonXmlProperty(localName = "az_code")
 
     private String azCode;
 
@@ -221,8 +212,6 @@ public class NodesInfoResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "node_role")
-
-    @JacksonXmlProperty(localName = "node_role")
 
     private NodeRoleEnum nodeRole;
 
@@ -312,77 +301,55 @@ public class NodesInfoResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "node_type")
 
-    @JacksonXmlProperty(localName = "node_type")
-
     private NodeTypeEnum nodeType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "node_ip")
-
-    @JacksonXmlProperty(localName = "node_ip")
 
     private String nodeIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "node_port")
 
-    @JacksonXmlProperty(localName = "node_port")
-
     private String nodePort;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "node_id")
-
-    @JacksonXmlProperty(localName = "node_id")
 
     private String nodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "priority_weight")
 
-    @JacksonXmlProperty(localName = "priority_weight")
-
     private Integer priorityWeight;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_access")
-
-    @JacksonXmlProperty(localName = "is_access")
 
     private Boolean isAccess;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_id")
 
-    @JacksonXmlProperty(localName = "group_id")
-
     private String groupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_name")
-
-    @JacksonXmlProperty(localName = "group_name")
 
     private String groupName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_remove_ip")
 
-    @JacksonXmlProperty(localName = "is_remove_ip")
-
     private Boolean isRemoveIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "replication_id")
 
-    @JacksonXmlProperty(localName = "replication_id")
-
     private String replicationId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dimensions")
-
-    @JacksonXmlProperty(localName = "dimensions")
 
     private List<InstanceReplicationDimensionsInfo> dimensions = null;
 

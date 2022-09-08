@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -19,14 +18,10 @@ public class PolicyEntity {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "owner")
 
-    @JacksonXmlProperty(localName = "owner")
-
     private Boolean owner;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_name")
-
-    @JacksonXmlProperty(localName = "user_name")
 
     private String userName;
 
@@ -115,8 +110,6 @@ public class PolicyEntity {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "access_policy")
-
-    @JacksonXmlProperty(localName = "access_policy")
 
     private AccessPolicyEnum accessPolicy;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.drs.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,49 +16,35 @@ public class UpdateUserReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_id")
 
-    @JacksonXmlProperty(localName = "job_id")
-
     private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "password")
-
-    @JacksonXmlProperty(localName = "password")
 
     private String password;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "list")
 
-    @JacksonXmlProperty(localName = "list")
-
     private List<UserAccountVO> list = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_roles")
-
-    @JacksonXmlProperty(localName = "user_roles")
 
     private List<UserRoleVO> userRoles = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_set_password")
 
-    @JacksonXmlProperty(localName = "is_set_password")
-
     private Boolean isSetPassword;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_migrate_user")
 
-    @JacksonXmlProperty(localName = "is_migrate_user")
-
     private Boolean isMigrateUser;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_sync_object_privilege")
-
-    @JacksonXmlProperty(localName = "is_sync_object_privilege")
 
     private Boolean isSyncObjectPrivilege;
 

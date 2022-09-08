@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -90,14 +89,10 @@ public class ExtraDhcpOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "opt_name")
 
-    @JacksonXmlProperty(localName = "opt_name")
-
     private OptNameEnum optName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "opt_value")
-
-    @JacksonXmlProperty(localName = "opt_value")
 
     private String optValue;
 

@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,14 +21,10 @@ public class MultiTaskUpdateBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
-    @JacksonXmlProperty(localName = "description")
-
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_tag")
-
-    @JacksonXmlProperty(localName = "task_tag")
 
     private String taskTag;
 
@@ -119,14 +114,10 @@ public class MultiTaskUpdateBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operation_types")
 
-    @JacksonXmlProperty(localName = "operation_types")
-
     private List<OperationTypesEnum> operationTypes = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "repulling_snapshot")
-
-    @JacksonXmlProperty(localName = "repulling_snapshot")
 
     private Boolean repullingSnapshot;
 

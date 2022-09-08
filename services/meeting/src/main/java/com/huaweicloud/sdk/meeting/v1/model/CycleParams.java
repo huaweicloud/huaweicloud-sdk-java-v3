@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,42 +16,30 @@ public class CycleParams {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "startDate")
 
-    @JacksonXmlProperty(localName = "startDate")
-
     private String startDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "endDate")
-
-    @JacksonXmlProperty(localName = "endDate")
 
     private String endDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cycle")
 
-    @JacksonXmlProperty(localName = "cycle")
-
     private String cycle;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "interval")
-
-    @JacksonXmlProperty(localName = "interval")
 
     private Integer interval;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "point")
 
-    @JacksonXmlProperty(localName = "point")
-
     private List<Integer> point = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "preRemindDays")
-
-    @JacksonXmlProperty(localName = "preRemindDays")
 
     private Integer preRemindDays;
 

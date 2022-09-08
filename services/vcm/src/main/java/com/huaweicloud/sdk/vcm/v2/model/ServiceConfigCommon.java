@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.vcm.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,42 +13,30 @@ public class ServiceConfigCommon {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "frame_interval")
 
-    @JacksonXmlProperty(localName = "frame_interval")
-
     private Integer frameInterval;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "categories")
-
-    @JacksonXmlProperty(localName = "categories")
 
     private String categories;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "text_categories")
 
-    @JacksonXmlProperty(localName = "text_categories")
-
     private String textCategories;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "use_sis")
-
-    @JacksonXmlProperty(localName = "use_sis")
 
     private String useSis;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "use_ocr")
 
-    @JacksonXmlProperty(localName = "use_ocr")
-
     private String useOcr;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "upload")
-
-    @JacksonXmlProperty(localName = "upload")
 
     private String upload;
 

@@ -15,8 +15,6 @@ import com.huaweicloud.sdk.ges.v1.model.PublicIp;
 import com.huaweicloud.sdk.ges.v1.model.SysTagsRes;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -30,7 +28,6 @@ public class Graph  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    @JacksonXmlProperty(localName = "name")
     
     private String name;
 
@@ -38,7 +35,6 @@ public class Graph  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="graphSizeTypeIndex")
     
-    @JacksonXmlProperty(localName = "graphSizeTypeIndex")
     
     private String graphSizeTypeIndex;
 
@@ -46,7 +42,6 @@ public class Graph  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="arch")
     
-    @JacksonXmlProperty(localName = "arch")
     
     private String arch;
 
@@ -54,7 +49,6 @@ public class Graph  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dataSource")
     
-    @JacksonXmlProperty(localName = "dataSource")
     
     private DataSource dataSource;
 
@@ -62,7 +56,6 @@ public class Graph  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vpcId")
     
-    @JacksonXmlProperty(localName = "vpcId")
     
     private String vpcId;
 
@@ -70,7 +63,6 @@ public class Graph  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="subnetId")
     
-    @JacksonXmlProperty(localName = "subnetId")
     
     private String subnetId;
 
@@ -78,7 +70,6 @@ public class Graph  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="securityGroupId")
     
-    @JacksonXmlProperty(localName = "securityGroupId")
     
     private String securityGroupId;
 
@@ -86,7 +77,6 @@ public class Graph  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="publicIp")
     
-    @JacksonXmlProperty(localName = "publicIp")
     
     private PublicIp publicIp;
 
@@ -94,7 +84,6 @@ public class Graph  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enableMultiAz")
     
-    @JacksonXmlProperty(localName = "enableMultiAz")
     
     private Boolean enableMultiAz;
 
@@ -102,7 +91,6 @@ public class Graph  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="encryption")
     
-    @JacksonXmlProperty(localName = "encryption")
     
     private EncryptionReq encryption;
 
@@ -110,7 +98,6 @@ public class Graph  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ltsOperationTrace")
     
-    @JacksonXmlProperty(localName = "ltsOperationTrace")
     
     private LtsOperationTraceReq ltsOperationTrace;
 
@@ -118,7 +105,6 @@ public class Graph  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sys_tags")
     
-    @JacksonXmlProperty(localName = "sys_tags")
     
     private List<SysTagsRes> sysTags = null;
     
@@ -126,7 +112,6 @@ public class Graph  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enableRBAC")
     
-    @JacksonXmlProperty(localName = "enableRBAC")
     
     private Boolean enableRBAC;
 
@@ -134,7 +119,6 @@ public class Graph  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enableFullTextIndex")
     
-    @JacksonXmlProperty(localName = "enableFullTextIndex")
     
     private Boolean enableFullTextIndex;
 

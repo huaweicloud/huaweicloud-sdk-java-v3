@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -23,21 +22,15 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
 
-    @JacksonXmlProperty(localName = "project_id")
-
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_name")
-
-    @JacksonXmlProperty(localName = "instance_name")
 
     private String instanceName;
 
@@ -313,8 +306,6 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    @JacksonXmlProperty(localName = "status")
-
     private StatusEnum status;
 
     /**
@@ -589,14 +580,10 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_status")
 
-    @JacksonXmlProperty(localName = "instance_status")
-
     private InstanceStatusEnum instanceStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
-
-    @JacksonXmlProperty(localName = "type")
 
     private String type;
 
@@ -716,28 +703,20 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "spec")
 
-    @JacksonXmlProperty(localName = "spec")
-
     private SpecEnum spec;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
-
-    @JacksonXmlProperty(localName = "create_time")
 
     private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
-    @JacksonXmlProperty(localName = "enterprise_project_id")
-
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "eip_address")
-
-    @JacksonXmlProperty(localName = "eip_address")
 
     private String eipAddress;
 
@@ -821,14 +800,10 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "charging_mode")
 
-    @JacksonXmlProperty(localName = "charging_mode")
-
     private ChargingModeEnum chargingMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cbc_metadata")
-
-    @JacksonXmlProperty(localName = "cbc_metadata")
 
     private String cbcMetadata;
 
@@ -912,168 +887,120 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "loadbalancer_provider")
 
-    @JacksonXmlProperty(localName = "loadbalancer_provider")
-
     private LoadbalancerProviderEnum loadbalancerProvider;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
-
-    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_id")
 
-    @JacksonXmlProperty(localName = "vpc_id")
-
     private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subnet_id")
-
-    @JacksonXmlProperty(localName = "subnet_id")
 
     private String subnetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_group_id")
 
-    @JacksonXmlProperty(localName = "security_group_id")
-
     private String securityGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maintain_begin")
-
-    @JacksonXmlProperty(localName = "maintain_begin")
 
     private String maintainBegin;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maintain_end")
 
-    @JacksonXmlProperty(localName = "maintain_end")
-
     private String maintainEnd;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ingress_ip")
-
-    @JacksonXmlProperty(localName = "ingress_ip")
 
     private String ingressIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_id")
 
-    @JacksonXmlProperty(localName = "user_id")
-
     private String userId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nat_eip_ipv6_cidr")
-
-    @JacksonXmlProperty(localName = "nat_eip_ipv6_cidr")
 
     private String natEipIpv6Cidr;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "eip_ipv6_address")
 
-    @JacksonXmlProperty(localName = "eip_ipv6_address")
-
     private String eipIpv6Address;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nat_eip_address")
-
-    @JacksonXmlProperty(localName = "nat_eip_address")
 
     private String natEipAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bandwidth_size")
 
-    @JacksonXmlProperty(localName = "bandwidth_size")
-
     private Integer bandwidthSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "available_zone_ids")
-
-    @JacksonXmlProperty(localName = "available_zone_ids")
 
     private String availableZoneIds;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_version")
 
-    @JacksonXmlProperty(localName = "instance_version")
-
     private String instanceVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "virsubnet_id")
-
-    @JacksonXmlProperty(localName = "virsubnet_id")
 
     private String virsubnetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "roma_eip_address")
 
-    @JacksonXmlProperty(localName = "roma_eip_address")
-
     private String romaEipAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "listeners")
-
-    @JacksonXmlProperty(localName = "listeners")
 
     private Object listeners;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "supported_features")
 
-    @JacksonXmlProperty(localName = "supported_features")
-
     private List<String> supportedFeatures = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "endpoint_service")
-
-    @JacksonXmlProperty(localName = "endpoint_service")
 
     private EndpointService endpointService;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "endpoint_services")
 
-    @JacksonXmlProperty(localName = "endpoint_services")
-
     private List<EndpointService> endpointServices = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "node_ips")
-
-    @JacksonXmlProperty(localName = "node_ips")
 
     private NodeIps nodeIps;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publicips")
 
-    @JacksonXmlProperty(localName = "publicips")
-
     private List<IpDetails> publicips = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "privateips")
-
-    @JacksonXmlProperty(localName = "privateips")
 
     private List<IpDetails> privateips = null;
 

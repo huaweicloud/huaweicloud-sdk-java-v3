@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -19,14 +18,10 @@ public class DownloadBlockchainCertRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "blockchain_id")
 
-    @JacksonXmlProperty(localName = "blockchain_id")
-
     private String blockchainId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "org_name")
-
-    @JacksonXmlProperty(localName = "org_name")
 
     private String orgName;
 
@@ -115,8 +110,6 @@ public class DownloadBlockchainCertRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cert_type")
-
-    @JacksonXmlProperty(localName = "cert_type")
 
     private CertTypeEnum certType;
 

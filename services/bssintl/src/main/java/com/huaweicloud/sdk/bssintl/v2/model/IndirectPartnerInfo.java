@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.bssintl.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,56 +13,40 @@ public class IndirectPartnerInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "indirect_partner_id")
 
-    @JacksonXmlProperty(localName = "indirect_partner_id")
-
     private String indirectPartnerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mobile_phone")
-
-    @JacksonXmlProperty(localName = "mobile_phone")
 
     private String mobilePhone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "email")
 
-    @JacksonXmlProperty(localName = "email")
-
     private String email;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "account_name")
-
-    @JacksonXmlProperty(localName = "account_name")
 
     private String accountName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
-    @JacksonXmlProperty(localName = "name")
-
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "associated_on")
-
-    @JacksonXmlProperty(localName = "associated_on")
 
     private String associatedOn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "account_manager_id")
 
-    @JacksonXmlProperty(localName = "account_manager_id")
-
     private String accountManagerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "account_manager_name")
-
-    @JacksonXmlProperty(localName = "account_manager_name")
 
     private String accountManagerName;
 

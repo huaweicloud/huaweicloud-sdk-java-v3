@@ -11,8 +11,6 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.nlp.v2.model.EventExtractionResponseItemArgument;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -26,7 +24,6 @@ public class EventExtractionResponseItem  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="argument")
     
-    @JacksonXmlProperty(localName = "argument")
     
     private List<EventExtractionResponseItemArgument> argument = null;
     
@@ -34,7 +31,6 @@ public class EventExtractionResponseItem  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="event_trigger")
     
-    @JacksonXmlProperty(localName = "event_trigger")
     
     private String eventTrigger;
 
@@ -42,7 +38,6 @@ public class EventExtractionResponseItem  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="event_type")
     
-    @JacksonXmlProperty(localName = "event_type")
     
     private String eventType;
 
@@ -50,7 +45,6 @@ public class EventExtractionResponseItem  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="trigger_span")
     
-    @JacksonXmlProperty(localName = "trigger_span")
     
     private List<Integer> triggerSpan = null;
     

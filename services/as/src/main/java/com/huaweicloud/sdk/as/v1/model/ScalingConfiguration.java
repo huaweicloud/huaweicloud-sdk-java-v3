@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.as.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.time.OffsetDateTime;
 import java.util.Objects;
@@ -16,42 +15,30 @@ public class ScalingConfiguration {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scaling_configuration_id")
 
-    @JacksonXmlProperty(localName = "scaling_configuration_id")
-
     private String scalingConfigurationId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tenant")
-
-    @JacksonXmlProperty(localName = "tenant")
 
     private String tenant;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scaling_configuration_name")
 
-    @JacksonXmlProperty(localName = "scaling_configuration_name")
-
     private String scalingConfigurationName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_config")
-
-    @JacksonXmlProperty(localName = "instance_config")
 
     private InstanceConfigResult instanceConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
-    @JacksonXmlProperty(localName = "create_time")
-
     private OffsetDateTime createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scaling_group_id")
-
-    @JacksonXmlProperty(localName = "scaling_group_id")
 
     private String scalingGroupId;
 

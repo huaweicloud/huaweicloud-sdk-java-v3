@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.deh.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,21 +13,15 @@ public class RespQuotaSet {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource")
 
-    @JacksonXmlProperty(localName = "resource")
-
     private String resource;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hard_limit")
 
-    @JacksonXmlProperty(localName = "hard_limit")
-
     private Integer hardLimit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "used")
-
-    @JacksonXmlProperty(localName = "used")
 
     private Integer used;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.devstar.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -17,56 +16,40 @@ public class CodehubJobInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "application_name")
 
-    @JacksonXmlProperty(localName = "application_name")
-
     private String applicationName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "privately")
-
-    @JacksonXmlProperty(localName = "privately")
 
     private Boolean privately;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "short_id")
 
-    @JacksonXmlProperty(localName = "short_id")
-
     private String shortId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "code_url")
-
-    @JacksonXmlProperty(localName = "code_url")
 
     private String codeUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region_id")
 
-    @JacksonXmlProperty(localName = "region_id")
-
     private String regionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "repo_type")
-
-    @JacksonXmlProperty(localName = "repo_type")
 
     private Integer repoType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "properties")
 
-    @JacksonXmlProperty(localName = "properties")
-
     private Map<String, String> properties = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "repo_info")
-
-    @JacksonXmlProperty(localName = "repo_info")
 
     private RepositoryInfo repoInfo;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.css.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,14 +16,10 @@ public class StartPipelineReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "keepAlive")
 
-    @JacksonXmlProperty(localName = "keepAlive")
-
     private Boolean keepAlive;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "names")
-
-    @JacksonXmlProperty(localName = "names")
 
     private List<String> names = null;
 

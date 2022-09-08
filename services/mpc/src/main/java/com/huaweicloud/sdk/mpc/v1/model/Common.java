@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.mpc.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,28 +13,20 @@ public class Common {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "PVC")
 
-    @JacksonXmlProperty(localName = "PVC")
-
     private Boolean pvc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hls_interval")
-
-    @JacksonXmlProperty(localName = "hls_interval")
 
     private Integer hlsInterval;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dash_interval")
 
-    @JacksonXmlProperty(localName = "dash_interval")
-
     private Integer dashInterval;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pack_type")
-
-    @JacksonXmlProperty(localName = "pack_type")
 
     private Integer packType;
 

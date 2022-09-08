@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cloudtest.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,28 +13,20 @@ public class TestPlanDetailExecuteStage {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "defect_count")
 
-    @JacksonXmlProperty(localName = "defect_count")
-
     private Integer defectCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "completed_defect_count")
-
-    @JacksonXmlProperty(localName = "completed_defect_count")
 
     private Integer completedDefectCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "case_pass_rate")
 
-    @JacksonXmlProperty(localName = "case_pass_rate")
-
     private String casePassRate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "executed_case_count")
-
-    @JacksonXmlProperty(localName = "executed_case_count")
 
     private Integer executedCaseCount;
 

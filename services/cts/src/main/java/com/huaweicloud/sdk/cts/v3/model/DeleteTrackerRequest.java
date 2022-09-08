@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,8 +17,6 @@ public class DeleteTrackerRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tracker_name")
-
-    @JacksonXmlProperty(localName = "tracker_name")
 
     private String trackerName;
 
@@ -96,8 +93,6 @@ public class DeleteTrackerRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tracker_type")
-
-    @JacksonXmlProperty(localName = "tracker_type")
 
     private TrackerTypeEnum trackerType;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.ivs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,14 +13,10 @@ public class ExtentionReqDataByNameAndId {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "verification_name")
 
-    @JacksonXmlProperty(localName = "verification_name")
-
     private String verificationName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "verification_id")
-
-    @JacksonXmlProperty(localName = "verification_id")
 
     private String verificationId;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.vpc.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,42 +16,30 @@ public class NetworkIpAvailability {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "network_id")
 
-    @JacksonXmlProperty(localName = "network_id")
-
     private String networkId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "network_name")
-
-    @JacksonXmlProperty(localName = "network_name")
 
     private String networkName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tenant_id")
 
-    @JacksonXmlProperty(localName = "tenant_id")
-
     private String tenantId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_ips")
-
-    @JacksonXmlProperty(localName = "total_ips")
 
     private Integer totalIps;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "used_ips")
 
-    @JacksonXmlProperty(localName = "used_ips")
-
     private Integer usedIps;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subnet_ip_availability")
-
-    @JacksonXmlProperty(localName = "subnet_ip_availability")
 
     private List<SubnetIpAvailability> subnetIpAvailability = null;
 

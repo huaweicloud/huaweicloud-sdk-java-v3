@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,14 +14,10 @@ public class OpenUploadFileInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fileId")
 
-    @JacksonXmlProperty(localName = "fileId")
-
     private String fileId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "imageModeration")
-
-    @JacksonXmlProperty(localName = "imageModeration")
 
     private ImageModerationResult imageModeration;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.drs.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,49 +16,35 @@ public class ContentCompareResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "compare_task_id")
 
-    @JacksonXmlProperty(localName = "compare_task_id")
-
     private String compareTaskId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "content_compare_overview")
-
-    @JacksonXmlProperty(localName = "content_compare_overview")
 
     private List<ContentCompareResultOverview> contentCompareOverview = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "content_compare_overview_count")
 
-    @JacksonXmlProperty(localName = "content_compare_overview_count")
-
     private Integer contentCompareOverviewCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "content_compare_details")
-
-    @JacksonXmlProperty(localName = "content_compare_details")
 
     private List<ContentCompareResultDetails> contentCompareDetails = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "content_compare_diffs")
 
-    @JacksonXmlProperty(localName = "content_compare_diffs")
-
     private List<ContentCompareResultDiffs> contentCompareDiffs = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_code")
 
-    @JacksonXmlProperty(localName = "error_code")
-
     private String errorCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_msg")
-
-    @JacksonXmlProperty(localName = "error_msg")
 
     private String errorMsg;
 

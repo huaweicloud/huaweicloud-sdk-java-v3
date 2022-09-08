@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.osm.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,21 +13,15 @@ public class CaseRealtionInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "case_id")
 
-    @JacksonXmlProperty(localName = "case_id")
-
     private String caseId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "simple_description")
 
-    @JacksonXmlProperty(localName = "simple_description")
-
     private String simpleDescription;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_name")
-
-    @JacksonXmlProperty(localName = "user_name")
 
     private String userName;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.ecs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,56 +13,40 @@ public class ServerBlockDevice {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bootIndex")
 
-    @JacksonXmlProperty(localName = "bootIndex")
-
     private Integer bootIndex;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pciAddress")
-
-    @JacksonXmlProperty(localName = "pciAddress")
 
     private String pciAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volumeId")
 
-    @JacksonXmlProperty(localName = "volumeId")
-
     private String volumeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "device")
-
-    @JacksonXmlProperty(localName = "device")
 
     private String device;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "serverId")
 
-    @JacksonXmlProperty(localName = "serverId")
-
     private String serverId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
-
-    @JacksonXmlProperty(localName = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
 
-    @JacksonXmlProperty(localName = "size")
-
     private Integer size;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bus")
-
-    @JacksonXmlProperty(localName = "bus")
 
     private String bus;
 

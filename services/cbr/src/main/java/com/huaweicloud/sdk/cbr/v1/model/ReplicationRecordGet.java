@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -20,84 +19,60 @@ public class ReplicationRecordGet {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
 
-    @JacksonXmlProperty(localName = "created_at")
-
     private String createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "destination_backup_id")
-
-    @JacksonXmlProperty(localName = "destination_backup_id")
 
     private String destinationBackupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "destination_checkpoint_id")
 
-    @JacksonXmlProperty(localName = "destination_checkpoint_id")
-
     private String destinationCheckpointId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "destination_project_id")
-
-    @JacksonXmlProperty(localName = "destination_project_id")
 
     private String destinationProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "destination_region")
 
-    @JacksonXmlProperty(localName = "destination_region")
-
     private String destinationRegion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "destination_vault_id")
-
-    @JacksonXmlProperty(localName = "destination_vault_id")
 
     private String destinationVaultId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extra_info")
 
-    @JacksonXmlProperty(localName = "extra_info")
-
     private ReplicationRecordsExtraInfo extraInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
-
-    @JacksonXmlProperty(localName = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_backup_id")
 
-    @JacksonXmlProperty(localName = "source_backup_id")
-
     private String sourceBackupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_checkpoint_id")
-
-    @JacksonXmlProperty(localName = "source_checkpoint_id")
 
     private String sourceCheckpointId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_project_id")
 
-    @JacksonXmlProperty(localName = "source_project_id")
-
     private String sourceProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_region")
-
-    @JacksonXmlProperty(localName = "source_region")
 
     private String sourceRegion;
 
@@ -199,14 +174,10 @@ public class ReplicationRecordGet {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    @JacksonXmlProperty(localName = "status")
-
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vault_id")
-
-    @JacksonXmlProperty(localName = "vault_id")
 
     private String vaultId;
 

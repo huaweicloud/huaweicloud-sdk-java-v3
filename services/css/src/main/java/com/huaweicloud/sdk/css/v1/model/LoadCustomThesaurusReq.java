@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.css.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,28 +13,20 @@ public class LoadCustomThesaurusReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bucketName")
 
-    @JacksonXmlProperty(localName = "bucketName")
-
     private String bucketName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mainObject")
-
-    @JacksonXmlProperty(localName = "mainObject")
 
     private String mainObject;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stopObject")
 
-    @JacksonXmlProperty(localName = "stopObject")
-
     private String stopObject;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "synonymObject")
-
-    @JacksonXmlProperty(localName = "synonymObject")
 
     private String synonymObject;
 

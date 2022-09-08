@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cloudrtc.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,42 +13,30 @@ public class RtcHistoryUsage {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "date")
 
-    @JacksonXmlProperty(localName = "date")
-
     private String date;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "video_sd")
-
-    @JacksonXmlProperty(localName = "video_sd")
 
     private Long videoSd;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "video_hd")
 
-    @JacksonXmlProperty(localName = "video_hd")
-
     private Long videoHd;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "video_hdp")
-
-    @JacksonXmlProperty(localName = "video_hdp")
 
     private Long videoHdp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "audio")
 
-    @JacksonXmlProperty(localName = "audio")
-
     private Long audio;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_duration")
-
-    @JacksonXmlProperty(localName = "total_duration")
 
     private Long totalDuration;
 

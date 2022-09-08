@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.codehub.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,35 +13,25 @@ public class ShowCommitsByBranchRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_name")
 
-    @JacksonXmlProperty(localName = "group_name")
-
     private String groupName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page_index")
-
-    @JacksonXmlProperty(localName = "page_index")
 
     private Integer pageIndex;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page_size")
 
-    @JacksonXmlProperty(localName = "page_size")
-
     private Integer pageSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ref_name")
 
-    @JacksonXmlProperty(localName = "ref_name")
-
     private String refName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "repository_name")
-
-    @JacksonXmlProperty(localName = "repository_name")
 
     private String repositoryName;
 
@@ -52,7 +41,7 @@ public class ShowCommitsByBranchRequest {
     }
 
     /**
-     * 仓库组名
+     * 仓库组名(克隆地址中域名后面项目名前的一段 示例：git@codehub.alpha.devcloud.inhuawei.com:Demo00228/testword.git  组名：Demo00228 )
      * @return groupName
      */
     public String getGroupName() {

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,28 +16,20 @@ public class ShowTableUsersRespPrivilege {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_admin")
 
-    @JacksonXmlProperty(localName = "is_admin")
-
     private Boolean isAdmin;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "object")
-
-    @JacksonXmlProperty(localName = "object")
 
     private String _object;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "privileges")
 
-    @JacksonXmlProperty(localName = "privileges")
-
     private List<String> privileges = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_name")
-
-    @JacksonXmlProperty(localName = "user_name")
 
     private String userName;
 

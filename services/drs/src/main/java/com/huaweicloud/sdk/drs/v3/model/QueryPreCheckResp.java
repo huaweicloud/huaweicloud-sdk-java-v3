@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,35 +21,25 @@ public class QueryPreCheckResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "precheck_id")
 
-    @JacksonXmlProperty(localName = "precheck_id")
-
     private String precheckId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "result")
-
-    @JacksonXmlProperty(localName = "result")
 
     private Boolean result;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "process")
 
-    @JacksonXmlProperty(localName = "process")
-
     private String process;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_passed_rate")
 
-    @JacksonXmlProperty(localName = "total_passed_rate")
-
     private String totalPassedRate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rds_instance_id")
-
-    @JacksonXmlProperty(localName = "rds_instance_id")
 
     private String rdsInstanceId;
 
@@ -140,28 +129,20 @@ public class QueryPreCheckResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_direction")
 
-    @JacksonXmlProperty(localName = "job_direction")
-
     private JobDirectionEnum jobDirection;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "precheck_result")
-
-    @JacksonXmlProperty(localName = "precheck_result")
 
     private List<PrecheckResult> precheckResult = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_msg")
 
-    @JacksonXmlProperty(localName = "error_msg")
-
     private String errorMsg;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_code")
-
-    @JacksonXmlProperty(localName = "error_code")
 
     private String errorCode;
 

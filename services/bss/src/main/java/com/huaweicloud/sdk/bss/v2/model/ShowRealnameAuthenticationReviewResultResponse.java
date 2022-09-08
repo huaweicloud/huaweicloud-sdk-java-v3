@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.bss.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -15,14 +14,10 @@ public class ShowRealnameAuthenticationReviewResultResponse extends SdkResponse 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "review_result")
 
-    @JacksonXmlProperty(localName = "review_result")
-
     private Integer reviewResult;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "opinion")
-
-    @JacksonXmlProperty(localName = "opinion")
 
     private String opinion;
 

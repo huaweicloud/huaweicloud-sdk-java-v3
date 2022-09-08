@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.frs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,14 +13,10 @@ public class WarningList {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "warningCode")
 
-    @JacksonXmlProperty(localName = "warningCode")
-
     private Integer warningCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "warningMsg")
-
-    @JacksonXmlProperty(localName = "warningMsg")
 
     private String warningMsg;
 

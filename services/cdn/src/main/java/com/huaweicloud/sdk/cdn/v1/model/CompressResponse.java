@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cdn.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,14 +16,10 @@ public class CompressResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "compress_switch")
 
-    @JacksonXmlProperty(localName = "compress_switch")
-
     private Integer compressSwitch;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "compress_rules")
-
-    @JacksonXmlProperty(localName = "compress_rules")
 
     private List<CompressRules> compressRules = null;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.osm.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,21 +16,15 @@ public class IncidentSubTypeV2Do {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "incident_sub_type_id")
 
-    @JacksonXmlProperty(localName = "incident_sub_type_id")
-
     private String incidentSubTypeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "incident_sub_type_name")
 
-    @JacksonXmlProperty(localName = "incident_sub_type_name")
-
     private String incidentSubTypeName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "incident_product_category_list")
-
-    @JacksonXmlProperty(localName = "incident_product_category_list")
 
     private List<IncidentProductCategoryV2> incidentProductCategoryList = null;
 

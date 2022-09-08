@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.iam.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,56 +16,40 @@ public class ScopedTokenInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expires_at")
 
-    @JacksonXmlProperty(localName = "expires_at")
-
     private String expiresAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "methods")
-
-    @JacksonXmlProperty(localName = "methods")
 
     private List<String> methods = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "issued_at")
 
-    @JacksonXmlProperty(localName = "issued_at")
-
     private String issuedAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user")
-
-    @JacksonXmlProperty(localName = "user")
 
     private FederationUserBody user;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain")
 
-    @JacksonXmlProperty(localName = "domain")
-
     private DomainInfo domain;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project")
-
-    @JacksonXmlProperty(localName = "project")
 
     private ProjectInfo project;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "roles")
 
-    @JacksonXmlProperty(localName = "roles")
-
     private List<ScopedTokenInfoRoles> roles = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "catalog")
-
-    @JacksonXmlProperty(localName = "catalog")
 
     private List<UnscopedTokenInfoCatalog> catalog = null;
 

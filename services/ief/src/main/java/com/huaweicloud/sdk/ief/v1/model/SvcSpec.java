@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.ief.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -19,42 +18,30 @@ public class SvcSpec {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cluster_ip")
 
-    @JacksonXmlProperty(localName = "cluster_ip")
-
     private String clusterIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "external_ips")
-
-    @JacksonXmlProperty(localName = "external_ips")
 
     private List<String> externalIps = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "external_name")
 
-    @JacksonXmlProperty(localName = "external_name")
-
     private String externalName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ports")
-
-    @JacksonXmlProperty(localName = "ports")
 
     private List<SvcPort> ports = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "selector")
 
-    @JacksonXmlProperty(localName = "selector")
-
     private Map<String, String> selector = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
-
-    @JacksonXmlProperty(localName = "type")
 
     private String type;
 

@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -115,21 +114,15 @@ public class Output {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "play_type")
 
-    @JacksonXmlProperty(localName = "play_type")
-
     private PlayTypeEnum playType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "url")
 
-    @JacksonXmlProperty(localName = "url")
-
     private String url;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "encrypted")
-
-    @JacksonXmlProperty(localName = "encrypted")
 
     private Integer encrypted;
 
@@ -225,14 +218,10 @@ public class Output {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quality")
 
-    @JacksonXmlProperty(localName = "quality")
-
     private QualityEnum quality;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "meta_data")
-
-    @JacksonXmlProperty(localName = "meta_data")
 
     private MetaData metaData;
 

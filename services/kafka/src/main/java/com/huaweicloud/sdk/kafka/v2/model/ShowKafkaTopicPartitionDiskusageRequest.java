@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.kafka.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,28 +13,20 @@ public class ShowKafkaTopicPartitionDiskusageRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_id")
 
-    @JacksonXmlProperty(localName = "instance_id")
-
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "minSize")
-
-    @JacksonXmlProperty(localName = "minSize")
 
     private String minSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "top")
 
-    @JacksonXmlProperty(localName = "top")
-
     private String top;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "percentage")
-
-    @JacksonXmlProperty(localName = "percentage")
 
     private String percentage;
 

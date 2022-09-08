@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,35 +21,25 @@ public class QueuePlanEntity {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private Long id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "plan_name")
-
-    @JacksonXmlProperty(localName = "plan_name")
 
     private String planName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_cu")
 
-    @JacksonXmlProperty(localName = "target_cu")
-
     private Integer targetCu;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_hour")
 
-    @JacksonXmlProperty(localName = "start_hour")
-
     private Integer startHour;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_minute")
-
-    @JacksonXmlProperty(localName = "start_minute")
 
     private Integer startMinute;
 
@@ -164,35 +153,25 @@ public class QueuePlanEntity {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "repeat_day")
 
-    @JacksonXmlProperty(localName = "repeat_day")
-
     private List<RepeatDayEnum> repeatDay = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "valid_date_begin")
-
-    @JacksonXmlProperty(localName = "valid_date_begin")
 
     private Long validDateBegin;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "valid_date_end")
 
-    @JacksonXmlProperty(localName = "valid_date_end")
-
     private Long validDateEnd;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "activate")
 
-    @JacksonXmlProperty(localName = "activate")
-
     private Boolean activate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last_execute_time")
-
-    @JacksonXmlProperty(localName = "last_execute_time")
 
     private Long lastExecuteTime;
 

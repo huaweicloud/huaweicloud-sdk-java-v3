@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.res.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,112 +16,80 @@ public class Flow {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flow_id")
 
-    @JacksonXmlProperty(localName = "flow_id")
-
     private String flowId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "attr_pair_rules_filter")
-
-    @JacksonXmlProperty(localName = "attr_pair_rules_filter")
 
     private List<AttrPairRules> attrPairRulesFilter = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "attr_pair_rules_reserve")
 
-    @JacksonXmlProperty(localName = "attr_pair_rules_reserve")
-
     private List<AttrPairRules> attrPairRulesReserve = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deduplication_list")
-
-    @JacksonXmlProperty(localName = "deduplication_list")
 
     private List<Deduplication> deduplicationList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "attribute_info")
 
-    @JacksonXmlProperty(localName = "attribute_info")
-
     private AttributeInfo attributeInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bloom_filter_conf")
-
-    @JacksonXmlProperty(localName = "bloom_filter_conf")
 
     private BloomFilterConf bloomFilterConf;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_attr")
 
-    @JacksonXmlProperty(localName = "group_attr")
-
     private String groupAttr;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pre_deal")
-
-    @JacksonXmlProperty(localName = "pre_deal")
 
     private Boolean preDeal;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rank_setting")
 
-    @JacksonXmlProperty(localName = "rank_setting")
-
     private String rankSetting;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rules")
-
-    @JacksonXmlProperty(localName = "rules")
 
     private Rule rules;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "filter_sets")
 
-    @JacksonXmlProperty(localName = "filter_sets")
-
     private List<String> filterSets = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "attr_value_rules_filter")
-
-    @JacksonXmlProperty(localName = "attr_value_rules_filter")
 
     private List<AttrValueRules> attrValueRulesFilter = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "attr_value_rules_reserve")
 
-    @JacksonXmlProperty(localName = "attr_value_rules_reserve")
-
     private List<AttrValueRules> attrValueRulesReserve = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ctr_job")
-
-    @JacksonXmlProperty(localName = "ctr_job")
 
     private String ctrJob;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ratio")
 
-    @JacksonXmlProperty(localName = "ratio")
-
     private Integer ratio;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "toppings")
-
-    @JacksonXmlProperty(localName = "toppings")
 
     private List<String> toppings = null;
 

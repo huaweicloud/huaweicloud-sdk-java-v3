@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.rms.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,77 +13,60 @@ public class PolicyState {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_id")
 
-    @JacksonXmlProperty(localName = "domain_id")
-
     private String domainId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region_id")
-
-    @JacksonXmlProperty(localName = "region_id")
 
     private String regionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_id")
 
-    @JacksonXmlProperty(localName = "resource_id")
-
     private String resourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_name")
-
-    @JacksonXmlProperty(localName = "resource_name")
 
     private String resourceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_provider")
 
-    @JacksonXmlProperty(localName = "resource_provider")
-
     private String resourceProvider;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_type")
 
-    @JacksonXmlProperty(localName = "resource_type")
-
     private String resourceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "compliance_state")
+    @JsonProperty(value = "trigger_type")
 
-    @JacksonXmlProperty(localName = "compliance_state")
+    private String triggerType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "compliance_state")
 
     private String complianceState;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_assignment_id")
 
-    @JacksonXmlProperty(localName = "policy_assignment_id")
-
     private String policyAssignmentId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_assignment_name")
-
-    @JacksonXmlProperty(localName = "policy_assignment_name")
 
     private String policyAssignmentName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_definition_id")
 
-    @JacksonXmlProperty(localName = "policy_definition_id")
-
     private String policyDefinitionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "evaluation_time")
-
-    @JacksonXmlProperty(localName = "evaluation_time")
 
     private String evaluationTime;
 
@@ -190,6 +172,23 @@ public class PolicyState {
         this.resourceType = resourceType;
     }
 
+    public PolicyState withTriggerType(String triggerType) {
+        this.triggerType = triggerType;
+        return this;
+    }
+
+    /**
+     * 触发器类型，可选值：resource, period
+     * @return triggerType
+     */
+    public String getTriggerType() {
+        return triggerType;
+    }
+
+    public void setTriggerType(String triggerType) {
+        this.triggerType = triggerType;
+    }
+
     public PolicyState withComplianceState(String complianceState) {
         this.complianceState = complianceState;
         return this;
@@ -290,6 +289,7 @@ public class PolicyState {
             && Objects.equals(this.resourceName, policyState.resourceName)
             && Objects.equals(this.resourceProvider, policyState.resourceProvider)
             && Objects.equals(this.resourceType, policyState.resourceType)
+            && Objects.equals(this.triggerType, policyState.triggerType)
             && Objects.equals(this.complianceState, policyState.complianceState)
             && Objects.equals(this.policyAssignmentId, policyState.policyAssignmentId)
             && Objects.equals(this.policyAssignmentName, policyState.policyAssignmentName)
@@ -305,6 +305,7 @@ public class PolicyState {
             resourceName,
             resourceProvider,
             resourceType,
+            triggerType,
             complianceState,
             policyAssignmentId,
             policyAssignmentName,
@@ -322,6 +323,7 @@ public class PolicyState {
         sb.append("    resourceName: ").append(toIndentedString(resourceName)).append("\n");
         sb.append("    resourceProvider: ").append(toIndentedString(resourceProvider)).append("\n");
         sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
+        sb.append("    triggerType: ").append(toIndentedString(triggerType)).append("\n");
         sb.append("    complianceState: ").append(toIndentedString(complianceState)).append("\n");
         sb.append("    policyAssignmentId: ").append(toIndentedString(policyAssignmentId)).append("\n");
         sb.append("    policyAssignmentName: ").append(toIndentedString(policyAssignmentName)).append("\n");

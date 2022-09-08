@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.sis.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -18,21 +17,15 @@ public class RecognizeFlashAsrResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trace_id")
 
-    @JacksonXmlProperty(localName = "trace_id")
-
     private String traceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "audio_duration")
 
-    @JacksonXmlProperty(localName = "audio_duration")
-
     private Integer audioDuration;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flash_result")
-
-    @JacksonXmlProperty(localName = "flash_result")
 
     private List<FlashResult> flashResult = null;
 

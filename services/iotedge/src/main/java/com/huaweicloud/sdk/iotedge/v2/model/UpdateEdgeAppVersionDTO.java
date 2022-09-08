@@ -10,8 +10,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.iotedge.v2.model.ContainerSettingsDTO;
 import com.huaweicloud.sdk.iotedge.v2.model.ProbeDTO;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -25,7 +23,6 @@ public class UpdateEdgeAppVersionDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
-    @JacksonXmlProperty(localName = "description")
     
     private String description;
 
@@ -33,7 +30,6 @@ public class UpdateEdgeAppVersionDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="deploy_type")
     
-    @JacksonXmlProperty(localName = "deploy_type")
     
     private String deployType;
 
@@ -41,7 +37,6 @@ public class UpdateEdgeAppVersionDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="deploy_multi_instance")
     
-    @JacksonXmlProperty(localName = "deploy_multi_instance")
     
     private Boolean deployMultiInstance;
 
@@ -49,7 +44,6 @@ public class UpdateEdgeAppVersionDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="container_settings")
     
-    @JacksonXmlProperty(localName = "container_settings")
     
     private ContainerSettingsDTO containerSettings;
 
@@ -57,7 +51,6 @@ public class UpdateEdgeAppVersionDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="liveness_probe")
     
-    @JacksonXmlProperty(localName = "liveness_probe")
     
     private ProbeDTO livenessProbe;
 
@@ -65,7 +58,6 @@ public class UpdateEdgeAppVersionDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="readiness_probe")
     
-    @JacksonXmlProperty(localName = "readiness_probe")
     
     private ProbeDTO readinessProbe;
 
@@ -73,7 +65,6 @@ public class UpdateEdgeAppVersionDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sdk_version")
     
-    @JacksonXmlProperty(localName = "sdk_version")
     
     private String sdkVersion;
 
@@ -81,7 +72,6 @@ public class UpdateEdgeAppVersionDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="arch")
     
-    @JacksonXmlProperty(localName = "arch")
     
     private Object arch;
 
@@ -89,7 +79,6 @@ public class UpdateEdgeAppVersionDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="command")
     
-    @JacksonXmlProperty(localName = "command")
     
     private Object command;
 
@@ -97,7 +86,6 @@ public class UpdateEdgeAppVersionDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="args")
     
-    @JacksonXmlProperty(localName = "args")
     
     private Object args;
 
@@ -105,7 +93,6 @@ public class UpdateEdgeAppVersionDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="outputs")
     
-    @JacksonXmlProperty(localName = "outputs")
     
     private Object outputs;
 
@@ -113,7 +100,6 @@ public class UpdateEdgeAppVersionDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="inputs")
     
-    @JacksonXmlProperty(localName = "inputs")
     
     private Object inputs;
 
@@ -121,7 +107,6 @@ public class UpdateEdgeAppVersionDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="services")
     
-    @JacksonXmlProperty(localName = "services")
     
     private Object services;
 

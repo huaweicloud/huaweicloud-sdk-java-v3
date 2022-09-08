@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.css.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,28 +13,20 @@ public class StartAutoCreateSnapshotsReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "indices")
 
-    @JacksonXmlProperty(localName = "indices")
-
     private String indices;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "keepday")
-
-    @JacksonXmlProperty(localName = "keepday")
 
     private Integer keepday;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "period")
 
-    @JacksonXmlProperty(localName = "period")
-
     private String period;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "prefix")
-
-    @JacksonXmlProperty(localName = "prefix")
 
     private String prefix;
 
@@ -96,7 +87,7 @@ public class StartAutoCreateSnapshotsReq {
     }
 
     /**
-     * 自动创建的快照名称前缀。
+     * 自动创建的快照名称前缀，需要用户自己手动输入。只能包含1~32位小写字母、数字、中划线或者下划线，并且以小写字母开头。
      * @return prefix
      */
     public String getPrefix() {

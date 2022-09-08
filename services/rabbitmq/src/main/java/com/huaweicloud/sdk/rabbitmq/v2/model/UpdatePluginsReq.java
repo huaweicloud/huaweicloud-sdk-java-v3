@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.rabbitmq.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,14 +13,10 @@ public class UpdatePluginsReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable")
 
-    @JacksonXmlProperty(localName = "enable")
-
     private Boolean enable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "plugins")
-
-    @JacksonXmlProperty(localName = "plugins")
 
     private String plugins;
 

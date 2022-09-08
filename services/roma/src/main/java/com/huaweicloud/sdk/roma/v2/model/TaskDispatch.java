@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,8 +17,6 @@ public class TaskDispatch {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_datetime")
-
-    @JacksonXmlProperty(localName = "start_datetime")
 
     private Long startDatetime;
 
@@ -121,35 +118,25 @@ public class TaskDispatch {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "period")
 
-    @JacksonXmlProperty(localName = "period")
-
     private PeriodEnum period;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dispatch_interval")
-
-    @JacksonXmlProperty(localName = "dispatch_interval")
 
     private Long dispatchInterval;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remark")
 
-    @JacksonXmlProperty(localName = "remark")
-
     private String remark;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "use_quartz_cron")
 
-    @JacksonXmlProperty(localName = "use_quartz_cron")
-
     private Boolean useQuartzCron;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cron")
-
-    @JacksonXmlProperty(localName = "cron")
 
     private String cron;
 

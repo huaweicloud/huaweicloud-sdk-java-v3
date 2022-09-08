@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cloudrtc.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,63 +13,45 @@ public class RtcHistoryScaleTimeValue {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "date")
 
-    @JacksonXmlProperty(localName = "date")
-
     private String date;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_count")
-
-    @JacksonXmlProperty(localName = "user_count")
 
     private Long userCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "session_count")
 
-    @JacksonXmlProperty(localName = "session_count")
-
     private Long sessionCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "room_count")
-
-    @JacksonXmlProperty(localName = "room_count")
 
     private Long roomCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_online_user_count")
 
-    @JacksonXmlProperty(localName = "max_online_user_count")
-
     private Long maxOnlineUserCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_online_room_count")
-
-    @JacksonXmlProperty(localName = "max_online_room_count")
 
     private Long maxOnlineRoomCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "communication_duration")
 
-    @JacksonXmlProperty(localName = "communication_duration")
-
     private Long communicationDuration;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "video_communication_duration")
 
-    @JacksonXmlProperty(localName = "video_communication_duration")
-
     private Long videoCommunicationDuration;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "audio_communication_duration")
-
-    @JacksonXmlProperty(localName = "audio_communication_duration")
 
     private Long audioCommunicationDuration;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.apm.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.time.LocalDate;
 import java.util.Objects;
@@ -15,77 +14,55 @@ public class EnvNodeModel {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private Long id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "gmt_create")
-
-    @JacksonXmlProperty(localName = "gmt_create")
 
     private LocalDate gmtCreate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "gmt_modify")
 
-    @JacksonXmlProperty(localName = "gmt_modify")
-
     private LocalDate gmtModify;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_id")
-
-    @JacksonXmlProperty(localName = "app_id")
 
     private Long appId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "business_name")
 
-    @JacksonXmlProperty(localName = "business_name")
-
     private String businessName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "inner_domain_id")
-
-    @JacksonXmlProperty(localName = "inner_domain_id")
 
     private Integer innerDomainId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
-    @JacksonXmlProperty(localName = "name")
-
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_default")
-
-    @JacksonXmlProperty(localName = "is_default")
 
     private Boolean isDefault;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_name")
 
-    @JacksonXmlProperty(localName = "app_name")
-
     private String appName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "business_id")
 
-    @JacksonXmlProperty(localName = "business_id")
-
     private Long businessId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region")
-
-    @JacksonXmlProperty(localName = "region")
 
     private String region;
 

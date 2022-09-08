@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.iam.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,63 +13,45 @@ public class PasswordPolicyResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maximum_consecutive_identical_chars")
 
-    @JacksonXmlProperty(localName = "maximum_consecutive_identical_chars")
-
     private Integer maximumConsecutiveIdenticalChars;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maximum_password_length")
-
-    @JacksonXmlProperty(localName = "maximum_password_length")
 
     private Integer maximumPasswordLength;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "minimum_password_age")
 
-    @JacksonXmlProperty(localName = "minimum_password_age")
-
     private Integer minimumPasswordAge;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "minimum_password_length")
-
-    @JacksonXmlProperty(localName = "minimum_password_length")
 
     private Integer minimumPasswordLength;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "number_of_recent_passwords_disallowed")
 
-    @JacksonXmlProperty(localName = "number_of_recent_passwords_disallowed")
-
     private Integer numberOfRecentPasswordsDisallowed;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "password_not_username_or_invert")
-
-    @JacksonXmlProperty(localName = "password_not_username_or_invert")
 
     private Boolean passwordNotUsernameOrInvert;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "password_requirements")
 
-    @JacksonXmlProperty(localName = "password_requirements")
-
     private String passwordRequirements;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "password_validity_period")
 
-    @JacksonXmlProperty(localName = "password_validity_period")
-
     private Integer passwordValidityPeriod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "password_char_combination")
-
-    @JacksonXmlProperty(localName = "password_char_combination")
 
     private Integer passwordCharCombination;
 

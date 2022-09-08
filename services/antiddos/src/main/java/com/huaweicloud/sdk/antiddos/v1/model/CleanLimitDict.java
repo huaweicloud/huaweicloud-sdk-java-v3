@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.antiddos.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,21 +13,15 @@ public class CleanLimitDict {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cleaning_access_pos_id")
 
-    @JacksonXmlProperty(localName = "cleaning_access_pos_id")
-
     private Long cleaningAccessPosId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "new_connection_limited")
 
-    @JacksonXmlProperty(localName = "new_connection_limited")
-
     private Long newConnectionLimited;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_connection_limited")
-
-    @JacksonXmlProperty(localName = "total_connection_limited")
 
     private Long totalConnectionLimited;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.ivs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -16,14 +15,10 @@ public class DetectStandardByIdCardImageResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "meta")
 
-    @JacksonXmlProperty(localName = "meta")
-
     private Meta meta;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "result")
-
-    @JacksonXmlProperty(localName = "result")
 
     private IvsStandardByIdCardImageResponseBodyResult result;
 

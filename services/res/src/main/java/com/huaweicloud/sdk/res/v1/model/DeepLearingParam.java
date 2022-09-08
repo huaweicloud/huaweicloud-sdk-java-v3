@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.res.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,56 +14,40 @@ public class DeepLearingParam {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "initial_parameters")
 
-    @JacksonXmlProperty(localName = "initial_parameters")
-
     private Initial initialParameters;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "optimize_parameters")
-
-    @JacksonXmlProperty(localName = "optimize_parameters")
 
     private Optimizer optimizeParameters;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "regular_parameters")
 
-    @JacksonXmlProperty(localName = "regular_parameters")
-
     private Regular regularParameters;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_iterations")
-
-    @JacksonXmlProperty(localName = "max_iterations")
 
     private Integer maxIterations;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "early_stop_iterations")
 
-    @JacksonXmlProperty(localName = "early_stop_iterations")
-
     private Integer earlyStopIterations;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "batch_size")
-
-    @JacksonXmlProperty(localName = "batch_size")
 
     private Integer batchSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dataset_split_parts")
 
-    @JacksonXmlProperty(localName = "dataset_split_parts")
-
     private Integer datasetSplitParts;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "restart_train")
-
-    @JacksonXmlProperty(localName = "restart_train")
 
     private Boolean restartTrain;
 

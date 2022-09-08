@@ -16,8 +16,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -31,7 +29,6 @@ public class ListInstancesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    @JacksonXmlProperty(localName = "X-Language")
     
     private String xLanguage;
 
@@ -39,7 +36,6 @@ public class ListInstancesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    @JacksonXmlProperty(localName = "id")
     
     private String id;
 
@@ -47,7 +43,6 @@ public class ListInstancesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    @JacksonXmlProperty(localName = "name")
     
     private String name;
     /**
@@ -133,7 +128,6 @@ public class ListInstancesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    @JacksonXmlProperty(localName = "type")
     
     private TypeEnum type;
     /**
@@ -213,7 +207,6 @@ public class ListInstancesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="datastore_type")
     
-    @JacksonXmlProperty(localName = "datastore_type")
     
     private DatastoreTypeEnum datastoreType;
 
@@ -221,7 +214,6 @@ public class ListInstancesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vpc_id")
     
-    @JacksonXmlProperty(localName = "vpc_id")
     
     private String vpcId;
 
@@ -229,7 +221,6 @@ public class ListInstancesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="subnet_id")
     
-    @JacksonXmlProperty(localName = "subnet_id")
     
     private String subnetId;
 
@@ -237,7 +228,6 @@ public class ListInstancesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    @JacksonXmlProperty(localName = "offset")
     
     private Integer offset;
 
@@ -245,7 +235,6 @@ public class ListInstancesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    @JacksonXmlProperty(localName = "limit")
     
     private Integer limit;
 
@@ -253,7 +242,6 @@ public class ListInstancesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    @JacksonXmlProperty(localName = "tags")
     
     private List<String> tags = null;
     

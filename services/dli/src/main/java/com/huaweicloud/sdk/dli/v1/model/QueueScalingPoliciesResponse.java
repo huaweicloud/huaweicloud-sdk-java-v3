@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,35 +13,25 @@ public class QueueScalingPoliciesResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "priority")
 
-    @JacksonXmlProperty(localName = "priority")
-
     private Integer priority;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "impact_start_time")
-
-    @JacksonXmlProperty(localName = "impact_start_time")
 
     private String impactStartTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "impact_stop_time")
 
-    @JacksonXmlProperty(localName = "impact_stop_time")
-
     private String impactStopTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "min_cu")
 
-    @JacksonXmlProperty(localName = "min_cu")
-
     private Integer minCu;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_cu")
-
-    @JacksonXmlProperty(localName = "max_cu")
 
     private Integer maxCu;
 

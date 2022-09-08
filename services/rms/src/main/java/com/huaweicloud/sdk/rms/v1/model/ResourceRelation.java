@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.rms.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,35 +13,25 @@ public class ResourceRelation {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "relation_type")
 
-    @JacksonXmlProperty(localName = "relation_type")
-
     private String relationType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "from_resource_type")
-
-    @JacksonXmlProperty(localName = "from_resource_type")
 
     private String fromResourceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "to_resource_type")
 
-    @JacksonXmlProperty(localName = "to_resource_type")
-
     private String toResourceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "from_resource_id")
 
-    @JacksonXmlProperty(localName = "from_resource_id")
-
     private String fromResourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "to_resource_id")
-
-    @JacksonXmlProperty(localName = "to_resource_id")
 
     private String toResourceId;
 

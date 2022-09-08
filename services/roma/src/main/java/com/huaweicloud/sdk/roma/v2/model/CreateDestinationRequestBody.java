@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -96,70 +95,50 @@ public class CreateDestinationRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "destination_type")
 
-    @JacksonXmlProperty(localName = "destination_type")
-
     private DestinationTypeEnum destinationType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_id")
-
-    @JacksonXmlProperty(localName = "app_id")
 
     private String appId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "destination_name")
 
-    @JacksonXmlProperty(localName = "destination_name")
-
     private String destinationName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "topic")
-
-    @JacksonXmlProperty(localName = "topic")
 
     private String topic;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "server")
 
-    @JacksonXmlProperty(localName = "server")
-
     private String server;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "token")
-
-    @JacksonXmlProperty(localName = "token")
 
     private String token;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tag")
 
-    @JacksonXmlProperty(localName = "tag")
-
     private String tag;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mqs_sasl_ssl")
-
-    @JacksonXmlProperty(localName = "mqs_sasl_ssl")
 
     private Boolean mqsSaslSsl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_name")
 
-    @JacksonXmlProperty(localName = "user_name")
-
     private String userName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "password")
-
-    @JacksonXmlProperty(localName = "password")
 
     private String password;
 

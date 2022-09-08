@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,23 +13,17 @@ public class DeleteDatabaseRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "database_name")
 
-    @JacksonXmlProperty(localName = "database_name")
-
     private String databaseName;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "cascade")
-
-    @JacksonXmlProperty(localName = "cascade")
-
-    private Boolean cascade;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "async")
 
-    @JacksonXmlProperty(localName = "async")
-
     private Boolean async;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cascade")
+
+    private Boolean cascade;
 
     public DeleteDatabaseRequest withDatabaseName(String databaseName) {
         this.databaseName = databaseName;
@@ -47,23 +40,6 @@ public class DeleteDatabaseRequest {
 
     public void setDatabaseName(String databaseName) {
         this.databaseName = databaseName;
-    }
-
-    public DeleteDatabaseRequest withCascade(Boolean cascade) {
-        this.cascade = cascade;
-        return this;
-    }
-
-    /**
-     * Get cascade
-     * @return cascade
-     */
-    public Boolean getCascade() {
-        return cascade;
-    }
-
-    public void setCascade(Boolean cascade) {
-        this.cascade = cascade;
     }
 
     public DeleteDatabaseRequest withAsync(Boolean async) {
@@ -83,6 +59,23 @@ public class DeleteDatabaseRequest {
         this.async = async;
     }
 
+    public DeleteDatabaseRequest withCascade(Boolean cascade) {
+        this.cascade = cascade;
+        return this;
+    }
+
+    /**
+     * Get cascade
+     * @return cascade
+     */
+    public Boolean getCascade() {
+        return cascade;
+    }
+
+    public void setCascade(Boolean cascade) {
+        this.cascade = cascade;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -93,13 +86,13 @@ public class DeleteDatabaseRequest {
         }
         DeleteDatabaseRequest deleteDatabaseRequest = (DeleteDatabaseRequest) o;
         return Objects.equals(this.databaseName, deleteDatabaseRequest.databaseName)
-            && Objects.equals(this.cascade, deleteDatabaseRequest.cascade)
-            && Objects.equals(this.async, deleteDatabaseRequest.async);
+            && Objects.equals(this.async, deleteDatabaseRequest.async)
+            && Objects.equals(this.cascade, deleteDatabaseRequest.cascade);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(databaseName, cascade, async);
+        return Objects.hash(databaseName, async, cascade);
     }
 
     @Override
@@ -107,8 +100,8 @@ public class DeleteDatabaseRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class DeleteDatabaseRequest {\n");
         sb.append("    databaseName: ").append(toIndentedString(databaseName)).append("\n");
-        sb.append("    cascade: ").append(toIndentedString(cascade)).append("\n");
         sb.append("    async: ").append(toIndentedString(async)).append("\n");
+        sb.append("    cascade: ").append(toIndentedString(cascade)).append("\n");
         sb.append("}");
         return sb.toString();
     }

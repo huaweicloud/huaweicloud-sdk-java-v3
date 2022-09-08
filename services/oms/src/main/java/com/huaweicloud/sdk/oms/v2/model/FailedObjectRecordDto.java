@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.oms.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,21 +13,15 @@ public class FailedObjectRecordDto {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "result")
 
-    @JacksonXmlProperty(localName = "result")
-
     private Boolean result;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "list_file_key")
 
-    @JacksonXmlProperty(localName = "list_file_key")
-
     private String listFileKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_code")
-
-    @JacksonXmlProperty(localName = "error_code")
 
     private String errorCode;
 

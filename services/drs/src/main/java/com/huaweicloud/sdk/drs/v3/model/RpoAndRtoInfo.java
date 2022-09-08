@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.drs.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,28 +13,20 @@ public class RpoAndRtoInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "check_point")
 
-    @JacksonXmlProperty(localName = "check_point")
-
     private String checkPoint;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "delay")
-
-    @JacksonXmlProperty(localName = "delay")
 
     private String delay;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "gtid_set")
 
-    @JacksonXmlProperty(localName = "gtid_set")
-
     private String gtidSet;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time")
-
-    @JacksonXmlProperty(localName = "time")
 
     private String time;
 

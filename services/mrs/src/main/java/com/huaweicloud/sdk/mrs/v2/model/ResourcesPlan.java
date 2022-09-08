@@ -8,8 +8,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -23,7 +21,6 @@ public class ResourcesPlan  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="period_type")
     
-    @JacksonXmlProperty(localName = "period_type")
     
     private String periodType;
 
@@ -31,7 +28,6 @@ public class ResourcesPlan  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="start_time")
     
-    @JacksonXmlProperty(localName = "start_time")
     
     private String startTime;
 
@@ -39,7 +35,6 @@ public class ResourcesPlan  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="end_time")
     
-    @JacksonXmlProperty(localName = "end_time")
     
     private String endTime;
 
@@ -47,7 +42,6 @@ public class ResourcesPlan  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="min_capacity")
     
-    @JacksonXmlProperty(localName = "min_capacity")
     
     private Integer minCapacity;
 
@@ -55,7 +49,6 @@ public class ResourcesPlan  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="max_capacity")
     
-    @JacksonXmlProperty(localName = "max_capacity")
     
     private Integer maxCapacity;
 

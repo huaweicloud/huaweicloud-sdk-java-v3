@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.bss.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,14 +13,10 @@ public class QuotaReclaim {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quota_id")
 
-    @JacksonXmlProperty(localName = "quota_id")
-
     private String quotaId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quota_balance")
-
-    @JacksonXmlProperty(localName = "quota_balance")
 
     private Double quotaBalance;
 

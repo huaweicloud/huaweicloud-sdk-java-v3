@@ -14,8 +14,6 @@ import com.huaweicloud.sdk.gaussdb.v3.model.GetJobEntitiesInfoDetail;
 import com.huaweicloud.sdk.gaussdb.v3.model.GetJobInstanceInfoDetail;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -29,7 +27,6 @@ public class GetJobInfoDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    @JacksonXmlProperty(localName = "id")
     
     private String id;
 
@@ -37,7 +34,6 @@ public class GetJobInfoDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    @JacksonXmlProperty(localName = "name")
     
     private String name;
     /**
@@ -129,7 +125,6 @@ public class GetJobInfoDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    @JacksonXmlProperty(localName = "status")
     
     private StatusEnum status;
 
@@ -137,7 +132,6 @@ public class GetJobInfoDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created")
     
-    @JacksonXmlProperty(localName = "created")
     
     private String created;
 
@@ -145,7 +139,6 @@ public class GetJobInfoDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ended")
     
-    @JacksonXmlProperty(localName = "ended")
     
     private String ended;
 
@@ -153,7 +146,6 @@ public class GetJobInfoDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="process")
     
-    @JacksonXmlProperty(localName = "process")
     
     private String process;
 
@@ -161,7 +153,6 @@ public class GetJobInfoDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance")
     
-    @JacksonXmlProperty(localName = "instance")
     
     private GetJobInstanceInfoDetail instance;
 
@@ -169,7 +160,6 @@ public class GetJobInfoDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="entities")
     
-    @JacksonXmlProperty(localName = "entities")
     
     private GetJobEntitiesInfoDetail entities;
 
@@ -177,7 +167,6 @@ public class GetJobInfoDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="fail_reason")
     
-    @JacksonXmlProperty(localName = "fail_reason")
     
     private String failReason;
 

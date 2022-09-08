@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.classroom.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,35 +13,25 @@ public class MemberJobCard {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
-    @JacksonXmlProperty(localName = "name")
-
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "average_score")
-
-    @JacksonXmlProperty(localName = "average_score")
 
     private String averageScore;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "score")
 
-    @JacksonXmlProperty(localName = "score")
-
     private Integer score;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "send_time")
 
-    @JacksonXmlProperty(localName = "send_time")
-
     private String sendTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last_submit_time")
-
-    @JacksonXmlProperty(localName = "last_submit_time")
 
     private String lastSubmitTime;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.bssintl.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,14 +13,10 @@ public class BalanceTypePay {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "balance_type_id")
 
-    @JacksonXmlProperty(localName = "balance_type_id")
-
     private String balanceTypeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deduct_amount")
-
-    @JacksonXmlProperty(localName = "deduct_amount")
 
     private Double deductAmount;
 

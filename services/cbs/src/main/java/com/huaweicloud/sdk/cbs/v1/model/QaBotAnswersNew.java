@@ -12,8 +12,6 @@ import com.huaweicloud.sdk.cbs.v1.model.QaBotAnswer;
 import com.huaweicloud.sdk.cbs.v1.model.RecomendAnswer;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -27,7 +25,6 @@ public class QaBotAnswersNew  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="answers")
     
-    @JacksonXmlProperty(localName = "answers")
     
     private List<QaBotAnswer> answers = null;
     
@@ -35,7 +32,6 @@ public class QaBotAnswersNew  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="recommend_answers")
     
-    @JacksonXmlProperty(localName = "recommend_answers")
     
     private List<RecomendAnswer> recommendAnswers = null;
     

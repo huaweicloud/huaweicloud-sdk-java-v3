@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -12,35 +11,14 @@ import java.util.Objects;
 public class ShowNodeConnectivityRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "task_id")
-
-    @JacksonXmlProperty(localName = "task_id")
-
-    private String taskId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "queue_name")
-
-    @JacksonXmlProperty(localName = "queue_name")
 
     private String queueName;
 
-    public ShowNodeConnectivityRequest withTaskId(String taskId) {
-        this.taskId = taskId;
-        return this;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "task_id")
 
-    /**
-     * Get taskId
-     * @return taskId
-     */
-    public String getTaskId() {
-        return taskId;
-    }
-
-    public void setTaskId(String taskId) {
-        this.taskId = taskId;
-    }
+    private String taskId;
 
     public ShowNodeConnectivityRequest withQueueName(String queueName) {
         this.queueName = queueName;
@@ -59,6 +37,23 @@ public class ShowNodeConnectivityRequest {
         this.queueName = queueName;
     }
 
+    public ShowNodeConnectivityRequest withTaskId(String taskId) {
+        this.taskId = taskId;
+        return this;
+    }
+
+    /**
+     * Get taskId
+     * @return taskId
+     */
+    public String getTaskId() {
+        return taskId;
+    }
+
+    public void setTaskId(String taskId) {
+        this.taskId = taskId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -68,21 +63,21 @@ public class ShowNodeConnectivityRequest {
             return false;
         }
         ShowNodeConnectivityRequest showNodeConnectivityRequest = (ShowNodeConnectivityRequest) o;
-        return Objects.equals(this.taskId, showNodeConnectivityRequest.taskId)
-            && Objects.equals(this.queueName, showNodeConnectivityRequest.queueName);
+        return Objects.equals(this.queueName, showNodeConnectivityRequest.queueName)
+            && Objects.equals(this.taskId, showNodeConnectivityRequest.taskId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(taskId, queueName);
+        return Objects.hash(queueName, taskId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowNodeConnectivityRequest {\n");
-        sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
         sb.append("    queueName: ").append(toIndentedString(queueName)).append("\n");
+        sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cce.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,126 +13,90 @@ public class NodeExtendParam {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ecs:performancetype")
 
-    @JacksonXmlProperty(localName = "ecs:performancetype")
-
     private String ecsPerformancetype;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "orderID")
-
-    @JacksonXmlProperty(localName = "orderID")
 
     private String orderID;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "productID")
 
-    @JacksonXmlProperty(localName = "productID")
-
     private String productID;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maxPods")
-
-    @JacksonXmlProperty(localName = "maxPods")
 
     private Integer maxPods;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "periodType")
 
-    @JacksonXmlProperty(localName = "periodType")
-
     private String periodType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "periodNum")
-
-    @JacksonXmlProperty(localName = "periodNum")
 
     private Integer periodNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "isAutoRenew")
 
-    @JacksonXmlProperty(localName = "isAutoRenew")
-
     private String isAutoRenew;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "isAutoPay")
-
-    @JacksonXmlProperty(localName = "isAutoPay")
 
     private String isAutoPay;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "DockerLVMConfigOverride")
 
-    @JacksonXmlProperty(localName = "DockerLVMConfigOverride")
-
     private String dockerLVMConfigOverride;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dockerBaseSize")
-
-    @JacksonXmlProperty(localName = "dockerBaseSize")
 
     private Integer dockerBaseSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publicKey")
 
-    @JacksonXmlProperty(localName = "publicKey")
-
     private String publicKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alpha.cce/preInstall")
-
-    @JacksonXmlProperty(localName = "alpha.cce/preInstall")
 
     private String alphaCcePreInstall;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alpha.cce/postInstall")
 
-    @JacksonXmlProperty(localName = "alpha.cce/postInstall")
-
     private String alphaCcePostInstall;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alpha.cce/NodeImageID")
-
-    @JacksonXmlProperty(localName = "alpha.cce/NodeImageID")
 
     private String alphaCceNodeImageID;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nicMultiqueue")
 
-    @JacksonXmlProperty(localName = "nicMultiqueue")
-
     private String nicMultiqueue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nicThreshold")
-
-    @JacksonXmlProperty(localName = "nicThreshold")
 
     private String nicThreshold;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
-    @JacksonXmlProperty(localName = "enterprise_project_id")
-
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "chargingMode")
-
-    @JacksonXmlProperty(localName = "chargingMode")
 
     private Integer chargingMode;
 

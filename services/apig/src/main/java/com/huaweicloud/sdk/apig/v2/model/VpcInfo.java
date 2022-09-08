@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.apig.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,42 +13,30 @@ public class VpcInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ecs_id")
 
-    @JacksonXmlProperty(localName = "ecs_id")
-
     private String ecsId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ecs_name")
-
-    @JacksonXmlProperty(localName = "ecs_name")
 
     private String ecsName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cascade_flag")
 
-    @JacksonXmlProperty(localName = "cascade_flag")
-
     private Boolean cascadeFlag;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_channel_proxy_host")
-
-    @JacksonXmlProperty(localName = "vpc_channel_proxy_host")
 
     private String vpcChannelProxyHost;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_channel_id")
 
-    @JacksonXmlProperty(localName = "vpc_channel_id")
-
     private String vpcChannelId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_channel_port")
-
-    @JacksonXmlProperty(localName = "vpc_channel_port")
 
     private Integer vpcChannelPort;
 

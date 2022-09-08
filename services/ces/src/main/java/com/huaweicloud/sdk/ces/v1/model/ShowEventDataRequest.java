@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.ces.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,56 +13,40 @@ public class ShowEventDataRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "namespace")
 
-    @JacksonXmlProperty(localName = "namespace")
-
     private String namespace;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dim.0")
-
-    @JacksonXmlProperty(localName = "dim.0")
 
     private String dim0;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dim.1")
 
-    @JacksonXmlProperty(localName = "dim.1")
-
     private String dim1;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dim.2")
-
-    @JacksonXmlProperty(localName = "dim.2")
 
     private String dim2;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dim.3")
 
-    @JacksonXmlProperty(localName = "dim.3")
-
     private String dim3;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
-
-    @JacksonXmlProperty(localName = "type")
 
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "from")
 
-    @JacksonXmlProperty(localName = "from")
-
     private Long from;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "to")
-
-    @JacksonXmlProperty(localName = "to")
 
     private Long to;
 

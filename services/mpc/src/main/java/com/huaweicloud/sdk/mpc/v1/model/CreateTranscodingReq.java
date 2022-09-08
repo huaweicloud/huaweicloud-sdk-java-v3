@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.mpc.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,112 +16,80 @@ public class CreateTranscodingReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "input")
 
-    @JacksonXmlProperty(localName = "input")
-
     private ObsObjInfo input;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "output")
-
-    @JacksonXmlProperty(localName = "output")
 
     private ObsObjInfo output;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trans_template_id")
 
-    @JacksonXmlProperty(localName = "trans_template_id")
-
     private List<Integer> transTemplateId = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "av_parameters")
-
-    @JacksonXmlProperty(localName = "av_parameters")
 
     private List<AvParameters> avParameters = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "output_filenames")
 
-    @JacksonXmlProperty(localName = "output_filenames")
-
     private List<String> outputFilenames = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_data")
-
-    @JacksonXmlProperty(localName = "user_data")
 
     private String userData;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "watermarks")
 
-    @JacksonXmlProperty(localName = "watermarks")
-
     private List<WatermarkRequest> watermarks = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "thumbnail")
-
-    @JacksonXmlProperty(localName = "thumbnail")
 
     private Thumbnail thumbnail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "priority")
 
-    @JacksonXmlProperty(localName = "priority")
-
     private Integer priority;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subtitle")
-
-    @JacksonXmlProperty(localName = "subtitle")
 
     private Subtitle subtitle;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "encryption")
 
-    @JacksonXmlProperty(localName = "encryption")
-
     private Encryption encryption;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "crop")
-
-    @JacksonXmlProperty(localName = "crop")
 
     private Crop crop;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "audio_track")
 
-    @JacksonXmlProperty(localName = "audio_track")
-
     private AudioTrack audioTrack;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "multi_audio")
-
-    @JacksonXmlProperty(localName = "multi_audio")
 
     private MultiAudio multiAudio;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "video_process")
 
-    @JacksonXmlProperty(localName = "video_process")
-
     private VideoProcess videoProcess;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "audio_process")
-
-    @JacksonXmlProperty(localName = "audio_process")
 
     private AudioProcess audioProcess;
 

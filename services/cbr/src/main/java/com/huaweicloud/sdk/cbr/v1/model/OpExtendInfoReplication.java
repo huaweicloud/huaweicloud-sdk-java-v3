@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cbr.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,70 +13,50 @@ public class OpExtendInfoReplication {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "destination_backup_id")
 
-    @JacksonXmlProperty(localName = "destination_backup_id")
-
     private String destinationBackupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "destination_checkpoint_id")
-
-    @JacksonXmlProperty(localName = "destination_checkpoint_id")
 
     private String destinationCheckpointId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "destination_project_id")
 
-    @JacksonXmlProperty(localName = "destination_project_id")
-
     private String destinationProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "destination_region")
-
-    @JacksonXmlProperty(localName = "destination_region")
 
     private String destinationRegion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_backup_id")
 
-    @JacksonXmlProperty(localName = "source_backup_id")
-
     private String sourceBackupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_checkpoint_id")
-
-    @JacksonXmlProperty(localName = "source_checkpoint_id")
 
     private String sourceCheckpointId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_project_id")
 
-    @JacksonXmlProperty(localName = "source_project_id")
-
     private String sourceProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_region")
-
-    @JacksonXmlProperty(localName = "source_region")
 
     private String sourceRegion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_backup_name")
 
-    @JacksonXmlProperty(localName = "source_backup_name")
-
     private String sourceBackupName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "destination_backup_name")
-
-    @JacksonXmlProperty(localName = "destination_backup_name")
 
     private String destinationBackupName;
 

@@ -8,8 +8,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -23,7 +21,6 @@ public class MetaDataSeries  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="count")
     
-    @JacksonXmlProperty(localName = "count")
     
     private Integer count;
 
@@ -31,7 +28,6 @@ public class MetaDataSeries  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    @JacksonXmlProperty(localName = "offset")
     
     private Integer offset;
 
@@ -39,7 +35,6 @@ public class MetaDataSeries  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="total")
     
-    @JacksonXmlProperty(localName = "total")
     
     private Integer total;
 
@@ -47,7 +42,6 @@ public class MetaDataSeries  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="nextToken")
     
-    @JacksonXmlProperty(localName = "nextToken")
     
     private Integer nextToken;
 

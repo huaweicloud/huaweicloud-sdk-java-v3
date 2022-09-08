@@ -11,8 +11,6 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.aom.v2.model.DimensionSeries;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -26,7 +24,6 @@ public class QuerySample  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="namespace")
     
-    @JacksonXmlProperty(localName = "namespace")
     
     private String namespace;
 
@@ -34,7 +31,6 @@ public class QuerySample  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dimensions")
     
-    @JacksonXmlProperty(localName = "dimensions")
     
     private List<DimensionSeries> dimensions = null;
     
@@ -42,7 +38,6 @@ public class QuerySample  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metric_name")
     
-    @JacksonXmlProperty(localName = "metric_name")
     
     private String metricName;
 

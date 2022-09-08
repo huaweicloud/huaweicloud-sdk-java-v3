@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.bcs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -17,14 +16,10 @@ public class PeerChannelInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "channel_name")
 
-    @JacksonXmlProperty(localName = "channel_name")
-
     private String channelName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "peers")
-
-    @JacksonXmlProperty(localName = "peers")
 
     private Map<String, Long> peers = null;
 

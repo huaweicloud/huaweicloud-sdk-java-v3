@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.ccm.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,98 +14,70 @@ public class Certificates {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "certificate_id")
 
-    @JacksonXmlProperty(localName = "certificate_id")
-
     private String certificateId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
-
-    @JacksonXmlProperty(localName = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "issuer_id")
 
-    @JacksonXmlProperty(localName = "issuer_id")
-
     private String issuerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "issuer_name")
-
-    @JacksonXmlProperty(localName = "issuer_name")
 
     private String issuerName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key_algorithm")
 
-    @JacksonXmlProperty(localName = "key_algorithm")
-
     private String keyAlgorithm;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "signature_algorithm")
-
-    @JacksonXmlProperty(localName = "signature_algorithm")
 
     private String signatureAlgorithm;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "freeze_flag")
 
-    @JacksonXmlProperty(localName = "freeze_flag")
-
     private Integer freezeFlag;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "gen_mode")
-
-    @JacksonXmlProperty(localName = "gen_mode")
 
     private String genMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "serial_number")
 
-    @JacksonXmlProperty(localName = "serial_number")
-
     private String serialNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
-
-    @JacksonXmlProperty(localName = "create_time")
 
     private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "delete_time")
 
-    @JacksonXmlProperty(localName = "delete_time")
-
     private Long deleteTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "not_before")
-
-    @JacksonXmlProperty(localName = "not_before")
 
     private Long notBefore;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "not_after")
 
-    @JacksonXmlProperty(localName = "not_after")
-
     private Long notAfter;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "distinguished_name")
-
-    @JacksonXmlProperty(localName = "distinguished_name")
 
     private DistinguishedName distinguishedName;
 

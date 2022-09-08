@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.css.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,21 +13,15 @@ public class StartLogsReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "agency")
 
-    @JacksonXmlProperty(localName = "agency")
-
     private String agency;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "logBasePath")
 
-    @JacksonXmlProperty(localName = "logBasePath")
-
     private String logBasePath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "logBucket")
-
-    @JacksonXmlProperty(localName = "logBucket")
 
     private String logBucket;
 

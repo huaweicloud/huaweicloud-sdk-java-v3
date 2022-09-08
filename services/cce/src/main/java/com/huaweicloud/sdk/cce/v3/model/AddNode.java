@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cce.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.UUID;
@@ -16,14 +15,10 @@ public class AddNode {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "serverID")
 
-    @JacksonXmlProperty(localName = "serverID")
-
     private UUID serverID;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "spec")
-
-    @JacksonXmlProperty(localName = "spec")
 
     private ReinstallNodeSpec spec;
 

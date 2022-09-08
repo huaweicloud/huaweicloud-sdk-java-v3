@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.elb.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,77 +13,55 @@ public class Quota {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
 
-    @JacksonXmlProperty(localName = "project_id")
-
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "loadbalancer")
-
-    @JacksonXmlProperty(localName = "loadbalancer")
 
     private Integer loadbalancer;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "certificate")
 
-    @JacksonXmlProperty(localName = "certificate")
-
     private Integer certificate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "listener")
-
-    @JacksonXmlProperty(localName = "listener")
 
     private Integer listener;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "l7policy")
 
-    @JacksonXmlProperty(localName = "l7policy")
-
     private Integer l7policy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pool")
-
-    @JacksonXmlProperty(localName = "pool")
 
     private Integer pool;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "healthmonitor")
 
-    @JacksonXmlProperty(localName = "healthmonitor")
-
     private Integer healthmonitor;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "member")
-
-    @JacksonXmlProperty(localName = "member")
 
     private Integer member;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "members_per_pool")
 
-    @JacksonXmlProperty(localName = "members_per_pool")
-
     private Integer membersPerPool;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ipgroup")
 
-    @JacksonXmlProperty(localName = "ipgroup")
-
     private Integer ipgroup;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_policy")
-
-    @JacksonXmlProperty(localName = "security_policy")
 
     private Integer securityPolicy;
 
@@ -247,7 +224,7 @@ public class Quota {
     }
 
     /**
-     * IP地址组配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。  [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
+     * IP地址组配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。  [不支持该字段，请勿使用。](tag:hcso_dt)
      * @return ipgroup
      */
     public Integer getIpgroup() {
@@ -264,7 +241,7 @@ public class Quota {
     }
 
     /**
-     * 自定义安全策略配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。  [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
+     * 自定义安全策略配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。  [不支持该字段，请勿使用。](tag:hcso_dt)
      * @return securityPolicy
      */
     public Integer getSecurityPolicy() {

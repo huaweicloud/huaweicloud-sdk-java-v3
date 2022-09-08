@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -19,8 +18,6 @@ public class ModifyPwdEndPoint {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "db_password")
-
-    @JacksonXmlProperty(localName = "db_password")
 
     private String dbPassword;
 
@@ -104,21 +101,15 @@ public class ModifyPwdEndPoint {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_point_type")
 
-    @JacksonXmlProperty(localName = "end_point_type")
-
     private EndPointTypeEnum endPointType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_id")
 
-    @JacksonXmlProperty(localName = "job_id")
-
     private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "kerberos")
-
-    @JacksonXmlProperty(localName = "kerberos")
 
     private KerberosVO kerberos;
 

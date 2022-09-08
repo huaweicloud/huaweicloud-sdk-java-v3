@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.functiongraph.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,14 +13,10 @@ public class StrategyConfig {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "concurrency")
 
-    @JacksonXmlProperty(localName = "concurrency")
-
     private Integer concurrency;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "concurrent_num")
-
-    @JacksonXmlProperty(localName = "concurrent_num")
 
     private Integer concurrentNum;
 

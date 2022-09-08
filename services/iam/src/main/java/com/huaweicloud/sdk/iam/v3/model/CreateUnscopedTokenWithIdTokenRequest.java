@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.iam.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,21 +13,15 @@ public class CreateUnscopedTokenWithIdTokenRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "idp_id")
 
-    @JacksonXmlProperty(localName = "idp_id")
-
     private String idpId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protocol_id")
 
-    @JacksonXmlProperty(localName = "protocol_id")
-
     private String protocolId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "Authorization")
-
-    @JacksonXmlProperty(localName = "Authorization")
 
     private String authorization;
 

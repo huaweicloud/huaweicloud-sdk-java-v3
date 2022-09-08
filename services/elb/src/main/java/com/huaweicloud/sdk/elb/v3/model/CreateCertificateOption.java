@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -19,49 +18,35 @@ public class CreateCertificateOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "admin_state_up")
 
-    @JacksonXmlProperty(localName = "admin_state_up")
-
     private Boolean adminStateUp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "certificate")
-
-    @JacksonXmlProperty(localName = "certificate")
 
     private String certificate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
-    @JacksonXmlProperty(localName = "description")
-
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain")
-
-    @JacksonXmlProperty(localName = "domain")
 
     private String domain;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
-    @JacksonXmlProperty(localName = "name")
-
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "private_key")
 
-    @JacksonXmlProperty(localName = "private_key")
-
     private String privateKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
-
-    @JacksonXmlProperty(localName = "project_id")
 
     private String projectId;
 
@@ -145,28 +130,20 @@ public class CreateCertificateOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
-    @JacksonXmlProperty(localName = "type")
-
     private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
-
-    @JacksonXmlProperty(localName = "enterprise_project_id")
 
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enc_certificate")
 
-    @JacksonXmlProperty(localName = "enc_certificate")
-
     private String encCertificate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enc_private_key")
-
-    @JacksonXmlProperty(localName = "enc_private_key")
 
     private String encPrivateKey;
 
@@ -329,7 +306,7 @@ public class CreateCertificateOption {
     }
 
     /**
-     * HTTPS协议使用的SM加密证书内容。 取值：PEM编码格式。 使用说明：仅type为server_sm时有效且必选。 最大长度65536字符。 支持证书链，最大11层(含证书和证书链)。
+     * HTTPS协议使用的SM加密证书内容。支持证书链，最大11层(含证书和证书链)。  取值：PEM编码格式。最大长度65536字符。  使用说明：仅type为server_sm时有效且必选。
      * @return encCertificate
      */
     public String getEncCertificate() {
@@ -346,7 +323,7 @@ public class CreateCertificateOption {
     }
 
     /**
-     * HTTPS协议使用的SM加密证书私钥。 取值：PEM编码格式。 使用说明：仅type为server_sm时有效且必选。 最大长度8192字符。
+     * HTTPS协议使用的SM加密证书私钥。  取值：PEM编码格式。最大长度8192字符。  使用说明：仅type为server_sm时有效且必选。
      * @return encPrivateKey
      */
     public String getEncPrivateKey() {

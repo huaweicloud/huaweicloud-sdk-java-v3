@@ -9,8 +9,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.iotedge.v2.model.UpdateExternalEntityReqDTO;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -24,7 +22,6 @@ public class UpdateExternalEntityRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edge_node_id")
     
-    @JacksonXmlProperty(localName = "edge_node_id")
     
     private String edgeNodeId;
 
@@ -32,7 +29,6 @@ public class UpdateExternalEntityRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="external_id")
     
-    @JacksonXmlProperty(localName = "external_id")
     
     private String externalId;
 
@@ -40,7 +36,6 @@ public class UpdateExternalEntityRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    @JacksonXmlProperty(localName = "body")
     
     private UpdateExternalEntityReqDTO body;
 

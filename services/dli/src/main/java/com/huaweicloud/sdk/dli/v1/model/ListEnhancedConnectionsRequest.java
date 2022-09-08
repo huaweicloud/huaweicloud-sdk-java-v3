@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,30 +13,27 @@ public class ListEnhancedConnectionsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
-    @JacksonXmlProperty(localName = "limit")
-
     private String limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "offset")
+    @JsonProperty(value = "name")
 
-    @JacksonXmlProperty(localName = "offset")
+    private String name;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
 
     private String offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    @JacksonXmlProperty(localName = "status")
-
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "name")
+    @JsonProperty(value = "tags")
 
-    @JacksonXmlProperty(localName = "name")
-
-    private String name;
+    private String tags;
 
     public ListEnhancedConnectionsRequest withLimit(String limit) {
         this.limit = limit;
@@ -54,6 +50,23 @@ public class ListEnhancedConnectionsRequest {
 
     public void setLimit(String limit) {
         this.limit = limit;
+    }
+
+    public ListEnhancedConnectionsRequest withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    /**
+     * 连接名。
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public ListEnhancedConnectionsRequest withOffset(String offset) {
@@ -90,21 +103,21 @@ public class ListEnhancedConnectionsRequest {
         this.status = status;
     }
 
-    public ListEnhancedConnectionsRequest withName(String name) {
-        this.name = name;
+    public ListEnhancedConnectionsRequest withTags(String tags) {
+        this.tags = tags;
         return this;
     }
 
     /**
-     * 连接名。
-     * @return name
+     * 标签
+     * @return tags
      */
-    public String getName() {
-        return name;
+    public String getTags() {
+        return tags;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTags(String tags) {
+        this.tags = tags;
     }
 
     @Override
@@ -117,14 +130,15 @@ public class ListEnhancedConnectionsRequest {
         }
         ListEnhancedConnectionsRequest listEnhancedConnectionsRequest = (ListEnhancedConnectionsRequest) o;
         return Objects.equals(this.limit, listEnhancedConnectionsRequest.limit)
+            && Objects.equals(this.name, listEnhancedConnectionsRequest.name)
             && Objects.equals(this.offset, listEnhancedConnectionsRequest.offset)
             && Objects.equals(this.status, listEnhancedConnectionsRequest.status)
-            && Objects.equals(this.name, listEnhancedConnectionsRequest.name);
+            && Objects.equals(this.tags, listEnhancedConnectionsRequest.tags);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(limit, offset, status, name);
+        return Objects.hash(limit, name, offset, status, tags);
     }
 
     @Override
@@ -132,9 +146,10 @@ public class ListEnhancedConnectionsRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListEnhancedConnectionsRequest {\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
-        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

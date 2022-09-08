@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cdn.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,28 +16,20 @@ public class CacheConfig {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ignore_url_parameter")
 
-    @JacksonXmlProperty(localName = "ignore_url_parameter")
-
     private Boolean ignoreUrlParameter;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "follow_origin")
-
-    @JacksonXmlProperty(localName = "follow_origin")
 
     private Boolean followOrigin;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "compress")
 
-    @JacksonXmlProperty(localName = "compress")
-
     private CompressResponse compress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rules")
-
-    @JacksonXmlProperty(localName = "rules")
 
     private List<Rules> rules = null;
 

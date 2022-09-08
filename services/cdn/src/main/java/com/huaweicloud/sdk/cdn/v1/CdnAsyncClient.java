@@ -20,6 +20,38 @@ public class CdnAsyncClient {
     }
 
     /**
+     * 删除资源标签配置接口
+     *
+     * 用于删除资源标签
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param BatchDeleteTagsRequest 请求对象
+     * @return CompletableFuture<BatchDeleteTagsResponse>
+     */
+    public CompletableFuture<BatchDeleteTagsResponse> batchDeleteTagsAsync(BatchDeleteTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CdnMeta.batchDeleteTags);
+    }
+
+    /**
+     * 删除资源标签配置接口
+     *
+     * 用于删除资源标签
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param BatchDeleteTagsRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteTagsRequest, BatchDeleteTagsResponse>
+     */
+    public AsyncInvoker<BatchDeleteTagsRequest, BatchDeleteTagsResponse> batchDeleteTagsAsyncInvoker(
+        BatchDeleteTagsRequest request) {
+        return new AsyncInvoker<BatchDeleteTagsRequest, BatchDeleteTagsResponse>(request, CdnMeta.batchDeleteTags,
+            hcClient);
+    }
+
+    /**
      * 创建加速域名
      *
      * 创建加速域名。
@@ -113,6 +145,36 @@ public class CdnAsyncClient {
         CreateRefreshTasksRequest request) {
         return new AsyncInvoker<CreateRefreshTasksRequest, CreateRefreshTasksResponse>(request,
             CdnMeta.createRefreshTasks, hcClient);
+    }
+
+    /**
+     * 创建资源标签配置接口
+     *
+     * 用于创建资源标签
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateTagsRequest 请求对象
+     * @return CompletableFuture<CreateTagsResponse>
+     */
+    public CompletableFuture<CreateTagsResponse> createTagsAsync(CreateTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CdnMeta.createTags);
+    }
+
+    /**
+     * 创建资源标签配置接口
+     *
+     * 用于创建资源标签
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateTagsRequest 请求对象
+     * @return AsyncInvoker<CreateTagsRequest, CreateTagsResponse>
+     */
+    public AsyncInvoker<CreateTagsRequest, CreateTagsResponse> createTagsAsyncInvoker(CreateTagsRequest request) {
+        return new AsyncInvoker<CreateTagsRequest, CreateTagsResponse>(request, CdnMeta.createTags, hcClient);
     }
 
     /**
@@ -871,6 +933,36 @@ public class CdnAsyncClient {
         ShowResponseHeaderRequest request) {
         return new AsyncInvoker<ShowResponseHeaderRequest, ShowResponseHeaderResponse>(request,
             CdnMeta.showResponseHeader, hcClient);
+    }
+
+    /**
+     * 查询资源标签列表配置接口
+     *
+     * 用于查询资源标签列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowTagsRequest 请求对象
+     * @return CompletableFuture<ShowTagsResponse>
+     */
+    public CompletableFuture<ShowTagsResponse> showTagsAsync(ShowTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CdnMeta.showTags);
+    }
+
+    /**
+     * 查询资源标签列表配置接口
+     *
+     * 用于查询资源标签列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowTagsRequest 请求对象
+     * @return AsyncInvoker<ShowTagsRequest, ShowTagsResponse>
+     */
+    public AsyncInvoker<ShowTagsRequest, ShowTagsResponse> showTagsAsyncInvoker(ShowTagsRequest request) {
+        return new AsyncInvoker<ShowTagsRequest, ShowTagsResponse>(request, CdnMeta.showTags, hcClient);
     }
 
     /**

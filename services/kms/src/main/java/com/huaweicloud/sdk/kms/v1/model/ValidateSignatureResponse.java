@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.kms.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -15,14 +14,10 @@ public class ValidateSignatureResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key_id")
 
-    @JacksonXmlProperty(localName = "key_id")
-
     private String keyId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "signature_valid")
-
-    @JacksonXmlProperty(localName = "signature_valid")
 
     private String signatureValid;
 

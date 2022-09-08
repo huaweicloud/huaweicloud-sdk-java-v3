@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.roma.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,49 +16,35 @@ public class ApiAuthCreate {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "env_id")
 
-    @JacksonXmlProperty(localName = "env_id")
-
     private String envId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_ids")
-
-    @JacksonXmlProperty(localName = "app_ids")
 
     private List<String> appIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "api_ids")
 
-    @JacksonXmlProperty(localName = "api_ids")
-
     private List<String> apiIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auth_tunnel")
-
-    @JacksonXmlProperty(localName = "auth_tunnel")
 
     private String authTunnel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auth_whitelist")
 
-    @JacksonXmlProperty(localName = "auth_whitelist")
-
     private List<String> authWhitelist = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auth_blacklist")
 
-    @JacksonXmlProperty(localName = "auth_blacklist")
-
     private List<String> authBlacklist = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "visit_params")
-
-    @JacksonXmlProperty(localName = "visit_params")
 
     private List<ApiAuthVisitParam> visitParams = null;
 

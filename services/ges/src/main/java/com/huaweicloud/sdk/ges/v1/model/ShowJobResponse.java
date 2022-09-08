@@ -11,8 +11,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.ges.v1.model.JobDetail;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -26,7 +24,6 @@ public class ShowJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="errorMessage")
     
-    @JacksonXmlProperty(localName = "errorMessage")
     
     private String errorMessage;
 
@@ -34,7 +31,6 @@ public class ShowJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="errorCode")
     
-    @JacksonXmlProperty(localName = "errorCode")
     
     private String errorCode;
 
@@ -42,7 +38,6 @@ public class ShowJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="jobId")
     
-    @JacksonXmlProperty(localName = "jobId")
     
     private String jobId;
 
@@ -50,7 +45,6 @@ public class ShowJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    @JacksonXmlProperty(localName = "status")
     
     private String status;
 
@@ -58,7 +52,6 @@ public class ShowJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="jobType")
     
-    @JacksonXmlProperty(localName = "jobType")
     
     private String jobType;
 
@@ -66,7 +59,6 @@ public class ShowJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="jobName")
     
-    @JacksonXmlProperty(localName = "jobName")
     
     private String jobName;
 
@@ -74,7 +66,6 @@ public class ShowJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="relatedGraph")
     
-    @JacksonXmlProperty(localName = "relatedGraph")
     
     private String relatedGraph;
 
@@ -82,7 +73,6 @@ public class ShowJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="beginTime")
     
-    @JacksonXmlProperty(localName = "beginTime")
     
     private String beginTime;
 
@@ -90,7 +80,6 @@ public class ShowJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="endTime")
     
-    @JacksonXmlProperty(localName = "endTime")
     
     private String endTime;
 
@@ -98,7 +87,6 @@ public class ShowJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="jobDetail")
     
-    @JacksonXmlProperty(localName = "jobDetail")
     
     private JobDetail jobDetail;
 
@@ -106,7 +94,6 @@ public class ShowJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="failReason")
     
-    @JacksonXmlProperty(localName = "failReason")
     
     private String failReason;
 
@@ -114,7 +101,6 @@ public class ShowJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="jobProgress")
     
-    @JacksonXmlProperty(localName = "jobProgress")
     
     private Double jobProgress;
 

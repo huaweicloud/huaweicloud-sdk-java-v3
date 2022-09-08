@@ -15,8 +15,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -30,7 +28,6 @@ public class ClusterScalingParams  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="order_id")
     
-    @JacksonXmlProperty(localName = "order_id")
     
     private String orderId;
     /**
@@ -116,7 +113,6 @@ public class ClusterScalingParams  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="scale_type")
     
-    @JacksonXmlProperty(localName = "scale_type")
     
     private ScaleTypeEnum scaleType;
 
@@ -124,7 +120,6 @@ public class ClusterScalingParams  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_id")
     
-    @JacksonXmlProperty(localName = "node_id")
     
     private String nodeId;
 
@@ -132,7 +127,6 @@ public class ClusterScalingParams  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_group")
     
-    @JacksonXmlProperty(localName = "node_group")
     
     private String nodeGroup;
 
@@ -140,7 +134,6 @@ public class ClusterScalingParams  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="skip_bootstrap_scripts")
     
-    @JacksonXmlProperty(localName = "skip_bootstrap_scripts")
     
     private String skipBootstrapScripts;
 
@@ -148,7 +141,6 @@ public class ClusterScalingParams  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="scale_without_start")
     
-    @JacksonXmlProperty(localName = "scale_without_start")
     
     private Boolean scaleWithoutStart;
 
@@ -156,7 +148,6 @@ public class ClusterScalingParams  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="server_ids")
     
-    @JacksonXmlProperty(localName = "server_ids")
     
     private List<String> serverIds = null;
     
@@ -164,7 +155,6 @@ public class ClusterScalingParams  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instances")
     
-    @JacksonXmlProperty(localName = "instances")
     
     private Integer instances;
 
@@ -172,7 +162,6 @@ public class ClusterScalingParams  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="task_node_info")
     
-    @JacksonXmlProperty(localName = "task_node_info")
     
     private TaskNodeInfo taskNodeInfo;
 

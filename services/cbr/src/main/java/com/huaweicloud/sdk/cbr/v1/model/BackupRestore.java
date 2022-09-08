@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cbr.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,35 +16,25 @@ public class BackupRestore {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mappings")
 
-    @JacksonXmlProperty(localName = "mappings")
-
     private List<BackupRestoreServerMapping> mappings = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "power_on")
-
-    @JacksonXmlProperty(localName = "power_on")
 
     private Boolean powerOn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "server_id")
 
-    @JacksonXmlProperty(localName = "server_id")
-
     private String serverId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volume_id")
 
-    @JacksonXmlProperty(localName = "volume_id")
-
     private String volumeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_id")
-
-    @JacksonXmlProperty(localName = "resource_id")
 
     private String resourceId;
 

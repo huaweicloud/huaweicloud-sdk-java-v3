@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.bcs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,56 +13,40 @@ public class QuitUnionFromMemberListRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "inviter_bcsid")
 
-    @JacksonXmlProperty(localName = "inviter_bcsid")
-
     private String inviterBcsid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "inviter_projectid")
-
-    @JacksonXmlProperty(localName = "inviter_projectid")
 
     private String inviterProjectid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "inviter_domainid")
 
-    @JacksonXmlProperty(localName = "inviter_domainid")
-
     private String inviterDomainid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "inviter_username")
-
-    @JacksonXmlProperty(localName = "inviter_username")
 
     private String inviterUsername;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "channel_name")
 
-    @JacksonXmlProperty(localName = "channel_name")
-
     private String channelName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "invitee_bcsid")
-
-    @JacksonXmlProperty(localName = "invitee_bcsid")
 
     private String inviteeBcsid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "invitee_projectid")
 
-    @JacksonXmlProperty(localName = "invitee_projectid")
-
     private String inviteeProjectid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "invitee_domainid")
-
-    @JacksonXmlProperty(localName = "invitee_domainid")
 
     private String inviteeDomainid;
 

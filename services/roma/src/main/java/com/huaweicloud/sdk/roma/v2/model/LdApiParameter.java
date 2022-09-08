@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,8 +17,6 @@ public class LdApiParameter {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
-
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
@@ -109,28 +106,20 @@ public class LdApiParameter {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "in")
 
-    @JacksonXmlProperty(localName = "in")
-
     private InEnum in;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "default")
-
-    @JacksonXmlProperty(localName = "default")
 
     private String _default;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
-    @JacksonXmlProperty(localName = "description")
-
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "required")
-
-    @JacksonXmlProperty(localName = "required")
 
     private Boolean required;
 

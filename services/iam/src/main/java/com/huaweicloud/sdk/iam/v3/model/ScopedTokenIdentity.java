@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.iam.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,14 +16,10 @@ public class ScopedTokenIdentity {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "methods")
 
-    @JacksonXmlProperty(localName = "methods")
-
     private List<String> methods = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "token")
-
-    @JacksonXmlProperty(localName = "token")
 
     private ScopedToken token;
 

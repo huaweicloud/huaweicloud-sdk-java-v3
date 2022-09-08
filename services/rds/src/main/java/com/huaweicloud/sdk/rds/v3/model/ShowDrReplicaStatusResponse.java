@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.rds.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -15,28 +14,20 @@ public class ShowDrReplicaStatusResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "replica_state")
 
-    @JacksonXmlProperty(localName = "replica_state")
-
     private String replicaState;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "wal_write_receive_delay_in_mb")
-
-    @JacksonXmlProperty(localName = "wal_write_receive_delay_in_mb")
 
     private String walWriteReceiveDelayInMb;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "wal_write_replay_delay_in_mb")
 
-    @JacksonXmlProperty(localName = "wal_write_replay_delay_in_mb")
-
     private String walWriteReplayDelayInMb;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "wal_receive_replay_delay_in_ms")
-
-    @JacksonXmlProperty(localName = "wal_receive_replay_delay_in_ms")
 
     private String walReceiveReplayDelayInMs;
 

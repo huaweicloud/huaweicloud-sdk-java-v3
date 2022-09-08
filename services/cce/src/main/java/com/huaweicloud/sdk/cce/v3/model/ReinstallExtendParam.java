@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cce.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.UUID;
@@ -14,8 +13,6 @@ public class ReinstallExtendParam {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alpha.cce/NodeImageID")
-
-    @JacksonXmlProperty(localName = "alpha.cce/NodeImageID")
 
     private UUID alphaCceNodeImageID;
 

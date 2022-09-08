@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,8 +17,6 @@ public class PrepaidUpdateOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auto_pay")
-
-    @JacksonXmlProperty(localName = "auto_pay")
 
     private Boolean autoPay;
 
@@ -103,14 +100,10 @@ public class PrepaidUpdateOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "change_mode")
 
-    @JacksonXmlProperty(localName = "change_mode")
-
     private ChangeModeEnum changeMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "period_num")
-
-    @JacksonXmlProperty(localName = "period_num")
 
     private Integer periodNum;
 
@@ -193,8 +186,6 @@ public class PrepaidUpdateOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "period_type")
-
-    @JacksonXmlProperty(localName = "period_type")
 
     private PeriodTypeEnum periodType;
 

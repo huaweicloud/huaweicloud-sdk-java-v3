@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,14 +21,10 @@ public class BatchUpdateUserStatusRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Request-Id")
 
-    @JacksonXmlProperty(localName = "X-Request-Id")
-
     private String xRequestId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "Accept-Language")
-
-    @JacksonXmlProperty(localName = "Accept-Language")
 
     private String acceptLanguage;
 
@@ -113,21 +108,15 @@ public class BatchUpdateUserStatusRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "value")
 
-    @JacksonXmlProperty(localName = "value")
-
     private ValueEnum value;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "accountType")
 
-    @JacksonXmlProperty(localName = "accountType")
-
     private Integer accountType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
-
-    @JacksonXmlProperty(localName = "body")
 
     private List<String> body = null;
 

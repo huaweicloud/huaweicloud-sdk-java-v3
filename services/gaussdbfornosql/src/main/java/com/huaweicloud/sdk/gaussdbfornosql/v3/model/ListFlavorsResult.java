@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.gaussdbfornosql.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,49 +16,35 @@ public class ListFlavorsResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "engine_name")
 
-    @JacksonXmlProperty(localName = "engine_name")
-
     private String engineName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "engine_version")
-
-    @JacksonXmlProperty(localName = "engine_version")
 
     private String engineVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vcpus")
 
-    @JacksonXmlProperty(localName = "vcpus")
-
     private String vcpus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ram")
-
-    @JacksonXmlProperty(localName = "ram")
 
     private String ram;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "spec_code")
 
-    @JacksonXmlProperty(localName = "spec_code")
-
     private String specCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "availability_zone")
 
-    @JacksonXmlProperty(localName = "availability_zone")
-
     private List<String> availabilityZone = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "az_status")
-
-    @JacksonXmlProperty(localName = "az_status")
 
     private Object azStatus;
 

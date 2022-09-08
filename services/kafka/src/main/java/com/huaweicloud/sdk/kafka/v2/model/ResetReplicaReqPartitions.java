@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.kafka.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,14 +16,10 @@ public class ResetReplicaReqPartitions {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "partition")
 
-    @JacksonXmlProperty(localName = "partition")
-
     private Integer partition;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "replicas")
-
-    @JacksonXmlProperty(localName = "replicas")
 
     private List<Integer> replicas = null;
 

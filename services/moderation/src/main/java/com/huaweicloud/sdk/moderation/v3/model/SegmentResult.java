@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.moderation.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,14 +13,10 @@ public class SegmentResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "segment")
 
-    @JacksonXmlProperty(localName = "segment")
-
     private String segment;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "glossary_name")
-
-    @JacksonXmlProperty(localName = "glossary_name")
 
     private String glossaryName;
 

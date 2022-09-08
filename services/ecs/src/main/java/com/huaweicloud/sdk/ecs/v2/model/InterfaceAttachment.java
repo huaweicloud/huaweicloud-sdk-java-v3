@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.ecs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,70 +16,50 @@ public class InterfaceAttachment {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fixed_ips")
 
-    @JacksonXmlProperty(localName = "fixed_ips")
-
     private List<ServerInterfaceFixedIp> fixedIps = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mac_addr")
-
-    @JacksonXmlProperty(localName = "mac_addr")
 
     private String macAddr;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "net_id")
 
-    @JacksonXmlProperty(localName = "net_id")
-
     private String netId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "port_id")
-
-    @JacksonXmlProperty(localName = "port_id")
 
     private String portId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "port_state")
 
-    @JacksonXmlProperty(localName = "port_state")
-
     private String portState;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "delete_on_termination")
-
-    @JacksonXmlProperty(localName = "delete_on_termination")
 
     private Boolean deleteOnTermination;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "driver_mode")
 
-    @JacksonXmlProperty(localName = "driver_mode")
-
     private String driverMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "min_rate")
-
-    @JacksonXmlProperty(localName = "min_rate")
 
     private Integer minRate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "multiqueue_num")
 
-    @JacksonXmlProperty(localName = "multiqueue_num")
-
     private Integer multiqueueNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pci_address")
-
-    @JacksonXmlProperty(localName = "pci_address")
 
     private String pciAddress;
 

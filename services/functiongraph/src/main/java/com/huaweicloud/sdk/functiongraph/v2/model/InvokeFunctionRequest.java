@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.functiongraph.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -17,28 +16,20 @@ public class InvokeFunctionRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "function_urn")
 
-    @JacksonXmlProperty(localName = "function_urn")
-
     private String functionUrn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Cff-Log-Type")
-
-    @JacksonXmlProperty(localName = "X-Cff-Log-Type")
 
     private String xCffLogType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-CFF-Request-Version")
 
-    @JacksonXmlProperty(localName = "X-CFF-Request-Version")
-
     private String xCFFRequestVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
-
-    @JacksonXmlProperty(localName = "body")
 
     private Map<String, Object> body = null;
 

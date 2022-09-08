@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.osm.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,14 +13,10 @@ public class CreateAndDeletePrivilegeReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operation")
 
-    @JacksonXmlProperty(localName = "operation")
-
     private String operation;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "privilege")
-
-    @JacksonXmlProperty(localName = "privilege")
 
     private String privilege;
 

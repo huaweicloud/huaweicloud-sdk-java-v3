@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.drs.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,28 +16,20 @@ public class UpdateDatabaseObjectReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_id")
 
-    @JacksonXmlProperty(localName = "job_id")
-
     private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "selected")
-
-    @JacksonXmlProperty(localName = "selected")
 
     private Boolean selected;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sync_database")
 
-    @JacksonXmlProperty(localName = "sync_database")
-
     private Boolean syncDatabase;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job")
-
-    @JacksonXmlProperty(localName = "job")
 
     private List<DatabaseInfo> job = null;
 

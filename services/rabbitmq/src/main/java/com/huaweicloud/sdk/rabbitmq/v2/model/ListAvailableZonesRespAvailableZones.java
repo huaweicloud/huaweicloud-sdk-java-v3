@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.rabbitmq.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,63 +13,45 @@ public class ListAvailableZonesRespAvailableZones {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "soldOut")
 
-    @JacksonXmlProperty(localName = "soldOut")
-
     private Boolean soldOut;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
-
-    @JacksonXmlProperty(localName = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "code")
 
-    @JacksonXmlProperty(localName = "code")
-
     private String code;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
-
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "port")
 
-    @JacksonXmlProperty(localName = "port")
-
     private String port;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_availability")
-
-    @JacksonXmlProperty(localName = "resource_availability")
 
     private String resourceAvailability;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "default_az")
 
-    @JacksonXmlProperty(localName = "default_az")
-
     private Boolean defaultAz;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remain_time")
 
-    @JacksonXmlProperty(localName = "remain_time")
-
     private Long remainTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ipv6_enable")
-
-    @JacksonXmlProperty(localName = "ipv6_enable")
 
     private Boolean ipv6Enable;
 

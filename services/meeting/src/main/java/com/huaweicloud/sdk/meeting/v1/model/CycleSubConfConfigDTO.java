@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,35 +14,25 @@ public class CycleSubConfConfigDTO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "callInRestriction")
 
-    @JacksonXmlProperty(localName = "callInRestriction")
-
     private Integer callInRestriction;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "audienceCallInRestriction")
-
-    @JacksonXmlProperty(localName = "audienceCallInRestriction")
 
     private Integer audienceCallInRestriction;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "allowGuestStartConf")
 
-    @JacksonXmlProperty(localName = "allowGuestStartConf")
-
     private Boolean allowGuestStartConf;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enableWaitingRoom")
 
-    @JacksonXmlProperty(localName = "enableWaitingRoom")
-
     private Boolean enableWaitingRoom;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "showAudienceCountInfo")
-
-    @JacksonXmlProperty(localName = "showAudienceCountInfo")
 
     private ShowAudienceCountInfo showAudienceCountInfo;
 

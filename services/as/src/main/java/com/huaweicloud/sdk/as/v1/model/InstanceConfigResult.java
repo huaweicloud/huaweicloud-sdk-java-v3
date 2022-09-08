@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.as.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,126 +16,90 @@ public class InstanceConfigResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flavorRef")
 
-    @JacksonXmlProperty(localName = "flavorRef")
-
     private String flavorRef;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "imageRef")
-
-    @JacksonXmlProperty(localName = "imageRef")
 
     private String imageRef;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "disk")
 
-    @JacksonXmlProperty(localName = "disk")
-
     private List<DiskResult> disk = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key_name")
-
-    @JacksonXmlProperty(localName = "key_name")
 
     private String keyName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key_fingerprint")
 
-    @JacksonXmlProperty(localName = "key_fingerprint")
-
     private String keyFingerprint;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_name")
-
-    @JacksonXmlProperty(localName = "instance_name")
 
     private String instanceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_id")
 
-    @JacksonXmlProperty(localName = "instance_id")
-
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "adminPass")
-
-    @JacksonXmlProperty(localName = "adminPass")
 
     private String adminPass;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "personality")
 
-    @JacksonXmlProperty(localName = "personality")
-
     private List<PersonalityResult> personality = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "public_ip")
-
-    @JacksonXmlProperty(localName = "public_ip")
 
     private PublicipResult publicIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_data")
 
-    @JacksonXmlProperty(localName = "user_data")
-
     private String userData;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metadata")
-
-    @JacksonXmlProperty(localName = "metadata")
 
     private VmMetaData metadata;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_groups")
 
-    @JacksonXmlProperty(localName = "security_groups")
-
     private List<SecurityGroups> securityGroups = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "server_group_id")
-
-    @JacksonXmlProperty(localName = "server_group_id")
 
     private String serverGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tenancy")
 
-    @JacksonXmlProperty(localName = "tenancy")
-
     private String tenancy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dedicated_host_id")
-
-    @JacksonXmlProperty(localName = "dedicated_host_id")
 
     private String dedicatedHostId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "market_type")
 
-    @JacksonXmlProperty(localName = "market_type")
-
     private String marketType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "multi_flavor_priority_policy")
-
-    @JacksonXmlProperty(localName = "multi_flavor_priority_policy")
 
     private String multiFlavorPriorityPolicy;
 

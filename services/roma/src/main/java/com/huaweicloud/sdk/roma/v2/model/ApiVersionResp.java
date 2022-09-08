@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.time.OffsetDateTime;
 import java.util.Collections;
@@ -20,49 +19,35 @@ public class ApiVersionResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version_id")
 
-    @JacksonXmlProperty(localName = "version_id")
-
     private String versionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version_no")
-
-    @JacksonXmlProperty(localName = "version_no")
 
     private String versionNo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "api_id")
 
-    @JacksonXmlProperty(localName = "api_id")
-
     private String apiId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "env_id")
-
-    @JacksonXmlProperty(localName = "env_id")
 
     private String envId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "env_name")
 
-    @JacksonXmlProperty(localName = "env_name")
-
     private String envName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remark")
 
-    @JacksonXmlProperty(localName = "remark")
-
     private String remark;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publish_time")
-
-    @JacksonXmlProperty(localName = "publish_time")
 
     private OffsetDateTime publishTime;
 
@@ -145,8 +130,6 @@ public class ApiVersionResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
-
-    @JacksonXmlProperty(localName = "status")
 
     private StatusEnum status;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -18,28 +17,20 @@ public class ListGlobalValuesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_success")
 
-    @JacksonXmlProperty(localName = "is_success")
-
     private Boolean isSuccess;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "message")
-
-    @JacksonXmlProperty(localName = "message")
 
     private String message;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "global_vars")
 
-    @JacksonXmlProperty(localName = "global_vars")
-
-    private List<CreateGlobalValue> globalVars = null;
+    private List<ListGlobalValue> globalVars = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "count")
-
-    @JacksonXmlProperty(localName = "count")
 
     private Integer count;
 
@@ -77,12 +68,12 @@ public class ListGlobalValuesResponse extends SdkResponse {
         this.message = message;
     }
 
-    public ListGlobalValuesResponse withGlobalVars(List<CreateGlobalValue> globalVars) {
+    public ListGlobalValuesResponse withGlobalVars(List<ListGlobalValue> globalVars) {
         this.globalVars = globalVars;
         return this;
     }
 
-    public ListGlobalValuesResponse addGlobalVarsItem(CreateGlobalValue globalVarsItem) {
+    public ListGlobalValuesResponse addGlobalVarsItem(ListGlobalValue globalVarsItem) {
         if (this.globalVars == null) {
             this.globalVars = new ArrayList<>();
         }
@@ -90,7 +81,7 @@ public class ListGlobalValuesResponse extends SdkResponse {
         return this;
     }
 
-    public ListGlobalValuesResponse withGlobalVars(Consumer<List<CreateGlobalValue>> globalVarsSetter) {
+    public ListGlobalValuesResponse withGlobalVars(Consumer<List<ListGlobalValue>> globalVarsSetter) {
         if (this.globalVars == null) {
             this.globalVars = new ArrayList<>();
         }
@@ -102,11 +93,11 @@ public class ListGlobalValuesResponse extends SdkResponse {
      * 全局变量
      * @return globalVars
      */
-    public List<CreateGlobalValue> getGlobalVars() {
+    public List<ListGlobalValue> getGlobalVars() {
         return globalVars;
     }
 
-    public void setGlobalVars(List<CreateGlobalValue> globalVars) {
+    public void setGlobalVars(List<ListGlobalValue> globalVars) {
         this.globalVars = globalVars;
     }
 

@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -20,21 +19,15 @@ public class Run {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "run_id")
 
-    @JacksonXmlProperty(localName = "run_id")
-
     private String runId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_id")
 
-    @JacksonXmlProperty(localName = "job_id")
-
     private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_name")
-
-    @JacksonXmlProperty(localName = "job_name")
 
     private String jobName;
 
@@ -112,49 +105,35 @@ public class Run {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_type")
 
-    @JacksonXmlProperty(localName = "job_type")
-
     private JobTypeEnum jobType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
-
-    @JacksonXmlProperty(localName = "start_time")
 
     private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "duration")
 
-    @JacksonXmlProperty(localName = "duration")
-
     private Long duration;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
-
-    @JacksonXmlProperty(localName = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_schedule_job")
 
-    @JacksonXmlProperty(localName = "is_schedule_job")
-
     private Boolean isScheduleJob;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "computing_resource_name")
 
-    @JacksonXmlProperty(localName = "computing_resource_name")
-
     private String computingResourceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sql_job")
-
-    @JacksonXmlProperty(localName = "sql_job")
 
     private SqlJobRun sqlJob;
 

@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,8 +17,6 @@ public class PrePaidServerSchedulerHints {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group")
-
-    @JacksonXmlProperty(localName = "group")
 
     private String group;
 
@@ -103,14 +100,10 @@ public class PrePaidServerSchedulerHints {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tenancy")
 
-    @JacksonXmlProperty(localName = "tenancy")
-
     private TenancyEnum tenancy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dedicated_host_id")
-
-    @JacksonXmlProperty(localName = "dedicated_host_id")
 
     private String dedicatedHostId;
 

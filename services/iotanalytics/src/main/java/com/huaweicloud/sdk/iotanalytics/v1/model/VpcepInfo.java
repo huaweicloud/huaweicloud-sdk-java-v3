@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.iotanalytics.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,28 +13,20 @@ public class VpcepInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "kafka_broker_ip")
 
-    @JacksonXmlProperty(localName = "kafka_broker_ip")
-
     private String kafkaBrokerIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpcep_service_id")
-
-    @JacksonXmlProperty(localName = "vpcep_service_id")
 
     private String vpcepServiceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpcep_service_name")
 
-    @JacksonXmlProperty(localName = "vpcep_service_name")
-
     private String vpcepServiceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpcep_client_port")
-
-    @JacksonXmlProperty(localName = "vpcep_client_port")
 
     private Integer vpcepClientPort;
 

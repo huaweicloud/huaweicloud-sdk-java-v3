@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -19,33 +18,25 @@ public class UpdateHealthMonitorOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "admin_state_up")
 
-    @JacksonXmlProperty(localName = "admin_state_up")
-
     private Boolean adminStateUp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "delay")
-
-    @JacksonXmlProperty(localName = "delay")
 
     private Integer delay;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_name")
 
-    @JacksonXmlProperty(localName = "domain_name")
-
     private String domainName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expected_codes")
 
-    @JacksonXmlProperty(localName = "expected_codes")
-
     private String expectedCodes;
 
     /**
-     * HTTP请求方法，取值：GET、HEAD、POST、PUT、DELETE、TRACE、OPTIONS、CONNECT、PATCH，默认GET。   使用说明：当type为HTTP/HTTPS时生效。   不支持该字段，请勿使用。
+     * HTTP请求方法。取值：GET、HEAD、POST、PUT、DELETE、TRACE、OPTIONS、CONNECT、PATCH，默认GET。  使用说明：当type为HTTP/HTTPS时生效。  不支持该字段，请勿使用。
      */
     public static final class HttpMethodEnum {
 
@@ -166,56 +157,40 @@ public class UpdateHealthMonitorOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "http_method")
 
-    @JacksonXmlProperty(localName = "http_method")
-
     private HttpMethodEnum httpMethod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_retries")
-
-    @JacksonXmlProperty(localName = "max_retries")
 
     private Integer maxRetries;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_retries_down")
 
-    @JacksonXmlProperty(localName = "max_retries_down")
-
     private Integer maxRetriesDown;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "monitor_port")
-
-    @JacksonXmlProperty(localName = "monitor_port")
 
     private Integer monitorPort;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
-    @JacksonXmlProperty(localName = "name")
-
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timeout")
-
-    @JacksonXmlProperty(localName = "timeout")
 
     private Integer timeout;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "url_path")
 
-    @JacksonXmlProperty(localName = "url_path")
-
     private String urlPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
-
-    @JacksonXmlProperty(localName = "type")
 
     private String type;
 
@@ -261,7 +236,7 @@ public class UpdateHealthMonitorOption {
     }
 
     /**
-     * 发送健康检查请求的域名。   取值：以数字或字母开头，只能包含数字、字母、’-’、’.’。不能传空，但可传null或不传，表示使用负载均衡器的vip作为http请求的目的地址。   使用说明：当type为HTTP/HTTPS时生效。
+     * 发送健康检查请求的域名。  取值：以数字或字母开头，只能包含数字、字母、’-’、’.’。不能传空，但可传null或不传，表示使用负载均衡器的vip作为http请求的目的地址。  使用说明：当type为HTTP/HTTPS时生效。
      * @return domainName
      */
     public String getDomainName() {
@@ -278,7 +253,7 @@ public class UpdateHealthMonitorOption {
     }
 
     /**
-     * 期望响应状态码。取值：   - 单值：单个返回码，例如200。 - 列表：多个特定返回码，例如200，202。 - 区间：一个返回码区间，例如200-204。    默认值：200。   仅支持HTTP/HTTPS设置该字段，其他协议设置不会生效。
+     * 期望响应状态码。取值： - 单值：单个返回码，例如200。 - 列表：多个特定返回码，例如200，202。 - 区间：一个返回码区间，例如200-204。    默认值：200。   仅支持HTTP/HTTPS设置该字段，其他协议设置不会生效。
      * @return expectedCodes
      */
     public String getExpectedCodes() {
@@ -295,7 +270,7 @@ public class UpdateHealthMonitorOption {
     }
 
     /**
-     * HTTP请求方法，取值：GET、HEAD、POST、PUT、DELETE、TRACE、OPTIONS、CONNECT、PATCH，默认GET。   使用说明：当type为HTTP/HTTPS时生效。   不支持该字段，请勿使用。
+     * HTTP请求方法。取值：GET、HEAD、POST、PUT、DELETE、TRACE、OPTIONS、CONNECT、PATCH，默认GET。  使用说明：当type为HTTP/HTTPS时生效。  不支持该字段，请勿使用。
      * @return httpMethod
      */
     public HttpMethodEnum getHttpMethod() {

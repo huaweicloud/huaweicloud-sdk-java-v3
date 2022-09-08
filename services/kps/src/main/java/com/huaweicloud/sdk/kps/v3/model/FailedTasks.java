@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,8 +17,6 @@ public class FailedTasks {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_id")
-
-    @JacksonXmlProperty(localName = "task_id")
 
     private String taskId;
 
@@ -109,49 +106,35 @@ public class FailedTasks {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operate_type")
 
-    @JacksonXmlProperty(localName = "operate_type")
-
     private OperateTypeEnum operateType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_time")
-
-    @JacksonXmlProperty(localName = "task_time")
 
     private String taskTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_error_code")
 
-    @JacksonXmlProperty(localName = "task_error_code")
-
     private String taskErrorCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_error_msg")
-
-    @JacksonXmlProperty(localName = "task_error_msg")
 
     private String taskErrorMsg;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "server_name")
 
-    @JacksonXmlProperty(localName = "server_name")
-
     private String serverName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "server_id")
 
-    @JacksonXmlProperty(localName = "server_id")
-
     private String serverId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "keypair_name")
-
-    @JacksonXmlProperty(localName = "keypair_name")
 
     private String keypairName;
 

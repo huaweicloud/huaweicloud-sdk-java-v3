@@ -13,8 +13,6 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.ges.v1.model.Graph1;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -28,7 +26,6 @@ public class ListGraphsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="graphCount")
     
-    @JacksonXmlProperty(localName = "graphCount")
     
     private Integer graphCount;
 
@@ -36,7 +33,6 @@ public class ListGraphsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="graphs")
     
-    @JacksonXmlProperty(localName = "graphs")
     
     private List<Graph1> graphs = null;
     
@@ -44,7 +40,6 @@ public class ListGraphsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="errorMessage")
     
-    @JacksonXmlProperty(localName = "errorMessage")
     
     private String errorMessage;
 
@@ -52,7 +47,6 @@ public class ListGraphsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="errorCode")
     
-    @JacksonXmlProperty(localName = "errorCode")
     
     private String errorCode;
 

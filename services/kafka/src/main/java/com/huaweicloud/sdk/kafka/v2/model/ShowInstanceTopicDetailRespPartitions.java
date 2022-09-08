@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.kafka.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,49 +16,35 @@ public class ShowInstanceTopicDetailRespPartitions {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "partition")
 
-    @JacksonXmlProperty(localName = "partition")
-
     private Integer partition;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "leader")
-
-    @JacksonXmlProperty(localName = "leader")
 
     private Integer leader;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "leo")
 
-    @JacksonXmlProperty(localName = "leo")
-
     private Integer leo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hw")
-
-    @JacksonXmlProperty(localName = "hw")
 
     private Integer hw;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lso")
 
-    @JacksonXmlProperty(localName = "lso")
-
     private Integer lso;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last_update_timestamp")
 
-    @JacksonXmlProperty(localName = "last_update_timestamp")
-
     private Long lastUpdateTimestamp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "replicas")
-
-    @JacksonXmlProperty(localName = "replicas")
 
     private List<ShowInstanceTopicDetailRespReplicas> replicas = null;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,14 +16,10 @@ public class QosCpuInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "client_cpu_max")
 
-    @JacksonXmlProperty(localName = "client_cpu_max")
-
     private List<QosDataElement> clientCpuMax = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "system_cpu_max")
-
-    @JacksonXmlProperty(localName = "system_cpu_max")
 
     private List<QosDataElement> systemCpuMax = null;
 

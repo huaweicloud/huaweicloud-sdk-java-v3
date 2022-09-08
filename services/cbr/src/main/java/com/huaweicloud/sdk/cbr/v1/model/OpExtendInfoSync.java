@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cbr.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,21 +13,15 @@ public class OpExtendInfoSync {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sync_backup_num")
 
-    @JacksonXmlProperty(localName = "sync_backup_num")
-
     private Integer syncBackupNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "delete_backup_num")
 
-    @JacksonXmlProperty(localName = "delete_backup_num")
-
     private Integer deleteBackupNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "err_sync_backup_num")
-
-    @JacksonXmlProperty(localName = "err_sync_backup_num")
 
     private Integer errSyncBackupNum;
 

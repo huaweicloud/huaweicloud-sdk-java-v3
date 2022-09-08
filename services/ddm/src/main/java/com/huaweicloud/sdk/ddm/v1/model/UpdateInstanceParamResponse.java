@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.ddm.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -15,35 +14,25 @@ public class UpdateInstanceParamResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nodeList")
 
-    @JacksonXmlProperty(localName = "nodeList")
-
     private String nodeList;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "needRestart")
-
-    @JacksonXmlProperty(localName = "needRestart")
 
     private Boolean needRestart;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "jobId")
 
-    @JacksonXmlProperty(localName = "jobId")
-
     private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "configId")
 
-    @JacksonXmlProperty(localName = "configId")
-
     private String configId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "configName")
-
-    @JacksonXmlProperty(localName = "configName")
 
     private String configName;
 

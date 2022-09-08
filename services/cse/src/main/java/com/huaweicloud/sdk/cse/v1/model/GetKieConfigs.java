@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cse.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,58 +13,52 @@ public class GetKieConfigs {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key")
-
-    @JacksonXmlProperty(localName = "key")
 
     private String key;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "labels")
 
-    @JacksonXmlProperty(localName = "labels")
-
     private Object labels;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "value")
-
-    @JacksonXmlProperty(localName = "value")
 
     private String value;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "value_type")
 
-    @JacksonXmlProperty(localName = "value_type")
-
     private String valueType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
-
-    @JacksonXmlProperty(localName = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
-    @JacksonXmlProperty(localName = "create_time")
-
     private Integer createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
 
-    @JacksonXmlProperty(localName = "update_time")
-
     private Integer updateTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "create_revision")
+
+    private Long createRevision;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "update_revision")
+
+    private Long updateRevision;
 
     public GetKieConfigs withId(String id) {
         this.id = id;
@@ -203,6 +196,40 @@ public class GetKieConfigs {
         this.updateTime = updateTime;
     }
 
+    public GetKieConfigs withCreateRevision(Long createRevision) {
+        this.createRevision = createRevision;
+        return this;
+    }
+
+    /**
+     * 创建配置的版本号
+     * @return createRevision
+     */
+    public Long getCreateRevision() {
+        return createRevision;
+    }
+
+    public void setCreateRevision(Long createRevision) {
+        this.createRevision = createRevision;
+    }
+
+    public GetKieConfigs withUpdateRevision(Long updateRevision) {
+        this.updateRevision = updateRevision;
+        return this;
+    }
+
+    /**
+     * 修改配置的版本号
+     * @return updateRevision
+     */
+    public Long getUpdateRevision() {
+        return updateRevision;
+    }
+
+    public void setUpdateRevision(Long updateRevision) {
+        this.updateRevision = updateRevision;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -217,12 +244,15 @@ public class GetKieConfigs {
             && Objects.equals(this.valueType, getKieConfigs.valueType)
             && Objects.equals(this.status, getKieConfigs.status)
             && Objects.equals(this.createTime, getKieConfigs.createTime)
-            && Objects.equals(this.updateTime, getKieConfigs.updateTime);
+            && Objects.equals(this.updateTime, getKieConfigs.updateTime)
+            && Objects.equals(this.createRevision, getKieConfigs.createRevision)
+            && Objects.equals(this.updateRevision, getKieConfigs.updateRevision);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, key, labels, value, valueType, status, createTime, updateTime);
+        return Objects
+            .hash(id, key, labels, value, valueType, status, createTime, updateTime, createRevision, updateRevision);
     }
 
     @Override
@@ -237,6 +267,8 @@ public class GetKieConfigs {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
+        sb.append("    createRevision: ").append(toIndentedString(createRevision)).append("\n");
+        sb.append("    updateRevision: ").append(toIndentedString(updateRevision)).append("\n");
         sb.append("}");
         return sb.toString();
     }

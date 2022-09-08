@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.iec.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,35 +16,25 @@ public class UpdateSubnetOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
-    @JacksonXmlProperty(localName = "name")
-
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dhcp_enable")
-
-    @JacksonXmlProperty(localName = "dhcp_enable")
 
     private Boolean dhcpEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "primary_dns")
 
-    @JacksonXmlProperty(localName = "primary_dns")
-
     private String primaryDns;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "secondary_dns")
 
-    @JacksonXmlProperty(localName = "secondary_dns")
-
     private String secondaryDns;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dnsList")
-
-    @JacksonXmlProperty(localName = "dnsList")
 
     private List<String> dnsList = null;
 

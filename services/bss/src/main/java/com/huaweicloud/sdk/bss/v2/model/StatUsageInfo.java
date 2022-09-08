@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.bss.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,28 +13,20 @@ public class StatUsageInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stat_time")
 
-    @JacksonXmlProperty(localName = "stat_time")
-
     private String statTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "guaranteed_band_width")
-
-    @JacksonXmlProperty(localName = "guaranteed_band_width")
 
     private String guaranteedBandWidth;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "usage")
 
-    @JacksonXmlProperty(localName = "usage")
-
     private String usage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "measure_id")
-
-    @JacksonXmlProperty(localName = "measure_id")
 
     private Integer measureId;
 

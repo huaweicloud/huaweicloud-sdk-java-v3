@@ -8,8 +8,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -23,7 +21,6 @@ public class MysqlSlowLogList  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_id")
     
-    @JacksonXmlProperty(localName = "node_id")
     
     private String nodeId;
 
@@ -31,7 +28,6 @@ public class MysqlSlowLogList  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="count")
     
-    @JacksonXmlProperty(localName = "count")
     
     private String count;
 
@@ -39,7 +35,6 @@ public class MysqlSlowLogList  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="time")
     
-    @JacksonXmlProperty(localName = "time")
     
     private String time;
 
@@ -47,7 +42,6 @@ public class MysqlSlowLogList  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="lock_time")
     
-    @JacksonXmlProperty(localName = "lock_time")
     
     private String lockTime;
 
@@ -55,7 +49,6 @@ public class MysqlSlowLogList  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rows_sent")
     
-    @JacksonXmlProperty(localName = "rows_sent")
     
     private String rowsSent;
 
@@ -63,7 +56,6 @@ public class MysqlSlowLogList  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rows_examined")
     
-    @JacksonXmlProperty(localName = "rows_examined")
     
     private String rowsExamined;
 
@@ -71,7 +63,6 @@ public class MysqlSlowLogList  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="database")
     
-    @JacksonXmlProperty(localName = "database")
     
     private String database;
 
@@ -79,7 +70,6 @@ public class MysqlSlowLogList  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="users")
     
-    @JacksonXmlProperty(localName = "users")
     
     private String users;
 
@@ -87,7 +77,6 @@ public class MysqlSlowLogList  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="query_sample")
     
-    @JacksonXmlProperty(localName = "query_sample")
     
     private String querySample;
 
@@ -95,7 +84,6 @@ public class MysqlSlowLogList  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    @JacksonXmlProperty(localName = "type")
     
     private String type;
 
@@ -103,7 +91,6 @@ public class MysqlSlowLogList  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="start_time")
     
-    @JacksonXmlProperty(localName = "start_time")
     
     private String startTime;
 
@@ -111,7 +98,6 @@ public class MysqlSlowLogList  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="client_ip")
     
-    @JacksonXmlProperty(localName = "client_ip")
     
     private String clientIp;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.bcs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,42 +13,30 @@ public class EntityMetricListItem {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cpuUsage")
 
-    @JacksonXmlProperty(localName = "cpuUsage")
-
     private String cpuUsage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "diskReadRate")
-
-    @JacksonXmlProperty(localName = "diskReadRate")
 
     private String diskReadRate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "diskWriteRate")
 
-    @JacksonXmlProperty(localName = "diskWriteRate")
-
     private String diskWriteRate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "memUsage")
-
-    @JacksonXmlProperty(localName = "memUsage")
 
     private String memUsage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "recvBytesRate")
 
-    @JacksonXmlProperty(localName = "recvBytesRate")
-
     private String recvBytesRate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sendBytesRate")
-
-    @JacksonXmlProperty(localName = "sendBytesRate")
 
     private String sendBytesRate;
 

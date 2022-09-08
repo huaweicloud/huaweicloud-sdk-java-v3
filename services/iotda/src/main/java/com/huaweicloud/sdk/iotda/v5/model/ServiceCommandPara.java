@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.iotda.v5.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,70 +16,50 @@ public class ServiceCommandPara {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "para_name")
 
-    @JacksonXmlProperty(localName = "para_name")
-
     private String paraName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_type")
-
-    @JacksonXmlProperty(localName = "data_type")
 
     private String dataType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "required")
 
-    @JacksonXmlProperty(localName = "required")
-
     private Boolean required;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enum_list")
-
-    @JacksonXmlProperty(localName = "enum_list")
 
     private List<String> enumList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "min")
 
-    @JacksonXmlProperty(localName = "min")
-
     private String min;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max")
-
-    @JacksonXmlProperty(localName = "max")
 
     private String max;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_length")
 
-    @JacksonXmlProperty(localName = "max_length")
-
     private Integer maxLength;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "step")
-
-    @JacksonXmlProperty(localName = "step")
 
     private Double step;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "unit")
 
-    @JacksonXmlProperty(localName = "unit")
-
     private String unit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
-
-    @JacksonXmlProperty(localName = "description")
 
     private String description;
 

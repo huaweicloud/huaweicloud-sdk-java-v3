@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.sdrs.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,14 +13,10 @@ public class DrillServerParams {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protected_instance")
 
-    @JacksonXmlProperty(localName = "protected_instance")
-
     private String protectedInstance;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "drill_server_id")
-
-    @JacksonXmlProperty(localName = "drill_server_id")
 
     private String drillServerId;
 

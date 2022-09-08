@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.codehub.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,14 +14,10 @@ public class AddRepoMembersRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "repository_uuid")
 
-    @JacksonXmlProperty(localName = "repository_uuid")
-
     private String repositoryUuid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
-
-    @JacksonXmlProperty(localName = "body")
 
     private CreateRepoMemberRequest body;
 
@@ -32,7 +27,7 @@ public class AddRepoMembersRequest {
     }
 
     /**
-     * 仓库uuid
+     * 仓库uuid(由CreateRepository接口返回)
      * @return repositoryUuid
      */
     public String getRepositoryUuid() {

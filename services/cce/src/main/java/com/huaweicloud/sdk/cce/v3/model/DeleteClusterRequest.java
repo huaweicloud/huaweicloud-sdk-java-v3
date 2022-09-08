@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,8 +17,6 @@ public class DeleteClusterRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cluster_id")
-
-    @JacksonXmlProperty(localName = "cluster_id")
 
     private String clusterId;
 
@@ -121,8 +118,6 @@ public class DeleteClusterRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "delete_efs")
 
-    @JacksonXmlProperty(localName = "delete_efs")
-
     private DeleteEfsEnum deleteEfs;
 
     /**
@@ -222,8 +217,6 @@ public class DeleteClusterRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "delete_eni")
-
-    @JacksonXmlProperty(localName = "delete_eni")
 
     private DeleteEniEnum deleteEni;
 
@@ -325,8 +318,6 @@ public class DeleteClusterRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "delete_evs")
 
-    @JacksonXmlProperty(localName = "delete_evs")
-
     private DeleteEvsEnum deleteEvs;
 
     /**
@@ -426,8 +417,6 @@ public class DeleteClusterRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "delete_net")
-
-    @JacksonXmlProperty(localName = "delete_net")
 
     private DeleteNetEnum deleteNet;
 
@@ -529,8 +518,6 @@ public class DeleteClusterRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "delete_obs")
 
-    @JacksonXmlProperty(localName = "delete_obs")
-
     private DeleteObsEnum deleteObs;
 
     /**
@@ -631,8 +618,6 @@ public class DeleteClusterRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "delete_sfs")
 
-    @JacksonXmlProperty(localName = "delete_sfs")
-
     private DeleteSfsEnum deleteSfs;
 
     /**
@@ -708,8 +693,6 @@ public class DeleteClusterRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tobedeleted")
-
-    @JacksonXmlProperty(localName = "tobedeleted")
 
     private TobedeletedEnum tobedeleted;
 

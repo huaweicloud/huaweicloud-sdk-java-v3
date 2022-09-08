@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cce.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,49 +16,35 @@ public class Templatespec {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
-    @JacksonXmlProperty(localName = "type")
-
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "require")
-
-    @JacksonXmlProperty(localName = "require")
 
     private Boolean require;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "labels")
 
-    @JacksonXmlProperty(localName = "labels")
-
     private List<String> labels = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "logoURL")
-
-    @JacksonXmlProperty(localName = "logoURL")
 
     private String logoURL;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "readmeURL")
 
-    @JacksonXmlProperty(localName = "readmeURL")
-
     private String readmeURL;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
-    @JacksonXmlProperty(localName = "description")
-
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "versions")
-
-    @JacksonXmlProperty(localName = "versions")
 
     private List<Versions> versions = null;
 

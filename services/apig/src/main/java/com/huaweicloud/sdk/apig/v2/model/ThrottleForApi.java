@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.time.OffsetDateTime;
 import java.util.Collections;
@@ -20,14 +19,10 @@ public class ThrottleForApi {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_call_limits")
 
-    @JacksonXmlProperty(localName = "app_call_limits")
-
     private Integer appCallLimits;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
-
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
@@ -123,21 +118,15 @@ public class ThrottleForApi {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time_unit")
 
-    @JacksonXmlProperty(localName = "time_unit")
-
     private TimeUnitEnum timeUnit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remark")
 
-    @JacksonXmlProperty(localName = "remark")
-
     private String remark;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "api_call_limits")
-
-    @JacksonXmlProperty(localName = "api_call_limits")
 
     private Integer apiCallLimits;
 
@@ -221,49 +210,35 @@ public class ThrottleForApi {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
-    @JacksonXmlProperty(localName = "type")
-
     private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_adaptive_control")
-
-    @JacksonXmlProperty(localName = "enable_adaptive_control")
 
     private String enableAdaptiveControl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_call_limits")
 
-    @JacksonXmlProperty(localName = "user_call_limits")
-
     private Integer userCallLimits;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time_interval")
-
-    @JacksonXmlProperty(localName = "time_interval")
 
     private Integer timeInterval;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip_call_limits")
 
-    @JacksonXmlProperty(localName = "ip_call_limits")
-
     private Integer ipCallLimits;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bind_num")
-
-    @JacksonXmlProperty(localName = "bind_num")
 
     private Integer bindNum;
 
@@ -347,35 +322,25 @@ public class ThrottleForApi {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_inclu_special_throttle")
 
-    @JacksonXmlProperty(localName = "is_inclu_special_throttle")
-
     private IsIncluSpecialThrottleEnum isIncluSpecialThrottle;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
-
-    @JacksonXmlProperty(localName = "create_time")
 
     private OffsetDateTime createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "env_name")
 
-    @JacksonXmlProperty(localName = "env_name")
-
     private String envName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bind_id")
 
-    @JacksonXmlProperty(localName = "bind_id")
-
     private String bindId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bind_time")
-
-    @JacksonXmlProperty(localName = "bind_time")
 
     private OffsetDateTime bindTime;
 

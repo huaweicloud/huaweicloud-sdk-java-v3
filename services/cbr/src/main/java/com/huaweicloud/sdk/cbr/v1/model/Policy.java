@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,28 +21,20 @@ public class Policy {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enabled")
 
-    @JacksonXmlProperty(localName = "enabled")
-
     private Boolean enabled;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
-
-    @JacksonXmlProperty(localName = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
-    @JacksonXmlProperty(localName = "name")
-
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operation_definition")
-
-    @JacksonXmlProperty(localName = "operation_definition")
 
     private PolicyoODCreate operationDefinition;
 
@@ -127,21 +118,15 @@ public class Policy {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operation_type")
 
-    @JacksonXmlProperty(localName = "operation_type")
-
     private OperationTypeEnum operationType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trigger")
 
-    @JacksonXmlProperty(localName = "trigger")
-
     private PolicyTriggerResp trigger;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "associated_vaults")
-
-    @JacksonXmlProperty(localName = "associated_vaults")
 
     private List<PolicyAssociateVault> associatedVaults = null;
 

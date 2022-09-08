@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.functiongraph.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,49 +13,35 @@ public class CustomImage {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enabled")
 
-    @JacksonXmlProperty(localName = "enabled")
-
     private Boolean enabled;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image")
-
-    @JacksonXmlProperty(localName = "image")
 
     private String image;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "command")
 
-    @JacksonXmlProperty(localName = "command")
-
     private String command;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "args")
-
-    @JacksonXmlProperty(localName = "args")
 
     private String args;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "working_dir")
 
-    @JacksonXmlProperty(localName = "working_dir")
-
     private String workingDir;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "uid")
 
-    @JacksonXmlProperty(localName = "uid")
-
     private String uid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "gid")
-
-    @JacksonXmlProperty(localName = "gid")
 
     private String gid;
 

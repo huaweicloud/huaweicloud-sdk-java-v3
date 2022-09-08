@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.elb.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,35 +16,25 @@ public class CountPreoccupyIpNumRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "l7_flavor_id")
 
-    @JacksonXmlProperty(localName = "l7_flavor_id")
-
     private String l7FlavorId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip_target_enable")
-
-    @JacksonXmlProperty(localName = "ip_target_enable")
 
     private Boolean ipTargetEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip_version")
 
-    @JacksonXmlProperty(localName = "ip_version")
-
     private Integer ipVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "loadbalancer_id")
 
-    @JacksonXmlProperty(localName = "loadbalancer_id")
-
     private String loadbalancerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "availability_zone_id")
-
-    @JacksonXmlProperty(localName = "availability_zone_id")
 
     private List<String> availabilityZoneId = null;
 

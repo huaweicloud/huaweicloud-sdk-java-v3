@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.apm.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,91 +13,65 @@ public class MonitorItem {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private Long id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "env_id")
-
-    @JacksonXmlProperty(localName = "env_id")
 
     private Long envId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "collector_id")
 
-    @JacksonXmlProperty(localName = "collector_id")
-
     private Integer collectorId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "collector_name")
-
-    @JacksonXmlProperty(localName = "collector_name")
 
     private String collectorName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "display_name")
 
-    @JacksonXmlProperty(localName = "display_name")
-
     private String displayName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "collect_interval")
-
-    @JacksonXmlProperty(localName = "collect_interval")
 
     private Integer collectInterval;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "disabled")
 
-    @JacksonXmlProperty(localName = "disabled")
-
     private Boolean disabled;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status_change_user_id")
-
-    @JacksonXmlProperty(localName = "status_change_user_id")
 
     private String statusChangeUserId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status_change_user_name")
 
-    @JacksonXmlProperty(localName = "status_change_user_name")
-
     private String statusChangeUserName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status_change_time")
-
-    @JacksonXmlProperty(localName = "status_change_time")
 
     private String statusChangeTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "config_change_user_id")
 
-    @JacksonXmlProperty(localName = "config_change_user_id")
-
     private String configChangeUserId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "config_change_user_name")
 
-    @JacksonXmlProperty(localName = "config_change_user_name")
-
     private String configChangeUserName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "config_change_time")
-
-    @JacksonXmlProperty(localName = "config_change_time")
 
     private String configChangeTime;
 

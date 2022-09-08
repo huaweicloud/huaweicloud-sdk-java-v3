@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,28 +13,20 @@ public class ProgramItemResponseBase {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "materialId")
 
-    @JacksonXmlProperty(localName = "materialId")
-
     private String materialId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "materialName")
-
-    @JacksonXmlProperty(localName = "materialName")
 
     private String materialName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "filePath")
 
-    @JacksonXmlProperty(localName = "filePath")
-
     private String filePath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "playTime")
-
-    @JacksonXmlProperty(localName = "playTime")
 
     private Integer playTime;
 

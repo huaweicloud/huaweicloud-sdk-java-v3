@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.swr.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,119 +13,85 @@ public class ShowReposTagResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private Long id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "repo_id")
-
-    @JacksonXmlProperty(localName = "repo_id")
 
     private Long repoId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "Tag")
 
-    @JacksonXmlProperty(localName = "Tag")
-
     private String tag;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image_id")
-
-    @JacksonXmlProperty(localName = "image_id")
 
     private String imageId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "manifest")
 
-    @JacksonXmlProperty(localName = "manifest")
-
     private String manifest;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "digest")
-
-    @JacksonXmlProperty(localName = "digest")
 
     private String digest;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "schema")
 
-    @JacksonXmlProperty(localName = "schema")
-
     private Long schema;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "path")
-
-    @JacksonXmlProperty(localName = "path")
 
     private String path;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "internal_path")
 
-    @JacksonXmlProperty(localName = "internal_path")
-
     private String internalPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
-
-    @JacksonXmlProperty(localName = "size")
 
     private Long size;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_trusted")
 
-    @JacksonXmlProperty(localName = "is_trusted")
-
     private Boolean isTrusted;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created")
-
-    @JacksonXmlProperty(localName = "created")
 
     private String created;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated")
 
-    @JacksonXmlProperty(localName = "updated")
-
     private String updated;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deleted")
-
-    @JacksonXmlProperty(localName = "deleted")
 
     private String deleted;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_id")
 
-    @JacksonXmlProperty(localName = "domain_id")
-
     private String domainId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scanned")
 
-    @JacksonXmlProperty(localName = "scanned")
-
     private Boolean scanned;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tag_type")
-
-    @JacksonXmlProperty(localName = "tag_type")
 
     private Long tagType;
 

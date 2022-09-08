@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.bms.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,28 +14,20 @@ public class OsReinstall {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "adminpass")
 
-    @JacksonXmlProperty(localName = "adminpass")
-
     private String adminpass;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "keyname")
-
-    @JacksonXmlProperty(localName = "keyname")
 
     private String keyname;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "userid")
 
-    @JacksonXmlProperty(localName = "userid")
-
     private String userid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metadata")
-
-    @JacksonXmlProperty(localName = "metadata")
 
     private MetadataInstall metadata;
 

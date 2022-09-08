@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,8 +17,6 @@ public class ScheduledPolicy {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "launch_time")
-
-    @JacksonXmlProperty(localName = "launch_time")
 
     private String launchTime;
 
@@ -109,28 +106,20 @@ public class ScheduledPolicy {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "recurrence_type")
 
-    @JacksonXmlProperty(localName = "recurrence_type")
-
     private RecurrenceTypeEnum recurrenceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "recurrence_value")
-
-    @JacksonXmlProperty(localName = "recurrence_value")
 
     private String recurrenceValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
-    @JacksonXmlProperty(localName = "start_time")
-
     private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time")
-
-    @JacksonXmlProperty(localName = "end_time")
 
     private String endTime;
 

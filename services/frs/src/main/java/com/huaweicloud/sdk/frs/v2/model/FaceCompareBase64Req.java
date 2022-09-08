@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.frs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,14 +13,10 @@ public class FaceCompareBase64Req {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image2_base64")
 
-    @JacksonXmlProperty(localName = "image2_base64")
-
     private String image2Base64;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image1_base64")
-
-    @JacksonXmlProperty(localName = "image1_base64")
 
     private String image1Base64;
 

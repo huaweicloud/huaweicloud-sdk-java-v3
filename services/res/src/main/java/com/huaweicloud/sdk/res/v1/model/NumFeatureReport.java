@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.res.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,49 +13,35 @@ public class NumFeatureReport {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "avg")
 
-    @JacksonXmlProperty(localName = "avg")
-
     private Double avg;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "min")
-
-    @JacksonXmlProperty(localName = "min")
 
     private Double min;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max")
 
-    @JacksonXmlProperty(localName = "max")
-
     private Double max;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "median")
-
-    @JacksonXmlProperty(localName = "median")
 
     private Double median;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "percents_agg")
 
-    @JacksonXmlProperty(localName = "percents_agg")
-
     private String percentsAgg;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
-    @JacksonXmlProperty(localName = "name")
-
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_type")
-
-    @JacksonXmlProperty(localName = "data_type")
 
     private String dataType;
 

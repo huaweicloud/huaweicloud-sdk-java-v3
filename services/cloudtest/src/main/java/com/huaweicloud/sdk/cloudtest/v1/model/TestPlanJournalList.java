@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cloudtest.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -18,35 +17,25 @@ public class TestPlanJournalList {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
 
-    @JacksonXmlProperty(localName = "project_id")
-
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "plan_id")
-
-    @JacksonXmlProperty(localName = "plan_id")
 
     private String planId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operate_time")
 
-    @JacksonXmlProperty(localName = "operate_time")
-
     private LocalDate operateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operator")
 
-    @JacksonXmlProperty(localName = "operator")
-
     private NameAndId operator;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "detail")
-
-    @JacksonXmlProperty(localName = "detail")
 
     private List<TestPlanJournalDetail> detail = null;
 

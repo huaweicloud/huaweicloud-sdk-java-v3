@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cce.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,105 +13,75 @@ public class ClusterExtendParam {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "clusterAZ")
 
-    @JacksonXmlProperty(localName = "clusterAZ")
-
     private String clusterAZ;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dssMasterVolumes")
-
-    @JacksonXmlProperty(localName = "dssMasterVolumes")
 
     private String dssMasterVolumes;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterpriseProjectId")
 
-    @JacksonXmlProperty(localName = "enterpriseProjectId")
-
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "kubeProxyMode")
-
-    @JacksonXmlProperty(localName = "kubeProxyMode")
 
     private String kubeProxyMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "clusterExternalIP")
 
-    @JacksonXmlProperty(localName = "clusterExternalIP")
-
     private String clusterExternalIP;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alpha.cce/fixPoolMask")
-
-    @JacksonXmlProperty(localName = "alpha.cce/fixPoolMask")
 
     private String alphaCceFixPoolMask;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "decMasterFlavor")
 
-    @JacksonXmlProperty(localName = "decMasterFlavor")
-
     private String decMasterFlavor;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dockerUmaskMode")
-
-    @JacksonXmlProperty(localName = "dockerUmaskMode")
 
     private String dockerUmaskMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "kubernetes.io/cpuManagerPolicy")
 
-    @JacksonXmlProperty(localName = "kubernetes.io/cpuManagerPolicy")
-
     private String kubernetesIoCpuManagerPolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "orderID")
-
-    @JacksonXmlProperty(localName = "orderID")
 
     private String orderID;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "periodType")
 
-    @JacksonXmlProperty(localName = "periodType")
-
     private String periodType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "periodNum")
-
-    @JacksonXmlProperty(localName = "periodNum")
 
     private Integer periodNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "isAutoRenew")
 
-    @JacksonXmlProperty(localName = "isAutoRenew")
-
     private String isAutoRenew;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "isAutoPay")
 
-    @JacksonXmlProperty(localName = "isAutoPay")
-
     private String isAutoPay;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "upgradefrom")
-
-    @JacksonXmlProperty(localName = "upgradefrom")
 
     private String upgradefrom;
 

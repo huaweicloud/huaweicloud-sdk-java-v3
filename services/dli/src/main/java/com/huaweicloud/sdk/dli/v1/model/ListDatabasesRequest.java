@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -12,72 +11,45 @@ import java.util.Objects;
 public class ListDatabasesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "with-priv")
-
-    @JacksonXmlProperty(localName = "with-priv")
-
-    private Boolean withPriv;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "offset")
-
-    @JacksonXmlProperty(localName = "offset")
-
-    private Integer offset;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "limit")
-
-    @JacksonXmlProperty(localName = "limit")
-
-    private Integer limit;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "keyword")
-
-    @JacksonXmlProperty(localName = "keyword")
 
     private String keyword;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "tags")
+    @JsonProperty(value = "limit")
 
-    @JacksonXmlProperty(localName = "tags")
+    private Integer limit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Integer offset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
 
     private String tags;
 
-    public ListDatabasesRequest withWithPriv(Boolean withPriv) {
-        this.withPriv = withPriv;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "with-priv")
+
+    private Boolean withPriv;
+
+    public ListDatabasesRequest withKeyword(String keyword) {
+        this.keyword = keyword;
         return this;
     }
 
     /**
-     * 是否返回隐私信息
-     * @return withPriv
+     * 过滤关键字
+     * @return keyword
      */
-    public Boolean getWithPriv() {
-        return withPriv;
+    public String getKeyword() {
+        return keyword;
     }
 
-    public void setWithPriv(Boolean withPriv) {
-        this.withPriv = withPriv;
-    }
-
-    public ListDatabasesRequest withOffset(Integer offset) {
-        this.offset = offset;
-        return this;
-    }
-
-    /**
-     * 查询偏移量
-     * @return offset
-     */
-    public Integer getOffset() {
-        return offset;
-    }
-
-    public void setOffset(Integer offset) {
-        this.offset = offset;
+    public void setKeyword(String keyword) {
+        this.keyword = keyword;
     }
 
     public ListDatabasesRequest withLimit(Integer limit) {
@@ -97,21 +69,21 @@ public class ListDatabasesRequest {
         this.limit = limit;
     }
 
-    public ListDatabasesRequest withKeyword(String keyword) {
-        this.keyword = keyword;
+    public ListDatabasesRequest withOffset(Integer offset) {
+        this.offset = offset;
         return this;
     }
 
     /**
-     * 过滤关键字
-     * @return keyword
+     * 查询偏移量
+     * @return offset
      */
-    public String getKeyword() {
-        return keyword;
+    public Integer getOffset() {
+        return offset;
     }
 
-    public void setKeyword(String keyword) {
-        this.keyword = keyword;
+    public void setOffset(Integer offset) {
+        this.offset = offset;
     }
 
     public ListDatabasesRequest withTags(String tags) {
@@ -131,6 +103,23 @@ public class ListDatabasesRequest {
         this.tags = tags;
     }
 
+    public ListDatabasesRequest withWithPriv(Boolean withPriv) {
+        this.withPriv = withPriv;
+        return this;
+    }
+
+    /**
+     * 是否返回隐私信息
+     * @return withPriv
+     */
+    public Boolean getWithPriv() {
+        return withPriv;
+    }
+
+    public void setWithPriv(Boolean withPriv) {
+        this.withPriv = withPriv;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -140,27 +129,27 @@ public class ListDatabasesRequest {
             return false;
         }
         ListDatabasesRequest listDatabasesRequest = (ListDatabasesRequest) o;
-        return Objects.equals(this.withPriv, listDatabasesRequest.withPriv)
-            && Objects.equals(this.offset, listDatabasesRequest.offset)
+        return Objects.equals(this.keyword, listDatabasesRequest.keyword)
             && Objects.equals(this.limit, listDatabasesRequest.limit)
-            && Objects.equals(this.keyword, listDatabasesRequest.keyword)
-            && Objects.equals(this.tags, listDatabasesRequest.tags);
+            && Objects.equals(this.offset, listDatabasesRequest.offset)
+            && Objects.equals(this.tags, listDatabasesRequest.tags)
+            && Objects.equals(this.withPriv, listDatabasesRequest.withPriv);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(withPriv, offset, limit, keyword, tags);
+        return Objects.hash(keyword, limit, offset, tags, withPriv);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListDatabasesRequest {\n");
-        sb.append("    withPriv: ").append(toIndentedString(withPriv)).append("\n");
-        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
-        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    keyword: ").append(toIndentedString(keyword)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    withPriv: ").append(toIndentedString(withPriv)).append("\n");
         sb.append("}");
         return sb.toString();
     }

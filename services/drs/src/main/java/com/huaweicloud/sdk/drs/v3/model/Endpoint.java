@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -96,154 +95,110 @@ public class Endpoint {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "db_type")
 
-    @JacksonXmlProperty(localName = "db_type")
-
     private DbTypeEnum dbType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "az_code")
-
-    @JacksonXmlProperty(localName = "az_code")
 
     private String azCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region")
 
-    @JacksonXmlProperty(localName = "region")
-
     private String region;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "inst_id")
-
-    @JacksonXmlProperty(localName = "inst_id")
 
     private String instId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_id")
 
-    @JacksonXmlProperty(localName = "vpc_id")
-
     private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subnet_id")
-
-    @JacksonXmlProperty(localName = "subnet_id")
 
     private String subnetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_group_id")
 
-    @JacksonXmlProperty(localName = "security_group_id")
-
     private String securityGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
-
-    @JacksonXmlProperty(localName = "project_id")
 
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "db_name")
 
-    @JacksonXmlProperty(localName = "db_name")
-
     private String dbName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "db_password")
-
-    @JacksonXmlProperty(localName = "db_password")
 
     private String dbPassword;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "db_port")
 
-    @JacksonXmlProperty(localName = "db_port")
-
     private Integer dbPort;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "db_user")
-
-    @JacksonXmlProperty(localName = "db_user")
 
     private String dbUser;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "inst_name")
 
-    @JacksonXmlProperty(localName = "inst_name")
-
     private String instName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip")
-
-    @JacksonXmlProperty(localName = "ip")
 
     private String ip;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mongo_ha_mode")
 
-    @JacksonXmlProperty(localName = "mongo_ha_mode")
-
     private String mongoHaMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "safe_mode")
-
-    @JacksonXmlProperty(localName = "safe_mode")
 
     private Integer safeMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ssl_cert_password")
 
-    @JacksonXmlProperty(localName = "ssl_cert_password")
-
     private String sslCertPassword;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ssl_cert_check_sum")
-
-    @JacksonXmlProperty(localName = "ssl_cert_check_sum")
 
     private String sslCertCheckSum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ssl_cert_key")
 
-    @JacksonXmlProperty(localName = "ssl_cert_key")
-
     private String sslCertKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ssl_cert_name")
-
-    @JacksonXmlProperty(localName = "ssl_cert_name")
 
     private String sslCertName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ssl_link")
 
-    @JacksonXmlProperty(localName = "ssl_link")
-
     private Boolean sslLink;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "topic")
-
-    @JacksonXmlProperty(localName = "topic")
 
     private String topic;
 
@@ -320,8 +275,6 @@ public class Endpoint {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cluster_mode")
-
-    @JacksonXmlProperty(localName = "cluster_mode")
 
     private ClusterModeEnum clusterMode;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cph.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,28 +16,20 @@ public class PushShareFilesRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bucket_name")
 
-    @JacksonXmlProperty(localName = "bucket_name")
-
     private String bucketName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "object_path")
-
-    @JacksonXmlProperty(localName = "object_path")
 
     private String objectPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "server_ids")
 
-    @JacksonXmlProperty(localName = "server_ids")
-
     private List<String> serverIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_paths")
-
-    @JacksonXmlProperty(localName = "file_paths")
 
     private String filePaths;
 

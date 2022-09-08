@@ -14,8 +14,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -29,7 +27,6 @@ public class BatchListEdgeAppsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edge_app_id")
     
-    @JacksonXmlProperty(localName = "edge_app_id")
     
     private String edgeAppId;
 
@@ -37,7 +34,6 @@ public class BatchListEdgeAppsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    @JacksonXmlProperty(localName = "offset")
     
     private Integer offset;
 
@@ -45,7 +41,6 @@ public class BatchListEdgeAppsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    @JacksonXmlProperty(localName = "limit")
     
     private Integer limit;
     /**
@@ -137,7 +132,6 @@ public class BatchListEdgeAppsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="app_type")
     
-    @JacksonXmlProperty(localName = "app_type")
     
     private AppTypeEnum appType;
     /**
@@ -247,7 +241,6 @@ public class BatchListEdgeAppsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="function_type")
     
-    @JacksonXmlProperty(localName = "function_type")
     
     private FunctionTypeEnum functionType;
 

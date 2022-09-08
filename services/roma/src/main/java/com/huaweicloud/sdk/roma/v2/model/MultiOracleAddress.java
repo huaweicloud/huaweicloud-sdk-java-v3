@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.roma.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,14 +13,10 @@ public class MultiOracleAddress {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "oracle_address")
 
-    @JacksonXmlProperty(localName = "oracle_address")
-
     private String oracleAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "oracle_port")
-
-    @JacksonXmlProperty(localName = "oracle_port")
 
     private String oraclePort;
 

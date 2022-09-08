@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.css.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,21 +13,15 @@ public class UpdateSnapshotSettingReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bucket")
 
-    @JacksonXmlProperty(localName = "bucket")
-
     private String bucket;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "agency")
 
-    @JacksonXmlProperty(localName = "agency")
-
     private String agency;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "basePath")
-
-    @JacksonXmlProperty(localName = "basePath")
 
     private String basePath;
 

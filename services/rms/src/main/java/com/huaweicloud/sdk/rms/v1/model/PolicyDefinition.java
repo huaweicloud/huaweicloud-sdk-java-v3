@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.rms.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -19,56 +18,45 @@ public class PolicyDefinition {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
-
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_type")
 
-    @JacksonXmlProperty(localName = "policy_type")
-
     private String policyType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
-
-    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_rule_type")
 
-    @JacksonXmlProperty(localName = "policy_rule_type")
-
     private String policyRuleType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_rule")
 
-    @JacksonXmlProperty(localName = "policy_rule")
-
     private Object policyRule;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "keywords")
+    @JsonProperty(value = "trigger_type")
 
-    @JacksonXmlProperty(localName = "keywords")
+    private String triggerType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "keywords")
 
     private List<String> keywords = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parameters")
-
-    @JacksonXmlProperty(localName = "parameters")
 
     private Map<String, PolicyParameterDefinition> parameters = null;
 
@@ -174,6 +162,23 @@ public class PolicyDefinition {
         this.policyRule = policyRule;
     }
 
+    public PolicyDefinition withTriggerType(String triggerType) {
+        this.triggerType = triggerType;
+        return this;
+    }
+
+    /**
+     * 触发器类型，可选值：resource, period
+     * @return triggerType
+     */
+    public String getTriggerType() {
+        return triggerType;
+    }
+
+    public void setTriggerType(String triggerType) {
+        this.triggerType = triggerType;
+    }
+
     public PolicyDefinition withKeywords(List<String> keywords) {
         this.keywords = keywords;
         return this;
@@ -254,13 +259,15 @@ public class PolicyDefinition {
             && Objects.equals(this.description, policyDefinition.description)
             && Objects.equals(this.policyRuleType, policyDefinition.policyRuleType)
             && Objects.equals(this.policyRule, policyDefinition.policyRule)
+            && Objects.equals(this.triggerType, policyDefinition.triggerType)
             && Objects.equals(this.keywords, policyDefinition.keywords)
             && Objects.equals(this.parameters, policyDefinition.parameters);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, policyType, description, policyRuleType, policyRule, keywords, parameters);
+        return Objects
+            .hash(id, name, policyType, description, policyRuleType, policyRule, triggerType, keywords, parameters);
     }
 
     @Override
@@ -273,6 +280,7 @@ public class PolicyDefinition {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    policyRuleType: ").append(toIndentedString(policyRuleType)).append("\n");
         sb.append("    policyRule: ").append(toIndentedString(policyRule)).append("\n");
+        sb.append("    triggerType: ").append(toIndentedString(triggerType)).append("\n");
         sb.append("    keywords: ").append(toIndentedString(keywords)).append("\n");
         sb.append("    parameters: ").append(toIndentedString(parameters)).append("\n");
         sb.append("}");

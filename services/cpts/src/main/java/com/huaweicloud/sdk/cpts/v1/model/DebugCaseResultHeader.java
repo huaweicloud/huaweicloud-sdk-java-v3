@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cpts.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,21 +13,15 @@ public class DebugCaseResultHeader {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "Connection")
 
-    @JacksonXmlProperty(localName = "Connection")
-
     private String connection;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "Content-Type")
 
-    @JacksonXmlProperty(localName = "Content-Type")
-
     private String contentType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "Host")
-
-    @JacksonXmlProperty(localName = "Host")
 
     private String host;
 

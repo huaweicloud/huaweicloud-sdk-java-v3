@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,21 +21,15 @@ public class QueryJobResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parent_id")
 
-    @JacksonXmlProperty(localName = "parent_id")
-
     private String parentId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
-
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
@@ -246,21 +239,15 @@ public class QueryJobResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    @JacksonXmlProperty(localName = "status")
-
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
-    @JacksonXmlProperty(localName = "description")
-
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
-
-    @JacksonXmlProperty(localName = "create_time")
 
     private String createTime;
 
@@ -350,35 +337,25 @@ public class QueryJobResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_type")
 
-    @JacksonXmlProperty(localName = "task_type")
-
     private TaskTypeEnum taskType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_endpoint")
-
-    @JacksonXmlProperty(localName = "source_endpoint")
 
     private Endpoint sourceEndpoint;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dmq_endpoint")
 
-    @JacksonXmlProperty(localName = "dmq_endpoint")
-
     private Endpoint dmqEndpoint;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_sharding")
 
-    @JacksonXmlProperty(localName = "source_sharding")
-
     private List<Endpoint> sourceSharding = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_endpoint")
-
-    @JacksonXmlProperty(localName = "target_endpoint")
 
     private Endpoint targetEndpoint;
 
@@ -468,42 +445,30 @@ public class QueryJobResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "net_type")
 
-    @JacksonXmlProperty(localName = "net_type")
-
     private NetTypeEnum netType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "failed_reason")
-
-    @JacksonXmlProperty(localName = "failed_reason")
 
     private String failedReason;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "inst_info")
 
-    @JacksonXmlProperty(localName = "inst_info")
-
     private InstInfo instInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "actual_start_time")
-
-    @JacksonXmlProperty(localName = "actual_start_time")
 
     private String actualStartTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "full_transfer_complete_time")
 
-    @JacksonXmlProperty(localName = "full_transfer_complete_time")
-
     private String fullTransferCompleteTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
-
-    @JacksonXmlProperty(localName = "update_time")
 
     private String updateTime;
 
@@ -593,8 +558,6 @@ public class QueryJobResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_direction")
 
-    @JacksonXmlProperty(localName = "job_direction")
-
     private JobDirectionEnum jobDirection;
 
     /**
@@ -683,21 +646,15 @@ public class QueryJobResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "db_use_type")
 
-    @JacksonXmlProperty(localName = "db_use_type")
-
     private DbUseTypeEnum dbUseType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "need_restart")
 
-    @JacksonXmlProperty(localName = "need_restart")
-
     private Boolean needRestart;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_target_readonly")
-
-    @JacksonXmlProperty(localName = "is_target_readonly")
 
     private Boolean isTargetReadonly;
 
@@ -787,21 +744,15 @@ public class QueryJobResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "conflict_policy")
 
-    @JacksonXmlProperty(localName = "conflict_policy")
-
     private ConflictPolicyEnum conflictPolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "filter_ddl_policy")
 
-    @JacksonXmlProperty(localName = "filter_ddl_policy")
-
     private String filterDdlPolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "speed_limit")
-
-    @JacksonXmlProperty(localName = "speed_limit")
 
     private List<SpeedLimitInfo> speedLimit = null;
 
@@ -891,161 +842,115 @@ public class QueryJobResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "schema_type")
 
-    @JacksonXmlProperty(localName = "schema_type")
-
     private SchemaTypeEnum schemaType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "node_num")
-
-    @JacksonXmlProperty(localName = "node_num")
 
     private String nodeNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "object_switch")
 
-    @JacksonXmlProperty(localName = "object_switch")
-
     private Boolean objectSwitch;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "master_job_id")
-
-    @JacksonXmlProperty(localName = "master_job_id")
 
     private String masterJobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "full_mode")
 
-    @JacksonXmlProperty(localName = "full_mode")
-
     private String fullMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "struct_trans")
-
-    @JacksonXmlProperty(localName = "struct_trans")
 
     private Boolean structTrans;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "index_trans")
 
-    @JacksonXmlProperty(localName = "index_trans")
-
     private Boolean indexTrans;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "replace_definer")
-
-    @JacksonXmlProperty(localName = "replace_definer")
 
     private Boolean replaceDefiner;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "migrate_user")
 
-    @JacksonXmlProperty(localName = "migrate_user")
-
     private Boolean migrateUser;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sync_database")
-
-    @JacksonXmlProperty(localName = "sync_database")
 
     private Boolean syncDatabase;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_code")
 
-    @JacksonXmlProperty(localName = "error_code")
-
     private String errorCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_message")
-
-    @JacksonXmlProperty(localName = "error_message")
 
     private String errorMessage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_root_db")
 
-    @JacksonXmlProperty(localName = "target_root_db")
-
     private DefaultRootDb targetRootDb;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "az_code")
-
-    @JacksonXmlProperty(localName = "az_code")
 
     private String azCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_id")
 
-    @JacksonXmlProperty(localName = "vpc_id")
-
     private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subnet_id")
-
-    @JacksonXmlProperty(localName = "subnet_id")
 
     private String subnetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_group_id")
 
-    @JacksonXmlProperty(localName = "security_group_id")
-
     private String securityGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "multi_write")
-
-    @JacksonXmlProperty(localName = "multi_write")
 
     private Boolean multiWrite;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "support_ip_v6")
 
-    @JacksonXmlProperty(localName = "support_ip_v6")
-
     private Boolean supportIpV6;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "inherit_id")
-
-    @JacksonXmlProperty(localName = "inherit_id")
 
     private String inheritId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "gtid")
 
-    @JacksonXmlProperty(localName = "gtid")
-
     private String gtid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alarm_notify")
 
-    @JacksonXmlProperty(localName = "alarm_notify")
-
     private QuerySmnInfoResp alarmNotify;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "incre_start_position")
-
-    @JacksonXmlProperty(localName = "incre_start_position")
 
     private String increStartPosition;
 

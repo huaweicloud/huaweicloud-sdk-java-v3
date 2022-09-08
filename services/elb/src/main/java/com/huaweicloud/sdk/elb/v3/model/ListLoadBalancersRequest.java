@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.elb.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,224 +16,160 @@ public class ListLoadBalancersRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "marker")
 
-    @JacksonXmlProperty(localName = "marker")
-
     private String marker;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
-
-    @JacksonXmlProperty(localName = "limit")
 
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page_reverse")
 
-    @JacksonXmlProperty(localName = "page_reverse")
-
     private Boolean pageReverse;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
-
-    @JacksonXmlProperty(localName = "id")
 
     private List<String> id = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
-    @JacksonXmlProperty(localName = "name")
-
     private List<String> name = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
-
-    @JacksonXmlProperty(localName = "description")
 
     private List<String> description = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "admin_state_up")
 
-    @JacksonXmlProperty(localName = "admin_state_up")
-
     private Boolean adminStateUp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "provisioning_status")
-
-    @JacksonXmlProperty(localName = "provisioning_status")
 
     private List<String> provisioningStatus = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operating_status")
 
-    @JacksonXmlProperty(localName = "operating_status")
-
     private List<String> operatingStatus = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "guaranteed")
-
-    @JacksonXmlProperty(localName = "guaranteed")
 
     private Boolean guaranteed;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_id")
 
-    @JacksonXmlProperty(localName = "vpc_id")
-
     private List<String> vpcId = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vip_port_id")
-
-    @JacksonXmlProperty(localName = "vip_port_id")
 
     private List<String> vipPortId = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vip_address")
 
-    @JacksonXmlProperty(localName = "vip_address")
-
     private List<String> vipAddress = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vip_subnet_cidr_id")
-
-    @JacksonXmlProperty(localName = "vip_subnet_cidr_id")
 
     private List<String> vipSubnetCidrId = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ipv6_vip_port_id")
 
-    @JacksonXmlProperty(localName = "ipv6_vip_port_id")
-
     private List<String> ipv6VipPortId = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ipv6_vip_address")
-
-    @JacksonXmlProperty(localName = "ipv6_vip_address")
 
     private List<String> ipv6VipAddress = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ipv6_vip_virsubnet_id")
 
-    @JacksonXmlProperty(localName = "ipv6_vip_virsubnet_id")
-
     private List<String> ipv6VipVirsubnetId = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "eips")
-
-    @JacksonXmlProperty(localName = "eips")
 
     private List<String> eips = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publicips")
 
-    @JacksonXmlProperty(localName = "publicips")
-
     private List<String> publicips = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "availability_zone_list")
-
-    @JacksonXmlProperty(localName = "availability_zone_list")
 
     private List<String> availabilityZoneList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "l4_flavor_id")
 
-    @JacksonXmlProperty(localName = "l4_flavor_id")
-
     private List<String> l4FlavorId = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "l4_scale_flavor_id")
-
-    @JacksonXmlProperty(localName = "l4_scale_flavor_id")
 
     private List<String> l4ScaleFlavorId = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "l7_flavor_id")
 
-    @JacksonXmlProperty(localName = "l7_flavor_id")
-
     private List<String> l7FlavorId = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "l7_scale_flavor_id")
-
-    @JacksonXmlProperty(localName = "l7_scale_flavor_id")
 
     private List<String> l7ScaleFlavorId = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "billing_info")
 
-    @JacksonXmlProperty(localName = "billing_info")
-
     private List<String> billingInfo = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "member_device_id")
-
-    @JacksonXmlProperty(localName = "member_device_id")
 
     private List<String> memberDeviceId = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "member_address")
 
-    @JacksonXmlProperty(localName = "member_address")
-
     private List<String> memberAddress = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
-
-    @JacksonXmlProperty(localName = "enterprise_project_id")
 
     private List<String> enterpriseProjectId = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip_version")
 
-    @JacksonXmlProperty(localName = "ip_version")
-
     private List<Integer> ipVersion = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deletion_protection_enable")
-
-    @JacksonXmlProperty(localName = "deletion_protection_enable")
 
     private Boolean deletionProtectionEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "elb_virsubnet_type")
 
-    @JacksonXmlProperty(localName = "elb_virsubnet_type")
-
     private List<String> elbVirsubnetType = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "autoscaling")
-
-    @JacksonXmlProperty(localName = "autoscaling")
 
     private List<String> autoscaling = null;
 
@@ -244,7 +179,7 @@ public class ListLoadBalancersRequest {
     }
 
     /**
-     * 上一页最后一条记录的ID。  使用说明：  - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
+     * 上一页最后一条记录的ID。  使用说明： - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
      * @return marker
      */
     public String getMarker() {
@@ -280,7 +215,7 @@ public class ListLoadBalancersRequest {
     }
 
     /**
-     * 是否反向查询，取值： - true：查询上一页。 - false：查询下一页，默认。  使用说明： - 必须与limit一起使用。 - 当page_reverse=true时，若要查询上一页，marker取值为当前页返回值的previous_marker。
+     * 是否反向查询。取值： - true：查询上一页。 - false：查询下一页，默认。  使用说明： - 必须与limit一起使用。 - 当page_reverse=true时，若要查询上一页，marker取值为当前页返回值的previous_marker。
      * @return pageReverse
      */
     public Boolean getPageReverse() {
@@ -479,7 +414,7 @@ public class ListLoadBalancersRequest {
     }
 
     /**
-     * 是否独享型LB，取值： - false：共享型 - true：独享型
+     * 是否独享型LB。取值： - false：共享型 - true：独享型
      * @return guaranteed
      */
     public Boolean getGuaranteed() {
@@ -644,7 +579,7 @@ public class ListLoadBalancersRequest {
     }
 
     /**
-     * 双栈类型负载均衡器的IPv6对应的port ID。  支持多值查询，查询条件格式：*ipv6_vip_port_id=xxx&ipv6_vip_port_id=xxx*。 [ 不支持IPv6，请勿使用。](tag:dt,dt_test)
+     * 双栈类型负载均衡器的IPv6对应的port ID。  支持多值查询，查询条件格式：*ipv6_vip_port_id=xxx&ipv6_vip_port_id=xxx*。  [不支持IPv6，请勿使用。](tag:dt,dt_test)
      * @return ipv6VipPortId
      */
     public List<String> getIpv6VipPortId() {
@@ -677,7 +612,7 @@ public class ListLoadBalancersRequest {
     }
 
     /**
-     * 双栈类型负载均衡器的IPv6地址。  支持多值查询，查询条件格式：*ipv6_vip_address=xxx&ipv6_vip_address=xxx*。 [ 不支持IPv6，请勿使用。](tag:dt,dt_test)
+     * 双栈类型负载均衡器的IPv6地址。  支持多值查询，查询条件格式：*ipv6_vip_address=xxx&ipv6_vip_address=xxx*。  [不支持IPv6，请勿使用。](tag:dt,dt_test)
      * @return ipv6VipAddress
      */
     public List<String> getIpv6VipAddress() {
@@ -710,7 +645,7 @@ public class ListLoadBalancersRequest {
     }
 
     /**
-     * 双栈类型负载均衡器所在的子网IPv6网络ID。  支持多值查询，查询条件格式：*ipv6_vip_virsubnet_id=xxx&ipv6_vip_virsubnet_id=xxx*。 [ 不支持IPv6，请勿使用。](tag:dt,dt_test)
+     * 双栈类型负载均衡器所在的子网IPv6网络ID。  支持多值查询，查询条件格式：*ipv6_vip_virsubnet_id=xxx&ipv6_vip_virsubnet_id=xxx*。  [不支持IPv6，请勿使用。](tag:dt,dt_test)
      * @return ipv6VipVirsubnetId
      */
     public List<String> getIpv6VipVirsubnetId() {

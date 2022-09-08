@@ -9,8 +9,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.cbs.v1.model.SessionExtends;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -24,7 +22,6 @@ public class PostQaSessionReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="extends")
     
-    @JacksonXmlProperty(localName = "extends")
     
     private SessionExtends _extends;
 
@@ -32,7 +29,6 @@ public class PostQaSessionReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="chat_enable")
     
-    @JacksonXmlProperty(localName = "chat_enable")
     
     private Boolean chatEnable;
 
@@ -40,7 +36,6 @@ public class PostQaSessionReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="user_id")
     
-    @JacksonXmlProperty(localName = "user_id")
     
     private String userId;
 
@@ -48,7 +43,6 @@ public class PostQaSessionReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="question")
     
-    @JacksonXmlProperty(localName = "question")
     
     private String question;
 

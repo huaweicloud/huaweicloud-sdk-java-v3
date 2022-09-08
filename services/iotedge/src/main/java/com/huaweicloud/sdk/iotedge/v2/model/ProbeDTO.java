@@ -10,8 +10,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.iotedge.v2.model.HttpGetDTO;
 import com.huaweicloud.sdk.iotedge.v2.model.TcpSocketDTO;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -25,7 +23,6 @@ public class ProbeDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="exec_command")
     
-    @JacksonXmlProperty(localName = "exec_command")
     
     private String execCommand;
 
@@ -33,7 +30,6 @@ public class ProbeDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tcp_socket")
     
-    @JacksonXmlProperty(localName = "tcp_socket")
     
     private TcpSocketDTO tcpSocket;
 
@@ -41,7 +37,6 @@ public class ProbeDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="http_get")
     
-    @JacksonXmlProperty(localName = "http_get")
     
     private HttpGetDTO httpGet;
 
@@ -49,7 +44,6 @@ public class ProbeDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="initial_delay_seconds")
     
-    @JacksonXmlProperty(localName = "initial_delay_seconds")
     
     private Integer initialDelaySeconds;
 
@@ -57,7 +51,6 @@ public class ProbeDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="timeout_seconds")
     
-    @JacksonXmlProperty(localName = "timeout_seconds")
     
     private Integer timeoutSeconds;
 
@@ -65,7 +58,6 @@ public class ProbeDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="period_seconds")
     
-    @JacksonXmlProperty(localName = "period_seconds")
     
     private Integer periodSeconds;
 
@@ -73,7 +65,6 @@ public class ProbeDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="failure_threshold")
     
-    @JacksonXmlProperty(localName = "failure_threshold")
     
     private Integer failureThreshold;
 

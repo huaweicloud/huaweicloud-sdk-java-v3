@@ -1,12 +1,16 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -18,331 +22,535 @@ public class ShowInstanceResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_name")
 
-    @JacksonXmlProperty(localName = "vpc_name")
-
     private String vpcName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "charging_mode")
-
-    @JacksonXmlProperty(localName = "charging_mode")
 
     private Integer chargingMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_id")
 
-    @JacksonXmlProperty(localName = "vpc_id")
-
     private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_name")
-
-    @JacksonXmlProperty(localName = "user_name")
 
     private String userName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
 
-    @JacksonXmlProperty(localName = "created_at")
-
     private String createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
-
-    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_group_id")
 
-    @JacksonXmlProperty(localName = "security_group_id")
-
     private String securityGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_group_name")
-
-    @JacksonXmlProperty(localName = "security_group_name")
 
     private String securityGroupName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_memory")
 
-    @JacksonXmlProperty(localName = "max_memory")
-
     private Integer maxMemory;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "used_memory")
-
-    @JacksonXmlProperty(localName = "used_memory")
 
     private Integer usedMemory;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "capacity")
 
-    @JacksonXmlProperty(localName = "capacity")
-
     private Integer capacity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "capacity_minor")
-
-    @JacksonXmlProperty(localName = "capacity_minor")
 
     private String capacityMinor;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maintain_begin")
 
-    @JacksonXmlProperty(localName = "maintain_begin")
-
     private String maintainBegin;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maintain_end")
-
-    @JacksonXmlProperty(localName = "maintain_end")
 
     private String maintainEnd;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "engine")
 
-    @JacksonXmlProperty(localName = "engine")
-
     private String engine;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "no_password_access")
-
-    @JacksonXmlProperty(localName = "no_password_access")
 
     private String noPasswordAccess;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip")
 
-    @JacksonXmlProperty(localName = "ip")
-
     private String ip;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_backup_policy")
-
-    @JacksonXmlProperty(localName = "instance_backup_policy")
 
     private InstanceBackupPolicy instanceBackupPolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "az_codes")
 
-    @JacksonXmlProperty(localName = "az_codes")
-
     private List<String> azCodes = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "access_user")
-
-    @JacksonXmlProperty(localName = "access_user")
 
     private String accessUser;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_id")
 
-    @JacksonXmlProperty(localName = "instance_id")
-
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "port")
-
-    @JacksonXmlProperty(localName = "port")
 
     private Integer port;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_id")
 
-    @JacksonXmlProperty(localName = "user_id")
-
     private String userId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
-
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "spec_code")
 
-    @JacksonXmlProperty(localName = "spec_code")
-
     private String specCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subnet_id")
-
-    @JacksonXmlProperty(localName = "subnet_id")
 
     private String subnetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subnet_name")
 
-    @JacksonXmlProperty(localName = "subnet_name")
-
     private String subnetName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subnet_cidr")
-
-    @JacksonXmlProperty(localName = "subnet_cidr")
 
     private String subnetCidr;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "engine_version")
 
-    @JacksonXmlProperty(localName = "engine_version")
-
     private String engineVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "order_id")
-
-    @JacksonXmlProperty(localName = "order_id")
 
     private String orderId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    @JacksonXmlProperty(localName = "status")
-
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_name")
-
-    @JacksonXmlProperty(localName = "domain_name")
 
     private String domainName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "readonly_domain_name")
 
-    @JacksonXmlProperty(localName = "readonly_domain_name")
-
     private String readonlyDomainName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_publicip")
-
-    @JacksonXmlProperty(localName = "enable_publicip")
 
     private Boolean enablePublicip;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publicip_id")
 
-    @JacksonXmlProperty(localName = "publicip_id")
-
     private String publicipId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publicip_address")
-
-    @JacksonXmlProperty(localName = "publicip_address")
 
     private String publicipAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_ssl")
 
-    @JacksonXmlProperty(localName = "enable_ssl")
-
     private Boolean enableSsl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_upgrade")
-
-    @JacksonXmlProperty(localName = "service_upgrade")
 
     private Boolean serviceUpgrade;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_task_id")
 
-    @JacksonXmlProperty(localName = "service_task_id")
-
     private String serviceTaskId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
-
-    @JacksonXmlProperty(localName = "enterprise_project_id")
 
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "backend_addrs")
 
-    @JacksonXmlProperty(localName = "backend_addrs")
-
     private String backendAddrs;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "features")
-
-    @JacksonXmlProperty(localName = "features")
 
     private Features features;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_name_info")
 
-    @JacksonXmlProperty(localName = "domain_name_info")
-
     private DomainNameInfo domainNameInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "transparent_client_ip_enable")
-
-    @JacksonXmlProperty(localName = "transparent_client_ip_enable")
 
     private Boolean transparentClientIpEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sub_status")
 
-    @JacksonXmlProperty(localName = "sub_status")
-
     private String subStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
-
-    @JacksonXmlProperty(localName = "tags")
 
     private List<ResourceTag> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cpu_type")
 
-    @JacksonXmlProperty(localName = "cpu_type")
-
     private String cpuType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_name")
+
+    private String enterpriseProjectName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "update_at")
+
+    private String updateAt;
+
+    /**
+     * 版本类型：社区版、企业版
+     */
+    public static final class ProductTypeEnum {
+
+        /**
+         * Enum GENERIC for value: "generic"
+         */
+        public static final ProductTypeEnum GENERIC = new ProductTypeEnum("generic");
+
+        /**
+         * Enum ENTERPRISE for value: "enterprise"
+         */
+        public static final ProductTypeEnum ENTERPRISE = new ProductTypeEnum("enterprise");
+
+        private static final Map<String, ProductTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ProductTypeEnum> createStaticFields() {
+            Map<String, ProductTypeEnum> map = new HashMap<>();
+            map.put("generic", GENERIC);
+            map.put("enterprise", ENTERPRISE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ProductTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ProductTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            ProductTypeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new ProductTypeEnum(value);
+            }
+            return result;
+        }
+
+        public static ProductTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            ProductTypeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ProductTypeEnum) {
+                return this.value.equals(((ProductTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "product_type")
+
+    private ProductTypeEnum productType;
+
+    /**
+     * 存储类型：内存存储
+     */
+    public static final class StorageTypeEnum {
+
+        /**
+         * Enum DRAM for value: "DRAM"
+         */
+        public static final StorageTypeEnum DRAM = new StorageTypeEnum("DRAM");
+
+        private static final Map<String, StorageTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StorageTypeEnum> createStaticFields() {
+            Map<String, StorageTypeEnum> map = new HashMap<>();
+            map.put("DRAM", DRAM);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        StorageTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static StorageTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            StorageTypeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new StorageTypeEnum(value);
+            }
+            return result;
+        }
+
+        public static StorageTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            StorageTypeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof StorageTypeEnum) {
+                return this.value.equals(((StorageTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "storage_type")
+
+    private StorageTypeEnum storageType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "launched_at")
+
+    private String launchedAt;
+
+    /**
+     * 缓存类型：单机类型，主备类型，主备读写分离，Proxy集群类型，原生集群类型
+     */
+    public static final class CacheModeEnum {
+
+        /**
+         * Enum SINGLE for value: "single"
+         */
+        public static final CacheModeEnum SINGLE = new CacheModeEnum("single");
+
+        /**
+         * Enum HA for value: "ha"
+         */
+        public static final CacheModeEnum HA = new CacheModeEnum("ha");
+
+        /**
+         * Enum HA_RW_SPLIT for value: "ha_rw_split"
+         */
+        public static final CacheModeEnum HA_RW_SPLIT = new CacheModeEnum("ha_rw_split");
+
+        /**
+         * Enum PROXY for value: "proxy"
+         */
+        public static final CacheModeEnum PROXY = new CacheModeEnum("proxy");
+
+        /**
+         * Enum CLUSTER for value: "cluster"
+         */
+        public static final CacheModeEnum CLUSTER = new CacheModeEnum("cluster");
+
+        private static final Map<String, CacheModeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, CacheModeEnum> createStaticFields() {
+            Map<String, CacheModeEnum> map = new HashMap<>();
+            map.put("single", SINGLE);
+            map.put("ha", HA);
+            map.put("ha_rw_split", HA_RW_SPLIT);
+            map.put("proxy", PROXY);
+            map.put("cluster", CLUSTER);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        CacheModeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static CacheModeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            CacheModeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new CacheModeEnum(value);
+            }
+            return result;
+        }
+
+        public static CacheModeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            CacheModeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof CacheModeEnum) {
+                return this.value.equals(((CacheModeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cache_mode")
+
+    private CacheModeEnum cacheMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "support_slow_log_flag")
+
+    private String supportSlowLogFlag;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "db_number")
+
+    private Integer dbNumber;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "replica_count")
+
+    private Integer replicaCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sharding_count")
+
+    private Integer shardingCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "bandwidth_info")
+
+    private BandwidthInfo bandwidthInfo;
 
     public ShowInstanceResponse withVpcName(String vpcName) {
         this.vpcName = vpcName;
@@ -1202,6 +1410,202 @@ public class ShowInstanceResponse extends SdkResponse {
         this.cpuType = cpuType;
     }
 
+    public ShowInstanceResponse withEnterpriseProjectName(String enterpriseProjectName) {
+        this.enterpriseProjectName = enterpriseProjectName;
+        return this;
+    }
+
+    /**
+     * 企业项目名称。
+     * @return enterpriseProjectName
+     */
+    public String getEnterpriseProjectName() {
+        return enterpriseProjectName;
+    }
+
+    public void setEnterpriseProjectName(String enterpriseProjectName) {
+        this.enterpriseProjectName = enterpriseProjectName;
+    }
+
+    public ShowInstanceResponse withUpdateAt(String updateAt) {
+        this.updateAt = updateAt;
+        return this;
+    }
+
+    /**
+     * 更新时间，形如2022-07-06T09:32:16.502Z
+     * @return updateAt
+     */
+    public String getUpdateAt() {
+        return updateAt;
+    }
+
+    public void setUpdateAt(String updateAt) {
+        this.updateAt = updateAt;
+    }
+
+    public ShowInstanceResponse withProductType(ProductTypeEnum productType) {
+        this.productType = productType;
+        return this;
+    }
+
+    /**
+     * 版本类型：社区版、企业版
+     * @return productType
+     */
+    public ProductTypeEnum getProductType() {
+        return productType;
+    }
+
+    public void setProductType(ProductTypeEnum productType) {
+        this.productType = productType;
+    }
+
+    public ShowInstanceResponse withStorageType(StorageTypeEnum storageType) {
+        this.storageType = storageType;
+        return this;
+    }
+
+    /**
+     * 存储类型：内存存储
+     * @return storageType
+     */
+    public StorageTypeEnum getStorageType() {
+        return storageType;
+    }
+
+    public void setStorageType(StorageTypeEnum storageType) {
+        this.storageType = storageType;
+    }
+
+    public ShowInstanceResponse withLaunchedAt(String launchedAt) {
+        this.launchedAt = launchedAt;
+        return this;
+    }
+
+    /**
+     * 启动时间，形如2022-07-06T09:32:16.502Z
+     * @return launchedAt
+     */
+    public String getLaunchedAt() {
+        return launchedAt;
+    }
+
+    public void setLaunchedAt(String launchedAt) {
+        this.launchedAt = launchedAt;
+    }
+
+    public ShowInstanceResponse withCacheMode(CacheModeEnum cacheMode) {
+        this.cacheMode = cacheMode;
+        return this;
+    }
+
+    /**
+     * 缓存类型：单机类型，主备类型，主备读写分离，Proxy集群类型，原生集群类型
+     * @return cacheMode
+     */
+    public CacheModeEnum getCacheMode() {
+        return cacheMode;
+    }
+
+    public void setCacheMode(CacheModeEnum cacheMode) {
+        this.cacheMode = cacheMode;
+    }
+
+    public ShowInstanceResponse withSupportSlowLogFlag(String supportSlowLogFlag) {
+        this.supportSlowLogFlag = supportSlowLogFlag;
+        return this;
+    }
+
+    /**
+     * 是否支持慢日志
+     * @return supportSlowLogFlag
+     */
+    public String getSupportSlowLogFlag() {
+        return supportSlowLogFlag;
+    }
+
+    public void setSupportSlowLogFlag(String supportSlowLogFlag) {
+        this.supportSlowLogFlag = supportSlowLogFlag;
+    }
+
+    public ShowInstanceResponse withDbNumber(Integer dbNumber) {
+        this.dbNumber = dbNumber;
+        return this;
+    }
+
+    /**
+     * 数据库数量
+     * @return dbNumber
+     */
+    public Integer getDbNumber() {
+        return dbNumber;
+    }
+
+    public void setDbNumber(Integer dbNumber) {
+        this.dbNumber = dbNumber;
+    }
+
+    public ShowInstanceResponse withReplicaCount(Integer replicaCount) {
+        this.replicaCount = replicaCount;
+        return this;
+    }
+
+    /**
+     * 副本数
+     * @return replicaCount
+     */
+    public Integer getReplicaCount() {
+        return replicaCount;
+    }
+
+    public void setReplicaCount(Integer replicaCount) {
+        this.replicaCount = replicaCount;
+    }
+
+    public ShowInstanceResponse withShardingCount(Integer shardingCount) {
+        this.shardingCount = shardingCount;
+        return this;
+    }
+
+    /**
+     * 集群实例分片个数
+     * @return shardingCount
+     */
+    public Integer getShardingCount() {
+        return shardingCount;
+    }
+
+    public void setShardingCount(Integer shardingCount) {
+        this.shardingCount = shardingCount;
+    }
+
+    public ShowInstanceResponse withBandwidthInfo(BandwidthInfo bandwidthInfo) {
+        this.bandwidthInfo = bandwidthInfo;
+        return this;
+    }
+
+    public ShowInstanceResponse withBandwidthInfo(Consumer<BandwidthInfo> bandwidthInfoSetter) {
+        if (this.bandwidthInfo == null) {
+            this.bandwidthInfo = new BandwidthInfo();
+            bandwidthInfoSetter.accept(this.bandwidthInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get bandwidthInfo
+     * @return bandwidthInfo
+     */
+    public BandwidthInfo getBandwidthInfo() {
+        return bandwidthInfo;
+    }
+
+    public void setBandwidthInfo(BandwidthInfo bandwidthInfo) {
+        this.bandwidthInfo = bandwidthInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -1257,7 +1661,18 @@ public class ShowInstanceResponse extends SdkResponse {
             && Objects.equals(this.transparentClientIpEnable, showInstanceResponse.transparentClientIpEnable)
             && Objects.equals(this.subStatus, showInstanceResponse.subStatus)
             && Objects.equals(this.tags, showInstanceResponse.tags)
-            && Objects.equals(this.cpuType, showInstanceResponse.cpuType);
+            && Objects.equals(this.cpuType, showInstanceResponse.cpuType)
+            && Objects.equals(this.enterpriseProjectName, showInstanceResponse.enterpriseProjectName)
+            && Objects.equals(this.updateAt, showInstanceResponse.updateAt)
+            && Objects.equals(this.productType, showInstanceResponse.productType)
+            && Objects.equals(this.storageType, showInstanceResponse.storageType)
+            && Objects.equals(this.launchedAt, showInstanceResponse.launchedAt)
+            && Objects.equals(this.cacheMode, showInstanceResponse.cacheMode)
+            && Objects.equals(this.supportSlowLogFlag, showInstanceResponse.supportSlowLogFlag)
+            && Objects.equals(this.dbNumber, showInstanceResponse.dbNumber)
+            && Objects.equals(this.replicaCount, showInstanceResponse.replicaCount)
+            && Objects.equals(this.shardingCount, showInstanceResponse.shardingCount)
+            && Objects.equals(this.bandwidthInfo, showInstanceResponse.bandwidthInfo);
     }
 
     @Override
@@ -1308,7 +1723,18 @@ public class ShowInstanceResponse extends SdkResponse {
             transparentClientIpEnable,
             subStatus,
             tags,
-            cpuType);
+            cpuType,
+            enterpriseProjectName,
+            updateAt,
+            productType,
+            storageType,
+            launchedAt,
+            cacheMode,
+            supportSlowLogFlag,
+            dbNumber,
+            replicaCount,
+            shardingCount,
+            bandwidthInfo);
     }
 
     @Override
@@ -1362,6 +1788,17 @@ public class ShowInstanceResponse extends SdkResponse {
         sb.append("    subStatus: ").append(toIndentedString(subStatus)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    cpuType: ").append(toIndentedString(cpuType)).append("\n");
+        sb.append("    enterpriseProjectName: ").append(toIndentedString(enterpriseProjectName)).append("\n");
+        sb.append("    updateAt: ").append(toIndentedString(updateAt)).append("\n");
+        sb.append("    productType: ").append(toIndentedString(productType)).append("\n");
+        sb.append("    storageType: ").append(toIndentedString(storageType)).append("\n");
+        sb.append("    launchedAt: ").append(toIndentedString(launchedAt)).append("\n");
+        sb.append("    cacheMode: ").append(toIndentedString(cacheMode)).append("\n");
+        sb.append("    supportSlowLogFlag: ").append(toIndentedString(supportSlowLogFlag)).append("\n");
+        sb.append("    dbNumber: ").append(toIndentedString(dbNumber)).append("\n");
+        sb.append("    replicaCount: ").append(toIndentedString(replicaCount)).append("\n");
+        sb.append("    shardingCount: ").append(toIndentedString(shardingCount)).append("\n");
+        sb.append("    bandwidthInfo: ").append(toIndentedString(bandwidthInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

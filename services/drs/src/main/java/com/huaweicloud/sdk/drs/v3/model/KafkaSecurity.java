@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -19,21 +18,15 @@ public class KafkaSecurity {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trust_store_key_name")
 
-    @JacksonXmlProperty(localName = "trust_store_key_name")
-
     private String trustStoreKeyName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trust_store_key")
 
-    @JacksonXmlProperty(localName = "trust_store_key")
-
     private String trustStoreKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trust_store_password")
-
-    @JacksonXmlProperty(localName = "trust_store_password")
 
     private String trustStorePassword;
 
@@ -116,8 +109,6 @@ public class KafkaSecurity {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
-
-    @JacksonXmlProperty(localName = "type")
 
     private TypeEnum type;
 

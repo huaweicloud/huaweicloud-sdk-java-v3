@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.osm.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,35 +16,25 @@ public class AgreeTenantAuthorizationV2Req {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auth_detail_list")
 
-    @JacksonXmlProperty(localName = "auth_detail_list")
-
     private List<TenantAgreeAuthDetailV2> authDetailList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auth_effective_time")
-
-    @JacksonXmlProperty(localName = "auth_effective_time")
 
     private Long authEffectiveTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auth_expire_time")
 
-    @JacksonXmlProperty(localName = "auth_expire_time")
-
     private Long authExpireTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_id")
 
-    @JacksonXmlProperty(localName = "group_id")
-
     private String groupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "agency_id")
-
-    @JacksonXmlProperty(localName = "agency_id")
 
     private String agencyId;
 

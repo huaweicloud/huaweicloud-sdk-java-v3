@@ -11,8 +11,6 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.GaussDBforOpenGaussCreateSchemaReq;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -26,7 +24,6 @@ public class GaussDBforOpenGaussDatabaseSchemaReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="db_name")
     
-    @JacksonXmlProperty(localName = "db_name")
     
     private String dbName;
 
@@ -34,7 +31,6 @@ public class GaussDBforOpenGaussDatabaseSchemaReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="schemas")
     
-    @JacksonXmlProperty(localName = "schemas")
     
     private List<GaussDBforOpenGaussCreateSchemaReq> schemas = null;
     

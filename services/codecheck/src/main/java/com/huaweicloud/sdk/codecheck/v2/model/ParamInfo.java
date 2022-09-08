@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.codecheck.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,49 +13,35 @@ public class ParamInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "url")
 
-    @JacksonXmlProperty(localName = "url")
-
     private String url;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "branch")
-
-    @JacksonXmlProperty(localName = "branch")
 
     private String branch;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "language")
 
-    @JacksonXmlProperty(localName = "language")
-
     private String language;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "exclude_dir")
-
-    @JacksonXmlProperty(localName = "exclude_dir")
 
     private String excludeDir;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "encode")
 
-    @JacksonXmlProperty(localName = "encode")
-
     private String encode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "compile_config")
 
-    @JacksonXmlProperty(localName = "compile_config")
-
     private String compileConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rule_template")
-
-    @JacksonXmlProperty(localName = "rule_template")
 
     private String ruleTemplate;
 

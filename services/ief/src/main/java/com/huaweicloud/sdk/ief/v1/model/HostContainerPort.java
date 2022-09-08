@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.ief.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,21 +13,15 @@ public class HostContainerPort {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "container_port")
 
-    @JacksonXmlProperty(localName = "container_port")
-
     private Integer containerPort;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_port")
 
-    @JacksonXmlProperty(localName = "host_port")
-
     private Integer hostPort;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_ip")
-
-    @JacksonXmlProperty(localName = "host_ip")
 
     private String hostIp;
 

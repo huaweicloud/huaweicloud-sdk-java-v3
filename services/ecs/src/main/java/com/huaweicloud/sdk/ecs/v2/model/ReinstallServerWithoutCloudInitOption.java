@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.ecs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,28 +13,20 @@ public class ReinstallServerWithoutCloudInitOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "adminpass")
 
-    @JacksonXmlProperty(localName = "adminpass")
-
     private String adminpass;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "keyname")
-
-    @JacksonXmlProperty(localName = "keyname")
 
     private String keyname;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "userid")
 
-    @JacksonXmlProperty(localName = "userid")
-
     private String userid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mode")
-
-    @JacksonXmlProperty(localName = "mode")
 
     private String mode;
 

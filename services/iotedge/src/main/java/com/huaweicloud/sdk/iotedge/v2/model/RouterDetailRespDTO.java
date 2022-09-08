@@ -8,8 +8,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -23,7 +21,6 @@ public class RouterDetailRespDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="route_id")
     
-    @JacksonXmlProperty(localName = "route_id")
     
     private String routeId;
 
@@ -31,7 +28,6 @@ public class RouterDetailRespDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="input_module_id")
     
-    @JacksonXmlProperty(localName = "input_module_id")
     
     private String inputModuleId;
 
@@ -39,7 +35,6 @@ public class RouterDetailRespDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="output_module_id")
     
-    @JacksonXmlProperty(localName = "output_module_id")
     
     private String outputModuleId;
 
@@ -47,7 +42,6 @@ public class RouterDetailRespDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="input")
     
-    @JacksonXmlProperty(localName = "input")
     
     private String input;
 
@@ -55,7 +49,6 @@ public class RouterDetailRespDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="output")
     
-    @JacksonXmlProperty(localName = "output")
     
     private String output;
 
@@ -63,7 +56,6 @@ public class RouterDetailRespDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sql")
     
-    @JacksonXmlProperty(localName = "sql")
     
     private String sql;
 
@@ -71,7 +63,6 @@ public class RouterDetailRespDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="available")
     
-    @JacksonXmlProperty(localName = "available")
     
     private Boolean available;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.eip.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,14 +16,10 @@ public class CommonPoolsWithBorderGroupDict {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publicip_pools")
 
-    @JacksonXmlProperty(localName = "publicip_pools")
-
     private List<String> publicipPools = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "public_border_group")
-
-    @JacksonXmlProperty(localName = "public_border_group")
 
     private String publicBorderGroup;
 

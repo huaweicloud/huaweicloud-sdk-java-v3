@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.apm.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,105 +13,75 @@ public class InstanceInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_id")
 
-    @JacksonXmlProperty(localName = "instance_id")
-
     private Long instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "business_name")
-
-    @JacksonXmlProperty(localName = "business_name")
 
     private String businessName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "business_id")
 
-    @JacksonXmlProperty(localName = "business_id")
-
     private Long businessId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_name")
-
-    @JacksonXmlProperty(localName = "app_name")
 
     private String appName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_name")
 
-    @JacksonXmlProperty(localName = "host_name")
-
     private String hostName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_name")
-
-    @JacksonXmlProperty(localName = "instance_name")
 
     private String instanceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip_address")
 
-    @JacksonXmlProperty(localName = "ip_address")
-
     private String ipAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "env_id")
-
-    @JacksonXmlProperty(localName = "env_id")
 
     private Long envId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "agent_version")
 
-    @JacksonXmlProperty(localName = "agent_version")
-
     private String agentVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last_heartbeat")
-
-    @JacksonXmlProperty(localName = "last_heartbeat")
 
     private Long lastHeartbeat;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "register_time")
 
-    @JacksonXmlProperty(localName = "register_time")
-
     private Long registerTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last_modify_user_id")
-
-    @JacksonXmlProperty(localName = "last_modify_user_id")
 
     private String lastModifyUserId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_status")
 
-    @JacksonXmlProperty(localName = "instance_status")
-
     private Integer instanceStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last_modify_user_name")
 
-    @JacksonXmlProperty(localName = "last_modify_user_name")
-
     private String lastModifyUserName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last_modify_time")
-
-    @JacksonXmlProperty(localName = "last_modify_time")
 
     private Long lastModifyTime;
 

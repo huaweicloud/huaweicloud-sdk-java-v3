@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,37 +16,27 @@ public class UploadPackageGroupReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "paths")
 
-    @JacksonXmlProperty(localName = "paths")
-
     private List<String> paths = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "kind")
-
-    @JacksonXmlProperty(localName = "kind")
 
     private String kind;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group")
 
-    @JacksonXmlProperty(localName = "group")
-
     private String group;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_async")
-
-    @JacksonXmlProperty(localName = "is_async")
 
     private Boolean isAsync;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    @JacksonXmlProperty(localName = "tags")
-
-    private List<JobsTags> tags = null;
+    private List<TmsTagEntity> tags = null;
 
     public UploadPackageGroupReq withPaths(List<String> paths) {
         this.paths = paths;
@@ -133,12 +122,12 @@ public class UploadPackageGroupReq {
         this.isAsync = isAsync;
     }
 
-    public UploadPackageGroupReq withTags(List<JobsTags> tags) {
+    public UploadPackageGroupReq withTags(List<TmsTagEntity> tags) {
         this.tags = tags;
         return this;
     }
 
-    public UploadPackageGroupReq addTagsItem(JobsTags tagsItem) {
+    public UploadPackageGroupReq addTagsItem(TmsTagEntity tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -146,7 +135,7 @@ public class UploadPackageGroupReq {
         return this;
     }
 
-    public UploadPackageGroupReq withTags(Consumer<List<JobsTags>> tagsSetter) {
+    public UploadPackageGroupReq withTags(Consumer<List<TmsTagEntity>> tagsSetter) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -158,11 +147,11 @@ public class UploadPackageGroupReq {
      * 资源标签。具体请参考表tags。
      * @return tags
      */
-    public List<JobsTags> getTags() {
+    public List<TmsTagEntity> getTags() {
         return tags;
     }
 
-    public void setTags(List<JobsTags> tags) {
+    public void setTags(List<TmsTagEntity> tags) {
         this.tags = tags;
     }
 

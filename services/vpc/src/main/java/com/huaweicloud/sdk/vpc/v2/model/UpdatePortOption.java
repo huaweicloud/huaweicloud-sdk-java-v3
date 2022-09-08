@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.vpc.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,28 +16,20 @@ public class UpdatePortOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
-    @JacksonXmlProperty(localName = "name")
-
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_groups")
-
-    @JacksonXmlProperty(localName = "security_groups")
 
     private List<String> securityGroups = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "allowed_address_pairs")
 
-    @JacksonXmlProperty(localName = "allowed_address_pairs")
-
     private List<AllowedAddressPair> allowedAddressPairs = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extra_dhcp_opts")
-
-    @JacksonXmlProperty(localName = "extra_dhcp_opts")
 
     private List<ExtraDhcpOpt> extraDhcpOpts = null;
 

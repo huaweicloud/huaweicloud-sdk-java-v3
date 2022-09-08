@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.expert.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,8 +15,6 @@ public class Papers {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "paper_ids")
-
-    @JacksonXmlProperty(localName = "paper_ids")
 
     private List<String> paperIds = null;
 

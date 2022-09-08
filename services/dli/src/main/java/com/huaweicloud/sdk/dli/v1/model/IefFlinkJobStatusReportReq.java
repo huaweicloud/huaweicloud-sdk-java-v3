@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,23 +16,17 @@ public class IefFlinkJobStatusReportReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "jobs")
 
-    @JacksonXmlProperty(localName = "jobs")
-
     private List<Jobs> jobs = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "msg_confirm_topic")
-
-    @JacksonXmlProperty(localName = "msg_confirm_topic")
-
-    private String msgConfirmTopic;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "message_id")
 
-    @JacksonXmlProperty(localName = "message_id")
-
     private String messageId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "msg_confirm_topic")
+
+    private String msgConfirmTopic;
 
     public IefFlinkJobStatusReportReq withJobs(List<Jobs> jobs) {
         this.jobs = jobs;
@@ -68,23 +61,6 @@ public class IefFlinkJobStatusReportReq {
         this.jobs = jobs;
     }
 
-    public IefFlinkJobStatusReportReq withMsgConfirmTopic(String msgConfirmTopic) {
-        this.msgConfirmTopic = msgConfirmTopic;
-        return this;
-    }
-
-    /**
-     * 消息确认topic
-     * @return msgConfirmTopic
-     */
-    public String getMsgConfirmTopic() {
-        return msgConfirmTopic;
-    }
-
-    public void setMsgConfirmTopic(String msgConfirmTopic) {
-        this.msgConfirmTopic = msgConfirmTopic;
-    }
-
     public IefFlinkJobStatusReportReq withMessageId(String messageId) {
         this.messageId = messageId;
         return this;
@@ -102,6 +78,23 @@ public class IefFlinkJobStatusReportReq {
         this.messageId = messageId;
     }
 
+    public IefFlinkJobStatusReportReq withMsgConfirmTopic(String msgConfirmTopic) {
+        this.msgConfirmTopic = msgConfirmTopic;
+        return this;
+    }
+
+    /**
+     * 消息确认topic
+     * @return msgConfirmTopic
+     */
+    public String getMsgConfirmTopic() {
+        return msgConfirmTopic;
+    }
+
+    public void setMsgConfirmTopic(String msgConfirmTopic) {
+        this.msgConfirmTopic = msgConfirmTopic;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -112,13 +105,13 @@ public class IefFlinkJobStatusReportReq {
         }
         IefFlinkJobStatusReportReq iefFlinkJobStatusReportReq = (IefFlinkJobStatusReportReq) o;
         return Objects.equals(this.jobs, iefFlinkJobStatusReportReq.jobs)
-            && Objects.equals(this.msgConfirmTopic, iefFlinkJobStatusReportReq.msgConfirmTopic)
-            && Objects.equals(this.messageId, iefFlinkJobStatusReportReq.messageId);
+            && Objects.equals(this.messageId, iefFlinkJobStatusReportReq.messageId)
+            && Objects.equals(this.msgConfirmTopic, iefFlinkJobStatusReportReq.msgConfirmTopic);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(jobs, msgConfirmTopic, messageId);
+        return Objects.hash(jobs, messageId, msgConfirmTopic);
     }
 
     @Override
@@ -126,8 +119,8 @@ public class IefFlinkJobStatusReportReq {
         StringBuilder sb = new StringBuilder();
         sb.append("class IefFlinkJobStatusReportReq {\n");
         sb.append("    jobs: ").append(toIndentedString(jobs)).append("\n");
-        sb.append("    msgConfirmTopic: ").append(toIndentedString(msgConfirmTopic)).append("\n");
         sb.append("    messageId: ").append(toIndentedString(messageId)).append("\n");
+        sb.append("    msgConfirmTopic: ").append(toIndentedString(msgConfirmTopic)).append("\n");
         sb.append("}");
         return sb.toString();
     }

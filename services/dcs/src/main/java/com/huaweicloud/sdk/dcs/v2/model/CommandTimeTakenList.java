@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,14 +21,10 @@ public class CommandTimeTakenList {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_num")
 
-    @JacksonXmlProperty(localName = "total_num")
-
     private Integer totalNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_usec_sum")
-
-    @JacksonXmlProperty(localName = "total_usec_sum")
 
     private Double totalUsecSum;
 
@@ -113,14 +108,10 @@ public class CommandTimeTakenList {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "result")
 
-    @JacksonXmlProperty(localName = "result")
-
     private ResultEnum result;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "command_list")
-
-    @JacksonXmlProperty(localName = "command_list")
 
     private List<CommandTimeTaken> commandList = null;
 

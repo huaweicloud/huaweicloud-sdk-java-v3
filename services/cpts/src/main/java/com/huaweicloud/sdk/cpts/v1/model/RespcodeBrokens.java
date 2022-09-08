@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cpts.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,49 +16,35 @@ public class RespcodeBrokens {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "checkPointFailed")
 
-    @JacksonXmlProperty(localName = "checkPointFailed")
-
     private List<Double> checkPointFailed = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error")
-
-    @JacksonXmlProperty(localName = "error")
 
     private List<Double> error = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "othersFailed")
 
-    @JacksonXmlProperty(localName = "othersFailed")
-
     private List<Double> othersFailed = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parsedFailed")
-
-    @JacksonXmlProperty(localName = "parsedFailed")
 
     private List<Double> parsedFailed = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "refusedFailed")
 
-    @JacksonXmlProperty(localName = "refusedFailed")
-
     private List<Double> refusedFailed = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "success")
 
-    @JacksonXmlProperty(localName = "success")
-
     private List<Double> success = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timeout")
-
-    @JacksonXmlProperty(localName = "timeout")
 
     private List<Double> timeout = null;
 

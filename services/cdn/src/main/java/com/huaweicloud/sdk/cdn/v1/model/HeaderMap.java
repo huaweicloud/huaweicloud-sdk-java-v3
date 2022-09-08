@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cdn.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,42 +13,30 @@ public class HeaderMap {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "Content-Disposition")
 
-    @JacksonXmlProperty(localName = "Content-Disposition")
-
     private String contentDisposition;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "Content-Language")
-
-    @JacksonXmlProperty(localName = "Content-Language")
 
     private String contentLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "Access-Control-Allow-Origin")
 
-    @JacksonXmlProperty(localName = "Access-Control-Allow-Origin")
-
     private String accessControlAllowOrigin;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "Access-Control-Allow-Methods")
-
-    @JacksonXmlProperty(localName = "Access-Control-Allow-Methods")
 
     private String accessControlAllowMethods;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "Access-Control-Max-Age")
 
-    @JacksonXmlProperty(localName = "Access-Control-Max-Age")
-
     private String accessControlMaxAge;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "Access-Control-Expose-Headers")
-
-    @JacksonXmlProperty(localName = "Access-Control-Expose-Headers")
 
     private String accessControlExposeHeaders;
 

@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -19,28 +18,20 @@ public class ExportResultReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_path")
 
-    @JacksonXmlProperty(localName = "data_path")
-
     private String dataPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "compress")
-
-    @JacksonXmlProperty(localName = "compress")
 
     private String compress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_type")
 
-    @JacksonXmlProperty(localName = "data_type")
-
     private String dataType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "queue_name")
-
-    @JacksonXmlProperty(localName = "queue_name")
 
     private String queueName;
 
@@ -124,28 +115,20 @@ public class ExportResultReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "export_mode")
 
-    @JacksonXmlProperty(localName = "export_mode")
-
     private ExportModeEnum exportMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "with_column_header")
-
-    @JacksonXmlProperty(localName = "with_column_header")
 
     private Boolean withColumnHeader;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit_num")
 
-    @JacksonXmlProperty(localName = "limit_num")
-
     private Integer limitNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "encoding_type")
-
-    @JacksonXmlProperty(localName = "encoding_type")
 
     private String encodingType;
 

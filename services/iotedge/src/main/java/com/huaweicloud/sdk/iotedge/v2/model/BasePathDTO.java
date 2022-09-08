@@ -8,8 +8,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -23,7 +21,6 @@ public class BasePathDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="log_base_path")
     
-    @JacksonXmlProperty(localName = "log_base_path")
     
     private String logBasePath;
 
@@ -31,7 +28,6 @@ public class BasePathDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="config_base_path")
     
-    @JacksonXmlProperty(localName = "config_base_path")
     
     private String configBasePath;
 
@@ -39,7 +35,6 @@ public class BasePathDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="db_base_path")
     
-    @JacksonXmlProperty(localName = "db_base_path")
     
     private String dbBasePath;
 

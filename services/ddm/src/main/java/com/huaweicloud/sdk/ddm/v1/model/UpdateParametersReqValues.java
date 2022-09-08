@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,8 +17,6 @@ public class UpdateParametersReqValues {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bind_table")
-
-    @JacksonXmlProperty(localName = "bind_table")
 
     private String bindTable;
 
@@ -108,8 +105,6 @@ public class UpdateParametersReqValues {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "character_set_server")
-
-    @JacksonXmlProperty(localName = "character_set_server")
 
     private CharacterSetServerEnum characterSetServer;
 
@@ -217,8 +212,6 @@ public class UpdateParametersReqValues {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "collation_server")
 
-    @JacksonXmlProperty(localName = "collation_server")
-
     private CollationServerEnum collationServer;
 
     /**
@@ -308,14 +301,10 @@ public class UpdateParametersReqValues {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "concurrent_execution_level")
 
-    @JacksonXmlProperty(localName = "concurrent_execution_level")
-
     private ConcurrentExecutionLevelEnum concurrentExecutionLevel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "connection_idle_timeout")
-
-    @JacksonXmlProperty(localName = "connection_idle_timeout")
 
     private String connectionIdleTimeout;
 
@@ -399,8 +388,6 @@ public class UpdateParametersReqValues {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_table_recycle")
 
-    @JacksonXmlProperty(localName = "enable_table_recycle")
-
     private EnableTableRecycleEnum enableTableRecycle;
 
     /**
@@ -483,49 +470,35 @@ public class UpdateParametersReqValues {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "insert_to_load_data")
 
-    @JacksonXmlProperty(localName = "insert_to_load_data")
-
     private InsertToLoadDataEnum insertToLoadData;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "live_transaction_timeout_on_shutdown")
-
-    @JacksonXmlProperty(localName = "live_transaction_timeout_on_shutdown")
 
     private String liveTransactionTimeoutOnShutdown;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "long_query_time")
 
-    @JacksonXmlProperty(localName = "long_query_time")
-
     private String longQueryTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_allowed_packet")
-
-    @JacksonXmlProperty(localName = "max_allowed_packet")
 
     private String maxAllowedPacket;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_backend_connections")
 
-    @JacksonXmlProperty(localName = "max_backend_connections")
-
     private String maxBackendConnections;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_connections")
 
-    @JacksonXmlProperty(localName = "max_connections")
-
     private String maxConnections;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "min_backend_connections")
-
-    @JacksonXmlProperty(localName = "min_backend_connections")
 
     private String minBackendConnections;
 
@@ -609,14 +582,10 @@ public class UpdateParametersReqValues {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "not_from_pushdown")
 
-    @JacksonXmlProperty(localName = "not_from_pushdown")
-
     private NotFromPushdownEnum notFromPushdown;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "seconds_behind_master")
-
-    @JacksonXmlProperty(localName = "seconds_behind_master")
 
     private String secondsBehindMaster;
 
@@ -700,14 +669,10 @@ public class UpdateParametersReqValues {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sql_audit")
 
-    @JacksonXmlProperty(localName = "sql_audit")
-
     private SqlAuditEnum sqlAudit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sql_execute_timeout")
-
-    @JacksonXmlProperty(localName = "sql_execute_timeout")
 
     private String sqlExecuteTimeout;
 
@@ -790,8 +755,6 @@ public class UpdateParametersReqValues {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "support_ddl_binlog_hint")
-
-    @JacksonXmlProperty(localName = "support_ddl_binlog_hint")
 
     private SupportDdlBinlogHintEnum supportDdlBinlogHint;
 
@@ -881,8 +844,6 @@ public class UpdateParametersReqValues {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "transaction_policy")
 
-    @JacksonXmlProperty(localName = "transaction_policy")
-
     private TransactionPolicyEnum transactionPolicy;
 
     /**
@@ -964,8 +925,6 @@ public class UpdateParametersReqValues {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ultimate_optimize")
-
-    @JacksonXmlProperty(localName = "ultimate_optimize")
 
     private UltimateOptimizeEnum ultimateOptimize;
 

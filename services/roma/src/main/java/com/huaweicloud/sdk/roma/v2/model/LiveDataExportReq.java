@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,8 +20,6 @@ public class LiveDataExportReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_id")
-
-    @JacksonXmlProperty(localName = "app_id")
 
     private String appId;
 
@@ -112,21 +109,15 @@ public class LiveDataExportReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "format")
 
-    @JacksonXmlProperty(localName = "format")
-
     private FormatEnum format;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "apis")
 
-    @JacksonXmlProperty(localName = "apis")
-
     private List<String> apis = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
-
-    @JacksonXmlProperty(localName = "status")
 
     private Integer status;
 

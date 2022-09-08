@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,8 +20,6 @@ public class HandleNotificationRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "channel_name")
-
-    @JacksonXmlProperty(localName = "channel_name")
 
     private String channelName;
 
@@ -106,28 +103,20 @@ public class HandleNotificationRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    @JacksonXmlProperty(localName = "status")
-
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "invitor_info")
-
-    @JacksonXmlProperty(localName = "invitor_info")
 
     private HandleNotificationInvitor invitorInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "invitee_info")
 
-    @JacksonXmlProperty(localName = "invitee_info")
-
     private HandleNotificationInvitee inviteeInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "invited_orgs")
-
-    @JacksonXmlProperty(localName = "invited_orgs")
 
     private List<HandleNotificationOrg> invitedOrgs = null;
 

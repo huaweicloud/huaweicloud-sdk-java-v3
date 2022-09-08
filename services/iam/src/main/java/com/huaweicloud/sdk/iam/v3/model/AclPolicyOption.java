@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.iam.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,14 +16,10 @@ public class AclPolicyOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "allow_address_netmasks")
 
-    @JacksonXmlProperty(localName = "allow_address_netmasks")
-
     private List<AllowAddressNetmasksOption> allowAddressNetmasks = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "allow_ip_ranges")
-
-    @JacksonXmlProperty(localName = "allow_ip_ranges")
 
     private List<AllowIpRangesOption> allowIpRanges = null;
 

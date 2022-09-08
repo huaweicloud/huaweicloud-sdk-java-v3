@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.projectman.v4.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,21 +13,15 @@ public class IterationHistoryDetails {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operate_field_name")
 
-    @JacksonXmlProperty(localName = "operate_field_name")
-
     private String operateFieldName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "new_value")
 
-    @JacksonXmlProperty(localName = "new_value")
-
     private String newValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "old_value")
-
-    @JacksonXmlProperty(localName = "old_value")
 
     private String oldValue;
 

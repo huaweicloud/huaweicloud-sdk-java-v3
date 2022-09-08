@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.frs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,21 +13,15 @@ public class LiveDetectUrlReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "action_time")
 
-    @JacksonXmlProperty(localName = "action_time")
-
     private String actionTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "video_url")
 
-    @JacksonXmlProperty(localName = "video_url")
-
     private String videoUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "actions")
-
-    @JacksonXmlProperty(localName = "actions")
 
     private String actions;
 

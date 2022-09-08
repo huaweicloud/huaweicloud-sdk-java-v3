@@ -8,8 +8,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -23,7 +21,6 @@ public class ListClustersRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    @JacksonXmlProperty(localName = "tags")
     
     private String tags;
 
@@ -31,7 +28,6 @@ public class ListClustersRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="pageSize")
     
-    @JacksonXmlProperty(localName = "pageSize")
     
     private String pageSize;
 
@@ -39,7 +35,6 @@ public class ListClustersRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="currentPage")
     
-    @JacksonXmlProperty(localName = "currentPage")
     
     private String currentPage;
 
@@ -47,7 +42,6 @@ public class ListClustersRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="clusterName")
     
-    @JacksonXmlProperty(localName = "clusterName")
     
     private String clusterName;
 
@@ -55,7 +49,6 @@ public class ListClustersRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="clusterState")
     
-    @JacksonXmlProperty(localName = "clusterState")
     
     private String clusterState;
 
@@ -63,7 +56,6 @@ public class ListClustersRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterpriseProjectId")
     
-    @JacksonXmlProperty(localName = "enterpriseProjectId")
     
     private String enterpriseProjectId;
 

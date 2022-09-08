@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.deh.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,49 +16,35 @@ public class RespHostProperty {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_type")
 
-    @JacksonXmlProperty(localName = "host_type")
-
     private String hostType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_type_name")
-
-    @JacksonXmlProperty(localName = "host_type_name")
 
     private String hostTypeName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vcpus")
 
-    @JacksonXmlProperty(localName = "vcpus")
-
     private Integer vcpus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cores")
-
-    @JacksonXmlProperty(localName = "cores")
 
     private Integer cores;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sockets")
 
-    @JacksonXmlProperty(localName = "sockets")
-
     private Integer sockets;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "memory")
 
-    @JacksonXmlProperty(localName = "memory")
-
     private Integer memory;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "available_instance_capacities")
-
-    @JacksonXmlProperty(localName = "available_instance_capacities")
 
     private List<RespInstanceCapacity> availableInstanceCapacities = null;
 

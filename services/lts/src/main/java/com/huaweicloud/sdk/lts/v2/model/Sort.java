@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,8 +20,6 @@ public class Sort {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "order_by")
-
-    @JacksonXmlProperty(localName = "order_by")
 
     private List<String> orderBy = null;
 
@@ -105,8 +102,6 @@ public class Sort {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "order")
-
-    @JacksonXmlProperty(localName = "order")
 
     private OrderEnum order;
 

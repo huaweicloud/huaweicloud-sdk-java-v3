@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -20,14 +19,10 @@ public class CreateTransferResponseBodyLogTransferInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_agency_transfer")
 
-    @JacksonXmlProperty(localName = "log_agency_transfer")
-
     private CreateTransferResponseBodyLogTransferInfoLogAgencyTransfer logAgencyTransfer;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_create_time")
-
-    @JacksonXmlProperty(localName = "log_create_time")
 
     private Long logCreateTime;
 
@@ -111,14 +106,10 @@ public class CreateTransferResponseBodyLogTransferInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_storage_format")
 
-    @JacksonXmlProperty(localName = "log_storage_format")
-
     private LogStorageFormatEnum logStorageFormat;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_transfer_detail")
-
-    @JacksonXmlProperty(localName = "log_transfer_detail")
 
     private TransferDetail logTransferDetail;
 
@@ -201,8 +192,6 @@ public class CreateTransferResponseBodyLogTransferInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_transfer_mode")
-
-    @JacksonXmlProperty(localName = "log_transfer_mode")
 
     private LogTransferModeEnum logTransferMode;
 
@@ -292,8 +281,6 @@ public class CreateTransferResponseBodyLogTransferInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_transfer_status")
 
-    @JacksonXmlProperty(localName = "log_transfer_status")
-
     private LogTransferStatusEnum logTransferStatus;
 
     /**
@@ -381,8 +368,6 @@ public class CreateTransferResponseBodyLogTransferInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_transfer_type")
-
-    @JacksonXmlProperty(localName = "log_transfer_type")
 
     private LogTransferTypeEnum logTransferType;
 

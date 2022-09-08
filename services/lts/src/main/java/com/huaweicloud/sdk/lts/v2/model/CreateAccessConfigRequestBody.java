@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,8 +20,6 @@ public class CreateAccessConfigRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "access_config_name")
-
-    @JacksonXmlProperty(localName = "access_config_name")
 
     private String accessConfigName;
 
@@ -100,35 +97,25 @@ public class CreateAccessConfigRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "access_config_type")
 
-    @JacksonXmlProperty(localName = "access_config_type")
-
     private AccessConfigTypeEnum accessConfigType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "access_config_detail")
-
-    @JacksonXmlProperty(localName = "access_config_detail")
 
     private AccessConfigDeatilCreate accessConfigDetail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_info")
 
-    @JacksonXmlProperty(localName = "log_info")
-
     private AccessConfigBaseLogInfoCreate logInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_group_info")
 
-    @JacksonXmlProperty(localName = "host_group_info")
-
     private AccessConfigHostGroupIdListCreate hostGroupInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "access_config_tag")
-
-    @JacksonXmlProperty(localName = "access_config_tag")
 
     private List<AccessConfigTag> accessConfigTag = null;
 

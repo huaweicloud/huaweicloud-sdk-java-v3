@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.sis.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,70 +16,50 @@ public class Word {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "text")
 
-    @JacksonXmlProperty(localName = "text")
-
     private String text;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "text_original")
-
-    @JacksonXmlProperty(localName = "text_original")
 
     private String textOriginal;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "text_normalised")
 
-    @JacksonXmlProperty(localName = "text_normalised")
-
     private List<String> textNormalised = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "out_of_vocabulary")
-
-    @JacksonXmlProperty(localName = "out_of_vocabulary")
 
     private Boolean outOfVocabulary;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
-    @JacksonXmlProperty(localName = "start_time")
-
     private Float startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time")
-
-    @JacksonXmlProperty(localName = "end_time")
 
     private Float endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "score")
 
-    @JacksonXmlProperty(localName = "score")
-
     private Float score;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pronunciation")
-
-    @JacksonXmlProperty(localName = "pronunciation")
 
     private WordPronunciation pronunciation;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fluency")
 
-    @JacksonXmlProperty(localName = "fluency")
-
     private WordFluency fluency;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "phonemes")
-
-    @JacksonXmlProperty(localName = "phonemes")
 
     private List<Phoneme> phonemes = null;
 

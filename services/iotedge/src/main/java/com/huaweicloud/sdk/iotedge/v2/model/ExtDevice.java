@@ -8,8 +8,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -23,7 +21,6 @@ public class ExtDevice  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="source")
     
-    @JacksonXmlProperty(localName = "source")
     
     private String source;
 
@@ -31,7 +28,6 @@ public class ExtDevice  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="destination")
     
-    @JacksonXmlProperty(localName = "destination")
     
     private String destination;
 
@@ -39,7 +35,6 @@ public class ExtDevice  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cgroup_permissions")
     
-    @JacksonXmlProperty(localName = "cgroup_permissions")
     
     private String cgroupPermissions;
 

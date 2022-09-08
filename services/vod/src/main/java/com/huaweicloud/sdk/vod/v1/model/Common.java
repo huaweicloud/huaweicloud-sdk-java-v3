@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -108,14 +107,10 @@ public class Common {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pvc")
 
-    @JacksonXmlProperty(localName = "pvc")
-
     private PvcEnum pvc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pvc_version")
-
-    @JacksonXmlProperty(localName = "pvc_version")
 
     private String pvcVersion;
 
@@ -204,8 +199,6 @@ public class Common {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "video_codec")
-
-    @JacksonXmlProperty(localName = "video_codec")
 
     private VideoCodecEnum videoCodec;
 
@@ -301,14 +294,10 @@ public class Common {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "audio_codec")
 
-    @JacksonXmlProperty(localName = "audio_codec")
-
     private AudioCodecEnum audioCodec;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hls_interval")
-
-    @JacksonXmlProperty(localName = "hls_interval")
 
     private Integer hlsInterval;
 

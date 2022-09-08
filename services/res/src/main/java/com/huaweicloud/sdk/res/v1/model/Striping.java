@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.res.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,21 +13,15 @@ public class Striping {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nearest_neighborhood")
 
-    @JacksonXmlProperty(localName = "nearest_neighborhood")
-
     private Integer nearestNeighborhood;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "band")
 
-    @JacksonXmlProperty(localName = "band")
-
     private Integer band;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "row")
-
-    @JacksonXmlProperty(localName = "row")
 
     private Integer row;
 

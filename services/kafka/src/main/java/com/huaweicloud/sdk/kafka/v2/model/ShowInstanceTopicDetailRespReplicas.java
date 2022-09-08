@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.kafka.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,35 +13,25 @@ public class ShowInstanceTopicDetailRespReplicas {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "broker")
 
-    @JacksonXmlProperty(localName = "broker")
-
     private Integer broker;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "leader")
-
-    @JacksonXmlProperty(localName = "leader")
 
     private Boolean leader;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "in_sync")
 
-    @JacksonXmlProperty(localName = "in_sync")
-
     private Boolean inSync;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
 
-    @JacksonXmlProperty(localName = "size")
-
     private Integer size;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lag")
-
-    @JacksonXmlProperty(localName = "lag")
 
     private Integer lag;
 

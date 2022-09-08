@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -19,35 +18,25 @@ public class RtcUser {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain")
 
-    @JacksonXmlProperty(localName = "domain")
-
     private String domain;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app")
-
-    @JacksonXmlProperty(localName = "app")
 
     private String app;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "room_id")
 
-    @JacksonXmlProperty(localName = "room_id")
-
     private String roomId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "uid")
 
-    @JacksonXmlProperty(localName = "uid")
-
     private String uid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "session")
-
-    @JacksonXmlProperty(localName = "session")
 
     private String session;
 
@@ -137,70 +126,50 @@ public class RtcUser {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "state")
 
-    @JacksonXmlProperty(localName = "state")
-
     private StateEnum state;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nick_name")
-
-    @JacksonXmlProperty(localName = "nick_name")
 
     private String nickName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip")
 
-    @JacksonXmlProperty(localName = "ip")
-
     private String ip;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region")
-
-    @JacksonXmlProperty(localName = "region")
 
     private String region;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "isp")
 
-    @JacksonXmlProperty(localName = "isp")
-
     private String isp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "device_model")
-
-    @JacksonXmlProperty(localName = "device_model")
 
     private String deviceModel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "platform")
 
-    @JacksonXmlProperty(localName = "platform")
-
     private String platform;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sdk")
-
-    @JacksonXmlProperty(localName = "sdk")
 
     private String sdk;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "join_time")
 
-    @JacksonXmlProperty(localName = "join_time")
-
     private String joinTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "leave_time")
-
-    @JacksonXmlProperty(localName = "leave_time")
 
     private String leaveTime;
 

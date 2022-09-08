@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.bss.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,56 +16,40 @@ public class QueryResourcesReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_ids")
 
-    @JacksonXmlProperty(localName = "resource_ids")
-
     private List<String> resourceIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "order_id")
-
-    @JacksonXmlProperty(localName = "order_id")
 
     private String orderId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "only_main_resource")
 
-    @JacksonXmlProperty(localName = "only_main_resource")
-
     private Integer onlyMainResource;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status_list")
-
-    @JacksonXmlProperty(localName = "status_list")
 
     private List<Integer> statusList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
-    @JacksonXmlProperty(localName = "offset")
-
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
-
-    @JacksonXmlProperty(localName = "limit")
 
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expire_time_begin")
 
-    @JacksonXmlProperty(localName = "expire_time_begin")
-
     private String expireTimeBegin;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expire_time_end")
-
-    @JacksonXmlProperty(localName = "expire_time_end")
 
     private String expireTimeEnd;
 
@@ -216,7 +199,7 @@ public class QueryResourcesReq {
     }
 
     /**
-     * 查询指定时间段内失效的资源列表，时间段的起始时间，UTC时间。 此参数不携带或携带值为空串或携带值为null时，不作为筛选条件，返回其他条件匹配的记录。
+     * 查询指定时间段内失效的资源列表，时间段的起始时间，UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。 其中，HH范围是0～23，mm和ss范围是0～59。 此参数不携带或携带值为空串或携带值为null时，不作为筛选条件，返回其他条件匹配的记录。
      * @return expireTimeBegin
      */
     public String getExpireTimeBegin() {
@@ -233,7 +216,7 @@ public class QueryResourcesReq {
     }
 
     /**
-     * 查询指定时间段内失效的资源列表，时间段的结束时间，UTC时间。 此参数不携带或携带值为空串或携带值为null时，不作为筛选条件，返回其他条件匹配的记录。
+     * 查询指定时间段内失效的资源列表，时间段的结束时间，UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。 其中，HH范围是0～23，mm和ss范围是0～59。 此参数不携带或携带值为空串或携带值为null时，不作为筛选条件，返回其他条件匹配的记录。
      * @return expireTimeEnd
      */
     public String getExpireTimeEnd() {

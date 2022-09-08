@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -12,39 +11,46 @@ import java.util.Objects;
 public class ListFlinkTemplatesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "name")
+    @JsonProperty(value = "limit")
 
-    @JacksonXmlProperty(localName = "name")
+    private Integer limit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "tags")
-
-    @JacksonXmlProperty(localName = "tags")
-
-    private String tags;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
-
-    @JacksonXmlProperty(localName = "offset")
 
     private Long offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "order")
 
-    @JacksonXmlProperty(localName = "order")
-
     private String order;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "limit")
+    @JsonProperty(value = "tags")
 
-    @JacksonXmlProperty(localName = "limit")
+    private String tags;
 
-    private Integer limit;
+    public ListFlinkTemplatesRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * 返回的数据条数。默认为10。
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
 
     public ListFlinkTemplatesRequest withName(String name) {
         this.name = name;
@@ -61,23 +67,6 @@ public class ListFlinkTemplatesRequest {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public ListFlinkTemplatesRequest withTags(String tags) {
-        this.tags = tags;
-        return this;
-    }
-
-    /**
-     * Get tags
-     * @return tags
-     */
-    public String getTags() {
-        return tags;
-    }
-
-    public void setTags(String tags) {
-        this.tags = tags;
     }
 
     public ListFlinkTemplatesRequest withOffset(Long offset) {
@@ -114,21 +103,21 @@ public class ListFlinkTemplatesRequest {
         this.order = order;
     }
 
-    public ListFlinkTemplatesRequest withLimit(Integer limit) {
-        this.limit = limit;
+    public ListFlinkTemplatesRequest withTags(String tags) {
+        this.tags = tags;
         return this;
     }
 
     /**
-     * 返回的数据条数。默认为10。
-     * @return limit
+     * Get tags
+     * @return tags
      */
-    public Integer getLimit() {
-        return limit;
+    public String getTags() {
+        return tags;
     }
 
-    public void setLimit(Integer limit) {
-        this.limit = limit;
+    public void setTags(String tags) {
+        this.tags = tags;
     }
 
     @Override
@@ -140,27 +129,27 @@ public class ListFlinkTemplatesRequest {
             return false;
         }
         ListFlinkTemplatesRequest listFlinkTemplatesRequest = (ListFlinkTemplatesRequest) o;
-        return Objects.equals(this.name, listFlinkTemplatesRequest.name)
-            && Objects.equals(this.tags, listFlinkTemplatesRequest.tags)
+        return Objects.equals(this.limit, listFlinkTemplatesRequest.limit)
+            && Objects.equals(this.name, listFlinkTemplatesRequest.name)
             && Objects.equals(this.offset, listFlinkTemplatesRequest.offset)
             && Objects.equals(this.order, listFlinkTemplatesRequest.order)
-            && Objects.equals(this.limit, listFlinkTemplatesRequest.limit);
+            && Objects.equals(this.tags, listFlinkTemplatesRequest.tags);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, tags, offset, order, limit);
+        return Objects.hash(limit, name, offset, order, tags);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListFlinkTemplatesRequest {\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    order: ").append(toIndentedString(order)).append("\n");
-        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

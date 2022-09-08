@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -22,8 +21,6 @@ public class ShowTaskResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
-
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
@@ -107,8 +104,6 @@ public class ShowTaskResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
-    @JacksonXmlProperty(localName = "type")
-
     private TypeEnum type;
 
     /**
@@ -191,14 +186,10 @@ public class ShowTaskResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os_type")
 
-    @JacksonXmlProperty(localName = "os_type")
-
     private OsTypeEnum osType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
-
-    @JacksonXmlProperty(localName = "id")
 
     private String id;
 
@@ -288,182 +279,130 @@ public class ShowTaskResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "priority")
 
-    @JacksonXmlProperty(localName = "priority")
-
     private PriorityEnum priority;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region_id")
-
-    @JacksonXmlProperty(localName = "region_id")
 
     private String regionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_target_server")
 
-    @JacksonXmlProperty(localName = "start_target_server")
-
     private Boolean startTargetServer;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
-
-    @JacksonXmlProperty(localName = "enterprise_project_id")
 
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "migration_ip")
 
-    @JacksonXmlProperty(localName = "migration_ip")
-
     private String migrationIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region_name")
-
-    @JacksonXmlProperty(localName = "region_name")
 
     private String regionName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_name")
 
-    @JacksonXmlProperty(localName = "project_name")
-
     private String projectName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
-
-    @JacksonXmlProperty(localName = "project_id")
 
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vm_template_id")
 
-    @JacksonXmlProperty(localName = "vm_template_id")
-
     private String vmTemplateId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_server")
-
-    @JacksonXmlProperty(localName = "source_server")
 
     private SourceServer sourceServer;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_server")
 
-    @JacksonXmlProperty(localName = "target_server")
-
     private TaskTargetServer targetServer;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "state")
-
-    @JacksonXmlProperty(localName = "state")
 
     private String state;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "estimate_complete_time")
 
-    @JacksonXmlProperty(localName = "estimate_complete_time")
-
     private Long estimateCompleteTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "connected")
-
-    @JacksonXmlProperty(localName = "connected")
 
     private Boolean connected;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_date")
 
-    @JacksonXmlProperty(localName = "create_date")
-
     private Long createDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_date")
-
-    @JacksonXmlProperty(localName = "start_date")
 
     private Long startDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "finish_date")
 
-    @JacksonXmlProperty(localName = "finish_date")
-
     private Long finishDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "migrate_speed")
-
-    @JacksonXmlProperty(localName = "migrate_speed")
 
     private Double migrateSpeed;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "compress_rate")
 
-    @JacksonXmlProperty(localName = "compress_rate")
-
     private Double compressRate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_json")
-
-    @JacksonXmlProperty(localName = "error_json")
 
     private String errorJson;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_time")
 
-    @JacksonXmlProperty(localName = "total_time")
-
     private Long totalTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "float_ip")
-
-    @JacksonXmlProperty(localName = "float_ip")
 
     private String floatIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remain_seconds")
 
-    @JacksonXmlProperty(localName = "remain_seconds")
-
     private Long remainSeconds;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_snapshot_id")
-
-    @JacksonXmlProperty(localName = "target_snapshot_id")
 
     private String targetSnapshotId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "clone_server")
 
-    @JacksonXmlProperty(localName = "clone_server")
-
     private CloneServer cloneServer;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sub_tasks")
-
-    @JacksonXmlProperty(localName = "sub_tasks")
 
     private List<SubTask> subTasks = null;
 

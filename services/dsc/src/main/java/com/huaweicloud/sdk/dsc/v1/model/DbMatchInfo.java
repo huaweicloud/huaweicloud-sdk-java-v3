@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dsc.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,35 +16,25 @@ public class DbMatchInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "column_name")
 
-    @JacksonXmlProperty(localName = "column_name")
-
     private String columnName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rule_name")
-
-    @JacksonXmlProperty(localName = "rule_name")
 
     private String ruleName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rule_id")
 
-    @JacksonXmlProperty(localName = "rule_id")
-
     private String ruleId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rule_risk_level")
 
-    @JacksonXmlProperty(localName = "rule_risk_level")
-
     private Integer ruleRiskLevel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "column_line")
-
-    @JacksonXmlProperty(localName = "column_line")
 
     private List<Long> columnLine = null;
 

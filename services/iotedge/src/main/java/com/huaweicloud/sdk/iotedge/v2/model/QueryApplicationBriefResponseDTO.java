@@ -8,8 +8,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -23,7 +21,6 @@ public class QueryApplicationBriefResponseDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edge_app_id")
     
-    @JacksonXmlProperty(localName = "edge_app_id")
     
     private String edgeAppId;
 
@@ -31,7 +28,6 @@ public class QueryApplicationBriefResponseDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
-    @JacksonXmlProperty(localName = "description")
     
     private String description;
 
@@ -39,7 +35,6 @@ public class QueryApplicationBriefResponseDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    @JacksonXmlProperty(localName = "create_time")
     
     private String createTime;
 
@@ -47,7 +42,6 @@ public class QueryApplicationBriefResponseDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_time")
     
-    @JacksonXmlProperty(localName = "update_time")
     
     private String updateTime;
 
@@ -55,7 +49,6 @@ public class QueryApplicationBriefResponseDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="last_published_version")
     
-    @JacksonXmlProperty(localName = "last_published_version")
     
     private String lastPublishedVersion;
 
@@ -63,7 +56,6 @@ public class QueryApplicationBriefResponseDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="app_type")
     
-    @JacksonXmlProperty(localName = "app_type")
     
     private String appType;
 
@@ -71,7 +63,6 @@ public class QueryApplicationBriefResponseDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="function_type")
     
-    @JacksonXmlProperty(localName = "function_type")
     
     private String functionType;
 
@@ -79,7 +70,6 @@ public class QueryApplicationBriefResponseDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="deploy_type")
     
-    @JacksonXmlProperty(localName = "deploy_type")
     
     private String deployType;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.ecs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,28 +13,20 @@ public class ServerExtendVolumeAttachment {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "delete_on_termination")
-
-    @JacksonXmlProperty(localName = "delete_on_termination")
 
     private String deleteOnTermination;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bootIndex")
 
-    @JacksonXmlProperty(localName = "bootIndex")
-
     private String bootIndex;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "device")
-
-    @JacksonXmlProperty(localName = "device")
 
     private String device;
 

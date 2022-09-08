@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.ocr.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,231 +16,165 @@ public class VatInvoiceResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "title")
 
-    @JacksonXmlProperty(localName = "title")
-
     private String title;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
-
-    @JacksonXmlProperty(localName = "type")
 
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "serial_number")
 
-    @JacksonXmlProperty(localName = "serial_number")
-
     private String serialNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "attribution")
-
-    @JacksonXmlProperty(localName = "attribution")
 
     private String attribution;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "supervision_seal")
 
-    @JacksonXmlProperty(localName = "supervision_seal")
-
     private List<String> supervisionSeal = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "code")
-
-    @JacksonXmlProperty(localName = "code")
 
     private String code;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "print_code")
 
-    @JacksonXmlProperty(localName = "print_code")
-
     private String printCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "machine_number")
-
-    @JacksonXmlProperty(localName = "machine_number")
 
     private String machineNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "print_number")
 
-    @JacksonXmlProperty(localName = "print_number")
-
     private String printNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "check_code")
-
-    @JacksonXmlProperty(localName = "check_code")
 
     private String checkCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "number")
 
-    @JacksonXmlProperty(localName = "number")
-
     private String number;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "issue_date")
-
-    @JacksonXmlProperty(localName = "issue_date")
 
     private String issueDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "encryption_block")
 
-    @JacksonXmlProperty(localName = "encryption_block")
-
     private String encryptionBlock;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "buyer_name")
-
-    @JacksonXmlProperty(localName = "buyer_name")
 
     private String buyerName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "buyer_id")
 
-    @JacksonXmlProperty(localName = "buyer_id")
-
     private String buyerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "buyer_address")
-
-    @JacksonXmlProperty(localName = "buyer_address")
 
     private String buyerAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "buyer_bank")
 
-    @JacksonXmlProperty(localName = "buyer_bank")
-
     private String buyerBank;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "seller_name")
-
-    @JacksonXmlProperty(localName = "seller_name")
 
     private String sellerName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "seller_id")
 
-    @JacksonXmlProperty(localName = "seller_id")
-
     private String sellerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "seller_address")
-
-    @JacksonXmlProperty(localName = "seller_address")
 
     private String sellerAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "seller_bank")
 
-    @JacksonXmlProperty(localName = "seller_bank")
-
     private String sellerBank;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subtotal_amount")
-
-    @JacksonXmlProperty(localName = "subtotal_amount")
 
     private String subtotalAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subtotal_tax")
 
-    @JacksonXmlProperty(localName = "subtotal_tax")
-
     private String subtotalTax;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total")
-
-    @JacksonXmlProperty(localName = "total")
 
     private String total;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_in_words")
 
-    @JacksonXmlProperty(localName = "total_in_words")
-
     private String totalInWords;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remarks")
-
-    @JacksonXmlProperty(localName = "remarks")
 
     private String remarks;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "receiver")
 
-    @JacksonXmlProperty(localName = "receiver")
-
     private String receiver;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "reviewer")
-
-    @JacksonXmlProperty(localName = "reviewer")
 
     private String reviewer;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "issuer")
 
-    @JacksonXmlProperty(localName = "issuer")
-
     private String issuer;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "seller_seal")
-
-    @JacksonXmlProperty(localName = "seller_seal")
 
     private List<String> sellerSeal = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "item_list")
 
-    @JacksonXmlProperty(localName = "item_list")
-
     private List<ItemList> itemList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confidence")
 
-    @JacksonXmlProperty(localName = "confidence")
-
     private Object confidence;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "text_location")
-
-    @JacksonXmlProperty(localName = "text_location")
 
     private Object textLocation;
 

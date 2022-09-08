@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.vpc.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,14 +17,10 @@ public class MigrateSubNetworkInterfaceOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parent_id")
 
-    @JacksonXmlProperty(localName = "parent_id")
-
     private String parentId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sub_network_interfaces")
-
-    @JacksonXmlProperty(localName = "sub_network_interfaces")
 
     private List<Map<String, String>> subNetworkInterfaces = null;
 

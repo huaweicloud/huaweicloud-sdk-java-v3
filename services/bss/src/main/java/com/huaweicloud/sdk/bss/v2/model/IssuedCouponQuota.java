@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.bss.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,112 +16,80 @@ public class IssuedCouponQuota {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quota_id")
 
-    @JacksonXmlProperty(localName = "quota_id")
-
     private String quotaId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quota_type")
-
-    @JacksonXmlProperty(localName = "quota_type")
 
     private Integer quotaType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
-    @JacksonXmlProperty(localName = "create_time")
-
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last_update_time")
-
-    @JacksonXmlProperty(localName = "last_update_time")
 
     private String lastUpdateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quota_value")
 
-    @JacksonXmlProperty(localName = "quota_value")
-
     private Double quotaValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quota_status")
-
-    @JacksonXmlProperty(localName = "quota_status")
 
     private Integer quotaStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "balance")
 
-    @JacksonXmlProperty(localName = "balance")
-
     private Double balance;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "measure_id")
-
-    @JacksonXmlProperty(localName = "measure_id")
 
     private Integer measureId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "currency")
 
-    @JacksonXmlProperty(localName = "currency")
-
     private String currency;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "effective_time")
-
-    @JacksonXmlProperty(localName = "effective_time")
 
     private String effectiveTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expire_time")
 
-    @JacksonXmlProperty(localName = "expire_time")
-
     private String expireTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit_infos")
-
-    @JacksonXmlProperty(localName = "limit_infos")
 
     private List<QuotaLimitInfo> limitInfos = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "indirect_partner_id")
 
-    @JacksonXmlProperty(localName = "indirect_partner_id")
-
     private String indirectPartnerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "indirect_partner_account_name")
-
-    @JacksonXmlProperty(localName = "indirect_partner_account_name")
 
     private String indirectPartnerAccountName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "indirect_partner_name")
 
-    @JacksonXmlProperty(localName = "indirect_partner_name")
-
     private String indirectPartnerName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parent_quota_id")
-
-    @JacksonXmlProperty(localName = "parent_quota_id")
 
     private String parentQuotaId;
 

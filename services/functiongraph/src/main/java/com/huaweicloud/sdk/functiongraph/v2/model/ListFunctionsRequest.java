@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.functiongraph.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,21 +13,15 @@ public class ListFunctionsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "marker")
 
-    @JacksonXmlProperty(localName = "marker")
-
     private String marker;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maxitems")
 
-    @JacksonXmlProperty(localName = "maxitems")
-
     private String maxitems;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "package_name")
-
-    @JacksonXmlProperty(localName = "package_name")
 
     private String packageName;
 

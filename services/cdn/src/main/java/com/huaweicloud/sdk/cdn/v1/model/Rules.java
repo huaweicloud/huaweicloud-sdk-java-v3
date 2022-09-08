@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cdn.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,35 +13,25 @@ public class Rules {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rule_type")
 
-    @JacksonXmlProperty(localName = "rule_type")
-
     private Integer ruleType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "content")
-
-    @JacksonXmlProperty(localName = "content")
 
     private String content;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ttl")
 
-    @JacksonXmlProperty(localName = "ttl")
-
     private Integer ttl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ttl_type")
 
-    @JacksonXmlProperty(localName = "ttl_type")
-
     private Integer ttlType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "priority")
-
-    @JacksonXmlProperty(localName = "priority")
 
     private Integer priority;
 

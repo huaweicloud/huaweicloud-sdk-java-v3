@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,8 +20,6 @@ public class CreateJobReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bind_eip")
-
-    @JacksonXmlProperty(localName = "bind_eip")
 
     private Boolean bindEip;
 
@@ -112,21 +109,15 @@ public class CreateJobReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "db_use_type")
 
-    @JacksonXmlProperty(localName = "db_use_type")
-
     private DbUseTypeEnum dbUseType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
-    @JacksonXmlProperty(localName = "name")
-
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
-
-    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
@@ -228,14 +219,10 @@ public class CreateJobReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "engine_type")
 
-    @JacksonXmlProperty(localName = "engine_type")
-
     private EngineTypeEnum engineType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_target_readonly")
-
-    @JacksonXmlProperty(localName = "is_target_readonly")
 
     private Boolean isTargetReadonly;
 
@@ -325,14 +312,10 @@ public class CreateJobReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_direction")
 
-    @JacksonXmlProperty(localName = "job_direction")
-
     private JobDirectionEnum jobDirection;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "multi_write")
-
-    @JacksonXmlProperty(localName = "multi_write")
 
     private Boolean multiWrite;
 
@@ -422,14 +405,10 @@ public class CreateJobReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "net_type")
 
-    @JacksonXmlProperty(localName = "net_type")
-
     private NetTypeEnum netType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "node_num")
-
-    @JacksonXmlProperty(localName = "node_num")
 
     private Integer nodeNum;
 
@@ -507,28 +486,20 @@ public class CreateJobReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "node_type")
 
-    @JacksonXmlProperty(localName = "node_type")
-
     private NodeTypeEnum nodeType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_endpoint")
-
-    @JacksonXmlProperty(localName = "source_endpoint")
 
     private Endpoint sourceEndpoint;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_endpoint")
 
-    @JacksonXmlProperty(localName = "target_endpoint")
-
     private Endpoint targetEndpoint;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
-
-    @JacksonXmlProperty(localName = "tags")
 
     private List<ResourceTag> tags = null;
 
@@ -618,49 +589,35 @@ public class CreateJobReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_type")
 
-    @JacksonXmlProperty(localName = "task_type")
-
     private TaskTypeEnum taskType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "customize_sutnet_id")
-
-    @JacksonXmlProperty(localName = "customize_sutnet_id")
 
     private String customizeSutnetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "product_id")
 
-    @JacksonXmlProperty(localName = "product_id")
-
     private String productId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sys_tags")
-
-    @JacksonXmlProperty(localName = "sys_tags")
 
     private List<ResourceTag> sysTags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expired_days")
 
-    @JacksonXmlProperty(localName = "expired_days")
-
     private String expiredDays;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "master_az")
 
-    @JacksonXmlProperty(localName = "master_az")
-
     private String masterAz;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "slave_az")
-
-    @JacksonXmlProperty(localName = "slave_az")
 
     private String slaveAz;
 

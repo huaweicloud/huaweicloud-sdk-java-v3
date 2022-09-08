@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -105,21 +104,15 @@ public class AudioModerationResultResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "suggestion")
 
-    @JacksonXmlProperty(localName = "suggestion")
-
     private SuggestionEnum suggestion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "details")
 
-    @JacksonXmlProperty(localName = "details")
-
-    private List<AudioModerationResultResultDetails> details = null;
+    private List<AudioModerationResultDetail> details = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "audio_text")
-
-    @JacksonXmlProperty(localName = "audio_text")
 
     private String audioText;
 
@@ -140,12 +133,12 @@ public class AudioModerationResultResult {
         this.suggestion = suggestion;
     }
 
-    public AudioModerationResultResult withDetails(List<AudioModerationResultResultDetails> details) {
+    public AudioModerationResultResult withDetails(List<AudioModerationResultDetail> details) {
         this.details = details;
         return this;
     }
 
-    public AudioModerationResultResult addDetailsItem(AudioModerationResultResultDetails detailsItem) {
+    public AudioModerationResultResult addDetailsItem(AudioModerationResultDetail detailsItem) {
         if (this.details == null) {
             this.details = new ArrayList<>();
         }
@@ -153,7 +146,7 @@ public class AudioModerationResultResult {
         return this;
     }
 
-    public AudioModerationResultResult withDetails(Consumer<List<AudioModerationResultResultDetails>> detailsSetter) {
+    public AudioModerationResultResult withDetails(Consumer<List<AudioModerationResultDetail>> detailsSetter) {
         if (this.details == null) {
             this.details = new ArrayList<>();
         }
@@ -165,11 +158,11 @@ public class AudioModerationResultResult {
      * 审核详情
      * @return details
      */
-    public List<AudioModerationResultResultDetails> getDetails() {
+    public List<AudioModerationResultDetail> getDetails() {
         return details;
     }
 
-    public void setDetails(List<AudioModerationResultResultDetails> details) {
+    public void setDetails(List<AudioModerationResultDetail> details) {
         this.details = details;
     }
 

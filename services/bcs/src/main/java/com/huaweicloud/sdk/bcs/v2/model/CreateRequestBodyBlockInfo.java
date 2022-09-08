@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.bcs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,21 +13,15 @@ public class CreateRequestBodyBlockInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "batch_timeout")
 
-    @JacksonXmlProperty(localName = "batch_timeout")
-
     private Long batchTimeout;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_message_count")
 
-    @JacksonXmlProperty(localName = "max_message_count")
-
     private Long maxMessageCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "preferred_maxbytes")
-
-    @JacksonXmlProperty(localName = "preferred_maxbytes")
 
     private Long preferredMaxbytes;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.ccm.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -16,35 +15,25 @@ public class ParseCertificateSigningRequestResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key_algorithm")
 
-    @JacksonXmlProperty(localName = "key_algorithm")
-
     private String keyAlgorithm;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key_algorithm_length")
-
-    @JacksonXmlProperty(localName = "key_algorithm_length")
 
     private String keyAlgorithmLength;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "signature_algorithm")
 
-    @JacksonXmlProperty(localName = "signature_algorithm")
-
     private String signatureAlgorithm;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "public_key")
 
-    @JacksonXmlProperty(localName = "public_key")
-
     private String publicKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "distinguished_name")
-
-    @JacksonXmlProperty(localName = "distinguished_name")
 
     private DistinguishedName distinguishedName;
 

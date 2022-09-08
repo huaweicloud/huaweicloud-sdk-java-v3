@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.drs.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,21 +16,15 @@ public class QueryFlowCompareDataResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_record")
 
-    @JacksonXmlProperty(localName = "total_record")
-
     private Long totalRecord;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
-    @JacksonXmlProperty(localName = "create_time")
-
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "list")
-
-    @JacksonXmlProperty(localName = "list")
 
     private List<StructDetailVO> list = null;
 

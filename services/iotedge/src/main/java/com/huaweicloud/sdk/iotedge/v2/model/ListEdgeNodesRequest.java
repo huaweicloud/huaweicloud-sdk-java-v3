@@ -10,8 +10,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -25,7 +23,6 @@ public class ListEdgeNodesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    @JacksonXmlProperty(localName = "name")
     
     private String name;
 
@@ -33,7 +30,6 @@ public class ListEdgeNodesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="state")
     
-    @JacksonXmlProperty(localName = "state")
     
     private String state;
 
@@ -41,7 +37,6 @@ public class ListEdgeNodesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    @JacksonXmlProperty(localName = "type")
     
     private String type;
 
@@ -49,7 +44,6 @@ public class ListEdgeNodesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_id")
     
-    @JacksonXmlProperty(localName = "instance_id")
     
     private String instanceId;
 
@@ -57,7 +51,6 @@ public class ListEdgeNodesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="space_id")
     
-    @JacksonXmlProperty(localName = "space_id")
     
     private String spaceId;
 
@@ -65,7 +58,6 @@ public class ListEdgeNodesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_ids")
     
-    @JacksonXmlProperty(localName = "node_ids")
     
     private List<String> nodeIds = null;
     
@@ -73,7 +65,6 @@ public class ListEdgeNodesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    @JacksonXmlProperty(localName = "offset")
     
     private Integer offset;
 
@@ -81,7 +72,6 @@ public class ListEdgeNodesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    @JacksonXmlProperty(localName = "limit")
     
     private Integer limit;
 

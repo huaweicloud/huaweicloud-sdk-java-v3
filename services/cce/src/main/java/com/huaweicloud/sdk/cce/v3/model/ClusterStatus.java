@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cce.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,77 +16,55 @@ public class ClusterStatus {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "phase")
 
-    @JacksonXmlProperty(localName = "phase")
-
     private String phase;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "jobID")
-
-    @JacksonXmlProperty(localName = "jobID")
 
     private String jobID;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "reason")
 
-    @JacksonXmlProperty(localName = "reason")
-
     private String reason;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "message")
-
-    @JacksonXmlProperty(localName = "message")
 
     private String message;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "endpoints")
 
-    @JacksonXmlProperty(localName = "endpoints")
-
     private List<ClusterEndpoints> endpoints = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "isLocked")
-
-    @JacksonXmlProperty(localName = "isLocked")
 
     private Boolean isLocked;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lockScene")
 
-    @JacksonXmlProperty(localName = "lockScene")
-
     private String lockScene;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lockSource")
-
-    @JacksonXmlProperty(localName = "lockSource")
 
     private String lockSource;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lockSourceId")
 
-    @JacksonXmlProperty(localName = "lockSourceId")
-
     private String lockSourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deleteOption")
 
-    @JacksonXmlProperty(localName = "deleteOption")
-
     private Object deleteOption;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deleteStatus")
-
-    @JacksonXmlProperty(localName = "deleteStatus")
 
     private Object deleteStatus;
 

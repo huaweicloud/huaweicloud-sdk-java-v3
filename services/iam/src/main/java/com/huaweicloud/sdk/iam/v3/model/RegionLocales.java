@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.iam.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,35 +13,25 @@ public class RegionLocales {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "zh-cn")
 
-    @JacksonXmlProperty(localName = "zh-cn")
-
     private String zhCn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "en-us")
-
-    @JacksonXmlProperty(localName = "en-us")
 
     private String enUs;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pt-br")
 
-    @JacksonXmlProperty(localName = "pt-br")
-
     private String ptBr;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "es-us")
 
-    @JacksonXmlProperty(localName = "es-us")
-
     private String esUs;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "es-es")
-
-    @JacksonXmlProperty(localName = "es-es")
 
     private String esEs;
 

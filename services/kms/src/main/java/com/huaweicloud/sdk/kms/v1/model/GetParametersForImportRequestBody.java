@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,8 +17,6 @@ public class GetParametersForImportRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key_id")
-
-    @JacksonXmlProperty(localName = "key_id")
 
     private String keyId;
 
@@ -109,14 +106,10 @@ public class GetParametersForImportRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "wrapping_algorithm")
 
-    @JacksonXmlProperty(localName = "wrapping_algorithm")
-
     private WrappingAlgorithmEnum wrappingAlgorithm;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sequence")
-
-    @JacksonXmlProperty(localName = "sequence")
 
     private String sequence;
 

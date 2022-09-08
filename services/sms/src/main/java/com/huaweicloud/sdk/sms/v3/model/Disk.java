@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,8 +20,6 @@ public class Disk {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
-
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
@@ -106,8 +103,6 @@ public class Disk {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "partition_style")
 
-    @JacksonXmlProperty(localName = "partition_style")
-
     private PartitionStyleEnum partitionStyle;
 
     /**
@@ -190,49 +185,35 @@ public class Disk {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "device_use")
 
-    @JacksonXmlProperty(localName = "device_use")
-
     private DeviceUseEnum deviceUse;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
-
-    @JacksonXmlProperty(localName = "size")
 
     private Long size;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "used_size")
 
-    @JacksonXmlProperty(localName = "used_size")
-
     private Long usedSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "physical_volumes")
-
-    @JacksonXmlProperty(localName = "physical_volumes")
 
     private List<PhysicalVolumes> physicalVolumes = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "disk_id")
 
-    @JacksonXmlProperty(localName = "disk_id")
-
     private String diskId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os_disk")
 
-    @JacksonXmlProperty(localName = "os_disk")
-
     private Boolean osDisk;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "relation_name")
-
-    @JacksonXmlProperty(localName = "relation_name")
 
     private String relationName;
 

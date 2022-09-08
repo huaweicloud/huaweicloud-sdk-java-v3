@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.sfsturbo.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,28 +13,20 @@ public class Metadata {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "crypt_key_id")
 
-    @JacksonXmlProperty(localName = "crypt_key_id")
-
     private String cryptKeyId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dedicated_flavor")
-
-    @JacksonXmlProperty(localName = "dedicated_flavor")
 
     private String dedicatedFlavor;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dedicated_storage_id")
 
-    @JacksonXmlProperty(localName = "dedicated_storage_id")
-
     private String dedicatedStorageId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expand_type")
-
-    @JacksonXmlProperty(localName = "expand_type")
 
     private String expandType;
 

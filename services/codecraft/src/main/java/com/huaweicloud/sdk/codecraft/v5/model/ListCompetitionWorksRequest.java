@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -19,21 +18,15 @@ public class ListCompetitionWorksRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "competition_id")
 
-    @JacksonXmlProperty(localName = "competition_id")
-
     private Integer competitionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stage_id")
 
-    @JacksonXmlProperty(localName = "stage_id")
-
     private Integer stageId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "read_time")
-
-    @JacksonXmlProperty(localName = "read_time")
 
     private String readTime;
 
@@ -117,28 +110,20 @@ public class ListCompetitionWorksRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time_unit")
 
-    @JacksonXmlProperty(localName = "time_unit")
-
     private TimeUnitEnum timeUnit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
-
-    @JacksonXmlProperty(localName = "offset")
 
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
-    @JacksonXmlProperty(localName = "limit")
-
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sort_key")
-
-    @JacksonXmlProperty(localName = "sort_key")
 
     private String sortKey;
 
@@ -221,8 +206,6 @@ public class ListCompetitionWorksRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sort_dir")
-
-    @JacksonXmlProperty(localName = "sort_dir")
 
     private SortDirEnum sortDir;
 

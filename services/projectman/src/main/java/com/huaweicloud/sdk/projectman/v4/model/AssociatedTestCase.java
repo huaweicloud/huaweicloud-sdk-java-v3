@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.projectman.v4.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,77 +14,55 @@ public class AssociatedTestCase {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "case_id")
 
-    @JacksonXmlProperty(localName = "case_id")
-
     private String caseId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "case_num")
-
-    @JacksonXmlProperty(localName = "case_num")
 
     private String caseNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "case_name")
 
-    @JacksonXmlProperty(localName = "case_name")
-
     private String caseName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "case_level")
-
-    @JacksonXmlProperty(localName = "case_level")
 
     private String caseLevel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    @JacksonXmlProperty(localName = "status")
-
     private StatusVo status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "creator")
-
-    @JacksonXmlProperty(localName = "creator")
 
     private SimpleUser creator;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "owner")
 
-    @JacksonXmlProperty(localName = "owner")
-
     private SimpleUser owner;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project")
-
-    @JacksonXmlProperty(localName = "project")
 
     private SimpleProject project;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_base_line")
 
-    @JacksonXmlProperty(localName = "is_base_line")
-
     private Integer isBaseLine;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
-    @JacksonXmlProperty(localName = "type")
-
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_time")
-
-    @JacksonXmlProperty(localName = "created_time")
 
     private Long createdTime;
 

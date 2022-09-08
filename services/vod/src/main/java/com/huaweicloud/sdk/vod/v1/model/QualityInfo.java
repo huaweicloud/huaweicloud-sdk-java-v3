@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -20,14 +19,10 @@ public class QualityInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "video")
 
-    @JacksonXmlProperty(localName = "video")
-
     private VideoTemplateInfo video;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "audio")
-
-    @JacksonXmlProperty(localName = "audio")
 
     private AudioTemplateInfo audio;
 
@@ -140,8 +135,6 @@ public class QualityInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "format")
-
-    @JacksonXmlProperty(localName = "format")
 
     private FormatEnum format;
 

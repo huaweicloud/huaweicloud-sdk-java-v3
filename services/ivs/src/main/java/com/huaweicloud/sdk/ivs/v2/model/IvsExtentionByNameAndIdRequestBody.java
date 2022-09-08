@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.ivs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,14 +14,10 @@ public class IvsExtentionByNameAndIdRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "meta")
 
-    @JacksonXmlProperty(localName = "meta")
-
     private Meta meta;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
-
-    @JacksonXmlProperty(localName = "data")
 
     private IvsExtentionByNameAndIdRequestBodyData data;
 

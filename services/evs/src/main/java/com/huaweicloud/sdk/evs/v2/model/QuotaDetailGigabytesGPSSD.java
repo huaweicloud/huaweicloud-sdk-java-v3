@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.evs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,21 +13,15 @@ public class QuotaDetailGigabytesGPSSD {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "in_use")
 
-    @JacksonXmlProperty(localName = "in_use")
-
     private Integer inUse;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
-    @JacksonXmlProperty(localName = "limit")
-
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "reserved")
-
-    @JacksonXmlProperty(localName = "reserved")
 
     private Integer reserved;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.hilens.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,154 +13,110 @@ public class GetDevicesListArrayObject {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
-
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
-    @JacksonXmlProperty(localName = "type")
-
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
-
-    @JacksonXmlProperty(localName = "status")
 
     private Integer status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cpu")
 
-    @JacksonXmlProperty(localName = "cpu")
-
     private Integer cpu;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "memory")
-
-    @JacksonXmlProperty(localName = "memory")
 
     private Integer memory;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os")
 
-    @JacksonXmlProperty(localName = "os")
-
     private String os;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "firmware_name")
-
-    @JacksonXmlProperty(localName = "firmware_name")
 
     private String firmwareName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "firmware_version")
 
-    @JacksonXmlProperty(localName = "firmware_version")
-
     private String firmwareVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "firmware_status")
-
-    @JacksonXmlProperty(localName = "firmware_status")
 
     private Integer firmwareStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "firmware_cause")
 
-    @JacksonXmlProperty(localName = "firmware_cause")
-
     private String firmwareCause;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "path")
-
-    @JacksonXmlProperty(localName = "path")
 
     private String path;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "path_update_status")
 
-    @JacksonXmlProperty(localName = "path_update_status")
-
     private Integer pathUpdateStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "path_update_cause")
-
-    @JacksonXmlProperty(localName = "path_update_cause")
 
     private String pathUpdateCause;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
-    @JacksonXmlProperty(localName = "create_time")
-
     private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
-
-    @JacksonXmlProperty(localName = "update_time")
 
     private Long updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_time")
 
-    @JacksonXmlProperty(localName = "user_time")
-
     private String userTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_spec_code")
-
-    @JacksonXmlProperty(localName = "resource_spec_code")
 
     private String resourceSpecCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cloud_service_type")
 
-    @JacksonXmlProperty(localName = "cloud_service_type")
-
     private String cloudServiceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "active_content")
-
-    @JacksonXmlProperty(localName = "active_content")
 
     private String activeContent;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "active_flag")
 
-    @JacksonXmlProperty(localName = "active_flag")
-
     private Integer activeFlag;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "topic_urn")
-
-    @JacksonXmlProperty(localName = "topic_urn")
 
     private String topicUrn;
 

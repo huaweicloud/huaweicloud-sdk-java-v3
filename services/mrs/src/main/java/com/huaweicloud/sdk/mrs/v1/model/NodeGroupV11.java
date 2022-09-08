@@ -9,8 +9,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.mrs.v1.model.AutoScalingPolicy;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -24,7 +22,6 @@ public class NodeGroupV11  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="group_name")
     
-    @JacksonXmlProperty(localName = "group_name")
     
     private String groupName;
 
@@ -32,7 +29,6 @@ public class NodeGroupV11  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_num")
     
-    @JacksonXmlProperty(localName = "node_num")
     
     private Integer nodeNum;
 
@@ -40,7 +36,6 @@ public class NodeGroupV11  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_size")
     
-    @JacksonXmlProperty(localName = "node_size")
     
     private String nodeSize;
 
@@ -48,7 +43,6 @@ public class NodeGroupV11  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="root_volume_size")
     
-    @JacksonXmlProperty(localName = "root_volume_size")
     
     private String rootVolumeSize;
 
@@ -56,7 +50,6 @@ public class NodeGroupV11  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="root_volume_type")
     
-    @JacksonXmlProperty(localName = "root_volume_type")
     
     private String rootVolumeType;
 
@@ -64,7 +57,6 @@ public class NodeGroupV11  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="data_volume_type")
     
-    @JacksonXmlProperty(localName = "data_volume_type")
     
     private String dataVolumeType;
 
@@ -72,7 +64,6 @@ public class NodeGroupV11  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="data_volume_count")
     
-    @JacksonXmlProperty(localName = "data_volume_count")
     
     private Integer dataVolumeCount;
 
@@ -80,7 +71,6 @@ public class NodeGroupV11  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="data_volume_size")
     
-    @JacksonXmlProperty(localName = "data_volume_size")
     
     private Integer dataVolumeSize;
 
@@ -88,7 +78,6 @@ public class NodeGroupV11  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auto_scaling_policy")
     
-    @JacksonXmlProperty(localName = "auto_scaling_policy")
     
     private AutoScalingPolicy autoScalingPolicy;
 

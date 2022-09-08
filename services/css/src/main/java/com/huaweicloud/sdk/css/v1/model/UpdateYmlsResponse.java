@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.css.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -15,21 +14,15 @@ public class UpdateYmlsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "acknowledged")
 
-    @JacksonXmlProperty(localName = "acknowledged")
-
     private Boolean acknowledged;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "externalMessage")
 
-    @JacksonXmlProperty(localName = "externalMessage")
-
     private String externalMessage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "httpErrorResponse")
-
-    @JacksonXmlProperty(localName = "httpErrorResponse")
 
     private String httpErrorResponse;
 

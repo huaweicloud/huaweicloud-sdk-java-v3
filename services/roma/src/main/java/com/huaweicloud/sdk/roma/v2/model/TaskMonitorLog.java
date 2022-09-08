@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -23,28 +22,20 @@ public class TaskMonitorLog {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
-
-    @JacksonXmlProperty(localName = "start_time")
 
     private Long startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dispatch_time")
 
-    @JacksonXmlProperty(localName = "dispatch_time")
-
     private Long dispatchTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time")
-
-    @JacksonXmlProperty(localName = "end_time")
 
     private Long endTime;
 
@@ -152,8 +143,6 @@ public class TaskMonitorLog {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "execute_status")
 
-    @JacksonXmlProperty(localName = "execute_status")
-
     private ExecuteStatusEnum executeStatus;
 
     /**
@@ -241,8 +230,6 @@ public class TaskMonitorLog {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "position")
-
-    @JacksonXmlProperty(localName = "position")
 
     private PositionEnum position;
 
@@ -350,35 +337,25 @@ public class TaskMonitorLog {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "position_status")
 
-    @JacksonXmlProperty(localName = "position_status")
-
     private PositionStatusEnum positionStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
-
-    @JacksonXmlProperty(localName = "status")
 
     private Integer status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dirty_data_count")
 
-    @JacksonXmlProperty(localName = "dirty_data_count")
-
     private Integer dirtyDataCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_count")
 
-    @JacksonXmlProperty(localName = "data_count")
-
     private Integer dataCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_size")
-
-    @JacksonXmlProperty(localName = "data_size")
 
     private BigDecimal dataSize;
 
@@ -480,42 +457,30 @@ public class TaskMonitorLog {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_size_unit")
 
-    @JacksonXmlProperty(localName = "data_size_unit")
-
     private DataSizeUnitEnum dataSizeUnit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "spend_time")
-
-    @JacksonXmlProperty(localName = "spend_time")
 
     private Long spendTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "read_spend_time")
 
-    @JacksonXmlProperty(localName = "read_spend_time")
-
     private Long readSpendTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "write_spend_time")
-
-    @JacksonXmlProperty(localName = "write_spend_time")
 
     private Long writeSpendTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remarks")
 
-    @JacksonXmlProperty(localName = "remarks")
-
     private String remarks;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "detail_logs")
-
-    @JacksonXmlProperty(localName = "detail_logs")
 
     private List<TaskMonitorDetailLog> detailLogs = null;
 

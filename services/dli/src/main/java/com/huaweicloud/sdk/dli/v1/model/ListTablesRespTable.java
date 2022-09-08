@@ -2,100 +2,75 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
 /**
- * 查询所有表响应参数的表的信息。 说明：  若URI中的过滤条件“with-detail&#x3D;false”，则tables相关参数中只返回“data_location”，“table_name”，“table_type”三个参数。
+ * 查询所有表响应参数的表的信息。 说明： 若URI中的过滤条件“with-detail&#x3D;false”，则tables相关参数中只返回“data_location”，“table_name”，“table_type”三个参数。
  */
 public class ListTablesRespTable {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
-    @JacksonXmlProperty(localName = "create_time")
-
-    private Long createTime;
+    private Integer createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_type")
-
-    @JacksonXmlProperty(localName = "data_type")
 
     private String dataType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_location")
 
-    @JacksonXmlProperty(localName = "data_location")
-
     private String dataLocation;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last_access_time")
-
-    @JacksonXmlProperty(localName = "last_access_time")
 
     private Integer lastAccessTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "location")
 
-    @JacksonXmlProperty(localName = "location")
-
     private String location;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "owner")
-
-    @JacksonXmlProperty(localName = "owner")
 
     private String owner;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "table_name")
 
-    @JacksonXmlProperty(localName = "table_name")
-
     private String tableName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "table_size")
-
-    @JacksonXmlProperty(localName = "table_size")
 
     private Integer tableSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "table_type")
 
-    @JacksonXmlProperty(localName = "table_type")
-
     private String tableType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "partition_columns")
-
-    @JacksonXmlProperty(localName = "partition_columns")
 
     private String partitionColumns;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page-size")
 
-    @JacksonXmlProperty(localName = "page-size")
-
     private Integer pageSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "current-page")
 
-    @JacksonXmlProperty(localName = "current-page")
-
     private Integer currentPage;
 
-    public ListTablesRespTable withCreateTime(Long createTime) {
+    public ListTablesRespTable withCreateTime(Integer createTime) {
         this.createTime = createTime;
         return this;
     }
@@ -104,11 +79,11 @@ public class ListTablesRespTable {
      * 表创建时间。是单位为“毫秒”的时间戳。
      * @return createTime
      */
-    public Long getCreateTime() {
+    public Integer getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(Long createTime) {
+    public void setCreateTime(Integer createTime) {
         this.createTime = createTime;
     }
 

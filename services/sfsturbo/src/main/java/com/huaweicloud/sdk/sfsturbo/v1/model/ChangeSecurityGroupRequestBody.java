@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.sfsturbo.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,8 +13,6 @@ public class ChangeSecurityGroupRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "change_security_group")
-
-    @JacksonXmlProperty(localName = "change_security_group")
 
     private ChangeSecurityGroup changeSecurityGroup;
 

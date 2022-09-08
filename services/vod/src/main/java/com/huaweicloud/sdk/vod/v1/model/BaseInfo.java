@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.vod.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,112 +16,80 @@ public class BaseInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "title")
 
-    @JacksonXmlProperty(localName = "title")
-
     private String title;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "video_name")
-
-    @JacksonXmlProperty(localName = "video_name")
 
     private String videoName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
-    @JacksonXmlProperty(localName = "description")
-
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "category_id")
-
-    @JacksonXmlProperty(localName = "category_id")
 
     private Long categoryId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "category_name")
 
-    @JacksonXmlProperty(localName = "category_name")
-
     private String categoryName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
-
-    @JacksonXmlProperty(localName = "create_time")
 
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last_modified")
 
-    @JacksonXmlProperty(localName = "last_modified")
-
     private String lastModified;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "video_type")
-
-    @JacksonXmlProperty(localName = "video_type")
 
     private String videoType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    @JacksonXmlProperty(localName = "tags")
-
     private String tags;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "meta_data")
-
-    @JacksonXmlProperty(localName = "meta_data")
 
     private MetaData metaData;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "video_url")
 
-    @JacksonXmlProperty(localName = "video_url")
-
     private String videoUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sign_url")
-
-    @JacksonXmlProperty(localName = "sign_url")
 
     private String signUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cover_info_array")
 
-    @JacksonXmlProperty(localName = "cover_info_array")
-
     private List<CoverInfo> coverInfoArray = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subtitle_info")
-
-    @JacksonXmlProperty(localName = "subtitle_info")
 
     private List<SubtitleInfo> subtitleInfo = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_path")
 
-    @JacksonXmlProperty(localName = "source_path")
-
     private FileAddr sourcePath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "output_path")
-
-    @JacksonXmlProperty(localName = "output_path")
 
     private FileAddr outputPath;
 

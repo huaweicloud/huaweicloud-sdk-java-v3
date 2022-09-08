@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.bss.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,14 +13,10 @@ public class ReclaimPartnerCouponsReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "coupon_id")
 
-    @JacksonXmlProperty(localName = "coupon_id")
-
     private String couponId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "indirect_partner_id")
-
-    @JacksonXmlProperty(localName = "indirect_partner_id")
 
     private String indirectPartnerId;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cce.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -17,42 +16,30 @@ public class ClusterMetadata {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
-    @JacksonXmlProperty(localName = "name")
-
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "uid")
-
-    @JacksonXmlProperty(localName = "uid")
 
     private String uid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "annotations")
 
-    @JacksonXmlProperty(localName = "annotations")
-
     private Map<String, String> annotations = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "labels")
-
-    @JacksonXmlProperty(localName = "labels")
 
     private Map<String, String> labels = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "creationTimestamp")
 
-    @JacksonXmlProperty(localName = "creationTimestamp")
-
     private String creationTimestamp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updateTimestamp")
-
-    @JacksonXmlProperty(localName = "updateTimestamp")
 
     private String updateTimestamp;
 

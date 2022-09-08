@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.frs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,28 +13,20 @@ public class BoundingBox {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "width")
 
-    @JacksonXmlProperty(localName = "width")
-
     private Integer width;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "top_left_y")
-
-    @JacksonXmlProperty(localName = "top_left_y")
 
     private Integer topLeftY;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "top_left_x")
 
-    @JacksonXmlProperty(localName = "top_left_x")
-
     private Integer topLeftX;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "height")
-
-    @JacksonXmlProperty(localName = "height")
 
     private Integer height;
 

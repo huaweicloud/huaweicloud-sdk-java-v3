@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -19,14 +18,10 @@ public class ServerAddress {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
 
-    @JacksonXmlProperty(localName = "version")
-
     private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "addr")
-
-    @JacksonXmlProperty(localName = "addr")
 
     private String addr;
 
@@ -110,21 +105,15 @@ public class ServerAddress {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "OS-EXT-IPS:type")
 
-    @JacksonXmlProperty(localName = "OS-EXT-IPS:type")
-
     private OsEXTIPSTypeEnum osEXTIPSType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "OS-EXT-IPS-MAC:mac_addr")
 
-    @JacksonXmlProperty(localName = "OS-EXT-IPS-MAC:mac_addr")
-
     private String osEXTIPSMACMacAddr;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "OS-EXT-IPS:port_id")
-
-    @JacksonXmlProperty(localName = "OS-EXT-IPS:port_id")
 
     private String osEXTIPSPortId;
 

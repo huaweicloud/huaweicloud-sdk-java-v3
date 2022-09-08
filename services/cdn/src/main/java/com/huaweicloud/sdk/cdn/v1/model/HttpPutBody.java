@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cdn.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,49 +13,35 @@ public class HttpPutBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "https_status")
 
-    @JacksonXmlProperty(localName = "https_status")
-
     private String httpsStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "certificate_name")
-
-    @JacksonXmlProperty(localName = "certificate_name")
 
     private String certificateName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "certificate_value")
 
-    @JacksonXmlProperty(localName = "certificate_value")
-
     private String certificateValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "private_key")
-
-    @JacksonXmlProperty(localName = "private_key")
 
     private String privateKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "certificate_source")
 
-    @JacksonXmlProperty(localName = "certificate_source")
-
     private Integer certificateSource;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "http2_status")
 
-    @JacksonXmlProperty(localName = "http2_status")
-
     private String http2Status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tls_version")
-
-    @JacksonXmlProperty(localName = "tls_version")
 
     private String tlsVersion;
 

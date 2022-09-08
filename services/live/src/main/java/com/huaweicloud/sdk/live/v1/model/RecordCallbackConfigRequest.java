@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,21 +21,15 @@ public class RecordCallbackConfigRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publish_domain")
 
-    @JacksonXmlProperty(localName = "publish_domain")
-
     private String publishDomain;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app")
 
-    @JacksonXmlProperty(localName = "app")
-
     private String app;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "notify_callback_url")
-
-    @JacksonXmlProperty(localName = "notify_callback_url")
 
     private String notifyCallbackUrl;
 
@@ -135,8 +128,6 @@ public class RecordCallbackConfigRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "notify_event_subscription")
 
-    @JacksonXmlProperty(localName = "notify_event_subscription")
-
     private List<NotifyEventSubscriptionEnum> notifyEventSubscription = null;
 
     /**
@@ -218,8 +209,6 @@ public class RecordCallbackConfigRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sign_type")
-
-    @JacksonXmlProperty(localName = "sign_type")
 
     private SignTypeEnum signType;
 

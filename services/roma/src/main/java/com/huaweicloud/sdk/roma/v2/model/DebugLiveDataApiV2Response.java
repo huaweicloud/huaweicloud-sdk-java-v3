@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.roma.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.time.OffsetDateTime;
@@ -19,70 +18,50 @@ public class DebugLiveDataApiV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "test_status_code")
 
-    @JacksonXmlProperty(localName = "test_status_code")
-
     private String testStatusCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "test_request")
-
-    @JacksonXmlProperty(localName = "test_request")
 
     private String testRequest;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "test_used_time")
 
-    @JacksonXmlProperty(localName = "test_used_time")
-
     private Integer testUsedTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "test_operator")
-
-    @JacksonXmlProperty(localName = "test_operator")
 
     private String testOperator;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "test_response")
 
-    @JacksonXmlProperty(localName = "test_response")
-
     private String testResponse;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "test_method")
-
-    @JacksonXmlProperty(localName = "test_method")
 
     private String testMethod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "test_id")
 
-    @JacksonXmlProperty(localName = "test_id")
-
     private Integer testId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "test_date")
-
-    @JacksonXmlProperty(localName = "test_date")
 
     private OffsetDateTime testDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ld_api_id")
 
-    @JacksonXmlProperty(localName = "ld_api_id")
-
     private String ldApiId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "debug_log")
-
-    @JacksonXmlProperty(localName = "debug_log")
 
     private List<String> debugLog = null;
 

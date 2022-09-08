@@ -12,8 +12,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -27,7 +25,6 @@ public class ClearGraphRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="graph_id")
     
-    @JacksonXmlProperty(localName = "graph_id")
     
     private String graphId;
     /**
@@ -107,7 +104,6 @@ public class ClearGraphRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="action_id")
     
-    @JacksonXmlProperty(localName = "action_id")
     
     private ActionIdEnum actionId;
 
@@ -115,7 +111,6 @@ public class ClearGraphRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="clear-metadata")
     
-    @JacksonXmlProperty(localName = "clear-metadata")
     
     private Boolean clearMetadata;
 

@@ -11,8 +11,6 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.gaussdb.v3.model.DatabasePermission;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -26,7 +24,6 @@ public class GrantDatabasePermission  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    @JacksonXmlProperty(localName = "name")
     
     private String name;
 
@@ -34,7 +31,6 @@ public class GrantDatabasePermission  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="host")
     
-    @JacksonXmlProperty(localName = "host")
     
     private String host;
 
@@ -42,7 +38,6 @@ public class GrantDatabasePermission  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="databases")
     
-    @JacksonXmlProperty(localName = "databases")
     
     private List<DatabasePermission> databases = null;
     

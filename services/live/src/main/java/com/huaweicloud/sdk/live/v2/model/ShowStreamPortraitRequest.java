@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.live.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,21 +13,15 @@ public class ShowStreamPortraitRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "play_domain")
 
-    @JacksonXmlProperty(localName = "play_domain")
-
     private String playDomain;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stream")
 
-    @JacksonXmlProperty(localName = "stream")
-
     private String stream;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time")
-
-    @JacksonXmlProperty(localName = "time")
 
     private String time;
 

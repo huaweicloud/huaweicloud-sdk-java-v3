@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.elb.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,14 +13,10 @@ public class CreateListenerQuicConfigOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quic_listener_id")
 
-    @JacksonXmlProperty(localName = "quic_listener_id")
-
     private String quicListenerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_quic_upgrade")
-
-    @JacksonXmlProperty(localName = "enable_quic_upgrade")
 
     private Boolean enableQuicUpgrade;
 

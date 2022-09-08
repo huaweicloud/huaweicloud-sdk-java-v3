@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.servicestage.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,28 +13,20 @@ public class RuntimeTypeView {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type_name")
 
-    @JacksonXmlProperty(localName = "type_name")
-
     private String typeName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "display_name")
-
-    @JacksonXmlProperty(localName = "display_name")
 
     private String displayName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "container_default_port")
 
-    @JacksonXmlProperty(localName = "container_default_port")
-
     private Integer containerDefaultPort;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type_desc")
-
-    @JacksonXmlProperty(localName = "type_desc")
 
     private String typeDesc;
 

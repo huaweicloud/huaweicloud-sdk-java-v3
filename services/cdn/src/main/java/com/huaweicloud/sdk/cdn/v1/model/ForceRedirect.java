@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cdn.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,14 +13,10 @@ public class ForceRedirect {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "switch")
 
-    @JacksonXmlProperty(localName = "switch")
-
     private Integer _switch;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "redirect_type")
-
-    @JacksonXmlProperty(localName = "redirect_type")
 
     private String redirectType;
 

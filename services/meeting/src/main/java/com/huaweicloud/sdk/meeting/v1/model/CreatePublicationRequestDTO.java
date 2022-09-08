@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,42 +16,30 @@ public class CreatePublicationRequestDTO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publishName")
 
-    @JacksonXmlProperty(localName = "publishName")
-
     private String publishName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "startTime")
-
-    @JacksonXmlProperty(localName = "startTime")
 
     private Long startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "endTime")
 
-    @JacksonXmlProperty(localName = "endTime")
-
     private Long endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deptList")
-
-    @JacksonXmlProperty(localName = "deptList")
 
     private List<String> deptList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deviceList")
 
-    @JacksonXmlProperty(localName = "deviceList")
-
     private List<String> deviceList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "programList")
-
-    @JacksonXmlProperty(localName = "programList")
 
     private List<String> programList = null;
 

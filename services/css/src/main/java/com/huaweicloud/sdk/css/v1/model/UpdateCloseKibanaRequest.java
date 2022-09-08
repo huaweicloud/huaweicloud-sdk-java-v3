@@ -2,9 +2,9 @@ package com.huaweicloud.sdk.css.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -14,9 +14,12 @@ public class UpdateCloseKibanaRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cluster_id")
 
-    @JacksonXmlProperty(localName = "cluster_id")
-
     private String clusterId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "body")
+
+    private CloseKibanaPublicReq body;
 
     public UpdateCloseKibanaRequest withClusterId(String clusterId) {
         this.clusterId = clusterId;
@@ -35,6 +38,32 @@ public class UpdateCloseKibanaRequest {
         this.clusterId = clusterId;
     }
 
+    public UpdateCloseKibanaRequest withBody(CloseKibanaPublicReq body) {
+        this.body = body;
+        return this;
+    }
+
+    public UpdateCloseKibanaRequest withBody(Consumer<CloseKibanaPublicReq> bodySetter) {
+        if (this.body == null) {
+            this.body = new CloseKibanaPublicReq();
+            bodySetter.accept(this.body);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get body
+     * @return body
+     */
+    public CloseKibanaPublicReq getBody() {
+        return body;
+    }
+
+    public void setBody(CloseKibanaPublicReq body) {
+        this.body = body;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -44,12 +73,13 @@ public class UpdateCloseKibanaRequest {
             return false;
         }
         UpdateCloseKibanaRequest updateCloseKibanaRequest = (UpdateCloseKibanaRequest) o;
-        return Objects.equals(this.clusterId, updateCloseKibanaRequest.clusterId);
+        return Objects.equals(this.clusterId, updateCloseKibanaRequest.clusterId)
+            && Objects.equals(this.body, updateCloseKibanaRequest.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clusterId);
+        return Objects.hash(clusterId, body);
     }
 
     @Override
@@ -57,6 +87,7 @@ public class UpdateCloseKibanaRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateCloseKibanaRequest {\n");
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
+        sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();
     }

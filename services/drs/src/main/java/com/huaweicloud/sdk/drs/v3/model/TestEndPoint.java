@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -19,8 +18,6 @@ public class TestEndPoint {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
-
-    @JacksonXmlProperty(localName = "id")
 
     private String id;
 
@@ -110,8 +107,6 @@ public class TestEndPoint {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "net_type")
 
-    @JacksonXmlProperty(localName = "net_type")
-
     private NetTypeEnum netType;
 
     /**
@@ -200,91 +195,65 @@ public class TestEndPoint {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "db_type")
 
-    @JacksonXmlProperty(localName = "db_type")
-
     private DbTypeEnum dbType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip")
-
-    @JacksonXmlProperty(localName = "ip")
 
     private String ip;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "db_port")
 
-    @JacksonXmlProperty(localName = "db_port")
-
     private Integer dbPort;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "inst_id")
-
-    @JacksonXmlProperty(localName = "inst_id")
 
     private String instId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "db_user")
 
-    @JacksonXmlProperty(localName = "db_user")
-
     private String dbUser;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "db_password")
-
-    @JacksonXmlProperty(localName = "db_password")
 
     private String dbPassword;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ssl_link")
 
-    @JacksonXmlProperty(localName = "ssl_link")
-
     private Boolean sslLink;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ssl_cert_key")
-
-    @JacksonXmlProperty(localName = "ssl_cert_key")
 
     private String sslCertKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ssl_cert_name")
 
-    @JacksonXmlProperty(localName = "ssl_cert_name")
-
     private String sslCertName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ssl_cert_check_sum")
-
-    @JacksonXmlProperty(localName = "ssl_cert_check_sum")
 
     private String sslCertCheckSum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ssl_cert_password")
 
-    @JacksonXmlProperty(localName = "ssl_cert_password")
-
     private String sslCertPassword;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_id")
 
-    @JacksonXmlProperty(localName = "vpc_id")
-
     private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subnet_id")
-
-    @JacksonXmlProperty(localName = "subnet_id")
 
     private String subnetId;
 
@@ -368,35 +337,25 @@ public class TestEndPoint {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_point_type")
 
-    @JacksonXmlProperty(localName = "end_point_type")
-
     private EndPointTypeEnum endPointType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region")
-
-    @JacksonXmlProperty(localName = "region")
 
     private String region;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
 
-    @JacksonXmlProperty(localName = "project_id")
-
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "db_name")
 
-    @JacksonXmlProperty(localName = "db_name")
-
     private String dbName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "kafka_security_config")
-
-    @JacksonXmlProperty(localName = "kafka_security_config")
 
     private KafkaSecurity kafkaSecurityConfig;
 

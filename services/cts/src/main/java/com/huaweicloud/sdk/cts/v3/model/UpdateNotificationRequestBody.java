@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,8 +20,6 @@ public class UpdateNotificationRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "notification_name")
-
-    @JacksonXmlProperty(localName = "notification_name")
 
     private String notificationName;
 
@@ -106,21 +103,15 @@ public class UpdateNotificationRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operation_type")
 
-    @JacksonXmlProperty(localName = "operation_type")
-
     private OperationTypeEnum operationType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operations")
 
-    @JacksonXmlProperty(localName = "operations")
-
     private List<Operations> operations = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "notify_user_list")
-
-    @JacksonXmlProperty(localName = "notify_user_list")
 
     private List<NotificationUsers> notifyUserList = null;
 
@@ -204,28 +195,20 @@ public class UpdateNotificationRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    @JacksonXmlProperty(localName = "status")
-
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "topic_id")
-
-    @JacksonXmlProperty(localName = "topic_id")
 
     private String topicId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "notification_id")
 
-    @JacksonXmlProperty(localName = "notification_id")
-
     private String notificationId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "filter")
-
-    @JacksonXmlProperty(localName = "filter")
 
     private Filter filter;
 

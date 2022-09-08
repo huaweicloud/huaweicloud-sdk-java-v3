@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.res.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,21 +13,15 @@ public class MatrixFactorization {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "implicit_vector_rank")
 
-    @JacksonXmlProperty(localName = "implicit_vector_rank")
-
     private Integer implicitVectorRank;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "regular_param")
 
-    @JacksonXmlProperty(localName = "regular_param")
-
     private Double regularParam;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_iterator_num")
-
-    @JacksonXmlProperty(localName = "max_iterator_num")
 
     private Integer maxIteratorNum;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.apm.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,63 +13,45 @@ public class MonitorItemEntity {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "category_id")
 
-    @JacksonXmlProperty(localName = "category_id")
-
     private Integer categoryId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "collector_name")
-
-    @JacksonXmlProperty(localName = "collector_name")
 
     private String collectorName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "display_name")
 
-    @JacksonXmlProperty(localName = "display_name")
-
     private String displayName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "show_in_total")
-
-    @JacksonXmlProperty(localName = "show_in_total")
 
     private Boolean showInTotal;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "monitor_item_id")
 
-    @JacksonXmlProperty(localName = "monitor_item_id")
-
     private Long monitorItemId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "disabled")
-
-    @JacksonXmlProperty(localName = "disabled")
 
     private Boolean disabled;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "collector_id")
 
-    @JacksonXmlProperty(localName = "collector_id")
-
     private Integer collectorId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sequence")
 
-    @JacksonXmlProperty(localName = "sequence")
-
     private Integer sequence;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "collect_interval")
-
-    @JacksonXmlProperty(localName = "collect_interval")
 
     private Integer collectInterval;
 

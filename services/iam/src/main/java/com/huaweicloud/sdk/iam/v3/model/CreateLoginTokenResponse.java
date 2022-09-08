@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.iam.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -16,14 +15,10 @@ public class CreateLoginTokenResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "logintoken")
 
-    @JacksonXmlProperty(localName = "logintoken")
-
     private LoginToken logintoken;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Subject-LoginToken")
-
-    @JacksonXmlProperty(localName = "X-Subject-LoginToken")
 
     private String xSubjectLoginToken;
 

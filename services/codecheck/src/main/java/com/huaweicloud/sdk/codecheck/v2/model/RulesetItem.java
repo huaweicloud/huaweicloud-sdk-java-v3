@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.codecheck.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,77 +13,55 @@ public class RulesetItem {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template_id")
 
-    @JacksonXmlProperty(localName = "template_id")
-
     private String templateId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "language")
-
-    @JacksonXmlProperty(localName = "language")
 
     private String language;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template_name")
 
-    @JacksonXmlProperty(localName = "template_name")
-
     private String templateName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "creator_id")
-
-    @JacksonXmlProperty(localName = "creator_id")
 
     private String creatorId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "creator_name")
 
-    @JacksonXmlProperty(localName = "creator_name")
-
     private String creatorName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template_create_time")
-
-    @JacksonXmlProperty(localName = "template_create_time")
 
     private String templateCreateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_used")
 
-    @JacksonXmlProperty(localName = "is_used")
-
     private String isUsed;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rule_ids")
-
-    @JacksonXmlProperty(localName = "rule_ids")
 
     private String ruleIds;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_default")
 
-    @JacksonXmlProperty(localName = "is_default")
-
     private String isDefault;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_devcloud_project_default")
 
-    @JacksonXmlProperty(localName = "is_devcloud_project_default")
-
     private String isDevcloudProjectDefault;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_default_template")
-
-    @JacksonXmlProperty(localName = "is_default_template")
 
     private String isDefaultTemplate;
 

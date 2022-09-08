@@ -16,8 +16,6 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.OpenGaussBackupStrategyF
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.OpenGaussChargeInfoListResponse;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -31,7 +29,6 @@ public class ListInstanceResponse  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    @JacksonXmlProperty(localName = "id")
     
     private String id;
 
@@ -39,7 +36,6 @@ public class ListInstanceResponse  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    @JacksonXmlProperty(localName = "name")
     
     private String name;
 
@@ -47,7 +43,6 @@ public class ListInstanceResponse  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    @JacksonXmlProperty(localName = "status")
     
     private String status;
 
@@ -55,7 +50,6 @@ public class ListInstanceResponse  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="private_ips")
     
-    @JacksonXmlProperty(localName = "private_ips")
     
     private List<String> privateIps = null;
     
@@ -63,7 +57,6 @@ public class ListInstanceResponse  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="public_ips")
     
-    @JacksonXmlProperty(localName = "public_ips")
     
     private List<String> publicIps = null;
     
@@ -71,7 +64,6 @@ public class ListInstanceResponse  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="port")
     
-    @JacksonXmlProperty(localName = "port")
     
     private Integer port;
 
@@ -79,7 +71,6 @@ public class ListInstanceResponse  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    @JacksonXmlProperty(localName = "type")
     
     private String type;
 
@@ -87,7 +78,6 @@ public class ListInstanceResponse  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ha")
     
-    @JacksonXmlProperty(localName = "ha")
     
     private ListHa ha;
 
@@ -95,7 +85,6 @@ public class ListInstanceResponse  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="replica_num")
     
-    @JacksonXmlProperty(localName = "replica_num")
     
     private Integer replicaNum;
 
@@ -103,7 +92,6 @@ public class ListInstanceResponse  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="region")
     
-    @JacksonXmlProperty(localName = "region")
     
     private String region;
 
@@ -111,7 +99,6 @@ public class ListInstanceResponse  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="datastore")
     
-    @JacksonXmlProperty(localName = "datastore")
     
     private ListDatastore datastore;
 
@@ -119,7 +106,6 @@ public class ListInstanceResponse  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created")
     
-    @JacksonXmlProperty(localName = "created")
     
     private String created;
 
@@ -127,7 +113,6 @@ public class ListInstanceResponse  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="updated")
     
-    @JacksonXmlProperty(localName = "updated")
     
     private String updated;
 
@@ -135,7 +120,6 @@ public class ListInstanceResponse  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="db_user_name")
     
-    @JacksonXmlProperty(localName = "db_user_name")
     
     private String dbUserName;
 
@@ -143,7 +127,6 @@ public class ListInstanceResponse  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vpc_id")
     
-    @JacksonXmlProperty(localName = "vpc_id")
     
     private String vpcId;
 
@@ -151,7 +134,6 @@ public class ListInstanceResponse  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="subnet_id")
     
-    @JacksonXmlProperty(localName = "subnet_id")
     
     private String subnetId;
 
@@ -159,7 +141,6 @@ public class ListInstanceResponse  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="security_group_id")
     
-    @JacksonXmlProperty(localName = "security_group_id")
     
     private String securityGroupId;
 
@@ -167,7 +148,6 @@ public class ListInstanceResponse  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="flavor_ref")
     
-    @JacksonXmlProperty(localName = "flavor_ref")
     
     private String flavorRef;
 
@@ -175,7 +155,6 @@ public class ListInstanceResponse  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="flavor_info")
     
-    @JacksonXmlProperty(localName = "flavor_info")
     
     private ListFlavorInfo flavorInfo;
 
@@ -183,7 +162,6 @@ public class ListInstanceResponse  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="volume")
     
-    @JacksonXmlProperty(localName = "volume")
     
     private ListVolume volume;
 
@@ -191,7 +169,6 @@ public class ListInstanceResponse  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="switch_strategy")
     
-    @JacksonXmlProperty(localName = "switch_strategy")
     
     private String switchStrategy;
 
@@ -199,7 +176,6 @@ public class ListInstanceResponse  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="backup_strategy")
     
-    @JacksonXmlProperty(localName = "backup_strategy")
     
     private OpenGaussBackupStrategyForListResponse backupStrategy;
 
@@ -207,7 +183,6 @@ public class ListInstanceResponse  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="maintenance_window")
     
-    @JacksonXmlProperty(localName = "maintenance_window")
     
     private String maintenanceWindow;
 
@@ -215,7 +190,6 @@ public class ListInstanceResponse  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="nodes")
     
-    @JacksonXmlProperty(localName = "nodes")
     
     private List<Object> nodes = null;
     
@@ -223,7 +197,6 @@ public class ListInstanceResponse  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_id")
     
-    @JacksonXmlProperty(localName = "enterprise_project_id")
     
     private String enterpriseProjectId;
 
@@ -231,7 +204,6 @@ public class ListInstanceResponse  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_mode")
     
-    @JacksonXmlProperty(localName = "instance_mode")
     
     private String instanceMode;
 
@@ -239,7 +211,6 @@ public class ListInstanceResponse  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="disk_encryption_id")
     
-    @JacksonXmlProperty(localName = "disk_encryption_id")
     
     private String diskEncryptionId;
 
@@ -247,7 +218,6 @@ public class ListInstanceResponse  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="charge_info")
     
-    @JacksonXmlProperty(localName = "charge_info")
     
     private OpenGaussChargeInfoListResponse chargeInfo;
 
@@ -255,7 +225,6 @@ public class ListInstanceResponse  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="time_zone")
     
-    @JacksonXmlProperty(localName = "time_zone")
     
     private String timeZone;
 
@@ -263,7 +232,6 @@ public class ListInstanceResponse  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    @JacksonXmlProperty(localName = "tags")
     
     private List<Object> tags = null;
     

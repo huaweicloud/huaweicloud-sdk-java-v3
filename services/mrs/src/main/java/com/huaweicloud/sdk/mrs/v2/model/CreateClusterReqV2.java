@@ -19,8 +19,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -34,7 +32,6 @@ public class CreateClusterReqV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="is_dec_project")
     
-    @JacksonXmlProperty(localName = "is_dec_project")
     
     private Boolean isDecProject;
 
@@ -42,7 +39,6 @@ public class CreateClusterReqV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cluster_version")
     
-    @JacksonXmlProperty(localName = "cluster_version")
     
     private String clusterVersion;
 
@@ -50,7 +46,6 @@ public class CreateClusterReqV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cluster_name")
     
-    @JacksonXmlProperty(localName = "cluster_name")
     
     private String clusterName;
 
@@ -58,7 +53,6 @@ public class CreateClusterReqV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cluster_type")
     
-    @JacksonXmlProperty(localName = "cluster_type")
     
     private String clusterType;
 
@@ -66,7 +60,6 @@ public class CreateClusterReqV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="charge_info")
     
-    @JacksonXmlProperty(localName = "charge_info")
     
     private ChargeInfo chargeInfo;
 
@@ -74,7 +67,6 @@ public class CreateClusterReqV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="region")
     
-    @JacksonXmlProperty(localName = "region")
     
     private String region;
 
@@ -82,7 +74,6 @@ public class CreateClusterReqV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vpc_name")
     
-    @JacksonXmlProperty(localName = "vpc_name")
     
     private String vpcName;
 
@@ -90,7 +81,6 @@ public class CreateClusterReqV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="subnet_id")
     
-    @JacksonXmlProperty(localName = "subnet_id")
     
     private String subnetId;
 
@@ -98,7 +88,6 @@ public class CreateClusterReqV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="subnet_name")
     
-    @JacksonXmlProperty(localName = "subnet_name")
     
     private String subnetName;
 
@@ -106,7 +95,6 @@ public class CreateClusterReqV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="components")
     
-    @JacksonXmlProperty(localName = "components")
     
     private String components;
 
@@ -114,7 +102,6 @@ public class CreateClusterReqV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="availability_zone")
     
-    @JacksonXmlProperty(localName = "availability_zone")
     
     private String availabilityZone;
 
@@ -122,7 +109,6 @@ public class CreateClusterReqV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="security_groups_id")
     
-    @JacksonXmlProperty(localName = "security_groups_id")
     
     private String securityGroupsId;
 
@@ -130,7 +116,6 @@ public class CreateClusterReqV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auto_create_default_security_group")
     
-    @JacksonXmlProperty(localName = "auto_create_default_security_group")
     
     private Boolean autoCreateDefaultSecurityGroup;
 
@@ -138,7 +123,6 @@ public class CreateClusterReqV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="safe_mode")
     
-    @JacksonXmlProperty(localName = "safe_mode")
     
     private String safeMode;
 
@@ -146,7 +130,6 @@ public class CreateClusterReqV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="manager_admin_password")
     
-    @JacksonXmlProperty(localName = "manager_admin_password")
     
     private String managerAdminPassword;
 
@@ -154,7 +137,6 @@ public class CreateClusterReqV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="login_mode")
     
-    @JacksonXmlProperty(localName = "login_mode")
     
     private String loginMode;
 
@@ -162,7 +144,6 @@ public class CreateClusterReqV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_root_password")
     
-    @JacksonXmlProperty(localName = "node_root_password")
     
     private String nodeRootPassword;
 
@@ -170,7 +151,6 @@ public class CreateClusterReqV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_keypair_name")
     
-    @JacksonXmlProperty(localName = "node_keypair_name")
     
     private String nodeKeypairName;
 
@@ -178,7 +158,6 @@ public class CreateClusterReqV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_id")
     
-    @JacksonXmlProperty(localName = "enterprise_project_id")
     
     private String enterpriseProjectId;
 
@@ -186,7 +165,6 @@ public class CreateClusterReqV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="eip_address")
     
-    @JacksonXmlProperty(localName = "eip_address")
     
     private String eipAddress;
 
@@ -194,7 +172,6 @@ public class CreateClusterReqV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="eip_id")
     
-    @JacksonXmlProperty(localName = "eip_id")
     
     private String eipId;
 
@@ -202,7 +179,6 @@ public class CreateClusterReqV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="mrs_ecs_default_agency")
     
-    @JacksonXmlProperty(localName = "mrs_ecs_default_agency")
     
     private String mrsEcsDefaultAgency;
 
@@ -210,7 +186,6 @@ public class CreateClusterReqV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="template_id")
     
-    @JacksonXmlProperty(localName = "template_id")
     
     private String templateId;
 
@@ -218,7 +193,6 @@ public class CreateClusterReqV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    @JacksonXmlProperty(localName = "tags")
     
     private List<Tag> tags = null;
         /**
@@ -304,7 +278,6 @@ public class CreateClusterReqV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="log_collection")
     
-    @JacksonXmlProperty(localName = "log_collection")
     
     private LogCollectionEnum logCollection;
 
@@ -312,7 +285,6 @@ public class CreateClusterReqV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_groups")
     
-    @JacksonXmlProperty(localName = "node_groups")
     
     private List<NodeGroupV2> nodeGroups = null;
     
@@ -320,7 +292,6 @@ public class CreateClusterReqV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="bootstrap_scripts")
     
-    @JacksonXmlProperty(localName = "bootstrap_scripts")
     
     private List<BootstrapScript> bootstrapScripts = null;
     
@@ -328,7 +299,6 @@ public class CreateClusterReqV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="add_jobs")
     
-    @JacksonXmlProperty(localName = "add_jobs")
     
     private List<AddJobs> addJobs = null;
     

@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -96,8 +95,6 @@ public class BssParamForCreateVolume {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "chargingMode")
 
-    @JacksonXmlProperty(localName = "chargingMode")
-
     private ChargingModeEnum chargingMode;
 
     /**
@@ -179,8 +176,6 @@ public class BssParamForCreateVolume {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "isAutoPay")
-
-    @JacksonXmlProperty(localName = "isAutoPay")
 
     private IsAutoPayEnum isAutoPay;
 
@@ -264,14 +259,10 @@ public class BssParamForCreateVolume {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "isAutoRenew")
 
-    @JacksonXmlProperty(localName = "isAutoRenew")
-
     private IsAutoRenewEnum isAutoRenew;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "periodNum")
-
-    @JacksonXmlProperty(localName = "periodNum")
 
     private Integer periodNum;
 
@@ -354,8 +345,6 @@ public class BssParamForCreateVolume {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "periodType")
-
-    @JacksonXmlProperty(localName = "periodType")
 
     private PeriodTypeEnum periodType;
 

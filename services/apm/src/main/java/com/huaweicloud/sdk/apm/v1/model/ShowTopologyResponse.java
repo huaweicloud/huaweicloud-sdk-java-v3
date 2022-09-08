@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.apm.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -18,21 +17,15 @@ public class ShowTopologyResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "global_trace_id")
 
-    @JacksonXmlProperty(localName = "global_trace_id")
-
     private String globalTraceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "line_list")
 
-    @JacksonXmlProperty(localName = "line_list")
-
     private List<TraceTopologyLine> lineList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "node_list")
-
-    @JacksonXmlProperty(localName = "node_list")
 
     private List<TraceTopologyNode> nodeList = null;
 

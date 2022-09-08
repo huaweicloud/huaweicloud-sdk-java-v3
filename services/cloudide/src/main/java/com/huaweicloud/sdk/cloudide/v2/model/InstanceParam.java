@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,8 +20,6 @@ public class InstanceParam {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "agent_id")
-
-    @JacksonXmlProperty(localName = "agent_id")
 
     private String agentId;
 
@@ -105,8 +102,6 @@ public class InstanceParam {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "arch")
-
-    @JacksonXmlProperty(localName = "arch")
 
     private ArchEnum arch;
 
@@ -202,63 +197,45 @@ public class InstanceParam {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cpu_memory")
 
-    @JacksonXmlProperty(localName = "cpu_memory")
-
     private CpuMemoryEnum cpuMemory;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
-
-    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "display_name")
 
-    @JacksonXmlProperty(localName = "display_name")
-
     private String displayName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_temporary")
-
-    @JacksonXmlProperty(localName = "is_temporary")
 
     private Boolean isTemporary;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "label_tag")
 
-    @JacksonXmlProperty(localName = "label_tag")
-
     private String labelTag;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "plugin_enable_list")
-
-    @JacksonXmlProperty(localName = "plugin_enable_list")
 
     private List<String> pluginEnableList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "plugin_vars")
 
-    @JacksonXmlProperty(localName = "plugin_vars")
-
     private Map<String, String> pluginVars = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "port_id")
 
-    @JacksonXmlProperty(localName = "port_id")
-
     private String portId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "private_ip")
-
-    @JacksonXmlProperty(localName = "private_ip")
 
     private String privateIp;
 
@@ -348,63 +325,45 @@ public class InstanceParam {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pvc_quantity")
 
-    @JacksonXmlProperty(localName = "pvc_quantity")
-
     private PvcQuantityEnum pvcQuantity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "refresh_interval")
-
-    @JacksonXmlProperty(localName = "refresh_interval")
 
     private String refreshInterval;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "repository_id")
 
-    @JacksonXmlProperty(localName = "repository_id")
-
     private Long repositoryId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stack_id")
-
-    @JacksonXmlProperty(localName = "stack_id")
 
     private String stackId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_type")
 
-    @JacksonXmlProperty(localName = "task_type")
-
     private String taskType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "token")
-
-    @JacksonXmlProperty(localName = "token")
 
     private String token;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_id")
 
-    @JacksonXmlProperty(localName = "vpc_id")
-
     private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_domain_id")
 
-    @JacksonXmlProperty(localName = "instance_domain_id")
-
     private String instanceDomainId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_user_id")
-
-    @JacksonXmlProperty(localName = "instance_user_id")
 
     private String instanceUserId;
 

@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -102,28 +101,20 @@ public class AppConfigCreateRequestV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "config_type")
 
-    @JacksonXmlProperty(localName = "config_type")
-
     private ConfigTypeEnum configType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "config_value")
-
-    @JacksonXmlProperty(localName = "config_value")
 
     private String configValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
-    @JacksonXmlProperty(localName = "description")
-
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "config_name")
-
-    @JacksonXmlProperty(localName = "config_name")
 
     private String configName;
 

@@ -14,8 +14,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -119,7 +117,6 @@ public class EventSeries  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="event_severity")
     
-    @JacksonXmlProperty(localName = "event_severity")
     
     private EventSeverityEnum eventSeverity;
 
@@ -127,7 +124,6 @@ public class EventSeries  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="values")
     
-    @JacksonXmlProperty(localName = "values")
     
     private List<Integer> values = null;
     

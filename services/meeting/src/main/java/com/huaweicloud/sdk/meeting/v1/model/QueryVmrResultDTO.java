@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,98 +13,70 @@ public class QueryVmrResultDTO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vmrId")
-
-    @JacksonXmlProperty(localName = "vmrId")
 
     private String vmrId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vmrName")
 
-    @JacksonXmlProperty(localName = "vmrName")
-
     private String vmrName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "gustPwd")
-
-    @JacksonXmlProperty(localName = "gustPwd")
 
     private String gustPwd;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "gustJoinUrl")
 
-    @JacksonXmlProperty(localName = "gustJoinUrl")
-
     private String gustJoinUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "chairPwd")
-
-    @JacksonXmlProperty(localName = "chairPwd")
 
     private String chairPwd;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "chairJoinUrl")
 
-    @JacksonXmlProperty(localName = "chairJoinUrl")
-
     private String chairJoinUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "allowGustFirst")
-
-    @JacksonXmlProperty(localName = "allowGustFirst")
 
     private Boolean allowGustFirst;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "gustFirstNotice")
 
-    @JacksonXmlProperty(localName = "gustFirstNotice")
-
     private Boolean gustFirstNotice;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vmrMode")
-
-    @JacksonXmlProperty(localName = "vmrMode")
 
     private Integer vmrMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vmrPkgId")
 
-    @JacksonXmlProperty(localName = "vmrPkgId")
-
     private String vmrPkgId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vmrPkgName")
-
-    @JacksonXmlProperty(localName = "vmrPkgName")
 
     private String vmrPkgName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vmrPkgParties")
 
-    @JacksonXmlProperty(localName = "vmrPkgParties")
-
     private Integer vmrPkgParties;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
-
-    @JacksonXmlProperty(localName = "status")
 
     private Integer status;
 

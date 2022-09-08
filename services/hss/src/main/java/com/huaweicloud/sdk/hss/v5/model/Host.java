@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.hss.v5.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,196 +16,140 @@ public class Host {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_name")
 
-    @JacksonXmlProperty(localName = "host_name")
-
     private String hostName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_id")
-
-    @JacksonXmlProperty(localName = "host_id")
 
     private String hostId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "agent_id")
 
-    @JacksonXmlProperty(localName = "agent_id")
-
     private String agentId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "private_ip")
-
-    @JacksonXmlProperty(localName = "private_ip")
 
     private String privateIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "public_ip")
 
-    @JacksonXmlProperty(localName = "public_ip")
-
     private String publicIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_name")
-
-    @JacksonXmlProperty(localName = "enterprise_project_name")
 
     private String enterpriseProjectName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_status")
 
-    @JacksonXmlProperty(localName = "host_status")
-
     private String hostStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "agent_status")
-
-    @JacksonXmlProperty(localName = "agent_status")
 
     private String agentStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "install_result_code")
 
-    @JacksonXmlProperty(localName = "install_result_code")
-
     private String installResultCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
-
-    @JacksonXmlProperty(localName = "version")
 
     private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protect_status")
 
-    @JacksonXmlProperty(localName = "protect_status")
-
     private String protectStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os_image")
-
-    @JacksonXmlProperty(localName = "os_image")
 
     private String osImage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os_type")
 
-    @JacksonXmlProperty(localName = "os_type")
-
     private String osType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os_bit")
-
-    @JacksonXmlProperty(localName = "os_bit")
 
     private String osBit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "detect_result")
 
-    @JacksonXmlProperty(localName = "detect_result")
-
     private String detectResult;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "charging_mode")
-
-    @JacksonXmlProperty(localName = "charging_mode")
 
     private String chargingMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_id")
 
-    @JacksonXmlProperty(localName = "resource_id")
-
     private String resourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "outside_host")
-
-    @JacksonXmlProperty(localName = "outside_host")
 
     private Boolean outsideHost;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_id")
 
-    @JacksonXmlProperty(localName = "group_id")
-
     private String groupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_name")
-
-    @JacksonXmlProperty(localName = "group_name")
 
     private String groupName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_group_id")
 
-    @JacksonXmlProperty(localName = "policy_group_id")
-
     private String policyGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_group_name")
-
-    @JacksonXmlProperty(localName = "policy_group_name")
 
     private String policyGroupName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "asset")
 
-    @JacksonXmlProperty(localName = "asset")
-
     private Integer asset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vulnerability")
-
-    @JacksonXmlProperty(localName = "vulnerability")
 
     private Integer vulnerability;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "baseline")
 
-    @JacksonXmlProperty(localName = "baseline")
-
     private Integer baseline;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "intrusion")
-
-    @JacksonXmlProperty(localName = "intrusion")
 
     private Integer intrusion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "asset_value")
 
-    @JacksonXmlProperty(localName = "asset_value")
-
     private String assetValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "labels")
-
-    @JacksonXmlProperty(localName = "labels")
 
     private List<String> labels = null;
 

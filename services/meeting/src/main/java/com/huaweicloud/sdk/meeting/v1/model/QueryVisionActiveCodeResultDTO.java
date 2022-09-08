@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,49 +13,35 @@ public class QueryVisionActiveCodeResultDTO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "activeCode")
-
-    @JacksonXmlProperty(localName = "activeCode")
 
     private String activeCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "devName")
 
-    @JacksonXmlProperty(localName = "devName")
-
     private String devName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "devType")
-
-    @JacksonXmlProperty(localName = "devType")
 
     private String devType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deptCode")
 
-    @JacksonXmlProperty(localName = "deptCode")
-
     private String deptCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deptName")
 
-    @JacksonXmlProperty(localName = "deptName")
-
     private String deptName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expireDate")
-
-    @JacksonXmlProperty(localName = "expireDate")
 
     private Long expireDate;
 

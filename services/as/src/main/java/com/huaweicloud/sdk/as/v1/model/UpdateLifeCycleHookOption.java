@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -97,8 +96,6 @@ public class UpdateLifeCycleHookOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lifecycle_hook_type")
 
-    @JacksonXmlProperty(localName = "lifecycle_hook_type")
-
     private LifecycleHookTypeEnum lifecycleHookType;
 
     /**
@@ -181,28 +178,20 @@ public class UpdateLifeCycleHookOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "default_result")
 
-    @JacksonXmlProperty(localName = "default_result")
-
     private DefaultResultEnum defaultResult;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "default_timeout")
-
-    @JacksonXmlProperty(localName = "default_timeout")
 
     private Integer defaultTimeout;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "notification_topic_urn")
 
-    @JacksonXmlProperty(localName = "notification_topic_urn")
-
     private String notificationTopicUrn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "notification_metadata")
-
-    @JacksonXmlProperty(localName = "notification_metadata")
 
     private String notificationMetadata;
 

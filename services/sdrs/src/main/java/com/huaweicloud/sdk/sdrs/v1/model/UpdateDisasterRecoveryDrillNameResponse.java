@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.sdrs.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -15,8 +14,6 @@ public class UpdateDisasterRecoveryDrillNameResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "disaster_recovery_drill")
-
-    @JacksonXmlProperty(localName = "disaster_recovery_drill")
 
     private ShowDisasterRecoveryDrillParams disasterRecoveryDrill;
 

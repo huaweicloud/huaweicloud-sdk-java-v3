@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.math.BigDecimal;
 import java.util.Collections;
@@ -20,14 +19,10 @@ public class TaskMonitorDetailLog {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
-
-    @JacksonXmlProperty(localName = "status")
 
     private Integer status;
 
@@ -116,8 +111,6 @@ public class TaskMonitorDetailLog {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "position")
-
-    @JacksonXmlProperty(localName = "position")
 
     private PositionEnum position;
 
@@ -225,35 +218,25 @@ public class TaskMonitorDetailLog {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "position_status")
 
-    @JacksonXmlProperty(localName = "position_status")
-
     private PositionStatusEnum positionStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stage")
-
-    @JacksonXmlProperty(localName = "stage")
 
     private String stage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dirty_data_count")
 
-    @JacksonXmlProperty(localName = "dirty_data_count")
-
     private Integer dirtyDataCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_count")
 
-    @JacksonXmlProperty(localName = "data_count")
-
     private Integer dataCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_size")
-
-    @JacksonXmlProperty(localName = "data_size")
 
     private BigDecimal dataSize;
 
@@ -355,35 +338,25 @@ public class TaskMonitorDetailLog {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_size_unit")
 
-    @JacksonXmlProperty(localName = "data_size_unit")
-
     private DataSizeUnitEnum dataSizeUnit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "spend_time")
-
-    @JacksonXmlProperty(localName = "spend_time")
 
     private Integer spendTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remarks")
 
-    @JacksonXmlProperty(localName = "remarks")
-
     private String remarks;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "step_begin_time")
 
-    @JacksonXmlProperty(localName = "step_begin_time")
-
     private Long stepBeginTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "step_end_time")
-
-    @JacksonXmlProperty(localName = "step_end_time")
 
     private Long stepEndTime;
 

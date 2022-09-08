@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.sis.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,21 +14,15 @@ public class PostMultiModalAssessmentReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "config")
 
-    @JacksonXmlProperty(localName = "config")
-
     private MultiModalConfig config;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "video_data")
 
-    @JacksonXmlProperty(localName = "video_data")
-
     private String videoData;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ref_text")
-
-    @JacksonXmlProperty(localName = "ref_text")
 
     private String refText;
 

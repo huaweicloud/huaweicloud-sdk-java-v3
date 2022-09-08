@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,49 +21,35 @@ public class SqlAlarmRuleRespList {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sql_alarm_rule_name")
 
-    @JacksonXmlProperty(localName = "sql_alarm_rule_name")
-
     private String sqlAlarmRuleName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sql_alarm_rule_id")
-
-    @JacksonXmlProperty(localName = "sql_alarm_rule_id")
 
     private String sqlAlarmRuleId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sql_alarm_rule_description")
 
-    @JacksonXmlProperty(localName = "sql_alarm_rule_description")
-
     private String sqlAlarmRuleDescription;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sql_requests")
-
-    @JacksonXmlProperty(localName = "sql_requests")
 
     private List<SqlRequest> sqlRequests = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "frequency")
 
-    @JacksonXmlProperty(localName = "frequency")
-
     private Frequency frequency;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "condition_expression")
 
-    @JacksonXmlProperty(localName = "condition_expression")
-
     private String conditionExpression;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "topics")
-
-    @JacksonXmlProperty(localName = "topics")
 
     private List<Topics> topics = null;
 
@@ -160,42 +145,30 @@ public class SqlAlarmRuleRespList {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sql_alarm_level")
 
-    @JacksonXmlProperty(localName = "sql_alarm_level")
-
     private SqlAlarmLevelEnum sqlAlarmLevel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sql_alarm_send")
-
-    @JacksonXmlProperty(localName = "sql_alarm_send")
 
     private Boolean sqlAlarmSend;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_id")
 
-    @JacksonXmlProperty(localName = "domain_id")
-
     private String domainId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
-
-    @JacksonXmlProperty(localName = "create_time")
 
     private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
 
-    @JacksonXmlProperty(localName = "update_time")
-
     private Long updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template_name")
-
-    @JacksonXmlProperty(localName = "template_name")
 
     private String templateName;
 
@@ -278,8 +251,6 @@ public class SqlAlarmRuleRespList {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
-
-    @JacksonXmlProperty(localName = "status")
 
     private StatusEnum status;
 

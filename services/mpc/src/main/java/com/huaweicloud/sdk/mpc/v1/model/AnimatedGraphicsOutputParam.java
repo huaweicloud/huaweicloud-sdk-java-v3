@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -90,42 +89,30 @@ public class AnimatedGraphicsOutputParam {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "format")
 
-    @JacksonXmlProperty(localName = "format")
-
     private FormatEnum format;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "width")
-
-    @JacksonXmlProperty(localName = "width")
 
     private Integer width;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "height")
 
-    @JacksonXmlProperty(localName = "height")
-
     private Integer height;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start")
-
-    @JacksonXmlProperty(localName = "start")
 
     private Integer start;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end")
 
-    @JacksonXmlProperty(localName = "end")
-
     private Integer end;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "frame_rate")
-
-    @JacksonXmlProperty(localName = "frame_rate")
 
     private Integer frameRate;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.css.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,100 +16,77 @@ public class CreateClusterBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
-    @JacksonXmlProperty(localName = "name")
-
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "backupStrategy")
-
-    @JacksonXmlProperty(localName = "backupStrategy")
 
     private CreateClusterBackupStrategyBody backupStrategy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "roles")
 
-    @JacksonXmlProperty(localName = "roles")
-
     private List<CreateClusterRolesBody> roles = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nics")
-
-    @JacksonXmlProperty(localName = "nics")
 
     private CreateClusterInstanceNicsBody nics;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
-    @JacksonXmlProperty(localName = "enterprise_project_id")
-
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
-
-    @JacksonXmlProperty(localName = "tags")
 
     private List<CreateClusterTagsBody> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "availability_zone")
 
-    @JacksonXmlProperty(localName = "availability_zone")
-
     private String availabilityZone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "datastore")
-
-    @JacksonXmlProperty(localName = "datastore")
 
     private CreateClusterDatastoreBody datastore;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "authorityEnable")
 
-    @JacksonXmlProperty(localName = "authorityEnable")
-
     private Boolean authorityEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "httpsEnable")
-
-    @JacksonXmlProperty(localName = "httpsEnable")
 
     private Boolean httpsEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "adminPwd")
 
-    @JacksonXmlProperty(localName = "adminPwd")
-
     private String adminPwd;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publicIPReq")
-
-    @JacksonXmlProperty(localName = "publicIPReq")
 
     private CreateClusterPublicIpReq publicIPReq;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "loadBalance")
 
-    @JacksonXmlProperty(localName = "loadBalance")
-
     private CreateClusterLoadBalance loadBalance;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publicKibanaReq")
 
-    @JacksonXmlProperty(localName = "publicKibanaReq")
-
     private CreateClusterPublicKibanaReq publicKibanaReq;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "payInfo")
+
+    private PayInfoBody payInfo;
 
     public CreateClusterBody withName(String name) {
         this.name = name;
@@ -347,7 +323,7 @@ public class CreateClusterBody {
     }
 
     /**
-     * 安全模式下集群管理员admin的密码，只有在创建集群时authorityEnable设置为true时需要设置此参数。。 - 参数范围：8~32个字符。 - 参数要求：密码至少包含大写字母，小写字母，数字、特殊字符四类中的三类，其中可输入的特殊字符为：~!@#$%&*()-_=|[{}];:,<.>/?
+     * 安全模式下集群管理员admin的密码，只有在创建集群时authorityEnable设置为true时需要设置此参数。 - 参数范围：8~32个字符。 - 参数要求：密码至少包含大写字母，小写字母，数字、特殊字符四类中的三类，其中可输入的特殊字符为：~!@#$%&*()-_=|[{}];:,<.>/?
      * @return adminPwd
      */
     public String getAdminPwd() {
@@ -436,6 +412,32 @@ public class CreateClusterBody {
         this.publicKibanaReq = publicKibanaReq;
     }
 
+    public CreateClusterBody withPayInfo(PayInfoBody payInfo) {
+        this.payInfo = payInfo;
+        return this;
+    }
+
+    public CreateClusterBody withPayInfo(Consumer<PayInfoBody> payInfoSetter) {
+        if (this.payInfo == null) {
+            this.payInfo = new PayInfoBody();
+            payInfoSetter.accept(this.payInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get payInfo
+     * @return payInfo
+     */
+    public PayInfoBody getPayInfo() {
+        return payInfo;
+    }
+
+    public void setPayInfo(PayInfoBody payInfo) {
+        this.payInfo = payInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -457,7 +459,8 @@ public class CreateClusterBody {
             && Objects.equals(this.adminPwd, createClusterBody.adminPwd)
             && Objects.equals(this.publicIPReq, createClusterBody.publicIPReq)
             && Objects.equals(this.loadBalance, createClusterBody.loadBalance)
-            && Objects.equals(this.publicKibanaReq, createClusterBody.publicKibanaReq);
+            && Objects.equals(this.publicKibanaReq, createClusterBody.publicKibanaReq)
+            && Objects.equals(this.payInfo, createClusterBody.payInfo);
     }
 
     @Override
@@ -475,7 +478,8 @@ public class CreateClusterBody {
             adminPwd,
             publicIPReq,
             loadBalance,
-            publicKibanaReq);
+            publicKibanaReq,
+            payInfo);
     }
 
     @Override
@@ -496,6 +500,7 @@ public class CreateClusterBody {
         sb.append("    publicIPReq: ").append(toIndentedString(publicIPReq)).append("\n");
         sb.append("    loadBalance: ").append(toIndentedString(loadBalance)).append("\n");
         sb.append("    publicKibanaReq: ").append(toIndentedString(publicKibanaReq)).append("\n");
+        sb.append("    payInfo: ").append(toIndentedString(payInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

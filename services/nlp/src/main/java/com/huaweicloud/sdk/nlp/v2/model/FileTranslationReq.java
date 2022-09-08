@@ -16,8 +16,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -31,7 +29,6 @@ public class FileTranslationReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="url")
     
-    @JacksonXmlProperty(localName = "url")
     
     private String url;
     /**
@@ -117,7 +114,6 @@ public class FileTranslationReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="from")
     
-    @JacksonXmlProperty(localName = "from")
     
     private FromEnum from;
     /**
@@ -203,7 +199,6 @@ public class FileTranslationReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="to")
     
-    @JacksonXmlProperty(localName = "to")
     
     private ToEnum to;
     /**
@@ -295,7 +290,6 @@ public class FileTranslationReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    @JacksonXmlProperty(localName = "type")
     
     private TypeEnum type;
 

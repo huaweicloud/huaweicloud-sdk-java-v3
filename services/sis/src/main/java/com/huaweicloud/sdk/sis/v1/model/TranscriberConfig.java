@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -139,14 +138,17 @@ public class TranscriberConfig {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "audio_format")
 
-    @JacksonXmlProperty(localName = "audio_format")
-
     private AudioFormatEnum audioFormat;
 
     /**
-     * 所使用的模型特征串。通常是“语种_采样率_领域”的形式，例如chinese_8k_common。  采样率需要与音频采样率保持一致。  当前支持如下模型特征串：  chinese_8k_common  chinese_16k_conversation  chinese_8k_bank（银行领域，区域仅支持cn-north-4）  chinese_8k_insurance（保险领域，区域仅支持cn-north-4） 
+     * 所使用的模型特征串。通常是“语种_采样率_领域”的形式，例如chinese_8k_common。  采样率需要与音频采样率保持一致。  当前支持如下模型特征串：  chinese_16k_media (音视频领域，区域仅支持cn-north-4，cn-east-3)  chinese_8k_common  chinese_16k_conversation  chinese_8k_bank（银行领域，区域仅支持cn-north-4）  chinese_8k_insurance（保险领域，区域仅支持cn-north-4） 
      */
     public static final class PropertyEnum {
+
+        /**
+         * Enum CHINESE_16K_MEDIA for value: "chinese_16k_media"
+         */
+        public static final PropertyEnum CHINESE_16K_MEDIA = new PropertyEnum("chinese_16k_media");
 
         /**
          * Enum CHINESE_8K_COMMON for value: "chinese_8k_common"
@@ -168,20 +170,15 @@ public class TranscriberConfig {
          */
         public static final PropertyEnum CHINESE_8K_INSURANCE = new PropertyEnum("chinese_8k_insurance");
 
-        /**
-         * Enum CHINESE_16K_MEDIA for value: "chinese_16k_media"
-         */
-        public static final PropertyEnum CHINESE_16K_MEDIA = new PropertyEnum("chinese_16k_media");
-
         private static final Map<String, PropertyEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, PropertyEnum> createStaticFields() {
             Map<String, PropertyEnum> map = new HashMap<>();
+            map.put("chinese_16k_media", CHINESE_16K_MEDIA);
             map.put("chinese_8k_common", CHINESE_8K_COMMON);
             map.put("chinese_16k_conversation", CHINESE_16K_CONVERSATION);
             map.put("chinese_8k_bank", CHINESE_8K_BANK);
             map.put("chinese_8k_insurance", CHINESE_8K_INSURANCE);
-            map.put("chinese_16k_media", CHINESE_16K_MEDIA);
             return Collections.unmodifiableMap(map);
         }
 
@@ -240,8 +237,6 @@ public class TranscriberConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "property")
-
-    @JacksonXmlProperty(localName = "property")
 
     private PropertyEnum property;
 
@@ -325,21 +320,15 @@ public class TranscriberConfig {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "add_punc")
 
-    @JacksonXmlProperty(localName = "add_punc")
-
     private AddPuncEnum addPunc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "need_analysis_info")
 
-    @JacksonXmlProperty(localName = "need_analysis_info")
-
     private AnalysisInfo needAnalysisInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vocabulary_id")
-
-    @JacksonXmlProperty(localName = "vocabulary_id")
 
     private String vocabularyId;
 
@@ -423,14 +412,10 @@ public class TranscriberConfig {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "digit_norm")
 
-    @JacksonXmlProperty(localName = "digit_norm")
-
     private DigitNormEnum digitNorm;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "callback_url")
-
-    @JacksonXmlProperty(localName = "callback_url")
 
     private String callbackUrl;
 
@@ -514,8 +499,6 @@ public class TranscriberConfig {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "need_word_info")
 
-    @JacksonXmlProperty(localName = "need_word_info")
-
     private NeedWordInfoEnum needWordInfo;
 
     public TranscriberConfig withAudioFormat(AudioFormatEnum audioFormat) {
@@ -541,7 +524,7 @@ public class TranscriberConfig {
     }
 
     /**
-     * 所使用的模型特征串。通常是“语种_采样率_领域”的形式，例如chinese_8k_common。  采样率需要与音频采样率保持一致。  当前支持如下模型特征串：  chinese_8k_common  chinese_16k_conversation  chinese_8k_bank（银行领域，区域仅支持cn-north-4）  chinese_8k_insurance（保险领域，区域仅支持cn-north-4） 
+     * 所使用的模型特征串。通常是“语种_采样率_领域”的形式，例如chinese_8k_common。  采样率需要与音频采样率保持一致。  当前支持如下模型特征串：  chinese_16k_media (音视频领域，区域仅支持cn-north-4，cn-east-3)  chinese_8k_common  chinese_16k_conversation  chinese_8k_bank（银行领域，区域仅支持cn-north-4）  chinese_8k_insurance（保险领域，区域仅支持cn-north-4） 
      * @return property
      */
     public PropertyEnum getProperty() {

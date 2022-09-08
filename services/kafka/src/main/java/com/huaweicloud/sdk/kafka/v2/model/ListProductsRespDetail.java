@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.kafka.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,77 +16,55 @@ public class ListProductsRespDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tps")
 
-    @JacksonXmlProperty(localName = "tps")
-
     private String tps;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "storage")
-
-    @JacksonXmlProperty(localName = "storage")
 
     private String storage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "partition_num")
 
-    @JacksonXmlProperty(localName = "partition_num")
-
     private String partitionNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "product_id")
-
-    @JacksonXmlProperty(localName = "product_id")
 
     private String productId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "spec_code")
 
-    @JacksonXmlProperty(localName = "spec_code")
-
     private String specCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "io")
-
-    @JacksonXmlProperty(localName = "io")
 
     private List<ListProductsRespIo> io = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bandwidth")
 
-    @JacksonXmlProperty(localName = "bandwidth")
-
     private String bandwidth;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "unavailable_zones")
-
-    @JacksonXmlProperty(localName = "unavailable_zones")
 
     private List<String> unavailableZones = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "available_zones")
 
-    @JacksonXmlProperty(localName = "available_zones")
-
     private List<String> availableZones = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ecs_flavor_id")
 
-    @JacksonXmlProperty(localName = "ecs_flavor_id")
-
     private String ecsFlavorId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "arch_type")
-
-    @JacksonXmlProperty(localName = "arch_type")
 
     private String archType;
 

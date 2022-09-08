@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cdm.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,21 +13,15 @@ public class CdmQueryClusterDetailsRepsonseMaintainWindow {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "day")
 
-    @JacksonXmlProperty(localName = "day")
-
     private String day;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "startTime")
 
-    @JacksonXmlProperty(localName = "startTime")
-
     private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "endTime")
-
-    @JacksonXmlProperty(localName = "endTime")
 
     private String endTime;
 

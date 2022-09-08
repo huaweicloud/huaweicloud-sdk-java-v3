@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.frs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.http.FormDataFilePart;
 import com.huaweicloud.sdk.core.http.FormDataPart;
 import com.huaweicloud.sdk.core.http.SdkFormDataBody;
@@ -18,21 +17,16 @@ import java.util.Objects;
 public class DetectLiveByFileIntlRequestBody implements SdkFormDataBody {
 
     @JsonProperty(value = "video_file", access = JsonProperty.Access.WRITE_ONLY)
-    @JacksonXmlProperty(localName = "video_file")
 
     private FormDataFilePart videoFile;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "actions")
 
-    @JacksonXmlProperty(localName = "actions")
-
     private String actions;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "action_time")
-
-    @JacksonXmlProperty(localName = "action_time")
 
     private String actionTime;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.ocr.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,154 +13,110 @@ public class VehicleLicenseResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "number")
 
-    @JacksonXmlProperty(localName = "number")
-
     private String number;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vehicle_type")
-
-    @JacksonXmlProperty(localName = "vehicle_type")
 
     private String vehicleType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
-    @JacksonXmlProperty(localName = "name")
-
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "address")
-
-    @JacksonXmlProperty(localName = "address")
 
     private String address;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "use_character")
 
-    @JacksonXmlProperty(localName = "use_character")
-
     private String useCharacter;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "model")
-
-    @JacksonXmlProperty(localName = "model")
 
     private String model;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "engine_no")
 
-    @JacksonXmlProperty(localName = "engine_no")
-
     private String engineNo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vin")
-
-    @JacksonXmlProperty(localName = "vin")
 
     private String vin;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "register_date")
 
-    @JacksonXmlProperty(localName = "register_date")
-
     private String registerDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "issue_date")
-
-    @JacksonXmlProperty(localName = "issue_date")
 
     private String issueDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "issuing_authority")
 
-    @JacksonXmlProperty(localName = "issuing_authority")
-
     private String issuingAuthority;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_no")
-
-    @JacksonXmlProperty(localName = "file_no")
 
     private String fileNo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "approved_passengers")
 
-    @JacksonXmlProperty(localName = "approved_passengers")
-
     private String approvedPassengers;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "gross_mass")
-
-    @JacksonXmlProperty(localName = "gross_mass")
 
     private String grossMass;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "unladen_mass")
 
-    @JacksonXmlProperty(localName = "unladen_mass")
-
     private String unladenMass;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "approved_load")
-
-    @JacksonXmlProperty(localName = "approved_load")
 
     private String approvedLoad;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dimension")
 
-    @JacksonXmlProperty(localName = "dimension")
-
     private String dimension;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "traction_mass")
-
-    @JacksonXmlProperty(localName = "traction_mass")
 
     private String tractionMass;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remarks")
 
-    @JacksonXmlProperty(localName = "remarks")
-
     private String remarks;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "inspection_record")
-
-    @JacksonXmlProperty(localName = "inspection_record")
 
     private String inspectionRecord;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "code_number")
 
-    @JacksonXmlProperty(localName = "code_number")
-
     private String codeNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "text_location")
-
-    @JacksonXmlProperty(localName = "text_location")
 
     private Object textLocation;
 

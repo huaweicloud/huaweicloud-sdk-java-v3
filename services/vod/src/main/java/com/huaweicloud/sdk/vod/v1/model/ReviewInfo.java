@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -105,42 +104,30 @@ public class ReviewInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "suggestion")
 
-    @JacksonXmlProperty(localName = "suggestion")
-
     private SuggestionEnum suggestion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "text")
-
-    @JacksonXmlProperty(localName = "text")
 
     private TextReviewRet text;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cover")
 
-    @JacksonXmlProperty(localName = "cover")
-
     private List<PictureReviewRet> cover = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "video")
-
-    @JacksonXmlProperty(localName = "video")
 
     private List<PictureReviewRet> video = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "exec_desc")
 
-    @JacksonXmlProperty(localName = "exec_desc")
-
     private String execDesc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "review_status")
-
-    @JacksonXmlProperty(localName = "review_status")
 
     private String reviewStatus;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.codehub.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,49 +16,35 @@ public class RepositoryTemplateVO2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template_type")
 
-    @JacksonXmlProperty(localName = "template_type")
-
     private String templateType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "code_title")
-
-    @JacksonXmlProperty(localName = "code_title")
 
     private String codeTitle;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "creator_name")
 
-    @JacksonXmlProperty(localName = "creator_name")
-
     private String creatorName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "code_description")
-
-    @JacksonXmlProperty(localName = "code_description")
 
     private String codeDescription;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "languages")
 
-    @JacksonXmlProperty(localName = "languages")
-
     private List<String> languages = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "plateform")
 
-    @JacksonXmlProperty(localName = "plateform")
-
     private List<String> plateform = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "entertype")
-
-    @JacksonXmlProperty(localName = "entertype")
 
     private List<String> entertype = null;
 

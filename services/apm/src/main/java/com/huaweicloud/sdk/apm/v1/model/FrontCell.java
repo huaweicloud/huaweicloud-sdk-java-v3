@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.apm.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,63 +13,45 @@ public class FrontCell {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_type")
 
-    @JacksonXmlProperty(localName = "data_type")
-
     private String dataType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "function")
-
-    @JacksonXmlProperty(localName = "function")
 
     private String function;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trace")
 
-    @JacksonXmlProperty(localName = "trace")
-
     private Boolean trace;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "span")
-
-    @JacksonXmlProperty(localName = "span")
 
     private Boolean span;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "span_field")
 
-    @JacksonXmlProperty(localName = "span_field")
-
     private String spanField;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "precision")
-
-    @JacksonXmlProperty(localName = "precision")
 
     private Integer precision;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "text")
 
-    @JacksonXmlProperty(localName = "text")
-
     private String text;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "unit")
 
-    @JacksonXmlProperty(localName = "unit")
-
     private String unit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "visible")
-
-    @JacksonXmlProperty(localName = "visible")
 
     private Boolean visible;
 

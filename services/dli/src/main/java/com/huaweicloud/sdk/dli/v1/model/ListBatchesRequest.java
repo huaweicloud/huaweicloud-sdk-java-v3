@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,42 +13,45 @@ public class ListBatchesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cluster_name")
 
-    @JacksonXmlProperty(localName = "cluster_name")
-
     private String clusterName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "queue_name")
+    @JsonProperty(value = "end")
 
-    @JacksonXmlProperty(localName = "queue_name")
-
-    private String queueName;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "job-id")
-
-    @JacksonXmlProperty(localName = "job-id")
-
-    private String jobId;
+    private Long end;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "from")
 
-    @JacksonXmlProperty(localName = "from")
-
     private Integer from;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "job-id")
+
+    private String jobId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "order")
+
+    private String order;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "queue_name")
+
+    private String queueName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
 
-    @JacksonXmlProperty(localName = "size")
-
     private Integer size;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "state")
+    @JsonProperty(value = "start")
 
-    @JacksonXmlProperty(localName = "state")
+    private Long start;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "state")
 
     private String state;
 
@@ -70,38 +72,21 @@ public class ListBatchesRequest {
         this.clusterName = clusterName;
     }
 
-    public ListBatchesRequest withQueueName(String queueName) {
-        this.queueName = queueName;
+    public ListBatchesRequest withEnd(Long end) {
+        this.end = end;
         return this;
     }
 
     /**
-     * Get queueName
-     * @return queueName
+     * 用于查询开始时间在该时间点之前的作业。时间格式为unix时间戳，单位：毫秒。
+     * @return end
      */
-    public String getQueueName() {
-        return queueName;
+    public Long getEnd() {
+        return end;
     }
 
-    public void setQueueName(String queueName) {
-        this.queueName = queueName;
-    }
-
-    public ListBatchesRequest withJobId(String jobId) {
-        this.jobId = jobId;
-        return this;
-    }
-
-    /**
-     * Get jobId
-     * @return jobId
-     */
-    public String getJobId() {
-        return jobId;
-    }
-
-    public void setJobId(String jobId) {
-        this.jobId = jobId;
+    public void setEnd(Long end) {
+        this.end = end;
     }
 
     public ListBatchesRequest withFrom(Integer from) {
@@ -121,6 +106,57 @@ public class ListBatchesRequest {
         this.from = from;
     }
 
+    public ListBatchesRequest withJobId(String jobId) {
+        this.jobId = jobId;
+        return this;
+    }
+
+    /**
+     * Get jobId
+     * @return jobId
+     */
+    public String getJobId() {
+        return jobId;
+    }
+
+    public void setJobId(String jobId) {
+        this.jobId = jobId;
+    }
+
+    public ListBatchesRequest withOrder(String order) {
+        this.order = order;
+        return this;
+    }
+
+    /**
+     * 指定作业排序方式，默认为CREATE_TIME_DESC（作业提交时间降序），支持DURATION_DESC（作业运行时长降序）、DURATION_ASC（作业运行时长升序）、CREATE_TIME_DESC（作业提交时间降序）、CREATE_TIME_ASC（作业提交时间升序）四种排序方式。
+     * @return order
+     */
+    public String getOrder() {
+        return order;
+    }
+
+    public void setOrder(String order) {
+        this.order = order;
+    }
+
+    public ListBatchesRequest withQueueName(String queueName) {
+        this.queueName = queueName;
+        return this;
+    }
+
+    /**
+     * Get queueName
+     * @return queueName
+     */
+    public String getQueueName() {
+        return queueName;
+    }
+
+    public void setQueueName(String queueName) {
+        this.queueName = queueName;
+    }
+
     public ListBatchesRequest withSize(Integer size) {
         this.size = size;
         return this;
@@ -136,6 +172,23 @@ public class ListBatchesRequest {
 
     public void setSize(Integer size) {
         this.size = size;
+    }
+
+    public ListBatchesRequest withStart(Long start) {
+        this.start = start;
+        return this;
+    }
+
+    /**
+     * 用于查询开始时间在该时间点之后的作业。时间格式为unix时间戳，单位：毫秒。
+     * @return start
+     */
+    public Long getStart() {
+        return start;
+    }
+
+    public void setStart(Long start) {
+        this.start = start;
     }
 
     public ListBatchesRequest withState(String state) {
@@ -165,15 +218,18 @@ public class ListBatchesRequest {
         }
         ListBatchesRequest listBatchesRequest = (ListBatchesRequest) o;
         return Objects.equals(this.clusterName, listBatchesRequest.clusterName)
-            && Objects.equals(this.queueName, listBatchesRequest.queueName)
+            && Objects.equals(this.end, listBatchesRequest.end) && Objects.equals(this.from, listBatchesRequest.from)
             && Objects.equals(this.jobId, listBatchesRequest.jobId)
-            && Objects.equals(this.from, listBatchesRequest.from) && Objects.equals(this.size, listBatchesRequest.size)
+            && Objects.equals(this.order, listBatchesRequest.order)
+            && Objects.equals(this.queueName, listBatchesRequest.queueName)
+            && Objects.equals(this.size, listBatchesRequest.size)
+            && Objects.equals(this.start, listBatchesRequest.start)
             && Objects.equals(this.state, listBatchesRequest.state);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clusterName, queueName, jobId, from, size, state);
+        return Objects.hash(clusterName, end, from, jobId, order, queueName, size, start, state);
     }
 
     @Override
@@ -181,10 +237,13 @@ public class ListBatchesRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListBatchesRequest {\n");
         sb.append("    clusterName: ").append(toIndentedString(clusterName)).append("\n");
-        sb.append("    queueName: ").append(toIndentedString(queueName)).append("\n");
-        sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
+        sb.append("    end: ").append(toIndentedString(end)).append("\n");
         sb.append("    from: ").append(toIndentedString(from)).append("\n");
+        sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
+        sb.append("    order: ").append(toIndentedString(order)).append("\n");
+        sb.append("    queueName: ").append(toIndentedString(queueName)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
+        sb.append("    start: ").append(toIndentedString(start)).append("\n");
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
         sb.append("}");
         return sb.toString();

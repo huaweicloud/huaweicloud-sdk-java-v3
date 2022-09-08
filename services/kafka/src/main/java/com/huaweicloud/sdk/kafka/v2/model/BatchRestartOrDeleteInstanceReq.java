@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,8 +20,6 @@ public class BatchRestartOrDeleteInstanceReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instances")
-
-    @JacksonXmlProperty(localName = "instances")
 
     private List<String> instances = null;
 
@@ -105,8 +102,6 @@ public class BatchRestartOrDeleteInstanceReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "action")
-
-    @JacksonXmlProperty(localName = "action")
 
     private ActionEnum action;
 
@@ -195,8 +190,6 @@ public class BatchRestartOrDeleteInstanceReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "all_failure")
-
-    @JacksonXmlProperty(localName = "all_failure")
 
     private AllFailureEnum allFailure;
 

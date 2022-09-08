@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -96,8 +95,6 @@ public class SourceOrArtifact {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "storage")
 
-    @JacksonXmlProperty(localName = "storage")
-
     private StorageEnum storage;
 
     /**
@@ -174,49 +171,35 @@ public class SourceOrArtifact {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
-    @JacksonXmlProperty(localName = "type")
-
     private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "url")
-
-    @JacksonXmlProperty(localName = "url")
 
     private String url;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auth")
 
-    @JacksonXmlProperty(localName = "auth")
-
     private String auth;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "repo_type")
-
-    @JacksonXmlProperty(localName = "repo_type")
 
     private SourceRepoType repoType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "repo_url")
 
-    @JacksonXmlProperty(localName = "repo_url")
-
     private String repoUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "repo_ref")
 
-    @JacksonXmlProperty(localName = "repo_ref")
-
     private String repoRef;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "repo_auth")
-
-    @JacksonXmlProperty(localName = "repo_auth")
 
     private String repoAuth;
 

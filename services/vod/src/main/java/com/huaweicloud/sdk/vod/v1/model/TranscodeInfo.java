@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.vod.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,28 +16,20 @@ public class TranscodeInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template_group_name")
 
-    @JacksonXmlProperty(localName = "template_group_name")
-
     private String templateGroupName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "output")
-
-    @JacksonXmlProperty(localName = "output")
 
     private List<Output> output = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "exec_desc")
 
-    @JacksonXmlProperty(localName = "exec_desc")
-
     private String execDesc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "transcode_status")
-
-    @JacksonXmlProperty(localName = "transcode_status")
 
     private String transcodeStatus;
 

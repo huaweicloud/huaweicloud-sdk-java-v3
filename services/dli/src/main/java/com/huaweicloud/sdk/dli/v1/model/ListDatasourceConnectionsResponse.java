@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -18,28 +17,20 @@ public class ListDatasourceConnectionsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_success")
 
-    @JacksonXmlProperty(localName = "is_success")
-
     private Boolean isSuccess;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "message")
-
-    @JacksonXmlProperty(localName = "message")
 
     private String message;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "connections")
 
-    @JacksonXmlProperty(localName = "connections")
-
-    private List<ShowDatasourceConnectionResps> connections = null;
+    private List<ShowDatasourceConnectionResp> connections = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "count")
-
-    @JacksonXmlProperty(localName = "count")
 
     private Integer count;
 
@@ -77,12 +68,12 @@ public class ListDatasourceConnectionsResponse extends SdkResponse {
         this.message = message;
     }
 
-    public ListDatasourceConnectionsResponse withConnections(List<ShowDatasourceConnectionResps> connections) {
+    public ListDatasourceConnectionsResponse withConnections(List<ShowDatasourceConnectionResp> connections) {
         this.connections = connections;
         return this;
     }
 
-    public ListDatasourceConnectionsResponse addConnectionsItem(ShowDatasourceConnectionResps connectionsItem) {
+    public ListDatasourceConnectionsResponse addConnectionsItem(ShowDatasourceConnectionResp connectionsItem) {
         if (this.connections == null) {
             this.connections = new ArrayList<>();
         }
@@ -91,7 +82,7 @@ public class ListDatasourceConnectionsResponse extends SdkResponse {
     }
 
     public ListDatasourceConnectionsResponse withConnections(
-        Consumer<List<ShowDatasourceConnectionResps>> connectionsSetter) {
+        Consumer<List<ShowDatasourceConnectionResp>> connectionsSetter) {
         if (this.connections == null) {
             this.connections = new ArrayList<>();
         }
@@ -103,11 +94,11 @@ public class ListDatasourceConnectionsResponse extends SdkResponse {
      * 跨源连接信息列表。
      * @return connections
      */
-    public List<ShowDatasourceConnectionResps> getConnections() {
+    public List<ShowDatasourceConnectionResp> getConnections() {
         return connections;
     }
 
-    public void setConnections(List<ShowDatasourceConnectionResps> connections) {
+    public void setConnections(List<ShowDatasourceConnectionResp> connections) {
         this.connections = connections;
     }
 

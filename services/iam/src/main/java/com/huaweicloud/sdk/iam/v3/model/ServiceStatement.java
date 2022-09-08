@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,8 +20,6 @@ public class ServiceStatement {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "Action")
-
-    @JacksonXmlProperty(localName = "Action")
 
     private List<String> action = null;
 
@@ -106,21 +103,15 @@ public class ServiceStatement {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "Effect")
 
-    @JacksonXmlProperty(localName = "Effect")
-
     private EffectEnum effect;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "Condition")
 
-    @JacksonXmlProperty(localName = "Condition")
-
     private Map<String, Map<String, List<String>>> condition = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "Resource")
-
-    @JacksonXmlProperty(localName = "Resource")
 
     private List<String> resource = null;
 

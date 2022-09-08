@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.roma.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,21 +16,15 @@ public class ProjectVpcSync {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_channel_id")
 
-    @JacksonXmlProperty(localName = "vpc_channel_id")
-
     private String vpcChannelId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_ids")
 
-    @JacksonXmlProperty(localName = "instance_ids")
-
     private List<String> instanceIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "force_sync")
-
-    @JacksonXmlProperty(localName = "force_sync")
 
     private Boolean forceSync;
 

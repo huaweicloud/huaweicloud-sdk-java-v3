@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,8 +20,6 @@ public class MixParam {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "room_id")
-
-    @JacksonXmlProperty(localName = "room_id")
 
     private String roomId;
 
@@ -118,56 +115,40 @@ public class MixParam {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "encode_template")
 
-    @JacksonXmlProperty(localName = "encode_template")
-
     private EncodeTemplateEnum encodeTemplate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_idle_time")
-
-    @JacksonXmlProperty(localName = "max_idle_time")
 
     private Integer maxIdleTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "layout_template")
 
-    @JacksonXmlProperty(localName = "layout_template")
-
     private String layoutTemplate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "default_user_background_image")
-
-    @JacksonXmlProperty(localName = "default_user_background_image")
 
     private String defaultUserBackgroundImage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "screen_background_image")
 
-    @JacksonXmlProperty(localName = "screen_background_image")
-
     private String screenBackgroundImage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "background_image")
-
-    @JacksonXmlProperty(localName = "background_image")
 
     private String backgroundImage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "layout_panes")
 
-    @JacksonXmlProperty(localName = "layout_panes")
-
     private List<MixLayoutPane> layoutPanes = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_background_images")
-
-    @JacksonXmlProperty(localName = "user_background_images")
 
     private List<MixUserBackgroundImage> userBackgroundImages = null;
 

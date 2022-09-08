@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.rds.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,35 +13,25 @@ public class DssPoolInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "az_name")
 
-    @JacksonXmlProperty(localName = "az_name")
-
     private String azName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "free_capacity_gb")
-
-    @JacksonXmlProperty(localName = "free_capacity_gb")
 
     private String freeCapacityGb;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dsspool_volume_type")
 
-    @JacksonXmlProperty(localName = "dsspool_volume_type")
-
     private String dsspoolVolumeType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dsspool_id")
 
-    @JacksonXmlProperty(localName = "dsspool_id")
-
     private String dsspoolId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dsspool_status")
-
-    @JacksonXmlProperty(localName = "dsspool_status")
 
     private String dsspoolStatus;
 

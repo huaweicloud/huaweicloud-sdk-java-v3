@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -18,114 +17,82 @@ public class ShowBatchInfoResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "state")
-
-    @JacksonXmlProperty(localName = "state")
 
     private String state;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "appId")
 
-    @JacksonXmlProperty(localName = "appId")
-
     private List<String> appId = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log")
-
-    @JacksonXmlProperty(localName = "log")
 
     private List<String> log = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sc_type")
 
-    @JacksonXmlProperty(localName = "sc_type")
-
     private String scType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cluster_name")
-
-    @JacksonXmlProperty(localName = "cluster_name")
 
     private String clusterName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
-    @JacksonXmlProperty(localName = "create_time")
-
     private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
-
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "owner")
 
-    @JacksonXmlProperty(localName = "owner")
-
     private String owner;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "proxyUser")
-
-    @JacksonXmlProperty(localName = "proxyUser")
 
     private String proxyUser;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "kind")
 
-    @JacksonXmlProperty(localName = "kind")
-
     private String kind;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "queue")
 
-    @JacksonXmlProperty(localName = "queue")
-
     private String queue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "spark_version")
-
-    @JacksonXmlProperty(localName = "spark_version")
-
-    private String sparkVersion;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image")
-
-    @JacksonXmlProperty(localName = "image")
 
     private String image;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
 
-    @JacksonXmlProperty(localName = "update_time")
-
     private Long updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "feature")
 
-    @JacksonXmlProperty(localName = "feature")
-
     private String feature;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "spark_version")
+
+    private String sparkVersion;
 
     public ShowBatchInfoResponse withId(String id) {
         this.id = id;
@@ -363,23 +330,6 @@ public class ShowBatchInfoResponse extends SdkResponse {
         this.queue = queue;
     }
 
-    public ShowBatchInfoResponse withSparkVersion(String sparkVersion) {
-        this.sparkVersion = sparkVersion;
-        return this;
-    }
-
-    /**
-     * 作业使用spark组件的版本号，在“feature”为“basic”或“ai”时填写，若不填写，则使用默认的spark组件版本号2.3.2。
-     * @return sparkVersion
-     */
-    public String getSparkVersion() {
-        return sparkVersion;
-    }
-
-    public void setSparkVersion(String sparkVersion) {
-        this.sparkVersion = sparkVersion;
-    }
-
     public ShowBatchInfoResponse withImage(String image) {
         this.image = image;
         return this;
@@ -431,6 +381,23 @@ public class ShowBatchInfoResponse extends SdkResponse {
         this.feature = feature;
     }
 
+    public ShowBatchInfoResponse withSparkVersion(String sparkVersion) {
+        this.sparkVersion = sparkVersion;
+        return this;
+    }
+
+    /**
+     * 作业使用spark组件的版本号，在“feature”为“basic”或“ai”时填写，若不填写，则使用默认的spark组件版本号2.3.2。
+     * @return sparkVersion
+     */
+    public String getSparkVersion() {
+        return sparkVersion;
+    }
+
+    public void setSparkVersion(String sparkVersion) {
+        this.sparkVersion = sparkVersion;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -452,10 +419,10 @@ public class ShowBatchInfoResponse extends SdkResponse {
             && Objects.equals(this.proxyUser, showBatchInfoResponse.proxyUser)
             && Objects.equals(this.kind, showBatchInfoResponse.kind)
             && Objects.equals(this.queue, showBatchInfoResponse.queue)
-            && Objects.equals(this.sparkVersion, showBatchInfoResponse.sparkVersion)
             && Objects.equals(this.image, showBatchInfoResponse.image)
             && Objects.equals(this.updateTime, showBatchInfoResponse.updateTime)
-            && Objects.equals(this.feature, showBatchInfoResponse.feature);
+            && Objects.equals(this.feature, showBatchInfoResponse.feature)
+            && Objects.equals(this.sparkVersion, showBatchInfoResponse.sparkVersion);
     }
 
     @Override
@@ -472,10 +439,10 @@ public class ShowBatchInfoResponse extends SdkResponse {
             proxyUser,
             kind,
             queue,
-            sparkVersion,
             image,
             updateTime,
-            feature);
+            feature,
+            sparkVersion);
     }
 
     @Override
@@ -494,10 +461,10 @@ public class ShowBatchInfoResponse extends SdkResponse {
         sb.append("    proxyUser: ").append(toIndentedString(proxyUser)).append("\n");
         sb.append("    kind: ").append(toIndentedString(kind)).append("\n");
         sb.append("    queue: ").append(toIndentedString(queue)).append("\n");
-        sb.append("    sparkVersion: ").append(toIndentedString(sparkVersion)).append("\n");
         sb.append("    image: ").append(toIndentedString(image)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    feature: ").append(toIndentedString(feature)).append("\n");
+        sb.append("    sparkVersion: ").append(toIndentedString(sparkVersion)).append("\n");
         sb.append("}");
         return sb.toString();
     }

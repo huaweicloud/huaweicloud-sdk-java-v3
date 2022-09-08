@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.mpc.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,21 +13,15 @@ public class RemuxOutputParam {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "format")
 
-    @JacksonXmlProperty(localName = "format")
-
     private String format;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "segment_duration")
 
-    @JacksonXmlProperty(localName = "segment_duration")
-
     private Integer segmentDuration;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remove_meta")
-
-    @JacksonXmlProperty(localName = "remove_meta")
 
     private Boolean removeMeta;
 

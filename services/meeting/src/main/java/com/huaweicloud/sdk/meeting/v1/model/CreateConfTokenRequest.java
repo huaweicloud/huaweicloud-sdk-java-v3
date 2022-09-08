@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,35 +13,25 @@ public class CreateConfTokenRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "conferenceID")
 
-    @JacksonXmlProperty(localName = "conferenceID")
-
     private String conferenceID;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Conference-Authorization")
-
-    @JacksonXmlProperty(localName = "X-Conference-Authorization")
 
     private String xConferenceAuthorization;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Password")
 
-    @JacksonXmlProperty(localName = "X-Password")
-
     private String xPassword;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Login-Type")
 
-    @JacksonXmlProperty(localName = "X-Login-Type")
-
     private Integer xLoginType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Nonce")
-
-    @JacksonXmlProperty(localName = "X-Nonce")
 
     private String xNonce;
 

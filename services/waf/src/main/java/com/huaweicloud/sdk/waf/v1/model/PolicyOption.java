@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.waf.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,126 +13,90 @@ public class PolicyOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "webattack")
 
-    @JacksonXmlProperty(localName = "webattack")
-
     private Boolean webattack;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "common")
-
-    @JacksonXmlProperty(localName = "common")
 
     private Boolean common;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "crawler")
 
-    @JacksonXmlProperty(localName = "crawler")
-
     private Boolean crawler;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "crawler_engine")
-
-    @JacksonXmlProperty(localName = "crawler_engine")
 
     private Boolean crawlerEngine;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "crawler_scanner")
 
-    @JacksonXmlProperty(localName = "crawler_scanner")
-
     private Boolean crawlerScanner;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "crawler_script")
-
-    @JacksonXmlProperty(localName = "crawler_script")
 
     private Boolean crawlerScript;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "crawler_other")
 
-    @JacksonXmlProperty(localName = "crawler_other")
-
     private Boolean crawlerOther;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "webshell")
-
-    @JacksonXmlProperty(localName = "webshell")
 
     private Boolean webshell;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cc")
 
-    @JacksonXmlProperty(localName = "cc")
-
     private Boolean cc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "custom")
-
-    @JacksonXmlProperty(localName = "custom")
 
     private Boolean custom;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "whiteblackip")
 
-    @JacksonXmlProperty(localName = "whiteblackip")
-
     private Boolean whiteblackip;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "geoip")
-
-    @JacksonXmlProperty(localName = "geoip")
 
     private Boolean geoip;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ignore")
 
-    @JacksonXmlProperty(localName = "ignore")
-
     private Boolean ignore;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "privacy")
-
-    @JacksonXmlProperty(localName = "privacy")
 
     private Boolean privacy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "antitamper")
 
-    @JacksonXmlProperty(localName = "antitamper")
-
     private Boolean antitamper;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "antileakage")
-
-    @JacksonXmlProperty(localName = "antileakage")
 
     private Boolean antileakage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bot_enable")
 
-    @JacksonXmlProperty(localName = "bot_enable")
-
     private Boolean botEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "modulex_enabled")
-
-    @JacksonXmlProperty(localName = "modulex_enabled")
 
     private Boolean modulexEnabled;
 

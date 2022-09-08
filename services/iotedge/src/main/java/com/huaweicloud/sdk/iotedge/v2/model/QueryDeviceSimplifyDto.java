@@ -8,8 +8,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -23,7 +21,6 @@ public class QueryDeviceSimplifyDto  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="device_id")
     
-    @JacksonXmlProperty(localName = "device_id")
     
     private String deviceId;
 
@@ -31,7 +28,6 @@ public class QueryDeviceSimplifyDto  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_id")
     
-    @JacksonXmlProperty(localName = "node_id")
     
     private String nodeId;
 
@@ -39,7 +35,6 @@ public class QueryDeviceSimplifyDto  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="gateway_id")
     
-    @JacksonXmlProperty(localName = "gateway_id")
     
     private String gatewayId;
 
@@ -47,7 +42,6 @@ public class QueryDeviceSimplifyDto  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="device_name")
     
-    @JacksonXmlProperty(localName = "device_name")
     
     private String deviceName;
 
@@ -55,7 +49,6 @@ public class QueryDeviceSimplifyDto  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="protocol_type")
     
-    @JacksonXmlProperty(localName = "protocol_type")
     
     private String protocolType;
 
@@ -63,7 +56,6 @@ public class QueryDeviceSimplifyDto  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="product_name")
     
-    @JacksonXmlProperty(localName = "product_name")
     
     private String productName;
 
@@ -71,7 +63,6 @@ public class QueryDeviceSimplifyDto  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="product_id")
     
-    @JacksonXmlProperty(localName = "product_id")
     
     private String productId;
 

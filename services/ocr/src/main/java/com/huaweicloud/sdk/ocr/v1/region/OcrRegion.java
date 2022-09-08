@@ -29,6 +29,10 @@ public class OcrRegion {
     public static final Region AP_SOUTHEAST_3 =
         new Region("ap-southeast-3", "https://ocr.ap-southeast-3.myhuaweicloud.com");
 
+    public static final Region LA_SOUTH_2 = new Region("la-south-2", "https://ocr.la-south-2.myhuaweicloud.com");
+
+    public static final Region AF_SOUTH_1 = new Region("af-south-1", "https://ocr.af-south-1.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("OCR");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -42,6 +46,8 @@ public class OcrRegion {
         map.put("ap-southeast-2", AP_SOUTHEAST_2);
         map.put("ap-southeast-1", AP_SOUTHEAST_1);
         map.put("ap-southeast-3", AP_SOUTHEAST_3);
+        map.put("la-south-2", LA_SOUTH_2);
+        map.put("af-south-1", AF_SOUTH_1);
         return Collections.unmodifiableMap(map);
     }
 

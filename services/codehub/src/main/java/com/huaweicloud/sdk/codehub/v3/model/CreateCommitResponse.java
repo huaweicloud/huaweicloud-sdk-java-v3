@@ -2,11 +2,8 @@ package com.huaweicloud.sdk.codehub.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -18,21 +15,15 @@ public class CreateCommitResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error")
 
-    @JacksonXmlProperty(localName = "error")
-
     private Error error;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "result")
 
-    @JacksonXmlProperty(localName = "result")
-
-    private List<CreateCommitResponseBody> result = null;
+    private CreateCommitResponseBody result;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
-
-    @JacksonXmlProperty(localName = "status")
 
     private String status;
 
@@ -62,36 +53,29 @@ public class CreateCommitResponse extends SdkResponse {
         this.error = error;
     }
 
-    public CreateCommitResponse withResult(List<CreateCommitResponseBody> result) {
+    public CreateCommitResponse withResult(CreateCommitResponseBody result) {
         this.result = result;
         return this;
     }
 
-    public CreateCommitResponse addResultItem(CreateCommitResponseBody resultItem) {
+    public CreateCommitResponse withResult(Consumer<CreateCommitResponseBody> resultSetter) {
         if (this.result == null) {
-            this.result = new ArrayList<>();
+            this.result = new CreateCommitResponseBody();
+            resultSetter.accept(this.result);
         }
-        this.result.add(resultItem);
-        return this;
-    }
 
-    public CreateCommitResponse withResult(Consumer<List<CreateCommitResponseBody>> resultSetter) {
-        if (this.result == null) {
-            this.result = new ArrayList<>();
-        }
-        resultSetter.accept(this.result);
         return this;
     }
 
     /**
-     * 差异列表
+     * Get result
      * @return result
      */
-    public List<CreateCommitResponseBody> getResult() {
+    public CreateCommitResponseBody getResult() {
         return result;
     }
 
-    public void setResult(List<CreateCommitResponseBody> result) {
+    public void setResult(CreateCommitResponseBody result) {
         this.result = result;
     }
 

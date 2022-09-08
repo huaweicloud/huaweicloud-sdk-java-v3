@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.css.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,154 +14,110 @@ public class ListSnapshotBackupsResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created")
 
-    @JacksonXmlProperty(localName = "created")
-
     private String created;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "datastore")
-
-    @JacksonXmlProperty(localName = "datastore")
 
     private ListSnapshotBackupsDatastoreResp datastore;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
-    @JacksonXmlProperty(localName = "description")
-
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
-
-    @JacksonXmlProperty(localName = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "clusterId")
 
-    @JacksonXmlProperty(localName = "clusterId")
-
     private String clusterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "clusterName")
-
-    @JacksonXmlProperty(localName = "clusterName")
 
     private String clusterName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
-    @JacksonXmlProperty(localName = "name")
-
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
-
-    @JacksonXmlProperty(localName = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated")
 
-    @JacksonXmlProperty(localName = "updated")
-
     private String updated;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "backupType")
-
-    @JacksonXmlProperty(localName = "backupType")
 
     private String backupType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "backupMethod")
 
-    @JacksonXmlProperty(localName = "backupMethod")
-
     private String backupMethod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "backupExpectedStartTime")
-
-    @JacksonXmlProperty(localName = "backupExpectedStartTime")
 
     private String backupExpectedStartTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "backupKeepDay")
 
-    @JacksonXmlProperty(localName = "backupKeepDay")
-
     private Integer backupKeepDay;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "backupPeriod")
-
-    @JacksonXmlProperty(localName = "backupPeriod")
 
     private String backupPeriod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "indices")
 
-    @JacksonXmlProperty(localName = "indices")
-
     private String indices;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "totalShards")
-
-    @JacksonXmlProperty(localName = "totalShards")
 
     private Integer totalShards;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "failedShards")
 
-    @JacksonXmlProperty(localName = "failedShards")
-
     private Integer failedShards;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
-
-    @JacksonXmlProperty(localName = "version")
 
     private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "restoreStatus")
 
-    @JacksonXmlProperty(localName = "restoreStatus")
-
     private String restoreStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "startTime")
-
-    @JacksonXmlProperty(localName = "startTime")
 
     private Long startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "endTime")
 
-    @JacksonXmlProperty(localName = "endTime")
-
     private Long endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bucketName")
-
-    @JacksonXmlProperty(localName = "bucketName")
 
     private String bucketName;
 

@@ -12,8 +12,6 @@ import com.huaweicloud.sdk.aom.v2.model.MetricItemInfo;
 import com.huaweicloud.sdk.aom.v2.model.ValueData;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -27,7 +25,6 @@ public class MetricDataItem  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="collect_time")
     
-    @JacksonXmlProperty(localName = "collect_time")
     
     private Long collectTime;
 
@@ -35,7 +32,6 @@ public class MetricDataItem  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metric")
     
-    @JacksonXmlProperty(localName = "metric")
     
     private MetricItemInfo metric;
 
@@ -43,7 +39,6 @@ public class MetricDataItem  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="values")
     
-    @JacksonXmlProperty(localName = "values")
     
     private List<ValueData> values = null;
     

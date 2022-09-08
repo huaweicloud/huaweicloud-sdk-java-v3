@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.hss.v5.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,217 +16,155 @@ public class EventManagementResponseInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_id")
 
-    @JacksonXmlProperty(localName = "event_id")
-
     private String eventId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_class_id")
-
-    @JacksonXmlProperty(localName = "event_class_id")
 
     private String eventClassId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_type")
 
-    @JacksonXmlProperty(localName = "event_type")
-
     private Integer eventType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_name")
-
-    @JacksonXmlProperty(localName = "event_name")
 
     private String eventName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "severity")
 
-    @JacksonXmlProperty(localName = "severity")
-
     private String severity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "container_name")
-
-    @JacksonXmlProperty(localName = "container_name")
 
     private String containerName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image_name")
 
-    @JacksonXmlProperty(localName = "image_name")
-
     private String imageName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_name")
-
-    @JacksonXmlProperty(localName = "host_name")
 
     private String hostName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_id")
 
-    @JacksonXmlProperty(localName = "host_id")
-
     private String hostId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "private_ip")
-
-    @JacksonXmlProperty(localName = "private_ip")
 
     private String privateIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "public_ip")
 
-    @JacksonXmlProperty(localName = "public_ip")
-
     private String publicIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "attack_phase")
-
-    @JacksonXmlProperty(localName = "attack_phase")
 
     private String attackPhase;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "attack_tag")
 
-    @JacksonXmlProperty(localName = "attack_tag")
-
     private String attackTag;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "occur_time")
-
-    @JacksonXmlProperty(localName = "occur_time")
 
     private Long occurTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "handle_time")
 
-    @JacksonXmlProperty(localName = "handle_time")
-
     private Long handleTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "handle_status")
-
-    @JacksonXmlProperty(localName = "handle_status")
 
     private String handleStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "handle_method")
 
-    @JacksonXmlProperty(localName = "handle_method")
-
     private String handleMethod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "handler")
-
-    @JacksonXmlProperty(localName = "handler")
 
     private String handler;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operate_accept_list")
 
-    @JacksonXmlProperty(localName = "operate_accept_list")
-
     private List<String> operateAcceptList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operate_detail_list")
-
-    @JacksonXmlProperty(localName = "operate_detail_list")
 
     private List<EventDetailResponseInfo> operateDetailList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "forensic_info")
 
-    @JacksonXmlProperty(localName = "forensic_info")
-
     private Object forensicInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_info")
-
-    @JacksonXmlProperty(localName = "resource_info")
 
     private EventResourceResponseInfo resourceInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "geo_info")
 
-    @JacksonXmlProperty(localName = "geo_info")
-
     private Object geoInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "malware_info")
-
-    @JacksonXmlProperty(localName = "malware_info")
 
     private Object malwareInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "network_info")
 
-    @JacksonXmlProperty(localName = "network_info")
-
     private Object networkInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_info")
-
-    @JacksonXmlProperty(localName = "app_info")
 
     private Object appInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "system_info")
 
-    @JacksonXmlProperty(localName = "system_info")
-
     private Object systemInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "recommendation")
-
-    @JacksonXmlProperty(localName = "recommendation")
 
     private String recommendation;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "process_info_list")
 
-    @JacksonXmlProperty(localName = "process_info_list")
-
     private List<EventProcessResponseInfo> processInfoList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_info_list")
 
-    @JacksonXmlProperty(localName = "user_info_list")
-
     private List<EventUserResponseInfo> userInfoList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_info_list")
-
-    @JacksonXmlProperty(localName = "file_info_list")
 
     private List<EventFileResponseInfo> fileInfoList = null;
 

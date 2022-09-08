@@ -2,12 +2,8 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * 查询所有队列的响应参数。
@@ -17,165 +13,99 @@ public class ListQueuesRespQueues {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "queue_id")
 
-    @JacksonXmlProperty(localName = "queue_id")
-
-    private String queueId;
+    private Long queueId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "queue_name")
-
-    @JacksonXmlProperty(localName = "queue_name")
 
     private String queueName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
-    @JacksonXmlProperty(localName = "description")
-
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "owner")
-
-    @JacksonXmlProperty(localName = "owner")
 
     private String owner;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
-    @JacksonXmlProperty(localName = "create_time")
-
     private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "queue_type")
-
-    @JacksonXmlProperty(localName = "queue_type")
 
     private String queueType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cu_count")
 
-    @JacksonXmlProperty(localName = "cu_count")
-
     private Integer cuCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "charging_mode")
-
-    @JacksonXmlProperty(localName = "charging_mode")
 
     private Integer chargingMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_id")
 
-    @JacksonXmlProperty(localName = "resource_id")
-
     private String resourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
-
-    @JacksonXmlProperty(localName = "enterprise_project_id")
 
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cidr_in_vpc")
 
-    @JacksonXmlProperty(localName = "cidr_in_vpc")
-
     private String cidrInVpc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cidr_in_mgntsubnet")
-
-    @JacksonXmlProperty(localName = "cidr_in_mgntsubnet")
 
     private String cidrInMgntsubnet;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cidr_in_subnet")
 
-    @JacksonXmlProperty(localName = "cidr_in_subnet")
-
     private String cidrInSubnet;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_mode")
-
-    @JacksonXmlProperty(localName = "resource_mode")
 
     private Integer resourceMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "platform")
 
-    @JacksonXmlProperty(localName = "platform")
-
     private String platform;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_restarting")
-
-    @JacksonXmlProperty(localName = "is_restarting")
 
     private Boolean isRestarting;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "labels")
 
-    @JacksonXmlProperty(localName = "labels")
-
-    private List<String> labels = null;
+    private String labels;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "feature")
 
-    @JacksonXmlProperty(localName = "feature")
-
     private String feature;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "queue_resource_type")
+    @JsonProperty(value = "resource_type")
 
-    @JacksonXmlProperty(localName = "queue_resource_type")
+    private String resourceType;
 
-    private String queueResourceType;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "cu_spec")
-
-    @JacksonXmlProperty(localName = "cu_spec")
-
-    private Long cuSpec;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "cu_scale_out_limit")
-
-    @JacksonXmlProperty(localName = "cu_scale_out_limit")
-
-    private Long cuScaleOutLimit;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "cu_scale_in_limit")
-
-    @JacksonXmlProperty(localName = "cu_scale_in_limit")
-
-    private Long cuScaleInLimit;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "elastic_resource_pool_name")
-
-    @JacksonXmlProperty(localName = "elastic_resource_pool_name")
-
-    private String elasticResourcePoolName;
-
-    public ListQueuesRespQueues withQueueId(String queueId) {
+    public ListQueuesRespQueues withQueueId(Long queueId) {
         this.queueId = queueId;
         return this;
     }
@@ -184,11 +114,11 @@ public class ListQueuesRespQueues {
      * 队列ID。
      * @return queueId
      */
-    public String getQueueId() {
+    public Long getQueueId() {
         return queueId;
     }
 
-    public void setQueueId(String queueId) {
+    public void setQueueId(Long queueId) {
         this.queueId = queueId;
     }
 
@@ -447,24 +377,8 @@ public class ListQueuesRespQueues {
         this.isRestarting = isRestarting;
     }
 
-    public ListQueuesRespQueues withLabels(List<String> labels) {
+    public ListQueuesRespQueues withLabels(String labels) {
         this.labels = labels;
-        return this;
-    }
-
-    public ListQueuesRespQueues addLabelsItem(String labelsItem) {
-        if (this.labels == null) {
-            this.labels = new ArrayList<>();
-        }
-        this.labels.add(labelsItem);
-        return this;
-    }
-
-    public ListQueuesRespQueues withLabels(Consumer<List<String>> labelsSetter) {
-        if (this.labels == null) {
-            this.labels = new ArrayList<>();
-        }
-        labelsSetter.accept(this.labels);
         return this;
     }
 
@@ -472,11 +386,11 @@ public class ListQueuesRespQueues {
      * 创建队列的标签信息，目前包括队列是否跨AZ的标签信息的Json字符串。目前只支持值为“2”，即创建两个队列
      * @return labels
      */
-    public List<String> getLabels() {
+    public String getLabels() {
         return labels;
     }
 
-    public void setLabels(List<String> labels) {
+    public void setLabels(String labels) {
         this.labels = labels;
     }
 
@@ -497,89 +411,21 @@ public class ListQueuesRespQueues {
         this.feature = feature;
     }
 
-    public ListQueuesRespQueues withQueueResourceType(String queueResourceType) {
-        this.queueResourceType = queueResourceType;
+    public ListQueuesRespQueues withResourceType(String resourceType) {
+        this.resourceType = resourceType;
         return this;
     }
 
     /**
      * 队列所属资源类型。
-     * @return queueResourceType
+     * @return resourceType
      */
-    public String getQueueResourceType() {
-        return queueResourceType;
+    public String getResourceType() {
+        return resourceType;
     }
 
-    public void setQueueResourceType(String queueResourceType) {
-        this.queueResourceType = queueResourceType;
-    }
-
-    public ListQueuesRespQueues withCuSpec(Long cuSpec) {
-        this.cuSpec = cuSpec;
-        return this;
-    }
-
-    /**
-     * 队列的规格大小。对于包周期队列，表示包周期部分的CU值；对于按需队列，表示用户购买队列时的初始值。
-     * @return cuSpec
-     */
-    public Long getCuSpec() {
-        return cuSpec;
-    }
-
-    public void setCuSpec(Long cuSpec) {
-        this.cuSpec = cuSpec;
-    }
-
-    public ListQueuesRespQueues withCuScaleOutLimit(Long cuScaleOutLimit) {
-        this.cuScaleOutLimit = cuScaleOutLimit;
-        return this;
-    }
-
-    /**
-     * 当前队列弹性扩缩容的CU值上限。
-     * @return cuScaleOutLimit
-     */
-    public Long getCuScaleOutLimit() {
-        return cuScaleOutLimit;
-    }
-
-    public void setCuScaleOutLimit(Long cuScaleOutLimit) {
-        this.cuScaleOutLimit = cuScaleOutLimit;
-    }
-
-    public ListQueuesRespQueues withCuScaleInLimit(Long cuScaleInLimit) {
-        this.cuScaleInLimit = cuScaleInLimit;
-        return this;
-    }
-
-    /**
-     * 当前队列弹性扩缩容的CU值下限。
-     * @return cuScaleInLimit
-     */
-    public Long getCuScaleInLimit() {
-        return cuScaleInLimit;
-    }
-
-    public void setCuScaleInLimit(Long cuScaleInLimit) {
-        this.cuScaleInLimit = cuScaleInLimit;
-    }
-
-    public ListQueuesRespQueues withElasticResourcePoolName(String elasticResourcePoolName) {
-        this.elasticResourcePoolName = elasticResourcePoolName;
-        return this;
-    }
-
-    /**
-     * 弹性资源池名称。
-     * @return elasticResourcePoolName
-     */
-    public String getElasticResourcePoolName() {
-        return elasticResourcePoolName;
-    }
-
-    public void setElasticResourcePoolName(String elasticResourcePoolName) {
-        this.elasticResourcePoolName = elasticResourcePoolName;
+    public void setResourceType(String resourceType) {
+        this.resourceType = resourceType;
     }
 
     @Override
@@ -609,11 +455,7 @@ public class ListQueuesRespQueues {
             && Objects.equals(this.isRestarting, listQueuesRespQueues.isRestarting)
             && Objects.equals(this.labels, listQueuesRespQueues.labels)
             && Objects.equals(this.feature, listQueuesRespQueues.feature)
-            && Objects.equals(this.queueResourceType, listQueuesRespQueues.queueResourceType)
-            && Objects.equals(this.cuSpec, listQueuesRespQueues.cuSpec)
-            && Objects.equals(this.cuScaleOutLimit, listQueuesRespQueues.cuScaleOutLimit)
-            && Objects.equals(this.cuScaleInLimit, listQueuesRespQueues.cuScaleInLimit)
-            && Objects.equals(this.elasticResourcePoolName, listQueuesRespQueues.elasticResourcePoolName);
+            && Objects.equals(this.resourceType, listQueuesRespQueues.resourceType);
     }
 
     @Override
@@ -636,11 +478,7 @@ public class ListQueuesRespQueues {
             isRestarting,
             labels,
             feature,
-            queueResourceType,
-            cuSpec,
-            cuScaleOutLimit,
-            cuScaleInLimit,
-            elasticResourcePoolName);
+            resourceType);
     }
 
     @Override
@@ -665,11 +503,7 @@ public class ListQueuesRespQueues {
         sb.append("    isRestarting: ").append(toIndentedString(isRestarting)).append("\n");
         sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    feature: ").append(toIndentedString(feature)).append("\n");
-        sb.append("    queueResourceType: ").append(toIndentedString(queueResourceType)).append("\n");
-        sb.append("    cuSpec: ").append(toIndentedString(cuSpec)).append("\n");
-        sb.append("    cuScaleOutLimit: ").append(toIndentedString(cuScaleOutLimit)).append("\n");
-        sb.append("    cuScaleInLimit: ").append(toIndentedString(cuScaleInLimit)).append("\n");
-        sb.append("    elasticResourcePoolName: ").append(toIndentedString(elasticResourcePoolName)).append("\n");
+        sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

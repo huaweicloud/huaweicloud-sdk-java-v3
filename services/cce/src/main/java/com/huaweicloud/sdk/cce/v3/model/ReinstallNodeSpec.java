@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cce.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,63 +14,45 @@ public class ReinstallNodeSpec {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os")
 
-    @JacksonXmlProperty(localName = "os")
-
     private String os;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "login")
-
-    @JacksonXmlProperty(localName = "login")
 
     private Login login;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
-    @JacksonXmlProperty(localName = "name")
-
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "serverConfig")
-
-    @JacksonXmlProperty(localName = "serverConfig")
 
     private ReinstallServerConfig serverConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volumeConfig")
 
-    @JacksonXmlProperty(localName = "volumeConfig")
-
     private ReinstallVolumeConfig volumeConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "runtimeConfig")
-
-    @JacksonXmlProperty(localName = "runtimeConfig")
 
     private ReinstallRuntimeConfig runtimeConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "k8sOptions")
 
-    @JacksonXmlProperty(localName = "k8sOptions")
-
     private ReinstallK8sOptionsConfig k8sOptions;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lifecycle")
 
-    @JacksonXmlProperty(localName = "lifecycle")
-
     private NodeLifecycleConfig lifecycle;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extendParam")
-
-    @JacksonXmlProperty(localName = "extendParam")
 
     private ReinstallExtendParam extendParam;
 

@@ -2,45 +2,18 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
 /**
- * 创建全局变量
+ * 
  */
 public class UpdateGlobalValueReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "var_name")
-
-    @JacksonXmlProperty(localName = "var_name")
-
-    private String varName;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "var_value")
 
-    @JacksonXmlProperty(localName = "var_value")
-
     private String varValue;
-
-    public UpdateGlobalValueReq withVarName(String varName) {
-        this.varName = varName;
-        return this;
-    }
-
-    /**
-     * 变量名称
-     * @return varName
-     */
-    public String getVarName() {
-        return varName;
-    }
-
-    public void setVarName(String varName) {
-        this.varName = varName;
-    }
 
     public UpdateGlobalValueReq withVarValue(String varValue) {
         this.varValue = varValue;
@@ -48,7 +21,7 @@ public class UpdateGlobalValueReq {
     }
 
     /**
-     * 变量的值
+     * 变量值
      * @return varValue
      */
     public String getVarValue() {
@@ -68,20 +41,18 @@ public class UpdateGlobalValueReq {
             return false;
         }
         UpdateGlobalValueReq updateGlobalValueReq = (UpdateGlobalValueReq) o;
-        return Objects.equals(this.varName, updateGlobalValueReq.varName)
-            && Objects.equals(this.varValue, updateGlobalValueReq.varValue);
+        return Objects.equals(this.varValue, updateGlobalValueReq.varValue);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(varName, varValue);
+        return Objects.hash(varValue);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateGlobalValueReq {\n");
-        sb.append("    varName: ").append(toIndentedString(varName)).append("\n");
         sb.append("    varValue: ").append(toIndentedString(varValue)).append("\n");
         sb.append("}");
         return sb.toString();

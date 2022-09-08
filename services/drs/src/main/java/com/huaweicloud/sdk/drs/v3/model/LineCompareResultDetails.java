@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.drs.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,21 +16,15 @@ public class LineCompareResultDetails {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_db_name")
 
-    @JacksonXmlProperty(localName = "source_db_name")
-
     private String sourceDbName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "LineCompareDetail")
 
-    @JacksonXmlProperty(localName = "LineCompareDetail")
-
     private List<LineCompareDetail> lineCompareDetail = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "line_compare_detail_count")
-
-    @JacksonXmlProperty(localName = "line_compare_detail_count")
 
     private Integer lineCompareDetailCount;
 

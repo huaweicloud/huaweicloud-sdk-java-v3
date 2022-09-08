@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,77 +16,55 @@ public class QueryCorpVcResResultDTO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vmrPkgList")
 
-    @JacksonXmlProperty(localName = "vmrPkgList")
-
     private List<QueryVmrPkgResResultDTO> vmrPkgList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "te1080pHardCount")
-
-    @JacksonXmlProperty(localName = "te1080pHardCount")
 
     private Integer te1080pHardCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "te720pHardCount")
 
-    @JacksonXmlProperty(localName = "te720pHardCount")
-
     private Integer te720pHardCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "teSoftCount")
-
-    @JacksonXmlProperty(localName = "teSoftCount")
 
     private Integer teSoftCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "roomCount")
 
-    @JacksonXmlProperty(localName = "roomCount")
-
     private Integer roomCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "recordCapability")
-
-    @JacksonXmlProperty(localName = "recordCapability")
 
     private Integer recordCapability;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confCallCount")
 
-    @JacksonXmlProperty(localName = "confCallCount")
-
     private Integer confCallCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "liveCount")
-
-    @JacksonXmlProperty(localName = "liveCount")
 
     private Integer liveCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "thirdPartyHardCount")
 
-    @JacksonXmlProperty(localName = "thirdPartyHardCount")
-
     private Integer thirdPartyHardCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hwVisionCount")
 
-    @JacksonXmlProperty(localName = "hwVisionCount")
-
     private Integer hwVisionCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ideaHubCount")
-
-    @JacksonXmlProperty(localName = "ideaHubCount")
 
     private Integer ideaHubCount;
 

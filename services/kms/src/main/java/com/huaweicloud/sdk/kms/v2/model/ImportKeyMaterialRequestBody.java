@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.kms.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,42 +13,30 @@ public class ImportKeyMaterialRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key_id")
 
-    @JacksonXmlProperty(localName = "key_id")
-
     private String keyId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "import_token")
-
-    @JacksonXmlProperty(localName = "import_token")
 
     private String importToken;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "encrypted_key_material")
 
-    @JacksonXmlProperty(localName = "encrypted_key_material")
-
     private String encryptedKeyMaterial;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "encrypted_privatekey")
-
-    @JacksonXmlProperty(localName = "encrypted_privatekey")
 
     private String encryptedPrivatekey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expiration_time")
 
-    @JacksonXmlProperty(localName = "expiration_time")
-
     private Long expirationTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sequence")
-
-    @JacksonXmlProperty(localName = "sequence")
 
     private String sequence;
 

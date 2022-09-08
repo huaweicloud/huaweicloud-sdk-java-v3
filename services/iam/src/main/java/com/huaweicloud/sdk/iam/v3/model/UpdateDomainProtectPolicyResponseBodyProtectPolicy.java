@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.iam.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,28 +14,20 @@ public class UpdateDomainProtectPolicyResponseBodyProtectPolicy {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "allow_user")
 
-    @JacksonXmlProperty(localName = "allow_user")
-
     private AllowUserBody allowUser;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operation_protection")
-
-    @JacksonXmlProperty(localName = "operation_protection")
 
     private Boolean operationProtection;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "admin_check")
 
-    @JacksonXmlProperty(localName = "admin_check")
-
     private String adminCheck;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scene")
-
-    @JacksonXmlProperty(localName = "scene")
 
     private String scene;
 

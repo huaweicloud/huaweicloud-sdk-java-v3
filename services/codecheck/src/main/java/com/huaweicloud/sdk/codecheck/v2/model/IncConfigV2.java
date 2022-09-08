@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.codecheck.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,49 +13,35 @@ public class IncConfigV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parent_task_id")
 
-    @JacksonXmlProperty(localName = "parent_task_id")
-
     private String parentTaskId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "git_source_branch")
-
-    @JacksonXmlProperty(localName = "git_source_branch")
 
     private String gitSourceBranch;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "git_target_branch")
 
-    @JacksonXmlProperty(localName = "git_target_branch")
-
     private String gitTargetBranch;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "merge_id")
-
-    @JacksonXmlProperty(localName = "merge_id")
 
     private String mergeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_type")
 
-    @JacksonXmlProperty(localName = "event_type")
-
     private String eventType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "action")
 
-    @JacksonXmlProperty(localName = "action")
-
     private String action;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "title")
-
-    @JacksonXmlProperty(localName = "title")
 
     private String title;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,49 +13,35 @@ public class ConfCtlRecordInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operateTime")
 
-    @JacksonXmlProperty(localName = "operateTime")
-
     private Long operateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operateSource")
-
-    @JacksonXmlProperty(localName = "operateSource")
 
     private String operateSource;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operator")
 
-    @JacksonXmlProperty(localName = "operator")
-
     private String operator;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operateCode")
-
-    @JacksonXmlProperty(localName = "operateCode")
 
     private String operateCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operationObject")
 
-    @JacksonXmlProperty(localName = "operationObject")
-
     private String operationObject;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operateResult")
 
-    @JacksonXmlProperty(localName = "operateResult")
-
     private String operateResult;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "detail")
-
-    @JacksonXmlProperty(localName = "detail")
 
     private String detail;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.ief.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,14 +14,10 @@ public class Resources {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limits")
 
-    @JacksonXmlProperty(localName = "limits")
-
     private LimitsRequests limits;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "requests")
-
-    @JacksonXmlProperty(localName = "requests")
 
     private LimitsRequests requests;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.ces.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,105 +16,75 @@ public class ListAlarmResponseAlarms {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alarm_id")
 
-    @JacksonXmlProperty(localName = "alarm_id")
-
     private String alarmId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
-
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
-    @JacksonXmlProperty(localName = "description")
-
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "namespace")
-
-    @JacksonXmlProperty(localName = "namespace")
 
     private String namespace;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policies")
 
-    @JacksonXmlProperty(localName = "policies")
-
     private List<Policy> policies = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resources")
-
-    @JacksonXmlProperty(localName = "resources")
 
     private List<ResourcesInListResp> resources = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
-    @JacksonXmlProperty(localName = "type")
-
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enabled")
-
-    @JacksonXmlProperty(localName = "enabled")
 
     private Boolean enabled;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "notification_enabled")
 
-    @JacksonXmlProperty(localName = "notification_enabled")
-
     private Boolean notificationEnabled;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alarm_notifications")
-
-    @JacksonXmlProperty(localName = "alarm_notifications")
 
     private List<Notification> alarmNotifications = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ok_notifications")
 
-    @JacksonXmlProperty(localName = "ok_notifications")
-
     private List<Notification> okNotifications = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "notification_begin_time")
-
-    @JacksonXmlProperty(localName = "notification_begin_time")
 
     private String notificationBeginTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "notification_end_time")
 
-    @JacksonXmlProperty(localName = "notification_end_time")
-
     private String notificationEndTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
-    @JacksonXmlProperty(localName = "enterprise_project_id")
-
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alarm_template_id")
-
-    @JacksonXmlProperty(localName = "alarm_template_id")
 
     private String alarmTemplateId;
 

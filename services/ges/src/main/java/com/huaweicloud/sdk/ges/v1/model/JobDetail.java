@@ -13,8 +13,6 @@ import com.huaweicloud.sdk.ges.v1.model.SchemaPath;
 import com.huaweicloud.sdk.ges.v1.model.VertexsetPath;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -28,7 +26,6 @@ public class JobDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="schemaPath")
     
-    @JacksonXmlProperty(localName = "schemaPath")
     
     private List<SchemaPath> schemaPath = null;
     
@@ -36,7 +33,6 @@ public class JobDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edgesetPath")
     
-    @JacksonXmlProperty(localName = "edgesetPath")
     
     private List<EdgesetPath> edgesetPath = null;
     
@@ -44,7 +40,6 @@ public class JobDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vertexsetPath")
     
-    @JacksonXmlProperty(localName = "vertexsetPath")
     
     private List<VertexsetPath> vertexsetPath = null;
     

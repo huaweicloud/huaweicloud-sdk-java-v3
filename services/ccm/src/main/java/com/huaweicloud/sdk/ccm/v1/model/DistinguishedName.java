@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.ccm.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,42 +13,30 @@ public class DistinguishedName {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "common_name")
 
-    @JacksonXmlProperty(localName = "common_name")
-
     private String commonName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "country")
-
-    @JacksonXmlProperty(localName = "country")
 
     private String country;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "state")
 
-    @JacksonXmlProperty(localName = "state")
-
     private String state;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "locality")
-
-    @JacksonXmlProperty(localName = "locality")
 
     private String locality;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "organization")
 
-    @JacksonXmlProperty(localName = "organization")
-
     private String organization;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "organizational_unit")
-
-    @JacksonXmlProperty(localName = "organizational_unit")
 
     private String organizationalUnit;
 

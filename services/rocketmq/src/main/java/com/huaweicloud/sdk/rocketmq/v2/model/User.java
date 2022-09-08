@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,28 +21,20 @@ public class User {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "access_key")
 
-    @JacksonXmlProperty(localName = "access_key")
-
     private String accessKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "secret_key")
-
-    @JacksonXmlProperty(localName = "secret_key")
 
     private String secretKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "white_remote_address")
 
-    @JacksonXmlProperty(localName = "white_remote_address")
-
     private String whiteRemoteAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "admin")
-
-    @JacksonXmlProperty(localName = "admin")
 
     private Boolean admin;
 
@@ -139,8 +130,6 @@ public class User {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "default_topic_perm")
 
-    @JacksonXmlProperty(localName = "default_topic_perm")
-
     private DefaultTopicPermEnum defaultTopicPerm;
 
     /**
@@ -235,21 +224,15 @@ public class User {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "default_group_perm")
 
-    @JacksonXmlProperty(localName = "default_group_perm")
-
     private DefaultGroupPermEnum defaultGroupPerm;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "topic_perms")
 
-    @JacksonXmlProperty(localName = "topic_perms")
-
     private List<UserTopicPerms> topicPerms = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_perms")
-
-    @JacksonXmlProperty(localName = "group_perms")
 
     private List<UserGroupPerms> groupPerms = null;
 

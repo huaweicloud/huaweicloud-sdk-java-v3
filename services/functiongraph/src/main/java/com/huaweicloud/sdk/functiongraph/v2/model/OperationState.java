@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -99,35 +98,25 @@ public class OperationState {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "action_mode")
 
-    @JacksonXmlProperty(localName = "action_mode")
-
     private ActionModeEnum actionMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "actions")
-
-    @JacksonXmlProperty(localName = "actions")
 
     private List<Action> actions = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "on_errors")
 
-    @JacksonXmlProperty(localName = "on_errors")
-
     private List<OnError> onErrors = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
-
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
@@ -217,35 +206,25 @@ public class OperationState {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
-    @JacksonXmlProperty(localName = "type")
-
     private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end")
-
-    @JacksonXmlProperty(localName = "end")
 
     private Boolean end;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "transition")
 
-    @JacksonXmlProperty(localName = "transition")
-
     private String transition;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "state_data_filter")
 
-    @JacksonXmlProperty(localName = "state_data_filter")
-
     private StateDataFilter stateDataFilter;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "duration")
-
-    @JacksonXmlProperty(localName = "duration")
 
     private Long duration;
 

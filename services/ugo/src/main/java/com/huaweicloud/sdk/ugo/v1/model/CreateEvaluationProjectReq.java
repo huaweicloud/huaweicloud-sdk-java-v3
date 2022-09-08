@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.ugo.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,28 +14,20 @@ public class CreateEvaluationProjectReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "evaluation_project_name")
 
-    @JacksonXmlProperty(localName = "evaluation_project_name")
-
     private String evaluationProjectName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_db_info")
-
-    @JacksonXmlProperty(localName = "source_db_info")
 
     private SourceDBInfo sourceDbInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "schemas_info")
 
-    @JacksonXmlProperty(localName = "schemas_info")
-
     private SchemaInfo schemasInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "objects_type_info")
-
-    @JacksonXmlProperty(localName = "objects_type_info")
 
     private ObjectTypeInfo objectsTypeInfo;
 

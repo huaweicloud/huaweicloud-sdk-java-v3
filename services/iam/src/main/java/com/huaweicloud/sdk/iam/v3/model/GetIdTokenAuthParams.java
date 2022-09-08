@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.iam.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,14 +14,10 @@ public class GetIdTokenAuthParams {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id_token")
 
-    @JacksonXmlProperty(localName = "id_token")
-
     private GetIdTokenIdTokenBody idToken;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scope")
-
-    @JacksonXmlProperty(localName = "scope")
 
     private GetIdTokenIdScopeBody scope;
 

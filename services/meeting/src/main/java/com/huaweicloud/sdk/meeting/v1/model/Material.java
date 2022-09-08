@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,49 +13,35 @@ public class Material {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lastUpdatedBy")
-
-    @JacksonXmlProperty(localName = "lastUpdatedBy")
 
     private String lastUpdatedBy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updateTime")
 
-    @JacksonXmlProperty(localName = "updateTime")
-
     private Long updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "materialName")
-
-    @JacksonXmlProperty(localName = "materialName")
 
     private String materialName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "materialResolution")
 
-    @JacksonXmlProperty(localName = "materialResolution")
-
     private String materialResolution;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "materialSizeStr")
 
-    @JacksonXmlProperty(localName = "materialSizeStr")
-
     private String materialSizeStr;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "filePath")
-
-    @JacksonXmlProperty(localName = "filePath")
 
     private String filePath;
 

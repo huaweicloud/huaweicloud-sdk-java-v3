@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.hss.v5.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -18,35 +17,25 @@ public class ShowCheckRuleDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
-    @JacksonXmlProperty(localName = "description")
-
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "reference")
-
-    @JacksonXmlProperty(localName = "reference")
 
     private String reference;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "audit")
 
-    @JacksonXmlProperty(localName = "audit")
-
     private String audit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remediation")
 
-    @JacksonXmlProperty(localName = "remediation")
-
     private String remediation;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "check_info_list")
-
-    @JacksonXmlProperty(localName = "check_info_list")
 
     private List<CheckRuleCheckCaseResponseInfo> checkInfoList = null;
 

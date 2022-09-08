@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.codehub.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,70 +13,50 @@ public class ShowCommitsByRepoIdRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "author")
 
-    @JacksonXmlProperty(localName = "author")
-
     private String author;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "begin_date")
-
-    @JacksonXmlProperty(localName = "begin_date")
 
     private String beginDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_date")
 
-    @JacksonXmlProperty(localName = "end_date")
-
     private String endDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "message")
-
-    @JacksonXmlProperty(localName = "message")
 
     private String message;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page_index")
 
-    @JacksonXmlProperty(localName = "page_index")
-
     private Integer pageIndex;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page_size")
-
-    @JacksonXmlProperty(localName = "page_size")
 
     private Integer pageSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "path")
 
-    @JacksonXmlProperty(localName = "path")
-
     private String path;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ref_name")
-
-    @JacksonXmlProperty(localName = "ref_name")
 
     private String refName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "repository_id")
 
-    @JacksonXmlProperty(localName = "repository_id")
-
     private Integer repositoryId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stat_format")
-
-    @JacksonXmlProperty(localName = "stat_format")
 
     private String statFormat;
 

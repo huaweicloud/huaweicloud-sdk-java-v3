@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -19,19 +18,15 @@ public class CreateLoadBalancerBandwidthOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
-    @JacksonXmlProperty(localName = "name")
-
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
 
-    @JacksonXmlProperty(localName = "size")
-
     private Integer size;
 
     /**
-     * 计费模式。   [取值范围：bandwidth 表示按带宽计费，traffic表示按流量计费。](tag:hws,hws_hk,ocb,tlf,ctc,hcs,sbc,g42,tm,cmcc,hk_g42,mix,hk_sbc,hws_ocb,fcs)   [当前仅支持traffic按流量计费](tag:dt,dt_test,hcso_dt)   使用说明：当id字段为null时，charge_mode是必须的。
+     * 计费模式。 [取值：bandwidth表示按带宽计费，traffic表示按流量计费。](tag:hws,hws_hk,ocb,tlf,ctc,hcs,sbc,g42,tm,cmcc,hk_g42,mix,hk_sbc,hws_ocb,fcs) [当前仅支持traffic按流量计费](tag:dt,dt_test,hcso_dt) 使用说明：当id字段为null时，charge_mode是必须的。
      */
     public static final class ChargeModeEnum {
 
@@ -109,8 +104,6 @@ public class CreateLoadBalancerBandwidthOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "charge_mode")
-
-    @JacksonXmlProperty(localName = "charge_mode")
 
     private ChargeModeEnum chargeMode;
 
@@ -194,21 +187,15 @@ public class CreateLoadBalancerBandwidthOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "share_type")
 
-    @JacksonXmlProperty(localName = "share_type")
-
     private ShareTypeEnum shareType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "billing_info")
 
-    @JacksonXmlProperty(localName = "billing_info")
-
     private String billingInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
-
-    @JacksonXmlProperty(localName = "id")
 
     private String id;
 
@@ -254,7 +241,7 @@ public class CreateLoadBalancerBandwidthOption {
     }
 
     /**
-     * 计费模式。   [取值范围：bandwidth 表示按带宽计费，traffic表示按流量计费。](tag:hws,hws_hk,ocb,tlf,ctc,hcs,sbc,g42,tm,cmcc,hk_g42,mix,hk_sbc,hws_ocb,fcs)   [当前仅支持traffic按流量计费](tag:dt,dt_test,hcso_dt)   使用说明：当id字段为null时，charge_mode是必须的。
+     * 计费模式。 [取值：bandwidth表示按带宽计费，traffic表示按流量计费。](tag:hws,hws_hk,ocb,tlf,ctc,hcs,sbc,g42,tm,cmcc,hk_g42,mix,hk_sbc,hws_ocb,fcs) [当前仅支持traffic按流量计费](tag:dt,dt_test,hcso_dt) 使用说明：当id字段为null时，charge_mode是必须的。
      * @return chargeMode
      */
     public ChargeModeEnum getChargeMode() {
@@ -288,7 +275,7 @@ public class CreateLoadBalancerBandwidthOption {
     }
 
     /**
-     * 资源账单信息。  [如果billing_info不为空，说明是包周期计费的带宽，否则为按需计费的带宽](tag:hws,hws_hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42)   [不支持该字段，请勿使用](tag:dt,dt_test,hcso_dt)
+     * 资源账单信息。 [如果billing_info不为空，说明是包周期计费的带宽，否则为按需计费的带宽](tag:hws,hws_hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42) [不支持该字段，请勿使用](tag:dt,dt_test,hcso_dt)
      * @return billingInfo
      */
     public String getBillingInfo() {

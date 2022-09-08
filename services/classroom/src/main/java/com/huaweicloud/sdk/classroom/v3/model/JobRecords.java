@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.classroom.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,56 +13,40 @@ public class JobRecords {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
-    @JacksonXmlProperty(localName = "name")
-
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auto_score")
-
-    @JacksonXmlProperty(localName = "auto_score")
 
     private Integer autoScore;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "case_pass_count")
 
-    @JacksonXmlProperty(localName = "case_pass_count")
-
     private Integer casePassCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "exe_case_count")
-
-    @JacksonXmlProperty(localName = "exe_case_count")
 
     private Integer exeCaseCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "code_line")
 
-    @JacksonXmlProperty(localName = "code_line")
-
     private Integer codeLine;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "commit_time")
-
-    @JacksonXmlProperty(localName = "commit_time")
 
     private String commitTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "complexity_file_avg")
 
-    @JacksonXmlProperty(localName = "complexity_file_avg")
-
     private String complexityFileAvg;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auto_score_using_time")
-
-    @JacksonXmlProperty(localName = "auto_score_using_time")
 
     private Integer autoScoreUsingTime;
 

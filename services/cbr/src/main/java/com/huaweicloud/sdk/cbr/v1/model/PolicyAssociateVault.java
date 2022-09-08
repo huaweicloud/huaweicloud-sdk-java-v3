@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cbr.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,14 +13,10 @@ public class PolicyAssociateVault {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "destination_vault_id")
 
-    @JacksonXmlProperty(localName = "destination_vault_id")
-
     private String destinationVaultId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vault_id")
-
-    @JacksonXmlProperty(localName = "vault_id")
 
     private String vaultId;
 

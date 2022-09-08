@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dws.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,28 +13,20 @@ public class ResizeInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_node_num")
 
-    @JacksonXmlProperty(localName = "target_node_num")
-
     private Integer targetNodeNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "origin_node_num")
-
-    @JacksonXmlProperty(localName = "origin_node_num")
 
     private Integer originNodeNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resize_status")
 
-    @JacksonXmlProperty(localName = "resize_status")
-
     private String resizeStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
-
-    @JacksonXmlProperty(localName = "start_time")
 
     private String startTime;
 

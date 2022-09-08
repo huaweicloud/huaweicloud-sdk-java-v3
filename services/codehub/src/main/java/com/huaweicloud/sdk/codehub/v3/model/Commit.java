@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.codehub.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
@@ -18,70 +17,50 @@ public class Commit {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "author_email")
 
-    @JacksonXmlProperty(localName = "author_email")
-
     private String authorEmail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "author_name")
-
-    @JacksonXmlProperty(localName = "author_name")
 
     private String authorName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "authored_date")
 
-    @JacksonXmlProperty(localName = "authored_date")
-
     private OffsetDateTime authoredDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "committed_date")
-
-    @JacksonXmlProperty(localName = "committed_date")
 
     private OffsetDateTime committedDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "committer_email")
 
-    @JacksonXmlProperty(localName = "committer_email")
-
     private String committerEmail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "committer_name")
-
-    @JacksonXmlProperty(localName = "committer_name")
 
     private String committerName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "format")
 
-    @JacksonXmlProperty(localName = "format")
-
     private Object format;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
-
-    @JacksonXmlProperty(localName = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "message")
 
-    @JacksonXmlProperty(localName = "message")
-
     private String message;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parent_ids")
-
-    @JacksonXmlProperty(localName = "parent_ids")
 
     private List<String> parentIds = null;
 

@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -19,21 +18,15 @@ public class SecurityGroupRule {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
-    @JacksonXmlProperty(localName = "description")
-
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_group_id")
-
-    @JacksonXmlProperty(localName = "security_group_id")
 
     private String securityGroupId;
 
@@ -117,8 +110,6 @@ public class SecurityGroupRule {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "direction")
 
-    @JacksonXmlProperty(localName = "direction")
-
     private DirectionEnum direction;
 
     /**
@@ -195,56 +186,40 @@ public class SecurityGroupRule {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ethertype")
 
-    @JacksonXmlProperty(localName = "ethertype")
-
     private EthertypeEnum ethertype;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protocol")
-
-    @JacksonXmlProperty(localName = "protocol")
 
     private String protocol;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "port_range_min")
 
-    @JacksonXmlProperty(localName = "port_range_min")
-
     private String portRangeMin;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "port_range_max")
-
-    @JacksonXmlProperty(localName = "port_range_max")
 
     private String portRangeMax;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remote_group_id")
 
-    @JacksonXmlProperty(localName = "remote_group_id")
-
     private String remoteGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remote_ip_prefix")
-
-    @JacksonXmlProperty(localName = "remote_ip_prefix")
 
     private String remoteIpPrefix;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "action")
 
-    @JacksonXmlProperty(localName = "action")
-
     private String action;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "priority")
-
-    @JacksonXmlProperty(localName = "priority")
 
     private Integer priority;
 

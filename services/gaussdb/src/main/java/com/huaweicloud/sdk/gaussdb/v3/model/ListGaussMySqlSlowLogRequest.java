@@ -8,8 +8,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -23,7 +21,6 @@ public class ListGaussMySqlSlowLogRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    @JacksonXmlProperty(localName = "X-Language")
     
     private String xLanguage;
 
@@ -31,7 +28,6 @@ public class ListGaussMySqlSlowLogRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_id")
     
-    @JacksonXmlProperty(localName = "instance_id")
     
     private String instanceId;
 
@@ -39,7 +35,6 @@ public class ListGaussMySqlSlowLogRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="start_date")
     
-    @JacksonXmlProperty(localName = "start_date")
     
     private String startDate;
 
@@ -47,7 +42,6 @@ public class ListGaussMySqlSlowLogRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="end_date")
     
-    @JacksonXmlProperty(localName = "end_date")
     
     private String endDate;
 
@@ -55,7 +49,6 @@ public class ListGaussMySqlSlowLogRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    @JacksonXmlProperty(localName = "offset")
     
     private Integer offset;
 
@@ -63,7 +56,6 @@ public class ListGaussMySqlSlowLogRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    @JacksonXmlProperty(localName = "limit")
     
     private Integer limit;
 
@@ -71,7 +63,6 @@ public class ListGaussMySqlSlowLogRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    @JacksonXmlProperty(localName = "type")
     
     private String type;
 
@@ -79,7 +70,6 @@ public class ListGaussMySqlSlowLogRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_id")
     
-    @JacksonXmlProperty(localName = "node_id")
     
     private String nodeId;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.iam.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,14 +13,10 @@ public class ProtocolLinks {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "identity_provider")
 
-    @JacksonXmlProperty(localName = "identity_provider")
-
     private String identityProvider;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "self")
-
-    @JacksonXmlProperty(localName = "self")
 
     private String self;
 

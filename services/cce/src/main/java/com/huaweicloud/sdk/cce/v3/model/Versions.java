@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cce.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -18,49 +17,35 @@ public class Versions {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
 
-    @JacksonXmlProperty(localName = "version")
-
     private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "input")
-
-    @JacksonXmlProperty(localName = "input")
 
     private Object input;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stable")
 
-    @JacksonXmlProperty(localName = "stable")
-
     private Boolean stable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "translate")
-
-    @JacksonXmlProperty(localName = "translate")
 
     private Object translate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "supportVersions")
 
-    @JacksonXmlProperty(localName = "supportVersions")
-
     private List<SupportVersions> supportVersions = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "creationTimestamp")
 
-    @JacksonXmlProperty(localName = "creationTimestamp")
-
     private LocalDate creationTimestamp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updateTimestamp")
-
-    @JacksonXmlProperty(localName = "updateTimestamp")
 
     private LocalDate updateTimestamp;
 

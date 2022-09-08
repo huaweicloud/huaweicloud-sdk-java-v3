@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.bssintl.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,63 +13,45 @@ public class QuerySubCustomerListReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "account_name")
 
-    @JacksonXmlProperty(localName = "account_name")
-
     private String accountName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "customer")
-
-    @JacksonXmlProperty(localName = "customer")
 
     private String customer;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
-    @JacksonXmlProperty(localName = "offset")
-
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
-
-    @JacksonXmlProperty(localName = "limit")
 
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "label")
 
-    @JacksonXmlProperty(localName = "label")
-
     private String label;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "association_type")
-
-    @JacksonXmlProperty(localName = "association_type")
 
     private String associationType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "associated_on_begin")
 
-    @JacksonXmlProperty(localName = "associated_on_begin")
-
     private String associatedOnBegin;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "associated_on_end")
 
-    @JacksonXmlProperty(localName = "associated_on_end")
-
     private String associatedOnEnd;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "indirect_partner_id")
-
-    @JacksonXmlProperty(localName = "indirect_partner_id")
 
     private String indirectPartnerId;
 

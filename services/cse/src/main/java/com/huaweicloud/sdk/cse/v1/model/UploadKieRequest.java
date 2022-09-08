@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -20,14 +19,10 @@ public class UploadKieRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Enterprise-Project-ID")
 
-    @JacksonXmlProperty(localName = "X-Enterprise-Project-ID")
-
     private String xEnterpriseProjectID;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "x-engine-id")
-
-    @JacksonXmlProperty(localName = "x-engine-id")
 
     private String xEngineId;
 
@@ -117,21 +112,15 @@ public class UploadKieRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "override")
 
-    @JacksonXmlProperty(localName = "override")
-
     private OverrideEnum override;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "label")
 
-    @JacksonXmlProperty(localName = "label")
-
     private String label;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
-
-    @JacksonXmlProperty(localName = "body")
 
     private UploadKieRequestBody body;
 

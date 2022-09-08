@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -19,14 +18,10 @@ public class LineCompareResultOverview {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_db_name")
 
-    @JacksonXmlProperty(localName = "source_db_name")
-
     private String sourceDbName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_db_name")
-
-    @JacksonXmlProperty(localName = "target_db_name")
 
     private String targetDbName;
 
@@ -142,8 +137,6 @@ public class LineCompareResultOverview {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "line_compare_result")
-
-    @JacksonXmlProperty(localName = "line_compare_result")
 
     private LineCompareResultEnum lineCompareResult;
 

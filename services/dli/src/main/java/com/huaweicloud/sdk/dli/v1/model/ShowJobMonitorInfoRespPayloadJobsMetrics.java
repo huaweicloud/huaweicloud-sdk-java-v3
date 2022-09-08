@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,28 +16,20 @@ public class ShowJobMonitorInfoRespPayloadJobsMetrics {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sources")
 
-    @JacksonXmlProperty(localName = "sources")
-
     private List<ShowJobMonitorInfoRespPayloadJobsMetricsSources> sources = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sinks")
-
-    @JacksonXmlProperty(localName = "sinks")
 
     private List<ShowJobMonitorInfoRespPayloadJobsMetricsSources> sinks = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_read_rate")
 
-    @JacksonXmlProperty(localName = "total_read_rate")
-
     private Double totalReadRate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_write_rate")
-
-    @JacksonXmlProperty(localName = "total_write_rate")
 
     private Double totalWriteRate;
 

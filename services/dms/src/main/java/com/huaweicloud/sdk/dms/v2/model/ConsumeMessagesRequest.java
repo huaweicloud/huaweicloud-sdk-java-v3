@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dms.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,49 +13,35 @@ public class ConsumeMessagesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "queue_id")
 
-    @JacksonXmlProperty(localName = "queue_id")
-
     private String queueId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "consumer_group_id")
-
-    @JacksonXmlProperty(localName = "consumer_group_id")
 
     private String consumerGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_msgs")
 
-    @JacksonXmlProperty(localName = "max_msgs")
-
     private Integer maxMsgs;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time_wait")
-
-    @JacksonXmlProperty(localName = "time_wait")
 
     private Integer timeWait;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ack_wait")
 
-    @JacksonXmlProperty(localName = "ack_wait")
-
     private Integer ackWait;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tag")
 
-    @JacksonXmlProperty(localName = "tag")
-
     private String tag;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tag_type")
-
-    @JacksonXmlProperty(localName = "tag_type")
 
     private String tagType;
 

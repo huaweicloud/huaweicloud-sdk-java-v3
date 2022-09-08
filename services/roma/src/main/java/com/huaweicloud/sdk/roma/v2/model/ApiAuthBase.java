@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
@@ -23,77 +22,55 @@ public class ApiAuthBase {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "api_id")
-
-    @JacksonXmlProperty(localName = "api_id")
 
     private String apiId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "api_name")
 
-    @JacksonXmlProperty(localName = "api_name")
-
     private String apiName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_name")
-
-    @JacksonXmlProperty(localName = "group_name")
 
     private String groupName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "api_type")
 
-    @JacksonXmlProperty(localName = "api_type")
-
     private Integer apiType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "api_remark")
-
-    @JacksonXmlProperty(localName = "api_remark")
 
     private String apiRemark;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "env_id")
 
-    @JacksonXmlProperty(localName = "env_id")
-
     private String envId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auth_role")
-
-    @JacksonXmlProperty(localName = "auth_role")
 
     private String authRole;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auth_time")
 
-    @JacksonXmlProperty(localName = "auth_time")
-
     private OffsetDateTime authTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_name")
 
-    @JacksonXmlProperty(localName = "app_name")
-
     private String appName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_remark")
-
-    @JacksonXmlProperty(localName = "app_remark")
 
     private String appRemark;
 
@@ -177,28 +154,20 @@ public class ApiAuthBase {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_type")
 
-    @JacksonXmlProperty(localName = "app_type")
-
     private AppTypeEnum appType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_creator")
-
-    @JacksonXmlProperty(localName = "app_creator")
 
     private String appCreator;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publish_id")
 
-    @JacksonXmlProperty(localName = "publish_id")
-
     private String publishId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_id")
-
-    @JacksonXmlProperty(localName = "group_id")
 
     private String groupId;
 
@@ -282,35 +251,25 @@ public class ApiAuthBase {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auth_tunnel")
 
-    @JacksonXmlProperty(localName = "auth_tunnel")
-
     private AuthTunnelEnum authTunnel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auth_whitelist")
-
-    @JacksonXmlProperty(localName = "auth_whitelist")
 
     private List<String> authWhitelist = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auth_blacklist")
 
-    @JacksonXmlProperty(localName = "auth_blacklist")
-
     private List<String> authBlacklist = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "visit_param")
 
-    @JacksonXmlProperty(localName = "visit_param")
-
     private String visitParam;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "roma_app_type")
-
-    @JacksonXmlProperty(localName = "roma_app_type")
 
     private String romaAppType;
 

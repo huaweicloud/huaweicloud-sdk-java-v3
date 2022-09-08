@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Collections;
@@ -21,14 +20,10 @@ public class ConfirmTargetDbTypeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "evaluation_project_id")
 
-    @JacksonXmlProperty(localName = "evaluation_project_id")
-
     private Integer evaluationProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "evaluation_project_name")
-
-    @JacksonXmlProperty(localName = "evaluation_project_name")
 
     private String evaluationProjectName;
 
@@ -130,42 +125,30 @@ public class ConfirmTargetDbTypeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "evaluation_project_status")
 
-    @JacksonXmlProperty(localName = "evaluation_project_status")
-
     private EvaluationProjectStatusEnum evaluationProjectStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_status_detail")
-
-    @JacksonXmlProperty(localName = "project_status_detail")
 
     private ProjectStatusDetail projectStatusDetail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_db_type")
 
-    @JacksonXmlProperty(localName = "source_db_type")
-
     private String sourceDbType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_db_version")
-
-    @JacksonXmlProperty(localName = "source_db_version")
 
     private String sourceDbVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_db_type")
 
-    @JacksonXmlProperty(localName = "target_db_type")
-
     private String targetDbType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_db_version")
-
-    @JacksonXmlProperty(localName = "target_db_version")
 
     private String targetDbVersion;
 

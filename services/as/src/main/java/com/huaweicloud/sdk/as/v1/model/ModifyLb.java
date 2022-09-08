@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.as.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,28 +14,20 @@ public class ModifyLb {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lbaas_listener")
 
-    @JacksonXmlProperty(localName = "lbaas_listener")
-
     private LbaasListener lbaasListener;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "listener")
-
-    @JacksonXmlProperty(localName = "listener")
 
     private String listener;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "failed_reason")
 
-    @JacksonXmlProperty(localName = "failed_reason")
-
     private String failedReason;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "failed_details")
-
-    @JacksonXmlProperty(localName = "failed_details")
 
     private String failedDetails;
 

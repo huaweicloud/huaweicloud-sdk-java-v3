@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.res.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,21 +14,15 @@ public class CreateResDatasourceRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "datasource_name")
 
-    @JacksonXmlProperty(localName = "datasource_name")
-
     private String datasourceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "specs_config")
 
-    @JacksonXmlProperty(localName = "specs_config")
-
     private SpecsConfig specsConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_config")
-
-    @JacksonXmlProperty(localName = "data_config")
 
     private DataConfig dataConfig;
 

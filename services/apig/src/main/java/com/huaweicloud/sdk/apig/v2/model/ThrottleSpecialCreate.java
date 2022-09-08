@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -19,14 +18,10 @@ public class ThrottleSpecialCreate {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "call_limits")
 
-    @JacksonXmlProperty(localName = "call_limits")
-
     private Integer callLimits;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "object_id")
-
-    @JacksonXmlProperty(localName = "object_id")
 
     private String objectId;
 
@@ -109,8 +104,6 @@ public class ThrottleSpecialCreate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "object_type")
-
-    @JacksonXmlProperty(localName = "object_type")
 
     private ObjectTypeEnum objectType;
 

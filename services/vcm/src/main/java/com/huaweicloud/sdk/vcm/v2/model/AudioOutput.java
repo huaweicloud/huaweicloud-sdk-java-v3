@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.vcm.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,14 +14,10 @@ public class AudioOutput {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "obs")
 
-    @JacksonXmlProperty(localName = "obs")
-
     private AudioOutputObs obs;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hosting")
-
-    @JacksonXmlProperty(localName = "hosting")
 
     private AudioOutputHosting hosting;
 

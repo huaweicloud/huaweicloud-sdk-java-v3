@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.res.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,21 +13,15 @@ public class RankFeaturePair {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "feature_name_a")
 
-    @JacksonXmlProperty(localName = "feature_name_a")
-
     private String featureNameA;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "feature_name_b")
 
-    @JacksonXmlProperty(localName = "feature_name_b")
-
     private String featureNameB;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "weight")
-
-    @JacksonXmlProperty(localName = "weight")
 
     private Float weight;
 

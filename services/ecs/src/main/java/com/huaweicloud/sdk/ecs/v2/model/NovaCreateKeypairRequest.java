@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.ecs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,14 +14,10 @@ public class NovaCreateKeypairRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "OpenStack-API-Version")
 
-    @JacksonXmlProperty(localName = "OpenStack-API-Version")
-
     private String openStackAPIVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
-
-    @JacksonXmlProperty(localName = "body")
 
     private NovaCreateKeypairRequestBody body;
 

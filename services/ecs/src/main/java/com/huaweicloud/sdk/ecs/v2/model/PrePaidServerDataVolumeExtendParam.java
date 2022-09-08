@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.ecs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,21 +13,15 @@ public class PrePaidServerDataVolumeExtendParam {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resourceSpecCode")
 
-    @JacksonXmlProperty(localName = "resourceSpecCode")
-
     private String resourceSpecCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resourceType")
 
-    @JacksonXmlProperty(localName = "resourceType")
-
     private String resourceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "snapshotId")
-
-    @JacksonXmlProperty(localName = "snapshotId")
 
     private String snapshotId;
 

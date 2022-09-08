@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,8 +20,6 @@ public class SrcNodeResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bucket")
-
-    @JacksonXmlProperty(localName = "bucket")
 
     private String bucket;
 
@@ -160,35 +157,25 @@ public class SrcNodeResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cloud_type")
 
-    @JacksonXmlProperty(localName = "cloud_type")
-
     private CloudTypeEnum cloudType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region")
-
-    @JacksonXmlProperty(localName = "region")
 
     private String region;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_id")
 
-    @JacksonXmlProperty(localName = "app_id")
-
     private String appId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "object_key")
 
-    @JacksonXmlProperty(localName = "object_key")
-
     private List<String> objectKey = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "list_file")
-
-    @JacksonXmlProperty(localName = "list_file")
 
     private ListFile listFile;
 

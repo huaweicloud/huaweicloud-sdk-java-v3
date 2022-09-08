@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cce.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,35 +13,25 @@ public class DeleteStatus {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "previous_total")
 
-    @JacksonXmlProperty(localName = "previous_total")
-
     private Integer previousTotal;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "current_total")
-
-    @JacksonXmlProperty(localName = "current_total")
 
     private Integer currentTotal;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated")
 
-    @JacksonXmlProperty(localName = "updated")
-
     private Integer updated;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "added")
 
-    @JacksonXmlProperty(localName = "added")
-
     private Integer added;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deleted")
-
-    @JacksonXmlProperty(localName = "deleted")
 
     private Integer deleted;
 

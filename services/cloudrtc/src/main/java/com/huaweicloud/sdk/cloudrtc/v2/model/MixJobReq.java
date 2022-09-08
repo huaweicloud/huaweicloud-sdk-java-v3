@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cloudrtc.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,21 +14,15 @@ public class MixJobReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mix_param")
 
-    @JacksonXmlProperty(localName = "mix_param")
-
     private MixParam mixParam;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publish_param")
 
-    @JacksonXmlProperty(localName = "publish_param")
-
     private PublishParam publishParam;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "record_param")
-
-    @JacksonXmlProperty(localName = "record_param")
 
     private RecordParam recordParam;
 

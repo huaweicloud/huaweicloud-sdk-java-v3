@@ -12,8 +12,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -27,7 +25,6 @@ public class HttpGetDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="path")
     
-    @JacksonXmlProperty(localName = "path")
     
     private String path;
 
@@ -35,7 +32,6 @@ public class HttpGetDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="port")
     
-    @JacksonXmlProperty(localName = "port")
     
     private Integer port;
 
@@ -43,7 +39,6 @@ public class HttpGetDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="host")
     
-    @JacksonXmlProperty(localName = "host")
     
     private String host;
     /**
@@ -129,7 +124,6 @@ public class HttpGetDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="scheme")
     
-    @JacksonXmlProperty(localName = "scheme")
     
     private SchemeEnum scheme;
 

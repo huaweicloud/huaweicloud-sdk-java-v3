@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.kafka.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,21 +13,15 @@ public class UpdateInstanceCrossVpcIpRespResults {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "advertised_ip")
 
-    @JacksonXmlProperty(localName = "advertised_ip")
-
     private String advertisedIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "success")
 
-    @JacksonXmlProperty(localName = "success")
-
     private Boolean success;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip")
-
-    @JacksonXmlProperty(localName = "ip")
 
     private String ip;
 

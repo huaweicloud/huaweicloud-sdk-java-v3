@@ -12,8 +12,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -27,7 +25,6 @@ public class DependencyParserWord  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    @JacksonXmlProperty(localName = "id")
     
     private Integer id;
 
@@ -35,7 +32,6 @@ public class DependencyParserWord  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="word")
     
-    @JacksonXmlProperty(localName = "word")
     
     private String word;
 
@@ -43,7 +39,6 @@ public class DependencyParserWord  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="head_word_id")
     
-    @JacksonXmlProperty(localName = "head_word_id")
     
     private Integer headWordId;
 
@@ -51,7 +46,6 @@ public class DependencyParserWord  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="pos")
     
-    @JacksonXmlProperty(localName = "pos")
     
     private String pos;
     /**
@@ -251,7 +245,6 @@ public class DependencyParserWord  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dependency_label")
     
-    @JacksonXmlProperty(localName = "dependency_label")
     
     private DependencyLabelEnum dependencyLabel;
 

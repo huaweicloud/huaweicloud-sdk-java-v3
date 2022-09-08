@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.waf.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,147 +13,105 @@ public class ShowEventItems {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time")
 
-    @JacksonXmlProperty(localName = "time")
-
     private Long time;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policyid")
-
-    @JacksonXmlProperty(localName = "policyid")
 
     private String policyid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sip")
 
-    @JacksonXmlProperty(localName = "sip")
-
     private String sip;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host")
-
-    @JacksonXmlProperty(localName = "host")
 
     private String host;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "url")
 
-    @JacksonXmlProperty(localName = "url")
-
     private String url;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "attack")
-
-    @JacksonXmlProperty(localName = "attack")
 
     private String attack;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rule")
 
-    @JacksonXmlProperty(localName = "rule")
-
     private String rule;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "action")
-
-    @JacksonXmlProperty(localName = "action")
 
     private String action;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cookie")
 
-    @JacksonXmlProperty(localName = "cookie")
-
     private String cookie;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "headers")
-
-    @JacksonXmlProperty(localName = "headers")
 
     private Object headers;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_id")
 
-    @JacksonXmlProperty(localName = "host_id")
-
     private String hostId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
-
-    @JacksonXmlProperty(localName = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "payload")
 
-    @JacksonXmlProperty(localName = "payload")
-
     private String payload;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "payload_location")
-
-    @JacksonXmlProperty(localName = "payload_location")
 
     private String payloadLocation;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region")
 
-    @JacksonXmlProperty(localName = "region")
-
     private String region;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "process_time")
-
-    @JacksonXmlProperty(localName = "process_time")
 
     private Integer processTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "request_line")
 
-    @JacksonXmlProperty(localName = "request_line")
-
     private String requestLine;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "response_size")
-
-    @JacksonXmlProperty(localName = "response_size")
 
     private Integer responseSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "response_time")
 
-    @JacksonXmlProperty(localName = "response_time")
-
     private Long responseTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    @JacksonXmlProperty(localName = "status")
-
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "request_body")
-
-    @JacksonXmlProperty(localName = "request_body")
 
     private String requestBody;
 

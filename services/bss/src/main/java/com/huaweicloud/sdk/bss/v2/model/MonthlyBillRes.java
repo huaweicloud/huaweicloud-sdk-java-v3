@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.bss.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,212 +13,172 @@ public class MonthlyBillRes {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cycle")
 
-    @JacksonXmlProperty(localName = "cycle")
-
     private String cycle;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bill_date")
-
-    @JacksonXmlProperty(localName = "bill_date")
 
     private String billDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bill_type")
 
-    @JacksonXmlProperty(localName = "bill_type")
-
     private Integer billType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "customer_id")
-
-    @JacksonXmlProperty(localName = "customer_id")
 
     private String customerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region")
 
-    @JacksonXmlProperty(localName = "region")
-
     private String region;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region_name")
-
-    @JacksonXmlProperty(localName = "region_name")
 
     private String regionName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cloud_service_type")
 
-    @JacksonXmlProperty(localName = "cloud_service_type")
-
     private String cloudServiceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_Type_code")
-
-    @JacksonXmlProperty(localName = "resource_Type_code")
 
     private String resourceTypeCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cloud_service_type_name")
 
-    @JacksonXmlProperty(localName = "cloud_service_type_name")
-
     private String cloudServiceTypeName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_type_name")
-
-    @JacksonXmlProperty(localName = "resource_type_name")
 
     private String resourceTypeName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "res_instance_id")
 
-    @JacksonXmlProperty(localName = "res_instance_id")
-
     private String resInstanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_name")
-
-    @JacksonXmlProperty(localName = "resource_name")
 
     private String resourceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_tag")
 
-    @JacksonXmlProperty(localName = "resource_tag")
-
     private String resourceTag;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sku_code")
-
-    @JacksonXmlProperty(localName = "sku_code")
 
     private String skuCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
-    @JacksonXmlProperty(localName = "enterprise_project_id")
-
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_name")
-
-    @JacksonXmlProperty(localName = "enterprise_project_name")
 
     private String enterpriseProjectName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "charge_mode")
 
-    @JacksonXmlProperty(localName = "charge_mode")
-
     private Integer chargeMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "consume_amount")
-
-    @JacksonXmlProperty(localName = "consume_amount")
 
     private Double consumeAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cash_amount")
 
-    @JacksonXmlProperty(localName = "cash_amount")
-
     private Double cashAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "credit_amount")
-
-    @JacksonXmlProperty(localName = "credit_amount")
 
     private Double creditAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "coupon_amount")
 
-    @JacksonXmlProperty(localName = "coupon_amount")
-
     private Double couponAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flexipurchase_coupon_amount")
-
-    @JacksonXmlProperty(localName = "flexipurchase_coupon_amount")
 
     private Double flexipurchaseCouponAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stored_card_amount")
 
-    @JacksonXmlProperty(localName = "stored_card_amount")
-
     private Double storedCardAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bonus_amount")
-
-    @JacksonXmlProperty(localName = "bonus_amount")
 
     private Double bonusAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "debt_amount")
 
-    @JacksonXmlProperty(localName = "debt_amount")
-
     private Double debtAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "adjustment_amount")
-
-    @JacksonXmlProperty(localName = "adjustment_amount")
 
     private Double adjustmentAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "official_amount")
 
-    @JacksonXmlProperty(localName = "official_amount")
-
     private Double officialAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "discount_amount")
-
-    @JacksonXmlProperty(localName = "discount_amount")
 
     private Double discountAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "measure_id")
 
-    @JacksonXmlProperty(localName = "measure_id")
-
     private Integer measureId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "period_type")
 
-    @JacksonXmlProperty(localName = "period_type")
-
     private Integer periodType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "root_resource_id")
+
+    private String rootResourceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "parent_resource_id")
+
+    private String parentResourceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "trade_id")
+
+    private String tradeId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "product_spec_desc")
+
+    private String productSpecDesc;
 
     public MonthlyBillRes withCycle(String cycle) {
         this.cycle = cycle;
@@ -731,6 +690,74 @@ public class MonthlyBillRes {
         this.periodType = periodType;
     }
 
+    public MonthlyBillRes withRootResourceId(String rootResourceId) {
+        this.rootResourceId = rootResourceId;
+        return this;
+    }
+
+    /**
+     * 根资源标识。
+     * @return rootResourceId
+     */
+    public String getRootResourceId() {
+        return rootResourceId;
+    }
+
+    public void setRootResourceId(String rootResourceId) {
+        this.rootResourceId = rootResourceId;
+    }
+
+    public MonthlyBillRes withParentResourceId(String parentResourceId) {
+        this.parentResourceId = parentResourceId;
+        return this;
+    }
+
+    /**
+     * 父资源标识。
+     * @return parentResourceId
+     */
+    public String getParentResourceId() {
+        return parentResourceId;
+    }
+
+    public void setParentResourceId(String parentResourceId) {
+        this.parentResourceId = parentResourceId;
+    }
+
+    public MonthlyBillRes withTradeId(String tradeId) {
+        this.tradeId = tradeId;
+        return this;
+    }
+
+    /**
+     * 订单ID 或 交易ID。 账单类型为1，2，3，4，8时为订单ID；其它场景下为： 交易ID(非月末扣费：应收ID；月末扣费：账单ID)。
+     * @return tradeId
+     */
+    public String getTradeId() {
+        return tradeId;
+    }
+
+    public void setTradeId(String tradeId) {
+        this.tradeId = tradeId;
+    }
+
+    public MonthlyBillRes withProductSpecDesc(String productSpecDesc) {
+        this.productSpecDesc = productSpecDesc;
+        return this;
+    }
+
+    /**
+     * 产品的规格描述。
+     * @return productSpecDesc
+     */
+    public String getProductSpecDesc() {
+        return productSpecDesc;
+    }
+
+    public void setProductSpecDesc(String productSpecDesc) {
+        this.productSpecDesc = productSpecDesc;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -769,7 +796,11 @@ public class MonthlyBillRes {
             && Objects.equals(this.officialAmount, monthlyBillRes.officialAmount)
             && Objects.equals(this.discountAmount, monthlyBillRes.discountAmount)
             && Objects.equals(this.measureId, monthlyBillRes.measureId)
-            && Objects.equals(this.periodType, monthlyBillRes.periodType);
+            && Objects.equals(this.periodType, monthlyBillRes.periodType)
+            && Objects.equals(this.rootResourceId, monthlyBillRes.rootResourceId)
+            && Objects.equals(this.parentResourceId, monthlyBillRes.parentResourceId)
+            && Objects.equals(this.tradeId, monthlyBillRes.tradeId)
+            && Objects.equals(this.productSpecDesc, monthlyBillRes.productSpecDesc);
     }
 
     @Override
@@ -803,7 +834,11 @@ public class MonthlyBillRes {
             officialAmount,
             discountAmount,
             measureId,
-            periodType);
+            periodType,
+            rootResourceId,
+            parentResourceId,
+            tradeId,
+            productSpecDesc);
     }
 
     @Override
@@ -840,6 +875,10 @@ public class MonthlyBillRes {
         sb.append("    discountAmount: ").append(toIndentedString(discountAmount)).append("\n");
         sb.append("    measureId: ").append(toIndentedString(measureId)).append("\n");
         sb.append("    periodType: ").append(toIndentedString(periodType)).append("\n");
+        sb.append("    rootResourceId: ").append(toIndentedString(rootResourceId)).append("\n");
+        sb.append("    parentResourceId: ").append(toIndentedString(parentResourceId)).append("\n");
+        sb.append("    tradeId: ").append(toIndentedString(tradeId)).append("\n");
+        sb.append("    productSpecDesc: ").append(toIndentedString(productSpecDesc)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.res.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,14 +14,10 @@ public class IndicatorParam {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "customize_parameter")
 
-    @JacksonXmlProperty(localName = "customize_parameter")
-
     private CustomizeParameter customizeParameter;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "customize_formula")
-
-    @JacksonXmlProperty(localName = "customize_formula")
 
     private CustomizeFormula customizeFormula;
 

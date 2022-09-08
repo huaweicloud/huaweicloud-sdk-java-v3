@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dcs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,56 +13,40 @@ public class DetailsBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "old_capacity")
 
-    @JacksonXmlProperty(localName = "old_capacity")
-
     private String oldCapacity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "new_capacity")
-
-    @JacksonXmlProperty(localName = "new_capacity")
 
     private String newCapacity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_public_ip")
 
-    @JacksonXmlProperty(localName = "enable_public_ip")
-
     private Boolean enablePublicIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "public_ip_id")
-
-    @JacksonXmlProperty(localName = "public_ip_id")
 
     private String publicIpId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "public_ip_address")
 
-    @JacksonXmlProperty(localName = "public_ip_address")
-
     private String publicIpAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_ssl")
-
-    @JacksonXmlProperty(localName = "enable_ssl")
 
     private Boolean enableSsl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "old_cache_mode")
 
-    @JacksonXmlProperty(localName = "old_cache_mode")
-
     private String oldCacheMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "new_cache_mode")
-
-    @JacksonXmlProperty(localName = "new_cache_mode")
 
     private String newCacheMode;
 

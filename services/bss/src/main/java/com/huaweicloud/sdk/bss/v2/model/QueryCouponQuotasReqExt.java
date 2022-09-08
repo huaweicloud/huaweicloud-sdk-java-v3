@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.bss.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,84 +16,60 @@ public class QueryCouponQuotasReqExt {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quota_ids")
 
-    @JacksonXmlProperty(localName = "quota_ids")
-
     private List<String> quotaIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quota_status_list")
-
-    @JacksonXmlProperty(localName = "quota_status_list")
 
     private List<Integer> quotaStatusList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quota_type")
 
-    @JacksonXmlProperty(localName = "quota_type")
-
     private Integer quotaType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time_begin")
-
-    @JacksonXmlProperty(localName = "create_time_begin")
 
     private String createTimeBegin;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time_end")
 
-    @JacksonXmlProperty(localName = "create_time_end")
-
     private String createTimeEnd;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "effective_time_begin")
-
-    @JacksonXmlProperty(localName = "effective_time_begin")
 
     private String effectiveTimeBegin;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "effective_time_end")
 
-    @JacksonXmlProperty(localName = "effective_time_end")
-
     private String effectiveTimeEnd;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expire_time_begin")
-
-    @JacksonXmlProperty(localName = "expire_time_begin")
 
     private String expireTimeBegin;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expire_time_end")
 
-    @JacksonXmlProperty(localName = "expire_time_end")
-
     private String expireTimeEnd;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
-
-    @JacksonXmlProperty(localName = "offset")
 
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
-    @JacksonXmlProperty(localName = "limit")
-
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "indirect_partner_id")
-
-    @JacksonXmlProperty(localName = "indirect_partner_id")
 
     private String indirectPartnerId;
 

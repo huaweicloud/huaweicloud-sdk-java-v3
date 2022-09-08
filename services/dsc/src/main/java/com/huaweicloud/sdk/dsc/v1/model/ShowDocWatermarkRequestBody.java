@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.http.FormDataFilePart;
 import com.huaweicloud.sdk.core.http.FormDataPart;
 import com.huaweicloud.sdk.core.http.SdkFormDataBody;
@@ -113,19 +112,14 @@ public class ShowDocWatermarkRequestBody implements SdkFormDataBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "doc_type")
 
-    @JacksonXmlProperty(localName = "doc_type")
-
     private DocTypeEnum docType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_password")
 
-    @JacksonXmlProperty(localName = "file_password")
-
     private String filePassword;
 
     @JsonProperty(value = "file", access = JsonProperty.Access.WRITE_ONLY)
-    @JacksonXmlProperty(localName = "file")
 
     private FormDataFilePart file;
 

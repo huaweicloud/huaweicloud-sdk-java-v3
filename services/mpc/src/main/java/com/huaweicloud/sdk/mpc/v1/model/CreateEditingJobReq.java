@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.mpc.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,70 +16,50 @@ public class CreateEditingJobReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "edit_type")
 
-    @JacksonXmlProperty(localName = "edit_type")
-
     private List<String> editType = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "clips")
-
-    @JacksonXmlProperty(localName = "clips")
 
     private List<ClipInfo> clips = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "concats")
 
-    @JacksonXmlProperty(localName = "concats")
-
     private List<MultiConcatInfo> concats = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "concat")
-
-    @JacksonXmlProperty(localName = "concat")
 
     private ConcatInfo concat;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mix")
 
-    @JacksonXmlProperty(localName = "mix")
-
     private MixInfo mix;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "input")
-
-    @JacksonXmlProperty(localName = "input")
 
     private ObsObjInfo input;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "output_setting")
 
-    @JacksonXmlProperty(localName = "output_setting")
-
     private OutputSetting outputSetting;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image_watermark_settings")
-
-    @JacksonXmlProperty(localName = "image_watermark_settings")
 
     private List<ImageWatermarkSetting> imageWatermarkSettings = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "edit_settings")
 
-    @JacksonXmlProperty(localName = "edit_settings")
-
     private List<EditSetting> editSettings = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_data")
-
-    @JacksonXmlProperty(localName = "user_data")
 
     private String userData;
 

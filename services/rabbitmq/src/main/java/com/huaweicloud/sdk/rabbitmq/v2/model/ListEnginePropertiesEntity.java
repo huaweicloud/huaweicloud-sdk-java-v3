@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.rabbitmq.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,56 +13,40 @@ public class ListEnginePropertiesEntity {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_partition_per_broker")
 
-    @JacksonXmlProperty(localName = "max_partition_per_broker")
-
     private String maxPartitionPerBroker;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_broker")
-
-    @JacksonXmlProperty(localName = "max_broker")
 
     private String maxBroker;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_storage_per_node")
 
-    @JacksonXmlProperty(localName = "max_storage_per_node")
-
     private String maxStoragePerNode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_consumer_per_broker")
-
-    @JacksonXmlProperty(localName = "max_consumer_per_broker")
 
     private String maxConsumerPerBroker;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "min_broker")
 
-    @JacksonXmlProperty(localName = "min_broker")
-
     private String minBroker;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_bandwidth_per_broker")
-
-    @JacksonXmlProperty(localName = "max_bandwidth_per_broker")
 
     private String maxBandwidthPerBroker;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "min_storage_per_node")
 
-    @JacksonXmlProperty(localName = "min_storage_per_node")
-
     private String minStoragePerNode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_tps_per_broker")
-
-    @JacksonXmlProperty(localName = "max_tps_per_broker")
 
     private String maxTpsPerBroker;
 

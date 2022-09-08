@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.vpcep.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,14 +16,10 @@ public class RoutetableInfoError {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bind_failed")
 
-    @JacksonXmlProperty(localName = "bind_failed")
-
     private List<RoutetableInfoErrorDetial> bindFailed = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "unbind_failed")
-
-    @JacksonXmlProperty(localName = "unbind_failed")
 
     private List<RoutetableInfoErrorDetial> unbindFailed = null;
 

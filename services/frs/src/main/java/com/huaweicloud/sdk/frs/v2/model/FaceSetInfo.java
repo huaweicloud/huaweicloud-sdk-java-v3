@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.frs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,42 +13,30 @@ public class FaceSetInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "face_number")
 
-    @JacksonXmlProperty(localName = "face_number")
-
     private Integer faceNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "external_fields")
-
-    @JacksonXmlProperty(localName = "external_fields")
 
     private Object externalFields;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "face_set_id")
 
-    @JacksonXmlProperty(localName = "face_set_id")
-
     private String faceSetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "face_set_name")
-
-    @JacksonXmlProperty(localName = "face_set_name")
 
     private String faceSetName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_date")
 
-    @JacksonXmlProperty(localName = "create_date")
-
     private String createDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "face_set_capacity")
-
-    @JacksonXmlProperty(localName = "face_set_capacity")
 
     private Integer faceSetCapacity;
 

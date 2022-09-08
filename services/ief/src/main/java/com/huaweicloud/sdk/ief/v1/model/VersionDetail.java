@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.ief.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,84 +16,60 @@ public class VersionDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
 
-    @JacksonXmlProperty(localName = "version")
-
     private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image_url")
-
-    @JacksonXmlProperty(localName = "image_url")
 
     private String imageUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "envs")
 
-    @JacksonXmlProperty(localName = "envs")
-
     private List<Env> envs = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volumes")
-
-    @JacksonXmlProperty(localName = "volumes")
 
     private List<Volumes> volumes = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "configs")
 
-    @JacksonXmlProperty(localName = "configs")
-
     private AppConfigs configs;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resources")
-
-    @JacksonXmlProperty(localName = "resources")
 
     private Resources resources;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "arch")
 
-    @JacksonXmlProperty(localName = "arch")
-
     private String arch;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "command")
-
-    @JacksonXmlProperty(localName = "command")
 
     private List<String> command = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "args")
 
-    @JacksonXmlProperty(localName = "args")
-
     private List<String> args = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "liveness_probe")
-
-    @JacksonXmlProperty(localName = "liveness_probe")
 
     private ProbeDetail livenessProbe;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "readiness_probe")
 
-    @JacksonXmlProperty(localName = "readiness_probe")
-
     private ProbeDetail readinessProbe;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "npu_type")
-
-    @JacksonXmlProperty(localName = "npu_type")
 
     private String npuType;
 

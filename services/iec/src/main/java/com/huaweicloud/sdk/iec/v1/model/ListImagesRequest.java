@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,8 +17,6 @@ public class ListImagesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__imagetype")
-
-    @JacksonXmlProperty(localName = "__imagetype")
 
     private String imagetype;
 
@@ -103,42 +100,30 @@ public class ListImagesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protected")
 
-    @JacksonXmlProperty(localName = "protected")
-
     private ProtectedEnum _protected;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
-
-    @JacksonXmlProperty(localName = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "visibility")
 
-    @JacksonXmlProperty(localName = "visibility")
-
     private String visibility;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
-
-    @JacksonXmlProperty(localName = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
-    @JacksonXmlProperty(localName = "name")
-
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__os_type")
-
-    @JacksonXmlProperty(localName = "__os_type")
 
     private String osType;
 
@@ -215,8 +200,6 @@ public class ListImagesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "virtual_env_type")
-
-    @JacksonXmlProperty(localName = "virtual_env_type")
 
     private VirtualEnvTypeEnum virtualEnvType;
 
@@ -300,21 +283,15 @@ public class ListImagesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__isregistered")
 
-    @JacksonXmlProperty(localName = "__isregistered")
-
     private IsregisteredEnum isregistered;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
-    @JacksonXmlProperty(localName = "limit")
-
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
-
-    @JacksonXmlProperty(localName = "offset")
 
     private Integer offset;
 
@@ -410,8 +387,6 @@ public class ListImagesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sort_key")
 
-    @JacksonXmlProperty(localName = "sort_key")
-
     private SortKeyEnum sortKey;
 
     /**
@@ -494,49 +469,35 @@ public class ListImagesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sort_dir")
 
-    @JacksonXmlProperty(localName = "sort_dir")
-
     private SortDirEnum sortDir;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__support_kvm")
-
-    @JacksonXmlProperty(localName = "__support_kvm")
 
     private String supportKvm;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__support_kvm_gpu_type")
 
-    @JacksonXmlProperty(localName = "__support_kvm_gpu_type")
-
     private String supportKvmGpuType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__support_kvm_ascend_310")
-
-    @JacksonXmlProperty(localName = "__support_kvm_ascend_310")
 
     private String supportKvmAscend310;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__support_kvm_hi1822_hiovs")
 
-    @JacksonXmlProperty(localName = "__support_kvm_hi1822_hiovs")
-
     private String supportKvmHi1822Hiovs;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__support_arm")
 
-    @JacksonXmlProperty(localName = "__support_arm")
-
     private String supportArm;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__support_gpu_t4")
-
-    @JacksonXmlProperty(localName = "__support_gpu_t4")
 
     private String supportGpuT4;
 

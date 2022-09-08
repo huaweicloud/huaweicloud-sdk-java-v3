@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -127,14 +126,10 @@ public class UpdateTaskStatusReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operation")
 
-    @JacksonXmlProperty(localName = "operation")
-
     private OperationEnum operation;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "param")
-
-    @JacksonXmlProperty(localName = "param")
 
     private Map<String, String> param = null;
 

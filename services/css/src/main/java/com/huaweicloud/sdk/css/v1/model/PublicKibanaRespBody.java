@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.css.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,21 +14,15 @@ public class PublicKibanaRespBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "eipSize")
 
-    @JacksonXmlProperty(localName = "eipSize")
-
     private Integer eipSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "elbWhiteListResp")
 
-    @JacksonXmlProperty(localName = "elbWhiteListResp")
-
     private KibanaElbWhiteListResp elbWhiteListResp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publicKibanaIp")
-
-    @JacksonXmlProperty(localName = "publicKibanaIp")
 
     private String publicKibanaIp;
 

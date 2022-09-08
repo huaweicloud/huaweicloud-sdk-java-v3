@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.moderation.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,28 +16,20 @@ public class ImageDetectionResultDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "politics")
 
-    @JacksonXmlProperty(localName = "politics")
-
     private List<ImageDetectionResultDetailPolitics> politics = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "porn")
-
-    @JacksonXmlProperty(localName = "porn")
 
     private List<ImageDetectionResultSimpleDetail> porn = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "terrorism")
 
-    @JacksonXmlProperty(localName = "terrorism")
-
     private List<ImageDetectionResultSimpleDetail> terrorism = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ad")
-
-    @JacksonXmlProperty(localName = "ad")
 
     private List<ImageDetectionResultAdDetail> ad = null;
 

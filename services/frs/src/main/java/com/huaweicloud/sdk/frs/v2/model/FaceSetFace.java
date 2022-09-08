@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.frs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,28 +14,20 @@ public class FaceSetFace {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bounding_box")
 
-    @JacksonXmlProperty(localName = "bounding_box")
-
     private BoundingBox boundingBox;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "external_fields")
-
-    @JacksonXmlProperty(localName = "external_fields")
 
     private Object externalFields;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "external_image_id")
 
-    @JacksonXmlProperty(localName = "external_image_id")
-
     private String externalImageId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "face_id")
-
-    @JacksonXmlProperty(localName = "face_id")
 
     private String faceId;
 

@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,35 +21,25 @@ public class SourceServersResponseBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip")
-
-    @JacksonXmlProperty(localName = "ip")
 
     private String ip;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
-    @JacksonXmlProperty(localName = "name")
-
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
-    @JacksonXmlProperty(localName = "enterprise_project_id")
-
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "add_date")
-
-    @JacksonXmlProperty(localName = "add_date")
 
     private Long addDate;
 
@@ -134,21 +123,15 @@ public class SourceServersResponseBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os_type")
 
-    @JacksonXmlProperty(localName = "os_type")
-
     private OsTypeEnum osType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os_version")
 
-    @JacksonXmlProperty(localName = "os_version")
-
     private String osVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "oem_system")
-
-    @JacksonXmlProperty(localName = "oem_system")
 
     private Boolean oemSystem;
 
@@ -292,77 +275,55 @@ public class SourceServersResponseBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "state")
 
-    @JacksonXmlProperty(localName = "state")
-
     private StateEnum state;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "connected")
-
-    @JacksonXmlProperty(localName = "connected")
 
     private Boolean connected;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cpu_quantity")
 
-    @JacksonXmlProperty(localName = "cpu_quantity")
-
     private Integer cpuQuantity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "memory")
-
-    @JacksonXmlProperty(localName = "memory")
 
     private Long memory;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "current_task")
 
-    @JacksonXmlProperty(localName = "current_task")
-
     private TaskByServerSources currentTask;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "checks")
-
-    @JacksonXmlProperty(localName = "checks")
 
     private List<EnvironmentCheck> checks = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "init_target_server")
 
-    @JacksonXmlProperty(localName = "init_target_server")
-
     private InitTargetServer initTargetServer;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "replicatesize")
-
-    @JacksonXmlProperty(localName = "replicatesize")
 
     private Long replicatesize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stage_action_time")
 
-    @JacksonXmlProperty(localName = "stage_action_time")
-
     private Long stageActionTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "totalsize")
 
-    @JacksonXmlProperty(localName = "totalsize")
-
     private Long totalsize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last_visit_time")
-
-    @JacksonXmlProperty(localName = "last_visit_time")
 
     private Long lastVisitTime;
 
@@ -470,14 +431,10 @@ public class SourceServersResponseBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "migration_cycle")
 
-    @JacksonXmlProperty(localName = "migration_cycle")
-
     private MigrationCycleEnum migrationCycle;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "state_action_time")
-
-    @JacksonXmlProperty(localName = "state_action_time")
 
     private Long stateActionTime;
 

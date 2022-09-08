@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -111,35 +110,25 @@ public class UpdateFunctionCodeRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "code_type")
 
-    @JacksonXmlProperty(localName = "code_type")
-
     private CodeTypeEnum codeType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "code_url")
-
-    @JacksonXmlProperty(localName = "code_url")
 
     private String codeUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "code_filename")
 
-    @JacksonXmlProperty(localName = "code_filename")
-
     private String codeFilename;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "func_code")
 
-    @JacksonXmlProperty(localName = "func_code")
-
     private FuncCode funcCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "depend_list")
-
-    @JacksonXmlProperty(localName = "depend_list")
 
     private List<String> dependList = null;
 

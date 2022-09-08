@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,44 +16,32 @@ public class CreateDatasourceConnectionReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
-    @JacksonXmlProperty(localName = "name")
-
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service")
-
-    @JacksonXmlProperty(localName = "service")
 
     private String service;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_group_id")
 
-    @JacksonXmlProperty(localName = "security_group_id")
-
     private String securityGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "network_id")
-
-    @JacksonXmlProperty(localName = "network_id")
 
     private String networkId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "url")
 
-    @JacksonXmlProperty(localName = "url")
-
     private String url;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    @JacksonXmlProperty(localName = "tags")
-
-    private List<JobsTags> tags = null;
+    private List<TmsTagEntity> tags = null;
 
     public CreateDatasourceConnectionReq withName(String name) {
         this.name = name;
@@ -141,12 +128,12 @@ public class CreateDatasourceConnectionReq {
         this.url = url;
     }
 
-    public CreateDatasourceConnectionReq withTags(List<JobsTags> tags) {
+    public CreateDatasourceConnectionReq withTags(List<TmsTagEntity> tags) {
         this.tags = tags;
         return this;
     }
 
-    public CreateDatasourceConnectionReq addTagsItem(JobsTags tagsItem) {
+    public CreateDatasourceConnectionReq addTagsItem(TmsTagEntity tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -154,7 +141,7 @@ public class CreateDatasourceConnectionReq {
         return this;
     }
 
-    public CreateDatasourceConnectionReq withTags(Consumer<List<JobsTags>> tagsSetter) {
+    public CreateDatasourceConnectionReq withTags(Consumer<List<TmsTagEntity>> tagsSetter) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -163,14 +150,14 @@ public class CreateDatasourceConnectionReq {
     }
 
     /**
-     * 队列的标签。具体请参考表tags。
+     * 标签
      * @return tags
      */
-    public List<JobsTags> getTags() {
+    public List<TmsTagEntity> getTags() {
         return tags;
     }
 
-    public void setTags(List<JobsTags> tags) {
+    public void setTags(List<TmsTagEntity> tags) {
         this.tags = tags;
     }
 

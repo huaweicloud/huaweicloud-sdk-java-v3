@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.iotda.v5.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,14 +16,10 @@ public class ServiceCommandResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "response_name")
 
-    @JacksonXmlProperty(localName = "response_name")
-
     private String responseName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "paras")
-
-    @JacksonXmlProperty(localName = "paras")
 
     private List<ServiceCommandPara> paras = null;
 

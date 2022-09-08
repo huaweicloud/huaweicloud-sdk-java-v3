@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,182 +21,130 @@ public class CreateLoadBalancerOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
-
-    @JacksonXmlProperty(localName = "project_id")
 
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
-    @JacksonXmlProperty(localName = "name")
-
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
-
-    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vip_address")
 
-    @JacksonXmlProperty(localName = "vip_address")
-
     private String vipAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vip_subnet_cidr_id")
-
-    @JacksonXmlProperty(localName = "vip_subnet_cidr_id")
 
     private String vipSubnetCidrId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ipv6_vip_virsubnet_id")
 
-    @JacksonXmlProperty(localName = "ipv6_vip_virsubnet_id")
-
     private String ipv6VipVirsubnetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "provider")
-
-    @JacksonXmlProperty(localName = "provider")
 
     private String provider;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "l4_flavor_id")
 
-    @JacksonXmlProperty(localName = "l4_flavor_id")
-
     private String l4FlavorId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "l7_flavor_id")
-
-    @JacksonXmlProperty(localName = "l7_flavor_id")
 
     private String l7FlavorId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "guaranteed")
 
-    @JacksonXmlProperty(localName = "guaranteed")
-
     private Boolean guaranteed;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_id")
-
-    @JacksonXmlProperty(localName = "vpc_id")
 
     private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "availability_zone_list")
 
-    @JacksonXmlProperty(localName = "availability_zone_list")
-
     private List<String> availabilityZoneList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
-
-    @JacksonXmlProperty(localName = "enterprise_project_id")
 
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    @JacksonXmlProperty(localName = "tags")
-
     private List<Tag> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "admin_state_up")
-
-    @JacksonXmlProperty(localName = "admin_state_up")
 
     private Boolean adminStateUp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "billing_info")
 
-    @JacksonXmlProperty(localName = "billing_info")
-
     private String billingInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ipv6_bandwidth")
-
-    @JacksonXmlProperty(localName = "ipv6_bandwidth")
 
     private BandwidthRef ipv6Bandwidth;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "global_eip_ids")
 
-    @JacksonXmlProperty(localName = "global_eip_ids")
-
     private List<String> globalEipIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publicip_ids")
-
-    @JacksonXmlProperty(localName = "publicip_ids")
 
     private List<String> publicipIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publicip")
 
-    @JacksonXmlProperty(localName = "publicip")
-
     private CreateLoadBalancerPublicIpOption publicip;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "elb_virsubnet_ids")
-
-    @JacksonXmlProperty(localName = "elb_virsubnet_ids")
 
     private List<String> elbVirsubnetIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip_target_enable")
 
-    @JacksonXmlProperty(localName = "ip_target_enable")
-
     private Boolean ipTargetEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deletion_protection_enable")
-
-    @JacksonXmlProperty(localName = "deletion_protection_enable")
 
     private Boolean deletionProtectionEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "prepaid_options")
 
-    @JacksonXmlProperty(localName = "prepaid_options")
-
     private PrepaidCreateOption prepaidOptions;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "autoscaling")
-
-    @JacksonXmlProperty(localName = "autoscaling")
 
     private CreateLoadbalancerAutoscalingOption autoscaling;
 
@@ -280,8 +227,6 @@ public class CreateLoadBalancerOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "waf_failure_action")
-
-    @JacksonXmlProperty(localName = "waf_failure_action")
 
     private WafFailureActionEnum wafFailureAction;
 
@@ -393,7 +338,7 @@ public class CreateLoadBalancerOption {
     }
 
     /**
-     * 双栈类型负载均衡器所在子网的IPv6网络ID。可以通过GET https://{VPC_Endpoint}/v1/{project_id}/subnets 响应参数中的id得到。   使用说明： - vpc_id，vip_subnet_cidr_id，ipv6_vip_virsubnet_id不能同时为空，且需要在同一个vpc下。 - 需要对应的子网开启IPv6。 [不支持IPv6，请勿使用](tag:dt,dt_test)
+     * 双栈类型负载均衡器所在子网的IPv6网络ID。可以通过GET https://{VPC_Endpoint}/v1/{project_id}/subnets 响应参数中的id得到。   使用说明： - vpc_id，vip_subnet_cidr_id，ipv6_vip_virsubnet_id不能同时为空，且需要在同一个vpc下。 - 需要对应的子网开启IPv6。   [不支持IPv6，请勿使用](tag:dt,dt_test)
      * @return ipv6VipVirsubnetId
      */
     public String getIpv6VipVirsubnetId() {
@@ -444,7 +389,7 @@ public class CreateLoadBalancerOption {
     }
 
     /**
-     * 七层Flavor ID。[只支持设置为l7_flavor.elb.shared。](tag:hcso_dt)  [hcso场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:fcs)   使用说明： - 当l4_flavor_id和l7_flavor_id都不传的时，会使用默认flavor（默认flavor根据不同局点有所不同，具体以实际值为准）。
+     * 七层Flavor ID。 [使用说明： - 当l4_flavor_id和l7_flavor_id都不传的时，会使用默认flavor（默认flavor根据不同局点有所不同，具体以实际值为准）。](tag:hws,hws_hk,ocb,tlf,ctc,hcs,sbc,g42,tm,cmcc,hk_g42,mix,hk_sbc,hws_ocb) [只支持设置为l4_flavor.elb.shared。](tag:hcso_dt) [所有LB实例共享带宽，该字段无效，请勿使用。](tag:fcs)
      * @return l7FlavorId
      */
     public String getL7FlavorId() {
@@ -578,7 +523,7 @@ public class CreateLoadBalancerOption {
     }
 
     /**
-     * 负载均衡器的管理状态。只能设置为true。默认：true。 [ 不支持该字段，请勿使用。](tag:dt,dt_test)
+     * 负载均衡器的管理状态。只能设置为true。默认：true。  [不支持该字段，请勿使用。](tag:dt,dt_test)
      * @return adminStateUp
      */
     public Boolean getAdminStateUp() {
@@ -595,7 +540,7 @@ public class CreateLoadBalancerOption {
     }
 
     /**
-     * 资源账单信息，取值：  - 空：按需计费。  - 非空：包周期计费。  包周期计费billing_info字段的格式为：order_id:product_id:region_id:project_id，如：   CS2107161019CDJZZ:OFFI569702121789763584:eu-de:057ef081eb00d2732fd1c01a9be75e6f  使用说明：admin权限才能更新此字段。 [ 不支持该字段，请勿使用](tag:dt,dt_test,hcso_dt)
+     * 资源账单信息。取值： - 空：按需计费。 - 非空：包周期计费。  包周期计费billing_info字段的格式为：order_id:product_id:region_id:project_id，如： CS2107161019CDJZZ:OFFI569702121789763584:az1:057ef081eb00d2732fd1c01a9be75e6f [ 不支持该字段，请勿使用](tag:dt,dt_test,hcso_dt)
      * @return billingInfo
      */
     public String getBillingInfo() {
@@ -763,7 +708,7 @@ public class CreateLoadBalancerOption {
     }
 
     /**
-     * 是否启用跨VPC后端转发。取值：true 表示开启，false 表示不开启。默认：false不开启。仅独享型负载均衡器支持该特性。  开启跨VPC后端转发后，后端服务器组不仅支持添加云上VPC内的服务器，还支持添加其他VPC、其他公有云、云下数据中心的服务器。 [ 不支持该字段，请勿使用。](tag:dt,dt_test)
+     * 是否启用跨VPC后端转发。取值： - true：开启、 - false：不开启。  [仅独享型负载均衡器支持该特性。](tag:hws,hws_hk,ocb,tlf,ctc,hcs,sbc,g42,tm,cmcc,hk_g42,mix,hk_sbc,hws_ocb,fcs,dt,dt_test)  开启跨VPC后端转发后，后端服务器组不仅支持添加云上VPC内的服务器，还支持添加其他VPC、其他公有云、云下数据中心的服务器。  使用说明： - 开启不能关闭。
      * @return ipTargetEnable
      */
     public Boolean getIpTargetEnable() {
@@ -780,7 +725,7 @@ public class CreateLoadBalancerOption {
     }
 
     /**
-     * 是否开启删除保护。取值：false不开启，true开启。默认false不开启。 > 退场时需要先关闭所有资源的删除保护开关。 [ 不支持该字段，请勿使用](tag:dt,dt_test)
+     * 是否开启删除保护。取值：false不开启，true开启。默认false不开启。 > 退场时需要先关闭所有资源的删除保护开关。
      * @return deletionProtectionEnable
      */
     public Boolean getDeletionProtectionEnable() {

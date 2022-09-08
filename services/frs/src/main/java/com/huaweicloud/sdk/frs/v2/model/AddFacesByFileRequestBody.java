@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.frs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.http.FormDataFilePart;
 import com.huaweicloud.sdk.core.http.FormDataPart;
 import com.huaweicloud.sdk.core.http.SdkFormDataBody;
@@ -18,28 +17,21 @@ import java.util.Objects;
 public class AddFacesByFileRequestBody implements SdkFormDataBody {
 
     @JsonProperty(value = "image_file", access = JsonProperty.Access.WRITE_ONLY)
-    @JacksonXmlProperty(localName = "image_file")
 
     private FormDataFilePart imageFile;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "external_image_id")
 
-    @JacksonXmlProperty(localName = "external_image_id")
-
     private String externalImageId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "external_fields")
 
-    @JacksonXmlProperty(localName = "external_fields")
-
     private String externalFields;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "single")
-
-    @JacksonXmlProperty(localName = "single")
 
     private Boolean single;
 

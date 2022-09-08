@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cloudide.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,28 +16,20 @@ public class StacksAttribute {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "specs")
 
-    @JacksonXmlProperty(localName = "specs")
-
     private List<String> specs = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "suggest")
-
-    @JacksonXmlProperty(localName = "suggest")
 
     private String suggest;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "suggest_title")
 
-    @JacksonXmlProperty(localName = "suggest_title")
-
     private String suggestTitle;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volumes")
-
-    @JacksonXmlProperty(localName = "volumes")
 
     private List<String> volumes = null;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.scm.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,28 +13,20 @@ public class Authentification {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "record_name")
 
-    @JacksonXmlProperty(localName = "record_name")
-
     private String recordName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "record_type")
-
-    @JacksonXmlProperty(localName = "record_type")
 
     private String recordType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "record_value")
 
-    @JacksonXmlProperty(localName = "record_value")
-
     private String recordValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain")
-
-    @JacksonXmlProperty(localName = "domain")
 
     private String domain;
 

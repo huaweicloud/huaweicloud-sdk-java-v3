@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,14 +21,10 @@ public class StructTemplateModel {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
 
-    @JacksonXmlProperty(localName = "project_id")
-
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template_name")
-
-    @JacksonXmlProperty(localName = "template_name")
 
     private String templateName;
 
@@ -125,56 +120,40 @@ public class StructTemplateModel {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template_type")
 
-    @JacksonXmlProperty(localName = "template_type")
-
     private TemplateTypeEnum templateType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "demo_log")
-
-    @JacksonXmlProperty(localName = "demo_log")
 
     private String demoLog;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "demo_fields")
 
-    @JacksonXmlProperty(localName = "demo_fields")
-
     private List<DemoField> demoFields = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tag_fields")
-
-    @JacksonXmlProperty(localName = "tag_fields")
 
     private List<TagFieldNew> tagFields = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rule")
 
-    @JacksonXmlProperty(localName = "rule")
-
     private TemplateRule rule;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "demo_label")
-
-    @JacksonXmlProperty(localName = "demo_label")
 
     private String demoLabel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
-    @JacksonXmlProperty(localName = "create_time")
-
     private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
-
-    @JacksonXmlProperty(localName = "id")
 
     private String id;
 

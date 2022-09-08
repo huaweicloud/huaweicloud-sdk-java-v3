@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.functiongraph.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,14 +13,10 @@ public class FuncCode {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file")
 
-    @JacksonXmlProperty(localName = "file")
-
     private String file;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "link")
-
-    @JacksonXmlProperty(localName = "link")
 
     private String link;
 

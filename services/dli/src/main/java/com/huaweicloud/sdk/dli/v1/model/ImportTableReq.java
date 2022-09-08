@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,105 +16,75 @@ public class ImportTableReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_path")
 
-    @JacksonXmlProperty(localName = "data_path")
-
     private String dataPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_type")
-
-    @JacksonXmlProperty(localName = "data_type")
 
     private String dataType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "database_name")
 
-    @JacksonXmlProperty(localName = "database_name")
-
     private String databaseName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "table_name")
-
-    @JacksonXmlProperty(localName = "table_name")
 
     private String tableName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "with_column_header")
 
-    @JacksonXmlProperty(localName = "with_column_header")
-
     private Boolean withColumnHeader;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "delimiter")
-
-    @JacksonXmlProperty(localName = "delimiter")
 
     private String delimiter;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quote_char")
 
-    @JacksonXmlProperty(localName = "quote_char")
-
     private String quoteChar;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "escape_char")
-
-    @JacksonXmlProperty(localName = "escape_char")
 
     private String escapeChar;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "date_format")
 
-    @JacksonXmlProperty(localName = "date_format")
-
     private String dateFormat;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bad_records_path")
-
-    @JacksonXmlProperty(localName = "bad_records_path")
 
     private String badRecordsPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timestamp_format")
 
-    @JacksonXmlProperty(localName = "timestamp_format")
-
     private String timestampFormat;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "queue_name")
-
-    @JacksonXmlProperty(localName = "queue_name")
 
     private String queueName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "overwrite")
 
-    @JacksonXmlProperty(localName = "overwrite")
-
     private Boolean overwrite;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "partition_spec")
 
-    @JacksonXmlProperty(localName = "partition_spec")
-
-    private Object partitionSpec;
+    private String partitionSpec;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "conf")
-
-    @JacksonXmlProperty(localName = "conf")
 
     private List<String> conf = null;
 
@@ -340,7 +309,7 @@ public class ImportTableReq {
         this.overwrite = overwrite;
     }
 
-    public ImportTableReq withPartitionSpec(Object partitionSpec) {
+    public ImportTableReq withPartitionSpec(String partitionSpec) {
         this.partitionSpec = partitionSpec;
         return this;
     }
@@ -349,11 +318,11 @@ public class ImportTableReq {
      * 表示需要导入到哪个分区
      * @return partitionSpec
      */
-    public Object getPartitionSpec() {
+    public String getPartitionSpec() {
         return partitionSpec;
     }
 
-    public void setPartitionSpec(Object partitionSpec) {
+    public void setPartitionSpec(String partitionSpec) {
         this.partitionSpec = partitionSpec;
     }
 

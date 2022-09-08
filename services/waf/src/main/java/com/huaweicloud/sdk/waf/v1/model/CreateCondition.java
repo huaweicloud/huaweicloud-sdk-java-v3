@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.waf.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,35 +16,25 @@ public class CreateCondition {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "category")
 
-    @JacksonXmlProperty(localName = "category")
-
     private String category;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "contents")
-
-    @JacksonXmlProperty(localName = "contents")
 
     private List<String> contents = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "logic_operation")
 
-    @JacksonXmlProperty(localName = "logic_operation")
-
     private String logicOperation;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "check_all_indexes_logic")
 
-    @JacksonXmlProperty(localName = "check_all_indexes_logic")
-
     private Integer checkAllIndexesLogic;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "index")
-
-    @JacksonXmlProperty(localName = "index")
 
     private String index;
 

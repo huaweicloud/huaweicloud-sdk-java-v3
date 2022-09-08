@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dcs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,28 +13,20 @@ public class ClusterRedisNodeMonitoredObject {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dcs_instance_id")
 
-    @JacksonXmlProperty(localName = "dcs_instance_id")
-
     private String dcsInstanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
-
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dcs_cluster_redis_node")
 
-    @JacksonXmlProperty(localName = "dcs_cluster_redis_node")
-
     private String dcsClusterRedisNode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
-
-    @JacksonXmlProperty(localName = "status")
 
     private String status;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,42 +16,30 @@ public class RestCustomMultiPictureBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "manualSet")
 
-    @JacksonXmlProperty(localName = "manualSet")
-
     private Integer manualSet;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "picLayoutInfo")
-
-    @JacksonXmlProperty(localName = "picLayoutInfo")
 
     private PicLayoutInfo picLayoutInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "imageType")
 
-    @JacksonXmlProperty(localName = "imageType")
-
     private String imageType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subscriberInPics")
-
-    @JacksonXmlProperty(localName = "subscriberInPics")
 
     private List<RestSubscriberInPic> subscriberInPics = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "switchTime")
 
-    @JacksonXmlProperty(localName = "switchTime")
-
     private Integer switchTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "multiPicSaveOnly")
-
-    @JacksonXmlProperty(localName = "multiPicSaveOnly")
 
     private Boolean multiPicSaveOnly;
 

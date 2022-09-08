@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.iotanalytics.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,28 +16,20 @@ public class SqlJobRunResponseBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sql_type")
 
-    @JacksonXmlProperty(localName = "sql_type")
-
     private String sqlType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "schema")
-
-    @JacksonXmlProperty(localName = "schema")
 
     private List<Object> schema = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rows")
 
-    @JacksonXmlProperty(localName = "rows")
-
     private List<Object> rows = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_mode")
-
-    @JacksonXmlProperty(localName = "job_mode")
 
     private String jobMode;
 

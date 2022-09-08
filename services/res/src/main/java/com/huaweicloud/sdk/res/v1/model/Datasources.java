@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.res.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,63 +14,45 @@ public class Datasources {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "datasource_id")
 
-    @JacksonXmlProperty(localName = "datasource_id")
-
     private String datasourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "datasource_name")
-
-    @JacksonXmlProperty(localName = "datasource_name")
 
     private String datasourceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    @JacksonXmlProperty(localName = "status")
-
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "structure")
-
-    @JacksonXmlProperty(localName = "structure")
 
     private String structure;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "workspace_id")
 
-    @JacksonXmlProperty(localName = "workspace_id")
-
     private String workspaceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_config")
-
-    @JacksonXmlProperty(localName = "data_config")
 
     private DataConfig dataConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "specs_config")
 
-    @JacksonXmlProperty(localName = "specs_config")
-
     private SpecsConfig specsConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
 
-    @JacksonXmlProperty(localName = "created_at")
-
     private Long createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_at")
-
-    @JacksonXmlProperty(localName = "update_at")
 
     private Long updateAt;
 

@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -102,56 +101,40 @@ public class TaskSettingsTaskConfig {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scan_mode")
 
-    @JacksonXmlProperty(localName = "scan_mode")
-
     private ScanModeEnum scanMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "port_scan")
-
-    @JacksonXmlProperty(localName = "port_scan")
 
     private Boolean portScan;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "weak_pwd_scan")
 
-    @JacksonXmlProperty(localName = "weak_pwd_scan")
-
     private Boolean weakPwdScan;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cve_check")
-
-    @JacksonXmlProperty(localName = "cve_check")
 
     private Boolean cveCheck;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "text_check")
 
-    @JacksonXmlProperty(localName = "text_check")
-
     private Boolean textCheck;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "picture_check")
-
-    @JacksonXmlProperty(localName = "picture_check")
 
     private Boolean pictureCheck;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "malicious_code")
 
-    @JacksonXmlProperty(localName = "malicious_code")
-
     private Boolean maliciousCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "malicious_link")
-
-    @JacksonXmlProperty(localName = "malicious_link")
 
     private Boolean maliciousLink;
 

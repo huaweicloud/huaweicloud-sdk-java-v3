@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dcs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,14 +13,10 @@ public class DimChild {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dim_name")
 
-    @JacksonXmlProperty(localName = "dim_name")
-
     private String dimName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dim_route")
-
-    @JacksonXmlProperty(localName = "dim_route")
 
     private String dimRoute;
 

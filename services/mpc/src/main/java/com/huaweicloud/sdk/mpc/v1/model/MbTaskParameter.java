@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.mpc.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,21 +14,15 @@ public class MbTaskParameter {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status_description")
 
-    @JacksonXmlProperty(localName = "status_description")
-
     private String statusDescription;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "output_filename")
 
-    @JacksonXmlProperty(localName = "output_filename")
-
     private String outputFilename;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metadata")
-
-    @JacksonXmlProperty(localName = "metadata")
 
     private MetaData metadata;
 

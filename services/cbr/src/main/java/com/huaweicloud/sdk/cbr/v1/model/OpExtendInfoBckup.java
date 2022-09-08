@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -19,14 +18,10 @@ public class OpExtendInfoBckup {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_consistency_error_code")
 
-    @JacksonXmlProperty(localName = "app_consistency_error_code")
-
     private String appConsistencyErrorCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_consistency_error_message")
-
-    @JacksonXmlProperty(localName = "app_consistency_error_message")
 
     private String appConsistencyErrorMessage;
 
@@ -110,21 +105,15 @@ public class OpExtendInfoBckup {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_consistency_status")
 
-    @JacksonXmlProperty(localName = "app_consistency_status")
-
     private AppConsistencyStatusEnum appConsistencyStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "backup_id")
 
-    @JacksonXmlProperty(localName = "backup_id")
-
     private String backupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "backup_name")
-
-    @JacksonXmlProperty(localName = "backup_name")
 
     private String backupName;
 
@@ -207,8 +196,6 @@ public class OpExtendInfoBckup {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "incremental")
-
-    @JacksonXmlProperty(localName = "incremental")
 
     private IncrementalEnum incremental;
 

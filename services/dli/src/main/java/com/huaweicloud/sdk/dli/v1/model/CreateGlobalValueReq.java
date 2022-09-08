@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,16 +13,17 @@ public class CreateGlobalValueReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "var_name")
 
-    @JacksonXmlProperty(localName = "var_name")
-
     private String varName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "var_value")
 
-    @JacksonXmlProperty(localName = "var_value")
-
     private String varValue;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_sensitive")
+
+    private Boolean isSensitive;
 
     public CreateGlobalValueReq withVarName(String varName) {
         this.varName = varName;
@@ -59,6 +59,23 @@ public class CreateGlobalValueReq {
         this.varValue = varValue;
     }
 
+    public CreateGlobalValueReq withIsSensitive(Boolean isSensitive) {
+        this.isSensitive = isSensitive;
+        return this;
+    }
+
+    /**
+     * 是否为敏感变量
+     * @return isSensitive
+     */
+    public Boolean getIsSensitive() {
+        return isSensitive;
+    }
+
+    public void setIsSensitive(Boolean isSensitive) {
+        this.isSensitive = isSensitive;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -69,12 +86,13 @@ public class CreateGlobalValueReq {
         }
         CreateGlobalValueReq createGlobalValueReq = (CreateGlobalValueReq) o;
         return Objects.equals(this.varName, createGlobalValueReq.varName)
-            && Objects.equals(this.varValue, createGlobalValueReq.varValue);
+            && Objects.equals(this.varValue, createGlobalValueReq.varValue)
+            && Objects.equals(this.isSensitive, createGlobalValueReq.isSensitive);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(varName, varValue);
+        return Objects.hash(varName, varValue, isSensitive);
     }
 
     @Override
@@ -83,6 +101,7 @@ public class CreateGlobalValueReq {
         sb.append("class CreateGlobalValueReq {\n");
         sb.append("    varName: ").append(toIndentedString(varName)).append("\n");
         sb.append("    varValue: ").append(toIndentedString(varValue)).append("\n");
+        sb.append("    isSensitive: ").append(toIndentedString(isSensitive)).append("\n");
         sb.append("}");
         return sb.toString();
     }

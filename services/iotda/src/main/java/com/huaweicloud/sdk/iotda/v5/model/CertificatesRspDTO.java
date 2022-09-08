@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.iotda.v5.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,56 +13,40 @@ public class CertificatesRspDTO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "certificate_id")
 
-    @JacksonXmlProperty(localName = "certificate_id")
-
     private String certificateId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cn_name")
-
-    @JacksonXmlProperty(localName = "cn_name")
 
     private String cnName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "owner")
 
-    @JacksonXmlProperty(localName = "owner")
-
     private String owner;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
-
-    @JacksonXmlProperty(localName = "status")
 
     private Boolean status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "verify_code")
 
-    @JacksonXmlProperty(localName = "verify_code")
-
     private String verifyCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_date")
-
-    @JacksonXmlProperty(localName = "create_date")
 
     private String createDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "effective_date")
 
-    @JacksonXmlProperty(localName = "effective_date")
-
     private String effectiveDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expiry_date")
-
-    @JacksonXmlProperty(localName = "expiry_date")
 
     private String expiryDate;
 

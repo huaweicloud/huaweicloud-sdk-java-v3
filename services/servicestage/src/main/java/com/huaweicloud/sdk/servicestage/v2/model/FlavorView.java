@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.servicestage.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,49 +13,35 @@ public class FlavorView {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flavor_id")
 
-    @JacksonXmlProperty(localName = "flavor_id")
-
     private FlavorId flavorId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "storage_size")
-
-    @JacksonXmlProperty(localName = "storage_size")
 
     private String storageSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "num_cpu")
 
-    @JacksonXmlProperty(localName = "num_cpu")
-
     private String numCpu;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "num_cpu_init")
-
-    @JacksonXmlProperty(localName = "num_cpu_init")
 
     private String numCpuInit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "memory_size")
 
-    @JacksonXmlProperty(localName = "memory_size")
-
     private String memorySize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "memory_size_init")
 
-    @JacksonXmlProperty(localName = "memory_size_init")
-
     private String memorySizeInit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "label")
-
-    @JacksonXmlProperty(localName = "label")
 
     private String label;
 

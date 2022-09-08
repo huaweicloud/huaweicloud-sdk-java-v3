@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,8 +17,6 @@ public class JobRecords {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_name")
-
-    @JacksonXmlProperty(localName = "job_name")
 
     private String jobName;
 
@@ -103,42 +100,30 @@ public class JobRecords {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "record_type")
 
-    @JacksonXmlProperty(localName = "record_type")
-
     private RecordTypeEnum recordType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "record_time")
-
-    @JacksonXmlProperty(localName = "record_time")
 
     private String recordTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "request")
 
-    @JacksonXmlProperty(localName = "request")
-
     private String request;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "response")
-
-    @JacksonXmlProperty(localName = "response")
 
     private String response;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "code")
 
-    @JacksonXmlProperty(localName = "code")
-
     private String code;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "message")
-
-    @JacksonXmlProperty(localName = "message")
 
     private String message;
 
@@ -221,8 +206,6 @@ public class JobRecords {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_status")
-
-    @JacksonXmlProperty(localName = "job_status")
 
     private JobStatusEnum jobStatus;
 

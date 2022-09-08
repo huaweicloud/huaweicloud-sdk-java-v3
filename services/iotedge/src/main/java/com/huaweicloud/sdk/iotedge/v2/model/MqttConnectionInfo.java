@@ -8,8 +8,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -23,7 +21,6 @@ public class MqttConnectionInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="server_address")
     
-    @JacksonXmlProperty(localName = "server_address")
     
     private String serverAddress;
 
@@ -31,7 +28,6 @@ public class MqttConnectionInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="client_id")
     
-    @JacksonXmlProperty(localName = "client_id")
     
     private String clientId;
 
@@ -39,7 +35,6 @@ public class MqttConnectionInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auth_type")
     
-    @JacksonXmlProperty(localName = "auth_type")
     
     private String authType;
 
@@ -47,7 +42,6 @@ public class MqttConnectionInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="private_key")
     
-    @JacksonXmlProperty(localName = "private_key")
     
     private String privateKey;
 
@@ -55,7 +49,6 @@ public class MqttConnectionInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="certificate")
     
-    @JacksonXmlProperty(localName = "certificate")
     
     private String certificate;
 
@@ -63,7 +56,6 @@ public class MqttConnectionInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="user_name")
     
-    @JacksonXmlProperty(localName = "user_name")
     
     private String userName;
 
@@ -71,7 +63,6 @@ public class MqttConnectionInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="password")
     
-    @JacksonXmlProperty(localName = "password")
     
     private String password;
 
@@ -79,7 +70,6 @@ public class MqttConnectionInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="qos")
     
-    @JacksonXmlProperty(localName = "qos")
     
     private Integer qos;
 

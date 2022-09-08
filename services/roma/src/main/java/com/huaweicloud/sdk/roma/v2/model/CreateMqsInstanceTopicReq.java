@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -19,28 +18,20 @@ public class CreateMqsInstanceTopicReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
-    @JacksonXmlProperty(localName = "name")
-
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_id")
-
-    @JacksonXmlProperty(localName = "app_id")
 
     private String appId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "partition")
 
-    @JacksonXmlProperty(localName = "partition")
-
     private Integer partition;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "replication")
-
-    @JacksonXmlProperty(localName = "replication")
 
     private Integer replication;
 
@@ -130,49 +121,35 @@ public class CreateMqsInstanceTopicReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "access_policy")
 
-    @JacksonXmlProperty(localName = "access_policy")
-
     private AccessPolicyEnum accessPolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sync_message_flush")
-
-    @JacksonXmlProperty(localName = "sync_message_flush")
 
     private Boolean syncMessageFlush;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sync_replication")
 
-    @JacksonXmlProperty(localName = "sync_replication")
-
     private Boolean syncReplication;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "retention_time")
-
-    @JacksonXmlProperty(localName = "retention_time")
 
     private Integer retentionTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tag")
 
-    @JacksonXmlProperty(localName = "tag")
-
     private String tag;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
-    @JacksonXmlProperty(localName = "description")
-
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sensitive_word")
-
-    @JacksonXmlProperty(localName = "sensitive_word")
 
     private String sensitiveWord;
 

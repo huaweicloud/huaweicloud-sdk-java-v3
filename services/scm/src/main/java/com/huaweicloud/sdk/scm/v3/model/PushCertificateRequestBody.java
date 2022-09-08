@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.scm.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,14 +13,10 @@ public class PushCertificateRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_project")
 
-    @JacksonXmlProperty(localName = "target_project")
-
     private String targetProject;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_service")
-
-    @JacksonXmlProperty(localName = "target_service")
 
     private String targetService;
 

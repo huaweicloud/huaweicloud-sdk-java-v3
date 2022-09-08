@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,23 +13,7 @@ public class ShowObjectUserRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "object")
 
-    @JacksonXmlProperty(localName = "object")
-
     private String _object;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "limit")
-
-    @JacksonXmlProperty(localName = "limit")
-
-    private Integer limit;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "offset")
-
-    @JacksonXmlProperty(localName = "offset")
-
-    private Integer offset;
 
     public ShowObjectUserRequest withObject(String _object) {
         this._object = _object;
@@ -49,40 +32,6 @@ public class ShowObjectUserRequest {
         this._object = _object;
     }
 
-    public ShowObjectUserRequest withLimit(Integer limit) {
-        this.limit = limit;
-        return this;
-    }
-
-    /**
-     * Get limit
-     * @return limit
-     */
-    public Integer getLimit() {
-        return limit;
-    }
-
-    public void setLimit(Integer limit) {
-        this.limit = limit;
-    }
-
-    public ShowObjectUserRequest withOffset(Integer offset) {
-        this.offset = offset;
-        return this;
-    }
-
-    /**
-     * Get offset
-     * @return offset
-     */
-    public Integer getOffset() {
-        return offset;
-    }
-
-    public void setOffset(Integer offset) {
-        this.offset = offset;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -92,14 +41,12 @@ public class ShowObjectUserRequest {
             return false;
         }
         ShowObjectUserRequest showObjectUserRequest = (ShowObjectUserRequest) o;
-        return Objects.equals(this._object, showObjectUserRequest._object)
-            && Objects.equals(this.limit, showObjectUserRequest.limit)
-            && Objects.equals(this.offset, showObjectUserRequest.offset);
+        return Objects.equals(this._object, showObjectUserRequest._object);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(_object, limit, offset);
+        return Objects.hash(_object);
     }
 
     @Override
@@ -107,8 +54,6 @@ public class ShowObjectUserRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowObjectUserRequest {\n");
         sb.append("    _object: ").append(toIndentedString(_object)).append("\n");
-        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
-        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("}");
         return sb.toString();
     }

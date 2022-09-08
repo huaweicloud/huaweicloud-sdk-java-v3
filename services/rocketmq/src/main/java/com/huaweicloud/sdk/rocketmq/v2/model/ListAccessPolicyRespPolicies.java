@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.rocketmq.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,28 +13,20 @@ public class ListAccessPolicyRespPolicies {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "access_key")
 
-    @JacksonXmlProperty(localName = "access_key")
-
     private String accessKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "white_remote_address")
-
-    @JacksonXmlProperty(localName = "white_remote_address")
 
     private String whiteRemoteAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "admin")
 
-    @JacksonXmlProperty(localName = "admin")
-
     private Boolean admin;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "perm")
-
-    @JacksonXmlProperty(localName = "perm")
 
     private String perm;
 

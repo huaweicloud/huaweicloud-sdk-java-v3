@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.ief.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,21 +14,15 @@ public class CreateAppsInDeploymentV3 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "replicas")
 
-    @JacksonXmlProperty(localName = "replicas")
-
     private Integer replicas;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template")
 
-    @JacksonXmlProperty(localName = "template")
-
     private PodRequest template;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "annotations")
-
-    @JacksonXmlProperty(localName = "annotations")
 
     private Annotations annotations;
 

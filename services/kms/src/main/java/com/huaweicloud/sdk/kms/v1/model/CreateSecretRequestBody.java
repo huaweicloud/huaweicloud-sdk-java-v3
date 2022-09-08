@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.kms.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,35 +13,25 @@ public class CreateSecretRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
-    @JacksonXmlProperty(localName = "name")
-
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "kms_key_id")
-
-    @JacksonXmlProperty(localName = "kms_key_id")
 
     private String kmsKeyId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
-    @JacksonXmlProperty(localName = "description")
-
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "secret_binary")
 
-    @JacksonXmlProperty(localName = "secret_binary")
-
     private String secretBinary;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "secret_string")
-
-    @JacksonXmlProperty(localName = "secret_string")
 
     private String secretString;
 

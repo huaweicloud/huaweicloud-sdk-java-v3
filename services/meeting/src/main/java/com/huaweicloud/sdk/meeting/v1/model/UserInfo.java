@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,196 +13,140 @@ public class UserInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "userId")
 
-    @JacksonXmlProperty(localName = "userId")
-
     private String userId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ucloginAccount")
-
-    @JacksonXmlProperty(localName = "ucloginAccount")
 
     private String ucloginAccount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "serviceAccount")
 
-    @JacksonXmlProperty(localName = "serviceAccount")
-
     private String serviceAccount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "numberHA1")
-
-    @JacksonXmlProperty(localName = "numberHA1")
 
     private String numberHA1;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alias1")
 
-    @JacksonXmlProperty(localName = "alias1")
-
     private String alias1;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "companyId")
-
-    @JacksonXmlProperty(localName = "companyId")
 
     private String companyId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "spId")
 
-    @JacksonXmlProperty(localName = "spId")
-
     private String spId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "companyDomain")
-
-    @JacksonXmlProperty(localName = "companyDomain")
 
     private String companyDomain;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "realm")
 
-    @JacksonXmlProperty(localName = "realm")
-
     private String realm;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "userType")
-
-    @JacksonXmlProperty(localName = "userType")
 
     private Integer userType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "adminType")
 
-    @JacksonXmlProperty(localName = "adminType")
-
     private Integer adminType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
-
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nameEn")
 
-    @JacksonXmlProperty(localName = "nameEn")
-
     private String nameEn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "isBindPhone")
-
-    @JacksonXmlProperty(localName = "isBindPhone")
 
     private Boolean isBindPhone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "freeUser")
 
-    @JacksonXmlProperty(localName = "freeUser")
-
     private Boolean freeUser;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "thirdAccount")
-
-    @JacksonXmlProperty(localName = "thirdAccount")
 
     private String thirdAccount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "visionAccount")
 
-    @JacksonXmlProperty(localName = "visionAccount")
-
     private String visionAccount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "headPictureUrl")
-
-    @JacksonXmlProperty(localName = "headPictureUrl")
 
     private String headPictureUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "password")
 
-    @JacksonXmlProperty(localName = "password")
-
     private String password;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
-
-    @JacksonXmlProperty(localName = "status")
 
     private Integer status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "paidAccount")
 
-    @JacksonXmlProperty(localName = "paidAccount")
-
     private String paidAccount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "paidPassword")
-
-    @JacksonXmlProperty(localName = "paidPassword")
 
     private String paidPassword;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "weLinkUser")
 
-    @JacksonXmlProperty(localName = "weLinkUser")
-
     private Boolean weLinkUser;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "appId")
-
-    @JacksonXmlProperty(localName = "appId")
 
     private String appId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tr069Account")
 
-    @JacksonXmlProperty(localName = "tr069Account")
-
     private String tr069Account;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "corpType")
-
-    @JacksonXmlProperty(localName = "corpType")
 
     private Integer corpType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cloudUserId")
 
-    @JacksonXmlProperty(localName = "cloudUserId")
-
     private String cloudUserId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "grayUser")
-
-    @JacksonXmlProperty(localName = "grayUser")
 
     private Boolean grayUser;
 

@@ -13,8 +13,6 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.gaussdb.v3.model.MysqlSlowLogList;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -28,7 +26,6 @@ public class ListGaussMySqlSlowLogResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="slow_log_list")
     
-    @JacksonXmlProperty(localName = "slow_log_list")
     
     private List<MysqlSlowLogList> slowLogList = null;
     
@@ -36,7 +33,6 @@ public class ListGaussMySqlSlowLogResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="long_query_time")
     
-    @JacksonXmlProperty(localName = "long_query_time")
     
     private String longQueryTime;
 
@@ -44,7 +40,6 @@ public class ListGaussMySqlSlowLogResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="total_record")
     
-    @JacksonXmlProperty(localName = "total_record")
     
     private Integer totalRecord;
 

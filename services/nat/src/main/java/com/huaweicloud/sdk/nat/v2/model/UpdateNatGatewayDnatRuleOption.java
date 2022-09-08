@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -19,28 +18,20 @@ public class UpdateNatGatewayDnatRuleOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nat_gateway_id")
 
-    @JacksonXmlProperty(localName = "nat_gateway_id")
-
     private String natGatewayId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
-
-    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "port_id")
 
-    @JacksonXmlProperty(localName = "port_id")
-
     private String portId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "private_ip")
-
-    @JacksonXmlProperty(localName = "private_ip")
 
     private String privateIp;
 
@@ -130,42 +121,30 @@ public class UpdateNatGatewayDnatRuleOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protocol")
 
-    @JacksonXmlProperty(localName = "protocol")
-
     private ProtocolEnum protocol;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "floating_ip_id")
-
-    @JacksonXmlProperty(localName = "floating_ip_id")
 
     private String floatingIpId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "internal_service_port")
 
-    @JacksonXmlProperty(localName = "internal_service_port")
-
     private Integer internalServicePort;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "external_service_port")
-
-    @JacksonXmlProperty(localName = "external_service_port")
 
     private Integer externalServicePort;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "internal_service_port_range")
 
-    @JacksonXmlProperty(localName = "internal_service_port_range")
-
     private String internalServicePortRange;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "external_service_port_range")
-
-    @JacksonXmlProperty(localName = "external_service_port_range")
 
     private String externalServicePortRange;
 

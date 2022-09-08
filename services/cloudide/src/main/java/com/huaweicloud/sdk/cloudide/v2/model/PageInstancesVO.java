@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cloudide.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,35 +16,25 @@ public class PageInstancesVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "empty")
 
-    @JacksonXmlProperty(localName = "empty")
-
     private Boolean empty;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "items")
-
-    @JacksonXmlProperty(localName = "items")
 
     private List<InstancesVO> items = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "items_before")
 
-    @JacksonXmlProperty(localName = "items_before")
-
     private Long itemsBefore;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
 
-    @JacksonXmlProperty(localName = "size")
-
     private Long size;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_items_count")
-
-    @JacksonXmlProperty(localName = "total_items_count")
 
     private Long totalItemsCount;
 

@@ -2,41 +2,32 @@ package com.huaweicloud.sdk.css.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 公网访问信息。
+ * 公网访问信息。只有在httpsEnable设置为true时该参数配置生效。
  */
 public class CreateClusterPublicIpReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "eip")
 
-    @JacksonXmlProperty(localName = "eip")
-
     private CreateClusterPublicEip eip;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "elbWhiteListReq")
-
-    @JacksonXmlProperty(localName = "elbWhiteListReq")
 
     private CreateClusterElbWhiteList elbWhiteListReq;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publicBindType")
 
-    @JacksonXmlProperty(localName = "publicBindType")
-
     private String publicBindType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "eipId")
-
-    @JacksonXmlProperty(localName = "eipId")
 
     private String eipId;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.codehub.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,8 +13,6 @@ public class DeleteRepositoryRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "repository_uuid")
 
-    @JacksonXmlProperty(localName = "repository_uuid")
-
     private String repositoryUuid;
 
     public DeleteRepositoryRequest withRepositoryUuid(String repositoryUuid) {
@@ -24,7 +21,7 @@ public class DeleteRepositoryRequest {
     }
 
     /**
-     * 仓库uuid，用来指定删除的仓库
+     * 仓库uuid(由CreateRepository接口返回)，用来指定删除的仓库
      * @return repositoryUuid
      */
     public String getRepositoryUuid() {

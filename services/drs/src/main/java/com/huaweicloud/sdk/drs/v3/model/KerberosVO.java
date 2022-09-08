@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.drs.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,28 +13,20 @@ public class KerberosVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "krb5_conf_file")
 
-    @JacksonXmlProperty(localName = "krb5_conf_file")
-
     private String krb5ConfFile;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key_tab_file")
-
-    @JacksonXmlProperty(localName = "key_tab_file")
 
     private String keyTabFile;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_name")
 
-    @JacksonXmlProperty(localName = "domain_name")
-
     private String domainName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_principal")
-
-    @JacksonXmlProperty(localName = "user_principal")
 
     private String userPrincipal;
 

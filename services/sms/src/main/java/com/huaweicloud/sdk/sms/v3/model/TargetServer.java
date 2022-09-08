@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,28 +21,20 @@ public class TargetServer {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip")
-
-    @JacksonXmlProperty(localName = "ip")
 
     private String ip;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
-    @JacksonXmlProperty(localName = "name")
-
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hostname")
-
-    @JacksonXmlProperty(localName = "hostname")
 
     private String hostname;
 
@@ -127,14 +118,10 @@ public class TargetServer {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os_type")
 
-    @JacksonXmlProperty(localName = "os_type")
-
     private OsTypeEnum osType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os_version")
-
-    @JacksonXmlProperty(localName = "os_version")
 
     private String osVersion;
 
@@ -218,91 +205,65 @@ public class TargetServer {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "firmware")
 
-    @JacksonXmlProperty(localName = "firmware")
-
     private FirmwareEnum firmware;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cpu_quantity")
-
-    @JacksonXmlProperty(localName = "cpu_quantity")
 
     private Integer cpuQuantity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "memory")
 
-    @JacksonXmlProperty(localName = "memory")
-
     private Long memory;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "disks")
-
-    @JacksonXmlProperty(localName = "disks")
 
     private List<TargetDisk> disks = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "btrfs_list")
 
-    @JacksonXmlProperty(localName = "btrfs_list")
-
     private List<String> btrfsList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "networks")
-
-    @JacksonXmlProperty(localName = "networks")
 
     private List<NetWork> networks = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_id")
 
-    @JacksonXmlProperty(localName = "domain_id")
-
     private String domainId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "has_rsync")
-
-    @JacksonXmlProperty(localName = "has_rsync")
 
     private Boolean hasRsync;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "paravirtualization")
 
-    @JacksonXmlProperty(localName = "paravirtualization")
-
     private Boolean paravirtualization;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "raw_devices")
-
-    @JacksonXmlProperty(localName = "raw_devices")
 
     private String rawDevices;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "driver_files")
 
-    @JacksonXmlProperty(localName = "driver_files")
-
     private Boolean driverFiles;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "system_services")
 
-    @JacksonXmlProperty(localName = "system_services")
-
     private Boolean systemServices;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "account_rights")
-
-    @JacksonXmlProperty(localName = "account_rights")
 
     private Boolean accountRights;
 
@@ -386,56 +347,40 @@ public class TargetServer {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "boot_loader")
 
-    @JacksonXmlProperty(localName = "boot_loader")
-
     private BootLoaderEnum bootLoader;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "system_dir")
-
-    @JacksonXmlProperty(localName = "system_dir")
 
     private String systemDir;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volume_groups")
 
-    @JacksonXmlProperty(localName = "volume_groups")
-
     private List<VolumeGroups> volumeGroups = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vm_id")
-
-    @JacksonXmlProperty(localName = "vm_id")
 
     private String vmId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flavor")
 
-    @JacksonXmlProperty(localName = "flavor")
-
     private String flavor;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image_disk_id")
-
-    @JacksonXmlProperty(localName = "image_disk_id")
 
     private String imageDiskId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "snapshot_ids")
 
-    @JacksonXmlProperty(localName = "snapshot_ids")
-
     private String snapshotIds;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cutovered_snapshot_ids")
-
-    @JacksonXmlProperty(localName = "cutovered_snapshot_ids")
 
     private String cutoveredSnapshotIds;
 

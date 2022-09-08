@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.hss.v5.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,84 +16,60 @@ public class VulInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vul_name")
 
-    @JacksonXmlProperty(localName = "vul_name")
-
     private String vulName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vul_id")
-
-    @JacksonXmlProperty(localName = "vul_id")
 
     private String vulId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "label_list")
 
-    @JacksonXmlProperty(localName = "label_list")
-
     private List<String> labelList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "repair_necessity")
-
-    @JacksonXmlProperty(localName = "repair_necessity")
 
     private Integer repairNecessity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_num")
 
-    @JacksonXmlProperty(localName = "host_num")
-
     private Integer hostNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "unhandle_host_num")
-
-    @JacksonXmlProperty(localName = "unhandle_host_num")
 
     private Integer unhandleHostNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scan_time")
 
-    @JacksonXmlProperty(localName = "scan_time")
-
     private Long scanTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "solution_detail")
-
-    @JacksonXmlProperty(localName = "solution_detail")
 
     private String solutionDetail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "url")
 
-    @JacksonXmlProperty(localName = "url")
-
     private String url;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
-
-    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
-    @JacksonXmlProperty(localName = "type")
-
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_id_list")
-
-    @JacksonXmlProperty(localName = "host_id_list")
 
     private List<String> hostIdList = null;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cbr.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,14 +13,10 @@ public class BillbingCreateExtraInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "combined_order_id")
 
-    @JacksonXmlProperty(localName = "combined_order_id")
-
     private String combinedOrderId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "combined_order_ecs_num")
-
-    @JacksonXmlProperty(localName = "combined_order_ecs_num")
 
     private Integer combinedOrderEcsNum;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.antiddos.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,21 +13,15 @@ public class TriggerBpsDict {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "traffic_pos_id")
 
-    @JacksonXmlProperty(localName = "traffic_pos_id")
-
     private Long trafficPosId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "traffic_per_second")
 
-    @JacksonXmlProperty(localName = "traffic_per_second")
-
     private Long trafficPerSecond;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "packet_per_second")
-
-    @JacksonXmlProperty(localName = "packet_per_second")
 
     private Long packetPerSecond;
 

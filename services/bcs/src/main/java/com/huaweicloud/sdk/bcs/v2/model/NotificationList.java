@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.bcs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,70 +16,50 @@ public class NotificationList {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "channel_name")
 
-    @JacksonXmlProperty(localName = "channel_name")
-
     private String channelName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
-
-    @JacksonXmlProperty(localName = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_time")
 
-    @JacksonXmlProperty(localName = "updated_time")
-
     private String updatedTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tc3_need")
-
-    @JacksonXmlProperty(localName = "tc3_need")
 
     private Boolean tc3Need;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "invitor_info")
 
-    @JacksonXmlProperty(localName = "invitor_info")
-
     private InvitorInfo invitorInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "invitee_info")
-
-    @JacksonXmlProperty(localName = "invitee_info")
 
     private InviteeInfo inviteeInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hide")
 
-    @JacksonXmlProperty(localName = "hide")
-
     private Long hide;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "invitee_orgs")
-
-    @JacksonXmlProperty(localName = "invitee_orgs")
 
     private List<OrganizationV2> inviteeOrgs = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "read_status")
 
-    @JacksonXmlProperty(localName = "read_status")
-
     private Long readStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cross_version_upgrade")
-
-    @JacksonXmlProperty(localName = "cross_version_upgrade")
 
     private String crossVersionUpgrade;
 

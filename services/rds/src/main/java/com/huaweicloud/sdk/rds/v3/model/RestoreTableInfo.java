@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.rds.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,14 +13,10 @@ public class RestoreTableInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "oldName")
 
-    @JacksonXmlProperty(localName = "oldName")
-
     private String oldName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "newName")
-
-    @JacksonXmlProperty(localName = "newName")
 
     private String newName;
 

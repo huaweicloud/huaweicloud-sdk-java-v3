@@ -15,8 +15,6 @@ import com.huaweicloud.sdk.gaussdb.v3.model.MysqlTags;
 import com.huaweicloud.sdk.gaussdb.v3.model.MysqlVolume;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -30,7 +28,6 @@ public class MysqlInstanceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="charge_info")
     
-    @JacksonXmlProperty(localName = "charge_info")
     
     private MysqlChargeInfo chargeInfo;
 
@@ -38,7 +35,6 @@ public class MysqlInstanceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="region")
     
-    @JacksonXmlProperty(localName = "region")
     
     private String region;
 
@@ -46,7 +42,6 @@ public class MysqlInstanceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    @JacksonXmlProperty(localName = "name")
     
     private String name;
 
@@ -54,7 +49,6 @@ public class MysqlInstanceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="datastore")
     
-    @JacksonXmlProperty(localName = "datastore")
     
     private MysqlDatastore datastore;
 
@@ -62,7 +56,6 @@ public class MysqlInstanceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="mode")
     
-    @JacksonXmlProperty(localName = "mode")
     
     private String mode;
 
@@ -70,7 +63,6 @@ public class MysqlInstanceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="flavor_ref")
     
-    @JacksonXmlProperty(localName = "flavor_ref")
     
     private String flavorRef;
 
@@ -78,7 +70,6 @@ public class MysqlInstanceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vpc_id")
     
-    @JacksonXmlProperty(localName = "vpc_id")
     
     private String vpcId;
 
@@ -86,7 +77,6 @@ public class MysqlInstanceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="subnet_id")
     
-    @JacksonXmlProperty(localName = "subnet_id")
     
     private String subnetId;
 
@@ -94,7 +84,6 @@ public class MysqlInstanceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="security_group_id")
     
-    @JacksonXmlProperty(localName = "security_group_id")
     
     private String securityGroupId;
 
@@ -102,7 +91,6 @@ public class MysqlInstanceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="configuration_id")
     
-    @JacksonXmlProperty(localName = "configuration_id")
     
     private String configurationId;
 
@@ -110,7 +98,6 @@ public class MysqlInstanceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="password")
     
-    @JacksonXmlProperty(localName = "password")
     
     private String password;
 
@@ -118,7 +105,6 @@ public class MysqlInstanceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="backup_strategy")
     
-    @JacksonXmlProperty(localName = "backup_strategy")
     
     private MysqlBackupStrategy backupStrategy;
 
@@ -126,7 +112,6 @@ public class MysqlInstanceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="time_zone")
     
-    @JacksonXmlProperty(localName = "time_zone")
     
     private String timeZone;
 
@@ -134,7 +119,6 @@ public class MysqlInstanceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="availability_zone_mode")
     
-    @JacksonXmlProperty(localName = "availability_zone_mode")
     
     private String availabilityZoneMode;
 
@@ -142,7 +126,6 @@ public class MysqlInstanceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="master_availability_zone")
     
-    @JacksonXmlProperty(localName = "master_availability_zone")
     
     private String masterAvailabilityZone;
 
@@ -150,7 +133,6 @@ public class MysqlInstanceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="slave_count")
     
-    @JacksonXmlProperty(localName = "slave_count")
     
     private Integer slaveCount;
 
@@ -158,7 +140,6 @@ public class MysqlInstanceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="volume")
     
-    @JacksonXmlProperty(localName = "volume")
     
     private MysqlVolume volume;
 
@@ -166,7 +147,6 @@ public class MysqlInstanceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    @JacksonXmlProperty(localName = "tags")
     
     private List<MysqlTags> tags = null;
     
@@ -174,7 +154,6 @@ public class MysqlInstanceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_id")
     
-    @JacksonXmlProperty(localName = "enterprise_project_id")
     
     private String enterpriseProjectId;
 
@@ -182,7 +161,6 @@ public class MysqlInstanceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dedicated_resource_id")
     
-    @JacksonXmlProperty(localName = "dedicated_resource_id")
     
     private String dedicatedResourceId;
 

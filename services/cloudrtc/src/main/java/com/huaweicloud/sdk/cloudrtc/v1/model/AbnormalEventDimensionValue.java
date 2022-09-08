@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cloudrtc.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,35 +13,25 @@ public class AbnormalEventDimensionValue {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "abnormal_type")
 
-    @JacksonXmlProperty(localName = "abnormal_type")
-
     private Integer abnormalType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "abnormal_type_desc")
-
-    @JacksonXmlProperty(localName = "abnormal_type_desc")
 
     private String abnormalTypeDesc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "abnormal_factor")
 
-    @JacksonXmlProperty(localName = "abnormal_factor")
-
     private Integer abnormalFactor;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "abnormal_factor_desc")
 
-    @JacksonXmlProperty(localName = "abnormal_factor_desc")
-
     private String abnormalFactorDesc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_count")
-
-    @JacksonXmlProperty(localName = "user_count")
 
     private Long userCount;
 

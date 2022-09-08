@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,91 +16,65 @@ public class OpenScheduleConfReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subject")
 
-    @JacksonXmlProperty(localName = "subject")
-
     private String subject;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
-
-    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "startTime")
 
-    @JacksonXmlProperty(localName = "startTime")
-
     private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "duration")
-
-    @JacksonXmlProperty(localName = "duration")
 
     private Integer duration;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timeZoneId")
 
-    @JacksonXmlProperty(localName = "timeZoneId")
-
     private Integer timeZoneId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "attendees")
-
-    @JacksonXmlProperty(localName = "attendees")
 
     private List<OpenAttendeeEntity> attendees = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "notifySetting")
 
-    @JacksonXmlProperty(localName = "notifySetting")
-
     private OpenNotifySetting notifySetting;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vmrID")
-
-    @JacksonXmlProperty(localName = "vmrID")
 
     private String vmrID;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "guestPasswd")
 
-    @JacksonXmlProperty(localName = "guestPasswd")
-
     private String guestPasswd;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "audiencePasswd")
-
-    @JacksonXmlProperty(localName = "audiencePasswd")
 
     private String audiencePasswd;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "callRestriction")
 
-    @JacksonXmlProperty(localName = "callRestriction")
-
     private Boolean callRestriction;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scope")
 
-    @JacksonXmlProperty(localName = "scope")
-
     private Integer scope;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "audienceScope")
-
-    @JacksonXmlProperty(localName = "audienceScope")
 
     private Integer audienceScope;
 

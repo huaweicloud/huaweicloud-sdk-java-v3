@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.drs.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,35 +16,25 @@ public class AlarmNotifyInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "delay_time")
 
-    @JacksonXmlProperty(localName = "delay_time")
-
     private Long delayTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rto_delay")
-
-    @JacksonXmlProperty(localName = "rto_delay")
 
     private Long rtoDelay;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rpo_delay")
 
-    @JacksonXmlProperty(localName = "rpo_delay")
-
     private Long rpoDelay;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alarm_to_user")
 
-    @JacksonXmlProperty(localName = "alarm_to_user")
-
     private Boolean alarmToUser;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subscriptions")
-
-    @JacksonXmlProperty(localName = "subscriptions")
 
     private List<SubscriptionInfo> subscriptions = null;
 

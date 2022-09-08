@@ -50,6 +50,38 @@ public class ModerationClient {
     }
 
     /**
+     * 创建视频内容审核作业
+     *
+     * 创建视频内容审核作业，创建成功会将作业ID返回给用户
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param RunCreateVideoModerationJobRequest 请求对象
+     * @return RunCreateVideoModerationJobResponse
+     */
+    public RunCreateVideoModerationJobResponse runCreateVideoModerationJob(RunCreateVideoModerationJobRequest request) {
+        return hcClient.syncInvokeHttp(request, ModerationMeta.runCreateVideoModerationJob);
+    }
+
+    /**
+     * 创建视频内容审核作业
+     *
+     * 创建视频内容审核作业，创建成功会将作业ID返回给用户
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param RunCreateVideoModerationJobRequest 请求对象
+     * @return SyncInvoker<RunCreateVideoModerationJobRequest, RunCreateVideoModerationJobResponse>
+     */
+    public SyncInvoker<RunCreateVideoModerationJobRequest, RunCreateVideoModerationJobResponse> runCreateVideoModerationJobInvoker(
+        RunCreateVideoModerationJobRequest request) {
+        return new SyncInvoker<RunCreateVideoModerationJobRequest, RunCreateVideoModerationJobResponse>(request,
+            ModerationMeta.runCreateVideoModerationJob, hcClient);
+    }
+
+    /**
      * 查询音频内容审核作业
      *
      * 
@@ -77,6 +109,38 @@ public class ModerationClient {
         RunQueryAudioModerationJobRequest request) {
         return new SyncInvoker<RunQueryAudioModerationJobRequest, RunQueryAudioModerationJobResponse>(request,
             ModerationMeta.runQueryAudioModerationJob, hcClient);
+    }
+
+    /**
+     * 查询视频内容审核作业
+     *
+     * 查询视频审核作业处理状态与结果，并将识别结果返回给用户
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param RunQueryVideoModerationJobRequest 请求对象
+     * @return RunQueryVideoModerationJobResponse
+     */
+    public RunQueryVideoModerationJobResponse runQueryVideoModerationJob(RunQueryVideoModerationJobRequest request) {
+        return hcClient.syncInvokeHttp(request, ModerationMeta.runQueryVideoModerationJob);
+    }
+
+    /**
+     * 查询视频内容审核作业
+     *
+     * 查询视频审核作业处理状态与结果，并将识别结果返回给用户
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param RunQueryVideoModerationJobRequest 请求对象
+     * @return SyncInvoker<RunQueryVideoModerationJobRequest, RunQueryVideoModerationJobResponse>
+     */
+    public SyncInvoker<RunQueryVideoModerationJobRequest, RunQueryVideoModerationJobResponse> runQueryVideoModerationJobInvoker(
+        RunQueryVideoModerationJobRequest request) {
+        return new SyncInvoker<RunQueryVideoModerationJobRequest, RunQueryVideoModerationJobResponse>(request,
+            ModerationMeta.runQueryVideoModerationJob, hcClient);
     }
 
     /**

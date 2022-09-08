@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.bss.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,28 +13,20 @@ public class Cost {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time_dimension_value")
 
-    @JacksonXmlProperty(localName = "time_dimension_value")
-
     private String timeDimensionValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time_measure_id")
-
-    @JacksonXmlProperty(localName = "time_measure_id")
 
     private Integer timeMeasureId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "amount")
 
-    @JacksonXmlProperty(localName = "amount")
-
     private String amount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "official_amount")
-
-    @JacksonXmlProperty(localName = "official_amount")
 
     private String officialAmount;
 

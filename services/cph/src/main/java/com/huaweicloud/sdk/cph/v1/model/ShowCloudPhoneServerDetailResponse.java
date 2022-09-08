@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cph.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -18,35 +17,25 @@ public class ShowCloudPhoneServerDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "request_id")
 
-    @JacksonXmlProperty(localName = "request_id")
-
     private String requestId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "servers")
-
-    @JacksonXmlProperty(localName = "servers")
 
     private List<Object> servers = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "band_widths")
 
-    @JacksonXmlProperty(localName = "band_widths")
-
     private List<Object> bandWidths = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volumes")
 
-    @JacksonXmlProperty(localName = "volumes")
-
     private List<Object> volumes = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_groups")
-
-    @JacksonXmlProperty(localName = "security_groups")
 
     private List<String> securityGroups = null;
 

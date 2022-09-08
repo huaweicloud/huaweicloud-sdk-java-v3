@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dgc.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,14 +13,10 @@ public class Condition {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "preNodeName")
 
-    @JacksonXmlProperty(localName = "preNodeName")
-
     private String preNodeName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expression")
-
-    @JacksonXmlProperty(localName = "expression")
 
     private String expression;
 

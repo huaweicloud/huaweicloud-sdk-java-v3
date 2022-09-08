@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.projectman.v4.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,175 +16,125 @@ public class IssueResponseV4 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "actual_work_hours")
 
-    @JacksonXmlProperty(localName = "actual_work_hours")
-
     private Double actualWorkHours;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "assigned_cc_user")
-
-    @JacksonXmlProperty(localName = "assigned_cc_user")
 
     private List<IssueUser> assignedCcUser = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "assigned_user")
 
-    @JacksonXmlProperty(localName = "assigned_user")
-
     private IssueUser assignedUser;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "begin_time")
-
-    @JacksonXmlProperty(localName = "begin_time")
 
     private String beginTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_time")
 
-    @JacksonXmlProperty(localName = "created_time")
-
     private String createdTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "creator")
-
-    @JacksonXmlProperty(localName = "creator")
 
     private IssueUser creator;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "custom_fields")
 
-    @JacksonXmlProperty(localName = "custom_fields")
-
     private List<CustomField> customFields = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "new_custom_fields")
-
-    @JacksonXmlProperty(localName = "new_custom_fields")
 
     private List<NewCustomField> newCustomFields = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "developer")
 
-    @JacksonXmlProperty(localName = "developer")
-
     private IssueUser developer;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain")
-
-    @JacksonXmlProperty(localName = "domain")
 
     private IssueItemSfV4Domain domain;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "done_ratio")
 
-    @JacksonXmlProperty(localName = "done_ratio")
-
     private Integer doneRatio;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time")
-
-    @JacksonXmlProperty(localName = "end_time")
 
     private String endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expected_work_hours")
 
-    @JacksonXmlProperty(localName = "expected_work_hours")
-
     private Double expectedWorkHours;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
-
-    @JacksonXmlProperty(localName = "id")
 
     private Integer id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project")
 
-    @JacksonXmlProperty(localName = "project")
-
     private IssueProjectResponseV4 project;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "iteration")
-
-    @JacksonXmlProperty(localName = "iteration")
 
     private IssueItemSfV4Iteration iteration;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "module")
 
-    @JacksonXmlProperty(localName = "module")
-
     private IssueItemSfV4Module module;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
-
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parent_issue")
 
-    @JacksonXmlProperty(localName = "parent_issue")
-
     private CreateIssueResponseV4ParentIssue parentIssue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "priority")
-
-    @JacksonXmlProperty(localName = "priority")
 
     private IssueItemSfV4Priority priority;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "severity")
 
-    @JacksonXmlProperty(localName = "severity")
-
     private IssueItemSfV4Severity severity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
-
-    @JacksonXmlProperty(localName = "status")
 
     private IssueItemSfV4Status status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tracker")
 
-    @JacksonXmlProperty(localName = "tracker")
-
     private CreateIssueResponseV4Tracker tracker;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_time")
 
-    @JacksonXmlProperty(localName = "updated_time")
-
     private String updatedTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "closed_time")
-
-    @JacksonXmlProperty(localName = "closed_time")
 
     private String closedTime;
 

@@ -31,7 +31,7 @@ public class IAMCredentials implements ICredential {
         return CompletableFuture.supplyAsync(() -> {
             HttpRequest.HttpRequestBuilder builder = httpRequest.builder();
 
-            if (Objects.nonNull(getXAuthToken())) {
+            if (!httpRequest.haveHeader(X_AUTH_TOKEN) && Objects.nonNull(getXAuthToken())) {
                 builder.addHeader(X_AUTH_TOKEN, authToken);
             }
 

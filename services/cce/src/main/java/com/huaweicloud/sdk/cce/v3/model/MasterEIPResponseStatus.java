@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cce.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,14 +13,10 @@ public class MasterEIPResponseStatus {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "privateEndpoint")
 
-    @JacksonXmlProperty(localName = "privateEndpoint")
-
     private String privateEndpoint;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publicEndpoint")
-
-    @JacksonXmlProperty(localName = "publicEndpoint")
 
     private String publicEndpoint;
 

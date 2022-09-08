@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.elb.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,21 +13,15 @@ public class GlobalEipInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "global_eip_id")
 
-    @JacksonXmlProperty(localName = "global_eip_id")
-
     private String globalEipId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "global_eip_address")
 
-    @JacksonXmlProperty(localName = "global_eip_address")
-
     private String globalEipAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip_version")
-
-    @JacksonXmlProperty(localName = "ip_version")
 
     private Integer ipVersion;
 

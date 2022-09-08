@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.roma.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,14 +16,10 @@ public class SignApiBinding {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sign_id")
 
-    @JacksonXmlProperty(localName = "sign_id")
-
     private String signId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publish_ids")
-
-    @JacksonXmlProperty(localName = "publish_ids")
 
     private List<String> publishIds = null;
 

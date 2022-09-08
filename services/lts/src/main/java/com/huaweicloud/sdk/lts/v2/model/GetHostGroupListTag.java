@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -99,14 +98,10 @@ public class GetHostGroupListTag {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tag_type")
 
-    @JacksonXmlProperty(localName = "tag_type")
-
     private TagTypeEnum tagType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tag_list")
-
-    @JacksonXmlProperty(localName = "tag_list")
 
     private List<HostGroupTag> tagList = null;
 

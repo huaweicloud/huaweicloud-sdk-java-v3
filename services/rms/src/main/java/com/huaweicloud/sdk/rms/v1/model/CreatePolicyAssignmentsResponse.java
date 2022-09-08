@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.rms.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.HashMap;
@@ -18,63 +17,50 @@ public class CreatePolicyAssignmentsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    @JacksonXmlProperty(localName = "id")
-
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
-
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
-    @JacksonXmlProperty(localName = "description")
-
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_filter")
 
-    @JacksonXmlProperty(localName = "policy_filter")
-
     private PolicyFilterDefinition policyFilter;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "state")
+    @JsonProperty(value = "period")
 
-    @JacksonXmlProperty(localName = "state")
+    private String period;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "state")
 
     private String state;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created")
 
-    @JacksonXmlProperty(localName = "created")
-
     private String created;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated")
-
-    @JacksonXmlProperty(localName = "updated")
 
     private String updated;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_definition_id")
 
-    @JacksonXmlProperty(localName = "policy_definition_id")
-
     private String policyDefinitionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parameters")
-
-    @JacksonXmlProperty(localName = "parameters")
 
     private Map<String, PolicyParameterValue> parameters = null;
 
@@ -153,6 +139,23 @@ public class CreatePolicyAssignmentsResponse extends SdkResponse {
 
     public void setPolicyFilter(PolicyFilterDefinition policyFilter) {
         this.policyFilter = policyFilter;
+    }
+
+    public CreatePolicyAssignmentsResponse withPeriod(String period) {
+        this.period = period;
+        return this;
+    }
+
+    /**
+     * 触发周期值，可选值：One_Hour, Three_Hours, Six_Hours, Twelve_Hours, TwentyFour_Hours
+     * @return period
+     */
+    public String getPeriod() {
+        return period;
+    }
+
+    public void setPeriod(String period) {
+        this.period = period;
     }
 
     public CreatePolicyAssignmentsResponse withState(String state) {
@@ -270,6 +273,7 @@ public class CreatePolicyAssignmentsResponse extends SdkResponse {
             && Objects.equals(this.name, createPolicyAssignmentsResponse.name)
             && Objects.equals(this.description, createPolicyAssignmentsResponse.description)
             && Objects.equals(this.policyFilter, createPolicyAssignmentsResponse.policyFilter)
+            && Objects.equals(this.period, createPolicyAssignmentsResponse.period)
             && Objects.equals(this.state, createPolicyAssignmentsResponse.state)
             && Objects.equals(this.created, createPolicyAssignmentsResponse.created)
             && Objects.equals(this.updated, createPolicyAssignmentsResponse.updated)
@@ -280,7 +284,7 @@ public class CreatePolicyAssignmentsResponse extends SdkResponse {
     @Override
     public int hashCode() {
         return Objects
-            .hash(id, name, description, policyFilter, state, created, updated, policyDefinitionId, parameters);
+            .hash(id, name, description, policyFilter, period, state, created, updated, policyDefinitionId, parameters);
     }
 
     @Override
@@ -291,6 +295,7 @@ public class CreatePolicyAssignmentsResponse extends SdkResponse {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    policyFilter: ").append(toIndentedString(policyFilter)).append("\n");
+        sb.append("    period: ").append(toIndentedString(period)).append("\n");
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
         sb.append("    created: ").append(toIndentedString(created)).append("\n");
         sb.append("    updated: ").append(toIndentedString(updated)).append("\n");

@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -120,8 +119,6 @@ public class MultiModalConfig {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "video_format")
 
-    @JacksonXmlProperty(localName = "video_format")
-
     private VideoFormatEnum videoFormat;
 
     /**
@@ -197,8 +194,6 @@ public class MultiModalConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "language")
-
-    @JacksonXmlProperty(localName = "language")
 
     private LanguageEnum language;
 
@@ -281,8 +276,6 @@ public class MultiModalConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mode")
-
-    @JacksonXmlProperty(localName = "mode")
 
     private ModeEnum mode;
 

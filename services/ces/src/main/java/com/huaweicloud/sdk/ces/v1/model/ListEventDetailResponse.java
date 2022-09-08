@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -22,8 +21,6 @@ public class ListEventDetailResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_name")
-
-    @JacksonXmlProperty(localName = "event_name")
 
     private String eventName;
 
@@ -107,35 +104,25 @@ public class ListEventDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_type")
 
-    @JacksonXmlProperty(localName = "event_type")
-
     private EventTypeEnum eventType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_users")
-
-    @JacksonXmlProperty(localName = "event_users")
 
     private List<String> eventUsers = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_sources")
 
-    @JacksonXmlProperty(localName = "event_sources")
-
     private List<String> eventSources = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_info")
 
-    @JacksonXmlProperty(localName = "event_info")
-
     private List<EventInfoDetail> eventInfo = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "meta_data")
-
-    @JacksonXmlProperty(localName = "meta_data")
 
     private TotalMetaData metaData;
 

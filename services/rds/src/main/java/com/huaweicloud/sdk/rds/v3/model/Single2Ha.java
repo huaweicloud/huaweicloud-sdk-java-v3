@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.rds.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,8 +13,6 @@ public class Single2Ha {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "single_to_ha")
-
-    @JacksonXmlProperty(localName = "single_to_ha")
 
     private Single2HaObject singleToHa;
 

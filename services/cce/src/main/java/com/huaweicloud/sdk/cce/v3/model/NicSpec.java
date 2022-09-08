@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cce.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,21 +16,15 @@ public class NicSpec {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subnetId")
 
-    @JacksonXmlProperty(localName = "subnetId")
-
     private String subnetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fixedIps")
 
-    @JacksonXmlProperty(localName = "fixedIps")
-
     private List<String> fixedIps = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ipBlock")
-
-    @JacksonXmlProperty(localName = "ipBlock")
 
     private String ipBlock;
 

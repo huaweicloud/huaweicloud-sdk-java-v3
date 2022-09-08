@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dds.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -18,35 +17,25 @@ public class ShowConnectionStatisticsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_connections")
 
-    @JacksonXmlProperty(localName = "total_connections")
-
     private Integer totalConnections;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_inner_connections")
-
-    @JacksonXmlProperty(localName = "total_inner_connections")
 
     private Integer totalInnerConnections;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_outer_connections")
 
-    @JacksonXmlProperty(localName = "total_outer_connections")
-
     private Integer totalOuterConnections;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "inner_connections")
 
-    @JacksonXmlProperty(localName = "inner_connections")
-
     private List<QueryConnectionsResponse> innerConnections = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "outer_connections")
-
-    @JacksonXmlProperty(localName = "outer_connections")
 
     private List<QueryConnectionsResponse> outerConnections = null;
 

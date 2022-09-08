@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cbr.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,70 +13,50 @@ public class PolicyoODCreate {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "day_backups")
 
-    @JacksonXmlProperty(localName = "day_backups")
-
     private Integer dayBackups;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "destination_project_id")
-
-    @JacksonXmlProperty(localName = "destination_project_id")
 
     private String destinationProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "destination_region")
 
-    @JacksonXmlProperty(localName = "destination_region")
-
     private String destinationRegion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_acceleration")
-
-    @JacksonXmlProperty(localName = "enable_acceleration")
 
     private Boolean enableAcceleration;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_backups")
 
-    @JacksonXmlProperty(localName = "max_backups")
-
     private Integer maxBackups;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "month_backups")
-
-    @JacksonXmlProperty(localName = "month_backups")
 
     private Integer monthBackups;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "retention_duration_days")
 
-    @JacksonXmlProperty(localName = "retention_duration_days")
-
     private Integer retentionDurationDays;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timezone")
-
-    @JacksonXmlProperty(localName = "timezone")
 
     private String timezone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "week_backups")
 
-    @JacksonXmlProperty(localName = "week_backups")
-
     private Integer weekBackups;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "year_backups")
-
-    @JacksonXmlProperty(localName = "year_backups")
 
     private Integer yearBackups;
 

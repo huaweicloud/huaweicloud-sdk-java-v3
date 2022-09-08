@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.time.OffsetDateTime;
 import java.util.Collections;
@@ -20,14 +19,10 @@ public class LdApiScript {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ds_id")
 
-    @JacksonXmlProperty(localName = "ds_id")
-
     private String dsId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ds_name")
-
-    @JacksonXmlProperty(localName = "ds_name")
 
     private String dsName;
 
@@ -171,56 +166,40 @@ public class LdApiScript {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ds_type")
 
-    @JacksonXmlProperty(localName = "ds_type")
-
     private DsTypeEnum dsType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
-
-    @JacksonXmlProperty(localName = "type")
 
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "object_name")
 
-    @JacksonXmlProperty(localName = "object_name")
-
     private String objectName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "content")
-
-    @JacksonXmlProperty(localName = "content")
 
     private String content;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_result_paging")
 
-    @JacksonXmlProperty(localName = "enable_result_paging")
-
     private Boolean enableResultPaging;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_preparestatement")
-
-    @JacksonXmlProperty(localName = "enable_preparestatement")
 
     private Boolean enablePreparestatement;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_time")
 
-    @JacksonXmlProperty(localName = "created_time")
-
     private OffsetDateTime createdTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "modified_time")
-
-    @JacksonXmlProperty(localName = "modified_time")
 
     private OffsetDateTime modifiedTime;
 

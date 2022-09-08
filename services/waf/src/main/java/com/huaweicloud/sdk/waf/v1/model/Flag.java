@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -96,8 +95,6 @@ public class Flag {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pci_3ds")
 
-    @JacksonXmlProperty(localName = "pci_3ds")
-
     private Pci3dsEnum pci3ds;
 
     /**
@@ -179,8 +176,6 @@ public class Flag {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pci_dss")
-
-    @JacksonXmlProperty(localName = "pci_dss")
 
     private PciDssEnum pciDss;
 
@@ -264,8 +259,6 @@ public class Flag {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cname")
 
-    @JacksonXmlProperty(localName = "cname")
-
     private CnameEnum cname;
 
     /**
@@ -348,8 +341,6 @@ public class Flag {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_dual_az")
 
-    @JacksonXmlProperty(localName = "is_dual_az")
-
     private IsDualAzEnum isDualAz;
 
     /**
@@ -431,8 +422,6 @@ public class Flag {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ipv6")
-
-    @JacksonXmlProperty(localName = "ipv6")
 
     private Ipv6Enum ipv6;
 

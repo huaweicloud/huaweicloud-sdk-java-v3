@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.frs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,21 +16,15 @@ public class LiveDetectRespVideoresult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alive")
 
-    @JacksonXmlProperty(localName = "alive")
-
     private Boolean alive;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "actions")
 
-    @JacksonXmlProperty(localName = "actions")
-
     private List<ActionsList> actions = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "picture")
-
-    @JacksonXmlProperty(localName = "picture")
 
     private String picture;
 

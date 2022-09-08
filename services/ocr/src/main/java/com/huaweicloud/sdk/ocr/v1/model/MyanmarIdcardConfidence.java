@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.ocr.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,77 +13,55 @@ public class MyanmarIdcardConfidence {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nrc_id")
 
-    @JacksonXmlProperty(localName = "nrc_id")
-
     private Float nrcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "issue_date")
-
-    @JacksonXmlProperty(localName = "issue_date")
 
     private Float issueDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
-    @JacksonXmlProperty(localName = "name")
-
     private Float name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "birth")
-
-    @JacksonXmlProperty(localName = "birth")
 
     private Float birth;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bloodlines_religion")
 
-    @JacksonXmlProperty(localName = "bloodlines_religion")
-
     private Float bloodlinesReligion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "height")
-
-    @JacksonXmlProperty(localName = "height")
 
     private Float height;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "blood_group")
 
-    @JacksonXmlProperty(localName = "blood_group")
-
     private Float bloodGroup;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "card_id")
-
-    @JacksonXmlProperty(localName = "card_id")
 
     private Float cardId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nrc_id_back")
 
-    @JacksonXmlProperty(localName = "nrc_id_back")
-
     private Float nrcIdBack;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "profession")
 
-    @JacksonXmlProperty(localName = "profession")
-
     private Float profession;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "address")
-
-    @JacksonXmlProperty(localName = "address")
 
     private Float address;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cdn.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,72 +16,57 @@ public class ConfigsGetBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "origin_request_header")
 
-    @JacksonXmlProperty(localName = "origin_request_header")
-
     private List<OriginRequestHeader> originRequestHeader = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "http_response_header")
-
-    @JacksonXmlProperty(localName = "http_response_header")
 
     private List<HttpResponseHeader> httpResponseHeader = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "url_auth")
 
-    @JacksonXmlProperty(localName = "url_auth")
-
     private UrlAuthGetBody urlAuth;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "https")
-
-    @JacksonXmlProperty(localName = "https")
 
     private HttpGetBody https;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sources")
 
-    @JacksonXmlProperty(localName = "sources")
-
     private List<SourcesConfig> sources = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "origin_protocol")
-
-    @JacksonXmlProperty(localName = "origin_protocol")
 
     private String originProtocol;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "force_redirect")
 
-    @JacksonXmlProperty(localName = "force_redirect")
-
     private ForceRedirectConfig forceRedirect;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "compress")
-
-    @JacksonXmlProperty(localName = "compress")
 
     private Compress compress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cache_url_parameter_filter")
 
-    @JacksonXmlProperty(localName = "cache_url_parameter_filter")
-
     private CacheUrlParameterFilter cacheUrlParameterFilter;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ipv6_accelerate")
 
-    @JacksonXmlProperty(localName = "ipv6_accelerate")
-
     private Integer ipv6Accelerate;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "error_code_cache")
+
+    private ErrorCodeCache errorCodeCache;
 
     public ConfigsGetBody withOriginRequestHeader(List<OriginRequestHeader> originRequestHeader) {
         this.originRequestHeader = originRequestHeader;
@@ -347,6 +331,32 @@ public class ConfigsGetBody {
         this.ipv6Accelerate = ipv6Accelerate;
     }
 
+    public ConfigsGetBody withErrorCodeCache(ErrorCodeCache errorCodeCache) {
+        this.errorCodeCache = errorCodeCache;
+        return this;
+    }
+
+    public ConfigsGetBody withErrorCodeCache(Consumer<ErrorCodeCache> errorCodeCacheSetter) {
+        if (this.errorCodeCache == null) {
+            this.errorCodeCache = new ErrorCodeCache();
+            errorCodeCacheSetter.accept(this.errorCodeCache);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get errorCodeCache
+     * @return errorCodeCache
+     */
+    public ErrorCodeCache getErrorCodeCache() {
+        return errorCodeCache;
+    }
+
+    public void setErrorCodeCache(ErrorCodeCache errorCodeCache) {
+        this.errorCodeCache = errorCodeCache;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -364,7 +374,8 @@ public class ConfigsGetBody {
             && Objects.equals(this.forceRedirect, configsGetBody.forceRedirect)
             && Objects.equals(this.compress, configsGetBody.compress)
             && Objects.equals(this.cacheUrlParameterFilter, configsGetBody.cacheUrlParameterFilter)
-            && Objects.equals(this.ipv6Accelerate, configsGetBody.ipv6Accelerate);
+            && Objects.equals(this.ipv6Accelerate, configsGetBody.ipv6Accelerate)
+            && Objects.equals(this.errorCodeCache, configsGetBody.errorCodeCache);
     }
 
     @Override
@@ -378,7 +389,8 @@ public class ConfigsGetBody {
             forceRedirect,
             compress,
             cacheUrlParameterFilter,
-            ipv6Accelerate);
+            ipv6Accelerate,
+            errorCodeCache);
     }
 
     @Override
@@ -395,6 +407,7 @@ public class ConfigsGetBody {
         sb.append("    compress: ").append(toIndentedString(compress)).append("\n");
         sb.append("    cacheUrlParameterFilter: ").append(toIndentedString(cacheUrlParameterFilter)).append("\n");
         sb.append("    ipv6Accelerate: ").append(toIndentedString(ipv6Accelerate)).append("\n");
+        sb.append("    errorCodeCache: ").append(toIndentedString(errorCodeCache)).append("\n");
         sb.append("}");
         return sb.toString();
     }

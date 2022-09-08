@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.live.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,35 +16,25 @@ public class DefaultRecordConfig {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "record_format")
 
-    @JacksonXmlProperty(localName = "record_format")
-
     private List<VideoFormatVar> recordFormat = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "obs_addr")
-
-    @JacksonXmlProperty(localName = "obs_addr")
 
     private RecordObsFileAddr obsAddr;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hls_config")
 
-    @JacksonXmlProperty(localName = "hls_config")
-
     private HLSRecordConfig hlsConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flv_config")
 
-    @JacksonXmlProperty(localName = "flv_config")
-
     private FLVRecordConfig flvConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mp4_config")
-
-    @JacksonXmlProperty(localName = "mp4_config")
 
     private MP4RecordConfig mp4Config;
 

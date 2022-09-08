@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.smn.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,56 +13,40 @@ public class Statement {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "Sid")
 
-    @JacksonXmlProperty(localName = "Sid")
-
     private String sid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "Effect")
-
-    @JacksonXmlProperty(localName = "Effect")
 
     private String effect;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "Principal")
 
-    @JacksonXmlProperty(localName = "Principal")
-
     private String principal;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "NotPrincipal")
-
-    @JacksonXmlProperty(localName = "NotPrincipal")
 
     private String notPrincipal;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "Action")
 
-    @JacksonXmlProperty(localName = "Action")
-
     private String action;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "NotAction")
-
-    @JacksonXmlProperty(localName = "NotAction")
 
     private String notAction;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "Resource")
 
-    @JacksonXmlProperty(localName = "Resource")
-
     private String resource;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "NotResource")
-
-    @JacksonXmlProperty(localName = "NotResource")
 
     private String notResource;
 

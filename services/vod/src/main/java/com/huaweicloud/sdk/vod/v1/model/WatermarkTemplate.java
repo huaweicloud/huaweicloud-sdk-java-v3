@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.vod.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,105 +13,75 @@ public class WatermarkTemplate {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
-    @JacksonXmlProperty(localName = "name")
-
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
-
-    @JacksonXmlProperty(localName = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    @JacksonXmlProperty(localName = "status")
-
     private Long status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dx")
-
-    @JacksonXmlProperty(localName = "dx")
 
     private String dx;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dy")
 
-    @JacksonXmlProperty(localName = "dy")
-
     private String dy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "position")
-
-    @JacksonXmlProperty(localName = "position")
 
     private String position;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "width")
 
-    @JacksonXmlProperty(localName = "width")
-
     private String width;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "height")
-
-    @JacksonXmlProperty(localName = "height")
 
     private String height;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
-    @JacksonXmlProperty(localName = "create_time")
-
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image_url")
-
-    @JacksonXmlProperty(localName = "image_url")
 
     private String imageUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
-    @JacksonXmlProperty(localName = "type")
-
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "watermark_type")
-
-    @JacksonXmlProperty(localName = "watermark_type")
 
     private String watermarkType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image_process")
 
-    @JacksonXmlProperty(localName = "image_process")
-
     private String imageProcess;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timeline_start")
 
-    @JacksonXmlProperty(localName = "timeline_start")
-
     private String timelineStart;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timeline_duration")
-
-    @JacksonXmlProperty(localName = "timeline_duration")
 
     private String timelineDuration;
 

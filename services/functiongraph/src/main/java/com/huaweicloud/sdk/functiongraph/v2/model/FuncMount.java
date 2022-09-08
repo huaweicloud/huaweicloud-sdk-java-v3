@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.functiongraph.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,28 +13,20 @@ public class FuncMount {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mount_type")
 
-    @JacksonXmlProperty(localName = "mount_type")
-
     private String mountType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mount_resource")
-
-    @JacksonXmlProperty(localName = "mount_resource")
 
     private String mountResource;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mount_share_path")
 
-    @JacksonXmlProperty(localName = "mount_share_path")
-
     private String mountSharePath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "local_mount_path")
-
-    @JacksonXmlProperty(localName = "local_mount_path")
 
     private String localMountPath;
 

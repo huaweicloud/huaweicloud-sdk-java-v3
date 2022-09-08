@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cdm.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,21 +13,15 @@ public class ExtendedProperties {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "workSpaceId")
 
-    @JacksonXmlProperty(localName = "workSpaceId")
-
     private String workSpaceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resourceId")
 
-    @JacksonXmlProperty(localName = "resourceId")
-
     private String resourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trial")
-
-    @JacksonXmlProperty(localName = "trial")
 
     private String trial;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.mpc.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,42 +13,30 @@ public class MosaicInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timeline_start")
 
-    @JacksonXmlProperty(localName = "timeline_start")
-
     private String timelineStart;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timeline_duration")
-
-    @JacksonXmlProperty(localName = "timeline_duration")
 
     private String timelineDuration;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dx")
 
-    @JacksonXmlProperty(localName = "dx")
-
     private String dx;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dy")
-
-    @JacksonXmlProperty(localName = "dy")
 
     private String dy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "width")
 
-    @JacksonXmlProperty(localName = "width")
-
     private String width;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "height")
-
-    @JacksonXmlProperty(localName = "height")
 
     private String height;
 

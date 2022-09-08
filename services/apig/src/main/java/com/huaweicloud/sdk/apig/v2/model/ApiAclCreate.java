@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.apig.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,28 +13,20 @@ public class ApiAclCreate {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "acl_name")
 
-    @JacksonXmlProperty(localName = "acl_name")
-
     private String aclName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "acl_type")
-
-    @JacksonXmlProperty(localName = "acl_type")
 
     private String aclType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "acl_value")
 
-    @JacksonXmlProperty(localName = "acl_value")
-
     private String aclValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "entity_type")
-
-    @JacksonXmlProperty(localName = "entity_type")
 
     private String entityType;
 

@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.time.OffsetDateTime;
 import java.util.Collections;
@@ -20,98 +19,70 @@ public class StatisticsAPI {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_latency")
 
-    @JacksonXmlProperty(localName = "max_latency")
-
     private Integer maxLatency;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "avg_latency")
-
-    @JacksonXmlProperty(localName = "avg_latency")
 
     private Float avgLatency;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "req_count")
 
-    @JacksonXmlProperty(localName = "req_count")
-
     private Integer reqCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "req_count2xx")
-
-    @JacksonXmlProperty(localName = "req_count2xx")
 
     private Integer reqCount2xx;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "req_count4xx")
 
-    @JacksonXmlProperty(localName = "req_count4xx")
-
     private Integer reqCount4xx;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "req_count5xx")
-
-    @JacksonXmlProperty(localName = "req_count5xx")
 
     private Integer reqCount5xx;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "req_count_error")
 
-    @JacksonXmlProperty(localName = "req_count_error")
-
     private Integer reqCountError;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_inner_latency")
-
-    @JacksonXmlProperty(localName = "max_inner_latency")
 
     private Integer maxInnerLatency;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "avg_inner_latency")
 
-    @JacksonXmlProperty(localName = "avg_inner_latency")
-
     private Float avgInnerLatency;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_backend_latency")
-
-    @JacksonXmlProperty(localName = "max_backend_latency")
 
     private Integer maxBackendLatency;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "avg_backend_latency")
 
-    @JacksonXmlProperty(localName = "avg_backend_latency")
-
     private Float avgBackendLatency;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "output_throughput")
-
-    @JacksonXmlProperty(localName = "output_throughput")
 
     private Long outputThroughput;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "input_throughput")
 
-    @JacksonXmlProperty(localName = "input_throughput")
-
     private Long inputThroughput;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "current_minute")
-
-    @JacksonXmlProperty(localName = "current_minute")
 
     private Long currentMinute;
 
@@ -201,49 +172,35 @@ public class StatisticsAPI {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cycle")
 
-    @JacksonXmlProperty(localName = "cycle")
-
     private CycleEnum cycle;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "api_id")
-
-    @JacksonXmlProperty(localName = "api_id")
 
     private String apiId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_id")
 
-    @JacksonXmlProperty(localName = "group_id")
-
     private String groupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "provider")
-
-    @JacksonXmlProperty(localName = "provider")
 
     private String provider;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "req_time")
 
-    @JacksonXmlProperty(localName = "req_time")
-
     private OffsetDateTime reqTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "register_time")
 
-    @JacksonXmlProperty(localName = "register_time")
-
     private OffsetDateTime registerTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
-
-    @JacksonXmlProperty(localName = "status")
 
     private Integer status;
 

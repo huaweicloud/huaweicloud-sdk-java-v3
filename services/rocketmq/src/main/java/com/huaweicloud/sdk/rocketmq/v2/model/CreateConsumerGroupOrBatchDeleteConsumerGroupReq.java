@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.rocketmq.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -18,49 +17,35 @@ public class CreateConsumerGroupOrBatchDeleteConsumerGroupReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "groups")
 
-    @JacksonXmlProperty(localName = "groups")
-
     private List<String> groups = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enabled")
-
-    @JacksonXmlProperty(localName = "enabled")
 
     private Boolean enabled;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "broadcast")
 
-    @JacksonXmlProperty(localName = "broadcast")
-
     private Boolean broadcast;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "brokers")
-
-    @JacksonXmlProperty(localName = "brokers")
 
     private List<String> brokers = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
-    @JacksonXmlProperty(localName = "name")
-
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "retry_max_time")
 
-    @JacksonXmlProperty(localName = "retry_max_time")
-
     private BigDecimal retryMaxTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "from_beginning")
-
-    @JacksonXmlProperty(localName = "from_beginning")
 
     private Boolean fromBeginning;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.iotanalytics.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,63 +16,45 @@ public class Schedule {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
-    @JacksonXmlProperty(localName = "start_time")
-
     private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time")
-
-    @JacksonXmlProperty(localName = "end_time")
 
     private String endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cron_expression")
 
-    @JacksonXmlProperty(localName = "cron_expression")
-
     private String cronExpression;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "computing_resource_id")
-
-    @JacksonXmlProperty(localName = "computing_resource_id")
 
     private String computingResourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable")
 
-    @JacksonXmlProperty(localName = "enable")
-
     private Boolean enable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "conf")
-
-    @JacksonXmlProperty(localName = "conf")
 
     private List<String> conf = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "schedule_status")
 
-    @JacksonXmlProperty(localName = "schedule_status")
-
     private String scheduleStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "next_fire_time")
 
-    @JacksonXmlProperty(localName = "next_fire_time")
-
     private String nextFireTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "prev_fire_time")
-
-    @JacksonXmlProperty(localName = "prev_fire_time")
 
     private String prevFireTime;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cloudrtc.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,28 +16,20 @@ public class QosQualityData {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "uid")
 
-    @JacksonXmlProperty(localName = "uid")
-
     private String uid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "peerid")
-
-    @JacksonXmlProperty(localName = "peerid")
 
     private String peerid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mid")
 
-    @JacksonXmlProperty(localName = "mid")
-
     private String mid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
-
-    @JacksonXmlProperty(localName = "data")
 
     private List<TimeFloatValueData> data = null;
 

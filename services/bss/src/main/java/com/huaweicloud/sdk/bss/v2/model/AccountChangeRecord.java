@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.bss.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,49 +13,35 @@ public class AccountChangeRecord {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "account_change_id")
 
-    @JacksonXmlProperty(localName = "account_change_id")
-
     private String accountChangeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trade_detail_type")
-
-    @JacksonXmlProperty(localName = "trade_detail_type")
 
     private String tradeDetailType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trade_time")
 
-    @JacksonXmlProperty(localName = "trade_time")
-
     private String tradeTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trade_id")
-
-    @JacksonXmlProperty(localName = "trade_id")
 
     private String tradeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "change_amount")
 
-    @JacksonXmlProperty(localName = "change_amount")
-
     private String changeAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "balance_after_change")
 
-    @JacksonXmlProperty(localName = "balance_after_change")
-
     private String balanceAfterChange;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
-
-    @JacksonXmlProperty(localName = "type")
 
     private String type;
 

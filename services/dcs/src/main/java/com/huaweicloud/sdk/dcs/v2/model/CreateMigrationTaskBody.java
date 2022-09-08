@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -20,14 +19,10 @@ public class CreateMigrationTaskBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_name")
 
-    @JacksonXmlProperty(localName = "task_name")
-
     private String taskName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
-
-    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
@@ -110,8 +105,6 @@ public class CreateMigrationTaskBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "migration_type")
-
-    @JacksonXmlProperty(localName = "migration_type")
 
     private MigrationTypeEnum migrationType;
 
@@ -197,14 +190,10 @@ public class CreateMigrationTaskBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "migration_method")
 
-    @JacksonXmlProperty(localName = "migration_method")
-
     private MigrationMethodEnum migrationMethod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "backup_files")
-
-    @JacksonXmlProperty(localName = "backup_files")
 
     private BackupFilesBody backupFiles;
 
@@ -288,21 +277,15 @@ public class CreateMigrationTaskBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "network_type")
 
-    @JacksonXmlProperty(localName = "network_type")
-
     private NetworkTypeEnum networkType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_instance")
 
-    @JacksonXmlProperty(localName = "source_instance")
-
     private SourceInstanceBody sourceInstance;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_instance")
-
-    @JacksonXmlProperty(localName = "target_instance")
 
     private TargetInstanceBody targetInstance;
 

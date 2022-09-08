@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -20,28 +19,20 @@ public class DeploymentHostInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_id")
 
-    @JacksonXmlProperty(localName = "group_id")
-
     private String groupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_name")
-
-    @JacksonXmlProperty(localName = "host_name")
 
     private String hostName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip")
 
-    @JacksonXmlProperty(localName = "ip")
-
     private String ip;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "port")
-
-    @JacksonXmlProperty(localName = "port")
 
     private Integer port;
 
@@ -125,35 +116,25 @@ public class DeploymentHostInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os")
 
-    @JacksonXmlProperty(localName = "os")
-
     private OsEnum os;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "as_proxy")
-
-    @JacksonXmlProperty(localName = "as_proxy")
 
     private Boolean asProxy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "proxy_host_id")
 
-    @JacksonXmlProperty(localName = "proxy_host_id")
-
     private String proxyHostId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "authorization")
 
-    @JacksonXmlProperty(localName = "authorization")
-
     private DeploymentHostAuthorizationBody authorization;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "install_icagent")
-
-    @JacksonXmlProperty(localName = "install_icagent")
 
     private Boolean installIcagent;
 

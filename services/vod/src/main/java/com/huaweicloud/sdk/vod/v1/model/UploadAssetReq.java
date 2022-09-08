@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,21 +21,15 @@ public class UploadAssetReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "asset_id")
 
-    @JacksonXmlProperty(localName = "asset_id")
-
     private String assetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "video_md5")
 
-    @JacksonXmlProperty(localName = "video_md5")
-
     private String videoMd5;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "video_name")
-
-    @JacksonXmlProperty(localName = "video_name")
 
     private String videoName;
 
@@ -270,14 +263,10 @@ public class UploadAssetReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "video_type")
 
-    @JacksonXmlProperty(localName = "video_type")
-
     private VideoTypeEnum videoType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cover_id")
-
-    @JacksonXmlProperty(localName = "cover_id")
 
     private Integer coverId;
 
@@ -361,21 +350,15 @@ public class UploadAssetReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cover_type")
 
-    @JacksonXmlProperty(localName = "cover_type")
-
     private CoverTypeEnum coverType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cover_md5")
 
-    @JacksonXmlProperty(localName = "cover_md5")
-
     private String coverMd5;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subtitles")
-
-    @JacksonXmlProperty(localName = "subtitles")
 
     private List<Subtitle> subtitles = null;
 

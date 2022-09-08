@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.evs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,28 +14,20 @@ public class CreateVolumeRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bssParam")
 
-    @JacksonXmlProperty(localName = "bssParam")
-
     private BssParamForCreateVolume bssParam;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volume")
-
-    @JacksonXmlProperty(localName = "volume")
 
     private CreateVolumeOption volume;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "server_id")
 
-    @JacksonXmlProperty(localName = "server_id")
-
     private String serverId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "OS-SCH-HNT:scheduler_hints")
-
-    @JacksonXmlProperty(localName = "OS-SCH-HNT:scheduler_hints")
 
     private CreateVolumeSchedulerHints osSCHHNTSchedulerHints;
 

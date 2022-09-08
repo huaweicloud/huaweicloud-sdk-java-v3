@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,21 +16,15 @@ public class PicLayoutInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "x")
 
-    @JacksonXmlProperty(localName = "x")
-
     private Integer x;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "y")
 
-    @JacksonXmlProperty(localName = "y")
-
     private Integer y;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subPicLayoutInfoList")
-
-    @JacksonXmlProperty(localName = "subPicLayoutInfoList")
 
     private List<SubPicLayoutInfo> subPicLayoutInfoList = null;
 

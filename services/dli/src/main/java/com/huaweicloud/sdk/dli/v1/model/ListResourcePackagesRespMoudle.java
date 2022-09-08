@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,51 +16,37 @@ public class ListResourcePackagesRespMoudle {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "module_name")
 
-    @JacksonXmlProperty(localName = "module_name")
-
     private String moduleName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "module_type")
-
-    @JacksonXmlProperty(localName = "module_type")
 
     private String moduleType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    @JacksonXmlProperty(localName = "status")
-
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
-
-    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resources")
 
-    @JacksonXmlProperty(localName = "resources")
-
     private List<String> resources = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
-
-    @JacksonXmlProperty(localName = "create_time")
 
     private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
 
-    @JacksonXmlProperty(localName = "update_time")
-
-    private Integer updateTime;
+    private Long updateTime;
 
     public ListResourcePackagesRespMoudle withModuleName(String moduleName) {
         this.moduleName = moduleName;
@@ -181,7 +166,7 @@ public class ListResourcePackagesRespMoudle {
         this.createTime = createTime;
     }
 
-    public ListResourcePackagesRespMoudle withUpdateTime(Integer updateTime) {
+    public ListResourcePackagesRespMoudle withUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
         return this;
     }
@@ -190,11 +175,11 @@ public class ListResourcePackagesRespMoudle {
      * 模块更新的unix时间。
      * @return updateTime
      */
-    public Integer getUpdateTime() {
+    public Long getUpdateTime() {
         return updateTime;
     }
 
-    public void setUpdateTime(Integer updateTime) {
+    public void setUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
     }
 

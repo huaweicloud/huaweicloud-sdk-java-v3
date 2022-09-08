@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.codehub.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,28 +13,20 @@ public class AddDeployKeyRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "application")
 
-    @JacksonXmlProperty(localName = "application")
-
     private String application;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "can_push")
-
-    @JacksonXmlProperty(localName = "can_push")
 
     private Boolean canPush;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key")
 
-    @JacksonXmlProperty(localName = "key")
-
     private String key;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key_title")
-
-    @JacksonXmlProperty(localName = "key_title")
 
     private String keyTitle;
 
@@ -45,7 +36,7 @@ public class AddDeployKeyRequestBody {
     }
 
     /**
-     * 部署key的来源
+     * 部署使用的SSH密钥的来源
      * @return application
      */
     public String getApplication() {
@@ -62,7 +53,7 @@ public class AddDeployKeyRequestBody {
     }
 
     /**
-     * 部署key是否可以推送代码
+     * 部署使用的SSH密钥是否可以推送代码
      * @return canPush
      */
     public Boolean getCanPush() {
@@ -79,7 +70,7 @@ public class AddDeployKeyRequestBody {
     }
 
     /**
-     * 部署key
+     * 部署使用的SSH密钥
      * @return key
      */
     public String getKey() {
@@ -96,7 +87,7 @@ public class AddDeployKeyRequestBody {
     }
 
     /**
-     * 部署key名称
+     * 部署使用的SSH密钥名称
      * @return keyTitle
      */
     public String getKeyTitle() {

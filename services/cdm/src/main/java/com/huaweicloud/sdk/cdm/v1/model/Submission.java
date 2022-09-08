@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cdm.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,140 +14,100 @@ public class Submission {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "isIncrementing")
 
-    @JacksonXmlProperty(localName = "isIncrementing")
-
     private Boolean isIncrementing;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job-name")
-
-    @JacksonXmlProperty(localName = "job-name")
 
     private String jobName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "counters")
 
-    @JacksonXmlProperty(localName = "counters")
-
     private Counters counters;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "isStopingIncrement")
-
-    @JacksonXmlProperty(localName = "isStopingIncrement")
 
     private String isStopingIncrement;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is-execute-auto")
 
-    @JacksonXmlProperty(localName = "is-execute-auto")
-
     private Boolean isExecuteAuto;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last-update-date")
-
-    @JacksonXmlProperty(localName = "last-update-date")
 
     private Long lastUpdateDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last-udpate-user")
 
-    @JacksonXmlProperty(localName = "last-udpate-user")
-
     private String lastUdpateUser;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "isDeleteJob")
-
-    @JacksonXmlProperty(localName = "isDeleteJob")
 
     private Boolean isDeleteJob;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "creation-user")
 
-    @JacksonXmlProperty(localName = "creation-user")
-
     private String creationUser;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "creation-date")
-
-    @JacksonXmlProperty(localName = "creation-date")
 
     private Long creationDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "external-id")
 
-    @JacksonXmlProperty(localName = "external-id")
-
     private String externalId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "progress")
-
-    @JacksonXmlProperty(localName = "progress")
 
     private Float progress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "submission-id")
 
-    @JacksonXmlProperty(localName = "submission-id")
-
     private Integer submissionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "delete_rows")
-
-    @JacksonXmlProperty(localName = "delete_rows")
 
     private Integer deleteRows;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_rows")
 
-    @JacksonXmlProperty(localName = "update_rows")
-
     private Integer updateRows;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "write_rows")
-
-    @JacksonXmlProperty(localName = "write_rows")
 
     private Integer writeRows;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "execute-date")
 
-    @JacksonXmlProperty(localName = "execute-date")
-
     private Long executeDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
-
-    @JacksonXmlProperty(localName = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error-details")
 
-    @JacksonXmlProperty(localName = "error-details")
-
     private String errorDetails;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error-summary")
-
-    @JacksonXmlProperty(localName = "error-summary")
 
     private String errorSummary;
 

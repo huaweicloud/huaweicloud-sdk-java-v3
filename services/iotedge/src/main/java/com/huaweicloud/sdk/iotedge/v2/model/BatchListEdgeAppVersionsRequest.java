@@ -16,8 +16,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -31,7 +29,6 @@ public class BatchListEdgeAppVersionsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edge_app_id")
     
-    @JacksonXmlProperty(localName = "edge_app_id")
     
     private String edgeAppId;
 
@@ -39,7 +36,6 @@ public class BatchListEdgeAppVersionsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="version")
     
-    @JacksonXmlProperty(localName = "version")
     
     private String version;
 
@@ -47,7 +43,6 @@ public class BatchListEdgeAppVersionsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    @JacksonXmlProperty(localName = "offset")
     
     private Integer offset;
 
@@ -55,7 +50,6 @@ public class BatchListEdgeAppVersionsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    @JacksonXmlProperty(localName = "limit")
     
     private Integer limit;
     /**
@@ -147,7 +141,6 @@ public class BatchListEdgeAppVersionsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ai_card_type")
     
-    @JacksonXmlProperty(localName = "ai_card_type")
     
     private AiCardTypeEnum aiCardType;
     /**
@@ -239,7 +232,6 @@ public class BatchListEdgeAppVersionsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="arch")
     
-    @JacksonXmlProperty(localName = "arch")
     
     private ArchEnum arch;
     /**
@@ -331,7 +323,6 @@ public class BatchListEdgeAppVersionsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="state")
     
-    @JacksonXmlProperty(localName = "state")
     
     private StateEnum state;
 

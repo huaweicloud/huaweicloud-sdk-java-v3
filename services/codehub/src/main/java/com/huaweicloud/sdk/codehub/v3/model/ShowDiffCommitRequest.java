@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.codehub.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,14 +13,10 @@ public class ShowDiffCommitRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "repo_id")
 
-    @JacksonXmlProperty(localName = "repo_id")
-
     private Integer repoId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sha")
-
-    @JacksonXmlProperty(localName = "sha")
 
     private String sha;
 

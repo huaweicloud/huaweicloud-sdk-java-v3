@@ -10,8 +10,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -25,7 +23,6 @@ public class EventExtractionResponseItemArgument  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="role")
     
-    @JacksonXmlProperty(localName = "role")
     
     private String role;
 
@@ -33,7 +30,6 @@ public class EventExtractionResponseItemArgument  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="span")
     
-    @JacksonXmlProperty(localName = "span")
     
     private List<Integer> span = null;
     
@@ -41,7 +37,6 @@ public class EventExtractionResponseItemArgument  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="word")
     
-    @JacksonXmlProperty(localName = "word")
     
     private String word;
 

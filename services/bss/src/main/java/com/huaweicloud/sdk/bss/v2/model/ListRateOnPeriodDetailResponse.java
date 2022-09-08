@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.bss.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
@@ -18,21 +17,15 @@ public class ListRateOnPeriodDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "official_website_rating_result")
 
-    @JacksonXmlProperty(localName = "official_website_rating_result")
-
     private OfficialWebsiteRatingResult officialWebsiteRatingResult;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "optional_discount_rating_results")
 
-    @JacksonXmlProperty(localName = "optional_discount_rating_results")
-
     private List<OptionalDiscountRatingResult> optionalDiscountRatingResults = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "currency")
-
-    @JacksonXmlProperty(localName = "currency")
 
     private String currency;
 

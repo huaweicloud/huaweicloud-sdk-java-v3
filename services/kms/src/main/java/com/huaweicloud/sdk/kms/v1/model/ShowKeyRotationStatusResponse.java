@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.kms.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -15,28 +14,20 @@ public class ShowKeyRotationStatusResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key_rotation_enabled")
 
-    @JacksonXmlProperty(localName = "key_rotation_enabled")
-
     private Boolean keyRotationEnabled;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rotation_interval")
-
-    @JacksonXmlProperty(localName = "rotation_interval")
 
     private Integer rotationInterval;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last_rotation_time")
 
-    @JacksonXmlProperty(localName = "last_rotation_time")
-
     private String lastRotationTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "number_of_rotations")
-
-    @JacksonXmlProperty(localName = "number_of_rotations")
 
     private Integer numberOfRotations;
 

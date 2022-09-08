@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.das.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,14 +13,10 @@ public class DbUser {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "db_user_id")
 
-    @JacksonXmlProperty(localName = "db_user_id")
-
     private String dbUserId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "db_username")
-
-    @JacksonXmlProperty(localName = "db_username")
 
     private String dbUsername;
 

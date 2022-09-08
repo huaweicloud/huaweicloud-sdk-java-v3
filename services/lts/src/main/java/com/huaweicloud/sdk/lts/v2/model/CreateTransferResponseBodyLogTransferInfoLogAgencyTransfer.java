@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.lts.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,42 +13,30 @@ public class CreateTransferResponseBodyLogTransferInfoLogAgencyTransfer {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "agency_domain_id")
 
-    @JacksonXmlProperty(localName = "agency_domain_id")
-
     private String agencyDomainId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "agency_domain_name")
-
-    @JacksonXmlProperty(localName = "agency_domain_name")
 
     private String agencyDomainName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "agency_name")
 
-    @JacksonXmlProperty(localName = "agency_name")
-
     private String agencyName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "agency_project_id")
-
-    @JacksonXmlProperty(localName = "agency_project_id")
 
     private String agencyProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "be_agency_domain_id")
 
-    @JacksonXmlProperty(localName = "be_agency_domain_id")
-
     private String beAgencyDomainId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "be_agency_project_id")
-
-    @JacksonXmlProperty(localName = "be_agency_project_id")
 
     private String beAgencyProjectId;
 

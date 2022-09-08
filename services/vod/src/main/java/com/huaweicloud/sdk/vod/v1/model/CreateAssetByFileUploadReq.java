@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,42 +21,30 @@ public class CreateAssetByFileUploadReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "title")
 
-    @JacksonXmlProperty(localName = "title")
-
     private String title;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
-
-    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "video_name")
 
-    @JacksonXmlProperty(localName = "video_name")
-
     private String videoName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "video_type")
-
-    @JacksonXmlProperty(localName = "video_type")
 
     private String videoType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "category_id")
 
-    @JacksonXmlProperty(localName = "category_id")
-
     private String categoryId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "video_md5")
-
-    @JacksonXmlProperty(localName = "video_md5")
 
     private String videoMd5;
 
@@ -141,28 +128,20 @@ public class CreateAssetByFileUploadReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cover_type")
 
-    @JacksonXmlProperty(localName = "cover_type")
-
     private CoverTypeEnum coverType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cover_md5")
-
-    @JacksonXmlProperty(localName = "cover_md5")
 
     private String coverMd5;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subtitles")
 
-    @JacksonXmlProperty(localName = "subtitles")
-
     private List<Subtitle> subtitles = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
-
-    @JacksonXmlProperty(localName = "tags")
 
     private String tags;
 
@@ -246,49 +225,35 @@ public class CreateAssetByFileUploadReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auto_publish")
 
-    @JacksonXmlProperty(localName = "auto_publish")
-
     private AutoPublishEnum autoPublish;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template_group_name")
-
-    @JacksonXmlProperty(localName = "template_group_name")
 
     private String templateGroupName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auto_encrypt")
 
-    @JacksonXmlProperty(localName = "auto_encrypt")
-
     private Integer autoEncrypt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auto_preheat")
-
-    @JacksonXmlProperty(localName = "auto_preheat")
 
     private String autoPreheat;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "thumbnail")
 
-    @JacksonXmlProperty(localName = "thumbnail")
-
     private Thumbnail thumbnail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "review")
 
-    @JacksonXmlProperty(localName = "review")
-
     private Review review;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "workflow_name")
-
-    @JacksonXmlProperty(localName = "workflow_name")
 
     private String workflowName;
 

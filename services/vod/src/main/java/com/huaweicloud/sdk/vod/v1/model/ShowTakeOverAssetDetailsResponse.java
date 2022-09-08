@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Collections;
@@ -20,8 +19,6 @@ public class ShowTakeOverAssetDetailsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "asset_id")
-
-    @JacksonXmlProperty(localName = "asset_id")
 
     private String assetId;
 
@@ -123,8 +120,6 @@ public class ShowTakeOverAssetDetailsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "asset_status")
 
-    @JacksonXmlProperty(localName = "asset_status")
-
     private AssetStatusEnum assetStatus;
 
     /**
@@ -225,21 +220,15 @@ public class ShowTakeOverAssetDetailsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "transcode_status")
 
-    @JacksonXmlProperty(localName = "transcode_status")
-
     private TranscodeStatusEnum transcodeStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "base_info")
 
-    @JacksonXmlProperty(localName = "base_info")
-
     private BaseInfo baseInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "transcode_info")
-
-    @JacksonXmlProperty(localName = "transcode_info")
 
     private TranscodeInfo transcodeInfo;
 

@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -19,21 +18,15 @@ public class VideoProcess {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hls_init_count")
 
-    @JacksonXmlProperty(localName = "hls_init_count")
-
     private Integer hlsInitCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hls_init_interval")
 
-    @JacksonXmlProperty(localName = "hls_init_interval")
-
     private Integer hlsInitInterval;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rotate")
-
-    @JacksonXmlProperty(localName = "rotate")
 
     private Integer rotate;
 
@@ -123,14 +116,10 @@ public class VideoProcess {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "adaptation")
 
-    @JacksonXmlProperty(localName = "adaptation")
-
     private AdaptationEnum adaptation;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "upsample")
-
-    @JacksonXmlProperty(localName = "upsample")
 
     private Integer upsample;
 

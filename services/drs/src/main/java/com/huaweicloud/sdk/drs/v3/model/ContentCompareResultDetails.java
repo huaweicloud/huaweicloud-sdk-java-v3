@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.drs.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,35 +16,25 @@ public class ContentCompareResultDetails {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_db_name")
 
-    @JacksonXmlProperty(localName = "source_db_name")
-
     private String sourceDbName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "content_compare_detail")
-
-    @JacksonXmlProperty(localName = "content_compare_detail")
 
     private List<ContentCompareDetail> contentCompareDetail = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "content_compare_detail_count")
 
-    @JacksonXmlProperty(localName = "content_compare_detail_count")
-
     private Integer contentCompareDetailCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "content_uncompare_detail")
 
-    @JacksonXmlProperty(localName = "content_uncompare_detail")
-
     private List<ContentCompareDetail> contentUncompareDetail = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "content_uncompare_detail_count")
-
-    @JacksonXmlProperty(localName = "content_uncompare_detail_count")
 
     private Integer contentUncompareDetailCount;
 

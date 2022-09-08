@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,8 +20,6 @@ public class CreateHostGroupRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_group_name")
-
-    @JacksonXmlProperty(localName = "host_group_name")
 
     private String hostGroupName;
 
@@ -106,21 +103,15 @@ public class CreateHostGroupRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_group_type")
 
-    @JacksonXmlProperty(localName = "host_group_type")
-
     private HostGroupTypeEnum hostGroupType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_id_list")
 
-    @JacksonXmlProperty(localName = "host_id_list")
-
     private List<String> hostIdList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_group_tag")
-
-    @JacksonXmlProperty(localName = "host_group_tag")
 
     private List<HostGroupTag> hostGroupTag = null;
 

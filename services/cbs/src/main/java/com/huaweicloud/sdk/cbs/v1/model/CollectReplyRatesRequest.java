@@ -12,8 +12,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -27,7 +25,6 @@ public class CollectReplyRatesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="qabot_id")
     
-    @JacksonXmlProperty(localName = "qabot_id")
     
     private String qabotId;
 
@@ -35,7 +32,6 @@ public class CollectReplyRatesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="start_time")
     
-    @JacksonXmlProperty(localName = "start_time")
     
     private String startTime;
 
@@ -43,7 +39,6 @@ public class CollectReplyRatesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="end_time")
     
-    @JacksonXmlProperty(localName = "end_time")
     
     private String endTime;
     /**
@@ -135,7 +130,6 @@ public class CollectReplyRatesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="interval")
     
-    @JacksonXmlProperty(localName = "interval")
     
     private IntervalEnum interval;
 
@@ -143,7 +137,6 @@ public class CollectReplyRatesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="time_zone")
     
-    @JacksonXmlProperty(localName = "time_zone")
     
     private String timeZone;
 
@@ -151,7 +144,6 @@ public class CollectReplyRatesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="domain")
     
-    @JacksonXmlProperty(localName = "domain")
     
     private String domain;
 

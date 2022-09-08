@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,8 +17,6 @@ public class ListScalingInstancesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scaling_group_id")
-
-    @JacksonXmlProperty(localName = "scaling_group_id")
 
     private String scalingGroupId;
 
@@ -133,8 +130,6 @@ public class ListScalingInstancesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "life_cycle_state")
 
-    @JacksonXmlProperty(localName = "life_cycle_state")
-
     private LifeCycleStateEnum lifeCycleState;
 
     /**
@@ -223,8 +218,6 @@ public class ListScalingInstancesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "health_status")
 
-    @JacksonXmlProperty(localName = "health_status")
-
     private HealthStatusEnum healthStatus;
 
     /**
@@ -307,21 +300,15 @@ public class ListScalingInstancesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protect_from_scaling_down")
 
-    @JacksonXmlProperty(localName = "protect_from_scaling_down")
-
     private ProtectFromScalingDownEnum protectFromScalingDown;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_number")
 
-    @JacksonXmlProperty(localName = "start_number")
-
     private Integer startNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
-
-    @JacksonXmlProperty(localName = "limit")
 
     private Integer limit;
 

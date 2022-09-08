@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,42 +21,30 @@ public class CreateEndpointServiceRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "port_id")
 
-    @JacksonXmlProperty(localName = "port_id")
-
     private String portId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vip_port_id")
-
-    @JacksonXmlProperty(localName = "vip_port_id")
 
     private String vipPortId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_name")
 
-    @JacksonXmlProperty(localName = "service_name")
-
     private String serviceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_id")
-
-    @JacksonXmlProperty(localName = "vpc_id")
 
     private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "approval_enabled")
 
-    @JacksonXmlProperty(localName = "approval_enabled")
-
     private Boolean approvalEnabled;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_type")
-
-    @JacksonXmlProperty(localName = "service_type")
 
     private String serviceType;
 
@@ -147,14 +134,10 @@ public class CreateEndpointServiceRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "server_type")
 
-    @JacksonXmlProperty(localName = "server_type")
-
     private ServerTypeEnum serverType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ports")
-
-    @JacksonXmlProperty(localName = "ports")
 
     private List<PortList> ports = null;
 
@@ -250,14 +233,10 @@ public class CreateEndpointServiceRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tcp_proxy")
 
-    @JacksonXmlProperty(localName = "tcp_proxy")
-
     private TcpProxyEnum tcpProxy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
-
-    @JacksonXmlProperty(localName = "tags")
 
     private List<TagList> tags = null;
 

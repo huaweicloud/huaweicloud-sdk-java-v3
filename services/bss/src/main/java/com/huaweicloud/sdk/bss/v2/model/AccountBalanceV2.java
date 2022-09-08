@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.bss.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,56 +13,40 @@ public class AccountBalanceV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "account_id")
 
-    @JacksonXmlProperty(localName = "account_id")
-
     private String accountId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "account_type")
-
-    @JacksonXmlProperty(localName = "account_type")
 
     private Integer accountType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "amount")
 
-    @JacksonXmlProperty(localName = "amount")
-
     private Double amount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "currency")
-
-    @JacksonXmlProperty(localName = "currency")
 
     private String currency;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "designated_amount")
 
-    @JacksonXmlProperty(localName = "designated_amount")
-
     private Double designatedAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "credit_amount")
-
-    @JacksonXmlProperty(localName = "credit_amount")
 
     private Double creditAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "measure_id")
 
-    @JacksonXmlProperty(localName = "measure_id")
-
     private Integer measureId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "memo")
-
-    @JacksonXmlProperty(localName = "memo")
 
     private String memo;
 

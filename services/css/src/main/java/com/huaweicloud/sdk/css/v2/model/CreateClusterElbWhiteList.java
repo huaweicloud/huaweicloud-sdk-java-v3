@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.css.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,14 +13,10 @@ public class CreateClusterElbWhiteList {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enableWhiteList")
 
-    @JacksonXmlProperty(localName = "enableWhiteList")
-
     private Boolean enableWhiteList;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "whiteList")
-
-    @JacksonXmlProperty(localName = "whiteList")
 
     private String whiteList;
 
@@ -48,7 +43,7 @@ public class CreateClusterElbWhiteList {
     }
 
     /**
-     * 公网访问控制白名单。白名单。需要添加白名单的网段或ip，以逗号隔开，不可重复。
+     * 公网访问控制白名单。需要添加白名单的网段或ip，以逗号隔开，不可重复。
      * @return whiteList
      */
     public String getWhiteList() {

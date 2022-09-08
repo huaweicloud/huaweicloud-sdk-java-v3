@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.lts.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,28 +16,20 @@ public class UpdateAccessConfigRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "access_config_id")
 
-    @JacksonXmlProperty(localName = "access_config_id")
-
     private String accessConfigId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "access_config_detail")
-
-    @JacksonXmlProperty(localName = "access_config_detail")
 
     private AccessConfigDeatil accessConfigDetail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_group_info")
 
-    @JacksonXmlProperty(localName = "host_group_info")
-
     private AccessConfigHostGroupIdList hostGroupInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "access_config_tag")
-
-    @JacksonXmlProperty(localName = "access_config_tag")
 
     private List<AccessConfigTag> accessConfigTag = null;
 

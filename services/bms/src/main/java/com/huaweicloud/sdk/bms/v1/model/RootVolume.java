@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -103,21 +102,15 @@ public class RootVolume {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volumetype")
 
-    @JacksonXmlProperty(localName = "volumetype")
-
     private VolumetypeEnum volumetype;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
 
-    @JacksonXmlProperty(localName = "size")
-
     private Integer size;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cluster_id")
-
-    @JacksonXmlProperty(localName = "cluster_id")
 
     private UUID clusterId;
 
@@ -194,8 +187,6 @@ public class RootVolume {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cluster_type")
-
-    @JacksonXmlProperty(localName = "cluster_type")
 
     private ClusterTypeEnum clusterType;
 

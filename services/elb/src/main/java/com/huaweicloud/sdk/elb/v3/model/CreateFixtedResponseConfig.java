@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -12,14 +11,12 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * 固定返回页面的配置。当监听器的高级转发策略功能（enhance_l7policy_enable）开启后才会生效，未开启传入该字段会报错。共享型负载均衡器下的转发策略不支持该字段，传入会报错。   [当action为FIXED_RESPONSE时生效，且为必选字段，其他action不可指定。](tag:hws,hws_hk,ocb,tlf,ctc,hcs,sbc,g42,tm,cmcc,hk_g42,mix,hk_sbc,hws_ocb,fcs)  [  不支持该字段，请勿使用。](tag:dt,dt_test)
+ * 固定返回页面的配置。当监听器的高级转发策略功能（enhance_l7policy_enable）开启后才会生效，未开启传入该字段会报错。共享型负载均衡器下的转发策略不支持该字段，传入会报错。 [当action为FIXED_RESPONSE时生效，且为必选字段，其他action不可指定。](tag:hws,hws_hk,ocb,tlf,ctc,hcs,sbc,g42,tm,cmcc,hk_g42,mix,hk_sbc,hws_ocb,fcs,dt,dt_test) [不支持该字段，请勿使用。](tag:hcso_dt)
  */
 public class CreateFixtedResponseConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status_code")
-
-    @JacksonXmlProperty(localName = "status_code")
 
     private String statusCode;
 
@@ -121,14 +118,10 @@ public class CreateFixtedResponseConfig {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "content_type")
 
-    @JacksonXmlProperty(localName = "content_type")
-
     private ContentTypeEnum contentType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "message_body")
-
-    @JacksonXmlProperty(localName = "message_body")
 
     private String messageBody;
 

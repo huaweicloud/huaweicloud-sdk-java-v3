@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.iotanalytics.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,42 +13,30 @@ public class DcsContentRsp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "endpointServiceId")
 
-    @JacksonXmlProperty(localName = "endpointServiceId")
-
     private String endpointServiceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "endpointServiceName")
-
-    @JacksonXmlProperty(localName = "endpointServiceName")
 
     private String endpointServiceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "endpointIp")
 
-    @JacksonXmlProperty(localName = "endpointIp")
-
     private String endpointIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "port")
-
-    @JacksonXmlProperty(localName = "port")
 
     private Integer port;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dcsType")
 
-    @JacksonXmlProperty(localName = "dcsType")
-
     private String dcsType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "password")
-
-    @JacksonXmlProperty(localName = "password")
 
     private String password;
 

@@ -14,8 +14,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -29,7 +27,6 @@ public class ShowHdfsFileListRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cluster_id")
     
-    @JacksonXmlProperty(localName = "cluster_id")
     
     private String clusterId;
 
@@ -37,7 +34,6 @@ public class ShowHdfsFileListRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="path")
     
-    @JacksonXmlProperty(localName = "path")
     
     private String path;
 
@@ -45,7 +41,6 @@ public class ShowHdfsFileListRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    @JacksonXmlProperty(localName = "offset")
     
     private String offset;
 
@@ -53,7 +48,6 @@ public class ShowHdfsFileListRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    @JacksonXmlProperty(localName = "limit")
     
     private String limit;
     /**
@@ -145,7 +139,6 @@ public class ShowHdfsFileListRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sort_key")
     
-    @JacksonXmlProperty(localName = "sort_key")
     
     private SortKeyEnum sortKey;
     /**
@@ -231,7 +224,6 @@ public class ShowHdfsFileListRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="order")
     
-    @JacksonXmlProperty(localName = "order")
     
     private OrderEnum order;
 

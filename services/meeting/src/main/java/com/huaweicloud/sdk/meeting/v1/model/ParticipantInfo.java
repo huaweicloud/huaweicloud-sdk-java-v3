@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,119 +13,85 @@ public class ParticipantInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "participantID")
 
-    @JacksonXmlProperty(localName = "participantID")
-
     private String participantID;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
-
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subscriberID")
 
-    @JacksonXmlProperty(localName = "subscriberID")
-
     private String subscriberID;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "role")
-
-    @JacksonXmlProperty(localName = "role")
 
     private Integer role;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "state")
 
-    @JacksonXmlProperty(localName = "state")
-
     private String state;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "address")
-
-    @JacksonXmlProperty(localName = "address")
 
     private String address;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "attendeeType")
 
-    @JacksonXmlProperty(localName = "attendeeType")
-
     private String attendeeType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "accountId")
-
-    @JacksonXmlProperty(localName = "accountId")
 
     private String accountId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "phone2")
 
-    @JacksonXmlProperty(localName = "phone2")
-
     private String phone2;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "phone3")
-
-    @JacksonXmlProperty(localName = "phone3")
 
     private String phone3;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "email")
 
-    @JacksonXmlProperty(localName = "email")
-
     private String email;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sms")
-
-    @JacksonXmlProperty(localName = "sms")
 
     private String sms;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deptName")
 
-    @JacksonXmlProperty(localName = "deptName")
-
     private String deptName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "userUUID")
-
-    @JacksonXmlProperty(localName = "userUUID")
 
     private String userUUID;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "appId")
 
-    @JacksonXmlProperty(localName = "appId")
-
     private String appId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "isAutoInvite")
 
-    @JacksonXmlProperty(localName = "isAutoInvite")
-
     private Integer isAutoInvite;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "isNotOverlayPidName")
-
-    @JacksonXmlProperty(localName = "isNotOverlayPidName")
 
     private Boolean isNotOverlayPidName;
 

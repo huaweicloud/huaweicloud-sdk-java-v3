@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,21 +13,15 @@ public class ShowJobMonitorInfoRespPayloadJobsMetricsSources {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
-    @JacksonXmlProperty(localName = "name")
-
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "records")
 
-    @JacksonXmlProperty(localName = "records")
-
     private Long records;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "corrupted_records")
-
-    @JacksonXmlProperty(localName = "corrupted_records")
 
     private Long corruptedRecords;
 

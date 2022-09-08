@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.res.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,42 +14,30 @@ public class CreateResIntelligentSceneRequestNBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "category")
 
-    @JacksonXmlProperty(localName = "category")
-
     private String category;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "datasource_id")
-
-    @JacksonXmlProperty(localName = "datasource_id")
 
     private String datasourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scene_name")
 
-    @JacksonXmlProperty(localName = "scene_name")
-
     private String sceneName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "specs_config")
-
-    @JacksonXmlProperty(localName = "specs_config")
 
     private SpecsConfig specsConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "schedule")
 
-    @JacksonXmlProperty(localName = "schedule")
-
     private String schedule;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_configs")
-
-    @JacksonXmlProperty(localName = "job_configs")
 
     private JobConfig jobConfigs;
 

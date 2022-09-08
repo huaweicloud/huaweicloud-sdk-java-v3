@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -13,42 +12,19 @@ import java.util.function.Consumer;
 public class ChangeQueuePlanRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "queue_name")
-
-    @JacksonXmlProperty(localName = "queue_name")
-
-    private String queueName;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "plan_id")
-
-    @JacksonXmlProperty(localName = "plan_id")
 
     private String planId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "queue_name")
+
+    private String queueName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    @JacksonXmlProperty(localName = "body")
-
     private SetQueuePlanReq body;
-
-    public ChangeQueuePlanRequest withQueueName(String queueName) {
-        this.queueName = queueName;
-        return this;
-    }
-
-    /**
-     * 待删除定时扩缩计划的队列名称
-     * @return queueName
-     */
-    public String getQueueName() {
-        return queueName;
-    }
-
-    public void setQueueName(String queueName) {
-        this.queueName = queueName;
-    }
 
     public ChangeQueuePlanRequest withPlanId(String planId) {
         this.planId = planId;
@@ -65,6 +41,23 @@ public class ChangeQueuePlanRequest {
 
     public void setPlanId(String planId) {
         this.planId = planId;
+    }
+
+    public ChangeQueuePlanRequest withQueueName(String queueName) {
+        this.queueName = queueName;
+        return this;
+    }
+
+    /**
+     * 待删除定时扩缩计划的队列名称
+     * @return queueName
+     */
+    public String getQueueName() {
+        return queueName;
+    }
+
+    public void setQueueName(String queueName) {
+        this.queueName = queueName;
     }
 
     public ChangeQueuePlanRequest withBody(SetQueuePlanReq body) {
@@ -102,22 +95,22 @@ public class ChangeQueuePlanRequest {
             return false;
         }
         ChangeQueuePlanRequest changeQueuePlanRequest = (ChangeQueuePlanRequest) o;
-        return Objects.equals(this.queueName, changeQueuePlanRequest.queueName)
-            && Objects.equals(this.planId, changeQueuePlanRequest.planId)
+        return Objects.equals(this.planId, changeQueuePlanRequest.planId)
+            && Objects.equals(this.queueName, changeQueuePlanRequest.queueName)
             && Objects.equals(this.body, changeQueuePlanRequest.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(queueName, planId, body);
+        return Objects.hash(planId, queueName, body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ChangeQueuePlanRequest {\n");
-        sb.append("    queueName: ").append(toIndentedString(queueName)).append("\n");
         sb.append("    planId: ").append(toIndentedString(planId)).append("\n");
+        sb.append("    queueName: ").append(toIndentedString(queueName)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

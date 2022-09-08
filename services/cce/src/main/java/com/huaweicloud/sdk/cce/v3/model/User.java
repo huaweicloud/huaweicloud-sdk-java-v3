@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.cce.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,14 +13,10 @@ public class User {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "client-certificate-data")
 
-    @JacksonXmlProperty(localName = "client-certificate-data")
-
     private String clientCertificateData;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "client-key-data")
-
-    @JacksonXmlProperty(localName = "client-key-data")
 
     private String clientKeyData;
 

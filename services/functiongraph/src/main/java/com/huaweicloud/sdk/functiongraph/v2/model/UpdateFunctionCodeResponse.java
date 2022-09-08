@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.time.OffsetDateTime;
@@ -24,21 +23,15 @@ public class UpdateFunctionCodeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "func_urn")
 
-    @JacksonXmlProperty(localName = "func_urn")
-
     private String funcUrn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "func_name")
 
-    @JacksonXmlProperty(localName = "func_name")
-
     private String funcName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_id")
-
-    @JacksonXmlProperty(localName = "domain_id")
 
     private String domainId;
 
@@ -206,8 +199,6 @@ public class UpdateFunctionCodeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "runtime")
 
-    @JacksonXmlProperty(localName = "runtime")
-
     private RuntimeEnum runtime;
 
     /**
@@ -302,70 +293,50 @@ public class UpdateFunctionCodeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "code_type")
 
-    @JacksonXmlProperty(localName = "code_type")
-
     private CodeTypeEnum codeType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "code_url")
-
-    @JacksonXmlProperty(localName = "code_url")
 
     private String codeUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "code_filename")
 
-    @JacksonXmlProperty(localName = "code_filename")
-
     private String codeFilename;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "code_size")
-
-    @JacksonXmlProperty(localName = "code_size")
 
     private Long codeSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "digest")
 
-    @JacksonXmlProperty(localName = "digest")
-
     private String digest;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last_modified")
-
-    @JacksonXmlProperty(localName = "last_modified")
 
     private OffsetDateTime lastModified;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "func_code")
 
-    @JacksonXmlProperty(localName = "func_code")
-
     private FuncCode funcCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "depend_list")
-
-    @JacksonXmlProperty(localName = "depend_list")
 
     private List<String> dependList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "strategy_config")
 
-    @JacksonXmlProperty(localName = "strategy_config")
-
     private StrategyConfig strategyConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dependencies")
-
-    @JacksonXmlProperty(localName = "dependencies")
 
     private List<Dependency> dependencies = null;
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dcs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,18 +14,36 @@ import java.util.function.Consumer;
 public class ModifyIpWhitelistBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "enable_whitelist")
+    @JsonProperty(value = "instance_id")
 
-    @JacksonXmlProperty(localName = "enable_whitelist")
+    private String instanceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_whitelist")
 
     private Boolean enableWhitelist;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "whitelist")
 
-    @JacksonXmlProperty(localName = "whitelist")
-
     private List<Whitelist> whitelist = null;
+
+    public ModifyIpWhitelistBody withInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+        return this;
+    }
+
+    /**
+     * 实例ID
+     * @return instanceId
+     */
+    public String getInstanceId() {
+        return instanceId;
+    }
+
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+    }
 
     public ModifyIpWhitelistBody withEnableWhitelist(Boolean enableWhitelist) {
         this.enableWhitelist = enableWhitelist;
@@ -87,19 +104,21 @@ public class ModifyIpWhitelistBody {
             return false;
         }
         ModifyIpWhitelistBody modifyIpWhitelistBody = (ModifyIpWhitelistBody) o;
-        return Objects.equals(this.enableWhitelist, modifyIpWhitelistBody.enableWhitelist)
+        return Objects.equals(this.instanceId, modifyIpWhitelistBody.instanceId)
+            && Objects.equals(this.enableWhitelist, modifyIpWhitelistBody.enableWhitelist)
             && Objects.equals(this.whitelist, modifyIpWhitelistBody.whitelist);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enableWhitelist, whitelist);
+        return Objects.hash(instanceId, enableWhitelist, whitelist);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ModifyIpWhitelistBody {\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    enableWhitelist: ").append(toIndentedString(enableWhitelist)).append("\n");
         sb.append("    whitelist: ").append(toIndentedString(whitelist)).append("\n");
         sb.append("}");

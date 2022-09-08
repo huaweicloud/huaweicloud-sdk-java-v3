@@ -374,7 +374,7 @@ public class DliClient {
      * 创建经典型跨源连接
      *
      * 该API用于创建与其他服务的经典型跨源连接。
-     * 说明： 
+     * 说明：
      * 如果需要了解Console界面的使用方法，可参考经典型跨源连接。
      * 系统default队列不支持创建跨源连接。
      * 
@@ -392,7 +392,7 @@ public class DliClient {
      * 创建经典型跨源连接
      *
      * 该API用于创建与其他服务的经典型跨源连接。
-     * 说明： 
+     * 说明：
      * 如果需要了解Console界面的使用方法，可参考经典型跨源连接。
      * 系统default队列不支持创建跨源连接。
      * 
@@ -473,7 +473,7 @@ public class DliClient {
     }
 
     /**
-     * 新建Flink Jar作业
+     * 新建flink自定义作业
      *
      * 用户自定义作业目前支持jar格式，运行在独享集群中。
      * 
@@ -488,7 +488,7 @@ public class DliClient {
     }
 
     /**
-     * 新建Flink Jar作业
+     * 新建flink自定义作业
      *
      * 用户自定义作业目前支持jar格式，运行在独享集群中。
      * 
@@ -668,7 +668,7 @@ public class DliClient {
      * 删除经典型跨源连接
      *
      * 该API用于删除已创建的经典型跨源连接。
-     * 说明： 
+     * 说明：
      * 创建中的连接，无法删除。
      * 
      * 详细说明请参考华为云API Explorer。
@@ -685,7 +685,7 @@ public class DliClient {
      * 删除经典型跨源连接
      *
      * 该API用于删除已创建的经典型跨源连接。
-     * 说明： 
+     * 说明：
      * 创建中的连接，无法删除。
      * 
      * 详细说明请参考华为云API Explorer。
@@ -1429,7 +1429,7 @@ public class DliClient {
     }
 
     /**
-     * 更新Flink Jar作业
+     * 更新flink自定义作业
      *
      * 更新用户自定义作业，目前支持jar格式，运行在独享集群中。
      * 
@@ -1444,7 +1444,7 @@ public class DliClient {
     }
 
     /**
-     * 更新Flink Jar作业
+     * 更新flink自定义作业
      *
      * 更新用户自定义作业，目前支持jar格式，运行在独享集群中。
      * 
@@ -2094,7 +2094,7 @@ public class DliClient {
      * 数据赋权
      *
      * 该API用于将数据库或数据表的数据权限赋给指定的其他用户。
-     * 说明： 
+     * 说明：
      * 被赋权用户所在用户组的所属区域需具有Tenant Guest权限。
      * 
      * 详细说明请参考华为云API Explorer。
@@ -2111,7 +2111,7 @@ public class DliClient {
      * 数据赋权
      *
      * 该API用于将数据库或数据表的数据权限赋给指定的其他用户。
-     * 说明： 
+     * 说明：
      * 被赋权用户所在用户组的所属区域需具有Tenant Guest权限。
      * 
      * 详细说明请参考华为云API Explorer。
@@ -2253,34 +2253,34 @@ public class DliClient {
     }
 
     /**
-     * 导出查询结果
+     * 创建数据下载作业
      *
-     * 该API用于将SQL语句的查询结果导出到OBS对象存储中，只支持导出“QUERY”类型作业的查询结果。
+     * 该API用于创建数据下载作业。在DLI内部创建一个赋权给用户的额桶并返回
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
      *
-     * @param CreateJobResultRequest 请求对象
-     * @return CreateJobResultResponse
+     * @param CreateDownloadJobRequest 请求对象
+     * @return CreateDownloadJobResponse
      */
-    public CreateJobResultResponse createJobResult(CreateJobResultRequest request) {
-        return hcClient.syncInvokeHttp(request, DliMeta.createJobResult);
+    public CreateDownloadJobResponse createDownloadJob(CreateDownloadJobRequest request) {
+        return hcClient.syncInvokeHttp(request, DliMeta.createDownloadJob);
     }
 
     /**
-     * 导出查询结果
+     * 创建数据下载作业
      *
-     * 该API用于将SQL语句的查询结果导出到OBS对象存储中，只支持导出“QUERY”类型作业的查询结果。
+     * 该API用于创建数据下载作业。在DLI内部创建一个赋权给用户的额桶并返回
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
      *
-     * @param CreateJobResultRequest 请求对象
-     * @return SyncInvoker<CreateJobResultRequest, CreateJobResultResponse>
+     * @param CreateDownloadJobRequest 请求对象
+     * @return SyncInvoker<CreateDownloadJobRequest, CreateDownloadJobResponse>
      */
-    public SyncInvoker<CreateJobResultRequest, CreateJobResultResponse> createJobResultInvoker(
-        CreateJobResultRequest request) {
-        return new SyncInvoker<CreateJobResultRequest, CreateJobResultResponse>(request, DliMeta.createJobResult,
+    public SyncInvoker<CreateDownloadJobRequest, CreateDownloadJobResponse> createDownloadJobInvoker(
+        CreateDownloadJobRequest request) {
+        return new SyncInvoker<CreateDownloadJobRequest, CreateDownloadJobResponse>(request, DliMeta.createDownloadJob,
             hcClient);
     }
 
@@ -2412,7 +2412,7 @@ public class DliClient {
      * 删除队列
      *
      * 该API用于删除指定队列。
-     * 说明： 
+     * 说明：
      * 若指定队列正在执行任务，则不允许删除。
      * 
      * 详细说明请参考华为云API Explorer。
@@ -2429,7 +2429,7 @@ public class DliClient {
      * 删除队列
      *
      * 该API用于删除指定队列。
-     * 说明： 
+     * 说明：
      * 若指定队列正在执行任务，则不允许删除。
      * 
      * 详细说明请参考华为云API Explorer。
@@ -2535,6 +2535,38 @@ public class DliClient {
     }
 
     /**
+     * 导出查询结果
+     *
+     * 该API用于将SQL语句的查询结果导出到OBS对象存储中，只支持导出“QUERY”类型作业的查询结果。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ExportJobResultRequest 请求对象
+     * @return ExportJobResultResponse
+     */
+    public ExportJobResultResponse exportJobResult(ExportJobResultRequest request) {
+        return hcClient.syncInvokeHttp(request, DliMeta.exportJobResult);
+    }
+
+    /**
+     * 导出查询结果
+     *
+     * 该API用于将SQL语句的查询结果导出到OBS对象存储中，只支持导出“QUERY”类型作业的查询结果。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ExportJobResultRequest 请求对象
+     * @return SyncInvoker<ExportJobResultRequest, ExportJobResultResponse>
+     */
+    public SyncInvoker<ExportJobResultRequest, ExportJobResultResponse> exportJobResultInvoker(
+        ExportJobResultRequest request) {
+        return new SyncInvoker<ExportJobResultRequest, ExportJobResultResponse>(request, DliMeta.exportJobResult,
+            hcClient);
+    }
+
+    /**
      * 导入数据
      *
      * 该API用于将数据从文件导入DLI或OBS表，目前仅支持将OBS上的数据导入DLI或OBS中。
@@ -2562,6 +2594,36 @@ public class DliClient {
      */
     public SyncInvoker<ImportDataRequest, ImportDataResponse> importDataInvoker(ImportDataRequest request) {
         return new SyncInvoker<ImportDataRequest, ImportDataResponse>(request, DliMeta.importData, hcClient);
+    }
+
+    /**
+     * 查询所有表
+     *
+     * 该API用于查询指定数据库下符合过滤条件的或所有的表信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListAllTablesRequest 请求对象
+     * @return ListAllTablesResponse
+     */
+    public ListAllTablesResponse listAllTables(ListAllTablesRequest request) {
+        return hcClient.syncInvokeHttp(request, DliMeta.listAllTables);
+    }
+
+    /**
+     * 查询所有表
+     *
+     * 该API用于查询指定数据库下符合过滤条件的或所有的表信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListAllTablesRequest 请求对象
+     * @return SyncInvoker<ListAllTablesRequest, ListAllTablesResponse>
+     */
+    public SyncInvoker<ListAllTablesRequest, ListAllTablesResponse> listAllTablesInvoker(ListAllTablesRequest request) {
+        return new SyncInvoker<ListAllTablesRequest, ListAllTablesResponse>(request, DliMeta.listAllTables, hcClient);
     }
 
     /**
@@ -2812,36 +2874,6 @@ public class DliClient {
         ListTableUsersRequest request) {
         return new SyncInvoker<ListTableUsersRequest, ListTableUsersResponse>(request, DliMeta.listTableUsers,
             hcClient);
-    }
-
-    /**
-     * 查询所有表
-     *
-     * 该API用于查询指定数据库下符合过滤条件的或所有的表信息。
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param ListTablesRequest 请求对象
-     * @return ListTablesResponse
-     */
-    public ListTablesResponse listTables(ListTablesRequest request) {
-        return hcClient.syncInvokeHttp(request, DliMeta.listTables);
-    }
-
-    /**
-     * 查询所有表
-     *
-     * 该API用于查询指定数据库下符合过滤条件的或所有的表信息。
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param ListTablesRequest 请求对象
-     * @return SyncInvoker<ListTablesRequest, ListTablesResponse>
-     */
-    public SyncInvoker<ListTablesRequest, ListTablesResponse> listTablesInvoker(ListTablesRequest request) {
-        return new SyncInvoker<ListTablesRequest, ListTablesResponse>(request, DliMeta.listTables, hcClient);
     }
 
     /**
@@ -3294,7 +3326,7 @@ public class DliClient {
      * 修改队列网段
      *
      * 该功能用于修改包年包月队列网段。
-     * 说明： 
+     * 说明：
      * 如果待修改网段的队列中有正在提交或正在运行的作业，或者改队列已经绑定了增强型跨源，将不支持修改网段操作。
      * 
      * 详细说明请参考华为云API Explorer。
@@ -3311,7 +3343,7 @@ public class DliClient {
      * 修改队列网段
      *
      * 该功能用于修改包年包月队列网段。
-     * 说明： 
+     * 说明：
      * 如果待修改网段的队列中有正在提交或正在运行的作业，或者改队列已经绑定了增强型跨源，将不支持修改网段操作。
      * 
      * 详细说明请参考华为云API Explorer。
@@ -3323,6 +3355,38 @@ public class DliClient {
     public SyncInvoker<UpdateQueueCidrRequest, UpdateQueueCidrResponse> updateQueueCidrInvoker(
         UpdateQueueCidrRequest request) {
         return new SyncInvoker<UpdateQueueCidrRequest, UpdateQueueCidrResponse>(request, DliMeta.updateQueueCidr,
+            hcClient);
+    }
+
+    /**
+     * 修改表用户
+     *
+     * 用于修改表的owner。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateTableOwnerRequest 请求对象
+     * @return UpdateTableOwnerResponse
+     */
+    public UpdateTableOwnerResponse updateTableOwner(UpdateTableOwnerRequest request) {
+        return hcClient.syncInvokeHttp(request, DliMeta.updateTableOwner);
+    }
+
+    /**
+     * 修改表用户
+     *
+     * 用于修改表的owner。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateTableOwnerRequest 请求对象
+     * @return SyncInvoker<UpdateTableOwnerRequest, UpdateTableOwnerResponse>
+     */
+    public SyncInvoker<UpdateTableOwnerRequest, UpdateTableOwnerResponse> updateTableOwnerInvoker(
+        UpdateTableOwnerRequest request) {
+        return new SyncInvoker<UpdateTableOwnerRequest, UpdateTableOwnerResponse>(request, DliMeta.updateTableOwner,
             hcClient);
     }
 

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dws.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,14 +13,10 @@ public class PublicIp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "public_bind_type")
 
-    @JacksonXmlProperty(localName = "public_bind_type")
-
     private String publicBindType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "eip_id")
-
-    @JacksonXmlProperty(localName = "eip_id")
 
     private String eipId;
 

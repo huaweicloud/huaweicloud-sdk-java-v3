@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dcs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,28 +16,20 @@ public class DomainNameInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "support_public_resolve")
 
-    @JacksonXmlProperty(localName = "support_public_resolve")
-
     private Boolean supportPublicResolve;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_latest_rules")
-
-    @JacksonXmlProperty(localName = "is_latest_rules")
 
     private Boolean isLatestRules;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "zone_name")
 
-    @JacksonXmlProperty(localName = "zone_name")
-
     private String zoneName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "history_domain_names")
-
-    @JacksonXmlProperty(localName = "history_domain_names")
 
     private List<DomainNameEntity> historyDomainNames = null;
 

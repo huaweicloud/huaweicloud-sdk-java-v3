@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,84 +13,60 @@ public class RestConfConfigDTO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "isSendNotify")
 
-    @JacksonXmlProperty(localName = "isSendNotify")
-
     private Boolean isSendNotify;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "isSendSms")
-
-    @JacksonXmlProperty(localName = "isSendSms")
 
     private Boolean isSendSms;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "isSendCalendar")
 
-    @JacksonXmlProperty(localName = "isSendCalendar")
-
     private Boolean isSendCalendar;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "isAutoMute")
-
-    @JacksonXmlProperty(localName = "isAutoMute")
 
     private Boolean isAutoMute;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "isHardTerminalAutoMute")
 
-    @JacksonXmlProperty(localName = "isHardTerminalAutoMute")
-
     private Boolean isHardTerminalAutoMute;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "isGuestFreePwd")
-
-    @JacksonXmlProperty(localName = "isGuestFreePwd")
 
     private Boolean isGuestFreePwd;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "callInRestriction")
 
-    @JacksonXmlProperty(localName = "callInRestriction")
-
     private Integer callInRestriction;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "allowGuestStartConf")
-
-    @JacksonXmlProperty(localName = "allowGuestStartConf")
 
     private Boolean allowGuestStartConf;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "guestPwd")
 
-    @JacksonXmlProperty(localName = "guestPwd")
-
     private String guestPwd;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vmrIDType")
-
-    @JacksonXmlProperty(localName = "vmrIDType")
 
     private Integer vmrIDType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "prolongLength")
 
-    @JacksonXmlProperty(localName = "prolongLength")
-
     private Integer prolongLength;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enableWaitingRoom")
-
-    @JacksonXmlProperty(localName = "enableWaitingRoom")
 
     private Boolean enableWaitingRoom;
 

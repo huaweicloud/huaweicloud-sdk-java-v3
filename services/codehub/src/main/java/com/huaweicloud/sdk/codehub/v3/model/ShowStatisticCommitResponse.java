@@ -2,11 +2,8 @@ package com.huaweicloud.sdk.codehub.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -18,21 +15,15 @@ public class ShowStatisticCommitResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error")
 
-    @JacksonXmlProperty(localName = "error")
-
     private Error error;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "result")
 
-    @JacksonXmlProperty(localName = "result")
-
-    private List<CommitStatistic> result = null;
+    private CommitStatistic result;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
-
-    @JacksonXmlProperty(localName = "status")
 
     private String status;
 
@@ -62,36 +53,29 @@ public class ShowStatisticCommitResponse extends SdkResponse {
         this.error = error;
     }
 
-    public ShowStatisticCommitResponse withResult(List<CommitStatistic> result) {
+    public ShowStatisticCommitResponse withResult(CommitStatistic result) {
         this.result = result;
         return this;
     }
 
-    public ShowStatisticCommitResponse addResultItem(CommitStatistic resultItem) {
+    public ShowStatisticCommitResponse withResult(Consumer<CommitStatistic> resultSetter) {
         if (this.result == null) {
-            this.result = new ArrayList<>();
+            this.result = new CommitStatistic();
+            resultSetter.accept(this.result);
         }
-        this.result.add(resultItem);
-        return this;
-    }
 
-    public ShowStatisticCommitResponse withResult(Consumer<List<CommitStatistic>> resultSetter) {
-        if (this.result == null) {
-            this.result = new ArrayList<>();
-        }
-        resultSetter.accept(this.result);
         return this;
     }
 
     /**
-     * 代码增加和删除的行数
+     * Get result
      * @return result
      */
-    public List<CommitStatistic> getResult() {
+    public CommitStatistic getResult() {
         return result;
     }
 
-    public void setResult(List<CommitStatistic> result) {
+    public void setResult(CommitStatistic result) {
         this.result = result;
     }
 

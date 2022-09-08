@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dcs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,35 +13,25 @@ public class RenameCommandResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "command")
 
-    @JacksonXmlProperty(localName = "command")
-
     private String command;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flushall")
-
-    @JacksonXmlProperty(localName = "flushall")
 
     private String flushall;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flushdb")
 
-    @JacksonXmlProperty(localName = "flushdb")
-
     private String flushdb;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hgetall")
 
-    @JacksonXmlProperty(localName = "hgetall")
-
     private String hgetall;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "keys")
-
-    @JacksonXmlProperty(localName = "keys")
 
     private String keys;
 

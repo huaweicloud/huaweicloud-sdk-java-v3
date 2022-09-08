@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.css.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 
@@ -14,14 +13,10 @@ public class StartKibanaPublicReqElbWhitelist {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enableWhiteList")
 
-    @JacksonXmlProperty(localName = "enableWhiteList")
-
     private Boolean enableWhiteList;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "whiteList")
-
-    @JacksonXmlProperty(localName = "whiteList")
 
     private String whiteList;
 

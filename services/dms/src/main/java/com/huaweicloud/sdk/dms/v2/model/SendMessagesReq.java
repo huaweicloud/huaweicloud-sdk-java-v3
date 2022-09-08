@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.dms.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,14 +16,10 @@ public class SendMessagesReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "return_id")
 
-    @JacksonXmlProperty(localName = "return_id")
-
     private Boolean returnId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "messages")
-
-    @JacksonXmlProperty(localName = "messages")
 
     private List<SendMessageEntity> messages = null;
 

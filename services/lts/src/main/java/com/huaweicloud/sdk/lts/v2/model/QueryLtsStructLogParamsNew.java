@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.lts.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,23 +14,22 @@ public class QueryLtsStructLogParamsNew {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "query")
 
-    @JacksonXmlProperty(localName = "query")
-
     private String query;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "format")
-
-    @JacksonXmlProperty(localName = "format")
 
     private String format;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time_range")
 
-    @JacksonXmlProperty(localName = "time_range")
-
     private TimeRange timeRange;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "whether_to_rows")
+
+    private Boolean whetherToRows;
 
     public QueryLtsStructLogParamsNew withQuery(String query) {
         this.query = query;
@@ -93,6 +91,23 @@ public class QueryLtsStructLogParamsNew {
         this.timeRange = timeRange;
     }
 
+    public QueryLtsStructLogParamsNew withWhetherToRows(Boolean whetherToRows) {
+        this.whetherToRows = whetherToRows;
+        return this;
+    }
+
+    /**
+     * 返回数据格式，是否为行数据，默认为false。
+     * @return whetherToRows
+     */
+    public Boolean getWhetherToRows() {
+        return whetherToRows;
+    }
+
+    public void setWhetherToRows(Boolean whetherToRows) {
+        this.whetherToRows = whetherToRows;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -104,12 +119,13 @@ public class QueryLtsStructLogParamsNew {
         QueryLtsStructLogParamsNew queryLtsStructLogParamsNew = (QueryLtsStructLogParamsNew) o;
         return Objects.equals(this.query, queryLtsStructLogParamsNew.query)
             && Objects.equals(this.format, queryLtsStructLogParamsNew.format)
-            && Objects.equals(this.timeRange, queryLtsStructLogParamsNew.timeRange);
+            && Objects.equals(this.timeRange, queryLtsStructLogParamsNew.timeRange)
+            && Objects.equals(this.whetherToRows, queryLtsStructLogParamsNew.whetherToRows);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(query, format, timeRange);
+        return Objects.hash(query, format, timeRange, whetherToRows);
     }
 
     @Override
@@ -119,6 +135,7 @@ public class QueryLtsStructLogParamsNew {
         sb.append("    query: ").append(toIndentedString(query)).append("\n");
         sb.append("    format: ").append(toIndentedString(format)).append("\n");
         sb.append("    timeRange: ").append(toIndentedString(timeRange)).append("\n");
+        sb.append("    whetherToRows: ").append(toIndentedString(whetherToRows)).append("\n");
         sb.append("}");
         return sb.toString();
     }
