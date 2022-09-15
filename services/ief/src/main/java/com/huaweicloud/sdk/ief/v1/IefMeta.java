@@ -2372,10 +2372,10 @@ public class IefMeta {
             f -> f.withMarshaller(UpdateAppRequest::getIefInstanceId, (req, v) -> {
                 req.setIefInstanceId(v);
             }));
-        builder.<AppUpdate>withRequestField("body",
+        builder.<UpdateAppBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(AppUpdate.class),
+            TypeCasts.uncheckedConversion(UpdateAppBody.class),
             f -> f.withMarshaller(UpdateAppRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
@@ -2418,10 +2418,10 @@ public class IefMeta {
             f -> f.withMarshaller(UpdateAppVersionRequest::getIefInstanceId, (req, v) -> {
                 req.setIefInstanceId(v);
             }));
-        builder.<VersionUpdate>withRequestField("body",
+        builder.<UpdataAppVersionBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(VersionUpdate.class),
+            TypeCasts.uncheckedConversion(UpdataAppVersionBody.class),
             f -> f.withMarshaller(UpdateAppVersionRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
@@ -2652,10 +2652,10 @@ public class IefMeta {
             f -> f.withMarshaller(UpdateEdgeNodeRequest::getIefInstanceId, (req, v) -> {
                 req.setIefInstanceId(v);
             }));
-        builder.<EdgeNodeUpdate>withRequestField("body",
+        builder.<UpdateEdgeNodeBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(EdgeNodeUpdate.class),
+            TypeCasts.uncheckedConversion(UpdateEdgeNodeBody.class),
             f -> f.withMarshaller(UpdateEdgeNodeRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));

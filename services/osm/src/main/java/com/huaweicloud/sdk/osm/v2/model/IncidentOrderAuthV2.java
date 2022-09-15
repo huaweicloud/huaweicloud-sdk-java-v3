@@ -14,7 +14,7 @@ public class IncidentOrderAuthV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    private Long id;
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
@@ -32,9 +32,24 @@ public class IncidentOrderAuthV2 {
     private String simpleDescription;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "auth_describe")
+
+    private String authDescribe;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resource_type_id")
+
+    private Object resourceTypeId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_type_name")
 
     private String resourceTypeName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "visit_type_id")
+
+    private String visitTypeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "visit_type_name")
@@ -72,26 +87,29 @@ public class IncidentOrderAuthV2 {
     private String xCustomerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "x_customer_name")
+    @JsonProperty(value = "xcustomer_name")
 
-    private String xCustomerName;
+    private String xcustomerName;
 
-    public IncidentOrderAuthV2 withId(Long id) {
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "content_of_auth_letter")
+
+    private String contentOfAuthLetter;
+
+    public IncidentOrderAuthV2 withId(String id) {
         this.id = id;
         return this;
     }
 
     /**
      * 授权id
-     * minimum: 0
-     * maximum: 9223372036854775807
      * @return id
      */
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -148,6 +166,40 @@ public class IncidentOrderAuthV2 {
         this.simpleDescription = simpleDescription;
     }
 
+    public IncidentOrderAuthV2 withAuthDescribe(String authDescribe) {
+        this.authDescribe = authDescribe;
+        return this;
+    }
+
+    /**
+     * 授权描述
+     * @return authDescribe
+     */
+    public String getAuthDescribe() {
+        return authDescribe;
+    }
+
+    public void setAuthDescribe(String authDescribe) {
+        this.authDescribe = authDescribe;
+    }
+
+    public IncidentOrderAuthV2 withResourceTypeId(Object resourceTypeId) {
+        this.resourceTypeId = resourceTypeId;
+        return this;
+    }
+
+    /**
+     * 授权资源类型id
+     * @return resourceTypeId
+     */
+    public Object getResourceTypeId() {
+        return resourceTypeId;
+    }
+
+    public void setResourceTypeId(Object resourceTypeId) {
+        this.resourceTypeId = resourceTypeId;
+    }
+
     public IncidentOrderAuthV2 withResourceTypeName(String resourceTypeName) {
         this.resourceTypeName = resourceTypeName;
         return this;
@@ -163,6 +215,23 @@ public class IncidentOrderAuthV2 {
 
     public void setResourceTypeName(String resourceTypeName) {
         this.resourceTypeName = resourceTypeName;
+    }
+
+    public IncidentOrderAuthV2 withVisitTypeId(String visitTypeId) {
+        this.visitTypeId = visitTypeId;
+        return this;
+    }
+
+    /**
+     * 授权访问类型id
+     * @return visitTypeId
+     */
+    public String getVisitTypeId() {
+        return visitTypeId;
+    }
+
+    public void setVisitTypeId(String visitTypeId) {
+        this.visitTypeId = visitTypeId;
     }
 
     public IncidentOrderAuthV2 withVisitTypeName(String visitTypeName) {
@@ -286,23 +355,38 @@ public class IncidentOrderAuthV2 {
         this.xCustomerId = xCustomerId;
     }
 
-    public IncidentOrderAuthV2 withXCustomerName(String xCustomerName) {
-        this.xCustomerName = xCustomerName;
+    public IncidentOrderAuthV2 withXcustomerName(String xcustomerName) {
+        this.xcustomerName = xcustomerName;
         return this;
     }
 
     /**
      * 子用户名称
-     * @return xCustomerName
+     * @return xcustomerName
      */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "x_customer_name")
-    public String getXCustomerName() {
-        return xCustomerName;
+    public String getXcustomerName() {
+        return xcustomerName;
     }
 
-    public void setXCustomerName(String xCustomerName) {
-        this.xCustomerName = xCustomerName;
+    public void setXcustomerName(String xcustomerName) {
+        this.xcustomerName = xcustomerName;
+    }
+
+    public IncidentOrderAuthV2 withContentOfAuthLetter(String contentOfAuthLetter) {
+        this.contentOfAuthLetter = contentOfAuthLetter;
+        return this;
+    }
+
+    /**
+     * 承诺书内容
+     * @return contentOfAuthLetter
+     */
+    public String getContentOfAuthLetter() {
+        return contentOfAuthLetter;
+    }
+
+    public void setContentOfAuthLetter(String contentOfAuthLetter) {
+        this.contentOfAuthLetter = contentOfAuthLetter;
     }
 
     @Override
@@ -318,7 +402,10 @@ public class IncidentOrderAuthV2 {
             && Objects.equals(this.status, incidentOrderAuthV2.status)
             && Objects.equals(this.incidentId, incidentOrderAuthV2.incidentId)
             && Objects.equals(this.simpleDescription, incidentOrderAuthV2.simpleDescription)
+            && Objects.equals(this.authDescribe, incidentOrderAuthV2.authDescribe)
+            && Objects.equals(this.resourceTypeId, incidentOrderAuthV2.resourceTypeId)
             && Objects.equals(this.resourceTypeName, incidentOrderAuthV2.resourceTypeName)
+            && Objects.equals(this.visitTypeId, incidentOrderAuthV2.visitTypeId)
             && Objects.equals(this.visitTypeName, incidentOrderAuthV2.visitTypeName)
             && Objects.equals(this.createTime, incidentOrderAuthV2.createTime)
             && Objects.equals(this.authEffectiveTime, incidentOrderAuthV2.authEffectiveTime)
@@ -326,7 +413,8 @@ public class IncidentOrderAuthV2 {
             && Objects.equals(this.rejectReason, incidentOrderAuthV2.rejectReason)
             && Objects.equals(this.customerId, incidentOrderAuthV2.customerId)
             && Objects.equals(this.xCustomerId, incidentOrderAuthV2.xCustomerId)
-            && Objects.equals(this.xCustomerName, incidentOrderAuthV2.xCustomerName);
+            && Objects.equals(this.xcustomerName, incidentOrderAuthV2.xcustomerName)
+            && Objects.equals(this.contentOfAuthLetter, incidentOrderAuthV2.contentOfAuthLetter);
     }
 
     @Override
@@ -335,7 +423,10 @@ public class IncidentOrderAuthV2 {
             status,
             incidentId,
             simpleDescription,
+            authDescribe,
+            resourceTypeId,
             resourceTypeName,
+            visitTypeId,
             visitTypeName,
             createTime,
             authEffectiveTime,
@@ -343,7 +434,8 @@ public class IncidentOrderAuthV2 {
             rejectReason,
             customerId,
             xCustomerId,
-            xCustomerName);
+            xcustomerName,
+            contentOfAuthLetter);
     }
 
     @Override
@@ -354,7 +446,10 @@ public class IncidentOrderAuthV2 {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    incidentId: ").append(toIndentedString(incidentId)).append("\n");
         sb.append("    simpleDescription: ").append(toIndentedString(simpleDescription)).append("\n");
+        sb.append("    authDescribe: ").append(toIndentedString(authDescribe)).append("\n");
+        sb.append("    resourceTypeId: ").append(toIndentedString(resourceTypeId)).append("\n");
         sb.append("    resourceTypeName: ").append(toIndentedString(resourceTypeName)).append("\n");
+        sb.append("    visitTypeId: ").append(toIndentedString(visitTypeId)).append("\n");
         sb.append("    visitTypeName: ").append(toIndentedString(visitTypeName)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    authEffectiveTime: ").append(toIndentedString(authEffectiveTime)).append("\n");
@@ -362,7 +457,8 @@ public class IncidentOrderAuthV2 {
         sb.append("    rejectReason: ").append(toIndentedString(rejectReason)).append("\n");
         sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
         sb.append("    xCustomerId: ").append(toIndentedString(xCustomerId)).append("\n");
-        sb.append("    xCustomerName: ").append(toIndentedString(xCustomerName)).append("\n");
+        sb.append("    xcustomerName: ").append(toIndentedString(xcustomerName)).append("\n");
+        sb.append("    contentOfAuthLetter: ").append(toIndentedString(contentOfAuthLetter)).append("\n");
         sb.append("}");
         return sb.toString();
     }

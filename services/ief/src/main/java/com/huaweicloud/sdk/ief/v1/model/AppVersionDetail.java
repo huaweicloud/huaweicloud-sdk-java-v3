@@ -88,6 +88,11 @@ public class AppVersionDetail {
 
     private ProbeDetail readinessProbe;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "npu_type")
+
+    private String npuType;
+
     public AppVersionDetail withId(String id) {
         this.id = id;
         return this;
@@ -443,6 +448,23 @@ public class AppVersionDetail {
         this.readinessProbe = readinessProbe;
     }
 
+    public AppVersionDetail withNpuType(String npuType) {
+        this.npuType = npuType;
+        return this;
+    }
+
+    /**
+     * NPU芯片类型，可填：D310，D910
+     * @return npuType
+     */
+    public String getNpuType() {
+        return npuType;
+    }
+
+    public void setNpuType(String npuType) {
+        this.npuType = npuType;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -465,7 +487,8 @@ public class AppVersionDetail {
             && Objects.equals(this.command, appVersionDetail.command)
             && Objects.equals(this.args, appVersionDetail.args)
             && Objects.equals(this.livenessProbe, appVersionDetail.livenessProbe)
-            && Objects.equals(this.readinessProbe, appVersionDetail.readinessProbe);
+            && Objects.equals(this.readinessProbe, appVersionDetail.readinessProbe)
+            && Objects.equals(this.npuType, appVersionDetail.npuType);
     }
 
     @Override
@@ -484,7 +507,8 @@ public class AppVersionDetail {
             command,
             args,
             livenessProbe,
-            readinessProbe);
+            readinessProbe,
+            npuType);
     }
 
     @Override
@@ -506,6 +530,7 @@ public class AppVersionDetail {
         sb.append("    args: ").append(toIndentedString(args)).append("\n");
         sb.append("    livenessProbe: ").append(toIndentedString(livenessProbe)).append("\n");
         sb.append("    readinessProbe: ").append(toIndentedString(readinessProbe)).append("\n");
+        sb.append("    npuType: ").append(toIndentedString(npuType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

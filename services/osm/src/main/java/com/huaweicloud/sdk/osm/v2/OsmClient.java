@@ -144,6 +144,38 @@ public class OsmClient {
     }
 
     /**
+     * 提交工单扩展参数
+     *
+     * 提交工单扩展参数
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateCaseExtendsParamRequest 请求对象
+     * @return CreateCaseExtendsParamResponse
+     */
+    public CreateCaseExtendsParamResponse createCaseExtendsParam(CreateCaseExtendsParamRequest request) {
+        return hcClient.syncInvokeHttp(request, OsmMeta.createCaseExtendsParam);
+    }
+
+    /**
+     * 提交工单扩展参数
+     *
+     * 提交工单扩展参数
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateCaseExtendsParamRequest 请求对象
+     * @return SyncInvoker<CreateCaseExtendsParamRequest, CreateCaseExtendsParamResponse>
+     */
+    public SyncInvoker<CreateCaseExtendsParamRequest, CreateCaseExtendsParamResponse> createCaseExtendsParamInvoker(
+        CreateCaseExtendsParamRequest request) {
+        return new SyncInvoker<CreateCaseExtendsParamRequest, CreateCaseExtendsParamResponse>(request,
+            OsmMeta.createCaseExtendsParam, hcClient);
+    }
+
+    /**
      * 添加工单关联标签接口
      *
      * 添加工单关联标签接口
@@ -582,6 +614,38 @@ public class OsmClient {
     }
 
     /**
+     * 租户批量获取下载链接
+     *
+     * 租户批量获取下载链接
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListAccessoryAccessUrlsRequest 请求对象
+     * @return ListAccessoryAccessUrlsResponse
+     */
+    public ListAccessoryAccessUrlsResponse listAccessoryAccessUrls(ListAccessoryAccessUrlsRequest request) {
+        return hcClient.syncInvokeHttp(request, OsmMeta.listAccessoryAccessUrls);
+    }
+
+    /**
+     * 租户批量获取下载链接
+     *
+     * 租户批量获取下载链接
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListAccessoryAccessUrlsRequest 请求对象
+     * @return SyncInvoker<ListAccessoryAccessUrlsRequest, ListAccessoryAccessUrlsResponse>
+     */
+    public SyncInvoker<ListAccessoryAccessUrlsRequest, ListAccessoryAccessUrlsResponse> listAccessoryAccessUrlsInvoker(
+        ListAccessoryAccessUrlsRequest request) {
+        return new SyncInvoker<ListAccessoryAccessUrlsRequest, ListAccessoryAccessUrlsResponse>(request,
+            OsmMeta.listAccessoryAccessUrls, hcClient);
+    }
+
+    /**
      * 查询委托
      *
      * 查询委托
@@ -957,6 +1021,38 @@ public class OsmClient {
      */
     public SyncInvoker<ListCasesRequest, ListCasesResponse> listCasesInvoker(ListCasesRequest request) {
         return new SyncInvoker<ListCasesRequest, ListCasesResponse>(request, OsmMeta.listCases, hcClient);
+    }
+
+    /**
+     * 查询用户关联的region
+     *
+     * 查询用户关联的region
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListCustomersRegionsRequest 请求对象
+     * @return ListCustomersRegionsResponse
+     */
+    public ListCustomersRegionsResponse listCustomersRegions(ListCustomersRegionsRequest request) {
+        return hcClient.syncInvokeHttp(request, OsmMeta.listCustomersRegions);
+    }
+
+    /**
+     * 查询用户关联的region
+     *
+     * 查询用户关联的region
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListCustomersRegionsRequest 请求对象
+     * @return SyncInvoker<ListCustomersRegionsRequest, ListCustomersRegionsResponse>
+     */
+    public SyncInvoker<ListCustomersRegionsRequest, ListCustomersRegionsResponse> listCustomersRegionsInvoker(
+        ListCustomersRegionsRequest request) {
+        return new SyncInvoker<ListCustomersRegionsRequest, ListCustomersRegionsResponse>(request,
+            OsmMeta.listCustomersRegions, hcClient);
     }
 
     /**
@@ -1657,6 +1753,38 @@ public class OsmClient {
     }
 
     /**
+     * 查询工单扩展参数
+     *
+     * 查询工单扩展参数
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowCaseExtendsParamRequest 请求对象
+     * @return ShowCaseExtendsParamResponse
+     */
+    public ShowCaseExtendsParamResponse showCaseExtendsParam(ShowCaseExtendsParamRequest request) {
+        return hcClient.syncInvokeHttp(request, OsmMeta.showCaseExtendsParam);
+    }
+
+    /**
+     * 查询工单扩展参数
+     *
+     * 查询工单扩展参数
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowCaseExtendsParamRequest 请求对象
+     * @return SyncInvoker<ShowCaseExtendsParamRequest, ShowCaseExtendsParamResponse>
+     */
+    public SyncInvoker<ShowCaseExtendsParamRequest, ShowCaseExtendsParamResponse> showCaseExtendsParamInvoker(
+        ShowCaseExtendsParamRequest request) {
+        return new SyncInvoker<ShowCaseExtendsParamRequest, ShowCaseExtendsParamResponse>(request,
+            OsmMeta.showCaseExtendsParam, hcClient);
+    }
+
+    /**
      * 查询某个工单状态
      *
      * 查询某个工单状态
@@ -1686,6 +1814,71 @@ public class OsmClient {
         ShowCaseStatusRequest request) {
         return new SyncInvoker<ShowCaseStatusRequest, ShowCaseStatusResponse>(request, OsmMeta.showCaseStatus,
             hcClient);
+    }
+
+    /**
+     * 查询提单权限
+     *
+     * 查询提单权限
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowCustomerPrivilegePolicyRequest 请求对象
+     * @return ShowCustomerPrivilegePolicyResponse
+     */
+    public ShowCustomerPrivilegePolicyResponse showCustomerPrivilegePolicy(ShowCustomerPrivilegePolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, OsmMeta.showCustomerPrivilegePolicy);
+    }
+
+    /**
+     * 查询提单权限
+     *
+     * 查询提单权限
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowCustomerPrivilegePolicyRequest 请求对象
+     * @return SyncInvoker<ShowCustomerPrivilegePolicyRequest, ShowCustomerPrivilegePolicyResponse>
+     */
+    public SyncInvoker<ShowCustomerPrivilegePolicyRequest, ShowCustomerPrivilegePolicyResponse> showCustomerPrivilegePolicyInvoker(
+        ShowCustomerPrivilegePolicyRequest request) {
+        return new SyncInvoker<ShowCustomerPrivilegePolicyRequest, ShowCustomerPrivilegePolicyResponse>(request,
+            OsmMeta.showCustomerPrivilegePolicy, hcClient);
+    }
+
+    /**
+     * 查看最新发布版本协议详情
+     *
+     * 查看最新发布版本协议详情
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowLatestPublishedAgreementRequest 请求对象
+     * @return ShowLatestPublishedAgreementResponse
+     */
+    public ShowLatestPublishedAgreementResponse showLatestPublishedAgreement(
+        ShowLatestPublishedAgreementRequest request) {
+        return hcClient.syncInvokeHttp(request, OsmMeta.showLatestPublishedAgreement);
+    }
+
+    /**
+     * 查看最新发布版本协议详情
+     *
+     * 查看最新发布版本协议详情
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowLatestPublishedAgreementRequest 请求对象
+     * @return SyncInvoker<ShowLatestPublishedAgreementRequest, ShowLatestPublishedAgreementResponse>
+     */
+    public SyncInvoker<ShowLatestPublishedAgreementRequest, ShowLatestPublishedAgreementResponse> showLatestPublishedAgreementInvoker(
+        ShowLatestPublishedAgreementRequest request) {
+        return new SyncInvoker<ShowLatestPublishedAgreementRequest, ShowLatestPublishedAgreementResponse>(request,
+            OsmMeta.showLatestPublishedAgreement, hcClient);
     }
 
     /**
@@ -1753,6 +1946,71 @@ public class OsmClient {
     }
 
     /**
+     * 查询用户是否签署最新协议
+     *
+     * 查询用户是否签署最新协议
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowSignedLatestPublishedAgreementRequest 请求对象
+     * @return ShowSignedLatestPublishedAgreementResponse
+     */
+    public ShowSignedLatestPublishedAgreementResponse showSignedLatestPublishedAgreement(
+        ShowSignedLatestPublishedAgreementRequest request) {
+        return hcClient.syncInvokeHttp(request, OsmMeta.showSignedLatestPublishedAgreement);
+    }
+
+    /**
+     * 查询用户是否签署最新协议
+     *
+     * 查询用户是否签署最新协议
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowSignedLatestPublishedAgreementRequest 请求对象
+     * @return SyncInvoker<ShowSignedLatestPublishedAgreementRequest, ShowSignedLatestPublishedAgreementResponse>
+     */
+    public SyncInvoker<ShowSignedLatestPublishedAgreementRequest, ShowSignedLatestPublishedAgreementResponse> showSignedLatestPublishedAgreementInvoker(
+        ShowSignedLatestPublishedAgreementRequest request) {
+        return new SyncInvoker<ShowSignedLatestPublishedAgreementRequest, ShowSignedLatestPublishedAgreementResponse>(
+            request, OsmMeta.showSignedLatestPublishedAgreement, hcClient);
+    }
+
+    /**
+     * 签署协议
+     *
+     * 签署协议
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SignPublishedAgreementRequest 请求对象
+     * @return SignPublishedAgreementResponse
+     */
+    public SignPublishedAgreementResponse signPublishedAgreement(SignPublishedAgreementRequest request) {
+        return hcClient.syncInvokeHttp(request, OsmMeta.signPublishedAgreement);
+    }
+
+    /**
+     * 签署协议
+     *
+     * 签署协议
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SignPublishedAgreementRequest 请求对象
+     * @return SyncInvoker<SignPublishedAgreementRequest, SignPublishedAgreementResponse>
+     */
+    public SyncInvoker<SignPublishedAgreementRequest, SignPublishedAgreementResponse> signPublishedAgreementInvoker(
+        SignPublishedAgreementRequest request) {
+        return new SyncInvoker<SignPublishedAgreementRequest, SignPublishedAgreementResponse>(request,
+            OsmMeta.signPublishedAgreement, hcClient);
+    }
+
+    /**
      * 拒绝|撤销授权
      *
      * 拒绝|撤销授权
@@ -1782,6 +2040,38 @@ public class OsmClient {
         UpdateAuthorizationsRequest request) {
         return new SyncInvoker<UpdateAuthorizationsRequest, UpdateAuthorizationsResponse>(request,
             OsmMeta.updateAuthorizations, hcClient);
+    }
+
+    /**
+     * 修改联系方式
+     *
+     * 修改联系方式
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateCaseContactInfoRequest 请求对象
+     * @return UpdateCaseContactInfoResponse
+     */
+    public UpdateCaseContactInfoResponse updateCaseContactInfo(UpdateCaseContactInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, OsmMeta.updateCaseContactInfo);
+    }
+
+    /**
+     * 修改联系方式
+     *
+     * 修改联系方式
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateCaseContactInfoRequest 请求对象
+     * @return SyncInvoker<UpdateCaseContactInfoRequest, UpdateCaseContactInfoResponse>
+     */
+    public SyncInvoker<UpdateCaseContactInfoRequest, UpdateCaseContactInfoResponse> updateCaseContactInfoInvoker(
+        UpdateCaseContactInfoRequest request) {
+        return new SyncInvoker<UpdateCaseContactInfoRequest, UpdateCaseContactInfoResponse>(request,
+            OsmMeta.updateCaseContactInfo, hcClient);
     }
 
     /**

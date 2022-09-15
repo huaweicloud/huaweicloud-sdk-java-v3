@@ -131,7 +131,7 @@ public class CreateInstanceTopicReq {
     }
 
     /**
-     * 消息老化时间。默认值为72。 取值范围[1~168](tag:hc,hk,hws,hws_hk,hws_ocb,ctc,sbc,hk_sbc)[1-720](tag:ocb,otc)，单位小时。
+     * 消息老化时间。默认值为72。 取值范围[1~168](tag:hc,hk,hws,hws_hk,hws_ocb,ctc,sbc,hk_sbc,hws_eu)[1-720](tag:ocb,otc)，单位小时。
      * @return retentionTime
      */
     public Integer getRetentionTime() {

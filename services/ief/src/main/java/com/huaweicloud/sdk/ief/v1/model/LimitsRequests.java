@@ -28,7 +28,7 @@ public class LimitsRequests {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "npu")
 
-    private Float npu;
+    private Integer npu;
 
     public LimitsRequests withCpu(Float cpu) {
         this.cpu = cpu;
@@ -81,7 +81,7 @@ public class LimitsRequests {
         this.gpu = gpu;
     }
 
-    public LimitsRequests withNpu(Float npu) {
+    public LimitsRequests withNpu(Integer npu) {
         this.npu = npu;
         return this;
     }
@@ -90,11 +90,11 @@ public class LimitsRequests {
      * Npu个数，大于0，最大1000；请求不需要带单位
      * @return npu
      */
-    public Float getNpu() {
+    public Integer getNpu() {
         return npu;
     }
 
-    public void setNpu(Float npu) {
+    public void setNpu(Integer npu) {
         this.npu = npu;
     }
 

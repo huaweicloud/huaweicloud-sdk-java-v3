@@ -233,6 +233,38 @@ public class CptsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteVariableRequest, DeleteVariableResponse> deleteVariable =
+        genFordeleteVariable();
+
+    private static HttpRequestDef<DeleteVariableRequest, DeleteVariableResponse> genFordeleteVariable() {
+        // basic
+        HttpRequestDef.Builder<DeleteVariableRequest, DeleteVariableResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteVariableRequest.class, DeleteVariableResponse.class)
+                .withName("DeleteVariable")
+                .withUri("/v1/{project_id}/variables")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("variable_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(DeleteVariableRequest::getVariableId, (req, v) -> {
+                req.setVariableId(v);
+            }));
+        builder.<Integer>withRequestField("test_suite_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(DeleteVariableRequest::getTestSuiteId, (req, v) -> {
+                req.setTestSuiteId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListVariablesRequest, ListVariablesResponse> listVariables =
         genForlistVariables();
 
@@ -521,6 +553,41 @@ public class CptsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateTaskRelatedTestCaseRequest, UpdateTaskRelatedTestCaseResponse> updateTaskRelatedTestCase =
+        genForupdateTaskRelatedTestCase();
+
+    private static HttpRequestDef<UpdateTaskRelatedTestCaseRequest, UpdateTaskRelatedTestCaseResponse> genForupdateTaskRelatedTestCase() {
+        // basic
+        HttpRequestDef.Builder<UpdateTaskRelatedTestCaseRequest, UpdateTaskRelatedTestCaseResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateTaskRelatedTestCaseRequest.class,
+                    UpdateTaskRelatedTestCaseResponse.class)
+                .withName("UpdateTaskRelatedTestCase")
+                .withUri("/v3/{project_id}/tasks/{task_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(UpdateTaskRelatedTestCaseRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+        builder.<UpdateNewTaskRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateNewTaskRequestBody.class),
+            f -> f.withMarshaller(UpdateTaskRelatedTestCaseRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateTaskStatusRequest, UpdateTaskStatusResponse> updateTaskStatus =
         genForupdateTaskStatus();
 
@@ -698,6 +765,31 @@ public class CptsMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListProjectSetsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListProjectTestCaseRequest, ListProjectTestCaseResponse> listProjectTestCase =
+        genForlistProjectTestCase();
+
+    private static HttpRequestDef<ListProjectTestCaseRequest, ListProjectTestCaseResponse> genForlistProjectTestCase() {
+        // basic
+        HttpRequestDef.Builder<ListProjectTestCaseRequest, ListProjectTestCaseResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListProjectTestCaseRequest.class, ListProjectTestCaseResponse.class)
+                .withName("ListProjectTestCase")
+                .withUri("/v1/{project_id}/test-suites/{test_suite_id}/directory")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("test_suite_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListProjectTestCaseRequest::getTestSuiteId, (req, v) -> {
+                req.setTestSuiteId(v);
             }));
 
         // response

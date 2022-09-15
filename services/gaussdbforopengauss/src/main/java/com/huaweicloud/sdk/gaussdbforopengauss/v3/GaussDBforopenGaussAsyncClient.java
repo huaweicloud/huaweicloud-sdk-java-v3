@@ -802,6 +802,36 @@ public class GaussDBforopenGaussAsyncClient {
     }
 
     /**
+     * 设置回收站策略
+     *
+     * 设置回收站策略。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SetRecyclePolicyRequest 请求对象
+     * @return CompletableFuture<SetRecyclePolicyResponse>
+     */
+    public CompletableFuture<SetRecyclePolicyResponse> setRecyclePolicyAsync(SetRecyclePolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.setRecyclePolicy);
+    }
+
+    /**
+     * 设置回收站策略
+     *
+     * 设置回收站策略。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SetRecyclePolicyRequest 请求对象
+     * @return AsyncInvoker<SetRecyclePolicyRequest, SetRecyclePolicyResponse>
+     */
+    public AsyncInvoker<SetRecyclePolicyRequest, SetRecyclePolicyResponse> setRecyclePolicyAsyncInvoker(SetRecyclePolicyRequest request) {
+        return new AsyncInvoker<SetRecyclePolicyRequest, SetRecyclePolicyResponse>(request, GaussDBforopenGaussMeta.setRecyclePolicy, hcClient);
+    }
+
+    /**
      * 查询自动备份策略
      *
      * 查询自动备份策略。

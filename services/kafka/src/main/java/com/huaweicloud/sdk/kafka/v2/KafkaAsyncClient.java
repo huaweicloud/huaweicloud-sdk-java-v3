@@ -294,7 +294,7 @@ public class KafkaAsyncClient {
     /**
      * 创建实例
      *
-     * [创建按需计费类型的Kafka实例。](tag:hc,hk,hws,hws_hk,otc,hws_ocb,ctc,sbc,hk_sbc,cmcc)[创建kafka实例。](tag:ocb)
+     * [创建按需计费类型的Kafka实例。](tag:hc,hk,hws,hws_hk,otc,hws_ocb,ctc,sbc,hk_sbc,cmcc,hws_eu)[创建kafka实例。](tag:ocb)
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -310,7 +310,7 @@ public class KafkaAsyncClient {
     /**
      * 创建实例
      *
-     * [创建按需计费类型的Kafka实例。](tag:hc,hk,hws,hws_hk,otc,hws_ocb,ctc,sbc,hk_sbc,cmcc)[创建kafka实例。](tag:ocb)
+     * [创建按需计费类型的Kafka实例。](tag:hc,hk,hws,hws_hk,otc,hws_ocb,ctc,sbc,hk_sbc,cmcc,hws_eu)[创建kafka实例。](tag:ocb)
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -547,6 +547,39 @@ public class KafkaAsyncClient {
         ListEngineProductsRequest request) {
         return new AsyncInvoker<ListEngineProductsRequest, ListEngineProductsResponse>(request,
             KafkaMeta.listEngineProducts, hcClient);
+    }
+
+    /**
+     * 查询所有消费组
+     *
+     * 查询所有消费组。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListInstanceConsumerGroupsRequest 请求对象
+     * @return CompletableFuture<ListInstanceConsumerGroupsResponse>
+     */
+    public CompletableFuture<ListInstanceConsumerGroupsResponse> listInstanceConsumerGroupsAsync(
+        ListInstanceConsumerGroupsRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.listInstanceConsumerGroups);
+    }
+
+    /**
+     * 查询所有消费组
+     *
+     * 查询所有消费组。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListInstanceConsumerGroupsRequest 请求对象
+     * @return AsyncInvoker<ListInstanceConsumerGroupsRequest, ListInstanceConsumerGroupsResponse>
+     */
+    public AsyncInvoker<ListInstanceConsumerGroupsRequest, ListInstanceConsumerGroupsResponse> listInstanceConsumerGroupsAsyncInvoker(
+        ListInstanceConsumerGroupsRequest request) {
+        return new AsyncInvoker<ListInstanceConsumerGroupsRequest, ListInstanceConsumerGroupsResponse>(request,
+            KafkaMeta.listInstanceConsumerGroups, hcClient);
     }
 
     /**

@@ -100,26 +100,20 @@ public class BatchDeleteInstanceReq {
     private ActionEnum action;
 
     /**
-     * 参数值为RocketMQ，表示删除租户所有创建失败的RocketMQ实例。
+     * 参数值为reliability,表示删除租户所有创建失败的RocketMQ实例。
      */
     public static final class AllFailureEnum {
 
         /**
-         * Enum TRUE for value: "true"
+         * Enum RELIABILITY for value: "reliability"
          */
-        public static final AllFailureEnum TRUE = new AllFailureEnum("true");
-
-        /**
-         * Enum FALSE for value: "false"
-         */
-        public static final AllFailureEnum FALSE = new AllFailureEnum("false");
+        public static final AllFailureEnum RELIABILITY = new AllFailureEnum("reliability");
 
         private static final Map<String, AllFailureEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, AllFailureEnum> createStaticFields() {
             Map<String, AllFailureEnum> map = new HashMap<>();
-            map.put("true", TRUE);
-            map.put("false", FALSE);
+            map.put("reliability", RELIABILITY);
             return Collections.unmodifiableMap(map);
         }
 
@@ -237,7 +231,7 @@ public class BatchDeleteInstanceReq {
     }
 
     /**
-     * 参数值为RocketMQ，表示删除租户所有创建失败的RocketMQ实例。
+     * 参数值为reliability,表示删除租户所有创建失败的RocketMQ实例。
      * @return allFailure
      */
     public AllFailureEnum getAllFailure() {

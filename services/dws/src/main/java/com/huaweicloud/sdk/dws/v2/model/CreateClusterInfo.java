@@ -282,7 +282,7 @@ public class CreateClusterInfo {
     }
 
     /**
-     * CN部署量，取值范围为2~集群节点数-1，最大值为20，默认值为3。
+     * CN部署量，取值范围为2~集群节点数，最大值为20，默认值为3。
      * @return numberOfCn
      */
     public Integer getNumberOfCn() {

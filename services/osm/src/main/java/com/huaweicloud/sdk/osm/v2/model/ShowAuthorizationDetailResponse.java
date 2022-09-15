@@ -18,7 +18,7 @@ public class ShowAuthorizationDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    private Long id;
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
@@ -105,22 +105,20 @@ public class ShowAuthorizationDetailResponse extends SdkResponse {
 
     private String contentTypeName;
 
-    public ShowAuthorizationDetailResponse withId(Long id) {
+    public ShowAuthorizationDetailResponse withId(String id) {
         this.id = id;
         return this;
     }
 
     /**
      * 授权id
-     * minimum: 0
-     * maximum: 9223372036854775807
      * @return id
      */
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

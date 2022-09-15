@@ -54,6 +54,11 @@ public class EdgemgrDevice {
     private String createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "updated_at")
+
+    private String updatedAt;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "property_visitors")
 
     private Map<String, ValueInPropertyVisitors> propertyVisitors = null;
@@ -231,6 +236,23 @@ public class EdgemgrDevice {
         this.createdAt = createdAt;
     }
 
+    public EdgemgrDevice withUpdatedAt(String updatedAt) {
+        this.updatedAt = updatedAt;
+        return this;
+    }
+
+    /**
+     * 更新时间
+     * @return updatedAt
+     */
+    public String getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(String updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
     public EdgemgrDevice withPropertyVisitors(Map<String, ValueInPropertyVisitors> propertyVisitors) {
         this.propertyVisitors = propertyVisitors;
         return this;
@@ -305,6 +327,7 @@ public class EdgemgrDevice {
             && Objects.equals(this.attributes, edgemgrDevice.attributes)
             && Objects.equals(this.twin, edgemgrDevice.twin) && Objects.equals(this.projectId, edgemgrDevice.projectId)
             && Objects.equals(this.createdAt, edgemgrDevice.createdAt)
+            && Objects.equals(this.updatedAt, edgemgrDevice.updatedAt)
             && Objects.equals(this.propertyVisitors, edgemgrDevice.propertyVisitors)
             && Objects.equals(this.tags, edgemgrDevice.tags);
     }
@@ -319,6 +342,7 @@ public class EdgemgrDevice {
             twin,
             projectId,
             createdAt,
+            updatedAt,
             propertyVisitors,
             tags);
     }
@@ -335,6 +359,7 @@ public class EdgemgrDevice {
         sb.append("    twin: ").append(toIndentedString(twin)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+        sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("    propertyVisitors: ").append(toIndentedString(propertyVisitors)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");

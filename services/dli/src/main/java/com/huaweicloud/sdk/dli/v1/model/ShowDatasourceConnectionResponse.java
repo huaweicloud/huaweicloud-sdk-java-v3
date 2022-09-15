@@ -70,9 +70,9 @@ public class ShowDatasourceConnectionResponse extends SdkResponse {
     private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "queueList")
+    @JsonProperty(value = "available_queue_info")
 
-    private List<String> queueList = null;
+    private List<AvailableQueueInfo> availableQueueInfo = null;
 
     public ShowDatasourceConnectionResponse withIsSuccess(Boolean isSuccess) {
         this.isSuccess = isSuccess;
@@ -261,37 +261,38 @@ public class ShowDatasourceConnectionResponse extends SdkResponse {
         this.createTime = createTime;
     }
 
-    public ShowDatasourceConnectionResponse withQueueList(List<String> queueList) {
-        this.queueList = queueList;
+    public ShowDatasourceConnectionResponse withAvailableQueueInfo(List<AvailableQueueInfo> availableQueueInfo) {
+        this.availableQueueInfo = availableQueueInfo;
         return this;
     }
 
-    public ShowDatasourceConnectionResponse addQueueListItem(String queueListItem) {
-        if (this.queueList == null) {
-            this.queueList = new ArrayList<>();
+    public ShowDatasourceConnectionResponse addAvailableQueueInfoItem(AvailableQueueInfo availableQueueInfoItem) {
+        if (this.availableQueueInfo == null) {
+            this.availableQueueInfo = new ArrayList<>();
         }
-        this.queueList.add(queueListItem);
+        this.availableQueueInfo.add(availableQueueInfoItem);
         return this;
     }
 
-    public ShowDatasourceConnectionResponse withQueueList(Consumer<List<String>> queueListSetter) {
-        if (this.queueList == null) {
-            this.queueList = new ArrayList<>();
+    public ShowDatasourceConnectionResponse withAvailableQueueInfo(
+        Consumer<List<AvailableQueueInfo>> availableQueueInfoSetter) {
+        if (this.availableQueueInfo == null) {
+            this.availableQueueInfo = new ArrayList<>();
         }
-        queueListSetter.accept(this.queueList);
+        availableQueueInfoSetter.accept(this.availableQueueInfo);
         return this;
     }
 
     /**
-     * 当前跨源已绑定的队列名
-     * @return queueList
+     * 当前跨源已绑定的队列信息
+     * @return availableQueueInfo
      */
-    public List<String> getQueueList() {
-        return queueList;
+    public List<AvailableQueueInfo> getAvailableQueueInfo() {
+        return availableQueueInfo;
     }
 
-    public void setQueueList(List<String> queueList) {
-        this.queueList = queueList;
+    public void setAvailableQueueInfo(List<AvailableQueueInfo> availableQueueInfo) {
+        this.availableQueueInfo = availableQueueInfo;
     }
 
     @Override
@@ -314,7 +315,7 @@ public class ShowDatasourceConnectionResponse extends SdkResponse {
             && Objects.equals(this.clusterName, showDatasourceConnectionResponse.clusterName)
             && Objects.equals(this.service, showDatasourceConnectionResponse.service)
             && Objects.equals(this.createTime, showDatasourceConnectionResponse.createTime)
-            && Objects.equals(this.queueList, showDatasourceConnectionResponse.queueList);
+            && Objects.equals(this.availableQueueInfo, showDatasourceConnectionResponse.availableQueueInfo);
     }
 
     @Override
@@ -330,7 +331,7 @@ public class ShowDatasourceConnectionResponse extends SdkResponse {
             clusterName,
             service,
             createTime,
-            queueList);
+            availableQueueInfo);
     }
 
     @Override
@@ -348,7 +349,7 @@ public class ShowDatasourceConnectionResponse extends SdkResponse {
         sb.append("    clusterName: ").append(toIndentedString(clusterName)).append("\n");
         sb.append("    service: ").append(toIndentedString(service)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
-        sb.append("    queueList: ").append(toIndentedString(queueList)).append("\n");
+        sb.append("    availableQueueInfo: ").append(toIndentedString(availableQueueInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

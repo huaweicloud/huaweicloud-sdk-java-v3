@@ -18,6 +18,12 @@ public class LiveRegion {
 
     public static final Region CN_EAST_3 = new Region("cn-east-3", "https://live.cn-east-3.myhuaweicloud.com");
 
+    public static final Region AP_SOUTHEAST_2 =
+        new Region("ap-southeast-2", "https://live.ap-southeast-2.myhuaweicloud.com");
+
+    public static final Region AP_SOUTHEAST_3 =
+        new Region("ap-southeast-3", "https://live.ap-southeast-3.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("LIVE");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -27,6 +33,8 @@ public class LiveRegion {
         map.put("cn-north-4", CN_NORTH_4);
         map.put("cn-north-1", CN_NORTH_1);
         map.put("cn-east-3", CN_EAST_3);
+        map.put("ap-southeast-2", AP_SOUTHEAST_2);
+        map.put("ap-southeast-3", AP_SOUTHEAST_3);
         return Collections.unmodifiableMap(map);
     }
 

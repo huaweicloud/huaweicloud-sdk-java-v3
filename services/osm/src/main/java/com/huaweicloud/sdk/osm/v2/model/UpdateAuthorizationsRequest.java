@@ -14,7 +14,7 @@ public class UpdateAuthorizationsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "authorization_id")
 
-    private Long authorizationId;
+    private String authorizationId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "action_id")
@@ -41,22 +41,20 @@ public class UpdateAuthorizationsRequest {
 
     private OperateAuthorizationV2Req body;
 
-    public UpdateAuthorizationsRequest withAuthorizationId(Long authorizationId) {
+    public UpdateAuthorizationsRequest withAuthorizationId(String authorizationId) {
         this.authorizationId = authorizationId;
         return this;
     }
 
     /**
      * 授权id
-     * minimum: -9223372036854775808
-     * maximum: 9223372036854775807
      * @return authorizationId
      */
-    public Long getAuthorizationId() {
+    public String getAuthorizationId() {
         return authorizationId;
     }
 
-    public void setAuthorizationId(Long authorizationId) {
+    public void setAuthorizationId(String authorizationId) {
         this.authorizationId = authorizationId;
     }
 

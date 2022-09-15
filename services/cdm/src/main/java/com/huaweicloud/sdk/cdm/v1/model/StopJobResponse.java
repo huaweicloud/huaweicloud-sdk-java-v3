@@ -15,41 +15,41 @@ import java.util.function.Consumer;
 public class StopJobResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "submissions")
+    @JsonProperty(value = "validation-result")
 
-    private List<StartJobSubmission> submissions = null;
+    private List<JobValidationResult> validationResult = null;
 
-    public StopJobResponse withSubmissions(List<StartJobSubmission> submissions) {
-        this.submissions = submissions;
+    public StopJobResponse withValidationResult(List<JobValidationResult> validationResult) {
+        this.validationResult = validationResult;
         return this;
     }
 
-    public StopJobResponse addSubmissionsItem(StartJobSubmission submissionsItem) {
-        if (this.submissions == null) {
-            this.submissions = new ArrayList<>();
+    public StopJobResponse addValidationResultItem(JobValidationResult validationResultItem) {
+        if (this.validationResult == null) {
+            this.validationResult = new ArrayList<>();
         }
-        this.submissions.add(submissionsItem);
+        this.validationResult.add(validationResultItem);
         return this;
     }
 
-    public StopJobResponse withSubmissions(Consumer<List<StartJobSubmission>> submissionsSetter) {
-        if (this.submissions == null) {
-            this.submissions = new ArrayList<>();
+    public StopJobResponse withValidationResult(Consumer<List<JobValidationResult>> validationResultSetter) {
+        if (this.validationResult == null) {
+            this.validationResult = new ArrayList<>();
         }
-        submissionsSetter.accept(this.submissions);
+        validationResultSetter.accept(this.validationResult);
         return this;
     }
 
     /**
-     * 作业运行信息，请参见submission参数说明
-     * @return submissions
+     * 校验结构：如果停止作业接失败，返回失败原因，请参见validation-result参数说明。如果停止成功，返回空列表。
+     * @return validationResult
      */
-    public List<StartJobSubmission> getSubmissions() {
-        return submissions;
+    public List<JobValidationResult> getValidationResult() {
+        return validationResult;
     }
 
-    public void setSubmissions(List<StartJobSubmission> submissions) {
-        this.submissions = submissions;
+    public void setValidationResult(List<JobValidationResult> validationResult) {
+        this.validationResult = validationResult;
     }
 
     @Override
@@ -61,19 +61,19 @@ public class StopJobResponse extends SdkResponse {
             return false;
         }
         StopJobResponse stopJobResponse = (StopJobResponse) o;
-        return Objects.equals(this.submissions, stopJobResponse.submissions);
+        return Objects.equals(this.validationResult, stopJobResponse.validationResult);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(submissions);
+        return Objects.hash(validationResult);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class StopJobResponse {\n");
-        sb.append("    submissions: ").append(toIndentedString(submissions)).append("\n");
+        sb.append("    validationResult: ").append(toIndentedString(validationResult)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -260,6 +260,38 @@ public class CptsClient {
     }
 
     /**
+     * 删除全局变量
+     *
+     * 删除全局变量
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteVariableRequest 请求对象
+     * @return DeleteVariableResponse
+     */
+    public DeleteVariableResponse deleteVariable(DeleteVariableRequest request) {
+        return hcClient.syncInvokeHttp(request, CptsMeta.deleteVariable);
+    }
+
+    /**
+     * 删除全局变量
+     *
+     * 删除全局变量
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteVariableRequest 请求对象
+     * @return SyncInvoker<DeleteVariableRequest, DeleteVariableResponse>
+     */
+    public SyncInvoker<DeleteVariableRequest, DeleteVariableResponse> deleteVariableInvoker(
+        DeleteVariableRequest request) {
+        return new SyncInvoker<DeleteVariableRequest, DeleteVariableResponse>(request, CptsMeta.deleteVariable,
+            hcClient);
+    }
+
+    /**
      * 查询全局变量
      *
      * 查询全局变量
@@ -532,6 +564,38 @@ public class CptsClient {
     }
 
     /**
+     * 修改任务关联用例
+     *
+     * 修改任务关联用例
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateTaskRelatedTestCaseRequest 请求对象
+     * @return UpdateTaskRelatedTestCaseResponse
+     */
+    public UpdateTaskRelatedTestCaseResponse updateTaskRelatedTestCase(UpdateTaskRelatedTestCaseRequest request) {
+        return hcClient.syncInvokeHttp(request, CptsMeta.updateTaskRelatedTestCase);
+    }
+
+    /**
+     * 修改任务关联用例
+     *
+     * 修改任务关联用例
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateTaskRelatedTestCaseRequest 请求对象
+     * @return SyncInvoker<UpdateTaskRelatedTestCaseRequest, UpdateTaskRelatedTestCaseResponse>
+     */
+    public SyncInvoker<UpdateTaskRelatedTestCaseRequest, UpdateTaskRelatedTestCaseResponse> updateTaskRelatedTestCaseInvoker(
+        UpdateTaskRelatedTestCaseRequest request) {
+        return new SyncInvoker<UpdateTaskRelatedTestCaseRequest, UpdateTaskRelatedTestCaseResponse>(request,
+            CptsMeta.updateTaskRelatedTestCase, hcClient);
+    }
+
+    /**
      * 更新任务状态
      *
      * 更新任务状态
@@ -715,6 +779,38 @@ public class CptsClient {
         ListProjectSetsRequest request) {
         return new SyncInvoker<ListProjectSetsRequest, ListProjectSetsResponse>(request, CptsMeta.listProjectSets,
             hcClient);
+    }
+
+    /**
+     * 查询用例树
+     *
+     * 查询用例树
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListProjectTestCaseRequest 请求对象
+     * @return ListProjectTestCaseResponse
+     */
+    public ListProjectTestCaseResponse listProjectTestCase(ListProjectTestCaseRequest request) {
+        return hcClient.syncInvokeHttp(request, CptsMeta.listProjectTestCase);
+    }
+
+    /**
+     * 查询用例树
+     *
+     * 查询用例树
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListProjectTestCaseRequest 请求对象
+     * @return SyncInvoker<ListProjectTestCaseRequest, ListProjectTestCaseResponse>
+     */
+    public SyncInvoker<ListProjectTestCaseRequest, ListProjectTestCaseResponse> listProjectTestCaseInvoker(
+        ListProjectTestCaseRequest request) {
+        return new SyncInvoker<ListProjectTestCaseRequest, ListProjectTestCaseResponse>(request,
+            CptsMeta.listProjectTestCase, hcClient);
     }
 
     /**

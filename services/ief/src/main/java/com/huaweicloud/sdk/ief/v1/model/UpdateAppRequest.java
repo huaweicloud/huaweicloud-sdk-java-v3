@@ -24,7 +24,7 @@ public class UpdateAppRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private AppUpdate body;
+    private UpdateAppBody body;
 
     public UpdateAppRequest withIefInstanceId(String iefInstanceId) {
         this.iefInstanceId = iefInstanceId;
@@ -60,14 +60,14 @@ public class UpdateAppRequest {
         this.appId = appId;
     }
 
-    public UpdateAppRequest withBody(AppUpdate body) {
+    public UpdateAppRequest withBody(UpdateAppBody body) {
         this.body = body;
         return this;
     }
 
-    public UpdateAppRequest withBody(Consumer<AppUpdate> bodySetter) {
+    public UpdateAppRequest withBody(Consumer<UpdateAppBody> bodySetter) {
         if (this.body == null) {
-            this.body = new AppUpdate();
+            this.body = new UpdateAppBody();
             bodySetter.accept(this.body);
         }
 
@@ -78,11 +78,11 @@ public class UpdateAppRequest {
      * Get body
      * @return body
      */
-    public AppUpdate getBody() {
+    public UpdateAppBody getBody() {
         return body;
     }
 
-    public void setBody(AppUpdate body) {
+    public void setBody(UpdateAppBody body) {
         this.body = body;
     }
 

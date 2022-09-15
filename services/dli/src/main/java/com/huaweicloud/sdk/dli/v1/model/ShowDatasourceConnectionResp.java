@@ -69,7 +69,7 @@ public class ShowDatasourceConnectionResp {
     private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "queueList")
+    @JsonProperty(value = "queue_list")
 
     private List<String> queueList = null;
 

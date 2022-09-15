@@ -289,7 +289,7 @@ public class KafkaClient {
     /**
      * 创建实例
      *
-     * [创建按需计费类型的Kafka实例。](tag:hc,hk,hws,hws_hk,otc,hws_ocb,ctc,sbc,hk_sbc,cmcc)[创建kafka实例。](tag:ocb)
+     * [创建按需计费类型的Kafka实例。](tag:hc,hk,hws,hws_hk,otc,hws_ocb,ctc,sbc,hk_sbc,cmcc,hws_eu)[创建kafka实例。](tag:ocb)
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -304,7 +304,7 @@ public class KafkaClient {
     /**
      * 创建实例
      *
-     * [创建按需计费类型的Kafka实例。](tag:hc,hk,hws,hws_hk,otc,hws_ocb,ctc,sbc,hk_sbc,cmcc)[创建kafka实例。](tag:ocb)
+     * [创建按需计费类型的Kafka实例。](tag:hc,hk,hws,hws_hk,otc,hws_ocb,ctc,sbc,hk_sbc,cmcc,hws_eu)[创建kafka实例。](tag:ocb)
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -540,6 +540,38 @@ public class KafkaClient {
         ListEngineProductsRequest request) {
         return new SyncInvoker<ListEngineProductsRequest, ListEngineProductsResponse>(request,
             KafkaMeta.listEngineProducts, hcClient);
+    }
+
+    /**
+     * 查询所有消费组
+     *
+     * 查询所有消费组。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListInstanceConsumerGroupsRequest 请求对象
+     * @return ListInstanceConsumerGroupsResponse
+     */
+    public ListInstanceConsumerGroupsResponse listInstanceConsumerGroups(ListInstanceConsumerGroupsRequest request) {
+        return hcClient.syncInvokeHttp(request, KafkaMeta.listInstanceConsumerGroups);
+    }
+
+    /**
+     * 查询所有消费组
+     *
+     * 查询所有消费组。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListInstanceConsumerGroupsRequest 请求对象
+     * @return SyncInvoker<ListInstanceConsumerGroupsRequest, ListInstanceConsumerGroupsResponse>
+     */
+    public SyncInvoker<ListInstanceConsumerGroupsRequest, ListInstanceConsumerGroupsResponse> listInstanceConsumerGroupsInvoker(
+        ListInstanceConsumerGroupsRequest request) {
+        return new SyncInvoker<ListInstanceConsumerGroupsRequest, ListInstanceConsumerGroupsResponse>(request,
+            KafkaMeta.listInstanceConsumerGroups, hcClient);
     }
 
     /**

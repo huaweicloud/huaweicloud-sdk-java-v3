@@ -760,7 +760,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 付费模式，1表示按需计费，0表示包年/包月计费。
+     * [付费模式，1表示按需计费，0表示包年/包月计费。](tag:hc,hk,hws,hws_hk,otc,ctc,sbc,hk_sbc,cmcc)[付费模式，暂未使用。](tag:hws_ocb,ocb)[付费模式，1表示按需计费](tag:hws_eu)
      * @return chargingMode
      */
     public Integer getChargingMode() {

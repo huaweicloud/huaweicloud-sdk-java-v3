@@ -45,7 +45,7 @@ public class DeploymentResources {
     }
 
     /**
-     * 允许容器使用的最大资源
+     * 允许容器使用的最大资源，key值支持填写：cpu, memory, gpu, npu, D310, D910
      * @return limits
      */
     public Map<String, String> getLimits() {
@@ -78,7 +78,7 @@ public class DeploymentResources {
     }
 
     /**
-     * 容器需要使用的最小资源
+     * 容器需要使用的最小资源，key值支持填写：cpu, memory, gpu, npu, D310, D910
      * @return requests
      */
     public Map<String, String> getRequests() {

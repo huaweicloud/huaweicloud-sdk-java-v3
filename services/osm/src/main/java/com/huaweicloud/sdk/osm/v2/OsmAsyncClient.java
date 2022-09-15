@@ -147,6 +147,39 @@ public class OsmAsyncClient {
     }
 
     /**
+     * 提交工单扩展参数
+     *
+     * 提交工单扩展参数
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateCaseExtendsParamRequest 请求对象
+     * @return CompletableFuture<CreateCaseExtendsParamResponse>
+     */
+    public CompletableFuture<CreateCaseExtendsParamResponse> createCaseExtendsParamAsync(
+        CreateCaseExtendsParamRequest request) {
+        return hcClient.asyncInvokeHttp(request, OsmMeta.createCaseExtendsParam);
+    }
+
+    /**
+     * 提交工单扩展参数
+     *
+     * 提交工单扩展参数
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateCaseExtendsParamRequest 请求对象
+     * @return AsyncInvoker<CreateCaseExtendsParamRequest, CreateCaseExtendsParamResponse>
+     */
+    public AsyncInvoker<CreateCaseExtendsParamRequest, CreateCaseExtendsParamResponse> createCaseExtendsParamAsyncInvoker(
+        CreateCaseExtendsParamRequest request) {
+        return new AsyncInvoker<CreateCaseExtendsParamRequest, CreateCaseExtendsParamResponse>(request,
+            OsmMeta.createCaseExtendsParam, hcClient);
+    }
+
+    /**
      * 添加工单关联标签接口
      *
      * 添加工单关联标签接口
@@ -589,6 +622,39 @@ public class OsmAsyncClient {
     }
 
     /**
+     * 租户批量获取下载链接
+     *
+     * 租户批量获取下载链接
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListAccessoryAccessUrlsRequest 请求对象
+     * @return CompletableFuture<ListAccessoryAccessUrlsResponse>
+     */
+    public CompletableFuture<ListAccessoryAccessUrlsResponse> listAccessoryAccessUrlsAsync(
+        ListAccessoryAccessUrlsRequest request) {
+        return hcClient.asyncInvokeHttp(request, OsmMeta.listAccessoryAccessUrls);
+    }
+
+    /**
+     * 租户批量获取下载链接
+     *
+     * 租户批量获取下载链接
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListAccessoryAccessUrlsRequest 请求对象
+     * @return AsyncInvoker<ListAccessoryAccessUrlsRequest, ListAccessoryAccessUrlsResponse>
+     */
+    public AsyncInvoker<ListAccessoryAccessUrlsRequest, ListAccessoryAccessUrlsResponse> listAccessoryAccessUrlsAsyncInvoker(
+        ListAccessoryAccessUrlsRequest request) {
+        return new AsyncInvoker<ListAccessoryAccessUrlsRequest, ListAccessoryAccessUrlsResponse>(request,
+            OsmMeta.listAccessoryAccessUrls, hcClient);
+    }
+
+    /**
      * 查询委托
      *
      * 查询委托
@@ -966,6 +1032,39 @@ public class OsmAsyncClient {
      */
     public AsyncInvoker<ListCasesRequest, ListCasesResponse> listCasesAsyncInvoker(ListCasesRequest request) {
         return new AsyncInvoker<ListCasesRequest, ListCasesResponse>(request, OsmMeta.listCases, hcClient);
+    }
+
+    /**
+     * 查询用户关联的region
+     *
+     * 查询用户关联的region
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListCustomersRegionsRequest 请求对象
+     * @return CompletableFuture<ListCustomersRegionsResponse>
+     */
+    public CompletableFuture<ListCustomersRegionsResponse> listCustomersRegionsAsync(
+        ListCustomersRegionsRequest request) {
+        return hcClient.asyncInvokeHttp(request, OsmMeta.listCustomersRegions);
+    }
+
+    /**
+     * 查询用户关联的region
+     *
+     * 查询用户关联的region
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListCustomersRegionsRequest 请求对象
+     * @return AsyncInvoker<ListCustomersRegionsRequest, ListCustomersRegionsResponse>
+     */
+    public AsyncInvoker<ListCustomersRegionsRequest, ListCustomersRegionsResponse> listCustomersRegionsAsyncInvoker(
+        ListCustomersRegionsRequest request) {
+        return new AsyncInvoker<ListCustomersRegionsRequest, ListCustomersRegionsResponse>(request,
+            OsmMeta.listCustomersRegions, hcClient);
     }
 
     /**
@@ -1676,6 +1775,39 @@ public class OsmAsyncClient {
     }
 
     /**
+     * 查询工单扩展参数
+     *
+     * 查询工单扩展参数
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowCaseExtendsParamRequest 请求对象
+     * @return CompletableFuture<ShowCaseExtendsParamResponse>
+     */
+    public CompletableFuture<ShowCaseExtendsParamResponse> showCaseExtendsParamAsync(
+        ShowCaseExtendsParamRequest request) {
+        return hcClient.asyncInvokeHttp(request, OsmMeta.showCaseExtendsParam);
+    }
+
+    /**
+     * 查询工单扩展参数
+     *
+     * 查询工单扩展参数
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowCaseExtendsParamRequest 请求对象
+     * @return AsyncInvoker<ShowCaseExtendsParamRequest, ShowCaseExtendsParamResponse>
+     */
+    public AsyncInvoker<ShowCaseExtendsParamRequest, ShowCaseExtendsParamResponse> showCaseExtendsParamAsyncInvoker(
+        ShowCaseExtendsParamRequest request) {
+        return new AsyncInvoker<ShowCaseExtendsParamRequest, ShowCaseExtendsParamResponse>(request,
+            OsmMeta.showCaseExtendsParam, hcClient);
+    }
+
+    /**
      * 查询某个工单状态
      *
      * 查询某个工单状态
@@ -1705,6 +1837,72 @@ public class OsmAsyncClient {
         ShowCaseStatusRequest request) {
         return new AsyncInvoker<ShowCaseStatusRequest, ShowCaseStatusResponse>(request, OsmMeta.showCaseStatus,
             hcClient);
+    }
+
+    /**
+     * 查询提单权限
+     *
+     * 查询提单权限
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowCustomerPrivilegePolicyRequest 请求对象
+     * @return CompletableFuture<ShowCustomerPrivilegePolicyResponse>
+     */
+    public CompletableFuture<ShowCustomerPrivilegePolicyResponse> showCustomerPrivilegePolicyAsync(
+        ShowCustomerPrivilegePolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, OsmMeta.showCustomerPrivilegePolicy);
+    }
+
+    /**
+     * 查询提单权限
+     *
+     * 查询提单权限
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowCustomerPrivilegePolicyRequest 请求对象
+     * @return AsyncInvoker<ShowCustomerPrivilegePolicyRequest, ShowCustomerPrivilegePolicyResponse>
+     */
+    public AsyncInvoker<ShowCustomerPrivilegePolicyRequest, ShowCustomerPrivilegePolicyResponse> showCustomerPrivilegePolicyAsyncInvoker(
+        ShowCustomerPrivilegePolicyRequest request) {
+        return new AsyncInvoker<ShowCustomerPrivilegePolicyRequest, ShowCustomerPrivilegePolicyResponse>(request,
+            OsmMeta.showCustomerPrivilegePolicy, hcClient);
+    }
+
+    /**
+     * 查看最新发布版本协议详情
+     *
+     * 查看最新发布版本协议详情
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowLatestPublishedAgreementRequest 请求对象
+     * @return CompletableFuture<ShowLatestPublishedAgreementResponse>
+     */
+    public CompletableFuture<ShowLatestPublishedAgreementResponse> showLatestPublishedAgreementAsync(
+        ShowLatestPublishedAgreementRequest request) {
+        return hcClient.asyncInvokeHttp(request, OsmMeta.showLatestPublishedAgreement);
+    }
+
+    /**
+     * 查看最新发布版本协议详情
+     *
+     * 查看最新发布版本协议详情
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowLatestPublishedAgreementRequest 请求对象
+     * @return AsyncInvoker<ShowLatestPublishedAgreementRequest, ShowLatestPublishedAgreementResponse>
+     */
+    public AsyncInvoker<ShowLatestPublishedAgreementRequest, ShowLatestPublishedAgreementResponse> showLatestPublishedAgreementAsyncInvoker(
+        ShowLatestPublishedAgreementRequest request) {
+        return new AsyncInvoker<ShowLatestPublishedAgreementRequest, ShowLatestPublishedAgreementResponse>(request,
+            OsmMeta.showLatestPublishedAgreement, hcClient);
     }
 
     /**
@@ -1774,6 +1972,72 @@ public class OsmAsyncClient {
     }
 
     /**
+     * 查询用户是否签署最新协议
+     *
+     * 查询用户是否签署最新协议
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowSignedLatestPublishedAgreementRequest 请求对象
+     * @return CompletableFuture<ShowSignedLatestPublishedAgreementResponse>
+     */
+    public CompletableFuture<ShowSignedLatestPublishedAgreementResponse> showSignedLatestPublishedAgreementAsync(
+        ShowSignedLatestPublishedAgreementRequest request) {
+        return hcClient.asyncInvokeHttp(request, OsmMeta.showSignedLatestPublishedAgreement);
+    }
+
+    /**
+     * 查询用户是否签署最新协议
+     *
+     * 查询用户是否签署最新协议
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowSignedLatestPublishedAgreementRequest 请求对象
+     * @return AsyncInvoker<ShowSignedLatestPublishedAgreementRequest, ShowSignedLatestPublishedAgreementResponse>
+     */
+    public AsyncInvoker<ShowSignedLatestPublishedAgreementRequest, ShowSignedLatestPublishedAgreementResponse> showSignedLatestPublishedAgreementAsyncInvoker(
+        ShowSignedLatestPublishedAgreementRequest request) {
+        return new AsyncInvoker<ShowSignedLatestPublishedAgreementRequest, ShowSignedLatestPublishedAgreementResponse>(
+            request, OsmMeta.showSignedLatestPublishedAgreement, hcClient);
+    }
+
+    /**
+     * 签署协议
+     *
+     * 签署协议
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SignPublishedAgreementRequest 请求对象
+     * @return CompletableFuture<SignPublishedAgreementResponse>
+     */
+    public CompletableFuture<SignPublishedAgreementResponse> signPublishedAgreementAsync(
+        SignPublishedAgreementRequest request) {
+        return hcClient.asyncInvokeHttp(request, OsmMeta.signPublishedAgreement);
+    }
+
+    /**
+     * 签署协议
+     *
+     * 签署协议
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SignPublishedAgreementRequest 请求对象
+     * @return AsyncInvoker<SignPublishedAgreementRequest, SignPublishedAgreementResponse>
+     */
+    public AsyncInvoker<SignPublishedAgreementRequest, SignPublishedAgreementResponse> signPublishedAgreementAsyncInvoker(
+        SignPublishedAgreementRequest request) {
+        return new AsyncInvoker<SignPublishedAgreementRequest, SignPublishedAgreementResponse>(request,
+            OsmMeta.signPublishedAgreement, hcClient);
+    }
+
+    /**
      * 拒绝|撤销授权
      *
      * 拒绝|撤销授权
@@ -1804,6 +2068,39 @@ public class OsmAsyncClient {
         UpdateAuthorizationsRequest request) {
         return new AsyncInvoker<UpdateAuthorizationsRequest, UpdateAuthorizationsResponse>(request,
             OsmMeta.updateAuthorizations, hcClient);
+    }
+
+    /**
+     * 修改联系方式
+     *
+     * 修改联系方式
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateCaseContactInfoRequest 请求对象
+     * @return CompletableFuture<UpdateCaseContactInfoResponse>
+     */
+    public CompletableFuture<UpdateCaseContactInfoResponse> updateCaseContactInfoAsync(
+        UpdateCaseContactInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, OsmMeta.updateCaseContactInfo);
+    }
+
+    /**
+     * 修改联系方式
+     *
+     * 修改联系方式
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateCaseContactInfoRequest 请求对象
+     * @return AsyncInvoker<UpdateCaseContactInfoRequest, UpdateCaseContactInfoResponse>
+     */
+    public AsyncInvoker<UpdateCaseContactInfoRequest, UpdateCaseContactInfoResponse> updateCaseContactInfoAsyncInvoker(
+        UpdateCaseContactInfoRequest request) {
+        return new AsyncInvoker<UpdateCaseContactInfoRequest, UpdateCaseContactInfoResponse>(request,
+            OsmMeta.updateCaseContactInfo, hcClient);
     }
 
     /**

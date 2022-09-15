@@ -13,7 +13,7 @@ public class ListHistorySessionsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "authorization_id")
 
-    private Long authorizationId;
+    private String authorizationId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "authorization_detail_id")
@@ -50,22 +50,20 @@ public class ListHistorySessionsRequest {
 
     private String xTimeZone;
 
-    public ListHistorySessionsRequest withAuthorizationId(Long authorizationId) {
+    public ListHistorySessionsRequest withAuthorizationId(String authorizationId) {
         this.authorizationId = authorizationId;
         return this;
     }
 
     /**
      * 授权id
-     * minimum: 0
-     * maximum: 9223372036854775807
      * @return authorizationId
      */
-    public Long getAuthorizationId() {
+    public String getAuthorizationId() {
         return authorizationId;
     }
 
-    public void setAuthorizationId(Long authorizationId) {
+    public void setAuthorizationId(String authorizationId) {
         this.authorizationId = authorizationId;
     }
 

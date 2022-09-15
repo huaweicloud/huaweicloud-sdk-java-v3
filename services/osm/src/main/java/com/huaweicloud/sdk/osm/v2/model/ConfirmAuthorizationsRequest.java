@@ -14,7 +14,7 @@ public class ConfirmAuthorizationsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "authorization_id")
 
-    private Long authorizationId;
+    private String authorizationId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Site")
@@ -36,22 +36,20 @@ public class ConfirmAuthorizationsRequest {
 
     private AgreeTenantAuthorizationV2Req body;
 
-    public ConfirmAuthorizationsRequest withAuthorizationId(Long authorizationId) {
+    public ConfirmAuthorizationsRequest withAuthorizationId(String authorizationId) {
         this.authorizationId = authorizationId;
         return this;
     }
 
     /**
-     * 授权详情Id
-     * minimum: 0
-     * maximum: 9223372036854775807
+     * 授权id
      * @return authorizationId
      */
-    public Long getAuthorizationId() {
+    public String getAuthorizationId() {
         return authorizationId;
     }
 
-    public void setAuthorizationId(Long authorizationId) {
+    public void setAuthorizationId(String authorizationId) {
         this.authorizationId = authorizationId;
     }
 

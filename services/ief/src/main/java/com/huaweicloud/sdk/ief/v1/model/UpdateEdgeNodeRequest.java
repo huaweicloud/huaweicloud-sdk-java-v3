@@ -24,7 +24,7 @@ public class UpdateEdgeNodeRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private EdgeNodeUpdate body;
+    private UpdateEdgeNodeBody body;
 
     public UpdateEdgeNodeRequest withNodeId(String nodeId) {
         this.nodeId = nodeId;
@@ -60,14 +60,14 @@ public class UpdateEdgeNodeRequest {
         this.iefInstanceId = iefInstanceId;
     }
 
-    public UpdateEdgeNodeRequest withBody(EdgeNodeUpdate body) {
+    public UpdateEdgeNodeRequest withBody(UpdateEdgeNodeBody body) {
         this.body = body;
         return this;
     }
 
-    public UpdateEdgeNodeRequest withBody(Consumer<EdgeNodeUpdate> bodySetter) {
+    public UpdateEdgeNodeRequest withBody(Consumer<UpdateEdgeNodeBody> bodySetter) {
         if (this.body == null) {
-            this.body = new EdgeNodeUpdate();
+            this.body = new UpdateEdgeNodeBody();
             bodySetter.accept(this.body);
         }
 
@@ -78,11 +78,11 @@ public class UpdateEdgeNodeRequest {
      * Get body
      * @return body
      */
-    public EdgeNodeUpdate getBody() {
+    public UpdateEdgeNodeBody getBody() {
         return body;
     }
 
-    public void setBody(EdgeNodeUpdate body) {
+    public void setBody(UpdateEdgeNodeBody body) {
         this.body = body;
     }
 

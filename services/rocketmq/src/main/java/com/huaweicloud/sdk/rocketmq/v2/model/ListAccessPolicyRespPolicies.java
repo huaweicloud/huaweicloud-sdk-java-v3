@@ -16,6 +16,11 @@ public class ListAccessPolicyRespPolicies {
     private String accessKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "secret_key")
+
+    private String secretKey;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "white_remote_address")
 
     private String whiteRemoteAddress;
@@ -36,7 +41,7 @@ public class ListAccessPolicyRespPolicies {
     }
 
     /**
-     * 秘钥。
+     * 用户名。
      * @return accessKey
      */
     public String getAccessKey() {
@@ -45,6 +50,23 @@ public class ListAccessPolicyRespPolicies {
 
     public void setAccessKey(String accessKey) {
         this.accessKey = accessKey;
+    }
+
+    public ListAccessPolicyRespPolicies withSecretKey(String secretKey) {
+        this.secretKey = secretKey;
+        return this;
+    }
+
+    /**
+     * 秘钥。
+     * @return secretKey
+     */
+    public String getSecretKey() {
+        return secretKey;
+    }
+
+    public void setSecretKey(String secretKey) {
+        this.secretKey = secretKey;
     }
 
     public ListAccessPolicyRespPolicies withWhiteRemoteAddress(String whiteRemoteAddress) {
@@ -108,6 +130,7 @@ public class ListAccessPolicyRespPolicies {
         }
         ListAccessPolicyRespPolicies listAccessPolicyRespPolicies = (ListAccessPolicyRespPolicies) o;
         return Objects.equals(this.accessKey, listAccessPolicyRespPolicies.accessKey)
+            && Objects.equals(this.secretKey, listAccessPolicyRespPolicies.secretKey)
             && Objects.equals(this.whiteRemoteAddress, listAccessPolicyRespPolicies.whiteRemoteAddress)
             && Objects.equals(this.admin, listAccessPolicyRespPolicies.admin)
             && Objects.equals(this.perm, listAccessPolicyRespPolicies.perm);
@@ -115,7 +138,7 @@ public class ListAccessPolicyRespPolicies {
 
     @Override
     public int hashCode() {
-        return Objects.hash(accessKey, whiteRemoteAddress, admin, perm);
+        return Objects.hash(accessKey, secretKey, whiteRemoteAddress, admin, perm);
     }
 
     @Override
@@ -123,6 +146,7 @@ public class ListAccessPolicyRespPolicies {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListAccessPolicyRespPolicies {\n");
         sb.append("    accessKey: ").append(toIndentedString(accessKey)).append("\n");
+        sb.append("    secretKey: ").append(toIndentedString(secretKey)).append("\n");
         sb.append("    whiteRemoteAddress: ").append(toIndentedString(whiteRemoteAddress)).append("\n");
         sb.append("    admin: ").append(toIndentedString(admin)).append("\n");
         sb.append("    perm: ").append(toIndentedString(perm)).append("\n");

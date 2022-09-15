@@ -19,9 +19,9 @@ public class NtpConfigs {
     private Boolean ntpEnabled;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ntpservers")
+    @JsonProperty(value = "ntp_servers")
 
-    private List<String> ntpservers = null;
+    private List<String> ntpServers = null;
 
     public NtpConfigs withNtpEnabled(Boolean ntpEnabled) {
         this.ntpEnabled = ntpEnabled;
@@ -40,37 +40,37 @@ public class NtpConfigs {
         this.ntpEnabled = ntpEnabled;
     }
 
-    public NtpConfigs withNtpservers(List<String> ntpservers) {
-        this.ntpservers = ntpservers;
+    public NtpConfigs withNtpServers(List<String> ntpServers) {
+        this.ntpServers = ntpServers;
         return this;
     }
 
-    public NtpConfigs addNtpserversItem(String ntpserversItem) {
-        if (this.ntpservers == null) {
-            this.ntpservers = new ArrayList<>();
+    public NtpConfigs addNtpServersItem(String ntpServersItem) {
+        if (this.ntpServers == null) {
+            this.ntpServers = new ArrayList<>();
         }
-        this.ntpservers.add(ntpserversItem);
+        this.ntpServers.add(ntpServersItem);
         return this;
     }
 
-    public NtpConfigs withNtpservers(Consumer<List<String>> ntpserversSetter) {
-        if (this.ntpservers == null) {
-            this.ntpservers = new ArrayList<>();
+    public NtpConfigs withNtpServers(Consumer<List<String>> ntpServersSetter) {
+        if (this.ntpServers == null) {
+            this.ntpServers = new ArrayList<>();
         }
-        ntpserversSetter.accept(this.ntpservers);
+        ntpServersSetter.accept(this.ntpServers);
         return this;
     }
 
     /**
      * ntp server地址
-     * @return ntpservers
+     * @return ntpServers
      */
-    public List<String> getNtpservers() {
-        return ntpservers;
+    public List<String> getNtpServers() {
+        return ntpServers;
     }
 
-    public void setNtpservers(List<String> ntpservers) {
-        this.ntpservers = ntpservers;
+    public void setNtpServers(List<String> ntpServers) {
+        this.ntpServers = ntpServers;
     }
 
     @Override
@@ -83,12 +83,12 @@ public class NtpConfigs {
         }
         NtpConfigs ntpConfigs = (NtpConfigs) o;
         return Objects.equals(this.ntpEnabled, ntpConfigs.ntpEnabled)
-            && Objects.equals(this.ntpservers, ntpConfigs.ntpservers);
+            && Objects.equals(this.ntpServers, ntpConfigs.ntpServers);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(ntpEnabled, ntpservers);
+        return Objects.hash(ntpEnabled, ntpServers);
     }
 
     @Override
@@ -96,7 +96,7 @@ public class NtpConfigs {
         StringBuilder sb = new StringBuilder();
         sb.append("class NtpConfigs {\n");
         sb.append("    ntpEnabled: ").append(toIndentedString(ntpEnabled)).append("\n");
-        sb.append("    ntpservers: ").append(toIndentedString(ntpservers)).append("\n");
+        sb.append("    ntpServers: ").append(toIndentedString(ntpServers)).append("\n");
         sb.append("}");
         return sb.toString();
     }

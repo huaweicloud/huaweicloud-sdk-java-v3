@@ -636,7 +636,7 @@ public class CloudDeployMeta {
             }));
         builder.<TasksSuccessRateQuery>withRequestField("body",
             LocationType.Body,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TasksSuccessRateQuery.class),
             f -> f.withMarshaller(ListTaskSuccessRateRequest::getBody, (req, v) -> {
                 req.setBody(v);

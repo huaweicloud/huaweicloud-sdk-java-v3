@@ -73,6 +73,13 @@ public class ShowBackupPolicy  {
     
     private Integer filesplitSize;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="file_split_size")
+    
+    
+    private Integer fileSplitSize;
+
     public ShowBackupPolicy withKeepDays(Integer keepDays) {
         this.keepDays = keepDays;
         return this;
@@ -238,7 +245,7 @@ public class ShowBackupPolicy  {
 
 
     /**
-     * 全量、差量备份时产生的备份文件会根据分片大小进行拆分，可设置范围为0~1024GB，设置需为4的倍数，默认4GB，0GB表示不限制大小。  取值范围：0 ~ 1024
+     * 废弃。
      * minimum: 0
      * maximum: 1024
      * @return filesplitSize
@@ -249,6 +256,30 @@ public class ShowBackupPolicy  {
 
     public void setFilesplitSize(Integer filesplitSize) {
         this.filesplitSize = filesplitSize;
+    }
+
+    
+
+    public ShowBackupPolicy withFileSplitSize(Integer fileSplitSize) {
+        this.fileSplitSize = fileSplitSize;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 全量、差量备份时产生的备份文件会根据分片大小进行拆分，可设置范围为0~1024GB，设置需为4的倍数，默认4GB，0GB表示不限制大小。  取值范围：0 ~ 1024
+     * minimum: 0
+     * maximum: 1024
+     * @return fileSplitSize
+     */
+    public Integer getFileSplitSize() {
+        return fileSplitSize;
+    }
+
+    public void setFileSplitSize(Integer fileSplitSize) {
+        this.fileSplitSize = fileSplitSize;
     }
 
     
@@ -269,11 +300,12 @@ public class ShowBackupPolicy  {
             Objects.equals(this.differentialPeriod, showBackupPolicy.differentialPeriod) &&
             Objects.equals(this.rateLimit, showBackupPolicy.rateLimit) &&
             Objects.equals(this.prefetchBlock, showBackupPolicy.prefetchBlock) &&
-            Objects.equals(this.filesplitSize, showBackupPolicy.filesplitSize);
+            Objects.equals(this.filesplitSize, showBackupPolicy.filesplitSize) &&
+            Objects.equals(this.fileSplitSize, showBackupPolicy.fileSplitSize);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(keepDays, startTime, period, differentialPriod, differentialPeriod, rateLimit, prefetchBlock, filesplitSize);
+        return Objects.hash(keepDays, startTime, period, differentialPriod, differentialPeriod, rateLimit, prefetchBlock, filesplitSize, fileSplitSize);
     }
     @Override
     public String toString() {
@@ -287,6 +319,7 @@ public class ShowBackupPolicy  {
         sb.append("    rateLimit: ").append(toIndentedString(rateLimit)).append("\n");
         sb.append("    prefetchBlock: ").append(toIndentedString(prefetchBlock)).append("\n");
         sb.append("    filesplitSize: ").append(toIndentedString(filesplitSize)).append("\n");
+        sb.append("    fileSplitSize: ").append(toIndentedString(fileSplitSize)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -168,6 +168,11 @@ public class LtsStructTemplateInfo {
 
     private String logFormat;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "rule")
+
+    private List<Rule> rule = null;
+
     public LtsStructTemplateInfo withDemoFields(List<StructFieldInfo> demoFields) {
         this.demoFields = demoFields;
         return this;
@@ -387,6 +392,39 @@ public class LtsStructTemplateInfo {
         this.logFormat = logFormat;
     }
 
+    public LtsStructTemplateInfo withRule(List<Rule> rule) {
+        this.rule = rule;
+        return this;
+    }
+
+    public LtsStructTemplateInfo addRuleItem(Rule ruleItem) {
+        if (this.rule == null) {
+            this.rule = new ArrayList<>();
+        }
+        this.rule.add(ruleItem);
+        return this;
+    }
+
+    public LtsStructTemplateInfo withRule(Consumer<List<Rule>> ruleSetter) {
+        if (this.rule == null) {
+            this.rule = new ArrayList<>();
+        }
+        ruleSetter.accept(this.rule);
+        return this;
+    }
+
+    /**
+     * 结构化方式
+     * @return rule
+     */
+    public List<Rule> getRule() {
+        return rule;
+    }
+
+    public void setRule(List<Rule> rule) {
+        this.rule = rule;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -406,7 +444,8 @@ public class LtsStructTemplateInfo {
             && Objects.equals(this.regexRules, ltsStructTemplateInfo.regexRules)
             && Objects.equals(this.layers, ltsStructTemplateInfo.layers)
             && Objects.equals(this.tokenizer, ltsStructTemplateInfo.tokenizer)
-            && Objects.equals(this.logFormat, ltsStructTemplateInfo.logFormat);
+            && Objects.equals(this.logFormat, ltsStructTemplateInfo.logFormat)
+            && Objects.equals(this.rule, ltsStructTemplateInfo.rule);
     }
 
     @Override
@@ -421,7 +460,8 @@ public class LtsStructTemplateInfo {
             regexRules,
             layers,
             tokenizer,
-            logFormat);
+            logFormat,
+            rule);
     }
 
     @Override
@@ -439,6 +479,7 @@ public class LtsStructTemplateInfo {
         sb.append("    layers: ").append(toIndentedString(layers)).append("\n");
         sb.append("    tokenizer: ").append(toIndentedString(tokenizer)).append("\n");
         sb.append("    logFormat: ").append(toIndentedString(logFormat)).append("\n");
+        sb.append("    rule: ").append(toIndentedString(rule)).append("\n");
         sb.append("}");
         return sb.toString();
     }

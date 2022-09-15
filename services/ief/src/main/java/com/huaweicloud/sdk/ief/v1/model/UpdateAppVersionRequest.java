@@ -29,7 +29,7 @@ public class UpdateAppVersionRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private VersionUpdate body;
+    private UpdataAppVersionBody body;
 
     public UpdateAppVersionRequest withIefInstanceId(String iefInstanceId) {
         this.iefInstanceId = iefInstanceId;
@@ -82,14 +82,14 @@ public class UpdateAppVersionRequest {
         this.versionId = versionId;
     }
 
-    public UpdateAppVersionRequest withBody(VersionUpdate body) {
+    public UpdateAppVersionRequest withBody(UpdataAppVersionBody body) {
         this.body = body;
         return this;
     }
 
-    public UpdateAppVersionRequest withBody(Consumer<VersionUpdate> bodySetter) {
+    public UpdateAppVersionRequest withBody(Consumer<UpdataAppVersionBody> bodySetter) {
         if (this.body == null) {
-            this.body = new VersionUpdate();
+            this.body = new UpdataAppVersionBody();
             bodySetter.accept(this.body);
         }
 
@@ -100,11 +100,11 @@ public class UpdateAppVersionRequest {
      * Get body
      * @return body
      */
-    public VersionUpdate getBody() {
+    public UpdataAppVersionBody getBody() {
         return body;
     }
 
-    public void setBody(VersionUpdate body) {
+    public void setBody(UpdataAppVersionBody body) {
         this.body = body;
     }
 

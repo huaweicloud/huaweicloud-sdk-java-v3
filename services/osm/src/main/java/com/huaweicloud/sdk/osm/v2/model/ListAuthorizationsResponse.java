@@ -15,17 +15,17 @@ import java.util.function.Consumer;
 public class ListAuthorizationsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "total")
+    @JsonProperty(value = "count")
 
-    private Integer total;
+    private Integer count;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "incident_auth_list")
 
     private List<IncidentOrderAuthV2> incidentAuthList = null;
 
-    public ListAuthorizationsResponse withTotal(Integer total) {
-        this.total = total;
+    public ListAuthorizationsResponse withCount(Integer count) {
+        this.count = count;
         return this;
     }
 
@@ -33,14 +33,14 @@ public class ListAuthorizationsResponse extends SdkResponse {
      * 总数
      * minimum: 0
      * maximum: 9223372036854775807
-     * @return total
+     * @return count
      */
-    public Integer getTotal() {
-        return total;
+    public Integer getCount() {
+        return count;
     }
 
-    public void setTotal(Integer total) {
-        this.total = total;
+    public void setCount(Integer count) {
+        this.count = count;
     }
 
     public ListAuthorizationsResponse withIncidentAuthList(List<IncidentOrderAuthV2> incidentAuthList) {
@@ -85,20 +85,20 @@ public class ListAuthorizationsResponse extends SdkResponse {
             return false;
         }
         ListAuthorizationsResponse listAuthorizationsResponse = (ListAuthorizationsResponse) o;
-        return Objects.equals(this.total, listAuthorizationsResponse.total)
+        return Objects.equals(this.count, listAuthorizationsResponse.count)
             && Objects.equals(this.incidentAuthList, listAuthorizationsResponse.incidentAuthList);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(total, incidentAuthList);
+        return Objects.hash(count, incidentAuthList);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListAuthorizationsResponse {\n");
-        sb.append("    total: ").append(toIndentedString(total)).append("\n");
+        sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("    incidentAuthList: ").append(toIndentedString(incidentAuthList)).append("\n");
         sb.append("}");
         return sb.toString();

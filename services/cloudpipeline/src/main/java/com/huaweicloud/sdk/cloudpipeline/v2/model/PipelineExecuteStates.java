@@ -44,6 +44,11 @@ public class PipelineExecuteStates {
     private String pipelineId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "build_id")
+
+    private String buildId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "detail_url")
 
     private String detailUrl;
@@ -69,7 +74,7 @@ public class PipelineExecuteStates {
     }
 
     /**
-     * 流水线执行结果
+     * 流水线执行结果。取值及含义：success：成功；error：失败；aborted：终止
      * @return result
      */
     public String getResult() {
@@ -86,7 +91,7 @@ public class PipelineExecuteStates {
     }
 
     /**
-     * 流水线执行状态
+     * 流水线执行状态.取值和含义:waiting:等待;running:执行中;verifying:待审核;suspending:挂起;completed:完成
      * @return status
      */
     public String getStatus() {
@@ -181,6 +186,23 @@ public class PipelineExecuteStates {
         this.pipelineId = pipelineId;
     }
 
+    public PipelineExecuteStates withBuildId(String buildId) {
+        this.buildId = buildId;
+        return this;
+    }
+
+    /**
+     * 流水线执行ID
+     * @return buildId
+     */
+    public String getBuildId() {
+        return buildId;
+    }
+
+    public void setBuildId(String buildId) {
+        this.buildId = buildId;
+    }
+
     public PipelineExecuteStates withDetailUrl(String detailUrl) {
         this.detailUrl = detailUrl;
         return this;
@@ -264,6 +286,7 @@ public class PipelineExecuteStates {
             && Objects.equals(this.executor, pipelineExecuteStates.executor)
             && Objects.equals(this.pipelineName, pipelineExecuteStates.pipelineName)
             && Objects.equals(this.pipelineId, pipelineExecuteStates.pipelineId)
+            && Objects.equals(this.buildId, pipelineExecuteStates.buildId)
             && Objects.equals(this.detailUrl, pipelineExecuteStates.detailUrl)
             && Objects.equals(this.modifyUrl, pipelineExecuteStates.modifyUrl)
             && Objects.equals(this.startTime, pipelineExecuteStates.startTime)
@@ -272,8 +295,17 @@ public class PipelineExecuteStates {
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(result, status, stages, executor, pipelineName, pipelineId, detailUrl, modifyUrl, startTime, endTime);
+        return Objects.hash(result,
+            status,
+            stages,
+            executor,
+            pipelineName,
+            pipelineId,
+            buildId,
+            detailUrl,
+            modifyUrl,
+            startTime,
+            endTime);
     }
 
     @Override
@@ -286,6 +318,7 @@ public class PipelineExecuteStates {
         sb.append("    executor: ").append(toIndentedString(executor)).append("\n");
         sb.append("    pipelineName: ").append(toIndentedString(pipelineName)).append("\n");
         sb.append("    pipelineId: ").append(toIndentedString(pipelineId)).append("\n");
+        sb.append("    buildId: ").append(toIndentedString(buildId)).append("\n");
         sb.append("    detailUrl: ").append(toIndentedString(detailUrl)).append("\n");
         sb.append("    modifyUrl: ").append(toIndentedString(modifyUrl)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
