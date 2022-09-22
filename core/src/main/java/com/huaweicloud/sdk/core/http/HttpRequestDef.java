@@ -157,7 +157,7 @@ public interface HttpRequestDef<ReqT, ResT> {
 
         public <FieldT> Builder<R, T> withResponseField(String name, LocationType locationType,
             FieldExistence existence, Class<FieldT> fieldType, Consumer<FieldImpl<T, FieldT>> setter) {
-            FieldImpl<T, FieldT> field = new FieldImpl<T, FieldT>(name, locationType, existence, fieldType);
+            FieldImpl<T, FieldT> field = new FieldImpl<>(name, locationType, existence, fieldType);
             setter.accept(field);
             impl.responseFields.add(field);
             return this;
@@ -227,6 +227,7 @@ public interface HttpRequestDef<ReqT, ResT> {
             return name;
         }
 
+        @SuppressWarnings("unchecked")
         @Override
         public <T> Field<R, T> getRequestField(String name) {
             if (requestFieldsMap == null) {
@@ -272,7 +273,7 @@ public interface HttpRequestDef<ReqT, ResT> {
 
         @Override
         public Builder<R, T> builder() {
-            return new Builder(this);
+            return new Builder<>(this);
         }
     }
 }

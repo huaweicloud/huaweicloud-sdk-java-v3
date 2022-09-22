@@ -125,6 +125,16 @@ public class PostSourceServerBody {
 
     private String osVersion;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "virtualization_type")
+
+    private String virtualizationType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "linux_block_check")
+
+    private String linuxBlockCheck;
+
     /**
      * 源端服务器启动类型，如BIOS或者UEFI
      */
@@ -364,6 +374,264 @@ public class PostSourceServerBody {
 
     private String agentVersion;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "kernel_version")
+
+    private String kernelVersion;
+
+    /**
+     * 迁移周期 cutovering:启动目的端中 cutovered:启动目的端完成 checking:检查中 setting:设置中 replicating:复制中 syncing:同步中 
+     */
+    public static final class MigrationCycleEnum {
+
+        /**
+         * Enum CUTOVERING for value: "cutovering"
+         */
+        public static final MigrationCycleEnum CUTOVERING = new MigrationCycleEnum("cutovering");
+
+        /**
+         * Enum CUTOVERED for value: "cutovered"
+         */
+        public static final MigrationCycleEnum CUTOVERED = new MigrationCycleEnum("cutovered");
+
+        /**
+         * Enum CHECKING for value: "checking"
+         */
+        public static final MigrationCycleEnum CHECKING = new MigrationCycleEnum("checking");
+
+        /**
+         * Enum SETTING for value: "setting"
+         */
+        public static final MigrationCycleEnum SETTING = new MigrationCycleEnum("setting");
+
+        /**
+         * Enum REPLICATING for value: "replicating"
+         */
+        public static final MigrationCycleEnum REPLICATING = new MigrationCycleEnum("replicating");
+
+        /**
+         * Enum SYNCING for value: "syncing"
+         */
+        public static final MigrationCycleEnum SYNCING = new MigrationCycleEnum("syncing");
+
+        private static final Map<String, MigrationCycleEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, MigrationCycleEnum> createStaticFields() {
+            Map<String, MigrationCycleEnum> map = new HashMap<>();
+            map.put("cutovering", CUTOVERING);
+            map.put("cutovered", CUTOVERED);
+            map.put("checking", CHECKING);
+            map.put("setting", SETTING);
+            map.put("replicating", REPLICATING);
+            map.put("syncing", SYNCING);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        MigrationCycleEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static MigrationCycleEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            MigrationCycleEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new MigrationCycleEnum(value);
+            }
+            return result;
+        }
+
+        public static MigrationCycleEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            MigrationCycleEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof MigrationCycleEnum) {
+                return this.value.equals(((MigrationCycleEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "migration_cycle")
+
+    private MigrationCycleEnum migrationCycle;
+
+    /**
+     * 源端服务器状态 unavailable：环境校验不通过 waiting：等待 initialize：初始化 replicate：复制 syncing：持续同步 stopping：暂停中 stopped：已暂停 deleting：删除中 error：错误 cloning：等待克隆完成 cutovering：启动目的端中 finished：启动目的端完成
+     */
+    public static final class StateEnum {
+
+        /**
+         * Enum UNAVAILABLE for value: "unavailable"
+         */
+        public static final StateEnum UNAVAILABLE = new StateEnum("unavailable");
+
+        /**
+         * Enum WAITING for value: "waiting"
+         */
+        public static final StateEnum WAITING = new StateEnum("waiting");
+
+        /**
+         * Enum INITIALIZE for value: "initialize"
+         */
+        public static final StateEnum INITIALIZE = new StateEnum("initialize");
+
+        /**
+         * Enum REPLICATE for value: "replicate"
+         */
+        public static final StateEnum REPLICATE = new StateEnum("replicate");
+
+        /**
+         * Enum SYNCING for value: "syncing"
+         */
+        public static final StateEnum SYNCING = new StateEnum("syncing");
+
+        /**
+         * Enum STOPPING for value: "stopping"
+         */
+        public static final StateEnum STOPPING = new StateEnum("stopping");
+
+        /**
+         * Enum STOPPED for value: "stopped"
+         */
+        public static final StateEnum STOPPED = new StateEnum("stopped");
+
+        /**
+         * Enum DELETING for value: "deleting"
+         */
+        public static final StateEnum DELETING = new StateEnum("deleting");
+
+        /**
+         * Enum ERROR for value: "error"
+         */
+        public static final StateEnum ERROR = new StateEnum("error");
+
+        /**
+         * Enum CLONING for value: "cloning"
+         */
+        public static final StateEnum CLONING = new StateEnum("cloning");
+
+        /**
+         * Enum CUTOVERING for value: "cutovering"
+         */
+        public static final StateEnum CUTOVERING = new StateEnum("cutovering");
+
+        /**
+         * Enum FINISHED for value: "finished"
+         */
+        public static final StateEnum FINISHED = new StateEnum("finished");
+
+        private static final Map<String, StateEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StateEnum> createStaticFields() {
+            Map<String, StateEnum> map = new HashMap<>();
+            map.put("unavailable", UNAVAILABLE);
+            map.put("waiting", WAITING);
+            map.put("initialize", INITIALIZE);
+            map.put("replicate", REPLICATE);
+            map.put("syncing", SYNCING);
+            map.put("stopping", STOPPING);
+            map.put("stopped", STOPPED);
+            map.put("deleting", DELETING);
+            map.put("error", ERROR);
+            map.put("cloning", CLONING);
+            map.put("cutovering", CUTOVERING);
+            map.put("finished", FINISHED);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        StateEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static StateEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            StateEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new StateEnum(value);
+            }
+            return result;
+        }
+
+        public static StateEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            StateEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof StateEnum) {
+                return this.value.equals(((StateEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "state")
+
+    private StateEnum state;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "oem_system")
+
+    private Boolean oemSystem;
+
     public PostSourceServerBody withId(String id) {
         this.id = id;
         return this;
@@ -464,6 +732,40 @@ public class PostSourceServerBody {
 
     public void setOsVersion(String osVersion) {
         this.osVersion = osVersion;
+    }
+
+    public PostSourceServerBody withVirtualizationType(String virtualizationType) {
+        this.virtualizationType = virtualizationType;
+        return this;
+    }
+
+    /**
+     * 操作系统虚拟化方式
+     * @return virtualizationType
+     */
+    public String getVirtualizationType() {
+        return virtualizationType;
+    }
+
+    public void setVirtualizationType(String virtualizationType) {
+        this.virtualizationType = virtualizationType;
+    }
+
+    public PostSourceServerBody withLinuxBlockCheck(String linuxBlockCheck) {
+        this.linuxBlockCheck = linuxBlockCheck;
+        return this;
+    }
+
+    /**
+     * Linux操作系统块检查
+     * @return linuxBlockCheck
+     */
+    public String getLinuxBlockCheck() {
+        return linuxBlockCheck;
+    }
+
+    public void setLinuxBlockCheck(String linuxBlockCheck) {
+        this.linuxBlockCheck = linuxBlockCheck;
     }
 
     public PostSourceServerBody withFirmware(FirmwareEnum firmware) {
@@ -823,6 +1125,74 @@ public class PostSourceServerBody {
         this.agentVersion = agentVersion;
     }
 
+    public PostSourceServerBody withKernelVersion(String kernelVersion) {
+        this.kernelVersion = kernelVersion;
+        return this;
+    }
+
+    /**
+     * 内核版本信息
+     * @return kernelVersion
+     */
+    public String getKernelVersion() {
+        return kernelVersion;
+    }
+
+    public void setKernelVersion(String kernelVersion) {
+        this.kernelVersion = kernelVersion;
+    }
+
+    public PostSourceServerBody withMigrationCycle(MigrationCycleEnum migrationCycle) {
+        this.migrationCycle = migrationCycle;
+        return this;
+    }
+
+    /**
+     * 迁移周期 cutovering:启动目的端中 cutovered:启动目的端完成 checking:检查中 setting:设置中 replicating:复制中 syncing:同步中 
+     * @return migrationCycle
+     */
+    public MigrationCycleEnum getMigrationCycle() {
+        return migrationCycle;
+    }
+
+    public void setMigrationCycle(MigrationCycleEnum migrationCycle) {
+        this.migrationCycle = migrationCycle;
+    }
+
+    public PostSourceServerBody withState(StateEnum state) {
+        this.state = state;
+        return this;
+    }
+
+    /**
+     * 源端服务器状态 unavailable：环境校验不通过 waiting：等待 initialize：初始化 replicate：复制 syncing：持续同步 stopping：暂停中 stopped：已暂停 deleting：删除中 error：错误 cloning：等待克隆完成 cutovering：启动目的端中 finished：启动目的端完成
+     * @return state
+     */
+    public StateEnum getState() {
+        return state;
+    }
+
+    public void setState(StateEnum state) {
+        this.state = state;
+    }
+
+    public PostSourceServerBody withOemSystem(Boolean oemSystem) {
+        this.oemSystem = oemSystem;
+        return this;
+    }
+
+    /**
+     * 是否是OEM操作系统(Windows)
+     * @return oemSystem
+     */
+    public Boolean getOemSystem() {
+        return oemSystem;
+    }
+
+    public void setOemSystem(Boolean oemSystem) {
+        this.oemSystem = oemSystem;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -837,6 +1207,8 @@ public class PostSourceServerBody {
             && Objects.equals(this.hostname, postSourceServerBody.hostname)
             && Objects.equals(this.osType, postSourceServerBody.osType)
             && Objects.equals(this.osVersion, postSourceServerBody.osVersion)
+            && Objects.equals(this.virtualizationType, postSourceServerBody.virtualizationType)
+            && Objects.equals(this.linuxBlockCheck, postSourceServerBody.linuxBlockCheck)
             && Objects.equals(this.firmware, postSourceServerBody.firmware)
             && Objects.equals(this.cpuQuantity, postSourceServerBody.cpuQuantity)
             && Objects.equals(this.memory, postSourceServerBody.memory)
@@ -853,7 +1225,11 @@ public class PostSourceServerBody {
             && Objects.equals(this.bootLoader, postSourceServerBody.bootLoader)
             && Objects.equals(this.systemDir, postSourceServerBody.systemDir)
             && Objects.equals(this.volumeGroups, postSourceServerBody.volumeGroups)
-            && Objects.equals(this.agentVersion, postSourceServerBody.agentVersion);
+            && Objects.equals(this.agentVersion, postSourceServerBody.agentVersion)
+            && Objects.equals(this.kernelVersion, postSourceServerBody.kernelVersion)
+            && Objects.equals(this.migrationCycle, postSourceServerBody.migrationCycle)
+            && Objects.equals(this.state, postSourceServerBody.state)
+            && Objects.equals(this.oemSystem, postSourceServerBody.oemSystem);
     }
 
     @Override
@@ -864,6 +1240,8 @@ public class PostSourceServerBody {
             hostname,
             osType,
             osVersion,
+            virtualizationType,
+            linuxBlockCheck,
             firmware,
             cpuQuantity,
             memory,
@@ -880,7 +1258,11 @@ public class PostSourceServerBody {
             bootLoader,
             systemDir,
             volumeGroups,
-            agentVersion);
+            agentVersion,
+            kernelVersion,
+            migrationCycle,
+            state,
+            oemSystem);
     }
 
     @Override
@@ -893,6 +1275,8 @@ public class PostSourceServerBody {
         sb.append("    hostname: ").append(toIndentedString(hostname)).append("\n");
         sb.append("    osType: ").append(toIndentedString(osType)).append("\n");
         sb.append("    osVersion: ").append(toIndentedString(osVersion)).append("\n");
+        sb.append("    virtualizationType: ").append(toIndentedString(virtualizationType)).append("\n");
+        sb.append("    linuxBlockCheck: ").append(toIndentedString(linuxBlockCheck)).append("\n");
         sb.append("    firmware: ").append(toIndentedString(firmware)).append("\n");
         sb.append("    cpuQuantity: ").append(toIndentedString(cpuQuantity)).append("\n");
         sb.append("    memory: ").append(toIndentedString(memory)).append("\n");
@@ -910,6 +1294,10 @@ public class PostSourceServerBody {
         sb.append("    systemDir: ").append(toIndentedString(systemDir)).append("\n");
         sb.append("    volumeGroups: ").append(toIndentedString(volumeGroups)).append("\n");
         sb.append("    agentVersion: ").append(toIndentedString(agentVersion)).append("\n");
+        sb.append("    kernelVersion: ").append(toIndentedString(kernelVersion)).append("\n");
+        sb.append("    migrationCycle: ").append(toIndentedString(migrationCycle)).append("\n");
+        sb.append("    state: ").append(toIndentedString(state)).append("\n");
+        sb.append("    oemSystem: ").append(toIndentedString(oemSystem)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -36,7 +36,7 @@ public class TargetServerAssociatedWithTask {
     private String ip;
 
     /**
-     * 目的端服务器的OS类型
+     * 目的端服务器的OS类型 WINDOWS:WINDOWS系统 LINUX:LINUX系统 
      */
     public static final class OsTypeEnum {
 
@@ -145,7 +145,7 @@ public class TargetServerAssociatedWithTask {
     }
 
     /**
-     * 目的端虚机id
+     * 目的端虚机ID
      * @return vmId
      */
     public String getVmId() {
@@ -179,7 +179,7 @@ public class TargetServerAssociatedWithTask {
     }
 
     /**
-     * 目的端服务器ip
+     * 目的端服务器IP
      * @return ip
      */
     public String getIp() {
@@ -196,7 +196,7 @@ public class TargetServerAssociatedWithTask {
     }
 
     /**
-     * 目的端服务器的OS类型
+     * 目的端服务器的OS类型 WINDOWS:WINDOWS系统 LINUX:LINUX系统 
      * @return osType
      */
     public OsTypeEnum getOsType() {

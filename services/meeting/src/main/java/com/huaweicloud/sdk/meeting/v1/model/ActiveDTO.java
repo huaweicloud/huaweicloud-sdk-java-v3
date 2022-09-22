@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 约束 - 号码和邮箱必须填一个，若企业未开启短信功能，则邮箱必填
+ * 设备联系人信息。
  */
 public class ActiveDTO {
 
@@ -31,7 +31,7 @@ public class ActiveDTO {
     }
 
     /**
-     * 手机号，如果为手机号，必须加上国家码。 例如中国大陆手机+86xxxxxxxxxxx，当填写手机号时 “country”参数必填。 maxLength：32 minLength：0
+     * 手机号。 例如中国大陆手机+86xxxxxxxxxxx。当填写手机号时 “country”参数必填。 > 号码和邮箱必须填一个，若企业未开启短信功能，则邮箱必填。 
      * @return smsNumber
      */
     public String getSmsNumber() {
@@ -48,7 +48,7 @@ public class ActiveDTO {
     }
 
     /**
-     * 若smsNumber为手机号,则需带上手机号所属的国家。 例如国家为中国大陆则country参数取值为chinaPR 国家和国家码的对应关系请参考：https://support.huaweicloud.com/api-meeting/meeting_21_0109.html 
+     * [[手机号所属的国家](https://support.huaweicloud.com/api-meeting/meeting_21_0109.html#ZH-CN_TOPIC_0212714591__table19371178135314)](tag:hws)[[手机号所属的国家](https://support.huaweicloud.com/intl/zh-cn/api-meeting/meeting_21_0109.html#ZH-CN_TOPIC_0212714591__table19371178135314)](tag:hk) 。 
      * @return country
      */
     public String getCountry() {
@@ -65,7 +65,7 @@ public class ActiveDTO {
     }
 
     /**
-     * 邮件地址。 maxLength：255 minLength：0
+     * 邮件地址。 > 号码和邮箱必须填一个，若企业未开启短信功能，则邮箱必填。 
      * @return emailAddr
      */
     public String getEmailAddr() {

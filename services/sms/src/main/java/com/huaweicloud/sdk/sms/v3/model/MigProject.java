@@ -9,11 +9,17 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * SMS迁移项目信息
  */
 public class MigProject {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
@@ -29,6 +35,11 @@ public class MigProject {
     @JsonProperty(value = "isdefault")
 
     private Boolean isdefault;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "template")
+
+    private TemplateResponseBody template;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region")
@@ -56,7 +67,7 @@ public class MigProject {
     private Boolean existServer;
 
     /**
-     * 迁移项目类型
+     * 迁移项目类型 MIGRATE_BLOCK:块级迁移 MIGRATE_FILE:文件级迁移
      */
     public static final class TypeEnum {
 
@@ -147,6 +158,23 @@ public class MigProject {
 
     private Boolean syncing;
 
+    public MigProject withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * 迁移项目ID
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public MigProject withName(String name) {
         this.name = name;
         return this;
@@ -196,6 +224,32 @@ public class MigProject {
 
     public void setIsdefault(Boolean isdefault) {
         this.isdefault = isdefault;
+    }
+
+    public MigProject withTemplate(TemplateResponseBody template) {
+        this.template = template;
+        return this;
+    }
+
+    public MigProject withTemplate(Consumer<TemplateResponseBody> templateSetter) {
+        if (this.template == null) {
+            this.template = new TemplateResponseBody();
+            templateSetter.accept(this.template);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get template
+     * @return template
+     */
+    public TemplateResponseBody getTemplate() {
+        return template;
+    }
+
+    public void setTemplate(TemplateResponseBody template) {
+        this.template = template;
     }
 
     public MigProject withRegion(String region) {
@@ -291,7 +345,7 @@ public class MigProject {
     }
 
     /**
-     * 迁移项目类型
+     * 迁移项目类型 MIGRATE_BLOCK:块级迁移 MIGRATE_FILE:文件级迁移
      * @return type
      */
     public TypeEnum getType() {
@@ -345,8 +399,10 @@ public class MigProject {
             return false;
         }
         MigProject migProject = (MigProject) o;
-        return Objects.equals(this.name, migProject.name) && Objects.equals(this.description, migProject.description)
-            && Objects.equals(this.isdefault, migProject.isdefault) && Objects.equals(this.region, migProject.region)
+        return Objects.equals(this.id, migProject.id) && Objects.equals(this.name, migProject.name)
+            && Objects.equals(this.description, migProject.description)
+            && Objects.equals(this.isdefault, migProject.isdefault)
+            && Objects.equals(this.template, migProject.template) && Objects.equals(this.region, migProject.region)
             && Objects.equals(this.startTargetServer, migProject.startTargetServer)
             && Objects.equals(this.speedLimit, migProject.speedLimit)
             && Objects.equals(this.usePublicIp, migProject.usePublicIp)
@@ -357,9 +413,11 @@ public class MigProject {
 
     @Override
     public int hashCode() {
-        return Objects.hash(name,
+        return Objects.hash(id,
+            name,
             description,
             isdefault,
+            template,
             region,
             startTargetServer,
             speedLimit,
@@ -374,9 +432,11 @@ public class MigProject {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class MigProject {\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    isdefault: ").append(toIndentedString(isdefault)).append("\n");
+        sb.append("    template: ").append(toIndentedString(template)).append("\n");
         sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("    startTargetServer: ").append(toIndentedString(startTargetServer)).append("\n");
         sb.append("    speedLimit: ").append(toIndentedString(speedLimit)).append("\n");

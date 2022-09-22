@@ -1254,6 +1254,38 @@ public class ProjectManMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DownloadImageFileRequest, DownloadImageFileResponse> downloadImageFile =
+        genFordownloadImageFile();
+
+    private static HttpRequestDef<DownloadImageFileRequest, DownloadImageFileResponse> genFordownloadImageFile() {
+        // basic
+        HttpRequestDef.Builder<DownloadImageFileRequest, DownloadImageFileResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, DownloadImageFileRequest.class, DownloadImageFileResponse.class)
+                .withName("DownloadImageFile")
+                .withUri("/v4/projects/{project_id}/image-file")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadImageFileRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<String>withRequestField("image_uri",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadImageFileRequest::getImageUri, (req, v) -> {
+                req.setImageUri(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListAssociatedIssuesRequest, ListAssociatedIssuesResponse> listAssociatedIssues =
         genForlistAssociatedIssues();
 
@@ -1925,6 +1957,53 @@ public class ProjectManMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListScrumProjectStatusesRequest, ListScrumProjectStatusesResponse> listScrumProjectStatuses =
+        genForlistScrumProjectStatuses();
+
+    private static HttpRequestDef<ListScrumProjectStatusesRequest, ListScrumProjectStatusesResponse> genForlistScrumProjectStatuses() {
+        // basic
+        HttpRequestDef.Builder<ListScrumProjectStatusesRequest, ListScrumProjectStatusesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ListScrumProjectStatusesRequest.class, ListScrumProjectStatusesResponse.class)
+                .withName("ListScrumProjectStatuses")
+                .withUri("/v4/projects/{project_id}/statuses")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScrumProjectStatusesRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListScrumProjectStatusesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListScrumProjectStatusesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("tracker_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListScrumProjectStatusesRequest::getTrackerId, (req, v) -> {
+                req.setTrackerId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowIssueCompletionRateRequest, ShowIssueCompletionRateResponse> showIssueCompletionRate =
         genForshowIssueCompletionRate();
 
@@ -2219,6 +2298,45 @@ public class ProjectManMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateProjectModuleRequestBody.class),
             f -> f.withMarshaller(UpdateProjectModuleRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UploadAttachmentsRequest, UploadAttachmentsResponse> uploadAttachments =
+        genForuploadAttachments();
+
+    private static HttpRequestDef<UploadAttachmentsRequest, UploadAttachmentsResponse> genForuploadAttachments() {
+        // basic
+        HttpRequestDef.Builder<UploadAttachmentsRequest, UploadAttachmentsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UploadAttachmentsRequest.class, UploadAttachmentsResponse.class)
+                .withName("UploadAttachments")
+                .withUri("/v4/projects/{project_id}/issues/{issue_id}/attachments/upload")
+                .withContentType("multipart/form-data");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UploadAttachmentsRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<String>withRequestField("issue_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UploadAttachmentsRequest::getIssueId, (req, v) -> {
+                req.setIssueId(v);
+            }));
+        builder.<UploadAttachmentsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UploadAttachmentsRequestBody.class),
+            f -> f.withMarshaller(UploadAttachmentsRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

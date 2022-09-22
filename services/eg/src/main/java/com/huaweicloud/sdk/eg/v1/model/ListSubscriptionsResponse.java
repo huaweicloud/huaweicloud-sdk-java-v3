@@ -35,7 +35,7 @@ public class ListSubscriptionsResponse extends SdkResponse {
     }
 
     /**
-     * 事件订阅总数
+     * 总数
      * minimum: 0
      * maximum: 100
      * @return total

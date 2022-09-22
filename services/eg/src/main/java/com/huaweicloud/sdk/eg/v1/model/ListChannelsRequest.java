@@ -147,7 +147,7 @@ public class ListChannelsRequest {
     }
 
     /**
-     * 每页显示的条目数量，不能小于0。
+     * 每页显示的条目数量，不能小于0
      * minimum: 0
      * maximum: 100
      * @return limit

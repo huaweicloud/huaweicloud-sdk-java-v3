@@ -31,7 +31,7 @@ public class ValidateTokenReqDTO {
     }
 
     /**
-     * 登录用账号的token字符串
+     * Access Token。
      * @return token
      */
     public String getToken() {
@@ -48,7 +48,7 @@ public class ValidateTokenReqDTO {
     }
 
     /**
-     * 是否生成新的token，内部使用参数。 true：生成新的token值。 false：不生成新的token值。 
+     * 是否生成新的Token。 * true：生成新的token值 * false：不生成新的token值 
      * @return needGenNewToken
      */
     public Boolean getNeedGenNewToken() {
@@ -65,7 +65,7 @@ public class ValidateTokenReqDTO {
     }
 
     /**
-     * 是否需要返回用户可见帐号信息（帐号、用户姓名等信息）。
+     * 是否需要返回用户帐号信息（帐号、用户名称等信息）。
      * @return needAccountInfo
      */
     public Boolean getNeedAccountInfo() {

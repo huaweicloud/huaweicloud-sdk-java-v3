@@ -40,6 +40,11 @@ public class IdCardRequestBody {
 
     private Boolean detectReproduce;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "detect_copy")
+
+    private Boolean detectCopy;
+
     public IdCardRequestBody withImage(String image) {
         this.image = image;
         return this;
@@ -142,6 +147,23 @@ public class IdCardRequestBody {
         this.detectReproduce = detectReproduce;
     }
 
+    public IdCardRequestBody withDetectCopy(Boolean detectCopy) {
+        this.detectCopy = detectCopy;
+        return this;
+    }
+
+    /**
+     * 返回判断身份证图像是否是黑白复印件的开关，默认false，可选值如下所示：  - true ：返回身份证图像是否是复印件  - false : 不返回身份证图像是否是复印件             
+     * @return detectCopy
+     */
+    public Boolean getDetectCopy() {
+        return detectCopy;
+    }
+
+    public void setDetectCopy(Boolean detectCopy) {
+        this.detectCopy = detectCopy;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -155,12 +177,13 @@ public class IdCardRequestBody {
             && Objects.equals(this.side, idCardRequestBody.side)
             && Objects.equals(this.returnVerification, idCardRequestBody.returnVerification)
             && Objects.equals(this.returnTextLocation, idCardRequestBody.returnTextLocation)
-            && Objects.equals(this.detectReproduce, idCardRequestBody.detectReproduce);
+            && Objects.equals(this.detectReproduce, idCardRequestBody.detectReproduce)
+            && Objects.equals(this.detectCopy, idCardRequestBody.detectCopy);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(image, url, side, returnVerification, returnTextLocation, detectReproduce);
+        return Objects.hash(image, url, side, returnVerification, returnTextLocation, detectReproduce, detectCopy);
     }
 
     @Override
@@ -173,6 +196,7 @@ public class IdCardRequestBody {
         sb.append("    returnVerification: ").append(toIndentedString(returnVerification)).append("\n");
         sb.append("    returnTextLocation: ").append(toIndentedString(returnTextLocation)).append("\n");
         sb.append("    detectReproduce: ").append(toIndentedString(detectReproduce)).append("\n");
+        sb.append("    detectCopy: ").append(toIndentedString(detectCopy)).append("\n");
         sb.append("}");
         return sb.toString();
     }

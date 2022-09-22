@@ -78,7 +78,7 @@ public class ShowHisMeetingDetailRequest {
     }
 
     /**
-     * 指定返回的与会者列表的记录索引。该值必须大于等于0；默认为0。
+     * 查询偏移量。默认为0。针对PageParticipant 中的与会者分页。
      * @return offset
      */
     public Integer getOffset() {
@@ -95,7 +95,7 @@ public class ShowHisMeetingDetailRequest {
     }
 
     /**
-     * 指定返回的与会者记录数，默认是20。
+     * 查询数量。默认值20。
      * @return limit
      */
     public Integer getLimit() {
@@ -112,7 +112,7 @@ public class ShowHisMeetingDetailRequest {
     }
 
     /**
-     * 根据会议主题，预定人和云会议室会议id关键词的字符串，查询历史会议信息。
+     * 查询条件 。会议主题、会议预约人和会议ID等可作为搜索内容。长度限制为1-128个字符。
      * @return searchKey
      */
     public String getSearchKey() {
@@ -129,7 +129,7 @@ public class ShowHisMeetingDetailRequest {
     }
 
     /**
-     * 用户的UUID（已在USG注册过的）。
+     * 用户的UUID。 > 该参数将废弃，请勿使用。 
      * @return userUUID
      */
     public String getUserUUID() {
@@ -184,7 +184,7 @@ public class ShowHisMeetingDetailRequest {
     }
 
     /**
-     * 标识是否为第三方portal过来的请求。
+     * 标识是否为第三方portal过来的请求。 > 该参数将废弃，请勿使用。 
      * @return xAuthorizationType
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -203,7 +203,7 @@ public class ShowHisMeetingDetailRequest {
     }
 
     /**
-     * 用于区分到哪个HCSO站点鉴权。
+     * 用于区分到哪个HCSO站点鉴权。 > 该参数将废弃，请勿使用。 
      * @return xSiteId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

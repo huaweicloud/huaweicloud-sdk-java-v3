@@ -27,6 +27,8 @@ package com.huaweicloud.sdk.core.exception;
  * @author HuaweiCloud_SDK
  */
 public class ConnectionTimeoutException extends ConnectionException {
+    private static final long serialVersionUID = -3185178964566052708L;
+
     public ConnectionTimeoutException(String message) {
         super(message);
     }

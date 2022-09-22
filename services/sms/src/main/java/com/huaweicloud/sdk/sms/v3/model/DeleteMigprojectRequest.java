@@ -21,7 +21,7 @@ public class DeleteMigprojectRequest {
     }
 
     /**
-     * 需要删除的迁移项目的id
+     * 需要删除的迁移项目的ID
      * @return migProjectId
      */
     public String getMigProjectId() {

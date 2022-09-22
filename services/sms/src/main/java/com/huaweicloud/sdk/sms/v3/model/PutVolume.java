@@ -31,7 +31,7 @@ public class PutVolume {
     }
 
     /**
-     * 数据库id
+     * 数据库ID
      * @return id
      */
     public String getId() {

@@ -5,10 +5,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 目的端服务器关联磁盘
@@ -26,7 +29,7 @@ public class DiskIntargetServer {
     private Long size;
 
     /**
-     * 磁盘的作用 
+     * 磁盘的作用 BOOT：BOOT设备 OS：系统设备 NORMAL:平常
      */
     public static final class DeviceUseEnum {
 
@@ -113,6 +116,16 @@ public class DiskIntargetServer {
 
     private DeviceUseEnum deviceUse;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "used_size")
+
+    private Long usedSize;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "physical_volumes")
+
+    private List<PhysicalVolumes> physicalVolumes = null;
+
     public DiskIntargetServer withName(String name) {
         this.name = name;
         return this;
@@ -155,7 +168,7 @@ public class DiskIntargetServer {
     }
 
     /**
-     * 磁盘的作用 
+     * 磁盘的作用 BOOT：BOOT设备 OS：系统设备 NORMAL:平常
      * @return deviceUse
      */
     public DeviceUseEnum getDeviceUse() {
@@ -164,6 +177,58 @@ public class DiskIntargetServer {
 
     public void setDeviceUse(DeviceUseEnum deviceUse) {
         this.deviceUse = deviceUse;
+    }
+
+    public DiskIntargetServer withUsedSize(Long usedSize) {
+        this.usedSize = usedSize;
+        return this;
+    }
+
+    /**
+     * 磁盘已使用大小，以字节为单位
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return usedSize
+     */
+    public Long getUsedSize() {
+        return usedSize;
+    }
+
+    public void setUsedSize(Long usedSize) {
+        this.usedSize = usedSize;
+    }
+
+    public DiskIntargetServer withPhysicalVolumes(List<PhysicalVolumes> physicalVolumes) {
+        this.physicalVolumes = physicalVolumes;
+        return this;
+    }
+
+    public DiskIntargetServer addPhysicalVolumesItem(PhysicalVolumes physicalVolumesItem) {
+        if (this.physicalVolumes == null) {
+            this.physicalVolumes = new ArrayList<>();
+        }
+        this.physicalVolumes.add(physicalVolumesItem);
+        return this;
+    }
+
+    public DiskIntargetServer withPhysicalVolumes(Consumer<List<PhysicalVolumes>> physicalVolumesSetter) {
+        if (this.physicalVolumes == null) {
+            this.physicalVolumes = new ArrayList<>();
+        }
+        physicalVolumesSetter.accept(this.physicalVolumes);
+        return this;
+    }
+
+    /**
+     * 物理卷信息
+     * @return physicalVolumes
+     */
+    public List<PhysicalVolumes> getPhysicalVolumes() {
+        return physicalVolumes;
+    }
+
+    public void setPhysicalVolumes(List<PhysicalVolumes> physicalVolumes) {
+        this.physicalVolumes = physicalVolumes;
     }
 
     @Override
@@ -176,12 +241,14 @@ public class DiskIntargetServer {
         }
         DiskIntargetServer diskIntargetServer = (DiskIntargetServer) o;
         return Objects.equals(this.name, diskIntargetServer.name) && Objects.equals(this.size, diskIntargetServer.size)
-            && Objects.equals(this.deviceUse, diskIntargetServer.deviceUse);
+            && Objects.equals(this.deviceUse, diskIntargetServer.deviceUse)
+            && Objects.equals(this.usedSize, diskIntargetServer.usedSize)
+            && Objects.equals(this.physicalVolumes, diskIntargetServer.physicalVolumes);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, size, deviceUse);
+        return Objects.hash(name, size, deviceUse, usedSize, physicalVolumes);
     }
 
     @Override
@@ -191,6 +258,8 @@ public class DiskIntargetServer {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    deviceUse: ").append(toIndentedString(deviceUse)).append("\n");
+        sb.append("    usedSize: ").append(toIndentedString(usedSize)).append("\n");
+        sb.append("    physicalVolumes: ").append(toIndentedString(physicalVolumes)).append("\n");
         sb.append("}");
         return sb.toString();
     }

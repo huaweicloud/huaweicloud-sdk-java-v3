@@ -49,7 +49,7 @@ public class RenameParticipantRequest {
     }
 
     /**
-     * 会控授权令牌，通过获取会控token接口获得。
+     * 会控Token，通过[[获取会控token](https://support.huaweicloud.com/api-meeting/meeting_21_0027.html)](tag:hws)[[获取会控token](https://support.huaweicloud.com/intl/zh-cn/api-meeting/meeting_21_0027.html)](tag:hk)接口获得。
      * @return xConferenceAuthorization
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

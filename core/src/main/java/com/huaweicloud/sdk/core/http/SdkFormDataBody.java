@@ -27,5 +27,5 @@ import java.util.Map;
  * @author HuaweiCloud_SDK
  */
 public interface SdkFormDataBody {
-    Map<String, FormDataPart> buildFormData();
+    Map<String, FormDataPart<?>> buildFormData();
 }

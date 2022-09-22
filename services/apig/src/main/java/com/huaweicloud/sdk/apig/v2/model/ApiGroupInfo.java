@@ -283,7 +283,7 @@ public class ApiGroupInfo {
     }
 
     /**
-     * 是否已上架云市场： - 1：已上架 - 2：未上架 - 3：审核中
+     * 是否已上架云商店： - 1：已上架 - 2：未上架 - 3：审核中
      * @return onSellStatus
      */
     public Integer getOnSellStatus() {

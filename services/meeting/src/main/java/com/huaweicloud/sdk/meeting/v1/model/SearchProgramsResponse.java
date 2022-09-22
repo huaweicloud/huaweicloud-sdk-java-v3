@@ -40,7 +40,7 @@ public class SearchProgramsResponse extends SdkResponse {
     }
 
     /**
-     * 页面起始页，从0开始
+     * 页面起始页，从0开始。
      * @return offset
      */
     public Integer getOffset() {
@@ -107,7 +107,7 @@ public class SearchProgramsResponse extends SdkResponse {
     }
 
     /**
-     * 节目响应信息
+     * 节目信息列表。
      * @return data
      */
     public List<ProgramResponseBase> getData() {

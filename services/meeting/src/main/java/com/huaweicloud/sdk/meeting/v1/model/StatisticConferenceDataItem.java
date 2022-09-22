@@ -51,7 +51,7 @@ public class StatisticConferenceDataItem {
     }
 
     /**
-     * * 日期/月份，category = conference_info时有效。 * 小时，category = conference_hourly_info时有效。
+     * 日期/月份，category = conference_info时有效。 小时，category = conference_hourly_info时有效。
      * @return time
      */
     public String getTime() {

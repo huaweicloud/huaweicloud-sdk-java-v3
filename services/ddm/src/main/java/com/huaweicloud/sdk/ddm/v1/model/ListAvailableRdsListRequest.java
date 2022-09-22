@@ -66,9 +66,9 @@ public class ListAvailableRdsListRequest {
     }
 
     /**
-     * 分页参数：每页多少条 [大于0且小于等于128]。默认值是128。
+     * 分页参数：每页多少条 [大于0且小于等于1000]。默认值是128。
      * minimum: 1
-     * maximum: 128
+     * maximum: 1000
      * @return limit
      */
     public Integer getLimit() {

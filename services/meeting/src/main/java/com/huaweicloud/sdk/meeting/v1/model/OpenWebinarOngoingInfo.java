@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 正在召开研讨会议信息（含基本信息，会议UUID 及实时在线人数
+ * 正在召开研讨会信息。
  */
 public class OpenWebinarOngoingInfo {
 
@@ -106,7 +106,7 @@ public class OpenWebinarOngoingInfo {
     }
 
     /**
-     * 实时在线人数
+     * 实时在线人数。
      * @return onlineAttendeeCount
      */
     public Integer getOnlineAttendeeCount() {
@@ -123,7 +123,7 @@ public class OpenWebinarOngoingInfo {
     }
 
     /**
-     * 会议UUID
+     * 网络研讨会UUID。
      * @return confUUID
      */
     public String getConfUUID() {
@@ -140,7 +140,7 @@ public class OpenWebinarOngoingInfo {
     }
 
     /**
-     * 预订人部门
+     * 预订人部门名称。
      * @return deptName
      */
     public String getDeptName() {
@@ -157,7 +157,7 @@ public class OpenWebinarOngoingInfo {
     }
 
     /**
-     * 会议ID。长度限制为32个字符。
+     * 网络研讨会ID。
      * @return conferenceId
      */
     public String getConferenceId() {
@@ -174,7 +174,7 @@ public class OpenWebinarOngoingInfo {
     }
 
     /**
-     * 企业id
+     * 企业ID。
      * @return corpId
      */
     public String getCorpId() {
@@ -191,7 +191,7 @@ public class OpenWebinarOngoingInfo {
     }
 
     /**
-     * 主题
+     * 网络研讨会主题。
      * @return subject
      */
     public String getSubject() {
@@ -208,7 +208,7 @@ public class OpenWebinarOngoingInfo {
     }
 
     /**
-     * 描述
+     * 网络研讨会描述。
      * @return description
      */
     public String getDescription() {
@@ -225,7 +225,7 @@ public class OpenWebinarOngoingInfo {
     }
 
     /**
-     * 会议召开时间
+     * 网络研讨会开始时间（UTC时间），格式“yyyy-MM-dd HH:mm”。
      * @return startTime
      */
     public String getStartTime() {
@@ -242,7 +242,7 @@ public class OpenWebinarOngoingInfo {
     }
 
     /**
-     * 时区ID
+     * 会议通知中会议时间的时区信息。时区信息，参考[[时区映射关系](https://support.huaweicloud.com/api-meeting/meeting_21_0110.html#ZH-CN_TOPIC_0212714472__table137407441463)](tag:hws)[[时区映射关系](https://support.huaweicloud.com/intl/zh-cn/api-meeting/meeting_21_0110.html#ZH-CN_TOPIC_0212714472__table137407441463)](tag:hk)。 > * 举例：“timeZoneID”:\"26\"，则通过华为云会议发送的会议通知中的时间将会标记为如“2021/11/11 星期四 00:00 - 02:00 (GMT) 格林威治标准时间:都柏林, 爱丁堡, 里斯本, 伦敦”。 
      * @return timeZoneId
      */
     public Integer getTimeZoneId() {
@@ -259,7 +259,7 @@ public class OpenWebinarOngoingInfo {
     }
 
     /**
-     * 会议预订者ID
+     * 网络研讨会预订者的用户UUID。
      * @return scheduserId
      */
     public String getScheduserId() {
@@ -276,7 +276,7 @@ public class OpenWebinarOngoingInfo {
     }
 
     /**
-     * 会议预订者帐号名称。长度最大限制为96个字符。
+     * 预订者名称。
      * @return scheduserName
      */
     public String getScheduserName() {
@@ -293,7 +293,7 @@ public class OpenWebinarOngoingInfo {
     }
 
     /**
-     * 网络研讨会资源名
+     * 网络研讨会VMR名称。
      * @return vmrPkgName
      */
     public String getVmrPkgName() {

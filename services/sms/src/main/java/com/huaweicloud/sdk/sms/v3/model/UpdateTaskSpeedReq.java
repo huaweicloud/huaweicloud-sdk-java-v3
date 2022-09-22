@@ -346,6 +346,8 @@ public class UpdateTaskSpeedReq {
 
     /**
      * 实施文件压缩率
+     * minimum: 0
+     * maximum: 1E+4
      * @return compressRate
      */
     public Double getCompressRate() {

@@ -71,7 +71,7 @@ public class SearchResourceRequest {
     }
 
     /**
-     * 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用uuId，若不携带，则后台自动生成
+     * 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用UUID，若不携带，则后台自动生成。
      * @return xRequestId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -90,7 +90,7 @@ public class SearchResourceRequest {
     }
 
     /**
-     * 语言参数，默认为中文zh-CN, 英文为en-US
+     * 语言参数，默认为中文zh-CN，英文为en-US。
      * @return acceptLanguage
      */
     public String getAcceptLanguage() {
@@ -107,7 +107,7 @@ public class SearchResourceRequest {
     }
 
     /**
-     * 查询偏移量,若超过最大数量，则返回最后一页的数据 默认值：0 
+     * 查询偏移量,若超过最大数量，则返回最后一页的数据。 默认值：0。 
      * minimum: 0
      * @return offset
      */
@@ -125,7 +125,7 @@ public class SearchResourceRequest {
     }
 
     /**
-     * 查询数量 默认值：0 
+     * 查询数量。 默认值：10。 
      * minimum: 1
      * maximum: 500
      * @return limit
@@ -144,7 +144,7 @@ public class SearchResourceRequest {
     }
 
     /**
-     * 搜索条件
+     * 搜索条件。
      * @return searchKey
      */
     public String getSearchKey() {
@@ -161,7 +161,7 @@ public class SearchResourceRequest {
     }
 
     /**
-     * 企业id
+     * 企业id。
      * @return corpId
      */
     public String getCorpId() {
@@ -178,7 +178,7 @@ public class SearchResourceRequest {
     }
 
     /**
-     * 查询过期时间在该时间戳之后的资源项
+     * 查询过期时间在该时间戳之后的资源项。
      * @return startExpireDate
      */
     public Long getStartExpireDate() {
@@ -195,7 +195,7 @@ public class SearchResourceRequest {
     }
 
     /**
-     * 查询过期时间在该时间戳之前的资源项
+     * 查询过期时间在该时间戳之前的资源项。
      * @return endExpireDate
      */
     public Long getEndExpireDate() {
@@ -212,7 +212,7 @@ public class SearchResourceRequest {
     }
 
     /**
-     * 资源类型
+     * 资源类型。
      * @return type
      */
     public String getType() {
@@ -229,7 +229,7 @@ public class SearchResourceRequest {
     }
 
     /**
-     * 资源类型Id,若想搜索5方VMR时，需携带5方vmrpkg对应的id
+     * 资源类型Id,若想搜索5方VMR时，需携带5方vmrpkg对应的id。
      * @return typeId
      */
     public String getTypeId() {

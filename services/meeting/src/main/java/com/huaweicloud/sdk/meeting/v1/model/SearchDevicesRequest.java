@@ -56,7 +56,7 @@ public class SearchDevicesRequest {
     }
 
     /**
-     * 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用uuId，若不携带，则后台自动生成
+     * 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用UUID，若不携带，则后台自动生成。
      * @return xRequestId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -75,7 +75,7 @@ public class SearchDevicesRequest {
     }
 
     /**
-     * 语言参数，默认为中文zh-CN, 英文为en-US
+     * 语言参数，默认为中文zh-CN，英文为en-US。
      * @return acceptLanguage
      */
     public String getAcceptLanguage() {
@@ -109,7 +109,7 @@ public class SearchDevicesRequest {
     }
 
     /**
-     * 查询数量 默认值：0 
+     * 查询数量。 默认值：10。 
      * minimum: 1
      * maximum: 500
      * @return limit
@@ -145,7 +145,7 @@ public class SearchDevicesRequest {
     }
 
     /**
-     * 终端型号，枚举类型。当前支持TE系列硬件终端，具体的终端类型可以通过获取所有终端类型接口查询。 maxLength：128 minLength：0
+     * 终端型号，枚举类型。当前支持TE系列硬件终端，具体的终端类型可以通过获取所有终端类型接口查询。
      * @return model
      */
     public String getModel() {
@@ -162,7 +162,7 @@ public class SearchDevicesRequest {
     }
 
     /**
-     * 部门编号，默认为根部门 默认值：1 maxLength：32 minLength：0
+     * 部门编码，默认为根部门。 默认值：1。
      * @return deptCode
      */
     public String getDeptCode() {
@@ -179,7 +179,7 @@ public class SearchDevicesRequest {
     }
 
     /**
-     * 是否查询子部门 默认值：true 
+     * 是否查询子部门。 默认值：true。 
      * @return enableSubDept
      */
     public Boolean getEnableSubDept() {

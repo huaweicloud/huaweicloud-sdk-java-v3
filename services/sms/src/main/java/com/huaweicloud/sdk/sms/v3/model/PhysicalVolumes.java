@@ -41,6 +41,11 @@ public class PhysicalVolumes {
     private Long size;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "inode_size")
+
+    private Long inodeSize;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "used_size")
 
     private Long usedSize;
@@ -156,6 +161,25 @@ public class PhysicalVolumes {
         this.size = size;
     }
 
+    public PhysicalVolumes withInodeSize(Long inodeSize) {
+        this.inodeSize = inodeSize;
+        return this;
+    }
+
+    /**
+     * inode数量
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return inodeSize
+     */
+    public Long getInodeSize() {
+        return inodeSize;
+    }
+
+    public void setInodeSize(Long inodeSize) {
+        this.inodeSize = inodeSize;
+    }
+
     public PhysicalVolumes withUsedSize(Long usedSize) {
         this.usedSize = usedSize;
         return this;
@@ -206,13 +230,14 @@ public class PhysicalVolumes {
             && Objects.equals(this.index, physicalVolumes.index)
             && Objects.equals(this.mountPoint, physicalVolumes.mountPoint)
             && Objects.equals(this.name, physicalVolumes.name) && Objects.equals(this.size, physicalVolumes.size)
+            && Objects.equals(this.inodeSize, physicalVolumes.inodeSize)
             && Objects.equals(this.usedSize, physicalVolumes.usedSize)
             && Objects.equals(this.uuid, physicalVolumes.uuid);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(deviceUse, fileSystem, index, mountPoint, name, size, usedSize, uuid);
+        return Objects.hash(deviceUse, fileSystem, index, mountPoint, name, size, inodeSize, usedSize, uuid);
     }
 
     @Override
@@ -225,6 +250,7 @@ public class PhysicalVolumes {
         sb.append("    mountPoint: ").append(toIndentedString(mountPoint)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
+        sb.append("    inodeSize: ").append(toIndentedString(inodeSize)).append("\n");
         sb.append("    usedSize: ").append(toIndentedString(usedSize)).append("\n");
         sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
         sb.append("}");

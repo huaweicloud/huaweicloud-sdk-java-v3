@@ -130,7 +130,7 @@ public class CreateWebinarResponse extends SdkResponse {
     }
 
     /**
-     * 会议ID。长度限制为32个字符。
+     * 网络研讨会ID。
      * @return conferenceId
      */
     public String getConferenceId() {
@@ -147,7 +147,7 @@ public class CreateWebinarResponse extends SdkResponse {
     }
 
     /**
-     * 企业id
+     * 企业ID。
      * @return corpId
      */
     public String getCorpId() {
@@ -164,7 +164,7 @@ public class CreateWebinarResponse extends SdkResponse {
     }
 
     /**
-     * 主题
+     * 网络研讨会主题。
      * @return subject
      */
     public String getSubject() {
@@ -181,7 +181,7 @@ public class CreateWebinarResponse extends SdkResponse {
     }
 
     /**
-     * 描述
+     * 网络研讨会描述。
      * @return description
      */
     public String getDescription() {
@@ -198,7 +198,7 @@ public class CreateWebinarResponse extends SdkResponse {
     }
 
     /**
-     * 开始时间
+     * 网络研讨会开始时间（UTC时间），格式“yyyy-MM-dd HH:mm”。
      * @return startTime
      */
     public String getStartTime() {
@@ -215,7 +215,7 @@ public class CreateWebinarResponse extends SdkResponse {
     }
 
     /**
-     * 时长，单位分钟
+     * 网络研讨会持续时长，单位分钟，取值范围[15,1440]。
      * @return duration
      */
     public Integer getDuration() {
@@ -232,7 +232,7 @@ public class CreateWebinarResponse extends SdkResponse {
     }
 
     /**
-     * 时区ID
+     * 会议通知中会议时间的时区信息。时区信息，参考[[时区映射关系](https://support.huaweicloud.com/api-meeting/meeting_21_0110.html#ZH-CN_TOPIC_0212714472__table137407441463)](tag:hws)[[时区映射关系](https://support.huaweicloud.com/intl/zh-cn/api-meeting/meeting_21_0110.html#ZH-CN_TOPIC_0212714472__table137407441463)](tag:hk)。 > * 举例：“timeZoneID”:\"26\"，则通过华为云会议发送的会议通知中的时间将会标记为如“2021/11/11 星期四 00:00 - 02:00 (GMT) 格林威治标准时间:都柏林, 爱丁堡, 里斯本, 伦敦”。 
      * @return timeZoneId
      */
     public Integer getTimeZoneId() {
@@ -266,7 +266,7 @@ public class CreateWebinarResponse extends SdkResponse {
     }
 
     /**
-     * 会议预订者ID
+     * 网络研讨会预订者的用户UUID。
      * @return scheduserId
      */
     public String getScheduserId() {
@@ -283,7 +283,7 @@ public class CreateWebinarResponse extends SdkResponse {
     }
 
     /**
-     * 预订人部门
+     * 预订者部门命名。
      * @return deptName
      */
     public String getDeptName() {
@@ -300,7 +300,7 @@ public class CreateWebinarResponse extends SdkResponse {
     }
 
     /**
-     * 会议预订者帐号名称。长度最大限制为96个字符。
+     * 预订者名称。
      * @return scheduserName
      */
     public String getScheduserName() {
@@ -317,7 +317,7 @@ public class CreateWebinarResponse extends SdkResponse {
     }
 
     /**
-     * 网络研讨会资源名
+     * 网络研讨会VMR名称。
      * @return vmrPkgName
      */
     public String getVmrPkgName() {
@@ -334,7 +334,7 @@ public class CreateWebinarResponse extends SdkResponse {
     }
 
     /**
-     * 入会范围开关
+     * 入会范围开关。
      * @return callRestriction
      */
     public Boolean getCallRestriction() {
@@ -351,7 +351,7 @@ public class CreateWebinarResponse extends SdkResponse {
     }
 
     /**
-     * 主持人、嘉宾入会范围  0: 所有用户 1: 非匿名用户（手机pstn入会视为匿名入会） 2: 企业内用户 3: 被邀请用户。
+     * 主持人、嘉宾入会范围。 * 0: 所有用户 * 2: 企业内用户 * 3: 被邀请用户 
      * @return scope
      */
     public Integer getScope() {
@@ -368,7 +368,7 @@ public class CreateWebinarResponse extends SdkResponse {
     }
 
     /**
-     * 观众入会范围 0: 所有用户 2: 企业内用户和被邀请用户。
+     * 观众入会范围。 * 0: 所有用户 * 2: 企业内用户 
      * @return audienceScope
      */
     public Integer getAudienceScope() {
@@ -402,7 +402,7 @@ public class CreateWebinarResponse extends SdkResponse {
     }
 
     /**
-     * 主持人密码。
+     * 主持人入会密码。
      * @return chairPasswd
      */
     public String getChairPasswd() {
@@ -436,7 +436,7 @@ public class CreateWebinarResponse extends SdkResponse {
     }
 
     /**
-     * 嘉宾密码。
+     * 嘉宾入会密码。
      * @return guestPasswd
      */
     public String getGuestPasswd() {
@@ -470,7 +470,7 @@ public class CreateWebinarResponse extends SdkResponse {
     }
 
     /**
-     * 观众密码。
+     * 观众入会密码。
      * @return audiencePasswd
      */
     public String getAudiencePasswd() {
@@ -503,7 +503,7 @@ public class CreateWebinarResponse extends SdkResponse {
     }
 
     /**
-     * Get attendees
+     * 与会嘉宾名称列表。
      * @return attendees
      */
     public List<String> getAttendees() {

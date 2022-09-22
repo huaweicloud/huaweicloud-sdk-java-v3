@@ -68,7 +68,7 @@ public class SearchCtlRecordsOfHisMeetingRequest {
     }
 
     /**
-     * 指定返回的记录索引。该值必须大于等于0； 默认为0。
+     * 查询偏移量。默认为0。
      * @return offset
      */
     public Integer getOffset() {
@@ -85,7 +85,7 @@ public class SearchCtlRecordsOfHisMeetingRequest {
     }
 
     /**
-     * 指定返回的记录数，默认是20，最大500条。
+     * 查询数量。默认值20，最大500条。
      * @return limit
      */
     public Integer getLimit() {
@@ -102,7 +102,7 @@ public class SearchCtlRecordsOfHisMeetingRequest {
     }
 
     /**
-     * 用户的UUID（已在USG注册过的）。
+     * 用户的UUID。 > 该参数将废弃，请勿使用。 
      * @return userUUID
      */
     public String getUserUUID() {
@@ -119,7 +119,7 @@ public class SearchCtlRecordsOfHisMeetingRequest {
     }
 
     /**
-     * 标识是否为第三方portal过来的请求。
+     * 标识是否为第三方portal过来的请求。 > 该参数将废弃，请勿使用。 
      * @return xAuthorizationType
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -138,7 +138,7 @@ public class SearchCtlRecordsOfHisMeetingRequest {
     }
 
     /**
-     * 用于区分到哪个HCSO站点鉴权。
+     * 用于区分到哪个HCSO站点鉴权。 > 该参数将废弃，请勿使用。 
      * @return xSiteId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

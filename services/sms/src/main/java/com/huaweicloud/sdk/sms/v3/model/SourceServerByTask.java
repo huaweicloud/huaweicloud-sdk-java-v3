@@ -21,7 +21,7 @@ public class SourceServerByTask {
     }
 
     /**
-     * 源端服务器id
+     * 源端服务器ID
      * @return id
      */
     public String getId() {

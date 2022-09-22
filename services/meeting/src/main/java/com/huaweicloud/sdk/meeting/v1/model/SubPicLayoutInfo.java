@@ -41,7 +41,7 @@ public class SubPicLayoutInfo {
     }
 
     /**
-     * 画面索引号
+     * 多画面信息。
      * minimum: 1
      * @return id
      */
@@ -59,7 +59,7 @@ public class SubPicLayoutInfo {
     }
 
     /**
-     * 画面从左到右的坐标点
+     * 子画面从左到右的索引。
      * minimum: 1
      * @return left
      */
@@ -77,7 +77,7 @@ public class SubPicLayoutInfo {
     }
 
     /**
-     * 画面从上到下的坐标点
+     * 子画面从上到下的索引。
      * minimum: 1
      * @return top
      */
@@ -95,7 +95,7 @@ public class SubPicLayoutInfo {
     }
 
     /**
-     * 小画面的宽度
+     * 子画面横向尺寸。
      * minimum: 1
      * @return xSize
      */
@@ -113,7 +113,7 @@ public class SubPicLayoutInfo {
     }
 
     /**
-     * 小画面的高度
+     * 子画面横向尺寸。
      * minimum: 1
      * @return ySize
      */

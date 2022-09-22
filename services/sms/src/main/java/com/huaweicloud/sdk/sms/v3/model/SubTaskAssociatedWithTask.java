@@ -46,9 +46,9 @@ public class SubTaskAssociatedWithTask {
     }
 
     /**
-     * 子任务id
+     * 子任务ID
      * minimum: 0
-     * maximum: 100
+     * maximum: 9223372036854775807
      * @return id
      */
     public Long getId() {

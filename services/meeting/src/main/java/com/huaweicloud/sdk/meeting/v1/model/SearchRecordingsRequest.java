@@ -66,7 +66,7 @@ public class SearchRecordingsRequest {
     }
 
     /**
-     * 待查询的会议预定者的用户UUID。仅管理员有权限查询权限范围内的所有录制，普通帐号仅能查询自己的。 默认是登录帐号。
+     * 用户的UUID。 > 仅管理员有权限查询本企业其他用户的会议录制；普通帐号该字段无效，只能查询自己的。
      * @return userUUID
      */
     public String getUserUUID() {
@@ -100,7 +100,7 @@ public class SearchRecordingsRequest {
     }
 
     /**
-     * 指定返回的记录数。默认值为20，最大值为100。
+     * 查询数量。默认是20，最大500条。
      * @return limit
      */
     public Integer getLimit() {
@@ -117,7 +117,7 @@ public class SearchRecordingsRequest {
     }
 
     /**
-     * 指定是否查询企业下所有用户的会议录制。 - 如果登录帐号不是企业管理员，则该字段无效。 - 如果该字段为true，则userUUID字段无效。
+     * 是否查询企业下所有用户的历史会议。 * true：查询所有用户的会议录制 * false：仅查询管理员自己的会议录制 > 仅对企业管理员生效。
      * @return queryAll
      */
     public Boolean getQueryAll() {
@@ -134,7 +134,7 @@ public class SearchRecordingsRequest {
     }
 
     /**
-     * 会议主题，预定人或会议id可作为搜索词，查询录制。
+     * 查询条件。会议主题、会议预约人和会议ID等可作为搜索内容。
      * @return searchKey
      */
     public String getSearchKey() {
@@ -151,7 +151,7 @@ public class SearchRecordingsRequest {
     }
 
     /**
-     * 查询的起始日期毫秒数。
+     * 查询的起始时间戳（单位毫秒）。
      * @return startDate
      */
     public Long getStartDate() {
@@ -168,7 +168,7 @@ public class SearchRecordingsRequest {
     }
 
     /**
-     * 查询的截止日期毫秒数。
+     * 查询的截止时间戳（单位毫秒）。
      * @return endDate
      */
     public Long getEndDate() {
@@ -185,7 +185,7 @@ public class SearchRecordingsRequest {
     }
 
     /**
-     * - ASC_StartTIME：按录制开始时间升序排序。 - DSC_StartTIME：按录制开始时间降序排序。
+     * 查询结果排序类型。 - ASC_StartTIME：按录制开始时间升序排序 - DSC_StartTIME：按录制开始时间降序排序
      * @return sortType
      */
     public String getSortType() {
@@ -202,7 +202,7 @@ public class SearchRecordingsRequest {
     }
 
     /**
-     * 标识是否为第三方portal过来的请求。
+     * 标识是否为第三方portal过来的请求。 > 该参数将废弃，请勿使用。 
      * @return xAuthorizationType
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -221,7 +221,7 @@ public class SearchRecordingsRequest {
     }
 
     /**
-     * 用于区分到哪个HCSO站点鉴权。
+     * 用于区分到哪个HCSO站点鉴权。 > 该参数将废弃，请勿使用。 
      * @return xSiteId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

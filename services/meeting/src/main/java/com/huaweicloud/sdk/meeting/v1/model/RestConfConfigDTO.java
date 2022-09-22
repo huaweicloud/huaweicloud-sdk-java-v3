@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 会议配置信息
+ * 会议其他配置信息。
  */
 public class RestConfConfigDTO {
 
@@ -76,7 +76,7 @@ public class RestConfConfigDTO {
     }
 
     /**
-     * 是否需要发送会议邮件通知。默认值由企业级配置决定。 - True: 需要。 - False: 不需要。
+     * 是否需要发送会议邮件通知。默认值由企业级配置决定。 - true: 需要 - false: 不需要
      * @return isSendNotify
      */
     public Boolean getIsSendNotify() {
@@ -93,7 +93,7 @@ public class RestConfConfigDTO {
     }
 
     /**
-     * 是否需要发送会议短信通知。默认值由企业级配置决定。 - True: 需要。 - False: 不需要。
+     * 是否需要发送会议短信通知。默认值由企业级配置决定。 - true: 需要 - false: 不需要 > 只有正式商用企业才有发送会议短信通知的权限，免费企业即使isSendSms设置成true也不会发送会议短信通知。
      * @return isSendSms
      */
     public Boolean getIsSendSms() {
@@ -110,7 +110,7 @@ public class RestConfConfigDTO {
     }
 
     /**
-     * 是否需要发送会议通知。默认值由企业级配置决定。 - True: 需要。 - False: 不需要。
+     * 是否需要发送会议邮件日历通知。默认值由企业级配置决定。 - true: 需要 - false: 不需要
      * @return isSendCalendar
      */
     public Boolean getIsSendCalendar() {
@@ -127,7 +127,7 @@ public class RestConfConfigDTO {
     }
 
     /**
-     * 来宾入会,软终端是否自动静音。默认值由企业级配置决定。 - True: 自动静音。 - False: 不自动静音。
+     * 来宾入会,软终端是否自动静音。默认值由企业级配置决定。 - true: 自动静音 - false: 不自动静音
      * @return isAutoMute
      */
     public Boolean getIsAutoMute() {
@@ -144,7 +144,7 @@ public class RestConfConfigDTO {
     }
 
     /**
-     * 来宾入会,硬终端是否自动静音。默认值由企业级配置决定。 - True: 自动静音。 - False: 不自动静音。
+     * 来宾入会,硬终端是否自动静音。默认值由企业级配置决定。 - true: 自动静音 - false: 不自动静音
      * @return isHardTerminalAutoMute
      */
     public Boolean getIsHardTerminalAutoMute() {
@@ -161,7 +161,7 @@ public class RestConfConfigDTO {
     }
 
     /**
-     * 是否来宾免密（仅随机会议有效）。 - True: 免密。 - False: 需要密码。
+     * 是否来宾免密。 - true: 免密 - false: 需要密码 > 仅随机会议ID的会议生效。
      * @return isGuestFreePwd
      */
     public Boolean getIsGuestFreePwd() {
@@ -178,7 +178,7 @@ public class RestConfConfigDTO {
     }
 
     /**
-     * 允许呼入的范围。 - 0: 所有用户。 - 2: 企业内用户。 - 3: 被邀请用户。
+     * 允许加入会议的范围。 - 0: 所有用户 - 2: 企业内用户 - 3: 被邀请用户
      * @return callInRestriction
      */
     public Integer getCallInRestriction() {
@@ -195,7 +195,7 @@ public class RestConfConfigDTO {
     }
 
     /**
-     * 是否允许来宾启动会议(随机会议)。 - True: 允许来宾启动会议。 - False: 禁止来宾启动会议。
+     * 是否允许来宾启动会议。 - true: 允许来宾启动会议 - false: 禁止来宾启动会议 > 仅随机会议ID的会议生效。
      * @return allowGuestStartConf
      */
     public Boolean getAllowGuestStartConf() {
@@ -212,7 +212,7 @@ public class RestConfConfigDTO {
     }
 
     /**
-     * 来宾密码
+     * 来宾密码（4-16位长度的纯数字）。
      * @return guestPwd
      */
     public String getGuestPwd() {
@@ -229,7 +229,7 @@ public class RestConfConfigDTO {
     }
 
     /**
-     * |参数名称：专用VMR会议ID类型 |参数描述：专用VMR会议ID类型 0: 固定ID 1: 随机ID |取值范围：[0,1]|
+     * 云会议室的会议ID模式。 * 0：固定会议ID * 1：随机会议ID
      * minimum: 0
      * maximum: 1
      * @return vmrIDType
@@ -248,7 +248,7 @@ public class RestConfConfigDTO {
     }
 
     /**
-     * |参数名称：自动延长会议时长，0表示会议不延长 |建议取值范围：[0,60]|
+     * 自动延长会议时长（取值范围0-60）。 * 0：表示会议到点自动结束，不延长会议 * 其他：表示自动延长的时长 > * 自动结束会议是按照会议时长计算。比如预定的会议是9:00开始11:00结束，会议时长2个小时，如果与会者8:00就加入会议了，那会议在10:00就会自动结束 > * 设置成其他值时，只要会中还有与会者，会议自动多次延迟
      * @return prolongLength
      */
     public Integer getProlongLength() {
@@ -265,7 +265,7 @@ public class RestConfConfigDTO {
     }
 
     /**
-     * 开启或者关闭等候室
+     * 开启或者关闭等候室。 * true：开启 * false：不开启
      * @return enableWaitingRoom
      */
     public Boolean getEnableWaitingRoom() {

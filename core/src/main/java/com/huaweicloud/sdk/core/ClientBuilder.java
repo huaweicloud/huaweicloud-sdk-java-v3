@@ -147,7 +147,7 @@ public class ClientBuilder<T> {
     private ClientCustomization loadClientCustomization(T t) {
         String strClientCustomizationClassName = t.getClass().getName() + Constants.CUSTOMIZATION;
         try {
-            Class customizationClass = Class.forName(strClientCustomizationClassName);
+            Class<?> customizationClass = Class.forName(strClientCustomizationClassName);
             return (ClientCustomization) customizationClass.newInstance();
         } catch (ClassNotFoundException e) {
             return null;

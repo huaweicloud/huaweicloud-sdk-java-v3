@@ -66,7 +66,7 @@ public class ModUserDTO {
     private String desc;
 
     /**
-     * 用户状态 * 0、正常 * 1、停用 默认值：0
+     * 用户状态。默认值：0。 * 0：正常 * 1：停用
      */
     public static final class StatusEnum {
 
@@ -163,7 +163,7 @@ public class ModUserDTO {
     }
 
     /**
-     * 企业用户姓名。 maxLength：64 minLength：1
+     * 企业用户名称。
      * @return name
      */
     public String getName() {
@@ -180,7 +180,7 @@ public class ModUserDTO {
     }
 
     /**
-     * 企业用户的英文姓名。 maxLength：64 minLength：0
+     * 企业用户的英文名称。
      * @return englishName
      */
     public String getEnglishName() {
@@ -197,7 +197,7 @@ public class ModUserDTO {
     }
 
     /**
-     * 手机号，必须加上国家码。 例如中国大陆手机为“+86xxxxxxxxxxx”。当填写手机号时 “country”参数必填。 手机号只允许输入纯数字。 说明：手机号或者邮箱至少填写一个。 maxLength：32 minLength：0
+     * 手机号，必须加上国家码。 例如中国大陆手机为“+86xxxxxxxxxxx”。当填写手机号时 “country”参数必填。 手机号只允许输入纯数字。 说明：手机号或者邮箱至少填写一个。
      * @return phone
      */
     public String getPhone() {
@@ -214,7 +214,7 @@ public class ModUserDTO {
     }
 
     /**
-     * 若smsNumber为手机号,则需带上手机号所属的国家。 例如国家为中国大陆则country参数取值为chinaPR 国家和国家码的对应关系请参考：https://support.huaweicloud.com/api-meeting/meeting_21_0109.html 
+     * [[手机号所属的国家](https://support.huaweicloud.com/api-meeting/meeting_21_0109.html#ZH-CN_TOPIC_0212714591__table19371178135314)](tag:hws)[[手机号所属的国家](https://support.huaweicloud.com/intl/zh-cn/api-meeting/meeting_21_0109.html#ZH-CN_TOPIC_0212714591__table19371178135314)](tag:hk) 。 
      * @return country
      */
     public String getCountry() {
@@ -231,7 +231,7 @@ public class ModUserDTO {
     }
 
     /**
-     * 邮箱 maxLength：255 minLength：0
+     * 邮箱地址。
      * @return email
      */
     public String getEmail() {
@@ -248,7 +248,7 @@ public class ModUserDTO {
     }
 
     /**
-     * 虚拟会议室ID，若不携带则后台默认生成。 maxLength：32 minLength：0
+     * 个人会议ID，若不携带则后台默认生成。
      * @return vmrId
      */
     public String getVmrId() {
@@ -265,7 +265,7 @@ public class ModUserDTO {
     }
 
     /**
-     * 部门编号，若不携带则默认根部门 默认值：1 maxLength：32 minLength：0
+     * 个人会议ID，若不携带则后台默认生成。 默认值：1
      * @return deptCode
      */
     public String getDeptCode() {
@@ -282,7 +282,7 @@ public class ModUserDTO {
     }
 
     /**
-     * 签名 maxLength：512 minLength：0
+     * 签名。
      * @return signature
      */
     public String getSignature() {
@@ -299,7 +299,7 @@ public class ModUserDTO {
     }
 
     /**
-     * 职位 maxLength：32 minLength：0
+     * 职位。
      * @return title
      */
     public String getTitle() {
@@ -316,7 +316,7 @@ public class ModUserDTO {
     }
 
     /**
-     * 备注 maxLength：128 minLength：0
+     * 备注。
      * @return desc
      */
     public String getDesc() {
@@ -333,7 +333,7 @@ public class ModUserDTO {
     }
 
     /**
-     * 用户状态 * 0、正常 * 1、停用 默认值：0
+     * 用户状态。默认值：0。 * 0：正常 * 1：停用
      * @return status
      */
     public StatusEnum getStatus() {
@@ -350,7 +350,9 @@ public class ModUserDTO {
     }
 
     /**
-     * 通讯录排序等级，序号越低优先级越高。 默认值：10000 maximum：10000 minimum：1
+     * 通讯录排序等级，序号越低优先级越高。 默认值：10000
+     * minimum: 1
+     * maximum: 10000
      * @return sortLevel
      */
     public Integer getSortLevel() {

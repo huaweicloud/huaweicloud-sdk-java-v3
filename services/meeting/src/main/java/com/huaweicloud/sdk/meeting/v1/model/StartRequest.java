@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 开始会议请求参数
+ * 激活会议请求。
  */
 public class StartRequest {
 
@@ -26,7 +26,7 @@ public class StartRequest {
     }
 
     /**
-     * 会议ID
+     * 会议ID。
      * @return conferenceID
      */
     public String getConferenceID() {
@@ -43,7 +43,7 @@ public class StartRequest {
     }
 
     /**
-     * 主席密码
+     * 会议密码。
      * @return password
      */
     public String getPassword() {

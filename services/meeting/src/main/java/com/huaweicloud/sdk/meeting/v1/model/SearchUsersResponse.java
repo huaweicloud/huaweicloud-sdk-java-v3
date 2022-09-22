@@ -40,7 +40,7 @@ public class SearchUsersResponse extends SdkResponse {
     }
 
     /**
-     * 页面起始页，从0开始
+     * 页面起始页，从0开始。
      * @return offset
      */
     public Integer getOffset() {
@@ -107,7 +107,7 @@ public class SearchUsersResponse extends SdkResponse {
     }
 
     /**
-     * 分页查询企业用户信息
+     * 分页查询企业用户信息。
      * @return data
      */
     public List<SearchUserResultDTO> getData() {

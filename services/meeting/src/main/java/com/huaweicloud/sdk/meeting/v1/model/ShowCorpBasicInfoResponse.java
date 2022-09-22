@@ -82,7 +82,7 @@ public class ShowCorpBasicInfoResponse extends SdkResponse {
     }
 
     /**
-     * 企业id
+     * 企业id。
      * @return id
      */
     public String getId() {
@@ -99,7 +99,7 @@ public class ShowCorpBasicInfoResponse extends SdkResponse {
     }
 
     /**
-     * 企业名称
+     * 企业名称。
      * @return name
      */
     public String getName() {
@@ -116,7 +116,7 @@ public class ShowCorpBasicInfoResponse extends SdkResponse {
     }
 
     /**
-     * 企业所在地
+     * 企业所在地。
      * @return address
      */
     public String getAddress() {
@@ -133,7 +133,7 @@ public class ShowCorpBasicInfoResponse extends SdkResponse {
     }
 
     /**
-     * 管理员名称
+     * 管理员名称。
      * @return adminName
      */
     public String getAdminName() {
@@ -150,7 +150,7 @@ public class ShowCorpBasicInfoResponse extends SdkResponse {
     }
 
     /**
-     * 管理员账号
+     * 管理员的华为云会议帐号。
      * @return account
      */
     public String getAccount() {
@@ -167,7 +167,7 @@ public class ShowCorpBasicInfoResponse extends SdkResponse {
     }
 
     /**
-     * 管理员手机
+     * 管理员手机。
      * @return phone
      */
     public String getPhone() {
@@ -184,7 +184,7 @@ public class ShowCorpBasicInfoResponse extends SdkResponse {
     }
 
     /**
-     * 管理员手机所属的国家
+     * [[手机号所属的国家](https://support.huaweicloud.com/api-meeting/meeting_21_0109.html#ZH-CN_TOPIC_0212714591__table19371178135314)](tag:hws)[[手机号所属的国家](https://support.huaweicloud.com/intl/zh-cn/api-meeting/meeting_21_0109.html#ZH-CN_TOPIC_0212714591__table19371178135314)](tag:hk) 。 
      * @return country
      */
     public String getCountry() {
@@ -201,7 +201,7 @@ public class ShowCorpBasicInfoResponse extends SdkResponse {
     }
 
     /**
-     * 管理员邮箱
+     * 管理员邮箱。
      * @return email
      */
     public String getEmail() {
@@ -218,7 +218,7 @@ public class ShowCorpBasicInfoResponse extends SdkResponse {
     }
 
     /**
-     * 是否发送短信
+     * 是否通过短信形式发送会议通知。
      * @return enableSMS
      */
     public Boolean getEnableSMS() {
@@ -235,7 +235,7 @@ public class ShowCorpBasicInfoResponse extends SdkResponse {
     }
 
     /**
-     * 是否开启云盘
+     * 是否开启云盘。
      * @return enableCloudDisk
      */
     public Boolean getEnableCloudDisk() {
@@ -252,7 +252,7 @@ public class ShowCorpBasicInfoResponse extends SdkResponse {
     }
 
     /**
-     * 是否具有pstn功能
+     * 是否具有pstn功能。
      * @return enablePstn
      */
     public Boolean getEnablePstn() {
@@ -269,7 +269,7 @@ public class ShowCorpBasicInfoResponse extends SdkResponse {
     }
 
     /**
-     * 是否支持自动开户
+     * 是否支持自动开户。
      * @return autoUserCreate
      */
     public Boolean getAutoUserCreate() {
@@ -286,7 +286,7 @@ public class ShowCorpBasicInfoResponse extends SdkResponse {
     }
 
     /**
-     * 企业类型
+     * 企业类型。 * 0：旗舰版 * 5：免费版 * 6：标准版 
      * @return corpType
      */
     public Integer getCorpType() {

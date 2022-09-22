@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 会场信息
+ * 被邀请的与会者信息。包含预约会议时邀请的与会者和会中主持人邀请的与会者。
  */
 public class ParticipantInfo {
 
@@ -118,7 +118,7 @@ public class ParticipantInfo {
     }
 
     /**
-     * 与会者的名称（昵称）。
+     * 与会者的名称。
      * @return name
      */
     public String getName() {
@@ -152,7 +152,7 @@ public class ParticipantInfo {
     }
 
     /**
-     * 会议中的角色。 - 1: 会议主持人。 - 0: 普通与会者。
+     * 与会者的角色。 - 1: 会议主持人 - 0: 普通与会者
      * @return role
      */
     public Integer getRole() {
@@ -186,7 +186,7 @@ public class ParticipantInfo {
     }
 
     /**
-     * 终端所在会议室信息。（预留字段）
+     * 终端所在会议室信息（预留字段）。
      * @return address
      */
     public String getAddress() {
@@ -203,7 +203,7 @@ public class ParticipantInfo {
     }
 
     /**
-     * - normal: 软终端。 - telepresence: 智真。单屏、三屏智真均属此类。（预留字段） - terminal: 会议室或硬终端。 - outside: 外部与会人。 - mobile: 用户手机号码。 - telephone: 用户固定电话。（预留字段）
+     * 与会者终端类型。 - normal: 软终端。 - terminal: 会议室或硬终端。 - outside: 外部与会人。 - mobile: 用户手机号码。
      * @return attendeeType
      */
     public String getAttendeeType() {
@@ -220,7 +220,7 @@ public class ParticipantInfo {
     }
 
     /**
-     * 预订者的账号ID。
+     * 预订者的帐号。 * 如果是帐号/密码鉴权场景，表示华为云会议帐号 * 如果是APP ID鉴权场景，表示第三方的User ID 
      * @return accountId
      */
     public String getAccountId() {
@@ -237,7 +237,7 @@ public class ParticipantInfo {
     }
 
     /**
-     * 当attendeeType为telepresence时，且设备为三屏智真，则该字段填写左屏号码。（预留字段）
+     * 预留字段。
      * @return phone2
      */
     public String getPhone2() {
@@ -254,7 +254,7 @@ public class ParticipantInfo {
     }
 
     /**
-     * 当attendeeType为telepresence时，且设备为三屏智真，则该字段填写右屏号码。（预留字段）
+     * 预留字段。
      * @return phone3
      */
     public String getPhone3() {
@@ -271,7 +271,7 @@ public class ParticipantInfo {
     }
 
     /**
-     * 邮件地址。最大不超过255个字符。
+     * 邮箱地址。
      * @return email
      */
     public String getEmail() {
@@ -288,7 +288,7 @@ public class ParticipantInfo {
     }
 
     /**
-     * 短信通知的手机号码。最大不超过127个字符。
+     * 短信通知的手机号码。
      * @return sms
      */
     public String getSms() {
@@ -305,7 +305,7 @@ public class ParticipantInfo {
     }
 
     /**
-     * 部门名称。最大不超过96个字符。
+     * 部门名称。
      * @return deptName
      */
     public String getDeptName() {
@@ -339,7 +339,7 @@ public class ParticipantInfo {
     }
 
     /**
-     * 第三方应用ID。
+     * App ID。参考[[App ID的申请](https://support.huaweicloud.com/devg-meeting/meeting_20_0011.html#section1)](tag:hws)[[App ID的申请](https://support.huaweicloud.com/intl/zh-cn/devg-meeting/meeting_20_0011.html#section1)](tag:hk)。
      * @return appId
      */
     public String getAppId() {
@@ -356,7 +356,7 @@ public class ParticipantInfo {
     }
 
     /**
-     * 会议开始时是否自动邀请该与会者。
+     * 会议开始时是否自动邀请该与会者。默认值由企业级配置决定。 * 0： 不自动邀请 * 1： 自动邀请 
      * minimum: 0
      * maximum: 1
      * @return isAutoInvite
@@ -375,7 +375,7 @@ public class ParticipantInfo {
     }
 
     /**
-     * 是否不叠加会场名。
+     * 是否不叠加会场名（VDC场景下适用）。
      * @return isNotOverlayPidName
      */
     public Boolean getIsNotOverlayPidName() {

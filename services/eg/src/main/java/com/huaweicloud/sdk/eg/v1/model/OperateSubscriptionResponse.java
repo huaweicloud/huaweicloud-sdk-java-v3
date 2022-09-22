@@ -24,6 +24,11 @@ public class OperateSubscriptionResponse extends SdkResponse {
 
     private List<SubscriptionOperateRespEvents> events = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+
+    private String xRequestId;
+
     public OperateSubscriptionResponse withFailedCount(Integer failedCount) {
         this.failedCount = failedCount;
         return this;
@@ -63,7 +68,7 @@ public class OperateSubscriptionResponse extends SdkResponse {
     }
 
     /**
-     * 失败信息
+     * Get events
      * @return events
      */
     public List<SubscriptionOperateRespEvents> getEvents() {
@@ -72,6 +77,25 @@ public class OperateSubscriptionResponse extends SdkResponse {
 
     public void setEvents(List<SubscriptionOperateRespEvents> events) {
         this.events = events;
+    }
+
+    public OperateSubscriptionResponse withXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+        return this;
+    }
+
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+    public String getXRequestId() {
+        return xRequestId;
+    }
+
+    public void setXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
     }
 
     @Override
@@ -84,12 +108,13 @@ public class OperateSubscriptionResponse extends SdkResponse {
         }
         OperateSubscriptionResponse operateSubscriptionResponse = (OperateSubscriptionResponse) o;
         return Objects.equals(this.failedCount, operateSubscriptionResponse.failedCount)
-            && Objects.equals(this.events, operateSubscriptionResponse.events);
+            && Objects.equals(this.events, operateSubscriptionResponse.events)
+            && Objects.equals(this.xRequestId, operateSubscriptionResponse.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(failedCount, events);
+        return Objects.hash(failedCount, events, xRequestId);
     }
 
     @Override
@@ -98,6 +123,7 @@ public class OperateSubscriptionResponse extends SdkResponse {
         sb.append("class OperateSubscriptionResponse {\n");
         sb.append("    failedCount: ").append(toIndentedString(failedCount)).append("\n");
         sb.append("    events: ").append(toIndentedString(events)).append("\n");
+        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

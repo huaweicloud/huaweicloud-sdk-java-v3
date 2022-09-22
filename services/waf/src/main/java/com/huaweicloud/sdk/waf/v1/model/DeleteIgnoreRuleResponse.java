@@ -47,7 +47,7 @@ public class DeleteIgnoreRuleResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rule")
 
-    private Object rule;
+    private String rule;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mode")
@@ -176,7 +176,7 @@ public class DeleteIgnoreRuleResponse extends SdkResponse {
         this.url = url;
     }
 
-    public DeleteIgnoreRuleResponse withRule(Object rule) {
+    public DeleteIgnoreRuleResponse withRule(String rule) {
         this.rule = rule;
         return this;
     }
@@ -185,11 +185,11 @@ public class DeleteIgnoreRuleResponse extends SdkResponse {
      * 需要屏蔽的规则，可屏蔽一个或者多个，屏蔽多个时使用半角符;分隔   - 当需要屏蔽某一条内置规则时，该参数值为该内置规则id,可以在Web应用防火墙控制台的防护策略->策略名称->Web基础防护的高级设置->防护规则中查询；也可以在防护事件的事件详情中查询内置规则id   - 当需要屏蔽web基础防护某一类规则时，该参数值为需要屏蔽的web基础防护某一类规则名。其中，xss：xxs攻击；webshell：网站木马；vuln：其他类型攻击；sqli：sql注入攻击；robot：恶意爬虫；rfi：远程文件包含；lfi：本地文件包含；cmdi：命令注入攻击   - 当需要屏蔽Web基础防护模块，该参数值为：all   - 当需要屏蔽规则为所有检测模块时，该参数值为：bypass
      * @return rule
      */
-    public Object getRule() {
+    public String getRule() {
         return rule;
     }
 
-    public void setRule(Object rule) {
+    public void setRule(String rule) {
         this.rule = rule;
     }
 

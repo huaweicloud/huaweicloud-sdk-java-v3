@@ -11,6 +11,11 @@ import java.util.Objects;
 public class SubTask {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private Long id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
     private String name;
@@ -44,6 +49,25 @@ public class SubTask {
     @JsonProperty(value = "process_trace")
 
     private String processTrace;
+
+    public SubTask withId(Long id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * 子任务ID
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return id
+     */
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public SubTask withName(String name) {
         this.name = name;
@@ -181,21 +205,22 @@ public class SubTask {
             return false;
         }
         SubTask subTask = (SubTask) o;
-        return Objects.equals(this.name, subTask.name) && Objects.equals(this.progress, subTask.progress)
-            && Objects.equals(this.startDate, subTask.startDate) && Objects.equals(this.endDate, subTask.endDate)
-            && Objects.equals(this.migrateSpeed, subTask.migrateSpeed) && Objects.equals(this.userOp, subTask.userOp)
-            && Objects.equals(this.processTrace, subTask.processTrace);
+        return Objects.equals(this.id, subTask.id) && Objects.equals(this.name, subTask.name)
+            && Objects.equals(this.progress, subTask.progress) && Objects.equals(this.startDate, subTask.startDate)
+            && Objects.equals(this.endDate, subTask.endDate) && Objects.equals(this.migrateSpeed, subTask.migrateSpeed)
+            && Objects.equals(this.userOp, subTask.userOp) && Objects.equals(this.processTrace, subTask.processTrace);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, progress, startDate, endDate, migrateSpeed, userOp, processTrace);
+        return Objects.hash(id, name, progress, startDate, endDate, migrateSpeed, userOp, processTrace);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class SubTask {\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    progress: ").append(toIndentedString(progress)).append("\n");
         sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");

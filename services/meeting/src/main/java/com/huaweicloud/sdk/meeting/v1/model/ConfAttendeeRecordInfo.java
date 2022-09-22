@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 与会者记录
+ * 与会者记录。
  */
 public class ConfAttendeeRecordInfo {
 
@@ -51,7 +51,7 @@ public class ConfAttendeeRecordInfo {
     }
 
     /**
-     * 名称。
+     * 与会者名称。
      * @return displayName
      */
     public String getDisplayName() {

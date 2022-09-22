@@ -45,7 +45,7 @@ public class QosCpuInfo {
     }
 
     /**
-     * 华为云会议最大CPU使用率。
+     * App最大CPU使用率。
      * @return clientCpuMax
      */
     public List<QosDataElement> getClientCpuMax() {

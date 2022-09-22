@@ -31,7 +31,7 @@ public class BandwidthPolicyDto {
     }
 
     /**
-     * 流量控制开始时间（包含），格式为“hh:mm”。例如“12:03”表示12时03分。
+     * 流量控制结束时间（包含），格式为“hh:mm”。例如“12:03”表示12时03分。
      * @return end
      */
     public String getEnd() {

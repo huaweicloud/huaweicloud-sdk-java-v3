@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 发布的部门信息
+ * 发布的部门信息。
  */
 public class PublishDeptResponseDTO {
 
@@ -26,7 +26,7 @@ public class PublishDeptResponseDTO {
     }
 
     /**
-     * 部门编码
+     * 部门编码。
      * @return deptCode
      */
     public String getDeptCode() {
@@ -43,7 +43,7 @@ public class PublishDeptResponseDTO {
     }
 
     /**
-     * 部门名称
+     * 部门名称。
      * @return deptName
      */
     public String getDeptName() {

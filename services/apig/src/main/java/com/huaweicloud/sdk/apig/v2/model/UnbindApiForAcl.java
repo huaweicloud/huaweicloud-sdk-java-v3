@@ -60,6 +60,16 @@ public class UnbindApiForAcl {
 
     private String aclName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "req_uri")
+
+    private String reqUri;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "auth_type")
+
+    private String authType;
+
     public UnbindApiForAcl withId(String id) {
         this.id = id;
         return this;
@@ -230,6 +240,40 @@ public class UnbindApiForAcl {
         this.aclName = aclName;
     }
 
+    public UnbindApiForAcl withReqUri(String reqUri) {
+        this.reqUri = reqUri;
+        return this;
+    }
+
+    /**
+     * API的请求地址
+     * @return reqUri
+     */
+    public String getReqUri() {
+        return reqUri;
+    }
+
+    public void setReqUri(String reqUri) {
+        this.reqUri = reqUri;
+    }
+
+    public UnbindApiForAcl withAuthType(String authType) {
+        this.authType = authType;
+        return this;
+    }
+
+    /**
+     * API的认证方式
+     * @return authType
+     */
+    public String getAuthType() {
+        return authType;
+    }
+
+    public void setAuthType(String authType) {
+        this.authType = authType;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -246,12 +290,25 @@ public class UnbindApiForAcl {
             && Objects.equals(this.runEnvName, unbindApiForAcl.runEnvName)
             && Objects.equals(this.runEnvId, unbindApiForAcl.runEnvId)
             && Objects.equals(this.publishId, unbindApiForAcl.publishId)
-            && Objects.equals(this.aclName, unbindApiForAcl.aclName);
+            && Objects.equals(this.aclName, unbindApiForAcl.aclName)
+            && Objects.equals(this.reqUri, unbindApiForAcl.reqUri)
+            && Objects.equals(this.authType, unbindApiForAcl.authType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, groupId, groupName, type, remark, runEnvName, runEnvId, publishId, aclName);
+        return Objects.hash(id,
+            name,
+            groupId,
+            groupName,
+            type,
+            remark,
+            runEnvName,
+            runEnvId,
+            publishId,
+            aclName,
+            reqUri,
+            authType);
     }
 
     @Override
@@ -268,6 +325,8 @@ public class UnbindApiForAcl {
         sb.append("    runEnvId: ").append(toIndentedString(runEnvId)).append("\n");
         sb.append("    publishId: ").append(toIndentedString(publishId)).append("\n");
         sb.append("    aclName: ").append(toIndentedString(aclName)).append("\n");
+        sb.append("    reqUri: ").append(toIndentedString(reqUri)).append("\n");
+        sb.append("    authType: ").append(toIndentedString(authType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

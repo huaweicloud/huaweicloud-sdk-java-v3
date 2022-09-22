@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 录制信息
+ * 录制信息。
  */
 public class RecordResultDO {
 
@@ -129,7 +129,7 @@ public class RecordResultDO {
     }
 
     /**
-     * 点播地址。
+     * 录播观看地址。
      * @return url
      */
     public List<String> getUrl() {
@@ -197,7 +197,7 @@ public class RecordResultDO {
     }
 
     /**
-     * 会议预订者。
+     * 会议预订者名称。
      * @return scheduserName
      */
     public String getScheduserName() {
@@ -282,7 +282,7 @@ public class RecordResultDO {
     }
 
     /**
-     * * 录播鉴权方式，在录播类型为:录播、直播+录播时有效 * 0： 可通过链接观看/下载 * 1： 企业用户可观看/下载 * 2： 与会者可观看/下载
+     * 观看/下载录播的鉴权方式。 - 0: 可通过链接观看/下载 - 1: 企业用户可观看/下载 - 2: 与会者可观看/下载
      * @return recordAuthType
      */
     public Integer getRecordAuthType() {

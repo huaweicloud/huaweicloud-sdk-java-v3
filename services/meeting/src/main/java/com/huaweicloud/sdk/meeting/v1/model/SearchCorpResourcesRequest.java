@@ -76,7 +76,7 @@ public class SearchCorpResourcesRequest {
     }
 
     /**
-     * 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用uuId，若不携带，则后台自动生成
+     * 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用UUID，若不携带，则后台自动生成。
      * @return xRequestId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -95,7 +95,7 @@ public class SearchCorpResourcesRequest {
     }
 
     /**
-     * 语言参数，默认为中文zh-CN, 英文为en-US
+     * 语言参数，默认为中文zh-CN，英文为en-US。
      * @return acceptLanguage
      */
     public String getAcceptLanguage() {
@@ -112,7 +112,7 @@ public class SearchCorpResourcesRequest {
     }
 
     /**
-     * 查询偏移量,若超过最大数量，则返回最后一页的数据 默认值：0 
+     * 查询偏移量,若超过最大数量，则返回最后一页的数据。 默认值：0。 
      * minimum: 0
      * @return offset
      */
@@ -130,7 +130,7 @@ public class SearchCorpResourcesRequest {
     }
 
     /**
-     * 查询数量 默认值：0 
+     * 查询数量。 默认值：10。 
      * minimum: 1
      * maximum: 500
      * @return limit
@@ -166,7 +166,7 @@ public class SearchCorpResourcesRequest {
     }
 
     /**
-     * 查询过期时间在该时间戳之后的资源项
+     * 查询过期时间在该时间戳之后的资源项。
      * @return startExpireDate
      */
     public Long getStartExpireDate() {
@@ -183,7 +183,7 @@ public class SearchCorpResourcesRequest {
     }
 
     /**
-     * 查询过期时间在该时间戳之前的资源项
+     * 查询过期时间在该时间戳之前的资源项。
      * @return endExpireDate
      */
     public Long getEndExpireDate() {
@@ -200,7 +200,7 @@ public class SearchCorpResourcesRequest {
     }
 
     /**
-     * 资源类型。 - VMR        - 云会议室 - CONF_CALL  - 会议并发数 - HARD_1080P - 1080P硬终端 - HARD_720P  - 720P硬终端 - SOFT       - 软终端用户数 - ROOM       - 大屏软终端 - LIVE       - 直播推流 - RECORD     - 录播空间 - HARD_THIRD_PARTY - 第三方硬终端账号 - HUAWEI_VISION -智慧屏 说明：查询网络研讨会资源时type字段需上送VMR 
+     * 资源类型。 - VMR        - 云会议室 - CONF_CALL  - 会议并发数 - HARD_1080P - 1080P硬终端 - HARD_720P  - 720P硬终端 - SOFT       - 软终端用户数 - ROOM       - 大屏软终端 - LIVE       - 直播推流 - RECORD     - 录播空间 - HARD_THIRD_PARTY - 第三方硬终端帐号 - HUAWEI_VISION -智慧屏 > 查询网络研讨会资源时type字段为VMR。 
      * @return type
      */
     public String getType() {
@@ -217,7 +217,7 @@ public class SearchCorpResourcesRequest {
     }
 
     /**
-     * VMR模式，type为vmr时传递该参数 * 0：个人会议ID * 1：云会议室 * 2：网络研讨会 
+     * VMR模式，type为VMR时传递该参数 * 0：个人会议ID * 1：云会议室 * 2：网络研讨会 
      * minimum: 1
      * maximum: 2
      * @return vmrMode
@@ -236,7 +236,7 @@ public class SearchCorpResourcesRequest {
     }
 
     /**
-     * 资源类型Id,若想搜索5方VMR时，需携带5方vmrpkg对应的id
+     * 资源类型Id,若想搜索5方VMR时，需携带5方vmrpkg对应的id。
      * @return typeId
      */
     public String getTypeId() {
@@ -253,7 +253,7 @@ public class SearchCorpResourcesRequest {
     }
 
     /**
-     * 订单Id
+     * 订单Id。
      * @return orderId
      */
     public String getOrderId() {

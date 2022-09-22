@@ -51,7 +51,7 @@ public class VisionActiveCodeDTO {
     }
 
     /**
-     * 终端类型 - idea-hub:智能协作大屏 - huawei-vision:智慧屏TV - welink-desktop(iwb):电子白板 
+     * 终端类型。 - idea-hub：智能协作大屏 - huawei-vision：智慧屏TV - welink-desktop(iwb)：SmartRooms会议版 - smart-rooms：SmartRooms完整版 
      * @return devType
      */
     public String getDevType() {
@@ -68,7 +68,7 @@ public class VisionActiveCodeDTO {
     }
 
     /**
-     * 部门编号，若不携带则默认根部门
+     * 部门编码，若不携带则默认根部门。
      * @return deptCode
      */
     public String getDeptCode() {
@@ -85,7 +85,7 @@ public class VisionActiveCodeDTO {
     }
 
     /**
-     * 终端的名称
+     * 终端的名称。
      * @return devName
      */
     public String getDevName() {
@@ -102,7 +102,7 @@ public class VisionActiveCodeDTO {
     }
 
     /**
-     * 描述信息
+     * 描述信息。
      * @return description
      */
     public String getDescription() {
@@ -136,7 +136,7 @@ public class VisionActiveCodeDTO {
     }
 
     /**
-     * 若smsNumber为手机号,则需带上手机号所属的国家。 例如国家为中国大陆则country参数取值为chinaPR 国家和国家码的对应关系请参考：https://support.huaweicloud.com/api-meeting/meeting_21_0109.html 
+     * [[手机号所属的国家](https://support.huaweicloud.com/api-meeting/meeting_21_0109.html#ZH-CN_TOPIC_0212714591__table19371178135314)](tag:hws)[[手机号所属的国家](https://support.huaweicloud.com/intl/zh-cn/api-meeting/meeting_21_0109.html#ZH-CN_TOPIC_0212714591__table19371178135314)](tag:hk) 。 
      * @return country
      */
     public String getCountry() {
@@ -153,7 +153,7 @@ public class VisionActiveCodeDTO {
     }
 
     /**
-     * 邮箱地址
+     * 邮箱地址。 > 如无中国大陆手机号，则邮箱必填。 
      * @return emailAddr
      */
     public String getEmailAddr() {

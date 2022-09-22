@@ -27,7 +27,7 @@ public class ListGatewayResponsesV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "responses")
 
-    private List<ResponseInfoResp> responses = null;
+    private List<ResponsesInfo> responses = null;
 
     public ListGatewayResponsesV2Response withSize(Integer size) {
         this.size = size;
@@ -63,12 +63,12 @@ public class ListGatewayResponsesV2Response extends SdkResponse {
         this.total = total;
     }
 
-    public ListGatewayResponsesV2Response withResponses(List<ResponseInfoResp> responses) {
+    public ListGatewayResponsesV2Response withResponses(List<ResponsesInfo> responses) {
         this.responses = responses;
         return this;
     }
 
-    public ListGatewayResponsesV2Response addResponsesItem(ResponseInfoResp responsesItem) {
+    public ListGatewayResponsesV2Response addResponsesItem(ResponsesInfo responsesItem) {
         if (this.responses == null) {
             this.responses = new ArrayList<>();
         }
@@ -76,7 +76,7 @@ public class ListGatewayResponsesV2Response extends SdkResponse {
         return this;
     }
 
-    public ListGatewayResponsesV2Response withResponses(Consumer<List<ResponseInfoResp>> responsesSetter) {
+    public ListGatewayResponsesV2Response withResponses(Consumer<List<ResponsesInfo>> responsesSetter) {
         if (this.responses == null) {
             this.responses = new ArrayList<>();
         }
@@ -88,11 +88,11 @@ public class ListGatewayResponsesV2Response extends SdkResponse {
      * 响应列表
      * @return responses
      */
-    public List<ResponseInfoResp> getResponses() {
+    public List<ResponsesInfo> getResponses() {
         return responses;
     }
 
-    public void setResponses(List<ResponseInfoResp> responses) {
+    public void setResponses(List<ResponsesInfo> responses) {
         this.responses = responses;
     }
 

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 待修改的企业基本信息，不带或参数null，则不修改
+ * 待修改的企业基本信息。
  */
 public class ModCorpBasicDTO {
 
@@ -51,7 +51,7 @@ public class ModCorpBasicDTO {
     }
 
     /**
-     * 企业名称，格式必须满足^[^#%&'+;<>=\"'？?\\\\……/]*$
+     * 企业名称，格式必须满足^[^#%&'+;<>=\\\"'？?\\\\\\\\……/]*$。
      * @return name
      */
     public String getName() {
@@ -68,7 +68,7 @@ public class ModCorpBasicDTO {
     }
 
     /**
-     * 手机号，必须加上国家码，例如中国大陆手机+86xxxxxxx，当填写手机号时 “country”参数必填,手机格式必须满足(^$|^[+]?[0-9]+$)
+     * 手机号，必须加上国家码，例如中国大陆手机+86xxxxxxx，当填写手机号时“country”参数必填，手机格式必须满足(^$|^[+]?[0-9]+$)。
      * @return phone
      */
     public String getPhone() {
@@ -85,7 +85,7 @@ public class ModCorpBasicDTO {
     }
 
     /**
-     * 若smsNumber为手机号,则需带上手机号所属的国家。 例如国家为中国大陆则country参数取值为chinaPR 国家和国家码的对应关系请参考：https://support.huaweicloud.com/api-meeting/meeting_21_0109.html 
+     * [[手机号所属的国家](https://support.huaweicloud.com/api-meeting/meeting_21_0109.html#ZH-CN_TOPIC_0212714591__table19371178135314)](tag:hws)[[手机号所属的国家](https://support.huaweicloud.com/intl/zh-cn/api-meeting/meeting_21_0109.html#ZH-CN_TOPIC_0212714591__table19371178135314)](tag:hk) 。 
      * @return country
      */
     public String getCountry() {
@@ -102,7 +102,7 @@ public class ModCorpBasicDTO {
     }
 
     /**
-     * 传真号码,格式必须满足(^$|^[+]?[0-9]+$)
+     * 传真号码,格式必须满足(^$|^[+]?[0-9]+$)。
      * @return fax
      */
     public String getFax() {
@@ -119,7 +119,7 @@ public class ModCorpBasicDTO {
     }
 
     /**
-     * 邮箱地址,格式必须满足(^$|^[\\w-+]+(\\.[\\w-+]+)*@[\\w-]+(\\.[\\w-]+)*(\\.[\\w-]{1,})$)
+     * 邮箱地址,格式必须满足(^$|^[\\\\w-+]+(\\\\.[\\\\w-+]+)*@[\\\\w-]+(\\\\.[\\\\w-]+)*(\\\\.[\\\\w-]{1,})$)。
      * @return email
      */
     public String getEmail() {
@@ -136,7 +136,7 @@ public class ModCorpBasicDTO {
     }
 
     /**
-     * 地址
+     * 地址。
      * @return address
      */
     public String getAddress() {
@@ -153,7 +153,7 @@ public class ModCorpBasicDTO {
     }
 
     /**
-     * 备注
+     * 备注。
      * @return description
      */
     public String getDescription() {

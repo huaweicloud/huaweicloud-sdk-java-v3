@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 邀请共享请求body
+ * 邀请共享请求。
  */
 public class InviteShareDTO {
 
@@ -21,7 +21,7 @@ public class InviteShareDTO {
     }
 
     /**
-     * 0:取消邀请 1:邀请 
+     * 邀请标志。 * 0：取消邀请 * 1：邀请 
      * minimum: 0
      * maximum: 1
      * @return share

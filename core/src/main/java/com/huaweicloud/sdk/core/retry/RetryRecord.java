@@ -194,6 +194,7 @@ public class RetryRecord<ResT> {
      * @param retriesAttempted retries has been attempted
      * @return context
      */
+    @SuppressWarnings("unchecked")
     RetryContext<ResT> buildContext(ResT resT, SdkException e, int statusCode, int retriesAttempted) {
         return (RetryContext<ResT>) RetryContext.builder()
             .withLastResponse(resT)

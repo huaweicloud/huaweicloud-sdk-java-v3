@@ -16,7 +16,7 @@ import java.util.Objects;
 public class ListTasksRequest {
 
     /**
-     * 迁移任务状态
+     * 迁移任务状态 READY:准备就绪 RUNNING:迁移中 SYNCING:同步中 MIGRATE_SUCCESS:迁移成功 MIGRATE_FAIL:迁移失败 ABORTING:中止中 ABORT:中止 DELETING::删除中 SYNC_F_ROLLBACKING:同步失败回滚中 SYNC_F_ROLLBACK_SUCCESS:同步失败回滚成功
      */
     public static final class StateEnum {
 
@@ -181,7 +181,7 @@ public class ListTasksRequest {
     }
 
     /**
-     * 迁移任务状态
+     * 迁移任务状态 READY:准备就绪 RUNNING:迁移中 SYNCING:同步中 MIGRATE_SUCCESS:迁移成功 MIGRATE_FAIL:迁移失败 ABORTING:中止中 ABORT:中止 DELETING::删除中 SYNC_F_ROLLBACKING:同步失败回滚中 SYNC_F_ROLLBACK_SUCCESS:同步失败回滚成功
      * @return state
      */
     public StateEnum getState() {
@@ -287,7 +287,7 @@ public class ListTasksRequest {
     }
 
     /**
-     * 需要查询的企业项目id
+     * 需要查询的企业项目ID
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {

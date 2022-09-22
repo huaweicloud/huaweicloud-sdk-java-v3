@@ -16,6 +16,11 @@ public class ListApiVersionsV2Request {
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "api_id")
+
+    private String apiId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
     private Long offset;
@@ -24,11 +29,6 @@ public class ListApiVersionsV2Request {
     @JsonProperty(value = "limit")
 
     private Integer limit;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "api_id")
-
-    private String apiId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "env_id")
@@ -55,6 +55,23 @@ public class ListApiVersionsV2Request {
 
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
+    }
+
+    public ListApiVersionsV2Request withApiId(String apiId) {
+        this.apiId = apiId;
+        return this;
+    }
+
+    /**
+     * API的编号
+     * @return apiId
+     */
+    public String getApiId() {
+        return apiId;
+    }
+
+    public void setApiId(String apiId) {
+        this.apiId = apiId;
     }
 
     public ListApiVersionsV2Request withOffset(Long offset) {
@@ -91,23 +108,6 @@ public class ListApiVersionsV2Request {
 
     public void setLimit(Integer limit) {
         this.limit = limit;
-    }
-
-    public ListApiVersionsV2Request withApiId(String apiId) {
-        this.apiId = apiId;
-        return this;
-    }
-
-    /**
-     * API的编号
-     * @return apiId
-     */
-    public String getApiId() {
-        return apiId;
-    }
-
-    public void setApiId(String apiId) {
-        this.apiId = apiId;
     }
 
     public ListApiVersionsV2Request withEnvId(String envId) {
@@ -154,16 +154,16 @@ public class ListApiVersionsV2Request {
         }
         ListApiVersionsV2Request listApiVersionsV2Request = (ListApiVersionsV2Request) o;
         return Objects.equals(this.instanceId, listApiVersionsV2Request.instanceId)
+            && Objects.equals(this.apiId, listApiVersionsV2Request.apiId)
             && Objects.equals(this.offset, listApiVersionsV2Request.offset)
             && Objects.equals(this.limit, listApiVersionsV2Request.limit)
-            && Objects.equals(this.apiId, listApiVersionsV2Request.apiId)
             && Objects.equals(this.envId, listApiVersionsV2Request.envId)
             && Objects.equals(this.envName, listApiVersionsV2Request.envName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, offset, limit, apiId, envId, envName);
+        return Objects.hash(instanceId, apiId, offset, limit, envId, envName);
     }
 
     @Override
@@ -171,9 +171,9 @@ public class ListApiVersionsV2Request {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListApiVersionsV2Request {\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    apiId: ").append(toIndentedString(apiId)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
-        sb.append("    apiId: ").append(toIndentedString(apiId)).append("\n");
         sb.append("    envId: ").append(toIndentedString(envId)).append("\n");
         sb.append("    envName: ").append(toIndentedString(envName)).append("\n");
         sb.append("}");

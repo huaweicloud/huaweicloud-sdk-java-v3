@@ -40,7 +40,7 @@ public class SearchMemberVmrResponse extends SdkResponse {
     }
 
     /**
-     * 页面起始页，从0开始
+     * 页面起始页，从0开始。
      * @return offset
      */
     public Integer getOffset() {
@@ -107,7 +107,7 @@ public class SearchMemberVmrResponse extends SdkResponse {
     }
 
     /**
-     * 查询到的用户云会议室列表
+     * 查询到的用户云会议室或个人会议ID列表。
      * @return data
      */
     public List<QueryVmrResultDTO> getData() {

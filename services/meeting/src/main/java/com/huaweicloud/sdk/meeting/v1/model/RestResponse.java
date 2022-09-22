@@ -26,7 +26,7 @@ public class RestResponse {
     }
 
     /**
-     * 结果码
+     * 结果码。
      * minimum: 0
      * maximum: 2147483647
      * @return returnCode
@@ -45,7 +45,7 @@ public class RestResponse {
     }
 
     /**
-     * 结果描述
+     * 结果描述。
      * @return returnDesc
      */
     public String getReturnDesc() {

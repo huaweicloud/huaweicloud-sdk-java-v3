@@ -68,7 +68,7 @@ public class RealTimeParticipant {
     }
 
     /**
-     * 与会者名称或昵称，长度限制为96个字符。
+     * 与会者名称。
      * @return name
      */
     public String getName() {
@@ -85,7 +85,7 @@ public class RealTimeParticipant {
     }
 
     /**
-     * 与会者设备的注册号码（可支持SIP、TEL号码格式）。最大不超过127个字符。。
+     * 与会者号码。
      * @return phone
      */
     public String getPhone() {
@@ -102,7 +102,7 @@ public class RealTimeParticipant {
     }
 
     /**
-     * 用户状态。若会场未入会或已离会，则不会显示于在线会场列表。 - 0: 会议中。 - 1: 正在呼叫。 - 2: 正在加入会议。
+     * 用户状态。 - 0: 会议中 - 1: 正在呼叫 - 2: 正在加入会议 > 若会场未入会或已离会，则不会显示于在线会场列表。
      * @return state
      */
     public Integer getState() {
@@ -119,7 +119,7 @@ public class RealTimeParticipant {
     }
 
     /**
-     * 音视频能力。 - 0: 音频。 - 1: 视频。
+     * 音视频能力。 - 0: 音频 - 1: 视频
      * @return video
      */
     public Integer getVideo() {
@@ -136,7 +136,7 @@ public class RealTimeParticipant {
     }
 
     /**
-     * 麦克风状态。 - 0: 麦克风打开。 - 1: 麦克风关闭。
+     * 麦克风状态。 - 0: 麦克风打开 - 1: 麦克风关闭
      * @return mute
      */
     public Integer getMute() {
@@ -153,7 +153,7 @@ public class RealTimeParticipant {
     }
 
     /**
-     * 与会者举手状态。 - 0: 未举手。 - 1: 举手。
+     * 与会者举手状态。 - 0: 未举手 - 1: 举手
      * @return hand
      */
     public Integer getHand() {

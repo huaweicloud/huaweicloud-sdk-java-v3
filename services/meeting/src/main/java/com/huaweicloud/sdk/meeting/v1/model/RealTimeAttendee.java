@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 与会者信息
+ * 被邀请与会者信息。
  */
 public class RealTimeAttendee {
 
@@ -46,7 +46,7 @@ public class RealTimeAttendee {
     }
 
     /**
-     * 与会者帐号（AAPID用户，代表第三方账号）。
+     * 与会者的华为云会议帐号。
      * @return accountID
      */
     public String getAccountID() {
@@ -80,7 +80,7 @@ public class RealTimeAttendee {
     }
 
     /**
-     * 与会者名称或昵称，长度限制为96个字符。
+     * 与会者名称。
      * @return name
      */
     public String getName() {
@@ -97,7 +97,7 @@ public class RealTimeAttendee {
     }
 
     /**
-     * 与会者设备的注册号码（可支持SIP、TEL号码格式）。最大不超过127个字符。 设备为三屏智真时的中屏号码。
+     * 与会者号码。
      * @return phone
      */
     public String getPhone() {
@@ -114,7 +114,7 @@ public class RealTimeAttendee {
     }
 
     /**
-     * 设备为三屏智真时的左屏号码（预留）。
+     * 设备为三屏智真时的左屏号码。 > 该参数将废弃，请勿使用。 
      * @return phoneLeft
      */
     public String getPhoneLeft() {
@@ -131,7 +131,7 @@ public class RealTimeAttendee {
     }
 
     /**
-     * 设备为三屏智真时的右屏号码（预留）。
+     * 设备为三屏智真时的右屏号码。 > 该参数将废弃，请勿使用。 
      * @return phoneRight
      */
     public String getPhoneRight() {

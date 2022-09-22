@@ -21,7 +21,7 @@ public class UserFunctionDTO {
     }
 
     /**
-     * 是否开启智能协同白板功能。如果开启，表示该帐号是给智能协同白板使用，占用企业智能协同白板的资源，如果资源不足，则无法开启。 默认值：false。 
+     * 是否开启智能协同白板功能。如果开启，表示该帐号是给智能协同白板使用，占用企业智能协同白板的资源，如果资源不足，则无法开启。 默认值：false。 > 该参数将废弃，请勿使用。 
      * @return enableRoom
      */
     public Boolean getEnableRoom() {

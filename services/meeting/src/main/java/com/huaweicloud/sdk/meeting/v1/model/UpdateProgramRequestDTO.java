@@ -29,7 +29,7 @@ public class UpdateProgramRequestDTO {
     }
 
     /**
-     * 节目名称
+     * 节目名称。
      * @return programName
      */
     public String getProgramName() {
@@ -62,7 +62,7 @@ public class UpdateProgramRequestDTO {
     }
 
     /**
-     * 节目素材列表
+     * 节目素材列表。
      * @return programItemList
      */
     public List<ProgramItemRequestBase> getProgramItemList() {

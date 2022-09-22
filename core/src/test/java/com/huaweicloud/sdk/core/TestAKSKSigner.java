@@ -109,7 +109,8 @@ public class TestAKSKSigner {
                 derivedHeaders.get("Authorization"));
     }
 
-    private static Map<String, String> signForDerivedAuth(HttpRequest httpRequest, AbstractCredentials<?> credentials) {
+    private static <T extends AbstractCredentials<T>> Map<String, String>
+        signForDerivedAuth(HttpRequest httpRequest, T credentials) {
         if (AbstractCredentials.DEFAULT_DERIVED_PREDICATE.apply(httpRequest)) {
             return DerivedAKSKSigner.sign(httpRequest, credentials);
         } else {

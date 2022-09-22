@@ -49,7 +49,7 @@ public class TemplateRequest {
     private String availabilityZone;
 
     /**
-     * 磁盘类型
+     * 磁盘类型 SAS:串行连接SCSI SSD:固态硬盘 SATA:串口硬盘 
      */
     public static final class VolumetypeEnum {
 
@@ -167,7 +167,7 @@ public class TemplateRequest {
     private List<TemplateDisk> disk = null;
 
     /**
-    * 数据盘磁盘类型
+    * 数据盘磁盘类型 SAS:串行连接SCSI SSD:固态硬盘 SATA:串口硬盘 
     */
     public static final class DataVolumeTypeEnum {
 
@@ -258,6 +258,11 @@ public class TemplateRequest {
     @JsonProperty(value = "target_password")
 
     private String targetPassword;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "image_id")
+
+    private String imageId;
 
     public TemplateRequest withName(String name) {
         this.name = name;
@@ -367,7 +372,7 @@ public class TemplateRequest {
     }
 
     /**
-     * 磁盘类型
+     * 磁盘类型 SAS:串行连接SCSI SSD:固态硬盘 SATA:串口硬盘 
      * @return volumetype
      */
     public VolumetypeEnum getVolumetype() {
@@ -443,7 +448,7 @@ public class TemplateRequest {
     }
 
     /**
-     * 网卡信息，支持多个网卡，如果是自动创建，只填一个，id使用“autoCreate”
+     * 网卡信息，支持多个网卡，如果是自动创建，只填一个，ID使用“autoCreate”
      * @return nics
      */
     public List<Nics> getNics() {
@@ -476,7 +481,7 @@ public class TemplateRequest {
     }
 
     /**
-     * 安全组，支持多个安全组，如果是自动创建，只填一个，id使用“autoCreate”
+     * 安全组，支持多个安全组，如果是自动创建，只填一个，ID使用“autoCreate”
      * @return securityGroups
      */
     public List<SgObject> getSecurityGroups() {
@@ -552,7 +557,7 @@ public class TemplateRequest {
     }
 
     /**
-     * 数据盘磁盘类型
+     * 数据盘磁盘类型 SAS:串行连接SCSI SSD:固态硬盘 SATA:串口硬盘 
      * @return dataVolumeType
      */
     public DataVolumeTypeEnum getDataVolumeType() {
@@ -580,6 +585,23 @@ public class TemplateRequest {
         this.targetPassword = targetPassword;
     }
 
+    public TemplateRequest withImageId(String imageId) {
+        this.imageId = imageId;
+        return this;
+    }
+
+    /**
+     * 新建目的虚拟机用户选择的镜像版本Id值
+     * @return imageId
+     */
+    public String getImageId() {
+        return imageId;
+    }
+
+    public void setImageId(String imageId) {
+        this.imageId = imageId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -602,7 +624,8 @@ public class TemplateRequest {
             && Objects.equals(this.publicip, templateRequest.publicip)
             && Objects.equals(this.disk, templateRequest.disk)
             && Objects.equals(this.dataVolumeType, templateRequest.dataVolumeType)
-            && Objects.equals(this.targetPassword, templateRequest.targetPassword);
+            && Objects.equals(this.targetPassword, templateRequest.targetPassword)
+            && Objects.equals(this.imageId, templateRequest.imageId);
     }
 
     @Override
@@ -621,7 +644,8 @@ public class TemplateRequest {
             publicip,
             disk,
             dataVolumeType,
-            targetPassword);
+            targetPassword,
+            imageId);
     }
 
     @Override
@@ -643,6 +667,7 @@ public class TemplateRequest {
         sb.append("    disk: ").append(toIndentedString(disk)).append("\n");
         sb.append("    dataVolumeType: ").append(toIndentedString(dataVolumeType)).append("\n");
         sb.append("    targetPassword: ").append(toIndentedString(targetPassword)).append("\n");
+        sb.append("    imageId: ").append(toIndentedString(imageId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

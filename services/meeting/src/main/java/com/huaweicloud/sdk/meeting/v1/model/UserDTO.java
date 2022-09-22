@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 分页查询企业用户信息
+ * 分页查询企业用户信息。
  */
 public class UserDTO {
 
@@ -143,7 +143,7 @@ public class UserDTO {
     }
 
     /**
-     * 用户账号。
+     * 用户帐号。
      * @return account
      */
     public String getAccount() {
@@ -194,7 +194,7 @@ public class UserDTO {
     }
 
     /**
-     * 邮箱。
+     * 邮箱地址。
      * @return email
      */
     public String getEmail() {
@@ -245,7 +245,7 @@ public class UserDTO {
     }
 
     /**
-     * 用户号码。
+     * 用户SIP号码。
      * @return number
      */
     public String getNumber() {
@@ -279,7 +279,7 @@ public class UserDTO {
     }
 
     /**
-     * 是否为硬终端。
+     * 是否为硬终端。 > 该参数将被废弃，请勿使用。 
      * @return isHardTerminal
      */
     public Boolean getIsHardTerminal() {
@@ -414,7 +414,7 @@ public class UserDTO {
     }
 
     /**
-     * 部门编码列表
+     * 部门编码列表。
      * @return deptCodes
      */
     public List<String> getDeptCodes() {

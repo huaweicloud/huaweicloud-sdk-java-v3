@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 用户查询的vmr详情
+ * 用户查询的云会议室或者个人会议ID详情。
  */
 public class QueryVmrResultDTO {
 
@@ -86,7 +86,7 @@ public class QueryVmrResultDTO {
     }
 
     /**
-     * 唯一标识。 说明：对应会议管理->创建会议接口中的vmrID。 
+     * 云会议室的ID。 > 对应[[创建会议](https://support.huaweicloud.com/api-meeting/meeting_21_0014.html)](tag:hws)[[创建会议](https://support.huaweicloud.com/intl/zh-cn/api-meeting/meeting_21_0014.html)](tag:hk)接口中的vmrID。 
      * @return id
      */
     public String getId() {
@@ -103,7 +103,7 @@ public class QueryVmrResultDTO {
     }
 
     /**
-     * 云会议室ID。 说明：对应会议管理->创建会议接口中当vmrIDType等于0（固定ID）时返回数据的conferenceID 。 
+     * 云会议室的固定会议ID或者个人会议ID。 > 对应[[创建会议](https://support.huaweicloud.com/api-meeting/meeting_21_0014.html)](tag:hws)[[创建会议](https://support.huaweicloud.com/intl/zh-cn/api-meeting/meeting_21_0014.html)](tag:hk)接口中的vmrConferenceID。 
      * @return vmrId
      */
     public String getVmrId() {
@@ -120,7 +120,7 @@ public class QueryVmrResultDTO {
     }
 
     /**
-     * 云会议室名称
+     * 云会议室名称。
      * @return vmrName
      */
     public String getVmrName() {
@@ -137,7 +137,7 @@ public class QueryVmrResultDTO {
     }
 
     /**
-     * 来宾密码
+     * 来宾密码。
      * @return gustPwd
      */
     public String getGustPwd() {
@@ -154,7 +154,7 @@ public class QueryVmrResultDTO {
     }
 
     /**
-     * 来宾与会链接
+     * 来宾与会链接。
      * @return gustJoinUrl
      */
     public String getGustJoinUrl() {
@@ -171,7 +171,7 @@ public class QueryVmrResultDTO {
     }
 
     /**
-     * 主席密码
+     * 主持人密码。
      * @return chairPwd
      */
     public String getChairPwd() {
@@ -188,7 +188,7 @@ public class QueryVmrResultDTO {
     }
 
     /**
-     * 主席与会链接
+     * 主持人与会链接。
      * @return chairJoinUrl
      */
     public String getChairJoinUrl() {
@@ -205,7 +205,7 @@ public class QueryVmrResultDTO {
     }
 
     /**
-     * 允许来宾先入会
+     * 允许来宾先入会。
      * @return allowGustFirst
      */
     public Boolean getAllowGustFirst() {
@@ -222,7 +222,7 @@ public class QueryVmrResultDTO {
     }
 
     /**
-     * 云会议室被使用后是否通知会议室所有者
+     * 云会议室被使用后是否通知会议室所有者。
      * @return gustFirstNotice
      */
     public Boolean getGustFirstNotice() {
@@ -239,7 +239,7 @@ public class QueryVmrResultDTO {
     }
 
     /**
-     * VMR模式 * 0: 个人会议ID * 1: 云会议室 * 2: 网络研讨会 
+     * VMR模式。 * 0: 个人会议ID * 1: 云会议室 * 2: 网络研讨会 
      * @return vmrMode
      */
     public Integer getVmrMode() {
@@ -256,7 +256,7 @@ public class QueryVmrResultDTO {
     }
 
     /**
-     * 云会议室套餐包的id，仅专用云会议室返回
+     * 云会议室套餐包的id，仅云会议室返回。
      * @return vmrPkgId
      */
     public String getVmrPkgId() {
@@ -273,7 +273,7 @@ public class QueryVmrResultDTO {
     }
 
     /**
-     * 云会议室套餐包的名称，仅专用云会议室返回
+     * 云会议室套餐包的名称，仅云会议室返回。
      * @return vmrPkgName
      */
     public String getVmrPkgName() {
@@ -290,7 +290,7 @@ public class QueryVmrResultDTO {
     }
 
     /**
-     * 云会议室套餐包的会议并发方数，仅专用云会议室返回
+     * 云会议室套餐包的会议并发方数，仅云会议室返回。
      * @return vmrPkgParties
      */
     public Integer getVmrPkgParties() {
@@ -307,7 +307,7 @@ public class QueryVmrResultDTO {
     }
 
     /**
-     * 云会议室状态: * 0、正常 * 1、停用 * 2、未分配 
+     * 云会议室状态。 * 0：正常 * 1：停用 * 2：未分配 
      * @return status
      */
     public Integer getStatus() {

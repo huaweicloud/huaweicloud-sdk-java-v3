@@ -31,7 +31,7 @@ public class ShowAudienceCountInfo {
     }
 
     /**
-     * 观众显示策略：服务端用来计算观众人数、下发给客户端控制观众显示 * 0：不显示 * 1：倍增显示与会人数，基于实时与会人数或累计与会人次（假设为N），可以再进行倍增设置。 * ---支持设置倍增倍数X和基础人数Y，设置后，显示的人数为：N*X+Y。 * ---X支持设置到小数点后1位，当N*X计算非整数时，向下取整。X的范围是1~10，Y的范围是0~10000。 * 2：按累计与会人数显示（当前不做）
+     * 观众显示策略。 * 0：不显示 * 1：倍增显示与会人数。基于实时与会人数或累计与会人次（假设为N），可以再进行倍增设置。支持设置倍增倍数X和基础人数Y，设置后，显示的人数为：N*X+Y 
      * minimum: 0
      * maximum: 1
      * @return showAudienceMode
@@ -50,7 +50,7 @@ public class ShowAudienceCountInfo {
     }
 
     /**
-     * 基础人数，范围是0~10000
+     * 基础人数。范围是0~10000。
      * minimum: 0
      * maximum: 10000
      * @return baseAudienceCount
@@ -69,7 +69,7 @@ public class ShowAudienceCountInfo {
     }
 
     /**
-     * 倍增倍数，范围是1~10, 支持设置到小数点后1位
+     * 倍增倍数。范围是1~10, 支持设置到小数点后1位。
      * minimum: 1
      * maximum: 1E+1
      * @return multiple

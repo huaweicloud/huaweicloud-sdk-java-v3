@@ -10,11 +10,17 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class ShowMigprojectResponse extends SdkResponse {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
@@ -30,6 +36,11 @@ public class ShowMigprojectResponse extends SdkResponse {
     @JsonProperty(value = "isdefault")
 
     private Boolean isdefault;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "template")
+
+    private TemplateResponseBody template;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region")
@@ -57,7 +68,7 @@ public class ShowMigprojectResponse extends SdkResponse {
     private Boolean existServer;
 
     /**
-     * 迁移项目类型
+     * 迁移项目类型 MIGRATE_BLOCK:块级迁移 MIGRATE_FILE:文件级迁移
      */
     public static final class TypeEnum {
 
@@ -148,6 +159,23 @@ public class ShowMigprojectResponse extends SdkResponse {
 
     private Boolean syncing;
 
+    public ShowMigprojectResponse withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * 迁移项目ID
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public ShowMigprojectResponse withName(String name) {
         this.name = name;
         return this;
@@ -197,6 +225,32 @@ public class ShowMigprojectResponse extends SdkResponse {
 
     public void setIsdefault(Boolean isdefault) {
         this.isdefault = isdefault;
+    }
+
+    public ShowMigprojectResponse withTemplate(TemplateResponseBody template) {
+        this.template = template;
+        return this;
+    }
+
+    public ShowMigprojectResponse withTemplate(Consumer<TemplateResponseBody> templateSetter) {
+        if (this.template == null) {
+            this.template = new TemplateResponseBody();
+            templateSetter.accept(this.template);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get template
+     * @return template
+     */
+    public TemplateResponseBody getTemplate() {
+        return template;
+    }
+
+    public void setTemplate(TemplateResponseBody template) {
+        this.template = template;
     }
 
     public ShowMigprojectResponse withRegion(String region) {
@@ -292,7 +346,7 @@ public class ShowMigprojectResponse extends SdkResponse {
     }
 
     /**
-     * 迁移项目类型
+     * 迁移项目类型 MIGRATE_BLOCK:块级迁移 MIGRATE_FILE:文件级迁移
      * @return type
      */
     public TypeEnum getType() {
@@ -346,9 +400,11 @@ public class ShowMigprojectResponse extends SdkResponse {
             return false;
         }
         ShowMigprojectResponse showMigprojectResponse = (ShowMigprojectResponse) o;
-        return Objects.equals(this.name, showMigprojectResponse.name)
+        return Objects.equals(this.id, showMigprojectResponse.id)
+            && Objects.equals(this.name, showMigprojectResponse.name)
             && Objects.equals(this.description, showMigprojectResponse.description)
             && Objects.equals(this.isdefault, showMigprojectResponse.isdefault)
+            && Objects.equals(this.template, showMigprojectResponse.template)
             && Objects.equals(this.region, showMigprojectResponse.region)
             && Objects.equals(this.startTargetServer, showMigprojectResponse.startTargetServer)
             && Objects.equals(this.speedLimit, showMigprojectResponse.speedLimit)
@@ -361,9 +417,11 @@ public class ShowMigprojectResponse extends SdkResponse {
 
     @Override
     public int hashCode() {
-        return Objects.hash(name,
+        return Objects.hash(id,
+            name,
             description,
             isdefault,
+            template,
             region,
             startTargetServer,
             speedLimit,
@@ -378,9 +436,11 @@ public class ShowMigprojectResponse extends SdkResponse {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowMigprojectResponse {\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    isdefault: ").append(toIndentedString(isdefault)).append("\n");
+        sb.append("    template: ").append(toIndentedString(template)).append("\n");
         sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("    startTargetServer: ").append(toIndentedString(startTargetServer)).append("\n");
         sb.append("    speedLimit: ").append(toIndentedString(speedLimit)).append("\n");

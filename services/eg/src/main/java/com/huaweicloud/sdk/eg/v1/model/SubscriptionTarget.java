@@ -109,6 +109,11 @@ public class SubscriptionTarget {
     private ProviderTypeEnum providerType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "connection_id")
+
+    private String connectionId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "detail")
 
     private Object detail;
@@ -124,7 +129,7 @@ public class SubscriptionTarget {
     }
 
     /**
-     * 订阅目标ID，需保证全局唯一，由小写字母、数字、中划线组成，必须字母或数字开头，长度为32~64字符。  创建订阅目标场景时，指定ID作为待创建的订阅目标对象ID，未指定时由系统自动生成。
+     * 订阅目标ID，需保证全局唯一，由小写字母、数字、中划线组成，必须字母或数字开头。 更新订阅场景时，指定ID的订阅目标存在时则进行更新，否则进行创建； 创建订阅目标场景时，指定ID作为待创建的订阅目标对象ID，未指定时由系统自动生成。 更新订阅目标时，此字段忽略；
      * @return id
      */
     public String getId() {
@@ -169,13 +174,30 @@ public class SubscriptionTarget {
         this.providerType = providerType;
     }
 
+    public SubscriptionTarget withConnectionId(String connectionId) {
+        this.connectionId = connectionId;
+        return this;
+    }
+
+    /**
+     * 订阅的事件目标使用的目标链接ID
+     * @return connectionId
+     */
+    public String getConnectionId() {
+        return connectionId;
+    }
+
+    public void setConnectionId(String connectionId) {
+        this.connectionId = connectionId;
+    }
+
     public SubscriptionTarget withDetail(Object detail) {
         this.detail = detail;
         return this;
     }
 
     /**
-     * 订阅的事件目标参数列表，该字段序列化后总长度不超过1024字节。
+     * 订阅的事件目标参数列表，该字段序列化后总长度不超过1024字节
      * @return detail
      */
     public Object getDetail() {
@@ -223,13 +245,14 @@ public class SubscriptionTarget {
         SubscriptionTarget subscriptionTarget = (SubscriptionTarget) o;
         return Objects.equals(this.id, subscriptionTarget.id) && Objects.equals(this.name, subscriptionTarget.name)
             && Objects.equals(this.providerType, subscriptionTarget.providerType)
+            && Objects.equals(this.connectionId, subscriptionTarget.connectionId)
             && Objects.equals(this.detail, subscriptionTarget.detail)
             && Objects.equals(this.transform, subscriptionTarget.transform);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, providerType, detail, transform);
+        return Objects.hash(id, name, providerType, connectionId, detail, transform);
     }
 
     @Override
@@ -239,6 +262,7 @@ public class SubscriptionTarget {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    providerType: ").append(toIndentedString(providerType)).append("\n");
+        sb.append("    connectionId: ").append(toIndentedString(connectionId)).append("\n");
         sb.append("    detail: ").append(toIndentedString(detail)).append("\n");
         sb.append("    transform: ").append(toIndentedString(transform)).append("\n");
         sb.append("}");

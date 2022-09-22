@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 会中修改配置项
+ * 修改会议配置请求。
  */
 public class UpdateStartedConfigReqBody {
 
@@ -26,7 +26,7 @@ public class UpdateStartedConfigReqBody {
     }
 
     /**
-     * 锁定共享标志位 0:不锁定  1:锁定
+     * 锁定共享标志位。 * 0: 不锁定 * 1: 锁定 
      * minimum: 0
      * maximum: 1
      * @return lockSharing
@@ -45,7 +45,7 @@ public class UpdateStartedConfigReqBody {
     }
 
     /**
-     * 允许呼入的范围 0：所有用户  2：企业内用户  3：被邀请用户
+     * 允许加入会议的范围。 - 0: 所有用户 - 2: 企业内用户 - 3: 被邀请用户 
      * minimum: 0
      * maximum: 3
      * @return callInRestriction

@@ -55,7 +55,8 @@ import java.util.stream.Collectors;
 public class DerivedAKSKSigner extends AKSKSigner {
     private static final String V_11_HMAC_SHA_256 = "V11-HMAC-SHA256";
 
-    public static Map<String, String> sign(HttpRequest request, AbstractCredentials credential) {
+    public static <T extends AbstractCredentials<T>> Map<String, String>
+        sign(HttpRequest request, T credential) {
         if (StringUtils.isEmpty(credential.regionId)) {
             throw new SdkException("regionId in credential is required when using derived auth");
         }

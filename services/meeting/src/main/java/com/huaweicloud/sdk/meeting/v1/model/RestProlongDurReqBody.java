@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 延长会议消息体。
+ * 延长会议请求。
  */
 public class RestProlongDurReqBody {
 
@@ -26,7 +26,7 @@ public class RestProlongDurReqBody {
     }
 
     /**
-     * - 0: 手动延长。 - 1: 自动延长（未携带延长时间时，默认每次延长15分钟）。
+     * - 0: 手动延长 - 1: 自动延长（未携带延长时间时，默认每次延长15分钟）
      * @return auto
      */
     public Integer getAuto() {

@@ -27,7 +27,7 @@ public class UpdateDiskInfoRequest {
     }
 
     /**
-     * 源端服务器id
+     * 源端服务器ID
      * @return sourceId
      */
     public String getSourceId() {

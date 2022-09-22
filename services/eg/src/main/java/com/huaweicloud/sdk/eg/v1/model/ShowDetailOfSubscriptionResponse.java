@@ -35,7 +35,7 @@ public class ShowDetailOfSubscriptionResponse extends SdkResponse {
     private String description;
 
     /**
-     * 事件订阅类型
+     * 类型
      */
     public static final class TypeEnum {
 
@@ -117,7 +117,7 @@ public class ShowDetailOfSubscriptionResponse extends SdkResponse {
     private TypeEnum type;
 
     /**
-     * 事件订阅状态
+     * 状态
      */
     public static final class StatusEnum {
 
@@ -252,7 +252,7 @@ public class ShowDetailOfSubscriptionResponse extends SdkResponse {
     }
 
     /**
-     * 事件订阅ID
+     * 订阅ID
      * @return id
      */
     public String getId() {
@@ -269,7 +269,7 @@ public class ShowDetailOfSubscriptionResponse extends SdkResponse {
     }
 
     /**
-     * 事件订阅名称
+     * 订阅名称
      * @return name
      */
     public String getName() {
@@ -286,7 +286,7 @@ public class ShowDetailOfSubscriptionResponse extends SdkResponse {
     }
 
     /**
-     * 事件订阅描述
+     * 订阅描述
      * @return description
      */
     public String getDescription() {
@@ -303,7 +303,7 @@ public class ShowDetailOfSubscriptionResponse extends SdkResponse {
     }
 
     /**
-     * 事件订阅类型
+     * 类型
      * @return type
      */
     public TypeEnum getType() {
@@ -320,7 +320,7 @@ public class ShowDetailOfSubscriptionResponse extends SdkResponse {
     }
 
     /**
-     * 事件订阅状态
+     * 状态
      * @return status
      */
     public StatusEnum getStatus() {

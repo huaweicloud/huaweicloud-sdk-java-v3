@@ -46,6 +46,11 @@ public class PhysicalVolume {
     private Long usedSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "inode_size")
+
+    private Integer inodeSize;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "uuid")
 
     private String uuid;
@@ -180,6 +185,25 @@ public class PhysicalVolume {
         this.usedSize = usedSize;
     }
 
+    public PhysicalVolume withInodeSize(Integer inodeSize) {
+        this.inodeSize = inodeSize;
+        return this;
+    }
+
+    /**
+     * inode数量
+     * minimum: 0
+     * maximum: 4294967296
+     * @return inodeSize
+     */
+    public Integer getInodeSize() {
+        return inodeSize;
+    }
+
+    public void setInodeSize(Integer inodeSize) {
+        this.inodeSize = inodeSize;
+    }
+
     public PhysicalVolume withUuid(String uuid) {
         this.uuid = uuid;
         return this;
@@ -230,13 +254,16 @@ public class PhysicalVolume {
             && Objects.equals(this.index, physicalVolume.index)
             && Objects.equals(this.mountPoint, physicalVolume.mountPoint)
             && Objects.equals(this.name, physicalVolume.name) && Objects.equals(this.size, physicalVolume.size)
-            && Objects.equals(this.usedSize, physicalVolume.usedSize) && Objects.equals(this.uuid, physicalVolume.uuid)
+            && Objects.equals(this.usedSize, physicalVolume.usedSize)
+            && Objects.equals(this.inodeSize, physicalVolume.inodeSize)
+            && Objects.equals(this.uuid, physicalVolume.uuid)
             && Objects.equals(this.sizePerCluster, physicalVolume.sizePerCluster);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(deviceUse, fileSystem, index, mountPoint, name, size, usedSize, uuid, sizePerCluster);
+        return Objects
+            .hash(deviceUse, fileSystem, index, mountPoint, name, size, usedSize, inodeSize, uuid, sizePerCluster);
     }
 
     @Override
@@ -250,6 +277,7 @@ public class PhysicalVolume {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    usedSize: ").append(toIndentedString(usedSize)).append("\n");
+        sb.append("    inodeSize: ").append(toIndentedString(inodeSize)).append("\n");
         sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
         sb.append("    sizePerCluster: ").append(toIndentedString(sizePerCluster)).append("\n");
         sb.append("}");

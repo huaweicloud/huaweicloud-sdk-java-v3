@@ -106,26 +106,20 @@ public class BatchRestartOrDeleteInstanceReq {
     private ActionEnum action;
 
     /**
-     * 是否批量删除创建失败的实例。  当参数值为“true”时，删除租户所有创建失败的实例，此时请求参数instances可为空。
+     * 是否批量删除创建失败的实例。  当参数值为“rabbitmq”时，删除租户所有创建失败的实例，此时请求参数instances可为空。
      */
     public static final class AllFailureEnum {
 
         /**
-         * Enum TRUE for value: "true"
+         * Enum RABBITMQ for value: "rabbitmq"
          */
-        public static final AllFailureEnum TRUE = new AllFailureEnum("true");
-
-        /**
-         * Enum FALSE for value: "false"
-         */
-        public static final AllFailureEnum FALSE = new AllFailureEnum("false");
+        public static final AllFailureEnum RABBITMQ = new AllFailureEnum("rabbitmq");
 
         private static final Map<String, AllFailureEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, AllFailureEnum> createStaticFields() {
             Map<String, AllFailureEnum> map = new HashMap<>();
-            map.put("true", TRUE);
-            map.put("false", FALSE);
+            map.put("rabbitmq", RABBITMQ);
             return Collections.unmodifiableMap(map);
         }
 
@@ -243,7 +237,7 @@ public class BatchRestartOrDeleteInstanceReq {
     }
 
     /**
-     * 是否批量删除创建失败的实例。  当参数值为“true”时，删除租户所有创建失败的实例，此时请求参数instances可为空。
+     * 是否批量删除创建失败的实例。  当参数值为“rabbitmq”时，删除租户所有创建失败的实例，此时请求参数instances可为空。
      * @return allFailure
      */
     public AllFailureEnum getAllFailure() {

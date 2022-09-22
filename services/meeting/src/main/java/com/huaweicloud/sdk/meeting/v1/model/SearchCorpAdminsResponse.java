@@ -40,7 +40,7 @@ public class SearchCorpAdminsResponse extends SdkResponse {
     }
 
     /**
-     * 页面起始页，从0开始
+     * 页面起始页，从0开始。
      * @return offset
      */
     public Integer getOffset() {
@@ -107,7 +107,7 @@ public class SearchCorpAdminsResponse extends SdkResponse {
     }
 
     /**
-     * 查询企业管理员返回的结果
+     * 查询企业管理员返回的结果。
      * @return data
      */
     public List<QueryCorpAdminResultDTO> getData() {

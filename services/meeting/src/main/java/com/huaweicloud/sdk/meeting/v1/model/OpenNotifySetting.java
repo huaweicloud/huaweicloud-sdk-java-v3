@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 通知配置
+ * 网络研讨会通知配置。
  */
 public class OpenNotifySetting {
 
@@ -31,7 +31,7 @@ public class OpenNotifySetting {
     }
 
     /**
-     * 发送邮件日历是否开启，\"Y\" 开启，\"N\" 不开启。
+     * 发送邮件日历是否开启。 * Y：开启 * N： 不开启 
      * @return enableCalendar
      */
     public String getEnableCalendar() {
@@ -48,7 +48,7 @@ public class OpenNotifySetting {
     }
 
     /**
-     * 短信通知是否开启，\"Y\" 开启，\"N\" 不开启。
+     * 发送短信通知是否开启。 * Y：开启 * N： 不开启 
      * @return enableSms
      */
     public String getEnableSms() {
@@ -65,7 +65,7 @@ public class OpenNotifySetting {
     }
 
     /**
-     * 短信通知是否开启，\"Y\" 开启，\"N\" 不开启。
+     * 发送邮件是否开启。 * Y：开启 * N： 不开启 
      * @return enableEmail
      */
     public String getEnableEmail() {

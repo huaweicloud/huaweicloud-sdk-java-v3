@@ -21,7 +21,7 @@ public class DeleteWebHookConfigRequest {
     }
 
     /**
-     * 订阅配置记录id
+     * 订阅配置记录ID。
      * @return id
      */
     public String getId() {

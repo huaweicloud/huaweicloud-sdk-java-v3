@@ -40,7 +40,7 @@ public class SearchCorpResourcesResponse extends SdkResponse {
     }
 
     /**
-     * 页面起始页，从0开始
+     * 页面起始页，从0开始。
      * @return offset
      */
     public Integer getOffset() {
@@ -107,7 +107,7 @@ public class SearchCorpResourcesResponse extends SdkResponse {
     }
 
     /**
-     * 分页查询企业的资源项
+     * 分页查询企业的资源项。
      * @return data
      */
     public List<QueryResourceResultDTO> getData() {

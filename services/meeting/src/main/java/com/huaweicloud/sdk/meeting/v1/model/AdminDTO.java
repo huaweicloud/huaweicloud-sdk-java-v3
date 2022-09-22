@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 管理员信息
+ * 管理员信息。
  */
 public class AdminDTO {
 
@@ -46,7 +46,7 @@ public class AdminDTO {
     }
 
     /**
-     * 用户账号，帐号只能包含大小写字母、数字、_、-、.、@符号，不能为纯数字和@后面带.号
+     * 用户帐号，帐号只能包含大小写字母、数字、_、-、.、@符号，不能为纯数字和@后面带.号。
      * @return account
      */
     public String getAccount() {
@@ -63,7 +63,7 @@ public class AdminDTO {
     }
 
     /**
-     * 名称
+     * 名称。
      * @return name
      */
     public String getName() {
@@ -80,7 +80,7 @@ public class AdminDTO {
     }
 
     /**
-     * 若携带则以前台携带为准，否则后台默认生成,密码必须满足: - 1、6-32位 - 2、不能和账号的正序和倒序一致 - 3、至少包含两种字符类型：小写字母、大写字母、数字、特殊字符（` ~ ! @ # $ % ^ & * ( ) - _ = + \\ | [ { } ] ; : \\\" ,' < . > / ?
+     * 若携带则以前台携带为准，否则后台默认生成,密码必须满足: * 6-32位 * 不能和帐号的正序和倒序一致 * 至少包含两种字符类型：小写字母、大写字母、数字、特殊字符（` ~ ! @ # $ % ^ & * ( ) - _ = + \\ | [ { } ] ; : \\\" ,' < . > / ?
      * @return pwd
      */
     public String getPwd() {
@@ -97,7 +97,7 @@ public class AdminDTO {
     }
 
     /**
-     * 邮箱，管理员手机和邮箱必填其一，否则无法重置密码。如果企业短信开关关闭，则邮箱必填。格式必须满足(^$|^[\\\\w-+]+(\\\\.[\\\\w-+]+)*@[\\\\w-]+(\\\\.[\\\\w-]+)*(\\\\.[\\\\w-]{1,})$)
+     * 邮箱，管理员手机和邮箱必填其一，否则无法重置密码。如果企业短信开关关闭，则邮箱必填。格式必须满足(^$|^[\\\\w-+]+(\\\\.[\\\\w-+]+)*@[\\\\w-]+(\\\\.[\\\\w-]+)*(\\\\.[\\\\w-]{1,})$)。
      * @return email
      */
     public String getEmail() {
@@ -114,7 +114,7 @@ public class AdminDTO {
     }
 
     /**
-     * 手机号，必须加上国家码，例如中国大陆手机+86xxxxxxx，当填写手机号时 “country”参数必填,手机格式必须满足(^$|^[+]?[0-9]+$)
+     * 手机号，必须加上国家码，例如中国大陆手机+86xxxxxxx，当填写手机号时 “country”参数必填,手机格式必须满足(^$|^[+]?[0-9]+$)。
      * @return phone
      */
     public String getPhone() {
@@ -131,7 +131,7 @@ public class AdminDTO {
     }
 
     /**
-     * 若smsNumber为手机号,则需带上手机号所属的国家。 例如国家为中国大陆则country参数取值为chinaPR 国家和国家码的对应关系请参考：https://support.huaweicloud.com/api-meeting/meeting_21_0109.html 
+     * [[手机号所属的国家](https://support.huaweicloud.com/api-meeting/meeting_21_0109.html#ZH-CN_TOPIC_0212714591__table19371178135314)](tag:hws)[[手机号所属的国家](https://support.huaweicloud.com/intl/zh-cn/api-meeting/meeting_21_0109.html#ZH-CN_TOPIC_0212714591__table19371178135314)](tag:hk) 。 
      * @return country
      */
     public String getCountry() {

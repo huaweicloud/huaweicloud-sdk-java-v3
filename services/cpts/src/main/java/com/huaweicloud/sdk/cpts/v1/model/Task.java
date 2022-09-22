@@ -46,13 +46,18 @@ public class Task {
 
     private String updateTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "parallel")
+
+    private Boolean parallel;
+
     public Task withBenchConcurrent(Integer benchConcurrent) {
         this.benchConcurrent = benchConcurrent;
         return this;
     }
 
     /**
-     * bench_concurrent
+     * 基准并发
      * minimum: 0
      * maximum: 2147483647
      * @return benchConcurrent
@@ -71,7 +76,7 @@ public class Task {
     }
 
     /**
-     * description
+     * 描述信息
      * @return description
      */
     public String getDescription() {
@@ -88,7 +93,7 @@ public class Task {
     }
 
     /**
-     * id
+     * 任务Id
      * minimum: 0
      * maximum: 2147483647
      * @return id
@@ -107,7 +112,7 @@ public class Task {
     }
 
     /**
-     * name
+     * 任务名称
      * @return name
      */
     public String getName() {
@@ -124,7 +129,7 @@ public class Task {
     }
 
     /**
-     * operate_mode
+     * 任务压测模式
      * minimum: 0
      * maximum: 2147483647
      * @return operateMode
@@ -169,7 +174,7 @@ public class Task {
     }
 
     /**
-     * update_time
+     * 更新时间
      * @return updateTime
      */
     public String getUpdateTime() {
@@ -178,6 +183,23 @@ public class Task {
 
     public void setUpdateTime(String updateTime) {
         this.updateTime = updateTime;
+    }
+
+    public Task withParallel(Boolean parallel) {
+        this.parallel = parallel;
+        return this;
+    }
+
+    /**
+     * 任务间用例是否并行执行
+     * @return parallel
+     */
+    public Boolean getParallel() {
+        return parallel;
+    }
+
+    public void setParallel(Boolean parallel) {
+        this.parallel = parallel;
     }
 
     @Override
@@ -192,12 +214,13 @@ public class Task {
         return Objects.equals(this.benchConcurrent, task.benchConcurrent)
             && Objects.equals(this.description, task.description) && Objects.equals(this.id, task.id)
             && Objects.equals(this.name, task.name) && Objects.equals(this.operateMode, task.operateMode)
-            && Objects.equals(this.taskRunInfo, task.taskRunInfo) && Objects.equals(this.updateTime, task.updateTime);
+            && Objects.equals(this.taskRunInfo, task.taskRunInfo) && Objects.equals(this.updateTime, task.updateTime)
+            && Objects.equals(this.parallel, task.parallel);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(benchConcurrent, description, id, name, operateMode, taskRunInfo, updateTime);
+        return Objects.hash(benchConcurrent, description, id, name, operateMode, taskRunInfo, updateTime, parallel);
     }
 
     @Override
@@ -211,6 +234,7 @@ public class Task {
         sb.append("    operateMode: ").append(toIndentedString(operateMode)).append("\n");
         sb.append("    taskRunInfo: ").append(toIndentedString(taskRunInfo)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
+        sb.append("    parallel: ").append(toIndentedString(parallel)).append("\n");
         sb.append("}");
         return sb.toString();
     }

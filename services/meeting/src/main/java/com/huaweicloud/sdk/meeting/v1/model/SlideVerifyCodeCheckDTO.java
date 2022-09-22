@@ -46,7 +46,7 @@ public class SlideVerifyCodeCheckDTO {
     }
 
     /**
-     * 必须和发送验证码时带的用户身份信息相同 maxLength：255 minLength：1 
+     * 必须和发送验证码时带的用户身份信息相同。 
      * @return user
      */
     public String getUser() {
@@ -63,7 +63,7 @@ public class SlideVerifyCodeCheckDTO {
     }
 
     /**
-     * 登录客户端类型。 * 0：Web客户端类型； * 5：cloudlink pc； * 6：cloudlink mobile； * 16：workplace pc； * 18：workplace mobile 
+     * 登录客户端类型。 * 0：Web客户端类型 * 5：PC客户端 * 6：移动客户端 
      * minimum: 0
      * maximum: 255
      * @return clientType
@@ -82,7 +82,7 @@ public class SlideVerifyCodeCheckDTO {
     }
 
     /**
-     * 校验类型。 * 0：登录； * 1：忘记密码; 默认值：0 
+     * 校验类型。默认值：0。 * 0：登录； * 1：忘记密码; 
      * @return checkType
      */
     public Integer getCheckType() {
@@ -99,7 +99,7 @@ public class SlideVerifyCodeCheckDTO {
     }
 
     /**
-     * 发送滑块验证码返回的token字符串 maxLength：255 minLength：1 
+     * 验证码Token字符串。通过[[发送滑块验证码](https://support.huaweicloud.com/api-meeting/meeting_21_0100.html)](tag:hws)[[发送滑块验证码](https://support.huaweicloud.com/intl/zh-cn/api-meeting/meeting_21_0100.html)](tag:hk) 接口获取。 
      * @return token
      */
     public String getToken() {

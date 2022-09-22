@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 用户基础对象
+ * 用户基础信息。
  */
 public class BaseUser {
 
@@ -51,7 +51,7 @@ public class BaseUser {
     }
 
     /**
-     * 用户名称
+     * 企业用户名称。
      * @return name
      */
     public String getName() {
@@ -68,7 +68,7 @@ public class BaseUser {
     }
 
     /**
-     * 后台自动识别是手机还是邮箱,若为手机号，则要求和国家码匹配
+     * 后台自动识别是手机还是邮箱，若为手机号，则要求和国家码匹配。 > * 当前中国站点企业支持使用邮箱或手机号进行邀请，手机仅支持+86开头的手机号。 > * 当前国际站点企业仅支持使用邮箱进行邀请。 
      * @return contact
      */
     public String getContact() {
@@ -85,7 +85,7 @@ public class BaseUser {
     }
 
     /**
-     * 国家码。 国家和国家码的对应关系请参考:https://support.huaweicloud.com/api-meeting/meeting_21_0109.html 
+     * [[手机号所属的国家](https://support.huaweicloud.com/api-meeting/meeting_21_0109.html#ZH-CN_TOPIC_0212714591__table19371178135314)](tag:hws)[[手机号所属的国家](https://support.huaweicloud.com/intl/zh-cn/api-meeting/meeting_21_0109.html#ZH-CN_TOPIC_0212714591__table19371178135314)](tag:hk) 。 
      * @return country
      */
     public String getCountry() {
@@ -102,7 +102,7 @@ public class BaseUser {
     }
 
     /**
-     * 部门编号，若不携带则默认根部门
+     * 部门编码，若不携带则默认根部门。
      * @return deptCode
      */
     public String getDeptCode() {
@@ -119,7 +119,7 @@ public class BaseUser {
     }
 
     /**
-     * 职位
+     * 职位。
      * @return title
      */
     public String getTitle() {
@@ -136,7 +136,7 @@ public class BaseUser {
     }
 
     /**
-     * 通讯录排序等级，序号越低优先级越高
+     * 通讯录排序等级，序号越低优先级越高。
      * minimum: 1
      * maximum: 10000
      * @return sortLevel
@@ -155,7 +155,7 @@ public class BaseUser {
     }
 
     /**
-     * 备注
+     * 备注。
      * @return desc
      */
     public String getDesc() {

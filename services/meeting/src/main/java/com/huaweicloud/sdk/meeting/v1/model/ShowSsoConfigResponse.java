@@ -107,7 +107,7 @@ public class ShowSsoConfigResponse extends SdkResponse {
     }
 
     /**
-     * 是否开启SSO登录
+     * 是否开启SSO登录。
      * @return enableSSO
      */
     public Boolean getEnableSSO() {
@@ -124,7 +124,7 @@ public class ShowSsoConfigResponse extends SdkResponse {
     }
 
     /**
-     * 企业域名
+     * 企业域名。
      * @return domain
      */
     public String getDomain() {
@@ -141,7 +141,7 @@ public class ShowSsoConfigResponse extends SdkResponse {
     }
 
     /**
-     * Oauth2授权地址
+     * 鉴权中心URL。
      * @return authorizeUrl
      */
     public String getAuthorizeUrl() {
@@ -158,7 +158,7 @@ public class ShowSsoConfigResponse extends SdkResponse {
     }
 
     /**
-     * 获取Token URL
+     * 获取Token URL。
      * @return getTokenUrl
      */
     public String getGetTokenUrl() {
@@ -175,7 +175,7 @@ public class ShowSsoConfigResponse extends SdkResponse {
     }
 
     /**
-     * APPID
+     * APP ID。
      * @return clientId
      */
     public String getClientId() {
@@ -192,7 +192,7 @@ public class ShowSsoConfigResponse extends SdkResponse {
     }
 
     /**
-     * APP秘钥
+     * APP秘钥。
      * @return clientSecret
      */
     public String getClientSecret() {
@@ -209,7 +209,7 @@ public class ShowSsoConfigResponse extends SdkResponse {
     }
 
     /**
-     * 授权范围，OAuth2.0的OIDC取值为“openid”
+     * 授权范围。 * openid：OAuth2.0的OIDC 
      * @return scope
      */
     public String getScope() {
@@ -226,7 +226,7 @@ public class ShowSsoConfigResponse extends SdkResponse {
     }
 
     /**
-     * 第三方账号的字段名称
+     * 第三方帐号的字段名称。
      * @return accFieldName
      */
     public String getAccFieldName() {
@@ -243,7 +243,7 @@ public class ShowSsoConfigResponse extends SdkResponse {
     }
 
     /**
-     * 用户信息查询URL
+     * 用户信息查询URL。
      * @return getUserInfoUrl
      */
     public String getGetUserInfoUrl() {
@@ -260,7 +260,7 @@ public class ShowSsoConfigResponse extends SdkResponse {
     }
 
     /**
-     * 鉴权类型。OAuth2.0鉴权时取0
+     * 鉴权类型。OAuth2.0鉴权时取0。 * 0：OAuth2.0鉴权 
      * minimum: 0
      * maximum: 255
      * @return oauth2ServerType
@@ -279,7 +279,7 @@ public class ShowSsoConfigResponse extends SdkResponse {
     }
 
     /**
-     * 拉起PC端终端的schema
+     * 拉起PC端终端的schema。
      * @return pcSchemaUrl
      */
     public String getPcSchemaUrl() {
@@ -296,7 +296,7 @@ public class ShowSsoConfigResponse extends SdkResponse {
     }
 
     /**
-     * 拉起安卓端终端的schema
+     * 拉起安卓端终端的schema。
      * @return androidSchemaUrl
      */
     public String getAndroidSchemaUrl() {
@@ -313,7 +313,7 @@ public class ShowSsoConfigResponse extends SdkResponse {
     }
 
     /**
-     * 拉起ios端终端的schema
+     * 拉起ios端终端的schema。
      * @return iosSchemaUrl
      */
     public String getIosSchemaUrl() {
@@ -330,7 +330,7 @@ public class ShowSsoConfigResponse extends SdkResponse {
     }
 
     /**
-     * 第三方姓名的字段名称
+     * 第三方名称的字段名称。
      * @return thirdName
      */
     public String getThirdName() {
@@ -347,7 +347,7 @@ public class ShowSsoConfigResponse extends SdkResponse {
     }
 
     /**
-     * 第三方邮箱的字段名称
+     * 第三方邮箱的字段名称。
      * @return thirdEmail
      */
     public String getThirdEmail() {
@@ -364,7 +364,7 @@ public class ShowSsoConfigResponse extends SdkResponse {
     }
 
     /**
-     * 第三方手机号的字段名称
+     * 第三方手机号的字段名称。
      * @return thirdMobile
      */
     public String getThirdMobile() {
@@ -381,7 +381,7 @@ public class ShowSsoConfigResponse extends SdkResponse {
     }
 
     /**
-     * 第三方accessToken的字段名称
+     * 第三方accessToken的字段名称。
      * @return thirdAccessToken
      */
     public String getThirdAccessToken() {
@@ -398,7 +398,7 @@ public class ShowSsoConfigResponse extends SdkResponse {
     }
 
     /**
-     * 第三方头像链接的字段名称
+     * 第三方头像链接的字段名称。
      * @return thirdHeadImgUrl
      */
     public String getThirdHeadImgUrl() {

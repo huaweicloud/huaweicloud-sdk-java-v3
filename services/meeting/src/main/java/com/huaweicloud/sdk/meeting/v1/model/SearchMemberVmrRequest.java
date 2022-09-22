@@ -46,7 +46,7 @@ public class SearchMemberVmrRequest {
     }
 
     /**
-     * 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用uuId，若不携带，则后台自动生成
+     * 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用UUID，若不携带，则后台自动生成。
      * @return xRequestId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -65,7 +65,7 @@ public class SearchMemberVmrRequest {
     }
 
     /**
-     * 语言参数，默认为中文zh-CN, 英文为en-US
+     * 语言参数，默认为中文zh-CN，英文为en-US。
      * @return acceptLanguage
      */
     public String getAcceptLanguage() {
@@ -82,7 +82,7 @@ public class SearchMemberVmrRequest {
     }
 
     /**
-     * 查询偏移量,若超过最大数量，则返回最后一页的数据 默认值：0 
+     * 查询偏移量,若超过最大数量，则返回最后一页的数据。 默认值：0。 
      * minimum: 0
      * @return offset
      */
@@ -100,7 +100,7 @@ public class SearchMemberVmrRequest {
     }
 
     /**
-     * 查询数量 默认值：0 
+     * 查询数量。 默认值：10。 
      * minimum: 1
      * maximum: 500
      * @return limit
@@ -119,7 +119,7 @@ public class SearchMemberVmrRequest {
     }
 
     /**
-     * 搜索条件。支持云会议室名称、ID及分配的用户、硬终端名称模糊搜索。
+     * 搜索条件。支持云会议室名称、ID模糊搜索。
      * @return searchKey
      */
     public String getSearchKey() {
@@ -136,7 +136,7 @@ public class SearchMemberVmrRequest {
     }
 
     /**
-     * 查询vmr的类型，为null则查询所有。 false:个人云会议室 true:专用云会议室，不带则查询所有 
+     * 查询VMR的类型。不填则查询所有类型。 * false:个人会议ID * true:云会议室 
      * @return specialVmr
      */
     public Boolean getSpecialVmr() {

@@ -40,7 +40,7 @@ public class DeleteTasksReq {
     }
 
     /**
-     * 待删除的任务id列表
+     * 待删除的任务ID列表
      * @return ids
      */
     public List<String> getIds() {

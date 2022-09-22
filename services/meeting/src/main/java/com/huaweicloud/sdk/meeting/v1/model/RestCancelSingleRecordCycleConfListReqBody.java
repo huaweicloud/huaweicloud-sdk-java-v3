@@ -41,7 +41,7 @@ public class RestCancelSingleRecordCycleConfListReqBody {
     }
 
     /**
-     * 待删除的子会议标识列表
+     * 待删除的子会议UUID列表。
      * @return cycleSubConfIDs
      */
     public List<String> getCycleSubConfIDs() {

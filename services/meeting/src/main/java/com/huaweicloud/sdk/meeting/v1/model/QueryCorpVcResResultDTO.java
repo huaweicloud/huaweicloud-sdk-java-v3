@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 企业资源信息
+ * 企业资源信息。
  */
 public class QueryCorpVcResResultDTO {
 
@@ -90,7 +90,7 @@ public class QueryCorpVcResResultDTO {
     }
 
     /**
-     * 虚拟会议室类型列表,最多支持8个，暂不限制
+     * 云会议室类型列表。
      * @return vmrPkgList
      */
     public List<QueryVmrPkgResResultDTO> getVmrPkgList() {
@@ -107,7 +107,7 @@ public class QueryCorpVcResResultDTO {
     }
 
     /**
-     * 1080P硬终端账户数
+     * 1080P硬终端接入帐号数量。
      * @return te1080pHardCount
      */
     public Integer getTe1080pHardCount() {
@@ -124,7 +124,7 @@ public class QueryCorpVcResResultDTO {
     }
 
     /**
-     * 720P硬终端账户数
+     * 720P硬终端接入帐号数量。
      * @return te720pHardCount
      */
     public Integer getTe720pHardCount() {
@@ -141,7 +141,7 @@ public class QueryCorpVcResResultDTO {
     }
 
     /**
-     * 软终端账户数
+     * 软终端账户数量。
      * @return teSoftCount
      */
     public Integer getTeSoftCount() {
@@ -158,7 +158,7 @@ public class QueryCorpVcResResultDTO {
     }
 
     /**
-     * 大屏软终端数量
+     * 电子白板（SmartRooms）接入帐号数量。
      * @return roomCount
      */
     public Integer getRoomCount() {
@@ -175,7 +175,7 @@ public class QueryCorpVcResResultDTO {
     }
 
     /**
-     * 录播存储空间 （单位：G）
+     * 录播存储空间 (单位:G)。
      * @return recordCapability
      */
     public Integer getRecordCapability() {
@@ -192,7 +192,7 @@ public class QueryCorpVcResResultDTO {
     }
 
     /**
-     * 会议并发方数
+     * 会议并发方数量。
      * @return confCallCount
      */
     public Integer getConfCallCount() {
@@ -209,7 +209,7 @@ public class QueryCorpVcResResultDTO {
     }
 
     /**
-     * 推流并发数量
+     * 直播端口数量。
      * @return liveCount
      */
     public Integer getLiveCount() {
@@ -226,7 +226,7 @@ public class QueryCorpVcResResultDTO {
     }
 
     /**
-     * 第三方硬终端接入数
+     * 第三方硬终端接入帐号数量。
      * @return thirdPartyHardCount
      */
     public Integer getThirdPartyHardCount() {
@@ -243,7 +243,7 @@ public class QueryCorpVcResResultDTO {
     }
 
     /**
-     * 智慧屏终端接入数
+     * 智慧屏终端接入帐号数量。
      * @return hwVisionCount
      */
     public Integer getHwVisionCount() {
@@ -260,7 +260,7 @@ public class QueryCorpVcResResultDTO {
     }
 
     /**
-     * ideahub终端接入数
+     * IdeaHub终端接入帐号数量。
      * @return ideaHubCount
      */
     public Integer getIdeaHubCount() {

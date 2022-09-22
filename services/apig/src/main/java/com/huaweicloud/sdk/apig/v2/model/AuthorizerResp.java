@@ -188,6 +188,16 @@ public class AuthorizerResp {
     private String authorizerUri;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "authorizer_version")
+
+    private String authorizerVersion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "authorizer_alias_uri")
+
+    private String authorizerAliasUri;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "identities")
 
     private List<Identity> identities = null;
@@ -298,6 +308,40 @@ public class AuthorizerResp {
 
     public void setAuthorizerUri(String authorizerUri) {
         this.authorizerUri = authorizerUri;
+    }
+
+    public AuthorizerResp withAuthorizerVersion(String authorizerVersion) {
+        this.authorizerVersion = authorizerVersion;
+        return this;
+    }
+
+    /**
+     * 函数版本。  当函数别名URN和函数版本同时传入时，函数版本将被忽略，只会使用函数别名URN
+     * @return authorizerVersion
+     */
+    public String getAuthorizerVersion() {
+        return authorizerVersion;
+    }
+
+    public void setAuthorizerVersion(String authorizerVersion) {
+        this.authorizerVersion = authorizerVersion;
+    }
+
+    public AuthorizerResp withAuthorizerAliasUri(String authorizerAliasUri) {
+        this.authorizerAliasUri = authorizerAliasUri;
+        return this;
+    }
+
+    /**
+     * 函数别名地址。  当函数别名URN和函数版本同时传入时，函数版本将被忽略，只会使用函数别名URN
+     * @return authorizerAliasUri
+     */
+    public String getAuthorizerAliasUri() {
+        return authorizerAliasUri;
+    }
+
+    public void setAuthorizerAliasUri(String authorizerAliasUri) {
+        this.authorizerAliasUri = authorizerAliasUri;
     }
 
     public AuthorizerResp withIdentities(List<Identity> identities) {
@@ -481,6 +525,8 @@ public class AuthorizerResp {
         return Objects.equals(this.name, authorizerResp.name) && Objects.equals(this.type, authorizerResp.type)
             && Objects.equals(this.authorizerType, authorizerResp.authorizerType)
             && Objects.equals(this.authorizerUri, authorizerResp.authorizerUri)
+            && Objects.equals(this.authorizerVersion, authorizerResp.authorizerVersion)
+            && Objects.equals(this.authorizerAliasUri, authorizerResp.authorizerAliasUri)
             && Objects.equals(this.identities, authorizerResp.identities)
             && Objects.equals(this.ttl, authorizerResp.ttl) && Objects.equals(this.userData, authorizerResp.userData)
             && Objects.equals(this.ldApiId, authorizerResp.ldApiId)
@@ -496,6 +542,8 @@ public class AuthorizerResp {
             type,
             authorizerType,
             authorizerUri,
+            authorizerVersion,
+            authorizerAliasUri,
             identities,
             ttl,
             userData,
@@ -515,6 +563,8 @@ public class AuthorizerResp {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    authorizerType: ").append(toIndentedString(authorizerType)).append("\n");
         sb.append("    authorizerUri: ").append(toIndentedString(authorizerUri)).append("\n");
+        sb.append("    authorizerVersion: ").append(toIndentedString(authorizerVersion)).append("\n");
+        sb.append("    authorizerAliasUri: ").append(toIndentedString(authorizerAliasUri)).append("\n");
         sb.append("    identities: ").append(toIndentedString(identities)).append("\n");
         sb.append("    ttl: ").append(toIndentedString(ttl)).append("\n");
         sb.append("    userData: ").append(toIndentedString(userData)).append("\n");

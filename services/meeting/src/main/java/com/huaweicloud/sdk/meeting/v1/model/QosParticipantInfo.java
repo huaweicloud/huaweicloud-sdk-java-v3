@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 与会者信息。
+ * 会议与会者QoS告警信息。
  */
 public class QosParticipantInfo {
 
@@ -205,7 +205,7 @@ public class QosParticipantInfo {
     }
 
     /**
-     * 入会UUID。
+     * 与会者标识。
      * @return participantID
      */
     public String getParticipantID() {
@@ -239,7 +239,7 @@ public class QosParticipantInfo {
     }
 
     /**
-     * 与会者的名称（昵称）。
+     * 与会者的名称。
      * @return displayName
      */
     public String getDisplayName() {
@@ -256,7 +256,7 @@ public class QosParticipantInfo {
     }
 
     /**
-     * 部门。
+     * 部门名称。
      * @return deptName
      */
     public String getDeptName() {
@@ -273,7 +273,7 @@ public class QosParticipantInfo {
     }
 
     /**
-     * 入会终端类型。 - PC: PC机。 - MOBILE: 手机。 - PAD：PAD设备。 - MAC：MAC设备。 - WEB：WEB方式入会，如通过WebRTC入会。 - ROOM: 会议室。 - 硬件终端：显示具体的硬件设备类型，如TE50, HUAWEI IDEAHUB, CISCO等。 - OTHER: 其他设备。
+     * 入会终端类型。 - PC: PC机 - MOBILE: 手机 - PAD：PAD设备 - MAC：MAC设备 - WEB：WEB方式入会，如通过WebRTC入会 - ROOM: 会议室 - 硬件终端：显示具体的硬件设备类型，如TE50, HUAWEI IDEAHUB, CISCO等 - OTHER: 其他设备
      * @return terminalType
      */
     public String getTerminalType() {
@@ -290,7 +290,7 @@ public class QosParticipantInfo {
     }
 
     /**
-     * 与会者角色。 - host：主持人。 - guest：来宾。 - audience：观众。
+     * 与会者角色。 - host：主持人 - guest：来宾 - audience：观众
      * @return role
      */
     public String getRole() {
@@ -409,7 +409,7 @@ public class QosParticipantInfo {
     }
 
     /**
-     * 离会时间(UTC时间), Unix时间戳（单位毫秒）。 说明： * 与会者未离会：leftTime = 0。 * 与会者已离会：leftTime = 实际离会时间。
+     * 离会时间(UTC时间), Unix时间戳（单位毫秒）。 > * 与会者未离会：leftTime = 0 > * 与会者已离会：leftTime = 实际离会时间
      * @return leftTime
      */
     public Long getLeftTime() {
@@ -426,7 +426,7 @@ public class QosParticipantInfo {
     }
 
     /**
-     * 系统信息。
+     * 终端操作系统信息。
      * @return systemInfo
      */
     public String getSystemInfo() {
@@ -460,7 +460,7 @@ public class QosParticipantInfo {
     }
 
     /**
-     * 总体告警 YES/NO。 说明： * 音频（发送/接收），视频（发送/接收），屏幕共享（发送/接收），CPU任一项产生告警，总体告警状态即为 YES。
+     * 总体告警。 * YES：音频（发送/接收），视频（发送/接收），屏幕共享（发送/接收），CPU任一项产生告警，总体告警状态即为 YES * NO：无告警
      * @return alarm
      */
     public String getAlarm() {
@@ -477,7 +477,7 @@ public class QosParticipantInfo {
     }
 
     /**
-     * 音频发送告警 YES / NO。 说明： * 发送音频的抖动，时延，丢包率任一项产生阈值告警，则音频发送告警状态为YES。
+     * 音频发送告警。 * YES ：发送音频的抖动，时延，丢包率任一项产生阈值告警，则音频发送告警状态为YES * NO：发送音频无告警
      * @return audioAlarmSend
      */
     public String getAudioAlarmSend() {
@@ -494,7 +494,7 @@ public class QosParticipantInfo {
     }
 
     /**
-     * 视频发送告警 YES / NO。 说明： * 发送视频的抖动，时延，丢包率，分辨率任一项产生阈值告警，则视频发送告警状态为YES。
+     * 视频发送告警。 * YES ：发送视频的抖动，时延，丢包率任一项产生阈值告警，则视频发送告警状态为YES * NO：发送视频无告警
      * @return videoAlarmSend
      */
     public String getVideoAlarmSend() {
@@ -511,7 +511,7 @@ public class QosParticipantInfo {
     }
 
     /**
-     * 屏幕共享发送告警 YES / NO。 说明： * 发送屏幕共享的抖动，时延，丢包率任一项产生阈值告警，则屏幕共享发送告警状态为YES。
+     * 屏幕共享发送告警。 * YES：发送屏幕共享的抖动，时延，丢包率任一项产生阈值告警，则屏幕共享发送告警状态为YES * NO：发送屏幕共享无告警
      * @return screenAlarmSend
      */
     public String getScreenAlarmSend() {
@@ -528,7 +528,7 @@ public class QosParticipantInfo {
     }
 
     /**
-     * 音频接收告警 YES / NO。 说明： * 接收音频的抖动，时延，丢包率任一项产生阈值告警，则音频接收告警状态为YES。
+     * 音频接收告警。 * YES：接收音频的抖动，时延，丢包率任一项产生阈值告警，则音频接收告警状态为YES * NO：接收音频无告警
      * @return audioAlarmRec
      */
     public String getAudioAlarmRec() {
@@ -545,7 +545,7 @@ public class QosParticipantInfo {
     }
 
     /**
-     * 视频接收告警 YES / NO。 说明： * 接收视频的抖动，时延，丢包率任一项产生阈值告警，则视频接收告警状态为YES。
+     * 视频接收告警。 * YES：接收视频的抖动，时延，丢包率任一项产生阈值告警，则视频接收告警状态为YES * NO：接收视频无告警
      * @return videoAlarmRec
      */
     public String getVideoAlarmRec() {
@@ -562,7 +562,7 @@ public class QosParticipantInfo {
     }
 
     /**
-     * 屏幕共享接收告警 YES / NO。 说明： * 接收屏幕共享的抖动，时延，丢包率任一项产生阈值告警，则屏幕共享接收告警状态为YES。
+     * 屏幕共享接收告警。 * YES：接收屏幕共享的抖动，时延，丢包率任一项产生阈值告警，则屏幕共享接收告警状态为YES * NO：接收屏幕共享无告警
      * @return screenAlarmRec
      */
     public String getScreenAlarmRec() {
@@ -579,7 +579,7 @@ public class QosParticipantInfo {
     }
 
     /**
-     * CPU告警 YES / NO。 说明： * 端侧的APP最大CPU使用率或系统最大CPU使用率任一项产生阈值告警，则CPU告警状态为YES。
+     * CPU告警。 * YES：端侧的APP最大CPU使用率或系统最大CPU使用率任一项产生阈值告警，则CPU告警状态为YES * NO：CPU无告警
      * @return cpuAlarm
      */
     public String getCpuAlarm() {
@@ -664,7 +664,7 @@ public class QosParticipantInfo {
     }
 
     /**
-     * 离会原因。此字段仅标识离会原因，不做为是否已离会的判断依据。正在与会人员的离会原因初始值 = 0。 说明： * 0：正常离会。 * 1：网络异常离会。
+     * 离会原因。此字段仅标识离会原因，不做为是否已离会的判断依据。正在与会人员的离会原因初始值 = 0。 * 0：正常离会 * 1：网络异常离会
      * @return leftReason
      */
     public Integer getLeftReason() {
@@ -681,7 +681,7 @@ public class QosParticipantInfo {
     }
 
     /**
-     * 与会者是否存在QoS数据。 true：存在QoS数据。 false：不存在QoS数据。
+     * 与会者是否存在QoS数据。 * true：存在QoS数据 * false：不存在QoS数据
      * @return existQos
      */
     public Boolean getExistQos() {

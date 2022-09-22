@@ -21,7 +21,7 @@ public class SearchQosParticipantsRequest {
     private String confUUID;
 
     /**
-     * 会议类别。 * online：在线会议，在召开的会议。 * history：历史会议，已召开的会议。
+     * 会议类别。 * online：在线会议，正在召开的会议 * history：历史会议，已结束的会议
      */
     public static final class ConfTypeEnum {
 
@@ -123,7 +123,7 @@ public class SearchQosParticipantsRequest {
     }
 
     /**
-     * 会议UUID。最大不超过64个字节。
+     * 会议UUID。
      * @return confUUID
      */
     public String getConfUUID() {
@@ -140,7 +140,7 @@ public class SearchQosParticipantsRequest {
     }
 
     /**
-     * 会议类别。 * online：在线会议，在召开的会议。 * history：历史会议，已召开的会议。
+     * 会议类别。 * online：在线会议，正在召开的会议 * history：历史会议，已结束的会议
      * @return confType
      */
     public ConfTypeEnum getConfType() {
@@ -157,7 +157,7 @@ public class SearchQosParticipantsRequest {
     }
 
     /**
-     * 查询偏移量。 * 取值：大于等于0，默认值为0。 * 小于最小值0时，系统设置为0。 * 大于等于最大条目数量，则返回最后一页的数据。
+     * 查询偏移量。 * 取值：大于等于0，默认值为0。 * 大于等于最大条目数量，则返回最后一页的数据。
      * @return offset
      */
     public Integer getOffset() {
@@ -174,7 +174,7 @@ public class SearchQosParticipantsRequest {
     }
 
     /**
-     * 查询的条目数量。 * 取值：1-500，默认值为20。 * 小于最小值1时，系统设置为1。 * 大于最大值500时，系统设置为500。
+     * 查询的条目数量。 * 取值：1-500，默认值为20。
      * @return limit
      */
     public Integer getLimit() {
@@ -191,7 +191,7 @@ public class SearchQosParticipantsRequest {
     }
 
     /**
-     * 根据与会人名称作为关键词，模糊查询与会者列表
+     * 查询条件。与会者名称可作为搜索内容。长度限制为1-512个字符。
      * @return searchKey
      */
     public String getSearchKey() {

@@ -41,7 +41,7 @@ public class ResDetailDTO {
     }
 
     /**
-     * 总数
+     * 总数。
      * @return sumCount
      */
     public Integer getSumCount() {
@@ -58,7 +58,7 @@ public class ResDetailDTO {
     }
 
     /**
-     * 赠送数量
+     * 赠送数量。
      * @return trialCount
      */
     public Integer getTrialCount() {
@@ -75,7 +75,7 @@ public class ResDetailDTO {
     }
 
     /**
-     * 到期数量
+     * 到期数量。
      * @return expiredCount
      */
     public Integer getExpiredCount() {
@@ -92,7 +92,7 @@ public class ResDetailDTO {
     }
 
     /**
-     * 即将到期数量，到期时间在30天内
+     * 即将到期数量，到期时间在30天内。
      * @return expiringCount
      */
     public Integer getExpiringCount() {

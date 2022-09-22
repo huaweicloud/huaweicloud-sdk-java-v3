@@ -40,7 +40,7 @@ public class SearchOnlineMeetingsResponse extends SdkResponse {
     }
 
     /**
-     * 第几条。
+     * 查询偏移量。
      * @return offset
      */
     public Integer getOffset() {
@@ -107,7 +107,7 @@ public class SearchOnlineMeetingsResponse extends SdkResponse {
     }
 
     /**
-     * 会议信息列表。
+     * 会议列表。
      * @return data
      */
     public List<ConferenceInfo> getData() {

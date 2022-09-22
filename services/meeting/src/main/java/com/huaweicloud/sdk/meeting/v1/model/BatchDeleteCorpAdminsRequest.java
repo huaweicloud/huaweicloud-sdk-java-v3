@@ -39,7 +39,7 @@ public class BatchDeleteCorpAdminsRequest {
     }
 
     /**
-     * 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用uuId，若不携带，则后台自动生成
+     * 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用UUID，若不携带，则后台自动生成。
      * @return xRequestId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -58,7 +58,7 @@ public class BatchDeleteCorpAdminsRequest {
     }
 
     /**
-     * 语言参数，默认为中文zh-CN, 英文为en-US
+     * 语言参数，默认为中文zh-CN，英文为en-US。
      * @return acceptLanguage
      */
     public String getAcceptLanguage() {
@@ -75,7 +75,7 @@ public class BatchDeleteCorpAdminsRequest {
     }
 
     /**
-     * 账号类型 * 0：会议账号； * 1：第三方账号。 默认0 
+     * 帐号类型。默认0。 * 0：华为云会议帐号。用于帐号/密码鉴权方式 * 1：第三方User ID，用于App ID鉴权方式 
      * minimum: 0
      * maximum: 1
      * @return accountType
@@ -110,7 +110,7 @@ public class BatchDeleteCorpAdminsRequest {
     }
 
     /**
-     * 用户的帐号列表。 maxLength：100 minLength：1
+     * Get body
      * @return body
      */
     public List<String> getBody() {

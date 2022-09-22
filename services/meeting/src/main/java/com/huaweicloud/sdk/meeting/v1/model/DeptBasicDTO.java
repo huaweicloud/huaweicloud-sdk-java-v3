@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 部门基本信息, 查询企业级别的管理员时需要显示部门信息
+ * 部门基本信息。
  */
 public class DeptBasicDTO {
 
@@ -41,7 +41,7 @@ public class DeptBasicDTO {
     }
 
     /**
-     * 部门编码
+     * 部门编码。
      * @return deptCode
      */
     public String getDeptCode() {
@@ -58,7 +58,7 @@ public class DeptBasicDTO {
     }
 
     /**
-     * 企业id
+     * 企业id。
      * @return corpId
      */
     public String getCorpId() {
@@ -75,7 +75,7 @@ public class DeptBasicDTO {
     }
 
     /**
-     * 部门名称
+     * 部门名称。
      * @return deptName
      */
     public String getDeptName() {
@@ -92,7 +92,7 @@ public class DeptBasicDTO {
     }
 
     /**
-     * 部门名称路径
+     * 部门名称路径。
      * @return deptNamePath
      */
     public String getDeptNamePath() {
@@ -109,7 +109,7 @@ public class DeptBasicDTO {
     }
 
     /**
-     * 父部门编码
+     * 父部门编码。
      * @return parentDeptCode
      */
     public String getParentDeptCode() {

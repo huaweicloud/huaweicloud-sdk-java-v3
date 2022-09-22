@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 会议推送参数配置请求体
+ * 会议推送参数配置请求。
  */
 public class WebHookConfigRequest {
 
@@ -41,7 +41,7 @@ public class WebHookConfigRequest {
     }
 
     /**
-     * 企业ID，与spId二者必填一个
+     * 企业ID。按企业注册回调时需要填写。
      * @return corpId
      */
     public String getCorpId() {
@@ -58,7 +58,7 @@ public class WebHookConfigRequest {
     }
 
     /**
-     * sp管理员ID，与corpId二者必填一个
+     * SP ID。多租户场景下，按SP注册回调时需要填写。
      * @return spId
      */
     public String getSpId() {
@@ -75,7 +75,7 @@ public class WebHookConfigRequest {
     }
 
     /**
-     * 订阅者ID
+     * 订阅者ID。
      * @return subscriberId
      */
     public String getSubscriberId() {
@@ -92,7 +92,7 @@ public class WebHookConfigRequest {
     }
 
     /**
-     * 订阅者秘钥
+     * 订阅者秘钥。
      * @return subscriberKey
      */
     public String getSubscriberKey() {
@@ -109,7 +109,7 @@ public class WebHookConfigRequest {
     }
 
     /**
-     * 订阅url，建议使用HTTPS
+     * 订阅url。 > 必须使用HTTPS。 
      * @return url
      */
     public String getUrl() {

@@ -20,6 +20,11 @@ public class PublicIp {
 
     private Integer bandwidthSize;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "bandwidth_share_type")
+
+    private String bandwidthShareType;
+
     public PublicIp withType(String type) {
         this.type = type;
         return this;
@@ -56,6 +61,23 @@ public class PublicIp {
         this.bandwidthSize = bandwidthSize;
     }
 
+    public PublicIp withBandwidthShareType(String bandwidthShareType) {
+        this.bandwidthShareType = bandwidthShareType;
+        return this;
+    }
+
+    /**
+     * 带宽共享类型
+     * @return bandwidthShareType
+     */
+    public String getBandwidthShareType() {
+        return bandwidthShareType;
+    }
+
+    public void setBandwidthShareType(String bandwidthShareType) {
+        this.bandwidthShareType = bandwidthShareType;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -65,12 +87,13 @@ public class PublicIp {
             return false;
         }
         PublicIp publicIp = (PublicIp) o;
-        return Objects.equals(this.type, publicIp.type) && Objects.equals(this.bandwidthSize, publicIp.bandwidthSize);
+        return Objects.equals(this.type, publicIp.type) && Objects.equals(this.bandwidthSize, publicIp.bandwidthSize)
+            && Objects.equals(this.bandwidthShareType, publicIp.bandwidthShareType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, bandwidthSize);
+        return Objects.hash(type, bandwidthSize, bandwidthShareType);
     }
 
     @Override
@@ -79,6 +102,7 @@ public class PublicIp {
         sb.append("class PublicIp {\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    bandwidthSize: ").append(toIndentedString(bandwidthSize)).append("\n");
+        sb.append("    bandwidthShareType: ").append(toIndentedString(bandwidthShareType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

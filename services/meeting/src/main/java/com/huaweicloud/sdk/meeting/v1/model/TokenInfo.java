@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 终端状态信息
+ * 会控Token信息。
  */
 public class TokenInfo {
 
@@ -74,7 +74,7 @@ public class TokenInfo {
     }
 
     /**
-     * 会控鉴权Token。
+     * 会控Token。有效期半个小时。
      * @return token
      */
     public String getToken() {
@@ -91,7 +91,7 @@ public class TokenInfo {
     }
 
     /**
-     * websocket建链鉴权Token，成功时必带。
+     * 会控WebSocket建链鉴权Token。
      * @return tmpWsToken
      */
     public String getTmpWsToken() {
@@ -108,7 +108,7 @@ public class TokenInfo {
     }
 
     /**
-     * websocket建链URL。
+     * 会控WebSocket建链URL。
      * @return wsURL
      */
     public String getWsURL() {
@@ -125,7 +125,7 @@ public class TokenInfo {
     }
 
     /**
-     * 会议中的角色 1：会议主席 0：普通与会者
+     * 会议中的角色。 * 0 ：普通与会者 * 1 ：会议主持人 
      * minimum: 0
      * maximum: 1
      * @return role
@@ -144,7 +144,7 @@ public class TokenInfo {
     }
 
     /**
-     * 会话过期时间。UTC时间毫秒数。
+     * 会控Token过期时间戳（单位：毫秒）。
      * @return expireTime
      */
     public Long getExpireTime() {
@@ -161,7 +161,7 @@ public class TokenInfo {
     }
 
     /**
-     * 会议预定人ID。
+     * 会议预定者的用户UUID。
      * @return userID
      */
     public String getUserID() {
@@ -195,7 +195,7 @@ public class TokenInfo {
     }
 
     /**
-     * 终端请求时，返回终端入会后会场ID。
+     * 终端请求时，返回终端入会后会场ID。 > 该参数将废弃，请勿使用。 
      * @return participantID
      */
     public String getParticipantID() {
@@ -212,7 +212,7 @@ public class TokenInfo {
     }
 
     /**
-     * 会控token失效的时间。（单位秒）
+     * 会控Token有效时长（单位秒）。
      * @return confTokenExpireTime
      */
     public Integer getConfTokenExpireTime() {
@@ -262,7 +262,7 @@ public class TokenInfo {
     }
 
     /**
-     * websocket消息推送支持类型。
+     * 会控WebSocket消息推送支持类型。
      * @return supportNotifyType
      */
     public List<String> getSupportNotifyType() {

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 发布的设备信息
+ * 发布的设备信息。
  */
 public class PublishDeviceResponseDTO {
 
@@ -26,7 +26,7 @@ public class PublishDeviceResponseDTO {
     }
 
     /**
-     * 设备用户ID
+     * 设备用户ID。
      * @return deviceUserId
      */
     public String getDeviceUserId() {
@@ -43,7 +43,7 @@ public class PublishDeviceResponseDTO {
     }
 
     /**
-     * 设备名称
+     * 设备名称。
      * @return deviceName
      */
     public String getDeviceName() {

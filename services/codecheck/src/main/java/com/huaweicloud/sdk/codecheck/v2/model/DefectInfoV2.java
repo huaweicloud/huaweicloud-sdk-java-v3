@@ -73,6 +73,11 @@ public class DefectInfoV2 {
 
     private List<DefectFragmentV2> fragment = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "events")
+
+    private List<DefectEvents> events = null;
+
     public DefectInfoV2 withDefectId(String defectId) {
         this.defectId = defectId;
         return this;
@@ -293,6 +298,39 @@ public class DefectInfoV2 {
         this.fragment = fragment;
     }
 
+    public DefectInfoV2 withEvents(List<DefectEvents> events) {
+        this.events = events;
+        return this;
+    }
+
+    public DefectInfoV2 addEventsItem(DefectEvents eventsItem) {
+        if (this.events == null) {
+            this.events = new ArrayList<>();
+        }
+        this.events.add(eventsItem);
+        return this;
+    }
+
+    public DefectInfoV2 withEvents(Consumer<List<DefectEvents>> eventsSetter) {
+        if (this.events == null) {
+            this.events = new ArrayList<>();
+        }
+        eventsSetter.accept(this.events);
+        return this;
+    }
+
+    /**
+     * 调用链信息
+     * @return events
+     */
+    public List<DefectEvents> getEvents() {
+        return events;
+    }
+
+    public void setEvents(List<DefectEvents> events) {
+        this.events = events;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -313,7 +351,7 @@ public class DefectInfoV2 {
             && Objects.equals(this.filePath, defectInfoV2.filePath)
             && Objects.equals(this.createdAt, defectInfoV2.createdAt)
             && Objects.equals(this.issueKey, defectInfoV2.issueKey)
-            && Objects.equals(this.fragment, defectInfoV2.fragment);
+            && Objects.equals(this.fragment, defectInfoV2.fragment) && Objects.equals(this.events, defectInfoV2.events);
     }
 
     @Override
@@ -329,7 +367,8 @@ public class DefectInfoV2 {
             filePath,
             createdAt,
             issueKey,
-            fragment);
+            fragment,
+            events);
     }
 
     @Override
@@ -348,6 +387,7 @@ public class DefectInfoV2 {
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    issueKey: ").append(toIndentedString(issueKey)).append("\n");
         sb.append("    fragment: ").append(toIndentedString(fragment)).append("\n");
+        sb.append("    events: ").append(toIndentedString(events)).append("\n");
         sb.append("}");
         return sb.toString();
     }

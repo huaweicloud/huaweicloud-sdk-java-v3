@@ -106,7 +106,7 @@ public class AuthorizeConfigInfoRequestBody {
     }
 
     /**
-     * 是否开启SSO登录
+     * 是否开启SSO登录。
      * @return enableSSO
      */
     public Boolean getEnableSSO() {
@@ -123,7 +123,7 @@ public class AuthorizeConfigInfoRequestBody {
     }
 
     /**
-     * 企业域名 说明：开启SSO登录时必填 
+     * 企业域名 > 开启SSO登录时必填 
      * @return domain
      */
     public String getDomain() {
@@ -140,7 +140,7 @@ public class AuthorizeConfigInfoRequestBody {
     }
 
     /**
-     * Oauth2授权地址 说明：开启SSO登录时必填 
+     * 鉴权中心URL。 > 开启SSO登录时必填 
      * @return authorizeUrl
      */
     public String getAuthorizeUrl() {
@@ -157,7 +157,7 @@ public class AuthorizeConfigInfoRequestBody {
     }
 
     /**
-     * 获取Token URL 说明：开启SSO登录时必填 
+     * 获取Token URL。 > 开启SSO登录时必填 
      * @return getTokenUrl
      */
     public String getGetTokenUrl() {
@@ -174,7 +174,7 @@ public class AuthorizeConfigInfoRequestBody {
     }
 
     /**
-     * APPID 说明：开启SSO登录时必填 
+     * APP ID。 > 开启SSO登录时必填 
      * @return clientId
      */
     public String getClientId() {
@@ -191,7 +191,7 @@ public class AuthorizeConfigInfoRequestBody {
     }
 
     /**
-     * APP秘钥 说明：开启SSO登录时，若不修改APP秘钥，则置空即可 
+     * APP秘钥。 > 开启SSO登录时，若不修改APP秘钥，则置空即可 
      * @return clientSecret
      */
     public String getClientSecret() {
@@ -208,7 +208,7 @@ public class AuthorizeConfigInfoRequestBody {
     }
 
     /**
-     * 授权范围，OAuth2.0的OIDC取值为“openid”
+     * 授权范围。 * openid：OAuth2.0的OIDC 
      * @return scope
      */
     public String getScope() {
@@ -225,7 +225,7 @@ public class AuthorizeConfigInfoRequestBody {
     }
 
     /**
-     * 第三方账号的字段名称 说明：开启SSO登录时必填 
+     * 第三方帐号的字段名称。 > 开启SSO登录时必填 
      * @return accFieldName
      */
     public String getAccFieldName() {
@@ -242,7 +242,7 @@ public class AuthorizeConfigInfoRequestBody {
     }
 
     /**
-     * 用户信息查询URL
+     * 用户信息查询URL。
      * @return getUserInfoUrl
      */
     public String getGetUserInfoUrl() {
@@ -259,7 +259,7 @@ public class AuthorizeConfigInfoRequestBody {
     }
 
     /**
-     * 鉴权类型。OAuth2.0鉴权时取0
+     * 鉴权类型。 * 0：OAuth2.0鉴权 
      * minimum: 0
      * maximum: 255
      * @return oauth2ServerType
@@ -278,7 +278,7 @@ public class AuthorizeConfigInfoRequestBody {
     }
 
     /**
-     * 拉起PC端终端的schema
+     * 拉起PC端终端的schema。
      * @return pcSchemaUrl
      */
     public String getPcSchemaUrl() {
@@ -295,7 +295,7 @@ public class AuthorizeConfigInfoRequestBody {
     }
 
     /**
-     * 拉起安卓端终端的schema
+     * 拉起安卓端终端的schema。
      * @return androidSchemaUrl
      */
     public String getAndroidSchemaUrl() {
@@ -312,7 +312,7 @@ public class AuthorizeConfigInfoRequestBody {
     }
 
     /**
-     * 拉起ios端终端的schema
+     * 拉起ios端终端的schema。
      * @return iosSchemaUrl
      */
     public String getIosSchemaUrl() {
@@ -329,7 +329,7 @@ public class AuthorizeConfigInfoRequestBody {
     }
 
     /**
-     * 第三方姓名的字段名称
+     * 第三方名称的字段名称。
      * @return thirdName
      */
     public String getThirdName() {
@@ -346,7 +346,7 @@ public class AuthorizeConfigInfoRequestBody {
     }
 
     /**
-     * 第三方邮箱的字段名称
+     * 第三方邮箱的字段名称。
      * @return thirdEmail
      */
     public String getThirdEmail() {
@@ -363,7 +363,7 @@ public class AuthorizeConfigInfoRequestBody {
     }
 
     /**
-     * 第三方手机号的字段名称
+     * 第三方手机号的字段名称。
      * @return thirdMobile
      */
     public String getThirdMobile() {
@@ -380,7 +380,7 @@ public class AuthorizeConfigInfoRequestBody {
     }
 
     /**
-     * 第三方accessToken的字段名称 说明：开启SSO登录时必填 
+     * 第三方accessToken的字段名称。 > 开启SSO登录时必填。 
      * @return thirdAccessToken
      */
     public String getThirdAccessToken() {
@@ -397,7 +397,7 @@ public class AuthorizeConfigInfoRequestBody {
     }
 
     /**
-     * 第三方头像链接的字段名称
+     * 第三方头像链接的字段名称。
      * @return thirdHeadImgUrl
      */
     public String getThirdHeadImgUrl() {

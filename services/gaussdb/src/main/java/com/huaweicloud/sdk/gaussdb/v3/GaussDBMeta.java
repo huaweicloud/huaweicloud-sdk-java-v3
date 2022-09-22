@@ -1054,6 +1054,40 @@ public class GaussDBMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListGaussMySqlInstanceDetailInfoRequest, ListGaussMySqlInstanceDetailInfoResponse> listGaussMySqlInstanceDetailInfo = genForlistGaussMySqlInstanceDetailInfo();
+
+    private static HttpRequestDef<ListGaussMySqlInstanceDetailInfoRequest, ListGaussMySqlInstanceDetailInfoResponse> genForlistGaussMySqlInstanceDetailInfo() {
+        // basic
+        HttpRequestDef.Builder<ListGaussMySqlInstanceDetailInfoRequest, ListGaussMySqlInstanceDetailInfoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListGaussMySqlInstanceDetailInfoRequest.class, ListGaussMySqlInstanceDetailInfoResponse.class)
+                .withName("ListGaussMySqlInstanceDetailInfo")
+                .withUri("/v3/{project_id}/instances/details")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_ids",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListGaussMySqlInstanceDetailInfoRequest::getInstanceIds, (req, v) -> {
+                req.setInstanceIds(v);
+            })
+        );
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListGaussMySqlInstanceDetailInfoRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListGaussMySqlInstancesRequest, ListGaussMySqlInstancesResponse> listGaussMySqlInstances = genForlistGaussMySqlInstances();
 
     private static HttpRequestDef<ListGaussMySqlInstancesRequest, ListGaussMySqlInstancesResponse> genForlistGaussMySqlInstances() {

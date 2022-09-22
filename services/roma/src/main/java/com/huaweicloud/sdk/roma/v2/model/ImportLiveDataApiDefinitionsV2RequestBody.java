@@ -257,9 +257,10 @@ public class ImportLiveDataApiDefinitionsV2RequestBody implements SdkFormDataBod
     }
 
     @Override
-    public Map<String, FormDataPart> buildFormData() {
-        return new LinkedHashMap<String, FormDataPart>() {
+    public Map<String, FormDataPart<?>> buildFormData() {
+        return new LinkedHashMap<String, FormDataPart<?>>() {
 
+            private static final long serialVersionUID = 1L;
             {
                 if (extendMode != null) {
                     put("extend_mode", new FormDataPart<>(extendMode));

@@ -22,7 +22,7 @@ public class ListTemplatesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "templates")
 
-    private List<TemplateResponse> templates = null;
+    private List<TemplateResponseBody> templates = null;
 
     public ListTemplatesResponse withCount(Integer count) {
         this.count = count;
@@ -43,12 +43,12 @@ public class ListTemplatesResponse extends SdkResponse {
         this.count = count;
     }
 
-    public ListTemplatesResponse withTemplates(List<TemplateResponse> templates) {
+    public ListTemplatesResponse withTemplates(List<TemplateResponseBody> templates) {
         this.templates = templates;
         return this;
     }
 
-    public ListTemplatesResponse addTemplatesItem(TemplateResponse templatesItem) {
+    public ListTemplatesResponse addTemplatesItem(TemplateResponseBody templatesItem) {
         if (this.templates == null) {
             this.templates = new ArrayList<>();
         }
@@ -56,7 +56,7 @@ public class ListTemplatesResponse extends SdkResponse {
         return this;
     }
 
-    public ListTemplatesResponse withTemplates(Consumer<List<TemplateResponse>> templatesSetter) {
+    public ListTemplatesResponse withTemplates(Consumer<List<TemplateResponseBody>> templatesSetter) {
         if (this.templates == null) {
             this.templates = new ArrayList<>();
         }
@@ -68,11 +68,11 @@ public class ListTemplatesResponse extends SdkResponse {
      * 模板信息
      * @return templates
      */
-    public List<TemplateResponse> getTemplates() {
+    public List<TemplateResponseBody> getTemplates() {
         return templates;
     }
 
-    public void setTemplates(List<TemplateResponse> templates) {
+    public void setTemplates(List<TemplateResponseBody> templates) {
         this.templates = templates;
     }
 

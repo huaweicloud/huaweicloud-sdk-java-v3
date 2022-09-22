@@ -16,6 +16,11 @@ public class ListSpecialThrottlingConfigurationsV2Request {
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "throttle_id")
+
+    private String throttleId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
     private Long offset;
@@ -24,11 +29,6 @@ public class ListSpecialThrottlingConfigurationsV2Request {
     @JsonProperty(value = "limit")
 
     private Integer limit;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "throttle_id")
-
-    private String throttleId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "object_type")
@@ -60,6 +60,23 @@ public class ListSpecialThrottlingConfigurationsV2Request {
 
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
+    }
+
+    public ListSpecialThrottlingConfigurationsV2Request withThrottleId(String throttleId) {
+        this.throttleId = throttleId;
+        return this;
+    }
+
+    /**
+     * 流控策略的编号
+     * @return throttleId
+     */
+    public String getThrottleId() {
+        return throttleId;
+    }
+
+    public void setThrottleId(String throttleId) {
+        this.throttleId = throttleId;
     }
 
     public ListSpecialThrottlingConfigurationsV2Request withOffset(Long offset) {
@@ -98,30 +115,13 @@ public class ListSpecialThrottlingConfigurationsV2Request {
         this.limit = limit;
     }
 
-    public ListSpecialThrottlingConfigurationsV2Request withThrottleId(String throttleId) {
-        this.throttleId = throttleId;
-        return this;
-    }
-
-    /**
-     * 流控策略的编号
-     * @return throttleId
-     */
-    public String getThrottleId() {
-        return throttleId;
-    }
-
-    public void setThrottleId(String throttleId) {
-        this.throttleId = throttleId;
-    }
-
     public ListSpecialThrottlingConfigurationsV2Request withObjectType(String objectType) {
         this.objectType = objectType;
         return this;
     }
 
     /**
-     * 特殊流控类型：APP, USER
+     * 特殊流控类型：APP，USER
      * @return objectType
      */
     public String getObjectType() {
@@ -177,9 +177,9 @@ public class ListSpecialThrottlingConfigurationsV2Request {
         ListSpecialThrottlingConfigurationsV2Request listSpecialThrottlingConfigurationsV2Request =
             (ListSpecialThrottlingConfigurationsV2Request) o;
         return Objects.equals(this.instanceId, listSpecialThrottlingConfigurationsV2Request.instanceId)
+            && Objects.equals(this.throttleId, listSpecialThrottlingConfigurationsV2Request.throttleId)
             && Objects.equals(this.offset, listSpecialThrottlingConfigurationsV2Request.offset)
             && Objects.equals(this.limit, listSpecialThrottlingConfigurationsV2Request.limit)
-            && Objects.equals(this.throttleId, listSpecialThrottlingConfigurationsV2Request.throttleId)
             && Objects.equals(this.objectType, listSpecialThrottlingConfigurationsV2Request.objectType)
             && Objects.equals(this.appName, listSpecialThrottlingConfigurationsV2Request.appName)
             && Objects.equals(this.user, listSpecialThrottlingConfigurationsV2Request.user);
@@ -187,7 +187,7 @@ public class ListSpecialThrottlingConfigurationsV2Request {
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, offset, limit, throttleId, objectType, appName, user);
+        return Objects.hash(instanceId, throttleId, offset, limit, objectType, appName, user);
     }
 
     @Override
@@ -195,9 +195,9 @@ public class ListSpecialThrottlingConfigurationsV2Request {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListSpecialThrottlingConfigurationsV2Request {\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    throttleId: ").append(toIndentedString(throttleId)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
-        sb.append("    throttleId: ").append(toIndentedString(throttleId)).append("\n");
         sb.append("    objectType: ").append(toIndentedString(objectType)).append("\n");
         sb.append("    appName: ").append(toIndentedString(appName)).append("\n");
         sb.append("    user: ").append(toIndentedString(user)).append("\n");

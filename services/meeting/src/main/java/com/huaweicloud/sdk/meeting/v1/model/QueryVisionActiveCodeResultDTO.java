@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 搜索激活码的返回结果DTO对象
+ * 激活码信息。
  */
 public class QueryVisionActiveCodeResultDTO {
 
@@ -51,7 +51,7 @@ public class QueryVisionActiveCodeResultDTO {
     }
 
     /**
-     * 激活码唯一标识
+     * 激活码唯一标识。
      * @return id
      */
     public String getId() {
@@ -68,7 +68,7 @@ public class QueryVisionActiveCodeResultDTO {
     }
 
     /**
-     * 激活码
+     * 激活码。
      * @return activeCode
      */
     public String getActiveCode() {
@@ -85,7 +85,7 @@ public class QueryVisionActiveCodeResultDTO {
     }
 
     /**
-     * 终端名称
+     * 终端名称。
      * @return devName
      */
     public String getDevName() {
@@ -102,7 +102,7 @@ public class QueryVisionActiveCodeResultDTO {
     }
 
     /**
-     * 终端类型
+     * 终端类型。
      * @return devType
      */
     public String getDevType() {
@@ -119,7 +119,7 @@ public class QueryVisionActiveCodeResultDTO {
     }
 
     /**
-     * 部门编码
+     * 部门编码。
      * @return deptCode
      */
     public String getDeptCode() {
@@ -136,7 +136,7 @@ public class QueryVisionActiveCodeResultDTO {
     }
 
     /**
-     * 部门名称
+     * 部门名称。
      * @return deptName
      */
     public String getDeptName() {
@@ -153,7 +153,7 @@ public class QueryVisionActiveCodeResultDTO {
     }
 
     /**
-     * 失效时间戳
+     * 失效时间戳。
      * @return expireDate
      */
     public Long getExpireDate() {

@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 企业的资源信息
+ * 企业的资源信息。
  */
 public class AddCorpResDTO {
 
@@ -40,7 +40,7 @@ public class AddCorpResDTO {
     }
 
     /**
-     * 企业待添加的资源列表
+     * 企业待添加的资源列表。
      * @return resource
      */
     public List<ResourceDTO> getResource() {

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 企业基本信息
+ * 企业基本信息。
  */
 public class QueryCorpBasicResultDTO {
 
@@ -56,7 +56,7 @@ public class QueryCorpBasicResultDTO {
     }
 
     /**
-     * 企业名称
+     * 企业名称。
      * @return name
      */
     public String getName() {
@@ -73,7 +73,7 @@ public class QueryCorpBasicResultDTO {
     }
 
     /**
-     * 联系号码
+     * 联系号码。
      * @return phone
      */
     public String getPhone() {
@@ -90,7 +90,7 @@ public class QueryCorpBasicResultDTO {
     }
 
     /**
-     * 联系号码所属的国家
+     * [[手机号所属的国家](https://support.huaweicloud.com/api-meeting/meeting_21_0109.html#ZH-CN_TOPIC_0212714591__table19371178135314)](tag:hws)[[手机号所属的国家](https://support.huaweicloud.com/intl/zh-cn/api-meeting/meeting_21_0109.html#ZH-CN_TOPIC_0212714591__table19371178135314)](tag:hk) 。 
      * @return country
      */
     public String getCountry() {
@@ -107,7 +107,7 @@ public class QueryCorpBasicResultDTO {
     }
 
     /**
-     * 传真号码
+     * 传真号码。
      * @return fax
      */
     public String getFax() {
@@ -124,7 +124,7 @@ public class QueryCorpBasicResultDTO {
     }
 
     /**
-     * 邮箱地址
+     * 邮箱地址。
      * @return email
      */
     public String getEmail() {
@@ -141,7 +141,7 @@ public class QueryCorpBasicResultDTO {
     }
 
     /**
-     * 地址
+     * 地址。
      * @return address
      */
     public String getAddress() {
@@ -158,7 +158,7 @@ public class QueryCorpBasicResultDTO {
     }
 
     /**
-     * 备注
+     * 备注。
      * @return description
      */
     public String getDescription() {
@@ -175,7 +175,7 @@ public class QueryCorpBasicResultDTO {
     }
 
     /**
-     * 企业所属spId
+     * 企业所属SP ID。
      * @return spId
      */
     public String getSpId() {

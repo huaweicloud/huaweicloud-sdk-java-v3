@@ -51,7 +51,7 @@ public class SearchCorpVmrRequest {
     }
 
     /**
-     * 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用uuId，若不携带，则后台自动生成
+     * 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用UUID，若不携带，则后台自动生成。
      * @return xRequestId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -70,7 +70,7 @@ public class SearchCorpVmrRequest {
     }
 
     /**
-     * 语言参数，默认为中文zh-CN, 英文为en-US
+     * 语言参数，默认为中文zh-CN，英文为en-US。
      * @return acceptLanguage
      */
     public String getAcceptLanguage() {
@@ -87,7 +87,7 @@ public class SearchCorpVmrRequest {
     }
 
     /**
-     * 查询偏移量,若超过最大数量，则返回最后一页的数据 默认值：0 
+     * 查询偏移量,若超过最大数量，则返回最后一页的数据。 默认值：0。 
      * minimum: 0
      * @return offset
      */
@@ -105,7 +105,7 @@ public class SearchCorpVmrRequest {
     }
 
     /**
-     * 查询数量 默认值：0 
+     * 查询数量。 默认值：10。 
      * minimum: 1
      * maximum: 500
      * @return limit
@@ -141,7 +141,7 @@ public class SearchCorpVmrRequest {
     }
 
     /**
-     * VMR模式，不填则默认为公共云会议室。 - 1：云会议室 - 2：网络研讨会。 
+     * VMR模式。不填则默认为云会议室。 - 1：云会议室 - 2：网络研讨会 
      * minimum: 1
      * maximum: 2
      * @return vmrMode
@@ -160,7 +160,7 @@ public class SearchCorpVmrRequest {
     }
 
     /**
-     * 云会议室状态，为null则查询是所有 * 0、正常 * 1、停用 * 2、未分配 
+     * 云会议室状态。不填则查询所有。 * 0：正常 * 1：停用 * 2：未分配 
      * minimum: 0
      * maximum: 2
      * @return status

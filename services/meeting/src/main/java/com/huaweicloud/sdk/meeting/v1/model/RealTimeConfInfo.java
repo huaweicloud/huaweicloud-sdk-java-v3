@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 在线会场信息。
+ * 在线会议信息。
  */
 public class RealTimeConfInfo {
 

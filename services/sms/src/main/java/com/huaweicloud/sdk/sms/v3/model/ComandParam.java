@@ -26,7 +26,7 @@ public class ComandParam {
     }
 
     /**
-     * 任务id
+     * 任务ID
      * @return taskId
      */
     public String getTaskId() {

@@ -408,7 +408,7 @@ public class ShowCorpResourceResponse extends SdkResponse {
     }
 
     /**
-     * 在创建企业的时候设置的pstn权限开关
+     * 在创建企业的时候设置的pstn权限开关。
      * @return enablePstn
      */
     public Boolean getEnablePstn() {
@@ -425,7 +425,7 @@ public class ShowCorpResourceResponse extends SdkResponse {
     }
 
     /**
-     * 在创建企业的时候设置的短信权限开关
+     * 企业是否通过短信形式发送会议通知。
      * @return enableSMS
      */
     public Boolean getEnableSMS() {
@@ -442,7 +442,7 @@ public class ShowCorpResourceResponse extends SdkResponse {
     }
 
     /**
-     * 企业是否开启混合云模式
+     * 企业是否开启混合云模式。
      * @return enableHybridCloud
      */
     public Boolean getEnableHybridCloud() {
@@ -459,7 +459,7 @@ public class ShowCorpResourceResponse extends SdkResponse {
     }
 
     /**
-     * 是否开启云盘
+     * 是否开启云盘。
      * @return enableCloudDisk
      */
     public Boolean getEnableCloudDisk() {
@@ -476,7 +476,7 @@ public class ShowCorpResourceResponse extends SdkResponse {
     }
 
     /**
-     * 是否开启UC功能
+     * 是否开启UC功能。
      * @return enableUc
      */
     public Boolean getEnableUc() {
@@ -493,7 +493,7 @@ public class ShowCorpResourceResponse extends SdkResponse {
     }
 
     /**
-     * 是否开启Ai会议纪要
+     * 是否开启Ai会议纪要。
      * @return enableAiMinutes
      */
     public Boolean getEnableAiMinutes() {
@@ -510,7 +510,7 @@ public class ShowCorpResourceResponse extends SdkResponse {
     }
 
     /**
-     * 单会议并发呼叫数
+     * 单会议并发呼叫数。
      * @return singleConfCallCount
      */
     public Integer getSingleConfCallCount() {
@@ -527,7 +527,7 @@ public class ShowCorpResourceResponse extends SdkResponse {
     }
 
     /**
-     * 会议时长
+     * 会议时长。
      * @return confLength
      */
     public Integer getConfLength() {

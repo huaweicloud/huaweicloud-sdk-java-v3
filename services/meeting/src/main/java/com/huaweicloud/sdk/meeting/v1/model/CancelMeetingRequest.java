@@ -41,7 +41,7 @@ public class CancelMeetingRequest {
     }
 
     /**
-     * 会议ID。
+     * 会议ID。 > 创建会议时返回的conferenceID。不是vmrConferenceID。 
      * @return conferenceID
      */
     public String getConferenceID() {
@@ -58,7 +58,7 @@ public class CancelMeetingRequest {
     }
 
     /**
-     * 用户的UUID（已在USG注册过的）
+     * 用户的UUID。 > 该参数将废弃，请勿使用。 
      * @return userUUID
      */
     public String getUserUUID() {
@@ -75,7 +75,7 @@ public class CancelMeetingRequest {
     }
 
     /**
-     * 取消会议操作类型，1表示需要结束在线会议。
+     * 取消会议操作类型。默认已召开的会议不能取消。 * 需要结束正在召开的会议
      * @return type
      */
     public Integer getType() {
@@ -92,7 +92,7 @@ public class CancelMeetingRequest {
     }
 
     /**
-     * 标识是否为第三方portal过来的请求。
+     * 标识是否为第三方portal过来的请求。 > 该参数将废弃，请勿使用。 
      * @return xAuthorizationType
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -111,7 +111,7 @@ public class CancelMeetingRequest {
     }
 
     /**
-     * 用于区分到哪个HCSO站点鉴权。
+     * 用于区分到哪个HCSO站点鉴权。 > 该参数将废弃，请勿使用。 
      * @return xSiteId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

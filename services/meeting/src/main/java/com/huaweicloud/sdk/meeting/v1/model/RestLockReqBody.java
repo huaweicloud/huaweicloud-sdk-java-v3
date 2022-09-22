@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 锁定会议消息体。
+ * 锁定会议请求。
  */
 public class RestLockReqBody {
 
@@ -21,7 +21,7 @@ public class RestLockReqBody {
     }
 
     /**
-     * - 0: 解锁。 - 1: 锁定。
+     * - 0: 解锁 - 1: 锁定
      * @return isLock
      */
     public Integer getIsLock() {

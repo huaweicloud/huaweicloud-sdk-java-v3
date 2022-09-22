@@ -26,7 +26,7 @@ public class DelAttendInfo {
     }
 
     /**
-     * 会场呼叫号码。
+     * 会场号码。
      * @return number
      */
     public String getNumber() {

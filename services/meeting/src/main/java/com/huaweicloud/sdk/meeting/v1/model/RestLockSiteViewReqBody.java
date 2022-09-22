@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 锁定会场视频源请求体
+ * 锁定会场视频源请求。
  */
 public class RestLockSiteViewReqBody {
 
@@ -26,7 +26,7 @@ public class RestLockSiteViewReqBody {
     }
 
     /**
-     * - 0: 取消锁定。 - 1: 锁定。
+     * 锁定标志。 - 0: 取消锁定 - 1: 锁定
      * @return status
      */
     public Integer getStatus() {

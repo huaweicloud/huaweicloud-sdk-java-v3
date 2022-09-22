@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 终端类型
+ * 终端类型。
  */
 public class QueryDeviceTypeResultDTO {
 
@@ -46,7 +46,7 @@ public class QueryDeviceTypeResultDTO {
     }
 
     /**
-     * 终端类型，区分自研和第三方终端
+     * 终端类型，区分自研和第三方终端。 * TE：华为自研硬终端 * 3rd：第三方硬终端 
      * @return type
      */
     public String getType() {
@@ -63,7 +63,7 @@ public class QueryDeviceTypeResultDTO {
     }
 
     /**
-     * 终端型号，枚举类型。当前支持TE系列硬件终端，具体的终端类型可以通过获取所有终端类型接口查询。
+     * 终端型号，枚举类型。 * TE10 * TE20 * TE30 * TE40 * TE50 * TE60 * HUAWEI Box 300 * HUAWEI Box 500 * HUAWEI Box 600 * HUAWEI Box 700 * HUAWEI Box 900 * DP300 * HUAWEI Box 200 * HUAWEI Box 300 * HUAWEI Box 500 * HUAWEI Board * polycomcisco 
      * @return model
      */
     public String getModel() {
@@ -80,7 +80,7 @@ public class QueryDeviceTypeResultDTO {
     }
 
     /**
-     * 是否支持激活码
+     * 是否支持激活码。
      * @return enableActiveCode
      */
     public Boolean getEnableActiveCode() {
@@ -114,7 +114,7 @@ public class QueryDeviceTypeResultDTO {
     }
 
     /**
-     * 是否支持投影码
+     * 是否支持投影码。
      * @return supportProjectionCode
      */
     public Boolean getSupportProjectionCode() {
@@ -131,7 +131,7 @@ public class QueryDeviceTypeResultDTO {
     }
 
     /**
-     * 是否支持SVC
+     * 是否支持SVC。
      * @return supportSVC
      */
     public Boolean getSupportSVC() {

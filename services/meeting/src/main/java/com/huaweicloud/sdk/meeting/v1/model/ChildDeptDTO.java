@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 子部门详情
+ * 子部门详情。
  */
 public class ChildDeptDTO {
 
@@ -31,7 +31,7 @@ public class ChildDeptDTO {
     }
 
     /**
-     * 部门编码
+     * 部门编码。
      * @return deptCode
      */
     public String getDeptCode() {
@@ -48,7 +48,7 @@ public class ChildDeptDTO {
     }
 
     /**
-     * 部门名称
+     * 部门名称。
      * @return deptName
      */
     public String getDeptName() {
@@ -65,7 +65,7 @@ public class ChildDeptDTO {
     }
 
     /**
-     * 是否为叶子节点（没有子部门的称为叶子节点）
+     * 是否为叶子节点（没有子部门的称为叶子节点）。
      * @return isLeafNodes
      */
     public Boolean getIsLeafNodes() {

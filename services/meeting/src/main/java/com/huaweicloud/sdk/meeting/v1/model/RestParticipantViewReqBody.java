@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 会场选看请求体
+ * 会场选看请求。
  */
 public class RestParticipantViewReqBody {
 
@@ -26,7 +26,7 @@ public class RestParticipantViewReqBody {
     }
 
     /**
-     * 选看类型。 - 2: 选看会场。
+     * 选看类型。 - 2: 选看会场
      * @return viewType
      */
     public Integer getViewType() {

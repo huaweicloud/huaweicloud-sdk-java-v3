@@ -27,7 +27,7 @@ public class ListEventSourcesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "items")
 
-    private List<SourceInfo> items = null;
+    private List<CustomizeSourceInfo> items = null;
 
     public ListEventSourcesResponse withTotal(Integer total) {
         this.total = total;
@@ -67,12 +67,12 @@ public class ListEventSourcesResponse extends SdkResponse {
         this.size = size;
     }
 
-    public ListEventSourcesResponse withItems(List<SourceInfo> items) {
+    public ListEventSourcesResponse withItems(List<CustomizeSourceInfo> items) {
         this.items = items;
         return this;
     }
 
-    public ListEventSourcesResponse addItemsItem(SourceInfo itemsItem) {
+    public ListEventSourcesResponse addItemsItem(CustomizeSourceInfo itemsItem) {
         if (this.items == null) {
             this.items = new ArrayList<>();
         }
@@ -80,7 +80,7 @@ public class ListEventSourcesResponse extends SdkResponse {
         return this;
     }
 
-    public ListEventSourcesResponse withItems(Consumer<List<SourceInfo>> itemsSetter) {
+    public ListEventSourcesResponse withItems(Consumer<List<CustomizeSourceInfo>> itemsSetter) {
         if (this.items == null) {
             this.items = new ArrayList<>();
         }
@@ -92,11 +92,11 @@ public class ListEventSourcesResponse extends SdkResponse {
      * 对象列表
      * @return items
      */
-    public List<SourceInfo> getItems() {
+    public List<CustomizeSourceInfo> getItems() {
         return items;
     }
 
-    public void setItems(List<SourceInfo> items) {
+    public void setItems(List<CustomizeSourceInfo> items) {
         this.items = items;
     }
 

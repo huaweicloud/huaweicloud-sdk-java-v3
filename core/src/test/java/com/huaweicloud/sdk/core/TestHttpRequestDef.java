@@ -147,6 +147,7 @@ public class TestHttpRequestDef {
         }
     }
 
+    @SuppressWarnings(value = {"unchecked", "rawtypes"})
     public static HttpRequestDef<TestRequest, TestResponse> buildHttpRequestDef() {
         HttpRequestDef.Builder<TestRequest, TestResponse> builder = HttpRequestDef.builder(HttpMethod.GET,
                 TestRequest.class, TestResponse.class)
@@ -219,8 +220,10 @@ public class TestHttpRequestDef {
         }
 
         @Override
-        public Map<String, FormDataPart> buildFormData() {
-            return new LinkedHashMap<String, FormDataPart>() {
+        public Map<String, FormDataPart<?>> buildFormData() {
+            return new LinkedHashMap<String, FormDataPart<?>>() {
+                private static final long serialVersionUID = -1494603214305839524L;
+
                 {
                     put("uuid", new FormDataPart<>(uuid));
                     put("uploadFile", uploadFile);
@@ -287,6 +290,7 @@ public class TestHttpRequestDef {
         return builder.build();
     }
 
+    @SuppressWarnings(value = {"unchecked", "rawtypes"})
     public static HttpRequestDef<TestNoBodyRequest, TestResponse> buildHttpRequestNoRequestBodyDef() {
         HttpRequestDef.Builder<TestNoBodyRequest, TestResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, TestNoBodyRequest.class, TestResponse.class)

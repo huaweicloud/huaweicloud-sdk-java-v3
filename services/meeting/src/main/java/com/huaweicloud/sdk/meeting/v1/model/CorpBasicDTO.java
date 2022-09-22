@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * 企业的基本信息
+ * 企业的基本信息。
  */
 public class CorpBasicDTO {
 
@@ -61,7 +61,7 @@ public class CorpBasicDTO {
     private String spId;
 
     /**
-     * 企业提示音语言设置,zh-CN或en-US
+     * 企业提示音语言设置,zh-CN或en-US。
      */
     public static final class LanguageEnum {
 
@@ -153,7 +153,7 @@ public class CorpBasicDTO {
     }
 
     /**
-     * 企业名称，格式必须满足^[^#%&'+;<>=\"'？?\\\\……/]*$
+     * 企业名称，格式必须满足^[^#%&'+;<>=\\\"'？?\\\\\\\\……/]*$。
      * @return name
      */
     public String getName() {
@@ -170,7 +170,7 @@ public class CorpBasicDTO {
     }
 
     /**
-     * 企业域名
+     * 企业域名。
      * @return domain
      */
     public String getDomain() {
@@ -187,7 +187,7 @@ public class CorpBasicDTO {
     }
 
     /**
-     * 手机号，必须加上国家码，例如中国大陆手机+86xxxxxxx，当填写手机号时， “country”参数必填,手机格式必须满足(^$|^[+]?[0-9]+$)
+     * 手机号，必须加上国家码，例如中国大陆手机+86xxxxxxx，当填写手机号时， “country”参数必填,手机格式必须满足(^$|^[+]?[0-9]+$)。
      * @return phone
      */
     public String getPhone() {
@@ -204,7 +204,7 @@ public class CorpBasicDTO {
     }
 
     /**
-     * 若smsNumber为手机号,则需带上手机号所属的国家。 例如国家为中国大陆则country参数取值为chinaPR 国家和国家码的对应关系请参考：https://support.huaweicloud.com/api-meeting/meeting_21_0109.html 
+     * [[手机号所属的国家](https://support.huaweicloud.com/api-meeting/meeting_21_0109.html#ZH-CN_TOPIC_0212714591__table19371178135314)](tag:hws)[[手机号所属的国家](https://support.huaweicloud.com/intl/zh-cn/api-meeting/meeting_21_0109.html#ZH-CN_TOPIC_0212714591__table19371178135314)](tag:hk) 。 
      * @return country
      */
     public String getCountry() {
@@ -221,7 +221,7 @@ public class CorpBasicDTO {
     }
 
     /**
-     * 传真号码,格式必须满足(^$|^[+]?[0-9]+$)
+     * 传真号码,格式必须满足(^$|^[+]?[0-9]+$)。
      * @return fax
      */
     public String getFax() {
@@ -238,7 +238,7 @@ public class CorpBasicDTO {
     }
 
     /**
-     * 邮箱地址,格式必须满足(^$|^[\\w-+]+(\\.[\\w-+]+)*@[\\w-]+(\\.[\\w-]+)*(\\.[\\w-]{1,})$)
+     * 邮箱地址,格式必须满足(^$|^[\\\\w-+]+(\\\\.[\\\\w-+]+)*@[\\\\w-]+(\\\\.[\\\\w-]+)*(\\\\.[\\\\w-]{1,})$)。
      * @return email
      */
     public String getEmail() {
@@ -255,7 +255,7 @@ public class CorpBasicDTO {
     }
 
     /**
-     * 地址
+     * 地址。
      * @return address
      */
     public String getAddress() {
@@ -272,7 +272,7 @@ public class CorpBasicDTO {
     }
 
     /**
-     * 备注
+     * 备注。
      * @return description
      */
     public String getDescription() {
@@ -289,7 +289,7 @@ public class CorpBasicDTO {
     }
 
     /**
-     * 仅在查询时返回
+     * 企业归属的SP ID。仅在查询时返回。
      * @return spId
      */
     public String getSpId() {
@@ -306,7 +306,7 @@ public class CorpBasicDTO {
     }
 
     /**
-     * 企业提示音语言设置,zh-CN或en-US
+     * 企业提示音语言设置,zh-CN或en-US。
      * @return language
      */
     public LanguageEnum getLanguage() {
@@ -323,7 +323,7 @@ public class CorpBasicDTO {
     }
 
     /**
-     * 时区Id设置,例如北京东8区timeZoneId值为56,时区Id和时区的对应关系请参考: https://support.huaweicloud.com/api-meeting/meeting_21_0110.html
+     * 时区Id设置,例如北京东8区timeZoneId值为56,时区Id和时区的对应关系请参考: [[时区表](https://support.huaweicloud.com/api-meeting/meeting_21_0110.html)](tag:hws)[[时区表](https://support.huaweicloud.com/intl/zh-cn/api-meeting/meeting_21_0110.html)](tag:hk) 。 
      * @return timeZoneId
      */
     public String getTimeZoneId() {

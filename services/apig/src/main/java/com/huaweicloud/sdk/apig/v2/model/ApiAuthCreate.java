@@ -100,7 +100,7 @@ public class ApiAuthCreate {
     }
 
     /**
-     * API的编号列表，可以选择租户自己的API，也可以选择从云市场上购买的API。
+     * API的编号列表[，可以选择租户自己的API，也可以选择从云商店上购买的API](tag:hws)。
      * @return apiIds
      */
     public List<String> getApiIds() {

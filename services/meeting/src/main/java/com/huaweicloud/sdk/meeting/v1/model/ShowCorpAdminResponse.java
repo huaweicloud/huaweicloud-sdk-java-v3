@@ -58,7 +58,7 @@ public class ShowCorpAdminResponse extends SdkResponse {
     }
 
     /**
-     * 用户id
+     * 用户UUID。
      * @return id
      */
     public String getId() {
@@ -75,7 +75,7 @@ public class ShowCorpAdminResponse extends SdkResponse {
     }
 
     /**
-     * 用户账号
+     * 用户帐号（华为云会议帐号）。
      * @return account
      */
     public String getAccount() {
@@ -92,7 +92,7 @@ public class ShowCorpAdminResponse extends SdkResponse {
     }
 
     /**
-     * 名称
+     * 用户名称。
      * @return name
      */
     public String getName() {
@@ -109,7 +109,7 @@ public class ShowCorpAdminResponse extends SdkResponse {
     }
 
     /**
-     * 管理员类型。 0：默认管理员 1：普通管理员 
+     * 管理员类型。 * 0：默认管理员 * 1：普通管理员 
      * @return adminType
      */
     public Integer getAdminType() {
@@ -126,7 +126,7 @@ public class ShowCorpAdminResponse extends SdkResponse {
     }
 
     /**
-     * 邮箱
+     * 邮箱地址。
      * @return email
      */
     public String getEmail() {
@@ -143,7 +143,7 @@ public class ShowCorpAdminResponse extends SdkResponse {
     }
 
     /**
-     * 手机号
+     * 手机号。
      * @return phone
      */
     public String getPhone() {
@@ -160,7 +160,7 @@ public class ShowCorpAdminResponse extends SdkResponse {
     }
 
     /**
-     * 手机号所属的国家
+     * [[手机号所属的国家](https://support.huaweicloud.com/api-meeting/meeting_21_0109.html#ZH-CN_TOPIC_0212714591__table19371178135314)](tag:hws)[[手机号所属的国家](https://support.huaweicloud.com/intl/zh-cn/api-meeting/meeting_21_0109.html#ZH-CN_TOPIC_0212714591__table19371178135314)](tag:hk) 。 
      * @return country
      */
     public String getCountry() {

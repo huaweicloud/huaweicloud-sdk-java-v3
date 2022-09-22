@@ -17,7 +17,7 @@ import java.util.function.Consumer;
 public class UpdateTaskStatusReq {
 
     /**
-     * 操作任务的具体动作
+     * 操作任务的具体动作 start:开始任务 stop:停止任务 collect_log:收集日志 test:测试 clone_test:克隆测试 restart:重新开始 sync_failed_rollback:同步失败回滚 
      */
     public static final class OperationEnum {
 
@@ -139,7 +139,7 @@ public class UpdateTaskStatusReq {
     }
 
     /**
-     * 操作任务的具体动作
+     * 操作任务的具体动作 start:开始任务 stop:停止任务 collect_log:收集日志 test:测试 clone_test:克隆测试 restart:重新开始 sync_failed_rollback:同步失败回滚 
      * @return operation
      */
     public OperationEnum getOperation() {

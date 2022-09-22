@@ -72,7 +72,7 @@ public class PutVolumeGroups {
     }
 
     /**
-     * 卷组id
+     * 卷组ID
      * @return id
      */
     public String getId() {

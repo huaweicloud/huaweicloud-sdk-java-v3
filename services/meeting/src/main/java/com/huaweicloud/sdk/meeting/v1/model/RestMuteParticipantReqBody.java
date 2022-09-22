@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 静音会场消息体。
+ * 静音与会者请求。
  */
 public class RestMuteParticipantReqBody {
 
@@ -21,7 +21,7 @@ public class RestMuteParticipantReqBody {
     }
 
     /**
-     * - 0: 取消静音。 - 1: 静音。
+     * - 0: 取消静音 - 1: 静音
      * @return isMute
      */
     public Integer getIsMute() {

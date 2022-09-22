@@ -87,12 +87,16 @@ public class TestRegionCreateProject {
         );
         // mock request: POST /v3/projects
         Map<String, String> map = new HashMap<String, String>(2) {
+            private static final long serialVersionUID = -2035197336051896678L;
+
             {
                 put("name", "cn-north-201");
                 put("domain_id", "987654321");
             }
         };
         Map<String, Map<String, String>> body = new HashMap<String, Map<String, String>>(1) {
+            private static final long serialVersionUID = -1512744733365625026L;
+
             {
                 put("project", map);
             }

@@ -21,7 +21,7 @@ public class ShowRegionInfoOfMeetingRequest {
     }
 
     /**
-     * 会议ID。
+     * 会议ID。 > 创建会议时返回的conferenceID。不是vmrConferenceID。 
      * @return conferenceID
      */
     public String getConferenceID() {

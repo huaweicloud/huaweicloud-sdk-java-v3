@@ -22,7 +22,7 @@ public class OmsAsyncClient {
     /**
      * 创建同步事件
      *
-     * 源端有对象需要进行同步时，调用该接口创建一个同步事件，系统将根据同步事件中包含的对象名称进行同步（目前只支持华北-北京四、华东-上海一地区）
+     * 源端有对象需要进行同步时，调用该接口创建一个同步事件，系统将根据同步事件中包含的对象名称进行同步(目前只支持华北-北京四、华东-上海一地区)。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -37,7 +37,7 @@ public class OmsAsyncClient {
     /**
      * 创建同步事件
      *
-     * 源端有对象需要进行同步时，调用该接口创建一个同步事件，系统将根据同步事件中包含的对象名称进行同步（目前只支持华北-北京四、华东-上海一地区）
+     * 源端有对象需要进行同步时，调用该接口创建一个同步事件，系统将根据同步事件中包含的对象名称进行同步(目前只支持华北-北京四、华东-上海一地区)。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -264,6 +264,261 @@ public class OmsAsyncClient {
         UpdateBandwidthPolicyRequest request) {
         return new AsyncInvoker<UpdateBandwidthPolicyRequest, UpdateBandwidthPolicyResponse>(request,
             OmsMeta.updateBandwidthPolicy, hcClient);
+    }
+
+    /**
+     * 创建迁移任务组
+     *
+     * 创建迁移任务组，创建成功后，迁移任务组会自动创建迁移任务，不需要额外调用启动任务命令（目前只支持华南-广州用户友好环境、西南-贵阳一、亚太-香港和亚太-新加坡地区）。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateTaskGroupRequest 请求对象
+     * @return CompletableFuture<CreateTaskGroupResponse>
+     */
+    public CompletableFuture<CreateTaskGroupResponse> createTaskGroupAsync(CreateTaskGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, OmsMeta.createTaskGroup);
+    }
+
+    /**
+     * 创建迁移任务组
+     *
+     * 创建迁移任务组，创建成功后，迁移任务组会自动创建迁移任务，不需要额外调用启动任务命令（目前只支持华南-广州用户友好环境、西南-贵阳一、亚太-香港和亚太-新加坡地区）。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateTaskGroupRequest 请求对象
+     * @return AsyncInvoker<CreateTaskGroupRequest, CreateTaskGroupResponse>
+     */
+    public AsyncInvoker<CreateTaskGroupRequest, CreateTaskGroupResponse> createTaskGroupAsyncInvoker(
+        CreateTaskGroupRequest request) {
+        return new AsyncInvoker<CreateTaskGroupRequest, CreateTaskGroupResponse>(request, OmsMeta.createTaskGroup,
+            hcClient);
+    }
+
+    /**
+     * 删除指定ID的迁移任务组
+     *
+     * 删除指定的迁移任务组.（目前只支持华南-广州用户友好环境、西南-贵阳一、亚太-香港和亚太-新加坡地区）
+     * 创建任务中、监控中、暂停中状态的任务不允许删除，如果删除会返回失败；若要删除，请先行暂停任务。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteTaskGroupRequest 请求对象
+     * @return CompletableFuture<DeleteTaskGroupResponse>
+     */
+    public CompletableFuture<DeleteTaskGroupResponse> deleteTaskGroupAsync(DeleteTaskGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, OmsMeta.deleteTaskGroup);
+    }
+
+    /**
+     * 删除指定ID的迁移任务组
+     *
+     * 删除指定的迁移任务组.（目前只支持华南-广州用户友好环境、西南-贵阳一、亚太-香港和亚太-新加坡地区）
+     * 创建任务中、监控中、暂停中状态的任务不允许删除，如果删除会返回失败；若要删除，请先行暂停任务。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteTaskGroupRequest 请求对象
+     * @return AsyncInvoker<DeleteTaskGroupRequest, DeleteTaskGroupResponse>
+     */
+    public AsyncInvoker<DeleteTaskGroupRequest, DeleteTaskGroupResponse> deleteTaskGroupAsyncInvoker(
+        DeleteTaskGroupRequest request) {
+        return new AsyncInvoker<DeleteTaskGroupRequest, DeleteTaskGroupResponse>(request, OmsMeta.deleteTaskGroup,
+            hcClient);
+    }
+
+    /**
+     * 查询迁移任务组列表
+     *
+     * 查询用户账户下的任务组信息（目前只支持华南-广州用户友好环境、西南-贵阳一、亚太-香港和亚太-新加坡地区）。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListTaskGroupRequest 请求对象
+     * @return CompletableFuture<ListTaskGroupResponse>
+     */
+    public CompletableFuture<ListTaskGroupResponse> listTaskGroupAsync(ListTaskGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, OmsMeta.listTaskGroup);
+    }
+
+    /**
+     * 查询迁移任务组列表
+     *
+     * 查询用户账户下的任务组信息（目前只支持华南-广州用户友好环境、西南-贵阳一、亚太-香港和亚太-新加坡地区）。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListTaskGroupRequest 请求对象
+     * @return AsyncInvoker<ListTaskGroupRequest, ListTaskGroupResponse>
+     */
+    public AsyncInvoker<ListTaskGroupRequest, ListTaskGroupResponse> listTaskGroupAsyncInvoker(
+        ListTaskGroupRequest request) {
+        return new AsyncInvoker<ListTaskGroupRequest, ListTaskGroupResponse>(request, OmsMeta.listTaskGroup, hcClient);
+    }
+
+    /**
+     * 对已经失败的指定ID迁移任务组进行重启
+     *
+     * 当迁移任务组处于迁移失败状态时，调用该接口重启指定ID的迁移任务组（目前只支持华南-广州用户友好环境、西南-贵阳一、亚太-香港和亚太-新加坡地区）。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param RetryTaskGroupRequest 请求对象
+     * @return CompletableFuture<RetryTaskGroupResponse>
+     */
+    public CompletableFuture<RetryTaskGroupResponse> retryTaskGroupAsync(RetryTaskGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, OmsMeta.retryTaskGroup);
+    }
+
+    /**
+     * 对已经失败的指定ID迁移任务组进行重启
+     *
+     * 当迁移任务组处于迁移失败状态时，调用该接口重启指定ID的迁移任务组（目前只支持华南-广州用户友好环境、西南-贵阳一、亚太-香港和亚太-新加坡地区）。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param RetryTaskGroupRequest 请求对象
+     * @return AsyncInvoker<RetryTaskGroupRequest, RetryTaskGroupResponse>
+     */
+    public AsyncInvoker<RetryTaskGroupRequest, RetryTaskGroupResponse> retryTaskGroupAsyncInvoker(
+        RetryTaskGroupRequest request) {
+        return new AsyncInvoker<RetryTaskGroupRequest, RetryTaskGroupResponse>(request, OmsMeta.retryTaskGroup,
+            hcClient);
+    }
+
+    /**
+     * 获取指定ID的taskgroup信息
+     *
+     * 获取指定ID的taskgroup信息（目前只支持华南-广州用户友好环境、西南-贵阳一、亚太-香港和亚太-新加坡地区）。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowTaskGroupRequest 请求对象
+     * @return CompletableFuture<ShowTaskGroupResponse>
+     */
+    public CompletableFuture<ShowTaskGroupResponse> showTaskGroupAsync(ShowTaskGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, OmsMeta.showTaskGroup);
+    }
+
+    /**
+     * 获取指定ID的taskgroup信息
+     *
+     * 获取指定ID的taskgroup信息（目前只支持华南-广州用户友好环境、西南-贵阳一、亚太-香港和亚太-新加坡地区）。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowTaskGroupRequest 请求对象
+     * @return AsyncInvoker<ShowTaskGroupRequest, ShowTaskGroupResponse>
+     */
+    public AsyncInvoker<ShowTaskGroupRequest, ShowTaskGroupResponse> showTaskGroupAsyncInvoker(
+        ShowTaskGroupRequest request) {
+        return new AsyncInvoker<ShowTaskGroupRequest, ShowTaskGroupResponse>(request, OmsMeta.showTaskGroup, hcClient);
+    }
+
+    /**
+     * 恢复指定ID的迁移任务组
+     *
+     * 当迁移任务组处于暂停状态时，调用该接口启动指定ID的迁移任务组（目前只支持华南-广州用户友好环境、西南-贵阳一、亚太-香港和亚太-新加坡地区）。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param StartTaskGroupRequest 请求对象
+     * @return CompletableFuture<StartTaskGroupResponse>
+     */
+    public CompletableFuture<StartTaskGroupResponse> startTaskGroupAsync(StartTaskGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, OmsMeta.startTaskGroup);
+    }
+
+    /**
+     * 恢复指定ID的迁移任务组
+     *
+     * 当迁移任务组处于暂停状态时，调用该接口启动指定ID的迁移任务组（目前只支持华南-广州用户友好环境、西南-贵阳一、亚太-香港和亚太-新加坡地区）。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param StartTaskGroupRequest 请求对象
+     * @return AsyncInvoker<StartTaskGroupRequest, StartTaskGroupResponse>
+     */
+    public AsyncInvoker<StartTaskGroupRequest, StartTaskGroupResponse> startTaskGroupAsyncInvoker(
+        StartTaskGroupRequest request) {
+        return new AsyncInvoker<StartTaskGroupRequest, StartTaskGroupResponse>(request, OmsMeta.startTaskGroup,
+            hcClient);
+    }
+
+    /**
+     * 暂停指定ID的迁移任务组
+     *
+     * 当迁移任务组处于创建任务中或监控中时，调用该接口暂停指定迁移任务组（目前只支持华南-广州用户友好环境、西南-贵阳一、亚太-香港和亚太-新加坡地区）。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param StopTaskGroupRequest 请求对象
+     * @return CompletableFuture<StopTaskGroupResponse>
+     */
+    public CompletableFuture<StopTaskGroupResponse> stopTaskGroupAsync(StopTaskGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, OmsMeta.stopTaskGroup);
+    }
+
+    /**
+     * 暂停指定ID的迁移任务组
+     *
+     * 当迁移任务组处于创建任务中或监控中时，调用该接口暂停指定迁移任务组（目前只支持华南-广州用户友好环境、西南-贵阳一、亚太-香港和亚太-新加坡地区）。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param StopTaskGroupRequest 请求对象
+     * @return AsyncInvoker<StopTaskGroupRequest, StopTaskGroupResponse>
+     */
+    public AsyncInvoker<StopTaskGroupRequest, StopTaskGroupResponse> stopTaskGroupAsyncInvoker(
+        StopTaskGroupRequest request) {
+        return new AsyncInvoker<StopTaskGroupRequest, StopTaskGroupResponse>(request, OmsMeta.stopTaskGroup, hcClient);
+    }
+
+    /**
+     * 更新指定ID的迁移任务组的流控策略
+     *
+     * 当迁移任务组未执行完成时，修改迁移任务组的流量控制策略（目前只支持华南-广州用户友好环境、西南-贵阳一、亚太-香港和亚太-新加坡地区）。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateTaskGroupRequest 请求对象
+     * @return CompletableFuture<UpdateTaskGroupResponse>
+     */
+    public CompletableFuture<UpdateTaskGroupResponse> updateTaskGroupAsync(UpdateTaskGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, OmsMeta.updateTaskGroup);
+    }
+
+    /**
+     * 更新指定ID的迁移任务组的流控策略
+     *
+     * 当迁移任务组未执行完成时，修改迁移任务组的流量控制策略（目前只支持华南-广州用户友好环境、西南-贵阳一、亚太-香港和亚太-新加坡地区）。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateTaskGroupRequest 请求对象
+     * @return AsyncInvoker<UpdateTaskGroupRequest, UpdateTaskGroupResponse>
+     */
+    public AsyncInvoker<UpdateTaskGroupRequest, UpdateTaskGroupResponse> updateTaskGroupAsyncInvoker(
+        UpdateTaskGroupRequest request) {
+        return new AsyncInvoker<UpdateTaskGroupRequest, UpdateTaskGroupResponse>(request, OmsMeta.updateTaskGroup,
+            hcClient);
     }
 
     /**

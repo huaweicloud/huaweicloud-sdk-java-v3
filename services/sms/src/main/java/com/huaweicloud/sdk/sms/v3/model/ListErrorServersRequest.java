@@ -74,7 +74,7 @@ public class ListErrorServersRequest {
     }
 
     /**
-     * 需要查询的迁移项目id，添加此字段将只查询对应id下的迁移任务报错信息
+     * 需要查询的迁移项目ID，添加此字段将只查询对应ID下的迁移任务报错信息
      * @return migproject
      */
     public String getMigproject() {
@@ -91,7 +91,7 @@ public class ListErrorServersRequest {
     }
 
     /**
-     * 需要查询的企业项目id
+     * 需要查询的企业项目ID
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {

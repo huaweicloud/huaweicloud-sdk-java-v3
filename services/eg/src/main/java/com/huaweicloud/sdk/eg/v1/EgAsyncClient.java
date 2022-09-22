@@ -20,9 +20,41 @@ public class EgAsyncClient {
     }
 
     /**
+     * 创建服务委托
+     *
+     * 按照业务场景，一键创建服务委托授权
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateAgenciesRequest 请求对象
+     * @return CompletableFuture<CreateAgenciesResponse>
+     */
+    public CompletableFuture<CreateAgenciesResponse> createAgenciesAsync(CreateAgenciesRequest request) {
+        return hcClient.asyncInvokeHttp(request, EgMeta.createAgencies);
+    }
+
+    /**
+     * 创建服务委托
+     *
+     * 按照业务场景，一键创建服务委托授权
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateAgenciesRequest 请求对象
+     * @return AsyncInvoker<CreateAgenciesRequest, CreateAgenciesResponse>
+     */
+    public AsyncInvoker<CreateAgenciesRequest, CreateAgenciesResponse> createAgenciesAsyncInvoker(
+        CreateAgenciesRequest request) {
+        return new AsyncInvoker<CreateAgenciesRequest, CreateAgenciesResponse>(request, EgMeta.createAgencies,
+            hcClient);
+    }
+
+    /**
      * 创建自定义事件通道
      *
-     * 创建自定义事件通道。
+     * 创建自定义事件通道
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -37,7 +69,7 @@ public class EgAsyncClient {
     /**
      * 创建自定义事件通道
      *
-     * 创建自定义事件通道。
+     * 创建自定义事件通道
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -51,9 +83,138 @@ public class EgAsyncClient {
     }
 
     /**
+     * 创建目标连接
+     *
+     * 创建目标连接
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateConnectionRequest 请求对象
+     * @return CompletableFuture<CreateConnectionResponse>
+     */
+    public CompletableFuture<CreateConnectionResponse> createConnectionAsync(CreateConnectionRequest request) {
+        return hcClient.asyncInvokeHttp(request, EgMeta.createConnection);
+    }
+
+    /**
+     * 创建目标连接
+     *
+     * 创建目标连接
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateConnectionRequest 请求对象
+     * @return AsyncInvoker<CreateConnectionRequest, CreateConnectionResponse>
+     */
+    public AsyncInvoker<CreateConnectionRequest, CreateConnectionResponse> createConnectionAsyncInvoker(
+        CreateConnectionRequest request) {
+        return new AsyncInvoker<CreateConnectionRequest, CreateConnectionResponse>(request, EgMeta.createConnection,
+            hcClient);
+    }
+
+    /**
+     * 创建访问端点
+     *
+     * create endpoint
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateEndpointRequest 请求对象
+     * @return CompletableFuture<CreateEndpointResponse>
+     */
+    public CompletableFuture<CreateEndpointResponse> createEndpointAsync(CreateEndpointRequest request) {
+        return hcClient.asyncInvokeHttp(request, EgMeta.createEndpoint);
+    }
+
+    /**
+     * 创建访问端点
+     *
+     * create endpoint
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateEndpointRequest 请求对象
+     * @return AsyncInvoker<CreateEndpointRequest, CreateEndpointResponse>
+     */
+    public AsyncInvoker<CreateEndpointRequest, CreateEndpointResponse> createEndpointAsyncInvoker(
+        CreateEndpointRequest request) {
+        return new AsyncInvoker<CreateEndpointRequest, CreateEndpointResponse>(request, EgMeta.createEndpoint,
+            hcClient);
+    }
+
+    /**
+     * 创建自定义事件模型
+     *
+     * 创建自定义事件模型
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateEventSchemaRequest 请求对象
+     * @return CompletableFuture<CreateEventSchemaResponse>
+     */
+    public CompletableFuture<CreateEventSchemaResponse> createEventSchemaAsync(CreateEventSchemaRequest request) {
+        return hcClient.asyncInvokeHttp(request, EgMeta.createEventSchema);
+    }
+
+    /**
+     * 创建自定义事件模型
+     *
+     * 创建自定义事件模型
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateEventSchemaRequest 请求对象
+     * @return AsyncInvoker<CreateEventSchemaRequest, CreateEventSchemaResponse>
+     */
+    public AsyncInvoker<CreateEventSchemaRequest, CreateEventSchemaResponse> createEventSchemaAsyncInvoker(
+        CreateEventSchemaRequest request) {
+        return new AsyncInvoker<CreateEventSchemaRequest, CreateEventSchemaResponse>(request, EgMeta.createEventSchema,
+            hcClient);
+    }
+
+    /**
+     * 创建自定义事件模型版本
+     *
+     * 创建自定义事件模型版本，版本号后台自动生成
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateEventSchemaVersionRequest 请求对象
+     * @return CompletableFuture<CreateEventSchemaVersionResponse>
+     */
+    public CompletableFuture<CreateEventSchemaVersionResponse> createEventSchemaVersionAsync(
+        CreateEventSchemaVersionRequest request) {
+        return hcClient.asyncInvokeHttp(request, EgMeta.createEventSchemaVersion);
+    }
+
+    /**
+     * 创建自定义事件模型版本
+     *
+     * 创建自定义事件模型版本，版本号后台自动生成
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateEventSchemaVersionRequest 请求对象
+     * @return AsyncInvoker<CreateEventSchemaVersionRequest, CreateEventSchemaVersionResponse>
+     */
+    public AsyncInvoker<CreateEventSchemaVersionRequest, CreateEventSchemaVersionResponse> createEventSchemaVersionAsyncInvoker(
+        CreateEventSchemaVersionRequest request) {
+        return new AsyncInvoker<CreateEventSchemaVersionRequest, CreateEventSchemaVersionResponse>(request,
+            EgMeta.createEventSchemaVersion, hcClient);
+    }
+
+    /**
      * 创建自定义事件源
      *
-     * 创建用户自定义类型的事件源，只能指定自定义通道，不能指定官方通道。
+     * 创建用户自定义类型的事件源，只能指定自定义通道，不能指定系统通道
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -68,7 +229,7 @@ public class EgAsyncClient {
     /**
      * 创建自定义事件源
      *
-     * 创建用户自定义类型的事件源，只能指定自定义通道，不能指定官方通道。
+     * 创建用户自定义类型的事件源，只能指定自定义通道，不能指定系统通道
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -85,7 +246,7 @@ public class EgAsyncClient {
     /**
      * 创建事件订阅
      *
-     * 创建事件订阅。
+     * 创建事件订阅
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -100,7 +261,7 @@ public class EgAsyncClient {
     /**
      * 创建事件订阅
      *
-     * 创建事件订阅。
+     * 创建事件订阅
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -117,7 +278,7 @@ public class EgAsyncClient {
     /**
      * 创建事件订阅目标
      *
-     * 在事件订阅中增加一个事件目标。
+     * 创建单个事件订阅目标
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -133,7 +294,7 @@ public class EgAsyncClient {
     /**
      * 创建事件订阅目标
      *
-     * 在事件订阅中增加一个事件目标。
+     * 创建单个事件订阅目标
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -150,7 +311,7 @@ public class EgAsyncClient {
     /**
      * 删除自定义事件通道
      *
-     * 删除指定自定义事件通道。
+     * 删除指定自定义事件通道
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -165,7 +326,7 @@ public class EgAsyncClient {
     /**
      * 删除自定义事件通道
      *
-     * 删除指定自定义事件通道。
+     * 删除指定自定义事件通道
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -179,9 +340,136 @@ public class EgAsyncClient {
     }
 
     /**
+     * 删除目标连接
+     *
+     * 删除目标连接
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteConnectionRequest 请求对象
+     * @return CompletableFuture<DeleteConnectionResponse>
+     */
+    public CompletableFuture<DeleteConnectionResponse> deleteConnectionAsync(DeleteConnectionRequest request) {
+        return hcClient.asyncInvokeHttp(request, EgMeta.deleteConnection);
+    }
+
+    /**
+     * 删除目标连接
+     *
+     * 删除目标连接
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteConnectionRequest 请求对象
+     * @return AsyncInvoker<DeleteConnectionRequest, DeleteConnectionResponse>
+     */
+    public AsyncInvoker<DeleteConnectionRequest, DeleteConnectionResponse> deleteConnectionAsyncInvoker(
+        DeleteConnectionRequest request) {
+        return new AsyncInvoker<DeleteConnectionRequest, DeleteConnectionResponse>(request, EgMeta.deleteConnection,
+            hcClient);
+    }
+
+    /**
+     * 删除访问端点
+     *
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteEndpointRequest 请求对象
+     * @return CompletableFuture<DeleteEndpointResponse>
+     */
+    public CompletableFuture<DeleteEndpointResponse> deleteEndpointAsync(DeleteEndpointRequest request) {
+        return hcClient.asyncInvokeHttp(request, EgMeta.deleteEndpoint);
+    }
+
+    /**
+     * 删除访问端点
+     *
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteEndpointRequest 请求对象
+     * @return AsyncInvoker<DeleteEndpointRequest, DeleteEndpointResponse>
+     */
+    public AsyncInvoker<DeleteEndpointRequest, DeleteEndpointResponse> deleteEndpointAsyncInvoker(
+        DeleteEndpointRequest request) {
+        return new AsyncInvoker<DeleteEndpointRequest, DeleteEndpointResponse>(request, EgMeta.deleteEndpoint,
+            hcClient);
+    }
+
+    /**
+     * 删除事件模型
+     *
+     * 删除事件模型
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteEventSchemaRequest 请求对象
+     * @return CompletableFuture<DeleteEventSchemaResponse>
+     */
+    public CompletableFuture<DeleteEventSchemaResponse> deleteEventSchemaAsync(DeleteEventSchemaRequest request) {
+        return hcClient.asyncInvokeHttp(request, EgMeta.deleteEventSchema);
+    }
+
+    /**
+     * 删除事件模型
+     *
+     * 删除事件模型
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteEventSchemaRequest 请求对象
+     * @return AsyncInvoker<DeleteEventSchemaRequest, DeleteEventSchemaResponse>
+     */
+    public AsyncInvoker<DeleteEventSchemaRequest, DeleteEventSchemaResponse> deleteEventSchemaAsyncInvoker(
+        DeleteEventSchemaRequest request) {
+        return new AsyncInvoker<DeleteEventSchemaRequest, DeleteEventSchemaResponse>(request, EgMeta.deleteEventSchema,
+            hcClient);
+    }
+
+    /**
+     * 删除事件模型版本
+     *
+     * 删除事件模型指定版本
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteEventSchemaVersionRequest 请求对象
+     * @return CompletableFuture<DeleteEventSchemaVersionResponse>
+     */
+    public CompletableFuture<DeleteEventSchemaVersionResponse> deleteEventSchemaVersionAsync(
+        DeleteEventSchemaVersionRequest request) {
+        return hcClient.asyncInvokeHttp(request, EgMeta.deleteEventSchemaVersion);
+    }
+
+    /**
+     * 删除事件模型版本
+     *
+     * 删除事件模型指定版本
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteEventSchemaVersionRequest 请求对象
+     * @return AsyncInvoker<DeleteEventSchemaVersionRequest, DeleteEventSchemaVersionResponse>
+     */
+    public AsyncInvoker<DeleteEventSchemaVersionRequest, DeleteEventSchemaVersionResponse> deleteEventSchemaVersionAsyncInvoker(
+        DeleteEventSchemaVersionRequest request) {
+        return new AsyncInvoker<DeleteEventSchemaVersionRequest, DeleteEventSchemaVersionResponse>(request,
+            EgMeta.deleteEventSchemaVersion, hcClient);
+    }
+
+    /**
      * 删除自定义事件源
      *
-     * 删除指定的自定义事件源。
+     * 删除指定的自定义事件源
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -196,7 +484,7 @@ public class EgAsyncClient {
     /**
      * 删除自定义事件源
      *
-     * 删除指定的自定义事件源。
+     * 删除指定的自定义事件源
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -213,7 +501,7 @@ public class EgAsyncClient {
     /**
      * 删除事件订阅
      *
-     * 删除事件订阅。
+     * 删除事件订阅
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -228,7 +516,7 @@ public class EgAsyncClient {
     /**
      * 删除事件订阅
      *
-     * 删除事件订阅。
+     * 删除事件订阅
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -245,7 +533,7 @@ public class EgAsyncClient {
     /**
      * 删除事件订阅目标
      *
-     * 删除事件订阅中的事件目标。
+     * 删除事件订阅目标
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -261,7 +549,7 @@ public class EgAsyncClient {
     /**
      * 删除事件订阅目标
      *
-     * 删除事件订阅中的事件目标。
+     * 删除事件订阅目标
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -276,9 +564,71 @@ public class EgAsyncClient {
     }
 
     /**
+     * 事件模型自动发现
+     *
+     * 事件模型自动发现
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DiscoverEventSchemaFromDataRequest 请求对象
+     * @return CompletableFuture<DiscoverEventSchemaFromDataResponse>
+     */
+    public CompletableFuture<DiscoverEventSchemaFromDataResponse> discoverEventSchemaFromDataAsync(
+        DiscoverEventSchemaFromDataRequest request) {
+        return hcClient.asyncInvokeHttp(request, EgMeta.discoverEventSchemaFromData);
+    }
+
+    /**
+     * 事件模型自动发现
+     *
+     * 事件模型自动发现
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DiscoverEventSchemaFromDataRequest 请求对象
+     * @return AsyncInvoker<DiscoverEventSchemaFromDataRequest, DiscoverEventSchemaFromDataResponse>
+     */
+    public AsyncInvoker<DiscoverEventSchemaFromDataRequest, DiscoverEventSchemaFromDataResponse> discoverEventSchemaFromDataAsyncInvoker(
+        DiscoverEventSchemaFromDataRequest request) {
+        return new AsyncInvoker<DiscoverEventSchemaFromDataRequest, DiscoverEventSchemaFromDataResponse>(request,
+            EgMeta.discoverEventSchemaFromData, hcClient);
+    }
+
+    /**
+     * 查询服务委托
+     *
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListAgenciesRequest 请求对象
+     * @return CompletableFuture<ListAgenciesResponse>
+     */
+    public CompletableFuture<ListAgenciesResponse> listAgenciesAsync(ListAgenciesRequest request) {
+        return hcClient.asyncInvokeHttp(request, EgMeta.listAgencies);
+    }
+
+    /**
+     * 查询服务委托
+     *
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListAgenciesRequest 请求对象
+     * @return AsyncInvoker<ListAgenciesRequest, ListAgenciesResponse>
+     */
+    public AsyncInvoker<ListAgenciesRequest, ListAgenciesResponse> listAgenciesAsyncInvoker(
+        ListAgenciesRequest request) {
+        return new AsyncInvoker<ListAgenciesRequest, ListAgenciesResponse>(request, EgMeta.listAgencies, hcClient);
+    }
+
+    /**
      * 查询事件通道列表
      *
-     * 查询事件通道列表，包括官方通道和自定义通道。
+     * 查询事件通道列表，包括系统通道和自定义通道
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -293,7 +643,7 @@ public class EgAsyncClient {
     /**
      * 查询事件通道列表
      *
-     * 查询事件通道列表，包括官方通道和自定义通道。
+     * 查询事件通道列表，包括系统通道和自定义通道
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -307,9 +657,137 @@ public class EgAsyncClient {
     }
 
     /**
+     * 查询目标连接列表
+     *
+     * 查询目标连接列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListConnectionsRequest 请求对象
+     * @return CompletableFuture<ListConnectionsResponse>
+     */
+    public CompletableFuture<ListConnectionsResponse> listConnectionsAsync(ListConnectionsRequest request) {
+        return hcClient.asyncInvokeHttp(request, EgMeta.listConnections);
+    }
+
+    /**
+     * 查询目标连接列表
+     *
+     * 查询目标连接列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListConnectionsRequest 请求对象
+     * @return AsyncInvoker<ListConnectionsRequest, ListConnectionsResponse>
+     */
+    public AsyncInvoker<ListConnectionsRequest, ListConnectionsResponse> listConnectionsAsyncInvoker(
+        ListConnectionsRequest request) {
+        return new AsyncInvoker<ListConnectionsRequest, ListConnectionsResponse>(request, EgMeta.listConnections,
+            hcClient);
+    }
+
+    /**
+     * 查询访问端点
+     *
+     * list all endpoints
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListEndpointsRequest 请求对象
+     * @return CompletableFuture<ListEndpointsResponse>
+     */
+    public CompletableFuture<ListEndpointsResponse> listEndpointsAsync(ListEndpointsRequest request) {
+        return hcClient.asyncInvokeHttp(request, EgMeta.listEndpoints);
+    }
+
+    /**
+     * 查询访问端点
+     *
+     * list all endpoints
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListEndpointsRequest 请求对象
+     * @return AsyncInvoker<ListEndpointsRequest, ListEndpointsResponse>
+     */
+    public AsyncInvoker<ListEndpointsRequest, ListEndpointsResponse> listEndpointsAsyncInvoker(
+        ListEndpointsRequest request) {
+        return new AsyncInvoker<ListEndpointsRequest, ListEndpointsResponse>(request, EgMeta.listEndpoints, hcClient);
+    }
+
+    /**
+     * 查询事件模型列表
+     *
+     * 查询事件模型列表，包括系统事件模型和自定义事件模型
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListEventSchemaRequest 请求对象
+     * @return CompletableFuture<ListEventSchemaResponse>
+     */
+    public CompletableFuture<ListEventSchemaResponse> listEventSchemaAsync(ListEventSchemaRequest request) {
+        return hcClient.asyncInvokeHttp(request, EgMeta.listEventSchema);
+    }
+
+    /**
+     * 查询事件模型列表
+     *
+     * 查询事件模型列表，包括系统事件模型和自定义事件模型
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListEventSchemaRequest 请求对象
+     * @return AsyncInvoker<ListEventSchemaRequest, ListEventSchemaResponse>
+     */
+    public AsyncInvoker<ListEventSchemaRequest, ListEventSchemaResponse> listEventSchemaAsyncInvoker(
+        ListEventSchemaRequest request) {
+        return new AsyncInvoker<ListEventSchemaRequest, ListEventSchemaResponse>(request, EgMeta.listEventSchema,
+            hcClient);
+    }
+
+    /**
+     * 查询事件模型版本列表
+     *
+     * 查询事件模型版本列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListEventSchemaVersionsRequest 请求对象
+     * @return CompletableFuture<ListEventSchemaVersionsResponse>
+     */
+    public CompletableFuture<ListEventSchemaVersionsResponse> listEventSchemaVersionsAsync(
+        ListEventSchemaVersionsRequest request) {
+        return hcClient.asyncInvokeHttp(request, EgMeta.listEventSchemaVersions);
+    }
+
+    /**
+     * 查询事件模型版本列表
+     *
+     * 查询事件模型版本列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListEventSchemaVersionsRequest 请求对象
+     * @return AsyncInvoker<ListEventSchemaVersionsRequest, ListEventSchemaVersionsResponse>
+     */
+    public AsyncInvoker<ListEventSchemaVersionsRequest, ListEventSchemaVersionsResponse> listEventSchemaVersionsAsyncInvoker(
+        ListEventSchemaVersionsRequest request) {
+        return new AsyncInvoker<ListEventSchemaVersionsRequest, ListEventSchemaVersionsResponse>(request,
+            EgMeta.listEventSchemaVersions, hcClient);
+    }
+
+    /**
      * 查询事件源列表
      *
-     * 查询事件源列表，支持条件查询，如可以指定事件通道ID来查询某个事件通道下的所有事件源。
+     * 支持条件查询，如可以指定事件通道ID来查询某个事件通道下的所有事件源
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -324,7 +802,7 @@ public class EgAsyncClient {
     /**
      * 查询事件源列表
      *
-     * 查询事件源列表，支持条件查询，如可以指定事件通道ID来查询某个事件通道下的所有事件源。
+     * 支持条件查询，如可以指定事件通道ID来查询某个事件通道下的所有事件源
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -341,7 +819,7 @@ public class EgAsyncClient {
     /**
      * 查询事件目标分类
      *
-     * 查询预置的事件目标分类，获取每个事件目标分类的字段定义。
+     * 查询预置的事件目标分类，获取每个事件目标分类的字段定义
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -356,7 +834,7 @@ public class EgAsyncClient {
     /**
      * 查询事件目标分类
      *
-     * 查询预置的事件目标分类，获取每个事件目标分类的字段定义。
+     * 查询预置的事件目标分类，获取每个事件目标分类的字段定义
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -373,7 +851,7 @@ public class EgAsyncClient {
     /**
      * 查询配额
      *
-     * 查询当前租户的配额，未特殊配置过的会返回默认配额。
+     * 查询当前租户的配额，未特殊配置过的会返回默认配额
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -388,7 +866,7 @@ public class EgAsyncClient {
     /**
      * 查询配额
      *
-     * 查询当前租户的配额，未特殊配置过的会返回默认配额。
+     * 查询当前租户的配额，未特殊配置过的会返回默认配额
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -403,7 +881,7 @@ public class EgAsyncClient {
     /**
      * 查询事件订阅列表
      *
-     * 查询事件订阅列表，支持指定事件通道。
+     * 查询事件订阅列表，支持指定事件通道
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -418,7 +896,7 @@ public class EgAsyncClient {
     /**
      * 查询事件订阅列表
      *
-     * 查询事件订阅列表，支持指定事件通道。
+     * 查询事件订阅列表，支持指定事件通道
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -433,9 +911,40 @@ public class EgAsyncClient {
     }
 
     /**
-     * 启用/禁用事件订阅
+     * 查询事件订阅列表
      *
-     * 启用/禁用事件订阅。
+     * 查询触发器，支持指定函数urn。一个以函数urn为目标的订阅为一个触发器。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListTriggersRequest 请求对象
+     * @return CompletableFuture<ListTriggersResponse>
+     */
+    public CompletableFuture<ListTriggersResponse> listTriggersAsync(ListTriggersRequest request) {
+        return hcClient.asyncInvokeHttp(request, EgMeta.listTriggers);
+    }
+
+    /**
+     * 查询事件订阅列表
+     *
+     * 查询触发器，支持指定函数urn。一个以函数urn为目标的订阅为一个触发器。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListTriggersRequest 请求对象
+     * @return AsyncInvoker<ListTriggersRequest, ListTriggersResponse>
+     */
+    public AsyncInvoker<ListTriggersRequest, ListTriggersResponse> listTriggersAsyncInvoker(
+        ListTriggersRequest request) {
+        return new AsyncInvoker<ListTriggersRequest, ListTriggersResponse>(request, EgMeta.listTriggers, hcClient);
+    }
+
+    /**
+     * 操作事件订阅
+     *
+     * 操作事件订阅，支持启用、禁用
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -448,9 +957,9 @@ public class EgAsyncClient {
     }
 
     /**
-     * 启用/禁用事件订阅
+     * 操作事件订阅
      *
-     * 启用/禁用事件订阅。
+     * 操作事件订阅，支持启用、禁用
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -467,7 +976,7 @@ public class EgAsyncClient {
     /**
      * 发布事件到事件通道
      *
-     * 发布事件到事件通道。
+     * 发布事件到事件通道
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -482,7 +991,7 @@ public class EgAsyncClient {
     /**
      * 发布事件到事件通道
      *
-     * 发布事件到事件通道。
+     * 发布事件到事件通道
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -497,7 +1006,6 @@ public class EgAsyncClient {
     /**
      * 查询事件通道详情
      *
-     * 查询事件通道详情。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -512,7 +1020,6 @@ public class EgAsyncClient {
     /**
      * 查询事件通道详情
      *
-     * 查询事件通道详情。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -527,9 +1034,106 @@ public class EgAsyncClient {
     }
 
     /**
+     * 查询目标连接详情
+     *
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowDetailOfConnectionRequest 请求对象
+     * @return CompletableFuture<ShowDetailOfConnectionResponse>
+     */
+    public CompletableFuture<ShowDetailOfConnectionResponse> showDetailOfConnectionAsync(
+        ShowDetailOfConnectionRequest request) {
+        return hcClient.asyncInvokeHttp(request, EgMeta.showDetailOfConnection);
+    }
+
+    /**
+     * 查询目标连接详情
+     *
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowDetailOfConnectionRequest 请求对象
+     * @return AsyncInvoker<ShowDetailOfConnectionRequest, ShowDetailOfConnectionResponse>
+     */
+    public AsyncInvoker<ShowDetailOfConnectionRequest, ShowDetailOfConnectionResponse> showDetailOfConnectionAsyncInvoker(
+        ShowDetailOfConnectionRequest request) {
+        return new AsyncInvoker<ShowDetailOfConnectionRequest, ShowDetailOfConnectionResponse>(request,
+            EgMeta.showDetailOfConnection, hcClient);
+    }
+
+    /**
+     * 查询事件模型详情
+     *
+     * 查询事件模型详情
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowDetailOfEventSchemaRequest 请求对象
+     * @return CompletableFuture<ShowDetailOfEventSchemaResponse>
+     */
+    public CompletableFuture<ShowDetailOfEventSchemaResponse> showDetailOfEventSchemaAsync(
+        ShowDetailOfEventSchemaRequest request) {
+        return hcClient.asyncInvokeHttp(request, EgMeta.showDetailOfEventSchema);
+    }
+
+    /**
+     * 查询事件模型详情
+     *
+     * 查询事件模型详情
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowDetailOfEventSchemaRequest 请求对象
+     * @return AsyncInvoker<ShowDetailOfEventSchemaRequest, ShowDetailOfEventSchemaResponse>
+     */
+    public AsyncInvoker<ShowDetailOfEventSchemaRequest, ShowDetailOfEventSchemaResponse> showDetailOfEventSchemaAsyncInvoker(
+        ShowDetailOfEventSchemaRequest request) {
+        return new AsyncInvoker<ShowDetailOfEventSchemaRequest, ShowDetailOfEventSchemaResponse>(request,
+            EgMeta.showDetailOfEventSchema, hcClient);
+    }
+
+    /**
+     * 查询事件模型版本详情
+     *
+     * 查询事件模型指定版本详情
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowDetailOfEventSchemaVersionRequest 请求对象
+     * @return CompletableFuture<ShowDetailOfEventSchemaVersionResponse>
+     */
+    public CompletableFuture<ShowDetailOfEventSchemaVersionResponse> showDetailOfEventSchemaVersionAsync(
+        ShowDetailOfEventSchemaVersionRequest request) {
+        return hcClient.asyncInvokeHttp(request, EgMeta.showDetailOfEventSchemaVersion);
+    }
+
+    /**
+     * 查询事件模型版本详情
+     *
+     * 查询事件模型指定版本详情
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowDetailOfEventSchemaVersionRequest 请求对象
+     * @return AsyncInvoker<ShowDetailOfEventSchemaVersionRequest, ShowDetailOfEventSchemaVersionResponse>
+     */
+    public AsyncInvoker<ShowDetailOfEventSchemaVersionRequest, ShowDetailOfEventSchemaVersionResponse> showDetailOfEventSchemaVersionAsyncInvoker(
+        ShowDetailOfEventSchemaVersionRequest request) {
+        return new AsyncInvoker<ShowDetailOfEventSchemaVersionRequest, ShowDetailOfEventSchemaVersionResponse>(request,
+            EgMeta.showDetailOfEventSchemaVersion, hcClient);
+    }
+
+    /**
      * 查询事件源详情
      *
-     * 查询事件源详情信息。
+     * 查询事件源详情信息
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -545,7 +1149,7 @@ public class EgAsyncClient {
     /**
      * 查询事件源详情
      *
-     * 查询事件源详情信息。
+     * 查询事件源详情信息
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -562,7 +1166,7 @@ public class EgAsyncClient {
     /**
      * 查询事件订阅详情
      *
-     * 查询事件订阅详情。
+     * 查询事件订阅详情
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -578,7 +1182,7 @@ public class EgAsyncClient {
     /**
      * 查询事件订阅详情
      *
-     * 查询事件订阅详情。
+     * 查询事件订阅详情
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -595,7 +1199,7 @@ public class EgAsyncClient {
     /**
      * 查询事件订阅目标详情
      *
-     * 查询事件订阅中事件目标的详情。
+     * 查询事件订阅目标详情
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -611,7 +1215,7 @@ public class EgAsyncClient {
     /**
      * 查询事件订阅目标详情
      *
-     * 查询事件订阅中事件目标的详情。
+     * 查询事件订阅目标详情
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -628,7 +1232,7 @@ public class EgAsyncClient {
     /**
      * 更新自定义事件通道
      *
-     * 修改自定义事件通道的描述信息。
+     * 更新自定义事件通道定义
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -643,7 +1247,7 @@ public class EgAsyncClient {
     /**
      * 更新自定义事件通道
      *
-     * 修改自定义事件通道的描述信息。
+     * 更新自定义事件通道定义
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -657,9 +1261,105 @@ public class EgAsyncClient {
     }
 
     /**
+     * 更新目标连接
+     *
+     * 更新目标连接
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateConnectionRequest 请求对象
+     * @return CompletableFuture<UpdateConnectionResponse>
+     */
+    public CompletableFuture<UpdateConnectionResponse> updateConnectionAsync(UpdateConnectionRequest request) {
+        return hcClient.asyncInvokeHttp(request, EgMeta.updateConnection);
+    }
+
+    /**
+     * 更新目标连接
+     *
+     * 更新目标连接
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateConnectionRequest 请求对象
+     * @return AsyncInvoker<UpdateConnectionRequest, UpdateConnectionResponse>
+     */
+    public AsyncInvoker<UpdateConnectionRequest, UpdateConnectionResponse> updateConnectionAsyncInvoker(
+        UpdateConnectionRequest request) {
+        return new AsyncInvoker<UpdateConnectionRequest, UpdateConnectionResponse>(request, EgMeta.updateConnection,
+            hcClient);
+    }
+
+    /**
+     * 更新访问端点
+     *
+     * update endpoint
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateEndpointRequest 请求对象
+     * @return CompletableFuture<UpdateEndpointResponse>
+     */
+    public CompletableFuture<UpdateEndpointResponse> updateEndpointAsync(UpdateEndpointRequest request) {
+        return hcClient.asyncInvokeHttp(request, EgMeta.updateEndpoint);
+    }
+
+    /**
+     * 更新访问端点
+     *
+     * update endpoint
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateEndpointRequest 请求对象
+     * @return AsyncInvoker<UpdateEndpointRequest, UpdateEndpointResponse>
+     */
+    public AsyncInvoker<UpdateEndpointRequest, UpdateEndpointResponse> updateEndpointAsyncInvoker(
+        UpdateEndpointRequest request) {
+        return new AsyncInvoker<UpdateEndpointRequest, UpdateEndpointResponse>(request, EgMeta.updateEndpoint,
+            hcClient);
+    }
+
+    /**
+     * 更新自定义事件模型
+     *
+     * 更新自定义事件模型定义
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateEventSchemaRequest 请求对象
+     * @return CompletableFuture<UpdateEventSchemaResponse>
+     */
+    public CompletableFuture<UpdateEventSchemaResponse> updateEventSchemaAsync(UpdateEventSchemaRequest request) {
+        return hcClient.asyncInvokeHttp(request, EgMeta.updateEventSchema);
+    }
+
+    /**
+     * 更新自定义事件模型
+     *
+     * 更新自定义事件模型定义
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateEventSchemaRequest 请求对象
+     * @return AsyncInvoker<UpdateEventSchemaRequest, UpdateEventSchemaResponse>
+     */
+    public AsyncInvoker<UpdateEventSchemaRequest, UpdateEventSchemaResponse> updateEventSchemaAsyncInvoker(
+        UpdateEventSchemaRequest request) {
+        return new AsyncInvoker<UpdateEventSchemaRequest, UpdateEventSchemaResponse>(request, EgMeta.updateEventSchema,
+            hcClient);
+    }
+
+    /**
      * 更新自定义事件源
      *
-     * 修改自定义事件源的描述信息。
+     * 更新自定义事件源定义
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -674,7 +1374,7 @@ public class EgAsyncClient {
     /**
      * 更新自定义事件源
      *
-     * 修改自定义事件源的描述信息。
+     * 更新自定义事件源定义
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -691,7 +1391,7 @@ public class EgAsyncClient {
     /**
      * 更新事件订阅
      *
-     * 更新事件订阅描述信息、事件源参数或者事件目标参数。
+     * 更新事件订阅定义
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -706,7 +1406,7 @@ public class EgAsyncClient {
     /**
      * 更新事件订阅
      *
-     * 更新事件订阅描述信息、事件源参数或者事件目标参数。
+     * 更新事件订阅定义
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -723,7 +1423,7 @@ public class EgAsyncClient {
     /**
      * 更新事件订阅源
      *
-     * 更新事件订阅中事件源的参数。
+     * 更新事件订阅源定义
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -739,7 +1439,7 @@ public class EgAsyncClient {
     /**
      * 更新事件订阅源
      *
-     * 更新事件订阅中事件源的参数。
+     * 更新事件订阅源定义
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -756,7 +1456,7 @@ public class EgAsyncClient {
     /**
      * 更新事件订阅目标
      *
-     * 更新事件订阅中事件目标的参数。
+     * 更新事件订阅目标定义
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -772,7 +1472,7 @@ public class EgAsyncClient {
     /**
      * 更新事件订阅目标
      *
-     * 更新事件订阅中事件目标的参数。
+     * 更新事件订阅目标定义
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -784,6 +1484,38 @@ public class EgAsyncClient {
         UpdateSubscriptionTargetRequest request) {
         return new AsyncInvoker<UpdateSubscriptionTargetRequest, UpdateSubscriptionTargetResponse>(request,
             EgMeta.updateSubscriptionTarget, hcClient);
+    }
+
+    /**
+     * 获取API版本列表
+     *
+     * 获取服务支持的API版本列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListApiVersionsRequest 请求对象
+     * @return CompletableFuture<ListApiVersionsResponse>
+     */
+    public CompletableFuture<ListApiVersionsResponse> listApiVersionsAsync(ListApiVersionsRequest request) {
+        return hcClient.asyncInvokeHttp(request, EgMeta.listApiVersions);
+    }
+
+    /**
+     * 获取API版本列表
+     *
+     * 获取服务支持的API版本列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListApiVersionsRequest 请求对象
+     * @return AsyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse>
+     */
+    public AsyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse> listApiVersionsAsyncInvoker(
+        ListApiVersionsRequest request) {
+        return new AsyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse>(request, EgMeta.listApiVersions,
+            hcClient);
     }
 
 }

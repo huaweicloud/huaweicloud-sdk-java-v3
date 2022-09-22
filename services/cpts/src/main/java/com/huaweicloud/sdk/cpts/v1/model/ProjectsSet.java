@@ -40,9 +40,9 @@ public class ProjectsSet {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "status")
+    @JsonProperty(value = "source")
 
-    private Integer status;
+    private Integer source;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "external_params")
@@ -141,23 +141,23 @@ public class ProjectsSet {
         this.name = name;
     }
 
-    public ProjectsSet withStatus(Integer status) {
-        this.status = status;
+    public ProjectsSet withSource(Integer source) {
+        this.source = source;
         return this;
     }
 
     /**
-     * 工程状态
+     * 工程来源 0:CPTS,2:CloudTest
      * minimum: 0
      * maximum: 2147483647
-     * @return status
+     * @return source
      */
-    public Integer getStatus() {
-        return status;
+    public Integer getSource() {
+        return source;
     }
 
-    public void setStatus(Integer status) {
-        this.status = status;
+    public void setSource(Integer source) {
+        this.source = source;
     }
 
     public ProjectsSet withExternalParams(Object externalParams) {
@@ -222,14 +222,14 @@ public class ProjectsSet {
         return Objects.equals(this.createTime, projectsSet.createTime)
             && Objects.equals(this.updateTime, projectsSet.updateTime)
             && Objects.equals(this.description, projectsSet.description) && Objects.equals(this.id, projectsSet.id)
-            && Objects.equals(this.name, projectsSet.name) && Objects.equals(this.status, projectsSet.status)
+            && Objects.equals(this.name, projectsSet.name) && Objects.equals(this.source, projectsSet.source)
             && Objects.equals(this.externalParams, projectsSet.externalParams)
             && Objects.equals(this.variablesNoFile, projectsSet.variablesNoFile);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(createTime, updateTime, description, id, name, status, externalParams, variablesNoFile);
+        return Objects.hash(createTime, updateTime, description, id, name, source, externalParams, variablesNoFile);
     }
 
     @Override
@@ -241,7 +241,7 @@ public class ProjectsSet {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    source: ").append(toIndentedString(source)).append("\n");
         sb.append("    externalParams: ").append(toIndentedString(externalParams)).append("\n");
         sb.append("    variablesNoFile: ").append(toIndentedString(variablesNoFile)).append("\n");
         sb.append("}");

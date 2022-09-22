@@ -21,7 +21,7 @@ public class ShowMigprojectRequest {
     }
 
     /**
-     * 迁移项目id
+     * 迁移项目ID
      * @return migProjectId
      */
     public String getMigProjectId() {

@@ -136,7 +136,7 @@ public class SubscriptionTargetTransform {
     }
 
     /**
-     * - 转换类型规则为常量时，字段为常量内容定义；  - 转换类型规则为变量时，为变量定义，内容必须为JsonObject字符串。   - 变量最多支持100个，且不支持嵌套结构定义；   - 变量名由字母、数字、点、下划线和中划线组成，必须字母或数字开头不能以HC.开头，长度不超过64个字符；   - 变量值表达式支持常量或JsonPath表达式，字符串长度不超过1024个字符。
+     * 常量类型规则时，字段为常量内容定义； 变量类型规则时，为变量定义，内容必须为JsonObject字符串。    变量最多支持100个，且不支持嵌套结构定义；    变量名由字母、数字、点、下划线和中划线组成，必须字母或数字开头不能以HC.开头，长度不超过64个字符；    变量值表达式支持常量或JsonPath表达式，字符串长度不超过1024个字符。
      * @return value
      */
     public String getValue() {
@@ -153,7 +153,7 @@ public class SubscriptionTargetTransform {
     }
 
     /**
-     * 转换规则类型为变量时，规则内容由模板定义，支持对已定义变量的引用。
+     * 变量类型规则时，规则内容的模板定义，支持对已定义变量的引用。
      * @return template
      */
     public String getTemplate() {

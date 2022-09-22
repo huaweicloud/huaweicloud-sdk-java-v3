@@ -24,6 +24,11 @@ public class PutEventsResponse extends SdkResponse {
 
     private List<PutEventsRespEvents> events = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+
+    private String xRequestId;
+
     public PutEventsResponse withFailedCount(Integer failedCount) {
         this.failedCount = failedCount;
         return this;
@@ -63,7 +68,7 @@ public class PutEventsResponse extends SdkResponse {
     }
 
     /**
-     * 事件信息
+     * Get events
      * @return events
      */
     public List<PutEventsRespEvents> getEvents() {
@@ -72,6 +77,25 @@ public class PutEventsResponse extends SdkResponse {
 
     public void setEvents(List<PutEventsRespEvents> events) {
         this.events = events;
+    }
+
+    public PutEventsResponse withXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+        return this;
+    }
+
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+    public String getXRequestId() {
+        return xRequestId;
+    }
+
+    public void setXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
     }
 
     @Override
@@ -84,12 +108,13 @@ public class PutEventsResponse extends SdkResponse {
         }
         PutEventsResponse putEventsResponse = (PutEventsResponse) o;
         return Objects.equals(this.failedCount, putEventsResponse.failedCount)
-            && Objects.equals(this.events, putEventsResponse.events);
+            && Objects.equals(this.events, putEventsResponse.events)
+            && Objects.equals(this.xRequestId, putEventsResponse.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(failedCount, events);
+        return Objects.hash(failedCount, events, xRequestId);
     }
 
     @Override
@@ -98,6 +123,7 @@ public class PutEventsResponse extends SdkResponse {
         sb.append("class PutEventsResponse {\n");
         sb.append("    failedCount: ").append(toIndentedString(failedCount)).append("\n");
         sb.append("    events: ").append(toIndentedString(events)).append("\n");
+        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

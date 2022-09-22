@@ -29,7 +29,7 @@ public class TasksResponseBody {
     private String name;
 
     /**
-     * 任务类型，创建迁移任务时必选，更新迁移任务时可选
+     * 任务类型，创建时必选，更新时可选 MIGRATE_FILE:文件级迁移 MIGRATE_BLOCK:块级迁移 
      */
     public static final class TypeEnum {
 
@@ -351,7 +351,7 @@ public class TasksResponseBody {
     private TargetServerAssociatedWithTask targetServer;
 
     /**
-     * 日志收集状态
+     * 日志收集状态 INIT TELL_AGENT_TO_COLLECT WAIT_AGENT_COLLECT_ACK AGENT_COLLECT_FAIL AGENT_COLLECT_SUCCESS WAIT_SERVER_COLLECT SERVER_COLLECT_FAIL SERVER_COLLECT_SUCCESS TELL_AGENT_RESET_ACL WAIT_AGENT_RESET_ACL_ACK 
      */
     public static final class LogCollectStatusEnum {
 
@@ -502,7 +502,7 @@ public class TasksResponseBody {
     }
 
     /**
-     * 迁移任务id
+     * 迁移任务ID
      * @return id
      */
     public String getId() {
@@ -536,7 +536,7 @@ public class TasksResponseBody {
     }
 
     /**
-     * 任务类型，创建迁移任务时必选，更新迁移任务时可选
+     * 任务类型，创建时必选，更新时可选 MIGRATE_FILE:文件级迁移 MIGRATE_BLOCK:块级迁移 
      * @return type
      */
     public TypeEnum getType() {
@@ -645,6 +645,8 @@ public class TasksResponseBody {
 
     /**
      * 迁移限速
+     * minimum: 0
+     * maximum: 65535
      * @return speedLimit
      */
     public Integer getSpeedLimit() {
@@ -828,7 +830,7 @@ public class TasksResponseBody {
     }
 
     /**
-     * 迁移项目id
+     * 迁移项目ID
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -871,7 +873,7 @@ public class TasksResponseBody {
     }
 
     /**
-     * 日志收集状态
+     * 日志收集状态 INIT TELL_AGENT_TO_COLLECT WAIT_AGENT_COLLECT_ACK AGENT_COLLECT_FAIL AGENT_COLLECT_SUCCESS WAIT_SERVER_COLLECT SERVER_COLLECT_FAIL SERVER_COLLECT_SUCCESS TELL_AGENT_RESET_ACL WAIT_AGENT_RESET_ACL_ACK 
      * @return logCollectStatus
      */
     public LogCollectStatusEnum getLogCollectStatus() {

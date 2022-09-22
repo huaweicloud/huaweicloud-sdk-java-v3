@@ -56,7 +56,7 @@ public class UserVmrDTO {
     private Integer vmrPkgLength;
 
     /**
-     * 云会议室状态。 * 0.正常 * 1.停用 * 2.未分配 
+     * 云会议室状态。 * 0：正常 * 1：停用 * 2：未分配 
      */
     public static final class StatusEnum {
 
@@ -149,7 +149,7 @@ public class UserVmrDTO {
     }
 
     /**
-     * 云会议室的唯一标识
+     * 云会议室的ID。 > 对应[[创建会议](https://support.huaweicloud.com/api-meeting/meeting_21_0014.html)](tag:hws)[[创建会议](https://support.huaweicloud.com/intl/zh-cn/api-meeting/meeting_21_0014.html)](tag:hk)接口中的vmrID。 
      * @return id
      */
     public String getId() {
@@ -166,7 +166,7 @@ public class UserVmrDTO {
     }
 
     /**
-     * 云会议室ID即预约会议的id，分为两种，一种是创建用户时生成的，为用户个人的，另一种是企业管理员分配的专用云会议室
+     * 云会议室的固定会议ID。 > 对应[[创建会议](https://support.huaweicloud.com/api-meeting/meeting_21_0014.html)](tag:hws)[[创建会议](https://support.huaweicloud.com/intl/zh-cn/api-meeting/meeting_21_0014.html)](tag:hk)接口返回数据的vmrConferenceID。 
      * @return vmrId
      */
     public String getVmrId() {
@@ -183,7 +183,7 @@ public class UserVmrDTO {
     }
 
     /**
-     * 云会议室名称
+     * 云会议室名称。
      * @return vmrName
      */
     public String getVmrName() {
@@ -217,7 +217,7 @@ public class UserVmrDTO {
     }
 
     /**
-     * 云会议室套餐包的id，仅专用云会议室返回
+     * 云会议室套餐包的id，仅云会议室返回。
      * @return vmrPkgId
      */
     public String getVmrPkgId() {
@@ -234,7 +234,7 @@ public class UserVmrDTO {
     }
 
     /**
-     * 云会议室套餐包的名称，仅专用云会议室返回
+     * 云会议室套餐包的名称，仅云会议室返回。
      * @return vmrPkgName
      */
     public String getVmrPkgName() {
@@ -251,7 +251,7 @@ public class UserVmrDTO {
     }
 
     /**
-     * 云会议室套餐包的会议并发方数，仅专用云会议室返回
+     * 云会议室套餐包的会议并发方数，仅云会议室返回。
      * @return vmrPkgParties
      */
     public Integer getVmrPkgParties() {
@@ -268,7 +268,7 @@ public class UserVmrDTO {
     }
 
     /**
-     * 云会议室套餐包的与会时间，若为0则代表无限时长，仅专用云会议室返回
+     * 云会议室套餐包的与会时间，若为0则代表无限时长，仅云会议室返回。
      * @return vmrPkgLength
      */
     public Integer getVmrPkgLength() {
@@ -285,7 +285,7 @@ public class UserVmrDTO {
     }
 
     /**
-     * 云会议室状态。 * 0.正常 * 1.停用 * 2.未分配 
+     * 云会议室状态。 * 0：正常 * 1：停用 * 2：未分配 
      * @return status
      */
     public StatusEnum getStatus() {

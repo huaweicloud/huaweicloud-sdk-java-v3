@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 密码信息
+ * 密码信息。
  */
 public class PasswordEntry {
 
@@ -26,7 +26,7 @@ public class PasswordEntry {
     }
 
     /**
-     * 会议角色。 - chair: 会议主持人。 - general: 普通与会者。
+     * 会议角色。 - chair: 会议主持人 - general: 普通与会者
      * @return conferenceRole
      */
     public String getConferenceRole() {

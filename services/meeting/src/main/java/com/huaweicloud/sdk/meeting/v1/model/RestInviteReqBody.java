@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 邀请会场请求消息体。
+ * 邀请与会者请求。
  */
 public class RestInviteReqBody {
 

@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 设置多画面消息体。
+ * 设置多画面请求。
  */
 public class RestMixedPictureBody {
 
@@ -39,7 +39,7 @@ public class RestMixedPictureBody {
     }
 
     /**
-     * 是否为手工设置多画面。 - 0: 系统自动多画面。 - 1: 手工设置多画面。
+     * 是否为手工设置多画面。 - 0: 系统自动多画面 - 1: 手工设置多画面
      * @return manualSet
      */
     public Integer getManualSet() {
@@ -56,7 +56,7 @@ public class RestMixedPictureBody {
     }
 
     /**
-     * 多画面数目。手工设置多画面时有效。 - Single: 单画面。 - Two: 二画面。 - Three: 三画面。 - Four: 四画面。 - Six: 六画面。 - Nine: 九画面。 - Sixteen: 十六画面。
+     * 多画面数目。手工设置多画面时有效。 - Single: 单画面 - Two: 二画面 - Three: 三画面 - Four: 四画面 - Six: 六画面 - Nine: 九画面 - Sixteen: 十六画面
      * @return imageType
      */
     public String getImageType() {

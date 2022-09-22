@@ -56,7 +56,7 @@ public class PostMigProjectBody {
     private Boolean existServer;
 
     /**
-     * 迁移项目类型
+     * 迁移项目类型 MIGRATE_BLOCK:块级迁移 MIGRATE_FILE:文件级迁移 
      */
     public static final class TypeEnum {
 
@@ -291,7 +291,7 @@ public class PostMigProjectBody {
     }
 
     /**
-     * 迁移项目类型
+     * 迁移项目类型 MIGRATE_BLOCK:块级迁移 MIGRATE_FILE:文件级迁移 
      * @return type
      */
     public TypeEnum getType() {

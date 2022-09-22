@@ -54,13 +54,13 @@ public class CodeCheckMeta {
             }));
 
         // response
-        builder.<List<CheckParametersRes>>withResponseField("body",
+        builder.<List<TaskCheckParamters>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(CheckParametersResponse::getBody, (response, data) -> {
                 response.setBody(data);
-            }).withInnerContainerType(CheckParametersRes.class));
+            }).withInnerContainerType(TaskCheckParamters.class));
 
         return builder.build();
     }
@@ -453,13 +453,13 @@ public class CodeCheckMeta {
             }));
 
         // response
-        builder.<List<ListTaskRulesetRes>>withResponseField("body",
+        builder.<List<TaskRulesetInfo>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListTaskRulesetResponse::getBody, (response, data) -> {
                 response.setBody(data);
-            }).withInnerContainerType(ListTaskRulesetRes.class));
+            }).withInnerContainerType(TaskRulesetInfo.class));
 
         return builder.build();
     }

@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 会议与会者发送/接收QoS数据。当qosType &#x3D; audio/video/screen 时有效。
+ * 会议与会者发送QoS数据。当qosType &#x3D; audio/video/screen 时有效。
  */
 public class QosSendReceiveInfo {
 

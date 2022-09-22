@@ -93,7 +93,7 @@ public class SendSlideVerifyCodeResponse extends SdkResponse {
     }
 
     /**
-     * 验证码token字符串。
+     * 验证码Token字符串。
      * @return token
      */
     public String getToken() {

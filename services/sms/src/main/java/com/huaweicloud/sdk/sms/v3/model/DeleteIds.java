@@ -40,7 +40,7 @@ public class DeleteIds {
     }
 
     /**
-     * 所有删除对象id的集合
+     * 所有删除对象ID的集合
      * @return ids
      */
     public List<String> getIds() {

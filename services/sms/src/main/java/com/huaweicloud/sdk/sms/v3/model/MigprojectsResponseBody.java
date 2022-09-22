@@ -61,7 +61,7 @@ public class MigprojectsResponseBody {
     private String description;
 
     /**
-     * 迁移项目默认迁移类型
+     * 迁移项目默认迁移类型 MIGRATE_BLOCK:块级迁移 MIGRATE_FILE:文件级迁移 
      */
     public static final class TypeEnum {
 
@@ -313,7 +313,7 @@ public class MigprojectsResponseBody {
     }
 
     /**
-     * 迁移项目默认迁移类型
+     * 迁移项目默认迁移类型 MIGRATE_BLOCK:块级迁移 MIGRATE_FILE:文件级迁移 
      * @return type
      */
     public TypeEnum getType() {

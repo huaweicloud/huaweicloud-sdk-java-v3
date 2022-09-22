@@ -10,6 +10,31 @@ import com.huaweicloud.sdk.moderation.v3.model.*;
 @SuppressWarnings("unchecked")
 public class ModerationMeta {
 
+    public static final HttpRequestDef<CheckImageModerationRequest, CheckImageModerationResponse> checkImageModeration =
+        genForcheckImageModeration();
+
+    private static HttpRequestDef<CheckImageModerationRequest, CheckImageModerationResponse> genForcheckImageModeration() {
+        // basic
+        HttpRequestDef.Builder<CheckImageModerationRequest, CheckImageModerationResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CheckImageModerationRequest.class, CheckImageModerationResponse.class)
+            .withName("CheckImageModeration")
+            .withUri("/v3/{project_id}/moderation/image")
+            .withContentType("application/json");
+
+        // requests
+        builder.<ImageDetectionReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ImageDetectionReq.class),
+            f -> f.withMarshaller(CheckImageModerationRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RunCreateAudioModerationJobRequest, RunCreateAudioModerationJobResponse> runCreateAudioModerationJob =
         genForrunCreateAudioModerationJob();
 

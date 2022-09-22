@@ -119,6 +119,11 @@ public class ShowInstanceResponse extends SdkResponse {
 
     private List<GetDetailfNodesInfo> nodes = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "admin_user_name")
+
+    private String adminUserName;
+
     public ShowInstanceResponse withId(String id) {
         this.id = id;
         return this;
@@ -492,6 +497,23 @@ public class ShowInstanceResponse extends SdkResponse {
         this.nodes = nodes;
     }
 
+    public ShowInstanceResponse withAdminUserName(String adminUserName) {
+        this.adminUserName = adminUserName;
+        return this;
+    }
+
+    /**
+     * 管理员账号用户名。 - 长度为1-32个字符。 - 必须以字母开头。 - 可以包含字母，数字、下划线，不能包含其它特殊字符。
+     * @return adminUserName
+     */
+    public String getAdminUserName() {
+        return adminUserName;
+    }
+
+    public void setAdminUserName(String adminUserName) {
+        this.adminUserName = adminUserName;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -521,7 +543,8 @@ public class ShowInstanceResponse extends SdkResponse {
             && Objects.equals(this.orderId, showInstanceResponse.orderId)
             && Objects.equals(this.enterpriseProjectId, showInstanceResponse.enterpriseProjectId)
             && Objects.equals(this.engineVersion, showInstanceResponse.engineVersion)
-            && Objects.equals(this.nodes, showInstanceResponse.nodes);
+            && Objects.equals(this.nodes, showInstanceResponse.nodes)
+            && Objects.equals(this.adminUserName, showInstanceResponse.adminUserName);
     }
 
     @Override
@@ -546,7 +569,8 @@ public class ShowInstanceResponse extends SdkResponse {
             orderId,
             enterpriseProjectId,
             engineVersion,
-            nodes);
+            nodes,
+            adminUserName);
     }
 
     @Override
@@ -574,6 +598,7 @@ public class ShowInstanceResponse extends SdkResponse {
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    engineVersion: ").append(toIndentedString(engineVersion)).append("\n");
         sb.append("    nodes: ").append(toIndentedString(nodes)).append("\n");
+        sb.append("    adminUserName: ").append(toIndentedString(adminUserName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

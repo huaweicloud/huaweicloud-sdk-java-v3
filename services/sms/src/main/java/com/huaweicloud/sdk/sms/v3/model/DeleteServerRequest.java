@@ -21,7 +21,7 @@ public class DeleteServerRequest {
     }
 
     /**
-     * 源端服务器在主机迁移服务中的id
+     * 源端服务器在主机迁移服务中的ID
      * @return sourceId
      */
     public String getSourceId() {

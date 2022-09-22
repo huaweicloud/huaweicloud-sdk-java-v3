@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * QoS会议信息。
+ * 会议QoS告警信息。
  */
 public class QosConferenceInfo {
 
@@ -164,7 +164,7 @@ public class QosConferenceInfo {
     }
 
     /**
-     * 部门。
+     * 部门名称。
      * @return deptName
      */
     public String getDeptName() {
@@ -181,7 +181,7 @@ public class QosConferenceInfo {
     }
 
     /**
-     * 总体告警 YES/NO。 说明： * 会议的音频，视频，屏幕共享，CPU任一项产生告警，总体告警就为YES。
+     * 总体告警 。 * YES：会议的音频、视频、屏幕共享、CPU任一项产生告警，总体告警就为YES * NO：无告警
      * @return alarm
      */
     public String getAlarm() {
@@ -198,7 +198,7 @@ public class QosConferenceInfo {
     }
 
     /**
-     * 音频告警 YES/NO。 说明： * 会议中任一与会者存在音频告警，会议音频告警就为YES。
+     * 音频告警 。 * YES：会议中任一与会者存在音频告警，会议音频告警就为YES * NO：无音频告警
      * @return audioAlarm
      */
     public String getAudioAlarm() {
@@ -215,7 +215,7 @@ public class QosConferenceInfo {
     }
 
     /**
-     * 视频告警 YES/NO。 说明： * 会议中任一与会者存在视频告警，会议视频告警就为YES。
+     * 视频告警。 * YES：会议中任一与会者存在视频告警，会议视频告警就为YES * NO：无音视频警
      * @return videoAlarm
      */
     public String getVideoAlarm() {
@@ -232,7 +232,7 @@ public class QosConferenceInfo {
     }
 
     /**
-     * 屏幕共享告警 YES/NO。 说明： * 会议中任一与会者存在屏幕共享告警，会议屏幕共享告警就为YES。
+     * 屏幕共享告警 YES/NO。 * YES：会议中任一与会者存在屏幕共享告警，会议屏幕共享告警就为YES * NO：无屏幕共享告警
      * @return screenAlarm
      */
     public String getScreenAlarm() {
@@ -249,7 +249,7 @@ public class QosConferenceInfo {
     }
 
     /**
-     * CPU告警 YES/NO。 说明： * 会议中任一与会者存在CPU告警，会议CPU告警就为YES。'
+     * CPU告警。 * YES：会议中任一与会者存在CPU告警，会议CPU告警就为YES * NO：无CPU告警
      * @return cpuAlarm
      */
     public String getCpuAlarm() {
@@ -266,7 +266,7 @@ public class QosConferenceInfo {
     }
 
     /**
-     * 时区。详情参考时区表（云会议帮助中心->服务端API参考->附录->时区表），中国默认时区56-东八区。
+     * 时区信息，参考[[时区映射关系](https://support.huaweicloud.com/api-meeting/meeting_21_0110.html#ZH-CN_TOPIC_0212714472__table137407441463)](tag:hws)[[时区映射关系](https://support.huaweicloud.com/intl/zh-cn/api-meeting/meeting_21_0110.html#ZH-CN_TOPIC_0212714472__table137407441463)](tag:hk)。 > 举例：“timeZoneID”:\"26\"，则通过华为云会议发送的会议通知中的时间将会标记为如“2021/11/11 星期四 00:00 - 02:00 (GMT) 格林威治标准时间:都柏林, 爱丁堡, 里斯本, 伦敦”。 
      * @return timeZoneID
      */
     public String getTimeZoneID() {
@@ -300,7 +300,7 @@ public class QosConferenceInfo {
     }
 
     /**
-     * 会议结束时间(UTC时间), Unix时间戳（单位毫秒）。 说明： * 在线会议：会议召开中，endTime = 会议预计结束时间。 * 历史会议：会议已结束，endTime = 会议实际结束时间。
+     * 会议结束时间(UTC时间), Unix时间戳（单位毫秒）。 > * 在线会议：会议召开中，endTime = 会议预计结束时间 > * 历史会议：会议已结束，endTime = 会议实际结束时间
      * @return endTime
      */
     public Long getEndTime() {
@@ -317,7 +317,7 @@ public class QosConferenceInfo {
     }
 
     /**
-     * 会议召开时长（分钟）。 说明： * 在线会议：会议召开中，duration = 0。 * 历史会议：会议已结束，duration = 会议实际召开时间。
+     * 会议召开时长（分钟）。 > * 在线会议：会议召开中，duration = 0 > * 历史会议：会议已结束，duration = 会议实际召开时间
      * minimum: 0
      * @return duration
      */
@@ -335,7 +335,7 @@ public class QosConferenceInfo {
     }
 
     /**
-     * 与会方数。 说明： * 同一用户多次进出会议属于不同的与会，与会方数计算多次。
+     * 与会方数。 > 同一用户多次进出会议属于不同的与会方，与会方数计算多次。
      * minimum: 0
      * @return participants
      */

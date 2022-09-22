@@ -25,7 +25,7 @@ public class UploadFileRequestBody implements SdkFormDataBody {
     }
 
     /**
-     * 需要上传的文件
+     * 需要上传的图片文件。
      * @return file
      */
     public FormDataFilePart getFile() {
@@ -52,9 +52,10 @@ public class UploadFileRequestBody implements SdkFormDataBody {
     }
 
     @Override
-    public Map<String, FormDataPart> buildFormData() {
-        return new LinkedHashMap<String, FormDataPart>() {
+    public Map<String, FormDataPart<?>> buildFormData() {
+        return new LinkedHashMap<String, FormDataPart<?>>() {
 
+            private static final long serialVersionUID = 1L;
             {
                 put("file", file);
             }

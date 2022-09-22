@@ -27,7 +27,7 @@ public class UpdateCommandResultRequest {
     }
 
     /**
-     * 上报命令执行结果的命令所对应的服务端id
+     * 上报命令执行结果的命令所对应的服务端ID
      * @return serverId
      */
     public String getServerId() {

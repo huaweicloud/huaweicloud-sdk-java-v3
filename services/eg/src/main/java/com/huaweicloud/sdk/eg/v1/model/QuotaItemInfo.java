@@ -60,6 +60,21 @@ public class QuotaItemInfo {
          */
         public static final TypeEnum SCHEMA_VERSION = new TypeEnum("SCHEMA_VERSION");
 
+        /**
+         * Enum CONNECTION for value: "CONNECTION"
+         */
+        public static final TypeEnum CONNECTION = new TypeEnum("CONNECTION");
+
+        /**
+         * Enum PRIVATE_ENDPOINT for value: "PRIVATE_ENDPOINT"
+         */
+        public static final TypeEnum PRIVATE_ENDPOINT = new TypeEnum("PRIVATE_ENDPOINT");
+
+        /**
+         * Enum SOURCE_RABBITMQ for value: "SOURCE_RABBITMQ"
+         */
+        public static final TypeEnum SOURCE_RABBITMQ = new TypeEnum("SOURCE_RABBITMQ");
+
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TypeEnum> createStaticFields() {
@@ -71,6 +86,9 @@ public class QuotaItemInfo {
             map.put("SUBSCRIPTION_TARGET", SUBSCRIPTION_TARGET);
             map.put("SCHEMA", SCHEMA);
             map.put("SCHEMA_VERSION", SCHEMA_VERSION);
+            map.put("CONNECTION", CONNECTION);
+            map.put("PRIVATE_ENDPOINT", PRIVATE_ENDPOINT);
+            map.put("SOURCE_RABBITMQ", SOURCE_RABBITMQ);
             return Collections.unmodifiableMap(map);
         }
 
@@ -135,22 +153,22 @@ public class QuotaItemInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max")
 
-    private String max;
+    private Integer max;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "min")
 
-    private String min;
+    private Integer min;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quota")
 
-    private String quota;
+    private Integer quota;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "used")
 
-    private String used;
+    private Integer used;
 
     public QuotaItemInfo withName(String name) {
         this.name = name;
@@ -186,7 +204,7 @@ public class QuotaItemInfo {
         this.type = type;
     }
 
-    public QuotaItemInfo withMax(String max) {
+    public QuotaItemInfo withMax(Integer max) {
         this.max = max;
         return this;
     }
@@ -195,15 +213,15 @@ public class QuotaItemInfo {
      * 配额最大值
      * @return max
      */
-    public String getMax() {
+    public Integer getMax() {
         return max;
     }
 
-    public void setMax(String max) {
+    public void setMax(Integer max) {
         this.max = max;
     }
 
-    public QuotaItemInfo withMin(String min) {
+    public QuotaItemInfo withMin(Integer min) {
         this.min = min;
         return this;
     }
@@ -212,15 +230,15 @@ public class QuotaItemInfo {
      * 配额最小值
      * @return min
      */
-    public String getMin() {
+    public Integer getMin() {
         return min;
     }
 
-    public void setMin(String min) {
+    public void setMin(Integer min) {
         this.min = min;
     }
 
-    public QuotaItemInfo withQuota(String quota) {
+    public QuotaItemInfo withQuota(Integer quota) {
         this.quota = quota;
         return this;
     }
@@ -229,15 +247,15 @@ public class QuotaItemInfo {
      * 当前租户的配额
      * @return quota
      */
-    public String getQuota() {
+    public Integer getQuota() {
         return quota;
     }
 
-    public void setQuota(String quota) {
+    public void setQuota(Integer quota) {
         this.quota = quota;
     }
 
-    public QuotaItemInfo withUsed(String used) {
+    public QuotaItemInfo withUsed(Integer used) {
         this.used = used;
         return this;
     }
@@ -246,11 +264,11 @@ public class QuotaItemInfo {
      * 当前租户已使用的配额
      * @return used
      */
-    public String getUsed() {
+    public Integer getUsed() {
         return used;
     }
 
-    public void setUsed(String used) {
+    public void setUsed(Integer used) {
         this.used = used;
     }
 

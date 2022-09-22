@@ -112,6 +112,11 @@ public class CreatePublicipOption {
 
     private String alias;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "port_id")
+
+    private String portId;
+
     public CreatePublicipOption withIpAddress(String ipAddress) {
         this.ipAddress = ipAddress;
         return this;
@@ -180,6 +185,23 @@ public class CreatePublicipOption {
         this.alias = alias;
     }
 
+    public CreatePublicipOption withPortId(String portId) {
+        this.portId = portId;
+        return this;
+    }
+
+    /**
+     * 功能说明：端口id  约束：必须是存在的端口id，如果该端口不存在或端口已绑定EIP则会提示出错。
+     * @return portId
+     */
+    public String getPortId() {
+        return portId;
+    }
+
+    public void setPortId(String portId) {
+        this.portId = portId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -192,12 +214,13 @@ public class CreatePublicipOption {
         return Objects.equals(this.ipAddress, createPublicipOption.ipAddress)
             && Objects.equals(this.type, createPublicipOption.type)
             && Objects.equals(this.ipVersion, createPublicipOption.ipVersion)
-            && Objects.equals(this.alias, createPublicipOption.alias);
+            && Objects.equals(this.alias, createPublicipOption.alias)
+            && Objects.equals(this.portId, createPublicipOption.portId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(ipAddress, type, ipVersion, alias);
+        return Objects.hash(ipAddress, type, ipVersion, alias, portId);
     }
 
     @Override
@@ -208,6 +231,7 @@ public class CreatePublicipOption {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    ipVersion: ").append(toIndentedString(ipVersion)).append("\n");
         sb.append("    alias: ").append(toIndentedString(alias)).append("\n");
+        sb.append("    portId: ").append(toIndentedString(portId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

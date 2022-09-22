@@ -27,7 +27,7 @@ public class UpdateTaskRequest {
     }
 
     /**
-     * 迁移任务id
+     * 迁移任务ID
      * @return taskId
      */
     public String getTaskId() {

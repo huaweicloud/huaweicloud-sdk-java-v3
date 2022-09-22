@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 新增/更新节目信息请求
+ * 节目基础信息。
  */
 public class ProgramRequestBase {
 
@@ -21,7 +21,7 @@ public class ProgramRequestBase {
     }
 
     /**
-     * 节目名称
+     * 节目名称。
      * @return programName
      */
     public String getProgramName() {

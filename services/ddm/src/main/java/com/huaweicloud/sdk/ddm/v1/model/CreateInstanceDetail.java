@@ -68,6 +68,16 @@ public class CreateInstanceDetail {
 
     private String timeZone;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "admin_user_name")
+
+    private String adminUserName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "admin_user_password")
+
+    private String adminUserPassword;
+
     public CreateInstanceDetail withName(String name) {
         this.name = name;
         return this;
@@ -271,6 +281,40 @@ public class CreateInstanceDetail {
         this.timeZone = timeZone;
     }
 
+    public CreateInstanceDetail withAdminUserName(String adminUserName) {
+        this.adminUserName = adminUserName;
+        return this;
+    }
+
+    /**
+     * 管理员账号用户名。 - 长度为1-32个字符。 - 必须以字母开头。 - 可以包含字母，数字、下划线，不能包含其它特殊字符。
+     * @return adminUserName
+     */
+    public String getAdminUserName() {
+        return adminUserName;
+    }
+
+    public void setAdminUserName(String adminUserName) {
+        this.adminUserName = adminUserName;
+    }
+
+    public CreateInstanceDetail withAdminUserPassword(String adminUserPassword) {
+        this.adminUserPassword = adminUserPassword;
+        return this;
+    }
+
+    /**
+     * 管理员账号密码。 - 长度为8~32位。 - 必须是大写字母（A~Z）、小写字母（a~z）、数字（0~9）、特殊字符~!@#%^*-_=+?的组合。 建议您输入高强度密码，以提高安全性，防止出现密码被暴力破解等安全风险。
+     * @return adminUserPassword
+     */
+    public String getAdminUserPassword() {
+        return adminUserPassword;
+    }
+
+    public void setAdminUserPassword(String adminUserPassword) {
+        this.adminUserPassword = adminUserPassword;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -290,7 +334,9 @@ public class CreateInstanceDetail {
             && Objects.equals(this.securityGroupId, createInstanceDetail.securityGroupId)
             && Objects.equals(this.subnetId, createInstanceDetail.subnetId)
             && Objects.equals(this.paramGroupId, createInstanceDetail.paramGroupId)
-            && Objects.equals(this.timeZone, createInstanceDetail.timeZone);
+            && Objects.equals(this.timeZone, createInstanceDetail.timeZone)
+            && Objects.equals(this.adminUserName, createInstanceDetail.adminUserName)
+            && Objects.equals(this.adminUserPassword, createInstanceDetail.adminUserPassword);
     }
 
     @Override
@@ -305,7 +351,9 @@ public class CreateInstanceDetail {
             securityGroupId,
             subnetId,
             paramGroupId,
-            timeZone);
+            timeZone,
+            adminUserName,
+            adminUserPassword);
     }
 
     @Override
@@ -323,6 +371,8 @@ public class CreateInstanceDetail {
         sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
         sb.append("    paramGroupId: ").append(toIndentedString(paramGroupId)).append("\n");
         sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
+        sb.append("    adminUserName: ").append(toIndentedString(adminUserName)).append("\n");
+        sb.append("    adminUserPassword: ").append(toIndentedString(adminUserPassword)).append("\n");
         sb.append("}");
         return sb.toString();
     }

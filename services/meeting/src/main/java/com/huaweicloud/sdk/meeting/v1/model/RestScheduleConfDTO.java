@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 创建或修改会议请求体。
+ * 会议信息。
  */
 public class RestScheduleConfDTO {
 
@@ -119,7 +119,7 @@ public class RestScheduleConfDTO {
     }
 
     /**
-     * 会议开始时间（UTC时间）。 预定创建会议时，如果没有指定开始时间，或填空串，则表示会议马上开始。 格式：yyyy-MM-dd HH:mm
+     * 会议开始时间（UTC时间）。格式：yyyy-MM-dd HH:mm。 > * 创建预约会议时，如果没有指定开始时间或填空串，则表示会议马上开始 > * 时间是UTC时间，即0时区的时间
      * @return startTime
      */
     public String getStartTime() {
@@ -136,7 +136,7 @@ public class RestScheduleConfDTO {
     }
 
     /**
-     * 会议持续时长，单位分钟，最大值为1440，最短15。default：30。
+     * 会议持续时长，单位分钟。默认30分钟。最大1440分钟（24小时），最小15分钟。
      * minimum: 15
      * maximum: 1440
      * @return length
@@ -155,7 +155,7 @@ public class RestScheduleConfDTO {
     }
 
     /**
-     * 会议主题。长度限制为128个字符。
+     * 会议主题。最多128个字符。
      * @return subject
      */
     public String getSubject() {
@@ -172,7 +172,7 @@ public class RestScheduleConfDTO {
     }
 
     /**
-     * 会议的媒体类型。 由1个或多个枚举String组成，多个枚举时，每个枚举值之间通过”,”逗号分隔，枚举值如下： - Voice: 语音。 - Video: 标清视频。 - HDVideo: 高清视频（与Video互斥，如果同时选择Video、HDVideo，则系统默认选择Video） - Telepresence: 智真(与HDVideo、Video互斥，如果同时选择，系统使用Telepresence)。（预留字段） - Data: 多媒体（系统配置决定是否自动添加Data）。
+     * 会议的媒体类型。 - Voice: 语音会议 - HDVideo: 视频会议
      * @return mediaTypes
      */
     public String getMediaTypes() {
@@ -222,7 +222,7 @@ public class RestScheduleConfDTO {
     }
 
     /**
-     * 与会者列表。该列表可以用于发送会议通知、会议提醒、会议开始时候进行自动邀请。
+     * 与会者列表。
      * @return attendees
      */
     public List<RestAttendeeDTO> getAttendees() {
@@ -277,7 +277,7 @@ public class RestScheduleConfDTO {
     }
 
     /**
-     * 会议的默认语言，默认值由会议云服务定义。 对于系统支持的语言，按照RFC3066规范传递。 - zh-CN: 简体中文。 - en-US: 美国英文。
+     * 会议通知短信或邮件的语言。默认中文。 - zh-CN: 简体中文 - en-US: 美国英文
      * @return language
      */
     public String getLanguage() {
@@ -294,7 +294,7 @@ public class RestScheduleConfDTO {
     }
 
     /**
-     * 开始时间的时区信息。时区信息，参考时区映射关系。
+     * 会议通知中会议时间的时区信息。时区信息，参考[[时区映射关系](https://support.huaweicloud.com/api-meeting/meeting_21_0110.html#ZH-CN_TOPIC_0212714472__table137407441463)](tag:hws)[[时区映射关系](https://support.huaweicloud.com/intl/zh-cn/api-meeting/meeting_21_0110.html#ZH-CN_TOPIC_0212714472__table137407441463)](tag:hk)。 > * 举例：“timeZoneID”:\"26\"，则通过华为云会议发送的会议通知中的时间将会标记为如“2021/11/11 星期四 00:00 - 02:00 (GMT) 格林威治标准时间:都柏林, 爱丁堡, 里斯本, 伦敦”。 > * 非周期会议，如果会议通知是通过第三方系统发送，则这个字段不用填写。
      * @return timeZoneID
      */
     public String getTimeZoneID() {
@@ -330,7 +330,7 @@ public class RestScheduleConfDTO {
     }
 
     /**
-     * 主流直播地址，最大不超过255个字符。在录播类型为 :直播、直播+录播时有效。
+     * 主流直播推流地址，在录播类型为 :直播、直播+录播时有效。最大不超过255个字符。
      * @return liveAddress
      */
     public String getLiveAddress() {
@@ -347,7 +347,7 @@ public class RestScheduleConfDTO {
     }
 
     /**
-     * 辅流直播地址，最大不超过255个字符。在录播类型为: 直播、直播+录播时有效。
+     * 辅流直播推流地址，在录播类型为 :直播、直播+录播时有效。最大不超过255个字符。
      * @return auxAddress
      */
     public String getAuxAddress() {
@@ -364,7 +364,7 @@ public class RestScheduleConfDTO {
     }
 
     /**
-     * 是否录制辅流，在录播类型为：录播、录播+直播时有效。  - 0: 不录制。  - 1: 录制。
+     * 是否录制辅流，在录播类型为：录播、录播+直播时有效。默认只录制视频主流，不录制辅流。  - 0: 不录制  - 1: 录制
      * minimum: 0
      * maximum: 1
      * @return recordAuxStream
@@ -409,7 +409,7 @@ public class RestScheduleConfDTO {
     }
 
     /**
-     * 录播鉴权方式，在录播类型为:录播、直播+录播时有效。 - 0: 可通过链接观看/下载。 - 1: 企业用户可观看/下载。 - 2: 与会者可观看/下载。
+     * 录播观看鉴权方式，在录播类型为:录播、直播+录播时有效。 - 0: 可通过链接观看/下载 - 1: 企业用户可观看/下载 - 2: 与会者可观看/下载
      * minimum: 0
      * maximum: 2
      * @return recordAuthType
@@ -428,7 +428,7 @@ public class RestScheduleConfDTO {
     }
 
     /**
-     * 是否使用云会议室召开预约会议。默认不使用云会议室。 - 0: 不使用云会议室。 - 1: 使用云会议室。
+     * 是否使用云会议室或者个人会议ID召开预约会议。默认0。 - 0: 不使用云会议室或者个人会议ID - 1: 使用云会议室或者个人会议ID
      * minimum: 0
      * maximum: 1
      * @return vmrFlag
@@ -473,7 +473,7 @@ public class RestScheduleConfDTO {
     }
 
     /**
-     * 用于识别用户开会时绑定的云会议室。最大长度不超过512个字符。 ID可以从云会议室管理->分页查询用户云会议室中获取id字段。 - 不为空，则用ID查询云会议室信息。 - 为空，则查用户所有云会议室，如果有个人云会议室，用个人云会议室ID；没有个人云会议室，取最小云会议室ID。
+     * 绑定给当前创会帐号的VMR ID。通过[[查询云会议室及个人会议ID](https://support.huaweicloud.com/api-meeting/meeting_21_1106.html)](tag:hws)[[查询云会议室及个人会议ID](https://support.huaweicloud.com/intl/zh-cn/api-meeting/meeting_21_1106.html)](tag:hk)接口获取。 > * vmrID取上述查询接口中返回的id，不是vmrId > * 创建个人会议ID的会议时，使用vmrMode=0的VMR；创建云会议室的会议时，使用vmrMode=1的VMR
      * @return vmrID
      */
     public String getVmrID() {
@@ -490,7 +490,7 @@ public class RestScheduleConfDTO {
     }
 
     /**
-     * 会议方数，会议最大与会人数限制
+     * 会议最大与会人数。默认值0。 * 0：无限制 * 大于0：会议最大与会人数 
      * @return concurrentParticipants
      */
     public Integer getConcurrentParticipants() {

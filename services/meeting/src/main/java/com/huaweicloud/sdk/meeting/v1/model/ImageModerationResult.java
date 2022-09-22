@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 图片审核结果
+ * 图片审核结果。
  */
 public class ImageModerationResult {
 
@@ -27,7 +27,7 @@ public class ImageModerationResult {
     }
 
     /**
-     * 审核情况
+     * 审核情况。
      * @return suggestion
      */
     public String getSuggestion() {

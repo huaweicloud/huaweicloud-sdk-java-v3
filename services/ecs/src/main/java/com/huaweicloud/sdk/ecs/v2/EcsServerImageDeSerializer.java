@@ -12,6 +12,8 @@ import java.util.Objects;
 
 public class EcsServerImageDeSerializer extends StdDeserializer<ServerImage> {
 
+    private static final long serialVersionUID = 4517716088233807927L;
+
     protected EcsServerImageDeSerializer(Class<?> vc) {
         super(vc);
     }

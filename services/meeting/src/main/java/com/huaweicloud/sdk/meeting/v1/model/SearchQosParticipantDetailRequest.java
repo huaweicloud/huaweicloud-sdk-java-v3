@@ -21,7 +21,7 @@ public class SearchQosParticipantDetailRequest {
     private String confUUID;
 
     /**
-     * 会议类别。 * online：在线会议，在召开的会议。 * history：历史会议，已召开的会议。
+     * 会议类别。 * online：在线会议，在召开的会议 * history：历史会议，已召开的会议
      */
     public static final class ConfTypeEnum {
 
@@ -108,7 +108,7 @@ public class SearchQosParticipantDetailRequest {
     private String participantID;
 
     /**
-     * Qos类型。 - audio：音频。 - video：视频。 - screen：屏幕共享。 - cpu：cpu。
+     * Qos类型。 - audio：音频 - video：视频 - screen：屏幕共享 - cpu：cpu
      */
     public static final class QosTypeEnum {
 
@@ -207,7 +207,7 @@ public class SearchQosParticipantDetailRequest {
     }
 
     /**
-     * 会议UUID。最大不超过64个字节。
+     * 会议UUID。
      * @return confUUID
      */
     public String getConfUUID() {
@@ -224,7 +224,7 @@ public class SearchQosParticipantDetailRequest {
     }
 
     /**
-     * 会议类别。 * online：在线会议，在召开的会议。 * history：历史会议，已召开的会议。
+     * 会议类别。 * online：在线会议，在召开的会议 * history：历史会议，已召开的会议
      * @return confType
      */
     public ConfTypeEnum getConfType() {
@@ -241,7 +241,7 @@ public class SearchQosParticipantDetailRequest {
     }
 
     /**
-     * 与会者ID。最大不超过64个字节。
+     * 与会者标识。
      * @return participantID
      */
     public String getParticipantID() {
@@ -258,7 +258,7 @@ public class SearchQosParticipantDetailRequest {
     }
 
     /**
-     * Qos类型。 - audio：音频。 - video：视频。 - screen：屏幕共享。 - cpu：cpu。
+     * Qos类型。 - audio：音频 - video：视频 - screen：屏幕共享 - cpu：cpu
      * @return qosType
      */
     public QosTypeEnum getQosType() {

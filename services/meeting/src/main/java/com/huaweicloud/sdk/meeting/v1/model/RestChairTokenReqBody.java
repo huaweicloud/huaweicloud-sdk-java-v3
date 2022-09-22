@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 申请释放主持人消息。
+ * 申请主持人请求。
  */
 public class RestChairTokenReqBody {
 
@@ -26,7 +26,7 @@ public class RestChairTokenReqBody {
     }
 
     /**
-     * - 0: 释放主持人。 - 1: 申请主持人。
+     * - 0: 释放主持人 - 1: 申请主持人
      * @return applyChair
      */
     public Integer getApplyChair() {

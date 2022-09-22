@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 各项内容审核结果
+ * 各项内容审核结果。
  */
 public class CategorySuggestions {
 
@@ -31,7 +31,7 @@ public class CategorySuggestions {
     }
 
     /**
-     * 政治人物审核
+     * 政治人物审核。
      * @return politics
      */
     public String getPolitics() {
@@ -48,7 +48,7 @@ public class CategorySuggestions {
     }
 
     /**
-     * 暴恐内容审核
+     * 暴恐内容审核。
      * @return terrorism
      */
     public String getTerrorism() {
@@ -65,7 +65,7 @@ public class CategorySuggestions {
     }
 
     /**
-     * 情色内容审核
+     * 情色内容审核。
      * @return porn
      */
     public String getPorn() {

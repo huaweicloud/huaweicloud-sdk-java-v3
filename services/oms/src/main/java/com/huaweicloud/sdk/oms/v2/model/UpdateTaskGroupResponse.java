@@ -1,0 +1,36 @@
+package com.huaweicloud.sdk.oms.v2.model;
+
+import com.huaweicloud.sdk.core.SdkResponse;
+
+import java.util.Objects;
+
+/**
+ * Response Object
+ */
+public class UpdateTaskGroupResponse extends SdkResponse {
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash();
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class UpdateTaskGroupResponse {\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+}

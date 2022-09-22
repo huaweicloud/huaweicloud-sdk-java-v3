@@ -25,6 +25,8 @@ package com.huaweicloud.sdk.core.exception;
  * @author HuaweiCloud_SDK
  */
 public class RetryOutageException extends RequestTimeoutException {
+    private static final long serialVersionUID = -2869332340967280983L;
+
     public RetryOutageException(String message) {
         super(message);
     }

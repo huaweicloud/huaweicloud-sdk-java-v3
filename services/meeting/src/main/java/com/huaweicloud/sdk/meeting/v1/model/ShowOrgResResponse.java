@@ -52,7 +52,7 @@ public class ShowOrgResResponse extends SdkResponse {
     }
 
     /**
-     * 已用录制存储空间(单位G)
+     * 企业管理员查询所属企业的资源使用信息。
      * @return usedRecStorage
      */
     public Double getUsedRecStorage() {
@@ -69,7 +69,7 @@ public class ShowOrgResResponse extends SdkResponse {
     }
 
     /**
-     * 已用的企业并发数
+     * 当前已用的会议并发数量。
      * @return usedAccountsCount
      */
     public Integer getUsedAccountsCount() {
@@ -86,7 +86,7 @@ public class ShowOrgResResponse extends SdkResponse {
     }
 
     /**
-     * 已用的直播推流资源
+     * 当前已用的直播推流资源。
      * @return usedLiveCount
      */
     public Integer getUsedLiveCount() {
@@ -103,7 +103,7 @@ public class ShowOrgResResponse extends SdkResponse {
     }
 
     /**
-     * 会议总次数
+     * 当前已用的直播推流资源。
      * @return confCount
      */
     public Integer getConfCount() {
@@ -120,7 +120,7 @@ public class ShowOrgResResponse extends SdkResponse {
     }
 
     /**
-     * 会议总时长
+     * 当日会议总时长。
      * @return confLength
      */
     public Long getConfLength() {
@@ -137,7 +137,7 @@ public class ShowOrgResResponse extends SdkResponse {
     }
 
     /**
-     * 活跃用户数
+     * 当日活跃用户数。
      * @return activeAttendeeCount
      */
     public Integer getActiveAttendeeCount() {
@@ -154,7 +154,7 @@ public class ShowOrgResResponse extends SdkResponse {
     }
 
     /**
-     * 总与会人数
+     * 当日总与会人数。
      * @return totalAttendeeCount
      */
     public Integer getTotalAttendeeCount() {

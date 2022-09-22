@@ -25,9 +25,9 @@ public class ListTagsV2Response extends SdkResponse {
     private Long total;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "responses")
+    @JsonProperty(value = "tags")
 
-    private List<String> responses = null;
+    private List<String> tags = null;
 
     public ListTagsV2Response withSize(Integer size) {
         this.size = size;
@@ -63,37 +63,37 @@ public class ListTagsV2Response extends SdkResponse {
         this.total = total;
     }
 
-    public ListTagsV2Response withResponses(List<String> responses) {
-        this.responses = responses;
+    public ListTagsV2Response withTags(List<String> tags) {
+        this.tags = tags;
         return this;
     }
 
-    public ListTagsV2Response addResponsesItem(String responsesItem) {
-        if (this.responses == null) {
-            this.responses = new ArrayList<>();
+    public ListTagsV2Response addTagsItem(String tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
         }
-        this.responses.add(responsesItem);
+        this.tags.add(tagsItem);
         return this;
     }
 
-    public ListTagsV2Response withResponses(Consumer<List<String>> responsesSetter) {
-        if (this.responses == null) {
-            this.responses = new ArrayList<>();
+    public ListTagsV2Response withTags(Consumer<List<String>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
         }
-        responsesSetter.accept(this.responses);
+        tagsSetter.accept(this.tags);
         return this;
     }
 
     /**
      * 标签列表
-     * @return responses
+     * @return tags
      */
-    public List<String> getResponses() {
-        return responses;
+    public List<String> getTags() {
+        return tags;
     }
 
-    public void setResponses(List<String> responses) {
-        this.responses = responses;
+    public void setTags(List<String> tags) {
+        this.tags = tags;
     }
 
     @Override
@@ -107,12 +107,12 @@ public class ListTagsV2Response extends SdkResponse {
         ListTagsV2Response listTagsV2Response = (ListTagsV2Response) o;
         return Objects.equals(this.size, listTagsV2Response.size)
             && Objects.equals(this.total, listTagsV2Response.total)
-            && Objects.equals(this.responses, listTagsV2Response.responses);
+            && Objects.equals(this.tags, listTagsV2Response.tags);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(size, total, responses);
+        return Objects.hash(size, total, tags);
     }
 
     @Override
@@ -121,7 +121,7 @@ public class ListTagsV2Response extends SdkResponse {
         sb.append("class ListTagsV2Response {\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    total: ").append(toIndentedString(total)).append("\n");
-        sb.append("    responses: ").append(toIndentedString(responses)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

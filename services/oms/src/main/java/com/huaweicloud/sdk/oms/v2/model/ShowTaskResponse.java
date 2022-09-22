@@ -50,6 +50,11 @@ public class ShowTaskResponse extends SdkResponse {
     private Boolean enableKms;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_metadata_migration")
+
+    private Boolean enableMetadataMigration;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_restore")
 
     private Boolean enableRestore;
@@ -356,6 +361,195 @@ public class ShowTaskResponse extends SdkResponse {
 
     private String skipRecordErrorReason;
 
+    /**
+     * 迁移前同名对象覆盖方式，用于迁移前判断源端与目的端有同名对象时，覆盖目的端或跳过迁移。默认SIZE_LAST_MODIFIED_COMPARISON_OVERWRITE。 NO_OVERWRITE：不覆盖。迁移前源端对象与目的端对象同名时，不做对比直接跳过迁移。 SIZE_LAST_MODIFIED_COMPARISON_OVERWRITE：大小/最后修改时间对比覆盖。默认配置。迁移前源端对象与目的端对象同名时，通过对比源端和目的端对象大小和最后修改时间，判断是否覆盖目的端，需满足源端/目的端对象的加密状态一致。源端与目的端同名对象大小不相同，或目的端对象的最后修改时间晚于源端对象的最后修改时间(源端较新)，覆盖目的端。 CRC64_COMPARISON_OVERWRITE：CRC64对比覆盖。目前仅支持华为/阿里/腾讯。迁移前源端对象与目的端对象同名时，通过对比源端和目的端对象元数据中CRC64值是否相同，判断是否覆盖目的端，需满足源端/目的端对象的加密状态一致。如果源端与目的端对象元数据中不存在CRC64值，则系统会默认使用SIZE_LAST_MODIFIED_COMPARISON_OVERWRITE(大小/最后修改时间对比覆盖)来对比进行覆盖判断。 FULL_OVERWRITE：全覆盖。迁移前源端对象与目的端对象同名时，不做对比覆盖目的端。
+     */
+    public static final class ObjectOverwriteModeEnum {
+
+        /**
+         * Enum NO_OVERWRITE for value: "NO_OVERWRITE"
+         */
+        public static final ObjectOverwriteModeEnum NO_OVERWRITE = new ObjectOverwriteModeEnum("NO_OVERWRITE");
+
+        /**
+         * Enum SIZE_LAST_MODIFIED_COMPARISON_OVERWRITE for value: "SIZE_LAST_MODIFIED_COMPARISON_OVERWRITE"
+         */
+        public static final ObjectOverwriteModeEnum SIZE_LAST_MODIFIED_COMPARISON_OVERWRITE =
+            new ObjectOverwriteModeEnum("SIZE_LAST_MODIFIED_COMPARISON_OVERWRITE");
+
+        /**
+         * Enum CRC64_COMPARISON_OVERWRITE for value: "CRC64_COMPARISON_OVERWRITE"
+         */
+        public static final ObjectOverwriteModeEnum CRC64_COMPARISON_OVERWRITE =
+            new ObjectOverwriteModeEnum("CRC64_COMPARISON_OVERWRITE");
+
+        /**
+         * Enum FULL_OVERWRITE for value: "FULL_OVERWRITE"
+         */
+        public static final ObjectOverwriteModeEnum FULL_OVERWRITE = new ObjectOverwriteModeEnum("FULL_OVERWRITE");
+
+        private static final Map<String, ObjectOverwriteModeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ObjectOverwriteModeEnum> createStaticFields() {
+            Map<String, ObjectOverwriteModeEnum> map = new HashMap<>();
+            map.put("NO_OVERWRITE", NO_OVERWRITE);
+            map.put("SIZE_LAST_MODIFIED_COMPARISON_OVERWRITE", SIZE_LAST_MODIFIED_COMPARISON_OVERWRITE);
+            map.put("CRC64_COMPARISON_OVERWRITE", CRC64_COMPARISON_OVERWRITE);
+            map.put("FULL_OVERWRITE", FULL_OVERWRITE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ObjectOverwriteModeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ObjectOverwriteModeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            ObjectOverwriteModeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new ObjectOverwriteModeEnum(value);
+            }
+            return result;
+        }
+
+        public static ObjectOverwriteModeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            ObjectOverwriteModeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ObjectOverwriteModeEnum) {
+                return this.value.equals(((ObjectOverwriteModeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "object_overwrite_mode")
+
+    private ObjectOverwriteModeEnum objectOverwriteMode;
+
+    /**
+     * 一致性校验方式，用于迁移前/后校验对象是否一致，所有校验方式需满足源端/目的端对象的加密状态一致，具体校验方式和校验结果可通过对象列表查看。默认size_last_modified。 size_last_modified：默认配置。迁移前后，通过对比源端和目的端对象大小+最后修改时间，判断对象是否已存在或迁移后数据是否完整。源端与目的端同名对象大小相同，且目的端对象的最后修改时间不早于源端对象的最后修改时间，则代表该对象已存在/迁移成功。 crc64：目前仅支持华为/阿里/腾讯。迁移前后，通过对比源端和目的端对象元数据中CRC64值是否相同，判断对象是否已存在/迁移完成。如果源端与目的端对象元数据中不存在CRC64值，则系统会默认使用大小/最后修改时间校验方式来校验。 no_check：目前仅支持HTTP/HTTPS数据源。当源端对象无法通过标准http协议中content-length字段获取数据大小时，默认数据下载成功即迁移成功，不对数据做额外校验，且迁移时源端对象默认覆盖目的端同名对象。当源端对象能正常通过标准http协议中content-length字段获取数据大小时，则采用大小/最后修改时间校验方式来校验。
+     */
+    public static final class ConsistencyCheckEnum {
+
+        /**
+         * Enum SIZE_LAST_MODIFIED for value: "size_last_modified"
+         */
+        public static final ConsistencyCheckEnum SIZE_LAST_MODIFIED = new ConsistencyCheckEnum("size_last_modified");
+
+        /**
+         * Enum CRC64 for value: "crc64"
+         */
+        public static final ConsistencyCheckEnum CRC64 = new ConsistencyCheckEnum("crc64");
+
+        /**
+         * Enum NO_CHECK for value: "no_check"
+         */
+        public static final ConsistencyCheckEnum NO_CHECK = new ConsistencyCheckEnum("no_check");
+
+        private static final Map<String, ConsistencyCheckEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ConsistencyCheckEnum> createStaticFields() {
+            Map<String, ConsistencyCheckEnum> map = new HashMap<>();
+            map.put("size_last_modified", SIZE_LAST_MODIFIED);
+            map.put("crc64", CRC64);
+            map.put("no_check", NO_CHECK);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ConsistencyCheckEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ConsistencyCheckEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            ConsistencyCheckEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new ConsistencyCheckEnum(value);
+            }
+            return result;
+        }
+
+        public static ConsistencyCheckEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            ConsistencyCheckEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ConsistencyCheckEnum) {
+                return this.value.equals(((ConsistencyCheckEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "consistency_check")
+
+    private ConsistencyCheckEnum consistencyCheck;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_requester_pays")
+
+    private Boolean enableRequesterPays;
+
     public ShowTaskResponse withBandwidthPolicy(List<BandwidthPolicyDto> bandwidthPolicy) {
         this.bandwidthPolicy = bandwidthPolicy;
         return this;
@@ -483,6 +677,23 @@ public class ShowTaskResponse extends SdkResponse {
 
     public void setEnableKms(Boolean enableKms) {
         this.enableKms = enableKms;
+    }
+
+    public ShowTaskResponse withEnableMetadataMigration(Boolean enableMetadataMigration) {
+        this.enableMetadataMigration = enableMetadataMigration;
+        return this;
+    }
+
+    /**
+     * 是否启用元数据迁移，默认否。不启用时，为保证迁移任务正常运行，仍将为您迁移ContentType元数据。
+     * @return enableMetadataMigration
+     */
+    public Boolean getEnableMetadataMigration() {
+        return enableMetadataMigration;
+    }
+
+    public void setEnableMetadataMigration(Boolean enableMetadataMigration) {
+        this.enableMetadataMigration = enableMetadataMigration;
     }
 
     public ShowTaskResponse withEnableRestore(Boolean enableRestore) {
@@ -1017,6 +1228,57 @@ public class ShowTaskResponse extends SdkResponse {
         this.skipRecordErrorReason = skipRecordErrorReason;
     }
 
+    public ShowTaskResponse withObjectOverwriteMode(ObjectOverwriteModeEnum objectOverwriteMode) {
+        this.objectOverwriteMode = objectOverwriteMode;
+        return this;
+    }
+
+    /**
+     * 迁移前同名对象覆盖方式，用于迁移前判断源端与目的端有同名对象时，覆盖目的端或跳过迁移。默认SIZE_LAST_MODIFIED_COMPARISON_OVERWRITE。 NO_OVERWRITE：不覆盖。迁移前源端对象与目的端对象同名时，不做对比直接跳过迁移。 SIZE_LAST_MODIFIED_COMPARISON_OVERWRITE：大小/最后修改时间对比覆盖。默认配置。迁移前源端对象与目的端对象同名时，通过对比源端和目的端对象大小和最后修改时间，判断是否覆盖目的端，需满足源端/目的端对象的加密状态一致。源端与目的端同名对象大小不相同，或目的端对象的最后修改时间晚于源端对象的最后修改时间(源端较新)，覆盖目的端。 CRC64_COMPARISON_OVERWRITE：CRC64对比覆盖。目前仅支持华为/阿里/腾讯。迁移前源端对象与目的端对象同名时，通过对比源端和目的端对象元数据中CRC64值是否相同，判断是否覆盖目的端，需满足源端/目的端对象的加密状态一致。如果源端与目的端对象元数据中不存在CRC64值，则系统会默认使用SIZE_LAST_MODIFIED_COMPARISON_OVERWRITE(大小/最后修改时间对比覆盖)来对比进行覆盖判断。 FULL_OVERWRITE：全覆盖。迁移前源端对象与目的端对象同名时，不做对比覆盖目的端。
+     * @return objectOverwriteMode
+     */
+    public ObjectOverwriteModeEnum getObjectOverwriteMode() {
+        return objectOverwriteMode;
+    }
+
+    public void setObjectOverwriteMode(ObjectOverwriteModeEnum objectOverwriteMode) {
+        this.objectOverwriteMode = objectOverwriteMode;
+    }
+
+    public ShowTaskResponse withConsistencyCheck(ConsistencyCheckEnum consistencyCheck) {
+        this.consistencyCheck = consistencyCheck;
+        return this;
+    }
+
+    /**
+     * 一致性校验方式，用于迁移前/后校验对象是否一致，所有校验方式需满足源端/目的端对象的加密状态一致，具体校验方式和校验结果可通过对象列表查看。默认size_last_modified。 size_last_modified：默认配置。迁移前后，通过对比源端和目的端对象大小+最后修改时间，判断对象是否已存在或迁移后数据是否完整。源端与目的端同名对象大小相同，且目的端对象的最后修改时间不早于源端对象的最后修改时间，则代表该对象已存在/迁移成功。 crc64：目前仅支持华为/阿里/腾讯。迁移前后，通过对比源端和目的端对象元数据中CRC64值是否相同，判断对象是否已存在/迁移完成。如果源端与目的端对象元数据中不存在CRC64值，则系统会默认使用大小/最后修改时间校验方式来校验。 no_check：目前仅支持HTTP/HTTPS数据源。当源端对象无法通过标准http协议中content-length字段获取数据大小时，默认数据下载成功即迁移成功，不对数据做额外校验，且迁移时源端对象默认覆盖目的端同名对象。当源端对象能正常通过标准http协议中content-length字段获取数据大小时，则采用大小/最后修改时间校验方式来校验。
+     * @return consistencyCheck
+     */
+    public ConsistencyCheckEnum getConsistencyCheck() {
+        return consistencyCheck;
+    }
+
+    public void setConsistencyCheck(ConsistencyCheckEnum consistencyCheck) {
+        this.consistencyCheck = consistencyCheck;
+    }
+
+    public ShowTaskResponse withEnableRequesterPays(Boolean enableRequesterPays) {
+        this.enableRequesterPays = enableRequesterPays;
+        return this;
+    }
+
+    /**
+     * 是否开启请求者付款，在启用后，请求者支付请求和数据传输费用。
+     * @return enableRequesterPays
+     */
+    public Boolean getEnableRequesterPays() {
+        return enableRequesterPays;
+    }
+
+    public void setEnableRequesterPays(Boolean enableRequesterPays) {
+        this.enableRequesterPays = enableRequesterPays;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -1032,6 +1294,7 @@ public class ShowTaskResponse extends SdkResponse {
             && Objects.equals(this.dstNode, showTaskResponse.dstNode)
             && Objects.equals(this.enableFailedObjectRecording, showTaskResponse.enableFailedObjectRecording)
             && Objects.equals(this.enableKms, showTaskResponse.enableKms)
+            && Objects.equals(this.enableMetadataMigration, showTaskResponse.enableMetadataMigration)
             && Objects.equals(this.enableRestore, showTaskResponse.enableRestore)
             && Objects.equals(this.errorReason, showTaskResponse.errorReason)
             && Objects.equals(this.failedNum, showTaskResponse.failedNum)
@@ -1057,7 +1320,10 @@ public class ShowTaskResponse extends SdkResponse {
             && Objects.equals(this.smnInfo, showTaskResponse.smnInfo)
             && Objects.equals(this.sourceCdn, showTaskResponse.sourceCdn)
             && Objects.equals(this.successRecordErrorReason, showTaskResponse.successRecordErrorReason)
-            && Objects.equals(this.skipRecordErrorReason, showTaskResponse.skipRecordErrorReason);
+            && Objects.equals(this.skipRecordErrorReason, showTaskResponse.skipRecordErrorReason)
+            && Objects.equals(this.objectOverwriteMode, showTaskResponse.objectOverwriteMode)
+            && Objects.equals(this.consistencyCheck, showTaskResponse.consistencyCheck)
+            && Objects.equals(this.enableRequesterPays, showTaskResponse.enableRequesterPays);
     }
 
     @Override
@@ -1068,6 +1334,7 @@ public class ShowTaskResponse extends SdkResponse {
             dstNode,
             enableFailedObjectRecording,
             enableKms,
+            enableMetadataMigration,
             enableRestore,
             errorReason,
             failedNum,
@@ -1094,7 +1361,10 @@ public class ShowTaskResponse extends SdkResponse {
             smnInfo,
             sourceCdn,
             successRecordErrorReason,
-            skipRecordErrorReason);
+            skipRecordErrorReason,
+            objectOverwriteMode,
+            consistencyCheck,
+            enableRequesterPays);
     }
 
     @Override
@@ -1109,6 +1379,7 @@ public class ShowTaskResponse extends SdkResponse {
             .append(toIndentedString(enableFailedObjectRecording))
             .append("\n");
         sb.append("    enableKms: ").append(toIndentedString(enableKms)).append("\n");
+        sb.append("    enableMetadataMigration: ").append(toIndentedString(enableMetadataMigration)).append("\n");
         sb.append("    enableRestore: ").append(toIndentedString(enableRestore)).append("\n");
         sb.append("    errorReason: ").append(toIndentedString(errorReason)).append("\n");
         sb.append("    failedNum: ").append(toIndentedString(failedNum)).append("\n");
@@ -1136,6 +1407,9 @@ public class ShowTaskResponse extends SdkResponse {
         sb.append("    sourceCdn: ").append(toIndentedString(sourceCdn)).append("\n");
         sb.append("    successRecordErrorReason: ").append(toIndentedString(successRecordErrorReason)).append("\n");
         sb.append("    skipRecordErrorReason: ").append(toIndentedString(skipRecordErrorReason)).append("\n");
+        sb.append("    objectOverwriteMode: ").append(toIndentedString(objectOverwriteMode)).append("\n");
+        sb.append("    consistencyCheck: ").append(toIndentedString(consistencyCheck)).append("\n");
+        sb.append("    enableRequesterPays: ").append(toIndentedString(enableRequesterPays)).append("\n");
         sb.append("}");
         return sb.toString();
     }

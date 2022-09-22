@@ -13,24 +13,22 @@ public class ShowTaskRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_id")
 
-    private Long taskId;
+    private String taskId;
 
-    public ShowTaskRequest withTaskId(Long taskId) {
+    public ShowTaskRequest withTaskId(String taskId) {
         this.taskId = taskId;
         return this;
     }
 
     /**
      * 任务ID
-     * minimum: 0
-     * maximum: 9223372036854775807
      * @return taskId
      */
-    public Long getTaskId() {
+    public String getTaskId() {
         return taskId;
     }
 
-    public void setTaskId(Long taskId) {
+    public void setTaskId(String taskId) {
         this.taskId = taskId;
     }
 

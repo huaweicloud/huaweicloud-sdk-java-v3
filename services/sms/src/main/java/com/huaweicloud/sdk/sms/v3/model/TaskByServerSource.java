@@ -102,7 +102,7 @@ public class TaskByServerSource {
     }
 
     /**
-     * 任务id
+     * 任务ID
      * @return id
      */
     public String getId() {
@@ -244,7 +244,7 @@ public class TaskByServerSource {
     }
 
     /**
-     * 虚拟机模板id
+     * 虚拟机模板ID
      * @return vmTemplateId
      */
     public String getVmTemplateId() {
@@ -295,7 +295,7 @@ public class TaskByServerSource {
     }
 
     /**
-     * 项目id
+     * 项目ID
      * @return projectId
      */
     public String getProjectId() {
@@ -372,7 +372,7 @@ public class TaskByServerSource {
     }
 
     /**
-     * 是否使用公网ip
+     * 是否使用公网IP
      * @return usePublicIp
      */
     public Boolean getUsePublicIp() {

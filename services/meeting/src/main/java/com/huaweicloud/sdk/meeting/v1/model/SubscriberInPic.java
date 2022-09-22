@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 子画面信息
+ * 子画面信息。
  */
 public class SubscriberInPic {
 
@@ -67,7 +67,7 @@ public class SubscriberInPic {
     }
 
     /**
-     * 每个画面中与会者标识列表。
+     * 每个画面中与会者标识列表，从[[查询会议实时信息](https://support.huaweicloud.com/api-meeting/meeting_21_0029.html)](tag:hws)[[查询会议实时信息](https://support.huaweicloud.com/intl/zh-cn/api-meeting/meeting_21_0029.html)](tag:hk)接口返回的pid中获取。
      * @return subscriber
      */
     public List<String> getSubscriber() {
@@ -84,7 +84,7 @@ public class SubscriberInPic {
     }
 
     /**
-     * 是否为辅流。默认值为0。 - 0: 不是辅流。 - 1: 是辅流。
+     * 是否为辅流。默认值为0。 - 0: 不是辅流 - 1: 是辅流
      * @return isAssistStream
      */
     public Integer getIsAssistStream() {

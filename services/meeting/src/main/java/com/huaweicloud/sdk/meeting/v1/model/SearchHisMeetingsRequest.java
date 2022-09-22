@@ -66,7 +66,7 @@ public class SearchHisMeetingsRequest {
     }
 
     /**
-     * 用户UUID。 管理员有权限查询权限范围内的所有帐号，普通帐号仅能查询自己的。
+     * 用户的UUID。 > 该参数将废弃，请勿使用。
      * @return userUUID
      */
     public String getUserUUID() {
@@ -83,7 +83,7 @@ public class SearchHisMeetingsRequest {
     }
 
     /**
-     * 指定返回的与会者列表的记录索引。该值必须大于等于0； 默认为0。
+     * 查询偏移量。默认为0。
      * @return offset
      */
     public Integer getOffset() {
@@ -100,7 +100,7 @@ public class SearchHisMeetingsRequest {
     }
 
     /**
-     * 指定返回的记录数。默认值为20，最大值为500。 当pageSize大于最大值500时，系统会默认设置为500。
+     * 查询数量。默认是20，最大500条。
      * minimum: 0
      * maximum: 500
      * @return limit
@@ -119,7 +119,7 @@ public class SearchHisMeetingsRequest {
     }
 
     /**
-     * 根据会议主题，预定人和会议id关键词的字符串，查询历史会议。
+     * 查询条件。会议主题、会议预约人和会议ID等可作为搜索内容。
      * @return searchKey
      */
     public String getSearchKey() {
@@ -136,7 +136,7 @@ public class SearchHisMeetingsRequest {
     }
 
     /**
-     * 指定是否查询企业下所有用户的会议记录，如果登录帐号不是企业管理员，则该字段无效。如果该字段为true，则userUUID字段无效。 default: false
+     * 是否查询企业下所有用户的历史会议。 * true：查询所有用户的历史会议 * false：仅查询管理员自己的历史会议 > 仅对企业管理员生效。
      * @return queryAll
      */
     public Boolean getQueryAll() {
@@ -153,7 +153,7 @@ public class SearchHisMeetingsRequest {
     }
 
     /**
-     * 查询的起始日期毫秒数。例如：1583078400000
+     * 查询的起始时间戳（单位毫秒）。
      * @return startDate
      */
     public Long getStartDate() {
@@ -170,7 +170,7 @@ public class SearchHisMeetingsRequest {
     }
 
     /**
-     * 查询的截止日期毫秒数。例如：1585756799000
+     * 查询的截止时间戳（单位毫秒）。
      * @return endDate
      */
     public Long getEndDate() {
@@ -187,7 +187,7 @@ public class SearchHisMeetingsRequest {
     }
 
     /**
-     * - ASC_StartTIME：根据会议开始时间升序排序。 - DSC_StartTIME：根据会议开始时间降序排序。 - ASC_RecordTYPE：根据是否具有录播文件排序，之后默认按照会议开始时间升序排序。 - DSC_RecordTYPE：根据是否含有录播文件排序，之后默认按照会议开始时间降序排序。
+     * 查询结果排序类型。 * ASC_StartTIME：根据会议开始时间升序排序 * DSC_StartTIME：根据会议开始时间降序排序 * ASC_RecordTYPE：根据是否具有录播文件排序，之后默认按照会议开始时间升序排序 * DSC_RecordTYPE：根据是否含有录播文件排序，之后默认按照会议开始时间降序排序
      * @return sortType
      */
     public String getSortType() {
@@ -204,7 +204,7 @@ public class SearchHisMeetingsRequest {
     }
 
     /**
-     * 标识是否为第三方portal过来的请求。
+     * 标识是否为第三方portal过来的请求。 > 该参数将废弃，请勿使用。 
      * @return xAuthorizationType
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -223,7 +223,7 @@ public class SearchHisMeetingsRequest {
     }
 
     /**
-     * 用于区分到哪个HCSO站点鉴权。
+     * 用于区分到哪个HCSO站点鉴权。 > 该参数将废弃，请勿使用。 
      * @return xSiteId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

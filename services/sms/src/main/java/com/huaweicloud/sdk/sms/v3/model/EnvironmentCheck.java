@@ -34,7 +34,7 @@ public class EnvironmentCheck {
     private String name;
 
     /**
-     * 检查结果
+     * 检查结果 OK：检查通过 WARN：警告 ERROR:检查不通过
      */
     public static final class ResultEnum {
 
@@ -127,6 +127,11 @@ public class EnvironmentCheck {
     private String errorCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "error_or_warn")
+
+    private String errorOrWarn;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_params")
 
     private String errorParams;
@@ -206,7 +211,7 @@ public class EnvironmentCheck {
     }
 
     /**
-     * 检查结果
+     * 检查结果 OK：检查通过 WARN：警告 ERROR:检查不通过
      * @return result
      */
     public ResultEnum getResult() {
@@ -232,6 +237,23 @@ public class EnvironmentCheck {
 
     public void setErrorCode(String errorCode) {
         this.errorCode = errorCode;
+    }
+
+    public EnvironmentCheck withErrorOrWarn(String errorOrWarn) {
+        this.errorOrWarn = errorOrWarn;
+        return this;
+    }
+
+    /**
+     * 检查的错误或者警告
+     * @return errorOrWarn
+     */
+    public String getErrorOrWarn() {
+        return errorOrWarn;
+    }
+
+    public void setErrorOrWarn(String errorOrWarn) {
+        this.errorOrWarn = errorOrWarn;
     }
 
     public EnvironmentCheck withErrorParams(String errorParams) {
@@ -263,12 +285,13 @@ public class EnvironmentCheck {
         return Objects.equals(this.id, environmentCheck.id) && Objects.equals(this.params, environmentCheck.params)
             && Objects.equals(this.name, environmentCheck.name) && Objects.equals(this.result, environmentCheck.result)
             && Objects.equals(this.errorCode, environmentCheck.errorCode)
+            && Objects.equals(this.errorOrWarn, environmentCheck.errorOrWarn)
             && Objects.equals(this.errorParams, environmentCheck.errorParams);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, params, name, result, errorCode, errorParams);
+        return Objects.hash(id, params, name, result, errorCode, errorOrWarn, errorParams);
     }
 
     @Override
@@ -280,6 +303,7 @@ public class EnvironmentCheck {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    result: ").append(toIndentedString(result)).append("\n");
         sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
+        sb.append("    errorOrWarn: ").append(toIndentedString(errorOrWarn)).append("\n");
         sb.append("    errorParams: ").append(toIndentedString(errorParams)).append("\n");
         sb.append("}");
         return sb.toString();

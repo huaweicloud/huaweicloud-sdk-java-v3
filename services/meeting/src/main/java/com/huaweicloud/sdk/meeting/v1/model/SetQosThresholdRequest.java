@@ -17,7 +17,7 @@ import java.util.function.Consumer;
 public class SetQosThresholdRequest {
 
     /**
-     * 阈值类型： * AUDIO：音频相关阈值。 * VIDEO：视频相关阈值。 * SCREEN：屏幕共享相关阈值。 * CPU：CPU相关阈值。
+     * 阈值类型： * AUDIO：音频相关阈值 * VIDEO：视频相关阈值 * SCREEN：屏幕共享相关阈值 * CPU：CPU相关阈值
      */
     public static final class ThresholdTypeEnum {
 
@@ -121,7 +121,7 @@ public class SetQosThresholdRequest {
     }
 
     /**
-     * 阈值类型： * AUDIO：音频相关阈值。 * VIDEO：视频相关阈值。 * SCREEN：屏幕共享相关阈值。 * CPU：CPU相关阈值。
+     * 阈值类型： * AUDIO：音频相关阈值 * VIDEO：视频相关阈值 * SCREEN：屏幕共享相关阈值 * CPU：CPU相关阈值
      * @return thresholdType
      */
     public ThresholdTypeEnum getThresholdType() {

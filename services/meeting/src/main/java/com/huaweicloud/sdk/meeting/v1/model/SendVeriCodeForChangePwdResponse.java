@@ -49,7 +49,7 @@ public class SendVeriCodeForChangePwdResponse extends SdkResponse {
     }
 
     /**
-     * 如果通过手机发送验证码，则该字段携带该用户绑定的手机号（手机号经过处理，屏蔽中间几位，如+8618****12345）
+     * 如果通过手机发送验证码，则该字段携带该用户绑定的手机号（手机号经过处理，屏蔽中间几位，如+8618****12345）。
      * @return bindPhone
      */
     public String getBindPhone() {
@@ -66,7 +66,7 @@ public class SendVeriCodeForChangePwdResponse extends SdkResponse {
     }
 
     /**
-     * 如果通过邮箱发送验证码，则该字段携带用户绑定的邮箱账号（邮箱账号经过处理，屏蔽中间几位，如tes****ount@huawei.com）
+     * 如果通过邮箱发送验证码，则该字段携带用户绑定的邮箱帐号（邮箱帐号经过处理，屏蔽中间几位，如tes****ount@huawei.com）。
      * @return bindEmail
      */
     public String getBindEmail() {

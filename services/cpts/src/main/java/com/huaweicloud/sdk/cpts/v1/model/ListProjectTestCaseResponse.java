@@ -85,7 +85,7 @@ public class ListProjectTestCaseResponse extends SdkResponse {
     }
 
     /**
-     * 目录集
+     * 用例集
      * @return directory
      */
     public List<ProjectDirectory> getDirectory() {

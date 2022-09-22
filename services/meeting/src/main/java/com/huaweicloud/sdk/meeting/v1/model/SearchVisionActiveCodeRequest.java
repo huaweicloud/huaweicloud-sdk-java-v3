@@ -46,7 +46,7 @@ public class SearchVisionActiveCodeRequest {
     }
 
     /**
-     * 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用uuId，若不携带，则后台自动生成
+     * 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用UUID，若不携带，则后台自动生成。
      * @return xRequestId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -65,7 +65,7 @@ public class SearchVisionActiveCodeRequest {
     }
 
     /**
-     * 语言参数，默认为中文zh-CN, 英文为en-US
+     * 语言参数，默认为中文zh-CN，英文为en-US。
      * @return acceptLanguage
      */
     public String getAcceptLanguage() {
@@ -82,7 +82,7 @@ public class SearchVisionActiveCodeRequest {
     }
 
     /**
-     * 查询偏移量,若超过最大数量，则返回最后一页的数据 默认值：0 
+     * 查询偏移量,若超过最大数量，则返回最后一页的数据。 默认值：0。 
      * minimum: 0
      * @return offset
      */
@@ -100,7 +100,7 @@ public class SearchVisionActiveCodeRequest {
     }
 
     /**
-     * 查询数量 默认值：0 
+     * 查询数量。 默认值：10。 
      * minimum: 1
      * maximum: 500
      * @return limit
@@ -136,7 +136,7 @@ public class SearchVisionActiveCodeRequest {
     }
 
     /**
-     * 终端类型 - idea-hub:智能协作大屏 - huawei-vision:智慧屏TV - welink-desktop(iwb):电子白板 
+     * 终端类型。 - idea-hub:智能协作大屏 - huawei-vision:智慧屏TV - welink-desktop(iwb):SmartRooms会议版 - smart-rooms：SmartRooms完整版 
      * @return devType
      */
     public String getDevType() {

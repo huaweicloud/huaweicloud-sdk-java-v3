@@ -46,6 +46,11 @@ public class UpdateSubscriptionSourceResponse extends SdkResponse {
 
     private String updatedTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+
+    private String xRequestId;
+
     public UpdateSubscriptionSourceResponse withId(String id) {
         this.id = id;
         return this;
@@ -165,6 +170,25 @@ public class UpdateSubscriptionSourceResponse extends SdkResponse {
         this.updatedTime = updatedTime;
     }
 
+    public UpdateSubscriptionSourceResponse withXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+        return this;
+    }
+
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+    public String getXRequestId() {
+        return xRequestId;
+    }
+
+    public void setXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -180,12 +204,13 @@ public class UpdateSubscriptionSourceResponse extends SdkResponse {
             && Objects.equals(this.detail, updateSubscriptionSourceResponse.detail)
             && Objects.equals(this.filter, updateSubscriptionSourceResponse.filter)
             && Objects.equals(this.createdTime, updateSubscriptionSourceResponse.createdTime)
-            && Objects.equals(this.updatedTime, updateSubscriptionSourceResponse.updatedTime);
+            && Objects.equals(this.updatedTime, updateSubscriptionSourceResponse.updatedTime)
+            && Objects.equals(this.xRequestId, updateSubscriptionSourceResponse.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, providerType, detail, filter, createdTime, updatedTime);
+        return Objects.hash(id, name, providerType, detail, filter, createdTime, updatedTime, xRequestId);
     }
 
     @Override
@@ -199,6 +224,7 @@ public class UpdateSubscriptionSourceResponse extends SdkResponse {
         sb.append("    filter: ").append(toIndentedString(filter)).append("\n");
         sb.append("    createdTime: ").append(toIndentedString(createdTime)).append("\n");
         sb.append("    updatedTime: ").append(toIndentedString(updatedTime)).append("\n");
+        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

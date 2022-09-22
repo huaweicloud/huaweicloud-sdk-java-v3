@@ -39,7 +39,7 @@ public class DeptDTO {
     private String note;
 
     /**
-     * 其他用户对该部门下用户的访问权限： - UNLIMITED：默认，不做限制 - OPEN：公开，其他部门都可访问（无论对方权限如何配置）
+     * 其他用户对该部门下用户的访问权限。 * UNLIMITED：默认，不做限制 * OPEN：公开，其他部门都可访问（无论对方权限如何配置）
      */
     public static final class InPermissionEnum {
 
@@ -133,7 +133,7 @@ public class DeptDTO {
     private InPermissionEnum inPermission;
 
     /**
-     * 该部门下用户访问权限控制 - UNLIMITED：不限制 - ONLY_SELF：仅能查询自己 - SELF_AND_CHILD_DEPARTMENT：该部门下用户能查询本部门及子部门通讯 - DESIGNATED_DEPARTMENT：该部门下用户能查询指定部门通讯录
+     * 该部门下用户访问权限控制。 - UNLIMITED：不限制 - ONLY_SELF：仅能查询自己 - SELF_AND_CHILD_DEPARTMENT：该部门下用户能查询本部门及子部门通讯 - DESIGNATED_DEPARTMENT：该部门下用户能查询指定部门通讯录
      */
     public static final class OutPermissionEnum {
 
@@ -243,7 +243,7 @@ public class DeptDTO {
     }
 
     /**
-     * 部门编码，企业内唯一，若携带则以携带为准，不支持修改。 maxLength：32 
+     * 部门编码，企业内唯一，若携带则以携带为准，不支持修改。 
      * @return deptCode
      */
     public String getDeptCode() {
@@ -260,7 +260,7 @@ public class DeptDTO {
     }
 
     /**
-     * 部门名称 maxLength：128 minLength：1 
+     * 部门名称。 
      * @return deptName
      */
     public String getDeptName() {
@@ -277,7 +277,7 @@ public class DeptDTO {
     }
 
     /**
-     * 父部门编码,默认为根部门。 默认值：1： maxLength：32 
+     * 父部门编码，默认为根部门。 默认值：1。 
      * @return parentDeptCode
      */
     public String getParentDeptCode() {
@@ -294,7 +294,7 @@ public class DeptDTO {
     }
 
     /**
-     * 备注 maxLength：96 minLength：0 
+     * 备注。 
      * @return note
      */
     public String getNote() {
@@ -311,7 +311,7 @@ public class DeptDTO {
     }
 
     /**
-     * 其他用户对该部门下用户的访问权限： - UNLIMITED：默认，不做限制 - OPEN：公开，其他部门都可访问（无论对方权限如何配置）
+     * 其他用户对该部门下用户的访问权限。 * UNLIMITED：默认，不做限制 * OPEN：公开，其他部门都可访问（无论对方权限如何配置）
      * @return inPermission
      */
     public InPermissionEnum getInPermission() {
@@ -328,7 +328,7 @@ public class DeptDTO {
     }
 
     /**
-     * 该部门下用户访问权限控制 - UNLIMITED：不限制 - ONLY_SELF：仅能查询自己 - SELF_AND_CHILD_DEPARTMENT：该部门下用户能查询本部门及子部门通讯 - DESIGNATED_DEPARTMENT：该部门下用户能查询指定部门通讯录
+     * 该部门下用户访问权限控制。 - UNLIMITED：不限制 - ONLY_SELF：仅能查询自己 - SELF_AND_CHILD_DEPARTMENT：该部门下用户能查询本部门及子部门通讯 - DESIGNATED_DEPARTMENT：该部门下用户能查询指定部门通讯录
      * @return outPermission
      */
     public OutPermissionEnum getOutPermission() {
@@ -361,7 +361,7 @@ public class DeptDTO {
     }
 
     /**
-     * 允许访问的部门列表,仅outPermission为DESIGNATED_DEPARTMENT时有效，最多支持配置150
+     * 允许访问的部门列表,仅outPermission为DESIGNATED_DEPARTMENT时有效，最多支持配置150个部门。
      * @return designatedOutDeptCodes
      */
     public List<String> getDesignatedOutDeptCodes() {
@@ -378,7 +378,7 @@ public class DeptDTO {
     }
 
     /**
-     * 部门排序号，序号越小,部门排序越靠前 minimum: 1 maximum: 10000
+     * 部门排序号，序号越小,部门排序越靠前。
      * minimum: 1
      * maximum: 10000
      * @return sortLevel

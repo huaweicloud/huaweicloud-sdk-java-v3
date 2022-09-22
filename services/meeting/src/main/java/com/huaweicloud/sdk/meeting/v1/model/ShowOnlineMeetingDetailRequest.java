@@ -61,7 +61,7 @@ public class ShowOnlineMeetingDetailRequest {
     }
 
     /**
-     * 会议ID。
+     * 会议ID。 > 会议ID。创建会议时返回的conferenceID。不是vmrConferenceID。 
      * @return conferenceID
      */
     public String getConferenceID() {
@@ -78,7 +78,7 @@ public class ShowOnlineMeetingDetailRequest {
     }
 
     /**
-     * 指定返回的记录索引。该值必须大于等于0； 默认为0。
+     * 查询偏移量。默认为0。针对PageParticipant中的与会者分页。
      * @return offset
      */
     public Integer getOffset() {
@@ -95,7 +95,7 @@ public class ShowOnlineMeetingDetailRequest {
     }
 
     /**
-     * 指定返回的记录数。
+     * 查询数量。默认值20。
      * @return limit
      */
     public Integer getLimit() {
@@ -112,7 +112,7 @@ public class ShowOnlineMeetingDetailRequest {
     }
 
     /**
-     * 用来作关键词查询的字符串。
+     * 查询条件。长度限制为1-128个字符。
      * @return searchKey
      */
     public String getSearchKey() {
@@ -129,7 +129,7 @@ public class ShowOnlineMeetingDetailRequest {
     }
 
     /**
-     * 用户的UUID（已在USG注册过的）。
+     * 用户的UUID。 > 该参数将废弃，请勿使用。 
      * @return userUUID
      */
     public String getUserUUID() {
@@ -146,7 +146,7 @@ public class ShowOnlineMeetingDetailRequest {
     }
 
     /**
-     * 默认值为0。 - 0: 不区分终端和与会人。 - 1: 分页查询区分终端和与会人，结果合并返回。 - 2: 单独查询终端和与会人，结果单独返回。
+     * 默认值为0。 - 0: 不区分终端和与会人 - 1: 分页查询区分终端和与会人，结果合并返回 - 2: 单独查询终端和与会人，结果单独返回
      * @return xType
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -165,7 +165,7 @@ public class ShowOnlineMeetingDetailRequest {
     }
 
     /**
-     * 当X-Type为2时，该字段有效。默认值为0。 - 0: 查询与会人。 - 1: 查询终端。
+     * 当X-Type为2时，该字段有效。默认值为0。 - 0: 查询与会人 - 1: 查询终端
      * @return xQueryType
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -184,7 +184,7 @@ public class ShowOnlineMeetingDetailRequest {
     }
 
     /**
-     * 标识是否为第三方portal过来的请求。
+     * 标识是否为第三方portal过来的请求。 > 该参数将废弃，请勿使用。 
      * @return xAuthorizationType
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -203,7 +203,7 @@ public class ShowOnlineMeetingDetailRequest {
     }
 
     /**
-     * 用于区分到哪个HCSO站点鉴权。
+     * 用于区分到哪个HCSO站点鉴权。 > 该参数将废弃，请勿使用。 
      * @return xSiteId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

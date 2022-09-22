@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 删除会场消息体。
+ * 删除与会者请求。
  */
 public class RestBulkDelAttendReqBody {
 
@@ -40,7 +40,7 @@ public class RestBulkDelAttendReqBody {
     }
 
     /**
-     * 待删除列表
+     * 待删除会场列表。
      * @return bulkDelAttendInfo
      */
     public List<DelAttendInfo> getBulkDelAttendInfo() {

@@ -40,7 +40,7 @@ public class ShowDepartmentResponse extends SdkResponse {
     }
 
     /**
-     * 部门编码
+     * 部门编码。
      * @return deptCode
      */
     public String getDeptCode() {
@@ -57,7 +57,7 @@ public class ShowDepartmentResponse extends SdkResponse {
     }
 
     /**
-     * 部门名称
+     * 部门名称。
      * @return deptName
      */
     public String getDeptName() {
@@ -74,7 +74,7 @@ public class ShowDepartmentResponse extends SdkResponse {
     }
 
     /**
-     * 是否为叶子节点（没有子部门的称为叶子节点）
+     * 是否为叶子节点（没有子部门的称为叶子节点）。
      * @return isLeafNodes
      */
     public Boolean getIsLeafNodes() {
@@ -107,7 +107,7 @@ public class ShowDepartmentResponse extends SdkResponse {
     }
 
     /**
-     * 子部门详情
+     * 子部门详情。
      * @return childDepts
      */
     public List<ChildDeptDTO> getChildDepts() {

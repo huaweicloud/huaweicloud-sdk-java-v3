@@ -272,9 +272,9 @@ public class HcClient implements CustomizationConfigure {
         if (reqValue instanceof Collection) {
             httpRequestBuilder.addQueryParam(fieldName, buildCollectionQueryParams(reqValue));
         } else if (reqValue instanceof Map) {
-            Map<String, List<String>> params = buildMapQueryParamsLoop(fieldName, (Map) reqValue);
-            for (Map.Entry entry : params.entrySet()) {
-                httpRequestBuilder.addQueryParam((String) entry.getKey(), (List<String>) entry.getValue());
+            Map<String, List<String>> params = buildMapQueryParamsLoop(fieldName, (Map<?, ?>) reqValue);
+            for (Map.Entry<String, List<String>> entry : params.entrySet()) {
+                httpRequestBuilder.addQueryParam(entry.getKey(), entry.getValue());
             }
         } else {
             httpRequestBuilder.addQueryParam(fieldName, Collections.singletonList(convertToStringParams(reqValue)));
@@ -292,10 +292,10 @@ public class HcClient implements CustomizationConfigure {
     }
 
     private List<String> buildCollectionQueryParams(Object reqValue) {
-        return ((List<Object>) reqValue).stream().map(this::convertToStringParams).collect(Collectors.toList());
+        return ((List<?>) reqValue).stream().map(this::convertToStringParams).collect(Collectors.toList());
     }
 
-    private Map<String, List<String>> buildMapQueryParamsLoop(String key, Map reqValue) {
+    private Map<String, List<String>> buildMapQueryParamsLoop(String key, Map<?, ?> reqValue) {
         Map<String, List<String>> result = new HashMap<>();
         Stack<Map<String, List<String>>> stack = new Stack<>();
 

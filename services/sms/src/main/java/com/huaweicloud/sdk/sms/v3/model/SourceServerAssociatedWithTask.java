@@ -123,7 +123,7 @@ public class SourceServerAssociatedWithTask {
     private Boolean oemSystem;
 
     /**
-     * 当前源端服务器状态
+     * 当前源端服务器状态 unavailable：环境校验不通过 waiting：等待 initialize：初始化 replicate：复制 syncing：持续同步 stopping：暂停中 stopped：已暂停 deleting：删除中 error：错误 cloning：等待克隆完成 testing：测试中 finished：启动目的端完成
      */
     public static final class StateEnum {
 
@@ -372,7 +372,7 @@ public class SourceServerAssociatedWithTask {
     }
 
     /**
-     * 当前源端服务器状态
+     * 当前源端服务器状态 unavailable：环境校验不通过 waiting：等待 initialize：初始化 replicate：复制 syncing：持续同步 stopping：暂停中 stopped：已暂停 deleting：删除中 error：错误 cloning：等待克隆完成 testing：测试中 finished：启动目的端完成
      * @return state
      */
     public StateEnum getState() {

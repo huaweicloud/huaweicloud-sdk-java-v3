@@ -27,7 +27,7 @@ public class CheckVerifyCodeResponse extends SdkResponse {
     }
 
     /**
-     * 访问token字符串
+     * 访问token字符串。
      * @return token
      */
     public String getToken() {
@@ -44,7 +44,7 @@ public class CheckVerifyCodeResponse extends SdkResponse {
     }
 
     /**
-     * 过期时间，单位：秒
+     * 过期时间，单位：秒。
      * @return expire
      */
     public Integer getExpire() {

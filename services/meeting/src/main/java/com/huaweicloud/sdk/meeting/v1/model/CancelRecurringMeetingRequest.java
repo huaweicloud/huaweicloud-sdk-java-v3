@@ -41,7 +41,7 @@ public class CancelRecurringMeetingRequest {
     }
 
     /**
-     * 标识是否为第三方portal过来的请求
+     * 标识是否为第三方portal过来的请求。 > 该参数将废弃，请勿使用。 
      * @return xAuthorizationType
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -60,7 +60,7 @@ public class CancelRecurringMeetingRequest {
     }
 
     /**
-     * 用户的uuid（已在USG注册过的）
+     * 用户的UUID。 > 该参数将废弃，请勿使用。 
      * @return userUUID
      */
     public String getUserUUID() {
@@ -77,7 +77,7 @@ public class CancelRecurringMeetingRequest {
     }
 
     /**
-     * 用于区分到哪个HCSO站点鉴权。
+     * 用于区分到哪个HCSO站点鉴权。 > 该参数将废弃，请勿使用。 
      * @return xSiteId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -96,7 +96,7 @@ public class CancelRecurringMeetingRequest {
     }
 
     /**
-     * 会议标识
+     * 会议ID。
      * @return conferenceID
      */
     public String getConferenceID() {
@@ -113,7 +113,7 @@ public class CancelRecurringMeetingRequest {
     }
 
     /**
-     * 取消会议操作类型,1表示需要结束在线会议
+     * 取消会议操作类型。默认已召开的会议不能取消。 * 1：需要结束正在召开的会议 
      * @return type
      */
     public Integer getType() {

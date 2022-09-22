@@ -31,6 +31,11 @@ public class LogicalVolumes {
     private Integer inodeSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "device_use")
+
+    private Integer deviceUse;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mount_point")
 
     private String mountPoint;
@@ -127,6 +132,25 @@ public class LogicalVolumes {
 
     public void setInodeSize(Integer inodeSize) {
         this.inodeSize = inodeSize;
+    }
+
+    public LogicalVolumes withDeviceUse(Integer deviceUse) {
+        this.deviceUse = deviceUse;
+        return this;
+    }
+
+    /**
+     * 已使用大小
+     * minimum: 0
+     * maximum: 4294967296
+     * @return deviceUse
+     */
+    public Integer getDeviceUse() {
+        return deviceUse;
+    }
+
+    public void setDeviceUse(Integer deviceUse) {
+        this.deviceUse = deviceUse;
     }
 
     public LogicalVolumes withMountPoint(String mountPoint) {
@@ -233,6 +257,7 @@ public class LogicalVolumes {
             && Objects.equals(this.blockSize, logicalVolumes.blockSize)
             && Objects.equals(this.fileSystem, logicalVolumes.fileSystem)
             && Objects.equals(this.inodeSize, logicalVolumes.inodeSize)
+            && Objects.equals(this.deviceUse, logicalVolumes.deviceUse)
             && Objects.equals(this.mountPoint, logicalVolumes.mountPoint)
             && Objects.equals(this.name, logicalVolumes.name) && Objects.equals(this.size, logicalVolumes.size)
             && Objects.equals(this.usedSize, logicalVolumes.usedSize)
@@ -241,7 +266,8 @@ public class LogicalVolumes {
 
     @Override
     public int hashCode() {
-        return Objects.hash(blockCount, blockSize, fileSystem, inodeSize, mountPoint, name, size, usedSize, freeSize);
+        return Objects
+            .hash(blockCount, blockSize, fileSystem, inodeSize, deviceUse, mountPoint, name, size, usedSize, freeSize);
     }
 
     @Override
@@ -252,6 +278,7 @@ public class LogicalVolumes {
         sb.append("    blockSize: ").append(toIndentedString(blockSize)).append("\n");
         sb.append("    fileSystem: ").append(toIndentedString(fileSystem)).append("\n");
         sb.append("    inodeSize: ").append(toIndentedString(inodeSize)).append("\n");
+        sb.append("    deviceUse: ").append(toIndentedString(deviceUse)).append("\n");
         sb.append("    mountPoint: ").append(toIndentedString(mountPoint)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");

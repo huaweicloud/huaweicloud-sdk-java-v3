@@ -40,7 +40,7 @@ public class SearchMaterialsResponse extends SdkResponse {
     }
 
     /**
-     * 页面起始页，从0开始
+     * 页面起始页，从0开始。
      * @return offset
      */
     public Integer getOffset() {
@@ -107,7 +107,7 @@ public class SearchMaterialsResponse extends SdkResponse {
     }
 
     /**
-     * 素材信息
+     * 素材信息。
      * @return data
      */
     public List<Material> getData() {

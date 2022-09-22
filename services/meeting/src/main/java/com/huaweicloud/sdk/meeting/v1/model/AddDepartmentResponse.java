@@ -22,7 +22,7 @@ public class AddDepartmentResponse extends SdkResponse {
     }
 
     /**
-     * 返回结果
+     * 返回结果。
      * @return value
      */
     public String getValue() {

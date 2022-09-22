@@ -45,6 +45,11 @@ public class SlowLogList {
 
     private String rowsExamined;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "host")
+
+    private String host;
+
     public SlowLogList withUsers(String users) {
         this.users = users;
         return this;
@@ -164,6 +169,23 @@ public class SlowLogList {
         this.rowsExamined = rowsExamined;
     }
 
+    public SlowLogList withHost(String host) {
+        this.host = host;
+        return this;
+    }
+
+    /**
+     * 客户端ip，该IP地址可能涉及个人数据，建议用户依据实际IP地址的敏感性做查询后脱敏处理。
+     * @return host
+     */
+    public String getHost() {
+        return host;
+    }
+
+    public void setHost(String host) {
+        this.host = host;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -177,12 +199,13 @@ public class SlowLogList {
             && Objects.equals(this.querySample, slowLogList.querySample)
             && Objects.equals(this.logTime, slowLogList.logTime) && Objects.equals(this.time, slowLogList.time)
             && Objects.equals(this.shards, slowLogList.shards)
-            && Objects.equals(this.rowsExamined, slowLogList.rowsExamined);
+            && Objects.equals(this.rowsExamined, slowLogList.rowsExamined)
+            && Objects.equals(this.host, slowLogList.host);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(users, database, querySample, logTime, time, shards, rowsExamined);
+        return Objects.hash(users, database, querySample, logTime, time, shards, rowsExamined, host);
     }
 
     @Override
@@ -196,6 +219,7 @@ public class SlowLogList {
         sb.append("    time: ").append(toIndentedString(time)).append("\n");
         sb.append("    shards: ").append(toIndentedString(shards)).append("\n");
         sb.append("    rowsExamined: ").append(toIndentedString(rowsExamined)).append("\n");
+        sb.append("    host: ").append(toIndentedString(host)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 允许来宾自己解除静音请求体。
+ * 与会者自己解除静音请求。
  */
 public class RestAllowUnMuteReqBody {
 
@@ -21,7 +21,7 @@ public class RestAllowUnMuteReqBody {
     }
 
     /**
-     * 是否允许自己解除静音（仅静音时有效），默认为允许。 - 0: 不允许。 - 1: 允许。
+     * 是否允许自己解除静音（仅静音时有效），默认为允许。 - 0: 不允许 - 1: 允许
      * @return allowUnmuteByOneself
      */
     public Integer getAllowUnmuteByOneself() {

@@ -28,6 +28,11 @@ public class UpdateSubscriptionTargetResponse extends SdkResponse {
     private String providerType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "connection_id")
+
+    private String connectionId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "detail")
 
     private Object detail;
@@ -46,6 +51,11 @@ public class UpdateSubscriptionTargetResponse extends SdkResponse {
     @JsonProperty(value = "updated_time")
 
     private String updatedTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+
+    private String xRequestId;
 
     public UpdateSubscriptionTargetResponse withId(String id) {
         this.id = id;
@@ -96,6 +106,23 @@ public class UpdateSubscriptionTargetResponse extends SdkResponse {
 
     public void setProviderType(String providerType) {
         this.providerType = providerType;
+    }
+
+    public UpdateSubscriptionTargetResponse withConnectionId(String connectionId) {
+        this.connectionId = connectionId;
+        return this;
+    }
+
+    /**
+     * 订阅的事件目标使用的目标链接ID
+     * @return connectionId
+     */
+    public String getConnectionId() {
+        return connectionId;
+    }
+
+    public void setConnectionId(String connectionId) {
+        this.connectionId = connectionId;
     }
 
     public UpdateSubscriptionTargetResponse withDetail(Object detail) {
@@ -175,6 +202,25 @@ public class UpdateSubscriptionTargetResponse extends SdkResponse {
         this.updatedTime = updatedTime;
     }
 
+    public UpdateSubscriptionTargetResponse withXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+        return this;
+    }
+
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+    public String getXRequestId() {
+        return xRequestId;
+    }
+
+    public void setXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -187,15 +233,18 @@ public class UpdateSubscriptionTargetResponse extends SdkResponse {
         return Objects.equals(this.id, updateSubscriptionTargetResponse.id)
             && Objects.equals(this.name, updateSubscriptionTargetResponse.name)
             && Objects.equals(this.providerType, updateSubscriptionTargetResponse.providerType)
+            && Objects.equals(this.connectionId, updateSubscriptionTargetResponse.connectionId)
             && Objects.equals(this.detail, updateSubscriptionTargetResponse.detail)
             && Objects.equals(this.transform, updateSubscriptionTargetResponse.transform)
             && Objects.equals(this.createdTime, updateSubscriptionTargetResponse.createdTime)
-            && Objects.equals(this.updatedTime, updateSubscriptionTargetResponse.updatedTime);
+            && Objects.equals(this.updatedTime, updateSubscriptionTargetResponse.updatedTime)
+            && Objects.equals(this.xRequestId, updateSubscriptionTargetResponse.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, providerType, detail, transform, createdTime, updatedTime);
+        return Objects
+            .hash(id, name, providerType, connectionId, detail, transform, createdTime, updatedTime, xRequestId);
     }
 
     @Override
@@ -205,10 +254,12 @@ public class UpdateSubscriptionTargetResponse extends SdkResponse {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    providerType: ").append(toIndentedString(providerType)).append("\n");
+        sb.append("    connectionId: ").append(toIndentedString(connectionId)).append("\n");
         sb.append("    detail: ").append(toIndentedString(detail)).append("\n");
         sb.append("    transform: ").append(toIndentedString(transform)).append("\n");
         sb.append("    createdTime: ").append(toIndentedString(createdTime)).append("\n");
         sb.append("    updatedTime: ").append(toIndentedString(updatedTime)).append("\n");
+        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

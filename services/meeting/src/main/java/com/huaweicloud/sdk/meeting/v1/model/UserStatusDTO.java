@@ -48,7 +48,7 @@ public class UserStatusDTO {
     }
 
     /**
-     * 注册状态。 * 1是未注册上 * 0是已注册 
+     * 注册状态。 * 1：是未注册上 * 0：是已注册 
      * @return regStatus
      */
     public String getRegStatus() {
@@ -65,7 +65,7 @@ public class UserStatusDTO {
     }
 
     /**
-     * 呼叫状态。 * 0:未上线 * 1:空闲中 * 2:使用中 * 3:非会议硬终端统一的无效值 
+     * 呼叫状态。 * 0：未上线 * 1：空闲中 * 2：使用中 * 3：非会议硬终端统一的无效值 
      * @return callStatus
      */
     public String getCallStatus() {

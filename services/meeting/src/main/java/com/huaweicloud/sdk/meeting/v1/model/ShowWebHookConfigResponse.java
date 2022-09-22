@@ -47,7 +47,7 @@ public class ShowWebHookConfigResponse extends SdkResponse {
     }
 
     /**
-     * 结果码
+     * 结果码。
      * minimum: 0
      * maximum: 2147483647
      * @return returnCode
@@ -66,7 +66,7 @@ public class ShowWebHookConfigResponse extends SdkResponse {
     }
 
     /**
-     * 结果描述
+     * 结果描述。
      * @return returnDesc
      */
     public String getReturnDesc() {
@@ -83,7 +83,7 @@ public class ShowWebHookConfigResponse extends SdkResponse {
     }
 
     /**
-     * 配置记录id
+     * 订阅配置记录ID。
      * @return id
      */
     public String getId() {
@@ -100,7 +100,7 @@ public class ShowWebHookConfigResponse extends SdkResponse {
     }
 
     /**
-     * 订阅ID
+     * 订阅ID。
      * @return subscriberId
      */
     public String getSubscriberId() {
@@ -117,7 +117,7 @@ public class ShowWebHookConfigResponse extends SdkResponse {
     }
 
     /**
-     * 订阅url
+     * 订阅url。
      * @return url
      */
     public String getUrl() {
@@ -134,7 +134,7 @@ public class ShowWebHookConfigResponse extends SdkResponse {
     }
 
     /**
-     * 连接状态： 0表示已启用 ；1表示未启动； 2表示已锁定
+     * 事件推送状态。 * 0：已启用 * 1：未启动 * 2：已锁定 
      * @return status
      */
     public Integer getStatus() {

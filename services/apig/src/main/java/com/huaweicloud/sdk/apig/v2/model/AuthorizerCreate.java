@@ -187,6 +187,16 @@ public class AuthorizerCreate {
     private String authorizerUri;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "authorizer_version")
+
+    private String authorizerVersion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "authorizer_alias_uri")
+
+    private String authorizerAliasUri;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "identities")
 
     private List<Identity> identities = null;
@@ -277,6 +287,40 @@ public class AuthorizerCreate {
 
     public void setAuthorizerUri(String authorizerUri) {
         this.authorizerUri = authorizerUri;
+    }
+
+    public AuthorizerCreate withAuthorizerVersion(String authorizerVersion) {
+        this.authorizerVersion = authorizerVersion;
+        return this;
+    }
+
+    /**
+     * 函数版本。  当函数别名URN和函数版本同时传入时，函数版本将被忽略，只会使用函数别名URN
+     * @return authorizerVersion
+     */
+    public String getAuthorizerVersion() {
+        return authorizerVersion;
+    }
+
+    public void setAuthorizerVersion(String authorizerVersion) {
+        this.authorizerVersion = authorizerVersion;
+    }
+
+    public AuthorizerCreate withAuthorizerAliasUri(String authorizerAliasUri) {
+        this.authorizerAliasUri = authorizerAliasUri;
+        return this;
+    }
+
+    /**
+     * 函数别名地址。  当函数别名URN和函数版本同时传入时，函数版本将被忽略，只会使用函数别名URN
+     * @return authorizerAliasUri
+     */
+    public String getAuthorizerAliasUri() {
+        return authorizerAliasUri;
+    }
+
+    public void setAuthorizerAliasUri(String authorizerAliasUri) {
+        this.authorizerAliasUri = authorizerAliasUri;
     }
 
     public AuthorizerCreate withIdentities(List<Identity> identities) {
@@ -392,6 +436,8 @@ public class AuthorizerCreate {
         return Objects.equals(this.name, authorizerCreate.name) && Objects.equals(this.type, authorizerCreate.type)
             && Objects.equals(this.authorizerType, authorizerCreate.authorizerType)
             && Objects.equals(this.authorizerUri, authorizerCreate.authorizerUri)
+            && Objects.equals(this.authorizerVersion, authorizerCreate.authorizerVersion)
+            && Objects.equals(this.authorizerAliasUri, authorizerCreate.authorizerAliasUri)
             && Objects.equals(this.identities, authorizerCreate.identities)
             && Objects.equals(this.ttl, authorizerCreate.ttl)
             && Objects.equals(this.userData, authorizerCreate.userData)
@@ -401,7 +447,17 @@ public class AuthorizerCreate {
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, type, authorizerType, authorizerUri, identities, ttl, userData, ldApiId, needBody);
+        return Objects.hash(name,
+            type,
+            authorizerType,
+            authorizerUri,
+            authorizerVersion,
+            authorizerAliasUri,
+            identities,
+            ttl,
+            userData,
+            ldApiId,
+            needBody);
     }
 
     @Override
@@ -412,6 +468,8 @@ public class AuthorizerCreate {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    authorizerType: ").append(toIndentedString(authorizerType)).append("\n");
         sb.append("    authorizerUri: ").append(toIndentedString(authorizerUri)).append("\n");
+        sb.append("    authorizerVersion: ").append(toIndentedString(authorizerVersion)).append("\n");
+        sb.append("    authorizerAliasUri: ").append(toIndentedString(authorizerAliasUri)).append("\n");
         sb.append("    identities: ").append(toIndentedString(identities)).append("\n");
         sb.append("    ttl: ").append(toIndentedString(ttl)).append("\n");
         sb.append("    userData: ").append(toIndentedString(userData)).append("\n");

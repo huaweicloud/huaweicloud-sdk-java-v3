@@ -12,6 +12,8 @@ import java.util.Objects;
 
 public class HssRegion {
 
+    public static final Region CN_NORTH_9 = new Region("cn-north-9", "https://hss.cn-north-9.myhuaweicloud.com");
+
     public static final Region CN_NORTH_1 = new Region("cn-north-1", "https://hss.cn-north-1.myhuaweicloud.com");
 
     public static final Region CN_NORTH_4 = new Region("cn-north-4", "https://hss.cn-north-4.myhuaweicloud.com");
@@ -52,6 +54,7 @@ public class HssRegion {
 
     private static Map<String, Region> createStaticFields() {
         Map<String, Region> map = new HashMap<>();
+        map.put("cn-north-9", CN_NORTH_9);
         map.put("cn-north-1", CN_NORTH_1);
         map.put("cn-north-4", CN_NORTH_4);
         map.put("cn-southwest-2", CN_SOUTHWEST_2);

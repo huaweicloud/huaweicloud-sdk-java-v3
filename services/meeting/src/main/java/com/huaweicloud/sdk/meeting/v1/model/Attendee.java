@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 与会者信息
+ * 与会者信息。
  */
 public class Attendee {
 
@@ -93,7 +93,7 @@ public class Attendee {
     }
 
     /**
-     * 与会者帐号，兼容终端老版本。如果没有携带userUUID，就通过accountId查询用户信息。
+     * 与会者的华为云会议帐号。
      * @return accountId
      */
     public String getAccountId() {
@@ -110,7 +110,7 @@ public class Attendee {
     }
 
     /**
-     * 与会者名称或昵称，长度限制为96个字符。
+     * 与会者名称，长度限制为96个字符。
      * @return name
      */
     public String getName() {
@@ -127,7 +127,7 @@ public class Attendee {
     }
 
     /**
-     * 会议中的角色。 - 0: 普通与会者。 - 1: 会议主席。 - 2: 预留字段，暂不对外开放。 default: 0
+     * 会议中的角色。默认为普通与会者。 - 0: 普通与会者 - 1: 会议主持人
      * minimum: 0
      * maximum: 2
      * @return role
@@ -146,7 +146,7 @@ public class Attendee {
     }
 
     /**
-     * 电话号码(可支持SIP、TEL号码格式)。最大不超过127个字符。phone、email和sms三者需至少填写一个。当type为telepresence时，且设备为三屏智真，则该字段填写中屏号码。
+     * 号码。支持SIP号码或者手机号码。 > * 号码可以通过[[查询企业通讯](https://support.huaweicloud.com/api-meeting/meeting_21_0512.html)](tag:hws)[[查询企业通讯](https://support.huaweicloud.com/intl/zh-cn/api-meeting/meeting_21_0512.html)](tag:hk)接口录获取。返回的number是SIP号码，phone是手机号码 > * 填SIP号码系统会呼叫对应的软终端或者硬终端；填手机号码系统会呼叫手机 > * 呼叫手机需要开通PSTN权限，否则无法呼叫 
      * @return phone
      */
     public String getPhone() {
@@ -163,7 +163,7 @@ public class Attendee {
     }
 
     /**
-     * 预留字段，取值类型同phone。当type为telepresence时，且设备为三屏智真，则该字段填写左屏号码
+     * 预留字段，取值类型同参数“phone”。
      * @return phone2
      */
     public String getPhone2() {
@@ -180,7 +180,7 @@ public class Attendee {
     }
 
     /**
-     * 预留字段，取值类型同phone。当type为telepresence时，且设备为三屏智真，则该字段填写右屏号码
+     * 预留字段，取值类型同参数“phone”。
      * @return phone3
      */
     public String getPhone3() {
@@ -197,7 +197,7 @@ public class Attendee {
     }
 
     /**
-     * 邮件地址。最大不超过255个字符。phone、email和sms三者需至少填写一个。
+     * 邮件地址。 > 会中邀请不发会议通知，不用填写。 
      * @return email
      */
     public String getEmail() {
@@ -214,7 +214,7 @@ public class Attendee {
     }
 
     /**
-     * 短信通知的手机号码。最大不超过32个字符。phone、email和sms三者需至少填写一个。
+     * 短信通知的手机号码。 > 会中邀请不发会议通知，不用填写。 
      * @return sms
      */
     public String getSms() {
@@ -231,7 +231,7 @@ public class Attendee {
     }
 
     /**
-     * 默认值由会议AS定义，号码类型枚举如下： - normal: 软终端。 - telepresence: 智真。单屏、三屏智真均属此类。（预留字段） - terminal: 会议室或硬终端。 - outside: 外部与会人。 - mobile: 用户手机号码。 - telephone: 软终端用户固定电话，暂不使用。
+     * 终端类型，类型枚举如下： * normal：软终端 * terminal：硬终端 * outside：外部与会人 * mobile：用户手机号码 * ideahub：ideahub * board: 电子白板（SmartRooms）。含Maxhub、海信大屏、IdeaHub B2hwvision：华为智慧屏TV
      * @return type
      */
     public String getType() {
@@ -248,7 +248,7 @@ public class Attendee {
     }
 
     /**
-     * 部门ID。最大不超过64个字符。
+     * 部门编码。
      * @return deptUUID
      */
     public String getDeptUUID() {
@@ -265,7 +265,7 @@ public class Attendee {
     }
 
     /**
-     * 部门名称。最大不超过128个字符。
+     * 部门名称。
      * @return deptName
      */
     public String getDeptName() {

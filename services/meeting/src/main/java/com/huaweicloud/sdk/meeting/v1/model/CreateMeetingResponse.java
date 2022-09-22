@@ -41,7 +41,7 @@ public class CreateMeetingResponse extends SdkResponse {
     }
 
     /**
-     * 会议信息列表
+     * 会议信息列表。
      * @return body
      */
     public List<ConferenceInfo> getBody() {

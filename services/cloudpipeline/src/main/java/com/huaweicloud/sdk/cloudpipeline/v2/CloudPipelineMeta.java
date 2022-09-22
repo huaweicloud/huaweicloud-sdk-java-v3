@@ -251,31 +251,6 @@ public class CloudPipelineMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<RegisterAgentRequest, RegisterAgentResponse> registerAgent =
-        genForregisterAgent();
-
-    private static HttpRequestDef<RegisterAgentRequest, RegisterAgentResponse> genForregisterAgent() {
-        // basic
-        HttpRequestDef.Builder<RegisterAgentRequest, RegisterAgentResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, RegisterAgentRequest.class, RegisterAgentResponse.class)
-                .withName("RegisterAgent")
-                .withUri("/agentregister/v1/agent/register")
-                .withContentType("application/json");
-
-        // requests
-        builder.<SlaveRegister>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(SlaveRegister.class),
-            f -> f.withMarshaller(RegisterAgentRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<RemovePipelineRequest, RemovePipelineResponse> removePipeline =
         genForremovePipeline();
 
@@ -300,38 +275,6 @@ public class CloudPipelineMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(RemovePipelineRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowAgentStatusRequest, ShowAgentStatusResponse> showAgentStatus =
-        genForshowAgentStatus();
-
-    private static HttpRequestDef<ShowAgentStatusRequest, ShowAgentStatusResponse> genForshowAgentStatus() {
-        // basic
-        HttpRequestDef.Builder<ShowAgentStatusRequest, ShowAgentStatusResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowAgentStatusRequest.class, ShowAgentStatusResponse.class)
-                .withName("ShowAgentStatus")
-                .withUri("/v1/agents/{agent_id}/status")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("agent_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAgentStatusRequest::getAgentId, (req, v) -> {
-                req.setAgentId(v);
-            }));
-        builder.<String>withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAgentStatusRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             }));
 

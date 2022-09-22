@@ -22,7 +22,7 @@ public class CreateWebSocketTokenResponse extends SdkResponse {
     }
 
     /**
-     * websocket建链Token。
+     * WebSocket建链Token(有效期1分钟，且一次有效)。
      * @return webSocketToken
      */
     public String getWebSocketToken() {

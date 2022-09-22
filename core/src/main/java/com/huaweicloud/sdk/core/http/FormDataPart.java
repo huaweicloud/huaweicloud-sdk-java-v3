@@ -36,7 +36,7 @@ public class FormDataPart<T> {
         return value;
     }
 
-    public FormDataPart withValue(T value) {
+    public FormDataPart<T> withValue(T value) {
         this.value = value;
         return this;
     }

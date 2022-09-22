@@ -31,7 +31,7 @@ public class PutLogicalVolume {
     }
 
     /**
-     * 逻辑卷id
+     * 逻辑卷ID
      * @return id
      */
     public String getId() {

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * IdeaHub、终端“查看会议纪要列表”响应
+ * 会议纪要信息。
  */
 public class ListMeetingFileResponseDTO {
 
@@ -81,7 +81,7 @@ public class ListMeetingFileResponseDTO {
     }
 
     /**
-     * 会议纪要文件码
+     * 会议纪要文件码。
      * @return fileCode
      */
     public String getFileCode() {
@@ -98,7 +98,7 @@ public class ListMeetingFileResponseDTO {
     }
 
     /**
-     * 文件主题
+     * 文件主题。
      * @return topic
      */
     public String getTopic() {
@@ -115,7 +115,7 @@ public class ListMeetingFileResponseDTO {
     }
 
     /**
-     * 文件Id
+     * 文件Id。
      * @return fileId
      */
     public String getFileId() {
@@ -132,7 +132,7 @@ public class ListMeetingFileResponseDTO {
     }
 
     /**
-     * 文件名
+     * 文件名。
      * @return fileName
      */
     public String getFileName() {
@@ -149,7 +149,7 @@ public class ListMeetingFileResponseDTO {
     }
 
     /**
-     * 文件大小，单位字节
+     * 文件大小，单位字节。
      * @return fileSize
      */
     public Long getFileSize() {
@@ -166,7 +166,7 @@ public class ListMeetingFileResponseDTO {
     }
 
     /**
-     * 缩略图文件Id
+     * 缩略图文件Id。
      * @return thumbnailFileId
      */
     public String getThumbnailFileId() {
@@ -183,7 +183,7 @@ public class ListMeetingFileResponseDTO {
     }
 
     /**
-     * 缩略图文件名
+     * 缩略图文件名。
      * @return thumbnailFileName
      */
     public String getThumbnailFileName() {
@@ -200,7 +200,7 @@ public class ListMeetingFileResponseDTO {
     }
 
     /**
-     * 缩略图文件大小，单位字节
+     * 缩略图文件大小，单位字节。
      * @return thumbnailFileSize
      */
     public Long getThumbnailFileSize() {
@@ -217,7 +217,7 @@ public class ListMeetingFileResponseDTO {
     }
 
     /**
-     * pdf文件Id
+     * pdf文件Id。
      * @return pdfFileId
      */
     public String getPdfFileId() {
@@ -234,7 +234,7 @@ public class ListMeetingFileResponseDTO {
     }
 
     /**
-     * pdf文件名
+     * pdf文件名。
      * @return pdfFileName
      */
     public String getPdfFileName() {
@@ -251,7 +251,7 @@ public class ListMeetingFileResponseDTO {
     }
 
     /**
-     * pdf文件大小，单位字节
+     * pdf文件大小，单位字节。
      * @return pdfFileSize
      */
     public Long getPdfFileSize() {
@@ -268,7 +268,7 @@ public class ListMeetingFileResponseDTO {
     }
 
     /**
-     * 用户ID
+     * 用户UUID。
      * @return userId
      */
     public String getUserId() {
@@ -285,7 +285,7 @@ public class ListMeetingFileResponseDTO {
     }
 
     /**
-     * 文件创建时间戳
+     * 文件创建时间戳。
      * @return creationTimestamp
      */
     public Long getCreationTimestamp() {

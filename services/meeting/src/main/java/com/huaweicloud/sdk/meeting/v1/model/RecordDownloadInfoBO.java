@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 单会议录制文件下载链接信息（包含多个录制文件）
+ * 会议录制文件下载链接信息。
  */
 public class RecordDownloadInfoBO {
 
@@ -29,7 +29,7 @@ public class RecordDownloadInfoBO {
     }
 
     /**
-     * 会议UUID
+     * 会议UUID。
      * @return confUuid
      */
     public String getConfUuid() {
@@ -62,7 +62,7 @@ public class RecordDownloadInfoBO {
     }
 
     /**
-     * 录制文件下载URL
+     * 下载链接信息。
      * @return urls
      */
     public List<RecordDownloadUrlDO> getUrls() {

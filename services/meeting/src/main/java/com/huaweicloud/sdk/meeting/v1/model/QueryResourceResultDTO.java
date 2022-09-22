@@ -66,7 +66,7 @@ public class QueryResourceResultDTO {
     }
 
     /**
-     * 唯一标识若携带则以携带为准，企业内保证唯一，否则后台自动生成UUID
+     * 唯一标识若携带则以携带为准，企业内保证唯一，否则后台自动生成UUID。
      * @return id
      */
     public String getId() {
@@ -83,7 +83,7 @@ public class QueryResourceResultDTO {
     }
 
     /**
-     * 资源类型，前台通过查询接口返回该sp支持售卖的资源在界面上做相应屏蔽，当前为枚举类型. - VMR        - 云会议室 - CONF_CALL  - 会议并发数 - HARD_1080P - 1080P硬终端 - HARD_720P  - 720P硬终端 - SOFT       - 软终端用户数 - ROOM       - 大屏软终端 - LIVE       - 直播推流 - RECORD     - 录播空间 - HARD_THIRD_PARTY - 第三方硬终端账号 - HUAWEI_VISION -智慧屏 - IDEA_HUB   - ideahub
+     * 资源类型。 - VMR        - 云会议室 - CONF_CALL  - 会议并发数 - HARD_1080P - 1080P硬终端 - HARD_720P  - 720P硬终端 - SOFT       - 软终端用户数 - ROOM       - 大屏软终端 - LIVE       - 直播推流 - RECORD     - 录播空间 - HARD_THIRD_PARTY - 第三方硬终端帐号 - HUAWEI_VISION -智慧屏 - IDEA_HUB   - ideahub
      * @return type
      */
     public String getType() {
@@ -100,7 +100,7 @@ public class QueryResourceResultDTO {
     }
 
     /**
-     * 资源标识，比如资源类型为vmrpkg，则该参数为vmrPkgId
+     * 资源标识，比如资源类型为VMR，则该参数为vmrPkgId。
      * @return typeId
      */
     public String getTypeId() {
@@ -117,7 +117,7 @@ public class QueryResourceResultDTO {
     }
 
     /**
-     * 资源标识对应的回显描述,比如资源类型为vmrpkg，则该参数为vmrPkgName
+     * 资源标识对应的回显描述,比如资源类型为VMR，则该参数为vmrPkgName。
      * @return typeDesc
      */
     public String getTypeDesc() {
@@ -134,7 +134,7 @@ public class QueryResourceResultDTO {
     }
 
     /**
-     * VMR模式. 0：个人会议ID 1：云会议室 2：网络研讨会
+     * VMR模式。 - 0：个人会议ID - 1：云会议室 - 2：网络研讨会
      * @return vmrMode
      */
     public Integer getVmrMode() {
@@ -151,7 +151,7 @@ public class QueryResourceResultDTO {
     }
 
     /**
-     * 资源数量
+     * 资源数量。
      * @return count
      */
     public Integer getCount() {
@@ -168,7 +168,7 @@ public class QueryResourceResultDTO {
     }
 
     /**
-     * 到期时间,utc时间戳
+     * 到期时间,utc时间戳。
      * @return expireDate
      */
     public Long getExpireDate() {
@@ -185,7 +185,7 @@ public class QueryResourceResultDTO {
     }
 
     /**
-     * 资源对应的订单id
+     * 资源对应的订单id。
      * @return orderId
      */
     public String getOrderId() {
@@ -219,7 +219,7 @@ public class QueryResourceResultDTO {
     }
 
     /**
-     * 标识资源是否可以编辑或删除
+     * 标识资源是否可以编辑或删除。
      * @return editable
      */
     public Boolean getEditable() {

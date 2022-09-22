@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 重命名会场消息体。
+ * 重命名与会者请求。
  */
 public class RestRenamePartReqBody {
 
@@ -65,7 +65,7 @@ public class RestRenamePartReqBody {
     }
 
     /**
-     * 新名字。
+     * 新名称。
      * @return newName
      */
     public String getNewName() {

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 启停直播消息体。
+ * 启停会议直播请求。
  */
 public class RestSetLiveReqBody {
 
@@ -21,7 +21,7 @@ public class RestSetLiveReqBody {
     }
 
     /**
-     * 默认值为0。 - 0: 停止会议直播。 - 1: 启动会议直播。
+     * 会议直播开关。默认值为0。 - 0: 停止会议直播 - 1: 启动会议直播
      * @return isLive
      */
     public Integer getIsLive() {

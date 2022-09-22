@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 素材信息
+ * 素材信息。
  */
 public class Material {
 
@@ -51,7 +51,7 @@ public class Material {
     }
 
     /**
-     * 素材ID
+     * 素材ID。
      * @return id
      */
     public String getId() {
@@ -68,7 +68,7 @@ public class Material {
     }
 
     /**
-     * 更新者
+     * 更新者。
      * @return lastUpdatedBy
      */
     public String getLastUpdatedBy() {
@@ -85,7 +85,7 @@ public class Material {
     }
 
     /**
-     * 更新时间
+     * 更新时间。
      * @return updateTime
      */
     public Long getUpdateTime() {
@@ -102,7 +102,7 @@ public class Material {
     }
 
     /**
-     * 素材名称
+     * 素材名称。
      * @return materialName
      */
     public String getMaterialName() {
@@ -119,7 +119,7 @@ public class Material {
     }
 
     /**
-     * 素材分辨率
+     * 素材分辨率。
      * @return materialResolution
      */
     public String getMaterialResolution() {
@@ -136,7 +136,7 @@ public class Material {
     }
 
     /**
-     * 素材大小（含单位）
+     * 素材大小（含单位）。
      * @return materialSizeStr
      */
     public String getMaterialSizeStr() {
@@ -153,7 +153,7 @@ public class Material {
     }
 
     /**
-     * 素材云盘存储文件下载地址
+     * 素材云盘存储文件下载地址。
      * @return filePath
      */
     public String getFilePath() {

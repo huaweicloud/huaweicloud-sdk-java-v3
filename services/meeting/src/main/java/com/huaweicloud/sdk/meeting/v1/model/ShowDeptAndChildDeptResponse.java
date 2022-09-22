@@ -90,7 +90,7 @@ public class ShowDeptAndChildDeptResponse extends SdkResponse {
     }
 
     /**
-     * 企业id
+     * 企业ID。
      * @return corpId
      */
     public String getCorpId() {
@@ -107,7 +107,7 @@ public class ShowDeptAndChildDeptResponse extends SdkResponse {
     }
 
     /**
-     * 部门id
+     * 部门编码。
      * @return deptCode
      */
     public String getDeptCode() {
@@ -124,7 +124,7 @@ public class ShowDeptAndChildDeptResponse extends SdkResponse {
     }
 
     /**
-     * 部门层级
+     * 部门层级。
      * @return deptLevel
      */
     public Integer getDeptLevel() {
@@ -141,7 +141,7 @@ public class ShowDeptAndChildDeptResponse extends SdkResponse {
     }
 
     /**
-     * 部门名称
+     * 部门名称。
      * @return deptName
      */
     public String getDeptName() {
@@ -158,7 +158,7 @@ public class ShowDeptAndChildDeptResponse extends SdkResponse {
     }
 
     /**
-     * 根部门名路径
+     * 部门名路径。
      * @return deptNamePath
      */
     public String getDeptNamePath() {
@@ -175,7 +175,7 @@ public class ShowDeptAndChildDeptResponse extends SdkResponse {
     }
 
     /**
-     * 是否叶子
+     * 是否叶子节点。
      * @return isLeafNode
      */
     public Boolean getIsLeafNode() {
@@ -192,7 +192,7 @@ public class ShowDeptAndChildDeptResponse extends SdkResponse {
     }
 
     /**
-     * 父部门编号
+     * 父部门编码。
      * @return parentDeptCode
      */
     public String getParentDeptCode() {
@@ -209,7 +209,7 @@ public class ShowDeptAndChildDeptResponse extends SdkResponse {
     }
 
     /**
-     * 部门编码路径
+     * 部门编码路径。
      * @return deptCodePath
      */
     public String getDeptCodePath() {
@@ -226,7 +226,7 @@ public class ShowDeptAndChildDeptResponse extends SdkResponse {
     }
 
     /**
-     * 备注
+     * 备注。
      * @return note
      */
     public String getNote() {
@@ -243,7 +243,7 @@ public class ShowDeptAndChildDeptResponse extends SdkResponse {
     }
 
     /**
-     * 其他用户对该部门下用户的访问权限
+     * 其他用户对该部门下用户的访问权限。
      * @return inPermission
      */
     public String getInPermission() {
@@ -260,7 +260,7 @@ public class ShowDeptAndChildDeptResponse extends SdkResponse {
     }
 
     /**
-     * 该部门下用户访问权限控制
+     * 该部门下用户访问权限控制。
      * @return outPermission
      */
     public String getOutPermission() {
@@ -294,7 +294,7 @@ public class ShowDeptAndChildDeptResponse extends SdkResponse {
     }
 
     /**
-     * 许访问的部门列表,前台回显DTO，id为deptCode,mark为部门名称
+     * 允许访问的部门列表。
      * @return designatedOutDeptCodes
      */
     public List<IdMarkDTO> getDesignatedOutDeptCodes() {
@@ -327,7 +327,7 @@ public class ShowDeptAndChildDeptResponse extends SdkResponse {
     }
 
     /**
-     * 子部门列表
+     * 子部门列表。
      * @return childDepts
      */
     public List<QueryDeptResultDTO> getChildDepts() {
@@ -344,7 +344,7 @@ public class ShowDeptAndChildDeptResponse extends SdkResponse {
     }
 
     /**
-     * 部门排序号
+     * 部门排序号。
      * @return sortLevel
      */
     public Integer getSortLevel() {

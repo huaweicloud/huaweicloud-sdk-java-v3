@@ -56,7 +56,7 @@ public class PutDisk {
     }
 
     /**
-     * 磁盘id
+     * 磁盘ID
      * @return id
      */
     public String getId() {

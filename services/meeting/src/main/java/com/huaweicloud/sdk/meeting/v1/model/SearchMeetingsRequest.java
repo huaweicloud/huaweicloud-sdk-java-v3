@@ -61,7 +61,7 @@ public class SearchMeetingsRequest {
     }
 
     /**
-     * 待查询的会议预定者的uuid 仅管理员有权限查询权限范围内的所有账号；普通账号该字段无效，只能查询自己的。
+     * 用户的UUID。 > 仅管理员有权限查询本企业其他用户的会议列表；普通帐号该字段无效，只能查询自己的。 
      * @return userUUID
      */
     public String getUserUUID() {
@@ -78,7 +78,7 @@ public class SearchMeetingsRequest {
     }
 
     /**
-     * 指定返回的记录索引。该值必须大于等于0； 默认为0。
+     * 查询偏移量。默认为0。
      * @return offset
      */
     public Integer getOffset() {
@@ -95,7 +95,7 @@ public class SearchMeetingsRequest {
     }
 
     /**
-     * 指定返回的记录数，默认值由会议AS定义，默认是20，最大500条。
+     * 查询数量。默认是20，最大500条。
      * minimum: 0
      * maximum: 500
      * @return limit
@@ -114,7 +114,7 @@ public class SearchMeetingsRequest {
     }
 
     /**
-     * 指定是否查询企业下所有用户的会议记录。 如果登录帐号不是企业管理员，则该字段无效。 如果该字段为true，则userUUID字段无效。 default : false
+     * 是否查询企业下所有用户的会议记录。默认值为false。 * true：查询所有用户的会议 * false：仅查询管理员自己创建的会议 > 仅对企业管理员生效。
      * @return queryAll
      */
     public Boolean getQueryAll() {
@@ -131,7 +131,7 @@ public class SearchMeetingsRequest {
     }
 
     /**
-     * 查询用来当作关键词的字符串。长度限制为1-128个字符。
+     * 查询条件。会议主题、会议预约人和会议ID等可作为搜索内容。长度限制为1-128个字符。
      * @return searchKey
      */
     public String getSearchKey() {
@@ -148,7 +148,7 @@ public class SearchMeetingsRequest {
     }
 
     /**
-     * - ADAY:  一天。 - AWEEK:  一周。 - AMONTH:  一个月。 - ALL:  查询所有。
+     * 查询时间范围。 - ADAY:  一天 - AWEEK:  一周 - AMONTH:  一个月 - ALL:  查询所有
      * @return queryConfMode
      */
     public String getQueryConfMode() {
@@ -165,7 +165,7 @@ public class SearchMeetingsRequest {
     }
 
     /**
-     * - ASC_StartTIME:  按会议开始时间升序排序。 - DSC_StartTIME:  按会议开始时间降序排序。
+     * 查询结果排序。 - ASC_StartTIME:  按会议开始时间升序排序 - DSC_StartTIME:  按会议开始时间降序排序
      * @return sortType
      */
     public String getSortType() {
@@ -182,7 +182,7 @@ public class SearchMeetingsRequest {
     }
 
     /**
-     * 标识是否为第三方portal过来的请求。
+     * 标识是否为第三方portal过来的请求。 > 该参数将废弃，请勿使用。 
      * @return xAuthorizationType
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -201,7 +201,7 @@ public class SearchMeetingsRequest {
     }
 
     /**
-     * 用于区分到哪个HCSO站点鉴权。
+     * 用于区分到哪个HCSO站点鉴权。 > 该参数将废弃，请勿使用。 
      * @return xSiteId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

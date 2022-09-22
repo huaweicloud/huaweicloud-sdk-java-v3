@@ -50,6 +50,11 @@ public class CheckConfigInfo {
 
     private String status;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "value")
+
+    private String value;
+
     public CheckConfigInfo withName(String name) {
         this.name = name;
         return this;
@@ -186,6 +191,23 @@ public class CheckConfigInfo {
         this.status = status;
     }
 
+    public CheckConfigInfo withValue(String value) {
+        this.value = value;
+        return this;
+    }
+
+    /**
+     * 检查参数值
+     * @return value
+     */
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -200,12 +222,13 @@ public class CheckConfigInfo {
             && Objects.equals(this.optionValue, checkConfigInfo.optionValue)
             && Objects.equals(this.isRequired, checkConfigInfo.isRequired)
             && Objects.equals(this.description, checkConfigInfo.description)
-            && Objects.equals(this.type, checkConfigInfo.type) && Objects.equals(this.status, checkConfigInfo.status);
+            && Objects.equals(this.type, checkConfigInfo.type) && Objects.equals(this.status, checkConfigInfo.status)
+            && Objects.equals(this.value, checkConfigInfo.value);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, cfgKey, defaultValue, optionValue, isRequired, description, type, status);
+        return Objects.hash(name, cfgKey, defaultValue, optionValue, isRequired, description, type, status, value);
     }
 
     @Override
@@ -220,6 +243,7 @@ public class CheckConfigInfo {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    value: ").append(toIndentedString(value)).append("\n");
         sb.append("}");
         return sb.toString();
     }

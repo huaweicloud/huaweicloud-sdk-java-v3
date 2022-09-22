@@ -717,7 +717,7 @@ public class RespInstanceBase {
     private String eipAddress;
 
     /**
-     * 实例计费方式： - 0：按需计费 - 1：包周期计费
+     * 实例计费方式： - 0：按需计费 - 1：[包周期计费](tag:hws,hws_hk)[暂未使用](tag:cmcc,ctc,DT,g42,hk_g42,hk_sbc,hk_tm,hws_eu,hws_ocb,OCB,sbc,tm)
      */
     public static final class ChargingModeEnum {
 
@@ -1061,7 +1061,7 @@ public class RespInstanceBase {
     }
 
     /**
-     * 实例计费方式： - 0：按需计费 - 1：包周期计费
+     * 实例计费方式： - 0：按需计费 - 1：[包周期计费](tag:hws,hws_hk)[暂未使用](tag:cmcc,ctc,DT,g42,hk_g42,hk_sbc,hk_tm,hws_eu,hws_ocb,OCB,sbc,tm)
      * @return chargingMode
      */
     public ChargingModeEnum getChargingMode() {
@@ -1078,7 +1078,7 @@ public class RespInstanceBase {
     }
 
     /**
-     * 包周期计费订单编号
+     * [包周期计费订单编号](tag:hws,hws_hk)[计费订单编号参数暂未使用](tag:cmcc,ctc,DT,g42,hk_g42,hk_sbc,hk_tm,hws_eu,hws_ocb,OCB,sbc,tm)
      * @return cbcMetadata
      */
     public String getCbcMetadata() {

@@ -22,7 +22,7 @@ public class CreateTemplateResponse extends SdkResponse {
     }
 
     /**
-     * 服务端返回的新添加的模板的id
+     * 服务端返回的新添加的模板的ID
      * @return id
      */
     public String getId() {

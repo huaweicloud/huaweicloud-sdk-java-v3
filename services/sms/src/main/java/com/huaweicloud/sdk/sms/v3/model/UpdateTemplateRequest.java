@@ -27,7 +27,7 @@ public class UpdateTemplateRequest {
     }
 
     /**
-     * 需要修改信息的模板的id
+     * 需要修改信息的模板的ID
      * @return id
      */
     public String getId() {

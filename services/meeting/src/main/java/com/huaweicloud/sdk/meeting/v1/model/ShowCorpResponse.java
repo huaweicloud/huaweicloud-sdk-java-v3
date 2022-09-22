@@ -147,7 +147,7 @@ public class ShowCorpResponse extends SdkResponse {
     }
 
     /**
-     * 企业id
+     * 企业id。
      * @return id
      */
     public String getId() {

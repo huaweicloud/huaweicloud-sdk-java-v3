@@ -52,9 +52,10 @@ public class UploadIssueImgRequestBody implements SdkFormDataBody {
     }
 
     @Override
-    public Map<String, FormDataPart> buildFormData() {
-        return new LinkedHashMap<String, FormDataPart>() {
+    public Map<String, FormDataPart<?>> buildFormData() {
+        return new LinkedHashMap<String, FormDataPart<?>>() {
 
+            private static final long serialVersionUID = 1L;
             {
                 put("file", file);
             }

@@ -84,7 +84,7 @@ public class QueryDeptResultDTO {
     }
 
     /**
-     * 部门编码，企业内唯一
+     * 部门编码，企业内唯一。
      * @return deptCode
      */
     public String getDeptCode() {
@@ -101,7 +101,7 @@ public class QueryDeptResultDTO {
     }
 
     /**
-     * 部门层级
+     * 部门层级。
      * @return deptLevel
      */
     public Integer getDeptLevel() {
@@ -118,7 +118,7 @@ public class QueryDeptResultDTO {
     }
 
     /**
-     * 部门名称
+     * 部门名称。
      * @return deptName
      */
     public String getDeptName() {
@@ -135,7 +135,7 @@ public class QueryDeptResultDTO {
     }
 
     /**
-     * 部门名路径
+     * 部门名路径。
      * @return deptNamePath
      */
     public String getDeptNamePath() {
@@ -152,7 +152,7 @@ public class QueryDeptResultDTO {
     }
 
     /**
-     * 是否叶子
+     * 是否叶子节点。
      * @return isLeafNode
      */
     public Boolean getIsLeafNode() {
@@ -169,7 +169,7 @@ public class QueryDeptResultDTO {
     }
 
     /**
-     * 父部门编号
+     * 父部门编码。
      * @return parentDeptCode
      */
     public String getParentDeptCode() {
@@ -186,7 +186,7 @@ public class QueryDeptResultDTO {
     }
 
     /**
-     * 部门编码路径
+     * 部门编码路径。
      * @return deptCodePath
      */
     public String getDeptCodePath() {
@@ -203,7 +203,7 @@ public class QueryDeptResultDTO {
     }
 
     /**
-     * 备注
+     * 备注。
      * @return note
      */
     public String getNote() {
@@ -220,7 +220,7 @@ public class QueryDeptResultDTO {
     }
 
     /**
-     * 企业id
+     * 企业ID。
      * @return corpId
      */
     public String getCorpId() {
@@ -237,7 +237,7 @@ public class QueryDeptResultDTO {
     }
 
     /**
-     * 其他用户对该部门下用户的访问权限
+     * 其他用户对该部门下用户的访问权限。
      * @return inPermission
      */
     public String getInPermission() {
@@ -254,7 +254,7 @@ public class QueryDeptResultDTO {
     }
 
     /**
-     * 该部门下用户访问权限控制
+     * 该部门下用户访问权限控制。
      * @return outPermission
      */
     public String getOutPermission() {
@@ -287,7 +287,7 @@ public class QueryDeptResultDTO {
     }
 
     /**
-     * 允许访问的部门列表，id为部门编码。
+     * 允许访问的部门列表。
      * @return designatedOutDeptCodes
      */
     public List<IdMarkDTO> getDesignatedOutDeptCodes() {
@@ -304,7 +304,7 @@ public class QueryDeptResultDTO {
     }
 
     /**
-     * 部门排序号
+     * 部门排序号。
      * @return sortLevel
      */
     public Integer getSortLevel() {

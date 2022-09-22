@@ -631,6 +631,38 @@ public class DdmMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ResetAdministratorRequest, ResetAdministratorResponse> resetAdministrator =
+        genForresetAdministrator();
+
+    private static HttpRequestDef<ResetAdministratorRequest, ResetAdministratorResponse> genForresetAdministrator() {
+        // basic
+        HttpRequestDef.Builder<ResetAdministratorRequest, ResetAdministratorResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ResetAdministratorRequest.class, ResetAdministratorResponse.class)
+                .withName("ResetAdministrator")
+                .withUri("/v3/{project_id}/instances/{instance_id}/admin-user")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResetAdministratorRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<AdminUserInfoReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AdminUserInfoReq.class),
+            f -> f.withMarshaller(ResetAdministratorRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ResetUserPasswordRequest, ResetUserPasswordResponse> resetUserPassword =
         genForresetUserPassword();
 
@@ -662,6 +694,37 @@ public class DdmMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResetUserPasswordReq.class),
             f -> f.withMarshaller(ResetUserPasswordRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ResizeFlavorRequest, ResizeFlavorResponse> resizeFlavor = genForresizeFlavor();
+
+    private static HttpRequestDef<ResizeFlavorRequest, ResizeFlavorResponse> genForresizeFlavor() {
+        // basic
+        HttpRequestDef.Builder<ResizeFlavorRequest, ResizeFlavorResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ResizeFlavorRequest.class, ResizeFlavorResponse.class)
+                .withName("ResizeFlavor")
+                .withUri("/v3/{project_id}/instances/{instance_id}/flavor")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResizeFlavorRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<ResizeFlavorReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ResizeFlavorReq.class),
+            f -> f.withMarshaller(ResizeFlavorRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -1062,6 +1125,31 @@ public class DdmMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateUserReq.class),
             f -> f.withMarshaller(UpdateUserRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ValidateWeakPasswordRequest, ValidateWeakPasswordResponse> validateWeakPassword =
+        genForvalidateWeakPassword();
+
+    private static HttpRequestDef<ValidateWeakPasswordRequest, ValidateWeakPasswordResponse> genForvalidateWeakPassword() {
+        // basic
+        HttpRequestDef.Builder<ValidateWeakPasswordRequest, ValidateWeakPasswordResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ValidateWeakPasswordRequest.class, ValidateWeakPasswordResponse.class)
+            .withName("ValidateWeakPassword")
+            .withUri("/v3/{project_id}/weak-password-verification")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<WeakPasswordReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(WeakPasswordReq.class),
+            f -> f.withMarshaller(ValidateWeakPasswordRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

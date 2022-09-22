@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 设置企业用户指定类型的阈值的请求体
+ * 设置企业用户指定类型的阈值的请求体。
  */
 public class SetQosThresholdReq {
 

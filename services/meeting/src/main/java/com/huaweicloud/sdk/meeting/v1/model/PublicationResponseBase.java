@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * 发布响应信息
+ * 发布响应信息。
  */
 public class PublicationResponseBase {
 
@@ -56,7 +56,7 @@ public class PublicationResponseBase {
     private Long endTime;
 
     /**
-     * 根据当前时间确定发布状态 - NOT_ONLINE-未上线 - PUBLISHING-发布中 - ALREADY_OFFLINE-已下线
+     * 根据当前时间确定发布状态。 - NOT_ONLINE-未上线 - PUBLISHING-发布中 - ALREADY_OFFLINE-已下线
      */
     public static final class PublishStatusEnum {
 
@@ -149,7 +149,7 @@ public class PublicationResponseBase {
     }
 
     /**
-     * 发布ID
+     * 发布ID。
      * @return id
      */
     public String getId() {
@@ -166,7 +166,7 @@ public class PublicationResponseBase {
     }
 
     /**
-     * 更新者
+     * 更新者。
      * @return lastUpdatedBy
      */
     public String getLastUpdatedBy() {
@@ -183,7 +183,7 @@ public class PublicationResponseBase {
     }
 
     /**
-     * 创建时间
+     * 创建时间。
      * @return createTime
      */
     public Long getCreateTime() {
@@ -200,7 +200,7 @@ public class PublicationResponseBase {
     }
 
     /**
-     * 更新时间
+     * 更新时间。
      * @return updateTime
      */
     public Long getUpdateTime() {
@@ -217,7 +217,7 @@ public class PublicationResponseBase {
     }
 
     /**
-     * 发布名称
+     * 发布名称。
      * @return publishName
      */
     public String getPublishName() {
@@ -234,7 +234,7 @@ public class PublicationResponseBase {
     }
 
     /**
-     * 发布范围
+     * 发布范围。
      * @return publishScope
      */
     public String getPublishScope() {
@@ -251,7 +251,7 @@ public class PublicationResponseBase {
     }
 
     /**
-     * 开始时间
+     * 开始时间。
      * @return startTime
      */
     public Long getStartTime() {
@@ -268,7 +268,7 @@ public class PublicationResponseBase {
     }
 
     /**
-     * 结束时间
+     * 结束时间。
      * @return endTime
      */
     public Long getEndTime() {
@@ -285,7 +285,7 @@ public class PublicationResponseBase {
     }
 
     /**
-     * 根据当前时间确定发布状态 - NOT_ONLINE-未上线 - PUBLISHING-发布中 - ALREADY_OFFLINE-已下线
+     * 根据当前时间确定发布状态。 - NOT_ONLINE-未上线 - PUBLISHING-发布中 - ALREADY_OFFLINE-已下线
      * @return publishStatus
      */
     public PublishStatusEnum getPublishStatus() {

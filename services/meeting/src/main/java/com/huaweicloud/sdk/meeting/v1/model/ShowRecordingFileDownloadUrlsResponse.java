@@ -41,7 +41,7 @@ public class ShowRecordingFileDownloadUrlsResponse extends SdkResponse {
     }
 
     /**
-     * 录制文件下载URL
+     * 录制文件下载链接。
      * @return recordUrls
      */
     public List<RecordDownloadInfoBO> getRecordUrls() {

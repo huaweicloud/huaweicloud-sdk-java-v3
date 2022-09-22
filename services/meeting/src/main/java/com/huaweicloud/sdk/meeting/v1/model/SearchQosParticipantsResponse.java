@@ -111,7 +111,7 @@ public class SearchQosParticipantsResponse extends SdkResponse {
     }
 
     /**
-     * QoS会议与会者列表。
+     * 会议与会者QoS告警列表。
      * @return data
      */
     public List<QosParticipantInfo> getData() {

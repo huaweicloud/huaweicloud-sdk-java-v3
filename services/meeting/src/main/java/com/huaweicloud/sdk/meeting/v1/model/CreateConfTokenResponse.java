@@ -59,7 +59,7 @@ public class CreateConfTokenResponse extends SdkResponse {
     }
 
     /**
-     * 地址本查询临时Token。
+     * 企业通讯录查询临时Token。
      * @return addressToken
      */
     public String getAddressToken() {
@@ -76,7 +76,7 @@ public class CreateConfTokenResponse extends SdkResponse {
     }
 
     /**
-     * global外网IP。
+     * 华为云会议Portal地址。
      * @return gloablPublicIP
      */
     public String getGloablPublicIP() {

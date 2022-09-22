@@ -37,7 +37,7 @@ public class CreateRecurringMeetingRequest {
     }
 
     /**
-     * 标识是否为第三方portal过来的请求
+     * 标识是否为第三方portal过来的请求。 > 该参数将废弃，请勿使用。 
      * @return xAuthorizationType
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -56,7 +56,7 @@ public class CreateRecurringMeetingRequest {
     }
 
     /**
-     * 用户的uuid（已在USG注册过的）
+     * 用户的UUID。 > 该参数将废弃，请勿使用。 
      * @return userUUID
      */
     public String getUserUUID() {
@@ -73,7 +73,7 @@ public class CreateRecurringMeetingRequest {
     }
 
     /**
-     * 用于区分到哪个HCSO站点鉴权。
+     * 用于区分到哪个HCSO站点鉴权。 > 该参数将废弃，请勿使用。 
      * @return xSiteId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

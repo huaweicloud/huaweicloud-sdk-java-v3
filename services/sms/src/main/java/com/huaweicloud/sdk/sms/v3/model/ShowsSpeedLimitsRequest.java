@@ -21,7 +21,7 @@ public class ShowsSpeedLimitsRequest {
     }
 
     /**
-     * 查询限速信息的任务id
+     * 查询限速信息的任务ID
      * @return taskId
      */
     public String getTaskId() {

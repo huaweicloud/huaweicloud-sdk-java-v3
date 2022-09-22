@@ -24,7 +24,7 @@ public class ServerDisk {
     private String name;
 
     /**
-     * 磁盘的分区类型，添加源端时源端磁盘必选
+     * 磁盘的分区类型，添加源端时源端磁盘必选 MBR：mbr格式 GPT：gpt格式
      */
     public static final class PartitionStyleEnum {
 
@@ -106,7 +106,7 @@ public class ServerDisk {
     private PartitionStyleEnum partitionStyle;
 
     /**
-     * 磁盘类型
+     * 磁盘类型 BOOT：BOOT设备 OS：系统设备
      */
     public static final class DeviceUseEnum {
 
@@ -212,6 +212,11 @@ public class ServerDisk {
 
     private String relationName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "inode_size")
+
+    private Integer inodeSize;
+
     public ServerDisk withName(String name) {
         this.name = name;
         return this;
@@ -235,7 +240,7 @@ public class ServerDisk {
     }
 
     /**
-     * 磁盘的分区类型，添加源端时源端磁盘必选
+     * 磁盘的分区类型，添加源端时源端磁盘必选 MBR：mbr格式 GPT：gpt格式
      * @return partitionStyle
      */
     public PartitionStyleEnum getPartitionStyle() {
@@ -252,7 +257,7 @@ public class ServerDisk {
     }
 
     /**
-     * 磁盘类型
+     * 磁盘类型 BOOT：BOOT设备 OS：系统设备
      * @return deviceUse
      */
     public DeviceUseEnum getDeviceUse() {
@@ -368,6 +373,25 @@ public class ServerDisk {
         this.relationName = relationName;
     }
 
+    public ServerDisk withInodeSize(Integer inodeSize) {
+        this.inodeSize = inodeSize;
+        return this;
+    }
+
+    /**
+     * inode数量
+     * minimum: 0
+     * maximum: 4294967296
+     * @return inodeSize
+     */
+    public Integer getInodeSize() {
+        return inodeSize;
+    }
+
+    public void setInodeSize(Integer inodeSize) {
+        this.inodeSize = inodeSize;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -383,12 +407,14 @@ public class ServerDisk {
             && Objects.equals(this.usedSize, serverDisk.usedSize)
             && Objects.equals(this.physicalVolumes, serverDisk.physicalVolumes)
             && Objects.equals(this.osDisk, serverDisk.osDisk)
-            && Objects.equals(this.relationName, serverDisk.relationName);
+            && Objects.equals(this.relationName, serverDisk.relationName)
+            && Objects.equals(this.inodeSize, serverDisk.inodeSize);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, partitionStyle, deviceUse, size, usedSize, physicalVolumes, osDisk, relationName);
+        return Objects
+            .hash(name, partitionStyle, deviceUse, size, usedSize, physicalVolumes, osDisk, relationName, inodeSize);
     }
 
     @Override
@@ -403,6 +429,7 @@ public class ServerDisk {
         sb.append("    physicalVolumes: ").append(toIndentedString(physicalVolumes)).append("\n");
         sb.append("    osDisk: ").append(toIndentedString(osDisk)).append("\n");
         sb.append("    relationName: ").append(toIndentedString(relationName)).append("\n");
+        sb.append("    inodeSize: ").append(toIndentedString(inodeSize)).append("\n");
         sb.append("}");
         return sb.toString();
     }

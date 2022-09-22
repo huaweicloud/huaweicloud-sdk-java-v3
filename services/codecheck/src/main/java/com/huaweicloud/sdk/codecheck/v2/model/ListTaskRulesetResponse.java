@@ -17,14 +17,14 @@ public class ListTaskRulesetResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private List<ListTaskRulesetRes> body = null;
+    private List<TaskRulesetInfo> body = null;
 
-    public ListTaskRulesetResponse withBody(List<ListTaskRulesetRes> body) {
+    public ListTaskRulesetResponse withBody(List<TaskRulesetInfo> body) {
         this.body = body;
         return this;
     }
 
-    public ListTaskRulesetResponse addBodyItem(ListTaskRulesetRes bodyItem) {
+    public ListTaskRulesetResponse addBodyItem(TaskRulesetInfo bodyItem) {
         if (this.body == null) {
             this.body = new ArrayList<>();
         }
@@ -32,7 +32,7 @@ public class ListTaskRulesetResponse extends SdkResponse {
         return this;
     }
 
-    public ListTaskRulesetResponse withBody(Consumer<List<ListTaskRulesetRes>> bodySetter) {
+    public ListTaskRulesetResponse withBody(Consumer<List<TaskRulesetInfo>> bodySetter) {
         if (this.body == null) {
             this.body = new ArrayList<>();
         }
@@ -44,11 +44,11 @@ public class ListTaskRulesetResponse extends SdkResponse {
      * Get body
      * @return body
      */
-    public List<ListTaskRulesetRes> getBody() {
+    public List<TaskRulesetInfo> getBody() {
         return body;
     }
 
-    public void setBody(List<ListTaskRulesetRes> body) {
+    public void setBody(List<TaskRulesetInfo> body) {
         this.body = body;
     }
 

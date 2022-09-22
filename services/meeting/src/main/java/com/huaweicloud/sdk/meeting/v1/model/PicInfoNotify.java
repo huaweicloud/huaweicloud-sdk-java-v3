@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 子画面信息
+ * 子画面信息。
  */
 public class PicInfoNotify {
 
@@ -34,7 +34,7 @@ public class PicInfoNotify {
     }
 
     /**
-     * 多画面中每个画面的编号，编号从1开始
+     * 多画面中每个画面的编号，编号从1开始。
      * @return index
      */
     public Integer getIndex() {
@@ -67,7 +67,7 @@ public class PicInfoNotify {
     }
 
     /**
-     * 每个画面中会话标识，即callNumber。
+     * 每个画面中的与会者SIP号码。SIP号码可以通过[[查询企业通讯](https://support.huaweicloud.com/api-meeting/meeting_21_0512.html)](tag:hws)[[查询企业通讯](https://support.huaweicloud.com/intl/zh-cn/api-meeting/meeting_21_0512.html)](tag:hk)获取。
      * @return id
      */
     public List<String> getId() {
@@ -84,7 +84,7 @@ public class PicInfoNotify {
     }
 
     /**
-     * 是否为辅流 0： 不是辅流 1： 是辅流
+     * 是否为辅流。 * 0： 不是辅流 * 1： 是辅流 
      * @return share
      */
     public Integer getShare() {

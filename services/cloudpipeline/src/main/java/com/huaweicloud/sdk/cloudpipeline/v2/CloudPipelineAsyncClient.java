@@ -184,38 +184,6 @@ public class CloudPipelineAsyncClient {
     }
 
     /**
-     * register注册Slave接口
-     *
-     * 注册创建Slave接口
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param RegisterAgentRequest 请求对象
-     * @return CompletableFuture<RegisterAgentResponse>
-     */
-    public CompletableFuture<RegisterAgentResponse> registerAgentAsync(RegisterAgentRequest request) {
-        return hcClient.asyncInvokeHttp(request, CloudPipelineMeta.registerAgent);
-    }
-
-    /**
-     * register注册Slave接口
-     *
-     * 注册创建Slave接口
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param RegisterAgentRequest 请求对象
-     * @return AsyncInvoker<RegisterAgentRequest, RegisterAgentResponse>
-     */
-    public AsyncInvoker<RegisterAgentRequest, RegisterAgentResponse> registerAgentAsyncInvoker(
-        RegisterAgentRequest request) {
-        return new AsyncInvoker<RegisterAgentRequest, RegisterAgentResponse>(request, CloudPipelineMeta.registerAgent,
-            hcClient);
-    }
-
-    /**
      * 删除流水线
      *
      * 根据id删除流水线
@@ -245,38 +213,6 @@ public class CloudPipelineAsyncClient {
         RemovePipelineRequest request) {
         return new AsyncInvoker<RemovePipelineRequest, RemovePipelineResponse>(request,
             CloudPipelineMeta.removePipeline, hcClient);
-    }
-
-    /**
-     * Agent状态查询
-     *
-     * Agent状态查询
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param ShowAgentStatusRequest 请求对象
-     * @return CompletableFuture<ShowAgentStatusResponse>
-     */
-    public CompletableFuture<ShowAgentStatusResponse> showAgentStatusAsync(ShowAgentStatusRequest request) {
-        return hcClient.asyncInvokeHttp(request, CloudPipelineMeta.showAgentStatus);
-    }
-
-    /**
-     * Agent状态查询
-     *
-     * Agent状态查询
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param ShowAgentStatusRequest 请求对象
-     * @return AsyncInvoker<ShowAgentStatusRequest, ShowAgentStatusResponse>
-     */
-    public AsyncInvoker<ShowAgentStatusRequest, ShowAgentStatusResponse> showAgentStatusAsyncInvoker(
-        ShowAgentStatusRequest request) {
-        return new AsyncInvoker<ShowAgentStatusRequest, ShowAgentStatusResponse>(request,
-            CloudPipelineMeta.showAgentStatus, hcClient);
     }
 
     /**

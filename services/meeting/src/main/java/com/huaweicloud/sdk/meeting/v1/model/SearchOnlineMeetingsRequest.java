@@ -51,7 +51,7 @@ public class SearchOnlineMeetingsRequest {
     }
 
     /**
-     * 用户UUID。 仅管理员有权限查询权限范围内的所有帐号，普通帐号仅能查询自己的。
+     * 用户的UUID。 > 该参数将废弃，请勿使用。
      * @return userUUID
      */
     public String getUserUUID() {
@@ -68,7 +68,7 @@ public class SearchOnlineMeetingsRequest {
     }
 
     /**
-     * 指定返回的记录索引。该值必须大于等于0； 默认为0。
+     * 查询偏移量。默认为0。
      * @return offset
      */
     public Integer getOffset() {
@@ -85,7 +85,7 @@ public class SearchOnlineMeetingsRequest {
     }
 
     /**
-     * 指定返回的记录数。默认是20，最大值为500。
+     * 查询数量。默认是20，最大500条。
      * @return limit
      */
     public Integer getLimit() {
@@ -102,7 +102,7 @@ public class SearchOnlineMeetingsRequest {
     }
 
     /**
-     * 指定是否查询企业下所有用户的会议记录。 如果登录帐号不是企业管理员，则该字段无效。 如果该字段为true，则userUUID字段无效。 default : false
+     * 指定是否查询企业下所有用户的在线会议。默认值是false。 * true：查询所有用户的在线会议 * false：仅查询管理员自己的在线会议 > 仅对企业管理员生效。
      * @return queryAll
      */
     public Boolean getQueryAll() {
@@ -119,7 +119,7 @@ public class SearchOnlineMeetingsRequest {
     }
 
     /**
-     * 查询用来当作关键词的字符串。会议主题、会议预约人和会议ID等可作为搜索内容。
+     * 查询条件 。会议主题、会议预约人和会议ID等可作为搜索内容。长度限制为1-128个字符。
      * @return searchKey
      */
     public String getSearchKey() {
@@ -136,7 +136,7 @@ public class SearchOnlineMeetingsRequest {
     }
 
     /**
-     * 标识是否为第三方portal过来的请求。
+     * 标识是否为第三方portal过来的请求。 > 该参数将废弃，请勿使用。 
      * @return xAuthorizationType
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -155,7 +155,7 @@ public class SearchOnlineMeetingsRequest {
     }
 
     /**
-     * 用于区分到哪个HCSO站点鉴权。
+     * 用于区分到哪个HCSO站点鉴权。 > 该参数将废弃，请勿使用。 
      * @return xSiteId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

@@ -20,6 +20,39 @@ public class ModerationAsyncClient {
     }
 
     /**
+     * 图片内容审核
+     *
+     * 分析并识别用户上传的图片是否有敏感内容（如色情、政治等），并将识别结果返回给用户
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CheckImageModerationRequest 请求对象
+     * @return CompletableFuture<CheckImageModerationResponse>
+     */
+    public CompletableFuture<CheckImageModerationResponse> checkImageModerationAsync(
+        CheckImageModerationRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModerationMeta.checkImageModeration);
+    }
+
+    /**
+     * 图片内容审核
+     *
+     * 分析并识别用户上传的图片是否有敏感内容（如色情、政治等），并将识别结果返回给用户
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CheckImageModerationRequest 请求对象
+     * @return AsyncInvoker<CheckImageModerationRequest, CheckImageModerationResponse>
+     */
+    public AsyncInvoker<CheckImageModerationRequest, CheckImageModerationResponse> checkImageModerationAsyncInvoker(
+        CheckImageModerationRequest request) {
+        return new AsyncInvoker<CheckImageModerationRequest, CheckImageModerationResponse>(request,
+            ModerationMeta.checkImageModeration, hcClient);
+    }
+
+    /**
      * 创建音频内容审核作业
      *
      * 分析并识别用户上传的音频内容是否有敏感内容（如色情、政治等），并将识别结果返回给用户

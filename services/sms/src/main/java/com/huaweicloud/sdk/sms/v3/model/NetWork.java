@@ -155,7 +155,7 @@ public class NetWork {
     }
 
     /**
-     * 数据库Id
+     * 数据库ID
      * @return id
      */
     public String getId() {

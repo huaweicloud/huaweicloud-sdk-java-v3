@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 与会者列表
+ * 与会者列表。
  */
 public class PageParticipant {
 
@@ -55,7 +55,7 @@ public class PageParticipant {
     }
 
     /**
-     * 与会者信息。
+     * 被邀请的与会者信息。包含预约会议时邀请的与会者和会中主持人邀请的与会者。
      * @return data
      */
     public List<ParticipantInfo> getData() {
@@ -72,7 +72,7 @@ public class PageParticipant {
     }
 
     /**
-     * 记录数偏移，这一页之前共有多少条。
+     * 查询偏移量。
      * @return offset
      */
     public Integer getOffset() {

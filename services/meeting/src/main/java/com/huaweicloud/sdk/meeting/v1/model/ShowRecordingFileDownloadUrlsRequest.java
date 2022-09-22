@@ -41,7 +41,7 @@ public class ShowRecordingFileDownloadUrlsRequest {
     }
 
     /**
-     * 会议的ConfUUID(通过查询录制文件列表获取)。
+     * 会议UUID(通过[[查询录制列表](https://support.huaweicloud.com/api-meeting/meeting_21_0048.html)](tag:hws)[[查询录制列表](https://support.huaweicloud.com/intl/zh-cn/api-meeting/meeting_21_0048.html)](tag:hk)获取)。
      * @return confUUID
      */
     public String getConfUUID() {
@@ -58,7 +58,7 @@ public class ShowRecordingFileDownloadUrlsRequest {
     }
 
     /**
-     * 数据偏移记录。
+     * 查询偏移量。默认为0。
      * @return offset
      */
     public Integer getOffset() {
@@ -75,7 +75,7 @@ public class ShowRecordingFileDownloadUrlsRequest {
     }
 
     /**
-     * 指定返回的记录数，最大500条。
+     * 查询数量。默认是20，最大500条。
      * @return limit
      */
     public Integer getLimit() {
@@ -92,7 +92,7 @@ public class ShowRecordingFileDownloadUrlsRequest {
     }
 
     /**
-     * 标识是否为第三方portal过来的请求。
+     * 标识是否为第三方portal过来的请求。 > 该参数将废弃，请勿使用。 
      * @return xAuthorizationType
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -111,7 +111,7 @@ public class ShowRecordingFileDownloadUrlsRequest {
     }
 
     /**
-     * 用于区分到哪个HCSO站点鉴权。
+     * 用于区分到哪个HCSO站点鉴权。 > 该参数将废弃，请勿使用。 
      * @return xSiteId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

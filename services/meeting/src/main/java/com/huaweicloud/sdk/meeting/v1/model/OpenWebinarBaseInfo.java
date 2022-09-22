@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 会议信息 （包含 会议基本信息、基本配置、入会信息
+ * 网络研讨会信息。
  */
 public class OpenWebinarBaseInfo {
 
@@ -121,7 +121,7 @@ public class OpenWebinarBaseInfo {
     }
 
     /**
-     * 会议ID。长度限制为32个字符。
+     * 网络研讨会ID。
      * @return conferenceId
      */
     public String getConferenceId() {
@@ -138,7 +138,7 @@ public class OpenWebinarBaseInfo {
     }
 
     /**
-     * 企业id
+     * 企业ID。
      * @return corpId
      */
     public String getCorpId() {
@@ -155,7 +155,7 @@ public class OpenWebinarBaseInfo {
     }
 
     /**
-     * 主题
+     * 网络研讨会主题。
      * @return subject
      */
     public String getSubject() {
@@ -172,7 +172,7 @@ public class OpenWebinarBaseInfo {
     }
 
     /**
-     * 描述
+     * 网络研讨会描述。
      * @return description
      */
     public String getDescription() {
@@ -189,7 +189,7 @@ public class OpenWebinarBaseInfo {
     }
 
     /**
-     * 开始时间
+     * 网络研讨会开始时间（UTC时间），格式“yyyy-MM-dd HH:mm”。
      * @return startTime
      */
     public String getStartTime() {
@@ -206,7 +206,7 @@ public class OpenWebinarBaseInfo {
     }
 
     /**
-     * 时长，单位分钟
+     * 网络研讨会持续时长，单位分钟，取值范围[15,1440]。
      * @return duration
      */
     public Integer getDuration() {
@@ -223,7 +223,7 @@ public class OpenWebinarBaseInfo {
     }
 
     /**
-     * 时区ID
+     * 会议通知中会议时间的时区信息。时区信息，参考[[时区映射关系](https://support.huaweicloud.com/api-meeting/meeting_21_0110.html#ZH-CN_TOPIC_0212714472__table137407441463)](tag:hws)[[时区映射关系](https://support.huaweicloud.com/intl/zh-cn/api-meeting/meeting_21_0110.html#ZH-CN_TOPIC_0212714472__table137407441463)](tag:hk)。 > * 举例：“timeZoneID”:\"26\"，则通过华为云会议发送的会议通知中的时间将会标记为如“2021/11/11 星期四 00:00 - 02:00 (GMT) 格林威治标准时间:都柏林, 爱丁堡, 里斯本, 伦敦”。 
      * @return timeZoneId
      */
     public Integer getTimeZoneId() {
@@ -257,7 +257,7 @@ public class OpenWebinarBaseInfo {
     }
 
     /**
-     * 会议预订者ID
+     * 网络研讨会预订者的用户UUID。
      * @return scheduserId
      */
     public String getScheduserId() {
@@ -274,7 +274,7 @@ public class OpenWebinarBaseInfo {
     }
 
     /**
-     * 预订人部门
+     * 预订者部门命名。
      * @return deptName
      */
     public String getDeptName() {
@@ -291,7 +291,7 @@ public class OpenWebinarBaseInfo {
     }
 
     /**
-     * 会议预订者帐号名称。长度最大限制为96个字符。
+     * 预订者名称。
      * @return scheduserName
      */
     public String getScheduserName() {
@@ -308,7 +308,7 @@ public class OpenWebinarBaseInfo {
     }
 
     /**
-     * 网络研讨会资源名
+     * 网络研讨会VMR名称。
      * @return vmrPkgName
      */
     public String getVmrPkgName() {
@@ -325,7 +325,7 @@ public class OpenWebinarBaseInfo {
     }
 
     /**
-     * 入会范围开关
+     * 入会范围开关。
      * @return callRestriction
      */
     public Boolean getCallRestriction() {
@@ -342,7 +342,7 @@ public class OpenWebinarBaseInfo {
     }
 
     /**
-     * 主持人、嘉宾入会范围  0: 所有用户 1: 非匿名用户（手机pstn入会视为匿名入会） 2: 企业内用户 3: 被邀请用户。
+     * 主持人、嘉宾入会范围。 * 0: 所有用户 * 2: 企业内用户 * 3: 被邀请用户 
      * @return scope
      */
     public Integer getScope() {
@@ -359,7 +359,7 @@ public class OpenWebinarBaseInfo {
     }
 
     /**
-     * 观众入会范围 0: 所有用户 2: 企业内用户和被邀请用户。
+     * 观众入会范围。 * 0: 所有用户 * 2: 企业内用户 
      * @return audienceScope
      */
     public Integer getAudienceScope() {
@@ -393,7 +393,7 @@ public class OpenWebinarBaseInfo {
     }
 
     /**
-     * 主持人密码。
+     * 主持人入会密码。
      * @return chairPasswd
      */
     public String getChairPasswd() {
@@ -427,7 +427,7 @@ public class OpenWebinarBaseInfo {
     }
 
     /**
-     * 嘉宾密码。
+     * 嘉宾入会密码。
      * @return guestPasswd
      */
     public String getGuestPasswd() {
@@ -461,7 +461,7 @@ public class OpenWebinarBaseInfo {
     }
 
     /**
-     * 观众密码。
+     * 观众入会密码。
      * @return audiencePasswd
      */
     public String getAudiencePasswd() {

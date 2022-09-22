@@ -60,7 +60,7 @@ public class ShowPublicationResponse extends SdkResponse {
     private Long endTime;
 
     /**
-     * 根据当前时间确定发布状态 - NOT_ONLINE-未上线 - PUBLISHING-发布中 - ALREADY_OFFLINE-已下线
+     * 根据当前时间确定发布状态。 - NOT_ONLINE-未上线 - PUBLISHING-发布中 - ALREADY_OFFLINE-已下线
      */
     public static final class PublishStatusEnum {
 
@@ -168,7 +168,7 @@ public class ShowPublicationResponse extends SdkResponse {
     }
 
     /**
-     * 发布ID
+     * 发布ID。
      * @return id
      */
     public String getId() {
@@ -185,7 +185,7 @@ public class ShowPublicationResponse extends SdkResponse {
     }
 
     /**
-     * 更新者
+     * 更新者。
      * @return lastUpdatedBy
      */
     public String getLastUpdatedBy() {
@@ -202,7 +202,7 @@ public class ShowPublicationResponse extends SdkResponse {
     }
 
     /**
-     * 创建时间
+     * 创建时间。
      * @return createTime
      */
     public Long getCreateTime() {
@@ -219,7 +219,7 @@ public class ShowPublicationResponse extends SdkResponse {
     }
 
     /**
-     * 更新时间
+     * 更新时间。
      * @return updateTime
      */
     public Long getUpdateTime() {
@@ -236,7 +236,7 @@ public class ShowPublicationResponse extends SdkResponse {
     }
 
     /**
-     * 发布名称
+     * 发布名称。
      * @return publishName
      */
     public String getPublishName() {
@@ -253,7 +253,7 @@ public class ShowPublicationResponse extends SdkResponse {
     }
 
     /**
-     * 发布范围
+     * 发布范围。
      * @return publishScope
      */
     public String getPublishScope() {
@@ -270,7 +270,7 @@ public class ShowPublicationResponse extends SdkResponse {
     }
 
     /**
-     * 开始时间
+     * 开始时间。
      * @return startTime
      */
     public Long getStartTime() {
@@ -287,7 +287,7 @@ public class ShowPublicationResponse extends SdkResponse {
     }
 
     /**
-     * 结束时间
+     * 结束时间。
      * @return endTime
      */
     public Long getEndTime() {
@@ -304,7 +304,7 @@ public class ShowPublicationResponse extends SdkResponse {
     }
 
     /**
-     * 根据当前时间确定发布状态 - NOT_ONLINE-未上线 - PUBLISHING-发布中 - ALREADY_OFFLINE-已下线
+     * 根据当前时间确定发布状态。 - NOT_ONLINE-未上线 - PUBLISHING-发布中 - ALREADY_OFFLINE-已下线
      * @return publishStatus
      */
     public PublishStatusEnum getPublishStatus() {
@@ -337,7 +337,7 @@ public class ShowPublicationResponse extends SdkResponse {
     }
 
     /**
-     * 发布节目ID列表
+     * 发布节目ID列表。
      * @return programList
      */
     public List<ProgramResponseBase> getProgramList() {
@@ -370,7 +370,7 @@ public class ShowPublicationResponse extends SdkResponse {
     }
 
     /**
-     * 发布部门列表
+     * 发布部门列表。
      * @return deptList
      */
     public List<PublishDeptResponseDTO> getDeptList() {
@@ -403,7 +403,7 @@ public class ShowPublicationResponse extends SdkResponse {
     }
 
     /**
-     * 发布设备列表
+     * 发布设备列表。
      * @return deviceList
      */
     public List<PublishDeviceResponseDTO> getDeviceList() {

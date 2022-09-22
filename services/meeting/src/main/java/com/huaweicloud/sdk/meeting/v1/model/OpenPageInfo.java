@@ -48,7 +48,7 @@ public class OpenPageInfo {
     }
 
     /**
-     * 查询个数。
+     * 每页的记录数。
      * @return limit
      */
     public Integer getLimit() {
@@ -65,7 +65,7 @@ public class OpenPageInfo {
     }
 
     /**
-     * 总记录数
+     * 总记录数。
      * @return count
      */
     public Long getCount() {

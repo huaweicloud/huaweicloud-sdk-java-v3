@@ -21,7 +21,7 @@ public class DeleteTaskRequest {
     }
 
     /**
-     * 要删除的迁移任务id
+     * 要删除的迁移任务ID
      * @return taskId
      */
     public String getTaskId() {

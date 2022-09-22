@@ -25,7 +25,7 @@ public class ShowTaskResponse extends SdkResponse {
     private String name;
 
     /**
-     * 任务类型，创建时必选，更新时可选
+     * 任务类型，创建时必选，更新时可选 MIGRATE_FILE:文件级迁移 MIGRATE_BLOCK:块级迁移 
      */
     public static final class TypeEnum {
 
@@ -282,6 +282,11 @@ public class ShowTaskResponse extends SdkResponse {
     private PriorityEnum priority;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "speed_limit")
+
+    private Integer speedLimit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region_id")
 
     private String regionId;
@@ -324,7 +329,7 @@ public class ShowTaskResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_server")
 
-    private SourceServer sourceServer;
+    private SourceServerResponse sourceServer;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_server")
@@ -429,7 +434,7 @@ public class ShowTaskResponse extends SdkResponse {
     }
 
     /**
-     * 任务类型，创建时必选，更新时可选
+     * 任务类型，创建时必选，更新时可选 MIGRATE_FILE:文件级迁移 MIGRATE_BLOCK:块级迁移 
      * @return type
      */
     public TypeEnum getType() {
@@ -463,7 +468,7 @@ public class ShowTaskResponse extends SdkResponse {
     }
 
     /**
-     * 迁移任务id
+     * 迁移任务ID
      * @return id
      */
     public String getId() {
@@ -491,6 +496,25 @@ public class ShowTaskResponse extends SdkResponse {
 
     public void setPriority(PriorityEnum priority) {
         this.priority = priority;
+    }
+
+    public ShowTaskResponse withSpeedLimit(Integer speedLimit) {
+        this.speedLimit = speedLimit;
+        return this;
+    }
+
+    /**
+     * 迁移限速
+     * minimum: 0
+     * maximum: 65535
+     * @return speedLimit
+     */
+    public Integer getSpeedLimit() {
+        return speedLimit;
+    }
+
+    public void setSpeedLimit(Integer speedLimit) {
+        this.speedLimit = speedLimit;
     }
 
     public ShowTaskResponse withRegionId(String regionId) {
@@ -533,7 +557,7 @@ public class ShowTaskResponse extends SdkResponse {
     }
 
     /**
-     * 企业项目id
+     * 企业项目ID
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -629,14 +653,14 @@ public class ShowTaskResponse extends SdkResponse {
         this.vmTemplateId = vmTemplateId;
     }
 
-    public ShowTaskResponse withSourceServer(SourceServer sourceServer) {
+    public ShowTaskResponse withSourceServer(SourceServerResponse sourceServer) {
         this.sourceServer = sourceServer;
         return this;
     }
 
-    public ShowTaskResponse withSourceServer(Consumer<SourceServer> sourceServerSetter) {
+    public ShowTaskResponse withSourceServer(Consumer<SourceServerResponse> sourceServerSetter) {
         if (this.sourceServer == null) {
-            this.sourceServer = new SourceServer();
+            this.sourceServer = new SourceServerResponse();
             sourceServerSetter.accept(this.sourceServer);
         }
 
@@ -647,11 +671,11 @@ public class ShowTaskResponse extends SdkResponse {
      * Get sourceServer
      * @return sourceServer
      */
-    public SourceServer getSourceServer() {
+    public SourceServerResponse getSourceServer() {
         return sourceServer;
     }
 
-    public void setSourceServer(SourceServer sourceServer) {
+    public void setSourceServer(SourceServerResponse sourceServer) {
         this.sourceServer = sourceServer;
     }
 
@@ -907,7 +931,7 @@ public class ShowTaskResponse extends SdkResponse {
     }
 
     /**
-     * 目的端的快照id
+     * 目的端的快照ID
      * @return targetSnapshotId
      */
     public String getTargetSnapshotId() {
@@ -989,6 +1013,7 @@ public class ShowTaskResponse extends SdkResponse {
         return Objects.equals(this.name, showTaskResponse.name) && Objects.equals(this.type, showTaskResponse.type)
             && Objects.equals(this.osType, showTaskResponse.osType) && Objects.equals(this.id, showTaskResponse.id)
             && Objects.equals(this.priority, showTaskResponse.priority)
+            && Objects.equals(this.speedLimit, showTaskResponse.speedLimit)
             && Objects.equals(this.regionId, showTaskResponse.regionId)
             && Objects.equals(this.startTargetServer, showTaskResponse.startTargetServer)
             && Objects.equals(this.enterpriseProjectId, showTaskResponse.enterpriseProjectId)
@@ -1023,6 +1048,7 @@ public class ShowTaskResponse extends SdkResponse {
             osType,
             id,
             priority,
+            speedLimit,
             regionId,
             startTargetServer,
             enterpriseProjectId,
@@ -1059,6 +1085,7 @@ public class ShowTaskResponse extends SdkResponse {
         sb.append("    osType: ").append(toIndentedString(osType)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
+        sb.append("    speedLimit: ").append(toIndentedString(speedLimit)).append("\n");
         sb.append("    regionId: ").append(toIndentedString(regionId)).append("\n");
         sb.append("    startTargetServer: ").append(toIndentedString(startTargetServer)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");

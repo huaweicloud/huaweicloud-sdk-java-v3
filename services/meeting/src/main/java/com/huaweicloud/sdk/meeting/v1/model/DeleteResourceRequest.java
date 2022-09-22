@@ -39,7 +39,7 @@ public class DeleteResourceRequest {
     }
 
     /**
-     * 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用uuId，若不携带，则后台自动生成
+     * 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用UUID，若不携带，则后台自动生成。
      * @return xRequestId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -58,7 +58,7 @@ public class DeleteResourceRequest {
     }
 
     /**
-     * 语言参数，默认为中文zh-CN, 英文为en-US
+     * 语言参数，默认为中文zh-CN，英文为en-US。
      * @return acceptLanguage
      */
     public String getAcceptLanguage() {
@@ -75,7 +75,7 @@ public class DeleteResourceRequest {
     }
 
     /**
-     * 企业id
+     * 企业id。
      * @return corpId
      */
     public String getCorpId() {
@@ -108,7 +108,7 @@ public class DeleteResourceRequest {
     }
 
     /**
-     * 待删除的资源Id列表，最多支持批量处理100个
+     * Get body
      * @return body
      */
     public List<String> getBody() {

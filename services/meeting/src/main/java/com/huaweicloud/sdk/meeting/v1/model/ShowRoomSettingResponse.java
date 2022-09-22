@@ -52,7 +52,7 @@ public class ShowRoomSettingResponse extends SdkResponse {
     }
 
     /**
-     * 直播介绍, 最大不超过500个字符
+     * 网络研讨会介绍。
      * @return roomIntroduce
      */
     public String getRoomIntroduce() {
@@ -69,7 +69,7 @@ public class ShowRoomSettingResponse extends SdkResponse {
     }
 
     /**
-     * 企业Logo（文件id）,不超过32字符
+     * 企业Logo的文件id。
      * @return cropLogoId
      */
     public String getCropLogoId() {
@@ -86,7 +86,7 @@ public class ShowRoomSettingResponse extends SdkResponse {
     }
 
     /**
-     * 封面内容(文件id)，不超过32字符
+     * 欢迎界面的文件id。
      * @return coverPictureId
      */
     public String getCoverPictureId() {
@@ -103,7 +103,7 @@ public class ShowRoomSettingResponse extends SdkResponse {
     }
 
     /**
-     * 显示观众人数的模式。默认值为real_time - none:不显示 - real_time:实时显示 
+     * 显示观众人数的模式。默认值为real_time。 - none: 不显示 - real_time: 实时显示 
      * @return showAudienceMode
      */
     public String getShowAudienceMode() {
@@ -120,7 +120,7 @@ public class ShowRoomSettingResponse extends SdkResponse {
     }
 
     /**
-     * 智能倍增开关。默认值为Y - Y 开启智能倍增 - N 关闭智能倍增 
+     * 智能倍增开关。默认值为Y。 - Y 开启智能倍增 - N 关闭智能倍增 
      * @return isRedoubleOpen
      */
     public String getIsRedoubleOpen() {
@@ -137,7 +137,7 @@ public class ShowRoomSettingResponse extends SdkResponse {
     }
 
     /**
-     * 基础设置人数(直播间没人时显示的人数). 取值范围为[0, 10000]。默认值为0
+     * 基础设置人数(网络研讨会没人时显示的人数)。默认值为0。取值范围为[0, 10000]。
      * @return baseAudienceCount
      */
     public Integer getBaseAudienceCount() {
@@ -154,7 +154,7 @@ public class ShowRoomSettingResponse extends SdkResponse {
     }
 
     /**
-     * 设置倍数(基础人数+真实人数*倍数). 取值范围为[0, 10]，取1位小数。默认值为1.0
+     * 设置倍数(基础人数+真实人数*倍数)。默认值为1.0。 取值范围为[0, 10]，取1位小数。
      * @return multiple
      */
     public Double getMultiple() {

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 启停录制消息体。
+ * 启停会议录制请求。
  */
 public class RestSetRecordReqBody {
 
@@ -21,7 +21,7 @@ public class RestSetRecordReqBody {
     }
 
     /**
-     * 默认值为0。 - 0: 停止会议录制。 - 1: 启动会议录制。
+     * 录制启停开关。默认值为0。 - 0: 停止会议录制 - 1: 启动会议录制
      * @return isRecord
      */
     public Integer getIsRecord() {

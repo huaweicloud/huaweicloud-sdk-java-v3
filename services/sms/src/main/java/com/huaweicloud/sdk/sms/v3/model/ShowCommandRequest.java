@@ -21,7 +21,7 @@ public class ShowCommandRequest {
     }
 
     /**
-     * 命令对应的服务器id
+     * 命令对应的服务器ID
      * @return serverId
      */
     public String getServerId() {

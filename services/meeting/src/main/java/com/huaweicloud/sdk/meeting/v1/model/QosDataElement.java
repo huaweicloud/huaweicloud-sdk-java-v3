@@ -70,7 +70,7 @@ public class QosDataElement {
     }
 
     /**
-     * 该时间点是否有阈值告警. true: 阈值告警 false: 无阈值告警。
+     * 该时间点是否有阈值告警。 * true: 阈值告警 * false: 无阈值告警 
      * @return alarm
      */
     public Boolean getAlarm() {

@@ -31,7 +31,7 @@ public class ResetPwdReqDTOV1 {
     }
 
     /**
-     * 用户身份信息（手机号码或邮箱账号或用户真实账号） maxLength：255 minLength：1 
+     * 用户身份信息（手机号码或邮箱帐号或用户真实帐号）。 
      * @return user
      */
     public String getUser() {
@@ -48,7 +48,7 @@ public class ResetPwdReqDTOV1 {
     }
 
     /**
-     * 用户新的登录密码 密码要求： * 长度范围要求8~32 * 至少包含大小写字母、数字 * 不能包含3个以上重复字符 * 密码不能包含与其对应的用户名（不区分大小写）以及逆序的用户名（不区分大小写） 
+     * 用户新的登录密码。 密码要求： * 长度范围要求8~32 * 至少包含大小写字母、数字 * 不能包含3个以上重复字符 * 密码不能包含与其对应的用户名（不区分大小写）以及逆序的用户名（不区分大小写） 
      * @return newPwd
      */
     public String getNewPwd() {
@@ -65,7 +65,7 @@ public class ResetPwdReqDTOV1 {
     }
 
     /**
-     * * 1:临时密码，重置完密码后登录Web Portal根据配置可能需要强制修改密码 * 非1：正式密码，重置完密码后登录Web Portal不需要强制修改密码。 
+     * * 1：临时密码，重置完密码后登录Web Portal根据配置可能需要强制修改密码 * 非1：正式密码，重置完密码后登录Web Portal不需要强制修改密码 
      * @return passWordType
      */
     public Integer getPassWordType() {

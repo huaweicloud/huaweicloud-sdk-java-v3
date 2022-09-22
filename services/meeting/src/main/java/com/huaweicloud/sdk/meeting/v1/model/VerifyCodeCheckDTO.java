@@ -26,7 +26,7 @@ public class VerifyCodeCheckDTO {
     }
 
     /**
-     * 必须和发送验证码时带的用户身份信息相同 maxLength：255 minLength：1 
+     * 必须和发送验证码时带的用户身份信息相同。 
      * @return user
      */
     public String getUser() {
@@ -43,7 +43,7 @@ public class VerifyCodeCheckDTO {
     }
 
     /**
-     * 验证码 maxLength：32 minLength：1 
+     * 验证码。 
      * @return code
      */
     public String getCode() {

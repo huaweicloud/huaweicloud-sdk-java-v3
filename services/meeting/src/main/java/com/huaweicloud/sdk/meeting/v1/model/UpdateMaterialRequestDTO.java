@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 更新素材信息请求（只能修改素材名称）
+ * 信息窗素材信息。
  */
 public class UpdateMaterialRequestDTO {
 
@@ -21,7 +21,7 @@ public class UpdateMaterialRequestDTO {
     }
 
     /**
-     * 素材名称
+     * 素材名称。
      * @return materialName
      */
     public String getMaterialName() {

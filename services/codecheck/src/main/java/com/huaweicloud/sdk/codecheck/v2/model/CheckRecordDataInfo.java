@@ -17,6 +17,11 @@ public class CheckRecordDataInfo {
     private String checkTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "check_end_time")
+
+    private String checkEndTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "issue_counts")
 
     private CheckRecordIssueCountsInfo issueCounts;
@@ -27,7 +32,7 @@ public class CheckRecordDataInfo {
     }
 
     /**
-     * 检查时间
+     * 检查任务执行开始时间
      * @return checkTime
      */
     public String getCheckTime() {
@@ -36,6 +41,23 @@ public class CheckRecordDataInfo {
 
     public void setCheckTime(String checkTime) {
         this.checkTime = checkTime;
+    }
+
+    public CheckRecordDataInfo withCheckEndTime(String checkEndTime) {
+        this.checkEndTime = checkEndTime;
+        return this;
+    }
+
+    /**
+     * 检查任务执行结束时间
+     * @return checkEndTime
+     */
+    public String getCheckEndTime() {
+        return checkEndTime;
+    }
+
+    public void setCheckEndTime(String checkEndTime) {
+        this.checkEndTime = checkEndTime;
     }
 
     public CheckRecordDataInfo withIssueCounts(CheckRecordIssueCountsInfo issueCounts) {
@@ -74,12 +96,13 @@ public class CheckRecordDataInfo {
         }
         CheckRecordDataInfo checkRecordDataInfo = (CheckRecordDataInfo) o;
         return Objects.equals(this.checkTime, checkRecordDataInfo.checkTime)
+            && Objects.equals(this.checkEndTime, checkRecordDataInfo.checkEndTime)
             && Objects.equals(this.issueCounts, checkRecordDataInfo.issueCounts);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(checkTime, issueCounts);
+        return Objects.hash(checkTime, checkEndTime, issueCounts);
     }
 
     @Override
@@ -87,6 +110,7 @@ public class CheckRecordDataInfo {
         StringBuilder sb = new StringBuilder();
         sb.append("class CheckRecordDataInfo {\n");
         sb.append("    checkTime: ").append(toIndentedString(checkTime)).append("\n");
+        sb.append("    checkEndTime: ").append(toIndentedString(checkEndTime)).append("\n");
         sb.append("    issueCounts: ").append(toIndentedString(issueCounts)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 新增发布信息请求
+ * 发布信息。
  */
 public class CreatePublicationRequestDTO {
 
@@ -49,7 +49,7 @@ public class CreatePublicationRequestDTO {
     }
 
     /**
-     * 发布名称
+     * 发布名称。
      * @return publishName
      */
     public String getPublishName() {
@@ -66,7 +66,7 @@ public class CreatePublicationRequestDTO {
     }
 
     /**
-     * 开始时间
+     * 开始时间。
      * @return startTime
      */
     public Long getStartTime() {
@@ -83,7 +83,7 @@ public class CreatePublicationRequestDTO {
     }
 
     /**
-     * 结束时间
+     * 结束时间。
      * @return endTime
      */
     public Long getEndTime() {
@@ -116,7 +116,7 @@ public class CreatePublicationRequestDTO {
     }
 
     /**
-     * 发布到部门编码列表
+     * 发布到部门编码列表。
      * @return deptList
      */
     public List<String> getDeptList() {
@@ -149,7 +149,7 @@ public class CreatePublicationRequestDTO {
     }
 
     /**
-     * 发布到设备用户ID列表
+     * 发布到设备用户ID列表。
      * @return deviceList
      */
     public List<String> getDeviceList() {
@@ -182,7 +182,7 @@ public class CreatePublicationRequestDTO {
     }
 
     /**
-     * 发布节目ID列表
+     * 发布节目ID列表。
      * @return programList
      */
     public List<String> getProgramList() {

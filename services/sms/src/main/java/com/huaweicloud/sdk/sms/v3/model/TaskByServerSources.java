@@ -111,13 +111,33 @@ public class TaskByServerSources {
 
     private Long remainSeconds;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "log_bucket")
+
+    private String logBucket;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "log_expire")
+
+    private Long logExpire;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "log_upload_time")
+
+    private Long logUploadTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "log_share_url")
+
+    private String logShareUrl;
+
     public TaskByServerSources withId(String id) {
         this.id = id;
         return this;
     }
 
     /**
-     * 任务id
+     * 任务ID
      * @return id
      */
     public String getId() {
@@ -297,7 +317,7 @@ public class TaskByServerSources {
     }
 
     /**
-     * 虚拟机模板id
+     * 虚拟机模板ID
      * @return vmTemplateId
      */
     public String getVmTemplateId() {
@@ -348,7 +368,7 @@ public class TaskByServerSources {
     }
 
     /**
-     * 项目id
+     * 项目ID
      * @return projectId
      */
     public String getProjectId() {
@@ -425,7 +445,7 @@ public class TaskByServerSources {
     }
 
     /**
-     * 是否使用公网ip
+     * 是否使用公网IP
      * @return usePublicIp
      */
     public Boolean getUsePublicIp() {
@@ -481,6 +501,78 @@ public class TaskByServerSources {
         this.remainSeconds = remainSeconds;
     }
 
+    public TaskByServerSources withLogBucket(String logBucket) {
+        this.logBucket = logBucket;
+        return this;
+    }
+
+    /**
+     * 上传日志指定桶名称
+     * @return logBucket
+     */
+    public String getLogBucket() {
+        return logBucket;
+    }
+
+    public void setLogBucket(String logBucket) {
+        this.logBucket = logBucket;
+    }
+
+    public TaskByServerSources withLogExpire(Long logExpire) {
+        this.logExpire = logExpire;
+        return this;
+    }
+
+    /**
+     * 分享链接有效期
+     * minimum: 300
+     * maximum: 64800
+     * @return logExpire
+     */
+    public Long getLogExpire() {
+        return logExpire;
+    }
+
+    public void setLogExpire(Long logExpire) {
+        this.logExpire = logExpire;
+    }
+
+    public TaskByServerSources withLogUploadTime(Long logUploadTime) {
+        this.logUploadTime = logUploadTime;
+        return this;
+    }
+
+    /**
+     * 日志上传时间
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return logUploadTime
+     */
+    public Long getLogUploadTime() {
+        return logUploadTime;
+    }
+
+    public void setLogUploadTime(Long logUploadTime) {
+        this.logUploadTime = logUploadTime;
+    }
+
+    public TaskByServerSources withLogShareUrl(String logShareUrl) {
+        this.logShareUrl = logShareUrl;
+        return this;
+    }
+
+    /**
+     * 分享链接url
+     * @return logShareUrl
+     */
+    public String getLogShareUrl() {
+        return logShareUrl;
+    }
+
+    public void setLogShareUrl(String logShareUrl) {
+        this.logShareUrl = logShareUrl;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -508,7 +600,11 @@ public class TaskByServerSources {
             && Objects.equals(this.existServer, taskByServerSources.existServer)
             && Objects.equals(this.usePublicIp, taskByServerSources.usePublicIp)
             && Objects.equals(this.cloneServer, taskByServerSources.cloneServer)
-            && Objects.equals(this.remainSeconds, taskByServerSources.remainSeconds);
+            && Objects.equals(this.remainSeconds, taskByServerSources.remainSeconds)
+            && Objects.equals(this.logBucket, taskByServerSources.logBucket)
+            && Objects.equals(this.logExpire, taskByServerSources.logExpire)
+            && Objects.equals(this.logUploadTime, taskByServerSources.logUploadTime)
+            && Objects.equals(this.logShareUrl, taskByServerSources.logShareUrl);
     }
 
     @Override
@@ -532,7 +628,11 @@ public class TaskByServerSources {
             existServer,
             usePublicIp,
             cloneServer,
-            remainSeconds);
+            remainSeconds,
+            logBucket,
+            logExpire,
+            logUploadTime,
+            logShareUrl);
     }
 
     @Override
@@ -559,6 +659,10 @@ public class TaskByServerSources {
         sb.append("    usePublicIp: ").append(toIndentedString(usePublicIp)).append("\n");
         sb.append("    cloneServer: ").append(toIndentedString(cloneServer)).append("\n");
         sb.append("    remainSeconds: ").append(toIndentedString(remainSeconds)).append("\n");
+        sb.append("    logBucket: ").append(toIndentedString(logBucket)).append("\n");
+        sb.append("    logExpire: ").append(toIndentedString(logExpire)).append("\n");
+        sb.append("    logUploadTime: ").append(toIndentedString(logUploadTime)).append("\n");
+        sb.append("    logShareUrl: ").append(toIndentedString(logShareUrl)).append("\n");
         sb.append("}");
         return sb.toString();
     }

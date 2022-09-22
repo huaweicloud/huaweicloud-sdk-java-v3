@@ -40,6 +40,16 @@ public class SmnRegion {
 
     public static final Region CN_SOUTH_2 = new Region("cn-south-2", "https://smn.cn-south-2.myhuaweicloud.com");
 
+    public static final Region NA_MEXICO_1 = new Region("na-mexico-1", "https://smn.na-mexico-1.myhuaweicloud.com");
+
+    public static final Region LA_NORTH_2 = new Region("la-north-2", "https://smn.la-north-2.myhuaweicloud.com");
+
+    public static final Region SA_BRAZIL_1 = new Region("sa-brazil-1", "https://smn.sa-brazil-1.myhuaweicloud.com");
+
+    public static final Region LA_SOUTH_2 = new Region("la-south-2", "https://smn.la-south-2.myhuaweicloud.com");
+
+    public static final Region CN_NORTH_9 = new Region("cn-north-9", "https://smn.cn-north-9.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("SMN");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -58,6 +68,11 @@ public class SmnRegion {
         map.put("ap-southeast-3", AP_SOUTHEAST_3);
         map.put("cn-north-2", CN_NORTH_2);
         map.put("cn-south-2", CN_SOUTH_2);
+        map.put("na-mexico-1", NA_MEXICO_1);
+        map.put("la-north-2", LA_NORTH_2);
+        map.put("sa-brazil-1", SA_BRAZIL_1);
+        map.put("la-south-2", LA_SOUTH_2);
+        map.put("cn-north-9", CN_NORTH_9);
         return Collections.unmodifiableMap(map);
     }
 

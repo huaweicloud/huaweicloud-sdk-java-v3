@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 丢包率阈值设置请求体
+ * 丢包率阈值设置请求体。
  */
 public class SetPacketThresholdData {
 

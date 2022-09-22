@@ -55,6 +55,21 @@ public class ListQuotasRequest {
          */
         public static final TypeEnum SCHEMA_VERSION = new TypeEnum("SCHEMA_VERSION");
 
+        /**
+         * Enum CONNECTION for value: "CONNECTION"
+         */
+        public static final TypeEnum CONNECTION = new TypeEnum("CONNECTION");
+
+        /**
+         * Enum PRIVATE_ENDPOINT for value: "PRIVATE_ENDPOINT"
+         */
+        public static final TypeEnum PRIVATE_ENDPOINT = new TypeEnum("PRIVATE_ENDPOINT");
+
+        /**
+         * Enum SOURCE_RABBITMQ for value: "SOURCE_RABBITMQ"
+         */
+        public static final TypeEnum SOURCE_RABBITMQ = new TypeEnum("SOURCE_RABBITMQ");
+
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TypeEnum> createStaticFields() {
@@ -66,6 +81,9 @@ public class ListQuotasRequest {
             map.put("SUBSCRIPTION_TARGET", SUBSCRIPTION_TARGET);
             map.put("SCHEMA", SCHEMA);
             map.put("SCHEMA_VERSION", SCHEMA_VERSION);
+            map.put("CONNECTION", CONNECTION);
+            map.put("PRIVATE_ENDPOINT", PRIVATE_ENDPOINT);
+            map.put("SOURCE_RABBITMQ", SOURCE_RABBITMQ);
             return Collections.unmodifiableMap(map);
         }
 

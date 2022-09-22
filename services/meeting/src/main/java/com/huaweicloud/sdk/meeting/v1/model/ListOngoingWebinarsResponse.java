@@ -57,7 +57,7 @@ public class ListOngoingWebinarsResponse extends SdkResponse {
     }
 
     /**
-     * 查询个数。
+     * 每页的记录数。
      * @return limit
      */
     public Integer getLimit() {
@@ -74,7 +74,7 @@ public class ListOngoingWebinarsResponse extends SdkResponse {
     }
 
     /**
-     * 总记录数
+     * 总记录数。
      * @return count
      */
     public Long getCount() {
@@ -107,7 +107,7 @@ public class ListOngoingWebinarsResponse extends SdkResponse {
     }
 
     /**
-     * Get data
+     * 正在召开网络研讨会信息列表。
      * @return data
      */
     public List<OpenWebinarOngoingInfo> getData() {

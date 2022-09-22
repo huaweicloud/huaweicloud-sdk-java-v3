@@ -25,7 +25,7 @@ public class AddMaterialRequestBody implements SdkFormDataBody {
     }
 
     /**
-     * 素材文件 - 只能上传jpg/jpeg/png格式文件，分辨率比率16:9，最大分辨率为3840*2160（推荐） - 请先命名完图片名称再上传
+     * 素材文件。 - 只能上传jpg/jpeg/png格式文件，分辨率比率16:9，最大分辨率为3840*2160（推荐） - 请先命名完图片名称再上传
      * @return file
      */
     public FormDataFilePart getFile() {
@@ -52,9 +52,10 @@ public class AddMaterialRequestBody implements SdkFormDataBody {
     }
 
     @Override
-    public Map<String, FormDataPart> buildFormData() {
-        return new LinkedHashMap<String, FormDataPart>() {
+    public Map<String, FormDataPart<?>> buildFormData() {
+        return new LinkedHashMap<String, FormDataPart<?>>() {
 
+            private static final long serialVersionUID = 1L;
             {
                 put("file", file);
             }

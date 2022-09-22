@@ -84,7 +84,7 @@ public class ApplicationV3 {
     private String templateDeployment;
 
     /**
-     * 部署类型, function:函数部署,cci:cci容器部署,ServiceStage(Jar):ServiceStage jar包部署,ServiceStage(Docker):ServiceStage Docker容器部署
+     * 部署类型, function:函数部署,cci:cci容器部署,ServiceStage(Jar):ServiceStage jar包部署,ServiceStage(Docker):ServiceStage Docker容器部署,none不支持部署
      */
     public static final class DeployTypeEnum {
 
@@ -108,6 +108,11 @@ public class ApplicationV3 {
          */
         public static final DeployTypeEnum SERVICESTAGE_DOCKER_ = new DeployTypeEnum("ServiceStage(Docker)");
 
+        /**
+         * Enum NONE for value: "none"
+         */
+        public static final DeployTypeEnum NONE = new DeployTypeEnum("none");
+
         private static final Map<String, DeployTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, DeployTypeEnum> createStaticFields() {
@@ -116,6 +121,7 @@ public class ApplicationV3 {
             map.put("cci", CCI);
             map.put("ServiceStage(Jar)", SERVICESTAGE_JAR_);
             map.put("ServiceStage(Docker)", SERVICESTAGE_DOCKER_);
+            map.put("none", NONE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -483,7 +489,7 @@ public class ApplicationV3 {
     }
 
     /**
-     * 部署类型, function:函数部署,cci:cci容器部署,ServiceStage(Jar):ServiceStage jar包部署,ServiceStage(Docker):ServiceStage Docker容器部署
+     * 部署类型, function:函数部署,cci:cci容器部署,ServiceStage(Jar):ServiceStage jar包部署,ServiceStage(Docker):ServiceStage Docker容器部署,none不支持部署
      * @return deployType
      */
     public DeployTypeEnum getDeployType() {

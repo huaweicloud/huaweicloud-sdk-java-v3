@@ -552,6 +552,38 @@ public class DdmAsyncClient {
     }
 
     /**
+     * DDM管理员账号密码管理
+     *
+     * 首次调用时新建DDM管理员帐号并设置密码。后续调用时仅更新管理员密码。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ResetAdministratorRequest 请求对象
+     * @return CompletableFuture<ResetAdministratorResponse>
+     */
+    public CompletableFuture<ResetAdministratorResponse> resetAdministratorAsync(ResetAdministratorRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdmMeta.resetAdministrator);
+    }
+
+    /**
+     * DDM管理员账号密码管理
+     *
+     * 首次调用时新建DDM管理员帐号并设置密码。后续调用时仅更新管理员密码。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ResetAdministratorRequest 请求对象
+     * @return AsyncInvoker<ResetAdministratorRequest, ResetAdministratorResponse>
+     */
+    public AsyncInvoker<ResetAdministratorRequest, ResetAdministratorResponse> resetAdministratorAsyncInvoker(
+        ResetAdministratorRequest request) {
+        return new AsyncInvoker<ResetAdministratorRequest, ResetAdministratorResponse>(request,
+            DdmMeta.resetAdministrator, hcClient);
+    }
+
+    /**
      * 重置DDM账号密码
      *
      * 重置现有DDM帐号的密码。
@@ -581,6 +613,37 @@ public class DdmAsyncClient {
         ResetUserPasswordRequest request) {
         return new AsyncInvoker<ResetUserPasswordRequest, ResetUserPasswordResponse>(request, DdmMeta.resetUserPassword,
             hcClient);
+    }
+
+    /**
+     * 变更DDM实例规格
+     *
+     * 变更DDM实例规格。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ResizeFlavorRequest 请求对象
+     * @return CompletableFuture<ResizeFlavorResponse>
+     */
+    public CompletableFuture<ResizeFlavorResponse> resizeFlavorAsync(ResizeFlavorRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdmMeta.resizeFlavor);
+    }
+
+    /**
+     * 变更DDM实例规格
+     *
+     * 变更DDM实例规格。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ResizeFlavorRequest 请求对象
+     * @return AsyncInvoker<ResizeFlavorRequest, ResizeFlavorResponse>
+     */
+    public AsyncInvoker<ResizeFlavorRequest, ResizeFlavorResponse> resizeFlavorAsyncInvoker(
+        ResizeFlavorRequest request) {
+        return new AsyncInvoker<ResizeFlavorRequest, ResizeFlavorResponse>(request, DdmMeta.resizeFlavor, hcClient);
     }
 
     /**
@@ -961,6 +1024,39 @@ public class DdmAsyncClient {
      */
     public AsyncInvoker<UpdateUserRequest, UpdateUserResponse> updateUserAsyncInvoker(UpdateUserRequest request) {
         return new AsyncInvoker<UpdateUserRequest, UpdateUserResponse>(request, DdmMeta.updateUser, hcClient);
+    }
+
+    /**
+     * 弱密码校验
+     *
+     * 弱密码校验
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ValidateWeakPasswordRequest 请求对象
+     * @return CompletableFuture<ValidateWeakPasswordResponse>
+     */
+    public CompletableFuture<ValidateWeakPasswordResponse> validateWeakPasswordAsync(
+        ValidateWeakPasswordRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdmMeta.validateWeakPassword);
+    }
+
+    /**
+     * 弱密码校验
+     *
+     * 弱密码校验
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ValidateWeakPasswordRequest 请求对象
+     * @return AsyncInvoker<ValidateWeakPasswordRequest, ValidateWeakPasswordResponse>
+     */
+    public AsyncInvoker<ValidateWeakPasswordRequest, ValidateWeakPasswordResponse> validateWeakPasswordAsyncInvoker(
+        ValidateWeakPasswordRequest request) {
+        return new AsyncInvoker<ValidateWeakPasswordRequest, ValidateWeakPasswordResponse>(request,
+            DdmMeta.validateWeakPassword, hcClient);
     }
 
 }

@@ -108,7 +108,7 @@ public class UpdateTokenResponse extends SdkResponse {
     }
 
     /**
-     * 接入token字符串。
+     * Access Token字符串。
      * @return accessToken
      */
     public String getAccessToken() {
@@ -142,7 +142,7 @@ public class UpdateTokenResponse extends SdkResponse {
     }
 
     /**
-     * token有效时长，单位：秒。
+     * Access Token有效时长，单位：秒。
      * @return validPeriod
      */
     public Long getValidPeriod() {
@@ -159,7 +159,7 @@ public class UpdateTokenResponse extends SdkResponse {
     }
 
     /**
-     * token的失效时间戳，单位：秒。
+     * Access Token的失效时间戳，单位：秒。
      * @return expireTime
      */
     public Long getExpireTime() {
@@ -176,7 +176,7 @@ public class UpdateTokenResponse extends SdkResponse {
     }
 
     /**
-     * 业务token的创建时间戳，单位：毫秒。
+     * Access Token的创建时间戳，单位：毫秒。
      * @return createTime
      */
     public Long getCreateTime() {
@@ -236,7 +236,7 @@ public class UpdateTokenResponse extends SdkResponse {
     }
 
     /**
-     * 抢占登录标识 * 0：非抢占 * 1：抢占  未启用 
+     * 抢占登录标识。 * 0： 非抢占 * 1： 抢占 
      * @return forceLoginInd
      */
     public Integer getForceLoginInd() {
@@ -253,7 +253,7 @@ public class UpdateTokenResponse extends SdkResponse {
     }
 
     /**
-     * 是否首次登录（说明：首次登录表示尚未修改过密码。首次登录时，系统会提醒用户需要修改密码），默认值：false。
+     * 是否首次登录。 > 首次登录表示尚未修改过密码。首次登录时，系统会提醒用户需要修改密码。 默认值：false。 
      * @return firstLogin
      */
     public Boolean getFirstLogin() {
@@ -287,7 +287,7 @@ public class UpdateTokenResponse extends SdkResponse {
     }
 
     /**
-     * 密码有效天数
+     * 密码有效天数。
      * @return daysPwdAvailable
      */
     public Integer getDaysPwdAvailable() {
@@ -330,7 +330,7 @@ public class UpdateTokenResponse extends SdkResponse {
     }
 
     /**
-     * 是否延时删除状态
+     * 是否延时删除状态。
      * @return delayDelete
      */
     public Boolean getDelayDelete() {
@@ -347,7 +347,7 @@ public class UpdateTokenResponse extends SdkResponse {
     }
 
     /**
-     * token类型 * 0：用户ACCESS TOKEN； * 1：会控TOKEN * 2：一次性TOKEN 
+     * Token类型。 * 0：用户Access Token * 1：会控TOKEN * 2：一次性TOKEN 
      * @return tokenType
      */
     public Integer getTokenType() {
@@ -364,7 +364,7 @@ public class UpdateTokenResponse extends SdkResponse {
     }
 
     /**
-     * 刷新token字符串。
+     * Refresh Token字符串。
      * @return refreshToken
      */
     public String getRefreshToken() {
@@ -381,7 +381,7 @@ public class UpdateTokenResponse extends SdkResponse {
     }
 
     /**
-     * 刷新token有效时长，单位：秒。
+     * Refresh Token有效时长，单位：秒。
      * @return refreshValidPeriod
      */
     public Long getRefreshValidPeriod() {
@@ -398,7 +398,7 @@ public class UpdateTokenResponse extends SdkResponse {
     }
 
     /**
-     * 刷新token的失效时间戳，单位：秒。
+     * Refresh Token的失效时间戳，单位：秒。
      * @return refreshExpireTime
      */
     public Long getRefreshExpireTime() {
@@ -415,7 +415,7 @@ public class UpdateTokenResponse extends SdkResponse {
     }
 
     /**
-     * 刷新token的创建时间戳，单位：毫秒。
+     * Refresh Token的创建时间戳，单位：毫秒。
      * @return refreshCreateTime
      */
     public Long getRefreshCreateTime() {

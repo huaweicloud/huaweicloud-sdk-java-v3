@@ -26,7 +26,7 @@ public class ModCorpBasicInfoDTO {
     }
 
     /**
-     * 企业所在地,最大长度为255个字符。 maxLength：255。 
+     * 企业所在地，最大长度为255个字符。 
      * @return address
      */
     public String getAddress() {
@@ -43,7 +43,7 @@ public class ModCorpBasicInfoDTO {
     }
 
     /**
-     * 企业自动开户开关
+     * 企业自动开户开关。
      * @return autoUserCreate
      */
     public Boolean getAutoUserCreate() {

@@ -31,7 +31,7 @@ public class SlideVerifyCodeSendDTO {
     }
 
     /**
-     * 用户身份信息（手机号码或邮箱账号或用户真实账号） maxLength：255 minLength：1 
+     * 用户身份信息（手机号码或邮箱帐号或用户真实帐号）。 
      * @return user
      */
     public String getUser() {
@@ -48,7 +48,7 @@ public class SlideVerifyCodeSendDTO {
     }
 
     /**
-     * 登录客户端类型。 * 0：Web客户端类型； * 5：cloudlink pc； * 6：cloudlink mobile； * 16：workplace pc 
+     * 登录客户端类型。 * 0：Web客户端类型 * 5：cloudlink pc * 6：cloudlink mobile 
      * minimum: 0
      * maximum: 255
      * @return clientType
@@ -67,7 +67,7 @@ public class SlideVerifyCodeSendDTO {
     }
 
     /**
-     * 校验类型。 * 0：登录； * 1：忘记密码； 默认值：0 
+     * 校验类型。默认值：0。 * 0：登录 * 1：忘记密码 
      * @return checkType
      */
     public Integer getCheckType() {

@@ -131,12 +131,12 @@ public interface HttpRequest {
             return this;
         }
 
-        public HttpRequestBuilder addFormDataPart(String name, FormDataPart formDataPart) {
+        public HttpRequestBuilder addFormDataPart(String name, FormDataPart<?> formDataPart) {
             httpRequest.formData.put(name, formDataPart);
             return this;
         }
 
-        public HttpRequestBuilder withFormDataPart(Map<String, FormDataPart> fromData) {
+        public HttpRequestBuilder withFormDataPart(Map<String, FormDataPart<?>> fromData) {
             httpRequest.formData = fromData;
             return this;
         }
@@ -157,7 +157,7 @@ public interface HttpRequest {
 
         private Map<String, List<String>> queryParams = new LinkedHashMap<>();
 
-        private Map<String, List<String>> headers = new HashMap();
+        private Map<String, List<String>> headers = new HashMap<>();
 
         private Map<String, Object> pathParams = new LinkedHashMap<>();
 
@@ -175,7 +175,7 @@ public interface HttpRequest {
 
         private InputStream body;
 
-        private Map<String, FormDataPart> formData = new TreeMap<>();
+        private Map<String, FormDataPart<?>> formData = new TreeMap<>();
 
         @Override
         public HttpRequestBuilder builder() {
@@ -259,7 +259,7 @@ public interface HttpRequest {
         }
 
         @Override
-        public Map<String, FormDataPart> getFormData() {
+        public Map<String, FormDataPart<?>> getFormData() {
             return formData;
         }
 
@@ -349,5 +349,5 @@ public interface HttpRequest {
 
     InputStream getBody();
 
-    Map<String, FormDataPart> getFormData();
+    Map<String, FormDataPart<?>> getFormData();
 }

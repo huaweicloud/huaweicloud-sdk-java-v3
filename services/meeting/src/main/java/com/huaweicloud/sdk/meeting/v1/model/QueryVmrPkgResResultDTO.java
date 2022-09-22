@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 查询Vmr套餐包分配数量结果
+ * 查询Vmr套餐包分配数量结果。
  */
 public class QueryVmrPkgResResultDTO {
 

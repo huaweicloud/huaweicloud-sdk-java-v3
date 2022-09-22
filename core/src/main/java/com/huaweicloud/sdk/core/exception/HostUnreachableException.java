@@ -29,6 +29,8 @@ package com.huaweicloud.sdk.core.exception;
  */
 public class HostUnreachableException extends ConnectionException {
 
+    private static final long serialVersionUID = 5914038145250774026L;
+
     public HostUnreachableException(String message) {
         super(message);
     }

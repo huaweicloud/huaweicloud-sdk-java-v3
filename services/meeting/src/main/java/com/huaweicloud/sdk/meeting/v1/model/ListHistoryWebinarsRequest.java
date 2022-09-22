@@ -56,7 +56,7 @@ public class ListHistoryWebinarsRequest {
     }
 
     /**
-     * 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用uuId，若不携带，则后台自动生成
+     * 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用UUID，若不携带，则后台自动生成。
      * @return xRequestId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -75,7 +75,7 @@ public class ListHistoryWebinarsRequest {
     }
 
     /**
-     * 语言参数，默认为中文zh-CN, 英文为en-US
+     * 语言参数，默认为中文zh-CN，英文为en-US。
      * @return acceptLanguage
      */
     public String getAcceptLanguage() {
@@ -92,7 +92,7 @@ public class ListHistoryWebinarsRequest {
     }
 
     /**
-     * 查询偏移量,若超过最大数量，则返回最后一页的数据 默认值：0 
+     * 查询偏移量,若超过最大数量，则返回最后一页的数据。 默认值：0。 
      * minimum: 0
      * @return offset
      */
@@ -110,7 +110,7 @@ public class ListHistoryWebinarsRequest {
     }
 
     /**
-     * 查询数量 默认值：0 
+     * 查询数量。 默认值：10。 
      * minimum: 1
      * maximum: 500
      * @return limit
@@ -129,7 +129,7 @@ public class ListHistoryWebinarsRequest {
     }
 
     /**
-     * 搜索条件。支持账号、姓名、手机、邮箱模糊搜索
+     * 搜索条件。支持帐号、名称、手机、邮箱模糊搜索。
      * @return searchKey
      */
     public String getSearchKey() {
@@ -146,7 +146,7 @@ public class ListHistoryWebinarsRequest {
     }
 
     /**
-     * ASC_StartTIME：按会议开始时间升序排序。DSC_StartTIME：按会议开始时间降序排序
+     * 查询结果排序。默认升序。 * ASC_StartTIME：按会议开始时间升序排序 * DSC_StartTIME：按会议开始时间降序排序 
      * @return sortType
      */
     public String getSortType() {
@@ -163,7 +163,7 @@ public class ListHistoryWebinarsRequest {
     }
 
     /**
-     * 开始时间, 格式：yyyy-MM-dd HH:mm。
+     * 开始时间（UTC时间）, 格式：yyyy-MM-dd HH:mm。
      * @return startTime
      */
     public String getStartTime() {
@@ -180,7 +180,7 @@ public class ListHistoryWebinarsRequest {
     }
 
     /**
-     * 结束时间, 格式：yyyy-MM-dd HH:mm。
+     * 结束时间（UTC时间）, 格式：yyyy-MM-dd HH:mm。
      * @return endTime
      */
     public String getEndTime() {

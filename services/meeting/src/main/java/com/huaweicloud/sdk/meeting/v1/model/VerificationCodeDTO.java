@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 联系方式, 应安全要求，放至body参数
+ * 验证码信息。
  */
 public class VerificationCodeDTO {
 
@@ -31,7 +31,7 @@ public class VerificationCodeDTO {
     }
 
     /**
-     * 后台自动识别是手机号还是邮箱。 如果为手机号，必须加上国家码，例如中国大陆手机为“+86xxxxxxxxxxx”，当填写手机号时 “country”参数必填。 maxLength：255 minLength：1 
+     * 后台自动识别是手机号还是邮箱。 如果为手机号，必须加上国家码，例如中国大陆手机为“+86xxxxxxxxxxx”，当填写手机号时 “country”参数必填。 
      * @return contact
      */
     public String getContact() {
@@ -48,7 +48,7 @@ public class VerificationCodeDTO {
     }
 
     /**
-     * 验证码，在校验的场景时需要携带
+     * 验证码，在校验的场景时需要携带。
      * @return verificationCode
      */
     public String getVerificationCode() {
@@ -65,7 +65,7 @@ public class VerificationCodeDTO {
     }
 
     /**
-     * contact为手机号，则需带上手机号所属的国家。 例如国家为中国大陆则country参数取值为chinaPR 国家和国家码的对应关系请参考：https://support.huaweicloud.com/api-meeting/meeting_21_0109.html 
+     * [[手机号所属的国家](https://support.huaweicloud.com/api-meeting/meeting_21_0109.html#ZH-CN_TOPIC_0212714591__table19371178135314)](tag:hws)[[手机号所属的国家](https://support.huaweicloud.com/intl/zh-cn/api-meeting/meeting_21_0109.html#ZH-CN_TOPIC_0212714591__table19371178135314)](tag:hk) 。 
      * @return country
      */
     public String getCountry() {

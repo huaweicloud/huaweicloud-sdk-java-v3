@@ -24,7 +24,7 @@ public class Disk {
     private String name;
 
     /**
-     * 磁盘的分区类型，添加源端时源端磁盘必选
+     * 磁盘的分区类型，添加源端时源端磁盘必选 MBR：mbr格式 GPT：gpt格式
      */
     public static final class PartitionStyleEnum {
 
@@ -106,7 +106,7 @@ public class Disk {
     private PartitionStyleEnum partitionStyle;
 
     /**
-     * 磁盘类型
+     * 磁盘类型 BOOT：BOOT设备 OS：系统设备
      */
     public static final class DeviceUseEnum {
 
@@ -240,7 +240,7 @@ public class Disk {
     }
 
     /**
-     * 磁盘的分区类型，添加源端时源端磁盘必选
+     * 磁盘的分区类型，添加源端时源端磁盘必选 MBR：mbr格式 GPT：gpt格式
      * @return partitionStyle
      */
     public PartitionStyleEnum getPartitionStyle() {
@@ -257,7 +257,7 @@ public class Disk {
     }
 
     /**
-     * 磁盘类型
+     * 磁盘类型 BOOT：BOOT设备 OS：系统设备
      * @return deviceUse
      */
     public DeviceUseEnum getDeviceUse() {

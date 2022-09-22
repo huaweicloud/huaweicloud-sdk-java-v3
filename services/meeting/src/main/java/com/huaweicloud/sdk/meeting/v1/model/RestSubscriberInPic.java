@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 子画面信息
+ * 子画面信息。
  */
 public class RestSubscriberInPic {
 
@@ -34,7 +34,7 @@ public class RestSubscriberInPic {
     }
 
     /**
-     * 多画面中每个画面的编号，编号从1开始
+     * 多画面中每个画面的编号。编号从1开始。默认值为“1”。
      * minimum: 1
      * maximum: 16
      * @return index
@@ -69,7 +69,7 @@ public class RestSubscriberInPic {
     }
 
     /**
-     * 每个画面中会话标识，即Call_ID，通过会议状态通知获取
+     * 每个画面中与会者号码，从[[查询会议实时信息](https://support.huaweicloud.com/api-meeting/meeting_21_0029.html)](tag:hws)[[查询会议实时信息](https://support.huaweicloud.com/intl/zh-cn/api-meeting/meeting_21_0029.html)](tag:hk)接口返回participants中的phone中获取。
      * @return subscriber
      */
     public List<String> getSubscriber() {
@@ -86,7 +86,7 @@ public class RestSubscriberInPic {
     }
 
     /**
-     * 是否为辅流 0： 不是辅流 1： 是辅流
+     * 是否为辅流。默认值为0。 * 0： 不是辅流 * 1： 是辅流 
      * minimum: 0
      * maximum: 1
      * @return isAssistStream

@@ -177,37 +177,6 @@ public class CloudPipelineClient {
     }
 
     /**
-     * register注册Slave接口
-     *
-     * 注册创建Slave接口
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param RegisterAgentRequest 请求对象
-     * @return RegisterAgentResponse
-     */
-    public RegisterAgentResponse registerAgent(RegisterAgentRequest request) {
-        return hcClient.syncInvokeHttp(request, CloudPipelineMeta.registerAgent);
-    }
-
-    /**
-     * register注册Slave接口
-     *
-     * 注册创建Slave接口
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param RegisterAgentRequest 请求对象
-     * @return SyncInvoker<RegisterAgentRequest, RegisterAgentResponse>
-     */
-    public SyncInvoker<RegisterAgentRequest, RegisterAgentResponse> registerAgentInvoker(RegisterAgentRequest request) {
-        return new SyncInvoker<RegisterAgentRequest, RegisterAgentResponse>(request, CloudPipelineMeta.registerAgent,
-            hcClient);
-    }
-
-    /**
      * 删除流水线
      *
      * 根据id删除流水线
@@ -237,38 +206,6 @@ public class CloudPipelineClient {
         RemovePipelineRequest request) {
         return new SyncInvoker<RemovePipelineRequest, RemovePipelineResponse>(request, CloudPipelineMeta.removePipeline,
             hcClient);
-    }
-
-    /**
-     * Agent状态查询
-     *
-     * Agent状态查询
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param ShowAgentStatusRequest 请求对象
-     * @return ShowAgentStatusResponse
-     */
-    public ShowAgentStatusResponse showAgentStatus(ShowAgentStatusRequest request) {
-        return hcClient.syncInvokeHttp(request, CloudPipelineMeta.showAgentStatus);
-    }
-
-    /**
-     * Agent状态查询
-     *
-     * Agent状态查询
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param ShowAgentStatusRequest 请求对象
-     * @return SyncInvoker<ShowAgentStatusRequest, ShowAgentStatusResponse>
-     */
-    public SyncInvoker<ShowAgentStatusRequest, ShowAgentStatusResponse> showAgentStatusInvoker(
-        ShowAgentStatusRequest request) {
-        return new SyncInvoker<ShowAgentStatusRequest, ShowAgentStatusResponse>(request,
-            CloudPipelineMeta.showAgentStatus, hcClient);
     }
 
     /**

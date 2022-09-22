@@ -46,7 +46,7 @@ public class QueryCorpGroupDTO {
     }
 
     /**
-     * 分组Id
+     * 媒体接入分组id。
      * @return groupId
      */
     public String getGroupId() {
@@ -63,7 +63,7 @@ public class QueryCorpGroupDTO {
     }
 
     /**
-     * 分组名称
+     * 分组名称。
      * @return groupName
      */
     public String getGroupName() {
@@ -80,7 +80,7 @@ public class QueryCorpGroupDTO {
     }
 
     /**
-     * 分组类型
+     * 分组类型。
      * @return groupType
      */
     public Integer getGroupType() {
@@ -97,7 +97,7 @@ public class QueryCorpGroupDTO {
     }
 
     /**
-     * 分组备注信息
+     * 分组备注信息。
      * @return remarks
      */
     public String getRemarks() {
@@ -114,7 +114,7 @@ public class QueryCorpGroupDTO {
     }
 
     /**
-     * 区域ID，仅服务列表类型场景必填
+     * 区域ID，仅服务列表类型场景必填。
      * @return regionId
      */
     public String getRegionId() {
@@ -131,7 +131,7 @@ public class QueryCorpGroupDTO {
     }
 
     /**
-     * 分组状态 - 0: 正常 - 1: 停用，服务列表类型停用后创建企业就不会再自动分配到该分组 
+     * 分组状态。 - 0: 正常 - 1: 停用，服务列表类型停用后创建企业就不会再自动分配到该分组 
      * @return status
      */
     public Integer getStatus() {

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 会场举手请求消息
+ * 举手请求。
  */
 public class RestHandsUpReqBody {
 
@@ -21,7 +21,7 @@ public class RestHandsUpReqBody {
     }
 
     /**
-     * - 0: 放下手。 - 1: 举手。
+     * - 0: 放下手 - 1: 举手
      * @return handsState
      */
     public Integer getHandsState() {

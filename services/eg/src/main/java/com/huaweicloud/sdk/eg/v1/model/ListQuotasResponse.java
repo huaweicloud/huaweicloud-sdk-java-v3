@@ -4,8 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -17,38 +15,31 @@ public class ListQuotasResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quotas")
 
-    private List<QuotaResourceResp> quotas = null;
+    private QuotaResourceResp quotas;
 
-    public ListQuotasResponse withQuotas(List<QuotaResourceResp> quotas) {
+    public ListQuotasResponse withQuotas(QuotaResourceResp quotas) {
         this.quotas = quotas;
         return this;
     }
 
-    public ListQuotasResponse addQuotasItem(QuotaResourceResp quotasItem) {
+    public ListQuotasResponse withQuotas(Consumer<QuotaResourceResp> quotasSetter) {
         if (this.quotas == null) {
-            this.quotas = new ArrayList<>();
+            this.quotas = new QuotaResourceResp();
+            quotasSetter.accept(this.quotas);
         }
-        this.quotas.add(quotasItem);
-        return this;
-    }
 
-    public ListQuotasResponse withQuotas(Consumer<List<QuotaResourceResp>> quotasSetter) {
-        if (this.quotas == null) {
-            this.quotas = new ArrayList<>();
-        }
-        quotasSetter.accept(this.quotas);
         return this;
     }
 
     /**
-     * 配额
+     * Get quotas
      * @return quotas
      */
-    public List<QuotaResourceResp> getQuotas() {
+    public QuotaResourceResp getQuotas() {
         return quotas;
     }
 
-    public void setQuotas(List<QuotaResourceResp> quotas) {
+    public void setQuotas(QuotaResourceResp quotas) {
         this.quotas = quotas;
     }
 

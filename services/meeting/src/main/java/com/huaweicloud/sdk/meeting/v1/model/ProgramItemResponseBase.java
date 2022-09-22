@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 节目素材信息响应
+ * 节目素材信息。
  */
 public class ProgramItemResponseBase {
 
@@ -36,7 +36,7 @@ public class ProgramItemResponseBase {
     }
 
     /**
-     * 素材ID
+     * 素材ID。
      * @return materialId
      */
     public String getMaterialId() {
@@ -53,7 +53,7 @@ public class ProgramItemResponseBase {
     }
 
     /**
-     * 素材名称
+     * 素材名称。
      * @return materialName
      */
     public String getMaterialName() {
@@ -70,7 +70,7 @@ public class ProgramItemResponseBase {
     }
 
     /**
-     * 素材云盘文件下载路径
+     * 素材云盘文件下载路径。
      * @return filePath
      */
     public String getFilePath() {
@@ -87,7 +87,7 @@ public class ProgramItemResponseBase {
     }
 
     /**
-     * 播放时长
+     * 播放时长。
      * @return playTime
      */
     public Integer getPlayTime() {

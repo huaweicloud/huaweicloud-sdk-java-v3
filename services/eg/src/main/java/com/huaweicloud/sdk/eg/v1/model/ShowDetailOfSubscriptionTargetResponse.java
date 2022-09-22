@@ -28,6 +28,11 @@ public class ShowDetailOfSubscriptionTargetResponse extends SdkResponse {
     private String providerType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "connection_id")
+
+    private String connectionId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "detail")
 
     private Object detail;
@@ -96,6 +101,23 @@ public class ShowDetailOfSubscriptionTargetResponse extends SdkResponse {
 
     public void setProviderType(String providerType) {
         this.providerType = providerType;
+    }
+
+    public ShowDetailOfSubscriptionTargetResponse withConnectionId(String connectionId) {
+        this.connectionId = connectionId;
+        return this;
+    }
+
+    /**
+     * 订阅的事件目标使用的目标链接ID
+     * @return connectionId
+     */
+    public String getConnectionId() {
+        return connectionId;
+    }
+
+    public void setConnectionId(String connectionId) {
+        this.connectionId = connectionId;
     }
 
     public ShowDetailOfSubscriptionTargetResponse withDetail(Object detail) {
@@ -189,6 +211,7 @@ public class ShowDetailOfSubscriptionTargetResponse extends SdkResponse {
         return Objects.equals(this.id, showDetailOfSubscriptionTargetResponse.id)
             && Objects.equals(this.name, showDetailOfSubscriptionTargetResponse.name)
             && Objects.equals(this.providerType, showDetailOfSubscriptionTargetResponse.providerType)
+            && Objects.equals(this.connectionId, showDetailOfSubscriptionTargetResponse.connectionId)
             && Objects.equals(this.detail, showDetailOfSubscriptionTargetResponse.detail)
             && Objects.equals(this.transform, showDetailOfSubscriptionTargetResponse.transform)
             && Objects.equals(this.createdTime, showDetailOfSubscriptionTargetResponse.createdTime)
@@ -197,7 +220,7 @@ public class ShowDetailOfSubscriptionTargetResponse extends SdkResponse {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, providerType, detail, transform, createdTime, updatedTime);
+        return Objects.hash(id, name, providerType, connectionId, detail, transform, createdTime, updatedTime);
     }
 
     @Override
@@ -207,6 +230,7 @@ public class ShowDetailOfSubscriptionTargetResponse extends SdkResponse {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    providerType: ").append(toIndentedString(providerType)).append("\n");
+        sb.append("    connectionId: ").append(toIndentedString(connectionId)).append("\n");
         sb.append("    detail: ").append(toIndentedString(detail)).append("\n");
         sb.append("    transform: ").append(toIndentedString(transform)).append("\n");
         sb.append("    createdTime: ").append(toIndentedString(createdTime)).append("\n");

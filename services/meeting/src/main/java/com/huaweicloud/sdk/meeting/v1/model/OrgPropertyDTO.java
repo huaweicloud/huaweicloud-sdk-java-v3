@@ -26,7 +26,7 @@ public class OrgPropertyDTO {
     }
 
     /**
-     * 配置项key。 开通本地录制功能，参数填写：enableClientRecord 
+     * 配置项key。 开通本地录制功能，参数填写：enableClientRecord。 
      * @return propertyKey
      */
     public String getPropertyKey() {
@@ -43,7 +43,7 @@ public class OrgPropertyDTO {
     }
 
     /**
-     * 配置项值。 开通本地录制功能，参数填写：true 
+     * 配置项值。 开通本地录制功能，参数填写：true。 
      * @return propertyValue
      */
     public String getPropertyValue() {

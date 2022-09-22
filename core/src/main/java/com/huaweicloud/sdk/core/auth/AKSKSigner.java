@@ -65,7 +65,8 @@ public class AKSKSigner {
      **/
     public static final String ISO_8601_BASIC_FORMAT = "yyyyMMdd'T'HHmmss'Z'";
 
-    public static Map<String, String> sign(HttpRequest request, AbstractCredentials credential) {
+    public static <T extends AbstractCredentials<T>> Map<String, String>
+        sign(HttpRequest request, T credential) {
         // ************* TASK 1: CONSTRUCT CANONICAL REQUEST *************
         // 设置基准时间
         Date now = new Date();

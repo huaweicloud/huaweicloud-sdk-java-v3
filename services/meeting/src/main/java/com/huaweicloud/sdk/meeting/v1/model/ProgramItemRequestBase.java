@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 新增/更新节目素材信息请求
+ * 节目素材信息 。
  */
 public class ProgramItemRequestBase {
 
@@ -26,7 +26,7 @@ public class ProgramItemRequestBase {
     }
 
     /**
-     * 素材ID
+     * 素材ID。
      * @return materialId
      */
     public String getMaterialId() {
@@ -43,7 +43,7 @@ public class ProgramItemRequestBase {
     }
 
     /**
-     * 播放时长
+     * 播放时长。
      * @return playTime
      */
     public Integer getPlayTime() {

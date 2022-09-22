@@ -222,6 +222,11 @@ public class EventItemDetail {
 
     private String eventUser;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "event_type")
+
+    private String eventType;
+
     public EventItemDetail withContent(String content) {
         this.content = content;
         return this;
@@ -341,6 +346,23 @@ public class EventItemDetail {
         this.eventUser = eventUser;
     }
 
+    public EventItemDetail withEventType(String eventType) {
+        this.eventType = eventType;
+        return this;
+    }
+
+    /**
+     * 事件类型。 枚举类型，EVENT.SYS或EVENT.CUSTOM，EVENT.SYS为系统事件，用户自已不能上报，只能传EVENT.CUSTOM。
+     * @return eventType
+     */
+    public String getEventType() {
+        return eventType;
+    }
+
+    public void setEventType(String eventType) {
+        this.eventType = eventType;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -356,12 +378,13 @@ public class EventItemDetail {
             && Objects.equals(this.resourceName, eventItemDetail.resourceName)
             && Objects.equals(this.eventState, eventItemDetail.eventState)
             && Objects.equals(this.eventLevel, eventItemDetail.eventLevel)
-            && Objects.equals(this.eventUser, eventItemDetail.eventUser);
+            && Objects.equals(this.eventUser, eventItemDetail.eventUser)
+            && Objects.equals(this.eventType, eventItemDetail.eventType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(content, groupId, resourceId, resourceName, eventState, eventLevel, eventUser);
+        return Objects.hash(content, groupId, resourceId, resourceName, eventState, eventLevel, eventUser, eventType);
     }
 
     @Override
@@ -375,6 +398,7 @@ public class EventItemDetail {
         sb.append("    eventState: ").append(toIndentedString(eventState)).append("\n");
         sb.append("    eventLevel: ").append(toIndentedString(eventLevel)).append("\n");
         sb.append("    eventUser: ").append(toIndentedString(eventUser)).append("\n");
+        sb.append("    eventType: ").append(toIndentedString(eventType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

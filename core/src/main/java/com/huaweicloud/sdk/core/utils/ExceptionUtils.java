@@ -58,7 +58,7 @@ public final class ExceptionUtils {
             return sdkErrorMessage;
         }
         try {
-            Map errResult = JsonUtils.toObject(strBody, Map.class);
+            Map<?, ?> errResult = JsonUtils.toObject(strBody, Map.class);
 
             if (Objects.isNull(errResult)) {
                 return sdkErrorMessage;
@@ -80,7 +80,7 @@ public final class ExceptionUtils {
         return sdkErrorMessage;
     }
 
-    private static void processErrorMessageFromMap(SdkErrorMessage sdkErrorMessage, Map errResult) {
+    private static void processErrorMessageFromMap(SdkErrorMessage sdkErrorMessage, Map<?, ?> errResult) {
         sdkErrorMessage.withErrorCode(errResult.containsKey(Constants.ERROR_CODE)
             ? errResult.get(Constants.ERROR_CODE).toString()
             : errResult.containsKey(Constants.CODE) ? errResult.get(Constants.CODE).toString() : null)
@@ -91,14 +91,14 @@ public final class ExceptionUtils {
                 errResult.containsKey(Constants.REQUEST_ID) ? errResult.get(Constants.REQUEST_ID).toString() : null);
     }
 
-    private static void processErrorMessageFromNestedMap(SdkErrorMessage sdkErrorMessage, Map errResult) {
+    private static void processErrorMessageFromNestedMap(SdkErrorMessage sdkErrorMessage, Map<?, ?> errResult) {
         if (!(Objects.isNull(sdkErrorMessage.getErrorCode()) || Objects.isNull(sdkErrorMessage.getErrorMsg()))) {
             return;
         }
 
         errResult.forEach((key, value) -> {
             if (value instanceof Map) {
-                Map valueMap = (Map) value;
+                Map<?, ?> valueMap = (Map<?, ?>) value;
                 if (Objects.isNull(sdkErrorMessage.getErrorCode()) && valueMap.containsKey(Constants.CODE)) {
                     sdkErrorMessage.setErrorCode(valueMap.get(Constants.CODE).toString());
                 }

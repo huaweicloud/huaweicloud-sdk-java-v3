@@ -35,7 +35,7 @@ public class WafRegion {
     public static final Region AP_SOUTHEAST_3 =
         new Region("ap-southeast-3", "https://waf.ap-southeast-3.myhuaweicloud.com");
 
-    public static final Region AF_SOUTH_1 = new Region("af-south-1", "https://waf.af-south-1.huaweicloud.com");
+    public static final Region AF_SOUTH_1 = new Region("af-south-1", "https://waf.af-south-1.myhuaweicloud.com");
 
     public static final Region RU_NORTHWEST_2 =
         new Region("ru-northwest-2", "https://waf.ru-northwest-2.myhuaweicloud.com");
@@ -44,6 +44,14 @@ public class WafRegion {
         new Region("cn-southwest-2", "https://waf.cn-southwest-2.myhuaweicloud.com");
 
     public static final Region CN_NORTH_9 = new Region("cn-north-9", "https://waf.cn-north-9.myhuaweicloud.cn");
+
+    public static final Region LA_SOUTH_2 = new Region("la-south-2", "https://waf.la-south-2.myhuaweicloud.com");
+
+    public static final Region SA_BRAZIL_1 = new Region("sa-brazil-1", "https://waf.sa-brazil-1.myhuaweicloud.com");
+
+    public static final Region LA_NORTH_2 = new Region("la-north-2", "https://waf.la-north-2.myhuaweicloud.com");
+
+    public static final Region NA_MEXICO_1 = new Region("na-mexico-1", "https://waf.na-mexico-1.myhuaweicloud.com");
 
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("WAF");
 
@@ -65,6 +73,10 @@ public class WafRegion {
         map.put("ru-northwest-2", RU_NORTHWEST_2);
         map.put("cn-southwest-2", CN_SOUTHWEST_2);
         map.put("cn-north-9", CN_NORTH_9);
+        map.put("la-south-2", LA_SOUTH_2);
+        map.put("sa-brazil-1", SA_BRAZIL_1);
+        map.put("la-north-2", LA_NORTH_2);
+        map.put("na-mexico-1", NA_MEXICO_1);
         return Collections.unmodifiableMap(map);
     }
 

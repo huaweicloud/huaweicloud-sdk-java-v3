@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 部分与会者信息
+ * 部分与会者信息。
  */
 public class PartAttendee {
 
@@ -51,7 +51,7 @@ public class PartAttendee {
     }
 
     /**
-     * 与会者名称或昵称。长度限制为96个字符。
+     * 与会者名称。
      * @return name
      */
     public String getName() {
@@ -68,7 +68,7 @@ public class PartAttendee {
     }
 
     /**
-     * 电话号码(可支持SIP、TEL号码格式)。最大不超过127个字符。 当type为telepresence时，且设备为三屏智真，则该字段填写中屏号码。
+     * 号码。SIP号码或者手机号码。
      * @return phone
      */
     public String getPhone() {
@@ -85,7 +85,7 @@ public class PartAttendee {
     }
 
     /**
-     * 取值类型同参数phone。（预留字段） 当type为telepresence时，且设备为三屏智真，则该字段填写左屏号码。
+     * 预留字段，取值类型同参数“phone”。
      * @return phone2
      */
     public String getPhone2() {
@@ -102,7 +102,7 @@ public class PartAttendee {
     }
 
     /**
-     * 取值类型同参数phone。（预留字段） 当type为telepresence时，且设备为三屏智真，则该字段填写右屏号码。
+     * 预留字段，取值类型同参数“phone”。
      * @return phone3
      */
     public String getPhone3() {
@@ -119,7 +119,7 @@ public class PartAttendee {
     }
 
     /**
-     * 默认值由会议AS定义，号码类型枚举如下： - normal: 软终端。 - telepresence: 智真。单屏、三屏智真均属此类。（预留字段） - terminal: 会议室或硬终端。 - outside: 外部与会人。 - mobile: 用户手机号码。 - telephone: 用户固定电话。（预留字段） - ideahub: ideahub。
+     * 终端类型，类型枚举如下： * normal：软终端 * terminal：硬终端 * outside：外部与会人 * mobile：用户手机号码 * ideahub：ideahub * board: 电子白板（SmartRooms）。含Maxhub、海信大屏、IdeaHub B2hwvision：华为智慧屏TV
      * @return type
      */
     public String getType() {
@@ -136,7 +136,7 @@ public class PartAttendee {
     }
 
     /**
-     * 会议中的角色。默认为普通与会者。 - 0：普通与会者。 - 1：会议主持人。
+     * 用户入会时是否需要自动静音 。默认不静音。 * 0： 不需要静音 * 1： 需要静音
      * @return role
      */
     public Integer getRole() {
@@ -153,7 +153,7 @@ public class PartAttendee {
     }
 
     /**
-     * 用户入会时是否需要自动静音。默认不静音。 - 0: 不需要静音。 - 1: 需要静音。
+     * 用户入会时是否需要自动静音。默认不静音。 * 0: 不需要静音。 * 1: 需要静音。
      * @return isMute
      */
     public Integer getIsMute() {

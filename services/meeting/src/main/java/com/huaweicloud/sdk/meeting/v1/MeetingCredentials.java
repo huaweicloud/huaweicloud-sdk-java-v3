@@ -188,7 +188,7 @@ public class MeetingCredentials implements ICredential {
             return sdkErrorMessage;
         }
         try {
-            Map errResult = JsonUtils.toObject(strBody, Map.class);
+            Map<?, ?> errResult = JsonUtils.toObject(strBody, Map.class);
             sdkErrorMessage.setErrorCode(errResult.get("error_code").toString());
             sdkErrorMessage.setErrorMsg(errResult.get("error_msg").toString());
             sdkErrorMessage.setRequestId(errResult.get("request_id").toString());

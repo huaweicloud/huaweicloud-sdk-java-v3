@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 分页查询企业用户信息
+ * 分页查询企业用户信息。
  */
 public class SearchUserResultDTO {
 
@@ -141,7 +141,7 @@ public class SearchUserResultDTO {
     }
 
     /**
-     * 用户id
+     * 用户UUID。
      * @return id
      */
     public String getId() {
@@ -158,7 +158,7 @@ public class SearchUserResultDTO {
     }
 
     /**
-     * 账号
+     * 华为云会议帐号。
      * @return userAccount
      */
     public String getUserAccount() {
@@ -175,7 +175,7 @@ public class SearchUserResultDTO {
     }
 
     /**
-     * 姓名
+     * 名称。
      * @return name
      */
     public String getName() {
@@ -192,7 +192,7 @@ public class SearchUserResultDTO {
     }
 
     /**
-     * 英文名称
+     * 英文名称。
      * @return englishName
      */
     public String getEnglishName() {
@@ -209,7 +209,7 @@ public class SearchUserResultDTO {
     }
 
     /**
-     * 手机
+     * 联系电话。
      * @return phone
      */
     public String getPhone() {
@@ -226,7 +226,7 @@ public class SearchUserResultDTO {
     }
 
     /**
-     * 手机所属国家
+     * [[手机号所属的国家](https://support.huaweicloud.com/api-meeting/meeting_21_0109.html#ZH-CN_TOPIC_0212714591__table19371178135314)](tag:hws)[[手机号所属的国家](https://support.huaweicloud.com/intl/zh-cn/api-meeting/meeting_21_0109.html#ZH-CN_TOPIC_0212714591__table19371178135314)](tag:hk) 。 
      * @return country
      */
     public String getCountry() {
@@ -243,7 +243,7 @@ public class SearchUserResultDTO {
     }
 
     /**
-     * 邮箱
+     * 邮箱地址。
      * @return email
      */
     public String getEmail() {
@@ -260,7 +260,7 @@ public class SearchUserResultDTO {
     }
 
     /**
-     * 个人会议室Id
+     * 个人会议ID。
      * @return vmrId
      */
     public String getVmrId() {
@@ -277,7 +277,7 @@ public class SearchUserResultDTO {
     }
 
     /**
-     * 部门编码
+     * 部门编码。
      * @return deptCode
      */
     public String getDeptCode() {
@@ -294,7 +294,7 @@ public class SearchUserResultDTO {
     }
 
     /**
-     * 部门完整名称
+     * 部门完整名称。
      * @return deptNamePath
      */
     public String getDeptNamePath() {
@@ -311,7 +311,7 @@ public class SearchUserResultDTO {
     }
 
     /**
-     * 用户类型 - 0：系统管理员账户 - 1：SP管理员账户 - 2：企业成员账户 - 3：注册用户 - 10：硬终端用户
+     * 用户类型。 * 2：普通用户 * 12：智慧屏用户 * 13：IdeaHub用户 * 14：SmartRooms用户
      * @return userType
      */
     public Integer getUserType() {
@@ -328,7 +328,7 @@ public class SearchUserResultDTO {
     }
 
     /**
-     * 管理员类型 - 0：默认（超级）管理员 - 1：普通管理员 - 2：非管理员（即为普通企业成员，UserType是2时有效）
+     * 管理员类型。 - 0：默认（超级）管理员 - 1：普通管理员 - 2：非管理员（即为普通企业成员，UserType是2时有效）
      * @return adminType
      */
     public Integer getAdminType() {
@@ -345,7 +345,7 @@ public class SearchUserResultDTO {
     }
 
     /**
-     * 签名
+     * 签名。
      * @return signature
      */
     public String getSignature() {
@@ -362,7 +362,7 @@ public class SearchUserResultDTO {
     }
 
     /**
-     * 职位
+     * 职位。
      * @return title
      */
     public String getTitle() {
@@ -379,7 +379,7 @@ public class SearchUserResultDTO {
     }
 
     /**
-     * 备注
+     * 备注。
      * @return desc
      */
     public String getDesc() {
@@ -396,7 +396,7 @@ public class SearchUserResultDTO {
     }
 
     /**
-     * 用户状态 * 0：正常 * 1：停用 
+     * 用户状态。 * 0：正常 * 1：停用 
      * @return status
      */
     public Integer getStatus() {
@@ -413,7 +413,7 @@ public class SearchUserResultDTO {
     }
 
     /**
-     * 通讯录排序等级，序号越低优先级越高
+     * 通讯录排序等级，序号越低优先级越高。
      * @return sortLevel
      */
     public Integer getSortLevel() {
@@ -430,7 +430,7 @@ public class SearchUserResultDTO {
     }
 
     /**
-     * 是否隐藏手机号码
+     * 是否隐藏手机号码。
      * @return hidePhone
      */
     public Boolean getHidePhone() {
@@ -447,7 +447,7 @@ public class SearchUserResultDTO {
     }
 
     /**
-     * 第三方账号自动开户的第三方账号、Ideahub账号的sn等
+     * 第三方User ID。
      * @return thirdAccount
      */
     public String getThirdAccount() {
@@ -464,7 +464,7 @@ public class SearchUserResultDTO {
     }
 
     /**
-     * 智慧屏账号
+     * 智慧屏帐号。
      * @return visionAccount
      */
     public String getVisionAccount() {
@@ -481,7 +481,7 @@ public class SearchUserResultDTO {
     }
 
     /**
-     * 许可证 * 0：商用 * 1：免费试用 
+     * 许可证。 * 0：商用 * 1：免费试用 
      * @return license
      */
     public Integer getLicense() {
@@ -498,7 +498,7 @@ public class SearchUserResultDTO {
     }
 
     /**
-     * 激活时间，utc时间戳
+     * 激活时间，utc时间戳。
      * @return activeTime
      */
     public Long getActiveTime() {
@@ -515,7 +515,7 @@ public class SearchUserResultDTO {
     }
 
     /**
-     * 激活码到期时间,utc时间戳
+     * 激活码到期时间,utc时间戳。
      * @return activeCodeExpireTime
      */
     public Long getActiveCodeExpireTime() {
@@ -532,7 +532,7 @@ public class SearchUserResultDTO {
     }
 
     /**
-     * 已激活的终端到期时间,utc时间戳
+     * 已激活的终端到期时间,utc时间戳。
      * @return expireTime
      */
     public Long getExpireTime() {
@@ -549,7 +549,7 @@ public class SearchUserResultDTO {
     }
 
     /**
-     * 激活码
+     * 激活码。
      * @return activeCode
      */
     public String getActiveCode() {

@@ -98,9 +98,10 @@ public class DetectLiveByFileRequestBody implements SdkFormDataBody {
     }
 
     @Override
-    public Map<String, FormDataPart> buildFormData() {
-        return new LinkedHashMap<String, FormDataPart>() {
+    public Map<String, FormDataPart<?>> buildFormData() {
+        return new LinkedHashMap<String, FormDataPart<?>>() {
 
+            private static final long serialVersionUID = 1L;
             {
                 put("video_file", videoFile);
                 put("actions", new FormDataPart<>(actions));

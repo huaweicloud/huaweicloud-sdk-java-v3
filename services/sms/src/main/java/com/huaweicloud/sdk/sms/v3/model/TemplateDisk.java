@@ -11,6 +11,11 @@ import java.util.Objects;
 public class TemplateDisk {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private Long id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "index")
 
     private Integer index;
@@ -29,6 +34,30 @@ public class TemplateDisk {
     @JsonProperty(value = "size")
 
     private Long size;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "device_use")
+
+    private String deviceUse;
+
+    public TemplateDisk withId(Long id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * 磁盘ID
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return id
+     */
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public TemplateDisk withIndex(Integer index) {
         this.index = index;
@@ -102,6 +131,23 @@ public class TemplateDisk {
         this.size = size;
     }
 
+    public TemplateDisk withDeviceUse(String deviceUse) {
+        this.deviceUse = deviceUse;
+        return this;
+    }
+
+    /**
+     * 磁盘使用
+     * @return deviceUse
+     */
+    public String getDeviceUse() {
+        return deviceUse;
+    }
+
+    public void setDeviceUse(String deviceUse) {
+        this.deviceUse = deviceUse;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -111,23 +157,26 @@ public class TemplateDisk {
             return false;
         }
         TemplateDisk templateDisk = (TemplateDisk) o;
-        return Objects.equals(this.index, templateDisk.index) && Objects.equals(this.name, templateDisk.name)
-            && Objects.equals(this.disktype, templateDisk.disktype) && Objects.equals(this.size, templateDisk.size);
+        return Objects.equals(this.id, templateDisk.id) && Objects.equals(this.index, templateDisk.index)
+            && Objects.equals(this.name, templateDisk.name) && Objects.equals(this.disktype, templateDisk.disktype)
+            && Objects.equals(this.size, templateDisk.size) && Objects.equals(this.deviceUse, templateDisk.deviceUse);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(index, name, disktype, size);
+        return Objects.hash(id, index, name, disktype, size, deviceUse);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class TemplateDisk {\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    index: ").append(toIndentedString(index)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    disktype: ").append(toIndentedString(disktype)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
+        sb.append("    deviceUse: ").append(toIndentedString(deviceUse)).append("\n");
         sb.append("}");
         return sb.toString();
     }

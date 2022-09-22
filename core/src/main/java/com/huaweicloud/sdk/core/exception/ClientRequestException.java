@@ -28,6 +28,8 @@ package com.huaweicloud.sdk.core.exception;
  */
 public class ClientRequestException extends ServiceResponseException {
 
+    private static final long serialVersionUID = -3427754173856991309L;
+
     public ClientRequestException(int httpStatusCode, SdkErrorMessage sdkErrorMessage) {
         super(httpStatusCode, sdkErrorMessage);
     }

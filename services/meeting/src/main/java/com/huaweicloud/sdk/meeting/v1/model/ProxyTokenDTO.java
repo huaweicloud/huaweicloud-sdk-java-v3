@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 代理鉴权信息
+ * 代理鉴权信息。
  */
 public class ProxyTokenDTO {
 
@@ -46,7 +46,7 @@ public class ProxyTokenDTO {
     }
 
     /**
-     * 代理鉴权服务器的短token字符串
+     * 代理鉴权服务器的短token字符串。
      * @return accessToken
      */
     public String getAccessToken() {
@@ -63,7 +63,7 @@ public class ProxyTokenDTO {
     }
 
     /**
-     * 代理鉴权服务器的长token字符串
+     * 代理鉴权服务器的长token字符串。
      * @return longAccessToken
      */
     public String getLongAccessToken() {
@@ -80,7 +80,7 @@ public class ProxyTokenDTO {
     }
 
     /**
-     * token有效时长，单位：秒。
+     * Token有效时长，单位：秒。
      * @return validPeriod
      */
     public Long getValidPeriod() {
@@ -114,7 +114,7 @@ public class ProxyTokenDTO {
     }
 
     /**
-     * 中台内网地址
+     * 中台内网地址。
      * @return middleEndInnerUrl
      */
     public String getMiddleEndInnerUrl() {
@@ -131,7 +131,7 @@ public class ProxyTokenDTO {
     }
 
     /**
-     * 是否开启二次路由
+     * 是否开启二次路由。
      * @return enableRerouting
      */
     public Boolean getEnableRerouting() {

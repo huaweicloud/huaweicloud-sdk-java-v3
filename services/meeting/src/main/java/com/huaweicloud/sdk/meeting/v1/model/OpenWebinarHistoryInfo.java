@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 历史召开研讨会议信息
+ * 历史召开研讨会议信息。
  */
 public class OpenWebinarHistoryInfo {
 
@@ -111,7 +111,7 @@ public class OpenWebinarHistoryInfo {
     }
 
     /**
-     * 会议id
+     * 网络研讨会ID。
      * @return conferenceId
      */
     public String getConferenceId() {
@@ -128,7 +128,7 @@ public class OpenWebinarHistoryInfo {
     }
 
     /**
-     * 会议UUID
+     * 网络研讨会UUID。
      * @return confUUID
      */
     public String getConfUUID() {
@@ -145,7 +145,7 @@ public class OpenWebinarHistoryInfo {
     }
 
     /**
-     * 主题
+     * 网络研讨会主题。
      * @return subject
      */
     public String getSubject() {
@@ -162,7 +162,7 @@ public class OpenWebinarHistoryInfo {
     }
 
     /**
-     * 会议订阅者
+     * 网络研讨会预定者名称。
      * @return scheduserName
      */
     public String getScheduserName() {
@@ -179,7 +179,7 @@ public class OpenWebinarHistoryInfo {
     }
 
     /**
-     * 会议主持人
+     * 网络研讨主持人名称。
      * @return moderator
      */
     public String getModerator() {
@@ -196,7 +196,7 @@ public class OpenWebinarHistoryInfo {
     }
 
     /**
-     * 部门名称
+     * 预订人部门名称。
      * @return deptName
      */
     public String getDeptName() {
@@ -213,7 +213,7 @@ public class OpenWebinarHistoryInfo {
     }
 
     /**
-     * 时区ID
+     * 会议通知中会议时间的时区信息。时区信息，参考[[时区映射关系](https://support.huaweicloud.com/api-meeting/meeting_21_0110.html#ZH-CN_TOPIC_0212714472__table137407441463)](tag:hws)[[时区映射关系](https://support.huaweicloud.com/intl/zh-cn/api-meeting/meeting_21_0110.html#ZH-CN_TOPIC_0212714472__table137407441463)](tag:hk)。 > * 举例：“timeZoneID”:\"26\"，则通过华为云会议发送的会议通知中的时间将会标记为如“2021/11/11 星期四 00:00 - 02:00 (GMT) 格林威治标准时间:都柏林, 爱丁堡, 里斯本, 伦敦”。 
      * @return timeZoneId
      */
     public Integer getTimeZoneId() {
@@ -230,7 +230,7 @@ public class OpenWebinarHistoryInfo {
     }
 
     /**
-     * 会议预约时间
+     * 网络研讨会开始时间（UTC时间），格式“yyyy-MM-dd HH:mm”。
      * @return startTime
      */
     public String getStartTime() {
@@ -247,7 +247,7 @@ public class OpenWebinarHistoryInfo {
     }
 
     /**
-     * 预约会议时长，单位分钟
+     * 网络研讨会持续时长，单位分钟。
      * @return duration
      */
     public Integer getDuration() {
@@ -264,7 +264,7 @@ public class OpenWebinarHistoryInfo {
     }
 
     /**
-     * 会议开始时间
+     * 网络研讨会实际召开时间（UTC时间），格式“yyyy-MM-dd HH:mm”。
      * @return actualStartTime
      */
     public String getActualStartTime() {
@@ -281,7 +281,7 @@ public class OpenWebinarHistoryInfo {
     }
 
     /**
-     * 会议结束时间
+     * 网络研讨会结束时间（UTC时间），格式“yyyy-MM-dd HH:mm”。
      * @return endTime
      */
     public String getEndTime() {
@@ -298,7 +298,7 @@ public class OpenWebinarHistoryInfo {
     }
 
     /**
-     * 实际会议时长，单位分钟
+     * 网络研讨会实际时长，单位分钟。
      * @return actualDuration
      */
     public Integer getActualDuration() {
@@ -315,7 +315,7 @@ public class OpenWebinarHistoryInfo {
     }
 
     /**
-     * 与会人数
+     * 与会人数。
      * @return attendeeCount
      */
     public Integer getAttendeeCount() {
@@ -332,7 +332,7 @@ public class OpenWebinarHistoryInfo {
     }
 
     /**
-     * 主持人人数
+     * 主持人数。
      * @return chairCount
      */
     public Integer getChairCount() {
@@ -349,7 +349,7 @@ public class OpenWebinarHistoryInfo {
     }
 
     /**
-     * 嘉宾人数
+     * 嘉宾数。
      * @return guestCount
      */
     public Integer getGuestCount() {
@@ -366,7 +366,7 @@ public class OpenWebinarHistoryInfo {
     }
 
     /**
-     * 观众人数
+     * 观众人数。
      * @return audienceCount
      */
     public Integer getAudienceCount() {
@@ -383,7 +383,7 @@ public class OpenWebinarHistoryInfo {
     }
 
     /**
-     * VMR ID
+     * VMR ID。
      * @return vmrId
      */
     public String getVmrId() {
@@ -400,7 +400,7 @@ public class OpenWebinarHistoryInfo {
     }
 
     /**
-     * VMR资源规格-最大观众数
+     * 网络研讨会VMR最大观众数。
      * @return vmrPkgAudienceParties
      */
     public Integer getVmrPkgAudienceParties() {
@@ -417,7 +417,7 @@ public class OpenWebinarHistoryInfo {
     }
 
     /**
-     * 网络研讨会资源名
+     * 网络研讨会VMR名称。
      * @return vmrPkgName
      */
     public String getVmrPkgName() {

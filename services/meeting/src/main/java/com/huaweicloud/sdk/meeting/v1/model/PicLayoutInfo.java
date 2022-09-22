@@ -34,7 +34,7 @@ public class PicLayoutInfo {
     }
 
     /**
-     * 多画面布局的宽度
+     * 横向小格子数。
      * minimum: 1
      * @return x
      */
@@ -52,7 +52,7 @@ public class PicLayoutInfo {
     }
 
     /**
-     * 多画面布局的高度
+     * 纵向小格子数。
      * minimum: 1
      * @return y
      */
@@ -86,7 +86,7 @@ public class PicLayoutInfo {
     }
 
     /**
-     * 子画面布局具体列表
+     * 多画面信息。
      * @return subPicLayoutInfoList
      */
     public List<SubPicLayoutInfo> getSubPicLayoutInfoList() {

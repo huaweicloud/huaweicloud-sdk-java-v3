@@ -81,7 +81,7 @@ public class SearchResourceOpRecordRequest {
     }
 
     /**
-     * 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用uuId，若不携带，则后台自动生成
+     * 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用UUID，若不携带，则后台自动生成。
      * @return xRequestId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -100,7 +100,7 @@ public class SearchResourceOpRecordRequest {
     }
 
     /**
-     * 语言参数，默认为中文zh-CN, 英文为en-US
+     * 语言参数，默认为中文zh-CN，英文为en-US。
      * @return acceptLanguage
      */
     public String getAcceptLanguage() {
@@ -117,7 +117,7 @@ public class SearchResourceOpRecordRequest {
     }
 
     /**
-     * 查询偏移量,若超过最大数量，则返回最后一页的数据 默认值：0 
+     * 查询偏移量,若超过最大数量，则返回最后一页的数据。 默认值：0。 
      * minimum: 0
      * @return offset
      */
@@ -135,7 +135,7 @@ public class SearchResourceOpRecordRequest {
     }
 
     /**
-     * 查询数量 默认值：0 
+     * 查询数量。 默认值：10。 
      * minimum: 1
      * maximum: 500
      * @return limit
@@ -154,7 +154,7 @@ public class SearchResourceOpRecordRequest {
     }
 
     /**
-     * 搜索条件
+     * 搜索条件。
      * @return searchKey
      */
     public String getSearchKey() {
@@ -171,7 +171,7 @@ public class SearchResourceOpRecordRequest {
     }
 
     /**
-     * 企业id
+     * 企业id。
      * @return corpId
      */
     public String getCorpId() {
@@ -188,7 +188,7 @@ public class SearchResourceOpRecordRequest {
     }
 
     /**
-     * 查询过期时间在该时间戳之后的订单操作记录
+     * 查询过期时间在该时间戳之后的订单操作记录。
      * @return startExpireDate
      */
     public Long getStartExpireDate() {
@@ -205,7 +205,7 @@ public class SearchResourceOpRecordRequest {
     }
 
     /**
-     * 查询过期时间在该时间戳之前的订单操作记录
+     * 查询过期时间在该时间戳之前的订单操作记录。
      * @return endExpireDate
      */
     public Long getEndExpireDate() {
@@ -222,7 +222,7 @@ public class SearchResourceOpRecordRequest {
     }
 
     /**
-     * 查询操作时间在该时间戳之后的订单操作记录
+     * 查询操作时间在该时间戳之后的订单操作记录。
      * @return startOperateDate
      */
     public Long getStartOperateDate() {
@@ -239,7 +239,7 @@ public class SearchResourceOpRecordRequest {
     }
 
     /**
-     * 查询操作时间在该时间戳之前的订单操作记录
+     * 查询操作时间在该时间戳之前的订单操作记录。
      * @return endOperateDate
      */
     public Long getEndOperateDate() {
@@ -256,7 +256,7 @@ public class SearchResourceOpRecordRequest {
     }
 
     /**
-     * 订单资源类型
+     * 订单资源类型。
      * @return type
      */
     public String getType() {
@@ -273,7 +273,7 @@ public class SearchResourceOpRecordRequest {
     }
 
     /**
-     * 当前仅当资源类型为vmr时生效
+     * 当前仅当资源类型为vmr时生效。
      * @return typeId
      */
     public String getTypeId() {
@@ -290,7 +290,7 @@ public class SearchResourceOpRecordRequest {
     }
 
     /**
-     * 操作类型 - 0：添加 - 1：删除 - 2：修改 - 3：停用 - 4：启用
+     * 操作类型。 - 0：添加 - 1：删除 - 2：修改 - 3：停用 - 4：启用
      * minimum: 0
      * maximum: 4
      * @return operateType

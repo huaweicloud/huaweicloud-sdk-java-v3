@@ -35,7 +35,7 @@ public class CreateSubscriptionResponse extends SdkResponse {
     private String description;
 
     /**
-     * 事件订阅类型
+     * 类型
      */
     public static final class TypeEnum {
 
@@ -117,7 +117,7 @@ public class CreateSubscriptionResponse extends SdkResponse {
     private TypeEnum type;
 
     /**
-     * 事件订阅状态
+     * 状态
      */
     public static final class StatusEnum {
 
@@ -246,13 +246,18 @@ public class CreateSubscriptionResponse extends SdkResponse {
 
     private String updatedTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+
+    private String xRequestId;
+
     public CreateSubscriptionResponse withId(String id) {
         this.id = id;
         return this;
     }
 
     /**
-     * 事件订阅ID
+     * 订阅ID
      * @return id
      */
     public String getId() {
@@ -269,7 +274,7 @@ public class CreateSubscriptionResponse extends SdkResponse {
     }
 
     /**
-     * 事件订阅名称
+     * 订阅名称
      * @return name
      */
     public String getName() {
@@ -286,7 +291,7 @@ public class CreateSubscriptionResponse extends SdkResponse {
     }
 
     /**
-     * 事件订阅描述
+     * 订阅描述
      * @return description
      */
     public String getDescription() {
@@ -303,7 +308,7 @@ public class CreateSubscriptionResponse extends SdkResponse {
     }
 
     /**
-     * 事件订阅类型
+     * 类型
      * @return type
      */
     public TypeEnum getType() {
@@ -320,7 +325,7 @@ public class CreateSubscriptionResponse extends SdkResponse {
     }
 
     /**
-     * 事件订阅状态
+     * 状态
      * @return status
      */
     public StatusEnum getStatus() {
@@ -465,6 +470,25 @@ public class CreateSubscriptionResponse extends SdkResponse {
         this.updatedTime = updatedTime;
     }
 
+    public CreateSubscriptionResponse withXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+        return this;
+    }
+
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+    public String getXRequestId() {
+        return xRequestId;
+    }
+
+    public void setXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -484,7 +508,8 @@ public class CreateSubscriptionResponse extends SdkResponse {
             && Objects.equals(this.sources, createSubscriptionResponse.sources)
             && Objects.equals(this.targets, createSubscriptionResponse.targets)
             && Objects.equals(this.createdTime, createSubscriptionResponse.createdTime)
-            && Objects.equals(this.updatedTime, createSubscriptionResponse.updatedTime);
+            && Objects.equals(this.updatedTime, createSubscriptionResponse.updatedTime)
+            && Objects.equals(this.xRequestId, createSubscriptionResponse.xRequestId);
     }
 
     @Override
@@ -499,7 +524,8 @@ public class CreateSubscriptionResponse extends SdkResponse {
             sources,
             targets,
             createdTime,
-            updatedTime);
+            updatedTime,
+            xRequestId);
     }
 
     @Override
@@ -517,6 +543,7 @@ public class CreateSubscriptionResponse extends SdkResponse {
         sb.append("    targets: ").append(toIndentedString(targets)).append("\n");
         sb.append("    createdTime: ").append(toIndentedString(createdTime)).append("\n");
         sb.append("    updatedTime: ").append(toIndentedString(updatedTime)).append("\n");
+        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

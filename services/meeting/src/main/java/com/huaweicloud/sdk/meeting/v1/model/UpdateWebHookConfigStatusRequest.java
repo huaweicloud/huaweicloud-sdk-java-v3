@@ -26,7 +26,7 @@ public class UpdateWebHookConfigStatusRequest {
     }
 
     /**
-     * 订阅配置记录id
+     * 订阅配置记录ID。
      * @return id
      */
     public String getId() {
@@ -43,7 +43,7 @@ public class UpdateWebHookConfigStatusRequest {
     }
 
     /**
-     * 连接状态： 0表示已启用 ；1表示未启动； 2表示已锁定
+     * 事件推送状态。 * 0：启用 * 1：禁用 * 2：锁定 
      * @return status
      */
     public Integer getStatus() {

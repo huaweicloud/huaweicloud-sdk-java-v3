@@ -251,7 +251,7 @@ public class ApiDebugInfo {
     }
 
     /**
-     * 调试模式 - DEVELOPER 调试尚未发布的API定义 - MARKET 调试云市场已购买的API - CONSUMER 调试指定运行环境下的API定义 > DEVELOPER模式，接口调用者必须是API拥有者。    MARKET模式，接口调用者必须是API购买者或拥有者。    CONSUMER模式，接口调用者必须有API在指定环境上的授权信息或是API拥有者。
+     * 调试模式 - DEVELOPER 调试尚未发布的API定义 - MARKET [调试云商店已购买的API](tag:hws)[暂未使用](tag:cmcc,ctc,DT,g42,hk_g42,hk_sbc,hk_tm,hws_eu,hws_ocb,OCB,sbc,tm,hws_hk) - CONSUMER 调试指定运行环境下的API定义 > DEVELOPER模式，接口调用者必须是API拥有者。    [MARKET模式，接口调用者必须是API购买者或拥有者。](tag:hws)    CONSUMER模式，接口调用者必须有API在指定环境上的授权信息或是API拥有者。
      * @return mode
      */
     public String getMode() {
@@ -369,7 +369,7 @@ public class ApiDebugInfo {
     }
 
     /**
-     * API的访问域名，未提供时根据mode的取值使用如下默认值： - DEVELOPER API分组的子域名 - MARKET 云市场为API分组分配的域名 - CONSUMER API分组的子域名
+     * API的访问域名，未提供时根据mode的取值使用如下默认值： - DEVELOPER API分组的子域名 - MARKET [云商店为API分组分配的域名](tag:hws)[暂未使用](tag:cmcc,ctc,DT,g42,hk_g42,hk_sbc,hk_tm,hws_eu,hws_ocb,OCB,sbc,tm,hws_hk) - CONSUMER API分组的子域名
      * @return domain
      */
     public String getDomain() {

@@ -22,7 +22,7 @@ public class PostTask {
     private String name;
 
     /**
-     * 任务类型
+     * 任务类型 MIGRATE_FILE:文件级迁移 MIGRATE_BLOCK:块级迁移 
      */
     public static final class TypeEnum {
 
@@ -163,6 +163,11 @@ public class PostTask {
 
     private Boolean syncing;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "exist_server")
+
+    private Boolean existServer;
+
     public PostTask withName(String name) {
         this.name = name;
         return this;
@@ -186,7 +191,7 @@ public class PostTask {
     }
 
     /**
-     * 任务类型
+     * 任务类型 MIGRATE_FILE:文件级迁移 MIGRATE_BLOCK:块级迁移 
      * @return type
      */
     public TypeEnum getType() {
@@ -289,7 +294,7 @@ public class PostTask {
     }
 
     /**
-     * 迁移ip，如果是自动创建虚拟机，不需要此参数
+     * 迁移IP，如果是自动创建虚拟机，不需要此参数
      * @return migrationIp
      */
     public String getMigrationIp() {
@@ -323,7 +328,7 @@ public class PostTask {
     }
 
     /**
-     * region id
+     * region ID
      * @return regionId
      */
     public String getRegionId() {
@@ -357,7 +362,7 @@ public class PostTask {
     }
 
     /**
-     * 项目id
+     * 项目ID
      * @return projectId
      */
     public String getProjectId() {
@@ -419,6 +424,23 @@ public class PostTask {
         this.syncing = syncing;
     }
 
+    public PostTask withExistServer(Boolean existServer) {
+        this.existServer = existServer;
+        return this;
+    }
+
+    /**
+     * 是否存在服务，如果存在，则创建任务
+     * @return existServer
+     */
+    public Boolean getExistServer() {
+        return existServer;
+    }
+
+    public void setExistServer(Boolean existServer) {
+        this.existServer = existServer;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -437,7 +459,8 @@ public class PostTask {
             && Objects.equals(this.projectName, postTask.projectName)
             && Objects.equals(this.projectId, postTask.projectId)
             && Objects.equals(this.vmTemplateId, postTask.vmTemplateId)
-            && Objects.equals(this.usePublicIp, postTask.usePublicIp) && Objects.equals(this.syncing, postTask.syncing);
+            && Objects.equals(this.usePublicIp, postTask.usePublicIp) && Objects.equals(this.syncing, postTask.syncing)
+            && Objects.equals(this.existServer, postTask.existServer);
     }
 
     @Override
@@ -455,7 +478,8 @@ public class PostTask {
             projectId,
             vmTemplateId,
             usePublicIp,
-            syncing);
+            syncing,
+            existServer);
     }
 
     @Override
@@ -476,6 +500,7 @@ public class PostTask {
         sb.append("    vmTemplateId: ").append(toIndentedString(vmTemplateId)).append("\n");
         sb.append("    usePublicIp: ").append(toIndentedString(usePublicIp)).append("\n");
         sb.append("    syncing: ").append(toIndentedString(syncing)).append("\n");
+        sb.append("    existServer: ").append(toIndentedString(existServer)).append("\n");
         sb.append("}");
         return sb.toString();
     }

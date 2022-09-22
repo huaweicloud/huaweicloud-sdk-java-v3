@@ -212,7 +212,7 @@ public class TaskTargetServer {
     }
 
     /**
-     * 目的端服务器ip
+     * 目的端服务器IP
      * @return ip
      */
     public String getIp() {
@@ -379,7 +379,7 @@ public class TaskTargetServer {
     }
 
     /**
-     * 目的端代理镜像磁盘id
+     * 目的端代理镜像磁盘ID
      * @return imageDiskId
      */
     public String getImageDiskId() {
@@ -396,7 +396,7 @@ public class TaskTargetServer {
     }
 
     /**
-     * 目的端回滚快照id
+     * 目的端回滚快照ID
      * @return cutoveredSnapshotIds
      */
     public String getCutoveredSnapshotIds() {

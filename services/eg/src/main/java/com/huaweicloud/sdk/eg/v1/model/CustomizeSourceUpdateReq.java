@@ -15,6 +15,11 @@ public class CustomizeSourceUpdateReq {
 
     private String description;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "detail")
+
+    private Object detail;
+
     public CustomizeSourceUpdateReq withDescription(String description) {
         this.description = description;
         return this;
@@ -32,6 +37,23 @@ public class CustomizeSourceUpdateReq {
         this.description = description;
     }
 
+    public CustomizeSourceUpdateReq withDetail(Object detail) {
+        this.detail = detail;
+        return this;
+    }
+
+    /**
+     * json格式封装消息实例更新信息：如RabbitMQ实例的虚拟主机vhost字段、队列queue字段、用户密码
+     * @return detail
+     */
+    public Object getDetail() {
+        return detail;
+    }
+
+    public void setDetail(Object detail) {
+        this.detail = detail;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -41,12 +63,13 @@ public class CustomizeSourceUpdateReq {
             return false;
         }
         CustomizeSourceUpdateReq customizeSourceUpdateReq = (CustomizeSourceUpdateReq) o;
-        return Objects.equals(this.description, customizeSourceUpdateReq.description);
+        return Objects.equals(this.description, customizeSourceUpdateReq.description)
+            && Objects.equals(this.detail, customizeSourceUpdateReq.detail);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(description);
+        return Objects.hash(description, detail);
     }
 
     @Override
@@ -54,6 +77,7 @@ public class CustomizeSourceUpdateReq {
         StringBuilder sb = new StringBuilder();
         sb.append("class CustomizeSourceUpdateReq {\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    detail: ").append(toIndentedString(detail)).append("\n");
         sb.append("}");
         return sb.toString();
     }

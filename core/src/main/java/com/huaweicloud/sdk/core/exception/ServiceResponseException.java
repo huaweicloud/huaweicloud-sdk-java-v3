@@ -33,6 +33,8 @@ import java.util.Objects;
  * @author HuaweiCloud_SDK
  */
 public class ServiceResponseException extends SdkException {
+    private static final long serialVersionUID = 3963239618582355630L;
+
     private final int httpStatusCode;
 
     private String errorMsg;

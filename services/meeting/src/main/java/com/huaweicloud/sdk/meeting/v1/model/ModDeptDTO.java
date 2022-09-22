@@ -128,7 +128,7 @@ public class ModDeptDTO {
     private InPermissionEnum inPermission;
 
     /**
-     * 该部门下用户访问权限控制 - UNLIMITED：不限制 - ONLY_SELF：仅能查询自己 - SELF_AND_CHILD_DEPARTMENT：该部门下用户能查询本部门及子部门通讯 - DESIGNATED_DEPARTMENT：该部门下用户能查询指定部门通讯录
+     * 该部门下用户访问权限控制。 - UNLIMITED：不限制 - ONLY_SELF：仅能查询自己 - SELF_AND_CHILD_DEPARTMENT：该部门下用户能查询本部门及子部门通讯 - DESIGNATED_DEPARTMENT：该部门下用户能查询指定部门通讯录
      */
     public static final class OutPermissionEnum {
 
@@ -238,7 +238,7 @@ public class ModDeptDTO {
     }
 
     /**
-     * 部门名称 maxLength：128 minLength：1
+     * 部门名称。
      * @return deptName
      */
     public String getDeptName() {
@@ -255,7 +255,7 @@ public class ModDeptDTO {
     }
 
     /**
-     * 父部门编码 maxLength：32
+     * 父部门编码。
      * @return parentDeptCode
      */
     public String getParentDeptCode() {
@@ -272,7 +272,7 @@ public class ModDeptDTO {
     }
 
     /**
-     * 备注 maxLength：96 minLength：0
+     * 备注。
      * @return note
      */
     public String getNote() {
@@ -306,7 +306,7 @@ public class ModDeptDTO {
     }
 
     /**
-     * 该部门下用户访问权限控制 - UNLIMITED：不限制 - ONLY_SELF：仅能查询自己 - SELF_AND_CHILD_DEPARTMENT：该部门下用户能查询本部门及子部门通讯 - DESIGNATED_DEPARTMENT：该部门下用户能查询指定部门通讯录
+     * 该部门下用户访问权限控制。 - UNLIMITED：不限制 - ONLY_SELF：仅能查询自己 - SELF_AND_CHILD_DEPARTMENT：该部门下用户能查询本部门及子部门通讯 - DESIGNATED_DEPARTMENT：该部门下用户能查询指定部门通讯录
      * @return outPermission
      */
     public OutPermissionEnum getOutPermission() {
@@ -339,7 +339,7 @@ public class ModDeptDTO {
     }
 
     /**
-     * 允许访问的部门列表,仅outPermission为DESIGNATED_DEPARTMENT时有效，最多支持配置150
+     * 允许访问的部门列表,仅outPermission为DESIGNATED_DEPARTMENT时有效，最多支持配置150个部门。
      * @return designatedOutDeptCodes
      */
     public List<String> getDesignatedOutDeptCodes() {
@@ -356,7 +356,7 @@ public class ModDeptDTO {
     }
 
     /**
-     * 部门排序号，序号越小,部门排序越靠前 minimum: 1 maximum: 10000
+     * 部门排序号，序号越小,部门排序越靠前。
      * minimum: 1
      * maximum: 10000
      * @return sortLevel

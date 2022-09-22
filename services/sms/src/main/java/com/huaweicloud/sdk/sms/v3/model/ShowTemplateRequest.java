@@ -21,7 +21,7 @@ public class ShowTemplateRequest {
     }
 
     /**
-     * 需要查询的模板信息的id
+     * 需要查询的模板信息的ID
      * @return id
      */
     public String getId() {

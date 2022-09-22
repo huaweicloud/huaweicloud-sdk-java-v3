@@ -22,7 +22,7 @@ public class RegisterServerResponse extends SdkResponse {
     }
 
     /**
-     * 源端id
+     * 源端ID
      * @return id
      */
     public String getId() {

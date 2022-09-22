@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 新增节目详情响应
+ * 节目信息。
  */
 public class CreateProgramRequestDTO {
 
@@ -29,7 +29,7 @@ public class CreateProgramRequestDTO {
     }
 
     /**
-     * 节目名称
+     * 节目名称。
      * @return programName
      */
     public String getProgramName() {
@@ -62,7 +62,7 @@ public class CreateProgramRequestDTO {
     }
 
     /**
-     * 节目素材列表
+     * 节目素材列表。
      * @return programItemList
      */
     public List<ProgramItemRequestBase> getProgramItemList() {

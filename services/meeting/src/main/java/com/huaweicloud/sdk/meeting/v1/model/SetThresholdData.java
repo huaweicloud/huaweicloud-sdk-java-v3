@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 阈值阈值设置请求体
+ * 阈值阈值设置请求体。
  */
 public class SetThresholdData {
 
@@ -26,7 +26,7 @@ public class SetThresholdData {
     }
 
     /**
-     * 接收方向阈值设定值，单位为毫秒(ms) 取值范围：0 - 10000
+     * 接收方向阈值设定值，单位为毫秒(ms)。 取值范围：0 - 10000。
      * minimum: 0
      * maximum: 10000
      * @return receiving
@@ -45,7 +45,7 @@ public class SetThresholdData {
     }
 
     /**
-     * 发送方向阈值设定值，单位为毫秒(ms) 取值范围：0 - 10000
+     * 发送方向阈值设定值，单位为毫秒(ms)。 取值范围：0 - 10000。
      * minimum: 0
      * maximum: 10000
      * @return sending

@@ -189,6 +189,16 @@ public class CreateCustomAuthorizerV2Response extends SdkResponse {
     private String authorizerUri;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "authorizer_version")
+
+    private String authorizerVersion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "authorizer_alias_uri")
+
+    private String authorizerAliasUri;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "identities")
 
     private List<Identity> identities = null;
@@ -299,6 +309,40 @@ public class CreateCustomAuthorizerV2Response extends SdkResponse {
 
     public void setAuthorizerUri(String authorizerUri) {
         this.authorizerUri = authorizerUri;
+    }
+
+    public CreateCustomAuthorizerV2Response withAuthorizerVersion(String authorizerVersion) {
+        this.authorizerVersion = authorizerVersion;
+        return this;
+    }
+
+    /**
+     * 函数版本。  当函数别名URN和函数版本同时传入时，函数版本将被忽略，只会使用函数别名URN
+     * @return authorizerVersion
+     */
+    public String getAuthorizerVersion() {
+        return authorizerVersion;
+    }
+
+    public void setAuthorizerVersion(String authorizerVersion) {
+        this.authorizerVersion = authorizerVersion;
+    }
+
+    public CreateCustomAuthorizerV2Response withAuthorizerAliasUri(String authorizerAliasUri) {
+        this.authorizerAliasUri = authorizerAliasUri;
+        return this;
+    }
+
+    /**
+     * 函数别名地址。  当函数别名URN和函数版本同时传入时，函数版本将被忽略，只会使用函数别名URN
+     * @return authorizerAliasUri
+     */
+    public String getAuthorizerAliasUri() {
+        return authorizerAliasUri;
+    }
+
+    public void setAuthorizerAliasUri(String authorizerAliasUri) {
+        this.authorizerAliasUri = authorizerAliasUri;
     }
 
     public CreateCustomAuthorizerV2Response withIdentities(List<Identity> identities) {
@@ -483,6 +527,8 @@ public class CreateCustomAuthorizerV2Response extends SdkResponse {
             && Objects.equals(this.type, createCustomAuthorizerV2Response.type)
             && Objects.equals(this.authorizerType, createCustomAuthorizerV2Response.authorizerType)
             && Objects.equals(this.authorizerUri, createCustomAuthorizerV2Response.authorizerUri)
+            && Objects.equals(this.authorizerVersion, createCustomAuthorizerV2Response.authorizerVersion)
+            && Objects.equals(this.authorizerAliasUri, createCustomAuthorizerV2Response.authorizerAliasUri)
             && Objects.equals(this.identities, createCustomAuthorizerV2Response.identities)
             && Objects.equals(this.ttl, createCustomAuthorizerV2Response.ttl)
             && Objects.equals(this.userData, createCustomAuthorizerV2Response.userData)
@@ -500,6 +546,8 @@ public class CreateCustomAuthorizerV2Response extends SdkResponse {
             type,
             authorizerType,
             authorizerUri,
+            authorizerVersion,
+            authorizerAliasUri,
             identities,
             ttl,
             userData,
@@ -519,6 +567,8 @@ public class CreateCustomAuthorizerV2Response extends SdkResponse {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    authorizerType: ").append(toIndentedString(authorizerType)).append("\n");
         sb.append("    authorizerUri: ").append(toIndentedString(authorizerUri)).append("\n");
+        sb.append("    authorizerVersion: ").append(toIndentedString(authorizerVersion)).append("\n");
+        sb.append("    authorizerAliasUri: ").append(toIndentedString(authorizerAliasUri)).append("\n");
         sb.append("    identities: ").append(toIndentedString(identities)).append("\n");
         sb.append("    ttl: ").append(toIndentedString(ttl)).append("\n");
         sb.append("    userData: ").append(toIndentedString(userData)).append("\n");

@@ -40,7 +40,7 @@ public class SearchMeetingFileListResponse extends SdkResponse {
     }
 
     /**
-     * 页面起始页，从0开始
+     * 页面起始页，从0开始。
      * @return offset
      */
     public Integer getOffset() {
@@ -107,7 +107,7 @@ public class SearchMeetingFileListResponse extends SdkResponse {
     }
 
     /**
-     * IdeaHub、终端“查看会议纪要列表”响应
+     * 会议纪要列表。
      * @return data
      */
     public List<ListMeetingFileResponseDTO> getData() {

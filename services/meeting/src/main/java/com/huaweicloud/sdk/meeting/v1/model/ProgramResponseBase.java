@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 节目响应信息
+ * 节目信息。
  */
 public class ProgramResponseBase {
 
@@ -46,7 +46,7 @@ public class ProgramResponseBase {
     }
 
     /**
-     * 节目ID
+     * 节目ID。
      * @return id
      */
     public String getId() {
@@ -63,7 +63,7 @@ public class ProgramResponseBase {
     }
 
     /**
-     * 更新者
+     * 更新者。
      * @return lastUpdatedBy
      */
     public String getLastUpdatedBy() {
@@ -80,7 +80,7 @@ public class ProgramResponseBase {
     }
 
     /**
-     * 更新时间
+     * 更新时间。
      * @return updateTime
      */
     public Long getUpdateTime() {
@@ -97,7 +97,7 @@ public class ProgramResponseBase {
     }
 
     /**
-     * 节目名称
+     * 节目名称。
      * @return programName
      */
     public String getProgramName() {
@@ -114,7 +114,7 @@ public class ProgramResponseBase {
     }
 
     /**
-     * 节目的总素材大小（含单位）
+     * 节目的总素材大小（含单位）。
      * @return materialSizeStr
      */
     public String getMaterialSizeStr() {
@@ -131,7 +131,7 @@ public class ProgramResponseBase {
     }
 
     /**
-     * 节目的总播放时长，单位秒
+     * 节目的总播放时长，单位秒。
      * @return playTime
      */
     public Integer getPlayTime() {

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 分页查询的公共属性
+ * 分页查询的公共属性。
  */
 public class Pages {
 
@@ -31,7 +31,7 @@ public class Pages {
     }
 
     /**
-     * 页面起始页，从0开始
+     * 页面起始页，从0开始。
      * @return offset
      */
     public Integer getOffset() {

@@ -156,7 +156,7 @@ public class UserInfo {
     }
 
     /**
-     * 用户ID
+     * 用户UUID。
      * @return userId
      */
     public String getUserId() {
@@ -173,7 +173,7 @@ public class UserInfo {
     }
 
     /**
-     * 用户UC帐号
+     * 华为云会议帐号。
      * @return ucloginAccount
      */
     public String getUcloginAccount() {
@@ -190,7 +190,7 @@ public class UserInfo {
     }
 
     /**
-     * 用户关联的号码，sip格式。 登录类型不一样获取到的号码也不同，如软终端和硬终端客户端登录获取的号码不同。若未关联号码，则为空。 例如：sip:+8675590121000@domain5.huawei.com 
+     * 用户关联的SIP号码。 
      * @return serviceAccount
      */
     public String getServiceAccount() {
@@ -207,7 +207,7 @@ public class UserInfo {
     }
 
     /**
-     * 号码对应的HA1
+     * 号码对应的HA1。
      * @return numberHA1
      */
     public String getNumberHA1() {
@@ -224,7 +224,7 @@ public class UserInfo {
     }
 
     /**
-     * 用户别名1
+     * 用户别名。
      * @return alias1
      */
     public String getAlias1() {
@@ -241,7 +241,7 @@ public class UserInfo {
     }
 
     /**
-     * 企业ID
+     * 用户归属的企业ID。
      * @return companyId
      */
     public String getCompanyId() {
@@ -258,7 +258,7 @@ public class UserInfo {
     }
 
     /**
-     * SP ID
+     * 用户所在企业归属的SP ID。
      * @return spId
      */
     public String getSpId() {
@@ -275,7 +275,7 @@ public class UserInfo {
     }
 
     /**
-     * 企业域名
+     * 企业域名。
      * @return companyDomain
      */
     public String getCompanyDomain() {
@@ -292,7 +292,7 @@ public class UserInfo {
     }
 
     /**
-     * 本地鉴权：realm
+     * 本地鉴权。
      * @return realm
      */
     public String getRealm() {
@@ -309,7 +309,7 @@ public class UserInfo {
     }
 
     /**
-     * 用户类型。 * 0：系统管理用户 * 1：SP管理用户 * 2：企业用户 * 3：upath用户 * 4：硬终端默认用户 * 5：TE终端用户 * 6：顾客用户 * 7：公共设备用户 * 8：集群群组用户 * 9：USM用户 
+     * 用户类型。 * 1：SP管理用户 * 2：企业用户 * 3：免费注册用户 * 10：企业设备用户 * 11：匿名用户 * 12：智慧屏用户 * 13：IdeaHub用户 * 14：电子白板（SmartRooms）用户 
      * @return userType
      */
     public Integer getUserType() {
@@ -326,7 +326,7 @@ public class UserInfo {
     }
 
     /**
-     * 管理员类型： * 0：默认管理员 * 1：普通管理员 * 2：非管理员，即普通企业成员，USERTYPE为2时有效 
+     * 管理员类型。 * 0：默认管理员 * 1：普通管理员 * 2：非管理员，即普通企业成员，userType为2时有效 
      * @return adminType
      */
     public Integer getAdminType() {
@@ -343,7 +343,7 @@ public class UserInfo {
     }
 
     /**
-     * 用户姓名
+     * 用户名称。
      * @return name
      */
     public String getName() {
@@ -360,7 +360,7 @@ public class UserInfo {
     }
 
     /**
-     * 用户英文姓名
+     * 用户英文名称。
      * @return nameEn
      */
     public String getNameEn() {
@@ -377,7 +377,7 @@ public class UserInfo {
     }
 
     /**
-     * 标识是否绑定手机
+     * 标识是否绑定手机。
      * @return isBindPhone
      */
     public Boolean getIsBindPhone() {
@@ -394,7 +394,7 @@ public class UserInfo {
     }
 
     /**
-     * 标识是否是免费试用用户
+     * 标识是否是免费试用用户。
      * @return freeUser
      */
     public Boolean getFreeUser() {
@@ -411,7 +411,7 @@ public class UserInfo {
     }
 
     /**
-     * 用户的第三方账号，例如华为账号登录时获取到的union_id
+     * 第三方的用户帐号。
      * @return thirdAccount
      */
     public String getThirdAccount() {
@@ -428,7 +428,7 @@ public class UserInfo {
     }
 
     /**
-     * 智慧屏设备id
+     * 智慧屏设备ID。
      * @return visionAccount
      */
     public String getVisionAccount() {
@@ -445,7 +445,7 @@ public class UserInfo {
     }
 
     /**
-     * 头像链接
+     * 头像链接。
      * @return headPictureUrl
      */
     public String getHeadPictureUrl() {
@@ -462,7 +462,7 @@ public class UserInfo {
     }
 
     /**
-     * 机机密码，用于智慧屏登录
+     * 机机密码，用于智慧屏登录。
      * @return password
      */
     public String getPassword() {
@@ -498,7 +498,7 @@ public class UserInfo {
     }
 
     /**
-     * 付费用户机机账号，用于智慧屏登录
+     * 付费用户机机帐号，用于智慧屏登录。
      * @return paidAccount
      */
     public String getPaidAccount() {
@@ -515,7 +515,7 @@ public class UserInfo {
     }
 
     /**
-     * 付费用户机机密码，用于智慧屏登录
+     * 付费用户机机密码，用于智慧屏登录。
      * @return paidPassword
      */
     public String getPaidPassword() {
@@ -532,7 +532,7 @@ public class UserInfo {
     }
 
     /**
-     * 标识是否是WeLink用户
+     * 标识是否是WeLink用户。
      * @return weLinkUser
      */
     public Boolean getWeLinkUser() {
@@ -549,7 +549,7 @@ public class UserInfo {
     }
 
     /**
-     * 应用ID
+     * 应用ID。
      * @return appId
      */
     public String getAppId() {
@@ -566,7 +566,7 @@ public class UserInfo {
     }
 
     /**
-     * tr069帐号
+     * tr069帐号。
      * @return tr069Account
      */
     public String getTr069Account() {
@@ -583,7 +583,7 @@ public class UserInfo {
     }
 
     /**
-     * 企业类型。 * 0：企业版 * 1：公共企业，手机、邮箱注册时会放到该企业内 * 2：公共企业，智慧屏用户自动开户时会放到该企业内 * 3：公共企业，大屏用户自动开户时会放到该企业内 * 4：公共TOC消费者企业 * 5：免费版 * 6：专业版 
+     * 企业类型。 * 0：旗舰版 * 5：免费版 * 6：标准版 
      * @return corpType
      */
     public Integer getCorpType() {
@@ -600,7 +600,7 @@ public class UserInfo {
     }
 
     /**
-     * 华为云账号ID
+     * 华为云帐号ID。
      * @return cloudUserId
      */
     public String getCloudUserId() {
@@ -617,7 +617,7 @@ public class UserInfo {
     }
 
     /**
-     * 标识是否是灰度用户
+     * 标识是否是灰度用户。
      * @return grayUser
      */
     public Boolean getGrayUser() {

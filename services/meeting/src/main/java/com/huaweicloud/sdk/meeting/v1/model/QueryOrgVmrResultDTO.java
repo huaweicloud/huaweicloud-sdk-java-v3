@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 组织查询的vmr列表，不越权显示vmr的来宾密码，主席密码等
+ * 查询到的云会议室列表。
  */
 public class QueryOrgVmrResultDTO {
 
@@ -72,7 +72,7 @@ public class QueryOrgVmrResultDTO {
     }
 
     /**
-     * 唯一标识。 说明：对应会议管理->创建会议接口中的vmrID。 
+     * 云会议室的ID。 > 对应[[创建会议](https://support.huaweicloud.com/api-meeting/meeting_21_0014.html)](tag:hws)[[创建会议](https://support.huaweicloud.com/intl/zh-cn/api-meeting/meeting_21_0014.html)](tag:hk)接口中的vmrID。 
      * @return id
      */
     public String getId() {
@@ -89,7 +89,7 @@ public class QueryOrgVmrResultDTO {
     }
 
     /**
-     * 云会议室ID。 说明：对应会议管理->创建会议接口中当vmrIDType等于0（固定ID）时返回数据的conferenceID 。 
+     * 云会议室的固定会议ID。 > 对应[[创建会议](https://support.huaweicloud.com/api-meeting/meeting_21_0014.html)](tag:hws)[[创建会议](https://support.huaweicloud.com/intl/zh-cn/api-meeting/meeting_21_0014.html)](tag:hk)接口中的vmrConferenceID。 
      * @return vmrId
      */
     public String getVmrId() {
@@ -157,7 +157,7 @@ public class QueryOrgVmrResultDTO {
     }
 
     /**
-     * 最大观众与会方数（仅网络研讨会有效）
+     * 最大观众与会方数（仅网络研讨会有效）。
      * @return maxAudienceParties
      */
     public Integer getMaxAudienceParties() {
@@ -243,7 +243,7 @@ public class QueryOrgVmrResultDTO {
     }
 
     /**
-     * 到期时间，utc时间戳
+     * 到期时间的时间戳，单位毫秒。
      * @return expireDate
      */
     public Long getExpireDate() {
@@ -260,7 +260,7 @@ public class QueryOrgVmrResultDTO {
     }
 
     /**
-     * 按次资源转商后，商用规格最大观众与会方数（仅网络研讨会有效）
+     * 按次资源转商后，商用规格最大观众与会方数（仅网络研讨会有效）。
      * @return commercialMaxAudienceParties
      */
     public Integer getCommercialMaxAudienceParties() {

@@ -31,6 +31,11 @@ public class ReleaseRepository {
     private String size;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "category_name")
+
+    private String categoryName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_type")
 
     private String fileType;
@@ -113,6 +118,23 @@ public class ReleaseRepository {
         this.size = size;
     }
 
+    public ReleaseRepository withCategoryName(String categoryName) {
+        this.categoryName = categoryName;
+        return this;
+    }
+
+    /**
+     * 软件包类型名称
+     * @return categoryName
+     */
+    public String getCategoryName() {
+        return categoryName;
+    }
+
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
+    }
+
     public ReleaseRepository withFileType(String fileType) {
         this.fileType = fileType;
         return this;
@@ -176,6 +198,7 @@ public class ReleaseRepository {
         return Objects.equals(this.id, releaseRepository.id) && Objects.equals(this.name, releaseRepository.name)
             && Objects.equals(this.downloadPath, releaseRepository.downloadPath)
             && Objects.equals(this.size, releaseRepository.size)
+            && Objects.equals(this.categoryName, releaseRepository.categoryName)
             && Objects.equals(this.fileType, releaseRepository.fileType)
             && Objects.equals(this.created, releaseRepository.created)
             && Objects.equals(this.updated, releaseRepository.updated);
@@ -183,7 +206,7 @@ public class ReleaseRepository {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, downloadPath, size, fileType, created, updated);
+        return Objects.hash(id, name, downloadPath, size, categoryName, fileType, created, updated);
     }
 
     @Override
@@ -194,6 +217,7 @@ public class ReleaseRepository {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    downloadPath: ").append(toIndentedString(downloadPath)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
+        sb.append("    categoryName: ").append(toIndentedString(categoryName)).append("\n");
         sb.append("    fileType: ").append(toIndentedString(fileType)).append("\n");
         sb.append("    created: ").append(toIndentedString(created)).append("\n");
         sb.append("    updated: ").append(toIndentedString(updated)).append("\n");

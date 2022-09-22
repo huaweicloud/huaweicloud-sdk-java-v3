@@ -105,10 +105,97 @@ public class ApiPolicyFunctionResp {
 
     private InvocationTypeEnum invocationType;
 
+    /**
+     * 对接函数的网络架构类型 - V1：非VPC网络架构 - V2：VPC网络架构
+     */
+    public static final class NetworkTypeEnum {
+
+        /**
+         * Enum V1 for value: "V1"
+         */
+        public static final NetworkTypeEnum V1 = new NetworkTypeEnum("V1");
+
+        /**
+         * Enum V2 for value: "V2"
+         */
+        public static final NetworkTypeEnum V2 = new NetworkTypeEnum("V2");
+
+        private static final Map<String, NetworkTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, NetworkTypeEnum> createStaticFields() {
+            Map<String, NetworkTypeEnum> map = new HashMap<>();
+            map.put("V1", V1);
+            map.put("V2", V2);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        NetworkTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static NetworkTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            NetworkTypeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new NetworkTypeEnum(value);
+            }
+            return result;
+        }
+
+        public static NetworkTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            NetworkTypeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof NetworkTypeEnum) {
+                return this.value.equals(((NetworkTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "network_type")
+
+    private NetworkTypeEnum networkType;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
 
     private String version;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "alias_urn")
+
+    private String aliasUrn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timeout")
@@ -256,13 +343,30 @@ public class ApiPolicyFunctionResp {
         this.invocationType = invocationType;
     }
 
+    public ApiPolicyFunctionResp withNetworkType(NetworkTypeEnum networkType) {
+        this.networkType = networkType;
+        return this;
+    }
+
+    /**
+     * 对接函数的网络架构类型 - V1：非VPC网络架构 - V2：VPC网络架构
+     * @return networkType
+     */
+    public NetworkTypeEnum getNetworkType() {
+        return networkType;
+    }
+
+    public void setNetworkType(NetworkTypeEnum networkType) {
+        this.networkType = networkType;
+    }
+
     public ApiPolicyFunctionResp withVersion(String version) {
         this.version = version;
         return this;
     }
 
     /**
-     * 版本。字符长度不超过64
+     * 函数版本  当函数别名URN和函数版本同时传入时，函数版本将被忽略，只会使用函数别名URN
      * @return version
      */
     public String getVersion() {
@@ -271,6 +375,23 @@ public class ApiPolicyFunctionResp {
 
     public void setVersion(String version) {
         this.version = version;
+    }
+
+    public ApiPolicyFunctionResp withAliasUrn(String aliasUrn) {
+        this.aliasUrn = aliasUrn;
+        return this;
+    }
+
+    /**
+     * 函数别名URN  当函数别名URN和函数版本同时传入时，函数版本将被忽略，只会使用函数别名URN
+     * @return aliasUrn
+     */
+    public String getAliasUrn() {
+        return aliasUrn;
+    }
+
+    public void setAliasUrn(String aliasUrn) {
+        this.aliasUrn = aliasUrn;
     }
 
     public ApiPolicyFunctionResp withTimeout(Integer timeout) {
@@ -436,7 +557,9 @@ public class ApiPolicyFunctionResp {
         ApiPolicyFunctionResp apiPolicyFunctionResp = (ApiPolicyFunctionResp) o;
         return Objects.equals(this.functionUrn, apiPolicyFunctionResp.functionUrn)
             && Objects.equals(this.invocationType, apiPolicyFunctionResp.invocationType)
+            && Objects.equals(this.networkType, apiPolicyFunctionResp.networkType)
             && Objects.equals(this.version, apiPolicyFunctionResp.version)
+            && Objects.equals(this.aliasUrn, apiPolicyFunctionResp.aliasUrn)
             && Objects.equals(this.timeout, apiPolicyFunctionResp.timeout)
             && Objects.equals(this.id, apiPolicyFunctionResp.id)
             && Objects.equals(this.effectMode, apiPolicyFunctionResp.effectMode)
@@ -450,7 +573,9 @@ public class ApiPolicyFunctionResp {
     public int hashCode() {
         return Objects.hash(functionUrn,
             invocationType,
+            networkType,
             version,
+            aliasUrn,
             timeout,
             id,
             effectMode,
@@ -466,7 +591,9 @@ public class ApiPolicyFunctionResp {
         sb.append("class ApiPolicyFunctionResp {\n");
         sb.append("    functionUrn: ").append(toIndentedString(functionUrn)).append("\n");
         sb.append("    invocationType: ").append(toIndentedString(invocationType)).append("\n");
+        sb.append("    networkType: ").append(toIndentedString(networkType)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
+        sb.append("    aliasUrn: ").append(toIndentedString(aliasUrn)).append("\n");
         sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    effectMode: ").append(toIndentedString(effectMode)).append("\n");

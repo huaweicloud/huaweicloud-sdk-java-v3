@@ -15,8 +15,13 @@ import java.util.Objects;
  */
 public class TargetPhysicalVolumes {
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private Long id;
+
     /**
-     * 分区类型
+     * 分区类型 NORMAL:平常 OS：系统设备 BOOT：BOOT设备
      */
     public static final class DeviceUseEnum {
 
@@ -138,13 +143,42 @@ public class TargetPhysicalVolumes {
 
     private String uuid;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "relation_name")
+
+    private String relationName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "free_size")
+
+    private Long freeSize;
+
+    public TargetPhysicalVolumes withId(Long id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * 逻辑卷ID
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return id
+     */
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public TargetPhysicalVolumes withDeviceUse(DeviceUseEnum deviceUse) {
         this.deviceUse = deviceUse;
         return this;
     }
 
     /**
-     * 分区类型
+     * 分区类型 NORMAL:平常 OS：系统设备 BOOT：BOOT设备
      * @return deviceUse
      */
     public DeviceUseEnum getDeviceUse() {
@@ -280,6 +314,42 @@ public class TargetPhysicalVolumes {
         this.uuid = uuid;
     }
 
+    public TargetPhysicalVolumes withRelationName(String relationName) {
+        this.relationName = relationName;
+        return this;
+    }
+
+    /**
+     * Linux系统 目的端ECS中与源端关联的磁盘名称
+     * @return relationName
+     */
+    public String getRelationName() {
+        return relationName;
+    }
+
+    public void setRelationName(String relationName) {
+        this.relationName = relationName;
+    }
+
+    public TargetPhysicalVolumes withFreeSize(Long freeSize) {
+        this.freeSize = freeSize;
+        return this;
+    }
+
+    /**
+     * 分区空闲大小
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return freeSize
+     */
+    public Long getFreeSize() {
+        return freeSize;
+    }
+
+    public void setFreeSize(Long freeSize) {
+        this.freeSize = freeSize;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -289,25 +359,30 @@ public class TargetPhysicalVolumes {
             return false;
         }
         TargetPhysicalVolumes targetPhysicalVolumes = (TargetPhysicalVolumes) o;
-        return Objects.equals(this.deviceUse, targetPhysicalVolumes.deviceUse)
+        return Objects.equals(this.id, targetPhysicalVolumes.id)
+            && Objects.equals(this.deviceUse, targetPhysicalVolumes.deviceUse)
             && Objects.equals(this.fileSystem, targetPhysicalVolumes.fileSystem)
             && Objects.equals(this.index, targetPhysicalVolumes.index)
             && Objects.equals(this.mountPoint, targetPhysicalVolumes.mountPoint)
             && Objects.equals(this.name, targetPhysicalVolumes.name)
             && Objects.equals(this.size, targetPhysicalVolumes.size)
             && Objects.equals(this.usedSize, targetPhysicalVolumes.usedSize)
-            && Objects.equals(this.uuid, targetPhysicalVolumes.uuid);
+            && Objects.equals(this.uuid, targetPhysicalVolumes.uuid)
+            && Objects.equals(this.relationName, targetPhysicalVolumes.relationName)
+            && Objects.equals(this.freeSize, targetPhysicalVolumes.freeSize);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(deviceUse, fileSystem, index, mountPoint, name, size, usedSize, uuid);
+        return Objects
+            .hash(id, deviceUse, fileSystem, index, mountPoint, name, size, usedSize, uuid, relationName, freeSize);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class TargetPhysicalVolumes {\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    deviceUse: ").append(toIndentedString(deviceUse)).append("\n");
         sb.append("    fileSystem: ").append(toIndentedString(fileSystem)).append("\n");
         sb.append("    index: ").append(toIndentedString(index)).append("\n");
@@ -316,6 +391,8 @@ public class TargetPhysicalVolumes {
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    usedSize: ").append(toIndentedString(usedSize)).append("\n");
         sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
+        sb.append("    relationName: ").append(toIndentedString(relationName)).append("\n");
+        sb.append("    freeSize: ").append(toIndentedString(freeSize)).append("\n");
         sb.append("}");
         return sb.toString();
     }

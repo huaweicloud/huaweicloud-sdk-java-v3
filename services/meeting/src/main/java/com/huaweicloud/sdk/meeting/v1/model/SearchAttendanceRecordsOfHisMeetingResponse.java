@@ -40,7 +40,7 @@ public class SearchAttendanceRecordsOfHisMeetingResponse extends SdkResponse {
     }
 
     /**
-     * 第几条。
+     * 查询偏移量。
      * @return offset
      */
     public Integer getOffset() {

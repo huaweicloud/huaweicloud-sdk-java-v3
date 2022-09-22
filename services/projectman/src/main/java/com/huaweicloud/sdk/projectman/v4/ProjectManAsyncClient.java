@@ -1278,6 +1278,38 @@ public class ProjectManAsyncClient {
     }
 
     /**
+     * 下载图片
+     *
+     * 下载图片
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DownloadImageFileRequest 请求对象
+     * @return CompletableFuture<DownloadImageFileResponse>
+     */
+    public CompletableFuture<DownloadImageFileResponse> downloadImageFileAsync(DownloadImageFileRequest request) {
+        return hcClient.asyncInvokeHttp(request, ProjectManMeta.downloadImageFile);
+    }
+
+    /**
+     * 下载图片
+     *
+     * 下载图片
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DownloadImageFileRequest 请求对象
+     * @return AsyncInvoker<DownloadImageFileRequest, DownloadImageFileResponse>
+     */
+    public AsyncInvoker<DownloadImageFileRequest, DownloadImageFileResponse> downloadImageFileAsyncInvoker(
+        DownloadImageFileRequest request) {
+        return new AsyncInvoker<DownloadImageFileRequest, DownloadImageFileResponse>(request,
+            ProjectManMeta.downloadImageFile, hcClient);
+    }
+
+    /**
      * 查询当前工作项已经关联的工作项
      *
      * 查询当前工作项已经关联的工作项
@@ -1311,9 +1343,9 @@ public class ProjectManAsyncClient {
     }
 
     /**
-     * 查询关联Wiki
+     * 查询关联用例
      *
-     * 查询关联Wiki
+     * 查询关联用例
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1327,9 +1359,9 @@ public class ProjectManAsyncClient {
     }
 
     /**
-     * 查询关联Wiki
+     * 查询关联用例
      *
-     * 查询关联Wiki
+     * 查询关联用例
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1798,6 +1830,39 @@ public class ProjectManAsyncClient {
     }
 
     /**
+     * 查询项目的状态列表
+     *
+     * 查询项目的状态列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListScrumProjectStatusesRequest 请求对象
+     * @return CompletableFuture<ListScrumProjectStatusesResponse>
+     */
+    public CompletableFuture<ListScrumProjectStatusesResponse> listScrumProjectStatusesAsync(
+        ListScrumProjectStatusesRequest request) {
+        return hcClient.asyncInvokeHttp(request, ProjectManMeta.listScrumProjectStatuses);
+    }
+
+    /**
+     * 查询项目的状态列表
+     *
+     * 查询项目的状态列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListScrumProjectStatusesRequest 请求对象
+     * @return AsyncInvoker<ListScrumProjectStatusesRequest, ListScrumProjectStatusesResponse>
+     */
+    public AsyncInvoker<ListScrumProjectStatusesRequest, ListScrumProjectStatusesResponse> listScrumProjectStatusesAsyncInvoker(
+        ListScrumProjectStatusesRequest request) {
+        return new AsyncInvoker<ListScrumProjectStatusesRequest, ListScrumProjectStatusesResponse>(request,
+            ProjectManMeta.listScrumProjectStatuses, hcClient);
+    }
+
+    /**
      * 获取工作项完成率
      *
      * 获取工作项的完成率
@@ -2084,6 +2149,38 @@ public class ProjectManAsyncClient {
         UpdateProjectModuleRequest request) {
         return new AsyncInvoker<UpdateProjectModuleRequest, UpdateProjectModuleResponse>(request,
             ProjectManMeta.updateProjectModule, hcClient);
+    }
+
+    /**
+     * 上传工作项附件
+     *
+     * 上传工作项附件
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UploadAttachmentsRequest 请求对象
+     * @return CompletableFuture<UploadAttachmentsResponse>
+     */
+    public CompletableFuture<UploadAttachmentsResponse> uploadAttachmentsAsync(UploadAttachmentsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ProjectManMeta.uploadAttachments);
+    }
+
+    /**
+     * 上传工作项附件
+     *
+     * 上传工作项附件
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UploadAttachmentsRequest 请求对象
+     * @return AsyncInvoker<UploadAttachmentsRequest, UploadAttachmentsResponse>
+     */
+    public AsyncInvoker<UploadAttachmentsRequest, UploadAttachmentsResponse> uploadAttachmentsAsyncInvoker(
+        UploadAttachmentsRequest request) {
+        return new AsyncInvoker<UploadAttachmentsRequest, UploadAttachmentsResponse>(request,
+            ProjectManMeta.uploadAttachments, hcClient);
     }
 
     /**

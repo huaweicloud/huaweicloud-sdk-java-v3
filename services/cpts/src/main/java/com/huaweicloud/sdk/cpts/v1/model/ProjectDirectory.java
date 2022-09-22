@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 目录列表详情
+ * 用例列表详情
  */
 public class ProjectDirectory {
 

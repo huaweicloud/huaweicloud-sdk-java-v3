@@ -77,7 +77,7 @@ public class AddUserDTO {
     private String desc;
 
     /**
-     * 用户状态 * 0、正常 * 1、停用 默认值：0
+     * 用户状态。默认值：0 * 0：正常 * 1：停用
      */
     public static final class StatusEnum {
 
@@ -184,7 +184,7 @@ public class AddUserDTO {
     }
 
     /**
-     * 企业用户姓名。 maxLength：64 minLength：1
+     * 企业用户名称。
      * @return name
      */
     public String getName() {
@@ -201,7 +201,7 @@ public class AddUserDTO {
     }
 
     /**
-     * 企业用户的英文姓名。 maxLength：64 minLength：0
+     * 企业用户的英文名称。
      * @return englishName
      */
     public String getEnglishName() {
@@ -218,7 +218,7 @@ public class AddUserDTO {
     }
 
     /**
-     * 企业用户帐号，若携带则以携带为准，否则后台自动生成。账号整系统唯一 帐号只能包含大小写字母、数字、_、-、.、@符号，不能为纯数字和@后面带.号。 maxLength：64 minLength：0
+     * 企业用户帐号，若携带则以携带为准，否则后台自动生成。帐号整系统唯一。 帐号只能包含大小写字母、数字、_、-、.、@符号，不能为纯数字和@后面带.号。 > 帐号/密码鉴权方式时需要填写。
      * @return account
      */
     public String getAccount() {
@@ -235,7 +235,7 @@ public class AddUserDTO {
     }
 
     /**
-     * 指定第三方账号开户
+     * 第三方User ID。 > App ID鉴权方式时需要填写。第三方User ID需要企业内唯一。
      * @return thirdAccount
      */
     public String getThirdAccount() {
@@ -252,7 +252,7 @@ public class AddUserDTO {
     }
 
     /**
-     * 手机号，必须加上国家码。 例如中国大陆手机+86xxxxxxx。当填写手机号时 “country”参数必填。 手机号只允许输入纯数字。 说明：手机号或者邮箱至少填写一个 maxLength：32 minLength：0
+     * 手机号，必须加上国家码。 例如中国大陆手机+86xxxxxxx。当填写手机号时 “country”参数必填。 手机号只允许输入纯数字。 说明：手机号或者邮箱至少填写一个
      * @return phone
      */
     public String getPhone() {
@@ -269,7 +269,7 @@ public class AddUserDTO {
     }
 
     /**
-     * 若smsNumber为手机号,则需带上手机号所属的国家。 例如国家为中国大陆则country参数取值为chinaPR 国家和国家码的对应关系请参考：https://support.huaweicloud.com/api-meeting/meeting_21_0109.html 
+     * [[手机号所属的国家](https://support.huaweicloud.com/api-meeting/meeting_21_0109.html#ZH-CN_TOPIC_0212714591__table19371178135314)](tag:hws)[[手机号所属的国家](https://support.huaweicloud.com/intl/zh-cn/api-meeting/meeting_21_0109.html#ZH-CN_TOPIC_0212714591__table19371178135314)](tag:hk) 。 
      * @return country
      */
     public String getCountry() {
@@ -286,7 +286,7 @@ public class AddUserDTO {
     }
 
     /**
-     * 企业用户帐号的密码。若携带则以实际携带为准，否则后台默认生成，密码必须满足： 1、8-32位 2、不能和账号的正序和倒序一致 3、至少包含两种字符类型：小写字母、大写字母、数字、特殊字符（` ~ ! @ # $ % ^ & * ( ) - _ = + | [ { } ] ; : \" ,’ < . > / ?）
+     * 企业用户帐号的密码。若携带则以实际携带为准，否则后台默认生成，密码必须满足： 1、8-32位 2、不能和帐号的正序和倒序一致 3、至少包含两种字符类型：小写字母、大写字母、数字、特殊字符（` ~ ! @ # $ % ^ & * ( ) - _ = + | [ { } ] ; : \" ,’ < . > / ?）
      * @return pwd
      */
     public String getPwd() {
@@ -303,7 +303,7 @@ public class AddUserDTO {
     }
 
     /**
-     * 邮箱 maxLength：255 minLength：0
+     * 邮箱地址。
      * @return email
      */
     public String getEmail() {
@@ -320,7 +320,7 @@ public class AddUserDTO {
     }
 
     /**
-     * 部门编号，若不携带则默认根部门 默认值：1 maxLength：32 minLength：0
+     * 部门编码，若不携带则默认根部门。 默认值：1
      * @return deptCode
      */
     public String getDeptCode() {
@@ -337,7 +337,7 @@ public class AddUserDTO {
     }
 
     /**
-     * 签名 maxLength：512 minLength：0
+     * 签名。
      * @return signature
      */
     public String getSignature() {
@@ -354,7 +354,7 @@ public class AddUserDTO {
     }
 
     /**
-     * 职位 maxLength：32 minLength：0
+     * 职位。
      * @return title
      */
     public String getTitle() {
@@ -371,7 +371,7 @@ public class AddUserDTO {
     }
 
     /**
-     * 备注 maxLength：128 minLength：0
+     * 备注。
      * @return desc
      */
     public String getDesc() {
@@ -388,7 +388,7 @@ public class AddUserDTO {
     }
 
     /**
-     * 用户状态 * 0、正常 * 1、停用 默认值：0
+     * 用户状态。默认值：0 * 0：正常 * 1：停用
      * @return status
      */
     public StatusEnum getStatus() {
@@ -431,7 +431,7 @@ public class AddUserDTO {
     }
 
     /**
-     * 是否发送邮件和短信通知， - 0 不发送 - 不填或者其他值就发送, 默认发送  约束 - 长度范围为0到32个字符
+     * 是否发送开户的邮件和短信通知。 - 0 不发送 - 不填或者其他值就发送, 默认发送
      * @return sendNotify
      */
     public String getSendNotify() {
@@ -448,7 +448,9 @@ public class AddUserDTO {
     }
 
     /**
-     * 通讯录排序等级，序号越低优先级越高。 默认值：10000 maximum：10000 minimum：1
+     * 通讯录排序等级，序号越低优先级越高。 默认值：10000
+     * minimum: 1
+     * maximum: 10000
      * @return sortLevel
      */
     public Integer getSortLevel() {
@@ -465,7 +467,7 @@ public class AddUserDTO {
     }
 
     /**
-     * 是否隐藏手机号码 默认值：false 
+     * 是否隐藏手机号码。默认值：false。 * true：在通讯录和会议中不显示手机号码 * false：在通讯录和会议中显示手机号码 
      * @return hidePhone
      */
     public Boolean getHidePhone() {

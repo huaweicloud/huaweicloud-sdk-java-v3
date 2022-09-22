@@ -26,6 +26,8 @@ package com.huaweicloud.sdk.core.exception;
  */
 public class SslHandShakeException extends ConnectionException {
 
+    private static final long serialVersionUID = 7576301842553029526L;
+
     public SslHandShakeException(String message) {
         super(message);
     }

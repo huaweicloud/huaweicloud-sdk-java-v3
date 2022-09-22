@@ -92,7 +92,7 @@ public class ShowMeetingFileResponse extends SdkResponse {
     }
 
     /**
-     * 会议纪要文件码
+     * 会议纪要文件码。
      * @return fileCode
      */
     public String getFileCode() {
@@ -109,7 +109,7 @@ public class ShowMeetingFileResponse extends SdkResponse {
     }
 
     /**
-     * 文件主题
+     * 文件主题。
      * @return topic
      */
     public String getTopic() {
@@ -126,7 +126,7 @@ public class ShowMeetingFileResponse extends SdkResponse {
     }
 
     /**
-     * 文件Id
+     * 文件Id。
      * @return fileId
      */
     public String getFileId() {
@@ -143,7 +143,7 @@ public class ShowMeetingFileResponse extends SdkResponse {
     }
 
     /**
-     * 文件名
+     * 文件名。
      * @return fileName
      */
     public String getFileName() {
@@ -160,7 +160,7 @@ public class ShowMeetingFileResponse extends SdkResponse {
     }
 
     /**
-     * 文件大小，单位字节
+     * 文件大小，单位字节。
      * @return fileSize
      */
     public Long getFileSize() {
@@ -177,7 +177,7 @@ public class ShowMeetingFileResponse extends SdkResponse {
     }
 
     /**
-     * 缩略图文件Id
+     * 缩略图文件Id。
      * @return thumbnailFileId
      */
     public String getThumbnailFileId() {
@@ -194,7 +194,7 @@ public class ShowMeetingFileResponse extends SdkResponse {
     }
 
     /**
-     * 缩略图文件名
+     * 缩略图文件名。
      * @return thumbnailFileName
      */
     public String getThumbnailFileName() {
@@ -211,7 +211,7 @@ public class ShowMeetingFileResponse extends SdkResponse {
     }
 
     /**
-     * 缩略图文件大小，单位字节
+     * 缩略图文件大小，单位字节。
      * @return thumbnailFileSize
      */
     public Long getThumbnailFileSize() {
@@ -228,7 +228,7 @@ public class ShowMeetingFileResponse extends SdkResponse {
     }
 
     /**
-     * pdf文件Id
+     * pdf文件Id。
      * @return pdfFileId
      */
     public String getPdfFileId() {
@@ -245,7 +245,7 @@ public class ShowMeetingFileResponse extends SdkResponse {
     }
 
     /**
-     * pdf文件名
+     * pdf文件名。
      * @return pdfFileName
      */
     public String getPdfFileName() {
@@ -262,7 +262,7 @@ public class ShowMeetingFileResponse extends SdkResponse {
     }
 
     /**
-     * pdf文件大小，单位字节
+     * pdf文件大小，单位字节。
      * @return pdfFileSize
      */
     public Long getPdfFileSize() {
@@ -279,7 +279,7 @@ public class ShowMeetingFileResponse extends SdkResponse {
     }
 
     /**
-     * 文件url
+     * 文件url。
      * @return fileUrl
      */
     public String getFileUrl() {
@@ -296,7 +296,7 @@ public class ShowMeetingFileResponse extends SdkResponse {
     }
 
     /**
-     * 缩略图文件url
+     * 缩略图文件url。
      * @return thumbnailUrl
      */
     public String getThumbnailUrl() {
@@ -313,7 +313,7 @@ public class ShowMeetingFileResponse extends SdkResponse {
     }
 
     /**
-     * pdf文件url
+     * pdf文件url。
      * @return pdfUrl
      */
     public String getPdfUrl() {
@@ -330,7 +330,7 @@ public class ShowMeetingFileResponse extends SdkResponse {
     }
 
     /**
-     * 文件创建时间戳
+     * 文件创建时间戳。
      * @return creationTimestamp
      */
     public Long getCreationTimestamp() {

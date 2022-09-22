@@ -16,7 +16,7 @@ import java.util.Objects;
 public class PutCopyStateReq {
 
     /**
-     * 源端服务器状
+     * 源端服务器状 UNAVAILABLE：环境校验不通过 WAITING：等待 INIT：初始化 REPLICATE：复制 SYNCING：持续同步 STOPPING：暂停中 STOPPED：已暂停 DELETING：删除中 ERROR：错误 CLONING：等待克隆完成 CUTOVERING：启动目的端中 FINISHED：启动目的端完成
      */
     public static final class CopystateEnum {
 
@@ -152,7 +152,7 @@ public class PutCopyStateReq {
     private CopystateEnum copystate;
 
     /**
-     * 迁移周期
+     * 迁移周期 cutovering:启动目的端中 cutovered:启动目的端完成 checking:检查中 setting:设置中 replicating:复制中 syncing:同步中 
      */
     public static final class MigrationcycleEnum {
 
@@ -263,7 +263,7 @@ public class PutCopyStateReq {
     }
 
     /**
-     * 源端服务器状
+     * 源端服务器状 UNAVAILABLE：环境校验不通过 WAITING：等待 INIT：初始化 REPLICATE：复制 SYNCING：持续同步 STOPPING：暂停中 STOPPED：已暂停 DELETING：删除中 ERROR：错误 CLONING：等待克隆完成 CUTOVERING：启动目的端中 FINISHED：启动目的端完成
      * @return copystate
      */
     public CopystateEnum getCopystate() {
@@ -280,7 +280,7 @@ public class PutCopyStateReq {
     }
 
     /**
-     * 迁移周期
+     * 迁移周期 cutovering:启动目的端中 cutovered:启动目的端完成 checking:检查中 setting:设置中 replicating:复制中 syncing:同步中 
      * @return migrationcycle
      */
     public MigrationcycleEnum getMigrationcycle() {

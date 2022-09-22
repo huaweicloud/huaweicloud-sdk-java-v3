@@ -135,7 +135,7 @@ public abstract class AbstractCredentials<DerivedT extends AbstractCredentials<D
      */
     public DerivedT withAk(String ak) {
         this.ak = ak;
-        return (DerivedT) this;
+        return toDerivedT();
     }
 
     /**
@@ -144,7 +144,7 @@ public abstract class AbstractCredentials<DerivedT extends AbstractCredentials<D
      */
     public DerivedT withSk(String sk) {
         this.sk = sk;
-        return (DerivedT) this;
+        return toDerivedT();
     }
 
     /**
@@ -153,7 +153,7 @@ public abstract class AbstractCredentials<DerivedT extends AbstractCredentials<D
      */
     public DerivedT withSecurityToken(String securityToken) {
         this.securityToken = securityToken;
-        return (DerivedT) this;
+        return toDerivedT();
     }
 
     /**
@@ -162,7 +162,7 @@ public abstract class AbstractCredentials<DerivedT extends AbstractCredentials<D
      */
     public DerivedT withIdpId(String idpId) {
         this.idpId = idpId;
-        return (DerivedT) this;
+        return toDerivedT();
     }
 
     /**
@@ -171,7 +171,7 @@ public abstract class AbstractCredentials<DerivedT extends AbstractCredentials<D
      */
     public DerivedT withIdTokenFile(String idTokenFile) {
         this.idTokenFile = idTokenFile;
-        return (DerivedT) this;
+        return toDerivedT();
     }
 
     /**
@@ -180,7 +180,7 @@ public abstract class AbstractCredentials<DerivedT extends AbstractCredentials<D
      */
     public DerivedT withIamEndpoint(String iamEndpoint) {
         this.iamEndpoint = iamEndpoint;
-        return (DerivedT) this;
+        return toDerivedT();
     }
 
     /**
@@ -189,7 +189,7 @@ public abstract class AbstractCredentials<DerivedT extends AbstractCredentials<D
      */
     public DerivedT withDerivedPredicate(Function<HttpRequest, Boolean> derivedPredicate) {
         this.derivedPredicate = derivedPredicate;
-        return (DerivedT) this;
+        return toDerivedT();
     }
 
     protected String getDefaultIamEndpoint() {
@@ -254,6 +254,11 @@ public abstract class AbstractCredentials<DerivedT extends AbstractCredentials<D
             return true;
         }
         return expiredAt - TimeUtils.getTimeInMillis() < 60000;
+    }
+    
+    @SuppressWarnings("unchecked")
+    private DerivedT toDerivedT() {
+        return (DerivedT) this;
     }
 
     protected abstract void updateAuthTokenByIdToken(HttpClient httpClient);

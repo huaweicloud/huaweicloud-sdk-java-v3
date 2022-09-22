@@ -123,7 +123,7 @@ public class CatalogTargetInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parameters")
 
-    private List<CatalogTargetParameters> parameters = null;
+    private List<Object> parameters = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_time")
@@ -220,12 +220,12 @@ public class CatalogTargetInfo {
         this.providerType = providerType;
     }
 
-    public CatalogTargetInfo withParameters(List<CatalogTargetParameters> parameters) {
+    public CatalogTargetInfo withParameters(List<Object> parameters) {
         this.parameters = parameters;
         return this;
     }
 
-    public CatalogTargetInfo addParametersItem(CatalogTargetParameters parametersItem) {
+    public CatalogTargetInfo addParametersItem(Object parametersItem) {
         if (this.parameters == null) {
             this.parameters = new ArrayList<>();
         }
@@ -233,7 +233,7 @@ public class CatalogTargetInfo {
         return this;
     }
 
-    public CatalogTargetInfo withParameters(Consumer<List<CatalogTargetParameters>> parametersSetter) {
+    public CatalogTargetInfo withParameters(Consumer<List<Object>> parametersSetter) {
         if (this.parameters == null) {
             this.parameters = new ArrayList<>();
         }
@@ -242,14 +242,14 @@ public class CatalogTargetInfo {
     }
 
     /**
-     * 事件目标参数
+     * Get parameters
      * @return parameters
      */
-    public List<CatalogTargetParameters> getParameters() {
+    public List<Object> getParameters() {
         return parameters;
     }
 
-    public void setParameters(List<CatalogTargetParameters> parameters) {
+    public void setParameters(List<Object> parameters) {
         this.parameters = parameters;
     }
 

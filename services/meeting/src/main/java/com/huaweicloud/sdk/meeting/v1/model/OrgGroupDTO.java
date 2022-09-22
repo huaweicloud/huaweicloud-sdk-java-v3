@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 媒体接入(包括SBC和MCU)分组信息
+ * 媒体接入(包括SBC和MCU)分组信息。
  */
 public class OrgGroupDTO {
 
@@ -26,7 +26,7 @@ public class OrgGroupDTO {
     }
 
     /**
-     * 分组Id
+     * 分组Id。
      * @return groupId
      */
     public String getGroupId() {
@@ -43,7 +43,7 @@ public class OrgGroupDTO {
     }
 
     /**
-     * 分组名称
+     * 分组名称。
      * @return groupName
      */
     public String getGroupName() {

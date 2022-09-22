@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 文件上传信息
+ * 文件上传信息。
  */
 public class OpenUploadFileInfo {
 
@@ -27,7 +27,7 @@ public class OpenUploadFileInfo {
     }
 
     /**
-     * 文件Id
+     * 文件Id。
      * @return fileId
      */
     public String getFileId() {

@@ -721,7 +721,7 @@ public class UpdateInstanceV2Response extends SdkResponse {
     private String eipAddress;
 
     /**
-     * 实例计费方式： - 0：按需计费 - 1：包周期计费
+     * 实例计费方式： - 0：按需计费 - 1：[包周期计费](tag:hws,hws_hk)[暂未使用](tag:cmcc,ctc,DT,g42,hk_g42,hk_sbc,hk_tm,hws_eu,hws_ocb,OCB,sbc,tm)
      */
     public static final class ChargingModeEnum {
 
@@ -923,6 +923,11 @@ public class UpdateInstanceV2Response extends SdkResponse {
     @JsonProperty(value = "ingress_ip")
 
     private String ingressIp;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ingress_ip_v6")
+
+    private String ingressIpV6;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_id")
@@ -1180,7 +1185,7 @@ public class UpdateInstanceV2Response extends SdkResponse {
     }
 
     /**
-     * 实例计费方式： - 0：按需计费 - 1：包周期计费
+     * 实例计费方式： - 0：按需计费 - 1：[包周期计费](tag:hws,hws_hk)[暂未使用](tag:cmcc,ctc,DT,g42,hk_g42,hk_sbc,hk_tm,hws_eu,hws_ocb,OCB,sbc,tm)
      * @return chargingMode
      */
     public ChargingModeEnum getChargingMode() {
@@ -1197,7 +1202,7 @@ public class UpdateInstanceV2Response extends SdkResponse {
     }
 
     /**
-     * 包周期计费订单编号
+     * [包周期计费订单编号](tag:hws,hws_hk)[计费订单编号参数暂未使用](tag:cmcc,ctc,DT,g42,hk_g42,hk_sbc,hk_tm,hws_eu,hws_ocb,OCB,sbc,tm)
      * @return cbcMetadata
      */
     public String getCbcMetadata() {
@@ -1342,6 +1347,23 @@ public class UpdateInstanceV2Response extends SdkResponse {
 
     public void setIngressIp(String ingressIp) {
         this.ingressIp = ingressIp;
+    }
+
+    public UpdateInstanceV2Response withIngressIpV6(String ingressIpV6) {
+        this.ingressIpV6 = ingressIpV6;
+        return this;
+    }
+
+    /**
+     * 实例入口，虚拟私有云访问地址 (IPv6) 
+     * @return ingressIpV6
+     */
+    public String getIngressIpV6() {
+        return ingressIpV6;
+    }
+
+    public void setIngressIpV6(String ingressIpV6) {
+        this.ingressIpV6 = ingressIpV6;
     }
 
     public UpdateInstanceV2Response withUserId(String userId) {
@@ -1727,6 +1749,7 @@ public class UpdateInstanceV2Response extends SdkResponse {
             && Objects.equals(this.maintainBegin, updateInstanceV2Response.maintainBegin)
             && Objects.equals(this.maintainEnd, updateInstanceV2Response.maintainEnd)
             && Objects.equals(this.ingressIp, updateInstanceV2Response.ingressIp)
+            && Objects.equals(this.ingressIpV6, updateInstanceV2Response.ingressIpV6)
             && Objects.equals(this.userId, updateInstanceV2Response.userId)
             && Objects.equals(this.natEipIpv6Cidr, updateInstanceV2Response.natEipIpv6Cidr)
             && Objects.equals(this.eipIpv6Address, updateInstanceV2Response.eipIpv6Address)
@@ -1767,6 +1790,7 @@ public class UpdateInstanceV2Response extends SdkResponse {
             maintainBegin,
             maintainEnd,
             ingressIp,
+            ingressIpV6,
             userId,
             natEipIpv6Cidr,
             eipIpv6Address,
@@ -1809,6 +1833,7 @@ public class UpdateInstanceV2Response extends SdkResponse {
         sb.append("    maintainBegin: ").append(toIndentedString(maintainBegin)).append("\n");
         sb.append("    maintainEnd: ").append(toIndentedString(maintainEnd)).append("\n");
         sb.append("    ingressIp: ").append(toIndentedString(ingressIp)).append("\n");
+        sb.append("    ingressIpV6: ").append(toIndentedString(ingressIpV6)).append("\n");
         sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
         sb.append("    natEipIpv6Cidr: ").append(toIndentedString(natEipIpv6Cidr)).append("\n");
         sb.append("    eipIpv6Address: ").append(toIndentedString(eipIpv6Address)).append("\n");

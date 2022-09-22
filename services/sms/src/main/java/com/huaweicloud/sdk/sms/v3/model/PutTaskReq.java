@@ -14,7 +14,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 查询指定迁移任务的返回体
+ * 更新指定迁移任务
  */
 public class PutTaskReq {
 
@@ -24,7 +24,7 @@ public class PutTaskReq {
     private String name;
 
     /**
-     * 任务类型，创建时必选，更新时可选 
+     * 任务类型，创建时必选，更新时可选 MIGRATE_FILE:文件级迁移 MIGRATE_BLOCK:块级迁移 
      */
     public static final class TypeEnum {
 
@@ -306,6 +306,11 @@ public class PutTaskReq {
     private String regionName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "speed_limit")
+
+    private Integer speedLimit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_name")
 
     private String projectName;
@@ -423,7 +428,7 @@ public class PutTaskReq {
     }
 
     /**
-     * 任务类型，创建时必选，更新时可选 
+     * 任务类型，创建时必选，更新时可选 MIGRATE_FILE:文件级迁移 MIGRATE_BLOCK:块级迁移 
      * @return type
      */
     public TypeEnum getType() {
@@ -457,7 +462,7 @@ public class PutTaskReq {
     }
 
     /**
-     * 迁移任务id
+     * 迁移任务ID
      * @return id
      */
     public String getId() {
@@ -527,7 +532,7 @@ public class PutTaskReq {
     }
 
     /**
-     * 企业项目id
+     * 企业项目ID
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -570,6 +575,25 @@ public class PutTaskReq {
 
     public void setRegionName(String regionName) {
         this.regionName = regionName;
+    }
+
+    public PutTaskReq withSpeedLimit(Integer speedLimit) {
+        this.speedLimit = speedLimit;
+        return this;
+    }
+
+    /**
+     * 限制迁移速率，单位：Mbps
+     * minimum: 0
+     * maximum: 10000
+     * @return speedLimit
+     */
+    public Integer getSpeedLimit() {
+        return speedLimit;
+    }
+
+    public void setSpeedLimit(Integer speedLimit) {
+        this.speedLimit = speedLimit;
     }
 
     public PutTaskReq withProjectName(String projectName) {
@@ -882,7 +906,7 @@ public class PutTaskReq {
     }
 
     /**
-     * 目的端的快照id
+     * 目的端的快照ID
      * @return targetSnapshotId
      */
     public String getTargetSnapshotId() {
@@ -968,6 +992,7 @@ public class PutTaskReq {
             && Objects.equals(this.enterpriseProjectId, putTaskReq.enterpriseProjectId)
             && Objects.equals(this.migrationIp, putTaskReq.migrationIp)
             && Objects.equals(this.regionName, putTaskReq.regionName)
+            && Objects.equals(this.speedLimit, putTaskReq.speedLimit)
             && Objects.equals(this.projectName, putTaskReq.projectName)
             && Objects.equals(this.projectId, putTaskReq.projectId)
             && Objects.equals(this.vmTemplateId, putTaskReq.vmTemplateId)
@@ -1000,6 +1025,7 @@ public class PutTaskReq {
             enterpriseProjectId,
             migrationIp,
             regionName,
+            speedLimit,
             projectName,
             projectId,
             vmTemplateId,
@@ -1035,6 +1061,7 @@ public class PutTaskReq {
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    migrationIp: ").append(toIndentedString(migrationIp)).append("\n");
         sb.append("    regionName: ").append(toIndentedString(regionName)).append("\n");
+        sb.append("    speedLimit: ").append(toIndentedString(speedLimit)).append("\n");
         sb.append("    projectName: ").append(toIndentedString(projectName)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    vmTemplateId: ").append(toIndentedString(vmTemplateId)).append("\n");

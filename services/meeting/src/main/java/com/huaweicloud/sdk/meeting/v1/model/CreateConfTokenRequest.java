@@ -41,7 +41,7 @@ public class CreateConfTokenRequest {
     }
 
     /**
-     * 会议ID。
+     * 会议ID。 > 创建会议时返回的conferenceID。不是vmrConferenceID。 
      * @return conferenceID
      */
     public String getConferenceID() {
@@ -58,7 +58,7 @@ public class CreateConfTokenRequest {
     }
 
     /**
-     * 如果携带该值，则表示是保活消息，如果会话已过期并且请求中携带了密码，则进行重新鉴权并回复新的会话标识。 该头域统一为BASE64编码。
+     * 会控Token。 > * 仅会控Token保活场景需要携带 > * 如果会话已过期并且请求中携带了密码，则进行重新鉴权并回复新的会控Token
      * @return xConferenceAuthorization
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -77,7 +77,7 @@ public class CreateConfTokenRequest {
     }
 
     /**
-     * 会议的主持人密码。 从创建会议的返回响应参数获取。 对于会控Token保活场景，可以不携带会议密码。
+     * 会议的主持人密码。 > 对于会控Token保活场景，不对主持人密码鉴权。
      * @return xPassword
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

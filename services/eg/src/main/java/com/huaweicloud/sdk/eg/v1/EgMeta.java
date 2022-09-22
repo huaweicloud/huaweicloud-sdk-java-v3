@@ -10,6 +10,31 @@ import com.huaweicloud.sdk.eg.v1.model.*;
 @SuppressWarnings("unchecked")
 public class EgMeta {
 
+    public static final HttpRequestDef<CreateAgenciesRequest, CreateAgenciesResponse> createAgencies =
+        genForcreateAgencies();
+
+    private static HttpRequestDef<CreateAgenciesRequest, CreateAgenciesResponse> genForcreateAgencies() {
+        // basic
+        HttpRequestDef.Builder<CreateAgenciesRequest, CreateAgenciesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateAgenciesRequest.class, CreateAgenciesResponse.class)
+                .withName("CreateAgencies")
+                .withUri("/v1/{project_id}/service-agencies")
+                .withContentType("application/json");
+
+        // requests
+        builder.<AgencyCreateReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AgencyCreateReq.class),
+            f -> f.withMarshaller(CreateAgenciesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateChannelRequest, CreateChannelResponse> createChannel =
         genForcreateChannel();
 
@@ -32,6 +57,140 @@ public class EgMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateChannelResponse::getXRequestId, CreateChannelResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateConnectionRequest, CreateConnectionResponse> createConnection =
+        genForcreateConnection();
+
+    private static HttpRequestDef<CreateConnectionRequest, CreateConnectionResponse> genForcreateConnection() {
+        // basic
+        HttpRequestDef.Builder<CreateConnectionRequest, CreateConnectionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateConnectionRequest.class, CreateConnectionResponse.class)
+                .withName("CreateConnection")
+                .withUri("/v1/{project_id}/connections")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ConnectionCreateReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ConnectionCreateReq.class),
+            f -> f.withMarshaller(CreateConnectionRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateConnectionResponse::getXRequestId, CreateConnectionResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateEndpointRequest, CreateEndpointResponse> createEndpoint =
+        genForcreateEndpoint();
+
+    private static HttpRequestDef<CreateEndpointRequest, CreateEndpointResponse> genForcreateEndpoint() {
+        // basic
+        HttpRequestDef.Builder<CreateEndpointRequest, CreateEndpointResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateEndpointRequest.class, CreateEndpointResponse.class)
+                .withName("CreateEndpoint")
+                .withUri("/v1/{project_id}/endpoints")
+                .withContentType("application/json");
+
+        // requests
+        builder.<EndpointCreateReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(EndpointCreateReq.class),
+            f -> f.withMarshaller(CreateEndpointRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateEndpointResponse::getXRequestId, CreateEndpointResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateEventSchemaRequest, CreateEventSchemaResponse> createEventSchema =
+        genForcreateEventSchema();
+
+    private static HttpRequestDef<CreateEventSchemaRequest, CreateEventSchemaResponse> genForcreateEventSchema() {
+        // basic
+        HttpRequestDef.Builder<CreateEventSchemaRequest, CreateEventSchemaResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateEventSchemaRequest.class, CreateEventSchemaResponse.class)
+                .withName("CreateEventSchema")
+                .withUri("/v1/{project_id}/schemas")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CustomizeSchemaCreateReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CustomizeSchemaCreateReq.class),
+            f -> f.withMarshaller(CreateEventSchemaRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateEventSchemaResponse::getXRequestId, CreateEventSchemaResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateEventSchemaVersionRequest, CreateEventSchemaVersionResponse> createEventSchemaVersion =
+        genForcreateEventSchemaVersion();
+
+    private static HttpRequestDef<CreateEventSchemaVersionRequest, CreateEventSchemaVersionResponse> genForcreateEventSchemaVersion() {
+        // basic
+        HttpRequestDef.Builder<CreateEventSchemaVersionRequest, CreateEventSchemaVersionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, CreateEventSchemaVersionRequest.class, CreateEventSchemaVersionResponse.class)
+                .withName("CreateEventSchemaVersion")
+                .withUri("/v1/{project_id}/schemas/{schema_id}/versions")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("schema_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateEventSchemaVersionRequest::getSchemaId, (req, v) -> {
+                req.setSchemaId(v);
+            }));
+        builder.<CustomizeSchemaVersionCreateReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CustomizeSchemaVersionCreateReq.class),
+            f -> f.withMarshaller(CreateEventSchemaVersionRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateEventSchemaVersionResponse::getXRequestId,
+                CreateEventSchemaVersionResponse::setXRequestId));
         return builder.build();
     }
 
@@ -57,6 +216,11 @@ public class EgMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateEventSourceResponse::getXRequestId, CreateEventSourceResponse::setXRequestId));
         return builder.build();
     }
 
@@ -82,6 +246,12 @@ public class EgMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateSubscriptionResponse::getXRequestId,
+                CreateSubscriptionResponse::setXRequestId));
         return builder.build();
     }
 
@@ -115,6 +285,12 @@ public class EgMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateSubscriptionTargetResponse::getXRequestId,
+                CreateSubscriptionTargetResponse::setXRequestId));
         return builder.build();
     }
 
@@ -136,6 +312,116 @@ public class EgMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteChannelRequest::getChannelId, (req, v) -> {
                 req.setChannelId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteConnectionRequest, DeleteConnectionResponse> deleteConnection =
+        genFordeleteConnection();
+
+    private static HttpRequestDef<DeleteConnectionRequest, DeleteConnectionResponse> genFordeleteConnection() {
+        // basic
+        HttpRequestDef.Builder<DeleteConnectionRequest, DeleteConnectionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteConnectionRequest.class, DeleteConnectionResponse.class)
+                .withName("DeleteConnection")
+                .withUri("/v1/{project_id}/connections/{connection_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("connection_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteConnectionRequest::getConnectionId, (req, v) -> {
+                req.setConnectionId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteEndpointRequest, DeleteEndpointResponse> deleteEndpoint =
+        genFordeleteEndpoint();
+
+    private static HttpRequestDef<DeleteEndpointRequest, DeleteEndpointResponse> genFordeleteEndpoint() {
+        // basic
+        HttpRequestDef.Builder<DeleteEndpointRequest, DeleteEndpointResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteEndpointRequest.class, DeleteEndpointResponse.class)
+                .withName("DeleteEndpoint")
+                .withUri("/v1/{project_id}/endpoints/{endpoint_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("endpoint_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteEndpointRequest::getEndpointId, (req, v) -> {
+                req.setEndpointId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteEventSchemaRequest, DeleteEventSchemaResponse> deleteEventSchema =
+        genFordeleteEventSchema();
+
+    private static HttpRequestDef<DeleteEventSchemaRequest, DeleteEventSchemaResponse> genFordeleteEventSchema() {
+        // basic
+        HttpRequestDef.Builder<DeleteEventSchemaRequest, DeleteEventSchemaResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteEventSchemaRequest.class, DeleteEventSchemaResponse.class)
+                .withName("DeleteEventSchema")
+                .withUri("/v1/{project_id}/schemas/{schema_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("schema_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteEventSchemaRequest::getSchemaId, (req, v) -> {
+                req.setSchemaId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteEventSchemaVersionRequest, DeleteEventSchemaVersionResponse> deleteEventSchemaVersion =
+        genFordeleteEventSchemaVersion();
+
+    private static HttpRequestDef<DeleteEventSchemaVersionRequest, DeleteEventSchemaVersionResponse> genFordeleteEventSchemaVersion() {
+        // basic
+        HttpRequestDef.Builder<DeleteEventSchemaVersionRequest, DeleteEventSchemaVersionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteEventSchemaVersionRequest.class,
+                    DeleteEventSchemaVersionResponse.class)
+                .withName("DeleteEventSchemaVersion")
+                .withUri("/v1/{project_id}/schemas/{schema_id}/versions/{version}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("schema_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteEventSchemaVersionRequest::getSchemaId, (req, v) -> {
+                req.setSchemaId(v);
+            }));
+        builder.<Integer>withRequestField("version",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(DeleteEventSchemaVersionRequest::getVersion, (req, v) -> {
+                req.setVersion(v);
             }));
 
         // response
@@ -228,6 +514,64 @@ public class EgMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DiscoverEventSchemaFromDataRequest, DiscoverEventSchemaFromDataResponse> discoverEventSchemaFromData =
+        genFordiscoverEventSchemaFromData();
+
+    private static HttpRequestDef<DiscoverEventSchemaFromDataRequest, DiscoverEventSchemaFromDataResponse> genFordiscoverEventSchemaFromData() {
+        // basic
+        HttpRequestDef.Builder<DiscoverEventSchemaFromDataRequest, DiscoverEventSchemaFromDataResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    DiscoverEventSchemaFromDataRequest.class,
+                    DiscoverEventSchemaFromDataResponse.class)
+                .withName("DiscoverEventSchemaFromData")
+                .withUri("/v1/{project_id}/schema-discover")
+                .withContentType("application/json");
+
+        // requests
+        builder.<DiscoverEventSchemaFromDataReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DiscoverEventSchemaFromDataReq.class),
+            f -> f.withMarshaller(DiscoverEventSchemaFromDataRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DiscoverEventSchemaFromDataResponse::getXRequestId,
+                DiscoverEventSchemaFromDataResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAgenciesRequest, ListAgenciesResponse> listAgencies = genForlistAgencies();
+
+    private static HttpRequestDef<ListAgenciesRequest, ListAgenciesResponse> genForlistAgencies() {
+        // basic
+        HttpRequestDef.Builder<ListAgenciesRequest, ListAgenciesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAgenciesRequest.class, ListAgenciesResponse.class)
+                .withName("ListAgencies")
+                .withUri("/v1/{project_id}/service-agencies")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ListAgenciesRequest.TypeEnum>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListAgenciesRequest.TypeEnum.class),
+            f -> f.withMarshaller(ListAgenciesRequest::getType, (req, v) -> {
+                req.setType(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListChannelsRequest, ListChannelsResponse> listChannels = genForlistChannels();
 
     private static HttpRequestDef<ListChannelsRequest, ListChannelsResponse> genForlistChannels() {
@@ -280,6 +624,237 @@ public class EgMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListChannelsRequest::getFuzzyName, (req, v) -> {
                 req.setFuzzyName(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListConnectionsRequest, ListConnectionsResponse> listConnections =
+        genForlistConnections();
+
+    private static HttpRequestDef<ListConnectionsRequest, ListConnectionsResponse> genForlistConnections() {
+        // basic
+        HttpRequestDef.Builder<ListConnectionsRequest, ListConnectionsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListConnectionsRequest.class, ListConnectionsResponse.class)
+                .withName("ListConnections")
+                .withUri("/v1/{project_id}/connections")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListConnectionsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListConnectionsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("sort",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConnectionsRequest::getSort, (req, v) -> {
+                req.setSort(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConnectionsRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<String>withRequestField("fuzzy_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConnectionsRequest::getFuzzyName, (req, v) -> {
+                req.setFuzzyName(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListEndpointsRequest, ListEndpointsResponse> listEndpoints =
+        genForlistEndpoints();
+
+    private static HttpRequestDef<ListEndpointsRequest, ListEndpointsResponse> genForlistEndpoints() {
+        // basic
+        HttpRequestDef.Builder<ListEndpointsRequest, ListEndpointsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListEndpointsRequest.class, ListEndpointsResponse.class)
+                .withName("ListEndpoints")
+                .withUri("/v1/{project_id}/endpoints")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListEndpointsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListEndpointsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("sort",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEndpointsRequest::getSort, (req, v) -> {
+                req.setSort(v);
+            }));
+        builder.<ListEndpointsRequest.TypeEnum>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListEndpointsRequest.TypeEnum.class),
+            f -> f.withMarshaller(ListEndpointsRequest::getType, (req, v) -> {
+                req.setType(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEndpointsRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<String>withRequestField("vpc_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEndpointsRequest::getVpcId, (req, v) -> {
+                req.setVpcId(v);
+            }));
+        builder.<String>withRequestField("fuzzy_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEndpointsRequest::getFuzzyName, (req, v) -> {
+                req.setFuzzyName(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListEndpointsResponse::getXRequestId, ListEndpointsResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListEventSchemaRequest, ListEventSchemaResponse> listEventSchema =
+        genForlistEventSchema();
+
+    private static HttpRequestDef<ListEventSchemaRequest, ListEventSchemaResponse> genForlistEventSchema() {
+        // basic
+        HttpRequestDef.Builder<ListEventSchemaRequest, ListEventSchemaResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListEventSchemaRequest.class, ListEventSchemaResponse.class)
+                .withName("ListEventSchema")
+                .withUri("/v1/{project_id}/schemas")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListEventSchemaRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListEventSchemaRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("sort",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEventSchemaRequest::getSort, (req, v) -> {
+                req.setSort(v);
+            }));
+        builder.<ListEventSchemaRequest.ProviderTypeEnum>withRequestField("provider_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListEventSchemaRequest.ProviderTypeEnum.class),
+            f -> f.withMarshaller(ListEventSchemaRequest::getProviderType, (req, v) -> {
+                req.setProviderType(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEventSchemaRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<String>withRequestField("fuzzy_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEventSchemaRequest::getFuzzyName, (req, v) -> {
+                req.setFuzzyName(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListEventSchemaVersionsRequest, ListEventSchemaVersionsResponse> listEventSchemaVersions =
+        genForlistEventSchemaVersions();
+
+    private static HttpRequestDef<ListEventSchemaVersionsRequest, ListEventSchemaVersionsResponse> genForlistEventSchemaVersions() {
+        // basic
+        HttpRequestDef.Builder<ListEventSchemaVersionsRequest, ListEventSchemaVersionsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListEventSchemaVersionsRequest.class, ListEventSchemaVersionsResponse.class)
+            .withName("ListEventSchemaVersions")
+            .withUri("/v1/{project_id}/schemas/{schema_id}/versions")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("schema_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEventSchemaVersionsRequest::getSchemaId, (req, v) -> {
+                req.setSchemaId(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListEventSchemaVersionsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListEventSchemaVersionsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("sort",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEventSchemaVersionsRequest::getSort, (req, v) -> {
+                req.setSort(v);
             }));
 
         // response
@@ -491,6 +1066,51 @@ public class EgMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListTriggersRequest, ListTriggersResponse> listTriggers = genForlistTriggers();
+
+    private static HttpRequestDef<ListTriggersRequest, ListTriggersResponse> genForlistTriggers() {
+        // basic
+        HttpRequestDef.Builder<ListTriggersRequest, ListTriggersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListTriggersRequest.class, ListTriggersResponse.class)
+                .withName("ListTriggers")
+                .withUri("/v1/{project_id}/subscription-triggers/{func_urn}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("func_urn",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTriggersRequest::getFuncUrn, (req, v) -> {
+                req.setFuncUrn(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTriggersRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTriggersRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("sort",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTriggersRequest::getSort, (req, v) -> {
+                req.setSort(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<OperateSubscriptionRequest, OperateSubscriptionResponse> operateSubscription =
         genForoperateSubscription();
 
@@ -513,6 +1133,12 @@ public class EgMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(OperateSubscriptionResponse::getXRequestId,
+                OperateSubscriptionResponse::setXRequestId));
         return builder.build();
     }
 
@@ -544,6 +1170,11 @@ public class EgMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(PutEventsResponse::getXRequestId, PutEventsResponse::setXRequestId));
         return builder.build();
     }
 
@@ -565,6 +1196,91 @@ public class EgMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowDetailOfChannelRequest::getChannelId, (req, v) -> {
                 req.setChannelId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDetailOfConnectionRequest, ShowDetailOfConnectionResponse> showDetailOfConnection =
+        genForshowDetailOfConnection();
+
+    private static HttpRequestDef<ShowDetailOfConnectionRequest, ShowDetailOfConnectionResponse> genForshowDetailOfConnection() {
+        // basic
+        HttpRequestDef.Builder<ShowDetailOfConnectionRequest, ShowDetailOfConnectionResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowDetailOfConnectionRequest.class, ShowDetailOfConnectionResponse.class)
+            .withName("ShowDetailOfConnection")
+            .withUri("/v1/{project_id}/connections/{connection_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("connection_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDetailOfConnectionRequest::getConnectionId, (req, v) -> {
+                req.setConnectionId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDetailOfEventSchemaRequest, ShowDetailOfEventSchemaResponse> showDetailOfEventSchema =
+        genForshowDetailOfEventSchema();
+
+    private static HttpRequestDef<ShowDetailOfEventSchemaRequest, ShowDetailOfEventSchemaResponse> genForshowDetailOfEventSchema() {
+        // basic
+        HttpRequestDef.Builder<ShowDetailOfEventSchemaRequest, ShowDetailOfEventSchemaResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowDetailOfEventSchemaRequest.class, ShowDetailOfEventSchemaResponse.class)
+            .withName("ShowDetailOfEventSchema")
+            .withUri("/v1/{project_id}/schemas/{schema_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("schema_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDetailOfEventSchemaRequest::getSchemaId, (req, v) -> {
+                req.setSchemaId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDetailOfEventSchemaVersionRequest, ShowDetailOfEventSchemaVersionResponse> showDetailOfEventSchemaVersion =
+        genForshowDetailOfEventSchemaVersion();
+
+    private static HttpRequestDef<ShowDetailOfEventSchemaVersionRequest, ShowDetailOfEventSchemaVersionResponse> genForshowDetailOfEventSchemaVersion() {
+        // basic
+        HttpRequestDef.Builder<ShowDetailOfEventSchemaVersionRequest, ShowDetailOfEventSchemaVersionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowDetailOfEventSchemaVersionRequest.class,
+                    ShowDetailOfEventSchemaVersionResponse.class)
+                .withName("ShowDetailOfEventSchemaVersion")
+                .withUri("/v1/{project_id}/schemas/{schema_id}/versions/{version}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("schema_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDetailOfEventSchemaVersionRequest::getSchemaId, (req, v) -> {
+                req.setSchemaId(v);
+            }));
+        builder.<Integer>withRequestField("version",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowDetailOfEventSchemaVersionRequest::getVersion, (req, v) -> {
+                req.setVersion(v);
             }));
 
         // response
@@ -687,6 +1403,117 @@ public class EgMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateChannelResponse::getXRequestId, UpdateChannelResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateConnectionRequest, UpdateConnectionResponse> updateConnection =
+        genForupdateConnection();
+
+    private static HttpRequestDef<UpdateConnectionRequest, UpdateConnectionResponse> genForupdateConnection() {
+        // basic
+        HttpRequestDef.Builder<UpdateConnectionRequest, UpdateConnectionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateConnectionRequest.class, UpdateConnectionResponse.class)
+                .withName("UpdateConnection")
+                .withUri("/v1/{project_id}/connections/{connection_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("connection_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateConnectionRequest::getConnectionId, (req, v) -> {
+                req.setConnectionId(v);
+            }));
+        builder.<ConnectionUpdateReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ConnectionUpdateReq.class),
+            f -> f.withMarshaller(UpdateConnectionRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateConnectionResponse::getXRequestId, UpdateConnectionResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateEndpointRequest, UpdateEndpointResponse> updateEndpoint =
+        genForupdateEndpoint();
+
+    private static HttpRequestDef<UpdateEndpointRequest, UpdateEndpointResponse> genForupdateEndpoint() {
+        // basic
+        HttpRequestDef.Builder<UpdateEndpointRequest, UpdateEndpointResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateEndpointRequest.class, UpdateEndpointResponse.class)
+                .withName("UpdateEndpoint")
+                .withUri("/v1/{project_id}/endpoints/{endpoint_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("endpoint_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateEndpointRequest::getEndpointId, (req, v) -> {
+                req.setEndpointId(v);
+            }));
+        builder.<EndpointUpdateReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(EndpointUpdateReq.class),
+            f -> f.withMarshaller(UpdateEndpointRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateEventSchemaRequest, UpdateEventSchemaResponse> updateEventSchema =
+        genForupdateEventSchema();
+
+    private static HttpRequestDef<UpdateEventSchemaRequest, UpdateEventSchemaResponse> genForupdateEventSchema() {
+        // basic
+        HttpRequestDef.Builder<UpdateEventSchemaRequest, UpdateEventSchemaResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateEventSchemaRequest.class, UpdateEventSchemaResponse.class)
+                .withName("UpdateEventSchema")
+                .withUri("/v1/{project_id}/schemas/{schema_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("schema_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateEventSchemaRequest::getSchemaId, (req, v) -> {
+                req.setSchemaId(v);
+            }));
+        builder.<CustomizeSchemaUpdateReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CustomizeSchemaUpdateReq.class),
+            f -> f.withMarshaller(UpdateEventSchemaRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateEventSchemaResponse::getXRequestId, UpdateEventSchemaResponse::setXRequestId));
         return builder.build();
     }
 
@@ -719,6 +1546,11 @@ public class EgMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateEventSourceResponse::getXRequestId, UpdateEventSourceResponse::setXRequestId));
         return builder.build();
     }
 
@@ -751,6 +1583,12 @@ public class EgMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateSubscriptionResponse::getXRequestId,
+                UpdateSubscriptionResponse::setXRequestId));
         return builder.build();
     }
 
@@ -791,6 +1629,12 @@ public class EgMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateSubscriptionSourceResponse::getXRequestId,
+                UpdateSubscriptionSourceResponse::setXRequestId));
         return builder.build();
     }
 
@@ -828,6 +1672,30 @@ public class EgMeta {
             f -> f.withMarshaller(UpdateSubscriptionTargetRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateSubscriptionTargetResponse::getXRequestId,
+                UpdateSubscriptionTargetResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListApiVersionsRequest, ListApiVersionsResponse> listApiVersions =
+        genForlistApiVersions();
+
+    private static HttpRequestDef<ListApiVersionsRequest, ListApiVersionsResponse> genForlistApiVersions() {
+        // basic
+        HttpRequestDef.Builder<ListApiVersionsRequest, ListApiVersionsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListApiVersionsRequest.class, ListApiVersionsResponse.class)
+                .withName("ListApiVersions")
+                .withUri("/")
+                .withContentType("application/json");
+
+        // requests
 
         // response
 

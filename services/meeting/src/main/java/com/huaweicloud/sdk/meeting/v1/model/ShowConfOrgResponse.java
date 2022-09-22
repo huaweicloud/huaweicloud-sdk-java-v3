@@ -22,7 +22,7 @@ public class ShowConfOrgResponse extends SdkResponse {
     }
 
     /**
-     * 企业ID
+     * SP管理员根据会议ID查询该会议归属的企业ID。
      * @return orgID
      */
     public String getOrgID() {

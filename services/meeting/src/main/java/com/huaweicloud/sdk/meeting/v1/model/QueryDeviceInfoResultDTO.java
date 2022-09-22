@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 终端设备型号信息
+ * 终端设备型号信息。
  */
 public class QueryDeviceInfoResultDTO {
 
@@ -31,7 +31,7 @@ public class QueryDeviceInfoResultDTO {
     }
 
     /**
-     * 终端型号
+     * 终端型号。
      * @return model
      */
     public String getModel() {
@@ -48,7 +48,7 @@ public class QueryDeviceInfoResultDTO {
     }
 
     /**
-     * 设备终端产品尺寸
+     * 设备终端产品尺寸。
      * @return deviceSize
      */
     public String getDeviceSize() {
@@ -65,7 +65,7 @@ public class QueryDeviceInfoResultDTO {
     }
 
     /**
-     * 终端设备购买渠道
+     * 终端设备购买渠道。
      * @return purchaseChannel
      */
     public String getPurchaseChannel() {

@@ -127,7 +127,7 @@ public class TargetServerByTask {
     }
 
     /**
-     * 虚拟机id
+     * 虚拟机ID
      * @return vmId
      */
     public String getVmId() {

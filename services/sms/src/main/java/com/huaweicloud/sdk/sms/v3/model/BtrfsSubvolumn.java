@@ -80,7 +80,7 @@ public class BtrfsSubvolumn {
     }
 
     /**
-     * 子卷的id
+     * 子卷的ID
      * @return subvolId
      */
     public String getSubvolId() {
@@ -97,7 +97,7 @@ public class BtrfsSubvolumn {
     }
 
     /**
-     * 父卷id
+     * 父卷ID
      * @return parentId
      */
     public String getParentId() {

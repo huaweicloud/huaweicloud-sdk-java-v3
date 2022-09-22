@@ -90,6 +90,7 @@ public class BaseInvoker<ReqT, ResT, DerivedT extends BaseInvoker<ReqT, ResT, De
      * @param func function that handle credential
      * @return DeriveT
      */
+    @SuppressWarnings("unchecked")
     public <T extends ICredential> DerivedT replaceCredentialWhen(Class<T> clazz, Consumer<T> func) {
         ICredential credential = hcClient.getCredential().deepClone();
         if (clazz.isAssignableFrom(credential.getClass())) {
@@ -111,7 +112,7 @@ public class BaseInvoker<ReqT, ResT, DerivedT extends BaseInvoker<ReqT, ResT, De
             extraHeader = new TreeMap<>();
         }
         extraHeader.put(headerKey, headerValue);
-        return (DerivedT) this;
+        return toDerivedT();
     }
 
     /**
@@ -124,7 +125,7 @@ public class BaseInvoker<ReqT, ResT, DerivedT extends BaseInvoker<ReqT, ResT, De
         if (Objects.nonNull(func)) {
             func.accept(exchange);
         }
-        return (DerivedT) this;
+        return toDerivedT();
     }
 
     /**
@@ -151,7 +152,7 @@ public class BaseInvoker<ReqT, ResT, DerivedT extends BaseInvoker<ReqT, ResT, De
         this.retryTimes = ValidationUtils.assertIntIsInRange(retryTimes, 0, MAX_RETRY_TIME, "retryTimes");
         this.func = func;
         this.initBackoffStrategy(backoffStrategy);
-        return (DerivedT) this;
+        return toDerivedT();
     }
 
     /**
@@ -162,7 +163,7 @@ public class BaseInvoker<ReqT, ResT, DerivedT extends BaseInvoker<ReqT, ResT, De
      */
     public DerivedT retryTimes(int retryTimes) {
         this.retryTimes = ValidationUtils.assertIntIsInRange(retryTimes, 0, MAX_RETRY_TIME, "retryTimes");
-        return (DerivedT) this;
+        return toDerivedT();
     }
 
     /**
@@ -173,7 +174,7 @@ public class BaseInvoker<ReqT, ResT, DerivedT extends BaseInvoker<ReqT, ResT, De
      */
     public DerivedT retryCondition(BiFunction<ResT, SdkException, Boolean> func) {
         this.func = func;
-        return (DerivedT) this;
+        return toDerivedT();
     }
 
     /**
@@ -184,7 +185,7 @@ public class BaseInvoker<ReqT, ResT, DerivedT extends BaseInvoker<ReqT, ResT, De
      */
     public DerivedT backoffStrategy(BackoffStrategy backoffStrategy) {
         this.backoffStrategy = backoffStrategy;
-        return (DerivedT) this;
+        return toDerivedT();
     }
 
     /**
@@ -229,6 +230,11 @@ public class BaseInvoker<ReqT, ResT, DerivedT extends BaseInvoker<ReqT, ResT, De
         // start the first call of the interface
         record.schedule();
         return future;
+    }
+
+    @SuppressWarnings("unchecked")
+    private DerivedT toDerivedT() {
+        return (DerivedT) this;
     }
 
 }

@@ -19,7 +19,7 @@ import java.util.function.Consumer;
 public class TargetDisks {
 
     /**
-     * 磁盘类型，普通磁盘，OS所在磁盘，BOOT所在磁盘
+     * 磁盘类型，普通磁盘，OS所在磁盘，BOOT所在磁盘 BOOT：BOOT设备 OS：系统设备 NORMAL:平常
      */
     public static final class DeviceUseEnum {
 
@@ -137,7 +137,7 @@ public class TargetDisks {
     }
 
     /**
-     * 磁盘类型，普通磁盘，OS所在磁盘，BOOT所在磁盘
+     * 磁盘类型，普通磁盘，OS所在磁盘，BOOT所在磁盘 BOOT：BOOT设备 OS：系统设备 NORMAL:平常
      * @return deviceUse
      */
     public DeviceUseEnum getDeviceUse() {
@@ -154,7 +154,7 @@ public class TargetDisks {
     }
 
     /**
-     * 磁盘id,自动创建虚拟机不用设置
+     * 磁盘ID,自动创建虚拟机不用设置
      * @return diskId
      */
     public String getDiskId() {

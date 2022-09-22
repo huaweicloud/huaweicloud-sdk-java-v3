@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * DeviceMessage
@@ -44,6 +45,11 @@ public class DeviceMessage {
     @JsonProperty(value = "status")
 
     private String status;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "error_info")
+
+    private ErrorInfoDTO errorInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_time")
@@ -174,6 +180,32 @@ public class DeviceMessage {
         this.status = status;
     }
 
+    public DeviceMessage withErrorInfo(ErrorInfoDTO errorInfo) {
+        this.errorInfo = errorInfo;
+        return this;
+    }
+
+    public DeviceMessage withErrorInfo(Consumer<ErrorInfoDTO> errorInfoSetter) {
+        if (this.errorInfo == null) {
+            this.errorInfo = new ErrorInfoDTO();
+            errorInfoSetter.accept(this.errorInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get errorInfo
+     * @return errorInfo
+     */
+    public ErrorInfoDTO getErrorInfo() {
+        return errorInfo;
+    }
+
+    public void setErrorInfo(ErrorInfoDTO errorInfo) {
+        this.errorInfo = errorInfo;
+    }
+
     public DeviceMessage withCreatedTime(String createdTime) {
         this.createdTime = createdTime;
         return this;
@@ -222,14 +254,23 @@ public class DeviceMessage {
             && Objects.equals(this.encoding, deviceMessage.encoding)
             && Objects.equals(this.payloadFormat, deviceMessage.payloadFormat)
             && Objects.equals(this.topic, deviceMessage.topic) && Objects.equals(this.status, deviceMessage.status)
+            && Objects.equals(this.errorInfo, deviceMessage.errorInfo)
             && Objects.equals(this.createdTime, deviceMessage.createdTime)
             && Objects.equals(this.finishedTime, deviceMessage.finishedTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(messageId, name, message, encoding, payloadFormat, topic, status, createdTime, finishedTime);
+        return Objects.hash(messageId,
+            name,
+            message,
+            encoding,
+            payloadFormat,
+            topic,
+            status,
+            errorInfo,
+            createdTime,
+            finishedTime);
     }
 
     @Override
@@ -243,6 +284,7 @@ public class DeviceMessage {
         sb.append("    payloadFormat: ").append(toIndentedString(payloadFormat)).append("\n");
         sb.append("    topic: ").append(toIndentedString(topic)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    errorInfo: ").append(toIndentedString(errorInfo)).append("\n");
         sb.append("    createdTime: ").append(toIndentedString(createdTime)).append("\n");
         sb.append("    finishedTime: ").append(toIndentedString(finishedTime)).append("\n");
         sb.append("}");

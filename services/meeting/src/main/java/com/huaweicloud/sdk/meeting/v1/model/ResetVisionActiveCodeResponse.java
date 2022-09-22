@@ -22,7 +22,7 @@ public class ResetVisionActiveCodeResponse extends SdkResponse {
     }
 
     /**
-     * 激活码
+     * 激活码。
      * @return activeCode
      */
     public String getActiveCode() {

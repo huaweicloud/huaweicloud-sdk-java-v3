@@ -37,7 +37,7 @@ public class InviteShareRequest {
     }
 
     /**
-     * 会议id，创建会议时生成
+     * 会议ID。
      * @return conferenceID
      */
     public String getConferenceID() {
@@ -54,7 +54,7 @@ public class InviteShareRequest {
     }
 
     /**
-     * 会场id,可以通过查询会场id接口获取
+     * 被邀请的与会者标识。
      * @return participantID
      */
     public String getParticipantID() {
@@ -71,7 +71,7 @@ public class InviteShareRequest {
     }
 
     /**
-     * 会控授权令牌，通过调用申请会控token的接口生成
+     * 会控Token，通过[[获取会控token](https://support.huaweicloud.com/api-meeting/meeting_21_0027.html)](tag:hws)[[获取会控token](https://support.huaweicloud.com/intl/zh-cn/api-meeting/meeting_21_0027.html)](tag:hk)接口获得。
      * @return xConferenceAuthorization
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

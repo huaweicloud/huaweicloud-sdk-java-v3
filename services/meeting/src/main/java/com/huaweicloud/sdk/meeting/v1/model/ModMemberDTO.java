@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 用户自己修改个人信息的DTO，用member命名做区分，当前仅有名称，后续会扩展地址、签名等等。
+ * 用户自己修改个人信息。
  */
 public class ModMemberDTO {
 
@@ -41,7 +41,7 @@ public class ModMemberDTO {
     }
 
     /**
-     * 名称 maxLength：64 minLength：1
+     * 名称。
      * @return name
      */
     public String getName() {
@@ -58,7 +58,7 @@ public class ModMemberDTO {
     }
 
     /**
-     * 英文名称 maxLength：64 minLength：0
+     * 英文名称。
      * @return englishName
      */
     public String getEnglishName() {
@@ -75,7 +75,7 @@ public class ModMemberDTO {
     }
 
     /**
-     * 签名 maxLength：512 minLength：0
+     * 签名。
      * @return signature
      */
     public String getSignature() {
@@ -92,7 +92,7 @@ public class ModMemberDTO {
     }
 
     /**
-     * 职位 maxLength：32 minLength：0
+     * 职位。
      * @return title
      */
     public String getTitle() {
@@ -109,7 +109,7 @@ public class ModMemberDTO {
     }
 
     /**
-     * 备注 maxLength：128 minLength：0
+     * 备注。
      * @return desc
      */
     public String getDesc() {

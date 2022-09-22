@@ -18,6 +18,11 @@ public class InitTargetServer {
 
     private List<DiskIntargetServer> disks = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "volume_groups")
+
+    private List<VolumeGroups> volumeGroups = null;
+
     public InitTargetServer withDisks(List<DiskIntargetServer> disks) {
         this.disks = disks;
         return this;
@@ -51,6 +56,39 @@ public class InitTargetServer {
         this.disks = disks;
     }
 
+    public InitTargetServer withVolumeGroups(List<VolumeGroups> volumeGroups) {
+        this.volumeGroups = volumeGroups;
+        return this;
+    }
+
+    public InitTargetServer addVolumeGroupsItem(VolumeGroups volumeGroupsItem) {
+        if (this.volumeGroups == null) {
+            this.volumeGroups = new ArrayList<>();
+        }
+        this.volumeGroups.add(volumeGroupsItem);
+        return this;
+    }
+
+    public InitTargetServer withVolumeGroups(Consumer<List<VolumeGroups>> volumeGroupsSetter) {
+        if (this.volumeGroups == null) {
+            this.volumeGroups = new ArrayList<>();
+        }
+        volumeGroupsSetter.accept(this.volumeGroups);
+        return this;
+    }
+
+    /**
+     * Linux必选，如果没有卷组，输入[]
+     * @return volumeGroups
+     */
+    public List<VolumeGroups> getVolumeGroups() {
+        return volumeGroups;
+    }
+
+    public void setVolumeGroups(List<VolumeGroups> volumeGroups) {
+        this.volumeGroups = volumeGroups;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -60,12 +98,13 @@ public class InitTargetServer {
             return false;
         }
         InitTargetServer initTargetServer = (InitTargetServer) o;
-        return Objects.equals(this.disks, initTargetServer.disks);
+        return Objects.equals(this.disks, initTargetServer.disks)
+            && Objects.equals(this.volumeGroups, initTargetServer.volumeGroups);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(disks);
+        return Objects.hash(disks, volumeGroups);
     }
 
     @Override
@@ -73,6 +112,7 @@ public class InitTargetServer {
         StringBuilder sb = new StringBuilder();
         sb.append("class InitTargetServer {\n");
         sb.append("    disks: ").append(toIndentedString(disks)).append("\n");
+        sb.append("    volumeGroups: ").append(toIndentedString(volumeGroups)).append("\n");
         sb.append("}");
         return sb.toString();
     }

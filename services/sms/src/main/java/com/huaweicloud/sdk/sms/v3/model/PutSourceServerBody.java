@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 修改源端信息json的请求体，当前只支持修改源端服务器名称和迁移项目id
+ * 修改源端信息json的请求体，当前只支持修改源端服务器名称和迁移项目ID
  */
 public class PutSourceServerBody {
 
@@ -56,7 +56,7 @@ public class PutSourceServerBody {
     }
 
     /**
-     * 源端服务器修改后所属的迁移项目id
+     * 源端服务器修改后所属的迁移项目ID
      * @return migprojectid
      */
     public String getMigprojectid() {

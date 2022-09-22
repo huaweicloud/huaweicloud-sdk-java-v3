@@ -136,7 +136,7 @@ public class SourceServersResponseBody {
     private Boolean oemSystem;
 
     /**
-     * 源端服务器状态
+     * 源端服务器状态 unavailable：环境校验不通过 waiting：等待 initialize：初始化 replicate：复制 syncing：持续同步 stopping：暂停中 stopped：已暂停 deleting：删除中 error：错误 cloning：等待克隆完成 cutovering：启动目的端中 finished：启动目的端完成
      */
     public static final class StateEnum {
 
@@ -328,7 +328,7 @@ public class SourceServersResponseBody {
     private Long lastVisitTime;
 
     /**
-     * 迁移周期
+     * 迁移周期 cutovering:启动目的端中 cutovered:启动目的端完成 checking:检查中 setting:设置中 replicating:复制中 syncing:同步中 
      */
     public static final class MigrationCycleEnum {
 
@@ -444,7 +444,7 @@ public class SourceServersResponseBody {
     }
 
     /**
-     * 源端服务器id
+     * 源端服务器ID
      * @return id
      */
     public String getId() {
@@ -461,7 +461,7 @@ public class SourceServersResponseBody {
     }
 
     /**
-     * 源端服务器的ip地址
+     * 源端服务器的IP地址
      * @return ip
      */
     public String getIp() {
@@ -495,7 +495,7 @@ public class SourceServersResponseBody {
     }
 
     /**
-     * 企业项目id
+     * 企业项目ID
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -582,7 +582,7 @@ public class SourceServersResponseBody {
     }
 
     /**
-     * 源端服务器状态
+     * 源端服务器状态 unavailable：环境校验不通过 waiting：等待 initialize：初始化 replicate：复制 syncing：持续同步 stopping：暂停中 stopped：已暂停 deleting：删除中 error：错误 cloning：等待克隆完成 cutovering：启动目的端中 finished：启动目的端完成
      * @return state
      */
     public StateEnum getState() {
@@ -815,7 +815,7 @@ public class SourceServersResponseBody {
     }
 
     /**
-     * 迁移周期
+     * 迁移周期 cutovering:启动目的端中 cutovered:启动目的端完成 checking:检查中 setting:设置中 replicating:复制中 syncing:同步中 
      * @return migrationCycle
      */
     public MigrationCycleEnum getMigrationCycle() {

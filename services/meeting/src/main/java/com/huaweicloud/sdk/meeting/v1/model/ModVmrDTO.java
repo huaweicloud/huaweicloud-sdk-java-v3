@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 用户修改vmr信息
+ * 用户修改云会议室或者个人会议ID信息。
  */
 public class ModVmrDTO {
 
@@ -41,7 +41,7 @@ public class ModVmrDTO {
     }
 
     /**
-     * 云会议室名称 maxLength：128 minLength：1 
+     * 云会议室名称。 
      * @return vmrName
      */
     public String getVmrName() {
@@ -58,7 +58,7 @@ public class ModVmrDTO {
     }
 
     /**
-     * 来宾密码，“”代表不设置来宾密码 4~16位的数字 
+     * 来宾密码，设置为空字符串代表不设置来宾密码。 4~16位的数字 
      * @return gustPwd
      */
     public String getGustPwd() {
@@ -75,7 +75,7 @@ public class ModVmrDTO {
     }
 
     /**
-     * 主席密码 4~16位的数字 
+     * 主持人密码。4~16位的数字。 
      * @return chairPwd
      */
     public String getChairPwd() {

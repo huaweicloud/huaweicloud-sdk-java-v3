@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 登录响应
+ * 会议信息。
  */
 public class RestInviteWithPwdReqBody {
 
@@ -46,7 +46,7 @@ public class RestInviteWithPwdReqBody {
     }
 
     /**
-     * 被邀请的会议人号码。
+     * 被邀请者的SIP号码。
      * @return callNum
      */
     public String getCallNum() {
@@ -63,7 +63,7 @@ public class RestInviteWithPwdReqBody {
     }
 
     /**
-     * 被邀请的会议人所属企业ID。
+     * 被邀请者所属企业ID。
      * @return orgID
      */
     public String getOrgID() {
@@ -80,7 +80,7 @@ public class RestInviteWithPwdReqBody {
     }
 
     /**
-     * 当前会议ID。
+     * 会议ID。
      * @return confID
      */
     public String getConfID() {
@@ -97,7 +97,7 @@ public class RestInviteWithPwdReqBody {
     }
 
     /**
-     * 当前会议的密码。
+     * 会议的密码（主持人或者来宾）。
      * @return pwd
      */
     public String getPwd() {
@@ -114,7 +114,7 @@ public class RestInviteWithPwdReqBody {
     }
 
     /**
-     * 号码类型0是本局号码，1是中继号码。
+     * SIP号码类型。默认是0。 * 0：华为云会议的号码 * 1：VC会议的号码 
      * @return numBelongsType
      */
     public Integer getNumBelongsType() {
@@ -131,7 +131,7 @@ public class RestInviteWithPwdReqBody {
     }
 
     /**
-     * 是否不叠加会场名。
+     * 是否不叠加会场名（VDC场景下适用）。
      * @return isNotOverlayPidName
      */
     public Boolean getIsNotOverlayPidName() {

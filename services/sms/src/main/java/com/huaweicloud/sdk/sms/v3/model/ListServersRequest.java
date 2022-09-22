@@ -16,7 +16,7 @@ import java.util.Objects;
 public class ListServersRequest {
 
     /**
-     * 源端服务器状态
+     * 源端服务器状态 unavailable：环境校验不通过 waiting：等待 initialize：初始化 replicate：复制 syncing：持续同步 stopping：暂停中 stopped：已暂停 deleting：删除中 error：错误 cloning：等待克隆完成 cutovering：启动目的端中 finished：启动目的端完成
      */
     public static final class StateEnum {
 
@@ -188,7 +188,7 @@ public class ListServersRequest {
     private Integer offset;
 
     /**
-     * 根据迁移周期查询
+     * checking:检查中 setting:设置中 replicating:复制中 syncing:同步中 cutovering:启动目的端中 cutovered:启动目的端完成
      */
     public static final class MigrationCycleEnum {
 
@@ -309,7 +309,7 @@ public class ListServersRequest {
     }
 
     /**
-     * 源端服务器状态
+     * 源端服务器状态 unavailable：环境校验不通过 waiting：等待 initialize：初始化 replicate：复制 syncing：持续同步 stopping：暂停中 stopped：已暂停 deleting：删除中 error：错误 cloning：等待克隆完成 cutovering：启动目的端中 finished：启动目的端完成
      * @return state
      */
     public StateEnum getState() {
@@ -377,7 +377,7 @@ public class ListServersRequest {
     }
 
     /**
-     * 迁移项目id，填写该参数将查询迁移项目下的所有虚拟机
+     * 迁移项目ID，填写该参数将查询迁移项目下的所有虚拟机
      * @return migproject
      */
     public String getMigproject() {
@@ -432,7 +432,7 @@ public class ListServersRequest {
     }
 
     /**
-     * 根据迁移周期查询
+     * checking:检查中 setting:设置中 replicating:复制中 syncing:同步中 cutovering:启动目的端中 cutovered:启动目的端完成
      * @return migrationCycle
      */
     public MigrationCycleEnum getMigrationCycle() {
@@ -466,7 +466,7 @@ public class ListServersRequest {
     }
 
     /**
-     * 需要查询的企业项目id
+     * 需要查询的企业项目ID
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {

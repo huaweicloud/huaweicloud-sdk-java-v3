@@ -123,6 +123,11 @@ public class CreateChannelResponse extends SdkResponse {
 
     private String updatedTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+
+    private String xRequestId;
+
     public CreateChannelResponse withId(String id) {
         this.id = id;
         return this;
@@ -225,6 +230,25 @@ public class CreateChannelResponse extends SdkResponse {
         this.updatedTime = updatedTime;
     }
 
+    public CreateChannelResponse withXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+        return this;
+    }
+
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+    public String getXRequestId() {
+        return xRequestId;
+    }
+
+    public void setXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -239,12 +263,13 @@ public class CreateChannelResponse extends SdkResponse {
             && Objects.equals(this.description, createChannelResponse.description)
             && Objects.equals(this.providerType, createChannelResponse.providerType)
             && Objects.equals(this.createdTime, createChannelResponse.createdTime)
-            && Objects.equals(this.updatedTime, createChannelResponse.updatedTime);
+            && Objects.equals(this.updatedTime, createChannelResponse.updatedTime)
+            && Objects.equals(this.xRequestId, createChannelResponse.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, description, providerType, createdTime, updatedTime);
+        return Objects.hash(id, name, description, providerType, createdTime, updatedTime, xRequestId);
     }
 
     @Override
@@ -257,6 +282,7 @@ public class CreateChannelResponse extends SdkResponse {
         sb.append("    providerType: ").append(toIndentedString(providerType)).append("\n");
         sb.append("    createdTime: ").append(toIndentedString(createdTime)).append("\n");
         sb.append("    updatedTime: ").append(toIndentedString(updatedTime)).append("\n");
+        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -77,10 +77,10 @@ public class OmsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<Long>withRequestField("task_id",
+        builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Long.class),
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteTaskRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
             }));
@@ -146,10 +146,10 @@ public class OmsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<Long>withRequestField("task_id",
+        builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Long.class),
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowTaskRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
             }));
@@ -170,10 +170,10 @@ public class OmsMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.<Long>withRequestField("task_id",
+        builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Long.class),
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(StartTaskRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
             }));
@@ -201,10 +201,10 @@ public class OmsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<Long>withRequestField("task_id",
+        builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Long.class),
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(StopTaskRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
             }));
@@ -226,10 +226,10 @@ public class OmsMeta {
             .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.<Long>withRequestField("task_id",
+        builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Long.class),
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateBandwidthPolicyRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
             }));
@@ -238,6 +238,241 @@ public class OmsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateBandwidthPolicyReq.class),
             f -> f.withMarshaller(UpdateBandwidthPolicyRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateTaskGroupRequest, CreateTaskGroupResponse> createTaskGroup =
+        genForcreateTaskGroup();
+
+    private static HttpRequestDef<CreateTaskGroupRequest, CreateTaskGroupResponse> genForcreateTaskGroup() {
+        // basic
+        HttpRequestDef.Builder<CreateTaskGroupRequest, CreateTaskGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateTaskGroupRequest.class, CreateTaskGroupResponse.class)
+                .withName("CreateTaskGroup")
+                .withUri("/v2/{project_id}/taskgroups")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<CreateTaskGroupReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateTaskGroupReq.class),
+            f -> f.withMarshaller(CreateTaskGroupRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteTaskGroupRequest, DeleteTaskGroupResponse> deleteTaskGroup =
+        genFordeleteTaskGroup();
+
+    private static HttpRequestDef<DeleteTaskGroupRequest, DeleteTaskGroupResponse> genFordeleteTaskGroup() {
+        // basic
+        HttpRequestDef.Builder<DeleteTaskGroupRequest, DeleteTaskGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteTaskGroupRequest.class, DeleteTaskGroupResponse.class)
+                .withName("DeleteTaskGroup")
+                .withUri("/v2/{project_id}/taskgroups/{group_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTaskGroupRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTaskGroupRequest, ListTaskGroupResponse> listTaskGroup =
+        genForlistTaskGroup();
+
+    private static HttpRequestDef<ListTaskGroupRequest, ListTaskGroupResponse> genForlistTaskGroup() {
+        // basic
+        HttpRequestDef.Builder<ListTaskGroupRequest, ListTaskGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListTaskGroupRequest.class, ListTaskGroupResponse.class)
+                .withName("ListTaskGroup")
+                .withUri("/v2/{project_id}/taskgroups")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTaskGroupRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTaskGroupRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTaskGroupRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RetryTaskGroupRequest, RetryTaskGroupResponse> retryTaskGroup =
+        genForretryTaskGroup();
+
+    private static HttpRequestDef<RetryTaskGroupRequest, RetryTaskGroupResponse> genForretryTaskGroup() {
+        // basic
+        HttpRequestDef.Builder<RetryTaskGroupRequest, RetryTaskGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, RetryTaskGroupRequest.class, RetryTaskGroupResponse.class)
+                .withName("RetryTaskGroup")
+                .withUri("/v2/{project_id}/taskgroups/{group_id}/retry")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RetryTaskGroupRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            }));
+        builder.<RetryTaskGroupReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RetryTaskGroupReq.class),
+            f -> f.withMarshaller(RetryTaskGroupRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTaskGroupRequest, ShowTaskGroupResponse> showTaskGroup =
+        genForshowTaskGroup();
+
+    private static HttpRequestDef<ShowTaskGroupRequest, ShowTaskGroupResponse> genForshowTaskGroup() {
+        // basic
+        HttpRequestDef.Builder<ShowTaskGroupRequest, ShowTaskGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowTaskGroupRequest.class, ShowTaskGroupResponse.class)
+                .withName("ShowTaskGroup")
+                .withUri("/v2/{project_id}/taskgroups/{group_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTaskGroupRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StartTaskGroupRequest, StartTaskGroupResponse> startTaskGroup =
+        genForstartTaskGroup();
+
+    private static HttpRequestDef<StartTaskGroupRequest, StartTaskGroupResponse> genForstartTaskGroup() {
+        // basic
+        HttpRequestDef.Builder<StartTaskGroupRequest, StartTaskGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, StartTaskGroupRequest.class, StartTaskGroupResponse.class)
+                .withName("StartTaskGroup")
+                .withUri("/v2/{project_id}/taskgroups/{group_id}/start")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartTaskGroupRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            }));
+        builder.<StartTaskGroupReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(StartTaskGroupReq.class),
+            f -> f.withMarshaller(StartTaskGroupRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StopTaskGroupRequest, StopTaskGroupResponse> stopTaskGroup =
+        genForstopTaskGroup();
+
+    private static HttpRequestDef<StopTaskGroupRequest, StopTaskGroupResponse> genForstopTaskGroup() {
+        // basic
+        HttpRequestDef.Builder<StopTaskGroupRequest, StopTaskGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, StopTaskGroupRequest.class, StopTaskGroupResponse.class)
+                .withName("StopTaskGroup")
+                .withUri("/v2/{project_id}/taskgroups/{group_id}/stop")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopTaskGroupRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateTaskGroupRequest, UpdateTaskGroupResponse> updateTaskGroup =
+        genForupdateTaskGroup();
+
+    private static HttpRequestDef<UpdateTaskGroupRequest, UpdateTaskGroupResponse> genForupdateTaskGroup() {
+        // basic
+        HttpRequestDef.Builder<UpdateTaskGroupRequest, UpdateTaskGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateTaskGroupRequest.class, UpdateTaskGroupResponse.class)
+                .withName("UpdateTaskGroup")
+                .withUri("/v2/{project_id}/taskgroups/{group_id}/update")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateTaskGroupRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            }));
+        builder.<UpdateBandwidthPolicyReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UpdateBandwidthPolicyReq.class),
+            f -> f.withMarshaller(UpdateTaskGroupRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

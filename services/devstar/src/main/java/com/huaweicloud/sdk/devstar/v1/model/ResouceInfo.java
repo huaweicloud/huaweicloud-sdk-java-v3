@@ -31,6 +31,11 @@ public class ResouceInfo {
     private String subscribeLink;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "subscribe_guide")
+
+    private String subscribeGuide;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
     private String type;
@@ -118,6 +123,23 @@ public class ResouceInfo {
         this.subscribeLink = subscribeLink;
     }
 
+    public ResouceInfo withSubscribeGuide(String subscribeGuide) {
+        this.subscribeGuide = subscribeGuide;
+        return this;
+    }
+
+    /**
+     * 开通指导。
+     * @return subscribeGuide
+     */
+    public String getSubscribeGuide() {
+        return subscribeGuide;
+    }
+
+    public void setSubscribeGuide(String subscribeGuide) {
+        this.subscribeGuide = subscribeGuide;
+    }
+
     public ResouceInfo withType(String type) {
         this.type = type;
         return this;
@@ -198,6 +220,7 @@ public class ResouceInfo {
         return Objects.equals(this.name, resouceInfo.name) && Objects.equals(this.description, resouceInfo.description)
             && Objects.equals(this.homeLink, resouceInfo.homeLink)
             && Objects.equals(this.subscribeLink, resouceInfo.subscribeLink)
+            && Objects.equals(this.subscribeGuide, resouceInfo.subscribeGuide)
             && Objects.equals(this.type, resouceInfo.type)
             && Objects.equals(this.referencePrice, resouceInfo.referencePrice)
             && Objects.equals(this.priceDetailsLink, resouceInfo.priceDetailsLink)
@@ -206,8 +229,15 @@ public class ResouceInfo {
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(name, description, homeLink, subscribeLink, type, referencePrice, priceDetailsLink, specifications);
+        return Objects.hash(name,
+            description,
+            homeLink,
+            subscribeLink,
+            subscribeGuide,
+            type,
+            referencePrice,
+            priceDetailsLink,
+            specifications);
     }
 
     @Override
@@ -218,6 +248,7 @@ public class ResouceInfo {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    homeLink: ").append(toIndentedString(homeLink)).append("\n");
         sb.append("    subscribeLink: ").append(toIndentedString(subscribeLink)).append("\n");
+        sb.append("    subscribeGuide: ").append(toIndentedString(subscribeGuide)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    referencePrice: ").append(toIndentedString(referencePrice)).append("\n");
         sb.append("    priceDetailsLink: ").append(toIndentedString(priceDetailsLink)).append("\n");

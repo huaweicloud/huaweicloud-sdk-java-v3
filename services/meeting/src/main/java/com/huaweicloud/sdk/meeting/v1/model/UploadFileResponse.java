@@ -28,7 +28,7 @@ public class UploadFileResponse extends SdkResponse {
     }
 
     /**
-     * 文件Id
+     * 文件Id。
      * @return fileId
      */
     public String getFileId() {

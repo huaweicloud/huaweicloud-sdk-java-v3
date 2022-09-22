@@ -39,7 +39,7 @@ public class BatchDeleteUsersRequest {
     }
 
     /**
-     * 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用uuId，若不携带，则后台自动生成
+     * 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用UUID，若不携带，则后台自动生成。
      * @return xRequestId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -58,7 +58,7 @@ public class BatchDeleteUsersRequest {
     }
 
     /**
-     * 语言参数，默认为中文zh-CN, 英文为en-US
+     * 语言参数，默认为中文zh-CN，英文为en-US。
      * @return acceptLanguage
      */
     public String getAcceptLanguage() {
@@ -75,7 +75,7 @@ public class BatchDeleteUsersRequest {
     }
 
     /**
-     * 账号类型 * 0：会议账号； * 1：第三方账号。 默认0 
+     * 帐号类型。默认0。 * 0：会议帐号 * 1：第三方帐号 
      * minimum: 0
      * maximum: 1
      * @return accountType
@@ -110,7 +110,7 @@ public class BatchDeleteUsersRequest {
     }
 
     /**
-     * 企业用户帐号列表。
+     * Get body
      * @return body
      */
     public List<String> getBody() {

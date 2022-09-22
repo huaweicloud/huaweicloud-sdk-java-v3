@@ -231,6 +231,16 @@ public class TrackerResponseBody {
     private Boolean isSupportTraceFilesEncryption;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_id")
+
+    private String groupId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "stream_id")
+
+    private String streamId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "obs_info")
 
     private ObsInfo obsInfo;
@@ -299,7 +309,7 @@ public class TrackerResponseBody {
     }
 
     /**
-     * 是否打开事件文件校验。当前环境仅\"tracker_type\"参数值为\"system\"时支持该功能。
+     * 是否打开事件文件校验。
      * @return isSupportValidate
      */
     public Boolean getIsSupportValidate() {
@@ -455,6 +465,40 @@ public class TrackerResponseBody {
         this.isSupportTraceFilesEncryption = isSupportTraceFilesEncryption;
     }
 
+    public TrackerResponseBody withGroupId(String groupId) {
+        this.groupId = groupId;
+        return this;
+    }
+
+    /**
+     * LTS服务日志组的ID。
+     * @return groupId
+     */
+    public String getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
+    }
+
+    public TrackerResponseBody withStreamId(String streamId) {
+        this.streamId = streamId;
+        return this;
+    }
+
+    /**
+     * LTS服务日志流的ID。
+     * @return streamId
+     */
+    public String getStreamId() {
+        return streamId;
+    }
+
+    public void setStreamId(String streamId) {
+        this.streamId = streamId;
+    }
+
     public TrackerResponseBody withObsInfo(ObsInfo obsInfo) {
         this.obsInfo = obsInfo;
         return this;
@@ -528,6 +572,8 @@ public class TrackerResponseBody {
             && Objects.equals(this.status, trackerResponseBody.status)
             && Objects.equals(this.detail, trackerResponseBody.detail)
             && Objects.equals(this.isSupportTraceFilesEncryption, trackerResponseBody.isSupportTraceFilesEncryption)
+            && Objects.equals(this.groupId, trackerResponseBody.groupId)
+            && Objects.equals(this.streamId, trackerResponseBody.streamId)
             && Objects.equals(this.obsInfo, trackerResponseBody.obsInfo)
             && Objects.equals(this.dataBucket, trackerResponseBody.dataBucket);
     }
@@ -546,6 +592,8 @@ public class TrackerResponseBody {
             status,
             detail,
             isSupportTraceFilesEncryption,
+            groupId,
+            streamId,
             obsInfo,
             dataBucket);
     }
@@ -568,6 +616,8 @@ public class TrackerResponseBody {
         sb.append("    isSupportTraceFilesEncryption: ")
             .append(toIndentedString(isSupportTraceFilesEncryption))
             .append("\n");
+        sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
+        sb.append("    streamId: ").append(toIndentedString(streamId)).append("\n");
         sb.append("    obsInfo: ").append(toIndentedString(obsInfo)).append("\n");
         sb.append("    dataBucket: ").append(toIndentedString(dataBucket)).append("\n");
         sb.append("}");

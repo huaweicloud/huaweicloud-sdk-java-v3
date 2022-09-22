@@ -740,6 +740,36 @@ public class GaussDBClient {
     }
 
     /**
+     * 批量查询实例详情
+     *
+     * 批量查询实例详情
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListGaussMySqlInstanceDetailInfoRequest 请求对象
+     * @return ListGaussMySqlInstanceDetailInfoResponse
+     */
+    public ListGaussMySqlInstanceDetailInfoResponse listGaussMySqlInstanceDetailInfo(ListGaussMySqlInstanceDetailInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.listGaussMySqlInstanceDetailInfo);
+    }
+
+    /**
+     * 批量查询实例详情
+     *
+     * 批量查询实例详情
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListGaussMySqlInstanceDetailInfoRequest 请求对象
+     * @return SyncInvoker<ListGaussMySqlInstanceDetailInfoRequest, ListGaussMySqlInstanceDetailInfoResponse>
+     */
+    public SyncInvoker<ListGaussMySqlInstanceDetailInfoRequest, ListGaussMySqlInstanceDetailInfoResponse> listGaussMySqlInstanceDetailInfoInvoker(ListGaussMySqlInstanceDetailInfoRequest request) {
+        return new SyncInvoker<ListGaussMySqlInstanceDetailInfoRequest, ListGaussMySqlInstanceDetailInfoResponse>(request, GaussDBMeta.listGaussMySqlInstanceDetailInfo, hcClient);
+    }
+
+    /**
      * 查询实例列表
      *
      * 根据指定条件查询实例列表。

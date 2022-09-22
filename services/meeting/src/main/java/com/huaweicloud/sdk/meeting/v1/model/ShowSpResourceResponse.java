@@ -376,7 +376,7 @@ public class ShowSpResourceResponse extends SdkResponse {
     }
 
     /**
-     * 在创建SP的时候设置的pstn权限开关
+     * 在创建企业的时候设置的pstn权限开关。
      * @return enablePstn
      */
     public Boolean getEnablePstn() {
@@ -393,7 +393,7 @@ public class ShowSpResourceResponse extends SdkResponse {
     }
 
     /**
-     * 在创建SP的时候设置发送短信开关
+     * 企业是否通过短信形式发送会议通知。
      * @return enableSMS
      */
     public Boolean getEnableSMS() {
@@ -426,7 +426,7 @@ public class ShowSpResourceResponse extends SdkResponse {
     }
 
     /**
-     * sp管理员绑定的分组列表
+     * SP管理员绑定的分组列表。
      * @return groupList
      */
     public List<QueryCorpGroupDTO> getGroupList() {

@@ -33,7 +33,7 @@ public class CreateAnAppV2Response extends SdkResponse {
     private String remark;
 
     /**
-     * APP的创建者 - USER：用户自行创建 - MARKET：云市场分配  暂不支持MARKET
+     * APP的创建者 - USER：用户自行创建 - MARKET：云商店分配  暂不支持MARKET
      */
     public static final class CreatorEnum {
 
@@ -354,7 +354,7 @@ public class CreateAnAppV2Response extends SdkResponse {
     }
 
     /**
-     * APP的创建者 - USER：用户自行创建 - MARKET：云市场分配  暂不支持MARKET
+     * APP的创建者 - USER：用户自行创建 - MARKET：云商店分配  暂不支持MARKET
      * @return creator
      */
     public CreatorEnum getCreator() {

@@ -13,24 +13,22 @@ public class StopTaskRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_id")
 
-    private Long taskId;
+    private String taskId;
 
-    public StopTaskRequest withTaskId(Long taskId) {
+    public StopTaskRequest withTaskId(String taskId) {
         this.taskId = taskId;
         return this;
     }
 
     /**
      * 迁移任务ID。
-     * minimum: 0
-     * maximum: 9223372036854775807
      * @return taskId
      */
-    public Long getTaskId() {
+    public String getTaskId() {
         return taskId;
     }
 
-    public void setTaskId(Long taskId) {
+    public void setTaskId(String taskId) {
         this.taskId = taskId;
     }
 

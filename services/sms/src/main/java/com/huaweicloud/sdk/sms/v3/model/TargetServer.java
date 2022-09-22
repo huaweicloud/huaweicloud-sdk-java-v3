@@ -407,7 +407,7 @@ public class TargetServer {
     }
 
     /**
-     * 源端服务器ip，注册源端时必选，更新非必选
+     * 源端服务器IP，注册源端时必选，更新非必选
      * @return ip
      */
     public String getIp() {
@@ -866,7 +866,7 @@ public class TargetServer {
     }
 
     /**
-     * 目的端代理镜像磁盘id
+     * 目的端代理镜像磁盘ID
      * @return imageDiskId
      */
     public String getImageDiskId() {
@@ -883,7 +883,7 @@ public class TargetServer {
     }
 
     /**
-     * 目的端快照id
+     * 目的端快照ID
      * @return snapshotIds
      */
     public String getSnapshotIds() {
@@ -900,7 +900,7 @@ public class TargetServer {
     }
 
     /**
-     * 目的端回滚快照id
+     * 目的端回滚快照ID
      * @return cutoveredSnapshotIds
      */
     public String getCutoveredSnapshotIds() {

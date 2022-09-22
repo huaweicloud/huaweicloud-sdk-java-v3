@@ -31,6 +31,8 @@ package com.huaweicloud.sdk.core.exception;
  */
 public class RequestTimeoutException extends SdkException {
 
+    private static final long serialVersionUID = -905627718391139319L;
+
     public RequestTimeoutException(String message) {
         super(message);
     }

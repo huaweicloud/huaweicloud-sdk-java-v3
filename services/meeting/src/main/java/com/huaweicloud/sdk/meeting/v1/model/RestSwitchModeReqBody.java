@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 切换多画面模式消息体。
+ * 切换会议显示策略请求。
  */
 public class RestSwitchModeReqBody {
 
@@ -26,7 +26,7 @@ public class RestSwitchModeReqBody {
     }
 
     /**
-     * 会议显示策略。 - Fixed: 固定广播与会者。 - VAS: 声控切换。
+     * 会议显示策略。 - Fixed: 固定广播与会者 - VAS: 声控切换
      * @return switchMode
      */
     public String getSwitchMode() {
@@ -43,7 +43,7 @@ public class RestSwitchModeReqBody {
     }
 
     /**
-     * 画面类型。单画面设置只针对声控模式。 - 0: 单画面。 - 1: 多画面。
+     * 画面类型。单画面设置只针对声控模式。 - 0: 单画面 - 1: 多画面
      * @return imageType
      */
     public Integer getImageType() {

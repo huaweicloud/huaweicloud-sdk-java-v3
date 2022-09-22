@@ -382,7 +382,7 @@ public class Server {
     }
 
     /**
-     * 源端服务器ip，注册源端时必选，更新非必选
+     * 源端服务器IP，注册源端时必选，更新非必选
      * @return ip
      */
     public String getIp() {

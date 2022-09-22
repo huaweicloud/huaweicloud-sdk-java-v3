@@ -22,7 +22,7 @@ public class CreateTaskResponse extends SdkResponse {
     }
 
     /**
-     * 创建成功返回的任务id
+     * 创建成功返回的任务ID
      * @return id
      */
     public String getId() {

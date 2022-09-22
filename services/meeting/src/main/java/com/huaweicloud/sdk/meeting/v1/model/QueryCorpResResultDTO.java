@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 查询企业资源的返回结果
+ * 查询企业资源的返回结果。
  */
 public class QueryCorpResResultDTO {
 

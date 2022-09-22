@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 查询终端的返回结果DTO对象
+ * 终端信息。
  */
 public class QueryDeviceResultDTO {
 
@@ -125,7 +125,7 @@ public class QueryDeviceResultDTO {
     }
 
     /**
-     * 终端型号，枚举类型。当前支持TE系列硬件终端，具体的终端类型可以通过获取所有终端类型接口查询。
+     * 终端型号，枚举类型。当前支持TE系列和部分第三方硬件终端，具体的终端类型可以通过[[获取所有终端类型](https://support.huaweicloud.com/api-meeting/meeting_21_0092.html)](tag:hws)[[获取所有终端类型](https://support.huaweicloud.com/intl/zh-cn/api-meeting/meeting_21_0092.html)](tag:hk)接口查询。
      * @return model
      */
     public String getModel() {
@@ -159,7 +159,7 @@ public class QueryDeviceResultDTO {
     }
 
     /**
-     * 硬终端对应的内置账号。
+     * 硬终端对应的内置帐号。
      * @return account
      */
     public String getAccount() {
@@ -176,7 +176,7 @@ public class QueryDeviceResultDTO {
     }
 
     /**
-     * 终端绑定的号码
+     * 终端绑定的号码。
      * @return number
      */
     public String getNumber() {
@@ -193,7 +193,7 @@ public class QueryDeviceResultDTO {
     }
 
     /**
-     * 投影码生成模式 * 0、自动(该模式下根据消息上报的IP地址内部控制复杂度：私网地址配置成简单模式；公网地址配置成复杂模式) * 1、简单 * 2、复杂 
+     * 投影码生成模式。 * 0：自动(该模式下根据消息上报的IP地址内部控制复杂度：私网地址配置成简单模式；公网地址配置成复杂模式) * 1：简单 * 2：复杂 
      * @return prjCodeMode
      */
     public Integer getPrjCodeMode() {
@@ -210,7 +210,7 @@ public class QueryDeviceResultDTO {
     }
 
     /**
-     * 部门编号
+     * 部门编码。
      * @return deptCode
      */
     public String getDeptCode() {
@@ -227,7 +227,7 @@ public class QueryDeviceResultDTO {
     }
 
     /**
-     * 部门名称
+     * 部门名称。
      * @return deptName
      */
     public String getDeptName() {
@@ -244,7 +244,7 @@ public class QueryDeviceResultDTO {
     }
 
     /**
-     * 部门名称路径
+     * 部门名称路径。
      * @return deptNamePath
      */
     public String getDeptNamePath() {
@@ -261,7 +261,7 @@ public class QueryDeviceResultDTO {
     }
 
     /**
-     * 手机号
+     * 手机号。
      * @return phone
      */
     public String getPhone() {
@@ -278,7 +278,7 @@ public class QueryDeviceResultDTO {
     }
 
     /**
-     * 手机号所属的国家
+     * [[手机号所属的国家](https://support.huaweicloud.com/api-meeting/meeting_21_0109.html#ZH-CN_TOPIC_0212714591__table19371178135314)](tag:hws)[[手机号所属的国家](https://support.huaweicloud.com/intl/zh-cn/api-meeting/meeting_21_0109.html#ZH-CN_TOPIC_0212714591__table19371178135314)](tag:hk) 。 
      * @return country
      */
     public String getCountry() {
@@ -295,7 +295,7 @@ public class QueryDeviceResultDTO {
     }
 
     /**
-     * 邮箱
+     * 邮箱地址。
      * @return email
      */
     public String getEmail() {
@@ -312,7 +312,7 @@ public class QueryDeviceResultDTO {
     }
 
     /**
-     * 终端描述
+     * 终端描述。
      * @return description
      */
     public String getDescription() {
@@ -329,7 +329,7 @@ public class QueryDeviceResultDTO {
     }
 
     /**
-     * 终端状态 * 0、正常 * 1、停用\" 
+     * 终端状态。 * 0、正常 * 1、停用\" 
      * @return status
      */
     public Integer getStatus() {

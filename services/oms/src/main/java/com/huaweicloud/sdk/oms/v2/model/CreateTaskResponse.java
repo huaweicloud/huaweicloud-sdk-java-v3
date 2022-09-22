@@ -29,7 +29,7 @@ public class CreateTaskResponse extends SdkResponse {
     /**
      * 任务ID。
      * minimum: 0
-     * maximum: 9223372036854775807
+     * maximum: 999999999999999
      * @return id
      */
     public Long getId() {
