@@ -493,6 +493,31 @@ public class ShowInstanceResp {
     private Boolean diskEncrypted;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "disk_encrypted_key")
+
+    private String diskEncryptedKey;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_management_connect_address")
+
+    private String publicManagementConnectAddress;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "subnet_cidr")
+
+    private String subnetCidr;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "subnet_name")
+
+    private String subnetName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_acl")
+
+    private Boolean enableAcl;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "kafka_private_connect_address")
 
     private String kafkaPrivateConnectAddress;
@@ -1652,6 +1677,91 @@ public class ShowInstanceResp {
         this.diskEncrypted = diskEncrypted;
     }
 
+    public ShowInstanceResp withDiskEncryptedKey(String diskEncryptedKey) {
+        this.diskEncryptedKey = diskEncryptedKey;
+        return this;
+    }
+
+    /**
+     * 磁盘加密key，未开启磁盘加密时为空。
+     * @return diskEncryptedKey
+     */
+    public String getDiskEncryptedKey() {
+        return diskEncryptedKey;
+    }
+
+    public void setDiskEncryptedKey(String diskEncryptedKey) {
+        this.diskEncryptedKey = diskEncryptedKey;
+    }
+
+    public ShowInstanceResp withPublicManagementConnectAddress(String publicManagementConnectAddress) {
+        this.publicManagementConnectAddress = publicManagementConnectAddress;
+        return this;
+    }
+
+    /**
+     * 公网访问Kafka Manager连接地址。
+     * @return publicManagementConnectAddress
+     */
+    public String getPublicManagementConnectAddress() {
+        return publicManagementConnectAddress;
+    }
+
+    public void setPublicManagementConnectAddress(String publicManagementConnectAddress) {
+        this.publicManagementConnectAddress = publicManagementConnectAddress;
+    }
+
+    public ShowInstanceResp withSubnetCidr(String subnetCidr) {
+        this.subnetCidr = subnetCidr;
+        return this;
+    }
+
+    /**
+     * 子网网段。
+     * @return subnetCidr
+     */
+    public String getSubnetCidr() {
+        return subnetCidr;
+    }
+
+    public void setSubnetCidr(String subnetCidr) {
+        this.subnetCidr = subnetCidr;
+    }
+
+    public ShowInstanceResp withSubnetName(String subnetName) {
+        this.subnetName = subnetName;
+        return this;
+    }
+
+    /**
+     * 子网名称。
+     * @return subnetName
+     */
+    public String getSubnetName() {
+        return subnetName;
+    }
+
+    public void setSubnetName(String subnetName) {
+        this.subnetName = subnetName;
+    }
+
+    public ShowInstanceResp withEnableAcl(Boolean enableAcl) {
+        this.enableAcl = enableAcl;
+        return this;
+    }
+
+    /**
+     * 是否开启访问控制。
+     * @return enableAcl
+     */
+    public Boolean getEnableAcl() {
+        return enableAcl;
+    }
+
+    public void setEnableAcl(Boolean enableAcl) {
+        this.enableAcl = enableAcl;
+    }
+
     public ShowInstanceResp withKafkaPrivateConnectAddress(String kafkaPrivateConnectAddress) {
         this.kafkaPrivateConnectAddress = kafkaPrivateConnectAddress;
         return this;
@@ -1875,6 +1985,11 @@ public class ShowInstanceResp {
             && Objects.equals(this.agentEnable, showInstanceResp.agentEnable)
             && Objects.equals(this.podConnectAddress, showInstanceResp.podConnectAddress)
             && Objects.equals(this.diskEncrypted, showInstanceResp.diskEncrypted)
+            && Objects.equals(this.diskEncryptedKey, showInstanceResp.diskEncryptedKey)
+            && Objects.equals(this.publicManagementConnectAddress, showInstanceResp.publicManagementConnectAddress)
+            && Objects.equals(this.subnetCidr, showInstanceResp.subnetCidr)
+            && Objects.equals(this.subnetName, showInstanceResp.subnetName)
+            && Objects.equals(this.enableAcl, showInstanceResp.enableAcl)
             && Objects.equals(this.kafkaPrivateConnectAddress, showInstanceResp.kafkaPrivateConnectAddress)
             && Objects.equals(this.cesVersion, showInstanceResp.cesVersion)
             && Objects.equals(this.publicAccessEnabled, showInstanceResp.publicAccessEnabled)
@@ -1951,6 +2066,11 @@ public class ShowInstanceResp {
             agentEnable,
             podConnectAddress,
             diskEncrypted,
+            diskEncryptedKey,
+            publicManagementConnectAddress,
+            subnetCidr,
+            subnetName,
+            enableAcl,
             kafkaPrivateConnectAddress,
             cesVersion,
             publicAccessEnabled,
@@ -2029,6 +2149,13 @@ public class ShowInstanceResp {
         sb.append("    agentEnable: ").append(toIndentedString(agentEnable)).append("\n");
         sb.append("    podConnectAddress: ").append(toIndentedString(podConnectAddress)).append("\n");
         sb.append("    diskEncrypted: ").append(toIndentedString(diskEncrypted)).append("\n");
+        sb.append("    diskEncryptedKey: ").append(toIndentedString(diskEncryptedKey)).append("\n");
+        sb.append("    publicManagementConnectAddress: ")
+            .append(toIndentedString(publicManagementConnectAddress))
+            .append("\n");
+        sb.append("    subnetCidr: ").append(toIndentedString(subnetCidr)).append("\n");
+        sb.append("    subnetName: ").append(toIndentedString(subnetName)).append("\n");
+        sb.append("    enableAcl: ").append(toIndentedString(enableAcl)).append("\n");
         sb.append("    kafkaPrivateConnectAddress: ").append(toIndentedString(kafkaPrivateConnectAddress)).append("\n");
         sb.append("    cesVersion: ").append(toIndentedString(cesVersion)).append("\n");
         sb.append("    publicAccessEnabled: ").append(toIndentedString(publicAccessEnabled)).append("\n");

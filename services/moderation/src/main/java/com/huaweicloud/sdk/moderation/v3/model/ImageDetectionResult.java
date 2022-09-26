@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.moderation.v3.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -24,7 +26,7 @@ public class ImageDetectionResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "details")
 
-    private ImageDetectionResultDetail details;
+    private List<ImageDetectionResultDetail> details = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ocr_text")
@@ -65,29 +67,36 @@ public class ImageDetectionResult {
         this.category = category;
     }
 
-    public ImageDetectionResult withDetails(ImageDetectionResultDetail details) {
+    public ImageDetectionResult withDetails(List<ImageDetectionResultDetail> details) {
         this.details = details;
         return this;
     }
 
-    public ImageDetectionResult withDetails(Consumer<ImageDetectionResultDetail> detailsSetter) {
+    public ImageDetectionResult addDetailsItem(ImageDetectionResultDetail detailsItem) {
         if (this.details == null) {
-            this.details = new ImageDetectionResultDetail();
-            detailsSetter.accept(this.details);
+            this.details = new ArrayList<>();
         }
+        this.details.add(detailsItem);
+        return this;
+    }
 
+    public ImageDetectionResult withDetails(Consumer<List<ImageDetectionResultDetail>> detailsSetter) {
+        if (this.details == null) {
+            this.details = new ArrayList<>();
+        }
+        detailsSetter.accept(this.details);
         return this;
     }
 
     /**
-     * Get details
+     * 检测详情
      * @return details
      */
-    public ImageDetectionResultDetail getDetails() {
+    public List<ImageDetectionResultDetail> getDetails() {
         return details;
     }
 
-    public void setDetails(ImageDetectionResultDetail details) {
+    public void setDetails(List<ImageDetectionResultDetail> details) {
         this.details = details;
     }
 

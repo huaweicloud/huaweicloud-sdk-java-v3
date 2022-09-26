@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.moderation.v3.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -44,7 +46,7 @@ public class ImageDetectionResultDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "segments")
 
-    private OCRTextDetail segments;
+    private List<OCRTextDetail> segments = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "label")
@@ -171,29 +173,36 @@ public class ImageDetectionResultDetail {
         this.qrContent = qrContent;
     }
 
-    public ImageDetectionResultDetail withSegments(OCRTextDetail segments) {
+    public ImageDetectionResultDetail withSegments(List<OCRTextDetail> segments) {
         this.segments = segments;
         return this;
     }
 
-    public ImageDetectionResultDetail withSegments(Consumer<OCRTextDetail> segmentsSetter) {
+    public ImageDetectionResultDetail addSegmentsItem(OCRTextDetail segmentsItem) {
         if (this.segments == null) {
-            this.segments = new OCRTextDetail();
-            segmentsSetter.accept(this.segments);
+            this.segments = new ArrayList<>();
         }
+        this.segments.add(segmentsItem);
+        return this;
+    }
 
+    public ImageDetectionResultDetail withSegments(Consumer<List<OCRTextDetail>> segmentsSetter) {
+        if (this.segments == null) {
+            this.segments = new ArrayList<>();
+        }
+        segmentsSetter.accept(this.segments);
         return this;
     }
 
     /**
-     * Get segments
+     * image_text场景下命中的文本片段。
      * @return segments
      */
-    public OCRTextDetail getSegments() {
+    public List<OCRTextDetail> getSegments() {
         return segments;
     }
 
-    public void setSegments(OCRTextDetail segments) {
+    public void setSegments(List<OCRTextDetail> segments) {
         this.segments = segments;
     }
 

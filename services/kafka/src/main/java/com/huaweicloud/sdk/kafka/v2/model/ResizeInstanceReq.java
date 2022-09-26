@@ -20,6 +20,21 @@ public class ResizeInstanceReq {
 
     private Integer newStorageSpace;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "oper_type")
+
+    private String operType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "new_broker_num")
+
+    private Integer newBrokerNum;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "new_product_id")
+
+    private String newProductId;
+
     public ResizeInstanceReq withNewSpecCode(String newSpecCode) {
         this.newSpecCode = newSpecCode;
         return this;
@@ -54,6 +69,57 @@ public class ResizeInstanceReq {
         this.newStorageSpace = newStorageSpace;
     }
 
+    public ResizeInstanceReq withOperType(String operType) {
+        this.operType = operType;
+        return this;
+    }
+
+    /**
+     * 扩容类型, 新规格支持扩容类型：\"horizontal\"、\"vertical\"、\"node\"、\"storage\"四种类型。
+     * @return operType
+     */
+    public String getOperType() {
+        return operType;
+    }
+
+    public void setOperType(String operType) {
+        this.operType = operType;
+    }
+
+    public ResizeInstanceReq withNewBrokerNum(Integer newBrokerNum) {
+        this.newBrokerNum = newBrokerNum;
+        return this;
+    }
+
+    /**
+     * 扩容后集群节点数。
+     * @return newBrokerNum
+     */
+    public Integer getNewBrokerNum() {
+        return newBrokerNum;
+    }
+
+    public void setNewBrokerNum(Integer newBrokerNum) {
+        this.newBrokerNum = newBrokerNum;
+    }
+
+    public ResizeInstanceReq withNewProductId(String newProductId) {
+        this.newProductId = newProductId;
+        return this;
+    }
+
+    /**
+     * 新规格变更后的产品ID。 涉及垂直扩容场景，需指定该项。
+     * @return newProductId
+     */
+    public String getNewProductId() {
+        return newProductId;
+    }
+
+    public void setNewProductId(String newProductId) {
+        this.newProductId = newProductId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -64,12 +130,15 @@ public class ResizeInstanceReq {
         }
         ResizeInstanceReq resizeInstanceReq = (ResizeInstanceReq) o;
         return Objects.equals(this.newSpecCode, resizeInstanceReq.newSpecCode)
-            && Objects.equals(this.newStorageSpace, resizeInstanceReq.newStorageSpace);
+            && Objects.equals(this.newStorageSpace, resizeInstanceReq.newStorageSpace)
+            && Objects.equals(this.operType, resizeInstanceReq.operType)
+            && Objects.equals(this.newBrokerNum, resizeInstanceReq.newBrokerNum)
+            && Objects.equals(this.newProductId, resizeInstanceReq.newProductId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(newSpecCode, newStorageSpace);
+        return Objects.hash(newSpecCode, newStorageSpace, operType, newBrokerNum, newProductId);
     }
 
     @Override
@@ -78,6 +147,9 @@ public class ResizeInstanceReq {
         sb.append("class ResizeInstanceReq {\n");
         sb.append("    newSpecCode: ").append(toIndentedString(newSpecCode)).append("\n");
         sb.append("    newStorageSpace: ").append(toIndentedString(newStorageSpace)).append("\n");
+        sb.append("    operType: ").append(toIndentedString(operType)).append("\n");
+        sb.append("    newBrokerNum: ").append(toIndentedString(newBrokerNum)).append("\n");
+        sb.append("    newProductId: ").append(toIndentedString(newProductId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

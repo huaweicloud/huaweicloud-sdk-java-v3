@@ -494,6 +494,31 @@ public class ShowInstanceResponse extends SdkResponse {
     private Boolean diskEncrypted;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "disk_encrypted_key")
+
+    private String diskEncryptedKey;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_management_connect_address")
+
+    private String publicManagementConnectAddress;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "subnet_cidr")
+
+    private String subnetCidr;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "subnet_name")
+
+    private String subnetName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_acl")
+
+    private Boolean enableAcl;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "kafka_private_connect_address")
 
     private String kafkaPrivateConnectAddress;
@@ -1653,6 +1678,91 @@ public class ShowInstanceResponse extends SdkResponse {
         this.diskEncrypted = diskEncrypted;
     }
 
+    public ShowInstanceResponse withDiskEncryptedKey(String diskEncryptedKey) {
+        this.diskEncryptedKey = diskEncryptedKey;
+        return this;
+    }
+
+    /**
+     * 磁盘加密key，未开启磁盘加密时为空。
+     * @return diskEncryptedKey
+     */
+    public String getDiskEncryptedKey() {
+        return diskEncryptedKey;
+    }
+
+    public void setDiskEncryptedKey(String diskEncryptedKey) {
+        this.diskEncryptedKey = diskEncryptedKey;
+    }
+
+    public ShowInstanceResponse withPublicManagementConnectAddress(String publicManagementConnectAddress) {
+        this.publicManagementConnectAddress = publicManagementConnectAddress;
+        return this;
+    }
+
+    /**
+     * 公网访问Kafka Manager连接地址。
+     * @return publicManagementConnectAddress
+     */
+    public String getPublicManagementConnectAddress() {
+        return publicManagementConnectAddress;
+    }
+
+    public void setPublicManagementConnectAddress(String publicManagementConnectAddress) {
+        this.publicManagementConnectAddress = publicManagementConnectAddress;
+    }
+
+    public ShowInstanceResponse withSubnetCidr(String subnetCidr) {
+        this.subnetCidr = subnetCidr;
+        return this;
+    }
+
+    /**
+     * 子网网段。
+     * @return subnetCidr
+     */
+    public String getSubnetCidr() {
+        return subnetCidr;
+    }
+
+    public void setSubnetCidr(String subnetCidr) {
+        this.subnetCidr = subnetCidr;
+    }
+
+    public ShowInstanceResponse withSubnetName(String subnetName) {
+        this.subnetName = subnetName;
+        return this;
+    }
+
+    /**
+     * 子网名称。
+     * @return subnetName
+     */
+    public String getSubnetName() {
+        return subnetName;
+    }
+
+    public void setSubnetName(String subnetName) {
+        this.subnetName = subnetName;
+    }
+
+    public ShowInstanceResponse withEnableAcl(Boolean enableAcl) {
+        this.enableAcl = enableAcl;
+        return this;
+    }
+
+    /**
+     * 是否开启访问控制。
+     * @return enableAcl
+     */
+    public Boolean getEnableAcl() {
+        return enableAcl;
+    }
+
+    public void setEnableAcl(Boolean enableAcl) {
+        this.enableAcl = enableAcl;
+    }
+
     public ShowInstanceResponse withKafkaPrivateConnectAddress(String kafkaPrivateConnectAddress) {
         this.kafkaPrivateConnectAddress = kafkaPrivateConnectAddress;
         return this;
@@ -1878,6 +1988,11 @@ public class ShowInstanceResponse extends SdkResponse {
             && Objects.equals(this.agentEnable, showInstanceResponse.agentEnable)
             && Objects.equals(this.podConnectAddress, showInstanceResponse.podConnectAddress)
             && Objects.equals(this.diskEncrypted, showInstanceResponse.diskEncrypted)
+            && Objects.equals(this.diskEncryptedKey, showInstanceResponse.diskEncryptedKey)
+            && Objects.equals(this.publicManagementConnectAddress, showInstanceResponse.publicManagementConnectAddress)
+            && Objects.equals(this.subnetCidr, showInstanceResponse.subnetCidr)
+            && Objects.equals(this.subnetName, showInstanceResponse.subnetName)
+            && Objects.equals(this.enableAcl, showInstanceResponse.enableAcl)
             && Objects.equals(this.kafkaPrivateConnectAddress, showInstanceResponse.kafkaPrivateConnectAddress)
             && Objects.equals(this.cesVersion, showInstanceResponse.cesVersion)
             && Objects.equals(this.publicAccessEnabled, showInstanceResponse.publicAccessEnabled)
@@ -1954,6 +2069,11 @@ public class ShowInstanceResponse extends SdkResponse {
             agentEnable,
             podConnectAddress,
             diskEncrypted,
+            diskEncryptedKey,
+            publicManagementConnectAddress,
+            subnetCidr,
+            subnetName,
+            enableAcl,
             kafkaPrivateConnectAddress,
             cesVersion,
             publicAccessEnabled,
@@ -2032,6 +2152,13 @@ public class ShowInstanceResponse extends SdkResponse {
         sb.append("    agentEnable: ").append(toIndentedString(agentEnable)).append("\n");
         sb.append("    podConnectAddress: ").append(toIndentedString(podConnectAddress)).append("\n");
         sb.append("    diskEncrypted: ").append(toIndentedString(diskEncrypted)).append("\n");
+        sb.append("    diskEncryptedKey: ").append(toIndentedString(diskEncryptedKey)).append("\n");
+        sb.append("    publicManagementConnectAddress: ")
+            .append(toIndentedString(publicManagementConnectAddress))
+            .append("\n");
+        sb.append("    subnetCidr: ").append(toIndentedString(subnetCidr)).append("\n");
+        sb.append("    subnetName: ").append(toIndentedString(subnetName)).append("\n");
+        sb.append("    enableAcl: ").append(toIndentedString(enableAcl)).append("\n");
         sb.append("    kafkaPrivateConnectAddress: ").append(toIndentedString(kafkaPrivateConnectAddress)).append("\n");
         sb.append("    cesVersion: ").append(toIndentedString(cesVersion)).append("\n");
         sb.append("    publicAccessEnabled: ").append(toIndentedString(publicAccessEnabled)).append("\n");

@@ -221,6 +221,16 @@ public class ListDependenciesResult {
 
     private String description;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "version")
+
+    private Long version;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "last_modified")
+
+    private Long lastModified;
+
     public ListDependenciesResult withId(String id) {
         this.id = id;
         return this;
@@ -374,6 +384,40 @@ public class ListDependenciesResult {
         this.description = description;
     }
 
+    public ListDependenciesResult withVersion(Long version) {
+        this.version = version;
+        return this;
+    }
+
+    /**
+     * 依赖包版本号
+     * @return version
+     */
+    public Long getVersion() {
+        return version;
+    }
+
+    public void setVersion(Long version) {
+        this.version = version;
+    }
+
+    public ListDependenciesResult withLastModified(Long lastModified) {
+        this.lastModified = lastModified;
+        return this;
+    }
+
+    /**
+     * 依赖包更新时间
+     * @return lastModified
+     */
+    public Long getLastModified() {
+        return lastModified;
+    }
+
+    public void setLastModified(Long lastModified) {
+        this.lastModified = lastModified;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -391,12 +435,14 @@ public class ListDependenciesResult {
             && Objects.equals(this.size, listDependenciesResult.size)
             && Objects.equals(this.name, listDependenciesResult.name)
             && Objects.equals(this.fileName, listDependenciesResult.fileName)
-            && Objects.equals(this.description, listDependenciesResult.description);
+            && Objects.equals(this.description, listDependenciesResult.description)
+            && Objects.equals(this.version, listDependenciesResult.version)
+            && Objects.equals(this.lastModified, listDependenciesResult.lastModified);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, owner, link, runtime, etag, size, name, fileName, description);
+        return Objects.hash(id, owner, link, runtime, etag, size, name, fileName, description, version, lastModified);
     }
 
     @Override
@@ -412,6 +458,8 @@ public class ListDependenciesResult {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    fileName: ").append(toIndentedString(fileName)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    version: ").append(toIndentedString(version)).append("\n");
+        sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
         sb.append("}");
         return sb.toString();
     }
