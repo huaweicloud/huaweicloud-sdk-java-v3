@@ -25,7 +25,7 @@ public class UpdateEndpointWhiteResponse extends SdkResponse {
     private String id;
 
     /**
-     * 终端节点连接的终端节点服务类 型。 ● gataway：由运维人员配置。 用户无需创建，可直接使用。 ● interface：包括运维人员配置 的云服务和用户自己创建的私 有服务。其中，运维人员配置 的云服务无需创建，用户可直 接使用。 您可以通过查询公共终端节点服 务列表查看由运维人员配置的所 有用户可见且可连接的终端节点 服务，并通过创建终端节点服务 创建Interface类型的终端节点服 务。
+     * 终端节点连接的终端节点服务类型。 ● gataway：由运维人员配置，用户无需创建，可直接使用。 ● interface：包括运维人员配置的云服务和用户自己创建的私有服务。 其中，运维人员配置的云服务无需创建，用户可直接使用。 您可以通过查询公共终端节点服务列表， 查看由运维人员配置的所有用户可见且可连接的终端节点服务， 并通过创建终端节点服务创建Interface类型的终端节点服务。
      */
     public static final class ServiceTypeEnum {
 
@@ -310,7 +310,7 @@ public class UpdateEndpointWhiteResponse extends SdkResponse {
     }
 
     /**
-     * 终端节点连接的终端节点服务类 型。 ● gataway：由运维人员配置。 用户无需创建，可直接使用。 ● interface：包括运维人员配置 的云服务和用户自己创建的私 有服务。其中，运维人员配置 的云服务无需创建，用户可直 接使用。 您可以通过查询公共终端节点服 务列表查看由运维人员配置的所 有用户可见且可连接的终端节点 服务，并通过创建终端节点服务 创建Interface类型的终端节点服 务。
+     * 终端节点连接的终端节点服务类型。 ● gataway：由运维人员配置，用户无需创建，可直接使用。 ● interface：包括运维人员配置的云服务和用户自己创建的私有服务。 其中，运维人员配置的云服务无需创建，用户可直接使用。 您可以通过查询公共终端节点服务列表， 查看由运维人员配置的所有用户可见且可连接的终端节点服务， 并通过创建终端节点服务创建Interface类型的终端节点服务。
      * @return serviceType
      */
     public ServiceTypeEnum getServiceType() {
@@ -344,7 +344,7 @@ public class UpdateEndpointWhiteResponse extends SdkResponse {
     }
 
     /**
-     * 访问所连接的终端节点服务的IP。 仅当同时满足如下条件时，返回该参数： ● 当查询连接interface类型终端节点服务的终 端节点时。 ● 终端节点服务启用“连接审批”功能，且已 经“接受”连接审批。 “status”可以是“accepted”或者 “rejected（仅支持“接受”连接审批后再 “拒绝”的情况）”。
+     * 访问所连接的终端节点服务的IP。 仅当同时满足如下条件时，返回该参数： ● 当查询连接interface类型终端节点服务的终端节点时。 ● 终端节点服务启用“连接审批”功能，且已经“接受”连接审批。 “status”可以是“accepted”或者“rejected（仅支持“接受”连接审批后再“拒绝”的情况）”。
      * @return ip
      */
     public String getIp() {
@@ -445,7 +445,7 @@ public class UpdateEndpointWhiteResponse extends SdkResponse {
     }
 
     /**
-     * 是否创建域名。 ● true：创建域名 ● false：不创建域名 说明 当创建连接gateway类型终端节点服 务的终端节点时，“enable_dns”设 置为true或者false，均不创建域名。
+     * 是否创建域名。 ● true：创建域名 ● false：不创建域名 说明 当创建连接gateway类型终端节点服务的终端节点时， “enable_dns”设置为true或者false，均不创建域名。
      * @return enableDns
      */
     public Boolean getEnableDns() {
@@ -478,7 +478,7 @@ public class UpdateEndpointWhiteResponse extends SdkResponse {
     }
 
     /**
-     * 访问所连接的终端节点服务的域 名。 当“enable_dns”为true时，该 参数可见。
+     * 访问所连接的终端节点服务的域名。 当“enable_dns”为true时，该参数可见。
      * @return dnsNames
      */
     public List<String> getDnsNames() {
@@ -495,7 +495,7 @@ public class UpdateEndpointWhiteResponse extends SdkResponse {
     }
 
     /**
-     * vpc_id对应VPC下已创建的网络 （network）的ID，UUID格式。
+     * vpc_id对应VPC下已创建的网络（network）的ID，UUID格式。
      * @return subnetId
      */
     public String getSubnetId() {
@@ -529,7 +529,7 @@ public class UpdateEndpointWhiteResponse extends SdkResponse {
     }
 
     /**
-     * 终端节点的创建时间。 采用UTC时间格式，格式为： YYYY-MM-DDTHH:MM:SSZ
+     * 终端节点的创建时间。 采用UTC时间格式，格式为：YYYY-MM-DDTHH:MM:SSZ
      * @return createdAt
      */
     public String getCreatedAt() {
@@ -546,7 +546,7 @@ public class UpdateEndpointWhiteResponse extends SdkResponse {
     }
 
     /**
-     * 终端节点的更新时间。 采用UTC时间格式，格式为： YYYY-MM-DDTHH:MM:SSZ
+     * 终端节点的更新时间。 采用UTC时间格式，格式为：YYYY-MM-DDTHH:MM:SSZ
      * @return updatedAt
      */
     public String getUpdatedAt() {
@@ -563,7 +563,7 @@ public class UpdateEndpointWhiteResponse extends SdkResponse {
     }
 
     /**
-     * 项目ID，获取方法请参见获取项 目ID。
+     * 项目ID，获取方法请参见获取项目ID。
      * @return projectId
      */
     public String getProjectId() {
@@ -629,7 +629,7 @@ public class UpdateEndpointWhiteResponse extends SdkResponse {
     }
 
     /**
-     * 控制访问终端节点的白名单。 若未创建，则返回空列表。 创建连接Interface类型终端节点 服务的终端节点时，显示此参 数。
+     * 控制访问终端节点的白名单。 若未创建，则返回空列表。 创建连接Interface类型终端节点服务的终端节点时，显示此参数。
      * @return whitelist
      */
     public List<String> getWhitelist() {
@@ -646,7 +646,7 @@ public class UpdateEndpointWhiteResponse extends SdkResponse {
     }
 
     /**
-     * 是否开启网络ACL隔离。 ● true：开启网络ACL隔离 ● false：不开启网络ACL隔离 若未指定，则返回false。 创建连接Interface类型终端节点 服务的终端节点时，显示此参 数。
+     * 是否开启网络ACL隔离。 ● true：开启网络ACL隔离 ● false：不开启网络ACL隔离 若未指定，则返回false。 创建连接Interface类型终端节点服务的终端节点时，显示此参数。
      * @return enableWhitelist
      */
     public Boolean getEnableWhitelist() {

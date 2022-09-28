@@ -331,6 +331,38 @@ public class IefMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateEncryptdatasRequest, CreateEncryptdatasResponse> createEncryptdatas =
+        genForcreateEncryptdatas();
+
+    private static HttpRequestDef<CreateEncryptdatasRequest, CreateEncryptdatasResponse> genForcreateEncryptdatas() {
+        // basic
+        HttpRequestDef.Builder<CreateEncryptdatasRequest, CreateEncryptdatasResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateEncryptdatasRequest.class, CreateEncryptdatasResponse.class)
+                .withName("CreateEncryptdatas")
+                .withUri("/v2/{project_id}/edm/encryptdatas")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("ief-instance-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateEncryptdatasRequest::getIefInstanceId, (req, v) -> {
+                req.setIefInstanceId(v);
+            }));
+        builder.<EncryptDataReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(EncryptDataReq.class),
+            f -> f.withMarshaller(CreateEncryptdatasRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateEndpointRequest, CreateEndpointResponse> createEndpoint =
         genForcreateEndpoint();
 
@@ -355,6 +387,45 @@ public class IefMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Endpoint.class),
             f -> f.withMarshaller(CreateEndpointRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateNodeEncryptdatasRequest, CreateNodeEncryptdatasResponse> createNodeEncryptdatas =
+        genForcreateNodeEncryptdatas();
+
+    private static HttpRequestDef<CreateNodeEncryptdatasRequest, CreateNodeEncryptdatasResponse> genForcreateNodeEncryptdatas() {
+        // basic
+        HttpRequestDef.Builder<CreateNodeEncryptdatasRequest, CreateNodeEncryptdatasResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateNodeEncryptdatasRequest.class, CreateNodeEncryptdatasResponse.class)
+            .withName("CreateNodeEncryptdatas")
+            .withUri("/v2/{project_id}/edm/nodes/{node_id}/encryptdatas")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateNodeEncryptdatasRequest::getNodeId, (req, v) -> {
+                req.setNodeId(v);
+            }));
+        builder.<String>withRequestField("ief-instance-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateNodeEncryptdatasRequest::getIefInstanceId, (req, v) -> {
+                req.setIefInstanceId(v);
+            }));
+        builder.<EncryptDataNodeReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(EncryptDataNodeReq.class),
+            f -> f.withMarshaller(CreateNodeEncryptdatasRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -784,6 +855,38 @@ public class IefMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteEncryptdatasRequest, DeleteEncryptdatasResponse> deleteEncryptdatas =
+        genFordeleteEncryptdatas();
+
+    private static HttpRequestDef<DeleteEncryptdatasRequest, DeleteEncryptdatasResponse> genFordeleteEncryptdatas() {
+        // basic
+        HttpRequestDef.Builder<DeleteEncryptdatasRequest, DeleteEncryptdatasResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteEncryptdatasRequest.class, DeleteEncryptdatasResponse.class)
+                .withName("DeleteEncryptdatas")
+                .withUri("/v2/{project_id}/edm/encryptdatas/{encryptdata_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("encryptdata_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteEncryptdatasRequest::getEncryptdataId, (req, v) -> {
+                req.setEncryptdataId(v);
+            }));
+        builder.<String>withRequestField("ief-instance-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteEncryptdatasRequest::getIefInstanceId, (req, v) -> {
+                req.setIefInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteEndPointRequest, DeleteEndPointResponse> deleteEndPoint =
         genFordeleteEndPoint();
 
@@ -808,6 +911,45 @@ public class IefMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteEndPointRequest::getIefInstanceId, (req, v) -> {
+                req.setIefInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteNodeEncryptdatasRequest, DeleteNodeEncryptdatasResponse> deleteNodeEncryptdatas =
+        genFordeleteNodeEncryptdatas();
+
+    private static HttpRequestDef<DeleteNodeEncryptdatasRequest, DeleteNodeEncryptdatasResponse> genFordeleteNodeEncryptdatas() {
+        // basic
+        HttpRequestDef.Builder<DeleteNodeEncryptdatasRequest, DeleteNodeEncryptdatasResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteNodeEncryptdatasRequest.class, DeleteNodeEncryptdatasResponse.class)
+            .withName("DeleteNodeEncryptdatas")
+            .withUri("/v2/{project_id}/edm/nodes/{node_id}/encryptdatas/{encryptdata_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteNodeEncryptdatasRequest::getNodeId, (req, v) -> {
+                req.setNodeId(v);
+            }));
+        builder.<String>withRequestField("encryptdata_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteNodeEncryptdatasRequest::getEncryptdataId, (req, v) -> {
+                req.setEncryptdataId(v);
+            }));
+        builder.<String>withRequestField("ief-instance-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteNodeEncryptdatasRequest::getIefInstanceId, (req, v) -> {
                 req.setIefInstanceId(v);
             }));
 
@@ -1459,6 +1601,98 @@ public class IefMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListEncryptdataNodesRequest, ListEncryptdataNodesResponse> listEncryptdataNodes =
+        genForlistEncryptdataNodes();
+
+    private static HttpRequestDef<ListEncryptdataNodesRequest, ListEncryptdataNodesResponse> genForlistEncryptdataNodes() {
+        // basic
+        HttpRequestDef.Builder<ListEncryptdataNodesRequest, ListEncryptdataNodesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListEncryptdataNodesRequest.class, ListEncryptdataNodesResponse.class)
+            .withName("ListEncryptdataNodes")
+            .withUri("/v2/{project_id}/edm/encryptdatas/{encryptdata_id}/nodes")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("encryptdata_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEncryptdataNodesRequest::getEncryptdataId, (req, v) -> {
+                req.setEncryptdataId(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListEncryptdataNodesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListEncryptdataNodesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<String>withRequestField("ief-instance-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEncryptdataNodesRequest::getIefInstanceId, (req, v) -> {
+                req.setIefInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListEncryptdatasRequest, ListEncryptdatasResponse> listEncryptdatas =
+        genForlistEncryptdatas();
+
+    private static HttpRequestDef<ListEncryptdatasRequest, ListEncryptdatasResponse> genForlistEncryptdatas() {
+        // basic
+        HttpRequestDef.Builder<ListEncryptdatasRequest, ListEncryptdatasResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListEncryptdatasRequest.class, ListEncryptdatasResponse.class)
+                .withName("ListEncryptdatas")
+                .withUri("/v2/{project_id}/edm/encryptdatas")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEncryptdatasRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListEncryptdatasRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListEncryptdatasRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<String>withRequestField("ief-instance-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEncryptdatasRequest::getIefInstanceId, (req, v) -> {
+                req.setIefInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListEndpointsRequest, ListEndpointsResponse> listEndpoints =
         genForlistEndpoints();
 
@@ -1511,6 +1745,52 @@ public class IefMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListEndpointsRequest::getIefInstanceId, (req, v) -> {
+                req.setIefInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListNodeEncryptdatasRequest, ListNodeEncryptdatasResponse> listNodeEncryptdatas =
+        genForlistNodeEncryptdatas();
+
+    private static HttpRequestDef<ListNodeEncryptdatasRequest, ListNodeEncryptdatasResponse> genForlistNodeEncryptdatas() {
+        // basic
+        HttpRequestDef.Builder<ListNodeEncryptdatasRequest, ListNodeEncryptdatasResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListNodeEncryptdatasRequest.class, ListNodeEncryptdatasResponse.class)
+            .withName("ListNodeEncryptdatas")
+            .withUri("/v2/{project_id}/edm/nodes/{node_id}/encryptdatas")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNodeEncryptdatasRequest::getNodeId, (req, v) -> {
+                req.setNodeId(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListNodeEncryptdatasRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListNodeEncryptdatasRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<String>withRequestField("ief-instance-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNodeEncryptdatasRequest::getIefInstanceId, (req, v) -> {
                 req.setIefInstanceId(v);
             }));
 
@@ -1896,6 +2176,52 @@ public class IefMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RestartDeploymentsPodRequest, RestartDeploymentsPodResponse> restartDeploymentsPod =
+        genForrestartDeploymentsPod();
+
+    private static HttpRequestDef<RestartDeploymentsPodRequest, RestartDeploymentsPodResponse> genForrestartDeploymentsPod() {
+        // basic
+        HttpRequestDef.Builder<RestartDeploymentsPodRequest, RestartDeploymentsPodResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, RestartDeploymentsPodRequest.class, RestartDeploymentsPodResponse.class)
+            .withName("RestartDeploymentsPod")
+            .withUri("/v3/{project_id}/edgemgr/deployments/{deployment_id}/pods/{pod_name}/restart")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("deployment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RestartDeploymentsPodRequest::getDeploymentId, (req, v) -> {
+                req.setDeploymentId(v);
+            }));
+        builder.<String>withRequestField("pod_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RestartDeploymentsPodRequest::getPodName, (req, v) -> {
+                req.setPodName(v);
+            }));
+        builder.<String>withRequestField("ief-instance-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RestartDeploymentsPodRequest::getIefInstanceId, (req, v) -> {
+                req.setIefInstanceId(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RestartDeploymentsPodResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowAppDetailRequest, ShowAppDetailResponse> showAppDetail =
         genForshowAppDetail();
 
@@ -2150,6 +2476,73 @@ public class IefMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowEdgeNodeDetailRequest::getIefInstanceId, (req, v) -> {
+                req.setIefInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowEdgeNodeUpgradeDetailsRequest, ShowEdgeNodeUpgradeDetailsResponse> showEdgeNodeUpgradeDetails =
+        genForshowEdgeNodeUpgradeDetails();
+
+    private static HttpRequestDef<ShowEdgeNodeUpgradeDetailsRequest, ShowEdgeNodeUpgradeDetailsResponse> genForshowEdgeNodeUpgradeDetails() {
+        // basic
+        HttpRequestDef.Builder<ShowEdgeNodeUpgradeDetailsRequest, ShowEdgeNodeUpgradeDetailsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowEdgeNodeUpgradeDetailsRequest.class,
+                    ShowEdgeNodeUpgradeDetailsResponse.class)
+                .withName("ShowEdgeNodeUpgradeDetails")
+                .withUri("/v2/{project_id}/edgemgr/nodes/{node_id}/upgrade")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowEdgeNodeUpgradeDetailsRequest::getNodeId, (req, v) -> {
+                req.setNodeId(v);
+            }));
+        builder.<String>withRequestField("ief-instance-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowEdgeNodeUpgradeDetailsRequest::getIefInstanceId, (req, v) -> {
+                req.setIefInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowEncryptdatasRequest, ShowEncryptdatasResponse> showEncryptdatas =
+        genForshowEncryptdatas();
+
+    private static HttpRequestDef<ShowEncryptdatasRequest, ShowEncryptdatasResponse> genForshowEncryptdatas() {
+        // basic
+        HttpRequestDef.Builder<ShowEncryptdatasRequest, ShowEncryptdatasResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowEncryptdatasRequest.class, ShowEncryptdatasResponse.class)
+                .withName("ShowEncryptdatas")
+                .withUri("/v2/{project_id}/edm/encryptdatas/{encryptdata_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("encryptdata_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowEncryptdatasRequest::getEncryptdataId, (req, v) -> {
+                req.setEncryptdataId(v);
+            }));
+        builder.<String>withRequestField("ief-instance-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowEncryptdatasRequest::getIefInstanceId, (req, v) -> {
                 req.setIefInstanceId(v);
             }));
 
@@ -2704,6 +3097,45 @@ public class IefMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateEncryptdatasRequest, UpdateEncryptdatasResponse> updateEncryptdatas =
+        genForupdateEncryptdatas();
+
+    private static HttpRequestDef<UpdateEncryptdatasRequest, UpdateEncryptdatasResponse> genForupdateEncryptdatas() {
+        // basic
+        HttpRequestDef.Builder<UpdateEncryptdatasRequest, UpdateEncryptdatasResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateEncryptdatasRequest.class, UpdateEncryptdatasResponse.class)
+                .withName("UpdateEncryptdatas")
+                .withUri("/v2/{project_id}/edm/encryptdatas/{encryptdata_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("encryptdata_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateEncryptdatasRequest::getEncryptdataId, (req, v) -> {
+                req.setEncryptdataId(v);
+            }));
+        builder.<String>withRequestField("ief-instance-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateEncryptdatasRequest::getIefInstanceId, (req, v) -> {
+                req.setIefInstanceId(v);
+            }));
+        builder.<EncryptDataReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(EncryptDataReq.class),
+            f -> f.withMarshaller(UpdateEncryptdatasRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateNodeByDeviceIdRequest, UpdateNodeByDeviceIdResponse> updateNodeByDeviceId =
         genForupdateNodeByDeviceId();
 
@@ -2809,6 +3241,45 @@ public class IefMeta {
             }));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpgradeEdgeNodeRequest, UpgradeEdgeNodeResponse> upgradeEdgeNode =
+        genForupgradeEdgeNode();
+
+    private static HttpRequestDef<UpgradeEdgeNodeRequest, UpgradeEdgeNodeResponse> genForupgradeEdgeNode() {
+        // basic
+        HttpRequestDef.Builder<UpgradeEdgeNodeRequest, UpgradeEdgeNodeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpgradeEdgeNodeRequest.class, UpgradeEdgeNodeResponse.class)
+                .withName("UpgradeEdgeNode")
+                .withUri("/v2/{project_id}/edgemgr/nodes/{node_id}/upgrade")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpgradeEdgeNodeRequest::getNodeId, (req, v) -> {
+                req.setNodeId(v);
+            }));
+        builder.<String>withRequestField("ief-instance-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpgradeEdgeNodeRequest::getIefInstanceId, (req, v) -> {
+                req.setIefInstanceId(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpgradeEdgeNodeResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
 
         return builder.build();
     }

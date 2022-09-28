@@ -127,7 +127,7 @@ public class AddOrRemoveServicePermissionsRequestBody {
     }
 
     /**
-     * permission列表。 权限格式为：iam:domain::domain_id 其中， ● “iam:domain::”为固定格式。 ● “domain_id”为可连接用户的帐号ID。 支持输入1~64个字符，包括“a~z”、 “A~Z”、“0~9”或者“*”。“*”表示 所有终端节点可连接。 例如：iam:domain:: 6e9dfd51d1124e8d8498dce894923a0dd
+     * permission列表。 权限格式为：iam:domain::domain_id其中， ● “iam:domain::”为固定格式。 ● “domain_id”为可连接用户的帐号ID。 支持输入1~64个字符，包括“a~z”、“A~Z”、“0~9”或者“*”。 “*”表示所有终端节点可连接。 例如：iam:domain::6e9dfd51d1124e8d8498dce894923a0dd
      * @return permissions
      */
     public List<String> getPermissions() {

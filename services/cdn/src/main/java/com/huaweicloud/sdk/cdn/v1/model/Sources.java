@@ -16,6 +16,11 @@ import java.util.Objects;
 public class Sources {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "domain_id")
+
+    private String domainId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip_or_domain")
 
     private String ipOrDomain;
@@ -118,6 +123,23 @@ public class Sources {
 
     private Integer enableObsWebHosting;
 
+    public Sources withDomainId(String domainId) {
+        this.domainId = domainId;
+        return this;
+    }
+
+    /**
+     * 加速域名id。
+     * @return domainId
+     */
+    public String getDomainId() {
+        return domainId;
+    }
+
+    public void setDomainId(String domainId) {
+        this.domainId = domainId;
+    }
+
     public Sources withIpOrDomain(String ipOrDomain) {
         this.ipOrDomain = ipOrDomain;
         return this;
@@ -195,7 +217,7 @@ public class Sources {
             return false;
         }
         Sources sources = (Sources) o;
-        return Objects.equals(this.ipOrDomain, sources.ipOrDomain)
+        return Objects.equals(this.domainId, sources.domainId) && Objects.equals(this.ipOrDomain, sources.ipOrDomain)
             && Objects.equals(this.originType, sources.originType)
             && Objects.equals(this.activeStandby, sources.activeStandby)
             && Objects.equals(this.enableObsWebHosting, sources.enableObsWebHosting);
@@ -203,13 +225,14 @@ public class Sources {
 
     @Override
     public int hashCode() {
-        return Objects.hash(ipOrDomain, originType, activeStandby, enableObsWebHosting);
+        return Objects.hash(domainId, ipOrDomain, originType, activeStandby, enableObsWebHosting);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class Sources {\n");
+        sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
         sb.append("    ipOrDomain: ").append(toIndentedString(ipOrDomain)).append("\n");
         sb.append("    originType: ").append(toIndentedString(originType)).append("\n");
         sb.append("    activeStandby: ").append(toIndentedString(activeStandby)).append("\n");

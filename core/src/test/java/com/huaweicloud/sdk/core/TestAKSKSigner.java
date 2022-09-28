@@ -25,13 +25,18 @@ import com.huaweicloud.sdk.core.auth.AKSKSigner;
 import com.huaweicloud.sdk.core.auth.AbstractCredentials;
 import com.huaweicloud.sdk.core.auth.BasicCredentials;
 import com.huaweicloud.sdk.core.auth.DerivedAKSKSigner;
+import com.huaweicloud.sdk.core.auth.SM3AKSKSigner;
+import com.huaweicloud.sdk.core.http.HttpConfig;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequest;
+import com.huaweicloud.sdk.core.auth.SigningAlgorithm;
+import com.huaweicloud.sdk.core.impl.DefaultHttpClient;
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.Collections;
 import java.util.Map;
+import java.util.Objects;
 
 /**
  * Test the validation of signature with AK/SK
@@ -63,7 +68,6 @@ public class TestAKSKSigner {
                 .build();
 
         Map<String, String> header = AKSKSigner.sign(httpRequest, credentials);
-
         Assert.assertEquals(
                 header.get("Authorization"),
                 "SDK-HMAC-SHA256 "
@@ -101,6 +105,7 @@ public class TestAKSKSigner {
                 .addHeader("X-Sdk-Date", X_SDK_DATE)
                 .build();
         credentials.processDerivedAuthParams("service", "region-id-1");
+
         Map<String, String> derivedHeaders = signForDerivedAuth(exclusiveRequest, credentials);
         Assert.assertEquals("V11-HMAC-SHA256 "
                         + "Credential=QTWAOYTTINDUT2QVKYUC/20191115/region-id-1/service, "
@@ -109,8 +114,51 @@ public class TestAKSKSigner {
                 derivedHeaders.get("Authorization"));
     }
 
+    @Test
+    public void testSM3AKSKSigner() {
+        BasicCredentials credentials = new BasicCredentials()
+                .withAk(AK)
+                .withSk(SK);
+
+        HttpRequest.HttpRequestBuilder requestBuilder = HttpRequest.newBuilder();
+        requestBuilder
+                .withEndpoint("https://service.region.example.com")
+                .withMethod(HttpMethod.GET)
+                .withContentType(CONTENT_TYPE)
+                .withPath("/v1/77b6a44cba5143ab91d13ab9a8ff44fd/vpcs")
+                .addHeader("X-Sdk-Date", X_SDK_DATE)
+                .addHeader("head-name", "head-value")
+                .addQueryParam("limit", Collections.singletonList("2"))
+                .addQueryParam("marker", Collections.singletonList("13551d6b-755d-4757-b956-536f674975c0"));
+
+        Map<String, String> headers = SM3AKSKSigner.sign(requestBuilder.build(), credentials);
+        Assert.assertEquals("SDK-HMAC-SM3 Access=QTWAOYTTINDUT2QVKYUC, "
+                        + "SignedHeaders=content-type;head-name;host;x-sdk-date, "
+                        + "Signature=d60e23d7cdeea9496ba2838231af171dfa7123fdc8be232d5a1f9a10dfa2d513",
+                headers.get("Authorization"));
+
+        String body = "{\"str\": \"value\", "
+                + "\"list\": [\"item1\", \"item2\"], "
+                + "\"dict\": {\"k1\": \"v1\", \"k2\": \"v2\"}}";
+        headers = SM3AKSKSigner.sign(requestBuilder.withBodyAsString(body).build(), credentials);
+
+        String expected = "SDK-HMAC-SM3 Access=QTWAOYTTINDUT2QVKYUC, "
+                + "SignedHeaders=content-type;head-name;host;x-sdk-date, "
+                + "Signature=bb2a40f84e527f87a2fd6e2f38fdabc4d1cd80df415ad8040f7da2884396103c";
+
+        Assert.assertEquals(expected, headers.get("Authorization"));
+
+        HttpConfig httpConfig = HttpConfig.getDefaultHttpConfig().withSigningAlgorithm(SigningAlgorithm.HMAC_SM3);
+        if (Objects.nonNull(httpConfig.getSigningAlgorithm())) {
+            requestBuilder.withSigningAlgorithm(httpConfig.getSigningAlgorithm());
+        }
+        HttpRequest processAuthRequest = credentials.syncProcessAuthRequest(requestBuilder.build(),
+                new DefaultHttpClient(httpConfig));
+        Assert.assertEquals(expected, processAuthRequest.getHeader("Authorization"));
+    }
+
     private static <T extends AbstractCredentials<T>> Map<String, String>
-        signForDerivedAuth(HttpRequest httpRequest, T credentials) {
+    signForDerivedAuth(HttpRequest httpRequest, T credentials) {
         if (AbstractCredentials.DEFAULT_DERIVED_PREDICATE.apply(httpRequest)) {
             return DerivedAKSKSigner.sign(httpRequest, credentials);
         } else {

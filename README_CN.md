@@ -158,6 +158,7 @@ public class Application {
     * [1.2 网络代理](#12-网络代理-top)
     * [1.3 超时配置](#13-超时配置-top)
     * [1.4 SSL 配置](#14-ssl-配置-top)
+    * [1.5 签名算法]（#15-签名算法-top)
 * [2. 认证信息配置](#2-认证信息配置-top)
     * [2.1 使用永久 AK 和 SK](#21-使用永久-ak-和-sk-top)
     * [2.2 使用临时 AK 和 SK](#22-使用临时-ak-和-sk-top)
@@ -190,6 +191,8 @@ public class Application {
 #### 1.1 默认配置 [:top:](#用户手册-top)
 
 ``` java
+import com.huaweicloud.sdk.core.http.HttpConfig;
+
 // 使用默认配置
 HttpConfig config = HttpConfig.getDefaultHttpConfig();
 ```
@@ -225,9 +228,21 @@ config.withIgnoreSSLVerification(true);
 自定义配置：
 
 ```java
-// 自定义SSLSocketFactory和TrustManager
+// 自定义SSLSocketFactory和TrustManager，需要用户自行实现
 config.withSSLSocketFactory(sslSocketFactory).
     withX509TrustManager(trustManager);
+```
+
+#### 1.5 签名算法 [:top:](#用户手册-top)
+
+```java
+import com.huaweicloud.sdk.core.auth.SigningAlgorithm;
+ 
+// 默认签名算法为HMAC_SHA256
+config.withSigningAlgorithm(SigningAlgorithm.HMAC_SHA256);
+ 
+// 使用HMAC_SM3签名算法需要JDK8u302及以上版本
+config.withSigningAlgorithm(SigningAlgorithm.HMAC_SM3);
 ```
 
 ### 2. 客户端认证信息 [:top:](#用户手册-top)

@@ -16,22 +16,27 @@ public class QueryResourceInstanceTagsBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    private List<Tag> tags = null;
+    private List<TagValuesList> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags_any")
 
-    private List<Tag> tagsAny = null;
+    private List<TagValuesList> tagsAny = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "not_tags")
 
-    private List<Tag> notTags = null;
+    private List<TagValuesList> notTags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "not_tags_any")
 
-    private List<Tag> notTagsAny = null;
+    private List<TagValuesList> notTagsAny = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sys_tags")
+
+    private List<TagValuesList> sysTags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
@@ -53,12 +58,17 @@ public class QueryResourceInstanceTagsBody {
 
     private List<Match> matches = null;
 
-    public QueryResourceInstanceTagsBody withTags(List<Tag> tags) {
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "without_any_tag")
+
+    private Boolean withoutAnyTag;
+
+    public QueryResourceInstanceTagsBody withTags(List<TagValuesList> tags) {
         this.tags = tags;
         return this;
     }
 
-    public QueryResourceInstanceTagsBody addTagsItem(Tag tagsItem) {
+    public QueryResourceInstanceTagsBody addTagsItem(TagValuesList tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -66,7 +76,7 @@ public class QueryResourceInstanceTagsBody {
         return this;
     }
 
-    public QueryResourceInstanceTagsBody withTags(Consumer<List<Tag>> tagsSetter) {
+    public QueryResourceInstanceTagsBody withTags(Consumer<List<TagValuesList>> tagsSetter) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -75,23 +85,23 @@ public class QueryResourceInstanceTagsBody {
     }
 
     /**
-     * 包含标签，最多包含10个key，每 个key下面的value最多10个，每 个key对应的value可以为空数组但 结构体不能缺失。Key不能重复， 同一个key中values不能重复。结 果返回包含所有标签的资源列表， key之间是与的关系，key-value结 构中value是或的关系。无tag过滤 条件时返回全量数据。
+     * 包含标签，最多包含10个key，每个key下面的value最多10个， 每个key对应的value可以为空数组但结构体不能缺失。Key不能重复， 同一个key中values不能重复。结果返回包含所有标签的资源列表， key之间是与的关系，key-value结构中value是或的关系。 无tag过滤条件时返回全量数据。
      * @return tags
      */
-    public List<Tag> getTags() {
+    public List<TagValuesList> getTags() {
         return tags;
     }
 
-    public void setTags(List<Tag> tags) {
+    public void setTags(List<TagValuesList> tags) {
         this.tags = tags;
     }
 
-    public QueryResourceInstanceTagsBody withTagsAny(List<Tag> tagsAny) {
+    public QueryResourceInstanceTagsBody withTagsAny(List<TagValuesList> tagsAny) {
         this.tagsAny = tagsAny;
         return this;
     }
 
-    public QueryResourceInstanceTagsBody addTagsAnyItem(Tag tagsAnyItem) {
+    public QueryResourceInstanceTagsBody addTagsAnyItem(TagValuesList tagsAnyItem) {
         if (this.tagsAny == null) {
             this.tagsAny = new ArrayList<>();
         }
@@ -99,7 +109,7 @@ public class QueryResourceInstanceTagsBody {
         return this;
     }
 
-    public QueryResourceInstanceTagsBody withTagsAny(Consumer<List<Tag>> tagsAnySetter) {
+    public QueryResourceInstanceTagsBody withTagsAny(Consumer<List<TagValuesList>> tagsAnySetter) {
         if (this.tagsAny == null) {
             this.tagsAny = new ArrayList<>();
         }
@@ -108,23 +118,23 @@ public class QueryResourceInstanceTagsBody {
     }
 
     /**
-     * 包含任意标签，最多包含10个 key，每个key下面的value最多10 个，每个key对应的value可以为空 数组但结构体不能缺失。Key不能 重复，同一个key中values不能重 复。结果返回包含标签的资源列 表，key之间是或的关系，keyvalue 结构中value是或的关系。无 过滤条件时返回全量数据。
+     * 包含任意标签，最多包含10个key，每个key下面的value最多10个， 每个key对应的value可以为空数组但结构体不能缺失。 Key不能重复，同一个key中values不能重复。 结果返回包含标签的资源列表，key之间是或的关系，key、value结构中value是或的关系。 无过滤条件时返回全量数据。
      * @return tagsAny
      */
-    public List<Tag> getTagsAny() {
+    public List<TagValuesList> getTagsAny() {
         return tagsAny;
     }
 
-    public void setTagsAny(List<Tag> tagsAny) {
+    public void setTagsAny(List<TagValuesList> tagsAny) {
         this.tagsAny = tagsAny;
     }
 
-    public QueryResourceInstanceTagsBody withNotTags(List<Tag> notTags) {
+    public QueryResourceInstanceTagsBody withNotTags(List<TagValuesList> notTags) {
         this.notTags = notTags;
         return this;
     }
 
-    public QueryResourceInstanceTagsBody addNotTagsItem(Tag notTagsItem) {
+    public QueryResourceInstanceTagsBody addNotTagsItem(TagValuesList notTagsItem) {
         if (this.notTags == null) {
             this.notTags = new ArrayList<>();
         }
@@ -132,7 +142,7 @@ public class QueryResourceInstanceTagsBody {
         return this;
     }
 
-    public QueryResourceInstanceTagsBody withNotTags(Consumer<List<Tag>> notTagsSetter) {
+    public QueryResourceInstanceTagsBody withNotTags(Consumer<List<TagValuesList>> notTagsSetter) {
         if (this.notTags == null) {
             this.notTags = new ArrayList<>();
         }
@@ -141,23 +151,23 @@ public class QueryResourceInstanceTagsBody {
     }
 
     /**
-     * 不包含标签，最多包含10个key， 每个key下面的value最多10个， 每个key对应的value可以为空数组 但结构体不能缺失。Key不能重 复，同一个key中values不能重 复。结果返回不包含标签的资源列 表，key之间是与的关系，keyvalue 结构中value是或的关系。无 过滤条件时返回全量数据。
+     * 不包含标签，最多包含10个key，每个key下面的value最多10个， 每个key对应的value可以为空数组但结构体不能缺失。Key不能重复， 同一个key中values不能重复。结果返回不包含标签的资源列表，key之间是与的关系， key、value结构中value是或的关系。 无过滤条件时返回全量数据。
      * @return notTags
      */
-    public List<Tag> getNotTags() {
+    public List<TagValuesList> getNotTags() {
         return notTags;
     }
 
-    public void setNotTags(List<Tag> notTags) {
+    public void setNotTags(List<TagValuesList> notTags) {
         this.notTags = notTags;
     }
 
-    public QueryResourceInstanceTagsBody withNotTagsAny(List<Tag> notTagsAny) {
+    public QueryResourceInstanceTagsBody withNotTagsAny(List<TagValuesList> notTagsAny) {
         this.notTagsAny = notTagsAny;
         return this;
     }
 
-    public QueryResourceInstanceTagsBody addNotTagsAnyItem(Tag notTagsAnyItem) {
+    public QueryResourceInstanceTagsBody addNotTagsAnyItem(TagValuesList notTagsAnyItem) {
         if (this.notTagsAny == null) {
             this.notTagsAny = new ArrayList<>();
         }
@@ -165,7 +175,7 @@ public class QueryResourceInstanceTagsBody {
         return this;
     }
 
-    public QueryResourceInstanceTagsBody withNotTagsAny(Consumer<List<Tag>> notTagsAnySetter) {
+    public QueryResourceInstanceTagsBody withNotTagsAny(Consumer<List<TagValuesList>> notTagsAnySetter) {
         if (this.notTagsAny == null) {
             this.notTagsAny = new ArrayList<>();
         }
@@ -174,15 +184,48 @@ public class QueryResourceInstanceTagsBody {
     }
 
     /**
-     * 不包含任意标签，最多包含10个 key，每个key下面的value最多10 个，每个key对应的value可以为空 数组但结构体不能缺失。Key不能 重复，同一个key中values不能重 复。结果返回不包含标签的资源列 表，key之间是与的关系，keyvalue 结构中value是或的关系。无 过滤条件时返回全量数据。
+     * 不包含任意标签，最多包含10个key，每个key下面的value最多10个， 每个key对应的value可以为空数组但结构体不能缺失。Key不能重复， 同一个key中values不能重复。结果返回不包含标签的资源列表， key之间是与的关系，key、value结构中value是或的关系。 无过滤条件时返回全量数据。
      * @return notTagsAny
      */
-    public List<Tag> getNotTagsAny() {
+    public List<TagValuesList> getNotTagsAny() {
         return notTagsAny;
     }
 
-    public void setNotTagsAny(List<Tag> notTagsAny) {
+    public void setNotTagsAny(List<TagValuesList> notTagsAny) {
         this.notTagsAny = notTagsAny;
+    }
+
+    public QueryResourceInstanceTagsBody withSysTags(List<TagValuesList> sysTags) {
+        this.sysTags = sysTags;
+        return this;
+    }
+
+    public QueryResourceInstanceTagsBody addSysTagsItem(TagValuesList sysTagsItem) {
+        if (this.sysTags == null) {
+            this.sysTags = new ArrayList<>();
+        }
+        this.sysTags.add(sysTagsItem);
+        return this;
+    }
+
+    public QueryResourceInstanceTagsBody withSysTags(Consumer<List<TagValuesList>> sysTagsSetter) {
+        if (this.sysTags == null) {
+            this.sysTags = new ArrayList<>();
+        }
+        sysTagsSetter.accept(this.sysTags);
+        return this;
+    }
+
+    /**
+     * 系统标签，
+     * @return sysTags
+     */
+    public List<TagValuesList> getSysTags() {
+        return sysTags;
+    }
+
+    public void setSysTags(List<TagValuesList> sysTags) {
+        this.sysTags = sysTags;
     }
 
     public QueryResourceInstanceTagsBody withLimit(String limit) {
@@ -191,7 +234,7 @@ public class QueryResourceInstanceTagsBody {
     }
 
     /**
-     * 查询记录数（action为count时无 此参数）如果action为filter默认为 1000，limit最多为1000，不能为 负数，最小值为1。
+     * 查询记录数（action为count时无此参数）如果action为filter默认为1000， limit最多为1000，不能为负数，最小值为1。
      * @return limit
      */
     public String getLimit() {
@@ -208,7 +251,7 @@ public class QueryResourceInstanceTagsBody {
     }
 
     /**
-     * 索引位置，偏移量（action为 count时无此参数）从第一条数据 偏移offset条数据后开始查询，如 果action为filter默认为0（偏移0 条数据，表示从第一条数据开始查 询），必须为数字，不能为负数。
+     * 索引位置，偏移量（action为count时无此参数）从第一条数据偏移offset条数据后开始查询， 如果action为filter默认为0（偏移0条数据，表示从第一条数据开始查询）， 必须为数字，不能为负数。
      * @return offset
      */
     public String getOffset() {
@@ -225,7 +268,7 @@ public class QueryResourceInstanceTagsBody {
     }
 
     /**
-     * 操作标识（仅限于filter， count）：filter（过滤）， count(查询总条数) 如果是filter就按照过滤条件查 询，如果是count，只需要返回总 条数，禁止返回其他字段。
+     * 操作标识（仅限于filter，count）：filter（过滤）， count(查询总条数)如果是filter就按照过滤条件查询， 如果是count，只需要返回总条数，禁止返回其他字段。
      * @return action
      */
     public String getAction() {
@@ -258,7 +301,7 @@ public class QueryResourceInstanceTagsBody {
     }
 
     /**
-     * 搜索字段，key为要匹配的字段， 如resource_name等。value为匹 配的值。key为固定字典值，不能 包含重复的key或不支持的key。 根据key的值确认是否需要模糊匹 配，如resource_name默认为模糊 搜索（不区分大小写），如果 value为空字符串精确匹配（多数 服务不存在资源名称为空的情况， 因此此类情况返回空列表）。 resource_id为精确匹配。第一期 只做resource_name，后续再扩 展。
+     * 搜索字段，key为要匹配的字段，如resource_name等。value为匹配的值。 key为固定字典值，不能包含重复的key或不支持的key。 根据key的值确认是否需要模糊匹配，如resource_name默认为模糊搜索（不区分大小写）， 如果value为空字符串精确匹配（多数服务不存在资源名称为空的情况， 因此此类情况返回空列表）。resource_id为精确匹配。 第一期只做resource_name，后续再扩展。
      * @return matches
      */
     public List<Match> getMatches() {
@@ -267,6 +310,23 @@ public class QueryResourceInstanceTagsBody {
 
     public void setMatches(List<Match> matches) {
         this.matches = matches;
+    }
+
+    public QueryResourceInstanceTagsBody withWithoutAnyTag(Boolean withoutAnyTag) {
+        this.withoutAnyTag = withoutAnyTag;
+        return this;
+    }
+
+    /**
+     * 默认为false，取值【true/false】,当withoutAnyTag=true， 忽略tags、tagsAny、notTags、notTagsAny参数校验。
+     * @return withoutAnyTag
+     */
+    public Boolean getWithoutAnyTag() {
+        return withoutAnyTag;
+    }
+
+    public void setWithoutAnyTag(Boolean withoutAnyTag) {
+        this.withoutAnyTag = withoutAnyTag;
     }
 
     @Override
@@ -282,15 +342,17 @@ public class QueryResourceInstanceTagsBody {
             && Objects.equals(this.tagsAny, queryResourceInstanceTagsBody.tagsAny)
             && Objects.equals(this.notTags, queryResourceInstanceTagsBody.notTags)
             && Objects.equals(this.notTagsAny, queryResourceInstanceTagsBody.notTagsAny)
+            && Objects.equals(this.sysTags, queryResourceInstanceTagsBody.sysTags)
             && Objects.equals(this.limit, queryResourceInstanceTagsBody.limit)
             && Objects.equals(this.offset, queryResourceInstanceTagsBody.offset)
             && Objects.equals(this.action, queryResourceInstanceTagsBody.action)
-            && Objects.equals(this.matches, queryResourceInstanceTagsBody.matches);
+            && Objects.equals(this.matches, queryResourceInstanceTagsBody.matches)
+            && Objects.equals(this.withoutAnyTag, queryResourceInstanceTagsBody.withoutAnyTag);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(tags, tagsAny, notTags, notTagsAny, limit, offset, action, matches);
+        return Objects.hash(tags, tagsAny, notTags, notTagsAny, sysTags, limit, offset, action, matches, withoutAnyTag);
     }
 
     @Override
@@ -301,10 +363,12 @@ public class QueryResourceInstanceTagsBody {
         sb.append("    tagsAny: ").append(toIndentedString(tagsAny)).append("\n");
         sb.append("    notTags: ").append(toIndentedString(notTags)).append("\n");
         sb.append("    notTagsAny: ").append(toIndentedString(notTagsAny)).append("\n");
+        sb.append("    sysTags: ").append(toIndentedString(sysTags)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    action: ").append(toIndentedString(action)).append("\n");
         sb.append("    matches: ").append(toIndentedString(matches)).append("\n");
+        sb.append("    withoutAnyTag: ").append(toIndentedString(withoutAnyTag)).append("\n");
         sb.append("}");
         return sb.toString();
     }

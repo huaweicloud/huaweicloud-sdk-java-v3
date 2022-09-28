@@ -202,7 +202,7 @@ public class ListEndpointServiceRequest {
     private SortKeyEnum sortKey;
 
     /**
-     * 查询结果中终端节点服务列表的排 序方式，取值为： ● desc：降序排序 ● asc：升序排序 默认值为desc。
+     * 查询结果中终端节点服务列表的排序方式，取值为： ● desc：降序排序 ● asc：升序排序 默认值为desc。
      */
     public static final class SortDirEnum {
 
@@ -293,6 +293,11 @@ public class ListEndpointServiceRequest {
 
     private Integer offset;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_border_group")
+
+    private String publicBorderGroup;
+
     public ListEndpointServiceRequest withEndpointServiceName(String endpointServiceName) {
         this.endpointServiceName = endpointServiceName;
         return this;
@@ -367,7 +372,7 @@ public class ListEndpointServiceRequest {
     }
 
     /**
-     * 查询结果中终端节点服务列表的排 序方式，取值为： ● desc：降序排序 ● asc：升序排序 默认值为desc。
+     * 查询结果中终端节点服务列表的排序方式，取值为： ● desc：降序排序 ● asc：升序排序 默认值为desc。
      * @return sortDir
      */
     public SortDirEnum getSortDir() {
@@ -386,6 +391,7 @@ public class ListEndpointServiceRequest {
     /**
      * 查询返回的终端节点服务数量限制，即每页返回的终端节点服务的个数。 取值范围：0~1000，取值一般为10，20或者50，默认为10。
      * minimum: 1
+     * maximum: 1000
      * @return limit
      */
     public Integer getLimit() {
@@ -402,7 +408,7 @@ public class ListEndpointServiceRequest {
     }
 
     /**
-     * 偏移量。 偏移量为一个大于0小于终端节点服务总个数的整数，表示从偏移量后面的终端节点服务开始查询。
+     * 偏移量。 偏移量为一个大于0小于终端节点服务总个数的整数， 表示从偏移量后面的终端节点服务开始查询。
      * minimum: 0
      * @return offset
      */
@@ -412,6 +418,23 @@ public class ListEndpointServiceRequest {
 
     public void setOffset(Integer offset) {
         this.offset = offset;
+    }
+
+    public ListEndpointServiceRequest withPublicBorderGroup(String publicBorderGroup) {
+        this.publicBorderGroup = publicBorderGroup;
+        return this;
+    }
+
+    /**
+     * 筛选结果中匹配边缘属性的EPS
+     * @return publicBorderGroup
+     */
+    public String getPublicBorderGroup() {
+        return publicBorderGroup;
+    }
+
+    public void setPublicBorderGroup(String publicBorderGroup) {
+        this.publicBorderGroup = publicBorderGroup;
     }
 
     @Override
@@ -429,12 +452,13 @@ public class ListEndpointServiceRequest {
             && Objects.equals(this.sortKey, listEndpointServiceRequest.sortKey)
             && Objects.equals(this.sortDir, listEndpointServiceRequest.sortDir)
             && Objects.equals(this.limit, listEndpointServiceRequest.limit)
-            && Objects.equals(this.offset, listEndpointServiceRequest.offset);
+            && Objects.equals(this.offset, listEndpointServiceRequest.offset)
+            && Objects.equals(this.publicBorderGroup, listEndpointServiceRequest.publicBorderGroup);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(endpointServiceName, id, status, sortKey, sortDir, limit, offset);
+        return Objects.hash(endpointServiceName, id, status, sortKey, sortDir, limit, offset, publicBorderGroup);
     }
 
     @Override
@@ -448,6 +472,7 @@ public class ListEndpointServiceRequest {
         sb.append("    sortDir: ").append(toIndentedString(sortDir)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    publicBorderGroup: ").append(toIndentedString(publicBorderGroup)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -464,6 +464,117 @@ public class CloudRTCMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RemoveRoomRequest, RemoveRoomResponse> removeRoom = genForremoveRoom();
+
+    private static HttpRequestDef<RemoveRoomRequest, RemoveRoomResponse> genForremoveRoom() {
+        // basic
+        HttpRequestDef.Builder<RemoveRoomRequest, RemoveRoomResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RemoveRoomRequest.class, RemoveRoomResponse.class)
+                .withName("RemoveRoom")
+                .withUri("/v2/apps/{app_id}/rooms/{room_id}/dismiss")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("app_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RemoveRoomRequest::getAppId, (req, v) -> {
+                req.setAppId(v);
+            }));
+        builder.<String>withRequestField("room_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RemoveRoomRequest::getRoomId, (req, v) -> {
+                req.setRoomId(v);
+            }));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RemoveRoomRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RemoveRoomRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            }));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RemoveRoomRequest::getXProjectId, (req, v) -> {
+                req.setXProjectId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RemoveUsersRequest, RemoveUsersResponse> removeUsers = genForremoveUsers();
+
+    private static HttpRequestDef<RemoveUsersRequest, RemoveUsersResponse> genForremoveUsers() {
+        // basic
+        HttpRequestDef.Builder<RemoveUsersRequest, RemoveUsersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RemoveUsersRequest.class, RemoveUsersResponse.class)
+                .withName("RemoveUsers")
+                .withUri("/v2/apps/{app_id}/rooms/{room_id}/batch-remove-users")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("app_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RemoveUsersRequest::getAppId, (req, v) -> {
+                req.setAppId(v);
+            }));
+        builder.<String>withRequestField("room_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RemoveUsersRequest::getRoomId, (req, v) -> {
+                req.setRoomId(v);
+            }));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RemoveUsersRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RemoveUsersRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            }));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RemoveUsersRequest::getXProjectId, (req, v) -> {
+                req.setXProjectId(v);
+            }));
+        builder.<RemoveUsersReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RemoveUsersReq.class),
+            f -> f.withMarshaller(RemoveUsersRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowAppRequest, ShowAppResponse> showApp = genForshowApp();
 
     private static HttpRequestDef<ShowAppRequest, ShowAppResponse> genForshowApp() {
@@ -1101,6 +1212,75 @@ public class CloudRTCMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(UpdateAutoRecordResponse::getXRequestId, UpdateAutoRecordResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateIndividualStreamJobRequest, UpdateIndividualStreamJobResponse> updateIndividualStreamJob =
+        genForupdateIndividualStreamJob();
+
+    private static HttpRequestDef<UpdateIndividualStreamJobRequest, UpdateIndividualStreamJobResponse> genForupdateIndividualStreamJob() {
+        // basic
+        HttpRequestDef.Builder<UpdateIndividualStreamJobRequest, UpdateIndividualStreamJobResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateIndividualStreamJobRequest.class,
+                    UpdateIndividualStreamJobResponse.class)
+                .withName("UpdateIndividualStreamJob")
+                .withUri("/v2/apps/{app_id}/individual-stream-jobs/{job_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("app_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateIndividualStreamJobRequest::getAppId, (req, v) -> {
+                req.setAppId(v);
+            }));
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateIndividualStreamJobRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateIndividualStreamJobRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateIndividualStreamJobRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            }));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateIndividualStreamJobRequest::getXProjectId, (req, v) -> {
+                req.setXProjectId(v);
+            }));
+        builder.<UpdateIndividualJobReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateIndividualJobReq.class),
+            f -> f.withMarshaller(UpdateIndividualStreamJobRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateIndividualStreamJobResponse::getXRequestId,
+                UpdateIndividualStreamJobResponse::setXRequestId));
         return builder.build();
     }
 

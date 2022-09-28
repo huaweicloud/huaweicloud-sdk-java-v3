@@ -214,7 +214,7 @@ public class Device {
     }
 
     /**
-     * Get attributes
+     * 终端设备静态属性信息
      * @return attributes
      */
     public Map<String, ValueInAttributes> getAttributes() {
@@ -264,7 +264,7 @@ public class Device {
     }
 
     /**
-     * 终端设备静态属性信息
+     * 终端设备孪生属性信息
      * @return twin
      */
     public Map<String, ValueInTwinResponse> getTwin() {

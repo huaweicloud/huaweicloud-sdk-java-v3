@@ -25,6 +25,7 @@ import com.huaweicloud.sdk.core.Constants;
 import com.huaweicloud.sdk.core.exception.SdkException;
 import com.huaweicloud.sdk.core.http.HttpRequest;
 import com.huaweicloud.sdk.core.utils.BinaryUtils;
+import com.huaweicloud.sdk.core.utils.SignUtils;
 import com.huaweicloud.sdk.core.utils.StringUtils;
 
 import javax.crypto.Mac;
@@ -79,7 +80,7 @@ public class DerivedAKSKSigner extends AKSKSigner {
         if (request.haveHeader(Constants.X_SDK_DATE)) {
             dateTimeStamp = request.getHeader(Constants.X_SDK_DATE);
         } else {
-            SimpleDateFormat isoDateFormat = new SimpleDateFormat(ISO_8601_BASIC_FORMAT);
+            SimpleDateFormat isoDateFormat = new SimpleDateFormat(Constants.ISO_8601_BASIC_FORMAT);
             isoDateFormat.setTimeZone(new SimpleTimeZone(0, "UTC"));
             dateTimeStamp = isoDateFormat.format(new Date());
             authenticationHeaders.put(Constants.X_SDK_DATE, dateTimeStamp);
@@ -106,7 +107,7 @@ public class DerivedAKSKSigner extends AKSKSigner {
         StringBuilder canonicalUriSb = new StringBuilder();
         String[] split = pathOld.split("/");
         for (String urlSplit : split) {
-            canonicalUriSb.append(urlEncode(urlSplit)).append("/");
+            canonicalUriSb.append(SignUtils.urlEncode(urlSplit, false)).append("/");
         }
         canonicalUri = canonicalUriSb.toString();
 

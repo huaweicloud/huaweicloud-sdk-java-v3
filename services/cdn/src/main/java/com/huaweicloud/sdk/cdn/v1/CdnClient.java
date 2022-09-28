@@ -424,7 +424,7 @@ public class CdnClient {
     /**
      * 查询域名配置接口
      *
-     * 查询域名配置接口，支持配置回源请求头、http header配置、url鉴权
+     * 查询域名配置接口，支持查询回源请求头、HTTP header配置、URL鉴权、证书、源站、回源协议、强制重定向、智能压缩、缓存URL参数、IPv6开关、状态码缓存时间、Range回源、User-Agent黑白名单、改写回源URL、自定义错误页面
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -439,7 +439,7 @@ public class CdnClient {
     /**
      * 查询域名配置接口
      *
-     * 查询域名配置接口，支持配置回源请求头、http header配置、url鉴权
+     * 查询域名配置接口，支持查询回源请求头、HTTP header配置、URL鉴权、证书、源站、回源协议、强制重定向、智能压缩、缓存URL参数、IPv6开关、状态码缓存时间、Range回源、User-Agent黑白名单、改写回源URL、自定义错误页面
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1093,7 +1093,7 @@ public class CdnClient {
     /**
      * 修改域名全量配置接口
      *
-     * 修改域名全量配置接口，支持配置回源请求头、http header配置、url鉴权
+     * 修改域名全量配置接口，支持配置回源请求头、HTTP header配置、URL鉴权、证书、源站、回源协议、强制重定向、智能压缩、缓存URL参数、IPv6、状态码缓存时间、Range回源、User-Agent黑白名单、改写回源URL、自定义错误页面
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1108,7 +1108,7 @@ public class CdnClient {
     /**
      * 修改域名全量配置接口
      *
-     * 修改域名全量配置接口，支持配置回源请求头、http header配置、url鉴权
+     * 修改域名全量配置接口，支持配置回源请求头、HTTP header配置、URL鉴权、证书、源站、回源协议、强制重定向、智能压缩、缓存URL参数、IPv6、状态码缓存时间、Range回源、User-Agent黑白名单、改写回源URL、自定义错误页面
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.

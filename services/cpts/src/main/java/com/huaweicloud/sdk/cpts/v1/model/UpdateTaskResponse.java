@@ -23,9 +23,9 @@ public class UpdateTaskResponse extends SdkResponse {
     private String message;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "taskinfo")
+    @JsonProperty(value = "taskInfo")
 
-    private TaskInfo taskinfo;
+    private TaskInfo taskInfo;
 
     public UpdateTaskResponse withCode(String code) {
         this.code = code;
@@ -61,30 +61,30 @@ public class UpdateTaskResponse extends SdkResponse {
         this.message = message;
     }
 
-    public UpdateTaskResponse withTaskinfo(TaskInfo taskinfo) {
-        this.taskinfo = taskinfo;
+    public UpdateTaskResponse withTaskInfo(TaskInfo taskInfo) {
+        this.taskInfo = taskInfo;
         return this;
     }
 
-    public UpdateTaskResponse withTaskinfo(Consumer<TaskInfo> taskinfoSetter) {
-        if (this.taskinfo == null) {
-            this.taskinfo = new TaskInfo();
-            taskinfoSetter.accept(this.taskinfo);
+    public UpdateTaskResponse withTaskInfo(Consumer<TaskInfo> taskInfoSetter) {
+        if (this.taskInfo == null) {
+            this.taskInfo = new TaskInfo();
+            taskInfoSetter.accept(this.taskInfo);
         }
 
         return this;
     }
 
     /**
-     * Get taskinfo
-     * @return taskinfo
+     * Get taskInfo
+     * @return taskInfo
      */
-    public TaskInfo getTaskinfo() {
-        return taskinfo;
+    public TaskInfo getTaskInfo() {
+        return taskInfo;
     }
 
-    public void setTaskinfo(TaskInfo taskinfo) {
-        this.taskinfo = taskinfo;
+    public void setTaskInfo(TaskInfo taskInfo) {
+        this.taskInfo = taskInfo;
     }
 
     @Override
@@ -98,12 +98,12 @@ public class UpdateTaskResponse extends SdkResponse {
         UpdateTaskResponse updateTaskResponse = (UpdateTaskResponse) o;
         return Objects.equals(this.code, updateTaskResponse.code)
             && Objects.equals(this.message, updateTaskResponse.message)
-            && Objects.equals(this.taskinfo, updateTaskResponse.taskinfo);
+            && Objects.equals(this.taskInfo, updateTaskResponse.taskInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(code, message, taskinfo);
+        return Objects.hash(code, message, taskInfo);
     }
 
     @Override
@@ -112,7 +112,7 @@ public class UpdateTaskResponse extends SdkResponse {
         sb.append("class UpdateTaskResponse {\n");
         sb.append("    code: ").append(toIndentedString(code)).append("\n");
         sb.append("    message: ").append(toIndentedString(message)).append("\n");
-        sb.append("    taskinfo: ").append(toIndentedString(taskinfo)).append("\n");
+        sb.append("    taskInfo: ").append(toIndentedString(taskInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

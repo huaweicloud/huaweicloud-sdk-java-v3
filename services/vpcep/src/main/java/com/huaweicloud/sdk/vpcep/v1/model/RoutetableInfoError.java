@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 当修改终端节点子网路由表失败 时，返回错误提示信息
+ * 当修改终端节点子网路由表失败时，返回错误提示信息
  */
 public class RoutetableInfoError {
 

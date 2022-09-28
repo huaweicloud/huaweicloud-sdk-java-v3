@@ -338,7 +338,7 @@ public class UpdateEndpointServiceResponse extends SdkResponse {
     private List<PortList> ports = null;
 
     /**
-    * 用于控制是否将客户端的源IP、源端口、 marker_id等信息携带到服务端。信息携带支持 两种方式： ● TCP TOA：表示将客户端信息插入到tcp option字段中携带至服务端。 说明 仅当后端资源为OBS时，支持TCP TOA类型信息 携带方式。 ● Proxy Protocol：表示将客户端相关信息插入 到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置 才有效。 参数的取值包括： ● close：表示关闭代理协议。 ● toa_open：表示开启代理协议“tcp_toa”。 ● proxy_open：表示开启代理协议 “proxy_protocol”。 ● open：表示同时开启代理协议“tcp_toa” 和“proxy_protocol”。 默认值为“close”。
+    * 用于控制是否将客户端的源IP、源端口、marker_id等信息携带到服务端。 信息携带支持两种方式： ● TCP TOA：表示将客户端信息插入到tcp option字段中携带至服务端。 说明 仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。 ● Proxy Protocol：表示将客户端相关信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 参数的取值包括： ● close：表示关闭代理协议。 ● toa_open：表示开启代理协议“tcp_toa”。 ● proxy_open：表示开启代理协议“proxy_protocol”。 ● open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。 默认值为“close”。
     */
     public static final class TcpProxyEnum {
 
@@ -436,6 +436,11 @@ public class UpdateEndpointServiceResponse extends SdkResponse {
 
     private List<TagList> tags = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "description")
+
+    private String description;
+
     public UpdateEndpointServiceResponse withId(String id) {
         this.id = id;
         return this;
@@ -459,7 +464,7 @@ public class UpdateEndpointServiceResponse extends SdkResponse {
     }
 
     /**
-     * 标识终端节点服务后端资源的ID，格式为通用唯一识别码 （Universally Unique Identifier，下文简称UUID）。取值为： ● LB类型：增强型负载均衡器内网IP对应的端口ID。 ● VM类型：弹性云服务器IP地址对应的网卡ID。 ● VIP类型：虚拟资源所在物理服务器对应的网卡ID。
+     * 标识终端节点服务后端资源的ID， 格式为通用唯一识别码（Universally Unique Identifier，下文简称UUID）。 取值为： ● LB类型：增强型负载均衡器内网IP对应的端口ID。 ● VM类型：弹性云服务器IP地址对应的网卡ID。 ● VIP类型：虚拟资源所在物理服务器对应的网卡ID。
      * @return portId
      */
     public String getPortId() {
@@ -561,7 +566,7 @@ public class UpdateEndpointServiceResponse extends SdkResponse {
     }
 
     /**
-     * 是否需要审批。 ● false：不需要审批，创建的终端节点连接直接为accepted状态。 ● true：需要审批，创建的终端节点连接为pendingAcceptance状态，需要终端节点服务所属用户审核后方可使用。
+     * 是否需要审批。 ● false：不需要审批，创建的终端节点连接直接为accepted状态。 ● true：需要审批，创建的终端节点连接为pendingAcceptance状态， 需要终端节点服务所属用户审核后方可使用。
      * @return approvalEnabled
      */
     public Boolean getApprovalEnabled() {
@@ -595,7 +600,7 @@ public class UpdateEndpointServiceResponse extends SdkResponse {
     }
 
     /**
-     * 终端节点服务类型。 终端节点服务类型包括“网关（gataway）型”和“接口（interface）型”： ● gataway：由运维人员配置。用户无需创建，可直接使用。 ● interface：包括运维人员配置的云服务和用户自己创建的私有服务。其中，运维人员配 置的云服务无需创建，用户可直接使用。 您可以通过创建终端节点创建访问Gateway和Interface类型终端节点服务的终端节点。
+     * 终端节点服务类型。 终端节点服务类型包括“网关（gataway）型”和“接口（interface）型”： ● gataway：由运维人员配置。用户无需创建，可直接使用。 ● interface：包括运维人员配置的云服务和用户自己创建的私有服务。 其中，运维人员配置的云服务无需创建，用户可直接使用。 您可以通过创建终端节点创建访问Gateway和Interface类型终端节点服务的终端节点。
      * @return serviceType
      */
     public String getServiceType() {
@@ -696,7 +701,7 @@ public class UpdateEndpointServiceResponse extends SdkResponse {
     }
 
     /**
-     * 服务开放的端口映射列表，详细内容请参见表 4-13 同一个终端节点服务下，不允许重复的端口映 射。若多个终端节点服务共用一个port_id，则 终端节点服务之间的所有端口映射的 server_port和protocol的组合不能重复。
+     * 服务开放的端口映射列表 同一个终端节点服务下，不允许重复的端口映射。 若多个终端节点服务共用一个port_id， 则终端节点服务之间的所有端口映射的server_port和protocol的组合不能重复。
      * @return ports
      */
     public List<PortList> getPorts() {
@@ -713,7 +718,7 @@ public class UpdateEndpointServiceResponse extends SdkResponse {
     }
 
     /**
-     * 用于控制是否将客户端的源IP、源端口、 marker_id等信息携带到服务端。信息携带支持 两种方式： ● TCP TOA：表示将客户端信息插入到tcp option字段中携带至服务端。 说明 仅当后端资源为OBS时，支持TCP TOA类型信息 携带方式。 ● Proxy Protocol：表示将客户端相关信息插入 到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置 才有效。 参数的取值包括： ● close：表示关闭代理协议。 ● toa_open：表示开启代理协议“tcp_toa”。 ● proxy_open：表示开启代理协议 “proxy_protocol”。 ● open：表示同时开启代理协议“tcp_toa” 和“proxy_protocol”。 默认值为“close”。
+     * 用于控制是否将客户端的源IP、源端口、marker_id等信息携带到服务端。 信息携带支持两种方式： ● TCP TOA：表示将客户端信息插入到tcp option字段中携带至服务端。 说明 仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。 ● Proxy Protocol：表示将客户端相关信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 参数的取值包括： ● close：表示关闭代理协议。 ● toa_open：表示开启代理协议“tcp_toa”。 ● proxy_open：表示开启代理协议“proxy_protocol”。 ● open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。 默认值为“close”。
      * @return tcpProxy
      */
     public TcpProxyEnum getTcpProxy() {
@@ -757,6 +762,23 @@ public class UpdateEndpointServiceResponse extends SdkResponse {
         this.tags = tags;
     }
 
+    public UpdateEndpointServiceResponse withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /**
+     * 描述字段，支持中英文字母、数字等字符，不支持“<”或“>”字符。
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -782,7 +804,8 @@ public class UpdateEndpointServiceResponse extends SdkResponse {
             && Objects.equals(this.cidrType, updateEndpointServiceResponse.cidrType)
             && Objects.equals(this.ports, updateEndpointServiceResponse.ports)
             && Objects.equals(this.tcpProxy, updateEndpointServiceResponse.tcpProxy)
-            && Objects.equals(this.tags, updateEndpointServiceResponse.tags);
+            && Objects.equals(this.tags, updateEndpointServiceResponse.tags)
+            && Objects.equals(this.description, updateEndpointServiceResponse.description);
     }
 
     @Override
@@ -803,7 +826,8 @@ public class UpdateEndpointServiceResponse extends SdkResponse {
             cidrType,
             ports,
             tcpProxy,
-            tags);
+            tags,
+            description);
     }
 
     @Override
@@ -827,6 +851,7 @@ public class UpdateEndpointServiceResponse extends SdkResponse {
         sb.append("    ports: ").append(toIndentedString(ports)).append("\n");
         sb.append("    tcpProxy: ").append(toIndentedString(tcpProxy)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");
         return sb.toString();
     }

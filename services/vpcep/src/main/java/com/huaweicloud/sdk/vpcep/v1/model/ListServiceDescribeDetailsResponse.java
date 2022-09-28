@@ -27,7 +27,7 @@ public class ListServiceDescribeDetailsResponse extends SdkResponse {
     private String serviceName;
 
     /**
-     * 终端节点服务类型。仅支持将用户私有服务创 建为interface类型的终端节点服务。 ● gataway：由运维人员配置。用户无需创 建，可直接使用。 ● interface：包括运维人员配置的云服务和 用户自己创建的私有服务。其中，运维人 员配置的云服务无需创建，用户可直接使 用。 您可以通过创建终端节点创建访问Gateway和 Interface类型终端节点服务的终端节点。
+     * 终端节点服务类型。仅支持将用户私有服务创建为interface类型的终端节点服务。 ● gataway：由运维人员配置。用户无需创建，可直接使用。 ● interface：包括运维人员配置的云服务和用户自己创建的私有服务。 其中，运维人员配置的云服务无需创建，用户可直接使用。 您可以通过创建终端节点创建访问Gateway和Interface类型终端节点服务的终端节点。
      */
     public static final class ServiceTypeEnum {
 
@@ -152,7 +152,7 @@ public class ListServiceDescribeDetailsResponse extends SdkResponse {
     }
 
     /**
-     * 终端节点服务类型。仅支持将用户私有服务创 建为interface类型的终端节点服务。 ● gataway：由运维人员配置。用户无需创 建，可直接使用。 ● interface：包括运维人员配置的云服务和 用户自己创建的私有服务。其中，运维人 员配置的云服务无需创建，用户可直接使 用。 您可以通过创建终端节点创建访问Gateway和 Interface类型终端节点服务的终端节点。
+     * 终端节点服务类型。仅支持将用户私有服务创建为interface类型的终端节点服务。 ● gataway：由运维人员配置。用户无需创建，可直接使用。 ● interface：包括运维人员配置的云服务和用户自己创建的私有服务。 其中，运维人员配置的云服务无需创建，用户可直接使用。 您可以通过创建终端节点创建访问Gateway和Interface类型终端节点服务的终端节点。
      * @return serviceType
      */
     public ServiceTypeEnum getServiceType() {
@@ -169,7 +169,7 @@ public class ListServiceDescribeDetailsResponse extends SdkResponse {
     }
 
     /**
-     * 终端节点服务的创建时间。 采用UTC时间格式，格式为：YYYY-MMDDTHH: MM:SSZ
+     * 终端节点服务的创建时间。 采用UTC时间格式，格式为：YYYY-MMDDTHH:MM:SSZ
      * @return createdAt
      */
     public String getCreatedAt() {

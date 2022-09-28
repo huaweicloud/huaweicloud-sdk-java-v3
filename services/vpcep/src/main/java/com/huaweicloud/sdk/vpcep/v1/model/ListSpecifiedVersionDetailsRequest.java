@@ -21,7 +21,7 @@ public class ListSpecifiedVersionDetailsRequest {
     }
 
     /**
-     * 待查询版本号。取值 以v开头，例如v1。 若为空，表示查询所 有API的版本号。
+     * 待查询版本号。 取值以v开头，例如v1。若为空，表示查询所有API的版本号。
      * @return version
      */
     public String getVersion() {

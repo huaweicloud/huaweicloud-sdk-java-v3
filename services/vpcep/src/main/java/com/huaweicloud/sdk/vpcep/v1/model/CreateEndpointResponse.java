@@ -25,7 +25,7 @@ public class CreateEndpointResponse extends SdkResponse {
     private String id;
 
     /**
-     * 终端节点连接的终端节点服务类型。 ● gataway：由运维人员配置。用户无需创建，可直接使用。 ● interface：包括运维人员配置的云服务和用户自己创建的私有服务。其中，运维人员配置的云服务无需创建，用户可直接使用。 您可以通过查询公共终端节点服务列表查看由运维人员配置的所有用户可见且可连接的终端节点服务，并通过创建终端节点服务创建Interface类型的终端节点服务。
+     * 终端节点连接的终端节点服务类型。 ● gataway：由运维人员配置。用户无需创建，可直接使用。 ● interface：包括运维人员配置的云服务和用户自己创建的私有服务。 其中，运维人员配置的云服务无需创建，用户可直接使用。 您可以通过查询公共终端节点服务列表， 查看由运维人员配置的所有用户可见且可连接的终端节点服务， 并通过创建终端节点服务创建Interface类型的终端节点服务。
      */
     public static final class ServiceTypeEnum {
 
@@ -287,6 +287,26 @@ public class CreateEndpointResponse extends SdkResponse {
 
     private List<String> routetables = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "specification_name")
+
+    private String specificationName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "description")
+
+    private String description;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "policy_statement")
+
+    private List<String> policyStatement = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_status")
+
+    private String enableStatus;
+
     public CreateEndpointResponse withId(String id) {
         this.id = id;
         return this;
@@ -310,7 +330,7 @@ public class CreateEndpointResponse extends SdkResponse {
     }
 
     /**
-     * 终端节点连接的终端节点服务类型。 ● gataway：由运维人员配置。用户无需创建，可直接使用。 ● interface：包括运维人员配置的云服务和用户自己创建的私有服务。其中，运维人员配置的云服务无需创建，用户可直接使用。 您可以通过查询公共终端节点服务列表查看由运维人员配置的所有用户可见且可连接的终端节点服务，并通过创建终端节点服务创建Interface类型的终端节点服务。
+     * 终端节点连接的终端节点服务类型。 ● gataway：由运维人员配置。用户无需创建，可直接使用。 ● interface：包括运维人员配置的云服务和用户自己创建的私有服务。 其中，运维人员配置的云服务无需创建，用户可直接使用。 您可以通过查询公共终端节点服务列表， 查看由运维人员配置的所有用户可见且可连接的终端节点服务， 并通过创建终端节点服务创建Interface类型的终端节点服务。
      * @return serviceType
      */
     public ServiceTypeEnum getServiceType() {
@@ -428,7 +448,7 @@ public class CreateEndpointResponse extends SdkResponse {
     }
 
     /**
-     * 是否创建域名。 ● true：创建域名 ● false：不创建域名 说明 当创建连接gateway类型终端节点服 务的终端节点时，“enable_dns”设 置为true或者false，均不创建域名。
+     * 是否创建域名。 ● true：创建域名 ● false：不创建域名 说明 当创建连接gateway类型终端节点服务的终端节点时， “enable_dns”设置为true或者false，均不创建域名。
      * @return enableDns
      */
     public Boolean getEnableDns() {
@@ -478,7 +498,7 @@ public class CreateEndpointResponse extends SdkResponse {
     }
 
     /**
-     * vpc_id对应VPC下已创建的网络 （network）的ID，UUID格式。
+     * vpc_id对应VPC下已创建的网络（network）的ID，UUID格式。
      * @return subnetId
      */
     public String getSubnetId() {
@@ -546,7 +566,7 @@ public class CreateEndpointResponse extends SdkResponse {
     }
 
     /**
-     * 项目ID，获取方法请参见获取项 目ID。
+     * 项目ID，获取方法请参见获取项目ID。
      * @return projectId
      */
     public String getProjectId() {
@@ -612,7 +632,7 @@ public class CreateEndpointResponse extends SdkResponse {
     }
 
     /**
-     * 控制访问终端节点的白名单。 若未创建，则返回空列表。 创建连接Interface类型终端节点 服务的终端节点时，显示此参 数。
+     * 控制访问终端节点的白名单。 若未创建，则返回空列表。 创建连接Interface类型终端节点服务的终端节点时，显示此参数。
      * @return whitelist
      */
     public List<String> getWhitelist() {
@@ -629,7 +649,7 @@ public class CreateEndpointResponse extends SdkResponse {
     }
 
     /**
-     * 是否开启网络ACL隔离。 ● true：开启网络ACL隔离 ● false：不开启网络ACL隔离 若未指定，则返回false。 创建连接Interface类型终端节点 服务的终端节点时，显示此参 数。
+     * 是否开启网络ACL隔离。 ● true：开启网络ACL隔离 ● false：不开启网络ACL隔离 若未指定，则返回false。 创建连接Interface类型终端节点服务的终端节点时，显示此参数。
      * @return enableWhitelist
      */
     public Boolean getEnableWhitelist() {
@@ -662,7 +682,7 @@ public class CreateEndpointResponse extends SdkResponse {
     }
 
     /**
-     * 路由表ID列表。 若未指定，返回默认VPC下路由表 ID。 创建连接Gateway类型终端节点 服务的终端节点时，显示此参 数。
+     * 路由表ID列表。 若未指定，返回默认VPC下路由表ID。 创建连接Gateway类型终端节点服务的终端节点时，显示此参数。
      * @return routetables
      */
     public List<String> getRoutetables() {
@@ -671,6 +691,90 @@ public class CreateEndpointResponse extends SdkResponse {
 
     public void setRoutetables(List<String> routetables) {
         this.routetables = routetables;
+    }
+
+    public CreateEndpointResponse withSpecificationName(String specificationName) {
+        this.specificationName = specificationName;
+        return this;
+    }
+
+    /**
+     * 规格名称
+     * @return specificationName
+     */
+    public String getSpecificationName() {
+        return specificationName;
+    }
+
+    public void setSpecificationName(String specificationName) {
+        this.specificationName = specificationName;
+    }
+
+    public CreateEndpointResponse withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /**
+     * 描述
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public CreateEndpointResponse withPolicyStatement(List<String> policyStatement) {
+        this.policyStatement = policyStatement;
+        return this;
+    }
+
+    public CreateEndpointResponse addPolicyStatementItem(String policyStatementItem) {
+        if (this.policyStatement == null) {
+            this.policyStatement = new ArrayList<>();
+        }
+        this.policyStatement.add(policyStatementItem);
+        return this;
+    }
+
+    public CreateEndpointResponse withPolicyStatement(Consumer<List<String>> policyStatementSetter) {
+        if (this.policyStatement == null) {
+            this.policyStatement = new ArrayList<>();
+        }
+        policyStatementSetter.accept(this.policyStatement);
+        return this;
+    }
+
+    /**
+     * 只涉及开启双端固定的网关型终端节点，响应体展示此字段
+     * @return policyStatement
+     */
+    public List<String> getPolicyStatement() {
+        return policyStatement;
+    }
+
+    public void setPolicyStatement(List<String> policyStatement) {
+        this.policyStatement = policyStatement;
+    }
+
+    public CreateEndpointResponse withEnableStatus(String enableStatus) {
+        this.enableStatus = enableStatus;
+        return this;
+    }
+
+    /**
+     * 终端节点是否已停用，取值【enable/disable】
+     * @return enableStatus
+     */
+    public String getEnableStatus() {
+        return enableStatus;
+    }
+
+    public void setEnableStatus(String enableStatus) {
+        this.enableStatus = enableStatus;
     }
 
     @Override
@@ -699,7 +803,11 @@ public class CreateEndpointResponse extends SdkResponse {
             && Objects.equals(this.tags, createEndpointResponse.tags)
             && Objects.equals(this.whitelist, createEndpointResponse.whitelist)
             && Objects.equals(this.enableWhitelist, createEndpointResponse.enableWhitelist)
-            && Objects.equals(this.routetables, createEndpointResponse.routetables);
+            && Objects.equals(this.routetables, createEndpointResponse.routetables)
+            && Objects.equals(this.specificationName, createEndpointResponse.specificationName)
+            && Objects.equals(this.description, createEndpointResponse.description)
+            && Objects.equals(this.policyStatement, createEndpointResponse.policyStatement)
+            && Objects.equals(this.enableStatus, createEndpointResponse.enableStatus);
     }
 
     @Override
@@ -721,7 +829,11 @@ public class CreateEndpointResponse extends SdkResponse {
             tags,
             whitelist,
             enableWhitelist,
-            routetables);
+            routetables,
+            specificationName,
+            description,
+            policyStatement,
+            enableStatus);
     }
 
     @Override
@@ -746,6 +858,10 @@ public class CreateEndpointResponse extends SdkResponse {
         sb.append("    whitelist: ").append(toIndentedString(whitelist)).append("\n");
         sb.append("    enableWhitelist: ").append(toIndentedString(enableWhitelist)).append("\n");
         sb.append("    routetables: ").append(toIndentedString(routetables)).append("\n");
+        sb.append("    specificationName: ").append(toIndentedString(specificationName)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    policyStatement: ").append(toIndentedString(policyStatement)).append("\n");
+        sb.append("    enableStatus: ").append(toIndentedString(enableStatus)).append("\n");
         sb.append("}");
         return sb.toString();
     }

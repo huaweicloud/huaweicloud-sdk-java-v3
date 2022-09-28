@@ -17,19 +17,19 @@ public class ListServiceConnectionsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "connections")
 
-    private List<Connection> connections = null;
+    private List<ConnectionEndpoints> connections = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_count")
 
     private Integer totalCount;
 
-    public ListServiceConnectionsResponse withConnections(List<Connection> connections) {
+    public ListServiceConnectionsResponse withConnections(List<ConnectionEndpoints> connections) {
         this.connections = connections;
         return this;
     }
 
-    public ListServiceConnectionsResponse addConnectionsItem(Connection connectionsItem) {
+    public ListServiceConnectionsResponse addConnectionsItem(ConnectionEndpoints connectionsItem) {
         if (this.connections == null) {
             this.connections = new ArrayList<>();
         }
@@ -37,7 +37,7 @@ public class ListServiceConnectionsResponse extends SdkResponse {
         return this;
     }
 
-    public ListServiceConnectionsResponse withConnections(Consumer<List<Connection>> connectionsSetter) {
+    public ListServiceConnectionsResponse withConnections(Consumer<List<ConnectionEndpoints>> connectionsSetter) {
         if (this.connections == null) {
             this.connections = new ArrayList<>();
         }
@@ -49,11 +49,11 @@ public class ListServiceConnectionsResponse extends SdkResponse {
      * 连接列表。
      * @return connections
      */
-    public List<Connection> getConnections() {
+    public List<ConnectionEndpoints> getConnections() {
         return connections;
     }
 
-    public void setConnections(List<Connection> connections) {
+    public void setConnections(List<ConnectionEndpoints> connections) {
         this.connections = connections;
     }
 

@@ -256,6 +256,11 @@ public class HcClient implements CustomizationConfigure {
             extraHeader.forEach(httpRequestBuilder::addHeader);
         }
 
+        // sign algorithm
+        if (Objects.nonNull(httpConfig) && Objects.nonNull(httpConfig.getSigningAlgorithm())) {
+            httpRequestBuilder.withSigningAlgorithm(httpConfig.getSigningAlgorithm());
+        }
+
         return httpRequestBuilder.build();
     }
 

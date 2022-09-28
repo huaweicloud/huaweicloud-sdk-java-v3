@@ -43,6 +43,16 @@ public class VariableDetail {
 
     private Integer variableType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "variable_mode")
+
+    private Integer variableMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "share_mode")
+
+    private Integer shareMode;
+
     public VariableDetail withFileSize(Integer fileSize) {
         this.fileSize = fileSize;
         return this;
@@ -167,6 +177,40 @@ public class VariableDetail {
         this.variableType = variableType;
     }
 
+    public VariableDetail withVariableMode(Integer variableMode) {
+        this.variableMode = variableMode;
+        return this;
+    }
+
+    /**
+     * 变量读取模式，0：顺序模式；1：随机模式
+     * @return variableMode
+     */
+    public Integer getVariableMode() {
+        return variableMode;
+    }
+
+    public void setVariableMode(Integer variableMode) {
+        this.variableMode = variableMode;
+    }
+
+    public VariableDetail withShareMode(Integer shareMode) {
+        this.shareMode = shareMode;
+        return this;
+    }
+
+    /**
+     * 变量共享模式，0：用例模式；1：并发模式
+     * @return shareMode
+     */
+    public Integer getShareMode() {
+        return shareMode;
+    }
+
+    public void setShareMode(Integer shareMode) {
+        this.shareMode = shareMode;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -179,12 +223,14 @@ public class VariableDetail {
         return Objects.equals(this.fileSize, variableDetail.fileSize) && Objects.equals(this.id, variableDetail.id)
             && Objects.equals(this.isQuoted, variableDetail.isQuoted) && Objects.equals(this.name, variableDetail.name)
             && Objects.equals(this.variable, variableDetail.variable)
-            && Objects.equals(this.variableType, variableDetail.variableType);
+            && Objects.equals(this.variableType, variableDetail.variableType)
+            && Objects.equals(this.variableMode, variableDetail.variableMode)
+            && Objects.equals(this.shareMode, variableDetail.shareMode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(fileSize, id, isQuoted, name, variable, variableType);
+        return Objects.hash(fileSize, id, isQuoted, name, variable, variableType, variableMode, shareMode);
     }
 
     @Override
@@ -197,6 +243,8 @@ public class VariableDetail {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    variable: ").append(toIndentedString(variable)).append("\n");
         sb.append("    variableType: ").append(toIndentedString(variableType)).append("\n");
+        sb.append("    variableMode: ").append(toIndentedString(variableMode)).append("\n");
+        sb.append("    shareMode: ").append(toIndentedString(shareMode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

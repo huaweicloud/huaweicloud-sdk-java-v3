@@ -131,7 +131,7 @@ public class EdgemgrDevicesDetail {
     }
 
     /**
-     * Get attributes
+     * 终端设备静态属性
      * @return attributes
      */
     public Map<String, ValueInAttributes> getAttributes() {

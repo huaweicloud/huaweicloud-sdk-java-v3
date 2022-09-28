@@ -314,6 +314,38 @@ public class IefClient {
     }
 
     /**
+     * 新增加密数据
+     *
+     * 新增加密数据
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateEncryptdatasRequest 请求对象
+     * @return CreateEncryptdatasResponse
+     */
+    public CreateEncryptdatasResponse createEncryptdatas(CreateEncryptdatasRequest request) {
+        return hcClient.syncInvokeHttp(request, IefMeta.createEncryptdatas);
+    }
+
+    /**
+     * 新增加密数据
+     *
+     * 新增加密数据
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateEncryptdatasRequest 请求对象
+     * @return SyncInvoker<CreateEncryptdatasRequest, CreateEncryptdatasResponse>
+     */
+    public SyncInvoker<CreateEncryptdatasRequest, CreateEncryptdatasResponse> createEncryptdatasInvoker(
+        CreateEncryptdatasRequest request) {
+        return new SyncInvoker<CreateEncryptdatasRequest, CreateEncryptdatasResponse>(request,
+            IefMeta.createEncryptdatas, hcClient);
+    }
+
+    /**
      * 创建端点
      *
      * 创建一个端点
@@ -343,6 +375,38 @@ public class IefClient {
         CreateEndpointRequest request) {
         return new SyncInvoker<CreateEndpointRequest, CreateEndpointResponse>(request, IefMeta.createEndpoint,
             hcClient);
+    }
+
+    /**
+     * 加密数据绑定边缘节点
+     *
+     * 加密数据绑定边缘节点
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateNodeEncryptdatasRequest 请求对象
+     * @return CreateNodeEncryptdatasResponse
+     */
+    public CreateNodeEncryptdatasResponse createNodeEncryptdatas(CreateNodeEncryptdatasRequest request) {
+        return hcClient.syncInvokeHttp(request, IefMeta.createNodeEncryptdatas);
+    }
+
+    /**
+     * 加密数据绑定边缘节点
+     *
+     * 加密数据绑定边缘节点
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateNodeEncryptdatasRequest 请求对象
+     * @return SyncInvoker<CreateNodeEncryptdatasRequest, CreateNodeEncryptdatasResponse>
+     */
+    public SyncInvoker<CreateNodeEncryptdatasRequest, CreateNodeEncryptdatasResponse> createNodeEncryptdatasInvoker(
+        CreateNodeEncryptdatasRequest request) {
+        return new SyncInvoker<CreateNodeEncryptdatasRequest, CreateNodeEncryptdatasResponse>(request,
+            IefMeta.createNodeEncryptdatas, hcClient);
     }
 
     /**
@@ -722,6 +786,38 @@ public class IefClient {
     }
 
     /**
+     * 删除加密数据
+     *
+     * 删除加密数据
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteEncryptdatasRequest 请求对象
+     * @return DeleteEncryptdatasResponse
+     */
+    public DeleteEncryptdatasResponse deleteEncryptdatas(DeleteEncryptdatasRequest request) {
+        return hcClient.syncInvokeHttp(request, IefMeta.deleteEncryptdatas);
+    }
+
+    /**
+     * 删除加密数据
+     *
+     * 删除加密数据
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteEncryptdatasRequest 请求对象
+     * @return SyncInvoker<DeleteEncryptdatasRequest, DeleteEncryptdatasResponse>
+     */
+    public SyncInvoker<DeleteEncryptdatasRequest, DeleteEncryptdatasResponse> deleteEncryptdatasInvoker(
+        DeleteEncryptdatasRequest request) {
+        return new SyncInvoker<DeleteEncryptdatasRequest, DeleteEncryptdatasResponse>(request,
+            IefMeta.deleteEncryptdatas, hcClient);
+    }
+
+    /**
      * 删除一个端点
      *
      * 删除一个端点
@@ -751,6 +847,38 @@ public class IefClient {
         DeleteEndPointRequest request) {
         return new SyncInvoker<DeleteEndPointRequest, DeleteEndPointResponse>(request, IefMeta.deleteEndPoint,
             hcClient);
+    }
+
+    /**
+     * 解绑边缘节点的加密数据
+     *
+     * 解绑边缘节点的加密数据
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteNodeEncryptdatasRequest 请求对象
+     * @return DeleteNodeEncryptdatasResponse
+     */
+    public DeleteNodeEncryptdatasResponse deleteNodeEncryptdatas(DeleteNodeEncryptdatasRequest request) {
+        return hcClient.syncInvokeHttp(request, IefMeta.deleteNodeEncryptdatas);
+    }
+
+    /**
+     * 解绑边缘节点的加密数据
+     *
+     * 解绑边缘节点的加密数据
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteNodeEncryptdatasRequest 请求对象
+     * @return SyncInvoker<DeleteNodeEncryptdatasRequest, DeleteNodeEncryptdatasResponse>
+     */
+    public SyncInvoker<DeleteNodeEncryptdatasRequest, DeleteNodeEncryptdatasResponse> deleteNodeEncryptdatasInvoker(
+        DeleteNodeEncryptdatasRequest request) {
+        return new SyncInvoker<DeleteNodeEncryptdatasRequest, DeleteNodeEncryptdatasResponse>(request,
+            IefMeta.deleteNodeEncryptdatas, hcClient);
     }
 
     /**
@@ -1162,6 +1290,70 @@ public class IefClient {
     }
 
     /**
+     * 获取加密数据绑定的边缘节点
+     *
+     * 获取加密数据绑定的边缘节点
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListEncryptdataNodesRequest 请求对象
+     * @return ListEncryptdataNodesResponse
+     */
+    public ListEncryptdataNodesResponse listEncryptdataNodes(ListEncryptdataNodesRequest request) {
+        return hcClient.syncInvokeHttp(request, IefMeta.listEncryptdataNodes);
+    }
+
+    /**
+     * 获取加密数据绑定的边缘节点
+     *
+     * 获取加密数据绑定的边缘节点
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListEncryptdataNodesRequest 请求对象
+     * @return SyncInvoker<ListEncryptdataNodesRequest, ListEncryptdataNodesResponse>
+     */
+    public SyncInvoker<ListEncryptdataNodesRequest, ListEncryptdataNodesResponse> listEncryptdataNodesInvoker(
+        ListEncryptdataNodesRequest request) {
+        return new SyncInvoker<ListEncryptdataNodesRequest, ListEncryptdataNodesResponse>(request,
+            IefMeta.listEncryptdataNodes, hcClient);
+    }
+
+    /**
+     * 获取加密数据列表
+     *
+     * 获取加密数据列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListEncryptdatasRequest 请求对象
+     * @return ListEncryptdatasResponse
+     */
+    public ListEncryptdatasResponse listEncryptdatas(ListEncryptdatasRequest request) {
+        return hcClient.syncInvokeHttp(request, IefMeta.listEncryptdatas);
+    }
+
+    /**
+     * 获取加密数据列表
+     *
+     * 获取加密数据列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListEncryptdatasRequest 请求对象
+     * @return SyncInvoker<ListEncryptdatasRequest, ListEncryptdatasResponse>
+     */
+    public SyncInvoker<ListEncryptdatasRequest, ListEncryptdatasResponse> listEncryptdatasInvoker(
+        ListEncryptdatasRequest request) {
+        return new SyncInvoker<ListEncryptdatasRequest, ListEncryptdatasResponse>(request, IefMeta.listEncryptdatas,
+            hcClient);
+    }
+
+    /**
      * 查询端点列表
      *
      * 获取所有的端点详情。
@@ -1193,6 +1385,38 @@ public class IefClient {
      */
     public SyncInvoker<ListEndpointsRequest, ListEndpointsResponse> listEndpointsInvoker(ListEndpointsRequest request) {
         return new SyncInvoker<ListEndpointsRequest, ListEndpointsResponse>(request, IefMeta.listEndpoints, hcClient);
+    }
+
+    /**
+     * 获取边缘节点绑定的加密数据
+     *
+     * 获取边缘节点绑定的加密数据
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListNodeEncryptdatasRequest 请求对象
+     * @return ListNodeEncryptdatasResponse
+     */
+    public ListNodeEncryptdatasResponse listNodeEncryptdatas(ListNodeEncryptdatasRequest request) {
+        return hcClient.syncInvokeHttp(request, IefMeta.listNodeEncryptdatas);
+    }
+
+    /**
+     * 获取边缘节点绑定的加密数据
+     *
+     * 获取边缘节点绑定的加密数据
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListNodeEncryptdatasRequest 请求对象
+     * @return SyncInvoker<ListNodeEncryptdatasRequest, ListNodeEncryptdatasResponse>
+     */
+    public SyncInvoker<ListNodeEncryptdatasRequest, ListNodeEncryptdatasResponse> listNodeEncryptdatasInvoker(
+        ListNodeEncryptdatasRequest request) {
+        return new SyncInvoker<ListNodeEncryptdatasRequest, ListNodeEncryptdatasResponse>(request,
+            IefMeta.listNodeEncryptdatas, hcClient);
     }
 
     /**
@@ -1439,6 +1663,38 @@ public class IefClient {
         ListTagsByResourceTypeRequest request) {
         return new SyncInvoker<ListTagsByResourceTypeRequest, ListTagsByResourceTypeResponse>(request,
             IefMeta.listTagsByResourceType, hcClient);
+    }
+
+    /**
+     * 容器应用实例重启
+     *
+     * 重启部署下的应用实例
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param RestartDeploymentsPodRequest 请求对象
+     * @return RestartDeploymentsPodResponse
+     */
+    public RestartDeploymentsPodResponse restartDeploymentsPod(RestartDeploymentsPodRequest request) {
+        return hcClient.syncInvokeHttp(request, IefMeta.restartDeploymentsPod);
+    }
+
+    /**
+     * 容器应用实例重启
+     *
+     * 重启部署下的应用实例
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param RestartDeploymentsPodRequest 请求对象
+     * @return SyncInvoker<RestartDeploymentsPodRequest, RestartDeploymentsPodResponse>
+     */
+    public SyncInvoker<RestartDeploymentsPodRequest, RestartDeploymentsPodResponse> restartDeploymentsPodInvoker(
+        RestartDeploymentsPodRequest request) {
+        return new SyncInvoker<RestartDeploymentsPodRequest, RestartDeploymentsPodResponse>(request,
+            IefMeta.restartDeploymentsPod, hcClient);
     }
 
     /**
@@ -1689,6 +1945,70 @@ public class IefClient {
         ShowEdgeNodeDetailRequest request) {
         return new SyncInvoker<ShowEdgeNodeDetailRequest, ShowEdgeNodeDetailResponse>(request,
             IefMeta.showEdgeNodeDetail, hcClient);
+    }
+
+    /**
+     * 查看边缘节点升级状态
+     *
+     * 该API用于查看边缘节点升级状态。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowEdgeNodeUpgradeDetailsRequest 请求对象
+     * @return ShowEdgeNodeUpgradeDetailsResponse
+     */
+    public ShowEdgeNodeUpgradeDetailsResponse showEdgeNodeUpgradeDetails(ShowEdgeNodeUpgradeDetailsRequest request) {
+        return hcClient.syncInvokeHttp(request, IefMeta.showEdgeNodeUpgradeDetails);
+    }
+
+    /**
+     * 查看边缘节点升级状态
+     *
+     * 该API用于查看边缘节点升级状态。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowEdgeNodeUpgradeDetailsRequest 请求对象
+     * @return SyncInvoker<ShowEdgeNodeUpgradeDetailsRequest, ShowEdgeNodeUpgradeDetailsResponse>
+     */
+    public SyncInvoker<ShowEdgeNodeUpgradeDetailsRequest, ShowEdgeNodeUpgradeDetailsResponse> showEdgeNodeUpgradeDetailsInvoker(
+        ShowEdgeNodeUpgradeDetailsRequest request) {
+        return new SyncInvoker<ShowEdgeNodeUpgradeDetailsRequest, ShowEdgeNodeUpgradeDetailsResponse>(request,
+            IefMeta.showEdgeNodeUpgradeDetails, hcClient);
+    }
+
+    /**
+     * 查询加密数据详情
+     *
+     * 查询加密数据详情
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowEncryptdatasRequest 请求对象
+     * @return ShowEncryptdatasResponse
+     */
+    public ShowEncryptdatasResponse showEncryptdatas(ShowEncryptdatasRequest request) {
+        return hcClient.syncInvokeHttp(request, IefMeta.showEncryptdatas);
+    }
+
+    /**
+     * 查询加密数据详情
+     *
+     * 查询加密数据详情
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowEncryptdatasRequest 请求对象
+     * @return SyncInvoker<ShowEncryptdatasRequest, ShowEncryptdatasResponse>
+     */
+    public SyncInvoker<ShowEncryptdatasRequest, ShowEncryptdatasResponse> showEncryptdatasInvoker(
+        ShowEncryptdatasRequest request) {
+        return new SyncInvoker<ShowEncryptdatasRequest, ShowEncryptdatasResponse>(request, IefMeta.showEncryptdatas,
+            hcClient);
     }
 
     /**
@@ -2162,6 +2482,38 @@ public class IefClient {
     }
 
     /**
+     * 更新加密数据
+     *
+     * 更新加密数据
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateEncryptdatasRequest 请求对象
+     * @return UpdateEncryptdatasResponse
+     */
+    public UpdateEncryptdatasResponse updateEncryptdatas(UpdateEncryptdatasRequest request) {
+        return hcClient.syncInvokeHttp(request, IefMeta.updateEncryptdatas);
+    }
+
+    /**
+     * 更新加密数据
+     *
+     * 更新加密数据
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateEncryptdatasRequest 请求对象
+     * @return SyncInvoker<UpdateEncryptdatasRequest, UpdateEncryptdatasResponse>
+     */
+    public SyncInvoker<UpdateEncryptdatasRequest, UpdateEncryptdatasResponse> updateEncryptdatasInvoker(
+        UpdateEncryptdatasRequest request) {
+        return new SyncInvoker<UpdateEncryptdatasRequest, UpdateEncryptdatasResponse>(request,
+            IefMeta.updateEncryptdatas, hcClient);
+    }
+
+    /**
      * 更新终端设备的边缘节点
      *
      * 该API用于更新终端设备的边缘节点。功能与更新边缘节点的终端设备相同，推荐使用更新边缘节点的终端设备。
@@ -2251,6 +2603,38 @@ public class IefClient {
      */
     public SyncInvoker<UpdateServiceRequest, UpdateServiceResponse> updateServiceInvoker(UpdateServiceRequest request) {
         return new SyncInvoker<UpdateServiceRequest, UpdateServiceResponse>(request, IefMeta.updateService, hcClient);
+    }
+
+    /**
+     * 升级边缘节点
+     *
+     * 该API用于升级边缘节点。边缘节点将自动升级到最新的可用版本
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpgradeEdgeNodeRequest 请求对象
+     * @return UpgradeEdgeNodeResponse
+     */
+    public UpgradeEdgeNodeResponse upgradeEdgeNode(UpgradeEdgeNodeRequest request) {
+        return hcClient.syncInvokeHttp(request, IefMeta.upgradeEdgeNode);
+    }
+
+    /**
+     * 升级边缘节点
+     *
+     * 该API用于升级边缘节点。边缘节点将自动升级到最新的可用版本
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpgradeEdgeNodeRequest 请求对象
+     * @return SyncInvoker<UpgradeEdgeNodeRequest, UpgradeEdgeNodeResponse>
+     */
+    public SyncInvoker<UpgradeEdgeNodeRequest, UpgradeEdgeNodeResponse> upgradeEdgeNodeInvoker(
+        UpgradeEdgeNodeRequest request) {
+        return new SyncInvoker<UpgradeEdgeNodeRequest, UpgradeEdgeNodeResponse>(request, IefMeta.upgradeEdgeNode,
+            hcClient);
     }
 
 }

@@ -296,6 +296,66 @@ public class ApmClient {
     }
 
     /**
+     * 根据组件id删除指定的组件
+     *
+     * 该接口用于删除指定的组件
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteAppRequest 请求对象
+     * @return DeleteAppResponse
+     */
+    public DeleteAppResponse deleteApp(DeleteAppRequest request) {
+        return hcClient.syncInvokeHttp(request, ApmMeta.deleteApp);
+    }
+
+    /**
+     * 根据组件id删除指定的组件
+     *
+     * 该接口用于删除指定的组件
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteAppRequest 请求对象
+     * @return SyncInvoker<DeleteAppRequest, DeleteAppResponse>
+     */
+    public SyncInvoker<DeleteAppRequest, DeleteAppResponse> deleteAppInvoker(DeleteAppRequest request) {
+        return new SyncInvoker<DeleteAppRequest, DeleteAppResponse>(request, ApmMeta.deleteApp, hcClient);
+    }
+
+    /**
+     * 根据环境id删除指定的环境
+     *
+     * 该接口用于删除指定的环境
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteEnvRequest 请求对象
+     * @return DeleteEnvResponse
+     */
+    public DeleteEnvResponse deleteEnv(DeleteEnvRequest request) {
+        return hcClient.syncInvokeHttp(request, ApmMeta.deleteEnv);
+    }
+
+    /**
+     * 根据环境id删除指定的环境
+     *
+     * 该接口用于删除指定的环境
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteEnvRequest 请求对象
+     * @return SyncInvoker<DeleteEnvRequest, DeleteEnvResponse>
+     */
+    public SyncInvoker<DeleteEnvRequest, DeleteEnvResponse> deleteEnvInvoker(DeleteEnvRequest request) {
+        return new SyncInvoker<DeleteEnvRequest, DeleteEnvResponse>(request, ApmMeta.deleteEnv, hcClient);
+    }
+
+    /**
      * 获取组件下的环境列表
      *
      * 获取组件下的环境列表

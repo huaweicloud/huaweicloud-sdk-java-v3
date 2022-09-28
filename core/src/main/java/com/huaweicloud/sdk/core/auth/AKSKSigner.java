@@ -25,12 +25,11 @@ import com.huaweicloud.sdk.core.Constants;
 import com.huaweicloud.sdk.core.exception.SdkException;
 import com.huaweicloud.sdk.core.http.HttpRequest;
 import com.huaweicloud.sdk.core.utils.BinaryUtils;
+import com.huaweicloud.sdk.core.utils.SignUtils;
 
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
-import java.io.UnsupportedEncodingException;
 import java.net.URL;
-import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.security.InvalidKeyException;
 import java.security.MessageDigest;
@@ -82,7 +81,7 @@ public class AKSKSigner {
         // Step 1.2: Add X-Sdk-Date
         String dateTimeStamp;
         if (!request.haveHeader(Constants.X_SDK_DATE)) {
-            SimpleDateFormat isoDateFormat = new SimpleDateFormat(ISO_8601_BASIC_FORMAT);
+            SimpleDateFormat isoDateFormat = new SimpleDateFormat(Constants.ISO_8601_BASIC_FORMAT);
             isoDateFormat.setTimeZone(new SimpleTimeZone(0, "UTC"));
             dateTimeStamp = isoDateFormat.format(now);
             authenticationHeaders.put(Constants.X_SDK_DATE, dateTimeStamp);
@@ -109,7 +108,7 @@ public class AKSKSigner {
         StringBuilder canonicalUri = new StringBuilder();
         String[] split = pathOld.split("/");
         for (String urlSplit : split) {
-            canonicalUri.append(urlEncode(urlSplit)).append("/");
+            canonicalUri.append(SignUtils.urlEncode(urlSplit, false)).append("/");
         }
 
         // Step 3: Create the canonical query string. In this example (a GET request),
@@ -163,11 +162,10 @@ public class AKSKSigner {
     }
 
     protected static String buildCanonicalQueryString(String query, Map<String, List<String>> parameters) {
-        SortedMap<String, List<String>> sorted = convertQuery2SortedMap(query);
-        StringBuilder builder = new StringBuilder();
+        SortedMap<String, List<String>> sorted = SignUtils.convertQuery2SortedMap(query);
 
         if (parameters == null || parameters.isEmpty()) {
-            return builder.toString();
+            return "";
         }
 
         Iterator<Map.Entry<String, List<String>>> iterator = parameters.entrySet().iterator();
@@ -177,55 +175,12 @@ public class AKSKSigner {
             List<String> values = pair.getValue();
             List<String> escapedValues = new ArrayList<>();
             for (String value : values) {
-                escapedValues.add(urlEncode(value));
+                escapedValues.add(SignUtils.urlEncode(value, false));
             }
-            sorted.put(urlEncode(key), escapedValues);
+            sorted.put(SignUtils.urlEncode(key, false), escapedValues);
         }
 
-        Iterator<Map.Entry<String, List<String>>> itr = sorted.entrySet().iterator();
-        while (itr.hasNext()) {
-            Map.Entry<String, List<String>> pair = itr.next();
-            for (int i = 0; i < pair.getValue().size(); i++) {
-                builder.append(pair.getKey());
-                builder.append("=");
-                builder.append(pair.getValue().get(i));
-                if (i < pair.getValue().size() - 1) {
-                    builder.append("&");
-                }
-            }
-            if (pair.getValue().size() == 0) {
-                builder.append(pair.getKey()).append("=");
-            }
-            if (itr.hasNext()) {
-                builder.append("&");
-            }
-        }
-
-        return builder.toString();
-    }
-
-    protected static SortedMap<String, List<String>> convertQuery2SortedMap(String query) {
-        SortedMap<String, List<String>> sorted = new TreeMap<>();
-
-        if (query == null || query.isEmpty()) {
-            return sorted;
-        }
-
-        // get parameters from path query string
-        String[] splitArr = query.split("&");
-        for (String split : splitArr) {
-            String[] kv = split.split("=");
-            if (kv.length == 2) {
-                if (!sorted.containsKey(urlEncode(kv[0]))) {
-                    List<String> values = new ArrayList<>();
-                    values.add(urlEncode(kv[1]));
-                    sorted.put(urlEncode(kv[0]), values);
-                } else {
-                    sorted.get(urlEncode(kv[0])).add(urlEncode(kv[1]));
-                }
-            }
-        }
-        return sorted;
+        return SignUtils.convertSortedMap2QueryString(sorted);
     }
 
     /**
@@ -293,14 +248,6 @@ public class AKSKSigner {
         byte[] keySecret = secretKey.getBytes(StandardCharsets.UTF_8);
         byte[] signature = hmac(keySecret, stringToSign);
         return BinaryUtils.toHex(signature);
-    }
-
-    public static String urlEncode(String url) {
-        try {
-            return URLEncoder.encode(url, "UTF-8").replace("+", "%20").replace("*", "%2A");
-        } catch (UnsupportedEncodingException e) {
-            throw new SdkException("UTF-8 encoding is not supported.", e);
-        }
     }
 
     /**

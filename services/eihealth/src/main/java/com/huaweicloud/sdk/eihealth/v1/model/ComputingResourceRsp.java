@@ -1,0 +1,442 @@
+package com.huaweicloud.sdk.eihealth.v1.model;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/**
+ * ComputingResourceRsp
+ */
+public class ComputingResourceRsp {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resource_id")
+
+    private String resourceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "name")
+
+    private String name;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "spec")
+
+    private ComputingSpecDto spec;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ip")
+
+    private String ip;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "system_disk")
+
+    private DiskDto systemDisk;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "data_disks")
+
+    private List<DiskDto> dataDisks = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "image")
+
+    private ImageDto image;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "charge_mode")
+
+    private String chargeMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "period_num")
+
+    private String periodNum;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "create_time")
+
+    private String createTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status")
+
+    private String status;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "availability_zone_id")
+
+    private String availabilityZoneId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "schedulable")
+
+    private Boolean schedulable;
+
+    public ComputingResourceRsp withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * 实例ID
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public ComputingResourceRsp withResourceId(String resourceId) {
+        this.resourceId = resourceId;
+        return this;
+    }
+
+    /**
+     * 资源ID
+     * @return resourceId
+     */
+    public String getResourceId() {
+        return resourceId;
+    }
+
+    public void setResourceId(String resourceId) {
+        this.resourceId = resourceId;
+    }
+
+    public ComputingResourceRsp withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    /**
+     * 实例名称
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public ComputingResourceRsp withSpec(ComputingSpecDto spec) {
+        this.spec = spec;
+        return this;
+    }
+
+    public ComputingResourceRsp withSpec(Consumer<ComputingSpecDto> specSetter) {
+        if (this.spec == null) {
+            this.spec = new ComputingSpecDto();
+            specSetter.accept(this.spec);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get spec
+     * @return spec
+     */
+    public ComputingSpecDto getSpec() {
+        return spec;
+    }
+
+    public void setSpec(ComputingSpecDto spec) {
+        this.spec = spec;
+    }
+
+    public ComputingResourceRsp withIp(String ip) {
+        this.ip = ip;
+        return this;
+    }
+
+    /**
+     * IP地址
+     * @return ip
+     */
+    public String getIp() {
+        return ip;
+    }
+
+    public void setIp(String ip) {
+        this.ip = ip;
+    }
+
+    public ComputingResourceRsp withSystemDisk(DiskDto systemDisk) {
+        this.systemDisk = systemDisk;
+        return this;
+    }
+
+    public ComputingResourceRsp withSystemDisk(Consumer<DiskDto> systemDiskSetter) {
+        if (this.systemDisk == null) {
+            this.systemDisk = new DiskDto();
+            systemDiskSetter.accept(this.systemDisk);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get systemDisk
+     * @return systemDisk
+     */
+    public DiskDto getSystemDisk() {
+        return systemDisk;
+    }
+
+    public void setSystemDisk(DiskDto systemDisk) {
+        this.systemDisk = systemDisk;
+    }
+
+    public ComputingResourceRsp withDataDisks(List<DiskDto> dataDisks) {
+        this.dataDisks = dataDisks;
+        return this;
+    }
+
+    public ComputingResourceRsp addDataDisksItem(DiskDto dataDisksItem) {
+        if (this.dataDisks == null) {
+            this.dataDisks = new ArrayList<>();
+        }
+        this.dataDisks.add(dataDisksItem);
+        return this;
+    }
+
+    public ComputingResourceRsp withDataDisks(Consumer<List<DiskDto>> dataDisksSetter) {
+        if (this.dataDisks == null) {
+            this.dataDisks = new ArrayList<>();
+        }
+        dataDisksSetter.accept(this.dataDisks);
+        return this;
+    }
+
+    /**
+     * 数据盘
+     * @return dataDisks
+     */
+    public List<DiskDto> getDataDisks() {
+        return dataDisks;
+    }
+
+    public void setDataDisks(List<DiskDto> dataDisks) {
+        this.dataDisks = dataDisks;
+    }
+
+    public ComputingResourceRsp withImage(ImageDto image) {
+        this.image = image;
+        return this;
+    }
+
+    public ComputingResourceRsp withImage(Consumer<ImageDto> imageSetter) {
+        if (this.image == null) {
+            this.image = new ImageDto();
+            imageSetter.accept(this.image);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get image
+     * @return image
+     */
+    public ImageDto getImage() {
+        return image;
+    }
+
+    public void setImage(ImageDto image) {
+        this.image = image;
+    }
+
+    public ComputingResourceRsp withChargeMode(String chargeMode) {
+        this.chargeMode = chargeMode;
+        return this;
+    }
+
+    /**
+     * 计费模式
+     * @return chargeMode
+     */
+    public String getChargeMode() {
+        return chargeMode;
+    }
+
+    public void setChargeMode(String chargeMode) {
+        this.chargeMode = chargeMode;
+    }
+
+    public ComputingResourceRsp withPeriodNum(String periodNum) {
+        this.periodNum = periodNum;
+        return this;
+    }
+
+    /**
+     * 购买周期
+     * @return periodNum
+     */
+    public String getPeriodNum() {
+        return periodNum;
+    }
+
+    public void setPeriodNum(String periodNum) {
+        this.periodNum = periodNum;
+    }
+
+    public ComputingResourceRsp withCreateTime(String createTime) {
+        this.createTime = createTime;
+        return this;
+    }
+
+    /**
+     * 购买时间
+     * @return createTime
+     */
+    public String getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime;
+    }
+
+    public ComputingResourceRsp withStatus(String status) {
+        this.status = status;
+        return this;
+    }
+
+    /**
+     * 状态
+     * @return status
+     */
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public ComputingResourceRsp withAvailabilityZoneId(String availabilityZoneId) {
+        this.availabilityZoneId = availabilityZoneId;
+        return this;
+    }
+
+    /**
+     * 可用区
+     * @return availabilityZoneId
+     */
+    public String getAvailabilityZoneId() {
+        return availabilityZoneId;
+    }
+
+    public void setAvailabilityZoneId(String availabilityZoneId) {
+        this.availabilityZoneId = availabilityZoneId;
+    }
+
+    public ComputingResourceRsp withSchedulable(Boolean schedulable) {
+        this.schedulable = schedulable;
+        return this;
+    }
+
+    /**
+     * 资源是否可调度
+     * @return schedulable
+     */
+    public Boolean getSchedulable() {
+        return schedulable;
+    }
+
+    public void setSchedulable(Boolean schedulable) {
+        this.schedulable = schedulable;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        ComputingResourceRsp computingResourceRsp = (ComputingResourceRsp) o;
+        return Objects.equals(this.id, computingResourceRsp.id)
+            && Objects.equals(this.resourceId, computingResourceRsp.resourceId)
+            && Objects.equals(this.name, computingResourceRsp.name)
+            && Objects.equals(this.spec, computingResourceRsp.spec) && Objects.equals(this.ip, computingResourceRsp.ip)
+            && Objects.equals(this.systemDisk, computingResourceRsp.systemDisk)
+            && Objects.equals(this.dataDisks, computingResourceRsp.dataDisks)
+            && Objects.equals(this.image, computingResourceRsp.image)
+            && Objects.equals(this.chargeMode, computingResourceRsp.chargeMode)
+            && Objects.equals(this.periodNum, computingResourceRsp.periodNum)
+            && Objects.equals(this.createTime, computingResourceRsp.createTime)
+            && Objects.equals(this.status, computingResourceRsp.status)
+            && Objects.equals(this.availabilityZoneId, computingResourceRsp.availabilityZoneId)
+            && Objects.equals(this.schedulable, computingResourceRsp.schedulable);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id,
+            resourceId,
+            name,
+            spec,
+            ip,
+            systemDisk,
+            dataDisks,
+            image,
+            chargeMode,
+            periodNum,
+            createTime,
+            status,
+            availabilityZoneId,
+            schedulable);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class ComputingResourceRsp {\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    spec: ").append(toIndentedString(spec)).append("\n");
+        sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
+        sb.append("    systemDisk: ").append(toIndentedString(systemDisk)).append("\n");
+        sb.append("    dataDisks: ").append(toIndentedString(dataDisks)).append("\n");
+        sb.append("    image: ").append(toIndentedString(image)).append("\n");
+        sb.append("    chargeMode: ").append(toIndentedString(chargeMode)).append("\n");
+        sb.append("    periodNum: ").append(toIndentedString(periodNum)).append("\n");
+        sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    availabilityZoneId: ").append(toIndentedString(availabilityZoneId)).append("\n");
+        sb.append("    schedulable: ").append(toIndentedString(schedulable)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+}

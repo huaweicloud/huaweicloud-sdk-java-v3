@@ -130,6 +130,21 @@ public class ReportoutlineInfo {
 
     private String serviceId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "progressState")
+
+    private String progressState;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "createBy")
+
+    private String createBy;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "statusValue")
+
+    private String statusValue;
+
     public ReportoutlineInfo withAvgResponseTime(Double avgResponseTime) {
         this.avgResponseTime = avgResponseTime;
         return this;
@@ -538,6 +553,57 @@ public class ReportoutlineInfo {
         this.serviceId = serviceId;
     }
 
+    public ReportoutlineInfo withProgressState(String progressState) {
+        this.progressState = progressState;
+        return this;
+    }
+
+    /**
+     * Get progressState
+     * @return progressState
+     */
+    public String getProgressState() {
+        return progressState;
+    }
+
+    public void setProgressState(String progressState) {
+        this.progressState = progressState;
+    }
+
+    public ReportoutlineInfo withCreateBy(String createBy) {
+        this.createBy = createBy;
+        return this;
+    }
+
+    /**
+     * Get createBy
+     * @return createBy
+     */
+    public String getCreateBy() {
+        return createBy;
+    }
+
+    public void setCreateBy(String createBy) {
+        this.createBy = createBy;
+    }
+
+    public ReportoutlineInfo withStatusValue(String statusValue) {
+        this.statusValue = statusValue;
+        return this;
+    }
+
+    /**
+     * Get statusValue
+     * @return statusValue
+     */
+    public String getStatusValue() {
+        return statusValue;
+    }
+
+    public void setStatusValue(String statusValue) {
+        this.statusValue = statusValue;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -570,7 +636,10 @@ public class ReportoutlineInfo {
             && Objects.equals(this.tps, reportoutlineInfo.tps)
             && Objects.equals(this.versionUri, reportoutlineInfo.versionUri)
             && Objects.equals(this.projectId, reportoutlineInfo.projectId)
-            && Objects.equals(this.serviceId, reportoutlineInfo.serviceId);
+            && Objects.equals(this.serviceId, reportoutlineInfo.serviceId)
+            && Objects.equals(this.progressState, reportoutlineInfo.progressState)
+            && Objects.equals(this.createBy, reportoutlineInfo.createBy)
+            && Objects.equals(this.statusValue, reportoutlineInfo.statusValue);
     }
 
     @Override
@@ -598,7 +667,10 @@ public class ReportoutlineInfo {
             tps,
             versionUri,
             projectId,
-            serviceId);
+            serviceId,
+            progressState,
+            createBy,
+            statusValue);
     }
 
     @Override
@@ -629,6 +701,9 @@ public class ReportoutlineInfo {
         sb.append("    versionUri: ").append(toIndentedString(versionUri)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    serviceId: ").append(toIndentedString(serviceId)).append("\n");
+        sb.append("    progressState: ").append(toIndentedString(progressState)).append("\n");
+        sb.append("    createBy: ").append(toIndentedString(createBy)).append("\n");
+        sb.append("    statusValue: ").append(toIndentedString(statusValue)).append("\n");
         sb.append("}");
         return sb.toString();
     }

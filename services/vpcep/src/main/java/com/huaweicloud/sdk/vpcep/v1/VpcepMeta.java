@@ -77,6 +77,76 @@ public class VpcepMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchAddEndpointServicePermissionsRequest, BatchAddEndpointServicePermissionsResponse> batchAddEndpointServicePermissions =
+        genForbatchAddEndpointServicePermissions();
+
+    private static HttpRequestDef<BatchAddEndpointServicePermissionsRequest, BatchAddEndpointServicePermissionsResponse> genForbatchAddEndpointServicePermissions() {
+        // basic
+        HttpRequestDef.Builder<BatchAddEndpointServicePermissionsRequest, BatchAddEndpointServicePermissionsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchAddEndpointServicePermissionsRequest.class,
+                    BatchAddEndpointServicePermissionsResponse.class)
+                .withName("BatchAddEndpointServicePermissions")
+                .withUri("/v1/{project_id}/vpc-endpoint-services/{vpc_endpoint_service_id}/permissions/batch-create")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("vpc_endpoint_service_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchAddEndpointServicePermissionsRequest::getVpcEndpointServiceId, (req, v) -> {
+                req.setVpcEndpointServiceId(v);
+            }));
+        builder.<BatchAddPermissionRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchAddPermissionRequest.class),
+            f -> f.withMarshaller(BatchAddEndpointServicePermissionsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchRemoveEndpointServicePermissionsRequest, BatchRemoveEndpointServicePermissionsResponse> batchRemoveEndpointServicePermissions =
+        genForbatchRemoveEndpointServicePermissions();
+
+    private static HttpRequestDef<BatchRemoveEndpointServicePermissionsRequest, BatchRemoveEndpointServicePermissionsResponse> genForbatchRemoveEndpointServicePermissions() {
+        // basic
+        HttpRequestDef.Builder<BatchRemoveEndpointServicePermissionsRequest, BatchRemoveEndpointServicePermissionsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchRemoveEndpointServicePermissionsRequest.class,
+                    BatchRemoveEndpointServicePermissionsResponse.class)
+                .withName("BatchRemoveEndpointServicePermissions")
+                .withUri("/v1/{project_id}/vpc-endpoint-services/{vpc_endpoint_service_id}/permissions/batch-delete")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("vpc_endpoint_service_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchRemoveEndpointServicePermissionsRequest::getVpcEndpointServiceId, (req, v) -> {
+                req.setVpcEndpointServiceId(v);
+            }));
+        builder.<BatchRemovePermissionRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchRemovePermissionRequest.class),
+            f -> f.withMarshaller(BatchRemoveEndpointServicePermissionsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateEndpointRequest, CreateEndpointResponse> createEndpoint =
         genForcreateEndpoint();
 
@@ -144,6 +214,31 @@ public class VpcepMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteEndpointRequest::getVpcEndpointId, (req, v) -> {
+                req.setVpcEndpointId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteEndpointPolicyRequest, DeleteEndpointPolicyResponse> deleteEndpointPolicy =
+        genFordeleteEndpointPolicy();
+
+    private static HttpRequestDef<DeleteEndpointPolicyRequest, DeleteEndpointPolicyResponse> genFordeleteEndpointPolicy() {
+        // basic
+        HttpRequestDef.Builder<DeleteEndpointPolicyRequest, DeleteEndpointPolicyResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteEndpointPolicyRequest.class, DeleteEndpointPolicyResponse.class)
+            .withName("DeleteEndpointPolicy")
+            .withUri("/v1/{project_id}/vpc-endpoints/{vpc_endpoint_id}/policy")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("vpc_endpoint_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteEndpointPolicyRequest::getVpcEndpointId, (req, v) -> {
                 req.setVpcEndpointId(v);
             }));
 
@@ -263,6 +358,13 @@ public class VpcepMeta {
             f -> f.withMarshaller(ListEndpointServiceRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
             }));
+        builder.<String>withRequestField("public_border_group",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEndpointServiceRequest::getPublicBorderGroup, (req, v) -> {
+                req.setPublicBorderGroup(v);
+            }));
 
         // response
 
@@ -329,6 +431,13 @@ public class VpcepMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListEndpointsRequest::getSortDir, (req, v) -> {
                 req.setSortDir(v);
+            }));
+        builder.<String>withRequestField("public_border_group",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEndpointsRequest::getPublicBorderGroup, (req, v) -> {
+                req.setPublicBorderGroup(v);
             }));
 
         // response
@@ -665,6 +774,73 @@ public class VpcepMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateEndpointConnectionsDescRequest, UpdateEndpointConnectionsDescResponse> updateEndpointConnectionsDesc =
+        genForupdateEndpointConnectionsDesc();
+
+    private static HttpRequestDef<UpdateEndpointConnectionsDescRequest, UpdateEndpointConnectionsDescResponse> genForupdateEndpointConnectionsDesc() {
+        // basic
+        HttpRequestDef.Builder<UpdateEndpointConnectionsDescRequest, UpdateEndpointConnectionsDescResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateEndpointConnectionsDescRequest.class,
+                    UpdateEndpointConnectionsDescResponse.class)
+                .withName("UpdateEndpointConnectionsDesc")
+                .withUri("/v1/{project_id}/vpc-endpoint-services/{vpc_endpoint_service_id}/connections/description")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("vpc_endpoint_service_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateEndpointConnectionsDescRequest::getVpcEndpointServiceId, (req, v) -> {
+                req.setVpcEndpointServiceId(v);
+            }));
+        builder.<UpdateEpConnections>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateEpConnections.class),
+            f -> f.withMarshaller(UpdateEndpointConnectionsDescRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateEndpointPolicyRequest, UpdateEndpointPolicyResponse> updateEndpointPolicy =
+        genForupdateEndpointPolicy();
+
+    private static HttpRequestDef<UpdateEndpointPolicyRequest, UpdateEndpointPolicyResponse> genForupdateEndpointPolicy() {
+        // basic
+        HttpRequestDef.Builder<UpdateEndpointPolicyRequest, UpdateEndpointPolicyResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateEndpointPolicyRequest.class, UpdateEndpointPolicyResponse.class)
+            .withName("UpdateEndpointPolicy")
+            .withUri("/v1/{project_id}/vpc-endpoints/{vpc_endpoint_id}/policy")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("vpc_endpoint_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateEndpointPolicyRequest::getVpcEndpointId, (req, v) -> {
+                req.setVpcEndpointId(v);
+            }));
+        builder.<UpdateEndpointPolicyRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateEndpointPolicyRequestBody.class),
+            f -> f.withMarshaller(UpdateEndpointPolicyRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateEndpointRoutetableRequest, UpdateEndpointRoutetableResponse> updateEndpointRoutetable =
         genForupdateEndpointRoutetable();
 
@@ -722,6 +898,83 @@ public class VpcepMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateEndpointServiceRequestBody.class),
             f -> f.withMarshaller(UpdateEndpointServiceRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateEndpointServiceNameRequest, UpdateEndpointServiceNameResponse> updateEndpointServiceName =
+        genForupdateEndpointServiceName();
+
+    private static HttpRequestDef<UpdateEndpointServiceNameRequest, UpdateEndpointServiceNameResponse> genForupdateEndpointServiceName() {
+        // basic
+        HttpRequestDef.Builder<UpdateEndpointServiceNameRequest, UpdateEndpointServiceNameResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateEndpointServiceNameRequest.class,
+                    UpdateEndpointServiceNameResponse.class)
+                .withName("UpdateEndpointServiceName")
+                .withUri("/v1/{project_id}/vpc-endpoint-services/{vpc_endpoint_service_id}/name")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("vpc_endpoint_service_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateEndpointServiceNameRequest::getVpcEndpointServiceId, (req, v) -> {
+                req.setVpcEndpointServiceId(v);
+            }));
+        builder.<UpdateEndpointServiceNameMode>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UpdateEndpointServiceNameMode.class),
+            f -> f.withMarshaller(UpdateEndpointServiceNameRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateEndpointServicePermissionDescRequest, UpdateEndpointServicePermissionDescResponse> updateEndpointServicePermissionDesc =
+        genForupdateEndpointServicePermissionDesc();
+
+    private static HttpRequestDef<UpdateEndpointServicePermissionDescRequest, UpdateEndpointServicePermissionDescResponse> genForupdateEndpointServicePermissionDesc() {
+        // basic
+        HttpRequestDef.Builder<UpdateEndpointServicePermissionDescRequest, UpdateEndpointServicePermissionDescResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateEndpointServicePermissionDescRequest.class,
+                    UpdateEndpointServicePermissionDescResponse.class)
+                .withName("UpdateEndpointServicePermissionDesc")
+                .withUri("/v1/{project_id}/vpc-endpoint-services/{vpc_endpoint_service_id}/permissions/{permission_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("vpc_endpoint_service_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateEndpointServicePermissionDescRequest::getVpcEndpointServiceId, (req, v) -> {
+                req.setVpcEndpointServiceId(v);
+            }));
+        builder.<String>withRequestField("permission_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateEndpointServicePermissionDescRequest::getPermissionId, (req, v) -> {
+                req.setPermissionId(v);
+            }));
+        builder.<UpdatePermissionDescRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdatePermissionDescRequest.class),
+            f -> f.withMarshaller(UpdateEndpointServicePermissionDescRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

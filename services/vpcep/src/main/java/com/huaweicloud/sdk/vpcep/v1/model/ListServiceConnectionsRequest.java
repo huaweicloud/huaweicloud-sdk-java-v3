@@ -118,7 +118,7 @@ public class ListServiceConnectionsRequest {
     private SortKeyEnum sortKey;
 
     /**
-     * 查询结果中终端节点列表的排序方 式，取值为： ● desc：降序排序 ● asc：升序排序 默认值为desc。
+     * 查询结果中终端节点列表的排序方式，取值为： ● desc：降序排序 ● asc：升序排序 默认值为desc。
      */
     public static final class SortDirEnum {
 
@@ -300,7 +300,7 @@ public class ListServiceConnectionsRequest {
     }
 
     /**
-     * 查询结果中终端节点列表的排序方 式，取值为： ● desc：降序排序 ● asc：升序排序 默认值为desc。
+     * 查询结果中终端节点列表的排序方式，取值为： ● desc：降序排序 ● asc：升序排序 默认值为desc。
      * @return sortDir
      */
     public SortDirEnum getSortDir() {
@@ -319,6 +319,7 @@ public class ListServiceConnectionsRequest {
     /**
      * 查询返回终端节点服务的连接列表限制每页个数，即每页返回的个数。 取值范围：0~1000，取值一般为10，20或者50，默认为10。
      * minimum: 1
+     * maximum: 1000
      * @return limit
      */
     public Integer getLimit() {
@@ -335,7 +336,7 @@ public class ListServiceConnectionsRequest {
     }
 
     /**
-     * 偏移量。 偏移量为一个大于0小于终端节点 服务总个数的整数，表示从偏移量 后面的终端节点服务开始查询。
+     * 偏移量。 偏移量为一个大于0小于终端节点服务总个数的整数， 表示从偏移量后面的终端节点服务开始查询。
      * minimum: 0
      * @return offset
      */

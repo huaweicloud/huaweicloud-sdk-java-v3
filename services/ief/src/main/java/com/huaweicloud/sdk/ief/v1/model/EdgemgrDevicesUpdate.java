@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 终端设备属性
+ * 终端设备更新配置
  */
 public class EdgemgrDevicesUpdate {
 

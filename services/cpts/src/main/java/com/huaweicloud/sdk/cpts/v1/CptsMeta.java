@@ -509,10 +509,10 @@ public class CptsMeta {
             f -> f.withMarshaller(UpdateCaseRequest::getTarget, (req, v) -> {
                 req.setTarget(v);
             }));
-        builder.<UpdateCaseRequestBody>withRequestField("body",
+        builder.<CaseInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(UpdateCaseRequestBody.class),
+            TypeCasts.uncheckedConversion(CaseInfo.class),
             f -> f.withMarshaller(UpdateCaseRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));

@@ -34,6 +34,11 @@ public class HistoryRunInfo {
     private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "end_time")
+
+    private String endTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "continue_time")
 
     private Double continueTime;
@@ -42,6 +47,11 @@ public class HistoryRunInfo {
     @JsonProperty(value = "temp_names")
 
     private List<TempName> tempNames = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "parallel")
+
+    private Boolean parallel;
 
     public HistoryRunInfo withName(String name) {
         this.name = name;
@@ -111,6 +121,23 @@ public class HistoryRunInfo {
         this.startTime = startTime;
     }
 
+    public HistoryRunInfo withEndTime(String endTime) {
+        this.endTime = endTime;
+        return this;
+    }
+
+    /**
+     * 结束时间
+     * @return endTime
+     */
+    public String getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
+    }
+
     public HistoryRunInfo withContinueTime(Double continueTime) {
         this.continueTime = continueTime;
         return this;
@@ -161,6 +188,23 @@ public class HistoryRunInfo {
         this.tempNames = tempNames;
     }
 
+    public HistoryRunInfo withParallel(Boolean parallel) {
+        this.parallel = parallel;
+        return this;
+    }
+
+    /**
+     * 任务间用例是否并行执行
+     * @return parallel
+     */
+    public Boolean getParallel() {
+        return parallel;
+    }
+
+    public void setParallel(Boolean parallel) {
+        this.parallel = parallel;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -173,13 +217,15 @@ public class HistoryRunInfo {
         return Objects.equals(this.name, historyRunInfo.name) && Objects.equals(this.runId, historyRunInfo.runId)
             && Objects.equals(this.runType, historyRunInfo.runType)
             && Objects.equals(this.startTime, historyRunInfo.startTime)
+            && Objects.equals(this.endTime, historyRunInfo.endTime)
             && Objects.equals(this.continueTime, historyRunInfo.continueTime)
-            && Objects.equals(this.tempNames, historyRunInfo.tempNames);
+            && Objects.equals(this.tempNames, historyRunInfo.tempNames)
+            && Objects.equals(this.parallel, historyRunInfo.parallel);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, runId, runType, startTime, continueTime, tempNames);
+        return Objects.hash(name, runId, runType, startTime, endTime, continueTime, tempNames, parallel);
     }
 
     @Override
@@ -190,8 +236,10 @@ public class HistoryRunInfo {
         sb.append("    runId: ").append(toIndentedString(runId)).append("\n");
         sb.append("    runType: ").append(toIndentedString(runType)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
+        sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    continueTime: ").append(toIndentedString(continueTime)).append("\n");
         sb.append("    tempNames: ").append(toIndentedString(tempNames)).append("\n");
+        sb.append("    parallel: ").append(toIndentedString(parallel)).append("\n");
         sb.append("}");
         return sb.toString();
     }

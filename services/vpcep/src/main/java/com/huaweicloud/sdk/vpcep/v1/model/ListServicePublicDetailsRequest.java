@@ -207,6 +207,7 @@ public class ListServicePublicDetailsRequest {
     /**
      * 查询返回公共的终端节点服务数量限制，即每页返回的个数。 取值范围：0~1000，取值一般为10，20或者50，默认为10。
      * minimum: 1
+     * maximum: 1000
      * @return limit
      */
     public Integer getLimit() {
@@ -223,7 +224,7 @@ public class ListServicePublicDetailsRequest {
     }
 
     /**
-     * 偏移量。 偏移量为一个大于0小于终端节点服务总个数的整数，表示从偏移量后面的终端节点服务开始查询。
+     * 偏移量。 偏移量为一个大于0小于终端节点服务总个数的整数， 表示从偏移量后面的终端节点服务开始查询。
      * minimum: 0
      * @return offset
      */

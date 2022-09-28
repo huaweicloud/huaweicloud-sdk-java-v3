@@ -58,13 +58,18 @@ public class CreateEndpointRequestBody {
 
     private Boolean enableWhitelist;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "description")
+
+    private String description;
+
     public CreateEndpointRequestBody withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
     }
 
     /**
-     * 说明： 创建Interface类型Client必选。需要指定vpc_id对应VPC下已 创建的网络（network）的 ID，UUID格式。 详细内容请参考《虚拟私有云 API参考》中的“查询子 网”，详见响应消息中的 “id”字段。 创建连接Interface类型终端节 点服务的终端节点时，此参数 必选。 说明 ● VPC的子网网段不能与 198.19.128.0/17重叠 ● VPC路由表中自定义路由的目 的地址不能与 198.19.128.0/17重叠
+     * 说明： 创建Interface类型Client必选。 需要指定vpc_id对应VPC下已创建的网络（network）的ID，UUID格式。 详细内容请参考《虚拟私有云API参考》中的“查询子网”，详见响应消息中的“id”字段。 创建连接Interface类型终端节点服务的终端节点时，此参数必选。 说明 ● VPC的子网网段不能与198.19.128.0/17重叠 ● VPC路由表中自定义路由的目的地址不能与198.19.128.0/17重叠
      * @return subnetId
      */
     public String getSubnetId() {
@@ -98,7 +103,7 @@ public class CreateEndpointRequestBody {
     }
 
     /**
-     * 终端节点所在的VPC的ID。 详细内容请参考《虚拟私有云 API参考》中的“查询VPC”， 详见响应消息中的“id”字 段。
+     * 终端节点所在的VPC的ID。 详细内容请参考《虚拟私有云API参考》中的“查询VPC”， 详见响应消息中的“id”字段。
      * @return vpcId
      */
     public String getVpcId() {
@@ -115,7 +120,7 @@ public class CreateEndpointRequestBody {
     }
 
     /**
-     * 是否创建域名。 ● true：创建域名 ● false：不创建域名 默认值为false。 说明 当创建连接gateway类型终端节点服务的终端节点时，“enable_dns”设置为true或者false，均不创建域名。
+     * 是否创建域名。 ● true：创建域名 ● false：不创建域名 默认值为false。 说明 当创建连接gateway类型终端节点服务的终端节点时， “enable_dns”设置为true或者false，均不创建域名。
      * @return enableDns
      */
     public Boolean getEnableDns() {
@@ -181,7 +186,7 @@ public class CreateEndpointRequestBody {
     }
 
     /**
-     * 路由表ID列表。详细内容请参考《虚拟私有云 API参考》中的“查询VPC路由”，详见响应消息中的“id”字段。 创建连接gateway类型终端节点服务的终节点时，此参数必选。 说明 不设置此参数时，选择默认路由表。
+     * 路由表ID列表。详细内容请参考《虚拟私有云API参考》中的“查询VPC路由”， 详见响应消息中的“id”字段。 创建连接gateway类型终端节点服务的终节点时，此参数必选。 说明 不设置此参数时，选择默认路由表。
      * @return routetables
      */
     public List<String> getRoutetables() {
@@ -259,6 +264,23 @@ public class CreateEndpointRequestBody {
         this.enableWhitelist = enableWhitelist;
     }
 
+    public CreateEndpointRequestBody withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /**
+     * 描述字段，支持中英文字母、数字等字符，不支持“<”或“>”字符。
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -276,13 +298,22 @@ public class CreateEndpointRequestBody {
             && Objects.equals(this.routetables, createEndpointRequestBody.routetables)
             && Objects.equals(this.portIp, createEndpointRequestBody.portIp)
             && Objects.equals(this.whitelist, createEndpointRequestBody.whitelist)
-            && Objects.equals(this.enableWhitelist, createEndpointRequestBody.enableWhitelist);
+            && Objects.equals(this.enableWhitelist, createEndpointRequestBody.enableWhitelist)
+            && Objects.equals(this.description, createEndpointRequestBody.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(subnetId, endpointServiceId, vpcId, enableDns, tags, routetables, portIp, whitelist, enableWhitelist);
+        return Objects.hash(subnetId,
+            endpointServiceId,
+            vpcId,
+            enableDns,
+            tags,
+            routetables,
+            portIp,
+            whitelist,
+            enableWhitelist,
+            description);
     }
 
     @Override
@@ -298,6 +329,7 @@ public class CreateEndpointRequestBody {
         sb.append("    portIp: ").append(toIndentedString(portIp)).append("\n");
         sb.append("    whitelist: ").append(toIndentedString(whitelist)).append("\n");
         sb.append("    enableWhitelist: ").append(toIndentedString(enableWhitelist)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");
         return sb.toString();
     }

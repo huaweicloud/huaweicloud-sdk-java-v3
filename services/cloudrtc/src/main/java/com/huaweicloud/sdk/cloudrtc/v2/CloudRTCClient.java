@@ -312,6 +312,66 @@ public class CloudRTCClient {
     }
 
     /**
+     * 解散房间
+     *
+     * 调用此接口解散房间，将该房间中所有用户踢出房间。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param RemoveRoomRequest 请求对象
+     * @return RemoveRoomResponse
+     */
+    public RemoveRoomResponse removeRoom(RemoveRoomRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudRTCMeta.removeRoom);
+    }
+
+    /**
+     * 解散房间
+     *
+     * 调用此接口解散房间，将该房间中所有用户踢出房间。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param RemoveRoomRequest 请求对象
+     * @return SyncInvoker<RemoveRoomRequest, RemoveRoomResponse>
+     */
+    public SyncInvoker<RemoveRoomRequest, RemoveRoomResponse> removeRoomInvoker(RemoveRoomRequest request) {
+        return new SyncInvoker<RemoveRoomRequest, RemoveRoomResponse>(request, CloudRTCMeta.removeRoom, hcClient);
+    }
+
+    /**
+     * 踢除在线用户
+     *
+     * 调用此接口强制用户离开房间。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param RemoveUsersRequest 请求对象
+     * @return RemoveUsersResponse
+     */
+    public RemoveUsersResponse removeUsers(RemoveUsersRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudRTCMeta.removeUsers);
+    }
+
+    /**
+     * 踢除在线用户
+     *
+     * 调用此接口强制用户离开房间。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param RemoveUsersRequest 请求对象
+     * @return SyncInvoker<RemoveUsersRequest, RemoveUsersResponse>
+     */
+    public SyncInvoker<RemoveUsersRequest, RemoveUsersResponse> removeUsersInvoker(RemoveUsersRequest request) {
+        return new SyncInvoker<RemoveUsersRequest, RemoveUsersResponse>(request, CloudRTCMeta.removeUsers, hcClient);
+    }
+
+    /**
      * 查询单个应用
      *
      * 调用此接口查询单个应用详情。
@@ -689,6 +749,42 @@ public class CloudRTCClient {
         UpdateAutoRecordRequest request) {
         return new SyncInvoker<UpdateAutoRecordRequest, UpdateAutoRecordResponse>(request,
             CloudRTCMeta.updateAutoRecord, hcClient);
+    }
+
+    /**
+     * 更新单流任务
+     *
+     * 调用此接口修改单流任务。
+     * 
+     * 仅部分场景支持修改。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateIndividualStreamJobRequest 请求对象
+     * @return UpdateIndividualStreamJobResponse
+     */
+    public UpdateIndividualStreamJobResponse updateIndividualStreamJob(UpdateIndividualStreamJobRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudRTCMeta.updateIndividualStreamJob);
+    }
+
+    /**
+     * 更新单流任务
+     *
+     * 调用此接口修改单流任务。
+     * 
+     * 仅部分场景支持修改。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateIndividualStreamJobRequest 请求对象
+     * @return SyncInvoker<UpdateIndividualStreamJobRequest, UpdateIndividualStreamJobResponse>
+     */
+    public SyncInvoker<UpdateIndividualStreamJobRequest, UpdateIndividualStreamJobResponse> updateIndividualStreamJobInvoker(
+        UpdateIndividualStreamJobRequest request) {
+        return new SyncInvoker<UpdateIndividualStreamJobRequest, UpdateIndividualStreamJobResponse>(request,
+            CloudRTCMeta.updateIndividualStreamJob, hcClient);
     }
 
     /**

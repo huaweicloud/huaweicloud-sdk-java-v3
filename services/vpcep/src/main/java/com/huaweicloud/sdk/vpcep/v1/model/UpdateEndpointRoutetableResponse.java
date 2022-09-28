@@ -46,7 +46,7 @@ public class UpdateEndpointRoutetableResponse extends SdkResponse {
     }
 
     /**
-     * 路由表ID列表。节点的白名单。 此参数可以添加IPv4或CIDR： ● 当取值不为空时，表示将白 名单更新为取值所示内容。 ● 当取值为空时，表示删除所 有白名单。 默认为空列表。
+     * 路由表ID列表。节点的白名单。 此参数可以添加IPv4或CIDR： ● 当取值不为空时，表示将白名单更新为取值所示内容。 ● 当取值为空时，表示删除所有白名单。 默认为空列表。
      * @return routetables
      */
     public List<String> getRoutetables() {
@@ -79,7 +79,7 @@ public class UpdateEndpointRoutetableResponse extends SdkResponse {
     }
 
     /**
-     * 当修改终端节点子网路由表失败 时，返回错误提示信息
+     * 当修改终端节点子网路由表失败时，返回错误提示信息
      * @return error
      */
     public List<RoutetableInfoError> getError() {

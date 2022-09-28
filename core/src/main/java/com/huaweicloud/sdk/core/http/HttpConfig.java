@@ -22,7 +22,7 @@
 package com.huaweicloud.sdk.core.http;
 
 import com.huaweicloud.sdk.core.HttpListener;
-import com.huaweicloud.sdk.core.ssl.DefaultSSLSocketFactory;
+import com.huaweicloud.sdk.core.auth.SigningAlgorithm;
 
 import okhttp3.ConnectionPool;
 import okhttp3.Dispatcher;
@@ -71,15 +71,17 @@ public class HttpConfig {
 
     private int proxyPort;
 
-    private SSLSocketFactory sslSocketFactory = DefaultSSLSocketFactory.getDefaultSSLSocketFactory();
+    private SSLSocketFactory sslSocketFactory;
 
-    private X509TrustManager trustManager = DefaultSSLSocketFactory.getDefaultX509TrustManager();
+    private X509TrustManager trustManager;
 
     private List<HttpListener> httpListeners = new ArrayList<>();
 
     private ConnectionPool connectionPool = new ConnectionPool(5, 5L, TimeUnit.MINUTES);
 
     private Dispatcher dispatcher = new Dispatcher(DEFAULT_EXECUTOR_SERVICE);
+
+    private SigningAlgorithm signingAlgorithm = SigningAlgorithm.getDefault();
 
     public int getTimeout() {
         return timeout;
@@ -246,6 +248,19 @@ public class HttpConfig {
 
     public HttpConfig withDispatcher(Dispatcher dispatcher) {
         this.dispatcher = dispatcher;
+        return this;
+    }
+
+    public SigningAlgorithm getSigningAlgorithm() {
+        return signingAlgorithm;
+    }
+
+    public void setSigningAlgorithm(SigningAlgorithm signingAlgorithm) {
+        this.signingAlgorithm = signingAlgorithm;
+    }
+
+    public HttpConfig withSigningAlgorithm(SigningAlgorithm signingAlgorithm) {
+        this.signingAlgorithm = signingAlgorithm;
         return this;
     }
 }

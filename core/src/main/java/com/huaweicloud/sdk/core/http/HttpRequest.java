@@ -22,6 +22,7 @@
 package com.huaweicloud.sdk.core.http;
 
 import com.huaweicloud.sdk.core.Constants;
+import com.huaweicloud.sdk.core.auth.SigningAlgorithm;
 import com.huaweicloud.sdk.core.exception.SdkException;
 import com.huaweicloud.sdk.core.utils.StringUtils;
 
@@ -141,6 +142,11 @@ public interface HttpRequest {
             return this;
         }
 
+        public HttpRequestBuilder withSigningAlgorithm(SigningAlgorithm signingAlgorithm) {
+            httpRequest.signingAlgorithm = signingAlgorithm;
+            return this;
+        }
+
         public HttpRequest build() {
             return httpRequest.buildPathParamsString().buildQueryParamsString().buildUrl();
         }
@@ -176,6 +182,8 @@ public interface HttpRequest {
         private InputStream body;
 
         private Map<String, FormDataPart<?>> formData = new TreeMap<>();
+
+        private SigningAlgorithm signingAlgorithm = SigningAlgorithm.getDefault();
 
         @Override
         public HttpRequestBuilder builder() {
@@ -261,6 +269,11 @@ public interface HttpRequest {
         @Override
         public Map<String, FormDataPart<?>> getFormData() {
             return formData;
+        }
+
+        @Override
+        public SigningAlgorithm getSigningAlgorithm() {
+            return signingAlgorithm;
         }
 
         @Override
@@ -350,4 +363,6 @@ public interface HttpRequest {
     InputStream getBody();
 
     Map<String, FormDataPart<?>> getFormData();
+
+    SigningAlgorithm getSigningAlgorithm();
 }

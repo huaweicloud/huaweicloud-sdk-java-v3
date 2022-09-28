@@ -45,13 +45,18 @@ public class ListEndpointsRequest {
 
     private String sortDir;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_border_group")
+
+    private String publicBorderGroup;
+
     public ListEndpointsRequest withEndpointServiceName(String endpointServiceName) {
         this.endpointServiceName = endpointServiceName;
         return this;
     }
 
     /**
-     * 终端节点服务的名称，支持大小 写，前后模糊匹配。
+     * 终端节点服务的名称，支持大小写，前后模糊匹配。
      * @return endpointServiceName
      */
     public String getEndpointServiceName() {
@@ -102,8 +107,9 @@ public class ListEndpointsRequest {
     }
 
     /**
-     * 查询返回终端节点的数量限制，即 每页返回的资源个数。 取值范围：0~1000，取值一般为 10，20或者50，默认为10。
+     * 查询返回终端节点的数量限制，即每页返回的资源个数。 取值范围：0~1000，取值一般为10，20或者50，默认为10。
      * minimum: 1
+     * maximum: 1000
      * @return limit
      */
     public Integer getLimit() {
@@ -120,7 +126,7 @@ public class ListEndpointsRequest {
     }
 
     /**
-     * 偏移量。 偏移量为一个大于0小于终端节点 服务总个数的整数，表示从偏移量 后面的终端节点服务开始查询。
+     * 偏移量。 偏移量为一个大于0小于终端节点服务总个数的整数， 表示从偏移量后面的终端节点服务开始查询。
      * minimum: 0
      * @return offset
      */
@@ -138,7 +144,7 @@ public class ListEndpointsRequest {
     }
 
     /**
-     * 查询结果中终端节点列表的排序字 段，取值为： ● create_at：终端节点的创建时 间 ● update_at：终端节点的更新时 间 默认值为create_at。
+     * 查询结果中终端节点列表的排序字段，取值为： ● create_at：终端节点的创建时间 ● update_at：终端节点的更新时间 默认值为create_at。
      * @return sortKey
      */
     public String getSortKey() {
@@ -155,7 +161,7 @@ public class ListEndpointsRequest {
     }
 
     /**
-     * 查询结果中终端节点列表的排序方 式，取值为： ● desc：降序排序 ● asc：升序排序 默认值为desc。
+     * 查询结果中终端节点列表的排序方式，取值为： ● desc：降序排序 ● asc：升序排序 默认值为desc。
      * @return sortDir
      */
     public String getSortDir() {
@@ -164,6 +170,23 @@ public class ListEndpointsRequest {
 
     public void setSortDir(String sortDir) {
         this.sortDir = sortDir;
+    }
+
+    public ListEndpointsRequest withPublicBorderGroup(String publicBorderGroup) {
+        this.publicBorderGroup = publicBorderGroup;
+        return this;
+    }
+
+    /**
+     * 筛选结果中匹配边缘属性的EPS
+     * @return publicBorderGroup
+     */
+    public String getPublicBorderGroup() {
+        return publicBorderGroup;
+    }
+
+    public void setPublicBorderGroup(String publicBorderGroup) {
+        this.publicBorderGroup = publicBorderGroup;
     }
 
     @Override
@@ -181,12 +204,13 @@ public class ListEndpointsRequest {
             && Objects.equals(this.limit, listEndpointsRequest.limit)
             && Objects.equals(this.offset, listEndpointsRequest.offset)
             && Objects.equals(this.sortKey, listEndpointsRequest.sortKey)
-            && Objects.equals(this.sortDir, listEndpointsRequest.sortDir);
+            && Objects.equals(this.sortDir, listEndpointsRequest.sortDir)
+            && Objects.equals(this.publicBorderGroup, listEndpointsRequest.publicBorderGroup);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(endpointServiceName, vpcId, id, limit, offset, sortKey, sortDir);
+        return Objects.hash(endpointServiceName, vpcId, id, limit, offset, sortKey, sortDir, publicBorderGroup);
     }
 
     @Override
@@ -200,6 +224,7 @@ public class ListEndpointsRequest {
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    sortKey: ").append(toIndentedString(sortKey)).append("\n");
         sb.append("    sortDir: ").append(toIndentedString(sortDir)).append("\n");
+        sb.append("    publicBorderGroup: ").append(toIndentedString(publicBorderGroup)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -15,16 +15,16 @@ public class ListSpecifiedVersionDetailsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
 
-    private Version version;
+    private VersionObject version;
 
-    public ListSpecifiedVersionDetailsResponse withVersion(Version version) {
+    public ListSpecifiedVersionDetailsResponse withVersion(VersionObject version) {
         this.version = version;
         return this;
     }
 
-    public ListSpecifiedVersionDetailsResponse withVersion(Consumer<Version> versionSetter) {
+    public ListSpecifiedVersionDetailsResponse withVersion(Consumer<VersionObject> versionSetter) {
         if (this.version == null) {
-            this.version = new Version();
+            this.version = new VersionObject();
             versionSetter.accept(this.version);
         }
 
@@ -35,11 +35,11 @@ public class ListSpecifiedVersionDetailsResponse extends SdkResponse {
      * Get version
      * @return version
      */
-    public Version getVersion() {
+    public VersionObject getVersion() {
         return version;
     }
 
-    public void setVersion(Version version) {
+    public void setVersion(VersionObject version) {
         this.version = version;
     }
 

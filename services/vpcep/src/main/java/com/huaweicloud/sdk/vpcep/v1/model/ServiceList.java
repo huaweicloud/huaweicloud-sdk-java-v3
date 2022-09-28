@@ -39,9 +39,9 @@ public class ServiceList {
     private String serviceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "service_type")
+    @JsonProperty(value = "server_type")
 
-    private String serviceType;
+    private String serverType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_id")
@@ -142,29 +142,29 @@ public class ServiceList {
     private StatusEnum status;
 
     /**
-     * 终端节点服务类型。 终端节点服务类型包括“网关（gataway） 型”和“接口（interface）型”： ● gataway：由运维人员配置。用户无需创 建，可直接使用。 ● interface：包括运维人员配置的云服务和用 户自己创建的私有服务。其中，运维人员配 置的云服务无需创建，用户可直接使用。 您可以通过创建终端节点创建访问Gateway和 Interface类型终端节点服务的终端节点。
+     * 终端节点服务类型。 终端节点服务类型包括“网关（gataway）型”和“接口（interface）型”： ● gataway：由运维人员配置。用户无需创建，可直接使用。 ● interface：包括运维人员配置的云服务和用户自己创建的私有服务。 其中，运维人员配置的云服务无需创建，用户可直接使用。 您可以通过创建终端节点创建访问Gateway和Interface类型终端节点服务的终端节点。
      */
-    public static final class ServerTypeEnum {
+    public static final class ServiceTypeEnum {
 
         /**
          * Enum VM for value: "VM"
          */
-        public static final ServerTypeEnum VM = new ServerTypeEnum("VM");
+        public static final ServiceTypeEnum VM = new ServiceTypeEnum("VM");
 
         /**
          * Enum VIP for value: "VIP"
          */
-        public static final ServerTypeEnum VIP = new ServerTypeEnum("VIP");
+        public static final ServiceTypeEnum VIP = new ServiceTypeEnum("VIP");
 
         /**
          * Enum LB for value: "LB"
          */
-        public static final ServerTypeEnum LB = new ServerTypeEnum("LB");
+        public static final ServiceTypeEnum LB = new ServiceTypeEnum("LB");
 
-        private static final Map<String, ServerTypeEnum> STATIC_FIELDS = createStaticFields();
+        private static final Map<String, ServiceTypeEnum> STATIC_FIELDS = createStaticFields();
 
-        private static Map<String, ServerTypeEnum> createStaticFields() {
-            Map<String, ServerTypeEnum> map = new HashMap<>();
+        private static Map<String, ServiceTypeEnum> createStaticFields() {
+            Map<String, ServiceTypeEnum> map = new HashMap<>();
             map.put("VM", VM);
             map.put("VIP", VIP);
             map.put("LB", LB);
@@ -173,7 +173,7 @@ public class ServiceList {
 
         private String value;
 
-        ServerTypeEnum(String value) {
+        ServiceTypeEnum(String value) {
             this.value = value;
         }
 
@@ -188,22 +188,22 @@ public class ServiceList {
         }
 
         @JsonCreator
-        public static ServerTypeEnum fromValue(String value) {
+        public static ServiceTypeEnum fromValue(String value) {
             if (value == null) {
                 return null;
             }
-            ServerTypeEnum result = STATIC_FIELDS.get(value);
+            ServiceTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = new ServerTypeEnum(value);
+                result = new ServiceTypeEnum(value);
             }
             return result;
         }
 
-        public static ServerTypeEnum valueOf(String value) {
+        public static ServiceTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ServerTypeEnum result = STATIC_FIELDS.get(value);
+            ServiceTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -212,8 +212,8 @@ public class ServiceList {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj instanceof ServerTypeEnum) {
-                return this.value.equals(((ServerTypeEnum) obj).value);
+            if (obj instanceof ServiceTypeEnum) {
+                return this.value.equals(((ServiceTypeEnum) obj).value);
             }
             return false;
         }
@@ -225,9 +225,9 @@ public class ServiceList {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "server_type")
+    @JsonProperty(value = "service_type")
 
-    private ServerTypeEnum serverType;
+    private ServiceTypeEnum serviceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
@@ -265,7 +265,7 @@ public class ServiceList {
     private Integer connectionCount;
 
     /**
-     * 用于控制是否将客户端的源IP、源端口、 marker_id等信息携带到服务端。信息携带支 持两种方式： ● TCP TOA：表示将客户端信息插入到tcp option字段中携带至服务端。 说明 仅当后端资源为OBS时，支持TCP TOA类型信息 携带方式。 ● Proxy Protocol：表示将客户端相关信息插 入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置 才有效。 参数的取值包括： ● close：表示关闭代理协议。 ● toa_open：表示开启代理协议 “tcp_toa”。 ● proxy_open：表示开启代理协议 “proxy_protocol”。 ● open：表示同时开启代理协议“tcp_toa” 和“proxy_protocol”。 默认值为“close”。
+     * 用于控制是否将客户端的源IP、源端口、marker_id等信息携带到服务端。 信息携带支持两种方式： ● TCP TOA：表示将客户端信息插入到tcp，option字段中携带至服务端。 说明 仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。 ● Proxy Protocol：表示将客户端相关信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 参数的取值包括： ● close：表示关闭代理协议。 ● toa_open：表示开启代理协议“tcp_toa”。 ● proxy_open：表示开启代理协议“proxy_protocol”。 ● open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。 默认值为“close”。
      */
     public static final class TcpProxyEnum {
 
@@ -363,6 +363,16 @@ public class ServiceList {
 
     private List<Error> error = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "description")
+
+    private String description;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_border_group")
+
+    private String publicBorderGroup;
+
     public ServiceList withId(String id) {
         this.id = id;
         return this;
@@ -386,7 +396,7 @@ public class ServiceList {
     }
 
     /**
-     * 标识终端节点服务后端资源的ID，格式为通用 唯一识别码（Universally Unique Identifier， 下文简称UUID）。取值为： ● LB类型：增强型负载均衡器内网IP对应的端 口ID。 ● VM类型：弹性云服务器IP地址对应的网卡 ID。 ● VIP类型：虚拟资源所在物理服务器对应的 网卡ID。
+     * 标识终端节点服务后端资源的ID， 格式为通用唯一识别码（Universally Unique Identifier，下文简称UUID）。取值为： ● LB类型：增强型负载均衡器内网IP对应的端口ID。 ● VM类型：弹性云服务器IP地址对应的网卡ID。 ● VIP类型：虚拟资源所在物理服务器对应的网卡ID。
      * @return portId
      */
     public String getPortId() {
@@ -403,7 +413,7 @@ public class ServiceList {
     }
 
     /**
-     * 虚拟IP的网卡ID。 仅当“port_id”为“VIP类型”时，返回该参 数。
+     * 虚拟IP的网卡ID。 仅当“port_id”为“VIP类型”时，返回该参数。
      * @return vipPortId
      */
     public String getVipPortId() {
@@ -431,21 +441,21 @@ public class ServiceList {
         this.serviceName = serviceName;
     }
 
-    public ServiceList withServiceType(String serviceType) {
-        this.serviceType = serviceType;
+    public ServiceList withServerType(String serverType) {
+        this.serverType = serverType;
         return this;
     }
 
     /**
      * 资源类型。 ● VM：云服务器。 ● VIP：虚拟IP。 ● LB：增强负载均衡型。
-     * @return serviceType
+     * @return serverType
      */
-    public String getServiceType() {
-        return serviceType;
+    public String getServerType() {
+        return serverType;
     }
 
-    public void setServiceType(String serviceType) {
-        this.serviceType = serviceType;
+    public void setServerType(String serverType) {
+        this.serverType = serverType;
     }
 
     public ServiceList withVpcId(String vpcId) {
@@ -471,7 +481,7 @@ public class ServiceList {
     }
 
     /**
-     * 是否需要审批。 ● false：不需要审批，创建的终端节点连接直 接为accepted状态。 ● true：需要审批，创建的终端节点连接为 pendingAcceptance状态，需要终端节点服 务所属用户审核后方可使用。
+     * 是否需要审批。 ● false：不需要审批，创建的终端节点连接直接为accepted状态。 ● true：需要审批，创建的终端节点连接为pendingAcceptance状态， 需要终端节点服务所属用户审核后方可使用。
      * @return approvalEnabled
      */
     public Boolean getApprovalEnabled() {
@@ -499,21 +509,21 @@ public class ServiceList {
         this.status = status;
     }
 
-    public ServiceList withServerType(ServerTypeEnum serverType) {
-        this.serverType = serverType;
+    public ServiceList withServiceType(ServiceTypeEnum serviceType) {
+        this.serviceType = serviceType;
         return this;
     }
 
     /**
-     * 终端节点服务类型。 终端节点服务类型包括“网关（gataway） 型”和“接口（interface）型”： ● gataway：由运维人员配置。用户无需创 建，可直接使用。 ● interface：包括运维人员配置的云服务和用 户自己创建的私有服务。其中，运维人员配 置的云服务无需创建，用户可直接使用。 您可以通过创建终端节点创建访问Gateway和 Interface类型终端节点服务的终端节点。
-     * @return serverType
+     * 终端节点服务类型。 终端节点服务类型包括“网关（gataway）型”和“接口（interface）型”： ● gataway：由运维人员配置。用户无需创建，可直接使用。 ● interface：包括运维人员配置的云服务和用户自己创建的私有服务。 其中，运维人员配置的云服务无需创建，用户可直接使用。 您可以通过创建终端节点创建访问Gateway和Interface类型终端节点服务的终端节点。
+     * @return serviceType
      */
-    public ServerTypeEnum getServerType() {
-        return serverType;
+    public ServiceTypeEnum getServiceType() {
+        return serviceType;
     }
 
-    public void setServerType(ServerTypeEnum serverType) {
-        this.serverType = serverType;
+    public void setServiceType(ServiceTypeEnum serviceType) {
+        this.serviceType = serviceType;
     }
 
     public ServiceList withCreatedAt(String createdAt) {
@@ -522,7 +532,7 @@ public class ServiceList {
     }
 
     /**
-     * 终端节点服务的创建时间。 采用UTC时间格式，格式为：YYYY-MMDDTHH: MM:SSZ
+     * 终端节点服务的创建时间。 采用UTC时间格式，格式为：YYYY-MMDDTHH:MM:SSZ
      * @return createdAt
      */
     public String getCreatedAt() {
@@ -539,7 +549,7 @@ public class ServiceList {
     }
 
     /**
-     * 终端节点服务的更新时间。 采用UTC时间格式，格式为：YYYY-MMDDTHH: MM:SSZ
+     * 终端节点服务的更新时间。 采用UTC时间格式，格式为：YYYY-MMDDTHH:MM:SSZ
      * @return updatedAt
      */
     public String getUpdatedAt() {
@@ -606,7 +616,7 @@ public class ServiceList {
     }
 
     /**
-     * 服务开放的端口映射列表，详细内容请参见表 4-17 同一个终端节点服务下，不允许重复的端口映 射。若多个终端节点服务共用一个port_id，则 终端节点服务之间的所有端口映射的 server_port和protocol的组合不能重复。
+     * 服务开放的端口映射列表 同一个终端节点服务下，不允许重复的端口映射。 若多个终端节点服务共用一个port_id， 则终端节点服务之间的所有端口映射的server_port和protocol的组合不能重复。
      * @return ports
      */
     public List<PortList> getPorts() {
@@ -673,7 +683,7 @@ public class ServiceList {
     }
 
     /**
-     * 用于控制是否将客户端的源IP、源端口、 marker_id等信息携带到服务端。信息携带支 持两种方式： ● TCP TOA：表示将客户端信息插入到tcp option字段中携带至服务端。 说明 仅当后端资源为OBS时，支持TCP TOA类型信息 携带方式。 ● Proxy Protocol：表示将客户端相关信息插 入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置 才有效。 参数的取值包括： ● close：表示关闭代理协议。 ● toa_open：表示开启代理协议 “tcp_toa”。 ● proxy_open：表示开启代理协议 “proxy_protocol”。 ● open：表示同时开启代理协议“tcp_toa” 和“proxy_protocol”。 默认值为“close”。
+     * 用于控制是否将客户端的源IP、源端口、marker_id等信息携带到服务端。 信息携带支持两种方式： ● TCP TOA：表示将客户端信息插入到tcp，option字段中携带至服务端。 说明 仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。 ● Proxy Protocol：表示将客户端相关信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 参数的取值包括： ● close：表示关闭代理协议。 ● toa_open：表示开启代理协议“tcp_toa”。 ● proxy_open：表示开启代理协议“proxy_protocol”。 ● open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。 默认值为“close”。
      * @return tcpProxy
      */
     public TcpProxyEnum getTcpProxy() {
@@ -717,6 +727,40 @@ public class ServiceList {
         this.error = error;
     }
 
+    public ServiceList withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /**
+     * 描述字段，支持中英文字母、数字等字符，不支持“<”或“>”字符。
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public ServiceList withPublicBorderGroup(String publicBorderGroup) {
+        this.publicBorderGroup = publicBorderGroup;
+        return this;
+    }
+
+    /**
+     * 终端节点服务对应Pool的Public Border Group信息
+     * @return publicBorderGroup
+     */
+    public String getPublicBorderGroup() {
+        return publicBorderGroup;
+    }
+
+    public void setPublicBorderGroup(String publicBorderGroup) {
+        this.publicBorderGroup = publicBorderGroup;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -729,18 +773,19 @@ public class ServiceList {
         return Objects.equals(this.id, serviceList.id) && Objects.equals(this.portId, serviceList.portId)
             && Objects.equals(this.vipPortId, serviceList.vipPortId)
             && Objects.equals(this.serviceName, serviceList.serviceName)
-            && Objects.equals(this.serviceType, serviceList.serviceType)
-            && Objects.equals(this.vpcId, serviceList.vpcId)
+            && Objects.equals(this.serverType, serviceList.serverType) && Objects.equals(this.vpcId, serviceList.vpcId)
             && Objects.equals(this.approvalEnabled, serviceList.approvalEnabled)
             && Objects.equals(this.status, serviceList.status)
-            && Objects.equals(this.serverType, serviceList.serverType)
+            && Objects.equals(this.serviceType, serviceList.serviceType)
             && Objects.equals(this.createdAt, serviceList.createdAt)
             && Objects.equals(this.updatedAt, serviceList.updatedAt)
             && Objects.equals(this.projectId, serviceList.projectId)
             && Objects.equals(this.domainId, serviceList.domainId) && Objects.equals(this.ports, serviceList.ports)
             && Objects.equals(this.tags, serviceList.tags)
             && Objects.equals(this.connectionCount, serviceList.connectionCount)
-            && Objects.equals(this.tcpProxy, serviceList.tcpProxy) && Objects.equals(this.error, serviceList.error);
+            && Objects.equals(this.tcpProxy, serviceList.tcpProxy) && Objects.equals(this.error, serviceList.error)
+            && Objects.equals(this.description, serviceList.description)
+            && Objects.equals(this.publicBorderGroup, serviceList.publicBorderGroup);
     }
 
     @Override
@@ -749,11 +794,11 @@ public class ServiceList {
             portId,
             vipPortId,
             serviceName,
-            serviceType,
+            serverType,
             vpcId,
             approvalEnabled,
             status,
-            serverType,
+            serviceType,
             createdAt,
             updatedAt,
             projectId,
@@ -762,7 +807,9 @@ public class ServiceList {
             tags,
             connectionCount,
             tcpProxy,
-            error);
+            error,
+            description,
+            publicBorderGroup);
     }
 
     @Override
@@ -773,11 +820,11 @@ public class ServiceList {
         sb.append("    portId: ").append(toIndentedString(portId)).append("\n");
         sb.append("    vipPortId: ").append(toIndentedString(vipPortId)).append("\n");
         sb.append("    serviceName: ").append(toIndentedString(serviceName)).append("\n");
-        sb.append("    serviceType: ").append(toIndentedString(serviceType)).append("\n");
+        sb.append("    serverType: ").append(toIndentedString(serverType)).append("\n");
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    approvalEnabled: ").append(toIndentedString(approvalEnabled)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
-        sb.append("    serverType: ").append(toIndentedString(serverType)).append("\n");
+        sb.append("    serviceType: ").append(toIndentedString(serviceType)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
@@ -787,6 +834,8 @@ public class ServiceList {
         sb.append("    connectionCount: ").append(toIndentedString(connectionCount)).append("\n");
         sb.append("    tcpProxy: ").append(toIndentedString(tcpProxy)).append("\n");
         sb.append("    error: ").append(toIndentedString(error)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    publicBorderGroup: ").append(toIndentedString(publicBorderGroup)).append("\n");
         sb.append("}");
         return sb.toString();
     }

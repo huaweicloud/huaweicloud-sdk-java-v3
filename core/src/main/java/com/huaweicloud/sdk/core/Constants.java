@@ -29,6 +29,12 @@ public final class Constants {
 
     public static final String SDK_SIGNING_ALGORITHM = "SDK-HMAC-SHA256";
 
+    public static final String SM3_SIGNING_ALGORITHM = "SDK-HMAC-SM3";
+
+    public static final String SECURITY_PROVIDER_BGM = "BGMProvider";
+
+    public static final String TLS_PROTOCOL_GM = "GMTLS";
+
     public static final String X_SDK_DATE = "X-Sdk-Date";
 
     public static final String HTTP_SCHEME = "http";
@@ -62,6 +68,8 @@ public final class Constants {
     public static final String UNSIGNED_PAYLOAD = "UNSIGNED-PAYLOAD";
 
     public static final String CUSTOMIZATION = "Customization";
+
+    public static final String ISO_8601_BASIC_FORMAT = "yyyyMMdd'T'HHmmss'Z'";
 
     /**
      * Supported media type

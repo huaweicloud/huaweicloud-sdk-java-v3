@@ -16,7 +16,7 @@ import java.util.Objects;
 public class Quotas {
 
     /**
-     * 资源类型。支持根据资源类型过滤查询指 定类型的配额。 ● endpoint_service：终端节点服务 ● endpoint：终端节点
+     * 资源类型。支持根据资源类型过滤查询指定类型的配额。 ● endpoint_service：终端节点服务 ● endpoint：终端节点
      */
     public static final class TypeEnum {
 
@@ -113,7 +113,7 @@ public class Quotas {
     }
 
     /**
-     * 资源类型。支持根据资源类型过滤查询指 定类型的配额。 ● endpoint_service：终端节点服务 ● endpoint：终端节点
+     * 资源类型。支持根据资源类型过滤查询指定类型的配额。 ● endpoint_service：终端节点服务 ● endpoint：终端节点
      * @return type
      */
     public TypeEnum getType() {
@@ -147,7 +147,7 @@ public class Quotas {
     }
 
     /**
-     * 资源的最大配额数。 取值范围：各类型资源默认配额数的最大 值。
+     * 资源的最大配额数。 取值范围：各类型资源默认配额数的最大值。
      * @return quota
      */
     public Integer getQuota() {

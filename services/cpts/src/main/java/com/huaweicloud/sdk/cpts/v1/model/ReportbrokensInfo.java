@@ -21,7 +21,7 @@ public class ReportbrokensInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "commonTimestamps")
 
-    private List<String> commonTimestamps = null;
+    private List<Long> commonTimestamps = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "respcode_brokens")
@@ -64,12 +64,12 @@ public class ReportbrokensInfo {
         this.brandBrokens = brandBrokens;
     }
 
-    public ReportbrokensInfo withCommonTimestamps(List<String> commonTimestamps) {
+    public ReportbrokensInfo withCommonTimestamps(List<Long> commonTimestamps) {
         this.commonTimestamps = commonTimestamps;
         return this;
     }
 
-    public ReportbrokensInfo addCommonTimestampsItem(String commonTimestampsItem) {
+    public ReportbrokensInfo addCommonTimestampsItem(Long commonTimestampsItem) {
         if (this.commonTimestamps == null) {
             this.commonTimestamps = new ArrayList<>();
         }
@@ -77,7 +77,7 @@ public class ReportbrokensInfo {
         return this;
     }
 
-    public ReportbrokensInfo withCommonTimestamps(Consumer<List<String>> commonTimestampsSetter) {
+    public ReportbrokensInfo withCommonTimestamps(Consumer<List<Long>> commonTimestampsSetter) {
         if (this.commonTimestamps == null) {
             this.commonTimestamps = new ArrayList<>();
         }
@@ -89,11 +89,11 @@ public class ReportbrokensInfo {
      * 时间戳
      * @return commonTimestamps
      */
-    public List<String> getCommonTimestamps() {
+    public List<Long> getCommonTimestamps() {
         return commonTimestamps;
     }
 
-    public void setCommonTimestamps(List<String> commonTimestamps) {
+    public void setCommonTimestamps(List<Long> commonTimestamps) {
         this.commonTimestamps = commonTimestamps;
     }
 

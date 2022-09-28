@@ -160,6 +160,7 @@ the [CHANGELOG.md](https://github.com/huaweicloud/huaweicloud-sdk-java-v3/blob/m
     * [1.2 Network Proxy](#12-network-proxy-top)
     * [1.3 Timeout Configuration](#13-timeout-configuration-top)
     * [1.4 SSL Certification](#14-ssl-certification-top)
+    * [1.5 Signing Algorithm](#15-signing-algorithm-top)
 * [2. Credentials Configuration](#2-credentials-configuration-top)
     * [2.1 Use Permanent AK&SK](#21-use-permanent-aksk-top)
     * [2.2 Use Temporary AK&SK](#22-use-temporary-aksk-top)
@@ -192,6 +193,8 @@ the [CHANGELOG.md](https://github.com/huaweicloud/huaweicloud-sdk-java-v3/blob/m
 #### 1.1 Default Configuration [:top:](#user-manual-top)
 
 ``` java
+import com.huaweicloud.sdk.core.http.HttpConfig;
+
 // Use default configuration
 HttpConfig config = HttpConfig.getDefaultHttpConfig();
 ```
@@ -227,9 +230,21 @@ config.withIgnoreSSLVerification(true);
 Customized configuration:
 
 ```java
-// Configure SSLSocketFactory and TrustManager
+// Configure SSLSocketFactory and TrustManager, user implementation is required.
 config.withSSLSocketFactory(sslSocketFactory).
     withX509TrustManager(trustManager);
+```
+
+#### 1.5 Signing Algorithm [:top:](#user-manual-top)
+
+```java
+import com.huaweicloud.sdk.core.auth.SigningAlgorithm;
+ 
+// Default signing algorithm is HMAC_SHA256
+config.withSigningAlgorithm(SigningAlgorithm.HMAC_SHA256);
+ 
+// JDK8u302+ is required when using HMAC_SM3
+config.withSigningAlgorithm(SigningAlgorithm.HMAC_SM3);
 ```
 
 ### 2. Credentials Configuration [:top:](#user-manual-top)

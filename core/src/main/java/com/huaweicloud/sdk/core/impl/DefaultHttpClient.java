@@ -30,6 +30,9 @@ import com.huaweicloud.sdk.core.http.HttpClient;
 import com.huaweicloud.sdk.core.http.HttpConfig;
 import com.huaweicloud.sdk.core.http.HttpRequest;
 import com.huaweicloud.sdk.core.http.HttpResponse;
+import com.huaweicloud.sdk.core.auth.SigningAlgorithm;
+import com.huaweicloud.sdk.core.ssl.DefaultSSLSocketFactory;
+import com.huaweicloud.sdk.core.ssl.GMSSLSocketFactory;
 import com.huaweicloud.sdk.core.ssl.IgnoreSSLVerificationFactory;
 import com.huaweicloud.sdk.core.utils.ExceptionUtils;
 import com.huaweicloud.sdk.core.utils.StringUtils;
@@ -95,12 +98,22 @@ public class DefaultHttpClient implements HttpClient {
         clientBuilder.dispatcher(httpConfig.getDispatcher());
         clientBuilder.connectTimeout(httpConfig.getTimeout(), TimeUnit.SECONDS).readTimeout(DEFAULT_READ_TIMEOUT,
                 TimeUnit.SECONDS);
-        if (httpConfig.isIgnoreSSLVerification()) {
-            clientBuilder.hostnameVerifier(IgnoreSSLVerificationFactory.getHostnameVerifier()).sslSocketFactory(
-                    IgnoreSSLVerificationFactory.getSSLContext().getSocketFactory(),
-                    IgnoreSSLVerificationFactory.getTrustAllManager());
-        } else {
+
+        if (Objects.nonNull(httpConfig.getSSLSocketFactory()) && Objects.nonNull(httpConfig.getX509TrustManager())) {
             clientBuilder.sslSocketFactory(httpConfig.getSSLSocketFactory(), httpConfig.getX509TrustManager());
+        } else if (httpConfig.isIgnoreSSLVerification()) {
+            clientBuilder.hostnameVerifier(IgnoreSSLVerificationFactory.getHostnameVerifier())
+                    .sslSocketFactory(
+                            IgnoreSSLVerificationFactory.getSSLContext().getSocketFactory(),
+                            IgnoreSSLVerificationFactory.getTrustAllManager());
+        } else if (httpConfig.getSigningAlgorithm() == SigningAlgorithm.HMAC_SHA256) {
+            clientBuilder.sslSocketFactory(
+                    DefaultSSLSocketFactory.getDefaultSSLSocketFactory(),
+                    DefaultSSLSocketFactory.getDefaultX509TrustManager());
+        } else if (httpConfig.getSigningAlgorithm() == SigningAlgorithm.HMAC_SM3) {
+            clientBuilder.sslSocketFactory(
+                    GMSSLSocketFactory.getSSLContext().getSocketFactory(),
+                    GMSSLSocketFactory.getX509TrustManager());
         }
 
         clientBuilder.protocols(Collections.singletonList(Protocol.HTTP_1_1));

@@ -94,6 +94,80 @@ public class VpcepAsyncClient {
     }
 
     /**
+     * 批量添加或移除终端节点服务的白名单
+     *
+     * 功能介绍
+     * 批量添加当前用户下终端节点服务的白名单，支持添加描述信息。
+     * 说明
+     * 本帐号默认在自身用户的终端节点服务的白名单中。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param BatchAddEndpointServicePermissionsRequest 请求对象
+     * @return CompletableFuture<BatchAddEndpointServicePermissionsResponse>
+     */
+    public CompletableFuture<BatchAddEndpointServicePermissionsResponse> batchAddEndpointServicePermissionsAsync(
+        BatchAddEndpointServicePermissionsRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcepMeta.batchAddEndpointServicePermissions);
+    }
+
+    /**
+     * 批量添加或移除终端节点服务的白名单
+     *
+     * 功能介绍
+     * 批量添加当前用户下终端节点服务的白名单，支持添加描述信息。
+     * 说明
+     * 本帐号默认在自身用户的终端节点服务的白名单中。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param BatchAddEndpointServicePermissionsRequest 请求对象
+     * @return AsyncInvoker<BatchAddEndpointServicePermissionsRequest, BatchAddEndpointServicePermissionsResponse>
+     */
+    public AsyncInvoker<BatchAddEndpointServicePermissionsRequest, BatchAddEndpointServicePermissionsResponse> batchAddEndpointServicePermissionsAsyncInvoker(
+        BatchAddEndpointServicePermissionsRequest request) {
+        return new AsyncInvoker<BatchAddEndpointServicePermissionsRequest, BatchAddEndpointServicePermissionsResponse>(
+            request, VpcepMeta.batchAddEndpointServicePermissions, hcClient);
+    }
+
+    /**
+     * 批量添加或移除终端节点服务的白名单
+     *
+     * 功能介绍
+     * 批量删除当前用户下终端节点服务的白名单
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param BatchRemoveEndpointServicePermissionsRequest 请求对象
+     * @return CompletableFuture<BatchRemoveEndpointServicePermissionsResponse>
+     */
+    public CompletableFuture<BatchRemoveEndpointServicePermissionsResponse> batchRemoveEndpointServicePermissionsAsync(
+        BatchRemoveEndpointServicePermissionsRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcepMeta.batchRemoveEndpointServicePermissions);
+    }
+
+    /**
+     * 批量添加或移除终端节点服务的白名单
+     *
+     * 功能介绍
+     * 批量删除当前用户下终端节点服务的白名单
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param BatchRemoveEndpointServicePermissionsRequest 请求对象
+     * @return AsyncInvoker<BatchRemoveEndpointServicePermissionsRequest, BatchRemoveEndpointServicePermissionsResponse>
+     */
+    public AsyncInvoker<BatchRemoveEndpointServicePermissionsRequest, BatchRemoveEndpointServicePermissionsResponse> batchRemoveEndpointServicePermissionsAsyncInvoker(
+        BatchRemoveEndpointServicePermissionsRequest request) {
+        return new AsyncInvoker<BatchRemoveEndpointServicePermissionsRequest, BatchRemoveEndpointServicePermissionsResponse>(
+            request, VpcepMeta.batchRemoveEndpointServicePermissions, hcClient);
+    }
+
+    /**
      * 创建终端节点
      *
      * 功能介绍
@@ -131,9 +205,11 @@ public class VpcepAsyncClient {
      * 创建终端节点服务
      *
      * 功能介绍
-     * 创建终端节点服务，允许其他用户创建终端节点连接您创建的终端节点服务，使用您所提供的服务。
+     * 创建终端节点服务，允许其他用户创建终端节点连接您创建的终端节点服务，
+     * 使用您所提供的服务。
      * 说明
-     * 该接口为异步接口，调用成功会返回200状态码，说明请求已正常下发。通常创建终端节点服务需要1~2分钟，可以通过查询终端节点服务详情查看创建结果。
+     * 该接口为异步接口，调用成功会返回200状态码，说明请求已正常下发。
+     * 通常创建终端节点服务需要1~2分钟，可以通过查询终端节点服务详情查看创建结果。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -150,9 +226,11 @@ public class VpcepAsyncClient {
      * 创建终端节点服务
      *
      * 功能介绍
-     * 创建终端节点服务，允许其他用户创建终端节点连接您创建的终端节点服务，使用您所提供的服务。
+     * 创建终端节点服务，允许其他用户创建终端节点连接您创建的终端节点服务，
+     * 使用您所提供的服务。
      * 说明
-     * 该接口为异步接口，调用成功会返回200状态码，说明请求已正常下发。通常创建终端节点服务需要1~2分钟，可以通过查询终端节点服务详情查看创建结果。
+     * 该接口为异步接口，调用成功会返回200状态码，说明请求已正常下发。
+     * 通常创建终端节点服务需要1~2分钟，可以通过查询终端节点服务详情查看创建结果。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -198,6 +276,41 @@ public class VpcepAsyncClient {
         DeleteEndpointRequest request) {
         return new AsyncInvoker<DeleteEndpointRequest, DeleteEndpointResponse>(request, VpcepMeta.deleteEndpoint,
             hcClient);
+    }
+
+    /**
+     * 修改终端节点路由表
+     *
+     * 功能介绍
+     * 删除网关型终端节点policy。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteEndpointPolicyRequest 请求对象
+     * @return CompletableFuture<DeleteEndpointPolicyResponse>
+     */
+    public CompletableFuture<DeleteEndpointPolicyResponse> deleteEndpointPolicyAsync(
+        DeleteEndpointPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcepMeta.deleteEndpointPolicy);
+    }
+
+    /**
+     * 修改终端节点路由表
+     *
+     * 功能介绍
+     * 删除网关型终端节点policy。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteEndpointPolicyRequest 请求对象
+     * @return AsyncInvoker<DeleteEndpointPolicyRequest, DeleteEndpointPolicyResponse>
+     */
+    public AsyncInvoker<DeleteEndpointPolicyRequest, DeleteEndpointPolicyResponse> deleteEndpointPolicyAsyncInvoker(
+        DeleteEndpointPolicyRequest request) {
+        return new AsyncInvoker<DeleteEndpointPolicyRequest, DeleteEndpointPolicyResponse>(request,
+            VpcepMeta.deleteEndpointPolicy, hcClient);
     }
 
     /**
@@ -411,7 +524,7 @@ public class VpcepAsyncClient {
      * 查询终端节点服务概要
      *
      * 功能介绍
-     * 查询终端节点服务的概要信息，此接口是供创建终端节点的用户来查询需要连接的终端节点服务信息。此接口既可以方便其他用户查询到您的终端节点服务概要信息又可以避免您的终端节点服务的细节信息暴露给其他用户。
+     * 查询终端节点服务的概要信息， 此接口是供创建终端节点的用户来查询需要连接的终端节点服务信息。 此接口既可以方便其他用户查询到您的终端节点服务概要信息, 又可以避免您的终端节点服务的细节信息暴露给其他用户。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -428,7 +541,7 @@ public class VpcepAsyncClient {
      * 查询终端节点服务概要
      *
      * 功能介绍
-     * 查询终端节点服务的概要信息，此接口是供创建终端节点的用户来查询需要连接的终端节点服务信息。此接口既可以方便其他用户查询到您的终端节点服务概要信息又可以避免您的终端节点服务的细节信息暴露给其他用户。
+     * 查询终端节点服务的概要信息， 此接口是供创建终端节点的用户来查询需要连接的终端节点服务信息。 此接口既可以方便其他用户查询到您的终端节点服务概要信息, 又可以避免您的终端节点服务的细节信息暴露给其他用户。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -519,7 +632,8 @@ public class VpcepAsyncClient {
      * 查询公共终端节点服务列表
      *
      * 功能介绍
-     * 查询公共终端节点服务的列表，公共终端节点服务是所有用户可见且可连接的终端节点服务，由运维人员创建，用户可直接使用，但无权创建。
+     * 查询公共终端节点服务的列表，公共终端节点服务是所有用户可见且可连接的终端节点服务，
+     * 由运维人员创建，用户可直接使用，但无权创建。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -536,7 +650,8 @@ public class VpcepAsyncClient {
      * 查询公共终端节点服务列表
      *
      * 功能介绍
-     * 查询公共终端节点服务的列表，公共终端节点服务是所有用户可见且可连接的终端节点服务，由运维人员创建，用户可直接使用，但无权创建。
+     * 查询公共终端节点服务的列表，公共终端节点服务是所有用户可见且可连接的终端节点服务，
+     * 由运维人员创建，用户可直接使用，但无权创建。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -620,6 +735,76 @@ public class VpcepAsyncClient {
     }
 
     /**
+     * 更新终端节点连接描述
+     *
+     * 功能介绍：
+     *      更新终端节点服务连接的终端节点的描述。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateEndpointConnectionsDescRequest 请求对象
+     * @return CompletableFuture<UpdateEndpointConnectionsDescResponse>
+     */
+    public CompletableFuture<UpdateEndpointConnectionsDescResponse> updateEndpointConnectionsDescAsync(
+        UpdateEndpointConnectionsDescRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcepMeta.updateEndpointConnectionsDesc);
+    }
+
+    /**
+     * 更新终端节点连接描述
+     *
+     * 功能介绍：
+     *      更新终端节点服务连接的终端节点的描述。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateEndpointConnectionsDescRequest 请求对象
+     * @return AsyncInvoker<UpdateEndpointConnectionsDescRequest, UpdateEndpointConnectionsDescResponse>
+     */
+    public AsyncInvoker<UpdateEndpointConnectionsDescRequest, UpdateEndpointConnectionsDescResponse> updateEndpointConnectionsDescAsyncInvoker(
+        UpdateEndpointConnectionsDescRequest request) {
+        return new AsyncInvoker<UpdateEndpointConnectionsDescRequest, UpdateEndpointConnectionsDescResponse>(request,
+            VpcepMeta.updateEndpointConnectionsDesc, hcClient);
+    }
+
+    /**
+     * 修改终端节点路由表
+     *
+     * 功能介绍
+     * 修改网关型终端节点policy。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateEndpointPolicyRequest 请求对象
+     * @return CompletableFuture<UpdateEndpointPolicyResponse>
+     */
+    public CompletableFuture<UpdateEndpointPolicyResponse> updateEndpointPolicyAsync(
+        UpdateEndpointPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcepMeta.updateEndpointPolicy);
+    }
+
+    /**
+     * 修改终端节点路由表
+     *
+     * 功能介绍
+     * 修改网关型终端节点policy。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateEndpointPolicyRequest 请求对象
+     * @return AsyncInvoker<UpdateEndpointPolicyRequest, UpdateEndpointPolicyResponse>
+     */
+    public AsyncInvoker<UpdateEndpointPolicyRequest, UpdateEndpointPolicyResponse> updateEndpointPolicyAsyncInvoker(
+        UpdateEndpointPolicyRequest request) {
+        return new AsyncInvoker<UpdateEndpointPolicyRequest, UpdateEndpointPolicyResponse>(request,
+            VpcepMeta.updateEndpointPolicy, hcClient);
+    }
+
+    /**
      * 修改终端节点路由表
      *
      * 功能介绍
@@ -687,6 +872,76 @@ public class VpcepAsyncClient {
         UpdateEndpointServiceRequest request) {
         return new AsyncInvoker<UpdateEndpointServiceRequest, UpdateEndpointServiceResponse>(request,
             VpcepMeta.updateEndpointService, hcClient);
+    }
+
+    /**
+     * 修改终端节点服务名称
+     *
+     * 功能介绍
+     * 修改终端节点服务名称
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateEndpointServiceNameRequest 请求对象
+     * @return CompletableFuture<UpdateEndpointServiceNameResponse>
+     */
+    public CompletableFuture<UpdateEndpointServiceNameResponse> updateEndpointServiceNameAsync(
+        UpdateEndpointServiceNameRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcepMeta.updateEndpointServiceName);
+    }
+
+    /**
+     * 修改终端节点服务名称
+     *
+     * 功能介绍
+     * 修改终端节点服务名称
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateEndpointServiceNameRequest 请求对象
+     * @return AsyncInvoker<UpdateEndpointServiceNameRequest, UpdateEndpointServiceNameResponse>
+     */
+    public AsyncInvoker<UpdateEndpointServiceNameRequest, UpdateEndpointServiceNameResponse> updateEndpointServiceNameAsyncInvoker(
+        UpdateEndpointServiceNameRequest request) {
+        return new AsyncInvoker<UpdateEndpointServiceNameRequest, UpdateEndpointServiceNameResponse>(request,
+            VpcepMeta.updateEndpointServiceName, hcClient);
+    }
+
+    /**
+     * 更新终端节点服务白名单描述
+     *
+     * 功能介绍
+     * 更新当前用户下终端节点服务白名单的描述信息
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateEndpointServicePermissionDescRequest 请求对象
+     * @return CompletableFuture<UpdateEndpointServicePermissionDescResponse>
+     */
+    public CompletableFuture<UpdateEndpointServicePermissionDescResponse> updateEndpointServicePermissionDescAsync(
+        UpdateEndpointServicePermissionDescRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcepMeta.updateEndpointServicePermissionDesc);
+    }
+
+    /**
+     * 更新终端节点服务白名单描述
+     *
+     * 功能介绍
+     * 更新当前用户下终端节点服务白名单的描述信息
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateEndpointServicePermissionDescRequest 请求对象
+     * @return AsyncInvoker<UpdateEndpointServicePermissionDescRequest, UpdateEndpointServicePermissionDescResponse>
+     */
+    public AsyncInvoker<UpdateEndpointServicePermissionDescRequest, UpdateEndpointServicePermissionDescResponse> updateEndpointServicePermissionDescAsyncInvoker(
+        UpdateEndpointServicePermissionDescRequest request) {
+        return new AsyncInvoker<UpdateEndpointServicePermissionDescRequest, UpdateEndpointServicePermissionDescResponse>(
+            request, VpcepMeta.updateEndpointServicePermissionDesc, hcClient);
     }
 
     /**

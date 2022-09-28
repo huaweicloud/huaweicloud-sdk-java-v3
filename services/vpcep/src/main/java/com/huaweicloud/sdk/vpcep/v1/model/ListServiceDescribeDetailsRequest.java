@@ -43,7 +43,7 @@ public class ListServiceDescribeDetailsRequest {
     }
 
     /**
-     * 终端节点服务的ID，唯一标识。说明：该字段必须和endpoint_service_name字段二选一，否则会出现错误。
+     * 终端节点服务的ID，唯一标识。 说明：该字段必须和endpoint_service_name字段二选一，否则会出现错误。
      * @return id
      */
     public String getId() {

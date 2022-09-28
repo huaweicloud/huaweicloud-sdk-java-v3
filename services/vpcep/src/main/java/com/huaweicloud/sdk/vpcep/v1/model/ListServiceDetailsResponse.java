@@ -39,10 +39,93 @@ public class ListServiceDetailsResponse extends SdkResponse {
 
     private String serviceName;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "service_type")
+    /**
+     * 资源类型。 ● VM：云服务器。 ● VIP：虚拟IP。 ● LB：增强负载均衡型。
+     */
+    public static final class ServerTypeEnum {
 
-    private String serviceType;
+        /**
+         * Enum VM for value: "VM"
+         */
+        public static final ServerTypeEnum VM = new ServerTypeEnum("VM");
+
+        /**
+         * Enum VIP for value: "VIP"
+         */
+        public static final ServerTypeEnum VIP = new ServerTypeEnum("VIP");
+
+        /**
+         * Enum LB for value: "LB"
+         */
+        public static final ServerTypeEnum LB = new ServerTypeEnum("LB");
+
+        private static final Map<String, ServerTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ServerTypeEnum> createStaticFields() {
+            Map<String, ServerTypeEnum> map = new HashMap<>();
+            map.put("VM", VM);
+            map.put("VIP", VIP);
+            map.put("LB", LB);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ServerTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ServerTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            ServerTypeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new ServerTypeEnum(value);
+            }
+            return result;
+        }
+
+        public static ServerTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            ServerTypeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ServerTypeEnum) {
+                return this.value.equals(((ServerTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "server_type")
+
+    private ServerTypeEnum serverType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_id")
@@ -143,38 +226,32 @@ public class ListServiceDetailsResponse extends SdkResponse {
     private StatusEnum status;
 
     /**
-     * 终端节点服务类型。 终端节点服务类型包括“网关（gataway）型”和“接口（interface）型”： ● gataway：由运维人员配置。用户无需创建，可直接使用。 ● interface：包括运维人员配置的云服务和用户自己创建的私有服务。其中，运维人员配 置的云服务无需创建，用户可直接使用。 您可以通过创建终端节点创建访问Gateway和Interface类型终端节点服务的终端节点。
+     * 终端节点服务类型。 终端节点服务类型包括“网关（gataway）型”和“接口（interface）型”： ● gataway：由运维人员配置。用户无需创建，可直接使用。 ● interface：包括运维人员配置的云服务和用户自己创建的私有服务。 其中，运维人员配置的云服务无需创建，用户可直接使用。 您可以通过创建终端节点创建访问Gateway和Interface类型终端节点服务的终端节。
      */
-    public static final class ServerTypeEnum {
+    public static final class ServiceTypeEnum {
 
         /**
-         * Enum VM for value: "VM"
+         * Enum GATAWAY for value: "gataway"
          */
-        public static final ServerTypeEnum VM = new ServerTypeEnum("VM");
+        public static final ServiceTypeEnum GATAWAY = new ServiceTypeEnum("gataway");
 
         /**
-         * Enum VIP for value: "VIP"
+         * Enum INTERFACE for value: "interface"
          */
-        public static final ServerTypeEnum VIP = new ServerTypeEnum("VIP");
+        public static final ServiceTypeEnum INTERFACE = new ServiceTypeEnum("interface");
 
-        /**
-         * Enum LB for value: "LB"
-         */
-        public static final ServerTypeEnum LB = new ServerTypeEnum("LB");
+        private static final Map<String, ServiceTypeEnum> STATIC_FIELDS = createStaticFields();
 
-        private static final Map<String, ServerTypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, ServerTypeEnum> createStaticFields() {
-            Map<String, ServerTypeEnum> map = new HashMap<>();
-            map.put("VM", VM);
-            map.put("VIP", VIP);
-            map.put("LB", LB);
+        private static Map<String, ServiceTypeEnum> createStaticFields() {
+            Map<String, ServiceTypeEnum> map = new HashMap<>();
+            map.put("gataway", GATAWAY);
+            map.put("interface", INTERFACE);
             return Collections.unmodifiableMap(map);
         }
 
         private String value;
 
-        ServerTypeEnum(String value) {
+        ServiceTypeEnum(String value) {
             this.value = value;
         }
 
@@ -189,22 +266,22 @@ public class ListServiceDetailsResponse extends SdkResponse {
         }
 
         @JsonCreator
-        public static ServerTypeEnum fromValue(String value) {
+        public static ServiceTypeEnum fromValue(String value) {
             if (value == null) {
                 return null;
             }
-            ServerTypeEnum result = STATIC_FIELDS.get(value);
+            ServiceTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = new ServerTypeEnum(value);
+                result = new ServiceTypeEnum(value);
             }
             return result;
         }
 
-        public static ServerTypeEnum valueOf(String value) {
+        public static ServiceTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ServerTypeEnum result = STATIC_FIELDS.get(value);
+            ServiceTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -213,8 +290,8 @@ public class ListServiceDetailsResponse extends SdkResponse {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj instanceof ServerTypeEnum) {
-                return this.value.equals(((ServerTypeEnum) obj).value);
+            if (obj instanceof ServiceTypeEnum) {
+                return this.value.equals(((ServiceTypeEnum) obj).value);
             }
             return false;
         }
@@ -226,9 +303,9 @@ public class ListServiceDetailsResponse extends SdkResponse {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "server_type")
+    @JsonProperty(value = "service_type")
 
-    private ServerTypeEnum serverType;
+    private ServiceTypeEnum serviceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
@@ -256,7 +333,7 @@ public class ListServiceDetailsResponse extends SdkResponse {
     private List<PortList> ports = null;
 
     /**
-    * 用于控制是否将客户端的源IP、源端口、marker_id等信息携带到服务端。信息携带支持两种方式： ● TCP TOA：表示将客户端信息插入到tcpoption字段中携带至服务端。 说明 仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。 ● Proxy Protocol：表示将客户端相关信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 参数的取值包括： ● close：表示关闭代理协议。 ● toa_open：表示开启代理协议“tcp_toa”。 ● proxy_open：表示开启代理协议“proxy_protocol”。 ● open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。 默认值为“close”。
+    * 用于控制是否将客户端的源IP、源端口、marker_id等信息携带到服务端。 信息携带支持两种方式： ● TCP TOA：表示将客户端信息插入到tcpoption字段中携带至服务端。 说明 仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。 ● Proxy Protocol：表示将客户端相关信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 参数的取值包括： ● close：表示关闭代理协议。 ● toa_open：表示开启代理协议“tcp_toa”。 ● proxy_open：表示开启代理协议“proxy_protocol”。 ● open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。 默认值为“close”。
     */
     public static final class TcpProxyEnum {
 
@@ -359,6 +436,11 @@ public class ListServiceDetailsResponse extends SdkResponse {
 
     private List<Error> error = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "description")
+
+    private String description;
+
     public ListServiceDetailsResponse withId(String id) {
         this.id = id;
         return this;
@@ -382,7 +464,7 @@ public class ListServiceDetailsResponse extends SdkResponse {
     }
 
     /**
-     * 标识终端节点服务后端资源的ID，格式为通用唯一识别码 （Universally Unique Identifier，下文简称UUID）。取值为： ● LB类型：增强型负载均衡器内网IP对应的端口ID。 ● VM类型：弹性云服务器IP地址对应的网卡ID。 ● VIP类型：虚拟资源所在物理服务器对应的网卡ID。
+     * 标识终端节点服务后端资源的ID， 格式为通用唯一识别码（Universally Unique Identifier，下文简称UUID）。取值为： ● LB类型：增强型负载均衡器内网IP对应的端口ID。 ● VM类型：弹性云服务器IP地址对应的网卡ID。 ● VIP类型：虚拟资源所在物理服务器对应的网卡ID。
      * @return portId
      */
     public String getPortId() {
@@ -427,21 +509,21 @@ public class ListServiceDetailsResponse extends SdkResponse {
         this.serviceName = serviceName;
     }
 
-    public ListServiceDetailsResponse withServiceType(String serviceType) {
-        this.serviceType = serviceType;
+    public ListServiceDetailsResponse withServerType(ServerTypeEnum serverType) {
+        this.serverType = serverType;
         return this;
     }
 
     /**
      * 资源类型。 ● VM：云服务器。 ● VIP：虚拟IP。 ● LB：增强负载均衡型。
-     * @return serviceType
+     * @return serverType
      */
-    public String getServiceType() {
-        return serviceType;
+    public ServerTypeEnum getServerType() {
+        return serverType;
     }
 
-    public void setServiceType(String serviceType) {
-        this.serviceType = serviceType;
+    public void setServerType(ServerTypeEnum serverType) {
+        this.serverType = serverType;
     }
 
     public ListServiceDetailsResponse withVpcId(String vpcId) {
@@ -467,7 +549,7 @@ public class ListServiceDetailsResponse extends SdkResponse {
     }
 
     /**
-     * 是否需要审批。 ● false：不需要审批，创建的终端节点连接直接为accepted状态。 ● true：需要审批，创建的终端节点连接为pendingAcceptance状态，需要终端节点服务所属用户审核后方可使用。
+     * 是否需要审批。 ● false：不需要审批，创建的终端节点连接直接为accepted状态。 ● true：需要审批，创建的终端节点连接为pendingAcceptance状态， 需要终端节点服务所属用户审核后方可使用。
      * @return approvalEnabled
      */
     public Boolean getApprovalEnabled() {
@@ -495,21 +577,21 @@ public class ListServiceDetailsResponse extends SdkResponse {
         this.status = status;
     }
 
-    public ListServiceDetailsResponse withServerType(ServerTypeEnum serverType) {
-        this.serverType = serverType;
+    public ListServiceDetailsResponse withServiceType(ServiceTypeEnum serviceType) {
+        this.serviceType = serviceType;
         return this;
     }
 
     /**
-     * 终端节点服务类型。 终端节点服务类型包括“网关（gataway）型”和“接口（interface）型”： ● gataway：由运维人员配置。用户无需创建，可直接使用。 ● interface：包括运维人员配置的云服务和用户自己创建的私有服务。其中，运维人员配 置的云服务无需创建，用户可直接使用。 您可以通过创建终端节点创建访问Gateway和Interface类型终端节点服务的终端节点。
-     * @return serverType
+     * 终端节点服务类型。 终端节点服务类型包括“网关（gataway）型”和“接口（interface）型”： ● gataway：由运维人员配置。用户无需创建，可直接使用。 ● interface：包括运维人员配置的云服务和用户自己创建的私有服务。 其中，运维人员配置的云服务无需创建，用户可直接使用。 您可以通过创建终端节点创建访问Gateway和Interface类型终端节点服务的终端节。
+     * @return serviceType
      */
-    public ServerTypeEnum getServerType() {
-        return serverType;
+    public ServiceTypeEnum getServiceType() {
+        return serviceType;
     }
 
-    public void setServerType(ServerTypeEnum serverType) {
-        this.serverType = serverType;
+    public void setServiceType(ServiceTypeEnum serviceType) {
+        this.serviceType = serviceType;
     }
 
     public ListServiceDetailsResponse withCreatedAt(String createdAt) {
@@ -619,7 +701,7 @@ public class ListServiceDetailsResponse extends SdkResponse {
     }
 
     /**
-     * 用于控制是否将客户端的源IP、源端口、marker_id等信息携带到服务端。信息携带支持两种方式： ● TCP TOA：表示将客户端信息插入到tcpoption字段中携带至服务端。 说明 仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。 ● Proxy Protocol：表示将客户端相关信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 参数的取值包括： ● close：表示关闭代理协议。 ● toa_open：表示开启代理协议“tcp_toa”。 ● proxy_open：表示开启代理协议“proxy_protocol”。 ● open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。 默认值为“close”。
+     * 用于控制是否将客户端的源IP、源端口、marker_id等信息携带到服务端。 信息携带支持两种方式： ● TCP TOA：表示将客户端信息插入到tcpoption字段中携带至服务端。 说明 仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。 ● Proxy Protocol：表示将客户端相关信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 参数的取值包括： ● close：表示关闭代理协议。 ● toa_open：表示开启代理协议“tcp_toa”。 ● proxy_open：表示开启代理协议“proxy_protocol”。 ● open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。 默认值为“close”。
      * @return tcpProxy
      */
     public TcpProxyEnum getTcpProxy() {
@@ -696,6 +778,23 @@ public class ListServiceDetailsResponse extends SdkResponse {
         this.error = error;
     }
 
+    public ListServiceDetailsResponse withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /**
+     * 描述字段，支持中英文字母、数字等字符，不支持“<”或“>”字符。
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -709,11 +808,11 @@ public class ListServiceDetailsResponse extends SdkResponse {
             && Objects.equals(this.portId, listServiceDetailsResponse.portId)
             && Objects.equals(this.vipPortId, listServiceDetailsResponse.vipPortId)
             && Objects.equals(this.serviceName, listServiceDetailsResponse.serviceName)
-            && Objects.equals(this.serviceType, listServiceDetailsResponse.serviceType)
+            && Objects.equals(this.serverType, listServiceDetailsResponse.serverType)
             && Objects.equals(this.vpcId, listServiceDetailsResponse.vpcId)
             && Objects.equals(this.approvalEnabled, listServiceDetailsResponse.approvalEnabled)
             && Objects.equals(this.status, listServiceDetailsResponse.status)
-            && Objects.equals(this.serverType, listServiceDetailsResponse.serverType)
+            && Objects.equals(this.serviceType, listServiceDetailsResponse.serviceType)
             && Objects.equals(this.createdAt, listServiceDetailsResponse.createdAt)
             && Objects.equals(this.updatedAt, listServiceDetailsResponse.updatedAt)
             && Objects.equals(this.projectId, listServiceDetailsResponse.projectId)
@@ -721,7 +820,8 @@ public class ListServiceDetailsResponse extends SdkResponse {
             && Objects.equals(this.ports, listServiceDetailsResponse.ports)
             && Objects.equals(this.tcpProxy, listServiceDetailsResponse.tcpProxy)
             && Objects.equals(this.tags, listServiceDetailsResponse.tags)
-            && Objects.equals(this.error, listServiceDetailsResponse.error);
+            && Objects.equals(this.error, listServiceDetailsResponse.error)
+            && Objects.equals(this.description, listServiceDetailsResponse.description);
     }
 
     @Override
@@ -730,11 +830,11 @@ public class ListServiceDetailsResponse extends SdkResponse {
             portId,
             vipPortId,
             serviceName,
-            serviceType,
+            serverType,
             vpcId,
             approvalEnabled,
             status,
-            serverType,
+            serviceType,
             createdAt,
             updatedAt,
             projectId,
@@ -742,7 +842,8 @@ public class ListServiceDetailsResponse extends SdkResponse {
             ports,
             tcpProxy,
             tags,
-            error);
+            error,
+            description);
     }
 
     @Override
@@ -753,11 +854,11 @@ public class ListServiceDetailsResponse extends SdkResponse {
         sb.append("    portId: ").append(toIndentedString(portId)).append("\n");
         sb.append("    vipPortId: ").append(toIndentedString(vipPortId)).append("\n");
         sb.append("    serviceName: ").append(toIndentedString(serviceName)).append("\n");
-        sb.append("    serviceType: ").append(toIndentedString(serviceType)).append("\n");
+        sb.append("    serverType: ").append(toIndentedString(serverType)).append("\n");
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    approvalEnabled: ").append(toIndentedString(approvalEnabled)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
-        sb.append("    serverType: ").append(toIndentedString(serverType)).append("\n");
+        sb.append("    serviceType: ").append(toIndentedString(serviceType)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
@@ -766,6 +867,7 @@ public class ListServiceDetailsResponse extends SdkResponse {
         sb.append("    tcpProxy: ").append(toIndentedString(tcpProxy)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    error: ").append(toIndentedString(error)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");
         return sb.toString();
     }

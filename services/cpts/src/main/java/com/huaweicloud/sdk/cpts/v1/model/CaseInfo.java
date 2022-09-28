@@ -19,9 +19,9 @@ public class CaseInfo {
     private Integer caseId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "case_name")
+    @JsonProperty(value = "name")
 
-    private String caseName;
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "case_type")
@@ -46,7 +46,7 @@ public class CaseInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stages")
 
-    private List<Object> stages = null;
+    private List<TestCaseStage> stages = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
@@ -82,21 +82,21 @@ public class CaseInfo {
         this.caseId = caseId;
     }
 
-    public CaseInfo withCaseName(String caseName) {
-        this.caseName = caseName;
+    public CaseInfo withName(String name) {
+        this.name = name;
         return this;
     }
 
     /**
-     * case_name
-     * @return caseName
+     * 用例名称
+     * @return name
      */
-    public String getCaseName() {
-        return caseName;
+    public String getName() {
+        return name;
     }
 
-    public void setCaseName(String caseName) {
-        this.caseName = caseName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public CaseInfo withCaseType(Integer caseType) {
@@ -217,12 +217,12 @@ public class CaseInfo {
         this.increaseSetting = increaseSetting;
     }
 
-    public CaseInfo withStages(List<Object> stages) {
+    public CaseInfo withStages(List<TestCaseStage> stages) {
         this.stages = stages;
         return this;
     }
 
-    public CaseInfo addStagesItem(Object stagesItem) {
+    public CaseInfo addStagesItem(TestCaseStage stagesItem) {
         if (this.stages == null) {
             this.stages = new ArrayList<>();
         }
@@ -230,7 +230,7 @@ public class CaseInfo {
         return this;
     }
 
-    public CaseInfo withStages(Consumer<List<Object>> stagesSetter) {
+    public CaseInfo withStages(Consumer<List<TestCaseStage>> stagesSetter) {
         if (this.stages == null) {
             this.stages = new ArrayList<>();
         }
@@ -242,11 +242,11 @@ public class CaseInfo {
      * stages
      * @return stages
      */
-    public List<Object> getStages() {
+    public List<TestCaseStage> getStages() {
         return stages;
     }
 
-    public void setStages(List<Object> stages) {
+    public void setStages(List<TestCaseStage> stages) {
         this.stages = stages;
     }
 
@@ -256,7 +256,7 @@ public class CaseInfo {
     }
 
     /**
-     * status
+     * 状态，0：已删除；1：启用；2：禁用
      * minimum: 0
      * maximum: 2147483647
      * @return status
@@ -294,7 +294,7 @@ public class CaseInfo {
     }
 
     /**
-     * sort
+     * 排序字段
      * @return sort
      */
     public Integer getSort() {
@@ -314,7 +314,7 @@ public class CaseInfo {
             return false;
         }
         CaseInfo caseInfo = (CaseInfo) o;
-        return Objects.equals(this.caseId, caseInfo.caseId) && Objects.equals(this.caseName, caseInfo.caseName)
+        return Objects.equals(this.caseId, caseInfo.caseId) && Objects.equals(this.name, caseInfo.name)
             && Objects.equals(this.caseType, caseInfo.caseType) && Objects.equals(this.contents, caseInfo.contents)
             && Objects.equals(this.forLoopParams, caseInfo.forLoopParams)
             && Objects.equals(this.increaseSetting, caseInfo.increaseSetting)
@@ -325,7 +325,7 @@ public class CaseInfo {
     @Override
     public int hashCode() {
         return Objects
-            .hash(caseId, caseName, caseType, contents, forLoopParams, increaseSetting, stages, status, tempId, sort);
+            .hash(caseId, name, caseType, contents, forLoopParams, increaseSetting, stages, status, tempId, sort);
     }
 
     @Override
@@ -333,7 +333,7 @@ public class CaseInfo {
         StringBuilder sb = new StringBuilder();
         sb.append("class CaseInfo {\n");
         sb.append("    caseId: ").append(toIndentedString(caseId)).append("\n");
-        sb.append("    caseName: ").append(toIndentedString(caseName)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    caseType: ").append(toIndentedString(caseType)).append("\n");
         sb.append("    contents: ").append(toIndentedString(contents)).append("\n");
         sb.append("    forLoopParams: ").append(toIndentedString(forLoopParams)).append("\n");

@@ -1,10 +1,15 @@
 package com.huaweicloud.sdk.live.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -22,6 +27,88 @@ public class StreamTranscodingTemplate {
     @JsonProperty(value = "app_name")
 
     private String appName;
+
+    /**
+     * 转码流触发模式。 - play：拉流触发转码。 - publish：推流触发转码。 默认为play 
+     */
+    public static final class TransTypeEnum {
+
+        /**
+         * Enum PLAY for value: "play"
+         */
+        public static final TransTypeEnum PLAY = new TransTypeEnum("play");
+
+        /**
+         * Enum PUBLISH for value: "publish"
+         */
+        public static final TransTypeEnum PUBLISH = new TransTypeEnum("publish");
+
+        private static final Map<String, TransTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TransTypeEnum> createStaticFields() {
+            Map<String, TransTypeEnum> map = new HashMap<>();
+            map.put("play", PLAY);
+            map.put("publish", PUBLISH);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        TransTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TransTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            TransTypeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new TransTypeEnum(value);
+            }
+            return result;
+        }
+
+        public static TransTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            TransTypeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof TransTypeEnum) {
+                return this.value.equals(((TransTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "trans_type")
+
+    private TransTypeEnum transType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quality_info")
@@ -60,6 +147,23 @@ public class StreamTranscodingTemplate {
 
     public void setAppName(String appName) {
         this.appName = appName;
+    }
+
+    public StreamTranscodingTemplate withTransType(TransTypeEnum transType) {
+        this.transType = transType;
+        return this;
+    }
+
+    /**
+     * 转码流触发模式。 - play：拉流触发转码。 - publish：推流触发转码。 默认为play 
+     * @return transType
+     */
+    public TransTypeEnum getTransType() {
+        return transType;
+    }
+
+    public void setTransType(TransTypeEnum transType) {
+        this.transType = transType;
     }
 
     public StreamTranscodingTemplate withQualityInfo(List<QualityInfo> qualityInfo) {
@@ -106,12 +210,13 @@ public class StreamTranscodingTemplate {
         StreamTranscodingTemplate streamTranscodingTemplate = (StreamTranscodingTemplate) o;
         return Objects.equals(this.domain, streamTranscodingTemplate.domain)
             && Objects.equals(this.appName, streamTranscodingTemplate.appName)
+            && Objects.equals(this.transType, streamTranscodingTemplate.transType)
             && Objects.equals(this.qualityInfo, streamTranscodingTemplate.qualityInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(domain, appName, qualityInfo);
+        return Objects.hash(domain, appName, transType, qualityInfo);
     }
 
     @Override
@@ -120,6 +225,7 @@ public class StreamTranscodingTemplate {
         sb.append("class StreamTranscodingTemplate {\n");
         sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
         sb.append("    appName: ").append(toIndentedString(appName)).append("\n");
+        sb.append("    transType: ").append(toIndentedString(transType)).append("\n");
         sb.append("    qualityInfo: ").append(toIndentedString(qualityInfo)).append("\n");
         sb.append("}");
         return sb.toString();

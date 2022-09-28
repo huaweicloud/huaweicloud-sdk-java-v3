@@ -17,14 +17,14 @@ public class ListVersionDetailsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "versions")
 
-    private List<Version> versions = null;
+    private List<VersionObject> versions = null;
 
-    public ListVersionDetailsResponse withVersions(List<Version> versions) {
+    public ListVersionDetailsResponse withVersions(List<VersionObject> versions) {
         this.versions = versions;
         return this;
     }
 
-    public ListVersionDetailsResponse addVersionsItem(Version versionsItem) {
+    public ListVersionDetailsResponse addVersionsItem(VersionObject versionsItem) {
         if (this.versions == null) {
             this.versions = new ArrayList<>();
         }
@@ -32,7 +32,7 @@ public class ListVersionDetailsResponse extends SdkResponse {
         return this;
     }
 
-    public ListVersionDetailsResponse withVersions(Consumer<List<Version>> versionsSetter) {
+    public ListVersionDetailsResponse withVersions(Consumer<List<VersionObject>> versionsSetter) {
         if (this.versions == null) {
             this.versions = new ArrayList<>();
         }
@@ -44,11 +44,11 @@ public class ListVersionDetailsResponse extends SdkResponse {
      * VPC终端节点版本信息列表。
      * @return versions
      */
-    public List<Version> getVersions() {
+    public List<VersionObject> getVersions() {
         return versions;
     }
 
-    public void setVersions(List<Version> versions) {
+    public void setVersions(List<VersionObject> versions) {
         this.versions = versions;
     }
 

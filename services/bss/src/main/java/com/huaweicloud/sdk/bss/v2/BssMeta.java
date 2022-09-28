@@ -2917,14 +2917,14 @@ public class BssMeta {
         HttpRequestDef.Builder<PayOrdersRequest, PayOrdersResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, PayOrdersRequest.class, PayOrdersResponse.class)
                 .withName("PayOrders")
-                .withUri("/v2/orders/customer-orders/pay")
+                .withUri("/v3/orders/customer-orders/pay")
                 .withContentType("application/json");
 
         // requests
-        builder.<PayCustomerOrderReq>withRequestField("body",
+        builder.<PayCustomerOrderV3Req>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(PayCustomerOrderReq.class),
+            TypeCasts.uncheckedConversion(PayCustomerOrderV3Req.class),
             f -> f.withMarshaller(PayOrdersRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));

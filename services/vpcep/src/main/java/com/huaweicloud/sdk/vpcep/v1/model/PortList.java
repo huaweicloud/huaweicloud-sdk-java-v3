@@ -107,7 +107,7 @@ public class PortList {
     }
 
     /**
-     * 终端节点访问的端口。 终端节点提供给用户，作为访问终端节 点服务的端口，范围1-65535。
+     * 终端节点访问的端口。 终端节点提供给用户，作为访问终端节点服务的端口，范围1-65535。
      * @return clientPort
      */
     public Integer getClientPort() {
@@ -124,7 +124,7 @@ public class PortList {
     }
 
     /**
-     * 终端节点服务的端口。 终端节点服务绑定了后端资源，作为提 供服务的端口，范围1-65535。
+     * 终端节点服务的端口。 终端节点服务绑定了后端资源，作为提供服务的端口，范围1-65535。
      * @return serverPort
      */
     public Integer getServerPort() {

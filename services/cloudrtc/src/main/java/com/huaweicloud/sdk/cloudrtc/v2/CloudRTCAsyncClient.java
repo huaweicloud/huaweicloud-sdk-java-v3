@@ -317,6 +317,66 @@ public class CloudRTCAsyncClient {
     }
 
     /**
+     * 解散房间
+     *
+     * 调用此接口解散房间，将该房间中所有用户踢出房间。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param RemoveRoomRequest 请求对象
+     * @return CompletableFuture<RemoveRoomResponse>
+     */
+    public CompletableFuture<RemoveRoomResponse> removeRoomAsync(RemoveRoomRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudRTCMeta.removeRoom);
+    }
+
+    /**
+     * 解散房间
+     *
+     * 调用此接口解散房间，将该房间中所有用户踢出房间。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param RemoveRoomRequest 请求对象
+     * @return AsyncInvoker<RemoveRoomRequest, RemoveRoomResponse>
+     */
+    public AsyncInvoker<RemoveRoomRequest, RemoveRoomResponse> removeRoomAsyncInvoker(RemoveRoomRequest request) {
+        return new AsyncInvoker<RemoveRoomRequest, RemoveRoomResponse>(request, CloudRTCMeta.removeRoom, hcClient);
+    }
+
+    /**
+     * 踢除在线用户
+     *
+     * 调用此接口强制用户离开房间。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param RemoveUsersRequest 请求对象
+     * @return CompletableFuture<RemoveUsersResponse>
+     */
+    public CompletableFuture<RemoveUsersResponse> removeUsersAsync(RemoveUsersRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudRTCMeta.removeUsers);
+    }
+
+    /**
+     * 踢除在线用户
+     *
+     * 调用此接口强制用户离开房间。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param RemoveUsersRequest 请求对象
+     * @return AsyncInvoker<RemoveUsersRequest, RemoveUsersResponse>
+     */
+    public AsyncInvoker<RemoveUsersRequest, RemoveUsersResponse> removeUsersAsyncInvoker(RemoveUsersRequest request) {
+        return new AsyncInvoker<RemoveUsersRequest, RemoveUsersResponse>(request, CloudRTCMeta.removeUsers, hcClient);
+    }
+
+    /**
      * 查询单个应用
      *
      * 调用此接口查询单个应用详情。
@@ -696,6 +756,43 @@ public class CloudRTCAsyncClient {
         UpdateAutoRecordRequest request) {
         return new AsyncInvoker<UpdateAutoRecordRequest, UpdateAutoRecordResponse>(request,
             CloudRTCMeta.updateAutoRecord, hcClient);
+    }
+
+    /**
+     * 更新单流任务
+     *
+     * 调用此接口修改单流任务。
+     * 
+     * 仅部分场景支持修改。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateIndividualStreamJobRequest 请求对象
+     * @return CompletableFuture<UpdateIndividualStreamJobResponse>
+     */
+    public CompletableFuture<UpdateIndividualStreamJobResponse> updateIndividualStreamJobAsync(
+        UpdateIndividualStreamJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudRTCMeta.updateIndividualStreamJob);
+    }
+
+    /**
+     * 更新单流任务
+     *
+     * 调用此接口修改单流任务。
+     * 
+     * 仅部分场景支持修改。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateIndividualStreamJobRequest 请求对象
+     * @return AsyncInvoker<UpdateIndividualStreamJobRequest, UpdateIndividualStreamJobResponse>
+     */
+    public AsyncInvoker<UpdateIndividualStreamJobRequest, UpdateIndividualStreamJobResponse> updateIndividualStreamJobAsyncInvoker(
+        UpdateIndividualStreamJobRequest request) {
+        return new AsyncInvoker<UpdateIndividualStreamJobRequest, UpdateIndividualStreamJobResponse>(request,
+            CloudRTCMeta.updateIndividualStreamJob, hcClient);
     }
 
     /**

@@ -62,7 +62,7 @@ public class BatchAddOrRemoveResourceInstanceBody {
     }
 
     /**
-     * 操作标识：仅限于 create（创建）、 delete（删除）。
+     * 操作标识：仅限于 create（创建） delete（删除）
      * @return action
      */
     public String getAction() {

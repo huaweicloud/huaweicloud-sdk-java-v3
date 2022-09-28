@@ -16,6 +16,11 @@ import java.util.Objects;
 public class SourceWithPort {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "domain_id")
+
+    private String domainId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip_or_domain")
 
     private String ipOrDomain;
@@ -128,6 +133,23 @@ public class SourceWithPort {
 
     private Integer httpsPort;
 
+    public SourceWithPort withDomainId(String domainId) {
+        this.domainId = domainId;
+        return this;
+    }
+
+    /**
+     * 加速域名id。
+     * @return domainId
+     */
+    public String getDomainId() {
+        return domainId;
+    }
+
+    public void setDomainId(String domainId) {
+        this.domainId = domainId;
+    }
+
     public SourceWithPort withIpOrDomain(String ipOrDomain) {
         this.ipOrDomain = ipOrDomain;
         return this;
@@ -239,7 +261,8 @@ public class SourceWithPort {
             return false;
         }
         SourceWithPort sourceWithPort = (SourceWithPort) o;
-        return Objects.equals(this.ipOrDomain, sourceWithPort.ipOrDomain)
+        return Objects.equals(this.domainId, sourceWithPort.domainId)
+            && Objects.equals(this.ipOrDomain, sourceWithPort.ipOrDomain)
             && Objects.equals(this.originType, sourceWithPort.originType)
             && Objects.equals(this.activeStandby, sourceWithPort.activeStandby)
             && Objects.equals(this.enableObsWebHosting, sourceWithPort.enableObsWebHosting)
@@ -249,13 +272,14 @@ public class SourceWithPort {
 
     @Override
     public int hashCode() {
-        return Objects.hash(ipOrDomain, originType, activeStandby, enableObsWebHosting, httpPort, httpsPort);
+        return Objects.hash(domainId, ipOrDomain, originType, activeStandby, enableObsWebHosting, httpPort, httpsPort);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class SourceWithPort {\n");
+        sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
         sb.append("    ipOrDomain: ").append(toIndentedString(ipOrDomain)).append("\n");
         sb.append("    originType: ").append(toIndentedString(originType)).append("\n");
         sb.append("    activeStandby: ").append(toIndentedString(activeStandby)).append("\n");

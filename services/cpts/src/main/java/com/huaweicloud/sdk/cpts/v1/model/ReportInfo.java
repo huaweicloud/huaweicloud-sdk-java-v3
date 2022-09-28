@@ -36,6 +36,11 @@ public class ReportInfo {
 
     private ReportTaskInfo taskInfo;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "respTimeRange")
+
+    private Object respTimeRange;
+
     public ReportInfo withBrokens(ReportbrokensInfo brokens) {
         this.brokens = brokens;
         return this;
@@ -157,6 +162,23 @@ public class ReportInfo {
         this.taskInfo = taskInfo;
     }
 
+    public ReportInfo withRespTimeRange(Object respTimeRange) {
+        this.respTimeRange = respTimeRange;
+        return this;
+    }
+
+    /**
+     * 响应时间分布
+     * @return respTimeRange
+     */
+    public Object getRespTimeRange() {
+        return respTimeRange;
+    }
+
+    public void setRespTimeRange(Object respTimeRange) {
+        this.respTimeRange = respTimeRange;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -169,12 +191,13 @@ public class ReportInfo {
         return Objects.equals(this.brokens, reportInfo.brokens) && Objects.equals(this.details, reportInfo.details)
             && Objects.equals(this.outline, reportInfo.outline)
             && Objects.equals(this.rtproportion, reportInfo.rtproportion)
-            && Objects.equals(this.taskInfo, reportInfo.taskInfo);
+            && Objects.equals(this.taskInfo, reportInfo.taskInfo)
+            && Objects.equals(this.respTimeRange, reportInfo.respTimeRange);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(brokens, details, outline, rtproportion, taskInfo);
+        return Objects.hash(brokens, details, outline, rtproportion, taskInfo, respTimeRange);
     }
 
     @Override
@@ -186,6 +209,7 @@ public class ReportInfo {
         sb.append("    outline: ").append(toIndentedString(outline)).append("\n");
         sb.append("    rtproportion: ").append(toIndentedString(rtproportion)).append("\n");
         sb.append("    taskInfo: ").append(toIndentedString(taskInfo)).append("\n");
+        sb.append("    respTimeRange: ").append(toIndentedString(respTimeRange)).append("\n");
         sb.append("}");
         return sb.toString();
     }

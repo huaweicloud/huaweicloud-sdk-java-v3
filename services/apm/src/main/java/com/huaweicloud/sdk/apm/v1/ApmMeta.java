@@ -230,6 +230,68 @@ public class ApmMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteAppRequest, DeleteAppResponse> deleteApp = genFordeleteApp();
+
+    private static HttpRequestDef<DeleteAppRequest, DeleteAppResponse> genFordeleteApp() {
+        // basic
+        HttpRequestDef.Builder<DeleteAppRequest, DeleteAppResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteAppRequest.class, DeleteAppResponse.class)
+                .withName("DeleteApp")
+                .withUri("/v1/apm2/openapi/cmdb/apps/delete-app/{application_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Long>withRequestField("application_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(DeleteAppRequest::getApplicationId, (req, v) -> {
+                req.setApplicationId(v);
+            }));
+        builder.<Long>withRequestField("x-business-id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(DeleteAppRequest::getXBusinessId, (req, v) -> {
+                req.setXBusinessId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteEnvRequest, DeleteEnvResponse> deleteEnv = genFordeleteEnv();
+
+    private static HttpRequestDef<DeleteEnvRequest, DeleteEnvResponse> genFordeleteEnv() {
+        // basic
+        HttpRequestDef.Builder<DeleteEnvRequest, DeleteEnvResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteEnvRequest.class, DeleteEnvResponse.class)
+                .withName("DeleteEnv")
+                .withUri("/v1/apm2/openapi/cmdb/envs/delete-env/{env_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Long>withRequestField("env_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(DeleteEnvRequest::getEnvId, (req, v) -> {
+                req.setEnvId(v);
+            }));
+        builder.<Long>withRequestField("x-business-id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(DeleteEnvRequest::getXBusinessId, (req, v) -> {
+                req.setXBusinessId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListAppEnvsRequest, ListAppEnvsResponse> listAppEnvs = genForlistAppEnvs();
 
     private static HttpRequestDef<ListAppEnvsRequest, ListAppEnvsResponse> genForlistAppEnvs() {

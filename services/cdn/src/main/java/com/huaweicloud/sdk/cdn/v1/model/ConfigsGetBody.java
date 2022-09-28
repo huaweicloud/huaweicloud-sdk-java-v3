@@ -66,7 +66,27 @@ public class ConfigsGetBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_code_cache")
 
-    private ErrorCodeCache errorCodeCache;
+    private List<ErrorCodeCache> errorCodeCache = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "origin_range_status")
+
+    private String originRangeStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "user_agent_filter")
+
+    private UserAgentFilter userAgentFilter;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "origin_request_url_rewrite")
+
+    private List<OriginRequestUrlRewrite> originRequestUrlRewrite = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "error_code_redirect_rules")
+
+    private List<ErrorCodeRedirectRules> errorCodeRedirectRules = null;
 
     public ConfigsGetBody withOriginRequestHeader(List<OriginRequestHeader> originRequestHeader) {
         this.originRequestHeader = originRequestHeader;
@@ -331,30 +351,148 @@ public class ConfigsGetBody {
         this.ipv6Accelerate = ipv6Accelerate;
     }
 
-    public ConfigsGetBody withErrorCodeCache(ErrorCodeCache errorCodeCache) {
+    public ConfigsGetBody withErrorCodeCache(List<ErrorCodeCache> errorCodeCache) {
         this.errorCodeCache = errorCodeCache;
         return this;
     }
 
-    public ConfigsGetBody withErrorCodeCache(Consumer<ErrorCodeCache> errorCodeCacheSetter) {
+    public ConfigsGetBody addErrorCodeCacheItem(ErrorCodeCache errorCodeCacheItem) {
         if (this.errorCodeCache == null) {
-            this.errorCodeCache = new ErrorCodeCache();
-            errorCodeCacheSetter.accept(this.errorCodeCache);
+            this.errorCodeCache = new ArrayList<>();
+        }
+        this.errorCodeCache.add(errorCodeCacheItem);
+        return this;
+    }
+
+    public ConfigsGetBody withErrorCodeCache(Consumer<List<ErrorCodeCache>> errorCodeCacheSetter) {
+        if (this.errorCodeCache == null) {
+            this.errorCodeCache = new ArrayList<>();
+        }
+        errorCodeCacheSetter.accept(this.errorCodeCache);
+        return this;
+    }
+
+    /**
+     * 状态码缓存时间
+     * @return errorCodeCache
+     */
+    public List<ErrorCodeCache> getErrorCodeCache() {
+        return errorCodeCache;
+    }
+
+    public void setErrorCodeCache(List<ErrorCodeCache> errorCodeCache) {
+        this.errorCodeCache = errorCodeCache;
+    }
+
+    public ConfigsGetBody withOriginRangeStatus(String originRangeStatus) {
+        this.originRangeStatus = originRangeStatus;
+        return this;
+    }
+
+    /**
+     * Range回源，即分片回源 开启Range回源的前提是您的源站支持Range请求，即HTTP请求头中包含Range字段，否则可能导致回源失败。 开启: on 关闭: off
+     * @return originRangeStatus
+     */
+    public String getOriginRangeStatus() {
+        return originRangeStatus;
+    }
+
+    public void setOriginRangeStatus(String originRangeStatus) {
+        this.originRangeStatus = originRangeStatus;
+    }
+
+    public ConfigsGetBody withUserAgentFilter(UserAgentFilter userAgentFilter) {
+        this.userAgentFilter = userAgentFilter;
+        return this;
+    }
+
+    public ConfigsGetBody withUserAgentFilter(Consumer<UserAgentFilter> userAgentFilterSetter) {
+        if (this.userAgentFilter == null) {
+            this.userAgentFilter = new UserAgentFilter();
+            userAgentFilterSetter.accept(this.userAgentFilter);
         }
 
         return this;
     }
 
     /**
-     * Get errorCodeCache
-     * @return errorCodeCache
+     * Get userAgentFilter
+     * @return userAgentFilter
      */
-    public ErrorCodeCache getErrorCodeCache() {
-        return errorCodeCache;
+    public UserAgentFilter getUserAgentFilter() {
+        return userAgentFilter;
     }
 
-    public void setErrorCodeCache(ErrorCodeCache errorCodeCache) {
-        this.errorCodeCache = errorCodeCache;
+    public void setUserAgentFilter(UserAgentFilter userAgentFilter) {
+        this.userAgentFilter = userAgentFilter;
+    }
+
+    public ConfigsGetBody withOriginRequestUrlRewrite(List<OriginRequestUrlRewrite> originRequestUrlRewrite) {
+        this.originRequestUrlRewrite = originRequestUrlRewrite;
+        return this;
+    }
+
+    public ConfigsGetBody addOriginRequestUrlRewriteItem(OriginRequestUrlRewrite originRequestUrlRewriteItem) {
+        if (this.originRequestUrlRewrite == null) {
+            this.originRequestUrlRewrite = new ArrayList<>();
+        }
+        this.originRequestUrlRewrite.add(originRequestUrlRewriteItem);
+        return this;
+    }
+
+    public ConfigsGetBody withOriginRequestUrlRewrite(
+        Consumer<List<OriginRequestUrlRewrite>> originRequestUrlRewriteSetter) {
+        if (this.originRequestUrlRewrite == null) {
+            this.originRequestUrlRewrite = new ArrayList<>();
+        }
+        originRequestUrlRewriteSetter.accept(this.originRequestUrlRewrite);
+        return this;
+    }
+
+    /**
+     * 改写回源URL，最多配置20条。
+     * @return originRequestUrlRewrite
+     */
+    public List<OriginRequestUrlRewrite> getOriginRequestUrlRewrite() {
+        return originRequestUrlRewrite;
+    }
+
+    public void setOriginRequestUrlRewrite(List<OriginRequestUrlRewrite> originRequestUrlRewrite) {
+        this.originRequestUrlRewrite = originRequestUrlRewrite;
+    }
+
+    public ConfigsGetBody withErrorCodeRedirectRules(List<ErrorCodeRedirectRules> errorCodeRedirectRules) {
+        this.errorCodeRedirectRules = errorCodeRedirectRules;
+        return this;
+    }
+
+    public ConfigsGetBody addErrorCodeRedirectRulesItem(ErrorCodeRedirectRules errorCodeRedirectRulesItem) {
+        if (this.errorCodeRedirectRules == null) {
+            this.errorCodeRedirectRules = new ArrayList<>();
+        }
+        this.errorCodeRedirectRules.add(errorCodeRedirectRulesItem);
+        return this;
+    }
+
+    public ConfigsGetBody withErrorCodeRedirectRules(
+        Consumer<List<ErrorCodeRedirectRules>> errorCodeRedirectRulesSetter) {
+        if (this.errorCodeRedirectRules == null) {
+            this.errorCodeRedirectRules = new ArrayList<>();
+        }
+        errorCodeRedirectRulesSetter.accept(this.errorCodeRedirectRules);
+        return this;
+    }
+
+    /**
+     * 自定义错误页面
+     * @return errorCodeRedirectRules
+     */
+    public List<ErrorCodeRedirectRules> getErrorCodeRedirectRules() {
+        return errorCodeRedirectRules;
+    }
+
+    public void setErrorCodeRedirectRules(List<ErrorCodeRedirectRules> errorCodeRedirectRules) {
+        this.errorCodeRedirectRules = errorCodeRedirectRules;
     }
 
     @Override
@@ -375,7 +513,11 @@ public class ConfigsGetBody {
             && Objects.equals(this.compress, configsGetBody.compress)
             && Objects.equals(this.cacheUrlParameterFilter, configsGetBody.cacheUrlParameterFilter)
             && Objects.equals(this.ipv6Accelerate, configsGetBody.ipv6Accelerate)
-            && Objects.equals(this.errorCodeCache, configsGetBody.errorCodeCache);
+            && Objects.equals(this.errorCodeCache, configsGetBody.errorCodeCache)
+            && Objects.equals(this.originRangeStatus, configsGetBody.originRangeStatus)
+            && Objects.equals(this.userAgentFilter, configsGetBody.userAgentFilter)
+            && Objects.equals(this.originRequestUrlRewrite, configsGetBody.originRequestUrlRewrite)
+            && Objects.equals(this.errorCodeRedirectRules, configsGetBody.errorCodeRedirectRules);
     }
 
     @Override
@@ -390,7 +532,11 @@ public class ConfigsGetBody {
             compress,
             cacheUrlParameterFilter,
             ipv6Accelerate,
-            errorCodeCache);
+            errorCodeCache,
+            originRangeStatus,
+            userAgentFilter,
+            originRequestUrlRewrite,
+            errorCodeRedirectRules);
     }
 
     @Override
@@ -408,6 +554,10 @@ public class ConfigsGetBody {
         sb.append("    cacheUrlParameterFilter: ").append(toIndentedString(cacheUrlParameterFilter)).append("\n");
         sb.append("    ipv6Accelerate: ").append(toIndentedString(ipv6Accelerate)).append("\n");
         sb.append("    errorCodeCache: ").append(toIndentedString(errorCodeCache)).append("\n");
+        sb.append("    originRangeStatus: ").append(toIndentedString(originRangeStatus)).append("\n");
+        sb.append("    userAgentFilter: ").append(toIndentedString(userAgentFilter)).append("\n");
+        sb.append("    originRequestUrlRewrite: ").append(toIndentedString(originRequestUrlRewrite)).append("\n");
+        sb.append("    errorCodeRedirectRules: ").append(toIndentedString(errorCodeRedirectRules)).append("\n");
         sb.append("}");
         return sb.toString();
     }

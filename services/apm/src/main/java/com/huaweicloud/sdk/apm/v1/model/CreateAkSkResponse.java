@@ -16,6 +16,11 @@ public class CreateAkSkResponse extends SdkResponse {
 
     private String ak;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sk")
+
+    private String sk;
+
     public CreateAkSkResponse withAk(String ak) {
         this.ak = ak;
         return this;
@@ -33,6 +38,23 @@ public class CreateAkSkResponse extends SdkResponse {
         this.ak = ak;
     }
 
+    public CreateAkSkResponse withSk(String sk) {
+        this.sk = sk;
+        return this;
+    }
+
+    /**
+     * 创建/删除的sk信息
+     * @return sk
+     */
+    public String getSk() {
+        return sk;
+    }
+
+    public void setSk(String sk) {
+        this.sk = sk;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -42,12 +64,12 @@ public class CreateAkSkResponse extends SdkResponse {
             return false;
         }
         CreateAkSkResponse createAkSkResponse = (CreateAkSkResponse) o;
-        return Objects.equals(this.ak, createAkSkResponse.ak);
+        return Objects.equals(this.ak, createAkSkResponse.ak) && Objects.equals(this.sk, createAkSkResponse.sk);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(ak);
+        return Objects.hash(ak, sk);
     }
 
     @Override
@@ -55,6 +77,7 @@ public class CreateAkSkResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateAkSkResponse {\n");
         sb.append("    ak: ").append(toIndentedString(ak)).append("\n");
+        sb.append("    sk: ").append(toIndentedString(sk)).append("\n");
         sb.append("}");
         return sb.toString();
     }

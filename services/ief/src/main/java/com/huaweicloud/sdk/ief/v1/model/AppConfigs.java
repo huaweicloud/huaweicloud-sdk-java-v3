@@ -33,6 +33,11 @@ public class AppConfigs {
 
     private List<Ports> ports = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "host_pid")
+
+    private String hostPid;
+
     public AppConfigs withPrivileged(Boolean privileged) {
         this.privileged = privileged;
         return this;
@@ -117,6 +122,23 @@ public class AppConfigs {
         this.ports = ports;
     }
 
+    public AppConfigs withHostPid(String hostPid) {
+        this.hostPid = hostPid;
+        return this;
+    }
+
+    /**
+     * 应用实例是否与主机共PID命名空间，默认值false
+     * @return hostPid
+     */
+    public String getHostPid() {
+        return hostPid;
+    }
+
+    public void setHostPid(String hostPid) {
+        this.hostPid = hostPid;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -129,12 +151,12 @@ public class AppConfigs {
         return Objects.equals(this.privileged, appConfigs.privileged)
             && Objects.equals(this.hostNetwork, appConfigs.hostNetwork)
             && Objects.equals(this.restartPolicy, appConfigs.restartPolicy)
-            && Objects.equals(this.ports, appConfigs.ports);
+            && Objects.equals(this.ports, appConfigs.ports) && Objects.equals(this.hostPid, appConfigs.hostPid);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(privileged, hostNetwork, restartPolicy, ports);
+        return Objects.hash(privileged, hostNetwork, restartPolicy, ports, hostPid);
     }
 
     @Override
@@ -145,6 +167,7 @@ public class AppConfigs {
         sb.append("    hostNetwork: ").append(toIndentedString(hostNetwork)).append("\n");
         sb.append("    restartPolicy: ").append(toIndentedString(restartPolicy)).append("\n");
         sb.append("    ports: ").append(toIndentedString(ports)).append("\n");
+        sb.append("    hostPid: ").append(toIndentedString(hostPid)).append("\n");
         sb.append("}");
         return sb.toString();
     }

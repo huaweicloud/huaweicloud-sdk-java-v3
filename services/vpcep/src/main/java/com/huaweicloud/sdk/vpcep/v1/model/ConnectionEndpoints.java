@@ -43,9 +43,14 @@ public class ConnectionEndpoints {
 
     private String domainId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "error")
+
+    private List<QueryError> error = null;
+
     /**
-     * 终端节点的连接状态。 ● pendingAcceptance：待接受 ● creating：创建中 ● accepted：已接受 ● rejected：已拒绝 ● failed：失败 ● deleting：删除中
-     */
+    * 终端节点的连接状态。 ● pendingAcceptance：待接受 ● creating：创建中 ● accepted：已接受 ● rejected：已拒绝 ● failed：失败 ● deleting：删除中
+    */
     public static final class StatusEnum {
 
         /**
@@ -150,9 +155,9 @@ public class ConnectionEndpoints {
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "error")
+    @JsonProperty(value = "description")
 
-    private List<QueryError> error = null;
+    private String description;
 
     public ConnectionEndpoints withId(String id) {
         this.id = id;
@@ -194,7 +199,7 @@ public class ConnectionEndpoints {
     }
 
     /**
-     * 终端节点的创建时间。 采用UTC时间格式，格式为：YYYY-MMDDTHH: MM:SSZ
+     * 终端节点的创建时间。 采用UTC时间格式，格式为：YYYY-MMDDTHH:MM:SSZ
      * @return createdAt
      */
     public String getCreatedAt() {
@@ -211,7 +216,7 @@ public class ConnectionEndpoints {
     }
 
     /**
-     * 终端节点的更新时间。 采用UTC时间格式，格式为：YYYY-MMDDTHH: MM:SSZ
+     * 终端节点的更新时间。 采用UTC时间格式，格式为：YYYY-MMDDTHH:MM:SSZ
      * @return updatedAt
      */
     public String getUpdatedAt() {
@@ -237,23 +242,6 @@ public class ConnectionEndpoints {
 
     public void setDomainId(String domainId) {
         this.domainId = domainId;
-    }
-
-    public ConnectionEndpoints withStatus(StatusEnum status) {
-        this.status = status;
-        return this;
-    }
-
-    /**
-     * 终端节点的连接状态。 ● pendingAcceptance：待接受 ● creating：创建中 ● accepted：已接受 ● rejected：已拒绝 ● failed：失败 ● deleting：删除中
-     * @return status
-     */
-    public StatusEnum getStatus() {
-        return status;
-    }
-
-    public void setStatus(StatusEnum status) {
-        this.status = status;
     }
 
     public ConnectionEndpoints withError(List<QueryError> error) {
@@ -289,6 +277,40 @@ public class ConnectionEndpoints {
         this.error = error;
     }
 
+    public ConnectionEndpoints withStatus(StatusEnum status) {
+        this.status = status;
+        return this;
+    }
+
+    /**
+     * 终端节点的连接状态。 ● pendingAcceptance：待接受 ● creating：创建中 ● accepted：已接受 ● rejected：已拒绝 ● failed：失败 ● deleting：删除中
+     * @return status
+     */
+    public StatusEnum getStatus() {
+        return status;
+    }
+
+    public void setStatus(StatusEnum status) {
+        this.status = status;
+    }
+
+    public ConnectionEndpoints withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /**
+     * 终端节点连接描述。
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -303,13 +325,14 @@ public class ConnectionEndpoints {
             && Objects.equals(this.createdAt, connectionEndpoints.createdAt)
             && Objects.equals(this.updatedAt, connectionEndpoints.updatedAt)
             && Objects.equals(this.domainId, connectionEndpoints.domainId)
+            && Objects.equals(this.error, connectionEndpoints.error)
             && Objects.equals(this.status, connectionEndpoints.status)
-            && Objects.equals(this.error, connectionEndpoints.error);
+            && Objects.equals(this.description, connectionEndpoints.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, markerId, createdAt, updatedAt, domainId, status, error);
+        return Objects.hash(id, markerId, createdAt, updatedAt, domainId, error, status, description);
     }
 
     @Override
@@ -321,8 +344,9 @@ public class ConnectionEndpoints {
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
-        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    error: ").append(toIndentedString(error)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");
         return sb.toString();
     }

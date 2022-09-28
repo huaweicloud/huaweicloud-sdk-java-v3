@@ -144,7 +144,7 @@ public class AcceptOrRejectEndpointRequestBody {
     }
 
     /**
-     * 终端节点ID列表。 每次请求目前支持单条endpoint的 接受或拒绝。
+     * 终端节点ID列表。 每次请求目前支持单条endpoint的接受或拒绝。
      * @return endpoints
      */
     public List<String> getEndpoints() {

@@ -43,13 +43,23 @@ public class Contents {
 
     private Integer dataType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "conditions")
+
+    private Object conditions;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_disabled")
+
+    private Boolean isDisabled;
+
     public Contents withContentId(Integer contentId) {
         this.contentId = contentId;
         return this;
     }
 
     /**
-     * content_id
+     * 事务id，若不为0表示此卡片为事务；为0表示非事务
      * minimum: 0
      * maximum: 2147483647
      * @return contentId
@@ -101,7 +111,7 @@ public class Contents {
     }
 
     /**
-     * index
+     * 排序索引标识
      * minimum: 0
      * maximum: 2147483647
      * @return index
@@ -137,7 +147,7 @@ public class Contents {
     }
 
     /**
-     * data
+     * 数据（循环、条件控制器作用的数据）
      * @return data
      */
     public Object getData() {
@@ -154,7 +164,7 @@ public class Contents {
     }
 
     /**
-     * data_type
+     * 类型，0:默认请求；1:数据指令；201:循环指令； 202:条件指令；301:集合点
      * minimum: 0
      * maximum: 2147483647
      * @return dataType
@@ -165,6 +175,40 @@ public class Contents {
 
     public void setDataType(Integer dataType) {
         this.dataType = dataType;
+    }
+
+    public Contents withConditions(Object conditions) {
+        this.conditions = conditions;
+        return this;
+    }
+
+    /**
+     * 若类型为202:条件指令，该字段为条件配置
+     * @return conditions
+     */
+    public Object getConditions() {
+        return conditions;
+    }
+
+    public void setConditions(Object conditions) {
+        this.conditions = conditions;
+    }
+
+    public Contents withIsDisabled(Boolean isDisabled) {
+        this.isDisabled = isDisabled;
+        return this;
+    }
+
+    /**
+     * 是否禁用
+     * @return isDisabled
+     */
+    public Boolean getIsDisabled() {
+        return isDisabled;
+    }
+
+    public void setIsDisabled(Boolean isDisabled) {
+        this.isDisabled = isDisabled;
     }
 
     @Override
@@ -179,12 +223,14 @@ public class Contents {
         return Objects.equals(this.contentId, contents.contentId) && Objects.equals(this.content, contents.content)
             && Objects.equals(this.index, contents.index)
             && Objects.equals(this.selectedTempName, contents.selectedTempName)
-            && Objects.equals(this.data, contents.data) && Objects.equals(this.dataType, contents.dataType);
+            && Objects.equals(this.data, contents.data) && Objects.equals(this.dataType, contents.dataType)
+            && Objects.equals(this.conditions, contents.conditions)
+            && Objects.equals(this.isDisabled, contents.isDisabled);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(contentId, content, index, selectedTempName, data, dataType);
+        return Objects.hash(contentId, content, index, selectedTempName, data, dataType, conditions, isDisabled);
     }
 
     @Override
@@ -197,6 +243,8 @@ public class Contents {
         sb.append("    selectedTempName: ").append(toIndentedString(selectedTempName)).append("\n");
         sb.append("    data: ").append(toIndentedString(data)).append("\n");
         sb.append("    dataType: ").append(toIndentedString(dataType)).append("\n");
+        sb.append("    conditions: ").append(toIndentedString(conditions)).append("\n");
+        sb.append("    isDisabled: ").append(toIndentedString(isDisabled)).append("\n");
         sb.append("}");
         return sb.toString();
     }

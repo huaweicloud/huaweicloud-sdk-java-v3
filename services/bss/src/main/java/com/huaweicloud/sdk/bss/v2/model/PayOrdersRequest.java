@@ -14,16 +14,16 @@ public class PayOrdersRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private PayCustomerOrderReq body;
+    private PayCustomerOrderV3Req body;
 
-    public PayOrdersRequest withBody(PayCustomerOrderReq body) {
+    public PayOrdersRequest withBody(PayCustomerOrderV3Req body) {
         this.body = body;
         return this;
     }
 
-    public PayOrdersRequest withBody(Consumer<PayCustomerOrderReq> bodySetter) {
+    public PayOrdersRequest withBody(Consumer<PayCustomerOrderV3Req> bodySetter) {
         if (this.body == null) {
-            this.body = new PayCustomerOrderReq();
+            this.body = new PayCustomerOrderV3Req();
             bodySetter.accept(this.body);
         }
 
@@ -34,11 +34,11 @@ public class PayOrdersRequest {
      * Get body
      * @return body
      */
-    public PayCustomerOrderReq getBody() {
+    public PayCustomerOrderV3Req getBody() {
         return body;
     }
 
-    public void setBody(PayCustomerOrderReq body) {
+    public void setBody(PayCustomerOrderV3Req body) {
         this.body = body;
     }
 

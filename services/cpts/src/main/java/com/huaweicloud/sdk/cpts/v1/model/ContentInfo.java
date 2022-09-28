@@ -26,17 +26,17 @@ public class ContentInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "check_end_length")
 
-    private String checkEndLength;
+    private Object checkEndLength;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "check_end_str")
 
-    private String checkEndStr;
+    private Object checkEndStr;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "check_end_type")
 
-    private String checkEndType;
+    private Object checkEndType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "connect_timeout")
@@ -140,54 +140,54 @@ public class ContentInfo {
         this.bodys = bodys;
     }
 
-    public ContentInfo withCheckEndLength(String checkEndLength) {
+    public ContentInfo withCheckEndLength(Object checkEndLength) {
         this.checkEndLength = checkEndLength;
         return this;
     }
 
     /**
-     * check_end_length
+     * TCP/UDP协议返回数据长度
      * @return checkEndLength
      */
-    public String getCheckEndLength() {
+    public Object getCheckEndLength() {
         return checkEndLength;
     }
 
-    public void setCheckEndLength(String checkEndLength) {
+    public void setCheckEndLength(Object checkEndLength) {
         this.checkEndLength = checkEndLength;
     }
 
-    public ContentInfo withCheckEndStr(String checkEndStr) {
+    public ContentInfo withCheckEndStr(Object checkEndStr) {
         this.checkEndStr = checkEndStr;
         return this;
     }
 
     /**
-     * check_end_str
+     * TCP/UDP协议返回结束符
      * @return checkEndStr
      */
-    public String getCheckEndStr() {
+    public Object getCheckEndStr() {
         return checkEndStr;
     }
 
-    public void setCheckEndStr(String checkEndStr) {
+    public void setCheckEndStr(Object checkEndStr) {
         this.checkEndStr = checkEndStr;
     }
 
-    public ContentInfo withCheckEndType(String checkEndType) {
+    public ContentInfo withCheckEndType(Object checkEndType) {
         this.checkEndType = checkEndType;
         return this;
     }
 
     /**
-     * check_end_type
+     * TCP/UDP协议返回结束类型，1：返回数据长度；2：结束符
      * @return checkEndType
      */
-    public String getCheckEndType() {
+    public Object getCheckEndType() {
         return checkEndType;
     }
 
-    public void setCheckEndType(String checkEndType) {
+    public void setCheckEndType(Object checkEndType) {
         this.checkEndType = checkEndType;
     }
 

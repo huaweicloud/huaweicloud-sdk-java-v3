@@ -1097,7 +1097,7 @@ public class BssintlAsyncClient {
     /**
      * 支付包年/包月产品订单
      *
-     * 功能描述：客户可以对待支付状态的包年/包月产品订单进行支付
+     * 客户可以对待支付状态的包年/包月产品订单进行支付
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1112,7 +1112,7 @@ public class BssintlAsyncClient {
     /**
      * 支付包年/包月产品订单
      *
-     * 功能描述：客户可以对待支付状态的包年/包月产品订单进行支付
+     * 客户可以对待支付状态的包年/包月产品订单进行支付
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
