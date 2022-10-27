@@ -129,7 +129,7 @@ public class ListHistoryWebinarsRequest {
     }
 
     /**
-     * 搜索条件。支持帐号、名称、手机、邮箱模糊搜索。
+     * 搜索条件。支持帐号、SIP号码、名称、手机、邮箱模糊搜索。
      * @return searchKey
      */
     public String getSearchKey() {

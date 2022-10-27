@@ -185,7 +185,7 @@ public class ListListenersRequest {
     }
 
     /**
-     * 是否反向查询。取值： - true：查询上一页。 - false：查询下一页，默认。  使用说明： - 必须与limit一起使用。 - 当page_reverse=true时，若要查询上一页，marker取值为当前页返回值的previous_marker。
+     * 是否反向查询。  取值： - true：查询上一页。 - false：查询下一页，默认。  使用说明： - 必须与limit一起使用。 - 当page_reverse=true时，若要查询上一页，marker取值为当前页返回值的previous_marker。
      * @return pageReverse
      */
     public Boolean getPageReverse() {
@@ -251,7 +251,7 @@ public class ListListenersRequest {
     }
 
     /**
-     * 监听器的监听协议。  [取值：TCP、UDP、HTTP、HTTPS、TERMINATED_HTTPS、QUIC。  说明：TERMINATED_HTTPS为共享型LB上的监听器独有的协议。](tag:hws,hws_hk,ocb,tlf,ctc,hcs,sbc,g42,tm,cmcc,hk_g42,mix,hk_sbc,hws_ocb,fcs,dt,dt_test)  [取值：TCP、UDP、HTTP、HTTPS。](tag:hcso_dt)  支持多值查询，查询条件格式：*protocol=xxx&protocol=xxx*。
+     * 监听器的监听协议。  [取值：TCP、UDP、HTTP、HTTPS、TERMINATED_HTTPS、QUIC。  说明：TERMINATED_HTTPS为共享型LB上的监听器独有的协议。 ](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,fcs,dt)  [取值：TCP、UDP、HTTP、HTTPS。](tag:hws_eu,hcso_dt)  支持多值查询，查询条件格式：*protocol=xxx&protocol=xxx*。
      * @return protocol
      */
     public List<String> getProtocol() {
@@ -317,7 +317,7 @@ public class ListListenersRequest {
     }
 
     /**
-     * 监听器的服务器证书ID。   支持多值查询，查询条件格式：*default_tls_container_ref=xxx&default_tls_container_ref=xxx*。
+     * 监听器的服务器证书ID。  支持多值查询，查询条件格式： *default_tls_container_ref=xxx&default_tls_container_ref=xxx*。
      * @return defaultTlsContainerRef
      */
     public List<String> getDefaultTlsContainerRef() {
@@ -350,7 +350,7 @@ public class ListListenersRequest {
     }
 
     /**
-     * 监听器的CA证书ID。   支持多值查询，查询条件格式：*client_ca_tls_container_ref=xxx&client_ca_tls_container_ref=xxx*。
+     * 监听器的CA证书ID。  支持多值查询，查询条件格式： *client_ca_tls_container_ref=xxx&client_ca_tls_container_ref=xxx*。
      * @return clientCaTlsContainerRef
      */
     public List<String> getClientCaTlsContainerRef() {
@@ -400,7 +400,7 @@ public class ListListenersRequest {
     }
 
     /**
-     * ​监听器的最大连接数。取值：-1表示不限制连接数。  支持多值查询，查询条件格式：*connection_limit=xxx&connection_limit=xxx*。  不支持该字段，请勿使用。
+     * ​监听器的最大连接数。  取值：-1表示不限制连接数。  支持多值查询，查询条件格式：*connection_limit=xxx&connection_limit=xxx*。  不支持该字段，请勿使用。
      * @return connectionLimit
      */
     public List<Integer> getConnectionLimit() {
@@ -516,7 +516,7 @@ public class ListListenersRequest {
     }
 
     /**
-     * 客户端与监听器之间的HTTPS请求的HTTP2功能的开启状态。开启后，可提升客户端与LB间的访问性能，但LB与后端服务器间仍采用HTTP1.X协议。   非HTTPS协议的监听器该字段无效，无论取值如何都不影响监听器正常运行。
+     * 客户端与LB之间的HTTPS请求的HTTP2功能的开启状态。 开启后，可提升客户端与LB间的访问性能，但LB与后端服务器间仍采用HTTP1.X协议。  使用说明： - 仅HTTPS协议监听器有效。 - QUIC监听器不能设置该字段，固定返回为true。 - 其他协议的监听器可设置该字段但无效，无论取值如何都不影响监听器正常运行。
      * @return http2Enable
      */
     public Boolean getHttp2Enable() {
@@ -681,7 +681,7 @@ public class ListListenersRequest {
     }
 
     /**
-     * 企业项目ID。不传时查询default企业项目\"0\"下的资源，鉴权按照default企业项目鉴权；如果传值，则传已存在的企业项目ID或all_granted_eps（表示查询所有企业项目）进行查询。  支持多值查询，查询条件格式：*enterprise_project_id=xxx&enterprise_project_id=xxx*。  [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
+     * 企业项目ID。不传时查询default企业项目\"0\"下的资源，鉴权按照default企业项目鉴权； 如果传值，则传已存在的企业项目ID或all_granted_eps（表示查询所有企业项目）进行查询。  支持多值查询，查询条件格式：*enterprise_project_id=xxx&enterprise_project_id=xxx*。  [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
      * @return enterpriseProjectId
      */
     public List<String> getEnterpriseProjectId() {
@@ -698,7 +698,7 @@ public class ListListenersRequest {
     }
 
     /**
-     * 是否开启后端服务器的重试。取值：true 开启重试，false 不开启重试。
+     * 是否开启后端服务器的重试。  取值：true 开启重试，false 不开启重试。
      * @return enableMemberRetry
      */
     public Boolean getEnableMemberRetry() {
@@ -731,7 +731,7 @@ public class ListListenersRequest {
     }
 
     /**
-     * 等待后端服务器响应超时时间。请求转发后端服务器后，在等待超时member_timeout时长没有响应，负载均衡将终止等待，并返回 HTTP504错误码。   取值：1-300s。   支持多值查询，查询条件格式：*member_timeout=xxx&member_timeout=xxx*。
+     * 等待后端服务器响应超时时间。请求转发后端服务器后，在等待超时member_timeout时长没有响应，负载均衡将终止等待，并返回 HTTP504错误码。  取值：1-300s。  支持多值查询，查询条件格式：*member_timeout=xxx&member_timeout=xxx*。
      * @return memberTimeout
      */
     public List<Integer> getMemberTimeout() {
@@ -797,7 +797,7 @@ public class ListListenersRequest {
     }
 
     /**
-     * 客户端连接空闲超时时间。在超过keepalive_timeout时长一直没有请求，负载均衡会暂时中断当前连接，直到一下次请求时重新建立新的连接。取值：  - TCP监听器：10-4000s。  - HTTP/HTTPS/TERMINATED_HTTPS监听器：0-4000s。  - UDP监听器不支持此字段。   支持多值查询，查询条件格式：*keepalive_timeout=xxx&keepalive_timeout=xxx*。
+     * 客户端连接空闲超时时间。在超过keepalive_timeout时长一直没有请求， 负载均衡会暂时中断当前连接，直到一下次请求时重新建立新的连接。  取值： - TCP监听器：10-4000s。 - HTTP/HTTPS/TERMINATED_HTTPS监听器：0-4000s。 - UDP监听器不支持此字段。  支持多值查询，查询条件格式：*keepalive_timeout=xxx&keepalive_timeout=xxx*。
      * @return keepaliveTimeout
      */
     public List<Integer> getKeepaliveTimeout() {
@@ -814,7 +814,7 @@ public class ListListenersRequest {
     }
 
     /**
-     * 是否透传客户端IP地址。开启后客户端IP地址将透传到后端服务器。仅作用于共享型LB的TCP/UDP监听器。取值：true开启，false不开启。
+     * 是否透传客户端IP地址。开启后客户端IP地址将透传到后端服务器。  [仅作用于共享型LB的TCP/UDP监听器。取值：true开启，false不开启。 ](tag:hws,hws_hk,ocb,ctc,g42,tm,cmcc,hk_g42,hws_ocb,fcs,dt,hk_tm)
      * @return transparentClientIpEnable
      */
     public Boolean getTransparentClientIpEnable() {
@@ -831,7 +831,7 @@ public class ListListenersRequest {
     }
 
     /**
-     * 是否开启高级转发策略功能。开启高级转发策略后，支持更灵活的转发策略和转发规则设置。取值：true开启，false不开启。
+     * 是否开启高级转发策略功能。开启高级转发策略后，支持更灵活的转发策略和转发规则设置。  取值：true开启，false不开启。
      * @return enhanceL7policyEnable
      */
     public Boolean getEnhanceL7policyEnable() {

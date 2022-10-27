@@ -95,7 +95,7 @@ public class ListSecurityPoliciesRequest {
     }
 
     /**
-     * 是否反向查询。取值： - true：查询上一页。 - false：查询下一页，默认。  使用说明： - 必须与limit一起使用。 - 当page_reverse=true时，若要查询上一页，marker取值为当前页返回值的previous_marker。
+     * 是否反向查询。  取值： - true：查询上一页。 - false：查询下一页，默认。  使用说明： - 必须与limit一起使用。 - 当page_reverse=true时，若要查询上一页，marker取值为当前页返回值的previous_marker。
      * @return pageReverse
      */
     public Boolean getPageReverse() {

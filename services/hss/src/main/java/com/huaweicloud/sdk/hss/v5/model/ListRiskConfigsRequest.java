@@ -16,9 +16,9 @@ public class ListRiskConfigsRequest {
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "check_type")
+    @JsonProperty(value = "check_name")
 
-    private String checkType;
+    private String checkName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "severity")
@@ -51,7 +51,7 @@ public class ListRiskConfigsRequest {
     }
 
     /**
-     * 企业项目ID
+     * 企业项目ID，查询所有企业项目时填写：all_granted_eps
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -62,21 +62,21 @@ public class ListRiskConfigsRequest {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    public ListRiskConfigsRequest withCheckType(String checkType) {
-        this.checkType = checkType;
+    public ListRiskConfigsRequest withCheckName(String checkName) {
+        this.checkName = checkName;
         return this;
     }
 
     /**
      * 基线名称
-     * @return checkType
+     * @return checkName
      */
-    public String getCheckType() {
-        return checkType;
+    public String getCheckName() {
+        return checkName;
     }
 
-    public void setCheckType(String checkType) {
-        this.checkType = checkType;
+    public void setCheckName(String checkName) {
+        this.checkName = checkName;
     }
 
     public ListRiskConfigsRequest withSeverity(String severity) {
@@ -178,7 +178,7 @@ public class ListRiskConfigsRequest {
         }
         ListRiskConfigsRequest listRiskConfigsRequest = (ListRiskConfigsRequest) o;
         return Objects.equals(this.enterpriseProjectId, listRiskConfigsRequest.enterpriseProjectId)
-            && Objects.equals(this.checkType, listRiskConfigsRequest.checkType)
+            && Objects.equals(this.checkName, listRiskConfigsRequest.checkName)
             && Objects.equals(this.severity, listRiskConfigsRequest.severity)
             && Objects.equals(this.standard, listRiskConfigsRequest.standard)
             && Objects.equals(this.hostId, listRiskConfigsRequest.hostId)
@@ -188,7 +188,7 @@ public class ListRiskConfigsRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hash(enterpriseProjectId, checkType, severity, standard, hostId, limit, offset);
+        return Objects.hash(enterpriseProjectId, checkName, severity, standard, hostId, limit, offset);
     }
 
     @Override
@@ -196,7 +196,7 @@ public class ListRiskConfigsRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListRiskConfigsRequest {\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
-        sb.append("    checkType: ").append(toIndentedString(checkType)).append("\n");
+        sb.append("    checkName: ").append(toIndentedString(checkName)).append("\n");
         sb.append("    severity: ").append(toIndentedString(severity)).append("\n");
         sb.append("    standard: ").append(toIndentedString(standard)).append("\n");
         sb.append("    hostId: ").append(toIndentedString(hostId)).append("\n");

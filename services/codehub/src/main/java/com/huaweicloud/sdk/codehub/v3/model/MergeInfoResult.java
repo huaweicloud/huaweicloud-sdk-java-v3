@@ -14,7 +14,7 @@ import java.util.function.Consumer;
 public class MergeInfoResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "approvalMergeRequestApprovers")
+    @JsonProperty(value = "approval_merge_request_approvers")
 
     private List<ApprovalMergeRequestApproversItem> approvalMergeRequestApprovers = null;
 
@@ -24,12 +24,12 @@ public class MergeInfoResult {
     private Author author;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "closedAt")
+    @JsonProperty(value = "closed_at")
 
     private String closedAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "createdAt")
+    @JsonProperty(value = "created_at")
 
     private String createdAt;
 
@@ -39,7 +39,7 @@ public class MergeInfoResult {
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "devcloudSourceBranch")
+    @JsonProperty(value = "devcloud_source_branch")
 
     private String devcloudSourceBranch;
 
@@ -54,27 +54,27 @@ public class MergeInfoResult {
     private Double iid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "isSourceBranchExist")
+    @JsonProperty(value = "is_source_branch_exist")
 
     private Boolean isSourceBranchExist;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "mergeRequestAssigneeList")
+    @JsonProperty(value = "merge_request_assignee_list")
 
     private List<MergeRequestAssigneeListItem> mergeRequestAssigneeList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "mergeRequestDiff")
+    @JsonProperty(value = "merge_request_diff")
 
     private MergeRequestDiff mergeRequestDiff;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "mergeStatus")
+    @JsonProperty(value = "merge_status")
 
     private String mergeStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "sourceBranch")
+    @JsonProperty(value = "source_branch")
 
     private String sourceBranch;
 
@@ -84,7 +84,7 @@ public class MergeInfoResult {
     private String state;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "targetBranch")
+    @JsonProperty(value = "target_branch")
 
     private String targetBranch;
 
@@ -94,7 +94,7 @@ public class MergeInfoResult {
     private String title;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "updatedAt")
+    @JsonProperty(value = "updated_at")
 
     private String updatedAt;
 

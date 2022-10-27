@@ -25,6 +25,12 @@ public class CodeCheckRegion {
 
     public static final Region CN_EAST_3 = new Region("cn-east-3", "https://codecheck-ext.cn-east-3.myhuaweicloud.com");
 
+    public static final Region LA_NORTH_2 =
+        new Region("la-north-2", "https://codecheck-ext.la-north-2.myhuaweicloud.com");
+
+    public static final Region SA_BRAZIL_1 =
+        new Region("sa-brazil-1", "https://codecheck-ext.sa-brazil-1.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("CODECHECK");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -36,6 +42,8 @@ public class CodeCheckRegion {
         map.put("cn-east-2", CN_EAST_2);
         map.put("cn-south-1", CN_SOUTH_1);
         map.put("cn-east-3", CN_EAST_3);
+        map.put("la-north-2", LA_NORTH_2);
+        map.put("sa-brazil-1", SA_BRAZIL_1);
         return Collections.unmodifiableMap(map);
     }
 

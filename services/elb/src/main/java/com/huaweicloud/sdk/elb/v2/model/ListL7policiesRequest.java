@@ -98,7 +98,6 @@ public class ListL7policiesRequest {
     /**
      * 分页查询中每页的转发策略个数
      * minimum: 0
-     * maximum: 9223372036854775807
      * @return limit
      */
     public Integer getLimit() {
@@ -336,7 +335,7 @@ public class ListL7policiesRequest {
     }
 
     /**
-     * 企业项目ID。  取值范围：带“-”连字符的UUID格式，或者是字符串“0”。“0”表示默认企业项目。  若子账号查询转发策略列表时，需要指定enterprise_project_id为all_granted_eps或者具体企业项目ID。
+     * 企业项目ID。  传入all_granted_eps表示查询所有有权限的企业项目资源；\"0\"表示查询默认企业项目资源；或者指定的企业项目ID下的资源。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {

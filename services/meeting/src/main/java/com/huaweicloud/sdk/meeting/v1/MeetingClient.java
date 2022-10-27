@@ -325,6 +325,38 @@ public class MeetingClient {
     }
 
     /**
+     * 允许客户端录制
+     *
+     * 该接口用于设置允许/禁止与会者客户端本地录制（非云端录制）。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param AllowClientRecordRequest 请求对象
+     * @return AllowClientRecordResponse
+     */
+    public AllowClientRecordResponse allowClientRecord(AllowClientRecordRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.allowClientRecord);
+    }
+
+    /**
+     * 允许客户端录制
+     *
+     * 该接口用于设置允许/禁止与会者客户端本地录制（非云端录制）。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param AllowClientRecordRequest 请求对象
+     * @return SyncInvoker<AllowClientRecordRequest, AllowClientRecordResponse>
+     */
+    public SyncInvoker<AllowClientRecordRequest, AllowClientRecordResponse> allowClientRecordInvoker(
+        AllowClientRecordRequest request) {
+        return new SyncInvoker<AllowClientRecordRequest, AllowClientRecordResponse>(request,
+            MeetingMeta.allowClientRecord, hcClient);
+    }
+
+    /**
      * 与会者自己解除静音
      *
      * 该接口用于设置与会者是否可以自己解除静音。
@@ -354,6 +386,38 @@ public class MeetingClient {
         AllowGuestUnmuteRequest request) {
         return new SyncInvoker<AllowGuestUnmuteRequest, AllowGuestUnmuteResponse>(request, MeetingMeta.allowGuestUnmute,
             hcClient);
+    }
+
+    /**
+     * 准入等候者
+     *
+     * 该接口用于允许等候室中的成员进入会议。可以允许全部成员进入会议，或者允许指定成员进入会议。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param AllowWaitingParticipantRequest 请求对象
+     * @return AllowWaitingParticipantResponse
+     */
+    public AllowWaitingParticipantResponse allowWaitingParticipant(AllowWaitingParticipantRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.allowWaitingParticipant);
+    }
+
+    /**
+     * 准入等候者
+     *
+     * 该接口用于允许等候室中的成员进入会议。可以允许全部成员进入会议，或者允许指定成员进入会议。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param AllowWaitingParticipantRequest 请求对象
+     * @return SyncInvoker<AllowWaitingParticipantRequest, AllowWaitingParticipantResponse>
+     */
+    public SyncInvoker<AllowWaitingParticipantRequest, AllowWaitingParticipantResponse> allowWaitingParticipantInvoker(
+        AllowWaitingParticipantRequest request) {
+        return new SyncInvoker<AllowWaitingParticipantRequest, AllowWaitingParticipantResponse>(request,
+            MeetingMeta.allowWaitingParticipant, hcClient);
     }
 
     /**
@@ -581,6 +645,36 @@ public class MeetingClient {
     }
 
     /**
+     * 批量举手
+     *
+     * 该接口用于批量设置来宾的举手/放下举手状态。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param BatchHandRequest 请求对象
+     * @return BatchHandResponse
+     */
+    public BatchHandResponse batchHand(BatchHandRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.batchHand);
+    }
+
+    /**
+     * 批量举手
+     *
+     * 该接口用于批量设置来宾的举手/放下举手状态。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param BatchHandRequest 请求对象
+     * @return SyncInvoker<BatchHandRequest, BatchHandResponse>
+     */
+    public SyncInvoker<BatchHandRequest, BatchHandResponse> batchHandInvoker(BatchHandRequest request) {
+        return new SyncInvoker<BatchHandRequest, BatchHandResponse>(request, MeetingMeta.batchHand, hcClient);
+    }
+
+    /**
      * 批量修改终端状态
      *
      * 企业管理员通过该接口批量修改专业会议终端状态。当硬终端资源到期后，若企业内对应资源的硬终端超过数量后会被系统随机自动停用，此时可通过该接口修改专业会议终端的状态。
@@ -674,6 +768,38 @@ public class MeetingClient {
         BroadcastParticipantRequest request) {
         return new SyncInvoker<BroadcastParticipantRequest, BroadcastParticipantResponse>(request,
             MeetingMeta.broadcastParticipant, hcClient);
+    }
+
+    /**
+     * 取消广播
+     *
+     * 该接口用于取消广播，包括：取消广播多画面，取消广播会场，取消点名会场。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CancelBroadcastRequest 请求对象
+     * @return CancelBroadcastResponse
+     */
+    public CancelBroadcastResponse cancelBroadcast(CancelBroadcastRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.cancelBroadcast);
+    }
+
+    /**
+     * 取消广播
+     *
+     * 该接口用于取消广播，包括：取消广播多画面，取消广播会场，取消点名会场。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CancelBroadcastRequest 请求对象
+     * @return SyncInvoker<CancelBroadcastRequest, CancelBroadcastResponse>
+     */
+    public SyncInvoker<CancelBroadcastRequest, CancelBroadcastResponse> cancelBroadcastInvoker(
+        CancelBroadcastRequest request) {
+        return new SyncInvoker<CancelBroadcastRequest, CancelBroadcastResponse>(request, MeetingMeta.cancelBroadcast,
+            hcClient);
     }
 
     /**
@@ -1278,6 +1404,36 @@ public class MeetingClient {
     }
 
     /**
+     * 删除多画面布局
+     *
+     * 该接口用于删除当前会议已保存的多画面布局。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteLayoutRequest 请求对象
+     * @return DeleteLayoutResponse
+     */
+    public DeleteLayoutResponse deleteLayout(DeleteLayoutRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.deleteLayout);
+    }
+
+    /**
+     * 删除多画面布局
+     *
+     * 该接口用于删除当前会议已保存的多画面布局。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteLayoutRequest 请求对象
+     * @return SyncInvoker<DeleteLayoutRequest, DeleteLayoutResponse>
+     */
+    public SyncInvoker<DeleteLayoutRequest, DeleteLayoutResponse> deleteLayoutInvoker(DeleteLayoutRequest request) {
+        return new SyncInvoker<DeleteLayoutRequest, DeleteLayoutResponse>(request, MeetingMeta.deleteLayout, hcClient);
+    }
+
+    /**
      * 批量删除录制
      *
      * 该接口用于批量删除会议的录制。
@@ -1663,7 +1819,8 @@ public class MeetingClient {
     /**
      * 通过会议ID和密码邀请与会者
      *
-     * 该接口用于通过会议ID和密码邀请与会者。
+     * 该接口用于通过会议ID和密码邀请与会者。一般用于App已知会议ID和来宾密码，通过扫码等方式获取其他终端的SIP号码后，使用该接口将其他终端邀请加入会议中。
+     * &gt; 需要管理员在企业的“会议设置”&gt;“来宾扫码邀请任意硬终端入会”设置成打开，才允许通过来宾密码邀请其他终端入会。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1678,7 +1835,8 @@ public class MeetingClient {
     /**
      * 通过会议ID和密码邀请与会者
      *
-     * 该接口用于通过会议ID和密码邀请与会者。
+     * 该接口用于通过会议ID和密码邀请与会者。一般用于App已知会议ID和来宾密码，通过扫码等方式获取其他终端的SIP号码后，使用该接口将其他终端邀请加入会议中。
+     * &gt; 需要管理员在企业的“会议设置”&gt;“来宾扫码邀请任意硬终端入会”设置成打开，才允许通过来宾密码邀请其他终端入会。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1875,6 +2033,38 @@ public class MeetingClient {
      */
     public SyncInvoker<LockViewRequest, LockViewResponse> lockViewInvoker(LockViewRequest request) {
         return new SyncInvoker<LockViewRequest, LockViewResponse>(request, MeetingMeta.lockView, hcClient);
+    }
+
+    /**
+     * 移入等候室
+     *
+     * 该接口用于将会中的指定与会者移入到等候室。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param MoveToWaitingRoomRequest 请求对象
+     * @return MoveToWaitingRoomResponse
+     */
+    public MoveToWaitingRoomResponse moveToWaitingRoom(MoveToWaitingRoomRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.moveToWaitingRoom);
+    }
+
+    /**
+     * 移入等候室
+     *
+     * 该接口用于将会中的指定与会者移入到等候室。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param MoveToWaitingRoomRequest 请求对象
+     * @return SyncInvoker<MoveToWaitingRoomRequest, MoveToWaitingRoomResponse>
+     */
+    public SyncInvoker<MoveToWaitingRoomRequest, MoveToWaitingRoomResponse> moveToWaitingRoomInvoker(
+        MoveToWaitingRoomRequest request) {
+        return new SyncInvoker<MoveToWaitingRoomRequest, MoveToWaitingRoomResponse>(request,
+            MeetingMeta.moveToWaitingRoom, hcClient);
     }
 
     /**
@@ -2192,6 +2382,36 @@ public class MeetingClient {
     }
 
     /**
+     * 保存多画面布局
+     *
+     * 该接口用于保存多画面布局。保存的多画面布局，只能在当前会议使用，会议结束后，保存的多画面布局就会释放。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SaveLayoutRequest 请求对象
+     * @return SaveLayoutResponse
+     */
+    public SaveLayoutResponse saveLayout(SaveLayoutRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.saveLayout);
+    }
+
+    /**
+     * 保存多画面布局
+     *
+     * 该接口用于保存多画面布局。保存的多画面布局，只能在当前会议使用，会议结束后，保存的多画面布局就会释放。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SaveLayoutRequest 请求对象
+     * @return SyncInvoker<SaveLayoutRequest, SaveLayoutResponse>
+     */
+    public SyncInvoker<SaveLayoutRequest, SaveLayoutResponse> saveLayoutInvoker(SaveLayoutRequest request) {
+        return new SyncInvoker<SaveLayoutRequest, SaveLayoutResponse>(request, MeetingMeta.saveLayout, hcClient);
+    }
+
+    /**
      * 查询历史会议的与会者记录
      *
      * 该接口用于查询指定历史会议的与会者记录。
@@ -2315,6 +2535,38 @@ public class MeetingClient {
     public SyncInvoker<SearchCorpDirRequest, SearchCorpDirResponse> searchCorpDirInvoker(SearchCorpDirRequest request) {
         return new SyncInvoker<SearchCorpDirRequest, SearchCorpDirResponse>(request, MeetingMeta.searchCorpDir,
             hcClient);
+    }
+
+    /**
+     * 查询企业外部联系人
+     *
+     * 企业用户（含管理员）通过该接口查询该企业的外部联系人或者个人外部联系人。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SearchCorpExternalDirRequest 请求对象
+     * @return SearchCorpExternalDirResponse
+     */
+    public SearchCorpExternalDirResponse searchCorpExternalDir(SearchCorpExternalDirRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.searchCorpExternalDir);
+    }
+
+    /**
+     * 查询企业外部联系人
+     *
+     * 企业用户（含管理员）通过该接口查询该企业的外部联系人或者个人外部联系人。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SearchCorpExternalDirRequest 请求对象
+     * @return SyncInvoker<SearchCorpExternalDirRequest, SearchCorpExternalDirResponse>
+     */
+    public SyncInvoker<SearchCorpExternalDirRequest, SearchCorpExternalDirResponse> searchCorpExternalDirInvoker(
+        SearchCorpExternalDirRequest request) {
+        return new SyncInvoker<SearchCorpExternalDirRequest, SearchCorpExternalDirResponse>(request,
+            MeetingMeta.searchCorpExternalDir, hcClient);
     }
 
     /**
@@ -3000,6 +3252,36 @@ public class MeetingClient {
     }
 
     /**
+     * 申请联席主持人
+     *
+     * 该接口用于设置联席主持人或释放联席主持人。只能将来宾设置为联席主持人。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SetCohostRequest 请求对象
+     * @return SetCohostResponse
+     */
+    public SetCohostResponse setCohost(SetCohostRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.setCohost);
+    }
+
+    /**
+     * 申请联席主持人
+     *
+     * 该接口用于设置联席主持人或释放联席主持人。只能将来宾设置为联席主持人。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SetCohostRequest 请求对象
+     * @return SyncInvoker<SetCohostRequest, SetCohostResponse>
+     */
+    public SyncInvoker<SetCohostRequest, SetCohostResponse> setCohostInvoker(SetCohostRequest request) {
+        return new SyncInvoker<SetCohostRequest, SetCohostResponse>(request, MeetingMeta.setCohost, hcClient);
+    }
+
+    /**
      * 设置自定义多画面
      *
      * 该接口用于设置会中多画面。
@@ -3566,6 +3848,36 @@ public class MeetingClient {
         ShowHisMeetingDetailRequest request) {
         return new SyncInvoker<ShowHisMeetingDetailRequest, ShowHisMeetingDetailResponse>(request,
             MeetingMeta.showHisMeetingDetail, hcClient);
+    }
+
+    /**
+     * 查询多画面布局
+     *
+     * 该接口用于查询当前会议已保存的多画面布局。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowLayoutRequest 请求对象
+     * @return ShowLayoutResponse
+     */
+    public ShowLayoutResponse showLayout(ShowLayoutRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.showLayout);
+    }
+
+    /**
+     * 查询多画面布局
+     *
+     * 该接口用于查询当前会议已保存的多画面布局。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowLayoutRequest 请求对象
+     * @return SyncInvoker<ShowLayoutRequest, ShowLayoutResponse>
+     */
+    public SyncInvoker<ShowLayoutRequest, ShowLayoutResponse> showLayoutInvoker(ShowLayoutRequest request) {
+        return new SyncInvoker<ShowLayoutRequest, ShowLayoutResponse>(request, MeetingMeta.showLayout, hcClient);
     }
 
     /**

@@ -29,11 +29,6 @@ public class PodResp {
     private PodConfigs configs;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "affinity")
-
-    private Affinity affinity;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "init_containers")
 
     private List<ContainerResp> initContainers = null;
@@ -72,11 +67,6 @@ public class PodResp {
     @JsonProperty(value = "created_at")
 
     private String createdAt;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "updated_at")
-
-    private String updatedAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "state")
@@ -141,32 +131,6 @@ public class PodResp {
 
     public void setConfigs(PodConfigs configs) {
         this.configs = configs;
-    }
-
-    public PodResp withAffinity(Affinity affinity) {
-        this.affinity = affinity;
-        return this;
-    }
-
-    public PodResp withAffinity(Consumer<Affinity> affinitySetter) {
-        if (this.affinity == null) {
-            this.affinity = new Affinity();
-            affinitySetter.accept(this.affinity);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get affinity
-     * @return affinity
-     */
-    public Affinity getAffinity() {
-        return affinity;
-    }
-
-    public void setAffinity(Affinity affinity) {
-        this.affinity = affinity;
     }
 
     public PodResp withInitContainers(List<ContainerResp> initContainers) {
@@ -337,23 +301,6 @@ public class PodResp {
         this.createdAt = createdAt;
     }
 
-    public PodResp withUpdatedAt(String updatedAt) {
-        this.updatedAt = updatedAt;
-        return this;
-    }
-
-    /**
-     * 应用实例更新时间
-     * @return updatedAt
-     */
-    public String getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(String updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
     public PodResp withState(String state) {
         this.state = state;
         return this;
@@ -381,13 +328,13 @@ public class PodResp {
         }
         PodResp podResp = (PodResp) o;
         return Objects.equals(this.id, podResp.id) && Objects.equals(this.name, podResp.name)
-            && Objects.equals(this.configs, podResp.configs) && Objects.equals(this.affinity, podResp.affinity)
+            && Objects.equals(this.configs, podResp.configs)
             && Objects.equals(this.initContainers, podResp.initContainers)
             && Objects.equals(this.containers, podResp.containers) && Objects.equals(this.nodeId, podResp.nodeId)
             && Objects.equals(this.deploymentId, podResp.deploymentId)
             && Objects.equals(this.projectId, podResp.projectId) && Objects.equals(this.reason, podResp.reason)
             && Objects.equals(this.message, podResp.message) && Objects.equals(this.createdAt, podResp.createdAt)
-            && Objects.equals(this.updatedAt, podResp.updatedAt) && Objects.equals(this.state, podResp.state);
+            && Objects.equals(this.state, podResp.state);
     }
 
     @Override
@@ -395,7 +342,6 @@ public class PodResp {
         return Objects.hash(id,
             name,
             configs,
-            affinity,
             initContainers,
             containers,
             nodeId,
@@ -404,7 +350,6 @@ public class PodResp {
             reason,
             message,
             createdAt,
-            updatedAt,
             state);
     }
 
@@ -415,7 +360,6 @@ public class PodResp {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    configs: ").append(toIndentedString(configs)).append("\n");
-        sb.append("    affinity: ").append(toIndentedString(affinity)).append("\n");
         sb.append("    initContainers: ").append(toIndentedString(initContainers)).append("\n");
         sb.append("    containers: ").append(toIndentedString(containers)).append("\n");
         sb.append("    nodeId: ").append(toIndentedString(nodeId)).append("\n");
@@ -424,7 +368,6 @@ public class PodResp {
         sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
         sb.append("    message: ").append(toIndentedString(message)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
-        sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
         sb.append("}");
         return sb.toString();

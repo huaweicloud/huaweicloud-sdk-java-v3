@@ -46,7 +46,7 @@ public class ListEnterpriseSubCustomersRequest {
     }
 
     /**
-     * 企业子账号的账号名。根据fuzzy_query取值决定是否按模糊查询。此参数不携带或携带值为空时，不作为筛选条件；携带值为空串时，作为筛选条件。
+     * 企业子账号的账号名。根据fuzzy_query取值决定是否按模糊查询。仅支持前缀匹配、后缀匹配、中间匹配；不支持携带空格查询。此参数不携带或携带值为空时，不作为筛选条件；携带值为空串时，作为筛选条件。
      * @return subCustomerAccountName
      */
     public String getSubCustomerAccountName() {
@@ -63,7 +63,7 @@ public class ListEnterpriseSubCustomersRequest {
     }
 
     /**
-     * 企业子账号的显示名称。不限制特殊字符。根据fuzzy_query取值决定是否按模糊查询。此参数不携带或携带值为空时，不作为筛选条件；携带值为空串时，作为筛选条件。
+     * 企业子账号的显示名称。根据fuzzy_query取值决定是否按模糊查询。仅支持前缀匹配、后缀匹配、中间匹配；不支持携带空格查询。此参数不携带或携带值为空时，不作为筛选条件；携带值为空串时，作为筛选条件。
      * @return subCustomerDisplayName
      */
     public String getSubCustomerDisplayName() {

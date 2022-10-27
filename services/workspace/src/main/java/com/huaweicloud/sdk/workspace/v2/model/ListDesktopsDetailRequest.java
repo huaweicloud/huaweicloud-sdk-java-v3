@@ -148,7 +148,7 @@ public class ListDesktopsDetailRequest {
     }
 
     /**
-     * 用于分页查询，取值范围0-1000，默认值1000。
+     * 用于分页查询，取值范围0-500，默认值500。
      * minimum: 0
      * maximum: 1000
      * @return limit

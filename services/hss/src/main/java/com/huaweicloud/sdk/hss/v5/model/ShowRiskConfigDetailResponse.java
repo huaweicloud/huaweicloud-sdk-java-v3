@@ -17,6 +17,11 @@ public class ShowRiskConfigDetailResponse extends SdkResponse {
     private String severity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "check_type")
+
+    private String checkType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "check_type_desc")
 
     private String checkTypeDesc;
@@ -61,6 +66,23 @@ public class ShowRiskConfigDetailResponse extends SdkResponse {
 
     public void setSeverity(String severity) {
         this.severity = severity;
+    }
+
+    public ShowRiskConfigDetailResponse withCheckType(String checkType) {
+        this.checkType = checkType;
+        return this;
+    }
+
+    /**
+     * 基线类型
+     * @return checkType
+     */
+    public String getCheckType() {
+        return checkType;
+    }
+
+    public void setCheckType(String checkType) {
+        this.checkType = checkType;
     }
 
     public ShowRiskConfigDetailResponse withCheckTypeDesc(String checkTypeDesc) {
@@ -185,6 +207,7 @@ public class ShowRiskConfigDetailResponse extends SdkResponse {
         }
         ShowRiskConfigDetailResponse showRiskConfigDetailResponse = (ShowRiskConfigDetailResponse) o;
         return Objects.equals(this.severity, showRiskConfigDetailResponse.severity)
+            && Objects.equals(this.checkType, showRiskConfigDetailResponse.checkType)
             && Objects.equals(this.checkTypeDesc, showRiskConfigDetailResponse.checkTypeDesc)
             && Objects.equals(this.checkRuleNum, showRiskConfigDetailResponse.checkRuleNum)
             && Objects.equals(this.failedRuleNum, showRiskConfigDetailResponse.failedRuleNum)
@@ -195,8 +218,14 @@ public class ShowRiskConfigDetailResponse extends SdkResponse {
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(severity, checkTypeDesc, checkRuleNum, failedRuleNum, passedRuleNum, ignoredRuleNum, hostNum);
+        return Objects.hash(severity,
+            checkType,
+            checkTypeDesc,
+            checkRuleNum,
+            failedRuleNum,
+            passedRuleNum,
+            ignoredRuleNum,
+            hostNum);
     }
 
     @Override
@@ -204,6 +233,7 @@ public class ShowRiskConfigDetailResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowRiskConfigDetailResponse {\n");
         sb.append("    severity: ").append(toIndentedString(severity)).append("\n");
+        sb.append("    checkType: ").append(toIndentedString(checkType)).append("\n");
         sb.append("    checkTypeDesc: ").append(toIndentedString(checkTypeDesc)).append("\n");
         sb.append("    checkRuleNum: ").append(toIndentedString(checkRuleNum)).append("\n");
         sb.append("    failedRuleNum: ").append(toIndentedString(failedRuleNum)).append("\n");

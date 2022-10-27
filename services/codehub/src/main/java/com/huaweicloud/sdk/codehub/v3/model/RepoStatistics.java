@@ -147,7 +147,7 @@ public class RepoStatistics {
     }
 
     /**
-     * 仓库id
+     * 仓库统计记录id
      * @return id
      */
     public Integer getId() {

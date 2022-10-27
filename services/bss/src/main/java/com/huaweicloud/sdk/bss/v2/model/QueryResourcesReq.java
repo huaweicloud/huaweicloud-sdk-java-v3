@@ -75,7 +75,7 @@ public class QueryResourcesReq {
     }
 
     /**
-     * 资源ID列表。 查询指定资源ID的资源（当only_main_resource=0时，查询指定资源及其附属资源）。最大支持50个ID同时作为条件查询。 此参数不携带或携带值为空列表时，不作为筛选条件，返回其他条件匹配的记录。  说明： 资源ID是指开通资源以后，云服务针对该资源分配的标志，譬如云主机ECS的资源ID是server_id。
+     * 资源ID列表。 查询指定资源ID的资源（当only_main_resource=0时，查询指定资源及其附属资源）。最大支持50个ID同时作为条件查询。 此参数不携带或携带值为空列表时，不作为筛选条件，返回其他条件匹配的记录。不支持携带值为null。  说明： 资源ID是指开通资源以后，云服务针对该资源分配的标志，譬如云主机ECS的资源ID是server_id。
      * @return resourceIds
      */
     public List<String> getResourceIds() {

@@ -69,6 +69,11 @@ public class InstanceResponse {
     private String switchStrategy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "read_only_by_user")
+
+    private String readOnlyByUser;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maintenance_window")
 
     private String maintenanceWindow;
@@ -441,6 +446,23 @@ public class InstanceResponse {
 
     public void setSwitchStrategy(String switchStrategy) {
         this.switchStrategy = switchStrategy;
+    }
+
+    public InstanceResponse withReadOnlyByUser(String readOnlyByUser) {
+        this.readOnlyByUser = readOnlyByUser;
+        return this;
+    }
+
+    /**
+     * 客户设置实例只读API的状态信息。仅支持RDS for MySQL引擎。取值为“true”，表示该实例为客户设置的只读状态。取值为“false”，表示该实例未被客户设置只读。
+     * @return readOnlyByUser
+     */
+    public String getReadOnlyByUser() {
+        return readOnlyByUser;
+    }
+
+    public void setReadOnlyByUser(String readOnlyByUser) {
+        this.readOnlyByUser = readOnlyByUser;
     }
 
     public InstanceResponse withMaintenanceWindow(String maintenanceWindow) {
@@ -1031,6 +1053,7 @@ public class InstanceResponse {
             && Objects.equals(this.updated, instanceResponse.updated)
             && Objects.equals(this.dbUserName, instanceResponse.dbUserName)
             && Objects.equals(this.switchStrategy, instanceResponse.switchStrategy)
+            && Objects.equals(this.readOnlyByUser, instanceResponse.readOnlyByUser)
             && Objects.equals(this.maintenanceWindow, instanceResponse.maintenanceWindow)
             && Objects.equals(this.nodes, instanceResponse.nodes)
             && Objects.equals(this.relatedInstance, instanceResponse.relatedInstance)
@@ -1072,6 +1095,7 @@ public class InstanceResponse {
             updated,
             dbUserName,
             switchStrategy,
+            readOnlyByUser,
             maintenanceWindow,
             nodes,
             relatedInstance,
@@ -1117,6 +1141,7 @@ public class InstanceResponse {
         sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
         sb.append("    dbUserName: ").append(toIndentedString(dbUserName)).append("\n");
         sb.append("    switchStrategy: ").append(toIndentedString(switchStrategy)).append("\n");
+        sb.append("    readOnlyByUser: ").append(toIndentedString(readOnlyByUser)).append("\n");
         sb.append("    maintenanceWindow: ").append(toIndentedString(maintenanceWindow)).append("\n");
         sb.append("    nodes: ").append(toIndentedString(nodes)).append("\n");
         sb.append("    relatedInstance: ").append(toIndentedString(relatedInstance)).append("\n");

@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * EsScanResult
+ * ES扫描结果
  */
 public class EsScanResult {
 

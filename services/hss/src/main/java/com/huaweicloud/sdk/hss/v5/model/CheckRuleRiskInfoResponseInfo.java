@@ -16,6 +16,11 @@ public class CheckRuleRiskInfoResponseInfo {
     private String severity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "check_name")
+
+    private String checkName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "check_type")
 
     private String checkType;
@@ -67,13 +72,30 @@ public class CheckRuleRiskInfoResponseInfo {
         this.severity = severity;
     }
 
+    public CheckRuleRiskInfoResponseInfo withCheckName(String checkName) {
+        this.checkName = checkName;
+        return this;
+    }
+
+    /**
+     * 基线名称
+     * @return checkName
+     */
+    public String getCheckName() {
+        return checkName;
+    }
+
+    public void setCheckName(String checkName) {
+        this.checkName = checkName;
+    }
+
     public CheckRuleRiskInfoResponseInfo withCheckType(String checkType) {
         this.checkType = checkType;
         return this;
     }
 
     /**
-     * 基线名称
+     * 基线类型
      * @return checkType
      */
     public String getCheckType() {
@@ -198,6 +220,7 @@ public class CheckRuleRiskInfoResponseInfo {
         }
         CheckRuleRiskInfoResponseInfo checkRuleRiskInfoResponseInfo = (CheckRuleRiskInfoResponseInfo) o;
         return Objects.equals(this.severity, checkRuleRiskInfoResponseInfo.severity)
+            && Objects.equals(this.checkName, checkRuleRiskInfoResponseInfo.checkName)
             && Objects.equals(this.checkType, checkRuleRiskInfoResponseInfo.checkType)
             && Objects.equals(this.standard, checkRuleRiskInfoResponseInfo.standard)
             && Objects.equals(this.checkRuleName, checkRuleRiskInfoResponseInfo.checkRuleName)
@@ -209,7 +232,8 @@ public class CheckRuleRiskInfoResponseInfo {
 
     @Override
     public int hashCode() {
-        return Objects.hash(severity, checkType, standard, checkRuleName, checkRuleId, hostNum, scanResult, status);
+        return Objects
+            .hash(severity, checkName, checkType, standard, checkRuleName, checkRuleId, hostNum, scanResult, status);
     }
 
     @Override
@@ -217,6 +241,7 @@ public class CheckRuleRiskInfoResponseInfo {
         StringBuilder sb = new StringBuilder();
         sb.append("class CheckRuleRiskInfoResponseInfo {\n");
         sb.append("    severity: ").append(toIndentedString(severity)).append("\n");
+        sb.append("    checkName: ").append(toIndentedString(checkName)).append("\n");
         sb.append("    checkType: ").append(toIndentedString(checkType)).append("\n");
         sb.append("    standard: ").append(toIndentedString(standard)).append("\n");
         sb.append("    checkRuleName: ").append(toIndentedString(checkRuleName)).append("\n");

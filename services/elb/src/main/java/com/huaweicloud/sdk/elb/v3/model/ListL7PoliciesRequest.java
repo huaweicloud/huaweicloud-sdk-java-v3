@@ -140,7 +140,7 @@ public class ListL7PoliciesRequest {
     }
 
     /**
-     * 是否反向查询。取值： - true：查询上一页。 - false：查询下一页，默认。  使用说明： - 必须与limit一起使用。 - 当page_reverse=true时，若要查询上一页，marker取值为当前页返回值的previous_marker。
+     * 是否反向查询。  取值： - true：查询上一页。 - false：查询下一页，默认。  使用说明： - 必须与limit一起使用。 - 当page_reverse=true时，若要查询上一页，marker取值为当前页返回值的previous_marker。
      * @return pageReverse
      */
     public Boolean getPageReverse() {
@@ -173,7 +173,7 @@ public class ListL7PoliciesRequest {
     }
 
     /**
-     * 企业项目ID。不传时查询default企业项目\"0\"下的资源，鉴权按照default企业项目鉴权；如果传值，则传已存在的企业项目ID或all_granted_eps（表示查询所有企业项目）进行查询。 支持多值查询，查询条件格式：*enterprise_project_id=xxx&enterprise_project_id=xxx*。 [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
+     * 企业项目ID。不传时查询default企业项目\"0\"下的资源，鉴权按照default企业项目鉴权； 如果传值，则传已存在的企业项目ID或all_granted_eps（表示查询所有企业项目）进行查询。  支持多值查询，查询条件格式： *enterprise_project_id=xxx&enterprise_project_id=xxx*。  [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
      * @return enterpriseProjectId
      */
     public List<String> getEnterpriseProjectId() {
@@ -388,7 +388,7 @@ public class ListL7PoliciesRequest {
     }
 
     /**
-     * 转发策略的转发动作。取值： - REDIRECT_TO_POOL：转发到后端云服务器组； - REDIRECT_TO_LISTENER：重定向到监听器； [- REDIRECT_TO_URL：重定向到URL； - FIXED_RESPONSE：返回固定响应体。](tag:hws,hws_hk,ocb,tlf,ctc,hcs,sbc,g42,tm,cmcc,hk_g42,mix,hk_sbc,hws_ocb,fcs,dt,dt_test) 支持多值查询，查询条件格式：*****action=xxx&action=xxx*****。
+     * 转发策略的转发动作。  取值： - REDIRECT_TO_POOL：转发到后端云服务器组。 - REDIRECT_TO_LISTENER：重定向到监听器。 - REDIRECT_TO_URL：重定向到URL。 - FIXED_RESPONSE：返回固定响应体。  支持多值查询，查询条件格式：*****action=xxx&action=xxx*****。  [不支持REDIRECT_TO_URL和FIXED_RESPONSE](tag:hcso_dt)
      * @return action
      */
     public List<String> getAction() {
@@ -520,7 +520,7 @@ public class ListL7PoliciesRequest {
     }
 
     /**
-     * 转发策略的配置状态。 取值范围： - ACTIVE: 默认值，表示正常。 [- ERROR: 表示当前策略与同一监听器下的其他策略存在相同的规则配置。](tag:hws,hws_hk,ocb,tlf,ctc,hcs,sbc,g42,tm,cmcc,hk_g42,mix,hk_sbc,hws_ocb,fcs) 支持多值查询，查询条件格式：*provisioning_status=xxx&provisioning_status=xxx*。
+     * 转发策略的配置状态。  取值范围： - ACTIVE: 默认值，表示正常。 - ERROR: 表示当前策略与同一监听器下的其他策略存在相同的规则配置。  支持多值查询，查询条件格式：*provisioning_status=xxx&provisioning_status=xxx*。
      * @return provisioningStatus
      */
     public List<String> getProvisioningStatus() {
@@ -537,7 +537,7 @@ public class ListL7PoliciesRequest {
     }
 
     /**
-     * 是否显示转发策略下的rule详细信息。取值： - true：显示policy下面的rule的详细信息。 - false：只显示policy下面的rule的id信息
+     * 是否显示转发策略下的rule详细信息。  取值： - true：显示policy下面的rule的详细信息。 - false：只显示policy下面的rule的id信息
      * @return displayAllRules
      */
     public Boolean getDisplayAllRules() {

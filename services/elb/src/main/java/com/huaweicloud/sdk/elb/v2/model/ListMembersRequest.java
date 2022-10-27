@@ -88,9 +88,8 @@ public class ListMembersRequest {
     }
 
     /**
-     * 分页查询中每页的监听器个数
+     * 分页查询中每页的后端服务器个数
      * minimum: 0
-     * maximum: 9223372036854775807
      * @return limit
      */
     public Integer getLimit() {

@@ -121,9 +121,9 @@ public class RunQueryVideoModerationJobResponse extends SdkResponse {
     private VideoModerationResultRequestParams requestParams;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "craete_time")
+    @JsonProperty(value = "create_time")
 
-    private String craeteTime;
+    private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
@@ -213,21 +213,21 @@ public class RunQueryVideoModerationJobResponse extends SdkResponse {
         this.requestParams = requestParams;
     }
 
-    public RunQueryVideoModerationJobResponse withCraeteTime(String craeteTime) {
-        this.craeteTime = craeteTime;
+    public RunQueryVideoModerationJobResponse withCreateTime(String createTime) {
+        this.createTime = createTime;
         return this;
     }
 
     /**
      * 作业创建时间
-     * @return craeteTime
+     * @return createTime
      */
-    public String getCraeteTime() {
-        return craeteTime;
+    public String getCreateTime() {
+        return createTime;
     }
 
-    public void setCraeteTime(String craeteTime) {
-        this.craeteTime = craeteTime;
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime;
     }
 
     public RunQueryVideoModerationJobResponse withUpdateTime(String updateTime) {
@@ -286,14 +286,14 @@ public class RunQueryVideoModerationJobResponse extends SdkResponse {
             && Objects.equals(this.jobId, runQueryVideoModerationJobResponse.jobId)
             && Objects.equals(this.status, runQueryVideoModerationJobResponse.status)
             && Objects.equals(this.requestParams, runQueryVideoModerationJobResponse.requestParams)
-            && Objects.equals(this.craeteTime, runQueryVideoModerationJobResponse.craeteTime)
+            && Objects.equals(this.createTime, runQueryVideoModerationJobResponse.createTime)
             && Objects.equals(this.updateTime, runQueryVideoModerationJobResponse.updateTime)
             && Objects.equals(this.result, runQueryVideoModerationJobResponse.result);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(requestId, jobId, status, requestParams, craeteTime, updateTime, result);
+        return Objects.hash(requestId, jobId, status, requestParams, createTime, updateTime, result);
     }
 
     @Override
@@ -304,7 +304,7 @@ public class RunQueryVideoModerationJobResponse extends SdkResponse {
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    requestParams: ").append(toIndentedString(requestParams)).append("\n");
-        sb.append("    craeteTime: ").append(toIndentedString(craeteTime)).append("\n");
+        sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    result: ").append(toIndentedString(result)).append("\n");
         sb.append("}");

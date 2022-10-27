@@ -65,7 +65,7 @@ public class SendVerificationCodeV2Req {
     }
 
     /**
-     * 发送验证码的超时时间。 此参数不携带或携带值为null时，采用系统默认超时时间5分钟。 单位：分钟。
+     * 发送验证码的超时时间。 此参数不携带或携带值为null时，采用系统默认超时时间10分钟。 此参数值超过60时，取默认值5分钟。 单位：分钟。
      * minimum: 1
      * maximum: 2147483647
      * @return timeout

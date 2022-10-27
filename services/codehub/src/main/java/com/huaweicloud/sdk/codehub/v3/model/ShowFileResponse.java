@@ -4,8 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -22,7 +20,7 @@ public class ShowFileResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "result")
 
-    private List<FileContentInfo> result = null;
+    private FileContentInfo result;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
@@ -55,36 +53,29 @@ public class ShowFileResponse extends SdkResponse {
         this.error = error;
     }
 
-    public ShowFileResponse withResult(List<FileContentInfo> result) {
+    public ShowFileResponse withResult(FileContentInfo result) {
         this.result = result;
         return this;
     }
 
-    public ShowFileResponse addResultItem(FileContentInfo resultItem) {
+    public ShowFileResponse withResult(Consumer<FileContentInfo> resultSetter) {
         if (this.result == null) {
-            this.result = new ArrayList<>();
+            this.result = new FileContentInfo();
+            resultSetter.accept(this.result);
         }
-        this.result.add(resultItem);
-        return this;
-    }
 
-    public ShowFileResponse withResult(Consumer<List<FileContentInfo>> resultSetter) {
-        if (this.result == null) {
-            this.result = new ArrayList<>();
-        }
-        resultSetter.accept(this.result);
         return this;
     }
 
     /**
-     * 差异列表
+     * Get result
      * @return result
      */
-    public List<FileContentInfo> getResult() {
+    public FileContentInfo getResult() {
         return result;
     }
 
-    public void setResult(List<FileContentInfo> result) {
+    public void setResult(FileContentInfo result) {
         this.result = result;
     }
 

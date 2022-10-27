@@ -36,6 +36,11 @@ public class ListConfigurationsResult {
     private String datastoreName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "node_type")
+
+    private String nodeType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created")
 
     private String created;
@@ -135,6 +140,23 @@ public class ListConfigurationsResult {
         this.datastoreName = datastoreName;
     }
 
+    public ListConfigurationsResult withNodeType(String nodeType) {
+        this.nodeType = nodeType;
+        return this;
+    }
+
+    /**
+     * 参数模板节点类型。 - mongos，表示集群mongos节点类型。 - shard，表示集群shard节点类型。 - config，表示集群config节点类型。 - replica，表示副本集类型。 - single，表示单节点类型。
+     * @return nodeType
+     */
+    public String getNodeType() {
+        return nodeType;
+    }
+
+    public void setNodeType(String nodeType) {
+        this.nodeType = nodeType;
+    }
+
     public ListConfigurationsResult withCreated(String created) {
         this.created = created;
         return this;
@@ -200,6 +222,7 @@ public class ListConfigurationsResult {
             && Objects.equals(this.description, listConfigurationsResult.description)
             && Objects.equals(this.datastoreVersion, listConfigurationsResult.datastoreVersion)
             && Objects.equals(this.datastoreName, listConfigurationsResult.datastoreName)
+            && Objects.equals(this.nodeType, listConfigurationsResult.nodeType)
             && Objects.equals(this.created, listConfigurationsResult.created)
             && Objects.equals(this.updated, listConfigurationsResult.updated)
             && Objects.equals(this.userDefined, listConfigurationsResult.userDefined);
@@ -207,7 +230,8 @@ public class ListConfigurationsResult {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, description, datastoreVersion, datastoreName, created, updated, userDefined);
+        return Objects
+            .hash(id, name, description, datastoreVersion, datastoreName, nodeType, created, updated, userDefined);
     }
 
     @Override
@@ -219,6 +243,7 @@ public class ListConfigurationsResult {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    datastoreVersion: ").append(toIndentedString(datastoreVersion)).append("\n");
         sb.append("    datastoreName: ").append(toIndentedString(datastoreName)).append("\n");
+        sb.append("    nodeType: ").append(toIndentedString(nodeType)).append("\n");
         sb.append("    created: ").append(toIndentedString(created)).append("\n");
         sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
         sb.append("    userDefined: ").append(toIndentedString(userDefined)).append("\n");

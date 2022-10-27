@@ -20,6 +20,38 @@ public class DdsAsyncClient {
     }
 
     /**
+     * 实例新增只读节点
+     *
+     * DDS副本集实例新增只读节点。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param AddReadonlyNodeRequest 请求对象
+     * @return CompletableFuture<AddReadonlyNodeResponse>
+     */
+    public CompletableFuture<AddReadonlyNodeResponse> addReadonlyNodeAsync(AddReadonlyNodeRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdsMeta.addReadonlyNode);
+    }
+
+    /**
+     * 实例新增只读节点
+     *
+     * DDS副本集实例新增只读节点。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param AddReadonlyNodeRequest 请求对象
+     * @return AsyncInvoker<AddReadonlyNodeRequest, AddReadonlyNodeResponse>
+     */
+    public AsyncInvoker<AddReadonlyNodeRequest, AddReadonlyNodeResponse> addReadonlyNodeAsyncInvoker(
+        AddReadonlyNodeRequest request) {
+        return new AsyncInvoker<AddReadonlyNodeRequest, AddReadonlyNodeResponse>(request, DdsMeta.addReadonlyNode,
+            hcClient);
+    }
+
+    /**
      * 扩容集群实例的节点数量
      *
      * 扩容指定集群实例的节点数量。
@@ -173,6 +205,38 @@ public class DdsAsyncClient {
      */
     public AsyncInvoker<CancelEipRequest, CancelEipResponse> cancelEipAsyncInvoker(CancelEipRequest request) {
         return new AsyncInvoker<CancelEipRequest, CancelEipResponse>(request, DdsMeta.cancelEip, hcClient);
+    }
+
+    /**
+     * 设置可维护时间段
+     *
+     * 修改用户允许启动某项对数据库实例运行有影响的任务的时间范围，例如操作系统升级和数据库软件版本升级的时间窗。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ChangeOpsWindowRequest 请求对象
+     * @return CompletableFuture<ChangeOpsWindowResponse>
+     */
+    public CompletableFuture<ChangeOpsWindowResponse> changeOpsWindowAsync(ChangeOpsWindowRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdsMeta.changeOpsWindow);
+    }
+
+    /**
+     * 设置可维护时间段
+     *
+     * 修改用户允许启动某项对数据库实例运行有影响的任务的时间范围，例如操作系统升级和数据库软件版本升级的时间窗。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ChangeOpsWindowRequest 请求对象
+     * @return AsyncInvoker<ChangeOpsWindowRequest, ChangeOpsWindowResponse>
+     */
+    public AsyncInvoker<ChangeOpsWindowRequest, ChangeOpsWindowResponse> changeOpsWindowAsyncInvoker(
+        ChangeOpsWindowRequest request) {
+        return new AsyncInvoker<ChangeOpsWindowRequest, ChangeOpsWindowResponse>(request, DdsMeta.changeOpsWindow,
+            hcClient);
     }
 
     /**
@@ -335,9 +399,9 @@ public class DdsAsyncClient {
     }
 
     /**
-     * 打开集群的Shard/Config IP开关
+     * 创建集群的Shard/Config IP
      *
-     * 打开集群的Shard/Config IP开关
+     * 创建集群的Shard/Config IP
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -350,9 +414,9 @@ public class DdsAsyncClient {
     }
 
     /**
-     * 打开集群的Shard/Config IP开关
+     * 创建集群的Shard/Config IP
      *
-     * 打开集群的Shard/Config IP开关
+     * 创建集群的Shard/Config IP
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -649,6 +713,39 @@ public class DdsAsyncClient {
         DownloadSlowlogRequest request) {
         return new AsyncInvoker<DownloadSlowlogRequest, DownloadSlowlogResponse>(request, DdsMeta.downloadSlowlog,
             hcClient);
+    }
+
+    /**
+     * 扩容副本集实例的节点数量
+     *
+     * 扩容指定副本集实例的节点数量，暂不支持包周期实例
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ExpandReplicasetNodeRequest 请求对象
+     * @return CompletableFuture<ExpandReplicasetNodeResponse>
+     */
+    public CompletableFuture<ExpandReplicasetNodeResponse> expandReplicasetNodeAsync(
+        ExpandReplicasetNodeRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdsMeta.expandReplicasetNode);
+    }
+
+    /**
+     * 扩容副本集实例的节点数量
+     *
+     * 扩容指定副本集实例的节点数量，暂不支持包周期实例
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ExpandReplicasetNodeRequest 请求对象
+     * @return AsyncInvoker<ExpandReplicasetNodeRequest, ExpandReplicasetNodeResponse>
+     */
+    public AsyncInvoker<ExpandReplicasetNodeRequest, ExpandReplicasetNodeResponse> expandReplicasetNodeAsyncInvoker(
+        ExpandReplicasetNodeRequest request) {
+        return new AsyncInvoker<ExpandReplicasetNodeRequest, ExpandReplicasetNodeResponse>(request,
+            DdsMeta.expandReplicasetNode, hcClient);
     }
 
     /**
@@ -1701,6 +1798,38 @@ public class DdsAsyncClient {
     }
 
     /**
+     * 设置实例回收站策略
+     *
+     * 设置实例回收站策略
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SetRecyclePolicyRequest 请求对象
+     * @return CompletableFuture<SetRecyclePolicyResponse>
+     */
+    public CompletableFuture<SetRecyclePolicyResponse> setRecyclePolicyAsync(SetRecyclePolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdsMeta.setRecyclePolicy);
+    }
+
+    /**
+     * 设置实例回收站策略
+     *
+     * 设置实例回收站策略
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SetRecyclePolicyRequest 请求对象
+     * @return AsyncInvoker<SetRecyclePolicyRequest, SetRecyclePolicyResponse>
+     */
+    public AsyncInvoker<SetRecyclePolicyRequest, SetRecyclePolicyResponse> setRecyclePolicyAsyncInvoker(
+        SetRecyclePolicyRequest request) {
+        return new AsyncInvoker<SetRecyclePolicyRequest, SetRecyclePolicyResponse>(request, DdsMeta.setRecyclePolicy,
+            hcClient);
+    }
+
+    /**
      * 查询审计日志策略
      *
      * 查询审计日志策略。
@@ -1958,6 +2087,39 @@ public class DdsAsyncClient {
     }
 
     /**
+     * 查询秒级监控配置
+     *
+     * 查询秒级监控配置。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowSecondLevelMonitoringStatusRequest 请求对象
+     * @return CompletableFuture<ShowSecondLevelMonitoringStatusResponse>
+     */
+    public CompletableFuture<ShowSecondLevelMonitoringStatusResponse> showSecondLevelMonitoringStatusAsync(
+        ShowSecondLevelMonitoringStatusRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdsMeta.showSecondLevelMonitoringStatus);
+    }
+
+    /**
+     * 查询秒级监控配置
+     *
+     * 查询秒级监控配置。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowSecondLevelMonitoringStatusRequest 请求对象
+     * @return AsyncInvoker<ShowSecondLevelMonitoringStatusRequest, ShowSecondLevelMonitoringStatusResponse>
+     */
+    public AsyncInvoker<ShowSecondLevelMonitoringStatusRequest, ShowSecondLevelMonitoringStatusResponse> showSecondLevelMonitoringStatusAsyncInvoker(
+        ShowSecondLevelMonitoringStatusRequest request) {
+        return new AsyncInvoker<ShowSecondLevelMonitoringStatusRequest, ShowSecondLevelMonitoringStatusResponse>(
+            request, DdsMeta.showSecondLevelMonitoringStatus, hcClient);
+    }
+
+    /**
      * 查询集群均衡设置
      *
      * 查询集群均衡设置。
@@ -2020,6 +2182,39 @@ public class DdsAsyncClient {
         SwitchConfigurationRequest request) {
         return new AsyncInvoker<SwitchConfigurationRequest, SwitchConfigurationResponse>(request,
             DdsMeta.switchConfiguration, hcClient);
+    }
+
+    /**
+     * 开启/关闭秒级监控
+     *
+     * 开启或关闭指定实例的秒级监控。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SwitchSecondLevelMonitoringRequest 请求对象
+     * @return CompletableFuture<SwitchSecondLevelMonitoringResponse>
+     */
+    public CompletableFuture<SwitchSecondLevelMonitoringResponse> switchSecondLevelMonitoringAsync(
+        SwitchSecondLevelMonitoringRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdsMeta.switchSecondLevelMonitoring);
+    }
+
+    /**
+     * 开启/关闭秒级监控
+     *
+     * 开启或关闭指定实例的秒级监控。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SwitchSecondLevelMonitoringRequest 请求对象
+     * @return AsyncInvoker<SwitchSecondLevelMonitoringRequest, SwitchSecondLevelMonitoringResponse>
+     */
+    public AsyncInvoker<SwitchSecondLevelMonitoringRequest, SwitchSecondLevelMonitoringResponse> switchSecondLevelMonitoringAsyncInvoker(
+        SwitchSecondLevelMonitoringRequest request) {
+        return new AsyncInvoker<SwitchSecondLevelMonitoringRequest, SwitchSecondLevelMonitoringResponse>(request,
+            DdsMeta.switchSecondLevelMonitoring, hcClient);
     }
 
     /**
@@ -2343,6 +2538,39 @@ public class DdsAsyncClient {
         UpdateSecurityGroupRequest request) {
         return new AsyncInvoker<UpdateSecurityGroupRequest, UpdateSecurityGroupResponse>(request,
             DdsMeta.updateSecurityGroup, hcClient);
+    }
+
+    /**
+     * 数据库补丁升级
+     *
+     * 升级数据库补丁版本。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpgradeDatabaseVersionRequest 请求对象
+     * @return CompletableFuture<UpgradeDatabaseVersionResponse>
+     */
+    public CompletableFuture<UpgradeDatabaseVersionResponse> upgradeDatabaseVersionAsync(
+        UpgradeDatabaseVersionRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdsMeta.upgradeDatabaseVersion);
+    }
+
+    /**
+     * 数据库补丁升级
+     *
+     * 升级数据库补丁版本。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpgradeDatabaseVersionRequest 请求对象
+     * @return AsyncInvoker<UpgradeDatabaseVersionRequest, UpgradeDatabaseVersionResponse>
+     */
+    public AsyncInvoker<UpgradeDatabaseVersionRequest, UpgradeDatabaseVersionResponse> upgradeDatabaseVersionAsyncInvoker(
+        UpgradeDatabaseVersionRequest request) {
+        return new AsyncInvoker<UpgradeDatabaseVersionRequest, UpgradeDatabaseVersionResponse>(request,
+            DdsMeta.upgradeDatabaseVersion, hcClient);
     }
 
     /**

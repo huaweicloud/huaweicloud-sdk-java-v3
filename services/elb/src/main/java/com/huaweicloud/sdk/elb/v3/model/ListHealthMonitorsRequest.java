@@ -140,7 +140,7 @@ public class ListHealthMonitorsRequest {
     }
 
     /**
-     * 是否反向查询。取值： - true：查询上一页。 - false：查询下一页，默认。  使用说明： - 必须与limit一起使用。 - 当page_reverse=true时，若要查询上一页，marker取值为当前页返回值的previous_marker。
+     * 是否反向查询。  取值： - true：查询上一页。 - false：查询下一页，默认。  使用说明： - 必须与limit一起使用。 - 当page_reverse=true时，若要查询上一页，marker取值为当前页返回值的previous_marker。
      * @return pageReverse
      */
     public Boolean getPageReverse() {
@@ -305,7 +305,7 @@ public class ListHealthMonitorsRequest {
     }
 
     /**
-     * 健康检查间隔。取值：1-50s。  支持多值查询，查询条件格式：*delay=xxx&delay=xxx*。
+     * 健康检查间隔。  取值：1-50s。  支持多值查询，查询条件格式：*delay=xxx&delay=xxx*。
      * @return delay
      */
     public List<Integer> getDelay() {
@@ -355,7 +355,7 @@ public class ListHealthMonitorsRequest {
     }
 
     /**
-     * 健康检查的管理状态。取值： - true：表示开启健康检查，默认为true。 - false表示关闭健康检查。
+     * 健康检查的管理状态。  取值： - true：表示开启健康检查，默认为true。 - false表示关闭健康检查。
      * @return adminStateUp
      */
     public Boolean getAdminStateUp() {
@@ -438,7 +438,7 @@ public class ListHealthMonitorsRequest {
     }
 
     /**
-     * 健康检查请求协议。 取值：TCP、UDP_CONNECT、HTTP、HTTPS。  支持多值查询，查询条件格式：*****type=xxx&type=xxx*****。
+     * 健康检查请求协议。  取值：TCP、UDP_CONNECT、HTTP、HTTPS。  支持多值查询，查询条件格式：*****type=xxx&type=xxx*****。
      * @return type
      */
     public List<String> getType() {
@@ -471,7 +471,7 @@ public class ListHealthMonitorsRequest {
     }
 
     /**
-     * 期望响应状态码。取值：   - 单值：单个返回码，例如200。 - 列表：多个特定返回码，例如200，202。 - 区间：一个返回码区间，例如200-204。    默认值：200。   仅支持HTTP/HTTPS设置该字段，其他协议设置不会生效。   支持多值查询，查询条件格式：****expected_codes=xxx&expected_codes=xxx****。
+     * 期望响应状态码。  取值： - 单值：单个返回码，例如200。 - 列表：多个特定返回码，例如200，202。 - 区间：一个返回码区间，例如200-204。   默认值：200。  仅支持HTTP/HTTPS设置该字段，其他协议设置不会生效。  支持多值查询，查询条件格式：****expected_codes=xxx&expected_codes=xxx****。
      * @return expectedCodes
      */
     public List<String> getExpectedCodes() {
@@ -537,7 +537,7 @@ public class ListHealthMonitorsRequest {
     }
 
     /**
-     * HTTP请求方法。取值：GET、HEAD、POST、PUT、DELETE、TRACE、OPTIONS、CONNECT、PATCH。  支持多值查询，查询条件格式：**http_method=xxx&http_method=xxx**。  不支持该字段，请勿使用。
+     * HTTP请求方法。  取值：GET、HEAD、POST、PUT、DELETE、TRACE、OPTIONS、CONNECT、PATCH。  支持多值查询，查询条件格式：**http_method=xxx&http_method=xxx**。  不支持该字段，请勿使用。
      * @return httpMethod
      */
     public List<String> getHttpMethod() {
@@ -570,7 +570,7 @@ public class ListHealthMonitorsRequest {
     }
 
     /**
-     * 企业项目ID。不传时查询default企业项目\"0\"下的资源，鉴权按照default企业项目鉴权；如果传值，则传已存在的企业项目ID或all_granted_eps（表示查询所有企业项目）进行查询。 支持多值查询，查询条件格式：*enterprise_project_id=xxx&enterprise_project_id=xxx*。 [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
+     * 企业项目ID。不传时查询default企业项目\"0\"下的资源，鉴权按照default企业项目鉴权； 如果传值，则传已存在的企业项目ID或all_granted_eps（表示查询所有企业项目）进行查询。  支持多值查询，查询条件格式： *enterprise_project_id=xxx&enterprise_project_id=xxx*。  [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
      * @return enterpriseProjectId
      */
     public List<String> getEnterpriseProjectId() {

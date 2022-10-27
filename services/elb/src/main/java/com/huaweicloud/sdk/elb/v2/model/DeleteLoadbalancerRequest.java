@@ -15,11 +15,6 @@ public class DeleteLoadbalancerRequest {
 
     private String loadbalancerId;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "cascade")
-
-    private Boolean cascade;
-
     public DeleteLoadbalancerRequest withLoadbalancerId(String loadbalancerId) {
         this.loadbalancerId = loadbalancerId;
         return this;
@@ -37,23 +32,6 @@ public class DeleteLoadbalancerRequest {
         this.loadbalancerId = loadbalancerId;
     }
 
-    public DeleteLoadbalancerRequest withCascade(Boolean cascade) {
-        this.cascade = cascade;
-        return this;
-    }
-
-    /**
-     * （不再支持）级联删除负载均衡器
-     * @return cascade
-     */
-    public Boolean getCascade() {
-        return cascade;
-    }
-
-    public void setCascade(Boolean cascade) {
-        this.cascade = cascade;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -63,13 +41,12 @@ public class DeleteLoadbalancerRequest {
             return false;
         }
         DeleteLoadbalancerRequest deleteLoadbalancerRequest = (DeleteLoadbalancerRequest) o;
-        return Objects.equals(this.loadbalancerId, deleteLoadbalancerRequest.loadbalancerId)
-            && Objects.equals(this.cascade, deleteLoadbalancerRequest.cascade);
+        return Objects.equals(this.loadbalancerId, deleteLoadbalancerRequest.loadbalancerId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(loadbalancerId, cascade);
+        return Objects.hash(loadbalancerId);
     }
 
     @Override
@@ -77,7 +54,6 @@ public class DeleteLoadbalancerRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class DeleteLoadbalancerRequest {\n");
         sb.append("    loadbalancerId: ").append(toIndentedString(loadbalancerId)).append("\n");
-        sb.append("    cascade: ").append(toIndentedString(cascade)).append("\n");
         sb.append("}");
         return sb.toString();
     }

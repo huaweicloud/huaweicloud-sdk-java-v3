@@ -10,6 +10,38 @@ import com.huaweicloud.sdk.dds.v3.model.*;
 @SuppressWarnings("unchecked")
 public class DdsMeta {
 
+    public static final HttpRequestDef<AddReadonlyNodeRequest, AddReadonlyNodeResponse> addReadonlyNode =
+        genForaddReadonlyNode();
+
+    private static HttpRequestDef<AddReadonlyNodeRequest, AddReadonlyNodeResponse> genForaddReadonlyNode() {
+        // basic
+        HttpRequestDef.Builder<AddReadonlyNodeRequest, AddReadonlyNodeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AddReadonlyNodeRequest.class, AddReadonlyNodeResponse.class)
+                .withName("AddReadonlyNode")
+                .withUri("/v3/{project_id}/instances/{instance_id}/readonly-node")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddReadonlyNodeRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<AddReadonlyNodeRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AddReadonlyNodeRequestBody.class),
+            f -> f.withMarshaller(AddReadonlyNodeRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<AddShardingNodeRequest, AddShardingNodeResponse> addShardingNode =
         genForaddShardingNode();
 
@@ -154,6 +186,38 @@ public class DdsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CancelEipRequest::getNodeId, (req, v) -> {
                 req.setNodeId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ChangeOpsWindowRequest, ChangeOpsWindowResponse> changeOpsWindow =
+        genForchangeOpsWindow();
+
+    private static HttpRequestDef<ChangeOpsWindowRequest, ChangeOpsWindowResponse> genForchangeOpsWindow() {
+        // basic
+        HttpRequestDef.Builder<ChangeOpsWindowRequest, ChangeOpsWindowResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ChangeOpsWindowRequest.class, ChangeOpsWindowResponse.class)
+                .withName("ChangeOpsWindow")
+                .withUri("/v3/{project_id}/instances/{instance_id}/maintenance-window")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeOpsWindowRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<OpsWindowRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(OpsWindowRequestBody.class),
+            f -> f.withMarshaller(ChangeOpsWindowRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response
@@ -590,6 +654,38 @@ public class DdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DownloadSlowlogRequestBody.class),
             f -> f.withMarshaller(DownloadSlowlogRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExpandReplicasetNodeRequest, ExpandReplicasetNodeResponse> expandReplicasetNode =
+        genForexpandReplicasetNode();
+
+    private static HttpRequestDef<ExpandReplicasetNodeRequest, ExpandReplicasetNodeResponse> genForexpandReplicasetNode() {
+        // basic
+        HttpRequestDef.Builder<ExpandReplicasetNodeRequest, ExpandReplicasetNodeResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ExpandReplicasetNodeRequest.class, ExpandReplicasetNodeResponse.class)
+            .withName("ExpandReplicasetNode")
+            .withUri("/v3/{project_id}/instances/{instance_id}/replicaset-node")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExpandReplicasetNodeRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<EnlargeReplicasetNodeRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(EnlargeReplicasetNodeRequestBody.class),
+            f -> f.withMarshaller(ExpandReplicasetNodeRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -1946,6 +2042,31 @@ public class DdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<SetRecyclePolicyRequest, SetRecyclePolicyResponse> setRecyclePolicy =
+        genForsetRecyclePolicy();
+
+    private static HttpRequestDef<SetRecyclePolicyRequest, SetRecyclePolicyResponse> genForsetRecyclePolicy() {
+        // basic
+        HttpRequestDef.Builder<SetRecyclePolicyRequest, SetRecyclePolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, SetRecyclePolicyRequest.class, SetRecyclePolicyResponse.class)
+                .withName("SetRecyclePolicy")
+                .withUri("/v3/{project_id}/instances/recycle-policy")
+                .withContentType("application/json");
+
+        // requests
+        builder.<RecyclePolicyResponseBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RecyclePolicyResponseBody.class),
+            f -> f.withMarshaller(SetRecyclePolicyRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowAuditlogPolicyRequest, ShowAuditlogPolicyResponse> showAuditlogPolicy =
         genForshowAuditlogPolicy();
 
@@ -2177,6 +2298,34 @@ public class DdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowSecondLevelMonitoringStatusRequest, ShowSecondLevelMonitoringStatusResponse> showSecondLevelMonitoringStatus =
+        genForshowSecondLevelMonitoringStatus();
+
+    private static HttpRequestDef<ShowSecondLevelMonitoringStatusRequest, ShowSecondLevelMonitoringStatusResponse> genForshowSecondLevelMonitoringStatus() {
+        // basic
+        HttpRequestDef.Builder<ShowSecondLevelMonitoringStatusRequest, ShowSecondLevelMonitoringStatusResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowSecondLevelMonitoringStatusRequest.class,
+                    ShowSecondLevelMonitoringStatusResponse.class)
+                .withName("ShowSecondLevelMonitoringStatus")
+                .withUri("/v3/{project_id}/instances/{instance_id}/monitoring-by-seconds/switch")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSecondLevelMonitoringStatusRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowShardingBalancerRequest, ShowShardingBalancerResponse> showShardingBalancer =
         genForshowShardingBalancer();
 
@@ -2226,6 +2375,41 @@ public class DdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApplyConfigurationRequestBody.class),
             f -> f.withMarshaller(SwitchConfigurationRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SwitchSecondLevelMonitoringRequest, SwitchSecondLevelMonitoringResponse> switchSecondLevelMonitoring =
+        genForswitchSecondLevelMonitoring();
+
+    private static HttpRequestDef<SwitchSecondLevelMonitoringRequest, SwitchSecondLevelMonitoringResponse> genForswitchSecondLevelMonitoring() {
+        // basic
+        HttpRequestDef.Builder<SwitchSecondLevelMonitoringRequest, SwitchSecondLevelMonitoringResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    SwitchSecondLevelMonitoringRequest.class,
+                    SwitchSecondLevelMonitoringResponse.class)
+                .withName("SwitchSecondLevelMonitoring")
+                .withUri("/v3/{project_id}/instances/{instance_id}/monitoring-by-seconds/switch")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SwitchSecondLevelMonitoringRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<SwitchSecondLevelMonitoringRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SwitchSecondLevelMonitoringRequestBody.class),
+            f -> f.withMarshaller(SwitchSecondLevelMonitoringRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -2547,6 +2731,38 @@ public class DdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateSecurityGroupRequestBody.class),
             f -> f.withMarshaller(UpdateSecurityGroupRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpgradeDatabaseVersionRequest, UpgradeDatabaseVersionResponse> upgradeDatabaseVersion =
+        genForupgradeDatabaseVersion();
+
+    private static HttpRequestDef<UpgradeDatabaseVersionRequest, UpgradeDatabaseVersionResponse> genForupgradeDatabaseVersion() {
+        // basic
+        HttpRequestDef.Builder<UpgradeDatabaseVersionRequest, UpgradeDatabaseVersionResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, UpgradeDatabaseVersionRequest.class, UpgradeDatabaseVersionResponse.class)
+            .withName("UpgradeDatabaseVersion")
+            .withUri("/v3/{project_id}/instances/{instance_id}/db-upgrade")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpgradeDatabaseVersionRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<UpgradeDatabaseVersionRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpgradeDatabaseVersionRequestBody.class),
+            f -> f.withMarshaller(UpgradeDatabaseVersionRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

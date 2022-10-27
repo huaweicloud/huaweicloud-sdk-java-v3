@@ -192,7 +192,7 @@ public class IefAsyncClient {
     /**
      * 注册终端设备
      *
-     * 该API用于注册一个终端设备。
+     * 注册终端设备。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -207,7 +207,7 @@ public class IefAsyncClient {
     /**
      * 注册终端设备
      *
-     * 该API用于注册一个终端设备。
+     * 注册终端设备。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1018,7 +1018,7 @@ public class IefAsyncClient {
     /**
      * 启用停用边缘节点
      *
-     * 该API用于启用停用边缘节点。被停用的边缘节点将无法连接到云端服务，可用该URI启用边缘节点恢复连接。
+     * 启用停用边缘节点。被停用的边缘节点将无法连接到云端服务，可用该URI启用边缘节点恢复连接。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1034,7 +1034,7 @@ public class IefAsyncClient {
     /**
      * 启用停用边缘节点
      *
-     * 该API用于启用停用边缘节点。被停用的边缘节点将无法连接到云端服务，可用该URI启用边缘节点恢复连接。
+     * 启用停用边缘节点。被停用的边缘节点将无法连接到云端服务，可用该URI启用边缘节点恢复连接。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1941,7 +1941,7 @@ public class IefAsyncClient {
     /**
      * 查询边缘节点详情
      *
-     * 该API用于查询边缘节点详情。
+     * 查询边缘节点详情。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1956,7 +1956,7 @@ public class IefAsyncClient {
     /**
      * 查询边缘节点详情
      *
-     * 该API用于查询边缘节点详情。
+     * 查询边缘节点详情。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1968,39 +1968,6 @@ public class IefAsyncClient {
         ShowEdgeNodeDetailRequest request) {
         return new AsyncInvoker<ShowEdgeNodeDetailRequest, ShowEdgeNodeDetailResponse>(request,
             IefMeta.showEdgeNodeDetail, hcClient);
-    }
-
-    /**
-     * 查看边缘节点升级状态
-     *
-     * 该API用于查看边缘节点升级状态。
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param ShowEdgeNodeUpgradeDetailsRequest 请求对象
-     * @return CompletableFuture<ShowEdgeNodeUpgradeDetailsResponse>
-     */
-    public CompletableFuture<ShowEdgeNodeUpgradeDetailsResponse> showEdgeNodeUpgradeDetailsAsync(
-        ShowEdgeNodeUpgradeDetailsRequest request) {
-        return hcClient.asyncInvokeHttp(request, IefMeta.showEdgeNodeUpgradeDetails);
-    }
-
-    /**
-     * 查看边缘节点升级状态
-     *
-     * 该API用于查看边缘节点升级状态。
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param ShowEdgeNodeUpgradeDetailsRequest 请求对象
-     * @return AsyncInvoker<ShowEdgeNodeUpgradeDetailsRequest, ShowEdgeNodeUpgradeDetailsResponse>
-     */
-    public AsyncInvoker<ShowEdgeNodeUpgradeDetailsRequest, ShowEdgeNodeUpgradeDetailsResponse> showEdgeNodeUpgradeDetailsAsyncInvoker(
-        ShowEdgeNodeUpgradeDetailsRequest request) {
-        return new AsyncInvoker<ShowEdgeNodeUpgradeDetailsRequest, ShowEdgeNodeUpgradeDetailsResponse>(request,
-            IefMeta.showEdgeNodeUpgradeDetails, hcClient);
     }
 
     /**

@@ -110,6 +110,11 @@ public class ShowCertificateResponse extends SdkResponse {
     private Integer wildcardCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "fingerprint")
+
+    private String fingerprint;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
@@ -448,6 +453,23 @@ public class ShowCertificateResponse extends SdkResponse {
         this.wildcardCount = wildcardCount;
     }
 
+    public ShowCertificateResponse withFingerprint(String fingerprint) {
+        this.fingerprint = fingerprint;
+        return this;
+    }
+
+    /**
+     * 证书的SHA-1指纹。
+     * @return fingerprint
+     */
+    public String getFingerprint() {
+        return fingerprint;
+    }
+
+    public void setFingerprint(String fingerprint) {
+        this.fingerprint = fingerprint;
+    }
+
     public ShowCertificateResponse withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -526,6 +548,7 @@ public class ShowCertificateResponse extends SdkResponse {
             && Objects.equals(this.sans, showCertificateResponse.sans)
             && Objects.equals(this.domainCount, showCertificateResponse.domainCount)
             && Objects.equals(this.wildcardCount, showCertificateResponse.wildcardCount)
+            && Objects.equals(this.fingerprint, showCertificateResponse.fingerprint)
             && Objects.equals(this.enterpriseProjectId, showCertificateResponse.enterpriseProjectId)
             && Objects.equals(this.authentification, showCertificateResponse.authentification);
     }
@@ -551,6 +574,7 @@ public class ShowCertificateResponse extends SdkResponse {
             sans,
             domainCount,
             wildcardCount,
+            fingerprint,
             enterpriseProjectId,
             authentification);
     }
@@ -578,6 +602,7 @@ public class ShowCertificateResponse extends SdkResponse {
         sb.append("    sans: ").append(toIndentedString(sans)).append("\n");
         sb.append("    domainCount: ").append(toIndentedString(domainCount)).append("\n");
         sb.append("    wildcardCount: ").append(toIndentedString(wildcardCount)).append("\n");
+        sb.append("    fingerprint: ").append(toIndentedString(fingerprint)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    authentification: ").append(toIndentedString(authentification)).append("\n");
         sb.append("}");

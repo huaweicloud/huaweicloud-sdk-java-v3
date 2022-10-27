@@ -122,7 +122,7 @@ public class GlanceUpdateImageResponse extends SdkResponse {
     private ImageSourceTypeEnum imageSourceType;
 
     /**
-     * 镜像类型，目前支持以下类型：公共镜像：gold私有镜像：private共享镜像：shared
+     * 镜像类型，目前支持以下类型：公共镜像：gold私有镜像：private共享镜像：shared 市场镜像：market
      */
     public static final class ImagetypeEnum {
 
@@ -141,6 +141,11 @@ public class GlanceUpdateImageResponse extends SdkResponse {
          */
         public static final ImagetypeEnum SHARED = new ImagetypeEnum("shared");
 
+        /**
+         * Enum MARKET for value: "market"
+         */
+        public static final ImagetypeEnum MARKET = new ImagetypeEnum("market");
+
         private static final Map<String, ImagetypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ImagetypeEnum> createStaticFields() {
@@ -148,6 +153,7 @@ public class GlanceUpdateImageResponse extends SdkResponse {
             map.put("gold", GOLD);
             map.put("private", PRIVATE);
             map.put("shared", SHARED);
+            map.put("market", MARKET);
             return Collections.unmodifiableMap(map);
         }
 
@@ -1618,7 +1624,7 @@ public class GlanceUpdateImageResponse extends SdkResponse {
     }
 
     /**
-     * 镜像类型，目前支持以下类型：公共镜像：gold私有镜像：private共享镜像：shared
+     * 镜像类型，目前支持以下类型：公共镜像：gold私有镜像：private共享镜像：shared 市场镜像：market
      * @return imagetype
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

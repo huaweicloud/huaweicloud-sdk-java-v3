@@ -90,6 +90,38 @@ public class SFSTurboClient {
     }
 
     /**
+     * 修改文件系统名称
+     *
+     * 修改文件系统名称
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ChangeShareNameRequest 请求对象
+     * @return ChangeShareNameResponse
+     */
+    public ChangeShareNameResponse changeShareName(ChangeShareNameRequest request) {
+        return hcClient.syncInvokeHttp(request, SFSTurboMeta.changeShareName);
+    }
+
+    /**
+     * 修改文件系统名称
+     *
+     * 修改文件系统名称
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ChangeShareNameRequest 请求对象
+     * @return SyncInvoker<ChangeShareNameRequest, ChangeShareNameResponse>
+     */
+    public SyncInvoker<ChangeShareNameRequest, ChangeShareNameResponse> changeShareNameInvoker(
+        ChangeShareNameRequest request) {
+        return new SyncInvoker<ChangeShareNameRequest, ChangeShareNameResponse>(request, SFSTurboMeta.changeShareName,
+            hcClient);
+    }
+
+    /**
      * 创建文件系统
      *
      * 创建文件系统。

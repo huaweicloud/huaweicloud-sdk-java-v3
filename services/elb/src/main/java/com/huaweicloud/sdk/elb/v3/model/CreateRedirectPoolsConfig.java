@@ -43,7 +43,7 @@ public class CreateRedirectPoolsConfig {
     }
 
     /**
-     * 后端主机组的权重。 取值：0-100。
+     * 后端主机组的权重。  取值：0-100。
      * @return weight
      */
     public Integer getWeight() {

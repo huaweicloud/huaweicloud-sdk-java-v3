@@ -43,7 +43,7 @@ public class TagWithKeyValue {
     }
 
     /**
-     * 标签值。最大长度255个unicode字符。 可以为空字符串。可以包含任何语种字母、数字、空格和_.:=+-@， 但首尾不能含有空格。
+     * 标签值。最大长度255个unicode字符。 可以为空字符串。可以包含任何语种字母、数字、空格和_.:=+-@，
      * @return value
      */
     public String getValue() {

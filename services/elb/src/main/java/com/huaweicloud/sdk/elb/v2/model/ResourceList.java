@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 用于资源对象id列表，{“id”：id值}
+ * 资源对象id列表。
  */
 public class ResourceList {
 

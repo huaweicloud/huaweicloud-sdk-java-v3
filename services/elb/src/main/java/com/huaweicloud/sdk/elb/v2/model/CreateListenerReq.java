@@ -14,7 +14,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 创建监听器的结构体
+ * 创建监听器的请求体
  */
 public class CreateListenerReq {
 
@@ -188,28 +188,28 @@ public class CreateListenerReq {
         public static final TlsCiphersPolicyEnum TLS_1_0 = new TlsCiphersPolicyEnum("tls-1-0");
 
         /**
-         * Enum _TLS_1_1 for value: " tls-1-1"
+         * Enum TLS_1_1 for value: "tls-1-1"
          */
-        public static final TlsCiphersPolicyEnum _TLS_1_1 = new TlsCiphersPolicyEnum(" tls-1-1");
+        public static final TlsCiphersPolicyEnum TLS_1_1 = new TlsCiphersPolicyEnum("tls-1-1");
 
         /**
-         * Enum _TLS_1_2 for value: " tls-1-2"
+         * Enum TLS_1_2 for value: "tls-1-2"
          */
-        public static final TlsCiphersPolicyEnum _TLS_1_2 = new TlsCiphersPolicyEnum(" tls-1-2");
+        public static final TlsCiphersPolicyEnum TLS_1_2 = new TlsCiphersPolicyEnum("tls-1-2");
 
         /**
-         * Enum _TLS_1_2_STRICT for value: " tls-1-2-strict"
+         * Enum TLS_1_2_STRICT for value: "tls-1-2-strict"
          */
-        public static final TlsCiphersPolicyEnum _TLS_1_2_STRICT = new TlsCiphersPolicyEnum(" tls-1-2-strict");
+        public static final TlsCiphersPolicyEnum TLS_1_2_STRICT = new TlsCiphersPolicyEnum("tls-1-2-strict");
 
         private static final Map<String, TlsCiphersPolicyEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TlsCiphersPolicyEnum> createStaticFields() {
             Map<String, TlsCiphersPolicyEnum> map = new HashMap<>();
             map.put("tls-1-0", TLS_1_0);
-            map.put(" tls-1-1", _TLS_1_1);
-            map.put(" tls-1-2", _TLS_1_2);
-            map.put(" tls-1-2-strict", _TLS_1_2_STRICT);
+            map.put("tls-1-1", TLS_1_1);
+            map.put("tls-1-2", TLS_1_2);
+            map.put("tls-1-2-strict", TLS_1_2_STRICT);
             return Collections.unmodifiableMap(map);
         }
 

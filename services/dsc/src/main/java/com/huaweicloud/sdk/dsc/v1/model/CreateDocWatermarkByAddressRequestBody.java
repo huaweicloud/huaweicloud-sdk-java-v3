@@ -257,7 +257,7 @@ public class CreateDocWatermarkByAddressRequestBody {
     }
 
     /**
-     * 项目所在region的id，如北京一为：cn-north-1。
+     * 项目所在region的id，如：xx-xx-1。
      * @return regionId
      */
     public String getRegionId() {
@@ -359,7 +359,7 @@ public class CreateDocWatermarkByAddressRequestBody {
     }
 
     /**
-     * 待嵌入的图形明水印文件的地址, 字段格式要求同src_file字段，图形文件的格式必须为“png”或“jpg”，否则返回参数错误；图像文件大小不超过1MB
+     * 待嵌入的图形明水印文件的地址,  字段格式要求同src_file字段，图形文件的格式必须为“png”或“jpg”，否则返回参数错误；图像文件大小不超过1MB
      * @return imageMark
      */
     public String getImageMark() {

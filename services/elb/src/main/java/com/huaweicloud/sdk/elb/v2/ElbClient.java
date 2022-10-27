@@ -274,7 +274,7 @@ public class ElbClient {
     /**
      * 添加监听器标签
      *
-     * 给指定负载均衡器添加标签。
+     * 给指定监听器添加标签。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -289,7 +289,7 @@ public class ElbClient {
     /**
      * 添加监听器标签
      *
-     * 给指定负载均衡器添加标签。
+     * 给指定监听器添加标签。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -556,7 +556,7 @@ public class ElbClient {
     /**
      * 删除监听器
      *
-     * 根据指定ID删除监听器。提供级联删除选项，当选择级联删除时，删除和负载均衡器关联的转发规则、转发策略、白名单、标签等。
+     * 根据指定ID删除监听器。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -571,7 +571,7 @@ public class ElbClient {
     /**
      * 删除监听器
      *
-     * 根据指定ID删除监听器。提供级联删除选项，当选择级联删除时，删除和负载均衡器关联的转发规则、转发策略、白名单、标签等。
+     * 根据指定ID删除监听器。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -620,7 +620,7 @@ public class ElbClient {
     /**
      * 删除负载均衡
      *
-     * 根据指定ID删除负载均衡器。提供级联删除选项，当选择级联删除时，删除和负载均衡器关联的监听器、后端云服务器组、后端云服务器、健康检查、转发策略、转发规则、白名单、标签等
+     * 根据指定ID删除负载均衡器。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -635,7 +635,7 @@ public class ElbClient {
     /**
      * 删除负载均衡
      *
-     * 根据指定ID删除负载均衡器。提供级联删除选项，当选择级联删除时，删除和负载均衡器关联的监听器、后端云服务器组、后端云服务器、健康检查、转发策略、转发规则、白名单、标签等
+     * 根据指定ID删除负载均衡器。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1060,7 +1060,7 @@ public class ElbClient {
     /**
      * 查询后端云服务器列表
      *
-     * 添加属于某个后端云服务器组的后端云服务器。
+     * 查询属于某个后端云服务器组的后端云服务器。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1075,7 +1075,7 @@ public class ElbClient {
     /**
      * 查询后端云服务器列表
      *
-     * 添加属于某个后端云服务器组的后端云服务器。
+     * 查询属于某个后端云服务器组的后端云服务器。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.

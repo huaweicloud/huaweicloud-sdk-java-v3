@@ -12,6 +12,11 @@ import java.util.function.Consumer;
 public class UpdateNodeByDeviceIdRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ief-instance-id")
+
+    private String iefInstanceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "device_id")
 
     private String deviceId;
@@ -20,6 +25,23 @@ public class UpdateNodeByDeviceIdRequest {
     @JsonProperty(value = "body")
 
     private EdgeNodeUpdateByDevice body;
+
+    public UpdateNodeByDeviceIdRequest withIefInstanceId(String iefInstanceId) {
+        this.iefInstanceId = iefInstanceId;
+        return this;
+    }
+
+    /**
+     * 铂金版实例ID，专业版实例为空值
+     * @return iefInstanceId
+     */
+    public String getIefInstanceId() {
+        return iefInstanceId;
+    }
+
+    public void setIefInstanceId(String iefInstanceId) {
+        this.iefInstanceId = iefInstanceId;
+    }
 
     public UpdateNodeByDeviceIdRequest withDeviceId(String deviceId) {
         this.deviceId = deviceId;
@@ -73,19 +95,21 @@ public class UpdateNodeByDeviceIdRequest {
             return false;
         }
         UpdateNodeByDeviceIdRequest updateNodeByDeviceIdRequest = (UpdateNodeByDeviceIdRequest) o;
-        return Objects.equals(this.deviceId, updateNodeByDeviceIdRequest.deviceId)
+        return Objects.equals(this.iefInstanceId, updateNodeByDeviceIdRequest.iefInstanceId)
+            && Objects.equals(this.deviceId, updateNodeByDeviceIdRequest.deviceId)
             && Objects.equals(this.body, updateNodeByDeviceIdRequest.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(deviceId, body);
+        return Objects.hash(iefInstanceId, deviceId, body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateNodeByDeviceIdRequest {\n");
+        sb.append("    iefInstanceId: ").append(toIndentedString(iefInstanceId)).append("\n");
         sb.append("    deviceId: ").append(toIndentedString(deviceId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");

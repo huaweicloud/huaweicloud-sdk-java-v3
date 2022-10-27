@@ -16,9 +16,9 @@ public class ShowRiskConfigDetailRequest {
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "check_type")
+    @JsonProperty(value = "check_name")
 
-    private String checkType;
+    private String checkName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "standard")
@@ -46,7 +46,7 @@ public class ShowRiskConfigDetailRequest {
     }
 
     /**
-     * 企业项目ID
+     * 企业项目ID，查询所有企业项目时填写：all_granted_eps
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -57,21 +57,21 @@ public class ShowRiskConfigDetailRequest {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    public ShowRiskConfigDetailRequest withCheckType(String checkType) {
-        this.checkType = checkType;
+    public ShowRiskConfigDetailRequest withCheckName(String checkName) {
+        this.checkName = checkName;
         return this;
     }
 
     /**
      * 基线名称
-     * @return checkType
+     * @return checkName
      */
-    public String getCheckType() {
-        return checkType;
+    public String getCheckName() {
+        return checkName;
     }
 
-    public void setCheckType(String checkType) {
-        this.checkType = checkType;
+    public void setCheckName(String checkName) {
+        this.checkName = checkName;
     }
 
     public ShowRiskConfigDetailRequest withStandard(String standard) {
@@ -156,7 +156,7 @@ public class ShowRiskConfigDetailRequest {
         }
         ShowRiskConfigDetailRequest showRiskConfigDetailRequest = (ShowRiskConfigDetailRequest) o;
         return Objects.equals(this.enterpriseProjectId, showRiskConfigDetailRequest.enterpriseProjectId)
-            && Objects.equals(this.checkType, showRiskConfigDetailRequest.checkType)
+            && Objects.equals(this.checkName, showRiskConfigDetailRequest.checkName)
             && Objects.equals(this.standard, showRiskConfigDetailRequest.standard)
             && Objects.equals(this.hostId, showRiskConfigDetailRequest.hostId)
             && Objects.equals(this.limit, showRiskConfigDetailRequest.limit)
@@ -165,7 +165,7 @@ public class ShowRiskConfigDetailRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hash(enterpriseProjectId, checkType, standard, hostId, limit, offset);
+        return Objects.hash(enterpriseProjectId, checkName, standard, hostId, limit, offset);
     }
 
     @Override
@@ -173,7 +173,7 @@ public class ShowRiskConfigDetailRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowRiskConfigDetailRequest {\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
-        sb.append("    checkType: ").append(toIndentedString(checkType)).append("\n");
+        sb.append("    checkName: ").append(toIndentedString(checkName)).append("\n");
         sb.append("    standard: ").append(toIndentedString(standard)).append("\n");
         sb.append("    hostId: ").append(toIndentedString(hostId)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");

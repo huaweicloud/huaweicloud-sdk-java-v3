@@ -16,9 +16,9 @@ public class ShowCheckRuleDetailRequest {
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "check_type")
+    @JsonProperty(value = "check_name")
 
-    private String checkType;
+    private String checkName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "check_rule_id")
@@ -41,7 +41,7 @@ public class ShowCheckRuleDetailRequest {
     }
 
     /**
-     * 企业项目ID
+     * 企业项目ID，查询所有企业项目时填写：all_granted_eps
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -52,21 +52,21 @@ public class ShowCheckRuleDetailRequest {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    public ShowCheckRuleDetailRequest withCheckType(String checkType) {
-        this.checkType = checkType;
+    public ShowCheckRuleDetailRequest withCheckName(String checkName) {
+        this.checkName = checkName;
         return this;
     }
 
     /**
      * 基线名称
-     * @return checkType
+     * @return checkName
      */
-    public String getCheckType() {
-        return checkType;
+    public String getCheckName() {
+        return checkName;
     }
 
-    public void setCheckType(String checkType) {
-        this.checkType = checkType;
+    public void setCheckName(String checkName) {
+        this.checkName = checkName;
     }
 
     public ShowCheckRuleDetailRequest withCheckRuleId(String checkRuleId) {
@@ -130,7 +130,7 @@ public class ShowCheckRuleDetailRequest {
         }
         ShowCheckRuleDetailRequest showCheckRuleDetailRequest = (ShowCheckRuleDetailRequest) o;
         return Objects.equals(this.enterpriseProjectId, showCheckRuleDetailRequest.enterpriseProjectId)
-            && Objects.equals(this.checkType, showCheckRuleDetailRequest.checkType)
+            && Objects.equals(this.checkName, showCheckRuleDetailRequest.checkName)
             && Objects.equals(this.checkRuleId, showCheckRuleDetailRequest.checkRuleId)
             && Objects.equals(this.standard, showCheckRuleDetailRequest.standard)
             && Objects.equals(this.hostId, showCheckRuleDetailRequest.hostId);
@@ -138,7 +138,7 @@ public class ShowCheckRuleDetailRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hash(enterpriseProjectId, checkType, checkRuleId, standard, hostId);
+        return Objects.hash(enterpriseProjectId, checkName, checkRuleId, standard, hostId);
     }
 
     @Override
@@ -146,7 +146,7 @@ public class ShowCheckRuleDetailRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowCheckRuleDetailRequest {\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
-        sb.append("    checkType: ").append(toIndentedString(checkType)).append("\n");
+        sb.append("    checkName: ").append(toIndentedString(checkName)).append("\n");
         sb.append("    checkRuleId: ").append(toIndentedString(checkRuleId)).append("\n");
         sb.append("    standard: ").append(toIndentedString(standard)).append("\n");
         sb.append("    hostId: ").append(toIndentedString(hostId)).append("\n");

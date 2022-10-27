@@ -21,7 +21,7 @@ public class AudioModerationResultDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
-    private Integer startTime;
+    private Float startTime;
 
     /**
      * 音频片段审核处理建议： block：包含敏感信息，不通过 review：需要人工复检
@@ -108,7 +108,7 @@ public class AudioModerationResultDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time")
 
-    private Integer endTime;
+    private Float endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "label")
@@ -125,7 +125,7 @@ public class AudioModerationResultDetail {
 
     private List<VideoModerationDetailSegment> segments = null;
 
-    public AudioModerationResultDetail withStartTime(Integer startTime) {
+    public AudioModerationResultDetail withStartTime(Float startTime) {
         this.startTime = startTime;
         return this;
     }
@@ -134,11 +134,11 @@ public class AudioModerationResultDetail {
      * 音频片段开始时间
      * @return startTime
      */
-    public Integer getStartTime() {
+    public Float getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(Integer startTime) {
+    public void setStartTime(Float startTime) {
         this.startTime = startTime;
     }
 
@@ -159,7 +159,7 @@ public class AudioModerationResultDetail {
         this.suggestion = suggestion;
     }
 
-    public AudioModerationResultDetail withEndTime(Integer endTime) {
+    public AudioModerationResultDetail withEndTime(Float endTime) {
         this.endTime = endTime;
         return this;
     }
@@ -168,11 +168,11 @@ public class AudioModerationResultDetail {
      * 音频片段结束时间
      * @return endTime
      */
-    public Integer getEndTime() {
+    public Float getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(Integer endTime) {
+    public void setEndTime(Float endTime) {
         this.endTime = endTime;
     }
 

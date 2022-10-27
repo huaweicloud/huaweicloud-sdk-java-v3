@@ -26,7 +26,7 @@ public class IterationHistory {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operator")
 
-    private VersionHistoryOperator operator;
+    private IterationHistoryOperator operator;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operate")
@@ -77,14 +77,14 @@ public class IterationHistory {
         this.projectId = projectId;
     }
 
-    public IterationHistory withOperator(VersionHistoryOperator operator) {
+    public IterationHistory withOperator(IterationHistoryOperator operator) {
         this.operator = operator;
         return this;
     }
 
-    public IterationHistory withOperator(Consumer<VersionHistoryOperator> operatorSetter) {
+    public IterationHistory withOperator(Consumer<IterationHistoryOperator> operatorSetter) {
         if (this.operator == null) {
-            this.operator = new VersionHistoryOperator();
+            this.operator = new IterationHistoryOperator();
             operatorSetter.accept(this.operator);
         }
 
@@ -95,11 +95,11 @@ public class IterationHistory {
      * Get operator
      * @return operator
      */
-    public VersionHistoryOperator getOperator() {
+    public IterationHistoryOperator getOperator() {
         return operator;
     }
 
-    public void setOperator(VersionHistoryOperator operator) {
+    public void setOperator(IterationHistoryOperator operator) {
         this.operator = operator;
     }
 

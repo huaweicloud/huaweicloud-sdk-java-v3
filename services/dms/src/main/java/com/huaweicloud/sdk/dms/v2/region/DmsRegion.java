@@ -45,6 +45,10 @@ public class DmsRegion {
 
     public static final Region CN_NORTH_9 = new Region("cn-north-9", "https://dms.cn-north-9.myhuaweicloud.com");
 
+    public static final Region SA_BRAZIL_1 = new Region("sa-brazil-1", "https://dms.sa-brazil-1.myhuaweicloud.com");
+
+    public static final Region LA_SOUTH_2 = new Region("la-south-2", "https://dms.la-south-2.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("DMS");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -65,6 +69,8 @@ public class DmsRegion {
         map.put("af-south-1", AF_SOUTH_1);
         map.put("ru-northwest-2", RU_NORTHWEST_2);
         map.put("cn-north-9", CN_NORTH_9);
+        map.put("sa-brazil-1", SA_BRAZIL_1);
+        map.put("la-south-2", LA_SOUTH_2);
         return Collections.unmodifiableMap(map);
     }
 

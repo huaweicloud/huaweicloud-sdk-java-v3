@@ -480,6 +480,13 @@ public class EcsMeta {
             .withContentType("application/json;charset=UTF-8");
 
         // requests
+        builder.<String>withRequestField("X-Client-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreatePostPaidServersRequest::getXClientToken, (req, v) -> {
+                req.setXClientToken(v);
+            }));
         builder.<CreatePostPaidServersRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -530,6 +537,13 @@ public class EcsMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
+        builder.<String>withRequestField("X-Client-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateServersRequest::getXClientToken, (req, v) -> {
+                req.setXClientToken(v);
+            }));
         builder.<CreateServersRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,

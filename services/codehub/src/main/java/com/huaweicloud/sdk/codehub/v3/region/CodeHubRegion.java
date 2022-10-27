@@ -31,6 +31,12 @@ public class CodeHubRegion {
     public static final Region CN_SOUTHWEST_2 =
         new Region("cn-southwest-2", "https://codehub-ext.cn-southwest-2.myhuaweicloud.com");
 
+    public static final Region SA_BRAZIL_1 =
+        new Region("sa-brazil-1", "https://codehub-ext.sa-brazil-1.myhuaweicloud.com");
+
+    public static final Region LA_NORTH_2 =
+        new Region("la-north-2", "https://codehub-ext.la-north-2.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("CODEHUB");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -44,6 +50,8 @@ public class CodeHubRegion {
         map.put("cn-north-1", CN_NORTH_1);
         map.put("cn-south-2", CN_SOUTH_2);
         map.put("cn-southwest-2", CN_SOUTHWEST_2);
+        map.put("sa-brazil-1", SA_BRAZIL_1);
+        map.put("la-north-2", LA_NORTH_2);
         return Collections.unmodifiableMap(map);
     }
 

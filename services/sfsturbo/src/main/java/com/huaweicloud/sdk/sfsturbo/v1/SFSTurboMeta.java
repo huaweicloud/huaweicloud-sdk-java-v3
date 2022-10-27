@@ -74,6 +74,38 @@ public class SFSTurboMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ChangeShareNameRequest, ChangeShareNameResponse> changeShareName =
+        genForchangeShareName();
+
+    private static HttpRequestDef<ChangeShareNameRequest, ChangeShareNameResponse> genForchangeShareName() {
+        // basic
+        HttpRequestDef.Builder<ChangeShareNameRequest, ChangeShareNameResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ChangeShareNameRequest.class, ChangeShareNameResponse.class)
+                .withName("ChangeShareName")
+                .withUri("/v1/{project_id}/sfs-turbo/shares/{share_id}/action")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("share_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeShareNameRequest::getShareId, (req, v) -> {
+                req.setShareId(v);
+            }));
+        builder.<ChangeShareNameReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ChangeShareNameReq.class),
+            f -> f.withMarshaller(ChangeShareNameRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateShareRequest, CreateShareResponse> createShare = genForcreateShare();
 
     private static HttpRequestDef<CreateShareRequest, CreateShareResponse> genForcreateShare() {

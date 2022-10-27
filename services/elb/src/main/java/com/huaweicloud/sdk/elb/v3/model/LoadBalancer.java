@@ -335,7 +335,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 负载均衡器的配置状态。取值： - ACTIVE：使用中。 - PENDING_DELETE：删除中。
+     * 负载均衡器的配置状态。  取值： - ACTIVE：使用中。 - PENDING_DELETE：删除中。
      * @return provisioningStatus
      */
     public String getProvisioningStatus() {
@@ -452,7 +452,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 负载均衡器的操作状态。取值： - ONLINE：在线。
+     * 负载均衡器的操作状态。  取值： - ONLINE：在线。
      * @return operatingStatus
      */
     public String getOperatingStatus() {
@@ -537,7 +537,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 负载均衡器的IPv4对应的port ID。[创建弹性负载均衡时，会自动为负载均衡创建一个port并关联一个默认的安全组，这个安全组对所有流量不生效。](tag:dt,dt_test,hcso_dt)
+     * 负载均衡器的IPv4对应的port ID。 [创建弹性负载均衡时，会自动为负载均衡创建一个port并关联一个默认的安全组，这个安全组对所有流量不生效。 ](tag:dt,dt_test,hcso_dt)
      * @return vipPortId
      */
     public String getVipPortId() {
@@ -621,7 +621,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 是否独享型LB。取值： - false：共享型。 - true：独享型。
+     * 是否独享型LB。  取值： - false：共享型。 - true：独享型。
      * @return guaranteed
      */
     public Boolean getGuaranteed() {
@@ -789,7 +789,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 资源账单信息。取值： - 空：按需计费。 - 非空：包周期计费， 包周期计费billing_info字段的格式为：order_id:product_id:region_id:project_id，如： CS2107161019CDJZZ:OFFI569702121789763584:az:057ef081eb00d2732fd1c01a9be75e6f  [不支持该字段，请勿使用](tag:dt,dt_test,hcso_dt)
+     * 资源账单信息。  取值： - 空：按需计费。 - 非空：包周期计费，  包周期计费billing_info字段的格式为：order_id:product_id:region_id:project_id，如：  CS2107161019CDJZZ:OFFI569702121789763584: az:057ef081eb00d2732fd1c01a9be75e6f  [不支持该字段，请勿使用](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt)
      * @return billingInfo
      */
     public String getBillingInfo() {
@@ -923,7 +923,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 负载均衡器绑定的global eip。只支持绑定一个global eip。
+     * 负载均衡器绑定的global eip。只支持绑定一个global eip。[不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt)
      * @return globalEips
      */
     public List<GlobalEipInfo> getGlobalEips() {
@@ -990,7 +990,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 是否启用跨VPC后端转发。取值： - true：开启、 - false：不开启。  [仅独享型负载均衡器支持该特性。](tag:hws,hws_hk,ocb,tlf,ctc,hcs,sbc,g42,tm,cmcc,hk_g42,mix,hk_sbc,hws_ocb,fcs,dt,dt_test)  开启跨VPC后端转发后，后端服务器组不仅支持添加云上VPC内的服务器，还支持添加其他VPC、其他公有云、云下数据中心的服务器。  使用说明： - 开启不能关闭。
+     * 是否启用跨VPC后端转发。  开启跨VPC后端转发后，后端服务器组不仅支持添加云上VPC内的服务器，还支持添加其他VPC、其他公有云、云下数据中心的服务器。  [仅独享型负载均衡器支持该特性。 ](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,fcs,dt)  取值： - true：开启。 - false：不开启。  使用说明： - 开启不能关闭。
      * @return ipTargetEnable
      */
     public Boolean getIpTargetEnable() {
@@ -1007,7 +1007,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 负载均衡器的冻结场景。若负载均衡器有多个冻结场景，用逗号分隔。取值： - POLICE：公安冻结场景。 - ILLEGAL：违规冻结场景。 - VERIFY：客户未实名认证冻结场景。 - RTNER：合作伙伴冻结（合作伙伴冻结子客户资源）。 - REAR：欠费冻结场景。  [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
+     * 负载均衡器的冻结场景。若负载均衡器有多个冻结场景，用逗号分隔。  取值： - POLICE：公安冻结场景。 - ILLEGAL：违规冻结场景。 - VERIFY：客户未实名认证冻结场景。 - RTNER：合作伙伴冻结（合作伙伴冻结子客户资源）。 - REAR：欠费冻结场景。  [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt)
      * @return frozenScene
      */
     public String getFrozenScene() {
@@ -1050,7 +1050,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 是否开启删除保护。取值： - false：不开启。 - true：开启。 >退场时需要先关闭所有资源的删除保护开关。  仅当前局点启用删除保护特性后才会返回该字段。
+     * 是否开启删除保护。  取值： - false：不开启。 - true：开启。 >退场时需要先关闭所有资源的删除保护开关。  仅当前局点启用删除保护特性后才会返回该字段。  [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42)
      * @return deletionProtectionEnable
      */
     public Boolean getDeletionProtectionEnable() {
@@ -1110,7 +1110,7 @@ public class LoadBalancer {
     }
 
     /**
-     * WAF故障时的流量处理策略。discard:丢弃，forward: 转发到后端（默认）   使用说明：只有绑定了waf的LB实例，该字段才会生效。
+     * WAF故障时的流量处理策略。discard:丢弃，forward: 转发到后端（默认）  使用说明：只有绑定了waf的LB实例，该字段才会生效。  [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt)
      * @return wafFailureAction
      */
     public String getWafFailureAction() {

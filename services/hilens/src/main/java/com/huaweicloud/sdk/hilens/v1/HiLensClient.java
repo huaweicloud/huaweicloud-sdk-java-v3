@@ -50,9 +50,9 @@ public class HiLensClient {
     }
 
     /**
-     * 获取设备列表
+     * 获取基础版设备列表
      *
-     * 获取设备列表
+     * 获取基础版设备列表
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -65,9 +65,9 @@ public class HiLensClient {
     }
 
     /**
-     * 获取设备列表
+     * 获取基础版设备列表
      *
-     * 获取设备列表
+     * 获取基础版设备列表
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.

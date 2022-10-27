@@ -45,6 +45,31 @@ public class CloudIDEMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListExtensionsRequest, ListExtensionsResponse> listExtensions =
+        genForlistExtensions();
+
+    private static HttpRequestDef<ListExtensionsRequest, ListExtensionsResponse> genForlistExtensions() {
+        // basic
+        HttpRequestDef.Builder<ListExtensionsRequest, ListExtensionsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListExtensionsRequest.class, ListExtensionsResponse.class)
+                .withName("ListExtensions")
+                .withUri("/v1/marketplace/extension/extensionquery")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ExtensionQueryParamSnake>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ExtensionQueryParamSnake.class),
+            f -> f.withMarshaller(ListExtensionsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListProjectTemplatesRequest, ListProjectTemplatesResponse> listProjectTemplates =
         genForlistProjectTemplates();
 
@@ -154,6 +179,112 @@ public class CloudIDEMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowExtensionAuthorizationRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowExtensionDetailRequest, ShowExtensionDetailResponse> showExtensionDetail =
+        genForshowExtensionDetail();
+
+    private static HttpRequestDef<ShowExtensionDetailRequest, ShowExtensionDetailResponse> genForshowExtensionDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowExtensionDetailRequest, ShowExtensionDetailResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ShowExtensionDetailRequest.class, ShowExtensionDetailResponse.class)
+                .withName("ShowExtensionDetail")
+                .withUri("/v1/marketplace/extension/public/detail")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ExtensionSearchUserInputParamCustomizeForDetail>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ExtensionSearchUserInputParamCustomizeForDetail.class),
+            f -> f.withMarshaller(ShowExtensionDetailRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowExtensionEvaluationRequest, ShowExtensionEvaluationResponse> showExtensionEvaluation =
+        genForshowExtensionEvaluation();
+
+    private static HttpRequestDef<ShowExtensionEvaluationRequest, ShowExtensionEvaluationResponse> genForshowExtensionEvaluation() {
+        // basic
+        HttpRequestDef.Builder<ShowExtensionEvaluationRequest, ShowExtensionEvaluationResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowExtensionEvaluationRequest.class, ShowExtensionEvaluationResponse.class)
+            .withName("ShowExtensionEvaluation")
+            .withUri("/v1/marketplace/feedback/evaluation")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("extension_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowExtensionEvaluationRequest::getExtensionId, (req, v) -> {
+                req.setExtensionId(v);
+            }));
+        builder.<Long>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowExtensionEvaluationRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowExtensionEvaluationRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowExtensionEvaluationStarRequest, ShowExtensionEvaluationStarResponse> showExtensionEvaluationStar =
+        genForshowExtensionEvaluationStar();
+
+    private static HttpRequestDef<ShowExtensionEvaluationStarRequest, ShowExtensionEvaluationStarResponse> genForshowExtensionEvaluationStar() {
+        // basic
+        HttpRequestDef.Builder<ShowExtensionEvaluationStarRequest, ShowExtensionEvaluationStarResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowExtensionEvaluationStarRequest.class,
+                    ShowExtensionEvaluationStarResponse.class)
+                .withName("ShowExtensionEvaluationStar")
+                .withUri("/v1/marketplace/feedback/star")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("extension_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowExtensionEvaluationStarRequest::getExtensionId, (req, v) -> {
+                req.setExtensionId(v);
+            }));
+        builder.<Long>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowExtensionEvaluationStarRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowExtensionEvaluationStarRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
             }));
 
         // response

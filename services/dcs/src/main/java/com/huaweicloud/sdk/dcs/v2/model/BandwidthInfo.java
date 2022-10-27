@@ -13,17 +13,17 @@ public class BandwidthInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "begin_time")
 
-    private String beginTime;
+    private Long beginTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time")
 
-    private String endTime;
+    private Long endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "current_time")
 
-    private String currentTime;
+    private Long currentTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bandwidth")
@@ -33,7 +33,7 @@ public class BandwidthInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "next_expand_time")
 
-    private String nextExpandTime;
+    private Long nextExpandTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expand_count")
@@ -43,12 +43,12 @@ public class BandwidthInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expand_effect_time")
 
-    private String expandEffectTime;
+    private Long expandEffectTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expand_interval_time")
 
-    private String expandIntervalTime;
+    private Long expandIntervalTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_expand_count")
@@ -60,7 +60,7 @@ public class BandwidthInfo {
 
     private Boolean taskRunning;
 
-    public BandwidthInfo withBeginTime(String beginTime) {
+    public BandwidthInfo withBeginTime(Long beginTime) {
         this.beginTime = beginTime;
         return this;
     }
@@ -69,15 +69,15 @@ public class BandwidthInfo {
      * 临时扩容开始时间
      * @return beginTime
      */
-    public String getBeginTime() {
+    public Long getBeginTime() {
         return beginTime;
     }
 
-    public void setBeginTime(String beginTime) {
+    public void setBeginTime(Long beginTime) {
         this.beginTime = beginTime;
     }
 
-    public BandwidthInfo withEndTime(String endTime) {
+    public BandwidthInfo withEndTime(Long endTime) {
         this.endTime = endTime;
         return this;
     }
@@ -86,15 +86,15 @@ public class BandwidthInfo {
      * 临时扩容结束时间
      * @return endTime
      */
-    public String getEndTime() {
+    public Long getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(String endTime) {
+    public void setEndTime(Long endTime) {
         this.endTime = endTime;
     }
 
-    public BandwidthInfo withCurrentTime(String currentTime) {
+    public BandwidthInfo withCurrentTime(Long currentTime) {
         this.currentTime = currentTime;
         return this;
     }
@@ -103,11 +103,11 @@ public class BandwidthInfo {
      * 当前时间
      * @return currentTime
      */
-    public String getCurrentTime() {
+    public Long getCurrentTime() {
         return currentTime;
     }
 
-    public void setCurrentTime(String currentTime) {
+    public void setCurrentTime(Long currentTime) {
         this.currentTime = currentTime;
     }
 
@@ -128,7 +128,7 @@ public class BandwidthInfo {
         this.bandwidth = bandwidth;
     }
 
-    public BandwidthInfo withNextExpandTime(String nextExpandTime) {
+    public BandwidthInfo withNextExpandTime(Long nextExpandTime) {
         this.nextExpandTime = nextExpandTime;
         return this;
     }
@@ -137,11 +137,11 @@ public class BandwidthInfo {
      * 下一个扩容时间
      * @return nextExpandTime
      */
-    public String getNextExpandTime() {
+    public Long getNextExpandTime() {
         return nextExpandTime;
     }
 
-    public void setNextExpandTime(String nextExpandTime) {
+    public void setNextExpandTime(Long nextExpandTime) {
         this.nextExpandTime = nextExpandTime;
     }
 
@@ -162,7 +162,7 @@ public class BandwidthInfo {
         this.expandCount = expandCount;
     }
 
-    public BandwidthInfo withExpandEffectTime(String expandEffectTime) {
+    public BandwidthInfo withExpandEffectTime(Long expandEffectTime) {
         this.expandEffectTime = expandEffectTime;
         return this;
     }
@@ -171,15 +171,15 @@ public class BandwidthInfo {
      * 临时扩容时间间隔
      * @return expandEffectTime
      */
-    public String getExpandEffectTime() {
+    public Long getExpandEffectTime() {
         return expandEffectTime;
     }
 
-    public void setExpandEffectTime(String expandEffectTime) {
+    public void setExpandEffectTime(Long expandEffectTime) {
         this.expandEffectTime = expandEffectTime;
     }
 
-    public BandwidthInfo withExpandIntervalTime(String expandIntervalTime) {
+    public BandwidthInfo withExpandIntervalTime(Long expandIntervalTime) {
         this.expandIntervalTime = expandIntervalTime;
         return this;
     }
@@ -188,11 +188,11 @@ public class BandwidthInfo {
      * 下一次可以扩容间隔时间
      * @return expandIntervalTime
      */
-    public String getExpandIntervalTime() {
+    public Long getExpandIntervalTime() {
         return expandIntervalTime;
     }
 
-    public void setExpandIntervalTime(String expandIntervalTime) {
+    public void setExpandIntervalTime(Long expandIntervalTime) {
         this.expandIntervalTime = expandIntervalTime;
     }
 

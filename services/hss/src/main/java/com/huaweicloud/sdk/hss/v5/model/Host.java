@@ -431,7 +431,7 @@ public class Host {
     }
 
     /**
-     * 云服务资源实例ID（UUID）
+     * 主机安全配额ID（UUID）
      * @return resourceId
      */
     public String getResourceId() {

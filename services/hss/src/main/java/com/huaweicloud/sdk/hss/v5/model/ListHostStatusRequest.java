@@ -126,6 +126,11 @@ public class ListHostStatusRequest {
     private String label;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "server_group")
+
+    private String serverGroup;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
     private Integer limit;
@@ -158,7 +163,7 @@ public class ListHostStatusRequest {
     }
 
     /**
-     * 企业项目ID
+     * 企业项目ID，查询所有企业项目时填写：all_granted_eps
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -243,7 +248,7 @@ public class ListHostStatusRequest {
     }
 
     /**
-     * 服务器id
+     * 服务器ID
      * @return hostId
      */
     public String getHostId() {
@@ -526,6 +531,23 @@ public class ListHostStatusRequest {
         this.label = label;
     }
 
+    public ListHostStatusRequest withServerGroup(String serverGroup) {
+        this.serverGroup = serverGroup;
+        return this;
+    }
+
+    /**
+     * 资产服务器组
+     * @return serverGroup
+     */
+    public String getServerGroup() {
+        return serverGroup;
+    }
+
+    public void setServerGroup(String serverGroup) {
+        this.serverGroup = serverGroup;
+    }
+
     public ListHostStatusRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -596,6 +618,7 @@ public class ListHostStatusRequest {
             && Objects.equals(this.outsideHost, listHostStatusRequest.outsideHost)
             && Objects.equals(this.assetValue, listHostStatusRequest.assetValue)
             && Objects.equals(this.label, listHostStatusRequest.label)
+            && Objects.equals(this.serverGroup, listHostStatusRequest.serverGroup)
             && Objects.equals(this.limit, listHostStatusRequest.limit)
             && Objects.equals(this.offset, listHostStatusRequest.offset);
     }
@@ -625,6 +648,7 @@ public class ListHostStatusRequest {
             outsideHost,
             assetValue,
             label,
+            serverGroup,
             limit,
             offset);
     }
@@ -656,6 +680,7 @@ public class ListHostStatusRequest {
         sb.append("    outsideHost: ").append(toIndentedString(outsideHost)).append("\n");
         sb.append("    assetValue: ").append(toIndentedString(assetValue)).append("\n");
         sb.append("    label: ").append(toIndentedString(label)).append("\n");
+        sb.append("    serverGroup: ").append(toIndentedString(serverGroup)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("}");

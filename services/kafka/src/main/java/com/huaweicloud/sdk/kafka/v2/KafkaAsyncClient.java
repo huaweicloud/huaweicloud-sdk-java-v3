@@ -1578,7 +1578,7 @@ public class KafkaAsyncClient {
     /**
      * 修改实例信息
      *
-     * 修改实例的名称和描述信息。
+     * 修改实例信息。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1593,7 +1593,7 @@ public class KafkaAsyncClient {
     /**
      * 修改实例信息
      *
-     * 修改实例的名称和描述信息。
+     * 修改实例信息。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.

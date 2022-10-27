@@ -41,7 +41,7 @@ public class RunlogItem {
     private String time;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "backupId")
+    @JsonProperty(value = "backup_id")
 
     private String backupId;
 

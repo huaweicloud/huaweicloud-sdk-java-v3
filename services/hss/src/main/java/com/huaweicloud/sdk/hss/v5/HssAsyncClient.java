@@ -20,6 +20,71 @@ public class HssAsyncClient {
     }
 
     /**
+     * 批量创建标签
+     *
+     * 批量创建标签
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param BatchCreateTagsRequest 请求对象
+     * @return CompletableFuture<BatchCreateTagsResponse>
+     */
+    public CompletableFuture<BatchCreateTagsResponse> batchCreateTagsAsync(BatchCreateTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, HssMeta.batchCreateTags);
+    }
+
+    /**
+     * 批量创建标签
+     *
+     * 批量创建标签
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param BatchCreateTagsRequest 请求对象
+     * @return AsyncInvoker<BatchCreateTagsRequest, BatchCreateTagsResponse>
+     */
+    public AsyncInvoker<BatchCreateTagsRequest, BatchCreateTagsResponse> batchCreateTagsAsyncInvoker(
+        BatchCreateTagsRequest request) {
+        return new AsyncInvoker<BatchCreateTagsRequest, BatchCreateTagsResponse>(request, HssMeta.batchCreateTags,
+            hcClient);
+    }
+
+    /**
+     * 删除资源标签
+     *
+     * 删除单个资源下的标签
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteResourceInstanceTagRequest 请求对象
+     * @return CompletableFuture<DeleteResourceInstanceTagResponse>
+     */
+    public CompletableFuture<DeleteResourceInstanceTagResponse> deleteResourceInstanceTagAsync(
+        DeleteResourceInstanceTagRequest request) {
+        return hcClient.asyncInvokeHttp(request, HssMeta.deleteResourceInstanceTag);
+    }
+
+    /**
+     * 删除资源标签
+     *
+     * 删除单个资源下的标签
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteResourceInstanceTagRequest 请求对象
+     * @return AsyncInvoker<DeleteResourceInstanceTagRequest, DeleteResourceInstanceTagResponse>
+     */
+    public AsyncInvoker<DeleteResourceInstanceTagRequest, DeleteResourceInstanceTagResponse> deleteResourceInstanceTagAsyncInvoker(
+        DeleteResourceInstanceTagRequest request) {
+        return new AsyncInvoker<DeleteResourceInstanceTagRequest, DeleteResourceInstanceTagResponse>(request,
+            HssMeta.deleteResourceInstanceTag, hcClient);
+    }
+
+    /**
      * 查询云服务器列表
      *
      * 查询云服务器列表
@@ -82,6 +147,38 @@ public class HssAsyncClient {
         ListPasswordComplexityRequest request) {
         return new AsyncInvoker<ListPasswordComplexityRequest, ListPasswordComplexityResponse>(request,
             HssMeta.listPasswordComplexity, hcClient);
+    }
+
+    /**
+     * 查询配额详情
+     *
+     * 查询配额详情
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListQuotasDetailRequest 请求对象
+     * @return CompletableFuture<ListQuotasDetailResponse>
+     */
+    public CompletableFuture<ListQuotasDetailResponse> listQuotasDetailAsync(ListQuotasDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, HssMeta.listQuotasDetail);
+    }
+
+    /**
+     * 查询配额详情
+     *
+     * 查询配额详情
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListQuotasDetailRequest 请求对象
+     * @return AsyncInvoker<ListQuotasDetailRequest, ListQuotasDetailResponse>
+     */
+    public AsyncInvoker<ListQuotasDetailRequest, ListQuotasDetailResponse> listQuotasDetailAsyncInvoker(
+        ListQuotasDetailRequest request) {
+        return new AsyncInvoker<ListQuotasDetailRequest, ListQuotasDetailResponse>(request, HssMeta.listQuotasDetail,
+            hcClient);
     }
 
     /**
@@ -214,6 +311,69 @@ public class HssAsyncClient {
     }
 
     /**
+     * 获取账户变动历史信息
+     *
+     * 获取账户变动历史记录信息
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListUserChangeHistoriesRequest 请求对象
+     * @return CompletableFuture<ListUserChangeHistoriesResponse>
+     */
+    public CompletableFuture<ListUserChangeHistoriesResponse> listUserChangeHistoriesAsync(
+        ListUserChangeHistoriesRequest request) {
+        return hcClient.asyncInvokeHttp(request, HssMeta.listUserChangeHistories);
+    }
+
+    /**
+     * 获取账户变动历史信息
+     *
+     * 获取账户变动历史记录信息
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListUserChangeHistoriesRequest 请求对象
+     * @return AsyncInvoker<ListUserChangeHistoriesRequest, ListUserChangeHistoriesResponse>
+     */
+    public AsyncInvoker<ListUserChangeHistoriesRequest, ListUserChangeHistoriesResponse> listUserChangeHistoriesAsyncInvoker(
+        ListUserChangeHistoriesRequest request) {
+        return new AsyncInvoker<ListUserChangeHistoriesRequest, ListUserChangeHistoriesResponse>(request,
+            HssMeta.listUserChangeHistories, hcClient);
+    }
+
+    /**
+     * 获取资产的账号列表
+     *
+     * 获取资产的账号列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListUsersRequest 请求对象
+     * @return CompletableFuture<ListUsersResponse>
+     */
+    public CompletableFuture<ListUsersResponse> listUsersAsync(ListUsersRequest request) {
+        return hcClient.asyncInvokeHttp(request, HssMeta.listUsers);
+    }
+
+    /**
+     * 获取资产的账号列表
+     *
+     * 获取资产的账号列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListUsersRequest 请求对象
+     * @return AsyncInvoker<ListUsersRequest, ListUsersResponse>
+     */
+    public AsyncInvoker<ListUsersRequest, ListUsersResponse> listUsersAsyncInvoker(ListUsersRequest request) {
+        return new AsyncInvoker<ListUsersRequest, ListUsersResponse>(request, HssMeta.listUsers, hcClient);
+    }
+
+    /**
      * 查询漏洞列表
      *
      * 查询漏洞列表
@@ -311,6 +471,38 @@ public class HssAsyncClient {
     }
 
     /**
+     * 查询配额信息
+     *
+     * 查询配额信息
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowResourceQuotasRequest 请求对象
+     * @return CompletableFuture<ShowResourceQuotasResponse>
+     */
+    public CompletableFuture<ShowResourceQuotasResponse> showResourceQuotasAsync(ShowResourceQuotasRequest request) {
+        return hcClient.asyncInvokeHttp(request, HssMeta.showResourceQuotas);
+    }
+
+    /**
+     * 查询配额信息
+     *
+     * 查询配额信息
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowResourceQuotasRequest 请求对象
+     * @return AsyncInvoker<ShowResourceQuotasRequest, ShowResourceQuotasResponse>
+     */
+    public AsyncInvoker<ShowResourceQuotasRequest, ShowResourceQuotasResponse> showResourceQuotasAsyncInvoker(
+        ShowResourceQuotasRequest request) {
+        return new AsyncInvoker<ShowResourceQuotasRequest, ShowResourceQuotasResponse>(request,
+            HssMeta.showResourceQuotas, hcClient);
+    }
+
+    /**
      * 查询指定安全配置项的检查结果
      *
      * 查询指定安全配置项的检查结果
@@ -341,6 +533,39 @@ public class HssAsyncClient {
         ShowRiskConfigDetailRequest request) {
         return new AsyncInvoker<ShowRiskConfigDetailRequest, ShowRiskConfigDetailResponse>(request,
             HssMeta.showRiskConfigDetail, hcClient);
+    }
+
+    /**
+     * 切换防护状态
+     *
+     * 切换防护状态
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SwitchHostsProtectStatusRequest 请求对象
+     * @return CompletableFuture<SwitchHostsProtectStatusResponse>
+     */
+    public CompletableFuture<SwitchHostsProtectStatusResponse> switchHostsProtectStatusAsync(
+        SwitchHostsProtectStatusRequest request) {
+        return hcClient.asyncInvokeHttp(request, HssMeta.switchHostsProtectStatus);
+    }
+
+    /**
+     * 切换防护状态
+     *
+     * 切换防护状态
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SwitchHostsProtectStatusRequest 请求对象
+     * @return AsyncInvoker<SwitchHostsProtectStatusRequest, SwitchHostsProtectStatusResponse>
+     */
+    public AsyncInvoker<SwitchHostsProtectStatusRequest, SwitchHostsProtectStatusResponse> switchHostsProtectStatusAsyncInvoker(
+        SwitchHostsProtectStatusRequest request) {
+        return new AsyncInvoker<SwitchHostsProtectStatusRequest, SwitchHostsProtectStatusResponse>(request,
+            HssMeta.switchHostsProtectStatus, hcClient);
     }
 
 }

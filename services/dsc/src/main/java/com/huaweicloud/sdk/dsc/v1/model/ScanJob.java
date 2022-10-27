@@ -19,13 +19,23 @@ import java.util.function.Consumer;
 public class ScanJob {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "create_time")
+    @JsonProperty(value = "id")
 
-    private Long createTime;
+    private String id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "name")
+
+    private String name;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "rule_groups")
+
+    private List<String> ruleGroups = null;
 
     /**
-     * 任务执行方式
-     */
+    * 任务执行方式
+    */
     public static final class CycleEnum {
 
         /**
@@ -117,39 +127,9 @@ public class ScanJob {
 
     private CycleEnum cycle;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "id")
-
-    private String id;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "last_run_time")
-
-    private Long lastRunTime;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "last_scan_risk")
-
-    private String lastScanRisk;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "name")
-
-    private String name;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "open")
-
-    private Boolean open;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "rule_groups")
-
-    private List<String> ruleGroups = null;
-
     /**
-    * 任务当前状态
-    */
+     * 任务当前状态
+     */
     public static final class StatusEnum {
 
         /**
@@ -260,9 +240,19 @@ public class ScanJob {
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "topic_urn")
+    @JsonProperty(value = "last_run_time")
 
-    private String topicUrn;
+    private Long lastRunTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "create_time")
+
+    private Long createTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "last_scan_risk")
+
+    private String lastScanRisk;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "use_nlp")
@@ -270,43 +260,19 @@ public class ScanJob {
     private Boolean useNlp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "open")
+
+    private Boolean open;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "topic_urn")
+
+    private String topicUrn;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
     private Long startTime;
-
-    public ScanJob withCreateTime(Long createTime) {
-        this.createTime = createTime;
-        return this;
-    }
-
-    /**
-     * 任务创建时间
-     * @return createTime
-     */
-    public Long getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Long createTime) {
-        this.createTime = createTime;
-    }
-
-    public ScanJob withCycle(CycleEnum cycle) {
-        this.cycle = cycle;
-        return this;
-    }
-
-    /**
-     * 任务执行方式
-     * @return cycle
-     */
-    public CycleEnum getCycle() {
-        return cycle;
-    }
-
-    public void setCycle(CycleEnum cycle) {
-        this.cycle = cycle;
-    }
 
     public ScanJob withId(String id) {
         this.id = id;
@@ -325,40 +291,6 @@ public class ScanJob {
         this.id = id;
     }
 
-    public ScanJob withLastRunTime(Long lastRunTime) {
-        this.lastRunTime = lastRunTime;
-        return this;
-    }
-
-    /**
-     * 任务上一次执行时间
-     * @return lastRunTime
-     */
-    public Long getLastRunTime() {
-        return lastRunTime;
-    }
-
-    public void setLastRunTime(Long lastRunTime) {
-        this.lastRunTime = lastRunTime;
-    }
-
-    public ScanJob withLastScanRisk(String lastScanRisk) {
-        this.lastScanRisk = lastScanRisk;
-        return this;
-    }
-
-    /**
-     * 任务上一次扫描风险等级结果
-     * @return lastScanRisk
-     */
-    public String getLastScanRisk() {
-        return lastScanRisk;
-    }
-
-    public void setLastScanRisk(String lastScanRisk) {
-        this.lastScanRisk = lastScanRisk;
-    }
-
     public ScanJob withName(String name) {
         this.name = name;
         return this;
@@ -374,23 +306,6 @@ public class ScanJob {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public ScanJob withOpen(Boolean open) {
-        this.open = open;
-        return this;
-    }
-
-    /**
-     * 任务开启状态
-     * @return open
-     */
-    public Boolean getOpen() {
-        return open;
-    }
-
-    public void setOpen(Boolean open) {
-        this.open = open;
     }
 
     public ScanJob withRuleGroups(List<String> ruleGroups) {
@@ -426,6 +341,23 @@ public class ScanJob {
         this.ruleGroups = ruleGroups;
     }
 
+    public ScanJob withCycle(CycleEnum cycle) {
+        this.cycle = cycle;
+        return this;
+    }
+
+    /**
+     * 任务执行方式
+     * @return cycle
+     */
+    public CycleEnum getCycle() {
+        return cycle;
+    }
+
+    public void setCycle(CycleEnum cycle) {
+        this.cycle = cycle;
+    }
+
     public ScanJob withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -443,21 +375,55 @@ public class ScanJob {
         this.status = status;
     }
 
-    public ScanJob withTopicUrn(String topicUrn) {
-        this.topicUrn = topicUrn;
+    public ScanJob withLastRunTime(Long lastRunTime) {
+        this.lastRunTime = lastRunTime;
         return this;
     }
 
     /**
-     * SMN服务通知主题
-     * @return topicUrn
+     * 任务上一次执行时间
+     * @return lastRunTime
      */
-    public String getTopicUrn() {
-        return topicUrn;
+    public Long getLastRunTime() {
+        return lastRunTime;
     }
 
-    public void setTopicUrn(String topicUrn) {
-        this.topicUrn = topicUrn;
+    public void setLastRunTime(Long lastRunTime) {
+        this.lastRunTime = lastRunTime;
+    }
+
+    public ScanJob withCreateTime(Long createTime) {
+        this.createTime = createTime;
+        return this;
+    }
+
+    /**
+     * 任务创建时间
+     * @return createTime
+     */
+    public Long getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Long createTime) {
+        this.createTime = createTime;
+    }
+
+    public ScanJob withLastScanRisk(String lastScanRisk) {
+        this.lastScanRisk = lastScanRisk;
+        return this;
+    }
+
+    /**
+     * 任务上一次扫描风险等级结果
+     * @return lastScanRisk
+     */
+    public String getLastScanRisk() {
+        return lastScanRisk;
+    }
+
+    public void setLastScanRisk(String lastScanRisk) {
+        this.lastScanRisk = lastScanRisk;
     }
 
     public ScanJob withUseNlp(Boolean useNlp) {
@@ -475,6 +441,40 @@ public class ScanJob {
 
     public void setUseNlp(Boolean useNlp) {
         this.useNlp = useNlp;
+    }
+
+    public ScanJob withOpen(Boolean open) {
+        this.open = open;
+        return this;
+    }
+
+    /**
+     * 任务开启状态
+     * @return open
+     */
+    public Boolean getOpen() {
+        return open;
+    }
+
+    public void setOpen(Boolean open) {
+        this.open = open;
+    }
+
+    public ScanJob withTopicUrn(String topicUrn) {
+        this.topicUrn = topicUrn;
+        return this;
+    }
+
+    /**
+     * SMN服务通知主题
+     * @return topicUrn
+     */
+    public String getTopicUrn() {
+        return topicUrn;
+    }
+
+    public void setTopicUrn(String topicUrn) {
+        this.topicUrn = topicUrn;
     }
 
     public ScanJob withStartTime(Long startTime) {
@@ -503,27 +503,28 @@ public class ScanJob {
             return false;
         }
         ScanJob scanJob = (ScanJob) o;
-        return Objects.equals(this.createTime, scanJob.createTime) && Objects.equals(this.cycle, scanJob.cycle)
-            && Objects.equals(this.id, scanJob.id) && Objects.equals(this.lastRunTime, scanJob.lastRunTime)
-            && Objects.equals(this.lastScanRisk, scanJob.lastScanRisk) && Objects.equals(this.name, scanJob.name)
-            && Objects.equals(this.open, scanJob.open) && Objects.equals(this.ruleGroups, scanJob.ruleGroups)
-            && Objects.equals(this.status, scanJob.status) && Objects.equals(this.topicUrn, scanJob.topicUrn)
-            && Objects.equals(this.useNlp, scanJob.useNlp) && Objects.equals(this.startTime, scanJob.startTime);
+        return Objects.equals(this.id, scanJob.id) && Objects.equals(this.name, scanJob.name)
+            && Objects.equals(this.ruleGroups, scanJob.ruleGroups) && Objects.equals(this.cycle, scanJob.cycle)
+            && Objects.equals(this.status, scanJob.status) && Objects.equals(this.lastRunTime, scanJob.lastRunTime)
+            && Objects.equals(this.createTime, scanJob.createTime)
+            && Objects.equals(this.lastScanRisk, scanJob.lastScanRisk) && Objects.equals(this.useNlp, scanJob.useNlp)
+            && Objects.equals(this.open, scanJob.open) && Objects.equals(this.topicUrn, scanJob.topicUrn)
+            && Objects.equals(this.startTime, scanJob.startTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(createTime,
-            cycle,
-            id,
-            lastRunTime,
-            lastScanRisk,
+        return Objects.hash(id,
             name,
-            open,
             ruleGroups,
+            cycle,
             status,
-            topicUrn,
+            lastRunTime,
+            createTime,
+            lastScanRisk,
             useNlp,
+            open,
+            topicUrn,
             startTime);
     }
 
@@ -531,17 +532,17 @@ public class ScanJob {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ScanJob {\n");
-        sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
-        sb.append("    cycle: ").append(toIndentedString(cycle)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
-        sb.append("    lastRunTime: ").append(toIndentedString(lastRunTime)).append("\n");
-        sb.append("    lastScanRisk: ").append(toIndentedString(lastScanRisk)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    open: ").append(toIndentedString(open)).append("\n");
         sb.append("    ruleGroups: ").append(toIndentedString(ruleGroups)).append("\n");
+        sb.append("    cycle: ").append(toIndentedString(cycle)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
-        sb.append("    topicUrn: ").append(toIndentedString(topicUrn)).append("\n");
+        sb.append("    lastRunTime: ").append(toIndentedString(lastRunTime)).append("\n");
+        sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+        sb.append("    lastScanRisk: ").append(toIndentedString(lastScanRisk)).append("\n");
         sb.append("    useNlp: ").append(toIndentedString(useNlp)).append("\n");
+        sb.append("    open: ").append(toIndentedString(open)).append("\n");
+        sb.append("    topicUrn: ").append(toIndentedString(topicUrn)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("}");
         return sb.toString();

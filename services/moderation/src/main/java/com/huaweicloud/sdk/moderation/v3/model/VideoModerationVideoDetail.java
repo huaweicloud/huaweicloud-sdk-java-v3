@@ -113,12 +113,12 @@ public class VideoModerationVideoDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time")
 
-    private Integer endTime;
+    private Float endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
-    private Integer startTime;
+    private Float startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "detail")
@@ -176,7 +176,7 @@ public class VideoModerationVideoDetail {
         this.audioText = audioText;
     }
 
-    public VideoModerationVideoDetail withEndTime(Integer endTime) {
+    public VideoModerationVideoDetail withEndTime(Float endTime) {
         this.endTime = endTime;
         return this;
     }
@@ -185,15 +185,15 @@ public class VideoModerationVideoDetail {
      * 音频片段结束时间
      * @return endTime
      */
-    public Integer getEndTime() {
+    public Float getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(Integer endTime) {
+    public void setEndTime(Float endTime) {
         this.endTime = endTime;
     }
 
-    public VideoModerationVideoDetail withStartTime(Integer startTime) {
+    public VideoModerationVideoDetail withStartTime(Float startTime) {
         this.startTime = startTime;
         return this;
     }
@@ -202,11 +202,11 @@ public class VideoModerationVideoDetail {
      * 音频片段开始时间
      * @return startTime
      */
-    public Integer getStartTime() {
+    public Float getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(Integer startTime) {
+    public void setStartTime(Float startTime) {
         this.startTime = startTime;
     }
 

@@ -94,7 +94,7 @@ public class BatchCreateMembersOption {
     }
 
     /**
-     * 后端云服务器所在的子网ID。该子网和后端云服务器关联的负载均衡器的子网必须在同一VPC下。   当所在LB未开启跨VPC后端，该参数必填。  当所在LB开启跨VPC后端，该参数非必填，表示添加跨VPC后端，此时address必须为ipv4地址，pool的协议必须为TCP/HTTP/HTTPS，pool所属的LB的跨VPC后端转发能力必须打开。
+     * 后端云服务器所在的子网ID。该子网和后端云服务器关联的负载均衡器的子网必须在同一VPC下。  当所在LB未开启跨VPC后端，该参数必填。  当所在LB开启跨VPC后端，该参数非必填，表示添加跨VPC后端，此时address必须为ipv4地址， pool的协议必须为TCP/HTTP/HTTPS，pool所属的LB的跨VPC后端转发能力必须打开。
      * @return subnetCidrId
      */
     public String getSubnetCidrId() {
@@ -111,7 +111,7 @@ public class BatchCreateMembersOption {
     }
 
     /**
-     * 后端云服务器的权重，请求按权重在同一后端云服务器组下的后端云服务器间分发。权重为0的后端不再接受新的请求。当后端云服务器所在的后端云服务器组的lb_algorithm的取值为SOURCE_IP时，该字段无效。
+     * 后端云服务器的权重，请求将根据pool配置的负载均衡算法和后端云服务器的权重进行负载分发。 权重值越大，分发的请求越多。权重为0的后端不再接受新的请求。  取值：0-100，默认1。  使用说明：若所在pool的lb_algorithm取值为SOURCE_IP，该字段无效。
      * minimum: 0
      * maximum: 100
      * @return weight

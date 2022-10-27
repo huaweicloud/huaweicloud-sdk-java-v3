@@ -21,7 +21,7 @@ public class ApprovalMergeRequestApproversItem {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "nickName")
+    @JsonProperty(value = "nick_name")
 
     private String nickName;
 

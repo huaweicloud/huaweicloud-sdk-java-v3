@@ -10,6 +10,38 @@ import com.huaweicloud.sdk.core.http.LocationType;
 @SuppressWarnings("unchecked")
 public class BmsMeta {
 
+    public static final HttpRequestDef<AddServerNicsRequest, AddServerNicsResponse> addServerNics =
+        genForaddServerNics();
+
+    private static HttpRequestDef<AddServerNicsRequest, AddServerNicsResponse> genForaddServerNics() {
+        // basic
+        HttpRequestDef.Builder<AddServerNicsRequest, AddServerNicsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AddServerNicsRequest.class, AddServerNicsResponse.class)
+                .withName("AddServerNics")
+                .withUri("/v1/{project_id}/baremetalservers/{server_id}/nics")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("server_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddServerNicsRequest::getServerId, (req, v) -> {
+                req.setServerId(v);
+            }));
+        builder.<AddServerNicsReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AddServerNicsReq.class),
+            f -> f.withMarshaller(AddServerNicsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<AttachBaremetalServerVolumeRequest, AttachBaremetalServerVolumeResponse> attachBaremetalServerVolume =
         genForattachBaremetalServerVolume();
 
@@ -283,6 +315,38 @@ public class BmsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateBaremetalServersBody.class),
             f -> f.withMarshaller(CreateBareMetalServersRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteServerNicsRequest, DeleteServerNicsResponse> deleteServerNics =
+        genFordeleteServerNics();
+
+    private static HttpRequestDef<DeleteServerNicsRequest, DeleteServerNicsResponse> genFordeleteServerNics() {
+        // basic
+        HttpRequestDef.Builder<DeleteServerNicsRequest, DeleteServerNicsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DeleteServerNicsRequest.class, DeleteServerNicsResponse.class)
+                .withName("DeleteServerNics")
+                .withUri("/v1/{project_id}/baremetalservers/{server_id}/nics/delete")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("server_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteServerNicsRequest::getServerId, (req, v) -> {
+                req.setServerId(v);
+            }));
+        builder.<DeleteServerNicsReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(DeleteServerNicsReq.class),
+            f -> f.withMarshaller(DeleteServerNicsRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -663,6 +727,38 @@ public class BmsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowServerRemoteConsoleRequest, ShowServerRemoteConsoleResponse> showServerRemoteConsole =
+        genForshowServerRemoteConsole();
+
+    private static HttpRequestDef<ShowServerRemoteConsoleRequest, ShowServerRemoteConsoleResponse> genForshowServerRemoteConsole() {
+        // basic
+        HttpRequestDef.Builder<ShowServerRemoteConsoleRequest, ShowServerRemoteConsoleResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ShowServerRemoteConsoleRequest.class, ShowServerRemoteConsoleResponse.class)
+            .withName("ShowServerRemoteConsole")
+            .withUri("/v1/{project_id}/baremetalservers/{server_id}/remote_console")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("server_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowServerRemoteConsoleRequest::getServerId, (req, v) -> {
+                req.setServerId(v);
+            }));
+        builder.<ShowServerRemoteConsoleReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowServerRemoteConsoleReq.class),
+            f -> f.withMarshaller(ShowServerRemoteConsoleRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowTenantQuotaRequest, ShowTenantQuotaResponse> showTenantQuota =
         genForshowTenantQuota();
 
@@ -702,6 +798,48 @@ public class BmsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowWindowsBaremetalServerPwdRequest::getServerId, (req, v) -> {
                 req.setServerId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateBaremetalServerInterfaceAttachmentsRequest, UpdateBaremetalServerInterfaceAttachmentsResponse> updateBaremetalServerInterfaceAttachments =
+        genForupdateBaremetalServerInterfaceAttachments();
+
+    private static HttpRequestDef<UpdateBaremetalServerInterfaceAttachmentsRequest, UpdateBaremetalServerInterfaceAttachmentsResponse> genForupdateBaremetalServerInterfaceAttachments() {
+        // basic
+        HttpRequestDef.Builder<UpdateBaremetalServerInterfaceAttachmentsRequest, UpdateBaremetalServerInterfaceAttachmentsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateBaremetalServerInterfaceAttachmentsRequest.class,
+                    UpdateBaremetalServerInterfaceAttachmentsResponse.class)
+                .withName("UpdateBaremetalServerInterfaceAttachments")
+                .withUri("/v1/{project_id}/baremetalservers/{server_id}/os-interface/{port_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("port_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateBaremetalServerInterfaceAttachmentsRequest::getPortId, (req, v) -> {
+                req.setPortId(v);
+            }));
+        builder.<String>withRequestField("server_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateBaremetalServerInterfaceAttachmentsRequest::getServerId, (req, v) -> {
+                req.setServerId(v);
+            }));
+        builder.<UpdateBaremetalServerInterfaceAttachmentsReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateBaremetalServerInterfaceAttachmentsReq.class),
+            f -> f.withMarshaller(UpdateBaremetalServerInterfaceAttachmentsRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response

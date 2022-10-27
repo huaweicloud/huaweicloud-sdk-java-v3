@@ -519,13 +519,6 @@ public class ElbMeta {
             f -> f.withMarshaller(DeleteListenerRequest::getListenerId, (req, v) -> {
                 req.setListenerId(v);
             }));
-        builder.<Boolean>withRequestField("cascade",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(DeleteListenerRequest::getCascade, (req, v) -> {
-                req.setCascade(v);
-            }));
 
         // response
 
@@ -582,13 +575,6 @@ public class ElbMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteLoadbalancerRequest::getLoadbalancerId, (req, v) -> {
                 req.setLoadbalancerId(v);
-            }));
-        builder.<Boolean>withRequestField("cascade",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(DeleteLoadbalancerRequest::getCascade, (req, v) -> {
-                req.setCascade(v);
             }));
 
         // response

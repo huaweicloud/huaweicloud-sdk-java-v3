@@ -19,7 +19,7 @@ public class MergeResult {
     private Double closed;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "mergeRequests")
+    @JsonProperty(value = "merge_requests")
 
     private List<MergeRequestsItem> mergeRequests = null;
 

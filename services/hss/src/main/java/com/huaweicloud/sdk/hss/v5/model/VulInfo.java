@@ -31,7 +31,12 @@ public class VulInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "repair_necessity")
 
-    private Integer repairNecessity;
+    private String repairNecessity;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "severity_level")
+
+    private String severityLevel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_num")
@@ -140,23 +145,38 @@ public class VulInfo {
         this.labelList = labelList;
     }
 
-    public VulInfo withRepairNecessity(Integer repairNecessity) {
+    public VulInfo withRepairNecessity(String repairNecessity) {
         this.repairNecessity = repairNecessity;
         return this;
     }
 
     /**
      * 修复必要性
-     * minimum: 0
-     * maximum: 2147483647
      * @return repairNecessity
      */
-    public Integer getRepairNecessity() {
+    public String getRepairNecessity() {
         return repairNecessity;
     }
 
-    public void setRepairNecessity(Integer repairNecessity) {
+    public void setRepairNecessity(String repairNecessity) {
         this.repairNecessity = repairNecessity;
+    }
+
+    public VulInfo withSeverityLevel(String severityLevel) {
+        this.severityLevel = severityLevel;
+        return this;
+    }
+
+    /**
+     * 漏洞级别
+     * @return severityLevel
+     */
+    public String getSeverityLevel() {
+        return severityLevel;
+    }
+
+    public void setSeverityLevel(String severityLevel) {
+        this.severityLevel = severityLevel;
     }
 
     public VulInfo withHostNum(Integer hostNum) {
@@ -329,6 +349,7 @@ public class VulInfo {
         return Objects.equals(this.vulName, vulInfo.vulName) && Objects.equals(this.vulId, vulInfo.vulId)
             && Objects.equals(this.labelList, vulInfo.labelList)
             && Objects.equals(this.repairNecessity, vulInfo.repairNecessity)
+            && Objects.equals(this.severityLevel, vulInfo.severityLevel)
             && Objects.equals(this.hostNum, vulInfo.hostNum)
             && Objects.equals(this.unhandleHostNum, vulInfo.unhandleHostNum)
             && Objects.equals(this.scanTime, vulInfo.scanTime)
@@ -343,6 +364,7 @@ public class VulInfo {
             vulId,
             labelList,
             repairNecessity,
+            severityLevel,
             hostNum,
             unhandleHostNum,
             scanTime,
@@ -361,6 +383,7 @@ public class VulInfo {
         sb.append("    vulId: ").append(toIndentedString(vulId)).append("\n");
         sb.append("    labelList: ").append(toIndentedString(labelList)).append("\n");
         sb.append("    repairNecessity: ").append(toIndentedString(repairNecessity)).append("\n");
+        sb.append("    severityLevel: ").append(toIndentedString(severityLevel)).append("\n");
         sb.append("    hostNum: ").append(toIndentedString(hostNum)).append("\n");
         sb.append("    unhandleHostNum: ").append(toIndentedString(unhandleHostNum)).append("\n");
         sb.append("    scanTime: ").append(toIndentedString(scanTime)).append("\n");

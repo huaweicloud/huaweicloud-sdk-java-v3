@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * DeviceMessageRequest
@@ -24,6 +25,11 @@ public class DeviceMessageRequest {
     @JsonProperty(value = "message")
 
     private Object message;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "properties")
+
+    private PropertiesDTO properties;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "encoding")
@@ -94,6 +100,32 @@ public class DeviceMessageRequest {
 
     public void setMessage(Object message) {
         this.message = message;
+    }
+
+    public DeviceMessageRequest withProperties(PropertiesDTO properties) {
+        this.properties = properties;
+        return this;
+    }
+
+    public DeviceMessageRequest withProperties(Consumer<PropertiesDTO> propertiesSetter) {
+        if (this.properties == null) {
+            this.properties = new PropertiesDTO();
+            propertiesSetter.accept(this.properties);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get properties
+     * @return properties
+     */
+    public PropertiesDTO getProperties() {
+        return properties;
+    }
+
+    public void setProperties(PropertiesDTO properties) {
+        this.properties = properties;
     }
 
     public DeviceMessageRequest withEncoding(String encoding) {
@@ -176,6 +208,7 @@ public class DeviceMessageRequest {
         return Objects.equals(this.messageId, deviceMessageRequest.messageId)
             && Objects.equals(this.name, deviceMessageRequest.name)
             && Objects.equals(this.message, deviceMessageRequest.message)
+            && Objects.equals(this.properties, deviceMessageRequest.properties)
             && Objects.equals(this.encoding, deviceMessageRequest.encoding)
             && Objects.equals(this.payloadFormat, deviceMessageRequest.payloadFormat)
             && Objects.equals(this.topic, deviceMessageRequest.topic)
@@ -184,7 +217,7 @@ public class DeviceMessageRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hash(messageId, name, message, encoding, payloadFormat, topic, topicFullName);
+        return Objects.hash(messageId, name, message, properties, encoding, payloadFormat, topic, topicFullName);
     }
 
     @Override
@@ -194,6 +227,7 @@ public class DeviceMessageRequest {
         sb.append("    messageId: ").append(toIndentedString(messageId)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    message: ").append(toIndentedString(message)).append("\n");
+        sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
         sb.append("    encoding: ").append(toIndentedString(encoding)).append("\n");
         sb.append("    payloadFormat: ").append(toIndentedString(payloadFormat)).append("\n");
         sb.append("    topic: ").append(toIndentedString(topic)).append("\n");

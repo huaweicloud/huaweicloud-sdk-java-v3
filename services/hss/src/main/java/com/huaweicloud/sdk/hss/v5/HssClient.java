@@ -18,6 +18,70 @@ public class HssClient {
     }
 
     /**
+     * 批量创建标签
+     *
+     * 批量创建标签
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param BatchCreateTagsRequest 请求对象
+     * @return BatchCreateTagsResponse
+     */
+    public BatchCreateTagsResponse batchCreateTags(BatchCreateTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.batchCreateTags);
+    }
+
+    /**
+     * 批量创建标签
+     *
+     * 批量创建标签
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param BatchCreateTagsRequest 请求对象
+     * @return SyncInvoker<BatchCreateTagsRequest, BatchCreateTagsResponse>
+     */
+    public SyncInvoker<BatchCreateTagsRequest, BatchCreateTagsResponse> batchCreateTagsInvoker(
+        BatchCreateTagsRequest request) {
+        return new SyncInvoker<BatchCreateTagsRequest, BatchCreateTagsResponse>(request, HssMeta.batchCreateTags,
+            hcClient);
+    }
+
+    /**
+     * 删除资源标签
+     *
+     * 删除单个资源下的标签
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteResourceInstanceTagRequest 请求对象
+     * @return DeleteResourceInstanceTagResponse
+     */
+    public DeleteResourceInstanceTagResponse deleteResourceInstanceTag(DeleteResourceInstanceTagRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.deleteResourceInstanceTag);
+    }
+
+    /**
+     * 删除资源标签
+     *
+     * 删除单个资源下的标签
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteResourceInstanceTagRequest 请求对象
+     * @return SyncInvoker<DeleteResourceInstanceTagRequest, DeleteResourceInstanceTagResponse>
+     */
+    public SyncInvoker<DeleteResourceInstanceTagRequest, DeleteResourceInstanceTagResponse> deleteResourceInstanceTagInvoker(
+        DeleteResourceInstanceTagRequest request) {
+        return new SyncInvoker<DeleteResourceInstanceTagRequest, DeleteResourceInstanceTagResponse>(request,
+            HssMeta.deleteResourceInstanceTag, hcClient);
+    }
+
+    /**
      * 查询云服务器列表
      *
      * 查询云服务器列表
@@ -79,6 +143,38 @@ public class HssClient {
         ListPasswordComplexityRequest request) {
         return new SyncInvoker<ListPasswordComplexityRequest, ListPasswordComplexityResponse>(request,
             HssMeta.listPasswordComplexity, hcClient);
+    }
+
+    /**
+     * 查询配额详情
+     *
+     * 查询配额详情
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListQuotasDetailRequest 请求对象
+     * @return ListQuotasDetailResponse
+     */
+    public ListQuotasDetailResponse listQuotasDetail(ListQuotasDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.listQuotasDetail);
+    }
+
+    /**
+     * 查询配额详情
+     *
+     * 查询配额详情
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListQuotasDetailRequest 请求对象
+     * @return SyncInvoker<ListQuotasDetailRequest, ListQuotasDetailResponse>
+     */
+    public SyncInvoker<ListQuotasDetailRequest, ListQuotasDetailResponse> listQuotasDetailInvoker(
+        ListQuotasDetailRequest request) {
+        return new SyncInvoker<ListQuotasDetailRequest, ListQuotasDetailResponse>(request, HssMeta.listQuotasDetail,
+            hcClient);
     }
 
     /**
@@ -210,6 +306,68 @@ public class HssClient {
     }
 
     /**
+     * 获取账户变动历史信息
+     *
+     * 获取账户变动历史记录信息
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListUserChangeHistoriesRequest 请求对象
+     * @return ListUserChangeHistoriesResponse
+     */
+    public ListUserChangeHistoriesResponse listUserChangeHistories(ListUserChangeHistoriesRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.listUserChangeHistories);
+    }
+
+    /**
+     * 获取账户变动历史信息
+     *
+     * 获取账户变动历史记录信息
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListUserChangeHistoriesRequest 请求对象
+     * @return SyncInvoker<ListUserChangeHistoriesRequest, ListUserChangeHistoriesResponse>
+     */
+    public SyncInvoker<ListUserChangeHistoriesRequest, ListUserChangeHistoriesResponse> listUserChangeHistoriesInvoker(
+        ListUserChangeHistoriesRequest request) {
+        return new SyncInvoker<ListUserChangeHistoriesRequest, ListUserChangeHistoriesResponse>(request,
+            HssMeta.listUserChangeHistories, hcClient);
+    }
+
+    /**
+     * 获取资产的账号列表
+     *
+     * 获取资产的账号列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListUsersRequest 请求对象
+     * @return ListUsersResponse
+     */
+    public ListUsersResponse listUsers(ListUsersRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.listUsers);
+    }
+
+    /**
+     * 获取资产的账号列表
+     *
+     * 获取资产的账号列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListUsersRequest 请求对象
+     * @return SyncInvoker<ListUsersRequest, ListUsersResponse>
+     */
+    public SyncInvoker<ListUsersRequest, ListUsersResponse> listUsersInvoker(ListUsersRequest request) {
+        return new SyncInvoker<ListUsersRequest, ListUsersResponse>(request, HssMeta.listUsers, hcClient);
+    }
+
+    /**
      * 查询漏洞列表
      *
      * 查询漏洞列表
@@ -306,6 +464,38 @@ public class HssClient {
     }
 
     /**
+     * 查询配额信息
+     *
+     * 查询配额信息
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowResourceQuotasRequest 请求对象
+     * @return ShowResourceQuotasResponse
+     */
+    public ShowResourceQuotasResponse showResourceQuotas(ShowResourceQuotasRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.showResourceQuotas);
+    }
+
+    /**
+     * 查询配额信息
+     *
+     * 查询配额信息
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowResourceQuotasRequest 请求对象
+     * @return SyncInvoker<ShowResourceQuotasRequest, ShowResourceQuotasResponse>
+     */
+    public SyncInvoker<ShowResourceQuotasRequest, ShowResourceQuotasResponse> showResourceQuotasInvoker(
+        ShowResourceQuotasRequest request) {
+        return new SyncInvoker<ShowResourceQuotasRequest, ShowResourceQuotasResponse>(request,
+            HssMeta.showResourceQuotas, hcClient);
+    }
+
+    /**
      * 查询指定安全配置项的检查结果
      *
      * 查询指定安全配置项的检查结果
@@ -335,6 +525,38 @@ public class HssClient {
         ShowRiskConfigDetailRequest request) {
         return new SyncInvoker<ShowRiskConfigDetailRequest, ShowRiskConfigDetailResponse>(request,
             HssMeta.showRiskConfigDetail, hcClient);
+    }
+
+    /**
+     * 切换防护状态
+     *
+     * 切换防护状态
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SwitchHostsProtectStatusRequest 请求对象
+     * @return SwitchHostsProtectStatusResponse
+     */
+    public SwitchHostsProtectStatusResponse switchHostsProtectStatus(SwitchHostsProtectStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.switchHostsProtectStatus);
+    }
+
+    /**
+     * 切换防护状态
+     *
+     * 切换防护状态
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SwitchHostsProtectStatusRequest 请求对象
+     * @return SyncInvoker<SwitchHostsProtectStatusRequest, SwitchHostsProtectStatusResponse>
+     */
+    public SyncInvoker<SwitchHostsProtectStatusRequest, SwitchHostsProtectStatusResponse> switchHostsProtectStatusInvoker(
+        SwitchHostsProtectStatusRequest request) {
+        return new SyncInvoker<SwitchHostsProtectStatusRequest, SwitchHostsProtectStatusResponse>(request,
+            HssMeta.switchHostsProtectStatus, hcClient);
     }
 
 }

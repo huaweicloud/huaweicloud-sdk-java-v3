@@ -109,11 +109,6 @@ public class CreateLoadBalancerOption {
     private BandwidthRef ipv6Bandwidth;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "global_eip_ids")
-
-    private List<String> globalEipIds = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publicip_ids")
 
     private List<String> publicipIds = null;
@@ -149,7 +144,7 @@ public class CreateLoadBalancerOption {
     private CreateLoadbalancerAutoscalingOption autoscaling;
 
     /**
-     * WAF故障时的流量处理策略。discard:丢弃，forward: 转发到后端（默认）   使用说明：只有绑定了waf的LB实例，该字段才会生效。
+     * WAF故障时的流量处理策略。discard:丢弃，forward: 转发到后端（默认）  使用说明：只有绑定了waf的LB实例，该字段才会生效。  [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt)
      */
     public static final class WafFailureActionEnum {
 
@@ -304,7 +299,7 @@ public class CreateLoadBalancerOption {
     }
 
     /**
-     * 负载均衡器的IPv4虚拟IP。该地址必须包含在所在子网的IPv4网段内，且未被占用。   使用说明： - 传入vip_address时必须传入vip_subnet_cidr_id。 - 不传入vip_address，但传入vip_subnet_cidr_id，则自动分配IPv4虚拟IP。 - 不传入vip_address，且不传vip_subnet_cidr_id，则不分配虚拟IP，vip_address=null。
+     * 负载均衡器的IPv4虚拟IP。该地址必须包含在所在子网的IPv4网段内，且未被占用。  使用说明： - 传入vip_address时必须传入vip_subnet_cidr_id。 - 不传入vip_address，但传入vip_subnet_cidr_id，则自动分配IPv4虚拟IP。 - 不传入vip_address，且不传vip_subnet_cidr_id，则不分配虚拟IP，vip_address=null。
      * @return vipAddress
      */
     public String getVipAddress() {
@@ -321,7 +316,7 @@ public class CreateLoadBalancerOption {
     }
 
     /**
-     * 负载均衡器所在子网的IPv4子网ID。若需要创建带IPv4虚拟IP的LB，该字段必须传入。可以通过GET https://{VPC_Endpoint}/v1/{project_id}/subnets 响应参数中的neutron_subnet_id得到。   使用说明： - vpc_id, vip_subnet_cidr_id, ipv6_vip_virsubnet_id不能同时为空，且需要在同一个vpc下。 - 若同时传入vpc_id和vip_subnet_cidr_id，则vip_subnet_cidr_id对应的子网必须属于vpc_id对应的VPC。
+     * 负载均衡器所在子网的IPv4子网ID。若需要创建带IPv4虚拟IP的LB，该字段必须传入。 可以通过GET https://{VPC_Endpoint}/v1/{project_id}/subnets 响应参数中的neutron_subnet_id得到。  使用说明： - vpc_id, vip_subnet_cidr_id, ipv6_vip_virsubnet_id不能同时为空，且需要在同一个vpc下。 - 若同时传入vpc_id和vip_subnet_cidr_id， 则vip_subnet_cidr_id对应的子网必须属于vpc_id对应的VPC。
      * @return vipSubnetCidrId
      */
     public String getVipSubnetCidrId() {
@@ -338,7 +333,7 @@ public class CreateLoadBalancerOption {
     }
 
     /**
-     * 双栈类型负载均衡器所在子网的IPv6网络ID。可以通过GET https://{VPC_Endpoint}/v1/{project_id}/subnets 响应参数中的id得到。   使用说明： - vpc_id，vip_subnet_cidr_id，ipv6_vip_virsubnet_id不能同时为空，且需要在同一个vpc下。 - 需要对应的子网开启IPv6。   [不支持IPv6，请勿使用](tag:dt,dt_test)
+     * 双栈类型负载均衡器所在子网的IPv6网络ID。可以通过GET https://{VPC_Endpoint}/v1/{project_id}/subnets 响应参数中的id得到。  使用说明： - vpc_id，vip_subnet_cidr_id，ipv6_vip_virsubnet_id不能同时为空，且需要在同一个vpc下。 - 需要对应的子网开启IPv6。  [不支持IPv6，请勿使用。](tag:dt,dt_test)
      * @return ipv6VipVirsubnetId
      */
     public String getIpv6VipVirsubnetId() {
@@ -372,7 +367,7 @@ public class CreateLoadBalancerOption {
     }
 
     /**
-     * 四层Flavor ID。 [使用说明： - 当l4_flavor_id和l7_flavor_id都不传的时，会使用默认flavor（默认flavor根据不同局点有所不同，具体以实际值为准）。](tag:hws,hws_hk,ocb,tlf,ctc,hcs,sbc,g42,tm,cmcc,hk_g42,mix,hk_sbc,hws_ocb) [只支持设置为l4_flavor.elb.shared。](tag:hcso_dt) [所有LB实例共享带宽，该字段无效，请勿使用。](tag:fcs)
+     * 四层Flavor ID。  [使用说明：当l4_flavor_id和l7_flavor_id都不传的时，会使用默认flavor （默认flavor根据不同局点有所不同，具体以实际值为准）。 ](tag:hws,hws_hk,hws_eu,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb)  [只支持设置为l4_flavor.elb.shared。](tag:hcso_dt)  [所有LB实例共享带宽，该字段无效，请勿使用。](tag:fcs)
      * @return l4FlavorId
      */
     public String getL4FlavorId() {
@@ -389,7 +384,7 @@ public class CreateLoadBalancerOption {
     }
 
     /**
-     * 七层Flavor ID。 [使用说明： - 当l4_flavor_id和l7_flavor_id都不传的时，会使用默认flavor（默认flavor根据不同局点有所不同，具体以实际值为准）。](tag:hws,hws_hk,ocb,tlf,ctc,hcs,sbc,g42,tm,cmcc,hk_g42,mix,hk_sbc,hws_ocb) [只支持设置为l4_flavor.elb.shared。](tag:hcso_dt) [所有LB实例共享带宽，该字段无效，请勿使用。](tag:fcs)
+     * 七层Flavor ID。  [使用说明：当l4_flavor_id和l7_flavor_id都不传的时，会使用默认flavor （默认flavor根据不同局点有所不同，具体以实际值为准）。 ](tag:hws,hws_hk,hws_eu,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb)  [只支持设置为l4_flavor.elb.shared。](tag:hcso_dt)  [所有LB实例共享带宽，该字段无效，请勿使用。](tag:fcs)
      * @return l7FlavorId
      */
     public String getL7FlavorId() {
@@ -406,7 +401,7 @@ public class CreateLoadBalancerOption {
     }
 
     /**
-     * 是否独享型负载均衡器。取值： - true：独享型。 - false：共享型。  当前只支持设置为true，设置为false会返回400 Bad Request 。默认：true。
+     * 是否独享型负载均衡器。  取值： - true：独享型。 - false：共享型。  当前只支持设置为true，设置为false会返回400 Bad Request 。默认：true。
      * @return guaranteed
      */
     public Boolean getGuaranteed() {
@@ -423,7 +418,7 @@ public class CreateLoadBalancerOption {
     }
 
     /**
-     * 负载均衡器所在的VPC ID。可以通过GET https://{VPC_Endpoint}/v1/{project_id}/vpcs 响应参数中的id得到。   使用说明： - vpc_id，vip_subnet_cidr_id，ipv6_vip_virsubnet_id不能同时为空，且需要在同一个vpc下。
+     * 负载均衡器所在的VPC ID。可以通过GET https://{VPC_Endpoint}/v1/{project_id}/vpcs 响应参数中的id得到。  使用说明： - vpc_id，vip_subnet_cidr_id，ipv6_vip_virsubnet_id不能同时为空，且需要在同一个vpc下。
      * @return vpcId
      */
     public String getVpcId() {
@@ -456,7 +451,7 @@ public class CreateLoadBalancerOption {
     }
 
     /**
-     * 可用区列表。可通过GET https://{ELB_Endponit}/v3/{project_id}/elb/availability-zones接口来查询可用区集合列表。创建负载均衡器时，从查询结果选择某一个可用区集合，并从中选择一个或多个可用区。
+     * 可用区列表。可通过GET  https://{ELB_Endponit}/v3/{project_id}/elb/availability-zones 接口来查询可用区集合列表。创建负载均衡器时，从查询结果选择某一个可用区集合，并从中选择一个或多个可用区。
      * @return availabilityZoneList
      */
     public List<String> getAvailabilityZoneList() {
@@ -540,7 +535,7 @@ public class CreateLoadBalancerOption {
     }
 
     /**
-     * 资源账单信息。取值： - 空：按需计费。 - 非空：包周期计费。  包周期计费billing_info字段的格式为：order_id:product_id:region_id:project_id，如： CS2107161019CDJZZ:OFFI569702121789763584:az1:057ef081eb00d2732fd1c01a9be75e6f [ 不支持该字段，请勿使用](tag:dt,dt_test,hcso_dt)
+     * 资源账单信息。  取值： - 空：按需计费。 - 非空：包周期计费。  格式为： order_id:product_id:region_id:project_id，如：  CS2107161019CDJZZ:OFFI569702121789763584:az1: 057ef081eb00d2732fd1c01a9be75e6f  [不支持该字段，请勿使用](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt)
      * @return billingInfo
      */
     public String getBillingInfo() {
@@ -575,39 +570,6 @@ public class CreateLoadBalancerOption {
 
     public void setIpv6Bandwidth(BandwidthRef ipv6Bandwidth) {
         this.ipv6Bandwidth = ipv6Bandwidth;
-    }
-
-    public CreateLoadBalancerOption withGlobalEipIds(List<String> globalEipIds) {
-        this.globalEipIds = globalEipIds;
-        return this;
-    }
-
-    public CreateLoadBalancerOption addGlobalEipIdsItem(String globalEipIdsItem) {
-        if (this.globalEipIds == null) {
-            this.globalEipIds = new ArrayList<>();
-        }
-        this.globalEipIds.add(globalEipIdsItem);
-        return this;
-    }
-
-    public CreateLoadBalancerOption withGlobalEipIds(Consumer<List<String>> globalEipIdsSetter) {
-        if (this.globalEipIds == null) {
-            this.globalEipIds = new ArrayList<>();
-        }
-        globalEipIdsSetter.accept(this.globalEipIds);
-        return this;
-    }
-
-    /**
-     * 负载均衡器绑定的Global EIP的id。只支持绑定数组中的第一个Global EIP，其他将被忽略。
-     * @return globalEipIds
-     */
-    public List<String> getGlobalEipIds() {
-        return globalEipIds;
-    }
-
-    public void setGlobalEipIds(List<String> globalEipIds) {
-        this.globalEipIds = globalEipIds;
     }
 
     public CreateLoadBalancerOption withPublicipIds(List<String> publicipIds) {
@@ -708,7 +670,7 @@ public class CreateLoadBalancerOption {
     }
 
     /**
-     * 是否启用跨VPC后端转发。取值： - true：开启、 - false：不开启。  [仅独享型负载均衡器支持该特性。](tag:hws,hws_hk,ocb,tlf,ctc,hcs,sbc,g42,tm,cmcc,hk_g42,mix,hk_sbc,hws_ocb,fcs,dt,dt_test)  开启跨VPC后端转发后，后端服务器组不仅支持添加云上VPC内的服务器，还支持添加其他VPC、其他公有云、云下数据中心的服务器。  使用说明： - 开启不能关闭。
+     * 是否启用跨VPC后端转发。  开启跨VPC后端转发后，后端服务器组不仅支持添加云上VPC内的服务器，还支持添加其他VPC、其他公有云、云下数据中心的服务器。  [仅独享型负载均衡器支持该特性。 ](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,fcs,dt)  取值： - true：开启。 - false：不开启。  使用说明： - 开启不能关闭。
      * @return ipTargetEnable
      */
     public Boolean getIpTargetEnable() {
@@ -725,7 +687,7 @@ public class CreateLoadBalancerOption {
     }
 
     /**
-     * 是否开启删除保护。取值：false不开启，true开启。默认false不开启。 > 退场时需要先关闭所有资源的删除保护开关。
+     * 是否开启删除保护。  取值：false不开启，true开启。默认false不开启。  > 退场时需要先关闭所有资源的删除保护开关。  [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42)
      * @return deletionProtectionEnable
      */
     public Boolean getDeletionProtectionEnable() {
@@ -794,7 +756,7 @@ public class CreateLoadBalancerOption {
     }
 
     /**
-     * WAF故障时的流量处理策略。discard:丢弃，forward: 转发到后端（默认）   使用说明：只有绑定了waf的LB实例，该字段才会生效。
+     * WAF故障时的流量处理策略。discard:丢弃，forward: 转发到后端（默认）  使用说明：只有绑定了waf的LB实例，该字段才会生效。  [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt)
      * @return wafFailureAction
      */
     public WafFailureActionEnum getWafFailureAction() {
@@ -832,7 +794,6 @@ public class CreateLoadBalancerOption {
             && Objects.equals(this.adminStateUp, createLoadBalancerOption.adminStateUp)
             && Objects.equals(this.billingInfo, createLoadBalancerOption.billingInfo)
             && Objects.equals(this.ipv6Bandwidth, createLoadBalancerOption.ipv6Bandwidth)
-            && Objects.equals(this.globalEipIds, createLoadBalancerOption.globalEipIds)
             && Objects.equals(this.publicipIds, createLoadBalancerOption.publicipIds)
             && Objects.equals(this.publicip, createLoadBalancerOption.publicip)
             && Objects.equals(this.elbVirsubnetIds, createLoadBalancerOption.elbVirsubnetIds)
@@ -863,7 +824,6 @@ public class CreateLoadBalancerOption {
             adminStateUp,
             billingInfo,
             ipv6Bandwidth,
-            globalEipIds,
             publicipIds,
             publicip,
             elbVirsubnetIds,
@@ -896,7 +856,6 @@ public class CreateLoadBalancerOption {
         sb.append("    adminStateUp: ").append(toIndentedString(adminStateUp)).append("\n");
         sb.append("    billingInfo: ").append(toIndentedString(billingInfo)).append("\n");
         sb.append("    ipv6Bandwidth: ").append(toIndentedString(ipv6Bandwidth)).append("\n");
-        sb.append("    globalEipIds: ").append(toIndentedString(globalEipIds)).append("\n");
         sb.append("    publicipIds: ").append(toIndentedString(publicipIds)).append("\n");
         sb.append("    publicip: ").append(toIndentedString(publicip)).append("\n");
         sb.append("    elbVirsubnetIds: ").append(toIndentedString(elbVirsubnetIds)).append("\n");

@@ -191,6 +191,30 @@ public class GaussDBforNoSQLMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteBackupRequest, DeleteBackupResponse> deleteBackup = genFordeleteBackup();
+
+    private static HttpRequestDef<DeleteBackupRequest, DeleteBackupResponse> genFordeleteBackup() {
+        // basic
+        HttpRequestDef.Builder<DeleteBackupRequest, DeleteBackupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteBackupRequest.class, DeleteBackupResponse.class)
+                .withName("DeleteBackup")
+                .withUri("/v3/{project_id}/backups/{backup_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("backup_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteBackupRequest::getBackupId, (req, v) -> {
+                req.setBackupId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteConfigurationRequest, DeleteConfigurationResponse> deleteConfiguration =
         genFordeleteConfiguration();
 
@@ -630,6 +654,59 @@ public class GaussDBforNoSQLMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListRestoreTimeRequest, ListRestoreTimeResponse> listRestoreTime =
+        genForlistRestoreTime();
+
+    private static HttpRequestDef<ListRestoreTimeRequest, ListRestoreTimeResponse> genForlistRestoreTime() {
+        // basic
+        HttpRequestDef.Builder<ListRestoreTimeRequest, ListRestoreTimeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListRestoreTimeRequest.class, ListRestoreTimeResponse.class)
+                .withName("ListRestoreTime")
+                .withUri("/v3/{project_id}/instances/{instance_id}/backups/restorable-time-periods")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRestoreTimeRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRestoreTimeRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            }));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRestoreTimeRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRestoreTimeRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRestoreTimeRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListSlowLogsRequest, ListSlowLogsResponse> listSlowLogs = genForlistSlowLogs();
 
     private static HttpRequestDef<ListSlowLogsRequest, ListSlowLogsResponse> genForlistSlowLogs() {
@@ -792,6 +869,38 @@ public class GaussDBforNoSQLMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RestoreExistingInstanceRequest, RestoreExistingInstanceResponse> restoreExistingInstance =
+        genForrestoreExistingInstance();
+
+    private static HttpRequestDef<RestoreExistingInstanceRequest, RestoreExistingInstanceResponse> genForrestoreExistingInstance() {
+        // basic
+        HttpRequestDef.Builder<RestoreExistingInstanceRequest, RestoreExistingInstanceResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, RestoreExistingInstanceRequest.class, RestoreExistingInstanceResponse.class)
+            .withName("RestoreExistingInstance")
+            .withUri("/v3/{project_id}/instances/{instance_id}/recovery")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RestoreExistingInstanceRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<RestoreRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RestoreRequestBody.class),
+            f -> f.withMarshaller(RestoreExistingInstanceRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<SetBackupPolicyRequest, SetBackupPolicyResponse> setBackupPolicy =
         genForsetBackupPolicy();
 
@@ -913,6 +1022,45 @@ public class GaussDBforNoSQLMeta {
                 .withContentType("application/json");
 
         // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowRestorableListRequest, ShowRestorableListResponse> showRestorableList =
+        genForshowRestorableList();
+
+    private static HttpRequestDef<ShowRestorableListRequest, ShowRestorableListResponse> genForshowRestorableList() {
+        // basic
+        HttpRequestDef.Builder<ShowRestorableListRequest, ShowRestorableListResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowRestorableListRequest.class, ShowRestorableListResponse.class)
+                .withName("ShowRestorableList")
+                .withUri("/v3/{project_id}/backups/{backup_id}/restorable-instances")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("backup_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRestorableListRequest::getBackupId, (req, v) -> {
+                req.setBackupId(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowRestorableListRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowRestorableListRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
 
         // response
 

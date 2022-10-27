@@ -53,7 +53,6 @@ public class ListWhitelistsRequest {
     /**
      * 分页查询中每页的白名单个数
      * minimum: 0
-     * maximum: -1
      * @return limit
      */
     public Integer getLimit() {

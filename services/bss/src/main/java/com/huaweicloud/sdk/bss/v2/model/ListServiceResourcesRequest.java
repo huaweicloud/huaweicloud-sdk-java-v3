@@ -72,7 +72,7 @@ public class ListServiceResourcesRequest {
     }
 
     /**
-     * 每次查询的数量，默认值为10。
+     * 每次查询的数量，默认值为10。此参数不支持携带值为空。
      * minimum: 1
      * maximum: 100
      * @return limit

@@ -264,7 +264,7 @@ public class CustomerInformation {
     }
 
     /**
-     * 是否冻结： 0：否1：是
+     * 是否冻结： 0：否1：客户账号冻结2：客户账号和资源冻结 该字段预留。
      * @return isFrozen
      */
     public Integer getIsFrozen() {

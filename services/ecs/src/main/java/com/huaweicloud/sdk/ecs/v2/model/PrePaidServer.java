@@ -96,6 +96,11 @@ public class PrePaidServer {
     private String availabilityZone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "batch_create_in_multi_az")
+
+    private Boolean batchCreateInMultiAz;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extendparam")
 
     private PrePaidServerExtendParam extendparam;
@@ -465,6 +470,23 @@ public class PrePaidServer {
         this.availabilityZone = availabilityZone;
     }
 
+    public PrePaidServer withBatchCreateInMultiAz(Boolean batchCreateInMultiAz) {
+        this.batchCreateInMultiAz = batchCreateInMultiAz;
+        return this;
+    }
+
+    /**
+     * 是否支持随机多AZ部署。  - “true”：批量创建的ecs部署在多个AZ上 - “false”：批量创建的ecs部署在单个AZ上  > 说明： >  > 当availability_zone为空时该字段生效。
+     * @return batchCreateInMultiAz
+     */
+    public Boolean getBatchCreateInMultiAz() {
+        return batchCreateInMultiAz;
+    }
+
+    public void setBatchCreateInMultiAz(Boolean batchCreateInMultiAz) {
+        this.batchCreateInMultiAz = batchCreateInMultiAz;
+    }
+
     public PrePaidServer withExtendparam(PrePaidServerExtendParam extendparam) {
         this.extendparam = extendparam;
         return this;
@@ -655,6 +677,7 @@ public class PrePaidServer {
             && Objects.equals(this.dataVolumes, prePaidServer.dataVolumes)
             && Objects.equals(this.securityGroups, prePaidServer.securityGroups)
             && Objects.equals(this.availabilityZone, prePaidServer.availabilityZone)
+            && Objects.equals(this.batchCreateInMultiAz, prePaidServer.batchCreateInMultiAz)
             && Objects.equals(this.extendparam, prePaidServer.extendparam)
             && Objects.equals(this.metadata, prePaidServer.metadata)
             && Objects.equals(this.osSchedulerHints, prePaidServer.osSchedulerHints)
@@ -681,6 +704,7 @@ public class PrePaidServer {
             dataVolumes,
             securityGroups,
             availabilityZone,
+            batchCreateInMultiAz,
             extendparam,
             metadata,
             osSchedulerHints,
@@ -709,6 +733,7 @@ public class PrePaidServer {
         sb.append("    dataVolumes: ").append(toIndentedString(dataVolumes)).append("\n");
         sb.append("    securityGroups: ").append(toIndentedString(securityGroups)).append("\n");
         sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
+        sb.append("    batchCreateInMultiAz: ").append(toIndentedString(batchCreateInMultiAz)).append("\n");
         sb.append("    extendparam: ").append(toIndentedString(extendparam)).append("\n");
         sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
         sb.append("    osSchedulerHints: ").append(toIndentedString(osSchedulerHints)).append("\n");

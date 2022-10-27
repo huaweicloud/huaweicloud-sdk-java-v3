@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * ObsScanResult
+ * OBS扫描结果
  */
 public class ObsScanResult {
 

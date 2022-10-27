@@ -48,7 +48,7 @@ public class LoadBalancerStatusL7Rule {
     }
 
     /**
-     * 匹配内容类型。取值： - HOST_NAME：域名匹配。 - PATH：URL路径匹配。  使用说明： 同一个l7policy下创建的所有的l7rule的HOST_NAME不能重复。
+     * 匹配内容类型。  取值： - HOST_NAME：域名匹配。 - PATH：URL路径匹配。  使用说明： 同一个l7policy下创建的所有的l7rule的HOST_NAME不能重复。
      * @return type
      */
     public String getType() {
@@ -65,7 +65,7 @@ public class LoadBalancerStatusL7Rule {
     }
 
     /**
-     * 转发规则的配置状态。 取值： - ACTIVE：使用中，默认值。 - ERROR：当前规则所属策略与同一监听器下的其他策略存在相同的规则配置。
+     * 转发规则的配置状态。  取值： - ACTIVE：使用中，默认值。 - ERROR：当前规则所属策略与同一监听器下的其他策略存在相同的规则配置。
      * @return provisioningStatus
      */
     public String getProvisioningStatus() {

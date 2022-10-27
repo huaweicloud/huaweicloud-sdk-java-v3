@@ -26,7 +26,7 @@ public class CreateLoadBalancerBandwidthOption {
     private Integer size;
 
     /**
-     * 计费模式。 [取值：bandwidth表示按带宽计费，traffic表示按流量计费。](tag:hws,hws_hk,ocb,tlf,ctc,hcs,sbc,g42,tm,cmcc,hk_g42,mix,hk_sbc,hws_ocb,fcs) [当前仅支持traffic按流量计费](tag:dt,dt_test,hcso_dt) 使用说明：当id字段为null时，charge_mode是必须的。
+     * 计费模式。  [取值：bandwidth表示按带宽计费，traffic表示按流量计费。 ](tag:hws,hws_hk,ocb,ctc,hcs,tm,cmcc,hws_ocb,fcs)  [当前仅支持traffic按流量计费](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt)  使用说明：当id字段为null时，charge_mode是必须的。
      */
     public static final class ChargeModeEnum {
 
@@ -108,7 +108,7 @@ public class CreateLoadBalancerBandwidthOption {
     private ChargeModeEnum chargeMode;
 
     /**
-     * 带宽类型。 取值： - PER：独享带宽。 - WHOLE：共享带宽。  使用说明： 1. 当id字段为null时，share_type是必须的。当id不为null时，该字段被忽略。 2. 该字段为WHOLE时,必须指定带宽ID。 3. IPv6的EIP不支持WHOLE类型带宽。
+     * 带宽类型。  取值： - PER：独享带宽。 - WHOLE：共享带宽。  使用说明： - 当id字段为null时，share_type是必须的。当id不为null时，该字段被忽略。 - 该字段为WHOLE时,必须指定带宽ID。 - IPv6的EIP不支持WHOLE类型带宽。
      */
     public static final class ShareTypeEnum {
 
@@ -205,7 +205,7 @@ public class CreateLoadBalancerBandwidthOption {
     }
 
     /**
-     * 带宽名称。取值：1-64个字符，支持数字、字母、中文、_(下划线)、-（中划线）、.（点） 使用说明： - 如果share_type是PER，该字段是必选。 - 如果bandwidth对象的id有值，该字段被忽略。
+     * 带宽名称。  取值：1-64个字符，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）  使用说明： - 如果share_type是PER，该字段是必选。 - 如果bandwidth对象的id有值，该字段被忽略。
      * @return name
      */
     public String getName() {
@@ -241,7 +241,7 @@ public class CreateLoadBalancerBandwidthOption {
     }
 
     /**
-     * 计费模式。 [取值：bandwidth表示按带宽计费，traffic表示按流量计费。](tag:hws,hws_hk,ocb,tlf,ctc,hcs,sbc,g42,tm,cmcc,hk_g42,mix,hk_sbc,hws_ocb,fcs) [当前仅支持traffic按流量计费](tag:dt,dt_test,hcso_dt) 使用说明：当id字段为null时，charge_mode是必须的。
+     * 计费模式。  [取值：bandwidth表示按带宽计费，traffic表示按流量计费。 ](tag:hws,hws_hk,ocb,ctc,hcs,tm,cmcc,hws_ocb,fcs)  [当前仅支持traffic按流量计费](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt)  使用说明：当id字段为null时，charge_mode是必须的。
      * @return chargeMode
      */
     public ChargeModeEnum getChargeMode() {
@@ -258,7 +258,7 @@ public class CreateLoadBalancerBandwidthOption {
     }
 
     /**
-     * 带宽类型。 取值： - PER：独享带宽。 - WHOLE：共享带宽。  使用说明： 1. 当id字段为null时，share_type是必须的。当id不为null时，该字段被忽略。 2. 该字段为WHOLE时,必须指定带宽ID。 3. IPv6的EIP不支持WHOLE类型带宽。
+     * 带宽类型。  取值： - PER：独享带宽。 - WHOLE：共享带宽。  使用说明： - 当id字段为null时，share_type是必须的。当id不为null时，该字段被忽略。 - 该字段为WHOLE时,必须指定带宽ID。 - IPv6的EIP不支持WHOLE类型带宽。
      * @return shareType
      */
     public ShareTypeEnum getShareType() {
@@ -275,7 +275,7 @@ public class CreateLoadBalancerBandwidthOption {
     }
 
     /**
-     * 资源账单信息。 [如果billing_info不为空，说明是包周期计费的带宽，否则为按需计费的带宽](tag:hws,hws_hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42) [不支持该字段，请勿使用](tag:dt,dt_test,hcso_dt)
+     * 资源账单信息。  [如果billing_info不为空，说明是包周期计费的带宽，否则为按需计费的带宽 ](tag:hws,hws_hk,ocb,tlf,ctc,hcso,sbc,tm,cmcc)  [不支持该字段，请勿使用](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt)
      * @return billingInfo
      */
     public String getBillingInfo() {

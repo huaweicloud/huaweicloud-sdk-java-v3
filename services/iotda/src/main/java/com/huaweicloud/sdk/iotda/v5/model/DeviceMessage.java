@@ -42,6 +42,11 @@ public class DeviceMessage {
     private String topic;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "properties")
+
+    private PropertiesDTO properties;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
     private String status;
@@ -163,6 +168,32 @@ public class DeviceMessage {
         this.topic = topic;
     }
 
+    public DeviceMessage withProperties(PropertiesDTO properties) {
+        this.properties = properties;
+        return this;
+    }
+
+    public DeviceMessage withProperties(Consumer<PropertiesDTO> propertiesSetter) {
+        if (this.properties == null) {
+            this.properties = new PropertiesDTO();
+            propertiesSetter.accept(this.properties);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get properties
+     * @return properties
+     */
+    public PropertiesDTO getProperties() {
+        return properties;
+    }
+
+    public void setProperties(PropertiesDTO properties) {
+        this.properties = properties;
+    }
+
     public DeviceMessage withStatus(String status) {
         this.status = status;
         return this;
@@ -253,7 +284,9 @@ public class DeviceMessage {
             && Objects.equals(this.message, deviceMessage.message)
             && Objects.equals(this.encoding, deviceMessage.encoding)
             && Objects.equals(this.payloadFormat, deviceMessage.payloadFormat)
-            && Objects.equals(this.topic, deviceMessage.topic) && Objects.equals(this.status, deviceMessage.status)
+            && Objects.equals(this.topic, deviceMessage.topic)
+            && Objects.equals(this.properties, deviceMessage.properties)
+            && Objects.equals(this.status, deviceMessage.status)
             && Objects.equals(this.errorInfo, deviceMessage.errorInfo)
             && Objects.equals(this.createdTime, deviceMessage.createdTime)
             && Objects.equals(this.finishedTime, deviceMessage.finishedTime);
@@ -267,6 +300,7 @@ public class DeviceMessage {
             encoding,
             payloadFormat,
             topic,
+            properties,
             status,
             errorInfo,
             createdTime,
@@ -283,6 +317,7 @@ public class DeviceMessage {
         sb.append("    encoding: ").append(toIndentedString(encoding)).append("\n");
         sb.append("    payloadFormat: ").append(toIndentedString(payloadFormat)).append("\n");
         sb.append("    topic: ").append(toIndentedString(topic)).append("\n");
+        sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    errorInfo: ").append(toIndentedString(errorInfo)).append("\n");
         sb.append("    createdTime: ").append(toIndentedString(createdTime)).append("\n");

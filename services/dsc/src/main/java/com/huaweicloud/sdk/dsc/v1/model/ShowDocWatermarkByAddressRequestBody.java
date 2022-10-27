@@ -130,7 +130,7 @@ public class ShowDocWatermarkByAddressRequestBody {
     }
 
     /**
-     * 项目所在region的id，如北京一为：cn-north-1。
+     * 项目所在region的id，如：xx-xx-1。
      * @return regionId
      */
     public String getRegionId() {

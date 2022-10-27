@@ -81,9 +81,8 @@ public class ListPoolsRequest {
     }
 
     /**
-     * 分页查询中每页的监听器个数
+     * 分页查询中每页的后端服务器组个数
      * minimum: 0
-     * maximum: 2147483647
      * @return limit
      */
     public Integer getLimit() {
@@ -100,7 +99,7 @@ public class ListPoolsRequest {
     }
 
     /**
-     * 分页查询的起始的资源id，表示上一页最后一条查询记录的负载均衡器的id。不指定时表示查询第一页。
+     * 分页查询的起始的资源id，表示上一页最后一条查询记录的后端服务器组的id。不指定时表示查询第一页。
      * @return marker
      */
     public String getMarker() {
@@ -287,7 +286,7 @@ public class ListPoolsRequest {
     }
 
     /**
-     * 企业项目ID，仅用于基于企业项目的细粒度鉴权使用；如果参数中传递了loadbalancer_id，则用该负载均衡器对应企业项目ID鉴权；如果参数中没有传递loadbalancer_id，而传递了healthmonitor_id，则使用健康检查器对应的企业项目id鉴权。
+     * 企业项目ID。  传入all_granted_eps表示查询所有有权限的企业项目资源；\"0\"表示查询默认企业项目资源；或者指定的企业项目ID下的资源。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {

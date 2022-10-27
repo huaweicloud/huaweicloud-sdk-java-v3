@@ -105,7 +105,7 @@ public class CreatePostPaidInstanceReq {
     private EngineEnum engine;
 
     /**
-     * 消息引擎的版本。取值填写为：1.1.0和2.3.0。
+     * 消息引擎的版本。取值填写为：   - 1.1.0   - 2.3.0   - 2.7
      */
     public static final class EngineVersionEnum {
 
@@ -119,12 +119,18 @@ public class CreatePostPaidInstanceReq {
          */
         public static final EngineVersionEnum _2_3_0 = new EngineVersionEnum("2.3.0");
 
+        /**
+         * Enum _2_7 for value: "2.7"
+         */
+        public static final EngineVersionEnum _2_7 = new EngineVersionEnum("2.7");
+
         private static final Map<String, EngineVersionEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, EngineVersionEnum> createStaticFields() {
             Map<String, EngineVersionEnum> map = new HashMap<>();
             map.put("1.1.0", _1_1_0);
             map.put("2.3.0", _2_3_0);
+            map.put("2.7", _2_7);
             return Collections.unmodifiableMap(map);
         }
 
@@ -601,12 +607,22 @@ public class CreatePostPaidInstanceReq {
     private Boolean connectorEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "disk_encrypted_enable")
+
+    private Boolean diskEncryptedEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "disk_encrypted_key")
+
+    private String diskEncryptedKey;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_auto_topic")
 
     private Boolean enableAutoTopic;
 
     /**
-     * 存储IO规格。 [新老规格的实例的存储IO规格不相同，创建实例请选择对应的存储IO规格。 新规格实例取值范围：   - dms.physical.storage.high.v2：使用高IO的磁盘类型。   - dms.physical.storage.ultra.v2：使用超高IO的磁盘类型。  老规格实例取值范围：](tag:hc,hk)   - 参数specification为100MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra   - 参数specification为300MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra   - 参数specification为600MB时，取值dms.physical.storage.ultra   - 参数specification为1200MB时，取值dms.physical.storage.ultra存储IO规格。如何选择磁盘类型请参考磁盘类型及性能介绍。
+     * 存储IO规格。 [新老规格的实例的存储IO规格不相同，创建实例请选择对应的存储IO规格。 新规格实例取值范围：   - dms.physical.storage.high.v2：使用高IO的磁盘类型。   - dms.physical.storage.ultra.v2：使用超高IO的磁盘类型。  老规格实例取值范围：](tag:hc,hk)   - 参数specification为100MB/300MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra   - 参数specification为600MB/1200MB时，取值dms.physical.storage.ultra   如何选择磁盘类型请参考磁盘类型及性能介绍。
      */
     public static final class StorageSpecCodeEnum {
 
@@ -777,7 +793,7 @@ public class CreatePostPaidInstanceReq {
     }
 
     /**
-     * 消息引擎的版本。取值填写为：1.1.0和2.3.0。
+     * 消息引擎的版本。取值填写为：   - 1.1.0   - 2.3.0   - 2.7
      * @return engineVersion
      */
     public EngineVersionEnum getEngineVersion() {
@@ -1161,6 +1177,40 @@ public class CreatePostPaidInstanceReq {
         this.connectorEnable = connectorEnable;
     }
 
+    public CreatePostPaidInstanceReq withDiskEncryptedEnable(Boolean diskEncryptedEnable) {
+        this.diskEncryptedEnable = diskEncryptedEnable;
+        return this;
+    }
+
+    /**
+     * 是否开启磁盘加密。
+     * @return diskEncryptedEnable
+     */
+    public Boolean getDiskEncryptedEnable() {
+        return diskEncryptedEnable;
+    }
+
+    public void setDiskEncryptedEnable(Boolean diskEncryptedEnable) {
+        this.diskEncryptedEnable = diskEncryptedEnable;
+    }
+
+    public CreatePostPaidInstanceReq withDiskEncryptedKey(String diskEncryptedKey) {
+        this.diskEncryptedKey = diskEncryptedKey;
+        return this;
+    }
+
+    /**
+     * 磁盘加密key，未开启磁盘加密时为空。
+     * @return diskEncryptedKey
+     */
+    public String getDiskEncryptedKey() {
+        return diskEncryptedKey;
+    }
+
+    public void setDiskEncryptedKey(String diskEncryptedKey) {
+        this.diskEncryptedKey = diskEncryptedKey;
+    }
+
     public CreatePostPaidInstanceReq withEnableAutoTopic(Boolean enableAutoTopic) {
         this.enableAutoTopic = enableAutoTopic;
         return this;
@@ -1184,7 +1234,7 @@ public class CreatePostPaidInstanceReq {
     }
 
     /**
-     * 存储IO规格。 [新老规格的实例的存储IO规格不相同，创建实例请选择对应的存储IO规格。 新规格实例取值范围：   - dms.physical.storage.high.v2：使用高IO的磁盘类型。   - dms.physical.storage.ultra.v2：使用超高IO的磁盘类型。  老规格实例取值范围：](tag:hc,hk)   - 参数specification为100MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra   - 参数specification为300MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra   - 参数specification为600MB时，取值dms.physical.storage.ultra   - 参数specification为1200MB时，取值dms.physical.storage.ultra存储IO规格。如何选择磁盘类型请参考磁盘类型及性能介绍。
+     * 存储IO规格。 [新老规格的实例的存储IO规格不相同，创建实例请选择对应的存储IO规格。 新规格实例取值范围：   - dms.physical.storage.high.v2：使用高IO的磁盘类型。   - dms.physical.storage.ultra.v2：使用超高IO的磁盘类型。  老规格实例取值范围：](tag:hc,hk)   - 参数specification为100MB/300MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra   - 参数specification为600MB/1200MB时，取值dms.physical.storage.ultra   如何选择磁盘类型请参考磁盘类型及性能介绍。
      * @return storageSpecCode
      */
     public StorageSpecCodeEnum getStorageSpecCode() {
@@ -1279,6 +1329,8 @@ public class CreatePostPaidInstanceReq {
             && Objects.equals(this.sslEnable, createPostPaidInstanceReq.sslEnable)
             && Objects.equals(this.retentionPolicy, createPostPaidInstanceReq.retentionPolicy)
             && Objects.equals(this.connectorEnable, createPostPaidInstanceReq.connectorEnable)
+            && Objects.equals(this.diskEncryptedEnable, createPostPaidInstanceReq.diskEncryptedEnable)
+            && Objects.equals(this.diskEncryptedKey, createPostPaidInstanceReq.diskEncryptedKey)
             && Objects.equals(this.enableAutoTopic, createPostPaidInstanceReq.enableAutoTopic)
             && Objects.equals(this.storageSpecCode, createPostPaidInstanceReq.storageSpecCode)
             && Objects.equals(this.enterpriseProjectId, createPostPaidInstanceReq.enterpriseProjectId)
@@ -1312,6 +1364,8 @@ public class CreatePostPaidInstanceReq {
             sslEnable,
             retentionPolicy,
             connectorEnable,
+            diskEncryptedEnable,
+            diskEncryptedKey,
             enableAutoTopic,
             storageSpecCode,
             enterpriseProjectId,
@@ -1347,6 +1401,8 @@ public class CreatePostPaidInstanceReq {
         sb.append("    sslEnable: ").append(toIndentedString(sslEnable)).append("\n");
         sb.append("    retentionPolicy: ").append(toIndentedString(retentionPolicy)).append("\n");
         sb.append("    connectorEnable: ").append(toIndentedString(connectorEnable)).append("\n");
+        sb.append("    diskEncryptedEnable: ").append(toIndentedString(diskEncryptedEnable)).append("\n");
+        sb.append("    diskEncryptedKey: ").append(toIndentedString(diskEncryptedKey)).append("\n");
         sb.append("    enableAutoTopic: ").append(toIndentedString(enableAutoTopic)).append("\n");
         sb.append("    storageSpecCode: ").append(toIndentedString(storageSpecCode)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");

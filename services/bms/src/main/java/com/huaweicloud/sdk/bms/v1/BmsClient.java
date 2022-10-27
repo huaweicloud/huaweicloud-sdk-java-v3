@@ -18,6 +18,34 @@ public class BmsClient {
     }
 
     /**
+     * 裸金属服务器绑定弹性网卡
+     *
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param AddServerNicsRequest 请求对象
+     * @return AddServerNicsResponse
+     */
+    public AddServerNicsResponse addServerNics(AddServerNicsRequest request) {
+        return hcClient.syncInvokeHttp(request, BmsMeta.addServerNics);
+    }
+
+    /**
+     * 裸金属服务器绑定弹性网卡
+     *
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param AddServerNicsRequest 请求对象
+     * @return SyncInvoker<AddServerNicsRequest, AddServerNicsResponse>
+     */
+    public SyncInvoker<AddServerNicsRequest, AddServerNicsResponse> addServerNicsInvoker(AddServerNicsRequest request) {
+        return new SyncInvoker<AddServerNicsRequest, AddServerNicsResponse>(request, BmsMeta.addServerNics, hcClient);
+    }
+
+    /**
      * 裸金属服务器挂载云硬盘
      *
      * 裸金属服务器创建成功后，如果发现磁盘不够用或者当前磁盘不满足要求，可以将已有云硬盘挂载给裸金属服务器，作为数据盘使用
@@ -305,6 +333,36 @@ public class BmsClient {
         CreateBareMetalServersRequest request) {
         return new SyncInvoker<CreateBareMetalServersRequest, CreateBareMetalServersResponse>(request,
             BmsMeta.createBareMetalServers, hcClient);
+    }
+
+    /**
+     * 裸金属服务器解绑弹性网卡
+     *
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteServerNicsRequest 请求对象
+     * @return DeleteServerNicsResponse
+     */
+    public DeleteServerNicsResponse deleteServerNics(DeleteServerNicsRequest request) {
+        return hcClient.syncInvokeHttp(request, BmsMeta.deleteServerNics);
+    }
+
+    /**
+     * 裸金属服务器解绑弹性网卡
+     *
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteServerNicsRequest 请求对象
+     * @return SyncInvoker<DeleteServerNicsRequest, DeleteServerNicsResponse>
+     */
+    public SyncInvoker<DeleteServerNicsRequest, DeleteServerNicsResponse> deleteServerNicsInvoker(
+        DeleteServerNicsRequest request) {
+        return new SyncInvoker<DeleteServerNicsRequest, DeleteServerNicsResponse>(request, BmsMeta.deleteServerNics,
+            hcClient);
     }
 
     /**
@@ -662,6 +720,36 @@ public class BmsClient {
     }
 
     /**
+     * 获取裸金属服务器远程登录地址
+     *
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowServerRemoteConsoleRequest 请求对象
+     * @return ShowServerRemoteConsoleResponse
+     */
+    public ShowServerRemoteConsoleResponse showServerRemoteConsole(ShowServerRemoteConsoleRequest request) {
+        return hcClient.syncInvokeHttp(request, BmsMeta.showServerRemoteConsole);
+    }
+
+    /**
+     * 获取裸金属服务器远程登录地址
+     *
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowServerRemoteConsoleRequest 请求对象
+     * @return SyncInvoker<ShowServerRemoteConsoleRequest, ShowServerRemoteConsoleResponse>
+     */
+    public SyncInvoker<ShowServerRemoteConsoleRequest, ShowServerRemoteConsoleResponse> showServerRemoteConsoleInvoker(
+        ShowServerRemoteConsoleRequest request) {
+        return new SyncInvoker<ShowServerRemoteConsoleRequest, ShowServerRemoteConsoleResponse>(request,
+            BmsMeta.showServerRemoteConsole, hcClient);
+    }
+
+    /**
      * 查询租户配额
      *
      * 查询该租户下，所有资源的配额信息，包括已使用配额
@@ -724,6 +812,37 @@ public class BmsClient {
         ShowWindowsBaremetalServerPwdRequest request) {
         return new SyncInvoker<ShowWindowsBaremetalServerPwdRequest, ShowWindowsBaremetalServerPwdResponse>(request,
             BmsMeta.showWindowsBaremetalServerPwd, hcClient);
+    }
+
+    /**
+     * 修改裸金属服务器弹性网卡的属性
+     *
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateBaremetalServerInterfaceAttachmentsRequest 请求对象
+     * @return UpdateBaremetalServerInterfaceAttachmentsResponse
+     */
+    public UpdateBaremetalServerInterfaceAttachmentsResponse updateBaremetalServerInterfaceAttachments(
+        UpdateBaremetalServerInterfaceAttachmentsRequest request) {
+        return hcClient.syncInvokeHttp(request, BmsMeta.updateBaremetalServerInterfaceAttachments);
+    }
+
+    /**
+     * 修改裸金属服务器弹性网卡的属性
+     *
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateBaremetalServerInterfaceAttachmentsRequest 请求对象
+     * @return SyncInvoker<UpdateBaremetalServerInterfaceAttachmentsRequest, UpdateBaremetalServerInterfaceAttachmentsResponse>
+     */
+    public SyncInvoker<UpdateBaremetalServerInterfaceAttachmentsRequest, UpdateBaremetalServerInterfaceAttachmentsResponse> updateBaremetalServerInterfaceAttachmentsInvoker(
+        UpdateBaremetalServerInterfaceAttachmentsRequest request) {
+        return new SyncInvoker<UpdateBaremetalServerInterfaceAttachmentsRequest, UpdateBaremetalServerInterfaceAttachmentsResponse>(
+            request, BmsMeta.updateBaremetalServerInterfaceAttachments, hcClient);
     }
 
     /**

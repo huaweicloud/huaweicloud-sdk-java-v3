@@ -18,7 +18,7 @@ public class VideoCreateRequestData {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "frame_interval")
 
-    private Float frameInterval;
+    private Integer frameInterval;
 
     public VideoCreateRequestData withUrl(String url) {
         this.url = url;
@@ -37,20 +37,20 @@ public class VideoCreateRequestData {
         this.url = url;
     }
 
-    public VideoCreateRequestData withFrameInterval(Float frameInterval) {
+    public VideoCreateRequestData withFrameInterval(Integer frameInterval) {
         this.frameInterval = frameInterval;
         return this;
     }
 
     /**
-     * 截帧频率间隔，单位为秒，取值范围为0.5~60s；若不传递默认5s截帧一次
+     * 截帧频率间隔，单位为秒，取值范围为1~60s；若不传递默认5s截帧一次
      * @return frameInterval
      */
-    public Float getFrameInterval() {
+    public Integer getFrameInterval() {
         return frameInterval;
     }
 
-    public void setFrameInterval(Float frameInterval) {
+    public void setFrameInterval(Integer frameInterval) {
         this.frameInterval = frameInterval;
     }
 

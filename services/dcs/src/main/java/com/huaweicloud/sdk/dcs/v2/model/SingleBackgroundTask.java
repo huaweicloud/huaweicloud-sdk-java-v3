@@ -56,6 +56,11 @@ public class SingleBackgroundTask {
 
     private String updatedAt;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_show")
+
+    private Boolean enableShow;
+
     public SingleBackgroundTask withId(String id) {
         this.id = id;
         return this;
@@ -218,6 +223,23 @@ public class SingleBackgroundTask {
         this.updatedAt = updatedAt;
     }
 
+    public SingleBackgroundTask withEnableShow(Boolean enableShow) {
+        this.enableShow = enableShow;
+        return this;
+    }
+
+    /**
+     * 是否有详细任务进展，可以展开查看
+     * @return enableShow
+     */
+    public Boolean getEnableShow() {
+        return enableShow;
+    }
+
+    public void setEnableShow(Boolean enableShow) {
+        this.enableShow = enableShow;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -234,12 +256,13 @@ public class SingleBackgroundTask {
             && Objects.equals(this.params, singleBackgroundTask.params)
             && Objects.equals(this.status, singleBackgroundTask.status)
             && Objects.equals(this.createdAt, singleBackgroundTask.createdAt)
-            && Objects.equals(this.updatedAt, singleBackgroundTask.updatedAt);
+            && Objects.equals(this.updatedAt, singleBackgroundTask.updatedAt)
+            && Objects.equals(this.enableShow, singleBackgroundTask.enableShow);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, details, userName, userId, params, status, createdAt, updatedAt);
+        return Objects.hash(id, name, details, userName, userId, params, status, createdAt, updatedAt, enableShow);
     }
 
     @Override
@@ -255,6 +278,7 @@ public class SingleBackgroundTask {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+        sb.append("    enableShow: ").append(toIndentedString(enableShow)).append("\n");
         sb.append("}");
         return sb.toString();
     }

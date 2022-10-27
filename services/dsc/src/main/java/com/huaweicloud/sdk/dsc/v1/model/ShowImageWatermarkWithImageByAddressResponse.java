@@ -27,7 +27,7 @@ public class ShowImageWatermarkWithImageByAddressResponse extends SdkResponse {
     }
 
     /**
-     * 当前项目所在region的id，如北京一为：cn-north-1。
+     * 当前项目所在region的id，如：xx-xx-1。
      * @return regionId
      */
     public String getRegionId() {

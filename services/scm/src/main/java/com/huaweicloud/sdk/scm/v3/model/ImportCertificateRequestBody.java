@@ -51,7 +51,7 @@ public class ImportCertificateRequestBody {
     }
 
     /**
-     * 证书名称。字符长度为0~63位。
+     * 证书名称。字符长度为3~63位。
      * @return name
      */
     public String getName() {

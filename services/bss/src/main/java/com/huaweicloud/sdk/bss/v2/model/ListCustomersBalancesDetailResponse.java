@@ -42,7 +42,7 @@ public class ListCustomersBalancesDetailResponse extends SdkResponse {
     }
 
     /**
-     * 账户余额列表。只有成功的时候才返回。 具体请参见表2。
+     * 账户余额列表。只有成功的时候才返回。 此列表不包含非代售类子客户的数据。批量查询客户余额时，若入参携带了非代售类子客户，会被过滤。 具体请参见表2。
      * @return customerBalances
      */
     public List<CustomerBalancesV2> getCustomerBalances() {

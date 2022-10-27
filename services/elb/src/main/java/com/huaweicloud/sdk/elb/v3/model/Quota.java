@@ -88,7 +88,7 @@ public class Quota {
     }
 
     /**
-     * 负载均衡器配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+     * 负载均衡器配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
      * @return loadbalancer
      */
     public Integer getLoadbalancer() {
@@ -105,7 +105,7 @@ public class Quota {
     }
 
     /**
-     * 证书配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+     * 证书配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
      * @return certificate
      */
     public Integer getCertificate() {
@@ -122,7 +122,7 @@ public class Quota {
     }
 
     /**
-     * 监听器配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+     * 监听器配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
      * @return listener
      */
     public Integer getListener() {
@@ -139,7 +139,7 @@ public class Quota {
     }
 
     /**
-     * 转发策略配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+     * 转发策略配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
      * @return l7policy
      */
     public Integer getL7policy() {
@@ -156,7 +156,7 @@ public class Quota {
     }
 
     /**
-     * 后端云服务器组配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+     * 后端云服务器组配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
      * @return pool
      */
     public Integer getPool() {
@@ -173,7 +173,7 @@ public class Quota {
     }
 
     /**
-     * 健康检查配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+     * 健康检查配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
      * @return healthmonitor
      */
     public Integer getHealthmonitor() {
@@ -190,7 +190,7 @@ public class Quota {
     }
 
     /**
-     * 后端云服务器配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+     * 后端云服务器配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
      * @return member
      */
     public Integer getMember() {
@@ -207,7 +207,7 @@ public class Quota {
     }
 
     /**
-     * 单个pool下的member的配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+     * 单个pool下的member的配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
      * @return membersPerPool
      */
     public Integer getMembersPerPool() {
@@ -224,7 +224,7 @@ public class Quota {
     }
 
     /**
-     * IP地址组配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。  [不支持该字段，请勿使用。](tag:hcso_dt)
+     * IP地址组配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。  [不支持该字段，请勿使用。](tag:hcso_dt)
      * @return ipgroup
      */
     public Integer getIpgroup() {
@@ -241,7 +241,7 @@ public class Quota {
     }
 
     /**
-     * 自定义安全策略配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。  [不支持该字段，请勿使用。](tag:hcso_dt)
+     * 自定义安全策略配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。  [不支持该字段，请勿使用。](tag:hcso_dt)
      * @return securityPolicy
      */
     public Integer getSecurityPolicy() {

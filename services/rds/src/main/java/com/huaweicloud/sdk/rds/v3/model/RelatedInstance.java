@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 实例节点信息。
+ * 所关联的数据库实例列表。
  */
 public class RelatedInstance {
 

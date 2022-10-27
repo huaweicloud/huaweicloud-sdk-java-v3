@@ -97,7 +97,7 @@ public class RetrieveAmountInfoV2 {
     }
 
     /**
-     * 账户余额（仅balance_type=信用账户时才有这个字段）。
+     * 账户余额（仅balance_type=信用账户时这个字段才有值）。
      * @return amount
      */
     public Double getAmount() {
@@ -114,7 +114,7 @@ public class RetrieveAmountInfoV2 {
     }
 
     /**
-     * 信用额度（仅balance_type=信用账户时才有这个字段）。
+     * 信用额度（仅balance_type=信用账户时这个字段才有值）。
      * @return creditAmount
      */
     public Double getCreditAmount() {

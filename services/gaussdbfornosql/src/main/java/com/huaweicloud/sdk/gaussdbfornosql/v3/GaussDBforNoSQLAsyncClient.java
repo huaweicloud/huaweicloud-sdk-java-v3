@@ -216,6 +216,38 @@ public class GaussDBforNoSQLAsyncClient {
     }
 
     /**
+     * 删除手动备份
+     *
+     * 删除手动备份
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteBackupRequest 请求对象
+     * @return CompletableFuture<DeleteBackupResponse>
+     */
+    public CompletableFuture<DeleteBackupResponse> deleteBackupAsync(DeleteBackupRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.deleteBackup);
+    }
+
+    /**
+     * 删除手动备份
+     *
+     * 删除手动备份
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteBackupRequest 请求对象
+     * @return AsyncInvoker<DeleteBackupRequest, DeleteBackupResponse>
+     */
+    public AsyncInvoker<DeleteBackupRequest, DeleteBackupResponse> deleteBackupAsyncInvoker(
+        DeleteBackupRequest request) {
+        return new AsyncInvoker<DeleteBackupRequest, DeleteBackupResponse>(request, GaussDBforNoSQLMeta.deleteBackup,
+            hcClient);
+    }
+
+    /**
      * 删除参数模板
      *
      * 删除指定参数模板。
@@ -667,6 +699,38 @@ public class GaussDBforNoSQLAsyncClient {
     }
 
     /**
+     * 查询实例可恢复的时间段
+     *
+     * 查询实例可恢复的时间段
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListRestoreTimeRequest 请求对象
+     * @return CompletableFuture<ListRestoreTimeResponse>
+     */
+    public CompletableFuture<ListRestoreTimeResponse> listRestoreTimeAsync(ListRestoreTimeRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.listRestoreTime);
+    }
+
+    /**
+     * 查询实例可恢复的时间段
+     *
+     * 查询实例可恢复的时间段
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListRestoreTimeRequest 请求对象
+     * @return AsyncInvoker<ListRestoreTimeRequest, ListRestoreTimeResponse>
+     */
+    public AsyncInvoker<ListRestoreTimeRequest, ListRestoreTimeResponse> listRestoreTimeAsyncInvoker(
+        ListRestoreTimeRequest request) {
+        return new AsyncInvoker<ListRestoreTimeRequest, ListRestoreTimeResponse>(request,
+            GaussDBforNoSQLMeta.listRestoreTime, hcClient);
+    }
+
+    /**
      * 查询数据库慢日志
      *
      * 查询数据库慢日志信息。
@@ -793,6 +857,39 @@ public class GaussDBforNoSQLAsyncClient {
         ResizeInstanceVolumeRequest request) {
         return new AsyncInvoker<ResizeInstanceVolumeRequest, ResizeInstanceVolumeResponse>(request,
             GaussDBforNoSQLMeta.resizeInstanceVolume, hcClient);
+    }
+
+    /**
+     * 恢复到已有实例
+     *
+     * 恢复到已有实例
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param RestoreExistingInstanceRequest 请求对象
+     * @return CompletableFuture<RestoreExistingInstanceResponse>
+     */
+    public CompletableFuture<RestoreExistingInstanceResponse> restoreExistingInstanceAsync(
+        RestoreExistingInstanceRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.restoreExistingInstance);
+    }
+
+    /**
+     * 恢复到已有实例
+     *
+     * 恢复到已有实例
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param RestoreExistingInstanceRequest 请求对象
+     * @return AsyncInvoker<RestoreExistingInstanceRequest, RestoreExistingInstanceResponse>
+     */
+    public AsyncInvoker<RestoreExistingInstanceRequest, RestoreExistingInstanceResponse> restoreExistingInstanceAsyncInvoker(
+        RestoreExistingInstanceRequest request) {
+        return new AsyncInvoker<RestoreExistingInstanceRequest, RestoreExistingInstanceResponse>(request,
+            GaussDBforNoSQLMeta.restoreExistingInstance, hcClient);
     }
 
     /**
@@ -954,6 +1051,38 @@ public class GaussDBforNoSQLAsyncClient {
     public AsyncInvoker<ShowQuotasRequest, ShowQuotasResponse> showQuotasAsyncInvoker(ShowQuotasRequest request) {
         return new AsyncInvoker<ShowQuotasRequest, ShowQuotasResponse>(request, GaussDBforNoSQLMeta.showQuotas,
             hcClient);
+    }
+
+    /**
+     * 查询可恢复的实例列表
+     *
+     * 查询用户可恢复的实例列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowRestorableListRequest 请求对象
+     * @return CompletableFuture<ShowRestorableListResponse>
+     */
+    public CompletableFuture<ShowRestorableListResponse> showRestorableListAsync(ShowRestorableListRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.showRestorableList);
+    }
+
+    /**
+     * 查询可恢复的实例列表
+     *
+     * 查询用户可恢复的实例列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowRestorableListRequest 请求对象
+     * @return AsyncInvoker<ShowRestorableListRequest, ShowRestorableListResponse>
+     */
+    public AsyncInvoker<ShowRestorableListRequest, ShowRestorableListResponse> showRestorableListAsyncInvoker(
+        ShowRestorableListRequest request) {
+        return new AsyncInvoker<ShowRestorableListRequest, ShowRestorableListResponse>(request,
+            GaussDBforNoSQLMeta.showRestorableList, hcClient);
     }
 
     /**

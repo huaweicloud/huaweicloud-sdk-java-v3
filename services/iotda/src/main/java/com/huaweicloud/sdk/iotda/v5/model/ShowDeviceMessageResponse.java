@@ -43,6 +43,11 @@ public class ShowDeviceMessageResponse extends SdkResponse {
     private String topic;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "properties")
+
+    private PropertiesDTO properties;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
     private String status;
@@ -164,6 +169,32 @@ public class ShowDeviceMessageResponse extends SdkResponse {
         this.topic = topic;
     }
 
+    public ShowDeviceMessageResponse withProperties(PropertiesDTO properties) {
+        this.properties = properties;
+        return this;
+    }
+
+    public ShowDeviceMessageResponse withProperties(Consumer<PropertiesDTO> propertiesSetter) {
+        if (this.properties == null) {
+            this.properties = new PropertiesDTO();
+            propertiesSetter.accept(this.properties);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get properties
+     * @return properties
+     */
+    public PropertiesDTO getProperties() {
+        return properties;
+    }
+
+    public void setProperties(PropertiesDTO properties) {
+        this.properties = properties;
+    }
+
     public ShowDeviceMessageResponse withStatus(String status) {
         this.status = status;
         return this;
@@ -256,6 +287,7 @@ public class ShowDeviceMessageResponse extends SdkResponse {
             && Objects.equals(this.encoding, showDeviceMessageResponse.encoding)
             && Objects.equals(this.payloadFormat, showDeviceMessageResponse.payloadFormat)
             && Objects.equals(this.topic, showDeviceMessageResponse.topic)
+            && Objects.equals(this.properties, showDeviceMessageResponse.properties)
             && Objects.equals(this.status, showDeviceMessageResponse.status)
             && Objects.equals(this.errorInfo, showDeviceMessageResponse.errorInfo)
             && Objects.equals(this.createdTime, showDeviceMessageResponse.createdTime)
@@ -270,6 +302,7 @@ public class ShowDeviceMessageResponse extends SdkResponse {
             encoding,
             payloadFormat,
             topic,
+            properties,
             status,
             errorInfo,
             createdTime,
@@ -286,6 +319,7 @@ public class ShowDeviceMessageResponse extends SdkResponse {
         sb.append("    encoding: ").append(toIndentedString(encoding)).append("\n");
         sb.append("    payloadFormat: ").append(toIndentedString(payloadFormat)).append("\n");
         sb.append("    topic: ").append(toIndentedString(topic)).append("\n");
+        sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    errorInfo: ").append(toIndentedString(errorInfo)).append("\n");
         sb.append("    createdTime: ").append(toIndentedString(createdTime)).append("\n");

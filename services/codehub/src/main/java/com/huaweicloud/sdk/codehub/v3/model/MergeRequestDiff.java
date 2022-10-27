@@ -11,37 +11,37 @@ import java.util.Objects;
 public class MergeRequestDiff {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "baseCommitSha")
+    @JsonProperty(value = "base_commit_sha")
 
     private String baseCommitSha;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "commitsCount")
+    @JsonProperty(value = "commits_count")
 
     private Double commitsCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "createdAt")
+    @JsonProperty(value = "created_at")
 
     private String createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "headCommitSha")
+    @JsonProperty(value = "head_commit_sha")
 
     private String headCommitSha;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "mergeRequestId")
+    @JsonProperty(value = "merge_request_id")
 
     private Double mergeRequestId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "startCommitSha")
+    @JsonProperty(value = "start_commit_sha")
 
     private String startCommitSha;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "updatedAt")
+    @JsonProperty(value = "updated_at")
 
     private String updatedAt;
 

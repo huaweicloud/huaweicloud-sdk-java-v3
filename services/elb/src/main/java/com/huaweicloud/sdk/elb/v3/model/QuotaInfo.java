@@ -36,7 +36,7 @@ public class QuotaInfo {
     }
 
     /**
-     * 资源类型。  取值：loadbalancer、listener、ipgroup、pool、member、members_per_pool、healthmonitor、l7policy、certificate、security_policy，其中members_per_pool表示一个pool下最多可关联的member数量。
+     * 资源类型。  取值：loadbalancer、listener、ipgroup、pool、member、members_per_pool、 healthmonitor、l7policy、certificate、security_policy，  其中members_per_pool表示一个pool下最多可关联的member数量。
      * @return quotaKey
      */
     public String getQuotaKey() {
@@ -53,7 +53,7 @@ public class QuotaInfo {
     }
 
     /**
-     * 总配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+     * 总配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
      * @return quotaLimit
      */
     public Integer getQuotaLimit() {
@@ -87,7 +87,7 @@ public class QuotaInfo {
     }
 
     /**
-     * 配额单位。 取值：count，表示个数。
+     * 配额单位。  取值：count，表示个数。
      * @return unit
      */
     public String getUnit() {

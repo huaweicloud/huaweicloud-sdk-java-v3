@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * listener对象中的quic配置信息，仅protocol为HTTPS时有效。 支持创建和修改； 支持HTTPS监听器升级QUIC监听器能力。仅HTTPS监听器支持升级到QUIC监听器 当客户开启升级之后选择关联的quic监听器，https对象要保存改quic监听器ID。 对于TCP/UDP/HTTP/QUIC监听器，若该字段非空则报错。
+ * 当前监听器关联的QUIC监听器配置信息，仅protocol为HTTPS时有效。  对于TCP/UDP/HTTP/QUIC监听器，若该字段非空则报错。  &gt; 客户端向服务端发送正常的HTTP协议请求并携带了支持QUIC协议的信息。 如果服务端监听器开启了升级QUIC，那么就会在响应头中加入服务端支持的QUIC端口和版本信息。 客户端再次请求时会同时发送TCP(HTTPS)和UDP(QUIC)请求，若QUIC请求成功，则后续继续使用QUIC交互。  [不支持QUIC协议。](tag:hws_eu,g42,hk_g42,hcso_dt)
  */
 public class UpdateListenerQuicConfigOption {
 

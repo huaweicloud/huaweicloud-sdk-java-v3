@@ -1,0 +1,72 @@
+package com.huaweicloud.sdk.bms.v1.model;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.Objects;
+
+/**
+ * 删除裸金属服务器或解绑网卡时是否删除该网卡
+ */
+public class InterfaceAttachmentsReq {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "delete_on_termination")
+
+    private String deleteOnTermination;
+
+    public InterfaceAttachmentsReq withDeleteOnTermination(String deleteOnTermination) {
+        this.deleteOnTermination = deleteOnTermination;
+        return this;
+    }
+
+    /**
+     * Get deleteOnTermination
+     * @return deleteOnTermination
+     */
+    public String getDeleteOnTermination() {
+        return deleteOnTermination;
+    }
+
+    public void setDeleteOnTermination(String deleteOnTermination) {
+        this.deleteOnTermination = deleteOnTermination;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        InterfaceAttachmentsReq interfaceAttachmentsReq = (InterfaceAttachmentsReq) o;
+        return Objects.equals(this.deleteOnTermination, interfaceAttachmentsReq.deleteOnTermination);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(deleteOnTermination);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class InterfaceAttachmentsReq {\n");
+        sb.append("    deleteOnTermination: ").append(toIndentedString(deleteOnTermination)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+}

@@ -66,7 +66,7 @@ public class QuerySubCustomerListReq {
     }
 
     /**
-     * 客户登录名称（如果客户创建了IAM用户，此处需要填写主账号登录名称。关于主账号和IAM用户的具体介绍请参见身份管理中“账号”和“IAM用户”的描述）。 支持模糊查询。 此参数不携带或携带值为空串或携带值为null时，不作为筛选条件。
+     * 客户登录名称（如果客户创建了IAM用户，此处需要填写主账号登录名称。关于主账号和IAM用户的具体介绍请参见身份管理中“账号”和“IAM用户”的描述）。 支持模糊查询。仅支持前缀匹配、后缀匹配、中间匹配；不支持携带空格查询。 此参数不携带或携带值为空串或携带值为null时，不作为筛选条件。
      * @return accountName
      */
     public String getAccountName() {
@@ -83,7 +83,7 @@ public class QuerySubCustomerListReq {
     }
 
     /**
-     * 客户的实名认证名称，支持模糊查询。 此参数不携带或携带值为空串或携带值为null时，不作为筛选条件。
+     * 客户的实名认证名称，支持模糊查询。仅支持前缀匹配、后缀匹配、中间匹配；不支持携带空格查询。 此参数不携带或携带值为空串或携带值为null时，不作为筛选条件。
      * @return customer
      */
     public String getCustomer() {
@@ -138,7 +138,7 @@ public class QuerySubCustomerListReq {
     }
 
     /**
-     * 标签，支持模糊查找。 此参数不携带或携带值为空串或携带值为null时，不作为筛选条件。
+     * 标签，支持模糊查找。仅支持前缀匹配、后缀匹配、中间匹配；不支持携带空格查询；不支持英文大小写模糊匹配查询。 此参数不携带或携带值为空串或携带值为null时，不作为筛选条件。
      * @return label
      */
     public String getLabel() {
@@ -172,7 +172,7 @@ public class QuerySubCustomerListReq {
     }
 
     /**
-     * 关联时间区间段开始，UTC时间。 格式：YYYY-MM-DD'T'hh:mm:ss'Z'，例如“2019-05-06T08:05:01Z”。 此参数不携带或携带值为空串或携带值为null时，不作为筛选条件。
+     * 关联时间区间段开始，UTC时间。 格式：YYYY-MM-DD'T'hh:mm:ss'Z'，例如“2019-05-06T08:05:01Z”。 此参数不携带或携带值为null时，不作为筛选条件，不支持携带值为空串。
      * @return associatedOnBegin
      */
     public String getAssociatedOnBegin() {
@@ -189,7 +189,7 @@ public class QuerySubCustomerListReq {
     }
 
     /**
-     * 关联时间区间段结束，UTC时间。 格式：YYYY-MM-DD'T'hh:mm:ss'Z'，例如“2019-05-06T08:05:01Z”。 此参数不携带或携带值为空串或携带值为null时，不作为筛选条件。
+     * 关联时间区间段结束，UTC时间。 格式：YYYY-MM-DD'T'hh:mm:ss'Z'，例如“2019-05-06T08:05:01Z”。 此参数不携带或携带值为null时，不作为筛选条件，不支持携带值为空串。
      * @return associatedOnEnd
      */
     public String getAssociatedOnEnd() {

@@ -15,46 +15,46 @@ import java.util.function.Consumer;
 public class ListNodeEncryptdatasResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "encrypt_data")
+    @JsonProperty(value = "encrypt_datas")
 
-    private List<EncryptData> encryptData = null;
+    private List<EncryptData> encryptDatas = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "count")
 
     private Integer count;
 
-    public ListNodeEncryptdatasResponse withEncryptData(List<EncryptData> encryptData) {
-        this.encryptData = encryptData;
+    public ListNodeEncryptdatasResponse withEncryptDatas(List<EncryptData> encryptDatas) {
+        this.encryptDatas = encryptDatas;
         return this;
     }
 
-    public ListNodeEncryptdatasResponse addEncryptDataItem(EncryptData encryptDataItem) {
-        if (this.encryptData == null) {
-            this.encryptData = new ArrayList<>();
+    public ListNodeEncryptdatasResponse addEncryptDatasItem(EncryptData encryptDatasItem) {
+        if (this.encryptDatas == null) {
+            this.encryptDatas = new ArrayList<>();
         }
-        this.encryptData.add(encryptDataItem);
+        this.encryptDatas.add(encryptDatasItem);
         return this;
     }
 
-    public ListNodeEncryptdatasResponse withEncryptData(Consumer<List<EncryptData>> encryptDataSetter) {
-        if (this.encryptData == null) {
-            this.encryptData = new ArrayList<>();
+    public ListNodeEncryptdatasResponse withEncryptDatas(Consumer<List<EncryptData>> encryptDatasSetter) {
+        if (this.encryptDatas == null) {
+            this.encryptDatas = new ArrayList<>();
         }
-        encryptDataSetter.accept(this.encryptData);
+        encryptDatasSetter.accept(this.encryptDatas);
         return this;
     }
 
     /**
      * 加密数据列表详情
-     * @return encryptData
+     * @return encryptDatas
      */
-    public List<EncryptData> getEncryptData() {
-        return encryptData;
+    public List<EncryptData> getEncryptDatas() {
+        return encryptDatas;
     }
 
-    public void setEncryptData(List<EncryptData> encryptData) {
-        this.encryptData = encryptData;
+    public void setEncryptDatas(List<EncryptData> encryptDatas) {
+        this.encryptDatas = encryptDatas;
     }
 
     public ListNodeEncryptdatasResponse withCount(Integer count) {
@@ -83,20 +83,20 @@ public class ListNodeEncryptdatasResponse extends SdkResponse {
             return false;
         }
         ListNodeEncryptdatasResponse listNodeEncryptdatasResponse = (ListNodeEncryptdatasResponse) o;
-        return Objects.equals(this.encryptData, listNodeEncryptdatasResponse.encryptData)
+        return Objects.equals(this.encryptDatas, listNodeEncryptdatasResponse.encryptDatas)
             && Objects.equals(this.count, listNodeEncryptdatasResponse.count);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(encryptData, count);
+        return Objects.hash(encryptDatas, count);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListNodeEncryptdatasResponse {\n");
-        sb.append("    encryptData: ").append(toIndentedString(encryptData)).append("\n");
+        sb.append("    encryptDatas: ").append(toIndentedString(encryptDatas)).append("\n");
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("}");
         return sb.toString();

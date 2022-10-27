@@ -30,6 +30,15 @@ public class ProjectManRegion {
     public static final Region CN_EAST_3 =
         new Region("cn-east-3", "https://projectman-ext.cn-east-3.myhuaweicloud.com");
 
+    public static final Region AP_SOUTHEAST_3 =
+        new Region("ap-southeast-3", "https://projectman-ext.ap-southeast-3.myhuaweicloud.com");
+
+    public static final Region LA_NORTH_2 =
+        new Region("la-north-2", "https://projectman-ext.la-north-2.myhuaweicloud.com");
+
+    public static final Region SA_BRAZIL_1 =
+        new Region("sa-brazil-1", "https://projectman-ext.sa-brazil-1.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("PROJECTMAN");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -42,6 +51,9 @@ public class ProjectManRegion {
         map.put("cn-south-1", CN_SOUTH_1);
         map.put("cn-southwest-2", CN_SOUTHWEST_2);
         map.put("cn-east-3", CN_EAST_3);
+        map.put("ap-southeast-3", AP_SOUTHEAST_3);
+        map.put("la-north-2", LA_NORTH_2);
+        map.put("sa-brazil-1", SA_BRAZIL_1);
         return Collections.unmodifiableMap(map);
     }
 

@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * DbScanResult
+ * 数据库扫描结果
  */
 public class DbScanResult {
 

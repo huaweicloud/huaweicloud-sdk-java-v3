@@ -51,6 +51,38 @@ public class CloudIDEClient {
     }
 
     /**
+     * 查询插件列表
+     *
+     * 查询插件列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListExtensionsRequest 请求对象
+     * @return ListExtensionsResponse
+     */
+    public ListExtensionsResponse listExtensions(ListExtensionsRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudIDEMeta.listExtensions);
+    }
+
+    /**
+     * 查询插件列表
+     *
+     * 查询插件列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListExtensionsRequest 请求对象
+     * @return SyncInvoker<ListExtensionsRequest, ListExtensionsResponse>
+     */
+    public SyncInvoker<ListExtensionsRequest, ListExtensionsResponse> listExtensionsInvoker(
+        ListExtensionsRequest request) {
+        return new SyncInvoker<ListExtensionsRequest, ListExtensionsResponse>(request, CloudIDEMeta.listExtensions,
+            hcClient);
+    }
+
+    /**
      * 查询技术栈模板工程
      *
      * 查询技术栈模板工程
@@ -174,6 +206,102 @@ public class CloudIDEClient {
         ShowExtensionAuthorizationRequest request) {
         return new SyncInvoker<ShowExtensionAuthorizationRequest, ShowExtensionAuthorizationResponse>(request,
             CloudIDEMeta.showExtensionAuthorization, hcClient);
+    }
+
+    /**
+     * 查询插件详细信息
+     *
+     * 查询插件详细信息
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowExtensionDetailRequest 请求对象
+     * @return ShowExtensionDetailResponse
+     */
+    public ShowExtensionDetailResponse showExtensionDetail(ShowExtensionDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudIDEMeta.showExtensionDetail);
+    }
+
+    /**
+     * 查询插件详细信息
+     *
+     * 查询插件详细信息
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowExtensionDetailRequest 请求对象
+     * @return SyncInvoker<ShowExtensionDetailRequest, ShowExtensionDetailResponse>
+     */
+    public SyncInvoker<ShowExtensionDetailRequest, ShowExtensionDetailResponse> showExtensionDetailInvoker(
+        ShowExtensionDetailRequest request) {
+        return new SyncInvoker<ShowExtensionDetailRequest, ShowExtensionDetailResponse>(request,
+            CloudIDEMeta.showExtensionDetail, hcClient);
+    }
+
+    /**
+     * 查询插件评价
+     *
+     * 查询插件评价
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowExtensionEvaluationRequest 请求对象
+     * @return ShowExtensionEvaluationResponse
+     */
+    public ShowExtensionEvaluationResponse showExtensionEvaluation(ShowExtensionEvaluationRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudIDEMeta.showExtensionEvaluation);
+    }
+
+    /**
+     * 查询插件评价
+     *
+     * 查询插件评价
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowExtensionEvaluationRequest 请求对象
+     * @return SyncInvoker<ShowExtensionEvaluationRequest, ShowExtensionEvaluationResponse>
+     */
+    public SyncInvoker<ShowExtensionEvaluationRequest, ShowExtensionEvaluationResponse> showExtensionEvaluationInvoker(
+        ShowExtensionEvaluationRequest request) {
+        return new SyncInvoker<ShowExtensionEvaluationRequest, ShowExtensionEvaluationResponse>(request,
+            CloudIDEMeta.showExtensionEvaluation, hcClient);
+    }
+
+    /**
+     * 查询插件评星
+     *
+     * 查询插件评星
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowExtensionEvaluationStarRequest 请求对象
+     * @return ShowExtensionEvaluationStarResponse
+     */
+    public ShowExtensionEvaluationStarResponse showExtensionEvaluationStar(ShowExtensionEvaluationStarRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudIDEMeta.showExtensionEvaluationStar);
+    }
+
+    /**
+     * 查询插件评星
+     *
+     * 查询插件评星
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowExtensionEvaluationStarRequest 请求对象
+     * @return SyncInvoker<ShowExtensionEvaluationStarRequest, ShowExtensionEvaluationStarResponse>
+     */
+    public SyncInvoker<ShowExtensionEvaluationStarRequest, ShowExtensionEvaluationStarResponse> showExtensionEvaluationStarInvoker(
+        ShowExtensionEvaluationStarRequest request) {
+        return new SyncInvoker<ShowExtensionEvaluationStarRequest, ShowExtensionEvaluationStarResponse>(request,
+            CloudIDEMeta.showExtensionEvaluationStar, hcClient);
     }
 
     /**

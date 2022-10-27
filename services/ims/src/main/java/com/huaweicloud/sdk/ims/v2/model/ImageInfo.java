@@ -121,7 +121,7 @@ public class ImageInfo {
     private ImageSourceTypeEnum imageSourceType;
 
     /**
-     * 镜像类型，目前支持以下类型： 公共镜像：gold 私有镜像：private 共享镜像：shared
+     * 镜像类型，目前支持以下类型： 公共镜像：gold 私有镜像：private 共享镜像：shared 市场镜像：market
      */
     public static final class ImagetypeEnum {
 
@@ -1434,7 +1434,7 @@ public class ImageInfo {
     }
 
     /**
-     * 镜像类型，目前支持以下类型： 公共镜像：gold 私有镜像：private 共享镜像：shared
+     * 镜像类型，目前支持以下类型： 公共镜像：gold 私有镜像：private 共享镜像：shared 市场镜像：market
      * @return imagetype
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

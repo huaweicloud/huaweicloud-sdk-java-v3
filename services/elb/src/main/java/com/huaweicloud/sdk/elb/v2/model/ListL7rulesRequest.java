@@ -78,7 +78,6 @@ public class ListL7rulesRequest {
     /**
      * 分页查询中每页的转发规则个数
      * minimum: 0
-     * maximum: 9223372036854775807
      * @return limit
      */
     public Integer getLimit() {

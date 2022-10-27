@@ -2484,41 +2484,6 @@ public class IefMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowEdgeNodeUpgradeDetailsRequest, ShowEdgeNodeUpgradeDetailsResponse> showEdgeNodeUpgradeDetails =
-        genForshowEdgeNodeUpgradeDetails();
-
-    private static HttpRequestDef<ShowEdgeNodeUpgradeDetailsRequest, ShowEdgeNodeUpgradeDetailsResponse> genForshowEdgeNodeUpgradeDetails() {
-        // basic
-        HttpRequestDef.Builder<ShowEdgeNodeUpgradeDetailsRequest, ShowEdgeNodeUpgradeDetailsResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.GET,
-                    ShowEdgeNodeUpgradeDetailsRequest.class,
-                    ShowEdgeNodeUpgradeDetailsResponse.class)
-                .withName("ShowEdgeNodeUpgradeDetails")
-                .withUri("/v2/{project_id}/edgemgr/nodes/{node_id}/upgrade")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("node_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEdgeNodeUpgradeDetailsRequest::getNodeId, (req, v) -> {
-                req.setNodeId(v);
-            }));
-        builder.<String>withRequestField("ief-instance-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEdgeNodeUpgradeDetailsRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ShowEncryptdatasRequest, ShowEncryptdatasResponse> showEncryptdatas =
         genForshowEncryptdatas();
 
@@ -3154,6 +3119,13 @@ public class IefMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateNodeByDeviceIdRequest::getDeviceId, (req, v) -> {
                 req.setDeviceId(v);
+            }));
+        builder.<String>withRequestField("ief-instance-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateNodeByDeviceIdRequest::getIefInstanceId, (req, v) -> {
+                req.setIefInstanceId(v);
             }));
         builder.<EdgeNodeUpdateByDevice>withRequestField("body",
             LocationType.Body,

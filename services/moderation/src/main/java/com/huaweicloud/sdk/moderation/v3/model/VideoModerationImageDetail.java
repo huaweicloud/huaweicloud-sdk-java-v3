@@ -202,7 +202,7 @@ public class VideoModerationImageDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time")
 
-    private Integer time;
+    private Float time;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "detail")
@@ -260,7 +260,7 @@ public class VideoModerationImageDetail {
         this.ocrText = ocrText;
     }
 
-    public VideoModerationImageDetail withTime(Integer time) {
+    public VideoModerationImageDetail withTime(Float time) {
         this.time = time;
         return this;
     }
@@ -269,11 +269,11 @@ public class VideoModerationImageDetail {
      * 截帧在视频文件中的时间，单位为秒
      * @return time
      */
-    public Integer getTime() {
+    public Float getTime() {
         return time;
     }
 
-    public void setTime(Integer time) {
+    public void setTime(Float time) {
         this.time = time;
     }
 

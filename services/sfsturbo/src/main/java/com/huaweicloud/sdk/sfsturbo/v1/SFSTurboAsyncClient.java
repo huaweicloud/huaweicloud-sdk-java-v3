@@ -92,6 +92,38 @@ public class SFSTurboAsyncClient {
     }
 
     /**
+     * 修改文件系统名称
+     *
+     * 修改文件系统名称
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ChangeShareNameRequest 请求对象
+     * @return CompletableFuture<ChangeShareNameResponse>
+     */
+    public CompletableFuture<ChangeShareNameResponse> changeShareNameAsync(ChangeShareNameRequest request) {
+        return hcClient.asyncInvokeHttp(request, SFSTurboMeta.changeShareName);
+    }
+
+    /**
+     * 修改文件系统名称
+     *
+     * 修改文件系统名称
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ChangeShareNameRequest 请求对象
+     * @return AsyncInvoker<ChangeShareNameRequest, ChangeShareNameResponse>
+     */
+    public AsyncInvoker<ChangeShareNameRequest, ChangeShareNameResponse> changeShareNameAsyncInvoker(
+        ChangeShareNameRequest request) {
+        return new AsyncInvoker<ChangeShareNameRequest, ChangeShareNameResponse>(request, SFSTurboMeta.changeShareName,
+            hcClient);
+    }
+
+    /**
      * 创建文件系统
      *
      * 创建文件系统。
