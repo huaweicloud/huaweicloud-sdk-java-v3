@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.mrs.v1.model.CreateClusterReq;
+import com.huaweicloud.sdk.mrs.v1.model.CreateClusterReqV11;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -23,16 +23,16 @@ public class CreateClusterRequest  {
     @JsonProperty(value="body")
     
     
-    private CreateClusterReq body;
+    private CreateClusterReqV11 body;
 
-    public CreateClusterRequest withBody(CreateClusterReq body) {
+    public CreateClusterRequest withBody(CreateClusterReqV11 body) {
         this.body = body;
         return this;
     }
 
-    public CreateClusterRequest withBody(Consumer<CreateClusterReq> bodySetter) {
+    public CreateClusterRequest withBody(Consumer<CreateClusterReqV11> bodySetter) {
         if(this.body == null ){
-            this.body = new CreateClusterReq();
+            this.body = new CreateClusterReqV11();
             bodySetter.accept(this.body);
         }
         
@@ -44,11 +44,11 @@ public class CreateClusterRequest  {
      * Get body
      * @return body
      */
-    public CreateClusterReq getBody() {
+    public CreateClusterReqV11 getBody() {
         return body;
     }
 
-    public void setBody(CreateClusterReq body) {
+    public void setBody(CreateClusterReqV11 body) {
         this.body = body;
     }
 

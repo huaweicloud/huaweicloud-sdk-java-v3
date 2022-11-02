@@ -1266,17 +1266,17 @@ public class CdnMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<Integer>withRequestField("start_time",
+        builder.<Long>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
+            TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ShowUrlTaskInfoRequest::getStartTime, (req, v) -> {
                 req.setStartTime(v);
             }));
-        builder.<Integer>withRequestField("end_time",
+        builder.<Long>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
+            TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ShowUrlTaskInfoRequest::getEndTime, (req, v) -> {
                 req.setEndTime(v);
             }));

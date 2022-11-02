@@ -17,9 +17,9 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * TaskNodeGroups
+ * TaskNodeGroup
  */
-public class TaskNodeGroups  {
+public class TaskNodeGroup  {
 
 
 
@@ -154,7 +154,7 @@ public class TaskNodeGroups  {
     
     private AutoScalingPolicy autoScalingPolicy;
 
-    public TaskNodeGroups withNodeNum(Integer nodeNum) {
+    public TaskNodeGroup withNodeNum(Integer nodeNum) {
         this.nodeNum = nodeNum;
         return this;
     }
@@ -178,7 +178,7 @@ public class TaskNodeGroups  {
 
     
 
-    public TaskNodeGroups withNodeSize(String nodeSize) {
+    public TaskNodeGroup withNodeSize(String nodeSize) {
         this.nodeSize = nodeSize;
         return this;
     }
@@ -200,7 +200,7 @@ public class TaskNodeGroups  {
 
     
 
-    public TaskNodeGroups withDataVolumeType(DataVolumeTypeEnum dataVolumeType) {
+    public TaskNodeGroup withDataVolumeType(DataVolumeTypeEnum dataVolumeType) {
         this.dataVolumeType = dataVolumeType;
         return this;
     }
@@ -222,7 +222,7 @@ public class TaskNodeGroups  {
 
     
 
-    public TaskNodeGroups withDataVolumeCount(Integer dataVolumeCount) {
+    public TaskNodeGroup withDataVolumeCount(Integer dataVolumeCount) {
         this.dataVolumeCount = dataVolumeCount;
         return this;
     }
@@ -246,7 +246,7 @@ public class TaskNodeGroups  {
 
     
 
-    public TaskNodeGroups withDataVolumeSize(Integer dataVolumeSize) {
+    public TaskNodeGroup withDataVolumeSize(Integer dataVolumeSize) {
         this.dataVolumeSize = dataVolumeSize;
         return this;
     }
@@ -270,12 +270,12 @@ public class TaskNodeGroups  {
 
     
 
-    public TaskNodeGroups withAutoScalingPolicy(AutoScalingPolicy autoScalingPolicy) {
+    public TaskNodeGroup withAutoScalingPolicy(AutoScalingPolicy autoScalingPolicy) {
         this.autoScalingPolicy = autoScalingPolicy;
         return this;
     }
 
-    public TaskNodeGroups withAutoScalingPolicy(Consumer<AutoScalingPolicy> autoScalingPolicySetter) {
+    public TaskNodeGroup withAutoScalingPolicy(Consumer<AutoScalingPolicy> autoScalingPolicySetter) {
         if(this.autoScalingPolicy == null ){
             this.autoScalingPolicy = new AutoScalingPolicy();
             autoScalingPolicySetter.accept(this.autoScalingPolicy);
@@ -307,13 +307,13 @@ public class TaskNodeGroups  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        TaskNodeGroups taskNodeGroups = (TaskNodeGroups) o;
-        return Objects.equals(this.nodeNum, taskNodeGroups.nodeNum) &&
-            Objects.equals(this.nodeSize, taskNodeGroups.nodeSize) &&
-            Objects.equals(this.dataVolumeType, taskNodeGroups.dataVolumeType) &&
-            Objects.equals(this.dataVolumeCount, taskNodeGroups.dataVolumeCount) &&
-            Objects.equals(this.dataVolumeSize, taskNodeGroups.dataVolumeSize) &&
-            Objects.equals(this.autoScalingPolicy, taskNodeGroups.autoScalingPolicy);
+        TaskNodeGroup taskNodeGroup = (TaskNodeGroup) o;
+        return Objects.equals(this.nodeNum, taskNodeGroup.nodeNum) &&
+            Objects.equals(this.nodeSize, taskNodeGroup.nodeSize) &&
+            Objects.equals(this.dataVolumeType, taskNodeGroup.dataVolumeType) &&
+            Objects.equals(this.dataVolumeCount, taskNodeGroup.dataVolumeCount) &&
+            Objects.equals(this.dataVolumeSize, taskNodeGroup.dataVolumeSize) &&
+            Objects.equals(this.autoScalingPolicy, taskNodeGroup.autoScalingPolicy);
     }
     @Override
     public int hashCode() {
@@ -322,7 +322,7 @@ public class TaskNodeGroups  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class TaskNodeGroups {\n");
+        sb.append("class TaskNodeGroup {\n");
         sb.append("    nodeNum: ").append(toIndentedString(nodeNum)).append("\n");
         sb.append("    nodeSize: ").append(toIndentedString(nodeSize)).append("\n");
         sb.append("    dataVolumeType: ").append(toIndentedString(dataVolumeType)).append("\n");

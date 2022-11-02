@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.apig.v2.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -15,20 +20,180 @@ public class ApiAclCreate {
 
     private String aclName;
 
+    /**
+     * 类型 -  PERMIT (白名单类型) -  DENY (黑名单类型)
+     */
+    public static final class AclTypeEnum {
+
+        /**
+         * Enum PERMIT for value: "PERMIT"
+         */
+        public static final AclTypeEnum PERMIT = new AclTypeEnum("PERMIT");
+
+        /**
+         * Enum DENY for value: "DENY"
+         */
+        public static final AclTypeEnum DENY = new AclTypeEnum("DENY");
+
+        private static final Map<String, AclTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, AclTypeEnum> createStaticFields() {
+            Map<String, AclTypeEnum> map = new HashMap<>();
+            map.put("PERMIT", PERMIT);
+            map.put("DENY", DENY);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        AclTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static AclTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            AclTypeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new AclTypeEnum(value);
+            }
+            return result;
+        }
+
+        public static AclTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            AclTypeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof AclTypeEnum) {
+                return this.value.equals(((AclTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "acl_type")
 
-    private String aclType;
+    private AclTypeEnum aclType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "acl_value")
 
     private String aclValue;
 
+    /**
+     * 对象类型： - IP：IP地址 - DOMAIN：账号名 - DOMAIN_ID：账号ID
+     */
+    public static final class EntityTypeEnum {
+
+        /**
+         * Enum IP for value: "IP"
+         */
+        public static final EntityTypeEnum IP = new EntityTypeEnum("IP");
+
+        /**
+         * Enum DOMAIN for value: "DOMAIN"
+         */
+        public static final EntityTypeEnum DOMAIN = new EntityTypeEnum("DOMAIN");
+
+        /**
+         * Enum DOMAIN_ID for value: "DOMAIN_ID"
+         */
+        public static final EntityTypeEnum DOMAIN_ID = new EntityTypeEnum("DOMAIN_ID");
+
+        private static final Map<String, EntityTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, EntityTypeEnum> createStaticFields() {
+            Map<String, EntityTypeEnum> map = new HashMap<>();
+            map.put("IP", IP);
+            map.put("DOMAIN", DOMAIN);
+            map.put("DOMAIN_ID", DOMAIN_ID);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        EntityTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static EntityTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            EntityTypeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new EntityTypeEnum(value);
+            }
+            return result;
+        }
+
+        public static EntityTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            EntityTypeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof EntityTypeEnum) {
+                return this.value.equals(((EntityTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "entity_type")
 
-    private String entityType;
+    private EntityTypeEnum entityType;
 
     public ApiAclCreate withAclName(String aclName) {
         this.aclName = aclName;
@@ -47,7 +212,7 @@ public class ApiAclCreate {
         this.aclName = aclName;
     }
 
-    public ApiAclCreate withAclType(String aclType) {
+    public ApiAclCreate withAclType(AclTypeEnum aclType) {
         this.aclType = aclType;
         return this;
     }
@@ -56,11 +221,11 @@ public class ApiAclCreate {
      * 类型 -  PERMIT (白名单类型) -  DENY (黑名单类型)
      * @return aclType
      */
-    public String getAclType() {
+    public AclTypeEnum getAclType() {
         return aclType;
     }
 
-    public void setAclType(String aclType) {
+    public void setAclType(AclTypeEnum aclType) {
         this.aclType = aclType;
     }
 
@@ -81,20 +246,20 @@ public class ApiAclCreate {
         this.aclValue = aclValue;
     }
 
-    public ApiAclCreate withEntityType(String entityType) {
+    public ApiAclCreate withEntityType(EntityTypeEnum entityType) {
         this.entityType = entityType;
         return this;
     }
 
     /**
-     * 对象类型： - IP - DOMAIN
+     * 对象类型： - IP：IP地址 - DOMAIN：账号名 - DOMAIN_ID：账号ID
      * @return entityType
      */
-    public String getEntityType() {
+    public EntityTypeEnum getEntityType() {
         return entityType;
     }
 
-    public void setEntityType(String entityType) {
+    public void setEntityType(EntityTypeEnum entityType) {
         this.entityType = entityType;
     }
 

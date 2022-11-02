@@ -68,7 +68,7 @@ public class ListClustersRequest  {
 
 
     /**
-     * 可以通过集群的标签来搜索指定标签的集群，当指定多个tag进行查询时，标签之间是与的关系。  - tags参数的格式为tags=k1\\*v1,k2\\*v2,k3\\*v3 - 当标签的value为空时，格式为tags=k1,k2,k3\\*v3
+     * 可以通过集群的标签来搜索指定标签的集群，当指定多个tag进行查询时，标签之间是与的关系。  - tags参数的格式为tags=k1*v1,k2*v2,k3*v3 - 当标签的value为空时，格式为tags=k1,k2,k3*v3
      * @return tags
      */
     public String getTags() {

@@ -415,7 +415,7 @@ public class ShowJobExeListNewRequest  {
 
 
     /**
-     * 作业类型。 - MapReduce - SparkSubmit - SparkSubmit：SparkPython类型的作业在查询时作业类型请选择SparkSubmit。 - HiveScript - HiveSql - DistCp，导入、导出数据。 - SparkScript - SparkSql - Flink
+     * 作业类型。 - MapReduce - SparkPython - SparkSubmit：SparkPython类型的作业在查询时作业类型请选择SparkSubmit。 - HiveScript - HiveSql - DistCp，导入、导出数据。 - SparkScript - SparkSql - Flink
      * @return jobType
      */
     public String getJobType() {
@@ -525,7 +525,7 @@ public class ShowJobExeListNewRequest  {
 
 
     /**
-     * 表示作业列表从该偏移量开始查询。缺省值：1
+     * 表示作业列表从该偏移量开始查询。缺省值：0
      * @return offset
      */
     public String getOffset() {

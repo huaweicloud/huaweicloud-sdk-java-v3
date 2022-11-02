@@ -12,9 +12,9 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * AddJobs
+ * AddJobsReqV11
  */
-public class AddJobs  {
+public class AddJobsReqV11  {
 
 
 
@@ -101,7 +101,7 @@ public class AddJobs  {
     
     private String fileAction;
 
-    public AddJobs withJobType(Integer jobType) {
+    public AddJobsReqV11 withJobType(Integer jobType) {
         this.jobType = jobType;
         return this;
     }
@@ -123,7 +123,7 @@ public class AddJobs  {
 
     
 
-    public AddJobs withJobName(String jobName) {
+    public AddJobsReqV11 withJobName(String jobName) {
         this.jobName = jobName;
         return this;
     }
@@ -132,7 +132,7 @@ public class AddJobs  {
 
 
     /**
-     * 作业名称。 只能由字母、数字、中划线和下划线组成，并且长度为1～64个字符。  说明： 不同作业的名称允许相同，但不建议设置相同。
+     * 作业名称。 只能由字母、数字、中划线和下划线组成，并且长度为1～64个字符。 说明： 不同作业的名称允许相同，但不建议设置相同。
      * @return jobName
      */
     public String getJobName() {
@@ -145,7 +145,7 @@ public class AddJobs  {
 
     
 
-    public AddJobs withJarPath(String jarPath) {
+    public AddJobsReqV11 withJarPath(String jarPath) {
         this.jarPath = jarPath;
         return this;
     }
@@ -167,7 +167,7 @@ public class AddJobs  {
 
     
 
-    public AddJobs withArguments(String arguments) {
+    public AddJobsReqV11 withArguments(String arguments) {
         this.arguments = arguments;
         return this;
     }
@@ -189,7 +189,7 @@ public class AddJobs  {
 
     
 
-    public AddJobs withInput(String input) {
+    public AddJobsReqV11 withInput(String input) {
         this.input = input;
         return this;
     }
@@ -198,7 +198,7 @@ public class AddJobs  {
 
 
     /**
-     * 数据输入地址。 文件可存储于HDFS或者OBS中，不同的文件系统对应的路径存在差异。 - OBS：以“obs://”开头。不支持KMS加密的文件或程序。 - HDFS：以“/”开头。  最多为1023字符，不能包含;|&>'<$特殊字符，可为空。
+     * 数据输入地址。 文件可存储于HDFS或者OBS中，不同的文件系统对应的路径存在差异。 - OBS：以“obs://”开头。不支持KMS加密的文件或程序。 - HDFS：以“/”开头。 最多为1023字符，不能包含;|&>'<$特殊字符，可为空。
      * @return input
      */
     public String getInput() {
@@ -211,7 +211,7 @@ public class AddJobs  {
 
     
 
-    public AddJobs withOutput(String output) {
+    public AddJobsReqV11 withOutput(String output) {
         this.output = output;
         return this;
     }
@@ -220,7 +220,7 @@ public class AddJobs  {
 
 
     /**
-     * 数据输出地址。 文件可存储于HDFS或者OBS中，不同的文件系统对应的路径存在差异。 - OBS：以“obs://”开头。 - HDFS：以“/”开头。  如果该路径不存在，系统会自动创建。 最多为1023字符，不能包含;|&>'<$特殊字符，可为空。
+     * 数据输出地址。 文件可存储于HDFS或者OBS中，不同的文件系统对应的路径存在差异。 - OBS：以“obs://”开头。 - HDFS：以“/”开头。 如果该路径不存在，系统会自动创建。 最多为1023字符，不能包含;|&>'<$特殊字符，可为空。
      * @return output
      */
     public String getOutput() {
@@ -233,7 +233,7 @@ public class AddJobs  {
 
     
 
-    public AddJobs withJobLog(String jobLog) {
+    public AddJobsReqV11 withJobLog(String jobLog) {
         this.jobLog = jobLog;
         return this;
     }
@@ -242,7 +242,7 @@ public class AddJobs  {
 
 
     /**
-     * 作业日志存储地址，该日志信息记录作业运行状态。 文件可存储于HDFS或者OBS中，不同的文件系统对应的路径存在差异。 - OBS：以“obs://”开头。 - HDFS：以“/”开头。  最多为1023字符，不能包含;|&>'<$特殊字符，可为空。
+     * 作业日志存储地址，该日志信息记录作业运行状态。 文件可存储于HDFS或者OBS中，不同的文件系统对应的路径存在差异。 - OBS：以“obs://”开头。 - HDFS：以“/”开头。 最多为1023字符，不能包含;|&>'<$特殊字符，可为空。
      * @return jobLog
      */
     public String getJobLog() {
@@ -255,7 +255,7 @@ public class AddJobs  {
 
     
 
-    public AddJobs withHiveScriptPath(String hiveScriptPath) {
+    public AddJobsReqV11 withHiveScriptPath(String hiveScriptPath) {
         this.hiveScriptPath = hiveScriptPath;
         return this;
     }
@@ -277,7 +277,7 @@ public class AddJobs  {
 
     
 
-    public AddJobs withHql(String hql) {
+    public AddJobsReqV11 withHql(String hql) {
         this.hql = hql;
         return this;
     }
@@ -299,7 +299,7 @@ public class AddJobs  {
 
     
 
-    public AddJobs withShutdownCluster(Boolean shutdownCluster) {
+    public AddJobsReqV11 withShutdownCluster(Boolean shutdownCluster) {
         this.shutdownCluster = shutdownCluster;
         return this;
     }
@@ -308,7 +308,7 @@ public class AddJobs  {
 
 
     /**
-     * 作业执行完成后，是否删除集群。  - true：是  - false：否
+     * 作业执行完成后，是否删除集群。 - true：是 - false：否
      * @return shutdownCluster
      */
     public Boolean getShutdownCluster() {
@@ -321,7 +321,7 @@ public class AddJobs  {
 
     
 
-    public AddJobs withSubmitJobOnceClusterRun(Boolean submitJobOnceClusterRun) {
+    public AddJobsReqV11 withSubmitJobOnceClusterRun(Boolean submitJobOnceClusterRun) {
         this.submitJobOnceClusterRun = submitJobOnceClusterRun;
         return this;
     }
@@ -330,7 +330,7 @@ public class AddJobs  {
 
 
     /**
-     * - true：创建集群同时提交作业  - false：单独提交作业  此处应设置为true。
+     * - true：创建集群同时提交作业 - false：单独提交作业 此处应设置为true。
      * @return submitJobOnceClusterRun
      */
     public Boolean getSubmitJobOnceClusterRun() {
@@ -343,7 +343,7 @@ public class AddJobs  {
 
     
 
-    public AddJobs withFileAction(String fileAction) {
+    public AddJobsReqV11 withFileAction(String fileAction) {
         this.fileAction = fileAction;
         return this;
     }
@@ -373,19 +373,19 @@ public class AddJobs  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        AddJobs addJobs = (AddJobs) o;
-        return Objects.equals(this.jobType, addJobs.jobType) &&
-            Objects.equals(this.jobName, addJobs.jobName) &&
-            Objects.equals(this.jarPath, addJobs.jarPath) &&
-            Objects.equals(this.arguments, addJobs.arguments) &&
-            Objects.equals(this.input, addJobs.input) &&
-            Objects.equals(this.output, addJobs.output) &&
-            Objects.equals(this.jobLog, addJobs.jobLog) &&
-            Objects.equals(this.hiveScriptPath, addJobs.hiveScriptPath) &&
-            Objects.equals(this.hql, addJobs.hql) &&
-            Objects.equals(this.shutdownCluster, addJobs.shutdownCluster) &&
-            Objects.equals(this.submitJobOnceClusterRun, addJobs.submitJobOnceClusterRun) &&
-            Objects.equals(this.fileAction, addJobs.fileAction);
+        AddJobsReqV11 addJobsReqV11 = (AddJobsReqV11) o;
+        return Objects.equals(this.jobType, addJobsReqV11.jobType) &&
+            Objects.equals(this.jobName, addJobsReqV11.jobName) &&
+            Objects.equals(this.jarPath, addJobsReqV11.jarPath) &&
+            Objects.equals(this.arguments, addJobsReqV11.arguments) &&
+            Objects.equals(this.input, addJobsReqV11.input) &&
+            Objects.equals(this.output, addJobsReqV11.output) &&
+            Objects.equals(this.jobLog, addJobsReqV11.jobLog) &&
+            Objects.equals(this.hiveScriptPath, addJobsReqV11.hiveScriptPath) &&
+            Objects.equals(this.hql, addJobsReqV11.hql) &&
+            Objects.equals(this.shutdownCluster, addJobsReqV11.shutdownCluster) &&
+            Objects.equals(this.submitJobOnceClusterRun, addJobsReqV11.submitJobOnceClusterRun) &&
+            Objects.equals(this.fileAction, addJobsReqV11.fileAction);
     }
     @Override
     public int hashCode() {
@@ -394,7 +394,7 @@ public class AddJobs  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class AddJobs {\n");
+        sb.append("class AddJobsReqV11 {\n");
         sb.append("    jobType: ").append(toIndentedString(jobType)).append("\n");
         sb.append("    jobName: ").append(toIndentedString(jobName)).append("\n");
         sb.append("    jarPath: ").append(toIndentedString(jarPath)).append("\n");

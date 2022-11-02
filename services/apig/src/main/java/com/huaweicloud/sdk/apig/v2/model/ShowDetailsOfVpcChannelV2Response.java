@@ -31,7 +31,7 @@ public class ShowDetailsOfVpcChannelV2Response extends SdkResponse {
     private Integer port;
 
     /**
-     * 分发算法。 - 1：加权轮询（wrr） - 2：加权最少连接（wleastconn） - 3：源地址哈希（source） - 4：URI哈希（uri）  VPC通道类型为2时必选。
+     * 分发算法。 - 1：加权轮询（wrr） - 2：加权最少连接（wleastconn） - 3：源地址哈希（source） - 4：URI哈希（uri）
      */
     public static final class BalanceStrategyEnum {
 
@@ -125,7 +125,7 @@ public class ShowDetailsOfVpcChannelV2Response extends SdkResponse {
     private BalanceStrategyEnum balanceStrategy;
 
     /**
-     * VPC通道的成员类型。 - ip - ecs  VPC通道类型为2时必选。
+     * VPC通道的成员类型。 - ip - ecs
      */
     public static final class MemberTypeEnum {
 
@@ -205,6 +205,11 @@ public class ShowDetailsOfVpcChannelV2Response extends SdkResponse {
     @JsonProperty(value = "member_type")
 
     private MemberTypeEnum memberType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dict_code")
+
+    private String dictCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
@@ -304,6 +309,16 @@ public class ShowDetailsOfVpcChannelV2Response extends SdkResponse {
     private List<MemberGroupInfo> memberGroups = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "microservice_info")
+
+    private MicroServiceInfo microserviceInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private Integer type;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "members")
 
     private List<VpcMemberInfo> members = null;
@@ -336,7 +351,7 @@ public class ShowDetailsOfVpcChannelV2Response extends SdkResponse {
     }
 
     /**
-     * VPC通道中主机的端口号。  取值范围1 ~ 65535，仅VPC通道类型为2时有效。  VPC通道类型为2时必选。
+     * VPC通道中主机的端口号。  取值范围1 ~ 65535。
      * @return port
      */
     public Integer getPort() {
@@ -353,7 +368,7 @@ public class ShowDetailsOfVpcChannelV2Response extends SdkResponse {
     }
 
     /**
-     * 分发算法。 - 1：加权轮询（wrr） - 2：加权最少连接（wleastconn） - 3：源地址哈希（source） - 4：URI哈希（uri）  VPC通道类型为2时必选。
+     * 分发算法。 - 1：加权轮询（wrr） - 2：加权最少连接（wleastconn） - 3：源地址哈希（source） - 4：URI哈希（uri）
      * @return balanceStrategy
      */
     public BalanceStrategyEnum getBalanceStrategy() {
@@ -370,7 +385,7 @@ public class ShowDetailsOfVpcChannelV2Response extends SdkResponse {
     }
 
     /**
-     * VPC通道的成员类型。 - ip - ecs  VPC通道类型为2时必选。
+     * VPC通道的成员类型。 - ip - ecs
      * @return memberType
      */
     public MemberTypeEnum getMemberType() {
@@ -379,6 +394,23 @@ public class ShowDetailsOfVpcChannelV2Response extends SdkResponse {
 
     public void setMemberType(MemberTypeEnum memberType) {
         this.memberType = memberType;
+    }
+
+    public ShowDetailsOfVpcChannelV2Response withDictCode(String dictCode) {
+        this.dictCode = dictCode;
+        return this;
+    }
+
+    /**
+     * VPC通道的字典编码  支持英文，数字，特殊字符（-_.）  暂不支持
+     * @return dictCode
+     */
+    public String getDictCode() {
+        return dictCode;
+    }
+
+    public void setDictCode(String dictCode) {
+        this.dictCode = dictCode;
     }
 
     public ShowDetailsOfVpcChannelV2Response withCreateTime(OffsetDateTime createTime) {
@@ -454,7 +486,7 @@ public class ShowDetailsOfVpcChannelV2Response extends SdkResponse {
     }
 
     /**
-     * 后端云服务器组列表。  暂不支持
+     * 后端云服务器组列表。
      * @return memberGroups
      */
     public List<MemberGroupInfo> getMemberGroups() {
@@ -463,6 +495,49 @@ public class ShowDetailsOfVpcChannelV2Response extends SdkResponse {
 
     public void setMemberGroups(List<MemberGroupInfo> memberGroups) {
         this.memberGroups = memberGroups;
+    }
+
+    public ShowDetailsOfVpcChannelV2Response withMicroserviceInfo(MicroServiceInfo microserviceInfo) {
+        this.microserviceInfo = microserviceInfo;
+        return this;
+    }
+
+    public ShowDetailsOfVpcChannelV2Response withMicroserviceInfo(Consumer<MicroServiceInfo> microserviceInfoSetter) {
+        if (this.microserviceInfo == null) {
+            this.microserviceInfo = new MicroServiceInfo();
+            microserviceInfoSetter.accept(this.microserviceInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get microserviceInfo
+     * @return microserviceInfo
+     */
+    public MicroServiceInfo getMicroserviceInfo() {
+        return microserviceInfo;
+    }
+
+    public void setMicroserviceInfo(MicroServiceInfo microserviceInfo) {
+        this.microserviceInfo = microserviceInfo;
+    }
+
+    public ShowDetailsOfVpcChannelV2Response withType(Integer type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * vpc通道类型。 - 2：服务器类型 - 3：微服务类型
+     * @return type
+     */
+    public Integer getType() {
+        return type;
+    }
+
+    public void setType(Integer type) {
+        this.type = type;
     }
 
     public ShowDetailsOfVpcChannelV2Response withMembers(List<VpcMemberInfo> members) {
@@ -487,7 +562,7 @@ public class ShowDetailsOfVpcChannelV2Response extends SdkResponse {
     }
 
     /**
-     * 后端实例列表，VPC通道类型为1时，有且仅有1个后端实例。
+     * 后端实例列表。
      * @return members
      */
     public List<VpcMemberInfo> getMembers() {
@@ -537,10 +612,13 @@ public class ShowDetailsOfVpcChannelV2Response extends SdkResponse {
             && Objects.equals(this.port, showDetailsOfVpcChannelV2Response.port)
             && Objects.equals(this.balanceStrategy, showDetailsOfVpcChannelV2Response.balanceStrategy)
             && Objects.equals(this.memberType, showDetailsOfVpcChannelV2Response.memberType)
+            && Objects.equals(this.dictCode, showDetailsOfVpcChannelV2Response.dictCode)
             && Objects.equals(this.createTime, showDetailsOfVpcChannelV2Response.createTime)
             && Objects.equals(this.id, showDetailsOfVpcChannelV2Response.id)
             && Objects.equals(this.status, showDetailsOfVpcChannelV2Response.status)
             && Objects.equals(this.memberGroups, showDetailsOfVpcChannelV2Response.memberGroups)
+            && Objects.equals(this.microserviceInfo, showDetailsOfVpcChannelV2Response.microserviceInfo)
+            && Objects.equals(this.type, showDetailsOfVpcChannelV2Response.type)
             && Objects.equals(this.members, showDetailsOfVpcChannelV2Response.members)
             && Objects.equals(this.vpcHealthConfig, showDetailsOfVpcChannelV2Response.vpcHealthConfig);
     }
@@ -551,10 +629,13 @@ public class ShowDetailsOfVpcChannelV2Response extends SdkResponse {
             port,
             balanceStrategy,
             memberType,
+            dictCode,
             createTime,
             id,
             status,
             memberGroups,
+            microserviceInfo,
+            type,
             members,
             vpcHealthConfig);
     }
@@ -567,10 +648,13 @@ public class ShowDetailsOfVpcChannelV2Response extends SdkResponse {
         sb.append("    port: ").append(toIndentedString(port)).append("\n");
         sb.append("    balanceStrategy: ").append(toIndentedString(balanceStrategy)).append("\n");
         sb.append("    memberType: ").append(toIndentedString(memberType)).append("\n");
+        sb.append("    dictCode: ").append(toIndentedString(dictCode)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    memberGroups: ").append(toIndentedString(memberGroups)).append("\n");
+        sb.append("    microserviceInfo: ").append(toIndentedString(microserviceInfo)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    members: ").append(toIndentedString(members)).append("\n");
         sb.append("    vpcHealthConfig: ").append(toIndentedString(vpcHealthConfig)).append("\n");
         sb.append("}");

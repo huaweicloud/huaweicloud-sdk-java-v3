@@ -23,8 +23,11 @@ public class MrsAsyncClient {
      * 批量添加集群标签
      *
      * 为指定集群批量添加标签。
+     * 
      * 一个集群上最多有10个标签。
+     * 
      * 此接口为幂等接口：
+     * 
      * - 创建时，同一个集群不允许重复key，如果数据库存在就覆盖。
      * 
      * 详细说明请参考华为云API Explorer。
@@ -41,8 +44,11 @@ public class MrsAsyncClient {
      * 批量添加集群标签
      *
      * 为指定集群批量添加标签。
+     * 
      * 一个集群上最多有10个标签。
+     * 
      * 此接口为幂等接口：
+     * 
      * - 创建时，同一个集群不允许重复key，如果数据库存在就覆盖。
      * 
      * 详细说明请参考华为云API Explorer。
@@ -64,8 +70,8 @@ public class MrsAsyncClient {
      * 
      * 此接口为幂等接口：
      * 
-     * 
-     * - 删除时，如果删除的标签不存在，默认处理成功，删除时不对标签字符集范围做校验。Key长度36个unicode字符，value为43个unicode字符。删除时tags结构体不能缺失，key不能为空，或者空字符串。
+     * -
+     * 删除时，如果删除的标签不存在，默认处理成功，删除时不对标签字符集范围做校验。Key长度36个unicode字符，value为43个unicode字符。删除时tags结构体不能缺失，key不能为空，或者空字符串。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -86,8 +92,8 @@ public class MrsAsyncClient {
      * 
      * 此接口为幂等接口：
      * 
-     * 
-     * - 删除时，如果删除的标签不存在，默认处理成功，删除时不对标签字符集范围做校验。Key长度36个unicode字符，value为43个unicode字符。删除时tags结构体不能缺失，key不能为空，或者空字符串。
+     * -
+     * 删除时，如果删除的标签不存在，默认处理成功，删除时不对标签字符集范围做校验。Key长度36个unicode字符，value为43个unicode字符。删除时tags结构体不能缺失，key不能为空，或者空字符串。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -100,8 +106,9 @@ public class MrsAsyncClient {
     }
 
     /**
-     * 新增作业并执行
+     * 新增作业并执行（废弃）
      *
+     * 如需使用作业管理接口请参考apiv2接口使用，本接口后续不再进行维护。
      * 在MRS集群中新增一个作业，并执行作业。该接口不兼容Sahara。
      * 集群ID可参考[查询集群列表](https://support.huaweicloud.com/api-mrs/ListClusters.html)接口获取。
      * 
@@ -116,8 +123,9 @@ public class MrsAsyncClient {
     }
 
     /**
-     * 新增作业并执行
+     * 新增作业并执行（废弃）
      *
+     * 如需使用作业管理接口请参考apiv2接口使用，本接口后续不再进行维护。
      * 在MRS集群中新增一个作业，并执行作业。该接口不兼容Sahara。
      * 集群ID可参考[查询集群列表](https://support.huaweicloud.com/api-mrs/ListClusters.html)接口获取。
      * 
@@ -316,8 +324,9 @@ public class MrsAsyncClient {
     }
 
     /**
-     * 删除作业执行对象
+     * 删除作业执行对象（废弃）
      *
+     * 如需使用作业管理接口请参考apiv2接口使用，本接口后续不再进行维护。
      * 删除指定的作业执行对象。该接口兼容Sahara。
      * 
      * 详细说明请参考华为云API Explorer。
@@ -331,8 +340,9 @@ public class MrsAsyncClient {
     }
 
     /**
-     * 删除作业执行对象
+     * 删除作业执行对象（废弃）
      *
+     * 如需使用作业管理接口请参考apiv2接口使用，本接口后续不再进行维护。
      * 删除指定的作业执行对象。该接口兼容Sahara。
      * 
      * 详细说明请参考华为云API Explorer。
@@ -470,8 +480,9 @@ public class MrsAsyncClient {
     }
 
     /**
-     * 查询作业exe对象列表
+     * 查询作业exe对象列表（废弃）
      *
+     * 如需使用作业管理接口请参考apiv2接口使用，本接口后续不再进行维护。
      * 查询所有作业的exe对象列表。该接口不兼容Sahara。
      * 
      * 详细说明请参考华为云API Explorer。
@@ -485,8 +496,9 @@ public class MrsAsyncClient {
     }
 
     /**
-     * 查询作业exe对象列表
+     * 查询作业exe对象列表（废弃）
      *
+     * 如需使用作业管理接口请参考apiv2接口使用，本接口后续不再进行维护。
      * 查询所有作业的exe对象列表。该接口不兼容Sahara。
      * 
      * 详细说明请参考华为云API Explorer。
@@ -560,8 +572,9 @@ public class MrsAsyncClient {
     }
 
     /**
-     * 查询作业exe对象详情
+     * 查询作业exe对象详情（废弃）
      *
+     * 如需使用作业管理接口请参考apiv2接口使用，本接口后续不再进行维护。
      * 查询指定作业的exe对象详细信息。该接口不兼容Sahara。
      * 
      * 详细说明请参考华为云API Explorer。
@@ -575,8 +588,9 @@ public class MrsAsyncClient {
     }
 
     /**
-     * 查询作业exe对象详情
+     * 查询作业exe对象详情（废弃）
      *
+     * 如需使用作业管理接口请参考apiv2接口使用，本接口后续不再进行维护。
      * 查询指定作业的exe对象详细信息。该接口不兼容Sahara。
      * 
      * 详细说明请参考华为云API Explorer。
@@ -593,7 +607,7 @@ public class MrsAsyncClient {
      * 调整集群节点
      *
      * 创建集群后，扩容/缩容集群Core节点或者Task节点。MRS集群创建成功后不支持调整Master节点数量，即不支持扩缩容Master节点。该接口不兼容Sahara。
-     * 处于running状态的集群才允许扩容/缩容，其他状态则不允许扩容/缩容。 集群状态和集群ID可参考[查询集群列表](https://support.huaweicloud.com/api-mrs/ListClusters.html)接口获取。
+     * 处于running状态的集群才允许扩容/缩容，其他状态则不允许扩容/缩容。 集群状态和集群ID可参考[查询集群列表](https://support.huaweicloud.com/api-mrs/ListClusters.html)接口获取。 本章节的接口只支持流式集群、分析集群和混合集群，不支持自定义集群。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -609,7 +623,7 @@ public class MrsAsyncClient {
      * 调整集群节点
      *
      * 创建集群后，扩容/缩容集群Core节点或者Task节点。MRS集群创建成功后不支持调整Master节点数量，即不支持扩缩容Master节点。该接口不兼容Sahara。
-     * 处于running状态的集群才允许扩容/缩容，其他状态则不允许扩容/缩容。 集群状态和集群ID可参考[查询集群列表](https://support.huaweicloud.com/api-mrs/ListClusters.html)接口获取。
+     * 处于running状态的集群才允许扩容/缩容，其他状态则不允许扩容/缩容。 集群状态和集群ID可参考[查询集群列表](https://support.huaweicloud.com/api-mrs/ListClusters.html)接口获取。 本章节的接口只支持流式集群、分析集群和混合集群，不支持自定义集群。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.

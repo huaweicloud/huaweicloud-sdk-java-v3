@@ -1582,6 +1582,36 @@ public class GaussDBAsyncClient {
     }
 
     /**
+     * 开启/关闭proxy事务拆分
+     *
+     * 开启/关闭proxy事务拆分
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateTransactionSplitStatusRequest 请求对象
+     * @return CompletableFuture<UpdateTransactionSplitStatusResponse>
+     */
+    public CompletableFuture<UpdateTransactionSplitStatusResponse> updateTransactionSplitStatusAsync(UpdateTransactionSplitStatusRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBMeta.updateTransactionSplitStatus);
+    }
+
+    /**
+     * 开启/关闭proxy事务拆分
+     *
+     * 开启/关闭proxy事务拆分
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateTransactionSplitStatusRequest 请求对象
+     * @return AsyncInvoker<UpdateTransactionSplitStatusRequest, UpdateTransactionSplitStatusResponse>
+     */
+    public AsyncInvoker<UpdateTransactionSplitStatusRequest, UpdateTransactionSplitStatusResponse> updateTransactionSplitStatusAsyncInvoker(UpdateTransactionSplitStatusRequest request) {
+        return new AsyncInvoker<UpdateTransactionSplitStatusRequest, UpdateTransactionSplitStatusResponse>(request, GaussDBMeta.updateTransactionSplitStatus, hcClient);
+    }
+
+    /**
      * 删除SQL限流规则
      *
      * 删除SQL限流规则

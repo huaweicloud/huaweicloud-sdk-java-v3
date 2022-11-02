@@ -366,6 +366,38 @@ public class RdsClient {
     }
 
     /**
+     * 创建插件
+     *
+     * 在指定数据库上创建插件。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreatePostgresqlExtensionRequest 请求对象
+     * @return CreatePostgresqlExtensionResponse
+     */
+    public CreatePostgresqlExtensionResponse createPostgresqlExtension(CreatePostgresqlExtensionRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.createPostgresqlExtension);
+    }
+
+    /**
+     * 创建插件
+     *
+     * 在指定数据库上创建插件。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreatePostgresqlExtensionRequest 请求对象
+     * @return SyncInvoker<CreatePostgresqlExtensionRequest, CreatePostgresqlExtensionResponse>
+     */
+    public SyncInvoker<CreatePostgresqlExtensionRequest, CreatePostgresqlExtensionResponse> createPostgresqlExtensionInvoker(
+        CreatePostgresqlExtensionRequest request) {
+        return new SyncInvoker<CreatePostgresqlExtensionRequest, CreatePostgresqlExtensionResponse>(request,
+            RdsMeta.createPostgresqlExtension, hcClient);
+    }
+
+    /**
      * 恢复到新实例
      *
      * 恢复到新实例。
@@ -491,6 +523,38 @@ public class RdsClient {
         DeleteManualBackupRequest request) {
         return new SyncInvoker<DeleteManualBackupRequest, DeleteManualBackupResponse>(request,
             RdsMeta.deleteManualBackup, hcClient);
+    }
+
+    /**
+     * 删除插件
+     *
+     * 在指定数据库上删除插件。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeletePostgresqlExtensionRequest 请求对象
+     * @return DeletePostgresqlExtensionResponse
+     */
+    public DeletePostgresqlExtensionResponse deletePostgresqlExtension(DeletePostgresqlExtensionRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.deletePostgresqlExtension);
+    }
+
+    /**
+     * 删除插件
+     *
+     * 在指定数据库上删除插件。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeletePostgresqlExtensionRequest 请求对象
+     * @return SyncInvoker<DeletePostgresqlExtensionRequest, DeletePostgresqlExtensionResponse>
+     */
+    public SyncInvoker<DeletePostgresqlExtensionRequest, DeletePostgresqlExtensionResponse> deletePostgresqlExtensionInvoker(
+        DeletePostgresqlExtensionRequest request) {
+        return new SyncInvoker<DeletePostgresqlExtensionRequest, DeletePostgresqlExtensionResponse>(request,
+            RdsMeta.deletePostgresqlExtension, hcClient);
     }
 
     /**
@@ -993,6 +1057,38 @@ public class RdsClient {
         ListOffSiteRestoreTimesRequest request) {
         return new SyncInvoker<ListOffSiteRestoreTimesRequest, ListOffSiteRestoreTimesResponse>(request,
             RdsMeta.listOffSiteRestoreTimes, hcClient);
+    }
+
+    /**
+     * 查询插件
+     *
+     * 获取指定数据库的插件信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListPostgresqlExtensionRequest 请求对象
+     * @return ListPostgresqlExtensionResponse
+     */
+    public ListPostgresqlExtensionResponse listPostgresqlExtension(ListPostgresqlExtensionRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.listPostgresqlExtension);
+    }
+
+    /**
+     * 查询插件
+     *
+     * 获取指定数据库的插件信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListPostgresqlExtensionRequest 请求对象
+     * @return SyncInvoker<ListPostgresqlExtensionRequest, ListPostgresqlExtensionResponse>
+     */
+    public SyncInvoker<ListPostgresqlExtensionRequest, ListPostgresqlExtensionResponse> listPostgresqlExtensionInvoker(
+        ListPostgresqlExtensionRequest request) {
+        return new SyncInvoker<ListPostgresqlExtensionRequest, ListPostgresqlExtensionResponse>(request,
+            RdsMeta.listPostgresqlExtension, hcClient);
     }
 
     /**

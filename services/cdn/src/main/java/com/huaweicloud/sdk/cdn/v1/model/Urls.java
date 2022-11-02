@@ -38,12 +38,12 @@ public class Urls {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "modify_time")
 
-    private Integer modifyTime;
+    private Long modifyTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
-    private Integer createTime;
+    private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_type")
@@ -135,7 +135,7 @@ public class Urls {
         this.taskId = taskId;
     }
 
-    public Urls withModifyTime(Integer modifyTime) {
+    public Urls withModifyTime(Long modifyTime) {
         this.modifyTime = modifyTime;
         return this;
     }
@@ -144,15 +144,15 @@ public class Urls {
      * 修改时间戳（毫秒）
      * @return modifyTime
      */
-    public Integer getModifyTime() {
+    public Long getModifyTime() {
         return modifyTime;
     }
 
-    public void setModifyTime(Integer modifyTime) {
+    public void setModifyTime(Long modifyTime) {
         this.modifyTime = modifyTime;
     }
 
-    public Urls withCreateTime(Integer createTime) {
+    public Urls withCreateTime(Long createTime) {
         this.createTime = createTime;
         return this;
     }
@@ -161,11 +161,11 @@ public class Urls {
      * 创建时间戳（毫秒）
      * @return createTime
      */
-    public Integer getCreateTime() {
+    public Long getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(Integer createTime) {
+    public void setCreateTime(Long createTime) {
         this.createTime = createTime;
     }
 

@@ -99,7 +99,7 @@ public class ShowDetailsOfAclPolicyV2Response extends SdkResponse {
     }
 
     /**
-     * 对象类型： - IP - DOMAIN
+     * 对象类型： - IP - DOMAIN - DOMAIN_ID
      * @return entityType
      */
     public String getEntityType() {

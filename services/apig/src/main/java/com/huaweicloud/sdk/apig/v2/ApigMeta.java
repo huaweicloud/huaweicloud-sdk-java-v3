@@ -949,6 +949,38 @@ public class ApigMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ImportMicroserviceRequest, ImportMicroserviceResponse> importMicroservice =
+        genForimportMicroservice();
+
+    private static HttpRequestDef<ImportMicroserviceRequest, ImportMicroserviceResponse> genForimportMicroservice() {
+        // basic
+        HttpRequestDef.Builder<ImportMicroserviceRequest, ImportMicroserviceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ImportMicroserviceRequest.class, ImportMicroserviceResponse.class)
+                .withName("ImportMicroservice")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/microservice/import")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ImportMicroserviceRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<MicroserviceImportReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(MicroserviceImportReq.class),
+            f -> f.withMarshaller(ImportMicroserviceRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListApiGroupsQuantitiesV2Request, ListApiGroupsQuantitiesV2Response> listApiGroupsQuantitiesV2 =
         genForlistApiGroupsQuantitiesV2();
 
@@ -1615,6 +1647,73 @@ public class ApigMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListLatelyGroupStatisticsV2Request::getGroupId, (req, v) -> {
                 req.setGroupId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListMetricDataRequest, ListMetricDataResponse> listMetricData =
+        genForlistMetricData();
+
+    private static HttpRequestDef<ListMetricDataRequest, ListMetricDataResponse> genForlistMetricData() {
+        // basic
+        HttpRequestDef.Builder<ListMetricDataRequest, ListMetricDataResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListMetricDataRequest.class, ListMetricDataResponse.class)
+                .withName("ListMetricData")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/metric-data")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMetricDataRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<ListMetricDataRequest.DimEnum>withRequestField("dim",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListMetricDataRequest.DimEnum.class),
+            f -> f.withMarshaller(ListMetricDataRequest::getDim, (req, v) -> {
+                req.setDim(v);
+            }));
+        builder.<ListMetricDataRequest.MetricNameEnum>withRequestField("metric_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListMetricDataRequest.MetricNameEnum.class),
+            f -> f.withMarshaller(ListMetricDataRequest::getMetricName, (req, v) -> {
+                req.setMetricName(v);
+            }));
+        builder.<String>withRequestField("from",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMetricDataRequest::getFrom, (req, v) -> {
+                req.setFrom(v);
+            }));
+        builder.<String>withRequestField("to",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMetricDataRequest::getTo, (req, v) -> {
+                req.setTo(v);
+            }));
+        builder.<ListMetricDataRequest.PeriodEnum>withRequestField("period",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListMetricDataRequest.PeriodEnum.class),
+            f -> f.withMarshaller(ListMetricDataRequest::getPeriod, (req, v) -> {
+                req.setPeriod(v);
+            }));
+        builder.<ListMetricDataRequest.FilterEnum>withRequestField("filter",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListMetricDataRequest.FilterEnum.class),
+            f -> f.withMarshaller(ListMetricDataRequest::getFilter, (req, v) -> {
+                req.setFilter(v);
             }));
 
         // response
@@ -5257,6 +5356,391 @@ public class ApigMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchAssociateCertsV2Request, BatchAssociateCertsV2Response> batchAssociateCertsV2 =
+        genForbatchAssociateCertsV2();
+
+    private static HttpRequestDef<BatchAssociateCertsV2Request, BatchAssociateCertsV2Response> genForbatchAssociateCertsV2() {
+        // basic
+        HttpRequestDef.Builder<BatchAssociateCertsV2Request, BatchAssociateCertsV2Response> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchAssociateCertsV2Request.class, BatchAssociateCertsV2Response.class)
+            .withName("BatchAssociateCertsV2")
+            .withUri(
+                "/v2/{project_id}/apigw/instances/{instance_id}/api-groups/{group_id}/domains/{domain_id}/certificates/attach")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchAssociateCertsV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchAssociateCertsV2Request::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            }));
+        builder.<String>withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchAssociateCertsV2Request::getDomainId, (req, v) -> {
+                req.setDomainId(v);
+            }));
+        builder.<AttachOrDetachCertsReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AttachOrDetachCertsReqBody.class),
+            f -> f.withMarshaller(BatchAssociateCertsV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchAssociateDomainsV2Request, BatchAssociateDomainsV2Response> batchAssociateDomainsV2 =
+        genForbatchAssociateDomainsV2();
+
+    private static HttpRequestDef<BatchAssociateDomainsV2Request, BatchAssociateDomainsV2Response> genForbatchAssociateDomainsV2() {
+        // basic
+        HttpRequestDef.Builder<BatchAssociateDomainsV2Request, BatchAssociateDomainsV2Response> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchAssociateDomainsV2Request.class, BatchAssociateDomainsV2Response.class)
+            .withName("BatchAssociateDomainsV2")
+            .withUri("/v2/{project_id}/apigw/certificates/{certificate_id}/domains/attach")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("certificate_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchAssociateDomainsV2Request::getCertificateId, (req, v) -> {
+                req.setCertificateId(v);
+            }));
+        builder.<AttachOrDetachDomainsReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AttachOrDetachDomainsReqBody.class),
+            f -> f.withMarshaller(BatchAssociateDomainsV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDisassociateCertsV2Request, BatchDisassociateCertsV2Response> batchDisassociateCertsV2 =
+        genForbatchDisassociateCertsV2();
+
+    private static HttpRequestDef<BatchDisassociateCertsV2Request, BatchDisassociateCertsV2Response> genForbatchDisassociateCertsV2() {
+        // basic
+        HttpRequestDef.Builder<BatchDisassociateCertsV2Request, BatchDisassociateCertsV2Response> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, BatchDisassociateCertsV2Request.class, BatchDisassociateCertsV2Response.class)
+                .withName("BatchDisassociateCertsV2")
+                .withUri(
+                    "/v2/{project_id}/apigw/instances/{instance_id}/api-groups/{group_id}/domains/{domain_id}/certificates/detach")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDisassociateCertsV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDisassociateCertsV2Request::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            }));
+        builder.<String>withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDisassociateCertsV2Request::getDomainId, (req, v) -> {
+                req.setDomainId(v);
+            }));
+        builder.<AttachOrDetachCertsReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AttachOrDetachCertsReqBody.class),
+            f -> f.withMarshaller(BatchDisassociateCertsV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDisassociateDomainsV2Request, BatchDisassociateDomainsV2Response> batchDisassociateDomainsV2 =
+        genForbatchDisassociateDomainsV2();
+
+    private static HttpRequestDef<BatchDisassociateDomainsV2Request, BatchDisassociateDomainsV2Response> genForbatchDisassociateDomainsV2() {
+        // basic
+        HttpRequestDef.Builder<BatchDisassociateDomainsV2Request, BatchDisassociateDomainsV2Response> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchDisassociateDomainsV2Request.class,
+                    BatchDisassociateDomainsV2Response.class)
+                .withName("BatchDisassociateDomainsV2")
+                .withUri("/v2/{project_id}/apigw/certificates/{certificate_id}/domains/detach")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("certificate_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDisassociateDomainsV2Request::getCertificateId, (req, v) -> {
+                req.setCertificateId(v);
+            }));
+        builder.<AttachOrDetachDomainsReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AttachOrDetachDomainsReqBody.class),
+            f -> f.withMarshaller(BatchDisassociateDomainsV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateCertificateV2Request, CreateCertificateV2Response> createCertificateV2 =
+        genForcreateCertificateV2();
+
+    private static HttpRequestDef<CreateCertificateV2Request, CreateCertificateV2Response> genForcreateCertificateV2() {
+        // basic
+        HttpRequestDef.Builder<CreateCertificateV2Request, CreateCertificateV2Response> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateCertificateV2Request.class, CreateCertificateV2Response.class)
+                .withName("CreateCertificateV2")
+                .withUri("/v2/{project_id}/apigw/certificates")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<CertificateForm>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CertificateForm.class),
+            f -> f.withMarshaller(CreateCertificateV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteCertificateV2Request, DeleteCertificateV2Response> deleteCertificateV2 =
+        genFordeleteCertificateV2();
+
+    private static HttpRequestDef<DeleteCertificateV2Request, DeleteCertificateV2Response> genFordeleteCertificateV2() {
+        // basic
+        HttpRequestDef.Builder<DeleteCertificateV2Request, DeleteCertificateV2Response> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteCertificateV2Request.class, DeleteCertificateV2Response.class)
+            .withName("DeleteCertificateV2")
+            .withUri("/v2/{project_id}/apigw/certificates/{certificate_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("certificate_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteCertificateV2Request::getCertificateId, (req, v) -> {
+                req.setCertificateId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAttachedDomainsV2Request, ListAttachedDomainsV2Response> listAttachedDomainsV2 =
+        genForlistAttachedDomainsV2();
+
+    private static HttpRequestDef<ListAttachedDomainsV2Request, ListAttachedDomainsV2Response> genForlistAttachedDomainsV2() {
+        // basic
+        HttpRequestDef.Builder<ListAttachedDomainsV2Request, ListAttachedDomainsV2Response> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListAttachedDomainsV2Request.class, ListAttachedDomainsV2Response.class)
+            .withName("ListAttachedDomainsV2")
+            .withUri("/v2/{project_id}/apigw/certificates/{certificate_id}/attached-domains")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("certificate_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAttachedDomainsV2Request::getCertificateId, (req, v) -> {
+                req.setCertificateId(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListAttachedDomainsV2Request::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAttachedDomainsV2Request::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("url_domain",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAttachedDomainsV2Request::getUrlDomain, (req, v) -> {
+                req.setUrlDomain(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListCertificatesV2Request, ListCertificatesV2Response> listCertificatesV2 =
+        genForlistCertificatesV2();
+
+    private static HttpRequestDef<ListCertificatesV2Request, ListCertificatesV2Response> genForlistCertificatesV2() {
+        // basic
+        HttpRequestDef.Builder<ListCertificatesV2Request, ListCertificatesV2Response> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListCertificatesV2Request.class, ListCertificatesV2Response.class)
+                .withName("ListCertificatesV2")
+                .withUri("/v2/{project_id}/apigw/certificates")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListCertificatesV2Request::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCertificatesV2Request::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCertificatesV2Request::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<String>withRequestField("common_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCertificatesV2Request::getCommonName, (req, v) -> {
+                req.setCommonName(v);
+            }));
+        builder.<String>withRequestField("signature_algorithm",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCertificatesV2Request::getSignatureAlgorithm, (req, v) -> {
+                req.setSignatureAlgorithm(v);
+            }));
+        builder.<ListCertificatesV2Request.TypeEnum>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListCertificatesV2Request.TypeEnum.class),
+            f -> f.withMarshaller(ListCertificatesV2Request::getType, (req, v) -> {
+                req.setType(v);
+            }));
+        builder.<String>withRequestField("instance_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCertificatesV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDetailsOfCertificateV2Request, ShowDetailsOfCertificateV2Response> showDetailsOfCertificateV2 =
+        genForshowDetailsOfCertificateV2();
+
+    private static HttpRequestDef<ShowDetailsOfCertificateV2Request, ShowDetailsOfCertificateV2Response> genForshowDetailsOfCertificateV2() {
+        // basic
+        HttpRequestDef.Builder<ShowDetailsOfCertificateV2Request, ShowDetailsOfCertificateV2Response> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowDetailsOfCertificateV2Request.class,
+                    ShowDetailsOfCertificateV2Response.class)
+                .withName("ShowDetailsOfCertificateV2")
+                .withUri("/v2/{project_id}/apigw/certificates/{certificate_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("certificate_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDetailsOfCertificateV2Request::getCertificateId, (req, v) -> {
+                req.setCertificateId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateCertificateV2Request, UpdateCertificateV2Response> updateCertificateV2 =
+        genForupdateCertificateV2();
+
+    private static HttpRequestDef<UpdateCertificateV2Request, UpdateCertificateV2Response> genForupdateCertificateV2() {
+        // basic
+        HttpRequestDef.Builder<UpdateCertificateV2Request, UpdateCertificateV2Response> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateCertificateV2Request.class, UpdateCertificateV2Response.class)
+                .withName("UpdateCertificateV2")
+                .withUri("/v2/{project_id}/apigw/certificates/{certificate_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("certificate_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateCertificateV2Request::getCertificateId, (req, v) -> {
+                req.setCertificateId(v);
+            }));
+        builder.<CertificateForm>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CertificateForm.class),
+            f -> f.withMarshaller(UpdateCertificateV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<AddingBackendInstancesV2Request, AddingBackendInstancesV2Response> addingBackendInstancesV2 =
         genForaddingBackendInstancesV2();
 
@@ -5289,6 +5773,125 @@ public class ApigMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(VpcMemberCreate.class),
             f -> f.withMarshaller(AddingBackendInstancesV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDisableMembersRequest, BatchDisableMembersResponse> batchDisableMembers =
+        genForbatchDisableMembers();
+
+    private static HttpRequestDef<BatchDisableMembersRequest, BatchDisableMembersResponse> genForbatchDisableMembers() {
+        // basic
+        HttpRequestDef.Builder<BatchDisableMembersRequest, BatchDisableMembersResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchDisableMembersRequest.class, BatchDisableMembersResponse.class)
+            .withName("BatchDisableMembers")
+            .withUri(
+                "/v2/{project_id}/apigw/instances/{instance_id}/vpc-channels/{vpc_channel_id}/members/batch-disable")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDisableMembersRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("vpc_channel_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDisableMembersRequest::getVpcChannelId, (req, v) -> {
+                req.setVpcChannelId(v);
+            }));
+        builder.<MembersBatchEnableOrDisable>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(MembersBatchEnableOrDisable.class),
+            f -> f.withMarshaller(BatchDisableMembersRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchEnableMembersRequest, BatchEnableMembersResponse> batchEnableMembers =
+        genForbatchEnableMembers();
+
+    private static HttpRequestDef<BatchEnableMembersRequest, BatchEnableMembersResponse> genForbatchEnableMembers() {
+        // basic
+        HttpRequestDef.Builder<BatchEnableMembersRequest, BatchEnableMembersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchEnableMembersRequest.class, BatchEnableMembersResponse.class)
+                .withName("BatchEnableMembers")
+                .withUri(
+                    "/v2/{project_id}/apigw/instances/{instance_id}/vpc-channels/{vpc_channel_id}/members/batch-enable")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchEnableMembersRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("vpc_channel_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchEnableMembersRequest::getVpcChannelId, (req, v) -> {
+                req.setVpcChannelId(v);
+            }));
+        builder.<MembersBatchEnableOrDisable>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(MembersBatchEnableOrDisable.class),
+            f -> f.withMarshaller(BatchEnableMembersRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateMemberGroupRequest, CreateMemberGroupResponse> createMemberGroup =
+        genForcreateMemberGroup();
+
+    private static HttpRequestDef<CreateMemberGroupRequest, CreateMemberGroupResponse> genForcreateMemberGroup() {
+        // basic
+        HttpRequestDef.Builder<CreateMemberGroupRequest, CreateMemberGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateMemberGroupRequest.class, CreateMemberGroupResponse.class)
+                .withName("CreateMemberGroup")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/vpc-channels/{vpc_channel_id}/member-groups")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateMemberGroupRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("vpc_channel_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateMemberGroupRequest::getVpcChannelId, (req, v) -> {
+                req.setVpcChannelId(v);
+            }));
+        builder.<MemberGroupCreateBatch>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(MemberGroupCreateBatch.class),
+            f -> f.withMarshaller(CreateMemberGroupRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -5361,6 +5964,46 @@ public class ApigMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteBackendInstanceV2Request::getMemberId, (req, v) -> {
                 req.setMemberId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteMemberGroupRequest, DeleteMemberGroupResponse> deleteMemberGroup =
+        genFordeleteMemberGroup();
+
+    private static HttpRequestDef<DeleteMemberGroupRequest, DeleteMemberGroupResponse> genFordeleteMemberGroup() {
+        // basic
+        HttpRequestDef.Builder<DeleteMemberGroupRequest, DeleteMemberGroupResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteMemberGroupRequest.class, DeleteMemberGroupResponse.class)
+            .withName("DeleteMemberGroup")
+            .withUri(
+                "/v2/{project_id}/apigw/instances/{instance_id}/vpc-channels/{vpc_channel_id}/member-groups/{member_group_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteMemberGroupRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("vpc_channel_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteMemberGroupRequest::getVpcChannelId, (req, v) -> {
+                req.setVpcChannelId(v);
+            }));
+        builder.<String>withRequestField("member_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteMemberGroupRequest::getMemberGroupId, (req, v) -> {
+                req.setMemberGroupId(v);
             }));
 
         // response
@@ -5447,6 +6090,94 @@ public class ApigMeta {
             f -> f.withMarshaller(ListBackendInstancesV2Request::getName, (req, v) -> {
                 req.setName(v);
             }));
+        builder.<String>withRequestField("member_group_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBackendInstancesV2Request::getMemberGroupName, (req, v) -> {
+                req.setMemberGroupName(v);
+            }));
+        builder.<String>withRequestField("member_group_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBackendInstancesV2Request::getMemberGroupId, (req, v) -> {
+                req.setMemberGroupId(v);
+            }));
+        builder.<String>withRequestField("precise_search",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBackendInstancesV2Request::getPreciseSearch, (req, v) -> {
+                req.setPreciseSearch(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListMemberGroupsRequest, ListMemberGroupsResponse> listMemberGroups =
+        genForlistMemberGroups();
+
+    private static HttpRequestDef<ListMemberGroupsRequest, ListMemberGroupsResponse> genForlistMemberGroups() {
+        // basic
+        HttpRequestDef.Builder<ListMemberGroupsRequest, ListMemberGroupsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListMemberGroupsRequest.class, ListMemberGroupsResponse.class)
+                .withName("ListMemberGroups")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/vpc-channels/{vpc_channel_id}/member-groups")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMemberGroupsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("vpc_channel_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMemberGroupsRequest::getVpcChannelId, (req, v) -> {
+                req.setVpcChannelId(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListMemberGroupsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListMemberGroupsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("dict_code",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMemberGroupsRequest::getDictCode, (req, v) -> {
+                req.setDictCode(v);
+            }));
+        builder.<String>withRequestField("member_group_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMemberGroupsRequest::getMemberGroupName, (req, v) -> {
+                req.setMemberGroupName(v);
+            }));
+        builder.<String>withRequestField("precise_search",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMemberGroupsRequest::getPreciseSearch, (req, v) -> {
+                req.setPreciseSearch(v);
+            }));
 
         // response
 
@@ -5500,12 +6231,88 @@ public class ApigMeta {
             f -> f.withMarshaller(ListVpcChannelsV2Request::getName, (req, v) -> {
                 req.setName(v);
             }));
+        builder.<String>withRequestField("dict_code",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVpcChannelsV2Request::getDictCode, (req, v) -> {
+                req.setDictCode(v);
+            }));
         builder.<String>withRequestField("precise_search",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListVpcChannelsV2Request::getPreciseSearch, (req, v) -> {
                 req.setPreciseSearch(v);
+            }));
+        builder.<String>withRequestField("member_host",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVpcChannelsV2Request::getMemberHost, (req, v) -> {
+                req.setMemberHost(v);
+            }));
+        builder.<Integer>withRequestField("member_port",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListVpcChannelsV2Request::getMemberPort, (req, v) -> {
+                req.setMemberPort(v);
+            }));
+        builder.<String>withRequestField("member_group_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVpcChannelsV2Request::getMemberGroupName, (req, v) -> {
+                req.setMemberGroupName(v);
+            }));
+        builder.<String>withRequestField("member_group_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVpcChannelsV2Request::getMemberGroupId, (req, v) -> {
+                req.setMemberGroupId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDetailsOfMemberGroupRequest, ShowDetailsOfMemberGroupResponse> showDetailsOfMemberGroup =
+        genForshowDetailsOfMemberGroup();
+
+    private static HttpRequestDef<ShowDetailsOfMemberGroupRequest, ShowDetailsOfMemberGroupResponse> genForshowDetailsOfMemberGroup() {
+        // basic
+        HttpRequestDef.Builder<ShowDetailsOfMemberGroupRequest, ShowDetailsOfMemberGroupResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ShowDetailsOfMemberGroupRequest.class, ShowDetailsOfMemberGroupResponse.class)
+                .withName("ShowDetailsOfMemberGroup")
+                .withUri(
+                    "/v2/{project_id}/apigw/instances/{instance_id}/vpc-channels/{vpc_channel_id}/member-groups/{member_group_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDetailsOfMemberGroupRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("vpc_channel_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDetailsOfMemberGroupRequest::getVpcChannelId, (req, v) -> {
+                req.setVpcChannelId(v);
+            }));
+        builder.<String>withRequestField("member_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDetailsOfMemberGroupRequest::getMemberGroupId, (req, v) -> {
+                req.setMemberGroupId(v);
             }));
 
         // response
@@ -5541,6 +6348,132 @@ public class ApigMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowDetailsOfVpcChannelV2Request::getVpcChannelId, (req, v) -> {
                 req.setVpcChannelId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateBackendInstancesV2Request, UpdateBackendInstancesV2Response> updateBackendInstancesV2 =
+        genForupdateBackendInstancesV2();
+
+    private static HttpRequestDef<UpdateBackendInstancesV2Request, UpdateBackendInstancesV2Response> genForupdateBackendInstancesV2() {
+        // basic
+        HttpRequestDef.Builder<UpdateBackendInstancesV2Request, UpdateBackendInstancesV2Response> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT, UpdateBackendInstancesV2Request.class, UpdateBackendInstancesV2Response.class)
+                .withName("UpdateBackendInstancesV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/vpc-channels/{vpc_channel_id}/members")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateBackendInstancesV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("vpc_channel_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateBackendInstancesV2Request::getVpcChannelId, (req, v) -> {
+                req.setVpcChannelId(v);
+            }));
+        builder.<VpcMemberModify>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(VpcMemberModify.class),
+            f -> f.withMarshaller(UpdateBackendInstancesV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateHealthCheckRequest, UpdateHealthCheckResponse> updateHealthCheck =
+        genForupdateHealthCheck();
+
+    private static HttpRequestDef<UpdateHealthCheckRequest, UpdateHealthCheckResponse> genForupdateHealthCheck() {
+        // basic
+        HttpRequestDef.Builder<UpdateHealthCheckRequest, UpdateHealthCheckResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateHealthCheckRequest.class, UpdateHealthCheckResponse.class)
+                .withName("UpdateHealthCheck")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/vpc-channels/{vpc_channel_id}/health-config")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateHealthCheckRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("vpc_channel_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateHealthCheckRequest::getVpcChannelId, (req, v) -> {
+                req.setVpcChannelId(v);
+            }));
+        builder.<VpcHealthConfig>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(VpcHealthConfig.class),
+            f -> f.withMarshaller(UpdateHealthCheckRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateMemberGroupRequest, UpdateMemberGroupResponse> updateMemberGroup =
+        genForupdateMemberGroup();
+
+    private static HttpRequestDef<UpdateMemberGroupRequest, UpdateMemberGroupResponse> genForupdateMemberGroup() {
+        // basic
+        HttpRequestDef.Builder<UpdateMemberGroupRequest, UpdateMemberGroupResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateMemberGroupRequest.class, UpdateMemberGroupResponse.class)
+            .withName("UpdateMemberGroup")
+            .withUri(
+                "/v2/{project_id}/apigw/instances/{instance_id}/vpc-channels/{vpc_channel_id}/member-groups/{member_group_id}")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateMemberGroupRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("vpc_channel_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateMemberGroupRequest::getVpcChannelId, (req, v) -> {
+                req.setVpcChannelId(v);
+            }));
+        builder.<String>withRequestField("member_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateMemberGroupRequest::getMemberGroupId, (req, v) -> {
+                req.setMemberGroupId(v);
+            }));
+        builder.<MemberGroupCreate>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(MemberGroupCreate.class),
+            f -> f.withMarshaller(UpdateMemberGroupRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response

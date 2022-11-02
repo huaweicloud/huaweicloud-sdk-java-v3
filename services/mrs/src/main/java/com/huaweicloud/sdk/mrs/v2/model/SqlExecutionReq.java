@@ -54,7 +54,7 @@ public class SqlExecutionReq  {
 
 
     /**
-     * SQL类型。目前仅支持“presto”类型的SQL。  说明： 只有包含Presto组件的集群才能提交执行presto类型的SQL。
+     * SQL类型。目前仅支持“presto”类型的SQL。 说明： 只有包含Presto组件的集群才能提交执行presto类型的SQL。
      * @return sqlType
      */
     public String getSqlType() {
@@ -76,7 +76,7 @@ public class SqlExecutionReq  {
 
 
     /**
-     * 待执行的SQL语句。  说明： 目前仅支持执行单条语句，语句中不包含“;”。
+     * 待执行的SQL语句。 说明： 目前仅支持执行单条语句，语句中不包含“;”。
      * @return sqlContent
      */
     public String getSqlContent() {
@@ -120,7 +120,7 @@ public class SqlExecutionReq  {
 
 
     /**
-     * SQL执行结果的转储文件夹。  说明： 只有select语句才会转储查询的结果。当前仅支持转储到OBS中。
+     * SQL执行结果的转储文件夹。 说明： 只有select语句才会转储查询的结果。当前仅支持转储到OBS中。
      * @return archivePath
      */
     public String getArchivePath() {

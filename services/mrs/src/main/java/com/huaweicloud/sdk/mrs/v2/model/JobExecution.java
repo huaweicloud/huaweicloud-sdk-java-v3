@@ -58,7 +58,7 @@ public class JobExecution  {
 
 
     /**
-     * 作业类型:  - MapReduce - SparkSubmit - SparkPython：该类型作业将转换为SparkSubmit类型提交，MRS控制台界面的作业类型展示为SparkSubmit，通过接口查询作业列表信息时作业类型请选择SparkSubmit。 - HiveScript - HiveSql - DistCp，导入、导出数据。 - SparkScript - SparkSql - Flink
+     * 作业类型: - MapReduce - SparkSubmit - SparkPython：该类型作业将转换为SparkSubmit类型提交，MRS控制台界面的作业类型展示为SparkSubmit，通过接口查询作业列表信息时作业类型请选择SparkSubmit。 - HiveScript - HiveSql - DistCp，导入、导出数据。 - SparkScript - SparkSql - Flink
      * @return jobType
      */
     public String getJobType() {
@@ -80,7 +80,7 @@ public class JobExecution  {
 
 
     /**
-     * 作业名称，只能由字母、数字、中划线和下划线组成，并且长度为1～64个字符。  说明： 不同作业的名称允许相同，但不建议设置相同。
+     * 作业名称，只能由字母、数字、中划线和下划线组成，并且长度为1～64个字符。 说明： 不同作业的名称允许相同，但不建议设置相同。
      * @return jobName
      */
     public String getJobName() {

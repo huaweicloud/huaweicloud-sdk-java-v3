@@ -181,7 +181,7 @@ public class MemberBase {
     }
 
     /**
-     * 后端服务器组名称。为后端服务地址选择服务器组，便于统一修改对应服务器组的后端地址。  暂不支持
+     * 后端服务器组名称。为后端服务地址选择服务器组，便于统一修改对应服务器组的后端地址。
      * @return memberGroupName
      */
     public String getMemberGroupName() {

@@ -7,6 +7,8 @@ import java.util.Collections;
 
 import java.util.Collections;
 
+import java.util.Collections;
+
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -60,7 +62,7 @@ public class BootstrapScript  {
     
     private Boolean activeMaster;
     /**
-     * 引导操作脚本执行失败后，是否继续执行后续脚本和创建集群。  缺省值为errorout,表示终止操作。   说明： 建议您在调试阶段设置为“继续”，无论此引导操作是否执行成功，则集群都能继续安装和启动。  枚举值： - continue：继续执行后续脚本。 - errorout：终止操作。
+     * 引导操作脚本执行失败后，是否继续执行后续脚本和创建集群。 缺省值为errorout,表示终止操作。 说明： 建议您在调试阶段设置为“继续”，无论此引导操作是否执行成功，则集群都能继续安装和启动。 枚举值： - continue：继续执行后续脚本。 - errorout：终止操作。
      */
     public static final class FailActionEnum {
 
@@ -151,6 +153,110 @@ public class BootstrapScript  {
     
     
     private Boolean beforeComponentStart;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="start_time")
+    
+    
+    private Long startTime;
+    /**
+     * 单个引导操作脚本的运行状态。  - PENDING - IN_PROGRESS - SUCCESS - FAILURE
+     */
+    public static final class StateEnum {
+
+        
+        /**
+         * Enum PENDING for value: "PENDING"
+         */
+        public static final StateEnum PENDING = new StateEnum("PENDING");
+        
+        /**
+         * Enum IN_PROGRESS for value: "IN_PROGRESS"
+         */
+        public static final StateEnum IN_PROGRESS = new StateEnum("IN_PROGRESS");
+        
+        /**
+         * Enum SUCCESS for value: "SUCCESS"
+         */
+        public static final StateEnum SUCCESS = new StateEnum("SUCCESS");
+        
+        /**
+         * Enum FAILURE for value: "FAILURE"
+         */
+        public static final StateEnum FAILURE = new StateEnum("FAILURE");
+        
+
+        private static final Map<String, StateEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StateEnum> createStaticFields() {
+            Map<String, StateEnum> map = new HashMap<>();
+            map.put("PENDING", PENDING);
+            map.put("IN_PROGRESS", IN_PROGRESS);
+            map.put("SUCCESS", SUCCESS);
+            map.put("FAILURE", FAILURE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        StateEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static StateEnum fromValue(String value) {
+            if( value == null ){
+                return null;
+            }
+            StateEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new StateEnum(value);
+            }
+            return result;
+        }
+
+        public static StateEnum valueOf(String value) {
+            if( value == null ){
+                return null;
+            }
+            StateEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof StateEnum) {
+                return this.value.equals(((StateEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="state")
+    
+    
+    private StateEnum state;
     /**
      * 枚举值： - BEFORE_COMPONENT_FIRST_START: 组件首次启动后 - AFTER_COMPONENT_FIRST_START: 组件首次启动前 - BEFORE_SCALE_IN: 缩容前 - AFTER_SCALE_IN: 缩容后 - BEFORE_SCALE_OUT: 扩容前 - AFTER_SCALE_OUT: 扩容后
      */
@@ -270,7 +376,7 @@ public class BootstrapScript  {
 
 
     /**
-     * 引导操作脚本的名称，同一个集群的引导操作脚本名称不允许相同。  只能由数字、英文字符、空格、中划线和下划线组成，且不能以空格开头。  可输入的字符串长度为1～64个字符。
+     * 引导操作脚本的名称，同一个集群的引导操作脚本名称不允许相同。 只能由数字、英文字符、空格、中划线和下划线组成，且不能以空格开头。 可输入的字符串长度为1～64个字符。
      * @return name
      */
     public String getName() {
@@ -394,7 +500,7 @@ public class BootstrapScript  {
 
 
     /**
-     * 引导操作脚本执行失败后，是否继续执行后续脚本和创建集群。  缺省值为errorout,表示终止操作。   说明： 建议您在调试阶段设置为“继续”，无论此引导操作是否执行成功，则集群都能继续安装和启动。  枚举值： - continue：继续执行后续脚本。 - errorout：终止操作。
+     * 引导操作脚本执行失败后，是否继续执行后续脚本和创建集群。 缺省值为errorout,表示终止操作。 说明： 建议您在调试阶段设置为“继续”，无论此引导操作是否执行成功，则集群都能继续安装和启动。 枚举值： - continue：继续执行后续脚本。 - errorout：终止操作。
      * @return failAction
      */
     public FailActionEnum getFailAction() {
@@ -425,6 +531,50 @@ public class BootstrapScript  {
 
     public void setBeforeComponentStart(Boolean beforeComponentStart) {
         this.beforeComponentStart = beforeComponentStart;
+    }
+
+    
+
+    public BootstrapScript withStartTime(Long startTime) {
+        this.startTime = startTime;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 单个引导操作脚本的执行时间。
+     * @return startTime
+     */
+    public Long getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(Long startTime) {
+        this.startTime = startTime;
+    }
+
+    
+
+    public BootstrapScript withState(StateEnum state) {
+        this.state = state;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 单个引导操作脚本的运行状态。  - PENDING - IN_PROGRESS - SUCCESS - FAILURE
+     * @return state
+     */
+    public StateEnum getState() {
+        return state;
+    }
+
+    public void setState(StateEnum state) {
+        this.state = state;
     }
 
     
@@ -481,11 +631,13 @@ public class BootstrapScript  {
             Objects.equals(this.activeMaster, bootstrapScript.activeMaster) &&
             Objects.equals(this.failAction, bootstrapScript.failAction) &&
             Objects.equals(this.beforeComponentStart, bootstrapScript.beforeComponentStart) &&
+            Objects.equals(this.startTime, bootstrapScript.startTime) &&
+            Objects.equals(this.state, bootstrapScript.state) &&
             Objects.equals(this.actionStages, bootstrapScript.actionStages);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(name, uri, parameters, nodes, activeMaster, failAction, beforeComponentStart, actionStages);
+        return Objects.hash(name, uri, parameters, nodes, activeMaster, failAction, beforeComponentStart, startTime, state, actionStages);
     }
     @Override
     public String toString() {
@@ -498,6 +650,8 @@ public class BootstrapScript  {
         sb.append("    activeMaster: ").append(toIndentedString(activeMaster)).append("\n");
         sb.append("    failAction: ").append(toIndentedString(failAction)).append("\n");
         sb.append("    beforeComponentStart: ").append(toIndentedString(beforeComponentStart)).append("\n");
+        sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
+        sb.append("    state: ").append(toIndentedString(state)).append("\n");
         sb.append("    actionStages: ").append(toIndentedString(actionStages)).append("\n");
         sb.append("}");
         return sb.toString();

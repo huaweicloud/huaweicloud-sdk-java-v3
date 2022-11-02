@@ -417,6 +417,55 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreatePostgresqlExtensionRequest, CreatePostgresqlExtensionResponse> createPostgresqlExtension =
+        genForcreatePostgresqlExtension();
+
+    private static HttpRequestDef<CreatePostgresqlExtensionRequest, CreatePostgresqlExtensionResponse> genForcreatePostgresqlExtension() {
+        // basic
+        HttpRequestDef.Builder<CreatePostgresqlExtensionRequest, CreatePostgresqlExtensionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreatePostgresqlExtensionRequest.class,
+                    CreatePostgresqlExtensionResponse.class)
+                .withName("CreatePostgresqlExtension")
+                .withUri("/v3/{project_id}/instances/{instance_id}/extensions")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreatePostgresqlExtensionRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreatePostgresqlExtensionRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<ExtensionRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ExtensionRequest.class),
+            f -> f.withMarshaller(CreatePostgresqlExtensionRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreatePostgresqlExtensionResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateRestoreInstanceRequest, CreateRestoreInstanceResponse> createRestoreInstance =
         genForcreateRestoreInstance();
 
@@ -541,6 +590,55 @@ public class RdsMeta {
             }));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeletePostgresqlExtensionRequest, DeletePostgresqlExtensionResponse> deletePostgresqlExtension =
+        genFordeletePostgresqlExtension();
+
+    private static HttpRequestDef<DeletePostgresqlExtensionRequest, DeletePostgresqlExtensionResponse> genFordeletePostgresqlExtension() {
+        // basic
+        HttpRequestDef.Builder<DeletePostgresqlExtensionRequest, DeletePostgresqlExtensionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeletePostgresqlExtensionRequest.class,
+                    DeletePostgresqlExtensionResponse.class)
+                .withName("DeletePostgresqlExtension")
+                .withUri("/v3/{project_id}/instances/{instance_id}/extensions")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePostgresqlExtensionRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePostgresqlExtensionRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<ExtensionRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ExtensionRequest.class),
+            f -> f.withMarshaller(DeletePostgresqlExtensionRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeletePostgresqlExtensionResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
 
         return builder.build();
     }
@@ -1326,6 +1424,59 @@ public class RdsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListOffSiteRestoreTimesRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPostgresqlExtensionRequest, ListPostgresqlExtensionResponse> listPostgresqlExtension =
+        genForlistPostgresqlExtension();
+
+    private static HttpRequestDef<ListPostgresqlExtensionRequest, ListPostgresqlExtensionResponse> genForlistPostgresqlExtension() {
+        // basic
+        HttpRequestDef.Builder<ListPostgresqlExtensionRequest, ListPostgresqlExtensionResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListPostgresqlExtensionRequest.class, ListPostgresqlExtensionResponse.class)
+            .withName("ListPostgresqlExtension")
+            .withUri("/v3/{project_id}/instances/{instance_id}/extensions")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPostgresqlExtensionRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("database_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPostgresqlExtensionRequest::getDatabaseName, (req, v) -> {
+                req.setDatabaseName(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPostgresqlExtensionRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPostgresqlExtensionRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPostgresqlExtensionRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             }));
 

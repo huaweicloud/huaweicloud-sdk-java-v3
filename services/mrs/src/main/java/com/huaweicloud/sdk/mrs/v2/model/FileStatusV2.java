@@ -257,7 +257,7 @@ public class FileStatusV2  {
 
 
     /**
-     * 文件类型：  - FILE：文件  - DIRECTORY：目录
+     * 文件类型： - FILE：文件 - DIRECTORY：目录
      * @return type
      */
     public String getType() {

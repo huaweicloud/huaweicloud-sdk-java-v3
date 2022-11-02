@@ -125,6 +125,13 @@ public class MysqlProxyV3  {
     
     private String name;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="transaction_split")
+    
+    
+    private String transactionSplit;
+
     public MysqlProxyV3 withPoolId(String poolId) {
         this.poolId = poolId;
         return this;
@@ -469,6 +476,28 @@ public class MysqlProxyV3  {
 
     
 
+    public MysqlProxyV3 withTransactionSplit(String transactionSplit) {
+        this.transactionSplit = transactionSplit;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Proxy事务拆分开关状态【ON/OFF】。
+     * @return transactionSplit
+     */
+    public String getTransactionSplit() {
+        return transactionSplit;
+    }
+
+    public void setTransactionSplit(String transactionSplit) {
+        this.transactionSplit = transactionSplit;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -492,11 +521,12 @@ public class MysqlProxyV3  {
             Objects.equals(this.mode, mysqlProxyV3.mode) &&
             Objects.equals(this.nodes, mysqlProxyV3.nodes) &&
             Objects.equals(this.flavorRef, mysqlProxyV3.flavorRef) &&
-            Objects.equals(this.name, mysqlProxyV3.name);
+            Objects.equals(this.name, mysqlProxyV3.name) &&
+            Objects.equals(this.transactionSplit, mysqlProxyV3.transactionSplit);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(poolId, status, address, port, poolStatus, delayThresholdInSeconds, elbVip, eip, vcpus, ram, nodeNum, mode, nodes, flavorRef, name);
+        return Objects.hash(poolId, status, address, port, poolStatus, delayThresholdInSeconds, elbVip, eip, vcpus, ram, nodeNum, mode, nodes, flavorRef, name, transactionSplit);
     }
     @Override
     public String toString() {
@@ -517,6 +547,7 @@ public class MysqlProxyV3  {
         sb.append("    nodes: ").append(toIndentedString(nodes)).append("\n");
         sb.append("    flavorRef: ").append(toIndentedString(flavorRef)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    transactionSplit: ").append(toIndentedString(transactionSplit)).append("\n");
         sb.append("}");
         return sb.toString();
     }

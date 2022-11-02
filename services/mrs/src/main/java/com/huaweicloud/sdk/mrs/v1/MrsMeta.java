@@ -119,10 +119,10 @@ public class MrsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<CreateClusterReq>withRequestField("body",
+        builder.<CreateClusterReqV11>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreateClusterReq.class),
+            TypeCasts.uncheckedConversion(CreateClusterReqV11.class),
             f -> f.withMarshaller(CreateClusterRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })

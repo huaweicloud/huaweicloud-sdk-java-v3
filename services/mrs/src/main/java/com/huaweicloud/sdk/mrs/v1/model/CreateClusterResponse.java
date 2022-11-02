@@ -49,7 +49,7 @@ public class CreateClusterResponse extends SdkResponse {
 
 
     /**
-     *   操作结果。  true：操作成功  false：操作失败
+     * 操作结果。 - true：操作成功 - false：操作失败
      * @return result
      */
     public Boolean getResult() {

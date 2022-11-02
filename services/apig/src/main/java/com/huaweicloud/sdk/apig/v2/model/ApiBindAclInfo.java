@@ -41,12 +41,18 @@ public class ApiBindAclInfo {
          */
         public static final EntityTypeEnum DOMAIN = new EntityTypeEnum("DOMAIN");
 
+        /**
+         * Enum DOMAIN_ID for value: "DOMAIN_ID"
+         */
+        public static final EntityTypeEnum DOMAIN_ID = new EntityTypeEnum("DOMAIN_ID");
+
         private static final Map<String, EntityTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, EntityTypeEnum> createStaticFields() {
             Map<String, EntityTypeEnum> map = new HashMap<>();
             map.put("IP", IP);
             map.put("DOMAIN", DOMAIN);
+            map.put("DOMAIN_ID", DOMAIN_ID);
             return Collections.unmodifiableMap(map);
         }
 

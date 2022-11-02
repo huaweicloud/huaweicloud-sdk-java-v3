@@ -1593,6 +1593,38 @@ public class EcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RegisterServerMonitorRequest, RegisterServerMonitorResponse> registerServerMonitor =
+        genForregisterServerMonitor();
+
+    private static HttpRequestDef<RegisterServerMonitorRequest, RegisterServerMonitorResponse> genForregisterServerMonitor() {
+        // basic
+        HttpRequestDef.Builder<RegisterServerMonitorRequest, RegisterServerMonitorResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, RegisterServerMonitorRequest.class, RegisterServerMonitorResponse.class)
+            .withName("RegisterServerMonitor")
+            .withUri("/v1.0/servers/{server_id}/action")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("server_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RegisterServerMonitorRequest::getServerId, (req, v) -> {
+                req.setServerId(v);
+            }));
+        builder.<RegisterServerMonitorRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RegisterServerMonitorRequestBody.class),
+            f -> f.withMarshaller(RegisterServerMonitorRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ReinstallServerWithCloudInitRequest, ReinstallServerWithCloudInitResponse> reinstallServerWithCloudInit =
         genForreinstallServerWithCloudInit();
 
@@ -2047,6 +2079,45 @@ public class EcsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateServerAutoTerminateTimeRequestBody.class),
             f -> f.withMarshaller(UpdateServerAutoTerminateTimeRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateServerBlockDeviceRequest, UpdateServerBlockDeviceResponse> updateServerBlockDevice =
+        genForupdateServerBlockDevice();
+
+    private static HttpRequestDef<UpdateServerBlockDeviceRequest, UpdateServerBlockDeviceResponse> genForupdateServerBlockDevice() {
+        // basic
+        HttpRequestDef.Builder<UpdateServerBlockDeviceRequest, UpdateServerBlockDeviceResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateServerBlockDeviceRequest.class, UpdateServerBlockDeviceResponse.class)
+            .withName("UpdateServerBlockDevice")
+            .withUri("/v1/{project_id}/cloudservers/{server_id}/block_device/{volume_id}")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("server_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateServerBlockDeviceRequest::getServerId, (req, v) -> {
+                req.setServerId(v);
+            }));
+        builder.<String>withRequestField("volume_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateServerBlockDeviceRequest::getVolumeId, (req, v) -> {
+                req.setVolumeId(v);
+            }));
+        builder.<UpdateServerBlockDeviceReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateServerBlockDeviceReq.class),
+            f -> f.withMarshaller(UpdateServerBlockDeviceRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

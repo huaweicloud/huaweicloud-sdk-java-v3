@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.mrs.v1.model.ResourcesPlan;
-import com.huaweicloud.sdk.mrs.v1.model.Rules;
+import com.huaweicloud.sdk.mrs.v1.model.Rule;
 import com.huaweicloud.sdk.mrs.v1.model.ScaleScript;
 import java.util.ArrayList;
 import java.util.List;
@@ -55,7 +55,7 @@ public class AutoScalingPolicy  {
     @JsonProperty(value="rules")
     
     
-    private List<Rules> rules = null;
+    private List<Rule> rules = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -170,13 +170,13 @@ public class AutoScalingPolicy  {
 
     
 
-    public AutoScalingPolicy withRules(List<Rules> rules) {
+    public AutoScalingPolicy withRules(List<Rule> rules) {
         this.rules = rules;
         return this;
     }
 
     
-    public AutoScalingPolicy addRulesItem(Rules rulesItem) {
+    public AutoScalingPolicy addRulesItem(Rule rulesItem) {
         if(this.rules == null) {
             this.rules = new ArrayList<>();
         }
@@ -184,7 +184,7 @@ public class AutoScalingPolicy  {
         return this;
     }
 
-    public AutoScalingPolicy withRules(Consumer<List<Rules>> rulesSetter) {
+    public AutoScalingPolicy withRules(Consumer<List<Rule>> rulesSetter) {
         if(this.rules == null) {
             this.rules = new ArrayList<>();
         }
@@ -196,11 +196,11 @@ public class AutoScalingPolicy  {
      * 自动伸缩的规则列表。  当启用弹性伸缩时，资源计划与自动伸缩规则需至少配置其中一种。
      * @return rules
      */
-    public List<Rules> getRules() {
+    public List<Rule> getRules() {
         return rules;
     }
 
-    public void setRules(List<Rules> rules) {
+    public void setRules(List<Rule> rules) {
         this.rules = rules;
     }
 

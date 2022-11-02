@@ -138,7 +138,7 @@ public class ExecuteSqlResponse extends SdkResponse {
 
 
     /**
-     * SQL的执行状态。  - QUEUED - WAITING_FOR_RESOURCES - PLANNING - STARTING - RUNNING - FINISHING - FINISHED - FAILED
+     * SQL的执行状态。 - QUEUED - WAITING_FOR_RESOURCES - PLANNING - STARTING - RUNNING - FINISHING - FINISHED - FAILED
      * @return status
      */
     public String getStatus() {
@@ -160,7 +160,7 @@ public class ExecuteSqlResponse extends SdkResponse {
 
 
     /**
-     * SQL查询语句的最终结果归档路径。  说明： 只有select的语句才会在将SQL的执行结果转储到result_location中。
+     * SQL查询语句的最终结果归档路径。 说明： 只有select的语句才会在将SQL的执行结果转储到result_location中。
      * @return resultLocation
      */
     public String getResultLocation() {
@@ -196,7 +196,7 @@ public class ExecuteSqlResponse extends SdkResponse {
     }
 
     /**
-     * SQL的执行结果。  说明： 只有非select的语句才会在content中返回结果，如果SQL中没有结果，content为空。
+     * SQL的执行结果。 说明： 只有非select的语句才会在content中返回结果，如果SQL中没有结果，content为空。
      * @return content
      */
     public List<List<String>> getContent() {

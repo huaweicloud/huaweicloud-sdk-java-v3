@@ -52,13 +52,11 @@ public class MrsAsyncClient {
     /**
      * 创建集群
      *
-     * 创建一个MRS集群。
-     * 
-     * 使用接口前，您需要先获取下的资源信息。
+     * 创建一个MRS集群。使用接口前，您需要先获取下的资源信息。
      * - 通过VPC创建或查询VPC、子网
      * - 通过ECS创建或查询密钥对
      * - 通过[终端节点](https://support.huaweicloud.com/api-mrs/mrs_02_0003.html)获取区域信息
-     * - 参考[MRS服务支持的组件](https://support.huaweicloud.com/api-mrs/mrs_02_9001.html)获取MRS版本及对应版本支持的组件信息 
+     * - 参考[MRS服务支持的组件](https://support.huaweicloud.com/api-mrs/mrs_02_9001.html)获取MRS版本及对应版本支持的组件信息
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -73,13 +71,11 @@ public class MrsAsyncClient {
     /**
      * 创建集群
      *
-     * 创建一个MRS集群。
-     * 
-     * 使用接口前，您需要先获取下的资源信息。
+     * 创建一个MRS集群。使用接口前，您需要先获取下的资源信息。
      * - 通过VPC创建或查询VPC、子网
      * - 通过ECS创建或查询密钥对
      * - 通过[终端节点](https://support.huaweicloud.com/api-mrs/mrs_02_0003.html)获取区域信息
-     * - 参考[MRS服务支持的组件](https://support.huaweicloud.com/api-mrs/mrs_02_9001.html)获取MRS版本及对应版本支持的组件信息 
+     * - 参考[MRS服务支持的组件](https://support.huaweicloud.com/api-mrs/mrs_02_9001.html)获取MRS版本及对应版本支持的组件信息
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.

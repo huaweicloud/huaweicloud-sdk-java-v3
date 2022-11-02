@@ -32,6 +32,16 @@ public class MemberGroupInfo {
     private String dictCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "microservice_version")
+
+    private String microserviceVersion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "microservice_port")
+
+    private Integer microservicePort;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "member_group_id")
 
     private String memberGroupId;
@@ -116,6 +126,42 @@ public class MemberGroupInfo {
         this.dictCode = dictCode;
     }
 
+    public MemberGroupInfo withMicroserviceVersion(String microserviceVersion) {
+        this.microserviceVersion = microserviceVersion;
+        return this;
+    }
+
+    /**
+     * VPC通道后端服务器组的版本，仅VPC通道类型为微服务时支持。
+     * @return microserviceVersion
+     */
+    public String getMicroserviceVersion() {
+        return microserviceVersion;
+    }
+
+    public void setMicroserviceVersion(String microserviceVersion) {
+        this.microserviceVersion = microserviceVersion;
+    }
+
+    public MemberGroupInfo withMicroservicePort(Integer microservicePort) {
+        this.microservicePort = microservicePort;
+        return this;
+    }
+
+    /**
+     * VPC通道后端服务器组的端口号，仅VPC通道类型为微服务时支持。端口号为0时后端服务器组下的所有地址沿用原来负载端口继承逻辑。
+     * minimum: 0
+     * maximum: 65535
+     * @return microservicePort
+     */
+    public Integer getMicroservicePort() {
+        return microservicePort;
+    }
+
+    public void setMicroservicePort(Integer microservicePort) {
+        this.microservicePort = microservicePort;
+    }
+
     public MemberGroupInfo withMemberGroupId(String memberGroupId) {
         this.memberGroupId = memberGroupId;
         return this;
@@ -180,6 +226,8 @@ public class MemberGroupInfo {
             && Objects.equals(this.memberGroupRemark, memberGroupInfo.memberGroupRemark)
             && Objects.equals(this.memberGroupWeight, memberGroupInfo.memberGroupWeight)
             && Objects.equals(this.dictCode, memberGroupInfo.dictCode)
+            && Objects.equals(this.microserviceVersion, memberGroupInfo.microserviceVersion)
+            && Objects.equals(this.microservicePort, memberGroupInfo.microservicePort)
             && Objects.equals(this.memberGroupId, memberGroupInfo.memberGroupId)
             && Objects.equals(this.createTime, memberGroupInfo.createTime)
             && Objects.equals(this.updateTime, memberGroupInfo.updateTime);
@@ -191,6 +239,8 @@ public class MemberGroupInfo {
             memberGroupRemark,
             memberGroupWeight,
             dictCode,
+            microserviceVersion,
+            microservicePort,
             memberGroupId,
             createTime,
             updateTime);
@@ -204,6 +254,8 @@ public class MemberGroupInfo {
         sb.append("    memberGroupRemark: ").append(toIndentedString(memberGroupRemark)).append("\n");
         sb.append("    memberGroupWeight: ").append(toIndentedString(memberGroupWeight)).append("\n");
         sb.append("    dictCode: ").append(toIndentedString(dictCode)).append("\n");
+        sb.append("    microserviceVersion: ").append(toIndentedString(microserviceVersion)).append("\n");
+        sb.append("    microservicePort: ").append(toIndentedString(microservicePort)).append("\n");
         sb.append("    memberGroupId: ").append(toIndentedString(memberGroupId)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");

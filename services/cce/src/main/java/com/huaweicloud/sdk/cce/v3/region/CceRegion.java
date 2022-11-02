@@ -52,6 +52,9 @@ public class CceRegion {
 
     public static final Region NA_MEXICO_1 = new Region("na-mexico-1", "https://cce.na-mexico-1.myhuaweicloud.com");
 
+    public static final Region RU_NORTHWEST_2 =
+        new Region("ru-northwest-2", "https://cce.ru-northwest-2.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("CCE");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -76,6 +79,7 @@ public class CceRegion {
         map.put("la-south-2", LA_SOUTH_2);
         map.put("la-north-2", LA_NORTH_2);
         map.put("na-mexico-1", NA_MEXICO_1);
+        map.put("ru-northwest-2", RU_NORTHWEST_2);
         return Collections.unmodifiableMap(map);
     }
 

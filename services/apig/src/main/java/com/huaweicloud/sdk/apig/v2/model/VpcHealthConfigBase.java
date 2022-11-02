@@ -11,12 +11,12 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * 健康检查详情，VPC通道类型为2时必选。
+ * 健康检查详情。
  */
 public class VpcHealthConfigBase {
 
     /**
-     * 使用以下协议，对VPC中主机执行健康检查。
+     * 使用以下协议，对VPC中主机执行健康检查： - TCP - HTTP - HTTPS
      */
     public static final class ProtocolEnum {
 
@@ -308,7 +308,7 @@ public class VpcHealthConfigBase {
     }
 
     /**
-     * 使用以下协议，对VPC中主机执行健康检查。
+     * 使用以下协议，对VPC中主机执行健康检查： - TCP - HTTP - HTTPS
      * @return protocol
      */
     public ProtocolEnum getProtocol() {
@@ -325,7 +325,7 @@ public class VpcHealthConfigBase {
     }
 
     /**
-     * 健康检查时的目标路径。protocol = http时必选
+     * 健康检查时的目标路径。protocol = http或https时必选
      * @return path
      */
     public String getPath() {
@@ -359,8 +359,8 @@ public class VpcHealthConfigBase {
     }
 
     /**
-     * 健康检查的目标端口，缺省时为VPC中主机的端口号。
-     * minimum: 1
+     * 健康检查的目标端口，缺少或port = 0时为VPC中主机的端口号。  若此端口存在非0值，则使用此端口进行健康检查。
+     * minimum: 0
      * maximum: 65535
      * @return port
      */

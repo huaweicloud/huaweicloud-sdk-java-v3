@@ -30,6 +30,16 @@ public class MemberGroupCreate {
 
     private String dictCode;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "microservice_version")
+
+    private String microserviceVersion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "microservice_port")
+
+    private Integer microservicePort;
+
     public MemberGroupCreate withMemberGroupName(String memberGroupName) {
         this.memberGroupName = memberGroupName;
         return this;
@@ -100,6 +110,42 @@ public class MemberGroupCreate {
         this.dictCode = dictCode;
     }
 
+    public MemberGroupCreate withMicroserviceVersion(String microserviceVersion) {
+        this.microserviceVersion = microserviceVersion;
+        return this;
+    }
+
+    /**
+     * VPC通道后端服务器组的版本，仅VPC通道类型为微服务时支持。
+     * @return microserviceVersion
+     */
+    public String getMicroserviceVersion() {
+        return microserviceVersion;
+    }
+
+    public void setMicroserviceVersion(String microserviceVersion) {
+        this.microserviceVersion = microserviceVersion;
+    }
+
+    public MemberGroupCreate withMicroservicePort(Integer microservicePort) {
+        this.microservicePort = microservicePort;
+        return this;
+    }
+
+    /**
+     * VPC通道后端服务器组的端口号，仅VPC通道类型为微服务时支持。端口号为0时后端服务器组下的所有地址沿用原来负载端口继承逻辑。
+     * minimum: 0
+     * maximum: 65535
+     * @return microservicePort
+     */
+    public Integer getMicroservicePort() {
+        return microservicePort;
+    }
+
+    public void setMicroservicePort(Integer microservicePort) {
+        this.microservicePort = microservicePort;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -112,12 +158,19 @@ public class MemberGroupCreate {
         return Objects.equals(this.memberGroupName, memberGroupCreate.memberGroupName)
             && Objects.equals(this.memberGroupRemark, memberGroupCreate.memberGroupRemark)
             && Objects.equals(this.memberGroupWeight, memberGroupCreate.memberGroupWeight)
-            && Objects.equals(this.dictCode, memberGroupCreate.dictCode);
+            && Objects.equals(this.dictCode, memberGroupCreate.dictCode)
+            && Objects.equals(this.microserviceVersion, memberGroupCreate.microserviceVersion)
+            && Objects.equals(this.microservicePort, memberGroupCreate.microservicePort);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(memberGroupName, memberGroupRemark, memberGroupWeight, dictCode);
+        return Objects.hash(memberGroupName,
+            memberGroupRemark,
+            memberGroupWeight,
+            dictCode,
+            microserviceVersion,
+            microservicePort);
     }
 
     @Override
@@ -128,6 +181,8 @@ public class MemberGroupCreate {
         sb.append("    memberGroupRemark: ").append(toIndentedString(memberGroupRemark)).append("\n");
         sb.append("    memberGroupWeight: ").append(toIndentedString(memberGroupWeight)).append("\n");
         sb.append("    dictCode: ").append(toIndentedString(dictCode)).append("\n");
+        sb.append("    microserviceVersion: ").append(toIndentedString(microserviceVersion)).append("\n");
+        sb.append("    microservicePort: ").append(toIndentedString(microservicePort)).append("\n");
         sb.append("}");
         return sb.toString();
     }

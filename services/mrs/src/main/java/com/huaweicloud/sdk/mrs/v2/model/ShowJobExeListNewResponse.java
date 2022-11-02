@@ -24,11 +24,40 @@ public class ShowJobExeListNewResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="total_record")
+    
+    
+    private Integer totalRecord;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_list")
     
     
     private List<JobQueryBean> jobList = null;
     
+    public ShowJobExeListNewResponse withTotalRecord(Integer totalRecord) {
+        this.totalRecord = totalRecord;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 总记录数
+     * @return totalRecord
+     */
+    public Integer getTotalRecord() {
+        return totalRecord;
+    }
+
+    public void setTotalRecord(Integer totalRecord) {
+        this.totalRecord = totalRecord;
+    }
+
+    
+
     public ShowJobExeListNewResponse withJobList(List<JobQueryBean> jobList) {
         this.jobList = jobList;
         return this;
@@ -74,16 +103,18 @@ public class ShowJobExeListNewResponse extends SdkResponse {
             return false;
         }
         ShowJobExeListNewResponse showJobExeListNewResponse = (ShowJobExeListNewResponse) o;
-        return Objects.equals(this.jobList, showJobExeListNewResponse.jobList);
+        return Objects.equals(this.totalRecord, showJobExeListNewResponse.totalRecord) &&
+            Objects.equals(this.jobList, showJobExeListNewResponse.jobList);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(jobList);
+        return Objects.hash(totalRecord, jobList);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowJobExeListNewResponse {\n");
+        sb.append("    totalRecord: ").append(toIndentedString(totalRecord)).append("\n");
         sb.append("    jobList: ").append(toIndentedString(jobList)).append("\n");
         sb.append("}");
         return sb.toString();

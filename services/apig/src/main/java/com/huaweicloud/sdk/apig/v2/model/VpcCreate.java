@@ -29,7 +29,7 @@ public class VpcCreate {
     private Integer port;
 
     /**
-     * 分发算法。 - 1：加权轮询（wrr） - 2：加权最少连接（wleastconn） - 3：源地址哈希（source） - 4：URI哈希（uri）  VPC通道类型为2时必选。
+     * 分发算法。 - 1：加权轮询（wrr） - 2：加权最少连接（wleastconn） - 3：源地址哈希（source） - 4：URI哈希（uri）
      */
     public static final class BalanceStrategyEnum {
 
@@ -123,7 +123,7 @@ public class VpcCreate {
     private BalanceStrategyEnum balanceStrategy;
 
     /**
-     * VPC通道的成员类型。 - ip - ecs  VPC通道类型为2时必选。
+     * VPC通道的成员类型。 - ip - ecs
      */
     public static final class MemberTypeEnum {
 
@@ -205,6 +205,16 @@ public class VpcCreate {
     private MemberTypeEnum memberType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dict_code")
+
+    private String dictCode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "member_groups")
+
+    private List<MemberGroupCreate> memberGroups = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "members")
 
     private List<MemberInfo> members = null;
@@ -213,6 +223,11 @@ public class VpcCreate {
     @JsonProperty(value = "vpc_health_config")
 
     private VpcHealthConfig vpcHealthConfig;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "microservice_info")
+
+    private MicroServiceCreate microserviceInfo;
 
     public VpcCreate withName(String name) {
         this.name = name;
@@ -237,7 +252,7 @@ public class VpcCreate {
     }
 
     /**
-     * VPC通道中主机的端口号。  取值范围1 ~ 65535，仅VPC通道类型为2时有效。  VPC通道类型为2时必选。
+     * VPC通道中主机的端口号。  取值范围1 ~ 65535。
      * @return port
      */
     public Integer getPort() {
@@ -254,7 +269,7 @@ public class VpcCreate {
     }
 
     /**
-     * 分发算法。 - 1：加权轮询（wrr） - 2：加权最少连接（wleastconn） - 3：源地址哈希（source） - 4：URI哈希（uri）  VPC通道类型为2时必选。
+     * 分发算法。 - 1：加权轮询（wrr） - 2：加权最少连接（wleastconn） - 3：源地址哈希（source） - 4：URI哈希（uri）
      * @return balanceStrategy
      */
     public BalanceStrategyEnum getBalanceStrategy() {
@@ -271,7 +286,7 @@ public class VpcCreate {
     }
 
     /**
-     * VPC通道的成员类型。 - ip - ecs  VPC通道类型为2时必选。
+     * VPC通道的成员类型。 - ip - ecs
      * @return memberType
      */
     public MemberTypeEnum getMemberType() {
@@ -280,6 +295,56 @@ public class VpcCreate {
 
     public void setMemberType(MemberTypeEnum memberType) {
         this.memberType = memberType;
+    }
+
+    public VpcCreate withDictCode(String dictCode) {
+        this.dictCode = dictCode;
+        return this;
+    }
+
+    /**
+     * VPC通道的字典编码  支持英文，数字，特殊字符（-_.）  暂不支持
+     * @return dictCode
+     */
+    public String getDictCode() {
+        return dictCode;
+    }
+
+    public void setDictCode(String dictCode) {
+        this.dictCode = dictCode;
+    }
+
+    public VpcCreate withMemberGroups(List<MemberGroupCreate> memberGroups) {
+        this.memberGroups = memberGroups;
+        return this;
+    }
+
+    public VpcCreate addMemberGroupsItem(MemberGroupCreate memberGroupsItem) {
+        if (this.memberGroups == null) {
+            this.memberGroups = new ArrayList<>();
+        }
+        this.memberGroups.add(memberGroupsItem);
+        return this;
+    }
+
+    public VpcCreate withMemberGroups(Consumer<List<MemberGroupCreate>> memberGroupsSetter) {
+        if (this.memberGroups == null) {
+            this.memberGroups = new ArrayList<>();
+        }
+        memberGroupsSetter.accept(this.memberGroups);
+        return this;
+    }
+
+    /**
+     * VPC通道后端服务器组列表
+     * @return memberGroups
+     */
+    public List<MemberGroupCreate> getMemberGroups() {
+        return memberGroups;
+    }
+
+    public void setMemberGroups(List<MemberGroupCreate> memberGroups) {
+        this.memberGroups = memberGroups;
     }
 
     public VpcCreate withMembers(List<MemberInfo> members) {
@@ -304,7 +369,7 @@ public class VpcCreate {
     }
 
     /**
-     * VPC后端实例列表，VPC通道类型为1时，有且仅有1个后端实例。
+     * VPC后端实例列表。
      * @return members
      */
     public List<MemberInfo> getMembers() {
@@ -341,6 +406,32 @@ public class VpcCreate {
         this.vpcHealthConfig = vpcHealthConfig;
     }
 
+    public VpcCreate withMicroserviceInfo(MicroServiceCreate microserviceInfo) {
+        this.microserviceInfo = microserviceInfo;
+        return this;
+    }
+
+    public VpcCreate withMicroserviceInfo(Consumer<MicroServiceCreate> microserviceInfoSetter) {
+        if (this.microserviceInfo == null) {
+            this.microserviceInfo = new MicroServiceCreate();
+            microserviceInfoSetter.accept(this.microserviceInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get microserviceInfo
+     * @return microserviceInfo
+     */
+    public MicroServiceCreate getMicroserviceInfo() {
+        return microserviceInfo;
+    }
+
+    public void setMicroserviceInfo(MicroServiceCreate microserviceInfo) {
+        this.microserviceInfo = microserviceInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -352,13 +443,25 @@ public class VpcCreate {
         VpcCreate vpcCreate = (VpcCreate) o;
         return Objects.equals(this.name, vpcCreate.name) && Objects.equals(this.port, vpcCreate.port)
             && Objects.equals(this.balanceStrategy, vpcCreate.balanceStrategy)
-            && Objects.equals(this.memberType, vpcCreate.memberType) && Objects.equals(this.members, vpcCreate.members)
-            && Objects.equals(this.vpcHealthConfig, vpcCreate.vpcHealthConfig);
+            && Objects.equals(this.memberType, vpcCreate.memberType)
+            && Objects.equals(this.dictCode, vpcCreate.dictCode)
+            && Objects.equals(this.memberGroups, vpcCreate.memberGroups)
+            && Objects.equals(this.members, vpcCreate.members)
+            && Objects.equals(this.vpcHealthConfig, vpcCreate.vpcHealthConfig)
+            && Objects.equals(this.microserviceInfo, vpcCreate.microserviceInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, port, balanceStrategy, memberType, members, vpcHealthConfig);
+        return Objects.hash(name,
+            port,
+            balanceStrategy,
+            memberType,
+            dictCode,
+            memberGroups,
+            members,
+            vpcHealthConfig,
+            microserviceInfo);
     }
 
     @Override
@@ -369,8 +472,11 @@ public class VpcCreate {
         sb.append("    port: ").append(toIndentedString(port)).append("\n");
         sb.append("    balanceStrategy: ").append(toIndentedString(balanceStrategy)).append("\n");
         sb.append("    memberType: ").append(toIndentedString(memberType)).append("\n");
+        sb.append("    dictCode: ").append(toIndentedString(dictCode)).append("\n");
+        sb.append("    memberGroups: ").append(toIndentedString(memberGroups)).append("\n");
         sb.append("    members: ").append(toIndentedString(members)).append("\n");
         sb.append("    vpcHealthConfig: ").append(toIndentedString(vpcHealthConfig)).append("\n");
+        sb.append("    microserviceInfo: ").append(toIndentedString(microserviceInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

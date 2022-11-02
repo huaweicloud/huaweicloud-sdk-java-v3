@@ -486,7 +486,7 @@ public class CreateAndExecuteJobResponse extends SdkResponse {
 
 
     /**
-     *   数据输入ID。
+     * 数据输入ID。
      * @return inputId
      */
     public String getInputId() {
@@ -706,7 +706,7 @@ public class CreateAndExecuteJobResponse extends SdkResponse {
 
 
     /**
-     * 执行程序Jar包或sql文件地址，需要满足如下要求：   - 最多为1023字符，不能包含;|&><'$特殊字符，且不可为空或全空格。   - 需要以“/”或“s3a://”开头。OBS路径不支持KMS加密的文件或程序。  - Spark Script需要以“.sql”结尾，MapReduce和Spark Jar需要以“.jar”结尾，sql和jar不区分大小写。
+     * 执行程序Jar包或sql文件地址，需要满足如下要求：  - 最多为1023字符，不能包含;|&><'$特殊字符，且不可为空或全空格。  - 需要以“/”或“s3a://”开头。OBS路径不支持KMS加密的文件或程序。  - Spark Script需要以“.sql”结尾，MapReduce和Spark Jar需要以“.jar”结尾，sql和jar不区分大小写。
      * @return jarPath
      */
     public String getJarPath() {
@@ -816,7 +816,7 @@ public class CreateAndExecuteJobResponse extends SdkResponse {
 
 
     /**
-     *   文件操作类型，包括： - export：从HDFS导出数据至OBS - import：从OBS导入数据至HDFS
+     * 文件操作类型，包括：  - export：从HDFS导出数据至OBS  - import：从OBS导入数据至HDFS
      * @return fileAction
      */
     public String getFileAction() {
@@ -882,7 +882,7 @@ public class CreateAndExecuteJobResponse extends SdkResponse {
 
 
     /**
-     * 作业状态码。  - -1：Terminated - 1：Starting - 2：Running - 3：Completed - 4：Abnormal - 5：Error
+     * 作业状态码。  - 1：Terminated - 2：Starting - 3：Running - 4：Completed - 5：Abnormal - 6：Error
      * @return jobState
      */
     public Integer getJobState() {
@@ -1102,7 +1102,7 @@ public class CreateAndExecuteJobResponse extends SdkResponse {
 
 
     /**
-     *   任务数量。 为兼容历史版本，保留此参数。
+     * 任务数量。为兼容历史版本，保留此参数。
      * @return taskNum
      */
     public Integer getTaskNum() {

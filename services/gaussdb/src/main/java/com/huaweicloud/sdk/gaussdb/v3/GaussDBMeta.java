@@ -2318,6 +2318,48 @@ public class GaussDBMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateTransactionSplitStatusRequest, UpdateTransactionSplitStatusResponse> updateTransactionSplitStatus = genForupdateTransactionSplitStatus();
+
+    private static HttpRequestDef<UpdateTransactionSplitStatusRequest, UpdateTransactionSplitStatusResponse> genForupdateTransactionSplitStatus() {
+        // basic
+        HttpRequestDef.Builder<UpdateTransactionSplitStatusRequest, UpdateTransactionSplitStatusResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpdateTransactionSplitStatusRequest.class, UpdateTransactionSplitStatusResponse.class)
+                .withName("UpdateTransactionSplitStatus")
+                .withUri("/v3/{project_id}/instances/{instance_id}/proxy/transaction-split")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateTransactionSplitStatusRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateTransactionSplitStatusRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+        builder.<ProxyTransactionSplitRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ProxyTransactionSplitRequest.class),
+            f -> f.withMarshaller(UpdateTransactionSplitStatusRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteSqlFilterRuleRequest, DeleteSqlFilterRuleResponse> deleteSqlFilterRule = genFordeleteSqlFilterRule();
 
     private static HttpRequestDef<DeleteSqlFilterRuleRequest, DeleteSqlFilterRuleResponse> genFordeleteSqlFilterRule() {

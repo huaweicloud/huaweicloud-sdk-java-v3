@@ -212,7 +212,7 @@ public class VpcMemberInfo {
     }
 
     /**
-     * 后端服务器组名称。为后端服务地址选择服务器组，便于统一修改对应服务器组的后端地址。  暂不支持
+     * 后端服务器组名称。为后端服务地址选择服务器组，便于统一修改对应服务器组的后端地址。
      * @return memberGroupName
      */
     public String getMemberGroupName() {
@@ -265,7 +265,7 @@ public class VpcMemberInfo {
     }
 
     /**
-     * 后端云服务器的编号。  后端实例类型为instance时生效，支持英文，数字，“-”,“_”，1 ~ 64字符。
+     * 后端云服务器的编号。  后端实例类型为ecs时必填，支持英文，数字，“-”,“_”，1 ~ 64字符。
      * @return ecsId
      */
     public String getEcsId() {
@@ -282,7 +282,7 @@ public class VpcMemberInfo {
     }
 
     /**
-     * 后端云服务器的名称。  后端实例类型为instance时生效，支持汉字，英文，数字，“-”,“_”,“.”，1 ~ 64字符。
+     * 后端云服务器的名称。  后端实例类型为ecs时必填，支持汉字，英文，数字，“-”,“_”,“.”，1 ~ 64字符。
      * @return ecsName
      */
     public String getEcsName() {
@@ -350,7 +350,7 @@ public class VpcMemberInfo {
     }
 
     /**
-     * 后端服务器组编号  暂不支持
+     * 后端服务器组编号
      * @return memberGroupId
      */
     public String getMemberGroupId() {

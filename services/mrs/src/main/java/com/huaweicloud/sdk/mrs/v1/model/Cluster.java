@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.mrs.v1.model.BootstrapScriptResp;
+import com.huaweicloud.sdk.mrs.v1.model.BootstrapScript;
 import com.huaweicloud.sdk.mrs.v1.model.ComponentAmb;
 import com.huaweicloud.sdk.mrs.v1.model.NodeGroupV10;
 import java.util.ArrayList;
@@ -272,7 +272,7 @@ public class Cluster  {
     @JsonProperty(value="bootstrapScripts")
     
     
-    private List<BootstrapScriptResp> bootstrapScripts = null;
+    private List<BootstrapScript> bootstrapScripts = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -1261,13 +1261,13 @@ public class Cluster  {
 
     
 
-    public Cluster withBootstrapScripts(List<BootstrapScriptResp> bootstrapScripts) {
+    public Cluster withBootstrapScripts(List<BootstrapScript> bootstrapScripts) {
         this.bootstrapScripts = bootstrapScripts;
         return this;
     }
 
     
-    public Cluster addBootstrapScriptsItem(BootstrapScriptResp bootstrapScriptsItem) {
+    public Cluster addBootstrapScriptsItem(BootstrapScript bootstrapScriptsItem) {
         if(this.bootstrapScripts == null) {
             this.bootstrapScripts = new ArrayList<>();
         }
@@ -1275,7 +1275,7 @@ public class Cluster  {
         return this;
     }
 
-    public Cluster withBootstrapScripts(Consumer<List<BootstrapScriptResp>> bootstrapScriptsSetter) {
+    public Cluster withBootstrapScripts(Consumer<List<BootstrapScript>> bootstrapScriptsSetter) {
         if(this.bootstrapScripts == null) {
             this.bootstrapScripts = new ArrayList<>();
         }
@@ -1287,11 +1287,11 @@ public class Cluster  {
      * 配置引导操作脚本信息。
      * @return bootstrapScripts
      */
-    public List<BootstrapScriptResp> getBootstrapScripts() {
+    public List<BootstrapScript> getBootstrapScripts() {
         return bootstrapScripts;
     }
 
-    public void setBootstrapScripts(List<BootstrapScriptResp> bootstrapScripts) {
+    public void setBootstrapScripts(List<BootstrapScript> bootstrapScripts) {
         this.bootstrapScripts = bootstrapScripts;
     }
 

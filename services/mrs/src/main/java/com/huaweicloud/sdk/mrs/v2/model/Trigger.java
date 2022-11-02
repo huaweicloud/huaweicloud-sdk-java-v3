@@ -54,7 +54,7 @@ public class Trigger  {
 
 
     /**
-     * 指标名称。  该触发条件会依据该名称对应指标的值来进行判断。  最大长度为64个字符。
+     * 指标名称。 该触发条件会依据该名称对应指标的值来进行判断。 最大长度为64个字符。
      * @return metricName
      */
     public String getMetricName() {
@@ -98,7 +98,7 @@ public class Trigger  {
 
 
     /**
-     * 指标判断逻辑运算符，包括：  - LT：小于 - GT：大于 - LTOE：小于等于 - GTOE：大于等于
+     * 指标判断逻辑运算符，包括： - LT：小于 - GT：大于 - LTOE：小于等于 - GTOE：大于等于
      * @return comparisonOperator
      */
     public String getComparisonOperator() {
@@ -120,7 +120,7 @@ public class Trigger  {
 
 
     /**
-     * 判断连续满足指标阈值的周期数(一个周期为5分钟)。  取值范围[1～288]
+     * 判断连续满足指标阈值的周期数(一个周期为5分钟)。 取值范围[1～288]
      * minimum: 1
      * maximum: 288
      * @return evaluationPeriods

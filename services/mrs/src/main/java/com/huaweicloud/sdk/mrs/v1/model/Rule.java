@@ -1,4 +1,4 @@
-package com.huaweicloud.sdk.mrs.v2.model;
+package com.huaweicloud.sdk.mrs.v1.model;
 
 
 
@@ -10,16 +10,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.mrs.v2.model.Trigger;
+import com.huaweicloud.sdk.mrs.v1.model.Trigger;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * Rules
+ * Rule
  */
-public class Rules  {
+public class Rule  {
 
 
 
@@ -142,7 +142,7 @@ public class Rules  {
     
     private Trigger trigger;
 
-    public Rules withName(String name) {
+    public Rule withName(String name) {
         this.name = name;
         return this;
     }
@@ -164,7 +164,7 @@ public class Rules  {
 
     
 
-    public Rules withDescription(String description) {
+    public Rule withDescription(String description) {
         this.description = description;
         return this;
     }
@@ -186,7 +186,7 @@ public class Rules  {
 
     
 
-    public Rules withAdjustmentType(AdjustmentTypeEnum adjustmentType) {
+    public Rule withAdjustmentType(AdjustmentTypeEnum adjustmentType) {
         this.adjustmentType = adjustmentType;
         return this;
     }
@@ -208,7 +208,7 @@ public class Rules  {
 
     
 
-    public Rules withCoolDownMinutes(Integer coolDownMinutes) {
+    public Rule withCoolDownMinutes(Integer coolDownMinutes) {
         this.coolDownMinutes = coolDownMinutes;
         return this;
     }
@@ -232,7 +232,7 @@ public class Rules  {
 
     
 
-    public Rules withScalingAdjustment(Integer scalingAdjustment) {
+    public Rule withScalingAdjustment(Integer scalingAdjustment) {
         this.scalingAdjustment = scalingAdjustment;
         return this;
     }
@@ -256,12 +256,12 @@ public class Rules  {
 
     
 
-    public Rules withTrigger(Trigger trigger) {
+    public Rule withTrigger(Trigger trigger) {
         this.trigger = trigger;
         return this;
     }
 
-    public Rules withTrigger(Consumer<Trigger> triggerSetter) {
+    public Rule withTrigger(Consumer<Trigger> triggerSetter) {
         if(this.trigger == null ){
             this.trigger = new Trigger();
             triggerSetter.accept(this.trigger);
@@ -293,13 +293,13 @@ public class Rules  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        Rules rules = (Rules) o;
-        return Objects.equals(this.name, rules.name) &&
-            Objects.equals(this.description, rules.description) &&
-            Objects.equals(this.adjustmentType, rules.adjustmentType) &&
-            Objects.equals(this.coolDownMinutes, rules.coolDownMinutes) &&
-            Objects.equals(this.scalingAdjustment, rules.scalingAdjustment) &&
-            Objects.equals(this.trigger, rules.trigger);
+        Rule rule = (Rule) o;
+        return Objects.equals(this.name, rule.name) &&
+            Objects.equals(this.description, rule.description) &&
+            Objects.equals(this.adjustmentType, rule.adjustmentType) &&
+            Objects.equals(this.coolDownMinutes, rule.coolDownMinutes) &&
+            Objects.equals(this.scalingAdjustment, rule.scalingAdjustment) &&
+            Objects.equals(this.trigger, rule.trigger);
     }
     @Override
     public int hashCode() {
@@ -308,7 +308,7 @@ public class Rules  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class Rules {\n");
+        sb.append("class Rule {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    adjustmentType: ").append(toIndentedString(adjustmentType)).append("\n");

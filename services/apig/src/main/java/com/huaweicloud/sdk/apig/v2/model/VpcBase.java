@@ -26,7 +26,7 @@ public class VpcBase {
     private Integer port;
 
     /**
-     * 分发算法。 - 1：加权轮询（wrr） - 2：加权最少连接（wleastconn） - 3：源地址哈希（source） - 4：URI哈希（uri）  VPC通道类型为2时必选。
+     * 分发算法。 - 1：加权轮询（wrr） - 2：加权最少连接（wleastconn） - 3：源地址哈希（source） - 4：URI哈希（uri）
      */
     public static final class BalanceStrategyEnum {
 
@@ -120,7 +120,7 @@ public class VpcBase {
     private BalanceStrategyEnum balanceStrategy;
 
     /**
-     * VPC通道的成员类型。 - ip - ecs  VPC通道类型为2时必选。
+     * VPC通道的成员类型。 - ip - ecs
      */
     public static final class MemberTypeEnum {
 
@@ -201,6 +201,11 @@ public class VpcBase {
 
     private MemberTypeEnum memberType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dict_code")
+
+    private String dictCode;
+
     public VpcBase withName(String name) {
         this.name = name;
         return this;
@@ -224,7 +229,7 @@ public class VpcBase {
     }
 
     /**
-     * VPC通道中主机的端口号。  取值范围1 ~ 65535，仅VPC通道类型为2时有效。  VPC通道类型为2时必选。
+     * VPC通道中主机的端口号。  取值范围1 ~ 65535。
      * @return port
      */
     public Integer getPort() {
@@ -241,7 +246,7 @@ public class VpcBase {
     }
 
     /**
-     * 分发算法。 - 1：加权轮询（wrr） - 2：加权最少连接（wleastconn） - 3：源地址哈希（source） - 4：URI哈希（uri）  VPC通道类型为2时必选。
+     * 分发算法。 - 1：加权轮询（wrr） - 2：加权最少连接（wleastconn） - 3：源地址哈希（source） - 4：URI哈希（uri）
      * @return balanceStrategy
      */
     public BalanceStrategyEnum getBalanceStrategy() {
@@ -258,7 +263,7 @@ public class VpcBase {
     }
 
     /**
-     * VPC通道的成员类型。 - ip - ecs  VPC通道类型为2时必选。
+     * VPC通道的成员类型。 - ip - ecs
      * @return memberType
      */
     public MemberTypeEnum getMemberType() {
@@ -267,6 +272,23 @@ public class VpcBase {
 
     public void setMemberType(MemberTypeEnum memberType) {
         this.memberType = memberType;
+    }
+
+    public VpcBase withDictCode(String dictCode) {
+        this.dictCode = dictCode;
+        return this;
+    }
+
+    /**
+     * VPC通道的字典编码  支持英文，数字，特殊字符（-_.）  暂不支持
+     * @return dictCode
+     */
+    public String getDictCode() {
+        return dictCode;
+    }
+
+    public void setDictCode(String dictCode) {
+        this.dictCode = dictCode;
     }
 
     @Override
@@ -280,12 +302,12 @@ public class VpcBase {
         VpcBase vpcBase = (VpcBase) o;
         return Objects.equals(this.name, vpcBase.name) && Objects.equals(this.port, vpcBase.port)
             && Objects.equals(this.balanceStrategy, vpcBase.balanceStrategy)
-            && Objects.equals(this.memberType, vpcBase.memberType);
+            && Objects.equals(this.memberType, vpcBase.memberType) && Objects.equals(this.dictCode, vpcBase.dictCode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, port, balanceStrategy, memberType);
+        return Objects.hash(name, port, balanceStrategy, memberType, dictCode);
     }
 
     @Override
@@ -296,6 +318,7 @@ public class VpcBase {
         sb.append("    port: ").append(toIndentedString(port)).append("\n");
         sb.append("    balanceStrategy: ").append(toIndentedString(balanceStrategy)).append("\n");
         sb.append("    memberType: ").append(toIndentedString(memberType)).append("\n");
+        sb.append("    dictCode: ").append(toIndentedString(dictCode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

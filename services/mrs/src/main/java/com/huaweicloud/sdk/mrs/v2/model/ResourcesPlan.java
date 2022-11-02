@@ -127,7 +127,7 @@ public class ResourcesPlan  {
 
 
     /**
-     * 资源计划内该节点组的最小保留节点数。  取值范围：[0～500]
+     * 资源计划内该节点组的最小保留节点数。 取值范围：[0～500]
      * minimum: 0
      * maximum: 500
      * @return minCapacity
@@ -151,7 +151,7 @@ public class ResourcesPlan  {
 
 
     /**
-     * 资源计划内该节点组的最大保留节点数。  取值范围：[0～500]
+     * 资源计划内该节点组的最大保留节点数。 取值范围：[0～500]
      * minimum: 0
      * maximum: 500
      * @return maxCapacity

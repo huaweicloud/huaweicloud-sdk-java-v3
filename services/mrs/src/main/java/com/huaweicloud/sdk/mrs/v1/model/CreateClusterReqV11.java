@@ -26,12 +26,12 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.mrs.v1.model.AddJobs;
+import com.huaweicloud.sdk.mrs.v1.model.AddJobsReqV11;
 import com.huaweicloud.sdk.mrs.v1.model.BootstrapScript;
-import com.huaweicloud.sdk.mrs.v1.model.ComponentList;
+import com.huaweicloud.sdk.mrs.v1.model.ComponentAmbV11;
 import com.huaweicloud.sdk.mrs.v1.model.NodeGroupV11;
 import com.huaweicloud.sdk.mrs.v1.model.Tag;
-import com.huaweicloud.sdk.mrs.v1.model.TaskNodeGroups;
+import com.huaweicloud.sdk.mrs.v1.model.TaskNodeGroup;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -40,9 +40,9 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * CreateClusterReq
+ * CreateClusterReqV11
  */
-public class CreateClusterReq  {
+public class CreateClusterReqV11  {
 
 
 
@@ -185,7 +185,7 @@ public class CreateClusterReq  {
     @JsonProperty(value="component_list")
     
     
-    private List<ComponentList> componentList = null;
+    private List<ComponentAmbV11> componentList = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -227,7 +227,7 @@ public class CreateClusterReq  {
     @JsonProperty(value="add_jobs")
     
     
-    private List<AddJobs> addJobs = null;
+    private List<AddJobsReqV11> addJobs = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -632,7 +632,7 @@ public class CreateClusterReq  {
     @JsonProperty(value="task_node_groups")
     
     
-    private List<TaskNodeGroups> taskNodeGroups = null;
+    private List<TaskNodeGroup> taskNodeGroups = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -1023,7 +1023,7 @@ public class CreateClusterReq  {
     
     private List<NodeGroupV11> nodeGroups = null;
     
-    public CreateClusterReq withClusterVersion(String clusterVersion) {
+    public CreateClusterReqV11 withClusterVersion(String clusterVersion) {
         this.clusterVersion = clusterVersion;
         return this;
     }
@@ -1032,7 +1032,7 @@ public class CreateClusterReq  {
 
 
     /**
-     * 集群版本。 MRS目前支持MRS 1.9.2、MRS 3.1.0版本。
+     * 集群版本。 例如：MRS 3.1.0。
      * @return clusterVersion
      */
     public String getClusterVersion() {
@@ -1045,7 +1045,7 @@ public class CreateClusterReq  {
 
     
 
-    public CreateClusterReq withClusterName(String clusterName) {
+    public CreateClusterReqV11 withClusterName(String clusterName) {
         this.clusterName = clusterName;
         return this;
     }
@@ -1067,7 +1067,7 @@ public class CreateClusterReq  {
 
     
 
-    public CreateClusterReq withMasterNodeNum(Integer masterNodeNum) {
+    public CreateClusterReqV11 withMasterNodeNum(Integer masterNodeNum) {
         this.masterNodeNum = masterNodeNum;
         return this;
     }
@@ -1089,7 +1089,7 @@ public class CreateClusterReq  {
 
     
 
-    public CreateClusterReq withCoreNodeNum(Integer coreNodeNum) {
+    public CreateClusterReqV11 withCoreNodeNum(Integer coreNodeNum) {
         this.coreNodeNum = coreNodeNum;
         return this;
     }
@@ -1098,7 +1098,7 @@ public class CreateClusterReq  {
 
 
     /**
-     * Core节点数量。 取值范围：[1～500] Core节点默认的最大值为500，如果用户需要的Core节点数大于500，请申请扩大配额。
+     * Core节点数量。  取值范围：[1～500]  Core节点默认的最大值为500，如果用户需要的Core节点数大于500，请申请扩大配额。
      * minimum: 0
      * maximum: 500
      * @return coreNodeNum
@@ -1113,7 +1113,7 @@ public class CreateClusterReq  {
 
     
 
-    public CreateClusterReq withBillingType(BillingTypeEnum billingType) {
+    public CreateClusterReqV11 withBillingType(BillingTypeEnum billingType) {
         this.billingType = billingType;
         return this;
     }
@@ -1135,7 +1135,7 @@ public class CreateClusterReq  {
 
     
 
-    public CreateClusterReq withDataCenter(String dataCenter) {
+    public CreateClusterReqV11 withDataCenter(String dataCenter) {
         this.dataCenter = dataCenter;
         return this;
     }
@@ -1157,7 +1157,7 @@ public class CreateClusterReq  {
 
     
 
-    public CreateClusterReq withVpc(String vpc) {
+    public CreateClusterReqV11 withVpc(String vpc) {
         this.vpc = vpc;
         return this;
     }
@@ -1179,7 +1179,7 @@ public class CreateClusterReq  {
 
     
 
-    public CreateClusterReq withMasterNodeSize(String masterNodeSize) {
+    public CreateClusterReqV11 withMasterNodeSize(String masterNodeSize) {
         this.masterNodeSize = masterNodeSize;
         return this;
     }
@@ -1201,7 +1201,7 @@ public class CreateClusterReq  {
 
     
 
-    public CreateClusterReq withCoreNodeSize(String coreNodeSize) {
+    public CreateClusterReqV11 withCoreNodeSize(String coreNodeSize) {
         this.coreNodeSize = coreNodeSize;
         return this;
     }
@@ -1223,13 +1223,13 @@ public class CreateClusterReq  {
 
     
 
-    public CreateClusterReq withComponentList(List<ComponentList> componentList) {
+    public CreateClusterReqV11 withComponentList(List<ComponentAmbV11> componentList) {
         this.componentList = componentList;
         return this;
     }
 
     
-    public CreateClusterReq addComponentListItem(ComponentList componentListItem) {
+    public CreateClusterReqV11 addComponentListItem(ComponentAmbV11 componentListItem) {
         if(this.componentList == null) {
             this.componentList = new ArrayList<>();
         }
@@ -1237,7 +1237,7 @@ public class CreateClusterReq  {
         return this;
     }
 
-    public CreateClusterReq withComponentList(Consumer<List<ComponentList>> componentListSetter) {
+    public CreateClusterReqV11 withComponentList(Consumer<List<ComponentAmbV11>> componentListSetter) {
         if(this.componentList == null) {
             this.componentList = new ArrayList<>();
         }
@@ -1249,17 +1249,17 @@ public class CreateClusterReq  {
      * 服务组件安装列表信息。
      * @return componentList
      */
-    public List<ComponentList> getComponentList() {
+    public List<ComponentAmbV11> getComponentList() {
         return componentList;
     }
 
-    public void setComponentList(List<ComponentList> componentList) {
+    public void setComponentList(List<ComponentAmbV11> componentList) {
         this.componentList = componentList;
     }
 
     
 
-    public CreateClusterReq withAvailableZoneId(String availableZoneId) {
+    public CreateClusterReqV11 withAvailableZoneId(String availableZoneId) {
         this.availableZoneId = availableZoneId;
         return this;
     }
@@ -1281,7 +1281,7 @@ public class CreateClusterReq  {
 
     
 
-    public CreateClusterReq withVpcId(String vpcId) {
+    public CreateClusterReqV11 withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
     }
@@ -1303,7 +1303,7 @@ public class CreateClusterReq  {
 
     
 
-    public CreateClusterReq withSubnetId(String subnetId) {
+    public CreateClusterReqV11 withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
     }
@@ -1325,7 +1325,7 @@ public class CreateClusterReq  {
 
     
 
-    public CreateClusterReq withSubnetName(String subnetName) {
+    public CreateClusterReqV11 withSubnetName(String subnetName) {
         this.subnetName = subnetName;
         return this;
     }
@@ -1347,7 +1347,7 @@ public class CreateClusterReq  {
 
     
 
-    public CreateClusterReq withSecurityGroupsId(String securityGroupsId) {
+    public CreateClusterReqV11 withSecurityGroupsId(String securityGroupsId) {
         this.securityGroupsId = securityGroupsId;
         return this;
     }
@@ -1369,13 +1369,13 @@ public class CreateClusterReq  {
 
     
 
-    public CreateClusterReq withAddJobs(List<AddJobs> addJobs) {
+    public CreateClusterReqV11 withAddJobs(List<AddJobsReqV11> addJobs) {
         this.addJobs = addJobs;
         return this;
     }
 
     
-    public CreateClusterReq addAddJobsItem(AddJobs addJobsItem) {
+    public CreateClusterReqV11 addAddJobsItem(AddJobsReqV11 addJobsItem) {
         if(this.addJobs == null) {
             this.addJobs = new ArrayList<>();
         }
@@ -1383,7 +1383,7 @@ public class CreateClusterReq  {
         return this;
     }
 
-    public CreateClusterReq withAddJobs(Consumer<List<AddJobs>> addJobsSetter) {
+    public CreateClusterReqV11 withAddJobs(Consumer<List<AddJobsReqV11>> addJobsSetter) {
         if(this.addJobs == null) {
             this.addJobs = new ArrayList<>();
         }
@@ -1395,17 +1395,17 @@ public class CreateClusterReq  {
      * 创建集群时可同时提交作业，当前版本暂时只支持新增一个作业。
      * @return addJobs
      */
-    public List<AddJobs> getAddJobs() {
+    public List<AddJobsReqV11> getAddJobs() {
         return addJobs;
     }
 
-    public void setAddJobs(List<AddJobs> addJobs) {
+    public void setAddJobs(List<AddJobsReqV11> addJobs) {
         this.addJobs = addJobs;
     }
 
     
 
-    public CreateClusterReq withVolumeSize(Integer volumeSize) {
+    public CreateClusterReqV11 withVolumeSize(Integer volumeSize) {
         this.volumeSize = volumeSize;
         return this;
     }
@@ -1429,7 +1429,7 @@ public class CreateClusterReq  {
 
     
 
-    public CreateClusterReq withVolumeType(VolumeTypeEnum volumeType) {
+    public CreateClusterReqV11 withVolumeType(VolumeTypeEnum volumeType) {
         this.volumeType = volumeType;
         return this;
     }
@@ -1451,7 +1451,7 @@ public class CreateClusterReq  {
 
     
 
-    public CreateClusterReq withMasterDataVolumeType(MasterDataVolumeTypeEnum masterDataVolumeType) {
+    public CreateClusterReqV11 withMasterDataVolumeType(MasterDataVolumeTypeEnum masterDataVolumeType) {
         this.masterDataVolumeType = masterDataVolumeType;
         return this;
     }
@@ -1473,7 +1473,7 @@ public class CreateClusterReq  {
 
     
 
-    public CreateClusterReq withMasterDataVolumeSize(Integer masterDataVolumeSize) {
+    public CreateClusterReqV11 withMasterDataVolumeSize(Integer masterDataVolumeSize) {
         this.masterDataVolumeSize = masterDataVolumeSize;
         return this;
     }
@@ -1497,7 +1497,7 @@ public class CreateClusterReq  {
 
     
 
-    public CreateClusterReq withMasterDataVolumeCount(MasterDataVolumeCountEnum masterDataVolumeCount) {
+    public CreateClusterReqV11 withMasterDataVolumeCount(MasterDataVolumeCountEnum masterDataVolumeCount) {
         this.masterDataVolumeCount = masterDataVolumeCount;
         return this;
     }
@@ -1520,7 +1520,7 @@ public class CreateClusterReq  {
 
     
 
-    public CreateClusterReq withCoreDataVolumeType(CoreDataVolumeTypeEnum coreDataVolumeType) {
+    public CreateClusterReqV11 withCoreDataVolumeType(CoreDataVolumeTypeEnum coreDataVolumeType) {
         this.coreDataVolumeType = coreDataVolumeType;
         return this;
     }
@@ -1542,7 +1542,7 @@ public class CreateClusterReq  {
 
     
 
-    public CreateClusterReq withCoreDataVolumeSize(Integer coreDataVolumeSize) {
+    public CreateClusterReqV11 withCoreDataVolumeSize(Integer coreDataVolumeSize) {
         this.coreDataVolumeSize = coreDataVolumeSize;
         return this;
     }
@@ -1566,7 +1566,7 @@ public class CreateClusterReq  {
 
     
 
-    public CreateClusterReq withCoreDataVolumeCount(Integer coreDataVolumeCount) {
+    public CreateClusterReqV11 withCoreDataVolumeCount(Integer coreDataVolumeCount) {
         this.coreDataVolumeCount = coreDataVolumeCount;
         return this;
     }
@@ -1590,13 +1590,13 @@ public class CreateClusterReq  {
 
     
 
-    public CreateClusterReq withTaskNodeGroups(List<TaskNodeGroups> taskNodeGroups) {
+    public CreateClusterReqV11 withTaskNodeGroups(List<TaskNodeGroup> taskNodeGroups) {
         this.taskNodeGroups = taskNodeGroups;
         return this;
     }
 
     
-    public CreateClusterReq addTaskNodeGroupsItem(TaskNodeGroups taskNodeGroupsItem) {
+    public CreateClusterReqV11 addTaskNodeGroupsItem(TaskNodeGroup taskNodeGroupsItem) {
         if(this.taskNodeGroups == null) {
             this.taskNodeGroups = new ArrayList<>();
         }
@@ -1604,7 +1604,7 @@ public class CreateClusterReq  {
         return this;
     }
 
-    public CreateClusterReq withTaskNodeGroups(Consumer<List<TaskNodeGroups>> taskNodeGroupsSetter) {
+    public CreateClusterReqV11 withTaskNodeGroups(Consumer<List<TaskNodeGroup>> taskNodeGroupsSetter) {
         if(this.taskNodeGroups == null) {
             this.taskNodeGroups = new ArrayList<>();
         }
@@ -1616,23 +1616,23 @@ public class CreateClusterReq  {
      * Task节点列表信息。
      * @return taskNodeGroups
      */
-    public List<TaskNodeGroups> getTaskNodeGroups() {
+    public List<TaskNodeGroup> getTaskNodeGroups() {
         return taskNodeGroups;
     }
 
-    public void setTaskNodeGroups(List<TaskNodeGroups> taskNodeGroups) {
+    public void setTaskNodeGroups(List<TaskNodeGroup> taskNodeGroups) {
         this.taskNodeGroups = taskNodeGroups;
     }
 
     
 
-    public CreateClusterReq withBootstrapScripts(List<BootstrapScript> bootstrapScripts) {
+    public CreateClusterReqV11 withBootstrapScripts(List<BootstrapScript> bootstrapScripts) {
         this.bootstrapScripts = bootstrapScripts;
         return this;
     }
 
     
-    public CreateClusterReq addBootstrapScriptsItem(BootstrapScript bootstrapScriptsItem) {
+    public CreateClusterReqV11 addBootstrapScriptsItem(BootstrapScript bootstrapScriptsItem) {
         if(this.bootstrapScripts == null) {
             this.bootstrapScripts = new ArrayList<>();
         }
@@ -1640,7 +1640,7 @@ public class CreateClusterReq  {
         return this;
     }
 
-    public CreateClusterReq withBootstrapScripts(Consumer<List<BootstrapScript>> bootstrapScriptsSetter) {
+    public CreateClusterReqV11 withBootstrapScripts(Consumer<List<BootstrapScript>> bootstrapScriptsSetter) {
         if(this.bootstrapScripts == null) {
             this.bootstrapScripts = new ArrayList<>();
         }
@@ -1662,7 +1662,7 @@ public class CreateClusterReq  {
 
     
 
-    public CreateClusterReq withNodePublicCertName(String nodePublicCertName) {
+    public CreateClusterReqV11 withNodePublicCertName(String nodePublicCertName) {
         this.nodePublicCertName = nodePublicCertName;
         return this;
     }
@@ -1684,7 +1684,7 @@ public class CreateClusterReq  {
 
     
 
-    public CreateClusterReq withClusterAdminSecret(String clusterAdminSecret) {
+    public CreateClusterReqV11 withClusterAdminSecret(String clusterAdminSecret) {
         this.clusterAdminSecret = clusterAdminSecret;
         return this;
     }
@@ -1706,7 +1706,7 @@ public class CreateClusterReq  {
 
     
 
-    public CreateClusterReq withClusterMasterSecret(String clusterMasterSecret) {
+    public CreateClusterReqV11 withClusterMasterSecret(String clusterMasterSecret) {
         this.clusterMasterSecret = clusterMasterSecret;
         return this;
     }
@@ -1728,7 +1728,7 @@ public class CreateClusterReq  {
 
     
 
-    public CreateClusterReq withSafeMode(SafeModeEnum safeMode) {
+    public CreateClusterReqV11 withSafeMode(SafeModeEnum safeMode) {
         this.safeMode = safeMode;
         return this;
     }
@@ -1750,7 +1750,7 @@ public class CreateClusterReq  {
 
     
 
-    public CreateClusterReq withClusterType(ClusterTypeEnum clusterType) {
+    public CreateClusterReqV11 withClusterType(ClusterTypeEnum clusterType) {
         this.clusterType = clusterType;
         return this;
     }
@@ -1772,7 +1772,7 @@ public class CreateClusterReq  {
 
     
 
-    public CreateClusterReq withLogCollection(LogCollectionEnum logCollection) {
+    public CreateClusterReqV11 withLogCollection(LogCollectionEnum logCollection) {
         this.logCollection = logCollection;
         return this;
     }
@@ -1794,7 +1794,7 @@ public class CreateClusterReq  {
 
     
 
-    public CreateClusterReq withEnterpriseProjectId(String enterpriseProjectId) {
+    public CreateClusterReqV11 withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
@@ -1816,13 +1816,13 @@ public class CreateClusterReq  {
 
     
 
-    public CreateClusterReq withTags(List<Tag> tags) {
+    public CreateClusterReqV11 withTags(List<Tag> tags) {
         this.tags = tags;
         return this;
     }
 
     
-    public CreateClusterReq addTagsItem(Tag tagsItem) {
+    public CreateClusterReqV11 addTagsItem(Tag tagsItem) {
         if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -1830,7 +1830,7 @@ public class CreateClusterReq  {
         return this;
     }
 
-    public CreateClusterReq withTags(Consumer<List<Tag>> tagsSetter) {
+    public CreateClusterReqV11 withTags(Consumer<List<Tag>> tagsSetter) {
         if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -1852,7 +1852,7 @@ public class CreateClusterReq  {
 
     
 
-    public CreateClusterReq withLoginMode(LoginModeEnum loginMode) {
+    public CreateClusterReqV11 withLoginMode(LoginModeEnum loginMode) {
         this.loginMode = loginMode;
         return this;
     }
@@ -1874,13 +1874,13 @@ public class CreateClusterReq  {
 
     
 
-    public CreateClusterReq withNodeGroups(List<NodeGroupV11> nodeGroups) {
+    public CreateClusterReqV11 withNodeGroups(List<NodeGroupV11> nodeGroups) {
         this.nodeGroups = nodeGroups;
         return this;
     }
 
     
-    public CreateClusterReq addNodeGroupsItem(NodeGroupV11 nodeGroupsItem) {
+    public CreateClusterReqV11 addNodeGroupsItem(NodeGroupV11 nodeGroupsItem) {
         if(this.nodeGroups == null) {
             this.nodeGroups = new ArrayList<>();
         }
@@ -1888,7 +1888,7 @@ public class CreateClusterReq  {
         return this;
     }
 
-    public CreateClusterReq withNodeGroups(Consumer<List<NodeGroupV11>> nodeGroupsSetter) {
+    public CreateClusterReqV11 withNodeGroups(Consumer<List<NodeGroupV11>> nodeGroupsSetter) {
         if(this.nodeGroups == null) {
             this.nodeGroups = new ArrayList<>();
         }
@@ -1897,7 +1897,7 @@ public class CreateClusterReq  {
     }
 
     /**
-     * 节点列表信息。   说明：如下参数和该参数任选一组进行配置即可。   master_node_num、master_node_size、core_node_num、core_node_size、master_data_volume_type、master_data_volume_size、master_data_volume_count、core_data_volume_type、core_data_volume_size、core_data_volume_count、volume_type、volume_size、task_node_groups。
+     * 节点列表信息。  说明：如下参数和该参数任选一组进行配置即可。  master_node_num、master_node_size、core_node_num、core_node_size、master_data_volume_type、master_data_volume_size、master_data_volume_count、core_data_volume_type、core_data_volume_size、core_data_volume_count、volume_type、volume_size、task_node_groups。
      * @return nodeGroups
      */
     public List<NodeGroupV11> getNodeGroups() {
@@ -1918,43 +1918,43 @@ public class CreateClusterReq  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        CreateClusterReq createClusterReq = (CreateClusterReq) o;
-        return Objects.equals(this.clusterVersion, createClusterReq.clusterVersion) &&
-            Objects.equals(this.clusterName, createClusterReq.clusterName) &&
-            Objects.equals(this.masterNodeNum, createClusterReq.masterNodeNum) &&
-            Objects.equals(this.coreNodeNum, createClusterReq.coreNodeNum) &&
-            Objects.equals(this.billingType, createClusterReq.billingType) &&
-            Objects.equals(this.dataCenter, createClusterReq.dataCenter) &&
-            Objects.equals(this.vpc, createClusterReq.vpc) &&
-            Objects.equals(this.masterNodeSize, createClusterReq.masterNodeSize) &&
-            Objects.equals(this.coreNodeSize, createClusterReq.coreNodeSize) &&
-            Objects.equals(this.componentList, createClusterReq.componentList) &&
-            Objects.equals(this.availableZoneId, createClusterReq.availableZoneId) &&
-            Objects.equals(this.vpcId, createClusterReq.vpcId) &&
-            Objects.equals(this.subnetId, createClusterReq.subnetId) &&
-            Objects.equals(this.subnetName, createClusterReq.subnetName) &&
-            Objects.equals(this.securityGroupsId, createClusterReq.securityGroupsId) &&
-            Objects.equals(this.addJobs, createClusterReq.addJobs) &&
-            Objects.equals(this.volumeSize, createClusterReq.volumeSize) &&
-            Objects.equals(this.volumeType, createClusterReq.volumeType) &&
-            Objects.equals(this.masterDataVolumeType, createClusterReq.masterDataVolumeType) &&
-            Objects.equals(this.masterDataVolumeSize, createClusterReq.masterDataVolumeSize) &&
-            Objects.equals(this.masterDataVolumeCount, createClusterReq.masterDataVolumeCount) &&
-            Objects.equals(this.coreDataVolumeType, createClusterReq.coreDataVolumeType) &&
-            Objects.equals(this.coreDataVolumeSize, createClusterReq.coreDataVolumeSize) &&
-            Objects.equals(this.coreDataVolumeCount, createClusterReq.coreDataVolumeCount) &&
-            Objects.equals(this.taskNodeGroups, createClusterReq.taskNodeGroups) &&
-            Objects.equals(this.bootstrapScripts, createClusterReq.bootstrapScripts) &&
-            Objects.equals(this.nodePublicCertName, createClusterReq.nodePublicCertName) &&
-            Objects.equals(this.clusterAdminSecret, createClusterReq.clusterAdminSecret) &&
-            Objects.equals(this.clusterMasterSecret, createClusterReq.clusterMasterSecret) &&
-            Objects.equals(this.safeMode, createClusterReq.safeMode) &&
-            Objects.equals(this.clusterType, createClusterReq.clusterType) &&
-            Objects.equals(this.logCollection, createClusterReq.logCollection) &&
-            Objects.equals(this.enterpriseProjectId, createClusterReq.enterpriseProjectId) &&
-            Objects.equals(this.tags, createClusterReq.tags) &&
-            Objects.equals(this.loginMode, createClusterReq.loginMode) &&
-            Objects.equals(this.nodeGroups, createClusterReq.nodeGroups);
+        CreateClusterReqV11 createClusterReqV11 = (CreateClusterReqV11) o;
+        return Objects.equals(this.clusterVersion, createClusterReqV11.clusterVersion) &&
+            Objects.equals(this.clusterName, createClusterReqV11.clusterName) &&
+            Objects.equals(this.masterNodeNum, createClusterReqV11.masterNodeNum) &&
+            Objects.equals(this.coreNodeNum, createClusterReqV11.coreNodeNum) &&
+            Objects.equals(this.billingType, createClusterReqV11.billingType) &&
+            Objects.equals(this.dataCenter, createClusterReqV11.dataCenter) &&
+            Objects.equals(this.vpc, createClusterReqV11.vpc) &&
+            Objects.equals(this.masterNodeSize, createClusterReqV11.masterNodeSize) &&
+            Objects.equals(this.coreNodeSize, createClusterReqV11.coreNodeSize) &&
+            Objects.equals(this.componentList, createClusterReqV11.componentList) &&
+            Objects.equals(this.availableZoneId, createClusterReqV11.availableZoneId) &&
+            Objects.equals(this.vpcId, createClusterReqV11.vpcId) &&
+            Objects.equals(this.subnetId, createClusterReqV11.subnetId) &&
+            Objects.equals(this.subnetName, createClusterReqV11.subnetName) &&
+            Objects.equals(this.securityGroupsId, createClusterReqV11.securityGroupsId) &&
+            Objects.equals(this.addJobs, createClusterReqV11.addJobs) &&
+            Objects.equals(this.volumeSize, createClusterReqV11.volumeSize) &&
+            Objects.equals(this.volumeType, createClusterReqV11.volumeType) &&
+            Objects.equals(this.masterDataVolumeType, createClusterReqV11.masterDataVolumeType) &&
+            Objects.equals(this.masterDataVolumeSize, createClusterReqV11.masterDataVolumeSize) &&
+            Objects.equals(this.masterDataVolumeCount, createClusterReqV11.masterDataVolumeCount) &&
+            Objects.equals(this.coreDataVolumeType, createClusterReqV11.coreDataVolumeType) &&
+            Objects.equals(this.coreDataVolumeSize, createClusterReqV11.coreDataVolumeSize) &&
+            Objects.equals(this.coreDataVolumeCount, createClusterReqV11.coreDataVolumeCount) &&
+            Objects.equals(this.taskNodeGroups, createClusterReqV11.taskNodeGroups) &&
+            Objects.equals(this.bootstrapScripts, createClusterReqV11.bootstrapScripts) &&
+            Objects.equals(this.nodePublicCertName, createClusterReqV11.nodePublicCertName) &&
+            Objects.equals(this.clusterAdminSecret, createClusterReqV11.clusterAdminSecret) &&
+            Objects.equals(this.clusterMasterSecret, createClusterReqV11.clusterMasterSecret) &&
+            Objects.equals(this.safeMode, createClusterReqV11.safeMode) &&
+            Objects.equals(this.clusterType, createClusterReqV11.clusterType) &&
+            Objects.equals(this.logCollection, createClusterReqV11.logCollection) &&
+            Objects.equals(this.enterpriseProjectId, createClusterReqV11.enterpriseProjectId) &&
+            Objects.equals(this.tags, createClusterReqV11.tags) &&
+            Objects.equals(this.loginMode, createClusterReqV11.loginMode) &&
+            Objects.equals(this.nodeGroups, createClusterReqV11.nodeGroups);
     }
     @Override
     public int hashCode() {
@@ -1963,7 +1963,7 @@ public class CreateClusterReq  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class CreateClusterReq {\n");
+        sb.append("class CreateClusterReqV11 {\n");
         sb.append("    clusterVersion: ").append(toIndentedString(clusterVersion)).append("\n");
         sb.append("    clusterName: ").append(toIndentedString(clusterName)).append("\n");
         sb.append("    masterNodeNum: ").append(toIndentedString(masterNodeNum)).append("\n");

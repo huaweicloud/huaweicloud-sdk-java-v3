@@ -347,7 +347,7 @@ public class ShowTasksResponseBody {
     private Integer score;
 
     /**
-     * 安全等级:   * - safety  : 安全   * - average : 中风险   * - highrisk: 高风险 
+     * 安全等级:   * safety - 安全   * average - 中风险   * highrisk - 高风险 
      */
     public static final class SafeLevelEnum {
 
@@ -715,7 +715,7 @@ public class ShowTasksResponseBody {
     }
 
     /**
-     * 安全等级:   * - safety  : 安全   * - average : 中风险   * - highrisk: 高风险 
+     * 安全等级:   * safety - 安全   * average - 中风险   * highrisk - 高风险 
      * @return safeLevel
      */
     public SafeLevelEnum getSafeLevel() {

@@ -326,6 +326,16 @@ public class TtsConfig {
          */
         public static final PropertyEnum CHINESE_HUAXIAOFEI_COMMON = new PropertyEnum("chinese_huaxiaofei_common");
 
+        /**
+         * Enum CHINESE_HUAXIAOLONG_COMMON for value: "chinese_huaxiaolong_common"
+         */
+        public static final PropertyEnum CHINESE_HUAXIAOLONG_COMMON = new PropertyEnum("chinese_huaxiaolong_common");
+
+        /**
+         * Enum CHINESE_HUAXIAORUI_COMMON for value: "chinese_huaxiaorui_common"
+         */
+        public static final PropertyEnum CHINESE_HUAXIAORUI_COMMON = new PropertyEnum("chinese_huaxiaorui_common");
+
         private static final Map<String, PropertyEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, PropertyEnum> createStaticFields() {
@@ -357,6 +367,8 @@ public class TtsConfig {
             map.put("chinese_huaxiaoxuan_literature", CHINESE_HUAXIAOXUAN_LITERATURE);
             map.put("chinese_huaxiaomei_common", CHINESE_HUAXIAOMEI_COMMON);
             map.put("chinese_huaxiaofei_common", CHINESE_HUAXIAOFEI_COMMON);
+            map.put("chinese_huaxiaolong_common", CHINESE_HUAXIAOLONG_COMMON);
+            map.put("chinese_huaxiaorui_common", CHINESE_HUAXIAORUI_COMMON);
             return Collections.unmodifiableMap(map);
         }
 

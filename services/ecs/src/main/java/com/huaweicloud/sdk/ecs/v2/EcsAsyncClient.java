@@ -1690,6 +1690,43 @@ public class EcsAsyncClient {
     }
 
     /**
+     * 注册云服务器监控
+     *
+     * 将云服务器添加到监控表中。
+     * 
+     * 注册到监控表中的云服务会被ceilometer周期性采集监控数据，包括平台的版本、cpu信息、内存、网卡、磁盘、硬件平台等信息，这些数据上报给云监控。例如SAP云服务器内部的插件会周期性从云监控中查询监控数据，以报表形式呈现给SAP。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param RegisterServerMonitorRequest 请求对象
+     * @return CompletableFuture<RegisterServerMonitorResponse>
+     */
+    public CompletableFuture<RegisterServerMonitorResponse> registerServerMonitorAsync(
+        RegisterServerMonitorRequest request) {
+        return hcClient.asyncInvokeHttp(request, EcsMeta.registerServerMonitor);
+    }
+
+    /**
+     * 注册云服务器监控
+     *
+     * 将云服务器添加到监控表中。
+     * 
+     * 注册到监控表中的云服务会被ceilometer周期性采集监控数据，包括平台的版本、cpu信息、内存、网卡、磁盘、硬件平台等信息，这些数据上报给云监控。例如SAP云服务器内部的插件会周期性从云监控中查询监控数据，以报表形式呈现给SAP。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param RegisterServerMonitorRequest 请求对象
+     * @return AsyncInvoker<RegisterServerMonitorRequest, RegisterServerMonitorResponse>
+     */
+    public AsyncInvoker<RegisterServerMonitorRequest, RegisterServerMonitorResponse> registerServerMonitorAsyncInvoker(
+        RegisterServerMonitorRequest request) {
+        return new AsyncInvoker<RegisterServerMonitorRequest, RegisterServerMonitorResponse>(request,
+            EcsMeta.registerServerMonitor, hcClient);
+    }
+
+    /**
      * 重装弹性云服务器操作系统(安装Cloud-init)
      *
      * 重装弹性云服务器的操作系统。支持弹性云服务器数据盘不变的情况下，使用原镜像重装系统盘。
@@ -2251,6 +2288,39 @@ public class EcsAsyncClient {
         UpdateServerAutoTerminateTimeRequest request) {
         return new AsyncInvoker<UpdateServerAutoTerminateTimeRequest, UpdateServerAutoTerminateTimeResponse>(request,
             EcsMeta.updateServerAutoTerminateTime, hcClient);
+    }
+
+    /**
+     * 修改云服务器挂载的单个磁盘信息
+     *
+     * 修改云服务器云主机挂载的单个磁盘信息。&#39;当前仅支持修改delete_on_termination字段。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateServerBlockDeviceRequest 请求对象
+     * @return CompletableFuture<UpdateServerBlockDeviceResponse>
+     */
+    public CompletableFuture<UpdateServerBlockDeviceResponse> updateServerBlockDeviceAsync(
+        UpdateServerBlockDeviceRequest request) {
+        return hcClient.asyncInvokeHttp(request, EcsMeta.updateServerBlockDevice);
+    }
+
+    /**
+     * 修改云服务器挂载的单个磁盘信息
+     *
+     * 修改云服务器云主机挂载的单个磁盘信息。&#39;当前仅支持修改delete_on_termination字段。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateServerBlockDeviceRequest 请求对象
+     * @return AsyncInvoker<UpdateServerBlockDeviceRequest, UpdateServerBlockDeviceResponse>
+     */
+    public AsyncInvoker<UpdateServerBlockDeviceRequest, UpdateServerBlockDeviceResponse> updateServerBlockDeviceAsyncInvoker(
+        UpdateServerBlockDeviceRequest request) {
+        return new AsyncInvoker<UpdateServerBlockDeviceRequest, UpdateServerBlockDeviceResponse>(request,
+            EcsMeta.updateServerBlockDevice, hcClient);
     }
 
     /**

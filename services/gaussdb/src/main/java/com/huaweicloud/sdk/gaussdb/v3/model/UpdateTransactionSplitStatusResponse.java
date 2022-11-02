@@ -1,7 +1,9 @@
-package com.huaweicloud.sdk.mrs.v1.model;
+package com.huaweicloud.sdk.gaussdb.v3.model;
 
 
 
+
+import com.huaweicloud.sdk.core.SdkResponse;
 
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -12,20 +14,20 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * ComponentList
+ * Response Object
  */
-public class ComponentList  {
+public class UpdateTransactionSplitStatusResponse extends SdkResponse {
 
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="component_name")
+    @JsonProperty(value="job_id")
     
     
-    private String componentName;
+    private String jobId;
 
-    public ComponentList withComponentName(String componentName) {
-        this.componentName = componentName;
+    public UpdateTransactionSplitStatusResponse withJobId(String jobId) {
+        this.jobId = jobId;
         return this;
     }
 
@@ -33,15 +35,15 @@ public class ComponentList  {
 
 
     /**
-     * 组件名称
-     * @return componentName
+     * 工作流id
+     * @return jobId
      */
-    public String getComponentName() {
-        return componentName;
+    public String getJobId() {
+        return jobId;
     }
 
-    public void setComponentName(String componentName) {
-        this.componentName = componentName;
+    public void setJobId(String jobId) {
+        this.jobId = jobId;
     }
 
     
@@ -54,18 +56,18 @@ public class ComponentList  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        ComponentList componentList = (ComponentList) o;
-        return Objects.equals(this.componentName, componentList.componentName);
+        UpdateTransactionSplitStatusResponse updateTransactionSplitStatusResponse = (UpdateTransactionSplitStatusResponse) o;
+        return Objects.equals(this.jobId, updateTransactionSplitStatusResponse.jobId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(componentName);
+        return Objects.hash(jobId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class ComponentList {\n");
-        sb.append("    componentName: ").append(toIndentedString(componentName)).append("\n");
+        sb.append("class UpdateTransactionSplitStatusResponse {\n");
+        sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -51,7 +51,7 @@ public class ShowHdfsFileListRequest  {
     
     private String limit;
     /**
-     * 列表排序按该属性排序。缺省值：path_suffix  - path_suffix：文件或目录名称 - length：文件大小 - modification_time：修改时间
+     * 列表排序按该属性排序。缺省值：path_suffix - path_suffix：文件或目录名称 - length：文件大小 - modification_time：修改时间
      */
     public static final class SortKeyEnum {
 
@@ -258,7 +258,7 @@ public class ShowHdfsFileListRequest  {
 
 
     /**
-     * 文件目录，比如访问“/tmp/test”目录列表，此处必须是目录，整体URI为  /v2/{project_id}/clusters/{cluster_id}/files?path=%2Ftmp%2Ftest  单层目录要遵循以下规则：  - 不能为空 - 不能以\".\"开头或结尾 - 不能包括下列符号 : :*?\"<>|\\;&,'`!{}[]$%+ - 不能超过255个字节
+     * 文件目录。 比如访问“/tmp/test”目录列表，此处必须是目录，整体URI为/v2/{project_id}/clusters/{cluster_id}/files?path=%2Ftmp%2Ftest 单层目录要遵循以下规则： - 不能为空 - 不能以\".\"开头或结尾 - 不能包括下列符号 : :*?\"<>|\\;&,'`!{}[]$%+ - 不能超过255个字节
      * @return path
      */
     public String getPath() {
@@ -280,7 +280,7 @@ public class ShowHdfsFileListRequest  {
 
 
     /**
-     * 分页参数，表示从该偏移量开始查询文件列表，默认值为1。
+     * 分页参数，表示从该偏移量开始查询文件列表，默认值为0。
      * @return offset
      */
     public String getOffset() {
@@ -324,7 +324,7 @@ public class ShowHdfsFileListRequest  {
 
 
     /**
-     * 列表排序按该属性排序。缺省值：path_suffix  - path_suffix：文件或目录名称 - length：文件大小 - modification_time：修改时间
+     * 列表排序按该属性排序。缺省值：path_suffix - path_suffix：文件或目录名称 - length：文件大小 - modification_time：修改时间
      * @return sortKey
      */
     public SortKeyEnum getSortKey() {

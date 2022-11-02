@@ -65,7 +65,7 @@ public class ListFeaturesV2Request {
     }
 
     /**
-     * 每页显示的条目数量
+     * 每页显示的条目数量，条目数量小于等于0时，自动转换为20，条目数量大于500时，自动转换为500
      * minimum: 1
      * maximum: 500
      * @return limit

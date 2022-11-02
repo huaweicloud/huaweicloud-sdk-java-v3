@@ -13,12 +13,12 @@ public class ShowUrlTaskInfoRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
-    private Integer startTime;
+    private Long startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time")
 
-    private Integer endTime;
+    private Long endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
@@ -50,7 +50,7 @@ public class ShowUrlTaskInfoRequest {
 
     private String fileType;
 
-    public ShowUrlTaskInfoRequest withStartTime(Integer startTime) {
+    public ShowUrlTaskInfoRequest withStartTime(Long startTime) {
         this.startTime = startTime;
         return this;
     }
@@ -59,15 +59,15 @@ public class ShowUrlTaskInfoRequest {
      * 起始时间戳（毫秒），默认当天00:00
      * @return startTime
      */
-    public Integer getStartTime() {
+    public Long getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(Integer startTime) {
+    public void setStartTime(Long startTime) {
         this.startTime = startTime;
     }
 
-    public ShowUrlTaskInfoRequest withEndTime(Integer endTime) {
+    public ShowUrlTaskInfoRequest withEndTime(Long endTime) {
         this.endTime = endTime;
         return this;
     }
@@ -76,11 +76,11 @@ public class ShowUrlTaskInfoRequest {
      * 结束时间戳（毫秒），默认次日00:00
      * @return endTime
      */
-    public Integer getEndTime() {
+    public Long getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(Integer endTime) {
+    public void setEndTime(Long endTime) {
         this.endTime = endTime;
     }
 

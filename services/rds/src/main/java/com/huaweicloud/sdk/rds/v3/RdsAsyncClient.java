@@ -371,6 +371,39 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 创建插件
+     *
+     * 在指定数据库上创建插件。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreatePostgresqlExtensionRequest 请求对象
+     * @return CompletableFuture<CreatePostgresqlExtensionResponse>
+     */
+    public CompletableFuture<CreatePostgresqlExtensionResponse> createPostgresqlExtensionAsync(
+        CreatePostgresqlExtensionRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.createPostgresqlExtension);
+    }
+
+    /**
+     * 创建插件
+     *
+     * 在指定数据库上创建插件。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreatePostgresqlExtensionRequest 请求对象
+     * @return AsyncInvoker<CreatePostgresqlExtensionRequest, CreatePostgresqlExtensionResponse>
+     */
+    public AsyncInvoker<CreatePostgresqlExtensionRequest, CreatePostgresqlExtensionResponse> createPostgresqlExtensionAsyncInvoker(
+        CreatePostgresqlExtensionRequest request) {
+        return new AsyncInvoker<CreatePostgresqlExtensionRequest, CreatePostgresqlExtensionResponse>(request,
+            RdsMeta.createPostgresqlExtension, hcClient);
+    }
+
+    /**
      * 恢复到新实例
      *
      * 恢复到新实例。
@@ -497,6 +530,39 @@ public class RdsAsyncClient {
         DeleteManualBackupRequest request) {
         return new AsyncInvoker<DeleteManualBackupRequest, DeleteManualBackupResponse>(request,
             RdsMeta.deleteManualBackup, hcClient);
+    }
+
+    /**
+     * 删除插件
+     *
+     * 在指定数据库上删除插件。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeletePostgresqlExtensionRequest 请求对象
+     * @return CompletableFuture<DeletePostgresqlExtensionResponse>
+     */
+    public CompletableFuture<DeletePostgresqlExtensionResponse> deletePostgresqlExtensionAsync(
+        DeletePostgresqlExtensionRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.deletePostgresqlExtension);
+    }
+
+    /**
+     * 删除插件
+     *
+     * 在指定数据库上删除插件。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeletePostgresqlExtensionRequest 请求对象
+     * @return AsyncInvoker<DeletePostgresqlExtensionRequest, DeletePostgresqlExtensionResponse>
+     */
+    public AsyncInvoker<DeletePostgresqlExtensionRequest, DeletePostgresqlExtensionResponse> deletePostgresqlExtensionAsyncInvoker(
+        DeletePostgresqlExtensionRequest request) {
+        return new AsyncInvoker<DeletePostgresqlExtensionRequest, DeletePostgresqlExtensionResponse>(request,
+            RdsMeta.deletePostgresqlExtension, hcClient);
     }
 
     /**
@@ -1004,6 +1070,39 @@ public class RdsAsyncClient {
         ListOffSiteRestoreTimesRequest request) {
         return new AsyncInvoker<ListOffSiteRestoreTimesRequest, ListOffSiteRestoreTimesResponse>(request,
             RdsMeta.listOffSiteRestoreTimes, hcClient);
+    }
+
+    /**
+     * 查询插件
+     *
+     * 获取指定数据库的插件信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListPostgresqlExtensionRequest 请求对象
+     * @return CompletableFuture<ListPostgresqlExtensionResponse>
+     */
+    public CompletableFuture<ListPostgresqlExtensionResponse> listPostgresqlExtensionAsync(
+        ListPostgresqlExtensionRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listPostgresqlExtension);
+    }
+
+    /**
+     * 查询插件
+     *
+     * 获取指定数据库的插件信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListPostgresqlExtensionRequest 请求对象
+     * @return AsyncInvoker<ListPostgresqlExtensionRequest, ListPostgresqlExtensionResponse>
+     */
+    public AsyncInvoker<ListPostgresqlExtensionRequest, ListPostgresqlExtensionResponse> listPostgresqlExtensionAsyncInvoker(
+        ListPostgresqlExtensionRequest request) {
+        return new AsyncInvoker<ListPostgresqlExtensionRequest, ListPostgresqlExtensionResponse>(request,
+            RdsMeta.listPostgresqlExtension, hcClient);
     }
 
     /**

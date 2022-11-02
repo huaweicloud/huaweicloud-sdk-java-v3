@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.mrs.v2.model.AddJobs;
+import com.huaweicloud.sdk.mrs.v2.model.AddJobsReqV11;
 import com.huaweicloud.sdk.mrs.v2.model.BootstrapScript;
 import com.huaweicloud.sdk.mrs.v2.model.ChargeInfo;
 import com.huaweicloud.sdk.mrs.v2.model.NodeGroupV2;
@@ -196,7 +196,7 @@ public class CreateClusterReqV2  {
     
     private List<Tag> tags = null;
         /**
-     * 集群创建失败时，是否收集失败日志。 默认设置为1，此时将创建OBS桶仅用于MRS集群创建失败时的日志收集。  枚举值： - 0：不收集 - 1：收集
+     * 集群创建失败时，是否收集失败日志。 默认设置为1，此时将创建OBS桶仅用于MRS集群创建失败时的日志收集。 枚举值： - 0：不收集 - 1：收集
      */
     public static final class LogCollectionEnum {
 
@@ -300,7 +300,7 @@ public class CreateClusterReqV2  {
     @JsonProperty(value="add_jobs")
     
     
-    private List<AddJobs> addJobs = null;
+    private List<AddJobsReqV11> addJobs = null;
     
     public CreateClusterReqV2 withIsDecProject(Boolean isDecProject) {
         this.isDecProject = isDecProject;
@@ -333,7 +333,7 @@ public class CreateClusterReqV2  {
 
 
     /**
-     * 集群版本。 MRS目前支持MRS 1.9.2、MRS 3.1.0版本。
+     * 集群版本。例如：MRS 3.1.0。
      * @return clusterVersion
      */
     public String getClusterVersion() {
@@ -355,7 +355,7 @@ public class CreateClusterReqV2  {
 
 
     /**
-     * 集群名称，不允许相同。 只能由字母、数字、中划线和下划线组成，并且长度为1～64个字符。
+     * 集群名称，不允许相同。  只能由字母、数字、中划线和下划线组成，并且长度为1～64个字符。
      * @return clusterName
      */
     public String getClusterName() {
@@ -450,7 +450,7 @@ public class CreateClusterReqV2  {
 
 
     /**
-     * 子网所在VPC名称。 通过VPC管理控制台获取名称： 1) 登录VPC管理控制台。 2) 单击“虚拟私有云”，从左侧列表选择虚拟私有云。  在“虚拟私有云”页面的列表中即可获取VPC名称。
+     * 子网所在VPC名称。 通过VPC管理控制台获取名称： 1) 登录VPC管理控制台。 2) 单击“虚拟私有云”，从左侧列表选择虚拟私有云。 在“虚拟私有云”页面的列表中即可获取VPC名称。
      * @return vpcName
      */
     public String getVpcName() {
@@ -472,7 +472,7 @@ public class CreateClusterReqV2  {
 
 
     /**
-     * 子网ID。通过VPC管理控制台获取子网ID： 1) 登录VPC管理控制台。 2) 单击“虚拟私有云”，从左侧列表选择虚拟私有云。 3) 单击对应虚拟私有云所在行的“子网个数”查看子网。 4) 单击对应子网名称，获取“网络ID”。  “subnet_id”和“subnet_name”必须至少填写一个，当这两个参数同时配置但是不匹配同一个子网时，集群会创建失败，请仔细填写参数。推荐使用“subnet_id”。
+     * 子网ID。通过VPC管理控制台获取子网ID： 1) 登录VPC管理控制台。 2) 单击“虚拟私有云”，从左侧列表选择虚拟私有云。 3) 单击对应虚拟私有云所在行的“子网个数”查看子网。 4) 单击对应子网名称，获取“网络ID”。 “subnet_id”和“subnet_name”必须至少填写一个，当这两个参数同时配置但是不匹配同一个子网时，集群会创建失败，请仔细填写参数。推荐使用“subnet_id”。
      * @return subnetId
      */
     public String getSubnetId() {
@@ -494,7 +494,7 @@ public class CreateClusterReqV2  {
 
 
     /**
-     * 子网名称。 通过VPC管理控制台获取子网名称： 1) 登录管理控制台。 2) 单击“虚拟私有云”，从左侧列表选择虚拟私有云。 3) 单击对应虚拟私有云所在行的“子网个数”查看子网，获取子网名称。  “subnet_id”和“subnet_name”必须至少填写一个，当这两个参数同时配置但是不匹配同一个子网时，集群会创建失败，请仔细填写参数。当仅填写“subnet_name”一个参数且VPC下存在同名子网时，创建集群时以VPC平台第一个名称的子网为准。推荐使用“subnet_id”。
+     * 子网名称。 通过VPC管理控制台获取子网名称： 1) 登录管理控制台。 2) 单击“虚拟私有云”，从左侧列表选择虚拟私有云。 3) 单击对应虚拟私有云所在行的“子网个数”查看子网，获取子网名称。 “subnet_id”和“subnet_name”必须至少填写一个，当这两个参数同时配置但是不匹配同一个子网时，集群会创建失败，请仔细填写参数。当仅填写“subnet_name”一个参数且VPC下存在同名子网时，创建集群时以VPC平台第一个名称的子网为准。推荐使用“subnet_id”。
      * @return subnetName
      */
     public String getSubnetName() {
@@ -538,7 +538,7 @@ public class CreateClusterReqV2  {
 
 
     /**
-     * 可用分区名称。 可用分区信息请参见[终端节点](https://support.huaweicloud.com/api-mrs/mrs_02_0003.html)。
+     * 可用分区名称，不支持多AZ集群。 可用分区信息请参见[终端节点](https://support.huaweicloud.com/api-mrs/mrs_02_0003.html)。
      * @return availabilityZone
      */
     public String getAvailabilityZone() {
@@ -714,7 +714,7 @@ public class CreateClusterReqV2  {
 
 
     /**
-     * 企业项目ID。  创建集群时，给集群绑定企业项目ID。  默认设置为0，表示为default企业项目。  获取方式请参见《企业管理API参考》的“查询企业项目列表”响应消息表“enterprise_project字段数据结构说明”的“id”。
+     * 企业项目ID。 创建集群时，给集群绑定企业项目ID。 默认设置为0，表示为default企业项目。 获取方式请参见《企业管理API参考》的“查询企业项目列表”响应消息表“enterprise_project字段数据结构说明”的“id”。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -860,7 +860,7 @@ public class CreateClusterReqV2  {
 
 
     /**
-     * 集群创建失败时，是否收集失败日志。 默认设置为1，此时将创建OBS桶仅用于MRS集群创建失败时的日志收集。  枚举值： - 0：不收集 - 1：收集
+     * 集群创建失败时，是否收集失败日志。 默认设置为1，此时将创建OBS桶仅用于MRS集群创建失败时的日志收集。 枚举值： - 0：不收集 - 1：收集
      * @return logCollection
      */
     public LogCollectionEnum getLogCollection() {
@@ -945,13 +945,13 @@ public class CreateClusterReqV2  {
 
     
 
-    public CreateClusterReqV2 withAddJobs(List<AddJobs> addJobs) {
+    public CreateClusterReqV2 withAddJobs(List<AddJobsReqV11> addJobs) {
         this.addJobs = addJobs;
         return this;
     }
 
     
-    public CreateClusterReqV2 addAddJobsItem(AddJobs addJobsItem) {
+    public CreateClusterReqV2 addAddJobsItem(AddJobsReqV11 addJobsItem) {
         if(this.addJobs == null) {
             this.addJobs = new ArrayList<>();
         }
@@ -959,7 +959,7 @@ public class CreateClusterReqV2  {
         return this;
     }
 
-    public CreateClusterReqV2 withAddJobs(Consumer<List<AddJobs>> addJobsSetter) {
+    public CreateClusterReqV2 withAddJobs(Consumer<List<AddJobsReqV11>> addJobsSetter) {
         if(this.addJobs == null) {
             this.addJobs = new ArrayList<>();
         }
@@ -971,11 +971,11 @@ public class CreateClusterReqV2  {
      * 创建集群时可同时提交作业，当前版本暂时只支持新增一个作业。
      * @return addJobs
      */
-    public List<AddJobs> getAddJobs() {
+    public List<AddJobsReqV11> getAddJobs() {
         return addJobs;
     }
 
-    public void setAddJobs(List<AddJobs> addJobs) {
+    public void setAddJobs(List<AddJobsReqV11> addJobs) {
         this.addJobs = addJobs;
     }
 
