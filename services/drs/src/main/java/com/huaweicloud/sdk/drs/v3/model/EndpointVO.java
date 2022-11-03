@@ -229,32 +229,32 @@ public class EndpointVO {
     private String dbVersion;
 
     /**
-     * mongoHa模式
+     * mongoHa模式。 - Sharding 集群 - ReplicaSet 副本集 - ReplicaSingle 单节点
      */
     public static final class MongoHaModeEnum {
 
         /**
-         * Enum SHARDING_ for value: "Sharding 集群"
+         * Enum SHARDING for value: "Sharding"
          */
-        public static final MongoHaModeEnum SHARDING_ = new MongoHaModeEnum("Sharding 集群");
+        public static final MongoHaModeEnum SHARDING = new MongoHaModeEnum("Sharding");
 
         /**
-         * Enum REPLICASET_ for value: "ReplicaSet 副本集"
+         * Enum REPLICASET for value: "ReplicaSet"
          */
-        public static final MongoHaModeEnum REPLICASET_ = new MongoHaModeEnum("ReplicaSet 副本集");
+        public static final MongoHaModeEnum REPLICASET = new MongoHaModeEnum("ReplicaSet");
 
         /**
-         * Enum REPLICASINGLE_ for value: "ReplicaSingle 单节点"
+         * Enum REPLICASINGLE for value: "ReplicaSingle"
          */
-        public static final MongoHaModeEnum REPLICASINGLE_ = new MongoHaModeEnum("ReplicaSingle 单节点");
+        public static final MongoHaModeEnum REPLICASINGLE = new MongoHaModeEnum("ReplicaSingle");
 
         private static final Map<String, MongoHaModeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, MongoHaModeEnum> createStaticFields() {
             Map<String, MongoHaModeEnum> map = new HashMap<>();
-            map.put("Sharding 集群", SHARDING_);
-            map.put("ReplicaSet 副本集", REPLICASET_);
-            map.put("ReplicaSingle 单节点", REPLICASINGLE_);
+            map.put("Sharding", SHARDING);
+            map.put("ReplicaSet", REPLICASET);
+            map.put("ReplicaSingle", REPLICASINGLE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -322,83 +322,92 @@ public class EndpointVO {
     private String projectId;
 
     /**
-     * 集群模式
+     * 集群模式。 - Single：单节点RDS - Ha：主备RDS - GR：金融版RDS - Sharding：mongodb 集群或DDM的模式，均默认为分片 - Sharding4.0+：mongodb 集群版本4.0+，默认为不分片 - ReplicaSet：mongodb 副本集,Replica RDS只读副本 - ReplicaSingle：mongodb 单节点 - Cluster：集群 - Independent：gaussdbv5 independent模式 - Combined：gaussdbv5 Combined模式 - Distributed ：分布式taurus - NoSharding：非集群模式
      */
     public static final class ClusterModeEnum {
 
         /**
-         * Enum SINGLE_RDS for value: "Single 单节点RDS"
+         * Enum SINGLE for value: "Single"
          */
-        public static final ClusterModeEnum SINGLE_RDS = new ClusterModeEnum("Single 单节点RDS");
+        public static final ClusterModeEnum SINGLE = new ClusterModeEnum("Single");
 
         /**
-         * Enum HA_RDS for value: "Ha 主备RDS"
+         * Enum HA for value: "Ha"
          */
-        public static final ClusterModeEnum HA_RDS = new ClusterModeEnum("Ha 主备RDS");
+        public static final ClusterModeEnum HA = new ClusterModeEnum("Ha");
 
         /**
-         * Enum GR_RDS for value: "GR 金融版RDS"
+         * Enum GR for value: "GR"
          */
-        public static final ClusterModeEnum GR_RDS = new ClusterModeEnum("GR 金融版RDS");
+        public static final ClusterModeEnum GR = new ClusterModeEnum("GR");
 
         /**
-         * Enum SHARDING_MONGODB_DDM_ for value: "Sharding mongodb 集群或DDM的模式，均默认为分片"
+         * Enum SHARDING for value: "Sharding"
          */
-        public static final ClusterModeEnum SHARDING_MONGODB_DDM_ =
-            new ClusterModeEnum("Sharding mongodb 集群或DDM的模式，均默认为分片");
+        public static final ClusterModeEnum SHARDING = new ClusterModeEnum("Sharding");
 
         /**
-         * Enum REPLICASET_MONGODB_ for value: "ReplicaSet mongodb 副本集"
+         * Enum SHARDING4_0_ for value: "Sharding4.0+"
          */
-        public static final ClusterModeEnum REPLICASET_MONGODB_ = new ClusterModeEnum("ReplicaSet mongodb 副本集");
+        public static final ClusterModeEnum SHARDING4_0_ = new ClusterModeEnum("Sharding4.0+");
 
         /**
-         * Enum REPLICA_RDS_ for value: "Replica RDS只读副本"
+         * Enum REPLICASET for value: "ReplicaSet"
          */
-        public static final ClusterModeEnum REPLICA_RDS_ = new ClusterModeEnum("Replica RDS只读副本");
+        public static final ClusterModeEnum REPLICASET = new ClusterModeEnum("ReplicaSet");
 
         /**
-         * Enum REPLICASINGLE_MONGODB_ for value: "ReplicaSingle mongodb 单节点"
+         * Enum REPLICA for value: "Replica"
          */
-        public static final ClusterModeEnum REPLICASINGLE_MONGODB_ = new ClusterModeEnum("ReplicaSingle mongodb 单节点");
+        public static final ClusterModeEnum REPLICA = new ClusterModeEnum("Replica");
 
         /**
-         * Enum CLUSTER_ for value: "Cluster 集群"
+         * Enum REPLICASINGLE for value: "ReplicaSingle"
          */
-        public static final ClusterModeEnum CLUSTER_ = new ClusterModeEnum("Cluster 集群");
+        public static final ClusterModeEnum REPLICASINGLE = new ClusterModeEnum("ReplicaSingle");
 
         /**
-         * Enum INDEPENDENT_GAUSSDBV5_INDEPENDENT_ for value: "Independent gaussdbv5 independent模式"
+         * Enum CLUSTER for value: "Cluster"
          */
-        public static final ClusterModeEnum INDEPENDENT_GAUSSDBV5_INDEPENDENT_ =
-            new ClusterModeEnum("Independent gaussdbv5 independent模式");
+        public static final ClusterModeEnum CLUSTER = new ClusterModeEnum("Cluster");
 
         /**
-         * Enum COMBINED_GAUSSDBV5_COMBINED_ for value: "Combined gaussdbv5 Combined模式"
+         * Enum INDEPENDENT for value: "Independent"
          */
-        public static final ClusterModeEnum COMBINED_GAUSSDBV5_COMBINED_ =
-            new ClusterModeEnum("Combined gaussdbv5 Combined模式");
+        public static final ClusterModeEnum INDEPENDENT = new ClusterModeEnum("Independent");
 
         /**
-         * Enum DISTRIBUTED_TAURUS for value: "Distributed 分布式taurus"
+         * Enum COMBINED for value: "Combined"
          */
-        public static final ClusterModeEnum DISTRIBUTED_TAURUS = new ClusterModeEnum("Distributed 分布式taurus");
+        public static final ClusterModeEnum COMBINED = new ClusterModeEnum("Combined");
+
+        /**
+         * Enum DISTRIBUTED for value: "Distributed"
+         */
+        public static final ClusterModeEnum DISTRIBUTED = new ClusterModeEnum("Distributed");
+
+        /**
+         * Enum NOSHARDING for value: "NoSharding"
+         */
+        public static final ClusterModeEnum NOSHARDING = new ClusterModeEnum("NoSharding");
 
         private static final Map<String, ClusterModeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ClusterModeEnum> createStaticFields() {
             Map<String, ClusterModeEnum> map = new HashMap<>();
-            map.put("Single 单节点RDS", SINGLE_RDS);
-            map.put("Ha 主备RDS", HA_RDS);
-            map.put("GR 金融版RDS", GR_RDS);
-            map.put("Sharding mongodb 集群或DDM的模式，均默认为分片", SHARDING_MONGODB_DDM_);
-            map.put("ReplicaSet mongodb 副本集", REPLICASET_MONGODB_);
-            map.put("Replica RDS只读副本", REPLICA_RDS_);
-            map.put("ReplicaSingle mongodb 单节点", REPLICASINGLE_MONGODB_);
-            map.put("Cluster 集群", CLUSTER_);
-            map.put("Independent gaussdbv5 independent模式", INDEPENDENT_GAUSSDBV5_INDEPENDENT_);
-            map.put("Combined gaussdbv5 Combined模式", COMBINED_GAUSSDBV5_COMBINED_);
-            map.put("Distributed 分布式taurus", DISTRIBUTED_TAURUS);
+            map.put("Single", SINGLE);
+            map.put("Ha", HA);
+            map.put("GR", GR);
+            map.put("Sharding", SHARDING);
+            map.put("Sharding4.0+", SHARDING4_0_);
+            map.put("ReplicaSet", REPLICASET);
+            map.put("Replica", REPLICA);
+            map.put("ReplicaSingle", REPLICASINGLE);
+            map.put("Cluster", CLUSTER);
+            map.put("Independent", INDEPENDENT);
+            map.put("Combined", COMBINED);
+            map.put("Distributed", DISTRIBUTED);
+            map.put("NoSharding", NOSHARDING);
             return Collections.unmodifiableMap(map);
         }
 
@@ -955,7 +964,7 @@ public class EndpointVO {
     }
 
     /**
-     * mongoHa模式
+     * mongoHa模式。 - Sharding 集群 - ReplicaSet 副本集 - ReplicaSingle 单节点
      * @return mongoHaMode
      */
     public MongoHaModeEnum getMongoHaMode() {
@@ -989,7 +998,7 @@ public class EndpointVO {
     }
 
     /**
-     * 集群模式
+     * 集群模式。 - Single：单节点RDS - Ha：主备RDS - GR：金融版RDS - Sharding：mongodb 集群或DDM的模式，均默认为分片 - Sharding4.0+：mongodb 集群版本4.0+，默认为不分片 - ReplicaSet：mongodb 副本集,Replica RDS只读副本 - ReplicaSingle：mongodb 单节点 - Cluster：集群 - Independent：gaussdbv5 independent模式 - Combined：gaussdbv5 Combined模式 - Distributed ：分布式taurus - NoSharding：非集群模式
      * @return clusterMode
      */
     public ClusterModeEnum getClusterMode() {

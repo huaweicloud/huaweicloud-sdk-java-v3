@@ -1572,7 +1572,7 @@ public class CssAsyncClient {
     /**
      * 指定节点类型缩容
      *
-     * 该接口用于集群对不同类型实例的个数以及存储容量进行缩容。
+     * 该接口用于集群对不同类型实例的个数以及存储容量进行缩容。包周期集群不支持API操作。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1587,7 +1587,7 @@ public class CssAsyncClient {
     /**
      * 指定节点类型缩容
      *
-     * 该接口用于集群对不同类型实例的个数以及存储容量进行缩容。
+     * 该接口用于集群对不同类型实例的个数以及存储容量进行缩容。包周期集群不支持API操作。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1604,7 +1604,7 @@ public class CssAsyncClient {
     /**
      * 指定节点缩容
      *
-     * 该接口可以对集群现有节点中指定节点进行缩容。
+     * 该接口可以对集群现有节点中指定节点进行缩容。包周期集群不支持API操作。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1619,7 +1619,7 @@ public class CssAsyncClient {
     /**
      * 指定节点缩容
      *
-     * 该接口可以对集群现有节点中指定节点进行缩容。
+     * 该接口可以对集群现有节点中指定节点进行缩容。包周期集群不支持API操作。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.

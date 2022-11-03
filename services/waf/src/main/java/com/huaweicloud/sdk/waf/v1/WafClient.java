@@ -208,6 +208,68 @@ public class WafClient {
     }
 
     /**
+     * 创建WAF独享引擎实例
+     *
+     * 创建WAF独享引擎实例
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateInstanceRequest 请求对象
+     * @return CreateInstanceResponse
+     */
+    public CreateInstanceResponse createInstance(CreateInstanceRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.createInstance);
+    }
+
+    /**
+     * 创建WAF独享引擎实例
+     *
+     * 创建WAF独享引擎实例
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateInstanceRequest 请求对象
+     * @return SyncInvoker<CreateInstanceRequest, CreateInstanceResponse>
+     */
+    public SyncInvoker<CreateInstanceRequest, CreateInstanceResponse> createInstanceInvoker(
+        CreateInstanceRequest request) {
+        return new SyncInvoker<CreateInstanceRequest, CreateInstanceResponse>(request, WafMeta.createInstance,
+            hcClient);
+    }
+
+    /**
+     * 创建ip地址组
+     *
+     * 创建ip地址组
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateIpGroupRequest 请求对象
+     * @return CreateIpGroupResponse
+     */
+    public CreateIpGroupResponse createIpGroup(CreateIpGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.createIpGroup);
+    }
+
+    /**
+     * 创建ip地址组
+     *
+     * 创建ip地址组
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateIpGroupRequest 请求对象
+     * @return SyncInvoker<CreateIpGroupRequest, CreateIpGroupResponse>
+     */
+    public SyncInvoker<CreateIpGroupRequest, CreateIpGroupResponse> createIpGroupInvoker(CreateIpGroupRequest request) {
+        return new SyncInvoker<CreateIpGroupRequest, CreateIpGroupResponse>(request, WafMeta.createIpGroup, hcClient);
+    }
+
+    /**
      * 创建防护策略
      *
      * 创建防护策略，系统会在生成策略时配置一些默认的配置项，如果需要修改策略的默认配置项需要通过调用更新防护策略接口实现
@@ -521,6 +583,68 @@ public class WafClient {
         DeleteIgnoreRuleRequest request) {
         return new SyncInvoker<DeleteIgnoreRuleRequest, DeleteIgnoreRuleResponse>(request, WafMeta.deleteIgnoreRule,
             hcClient);
+    }
+
+    /**
+     * 删除WAF独享引擎信息
+     *
+     * 删除WAF独享引擎信息
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteInstanceRequest 请求对象
+     * @return DeleteInstanceResponse
+     */
+    public DeleteInstanceResponse deleteInstance(DeleteInstanceRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.deleteInstance);
+    }
+
+    /**
+     * 删除WAF独享引擎信息
+     *
+     * 删除WAF独享引擎信息
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteInstanceRequest 请求对象
+     * @return SyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse>
+     */
+    public SyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse> deleteInstanceInvoker(
+        DeleteInstanceRequest request) {
+        return new SyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse>(request, WafMeta.deleteInstance,
+            hcClient);
+    }
+
+    /**
+     * 删除ip地址组
+     *
+     * 删除ip地址组
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteIpGroupRequest 请求对象
+     * @return DeleteIpGroupResponse
+     */
+    public DeleteIpGroupResponse deleteIpGroup(DeleteIpGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.deleteIpGroup);
+    }
+
+    /**
+     * 删除ip地址组
+     *
+     * 删除ip地址组
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteIpGroupRequest 请求对象
+     * @return SyncInvoker<DeleteIpGroupRequest, DeleteIpGroupResponse>
+     */
+    public SyncInvoker<DeleteIpGroupRequest, DeleteIpGroupResponse> deleteIpGroupInvoker(DeleteIpGroupRequest request) {
+        return new SyncInvoker<DeleteIpGroupRequest, DeleteIpGroupResponse>(request, WafMeta.deleteIpGroup, hcClient);
     }
 
     /**
@@ -962,6 +1086,66 @@ public class WafClient {
     }
 
     /**
+     * 查询WAF独享引擎列表
+     *
+     * 查询WAF独享引擎列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListInstanceRequest 请求对象
+     * @return ListInstanceResponse
+     */
+    public ListInstanceResponse listInstance(ListInstanceRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.listInstance);
+    }
+
+    /**
+     * 查询WAF独享引擎列表
+     *
+     * 查询WAF独享引擎列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListInstanceRequest 请求对象
+     * @return SyncInvoker<ListInstanceRequest, ListInstanceResponse>
+     */
+    public SyncInvoker<ListInstanceRequest, ListInstanceResponse> listInstanceInvoker(ListInstanceRequest request) {
+        return new SyncInvoker<ListInstanceRequest, ListInstanceResponse>(request, WafMeta.listInstance, hcClient);
+    }
+
+    /**
+     * 查询地址组列表
+     *
+     * 查询地址组列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListIpGroupRequest 请求对象
+     * @return ListIpGroupResponse
+     */
+    public ListIpGroupResponse listIpGroup(ListIpGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.listIpGroup);
+    }
+
+    /**
+     * 查询地址组列表
+     *
+     * 查询地址组列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListIpGroupRequest 请求对象
+     * @return SyncInvoker<ListIpGroupRequest, ListIpGroupResponse>
+     */
+    public SyncInvoker<ListIpGroupRequest, ListIpGroupResponse> listIpGroupInvoker(ListIpGroupRequest request) {
+        return new SyncInvoker<ListIpGroupRequest, ListIpGroupResponse>(request, WafMeta.listIpGroup, hcClient);
+    }
+
+    /**
      * 查询安全总览分类统计top信息
      *
      * 查询安全总览分类统计TOP信息，包含受攻击域名 、攻击源ip、受攻击URL、攻击来源区域、攻击事件分布。需要注意的是，安全总览相关的接口，暂时不能支持任意时间的查询。只能支持 console上显示的 昨天，今天，3天，7天和30天 数据查询。
@@ -1278,6 +1462,38 @@ public class WafClient {
     }
 
     /**
+     * 重命名WAF独享引擎
+     *
+     * 重命名WAF独享引擎
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param RenameInstanceRequest 请求对象
+     * @return RenameInstanceResponse
+     */
+    public RenameInstanceResponse renameInstance(RenameInstanceRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.renameInstance);
+    }
+
+    /**
+     * 重命名WAF独享引擎
+     *
+     * 重命名WAF独享引擎
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param RenameInstanceRequest 请求对象
+     * @return SyncInvoker<RenameInstanceRequest, RenameInstanceResponse>
+     */
+    public SyncInvoker<RenameInstanceRequest, RenameInstanceResponse> renameInstanceInvoker(
+        RenameInstanceRequest request) {
+        return new SyncInvoker<RenameInstanceRequest, RenameInstanceResponse>(request, WafMeta.renameInstance,
+            hcClient);
+    }
+
+    /**
      * 查询证书
      *
      * 查询证书
@@ -1431,6 +1647,98 @@ public class WafClient {
      */
     public SyncInvoker<ShowHostRequest, ShowHostResponse> showHostInvoker(ShowHostRequest request) {
         return new SyncInvoker<ShowHostRequest, ShowHostResponse>(request, WafMeta.showHost, hcClient);
+    }
+
+    /**
+     * 查询WAF独享引擎信息
+     *
+     * 查询WAF独享引擎信息
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowInstanceRequest 请求对象
+     * @return ShowInstanceResponse
+     */
+    public ShowInstanceResponse showInstance(ShowInstanceRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.showInstance);
+    }
+
+    /**
+     * 查询WAF独享引擎信息
+     *
+     * 查询WAF独享引擎信息
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowInstanceRequest 请求对象
+     * @return SyncInvoker<ShowInstanceRequest, ShowInstanceResponse>
+     */
+    public SyncInvoker<ShowInstanceRequest, ShowInstanceResponse> showInstanceInvoker(ShowInstanceRequest request) {
+        return new SyncInvoker<ShowInstanceRequest, ShowInstanceResponse>(request, WafMeta.showInstance, hcClient);
+    }
+
+    /**
+     * 查询ip地址组明细
+     *
+     * 查询ip地址组明细
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowIpGroupRequest 请求对象
+     * @return ShowIpGroupResponse
+     */
+    public ShowIpGroupResponse showIpGroup(ShowIpGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.showIpGroup);
+    }
+
+    /**
+     * 查询ip地址组明细
+     *
+     * 查询ip地址组明细
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowIpGroupRequest 请求对象
+     * @return SyncInvoker<ShowIpGroupRequest, ShowIpGroupResponse>
+     */
+    public SyncInvoker<ShowIpGroupRequest, ShowIpGroupResponse> showIpGroupInvoker(ShowIpGroupRequest request) {
+        return new SyncInvoker<ShowIpGroupRequest, ShowIpGroupResponse>(request, WafMeta.showIpGroup, hcClient);
+    }
+
+    /**
+     * 查询lts配置信息
+     *
+     * 查询lts配置信息
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowLtsInfoConfigRequest 请求对象
+     * @return ShowLtsInfoConfigResponse
+     */
+    public ShowLtsInfoConfigResponse showLtsInfoConfig(ShowLtsInfoConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.showLtsInfoConfig);
+    }
+
+    /**
+     * 查询lts配置信息
+     *
+     * 查询lts配置信息
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowLtsInfoConfigRequest 请求对象
+     * @return SyncInvoker<ShowLtsInfoConfigRequest, ShowLtsInfoConfigResponse>
+     */
+    public SyncInvoker<ShowLtsInfoConfigRequest, ShowLtsInfoConfigResponse> showLtsInfoConfigInvoker(
+        ShowLtsInfoConfigRequest request) {
+        return new SyncInvoker<ShowLtsInfoConfigRequest, ShowLtsInfoConfigResponse>(request, WafMeta.showLtsInfoConfig,
+            hcClient);
     }
 
     /**
@@ -1619,6 +1927,68 @@ public class WafClient {
         UpdateHostProtectStatusRequest request) {
         return new SyncInvoker<UpdateHostProtectStatusRequest, UpdateHostProtectStatusResponse>(request,
             WafMeta.updateHostProtectStatus, hcClient);
+    }
+
+    /**
+     * 修改ip地址组
+     *
+     * 修改ip地址组
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateIpGroupRequest 请求对象
+     * @return UpdateIpGroupResponse
+     */
+    public UpdateIpGroupResponse updateIpGroup(UpdateIpGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.updateIpGroup);
+    }
+
+    /**
+     * 修改ip地址组
+     *
+     * 修改ip地址组
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateIpGroupRequest 请求对象
+     * @return SyncInvoker<UpdateIpGroupRequest, UpdateIpGroupResponse>
+     */
+    public SyncInvoker<UpdateIpGroupRequest, UpdateIpGroupResponse> updateIpGroupInvoker(UpdateIpGroupRequest request) {
+        return new SyncInvoker<UpdateIpGroupRequest, UpdateIpGroupResponse>(request, WafMeta.updateIpGroup, hcClient);
+    }
+
+    /**
+     * 配置全量日志lts
+     *
+     * 配置全量日志lts，该接口可用来开启与关闭wa全量日志以及配置日志组和日志流。日志组id和日志流id可前往云日志服务获取。配置的日志流id要属于所配置的日志组。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateLtsInfoConfigRequest 请求对象
+     * @return UpdateLtsInfoConfigResponse
+     */
+    public UpdateLtsInfoConfigResponse updateLtsInfoConfig(UpdateLtsInfoConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.updateLtsInfoConfig);
+    }
+
+    /**
+     * 配置全量日志lts
+     *
+     * 配置全量日志lts，该接口可用来开启与关闭wa全量日志以及配置日志组和日志流。日志组id和日志流id可前往云日志服务获取。配置的日志流id要属于所配置的日志组。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateLtsInfoConfigRequest 请求对象
+     * @return SyncInvoker<UpdateLtsInfoConfigRequest, UpdateLtsInfoConfigResponse>
+     */
+    public SyncInvoker<UpdateLtsInfoConfigRequest, UpdateLtsInfoConfigResponse> updateLtsInfoConfigInvoker(
+        UpdateLtsInfoConfigRequest request) {
+        return new SyncInvoker<UpdateLtsInfoConfigRequest, UpdateLtsInfoConfigResponse>(request,
+            WafMeta.updateLtsInfoConfig, hcClient);
     }
 
     /**

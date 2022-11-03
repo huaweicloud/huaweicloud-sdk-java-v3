@@ -231,6 +231,41 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
 
     private Integer roleId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "release_id")
+
+    private Integer releaseId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "duration")
+
+    private String duration;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "execution_state")
+
+    private String executionState;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "executor_id")
+
+    private String executorId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "executor_nick_name")
+
+    private String executorNickName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "steps")
+
+    private Map<String, Step> steps = null;
+
     public ShowDeployTaskDetailResponse withTaskId(String taskId) {
         this.taskId = taskId;
         return this;
@@ -706,6 +741,141 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
         this.roleId = roleId;
     }
 
+    public ShowDeployTaskDetailResponse withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * 部署任务id
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public ShowDeployTaskDetailResponse withReleaseId(Integer releaseId) {
+        this.releaseId = releaseId;
+        return this;
+    }
+
+    /**
+     * 任务序列id
+     * @return releaseId
+     */
+    public Integer getReleaseId() {
+        return releaseId;
+    }
+
+    public void setReleaseId(Integer releaseId) {
+        this.releaseId = releaseId;
+    }
+
+    public ShowDeployTaskDetailResponse withDuration(String duration) {
+        this.duration = duration;
+        return this;
+    }
+
+    /**
+     * 执行时间
+     * @return duration
+     */
+    public String getDuration() {
+        return duration;
+    }
+
+    public void setDuration(String duration) {
+        this.duration = duration;
+    }
+
+    public ShowDeployTaskDetailResponse withExecutionState(String executionState) {
+        this.executionState = executionState;
+        return this;
+    }
+
+    /**
+     * 执行状态
+     * @return executionState
+     */
+    public String getExecutionState() {
+        return executionState;
+    }
+
+    public void setExecutionState(String executionState) {
+        this.executionState = executionState;
+    }
+
+    public ShowDeployTaskDetailResponse withExecutorId(String executorId) {
+        this.executorId = executorId;
+        return this;
+    }
+
+    /**
+     * 执行者id
+     * @return executorId
+     */
+    public String getExecutorId() {
+        return executorId;
+    }
+
+    public void setExecutorId(String executorId) {
+        this.executorId = executorId;
+    }
+
+    public ShowDeployTaskDetailResponse withExecutorNickName(String executorNickName) {
+        this.executorNickName = executorNickName;
+        return this;
+    }
+
+    /**
+     * 执行者名称
+     * @return executorNickName
+     */
+    public String getExecutorNickName() {
+        return executorNickName;
+    }
+
+    public void setExecutorNickName(String executorNickName) {
+        this.executorNickName = executorNickName;
+    }
+
+    public ShowDeployTaskDetailResponse withSteps(Map<String, Step> steps) {
+        this.steps = steps;
+        return this;
+    }
+
+    public ShowDeployTaskDetailResponse putStepsItem(String key, Step stepsItem) {
+        if (this.steps == null) {
+            this.steps = new HashMap<>();
+        }
+        this.steps.put(key, stepsItem);
+        return this;
+    }
+
+    public ShowDeployTaskDetailResponse withSteps(Consumer<Map<String, Step>> stepsSetter) {
+        if (this.steps == null) {
+            this.steps = new HashMap<>();
+        }
+        stepsSetter.accept(this.steps);
+        return this;
+    }
+
+    /**
+     * 执行步骤
+     * @return steps
+     */
+    public Map<String, Step> getSteps() {
+        return steps;
+    }
+
+    public void setSteps(Map<String, Step> steps) {
+        this.steps = steps;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -741,7 +911,14 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
             && Objects.equals(this.canCopy, showDeployTaskDetailResponse.canCopy)
             && Objects.equals(this.canManage, showDeployTaskDetailResponse.canManage)
             && Objects.equals(this.appComponentList, showDeployTaskDetailResponse.appComponentList)
-            && Objects.equals(this.roleId, showDeployTaskDetailResponse.roleId);
+            && Objects.equals(this.roleId, showDeployTaskDetailResponse.roleId)
+            && Objects.equals(this.id, showDeployTaskDetailResponse.id)
+            && Objects.equals(this.releaseId, showDeployTaskDetailResponse.releaseId)
+            && Objects.equals(this.duration, showDeployTaskDetailResponse.duration)
+            && Objects.equals(this.executionState, showDeployTaskDetailResponse.executionState)
+            && Objects.equals(this.executorId, showDeployTaskDetailResponse.executorId)
+            && Objects.equals(this.executorNickName, showDeployTaskDetailResponse.executorNickName)
+            && Objects.equals(this.steps, showDeployTaskDetailResponse.steps);
     }
 
     @Override
@@ -772,7 +949,14 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
             canCopy,
             canManage,
             appComponentList,
-            roleId);
+            roleId,
+            id,
+            releaseId,
+            duration,
+            executionState,
+            executorId,
+            executorNickName,
+            steps);
     }
 
     @Override
@@ -806,6 +990,13 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
         sb.append("    canManage: ").append(toIndentedString(canManage)).append("\n");
         sb.append("    appComponentList: ").append(toIndentedString(appComponentList)).append("\n");
         sb.append("    roleId: ").append(toIndentedString(roleId)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    releaseId: ").append(toIndentedString(releaseId)).append("\n");
+        sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
+        sb.append("    executionState: ").append(toIndentedString(executionState)).append("\n");
+        sb.append("    executorId: ").append(toIndentedString(executorId)).append("\n");
+        sb.append("    executorNickName: ").append(toIndentedString(executorNickName)).append("\n");
+        sb.append("    steps: ").append(toIndentedString(steps)).append("\n");
         sb.append("}");
         return sb.toString();
     }

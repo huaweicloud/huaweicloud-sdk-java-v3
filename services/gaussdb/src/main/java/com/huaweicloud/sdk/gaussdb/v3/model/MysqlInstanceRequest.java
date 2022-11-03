@@ -152,6 +152,13 @@ public class MysqlInstanceRequest  {
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="lower_case_table_names")
+    
+    
+    private Integer lowerCaseTableNames;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_id")
     
     
@@ -602,6 +609,28 @@ public class MysqlInstanceRequest  {
 
     
 
+    public MysqlInstanceRequest withLowerCaseTableNames(Integer lowerCaseTableNames) {
+        this.lowerCaseTableNames = lowerCaseTableNames;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 表名大小写是否敏感，默认值是“1”。  取值范围： - 0：表名被存储成固定且表名称大小写敏感。 - 1：表名将被存储成小写且表名称大小写不敏感。
+     * @return lowerCaseTableNames
+     */
+    public Integer getLowerCaseTableNames() {
+        return lowerCaseTableNames;
+    }
+
+    public void setLowerCaseTableNames(Integer lowerCaseTableNames) {
+        this.lowerCaseTableNames = lowerCaseTableNames;
+    }
+
+    
+
     public MysqlInstanceRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -673,12 +702,13 @@ public class MysqlInstanceRequest  {
             Objects.equals(this.slaveCount, mysqlInstanceRequest.slaveCount) &&
             Objects.equals(this.volume, mysqlInstanceRequest.volume) &&
             Objects.equals(this.tags, mysqlInstanceRequest.tags) &&
+            Objects.equals(this.lowerCaseTableNames, mysqlInstanceRequest.lowerCaseTableNames) &&
             Objects.equals(this.enterpriseProjectId, mysqlInstanceRequest.enterpriseProjectId) &&
             Objects.equals(this.dedicatedResourceId, mysqlInstanceRequest.dedicatedResourceId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(chargeInfo, region, name, datastore, mode, flavorRef, vpcId, subnetId, securityGroupId, configurationId, password, backupStrategy, timeZone, availabilityZoneMode, masterAvailabilityZone, slaveCount, volume, tags, enterpriseProjectId, dedicatedResourceId);
+        return Objects.hash(chargeInfo, region, name, datastore, mode, flavorRef, vpcId, subnetId, securityGroupId, configurationId, password, backupStrategy, timeZone, availabilityZoneMode, masterAvailabilityZone, slaveCount, volume, tags, lowerCaseTableNames, enterpriseProjectId, dedicatedResourceId);
     }
     @Override
     public String toString() {
@@ -702,6 +732,7 @@ public class MysqlInstanceRequest  {
         sb.append("    slaveCount: ").append(toIndentedString(slaveCount)).append("\n");
         sb.append("    volume: ").append(toIndentedString(volume)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    lowerCaseTableNames: ").append(toIndentedString(lowerCaseTableNames)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    dedicatedResourceId: ").append(toIndentedString(dedicatedResourceId)).append("\n");
         sb.append("}");

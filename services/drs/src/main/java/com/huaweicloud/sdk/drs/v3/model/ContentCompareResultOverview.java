@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * 
+ * ContentCompareResultOverview
  */
 public class ContentCompareResultOverview {
 
@@ -26,60 +26,59 @@ public class ContentCompareResultOverview {
     private String targetDbName;
 
     /**
-     * 对比结果。
+     * 对比结果。 - CONSISTENT-一致 - INCONSISTENT-不一致 - COMPARING-正在对比 - WAITING_FOR_COMPARISON-等待对比 - FAILED_TO_COMPARE-对比失败 - TARGET_DB_NOT_EXIT-目标库不存在 - CAN_NOT_COMPARE-无法对比
      */
     public static final class ContentCompareResultEnum {
 
         /**
-         * Enum CONSISTENT_ for value: "CONSISTENT-一致"
+         * Enum CONSISTENT for value: "CONSISTENT"
          */
-        public static final ContentCompareResultEnum CONSISTENT_ = new ContentCompareResultEnum("CONSISTENT-一致");
+        public static final ContentCompareResultEnum CONSISTENT = new ContentCompareResultEnum("CONSISTENT");
 
         /**
-         * Enum INCONSISTENT_ for value: "INCONSISTENT-不一致"
+         * Enum INCONSISTENT for value: "INCONSISTENT"
          */
-        public static final ContentCompareResultEnum INCONSISTENT_ = new ContentCompareResultEnum("INCONSISTENT-不一致");
+        public static final ContentCompareResultEnum INCONSISTENT = new ContentCompareResultEnum("INCONSISTENT");
 
         /**
-         * Enum COMPARING_ for value: "COMPARING-正在对比"
+         * Enum COMPARING for value: "COMPARING"
          */
-        public static final ContentCompareResultEnum COMPARING_ = new ContentCompareResultEnum("COMPARING-正在对比");
+        public static final ContentCompareResultEnum COMPARING = new ContentCompareResultEnum("COMPARING");
 
         /**
-         * Enum WAITING_FOR_COMPARISON_ for value: "WAITING_FOR_COMPARISON-等待对比"
+         * Enum WAITING_FOR_COMPARISON for value: "WAITING_FOR_COMPARISON"
          */
-        public static final ContentCompareResultEnum WAITING_FOR_COMPARISON_ =
-            new ContentCompareResultEnum("WAITING_FOR_COMPARISON-等待对比");
+        public static final ContentCompareResultEnum WAITING_FOR_COMPARISON =
+            new ContentCompareResultEnum("WAITING_FOR_COMPARISON");
 
         /**
-         * Enum FAILED_TO_COMPARE_ for value: "FAILED_TO_COMPARE-对比失败"
+         * Enum FAILED_TO_COMPARE for value: "FAILED_TO_COMPARE"
          */
-        public static final ContentCompareResultEnum FAILED_TO_COMPARE_ =
-            new ContentCompareResultEnum("FAILED_TO_COMPARE-对比失败");
+        public static final ContentCompareResultEnum FAILED_TO_COMPARE =
+            new ContentCompareResultEnum("FAILED_TO_COMPARE");
 
         /**
-         * Enum TARGET_DB_NOT_EXIT_ for value: "TARGET_DB_NOT_EXIT-目标库不存在"
+         * Enum TARGET_DB_NOT_EXIT for value: "TARGET_DB_NOT_EXIT"
          */
-        public static final ContentCompareResultEnum TARGET_DB_NOT_EXIT_ =
-            new ContentCompareResultEnum("TARGET_DB_NOT_EXIT-目标库不存在");
+        public static final ContentCompareResultEnum TARGET_DB_NOT_EXIT =
+            new ContentCompareResultEnum("TARGET_DB_NOT_EXIT");
 
         /**
-         * Enum CAN_NOT_COMPARE_ for value: "CAN_NOT_COMPARE-无法对比"
+         * Enum CAN_NOT_COMPARE for value: "CAN_NOT_COMPARE"
          */
-        public static final ContentCompareResultEnum CAN_NOT_COMPARE_ =
-            new ContentCompareResultEnum("CAN_NOT_COMPARE-无法对比");
+        public static final ContentCompareResultEnum CAN_NOT_COMPARE = new ContentCompareResultEnum("CAN_NOT_COMPARE");
 
         private static final Map<String, ContentCompareResultEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ContentCompareResultEnum> createStaticFields() {
             Map<String, ContentCompareResultEnum> map = new HashMap<>();
-            map.put("CONSISTENT-一致", CONSISTENT_);
-            map.put("INCONSISTENT-不一致", INCONSISTENT_);
-            map.put("COMPARING-正在对比", COMPARING_);
-            map.put("WAITING_FOR_COMPARISON-等待对比", WAITING_FOR_COMPARISON_);
-            map.put("FAILED_TO_COMPARE-对比失败", FAILED_TO_COMPARE_);
-            map.put("TARGET_DB_NOT_EXIT-目标库不存在", TARGET_DB_NOT_EXIT_);
-            map.put("CAN_NOT_COMPARE-无法对比", CAN_NOT_COMPARE_);
+            map.put("CONSISTENT", CONSISTENT);
+            map.put("INCONSISTENT", INCONSISTENT);
+            map.put("COMPARING", COMPARING);
+            map.put("WAITING_FOR_COMPARISON", WAITING_FOR_COMPARISON);
+            map.put("FAILED_TO_COMPARE", FAILED_TO_COMPARE);
+            map.put("TARGET_DB_NOT_EXIT", TARGET_DB_NOT_EXIT);
+            map.put("CAN_NOT_COMPARE", CAN_NOT_COMPARE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -181,7 +180,7 @@ public class ContentCompareResultOverview {
     }
 
     /**
-     * 对比结果。
+     * 对比结果。 - CONSISTENT-一致 - INCONSISTENT-不一致 - COMPARING-正在对比 - WAITING_FOR_COMPARISON-等待对比 - FAILED_TO_COMPARE-对比失败 - TARGET_DB_NOT_EXIT-目标库不存在 - CAN_NOT_COMPARE-无法对比
      * @return contentCompareResult
      */
     public ContentCompareResultEnum getContentCompareResult() {

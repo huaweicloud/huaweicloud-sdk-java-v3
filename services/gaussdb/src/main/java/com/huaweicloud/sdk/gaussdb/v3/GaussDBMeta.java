@@ -1914,40 +1914,6 @@ public class GaussDBMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowGaussMySqlProxyRequest, ShowGaussMySqlProxyResponse> showGaussMySqlProxy = genForshowGaussMySqlProxy();
-
-    private static HttpRequestDef<ShowGaussMySqlProxyRequest, ShowGaussMySqlProxyResponse> genForshowGaussMySqlProxy() {
-        // basic
-        HttpRequestDef.Builder<ShowGaussMySqlProxyRequest, ShowGaussMySqlProxyResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowGaussMySqlProxyRequest.class, ShowGaussMySqlProxyResponse.class)
-                .withName("ShowGaussMySqlProxy")
-                .withUri("/v3/{project_id}/instances/{instance_id}/proxy")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGaussMySqlProxyRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            })
-        );
-        builder.<String>withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGaussMySqlProxyRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            })
-        );
-
-        // response
-
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ShowGaussMySqlProxyFlavorsRequest, ShowGaussMySqlProxyFlavorsResponse> showGaussMySqlProxyFlavors = genForshowGaussMySqlProxyFlavors();
 
     private static HttpRequestDef<ShowGaussMySqlProxyFlavorsRequest, ShowGaussMySqlProxyFlavorsResponse> genForshowGaussMySqlProxyFlavors() {

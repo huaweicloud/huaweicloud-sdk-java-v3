@@ -213,7 +213,7 @@ public class CustomerInformation {
     }
 
     /**
-     * 实名认证状态： -1：未实名认证0：实名认证审核中1：实名认证不通过2：已实名认证3：实名认证失败
+     * 实名认证状态： -1：未实名认证0：实名认证审核中1：实名认证不通过2：已实名认证
      * @return verifiedStatus
      */
     public String getVerifiedStatus() {

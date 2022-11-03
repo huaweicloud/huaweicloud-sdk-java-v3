@@ -77,9 +77,9 @@ public class DeploymentGroupDetail {
     private UserInfo createdBy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "update_by")
+    @JsonProperty(value = "updated_by")
 
-    private UserInfo updateBy;
+    private UserInfo updatedBy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
@@ -323,30 +323,30 @@ public class DeploymentGroupDetail {
         this.createdBy = createdBy;
     }
 
-    public DeploymentGroupDetail withUpdateBy(UserInfo updateBy) {
-        this.updateBy = updateBy;
+    public DeploymentGroupDetail withUpdatedBy(UserInfo updatedBy) {
+        this.updatedBy = updatedBy;
         return this;
     }
 
-    public DeploymentGroupDetail withUpdateBy(Consumer<UserInfo> updateBySetter) {
-        if (this.updateBy == null) {
-            this.updateBy = new UserInfo();
-            updateBySetter.accept(this.updateBy);
+    public DeploymentGroupDetail withUpdatedBy(Consumer<UserInfo> updatedBySetter) {
+        if (this.updatedBy == null) {
+            this.updatedBy = new UserInfo();
+            updatedBySetter.accept(this.updatedBy);
         }
 
         return this;
     }
 
     /**
-     * Get updateBy
-     * @return updateBy
+     * Get updatedBy
+     * @return updatedBy
      */
-    public UserInfo getUpdateBy() {
-        return updateBy;
+    public UserInfo getUpdatedBy() {
+        return updatedBy;
     }
 
-    public void setUpdateBy(UserInfo updateBy) {
-        this.updateBy = updateBy;
+    public void setUpdatedBy(UserInfo updatedBy) {
+        this.updatedBy = updatedBy;
     }
 
     public DeploymentGroupDetail withDescription(String description) {
@@ -414,7 +414,7 @@ public class DeploymentGroupDetail {
             && Objects.equals(this.slaveClusterId, deploymentGroupDetail.slaveClusterId)
             && Objects.equals(this.nickName, deploymentGroupDetail.nickName)
             && Objects.equals(this.createdBy, deploymentGroupDetail.createdBy)
-            && Objects.equals(this.updateBy, deploymentGroupDetail.updateBy)
+            && Objects.equals(this.updatedBy, deploymentGroupDetail.updatedBy)
             && Objects.equals(this.description, deploymentGroupDetail.description)
             && Objects.equals(this.permission, deploymentGroupDetail.permission);
     }
@@ -434,7 +434,7 @@ public class DeploymentGroupDetail {
             slaveClusterId,
             nickName,
             createdBy,
-            updateBy,
+            updatedBy,
             description,
             permission);
     }
@@ -456,7 +456,7 @@ public class DeploymentGroupDetail {
         sb.append("    slaveClusterId: ").append(toIndentedString(slaveClusterId)).append("\n");
         sb.append("    nickName: ").append(toIndentedString(nickName)).append("\n");
         sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
-        sb.append("    updateBy: ").append(toIndentedString(updateBy)).append("\n");
+        sb.append("    updatedBy: ").append(toIndentedString(updatedBy)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    permission: ").append(toIndentedString(permission)).append("\n");
         sb.append("}");

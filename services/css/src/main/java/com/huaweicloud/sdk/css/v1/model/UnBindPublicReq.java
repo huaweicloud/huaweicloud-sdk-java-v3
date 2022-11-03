@@ -14,16 +14,16 @@ public class UnBindPublicReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "eip")
 
-    private BindPublicReqEipReq eip;
+    private UnBindPublicReqEipReq eip;
 
-    public UnBindPublicReq withEip(BindPublicReqEipReq eip) {
+    public UnBindPublicReq withEip(UnBindPublicReqEipReq eip) {
         this.eip = eip;
         return this;
     }
 
-    public UnBindPublicReq withEip(Consumer<BindPublicReqEipReq> eipSetter) {
+    public UnBindPublicReq withEip(Consumer<UnBindPublicReqEipReq> eipSetter) {
         if (this.eip == null) {
-            this.eip = new BindPublicReqEipReq();
+            this.eip = new UnBindPublicReqEipReq();
             eipSetter.accept(this.eip);
         }
 
@@ -34,11 +34,11 @@ public class UnBindPublicReq {
      * Get eip
      * @return eip
      */
-    public BindPublicReqEipReq getEip() {
+    public UnBindPublicReqEipReq getEip() {
         return eip;
     }
 
-    public void setEip(BindPublicReqEipReq eip) {
+    public void setEip(UnBindPublicReqEipReq eip) {
         this.eip = eip;
     }
 

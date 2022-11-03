@@ -11,133 +11,133 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * 
+ * ObjectCompareResultOverview
  */
 public class ObjectCompareResultOverview {
 
     /**
-     * 对象类型。
+     * 对象类型。 - DB-数据库 - TABLE-表 - VIEW-视图 - EVENT-事件 - ROUTINE-存储过程和函数 - INDEX-索引,TRIGGER-触发器 - SYNONYM-同义词 - FUNCTION-函数 - PROCEDURE-存储过程 - TYPE-自定义类型 - RULE-规则 - DEFAULT_TYPE-缺省值 - PLAN_GUIDE-执行计划 - CONSTRAINT-约束 - FILE_GROUP-文件组 - PARTITION_FUNCTION-分区函数 - PARTITION_SCHEME-分区方案 - TABLE_COLLATION-表的排序规则
      */
     public static final class ObjectTypeEnum {
 
         /**
-         * Enum DB_ for value: "DB-数据库"
+         * Enum DB for value: "DB"
          */
-        public static final ObjectTypeEnum DB_ = new ObjectTypeEnum("DB-数据库");
+        public static final ObjectTypeEnum DB = new ObjectTypeEnum("DB");
 
         /**
-         * Enum TABLE_ for value: "TABLE-表"
+         * Enum TABLE for value: "TABLE"
          */
-        public static final ObjectTypeEnum TABLE_ = new ObjectTypeEnum("TABLE-表");
+        public static final ObjectTypeEnum TABLE = new ObjectTypeEnum("TABLE");
 
         /**
-         * Enum VIEW_ for value: "VIEW-视图"
+         * Enum VIEW for value: "VIEW"
          */
-        public static final ObjectTypeEnum VIEW_ = new ObjectTypeEnum("VIEW-视图");
+        public static final ObjectTypeEnum VIEW = new ObjectTypeEnum("VIEW");
 
         /**
-         * Enum EVENT_ for value: "EVENT-事件"
+         * Enum EVENT for value: "EVENT"
          */
-        public static final ObjectTypeEnum EVENT_ = new ObjectTypeEnum("EVENT-事件");
+        public static final ObjectTypeEnum EVENT = new ObjectTypeEnum("EVENT");
 
         /**
-         * Enum ROUTINE_ for value: "ROUTINE-存储过程和函数"
+         * Enum ROUTINE for value: "ROUTINE"
          */
-        public static final ObjectTypeEnum ROUTINE_ = new ObjectTypeEnum("ROUTINE-存储过程和函数");
+        public static final ObjectTypeEnum ROUTINE = new ObjectTypeEnum("ROUTINE");
 
         /**
-         * Enum INDEX_ for value: "INDEX-索引"
+         * Enum INDEX for value: "INDEX"
          */
-        public static final ObjectTypeEnum INDEX_ = new ObjectTypeEnum("INDEX-索引");
+        public static final ObjectTypeEnum INDEX = new ObjectTypeEnum("INDEX");
 
         /**
-         * Enum TRIGGER_ for value: "TRIGGER-触发器"
+         * Enum TRIGGER for value: "TRIGGER"
          */
-        public static final ObjectTypeEnum TRIGGER_ = new ObjectTypeEnum("TRIGGER-触发器");
+        public static final ObjectTypeEnum TRIGGER = new ObjectTypeEnum("TRIGGER");
 
         /**
-         * Enum SYNONYM_ for value: "SYNONYM-同义词"
+         * Enum SYNONYM for value: "SYNONYM"
          */
-        public static final ObjectTypeEnum SYNONYM_ = new ObjectTypeEnum("SYNONYM-同义词");
+        public static final ObjectTypeEnum SYNONYM = new ObjectTypeEnum("SYNONYM");
 
         /**
-         * Enum FUNCTION_ for value: "FUNCTION-函数"
+         * Enum FUNCTION for value: "FUNCTION"
          */
-        public static final ObjectTypeEnum FUNCTION_ = new ObjectTypeEnum("FUNCTION-函数");
+        public static final ObjectTypeEnum FUNCTION = new ObjectTypeEnum("FUNCTION");
 
         /**
-         * Enum PROCEDURE_ for value: "PROCEDURE-存储过程"
+         * Enum PROCEDURE for value: "PROCEDURE"
          */
-        public static final ObjectTypeEnum PROCEDURE_ = new ObjectTypeEnum("PROCEDURE-存储过程");
+        public static final ObjectTypeEnum PROCEDURE = new ObjectTypeEnum("PROCEDURE");
 
         /**
-         * Enum TYPE_ for value: "TYPE-自定义类型"
+         * Enum TYPE for value: "TYPE"
          */
-        public static final ObjectTypeEnum TYPE_ = new ObjectTypeEnum("TYPE-自定义类型");
+        public static final ObjectTypeEnum TYPE = new ObjectTypeEnum("TYPE");
 
         /**
-         * Enum RULE_ for value: "RULE-规则"
+         * Enum RULE for value: "RULE"
          */
-        public static final ObjectTypeEnum RULE_ = new ObjectTypeEnum("RULE-规则");
+        public static final ObjectTypeEnum RULE = new ObjectTypeEnum("RULE");
 
         /**
-         * Enum DEFAULT_TYPE_ for value: "DEFAULT_TYPE-缺省值"
+         * Enum DEFAULT_TYPE for value: "DEFAULT_TYPE"
          */
-        public static final ObjectTypeEnum DEFAULT_TYPE_ = new ObjectTypeEnum("DEFAULT_TYPE-缺省值");
+        public static final ObjectTypeEnum DEFAULT_TYPE = new ObjectTypeEnum("DEFAULT_TYPE");
 
         /**
-         * Enum PLAN_GUIDE_ for value: "PLAN_GUIDE-执行计划"
+         * Enum PLAN_GUIDE for value: "PLAN_GUIDE"
          */
-        public static final ObjectTypeEnum PLAN_GUIDE_ = new ObjectTypeEnum("PLAN_GUIDE-执行计划");
+        public static final ObjectTypeEnum PLAN_GUIDE = new ObjectTypeEnum("PLAN_GUIDE");
 
         /**
-         * Enum CONSTRAINT_ for value: "CONSTRAINT-约束"
+         * Enum CONSTRAINT for value: "CONSTRAINT"
          */
-        public static final ObjectTypeEnum CONSTRAINT_ = new ObjectTypeEnum("CONSTRAINT-约束");
+        public static final ObjectTypeEnum CONSTRAINT = new ObjectTypeEnum("CONSTRAINT");
 
         /**
-         * Enum FILE_GROUP_ for value: "FILE_GROUP-文件组"
+         * Enum FILE_GROUP for value: "FILE_GROUP"
          */
-        public static final ObjectTypeEnum FILE_GROUP_ = new ObjectTypeEnum("FILE_GROUP-文件组");
+        public static final ObjectTypeEnum FILE_GROUP = new ObjectTypeEnum("FILE_GROUP");
 
         /**
-         * Enum PARTITION_FUNCTION_ for value: "PARTITION_FUNCTION-分区函数"
+         * Enum PARTITION_FUNCTION for value: "PARTITION_FUNCTION"
          */
-        public static final ObjectTypeEnum PARTITION_FUNCTION_ = new ObjectTypeEnum("PARTITION_FUNCTION-分区函数");
+        public static final ObjectTypeEnum PARTITION_FUNCTION = new ObjectTypeEnum("PARTITION_FUNCTION");
 
         /**
-         * Enum PARTITION_SCHEME_ for value: "PARTITION_SCHEME-分区方案"
+         * Enum PARTITION_SCHEME for value: "PARTITION_SCHEME"
          */
-        public static final ObjectTypeEnum PARTITION_SCHEME_ = new ObjectTypeEnum("PARTITION_SCHEME-分区方案");
+        public static final ObjectTypeEnum PARTITION_SCHEME = new ObjectTypeEnum("PARTITION_SCHEME");
 
         /**
-         * Enum TABLE_COLLATION_ for value: "TABLE_COLLATION-表的排序规则"
+         * Enum TABLE_COLLATION for value: "TABLE_COLLATION"
          */
-        public static final ObjectTypeEnum TABLE_COLLATION_ = new ObjectTypeEnum("TABLE_COLLATION-表的排序规则");
+        public static final ObjectTypeEnum TABLE_COLLATION = new ObjectTypeEnum("TABLE_COLLATION");
 
         private static final Map<String, ObjectTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ObjectTypeEnum> createStaticFields() {
             Map<String, ObjectTypeEnum> map = new HashMap<>();
-            map.put("DB-数据库", DB_);
-            map.put("TABLE-表", TABLE_);
-            map.put("VIEW-视图", VIEW_);
-            map.put("EVENT-事件", EVENT_);
-            map.put("ROUTINE-存储过程和函数", ROUTINE_);
-            map.put("INDEX-索引", INDEX_);
-            map.put("TRIGGER-触发器", TRIGGER_);
-            map.put("SYNONYM-同义词", SYNONYM_);
-            map.put("FUNCTION-函数", FUNCTION_);
-            map.put("PROCEDURE-存储过程", PROCEDURE_);
-            map.put("TYPE-自定义类型", TYPE_);
-            map.put("RULE-规则", RULE_);
-            map.put("DEFAULT_TYPE-缺省值", DEFAULT_TYPE_);
-            map.put("PLAN_GUIDE-执行计划", PLAN_GUIDE_);
-            map.put("CONSTRAINT-约束", CONSTRAINT_);
-            map.put("FILE_GROUP-文件组", FILE_GROUP_);
-            map.put("PARTITION_FUNCTION-分区函数", PARTITION_FUNCTION_);
-            map.put("PARTITION_SCHEME-分区方案", PARTITION_SCHEME_);
-            map.put("TABLE_COLLATION-表的排序规则", TABLE_COLLATION_);
+            map.put("DB", DB);
+            map.put("TABLE", TABLE);
+            map.put("VIEW", VIEW);
+            map.put("EVENT", EVENT);
+            map.put("ROUTINE", ROUTINE);
+            map.put("INDEX", INDEX);
+            map.put("TRIGGER", TRIGGER);
+            map.put("SYNONYM", SYNONYM);
+            map.put("FUNCTION", FUNCTION);
+            map.put("PROCEDURE", PROCEDURE);
+            map.put("TYPE", TYPE);
+            map.put("RULE", RULE);
+            map.put("DEFAULT_TYPE", DEFAULT_TYPE);
+            map.put("PLAN_GUIDE", PLAN_GUIDE);
+            map.put("CONSTRAINT", CONSTRAINT);
+            map.put("FILE_GROUP", FILE_GROUP);
+            map.put("PARTITION_FUNCTION", PARTITION_FUNCTION);
+            map.put("PARTITION_SCHEME", PARTITION_SCHEME);
+            map.put("TABLE_COLLATION", TABLE_COLLATION);
             return Collections.unmodifiableMap(map);
         }
 
@@ -200,60 +200,59 @@ public class ObjectCompareResultOverview {
     private ObjectTypeEnum objectType;
 
     /**
-     * 对比结果。
+     * 对比结果。 - CONSISTENT-一致 - INCONSISTENT-不一致 - COMPARING-正在对比 - WAITING_FOR_COMPARISON-等待对比 - FAILED_TO_COMPARE-对比失败 - TARGET_DB_NOT_EXIT-目标库不存在 - CAN_NOT_COMPARE-无法对比
      */
     public static final class ObjectCompareResultEnum {
 
         /**
-         * Enum CONSISTENT_ for value: "CONSISTENT-一致"
+         * Enum CONSISTENT for value: "CONSISTENT"
          */
-        public static final ObjectCompareResultEnum CONSISTENT_ = new ObjectCompareResultEnum("CONSISTENT-一致");
+        public static final ObjectCompareResultEnum CONSISTENT = new ObjectCompareResultEnum("CONSISTENT");
 
         /**
-         * Enum INCONSISTENT_ for value: "INCONSISTENT-不一致"
+         * Enum INCONSISTENT for value: "INCONSISTENT"
          */
-        public static final ObjectCompareResultEnum INCONSISTENT_ = new ObjectCompareResultEnum("INCONSISTENT-不一致");
+        public static final ObjectCompareResultEnum INCONSISTENT = new ObjectCompareResultEnum("INCONSISTENT");
 
         /**
-         * Enum COMPARING_ for value: "COMPARING-正在对比"
+         * Enum COMPARING for value: "COMPARING"
          */
-        public static final ObjectCompareResultEnum COMPARING_ = new ObjectCompareResultEnum("COMPARING-正在对比");
+        public static final ObjectCompareResultEnum COMPARING = new ObjectCompareResultEnum("COMPARING");
 
         /**
-         * Enum WAITING_FOR_COMPARISON_ for value: "WAITING_FOR_COMPARISON-等待对比"
+         * Enum WAITING_FOR_COMPARISON for value: "WAITING_FOR_COMPARISON"
          */
-        public static final ObjectCompareResultEnum WAITING_FOR_COMPARISON_ =
-            new ObjectCompareResultEnum("WAITING_FOR_COMPARISON-等待对比");
+        public static final ObjectCompareResultEnum WAITING_FOR_COMPARISON =
+            new ObjectCompareResultEnum("WAITING_FOR_COMPARISON");
 
         /**
-         * Enum FAILED_TO_COMPARE_ for value: "FAILED_TO_COMPARE-对比失败"
+         * Enum FAILED_TO_COMPARE for value: "FAILED_TO_COMPARE"
          */
-        public static final ObjectCompareResultEnum FAILED_TO_COMPARE_ =
-            new ObjectCompareResultEnum("FAILED_TO_COMPARE-对比失败");
+        public static final ObjectCompareResultEnum FAILED_TO_COMPARE =
+            new ObjectCompareResultEnum("FAILED_TO_COMPARE");
 
         /**
-         * Enum TARGET_DB_NOT_EXIT_ for value: "TARGET_DB_NOT_EXIT-目标库不存在"
+         * Enum TARGET_DB_NOT_EXIT for value: "TARGET_DB_NOT_EXIT"
          */
-        public static final ObjectCompareResultEnum TARGET_DB_NOT_EXIT_ =
-            new ObjectCompareResultEnum("TARGET_DB_NOT_EXIT-目标库不存在");
+        public static final ObjectCompareResultEnum TARGET_DB_NOT_EXIT =
+            new ObjectCompareResultEnum("TARGET_DB_NOT_EXIT");
 
         /**
-         * Enum CAN_NOT_COMPARE_ for value: "CAN_NOT_COMPARE-无法对比"
+         * Enum CAN_NOT_COMPARE for value: "CAN_NOT_COMPARE"
          */
-        public static final ObjectCompareResultEnum CAN_NOT_COMPARE_ =
-            new ObjectCompareResultEnum("CAN_NOT_COMPARE-无法对比");
+        public static final ObjectCompareResultEnum CAN_NOT_COMPARE = new ObjectCompareResultEnum("CAN_NOT_COMPARE");
 
         private static final Map<String, ObjectCompareResultEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ObjectCompareResultEnum> createStaticFields() {
             Map<String, ObjectCompareResultEnum> map = new HashMap<>();
-            map.put("CONSISTENT-一致", CONSISTENT_);
-            map.put("INCONSISTENT-不一致", INCONSISTENT_);
-            map.put("COMPARING-正在对比", COMPARING_);
-            map.put("WAITING_FOR_COMPARISON-等待对比", WAITING_FOR_COMPARISON_);
-            map.put("FAILED_TO_COMPARE-对比失败", FAILED_TO_COMPARE_);
-            map.put("TARGET_DB_NOT_EXIT-目标库不存在", TARGET_DB_NOT_EXIT_);
-            map.put("CAN_NOT_COMPARE-无法对比", CAN_NOT_COMPARE_);
+            map.put("CONSISTENT", CONSISTENT);
+            map.put("INCONSISTENT", INCONSISTENT);
+            map.put("COMPARING", COMPARING);
+            map.put("WAITING_FOR_COMPARISON", WAITING_FOR_COMPARISON);
+            map.put("FAILED_TO_COMPARE", FAILED_TO_COMPARE);
+            map.put("TARGET_DB_NOT_EXIT", TARGET_DB_NOT_EXIT);
+            map.put("CAN_NOT_COMPARE", CAN_NOT_COMPARE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -336,7 +335,7 @@ public class ObjectCompareResultOverview {
     }
 
     /**
-     * 对象类型。
+     * 对象类型。 - DB-数据库 - TABLE-表 - VIEW-视图 - EVENT-事件 - ROUTINE-存储过程和函数 - INDEX-索引,TRIGGER-触发器 - SYNONYM-同义词 - FUNCTION-函数 - PROCEDURE-存储过程 - TYPE-自定义类型 - RULE-规则 - DEFAULT_TYPE-缺省值 - PLAN_GUIDE-执行计划 - CONSTRAINT-约束 - FILE_GROUP-文件组 - PARTITION_FUNCTION-分区函数 - PARTITION_SCHEME-分区方案 - TABLE_COLLATION-表的排序规则
      * @return objectType
      */
     public ObjectTypeEnum getObjectType() {
@@ -353,7 +352,7 @@ public class ObjectCompareResultOverview {
     }
 
     /**
-     * 对比结果。
+     * 对比结果。 - CONSISTENT-一致 - INCONSISTENT-不一致 - COMPARING-正在对比 - WAITING_FOR_COMPARISON-等待对比 - FAILED_TO_COMPARE-对比失败 - TARGET_DB_NOT_EXIT-目标库不存在 - CAN_NOT_COMPARE-无法对比
      * @return objectCompareResult
      */
     public ObjectCompareResultEnum getObjectCompareResult() {

@@ -135,9 +135,9 @@ public class ShowClusterDetailResponse extends SdkResponse {
     private List<ClusterDetailTags> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "failed_reasons")
+    @JsonProperty(value = "failedReason")
 
-    private ClusterDetailFailedReasons failedReasons;
+    private ClusterDetailFailedReasons failedReason;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "period")
@@ -627,30 +627,30 @@ public class ShowClusterDetailResponse extends SdkResponse {
         this.tags = tags;
     }
 
-    public ShowClusterDetailResponse withFailedReasons(ClusterDetailFailedReasons failedReasons) {
-        this.failedReasons = failedReasons;
+    public ShowClusterDetailResponse withFailedReason(ClusterDetailFailedReasons failedReason) {
+        this.failedReason = failedReason;
         return this;
     }
 
-    public ShowClusterDetailResponse withFailedReasons(Consumer<ClusterDetailFailedReasons> failedReasonsSetter) {
-        if (this.failedReasons == null) {
-            this.failedReasons = new ClusterDetailFailedReasons();
-            failedReasonsSetter.accept(this.failedReasons);
+    public ShowClusterDetailResponse withFailedReason(Consumer<ClusterDetailFailedReasons> failedReasonSetter) {
+        if (this.failedReason == null) {
+            this.failedReason = new ClusterDetailFailedReasons();
+            failedReasonSetter.accept(this.failedReason);
         }
 
         return this;
     }
 
     /**
-     * Get failedReasons
-     * @return failedReasons
+     * Get failedReason
+     * @return failedReason
      */
-    public ClusterDetailFailedReasons getFailedReasons() {
-        return failedReasons;
+    public ClusterDetailFailedReasons getFailedReason() {
+        return failedReason;
     }
 
-    public void setFailedReasons(ClusterDetailFailedReasons failedReasons) {
-        this.failedReasons = failedReasons;
+    public void setFailedReason(ClusterDetailFailedReasons failedReason) {
+        this.failedReason = failedReason;
     }
 
     public ShowClusterDetailResponse withPeriod(Boolean period) {
@@ -703,7 +703,7 @@ public class ShowClusterDetailResponse extends SdkResponse {
             && Objects.equals(this.actions, showClusterDetailResponse.actions)
             && Objects.equals(this.enterpriseProjectId, showClusterDetailResponse.enterpriseProjectId)
             && Objects.equals(this.tags, showClusterDetailResponse.tags)
-            && Objects.equals(this.failedReasons, showClusterDetailResponse.failedReasons)
+            && Objects.equals(this.failedReason, showClusterDetailResponse.failedReason)
             && Objects.equals(this.period, showClusterDetailResponse.period);
     }
 
@@ -733,7 +733,7 @@ public class ShowClusterDetailResponse extends SdkResponse {
             actions,
             enterpriseProjectId,
             tags,
-            failedReasons,
+            failedReason,
             period);
     }
 
@@ -765,7 +765,7 @@ public class ShowClusterDetailResponse extends SdkResponse {
         sb.append("    actions: ").append(toIndentedString(actions)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
-        sb.append("    failedReasons: ").append(toIndentedString(failedReasons)).append("\n");
+        sb.append("    failedReason: ").append(toIndentedString(failedReason)).append("\n");
         sb.append("    period: ").append(toIndentedString(period)).append("\n");
         sb.append("}");
         return sb.toString();

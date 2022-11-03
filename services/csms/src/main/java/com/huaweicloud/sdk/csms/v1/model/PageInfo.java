@@ -31,7 +31,7 @@ public class PageInfo {
     }
 
     /**
-     * 下一页查询地址（下一页起始资源id）。
+     * 下一页查询地址（本页的末尾凭据名称，下一页起始凭据名称）。
      * @return nextMarker
      */
     public String getNextMarker() {
@@ -48,7 +48,7 @@ public class PageInfo {
     }
 
     /**
-     * 前一页查询地址（上一页末尾资源id）。
+     * 本页的起始凭据名称，上一页末尾凭据名称。
      * @return previousMarker
      */
     public String getPreviousMarker() {

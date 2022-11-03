@@ -30,6 +30,11 @@ public class GeneralTextRequestBody {
 
     private Boolean quickMode;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "character_mode")
+
+    private Boolean characterMode;
+
     public GeneralTextRequestBody withImage(String image) {
         this.image = image;
         return this;
@@ -98,6 +103,23 @@ public class GeneralTextRequestBody {
         this.quickMode = quickMode;
     }
 
+    public GeneralTextRequestBody withCharacterMode(Boolean characterMode) {
+        this.characterMode = characterMode;
+        return this;
+    }
+
+    /**
+     * 单字符模式开关。可选值包括： - true：打开单字符模式 - false：关闭单字符模式  未传入该参数时默认为false，即不返回单个文本行的单字符信息。 
+     * @return characterMode
+     */
+    public Boolean getCharacterMode() {
+        return characterMode;
+    }
+
+    public void setCharacterMode(Boolean characterMode) {
+        this.characterMode = characterMode;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -110,12 +132,13 @@ public class GeneralTextRequestBody {
         return Objects.equals(this.image, generalTextRequestBody.image)
             && Objects.equals(this.url, generalTextRequestBody.url)
             && Objects.equals(this.detectDirection, generalTextRequestBody.detectDirection)
-            && Objects.equals(this.quickMode, generalTextRequestBody.quickMode);
+            && Objects.equals(this.quickMode, generalTextRequestBody.quickMode)
+            && Objects.equals(this.characterMode, generalTextRequestBody.characterMode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(image, url, detectDirection, quickMode);
+        return Objects.hash(image, url, detectDirection, quickMode, characterMode);
     }
 
     @Override
@@ -126,6 +149,7 @@ public class GeneralTextRequestBody {
         sb.append("    url: ").append(toIndentedString(url)).append("\n");
         sb.append("    detectDirection: ").append(toIndentedString(detectDirection)).append("\n");
         sb.append("    quickMode: ").append(toIndentedString(quickMode)).append("\n");
+        sb.append("    characterMode: ").append(toIndentedString(characterMode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

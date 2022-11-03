@@ -23,6 +23,16 @@ public class GeneralTextWordsBlockList {
 
     private List<List<Integer>> location = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "confidence")
+
+    private Float confidence;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "char_list")
+
+    private List<GeneralTextCharList> charList = null;
+
     public GeneralTextWordsBlockList withWords(String words) {
         this.words = words;
         return this;
@@ -73,6 +83,56 @@ public class GeneralTextWordsBlockList {
         this.location = location;
     }
 
+    public GeneralTextWordsBlockList withConfidence(Float confidence) {
+        this.confidence = confidence;
+        return this;
+    }
+
+    /**
+     * 文字块识别结果的置信度。 
+     * @return confidence
+     */
+    public Float getConfidence() {
+        return confidence;
+    }
+
+    public void setConfidence(Float confidence) {
+        this.confidence = confidence;
+    }
+
+    public GeneralTextWordsBlockList withCharList(List<GeneralTextCharList> charList) {
+        this.charList = charList;
+        return this;
+    }
+
+    public GeneralTextWordsBlockList addCharListItem(GeneralTextCharList charListItem) {
+        if (this.charList == null) {
+            this.charList = new ArrayList<>();
+        }
+        this.charList.add(charListItem);
+        return this;
+    }
+
+    public GeneralTextWordsBlockList withCharList(Consumer<List<GeneralTextCharList>> charListSetter) {
+        if (this.charList == null) {
+            this.charList = new ArrayList<>();
+        }
+        charListSetter.accept(this.charList);
+        return this;
+    }
+
+    /**
+     * 文字块对应的单字符识别列表，输出顺序从左到右，先上后下。 
+     * @return charList
+     */
+    public List<GeneralTextCharList> getCharList() {
+        return charList;
+    }
+
+    public void setCharList(List<GeneralTextCharList> charList) {
+        this.charList = charList;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -83,12 +143,14 @@ public class GeneralTextWordsBlockList {
         }
         GeneralTextWordsBlockList generalTextWordsBlockList = (GeneralTextWordsBlockList) o;
         return Objects.equals(this.words, generalTextWordsBlockList.words)
-            && Objects.equals(this.location, generalTextWordsBlockList.location);
+            && Objects.equals(this.location, generalTextWordsBlockList.location)
+            && Objects.equals(this.confidence, generalTextWordsBlockList.confidence)
+            && Objects.equals(this.charList, generalTextWordsBlockList.charList);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(words, location);
+        return Objects.hash(words, location, confidence, charList);
     }
 
     @Override
@@ -97,6 +159,8 @@ public class GeneralTextWordsBlockList {
         sb.append("class GeneralTextWordsBlockList {\n");
         sb.append("    words: ").append(toIndentedString(words)).append("\n");
         sb.append("    location: ").append(toIndentedString(location)).append("\n");
+        sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
+        sb.append("    charList: ").append(toIndentedString(charList)).append("\n");
         sb.append("}");
         return sb.toString();
     }

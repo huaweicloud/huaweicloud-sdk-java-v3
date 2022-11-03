@@ -1282,36 +1282,6 @@ public class GaussDBAsyncClient {
     }
 
     /**
-     * 查询数据库代理信息
-     *
-     * 查询数据库代理信息。
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param ShowGaussMySqlProxyRequest 请求对象
-     * @return CompletableFuture<ShowGaussMySqlProxyResponse>
-     */
-    public CompletableFuture<ShowGaussMySqlProxyResponse> showGaussMySqlProxyAsync(ShowGaussMySqlProxyRequest request) {
-        return hcClient.asyncInvokeHttp(request, GaussDBMeta.showGaussMySqlProxy);
-    }
-
-    /**
-     * 查询数据库代理信息
-     *
-     * 查询数据库代理信息。
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param ShowGaussMySqlProxyRequest 请求对象
-     * @return AsyncInvoker<ShowGaussMySqlProxyRequest, ShowGaussMySqlProxyResponse>
-     */
-    public AsyncInvoker<ShowGaussMySqlProxyRequest, ShowGaussMySqlProxyResponse> showGaussMySqlProxyAsyncInvoker(ShowGaussMySqlProxyRequest request) {
-        return new AsyncInvoker<ShowGaussMySqlProxyRequest, ShowGaussMySqlProxyResponse>(request, GaussDBMeta.showGaussMySqlProxy, hcClient);
-    }
-
-    /**
      * 查询数据库代理规格信息
      *
      * 查询数据库代理规格信息。

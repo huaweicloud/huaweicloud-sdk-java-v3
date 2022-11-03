@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * 
+ * ModifyJobResp
  */
 public class ModifyJobResp {
 
@@ -21,26 +21,26 @@ public class ModifyJobResp {
     private String id;
 
     /**
-     * 状态
+     * 状态。 - success 成功 - failed 失败
      */
     public static final class StatusEnum {
 
         /**
-         * Enum SUCCESS_ for value: "success 成功"
+         * Enum SUCCESS for value: "success"
          */
-        public static final StatusEnum SUCCESS_ = new StatusEnum("success 成功");
+        public static final StatusEnum SUCCESS = new StatusEnum("success");
 
         /**
-         * Enum FAILED_ for value: "failed 失败"
+         * Enum FAILED for value: "failed"
          */
-        public static final StatusEnum FAILED_ = new StatusEnum("failed 失败");
+        public static final StatusEnum FAILED = new StatusEnum("failed");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, StatusEnum> createStaticFields() {
             Map<String, StatusEnum> map = new HashMap<>();
-            map.put("success 成功", SUCCESS_);
-            map.put("failed 失败", FAILED_);
+            map.put("success", SUCCESS);
+            map.put("failed", FAILED);
             return Collections.unmodifiableMap(map);
         }
 
@@ -135,7 +135,7 @@ public class ModifyJobResp {
     }
 
     /**
-     * 状态
+     * 状态。 - success 成功 - failed 失败
      * @return status
      */
     public StatusEnum getStatus() {

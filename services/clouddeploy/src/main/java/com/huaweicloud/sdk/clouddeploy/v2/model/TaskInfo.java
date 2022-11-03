@@ -230,6 +230,41 @@ public class TaskInfo {
 
     private Integer roleId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "release_id")
+
+    private Integer releaseId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "duration")
+
+    private String duration;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "execution_state")
+
+    private String executionState;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "executor_id")
+
+    private String executorId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "executor_nick_name")
+
+    private String executorNickName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "steps")
+
+    private Map<String, Step> steps = null;
+
     public TaskInfo withTaskId(String taskId) {
         this.taskId = taskId;
         return this;
@@ -705,6 +740,141 @@ public class TaskInfo {
         this.roleId = roleId;
     }
 
+    public TaskInfo withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * 部署任务id
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public TaskInfo withReleaseId(Integer releaseId) {
+        this.releaseId = releaseId;
+        return this;
+    }
+
+    /**
+     * 任务序列id
+     * @return releaseId
+     */
+    public Integer getReleaseId() {
+        return releaseId;
+    }
+
+    public void setReleaseId(Integer releaseId) {
+        this.releaseId = releaseId;
+    }
+
+    public TaskInfo withDuration(String duration) {
+        this.duration = duration;
+        return this;
+    }
+
+    /**
+     * 执行时间
+     * @return duration
+     */
+    public String getDuration() {
+        return duration;
+    }
+
+    public void setDuration(String duration) {
+        this.duration = duration;
+    }
+
+    public TaskInfo withExecutionState(String executionState) {
+        this.executionState = executionState;
+        return this;
+    }
+
+    /**
+     * 执行状态
+     * @return executionState
+     */
+    public String getExecutionState() {
+        return executionState;
+    }
+
+    public void setExecutionState(String executionState) {
+        this.executionState = executionState;
+    }
+
+    public TaskInfo withExecutorId(String executorId) {
+        this.executorId = executorId;
+        return this;
+    }
+
+    /**
+     * 执行者id
+     * @return executorId
+     */
+    public String getExecutorId() {
+        return executorId;
+    }
+
+    public void setExecutorId(String executorId) {
+        this.executorId = executorId;
+    }
+
+    public TaskInfo withExecutorNickName(String executorNickName) {
+        this.executorNickName = executorNickName;
+        return this;
+    }
+
+    /**
+     * 执行者名称
+     * @return executorNickName
+     */
+    public String getExecutorNickName() {
+        return executorNickName;
+    }
+
+    public void setExecutorNickName(String executorNickName) {
+        this.executorNickName = executorNickName;
+    }
+
+    public TaskInfo withSteps(Map<String, Step> steps) {
+        this.steps = steps;
+        return this;
+    }
+
+    public TaskInfo putStepsItem(String key, Step stepsItem) {
+        if (this.steps == null) {
+            this.steps = new HashMap<>();
+        }
+        this.steps.put(key, stepsItem);
+        return this;
+    }
+
+    public TaskInfo withSteps(Consumer<Map<String, Step>> stepsSetter) {
+        if (this.steps == null) {
+            this.steps = new HashMap<>();
+        }
+        stepsSetter.accept(this.steps);
+        return this;
+    }
+
+    /**
+     * 执行步骤
+     * @return steps
+     */
+    public Map<String, Step> getSteps() {
+        return steps;
+    }
+
+    public void setSteps(Map<String, Step> steps) {
+        this.steps = steps;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -732,7 +902,12 @@ public class TaskInfo {
             && Objects.equals(this.canExecute, taskInfo.canExecute) && Objects.equals(this.canCopy, taskInfo.canCopy)
             && Objects.equals(this.canManage, taskInfo.canManage)
             && Objects.equals(this.appComponentList, taskInfo.appComponentList)
-            && Objects.equals(this.roleId, taskInfo.roleId);
+            && Objects.equals(this.roleId, taskInfo.roleId) && Objects.equals(this.id, taskInfo.id)
+            && Objects.equals(this.releaseId, taskInfo.releaseId) && Objects.equals(this.duration, taskInfo.duration)
+            && Objects.equals(this.executionState, taskInfo.executionState)
+            && Objects.equals(this.executorId, taskInfo.executorId)
+            && Objects.equals(this.executorNickName, taskInfo.executorNickName)
+            && Objects.equals(this.steps, taskInfo.steps);
     }
 
     @Override
@@ -763,7 +938,14 @@ public class TaskInfo {
             canCopy,
             canManage,
             appComponentList,
-            roleId);
+            roleId,
+            id,
+            releaseId,
+            duration,
+            executionState,
+            executorId,
+            executorNickName,
+            steps);
     }
 
     @Override
@@ -797,6 +979,13 @@ public class TaskInfo {
         sb.append("    canManage: ").append(toIndentedString(canManage)).append("\n");
         sb.append("    appComponentList: ").append(toIndentedString(appComponentList)).append("\n");
         sb.append("    roleId: ").append(toIndentedString(roleId)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    releaseId: ").append(toIndentedString(releaseId)).append("\n");
+        sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
+        sb.append("    executionState: ").append(toIndentedString(executionState)).append("\n");
+        sb.append("    executorId: ").append(toIndentedString(executorId)).append("\n");
+        sb.append("    executorNickName: ").append(toIndentedString(executorNickName)).append("\n");
+        sb.append("    steps: ").append(toIndentedString(steps)).append("\n");
         sb.append("}");
         return sb.toString();
     }

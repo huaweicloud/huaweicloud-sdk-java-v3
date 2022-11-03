@@ -78,9 +78,9 @@ public class ShowDeploymentGroupDetailResponse extends SdkResponse {
     private UserInfo createdBy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "update_by")
+    @JsonProperty(value = "updated_by")
 
-    private UserInfo updateBy;
+    private UserInfo updatedBy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
@@ -324,30 +324,30 @@ public class ShowDeploymentGroupDetailResponse extends SdkResponse {
         this.createdBy = createdBy;
     }
 
-    public ShowDeploymentGroupDetailResponse withUpdateBy(UserInfo updateBy) {
-        this.updateBy = updateBy;
+    public ShowDeploymentGroupDetailResponse withUpdatedBy(UserInfo updatedBy) {
+        this.updatedBy = updatedBy;
         return this;
     }
 
-    public ShowDeploymentGroupDetailResponse withUpdateBy(Consumer<UserInfo> updateBySetter) {
-        if (this.updateBy == null) {
-            this.updateBy = new UserInfo();
-            updateBySetter.accept(this.updateBy);
+    public ShowDeploymentGroupDetailResponse withUpdatedBy(Consumer<UserInfo> updatedBySetter) {
+        if (this.updatedBy == null) {
+            this.updatedBy = new UserInfo();
+            updatedBySetter.accept(this.updatedBy);
         }
 
         return this;
     }
 
     /**
-     * Get updateBy
-     * @return updateBy
+     * Get updatedBy
+     * @return updatedBy
      */
-    public UserInfo getUpdateBy() {
-        return updateBy;
+    public UserInfo getUpdatedBy() {
+        return updatedBy;
     }
 
-    public void setUpdateBy(UserInfo updateBy) {
-        this.updateBy = updateBy;
+    public void setUpdatedBy(UserInfo updatedBy) {
+        this.updatedBy = updatedBy;
     }
 
     public ShowDeploymentGroupDetailResponse withDescription(String description) {
@@ -415,7 +415,7 @@ public class ShowDeploymentGroupDetailResponse extends SdkResponse {
             && Objects.equals(this.slaveClusterId, showDeploymentGroupDetailResponse.slaveClusterId)
             && Objects.equals(this.nickName, showDeploymentGroupDetailResponse.nickName)
             && Objects.equals(this.createdBy, showDeploymentGroupDetailResponse.createdBy)
-            && Objects.equals(this.updateBy, showDeploymentGroupDetailResponse.updateBy)
+            && Objects.equals(this.updatedBy, showDeploymentGroupDetailResponse.updatedBy)
             && Objects.equals(this.description, showDeploymentGroupDetailResponse.description)
             && Objects.equals(this.permission, showDeploymentGroupDetailResponse.permission);
     }
@@ -435,7 +435,7 @@ public class ShowDeploymentGroupDetailResponse extends SdkResponse {
             slaveClusterId,
             nickName,
             createdBy,
-            updateBy,
+            updatedBy,
             description,
             permission);
     }
@@ -457,7 +457,7 @@ public class ShowDeploymentGroupDetailResponse extends SdkResponse {
         sb.append("    slaveClusterId: ").append(toIndentedString(slaveClusterId)).append("\n");
         sb.append("    nickName: ").append(toIndentedString(nickName)).append("\n");
         sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
-        sb.append("    updateBy: ").append(toIndentedString(updateBy)).append("\n");
+        sb.append("    updatedBy: ").append(toIndentedString(updatedBy)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    permission: ").append(toIndentedString(permission)).append("\n");
         sb.append("}");

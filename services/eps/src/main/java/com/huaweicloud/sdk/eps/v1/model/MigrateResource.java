@@ -11,6 +11,11 @@ import java.util.Objects;
 public class MigrateResource {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "region_id")
+
+    private String regionId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
 
     private String projectId;
@@ -29,6 +34,23 @@ public class MigrateResource {
     @JsonProperty(value = "associated")
 
     private Boolean associated;
+
+    public MigrateResource withRegionId(String regionId) {
+        this.regionId = regionId;
+        return this;
+    }
+
+    /**
+     * 资源所属RegionID。迁移OBS服务资源时为必选项。
+     * @return regionId
+     */
+    public String getRegionId() {
+        return regionId;
+    }
+
+    public void setRegionId(String regionId) {
+        this.regionId = regionId;
+    }
 
     public MigrateResource withProjectId(String projectId) {
         this.projectId = projectId;
@@ -107,7 +129,8 @@ public class MigrateResource {
             return false;
         }
         MigrateResource migrateResource = (MigrateResource) o;
-        return Objects.equals(this.projectId, migrateResource.projectId)
+        return Objects.equals(this.regionId, migrateResource.regionId)
+            && Objects.equals(this.projectId, migrateResource.projectId)
             && Objects.equals(this.resourceId, migrateResource.resourceId)
             && Objects.equals(this.resourceType, migrateResource.resourceType)
             && Objects.equals(this.associated, migrateResource.associated);
@@ -115,13 +138,14 @@ public class MigrateResource {
 
     @Override
     public int hashCode() {
-        return Objects.hash(projectId, resourceId, resourceType, associated);
+        return Objects.hash(regionId, projectId, resourceId, resourceType, associated);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class MigrateResource {\n");
+        sb.append("    regionId: ").append(toIndentedString(regionId)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
         sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");

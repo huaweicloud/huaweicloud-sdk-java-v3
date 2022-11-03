@@ -27,14 +27,14 @@ public class ShowProjectSuccessRateResponse extends SdkResponse {
     private String projectName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "start_time")
+    @JsonProperty(value = "start_date")
 
-    private String startTime;
+    private String startDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "end_time")
+    @JsonProperty(value = "end_date")
 
-    private String endTime;
+    private String endDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_count")
@@ -102,38 +102,38 @@ public class ShowProjectSuccessRateResponse extends SdkResponse {
         this.projectName = projectName;
     }
 
-    public ShowProjectSuccessRateResponse withStartTime(String startTime) {
-        this.startTime = startTime;
+    public ShowProjectSuccessRateResponse withStartDate(String startDate) {
+        this.startDate = startDate;
         return this;
     }
 
     /**
      * 任务执行开始时间范围的左边界（包含），格式yyyy-MM-dd
-     * @return startTime
+     * @return startDate
      */
-    public String getStartTime() {
-        return startTime;
+    public String getStartDate() {
+        return startDate;
     }
 
-    public void setStartTime(String startTime) {
-        this.startTime = startTime;
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
     }
 
-    public ShowProjectSuccessRateResponse withEndTime(String endTime) {
-        this.endTime = endTime;
+    public ShowProjectSuccessRateResponse withEndDate(String endDate) {
+        this.endDate = endDate;
         return this;
     }
 
     /**
      * 任务执行开始时间范围的右边界（包含），格式yyyy-MM-dd
-     * @return endTime
+     * @return endDate
      */
-    public String getEndTime() {
-        return endTime;
+    public String getEndDate() {
+        return endDate;
     }
 
-    public void setEndTime(String endTime) {
-        this.endTime = endTime;
+    public void setEndDate(String endDate) {
+        this.endDate = endDate;
     }
 
     public ShowProjectSuccessRateResponse withTaskCount(Integer taskCount) {
@@ -199,8 +199,8 @@ public class ShowProjectSuccessRateResponse extends SdkResponse {
         return Objects.equals(this.successRate, showProjectSuccessRateResponse.successRate)
             && Objects.equals(this.projectId, showProjectSuccessRateResponse.projectId)
             && Objects.equals(this.projectName, showProjectSuccessRateResponse.projectName)
-            && Objects.equals(this.startTime, showProjectSuccessRateResponse.startTime)
-            && Objects.equals(this.endTime, showProjectSuccessRateResponse.endTime)
+            && Objects.equals(this.startDate, showProjectSuccessRateResponse.startDate)
+            && Objects.equals(this.endDate, showProjectSuccessRateResponse.endDate)
             && Objects.equals(this.taskCount, showProjectSuccessRateResponse.taskCount)
             && Objects.equals(this.recordCount, showProjectSuccessRateResponse.recordCount)
             && Objects.equals(this.successRecordCount, showProjectSuccessRateResponse.successRecordCount);
@@ -209,7 +209,7 @@ public class ShowProjectSuccessRateResponse extends SdkResponse {
     @Override
     public int hashCode() {
         return Objects
-            .hash(successRate, projectId, projectName, startTime, endTime, taskCount, recordCount, successRecordCount);
+            .hash(successRate, projectId, projectName, startDate, endDate, taskCount, recordCount, successRecordCount);
     }
 
     @Override
@@ -219,8 +219,8 @@ public class ShowProjectSuccessRateResponse extends SdkResponse {
         sb.append("    successRate: ").append(toIndentedString(successRate)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    projectName: ").append(toIndentedString(projectName)).append("\n");
-        sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
-        sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
+        sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
+        sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
         sb.append("    taskCount: ").append(toIndentedString(taskCount)).append("\n");
         sb.append("    recordCount: ").append(toIndentedString(recordCount)).append("\n");
         sb.append("    successRecordCount: ").append(toIndentedString(successRecordCount)).append("\n");

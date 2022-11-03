@@ -32,32 +32,32 @@ public class QueryProgressResp {
     private String increTransDelay;
 
     /**
-     * 迁移模式
+     * 迁移模式。 - FULL_TRANS: 全量 - INCR_TRANS: 增量 - FULL_INCR_TRANS: 全量+增量
      */
     public static final class TaskModeEnum {
 
         /**
-         * Enum FULL_TRANS_ for value: "FULL_TRANS: 全量"
+         * Enum FULL_TRANS for value: "FULL_TRANS"
          */
-        public static final TaskModeEnum FULL_TRANS_ = new TaskModeEnum("FULL_TRANS: 全量");
+        public static final TaskModeEnum FULL_TRANS = new TaskModeEnum("FULL_TRANS");
 
         /**
-         * Enum INCR_TRANS_ for value: "INCR_TRANS: 增量"
+         * Enum FULL_INCR_TRANS for value: "FULL_INCR_TRANS"
          */
-        public static final TaskModeEnum INCR_TRANS_ = new TaskModeEnum("INCR_TRANS: 增量");
+        public static final TaskModeEnum FULL_INCR_TRANS = new TaskModeEnum("FULL_INCR_TRANS");
 
         /**
-         * Enum FULL_INCR_TRANS_ for value: "FULL_INCR_TRANS: 全量+增量"
+         * Enum INCR_TRANS for value: "INCR_TRANS"
          */
-        public static final TaskModeEnum FULL_INCR_TRANS_ = new TaskModeEnum("FULL_INCR_TRANS: 全量+增量");
+        public static final TaskModeEnum INCR_TRANS = new TaskModeEnum("INCR_TRANS");
 
         private static final Map<String, TaskModeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TaskModeEnum> createStaticFields() {
             Map<String, TaskModeEnum> map = new HashMap<>();
-            map.put("FULL_TRANS: 全量", FULL_TRANS_);
-            map.put("INCR_TRANS: 增量", INCR_TRANS_);
-            map.put("FULL_INCR_TRANS: 全量+增量", FULL_INCR_TRANS_);
+            map.put("FULL_TRANS", FULL_TRANS);
+            map.put("FULL_INCR_TRANS", FULL_INCR_TRANS);
+            map.put("INCR_TRANS", INCR_TRANS);
             return Collections.unmodifiableMap(map);
         }
 
@@ -206,7 +206,7 @@ public class QueryProgressResp {
     }
 
     /**
-     * 迁移模式
+     * 迁移模式。 - FULL_TRANS: 全量 - INCR_TRANS: 增量 - FULL_INCR_TRANS: 全量+增量
      * @return taskMode
      */
     public TaskModeEnum getTaskMode() {

@@ -50,6 +50,11 @@ public class ExecuteRecordV2Body {
 
     private Long releaseId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private String type;
+
     public ExecuteRecordV2Body withDuration(String duration) {
         this.duration = duration;
         return this;
@@ -186,6 +191,23 @@ public class ExecuteRecordV2Body {
         this.releaseId = releaseId;
     }
 
+    public ExecuteRecordV2Body withType(String type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * 类型
+     * @return type
+     */
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -202,12 +224,13 @@ public class ExecuteRecordV2Body {
             && Objects.equals(this.startTime, executeRecordV2Body.startTime)
             && Objects.equals(this.nickname, executeRecordV2Body.nickname)
             && Objects.equals(this.endTime, executeRecordV2Body.endTime)
-            && Objects.equals(this.releaseId, executeRecordV2Body.releaseId);
+            && Objects.equals(this.releaseId, executeRecordV2Body.releaseId)
+            && Objects.equals(this.type, executeRecordV2Body.type);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(duration, state, operator, executionId, startTime, nickname, endTime, releaseId);
+        return Objects.hash(duration, state, operator, executionId, startTime, nickname, endTime, releaseId, type);
     }
 
     @Override
@@ -222,6 +245,7 @@ public class ExecuteRecordV2Body {
         sb.append("    nickname: ").append(toIndentedString(nickname)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    releaseId: ").append(toIndentedString(releaseId)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");
         return sb.toString();
     }

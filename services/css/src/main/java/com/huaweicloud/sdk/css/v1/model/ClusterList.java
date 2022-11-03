@@ -129,9 +129,9 @@ public class ClusterList {
     private List<ClusterListTags> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "failed_reasons")
+    @JsonProperty(value = "failedReason")
 
-    private ClusterListFailedReasons failedReasons;
+    private ClusterListFailedReasons failedReason;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "period")
@@ -604,30 +604,30 @@ public class ClusterList {
         this.tags = tags;
     }
 
-    public ClusterList withFailedReasons(ClusterListFailedReasons failedReasons) {
-        this.failedReasons = failedReasons;
+    public ClusterList withFailedReason(ClusterListFailedReasons failedReason) {
+        this.failedReason = failedReason;
         return this;
     }
 
-    public ClusterList withFailedReasons(Consumer<ClusterListFailedReasons> failedReasonsSetter) {
-        if (this.failedReasons == null) {
-            this.failedReasons = new ClusterListFailedReasons();
-            failedReasonsSetter.accept(this.failedReasons);
+    public ClusterList withFailedReason(Consumer<ClusterListFailedReasons> failedReasonSetter) {
+        if (this.failedReason == null) {
+            this.failedReason = new ClusterListFailedReasons();
+            failedReasonSetter.accept(this.failedReason);
         }
 
         return this;
     }
 
     /**
-     * Get failedReasons
-     * @return failedReasons
+     * Get failedReason
+     * @return failedReason
      */
-    public ClusterListFailedReasons getFailedReasons() {
-        return failedReasons;
+    public ClusterListFailedReasons getFailedReason() {
+        return failedReason;
     }
 
-    public void setFailedReasons(ClusterListFailedReasons failedReasons) {
-        this.failedReasons = failedReasons;
+    public void setFailedReason(ClusterListFailedReasons failedReason) {
+        this.failedReason = failedReason;
     }
 
     public ClusterList withPeriod(Boolean period) {
@@ -675,7 +675,7 @@ public class ClusterList {
             && Objects.equals(this.actions, clusterList.actions)
             && Objects.equals(this.enterpriseProjectId, clusterList.enterpriseProjectId)
             && Objects.equals(this.tags, clusterList.tags)
-            && Objects.equals(this.failedReasons, clusterList.failedReasons)
+            && Objects.equals(this.failedReason, clusterList.failedReason)
             && Objects.equals(this.period, clusterList.period);
     }
 
@@ -704,7 +704,7 @@ public class ClusterList {
             actions,
             enterpriseProjectId,
             tags,
-            failedReasons,
+            failedReason,
             period);
     }
 
@@ -735,7 +735,7 @@ public class ClusterList {
         sb.append("    actions: ").append(toIndentedString(actions)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
-        sb.append("    failedReasons: ").append(toIndentedString(failedReasons)).append("\n");
+        sb.append("    failedReason: ").append(toIndentedString(failedReason)).append("\n");
         sb.append("    period: ").append(toIndentedString(period)).append("\n");
         sb.append("}");
         return sb.toString();

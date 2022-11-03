@@ -11,12 +11,12 @@ import java.util.Objects;
 public class ClusterListFailedReasons {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "error_code")
+    @JsonProperty(value = "errorCode")
 
     private String errorCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "error_msg")
+    @JsonProperty(value = "errorMsg")
 
     private String errorMsg;
 

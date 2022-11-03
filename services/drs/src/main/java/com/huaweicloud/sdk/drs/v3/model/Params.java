@@ -103,26 +103,26 @@ public class Params {
     private String dataType;
 
     /**
-     * 分组
+     * 分组。 - common-常规参数 - performance-性能参数
      */
     public static final class GroupEnum {
 
         /**
-         * Enum COMMON_ for value: "common-常规参数"
+         * Enum COMMON for value: "common"
          */
-        public static final GroupEnum COMMON_ = new GroupEnum("common-常规参数");
+        public static final GroupEnum COMMON = new GroupEnum("common");
 
         /**
-         * Enum PERFORMANCE_ for value: "performance-性能参数"
+         * Enum PERFORMANCE for value: "performance"
          */
-        public static final GroupEnum PERFORMANCE_ = new GroupEnum("performance-性能参数");
+        public static final GroupEnum PERFORMANCE = new GroupEnum("performance");
 
         private static final Map<String, GroupEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, GroupEnum> createStaticFields() {
             Map<String, GroupEnum> map = new HashMap<>();
-            map.put("common-常规参数", COMMON_);
-            map.put("performance-性能参数", PERFORMANCE_);
+            map.put("common", COMMON);
+            map.put("performance", PERFORMANCE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -336,7 +336,7 @@ public class Params {
     }
 
     /**
-     * 分组
+     * 分组。 - common-常规参数 - performance-性能参数
      * @return group
      */
     public GroupEnum getGroup() {

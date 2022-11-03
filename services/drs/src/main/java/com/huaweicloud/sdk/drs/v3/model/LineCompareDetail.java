@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * 
+ * LineCompareDetail
  */
 public class LineCompareDetail {
 
@@ -41,59 +41,57 @@ public class LineCompareDetail {
     private Integer diffRowNum;
 
     /**
-     * 对比结果。
+     * 对比结果。 - CONSISTENT-一致 - INCONSISTENT-不一致 - COMPARING-正在对比 - WAITING_FOR_COMPARISON-等待对比 - FAILED_TO_COMPARE-对比失败 - TARGET_DB_NOT_EXIT-目标库不存在 - CAN_NOT_COMPARE-无法对比
      */
     public static final class LineCompareResultEnum {
 
         /**
-         * Enum CONSISTENT_ for value: "CONSISTENT-一致"
+         * Enum CONSISTENT for value: "CONSISTENT"
          */
-        public static final LineCompareResultEnum CONSISTENT_ = new LineCompareResultEnum("CONSISTENT-一致");
+        public static final LineCompareResultEnum CONSISTENT = new LineCompareResultEnum("CONSISTENT");
 
         /**
-         * Enum INCONSISTENT_ for value: "INCONSISTENT-不一致"
+         * Enum INCONSISTENT for value: "INCONSISTENT"
          */
-        public static final LineCompareResultEnum INCONSISTENT_ = new LineCompareResultEnum("INCONSISTENT-不一致");
+        public static final LineCompareResultEnum INCONSISTENT = new LineCompareResultEnum("INCONSISTENT");
 
         /**
-         * Enum COMPARING_ for value: "COMPARING-正在对比"
+         * Enum COMPARING for value: "COMPARING"
          */
-        public static final LineCompareResultEnum COMPARING_ = new LineCompareResultEnum("COMPARING-正在对比");
+        public static final LineCompareResultEnum COMPARING = new LineCompareResultEnum("COMPARING");
 
         /**
-         * Enum WAITING_FOR_COMPARISON_ for value: "WAITING_FOR_COMPARISON-等待对比"
+         * Enum WAITING_FOR_COMPARISON for value: "WAITING_FOR_COMPARISON"
          */
-        public static final LineCompareResultEnum WAITING_FOR_COMPARISON_ =
-            new LineCompareResultEnum("WAITING_FOR_COMPARISON-等待对比");
+        public static final LineCompareResultEnum WAITING_FOR_COMPARISON =
+            new LineCompareResultEnum("WAITING_FOR_COMPARISON");
 
         /**
-         * Enum FAILED_TO_COMPARE_ for value: "FAILED_TO_COMPARE-对比失败"
+         * Enum FAILED_TO_COMPARE for value: "FAILED_TO_COMPARE"
          */
-        public static final LineCompareResultEnum FAILED_TO_COMPARE_ =
-            new LineCompareResultEnum("FAILED_TO_COMPARE-对比失败");
+        public static final LineCompareResultEnum FAILED_TO_COMPARE = new LineCompareResultEnum("FAILED_TO_COMPARE");
 
         /**
-         * Enum TARGET_DB_NOT_EXIT_ for value: "TARGET_DB_NOT_EXIT-目标库不存在"
+         * Enum TARGET_DB_NOT_EXIT for value: "TARGET_DB_NOT_EXIT"
          */
-        public static final LineCompareResultEnum TARGET_DB_NOT_EXIT_ =
-            new LineCompareResultEnum("TARGET_DB_NOT_EXIT-目标库不存在");
+        public static final LineCompareResultEnum TARGET_DB_NOT_EXIT = new LineCompareResultEnum("TARGET_DB_NOT_EXIT");
 
         /**
-         * Enum CAN_NOT_COMPARE_ for value: "CAN_NOT_COMPARE-无法对比"
+         * Enum CAN_NOT_COMPARE for value: "CAN_NOT_COMPARE"
          */
-        public static final LineCompareResultEnum CAN_NOT_COMPARE_ = new LineCompareResultEnum("CAN_NOT_COMPARE-无法对比");
+        public static final LineCompareResultEnum CAN_NOT_COMPARE = new LineCompareResultEnum("CAN_NOT_COMPARE");
 
         private static final Map<String, LineCompareResultEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, LineCompareResultEnum> createStaticFields() {
             Map<String, LineCompareResultEnum> map = new HashMap<>();
-            map.put("CONSISTENT-一致", CONSISTENT_);
-            map.put("INCONSISTENT-不一致", INCONSISTENT_);
-            map.put("COMPARING-正在对比", COMPARING_);
-            map.put("WAITING_FOR_COMPARISON-等待对比", WAITING_FOR_COMPARISON_);
-            map.put("FAILED_TO_COMPARE-对比失败", FAILED_TO_COMPARE_);
-            map.put("TARGET_DB_NOT_EXIT-目标库不存在", TARGET_DB_NOT_EXIT_);
-            map.put("CAN_NOT_COMPARE-无法对比", CAN_NOT_COMPARE_);
+            map.put("CONSISTENT", CONSISTENT);
+            map.put("INCONSISTENT", INCONSISTENT);
+            map.put("COMPARING", COMPARING);
+            map.put("WAITING_FOR_COMPARISON", WAITING_FOR_COMPARISON);
+            map.put("FAILED_TO_COMPARE", FAILED_TO_COMPARE);
+            map.put("TARGET_DB_NOT_EXIT", TARGET_DB_NOT_EXIT);
+            map.put("CAN_NOT_COMPARE", CAN_NOT_COMPARE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -251,7 +249,7 @@ public class LineCompareDetail {
     }
 
     /**
-     * 对比结果。
+     * 对比结果。 - CONSISTENT-一致 - INCONSISTENT-不一致 - COMPARING-正在对比 - WAITING_FOR_COMPARISON-等待对比 - FAILED_TO_COMPARE-对比失败 - TARGET_DB_NOT_EXIT-目标库不存在 - CAN_NOT_COMPARE-无法对比
      * @return lineCompareResult
      */
     public LineCompareResultEnum getLineCompareResult() {

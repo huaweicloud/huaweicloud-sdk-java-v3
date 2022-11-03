@@ -43,7 +43,7 @@ public class ListSecretsRequest {
     }
 
     /**
-     * 分页查询起始的资源id，为空时为查询第一页 
+     * 分页查询起始的凭据名称，为空时为查询第一页 
      * @return marker
      */
     public String getMarker() {

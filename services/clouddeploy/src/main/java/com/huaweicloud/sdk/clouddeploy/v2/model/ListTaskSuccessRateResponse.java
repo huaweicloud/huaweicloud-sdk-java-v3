@@ -25,14 +25,14 @@ public class ListTaskSuccessRateResponse extends SdkResponse {
     private String projectName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "start_time")
+    @JsonProperty(value = "start_date")
 
-    private String startTime;
+    private String startDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "end_time")
+    @JsonProperty(value = "end_date")
 
-    private String endTime;
+    private String endDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tasks_success_rate")
@@ -73,38 +73,38 @@ public class ListTaskSuccessRateResponse extends SdkResponse {
         this.projectName = projectName;
     }
 
-    public ListTaskSuccessRateResponse withStartTime(String startTime) {
-        this.startTime = startTime;
+    public ListTaskSuccessRateResponse withStartDate(String startDate) {
+        this.startDate = startDate;
         return this;
     }
 
     /**
      * 任务执行开始时间范围的左边界（包含），格式yyyy-MM-dd
-     * @return startTime
+     * @return startDate
      */
-    public String getStartTime() {
-        return startTime;
+    public String getStartDate() {
+        return startDate;
     }
 
-    public void setStartTime(String startTime) {
-        this.startTime = startTime;
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
     }
 
-    public ListTaskSuccessRateResponse withEndTime(String endTime) {
-        this.endTime = endTime;
+    public ListTaskSuccessRateResponse withEndDate(String endDate) {
+        this.endDate = endDate;
         return this;
     }
 
     /**
      * 任务执行开始时间范围的右边界（包含），格式yyyy-MM-dd 。最大时间范围为1年。
-     * @return endTime
+     * @return endDate
      */
-    public String getEndTime() {
-        return endTime;
+    public String getEndDate() {
+        return endDate;
     }
 
-    public void setEndTime(String endTime) {
-        this.endTime = endTime;
+    public void setEndDate(String endDate) {
+        this.endDate = endDate;
     }
 
     public ListTaskSuccessRateResponse withTasksSuccessRate(List<TaskSuccessRate> tasksSuccessRate) {
@@ -151,14 +151,14 @@ public class ListTaskSuccessRateResponse extends SdkResponse {
         ListTaskSuccessRateResponse listTaskSuccessRateResponse = (ListTaskSuccessRateResponse) o;
         return Objects.equals(this.projectId, listTaskSuccessRateResponse.projectId)
             && Objects.equals(this.projectName, listTaskSuccessRateResponse.projectName)
-            && Objects.equals(this.startTime, listTaskSuccessRateResponse.startTime)
-            && Objects.equals(this.endTime, listTaskSuccessRateResponse.endTime)
+            && Objects.equals(this.startDate, listTaskSuccessRateResponse.startDate)
+            && Objects.equals(this.endDate, listTaskSuccessRateResponse.endDate)
             && Objects.equals(this.tasksSuccessRate, listTaskSuccessRateResponse.tasksSuccessRate);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(projectId, projectName, startTime, endTime, tasksSuccessRate);
+        return Objects.hash(projectId, projectName, startDate, endDate, tasksSuccessRate);
     }
 
     @Override
@@ -167,8 +167,8 @@ public class ListTaskSuccessRateResponse extends SdkResponse {
         sb.append("class ListTaskSuccessRateResponse {\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    projectName: ").append(toIndentedString(projectName)).append("\n");
-        sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
-        sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
+        sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
+        sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
         sb.append("    tasksSuccessRate: ").append(toIndentedString(tasksSuccessRate)).append("\n");
         sb.append("}");
         return sb.toString();

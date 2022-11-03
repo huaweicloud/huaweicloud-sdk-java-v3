@@ -26,7 +26,7 @@ public class RecyclePolicy {
     }
 
     /**
-     * 是否打开回收策略 - true 打开回收策略 - false 不打开回收策略
+     * 打开回收策略，不可关闭 - true 打开回收策略
      * @return enabled
      */
     public Boolean getEnabled() {

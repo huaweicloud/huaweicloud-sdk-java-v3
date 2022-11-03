@@ -21,26 +21,26 @@ public class CheckJobResp {
     private String id;
 
     /**
-     * 测试结果
+     * 测试结果。 - true：成功 - false：失败
      */
     public static final class StatusEnum {
 
         /**
-         * Enum TRUE_ for value: "true表示成功"
+         * Enum TRUE for value: "true"
          */
-        public static final StatusEnum TRUE_ = new StatusEnum("true表示成功");
+        public static final StatusEnum TRUE = new StatusEnum("true");
 
         /**
-         * Enum FALSE_ for value: "false表示失败"
+         * Enum FALSE for value: "false"
          */
-        public static final StatusEnum FALSE_ = new StatusEnum("false表示失败");
+        public static final StatusEnum FALSE = new StatusEnum("false");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, StatusEnum> createStaticFields() {
             Map<String, StatusEnum> map = new HashMap<>();
-            map.put("true表示成功", TRUE_);
-            map.put("false表示失败", FALSE_);
+            map.put("true", TRUE);
+            map.put("false", FALSE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -140,7 +140,7 @@ public class CheckJobResp {
     }
 
     /**
-     * 测试结果
+     * 测试结果。 - true：成功 - false：失败
      * @return status
      */
     public StatusEnum getStatus() {

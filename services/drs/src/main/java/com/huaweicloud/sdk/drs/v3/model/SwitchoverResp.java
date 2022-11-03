@@ -37,32 +37,32 @@ public class SwitchoverResp {
     private EndpointVO targetDb;
 
     /**
-     * 任务方向。
+     * 任务方向。 - up 入云 灾备场景时对应本云为备 - down 出云 灾备场景时对应本云为主 - non-dbs 自建
      */
     public static final class JobDirectionEnum {
 
         /**
-         * Enum UP_ for value: "up 入云 灾备场景时对应本云为备"
+         * Enum UP for value: "up"
          */
-        public static final JobDirectionEnum UP_ = new JobDirectionEnum("up 入云 灾备场景时对应本云为备");
+        public static final JobDirectionEnum UP = new JobDirectionEnum("up");
 
         /**
-         * Enum DOWN_ for value: "down 出云 灾备场景时对应本云为主"
+         * Enum DOWN for value: "down"
          */
-        public static final JobDirectionEnum DOWN_ = new JobDirectionEnum("down 出云 灾备场景时对应本云为主");
+        public static final JobDirectionEnum DOWN = new JobDirectionEnum("down");
 
         /**
-         * Enum NON_DBS_ for value: "non-dbs 自建"
+         * Enum NON_DBS for value: "non-dbs"
          */
-        public static final JobDirectionEnum NON_DBS_ = new JobDirectionEnum("non-dbs 自建");
+        public static final JobDirectionEnum NON_DBS = new JobDirectionEnum("non-dbs");
 
         private static final Map<String, JobDirectionEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, JobDirectionEnum> createStaticFields() {
             Map<String, JobDirectionEnum> map = new HashMap<>();
-            map.put("up 入云 灾备场景时对应本云为备", UP_);
-            map.put("down 出云 灾备场景时对应本云为主", DOWN_);
-            map.put("non-dbs 自建", NON_DBS_);
+            map.put("up", UP);
+            map.put("down", DOWN);
+            map.put("non-dbs", NON_DBS);
             return Collections.unmodifiableMap(map);
         }
 
@@ -231,7 +231,7 @@ public class SwitchoverResp {
     }
 
     /**
-     * 任务方向。
+     * 任务方向。 - up 入云 灾备场景时对应本云为备 - down 出云 灾备场景时对应本云为主 - non-dbs 自建
      * @return jobDirection
      */
     public JobDirectionEnum getJobDirection() {

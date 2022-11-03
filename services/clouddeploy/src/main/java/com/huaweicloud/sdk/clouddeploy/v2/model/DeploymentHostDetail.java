@@ -168,6 +168,56 @@ public class DeploymentHostDetail {
 
     private PermissionHostDetail permission;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "update_time")
+
+    private String updateTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "lastest_connection_time")
+
+    private String lastestConnectionTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "connection_status")
+
+    private String connectionStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "owner_name")
+
+    private String ownerName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "updator_id")
+
+    private String updatorId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "create_time")
+
+    private String createTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "nick_name")
+
+    private String nickName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "owner_id")
+
+    private String ownerId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "updator_name")
+
+    private String updatorName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "connection_result")
+
+    private String connectionResult;
+
     public DeploymentHostDetail withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
@@ -450,6 +500,176 @@ public class DeploymentHostDetail {
         this.permission = permission;
     }
 
+    public DeploymentHostDetail withUpdateTime(String updateTime) {
+        this.updateTime = updateTime;
+        return this;
+    }
+
+    /**
+     * 更新时间
+     * @return updateTime
+     */
+    public String getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(String updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    public DeploymentHostDetail withLastestConnectionTime(String lastestConnectionTime) {
+        this.lastestConnectionTime = lastestConnectionTime;
+        return this;
+    }
+
+    /**
+     * 最后连接时间
+     * @return lastestConnectionTime
+     */
+    public String getLastestConnectionTime() {
+        return lastestConnectionTime;
+    }
+
+    public void setLastestConnectionTime(String lastestConnectionTime) {
+        this.lastestConnectionTime = lastestConnectionTime;
+    }
+
+    public DeploymentHostDetail withConnectionStatus(String connectionStatus) {
+        this.connectionStatus = connectionStatus;
+        return this;
+    }
+
+    /**
+     * 连接状态
+     * @return connectionStatus
+     */
+    public String getConnectionStatus() {
+        return connectionStatus;
+    }
+
+    public void setConnectionStatus(String connectionStatus) {
+        this.connectionStatus = connectionStatus;
+    }
+
+    public DeploymentHostDetail withOwnerName(String ownerName) {
+        this.ownerName = ownerName;
+        return this;
+    }
+
+    /**
+     * 拥有者名称
+     * @return ownerName
+     */
+    public String getOwnerName() {
+        return ownerName;
+    }
+
+    public void setOwnerName(String ownerName) {
+        this.ownerName = ownerName;
+    }
+
+    public DeploymentHostDetail withUpdatorId(String updatorId) {
+        this.updatorId = updatorId;
+        return this;
+    }
+
+    /**
+     * 维护者id
+     * @return updatorId
+     */
+    public String getUpdatorId() {
+        return updatorId;
+    }
+
+    public void setUpdatorId(String updatorId) {
+        this.updatorId = updatorId;
+    }
+
+    public DeploymentHostDetail withCreateTime(String createTime) {
+        this.createTime = createTime;
+        return this;
+    }
+
+    /**
+     * 创建时间
+     * @return createTime
+     */
+    public String getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime;
+    }
+
+    public DeploymentHostDetail withNickName(String nickName) {
+        this.nickName = nickName;
+        return this;
+    }
+
+    /**
+     * 昵称
+     * @return nickName
+     */
+    public String getNickName() {
+        return nickName;
+    }
+
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
+    }
+
+    public DeploymentHostDetail withOwnerId(String ownerId) {
+        this.ownerId = ownerId;
+        return this;
+    }
+
+    /**
+     * 拥有者id
+     * @return ownerId
+     */
+    public String getOwnerId() {
+        return ownerId;
+    }
+
+    public void setOwnerId(String ownerId) {
+        this.ownerId = ownerId;
+    }
+
+    public DeploymentHostDetail withUpdatorName(String updatorName) {
+        this.updatorName = updatorName;
+        return this;
+    }
+
+    /**
+     * 维护者名称
+     * @return updatorName
+     */
+    public String getUpdatorName() {
+        return updatorName;
+    }
+
+    public void setUpdatorName(String updatorName) {
+        this.updatorName = updatorName;
+    }
+
+    public DeploymentHostDetail withConnectionResult(String connectionResult) {
+        this.connectionResult = connectionResult;
+        return this;
+    }
+
+    /**
+     * 连接结果
+     * @return connectionResult
+     */
+    public String getConnectionResult() {
+        return connectionResult;
+    }
+
+    public void setConnectionResult(String connectionResult) {
+        this.connectionResult = connectionResult;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -472,7 +692,17 @@ public class DeploymentHostDetail {
             && Objects.equals(this.groupName, deploymentHostDetail.groupName)
             && Objects.equals(this.projectId, deploymentHostDetail.projectId)
             && Objects.equals(this.projectName, deploymentHostDetail.projectName)
-            && Objects.equals(this.permission, deploymentHostDetail.permission);
+            && Objects.equals(this.permission, deploymentHostDetail.permission)
+            && Objects.equals(this.updateTime, deploymentHostDetail.updateTime)
+            && Objects.equals(this.lastestConnectionTime, deploymentHostDetail.lastestConnectionTime)
+            && Objects.equals(this.connectionStatus, deploymentHostDetail.connectionStatus)
+            && Objects.equals(this.ownerName, deploymentHostDetail.ownerName)
+            && Objects.equals(this.updatorId, deploymentHostDetail.updatorId)
+            && Objects.equals(this.createTime, deploymentHostDetail.createTime)
+            && Objects.equals(this.nickName, deploymentHostDetail.nickName)
+            && Objects.equals(this.ownerId, deploymentHostDetail.ownerId)
+            && Objects.equals(this.updatorName, deploymentHostDetail.updatorName)
+            && Objects.equals(this.connectionResult, deploymentHostDetail.connectionResult);
     }
 
     @Override
@@ -491,7 +721,17 @@ public class DeploymentHostDetail {
             groupName,
             projectId,
             projectName,
-            permission);
+            permission,
+            updateTime,
+            lastestConnectionTime,
+            connectionStatus,
+            ownerName,
+            updatorId,
+            createTime,
+            nickName,
+            ownerId,
+            updatorName,
+            connectionResult);
     }
 
     @Override
@@ -513,6 +753,16 @@ public class DeploymentHostDetail {
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    projectName: ").append(toIndentedString(projectName)).append("\n");
         sb.append("    permission: ").append(toIndentedString(permission)).append("\n");
+        sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
+        sb.append("    lastestConnectionTime: ").append(toIndentedString(lastestConnectionTime)).append("\n");
+        sb.append("    connectionStatus: ").append(toIndentedString(connectionStatus)).append("\n");
+        sb.append("    ownerName: ").append(toIndentedString(ownerName)).append("\n");
+        sb.append("    updatorId: ").append(toIndentedString(updatorId)).append("\n");
+        sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+        sb.append("    nickName: ").append(toIndentedString(nickName)).append("\n");
+        sb.append("    ownerId: ").append(toIndentedString(ownerId)).append("\n");
+        sb.append("    updatorName: ").append(toIndentedString(updatorName)).append("\n");
+        sb.append("    connectionResult: ").append(toIndentedString(connectionResult)).append("\n");
         sb.append("}");
         return sb.toString();
     }

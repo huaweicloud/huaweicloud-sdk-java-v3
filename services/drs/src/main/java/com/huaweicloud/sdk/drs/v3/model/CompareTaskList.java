@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * 
+ * CompareTaskList
  */
 public class CompareTaskList {
 
@@ -26,64 +26,63 @@ public class CompareTaskList {
     private String compareType;
 
     /**
-     * 对比任务的状态。
+     * 对比任务的状态。 - RUNNING-运行中 - WAITING_FOR_RUNNING-等待启动中 - SUCCESSFUL-完成 - FAILED-失败 - CANCELLED-已取消 - TIMEOUT_INTERRUPT-超时中断 - FULL_DOING-全量校验中 - INCRE_DOING-增量校验中
      */
     public static final class CompareTaskStatusEnum {
 
         /**
-         * Enum RUNNING_ for value: "RUNNING-运行中"
+         * Enum RUNNING for value: "RUNNING"
          */
-        public static final CompareTaskStatusEnum RUNNING_ = new CompareTaskStatusEnum("RUNNING-运行中");
+        public static final CompareTaskStatusEnum RUNNING = new CompareTaskStatusEnum("RUNNING");
 
         /**
-         * Enum WAITING_FOR_RUNNING_ for value: "WAITING_FOR_RUNNING-等待启动中"
+         * Enum WAITING_FOR_RUNNING for value: "WAITING_FOR_RUNNING"
          */
-        public static final CompareTaskStatusEnum WAITING_FOR_RUNNING_ =
-            new CompareTaskStatusEnum("WAITING_FOR_RUNNING-等待启动中");
+        public static final CompareTaskStatusEnum WAITING_FOR_RUNNING =
+            new CompareTaskStatusEnum("WAITING_FOR_RUNNING");
 
         /**
-         * Enum SUCCESSFUL_ for value: "SUCCESSFUL-完成"
+         * Enum SUCCESSFUL for value: "SUCCESSFUL"
          */
-        public static final CompareTaskStatusEnum SUCCESSFUL_ = new CompareTaskStatusEnum("SUCCESSFUL-完成");
+        public static final CompareTaskStatusEnum SUCCESSFUL = new CompareTaskStatusEnum("SUCCESSFUL");
 
         /**
-         * Enum FAILED_ for value: "FAILED-失败"
+         * Enum FAILED for value: "FAILED"
          */
-        public static final CompareTaskStatusEnum FAILED_ = new CompareTaskStatusEnum("FAILED-失败");
+        public static final CompareTaskStatusEnum FAILED = new CompareTaskStatusEnum("FAILED");
 
         /**
-         * Enum CANCELLED_ for value: "CANCELLED-已取消"
+         * Enum CANCELLED for value: "CANCELLED"
          */
-        public static final CompareTaskStatusEnum CANCELLED_ = new CompareTaskStatusEnum("CANCELLED-已取消");
+        public static final CompareTaskStatusEnum CANCELLED = new CompareTaskStatusEnum("CANCELLED");
 
         /**
-         * Enum TIMEOUT_INTERRUPT_ for value: "TIMEOUT_INTERRUPT-超时中断"
+         * Enum TIMEOUT_INTERRUPT for value: "TIMEOUT_INTERRUPT"
          */
-        public static final CompareTaskStatusEnum TIMEOUT_INTERRUPT_ =
-            new CompareTaskStatusEnum("TIMEOUT_INTERRUPT-超时中断");
+        public static final CompareTaskStatusEnum TIMEOUT_INTERRUPT = new CompareTaskStatusEnum("TIMEOUT_INTERRUPT");
 
         /**
-         * Enum FULL_DOING_ for value: "FULL_DOING-全量校验中"
+         * Enum FULL_DOING for value: "FULL_DOING"
          */
-        public static final CompareTaskStatusEnum FULL_DOING_ = new CompareTaskStatusEnum("FULL_DOING-全量校验中");
+        public static final CompareTaskStatusEnum FULL_DOING = new CompareTaskStatusEnum("FULL_DOING");
 
         /**
-         * Enum INCRE_DOING_ for value: "INCRE_DOING-增量校验中"
+         * Enum INCRE_DOING for value: "INCRE_DOING"
          */
-        public static final CompareTaskStatusEnum INCRE_DOING_ = new CompareTaskStatusEnum("INCRE_DOING-增量校验中");
+        public static final CompareTaskStatusEnum INCRE_DOING = new CompareTaskStatusEnum("INCRE_DOING");
 
         private static final Map<String, CompareTaskStatusEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, CompareTaskStatusEnum> createStaticFields() {
             Map<String, CompareTaskStatusEnum> map = new HashMap<>();
-            map.put("RUNNING-运行中", RUNNING_);
-            map.put("WAITING_FOR_RUNNING-等待启动中", WAITING_FOR_RUNNING_);
-            map.put("SUCCESSFUL-完成", SUCCESSFUL_);
-            map.put("FAILED-失败", FAILED_);
-            map.put("CANCELLED-已取消", CANCELLED_);
-            map.put("TIMEOUT_INTERRUPT-超时中断", TIMEOUT_INTERRUPT_);
-            map.put("FULL_DOING-全量校验中", FULL_DOING_);
-            map.put("INCRE_DOING-增量校验中", INCRE_DOING_);
+            map.put("RUNNING", RUNNING);
+            map.put("WAITING_FOR_RUNNING", WAITING_FOR_RUNNING);
+            map.put("SUCCESSFUL", SUCCESSFUL);
+            map.put("FAILED", FAILED);
+            map.put("CANCELLED", CANCELLED);
+            map.put("TIMEOUT_INTERRUPT", TIMEOUT_INTERRUPT);
+            map.put("FULL_DOING", FULL_DOING);
+            map.put("INCRE_DOING", INCRE_DOING);
             return Collections.unmodifiableMap(map);
         }
 
@@ -195,7 +194,7 @@ public class CompareTaskList {
     }
 
     /**
-     * 对比任务的状态。
+     * 对比任务的状态。 - RUNNING-运行中 - WAITING_FOR_RUNNING-等待启动中 - SUCCESSFUL-完成 - FAILED-失败 - CANCELLED-已取消 - TIMEOUT_INTERRUPT-超时中断 - FULL_DOING-全量校验中 - INCRE_DOING-增量校验中
      * @return compareTaskStatus
      */
     public CompareTaskStatusEnum getCompareTaskStatus() {

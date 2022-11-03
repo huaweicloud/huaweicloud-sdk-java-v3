@@ -43,7 +43,7 @@ public class CreateClusterInstanceVolumeBody {
     }
 
     /**
-     * 卷大小，必须大于0且为4和10的公倍数，本地盘规格大小可以通过[获取实例规格列表](ListFlavors.xml)中diskrange属性获得。 单位：GB。
+     * 卷大小，必须大于0且为4和10的公倍数，磁盘规格大小可以通过[获取实例规格列表](ListFlavors.xml)中diskrange属性获得。 单位：GB。
      * @return size
      */
     public Integer getSize() {
