@@ -78,6 +78,11 @@ public class CreateResolveTaskParamMode {
 
     private Integer resolvedTimes;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "custom_short_code")
+
+    private String customShortCode;
+
     public CreateResolveTaskParamMode withCustFlag(String custFlag) {
         this.custFlag = custFlag;
         return this;
@@ -315,6 +320,23 @@ public class CreateResolveTaskParamMode {
         this.resolvedTimes = resolvedTimes;
     }
 
+    public CreateResolveTaskParamMode withCustomShortCode(String customShortCode) {
+        this.customShortCode = customShortCode;
+        return this;
+    }
+
+    /**
+     * 自定义短码，支持长度为3到8位的数字或大小写字母。样例为：aDC123。
+     * @return customShortCode
+     */
+    public String getCustomShortCode() {
+        return customShortCode;
+    }
+
+    public void setCustomShortCode(String customShortCode) {
+        this.customShortCode = customShortCode;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -336,7 +358,8 @@ public class CreateResolveTaskParamMode {
             && Objects.equals(this.generateDate, createResolveTaskParamMode.generateDate)
             && Objects.equals(this.expireDate, createResolveTaskParamMode.expireDate)
             && Objects.equals(this.resolvedDate, createResolveTaskParamMode.resolvedDate)
-            && Objects.equals(this.resolvedTimes, createResolveTaskParamMode.resolvedTimes);
+            && Objects.equals(this.resolvedTimes, createResolveTaskParamMode.resolvedTimes)
+            && Objects.equals(this.customShortCode, createResolveTaskParamMode.customShortCode);
     }
 
     @Override
@@ -353,7 +376,8 @@ public class CreateResolveTaskParamMode {
             generateDate,
             expireDate,
             resolvedDate,
-            resolvedTimes);
+            resolvedTimes,
+            customShortCode);
     }
 
     @Override
@@ -373,6 +397,7 @@ public class CreateResolveTaskParamMode {
         sb.append("    expireDate: ").append(toIndentedString(expireDate)).append("\n");
         sb.append("    resolvedDate: ").append(toIndentedString(resolvedDate)).append("\n");
         sb.append("    resolvedTimes: ").append(toIndentedString(resolvedTimes)).append("\n");
+        sb.append("    customShortCode: ").append(toIndentedString(customShortCode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

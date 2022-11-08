@@ -11633,7 +11633,7 @@ public class RomaMeta {
         HttpRequestDef.Builder<CheckDictionaryRequest, CheckDictionaryResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, CheckDictionaryRequest.class, CheckDictionaryResponse.class)
                 .withName("CheckDictionary")
-                .withUri("/v2{project_id}/instances/{instance_id}/dictionaries/{dict_id}")
+                .withUri("/v2/{project_id}/instances/{instance_id}/dictionaries/{dict_id}")
                 .withContentType("application/json");
 
         // requests
@@ -11697,7 +11697,7 @@ public class RomaMeta {
         HttpRequestDef.Builder<DeleteDictionaryRequest, DeleteDictionaryResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteDictionaryRequest.class, DeleteDictionaryResponse.class)
                 .withName("DeleteDictionary")
-                .withUri("/v2{project_id}/instances/{instance_id}/dictionaries/{dict_id}")
+                .withUri("/v2/{project_id}/instances/{instance_id}/dictionaries/{dict_id}")
                 .withContentType("application/json");
 
         // requests
@@ -11789,7 +11789,7 @@ public class RomaMeta {
         HttpRequestDef.Builder<UpdateDictionaryRequest, UpdateDictionaryResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateDictionaryRequest.class, UpdateDictionaryResponse.class)
                 .withName("UpdateDictionary")
-                .withUri("/v2{project_id}/instances/{instance_id}/dictionaries/{dict_id}")
+                .withUri("/v2/{project_id}/instances/{instance_id}/dictionaries/{dict_id}")
                 .withContentType("application/json;charset=UTF-8");
 
         // requests

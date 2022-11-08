@@ -34,6 +34,11 @@ public class CreateResolveTaskRequestBody {
     private String aimCodeType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "generation_type")
+
+    private String generationType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain")
 
     private String domain;
@@ -87,7 +92,7 @@ public class CreateResolveTaskRequestBody {
     }
 
     /**
-     * 短信签名列表，需要与最终发送短信的签名一致，才能解析。
+     * 短信签名列表，需要与最终发送短信的签名一致，才能解析。  > 最多传入10个签名。 
      * @return smsSigns
      */
     public List<String> getSmsSigns() {
@@ -134,13 +139,30 @@ public class CreateResolveTaskRequestBody {
         this.aimCodeType = aimCodeType;
     }
 
+    public CreateResolveTaskRequestBody withGenerationType(String generationType) {
+        this.generationType = generationType;
+        return this;
+    }
+
+    /**
+     * 生成短码方式。  - 1：标准 - 2：自定义  > 默认1，即标准生成短码。 
+     * @return generationType
+     */
+    public String getGenerationType() {
+        return generationType;
+    }
+
+    public void setGenerationType(String generationType) {
+        this.generationType = generationType;
+    }
+
     public CreateResolveTaskRequestBody withDomain(String domain) {
         this.domain = domain;
         return this;
     }
 
     /**
-     * 自定义短链域名，由大小写字母和数字组成的二级域名。  
+     * 自定义短链域名，由大小写字母和数字组成的二级域名。  > generation_type为2时，此参数为必填。域名需要提前报备，请联系KooMessage运营人员进行域名报备，域名区分生成短码方式，如报备的是标准生成短码方式，则在自定义生成短码时不能使用此域名。 
      * @return domain
      */
     public String getDomain() {
@@ -157,7 +179,7 @@ public class CreateResolveTaskRequestBody {
     }
 
     /**
-     * 失效时间（天）。aim_code_type为group时，取值范围为1~30；aim_code_type为individual个性化时，取值范围为1~7。  > 失效时间精确到秒，例如参数设置为1，创建时间为2022-07-22 21:10:12，过期时间为2022-07-23 21:10:12。 
+     * 失效时间（天）。aim_code_type为group时，取值范围为1~100；aim_code_type为individual个性化时，取值范围为1~7。  > 失效时间精确到秒，例如参数设置为1，创建时间为2022-07-22 21:10:12，过期时间为2022-07-23 21:10:12。 
      * @return expirationTime
      */
     public Integer getExpirationTime() {
@@ -190,7 +212,7 @@ public class CreateResolveTaskRequestBody {
     }
 
     /**
-     * 短链参数列表。一次请求最多生成100个短链。
+     * 短链参数列表。一次请求最多生成100个短链。  > OPPO模板一次最多申请10个短链。 
      * @return params
      */
     public List<CreateResolveTaskParam> getParams() {
@@ -214,6 +236,7 @@ public class CreateResolveTaskRequestBody {
             && Objects.equals(this.smsSigns, createResolveTaskRequestBody.smsSigns)
             && Objects.equals(this.resolvingTimes, createResolveTaskRequestBody.resolvingTimes)
             && Objects.equals(this.aimCodeType, createResolveTaskRequestBody.aimCodeType)
+            && Objects.equals(this.generationType, createResolveTaskRequestBody.generationType)
             && Objects.equals(this.domain, createResolveTaskRequestBody.domain)
             && Objects.equals(this.expirationTime, createResolveTaskRequestBody.expirationTime)
             && Objects.equals(this.params, createResolveTaskRequestBody.params);
@@ -221,7 +244,8 @@ public class CreateResolveTaskRequestBody {
 
     @Override
     public int hashCode() {
-        return Objects.hash(tplId, smsSigns, resolvingTimes, aimCodeType, domain, expirationTime, params);
+        return Objects
+            .hash(tplId, smsSigns, resolvingTimes, aimCodeType, generationType, domain, expirationTime, params);
     }
 
     @Override
@@ -232,6 +256,7 @@ public class CreateResolveTaskRequestBody {
         sb.append("    smsSigns: ").append(toIndentedString(smsSigns)).append("\n");
         sb.append("    resolvingTimes: ").append(toIndentedString(resolvingTimes)).append("\n");
         sb.append("    aimCodeType: ").append(toIndentedString(aimCodeType)).append("\n");
+        sb.append("    generationType: ").append(toIndentedString(generationType)).append("\n");
         sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
         sb.append("    expirationTime: ").append(toIndentedString(expirationTime)).append("\n");
         sb.append("    params: ").append(toIndentedString(params)).append("\n");

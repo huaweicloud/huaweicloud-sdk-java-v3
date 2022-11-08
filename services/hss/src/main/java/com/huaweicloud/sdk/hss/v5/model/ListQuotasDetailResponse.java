@@ -20,9 +20,9 @@ public class ListQuotasDetailResponse extends SdkResponse {
     private Integer packetCycleNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "on_demand_numn")
+    @JsonProperty(value = "on_demand_num")
 
-    private Integer onDemandNumn;
+    private Integer onDemandNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "used_num")
@@ -83,8 +83,8 @@ public class ListQuotasDetailResponse extends SdkResponse {
         this.packetCycleNum = packetCycleNum;
     }
 
-    public ListQuotasDetailResponse withOnDemandNumn(Integer onDemandNumn) {
-        this.onDemandNumn = onDemandNumn;
+    public ListQuotasDetailResponse withOnDemandNum(Integer onDemandNum) {
+        this.onDemandNum = onDemandNum;
         return this;
     }
 
@@ -92,14 +92,14 @@ public class ListQuotasDetailResponse extends SdkResponse {
      * 按需配额数
      * minimum: 0
      * maximum: 10000000
-     * @return onDemandNumn
+     * @return onDemandNum
      */
-    public Integer getOnDemandNumn() {
-        return onDemandNumn;
+    public Integer getOnDemandNum() {
+        return onDemandNum;
     }
 
-    public void setOnDemandNumn(Integer onDemandNumn) {
-        this.onDemandNumn = onDemandNumn;
+    public void setOnDemandNum(Integer onDemandNum) {
+        this.onDemandNum = onDemandNum;
     }
 
     public ListQuotasDetailResponse withUsedNum(Integer usedNum) {
@@ -293,7 +293,7 @@ public class ListQuotasDetailResponse extends SdkResponse {
         }
         ListQuotasDetailResponse listQuotasDetailResponse = (ListQuotasDetailResponse) o;
         return Objects.equals(this.packetCycleNum, listQuotasDetailResponse.packetCycleNum)
-            && Objects.equals(this.onDemandNumn, listQuotasDetailResponse.onDemandNumn)
+            && Objects.equals(this.onDemandNum, listQuotasDetailResponse.onDemandNum)
             && Objects.equals(this.usedNum, listQuotasDetailResponse.usedNum)
             && Objects.equals(this.idleNum, listQuotasDetailResponse.idleNum)
             && Objects.equals(this.normalNum, listQuotasDetailResponse.normalNum)
@@ -307,7 +307,7 @@ public class ListQuotasDetailResponse extends SdkResponse {
     @Override
     public int hashCode() {
         return Objects.hash(packetCycleNum,
-            onDemandNumn,
+            onDemandNum,
             usedNum,
             idleNum,
             normalNum,
@@ -323,7 +323,7 @@ public class ListQuotasDetailResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListQuotasDetailResponse {\n");
         sb.append("    packetCycleNum: ").append(toIndentedString(packetCycleNum)).append("\n");
-        sb.append("    onDemandNumn: ").append(toIndentedString(onDemandNumn)).append("\n");
+        sb.append("    onDemandNum: ").append(toIndentedString(onDemandNum)).append("\n");
         sb.append("    usedNum: ").append(toIndentedString(usedNum)).append("\n");
         sb.append("    idleNum: ").append(toIndentedString(idleNum)).append("\n");
         sb.append("    normalNum: ").append(toIndentedString(normalNum)).append("\n");

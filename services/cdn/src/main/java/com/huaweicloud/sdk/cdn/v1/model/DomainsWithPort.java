@@ -373,7 +373,7 @@ public class DomainsWithPort {
     }
 
     /**
-     * 是否开启HTTPS加速。
+     * 是否开启HTTPS加速。 0：代表未开启HTTPS加速； 1：代表开启HTTPS加速，且回源方式为协议跟随； 2：代表开启HTTPS加速，且回源方式为HTTP； 3：代表开启HTTPS加速，且回源方式为HTTPS。
      * @return httpsStatus
      */
     public Integer getHttpsStatus() {
@@ -492,7 +492,7 @@ public class DomainsWithPort {
     }
 
     /**
-     * Range回源状态。
+     * Range回源状态（off代表关闭 on代表开启）。
      * @return rangeStatus
      */
     public String getRangeStatus() {
@@ -509,7 +509,7 @@ public class DomainsWithPort {
     }
 
     /**
-     * 回源跟随状态。
+     * 回源跟随状态（off代表关闭 on代表开启）。
      * @return followStatus
      */
     public String getFollowStatus() {
@@ -526,7 +526,7 @@ public class DomainsWithPort {
     }
 
     /**
-     * 是否暂停源站回源。
+     * 是否暂停源站回源（off代表关闭 on代表开启）。
      * @return originStatus
      */
     public String getOriginStatus() {
@@ -543,7 +543,7 @@ public class DomainsWithPort {
     }
 
     /**
-     * 域名禁用原因
+     * 域名禁用原因。 1：该域名涉嫌违规内容（涉黄/涉赌/涉毒/涉政）已被禁用； 2：该域名因备案失效已被禁用； 3：该域名遭受攻击，已被禁用； 150：该域名涉嫌违规内容涉黄已被禁用； 151：该域名涉嫌违规内容涉政已被禁用； 152：该域名涉嫌违规内容涉暴已被禁用； 153：该域名涉嫌违规内容涉赌已被禁用。
      * @return bannedReason
      */
     public String getBannedReason() {
@@ -560,7 +560,7 @@ public class DomainsWithPort {
     }
 
     /**
-     * 域名锁定原因
+     * 域名锁定原因（Changing the config, please wait）。
      * @return lockedReason
      */
     public String getLockedReason() {

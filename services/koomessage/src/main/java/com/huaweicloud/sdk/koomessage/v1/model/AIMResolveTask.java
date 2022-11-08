@@ -29,6 +29,11 @@ public class AIMResolveTask {
     private String aimCodeType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "generation_type")
+
+    private String generationType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain")
 
     private String domain;
@@ -96,13 +101,30 @@ public class AIMResolveTask {
         this.aimCodeType = aimCodeType;
     }
 
+    public AIMResolveTask withGenerationType(String generationType) {
+        this.generationType = generationType;
+        return this;
+    }
+
+    /**
+     * 生成短码方式。  - 1：标准 - 2：自定义  > 默认1，即标准生成短码。 
+     * @return generationType
+     */
+    public String getGenerationType() {
+        return generationType;
+    }
+
+    public void setGenerationType(String generationType) {
+        this.generationType = generationType;
+    }
+
     public AIMResolveTask withDomain(String domain) {
         this.domain = domain;
         return this;
     }
 
     /**
-     * 自定义短链域名，由大小写字母和数字组成的二级域名。  
+     * 自定义短链域名，由大小写字母和数字组成的二级域名。   > 自定义短码即generation_type为2时，此参数为必填。域名需要提前报备，请联系KooMessage运营人员进行域名报备，域名区分生成短码方式，如报备的是标准生成短码方式，则在自定义生成短码时不能使用此域名。 
      * @return domain
      */
     public String getDomain() {
@@ -152,7 +174,7 @@ public class AIMResolveTask {
     }
 
     /**
-     * 短链解析详情列表。一次请求最多100个短链。
+     * 短链解析详情列表。一次请求最多100个短链。  > OPPO模板一次最多申请10个短链。 
      * @return params
      */
     public List<CreateResolveTaskParam> getParams() {
@@ -175,6 +197,7 @@ public class AIMResolveTask {
         return Objects.equals(this.tplId, aiMResolveTask.tplId)
             && Objects.equals(this.resolveTimes, aiMResolveTask.resolveTimes)
             && Objects.equals(this.aimCodeType, aiMResolveTask.aimCodeType)
+            && Objects.equals(this.generationType, aiMResolveTask.generationType)
             && Objects.equals(this.domain, aiMResolveTask.domain)
             && Objects.equals(this.expirationTime, aiMResolveTask.expirationTime)
             && Objects.equals(this.params, aiMResolveTask.params);
@@ -182,7 +205,7 @@ public class AIMResolveTask {
 
     @Override
     public int hashCode() {
-        return Objects.hash(tplId, resolveTimes, aimCodeType, domain, expirationTime, params);
+        return Objects.hash(tplId, resolveTimes, aimCodeType, generationType, domain, expirationTime, params);
     }
 
     @Override
@@ -192,6 +215,7 @@ public class AIMResolveTask {
         sb.append("    tplId: ").append(toIndentedString(tplId)).append("\n");
         sb.append("    resolveTimes: ").append(toIndentedString(resolveTimes)).append("\n");
         sb.append("    aimCodeType: ").append(toIndentedString(aimCodeType)).append("\n");
+        sb.append("    generationType: ").append(toIndentedString(generationType)).append("\n");
         sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
         sb.append("    expirationTime: ").append(toIndentedString(expirationTime)).append("\n");
         sb.append("    params: ").append(toIndentedString(params)).append("\n");

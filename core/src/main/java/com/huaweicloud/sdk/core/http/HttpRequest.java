@@ -24,6 +24,7 @@ package com.huaweicloud.sdk.core.http;
 import com.huaweicloud.sdk.core.Constants;
 import com.huaweicloud.sdk.core.auth.SigningAlgorithm;
 import com.huaweicloud.sdk.core.exception.SdkException;
+import com.huaweicloud.sdk.core.utils.SignUtils;
 import com.huaweicloud.sdk.core.utils.StringUtils;
 
 import org.slf4j.Logger;
@@ -311,7 +312,7 @@ public interface HttpRequest {
                     if (value.isEmpty()) {
                         sb.append(String.format("%s=&", key));
                     } else {
-                        sb.append(String.format("%s=%s&", key, value));
+                        sb.append(String.format("%s=%s&", key, SignUtils.urlEncode(value, false)));
                     }
                 });
             });

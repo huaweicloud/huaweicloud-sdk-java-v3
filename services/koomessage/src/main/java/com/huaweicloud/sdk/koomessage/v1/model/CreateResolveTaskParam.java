@@ -28,6 +28,11 @@ public class CreateResolveTaskParam {
 
     private String customUrl;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "custom_short_code")
+
+    private String customShortCode;
+
     public CreateResolveTaskParam withCustFlag(String custFlag) {
         this.custFlag = custFlag;
         return this;
@@ -84,7 +89,7 @@ public class CreateResolveTaskParam {
     }
 
     /**
-     * 自定义跳转地址。长度要求不超过256。 > - 未填时，终端用户点击短信原文中的短链后，跳转智能信息模板H5页 > - 已填时，终端用户点击短信原文中的短链后，跳转该字段对应的页面，填写时必须为http或https作为前缀 > - 使用自定义跳转链接功能请联系KooMessage运营人员进行域名备案 
+     * 自定义跳转地址。长度要求不超过256。 > - 未填时，终端用户点击短信原文中的短链后，跳转智能信息模板H5页 > - 已填时，终端用户点击短信原文中的短链后，跳转该字段对应的页面，填写时必须为http或https作为前缀 > - 使用自定义跳转链接功能请联系KooMessage运营人员进行域名备案 > - 自定义短码时即generation_type为2时不支持自定义跳转链接功能 
      * @return customUrl
      */
     public String getCustomUrl() {
@@ -93,6 +98,23 @@ public class CreateResolveTaskParam {
 
     public void setCustomUrl(String customUrl) {
         this.customUrl = customUrl;
+    }
+
+    public CreateResolveTaskParam withCustomShortCode(String customShortCode) {
+        this.customShortCode = customShortCode;
+        return this;
+    }
+
+    /**
+     * 自定义短码，支持长度为3到8位的数字或大小写字母。样例为：aDC123。 > 自定义短码时即generation_type为2时，此参数为必填。
+     * @return customShortCode
+     */
+    public String getCustomShortCode() {
+        return customShortCode;
+    }
+
+    public void setCustomShortCode(String customShortCode) {
+        this.customShortCode = customShortCode;
     }
 
     @Override
@@ -106,12 +128,13 @@ public class CreateResolveTaskParam {
         CreateResolveTaskParam createResolveTaskParam = (CreateResolveTaskParam) o;
         return Objects.equals(this.custFlag, createResolveTaskParam.custFlag)
             && Objects.equals(this.dyncParams, createResolveTaskParam.dyncParams)
-            && Objects.equals(this.customUrl, createResolveTaskParam.customUrl);
+            && Objects.equals(this.customUrl, createResolveTaskParam.customUrl)
+            && Objects.equals(this.customShortCode, createResolveTaskParam.customShortCode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(custFlag, dyncParams, customUrl);
+        return Objects.hash(custFlag, dyncParams, customUrl, customShortCode);
     }
 
     @Override
@@ -121,6 +144,7 @@ public class CreateResolveTaskParam {
         sb.append("    custFlag: ").append(toIndentedString(custFlag)).append("\n");
         sb.append("    dyncParams: ").append(toIndentedString(dyncParams)).append("\n");
         sb.append("    customUrl: ").append(toIndentedString(customUrl)).append("\n");
+        sb.append("    customShortCode: ").append(toIndentedString(customShortCode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

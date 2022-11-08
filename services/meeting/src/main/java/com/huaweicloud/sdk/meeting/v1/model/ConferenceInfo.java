@@ -297,6 +297,11 @@ public class ConferenceInfo {
     private Boolean webinar;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "onlineAttendeeAmount")
+
+    private Integer onlineAttendeeAmount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "multiStreamFlag")
 
     private Integer multiStreamFlag;
@@ -1121,6 +1126,23 @@ public class ConferenceInfo {
         this.webinar = webinar;
     }
 
+    public ConferenceInfo withOnlineAttendeeAmount(Integer onlineAttendeeAmount) {
+        this.onlineAttendeeAmount = onlineAttendeeAmount;
+        return this;
+    }
+
+    /**
+     * 当前在线与会人数。包含被邀入会和主动入会的与会者。 > 仅在“[[查询在线会议列表](https://support.huaweicloud.com/api-meeting/meeting_21_0025.html)](tag:hws)[[查询在线会议列表](https://support.huaweicloud.com/intl/zh-cn/api-meeting/meeting_21_0025.html)](tag:hk)”接口中返回。 
+     * @return onlineAttendeeAmount
+     */
+    public Integer getOnlineAttendeeAmount() {
+        return onlineAttendeeAmount;
+    }
+
+    public void setOnlineAttendeeAmount(Integer onlineAttendeeAmount) {
+        this.onlineAttendeeAmount = onlineAttendeeAmount;
+    }
+
     public ConferenceInfo withMultiStreamFlag(Integer multiStreamFlag) {
         this.multiStreamFlag = multiStreamFlag;
         return this;
@@ -1313,6 +1335,7 @@ public class ConferenceInfo {
             && Objects.equals(this.deptName, conferenceInfo.deptName)
             && Objects.equals(this.vmrID, conferenceInfo.vmrID) && Objects.equals(this.role, conferenceInfo.role)
             && Objects.equals(this.webinar, conferenceInfo.webinar)
+            && Objects.equals(this.onlineAttendeeAmount, conferenceInfo.onlineAttendeeAmount)
             && Objects.equals(this.multiStreamFlag, conferenceInfo.multiStreamFlag)
             && Objects.equals(this.confMode, conferenceInfo.confMode)
             && Objects.equals(this.scheduleVmr, conferenceInfo.scheduleVmr)
@@ -1363,6 +1386,7 @@ public class ConferenceInfo {
             vmrID,
             role,
             webinar,
+            onlineAttendeeAmount,
             multiStreamFlag,
             confMode,
             scheduleVmr,
@@ -1415,6 +1439,7 @@ public class ConferenceInfo {
         sb.append("    vmrID: ").append(toIndentedString(vmrID)).append("\n");
         sb.append("    role: ").append(toIndentedString(role)).append("\n");
         sb.append("    webinar: ").append(toIndentedString(webinar)).append("\n");
+        sb.append("    onlineAttendeeAmount: ").append(toIndentedString(onlineAttendeeAmount)).append("\n");
         sb.append("    multiStreamFlag: ").append(toIndentedString(multiStreamFlag)).append("\n");
         sb.append("    confMode: ").append(toIndentedString(confMode)).append("\n");
         sb.append("    scheduleVmr: ").append(toIndentedString(scheduleVmr)).append("\n");

@@ -116,7 +116,7 @@ public class ListVmsTemplateStatusRequest {
     /**
      * 偏移量，表示从此偏移量开始查询，offset大于等于0。
      * minimum: 0
-     * maximum: 2147483647
+     * maximum: 1000000
      * @return offset
      */
     public Integer getOffset() {

@@ -123,12 +123,12 @@ public class SignUtils {
         for (String split : splitArr) {
             String[] kv = split.split("=");
             if (kv.length == 2) {
-                if (!sorted.containsKey(urlEncode(kv[0], false))) {
+                if (!sorted.containsKey(kv[0])) {
                     List<String> values = new ArrayList<>();
-                    values.add(urlEncode(kv[1], false));
-                    sorted.put(SignUtils.urlEncode(kv[0],false), values);
+                    values.add(kv[1]);
+                    sorted.put(kv[0], values);
                 } else {
-                    sorted.get(urlEncode(kv[0], false)).add(SignUtils.urlEncode(kv[1], false));
+                    sorted.get(kv[0]).add(kv[1]);
                 }
             }
         }

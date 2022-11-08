@@ -70,6 +70,16 @@ public class RestConfConfigDTO {
 
     private Boolean enableWaitingRoom;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "isHostCameraOn")
+
+    private Boolean isHostCameraOn;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "isGuestCameraOn")
+
+    private Boolean isGuestCameraOn;
+
     public RestConfConfigDTO withIsSendNotify(Boolean isSendNotify) {
         this.isSendNotify = isSendNotify;
         return this;
@@ -276,6 +286,40 @@ public class RestConfConfigDTO {
         this.enableWaitingRoom = enableWaitingRoom;
     }
 
+    public RestConfConfigDTO withIsHostCameraOn(Boolean isHostCameraOn) {
+        this.isHostCameraOn = isHostCameraOn;
+        return this;
+    }
+
+    /**
+     * 主持人入会是否开启摄像头。 * true：开启 * false：不开启
+     * @return isHostCameraOn
+     */
+    public Boolean getIsHostCameraOn() {
+        return isHostCameraOn;
+    }
+
+    public void setIsHostCameraOn(Boolean isHostCameraOn) {
+        this.isHostCameraOn = isHostCameraOn;
+    }
+
+    public RestConfConfigDTO withIsGuestCameraOn(Boolean isGuestCameraOn) {
+        this.isGuestCameraOn = isGuestCameraOn;
+        return this;
+    }
+
+    /**
+     * 来宾入会是否开启摄像头。 * true：开启 * false：不开启
+     * @return isGuestCameraOn
+     */
+    public Boolean getIsGuestCameraOn() {
+        return isGuestCameraOn;
+    }
+
+    public void setIsGuestCameraOn(Boolean isGuestCameraOn) {
+        this.isGuestCameraOn = isGuestCameraOn;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -296,7 +340,9 @@ public class RestConfConfigDTO {
             && Objects.equals(this.guestPwd, restConfConfigDTO.guestPwd)
             && Objects.equals(this.vmrIDType, restConfConfigDTO.vmrIDType)
             && Objects.equals(this.prolongLength, restConfConfigDTO.prolongLength)
-            && Objects.equals(this.enableWaitingRoom, restConfConfigDTO.enableWaitingRoom);
+            && Objects.equals(this.enableWaitingRoom, restConfConfigDTO.enableWaitingRoom)
+            && Objects.equals(this.isHostCameraOn, restConfConfigDTO.isHostCameraOn)
+            && Objects.equals(this.isGuestCameraOn, restConfConfigDTO.isGuestCameraOn);
     }
 
     @Override
@@ -312,7 +358,9 @@ public class RestConfConfigDTO {
             guestPwd,
             vmrIDType,
             prolongLength,
-            enableWaitingRoom);
+            enableWaitingRoom,
+            isHostCameraOn,
+            isGuestCameraOn);
     }
 
     @Override
@@ -331,6 +379,8 @@ public class RestConfConfigDTO {
         sb.append("    vmrIDType: ").append(toIndentedString(vmrIDType)).append("\n");
         sb.append("    prolongLength: ").append(toIndentedString(prolongLength)).append("\n");
         sb.append("    enableWaitingRoom: ").append(toIndentedString(enableWaitingRoom)).append("\n");
+        sb.append("    isHostCameraOn: ").append(toIndentedString(isHostCameraOn)).append("\n");
+        sb.append("    isGuestCameraOn: ").append(toIndentedString(isGuestCameraOn)).append("\n");
         sb.append("}");
         return sb.toString();
     }
