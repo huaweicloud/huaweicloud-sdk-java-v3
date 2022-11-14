@@ -250,6 +250,38 @@ public class CphAsyncClient {
     }
 
     /**
+     * 删除共享存储文件
+     *
+     * 删除共享存储目录中文件，该功能仅在支持共享存储的云手机规格上可实现。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteShareFilesRequest 请求对象
+     * @return CompletableFuture<DeleteShareFilesResponse>
+     */
+    public CompletableFuture<DeleteShareFilesResponse> deleteShareFilesAsync(DeleteShareFilesRequest request) {
+        return hcClient.asyncInvokeHttp(request, CphMeta.deleteShareFiles);
+    }
+
+    /**
+     * 删除共享存储文件
+     *
+     * 删除共享存储目录中文件，该功能仅在支持共享存储的云手机规格上可实现。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteShareFilesRequest 请求对象
+     * @return AsyncInvoker<DeleteShareFilesRequest, DeleteShareFilesResponse>
+     */
+    public AsyncInvoker<DeleteShareFilesRequest, DeleteShareFilesResponse> deleteShareFilesAsyncInvoker(
+        DeleteShareFilesRequest request) {
+        return new AsyncInvoker<DeleteShareFilesRequest, DeleteShareFilesResponse>(request, CphMeta.deleteShareFiles,
+            hcClient);
+    }
+
+    /**
      * 云手机流量导流
      *
      * 手机流量路由修改。
@@ -570,9 +602,9 @@ public class CphAsyncClient {
     }
 
     /**
-     * 推送删除共享存储文件
+     * 推送共享存储文件
      *
-     * 推送文件至共享存储目录中，删除共享存储目录中文件，该功能仅在支持共享存储的云手机规格上可实现。
+     * 推送文件至共享存储目录中，该功能仅在支持共享存储的云手机规格上可实现。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -585,9 +617,9 @@ public class CphAsyncClient {
     }
 
     /**
-     * 推送删除共享存储文件
+     * 推送共享存储文件
      *
-     * 推送文件至共享存储目录中，删除共享存储目录中文件，该功能仅在支持共享存储的云手机规格上可实现。
+     * 推送文件至共享存储目录中，该功能仅在支持共享存储的云手机规格上可实现。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.

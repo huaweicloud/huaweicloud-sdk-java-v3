@@ -12,6 +12,105 @@ import java.util.List;
 @SuppressWarnings("unchecked")
 public class GslMeta {
 
+    public static final HttpRequestDef<ListBackPoolMembersRequest, ListBackPoolMembersResponse> listBackPoolMembers =
+        genForlistBackPoolMembers();
+
+    private static HttpRequestDef<ListBackPoolMembersRequest, ListBackPoolMembersResponse> genForlistBackPoolMembers() {
+        // basic
+        HttpRequestDef.Builder<ListBackPoolMembersRequest, ListBackPoolMembersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListBackPoolMembersRequest.class, ListBackPoolMembersResponse.class)
+                .withName("ListBackPoolMembers")
+                .withUri("/v1/back-pools/{back_pool_id}/members")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Long>withRequestField("back_pool_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListBackPoolMembersRequest::getBackPoolId, (req, v) -> {
+                req.setBackPoolId(v);
+            }));
+        builder.<String>withRequestField("cid",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBackPoolMembersRequest::getCid, (req, v) -> {
+                req.setCid(v);
+            }));
+        builder.<Long>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListBackPoolMembersRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListBackPoolMembersRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<String>withRequestField("billing_cycle",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBackPoolMembersRequest::getBillingCycle, (req, v) -> {
+                req.setBillingCycle(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListBackPoolsRequest, ListBackPoolsResponse> listBackPools =
+        genForlistBackPools();
+
+    private static HttpRequestDef<ListBackPoolsRequest, ListBackPoolsResponse> genForlistBackPools() {
+        // basic
+        HttpRequestDef.Builder<ListBackPoolsRequest, ListBackPoolsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListBackPoolsRequest.class, ListBackPoolsResponse.class)
+                .withName("ListBackPools")
+                .withUri("/v1/back-pools")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("pool_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBackPoolsRequest::getPoolName, (req, v) -> {
+                req.setPoolName(v);
+            }));
+        builder.<Long>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListBackPoolsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListBackPoolsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<String>withRequestField("billing_cycle",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBackPoolsRequest::getBillingCycle, (req, v) -> {
+                req.setBillingCycle(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListProPricePlansRequest, ListProPricePlansResponse> listProPricePlans =
         genForlistProPricePlans();
 

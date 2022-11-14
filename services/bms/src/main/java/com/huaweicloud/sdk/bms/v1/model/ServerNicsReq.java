@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.bms.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -24,7 +26,7 @@ public class ServerNicsReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_groups")
 
-    private SecurityGroupInfo securityGroups;
+    private List<SecurityGroupInfo> securityGroups = null;
 
     public ServerNicsReq withSubnetId(String subnetId) {
         this.subnetId = subnetId;
@@ -60,29 +62,36 @@ public class ServerNicsReq {
         this.ipAddress = ipAddress;
     }
 
-    public ServerNicsReq withSecurityGroups(SecurityGroupInfo securityGroups) {
+    public ServerNicsReq withSecurityGroups(List<SecurityGroupInfo> securityGroups) {
         this.securityGroups = securityGroups;
         return this;
     }
 
-    public ServerNicsReq withSecurityGroups(Consumer<SecurityGroupInfo> securityGroupsSetter) {
+    public ServerNicsReq addSecurityGroupsItem(SecurityGroupInfo securityGroupsItem) {
         if (this.securityGroups == null) {
-            this.securityGroups = new SecurityGroupInfo();
-            securityGroupsSetter.accept(this.securityGroups);
+            this.securityGroups = new ArrayList<>();
         }
+        this.securityGroups.add(securityGroupsItem);
+        return this;
+    }
 
+    public ServerNicsReq withSecurityGroups(Consumer<List<SecurityGroupInfo>> securityGroupsSetter) {
+        if (this.securityGroups == null) {
+            this.securityGroups = new ArrayList<>();
+        }
+        securityGroupsSetter.accept(this.securityGroups);
         return this;
     }
 
     /**
-     * Get securityGroups
+     * 
      * @return securityGroups
      */
-    public SecurityGroupInfo getSecurityGroups() {
+    public List<SecurityGroupInfo> getSecurityGroups() {
         return securityGroups;
     }
 
-    public void setSecurityGroups(SecurityGroupInfo securityGroups) {
+    public void setSecurityGroups(List<SecurityGroupInfo> securityGroups) {
         this.securityGroups = securityGroups;
     }
 

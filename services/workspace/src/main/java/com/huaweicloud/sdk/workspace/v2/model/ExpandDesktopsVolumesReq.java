@@ -14,41 +14,42 @@ import java.util.function.Consumer;
 public class ExpandDesktopsVolumesReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "expandVolumesReq")
+    @JsonProperty(value = "desktop_volumes_expansion")
 
-    private List<ExpandVolumesReq> expandVolumesReq = null;
+    private List<ExpandVolumesReq> desktopVolumesExpansion = null;
 
-    public ExpandDesktopsVolumesReq withExpandVolumesReq(List<ExpandVolumesReq> expandVolumesReq) {
-        this.expandVolumesReq = expandVolumesReq;
+    public ExpandDesktopsVolumesReq withDesktopVolumesExpansion(List<ExpandVolumesReq> desktopVolumesExpansion) {
+        this.desktopVolumesExpansion = desktopVolumesExpansion;
         return this;
     }
 
-    public ExpandDesktopsVolumesReq addExpandVolumesReqItem(ExpandVolumesReq expandVolumesReqItem) {
-        if (this.expandVolumesReq == null) {
-            this.expandVolumesReq = new ArrayList<>();
+    public ExpandDesktopsVolumesReq addDesktopVolumesExpansionItem(ExpandVolumesReq desktopVolumesExpansionItem) {
+        if (this.desktopVolumesExpansion == null) {
+            this.desktopVolumesExpansion = new ArrayList<>();
         }
-        this.expandVolumesReq.add(expandVolumesReqItem);
+        this.desktopVolumesExpansion.add(desktopVolumesExpansionItem);
         return this;
     }
 
-    public ExpandDesktopsVolumesReq withExpandVolumesReq(Consumer<List<ExpandVolumesReq>> expandVolumesReqSetter) {
-        if (this.expandVolumesReq == null) {
-            this.expandVolumesReq = new ArrayList<>();
+    public ExpandDesktopsVolumesReq withDesktopVolumesExpansion(
+        Consumer<List<ExpandVolumesReq>> desktopVolumesExpansionSetter) {
+        if (this.desktopVolumesExpansion == null) {
+            this.desktopVolumesExpansion = new ArrayList<>();
         }
-        expandVolumesReqSetter.accept(this.expandVolumesReq);
+        desktopVolumesExpansionSetter.accept(this.desktopVolumesExpansion);
         return this;
     }
 
     /**
      * 扩容磁盘参数。
-     * @return expandVolumesReq
+     * @return desktopVolumesExpansion
      */
-    public List<ExpandVolumesReq> getExpandVolumesReq() {
-        return expandVolumesReq;
+    public List<ExpandVolumesReq> getDesktopVolumesExpansion() {
+        return desktopVolumesExpansion;
     }
 
-    public void setExpandVolumesReq(List<ExpandVolumesReq> expandVolumesReq) {
-        this.expandVolumesReq = expandVolumesReq;
+    public void setDesktopVolumesExpansion(List<ExpandVolumesReq> desktopVolumesExpansion) {
+        this.desktopVolumesExpansion = desktopVolumesExpansion;
     }
 
     @Override
@@ -60,19 +61,19 @@ public class ExpandDesktopsVolumesReq {
             return false;
         }
         ExpandDesktopsVolumesReq expandDesktopsVolumesReq = (ExpandDesktopsVolumesReq) o;
-        return Objects.equals(this.expandVolumesReq, expandDesktopsVolumesReq.expandVolumesReq);
+        return Objects.equals(this.desktopVolumesExpansion, expandDesktopsVolumesReq.desktopVolumesExpansion);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(expandVolumesReq);
+        return Objects.hash(desktopVolumesExpansion);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ExpandDesktopsVolumesReq {\n");
-        sb.append("    expandVolumesReq: ").append(toIndentedString(expandVolumesReq)).append("\n");
+        sb.append("    desktopVolumesExpansion: ").append(toIndentedString(desktopVolumesExpansion)).append("\n");
         sb.append("}");
         return sb.toString();
     }

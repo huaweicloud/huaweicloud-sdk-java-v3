@@ -11,11 +11,6 @@ import java.util.Objects;
 public class DeleteStreamForbiddenRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "specify_project")
-
-    private String specifyProject;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain")
 
     private String domain;
@@ -29,23 +24,6 @@ public class DeleteStreamForbiddenRequest {
     @JsonProperty(value = "stream_name")
 
     private String streamName;
-
-    public DeleteStreamForbiddenRequest withSpecifyProject(String specifyProject) {
-        this.specifyProject = specifyProject;
-        return this;
-    }
-
-    /**
-     * op账号需要携带的特定project_id，当使用op账号时该值为所操作租户的project_id
-     * @return specifyProject
-     */
-    public String getSpecifyProject() {
-        return specifyProject;
-    }
-
-    public void setSpecifyProject(String specifyProject) {
-        this.specifyProject = specifyProject;
-    }
 
     public DeleteStreamForbiddenRequest withDomain(String domain) {
         this.domain = domain;
@@ -107,22 +85,20 @@ public class DeleteStreamForbiddenRequest {
             return false;
         }
         DeleteStreamForbiddenRequest deleteStreamForbiddenRequest = (DeleteStreamForbiddenRequest) o;
-        return Objects.equals(this.specifyProject, deleteStreamForbiddenRequest.specifyProject)
-            && Objects.equals(this.domain, deleteStreamForbiddenRequest.domain)
+        return Objects.equals(this.domain, deleteStreamForbiddenRequest.domain)
             && Objects.equals(this.appName, deleteStreamForbiddenRequest.appName)
             && Objects.equals(this.streamName, deleteStreamForbiddenRequest.streamName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(specifyProject, domain, appName, streamName);
+        return Objects.hash(domain, appName, streamName);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class DeleteStreamForbiddenRequest {\n");
-        sb.append("    specifyProject: ").append(toIndentedString(specifyProject)).append("\n");
         sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
         sb.append("    appName: ").append(toIndentedString(appName)).append("\n");
         sb.append("    streamName: ").append(toIndentedString(streamName)).append("\n");

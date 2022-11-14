@@ -18,14 +18,19 @@ public class ShowLtsInfoConfigResponse extends SdkResponse {
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "enabale")
+    @JsonProperty(value = "enabled")
 
-    private Boolean enabale;
+    private Boolean enabled;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ltsIdInfo")
 
     private LtsIdInfo ltsIdInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enabale")
+
+    private Boolean enabale;
 
     public ShowLtsInfoConfigResponse withId(String id) {
         this.id = id;
@@ -44,21 +49,21 @@ public class ShowLtsInfoConfigResponse extends SdkResponse {
         this.id = id;
     }
 
-    public ShowLtsInfoConfigResponse withEnabale(Boolean enabale) {
-        this.enabale = enabale;
+    public ShowLtsInfoConfigResponse withEnabled(Boolean enabled) {
+        this.enabled = enabled;
         return this;
     }
 
     /**
      * 是否开启全量日志   - false: 不开启   - true: 开启
-     * @return enabale
+     * @return enabled
      */
-    public Boolean getEnabale() {
-        return enabale;
+    public Boolean getEnabled() {
+        return enabled;
     }
 
-    public void setEnabale(Boolean enabale) {
-        this.enabale = enabale;
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
     }
 
     public ShowLtsInfoConfigResponse withLtsIdInfo(LtsIdInfo ltsIdInfo) {
@@ -87,6 +92,23 @@ public class ShowLtsInfoConfigResponse extends SdkResponse {
         this.ltsIdInfo = ltsIdInfo;
     }
 
+    public ShowLtsInfoConfigResponse withEnabale(Boolean enabale) {
+        this.enabale = enabale;
+        return this;
+    }
+
+    /**
+     * 该参数废弃，请忽略
+     * @return enabale
+     */
+    public Boolean getEnabale() {
+        return enabale;
+    }
+
+    public void setEnabale(Boolean enabale) {
+        this.enabale = enabale;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -97,13 +119,14 @@ public class ShowLtsInfoConfigResponse extends SdkResponse {
         }
         ShowLtsInfoConfigResponse showLtsInfoConfigResponse = (ShowLtsInfoConfigResponse) o;
         return Objects.equals(this.id, showLtsInfoConfigResponse.id)
-            && Objects.equals(this.enabale, showLtsInfoConfigResponse.enabale)
-            && Objects.equals(this.ltsIdInfo, showLtsInfoConfigResponse.ltsIdInfo);
+            && Objects.equals(this.enabled, showLtsInfoConfigResponse.enabled)
+            && Objects.equals(this.ltsIdInfo, showLtsInfoConfigResponse.ltsIdInfo)
+            && Objects.equals(this.enabale, showLtsInfoConfigResponse.enabale);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, enabale, ltsIdInfo);
+        return Objects.hash(id, enabled, ltsIdInfo, enabale);
     }
 
     @Override
@@ -111,8 +134,9 @@ public class ShowLtsInfoConfigResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowLtsInfoConfigResponse {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
-        sb.append("    enabale: ").append(toIndentedString(enabale)).append("\n");
+        sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
         sb.append("    ltsIdInfo: ").append(toIndentedString(ltsIdInfo)).append("\n");
+        sb.append("    enabale: ").append(toIndentedString(enabale)).append("\n");
         sb.append("}");
         return sb.toString();
     }

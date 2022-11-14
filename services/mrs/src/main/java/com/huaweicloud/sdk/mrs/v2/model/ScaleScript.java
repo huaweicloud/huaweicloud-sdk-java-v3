@@ -331,7 +331,7 @@ public class ScaleScript  {
     }
 
     /**
-     * 自定义自动化脚本所执行的节点组类型，包含Master、Core和Task三种类型。
+     * 自定义自动化脚本所执行的节点组名称。
      * @return nodes
      */
     public List<String> getNodes() {

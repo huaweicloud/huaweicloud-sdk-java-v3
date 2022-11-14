@@ -108,7 +108,7 @@ public class LiveDomainCreateReq {
     private String region;
 
     /**
-     * 域名应用区域 - mainland_china表示中国大陆区域 - outside_mainland_china表示中国大陆以外区域 - global表示全球区域 
+     * 域名应用区域 - mainland_china表示中国大陆区域 - outside_mainland_china表示中国大陆以外区域 
      */
     public static final class ServiceAreaEnum {
 
@@ -122,18 +122,12 @@ public class LiveDomainCreateReq {
          */
         public static final ServiceAreaEnum OUTSIDE_MAINLAND_CHINA = new ServiceAreaEnum("outside_mainland_china");
 
-        /**
-         * Enum GLOBAL for value: "global"
-         */
-        public static final ServiceAreaEnum GLOBAL = new ServiceAreaEnum("global");
-
         private static final Map<String, ServiceAreaEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ServiceAreaEnum> createStaticFields() {
             Map<String, ServiceAreaEnum> map = new HashMap<>();
             map.put("mainland_china", MAINLAND_CHINA);
             map.put("outside_mainland_china", OUTSIDE_MAINLAND_CHINA);
-            map.put("global", GLOBAL);
             return Collections.unmodifiableMap(map);
         }
 
@@ -252,7 +246,7 @@ public class LiveDomainCreateReq {
     }
 
     /**
-     * 域名应用区域 - mainland_china表示中国大陆区域 - outside_mainland_china表示中国大陆以外区域 - global表示全球区域 
+     * 域名应用区域 - mainland_china表示中国大陆区域 - outside_mainland_china表示中国大陆以外区域 
      * @return serviceArea
      */
     public ServiceAreaEnum getServiceArea() {

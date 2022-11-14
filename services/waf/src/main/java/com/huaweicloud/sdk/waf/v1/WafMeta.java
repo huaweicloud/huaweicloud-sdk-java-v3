@@ -1485,6 +1485,31 @@ public class WafMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListNoticeConfigsRequest, ListNoticeConfigsResponse> listNoticeConfigs =
+        genForlistNoticeConfigs();
+
+    private static HttpRequestDef<ListNoticeConfigsRequest, ListNoticeConfigsResponse> genForlistNoticeConfigs() {
+        // basic
+        HttpRequestDef.Builder<ListNoticeConfigsRequest, ListNoticeConfigsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListNoticeConfigsRequest.class, ListNoticeConfigsResponse.class)
+                .withName("ListNoticeConfigs")
+                .withUri("/v2/{project_id}/waf/alerts")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNoticeConfigsRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListOverviewsClassificationRequest, ListOverviewsClassificationResponse> listOverviewsClassification =
         genForlistOverviewsClassification();
 
@@ -2052,6 +2077,45 @@ public class WafMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<MigrateCompositeHostsRequest, MigrateCompositeHostsResponse> migrateCompositeHosts =
+        genFormigrateCompositeHosts();
+
+    private static HttpRequestDef<MigrateCompositeHostsRequest, MigrateCompositeHostsResponse> genFormigrateCompositeHosts() {
+        // basic
+        HttpRequestDef.Builder<MigrateCompositeHostsRequest, MigrateCompositeHostsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, MigrateCompositeHostsRequest.class, MigrateCompositeHostsResponse.class)
+            .withName("MigrateCompositeHosts")
+            .withUri("/v1/{project_id}/composite-waf/hosts/migration")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(MigrateCompositeHostsRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<String>withRequestField("target_enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(MigrateCompositeHostsRequest::getTargetEnterpriseProjectId, (req, v) -> {
+                req.setTargetEnterpriseProjectId(v);
+            }));
+        builder.<MigrateCompositeHostsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(MigrateCompositeHostsRequestBody.class),
+            f -> f.withMarshaller(MigrateCompositeHostsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RenameInstanceRequest, RenameInstanceResponse> renameInstance =
         genForrenameInstance();
 
@@ -2378,6 +2442,62 @@ public class WafMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowPremiumHostRequest::getEnterpriseProjectId, (req, v) -> {
                 req.setEnterpriseProjectId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSourceIpRequest, ShowSourceIpResponse> showSourceIp = genForshowSourceIp();
+
+    private static HttpRequestDef<ShowSourceIpRequest, ShowSourceIpResponse> genForshowSourceIp() {
+        // basic
+        HttpRequestDef.Builder<ShowSourceIpRequest, ShowSourceIpResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowSourceIpRequest.class, ShowSourceIpResponse.class)
+                .withName("ShowSourceIp")
+                .withUri("/v1/{project_id}/waf/config/source-ip")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateAlertNoticeConfigRequest, UpdateAlertNoticeConfigResponse> updateAlertNoticeConfig =
+        genForupdateAlertNoticeConfig();
+
+    private static HttpRequestDef<UpdateAlertNoticeConfigRequest, UpdateAlertNoticeConfigResponse> genForupdateAlertNoticeConfig() {
+        // basic
+        HttpRequestDef.Builder<UpdateAlertNoticeConfigRequest, UpdateAlertNoticeConfigResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateAlertNoticeConfigRequest.class, UpdateAlertNoticeConfigResponse.class)
+            .withName("UpdateAlertNoticeConfig")
+            .withUri("/v2/{project_id}/waf/alert/{alert_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("alert_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAlertNoticeConfigRequest::getAlertId, (req, v) -> {
+                req.setAlertId(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAlertNoticeConfigRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<UpdateAlertNoticeConfigRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateAlertNoticeConfigRequestBody.class),
+            f -> f.withMarshaller(UpdateAlertNoticeConfigRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response

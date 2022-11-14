@@ -18,6 +18,68 @@ public class GslClient {
     }
 
     /**
+     * 查询后向流量池成员列表
+     *
+     * 查询后向流量池成员列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListBackPoolMembersRequest 请求对象
+     * @return ListBackPoolMembersResponse
+     */
+    public ListBackPoolMembersResponse listBackPoolMembers(ListBackPoolMembersRequest request) {
+        return hcClient.syncInvokeHttp(request, GslMeta.listBackPoolMembers);
+    }
+
+    /**
+     * 查询后向流量池成员列表
+     *
+     * 查询后向流量池成员列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListBackPoolMembersRequest 请求对象
+     * @return SyncInvoker<ListBackPoolMembersRequest, ListBackPoolMembersResponse>
+     */
+    public SyncInvoker<ListBackPoolMembersRequest, ListBackPoolMembersResponse> listBackPoolMembersInvoker(
+        ListBackPoolMembersRequest request) {
+        return new SyncInvoker<ListBackPoolMembersRequest, ListBackPoolMembersResponse>(request,
+            GslMeta.listBackPoolMembers, hcClient);
+    }
+
+    /**
+     * 查询后向流量池列表
+     *
+     * 查询后向流量池列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListBackPoolsRequest 请求对象
+     * @return ListBackPoolsResponse
+     */
+    public ListBackPoolsResponse listBackPools(ListBackPoolsRequest request) {
+        return hcClient.syncInvokeHttp(request, GslMeta.listBackPools);
+    }
+
+    /**
+     * 查询后向流量池列表
+     *
+     * 查询后向流量池列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListBackPoolsRequest 请求对象
+     * @return SyncInvoker<ListBackPoolsRequest, ListBackPoolsResponse>
+     */
+    public SyncInvoker<ListBackPoolsRequest, ListBackPoolsResponse> listBackPoolsInvoker(ListBackPoolsRequest request) {
+        return new SyncInvoker<ListBackPoolsRequest, ListBackPoolsResponse>(request, GslMeta.listBackPools, hcClient);
+    }
+
+    /**
      * 查询套餐列表信息
      *
      * 查询套餐列表信息

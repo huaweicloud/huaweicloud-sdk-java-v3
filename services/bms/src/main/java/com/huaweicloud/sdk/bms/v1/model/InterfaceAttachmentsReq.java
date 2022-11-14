@@ -13,9 +13,9 @@ public class InterfaceAttachmentsReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "delete_on_termination")
 
-    private String deleteOnTermination;
+    private Boolean deleteOnTermination;
 
-    public InterfaceAttachmentsReq withDeleteOnTermination(String deleteOnTermination) {
+    public InterfaceAttachmentsReq withDeleteOnTermination(Boolean deleteOnTermination) {
         this.deleteOnTermination = deleteOnTermination;
         return this;
     }
@@ -24,11 +24,11 @@ public class InterfaceAttachmentsReq {
      * Get deleteOnTermination
      * @return deleteOnTermination
      */
-    public String getDeleteOnTermination() {
+    public Boolean getDeleteOnTermination() {
         return deleteOnTermination;
     }
 
-    public void setDeleteOnTermination(String deleteOnTermination) {
+    public void setDeleteOnTermination(Boolean deleteOnTermination) {
         this.deleteOnTermination = deleteOnTermination;
     }
 

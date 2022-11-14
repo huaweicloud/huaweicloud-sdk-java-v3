@@ -7,21 +7,21 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * RecyclePolicyResponseBody
+ * RecyclePolicyRequestBody
  */
-public class RecyclePolicyResponseBody {
+public class RecyclePolicyRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "recycle_policy")
 
     private RecyclePolicy recyclePolicy;
 
-    public RecyclePolicyResponseBody withRecyclePolicy(RecyclePolicy recyclePolicy) {
+    public RecyclePolicyRequestBody withRecyclePolicy(RecyclePolicy recyclePolicy) {
         this.recyclePolicy = recyclePolicy;
         return this;
     }
 
-    public RecyclePolicyResponseBody withRecyclePolicy(Consumer<RecyclePolicy> recyclePolicySetter) {
+    public RecyclePolicyRequestBody withRecyclePolicy(Consumer<RecyclePolicy> recyclePolicySetter) {
         if (this.recyclePolicy == null) {
             this.recyclePolicy = new RecyclePolicy();
             recyclePolicySetter.accept(this.recyclePolicy);
@@ -50,8 +50,8 @@ public class RecyclePolicyResponseBody {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        RecyclePolicyResponseBody recyclePolicyResponseBody = (RecyclePolicyResponseBody) o;
-        return Objects.equals(this.recyclePolicy, recyclePolicyResponseBody.recyclePolicy);
+        RecyclePolicyRequestBody recyclePolicyRequestBody = (RecyclePolicyRequestBody) o;
+        return Objects.equals(this.recyclePolicy, recyclePolicyRequestBody.recyclePolicy);
     }
 
     @Override
@@ -62,7 +62,7 @@ public class RecyclePolicyResponseBody {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class RecyclePolicyResponseBody {\n");
+        sb.append("class RecyclePolicyRequestBody {\n");
         sb.append("    recyclePolicy: ").append(toIndentedString(recyclePolicy)).append("\n");
         sb.append("}");
         return sb.toString();

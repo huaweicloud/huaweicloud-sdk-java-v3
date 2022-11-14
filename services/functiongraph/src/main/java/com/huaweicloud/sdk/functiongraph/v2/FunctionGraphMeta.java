@@ -1662,6 +1662,41 @@ public class FunctionGraphMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowWorkflowExecutionForPageRequest, ShowWorkflowExecutionForPageResponse> showWorkflowExecutionForPage =
+        genForshowWorkflowExecutionForPage();
+
+    private static HttpRequestDef<ShowWorkflowExecutionForPageRequest, ShowWorkflowExecutionForPageResponse> genForshowWorkflowExecutionForPage() {
+        // basic
+        HttpRequestDef.Builder<ShowWorkflowExecutionForPageRequest, ShowWorkflowExecutionForPageResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowWorkflowExecutionForPageRequest.class,
+                    ShowWorkflowExecutionForPageResponse.class)
+                .withName("ShowWorkflowExecutionForPage")
+                .withUri("/v2/{project_id}/fgs/workflows/{workflow_id}/executions-history")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workflow_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowWorkflowExecutionForPageRequest::getWorkflowId, (req, v) -> {
+                req.setWorkflowId(v);
+            }));
+        builder.<QueryRunListParam>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(QueryRunListParam.class),
+            f -> f.withMarshaller(ShowWorkflowExecutionForPageRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<StartSyncWorkflowExecutionRequest, StartSyncWorkflowExecutionResponse> startSyncWorkflowExecution =
         genForstartSyncWorkflowExecution();
 

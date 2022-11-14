@@ -936,6 +936,31 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListDrRelationsRequest, ListDrRelationsResponse> listDrRelations =
+        genForlistDrRelations();
+
+    private static HttpRequestDef<ListDrRelationsRequest, ListDrRelationsResponse> genForlistDrRelations() {
+        // basic
+        HttpRequestDef.Builder<ListDrRelationsRequest, ListDrRelationsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListDrRelationsRequest.class, ListDrRelationsResponse.class)
+                .withName("ListDrRelations")
+                .withUri("/v3/{project_id}/instances/disaster-recovery-relation")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDrRelationsRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListErrorLogsRequest, ListErrorLogsResponse> listErrorLogs =
         genForlistErrorLogs();
 
@@ -4511,6 +4536,46 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowPostgresqlParamValueRequest, ShowPostgresqlParamValueResponse> showPostgresqlParamValue =
+        genForshowPostgresqlParamValue();
+
+    private static HttpRequestDef<ShowPostgresqlParamValueRequest, ShowPostgresqlParamValueResponse> genForshowPostgresqlParamValue() {
+        // basic
+        HttpRequestDef.Builder<ShowPostgresqlParamValueRequest, ShowPostgresqlParamValueResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ShowPostgresqlParamValueRequest.class, ShowPostgresqlParamValueResponse.class)
+                .withName("ShowPostgresqlParamValue")
+                .withUri("/v3/{project_id}/instances/{instance_id}/parameter/{name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPostgresqlParamValueRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPostgresqlParamValueRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPostgresqlParamValueRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<StartDatabaseProxyRequest, StartDatabaseProxyResponse> startDatabaseProxy =
         genForstartDatabaseProxy();
 
@@ -4575,6 +4640,55 @@ public class RdsMeta {
             TypeCasts.uncheckedConversion(StopDatabaseProxyRequest.XLanguageEnum.class),
             f -> f.withMarshaller(StopDatabaseProxyRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdatePostgresqlParameterValueRequest, UpdatePostgresqlParameterValueResponse> updatePostgresqlParameterValue =
+        genForupdatePostgresqlParameterValue();
+
+    private static HttpRequestDef<UpdatePostgresqlParameterValueRequest, UpdatePostgresqlParameterValueResponse> genForupdatePostgresqlParameterValue() {
+        // basic
+        HttpRequestDef.Builder<UpdatePostgresqlParameterValueRequest, UpdatePostgresqlParameterValueResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdatePostgresqlParameterValueRequest.class,
+                    UpdatePostgresqlParameterValueResponse.class)
+                .withName("UpdatePostgresqlParameterValue")
+                .withUri("/v3/{project_id}/instances/{instance_id}/parameter/{name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePostgresqlParameterValueRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePostgresqlParameterValueRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePostgresqlParameterValueRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<ModifyParamRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ModifyParamRequest.class),
+            f -> f.withMarshaller(UpdatePostgresqlParameterValueRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response

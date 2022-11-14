@@ -21,7 +21,7 @@ public class PolicyStatement {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "Action")
 
-    private String action;
+    private List<String> action = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "Resource")
@@ -45,8 +45,24 @@ public class PolicyStatement {
         this.effect = effect;
     }
 
-    public PolicyStatement withAction(String action) {
+    public PolicyStatement withAction(List<String> action) {
         this.action = action;
+        return this;
+    }
+
+    public PolicyStatement addActionItem(String actionItem) {
+        if (this.action == null) {
+            this.action = new ArrayList<>();
+        }
+        this.action.add(actionItem);
+        return this;
+    }
+
+    public PolicyStatement withAction(Consumer<List<String>> actionSetter) {
+        if (this.action == null) {
+            this.action = new ArrayList<>();
+        }
+        actionSetter.accept(this.action);
         return this;
     }
 
@@ -54,11 +70,11 @@ public class PolicyStatement {
      * obs访问权限
      * @return action
      */
-    public String getAction() {
+    public List<String> getAction() {
         return action;
     }
 
-    public void setAction(String action) {
+    public void setAction(List<String> action) {
         this.action = action;
     }
 

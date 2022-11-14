@@ -40,6 +40,11 @@ public class PostgresqlDatabaseForCreation {
 
     private String lcCtype;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_revoke_public_privilege")
+
+    private Boolean isRevokePublicPrivilege;
+
     public PostgresqlDatabaseForCreation withName(String name) {
         this.name = name;
         return this;
@@ -142,6 +147,23 @@ public class PostgresqlDatabaseForCreation {
         this.lcCtype = lcCtype;
     }
 
+    public PostgresqlDatabaseForCreation withIsRevokePublicPrivilege(Boolean isRevokePublicPrivilege) {
+        this.isRevokePublicPrivilege = isRevokePublicPrivilege;
+        return this;
+    }
+
+    /**
+     * 是否回收public schema的PUBLIC CREATE权限。 true，表示回收该权限。 false，表示不回收该权限。 缺省时默认是false。
+     * @return isRevokePublicPrivilege
+     */
+    public Boolean getIsRevokePublicPrivilege() {
+        return isRevokePublicPrivilege;
+    }
+
+    public void setIsRevokePublicPrivilege(Boolean isRevokePublicPrivilege) {
+        this.isRevokePublicPrivilege = isRevokePublicPrivilege;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -156,12 +178,13 @@ public class PostgresqlDatabaseForCreation {
             && Objects.equals(this.owner, postgresqlDatabaseForCreation.owner)
             && Objects.equals(this.template, postgresqlDatabaseForCreation.template)
             && Objects.equals(this.lcCollate, postgresqlDatabaseForCreation.lcCollate)
-            && Objects.equals(this.lcCtype, postgresqlDatabaseForCreation.lcCtype);
+            && Objects.equals(this.lcCtype, postgresqlDatabaseForCreation.lcCtype)
+            && Objects.equals(this.isRevokePublicPrivilege, postgresqlDatabaseForCreation.isRevokePublicPrivilege);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, characterSet, owner, template, lcCollate, lcCtype);
+        return Objects.hash(name, characterSet, owner, template, lcCollate, lcCtype, isRevokePublicPrivilege);
     }
 
     @Override
@@ -174,6 +197,7 @@ public class PostgresqlDatabaseForCreation {
         sb.append("    template: ").append(toIndentedString(template)).append("\n");
         sb.append("    lcCollate: ").append(toIndentedString(lcCollate)).append("\n");
         sb.append("    lcCtype: ").append(toIndentedString(lcCtype)).append("\n");
+        sb.append("    isRevokePublicPrivilege: ").append(toIndentedString(isRevokePublicPrivilege)).append("\n");
         sb.append("}");
         return sb.toString();
     }

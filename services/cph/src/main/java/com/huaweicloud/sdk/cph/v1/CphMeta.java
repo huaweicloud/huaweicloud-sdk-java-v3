@@ -197,6 +197,31 @@ public class CphMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteShareFilesRequest, DeleteShareFilesResponse> deleteShareFiles =
+        genFordeleteShareFiles();
+
+    private static HttpRequestDef<DeleteShareFilesRequest, DeleteShareFilesResponse> genFordeleteShareFiles() {
+        // basic
+        HttpRequestDef.Builder<DeleteShareFilesRequest, DeleteShareFilesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DeleteShareFilesRequest.class, DeleteShareFilesResponse.class)
+                .withName("DeleteShareFiles")
+                .withUri("/v1/{project_id}/cloud-phone/phones/share-files")
+                .withContentType("application/json");
+
+        // requests
+        builder.<DeleteShareFilesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteShareFilesRequestBody.class),
+            f -> f.withMarshaller(DeleteShareFilesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ImportTrafficRequest, ImportTrafficResponse> importTraffic =
         genForimportTraffic();
 

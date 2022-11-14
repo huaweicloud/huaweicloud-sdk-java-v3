@@ -15,11 +15,6 @@ import java.util.function.Consumer;
 public class ListIpGroupResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "cloudTotal")
-
-    private Integer cloudTotal;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total")
 
     private Integer total;
@@ -29,22 +24,10 @@ public class ListIpGroupResponse extends SdkResponse {
 
     private List<IpGroupBody> items = null;
 
-    public ListIpGroupResponse withCloudTotal(Integer cloudTotal) {
-        this.cloudTotal = cloudTotal;
-        return this;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cloudTotal")
 
-    /**
-     * 该用户总的Ip地址组数量，包含本地与共享地址组
-     * @return cloudTotal
-     */
-    public Integer getCloudTotal() {
-        return cloudTotal;
-    }
-
-    public void setCloudTotal(Integer cloudTotal) {
-        this.cloudTotal = cloudTotal;
-    }
+    private Integer cloudTotal;
 
     public ListIpGroupResponse withTotal(Integer total) {
         this.total = total;
@@ -96,6 +79,23 @@ public class ListIpGroupResponse extends SdkResponse {
         this.items = items;
     }
 
+    public ListIpGroupResponse withCloudTotal(Integer cloudTotal) {
+        this.cloudTotal = cloudTotal;
+        return this;
+    }
+
+    /**
+     * 该用户总的Ip地址组数量，包含本地与共享地址组
+     * @return cloudTotal
+     */
+    public Integer getCloudTotal() {
+        return cloudTotal;
+    }
+
+    public void setCloudTotal(Integer cloudTotal) {
+        this.cloudTotal = cloudTotal;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -105,23 +105,23 @@ public class ListIpGroupResponse extends SdkResponse {
             return false;
         }
         ListIpGroupResponse listIpGroupResponse = (ListIpGroupResponse) o;
-        return Objects.equals(this.cloudTotal, listIpGroupResponse.cloudTotal)
-            && Objects.equals(this.total, listIpGroupResponse.total)
-            && Objects.equals(this.items, listIpGroupResponse.items);
+        return Objects.equals(this.total, listIpGroupResponse.total)
+            && Objects.equals(this.items, listIpGroupResponse.items)
+            && Objects.equals(this.cloudTotal, listIpGroupResponse.cloudTotal);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(cloudTotal, total, items);
+        return Objects.hash(total, items, cloudTotal);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListIpGroupResponse {\n");
-        sb.append("    cloudTotal: ").append(toIndentedString(cloudTotal)).append("\n");
         sb.append("    total: ").append(toIndentedString(total)).append("\n");
         sb.append("    items: ").append(toIndentedString(items)).append("\n");
+        sb.append("    cloudTotal: ").append(toIndentedString(cloudTotal)).append("\n");
         sb.append("}");
         return sb.toString();
     }

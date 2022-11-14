@@ -53,7 +53,7 @@ public class ShowPlanJournalsRequest {
     }
 
     /**
-     * 测试计划id，测试计划的唯一标识，固定长度32位字符
+     * 测试计划id，测试计划的唯一标识，长度11-34位字符
      * @return planId
      */
     public String getPlanId() {

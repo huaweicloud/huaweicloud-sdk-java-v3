@@ -44,11 +44,6 @@ public class CreateNet2CloudPhoneServerRequestBody {
     private String keypairName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "br_cidr")
-
-    private String brCidr;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ports")
 
     private List<CreateNet2CloudPhoneServerRequestBodyPorts> ports = null;
@@ -183,23 +178,6 @@ public class CreateNet2CloudPhoneServerRequestBody {
 
     public void setKeypairName(String keypairName) {
         this.keypairName = keypairName;
-    }
-
-    public CreateNet2CloudPhoneServerRequestBody withBrCidr(String brCidr) {
-        this.brCidr = brCidr;
-        return this;
-    }
-
-    /**
-     * Get brCidr
-     * @return brCidr
-     */
-    public String getBrCidr() {
-        return brCidr;
-    }
-
-    public void setBrCidr(String brCidr) {
-        this.brCidr = brCidr;
     }
 
     public CreateNet2CloudPhoneServerRequestBody withPorts(List<CreateNet2CloudPhoneServerRequestBodyPorts> ports) {
@@ -403,7 +381,6 @@ public class CreateNet2CloudPhoneServerRequestBody {
             && Objects.equals(this.imageId, createNet2CloudPhoneServerRequestBody.imageId)
             && Objects.equals(this.count, createNet2CloudPhoneServerRequestBody.count)
             && Objects.equals(this.keypairName, createNet2CloudPhoneServerRequestBody.keypairName)
-            && Objects.equals(this.brCidr, createNet2CloudPhoneServerRequestBody.brCidr)
             && Objects.equals(this.ports, createNet2CloudPhoneServerRequestBody.ports)
             && Objects.equals(this.extendParam, createNet2CloudPhoneServerRequestBody.extendParam)
             && Objects.equals(this.tenantVpcId, createNet2CloudPhoneServerRequestBody.tenantVpcId)
@@ -421,7 +398,6 @@ public class CreateNet2CloudPhoneServerRequestBody {
             imageId,
             count,
             keypairName,
-            brCidr,
             ports,
             extendParam,
             tenantVpcId,
@@ -441,7 +417,6 @@ public class CreateNet2CloudPhoneServerRequestBody {
         sb.append("    imageId: ").append(toIndentedString(imageId)).append("\n");
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("    keypairName: ").append(toIndentedString(keypairName)).append("\n");
-        sb.append("    brCidr: ").append(toIndentedString(brCidr)).append("\n");
         sb.append("    ports: ").append(toIndentedString(ports)).append("\n");
         sb.append("    extendParam: ").append(toIndentedString(extendParam)).append("\n");
         sb.append("    tenantVpcId: ").append(toIndentedString(tenantVpcId)).append("\n");

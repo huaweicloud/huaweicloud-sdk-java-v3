@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.cph.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,9 +10,9 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 查询云手机服务器猎豹
+ * Response Object
  */
-public class ListCloudPhoneServersResponseBody {
+public class DeleteShareFilesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "request_id")
@@ -19,11 +20,11 @@ public class ListCloudPhoneServersResponseBody {
     private String requestId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "servers")
+    @JsonProperty(value = "jobs")
 
-    private List<Object> servers = null;
+    private List<Object> jobs = null;
 
-    public ListCloudPhoneServersResponseBody withRequestId(String requestId) {
+    public DeleteShareFilesResponse withRequestId(String requestId) {
         this.requestId = requestId;
         return this;
     }
@@ -40,37 +41,37 @@ public class ListCloudPhoneServersResponseBody {
         this.requestId = requestId;
     }
 
-    public ListCloudPhoneServersResponseBody withServers(List<Object> servers) {
-        this.servers = servers;
+    public DeleteShareFilesResponse withJobs(List<Object> jobs) {
+        this.jobs = jobs;
         return this;
     }
 
-    public ListCloudPhoneServersResponseBody addServersItem(Object serversItem) {
-        if (this.servers == null) {
-            this.servers = new ArrayList<>();
+    public DeleteShareFilesResponse addJobsItem(Object jobsItem) {
+        if (this.jobs == null) {
+            this.jobs = new ArrayList<>();
         }
-        this.servers.add(serversItem);
+        this.jobs.add(jobsItem);
         return this;
     }
 
-    public ListCloudPhoneServersResponseBody withServers(Consumer<List<Object>> serversSetter) {
-        if (this.servers == null) {
-            this.servers = new ArrayList<>();
+    public DeleteShareFilesResponse withJobs(Consumer<List<Object>> jobsSetter) {
+        if (this.jobs == null) {
+            this.jobs = new ArrayList<>();
         }
-        serversSetter.accept(this.servers);
+        jobsSetter.accept(this.jobs);
         return this;
     }
 
     /**
-     * 云手机服务器信息
-     * @return servers
+     * 任务信息
+     * @return jobs
      */
-    public List<Object> getServers() {
-        return servers;
+    public List<Object> getJobs() {
+        return jobs;
     }
 
-    public void setServers(List<Object> servers) {
-        this.servers = servers;
+    public void setJobs(List<Object> jobs) {
+        this.jobs = jobs;
     }
 
     @Override
@@ -81,22 +82,22 @@ public class ListCloudPhoneServersResponseBody {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        ListCloudPhoneServersResponseBody listCloudPhoneServersResponseBody = (ListCloudPhoneServersResponseBody) o;
-        return Objects.equals(this.requestId, listCloudPhoneServersResponseBody.requestId)
-            && Objects.equals(this.servers, listCloudPhoneServersResponseBody.servers);
+        DeleteShareFilesResponse deleteShareFilesResponse = (DeleteShareFilesResponse) o;
+        return Objects.equals(this.requestId, deleteShareFilesResponse.requestId)
+            && Objects.equals(this.jobs, deleteShareFilesResponse.jobs);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(requestId, servers);
+        return Objects.hash(requestId, jobs);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class ListCloudPhoneServersResponseBody {\n");
+        sb.append("class DeleteShareFilesResponse {\n");
         sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
-        sb.append("    servers: ").append(toIndentedString(servers)).append("\n");
+        sb.append("    jobs: ").append(toIndentedString(jobs)).append("\n");
         sb.append("}");
         return sb.toString();
     }

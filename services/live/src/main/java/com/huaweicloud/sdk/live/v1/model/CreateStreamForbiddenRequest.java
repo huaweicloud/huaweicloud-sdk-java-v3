@@ -12,31 +12,9 @@ import java.util.function.Consumer;
 public class CreateStreamForbiddenRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "specify_project")
-
-    private String specifyProject;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
     private StreamForbiddenSetting body;
-
-    public CreateStreamForbiddenRequest withSpecifyProject(String specifyProject) {
-        this.specifyProject = specifyProject;
-        return this;
-    }
-
-    /**
-     * op账号需要携带的特定project_id，当使用op账号时该值为所操作租户的project_id
-     * @return specifyProject
-     */
-    public String getSpecifyProject() {
-        return specifyProject;
-    }
-
-    public void setSpecifyProject(String specifyProject) {
-        this.specifyProject = specifyProject;
-    }
 
     public CreateStreamForbiddenRequest withBody(StreamForbiddenSetting body) {
         this.body = body;
@@ -73,20 +51,18 @@ public class CreateStreamForbiddenRequest {
             return false;
         }
         CreateStreamForbiddenRequest createStreamForbiddenRequest = (CreateStreamForbiddenRequest) o;
-        return Objects.equals(this.specifyProject, createStreamForbiddenRequest.specifyProject)
-            && Objects.equals(this.body, createStreamForbiddenRequest.body);
+        return Objects.equals(this.body, createStreamForbiddenRequest.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(specifyProject, body);
+        return Objects.hash(body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateStreamForbiddenRequest {\n");
-        sb.append("    specifyProject: ").append(toIndentedString(specifyProject)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

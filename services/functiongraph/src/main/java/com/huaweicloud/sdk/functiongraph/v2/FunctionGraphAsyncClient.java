@@ -1623,6 +1623,39 @@ public class FunctionGraphAsyncClient {
     }
 
     /**
+     * 分页获取指定函数流执行实例列表
+     *
+     * 分页获取指定函数流执行实例列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowWorkflowExecutionForPageRequest 请求对象
+     * @return CompletableFuture<ShowWorkflowExecutionForPageResponse>
+     */
+    public CompletableFuture<ShowWorkflowExecutionForPageResponse> showWorkflowExecutionForPageAsync(
+        ShowWorkflowExecutionForPageRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.showWorkflowExecutionForPage);
+    }
+
+    /**
+     * 分页获取指定函数流执行实例列表
+     *
+     * 分页获取指定函数流执行实例列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowWorkflowExecutionForPageRequest 请求对象
+     * @return AsyncInvoker<ShowWorkflowExecutionForPageRequest, ShowWorkflowExecutionForPageResponse>
+     */
+    public AsyncInvoker<ShowWorkflowExecutionForPageRequest, ShowWorkflowExecutionForPageResponse> showWorkflowExecutionForPageAsyncInvoker(
+        ShowWorkflowExecutionForPageRequest request) {
+        return new AsyncInvoker<ShowWorkflowExecutionForPageRequest, ShowWorkflowExecutionForPageResponse>(request,
+            FunctionGraphMeta.showWorkflowExecutionForPage, hcClient);
+    }
+
+    /**
      * 同步执行函数流
      *
      * 以同步执行方式启动函数流（仅快速模式函数流支持）

@@ -49,7 +49,7 @@ public class CreateTestCaseInPlanRequest {
     }
 
     /**
-     * 计划唯一标识，固定长度32位字符
+     * 计划唯一标识，长度11-34位字符
      * @return planId
      */
     public String getPlanId() {

@@ -11,11 +11,6 @@ import java.util.Objects;
 public class ListStreamForbiddenRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "specify_project")
-
-    private String specifyProject;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain")
 
     private String domain;
@@ -39,23 +34,6 @@ public class ListStreamForbiddenRequest {
     @JsonProperty(value = "size")
 
     private Integer size;
-
-    public ListStreamForbiddenRequest withSpecifyProject(String specifyProject) {
-        this.specifyProject = specifyProject;
-        return this;
-    }
-
-    /**
-     * op账号需要携带的特定project_id，当使用op账号时该值为所操作租户的project_id
-     * @return specifyProject
-     */
-    public String getSpecifyProject() {
-        return specifyProject;
-    }
-
-    public void setSpecifyProject(String specifyProject) {
-        this.specifyProject = specifyProject;
-    }
 
     public ListStreamForbiddenRequest withDomain(String domain) {
         this.domain = domain;
@@ -154,8 +132,7 @@ public class ListStreamForbiddenRequest {
             return false;
         }
         ListStreamForbiddenRequest listStreamForbiddenRequest = (ListStreamForbiddenRequest) o;
-        return Objects.equals(this.specifyProject, listStreamForbiddenRequest.specifyProject)
-            && Objects.equals(this.domain, listStreamForbiddenRequest.domain)
+        return Objects.equals(this.domain, listStreamForbiddenRequest.domain)
             && Objects.equals(this.appName, listStreamForbiddenRequest.appName)
             && Objects.equals(this.streamName, listStreamForbiddenRequest.streamName)
             && Objects.equals(this.page, listStreamForbiddenRequest.page)
@@ -164,14 +141,13 @@ public class ListStreamForbiddenRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hash(specifyProject, domain, appName, streamName, page, size);
+        return Objects.hash(domain, appName, streamName, page, size);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListStreamForbiddenRequest {\n");
-        sb.append("    specifyProject: ").append(toIndentedString(specifyProject)).append("\n");
         sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
         sb.append("    appName: ").append(toIndentedString(appName)).append("\n");
         sb.append("    streamName: ").append(toIndentedString(streamName)).append("\n");

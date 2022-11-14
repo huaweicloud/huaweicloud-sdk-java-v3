@@ -268,6 +268,38 @@ public class DdsClient {
     }
 
     /**
+     * 检查弱密码
+     *
+     * 检查弱密码
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CheckWeakPasswordRequest 请求对象
+     * @return CheckWeakPasswordResponse
+     */
+    public CheckWeakPasswordResponse checkWeakPassword(CheckWeakPasswordRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.checkWeakPassword);
+    }
+
+    /**
+     * 检查弱密码
+     *
+     * 检查弱密码
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CheckWeakPasswordRequest 请求对象
+     * @return SyncInvoker<CheckWeakPasswordRequest, CheckWeakPasswordResponse>
+     */
+    public SyncInvoker<CheckWeakPasswordRequest, CheckWeakPasswordResponse> checkWeakPasswordInvoker(
+        CheckWeakPasswordRequest request) {
+        return new SyncInvoker<CheckWeakPasswordRequest, CheckWeakPasswordResponse>(request, DdsMeta.checkWeakPassword,
+            hcClient);
+    }
+
+    /**
      * 创建参数模板
      *
      * 创建参数模板。
@@ -455,6 +487,38 @@ public class DdsClient {
         CreateManualBackupRequest request) {
         return new SyncInvoker<CreateManualBackupRequest, CreateManualBackupResponse>(request,
             DdsMeta.createManualBackup, hcClient);
+    }
+
+    /**
+     * 删除审计日志
+     *
+     * 删除审计日志
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteAuditLogRequest 请求对象
+     * @return DeleteAuditLogResponse
+     */
+    public DeleteAuditLogResponse deleteAuditLog(DeleteAuditLogRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.deleteAuditLog);
+    }
+
+    /**
+     * 删除审计日志
+     *
+     * 删除审计日志
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteAuditLogRequest 请求对象
+     * @return SyncInvoker<DeleteAuditLogRequest, DeleteAuditLogResponse>
+     */
+    public SyncInvoker<DeleteAuditLogRequest, DeleteAuditLogResponse> deleteAuditLogInvoker(
+        DeleteAuditLogRequest request) {
+        return new SyncInvoker<DeleteAuditLogRequest, DeleteAuditLogResponse>(request, DdsMeta.deleteAuditLog,
+            hcClient);
     }
 
     /**
@@ -714,7 +778,7 @@ public class DdsClient {
     /**
      * 扩容副本集实例的节点数量
      *
-     * 扩容指定副本集实例的节点数量，暂不支持包周期实例
+     * 扩容指定副本集实例的节点数量
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -729,7 +793,7 @@ public class DdsClient {
     /**
      * 扩容副本集实例的节点数量
      *
-     * 扩容指定副本集实例的节点数量，暂不支持包周期实例
+     * 扩容指定副本集实例的节点数量
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1214,6 +1278,38 @@ public class DdsClient {
     }
 
     /**
+     * 查询回收站实例列表
+     *
+     * 查询回收站实例列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListRecycleInstancesRequest 请求对象
+     * @return ListRecycleInstancesResponse
+     */
+    public ListRecycleInstancesResponse listRecycleInstances(ListRecycleInstancesRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.listRecycleInstances);
+    }
+
+    /**
+     * 查询回收站实例列表
+     *
+     * 查询回收站实例列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListRecycleInstancesRequest 请求对象
+     * @return SyncInvoker<ListRecycleInstancesRequest, ListRecycleInstancesResponse>
+     */
+    public SyncInvoker<ListRecycleInstancesRequest, ListRecycleInstancesResponse> listRecycleInstancesInvoker(
+        ListRecycleInstancesRequest request) {
+        return new SyncInvoker<ListRecycleInstancesRequest, ListRecycleInstancesResponse>(request,
+            DdsMeta.listRecycleInstances, hcClient);
+    }
+
+    /**
      * 获取可恢复的数据库集合列表
      *
      * 获取可恢复的数据库集合列表。
@@ -1367,6 +1463,38 @@ public class DdsClient {
      */
     public SyncInvoker<ListSlowLogsRequest, ListSlowLogsResponse> listSlowLogsInvoker(ListSlowLogsRequest request) {
         return new SyncInvoker<ListSlowLogsRequest, ListSlowLogsResponse>(request, DdsMeta.listSlowLogs, hcClient);
+    }
+
+    /**
+     * 获取SSL证书下载地址
+     *
+     * 获取SSL证书下载地址
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListSslCertDownloadAddressRequest 请求对象
+     * @return ListSslCertDownloadAddressResponse
+     */
+    public ListSslCertDownloadAddressResponse listSslCertDownloadAddress(ListSslCertDownloadAddressRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.listSslCertDownloadAddress);
+    }
+
+    /**
+     * 获取SSL证书下载地址
+     *
+     * 获取SSL证书下载地址
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListSslCertDownloadAddressRequest 请求对象
+     * @return SyncInvoker<ListSslCertDownloadAddressRequest, ListSslCertDownloadAddressResponse>
+     */
+    public SyncInvoker<ListSslCertDownloadAddressRequest, ListSslCertDownloadAddressResponse> listSslCertDownloadAddressInvoker(
+        ListSslCertDownloadAddressRequest request) {
+        return new SyncInvoker<ListSslCertDownloadAddressRequest, ListSslCertDownloadAddressResponse>(request,
+            DdsMeta.listSslCertDownloadAddress, hcClient);
     }
 
     /**
@@ -1975,6 +2103,36 @@ public class DdsClient {
     }
 
     /**
+     * 查询实例磁盘信息
+     *
+     * 查询实例磁盘信息
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowDiskUsageRequest 请求对象
+     * @return ShowDiskUsageResponse
+     */
+    public ShowDiskUsageResponse showDiskUsage(ShowDiskUsageRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.showDiskUsage);
+    }
+
+    /**
+     * 查询实例磁盘信息
+     *
+     * 查询实例磁盘信息
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowDiskUsageRequest 请求对象
+     * @return SyncInvoker<ShowDiskUsageRequest, ShowDiskUsageResponse>
+     */
+    public SyncInvoker<ShowDiskUsageRequest, ShowDiskUsageResponse> showDiskUsageInvoker(ShowDiskUsageRequest request) {
+        return new SyncInvoker<ShowDiskUsageRequest, ShowDiskUsageResponse>(request, DdsMeta.showDiskUsage, hcClient);
+    }
+
+    /**
      * 获取指定实例的参数信息
      *
      * 获取指定实例的参数，可以是实例，组，节点的参数模板。
@@ -2067,6 +2225,38 @@ public class DdsClient {
     }
 
     /**
+     * 查询实例回收站策略
+     *
+     * 查询实例回收站策略
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowRecyclePolicyRequest 请求对象
+     * @return ShowRecyclePolicyResponse
+     */
+    public ShowRecyclePolicyResponse showRecyclePolicy(ShowRecyclePolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.showRecyclePolicy);
+    }
+
+    /**
+     * 查询实例回收站策略
+     *
+     * 查询实例回收站策略
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowRecyclePolicyRequest 请求对象
+     * @return SyncInvoker<ShowRecyclePolicyRequest, ShowRecyclePolicyResponse>
+     */
+    public SyncInvoker<ShowRecyclePolicyRequest, ShowRecyclePolicyResponse> showRecyclePolicyInvoker(
+        ShowRecyclePolicyRequest request) {
+        return new SyncInvoker<ShowRecyclePolicyRequest, ShowRecyclePolicyResponse>(request, DdsMeta.showRecyclePolicy,
+            hcClient);
+    }
+
+    /**
      * 查询秒级监控配置
      *
      * 查询秒级监控配置。
@@ -2129,6 +2319,71 @@ public class DdsClient {
         ShowShardingBalancerRequest request) {
         return new SyncInvoker<ShowShardingBalancerRequest, ShowShardingBalancerResponse>(request,
             DdsMeta.showShardingBalancer, hcClient);
+    }
+
+    /**
+     * 查询慢日志明文开关
+     *
+     * 查询慢日志明文开关
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowSlowlogDesensitizationSwitchRequest 请求对象
+     * @return ShowSlowlogDesensitizationSwitchResponse
+     */
+    public ShowSlowlogDesensitizationSwitchResponse showSlowlogDesensitizationSwitch(
+        ShowSlowlogDesensitizationSwitchRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.showSlowlogDesensitizationSwitch);
+    }
+
+    /**
+     * 查询慢日志明文开关
+     *
+     * 查询慢日志明文开关
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowSlowlogDesensitizationSwitchRequest 请求对象
+     * @return SyncInvoker<ShowSlowlogDesensitizationSwitchRequest, ShowSlowlogDesensitizationSwitchResponse>
+     */
+    public SyncInvoker<ShowSlowlogDesensitizationSwitchRequest, ShowSlowlogDesensitizationSwitchResponse> showSlowlogDesensitizationSwitchInvoker(
+        ShowSlowlogDesensitizationSwitchRequest request) {
+        return new SyncInvoker<ShowSlowlogDesensitizationSwitchRequest, ShowSlowlogDesensitizationSwitchResponse>(
+            request, DdsMeta.showSlowlogDesensitizationSwitch, hcClient);
+    }
+
+    /**
+     * 查询数据库补丁升级预估时长
+     *
+     * 查询数据库补丁升级预估时长
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowUpgradeDurationRequest 请求对象
+     * @return ShowUpgradeDurationResponse
+     */
+    public ShowUpgradeDurationResponse showUpgradeDuration(ShowUpgradeDurationRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.showUpgradeDuration);
+    }
+
+    /**
+     * 查询数据库补丁升级预估时长
+     *
+     * 查询数据库补丁升级预估时长
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowUpgradeDurationRequest 请求对象
+     * @return SyncInvoker<ShowUpgradeDurationRequest, ShowUpgradeDurationResponse>
+     */
+    public SyncInvoker<ShowUpgradeDurationRequest, ShowUpgradeDurationResponse> showUpgradeDurationInvoker(
+        ShowUpgradeDurationRequest request) {
+        return new SyncInvoker<ShowUpgradeDurationRequest, ShowUpgradeDurationResponse>(request,
+            DdsMeta.showUpgradeDuration, hcClient);
     }
 
     /**

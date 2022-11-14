@@ -44,6 +44,11 @@ public class ShowIpGroupResponse extends SdkResponse {
 
     private ShareInfo shareInfo;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "description")
+
+    private String description;
+
     public ShowIpGroupResponse withId(String id) {
         this.id = id;
         return this;
@@ -171,6 +176,23 @@ public class ShowIpGroupResponse extends SdkResponse {
         this.shareInfo = shareInfo;
     }
 
+    public ShowIpGroupResponse withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /**
+     * 地址组描述
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -183,12 +205,13 @@ public class ShowIpGroupResponse extends SdkResponse {
         return Objects.equals(this.id, showIpGroupResponse.id) && Objects.equals(this.name, showIpGroupResponse.name)
             && Objects.equals(this.ips, showIpGroupResponse.ips) && Objects.equals(this.size, showIpGroupResponse.size)
             && Objects.equals(this.rules, showIpGroupResponse.rules)
-            && Objects.equals(this.shareInfo, showIpGroupResponse.shareInfo);
+            && Objects.equals(this.shareInfo, showIpGroupResponse.shareInfo)
+            && Objects.equals(this.description, showIpGroupResponse.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, ips, size, rules, shareInfo);
+        return Objects.hash(id, name, ips, size, rules, shareInfo, description);
     }
 
     @Override
@@ -201,6 +224,7 @@ public class ShowIpGroupResponse extends SdkResponse {
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    rules: ").append(toIndentedString(rules)).append("\n");
         sb.append("    shareInfo: ").append(toIndentedString(shareInfo)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -48,13 +48,6 @@ public class LiveMeta {
                 .withContentType("application/json; charset=UTF-8");
 
         // requests
-        builder.<String>withRequestField("specify_project",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateDomainMappingRequest::getSpecifyProject, (req, v) -> {
-                req.setSpecifyProject(v);
-            }));
         builder.<DomainMapping>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -163,13 +156,6 @@ public class LiveMeta {
             .withContentType("application/json; charset=UTF-8");
 
         // requests
-        builder.<String>withRequestField("specify_project",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateStreamForbiddenRequest::getSpecifyProject, (req, v) -> {
-                req.setSpecifyProject(v);
-            }));
         builder.<StreamForbiddenSetting>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -247,13 +233,6 @@ public class LiveMeta {
             .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("specify_project",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDomainMappingRequest::getSpecifyProject, (req, v) -> {
-                req.setSpecifyProject(v);
-            }));
         builder.<String>withRequestField("pull_domain",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -339,13 +318,6 @@ public class LiveMeta {
             .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("specify_project",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteStreamForbiddenRequest::getSpecifyProject, (req, v) -> {
-                req.setSpecifyProject(v);
-            }));
         builder.<String>withRequestField("domain",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -701,13 +673,6 @@ public class LiveMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("specify_project",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStreamForbiddenRequest::getSpecifyProject, (req, v) -> {
-                req.setSpecifyProject(v);
-            }));
         builder.<String>withRequestField("domain",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1010,13 +975,6 @@ public class LiveMeta {
             .withContentType("application/json; charset=UTF-8");
 
         // requests
-        builder.<String>withRequestField("specify_project",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateStreamForbiddenRequest::getSpecifyProject, (req, v) -> {
-                req.setSpecifyProject(v);
-            }));
         builder.<StreamForbiddenSetting>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,

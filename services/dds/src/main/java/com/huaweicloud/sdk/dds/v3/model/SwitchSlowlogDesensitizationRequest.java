@@ -11,6 +11,11 @@ import java.util.Objects;
 public class SwitchSlowlogDesensitizationRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Language")
+
+    private String xLanguage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_id")
 
     private String instanceId;
@@ -19,6 +24,25 @@ public class SwitchSlowlogDesensitizationRequest {
     @JsonProperty(value = "status")
 
     private String status;
+
+    public SwitchSlowlogDesensitizationRequest withXLanguage(String xLanguage) {
+        this.xLanguage = xLanguage;
+        return this;
+    }
+
+    /**
+     * 语言。
+     * @return xLanguage
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Language")
+    public String getXLanguage() {
+        return xLanguage;
+    }
+
+    public void setXLanguage(String xLanguage) {
+        this.xLanguage = xLanguage;
+    }
 
     public SwitchSlowlogDesensitizationRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -64,19 +88,21 @@ public class SwitchSlowlogDesensitizationRequest {
         }
         SwitchSlowlogDesensitizationRequest switchSlowlogDesensitizationRequest =
             (SwitchSlowlogDesensitizationRequest) o;
-        return Objects.equals(this.instanceId, switchSlowlogDesensitizationRequest.instanceId)
+        return Objects.equals(this.xLanguage, switchSlowlogDesensitizationRequest.xLanguage)
+            && Objects.equals(this.instanceId, switchSlowlogDesensitizationRequest.instanceId)
             && Objects.equals(this.status, switchSlowlogDesensitizationRequest.status);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, status);
+        return Objects.hash(xLanguage, instanceId, status);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class SwitchSlowlogDesensitizationRequest {\n");
+        sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("}");

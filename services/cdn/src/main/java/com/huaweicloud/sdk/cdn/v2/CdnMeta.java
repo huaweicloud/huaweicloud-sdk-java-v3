@@ -10,6 +10,295 @@ import com.huaweicloud.sdk.core.http.LocationType;
 @SuppressWarnings("unchecked")
 public class CdnMeta {
 
+    public static final HttpRequestDef<DownloadRegionCarrierExcelRequest, DownloadRegionCarrierExcelResponse> downloadRegionCarrierExcel =
+        genFordownloadRegionCarrierExcel();
+
+    private static HttpRequestDef<DownloadRegionCarrierExcelRequest, DownloadRegionCarrierExcelResponse> genFordownloadRegionCarrierExcel() {
+        // basic
+        HttpRequestDef.Builder<DownloadRegionCarrierExcelRequest, DownloadRegionCarrierExcelResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    DownloadRegionCarrierExcelRequest.class,
+                    DownloadRegionCarrierExcelResponse.class)
+                .withName("DownloadRegionCarrierExcel")
+                .withUri("/v1.0/cdn/statistics/region-carrier-excel")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Long>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(DownloadRegionCarrierExcelRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            }));
+        builder.<Long>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(DownloadRegionCarrierExcelRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            }));
+        builder.<String>withRequestField("domain_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadRegionCarrierExcelRequest::getDomainName, (req, v) -> {
+                req.setDomainName(v);
+            }));
+        builder.<Long>withRequestField("interval",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(DownloadRegionCarrierExcelRequest::getInterval, (req, v) -> {
+                req.setInterval(v);
+            }));
+        builder.<String>withRequestField("country",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadRegionCarrierExcelRequest::getCountry, (req, v) -> {
+                req.setCountry(v);
+            }));
+        builder.<String>withRequestField("excel_language",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadRegionCarrierExcelRequest::getExcelLanguage, (req, v) -> {
+                req.setExcelLanguage(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadRegionCarrierExcelRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<String>withRequestField("excel_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadRegionCarrierExcelRequest::getExcelType, (req, v) -> {
+                req.setExcelType(v);
+            }));
+        builder.<String>withRequestField("region",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadRegionCarrierExcelRequest::getRegion, (req, v) -> {
+                req.setRegion(v);
+            }));
+        builder.<String>withRequestField("carrier",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadRegionCarrierExcelRequest::getCarrier, (req, v) -> {
+                req.setCarrier(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DownloadStatisticsExcelRequest, DownloadStatisticsExcelResponse> downloadStatisticsExcel =
+        genFordownloadStatisticsExcel();
+
+    private static HttpRequestDef<DownloadStatisticsExcelRequest, DownloadStatisticsExcelResponse> genFordownloadStatisticsExcel() {
+        // basic
+        HttpRequestDef.Builder<DownloadStatisticsExcelRequest, DownloadStatisticsExcelResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, DownloadStatisticsExcelRequest.class, DownloadStatisticsExcelResponse.class)
+            .withName("DownloadStatisticsExcel")
+            .withUri("/v1.0/cdn/statistics/statistics-excel")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Long>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(DownloadStatisticsExcelRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            }));
+        builder.<Long>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(DownloadStatisticsExcelRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            }));
+        builder.<String>withRequestField("domain_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadStatisticsExcelRequest::getDomainName, (req, v) -> {
+                req.setDomainName(v);
+            }));
+        builder.<String>withRequestField("excel_language",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadStatisticsExcelRequest::getExcelLanguage, (req, v) -> {
+                req.setExcelLanguage(v);
+            }));
+        builder.<String>withRequestField("service_area",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadStatisticsExcelRequest::getServiceArea, (req, v) -> {
+                req.setServiceArea(v);
+            }));
+        builder.<Long>withRequestField("interval",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(DownloadStatisticsExcelRequest::getInterval, (req, v) -> {
+                req.setInterval(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadStatisticsExcelRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<String>withRequestField("excel_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadStatisticsExcelRequest::getExcelType, (req, v) -> {
+                req.setExcelType(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SetChargeModesRequest, SetChargeModesResponse> setChargeModes =
+        genForsetChargeModes();
+
+    private static HttpRequestDef<SetChargeModesRequest, SetChargeModesResponse> genForsetChargeModes() {
+        // basic
+        HttpRequestDef.Builder<SetChargeModesRequest, SetChargeModesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, SetChargeModesRequest.class, SetChargeModesResponse.class)
+                .withName("SetChargeModes")
+                .withUri("/v1.0/cdn/charge/charge-modes")
+                .withContentType("application/json");
+
+        // requests
+        builder.<SetChargeModesBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SetChargeModesBody.class),
+            f -> f.withMarshaller(SetChargeModesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowBandwidthCalcRequest, ShowBandwidthCalcResponse> showBandwidthCalc =
+        genForshowBandwidthCalc();
+
+    private static HttpRequestDef<ShowBandwidthCalcRequest, ShowBandwidthCalcResponse> genForshowBandwidthCalc() {
+        // basic
+        HttpRequestDef.Builder<ShowBandwidthCalcRequest, ShowBandwidthCalcResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowBandwidthCalcRequest.class, ShowBandwidthCalcResponse.class)
+                .withName("ShowBandwidthCalc")
+                .withUri("/v1.0/cdn/statistics/bandwidth-calc")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Long>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowBandwidthCalcRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            }));
+        builder.<Long>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowBandwidthCalcRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            }));
+        builder.<String>withRequestField("domain_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowBandwidthCalcRequest::getDomainName, (req, v) -> {
+                req.setDomainName(v);
+            }));
+        builder.<String>withRequestField("service_area",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowBandwidthCalcRequest::getServiceArea, (req, v) -> {
+                req.setServiceArea(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowBandwidthCalcRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<String>withRequestField("calc_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowBandwidthCalcRequest::getCalcType, (req, v) -> {
+                req.setCalcType(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowChargeModesRequest, ShowChargeModesResponse> showChargeModes =
+        genForshowChargeModes();
+
+    private static HttpRequestDef<ShowChargeModesRequest, ShowChargeModesResponse> genForshowChargeModes() {
+        // basic
+        HttpRequestDef.Builder<ShowChargeModesRequest, ShowChargeModesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowChargeModesRequest.class, ShowChargeModesResponse.class)
+                .withName("ShowChargeModes")
+                .withUri("/v1.0/cdn/charge/charge-modes")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("product_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowChargeModesRequest::getProductType, (req, v) -> {
+                req.setProductType(v);
+            }));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowChargeModesRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            }));
+        builder.<String>withRequestField("service_area",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowChargeModesRequest::getServiceArea, (req, v) -> {
+                req.setServiceArea(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowDomainLocationStatsRequest, ShowDomainLocationStatsResponse> showDomainLocationStats =
         genForshowDomainLocationStats();
 
@@ -178,6 +467,66 @@ public class CdnMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowDomainStatsRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTopDomainNamesRequest, ShowTopDomainNamesResponse> showTopDomainNames =
+        genForshowTopDomainNames();
+
+    private static HttpRequestDef<ShowTopDomainNamesRequest, ShowTopDomainNamesResponse> genForshowTopDomainNames() {
+        // basic
+        HttpRequestDef.Builder<ShowTopDomainNamesRequest, ShowTopDomainNamesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowTopDomainNamesRequest.class, ShowTopDomainNamesResponse.class)
+                .withName("ShowTopDomainNames")
+                .withUri("/v1/cdn/statistics/top-domain-names")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Long>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowTopDomainNamesRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            }));
+        builder.<Long>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowTopDomainNamesRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            }));
+        builder.<String>withRequestField("stat_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTopDomainNamesRequest::getStatType, (req, v) -> {
+                req.setStatType(v);
+            }));
+        builder.<String>withRequestField("service_area",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTopDomainNamesRequest::getServiceArea, (req, v) -> {
+                req.setServiceArea(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowTopDomainNamesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTopDomainNamesRequest::getEnterpriseProjectId, (req, v) -> {
                 req.setEnterpriseProjectId(v);
             }));
 

@@ -501,6 +501,38 @@ public class WorkspaceAsyncClient {
     }
 
     /**
+     * 操作用户
+     *
+     * 该接口用于操作用户，包含三种操作：锁定、解锁和重置密码。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ChangeUserStatusRequest 请求对象
+     * @return CompletableFuture<ChangeUserStatusResponse>
+     */
+    public CompletableFuture<ChangeUserStatusResponse> changeUserStatusAsync(ChangeUserStatusRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.changeUserStatus);
+    }
+
+    /**
+     * 操作用户
+     *
+     * 该接口用于操作用户，包含三种操作：锁定、解锁和重置密码。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ChangeUserStatusRequest 请求对象
+     * @return AsyncInvoker<ChangeUserStatusRequest, ChangeUserStatusResponse>
+     */
+    public AsyncInvoker<ChangeUserStatusRequest, ChangeUserStatusResponse> changeUserStatusAsyncInvoker(
+        ChangeUserStatusRequest request) {
+        return new AsyncInvoker<ChangeUserStatusRequest, ChangeUserStatusResponse>(request,
+            WorkspaceMeta.changeUserStatus, hcClient);
+    }
+
+    /**
      * 创建用户
      *
      * 该接口用于创建桌面用户。

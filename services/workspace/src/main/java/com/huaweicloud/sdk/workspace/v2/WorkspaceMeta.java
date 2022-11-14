@@ -649,6 +649,38 @@ public class WorkspaceMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ChangeUserStatusRequest, ChangeUserStatusResponse> changeUserStatus =
+        genForchangeUserStatus();
+
+    private static HttpRequestDef<ChangeUserStatusRequest, ChangeUserStatusResponse> genForchangeUserStatus() {
+        // basic
+        HttpRequestDef.Builder<ChangeUserStatusRequest, ChangeUserStatusResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ChangeUserStatusRequest.class, ChangeUserStatusResponse.class)
+                .withName("ChangeUserStatus")
+                .withUri("/v2/{project_id}/users/{user_id}/actions")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("user_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeUserStatusRequest::getUserId, (req, v) -> {
+                req.setUserId(v);
+            }));
+        builder.<OperateUserReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(OperateUserReq.class),
+            f -> f.withMarshaller(ChangeUserStatusRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateDesktopUserRequest, CreateDesktopUserResponse> createDesktopUser =
         genForcreateDesktopUser();
 

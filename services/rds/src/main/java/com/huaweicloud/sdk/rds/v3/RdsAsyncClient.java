@@ -787,6 +787,38 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 
+     *
+     * 批量查询容灾实例信息
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListDrRelationsRequest 请求对象
+     * @return CompletableFuture<ListDrRelationsResponse>
+     */
+    public CompletableFuture<ListDrRelationsResponse> listDrRelationsAsync(ListDrRelationsRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listDrRelations);
+    }
+
+    /**
+     * 
+     *
+     * 批量查询容灾实例信息
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListDrRelationsRequest 请求对象
+     * @return AsyncInvoker<ListDrRelationsRequest, ListDrRelationsResponse>
+     */
+    public AsyncInvoker<ListDrRelationsRequest, ListDrRelationsResponse> listDrRelationsAsyncInvoker(
+        ListDrRelationsRequest request) {
+        return new AsyncInvoker<ListDrRelationsRequest, ListDrRelationsResponse>(request, RdsMeta.listDrRelations,
+            hcClient);
+    }
+
+    /**
      * 查询数据库错误日志
      *
      * 查询数据库错误日志。
@@ -3596,6 +3628,39 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 获取实例指定参数的值
+     *
+     * 获取实例指定参数的值。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowPostgresqlParamValueRequest 请求对象
+     * @return CompletableFuture<ShowPostgresqlParamValueResponse>
+     */
+    public CompletableFuture<ShowPostgresqlParamValueResponse> showPostgresqlParamValueAsync(
+        ShowPostgresqlParamValueRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.showPostgresqlParamValue);
+    }
+
+    /**
+     * 获取实例指定参数的值
+     *
+     * 获取实例指定参数的值。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowPostgresqlParamValueRequest 请求对象
+     * @return AsyncInvoker<ShowPostgresqlParamValueRequest, ShowPostgresqlParamValueResponse>
+     */
+    public AsyncInvoker<ShowPostgresqlParamValueRequest, ShowPostgresqlParamValueResponse> showPostgresqlParamValueAsyncInvoker(
+        ShowPostgresqlParamValueRequest request) {
+        return new AsyncInvoker<ShowPostgresqlParamValueRequest, ShowPostgresqlParamValueResponse>(request,
+            RdsMeta.showPostgresqlParamValue, hcClient);
+    }
+
+    /**
      * 开启数据库代理
      *
      * 为指定实例开启数据库代理。
@@ -3657,6 +3722,39 @@ public class RdsAsyncClient {
         StopDatabaseProxyRequest request) {
         return new AsyncInvoker<StopDatabaseProxyRequest, StopDatabaseProxyResponse>(request, RdsMeta.stopDatabaseProxy,
             hcClient);
+    }
+
+    /**
+     * 修改实例指定参数的值
+     *
+     * 修改实例指定参数的值。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdatePostgresqlParameterValueRequest 请求对象
+     * @return CompletableFuture<UpdatePostgresqlParameterValueResponse>
+     */
+    public CompletableFuture<UpdatePostgresqlParameterValueResponse> updatePostgresqlParameterValueAsync(
+        UpdatePostgresqlParameterValueRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.updatePostgresqlParameterValue);
+    }
+
+    /**
+     * 修改实例指定参数的值
+     *
+     * 修改实例指定参数的值。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdatePostgresqlParameterValueRequest 请求对象
+     * @return AsyncInvoker<UpdatePostgresqlParameterValueRequest, UpdatePostgresqlParameterValueResponse>
+     */
+    public AsyncInvoker<UpdatePostgresqlParameterValueRequest, UpdatePostgresqlParameterValueResponse> updatePostgresqlParameterValueAsyncInvoker(
+        UpdatePostgresqlParameterValueRequest request) {
+        return new AsyncInvoker<UpdatePostgresqlParameterValueRequest, UpdatePostgresqlParameterValueResponse>(request,
+            RdsMeta.updatePostgresqlParameterValue, hcClient);
     }
 
     /**

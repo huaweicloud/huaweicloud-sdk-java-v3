@@ -14,16 +14,16 @@ public class SetRecyclePolicyRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private RecyclePolicyResponseBody body;
+    private RecyclePolicyRequestBody body;
 
-    public SetRecyclePolicyRequest withBody(RecyclePolicyResponseBody body) {
+    public SetRecyclePolicyRequest withBody(RecyclePolicyRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public SetRecyclePolicyRequest withBody(Consumer<RecyclePolicyResponseBody> bodySetter) {
+    public SetRecyclePolicyRequest withBody(Consumer<RecyclePolicyRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new RecyclePolicyResponseBody();
+            this.body = new RecyclePolicyRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -34,11 +34,11 @@ public class SetRecyclePolicyRequest {
      * Get body
      * @return body
      */
-    public RecyclePolicyResponseBody getBody() {
+    public RecyclePolicyRequestBody getBody() {
         return body;
     }
 
-    public void setBody(RecyclePolicyResponseBody body) {
+    public void setBody(RecyclePolicyRequestBody body) {
         this.body = body;
     }
 

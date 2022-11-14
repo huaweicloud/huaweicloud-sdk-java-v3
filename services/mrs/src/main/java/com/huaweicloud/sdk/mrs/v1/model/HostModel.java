@@ -64,6 +64,13 @@ public class HostModel  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="resource_id")
+    
+    
+    private String resourceId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="flavor")
     
     
@@ -264,6 +271,28 @@ public class HostModel  {
 
     
 
+    public HostModel withResourceId(String resourceId) {
+        this.resourceId = resourceId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 节点资源ID
+     * @return resourceId
+     */
+    public String getResourceId() {
+        return resourceId;
+    }
+
+    public void setResourceId(String resourceId) {
+        this.resourceId = resourceId;
+    }
+
+    
+
     public HostModel withFlavor(String flavor) {
         this.flavor = flavor;
         return this;
@@ -455,6 +484,7 @@ public class HostModel  {
             Objects.equals(this.availabilityZoneId, hostModel.availabilityZoneId) &&
             Objects.equals(this.tags, hostModel.tags) &&
             Objects.equals(this.status, hostModel.status) &&
+            Objects.equals(this.resourceId, hostModel.resourceId) &&
             Objects.equals(this.flavor, hostModel.flavor) &&
             Objects.equals(this.type, hostModel.type) &&
             Objects.equals(this.mem, hostModel.mem) &&
@@ -466,7 +496,7 @@ public class HostModel  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, ip, availabilityZoneId, tags, status, flavor, type, mem, cpu, rootVolumeSize, dataVolumeType, dataVolumeSize, dataVolumeCount);
+        return Objects.hash(id, name, ip, availabilityZoneId, tags, status, resourceId, flavor, type, mem, cpu, rootVolumeSize, dataVolumeType, dataVolumeSize, dataVolumeCount);
     }
     @Override
     public String toString() {
@@ -478,6 +508,7 @@ public class HostModel  {
         sb.append("    availabilityZoneId: ").append(toIndentedString(availabilityZoneId)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
         sb.append("    flavor: ").append(toIndentedString(flavor)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    mem: ").append(toIndentedString(mem)).append("\n");

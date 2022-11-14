@@ -20,6 +20,69 @@ public class GslAsyncClient {
     }
 
     /**
+     * 查询后向流量池成员列表
+     *
+     * 查询后向流量池成员列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListBackPoolMembersRequest 请求对象
+     * @return CompletableFuture<ListBackPoolMembersResponse>
+     */
+    public CompletableFuture<ListBackPoolMembersResponse> listBackPoolMembersAsync(ListBackPoolMembersRequest request) {
+        return hcClient.asyncInvokeHttp(request, GslMeta.listBackPoolMembers);
+    }
+
+    /**
+     * 查询后向流量池成员列表
+     *
+     * 查询后向流量池成员列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListBackPoolMembersRequest 请求对象
+     * @return AsyncInvoker<ListBackPoolMembersRequest, ListBackPoolMembersResponse>
+     */
+    public AsyncInvoker<ListBackPoolMembersRequest, ListBackPoolMembersResponse> listBackPoolMembersAsyncInvoker(
+        ListBackPoolMembersRequest request) {
+        return new AsyncInvoker<ListBackPoolMembersRequest, ListBackPoolMembersResponse>(request,
+            GslMeta.listBackPoolMembers, hcClient);
+    }
+
+    /**
+     * 查询后向流量池列表
+     *
+     * 查询后向流量池列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListBackPoolsRequest 请求对象
+     * @return CompletableFuture<ListBackPoolsResponse>
+     */
+    public CompletableFuture<ListBackPoolsResponse> listBackPoolsAsync(ListBackPoolsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GslMeta.listBackPools);
+    }
+
+    /**
+     * 查询后向流量池列表
+     *
+     * 查询后向流量池列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListBackPoolsRequest 请求对象
+     * @return AsyncInvoker<ListBackPoolsRequest, ListBackPoolsResponse>
+     */
+    public AsyncInvoker<ListBackPoolsRequest, ListBackPoolsResponse> listBackPoolsAsyncInvoker(
+        ListBackPoolsRequest request) {
+        return new AsyncInvoker<ListBackPoolsRequest, ListBackPoolsResponse>(request, GslMeta.listBackPools, hcClient);
+    }
+
+    /**
      * 查询套餐列表信息
      *
      * 查询套餐列表信息

@@ -306,7 +306,7 @@ public class RenameInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 独享引擎计费状态 \\n - 0：正常计费 \\n - 1：冻结,资源和数据会保留，但租户无法再正常使用云服务 \\n - 2：终止，资源和数据将清除
+     * 独享引擎计费状态   - 0：正常计费   - 1：冻结,资源和数据会保留，但租户无法再正常使用云服务   - 2：终止，资源和数据将清除
      * @return status
      */
     public Integer getStatus() {
@@ -323,7 +323,7 @@ public class RenameInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 独享引擎运行状态 \\ n - 0：创建中 \\n - 1：运行中 \\n - 2：删除中 \\n - 3：已删除 \\n - 4：创建失败 \\n - 5：已冻结 \\n - 6：异常 \\n - 7：更新中 \\n - 8：更新失败
+     * 独享引擎运行状态   - 0：创建中   - 1：运行中   - 2：删除中   - 3：已删除   - 4：创建失败   - 5：已冻结   - 6：异常   - 7：更新中   - 8：更新失败
      * @return runStatus
      */
     public Integer getRunStatus() {

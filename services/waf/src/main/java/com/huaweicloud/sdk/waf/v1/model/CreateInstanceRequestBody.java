@@ -164,7 +164,7 @@ public class CreateInstanceRequestBody {
     }
 
     /**
-     * 独享引擎版本规格，枚举值（企业版：waf.instance.enterprise，专业版：waf.instance.professional）
+     * 独享引擎版本规格   - 企业版：waf.instance.enterprise   - 专业版：waf.instance.professional
      * @return specification
      */
     public String getSpecification() {
@@ -282,7 +282,7 @@ public class CreateInstanceRequestBody {
     }
 
     /**
-     * 是否为资源租户类   - true: 资源租户类   -false: 普通租户类
+     * 是否为资源租户类   - true: 资源租户类   - false: 普通租户类
      * @return resTenant
      */
     public Boolean getResTenant() {

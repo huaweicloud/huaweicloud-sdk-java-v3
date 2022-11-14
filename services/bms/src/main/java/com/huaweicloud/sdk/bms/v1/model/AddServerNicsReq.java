@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.bms.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -14,31 +16,38 @@ public class AddServerNicsReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nics")
 
-    private ServerNicsReq nics;
+    private List<ServerNicsReq> nics = null;
 
-    public AddServerNicsReq withNics(ServerNicsReq nics) {
+    public AddServerNicsReq withNics(List<ServerNicsReq> nics) {
         this.nics = nics;
         return this;
     }
 
-    public AddServerNicsReq withNics(Consumer<ServerNicsReq> nicsSetter) {
+    public AddServerNicsReq addNicsItem(ServerNicsReq nicsItem) {
         if (this.nics == null) {
-            this.nics = new ServerNicsReq();
-            nicsSetter.accept(this.nics);
+            this.nics = new ArrayList<>();
         }
+        this.nics.add(nicsItem);
+        return this;
+    }
 
+    public AddServerNicsReq withNics(Consumer<List<ServerNicsReq>> nicsSetter) {
+        if (this.nics == null) {
+            this.nics = new ArrayList<>();
+        }
+        nicsSetter.accept(this.nics);
         return this;
     }
 
     /**
-     * Get nics
+     * 
      * @return nics
      */
-    public ServerNicsReq getNics() {
+    public List<ServerNicsReq> getNics() {
         return nics;
     }
 
-    public void setNics(ServerNicsReq nics) {
+    public void setNics(List<ServerNicsReq> nics) {
         this.nics = nics;
     }
 

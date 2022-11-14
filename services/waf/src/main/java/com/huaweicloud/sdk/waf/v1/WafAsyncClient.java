@@ -1161,6 +1161,38 @@ public class WafAsyncClient {
     }
 
     /**
+     * 查询告警通知配置
+     *
+     * 查询告警通知配置
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListNoticeConfigsRequest 请求对象
+     * @return CompletableFuture<ListNoticeConfigsResponse>
+     */
+    public CompletableFuture<ListNoticeConfigsResponse> listNoticeConfigsAsync(ListNoticeConfigsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.listNoticeConfigs);
+    }
+
+    /**
+     * 查询告警通知配置
+     *
+     * 查询告警通知配置
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListNoticeConfigsRequest 请求对象
+     * @return AsyncInvoker<ListNoticeConfigsRequest, ListNoticeConfigsResponse>
+     */
+    public AsyncInvoker<ListNoticeConfigsRequest, ListNoticeConfigsResponse> listNoticeConfigsAsyncInvoker(
+        ListNoticeConfigsRequest request) {
+        return new AsyncInvoker<ListNoticeConfigsRequest, ListNoticeConfigsResponse>(request, WafMeta.listNoticeConfigs,
+            hcClient);
+    }
+
+    /**
      * 查询安全总览分类统计top信息
      *
      * 查询安全总览分类统计TOP信息，包含受攻击域名 、攻击源ip、受攻击URL、攻击来源区域、攻击事件分布。需要注意的是，安全总览相关的接口，暂时不能支持任意时间的查询。只能支持 console上显示的 昨天，今天，3天，7天和30天 数据查询。
@@ -1477,6 +1509,39 @@ public class WafAsyncClient {
         ListWhiteblackipRuleRequest request) {
         return new AsyncInvoker<ListWhiteblackipRuleRequest, ListWhiteblackipRuleResponse>(request,
             WafMeta.listWhiteblackipRule, hcClient);
+    }
+
+    /**
+     * 按企业项目迁移防护域名
+     *
+     * 按企业项目迁移防护域名，仅专业版与独享版支持该功能
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param MigrateCompositeHostsRequest 请求对象
+     * @return CompletableFuture<MigrateCompositeHostsResponse>
+     */
+    public CompletableFuture<MigrateCompositeHostsResponse> migrateCompositeHostsAsync(
+        MigrateCompositeHostsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.migrateCompositeHosts);
+    }
+
+    /**
+     * 按企业项目迁移防护域名
+     *
+     * 按企业项目迁移防护域名，仅专业版与独享版支持该功能
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param MigrateCompositeHostsRequest 请求对象
+     * @return AsyncInvoker<MigrateCompositeHostsRequest, MigrateCompositeHostsResponse>
+     */
+    public AsyncInvoker<MigrateCompositeHostsRequest, MigrateCompositeHostsResponse> migrateCompositeHostsAsyncInvoker(
+        MigrateCompositeHostsRequest request) {
+        return new AsyncInvoker<MigrateCompositeHostsRequest, MigrateCompositeHostsResponse>(request,
+            WafMeta.migrateCompositeHosts, hcClient);
     }
 
     /**
@@ -1823,6 +1888,70 @@ public class WafAsyncClient {
     }
 
     /**
+     * 查询WAF回源Ip信息
+     *
+     * 查询WAF回源Ip信息
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowSourceIpRequest 请求对象
+     * @return CompletableFuture<ShowSourceIpResponse>
+     */
+    public CompletableFuture<ShowSourceIpResponse> showSourceIpAsync(ShowSourceIpRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.showSourceIp);
+    }
+
+    /**
+     * 查询WAF回源Ip信息
+     *
+     * 查询WAF回源Ip信息
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowSourceIpRequest 请求对象
+     * @return AsyncInvoker<ShowSourceIpRequest, ShowSourceIpResponse>
+     */
+    public AsyncInvoker<ShowSourceIpRequest, ShowSourceIpResponse> showSourceIpAsyncInvoker(
+        ShowSourceIpRequest request) {
+        return new AsyncInvoker<ShowSourceIpRequest, ShowSourceIpResponse>(request, WafMeta.showSourceIp, hcClient);
+    }
+
+    /**
+     * 更新告警通知配置
+     *
+     * 更新告警通知配置
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateAlertNoticeConfigRequest 请求对象
+     * @return CompletableFuture<UpdateAlertNoticeConfigResponse>
+     */
+    public CompletableFuture<UpdateAlertNoticeConfigResponse> updateAlertNoticeConfigAsync(
+        UpdateAlertNoticeConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.updateAlertNoticeConfig);
+    }
+
+    /**
+     * 更新告警通知配置
+     *
+     * 更新告警通知配置
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateAlertNoticeConfigRequest 请求对象
+     * @return AsyncInvoker<UpdateAlertNoticeConfigRequest, UpdateAlertNoticeConfigResponse>
+     */
+    public AsyncInvoker<UpdateAlertNoticeConfigRequest, UpdateAlertNoticeConfigResponse> updateAlertNoticeConfigAsyncInvoker(
+        UpdateAlertNoticeConfigRequest request) {
+        return new AsyncInvoker<UpdateAlertNoticeConfigRequest, UpdateAlertNoticeConfigResponse>(request,
+            WafMeta.updateAlertNoticeConfig, hcClient);
+    }
+
+    /**
      * 修改证书
      *
      * 修改证书
@@ -1983,7 +2112,7 @@ public class WafAsyncClient {
     /**
      * 配置全量日志lts
      *
-     * 配置全量日志lts，该接口可用来开启与关闭wa全量日志以及配置日志组和日志流。日志组id和日志流id可前往云日志服务获取。配置的日志流id要属于所配置的日志组。
+     * 配置全量日志lts，该接口可用来开启与关闭waf全量日志以及配置日志组和日志流。日志组id和日志流id可前往云日志服务获取。配置的日志流id要属于所配置的日志组。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1998,7 +2127,7 @@ public class WafAsyncClient {
     /**
      * 配置全量日志lts
      *
-     * 配置全量日志lts，该接口可用来开启与关闭wa全量日志以及配置日志组和日志流。日志组id和日志流id可前往云日志服务获取。配置的日志流id要属于所配置的日志组。
+     * 配置全量日志lts，该接口可用来开启与关闭waf全量日志以及配置日志组和日志流。日志组id和日志流id可前往云日志服务获取。配置的日志流id要属于所配置的日志组。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.

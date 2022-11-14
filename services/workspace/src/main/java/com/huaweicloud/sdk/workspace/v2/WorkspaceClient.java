@@ -491,6 +491,38 @@ public class WorkspaceClient {
     }
 
     /**
+     * 操作用户
+     *
+     * 该接口用于操作用户，包含三种操作：锁定、解锁和重置密码。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ChangeUserStatusRequest 请求对象
+     * @return ChangeUserStatusResponse
+     */
+    public ChangeUserStatusResponse changeUserStatus(ChangeUserStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, WorkspaceMeta.changeUserStatus);
+    }
+
+    /**
+     * 操作用户
+     *
+     * 该接口用于操作用户，包含三种操作：锁定、解锁和重置密码。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ChangeUserStatusRequest 请求对象
+     * @return SyncInvoker<ChangeUserStatusRequest, ChangeUserStatusResponse>
+     */
+    public SyncInvoker<ChangeUserStatusRequest, ChangeUserStatusResponse> changeUserStatusInvoker(
+        ChangeUserStatusRequest request) {
+        return new SyncInvoker<ChangeUserStatusRequest, ChangeUserStatusResponse>(request,
+            WorkspaceMeta.changeUserStatus, hcClient);
+    }
+
+    /**
      * 创建用户
      *
      * 该接口用于创建桌面用户。

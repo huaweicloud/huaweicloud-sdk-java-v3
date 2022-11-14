@@ -257,6 +257,38 @@ public class DdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CheckWeakPasswordRequest, CheckWeakPasswordResponse> checkWeakPassword =
+        genForcheckWeakPassword();
+
+    private static HttpRequestDef<CheckWeakPasswordRequest, CheckWeakPasswordResponse> genForcheckWeakPassword() {
+        // basic
+        HttpRequestDef.Builder<CheckWeakPasswordRequest, CheckWeakPasswordResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CheckWeakPasswordRequest.class, CheckWeakPasswordResponse.class)
+                .withName("CheckWeakPassword")
+                .withUri("/v3/{project_id}/weak-password-verification")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckWeakPasswordRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<WeakPasswordCheckRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(WeakPasswordCheckRequestBody.class),
+            f -> f.withMarshaller(CheckWeakPasswordRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateConfigurationRequest, CreateConfigurationResponse> createConfiguration =
         genForcreateConfiguration();
 
@@ -419,6 +451,45 @@ public class DdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateManualBackupRequestBody.class),
             f -> f.withMarshaller(CreateManualBackupRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteAuditLogRequest, DeleteAuditLogResponse> deleteAuditLog =
+        genFordeleteAuditLog();
+
+    private static HttpRequestDef<DeleteAuditLogRequest, DeleteAuditLogResponse> genFordeleteAuditLog() {
+        // basic
+        HttpRequestDef.Builder<DeleteAuditLogRequest, DeleteAuditLogResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteAuditLogRequest.class, DeleteAuditLogResponse.class)
+                .withName("DeleteAuditLog")
+                .withUri("/v3/{project_id}/instances/{instance_id}/auditlog")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAuditLogRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAuditLogRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<DeleteAuditLogRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteAuditLogRequestBody.class),
+            f -> f.withMarshaller(DeleteAuditLogRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -1347,6 +1418,45 @@ public class DdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListRecycleInstancesRequest, ListRecycleInstancesResponse> listRecycleInstances =
+        genForlistRecycleInstances();
+
+    private static HttpRequestDef<ListRecycleInstancesRequest, ListRecycleInstancesResponse> genForlistRecycleInstances() {
+        // basic
+        HttpRequestDef.Builder<ListRecycleInstancesRequest, ListRecycleInstancesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListRecycleInstancesRequest.class, ListRecycleInstancesResponse.class)
+            .withName("ListRecycleInstances")
+            .withUri("/v3/{project_id}/recycle-instances")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRecycleInstancesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRecycleInstancesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRecycleInstancesRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListRestoreCollectionsRequest, ListRestoreCollectionsResponse> listRestoreCollections =
         genForlistRestoreCollections();
 
@@ -1624,6 +1734,41 @@ public class DdsMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListSlowLogsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSslCertDownloadAddressRequest, ListSslCertDownloadAddressResponse> listSslCertDownloadAddress =
+        genForlistSslCertDownloadAddress();
+
+    private static HttpRequestDef<ListSslCertDownloadAddressRequest, ListSslCertDownloadAddressResponse> genForlistSslCertDownloadAddress() {
+        // basic
+        HttpRequestDef.Builder<ListSslCertDownloadAddressRequest, ListSslCertDownloadAddressResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListSslCertDownloadAddressRequest.class,
+                    ListSslCertDownloadAddressResponse.class)
+                .withName("ListSslCertDownloadAddress")
+                .withUri("/v3/{project_id}/instances/{instance_id}/ssl-cert/download-link")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSslCertDownloadAddressRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSslCertDownloadAddressRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
             }));
 
         // response
@@ -2054,10 +2199,10 @@ public class DdsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<RecyclePolicyResponseBody>withRequestField("body",
+        builder.<RecyclePolicyRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(RecyclePolicyResponseBody.class),
+            TypeCasts.uncheckedConversion(RecyclePolicyRequestBody.class),
             f -> f.withMarshaller(SetRecyclePolicyRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
@@ -2224,6 +2369,38 @@ public class DdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowDiskUsageRequest, ShowDiskUsageResponse> showDiskUsage =
+        genForshowDiskUsage();
+
+    private static HttpRequestDef<ShowDiskUsageRequest, ShowDiskUsageResponse> genForshowDiskUsage() {
+        // basic
+        HttpRequestDef.Builder<ShowDiskUsageRequest, ShowDiskUsageResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDiskUsageRequest.class, ShowDiskUsageResponse.class)
+                .withName("ShowDiskUsage")
+                .withUri("/v3/{project_id}/instances/{instance_id}/disk-usage")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDiskUsageRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDiskUsageRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowEntityConfigurationRequest, ShowEntityConfigurationResponse> showEntityConfiguration =
         genForshowEntityConfiguration();
 
@@ -2298,6 +2475,31 @@ public class DdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowRecyclePolicyRequest, ShowRecyclePolicyResponse> showRecyclePolicy =
+        genForshowRecyclePolicy();
+
+    private static HttpRequestDef<ShowRecyclePolicyRequest, ShowRecyclePolicyResponse> genForshowRecyclePolicy() {
+        // basic
+        HttpRequestDef.Builder<ShowRecyclePolicyRequest, ShowRecyclePolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowRecyclePolicyRequest.class, ShowRecyclePolicyResponse.class)
+                .withName("ShowRecyclePolicy")
+                .withUri("/v3/{project_id}/instances/recycle-policy")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRecyclePolicyRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowSecondLevelMonitoringStatusRequest, ShowSecondLevelMonitoringStatusResponse> showSecondLevelMonitoringStatus =
         genForshowSecondLevelMonitoringStatus();
 
@@ -2344,6 +2546,73 @@ public class DdsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowShardingBalancerRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSlowlogDesensitizationSwitchRequest, ShowSlowlogDesensitizationSwitchResponse> showSlowlogDesensitizationSwitch =
+        genForshowSlowlogDesensitizationSwitch();
+
+    private static HttpRequestDef<ShowSlowlogDesensitizationSwitchRequest, ShowSlowlogDesensitizationSwitchResponse> genForshowSlowlogDesensitizationSwitch() {
+        // basic
+        HttpRequestDef.Builder<ShowSlowlogDesensitizationSwitchRequest, ShowSlowlogDesensitizationSwitchResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowSlowlogDesensitizationSwitchRequest.class,
+                    ShowSlowlogDesensitizationSwitchResponse.class)
+                .withName("ShowSlowlogDesensitizationSwitch")
+                .withUri("/v3/{project_id}/instances/{instance_id}/slowlog-desensitization/status")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSlowlogDesensitizationSwitchRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSlowlogDesensitizationSwitchRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowUpgradeDurationRequest, ShowUpgradeDurationResponse> showUpgradeDuration =
+        genForshowUpgradeDuration();
+
+    private static HttpRequestDef<ShowUpgradeDurationRequest, ShowUpgradeDurationResponse> genForshowUpgradeDuration() {
+        // basic
+        HttpRequestDef.Builder<ShowUpgradeDurationRequest, ShowUpgradeDurationResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowUpgradeDurationRequest.class, ShowUpgradeDurationResponse.class)
+                .withName("ShowUpgradeDuration")
+                .withUri("/v3/{project_id}/instances/{instance_id}/db-upgrade-duration")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowUpgradeDurationRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowUpgradeDurationRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
             }));
 
         // response
@@ -2446,6 +2715,13 @@ public class DdsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(SwitchSlowlogDesensitizationRequest::getStatus, (req, v) -> {
                 req.setStatus(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SwitchSlowlogDesensitizationRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
             }));
 
         // response

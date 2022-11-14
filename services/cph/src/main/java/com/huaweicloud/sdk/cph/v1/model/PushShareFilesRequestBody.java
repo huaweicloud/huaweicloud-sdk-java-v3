@@ -28,11 +28,6 @@ public class PushShareFilesRequestBody {
 
     private List<String> serverIds = null;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "file_paths")
-
-    private String filePaths;
-
     public PushShareFilesRequestBody withBucketName(String bucketName) {
         this.bucketName = bucketName;
         return this;
@@ -100,23 +95,6 @@ public class PushShareFilesRequestBody {
         this.serverIds = serverIds;
     }
 
-    public PushShareFilesRequestBody withFilePaths(String filePaths) {
-        this.filePaths = filePaths;
-        return this;
-    }
-
-    /**
-     * 所需删除的共享存储文件绝对路径。以/开头，最大长度4096字节，目前只支持大小写字母、数字、点（.）、斜线（/）、中划线（-）、空格、下划线（_）、等号（=），不支持中文。路径中不能包含.. 上层目录路径，防止跨目录攻击。仅删除共享存储接口使用。
-     * @return filePaths
-     */
-    public String getFilePaths() {
-        return filePaths;
-    }
-
-    public void setFilePaths(String filePaths) {
-        this.filePaths = filePaths;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -128,13 +106,12 @@ public class PushShareFilesRequestBody {
         PushShareFilesRequestBody pushShareFilesRequestBody = (PushShareFilesRequestBody) o;
         return Objects.equals(this.bucketName, pushShareFilesRequestBody.bucketName)
             && Objects.equals(this.objectPath, pushShareFilesRequestBody.objectPath)
-            && Objects.equals(this.serverIds, pushShareFilesRequestBody.serverIds)
-            && Objects.equals(this.filePaths, pushShareFilesRequestBody.filePaths);
+            && Objects.equals(this.serverIds, pushShareFilesRequestBody.serverIds);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(bucketName, objectPath, serverIds, filePaths);
+        return Objects.hash(bucketName, objectPath, serverIds);
     }
 
     @Override
@@ -144,7 +121,6 @@ public class PushShareFilesRequestBody {
         sb.append("    bucketName: ").append(toIndentedString(bucketName)).append("\n");
         sb.append("    objectPath: ").append(toIndentedString(objectPath)).append("\n");
         sb.append("    serverIds: ").append(toIndentedString(serverIds)).append("\n");
-        sb.append("    filePaths: ").append(toIndentedString(filePaths)).append("\n");
         sb.append("}");
         return sb.toString();
     }

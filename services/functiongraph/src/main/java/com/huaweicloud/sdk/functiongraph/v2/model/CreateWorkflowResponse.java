@@ -12,6 +12,11 @@ import java.util.Objects;
 public class CreateWorkflowResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_stream_response")
+
+    private Boolean enableStreamResponse;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
     private String id;
@@ -45,6 +50,23 @@ public class CreateWorkflowResponse extends SdkResponse {
     @JsonProperty(value = "created_by")
 
     private String createdBy;
+
+    public CreateWorkflowResponse withEnableStreamResponse(Boolean enableStreamResponse) {
+        this.enableStreamResponse = enableStreamResponse;
+        return this;
+    }
+
+    /**
+     * 函数流是否返回流式数据
+     * @return enableStreamResponse
+     */
+    public Boolean getEnableStreamResponse() {
+        return enableStreamResponse;
+    }
+
+    public void setEnableStreamResponse(Boolean enableStreamResponse) {
+        this.enableStreamResponse = enableStreamResponse;
+    }
 
     public CreateWorkflowResponse withId(String id) {
         this.id = id;
@@ -174,7 +196,8 @@ public class CreateWorkflowResponse extends SdkResponse {
             return false;
         }
         CreateWorkflowResponse createWorkflowResponse = (CreateWorkflowResponse) o;
-        return Objects.equals(this.id, createWorkflowResponse.id)
+        return Objects.equals(this.enableStreamResponse, createWorkflowResponse.enableStreamResponse)
+            && Objects.equals(this.id, createWorkflowResponse.id)
             && Objects.equals(this.workflowUrn, createWorkflowResponse.workflowUrn)
             && Objects.equals(this.name, createWorkflowResponse.name)
             && Objects.equals(this.description, createWorkflowResponse.description)
@@ -185,13 +208,15 @@ public class CreateWorkflowResponse extends SdkResponse {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, workflowUrn, name, description, createdTime, updatedTime, createdBy);
+        return Objects
+            .hash(enableStreamResponse, id, workflowUrn, name, description, createdTime, updatedTime, createdBy);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateWorkflowResponse {\n");
+        sb.append("    enableStreamResponse: ").append(toIndentedString(enableStreamResponse)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    workflowUrn: ").append(toIndentedString(workflowUrn)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");

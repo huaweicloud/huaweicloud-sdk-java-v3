@@ -118,6 +118,11 @@ public class ListInstance {
 
     private Long createTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_name")
+
+    private String instanceName;
+
     public ListInstance withId(String id) {
         this.id = id;
         return this;
@@ -310,7 +315,7 @@ public class ListInstance {
     }
 
     /**
-     * 独享引擎计费状态 \\n - 0：正常计费 \\n - 1：冻结,资源和数据会保留，但租户无法再正常使用云服务 \\n - 2：终止，资源和数据将清除
+     * 独享引擎计费状态   - 0：正常计费   - 1：冻结,资源和数据会保留，但租户无法再正常使用云服务   - 2：终止，资源和数据将清除
      * @return status
      */
     public Integer getStatus() {
@@ -327,7 +332,7 @@ public class ListInstance {
     }
 
     /**
-     * 独享引擎运行状态 \\ n - 0：创建中 \\n - 1：运行中 \\n - 2：删除中 \\n - 3：已删除 \\n - 4：创建失败 \\n - 5：已冻结 \\n - 6：异常 \\n - 7：更新中 \\n - 8：更新失败
+     * 独享引擎运行状态   - 0：创建中   - 1：运行中   - 2：删除中   - 3：已删除   - 4：创建失败   - 5：已冻结   - 6：异常   - 7：更新中   - 8：更新失败
      * @return runStatus
      */
     public Integer getRunStatus() {
@@ -507,6 +512,23 @@ public class ListInstance {
         this.createTime = createTime;
     }
 
+    public ListInstance withInstanceName(String instanceName) {
+        this.instanceName = instanceName;
+        return this;
+    }
+
+    /**
+     * 独享引擎实例名称
+     * @return instanceName
+     */
+    public String getInstanceName() {
+        return instanceName;
+    }
+
+    public void setInstanceName(String instanceName) {
+        this.instanceName = instanceName;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -531,7 +553,8 @@ public class ListInstance {
             && Objects.equals(this.resourceSpecCode, listInstance.resourceSpecCode)
             && Objects.equals(this.specification, listInstance.specification)
             && Objects.equals(this.hosts, listInstance.hosts) && Objects.equals(this.serverId, listInstance.serverId)
-            && Objects.equals(this.createTime, listInstance.createTime);
+            && Objects.equals(this.createTime, listInstance.createTime)
+            && Objects.equals(this.instanceName, listInstance.instanceName);
     }
 
     @Override
@@ -556,7 +579,8 @@ public class ListInstance {
             specification,
             hosts,
             serverId,
-            createTime);
+            createTime,
+            instanceName);
     }
 
     @Override
@@ -584,6 +608,7 @@ public class ListInstance {
         sb.append("    hosts: ").append(toIndentedString(hosts)).append("\n");
         sb.append("    serverId: ").append(toIndentedString(serverId)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+        sb.append("    instanceName: ").append(toIndentedString(instanceName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

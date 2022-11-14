@@ -11,6 +11,11 @@ import java.util.Objects;
 public class WorkflowSimpleInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_stream_response")
+
+    private Boolean enableStreamResponse;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
     private String id;
@@ -44,6 +49,23 @@ public class WorkflowSimpleInfo {
     @JsonProperty(value = "created_by")
 
     private String createdBy;
+
+    public WorkflowSimpleInfo withEnableStreamResponse(Boolean enableStreamResponse) {
+        this.enableStreamResponse = enableStreamResponse;
+        return this;
+    }
+
+    /**
+     * 函数流是否返回流式数据
+     * @return enableStreamResponse
+     */
+    public Boolean getEnableStreamResponse() {
+        return enableStreamResponse;
+    }
+
+    public void setEnableStreamResponse(Boolean enableStreamResponse) {
+        this.enableStreamResponse = enableStreamResponse;
+    }
 
     public WorkflowSimpleInfo withId(String id) {
         this.id = id;
@@ -173,7 +195,8 @@ public class WorkflowSimpleInfo {
             return false;
         }
         WorkflowSimpleInfo workflowSimpleInfo = (WorkflowSimpleInfo) o;
-        return Objects.equals(this.id, workflowSimpleInfo.id)
+        return Objects.equals(this.enableStreamResponse, workflowSimpleInfo.enableStreamResponse)
+            && Objects.equals(this.id, workflowSimpleInfo.id)
             && Objects.equals(this.workflowUrn, workflowSimpleInfo.workflowUrn)
             && Objects.equals(this.name, workflowSimpleInfo.name)
             && Objects.equals(this.description, workflowSimpleInfo.description)
@@ -184,13 +207,15 @@ public class WorkflowSimpleInfo {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, workflowUrn, name, description, createdTime, updatedTime, createdBy);
+        return Objects
+            .hash(enableStreamResponse, id, workflowUrn, name, description, createdTime, updatedTime, createdBy);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class WorkflowSimpleInfo {\n");
+        sb.append("    enableStreamResponse: ").append(toIndentedString(enableStreamResponse)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    workflowUrn: ").append(toIndentedString(workflowUrn)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");

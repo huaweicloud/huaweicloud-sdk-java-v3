@@ -14,42 +14,41 @@ import java.util.function.Consumer;
 public class AddDesktopsVolumesReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "addDesktopVolumesReq")
+    @JsonProperty(value = "desktop_volumes")
 
-    private List<AddDesktopVolumesReq> addDesktopVolumesReq = null;
+    private List<AddDesktopVolumesReq> desktopVolumes = null;
 
-    public AddDesktopsVolumesReq withAddDesktopVolumesReq(List<AddDesktopVolumesReq> addDesktopVolumesReq) {
-        this.addDesktopVolumesReq = addDesktopVolumesReq;
+    public AddDesktopsVolumesReq withDesktopVolumes(List<AddDesktopVolumesReq> desktopVolumes) {
+        this.desktopVolumes = desktopVolumes;
         return this;
     }
 
-    public AddDesktopsVolumesReq addAddDesktopVolumesReqItem(AddDesktopVolumesReq addDesktopVolumesReqItem) {
-        if (this.addDesktopVolumesReq == null) {
-            this.addDesktopVolumesReq = new ArrayList<>();
+    public AddDesktopsVolumesReq addDesktopVolumesItem(AddDesktopVolumesReq desktopVolumesItem) {
+        if (this.desktopVolumes == null) {
+            this.desktopVolumes = new ArrayList<>();
         }
-        this.addDesktopVolumesReq.add(addDesktopVolumesReqItem);
+        this.desktopVolumes.add(desktopVolumesItem);
         return this;
     }
 
-    public AddDesktopsVolumesReq withAddDesktopVolumesReq(
-        Consumer<List<AddDesktopVolumesReq>> addDesktopVolumesReqSetter) {
-        if (this.addDesktopVolumesReq == null) {
-            this.addDesktopVolumesReq = new ArrayList<>();
+    public AddDesktopsVolumesReq withDesktopVolumes(Consumer<List<AddDesktopVolumesReq>> desktopVolumesSetter) {
+        if (this.desktopVolumes == null) {
+            this.desktopVolumes = new ArrayList<>();
         }
-        addDesktopVolumesReqSetter.accept(this.addDesktopVolumesReq);
+        desktopVolumesSetter.accept(this.desktopVolumes);
         return this;
     }
 
     /**
      * 新增磁盘参数。
-     * @return addDesktopVolumesReq
+     * @return desktopVolumes
      */
-    public List<AddDesktopVolumesReq> getAddDesktopVolumesReq() {
-        return addDesktopVolumesReq;
+    public List<AddDesktopVolumesReq> getDesktopVolumes() {
+        return desktopVolumes;
     }
 
-    public void setAddDesktopVolumesReq(List<AddDesktopVolumesReq> addDesktopVolumesReq) {
-        this.addDesktopVolumesReq = addDesktopVolumesReq;
+    public void setDesktopVolumes(List<AddDesktopVolumesReq> desktopVolumes) {
+        this.desktopVolumes = desktopVolumes;
     }
 
     @Override
@@ -61,19 +60,19 @@ public class AddDesktopsVolumesReq {
             return false;
         }
         AddDesktopsVolumesReq addDesktopsVolumesReq = (AddDesktopsVolumesReq) o;
-        return Objects.equals(this.addDesktopVolumesReq, addDesktopsVolumesReq.addDesktopVolumesReq);
+        return Objects.equals(this.desktopVolumes, addDesktopsVolumesReq.desktopVolumes);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(addDesktopVolumesReq);
+        return Objects.hash(desktopVolumes);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class AddDesktopsVolumesReq {\n");
-        sb.append("    addDesktopVolumesReq: ").append(toIndentedString(addDesktopVolumesReq)).append("\n");
+        sb.append("    desktopVolumes: ").append(toIndentedString(desktopVolumes)).append("\n");
         sb.append("}");
         return sb.toString();
     }

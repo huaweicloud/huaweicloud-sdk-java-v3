@@ -23,7 +23,7 @@ public class LtsIdInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ltsAttackStreamID")
 
-    private Object ltsAttackStreamID;
+    private String ltsAttackStreamID;
 
     public LtsIdInfo withLtsGroupId(String ltsGroupId) {
         this.ltsGroupId = ltsGroupId;
@@ -59,7 +59,7 @@ public class LtsIdInfo {
         this.ltsAccessStreamID = ltsAccessStreamID;
     }
 
-    public LtsIdInfo withLtsAttackStreamID(Object ltsAttackStreamID) {
+    public LtsIdInfo withLtsAttackStreamID(String ltsAttackStreamID) {
         this.ltsAttackStreamID = ltsAttackStreamID;
         return this;
     }
@@ -68,11 +68,11 @@ public class LtsIdInfo {
      * 攻击日志流id
      * @return ltsAttackStreamID
      */
-    public Object getLtsAttackStreamID() {
+    public String getLtsAttackStreamID() {
         return ltsAttackStreamID;
     }
 
-    public void setLtsAttackStreamID(Object ltsAttackStreamID) {
+    public void setLtsAttackStreamID(String ltsAttackStreamID) {
         this.ltsAttackStreamID = ltsAttackStreamID;
     }
 

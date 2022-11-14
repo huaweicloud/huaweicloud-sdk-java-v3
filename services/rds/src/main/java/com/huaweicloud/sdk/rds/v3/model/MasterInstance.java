@@ -3,162 +3,99 @@ package com.huaweicloud.sdk.rds.v3.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
- * MasterInstance
+ * 主实例信息。
  */
 public class MasterInstance {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "id")
+    @JsonProperty(value = "instance_id")
 
-    private String id;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "status")
-
-    private String status;
+    private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "name")
+    @JsonProperty(value = "region")
 
-    private String name;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "weight")
-
-    private Integer weight;
+    private String region;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "available_zones")
+    @JsonProperty(value = "project_id")
 
-    private List<AvailableZone> availableZones = null;
+    private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "cpu_num")
+    @JsonProperty(value = "project_name")
 
-    private Integer cpuNum;
+    private String projectName;
 
-    public MasterInstance withId(String id) {
-        this.id = id;
+    public MasterInstance withInstanceId(String instanceId) {
+        this.instanceId = instanceId;
         return this;
     }
 
     /**
-     * 主实例ID。
-     * @return id
+     * 实例ID。
+     * @return instanceId
      */
-    public String getId() {
-        return id;
+    public String getInstanceId() {
+        return instanceId;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
     }
 
-    public MasterInstance withStatus(String status) {
-        this.status = status;
+    public MasterInstance withRegion(String region) {
+        this.region = region;
         return this;
     }
 
     /**
-     * 主实例状态。
-     * @return status
+     * 区域。
+     * @return region
      */
-    public String getStatus() {
-        return status;
+    public String getRegion() {
+        return region;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setRegion(String region) {
+        this.region = region;
     }
 
-    public MasterInstance withName(String name) {
-        this.name = name;
+    public MasterInstance withProjectId(String projectId) {
+        this.projectId = projectId;
         return this;
     }
 
     /**
-     * 主实例名称。
-     * @return name
+     * 项目ID。
+     * @return projectId
      */
-    public String getName() {
-        return name;
+    public String getProjectId() {
+        return projectId;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setProjectId(String projectId) {
+        this.projectId = projectId;
     }
 
-    public MasterInstance withWeight(Integer weight) {
-        this.weight = weight;
+    public MasterInstance withProjectName(String projectName) {
+        this.projectName = projectName;
         return this;
     }
 
     /**
-     * 主实例读写分离权重。
-     * @return weight
+     * 项目名称。
+     * @return projectName
      */
-    public Integer getWeight() {
-        return weight;
+    public String getProjectName() {
+        return projectName;
     }
 
-    public void setWeight(Integer weight) {
-        this.weight = weight;
-    }
-
-    public MasterInstance withAvailableZones(List<AvailableZone> availableZones) {
-        this.availableZones = availableZones;
-        return this;
-    }
-
-    public MasterInstance addAvailableZonesItem(AvailableZone availableZonesItem) {
-        if (this.availableZones == null) {
-            this.availableZones = new ArrayList<>();
-        }
-        this.availableZones.add(availableZonesItem);
-        return this;
-    }
-
-    public MasterInstance withAvailableZones(Consumer<List<AvailableZone>> availableZonesSetter) {
-        if (this.availableZones == null) {
-            this.availableZones = new ArrayList<>();
-        }
-        availableZonesSetter.accept(this.availableZones);
-        return this;
-    }
-
-    /**
-     * 可用区信息。
-     * @return availableZones
-     */
-    public List<AvailableZone> getAvailableZones() {
-        return availableZones;
-    }
-
-    public void setAvailableZones(List<AvailableZone> availableZones) {
-        this.availableZones = availableZones;
-    }
-
-    public MasterInstance withCpuNum(Integer cpuNum) {
-        this.cpuNum = cpuNum;
-        return this;
-    }
-
-    /**
-     * 主实例CPU个数。
-     * @return cpuNum
-     */
-    public Integer getCpuNum() {
-        return cpuNum;
-    }
-
-    public void setCpuNum(Integer cpuNum) {
-        this.cpuNum = cpuNum;
+    public void setProjectName(String projectName) {
+        this.projectName = projectName;
     }
 
     @Override
@@ -170,27 +107,25 @@ public class MasterInstance {
             return false;
         }
         MasterInstance masterInstance = (MasterInstance) o;
-        return Objects.equals(this.id, masterInstance.id) && Objects.equals(this.status, masterInstance.status)
-            && Objects.equals(this.name, masterInstance.name) && Objects.equals(this.weight, masterInstance.weight)
-            && Objects.equals(this.availableZones, masterInstance.availableZones)
-            && Objects.equals(this.cpuNum, masterInstance.cpuNum);
+        return Objects.equals(this.instanceId, masterInstance.instanceId)
+            && Objects.equals(this.region, masterInstance.region)
+            && Objects.equals(this.projectId, masterInstance.projectId)
+            && Objects.equals(this.projectName, masterInstance.projectName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, status, name, weight, availableZones, cpuNum);
+        return Objects.hash(instanceId, region, projectId, projectName);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class MasterInstance {\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
-        sb.append("    status: ").append(toIndentedString(status)).append("\n");
-        sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    weight: ").append(toIndentedString(weight)).append("\n");
-        sb.append("    availableZones: ").append(toIndentedString(availableZones)).append("\n");
-        sb.append("    cpuNum: ").append(toIndentedString(cpuNum)).append("\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    region: ").append(toIndentedString(region)).append("\n");
+        sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
+        sb.append("    projectName: ").append(toIndentedString(projectName)).append("\n");
         sb.append("}");
         return sb.toString();
     }
