@@ -1646,6 +1646,37 @@ public class OsmAsyncClient {
     }
 
     /**
+     * 撤回留言
+     *
+     * 撤回留言
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param RevokeMessageRequest 请求对象
+     * @return CompletableFuture<RevokeMessageResponse>
+     */
+    public CompletableFuture<RevokeMessageResponse> revokeMessageAsync(RevokeMessageRequest request) {
+        return hcClient.asyncInvokeHttp(request, OsmMeta.revokeMessage);
+    }
+
+    /**
+     * 撤回留言
+     *
+     * 撤回留言
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param RevokeMessageRequest 请求对象
+     * @return AsyncInvoker<RevokeMessageRequest, RevokeMessageResponse>
+     */
+    public AsyncInvoker<RevokeMessageRequest, RevokeMessageResponse> revokeMessageAsyncInvoker(
+        RevokeMessageRequest request) {
+        return new AsyncInvoker<RevokeMessageRequest, RevokeMessageResponse>(request, OsmMeta.revokeMessage, hcClient);
+    }
+
+    /**
      * 获取验证码
      *
      * 获取验证码

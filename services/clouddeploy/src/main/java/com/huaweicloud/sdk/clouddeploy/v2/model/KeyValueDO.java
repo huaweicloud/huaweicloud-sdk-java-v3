@@ -3,10 +3,7 @@ package com.huaweicloud.sdk.clouddeploy.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * 执行部署任务时传递的动态参数
@@ -14,35 +11,30 @@ import java.util.function.Consumer;
 public class KeyValueDO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "name")
+    @JsonProperty(value = "key")
 
-    private String name;
+    private String key;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "value")
 
     private String value;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "limits")
-
-    private List<ParamTypeLimits> limits = null;
-
-    public KeyValueDO withName(String name) {
-        this.name = name;
+    public KeyValueDO withKey(String key) {
+        this.key = key;
         return this;
     }
 
     /**
      * 执行部署任务时传递的参数名称
-     * @return name
+     * @return key
      */
-    public String getName() {
-        return name;
+    public String getKey() {
+        return key;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setKey(String key) {
+        this.key = key;
     }
 
     public KeyValueDO withValue(String value) {
@@ -62,39 +54,6 @@ public class KeyValueDO {
         this.value = value;
     }
 
-    public KeyValueDO withLimits(List<ParamTypeLimits> limits) {
-        this.limits = limits;
-        return this;
-    }
-
-    public KeyValueDO addLimitsItem(ParamTypeLimits limitsItem) {
-        if (this.limits == null) {
-            this.limits = new ArrayList<>();
-        }
-        this.limits.add(limitsItem);
-        return this;
-    }
-
-    public KeyValueDO withLimits(Consumer<List<ParamTypeLimits>> limitsSetter) {
-        if (this.limits == null) {
-            this.limits = new ArrayList<>();
-        }
-        limitsSetter.accept(this.limits);
-        return this;
-    }
-
-    /**
-     * 参数值为枚举类型时，返回可选值列表
-     * @return limits
-     */
-    public List<ParamTypeLimits> getLimits() {
-        return limits;
-    }
-
-    public void setLimits(List<ParamTypeLimits> limits) {
-        this.limits = limits;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -104,22 +63,20 @@ public class KeyValueDO {
             return false;
         }
         KeyValueDO keyValueDO = (KeyValueDO) o;
-        return Objects.equals(this.name, keyValueDO.name) && Objects.equals(this.value, keyValueDO.value)
-            && Objects.equals(this.limits, keyValueDO.limits);
+        return Objects.equals(this.key, keyValueDO.key) && Objects.equals(this.value, keyValueDO.value);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, value, limits);
+        return Objects.hash(key, value);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class KeyValueDO {\n");
-        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    key: ").append(toIndentedString(key)).append("\n");
         sb.append("    value: ").append(toIndentedString(value)).append("\n");
-        sb.append("    limits: ").append(toIndentedString(limits)).append("\n");
         sb.append("}");
         return sb.toString();
     }

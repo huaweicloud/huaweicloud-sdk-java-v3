@@ -138,6 +138,52 @@ public class TmsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListProvidersRequest, ListProvidersResponse> listProviders =
+        genForlistProviders();
+
+    private static HttpRequestDef<ListProvidersRequest, ListProvidersResponse> genForlistProviders() {
+        // basic
+        HttpRequestDef.Builder<ListProvidersRequest, ListProvidersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListProvidersRequest.class, ListProvidersResponse.class)
+                .withName("ListProviders")
+                .withUri("/v1.0/tms/providers")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ListProvidersRequest.LocaleEnum>withRequestField("locale",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListProvidersRequest.LocaleEnum.class),
+            f -> f.withMarshaller(ListProvidersRequest::getLocale, (req, v) -> {
+                req.setLocale(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListProvidersRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListProvidersRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<String>withRequestField("provider",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProvidersRequest::getProvider, (req, v) -> {
+                req.setProvider(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowApiVersionRequest, ShowApiVersionResponse> showApiVersion =
         genForshowApiVersion();
 

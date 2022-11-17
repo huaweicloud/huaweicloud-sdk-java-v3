@@ -34,6 +34,11 @@ public class CreateDeviceRequestBody {
     private String password;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "user_name")
+
+    private String userName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "device_name")
 
     private String deviceName;
@@ -202,6 +207,23 @@ public class CreateDeviceRequestBody {
         this.password = password;
     }
 
+    public CreateDeviceRequestBody withUserName(String userName) {
+        this.userName = userName;
+        return this;
+    }
+
+    /**
+     * 设备用户名，支持英文大小写、英文符号(-)及数字，长度10-50
+     * @return userName
+     */
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
     public CreateDeviceRequestBody withDeviceName(String deviceName) {
         this.deviceName = deviceName;
         return this;
@@ -334,6 +356,7 @@ public class CreateDeviceRequestBody {
         return Objects.equals(this.parentDeviceId, createDeviceRequestBody.parentDeviceId)
             && Objects.equals(this.product, createDeviceRequestBody.product)
             && Objects.equals(this.password, createDeviceRequestBody.password)
+            && Objects.equals(this.userName, createDeviceRequestBody.userName)
             && Objects.equals(this.deviceName, createDeviceRequestBody.deviceName)
             && Objects.equals(this.nodeId, createDeviceRequestBody.nodeId)
             && Objects.equals(this.appId, createDeviceRequestBody.appId)
@@ -344,7 +367,8 @@ public class CreateDeviceRequestBody {
 
     @Override
     public int hashCode() {
-        return Objects.hash(parentDeviceId, product, password, deviceName, nodeId, appId, status, description, tags);
+        return Objects
+            .hash(parentDeviceId, product, password, userName, deviceName, nodeId, appId, status, description, tags);
     }
 
     @Override
@@ -354,6 +378,7 @@ public class CreateDeviceRequestBody {
         sb.append("    parentDeviceId: ").append(toIndentedString(parentDeviceId)).append("\n");
         sb.append("    product: ").append(toIndentedString(product)).append("\n");
         sb.append("    password: ").append(toIndentedString(password)).append("\n");
+        sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
         sb.append("    deviceName: ").append(toIndentedString(deviceName)).append("\n");
         sb.append("    nodeId: ").append(toIndentedString(nodeId)).append("\n");
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");

@@ -31,6 +31,11 @@ public class DisassociatePublicipsOption {
         public static final AssociateInstanceTypeEnum NATGW = new AssociateInstanceTypeEnum("NATGW");
 
         /**
+         * Enum VPN for value: "VPN"
+         */
+        public static final AssociateInstanceTypeEnum VPN = new AssociateInstanceTypeEnum("VPN");
+
+        /**
          * Enum ELB for value: "ELB"
          */
         public static final AssociateInstanceTypeEnum ELB = new AssociateInstanceTypeEnum("ELB");
@@ -46,6 +51,7 @@ public class DisassociatePublicipsOption {
             Map<String, AssociateInstanceTypeEnum> map = new HashMap<>();
             map.put("PORT", PORT);
             map.put("NATGW", NATGW);
+            map.put("VPN", VPN);
             map.put("ELB", ELB);
             map.put("", EMPTY);
             return Collections.unmodifiableMap(map);

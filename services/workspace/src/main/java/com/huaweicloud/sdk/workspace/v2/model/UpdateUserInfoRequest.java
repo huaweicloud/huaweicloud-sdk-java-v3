@@ -27,7 +27,7 @@ public class UpdateUserInfoRequest {
     }
 
     /**
-     * 用户id。
+     * 用户ID。
      * @return userId
      */
     public String getUserId() {

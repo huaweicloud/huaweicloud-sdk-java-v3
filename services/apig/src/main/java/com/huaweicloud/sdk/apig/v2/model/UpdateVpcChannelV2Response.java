@@ -207,6 +207,11 @@ public class UpdateVpcChannelV2Response extends SdkResponse {
     private MemberTypeEnum memberType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private Integer type;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dict_code")
 
     private String dictCode;
@@ -313,11 +318,6 @@ public class UpdateVpcChannelV2Response extends SdkResponse {
 
     private MicroServiceInfo microserviceInfo;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "type")
-
-    private Integer type;
-
     public UpdateVpcChannelV2Response withName(String name) {
         this.name = name;
         return this;
@@ -384,6 +384,23 @@ public class UpdateVpcChannelV2Response extends SdkResponse {
 
     public void setMemberType(MemberTypeEnum memberType) {
         this.memberType = memberType;
+    }
+
+    public UpdateVpcChannelV2Response withType(Integer type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * vpc通道类型，默认为服务器类型。 - 2：服务器类型 - 3：微服务类型
+     * @return type
+     */
+    public Integer getType() {
+        return type;
+    }
+
+    public void setType(Integer type) {
+        this.type = type;
     }
 
     public UpdateVpcChannelV2Response withDictCode(String dictCode) {
@@ -513,23 +530,6 @@ public class UpdateVpcChannelV2Response extends SdkResponse {
         this.microserviceInfo = microserviceInfo;
     }
 
-    public UpdateVpcChannelV2Response withType(Integer type) {
-        this.type = type;
-        return this;
-    }
-
-    /**
-     * vpc通道类型。 - 2：服务器类型 - 3：微服务类型
-     * @return type
-     */
-    public Integer getType() {
-        return type;
-    }
-
-    public void setType(Integer type) {
-        this.type = type;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -543,13 +543,13 @@ public class UpdateVpcChannelV2Response extends SdkResponse {
             && Objects.equals(this.port, updateVpcChannelV2Response.port)
             && Objects.equals(this.balanceStrategy, updateVpcChannelV2Response.balanceStrategy)
             && Objects.equals(this.memberType, updateVpcChannelV2Response.memberType)
+            && Objects.equals(this.type, updateVpcChannelV2Response.type)
             && Objects.equals(this.dictCode, updateVpcChannelV2Response.dictCode)
             && Objects.equals(this.createTime, updateVpcChannelV2Response.createTime)
             && Objects.equals(this.id, updateVpcChannelV2Response.id)
             && Objects.equals(this.status, updateVpcChannelV2Response.status)
             && Objects.equals(this.memberGroups, updateVpcChannelV2Response.memberGroups)
-            && Objects.equals(this.microserviceInfo, updateVpcChannelV2Response.microserviceInfo)
-            && Objects.equals(this.type, updateVpcChannelV2Response.type);
+            && Objects.equals(this.microserviceInfo, updateVpcChannelV2Response.microserviceInfo);
     }
 
     @Override
@@ -558,13 +558,13 @@ public class UpdateVpcChannelV2Response extends SdkResponse {
             port,
             balanceStrategy,
             memberType,
+            type,
             dictCode,
             createTime,
             id,
             status,
             memberGroups,
-            microserviceInfo,
-            type);
+            microserviceInfo);
     }
 
     @Override
@@ -575,13 +575,13 @@ public class UpdateVpcChannelV2Response extends SdkResponse {
         sb.append("    port: ").append(toIndentedString(port)).append("\n");
         sb.append("    balanceStrategy: ").append(toIndentedString(balanceStrategy)).append("\n");
         sb.append("    memberType: ").append(toIndentedString(memberType)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    dictCode: ").append(toIndentedString(dictCode)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    memberGroups: ").append(toIndentedString(memberGroups)).append("\n");
         sb.append("    microserviceInfo: ").append(toIndentedString(microserviceInfo)).append("\n");
-        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");
         return sb.toString();
     }

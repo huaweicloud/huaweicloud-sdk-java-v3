@@ -16,6 +16,11 @@ public class ApplicationView {
     private Integer componentCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "unified_model")
+
+    private String unifiedModel;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
     private String id;
@@ -70,6 +75,23 @@ public class ApplicationView {
 
     public void setComponentCount(Integer componentCount) {
         this.componentCount = componentCount;
+    }
+
+    public ApplicationView withUnifiedModel(String unifiedModel) {
+        this.unifiedModel = unifiedModel;
+        return this;
+    }
+
+    /**
+     * 是否开启统一模型
+     * @return unifiedModel
+     */
+    public String getUnifiedModel() {
+        return unifiedModel;
+    }
+
+    public void setUnifiedModel(String unifiedModel) {
+        this.unifiedModel = unifiedModel;
     }
 
     public ApplicationView withId(String id) {
@@ -218,6 +240,7 @@ public class ApplicationView {
         }
         ApplicationView applicationView = (ApplicationView) o;
         return Objects.equals(this.componentCount, applicationView.componentCount)
+            && Objects.equals(this.unifiedModel, applicationView.unifiedModel)
             && Objects.equals(this.id, applicationView.id) && Objects.equals(this.name, applicationView.name)
             && Objects.equals(this.description, applicationView.description)
             && Objects.equals(this.creator, applicationView.creator)
@@ -230,6 +253,7 @@ public class ApplicationView {
     @Override
     public int hashCode() {
         return Objects.hash(componentCount,
+            unifiedModel,
             id,
             name,
             description,
@@ -245,6 +269,7 @@ public class ApplicationView {
         StringBuilder sb = new StringBuilder();
         sb.append("class ApplicationView {\n");
         sb.append("    componentCount: ").append(toIndentedString(componentCount)).append("\n");
+        sb.append("    unifiedModel: ").append(toIndentedString(unifiedModel)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");

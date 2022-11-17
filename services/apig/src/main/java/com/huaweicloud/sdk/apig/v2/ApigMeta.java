@@ -193,6 +193,84 @@ public class ApigMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<AttachApiToPluginRequest, AttachApiToPluginResponse> attachApiToPlugin =
+        genForattachApiToPlugin();
+
+    private static HttpRequestDef<AttachApiToPluginRequest, AttachApiToPluginResponse> genForattachApiToPlugin() {
+        // basic
+        HttpRequestDef.Builder<AttachApiToPluginRequest, AttachApiToPluginResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AttachApiToPluginRequest.class, AttachApiToPluginResponse.class)
+                .withName("AttachApiToPlugin")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/plugins/{plugin_id}/attach")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AttachApiToPluginRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("plugin_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AttachApiToPluginRequest::getPluginId, (req, v) -> {
+                req.setPluginId(v);
+            }));
+        builder.<PluginOperApiInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PluginOperApiInfo.class),
+            f -> f.withMarshaller(AttachApiToPluginRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AttachPluginToApiRequest, AttachPluginToApiResponse> attachPluginToApi =
+        genForattachPluginToApi();
+
+    private static HttpRequestDef<AttachPluginToApiRequest, AttachPluginToApiResponse> genForattachPluginToApi() {
+        // basic
+        HttpRequestDef.Builder<AttachPluginToApiRequest, AttachPluginToApiResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AttachPluginToApiRequest.class, AttachPluginToApiResponse.class)
+                .withName("AttachPluginToApi")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apis/{api_id}/plugins/attach")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AttachPluginToApiRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("api_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AttachPluginToApiRequest::getApiId, (req, v) -> {
+                req.setApiId(v);
+            }));
+        builder.<ApiOperPluginInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ApiOperPluginInfo.class),
+            f -> f.withMarshaller(AttachPluginToApiRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateCustomAuthorizerV2Request, CreateCustomAuthorizerV2Response> createCustomAuthorizerV2 =
         genForcreateCustomAuthorizerV2();
 
@@ -381,6 +459,37 @@ public class ApigMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(InstanceCreateReq.class),
             f -> f.withMarshaller(CreateInstanceV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreatePluginRequest, CreatePluginResponse> createPlugin = genForcreatePlugin();
+
+    private static HttpRequestDef<CreatePluginRequest, CreatePluginResponse> genForcreatePlugin() {
+        // basic
+        HttpRequestDef.Builder<CreatePluginRequest, CreatePluginResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreatePluginRequest.class, CreatePluginResponse.class)
+                .withName("CreatePlugin")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/plugins")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreatePluginRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<PluginCreate>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PluginCreate.class),
+            f -> f.withMarshaller(CreatePluginRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -715,6 +824,37 @@ public class ApigMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeletePluginRequest, DeletePluginResponse> deletePlugin = genFordeletePlugin();
+
+    private static HttpRequestDef<DeletePluginRequest, DeletePluginResponse> genFordeletePlugin() {
+        // basic
+        HttpRequestDef.Builder<DeletePluginRequest, DeletePluginResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeletePluginRequest.class, DeletePluginResponse.class)
+                .withName("DeletePlugin")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/plugins/{plugin_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePluginRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("plugin_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePluginRequest::getPluginId, (req, v) -> {
+                req.setPluginId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteRequestThrottlingPolicyV2Request, DeleteRequestThrottlingPolicyV2Response> deleteRequestThrottlingPolicyV2 =
         genFordeleteRequestThrottlingPolicyV2();
 
@@ -818,6 +958,84 @@ public class ApigMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteSpecialThrottlingConfigurationV2Request::getStrategyId, (req, v) -> {
                 req.setStrategyId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DetachApiFromPluginRequest, DetachApiFromPluginResponse> detachApiFromPlugin =
+        genFordetachApiFromPlugin();
+
+    private static HttpRequestDef<DetachApiFromPluginRequest, DetachApiFromPluginResponse> genFordetachApiFromPlugin() {
+        // basic
+        HttpRequestDef.Builder<DetachApiFromPluginRequest, DetachApiFromPluginResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, DetachApiFromPluginRequest.class, DetachApiFromPluginResponse.class)
+                .withName("DetachApiFromPlugin")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/plugins/{plugin_id}/detach")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DetachApiFromPluginRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("plugin_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DetachApiFromPluginRequest::getPluginId, (req, v) -> {
+                req.setPluginId(v);
+            }));
+        builder.<PluginOperApiInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PluginOperApiInfo.class),
+            f -> f.withMarshaller(DetachApiFromPluginRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DetachPluginFromApiRequest, DetachPluginFromApiResponse> detachPluginFromApi =
+        genFordetachPluginFromApi();
+
+    private static HttpRequestDef<DetachPluginFromApiRequest, DetachPluginFromApiResponse> genFordetachPluginFromApi() {
+        // basic
+        HttpRequestDef.Builder<DetachPluginFromApiRequest, DetachPluginFromApiResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, DetachPluginFromApiRequest.class, DetachPluginFromApiResponse.class)
+                .withName("DetachPluginFromApi")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apis/{api_id}/plugins/detach")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DetachPluginFromApiRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("api_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DetachPluginFromApiRequest::getApiId, (req, v) -> {
+                req.setApiId(v);
+            }));
+        builder.<ApiOperPluginInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ApiOperPluginInfo.class),
+            f -> f.withMarshaller(DetachPluginFromApiRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response
@@ -974,6 +1192,162 @@ public class ApigMeta {
             TypeCasts.uncheckedConversion(MicroserviceImportReq.class),
             f -> f.withMarshaller(ImportMicroserviceRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListApiAttachablePluginsRequest, ListApiAttachablePluginsResponse> listApiAttachablePlugins =
+        genForlistApiAttachablePlugins();
+
+    private static HttpRequestDef<ListApiAttachablePluginsRequest, ListApiAttachablePluginsResponse> genForlistApiAttachablePlugins() {
+        // basic
+        HttpRequestDef.Builder<ListApiAttachablePluginsRequest, ListApiAttachablePluginsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ListApiAttachablePluginsRequest.class, ListApiAttachablePluginsResponse.class)
+                .withName("ListApiAttachablePlugins")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apis/{api_id}/attachable-plugins")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApiAttachablePluginsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("api_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApiAttachablePluginsRequest::getApiId, (req, v) -> {
+                req.setApiId(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListApiAttachablePluginsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListApiAttachablePluginsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("env_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApiAttachablePluginsRequest::getEnvId, (req, v) -> {
+                req.setEnvId(v);
+            }));
+        builder.<String>withRequestField("plugin_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApiAttachablePluginsRequest::getPluginName, (req, v) -> {
+                req.setPluginName(v);
+            }));
+        builder.<String>withRequestField("plugin_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApiAttachablePluginsRequest::getPluginType, (req, v) -> {
+                req.setPluginType(v);
+            }));
+        builder.<String>withRequestField("plugin_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApiAttachablePluginsRequest::getPluginId, (req, v) -> {
+                req.setPluginId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListApiAttachedPluginsRequest, ListApiAttachedPluginsResponse> listApiAttachedPlugins =
+        genForlistApiAttachedPlugins();
+
+    private static HttpRequestDef<ListApiAttachedPluginsRequest, ListApiAttachedPluginsResponse> genForlistApiAttachedPlugins() {
+        // basic
+        HttpRequestDef.Builder<ListApiAttachedPluginsRequest, ListApiAttachedPluginsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListApiAttachedPluginsRequest.class, ListApiAttachedPluginsResponse.class)
+            .withName("ListApiAttachedPlugins")
+            .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apis/{api_id}/attached-plugins")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApiAttachedPluginsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("api_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApiAttachedPluginsRequest::getApiId, (req, v) -> {
+                req.setApiId(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListApiAttachedPluginsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListApiAttachedPluginsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("env_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApiAttachedPluginsRequest::getEnvId, (req, v) -> {
+                req.setEnvId(v);
+            }));
+        builder.<String>withRequestField("plugin_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApiAttachedPluginsRequest::getPluginName, (req, v) -> {
+                req.setPluginName(v);
+            }));
+        builder.<String>withRequestField("plugin_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApiAttachedPluginsRequest::getPluginId, (req, v) -> {
+                req.setPluginId(v);
+            }));
+        builder.<String>withRequestField("env_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApiAttachedPluginsRequest::getEnvName, (req, v) -> {
+                req.setEnvName(v);
+            }));
+        builder.<String>withRequestField("plugin_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApiAttachedPluginsRequest::getPluginType, (req, v) -> {
+                req.setPluginType(v);
             }));
 
         // response
@@ -1721,6 +2095,256 @@ public class ApigMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListPluginAttachableApisRequest, ListPluginAttachableApisResponse> listPluginAttachableApis =
+        genForlistPluginAttachableApis();
+
+    private static HttpRequestDef<ListPluginAttachableApisRequest, ListPluginAttachableApisResponse> genForlistPluginAttachableApis() {
+        // basic
+        HttpRequestDef.Builder<ListPluginAttachableApisRequest, ListPluginAttachableApisResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ListPluginAttachableApisRequest.class, ListPluginAttachableApisResponse.class)
+                .withName("ListPluginAttachableApis")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/plugins/{plugin_id}/attachable-apis")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginAttachableApisRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("plugin_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginAttachableApisRequest::getPluginId, (req, v) -> {
+                req.setPluginId(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListPluginAttachableApisRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPluginAttachableApisRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("env_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginAttachableApisRequest::getEnvId, (req, v) -> {
+                req.setEnvId(v);
+            }));
+        builder.<String>withRequestField("api_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginAttachableApisRequest::getApiName, (req, v) -> {
+                req.setApiName(v);
+            }));
+        builder.<String>withRequestField("api_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginAttachableApisRequest::getApiId, (req, v) -> {
+                req.setApiId(v);
+            }));
+        builder.<String>withRequestField("group_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginAttachableApisRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            }));
+        builder.<String>withRequestField("req_method",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginAttachableApisRequest::getReqMethod, (req, v) -> {
+                req.setReqMethod(v);
+            }));
+        builder.<String>withRequestField("req_uri",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginAttachableApisRequest::getReqUri, (req, v) -> {
+                req.setReqUri(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPluginAttachedApisRequest, ListPluginAttachedApisResponse> listPluginAttachedApis =
+        genForlistPluginAttachedApis();
+
+    private static HttpRequestDef<ListPluginAttachedApisRequest, ListPluginAttachedApisResponse> genForlistPluginAttachedApis() {
+        // basic
+        HttpRequestDef.Builder<ListPluginAttachedApisRequest, ListPluginAttachedApisResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListPluginAttachedApisRequest.class, ListPluginAttachedApisResponse.class)
+            .withName("ListPluginAttachedApis")
+            .withUri("/v2/{project_id}/apigw/instances/{instance_id}/plugins/{plugin_id}/attached-apis")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginAttachedApisRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("plugin_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginAttachedApisRequest::getPluginId, (req, v) -> {
+                req.setPluginId(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListPluginAttachedApisRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPluginAttachedApisRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("env_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginAttachedApisRequest::getEnvId, (req, v) -> {
+                req.setEnvId(v);
+            }));
+        builder.<String>withRequestField("api_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginAttachedApisRequest::getApiName, (req, v) -> {
+                req.setApiName(v);
+            }));
+        builder.<String>withRequestField("api_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginAttachedApisRequest::getApiId, (req, v) -> {
+                req.setApiId(v);
+            }));
+        builder.<String>withRequestField("group_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginAttachedApisRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            }));
+        builder.<String>withRequestField("req_method",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginAttachedApisRequest::getReqMethod, (req, v) -> {
+                req.setReqMethod(v);
+            }));
+        builder.<String>withRequestField("req_uri",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginAttachedApisRequest::getReqUri, (req, v) -> {
+                req.setReqUri(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPluginsRequest, ListPluginsResponse> listPlugins = genForlistPlugins();
+
+    private static HttpRequestDef<ListPluginsRequest, ListPluginsResponse> genForlistPlugins() {
+        // basic
+        HttpRequestDef.Builder<ListPluginsRequest, ListPluginsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListPluginsRequest.class, ListPluginsResponse.class)
+                .withName("ListPlugins")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/plugins")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListPluginsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPluginsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("plugin_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginsRequest::getPluginType, (req, v) -> {
+                req.setPluginType(v);
+            }));
+        builder.<String>withRequestField("plugin_scope",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginsRequest::getPluginScope, (req, v) -> {
+                req.setPluginScope(v);
+            }));
+        builder.<String>withRequestField("plugin_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginsRequest::getPluginId, (req, v) -> {
+                req.setPluginId(v);
+            }));
+        builder.<String>withRequestField("plugin_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginsRequest::getPluginName, (req, v) -> {
+                req.setPluginName(v);
+            }));
+        builder.<String>withRequestField("precise_search",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginsRequest::getPreciseSearch, (req, v) -> {
+                req.setPreciseSearch(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListProjectCofigsV2Request, ListProjectCofigsV2Response> listProjectCofigsV2 =
         genForlistProjectCofigsV2();
 
@@ -2418,6 +3042,37 @@ public class ApigMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowPluginRequest, ShowPluginResponse> showPlugin = genForshowPlugin();
+
+    private static HttpRequestDef<ShowPluginRequest, ShowPluginResponse> genForshowPlugin() {
+        // basic
+        HttpRequestDef.Builder<ShowPluginRequest, ShowPluginResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowPluginRequest.class, ShowPluginResponse.class)
+                .withName("ShowPlugin")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/plugins/{plugin_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPluginRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("plugin_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPluginRequest::getPluginId, (req, v) -> {
+                req.setPluginId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateCustomAuthorizerV2Request, UpdateCustomAuthorizerV2Response> updateCustomAuthorizerV2 =
         genForupdateCustomAuthorizerV2();
 
@@ -2710,6 +3365,44 @@ public class ApigMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(InstanceModReq.class),
             f -> f.withMarshaller(UpdateInstanceV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdatePluginRequest, UpdatePluginResponse> updatePlugin = genForupdatePlugin();
+
+    private static HttpRequestDef<UpdatePluginRequest, UpdatePluginResponse> genForupdatePlugin() {
+        // basic
+        HttpRequestDef.Builder<UpdatePluginRequest, UpdatePluginResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdatePluginRequest.class, UpdatePluginResponse.class)
+                .withName("UpdatePlugin")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/plugins/{plugin_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePluginRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("plugin_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePluginRequest::getPluginId, (req, v) -> {
+                req.setPluginId(v);
+            }));
+        builder.<PluginCreate>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PluginCreate.class),
+            f -> f.withMarshaller(UpdatePluginRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

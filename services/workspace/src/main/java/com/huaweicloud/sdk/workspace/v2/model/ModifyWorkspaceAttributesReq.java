@@ -136,6 +136,11 @@ public class ModifyWorkspaceAttributesReq {
 
     private String enterpriseId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_send_email")
+
+    private Boolean isSendEmail;
+
     public ModifyWorkspaceAttributesReq withAdInfo(AdDomainInfo adInfo) {
         this.adInfo = adInfo;
         return this;
@@ -289,6 +294,23 @@ public class ModifyWorkspaceAttributesReq {
         this.enterpriseId = enterpriseId;
     }
 
+    public ModifyWorkspaceAttributesReq withIsSendEmail(Boolean isSendEmail) {
+        this.isSendEmail = isSendEmail;
+        return this;
+    }
+
+    /**
+     * 桌面退订是否发送邮件通知。
+     * @return isSendEmail
+     */
+    public Boolean getIsSendEmail() {
+        return isSendEmail;
+    }
+
+    public void setIsSendEmail(Boolean isSendEmail) {
+        this.isSendEmail = isSendEmail;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -304,13 +326,20 @@ public class ModifyWorkspaceAttributesReq {
             && Objects.equals(this.dedicatedSubnets, modifyWorkspaceAttributesReq.dedicatedSubnets)
             && Objects.equals(this.subnetIds, modifyWorkspaceAttributesReq.subnetIds)
             && Objects.equals(this.internetAccessPort, modifyWorkspaceAttributesReq.internetAccessPort)
-            && Objects.equals(this.enterpriseId, modifyWorkspaceAttributesReq.enterpriseId);
+            && Objects.equals(this.enterpriseId, modifyWorkspaceAttributesReq.enterpriseId)
+            && Objects.equals(this.isSendEmail, modifyWorkspaceAttributesReq.isSendEmail);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(adInfo, adDomains, accessMode, dedicatedSubnets, subnetIds, internetAccessPort, enterpriseId);
+        return Objects.hash(adInfo,
+            adDomains,
+            accessMode,
+            dedicatedSubnets,
+            subnetIds,
+            internetAccessPort,
+            enterpriseId,
+            isSendEmail);
     }
 
     @Override
@@ -324,6 +353,7 @@ public class ModifyWorkspaceAttributesReq {
         sb.append("    subnetIds: ").append(toIndentedString(subnetIds)).append("\n");
         sb.append("    internetAccessPort: ").append(toIndentedString(internetAccessPort)).append("\n");
         sb.append("    enterpriseId: ").append(toIndentedString(enterpriseId)).append("\n");
+        sb.append("    isSendEmail: ").append(toIndentedString(isSendEmail)).append("\n");
         sb.append("}");
         return sb.toString();
     }

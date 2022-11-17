@@ -9,12 +9,12 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 
+ * CompareTaskListResult
  */
 public class CompareTaskListResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "CompareTaskList")
+    @JsonProperty(value = "compare_task_list")
 
     private List<CompareTaskList> compareTaskList = null;
 

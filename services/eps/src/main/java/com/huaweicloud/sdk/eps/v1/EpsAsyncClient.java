@@ -184,6 +184,37 @@ public class EpsAsyncClient {
     }
 
     /**
+     * 查询企业项目支持的服务
+     *
+     * 查询企业项目支持的服务
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListProvidersRequest 请求对象
+     * @return CompletableFuture<ListProvidersResponse>
+     */
+    public CompletableFuture<ListProvidersResponse> listProvidersAsync(ListProvidersRequest request) {
+        return hcClient.asyncInvokeHttp(request, EpsMeta.listProviders);
+    }
+
+    /**
+     * 查询企业项目支持的服务
+     *
+     * 查询企业项目支持的服务
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListProvidersRequest 请求对象
+     * @return AsyncInvoker<ListProvidersRequest, ListProvidersResponse>
+     */
+    public AsyncInvoker<ListProvidersRequest, ListProvidersResponse> listProvidersAsyncInvoker(
+        ListProvidersRequest request) {
+        return new AsyncInvoker<ListProvidersRequest, ListProvidersResponse>(request, EpsMeta.listProviders, hcClient);
+    }
+
+    /**
      * 迁移资源
      *
      * 迁移资源到目标企业项目。

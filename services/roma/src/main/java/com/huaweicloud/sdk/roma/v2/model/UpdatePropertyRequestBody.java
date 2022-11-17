@@ -9,6 +9,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * UpdatePropertyRequestBody
@@ -237,6 +238,11 @@ public class UpdatePropertyRequestBody {
 
     private String enumList;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enum_dict")
+
+    private PropertyDataEnum enumDict;
+
     public UpdatePropertyRequestBody withPropertyName(String propertyName) {
         this.propertyName = propertyName;
         return this;
@@ -411,6 +417,32 @@ public class UpdatePropertyRequestBody {
         this.enumList = enumList;
     }
 
+    public UpdatePropertyRequestBody withEnumDict(PropertyDataEnum enumDict) {
+        this.enumDict = enumDict;
+        return this;
+    }
+
+    public UpdatePropertyRequestBody withEnumDict(Consumer<PropertyDataEnum> enumDictSetter) {
+        if (this.enumDict == null) {
+            this.enumDict = new PropertyDataEnum();
+            enumDictSetter.accept(this.enumDict);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get enumDict
+     * @return enumDict
+     */
+    public PropertyDataEnum getEnumDict() {
+        return enumDict;
+    }
+
+    public void setEnumDict(PropertyDataEnum enumDict) {
+        this.enumDict = enumDict;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -429,12 +461,14 @@ public class UpdatePropertyRequestBody {
             && Objects.equals(this.step, updatePropertyRequestBody.step)
             && Objects.equals(this.maxLength, updatePropertyRequestBody.maxLength)
             && Objects.equals(this.unit, updatePropertyRequestBody.unit)
-            && Objects.equals(this.enumList, updatePropertyRequestBody.enumList);
+            && Objects.equals(this.enumList, updatePropertyRequestBody.enumList)
+            && Objects.equals(this.enumDict, updatePropertyRequestBody.enumDict);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(propertyName, description, dataType, required, min, max, step, maxLength, unit, enumList);
+        return Objects
+            .hash(propertyName, description, dataType, required, min, max, step, maxLength, unit, enumList, enumDict);
     }
 
     @Override
@@ -451,6 +485,7 @@ public class UpdatePropertyRequestBody {
         sb.append("    maxLength: ").append(toIndentedString(maxLength)).append("\n");
         sb.append("    unit: ").append(toIndentedString(unit)).append("\n");
         sb.append("    enumList: ").append(toIndentedString(enumList)).append("\n");
+        sb.append("    enumDict: ").append(toIndentedString(enumDict)).append("\n");
         sb.append("}");
         return sb.toString();
     }

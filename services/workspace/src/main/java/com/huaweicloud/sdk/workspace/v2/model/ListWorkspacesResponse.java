@@ -236,6 +236,11 @@ public class ListWorkspacesResponse extends SdkResponse {
 
     private String enterpriseId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_send_email")
+
+    private Boolean isSendEmail;
+
     public ListWorkspacesResponse withId(String id) {
         this.id = id;
         return this;
@@ -656,6 +661,23 @@ public class ListWorkspacesResponse extends SdkResponse {
         this.enterpriseId = enterpriseId;
     }
 
+    public ListWorkspacesResponse withIsSendEmail(Boolean isSendEmail) {
+        this.isSendEmail = isSendEmail;
+        return this;
+    }
+
+    /**
+     * 桌面退订是否发送邮件通知。
+     * @return isSendEmail
+     */
+    public Boolean getIsSendEmail() {
+        return isSendEmail;
+    }
+
+    public void setIsSendEmail(Boolean isSendEmail) {
+        this.isSendEmail = isSendEmail;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -686,7 +708,8 @@ public class ListWorkspacesResponse extends SdkResponse {
             && Objects.equals(this.jobId, listWorkspacesResponse.jobId)
             && Objects.equals(this.failCode, listWorkspacesResponse.failCode)
             && Objects.equals(this.failReason, listWorkspacesResponse.failReason)
-            && Objects.equals(this.enterpriseId, listWorkspacesResponse.enterpriseId);
+            && Objects.equals(this.enterpriseId, listWorkspacesResponse.enterpriseId)
+            && Objects.equals(this.isSendEmail, listWorkspacesResponse.isSendEmail);
     }
 
     @Override
@@ -712,7 +735,8 @@ public class ListWorkspacesResponse extends SdkResponse {
             jobId,
             failCode,
             failReason,
-            enterpriseId);
+            enterpriseId,
+            isSendEmail);
     }
 
     @Override
@@ -743,6 +767,7 @@ public class ListWorkspacesResponse extends SdkResponse {
         sb.append("    failCode: ").append(toIndentedString(failCode)).append("\n");
         sb.append("    failReason: ").append(toIndentedString(failReason)).append("\n");
         sb.append("    enterpriseId: ").append(toIndentedString(enterpriseId)).append("\n");
+        sb.append("    isSendEmail: ").append(toIndentedString(isSendEmail)).append("\n");
         sb.append("}");
         return sb.toString();
     }

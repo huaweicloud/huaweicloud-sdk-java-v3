@@ -45,7 +45,7 @@ public class ImgTextConfig {
     }
 
     /**
-     * 用户输入的console界面自定义的黑词库名，支持传入多个。
+     * 检测时使用的自定义黑名单词库列表。
      * @return blackGlossaryNames
      */
     public List<String> getBlackGlossaryNames() {
@@ -78,7 +78,7 @@ public class ImgTextConfig {
     }
 
     /**
-     * 用户输入的console界面自定义的白词库名，支持传入多个。
+     * 检测时使用的自定义白名单词库列表。
      * @return whiteGlossaryNames
      */
     public List<String> getWhiteGlossaryNames() {

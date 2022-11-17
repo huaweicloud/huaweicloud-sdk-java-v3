@@ -17,19 +17,19 @@ public class ShowInstanceExtendProductInfoResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hourly")
 
-    private List<ListProductsRespHourly> hourly = null;
+    private List<ShowInstanceExtendProductInfoRespHourly> hourly = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "monthly")
 
     private List<ListProductsRespHourly> monthly = null;
 
-    public ShowInstanceExtendProductInfoResponse withHourly(List<ListProductsRespHourly> hourly) {
+    public ShowInstanceExtendProductInfoResponse withHourly(List<ShowInstanceExtendProductInfoRespHourly> hourly) {
         this.hourly = hourly;
         return this;
     }
 
-    public ShowInstanceExtendProductInfoResponse addHourlyItem(ListProductsRespHourly hourlyItem) {
+    public ShowInstanceExtendProductInfoResponse addHourlyItem(ShowInstanceExtendProductInfoRespHourly hourlyItem) {
         if (this.hourly == null) {
             this.hourly = new ArrayList<>();
         }
@@ -37,7 +37,8 @@ public class ShowInstanceExtendProductInfoResponse extends SdkResponse {
         return this;
     }
 
-    public ShowInstanceExtendProductInfoResponse withHourly(Consumer<List<ListProductsRespHourly>> hourlySetter) {
+    public ShowInstanceExtendProductInfoResponse withHourly(
+        Consumer<List<ShowInstanceExtendProductInfoRespHourly>> hourlySetter) {
         if (this.hourly == null) {
             this.hourly = new ArrayList<>();
         }
@@ -49,11 +50,11 @@ public class ShowInstanceExtendProductInfoResponse extends SdkResponse {
      * 表示按需付费的产品列表。
      * @return hourly
      */
-    public List<ListProductsRespHourly> getHourly() {
+    public List<ShowInstanceExtendProductInfoRespHourly> getHourly() {
         return hourly;
     }
 
-    public void setHourly(List<ListProductsRespHourly> hourly) {
+    public void setHourly(List<ShowInstanceExtendProductInfoRespHourly> hourly) {
         this.hourly = hourly;
     }
 

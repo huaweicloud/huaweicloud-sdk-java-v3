@@ -20,6 +20,11 @@ public class DeviceInfoSimple {
 
     private String deviceName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "device_id")
+
+    private Long deviceId;
+
     public DeviceInfoSimple withId(Integer id) {
         this.id = id;
         return this;
@@ -56,6 +61,25 @@ public class DeviceInfoSimple {
         this.deviceName = deviceName;
     }
 
+    public DeviceInfoSimple withDeviceId(Long deviceId) {
+        this.deviceId = deviceId;
+        return this;
+    }
+
+    /**
+     * 设备ID（兼容20.0）
+     * minimum: 1
+     * maximum: 99999999999999999
+     * @return deviceId
+     */
+    public Long getDeviceId() {
+        return deviceId;
+    }
+
+    public void setDeviceId(Long deviceId) {
+        this.deviceId = deviceId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -66,12 +90,13 @@ public class DeviceInfoSimple {
         }
         DeviceInfoSimple deviceInfoSimple = (DeviceInfoSimple) o;
         return Objects.equals(this.id, deviceInfoSimple.id)
-            && Objects.equals(this.deviceName, deviceInfoSimple.deviceName);
+            && Objects.equals(this.deviceName, deviceInfoSimple.deviceName)
+            && Objects.equals(this.deviceId, deviceInfoSimple.deviceId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, deviceName);
+        return Objects.hash(id, deviceName, deviceId);
     }
 
     @Override
@@ -80,6 +105,7 @@ public class DeviceInfoSimple {
         sb.append("class DeviceInfoSimple {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    deviceName: ").append(toIndentedString(deviceName)).append("\n");
+        sb.append("    deviceId: ").append(toIndentedString(deviceId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -27,7 +26,7 @@ public class ResizeInstanceBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "new_capacity")
 
-    private BigDecimal newCapacity;
+    private Integer newCapacity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bss_param")
@@ -153,7 +152,7 @@ public class ResizeInstanceBody {
         this.specCode = specCode;
     }
 
-    public ResizeInstanceBody withNewCapacity(BigDecimal newCapacity) {
+    public ResizeInstanceBody withNewCapacity(Integer newCapacity) {
         this.newCapacity = newCapacity;
         return this;
     }
@@ -162,11 +161,11 @@ public class ResizeInstanceBody {
      * 新的缓存实例规格，单位：GB。 Redis4.0和Redis5.0：单机和主备类型实例取值：0.125、0.25、0.5、1、2、4、8、16、32、64。Cluster集群实例规格支持24、32、48、64、96、128、192、256、384、512、768、1024。 Memcached：单机和主备类型实例取值：2、4、8、16、32、64。 
      * @return newCapacity
      */
-    public BigDecimal getNewCapacity() {
+    public Integer getNewCapacity() {
         return newCapacity;
     }
 
-    public void setNewCapacity(BigDecimal newCapacity) {
+    public void setNewCapacity(Integer newCapacity) {
         this.newCapacity = newCapacity;
     }
 

@@ -60,6 +60,11 @@ public class AuthorizationVO {
 
     private Integer status;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tag")
+
+    private String tag;
+
     public AuthorizationVO withName(String name) {
         this.name = name;
         return this;
@@ -230,6 +235,23 @@ public class AuthorizationVO {
         this.status = status;
     }
 
+    public AuthorizationVO withTag(String tag) {
+        this.tag = tag;
+        return this;
+    }
+
+    /**
+     * 授权局点的类型，默认为null。
+     * @return tag
+     */
+    public String getTag() {
+        return tag;
+    }
+
+    public void setTag(String tag) {
+        this.tag = tag;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -248,13 +270,22 @@ public class AuthorizationVO {
             && Objects.equals(this.tokenType, authorizationVO.tokenType)
             && Objects.equals(this.createTime, authorizationVO.createTime)
             && Objects.equals(this.updateTime, authorizationVO.updateTime)
-            && Objects.equals(this.status, authorizationVO.status);
+            && Objects.equals(this.status, authorizationVO.status) && Objects.equals(this.tag, authorizationVO.tag);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(name, repoType, repoHost, repoHome, repoUser, avartar, tokenType, createTime, updateTime, status);
+        return Objects.hash(name,
+            repoType,
+            repoHost,
+            repoHome,
+            repoUser,
+            avartar,
+            tokenType,
+            createTime,
+            updateTime,
+            status,
+            tag);
     }
 
     @Override
@@ -271,6 +302,7 @@ public class AuthorizationVO {
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
         sb.append("}");
         return sb.toString();
     }

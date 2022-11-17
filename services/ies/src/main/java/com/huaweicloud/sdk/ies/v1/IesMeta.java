@@ -123,7 +123,7 @@ public class IesMeta {
             f -> f.withMarshaller(ListEdgeSitesRequest::getAvailabilityZoneId, (req, v) -> {
                 req.setAvailabilityZoneId(v);
             }));
-        builder.<List<String>>withRequestField("status",
+        builder.<List<SiteStatus>>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),

@@ -12,6 +12,16 @@ import java.util.function.Consumer;
 public class CheckCertificateRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "Sp-Auth-Token")
+
+    private String spAuthToken;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "Stage-Auth-Token")
+
+    private String stageAuthToken;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "Instance-Id")
 
     private String instanceId;
@@ -31,13 +41,47 @@ public class CheckCertificateRequest {
 
     private VerifyCertificateDTO body;
 
+    public CheckCertificateRequest withSpAuthToken(String spAuthToken) {
+        this.spAuthToken = spAuthToken;
+        return this;
+    }
+
+    /**
+     * Sp用户Token。通过调用IoBPS服务获取SP用户Token
+     * @return spAuthToken
+     */
+    public String getSpAuthToken() {
+        return spAuthToken;
+    }
+
+    public void setSpAuthToken(String spAuthToken) {
+        this.spAuthToken = spAuthToken;
+    }
+
+    public CheckCertificateRequest withStageAuthToken(String stageAuthToken) {
+        this.stageAuthToken = stageAuthToken;
+        return this;
+    }
+
+    /**
+     * Stage用户的Token, 仅提供给IoStage服务使用
+     * @return stageAuthToken
+     */
+    public String getStageAuthToken() {
+        return stageAuthToken;
+    }
+
+    public void setStageAuthToken(String stageAuthToken) {
+        this.stageAuthToken = stageAuthToken;
+    }
+
     public CheckCertificateRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
     /**
-     * **参数说明**：实例ID。物理多租下各实例的唯一标识，一般华为云租户无需携带该参数，仅在物理多租场景下从管理面访问API时需要携带该参数。
+     * 实例ID。物理多租下各实例的唯一标识，一般华为云租户无需携带该参数，仅在物理多租场景下从管理面访问API时需要携带该参数。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -54,7 +98,7 @@ public class CheckCertificateRequest {
     }
 
     /**
-     * **参数说明**：设备CA证书ID，在上传设备CA证书时由平台分配的唯一标识。
+     * 设备CA证书ID，在上传设备CA证书时由平台分配的唯一标识。
      * @return certificateId
      */
     public String getCertificateId() {
@@ -71,7 +115,7 @@ public class CheckCertificateRequest {
     }
 
     /**
-     * **参数说明**：对证书执行的操作。 **取值范围**：当前仅支持verify:校验证书。
+     * 对证书执行的操作，当前仅支持verify:校验证书
      * @return actionId
      */
     public String getActionId() {
@@ -117,7 +161,9 @@ public class CheckCertificateRequest {
             return false;
         }
         CheckCertificateRequest checkCertificateRequest = (CheckCertificateRequest) o;
-        return Objects.equals(this.instanceId, checkCertificateRequest.instanceId)
+        return Objects.equals(this.spAuthToken, checkCertificateRequest.spAuthToken)
+            && Objects.equals(this.stageAuthToken, checkCertificateRequest.stageAuthToken)
+            && Objects.equals(this.instanceId, checkCertificateRequest.instanceId)
             && Objects.equals(this.certificateId, checkCertificateRequest.certificateId)
             && Objects.equals(this.actionId, checkCertificateRequest.actionId)
             && Objects.equals(this.body, checkCertificateRequest.body);
@@ -125,13 +171,15 @@ public class CheckCertificateRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, certificateId, actionId, body);
+        return Objects.hash(spAuthToken, stageAuthToken, instanceId, certificateId, actionId, body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CheckCertificateRequest {\n");
+        sb.append("    spAuthToken: ").append(toIndentedString(spAuthToken)).append("\n");
+        sb.append("    stageAuthToken: ").append(toIndentedString(stageAuthToken)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    certificateId: ").append(toIndentedString(certificateId)).append("\n");
         sb.append("    actionId: ").append(toIndentedString(actionId)).append("\n");

@@ -51,7 +51,7 @@ public class CreateProjectRequest {
     }
 
     /**
-     * 组织ID。
+     * 命名空间ID或者URL编码名称。
      * @return namespace
      */
     public String getNamespace() {

@@ -19,6 +19,11 @@ public class ListAuthorizationsResponse extends SdkResponse {
 
     private List<AuthorizationVO> authorizations = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "count")
+
+    private Integer count;
+
     public ListAuthorizationsResponse withAuthorizations(List<AuthorizationVO> authorizations) {
         this.authorizations = authorizations;
         return this;
@@ -52,6 +57,23 @@ public class ListAuthorizationsResponse extends SdkResponse {
         this.authorizations = authorizations;
     }
 
+    public ListAuthorizationsResponse withCount(Integer count) {
+        this.count = count;
+        return this;
+    }
+
+    /**
+     * 仓库授权数量。
+     * @return count
+     */
+    public Integer getCount() {
+        return count;
+    }
+
+    public void setCount(Integer count) {
+        this.count = count;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -61,12 +83,13 @@ public class ListAuthorizationsResponse extends SdkResponse {
             return false;
         }
         ListAuthorizationsResponse listAuthorizationsResponse = (ListAuthorizationsResponse) o;
-        return Objects.equals(this.authorizations, listAuthorizationsResponse.authorizations);
+        return Objects.equals(this.authorizations, listAuthorizationsResponse.authorizations)
+            && Objects.equals(this.count, listAuthorizationsResponse.count);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(authorizations);
+        return Objects.hash(authorizations, count);
     }
 
     @Override
@@ -74,6 +97,7 @@ public class ListAuthorizationsResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListAuthorizationsResponse {\n");
         sb.append("    authorizations: ").append(toIndentedString(authorizations)).append("\n");
+        sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("}");
         return sb.toString();
     }

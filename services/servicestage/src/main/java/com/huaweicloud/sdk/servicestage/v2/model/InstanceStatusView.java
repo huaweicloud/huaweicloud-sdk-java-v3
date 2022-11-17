@@ -36,6 +36,11 @@ public class InstanceStatusView {
     private String lastJobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "last_job_status")
+
+    private String lastJobStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
@@ -125,6 +130,23 @@ public class InstanceStatusView {
         this.lastJobId = lastJobId;
     }
 
+    public InstanceStatusView withLastJobStatus(String lastJobStatus) {
+        this.lastJobStatus = lastJobStatus;
+        return this;
+    }
+
+    /**
+     * 最近Job的状态
+     * @return lastJobStatus
+     */
+    public String getLastJobStatus() {
+        return lastJobStatus;
+    }
+
+    public void setLastJobStatus(String lastJobStatus) {
+        this.lastJobStatus = lastJobStatus;
+    }
+
     public InstanceStatusView withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -156,12 +178,14 @@ public class InstanceStatusView {
             && Objects.equals(this.replica, instanceStatusView.replica)
             && Objects.equals(this.failDetail, instanceStatusView.failDetail)
             && Objects.equals(this.lastJobId, instanceStatusView.lastJobId)
+            && Objects.equals(this.lastJobStatus, instanceStatusView.lastJobStatus)
             && Objects.equals(this.enterpriseProjectId, instanceStatusView.enterpriseProjectId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(status, availableReplica, replica, failDetail, lastJobId, enterpriseProjectId);
+        return Objects
+            .hash(status, availableReplica, replica, failDetail, lastJobId, lastJobStatus, enterpriseProjectId);
     }
 
     @Override
@@ -173,6 +197,7 @@ public class InstanceStatusView {
         sb.append("    replica: ").append(toIndentedString(replica)).append("\n");
         sb.append("    failDetail: ").append(toIndentedString(failDetail)).append("\n");
         sb.append("    lastJobId: ").append(toIndentedString(lastJobId)).append("\n");
+        sb.append("    lastJobStatus: ").append(toIndentedString(lastJobStatus)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();

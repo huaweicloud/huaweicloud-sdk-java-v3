@@ -545,7 +545,7 @@ public class Subnet {
     }
 
     /**
-     * 子网配置的NTP地址
+     * 子网配置的NTP地址或DHCP租约时间
      * @return extraDhcpOpts
      */
     public List<ExtraDhcpOption> getExtraDhcpOpts() {

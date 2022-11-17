@@ -178,6 +178,36 @@ public class EpsClient {
     }
 
     /**
+     * 查询企业项目支持的服务
+     *
+     * 查询企业项目支持的服务
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListProvidersRequest 请求对象
+     * @return ListProvidersResponse
+     */
+    public ListProvidersResponse listProviders(ListProvidersRequest request) {
+        return hcClient.syncInvokeHttp(request, EpsMeta.listProviders);
+    }
+
+    /**
+     * 查询企业项目支持的服务
+     *
+     * 查询企业项目支持的服务
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListProvidersRequest 请求对象
+     * @return SyncInvoker<ListProvidersRequest, ListProvidersResponse>
+     */
+    public SyncInvoker<ListProvidersRequest, ListProvidersResponse> listProvidersInvoker(ListProvidersRequest request) {
+        return new SyncInvoker<ListProvidersRequest, ListProvidersResponse>(request, EpsMeta.listProviders, hcClient);
+    }
+
+    /**
      * 迁移资源
      *
      * 迁移资源到目标企业项目。

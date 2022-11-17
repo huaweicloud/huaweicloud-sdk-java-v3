@@ -51,7 +51,7 @@ public class ListEdgeSitesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    private List<String> status = null;
+    private List<SiteStatus> status = null;
 
     public ListEdgeSitesRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -254,12 +254,12 @@ public class ListEdgeSitesRequest {
         this.availabilityZoneId = availabilityZoneId;
     }
 
-    public ListEdgeSitesRequest withStatus(List<String> status) {
+    public ListEdgeSitesRequest withStatus(List<SiteStatus> status) {
         this.status = status;
         return this;
     }
 
-    public ListEdgeSitesRequest addStatusItem(String statusItem) {
+    public ListEdgeSitesRequest addStatusItem(SiteStatus statusItem) {
         if (this.status == null) {
             this.status = new ArrayList<>();
         }
@@ -267,7 +267,7 @@ public class ListEdgeSitesRequest {
         return this;
     }
 
-    public ListEdgeSitesRequest withStatus(Consumer<List<String>> statusSetter) {
+    public ListEdgeSitesRequest withStatus(Consumer<List<SiteStatus>> statusSetter) {
         if (this.status == null) {
             this.status = new ArrayList<>();
         }
@@ -279,11 +279,11 @@ public class ListEdgeSitesRequest {
      * 根据边缘小站部署状态查询
      * @return status
      */
-    public List<String> getStatus() {
+    public List<SiteStatus> getStatus() {
         return status;
     }
 
-    public void setStatus(List<String> status) {
+    public void setStatus(List<SiteStatus> status) {
         this.status = status;
     }
 

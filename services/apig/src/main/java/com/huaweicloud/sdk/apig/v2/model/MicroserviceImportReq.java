@@ -399,7 +399,7 @@ public class MicroserviceImportReq {
     }
 
     /**
-     * 服务集成请求后端服务的超时时间。最大超时时间可通过实例特性backend_timeout配置修改，可修改的上限为600000，默认5000  单位：毫秒。
+     * APIG请求后端服务的超时时间。最大超时时间可通过实例特性backend_timeout配置修改，可修改的上限为600000，默认5000  单位：毫秒。
      * minimum: 1
      * @return backendTimeout
      */

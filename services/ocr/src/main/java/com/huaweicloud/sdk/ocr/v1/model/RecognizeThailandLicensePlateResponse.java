@@ -4,8 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -17,38 +15,31 @@ public class RecognizeThailandLicensePlateResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "result")
 
-    private List<ThailandLicensePlateItem> result = null;
+    private ThailandLicensePlateItem result;
 
-    public RecognizeThailandLicensePlateResponse withResult(List<ThailandLicensePlateItem> result) {
+    public RecognizeThailandLicensePlateResponse withResult(ThailandLicensePlateItem result) {
         this.result = result;
         return this;
     }
 
-    public RecognizeThailandLicensePlateResponse addResultItem(ThailandLicensePlateItem resultItem) {
+    public RecognizeThailandLicensePlateResponse withResult(Consumer<ThailandLicensePlateItem> resultSetter) {
         if (this.result == null) {
-            this.result = new ArrayList<>();
+            this.result = new ThailandLicensePlateItem();
+            resultSetter.accept(this.result);
         }
-        this.result.add(resultItem);
-        return this;
-    }
 
-    public RecognizeThailandLicensePlateResponse withResult(Consumer<List<ThailandLicensePlateItem>> resultSetter) {
-        if (this.result == null) {
-            this.result = new ArrayList<>();
-        }
-        resultSetter.accept(this.result);
         return this;
     }
 
     /**
-     * 调用成功时表示调用结果。 调用失败时无此字段 
+     * Get result
      * @return result
      */
-    public List<ThailandLicensePlateItem> getResult() {
+    public ThailandLicensePlateItem getResult() {
         return result;
     }
 
-    public void setResult(List<ThailandLicensePlateItem> result) {
+    public void setResult(ThailandLicensePlateItem result) {
         this.result = result;
     }
 

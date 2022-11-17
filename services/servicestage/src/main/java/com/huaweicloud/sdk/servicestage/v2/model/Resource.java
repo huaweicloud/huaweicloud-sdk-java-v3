@@ -16,6 +16,11 @@ public class Resource {
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "name")
+
+    private String name;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
     private ResourceType type;
@@ -35,6 +40,23 @@ public class Resource {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public Resource withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    /**
+     * 资源名称
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Resource withType(ResourceType type) {
@@ -63,12 +85,13 @@ public class Resource {
             return false;
         }
         Resource resource = (Resource) o;
-        return Objects.equals(this.id, resource.id) && Objects.equals(this.type, resource.type);
+        return Objects.equals(this.id, resource.id) && Objects.equals(this.name, resource.name)
+            && Objects.equals(this.type, resource.type);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, type);
+        return Objects.hash(id, name, type);
     }
 
     @Override
@@ -76,6 +99,7 @@ public class Resource {
         StringBuilder sb = new StringBuilder();
         sb.append("class Resource {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");
         return sb.toString();

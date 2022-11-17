@@ -9,6 +9,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * CreatePropertyRequestBody
@@ -237,6 +238,16 @@ public class CreatePropertyRequestBody {
 
     private String enumList;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enum_dict")
+
+    private PropertyDataEnum enumDict;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "method")
+
+    private String method;
+
     public CreatePropertyRequestBody withPropertyName(String propertyName) {
         this.propertyName = propertyName;
         return this;
@@ -411,6 +422,49 @@ public class CreatePropertyRequestBody {
         this.enumList = enumList;
     }
 
+    public CreatePropertyRequestBody withEnumDict(PropertyDataEnum enumDict) {
+        this.enumDict = enumDict;
+        return this;
+    }
+
+    public CreatePropertyRequestBody withEnumDict(Consumer<PropertyDataEnum> enumDictSetter) {
+        if (this.enumDict == null) {
+            this.enumDict = new PropertyDataEnum();
+            enumDictSetter.accept(this.enumDict);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get enumDict
+     * @return enumDict
+     */
+    public PropertyDataEnum getEnumDict() {
+        return enumDict;
+    }
+
+    public void setEnumDict(PropertyDataEnum enumDict) {
+        this.enumDict = enumDict;
+    }
+
+    public CreatePropertyRequestBody withMethod(String method) {
+        this.method = method;
+        return this;
+    }
+
+    /**
+     * 访问模式（兼容20.0，R属性可读，W属性可写，E属性可执行）
+     * @return method
+     */
+    public String getMethod() {
+        return method;
+    }
+
+    public void setMethod(String method) {
+        this.method = method;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -429,12 +483,25 @@ public class CreatePropertyRequestBody {
             && Objects.equals(this.step, createPropertyRequestBody.step)
             && Objects.equals(this.maxLength, createPropertyRequestBody.maxLength)
             && Objects.equals(this.unit, createPropertyRequestBody.unit)
-            && Objects.equals(this.enumList, createPropertyRequestBody.enumList);
+            && Objects.equals(this.enumList, createPropertyRequestBody.enumList)
+            && Objects.equals(this.enumDict, createPropertyRequestBody.enumDict)
+            && Objects.equals(this.method, createPropertyRequestBody.method);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(propertyName, description, dataType, required, min, max, step, maxLength, unit, enumList);
+        return Objects.hash(propertyName,
+            description,
+            dataType,
+            required,
+            min,
+            max,
+            step,
+            maxLength,
+            unit,
+            enumList,
+            enumDict,
+            method);
     }
 
     @Override
@@ -451,6 +518,8 @@ public class CreatePropertyRequestBody {
         sb.append("    maxLength: ").append(toIndentedString(maxLength)).append("\n");
         sb.append("    unit: ").append(toIndentedString(unit)).append("\n");
         sb.append("    enumList: ").append(toIndentedString(enumList)).append("\n");
+        sb.append("    enumDict: ").append(toIndentedString(enumDict)).append("\n");
+        sb.append("    method: ").append(toIndentedString(method)).append("\n");
         sb.append("}");
         return sb.toString();
     }

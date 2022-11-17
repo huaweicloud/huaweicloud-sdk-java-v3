@@ -180,7 +180,7 @@ public class UpdateRuleResponse extends SdkResponse {
     }
 
     /**
-     * 规则的类型 - DEVICE_LINKAGE：设备联动。 - DATA_FORWARDING：数据转发。 - EDGE：边缘侧。 
+     * 规则的类型 - DEVICE_LINKAGE：设备联动。
      * @return ruleType
      */
     public String getRuleType() {
@@ -197,7 +197,7 @@ public class UpdateRuleResponse extends SdkResponse {
     }
 
     /**
-     * 规则的状态，默认值：active。 - active：激活。 - inactive：未激活。 
+     * 规则的状态，默认值：active。 - active：激活。 - inactive：未激活。
      * @return status
      */
     public String getStatus() {
@@ -214,7 +214,7 @@ public class UpdateRuleResponse extends SdkResponse {
     }
 
     /**
-     * 资源空间ID。此参数为非必选参数，存在多资源空间的用户需要使用该接口时，建议携带该参数指定创建的规则归属到哪个资源空间下，否则创建的规则将会归属到[默认资源空间](https://support.huaweicloud.com/usermanual-iothub/iot_01_0006.html#section0)下。
+     * 资源空间ID。此参数为非必选参数，存在多资源空间的用户需要使用该接口时，建议携带该参数指定创建的规则归属到哪个资源空间下，否则创建的规则将会归属到[[默认资源空间](https://support.huaweicloud.com/usermanual-iothub/iot_01_0006.html#section0)](tag:hws)[[默认资源空间](https://support.huaweicloud.com/intl/zh-cn/usermanual-iothub/iot_01_0006.html#section0)](tag:hws_hk)下。
      * @return appId
      */
     public String getAppId() {

@@ -5,13 +5,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * 部署任务执行时传递的参数
@@ -19,23 +16,18 @@ import java.util.function.Consumer;
 public class DynamicConfigInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "name")
+    @JsonProperty(value = "key")
 
-    private String name;
+    private String key;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "value")
 
     private String value;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "limits")
-
-    private List<ParamTypeLimits> limits = null;
-
     /**
-    * 类型，如果填写动态参数，则类型必选
-    */
+     * 类型，如果填写动态参数，则类型必选
+     */
     public static final class TypeEnum {
 
         /**
@@ -121,26 +113,21 @@ public class DynamicConfigInfo {
 
     private TypeEnum type;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "description")
-
-    private String description;
-
-    public DynamicConfigInfo withName(String name) {
-        this.name = name;
+    public DynamicConfigInfo withKey(String key) {
+        this.key = key;
         return this;
     }
 
     /**
      * 执行部署任务时传递的参数名称
-     * @return name
+     * @return key
      */
-    public String getName() {
-        return name;
+    public String getKey() {
+        return key;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setKey(String key) {
+        this.key = key;
     }
 
     public DynamicConfigInfo withValue(String value) {
@@ -160,39 +147,6 @@ public class DynamicConfigInfo {
         this.value = value;
     }
 
-    public DynamicConfigInfo withLimits(List<ParamTypeLimits> limits) {
-        this.limits = limits;
-        return this;
-    }
-
-    public DynamicConfigInfo addLimitsItem(ParamTypeLimits limitsItem) {
-        if (this.limits == null) {
-            this.limits = new ArrayList<>();
-        }
-        this.limits.add(limitsItem);
-        return this;
-    }
-
-    public DynamicConfigInfo withLimits(Consumer<List<ParamTypeLimits>> limitsSetter) {
-        if (this.limits == null) {
-            this.limits = new ArrayList<>();
-        }
-        limitsSetter.accept(this.limits);
-        return this;
-    }
-
-    /**
-     * 参数值为枚举类型时，返回可选值列表
-     * @return limits
-     */
-    public List<ParamTypeLimits> getLimits() {
-        return limits;
-    }
-
-    public void setLimits(List<ParamTypeLimits> limits) {
-        this.limits = limits;
-    }
-
     public DynamicConfigInfo withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -210,23 +164,6 @@ public class DynamicConfigInfo {
         this.type = type;
     }
 
-    public DynamicConfigInfo withDescription(String description) {
-        this.description = description;
-        return this;
-    }
-
-    /**
-     * 描述
-     * @return description
-     */
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -236,26 +173,22 @@ public class DynamicConfigInfo {
             return false;
         }
         DynamicConfigInfo dynamicConfigInfo = (DynamicConfigInfo) o;
-        return Objects.equals(this.name, dynamicConfigInfo.name) && Objects.equals(this.value, dynamicConfigInfo.value)
-            && Objects.equals(this.limits, dynamicConfigInfo.limits)
-            && Objects.equals(this.type, dynamicConfigInfo.type)
-            && Objects.equals(this.description, dynamicConfigInfo.description);
+        return Objects.equals(this.key, dynamicConfigInfo.key) && Objects.equals(this.value, dynamicConfigInfo.value)
+            && Objects.equals(this.type, dynamicConfigInfo.type);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, value, limits, type, description);
+        return Objects.hash(key, value, type);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class DynamicConfigInfo {\n");
-        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    key: ").append(toIndentedString(key)).append("\n");
         sb.append("    value: ").append(toIndentedString(value)).append("\n");
-        sb.append("    limits: ").append(toIndentedString(limits)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
-        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -206,6 +206,11 @@ public class VpcChannelInfo {
     private MemberTypeEnum memberType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private Integer type;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dict_code")
 
     private String dictCode;
@@ -312,11 +317,6 @@ public class VpcChannelInfo {
 
     private MicroServiceInfo microserviceInfo;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "type")
-
-    private Integer type;
-
     public VpcChannelInfo withName(String name) {
         this.name = name;
         return this;
@@ -383,6 +383,23 @@ public class VpcChannelInfo {
 
     public void setMemberType(MemberTypeEnum memberType) {
         this.memberType = memberType;
+    }
+
+    public VpcChannelInfo withType(Integer type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * vpc通道类型，默认为服务器类型。 - 2：服务器类型 - 3：微服务类型
+     * @return type
+     */
+    public Integer getType() {
+        return type;
+    }
+
+    public void setType(Integer type) {
+        this.type = type;
     }
 
     public VpcChannelInfo withDictCode(String dictCode) {
@@ -512,23 +529,6 @@ public class VpcChannelInfo {
         this.microserviceInfo = microserviceInfo;
     }
 
-    public VpcChannelInfo withType(Integer type) {
-        this.type = type;
-        return this;
-    }
-
-    /**
-     * vpc通道类型。 - 2：服务器类型 - 3：微服务类型
-     * @return type
-     */
-    public Integer getType() {
-        return type;
-    }
-
-    public void setType(Integer type) {
-        this.type = type;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -541,12 +541,11 @@ public class VpcChannelInfo {
         return Objects.equals(this.name, vpcChannelInfo.name) && Objects.equals(this.port, vpcChannelInfo.port)
             && Objects.equals(this.balanceStrategy, vpcChannelInfo.balanceStrategy)
             && Objects.equals(this.memberType, vpcChannelInfo.memberType)
-            && Objects.equals(this.dictCode, vpcChannelInfo.dictCode)
+            && Objects.equals(this.type, vpcChannelInfo.type) && Objects.equals(this.dictCode, vpcChannelInfo.dictCode)
             && Objects.equals(this.createTime, vpcChannelInfo.createTime) && Objects.equals(this.id, vpcChannelInfo.id)
             && Objects.equals(this.status, vpcChannelInfo.status)
             && Objects.equals(this.memberGroups, vpcChannelInfo.memberGroups)
-            && Objects.equals(this.microserviceInfo, vpcChannelInfo.microserviceInfo)
-            && Objects.equals(this.type, vpcChannelInfo.type);
+            && Objects.equals(this.microserviceInfo, vpcChannelInfo.microserviceInfo);
     }
 
     @Override
@@ -555,13 +554,13 @@ public class VpcChannelInfo {
             port,
             balanceStrategy,
             memberType,
+            type,
             dictCode,
             createTime,
             id,
             status,
             memberGroups,
-            microserviceInfo,
-            type);
+            microserviceInfo);
     }
 
     @Override
@@ -572,13 +571,13 @@ public class VpcChannelInfo {
         sb.append("    port: ").append(toIndentedString(port)).append("\n");
         sb.append("    balanceStrategy: ").append(toIndentedString(balanceStrategy)).append("\n");
         sb.append("    memberType: ").append(toIndentedString(memberType)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    dictCode: ").append(toIndentedString(dictCode)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    memberGroups: ").append(toIndentedString(memberGroups)).append("\n");
         sb.append("    microserviceInfo: ").append(toIndentedString(microserviceInfo)).append("\n");
-        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");
         return sb.toString();
     }

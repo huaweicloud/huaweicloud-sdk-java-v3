@@ -9,6 +9,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 当组件来源的kind是artifact时spec的内容结构。
@@ -184,6 +185,11 @@ public class SourceOrArtifact {
     private String auth;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "properties")
+
+    private ObsProperties properties;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "repo_type")
 
     private SourceRepoType repoType;
@@ -271,6 +277,32 @@ public class SourceOrArtifact {
         this.auth = auth;
     }
 
+    public SourceOrArtifact withProperties(ObsProperties properties) {
+        this.properties = properties;
+        return this;
+    }
+
+    public SourceOrArtifact withProperties(Consumer<ObsProperties> propertiesSetter) {
+        if (this.properties == null) {
+            this.properties = new ObsProperties();
+            propertiesSetter.accept(this.properties);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get properties
+     * @return properties
+     */
+    public ObsProperties getProperties() {
+        return properties;
+    }
+
+    public void setProperties(ObsProperties properties) {
+        this.properties = properties;
+    }
+
     public SourceOrArtifact withRepoType(SourceRepoType repoType) {
         this.repoType = repoType;
         return this;
@@ -351,6 +383,7 @@ public class SourceOrArtifact {
         return Objects.equals(this.storage, sourceOrArtifact.storage)
             && Objects.equals(this.type, sourceOrArtifact.type) && Objects.equals(this.url, sourceOrArtifact.url)
             && Objects.equals(this.auth, sourceOrArtifact.auth)
+            && Objects.equals(this.properties, sourceOrArtifact.properties)
             && Objects.equals(this.repoType, sourceOrArtifact.repoType)
             && Objects.equals(this.repoUrl, sourceOrArtifact.repoUrl)
             && Objects.equals(this.repoRef, sourceOrArtifact.repoRef)
@@ -359,7 +392,7 @@ public class SourceOrArtifact {
 
     @Override
     public int hashCode() {
-        return Objects.hash(storage, type, url, auth, repoType, repoUrl, repoRef, repoAuth);
+        return Objects.hash(storage, type, url, auth, properties, repoType, repoUrl, repoRef, repoAuth);
     }
 
     @Override
@@ -370,6 +403,7 @@ public class SourceOrArtifact {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    url: ").append(toIndentedString(url)).append("\n");
         sb.append("    auth: ").append(toIndentedString(auth)).append("\n");
+        sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
         sb.append("    repoType: ").append(toIndentedString(repoType)).append("\n");
         sb.append("    repoUrl: ").append(toIndentedString(repoUrl)).append("\n");
         sb.append("    repoRef: ").append(toIndentedString(repoRef)).append("\n");

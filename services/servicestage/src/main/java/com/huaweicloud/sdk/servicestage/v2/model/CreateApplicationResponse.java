@@ -51,6 +51,11 @@ public class CreateApplicationResponse extends SdkResponse {
 
     private Long updateTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "unified_model")
+
+    private String unifiedModel;
+
     public CreateApplicationResponse withId(String id) {
         this.id = id;
         return this;
@@ -187,6 +192,23 @@ public class CreateApplicationResponse extends SdkResponse {
         this.updateTime = updateTime;
     }
 
+    public CreateApplicationResponse withUnifiedModel(String unifiedModel) {
+        this.unifiedModel = unifiedModel;
+        return this;
+    }
+
+    /**
+     * 是否统一模型
+     * @return unifiedModel
+     */
+    public String getUnifiedModel() {
+        return unifiedModel;
+    }
+
+    public void setUnifiedModel(String unifiedModel) {
+        this.unifiedModel = unifiedModel;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -203,12 +225,14 @@ public class CreateApplicationResponse extends SdkResponse {
             && Objects.equals(this.projectId, createApplicationResponse.projectId)
             && Objects.equals(this.enterpriseProjectId, createApplicationResponse.enterpriseProjectId)
             && Objects.equals(this.createTime, createApplicationResponse.createTime)
-            && Objects.equals(this.updateTime, createApplicationResponse.updateTime);
+            && Objects.equals(this.updateTime, createApplicationResponse.updateTime)
+            && Objects.equals(this.unifiedModel, createApplicationResponse.unifiedModel);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, description, creator, projectId, enterpriseProjectId, createTime, updateTime);
+        return Objects
+            .hash(id, name, description, creator, projectId, enterpriseProjectId, createTime, updateTime, unifiedModel);
     }
 
     @Override
@@ -223,6 +247,7 @@ public class CreateApplicationResponse extends SdkResponse {
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
+        sb.append("    unifiedModel: ").append(toIndentedString(unifiedModel)).append("\n");
         sb.append("}");
         return sb.toString();
     }

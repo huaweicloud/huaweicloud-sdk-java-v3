@@ -1,0 +1,201 @@
+package com.huaweicloud.sdk.cfw.v1.model;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+
+/**
+ * description
+ */
+public class IpsSwitchDTO {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "object_id")
+
+    private String objectId;
+
+    /**
+     * 补丁类型，1-基础补丁 2=虚拟补丁
+     */
+    public static final class IpsTypeEnum {
+
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
+        public static final IpsTypeEnum NUMBER_1 = new IpsTypeEnum(1);
+
+        /**
+         * Enum NUMBER_2 for value: 2
+         */
+        public static final IpsTypeEnum NUMBER_2 = new IpsTypeEnum(2);
+
+        private static final Map<Integer, IpsTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, IpsTypeEnum> createStaticFields() {
+            Map<Integer, IpsTypeEnum> map = new HashMap<>();
+            map.put(1, NUMBER_1);
+            map.put(2, NUMBER_2);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        IpsTypeEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static IpsTypeEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            IpsTypeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new IpsTypeEnum(value);
+            }
+            return result;
+        }
+
+        public static IpsTypeEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            IpsTypeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof IpsTypeEnum) {
+                return this.value.equals(((IpsTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ips_type")
+
+    private IpsTypeEnum ipsType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status")
+
+    private Integer status;
+
+    public IpsSwitchDTO withObjectId(String objectId) {
+        this.objectId = objectId;
+        return this;
+    }
+
+    /**
+     * 防护对象id
+     * @return objectId
+     */
+    public String getObjectId() {
+        return objectId;
+    }
+
+    public void setObjectId(String objectId) {
+        this.objectId = objectId;
+    }
+
+    public IpsSwitchDTO withIpsType(IpsTypeEnum ipsType) {
+        this.ipsType = ipsType;
+        return this;
+    }
+
+    /**
+     * 补丁类型，1-基础补丁 2=虚拟补丁
+     * @return ipsType
+     */
+    public IpsTypeEnum getIpsType() {
+        return ipsType;
+    }
+
+    public void setIpsType(IpsTypeEnum ipsType) {
+        this.ipsType = ipsType;
+    }
+
+    public IpsSwitchDTO withStatus(Integer status) {
+        this.status = status;
+        return this;
+    }
+
+    /**
+     * ips特性开关状态
+     * @return status
+     */
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        IpsSwitchDTO ipsSwitchDTO = (IpsSwitchDTO) o;
+        return Objects.equals(this.objectId, ipsSwitchDTO.objectId)
+            && Objects.equals(this.ipsType, ipsSwitchDTO.ipsType) && Objects.equals(this.status, ipsSwitchDTO.status);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(objectId, ipsType, status);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class IpsSwitchDTO {\n");
+        sb.append("    objectId: ").append(toIndentedString(objectId)).append("\n");
+        sb.append("    ipsType: ").append(toIndentedString(ipsType)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+}

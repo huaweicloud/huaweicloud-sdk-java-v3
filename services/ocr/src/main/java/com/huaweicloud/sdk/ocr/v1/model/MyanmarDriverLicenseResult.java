@@ -42,7 +42,7 @@ public class MyanmarDriverLicenseResult {
     private String nrcIdEn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Birth")
+    @JsonProperty(value = "birth")
 
     private String birth;
 

@@ -27,7 +27,7 @@ public class ListPropertiesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "items")
 
-    private List<Property> items = null;
+    private List<PropertyResponseBody> items = null;
 
     public ListPropertiesResponse withTotal(Integer total) {
         this.total = total;
@@ -67,12 +67,12 @@ public class ListPropertiesResponse extends SdkResponse {
         this.size = size;
     }
 
-    public ListPropertiesResponse withItems(List<Property> items) {
+    public ListPropertiesResponse withItems(List<PropertyResponseBody> items) {
         this.items = items;
         return this;
     }
 
-    public ListPropertiesResponse addItemsItem(Property itemsItem) {
+    public ListPropertiesResponse addItemsItem(PropertyResponseBody itemsItem) {
         if (this.items == null) {
             this.items = new ArrayList<>();
         }
@@ -80,7 +80,7 @@ public class ListPropertiesResponse extends SdkResponse {
         return this;
     }
 
-    public ListPropertiesResponse withItems(Consumer<List<Property>> itemsSetter) {
+    public ListPropertiesResponse withItems(Consumer<List<PropertyResponseBody>> itemsSetter) {
         if (this.items == null) {
             this.items = new ArrayList<>();
         }
@@ -92,11 +92,11 @@ public class ListPropertiesResponse extends SdkResponse {
      * 属性列表
      * @return items
      */
-    public List<Property> getItems() {
+    public List<PropertyResponseBody> getItems() {
         return items;
     }
 
-    public void setItems(List<Property> items) {
+    public void setItems(List<PropertyResponseBody> items) {
         this.items = items;
     }
 

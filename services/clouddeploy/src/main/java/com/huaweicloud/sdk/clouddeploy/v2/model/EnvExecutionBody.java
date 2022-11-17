@@ -23,6 +23,11 @@ public class EnvExecutionBody {
 
     private String recordId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "trigger_source")
+
+    private String triggerSource;
+
     public EnvExecutionBody withParams(List<DynamicConfigInfo> params) {
         this.params = params;
         return this;
@@ -62,7 +67,7 @@ public class EnvExecutionBody {
     }
 
     /**
-     * 部署任务的执行id，可通过record_id回滚至之前的部署状态。选中部署历史执行记录，在URL中获取。
+     * 部署任务的执行id，可通过record_id回滚至之前的部署状态。选中部署历史执行记录，在URL中获取
      * @return recordId
      */
     public String getRecordId() {
@@ -71,6 +76,23 @@ public class EnvExecutionBody {
 
     public void setRecordId(String recordId) {
         this.recordId = recordId;
+    }
+
+    public EnvExecutionBody withTriggerSource(String triggerSource) {
+        this.triggerSource = triggerSource;
+        return this;
+    }
+
+    /**
+     * 限制触发来源,0不限制任何执行请求来源,1时只允许通过流水线触发执行
+     * @return triggerSource
+     */
+    public String getTriggerSource() {
+        return triggerSource;
+    }
+
+    public void setTriggerSource(String triggerSource) {
+        this.triggerSource = triggerSource;
     }
 
     @Override
@@ -83,12 +105,13 @@ public class EnvExecutionBody {
         }
         EnvExecutionBody envExecutionBody = (EnvExecutionBody) o;
         return Objects.equals(this.params, envExecutionBody.params)
-            && Objects.equals(this.recordId, envExecutionBody.recordId);
+            && Objects.equals(this.recordId, envExecutionBody.recordId)
+            && Objects.equals(this.triggerSource, envExecutionBody.triggerSource);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(params, recordId);
+        return Objects.hash(params, recordId, triggerSource);
     }
 
     @Override
@@ -97,6 +120,7 @@ public class EnvExecutionBody {
         sb.append("class EnvExecutionBody {\n");
         sb.append("    params: ").append(toIndentedString(params)).append("\n");
         sb.append("    recordId: ").append(toIndentedString(recordId)).append("\n");
+        sb.append("    triggerSource: ").append(toIndentedString(triggerSource)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -19,6 +20,11 @@ public class ResetProductAuthenticationRequest {
     @JsonProperty(value = "product_id")
 
     private Integer productId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "body")
+
+    private ResetProductAuthenticationRequestBody body;
 
     public ResetProductAuthenticationRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -56,6 +62,32 @@ public class ResetProductAuthenticationRequest {
         this.productId = productId;
     }
 
+    public ResetProductAuthenticationRequest withBody(ResetProductAuthenticationRequestBody body) {
+        this.body = body;
+        return this;
+    }
+
+    public ResetProductAuthenticationRequest withBody(Consumer<ResetProductAuthenticationRequestBody> bodySetter) {
+        if (this.body == null) {
+            this.body = new ResetProductAuthenticationRequestBody();
+            bodySetter.accept(this.body);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get body
+     * @return body
+     */
+    public ResetProductAuthenticationRequestBody getBody() {
+        return body;
+    }
+
+    public void setBody(ResetProductAuthenticationRequestBody body) {
+        this.body = body;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -66,12 +98,13 @@ public class ResetProductAuthenticationRequest {
         }
         ResetProductAuthenticationRequest resetProductAuthenticationRequest = (ResetProductAuthenticationRequest) o;
         return Objects.equals(this.instanceId, resetProductAuthenticationRequest.instanceId)
-            && Objects.equals(this.productId, resetProductAuthenticationRequest.productId);
+            && Objects.equals(this.productId, resetProductAuthenticationRequest.productId)
+            && Objects.equals(this.body, resetProductAuthenticationRequest.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, productId);
+        return Objects.hash(instanceId, productId, body);
     }
 
     @Override
@@ -80,6 +113,7 @@ public class ResetProductAuthenticationRequest {
         sb.append("class ResetProductAuthenticationRequest {\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
+        sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();
     }

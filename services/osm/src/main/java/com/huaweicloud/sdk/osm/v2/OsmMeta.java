@@ -2938,6 +2938,59 @@ public class OsmMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RevokeMessageRequest, RevokeMessageResponse> revokeMessage =
+        genForrevokeMessage();
+
+    private static HttpRequestDef<RevokeMessageRequest, RevokeMessageResponse> genForrevokeMessage() {
+        // basic
+        HttpRequestDef.Builder<RevokeMessageRequest, RevokeMessageResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RevokeMessageRequest.class, RevokeMessageResponse.class)
+                .withName("RevokeMessage")
+                .withUri("/v2/servicerequest/cases/{case_id}/instant-messages/{message_id}/withdraw")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("case_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RevokeMessageRequest::getCaseId, (req, v) -> {
+                req.setCaseId(v);
+            }));
+        builder.<String>withRequestField("message_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RevokeMessageRequest::getMessageId, (req, v) -> {
+                req.setMessageId(v);
+            }));
+        builder.<Integer>withRequestField("X-Site",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(RevokeMessageRequest::getXSite, (req, v) -> {
+                req.setXSite(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RevokeMessageRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<String>withRequestField("X-Time-Zone",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RevokeMessageRequest::getXTimeZone, (req, v) -> {
+                req.setXTimeZone(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<SendVerifyCodesRequest, SendVerifyCodesResponse> sendVerifyCodes =
         genForsendVerifyCodes();
 

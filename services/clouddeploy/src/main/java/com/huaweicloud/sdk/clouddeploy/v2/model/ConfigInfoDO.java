@@ -24,7 +24,7 @@ public class ConfigInfoDO {
     private String name;
 
     /**
-     * 类型，如果填写name字段，则type必选
+     * 类型，如果填写name字段，则type必选,若type为空则默认为text
      */
     public static final class TypeEnum {
 
@@ -43,6 +43,11 @@ public class ConfigInfoDO {
          */
         public static final TypeEnum ENUM = new TypeEnum("enum");
 
+        /**
+         * Enum ENCRYPT for value: "encrypt"
+         */
+        public static final TypeEnum ENCRYPT = new TypeEnum("encrypt");
+
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TypeEnum> createStaticFields() {
@@ -50,6 +55,7 @@ public class ConfigInfoDO {
             map.put("text", TEXT);
             map.put("host_group", HOST_GROUP);
             map.put("enum", ENUM);
+            map.put("encrypt", ENCRYPT);
             return Collections.unmodifiableMap(map);
         }
 
@@ -236,7 +242,7 @@ public class ConfigInfoDO {
     }
 
     /**
-     * 类型，如果填写name字段，则type必选
+     * 类型，如果填写name字段，则type必选,若type为空则默认为text
      * @return type
      */
     public TypeEnum getType() {
@@ -270,7 +276,7 @@ public class ConfigInfoDO {
     }
 
     /**
-     * 部署参数值，如果填写name字段，则value必选
+     * 部署参数值
      * @return value
      */
     public String getValue() {

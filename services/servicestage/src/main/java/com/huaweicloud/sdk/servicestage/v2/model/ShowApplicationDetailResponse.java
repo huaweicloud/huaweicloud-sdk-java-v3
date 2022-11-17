@@ -17,6 +17,11 @@ public class ShowApplicationDetailResponse extends SdkResponse {
     private Integer componentCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "unified_model")
+
+    private String unifiedModel;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
     private String id;
@@ -71,6 +76,23 @@ public class ShowApplicationDetailResponse extends SdkResponse {
 
     public void setComponentCount(Integer componentCount) {
         this.componentCount = componentCount;
+    }
+
+    public ShowApplicationDetailResponse withUnifiedModel(String unifiedModel) {
+        this.unifiedModel = unifiedModel;
+        return this;
+    }
+
+    /**
+     * 是否开启统一模型
+     * @return unifiedModel
+     */
+    public String getUnifiedModel() {
+        return unifiedModel;
+    }
+
+    public void setUnifiedModel(String unifiedModel) {
+        this.unifiedModel = unifiedModel;
     }
 
     public ShowApplicationDetailResponse withId(String id) {
@@ -219,6 +241,7 @@ public class ShowApplicationDetailResponse extends SdkResponse {
         }
         ShowApplicationDetailResponse showApplicationDetailResponse = (ShowApplicationDetailResponse) o;
         return Objects.equals(this.componentCount, showApplicationDetailResponse.componentCount)
+            && Objects.equals(this.unifiedModel, showApplicationDetailResponse.unifiedModel)
             && Objects.equals(this.id, showApplicationDetailResponse.id)
             && Objects.equals(this.name, showApplicationDetailResponse.name)
             && Objects.equals(this.description, showApplicationDetailResponse.description)
@@ -232,6 +255,7 @@ public class ShowApplicationDetailResponse extends SdkResponse {
     @Override
     public int hashCode() {
         return Objects.hash(componentCount,
+            unifiedModel,
             id,
             name,
             description,
@@ -247,6 +271,7 @@ public class ShowApplicationDetailResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowApplicationDetailResponse {\n");
         sb.append("    componentCount: ").append(toIndentedString(componentCount)).append("\n");
+        sb.append("    unifiedModel: ").append(toIndentedString(unifiedModel)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");

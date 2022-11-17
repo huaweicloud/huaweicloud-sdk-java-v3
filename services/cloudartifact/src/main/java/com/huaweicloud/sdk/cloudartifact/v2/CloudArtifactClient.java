@@ -25,6 +25,38 @@ public class CloudArtifactClient {
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
      *
+     * @param ShowProjectReleaseFilesRequest 请求对象
+     * @return ShowProjectReleaseFilesResponse
+     */
+    public ShowProjectReleaseFilesResponse showProjectReleaseFiles(ShowProjectReleaseFilesRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudArtifactMeta.showProjectReleaseFiles);
+    }
+
+    /**
+     * 获取项目下文件版本信息列表
+     *
+     * 获取项目下文件版本信息列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowProjectReleaseFilesRequest 请求对象
+     * @return SyncInvoker<ShowProjectReleaseFilesRequest, ShowProjectReleaseFilesResponse>
+     */
+    public SyncInvoker<ShowProjectReleaseFilesRequest, ShowProjectReleaseFilesResponse> showProjectReleaseFilesInvoker(
+        ShowProjectReleaseFilesRequest request) {
+        return new SyncInvoker<ShowProjectReleaseFilesRequest, ShowProjectReleaseFilesResponse>(request,
+            CloudArtifactMeta.showProjectReleaseFiles, hcClient);
+    }
+
+    /**
+     * 获取项目下文件版本信息列表
+     *
+     * 获取项目下文件版本信息列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
      * @param ShowReleaseProjectFilesRequest 请求对象
      * @return ShowReleaseProjectFilesResponse
      */

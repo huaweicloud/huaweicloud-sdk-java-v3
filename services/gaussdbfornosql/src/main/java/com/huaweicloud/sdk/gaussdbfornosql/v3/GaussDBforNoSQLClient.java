@@ -1008,6 +1008,38 @@ public class GaussDBforNoSQLClient {
     }
 
     /**
+     * 获取容灾实例主/备角色信息
+     *
+     * 该接口用于获取容灾实例主/备角色信息，以便后续容灾实例备升主和容灾实例主降备接口调用。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowInstanceRoleRequest 请求对象
+     * @return ShowInstanceRoleResponse
+     */
+    public ShowInstanceRoleResponse showInstanceRole(ShowInstanceRoleRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.showInstanceRole);
+    }
+
+    /**
+     * 获取容灾实例主/备角色信息
+     *
+     * 该接口用于获取容灾实例主/备角色信息，以便后续容灾实例备升主和容灾实例主降备接口调用。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowInstanceRoleRequest 请求对象
+     * @return SyncInvoker<ShowInstanceRoleRequest, ShowInstanceRoleResponse>
+     */
+    public SyncInvoker<ShowInstanceRoleRequest, ShowInstanceRoleResponse> showInstanceRoleInvoker(
+        ShowInstanceRoleRequest request) {
+        return new SyncInvoker<ShowInstanceRoleRequest, ShowInstanceRoleResponse>(request,
+            GaussDBforNoSQLMeta.showInstanceRole, hcClient);
+    }
+
+    /**
      * 查询配额
      *
      * 查询单租户在GaussDBforNoSQL服务下的资源配额。
@@ -1100,6 +1132,69 @@ public class GaussDBforNoSQLClient {
         ShrinkInstanceNodeRequest request) {
         return new SyncInvoker<ShrinkInstanceNodeRequest, ShrinkInstanceNodeResponse>(request,
             GaussDBforNoSQLMeta.shrinkInstanceNode, hcClient);
+    }
+
+    /**
+     * 容灾实例备升主
+     *
+     * 该接口用于对已经搭建容灾关系的实例，将备实例升级为主实例。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SwitchToMasterRequest 请求对象
+     * @return SwitchToMasterResponse
+     */
+    public SwitchToMasterResponse switchToMaster(SwitchToMasterRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.switchToMaster);
+    }
+
+    /**
+     * 容灾实例备升主
+     *
+     * 该接口用于对已经搭建容灾关系的实例，将备实例升级为主实例。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SwitchToMasterRequest 请求对象
+     * @return SyncInvoker<SwitchToMasterRequest, SwitchToMasterResponse>
+     */
+    public SyncInvoker<SwitchToMasterRequest, SwitchToMasterResponse> switchToMasterInvoker(
+        SwitchToMasterRequest request) {
+        return new SyncInvoker<SwitchToMasterRequest, SwitchToMasterResponse>(request,
+            GaussDBforNoSQLMeta.switchToMaster, hcClient);
+    }
+
+    /**
+     * 容灾实例主降备
+     *
+     * 该接口用于对已经搭建容灾关系的实例，将主实例降级为备实例。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SwitchToSlaveRequest 请求对象
+     * @return SwitchToSlaveResponse
+     */
+    public SwitchToSlaveResponse switchToSlave(SwitchToSlaveRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.switchToSlave);
+    }
+
+    /**
+     * 容灾实例主降备
+     *
+     * 该接口用于对已经搭建容灾关系的实例，将主实例降级为备实例。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SwitchToSlaveRequest 请求对象
+     * @return SyncInvoker<SwitchToSlaveRequest, SwitchToSlaveResponse>
+     */
+    public SyncInvoker<SwitchToSlaveRequest, SwitchToSlaveResponse> switchToSlaveInvoker(SwitchToSlaveRequest request) {
+        return new SyncInvoker<SwitchToSlaveRequest, SwitchToSlaveResponse>(request, GaussDBforNoSQLMeta.switchToSlave,
+            hcClient);
     }
 
     /**

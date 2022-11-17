@@ -4,7 +4,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * MemberGroupInfo
@@ -40,6 +43,11 @@ public class MemberGroupInfo {
     @JsonProperty(value = "microservice_port")
 
     private Integer microservicePort;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "microservice_labels")
+
+    private List<MicroserviceLabel> microserviceLabels = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "member_group_id")
@@ -162,6 +170,39 @@ public class MemberGroupInfo {
         this.microservicePort = microservicePort;
     }
 
+    public MemberGroupInfo withMicroserviceLabels(List<MicroserviceLabel> microserviceLabels) {
+        this.microserviceLabels = microserviceLabels;
+        return this;
+    }
+
+    public MemberGroupInfo addMicroserviceLabelsItem(MicroserviceLabel microserviceLabelsItem) {
+        if (this.microserviceLabels == null) {
+            this.microserviceLabels = new ArrayList<>();
+        }
+        this.microserviceLabels.add(microserviceLabelsItem);
+        return this;
+    }
+
+    public MemberGroupInfo withMicroserviceLabels(Consumer<List<MicroserviceLabel>> microserviceLabelsSetter) {
+        if (this.microserviceLabels == null) {
+            this.microserviceLabels = new ArrayList<>();
+        }
+        microserviceLabelsSetter.accept(this.microserviceLabels);
+        return this;
+    }
+
+    /**
+     * VPC通道后端服务器组的标签，仅VPC通道类型为微服务时支持。
+     * @return microserviceLabels
+     */
+    public List<MicroserviceLabel> getMicroserviceLabels() {
+        return microserviceLabels;
+    }
+
+    public void setMicroserviceLabels(List<MicroserviceLabel> microserviceLabels) {
+        this.microserviceLabels = microserviceLabels;
+    }
+
     public MemberGroupInfo withMemberGroupId(String memberGroupId) {
         this.memberGroupId = memberGroupId;
         return this;
@@ -228,6 +269,7 @@ public class MemberGroupInfo {
             && Objects.equals(this.dictCode, memberGroupInfo.dictCode)
             && Objects.equals(this.microserviceVersion, memberGroupInfo.microserviceVersion)
             && Objects.equals(this.microservicePort, memberGroupInfo.microservicePort)
+            && Objects.equals(this.microserviceLabels, memberGroupInfo.microserviceLabels)
             && Objects.equals(this.memberGroupId, memberGroupInfo.memberGroupId)
             && Objects.equals(this.createTime, memberGroupInfo.createTime)
             && Objects.equals(this.updateTime, memberGroupInfo.updateTime);
@@ -241,6 +283,7 @@ public class MemberGroupInfo {
             dictCode,
             microserviceVersion,
             microservicePort,
+            microserviceLabels,
             memberGroupId,
             createTime,
             updateTime);
@@ -256,6 +299,7 @@ public class MemberGroupInfo {
         sb.append("    dictCode: ").append(toIndentedString(dictCode)).append("\n");
         sb.append("    microserviceVersion: ").append(toIndentedString(microserviceVersion)).append("\n");
         sb.append("    microservicePort: ").append(toIndentedString(microservicePort)).append("\n");
+        sb.append("    microserviceLabels: ").append(toIndentedString(microserviceLabels)).append("\n");
         sb.append("    memberGroupId: ").append(toIndentedString(memberGroupId)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");

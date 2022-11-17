@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * GaussDB(for openGauss) 的特殊配置。
+ * GaussDB Centralized 的特殊配置。
  */
 public class OpenGaussConfig {
 

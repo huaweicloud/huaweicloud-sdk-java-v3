@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.apig.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * MemberGroupCreate
@@ -39,6 +42,11 @@ public class MemberGroupCreate {
     @JsonProperty(value = "microservice_port")
 
     private Integer microservicePort;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "microservice_labels")
+
+    private List<MicroserviceLabel> microserviceLabels = null;
 
     public MemberGroupCreate withMemberGroupName(String memberGroupName) {
         this.memberGroupName = memberGroupName;
@@ -146,6 +154,39 @@ public class MemberGroupCreate {
         this.microservicePort = microservicePort;
     }
 
+    public MemberGroupCreate withMicroserviceLabels(List<MicroserviceLabel> microserviceLabels) {
+        this.microserviceLabels = microserviceLabels;
+        return this;
+    }
+
+    public MemberGroupCreate addMicroserviceLabelsItem(MicroserviceLabel microserviceLabelsItem) {
+        if (this.microserviceLabels == null) {
+            this.microserviceLabels = new ArrayList<>();
+        }
+        this.microserviceLabels.add(microserviceLabelsItem);
+        return this;
+    }
+
+    public MemberGroupCreate withMicroserviceLabels(Consumer<List<MicroserviceLabel>> microserviceLabelsSetter) {
+        if (this.microserviceLabels == null) {
+            this.microserviceLabels = new ArrayList<>();
+        }
+        microserviceLabelsSetter.accept(this.microserviceLabels);
+        return this;
+    }
+
+    /**
+     * VPC通道后端服务器组的标签，仅VPC通道类型为微服务时支持。
+     * @return microserviceLabels
+     */
+    public List<MicroserviceLabel> getMicroserviceLabels() {
+        return microserviceLabels;
+    }
+
+    public void setMicroserviceLabels(List<MicroserviceLabel> microserviceLabels) {
+        this.microserviceLabels = microserviceLabels;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -160,7 +201,8 @@ public class MemberGroupCreate {
             && Objects.equals(this.memberGroupWeight, memberGroupCreate.memberGroupWeight)
             && Objects.equals(this.dictCode, memberGroupCreate.dictCode)
             && Objects.equals(this.microserviceVersion, memberGroupCreate.microserviceVersion)
-            && Objects.equals(this.microservicePort, memberGroupCreate.microservicePort);
+            && Objects.equals(this.microservicePort, memberGroupCreate.microservicePort)
+            && Objects.equals(this.microserviceLabels, memberGroupCreate.microserviceLabels);
     }
 
     @Override
@@ -170,7 +212,8 @@ public class MemberGroupCreate {
             memberGroupWeight,
             dictCode,
             microserviceVersion,
-            microservicePort);
+            microservicePort,
+            microserviceLabels);
     }
 
     @Override
@@ -183,6 +226,7 @@ public class MemberGroupCreate {
         sb.append("    dictCode: ").append(toIndentedString(dictCode)).append("\n");
         sb.append("    microserviceVersion: ").append(toIndentedString(microserviceVersion)).append("\n");
         sb.append("    microservicePort: ").append(toIndentedString(microservicePort)).append("\n");
+        sb.append("    microserviceLabels: ").append(toIndentedString(microserviceLabels)).append("\n");
         sb.append("}");
         return sb.toString();
     }

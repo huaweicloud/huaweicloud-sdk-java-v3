@@ -148,6 +148,37 @@ public class TmsAsyncClient {
     }
 
     /**
+     * 查询标签管理支持的服务
+     *
+     * 查询标签管理支持的服务
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListProvidersRequest 请求对象
+     * @return CompletableFuture<ListProvidersResponse>
+     */
+    public CompletableFuture<ListProvidersResponse> listProvidersAsync(ListProvidersRequest request) {
+        return hcClient.asyncInvokeHttp(request, TmsMeta.listProviders);
+    }
+
+    /**
+     * 查询标签管理支持的服务
+     *
+     * 查询标签管理支持的服务
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListProvidersRequest 请求对象
+     * @return AsyncInvoker<ListProvidersRequest, ListProvidersResponse>
+     */
+    public AsyncInvoker<ListProvidersRequest, ListProvidersResponse> listProvidersAsyncInvoker(
+        ListProvidersRequest request) {
+        return new AsyncInvoker<ListProvidersRequest, ListProvidersResponse>(request, TmsMeta.listProviders, hcClient);
+    }
+
+    /**
      * 查询API版本号详情
      *
      * 查询指定的标签管理服务API版本号详情。

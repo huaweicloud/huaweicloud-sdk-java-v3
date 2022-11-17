@@ -668,6 +668,20 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddCertificateRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
+            }));
+        builder.<String>withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddCertificateRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
+            }));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -714,6 +728,20 @@ public class IoTDAMeta {
             f -> f.withMarshaller(CheckCertificateRequest::getActionId, (req, v) -> {
                 req.setActionId(v);
             }));
+        builder.<String>withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckCertificateRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
+            }));
+        builder.<String>withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckCertificateRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
+            }));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -759,6 +787,20 @@ public class IoTDAMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteCertificateRequest::getCertificateId, (req, v) -> {
                 req.setCertificateId(v);
+            }));
+        builder.<String>withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteCertificateRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
+            }));
+        builder.<String>withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteCertificateRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
             }));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
@@ -819,6 +861,20 @@ public class IoTDAMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListCertificatesRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
+            }));
+        builder.<String>withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCertificatesRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
+            }));
+        builder.<String>withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCertificatesRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
             }));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,

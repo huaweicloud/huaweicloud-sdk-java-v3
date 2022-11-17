@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -14,22 +15,31 @@ public class RecognizeIdDocumentResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "result")
 
-    private Object result;
+    private IdDocumentItem result;
 
-    public RecognizeIdDocumentResponse withResult(Object result) {
+    public RecognizeIdDocumentResponse withResult(IdDocumentItem result) {
         this.result = result;
         return this;
     }
 
+    public RecognizeIdDocumentResponse withResult(Consumer<IdDocumentItem> resultSetter) {
+        if (this.result == null) {
+            this.result = new IdDocumentItem();
+            resultSetter.accept(this.result);
+        }
+
+        return this;
+    }
+
     /**
-     * 调用成功时表示调用结果。  调用失败时此字段为空。 
+     * Get result
      * @return result
      */
-    public Object getResult() {
+    public IdDocumentItem getResult() {
         return result;
     }
 
-    public void setResult(Object result) {
+    public void setResult(IdDocumentItem result) {
         this.result = result;
     }
 

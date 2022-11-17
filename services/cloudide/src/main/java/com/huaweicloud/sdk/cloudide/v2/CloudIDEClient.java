@@ -18,6 +18,135 @@ public class CloudIDEClient {
     }
 
     /**
+     * 添加插件评论
+     *
+     * 添加插件评论
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param AddExtensionEvaluationRequest 请求对象
+     * @return AddExtensionEvaluationResponse
+     */
+    public AddExtensionEvaluationResponse addExtensionEvaluation(AddExtensionEvaluationRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudIDEMeta.addExtensionEvaluation);
+    }
+
+    /**
+     * 添加插件评论
+     *
+     * 添加插件评论
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param AddExtensionEvaluationRequest 请求对象
+     * @return SyncInvoker<AddExtensionEvaluationRequest, AddExtensionEvaluationResponse>
+     */
+    public SyncInvoker<AddExtensionEvaluationRequest, AddExtensionEvaluationResponse> addExtensionEvaluationInvoker(
+        AddExtensionEvaluationRequest request) {
+        return new SyncInvoker<AddExtensionEvaluationRequest, AddExtensionEvaluationResponse>(request,
+            CloudIDEMeta.addExtensionEvaluation, hcClient);
+    }
+
+    /**
+     * 添加评论回复、回复评论回复
+     *
+     * 添加评论回复、回复评论回复
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param AddExtensionEvaluationReplyRequest 请求对象
+     * @return AddExtensionEvaluationReplyResponse
+     */
+    public AddExtensionEvaluationReplyResponse addExtensionEvaluationReply(AddExtensionEvaluationReplyRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudIDEMeta.addExtensionEvaluationReply);
+    }
+
+    /**
+     * 添加评论回复、回复评论回复
+     *
+     * 添加评论回复、回复评论回复
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param AddExtensionEvaluationReplyRequest 请求对象
+     * @return SyncInvoker<AddExtensionEvaluationReplyRequest, AddExtensionEvaluationReplyResponse>
+     */
+    public SyncInvoker<AddExtensionEvaluationReplyRequest, AddExtensionEvaluationReplyResponse> addExtensionEvaluationReplyInvoker(
+        AddExtensionEvaluationReplyRequest request) {
+        return new SyncInvoker<AddExtensionEvaluationReplyRequest, AddExtensionEvaluationReplyResponse>(request,
+            CloudIDEMeta.addExtensionEvaluationReply, hcClient);
+    }
+
+    /**
+     * 添加新评星
+     *
+     * 添加新评星
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param AddExtensionStarRequest 请求对象
+     * @return AddExtensionStarResponse
+     */
+    public AddExtensionStarResponse addExtensionStar(AddExtensionStarRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudIDEMeta.addExtensionStar);
+    }
+
+    /**
+     * 添加新评星
+     *
+     * 添加新评星
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param AddExtensionStarRequest 请求对象
+     * @return SyncInvoker<AddExtensionStarRequest, AddExtensionStarResponse>
+     */
+    public SyncInvoker<AddExtensionStarRequest, AddExtensionStarResponse> addExtensionStarInvoker(
+        AddExtensionStarRequest request) {
+        return new SyncInvoker<AddExtensionStarRequest, AddExtensionStarResponse>(request,
+            CloudIDEMeta.addExtensionStar, hcClient);
+    }
+
+    /**
+     * 举报评论,举报回复
+     *
+     * 举报评论,举报回复
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CheckMaliciousExtensionEvaluationRequest 请求对象
+     * @return CheckMaliciousExtensionEvaluationResponse
+     */
+    public CheckMaliciousExtensionEvaluationResponse checkMaliciousExtensionEvaluation(
+        CheckMaliciousExtensionEvaluationRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudIDEMeta.checkMaliciousExtensionEvaluation);
+    }
+
+    /**
+     * 举报评论,举报回复
+     *
+     * 举报评论,举报回复
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CheckMaliciousExtensionEvaluationRequest 请求对象
+     * @return SyncInvoker<CheckMaliciousExtensionEvaluationRequest, CheckMaliciousExtensionEvaluationResponse>
+     */
+    public SyncInvoker<CheckMaliciousExtensionEvaluationRequest, CheckMaliciousExtensionEvaluationResponse> checkMaliciousExtensionEvaluationInvoker(
+        CheckMaliciousExtensionEvaluationRequest request) {
+        return new SyncInvoker<CheckMaliciousExtensionEvaluationRequest, CheckMaliciousExtensionEvaluationResponse>(
+            request, CloudIDEMeta.checkMaliciousExtensionEvaluation, hcClient);
+    }
+
+    /**
      * 设置ide实例对插件的授权
      *
      * 设置ide实例对插件的授权。同意、不同意、未知（下次重新询问）
@@ -48,6 +177,70 @@ public class CloudIDEClient {
         CreateExtensionAuthorizationRequest request) {
         return new SyncInvoker<CreateExtensionAuthorizationRequest, CreateExtensionAuthorizationResponse>(request,
             CloudIDEMeta.createExtensionAuthorization, hcClient);
+    }
+
+    /**
+     * 删除评论
+     *
+     * 删除评论
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteEvaluationRequest 请求对象
+     * @return DeleteEvaluationResponse
+     */
+    public DeleteEvaluationResponse deleteEvaluation(DeleteEvaluationRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudIDEMeta.deleteEvaluation);
+    }
+
+    /**
+     * 删除评论
+     *
+     * 删除评论
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteEvaluationRequest 请求对象
+     * @return SyncInvoker<DeleteEvaluationRequest, DeleteEvaluationResponse>
+     */
+    public SyncInvoker<DeleteEvaluationRequest, DeleteEvaluationResponse> deleteEvaluationInvoker(
+        DeleteEvaluationRequest request) {
+        return new SyncInvoker<DeleteEvaluationRequest, DeleteEvaluationResponse>(request,
+            CloudIDEMeta.deleteEvaluation, hcClient);
+    }
+
+    /**
+     * 删除回复
+     *
+     * 删除回复
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteEvaluationReplyRequest 请求对象
+     * @return DeleteEvaluationReplyResponse
+     */
+    public DeleteEvaluationReplyResponse deleteEvaluationReply(DeleteEvaluationReplyRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudIDEMeta.deleteEvaluationReply);
+    }
+
+    /**
+     * 删除回复
+     *
+     * 删除回复
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteEvaluationReplyRequest 请求对象
+     * @return SyncInvoker<DeleteEvaluationReplyRequest, DeleteEvaluationReplyResponse>
+     */
+    public SyncInvoker<DeleteEvaluationReplyRequest, DeleteEvaluationReplyResponse> deleteEvaluationReplyInvoker(
+        DeleteEvaluationReplyRequest request) {
+        return new SyncInvoker<DeleteEvaluationReplyRequest, DeleteEvaluationReplyResponse>(request,
+            CloudIDEMeta.deleteEvaluationReply, hcClient);
     }
 
     /**

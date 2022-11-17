@@ -27,7 +27,7 @@ public class ListSubsetsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "items")
 
-    private List<Device> items = null;
+    private List<SubDevice> items = null;
 
     public ListSubsetsResponse withTotal(Integer total) {
         this.total = total;
@@ -67,12 +67,12 @@ public class ListSubsetsResponse extends SdkResponse {
         this.size = size;
     }
 
-    public ListSubsetsResponse withItems(List<Device> items) {
+    public ListSubsetsResponse withItems(List<SubDevice> items) {
         this.items = items;
         return this;
     }
 
-    public ListSubsetsResponse addItemsItem(Device itemsItem) {
+    public ListSubsetsResponse addItemsItem(SubDevice itemsItem) {
         if (this.items == null) {
             this.items = new ArrayList<>();
         }
@@ -80,7 +80,7 @@ public class ListSubsetsResponse extends SdkResponse {
         return this;
     }
 
-    public ListSubsetsResponse withItems(Consumer<List<Device>> itemsSetter) {
+    public ListSubsetsResponse withItems(Consumer<List<SubDevice>> itemsSetter) {
         if (this.items == null) {
             this.items = new ArrayList<>();
         }
@@ -92,11 +92,11 @@ public class ListSubsetsResponse extends SdkResponse {
      * 设备ID列表
      * @return items
      */
-    public List<Device> getItems() {
+    public List<SubDevice> getItems() {
         return items;
     }
 
-    public void setItems(List<Device> items) {
+    public void setItems(List<SubDevice> items) {
         this.items = items;
     }
 

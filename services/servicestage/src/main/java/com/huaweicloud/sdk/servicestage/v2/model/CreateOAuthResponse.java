@@ -15,16 +15,16 @@ public class CreateOAuthResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "authorization")
 
-    private AuthorizationVO authorization;
+    private AuthorizationVI authorization;
 
-    public CreateOAuthResponse withAuthorization(AuthorizationVO authorization) {
+    public CreateOAuthResponse withAuthorization(AuthorizationVI authorization) {
         this.authorization = authorization;
         return this;
     }
 
-    public CreateOAuthResponse withAuthorization(Consumer<AuthorizationVO> authorizationSetter) {
+    public CreateOAuthResponse withAuthorization(Consumer<AuthorizationVI> authorizationSetter) {
         if (this.authorization == null) {
-            this.authorization = new AuthorizationVO();
+            this.authorization = new AuthorizationVI();
             authorizationSetter.accept(this.authorization);
         }
 
@@ -35,11 +35,11 @@ public class CreateOAuthResponse extends SdkResponse {
      * Get authorization
      * @return authorization
      */
-    public AuthorizationVO getAuthorization() {
+    public AuthorizationVI getAuthorization() {
         return authorization;
     }
 
-    public void setAuthorization(AuthorizationVO authorization) {
+    public void setAuthorization(AuthorizationVI authorization) {
         this.authorization = authorization;
     }
 

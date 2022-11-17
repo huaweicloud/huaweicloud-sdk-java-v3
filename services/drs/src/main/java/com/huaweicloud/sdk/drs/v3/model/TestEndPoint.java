@@ -125,9 +125,24 @@ public class TestEndPoint {
         public static final DbTypeEnum MONGODB = new DbTypeEnum("mongodb");
 
         /**
+         * Enum GAUSSDBV5 for value: "gaussdbv5"
+         */
+        public static final DbTypeEnum GAUSSDBV5 = new DbTypeEnum("gaussdbv5");
+
+        /**
          * Enum POSTGRESQL for value: "postgresql"
          */
         public static final DbTypeEnum POSTGRESQL = new DbTypeEnum("postgresql");
+
+        /**
+         * Enum KAFKA for value: "kafka"
+         */
+        public static final DbTypeEnum KAFKA = new DbTypeEnum("kafka");
+
+        /**
+         * Enum GAUSSDBV5HA for value: "gaussdbv5ha"
+         */
+        public static final DbTypeEnum GAUSSDBV5HA = new DbTypeEnum("gaussdbv5ha");
 
         private static final Map<String, DbTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -135,7 +150,10 @@ public class TestEndPoint {
             Map<String, DbTypeEnum> map = new HashMap<>();
             map.put("mysql", MYSQL);
             map.put("mongodb", MONGODB);
+            map.put("gaussdbv5", GAUSSDBV5);
             map.put("postgresql", POSTGRESQL);
+            map.put("kafka", KAFKA);
+            map.put("gaussdbv5ha", GAUSSDBV5HA);
             return Collections.unmodifiableMap(map);
         }
 

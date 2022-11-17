@@ -41,7 +41,7 @@ public class MyanmarDriverLicenseConfidence {
     private Float nrcIdEn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Birth")
+    @JsonProperty(value = "birth")
 
     private Float birth;
 

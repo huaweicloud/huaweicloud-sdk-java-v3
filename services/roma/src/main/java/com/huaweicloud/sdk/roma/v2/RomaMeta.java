@@ -47,13 +47,13 @@ public class RomaMeta {
             }));
 
         // response
-        builder.<List<Device>>withResponseField("body",
+        builder.<List<AddSubsetsToGatewayResponseBody>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(AddSubsetsToGatewayResponse::getBody, (response, data) -> {
                 response.setBody(data);
-            }).withInnerContainerType(Device.class));
+            }).withInnerContainerType(AddSubsetsToGatewayResponseBody.class));
 
         return builder.build();
     }
@@ -6185,7 +6185,7 @@ public class RomaMeta {
             HttpRequestDef.builder(HttpMethod.PUT, ResetAuthenticationRequest.class, ResetAuthenticationResponse.class)
                 .withName("ResetAuthentication")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/devices/{device_id}/authentication")
-                .withContentType("application/json");
+                .withContentType("application/json;charset=UTF-8");
 
         // requests
         builder.<String>withRequestField("instance_id",
@@ -6201,6 +6201,13 @@ public class RomaMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ResetAuthenticationRequest::getDeviceId, (req, v) -> {
                 req.setDeviceId(v);
+            }));
+        builder.<ResetAuthenticationRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ResetAuthenticationRequestBody.class),
+            f -> f.withMarshaller(ResetAuthenticationRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response
@@ -6298,7 +6305,7 @@ public class RomaMeta {
                     ResetProductAuthenticationResponse.class)
                 .withName("ResetProductAuthentication")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/products/{product_id}/authentication")
-                .withContentType("application/json");
+                .withContentType("application/json;charset=UTF-8");
 
         // requests
         builder.<String>withRequestField("instance_id",
@@ -6314,6 +6321,13 @@ public class RomaMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ResetProductAuthenticationRequest::getProductId, (req, v) -> {
                 req.setProductId(v);
+            }));
+        builder.<ResetProductAuthenticationRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ResetProductAuthenticationRequestBody.class),
+            f -> f.withMarshaller(ResetProductAuthenticationRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response

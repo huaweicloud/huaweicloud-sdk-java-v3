@@ -194,14 +194,11 @@ public class DerivedAKSKSigner extends AKSKSigner {
                 byte[] tmpKey = extract(secretKey.getBytes(UTF_8), accessKey.getBytes(UTF_8), HMAC_ALGORITHM);
                 byte[] derSecretKey =
                         expand(tmpKey, info.getBytes(UTF_8), HMAC_ALGORITHM, DERIVATION_KEY_LENGTH, EXPAND_CEIL);
-                if (null != derSecretKey) {
-                    return toHex(derSecretKey);
-                }
+                return toHex(derSecretKey);
             } catch (NoSuchAlgorithmException | InvalidKeyException | IOException e) {
                 String msg = "Failed to derive AK " + accessKey + " with info " + info + " .";
                 throw new SdkException(msg, e);
             }
-            return null;
         }
 
         public static String toHex(byte[] data) {
@@ -249,9 +246,13 @@ public class DerivedAKSKSigner extends AKSKSigner {
                 }
             }
 
-            return okmLength == rawResult.length
-                    ? rawResult
-                    : (okmLength < rawResult.length ? Arrays.copyOf(rawResult, okmLength) : null);
+            if (HKDF.DERIVATION_KEY_LENGTH == rawResult.length) {
+                return rawResult;
+            } else if (HKDF.DERIVATION_KEY_LENGTH < rawResult.length) {
+                return Arrays.copyOf(rawResult, HKDF.DERIVATION_KEY_LENGTH);
+            } else {
+                throw new IOException("Failed to expand with algorithm " + hmacAlgorithm);
+            }
         }
 
         private static byte[] expandFirst(byte[] info, Mac mac) {

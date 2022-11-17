@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 
+ * 对应票证的状态信息及状态码
  */
 public class AutoClassificationResultStatus {
 

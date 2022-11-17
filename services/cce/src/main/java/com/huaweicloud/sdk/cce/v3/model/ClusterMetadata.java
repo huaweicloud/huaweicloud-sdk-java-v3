@@ -66,7 +66,7 @@ public class ClusterMetadata {
     }
 
     /**
-     * 资源唯一标识，创建成功后自动生成，填写无效
+     * 集群ID，资源唯一标识，创建成功后自动生成，填写无效
      * @return uid
      */
     public String getUid() {

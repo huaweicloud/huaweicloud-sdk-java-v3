@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 
+ * ContentCompareResultDiffs
  */
 public class ContentCompareResultDiffs {
 
@@ -24,7 +24,7 @@ public class ContentCompareResultDiffs {
     private String sourceTableName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ContentCompareDiff")
+    @JsonProperty(value = "content_compare_diff")
 
     private List<ContentCompareDiff> contentCompareDiff = null;
 

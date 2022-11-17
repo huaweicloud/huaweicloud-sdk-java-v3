@@ -188,6 +188,86 @@ public class ApigClient {
     }
 
     /**
+     * 插件绑定API
+     *
+     * 绑定插件到API上。
+     * - 只能选择发布状态的API
+     * - 绑定以后及时生效
+     * - 修改插件后及时生效
+     * - 相同类型的插件只能绑定一个，原来已经绑定的通类型插件，会直接覆盖。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param AttachApiToPluginRequest 请求对象
+     * @return AttachApiToPluginResponse
+     */
+    public AttachApiToPluginResponse attachApiToPlugin(AttachApiToPluginRequest request) {
+        return hcClient.syncInvokeHttp(request, ApigMeta.attachApiToPlugin);
+    }
+
+    /**
+     * 插件绑定API
+     *
+     * 绑定插件到API上。
+     * - 只能选择发布状态的API
+     * - 绑定以后及时生效
+     * - 修改插件后及时生效
+     * - 相同类型的插件只能绑定一个，原来已经绑定的通类型插件，会直接覆盖。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param AttachApiToPluginRequest 请求对象
+     * @return SyncInvoker<AttachApiToPluginRequest, AttachApiToPluginResponse>
+     */
+    public SyncInvoker<AttachApiToPluginRequest, AttachApiToPluginResponse> attachApiToPluginInvoker(
+        AttachApiToPluginRequest request) {
+        return new SyncInvoker<AttachApiToPluginRequest, AttachApiToPluginResponse>(request, ApigMeta.attachApiToPlugin,
+            hcClient);
+    }
+
+    /**
+     * API绑定插件
+     *
+     * 绑定插件到API上。
+     * - 只能选择发布状态的API
+     * - 绑定以后及时生效
+     * - 修改插件后及时生效
+     * - 相同类型的插件只能绑定一个，原来已经绑定的通类型插件，会直接覆盖。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param AttachPluginToApiRequest 请求对象
+     * @return AttachPluginToApiResponse
+     */
+    public AttachPluginToApiResponse attachPluginToApi(AttachPluginToApiRequest request) {
+        return hcClient.syncInvokeHttp(request, ApigMeta.attachPluginToApi);
+    }
+
+    /**
+     * API绑定插件
+     *
+     * 绑定插件到API上。
+     * - 只能选择发布状态的API
+     * - 绑定以后及时生效
+     * - 修改插件后及时生效
+     * - 相同类型的插件只能绑定一个，原来已经绑定的通类型插件，会直接覆盖。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param AttachPluginToApiRequest 请求对象
+     * @return SyncInvoker<AttachPluginToApiRequest, AttachPluginToApiResponse>
+     */
+    public SyncInvoker<AttachPluginToApiRequest, AttachPluginToApiResponse> attachPluginToApiInvoker(
+        AttachPluginToApiRequest request) {
+        return new SyncInvoker<AttachPluginToApiRequest, AttachPluginToApiResponse>(request, ApigMeta.attachPluginToApi,
+            hcClient);
+    }
+
+    /**
      * 创建自定义认证
      *
      * 创建自定义认证
@@ -459,6 +539,40 @@ public class ApigClient {
         CreateInstanceV2Request request) {
         return new SyncInvoker<CreateInstanceV2Request, CreateInstanceV2Response>(request, ApigMeta.createInstanceV2,
             hcClient);
+    }
+
+    /**
+     * 创建插件
+     *
+     * 创建插件信息。
+     * - 插件不允许重名
+     * - 插件创建后未绑定API前是无意义的，绑定API后，对绑定的API即时生效
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreatePluginRequest 请求对象
+     * @return CreatePluginResponse
+     */
+    public CreatePluginResponse createPlugin(CreatePluginRequest request) {
+        return hcClient.syncInvokeHttp(request, ApigMeta.createPlugin);
+    }
+
+    /**
+     * 创建插件
+     *
+     * 创建插件信息。
+     * - 插件不允许重名
+     * - 插件创建后未绑定API前是无意义的，绑定API后，对绑定的API即时生效
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreatePluginRequest 请求对象
+     * @return SyncInvoker<CreatePluginRequest, CreatePluginResponse>
+     */
+    public SyncInvoker<CreatePluginRequest, CreatePluginResponse> createPluginInvoker(CreatePluginRequest request) {
+        return new SyncInvoker<CreatePluginRequest, CreatePluginResponse>(request, ApigMeta.createPlugin, hcClient);
     }
 
     /**
@@ -776,6 +890,38 @@ public class ApigClient {
     }
 
     /**
+     * 删除插件
+     *
+     * 删除插件。
+     * - 必须先解除API和插件的绑定关系，否则删除报错
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeletePluginRequest 请求对象
+     * @return DeletePluginResponse
+     */
+    public DeletePluginResponse deletePlugin(DeletePluginRequest request) {
+        return hcClient.syncInvokeHttp(request, ApigMeta.deletePlugin);
+    }
+
+    /**
+     * 删除插件
+     *
+     * 删除插件。
+     * - 必须先解除API和插件的绑定关系，否则删除报错
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeletePluginRequest 请求对象
+     * @return SyncInvoker<DeletePluginRequest, DeletePluginResponse>
+     */
+    public SyncInvoker<DeletePluginRequest, DeletePluginResponse> deletePluginInvoker(DeletePluginRequest request) {
+        return new SyncInvoker<DeletePluginRequest, DeletePluginResponse>(request, ApigMeta.deletePlugin, hcClient);
+    }
+
+    /**
      * 删除流控策略
      *
      * 删除指定的流控策略，以及该流控策略与API的所有绑定关系。
@@ -871,6 +1017,74 @@ public class ApigClient {
         DeleteSpecialThrottlingConfigurationV2Request request) {
         return new SyncInvoker<DeleteSpecialThrottlingConfigurationV2Request, DeleteSpecialThrottlingConfigurationV2Response>(
             request, ApigMeta.deleteSpecialThrottlingConfigurationV2, hcClient);
+    }
+
+    /**
+     * 解除绑定插件的API
+     *
+     * 解除绑定在插件上的API
+     * - 解绑及时生效
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DetachApiFromPluginRequest 请求对象
+     * @return DetachApiFromPluginResponse
+     */
+    public DetachApiFromPluginResponse detachApiFromPlugin(DetachApiFromPluginRequest request) {
+        return hcClient.syncInvokeHttp(request, ApigMeta.detachApiFromPlugin);
+    }
+
+    /**
+     * 解除绑定插件的API
+     *
+     * 解除绑定在插件上的API
+     * - 解绑及时生效
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DetachApiFromPluginRequest 请求对象
+     * @return SyncInvoker<DetachApiFromPluginRequest, DetachApiFromPluginResponse>
+     */
+    public SyncInvoker<DetachApiFromPluginRequest, DetachApiFromPluginResponse> detachApiFromPluginInvoker(
+        DetachApiFromPluginRequest request) {
+        return new SyncInvoker<DetachApiFromPluginRequest, DetachApiFromPluginResponse>(request,
+            ApigMeta.detachApiFromPlugin, hcClient);
+    }
+
+    /**
+     * 解除绑定API的插件
+     *
+     * 解除绑定在API上的插件
+     * - 解绑及时生效
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DetachPluginFromApiRequest 请求对象
+     * @return DetachPluginFromApiResponse
+     */
+    public DetachPluginFromApiResponse detachPluginFromApi(DetachPluginFromApiRequest request) {
+        return hcClient.syncInvokeHttp(request, ApigMeta.detachPluginFromApi);
+    }
+
+    /**
+     * 解除绑定API的插件
+     *
+     * 解除绑定在API上的插件
+     * - 解绑及时生效
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DetachPluginFromApiRequest 请求对象
+     * @return SyncInvoker<DetachPluginFromApiRequest, DetachPluginFromApiResponse>
+     */
+    public SyncInvoker<DetachPluginFromApiRequest, DetachPluginFromApiResponse> detachPluginFromApiInvoker(
+        DetachPluginFromApiRequest request) {
+        return new SyncInvoker<DetachPluginFromApiRequest, DetachPluginFromApiResponse>(request,
+            ApigMeta.detachPluginFromApi, hcClient);
     }
 
     /**
@@ -999,6 +1213,80 @@ public class ApigClient {
         ImportMicroserviceRequest request) {
         return new SyncInvoker<ImportMicroserviceRequest, ImportMicroserviceResponse>(request,
             ApigMeta.importMicroservice, hcClient);
+    }
+
+    /**
+     * 查询可绑定当前API的插件
+     *
+     * 查询可绑定当前API的插件信息。
+     * - 支持分页返回
+     * - 支持插件名称模糊查询
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListApiAttachablePluginsRequest 请求对象
+     * @return ListApiAttachablePluginsResponse
+     */
+    public ListApiAttachablePluginsResponse listApiAttachablePlugins(ListApiAttachablePluginsRequest request) {
+        return hcClient.syncInvokeHttp(request, ApigMeta.listApiAttachablePlugins);
+    }
+
+    /**
+     * 查询可绑定当前API的插件
+     *
+     * 查询可绑定当前API的插件信息。
+     * - 支持分页返回
+     * - 支持插件名称模糊查询
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListApiAttachablePluginsRequest 请求对象
+     * @return SyncInvoker<ListApiAttachablePluginsRequest, ListApiAttachablePluginsResponse>
+     */
+    public SyncInvoker<ListApiAttachablePluginsRequest, ListApiAttachablePluginsResponse> listApiAttachablePluginsInvoker(
+        ListApiAttachablePluginsRequest request) {
+        return new SyncInvoker<ListApiAttachablePluginsRequest, ListApiAttachablePluginsResponse>(request,
+            ApigMeta.listApiAttachablePlugins, hcClient);
+    }
+
+    /**
+     * 查询API下绑定的插件
+     *
+     * 查询指定API下绑定的插件信息
+     * - 用于查询指定API下已经绑定的插件列表信息
+     * - 支持分页返回
+     * - 支持插件名称模糊查询
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListApiAttachedPluginsRequest 请求对象
+     * @return ListApiAttachedPluginsResponse
+     */
+    public ListApiAttachedPluginsResponse listApiAttachedPlugins(ListApiAttachedPluginsRequest request) {
+        return hcClient.syncInvokeHttp(request, ApigMeta.listApiAttachedPlugins);
+    }
+
+    /**
+     * 查询API下绑定的插件
+     *
+     * 查询指定API下绑定的插件信息
+     * - 用于查询指定API下已经绑定的插件列表信息
+     * - 支持分页返回
+     * - 支持插件名称模糊查询
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListApiAttachedPluginsRequest 请求对象
+     * @return SyncInvoker<ListApiAttachedPluginsRequest, ListApiAttachedPluginsResponse>
+     */
+    public SyncInvoker<ListApiAttachedPluginsRequest, ListApiAttachedPluginsResponse> listApiAttachedPluginsInvoker(
+        ListApiAttachedPluginsRequest request) {
+        return new SyncInvoker<ListApiAttachedPluginsRequest, ListApiAttachedPluginsResponse>(request,
+            ApigMeta.listApiAttachedPlugins, hcClient);
     }
 
     /**
@@ -1610,6 +1898,124 @@ public class ApigClient {
     }
 
     /**
+     * 查询可绑定当前插件的API
+     *
+     * 查询可绑定当前插件的API信息。
+     * - 支持分页返回
+     * - 支持API名称模糊查询
+     * - 支持已绑定其他插件的API查询返回
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListPluginAttachableApisRequest 请求对象
+     * @return ListPluginAttachableApisResponse
+     */
+    public ListPluginAttachableApisResponse listPluginAttachableApis(ListPluginAttachableApisRequest request) {
+        return hcClient.syncInvokeHttp(request, ApigMeta.listPluginAttachableApis);
+    }
+
+    /**
+     * 查询可绑定当前插件的API
+     *
+     * 查询可绑定当前插件的API信息。
+     * - 支持分页返回
+     * - 支持API名称模糊查询
+     * - 支持已绑定其他插件的API查询返回
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListPluginAttachableApisRequest 请求对象
+     * @return SyncInvoker<ListPluginAttachableApisRequest, ListPluginAttachableApisResponse>
+     */
+    public SyncInvoker<ListPluginAttachableApisRequest, ListPluginAttachableApisResponse> listPluginAttachableApisInvoker(
+        ListPluginAttachableApisRequest request) {
+        return new SyncInvoker<ListPluginAttachableApisRequest, ListPluginAttachableApisResponse>(request,
+            ApigMeta.listPluginAttachableApis, hcClient);
+    }
+
+    /**
+     * 查询插件下绑定的API
+     *
+     * 查询指定插件下绑定的API信息
+     * - 用于查询指定插件下已经绑定的API列表信息
+     * - 支持分页返回
+     * - 支持API名称模糊查询
+     * - 绑定关系列表中返回的API在对应的环境中可能已经下线
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListPluginAttachedApisRequest 请求对象
+     * @return ListPluginAttachedApisResponse
+     */
+    public ListPluginAttachedApisResponse listPluginAttachedApis(ListPluginAttachedApisRequest request) {
+        return hcClient.syncInvokeHttp(request, ApigMeta.listPluginAttachedApis);
+    }
+
+    /**
+     * 查询插件下绑定的API
+     *
+     * 查询指定插件下绑定的API信息
+     * - 用于查询指定插件下已经绑定的API列表信息
+     * - 支持分页返回
+     * - 支持API名称模糊查询
+     * - 绑定关系列表中返回的API在对应的环境中可能已经下线
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListPluginAttachedApisRequest 请求对象
+     * @return SyncInvoker<ListPluginAttachedApisRequest, ListPluginAttachedApisResponse>
+     */
+    public SyncInvoker<ListPluginAttachedApisRequest, ListPluginAttachedApisResponse> listPluginAttachedApisInvoker(
+        ListPluginAttachedApisRequest request) {
+        return new SyncInvoker<ListPluginAttachedApisRequest, ListPluginAttachedApisResponse>(request,
+            ApigMeta.listPluginAttachedApis, hcClient);
+    }
+
+    /**
+     * 查询插件列表
+     *
+     * 查询一组符合条件的API网关插件详情。
+     * - 支持分页
+     * - 支持根据插件类型查询
+     * - 支持根据插件可见范围查询
+     * - 支持根据插件编码查询
+     * - 支持根据名称模糊查询
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListPluginsRequest 请求对象
+     * @return ListPluginsResponse
+     */
+    public ListPluginsResponse listPlugins(ListPluginsRequest request) {
+        return hcClient.syncInvokeHttp(request, ApigMeta.listPlugins);
+    }
+
+    /**
+     * 查询插件列表
+     *
+     * 查询一组符合条件的API网关插件详情。
+     * - 支持分页
+     * - 支持根据插件类型查询
+     * - 支持根据插件可见范围查询
+     * - 支持根据插件编码查询
+     * - 支持根据名称模糊查询
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListPluginsRequest 请求对象
+     * @return SyncInvoker<ListPluginsRequest, ListPluginsResponse>
+     */
+    public SyncInvoker<ListPluginsRequest, ListPluginsResponse> listPluginsInvoker(ListPluginsRequest request) {
+        return new SyncInvoker<ListPluginsRequest, ListPluginsResponse>(request, ApigMeta.listPlugins, hcClient);
+    }
+
+    /**
      * 查询某个实例的租户配置列表
      *
      * 查询某个实例的租户配置列表，用户可以通过此接口查看各类型资源配置及使用情况。
@@ -2128,6 +2534,36 @@ public class ApigClient {
     }
 
     /**
+     * 查询插件详情
+     *
+     * 查询插件详情。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowPluginRequest 请求对象
+     * @return ShowPluginResponse
+     */
+    public ShowPluginResponse showPlugin(ShowPluginRequest request) {
+        return hcClient.syncInvokeHttp(request, ApigMeta.showPlugin);
+    }
+
+    /**
+     * 查询插件详情
+     *
+     * 查询插件详情。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowPluginRequest 请求对象
+     * @return SyncInvoker<ShowPluginRequest, ShowPluginResponse>
+     */
+    public SyncInvoker<ShowPluginRequest, ShowPluginResponse> showPluginInvoker(ShowPluginRequest request) {
+        return new SyncInvoker<ShowPluginRequest, ShowPluginResponse>(request, ApigMeta.showPlugin, hcClient);
+    }
+
+    /**
      * 修改自定义认证
      *
      * 修改自定义认证
@@ -2349,6 +2785,40 @@ public class ApigClient {
         UpdateInstanceV2Request request) {
         return new SyncInvoker<UpdateInstanceV2Request, UpdateInstanceV2Response>(request, ApigMeta.updateInstanceV2,
             hcClient);
+    }
+
+    /**
+     * 修改插件
+     *
+     * 修改插件信息。
+     * - 插件不允许重名
+     * - 插件不支持修改类型和可见范围
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdatePluginRequest 请求对象
+     * @return UpdatePluginResponse
+     */
+    public UpdatePluginResponse updatePlugin(UpdatePluginRequest request) {
+        return hcClient.syncInvokeHttp(request, ApigMeta.updatePlugin);
+    }
+
+    /**
+     * 修改插件
+     *
+     * 修改插件信息。
+     * - 插件不允许重名
+     * - 插件不支持修改类型和可见范围
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdatePluginRequest 请求对象
+     * @return SyncInvoker<UpdatePluginRequest, UpdatePluginResponse>
+     */
+    public SyncInvoker<UpdatePluginRequest, UpdatePluginResponse> updatePluginInvoker(UpdatePluginRequest request) {
+        return new SyncInvoker<UpdatePluginRequest, UpdatePluginResponse>(request, ApigMeta.updatePlugin, hcClient);
     }
 
     /**
@@ -4678,7 +5148,7 @@ public class ApigClient {
     /**
      * 添加或更新VPC通道后端服务器组
      *
-     * 在服务集成中创建VPC通道后端服务器组，VPC通道后端实例可以选择是否关联后端实例服务器组，以便管理后端服务器节点。
+     * 在APIG中创建VPC通道后端服务器组，VPC通道后端实例可以选择是否关联后端实例服务器组，以便管理后端服务器节点。
      * 
      * 若指定名称的后端服务器组已存在，则更新对应后端服务器组信息。若请求体中包含多个重复名称的后端服务器定义，则使用第一个定义。
      * 
@@ -4695,7 +5165,7 @@ public class ApigClient {
     /**
      * 添加或更新VPC通道后端服务器组
      *
-     * 在服务集成中创建VPC通道后端服务器组，VPC通道后端实例可以选择是否关联后端实例服务器组，以便管理后端服务器节点。
+     * 在APIG中创建VPC通道后端服务器组，VPC通道后端实例可以选择是否关联后端实例服务器组，以便管理后端服务器节点。
      * 
      * 若指定名称的后端服务器组已存在，则更新对应后端服务器组信息。若请求体中包含多个重复名称的后端服务器定义，则使用第一个定义。
      * 

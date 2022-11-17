@@ -33,16 +33,6 @@ public class GroupTreeResponse {
 
     private List<GroupTreeResponse> children = null;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "app_id")
-
-    private String appId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "permissions")
-
-    private List<String> permissions = null;
-
     public GroupTreeResponse withId(Integer id) {
         this.id = id;
         return this;
@@ -131,56 +121,6 @@ public class GroupTreeResponse {
         this.children = children;
     }
 
-    public GroupTreeResponse withAppId(String appId) {
-        this.appId = appId;
-        return this;
-    }
-
-    /**
-     * 应用id
-     * @return appId
-     */
-    public String getAppId() {
-        return appId;
-    }
-
-    public void setAppId(String appId) {
-        this.appId = appId;
-    }
-
-    public GroupTreeResponse withPermissions(List<String> permissions) {
-        this.permissions = permissions;
-        return this;
-    }
-
-    public GroupTreeResponse addPermissionsItem(String permissionsItem) {
-        if (this.permissions == null) {
-            this.permissions = new ArrayList<>();
-        }
-        this.permissions.add(permissionsItem);
-        return this;
-    }
-
-    public GroupTreeResponse withPermissions(Consumer<List<String>> permissionsSetter) {
-        if (this.permissions == null) {
-            this.permissions = new ArrayList<>();
-        }
-        permissionsSetter.accept(this.permissions);
-        return this;
-    }
-
-    /**
-     * 权限
-     * @return permissions
-     */
-    public List<String> getPermissions() {
-        return permissions;
-    }
-
-    public void setPermissions(List<String> permissions) {
-        this.permissions = permissions;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -192,14 +132,12 @@ public class GroupTreeResponse {
         GroupTreeResponse groupTreeResponse = (GroupTreeResponse) o;
         return Objects.equals(this.id, groupTreeResponse.id) && Objects.equals(this.name, groupTreeResponse.name)
             && Objects.equals(this.parentId, groupTreeResponse.parentId)
-            && Objects.equals(this.children, groupTreeResponse.children)
-            && Objects.equals(this.appId, groupTreeResponse.appId)
-            && Objects.equals(this.permissions, groupTreeResponse.permissions);
+            && Objects.equals(this.children, groupTreeResponse.children);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, parentId, children, appId, permissions);
+        return Objects.hash(id, name, parentId, children);
     }
 
     @Override
@@ -210,8 +148,6 @@ public class GroupTreeResponse {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    parentId: ").append(toIndentedString(parentId)).append("\n");
         sb.append("    children: ").append(toIndentedString(children)).append("\n");
-        sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
-        sb.append("    permissions: ").append(toIndentedString(permissions)).append("\n");
         sb.append("}");
         return sb.toString();
     }

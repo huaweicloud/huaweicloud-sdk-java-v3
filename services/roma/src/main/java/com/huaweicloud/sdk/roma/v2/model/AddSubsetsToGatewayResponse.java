@@ -17,14 +17,14 @@ public class AddSubsetsToGatewayResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private List<Device> body = null;
+    private List<AddSubsetsToGatewayResponseBody> body = null;
 
-    public AddSubsetsToGatewayResponse withBody(List<Device> body) {
+    public AddSubsetsToGatewayResponse withBody(List<AddSubsetsToGatewayResponseBody> body) {
         this.body = body;
         return this;
     }
 
-    public AddSubsetsToGatewayResponse addBodyItem(Device bodyItem) {
+    public AddSubsetsToGatewayResponse addBodyItem(AddSubsetsToGatewayResponseBody bodyItem) {
         if (this.body == null) {
             this.body = new ArrayList<>();
         }
@@ -32,7 +32,7 @@ public class AddSubsetsToGatewayResponse extends SdkResponse {
         return this;
     }
 
-    public AddSubsetsToGatewayResponse withBody(Consumer<List<Device>> bodySetter) {
+    public AddSubsetsToGatewayResponse withBody(Consumer<List<AddSubsetsToGatewayResponseBody>> bodySetter) {
         if (this.body == null) {
             this.body = new ArrayList<>();
         }
@@ -44,11 +44,11 @@ public class AddSubsetsToGatewayResponse extends SdkResponse {
      * Get body
      * @return body
      */
-    public List<Device> getBody() {
+    public List<AddSubsetsToGatewayResponseBody> getBody() {
         return body;
     }
 
-    public void setBody(List<Device> body) {
+    public void setBody(List<AddSubsetsToGatewayResponseBody> body) {
         this.body = body;
     }
 

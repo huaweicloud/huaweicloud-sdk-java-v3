@@ -102,9 +102,9 @@ public class SqlConvertReq {
         public static final TargetDbTypeEnum RDS_FOR_MYSQL = new TargetDbTypeEnum("RDS for MySQL");
 
         /**
-         * Enum GAUSSDB_FOR_OPENGAUSS_ for value: "GaussDB(for openGauss)"
+         * Enum GAUSSDB_CENTRALIZED for value: "GaussDB Centralized"
          */
-        public static final TargetDbTypeEnum GAUSSDB_FOR_OPENGAUSS_ = new TargetDbTypeEnum("GaussDB(for openGauss)");
+        public static final TargetDbTypeEnum GAUSSDB_CENTRALIZED = new TargetDbTypeEnum("GaussDB Centralized");
 
         /**
          * Enum GAUSSDB_FOR_MYSQL_ for value: "GaussDB(for MySQL)"
@@ -121,7 +121,7 @@ public class SqlConvertReq {
         private static Map<String, TargetDbTypeEnum> createStaticFields() {
             Map<String, TargetDbTypeEnum> map = new HashMap<>();
             map.put("RDS for MySQL", RDS_FOR_MYSQL);
-            map.put("GaussDB(for openGauss)", GAUSSDB_FOR_OPENGAUSS_);
+            map.put("GaussDB Centralized", GAUSSDB_CENTRALIZED);
             map.put("GaussDB(for MySQL)", GAUSSDB_FOR_MYSQL_);
             map.put("RDS for PostgreSQL", RDS_FOR_POSTGRESQL);
             return Collections.unmodifiableMap(map);
@@ -186,7 +186,7 @@ public class SqlConvertReq {
     private TargetDbTypeEnum targetDbType;
 
     /**
-     * 目标数据库版本。 （注意：该字段需要与 target_db_type 字段组合成有效的目标数据库类型与版本，当前支持以下组合： GaussDB(for openGauss)-2020； RDS for PostgreSQL-11； RDS for PostgreSQL-Enhanced Edition； RDS for MySQL-5.7; GaussDB(for MySQL) 8.0。)
+     * 目标数据库版本。 （注意：该字段需要与 target_db_type 字段组合成有效的目标数据库类型与版本，当前支持以下组合： GaussDB Centralized-2.0； RDS for PostgreSQL-11； RDS for PostgreSQL-Enhanced Edition； RDS for MySQL-5.7; GaussDB(for MySQL) 8.0。)
      */
     public static final class TargetDbVersionEnum {
 
@@ -206,9 +206,9 @@ public class SqlConvertReq {
         public static final TargetDbVersionEnum _11 = new TargetDbVersionEnum("11");
 
         /**
-         * Enum _2020 for value: "2020"
+         * Enum _2_0 for value: "2.0"
          */
-        public static final TargetDbVersionEnum _2020 = new TargetDbVersionEnum("2020");
+        public static final TargetDbVersionEnum _2_0 = new TargetDbVersionEnum("2.0");
 
         /**
          * Enum ENHANCED_EDITION for value: "Enhanced Edition"
@@ -222,7 +222,7 @@ public class SqlConvertReq {
             map.put("5.7", _5_7);
             map.put("8.0", _8_0);
             map.put("11", _11);
-            map.put("2020", _2020);
+            map.put("2.0", _2_0);
             map.put("Enhanced Edition", ENHANCED_EDITION);
             return Collections.unmodifiableMap(map);
         }
@@ -330,7 +330,7 @@ public class SqlConvertReq {
     }
 
     /**
-     * 目标数据库版本。 （注意：该字段需要与 target_db_type 字段组合成有效的目标数据库类型与版本，当前支持以下组合： GaussDB(for openGauss)-2020； RDS for PostgreSQL-11； RDS for PostgreSQL-Enhanced Edition； RDS for MySQL-5.7; GaussDB(for MySQL) 8.0。)
+     * 目标数据库版本。 （注意：该字段需要与 target_db_type 字段组合成有效的目标数据库类型与版本，当前支持以下组合： GaussDB Centralized-2.0； RDS for PostgreSQL-11； RDS for PostgreSQL-Enhanced Edition； RDS for MySQL-5.7; GaussDB(for MySQL) 8.0。)
      * @return targetDbVersion
      */
     public TargetDbVersionEnum getTargetDbVersion() {

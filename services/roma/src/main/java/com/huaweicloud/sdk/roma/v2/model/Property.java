@@ -9,6 +9,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Property
@@ -31,7 +32,7 @@ public class Property {
     private String description;
 
     /**
-     * 属性数据类型，枚举值大小写敏感；number格式为数字，范围±1.0 x 10^-28 to ±7.9228 x 10^28；sting为字符串；integer为整数；datetime为时间，格式为yyyyMMddTHHmmss；json为自定义json格式
+     * 属性数据类型，boolean枚举值大小写敏感；number格式为数字，范围±1.0 x 10^-28 to ±7.9228 x 10^28；string为字符串；integer为整数；datetime为时间，格式为yyyyMMddTHHmmss；json为自定义json格式; array为数组类型
      */
     public static final class DataTypeEnum {
 
@@ -60,6 +61,16 @@ public class Property {
          */
         public static final DataTypeEnum JSON = new DataTypeEnum("json");
 
+        /**
+         * Enum BOOLEAN for value: "boolean"
+         */
+        public static final DataTypeEnum BOOLEAN = new DataTypeEnum("boolean");
+
+        /**
+         * Enum ARRAY for value: "array"
+         */
+        public static final DataTypeEnum ARRAY = new DataTypeEnum("array");
+
         private static final Map<String, DataTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, DataTypeEnum> createStaticFields() {
@@ -69,6 +80,8 @@ public class Property {
             map.put("string", STRING);
             map.put("datetime", DATETIME);
             map.put("json", JSON);
+            map.put("boolean", BOOLEAN);
+            map.put("array", ARRAY);
             return Collections.unmodifiableMap(map);
         }
 
@@ -242,6 +255,11 @@ public class Property {
 
     private String enumList;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enum_dict")
+
+    private PropertyDataEnum enumDict;
+
     public Property withPropertyId(Integer propertyId) {
         this.propertyId = propertyId;
         return this;
@@ -301,7 +319,7 @@ public class Property {
     }
 
     /**
-     * 属性数据类型，枚举值大小写敏感；number格式为数字，范围±1.0 x 10^-28 to ±7.9228 x 10^28；sting为字符串；integer为整数；datetime为时间，格式为yyyyMMddTHHmmss；json为自定义json格式
+     * 属性数据类型，boolean枚举值大小写敏感；number格式为数字，范围±1.0 x 10^-28 to ±7.9228 x 10^28；string为字符串；integer为整数；datetime为时间，格式为yyyyMMddTHHmmss；json为自定义json格式; array为数组类型
      * @return dataType
      */
     public DataTypeEnum getDataType() {
@@ -435,6 +453,32 @@ public class Property {
         this.enumList = enumList;
     }
 
+    public Property withEnumDict(PropertyDataEnum enumDict) {
+        this.enumDict = enumDict;
+        return this;
+    }
+
+    public Property withEnumDict(Consumer<PropertyDataEnum> enumDictSetter) {
+        if (this.enumDict == null) {
+            this.enumDict = new PropertyDataEnum();
+            enumDictSetter.accept(this.enumDict);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get enumDict
+     * @return enumDict
+     */
+    public PropertyDataEnum getEnumDict() {
+        return enumDict;
+    }
+
+    public void setEnumDict(PropertyDataEnum enumDict) {
+        this.enumDict = enumDict;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -450,13 +494,24 @@ public class Property {
             && Objects.equals(this.dataType, property.dataType) && Objects.equals(this.required, property.required)
             && Objects.equals(this.min, property.min) && Objects.equals(this.max, property.max)
             && Objects.equals(this.step, property.step) && Objects.equals(this.maxLength, property.maxLength)
-            && Objects.equals(this.unit, property.unit) && Objects.equals(this.enumList, property.enumList);
+            && Objects.equals(this.unit, property.unit) && Objects.equals(this.enumList, property.enumList)
+            && Objects.equals(this.enumDict, property.enumDict);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(propertyId, propertyName, description, dataType, required, min, max, step, maxLength, unit, enumList);
+        return Objects.hash(propertyId,
+            propertyName,
+            description,
+            dataType,
+            required,
+            min,
+            max,
+            step,
+            maxLength,
+            unit,
+            enumList,
+            enumDict);
     }
 
     @Override
@@ -474,6 +529,7 @@ public class Property {
         sb.append("    maxLength: ").append(toIndentedString(maxLength)).append("\n");
         sb.append("    unit: ").append(toIndentedString(unit)).append("\n");
         sb.append("    enumList: ").append(toIndentedString(enumList)).append("\n");
+        sb.append("    enumDict: ").append(toIndentedString(enumDict)).append("\n");
         sb.append("}");
         return sb.toString();
     }

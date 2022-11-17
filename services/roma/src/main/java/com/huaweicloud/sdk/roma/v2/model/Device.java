@@ -29,6 +29,11 @@ public class Device {
     private Integer id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "device_id")
+
+    private Integer deviceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parent_device_id")
 
     private Integer parentDeviceId;
@@ -411,94 +416,6 @@ public class Device {
 
     private String version;
 
-    /**
-     * modbus和opcua设备特有,表示设备所属产品的类型 0-普通产品 1-modbus网关产品 2-opcua网关产品
-     */
-    public static final class PluginIdEnum {
-
-        /**
-         * Enum NUMBER_0 for value: 0
-         */
-        public static final PluginIdEnum NUMBER_0 = new PluginIdEnum(0);
-
-        /**
-         * Enum NUMBER_1 for value: 1
-         */
-        public static final PluginIdEnum NUMBER_1 = new PluginIdEnum(1);
-
-        /**
-         * Enum NUMBER_2 for value: 2
-         */
-        public static final PluginIdEnum NUMBER_2 = new PluginIdEnum(2);
-
-        private static final Map<Integer, PluginIdEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<Integer, PluginIdEnum> createStaticFields() {
-            Map<Integer, PluginIdEnum> map = new HashMap<>();
-            map.put(0, NUMBER_0);
-            map.put(1, NUMBER_1);
-            map.put(2, NUMBER_2);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private Integer value;
-
-        PluginIdEnum(Integer value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public Integer getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static PluginIdEnum fromValue(Integer value) {
-            if (value == null) {
-                return null;
-            }
-            PluginIdEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PluginIdEnum(value);
-            }
-            return result;
-        }
-
-        public static PluginIdEnum valueOf(Integer value) {
-            if (value == null) {
-                return null;
-            }
-            PluginIdEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof PluginIdEnum) {
-                return this.value.equals(((PluginIdEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "plugin_id")
-
-    private PluginIdEnum pluginId;
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_id")
 
@@ -554,6 +471,25 @@ public class Device {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Device withDeviceId(Integer deviceId) {
+        this.deviceId = deviceId;
+        return this;
+    }
+
+    /**
+     * 设备ID（兼容20.0）
+     * minimum: 1
+     * maximum: 99999999999999999
+     * @return deviceId
+     */
+    public Integer getDeviceId() {
+        return deviceId;
+    }
+
+    public void setDeviceId(Integer deviceId) {
+        this.deviceId = deviceId;
     }
 
     public Device withParentDeviceId(Integer parentDeviceId) {
@@ -983,7 +919,7 @@ public class Device {
     /**
      * 最后登录时间
      * minimum: 1
-     * maximum: 999999999999999999
+     * maximum: 99999999999999999
      * @return lastLoginDatetime
      */
     public Long getLastLoginDatetime() {
@@ -1074,7 +1010,7 @@ public class Device {
     /**
      * 最后登录时间
      * minimum: 1
-     * maximum: 999999999999999999
+     * maximum: 99999999999999999
      * @return lastActiveTime
      */
     public Long getLastActiveTime() {
@@ -1100,25 +1036,6 @@ public class Device {
 
     public void setVersion(String version) {
         this.version = version;
-    }
-
-    public Device withPluginId(PluginIdEnum pluginId) {
-        this.pluginId = pluginId;
-        return this;
-    }
-
-    /**
-     * modbus和opcua设备特有,表示设备所属产品的类型 0-普通产品 1-modbus网关产品 2-opcua网关产品
-     * minimum: 1
-     * maximum: 999999999999999999
-     * @return pluginId
-     */
-    public PluginIdEnum getPluginId() {
-        return pluginId;
-    }
-
-    public void setPluginId(PluginIdEnum pluginId) {
-        this.pluginId = pluginId;
     }
 
     public Device withAppId(String appId) {
@@ -1148,6 +1065,7 @@ public class Device {
         }
         Device device = (Device) o;
         return Objects.equals(this.permissions, device.permissions) && Objects.equals(this.id, device.id)
+            && Objects.equals(this.deviceId, device.deviceId)
             && Objects.equals(this.parentDeviceId, device.parentDeviceId)
             && Objects.equals(this.parentDeviceName, device.parentDeviceName)
             && Objects.equals(this.product, device.product) && Objects.equals(this.deviceName, device.deviceName)
@@ -1168,14 +1086,14 @@ public class Device {
             && Objects.equals(this.nodeType, device.nodeType) && Objects.equals(this.deviceType, device.deviceType)
             && Objects.equals(this.clientIp, device.clientIp) && Objects.equals(this.keepAlive, device.keepAlive)
             && Objects.equals(this.lastActiveTime, device.lastActiveTime)
-            && Objects.equals(this.version, device.version) && Objects.equals(this.pluginId, device.pluginId)
-            && Objects.equals(this.appId, device.appId);
+            && Objects.equals(this.version, device.version) && Objects.equals(this.appId, device.appId);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(permissions,
             id,
+            deviceId,
             parentDeviceId,
             parentDeviceName,
             product,
@@ -1204,7 +1122,6 @@ public class Device {
             keepAlive,
             lastActiveTime,
             version,
-            pluginId,
             appId);
     }
 
@@ -1214,6 +1131,7 @@ public class Device {
         sb.append("class Device {\n");
         sb.append("    permissions: ").append(toIndentedString(permissions)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    deviceId: ").append(toIndentedString(deviceId)).append("\n");
         sb.append("    parentDeviceId: ").append(toIndentedString(parentDeviceId)).append("\n");
         sb.append("    parentDeviceName: ").append(toIndentedString(parentDeviceName)).append("\n");
         sb.append("    product: ").append(toIndentedString(product)).append("\n");
@@ -1242,7 +1160,6 @@ public class Device {
         sb.append("    keepAlive: ").append(toIndentedString(keepAlive)).append("\n");
         sb.append("    lastActiveTime: ").append(toIndentedString(lastActiveTime)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
-        sb.append("    pluginId: ").append(toIndentedString(pluginId)).append("\n");
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
         sb.append("}");
         return sb.toString();

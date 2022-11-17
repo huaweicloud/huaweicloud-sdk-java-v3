@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 
+ * LineCompareResultDetails
  */
 public class LineCompareResultDetails {
 
@@ -19,7 +19,7 @@ public class LineCompareResultDetails {
     private String sourceDbName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "LineCompareDetail")
+    @JsonProperty(value = "line_compare_detail")
 
     private List<LineCompareDetail> lineCompareDetail = null;
 

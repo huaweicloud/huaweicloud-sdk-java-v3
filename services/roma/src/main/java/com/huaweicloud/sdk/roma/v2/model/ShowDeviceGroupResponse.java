@@ -283,7 +283,7 @@ public class ShowDeviceGroupResponse extends SdkResponse {
     }
 
     /**
-     * 应用名称
+     * 分组归属应用名称
      * @return appName
      */
     public String getAppName() {

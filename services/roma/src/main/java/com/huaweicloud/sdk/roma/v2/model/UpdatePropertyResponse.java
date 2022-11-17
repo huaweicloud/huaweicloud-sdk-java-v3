@@ -10,6 +10,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -32,7 +33,7 @@ public class UpdatePropertyResponse extends SdkResponse {
     private String description;
 
     /**
-     * 属性数据类型，枚举值大小写敏感；number格式为数字，范围±1.0 x 10^-28 to ±7.9228 x 10^28；sting为字符串；integer为整数；datetime为时间，格式为yyyyMMddTHHmmss；json为自定义json格式
+     * 属性数据类型，boolean枚举值大小写敏感；number格式为数字，范围±1.0 x 10^-28 to ±7.9228 x 10^28；string为字符串；integer为整数；datetime为时间，格式为yyyyMMddTHHmmss；json为自定义json格式; array为数组类型
      */
     public static final class DataTypeEnum {
 
@@ -61,6 +62,16 @@ public class UpdatePropertyResponse extends SdkResponse {
          */
         public static final DataTypeEnum JSON = new DataTypeEnum("json");
 
+        /**
+         * Enum BOOLEAN for value: "boolean"
+         */
+        public static final DataTypeEnum BOOLEAN = new DataTypeEnum("boolean");
+
+        /**
+         * Enum ARRAY for value: "array"
+         */
+        public static final DataTypeEnum ARRAY = new DataTypeEnum("array");
+
         private static final Map<String, DataTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, DataTypeEnum> createStaticFields() {
@@ -70,6 +81,8 @@ public class UpdatePropertyResponse extends SdkResponse {
             map.put("string", STRING);
             map.put("datetime", DATETIME);
             map.put("json", JSON);
+            map.put("boolean", BOOLEAN);
+            map.put("array", ARRAY);
             return Collections.unmodifiableMap(map);
         }
 
@@ -243,6 +256,16 @@ public class UpdatePropertyResponse extends SdkResponse {
 
     private String enumList;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enum_dict")
+
+    private PropertyDataEnum enumDict;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "method")
+
+    private String method;
+
     public UpdatePropertyResponse withPropertyId(Integer propertyId) {
         this.propertyId = propertyId;
         return this;
@@ -251,7 +274,7 @@ public class UpdatePropertyResponse extends SdkResponse {
     /**
      * 属性ID
      * minimum: 1
-     * maximum: 999999999999999999
+     * maximum: 99999999999999999
      * @return propertyId
      */
     public Integer getPropertyId() {
@@ -302,7 +325,7 @@ public class UpdatePropertyResponse extends SdkResponse {
     }
 
     /**
-     * 属性数据类型，枚举值大小写敏感；number格式为数字，范围±1.0 x 10^-28 to ±7.9228 x 10^28；sting为字符串；integer为整数；datetime为时间，格式为yyyyMMddTHHmmss；json为自定义json格式
+     * 属性数据类型，boolean枚举值大小写敏感；number格式为数字，范围±1.0 x 10^-28 to ±7.9228 x 10^28；string为字符串；integer为整数；datetime为时间，格式为yyyyMMddTHHmmss；json为自定义json格式; array为数组类型
      * @return dataType
      */
     public DataTypeEnum getDataType() {
@@ -436,6 +459,49 @@ public class UpdatePropertyResponse extends SdkResponse {
         this.enumList = enumList;
     }
 
+    public UpdatePropertyResponse withEnumDict(PropertyDataEnum enumDict) {
+        this.enumDict = enumDict;
+        return this;
+    }
+
+    public UpdatePropertyResponse withEnumDict(Consumer<PropertyDataEnum> enumDictSetter) {
+        if (this.enumDict == null) {
+            this.enumDict = new PropertyDataEnum();
+            enumDictSetter.accept(this.enumDict);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get enumDict
+     * @return enumDict
+     */
+    public PropertyDataEnum getEnumDict() {
+        return enumDict;
+    }
+
+    public void setEnumDict(PropertyDataEnum enumDict) {
+        this.enumDict = enumDict;
+    }
+
+    public UpdatePropertyResponse withMethod(String method) {
+        this.method = method;
+        return this;
+    }
+
+    /**
+     * 访问模式（兼容20.0，R属性可读，W属性可写，E属性可执行）
+     * @return method
+     */
+    public String getMethod() {
+        return method;
+    }
+
+    public void setMethod(String method) {
+        this.method = method;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -455,13 +521,26 @@ public class UpdatePropertyResponse extends SdkResponse {
             && Objects.equals(this.step, updatePropertyResponse.step)
             && Objects.equals(this.maxLength, updatePropertyResponse.maxLength)
             && Objects.equals(this.unit, updatePropertyResponse.unit)
-            && Objects.equals(this.enumList, updatePropertyResponse.enumList);
+            && Objects.equals(this.enumList, updatePropertyResponse.enumList)
+            && Objects.equals(this.enumDict, updatePropertyResponse.enumDict)
+            && Objects.equals(this.method, updatePropertyResponse.method);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(propertyId, propertyName, description, dataType, required, min, max, step, maxLength, unit, enumList);
+        return Objects.hash(propertyId,
+            propertyName,
+            description,
+            dataType,
+            required,
+            min,
+            max,
+            step,
+            maxLength,
+            unit,
+            enumList,
+            enumDict,
+            method);
     }
 
     @Override
@@ -479,6 +558,8 @@ public class UpdatePropertyResponse extends SdkResponse {
         sb.append("    maxLength: ").append(toIndentedString(maxLength)).append("\n");
         sb.append("    unit: ").append(toIndentedString(unit)).append("\n");
         sb.append("    enumList: ").append(toIndentedString(enumList)).append("\n");
+        sb.append("    enumDict: ").append(toIndentedString(enumDict)).append("\n");
+        sb.append("    method: ").append(toIndentedString(method)).append("\n");
         sb.append("}");
         return sb.toString();
     }

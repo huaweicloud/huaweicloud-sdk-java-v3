@@ -21,7 +21,7 @@ public class ResizeDesktopData {
     }
 
     /**
-     * 桌面ID
+     * 桌面ID。
      * @return desktopId
      */
     public String getDesktopId() {

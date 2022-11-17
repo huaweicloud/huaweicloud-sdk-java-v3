@@ -205,6 +205,11 @@ public class VpcCreate {
     private MemberTypeEnum memberType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private Integer type;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dict_code")
 
     private String dictCode;
@@ -295,6 +300,23 @@ public class VpcCreate {
 
     public void setMemberType(MemberTypeEnum memberType) {
         this.memberType = memberType;
+    }
+
+    public VpcCreate withType(Integer type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * vpc通道类型，默认为服务器类型。 - 2：服务器类型 - 3：微服务类型
+     * @return type
+     */
+    public Integer getType() {
+        return type;
+    }
+
+    public void setType(Integer type) {
+        this.type = type;
     }
 
     public VpcCreate withDictCode(String dictCode) {
@@ -443,7 +465,7 @@ public class VpcCreate {
         VpcCreate vpcCreate = (VpcCreate) o;
         return Objects.equals(this.name, vpcCreate.name) && Objects.equals(this.port, vpcCreate.port)
             && Objects.equals(this.balanceStrategy, vpcCreate.balanceStrategy)
-            && Objects.equals(this.memberType, vpcCreate.memberType)
+            && Objects.equals(this.memberType, vpcCreate.memberType) && Objects.equals(this.type, vpcCreate.type)
             && Objects.equals(this.dictCode, vpcCreate.dictCode)
             && Objects.equals(this.memberGroups, vpcCreate.memberGroups)
             && Objects.equals(this.members, vpcCreate.members)
@@ -457,6 +479,7 @@ public class VpcCreate {
             port,
             balanceStrategy,
             memberType,
+            type,
             dictCode,
             memberGroups,
             members,
@@ -472,6 +495,7 @@ public class VpcCreate {
         sb.append("    port: ").append(toIndentedString(port)).append("\n");
         sb.append("    balanceStrategy: ").append(toIndentedString(balanceStrategy)).append("\n");
         sb.append("    memberType: ").append(toIndentedString(memberType)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    dictCode: ").append(toIndentedString(dictCode)).append("\n");
         sb.append("    memberGroups: ").append(toIndentedString(memberGroups)).append("\n");
         sb.append("    members: ").append(toIndentedString(members)).append("\n");

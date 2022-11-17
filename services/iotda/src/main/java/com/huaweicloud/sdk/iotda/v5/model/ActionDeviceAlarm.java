@@ -70,7 +70,7 @@ public class ActionDeviceAlarm {
     }
 
     /**
-     * **参数说明**：告警级别。 **取值范围**： - warning：警告。 - minor：一般。 - major：严重。 - critical：致命。
+     * **参数说明**：告警级别。 **取值范围**：warning（警告）、minor（一般）、major（严重）和critical（致命）。
      * @return severity
      */
     public String getSeverity() {

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -19,6 +20,11 @@ public class ResetAuthenticationRequest {
     @JsonProperty(value = "device_id")
 
     private Integer deviceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "body")
+
+    private ResetAuthenticationRequestBody body;
 
     public ResetAuthenticationRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -56,6 +62,32 @@ public class ResetAuthenticationRequest {
         this.deviceId = deviceId;
     }
 
+    public ResetAuthenticationRequest withBody(ResetAuthenticationRequestBody body) {
+        this.body = body;
+        return this;
+    }
+
+    public ResetAuthenticationRequest withBody(Consumer<ResetAuthenticationRequestBody> bodySetter) {
+        if (this.body == null) {
+            this.body = new ResetAuthenticationRequestBody();
+            bodySetter.accept(this.body);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get body
+     * @return body
+     */
+    public ResetAuthenticationRequestBody getBody() {
+        return body;
+    }
+
+    public void setBody(ResetAuthenticationRequestBody body) {
+        this.body = body;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -66,12 +98,13 @@ public class ResetAuthenticationRequest {
         }
         ResetAuthenticationRequest resetAuthenticationRequest = (ResetAuthenticationRequest) o;
         return Objects.equals(this.instanceId, resetAuthenticationRequest.instanceId)
-            && Objects.equals(this.deviceId, resetAuthenticationRequest.deviceId);
+            && Objects.equals(this.deviceId, resetAuthenticationRequest.deviceId)
+            && Objects.equals(this.body, resetAuthenticationRequest.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, deviceId);
+        return Objects.hash(instanceId, deviceId, body);
     }
 
     @Override
@@ -80,6 +113,7 @@ public class ResetAuthenticationRequest {
         sb.append("class ResetAuthenticationRequest {\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    deviceId: ").append(toIndentedString(deviceId)).append("\n");
+        sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();
     }

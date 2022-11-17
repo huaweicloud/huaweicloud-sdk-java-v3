@@ -40,11 +40,6 @@ public class CreateRuleResponse extends SdkResponse {
     private String appId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "app_name")
-
-    private String appName;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
     private String description;
@@ -214,21 +209,6 @@ public class CreateRuleResponse extends SdkResponse {
     private DataParsingStatusEnum dataParsingStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "sql_field")
-
-    private String sqlField;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "sql_where")
-
-    private String sqlWhere;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "rule_express")
-
-    private String ruleExpress;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_user")
 
     private CreatedUser createdUser;
@@ -289,7 +269,7 @@ public class CreateRuleResponse extends SdkResponse {
     /**
      * 规则ID
      * minimum: 1
-     * maximum: 999999999999999999
+     * maximum: 99999999999999999
      * @return ruleId
      */
     public Integer getRuleId() {
@@ -332,23 +312,6 @@ public class CreateRuleResponse extends SdkResponse {
 
     public void setAppId(String appId) {
         this.appId = appId;
-    }
-
-    public CreateRuleResponse withAppName(String appName) {
-        this.appName = appName;
-        return this;
-    }
-
-    /**
-     * 应用名称
-     * @return appName
-     */
-    public String getAppName() {
-        return appName;
-    }
-
-    public void setAppName(String appName) {
-        this.appName = appName;
     }
 
     public CreateRuleResponse withDescription(String description) {
@@ -404,57 +367,6 @@ public class CreateRuleResponse extends SdkResponse {
 
     public void setDataParsingStatus(DataParsingStatusEnum dataParsingStatus) {
         this.dataParsingStatus = dataParsingStatus;
-    }
-
-    public CreateRuleResponse withSqlField(String sqlField) {
-        this.sqlField = sqlField;
-        return this;
-    }
-
-    /**
-     * SQL查询字段
-     * @return sqlField
-     */
-    public String getSqlField() {
-        return sqlField;
-    }
-
-    public void setSqlField(String sqlField) {
-        this.sqlField = sqlField;
-    }
-
-    public CreateRuleResponse withSqlWhere(String sqlWhere) {
-        this.sqlWhere = sqlWhere;
-        return this;
-    }
-
-    /**
-     * SQL查询条件
-     * @return sqlWhere
-     */
-    public String getSqlWhere() {
-        return sqlWhere;
-    }
-
-    public void setSqlWhere(String sqlWhere) {
-        this.sqlWhere = sqlWhere;
-    }
-
-    public CreateRuleResponse withRuleExpress(String ruleExpress) {
-        this.ruleExpress = ruleExpress;
-        return this;
-    }
-
-    /**
-     * 完整的规则表达式
-     * @return ruleExpress
-     */
-    public String getRuleExpress() {
-        return ruleExpress;
-    }
-
-    public void setRuleExpress(String ruleExpress) {
-        this.ruleExpress = ruleExpress;
     }
 
     public CreateRuleResponse withCreatedUser(CreatedUser createdUser) {
@@ -517,7 +429,7 @@ public class CreateRuleResponse extends SdkResponse {
     /**
      * 创建时间，timestamp(ms)，使用UTC时区
      * minimum: 1
-     * maximum: 999999999999999999
+     * maximum: 99999999999999999
      * @return createdDatetime
      */
     public Long getCreatedDatetime() {
@@ -536,7 +448,7 @@ public class CreateRuleResponse extends SdkResponse {
     /**
      * 最后修改时间，timestamp(ms)，使用UTC时区
      * minimum: 1
-     * maximum: 999999999999999999
+     * maximum: 99999999999999999
      * @return lastUpdatedDatetime
      */
     public Long getLastUpdatedDatetime() {
@@ -560,13 +472,9 @@ public class CreateRuleResponse extends SdkResponse {
             && Objects.equals(this.ruleId, createRuleResponse.ruleId)
             && Objects.equals(this.name, createRuleResponse.name)
             && Objects.equals(this.appId, createRuleResponse.appId)
-            && Objects.equals(this.appName, createRuleResponse.appName)
             && Objects.equals(this.description, createRuleResponse.description)
             && Objects.equals(this.status, createRuleResponse.status)
             && Objects.equals(this.dataParsingStatus, createRuleResponse.dataParsingStatus)
-            && Objects.equals(this.sqlField, createRuleResponse.sqlField)
-            && Objects.equals(this.sqlWhere, createRuleResponse.sqlWhere)
-            && Objects.equals(this.ruleExpress, createRuleResponse.ruleExpress)
             && Objects.equals(this.createdUser, createRuleResponse.createdUser)
             && Objects.equals(this.lastUpdatedUser, createRuleResponse.lastUpdatedUser)
             && Objects.equals(this.createdDatetime, createRuleResponse.createdDatetime)
@@ -579,13 +487,9 @@ public class CreateRuleResponse extends SdkResponse {
             ruleId,
             name,
             appId,
-            appName,
             description,
             status,
             dataParsingStatus,
-            sqlField,
-            sqlWhere,
-            ruleExpress,
             createdUser,
             lastUpdatedUser,
             createdDatetime,
@@ -600,13 +504,9 @@ public class CreateRuleResponse extends SdkResponse {
         sb.append("    ruleId: ").append(toIndentedString(ruleId)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
-        sb.append("    appName: ").append(toIndentedString(appName)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    dataParsingStatus: ").append(toIndentedString(dataParsingStatus)).append("\n");
-        sb.append("    sqlField: ").append(toIndentedString(sqlField)).append("\n");
-        sb.append("    sqlWhere: ").append(toIndentedString(sqlWhere)).append("\n");
-        sb.append("    ruleExpress: ").append(toIndentedString(ruleExpress)).append("\n");
         sb.append("    createdUser: ").append(toIndentedString(createdUser)).append("\n");
         sb.append("    lastUpdatedUser: ").append(toIndentedString(lastUpdatedUser)).append("\n");
         sb.append("    createdDatetime: ").append(toIndentedString(createdDatetime)).append("\n");

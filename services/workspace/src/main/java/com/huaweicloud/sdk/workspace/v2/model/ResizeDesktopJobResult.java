@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 变更桌面规格Job响应
+ * 变更桌面规格Job响应。
  */
 public class ResizeDesktopJobResult {
 
@@ -26,7 +26,7 @@ public class ResizeDesktopJobResult {
     }
 
     /**
-     * 桌面ID
+     * 桌面ID。
      * @return desktopId
      */
     public String getDesktopId() {
@@ -43,7 +43,7 @@ public class ResizeDesktopJobResult {
     }
 
     /**
-     * 任务ID
+     * 任务ID。
      * @return jobId
      */
     public String getJobId() {

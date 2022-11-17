@@ -5,7 +5,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -41,6 +44,11 @@ public class ShowDetailsOfMemberGroupResponse extends SdkResponse {
     @JsonProperty(value = "microservice_port")
 
     private Integer microservicePort;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "microservice_labels")
+
+    private List<MicroserviceLabel> microserviceLabels = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "member_group_id")
@@ -163,6 +171,40 @@ public class ShowDetailsOfMemberGroupResponse extends SdkResponse {
         this.microservicePort = microservicePort;
     }
 
+    public ShowDetailsOfMemberGroupResponse withMicroserviceLabels(List<MicroserviceLabel> microserviceLabels) {
+        this.microserviceLabels = microserviceLabels;
+        return this;
+    }
+
+    public ShowDetailsOfMemberGroupResponse addMicroserviceLabelsItem(MicroserviceLabel microserviceLabelsItem) {
+        if (this.microserviceLabels == null) {
+            this.microserviceLabels = new ArrayList<>();
+        }
+        this.microserviceLabels.add(microserviceLabelsItem);
+        return this;
+    }
+
+    public ShowDetailsOfMemberGroupResponse withMicroserviceLabels(
+        Consumer<List<MicroserviceLabel>> microserviceLabelsSetter) {
+        if (this.microserviceLabels == null) {
+            this.microserviceLabels = new ArrayList<>();
+        }
+        microserviceLabelsSetter.accept(this.microserviceLabels);
+        return this;
+    }
+
+    /**
+     * VPC通道后端服务器组的标签，仅VPC通道类型为微服务时支持。
+     * @return microserviceLabels
+     */
+    public List<MicroserviceLabel> getMicroserviceLabels() {
+        return microserviceLabels;
+    }
+
+    public void setMicroserviceLabels(List<MicroserviceLabel> microserviceLabels) {
+        this.microserviceLabels = microserviceLabels;
+    }
+
     public ShowDetailsOfMemberGroupResponse withMemberGroupId(String memberGroupId) {
         this.memberGroupId = memberGroupId;
         return this;
@@ -229,6 +271,7 @@ public class ShowDetailsOfMemberGroupResponse extends SdkResponse {
             && Objects.equals(this.dictCode, showDetailsOfMemberGroupResponse.dictCode)
             && Objects.equals(this.microserviceVersion, showDetailsOfMemberGroupResponse.microserviceVersion)
             && Objects.equals(this.microservicePort, showDetailsOfMemberGroupResponse.microservicePort)
+            && Objects.equals(this.microserviceLabels, showDetailsOfMemberGroupResponse.microserviceLabels)
             && Objects.equals(this.memberGroupId, showDetailsOfMemberGroupResponse.memberGroupId)
             && Objects.equals(this.createTime, showDetailsOfMemberGroupResponse.createTime)
             && Objects.equals(this.updateTime, showDetailsOfMemberGroupResponse.updateTime);
@@ -242,6 +285,7 @@ public class ShowDetailsOfMemberGroupResponse extends SdkResponse {
             dictCode,
             microserviceVersion,
             microservicePort,
+            microserviceLabels,
             memberGroupId,
             createTime,
             updateTime);
@@ -257,6 +301,7 @@ public class ShowDetailsOfMemberGroupResponse extends SdkResponse {
         sb.append("    dictCode: ").append(toIndentedString(dictCode)).append("\n");
         sb.append("    microserviceVersion: ").append(toIndentedString(microserviceVersion)).append("\n");
         sb.append("    microservicePort: ").append(toIndentedString(microservicePort)).append("\n");
+        sb.append("    microserviceLabels: ").append(toIndentedString(microserviceLabels)).append("\n");
         sb.append("    memberGroupId: ").append(toIndentedString(memberGroupId)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");

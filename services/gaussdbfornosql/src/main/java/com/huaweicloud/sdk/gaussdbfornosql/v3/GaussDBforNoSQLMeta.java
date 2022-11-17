@@ -1011,6 +1011,31 @@ public class GaussDBforNoSQLMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowInstanceRoleRequest, ShowInstanceRoleResponse> showInstanceRole =
+        genForshowInstanceRole();
+
+    private static HttpRequestDef<ShowInstanceRoleRequest, ShowInstanceRoleResponse> genForshowInstanceRole() {
+        // basic
+        HttpRequestDef.Builder<ShowInstanceRoleRequest, ShowInstanceRoleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowInstanceRoleRequest.class, ShowInstanceRoleResponse.class)
+                .withName("ShowInstanceRole")
+                .withUri("/v3/{project_id}/instances/{instance_id}/instance-role")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInstanceRoleRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowQuotasRequest, ShowQuotasResponse> showQuotas = genForshowQuotas();
 
     private static HttpRequestDef<ShowQuotasRequest, ShowQuotasResponse> genForshowQuotas() {
@@ -1092,6 +1117,56 @@ public class GaussDBforNoSQLMeta {
             TypeCasts.uncheckedConversion(ShrinkInstanceNodeRequestBody.class),
             f -> f.withMarshaller(ShrinkInstanceNodeRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SwitchToMasterRequest, SwitchToMasterResponse> switchToMaster =
+        genForswitchToMaster();
+
+    private static HttpRequestDef<SwitchToMasterRequest, SwitchToMasterResponse> genForswitchToMaster() {
+        // basic
+        HttpRequestDef.Builder<SwitchToMasterRequest, SwitchToMasterResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, SwitchToMasterRequest.class, SwitchToMasterResponse.class)
+                .withName("SwitchToMaster")
+                .withUri("/v3/{project_id}/instances/{instance_id}/switchover-master")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SwitchToMasterRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SwitchToSlaveRequest, SwitchToSlaveResponse> switchToSlave =
+        genForswitchToSlave();
+
+    private static HttpRequestDef<SwitchToSlaveRequest, SwitchToSlaveResponse> genForswitchToSlave() {
+        // basic
+        HttpRequestDef.Builder<SwitchToSlaveRequest, SwitchToSlaveResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, SwitchToSlaveRequest.class, SwitchToSlaveResponse.class)
+                .withName("SwitchToSlave")
+                .withUri("/v3/{project_id}/instances/{instance_id}/switchover-slave")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SwitchToSlaveRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
             }));
 
         // response

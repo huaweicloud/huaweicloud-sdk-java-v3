@@ -10,6 +10,112 @@ import com.huaweicloud.sdk.core.http.LocationType;
 @SuppressWarnings("unchecked")
 public class CloudIDEMeta {
 
+    public static final HttpRequestDef<AddExtensionEvaluationRequest, AddExtensionEvaluationResponse> addExtensionEvaluation =
+        genForaddExtensionEvaluation();
+
+    private static HttpRequestDef<AddExtensionEvaluationRequest, AddExtensionEvaluationResponse> genForaddExtensionEvaluation() {
+        // basic
+        HttpRequestDef.Builder<AddExtensionEvaluationRequest, AddExtensionEvaluationResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, AddExtensionEvaluationRequest.class, AddExtensionEvaluationResponse.class)
+            .withName("AddExtensionEvaluation")
+            .withUri("/v1/marketplace/extension/evaluation")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Evaluation>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Evaluation.class),
+            f -> f.withMarshaller(AddExtensionEvaluationRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AddExtensionEvaluationReplyRequest, AddExtensionEvaluationReplyResponse> addExtensionEvaluationReply =
+        genForaddExtensionEvaluationReply();
+
+    private static HttpRequestDef<AddExtensionEvaluationReplyRequest, AddExtensionEvaluationReplyResponse> genForaddExtensionEvaluationReply() {
+        // basic
+        HttpRequestDef.Builder<AddExtensionEvaluationReplyRequest, AddExtensionEvaluationReplyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    AddExtensionEvaluationReplyRequest.class,
+                    AddExtensionEvaluationReplyResponse.class)
+                .withName("AddExtensionEvaluationReply")
+                .withUri("/v1/marketplace/extension/evaluation/reply")
+                .withContentType("application/json");
+
+        // requests
+        builder.<EvaluationReply>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(EvaluationReply.class),
+            f -> f.withMarshaller(AddExtensionEvaluationReplyRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AddExtensionStarRequest, AddExtensionStarResponse> addExtensionStar =
+        genForaddExtensionStar();
+
+    private static HttpRequestDef<AddExtensionStarRequest, AddExtensionStarResponse> genForaddExtensionStar() {
+        // basic
+        HttpRequestDef.Builder<AddExtensionStarRequest, AddExtensionStarResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AddExtensionStarRequest.class, AddExtensionStarResponse.class)
+                .withName("AddExtensionStar")
+                .withUri("/v1/marketplace/star")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ExtensionStar>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ExtensionStar.class),
+            f -> f.withMarshaller(AddExtensionStarRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CheckMaliciousExtensionEvaluationRequest, CheckMaliciousExtensionEvaluationResponse> checkMaliciousExtensionEvaluation =
+        genForcheckMaliciousExtensionEvaluation();
+
+    private static HttpRequestDef<CheckMaliciousExtensionEvaluationRequest, CheckMaliciousExtensionEvaluationResponse> genForcheckMaliciousExtensionEvaluation() {
+        // basic
+        HttpRequestDef.Builder<CheckMaliciousExtensionEvaluationRequest, CheckMaliciousExtensionEvaluationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CheckMaliciousExtensionEvaluationRequest.class,
+                    CheckMaliciousExtensionEvaluationResponse.class)
+                .withName("CheckMaliciousExtensionEvaluation")
+                .withUri("/v1/marketplace/extension/evaluation/accusation")
+                .withContentType("application/json");
+
+        // requests
+        builder.<EvaluationAccusation>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(EvaluationAccusation.class),
+            f -> f.withMarshaller(CheckMaliciousExtensionEvaluationRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateExtensionAuthorizationRequest, CreateExtensionAuthorizationResponse> createExtensionAuthorization =
         genForcreateExtensionAuthorization();
 
@@ -38,6 +144,56 @@ public class CloudIDEMeta {
             TypeCasts.uncheckedConversion(ExtensionAuthorization.class),
             f -> f.withMarshaller(CreateExtensionAuthorizationRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteEvaluationRequest, DeleteEvaluationResponse> deleteEvaluation =
+        genFordeleteEvaluation();
+
+    private static HttpRequestDef<DeleteEvaluationRequest, DeleteEvaluationResponse> genFordeleteEvaluation() {
+        // basic
+        HttpRequestDef.Builder<DeleteEvaluationRequest, DeleteEvaluationResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteEvaluationRequest.class, DeleteEvaluationResponse.class)
+                .withName("DeleteEvaluation")
+                .withUri("/v1/marketplace/evaluation/{evaluation_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Long>withRequestField("evaluation_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(DeleteEvaluationRequest::getEvaluationId, (req, v) -> {
+                req.setEvaluationId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteEvaluationReplyRequest, DeleteEvaluationReplyResponse> deleteEvaluationReply =
+        genFordeleteEvaluationReply();
+
+    private static HttpRequestDef<DeleteEvaluationReplyRequest, DeleteEvaluationReplyResponse> genFordeleteEvaluationReply() {
+        // basic
+        HttpRequestDef.Builder<DeleteEvaluationReplyRequest, DeleteEvaluationReplyResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteEvaluationReplyRequest.class, DeleteEvaluationReplyResponse.class)
+            .withName("DeleteEvaluationReply")
+            .withUri("/v1/marketplace/evaluation/reply/{reply_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Long>withRequestField("reply_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(DeleteEvaluationReplyRequest::getReplyId, (req, v) -> {
+                req.setReplyId(v);
             }));
 
         // response

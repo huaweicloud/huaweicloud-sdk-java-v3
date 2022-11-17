@@ -45,6 +45,11 @@ public class FlavorView {
 
     private String label;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "custom")
+
+    private Boolean custom;
+
     public FlavorView withFlavorId(FlavorId flavorId) {
         this.flavorId = flavorId;
         return this;
@@ -164,6 +169,23 @@ public class FlavorView {
         this.label = label;
     }
 
+    public FlavorView withCustom(Boolean custom) {
+        this.custom = custom;
+        return this;
+    }
+
+    /**
+     * 是否是自定义资源规格。
+     * @return custom
+     */
+    public Boolean getCustom() {
+        return custom;
+    }
+
+    public void setCustom(Boolean custom) {
+        this.custom = custom;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -178,12 +200,12 @@ public class FlavorView {
             && Objects.equals(this.numCpu, flavorView.numCpu) && Objects.equals(this.numCpuInit, flavorView.numCpuInit)
             && Objects.equals(this.memorySize, flavorView.memorySize)
             && Objects.equals(this.memorySizeInit, flavorView.memorySizeInit)
-            && Objects.equals(this.label, flavorView.label);
+            && Objects.equals(this.label, flavorView.label) && Objects.equals(this.custom, flavorView.custom);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(flavorId, storageSize, numCpu, numCpuInit, memorySize, memorySizeInit, label);
+        return Objects.hash(flavorId, storageSize, numCpu, numCpuInit, memorySize, memorySizeInit, label, custom);
     }
 
     @Override
@@ -197,6 +219,7 @@ public class FlavorView {
         sb.append("    memorySize: ").append(toIndentedString(memorySize)).append("\n");
         sb.append("    memorySizeInit: ").append(toIndentedString(memorySizeInit)).append("\n");
         sb.append("    label: ").append(toIndentedString(label)).append("\n");
+        sb.append("    custom: ").append(toIndentedString(custom)).append("\n");
         sb.append("}");
         return sb.toString();
     }

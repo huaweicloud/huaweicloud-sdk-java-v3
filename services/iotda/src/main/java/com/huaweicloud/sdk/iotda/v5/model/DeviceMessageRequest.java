@@ -51,6 +51,11 @@ public class DeviceMessageRequest {
 
     private String topicFullName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ttl")
+
+    private Integer ttl;
+
     public DeviceMessageRequest withMessageId(String messageId) {
         this.messageId = messageId;
         return this;
@@ -196,6 +201,25 @@ public class DeviceMessageRequest {
         this.topicFullName = topicFullName;
     }
 
+    public DeviceMessageRequest withTtl(Integer ttl) {
+        this.ttl = ttl;
+        return this;
+    }
+
+    /**
+     * **参数说明**：下发消息在平台缓存的老化时间，时间单位是分钟，默认值1440；ttl参数数值必须是5的倍数，即以5分钟为粒度；指定为0时表示不缓存消息，最大缓存时间1440分钟，即缓存一天
+     * minimum: 0
+     * maximum: 1440
+     * @return ttl
+     */
+    public Integer getTtl() {
+        return ttl;
+    }
+
+    public void setTtl(Integer ttl) {
+        this.ttl = ttl;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -212,12 +236,13 @@ public class DeviceMessageRequest {
             && Objects.equals(this.encoding, deviceMessageRequest.encoding)
             && Objects.equals(this.payloadFormat, deviceMessageRequest.payloadFormat)
             && Objects.equals(this.topic, deviceMessageRequest.topic)
-            && Objects.equals(this.topicFullName, deviceMessageRequest.topicFullName);
+            && Objects.equals(this.topicFullName, deviceMessageRequest.topicFullName)
+            && Objects.equals(this.ttl, deviceMessageRequest.ttl);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(messageId, name, message, properties, encoding, payloadFormat, topic, topicFullName);
+        return Objects.hash(messageId, name, message, properties, encoding, payloadFormat, topic, topicFullName, ttl);
     }
 
     @Override
@@ -232,6 +257,7 @@ public class DeviceMessageRequest {
         sb.append("    payloadFormat: ").append(toIndentedString(payloadFormat)).append("\n");
         sb.append("    topic: ").append(toIndentedString(topic)).append("\n");
         sb.append("    topicFullName: ").append(toIndentedString(topicFullName)).append("\n");
+        sb.append("    ttl: ").append(toIndentedString(ttl)).append("\n");
         sb.append("}");
         return sb.toString();
     }

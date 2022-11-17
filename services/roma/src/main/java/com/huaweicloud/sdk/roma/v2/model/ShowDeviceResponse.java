@@ -1,16 +1,11 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -28,6 +23,11 @@ public class ShowDeviceResponse extends SdkResponse {
     @JsonProperty(value = "id")
 
     private Integer id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "device_id")
+
+    private Integer deviceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parent_device_id")
@@ -69,175 +69,15 @@ public class ShowDeviceResponse extends SdkResponse {
 
     private String appName;
 
-    /**
-     * 设备状态 0-启用 1-禁用
-     */
-    public static final class StatusEnum {
-
-        /**
-         * Enum NUMBER_0 for value: 0
-         */
-        public static final StatusEnum NUMBER_0 = new StatusEnum(0);
-
-        /**
-         * Enum NUMBER_1 for value: 1
-         */
-        public static final StatusEnum NUMBER_1 = new StatusEnum(1);
-
-        private static final Map<Integer, StatusEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<Integer, StatusEnum> createStaticFields() {
-            Map<Integer, StatusEnum> map = new HashMap<>();
-            map.put(0, NUMBER_0);
-            map.put(1, NUMBER_1);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private Integer value;
-
-        StatusEnum(Integer value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public Integer getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static StatusEnum fromValue(Integer value) {
-            if (value == null) {
-                return null;
-            }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
-        }
-
-        public static StatusEnum valueOf(Integer value) {
-            if (value == null) {
-                return null;
-            }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof StatusEnum) {
-                return this.value.equals(((StatusEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    private StatusEnum status;
-
-    /**
-     * 是否在线 0-未连接 1-在线 2-离线
-     */
-    public static final class OnlineStatusEnum {
-
-        /**
-         * Enum NUMBER_0 for value: 0
-         */
-        public static final OnlineStatusEnum NUMBER_0 = new OnlineStatusEnum(0);
-
-        /**
-         * Enum NUMBER_1 for value: 1
-         */
-        public static final OnlineStatusEnum NUMBER_1 = new OnlineStatusEnum(1);
-
-        /**
-         * Enum NUMBER_2 for value: 2
-         */
-        public static final OnlineStatusEnum NUMBER_2 = new OnlineStatusEnum(2);
-
-        private static final Map<Integer, OnlineStatusEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<Integer, OnlineStatusEnum> createStaticFields() {
-            Map<Integer, OnlineStatusEnum> map = new HashMap<>();
-            map.put(0, NUMBER_0);
-            map.put(1, NUMBER_1);
-            map.put(2, NUMBER_2);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private Integer value;
-
-        OnlineStatusEnum(Integer value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public Integer getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static OnlineStatusEnum fromValue(Integer value) {
-            if (value == null) {
-                return null;
-            }
-            OnlineStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OnlineStatusEnum(value);
-            }
-            return result;
-        }
-
-        public static OnlineStatusEnum valueOf(Integer value) {
-            if (value == null) {
-                return null;
-            }
-            OnlineStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof OnlineStatusEnum) {
-                return this.value.equals(((OnlineStatusEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
+    private Integer status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "online_status")
 
-    private OnlineStatusEnum onlineStatus;
+    private Integer onlineStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
@@ -304,93 +144,10 @@ public class ShowDeviceResponse extends SdkResponse {
 
     private Integer nodeType;
 
-    /**
-     * 设备类型<br>0-普通设备（无子设备也无父设备）<br>1-网关设备(可挂载子设备)<br>2-子设备(归属于某个网关设备)
-     */
-    public static final class DeviceTypeEnum {
-
-        /**
-         * Enum NUMBER_0 for value: 0
-         */
-        public static final DeviceTypeEnum NUMBER_0 = new DeviceTypeEnum(0);
-
-        /**
-         * Enum NUMBER_1 for value: 1
-         */
-        public static final DeviceTypeEnum NUMBER_1 = new DeviceTypeEnum(1);
-
-        /**
-         * Enum NUMBER_2 for value: 2
-         */
-        public static final DeviceTypeEnum NUMBER_2 = new DeviceTypeEnum(2);
-
-        private static final Map<Integer, DeviceTypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<Integer, DeviceTypeEnum> createStaticFields() {
-            Map<Integer, DeviceTypeEnum> map = new HashMap<>();
-            map.put(0, NUMBER_0);
-            map.put(1, NUMBER_1);
-            map.put(2, NUMBER_2);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private Integer value;
-
-        DeviceTypeEnum(Integer value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public Integer getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static DeviceTypeEnum fromValue(Integer value) {
-            if (value == null) {
-                return null;
-            }
-            DeviceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DeviceTypeEnum(value);
-            }
-            return result;
-        }
-
-        public static DeviceTypeEnum valueOf(Integer value) {
-            if (value == null) {
-                return null;
-            }
-            DeviceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof DeviceTypeEnum) {
-                return this.value.equals(((DeviceTypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "device_type")
 
-    private DeviceTypeEnum deviceType;
+    private Integer deviceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "client_ip")
@@ -412,98 +169,15 @@ public class ShowDeviceResponse extends SdkResponse {
 
     private String version;
 
-    /**
-     * modbus和opcua设备特有,表示设备所属产品的类型 0-普通产品 1-modbus网关产品 2-opcua网关产品
-     */
-    public static final class PluginIdEnum {
-
-        /**
-         * Enum NUMBER_0 for value: 0
-         */
-        public static final PluginIdEnum NUMBER_0 = new PluginIdEnum(0);
-
-        /**
-         * Enum NUMBER_1 for value: 1
-         */
-        public static final PluginIdEnum NUMBER_1 = new PluginIdEnum(1);
-
-        /**
-         * Enum NUMBER_2 for value: 2
-         */
-        public static final PluginIdEnum NUMBER_2 = new PluginIdEnum(2);
-
-        private static final Map<Integer, PluginIdEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<Integer, PluginIdEnum> createStaticFields() {
-            Map<Integer, PluginIdEnum> map = new HashMap<>();
-            map.put(0, NUMBER_0);
-            map.put(1, NUMBER_1);
-            map.put(2, NUMBER_2);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private Integer value;
-
-        PluginIdEnum(Integer value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public Integer getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static PluginIdEnum fromValue(Integer value) {
-            if (value == null) {
-                return null;
-            }
-            PluginIdEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PluginIdEnum(value);
-            }
-            return result;
-        }
-
-        public static PluginIdEnum valueOf(Integer value) {
-            if (value == null) {
-                return null;
-            }
-            PluginIdEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof PluginIdEnum) {
-                return this.value.equals(((PluginIdEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "plugin_id")
-
-    private PluginIdEnum pluginId;
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_id")
 
     private String appId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "plugin_id")
+
+    private Integer pluginId;
 
     public ShowDeviceResponse withPermissions(List<String> permissions) {
         this.permissions = permissions;
@@ -546,7 +220,7 @@ public class ShowDeviceResponse extends SdkResponse {
     /**
      * 设备ID
      * minimum: 1
-     * maximum: 999999999999999999
+     * maximum: 99999999999999999
      * @return id
      */
     public Integer getId() {
@@ -557,6 +231,25 @@ public class ShowDeviceResponse extends SdkResponse {
         this.id = id;
     }
 
+    public ShowDeviceResponse withDeviceId(Integer deviceId) {
+        this.deviceId = deviceId;
+        return this;
+    }
+
+    /**
+     * 设备ID（兼容20.0）
+     * minimum: 1
+     * maximum: 99999999999999999
+     * @return deviceId
+     */
+    public Integer getDeviceId() {
+        return deviceId;
+    }
+
+    public void setDeviceId(Integer deviceId) {
+        this.deviceId = deviceId;
+    }
+
     public ShowDeviceResponse withParentDeviceId(Integer parentDeviceId) {
         this.parentDeviceId = parentDeviceId;
         return this;
@@ -565,7 +258,7 @@ public class ShowDeviceResponse extends SdkResponse {
     /**
      * 父设备ID
      * minimum: 1
-     * maximum: 999999999999999999
+     * maximum: 99999999999999999
      * @return parentDeviceId
      */
     public Integer getParentDeviceId() {
@@ -704,7 +397,7 @@ public class ShowDeviceResponse extends SdkResponse {
         this.appName = appName;
     }
 
-    public ShowDeviceResponse withStatus(StatusEnum status) {
+    public ShowDeviceResponse withStatus(Integer status) {
         this.status = status;
         return this;
     }
@@ -715,15 +408,15 @@ public class ShowDeviceResponse extends SdkResponse {
      * maximum: 10
      * @return status
      */
-    public StatusEnum getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(StatusEnum status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 
-    public ShowDeviceResponse withOnlineStatus(OnlineStatusEnum onlineStatus) {
+    public ShowDeviceResponse withOnlineStatus(Integer onlineStatus) {
         this.onlineStatus = onlineStatus;
         return this;
     }
@@ -734,11 +427,11 @@ public class ShowDeviceResponse extends SdkResponse {
      * maximum: 10
      * @return onlineStatus
      */
-    public OnlineStatusEnum getOnlineStatus() {
+    public Integer getOnlineStatus() {
         return onlineStatus;
     }
 
-    public void setOnlineStatus(OnlineStatusEnum onlineStatus) {
+    public void setOnlineStatus(Integer onlineStatus) {
         this.onlineStatus = onlineStatus;
     }
 
@@ -878,7 +571,7 @@ public class ShowDeviceResponse extends SdkResponse {
     /**
      * 创建时间，timestamp(ms)，使用UTC时区
      * minimum: 1
-     * maximum: 999999999999999999
+     * maximum: 99999999999999999
      * @return createdDatetime
      */
     public Long getCreatedDatetime() {
@@ -897,7 +590,7 @@ public class ShowDeviceResponse extends SdkResponse {
     /**
      * 最后修改时间，timestamp(ms)，使用UTC时区
      * minimum: 1
-     * maximum: 999999999999999999
+     * maximum: 99999999999999999
      * @return lastUpdatedDatetime
      */
     public Long getLastUpdatedDatetime() {
@@ -984,7 +677,7 @@ public class ShowDeviceResponse extends SdkResponse {
     /**
      * 最后登录时间
      * minimum: 1
-     * maximum: 999999999999999999
+     * maximum: 99999999999999999
      * @return lastLoginDatetime
      */
     public Long getLastLoginDatetime() {
@@ -1003,7 +696,7 @@ public class ShowDeviceResponse extends SdkResponse {
     /**
      * 节点类型 0-直连 1-网关 2-子设备
      * minimum: 1
-     * maximum: 999999999999999999
+     * maximum: 99999999999999999
      * @return nodeType
      */
     public Integer getNodeType() {
@@ -1014,7 +707,7 @@ public class ShowDeviceResponse extends SdkResponse {
         this.nodeType = nodeType;
     }
 
-    public ShowDeviceResponse withDeviceType(DeviceTypeEnum deviceType) {
+    public ShowDeviceResponse withDeviceType(Integer deviceType) {
         this.deviceType = deviceType;
         return this;
     }
@@ -1025,11 +718,11 @@ public class ShowDeviceResponse extends SdkResponse {
      * maximum: 10
      * @return deviceType
      */
-    public DeviceTypeEnum getDeviceType() {
+    public Integer getDeviceType() {
         return deviceType;
     }
 
-    public void setDeviceType(DeviceTypeEnum deviceType) {
+    public void setDeviceType(Integer deviceType) {
         this.deviceType = deviceType;
     }
 
@@ -1075,7 +768,7 @@ public class ShowDeviceResponse extends SdkResponse {
     /**
      * 最后登录时间
      * minimum: 1
-     * maximum: 999999999999999999
+     * maximum: 99999999999999999
      * @return lastActiveTime
      */
     public Long getLastActiveTime() {
@@ -1103,25 +796,6 @@ public class ShowDeviceResponse extends SdkResponse {
         this.version = version;
     }
 
-    public ShowDeviceResponse withPluginId(PluginIdEnum pluginId) {
-        this.pluginId = pluginId;
-        return this;
-    }
-
-    /**
-     * modbus和opcua设备特有,表示设备所属产品的类型 0-普通产品 1-modbus网关产品 2-opcua网关产品
-     * minimum: 1
-     * maximum: 999999999999999999
-     * @return pluginId
-     */
-    public PluginIdEnum getPluginId() {
-        return pluginId;
-    }
-
-    public void setPluginId(PluginIdEnum pluginId) {
-        this.pluginId = pluginId;
-    }
-
     public ShowDeviceResponse withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -1139,6 +813,25 @@ public class ShowDeviceResponse extends SdkResponse {
         this.appId = appId;
     }
 
+    public ShowDeviceResponse withPluginId(Integer pluginId) {
+        this.pluginId = pluginId;
+        return this;
+    }
+
+    /**
+     * modbus和opcua设备特有，表示插件Id 1-modbus插件 2-opcua插件
+     * minimum: 1
+     * maximum: 2
+     * @return pluginId
+     */
+    public Integer getPluginId() {
+        return pluginId;
+    }
+
+    public void setPluginId(Integer pluginId) {
+        this.pluginId = pluginId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -1150,6 +843,7 @@ public class ShowDeviceResponse extends SdkResponse {
         ShowDeviceResponse showDeviceResponse = (ShowDeviceResponse) o;
         return Objects.equals(this.permissions, showDeviceResponse.permissions)
             && Objects.equals(this.id, showDeviceResponse.id)
+            && Objects.equals(this.deviceId, showDeviceResponse.deviceId)
             && Objects.equals(this.parentDeviceId, showDeviceResponse.parentDeviceId)
             && Objects.equals(this.parentDeviceName, showDeviceResponse.parentDeviceName)
             && Objects.equals(this.product, showDeviceResponse.product)
@@ -1178,14 +872,15 @@ public class ShowDeviceResponse extends SdkResponse {
             && Objects.equals(this.keepAlive, showDeviceResponse.keepAlive)
             && Objects.equals(this.lastActiveTime, showDeviceResponse.lastActiveTime)
             && Objects.equals(this.version, showDeviceResponse.version)
-            && Objects.equals(this.pluginId, showDeviceResponse.pluginId)
-            && Objects.equals(this.appId, showDeviceResponse.appId);
+            && Objects.equals(this.appId, showDeviceResponse.appId)
+            && Objects.equals(this.pluginId, showDeviceResponse.pluginId);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(permissions,
             id,
+            deviceId,
             parentDeviceId,
             parentDeviceName,
             product,
@@ -1214,8 +909,8 @@ public class ShowDeviceResponse extends SdkResponse {
             keepAlive,
             lastActiveTime,
             version,
-            pluginId,
-            appId);
+            appId,
+            pluginId);
     }
 
     @Override
@@ -1224,6 +919,7 @@ public class ShowDeviceResponse extends SdkResponse {
         sb.append("class ShowDeviceResponse {\n");
         sb.append("    permissions: ").append(toIndentedString(permissions)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    deviceId: ").append(toIndentedString(deviceId)).append("\n");
         sb.append("    parentDeviceId: ").append(toIndentedString(parentDeviceId)).append("\n");
         sb.append("    parentDeviceName: ").append(toIndentedString(parentDeviceName)).append("\n");
         sb.append("    product: ").append(toIndentedString(product)).append("\n");
@@ -1252,8 +948,8 @@ public class ShowDeviceResponse extends SdkResponse {
         sb.append("    keepAlive: ").append(toIndentedString(keepAlive)).append("\n");
         sb.append("    lastActiveTime: ").append(toIndentedString(lastActiveTime)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
-        sb.append("    pluginId: ").append(toIndentedString(pluginId)).append("\n");
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
+        sb.append("    pluginId: ").append(toIndentedString(pluginId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

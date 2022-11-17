@@ -305,7 +305,7 @@ public class IoTDAAsyncClient {
     /**
      * 下发异步设备命令
      *
-     * 设备的产品模型中定义了物联网平台可向设备下发的命令，应用服务器可调用此接口向指定设备下发异步命令，以实现对设备的控制。平台负责将命令发送给设备，并将设备执行命令结果异步通知应用服务器。 命令执行结果支持灵活的数据流转，应用服务器通过调用物联网平台的创建规则触发条件（Resource:device.command.status，Event:update）、创建规则动作并激活规则后，当命令状态变更时，物联网平台会根据规则将结果发送到规则指定的服务器，如用户自定义的HTTP服务器，AMQP服务器，以及华为云的其他储存服务器等, 详情参考[设备命令状态变更通知](https://support.huaweicloud.com/api-iothub/iot_06_v5_01212.html)。
+     * 设备的产品模型中定义了物联网平台可向设备下发的命令，应用服务器可调用此接口向指定设备下发异步命令，以实现对设备的控制。平台负责将命令发送给设备，并将设备执行命令结果异步通知应用服务器。 命令执行结果支持灵活的数据流转，应用服务器通过调用物联网平台的创建规则触发条件（Resource:device.command.status，Event:update）、创建规则动作并激活规则后，当命令状态变更时，物联网平台会根据规则将结果发送到规则指定的服务器，如用户自定义的HTTP服务器，AMQP服务器，以及华为云的其他储存服务器等, 详情参考[[设备命令状态变更通知](https://support.huaweicloud.com/api-iothub/iot_06_v5_01212.html)](tag:hws)[[设备命令状态变更通知](https://support.huaweicloud.com/intl/zh-cn/api-iothub/iot_06_v5_01212.html)](tag:hws_hk)。
      * 注意：此接口适用于NB设备异步命令下发，暂不支持其他协议类型设备命令下发。
      * 
      * 详细说明请参考华为云API Explorer。
@@ -321,7 +321,7 @@ public class IoTDAAsyncClient {
     /**
      * 下发异步设备命令
      *
-     * 设备的产品模型中定义了物联网平台可向设备下发的命令，应用服务器可调用此接口向指定设备下发异步命令，以实现对设备的控制。平台负责将命令发送给设备，并将设备执行命令结果异步通知应用服务器。 命令执行结果支持灵活的数据流转，应用服务器通过调用物联网平台的创建规则触发条件（Resource:device.command.status，Event:update）、创建规则动作并激活规则后，当命令状态变更时，物联网平台会根据规则将结果发送到规则指定的服务器，如用户自定义的HTTP服务器，AMQP服务器，以及华为云的其他储存服务器等, 详情参考[设备命令状态变更通知](https://support.huaweicloud.com/api-iothub/iot_06_v5_01212.html)。
+     * 设备的产品模型中定义了物联网平台可向设备下发的命令，应用服务器可调用此接口向指定设备下发异步命令，以实现对设备的控制。平台负责将命令发送给设备，并将设备执行命令结果异步通知应用服务器。 命令执行结果支持灵活的数据流转，应用服务器通过调用物联网平台的创建规则触发条件（Resource:device.command.status，Event:update）、创建规则动作并激活规则后，当命令状态变更时，物联网平台会根据规则将结果发送到规则指定的服务器，如用户自定义的HTTP服务器，AMQP服务器，以及华为云的其他储存服务器等, 详情参考[[设备命令状态变更通知](https://support.huaweicloud.com/api-iothub/iot_06_v5_01212.html)](tag:hws)[[设备命令状态变更通知](https://support.huaweicloud.com/intl/zh-cn/api-iothub/iot_06_v5_01212.html)](tag:hws_hk)。
      * 注意：此接口适用于NB设备异步命令下发，暂不支持其他协议类型设备命令下发。
      * 
      * 详细说明请参考华为云API Explorer。
@@ -339,7 +339,7 @@ public class IoTDAAsyncClient {
     /**
      * 查询指定id的命令
      *
-     * 物联网平台可查询指定id的命令。 
+     * 物联网平台可查询指定id的命令。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -355,7 +355,7 @@ public class IoTDAAsyncClient {
     /**
      * 查询指定id的命令
      *
-     * 物联网平台可查询指定id的命令。 
+     * 物联网平台可查询指定id的命令。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -584,7 +584,7 @@ public class IoTDAAsyncClient {
     /**
      * 上传设备CA证书
      *
-     * 应用服务器可调用此接口在物联网平台上传设备的CA证书
+     * 应用服务器可调用此接口在物联网平台上传设备CA证书
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -599,7 +599,7 @@ public class IoTDAAsyncClient {
     /**
      * 上传设备CA证书
      *
-     * 应用服务器可调用此接口在物联网平台上传设备的CA证书
+     * 应用服务器可调用此接口在物联网平台上传设备CA证书
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -648,7 +648,7 @@ public class IoTDAAsyncClient {
     /**
      * 删除设备CA证书
      *
-     * 应用服务器可调用此接口在物联网平台删除设备的CA证书
+     * 应用服务器可调用此接口在物联网平台删除设备CA证书
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -663,7 +663,7 @@ public class IoTDAAsyncClient {
     /**
      * 删除设备CA证书
      *
-     * 应用服务器可调用此接口在物联网平台删除设备的CA证书
+     * 应用服务器可调用此接口在物联网平台删除设备CA证书
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -680,7 +680,7 @@ public class IoTDAAsyncClient {
     /**
      * 获取设备CA证书列表
      *
-     * 应用服务器可调用此接口在物联网平台获取设备的CA证书列表
+     * 应用服务器可调用此接口在物联网平台获取设备CA证书列表
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -695,7 +695,7 @@ public class IoTDAAsyncClient {
     /**
      * 获取设备CA证书列表
      *
-     * 应用服务器可调用此接口在物联网平台获取设备的CA证书列表
+     * 应用服务器可调用此接口在物联网平台获取设备CA证书列表
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1363,7 +1363,7 @@ public class IoTDAAsyncClient {
     /**
      * 下发设备消息
      *
-     * 物联网平台可向设备下发消息，应用服务器可调用此接口向指定设备下发消息，以实现对设备的控制。应用将消息下发给平台后，平台返回应用响应结果，平台再将消息发送给设备。平台返回应用响应结果不一定是设备接收结果，建议用户应用通过订阅[设备消息状态变更通知](https://support.huaweicloud.com/api-iothub/iot_06_v5_01203.html)，订阅后平台会将设备接收结果推送给订阅的应用。
+     * 物联网平台可向设备下发消息，应用服务器可调用此接口向指定设备下发消息，以实现对设备的控制。应用将消息下发给平台后，平台返回应用响应结果，平台再将消息发送给设备。平台返回应用响应结果不一定是设备接收结果，建议用户应用通过订阅[[设备消息状态变更通知](https://support.huaweicloud.com/api-iothub/iot_06_v5_01203.html)](tag:hws)[[设备消息状态变更通知](https://support.huaweicloud.com/intl/zh-cn/api-iothub/iot_06_v5_01203.html)](tag:hws_hk)，订阅后平台会将设备接收结果推送给订阅的应用。
      * 注意：此接口适用于MQTT设备消息下发，暂不支持其他协议接入的设备消息下发。
      * 
      * 详细说明请参考华为云API Explorer。
@@ -1379,7 +1379,7 @@ public class IoTDAAsyncClient {
     /**
      * 下发设备消息
      *
-     * 物联网平台可向设备下发消息，应用服务器可调用此接口向指定设备下发消息，以实现对设备的控制。应用将消息下发给平台后，平台返回应用响应结果，平台再将消息发送给设备。平台返回应用响应结果不一定是设备接收结果，建议用户应用通过订阅[设备消息状态变更通知](https://support.huaweicloud.com/api-iothub/iot_06_v5_01203.html)，订阅后平台会将设备接收结果推送给订阅的应用。
+     * 物联网平台可向设备下发消息，应用服务器可调用此接口向指定设备下发消息，以实现对设备的控制。应用将消息下发给平台后，平台返回应用响应结果，平台再将消息发送给设备。平台返回应用响应结果不一定是设备接收结果，建议用户应用通过订阅[[设备消息状态变更通知](https://support.huaweicloud.com/api-iothub/iot_06_v5_01203.html)](tag:hws)[[设备消息状态变更通知](https://support.huaweicloud.com/intl/zh-cn/api-iothub/iot_06_v5_01203.html)](tag:hws_hk)，订阅后平台会将设备接收结果推送给订阅的应用。
      * 注意：此接口适用于MQTT设备消息下发，暂不支持其他协议接入的设备消息下发。
      * 
      * 详细说明请参考华为云API Explorer。
@@ -1397,7 +1397,7 @@ public class IoTDAAsyncClient {
     /**
      * 查询设备消息
      *
-     * 应用服务器可调用此接口查询平台下发给设备的消息，平台为每个设备默认最多保存20条消息，超过20条后， 后续的消息会替换下发最早的消息。 
+     * 应用服务器可调用此接口查询平台下发给设备的消息，平台为每个设备默认最多保存20条消息，超过20条后， 后续的消息会替换下发最早的消息。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1412,7 +1412,7 @@ public class IoTDAAsyncClient {
     /**
      * 查询设备消息
      *
-     * 应用服务器可调用此接口查询平台下发给设备的消息，平台为每个设备默认最多保存20条消息，超过20条后， 后续的消息会替换下发最早的消息。 
+     * 应用服务器可调用此接口查询平台下发给设备的消息，平台为每个设备默认最多保存20条消息，超过20条后， 后续的消息会替换下发最早的消息。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1429,7 +1429,7 @@ public class IoTDAAsyncClient {
     /**
      * 查询指定消息id的消息
      *
-     * 应用服务器可调用此接口查询平台下发给设备的指定消息id的消息。 
+     * 应用服务器可调用此接口查询平台下发给设备的指定消息id的消息。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1444,7 +1444,7 @@ public class IoTDAAsyncClient {
     /**
      * 查询指定消息id的消息
      *
-     * 应用服务器可调用此接口查询平台下发给设备的指定消息id的消息。 
+     * 应用服务器可调用此接口查询平台下发给设备的指定消息id的消息。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.

@@ -49,6 +49,7 @@ public class NetAddress {
 
     /**
      * **参数说明**：服务对应端口
+     * minimum: 0
      * maximum: 65535
      * @return port
      */

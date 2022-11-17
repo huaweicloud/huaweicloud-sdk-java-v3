@@ -64,11 +64,6 @@ public class CreateDeviceGroupResponse extends SdkResponse {
 
     private String lastUpdatedDatetime;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "app_name")
-
-    private String appName;
-
     public CreateDeviceGroupResponse withPermissions(List<String> permissions) {
         this.permissions = permissions;
         return this;
@@ -277,23 +272,6 @@ public class CreateDeviceGroupResponse extends SdkResponse {
         this.lastUpdatedDatetime = lastUpdatedDatetime;
     }
 
-    public CreateDeviceGroupResponse withAppName(String appName) {
-        this.appName = appName;
-        return this;
-    }
-
-    /**
-     * 应用名称
-     * @return appName
-     */
-    public String getAppName() {
-        return appName;
-    }
-
-    public void setAppName(String appName) {
-        this.appName = appName;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -312,8 +290,7 @@ public class CreateDeviceGroupResponse extends SdkResponse {
             && Objects.equals(this.createdUser, createDeviceGroupResponse.createdUser)
             && Objects.equals(this.lastUpdatedUser, createDeviceGroupResponse.lastUpdatedUser)
             && Objects.equals(this.createdDatetime, createDeviceGroupResponse.createdDatetime)
-            && Objects.equals(this.lastUpdatedDatetime, createDeviceGroupResponse.lastUpdatedDatetime)
-            && Objects.equals(this.appName, createDeviceGroupResponse.appName);
+            && Objects.equals(this.lastUpdatedDatetime, createDeviceGroupResponse.lastUpdatedDatetime);
     }
 
     @Override
@@ -327,8 +304,7 @@ public class CreateDeviceGroupResponse extends SdkResponse {
             createdUser,
             lastUpdatedUser,
             createdDatetime,
-            lastUpdatedDatetime,
-            appName);
+            lastUpdatedDatetime);
     }
 
     @Override
@@ -345,7 +321,6 @@ public class CreateDeviceGroupResponse extends SdkResponse {
         sb.append("    lastUpdatedUser: ").append(toIndentedString(lastUpdatedUser)).append("\n");
         sb.append("    createdDatetime: ").append(toIndentedString(createdDatetime)).append("\n");
         sb.append("    lastUpdatedDatetime: ").append(toIndentedString(lastUpdatedDatetime)).append("\n");
-        sb.append("    appName: ").append(toIndentedString(appName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -114,7 +114,7 @@ public class ActionSmnForwarding {
     }
 
     /**
-     * **参数说明**：短信或邮件的内容。。
+     * **参数说明**：短信或邮件的内容。
      * @return messageContent
      */
     public String getMessageContent() {
@@ -131,7 +131,7 @@ public class ActionSmnForwarding {
     }
 
     /**
-     * **参数说明**：短信或邮件的主题。。
+     * **参数说明**：短信或邮件的主题。
      * @return messageTitle
      */
     public String getMessageTitle() {

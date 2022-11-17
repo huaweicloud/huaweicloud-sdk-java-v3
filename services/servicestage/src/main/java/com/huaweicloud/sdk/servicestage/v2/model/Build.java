@@ -14,16 +14,16 @@ public class Build {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parameters")
 
-    private BuildInfoParameters parameters;
+    private BuildParameters parameters;
 
-    public Build withParameters(BuildInfoParameters parameters) {
+    public Build withParameters(BuildParameters parameters) {
         this.parameters = parameters;
         return this;
     }
 
-    public Build withParameters(Consumer<BuildInfoParameters> parametersSetter) {
+    public Build withParameters(Consumer<BuildParameters> parametersSetter) {
         if (this.parameters == null) {
-            this.parameters = new BuildInfoParameters();
+            this.parameters = new BuildParameters();
             parametersSetter.accept(this.parameters);
         }
 
@@ -34,11 +34,11 @@ public class Build {
      * Get parameters
      * @return parameters
      */
-    public BuildInfoParameters getParameters() {
+    public BuildParameters getParameters() {
         return parameters;
     }
 
-    public void setParameters(BuildInfoParameters parameters) {
+    public void setParameters(BuildParameters parameters) {
         this.parameters = parameters;
     }
 

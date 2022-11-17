@@ -992,6 +992,31 @@ public class QueryJobResp {
 
     private String increStartPosition;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_multi_az")
+
+    private Boolean isMultiAz;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "az_name")
+
+    private String azName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "master_az")
+
+    private String masterAz;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "slave_az")
+
+    private String slaveAz;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "node_role")
+
+    private String nodeRole;
+
     public QueryJobResp withId(String id) {
         this.id = id;
         return this;
@@ -1877,6 +1902,91 @@ public class QueryJobResp {
         this.increStartPosition = increStartPosition;
     }
 
+    public QueryJobResp withIsMultiAz(Boolean isMultiAz) {
+        this.isMultiAz = isMultiAz;
+        return this;
+    }
+
+    /**
+     * 是否是主备任务。
+     * @return isMultiAz
+     */
+    public Boolean getIsMultiAz() {
+        return isMultiAz;
+    }
+
+    public void setIsMultiAz(Boolean isMultiAz) {
+        this.isMultiAz = isMultiAz;
+    }
+
+    public QueryJobResp withAzName(String azName) {
+        this.azName = azName;
+        return this;
+    }
+
+    /**
+     * node所在节点AZ名称。
+     * @return azName
+     */
+    public String getAzName() {
+        return azName;
+    }
+
+    public void setAzName(String azName) {
+        this.azName = azName;
+    }
+
+    public QueryJobResp withMasterAz(String masterAz) {
+        this.masterAz = masterAz;
+        return this;
+    }
+
+    /**
+     * 主备任务主AZ。
+     * @return masterAz
+     */
+    public String getMasterAz() {
+        return masterAz;
+    }
+
+    public void setMasterAz(String masterAz) {
+        this.masterAz = masterAz;
+    }
+
+    public QueryJobResp withSlaveAz(String slaveAz) {
+        this.slaveAz = slaveAz;
+        return this;
+    }
+
+    /**
+     * 主备任务备AZ。
+     * @return slaveAz
+     */
+    public String getSlaveAz() {
+        return slaveAz;
+    }
+
+    public void setSlaveAz(String slaveAz) {
+        this.slaveAz = slaveAz;
+    }
+
+    public QueryJobResp withNodeRole(String nodeRole) {
+        this.nodeRole = nodeRole;
+        return this;
+    }
+
+    /**
+     * 任务主备角色。
+     * @return nodeRole
+     */
+    public String getNodeRole() {
+        return nodeRole;
+    }
+
+    public void setNodeRole(String nodeRole) {
+        this.nodeRole = nodeRole;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -1928,7 +2038,11 @@ public class QueryJobResp {
             && Objects.equals(this.supportIpV6, queryJobResp.supportIpV6)
             && Objects.equals(this.inheritId, queryJobResp.inheritId) && Objects.equals(this.gtid, queryJobResp.gtid)
             && Objects.equals(this.alarmNotify, queryJobResp.alarmNotify)
-            && Objects.equals(this.increStartPosition, queryJobResp.increStartPosition);
+            && Objects.equals(this.increStartPosition, queryJobResp.increStartPosition)
+            && Objects.equals(this.isMultiAz, queryJobResp.isMultiAz)
+            && Objects.equals(this.azName, queryJobResp.azName) && Objects.equals(this.masterAz, queryJobResp.masterAz)
+            && Objects.equals(this.slaveAz, queryJobResp.slaveAz)
+            && Objects.equals(this.nodeRole, queryJobResp.nodeRole);
     }
 
     @Override
@@ -1979,7 +2093,12 @@ public class QueryJobResp {
             inheritId,
             gtid,
             alarmNotify,
-            increStartPosition);
+            increStartPosition,
+            isMultiAz,
+            azName,
+            masterAz,
+            slaveAz,
+            nodeRole);
     }
 
     @Override
@@ -2033,6 +2152,11 @@ public class QueryJobResp {
         sb.append("    gtid: ").append(toIndentedString(gtid)).append("\n");
         sb.append("    alarmNotify: ").append(toIndentedString(alarmNotify)).append("\n");
         sb.append("    increStartPosition: ").append(toIndentedString(increStartPosition)).append("\n");
+        sb.append("    isMultiAz: ").append(toIndentedString(isMultiAz)).append("\n");
+        sb.append("    azName: ").append(toIndentedString(azName)).append("\n");
+        sb.append("    masterAz: ").append(toIndentedString(masterAz)).append("\n");
+        sb.append("    slaveAz: ").append(toIndentedString(slaveAz)).append("\n");
+        sb.append("    nodeRole: ").append(toIndentedString(nodeRole)).append("\n");
         sb.append("}");
         return sb.toString();
     }

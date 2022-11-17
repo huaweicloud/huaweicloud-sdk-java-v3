@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * FinancialStatementResultImageSize
+ * 图像信息
  */
 public class FinancialStatementResultImageSize {
 

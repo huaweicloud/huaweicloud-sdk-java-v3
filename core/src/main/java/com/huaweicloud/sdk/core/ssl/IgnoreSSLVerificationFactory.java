@@ -28,6 +28,7 @@ import org.slf4j.LoggerFactory;
 
 import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
 import java.security.cert.X509Certificate;
 
 import javax.net.ssl.HostnameVerifier;
@@ -76,7 +77,7 @@ public class IgnoreSSLVerificationFactory {
     public static SSLContext getSSLContext() {
         try {
             SSLContext sslContext = SSLContext.getInstance("TLS");
-            sslContext.init(null, new TrustManager[] {trustAllManager}, new java.security.SecureRandom());
+            sslContext.init(null, new TrustManager[] {trustAllManager}, new SecureRandom());
             return sslContext;
         } catch (NoSuchAlgorithmException e) {
             logger.error("Init SSL Context Error", e);

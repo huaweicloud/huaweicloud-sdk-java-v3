@@ -22,6 +22,7 @@
 package com.huaweicloud.sdk.core.retry;
 
 import com.huaweicloud.sdk.core.Constants;
+import com.huaweicloud.sdk.core.SdkResponse;
 import com.huaweicloud.sdk.core.exception.ConnectionException;
 import com.huaweicloud.sdk.core.exception.SdkException;
 import com.huaweicloud.sdk.core.exception.ServiceResponseException;
@@ -30,8 +31,6 @@ import com.huaweicloud.sdk.core.retry.backoff.BackoffStrategy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionException;
@@ -215,18 +214,11 @@ public class RetryRecord<ResT> {
      */
     public int getStatusCodeFromResult(ResT resT, SdkException e) {
         int statusCode = 0;
-        if (Objects.nonNull(resT)) {
-            try {
-                Method getStatusCodeFunc = resT.getClass().getMethod("getHttpStatusCode");
-                getStatusCodeFunc.setAccessible(true);
-                statusCode = (int) getStatusCodeFunc.invoke(resT);
-            } catch (NoSuchMethodException | InvocationTargetException | IllegalAccessException noSuchFieldException) {
-                throw new SdkException(noSuchFieldException);
-            }
-        } else {
-            if (e instanceof ServiceResponseException) {
-                statusCode = ((ServiceResponseException) e).getHttpStatusCode();
-            }
+        if (resT instanceof SdkResponse) {
+            statusCode = ((SdkResponse) resT).getHttpStatusCode();
+        }
+        if (e instanceof ServiceResponseException) {
+            statusCode = ((ServiceResponseException) e).getHttpStatusCode();
         }
         return statusCode;
     }
@@ -251,7 +243,7 @@ public class RetryRecord<ResT> {
      * Log for retry.
      */
     public static class RetryLog {
-        private static final Logger logger = LoggerFactory.getLogger("HuaweiCloud-SDK-Retry");
+        private static final Logger logger = LoggerFactory.getLogger(RetryLog.class);
 
         /**
          * Get the logger.

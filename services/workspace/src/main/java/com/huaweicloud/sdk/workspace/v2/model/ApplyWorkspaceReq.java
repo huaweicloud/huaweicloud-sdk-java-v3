@@ -136,6 +136,11 @@ public class ApplyWorkspaceReq {
 
     private String dedicatedSubnets;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_send_email")
+
+    private Boolean isSendEmail;
+
     public ApplyWorkspaceReq withAdDomains(AdDomain adDomains) {
         this.adDomains = adDomains;
         return this;
@@ -280,6 +285,23 @@ public class ApplyWorkspaceReq {
         this.dedicatedSubnets = dedicatedSubnets;
     }
 
+    public ApplyWorkspaceReq withIsSendEmail(Boolean isSendEmail) {
+        this.isSendEmail = isSendEmail;
+        return this;
+    }
+
+    /**
+     * 桌面退订是否发送邮件通知。
+     * @return isSendEmail
+     */
+    public Boolean getIsSendEmail() {
+        return isSendEmail;
+    }
+
+    public void setIsSendEmail(Boolean isSendEmail) {
+        this.isSendEmail = isSendEmail;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -295,12 +317,20 @@ public class ApplyWorkspaceReq {
             && Objects.equals(this.subnetIds, applyWorkspaceReq.subnetIds)
             && Objects.equals(this.manageSubnetCidr, applyWorkspaceReq.manageSubnetCidr)
             && Objects.equals(this.accessMode, applyWorkspaceReq.accessMode)
-            && Objects.equals(this.dedicatedSubnets, applyWorkspaceReq.dedicatedSubnets);
+            && Objects.equals(this.dedicatedSubnets, applyWorkspaceReq.dedicatedSubnets)
+            && Objects.equals(this.isSendEmail, applyWorkspaceReq.isSendEmail);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(adDomains, enterpriseId, vpcId, subnetIds, manageSubnetCidr, accessMode, dedicatedSubnets);
+        return Objects.hash(adDomains,
+            enterpriseId,
+            vpcId,
+            subnetIds,
+            manageSubnetCidr,
+            accessMode,
+            dedicatedSubnets,
+            isSendEmail);
     }
 
     @Override
@@ -314,6 +344,7 @@ public class ApplyWorkspaceReq {
         sb.append("    manageSubnetCidr: ").append(toIndentedString(manageSubnetCidr)).append("\n");
         sb.append("    accessMode: ").append(toIndentedString(accessMode)).append("\n");
         sb.append("    dedicatedSubnets: ").append(toIndentedString(dedicatedSubnets)).append("\n");
+        sb.append("    isSendEmail: ").append(toIndentedString(isSendEmail)).append("\n");
         sb.append("}");
         return sb.toString();
     }

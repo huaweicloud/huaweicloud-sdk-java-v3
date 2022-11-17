@@ -56,7 +56,7 @@ public class ImageDetectionResult {
     }
 
     /**
-     * 检测结果的一级标签。 支持category列表如下： politics: 涉政 terrorism: 暴恐 porn: 色情 image_text: 图文审核
+     * 检测结果的一级标签。 支持category列表如下： terrorism: 暴恐 porn: 色情 image_text: 图文审核
      * @return category
      */
     public String getCategory() {

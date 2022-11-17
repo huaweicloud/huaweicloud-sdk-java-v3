@@ -283,6 +283,11 @@ public class InstanceCreateReq {
 
     private LoadbalancerProviderEnum loadbalancerProvider;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<TmsKeyValue> tags = null;
+
     public InstanceCreateReq withDescription(String description) {
         this.description = description;
         return this;
@@ -554,6 +559,39 @@ public class InstanceCreateReq {
         this.loadbalancerProvider = loadbalancerProvider;
     }
 
+    public InstanceCreateReq withTags(List<TmsKeyValue> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public InstanceCreateReq addTagsItem(TmsKeyValue tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public InstanceCreateReq withTags(Consumer<List<TmsKeyValue>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * 标签列表。  一个实例默认最多支持创建20个标签
+     * @return tags
+     */
+    public List<TmsKeyValue> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<TmsKeyValue> tags) {
+        this.tags = tags;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -577,7 +615,8 @@ public class InstanceCreateReq {
             && Objects.equals(this.availableZoneIds, instanceCreateReq.availableZoneIds)
             && Objects.equals(this.bandwidthSize, instanceCreateReq.bandwidthSize)
             && Objects.equals(this.ipv6Enable, instanceCreateReq.ipv6Enable)
-            && Objects.equals(this.loadbalancerProvider, instanceCreateReq.loadbalancerProvider);
+            && Objects.equals(this.loadbalancerProvider, instanceCreateReq.loadbalancerProvider)
+            && Objects.equals(this.tags, instanceCreateReq.tags);
     }
 
     @Override
@@ -596,7 +635,8 @@ public class InstanceCreateReq {
             availableZoneIds,
             bandwidthSize,
             ipv6Enable,
-            loadbalancerProvider);
+            loadbalancerProvider,
+            tags);
     }
 
     @Override
@@ -618,6 +658,7 @@ public class InstanceCreateReq {
         sb.append("    bandwidthSize: ").append(toIndentedString(bandwidthSize)).append("\n");
         sb.append("    ipv6Enable: ").append(toIndentedString(ipv6Enable)).append("\n");
         sb.append("    loadbalancerProvider: ").append(toIndentedString(loadbalancerProvider)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

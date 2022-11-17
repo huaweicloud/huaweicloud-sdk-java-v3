@@ -298,7 +298,7 @@ public class CreateSubnetOption {
     }
 
     /**
-     * 子网配置的NTP地址
+     * 子网配置的NTP地址或租约时间
      * @return extraDhcpOpts
      */
     public List<ExtraDhcpOption> getExtraDhcpOpts() {

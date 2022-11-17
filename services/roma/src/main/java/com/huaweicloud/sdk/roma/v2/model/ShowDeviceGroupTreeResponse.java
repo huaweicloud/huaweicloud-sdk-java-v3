@@ -15,11 +15,6 @@ import java.util.function.Consumer;
 public class ShowDeviceGroupTreeResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "total")
-
-    private Integer total;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
 
     private Integer size;
@@ -28,25 +23,6 @@ public class ShowDeviceGroupTreeResponse extends SdkResponse {
     @JsonProperty(value = "items")
 
     private List<GroupTreeResponse> items = null;
-
-    public ShowDeviceGroupTreeResponse withTotal(Integer total) {
-        this.total = total;
-        return this;
-    }
-
-    /**
-     * 总数
-     * minimum: 1
-     * maximum: 99999999
-     * @return total
-     */
-    public Integer getTotal() {
-        return total;
-    }
-
-    public void setTotal(Integer total) {
-        this.total = total;
-    }
 
     public ShowDeviceGroupTreeResponse withSize(Integer size) {
         this.size = size;
@@ -109,21 +85,19 @@ public class ShowDeviceGroupTreeResponse extends SdkResponse {
             return false;
         }
         ShowDeviceGroupTreeResponse showDeviceGroupTreeResponse = (ShowDeviceGroupTreeResponse) o;
-        return Objects.equals(this.total, showDeviceGroupTreeResponse.total)
-            && Objects.equals(this.size, showDeviceGroupTreeResponse.size)
+        return Objects.equals(this.size, showDeviceGroupTreeResponse.size)
             && Objects.equals(this.items, showDeviceGroupTreeResponse.items);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(total, size, items);
+        return Objects.hash(size, items);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowDeviceGroupTreeResponse {\n");
-        sb.append("    total: ").append(toIndentedString(total)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    items: ").append(toIndentedString(items)).append("\n");
         sb.append("}");

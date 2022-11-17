@@ -1625,6 +1625,36 @@ public class OsmClient {
     }
 
     /**
+     * 撤回留言
+     *
+     * 撤回留言
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param RevokeMessageRequest 请求对象
+     * @return RevokeMessageResponse
+     */
+    public RevokeMessageResponse revokeMessage(RevokeMessageRequest request) {
+        return hcClient.syncInvokeHttp(request, OsmMeta.revokeMessage);
+    }
+
+    /**
+     * 撤回留言
+     *
+     * 撤回留言
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param RevokeMessageRequest 请求对象
+     * @return SyncInvoker<RevokeMessageRequest, RevokeMessageResponse>
+     */
+    public SyncInvoker<RevokeMessageRequest, RevokeMessageResponse> revokeMessageInvoker(RevokeMessageRequest request) {
+        return new SyncInvoker<RevokeMessageRequest, RevokeMessageResponse>(request, OsmMeta.revokeMessage, hcClient);
+    }
+
+    /**
      * 获取验证码
      *
      * 获取验证码
