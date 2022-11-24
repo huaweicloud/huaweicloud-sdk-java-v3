@@ -303,6 +303,71 @@ public class DdsAsyncClient {
     }
 
     /**
+     * 参数模板比较
+     *
+     * 比较两个参数模板之间的差异。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CompareConfigurationRequest 请求对象
+     * @return CompletableFuture<CompareConfigurationResponse>
+     */
+    public CompletableFuture<CompareConfigurationResponse> compareConfigurationAsync(
+        CompareConfigurationRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdsMeta.compareConfiguration);
+    }
+
+    /**
+     * 参数模板比较
+     *
+     * 比较两个参数模板之间的差异。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CompareConfigurationRequest 请求对象
+     * @return AsyncInvoker<CompareConfigurationRequest, CompareConfigurationResponse>
+     */
+    public AsyncInvoker<CompareConfigurationRequest, CompareConfigurationResponse> compareConfigurationAsyncInvoker(
+        CompareConfigurationRequest request) {
+        return new AsyncInvoker<CompareConfigurationRequest, CompareConfigurationResponse>(request,
+            DdsMeta.compareConfiguration, hcClient);
+    }
+
+    /**
+     * 复制参数模板
+     *
+     * 复制参数模板。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CopyConfigurationRequest 请求对象
+     * @return CompletableFuture<CopyConfigurationResponse>
+     */
+    public CompletableFuture<CopyConfigurationResponse> copyConfigurationAsync(CopyConfigurationRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdsMeta.copyConfiguration);
+    }
+
+    /**
+     * 复制参数模板
+     *
+     * 复制参数模板。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CopyConfigurationRequest 请求对象
+     * @return AsyncInvoker<CopyConfigurationRequest, CopyConfigurationResponse>
+     */
+    public AsyncInvoker<CopyConfigurationRequest, CopyConfigurationResponse> copyConfigurationAsyncInvoker(
+        CopyConfigurationRequest request) {
+        return new AsyncInvoker<CopyConfigurationRequest, CopyConfigurationResponse>(request, DdsMeta.copyConfiguration,
+            hcClient);
+    }
+
+    /**
      * 创建参数模板
      *
      * 创建参数模板。
@@ -810,6 +875,39 @@ public class DdsAsyncClient {
         ExpandReplicasetNodeRequest request) {
         return new AsyncInvoker<ExpandReplicasetNodeRequest, ExpandReplicasetNodeResponse>(request,
             DdsMeta.expandReplicasetNode, hcClient);
+    }
+
+    /**
+     * 查询可应用的实例
+     *
+     * 查询指定参数模板可被应用的实例。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListAppliedInstancesRequest 请求对象
+     * @return CompletableFuture<ListAppliedInstancesResponse>
+     */
+    public CompletableFuture<ListAppliedInstancesResponse> listAppliedInstancesAsync(
+        ListAppliedInstancesRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdsMeta.listAppliedInstances);
+    }
+
+    /**
+     * 查询可应用的实例
+     *
+     * 查询指定参数模板可被应用的实例。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListAppliedInstancesRequest 请求对象
+     * @return AsyncInvoker<ListAppliedInstancesRequest, ListAppliedInstancesResponse>
+     */
+    public AsyncInvoker<ListAppliedInstancesRequest, ListAppliedInstancesResponse> listAppliedInstancesAsyncInvoker(
+        ListAppliedInstancesRequest request) {
+        return new AsyncInvoker<ListAppliedInstancesRequest, ListAppliedInstancesResponse>(request,
+            DdsMeta.listAppliedInstances, hcClient);
     }
 
     /**
@@ -1545,6 +1643,36 @@ public class DdsAsyncClient {
     }
 
     /**
+     * 查询任务列表和详情
+     *
+     * 根据指定条件查询任务中心中的任务列表和详情。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListTasksRequest 请求对象
+     * @return CompletableFuture<ListTasksResponse>
+     */
+    public CompletableFuture<ListTasksResponse> listTasksAsync(ListTasksRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdsMeta.listTasks);
+    }
+
+    /**
+     * 查询任务列表和详情
+     *
+     * 根据指定条件查询任务中心中的任务列表和详情。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListTasksRequest 请求对象
+     * @return AsyncInvoker<ListTasksRequest, ListTasksResponse>
+     */
+    public AsyncInvoker<ListTasksRequest, ListTasksResponse> listTasksAsyncInvoker(ListTasksRequest request) {
+        return new AsyncInvoker<ListTasksRequest, ListTasksResponse>(request, DdsMeta.listTasks, hcClient);
+    }
+
+    /**
      * 实例可用区迁移
      *
      * 实例可用区迁移。
@@ -1572,6 +1700,38 @@ public class DdsAsyncClient {
      */
     public AsyncInvoker<MigrateAzRequest, MigrateAzResponse> migrateAzAsyncInvoker(MigrateAzRequest request) {
         return new AsyncInvoker<MigrateAzRequest, MigrateAzResponse>(request, DdsMeta.migrateAz, hcClient);
+    }
+
+    /**
+     * 重置参数模板
+     *
+     * 重置参数模板。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ResetConfigurationRequest 请求对象
+     * @return CompletableFuture<ResetConfigurationResponse>
+     */
+    public CompletableFuture<ResetConfigurationResponse> resetConfigurationAsync(ResetConfigurationRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdsMeta.resetConfiguration);
+    }
+
+    /**
+     * 重置参数模板
+     *
+     * 重置参数模板。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ResetConfigurationRequest 请求对象
+     * @return AsyncInvoker<ResetConfigurationRequest, ResetConfigurationResponse>
+     */
+    public AsyncInvoker<ResetConfigurationRequest, ResetConfigurationResponse> resetConfigurationAsyncInvoker(
+        ResetConfigurationRequest request) {
+        return new AsyncInvoker<ResetConfigurationRequest, ResetConfigurationResponse>(request,
+            DdsMeta.resetConfiguration, hcClient);
     }
 
     /**
@@ -2054,6 +2214,72 @@ public class DdsAsyncClient {
         ShowBackupPolicyRequest request) {
         return new AsyncInvoker<ShowBackupPolicyRequest, ShowBackupPolicyResponse>(request, DdsMeta.showBackupPolicy,
             hcClient);
+    }
+
+    /**
+     * 查询参数模板被应用历史
+     *
+     * 查询参数模板应用历史
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowConfigurationAppliedHistoryRequest 请求对象
+     * @return CompletableFuture<ShowConfigurationAppliedHistoryResponse>
+     */
+    public CompletableFuture<ShowConfigurationAppliedHistoryResponse> showConfigurationAppliedHistoryAsync(
+        ShowConfigurationAppliedHistoryRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdsMeta.showConfigurationAppliedHistory);
+    }
+
+    /**
+     * 查询参数模板被应用历史
+     *
+     * 查询参数模板应用历史
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowConfigurationAppliedHistoryRequest 请求对象
+     * @return AsyncInvoker<ShowConfigurationAppliedHistoryRequest, ShowConfigurationAppliedHistoryResponse>
+     */
+    public AsyncInvoker<ShowConfigurationAppliedHistoryRequest, ShowConfigurationAppliedHistoryResponse> showConfigurationAppliedHistoryAsyncInvoker(
+        ShowConfigurationAppliedHistoryRequest request) {
+        return new AsyncInvoker<ShowConfigurationAppliedHistoryRequest, ShowConfigurationAppliedHistoryResponse>(
+            request, DdsMeta.showConfigurationAppliedHistory, hcClient);
+    }
+
+    /**
+     * 查询参数模板修改历史
+     *
+     * 查询参数模板修改历史。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowConfigurationModifyHistoryRequest 请求对象
+     * @return CompletableFuture<ShowConfigurationModifyHistoryResponse>
+     */
+    public CompletableFuture<ShowConfigurationModifyHistoryResponse> showConfigurationModifyHistoryAsync(
+        ShowConfigurationModifyHistoryRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdsMeta.showConfigurationModifyHistory);
+    }
+
+    /**
+     * 查询参数模板修改历史
+     *
+     * 查询参数模板修改历史。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowConfigurationModifyHistoryRequest 请求对象
+     * @return AsyncInvoker<ShowConfigurationModifyHistoryRequest, ShowConfigurationModifyHistoryResponse>
+     */
+    public AsyncInvoker<ShowConfigurationModifyHistoryRequest, ShowConfigurationModifyHistoryResponse> showConfigurationModifyHistoryAsyncInvoker(
+        ShowConfigurationModifyHistoryRequest request) {
+        return new AsyncInvoker<ShowConfigurationModifyHistoryRequest, ShowConfigurationModifyHistoryResponse>(request,
+            DdsMeta.showConfigurationModifyHistory, hcClient);
     }
 
     /**

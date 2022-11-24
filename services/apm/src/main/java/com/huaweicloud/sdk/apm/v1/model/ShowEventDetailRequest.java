@@ -36,7 +36,7 @@ public class ShowEventDetailRequest {
     }
 
     /**
-     * trace id
+     * trace id。
      * @return traceId
      */
     public String getTraceId() {
@@ -53,7 +53,7 @@ public class ShowEventDetailRequest {
     }
 
     /**
-     * span id
+     * span id。
      * @return spanId
      */
     public String getSpanId() {
@@ -70,7 +70,7 @@ public class ShowEventDetailRequest {
     }
 
     /**
-     * event id
+     * event id。
      * @return eventId
      */
     public String getEventId() {
@@ -87,7 +87,7 @@ public class ShowEventDetailRequest {
     }
 
     /**
-     * 环境id
+     * 环境id。
      * @return envId
      */
     public Long getEnvId() {

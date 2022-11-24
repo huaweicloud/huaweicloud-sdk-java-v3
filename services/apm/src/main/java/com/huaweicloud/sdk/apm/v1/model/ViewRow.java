@@ -45,7 +45,7 @@ public class ViewRow {
     }
 
     /**
-     * 视图行，包含多个视图，展示的时候根据实际的长度适配
+     * 视图行，包含多个视图，展示的时候根据实际的长度适配。
      * @return viewList
      */
     public List<ViewBase> getViewList() {
@@ -62,7 +62,7 @@ public class ViewRow {
     }
 
     /**
-     * 标题
+     * 标题。
      * @return title
      */
     public String getTitle() {

@@ -24,11 +24,6 @@ public class CreateRouteTable {
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "bgp_options")
-
-    private BgpOptions bgpOptions;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
     private List<Tag> tags = null;
@@ -65,32 +60,6 @@ public class CreateRouteTable {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public CreateRouteTable withBgpOptions(BgpOptions bgpOptions) {
-        this.bgpOptions = bgpOptions;
-        return this;
-    }
-
-    public CreateRouteTable withBgpOptions(Consumer<BgpOptions> bgpOptionsSetter) {
-        if (this.bgpOptions == null) {
-            this.bgpOptions = new BgpOptions();
-            bgpOptionsSetter.accept(this.bgpOptions);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get bgpOptions
-     * @return bgpOptions
-     */
-    public BgpOptions getBgpOptions() {
-        return bgpOptions;
-    }
-
-    public void setBgpOptions(BgpOptions bgpOptions) {
-        this.bgpOptions = bgpOptions;
     }
 
     public CreateRouteTable withTags(List<Tag> tags) {
@@ -137,13 +106,12 @@ public class CreateRouteTable {
         CreateRouteTable createRouteTable = (CreateRouteTable) o;
         return Objects.equals(this.name, createRouteTable.name)
             && Objects.equals(this.description, createRouteTable.description)
-            && Objects.equals(this.bgpOptions, createRouteTable.bgpOptions)
             && Objects.equals(this.tags, createRouteTable.tags);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, description, bgpOptions, tags);
+        return Objects.hash(name, description, tags);
     }
 
     @Override
@@ -152,7 +120,6 @@ public class CreateRouteTable {
         sb.append("class CreateRouteTable {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
-        sb.append("    bgpOptions: ").append(toIndentedString(bgpOptions)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();

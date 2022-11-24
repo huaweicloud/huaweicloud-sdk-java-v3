@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.ces.v2.model;
 import java.util.Objects;
 
 /**
- * 资源分组ID，监控范围为资源分组时必传
+ * 资源分组ID，以rg开头，后跟22位由字母或数字组成的字符串
  */
 public class ResourceGroupID {
 

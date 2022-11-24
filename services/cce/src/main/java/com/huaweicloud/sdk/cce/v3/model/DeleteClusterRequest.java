@@ -621,6 +621,106 @@ public class DeleteClusterRequest {
     private DeleteSfsEnum deleteSfs;
 
     /**
+     * 是否删除sfs3.0（文件存储卷3.0）， 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程，默认选项)
+     */
+    public static final class DeleteSfs30Enum {
+
+        /**
+         * Enum TRUE for value: "true"
+         */
+        public static final DeleteSfs30Enum TRUE = new DeleteSfs30Enum("true");
+
+        /**
+         * Enum BLOCK for value: "block"
+         */
+        public static final DeleteSfs30Enum BLOCK = new DeleteSfs30Enum("block");
+
+        /**
+         * Enum TRY for value: "try"
+         */
+        public static final DeleteSfs30Enum TRY = new DeleteSfs30Enum("try");
+
+        /**
+         * Enum FALSE for value: "false"
+         */
+        public static final DeleteSfs30Enum FALSE = new DeleteSfs30Enum("false");
+
+        /**
+         * Enum SKIP for value: "skip"
+         */
+        public static final DeleteSfs30Enum SKIP = new DeleteSfs30Enum("skip");
+
+        private static final Map<String, DeleteSfs30Enum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, DeleteSfs30Enum> createStaticFields() {
+            Map<String, DeleteSfs30Enum> map = new HashMap<>();
+            map.put("true", TRUE);
+            map.put("block", BLOCK);
+            map.put("try", TRY);
+            map.put("false", FALSE);
+            map.put("skip", SKIP);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        DeleteSfs30Enum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static DeleteSfs30Enum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            DeleteSfs30Enum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new DeleteSfs30Enum(value);
+            }
+            return result;
+        }
+
+        public static DeleteSfs30Enum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            DeleteSfs30Enum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof DeleteSfs30Enum) {
+                return this.value.equals(((DeleteSfs30Enum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "delete_sfs30")
+
+    private DeleteSfs30Enum deleteSfs30;
+
+    /**
      * 是否使用包周期集群删除参数预置模式（仅对包周期集群生效）。 需要和其他删除选项参数一起使用，未指定的参数，则使用默认值。 使用该参数，集群不执行真正的删除，仅将本次请求的全部query参数都预置到集群数据库中，用于包周期集群退订时识别用户要删除的资源。 允许重复执行，覆盖预置的删除参数。 枚举取值： - true  (预置模式，仅预置query参数，不执行删除)
      */
     public static final class TobedeletedEnum {
@@ -815,6 +915,23 @@ public class DeleteClusterRequest {
         this.deleteSfs = deleteSfs;
     }
 
+    public DeleteClusterRequest withDeleteSfs30(DeleteSfs30Enum deleteSfs30) {
+        this.deleteSfs30 = deleteSfs30;
+        return this;
+    }
+
+    /**
+     * 是否删除sfs3.0（文件存储卷3.0）， 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程，默认选项)
+     * @return deleteSfs30
+     */
+    public DeleteSfs30Enum getDeleteSfs30() {
+        return deleteSfs30;
+    }
+
+    public void setDeleteSfs30(DeleteSfs30Enum deleteSfs30) {
+        this.deleteSfs30 = deleteSfs30;
+    }
+
     public DeleteClusterRequest withTobedeleted(TobedeletedEnum tobedeleted) {
         this.tobedeleted = tobedeleted;
         return this;
@@ -848,12 +965,21 @@ public class DeleteClusterRequest {
             && Objects.equals(this.deleteNet, deleteClusterRequest.deleteNet)
             && Objects.equals(this.deleteObs, deleteClusterRequest.deleteObs)
             && Objects.equals(this.deleteSfs, deleteClusterRequest.deleteSfs)
+            && Objects.equals(this.deleteSfs30, deleteClusterRequest.deleteSfs30)
             && Objects.equals(this.tobedeleted, deleteClusterRequest.tobedeleted);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clusterId, deleteEfs, deleteEni, deleteEvs, deleteNet, deleteObs, deleteSfs, tobedeleted);
+        return Objects.hash(clusterId,
+            deleteEfs,
+            deleteEni,
+            deleteEvs,
+            deleteNet,
+            deleteObs,
+            deleteSfs,
+            deleteSfs30,
+            tobedeleted);
     }
 
     @Override
@@ -867,6 +993,7 @@ public class DeleteClusterRequest {
         sb.append("    deleteNet: ").append(toIndentedString(deleteNet)).append("\n");
         sb.append("    deleteObs: ").append(toIndentedString(deleteObs)).append("\n");
         sb.append("    deleteSfs: ").append(toIndentedString(deleteSfs)).append("\n");
+        sb.append("    deleteSfs30: ").append(toIndentedString(deleteSfs30)).append("\n");
         sb.append("    tobedeleted: ").append(toIndentedString(tobedeleted)).append("\n");
         sb.append("}");
         return sb.toString();

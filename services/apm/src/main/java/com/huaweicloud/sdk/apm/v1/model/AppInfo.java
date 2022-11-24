@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 应用信息
+ * 应用信息。
  */
 public class AppInfo {
 
@@ -51,7 +51,7 @@ public class AppInfo {
     }
 
     /**
-     * 环境名称
+     * 环境名称。
      * @return envName
      */
     public String getEnvName() {
@@ -68,7 +68,7 @@ public class AppInfo {
     }
 
     /**
-     * 环境id
+     * 环境id。
      * @return envId
      */
     public Long getEnvId() {
@@ -85,7 +85,7 @@ public class AppInfo {
     }
 
     /**
-     * 应用空名称
+     * 组件名称。
      * @return appName
      */
     public String getAppName() {
@@ -102,7 +102,7 @@ public class AppInfo {
     }
 
     /**
-     * 应用id
+     * 组件id。
      * @return appId
      */
     public Long getAppId() {
@@ -119,7 +119,7 @@ public class AppInfo {
     }
 
     /**
-     * 在线探针数
+     * 在线探针数。
      * @return onlineCount
      */
     public Integer getOnlineCount() {
@@ -136,7 +136,7 @@ public class AppInfo {
     }
 
     /**
-     * 手动停止探针数
+     * 手动停止探针数。
      * @return disableCount
      */
     public Integer getDisableCount() {
@@ -153,7 +153,7 @@ public class AppInfo {
     }
 
     /**
-     * 离线探针数
+     * 离线探针数。
      * @return offlineCount
      */
     public Integer getOfflineCount() {

@@ -125,6 +125,11 @@ public class NodePoolSpec {
 
     private List<SecurityID> podSecurityGroups = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "customSecurityGroups")
+
+    private List<String> customSecurityGroups = null;
+
     public NodePoolSpec withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -270,6 +275,39 @@ public class NodePoolSpec {
         this.podSecurityGroups = podSecurityGroups;
     }
 
+    public NodePoolSpec withCustomSecurityGroups(List<String> customSecurityGroups) {
+        this.customSecurityGroups = customSecurityGroups;
+        return this;
+    }
+
+    public NodePoolSpec addCustomSecurityGroupsItem(String customSecurityGroupsItem) {
+        if (this.customSecurityGroups == null) {
+            this.customSecurityGroups = new ArrayList<>();
+        }
+        this.customSecurityGroups.add(customSecurityGroupsItem);
+        return this;
+    }
+
+    public NodePoolSpec withCustomSecurityGroups(Consumer<List<String>> customSecurityGroupsSetter) {
+        if (this.customSecurityGroups == null) {
+            this.customSecurityGroups = new ArrayList<>();
+        }
+        customSecurityGroupsSetter.accept(this.customSecurityGroups);
+        return this;
+    }
+
+    /**
+     * 节点池自定义安全组相关配置。支持节点池新扩容节点绑定指定的安全组。 - 未指定安全组ID，新建节点将添加Node节点默认安全组。 - 指定有效安全组ID，新建节点将使用指定安全组。 - 指定安全组，应避免对CCE运行依赖的端口规则进行修改。[链接请参见[CCE集群安全组规则配置](https://support.huaweicloud.com/cce_faq/cce_faq_00265.html)](tag:hws)
+     * @return customSecurityGroups
+     */
+    public List<String> getCustomSecurityGroups() {
+        return customSecurityGroups;
+    }
+
+    public void setCustomSecurityGroups(List<String> customSecurityGroups) {
+        this.customSecurityGroups = customSecurityGroups;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -284,12 +322,19 @@ public class NodePoolSpec {
             && Objects.equals(this.initialNodeCount, nodePoolSpec.initialNodeCount)
             && Objects.equals(this.autoscaling, nodePoolSpec.autoscaling)
             && Objects.equals(this.nodeManagement, nodePoolSpec.nodeManagement)
-            && Objects.equals(this.podSecurityGroups, nodePoolSpec.podSecurityGroups);
+            && Objects.equals(this.podSecurityGroups, nodePoolSpec.podSecurityGroups)
+            && Objects.equals(this.customSecurityGroups, nodePoolSpec.customSecurityGroups);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, nodeTemplate, initialNodeCount, autoscaling, nodeManagement, podSecurityGroups);
+        return Objects.hash(type,
+            nodeTemplate,
+            initialNodeCount,
+            autoscaling,
+            nodeManagement,
+            podSecurityGroups,
+            customSecurityGroups);
     }
 
     @Override
@@ -302,6 +347,7 @@ public class NodePoolSpec {
         sb.append("    autoscaling: ").append(toIndentedString(autoscaling)).append("\n");
         sb.append("    nodeManagement: ").append(toIndentedString(nodeManagement)).append("\n");
         sb.append("    podSecurityGroups: ").append(toIndentedString(podSecurityGroups)).append("\n");
+        sb.append("    customSecurityGroups: ").append(toIndentedString(customSecurityGroups)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -30,7 +30,7 @@ public class ShowSpanSearchResponse extends SdkResponse {
     }
 
     /**
-     * 返回的总数
+     * 返回的总数。
      * @return total
      */
     public Integer getTotal() {
@@ -63,7 +63,7 @@ public class ShowSpanSearchResponse extends SdkResponse {
     }
 
     /**
-     * span信息
+     * span信息。
      * @return spanInfoList
      */
     public List<ClientSpanInfo> getSpanInfoList() {

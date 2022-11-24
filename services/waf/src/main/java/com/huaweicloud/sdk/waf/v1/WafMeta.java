@@ -51,6 +51,38 @@ public class WafMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ChangePrepaidCloudWafRequest, ChangePrepaidCloudWafResponse> changePrepaidCloudWaf =
+        genForchangePrepaidCloudWaf();
+
+    private static HttpRequestDef<ChangePrepaidCloudWafRequest, ChangePrepaidCloudWafResponse> genForchangePrepaidCloudWaf() {
+        // basic
+        HttpRequestDef.Builder<ChangePrepaidCloudWafRequest, ChangePrepaidCloudWafResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ChangePrepaidCloudWafRequest.class, ChangePrepaidCloudWafResponse.class)
+            .withName("ChangePrepaidCloudWaf")
+            .withUri("/v1/{project_id}/waf/subscription/batchalter/prepaid-cloud-waf")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangePrepaidCloudWafRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<ChangePrepaidCloudWafRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ChangePrepaidCloudWafRequestBody.class),
+            f -> f.withMarshaller(ChangePrepaidCloudWafRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateAntiTamperRuleRequest, CreateAntiTamperRuleResponse> createAntiTamperRule =
         genForcreateAntiTamperRule();
 
@@ -350,6 +382,38 @@ public class WafMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CreatePremiumHostRequestBody.class),
             f -> f.withMarshaller(CreatePremiumHostRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreatePrepaidCloudWafRequest, CreatePrepaidCloudWafResponse> createPrepaidCloudWaf =
+        genForcreatePrepaidCloudWaf();
+
+    private static HttpRequestDef<CreatePrepaidCloudWafRequest, CreatePrepaidCloudWafResponse> genForcreatePrepaidCloudWaf() {
+        // basic
+        HttpRequestDef.Builder<CreatePrepaidCloudWafRequest, CreatePrepaidCloudWafResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreatePrepaidCloudWafRequest.class, CreatePrepaidCloudWafResponse.class)
+            .withName("CreatePrepaidCloudWaf")
+            .withUri("/v1/{project_id}/waf/subscription/purchase/prepaid-cloud-waf")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreatePrepaidCloudWafRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<CreatePrepaidCloudWafRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreatePrepaidCloudWafRequestBody.class),
+            f -> f.withMarshaller(CreatePrepaidCloudWafRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -2458,6 +2522,24 @@ public class WafMeta {
                 .withName("ShowSourceIp")
                 .withUri("/v1/{project_id}/waf/config/source-ip")
                 .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSubscriptionInfoRequest, ShowSubscriptionInfoResponse> showSubscriptionInfo =
+        genForshowSubscriptionInfo();
+
+    private static HttpRequestDef<ShowSubscriptionInfoRequest, ShowSubscriptionInfoResponse> genForshowSubscriptionInfo() {
+        // basic
+        HttpRequestDef.Builder<ShowSubscriptionInfoRequest, ShowSubscriptionInfoResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowSubscriptionInfoRequest.class, ShowSubscriptionInfoResponse.class)
+            .withName("ShowSubscriptionInfo")
+            .withUri("/v1/{project_id}/waf/subscription")
+            .withContentType("application/json");
 
         // requests
 

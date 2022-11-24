@@ -14,7 +14,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 视图基础模型类
+ * 视图基础模型类。
  */
 public class ViewBase {
 
@@ -34,7 +34,7 @@ public class ViewBase {
     private String title;
 
     /**
-     * 表格的方向，H：默认，表头横向，V：表头纵向
+     * 表格的方向，H：默认，表头横向，V：表头纵向。
      */
     public static final class TableDirectionEnum {
 
@@ -151,7 +151,7 @@ public class ViewBase {
     private String latest;
 
     /**
-     * 视图类型
+     * 视图类型。
      */
     public static final class ViewTypeEnum {
 
@@ -244,7 +244,7 @@ public class ViewBase {
     }
 
     /**
-     * 采集器名称
+     * 采集器名称。
      * @return collectorName
      */
     public String getCollectorName() {
@@ -261,7 +261,7 @@ public class ViewBase {
     }
 
     /**
-     * 视图对应的指标集的名称
+     * 视图对应的指标集的名称。
      * @return metricSet
      */
     public String getMetricSet() {
@@ -278,7 +278,7 @@ public class ViewBase {
     }
 
     /**
-     * 图标所需展示的标题
+     * 图标所需展示的标题。
      * @return title
      */
     public String getTitle() {
@@ -295,7 +295,7 @@ public class ViewBase {
     }
 
     /**
-     * 表格的方向，H：默认，表头横向，V：表头纵向
+     * 表格的方向，H：默认，表头横向，V：表头纵向。
      * @return tableDirection
      */
     public TableDirectionEnum getTableDirection() {
@@ -312,7 +312,7 @@ public class ViewBase {
     }
 
     /**
-     * 分组规则
+     * 分组规则。
      * @return groupBy
      */
     public String getGroupBy() {
@@ -329,7 +329,7 @@ public class ViewBase {
     }
 
     /**
-     * 过滤列表模型
+     * 过滤列表模型。
      * @return filter
      */
     public String getFilter() {
@@ -362,7 +362,7 @@ public class ViewBase {
     }
 
     /**
-     * 所需展示的字段列表模型
+     * 所需展示的字段列表模型。
      * @return fieldItemList
      */
     public List<FieldItem> getFieldItemList() {
@@ -379,7 +379,7 @@ public class ViewBase {
     }
 
     /**
-     * span信息
+     * span信息。
      * @return span
      */
     public Boolean getSpan() {
@@ -396,7 +396,7 @@ public class ViewBase {
     }
 
     /**
-     * span字段属性
+     * span字段属性。
      * @return spanField
      */
     public String getSpanField() {
@@ -413,7 +413,7 @@ public class ViewBase {
     }
 
     /**
-     * 排序规则
+     * 排序规则。
      * @return orderBy
      */
     public String getOrderBy() {
@@ -430,7 +430,7 @@ public class ViewBase {
     }
 
     /**
-     * 是否只展示最近一笔数据
+     * 是否只展示最近一笔数据。
      * @return latest
      */
     public String getLatest() {
@@ -447,7 +447,7 @@ public class ViewBase {
     }
 
     /**
-     * 视图类型
+     * 视图类型。
      * @return viewType
      */
     public ViewTypeEnum getViewType() {

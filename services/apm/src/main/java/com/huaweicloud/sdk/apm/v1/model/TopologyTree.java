@@ -40,7 +40,7 @@ public class TopologyTree {
     }
 
     /**
-     * 拓扑树节点
+     * 拓扑树节点。
      * @return tree
      */
     public List<TreeNode> getTree() {

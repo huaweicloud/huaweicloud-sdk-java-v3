@@ -10,6 +10,167 @@ import com.huaweicloud.sdk.dns.v2.model.*;
 @SuppressWarnings("unchecked")
 public class DnsMeta {
 
+    public static final HttpRequestDef<AssociateEndpointIpaddressRequest, AssociateEndpointIpaddressResponse> associateEndpointIpaddress =
+        genForassociateEndpointIpaddress();
+
+    private static HttpRequestDef<AssociateEndpointIpaddressRequest, AssociateEndpointIpaddressResponse> genForassociateEndpointIpaddress() {
+        // basic
+        HttpRequestDef.Builder<AssociateEndpointIpaddressRequest, AssociateEndpointIpaddressResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    AssociateEndpointIpaddressRequest.class,
+                    AssociateEndpointIpaddressResponse.class)
+                .withName("AssociateEndpointIpaddress")
+                .withUri("/v2.1/endpoint/{endpoint_id}/ipaddress")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("endpoint_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AssociateEndpointIpaddressRequest::getEndpointId, (req, v) -> {
+                req.setEndpointId(v);
+            }));
+        builder.<Ipaddresses>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Ipaddresses.class),
+            f -> f.withMarshaller(AssociateEndpointIpaddressRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeletePtrRecordsRequest, BatchDeletePtrRecordsResponse> batchDeletePtrRecords =
+        genForbatchDeletePtrRecords();
+
+    private static HttpRequestDef<BatchDeletePtrRecordsRequest, BatchDeletePtrRecordsResponse> genForbatchDeletePtrRecords() {
+        // basic
+        HttpRequestDef.Builder<BatchDeletePtrRecordsRequest, BatchDeletePtrRecordsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, BatchDeletePtrRecordsRequest.class, BatchDeletePtrRecordsResponse.class)
+            .withName("BatchDeletePtrRecords")
+            .withUri("/v2.1/reverse/floatingips")
+            .withContentType("application/json");
+
+        // requests
+        builder.<DeletePtrRecordReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeletePtrRecordReq.class),
+            f -> f.withMarshaller(BatchDeletePtrRecordsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteRecordSetsRequest, BatchDeleteRecordSetsResponse> batchDeleteRecordSets =
+        genForbatchDeleteRecordSets();
+
+    private static HttpRequestDef<BatchDeleteRecordSetsRequest, BatchDeleteRecordSetsResponse> genForbatchDeleteRecordSets() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteRecordSetsRequest, BatchDeleteRecordSetsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, BatchDeleteRecordSetsRequest.class, BatchDeleteRecordSetsResponse.class)
+            .withName("BatchDeleteRecordSets")
+            .withUri("/v2.1/recordsets")
+            .withContentType("application/json");
+
+        // requests
+        builder.<BatchDeleteRecordSetsReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteRecordSetsReq.class),
+            f -> f.withMarshaller(BatchDeleteRecordSetsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteZonesRequest, BatchDeleteZonesResponse> batchDeleteZones =
+        genForbatchDeleteZones();
+
+    private static HttpRequestDef<BatchDeleteZonesRequest, BatchDeleteZonesResponse> genForbatchDeleteZones() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteZonesRequest, BatchDeleteZonesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, BatchDeleteZonesRequest.class, BatchDeleteZonesResponse.class)
+                .withName("BatchDeleteZones")
+                .withUri("/v2.1/zones")
+                .withContentType("application/json");
+
+        // requests
+        builder.<DeleteZonesReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteZonesReq.class),
+            f -> f.withMarshaller(BatchDeleteZonesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchSetRecordSetsStatusRequest, BatchSetRecordSetsStatusResponse> batchSetRecordSetsStatus =
+        genForbatchSetRecordSetsStatus();
+
+    private static HttpRequestDef<BatchSetRecordSetsStatusRequest, BatchSetRecordSetsStatusResponse> genForbatchSetRecordSetsStatus() {
+        // basic
+        HttpRequestDef.Builder<BatchSetRecordSetsStatusRequest, BatchSetRecordSetsStatusResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT, BatchSetRecordSetsStatusRequest.class, BatchSetRecordSetsStatusResponse.class)
+                .withName("BatchSetRecordSetsStatus")
+                .withUri("/v2.1/recordsets/statuses")
+                .withContentType("application/json");
+
+        // requests
+        builder.<BatchSetRecordSetsStatusReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchSetRecordSetsStatusReq.class),
+            f -> f.withMarshaller(BatchSetRecordSetsStatusRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchSetZonesStatusRequest, BatchSetZonesStatusResponse> batchSetZonesStatus =
+        genForbatchSetZonesStatus();
+
+    private static HttpRequestDef<BatchSetZonesStatusRequest, BatchSetZonesStatusResponse> genForbatchSetZonesStatus() {
+        // basic
+        HttpRequestDef.Builder<BatchSetZonesStatusRequest, BatchSetZonesStatusResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, BatchSetZonesStatusRequest.class, BatchSetZonesStatusResponse.class)
+                .withName("BatchSetZonesStatus")
+                .withUri("/v2.1/zones/statuses")
+                .withContentType("application/json");
+
+        // requests
+        builder.<BatchSetZoneStatusReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchSetZoneStatusReq.class),
+            f -> f.withMarshaller(BatchSetZonesStatusRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateCustomLineRequest, CreateCustomLineResponse> createCustomLine =
         genForcreateCustomLine();
 
@@ -35,6 +196,134 @@ public class DnsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateEndpointRequest, CreateEndpointResponse> createEndpoint =
+        genForcreateEndpoint();
+
+    private static HttpRequestDef<CreateEndpointRequest, CreateEndpointResponse> genForcreateEndpoint() {
+        // basic
+        HttpRequestDef.Builder<CreateEndpointRequest, CreateEndpointResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateEndpointRequest.class, CreateEndpointResponse.class)
+                .withName("CreateEndpoint")
+                .withUri("/v2.1/endpoint")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateEndpointReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateEndpointReq.class),
+            f -> f.withMarshaller(CreateEndpointRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateLineGroupRequest, CreateLineGroupResponse> createLineGroup =
+        genForcreateLineGroup();
+
+    private static HttpRequestDef<CreateLineGroupRequest, CreateLineGroupResponse> genForcreateLineGroup() {
+        // basic
+        HttpRequestDef.Builder<CreateLineGroupRequest, CreateLineGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateLineGroupRequest.class, CreateLineGroupResponse.class)
+                .withName("CreateLineGroup")
+                .withUri("/v2.1/linegroups")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateLineGroupsReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateLineGroupsReq.class),
+            f -> f.withMarshaller(CreateLineGroupRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateResolveRuleRequest, CreateResolveRuleResponse> createResolveRule =
+        genForcreateResolveRule();
+
+    private static HttpRequestDef<CreateResolveRuleRequest, CreateResolveRuleResponse> genForcreateResolveRule() {
+        // basic
+        HttpRequestDef.Builder<CreateResolveRuleRequest, CreateResolveRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateResolveRuleRequest.class, CreateResolveRuleResponse.class)
+                .withName("CreateResolveRule")
+                .withUri("/v2.1/resolverrule")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ResolveRuleReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ResolveRuleReq.class),
+            f -> f.withMarshaller(CreateResolveRuleRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateRetrievalRequest, CreateRetrievalResponse> createRetrieval =
+        genForcreateRetrieval();
+
+    private static HttpRequestDef<CreateRetrievalRequest, CreateRetrievalResponse> genForcreateRetrieval() {
+        // basic
+        HttpRequestDef.Builder<CreateRetrievalRequest, CreateRetrievalResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateRetrievalRequest.class, CreateRetrievalResponse.class)
+                .withName("CreateRetrieval")
+                .withUri("/v2/retrieval")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreatePublicZoneFindReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreatePublicZoneFindReq.class),
+            f -> f.withMarshaller(CreateRetrievalRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateRetrievalVerificationRequest, CreateRetrievalVerificationResponse> createRetrievalVerification =
+        genForcreateRetrievalVerification();
+
+    private static HttpRequestDef<CreateRetrievalVerificationRequest, CreateRetrievalVerificationResponse> genForcreateRetrievalVerification() {
+        // basic
+        HttpRequestDef.Builder<CreateRetrievalVerificationRequest, CreateRetrievalVerificationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    CreateRetrievalVerificationRequest.class,
+                    CreateRetrievalVerificationResponse.class)
+                .withName("CreateRetrievalVerification")
+                .withUri("/v2/retrieval/verification/{id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateRetrievalVerificationRequest::getId, (req, v) -> {
+                req.setId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteCustomLineRequest, DeleteCustomLineResponse> deleteCustomLine =
         genFordeleteCustomLine();
 
@@ -53,6 +342,116 @@ public class DnsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteCustomLineRequest::getLineId, (req, v) -> {
                 req.setLineId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteEndpointRequest, DeleteEndpointResponse> deleteEndpoint =
+        genFordeleteEndpoint();
+
+    private static HttpRequestDef<DeleteEndpointRequest, DeleteEndpointResponse> genFordeleteEndpoint() {
+        // basic
+        HttpRequestDef.Builder<DeleteEndpointRequest, DeleteEndpointResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteEndpointRequest.class, DeleteEndpointResponse.class)
+                .withName("DeleteEndpoint")
+                .withUri("/v2.1/endpoint/{endpoint_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("endpoint_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteEndpointRequest::getEndpointId, (req, v) -> {
+                req.setEndpointId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteLineGroupRequest, DeleteLineGroupResponse> deleteLineGroup =
+        genFordeleteLineGroup();
+
+    private static HttpRequestDef<DeleteLineGroupRequest, DeleteLineGroupResponse> genFordeleteLineGroup() {
+        // basic
+        HttpRequestDef.Builder<DeleteLineGroupRequest, DeleteLineGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteLineGroupRequest.class, DeleteLineGroupResponse.class)
+                .withName("DeleteLineGroup")
+                .withUri("/v2.1/linegroups/{linegroup_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("linegroup_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteLineGroupRequest::getLinegroupId, (req, v) -> {
+                req.setLinegroupId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteResolveRuleRequest, DeleteResolveRuleResponse> deleteResolveRule =
+        genFordeleteResolveRule();
+
+    private static HttpRequestDef<DeleteResolveRuleRequest, DeleteResolveRuleResponse> genFordeleteResolveRule() {
+        // basic
+        HttpRequestDef.Builder<DeleteResolveRuleRequest, DeleteResolveRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteResolveRuleRequest.class, DeleteResolveRuleResponse.class)
+                .withName("DeleteResolveRule")
+                .withUri("/v2.1/resolverrule/{resolverrule_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resolverrule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteResolveRuleRequest::getResolverruleId, (req, v) -> {
+                req.setResolverruleId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DisassociateEndpointIpaddressRequest, DisassociateEndpointIpaddressResponse> disassociateEndpointIpaddress =
+        genFordisassociateEndpointIpaddress();
+
+    private static HttpRequestDef<DisassociateEndpointIpaddressRequest, DisassociateEndpointIpaddressResponse> genFordisassociateEndpointIpaddress() {
+        // basic
+        HttpRequestDef.Builder<DisassociateEndpointIpaddressRequest, DisassociateEndpointIpaddressResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DisassociateEndpointIpaddressRequest.class,
+                    DisassociateEndpointIpaddressResponse.class)
+                .withName("DisassociateEndpointIpaddress")
+                .withUri("v2.1/endpoint/{endpoint_id}/ipaddress/{ipaddress_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("endpoint_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DisassociateEndpointIpaddressRequest::getEndpointId, (req, v) -> {
+                req.setEndpointId(v);
+            }));
+        builder.<String>withRequestField("ipaddress_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DisassociateEndpointIpaddressRequest::getIpaddressId, (req, v) -> {
+                req.setIpaddressId(v);
             }));
 
         // response
@@ -131,6 +530,148 @@ public class DnsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListEndpointIpaddressesRequest, ListEndpointIpaddressesResponse> listEndpointIpaddresses =
+        genForlistEndpointIpaddresses();
+
+    private static HttpRequestDef<ListEndpointIpaddressesRequest, ListEndpointIpaddressesResponse> genForlistEndpointIpaddresses() {
+        // basic
+        HttpRequestDef.Builder<ListEndpointIpaddressesRequest, ListEndpointIpaddressesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListEndpointIpaddressesRequest.class, ListEndpointIpaddressesResponse.class)
+            .withName("ListEndpointIpaddresses")
+            .withUri("/v2.1/endpoint/{endpoint_id}/ipaddress")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("endpoint_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEndpointIpaddressesRequest::getEndpointId, (req, v) -> {
+                req.setEndpointId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListEndpointVpcsRequest, ListEndpointVpcsResponse> listEndpointVpcs =
+        genForlistEndpointVpcs();
+
+    private static HttpRequestDef<ListEndpointVpcsRequest, ListEndpointVpcsResponse> genForlistEndpointVpcs() {
+        // basic
+        HttpRequestDef.Builder<ListEndpointVpcsRequest, ListEndpointVpcsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListEndpointVpcsRequest.class, ListEndpointVpcsResponse.class)
+                .withName("ListEndpointVpcs")
+                .withUri("/v2.1/vpc")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("vpc_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEndpointVpcsRequest::getVpcId, (req, v) -> {
+                req.setVpcId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListEndpointsRequest, ListEndpointsResponse> listEndpoints =
+        genForlistEndpoints();
+
+    private static HttpRequestDef<ListEndpointsRequest, ListEndpointsResponse> genForlistEndpoints() {
+        // basic
+        HttpRequestDef.Builder<ListEndpointsRequest, ListEndpointsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListEndpointsRequest.class, ListEndpointsResponse.class)
+                .withName("ListEndpoints")
+                .withUri("/v2.1/endpoint")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("direction",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEndpointsRequest::getDirection, (req, v) -> {
+                req.setDirection(v);
+            }));
+        builder.<String>withRequestField("vpc_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEndpointsRequest::getVpcId, (req, v) -> {
+                req.setVpcId(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListEndpointsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListEndpointsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListLineGroupsRequest, ListLineGroupsResponse> listLineGroups =
+        genForlistLineGroups();
+
+    private static HttpRequestDef<ListLineGroupsRequest, ListLineGroupsResponse> genForlistLineGroups() {
+        // basic
+        HttpRequestDef.Builder<ListLineGroupsRequest, ListLineGroupsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListLineGroupsRequest.class, ListLineGroupsResponse.class)
+                .withName("ListLineGroups")
+                .withUri("/v2.1/linegroups")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("line_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLineGroupsRequest::getLineId, (req, v) -> {
+                req.setLineId(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLineGroupsRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListLineGroupsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListLineGroupsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListNameServersRequest, ListNameServersResponse> listNameServers =
         genForlistNameServers();
 
@@ -156,6 +697,45 @@ public class DnsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListNameServersRequest::getRegion, (req, v) -> {
                 req.setRegion(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListResoleRulesRequest, ListResoleRulesResponse> listResoleRules =
+        genForlistResoleRules();
+
+    private static HttpRequestDef<ListResoleRulesRequest, ListResoleRulesResponse> genForlistResoleRules() {
+        // basic
+        HttpRequestDef.Builder<ListResoleRulesRequest, ListResoleRulesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListResoleRulesRequest.class, ListResoleRulesResponse.class)
+                .withName("ListResoleRules")
+                .withUri("/v2.1/resolverrule")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("domain_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResoleRulesRequest::getDomainName, (req, v) -> {
+                req.setDomainName(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListResoleRulesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListResoleRulesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
             }));
 
         // response
@@ -212,6 +792,133 @@ public class DnsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowEndpointRequest, ShowEndpointResponse> showEndpoint = genForshowEndpoint();
+
+    private static HttpRequestDef<ShowEndpointRequest, ShowEndpointResponse> genForshowEndpoint() {
+        // basic
+        HttpRequestDef.Builder<ShowEndpointRequest, ShowEndpointResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowEndpointRequest.class, ShowEndpointResponse.class)
+                .withName("ShowEndpoint")
+                .withUri("/v2.1/endpoint/{endpoint_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("endpoint_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowEndpointRequest::getEndpointId, (req, v) -> {
+                req.setEndpointId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowLineGroupRequest, ShowLineGroupResponse> showLineGroup =
+        genForshowLineGroup();
+
+    private static HttpRequestDef<ShowLineGroupRequest, ShowLineGroupResponse> genForshowLineGroup() {
+        // basic
+        HttpRequestDef.Builder<ShowLineGroupRequest, ShowLineGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowLineGroupRequest.class, ShowLineGroupResponse.class)
+                .withName("ShowLineGroup")
+                .withUri("/v2.1/linegroups/{linegroup_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("linegroup_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowLineGroupRequest::getLinegroupId, (req, v) -> {
+                req.setLinegroupId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowResoleRuleRequest, ShowResoleRuleResponse> showResoleRule =
+        genForshowResoleRule();
+
+    private static HttpRequestDef<ShowResoleRuleRequest, ShowResoleRuleResponse> genForshowResoleRule() {
+        // basic
+        HttpRequestDef.Builder<ShowResoleRuleRequest, ShowResoleRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowResoleRuleRequest.class, ShowResoleRuleResponse.class)
+                .withName("ShowResoleRule")
+                .withUri("/v2.1/resolverrule/{resolverrule_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resolverrule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowResoleRuleRequest::getResolverruleId, (req, v) -> {
+                req.setResolverruleId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowRetrievalRequest, ShowRetrievalResponse> showRetrieval =
+        genForshowRetrieval();
+
+    private static HttpRequestDef<ShowRetrievalRequest, ShowRetrievalResponse> genForshowRetrieval() {
+        // basic
+        HttpRequestDef.Builder<ShowRetrievalRequest, ShowRetrievalResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowRetrievalRequest.class, ShowRetrievalResponse.class)
+                .withName("ShowRetrieval")
+                .withUri("/v2/retrieval")
+                .withContentType("application/json");
+
+        // requests
+        builder.<QueryZoneReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(QueryZoneReq.class),
+            f -> f.withMarshaller(ShowRetrievalRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowRetrievalVerificationRequest, ShowRetrievalVerificationResponse> showRetrievalVerification =
+        genForshowRetrievalVerification();
+
+    private static HttpRequestDef<ShowRetrievalVerificationRequest, ShowRetrievalVerificationResponse> genForshowRetrievalVerification() {
+        // basic
+        HttpRequestDef.Builder<ShowRetrievalVerificationRequest, ShowRetrievalVerificationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowRetrievalVerificationRequest.class,
+                    ShowRetrievalVerificationResponse.class)
+                .withName("ShowRetrievalVerification")
+                .withUri("/v2/retrieval/verification/{id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRetrievalVerificationRequest::getId, (req, v) -> {
+                req.setId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateCustomLineRequest, UpdateCustomLineResponse> updateCustomLine =
         genForupdateCustomLine();
 
@@ -236,6 +943,95 @@ public class DnsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UpdateCustomsLineReq.class),
             f -> f.withMarshaller(UpdateCustomLineRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateEndpointRequest, UpdateEndpointResponse> updateEndpoint =
+        genForupdateEndpoint();
+
+    private static HttpRequestDef<UpdateEndpointRequest, UpdateEndpointResponse> genForupdateEndpoint() {
+        // basic
+        HttpRequestDef.Builder<UpdateEndpointRequest, UpdateEndpointResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateEndpointRequest.class, UpdateEndpointResponse.class)
+                .withName("UpdateEndpoint")
+                .withUri("/v2.1/endpoint/{endpoint_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("endpoint_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateEndpointRequest::getEndpointId, (req, v) -> {
+                req.setEndpointId(v);
+            }));
+        builder.<UpdateEndpointInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateEndpointInfo.class),
+            f -> f.withMarshaller(UpdateEndpointRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateLineGroupsRequest, UpdateLineGroupsResponse> updateLineGroups =
+        genForupdateLineGroups();
+
+    private static HttpRequestDef<UpdateLineGroupsRequest, UpdateLineGroupsResponse> genForupdateLineGroups() {
+        // basic
+        HttpRequestDef.Builder<UpdateLineGroupsRequest, UpdateLineGroupsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateLineGroupsRequest.class, UpdateLineGroupsResponse.class)
+                .withName("UpdateLineGroups")
+                .withUri("/v2.1/linegroups/{linegroup_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("linegroup_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateLineGroupsRequest::getLinegroupId, (req, v) -> {
+                req.setLinegroupId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateResolveRuleRequest, UpdateResolveRuleResponse> updateResolveRule =
+        genForupdateResolveRule();
+
+    private static HttpRequestDef<UpdateResolveRuleRequest, UpdateResolveRuleResponse> genForupdateResolveRule() {
+        // basic
+        HttpRequestDef.Builder<UpdateResolveRuleRequest, UpdateResolveRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateResolveRuleRequest.class, UpdateResolveRuleResponse.class)
+                .withName("UpdateResolveRule")
+                .withUri("/v2.1/resolverrule/{resolverrule_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resolverrule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateResolveRuleRequest::getResolverruleId, (req, v) -> {
+                req.setResolverruleId(v);
+            }));
+        builder.<UpdateResolveRuleReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateResolveRuleReq.class),
+            f -> f.withMarshaller(UpdateResolveRuleRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -445,6 +1241,38 @@ public class DnsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UpdatePtrReq.class),
             f -> f.withMarshaller(UpdatePtrRecordRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AssociateHealthCheckRequest, AssociateHealthCheckResponse> associateHealthCheck =
+        genForassociateHealthCheck();
+
+    private static HttpRequestDef<AssociateHealthCheckRequest, AssociateHealthCheckResponse> genForassociateHealthCheck() {
+        // basic
+        HttpRequestDef.Builder<AssociateHealthCheckRequest, AssociateHealthCheckResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, AssociateHealthCheckRequest.class, AssociateHealthCheckResponse.class)
+            .withName("AssociateHealthCheck")
+            .withUri(" /v2.1/recordsets/{recordset_id}/associatehealthcheck")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("recordset_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AssociateHealthCheckRequest::getRecordsetId, (req, v) -> {
+                req.setRecordsetId(v);
+            }));
+        builder.<AssociateHealthCheckReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AssociateHealthCheckReq.class),
+            f -> f.withMarshaller(AssociateHealthCheckRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -679,6 +1507,38 @@ public class DnsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteRecordSetsRequest::getRecordsetId, (req, v) -> {
                 req.setRecordsetId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DisassociateHealthCheckRequest, DisassociateHealthCheckResponse> disassociateHealthCheck =
+        genFordisassociateHealthCheck();
+
+    private static HttpRequestDef<DisassociateHealthCheckRequest, DisassociateHealthCheckResponse> genFordisassociateHealthCheck() {
+        // basic
+        HttpRequestDef.Builder<DisassociateHealthCheckRequest, DisassociateHealthCheckResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DisassociateHealthCheckRequest.class, DisassociateHealthCheckResponse.class)
+            .withName("DisassociateHealthCheck")
+            .withUri("/v2.1/recordsets/{recordset_id}/associatehealthcheck")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("recordset_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DisassociateHealthCheckRequest::getRecordsetId, (req, v) -> {
+                req.setRecordsetId(v);
+            }));
+        builder.<AssociateHealthCheckReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AssociateHealthCheckReq.class),
+            f -> f.withMarshaller(DisassociateHealthCheckRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response
@@ -1803,6 +2663,41 @@ public class DnsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<SetPrivateZoneProxyPatternRequest, SetPrivateZoneProxyPatternResponse> setPrivateZoneProxyPattern =
+        genForsetPrivateZoneProxyPattern();
+
+    private static HttpRequestDef<SetPrivateZoneProxyPatternRequest, SetPrivateZoneProxyPatternResponse> genForsetPrivateZoneProxyPattern() {
+        // basic
+        HttpRequestDef.Builder<SetPrivateZoneProxyPatternRequest, SetPrivateZoneProxyPatternResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    SetPrivateZoneProxyPatternRequest.class,
+                    SetPrivateZoneProxyPatternResponse.class)
+                .withName("SetPrivateZoneProxyPattern")
+                .withUri("/v2/zones/{zone_id}/actions/set-proxy-pattern")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("zone_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetPrivateZoneProxyPatternRequest::getZoneId, (req, v) -> {
+                req.setZoneId(v);
+            }));
+        builder.<SetPrivateZoneProxyPatternRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SetPrivateZoneProxyPatternRequestBody.class),
+            f -> f.withMarshaller(SetPrivateZoneProxyPatternRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowPrivateZoneRequest, ShowPrivateZoneResponse> showPrivateZone =
         genForshowPrivateZone();
 
@@ -1928,7 +2823,7 @@ public class DnsMeta {
             }));
         builder.<UpdatePrivateZoneInfoReq>withRequestField("body",
             LocationType.Body,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdatePrivateZoneInfoReq.class),
             f -> f.withMarshaller(UpdatePrivateZoneRequest::getBody, (req, v) -> {
                 req.setBody(v);

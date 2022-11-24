@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import java.util.Objects;
 
 /**
- * 组件信息
+ * 组件信息。
  */
 public class AppNodeModel {
 
@@ -52,7 +52,7 @@ public class AppNodeModel {
     }
 
     /**
-     * 组件id
+     * 组件id。
      * @return id
      */
     public Long getId() {
@@ -69,7 +69,7 @@ public class AppNodeModel {
     }
 
     /**
-     * 创建时间
+     * 创建时间。
      * @return gmtCreate
      */
     public LocalDate getGmtCreate() {
@@ -86,7 +86,7 @@ public class AppNodeModel {
     }
 
     /**
-     * 修改时间
+     * 修改时间。
      * @return gmtModify
      */
     public LocalDate getGmtModify() {
@@ -103,7 +103,7 @@ public class AppNodeModel {
     }
 
     /**
-     * 组件名称
+     * 组件名称。
      * @return name
      */
     public String getName() {
@@ -120,7 +120,7 @@ public class AppNodeModel {
     }
 
     /**
-     * 应用id
+     * 应用id。
      * @return businessId
      */
     public Long getBusinessId() {
@@ -137,7 +137,7 @@ public class AppNodeModel {
     }
 
     /**
-     * 子应用id
+     * 子应用id。
      * @return subBusinessId
      */
     public Long getSubBusinessId() {
@@ -154,7 +154,7 @@ public class AppNodeModel {
     }
 
     /**
-     * 租户id
+     * 租户id。
      * @return innerDomainId
      */
     public Integer getInnerDomainId() {

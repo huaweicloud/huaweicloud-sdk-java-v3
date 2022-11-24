@@ -41,7 +41,7 @@ public class ListBusinessResponse extends SdkResponse {
     }
 
     /**
-     * 获取业务列表数据结构
+     * 获取应用列表数据结构。
      * @return businessNodes
      */
     public List<BusinessNodeModel> getBusinessNodes() {

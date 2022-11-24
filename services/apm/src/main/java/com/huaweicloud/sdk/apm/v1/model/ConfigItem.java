@@ -31,7 +31,7 @@ public class ConfigItem {
     }
 
     /**
-     * 配置项名称
+     * 配置项名称。
      * @return configName
      */
     public String getConfigName() {
@@ -48,7 +48,7 @@ public class ConfigItem {
     }
 
     /**
-     * 配置项值
+     * 配置项值。
      * @return configValue
      */
     public String getConfigValue() {
@@ -65,7 +65,7 @@ public class ConfigItem {
     }
 
     /**
-     * 是否重写
+     * 是否重写。
      * @return shouldOverride
      */
     public Boolean getShouldOverride() {

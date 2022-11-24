@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 查询趋势图入参
+ * 查询趋势图入参。
  */
 public class TrendParam {
 
@@ -73,7 +73,7 @@ public class TrendParam {
     }
 
     /**
-     * 实例id
+     * 实例id。
      * @return instanceId
      */
     public Long getInstanceId() {
@@ -90,7 +90,7 @@ public class TrendParam {
     }
 
     /**
-     * 监控项id
+     * 监控项id。
      * @return monitorItemId
      */
     public Long getMonitorItemId() {
@@ -107,7 +107,7 @@ public class TrendParam {
     }
 
     /**
-     * 环境id
+     * 环境id。
      * @return envId
      */
     public Long getEnvId() {
@@ -124,7 +124,7 @@ public class TrendParam {
     }
 
     /**
-     * 开始时间
+     * 开始时间。
      * @return startTime
      */
     public String getStartTime() {
@@ -141,7 +141,7 @@ public class TrendParam {
     }
 
     /**
-     * 结束时间
+     * 结束时间。
      * @return endTime
      */
     public String getEndTime() {

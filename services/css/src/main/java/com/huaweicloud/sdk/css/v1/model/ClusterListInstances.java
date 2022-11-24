@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 节点对象。
@@ -44,6 +45,11 @@ public class ClusterListInstances {
     @JsonProperty(value = "ip")
 
     private String ip;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "volume")
+
+    private ClusterVolumeRsp volume;
 
     public ClusterListInstances withStatus(String status) {
         this.status = status;
@@ -164,6 +170,32 @@ public class ClusterListInstances {
         this.ip = ip;
     }
 
+    public ClusterListInstances withVolume(ClusterVolumeRsp volume) {
+        this.volume = volume;
+        return this;
+    }
+
+    public ClusterListInstances withVolume(Consumer<ClusterVolumeRsp> volumeSetter) {
+        if (this.volume == null) {
+            this.volume = new ClusterVolumeRsp();
+            volumeSetter.accept(this.volume);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get volume
+     * @return volume
+     */
+    public ClusterVolumeRsp getVolume() {
+        return volume;
+    }
+
+    public void setVolume(ClusterVolumeRsp volume) {
+        this.volume = volume;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -178,12 +210,13 @@ public class ClusterListInstances {
             && Objects.equals(this.name, clusterListInstances.name)
             && Objects.equals(this.specCode, clusterListInstances.specCode)
             && Objects.equals(this.azCode, clusterListInstances.azCode)
-            && Objects.equals(this.ip, clusterListInstances.ip);
+            && Objects.equals(this.ip, clusterListInstances.ip)
+            && Objects.equals(this.volume, clusterListInstances.volume);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(status, type, id, name, specCode, azCode, ip);
+        return Objects.hash(status, type, id, name, specCode, azCode, ip, volume);
     }
 
     @Override
@@ -197,6 +230,7 @@ public class ClusterListInstances {
         sb.append("    specCode: ").append(toIndentedString(specCode)).append("\n");
         sb.append("    azCode: ").append(toIndentedString(azCode)).append("\n");
         sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
+        sb.append("    volume: ").append(toIndentedString(volume)).append("\n");
         sb.append("}");
         return sb.toString();
     }

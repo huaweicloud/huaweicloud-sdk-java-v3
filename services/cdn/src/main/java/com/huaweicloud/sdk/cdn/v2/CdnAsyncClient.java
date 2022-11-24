@@ -20,6 +20,38 @@ public class CdnAsyncClient {
     }
 
     /**
+     * 批量域名复制
+     *
+     * 批量域名复制接口
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param BatchCopyDomainRequest 请求对象
+     * @return CompletableFuture<BatchCopyDomainResponse>
+     */
+    public CompletableFuture<BatchCopyDomainResponse> batchCopyDomainAsync(BatchCopyDomainRequest request) {
+        return hcClient.asyncInvokeHttp(request, CdnMeta.batchCopyDomain);
+    }
+
+    /**
+     * 批量域名复制
+     *
+     * 批量域名复制接口
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param BatchCopyDomainRequest 请求对象
+     * @return AsyncInvoker<BatchCopyDomainRequest, BatchCopyDomainResponse>
+     */
+    public AsyncInvoker<BatchCopyDomainRequest, BatchCopyDomainResponse> batchCopyDomainAsyncInvoker(
+        BatchCopyDomainRequest request) {
+        return new AsyncInvoker<BatchCopyDomainRequest, BatchCopyDomainResponse>(request, CdnMeta.batchCopyDomain,
+            hcClient);
+    }
+
+    /**
      * 下载区域运营商指标数据表格文件
      *
      * - 下载区域运营商指标数据表格文件。

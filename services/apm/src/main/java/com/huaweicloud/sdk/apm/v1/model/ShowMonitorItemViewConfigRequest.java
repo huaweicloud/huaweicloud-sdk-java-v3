@@ -31,7 +31,7 @@ public class ShowMonitorItemViewConfigRequest {
     }
 
     /**
-     * 环境id
+     * 环境id。
      * @return envId
      */
     public Long getEnvId() {
@@ -48,7 +48,7 @@ public class ShowMonitorItemViewConfigRequest {
     }
 
     /**
-     * 采集器id
+     * 采集器id。
      * @return collectorId
      */
     public Long getCollectorId() {

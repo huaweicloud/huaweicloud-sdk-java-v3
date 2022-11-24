@@ -34,7 +34,7 @@ public class NicSpec {
     }
 
     /**
-     * 网卡所在子网的ID。主网卡创建时若未指定subnetId,将使用集群子网。拓展网卡创建时必须指定subnetId。  
+     * 网卡所在子网的网络ID。主网卡创建时若未指定subnetId,将使用集群子网。拓展网卡创建时必须指定subnetId。  
      * @return subnetId
      */
     public String getSubnetId() {

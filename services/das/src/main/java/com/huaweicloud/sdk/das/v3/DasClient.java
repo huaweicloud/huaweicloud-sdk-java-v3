@@ -82,6 +82,38 @@ public class DasClient {
     }
 
     /**
+     * 设置SQL限流开关状态
+     *
+     * 设置SQL限流开关状态。目前仅支持MySQL数据库。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ChangeSqlLimitSwitchStatusRequest 请求对象
+     * @return ChangeSqlLimitSwitchStatusResponse
+     */
+    public ChangeSqlLimitSwitchStatusResponse changeSqlLimitSwitchStatus(ChangeSqlLimitSwitchStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.changeSqlLimitSwitchStatus);
+    }
+
+    /**
+     * 设置SQL限流开关状态
+     *
+     * 设置SQL限流开关状态。目前仅支持MySQL数据库。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ChangeSqlLimitSwitchStatusRequest 请求对象
+     * @return SyncInvoker<ChangeSqlLimitSwitchStatusRequest, ChangeSqlLimitSwitchStatusResponse>
+     */
+    public SyncInvoker<ChangeSqlLimitSwitchStatusRequest, ChangeSqlLimitSwitchStatusResponse> changeSqlLimitSwitchStatusInvoker(
+        ChangeSqlLimitSwitchStatusRequest request) {
+        return new SyncInvoker<ChangeSqlLimitSwitchStatusRequest, ChangeSqlLimitSwitchStatusResponse>(request,
+            DasMeta.changeSqlLimitSwitchStatus, hcClient);
+    }
+
+    /**
      * 开启/关闭全量SQL、慢SQL开关
      *
      * 打开或者关闭DAS收集全量SQL开关，开启后，实例的性能损耗在5%以内。开启全量SQL后，本服务会对SQL的文本内容进行存储，以便进行分析。用户可自行设置全量SQL的保存时间范围，到期后会自动删除；如果未设置，数据默认保留7天。
@@ -145,6 +177,52 @@ public class DasClient {
         CreateSpaceAnalysisTaskRequest request) {
         return new SyncInvoker<CreateSpaceAnalysisTaskRequest, CreateSpaceAnalysisTaskResponse>(request,
             DasMeta.createSpaceAnalysisTask, hcClient);
+    }
+
+    /**
+     * 创建SQL限流规则
+     *
+     * 添加SQL限流规则。目前仅支持MySQL数据库。
+     * 使用限制如下：
+     * 1.规则举例详细说明：例如关键字是\&quot;select~a\&quot;, 含义为：select以及a为该并发控制所包含的两个关键字，~为关键字间隔符，即若执行SQL命令包含select与a两个关键字视为命中此条并发控制规则。
+     * 2.当SQL语句匹配多条限流规则时，优先生效最新添加的规则，之前的规则不再生效。
+     * 3.限流规则关键字有顺序要求，只会按顺序匹配。如：a~and~b 只会匹配 xxx a&gt;1 and b&gt;2，而不会匹配 xxx b&gt;2 and a&gt;1。
+     * 4.关键字可能大小写敏感，请执行 \&quot;show variables like &#39;rds_sqlfilter_case_sensitive&#39;或者到实例参数设置页面进行确认。
+     * 5.部分版本只读实例不允许设置限流规则，如果要设置限流规则，请到主实例上进行添加。
+     * 6.系统表不限制、不涉及数据查询的不限制、root账号在特定版本下不限制。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateSqlLimitRulesRequest 请求对象
+     * @return CreateSqlLimitRulesResponse
+     */
+    public CreateSqlLimitRulesResponse createSqlLimitRules(CreateSqlLimitRulesRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.createSqlLimitRules);
+    }
+
+    /**
+     * 创建SQL限流规则
+     *
+     * 添加SQL限流规则。目前仅支持MySQL数据库。
+     * 使用限制如下：
+     * 1.规则举例详细说明：例如关键字是\&quot;select~a\&quot;, 含义为：select以及a为该并发控制所包含的两个关键字，~为关键字间隔符，即若执行SQL命令包含select与a两个关键字视为命中此条并发控制规则。
+     * 2.当SQL语句匹配多条限流规则时，优先生效最新添加的规则，之前的规则不再生效。
+     * 3.限流规则关键字有顺序要求，只会按顺序匹配。如：a~and~b 只会匹配 xxx a&gt;1 and b&gt;2，而不会匹配 xxx b&gt;2 and a&gt;1。
+     * 4.关键字可能大小写敏感，请执行 \&quot;show variables like &#39;rds_sqlfilter_case_sensitive&#39;或者到实例参数设置页面进行确认。
+     * 5.部分版本只读实例不允许设置限流规则，如果要设置限流规则，请到主实例上进行添加。
+     * 6.系统表不限制、不涉及数据查询的不限制、root账号在特定版本下不限制。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateSqlLimitRulesRequest 请求对象
+     * @return SyncInvoker<CreateSqlLimitRulesRequest, CreateSqlLimitRulesResponse>
+     */
+    public SyncInvoker<CreateSqlLimitRulesRequest, CreateSqlLimitRulesResponse> createSqlLimitRulesInvoker(
+        CreateSqlLimitRulesRequest request) {
+        return new SyncInvoker<CreateSqlLimitRulesRequest, CreateSqlLimitRulesResponse>(request,
+            DasMeta.createSqlLimitRules, hcClient);
     }
 
     /**
@@ -212,6 +290,38 @@ public class DasClient {
     }
 
     /**
+     * 删除SQL限流规则
+     *
+     * 删除SQL限流规则。目前仅支持MySQL数据库
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteSqlLimitRulesRequest 请求对象
+     * @return DeleteSqlLimitRulesResponse
+     */
+    public DeleteSqlLimitRulesResponse deleteSqlLimitRules(DeleteSqlLimitRulesRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.deleteSqlLimitRules);
+    }
+
+    /**
+     * 删除SQL限流规则
+     *
+     * 删除SQL限流规则。目前仅支持MySQL数据库
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteSqlLimitRulesRequest 请求对象
+     * @return SyncInvoker<DeleteSqlLimitRulesRequest, DeleteSqlLimitRulesResponse>
+     */
+    public SyncInvoker<DeleteSqlLimitRulesRequest, DeleteSqlLimitRulesResponse> deleteSqlLimitRulesInvoker(
+        DeleteSqlLimitRulesRequest request) {
+        return new SyncInvoker<DeleteSqlLimitRulesRequest, DeleteSqlLimitRulesResponse>(request,
+            DasMeta.deleteSqlLimitRules, hcClient);
+    }
+
+    /**
      * 导出慢SQL数据
      *
      * DAS收集慢SQL开关打开后，一次性导出指定时间范围内的慢SQL数据，支持分页滚动获取。该功能仅支持付费实例。
@@ -244,6 +354,39 @@ public class DasClient {
     }
 
     /**
+     * 导出慢SQL模板列表。
+     *
+     * 慢SQL开关打开后，导出慢SQL模板列表。该功能仅支持付费实例。查询时间间隔最长一天。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ExportSlowSqlTemplatesDetailsRequest 请求对象
+     * @return ExportSlowSqlTemplatesDetailsResponse
+     */
+    public ExportSlowSqlTemplatesDetailsResponse exportSlowSqlTemplatesDetails(
+        ExportSlowSqlTemplatesDetailsRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.exportSlowSqlTemplatesDetails);
+    }
+
+    /**
+     * 导出慢SQL模板列表。
+     *
+     * 慢SQL开关打开后，导出慢SQL模板列表。该功能仅支持付费实例。查询时间间隔最长一天。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ExportSlowSqlTemplatesDetailsRequest 请求对象
+     * @return SyncInvoker<ExportSlowSqlTemplatesDetailsRequest, ExportSlowSqlTemplatesDetailsResponse>
+     */
+    public SyncInvoker<ExportSlowSqlTemplatesDetailsRequest, ExportSlowSqlTemplatesDetailsResponse> exportSlowSqlTemplatesDetailsInvoker(
+        ExportSlowSqlTemplatesDetailsRequest request) {
+        return new SyncInvoker<ExportSlowSqlTemplatesDetailsRequest, ExportSlowSqlTemplatesDetailsResponse>(request,
+            DasMeta.exportSlowSqlTemplatesDetails, hcClient);
+    }
+
+    /**
      * 导出全量SQL
      *
      * 全量SQL开关打开后，一次性导出指定时间范围内的全量SQL数据，支持分页滚动获取。该功能仅支持付费实例。
@@ -273,6 +416,71 @@ public class DasClient {
         ExportSqlStatementsRequest request) {
         return new SyncInvoker<ExportSqlStatementsRequest, ExportSqlStatementsResponse>(request,
             DasMeta.exportSqlStatements, hcClient);
+    }
+
+    /**
+     * 导出TopSQL模板列表。
+     *
+     * TopSQL开关打开后，导出TopSQL模板列表。该功能仅支持付费实例。查询时间间隔最长一小时。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ExportTopSqlTemplatesDetailsRequest 请求对象
+     * @return ExportTopSqlTemplatesDetailsResponse
+     */
+    public ExportTopSqlTemplatesDetailsResponse exportTopSqlTemplatesDetails(
+        ExportTopSqlTemplatesDetailsRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.exportTopSqlTemplatesDetails);
+    }
+
+    /**
+     * 导出TopSQL模板列表。
+     *
+     * TopSQL开关打开后，导出TopSQL模板列表。该功能仅支持付费实例。查询时间间隔最长一小时。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ExportTopSqlTemplatesDetailsRequest 请求对象
+     * @return SyncInvoker<ExportTopSqlTemplatesDetailsRequest, ExportTopSqlTemplatesDetailsResponse>
+     */
+    public SyncInvoker<ExportTopSqlTemplatesDetailsRequest, ExportTopSqlTemplatesDetailsResponse> exportTopSqlTemplatesDetailsInvoker(
+        ExportTopSqlTemplatesDetailsRequest request) {
+        return new SyncInvoker<ExportTopSqlTemplatesDetailsRequest, ExportTopSqlTemplatesDetailsResponse>(request,
+            DasMeta.exportTopSqlTemplatesDetails, hcClient);
+    }
+
+    /**
+     * 导出SQL执行耗时区间数据。
+     *
+     * TopSQL开关打开后，导出SQL执行耗时区间数据。该功能仅支持付费实例。查询时间间隔最长六小时。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ExportTopSqlTrendDetailsRequest 请求对象
+     * @return ExportTopSqlTrendDetailsResponse
+     */
+    public ExportTopSqlTrendDetailsResponse exportTopSqlTrendDetails(ExportTopSqlTrendDetailsRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.exportTopSqlTrendDetails);
+    }
+
+    /**
+     * 导出SQL执行耗时区间数据。
+     *
+     * TopSQL开关打开后，导出SQL执行耗时区间数据。该功能仅支持付费实例。查询时间间隔最长六小时。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ExportTopSqlTrendDetailsRequest 请求对象
+     * @return SyncInvoker<ExportTopSqlTrendDetailsRequest, ExportTopSqlTrendDetailsResponse>
+     */
+    public SyncInvoker<ExportTopSqlTrendDetailsRequest, ExportTopSqlTrendDetailsResponse> exportTopSqlTrendDetailsInvoker(
+        ExportTopSqlTrendDetailsRequest request) {
+        return new SyncInvoker<ExportTopSqlTrendDetailsRequest, ExportTopSqlTrendDetailsResponse>(request,
+            DasMeta.exportTopSqlTrendDetails, hcClient);
     }
 
     /**
@@ -440,6 +648,38 @@ public class DasClient {
     }
 
     /**
+     * 查询SQL限流规则列表
+     *
+     * 查询SQL限流规则。目前仅支持MySQL数据库。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListSqlLimitRulesRequest 请求对象
+     * @return ListSqlLimitRulesResponse
+     */
+    public ListSqlLimitRulesResponse listSqlLimitRules(ListSqlLimitRulesRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.listSqlLimitRules);
+    }
+
+    /**
+     * 查询SQL限流规则列表
+     *
+     * 查询SQL限流规则。目前仅支持MySQL数据库。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListSqlLimitRulesRequest 请求对象
+     * @return SyncInvoker<ListSqlLimitRulesRequest, ListSqlLimitRulesResponse>
+     */
+    public SyncInvoker<ListSqlLimitRulesRequest, ListSqlLimitRulesResponse> listSqlLimitRulesInvoker(
+        ListSqlLimitRulesRequest request) {
+        return new SyncInvoker<ListSqlLimitRulesRequest, ListSqlLimitRulesResponse>(request, DasMeta.listSqlLimitRules,
+            hcClient);
+    }
+
+    /**
      * 注册数据库用户
      *
      * 此接口是将数据库用户和密码注册进DAS系统，同时会返回一个数据库用户ID ，后续调用其他接口时（如查询实例会话列表接口）需要用到此数据库用户ID。密码为加密存储，且仅用于DAS API相关功能。此接口不会在数据库实例上创建数据库用户对象。请确保输入的用户名和密码是已经存在并且是正确的。
@@ -603,6 +843,70 @@ public class DasClient {
         ShowSqlExplainRequest request) {
         return new SyncInvoker<ShowSqlExplainRequest, ShowSqlExplainResponse>(request, DasMeta.showSqlExplain,
             hcClient);
+    }
+
+    /**
+     * 查询SQL限流任务
+     *
+     * 查询指定ID的SQL限流任务信息
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowSqlLimitJobInfoRequest 请求对象
+     * @return ShowSqlLimitJobInfoResponse
+     */
+    public ShowSqlLimitJobInfoResponse showSqlLimitJobInfo(ShowSqlLimitJobInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.showSqlLimitJobInfo);
+    }
+
+    /**
+     * 查询SQL限流任务
+     *
+     * 查询指定ID的SQL限流任务信息
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowSqlLimitJobInfoRequest 请求对象
+     * @return SyncInvoker<ShowSqlLimitJobInfoRequest, ShowSqlLimitJobInfoResponse>
+     */
+    public SyncInvoker<ShowSqlLimitJobInfoRequest, ShowSqlLimitJobInfoResponse> showSqlLimitJobInfoInvoker(
+        ShowSqlLimitJobInfoRequest request) {
+        return new SyncInvoker<ShowSqlLimitJobInfoRequest, ShowSqlLimitJobInfoResponse>(request,
+            DasMeta.showSqlLimitJobInfo, hcClient);
+    }
+
+    /**
+     * 查看SQL限流开关状态
+     *
+     * 查询SQL限流的开关状态。目前仅支持MySQL实例
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowSqlLimitSwitchStatusRequest 请求对象
+     * @return ShowSqlLimitSwitchStatusResponse
+     */
+    public ShowSqlLimitSwitchStatusResponse showSqlLimitSwitchStatus(ShowSqlLimitSwitchStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.showSqlLimitSwitchStatus);
+    }
+
+    /**
+     * 查看SQL限流开关状态
+     *
+     * 查询SQL限流的开关状态。目前仅支持MySQL实例
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowSqlLimitSwitchStatusRequest 请求对象
+     * @return SyncInvoker<ShowSqlLimitSwitchStatusRequest, ShowSqlLimitSwitchStatusResponse>
+     */
+    public SyncInvoker<ShowSqlLimitSwitchStatusRequest, ShowSqlLimitSwitchStatusResponse> showSqlLimitSwitchStatusInvoker(
+        ShowSqlLimitSwitchStatusRequest request) {
+        return new SyncInvoker<ShowSqlLimitSwitchStatusRequest, ShowSqlLimitSwitchStatusResponse>(request,
+            DasMeta.showSqlLimitSwitchStatus, hcClient);
     }
 
     /**

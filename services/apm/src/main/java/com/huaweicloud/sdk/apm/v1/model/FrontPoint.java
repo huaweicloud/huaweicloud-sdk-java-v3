@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 数据点模型
+ * 数据点模型。
  */
 public class FrontPoint {
 
@@ -26,7 +26,7 @@ public class FrontPoint {
     }
 
     /**
-     * 时间
+     * 时间。
      * @return time
      */
     public Long getTime() {
@@ -43,7 +43,7 @@ public class FrontPoint {
     }
 
     /**
-     * 值
+     * 值。
      * @return value
      */
     public Object getValue() {

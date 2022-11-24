@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 节点对象。
@@ -44,6 +45,11 @@ public class ClusterDetailInstances {
     @JsonProperty(value = "ip")
 
     private String ip;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "volume")
+
+    private ShowClusterVolumeRsp volume;
 
     public ClusterDetailInstances withStatus(String status) {
         this.status = status;
@@ -164,6 +170,32 @@ public class ClusterDetailInstances {
         this.ip = ip;
     }
 
+    public ClusterDetailInstances withVolume(ShowClusterVolumeRsp volume) {
+        this.volume = volume;
+        return this;
+    }
+
+    public ClusterDetailInstances withVolume(Consumer<ShowClusterVolumeRsp> volumeSetter) {
+        if (this.volume == null) {
+            this.volume = new ShowClusterVolumeRsp();
+            volumeSetter.accept(this.volume);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get volume
+     * @return volume
+     */
+    public ShowClusterVolumeRsp getVolume() {
+        return volume;
+    }
+
+    public void setVolume(ShowClusterVolumeRsp volume) {
+        this.volume = volume;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -179,12 +211,13 @@ public class ClusterDetailInstances {
             && Objects.equals(this.name, clusterDetailInstances.name)
             && Objects.equals(this.specCode, clusterDetailInstances.specCode)
             && Objects.equals(this.azCode, clusterDetailInstances.azCode)
-            && Objects.equals(this.ip, clusterDetailInstances.ip);
+            && Objects.equals(this.ip, clusterDetailInstances.ip)
+            && Objects.equals(this.volume, clusterDetailInstances.volume);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(status, type, id, name, specCode, azCode, ip);
+        return Objects.hash(status, type, id, name, specCode, azCode, ip, volume);
     }
 
     @Override
@@ -198,6 +231,7 @@ public class ClusterDetailInstances {
         sb.append("    specCode: ").append(toIndentedString(specCode)).append("\n");
         sb.append("    azCode: ").append(toIndentedString(azCode)).append("\n");
         sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
+        sb.append("    volume: ").append(toIndentedString(volume)).append("\n");
         sb.append("}");
         return sb.toString();
     }

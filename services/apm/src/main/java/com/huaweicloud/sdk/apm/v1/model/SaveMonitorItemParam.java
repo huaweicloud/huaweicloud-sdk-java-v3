@@ -39,7 +39,7 @@ public class SaveMonitorItemParam {
     }
 
     /**
-     * 监控项id
+     * 监控项id。
      * @return monitorItemId
      */
     public Long getMonitorItemId() {
@@ -56,7 +56,7 @@ public class SaveMonitorItemParam {
     }
 
     /**
-     * 采集间隔
+     * 采集间隔。
      * @return interval
      */
     public Integer getInterval() {
@@ -73,7 +73,7 @@ public class SaveMonitorItemParam {
     }
 
     /**
-     * 环境id
+     * 环境id。
      * @return envId
      */
     public Integer getEnvId() {
@@ -106,7 +106,7 @@ public class SaveMonitorItemParam {
     }
 
     /**
-     * 配置项列表
+     * 配置项列表。
      * @return configValueList
      */
     public List<ConfigItem> getConfigValueList() {

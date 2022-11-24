@@ -42,9 +42,9 @@ public class Network {
     private Geo srcGeo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "destc_ip")
+    @JsonProperty(value = "dest_ip")
 
-    private String destcIp;
+    private String destIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dest_port")
@@ -174,21 +174,21 @@ public class Network {
         this.srcGeo = srcGeo;
     }
 
-    public Network withDestcIp(String destcIp) {
-        this.destcIp = destcIp;
+    public Network withDestIp(String destIp) {
+        this.destIp = destIp;
         return this;
     }
 
     /**
      * 目标IP地址。
-     * @return destcIp
+     * @return destIp
      */
-    public String getDestcIp() {
-        return destcIp;
+    public String getDestIp() {
+        return destIp;
     }
 
-    public void setDestcIp(String destcIp) {
-        this.destcIp = destcIp;
+    public void setDestIp(String destIp) {
+        this.destIp = destIp;
     }
 
     public Network withDestPort(Integer destPort) {
@@ -265,14 +265,14 @@ public class Network {
         return Objects.equals(this.direction, network.direction) && Objects.equals(this.protocol, network.protocol)
             && Objects.equals(this.srcIp, network.srcIp) && Objects.equals(this.srcPort, network.srcPort)
             && Objects.equals(this.srcDomain, network.srcDomain) && Objects.equals(this.srcGeo, network.srcGeo)
-            && Objects.equals(this.destcIp, network.destcIp) && Objects.equals(this.destPort, network.destPort)
+            && Objects.equals(this.destIp, network.destIp) && Objects.equals(this.destPort, network.destPort)
             && Objects.equals(this.destDomain, network.destDomain) && Objects.equals(this.destGeo, network.destGeo);
     }
 
     @Override
     public int hashCode() {
         return Objects
-            .hash(direction, protocol, srcIp, srcPort, srcDomain, srcGeo, destcIp, destPort, destDomain, destGeo);
+            .hash(direction, protocol, srcIp, srcPort, srcDomain, srcGeo, destIp, destPort, destDomain, destGeo);
     }
 
     @Override
@@ -285,7 +285,7 @@ public class Network {
         sb.append("    srcPort: ").append(toIndentedString(srcPort)).append("\n");
         sb.append("    srcDomain: ").append(toIndentedString(srcDomain)).append("\n");
         sb.append("    srcGeo: ").append(toIndentedString(srcGeo)).append("\n");
-        sb.append("    destcIp: ").append(toIndentedString(destcIp)).append("\n");
+        sb.append("    destIp: ").append(toIndentedString(destIp)).append("\n");
         sb.append("    destPort: ").append(toIndentedString(destPort)).append("\n");
         sb.append("    destDomain: ").append(toIndentedString(destDomain)).append("\n");
         sb.append("    destGeo: ").append(toIndentedString(destGeo)).append("\n");

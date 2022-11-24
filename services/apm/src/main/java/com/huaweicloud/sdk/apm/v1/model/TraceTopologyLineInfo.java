@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 拓扑图上线条的的信息
+ * 拓扑图上线条的的信息。
  */
 public class TraceTopologyLineInfo {
 
@@ -36,7 +36,7 @@ public class TraceTopologyLineInfo {
     }
 
     /**
-     * 开始时间
+     * 开始时间。
      * @return startTime
      */
     public Long getStartTime() {
@@ -53,7 +53,7 @@ public class TraceTopologyLineInfo {
     }
 
     /**
-     * 耗时
+     * 耗时。
      * @return timeUsed
      */
     public Long getTimeUsed() {
@@ -70,7 +70,7 @@ public class TraceTopologyLineInfo {
     }
 
     /**
-     * 参数信息，比如调用的url信息等
+     * 参数信息，比如调用的url信息等。
      * @return argument
      */
     public String getArgument() {
@@ -87,7 +87,7 @@ public class TraceTopologyLineInfo {
     }
 
     /**
-     * event的id
+     * event的id。
      * @return eventId
      */
     public String getEventId() {

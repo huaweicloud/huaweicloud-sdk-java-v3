@@ -20,7 +20,7 @@ public class ApmClient {
     /**
      * 创建aksk
      *
-     * 创建aksk
+     * 创建aksk。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -35,7 +35,7 @@ public class ApmClient {
     /**
      * 创建aksk
      *
-     * 创建aksk
+     * 创建aksk。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -50,7 +50,7 @@ public class ApmClient {
     /**
      * 删除aksk
      *
-     * 删除aksk
+     * 删除aksk。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -65,7 +65,7 @@ public class ApmClient {
     /**
      * 删除aksk
      *
-     * 删除aksk
+     * 删除aksk。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -80,7 +80,7 @@ public class ApmClient {
     /**
      * 查询租户的aksk
      *
-     * 查询租户的aksk
+     * 查询租户的aksk。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -95,7 +95,7 @@ public class ApmClient {
     /**
      * 查询租户的aksk
      *
-     * 查询租户的aksk
+     * 查询租户的aksk。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -105,6 +105,68 @@ public class ApmClient {
      */
     public SyncInvoker<ShowAkSksRequest, ShowAkSksResponse> showAkSksInvoker(ShowAkSksRequest request) {
         return new SyncInvoker<ShowAkSksRequest, ShowAkSksResponse>(request, ApmMeta.showAkSks, hcClient);
+    }
+
+    /**
+     * 查询告警列表
+     *
+     * 查询系统中存在的告警。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListAlarmDataRequest 请求对象
+     * @return ListAlarmDataResponse
+     */
+    public ListAlarmDataResponse listAlarmData(ListAlarmDataRequest request) {
+        return hcClient.syncInvokeHttp(request, ApmMeta.listAlarmData);
+    }
+
+    /**
+     * 查询告警列表
+     *
+     * 查询系统中存在的告警。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListAlarmDataRequest 请求对象
+     * @return SyncInvoker<ListAlarmDataRequest, ListAlarmDataResponse>
+     */
+    public SyncInvoker<ListAlarmDataRequest, ListAlarmDataResponse> listAlarmDataInvoker(ListAlarmDataRequest request) {
+        return new SyncInvoker<ListAlarmDataRequest, ListAlarmDataResponse>(request, ApmMeta.listAlarmData, hcClient);
+    }
+
+    /**
+     * 查询告警消息列表
+     *
+     * 查询单个告警的触发详情与历史。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListAlarmNotifyRequest 请求对象
+     * @return ListAlarmNotifyResponse
+     */
+    public ListAlarmNotifyResponse listAlarmNotify(ListAlarmNotifyRequest request) {
+        return hcClient.syncInvokeHttp(request, ApmMeta.listAlarmNotify);
+    }
+
+    /**
+     * 查询告警消息列表
+     *
+     * 查询单个告警的触发详情与历史。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListAlarmNotifyRequest 请求对象
+     * @return SyncInvoker<ListAlarmNotifyRequest, ListAlarmNotifyResponse>
+     */
+    public SyncInvoker<ListAlarmNotifyRequest, ListAlarmNotifyResponse> listAlarmNotifyInvoker(
+        ListAlarmNotifyRequest request) {
+        return new SyncInvoker<ListAlarmNotifyRequest, ListAlarmNotifyResponse>(request, ApmMeta.listAlarmNotify,
+            hcClient);
     }
 
     /**
@@ -138,9 +200,9 @@ public class ApmClient {
     }
 
     /**
-     * 查询业务列表
+     * 查询应用列表
      *
-     * 该接口用于查询对应用户下的业务。
+     * 该接口用于查询对应用户下的应用。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -153,9 +215,9 @@ public class ApmClient {
     }
 
     /**
-     * 查询业务列表
+     * 查询应用列表
      *
-     * 该接口用于查询对应用户下的业务。
+     * 该接口用于查询对应用户下的应用。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -170,7 +232,7 @@ public class ApmClient {
     /**
      * 查询监控项列表
      *
-     * 查询监控项列表
+     * 查询监控项列表。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -185,7 +247,7 @@ public class ApmClient {
     /**
      * 查询监控项列表
      *
-     * 查询监控项列表
+     * 查询监控项列表。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -202,7 +264,7 @@ public class ApmClient {
     /**
      * 保存监控项
      *
-     * 保存监控项
+     * 保存监控项。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -217,7 +279,7 @@ public class ApmClient {
     /**
      * 保存监控项
      *
-     * 保存监控项
+     * 保存监控项。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -232,9 +294,9 @@ public class ApmClient {
     }
 
     /**
-     * 对指定区域下的应用和环境及其探针情况进行搜索
+     * 对指定区域下的组件和环境及其探针情况进行搜索
      *
-     * 对指定区域下的应用和环境及其探针情况进行搜索
+     * 对指定区域下的组件和环境及其探针情况进行搜索。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -247,9 +309,9 @@ public class ApmClient {
     }
 
     /**
-     * 对指定区域下的应用和环境及其探针情况进行搜索
+     * 对指定区域下的组件和环境及其探针情况进行搜索
      *
-     * 对指定区域下的应用和环境及其探针情况进行搜索
+     * 对指定区域下的组件和环境及其探针情况进行搜索。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -266,7 +328,7 @@ public class ApmClient {
     /**
      * 查询master地址
      *
-     * 根据region名称获取该名称下的master服务podlb地址信息。
+     * 根据region名称获取该region下的master服务podlb地址信息。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -281,7 +343,7 @@ public class ApmClient {
     /**
      * 查询master地址
      *
-     * 根据region名称获取该名称下的master服务podlb地址信息。
+     * 根据region名称获取该region下的master服务podlb地址信息。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -298,7 +360,7 @@ public class ApmClient {
     /**
      * 根据组件id删除指定的组件
      *
-     * 该接口用于删除指定的组件
+     * 该接口用于删除指定的组件。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -313,7 +375,7 @@ public class ApmClient {
     /**
      * 根据组件id删除指定的组件
      *
-     * 该接口用于删除指定的组件
+     * 该接口用于删除指定的组件。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -326,39 +388,9 @@ public class ApmClient {
     }
 
     /**
-     * 根据环境id删除指定的环境
-     *
-     * 该接口用于删除指定的环境
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param DeleteEnvRequest 请求对象
-     * @return DeleteEnvResponse
-     */
-    public DeleteEnvResponse deleteEnv(DeleteEnvRequest request) {
-        return hcClient.syncInvokeHttp(request, ApmMeta.deleteEnv);
-    }
-
-    /**
-     * 根据环境id删除指定的环境
-     *
-     * 该接口用于删除指定的环境
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param DeleteEnvRequest 请求对象
-     * @return SyncInvoker<DeleteEnvRequest, DeleteEnvResponse>
-     */
-    public SyncInvoker<DeleteEnvRequest, DeleteEnvResponse> deleteEnvInvoker(DeleteEnvRequest request) {
-        return new SyncInvoker<DeleteEnvRequest, DeleteEnvResponse>(request, ApmMeta.deleteEnv, hcClient);
-    }
-
-    /**
      * 获取组件下的环境列表
      *
-     * 获取组件下的环境列表
+     * 获取组件下的环境列表。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -373,7 +405,7 @@ public class ApmClient {
     /**
      * 获取组件下的环境列表
      *
-     * 获取组件下的环境列表
+     * 获取组件下的环境列表。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -388,7 +420,7 @@ public class ApmClient {
     /**
      * 获取组件列表
      *
-     * 获取组件列表
+     * 获取组件列表。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -403,7 +435,7 @@ public class ApmClient {
     /**
      * 获取组件列表
      *
-     * 获取组件列表
+     * 获取组件列表。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -418,7 +450,7 @@ public class ApmClient {
     /**
      * 查询环境标签
      *
-     * 查询环境标签接口
+     * 查询环境标签接口。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -433,7 +465,7 @@ public class ApmClient {
     /**
      * 查询环境标签
      *
-     * 查询环境标签接口
+     * 查询环境标签接口。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -446,9 +478,73 @@ public class ApmClient {
     }
 
     /**
-     * 获取业务树
+     * 查询单个应用的详情
      *
-     * 获取业务树
+     * 查询单个应用的详情。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowBusinessDetailRequest 请求对象
+     * @return ShowBusinessDetailResponse
+     */
+    public ShowBusinessDetailResponse showBusinessDetail(ShowBusinessDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, ApmMeta.showBusinessDetail);
+    }
+
+    /**
+     * 查询单个应用的详情
+     *
+     * 查询单个应用的详情。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowBusinessDetailRequest 请求对象
+     * @return SyncInvoker<ShowBusinessDetailRequest, ShowBusinessDetailResponse>
+     */
+    public SyncInvoker<ShowBusinessDetailRequest, ShowBusinessDetailResponse> showBusinessDetailInvoker(
+        ShowBusinessDetailRequest request) {
+        return new SyncInvoker<ShowBusinessDetailRequest, ShowBusinessDetailResponse>(request,
+            ApmMeta.showBusinessDetail, hcClient);
+    }
+
+    /**
+     * 查询子应用详情
+     *
+     * 查询单个子应用详情。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowSubBusinessDetailRequest 请求对象
+     * @return ShowSubBusinessDetailResponse
+     */
+    public ShowSubBusinessDetailResponse showSubBusinessDetail(ShowSubBusinessDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, ApmMeta.showSubBusinessDetail);
+    }
+
+    /**
+     * 查询子应用详情
+     *
+     * 查询单个子应用详情。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowSubBusinessDetailRequest 请求对象
+     * @return SyncInvoker<ShowSubBusinessDetailRequest, ShowSubBusinessDetailResponse>
+     */
+    public SyncInvoker<ShowSubBusinessDetailRequest, ShowSubBusinessDetailResponse> showSubBusinessDetailInvoker(
+        ShowSubBusinessDetailRequest request) {
+        return new SyncInvoker<ShowSubBusinessDetailRequest, ShowSubBusinessDetailResponse>(request,
+            ApmMeta.showSubBusinessDetail, hcClient);
+    }
+
+    /**
+     * 获取应用树
+     *
+     * 获取应用树。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -461,9 +557,9 @@ public class ApmClient {
     }
 
     /**
-     * 获取业务树
+     * 获取应用树
      *
-     * 获取业务树
+     * 获取应用树。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -480,7 +576,7 @@ public class ApmClient {
     /**
      * 查询开通的region
      *
-     * 该接口用于查询用户开通的region信息
+     * 该接口用于查询用户开通的region信息。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -495,7 +591,7 @@ public class ApmClient {
     /**
      * 查询开通的region
      *
-     * 该接口用于查询用户开通的region信息
+     * 该接口用于查询用户开通的region信息。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -542,9 +638,201 @@ public class ApmClient {
     }
 
     /**
+     * 查询应用全局拓扑图
+     *
+     * 查询应用级别全局拓扑图信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SearchBusinessTopologyRequest 请求对象
+     * @return SearchBusinessTopologyResponse
+     */
+    public SearchBusinessTopologyResponse searchBusinessTopology(SearchBusinessTopologyRequest request) {
+        return hcClient.syncInvokeHttp(request, ApmMeta.searchBusinessTopology);
+    }
+
+    /**
+     * 查询应用全局拓扑图
+     *
+     * 查询应用级别全局拓扑图信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SearchBusinessTopologyRequest 请求对象
+     * @return SyncInvoker<SearchBusinessTopologyRequest, SearchBusinessTopologyResponse>
+     */
+    public SyncInvoker<SearchBusinessTopologyRequest, SearchBusinessTopologyResponse> searchBusinessTopologyInvoker(
+        SearchBusinessTopologyRequest request) {
+        return new SyncInvoker<SearchBusinessTopologyRequest, SearchBusinessTopologyResponse>(request,
+            ApmMeta.searchBusinessTopology, hcClient);
+    }
+
+    /**
+     * 查询组件环境拓扑图
+     *
+     * 查询组件环境级别全局拓扑图信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SearchEnvTopologyRequest 请求对象
+     * @return SearchEnvTopologyResponse
+     */
+    public SearchEnvTopologyResponse searchEnvTopology(SearchEnvTopologyRequest request) {
+        return hcClient.syncInvokeHttp(request, ApmMeta.searchEnvTopology);
+    }
+
+    /**
+     * 查询组件环境拓扑图
+     *
+     * 查询组件环境级别全局拓扑图信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SearchEnvTopologyRequest 请求对象
+     * @return SyncInvoker<SearchEnvTopologyRequest, SearchEnvTopologyResponse>
+     */
+    public SyncInvoker<SearchEnvTopologyRequest, SearchEnvTopologyResponse> searchEnvTopologyInvoker(
+        SearchEnvTopologyRequest request) {
+        return new SyncInvoker<SearchEnvTopologyRequest, SearchEnvTopologyResponse>(request, ApmMeta.searchEnvTopology,
+            hcClient);
+    }
+
+    /**
+     * 查询URL跟踪Region环境列表
+     *
+     * 查询所选Region下设置了URL跟踪的环境列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListBusinessEnvRequest 请求对象
+     * @return ListBusinessEnvResponse
+     */
+    public ListBusinessEnvResponse listBusinessEnv(ListBusinessEnvRequest request) {
+        return hcClient.syncInvokeHttp(request, ApmMeta.listBusinessEnv);
+    }
+
+    /**
+     * 查询URL跟踪Region环境列表
+     *
+     * 查询所选Region下设置了URL跟踪的环境列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListBusinessEnvRequest 请求对象
+     * @return SyncInvoker<ListBusinessEnvRequest, ListBusinessEnvResponse>
+     */
+    public SyncInvoker<ListBusinessEnvRequest, ListBusinessEnvResponse> listBusinessEnvInvoker(
+        ListBusinessEnvRequest request) {
+        return new SyncInvoker<ListBusinessEnvRequest, ListBusinessEnvResponse>(request, ApmMeta.listBusinessEnv,
+            hcClient);
+    }
+
+    /**
+     * 查询URL跟踪视图列表
+     *
+     * 查询当前被调用的URL跟踪视图列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SearchTransactionRequest 请求对象
+     * @return SearchTransactionResponse
+     */
+    public SearchTransactionResponse searchTransaction(SearchTransactionRequest request) {
+        return hcClient.syncInvokeHttp(request, ApmMeta.searchTransaction);
+    }
+
+    /**
+     * 查询URL跟踪视图列表
+     *
+     * 查询当前被调用的URL跟踪视图列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SearchTransactionRequest 请求对象
+     * @return SyncInvoker<SearchTransactionRequest, SearchTransactionResponse>
+     */
+    public SyncInvoker<SearchTransactionRequest, SearchTransactionResponse> searchTransactionInvoker(
+        SearchTransactionRequest request) {
+        return new SyncInvoker<SearchTransactionRequest, SearchTransactionResponse>(request, ApmMeta.searchTransaction,
+            hcClient);
+    }
+
+    /**
+     * 查询URL跟踪配置列表
+     *
+     * 查询已配置好的URL跟踪配置列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SearchTransactionConfigRequest 请求对象
+     * @return SearchTransactionConfigResponse
+     */
+    public SearchTransactionConfigResponse searchTransactionConfig(SearchTransactionConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, ApmMeta.searchTransactionConfig);
+    }
+
+    /**
+     * 查询URL跟踪配置列表
+     *
+     * 查询已配置好的URL跟踪配置列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SearchTransactionConfigRequest 请求对象
+     * @return SyncInvoker<SearchTransactionConfigRequest, SearchTransactionConfigResponse>
+     */
+    public SyncInvoker<SearchTransactionConfigRequest, SearchTransactionConfigResponse> searchTransactionConfigInvoker(
+        SearchTransactionConfigRequest request) {
+        return new SyncInvoker<SearchTransactionConfigRequest, SearchTransactionConfigResponse>(request,
+            ApmMeta.searchTransactionConfig, hcClient);
+    }
+
+    /**
+     * 查询URL跟踪视图详情
+     *
+     * 查询某条URL跟踪视图详情。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowTransactionDetailRequest 请求对象
+     * @return ShowTransactionDetailResponse
+     */
+    public ShowTransactionDetailResponse showTransactionDetail(ShowTransactionDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, ApmMeta.showTransactionDetail);
+    }
+
+    /**
+     * 查询URL跟踪视图详情
+     *
+     * 查询某条URL跟踪视图详情。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowTransactionDetailRequest 请求对象
+     * @return SyncInvoker<ShowTransactionDetailRequest, ShowTransactionDetailResponse>
+     */
+    public SyncInvoker<ShowTransactionDetailRequest, ShowTransactionDetailResponse> showTransactionDetailInvoker(
+        ShowTransactionDetailRequest request) {
+        return new SyncInvoker<ShowTransactionDetailRequest, ShowTransactionDetailResponse>(request,
+            ApmMeta.showTransactionDetail, hcClient);
+    }
+
+    /**
      * 获取实例信息列表
      *
-     * 获取实例信息列表
+     * 获取实例信息列表。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -559,7 +847,7 @@ public class ApmClient {
     /**
      * 获取实例信息列表
      *
-     * 获取实例信息列表
+     * 获取实例信息列表。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -576,7 +864,7 @@ public class ApmClient {
     /**
      * 获取原始数据详情
      *
-     * 获取原始数据详情
+     * 获取原始数据详情。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -591,7 +879,7 @@ public class ApmClient {
     /**
      * 获取原始数据详情
      *
-     * 获取原始数据详情
+     * 获取原始数据详情。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -606,8 +894,9 @@ public class ApmClient {
     }
 
     /**
-     * 
+     * 获取监控项信息
      *
+     * 获取监控项信息。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -620,8 +909,9 @@ public class ApmClient {
     }
 
     /**
-     * 
+     * 获取监控项信息
      *
+     * 获取监控项信息。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -638,7 +928,7 @@ public class ApmClient {
     /**
      * 获取event的详情
      *
-     * 获取event的详情
+     * 获取event的详情。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -653,7 +943,7 @@ public class ApmClient {
     /**
      * 获取event的详情
      *
-     * 获取event的详情
+     * 获取event的详情。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -670,7 +960,7 @@ public class ApmClient {
     /**
      * 查询监控项配置信息
      *
-     * 查询监控项配置信息
+     * 查询监控项配置信息。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -685,7 +975,7 @@ public class ApmClient {
     /**
      * 查询监控项配置信息
      *
-     * 查询监控项配置信息
+     * 查询监控项配置信息。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -702,7 +992,7 @@ public class ApmClient {
     /**
      * 获取原始数据表格
      *
-     * 获取原始数据表格
+     * 获取原始数据表格。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -717,7 +1007,7 @@ public class ApmClient {
     /**
      * 获取原始数据表格
      *
-     * 获取原始数据表格
+     * 获取原始数据表格。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -732,7 +1022,7 @@ public class ApmClient {
     /**
      * 查询span数据
      *
-     * span数据查询接口
+     * span数据查询接口。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -747,7 +1037,7 @@ public class ApmClient {
     /**
      * 查询span数据
      *
-     * span数据查询接口
+     * span数据查询接口。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -764,7 +1054,7 @@ public class ApmClient {
     /**
      * 获取汇总表格数据
      *
-     * 获取汇总表格数据
+     * 获取汇总表格数据。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -779,7 +1069,7 @@ public class ApmClient {
     /**
      * 获取汇总表格数据
      *
-     * 获取汇总表格数据
+     * 获取汇总表格数据。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -794,7 +1084,7 @@ public class ApmClient {
     /**
      * 调用链拓扑图
      *
-     * 调用链拓扑图
+     * 调用链拓扑图。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -809,7 +1099,7 @@ public class ApmClient {
     /**
      * 调用链拓扑图
      *
-     * 调用链拓扑图
+     * 调用链拓扑图。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -824,7 +1114,7 @@ public class ApmClient {
     /**
      * 获取一个trace的所有调用链数据
      *
-     * 获取一个trace的所有调用链数据
+     * 获取一个trace的所有调用链数据。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -839,7 +1129,7 @@ public class ApmClient {
     /**
      * 获取一个trace的所有调用链数据
      *
-     * 获取一个trace的所有调用链数据
+     * 获取一个trace的所有调用链数据。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -856,7 +1146,7 @@ public class ApmClient {
     /**
      * 获取趋势图
      *
-     * 获取趋势图
+     * 获取趋势图。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -871,7 +1161,7 @@ public class ApmClient {
     /**
      * 获取趋势图
      *
-     * 获取趋势图
+     * 获取趋势图。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.

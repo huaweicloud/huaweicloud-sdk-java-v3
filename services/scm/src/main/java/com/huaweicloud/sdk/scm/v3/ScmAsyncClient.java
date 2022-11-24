@@ -16,7 +16,7 @@ public class ScmAsyncClient {
     }
 
     public static ClientBuilder<ScmAsyncClient> newBuilder() {
-        return new ClientBuilder<>(ScmAsyncClient::new);
+        return new ClientBuilder<>(ScmAsyncClient::new, "GlobalCredentials,BasicCredentials");
     }
 
     /**

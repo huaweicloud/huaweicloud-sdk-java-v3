@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 所需展示的字段列表模型
+ * 所需展示的字段列表模型。
  */
 public class FieldItem {
 
@@ -51,7 +51,7 @@ public class FieldItem {
     }
 
     /**
-     * 表达式
+     * 表达式。
      * @return function
      */
     public String getFunction() {
@@ -68,7 +68,7 @@ public class FieldItem {
     }
 
     /**
-     * 作为
+     * 作为。
      * @return as
      */
     public String getAs() {
@@ -85,7 +85,7 @@ public class FieldItem {
     }
 
     /**
-     * 默认值
+     * 默认值。
      * @return defaultValue
      */
     public String getDefaultValue() {
@@ -102,7 +102,7 @@ public class FieldItem {
     }
 
     /**
-     * 是否是trace
+     * 是否是trace。
      * @return trace
      */
     public Boolean getTrace() {
@@ -119,7 +119,7 @@ public class FieldItem {
     }
 
     /**
-     * 百分比
+     * 百分比。
      * @return precision
      */
     public Integer getPrecision() {
@@ -136,7 +136,7 @@ public class FieldItem {
     }
 
     /**
-     * 单位
+     * 单位。
      * @return unit
      */
     public String getUnit() {
@@ -153,7 +153,7 @@ public class FieldItem {
     }
 
     /**
-     * 是否可见
+     * 是否可见。
      * @return visible
      */
     public Boolean getVisible() {

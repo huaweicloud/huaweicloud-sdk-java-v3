@@ -30,7 +30,7 @@ public class ShowRawTableResponse extends SdkResponse {
     private String latestDataTime;
 
     /**
-     * 表格的方向，H：默认，表头横向，V：表头纵向
+     * 表格的方向，H：默认，表头横向，V：表头纵向。
      */
     public static final class TableDirectionEnum {
 
@@ -165,7 +165,7 @@ public class ShowRawTableResponse extends SdkResponse {
     }
 
     /**
-     * 最近一笔数据的时间
+     * 最近一笔数据的时间。
      * @return latestDataTime
      */
     public String getLatestDataTime() {
@@ -182,7 +182,7 @@ public class ShowRawTableResponse extends SdkResponse {
     }
 
     /**
-     * 表格的方向，H：默认，表头横向，V：表头纵向
+     * 表格的方向，H：默认，表头横向，V：表头纵向。
      * @return tableDirection
      */
     public TableDirectionEnum getTableDirection() {
@@ -199,7 +199,7 @@ public class ShowRawTableResponse extends SdkResponse {
     }
 
     /**
-     * 上次请求id
+     * 上次请求id。
      * @return resultId
      */
     public String getResultId() {
@@ -216,7 +216,7 @@ public class ShowRawTableResponse extends SdkResponse {
     }
 
     /**
-     * 实际开始的时间，主要用于下一次调用，特别是分页调用的时候传的参数
+     * 实际开始的时间，主要用于下一次调用，特别是分页调用的时候传的参数。
      * @return realStartTime
      */
     public Long getRealStartTime() {
@@ -233,7 +233,7 @@ public class ShowRawTableResponse extends SdkResponse {
     }
 
     /**
-     * 实际结束的时间
+     * 实际结束的时间。
      * @return realEndTime
      */
     public Long getRealEndTime() {

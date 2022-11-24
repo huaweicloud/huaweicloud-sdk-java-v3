@@ -21,7 +21,7 @@ public class OrderParam {
     private String field;
 
     /**
-     * Gets or Sets order
+     * ASC：正序，DESC：逆序。
      */
     public static final class OrderEnum {
 
@@ -108,7 +108,7 @@ public class OrderParam {
     }
 
     /**
-     * Get field
+     * timeUsed：响应时间，startTime：产生时间。
      * @return field
      */
     public String getField() {
@@ -125,7 +125,7 @@ public class OrderParam {
     }
 
     /**
-     * Get order
+     * ASC：正序，DESC：逆序。
      * @return order
      */
     public OrderEnum getOrder() {

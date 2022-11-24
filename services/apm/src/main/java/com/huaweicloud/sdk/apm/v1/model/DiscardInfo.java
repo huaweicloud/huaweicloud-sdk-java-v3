@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 丢弃的信息
+ * 丢弃的信息。
  */
 public class DiscardInfo {
 
@@ -31,7 +31,7 @@ public class DiscardInfo {
     }
 
     /**
-     * 类型
+     * 类型。
      * @return type
      */
     public String getType() {
@@ -48,7 +48,7 @@ public class DiscardInfo {
     }
 
     /**
-     * 数量
+     * 数量。
      * @return count
      */
     public Integer getCount() {
@@ -65,7 +65,7 @@ public class DiscardInfo {
     }
 
     /**
-     * 总时间
+     * 总时间。
      * @return totalTime
      */
     public Long getTotalTime() {

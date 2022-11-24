@@ -58,7 +58,7 @@ public class NodePoolSpecUpdate {
     }
 
     /**
-     * 节点池初始化节点个数。查询时为节点池目标节点数量。
+     * 节点池初始化节点个数。查询时为节点池目标节点数量。默认值为0。
      * @return initialNodeCount
      */
     public Integer getInitialNodeCount() {

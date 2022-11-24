@@ -94,7 +94,7 @@ public class TagParam {
     }
 
     /**
-     * 环境标签id
+     * 环境标签id。
      * @return tagId
      */
     public Long getTagId() {
@@ -111,7 +111,7 @@ public class TagParam {
     }
 
     /**
-     * 环境标签名称
+     * 环境标签名称。
      * @return tagName
      */
     public String getTagName() {
@@ -128,7 +128,7 @@ public class TagParam {
     }
 
     /**
-     * 环境id
+     * 环境id。
      * @return envId
      */
     public Long getEnvId() {
@@ -145,7 +145,7 @@ public class TagParam {
     }
 
     /**
-     * 描述信息
+     * 描述信息。
      * @return descp
      */
     public String getDescp() {
@@ -162,7 +162,7 @@ public class TagParam {
     }
 
     /**
-     * 应用id
+     * 应用id。
      * @return businessId
      */
     public Long getBusinessId() {
@@ -195,7 +195,7 @@ public class TagParam {
     }
 
     /**
-     * 环境id列表
+     * 环境id列表。
      * @return envIdList
      */
     public List<Long> getEnvIdList() {
@@ -228,7 +228,7 @@ public class TagParam {
     }
 
     /**
-     * 环境标签id列表
+     * 环境标签id列表。
      * @return tagIdList
      */
     public List<Long> getTagIdList() {
@@ -245,7 +245,7 @@ public class TagParam {
     }
 
     /**
-     * 关键字
+     * 关键字。
      * @return keyword
      */
     public String getKeyword() {
@@ -262,7 +262,7 @@ public class TagParam {
     }
 
     /**
-     * 是否分页
+     * 是否分页。
      * @return pageEnable
      */
     public Boolean getPageEnable() {
@@ -279,7 +279,7 @@ public class TagParam {
     }
 
     /**
-     * 每页容量
+     * 每页容量。
      * @return pageNumber
      */
     public Integer getPageNumber() {
@@ -296,7 +296,7 @@ public class TagParam {
     }
 
     /**
-     * 当前也码
+     * 当前页码。
      * @return pageSize
      */
     public Integer getPageSize() {
@@ -329,7 +329,7 @@ public class TagParam {
     }
 
     /**
-     * 新增环境id列表
+     * 新增环境id列表。
      * @return addEnvIdList
      */
     public List<Long> getAddEnvIdList() {
@@ -362,7 +362,7 @@ public class TagParam {
     }
 
     /**
-     * 新增环境标签id列表
+     * 新增环境标签id列表。
      * @return addTagIdList
      */
     public List<Long> getAddTagIdList() {
@@ -395,7 +395,7 @@ public class TagParam {
     }
 
     /**
-     * 移除环境标签id列表
+     * 移除环境标签id列表。
      * @return removeTagIdList
      */
     public List<Long> getRemoveTagIdList() {
@@ -428,7 +428,7 @@ public class TagParam {
     }
 
     /**
-     * 移除的环境id列表
+     * 移除的环境id列表。
      * @return removeEnvIdList
      */
     public List<Long> getRemoveEnvIdList() {

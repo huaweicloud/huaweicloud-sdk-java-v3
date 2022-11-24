@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 新增ak-sk入参
+ * 新增ak-sk入参。
  */
 public class CreateAkskModel {
 
@@ -21,7 +21,7 @@ public class CreateAkskModel {
     }
 
     /**
-     * 描述信息
+     * 描述信息。
      * @return descp
      */
     public String getDescp() {

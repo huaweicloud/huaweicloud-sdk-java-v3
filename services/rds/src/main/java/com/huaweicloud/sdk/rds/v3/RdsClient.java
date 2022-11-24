@@ -1860,6 +1860,68 @@ public class RdsClient {
     }
 
     /**
+     * 查询实例ipv6域名。
+     *
+     * 查询实例ipv6域名。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowDnsNameRequest 请求对象
+     * @return ShowDnsNameResponse
+     */
+    public ShowDnsNameResponse showDnsName(ShowDnsNameRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.showDnsName);
+    }
+
+    /**
+     * 查询实例ipv6域名。
+     *
+     * 查询实例ipv6域名。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowDnsNameRequest 请求对象
+     * @return SyncInvoker<ShowDnsNameRequest, ShowDnsNameResponse>
+     */
+    public SyncInvoker<ShowDnsNameRequest, ShowDnsNameResponse> showDnsNameInvoker(ShowDnsNameRequest request) {
+        return new SyncInvoker<ShowDnsNameRequest, ShowDnsNameResponse>(request, RdsMeta.showDnsName, hcClient);
+    }
+
+    /**
+     * 
+     *
+     * 查询实例ipv4域名
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowDomainNameRequest 请求对象
+     * @return ShowDomainNameResponse
+     */
+    public ShowDomainNameResponse showDomainName(ShowDomainNameRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.showDomainName);
+    }
+
+    /**
+     * 
+     *
+     * 查询实例ipv4域名
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowDomainNameRequest 请求对象
+     * @return SyncInvoker<ShowDomainNameRequest, ShowDomainNameResponse>
+     */
+    public SyncInvoker<ShowDomainNameRequest, ShowDomainNameResponse> showDomainNameInvoker(
+        ShowDomainNameRequest request) {
+        return new SyncInvoker<ShowDomainNameRequest, ShowDomainNameResponse>(request, RdsMeta.showDomainName,
+            hcClient);
+    }
+
+    /**
      * 查询跨云容灾复制状态
      *
      * 建立跨云容灾关系后，查询主实例和灾备实例间的复制状态及延迟。
@@ -1983,6 +2045,38 @@ public class RdsClient {
      */
     public SyncInvoker<ShowQuotasRequest, ShowQuotasResponse> showQuotasInvoker(ShowQuotasRequest request) {
         return new SyncInvoker<ShowQuotasRequest, ShowQuotasResponse>(request, RdsMeta.showQuotas, hcClient);
+    }
+
+    /**
+     * 获取实例的复制状态。
+     *
+     * 获取实例的复制状态。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowReplicationStatusRequest 请求对象
+     * @return ShowReplicationStatusResponse
+     */
+    public ShowReplicationStatusResponse showReplicationStatus(ShowReplicationStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.showReplicationStatus);
+    }
+
+    /**
+     * 获取实例的复制状态。
+     *
+     * 获取实例的复制状态。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowReplicationStatusRequest 请求对象
+     * @return SyncInvoker<ShowReplicationStatusRequest, ShowReplicationStatusResponse>
+     */
+    public SyncInvoker<ShowReplicationStatusRequest, ShowReplicationStatusResponse> showReplicationStatusInvoker(
+        ShowReplicationStatusRequest request) {
+        return new SyncInvoker<ShowReplicationStatusRequest, ShowReplicationStatusResponse>(request,
+            RdsMeta.showReplicationStatus, hcClient);
     }
 
     /**

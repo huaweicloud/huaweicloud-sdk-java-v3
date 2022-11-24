@@ -41,7 +41,7 @@ public class ShowTopologyTreeRequest {
     }
 
     /**
-     * 区域id
+     * 区域id。
      * @return regionId
      */
     public String getRegionId() {
@@ -58,7 +58,7 @@ public class ShowTopologyTreeRequest {
     }
 
     /**
-     * 应用id
+     * 应用id。
      * @return businessId
      */
     public Long getBusinessId() {
@@ -75,7 +75,7 @@ public class ShowTopologyTreeRequest {
     }
 
     /**
-     * 环境标签id
+     * 环境标签id。
      * @return envTagId
      */
     public Long getEnvTagId() {
@@ -92,7 +92,7 @@ public class ShowTopologyTreeRequest {
     }
 
     /**
-     * 环境关键字
+     * 环境关键字。
      * @return envKeyword
      */
     public String getEnvKeyword() {
@@ -109,7 +109,7 @@ public class ShowTopologyTreeRequest {
     }
 
     /**
-     * 应用id
+     * 应用id。
      * @return xBusinessId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

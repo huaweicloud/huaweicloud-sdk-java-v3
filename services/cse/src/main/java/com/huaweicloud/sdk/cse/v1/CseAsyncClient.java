@@ -172,6 +172,36 @@ public class CseAsyncClient {
     }
 
     /**
+     * 对微服务引擎专享版进行重试
+     *
+     * 对微服务引擎专享版进行重试
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param RetryEngineRequest 请求对象
+     * @return CompletableFuture<RetryEngineResponse>
+     */
+    public CompletableFuture<RetryEngineResponse> retryEngineAsync(RetryEngineRequest request) {
+        return hcClient.asyncInvokeHttp(request, CseMeta.retryEngine);
+    }
+
+    /**
+     * 对微服务引擎专享版进行重试
+     *
+     * 对微服务引擎专享版进行重试
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param RetryEngineRequest 请求对象
+     * @return AsyncInvoker<RetryEngineRequest, RetryEngineResponse>
+     */
+    public AsyncInvoker<RetryEngineRequest, RetryEngineResponse> retryEngineAsyncInvoker(RetryEngineRequest request) {
+        return new AsyncInvoker<RetryEngineRequest, RetryEngineResponse>(request, CseMeta.retryEngine, hcClient);
+    }
+
+    /**
      * 查询微服务引擎专享版详情
      *
      * 查询微服务引擎专享版详情
@@ -230,6 +260,37 @@ public class CseAsyncClient {
     public AsyncInvoker<ShowEngineJobRequest, ShowEngineJobResponse> showEngineJobAsyncInvoker(
         ShowEngineJobRequest request) {
         return new AsyncInvoker<ShowEngineJobRequest, ShowEngineJobResponse>(request, CseMeta.showEngineJob, hcClient);
+    }
+
+    /**
+     * 升级微服务引擎专享版
+     *
+     * 升级微服务引擎专享版
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpgradeEngineRequest 请求对象
+     * @return CompletableFuture<UpgradeEngineResponse>
+     */
+    public CompletableFuture<UpgradeEngineResponse> upgradeEngineAsync(UpgradeEngineRequest request) {
+        return hcClient.asyncInvokeHttp(request, CseMeta.upgradeEngine);
+    }
+
+    /**
+     * 升级微服务引擎专享版
+     *
+     * 升级微服务引擎专享版
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpgradeEngineRequest 请求对象
+     * @return AsyncInvoker<UpgradeEngineRequest, UpgradeEngineResponse>
+     */
+    public AsyncInvoker<UpgradeEngineRequest, UpgradeEngineResponse> upgradeEngineAsyncInvoker(
+        UpgradeEngineRequest request) {
+        return new AsyncInvoker<UpgradeEngineRequest, UpgradeEngineResponse>(request, CseMeta.upgradeEngine, hcClient);
     }
 
     /**

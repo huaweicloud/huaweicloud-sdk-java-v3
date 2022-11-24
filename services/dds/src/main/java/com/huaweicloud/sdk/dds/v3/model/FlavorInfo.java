@@ -71,7 +71,7 @@ public class FlavorInfo {
     }
 
     /**
-     * 节点类型。文档数据库包含以下几种节点类型： - mongos - shard - config - replica - single
+     * 节点类型。文档数据库包含以下几种节点类型： - mongos - shard - config - replica - single - readonly
      * @return type
      */
     public String getType() {

@@ -46,7 +46,7 @@ public class ListEnvTagsResponse extends SdkResponse {
     }
 
     /**
-     * 环境标签数据模型
+     * 环境标签数据列表。
      * @return envTags
      */
     public List<CmdbTagEntity> getEnvTags() {
@@ -63,7 +63,7 @@ public class ListEnvTagsResponse extends SdkResponse {
     }
 
     /**
-     * 总条数
+     * 总条数。
      * @return totalCount
      */
     public Integer getTotalCount() {

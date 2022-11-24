@@ -473,7 +473,7 @@ public class ListAssociationsRequest {
     }
 
     /**
-     * 连接资源类型:vpc|vpn|vgw|peering|can|gdgw
+     * 连接资源类型:vpc|vpn|vgw|peering
      * @return resourceType
      */
     public List<ResourceTypeEnum> getResourceType() {

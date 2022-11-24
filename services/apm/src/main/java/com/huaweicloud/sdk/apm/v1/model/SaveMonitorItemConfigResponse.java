@@ -22,7 +22,7 @@ public class SaveMonitorItemConfigResponse extends SdkResponse {
     }
 
     /**
-     * 保存监控系项返回状态
+     * 保存监控项返回状态。
      * @return flag
      */
     public String getFlag() {

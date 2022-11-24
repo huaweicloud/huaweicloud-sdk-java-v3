@@ -61,7 +61,7 @@ public class ListEnvInstancesResponse extends SdkResponse {
     }
 
     /**
-     * 实例信息列表
+     * 实例信息列表。
      * @return instanceInfoList
      */
     public List<InstanceInfo> getInstanceInfoList() {
@@ -78,7 +78,7 @@ public class ListEnvInstancesResponse extends SdkResponse {
     }
 
     /**
-     * 实例总数
+     * 实例总数。
      * @return totalCount
      */
     public Integer getTotalCount() {
@@ -95,7 +95,7 @@ public class ListEnvInstancesResponse extends SdkResponse {
     }
 
     /**
-     * 在线实例总数
+     * 在线实例总数。
      * @return onlineCount
      */
     public Integer getOnlineCount() {
@@ -112,7 +112,7 @@ public class ListEnvInstancesResponse extends SdkResponse {
     }
 
     /**
-     * 离线实例总数
+     * 离线实例总数。
      * @return offlineCount
      */
     public Integer getOfflineCount() {
@@ -129,7 +129,7 @@ public class ListEnvInstancesResponse extends SdkResponse {
     }
 
     /**
-     * 停止实例总受
+     * 停止实例总数。
      * @return disableCount
      */
     public Integer getDisableCount() {

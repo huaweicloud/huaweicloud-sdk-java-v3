@@ -26,7 +26,7 @@ public class ListAppsRequest {
     }
 
     /**
-     * 应用id
+     * 应用id。
      * @return businessId
      */
     public Long getBusinessId() {
@@ -43,7 +43,7 @@ public class ListAppsRequest {
     }
 
     /**
-     * 应用id
+     * 应用id。
      * @return xBusinessId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

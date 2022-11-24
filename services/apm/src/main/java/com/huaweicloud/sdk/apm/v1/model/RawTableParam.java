@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 获取原始数据表格入参
+ * 获取原始数据表格入参。
  */
 public class RawTableParam {
 
@@ -72,7 +72,7 @@ public class RawTableParam {
     }
 
     /**
-     * 上一次扫描的数据ID
+     * 上一次扫描的数据ID。
      * @return lastRowId
      */
     public String getLastRowId() {
@@ -115,7 +115,7 @@ public class RawTableParam {
     }
 
     /**
-     * 当前页码
+     * 当前页码。
      * @return page
      */
     public Integer getPage() {
@@ -132,7 +132,7 @@ public class RawTableParam {
     }
 
     /**
-     * 每页数据总数
+     * 每页数据总数。
      * @return pageSize
      */
     public Integer getPageSize() {
@@ -149,7 +149,7 @@ public class RawTableParam {
     }
 
     /**
-     * 排序
+     * 排序。
      * @return orderBy
      */
     public String getOrderBy() {
@@ -166,7 +166,7 @@ public class RawTableParam {
     }
 
     /**
-     * 搜索关键字
+     * 搜索关键字。
      * @return searchWord
      */
     public String getSearchWord() {
@@ -183,7 +183,7 @@ public class RawTableParam {
     }
 
     /**
-     * 实例id
+     * 实例id。
      * @return instanceId
      */
     public Long getInstanceId() {
@@ -200,7 +200,7 @@ public class RawTableParam {
     }
 
     /**
-     * 监控项id
+     * 监控项id。
      * @return monitorItemId
      */
     public Long getMonitorItemId() {
@@ -217,7 +217,7 @@ public class RawTableParam {
     }
 
     /**
-     * 环境id
+     * 环境id。
      * @return envId
      */
     public Long getEnvId() {
@@ -234,7 +234,7 @@ public class RawTableParam {
     }
 
     /**
-     * 开始时间
+     * 开始时间。
      * @return startTime
      */
     public String getStartTime() {
@@ -251,7 +251,7 @@ public class RawTableParam {
     }
 
     /**
-     * 结束时间
+     * 结束时间。
      * @return endTime
      */
     public String getEndTime() {

@@ -26,7 +26,7 @@ public class ShowEnvMonitorItemsRequest {
     }
 
     /**
-     * 环境id
+     * 环境id。
      * @return envId
      */
     public Long getEnvId() {
@@ -43,7 +43,7 @@ public class ShowEnvMonitorItemsRequest {
     }
 
     /**
-     * 应用id
+     * 应用id。
      * @return xBusinessId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

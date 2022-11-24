@@ -21,7 +21,7 @@ public class ShowTopologyRequest {
     }
 
     /**
-     * 调用链tracId
+     * 调用链traceId。
      * @return traceId
      */
     public String getTraceId() {

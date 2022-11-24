@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 获取实例信息列表入参
+ * 获取实例信息列表入参。
  */
 public class InstanceSearchParam {
 
@@ -46,7 +46,7 @@ public class InstanceSearchParam {
     }
 
     /**
-     * 环境id
+     * 环境id。
      * @return envId
      */
     public Long getEnvId() {
@@ -63,7 +63,7 @@ public class InstanceSearchParam {
     }
 
     /**
-     * 当前页码
+     * 当前页码。
      * @return page
      */
     public Integer getPage() {
@@ -80,7 +80,7 @@ public class InstanceSearchParam {
     }
 
     /**
-     * 每页数据容量
+     * 每页数据容量。
      * @return pageSize
      */
     public Integer getPageSize() {
@@ -97,7 +97,7 @@ public class InstanceSearchParam {
     }
 
     /**
-     * 关键字
+     * 关键字。
      * @return keyword
      */
     public String getKeyword() {
@@ -114,7 +114,7 @@ public class InstanceSearchParam {
     }
 
     /**
-     * 实例状态
+     * 实例状态。
      * @return status
      */
     public Integer getStatus() {
@@ -131,7 +131,7 @@ public class InstanceSearchParam {
     }
 
     /**
-     * 是否返回计数结果
+     * 是否返回计数结果。
      * @return returnCount
      */
     public Boolean getReturnCount() {

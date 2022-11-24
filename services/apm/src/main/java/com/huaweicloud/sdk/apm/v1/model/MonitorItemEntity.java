@@ -61,7 +61,7 @@ public class MonitorItemEntity {
     }
 
     /**
-     * Get categoryId
+     * 采集器类别id。
      * @return categoryId
      */
     public Integer getCategoryId() {
@@ -78,7 +78,7 @@ public class MonitorItemEntity {
     }
 
     /**
-     * Get collectorName
+     * 采集器名称。
      * @return collectorName
      */
     public String getCollectorName() {
@@ -95,7 +95,7 @@ public class MonitorItemEntity {
     }
 
     /**
-     * Get displayName
+     * 采集器类别展示名称。
      * @return displayName
      */
     public String getDisplayName() {
@@ -112,7 +112,7 @@ public class MonitorItemEntity {
     }
 
     /**
-     * Get showInTotal
+     * 是否展示标题。
      * @return showInTotal
      */
     public Boolean getShowInTotal() {
@@ -129,7 +129,7 @@ public class MonitorItemEntity {
     }
 
     /**
-     * Get monitorItemId
+     * 监控项id。
      * @return monitorItemId
      */
     public Long getMonitorItemId() {
@@ -146,7 +146,7 @@ public class MonitorItemEntity {
     }
 
     /**
-     * Get disabled
+     * 是否禁用。
      * @return disabled
      */
     public Boolean getDisabled() {
@@ -163,7 +163,7 @@ public class MonitorItemEntity {
     }
 
     /**
-     * Get collectorId
+     * 采集器id。
      * @return collectorId
      */
     public Integer getCollectorId() {
@@ -180,7 +180,7 @@ public class MonitorItemEntity {
     }
 
     /**
-     * Get sequence
+     * 序列号。
      * @return sequence
      */
     public Integer getSequence() {
@@ -197,7 +197,7 @@ public class MonitorItemEntity {
     }
 
     /**
-     * Get collectInterval
+     * 默认数据采集间隔。
      * @return collectInterval
      */
     public Integer getCollectInterval() {

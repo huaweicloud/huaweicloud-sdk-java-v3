@@ -51,7 +51,7 @@ public class ListEnvMonitorItemResponse extends SdkResponse {
     }
 
     /**
-     * 监控项列表
+     * 监控项列表。
      * @return monitorItemList
      */
     public List<MonitorItem> getMonitorItemList() {
@@ -68,7 +68,7 @@ public class ListEnvMonitorItemResponse extends SdkResponse {
     }
 
     /**
-     * 总数
+     * 总数。
      * @return totalCount
      */
     public Integer getTotalCount() {
@@ -85,7 +85,7 @@ public class ListEnvMonitorItemResponse extends SdkResponse {
     }
 
     /**
-     * 总页数
+     * 总页数。
      * @return totalPage
      */
     public Integer getTotalPage() {

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 调用链拓扑图的节点
+ * 调用链拓扑图的节点。
  */
 public class TraceTopologyNode {
 
@@ -31,7 +31,7 @@ public class TraceTopologyNode {
     }
 
     /**
-     * 节点id
+     * 节点id。
      * @return nodeId
      */
     public Long getNodeId() {
@@ -48,7 +48,7 @@ public class TraceTopologyNode {
     }
 
     /**
-     * 节点名称
+     * 节点名称。
      * @return nodeName
      */
     public String getNodeName() {
@@ -65,7 +65,7 @@ public class TraceTopologyNode {
     }
 
     /**
-     * 节点提示字段
+     * 节点提示字段。
      * @return hint
      */
     public String getHint() {

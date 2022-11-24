@@ -254,11 +254,6 @@ public class TaskBasicRsp {
 
     private String taskTag;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "created_by")
-
-    private String createdBy;
-
     public TaskBasicRsp withTaskId(String taskId) {
         this.taskId = taskId;
         return this;
@@ -552,23 +547,6 @@ public class TaskBasicRsp {
         this.taskTag = taskTag;
     }
 
-    public TaskBasicRsp withCreatedBy(String createdBy) {
-        this.createdBy = createdBy;
-        return this;
-    }
-
-    /**
-     * 任务的创建者
-     * @return createdBy
-     */
-    public String getCreatedBy() {
-        return createdBy;
-    }
-
-    public void setCreatedBy(String createdBy) {
-        this.createdBy = createdBy;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -592,8 +570,7 @@ public class TaskBasicRsp {
             && Objects.equals(this.createdDate, taskBasicRsp.createdDate)
             && Objects.equals(this.lastModifiedDate, taskBasicRsp.lastModifiedDate)
             && Objects.equals(this.description, taskBasicRsp.description)
-            && Objects.equals(this.taskTag, taskBasicRsp.taskTag)
-            && Objects.equals(this.createdBy, taskBasicRsp.createdBy);
+            && Objects.equals(this.taskTag, taskBasicRsp.taskTag);
     }
 
     @Override
@@ -614,8 +591,7 @@ public class TaskBasicRsp {
             createdDate,
             lastModifiedDate,
             description,
-            taskTag,
-            createdBy);
+            taskTag);
     }
 
     @Override
@@ -639,7 +615,6 @@ public class TaskBasicRsp {
         sb.append("    lastModifiedDate: ").append(toIndentedString(lastModifiedDate)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    taskTag: ").append(toIndentedString(taskTag)).append("\n");
-        sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
         sb.append("}");
         return sb.toString();
     }

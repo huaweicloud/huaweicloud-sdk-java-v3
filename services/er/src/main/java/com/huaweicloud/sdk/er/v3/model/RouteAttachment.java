@@ -48,7 +48,7 @@ public class RouteAttachment {
     }
 
     /**
-     * 连接关联的资源类型：vpc|vgw|vpn|peering|gdgw
+     * 连接关联的资源类型：vpc|vgw|vpn|peering
      * @return resourceType
      */
     public String getResourceType() {

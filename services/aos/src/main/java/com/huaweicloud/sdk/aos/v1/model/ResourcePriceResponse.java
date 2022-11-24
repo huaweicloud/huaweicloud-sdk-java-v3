@@ -294,7 +294,7 @@ public class ResourcePriceResponse  {
 
 
     /**
-     * 执行计划中的每个资源部署后最终优惠后的金额，保留小数点后2位，向下取整，默认单位是元
+     * 执行计划中的每个资源部署后最终优惠后的金额（只考虑商务折扣以及伙伴折扣，不包含促销折扣及优惠券），保留小数点后2位，向上取整，默认单位是元
      * @return salePrice
      */
     public Object getSalePrice() {
@@ -316,7 +316,7 @@ public class ResourcePriceResponse  {
 
 
     /**
-     * 执行计划中的每个资源部署后的优惠额，保留小数点后2位，向下取整，默认单位是元
+     * 执行计划中的每个资源部署后的优惠额，保留小数点后2位，向上取整，默认单位是元
      * @return discount
      */
     public Object getDiscount() {
@@ -338,7 +338,7 @@ public class ResourcePriceResponse  {
 
 
     /**
-     * 执行计划中的每个资源部署后的原价，保留小数点后2位，向下取整，默认单位是元
+     * 执行计划中的每个资源部署后的原价，保留小数点后2位，向上取整，默认单位是元
      * @return originalPrice
      */
     public Object getOriginalPrice() {

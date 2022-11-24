@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.cce.v3.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -50,6 +52,11 @@ public class ReinstallNodeSpec {
     @JsonProperty(value = "lifecycle")
 
     private NodeLifecycleConfig lifecycle;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "initializedConditions")
+
+    private List<String> initializedConditions = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extendParam")
@@ -246,6 +253,39 @@ public class ReinstallNodeSpec {
         this.lifecycle = lifecycle;
     }
 
+    public ReinstallNodeSpec withInitializedConditions(List<String> initializedConditions) {
+        this.initializedConditions = initializedConditions;
+        return this;
+    }
+
+    public ReinstallNodeSpec addInitializedConditionsItem(String initializedConditionsItem) {
+        if (this.initializedConditions == null) {
+            this.initializedConditions = new ArrayList<>();
+        }
+        this.initializedConditions.add(initializedConditionsItem);
+        return this;
+    }
+
+    public ReinstallNodeSpec withInitializedConditions(Consumer<List<String>> initializedConditionsSetter) {
+        if (this.initializedConditions == null) {
+            this.initializedConditions = new ArrayList<>();
+        }
+        initializedConditionsSetter.accept(this.initializedConditions);
+        return this;
+    }
+
+    /**
+     * 自定义初始化标记。CCE节点在初始化完成之前，会打上初始化未完成污点（node.cloudprovider.kubernetes.io/uninitialized）防止pod调度到节点上。cce支持自定义初始化标记，在接收到initializedConditions参数后，会将参数值转换成节点标签，随节点下发，例如：cloudprovider.openvessel.io/inject-initialized-conditions=CCEInitial_CustomedInitial。当节点上设置了此标签，会轮询节点的status.Conditions，查看conditions的type是否存在标记名，如CCEInitial、CustomedInitial标记，如果存在所有传入的标记，且状态为True，认为节点初始化完成，则移除初始化污点。 - 必须以字母、数字组成，长度范围1-20位。 - 标记数量不超过2个
+     * @return initializedConditions
+     */
+    public List<String> getInitializedConditions() {
+        return initializedConditions;
+    }
+
+    public void setInitializedConditions(List<String> initializedConditions) {
+        this.initializedConditions = initializedConditions;
+    }
+
     public ReinstallNodeSpec withExtendParam(ReinstallExtendParam extendParam) {
         this.extendParam = extendParam;
         return this;
@@ -288,13 +328,22 @@ public class ReinstallNodeSpec {
             && Objects.equals(this.runtimeConfig, reinstallNodeSpec.runtimeConfig)
             && Objects.equals(this.k8sOptions, reinstallNodeSpec.k8sOptions)
             && Objects.equals(this.lifecycle, reinstallNodeSpec.lifecycle)
+            && Objects.equals(this.initializedConditions, reinstallNodeSpec.initializedConditions)
             && Objects.equals(this.extendParam, reinstallNodeSpec.extendParam);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(os, login, name, serverConfig, volumeConfig, runtimeConfig, k8sOptions, lifecycle, extendParam);
+        return Objects.hash(os,
+            login,
+            name,
+            serverConfig,
+            volumeConfig,
+            runtimeConfig,
+            k8sOptions,
+            lifecycle,
+            initializedConditions,
+            extendParam);
     }
 
     @Override
@@ -309,6 +358,7 @@ public class ReinstallNodeSpec {
         sb.append("    runtimeConfig: ").append(toIndentedString(runtimeConfig)).append("\n");
         sb.append("    k8sOptions: ").append(toIndentedString(k8sOptions)).append("\n");
         sb.append("    lifecycle: ").append(toIndentedString(lifecycle)).append("\n");
+        sb.append("    initializedConditions: ").append(toIndentedString(initializedConditions)).append("\n");
         sb.append("    extendParam: ").append(toIndentedString(extendParam)).append("\n");
         sb.append("}");
         return sb.toString();

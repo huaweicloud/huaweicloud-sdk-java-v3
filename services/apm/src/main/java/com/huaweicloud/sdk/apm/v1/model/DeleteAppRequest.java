@@ -26,7 +26,7 @@ public class DeleteAppRequest {
     }
 
     /**
-     * Get applicationId
+     * 组件id。
      * @return applicationId
      */
     public Long getApplicationId() {
@@ -43,7 +43,7 @@ public class DeleteAppRequest {
     }
 
     /**
-     * 应用id，用于鉴权
+     * 应用id，用于鉴权。
      * @return xBusinessId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

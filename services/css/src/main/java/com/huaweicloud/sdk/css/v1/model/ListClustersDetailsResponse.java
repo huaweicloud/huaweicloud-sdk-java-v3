@@ -15,9 +15,31 @@ import java.util.function.Consumer;
 public class ListClustersDetailsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "totalSize")
+
+    private Integer totalSize;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "clusters")
 
     private List<ClusterList> clusters = null;
+
+    public ListClustersDetailsResponse withTotalSize(Integer totalSize) {
+        this.totalSize = totalSize;
+        return this;
+    }
+
+    /**
+     * 集群个数。
+     * @return totalSize
+     */
+    public Integer getTotalSize() {
+        return totalSize;
+    }
+
+    public void setTotalSize(Integer totalSize) {
+        this.totalSize = totalSize;
+    }
 
     public ListClustersDetailsResponse withClusters(List<ClusterList> clusters) {
         this.clusters = clusters;
@@ -61,18 +83,20 @@ public class ListClustersDetailsResponse extends SdkResponse {
             return false;
         }
         ListClustersDetailsResponse listClustersDetailsResponse = (ListClustersDetailsResponse) o;
-        return Objects.equals(this.clusters, listClustersDetailsResponse.clusters);
+        return Objects.equals(this.totalSize, listClustersDetailsResponse.totalSize)
+            && Objects.equals(this.clusters, listClustersDetailsResponse.clusters);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clusters);
+        return Objects.hash(totalSize, clusters);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListClustersDetailsResponse {\n");
+        sb.append("    totalSize: ").append(toIndentedString(totalSize)).append("\n");
         sb.append("    clusters: ").append(toIndentedString(clusters)).append("\n");
         sb.append("}");
         return sb.toString();

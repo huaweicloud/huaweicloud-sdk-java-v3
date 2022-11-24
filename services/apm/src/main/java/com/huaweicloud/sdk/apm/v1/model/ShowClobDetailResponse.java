@@ -22,7 +22,7 @@ public class ShowClobDetailResponse extends SdkResponse {
     }
 
     /**
-     * clob详情
+     * clob详情。
      * @return clobString
      */
     public String getClobString() {

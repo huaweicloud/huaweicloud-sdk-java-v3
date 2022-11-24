@@ -53,7 +53,7 @@ public class SearchApplicationResponse extends SdkResponse {
     }
 
     /**
-     * 应用列表
+     * 组件列表。
      * @return appInfoList
      */
     public List<AppInfo> getAppInfoList() {
@@ -70,7 +70,7 @@ public class SearchApplicationResponse extends SdkResponse {
     }
 
     /**
-     * 应用总数目
+     * 组件总数目。
      * @return appTotalCount
      */
     public Integer getAppTotalCount() {
@@ -103,7 +103,7 @@ public class SearchApplicationResponse extends SdkResponse {
     }
 
     /**
-     * 应用名称和应用详情map表
+     * 组件名称和组件详情map表。
      * @return appInfoMap
      */
     public Map<String, AppInfo> getAppInfoMap() {

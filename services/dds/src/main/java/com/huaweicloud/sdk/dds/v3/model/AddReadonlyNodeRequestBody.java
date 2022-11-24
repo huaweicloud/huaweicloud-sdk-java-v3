@@ -25,6 +25,11 @@ public class AddReadonlyNodeRequestBody {
 
     private Integer delay;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_auto_pay")
+
+    private Boolean isAutoPay;
+
     public AddReadonlyNodeRequestBody withSpecCode(String specCode) {
         this.specCode = specCode;
         return this;
@@ -76,6 +81,23 @@ public class AddReadonlyNodeRequestBody {
         this.delay = delay;
     }
 
+    public AddReadonlyNodeRequestBody withIsAutoPay(Boolean isAutoPay) {
+        this.isAutoPay = isAutoPay;
+        return this;
+    }
+
+    /**
+     * 扩容包年包月实例的存储容量时可指定，表示是否自动从账户中支付，此字段不影响自动续订的支付方式。 - true，表示自动从账户中支付。 - false，表示手动从账户中支付，默认为该方式。
+     * @return isAutoPay
+     */
+    public Boolean getIsAutoPay() {
+        return isAutoPay;
+    }
+
+    public void setIsAutoPay(Boolean isAutoPay) {
+        this.isAutoPay = isAutoPay;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -87,12 +109,13 @@ public class AddReadonlyNodeRequestBody {
         AddReadonlyNodeRequestBody addReadonlyNodeRequestBody = (AddReadonlyNodeRequestBody) o;
         return Objects.equals(this.specCode, addReadonlyNodeRequestBody.specCode)
             && Objects.equals(this.num, addReadonlyNodeRequestBody.num)
-            && Objects.equals(this.delay, addReadonlyNodeRequestBody.delay);
+            && Objects.equals(this.delay, addReadonlyNodeRequestBody.delay)
+            && Objects.equals(this.isAutoPay, addReadonlyNodeRequestBody.isAutoPay);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(specCode, num, delay);
+        return Objects.hash(specCode, num, delay, isAutoPay);
     }
 
     @Override
@@ -102,6 +125,7 @@ public class AddReadonlyNodeRequestBody {
         sb.append("    specCode: ").append(toIndentedString(specCode)).append("\n");
         sb.append("    num: ").append(toIndentedString(num)).append("\n");
         sb.append("    delay: ").append(toIndentedString(delay)).append("\n");
+        sb.append("    isAutoPay: ").append(toIndentedString(isAutoPay)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -21,7 +21,7 @@ public class ShowTraceEventsRequest {
     }
 
     /**
-     * 调用链ID
+     * 调用链ID。
      * @return traceId
      */
     public String getTraceId() {

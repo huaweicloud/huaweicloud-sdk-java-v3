@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import java.util.Objects;
 
 /**
- * 业务数据结构
+ * 业务数据结构。
  */
 public class BusinessNodeModel {
 
@@ -62,7 +62,7 @@ public class BusinessNodeModel {
     }
 
     /**
-     * 默认业务
+     * 默认应用。
      * @return _default
      */
     public Boolean getDefault() {
@@ -79,7 +79,7 @@ public class BusinessNodeModel {
     }
 
     /**
-     * 业务展示名称
+     * 应用展示名称。
      * @return displayName
      */
     public String getDisplayName() {
@@ -96,7 +96,7 @@ public class BusinessNodeModel {
     }
 
     /**
-     * 企业项目的id
+     * 企业项目的id。
      * @return epsId
      */
     public String getEpsId() {
@@ -113,7 +113,7 @@ public class BusinessNodeModel {
     }
 
     /**
-     * 创建时间
+     * 创建时间。
      * @return gmtCreate
      */
     public LocalDate getGmtCreate() {
@@ -130,7 +130,7 @@ public class BusinessNodeModel {
     }
 
     /**
-     * 修改时间
+     * 修改时间。
      * @return gmtModify
      */
     public LocalDate getGmtModify() {
@@ -147,7 +147,7 @@ public class BusinessNodeModel {
     }
 
     /**
-     * 业务id
+     * 应用id。
      * @return id
      */
     public Long getId() {
@@ -164,7 +164,7 @@ public class BusinessNodeModel {
     }
 
     /**
-     * 内部租户id
+     * 内部租户id。
      * @return innerDomainId
      */
     public Integer getInnerDomainId() {
@@ -181,7 +181,7 @@ public class BusinessNodeModel {
     }
 
     /**
-     * 是否是默认的业务
+     * 是否是默认的应用。
      * @return isDefault
      */
     public Boolean getIsDefault() {
@@ -198,7 +198,7 @@ public class BusinessNodeModel {
     }
 
     /**
-     * 业务的英文名称
+     * 应用的英文名称。
      * @return name
      */
     public String getName() {

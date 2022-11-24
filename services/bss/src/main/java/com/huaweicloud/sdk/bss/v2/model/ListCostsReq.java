@@ -113,7 +113,7 @@ public class ListCostsReq {
     }
 
     /**
-     * 成本类型。UNBLENDED_COST：原始成本AMORTIZED_COST：摊销成本
+     * 成本类型。ORIGINAL_COST：原始成本AMORTIZED_COST：摊销成本
      * @return costType
      */
     public String getCostType() {

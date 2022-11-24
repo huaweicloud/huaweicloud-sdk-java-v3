@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import java.util.Objects;
 
 /**
- * 环境信息
+ * 环境信息。
  */
 public class EnvNodeModel {
 
@@ -72,7 +72,7 @@ public class EnvNodeModel {
     }
 
     /**
-     * 环境id
+     * 环境id。
      * @return id
      */
     public Long getId() {
@@ -89,7 +89,7 @@ public class EnvNodeModel {
     }
 
     /**
-     * 创建时间
+     * 创建时间。
      * @return gmtCreate
      */
     public LocalDate getGmtCreate() {
@@ -106,7 +106,7 @@ public class EnvNodeModel {
     }
 
     /**
-     * 修改时间
+     * 修改时间。
      * @return gmtModify
      */
     public LocalDate getGmtModify() {
@@ -123,7 +123,7 @@ public class EnvNodeModel {
     }
 
     /**
-     * 组件id
+     * 组件id。
      * @return appId
      */
     public Long getAppId() {
@@ -140,7 +140,7 @@ public class EnvNodeModel {
     }
 
     /**
-     * 应用名称
+     * 应用名称。
      * @return businessName
      */
     public String getBusinessName() {
@@ -157,7 +157,7 @@ public class EnvNodeModel {
     }
 
     /**
-     * 租户id
+     * 租户id。
      * @return innerDomainId
      */
     public Integer getInnerDomainId() {
@@ -174,7 +174,7 @@ public class EnvNodeModel {
     }
 
     /**
-     * 环境名称
+     * 环境名称。
      * @return name
      */
     public String getName() {
@@ -191,7 +191,7 @@ public class EnvNodeModel {
     }
 
     /**
-     * 是否是默认环境
+     * 是否是默认环境。
      * @return isDefault
      */
     public Boolean getIsDefault() {
@@ -208,7 +208,7 @@ public class EnvNodeModel {
     }
 
     /**
-     * 组件名称
+     * 组件名称。
      * @return appName
      */
     public String getAppName() {
@@ -225,7 +225,7 @@ public class EnvNodeModel {
     }
 
     /**
-     * 应用id
+     * 应用id。
      * @return businessId
      */
     public Long getBusinessId() {
@@ -242,7 +242,7 @@ public class EnvNodeModel {
     }
 
     /**
-     * 区域
+     * 区域。
      * @return region
      */
     public String getRegion() {

@@ -10,6 +10,31 @@ import com.huaweicloud.sdk.core.http.LocationType;
 @SuppressWarnings("unchecked")
 public class CdnMeta {
 
+    public static final HttpRequestDef<BatchCopyDomainRequest, BatchCopyDomainResponse> batchCopyDomain =
+        genForbatchCopyDomain();
+
+    private static HttpRequestDef<BatchCopyDomainRequest, BatchCopyDomainResponse> genForbatchCopyDomain() {
+        // basic
+        HttpRequestDef.Builder<BatchCopyDomainRequest, BatchCopyDomainResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchCopyDomainRequest.class, BatchCopyDomainResponse.class)
+                .withName("BatchCopyDomain")
+                .withUri("/v1.0/cdn/configuration/domains/batch-copy")
+                .withContentType("application/json");
+
+        // requests
+        builder.<BatchCopyDRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchCopyDRequestBody.class),
+            f -> f.withMarshaller(BatchCopyDomainRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DownloadRegionCarrierExcelRequest, DownloadRegionCarrierExcelResponse> downloadRegionCarrierExcel =
         genFordownloadRegionCarrierExcel();
 

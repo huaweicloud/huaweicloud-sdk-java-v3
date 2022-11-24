@@ -39,7 +39,7 @@ public class StorageGroups {
     }
 
     /**
-     * storageGroups的名字，作为虚拟存储组的名字，因此各个group个名字不能重复。
+     * storageGroups的名字，作为虚拟存储组的名字，因此各个group名字不能重复。
      * @return name
      */
     public String getName() {

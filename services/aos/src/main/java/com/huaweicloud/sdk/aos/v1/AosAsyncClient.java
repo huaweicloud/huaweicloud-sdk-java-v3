@@ -80,6 +80,36 @@ public class AosAsyncClient {
     }
 
     /**
+     * 删除堆栈
+     *
+     * 删除堆栈
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteStackRequest 请求对象
+     * @return CompletableFuture<DeleteStackResponse>
+     */
+    public CompletableFuture<DeleteStackResponse> deleteStackAsync(DeleteStackRequest request) {
+        return hcClient.asyncInvokeHttp(request, AosMeta.deleteStack);
+    }
+
+    /**
+     * 删除堆栈
+     *
+     * 删除堆栈
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteStackRequest 请求对象
+     * @return AsyncInvoker<DeleteStackRequest, DeleteStackResponse>
+     */
+    public AsyncInvoker<DeleteStackRequest, DeleteStackResponse> deleteStackAsyncInvoker(DeleteStackRequest request) {
+        return new AsyncInvoker<DeleteStackRequest, DeleteStackResponse>(request, AosMeta.deleteStack, hcClient);
+    }
+
+    /**
      * 预估执行计划的价格
      *
      * 预估执行计划的价格
@@ -170,6 +200,36 @@ public class AosAsyncClient {
     }
 
     /**
+     * 获取栈的细节更新状态
+     *
+     * 获取栈的细节更新状态，可以获取整个栈从生成到当前时间点的所有状态
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListStackEventsRequest 请求对象
+     * @return CompletableFuture<ListStackEventsResponse>
+     */
+    public CompletableFuture<ListStackEventsResponse> listStackEventsAsync(ListStackEventsRequest request) {
+        return hcClient.asyncInvokeHttp(request, AosMeta.listStackEvents);
+    }
+
+    /**
+     * 获取栈的细节更新状态
+     *
+     * 获取栈的细节更新状态，可以获取整个栈从生成到当前时间点的所有状态
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListStackEventsRequest 请求对象
+     * @return AsyncInvoker<ListStackEventsRequest, ListStackEventsResponse>
+     */
+    public AsyncInvoker<ListStackEventsRequest, ListStackEventsResponse> listStackEventsAsyncInvoker(ListStackEventsRequest request) {
+        return new AsyncInvoker<ListStackEventsRequest, ListStackEventsResponse>(request, AosMeta.listStackEvents, hcClient);
+    }
+
+    /**
      * 列举堆栈的输出
      *
      * 列举堆栈的输出
@@ -197,6 +257,36 @@ public class AosAsyncClient {
      */
     public AsyncInvoker<ListStackOutputsRequest, ListStackOutputsResponse> listStackOutputsAsyncInvoker(ListStackOutputsRequest request) {
         return new AsyncInvoker<ListStackOutputsRequest, ListStackOutputsResponse>(request, AosMeta.listStackOutputs, hcClient);
+    }
+
+    /**
+     * 获取堆栈的资源列表
+     *
+     * 获取堆栈的资源列表，可以获取整个栈从生成到当前时间点的所有状态
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListStackResourcesRequest 请求对象
+     * @return CompletableFuture<ListStackResourcesResponse>
+     */
+    public CompletableFuture<ListStackResourcesResponse> listStackResourcesAsync(ListStackResourcesRequest request) {
+        return hcClient.asyncInvokeHttp(request, AosMeta.listStackResources);
+    }
+
+    /**
+     * 获取堆栈的资源列表
+     *
+     * 获取堆栈的资源列表，可以获取整个栈从生成到当前时间点的所有状态
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListStackResourcesRequest 请求对象
+     * @return AsyncInvoker<ListStackResourcesRequest, ListStackResourcesResponse>
+     */
+    public AsyncInvoker<ListStackResourcesRequest, ListStackResourcesResponse> listStackResourcesAsyncInvoker(ListStackResourcesRequest request) {
+        return new AsyncInvoker<ListStackResourcesRequest, ListStackResourcesResponse>(request, AosMeta.listStackResources, hcClient);
     }
 
     /**

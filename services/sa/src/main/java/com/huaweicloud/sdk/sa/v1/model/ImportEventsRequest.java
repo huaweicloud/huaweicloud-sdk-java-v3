@@ -27,7 +27,7 @@ public class ImportEventsRequest {
     }
 
     /**
-     * Get xLanguage
+     * 语言。
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

@@ -26,7 +26,7 @@ public class ListAppEnvsRequest {
     }
 
     /**
-     * 组件id
+     * 组件id。
      * @return appId
      */
     public Long getAppId() {
@@ -43,7 +43,7 @@ public class ListAppEnvsRequest {
     }
 
     /**
-     * 应用id
+     * 应用id。
      * @return xBusinessId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

@@ -59,6 +59,11 @@ public class HealthCodeResult {
     private String vaccinationStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "test_interval")
+
+    private String testInterval;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pcr_test_result")
 
     private String pcrTestResult;
@@ -240,7 +245,7 @@ public class HealthCodeResult {
     }
 
     /**
-     * 疫苗接种情况 
+     * 疫苗接种情况，可选值包括：  - 未接种 - 接种中 - 无接种记录 - 已接种1针 - 已接种2针 - 已接种3针 - 已完成新冠疫苗接种 
      * @return vaccinationStatus
      */
     public String getVaccinationStatus() {
@@ -249,6 +254,23 @@ public class HealthCodeResult {
 
     public void setVaccinationStatus(String vaccinationStatus) {
         this.vaccinationStatus = vaccinationStatus;
+    }
+
+    public HealthCodeResult withTestInterval(String testInterval) {
+        this.testInterval = testInterval;
+        return this;
+    }
+
+    /**
+     * 核酸检测间隔时长，可选值包括： - 24小时内 - 48小时内 - 72小时内 - 5天内 - 7天内 - 7天外 
+     * @return testInterval
+     */
+    public String getTestInterval() {
+        return testInterval;
+    }
+
+    public void setTestInterval(String testInterval) {
+        this.testInterval = testInterval;
     }
 
     public HealthCodeResult withPcrTestResult(String pcrTestResult) {
@@ -435,6 +457,7 @@ public class HealthCodeResult {
             && Objects.equals(this.city, healthCodeResult.city) && Objects.equals(this.time, healthCodeResult.time)
             && Objects.equals(this.color, healthCodeResult.color)
             && Objects.equals(this.vaccinationStatus, healthCodeResult.vaccinationStatus)
+            && Objects.equals(this.testInterval, healthCodeResult.testInterval)
             && Objects.equals(this.pcrTestResult, healthCodeResult.pcrTestResult)
             && Objects.equals(this.pcrTestOrganization, healthCodeResult.pcrTestOrganization)
             && Objects.equals(this.pcrTestTime, healthCodeResult.pcrTestTime)
@@ -456,6 +479,7 @@ public class HealthCodeResult {
             time,
             color,
             vaccinationStatus,
+            testInterval,
             pcrTestResult,
             pcrTestOrganization,
             pcrTestTime,
@@ -479,6 +503,7 @@ public class HealthCodeResult {
         sb.append("    time: ").append(toIndentedString(time)).append("\n");
         sb.append("    color: ").append(toIndentedString(color)).append("\n");
         sb.append("    vaccinationStatus: ").append(toIndentedString(vaccinationStatus)).append("\n");
+        sb.append("    testInterval: ").append(toIndentedString(testInterval)).append("\n");
         sb.append("    pcrTestResult: ").append(toIndentedString(pcrTestResult)).append("\n");
         sb.append("    pcrTestOrganization: ").append(toIndentedString(pcrTestOrganization)).append("\n");
         sb.append("    pcrTestTime: ").append(toIndentedString(pcrTestTime)).append("\n");

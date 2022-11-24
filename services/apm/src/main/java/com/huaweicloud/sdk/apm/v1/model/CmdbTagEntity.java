@@ -3,7 +3,6 @@ package com.huaweicloud.sdk.apm.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -52,12 +51,12 @@ public class CmdbTagEntity {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "gmt_create")
 
-    private LocalDate gmtCreate;
+    private String gmtCreate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "gmt_modify")
 
-    private LocalDate gmtModify;
+    private String gmtModify;
 
     public CmdbTagEntity withName(String name) {
         this.name = name;
@@ -65,7 +64,7 @@ public class CmdbTagEntity {
     }
 
     /**
-     * 环境标签名称
+     * 环境标签名称。
      * @return name
      */
     public String getName() {
@@ -82,7 +81,7 @@ public class CmdbTagEntity {
     }
 
     /**
-     * 应用id
+     * 应用id。
      * @return businessId
      */
     public Long getBusinessId() {
@@ -99,7 +98,7 @@ public class CmdbTagEntity {
     }
 
     /**
-     * UUID
+     * UUID。
      * @return uuid
      */
     public String getUuid() {
@@ -116,7 +115,7 @@ public class CmdbTagEntity {
     }
 
     /**
-     * 描述信息
+     * 描述信息。
      * @return descp
      */
     public String getDescp() {
@@ -133,7 +132,7 @@ public class CmdbTagEntity {
     }
 
     /**
-     * 创建者id
+     * 创建者id。
      * @return creatorId
      */
     public Long getCreatorId() {
@@ -166,7 +165,7 @@ public class CmdbTagEntity {
     }
 
     /**
-     * 环境id列表
+     * 环境id列表。
      * @return envIdList
      */
     public List<Long> getEnvIdList() {
@@ -183,7 +182,7 @@ public class CmdbTagEntity {
     }
 
     /**
-     * 环境标签id
+     * 环境标签id。
      * @return id
      */
     public Long getId() {
@@ -194,37 +193,37 @@ public class CmdbTagEntity {
         this.id = id;
     }
 
-    public CmdbTagEntity withGmtCreate(LocalDate gmtCreate) {
+    public CmdbTagEntity withGmtCreate(String gmtCreate) {
         this.gmtCreate = gmtCreate;
         return this;
     }
 
     /**
-     * 创建时间
+     * 创建时间。
      * @return gmtCreate
      */
-    public LocalDate getGmtCreate() {
+    public String getGmtCreate() {
         return gmtCreate;
     }
 
-    public void setGmtCreate(LocalDate gmtCreate) {
+    public void setGmtCreate(String gmtCreate) {
         this.gmtCreate = gmtCreate;
     }
 
-    public CmdbTagEntity withGmtModify(LocalDate gmtModify) {
+    public CmdbTagEntity withGmtModify(String gmtModify) {
         this.gmtModify = gmtModify;
         return this;
     }
 
     /**
-     * 修改时间
+     * 修改时间。
      * @return gmtModify
      */
-    public LocalDate getGmtModify() {
+    public String getGmtModify() {
         return gmtModify;
     }
 
-    public void setGmtModify(LocalDate gmtModify) {
+    public void setGmtModify(String gmtModify) {
         this.gmtModify = gmtModify;
     }
 

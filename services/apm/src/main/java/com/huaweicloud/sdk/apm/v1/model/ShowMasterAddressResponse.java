@@ -27,7 +27,7 @@ public class ShowMasterAddressResponse extends SdkResponse {
     }
 
     /**
-     * region的id，英文名称。
+     * region的英文名称。
      * @return regionName
      */
     public String getRegionName() {
@@ -44,7 +44,7 @@ public class ShowMasterAddressResponse extends SdkResponse {
     }
 
     /**
-     * APMmaster服务对对外暴露的地址，提供服务注册和心跳上报。
+     * APMmaster服务对外暴露的地址，提供服务注册和心跳上报。
      * @return masterAddress
      */
     public String getMasterAddress() {

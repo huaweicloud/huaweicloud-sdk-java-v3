@@ -41,7 +41,7 @@ public class ListAppsResponse extends SdkResponse {
     }
 
     /**
-     * 组件信息列表
+     * 组件信息列表。
      * @return apps
      */
     public List<AppNodeModel> getApps() {

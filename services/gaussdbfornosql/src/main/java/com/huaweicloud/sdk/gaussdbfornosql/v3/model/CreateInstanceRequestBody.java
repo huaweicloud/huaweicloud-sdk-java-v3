@@ -93,6 +93,16 @@ public class CreateInstanceRequestBody {
 
     private ChargeInfoOption chargeInfo;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "restore_info")
+
+    private RestoreInfo restoreInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "port")
+
+    private String port;
+
     public CreateInstanceRequestBody withName(String name) {
         this.name = name;
         return this;
@@ -408,6 +418,49 @@ public class CreateInstanceRequestBody {
         this.chargeInfo = chargeInfo;
     }
 
+    public CreateInstanceRequestBody withRestoreInfo(RestoreInfo restoreInfo) {
+        this.restoreInfo = restoreInfo;
+        return this;
+    }
+
+    public CreateInstanceRequestBody withRestoreInfo(Consumer<RestoreInfo> restoreInfoSetter) {
+        if (this.restoreInfo == null) {
+            this.restoreInfo = new RestoreInfo();
+            restoreInfoSetter.accept(this.restoreInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get restoreInfo
+     * @return restoreInfo
+     */
+    public RestoreInfo getRestoreInfo() {
+        return restoreInfo;
+    }
+
+    public void setRestoreInfo(RestoreInfo restoreInfo) {
+        this.restoreInfo = restoreInfo;
+    }
+
+    public CreateInstanceRequestBody withPort(String port) {
+        this.port = port;
+        return this;
+    }
+
+    /**
+     * 数据库访问端口号。 目前仅支持GaussDB(for Redis)实例支持自定义端口，取值范围为：1024~65535，禁用端口号为：2180、2887、3887、6377、6378、6380、8018、8079、8091、8479、8484、8999、12017、12333、50069。 不指定端口时，创建GaussDB(for Redis)实例的访问端口默认为6379。 如果该实例计划用于搭建双活容灾场景，请配置为8635端口。
+     * @return port
+     */
+    public String getPort() {
+        return port;
+    }
+
+    public void setPort(String port) {
+        this.port = port;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -432,7 +485,9 @@ public class CreateInstanceRequestBody {
             && Objects.equals(this.enterpriseProjectId, createInstanceRequestBody.enterpriseProjectId)
             && Objects.equals(this.dedicatedResourceId, createInstanceRequestBody.dedicatedResourceId)
             && Objects.equals(this.sslOption, createInstanceRequestBody.sslOption)
-            && Objects.equals(this.chargeInfo, createInstanceRequestBody.chargeInfo);
+            && Objects.equals(this.chargeInfo, createInstanceRequestBody.chargeInfo)
+            && Objects.equals(this.restoreInfo, createInstanceRequestBody.restoreInfo)
+            && Objects.equals(this.port, createInstanceRequestBody.port);
     }
 
     @Override
@@ -452,7 +507,9 @@ public class CreateInstanceRequestBody {
             enterpriseProjectId,
             dedicatedResourceId,
             sslOption,
-            chargeInfo);
+            chargeInfo,
+            restoreInfo,
+            port);
     }
 
     @Override
@@ -475,6 +532,8 @@ public class CreateInstanceRequestBody {
         sb.append("    dedicatedResourceId: ").append(toIndentedString(dedicatedResourceId)).append("\n");
         sb.append("    sslOption: ").append(toIndentedString(sslOption)).append("\n");
         sb.append("    chargeInfo: ").append(toIndentedString(chargeInfo)).append("\n");
+        sb.append("    restoreInfo: ").append(toIndentedString(restoreInfo)).append("\n");
+        sb.append("    port: ").append(toIndentedString(port)).append("\n");
         sb.append("}");
         return sb.toString();
     }

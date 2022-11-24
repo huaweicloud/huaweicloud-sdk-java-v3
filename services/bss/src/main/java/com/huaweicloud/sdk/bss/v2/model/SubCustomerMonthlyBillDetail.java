@@ -210,6 +210,36 @@ public class SubCustomerMonthlyBillDetail {
 
     private String regionName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sub_service_type_code")
+
+    private String subServiceTypeCode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sub_service_type_name")
+
+    private String subServiceTypeName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sub_resource_type_code")
+
+    private String subResourceTypeCode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sub_resource_type_name")
+
+    private String subResourceTypeName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sub_resource_id")
+
+    private String subResourceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sub_resource_name")
+
+    private String subResourceName;
+
     public SubCustomerMonthlyBillDetail withBillCycle(String billCycle) {
         this.billCycle = billCycle;
         return this;
@@ -890,6 +920,108 @@ public class SubCustomerMonthlyBillDetail {
         this.regionName = regionName;
     }
 
+    public SubCustomerMonthlyBillDetail withSubServiceTypeCode(String subServiceTypeCode) {
+        this.subServiceTypeCode = subServiceTypeCode;
+        return this;
+    }
+
+    /**
+     * 该字段为预留字段。
+     * @return subServiceTypeCode
+     */
+    public String getSubServiceTypeCode() {
+        return subServiceTypeCode;
+    }
+
+    public void setSubServiceTypeCode(String subServiceTypeCode) {
+        this.subServiceTypeCode = subServiceTypeCode;
+    }
+
+    public SubCustomerMonthlyBillDetail withSubServiceTypeName(String subServiceTypeName) {
+        this.subServiceTypeName = subServiceTypeName;
+        return this;
+    }
+
+    /**
+     * 该字段为预留字段。
+     * @return subServiceTypeName
+     */
+    public String getSubServiceTypeName() {
+        return subServiceTypeName;
+    }
+
+    public void setSubServiceTypeName(String subServiceTypeName) {
+        this.subServiceTypeName = subServiceTypeName;
+    }
+
+    public SubCustomerMonthlyBillDetail withSubResourceTypeCode(String subResourceTypeCode) {
+        this.subResourceTypeCode = subResourceTypeCode;
+        return this;
+    }
+
+    /**
+     * 该字段为预留字段。
+     * @return subResourceTypeCode
+     */
+    public String getSubResourceTypeCode() {
+        return subResourceTypeCode;
+    }
+
+    public void setSubResourceTypeCode(String subResourceTypeCode) {
+        this.subResourceTypeCode = subResourceTypeCode;
+    }
+
+    public SubCustomerMonthlyBillDetail withSubResourceTypeName(String subResourceTypeName) {
+        this.subResourceTypeName = subResourceTypeName;
+        return this;
+    }
+
+    /**
+     * 该字段为预留字段。
+     * @return subResourceTypeName
+     */
+    public String getSubResourceTypeName() {
+        return subResourceTypeName;
+    }
+
+    public void setSubResourceTypeName(String subResourceTypeName) {
+        this.subResourceTypeName = subResourceTypeName;
+    }
+
+    public SubCustomerMonthlyBillDetail withSubResourceId(String subResourceId) {
+        this.subResourceId = subResourceId;
+        return this;
+    }
+
+    /**
+     * 该字段为预留字段。
+     * @return subResourceId
+     */
+    public String getSubResourceId() {
+        return subResourceId;
+    }
+
+    public void setSubResourceId(String subResourceId) {
+        this.subResourceId = subResourceId;
+    }
+
+    public SubCustomerMonthlyBillDetail withSubResourceName(String subResourceName) {
+        this.subResourceName = subResourceName;
+        return this;
+    }
+
+    /**
+     * 该字段为预留字段。
+     * @return subResourceName
+     */
+    public String getSubResourceName() {
+        return subResourceName;
+    }
+
+    public void setSubResourceName(String subResourceName) {
+        this.subResourceName = subResourceName;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -938,7 +1070,13 @@ public class SubCustomerMonthlyBillDetail {
             && Objects.equals(this.periodType, subCustomerMonthlyBillDetail.periodType)
             && Objects.equals(this.accountManagerId, subCustomerMonthlyBillDetail.accountManagerId)
             && Objects.equals(this.partnerId, subCustomerMonthlyBillDetail.partnerId)
-            && Objects.equals(this.regionName, subCustomerMonthlyBillDetail.regionName);
+            && Objects.equals(this.regionName, subCustomerMonthlyBillDetail.regionName)
+            && Objects.equals(this.subServiceTypeCode, subCustomerMonthlyBillDetail.subServiceTypeCode)
+            && Objects.equals(this.subServiceTypeName, subCustomerMonthlyBillDetail.subServiceTypeName)
+            && Objects.equals(this.subResourceTypeCode, subCustomerMonthlyBillDetail.subResourceTypeCode)
+            && Objects.equals(this.subResourceTypeName, subCustomerMonthlyBillDetail.subResourceTypeName)
+            && Objects.equals(this.subResourceId, subCustomerMonthlyBillDetail.subResourceId)
+            && Objects.equals(this.subResourceName, subCustomerMonthlyBillDetail.subResourceName);
     }
 
     @Override
@@ -982,7 +1120,13 @@ public class SubCustomerMonthlyBillDetail {
             periodType,
             accountManagerId,
             partnerId,
-            regionName);
+            regionName,
+            subServiceTypeCode,
+            subServiceTypeName,
+            subResourceTypeCode,
+            subResourceTypeName,
+            subResourceId,
+            subResourceName);
     }
 
     @Override
@@ -1029,6 +1173,12 @@ public class SubCustomerMonthlyBillDetail {
         sb.append("    accountManagerId: ").append(toIndentedString(accountManagerId)).append("\n");
         sb.append("    partnerId: ").append(toIndentedString(partnerId)).append("\n");
         sb.append("    regionName: ").append(toIndentedString(regionName)).append("\n");
+        sb.append("    subServiceTypeCode: ").append(toIndentedString(subServiceTypeCode)).append("\n");
+        sb.append("    subServiceTypeName: ").append(toIndentedString(subServiceTypeName)).append("\n");
+        sb.append("    subResourceTypeCode: ").append(toIndentedString(subResourceTypeCode)).append("\n");
+        sb.append("    subResourceTypeName: ").append(toIndentedString(subResourceTypeName)).append("\n");
+        sb.append("    subResourceId: ").append(toIndentedString(subResourceId)).append("\n");
+        sb.append("    subResourceName: ").append(toIndentedString(subResourceName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

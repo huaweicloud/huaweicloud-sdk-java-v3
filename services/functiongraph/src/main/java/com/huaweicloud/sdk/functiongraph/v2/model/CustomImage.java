@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * CustomImage
+ * 用户容器镜像。
  */
 public class CustomImage {
 

@@ -27,7 +27,7 @@ public class ListEnvMonitorItemRequest {
     }
 
     /**
-     * Get xBusinessId
+     * 应用id。
      * @return xBusinessId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

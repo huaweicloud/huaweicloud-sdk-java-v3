@@ -65,7 +65,7 @@ public class HostNetwork {
     }
 
     /**
-     * 节点安全组ID，创建时指定无效 
+     * 集群默认的Node节点安全组ID，不指定该字段系统将自动为用户创建默认Node节点安全组，指定该字段时集群将绑定指定的安全组。Node节点安全组需要放通部分端口来保证正常通信，详细设置请参考《[集群安全组规则配置](https://support.huaweicloud.com/cce_faq/cce_faq_00265.html)》。
      * @return securityGroup
      */
     public String getSecurityGroup() {

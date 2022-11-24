@@ -697,6 +697,11 @@ public class Content {
     private String broker;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ssl")
+
+    private Boolean ssl;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ssl_enable")
 
     private Boolean sslEnable;
@@ -2396,6 +2401,23 @@ public class Content {
         this.broker = broker;
     }
 
+    public Content withSsl(Boolean ssl) {
+        this.ssl = ssl;
+        return this;
+    }
+
+    /**
+     * 是否开启SSL认证 - 连接MQS内网地址时，若MQS开启了SSL，请选择“是”
+     * @return ssl
+     */
+    public Boolean getSsl() {
+        return ssl;
+    }
+
+    public void setSsl(Boolean ssl) {
+        this.ssl = ssl;
+    }
+
     public Content withSslEnable(Boolean sslEnable) {
         this.sslEnable = sslEnable;
         return this;
@@ -3154,7 +3176,7 @@ public class Content {
             && Objects.equals(this.url, content.url) && Objects.equals(this.apiMethod, content.apiMethod)
             && Objects.equals(this.authMethod, content.authMethod)
             && Objects.equals(this.apiAuthDetail, content.apiAuthDetail) && Objects.equals(this.broker, content.broker)
-            && Objects.equals(this.sslEnable, content.sslEnable)
+            && Objects.equals(this.ssl, content.ssl) && Objects.equals(this.sslEnable, content.sslEnable)
             && Objects.equals(this.sslUsername, content.sslUsername)
             && Objects.equals(this.sslPassword, content.sslPassword)
             && Objects.equals(this.mongodbAuthSource, content.mongodbAuthSource)
@@ -3223,6 +3245,7 @@ public class Content {
             authMethod,
             apiAuthDetail,
             broker,
+            ssl,
             sslEnable,
             sslUsername,
             sslPassword,
@@ -3295,6 +3318,7 @@ public class Content {
         sb.append("    authMethod: ").append(toIndentedString(authMethod)).append("\n");
         sb.append("    apiAuthDetail: ").append(toIndentedString(apiAuthDetail)).append("\n");
         sb.append("    broker: ").append(toIndentedString(broker)).append("\n");
+        sb.append("    ssl: ").append(toIndentedString(ssl)).append("\n");
         sb.append("    sslEnable: ").append(toIndentedString(sslEnable)).append("\n");
         sb.append("    sslUsername: ").append(toIndentedString(sslUsername)).append("\n");
         sb.append("    sslPassword: ").append(toIndentedString(sslPassword)).append("\n");

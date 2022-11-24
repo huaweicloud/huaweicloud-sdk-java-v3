@@ -289,6 +289,63 @@ public class DdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CompareConfigurationRequest, CompareConfigurationResponse> compareConfiguration =
+        genForcompareConfiguration();
+
+    private static HttpRequestDef<CompareConfigurationRequest, CompareConfigurationResponse> genForcompareConfiguration() {
+        // basic
+        HttpRequestDef.Builder<CompareConfigurationRequest, CompareConfigurationResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CompareConfigurationRequest.class, CompareConfigurationResponse.class)
+            .withName("CompareConfiguration")
+            .withUri("/v3/{project_id}/configurations/comparison")
+            .withContentType("application/json");
+
+        // requests
+        builder.<DiffConfigurationRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DiffConfigurationRequest.class),
+            f -> f.withMarshaller(CompareConfigurationRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CopyConfigurationRequest, CopyConfigurationResponse> copyConfiguration =
+        genForcopyConfiguration();
+
+    private static HttpRequestDef<CopyConfigurationRequest, CopyConfigurationResponse> genForcopyConfiguration() {
+        // basic
+        HttpRequestDef.Builder<CopyConfigurationRequest, CopyConfigurationResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CopyConfigurationRequest.class, CopyConfigurationResponse.class)
+                .withName("CopyConfiguration")
+                .withUri("/v3/{project_id}/configurations/{config_id}/copy")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("config_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CopyConfigurationRequest::getConfigId, (req, v) -> {
+                req.setConfigId(v);
+            }));
+        builder.<CopyConfigurationRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CopyConfigurationRequestBody.class),
+            f -> f.withMarshaller(CopyConfigurationRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateConfigurationRequest, CreateConfigurationResponse> createConfiguration =
         genForcreateConfiguration();
 
@@ -758,6 +815,45 @@ public class DdsMeta {
             TypeCasts.uncheckedConversion(EnlargeReplicasetNodeRequestBody.class),
             f -> f.withMarshaller(ExpandReplicasetNodeRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAppliedInstancesRequest, ListAppliedInstancesResponse> listAppliedInstances =
+        genForlistAppliedInstances();
+
+    private static HttpRequestDef<ListAppliedInstancesRequest, ListAppliedInstancesResponse> genForlistAppliedInstances() {
+        // basic
+        HttpRequestDef.Builder<ListAppliedInstancesRequest, ListAppliedInstancesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListAppliedInstancesRequest.class, ListAppliedInstancesResponse.class)
+            .withName("ListAppliedInstances")
+            .withUri("/v3/{project_id}/configurations/{config_id}/applicable-instances")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("config_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAppliedInstancesRequest::getConfigId, (req, v) -> {
+                req.setConfigId(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAppliedInstancesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAppliedInstancesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
             }));
 
         // response
@@ -1801,6 +1897,65 @@ public class DdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListTasksRequest, ListTasksResponse> listTasks = genForlistTasks();
+
+    private static HttpRequestDef<ListTasksRequest, ListTasksResponse> genForlistTasks() {
+        // basic
+        HttpRequestDef.Builder<ListTasksRequest, ListTasksResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListTasksRequest.class, ListTasksResponse.class)
+                .withName("ListTasks")
+                .withUri("/v3.1/{project_id}/jobs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTasksRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            }));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTasksRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            }));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTasksRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTasksRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTasksRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTasksRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<MigrateAzRequest, MigrateAzResponse> migrateAz = genFormigrateAz();
 
     private static HttpRequestDef<MigrateAzRequest, MigrateAzResponse> genFormigrateAz() {
@@ -1828,6 +1983,38 @@ public class DdsMeta {
             }));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ResetConfigurationRequest, ResetConfigurationResponse> resetConfiguration =
+        genForresetConfiguration();
+
+    private static HttpRequestDef<ResetConfigurationRequest, ResetConfigurationResponse> genForresetConfiguration() {
+        // basic
+        HttpRequestDef.Builder<ResetConfigurationRequest, ResetConfigurationResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ResetConfigurationRequest.class, ResetConfigurationResponse.class)
+                .withName("ResetConfiguration")
+                .withUri("/v3/{project_id}/configurations/{config_id}/reset")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("config_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResetConfigurationRequest::getConfigId, (req, v) -> {
+                req.setConfigId(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ResetConfigurationResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
 
         return builder.build();
     }
@@ -2301,6 +2488,90 @@ public class DdsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowBackupPolicyRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowConfigurationAppliedHistoryRequest, ShowConfigurationAppliedHistoryResponse> showConfigurationAppliedHistory =
+        genForshowConfigurationAppliedHistory();
+
+    private static HttpRequestDef<ShowConfigurationAppliedHistoryRequest, ShowConfigurationAppliedHistoryResponse> genForshowConfigurationAppliedHistory() {
+        // basic
+        HttpRequestDef.Builder<ShowConfigurationAppliedHistoryRequest, ShowConfigurationAppliedHistoryResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowConfigurationAppliedHistoryRequest.class,
+                    ShowConfigurationAppliedHistoryResponse.class)
+                .withName("ShowConfigurationAppliedHistory")
+                .withUri("/v3/{project_id}/configurations/{config_id}/applied-histories")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("config_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowConfigurationAppliedHistoryRequest::getConfigId, (req, v) -> {
+                req.setConfigId(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowConfigurationAppliedHistoryRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowConfigurationAppliedHistoryRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowConfigurationModifyHistoryRequest, ShowConfigurationModifyHistoryResponse> showConfigurationModifyHistory =
+        genForshowConfigurationModifyHistory();
+
+    private static HttpRequestDef<ShowConfigurationModifyHistoryRequest, ShowConfigurationModifyHistoryResponse> genForshowConfigurationModifyHistory() {
+        // basic
+        HttpRequestDef.Builder<ShowConfigurationModifyHistoryRequest, ShowConfigurationModifyHistoryResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowConfigurationModifyHistoryRequest.class,
+                    ShowConfigurationModifyHistoryResponse.class)
+                .withName("ShowConfigurationModifyHistory")
+                .withUri("/v3/{project_id}/configurations/{config_id}/histories")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("config_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowConfigurationModifyHistoryRequest::getConfigId, (req, v) -> {
+                req.setConfigId(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowConfigurationModifyHistoryRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowConfigurationModifyHistoryRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
             }));
 
         // response

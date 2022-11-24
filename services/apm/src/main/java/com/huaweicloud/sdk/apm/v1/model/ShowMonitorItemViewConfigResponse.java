@@ -40,7 +40,7 @@ public class ShowMonitorItemViewConfigResponse extends SdkResponse {
     }
 
     /**
-     * 标题
+     * 标题。
      * @return title
      */
     public String getTitle() {
@@ -57,7 +57,7 @@ public class ShowMonitorItemViewConfigResponse extends SdkResponse {
     }
 
     /**
-     * 采集器名称
+     * 采集器名称。
      * @return collectorName
      */
     public String getCollectorName() {
@@ -90,7 +90,7 @@ public class ShowMonitorItemViewConfigResponse extends SdkResponse {
     }
 
     /**
-     * 视图的列表，内部每个List代表的是一行图表
+     * 视图的列表，内部每个List代表的是一行图表。
      * @return viewRowList
      */
     public List<ViewRow> getViewRowList() {
@@ -107,7 +107,7 @@ public class ShowMonitorItemViewConfigResponse extends SdkResponse {
     }
 
     /**
-     * 类型
+     * 类型。
      * @return style
      */
     public String getStyle() {

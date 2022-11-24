@@ -21,7 +21,7 @@ public class StartVpecpReq {
     }
 
     /**
-     * 开启终端节点。
+     * 是否开启内网域名。 - ture：表示开启。 - false： 表示不开启。
      * @return endpointWithDnsName
      */
     public Boolean getEndpointWithDnsName() {

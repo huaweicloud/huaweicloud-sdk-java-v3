@@ -424,6 +424,13 @@ public class CceMeta {
             f -> f.withMarshaller(DeleteClusterRequest::getDeleteSfs, (req, v) -> {
                 req.setDeleteSfs(v);
             }));
+        builder.<DeleteClusterRequest.DeleteSfs30Enum>withRequestField("delete_sfs30",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(DeleteClusterRequest.DeleteSfs30Enum.class),
+            f -> f.withMarshaller(DeleteClusterRequest::getDeleteSfs30, (req, v) -> {
+                req.setDeleteSfs30(v);
+            }));
         builder.<DeleteClusterRequest.TobedeletedEnum>withRequestField("tobedeleted",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,

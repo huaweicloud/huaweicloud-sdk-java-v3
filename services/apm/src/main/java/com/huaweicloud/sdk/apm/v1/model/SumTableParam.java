@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 汇聚数据表格传参
+ * 汇聚数据表格传参。
  */
 public class SumTableParam {
 
@@ -77,7 +77,7 @@ public class SumTableParam {
     }
 
     /**
-     * 上次请求的id
+     * 上次请求的id。
      * @return requestId
      */
     public String getRequestId() {
@@ -120,7 +120,7 @@ public class SumTableParam {
     }
 
     /**
-     * 策略
+     * 策略。
      * @return strategy
      */
     public String getStrategy() {
@@ -137,7 +137,7 @@ public class SumTableParam {
     }
 
     /**
-     * 当前页码
+     * 当前页码。
      * @return page
      */
     public Integer getPage() {
@@ -154,7 +154,7 @@ public class SumTableParam {
     }
 
     /**
-     * 每页数据总数
+     * 每页数据总数。
      * @return pageSize
      */
     public Integer getPageSize() {
@@ -171,7 +171,7 @@ public class SumTableParam {
     }
 
     /**
-     * 排序规则
+     * 排序规则。
      * @return orderBy
      */
     public String getOrderBy() {
@@ -188,7 +188,7 @@ public class SumTableParam {
     }
 
     /**
-     * 搜索关键字
+     * 搜索关键字。
      * @return searchWord
      */
     public String getSearchWord() {
@@ -205,7 +205,7 @@ public class SumTableParam {
     }
 
     /**
-     * 实例id
+     * 实例id。
      * @return instanceId
      */
     public Long getInstanceId() {
@@ -222,7 +222,7 @@ public class SumTableParam {
     }
 
     /**
-     * 监控项id
+     * 监控项id。
      * @return monitorItemId
      */
     public Long getMonitorItemId() {
@@ -239,7 +239,7 @@ public class SumTableParam {
     }
 
     /**
-     * 环境id
+     * 环境id。
      * @return envId
      */
     public Long getEnvId() {
@@ -256,7 +256,7 @@ public class SumTableParam {
     }
 
     /**
-     * 起始时间
+     * 起始时间。
      * @return startTime
      */
     public String getStartTime() {
@@ -273,7 +273,7 @@ public class SumTableParam {
     }
 
     /**
-     * 结束时间
+     * 结束时间。
      * @return endTime
      */
     public String getEndTime() {

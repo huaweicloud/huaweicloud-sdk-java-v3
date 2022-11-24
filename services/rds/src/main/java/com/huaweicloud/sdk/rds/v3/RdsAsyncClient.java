@@ -1884,6 +1884,68 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 查询实例ipv6域名。
+     *
+     * 查询实例ipv6域名。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowDnsNameRequest 请求对象
+     * @return CompletableFuture<ShowDnsNameResponse>
+     */
+    public CompletableFuture<ShowDnsNameResponse> showDnsNameAsync(ShowDnsNameRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.showDnsName);
+    }
+
+    /**
+     * 查询实例ipv6域名。
+     *
+     * 查询实例ipv6域名。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowDnsNameRequest 请求对象
+     * @return AsyncInvoker<ShowDnsNameRequest, ShowDnsNameResponse>
+     */
+    public AsyncInvoker<ShowDnsNameRequest, ShowDnsNameResponse> showDnsNameAsyncInvoker(ShowDnsNameRequest request) {
+        return new AsyncInvoker<ShowDnsNameRequest, ShowDnsNameResponse>(request, RdsMeta.showDnsName, hcClient);
+    }
+
+    /**
+     * 
+     *
+     * 查询实例ipv4域名
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowDomainNameRequest 请求对象
+     * @return CompletableFuture<ShowDomainNameResponse>
+     */
+    public CompletableFuture<ShowDomainNameResponse> showDomainNameAsync(ShowDomainNameRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.showDomainName);
+    }
+
+    /**
+     * 
+     *
+     * 查询实例ipv4域名
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowDomainNameRequest 请求对象
+     * @return AsyncInvoker<ShowDomainNameRequest, ShowDomainNameResponse>
+     */
+    public AsyncInvoker<ShowDomainNameRequest, ShowDomainNameResponse> showDomainNameAsyncInvoker(
+        ShowDomainNameRequest request) {
+        return new AsyncInvoker<ShowDomainNameRequest, ShowDomainNameResponse>(request, RdsMeta.showDomainName,
+            hcClient);
+    }
+
+    /**
      * 查询跨云容灾复制状态
      *
      * 建立跨云容灾关系后，查询主实例和灾备实例间的复制状态及延迟。
@@ -2009,6 +2071,39 @@ public class RdsAsyncClient {
      */
     public AsyncInvoker<ShowQuotasRequest, ShowQuotasResponse> showQuotasAsyncInvoker(ShowQuotasRequest request) {
         return new AsyncInvoker<ShowQuotasRequest, ShowQuotasResponse>(request, RdsMeta.showQuotas, hcClient);
+    }
+
+    /**
+     * 获取实例的复制状态。
+     *
+     * 获取实例的复制状态。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowReplicationStatusRequest 请求对象
+     * @return CompletableFuture<ShowReplicationStatusResponse>
+     */
+    public CompletableFuture<ShowReplicationStatusResponse> showReplicationStatusAsync(
+        ShowReplicationStatusRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.showReplicationStatus);
+    }
+
+    /**
+     * 获取实例的复制状态。
+     *
+     * 获取实例的复制状态。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowReplicationStatusRequest 请求对象
+     * @return AsyncInvoker<ShowReplicationStatusRequest, ShowReplicationStatusResponse>
+     */
+    public AsyncInvoker<ShowReplicationStatusRequest, ShowReplicationStatusResponse> showReplicationStatusAsyncInvoker(
+        ShowReplicationStatusRequest request) {
+        return new AsyncInvoker<ShowReplicationStatusRequest, ShowReplicationStatusResponse>(request,
+            RdsMeta.showReplicationStatus, hcClient);
     }
 
     /**

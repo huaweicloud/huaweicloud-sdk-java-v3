@@ -20,6 +20,68 @@ public class CssAsyncClient {
     }
 
     /**
+     * 添加独立master、client
+     *
+     * 由于集群数据面业务的增长或者不确定性，很难在一开始就能够把集群的规模形态想明白，该接口能够在非独立master和client的集群上面独立master、client角色。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param AddIndependentNodeRequest 请求对象
+     * @return CompletableFuture<AddIndependentNodeResponse>
+     */
+    public CompletableFuture<AddIndependentNodeResponse> addIndependentNodeAsync(AddIndependentNodeRequest request) {
+        return hcClient.asyncInvokeHttp(request, CssMeta.addIndependentNode);
+    }
+
+    /**
+     * 添加独立master、client
+     *
+     * 由于集群数据面业务的增长或者不确定性，很难在一开始就能够把集群的规模形态想明白，该接口能够在非独立master和client的集群上面独立master、client角色。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param AddIndependentNodeRequest 请求对象
+     * @return AsyncInvoker<AddIndependentNodeRequest, AddIndependentNodeResponse>
+     */
+    public AsyncInvoker<AddIndependentNodeRequest, AddIndependentNodeResponse> addIndependentNodeAsyncInvoker(
+        AddIndependentNodeRequest request) {
+        return new AsyncInvoker<AddIndependentNodeRequest, AddIndependentNodeResponse>(request,
+            CssMeta.addIndependentNode, hcClient);
+    }
+
+    /**
+     * 安全模式修改
+     *
+     * 该接口用于切换集群的安全模式。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ChangeModeRequest 请求对象
+     * @return CompletableFuture<ChangeModeResponse>
+     */
+    public CompletableFuture<ChangeModeResponse> changeModeAsync(ChangeModeRequest request) {
+        return hcClient.asyncInvokeHttp(request, CssMeta.changeMode);
+    }
+
+    /**
+     * 安全模式修改
+     *
+     * 该接口用于切换集群的安全模式。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ChangeModeRequest 请求对象
+     * @return AsyncInvoker<ChangeModeRequest, ChangeModeResponse>
+     */
+    public AsyncInvoker<ChangeModeRequest, ChangeModeResponse> changeModeAsyncInvoker(ChangeModeRequest request) {
+        return new AsyncInvoker<ChangeModeRequest, ChangeModeResponse>(request, CssMeta.changeMode, hcClient);
+    }
+
+    /**
      * 设置自动创建快照策略
      *
      * 该接口用于设置自动创建快照，默认一天创建一个快照。
@@ -1469,6 +1531,38 @@ public class CssAsyncClient {
         UpdateFlavorByTypeRequest request) {
         return new AsyncInvoker<UpdateFlavorByTypeRequest, UpdateFlavorByTypeResponse>(request,
             CssMeta.updateFlavorByType, hcClient);
+    }
+
+    /**
+     * 节点替换
+     *
+     * 该接口用于替换失败节点。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateInstanceRequest 请求对象
+     * @return CompletableFuture<UpdateInstanceResponse>
+     */
+    public CompletableFuture<UpdateInstanceResponse> updateInstanceAsync(UpdateInstanceRequest request) {
+        return hcClient.asyncInvokeHttp(request, CssMeta.updateInstance);
+    }
+
+    /**
+     * 节点替换
+     *
+     * 该接口用于替换失败节点。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateInstanceRequest 请求对象
+     * @return AsyncInvoker<UpdateInstanceRequest, UpdateInstanceResponse>
+     */
+    public AsyncInvoker<UpdateInstanceRequest, UpdateInstanceResponse> updateInstanceAsyncInvoker(
+        UpdateInstanceRequest request) {
+        return new AsyncInvoker<UpdateInstanceRequest, UpdateInstanceResponse>(request, CssMeta.updateInstance,
+            hcClient);
     }
 
     /**

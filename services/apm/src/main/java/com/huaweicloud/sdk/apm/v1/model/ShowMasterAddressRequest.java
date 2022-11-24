@@ -21,7 +21,7 @@ public class ShowMasterAddressRequest {
     }
 
     /**
-     * region英文名称
+     * region英文名称。
      * @return regionName
      */
     public String getRegionName() {

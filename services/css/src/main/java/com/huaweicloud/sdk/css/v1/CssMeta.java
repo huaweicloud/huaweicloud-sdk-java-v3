@@ -10,6 +10,76 @@ import com.huaweicloud.sdk.css.v1.model.*;
 @SuppressWarnings("unchecked")
 public class CssMeta {
 
+    public static final HttpRequestDef<AddIndependentNodeRequest, AddIndependentNodeResponse> addIndependentNode =
+        genForaddIndependentNode();
+
+    private static HttpRequestDef<AddIndependentNodeRequest, AddIndependentNodeResponse> genForaddIndependentNode() {
+        // basic
+        HttpRequestDef.Builder<AddIndependentNodeRequest, AddIndependentNodeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AddIndependentNodeRequest.class, AddIndependentNodeResponse.class)
+                .withName("AddIndependentNode")
+                .withUri("/v1.0/{project_id}/clusters/{cluster_id}/type/{type}/independent")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddIndependentNodeRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<String>withRequestField("type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddIndependentNodeRequest::getType, (req, v) -> {
+                req.setType(v);
+            }));
+        builder.<IndependentRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(IndependentRequestBody.class),
+            f -> f.withMarshaller(AddIndependentNodeRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ChangeModeRequest, ChangeModeResponse> changeMode = genForchangeMode();
+
+    private static HttpRequestDef<ChangeModeRequest, ChangeModeResponse> genForchangeMode() {
+        // basic
+        HttpRequestDef.Builder<ChangeModeRequest, ChangeModeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ChangeModeRequest.class, ChangeModeResponse.class)
+                .withName("ChangeMode")
+                .withUri("/v1.0/{project_id}/clusters/{cluster_id}/mode/change")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeModeRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<ChangeModeRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ChangeModeRequestBody.class),
+            f -> f.withMarshaller(ChangeModeRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateAutoCreatePolicyRequest, CreateAutoCreatePolicyResponse> createAutoCreatePolicy =
         genForcreateAutoCreatePolicy();
 
@@ -1296,6 +1366,38 @@ public class CssMeta {
             TypeCasts.uncheckedConversion(UpdateFlavorByTypeReq.class),
             f -> f.withMarshaller(UpdateFlavorByTypeRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateInstanceRequest, UpdateInstanceResponse> updateInstance =
+        genForupdateInstance();
+
+    private static HttpRequestDef<UpdateInstanceRequest, UpdateInstanceResponse> genForupdateInstance() {
+        // basic
+        HttpRequestDef.Builder<UpdateInstanceRequest, UpdateInstanceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateInstanceRequest.class, UpdateInstanceResponse.class)
+                .withName("UpdateInstance")
+                .withUri("/v1.0/{project_id}/clusters/{cluster_id}/instance/{instance_id}/replace")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInstanceRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInstanceRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
             }));
 
         // response

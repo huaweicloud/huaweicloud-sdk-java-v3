@@ -35,7 +35,7 @@ public class ShowTopologyResponse extends SdkResponse {
     }
 
     /**
-     * 全局traceID
+     * 全局traceId。
      * @return globalTraceId
      */
     public String getGlobalTraceId() {
@@ -68,7 +68,7 @@ public class ShowTopologyResponse extends SdkResponse {
     }
 
     /**
-     * 组件之间调用指向线列表
+     * 组件之间调用指向线列表。
      * @return lineList
      */
     public List<TraceTopologyLine> getLineList() {
@@ -101,7 +101,7 @@ public class ShowTopologyResponse extends SdkResponse {
     }
 
     /**
-     * 组件节点列表
+     * 组件节点列表。
      * @return nodeList
      */
     public List<TraceTopologyNode> getNodeList() {

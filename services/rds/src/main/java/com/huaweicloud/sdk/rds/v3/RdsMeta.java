@@ -2452,6 +2452,83 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowDnsNameRequest, ShowDnsNameResponse> showDnsName = genForshowDnsName();
+
+    private static HttpRequestDef<ShowDnsNameRequest, ShowDnsNameResponse> genForshowDnsName() {
+        // basic
+        HttpRequestDef.Builder<ShowDnsNameRequest, ShowDnsNameResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDnsNameRequest.class, ShowDnsNameResponse.class)
+                .withName("ShowDnsName")
+                .withUri("/v3/{project_id}/instances/{instance_id}/dns-ipv6")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDnsNameRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("dns_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDnsNameRequest::getDnsType, (req, v) -> {
+                req.setDnsType(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDnsNameRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDomainNameRequest, ShowDomainNameResponse> showDomainName =
+        genForshowDomainName();
+
+    private static HttpRequestDef<ShowDomainNameRequest, ShowDomainNameResponse> genForshowDomainName() {
+        // basic
+        HttpRequestDef.Builder<ShowDomainNameRequest, ShowDomainNameResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDomainNameRequest.class, ShowDomainNameResponse.class)
+                .withName("ShowDomainName")
+                .withUri("/v3/{project_id}/instances/{instance_id}/dns")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDomainNameRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("dns_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDomainNameRequest::getDnsType, (req, v) -> {
+                req.setDnsType(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDomainNameRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowDrReplicaStatusRequest, ShowDrReplicaStatusResponse> showDrReplicaStatus =
         genForshowDrReplicaStatus();
 
@@ -2567,6 +2644,38 @@ public class RdsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowQuotasRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ShowQuotasRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowReplicationStatusRequest, ShowReplicationStatusResponse> showReplicationStatus =
+        genForshowReplicationStatus();
+
+    private static HttpRequestDef<ShowReplicationStatusRequest, ShowReplicationStatusResponse> genForshowReplicationStatus() {
+        // basic
+        HttpRequestDef.Builder<ShowReplicationStatusRequest, ShowReplicationStatusResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowReplicationStatusRequest.class, ShowReplicationStatusResponse.class)
+            .withName("ShowReplicationStatus")
+            .withUri("/v3/{project_id}/instances/{instance_id}/replication/status")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowReplicationStatusRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowReplicationStatusRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             }));
 

@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.sa.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.time.OffsetDateTime;
 import java.util.Objects;
 import java.util.UUID;
 import java.util.function.Consumer;
@@ -30,22 +31,22 @@ public class Event {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "first_observed_time")
 
-    private String firstObservedTime;
+    private OffsetDateTime firstObservedTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last_observed_time")
 
-    private String lastObservedTime;
+    private OffsetDateTime lastObservedTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
-    private String createTime;
+    private OffsetDateTime createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "arrive_time")
 
-    private String arriveTime;
+    private OffsetDateTime arriveTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_id")
@@ -221,7 +222,7 @@ public class Event {
         this.dataSource = dataSource;
     }
 
-    public Event withFirstObservedTime(String firstObservedTime) {
+    public Event withFirstObservedTime(OffsetDateTime firstObservedTime) {
         this.firstObservedTime = firstObservedTime;
         return this;
     }
@@ -230,15 +231,15 @@ public class Event {
      * 首次发现时间，格式ISO8601：YYYY-MM-DDTHH:mm:ss.ms+timezone。时区信息为事件发生时区，无法解析时区的时间，默认时区填东八区。
      * @return firstObservedTime
      */
-    public String getFirstObservedTime() {
+    public OffsetDateTime getFirstObservedTime() {
         return firstObservedTime;
     }
 
-    public void setFirstObservedTime(String firstObservedTime) {
+    public void setFirstObservedTime(OffsetDateTime firstObservedTime) {
         this.firstObservedTime = firstObservedTime;
     }
 
-    public Event withLastObservedTime(String lastObservedTime) {
+    public Event withLastObservedTime(OffsetDateTime lastObservedTime) {
         this.lastObservedTime = lastObservedTime;
         return this;
     }
@@ -247,15 +248,15 @@ public class Event {
      * 最新发现时间，格式ISO8601：YYYY-MM-DDTHH:mm:ss.ms+timezone。时区信息为事件发生时区，无法解析时区的时间，默认时区填东八区。
      * @return lastObservedTime
      */
-    public String getLastObservedTime() {
+    public OffsetDateTime getLastObservedTime() {
         return lastObservedTime;
     }
 
-    public void setLastObservedTime(String lastObservedTime) {
+    public void setLastObservedTime(OffsetDateTime lastObservedTime) {
         this.lastObservedTime = lastObservedTime;
     }
 
-    public Event withCreateTime(String createTime) {
+    public Event withCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
         return this;
     }
@@ -264,15 +265,15 @@ public class Event {
      * 记录时间，格式ISO8601：YYYY-MM-DDTHH:mm:ss.ms+timezone。时区信息为事件发生时区，无法解析时区的时间，默认时区填东八区。
      * @return createTime
      */
-    public String getCreateTime() {
+    public OffsetDateTime getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(String createTime) {
+    public void setCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
     }
 
-    public Event withArriveTime(String arriveTime) {
+    public Event withArriveTime(OffsetDateTime arriveTime) {
         this.arriveTime = arriveTime;
         return this;
     }
@@ -281,11 +282,11 @@ public class Event {
      * 数据接收时间，格式ISO8601：YYYY-MM-DDTHH:mm:ss.ms+timezone。时区信息为事件发生时区，无法解析时区的时间，默认时区填东八区。  是指事件数据被SA侧接收的时间，由SA接收时填写，产品上报数据时不用填写。
      * @return arriveTime
      */
-    public String getArriveTime() {
+    public OffsetDateTime getArriveTime() {
         return arriveTime;
     }
 
-    public void setArriveTime(String arriveTime) {
+    public void setArriveTime(OffsetDateTime arriveTime) {
         this.arriveTime = arriveTime;
     }
 

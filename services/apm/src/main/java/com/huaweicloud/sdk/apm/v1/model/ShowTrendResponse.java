@@ -46,7 +46,7 @@ public class ShowTrendResponse extends SdkResponse {
     }
 
     /**
-     * 趋势图数据列表
+     * 趋势图数据列表。
      * @return lineList
      */
     public List<FrontLine> getLineList() {
@@ -63,7 +63,7 @@ public class ShowTrendResponse extends SdkResponse {
     }
 
     /**
-     * 最后日期时间
+     * 最后日期时间。
      * @return latestDataTime
      */
     public Long getLatestDataTime() {

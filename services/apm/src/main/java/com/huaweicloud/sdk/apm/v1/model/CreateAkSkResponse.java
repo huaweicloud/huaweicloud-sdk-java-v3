@@ -27,7 +27,7 @@ public class CreateAkSkResponse extends SdkResponse {
     }
 
     /**
-     * 创建/删除的ak信息
+     * 创建/删除的ak信息。
      * @return ak
      */
     public String getAk() {
@@ -44,7 +44,7 @@ public class CreateAkSkResponse extends SdkResponse {
     }
 
     /**
-     * 创建/删除的sk信息
+     * 创建/删除的sk信息。
      * @return sk
      */
     public String getSk() {

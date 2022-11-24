@@ -75,6 +75,70 @@ public class ApmMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListAlarmDataRequest, ListAlarmDataResponse> listAlarmData =
+        genForlistAlarmData();
+
+    private static HttpRequestDef<ListAlarmDataRequest, ListAlarmDataResponse> genForlistAlarmData() {
+        // basic
+        HttpRequestDef.Builder<ListAlarmDataRequest, ListAlarmDataResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListAlarmDataRequest.class, ListAlarmDataResponse.class)
+                .withName("ListAlarmData")
+                .withUri("/v1/apm2/openapi/alarm/data/get-alarm-data-list")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Long>withRequestField("x-business-id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListAlarmDataRequest::getXBusinessId, (req, v) -> {
+                req.setXBusinessId(v);
+            }));
+        builder.<AlarmDataListRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AlarmDataListRequest.class),
+            f -> f.withMarshaller(ListAlarmDataRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAlarmNotifyRequest, ListAlarmNotifyResponse> listAlarmNotify =
+        genForlistAlarmNotify();
+
+    private static HttpRequestDef<ListAlarmNotifyRequest, ListAlarmNotifyResponse> genForlistAlarmNotify() {
+        // basic
+        HttpRequestDef.Builder<ListAlarmNotifyRequest, ListAlarmNotifyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListAlarmNotifyRequest.class, ListAlarmNotifyResponse.class)
+                .withName("ListAlarmNotify")
+                .withUri("/v1/apm2/openapi/alarm/data/get-alarm-notify-list")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Long>withRequestField("x-business-id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListAlarmNotifyRequest::getXBusinessId, (req, v) -> {
+                req.setXBusinessId(v);
+            }));
+        builder.<AlarmNotifyListRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AlarmNotifyListRequest.class),
+            f -> f.withMarshaller(ListAlarmNotifyRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListAkSkRequest, ListAkSkResponse> listAkSk = genForlistAkSk();
 
     private static HttpRequestDef<ListAkSkRequest, ListAkSkResponse> genForlistAkSk() {
@@ -123,7 +187,7 @@ public class ApmMeta {
         // requests
         builder.<Long>withRequestField("x-business-id",
             LocationType.Header,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ListEnvMonitorItemRequest::getXBusinessId, (req, v) -> {
                 req.setXBusinessId(v);
@@ -261,37 +325,6 @@ public class ApmMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteEnvRequest, DeleteEnvResponse> deleteEnv = genFordeleteEnv();
-
-    private static HttpRequestDef<DeleteEnvRequest, DeleteEnvResponse> genFordeleteEnv() {
-        // basic
-        HttpRequestDef.Builder<DeleteEnvRequest, DeleteEnvResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeleteEnvRequest.class, DeleteEnvResponse.class)
-                .withName("DeleteEnv")
-                .withUri("/v1/apm2/openapi/cmdb/envs/delete-env/{env_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<Long>withRequestField("env_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(DeleteEnvRequest::getEnvId, (req, v) -> {
-                req.setEnvId(v);
-            }));
-        builder.<Long>withRequestField("x-business-id",
-            LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(DeleteEnvRequest::getXBusinessId, (req, v) -> {
-                req.setXBusinessId(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ListAppEnvsRequest, ListAppEnvsResponse> listAppEnvs = genForlistAppEnvs();
 
     private static HttpRequestDef<ListAppEnvsRequest, ListAppEnvsResponse> genForlistAppEnvs() {
@@ -385,6 +418,70 @@ public class ApmMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowBusinessDetailRequest, ShowBusinessDetailResponse> showBusinessDetail =
+        genForshowBusinessDetail();
+
+    private static HttpRequestDef<ShowBusinessDetailRequest, ShowBusinessDetailResponse> genForshowBusinessDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowBusinessDetailRequest, ShowBusinessDetailResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowBusinessDetailRequest.class, ShowBusinessDetailResponse.class)
+                .withName("ShowBusinessDetail")
+                .withUri("/v1/apm2/openapi/cmdb/business/get-business-detail/{business_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Long>withRequestField("business_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowBusinessDetailRequest::getBusinessId, (req, v) -> {
+                req.setBusinessId(v);
+            }));
+        builder.<Long>withRequestField("x-business-id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowBusinessDetailRequest::getXBusinessId, (req, v) -> {
+                req.setXBusinessId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSubBusinessDetailRequest, ShowSubBusinessDetailResponse> showSubBusinessDetail =
+        genForshowSubBusinessDetail();
+
+    private static HttpRequestDef<ShowSubBusinessDetailRequest, ShowSubBusinessDetailResponse> genForshowSubBusinessDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowSubBusinessDetailRequest, ShowSubBusinessDetailResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowSubBusinessDetailRequest.class, ShowSubBusinessDetailResponse.class)
+            .withName("ShowSubBusinessDetail")
+            .withUri("/v1/apm2/openapi/cmdb/sub-business/get-sub-business-detail/{sub_business_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Long>withRequestField("sub_business_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowSubBusinessDetailRequest::getSubBusinessId, (req, v) -> {
+                req.setSubBusinessId(v);
+            }));
+        builder.<Long>withRequestField("x-business-id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowSubBusinessDetailRequest::getXBusinessId, (req, v) -> {
+                req.setXBusinessId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowTopologyTreeRequest, ShowTopologyTreeResponse> showTopologyTree =
         genForshowTopologyTree();
 
@@ -406,7 +503,7 @@ public class ApmMeta {
             }));
         builder.<Long>withRequestField("business_id",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ShowTopologyTreeRequest::getBusinessId, (req, v) -> {
                 req.setBusinessId(v);
@@ -468,6 +565,198 @@ public class ApmMeta {
                 .withContentType("application/json");
 
         // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SearchBusinessTopologyRequest, SearchBusinessTopologyResponse> searchBusinessTopology =
+        genForsearchBusinessTopology();
+
+    private static HttpRequestDef<SearchBusinessTopologyRequest, SearchBusinessTopologyResponse> genForsearchBusinessTopology() {
+        // basic
+        HttpRequestDef.Builder<SearchBusinessTopologyRequest, SearchBusinessTopologyResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, SearchBusinessTopologyRequest.class, SearchBusinessTopologyResponse.class)
+            .withName("SearchBusinessTopology")
+            .withUri("/v1/apm2/openapi/topology/business-search")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Long>withRequestField("x-business-id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(SearchBusinessTopologyRequest::getXBusinessId, (req, v) -> {
+                req.setXBusinessId(v);
+            }));
+        builder.<BusinessTopoRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BusinessTopoRequest.class),
+            f -> f.withMarshaller(SearchBusinessTopologyRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SearchEnvTopologyRequest, SearchEnvTopologyResponse> searchEnvTopology =
+        genForsearchEnvTopology();
+
+    private static HttpRequestDef<SearchEnvTopologyRequest, SearchEnvTopologyResponse> genForsearchEnvTopology() {
+        // basic
+        HttpRequestDef.Builder<SearchEnvTopologyRequest, SearchEnvTopologyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, SearchEnvTopologyRequest.class, SearchEnvTopologyResponse.class)
+                .withName("SearchEnvTopology")
+                .withUri("/v1/apm2/openapi/topology/env-search")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Long>withRequestField("x-business-id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(SearchEnvTopologyRequest::getXBusinessId, (req, v) -> {
+                req.setXBusinessId(v);
+            }));
+        builder.<EnvTopoRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(EnvTopoRequest.class),
+            f -> f.withMarshaller(SearchEnvTopologyRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListBusinessEnvRequest, ListBusinessEnvResponse> listBusinessEnv =
+        genForlistBusinessEnv();
+
+    private static HttpRequestDef<ListBusinessEnvRequest, ListBusinessEnvResponse> genForlistBusinessEnv() {
+        // basic
+        HttpRequestDef.Builder<ListBusinessEnvRequest, ListBusinessEnvResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListBusinessEnvRequest.class, ListBusinessEnvResponse.class)
+                .withName("ListBusinessEnv")
+                .withUri("/v1/apm2/openapi/transaction/business-env")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Long>withRequestField("x-business-id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListBusinessEnvRequest::getXBusinessId, (req, v) -> {
+                req.setXBusinessId(v);
+            }));
+        builder.<BusinessEnvRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BusinessEnvRequest.class),
+            f -> f.withMarshaller(ListBusinessEnvRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SearchTransactionRequest, SearchTransactionResponse> searchTransaction =
+        genForsearchTransaction();
+
+    private static HttpRequestDef<SearchTransactionRequest, SearchTransactionResponse> genForsearchTransaction() {
+        // basic
+        HttpRequestDef.Builder<SearchTransactionRequest, SearchTransactionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, SearchTransactionRequest.class, SearchTransactionResponse.class)
+                .withName("SearchTransaction")
+                .withUri("/v1/apm2/openapi/transaction/search")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Long>withRequestField("x-business-id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(SearchTransactionRequest::getXBusinessId, (req, v) -> {
+                req.setXBusinessId(v);
+            }));
+        builder.<TxSearchRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(TxSearchRequest.class),
+            f -> f.withMarshaller(SearchTransactionRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SearchTransactionConfigRequest, SearchTransactionConfigResponse> searchTransactionConfig =
+        genForsearchTransactionConfig();
+
+    private static HttpRequestDef<SearchTransactionConfigRequest, SearchTransactionConfigResponse> genForsearchTransactionConfig() {
+        // basic
+        HttpRequestDef.Builder<SearchTransactionConfigRequest, SearchTransactionConfigResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, SearchTransactionConfigRequest.class, SearchTransactionConfigResponse.class)
+            .withName("SearchTransactionConfig")
+            .withUri("/v1/apm2/openapi/transaction/transaction-config-search")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Long>withRequestField("x-business-id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(SearchTransactionConfigRequest::getXBusinessId, (req, v) -> {
+                req.setXBusinessId(v);
+            }));
+        builder.<TransactionConfigSearchRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(TransactionConfigSearchRequest.class),
+            f -> f.withMarshaller(SearchTransactionConfigRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTransactionDetailRequest, ShowTransactionDetailResponse> showTransactionDetail =
+        genForshowTransactionDetail();
+
+    private static HttpRequestDef<ShowTransactionDetailRequest, ShowTransactionDetailResponse> genForshowTransactionDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowTransactionDetailRequest, ShowTransactionDetailResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ShowTransactionDetailRequest.class, ShowTransactionDetailResponse.class)
+            .withName("ShowTransactionDetail")
+            .withUri("/v1/apm2/openapi/transaction/detail")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Long>withRequestField("x-business-id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowTransactionDetailRequest::getXBusinessId, (req, v) -> {
+                req.setXBusinessId(v);
+            }));
+        builder.<TxDetailRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(TxDetailRequest.class),
+            f -> f.withMarshaller(ShowTransactionDetailRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
 
         // response
 

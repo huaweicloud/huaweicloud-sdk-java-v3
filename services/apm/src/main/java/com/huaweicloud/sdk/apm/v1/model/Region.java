@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * region信息
+ * region信息。
  */
 public class Region {
 
@@ -41,7 +41,7 @@ public class Region {
     }
 
     /**
-     * 区域id
+     * 区域id。
      * @return regionId
      */
     public String getRegionId() {
@@ -58,7 +58,7 @@ public class Region {
     }
 
     /**
-     * 区域名称
+     * 区域名称。
      * @return regionName
      */
     public String getRegionName() {
@@ -75,7 +75,7 @@ public class Region {
     }
 
     /**
-     * 区域
+     * 区域。
      * @return region
      */
     public String getRegion() {
@@ -92,7 +92,7 @@ public class Region {
     }
 
     /**
-     * 企业项目id
+     * 企业项目id。
      * @return projectId
      */
     public String getProjectId() {
@@ -109,7 +109,7 @@ public class Region {
     }
 
     /**
-     * 区域状态
+     * 区域状态。
      * @return status
      */
     public String getStatus() {

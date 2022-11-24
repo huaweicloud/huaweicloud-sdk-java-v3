@@ -11,7 +11,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 查询span数据请求参数模型
+ * 查询span数据请求参数模型。
  */
 public class TraceSearchParam {
 
@@ -201,7 +201,7 @@ public class TraceSearchParam {
     }
 
     /**
-     * region名称
+     * region名称。
      * @return region
      */
     public String getRegion() {
@@ -244,7 +244,7 @@ public class TraceSearchParam {
     }
 
     /**
-     * 是否为精确搜索
+     * 是否为精确搜索。
      * @return realSourceFullMatch
      */
     public Boolean getRealSourceFullMatch() {
@@ -261,7 +261,7 @@ public class TraceSearchParam {
     }
 
     /**
-     * 全匹配搜索
+     * 全匹配搜索。
      * @return sourceFullMatch
      */
     public Boolean getSourceFullMatch() {
@@ -278,7 +278,7 @@ public class TraceSearchParam {
     }
 
     /**
-     * header或body体，或自定义参数，或其他tags里字段的关键词搜索
+     * header或body体，或自定义参数，或其他tags里字段的关键词搜索。
      * @return tagsContent
      */
     public String getTagsContent() {
@@ -295,7 +295,7 @@ public class TraceSearchParam {
     }
 
     /**
-     * 开始时间
+     * 开始时间。
      * @return startTimeString
      */
     public String getStartTimeString() {
@@ -312,7 +312,7 @@ public class TraceSearchParam {
     }
 
     /**
-     * 结束时间
+     * 结束时间。
      * @return endTimeString
      */
     public String getEndTimeString() {
@@ -329,7 +329,7 @@ public class TraceSearchParam {
     }
 
     /**
-     * 最小耗时
+     * 最小耗时。
      * @return timeUsedMin
      */
     public Long getTimeUsedMin() {
@@ -346,7 +346,7 @@ public class TraceSearchParam {
     }
 
     /**
-     * 最大耗时
+     * 最大耗时。
      * @return timeUsedMax
      */
     public String getTimeUsedMax() {
@@ -363,7 +363,7 @@ public class TraceSearchParam {
     }
 
     /**
-     * 搜索结果是否包含tags内容详情
+     * 搜索结果是否包含tags内容详情。
      * @return containTagsContent
      */
     public Boolean getContainTagsContent() {
@@ -380,7 +380,7 @@ public class TraceSearchParam {
     }
 
     /**
-     * 每一页返回的行数
+     * 每一页返回的行数。
      * @return pageSize
      */
     public Integer getPageSize() {
@@ -397,7 +397,7 @@ public class TraceSearchParam {
     }
 
     /**
-     * 查询第几页的数据,默认查询第一页
+     * 查询第几页的数据,默认查询第一页。
      * @return page
      */
     public Integer getPage() {
@@ -414,7 +414,7 @@ public class TraceSearchParam {
     }
 
     /**
-     * 参数
+     * 参数。
      * @return parameters
      */
     public String getParameters() {
@@ -447,7 +447,7 @@ public class TraceSearchParam {
     }
 
     /**
-     * 字符串格式的的状态码，用于支持多个状态码查询
+     * 字符串格式的的状态码，用于支持多个状态码查询。
      * @return codes
      */
     public List<Integer> getCodes() {
@@ -464,7 +464,7 @@ public class TraceSearchParam {
     }
 
     /**
-     * vTraceId，虚拟traceId，一个vTraceId对应多个实际的traceId， vTraceId会从开始一直往下应用传输
+     * vTraceId，虚拟traceId，一个vTraceId对应多个实际的traceId， vTraceId会从开始一直往下应用传输。
      * @return globalTraceId
      */
     public String getGlobalTraceId() {
@@ -481,7 +481,7 @@ public class TraceSearchParam {
     }
 
     /**
-     * 虚拟traceId经过的path路径
+     * 虚拟traceId经过的path路径。
      * @return globalPath
      */
     public String getGlobalPath() {
@@ -498,7 +498,7 @@ public class TraceSearchParam {
     }
 
     /**
-     * 在root的span调用产生的全局id，以此往后透传
+     * 在root的span调用产生的全局id，以此往后透传。
      * @return traceId
      */
     public String getTraceId() {
@@ -515,7 +515,7 @@ public class TraceSearchParam {
     }
 
     /**
-     * 代表一次rpc的调用的id，对于root的调用，值为字符串1，对于当前span调用的下一个spanId编号为1-1,1-2等格式，以此往后类推
+     * 代表一次rpc的调用的id，对于root的调用，值为字符串1，对于当前span调用的下一个spanId编号为1-1,1-2等格式，以此往后类推。
      * @return spanId
      */
     public String getSpanId() {
@@ -532,7 +532,7 @@ public class TraceSearchParam {
     }
 
     /**
-     * 环境ID
+     * 环境id。
      * @return envId
      */
     public Long getEnvId() {
@@ -549,7 +549,7 @@ public class TraceSearchParam {
     }
 
     /**
-     * 实例ID
+     * 实例id。
      * @return instanceId
      */
     public Long getInstanceId() {
@@ -566,7 +566,7 @@ public class TraceSearchParam {
     }
 
     /**
-     * 组件ID
+     * 组件id。
      * @return appId
      */
     public Long getAppId() {
@@ -583,7 +583,7 @@ public class TraceSearchParam {
     }
 
     /**
-     * 应用ID
+     * 应用id。
      * @return bizId
      */
     public Long getBizId() {
@@ -600,7 +600,7 @@ public class TraceSearchParam {
     }
 
     /**
-     * 租户ID
+     * 租户id。
      * @return domainId
      */
     public Integer getDomainId() {
@@ -617,7 +617,7 @@ public class TraceSearchParam {
     }
 
     /**
-     * 只有是根event也就是span的时候有值
+     * 只有是根event也就是span的时候有值。
      * @return source
      */
     public String getSource() {
@@ -634,7 +634,7 @@ public class TraceSearchParam {
     }
 
     /**
-     * 根event 的时候存在，实际调用的url
+     * 根event 的时候存在，实际调用的url。
      * @return realSource
      */
     public String getRealSource() {
@@ -651,7 +651,7 @@ public class TraceSearchParam {
     }
 
     /**
-     * 开始时间
+     * 开始时间。
      * @return startTime
      */
     public Long getStartTime() {
@@ -668,7 +668,7 @@ public class TraceSearchParam {
     }
 
     /**
-     * 耗时
+     * 耗时。
      * @return timeUsed
      */
     public Long getTimeUsed() {
@@ -685,7 +685,7 @@ public class TraceSearchParam {
     }
 
     /**
-     * 状态码，针对http的调用有效
+     * 状态码，针对http的调用有效。
      * @return code
      */
     public Integer getCode() {
@@ -702,7 +702,7 @@ public class TraceSearchParam {
     }
 
     /**
-     * 类名
+     * 类名。
      * @return className
      */
     public String getClassName() {
@@ -719,7 +719,7 @@ public class TraceSearchParam {
     }
 
     /**
-     * 是否异步的event
+     * 是否异步的event。
      * @return isAsync
      */
     public Boolean getIsAsync() {
@@ -752,7 +752,7 @@ public class TraceSearchParam {
     }
 
     /**
-     * 包含用户自定义参数，header或body体里的内容，httpMethod, bizCode，以及后续可能新增参数
+     * 包含用户自定义参数，header或body体里的内容，httpMethod, bizCode，以及后续可能新增参数。
      * @return tags
      */
     public Map<String, String> getTags() {
@@ -769,7 +769,7 @@ public class TraceSearchParam {
     }
 
     /**
-     * 是否有错误
+     * 是否有错误。
      * @return hasError
      */
     public Boolean getHasError() {
@@ -786,7 +786,7 @@ public class TraceSearchParam {
     }
 
     /**
-     * 错误类型
+     * 错误类型。
      * @return errorReasons
      */
     public String getErrorReasons() {
@@ -803,7 +803,7 @@ public class TraceSearchParam {
     }
 
     /**
-     * 类型
+     * 类型。
      * @return type
      */
     public String getType() {
@@ -820,7 +820,7 @@ public class TraceSearchParam {
     }
 
     /**
-     * 这里的method实际上是tags里面的http_method，只有url监控项才有
+     * 这里的method实际上是tags里面的http_method，只有url监控项才有。
      * @return httpMethod
      */
     public String getHttpMethod() {
@@ -837,7 +837,7 @@ public class TraceSearchParam {
     }
 
     /**
-     * 业务状态码的采集
+     * 业务状态码的采集。
      * @return bizCode
      */
     public String getBizCode() {

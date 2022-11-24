@@ -41,7 +41,7 @@ public class ShowTraceEventsResponse extends SdkResponse {
     }
 
     /**
-     * span event信息列表
+     * span event信息列表。
      * @return spanEventList
      */
     public List<SpanEventInfo> getSpanEventList() {

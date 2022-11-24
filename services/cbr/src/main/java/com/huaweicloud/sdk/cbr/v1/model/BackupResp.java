@@ -397,6 +397,11 @@ public class BackupResp {
 
     private String providerId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "children")
+
+    private List<BackupResp> children = null;
+
     public BackupResp withCheckpointId(String checkpointId) {
         this.checkpointId = checkpointId;
         return this;
@@ -796,6 +801,39 @@ public class BackupResp {
         this.providerId = providerId;
     }
 
+    public BackupResp withChildren(List<BackupResp> children) {
+        this.children = children;
+        return this;
+    }
+
+    public BackupResp addChildrenItem(BackupResp childrenItem) {
+        if (this.children == null) {
+            this.children = new ArrayList<>();
+        }
+        this.children.add(childrenItem);
+        return this;
+    }
+
+    public BackupResp withChildren(Consumer<List<BackupResp>> childrenSetter) {
+        if (this.children == null) {
+            this.children = new ArrayList<>();
+        }
+        childrenSetter.accept(this.children);
+        return this;
+    }
+
+    /**
+     * 子副本列表
+     * @return children
+     */
+    public List<BackupResp> getChildren() {
+        return children;
+    }
+
+    public void setChildren(List<BackupResp> children) {
+        this.children = children;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -823,7 +861,8 @@ public class BackupResp {
             && Objects.equals(this.vaultId, backupResp.vaultId)
             && Objects.equals(this.replicationRecords, backupResp.replicationRecords)
             && Objects.equals(this.enterpriseProjectId, backupResp.enterpriseProjectId)
-            && Objects.equals(this.providerId, backupResp.providerId);
+            && Objects.equals(this.providerId, backupResp.providerId)
+            && Objects.equals(this.children, backupResp.children);
     }
 
     @Override
@@ -849,7 +888,8 @@ public class BackupResp {
             vaultId,
             replicationRecords,
             enterpriseProjectId,
-            providerId);
+            providerId,
+            children);
     }
 
     @Override
@@ -878,6 +918,7 @@ public class BackupResp {
         sb.append("    replicationRecords: ").append(toIndentedString(replicationRecords)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    providerId: ").append(toIndentedString(providerId)).append("\n");
+        sb.append("    children: ").append(toIndentedString(children)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -18,7 +18,7 @@ public class DevSecurityMeta {
         HttpRequestDef.Builder<CreateSecAppTaskRequest, CreateSecAppTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateSecAppTaskRequest.class, CreateSecAppTaskResponse.class)
                 .withName("CreateSecAppTask")
-                .withUri("/hmcontrol/v1/{project_id}/secapp/task")
+                .withUri("/v1/{project_id}/secapp/task")
                 .withContentType("multipart/form-data");
 
         // requests
@@ -43,7 +43,7 @@ public class DevSecurityMeta {
         HttpRequestDef.Builder<DeleteSecAppTaskRequest, DeleteSecAppTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteSecAppTaskRequest.class, DeleteSecAppTaskResponse.class)
                 .withName("DeleteSecAppTask")
-                .withUri("/hmcontrol/v1/{project_id}/secapp/task")
+                .withUri("/v1/{project_id}/secapp/task")
                 .withContentType("application/json");
 
         // requests
@@ -68,7 +68,7 @@ public class DevSecurityMeta {
         HttpRequestDef.Builder<ShowSecAppTaskResultRequest, ShowSecAppTaskResultResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowSecAppTaskResultRequest.class, ShowSecAppTaskResultResponse.class)
             .withName("ShowSecAppTaskResult")
-            .withUri("/hmcontrol/v1/{project_id}/secapp/task-result")
+            .withUri("/v1/{project_id}/secapp/task-result")
             .withContentType("application/json");
 
         // requests
@@ -93,7 +93,7 @@ public class DevSecurityMeta {
         HttpRequestDef.Builder<ShowSecAppTaskStatusRequest, ShowSecAppTaskStatusResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowSecAppTaskStatusRequest.class, ShowSecAppTaskStatusResponse.class)
             .withName("ShowSecAppTaskStatus")
-            .withUri("/hmcontrol/v1/{project_id}/secapp/task-status")
+            .withUri("/v1/{project_id}/secapp/task-status")
             .withContentType("application/json");
 
         // requests

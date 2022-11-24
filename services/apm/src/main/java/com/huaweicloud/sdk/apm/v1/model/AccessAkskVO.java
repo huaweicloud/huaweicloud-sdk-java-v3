@@ -3,7 +3,6 @@ package com.huaweicloud.sdk.apm.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.time.LocalDate;
 import java.util.Objects;
 
 /**
@@ -19,12 +18,12 @@ public class AccessAkskVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "gmt_create")
 
-    private LocalDate gmtCreate;
+    private String gmtCreate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "gmt_modify")
 
-    private LocalDate gmtModify;
+    private String gmtModify;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "inner_domain_id")
@@ -57,7 +56,7 @@ public class AccessAkskVO {
     }
 
     /**
-     * ak/sk的id
+     * ak/sk的id。
      * @return id
      */
     public Integer getId() {
@@ -68,37 +67,37 @@ public class AccessAkskVO {
         this.id = id;
     }
 
-    public AccessAkskVO withGmtCreate(LocalDate gmtCreate) {
+    public AccessAkskVO withGmtCreate(String gmtCreate) {
         this.gmtCreate = gmtCreate;
         return this;
     }
 
     /**
-     * ak/sk的生成时间
+     * ak/sk的生成时间。
      * @return gmtCreate
      */
-    public LocalDate getGmtCreate() {
+    public String getGmtCreate() {
         return gmtCreate;
     }
 
-    public void setGmtCreate(LocalDate gmtCreate) {
+    public void setGmtCreate(String gmtCreate) {
         this.gmtCreate = gmtCreate;
     }
 
-    public AccessAkskVO withGmtModify(LocalDate gmtModify) {
+    public AccessAkskVO withGmtModify(String gmtModify) {
         this.gmtModify = gmtModify;
         return this;
     }
 
     /**
-     * ak/sk的修改时间
+     * ak/sk的修改时间。
      * @return gmtModify
      */
-    public LocalDate getGmtModify() {
+    public String getGmtModify() {
         return gmtModify;
     }
 
-    public void setGmtModify(LocalDate gmtModify) {
+    public void setGmtModify(String gmtModify) {
         this.gmtModify = gmtModify;
     }
 
@@ -108,7 +107,7 @@ public class AccessAkskVO {
     }
 
     /**
-     * 内部租户id
+     * 内部租户id。
      * @return innerDomainId
      */
     public Integer getInnerDomainId() {
@@ -125,7 +124,7 @@ public class AccessAkskVO {
     }
 
     /**
-     * 生成的ak
+     * 生成的ak。
      * @return ak
      */
     public String getAk() {
@@ -142,7 +141,7 @@ public class AccessAkskVO {
     }
 
     /**
-     * 生成的sk
+     * 生成的sk。
      * @return sk
      */
     public String getSk() {
@@ -159,7 +158,7 @@ public class AccessAkskVO {
     }
 
     /**
-     * ak/sk的状态
+     * ak/sk的状态。
      * @return status
      */
     public String getStatus() {
@@ -176,7 +175,7 @@ public class AccessAkskVO {
     }
 
     /**
-     * ak/sk的描述信息
+     * ak/sk的描述信息。
      * @return descp
      */
     public String getDescp() {

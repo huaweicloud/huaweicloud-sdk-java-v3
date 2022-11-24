@@ -21,7 +21,7 @@ public class UpdateFunctionMaxInstanceConfigRequestBody {
     }
 
     /**
-     * 最大实例数
+     * 最大实例数；-1代表该函数实例数无限制，0代表该函数被禁用
      * @return maxInstanceNum
      */
     public Integer getMaxInstanceNum() {

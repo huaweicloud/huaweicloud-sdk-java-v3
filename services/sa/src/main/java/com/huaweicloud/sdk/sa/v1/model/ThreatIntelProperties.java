@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.sa.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.time.OffsetDateTime;
 import java.util.Objects;
 
 /**
@@ -33,7 +34,7 @@ public class ThreatIntelProperties {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
-    private String createTime;
+    private OffsetDateTime createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_class")
@@ -168,7 +169,7 @@ public class ThreatIntelProperties {
         this.fileName = fileName;
     }
 
-    public ThreatIntelProperties withCreateTime(String createTime) {
+    public ThreatIntelProperties withCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
         return this;
     }
@@ -177,11 +178,11 @@ public class ThreatIntelProperties {
      * 编译时间，格式ISO8601：YYYY-MM-DDTHH:mm:ss.ms+timezone。时区信息为事件发生时区，无法解析时区的时间，默认时区填东八区。
      * @return createTime
      */
-    public String getCreateTime() {
+    public OffsetDateTime getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(String createTime) {
+    public void setCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
     }
 

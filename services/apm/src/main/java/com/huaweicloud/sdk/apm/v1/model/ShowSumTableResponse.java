@@ -35,7 +35,7 @@ public class ShowSumTableResponse extends SdkResponse {
     private Long latestDataTime;
 
     /**
-     * 表格的方向，H：默认，表头横向，V：表头纵向
+     * 表格的方向，H：默认，表头横向，V：表头纵向。
      */
     public static final class TableDirectionEnum {
 
@@ -142,7 +142,7 @@ public class ShowSumTableResponse extends SdkResponse {
     }
 
     /**
-     * 结果的ID信息，分页查询的时候带过来
+     * 结果的ID信息，分页查询的时候带过来。
      * @return resultId
      */
     public String getResultId() {
@@ -175,7 +175,7 @@ public class ShowSumTableResponse extends SdkResponse {
     }
 
     /**
-     * 数据行列表
+     * 数据行列表。
      * @return rowList
      */
     public List<FrontRow> getRowList() {
@@ -192,7 +192,7 @@ public class ShowSumTableResponse extends SdkResponse {
     }
 
     /**
-     * 最近一笔数据的时间
+     * 最近一笔数据的时间。
      * @return latestDataTime
      */
     public Long getLatestDataTime() {
@@ -209,7 +209,7 @@ public class ShowSumTableResponse extends SdkResponse {
     }
 
     /**
-     * 表格的方向，H：默认，表头横向，V：表头纵向
+     * 表格的方向，H：默认，表头横向，V：表头纵向。
      * @return tableDirection
      */
     public TableDirectionEnum getTableDirection() {
@@ -226,7 +226,7 @@ public class ShowSumTableResponse extends SdkResponse {
     }
 
     /**
-     * 实际开始的时间
+     * 实际开始的时间。
      * @return realStartTime
      */
     public Long getRealStartTime() {
@@ -243,7 +243,7 @@ public class ShowSumTableResponse extends SdkResponse {
     }
 
     /**
-     * 实际结束的时间
+     * 实际结束的时间。
      * @return realEndTime
      */
     public Long getRealEndTime() {
@@ -260,7 +260,7 @@ public class ShowSumTableResponse extends SdkResponse {
     }
 
     /**
-     * 提示信息
+     * 提示信息。
      * @return noticeMsg
      */
     public String getNoticeMsg() {
@@ -277,7 +277,7 @@ public class ShowSumTableResponse extends SdkResponse {
     }
 
     /**
-     * 总数
+     * 总数。
      * @return totalCount
      */
     public Integer getTotalCount() {

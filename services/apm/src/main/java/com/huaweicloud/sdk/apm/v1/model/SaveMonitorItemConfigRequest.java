@@ -27,7 +27,7 @@ public class SaveMonitorItemConfigRequest {
     }
 
     /**
-     * 业务id
+     * 应用id。
      * @return xBusinessId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

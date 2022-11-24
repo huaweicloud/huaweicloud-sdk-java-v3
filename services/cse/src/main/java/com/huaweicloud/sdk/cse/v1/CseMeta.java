@@ -179,6 +179,44 @@ public class CseMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RetryEngineRequest, RetryEngineResponse> retryEngine = genForretryEngine();
+
+    private static HttpRequestDef<RetryEngineRequest, RetryEngineResponse> genForretryEngine() {
+        // basic
+        HttpRequestDef.Builder<RetryEngineRequest, RetryEngineResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, RetryEngineRequest.class, RetryEngineResponse.class)
+                .withName("RetryEngine")
+                .withUri("/v2/{project_id}/enginemgr/engines/{engine_id}/actions")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("engine_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RetryEngineRequest::getEngineId, (req, v) -> {
+                req.setEngineId(v);
+            }));
+        builder.<String>withRequestField("X-Enterprise-Project-ID",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RetryEngineRequest::getXEnterpriseProjectID, (req, v) -> {
+                req.setXEnterpriseProjectID(v);
+            }));
+        builder.<EngineAdditionalActionReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(EngineAdditionalActionReq.class),
+            f -> f.withMarshaller(RetryEngineRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowEngineRequest, ShowEngineResponse> showEngine = genForshowEngine();
 
     private static HttpRequestDef<ShowEngineRequest, ShowEngineResponse> genForshowEngine() {
@@ -242,6 +280,45 @@ public class CseMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowEngineJobRequest::getXEnterpriseProjectID, (req, v) -> {
                 req.setXEnterpriseProjectID(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpgradeEngineRequest, UpgradeEngineResponse> upgradeEngine =
+        genForupgradeEngine();
+
+    private static HttpRequestDef<UpgradeEngineRequest, UpgradeEngineResponse> genForupgradeEngine() {
+        // basic
+        HttpRequestDef.Builder<UpgradeEngineRequest, UpgradeEngineResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpgradeEngineRequest.class, UpgradeEngineResponse.class)
+                .withName("UpgradeEngine")
+                .withUri("/v2/{project_id}/enginemgr/engines/{engine_id}/upgrade")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("engine_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpgradeEngineRequest::getEngineId, (req, v) -> {
+                req.setEngineId(v);
+            }));
+        builder.<String>withRequestField("X-Enterprise-Project-ID",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpgradeEngineRequest::getXEnterpriseProjectID, (req, v) -> {
+                req.setXEnterpriseProjectID(v);
+            }));
+        builder.<EngineUpdateReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(EngineUpdateReq.class),
+            f -> f.withMarshaller(UpgradeEngineRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response

@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * 拓扑树节点信息
+ * 拓扑树节点信息。
  */
 public class TreeNode {
 
@@ -66,7 +66,7 @@ public class TreeNode {
     private Long businessId;
 
     /**
-     * 节点类型
+     * 节点类型。
      */
     public static final class NodeTypeEnum {
 
@@ -175,7 +175,7 @@ public class TreeNode {
     }
 
     /**
-     * 拓扑树节点id
+     * 拓扑树节点id。
      * @return id
      */
     public String getId() {
@@ -192,7 +192,7 @@ public class TreeNode {
     }
 
     /**
-     * 拓扑树节点的父节点
+     * 拓扑树节点的父节点。
      * @return parent
      */
     public String getParent() {
@@ -209,7 +209,7 @@ public class TreeNode {
     }
 
     /**
-     * 拓扑树节点的实际id
+     * 拓扑树节点的实际id。
      * @return realId
      */
     public Long getRealId() {
@@ -226,7 +226,7 @@ public class TreeNode {
     }
 
     /**
-     * 拓扑树节点名称
+     * 拓扑树节点名称。
      * @return name
      */
     public String getName() {
@@ -243,7 +243,7 @@ public class TreeNode {
     }
 
     /**
-     * 拓扑树节点展示名称
+     * 拓扑树节点展示名称。
      * @return displayName
      */
     public String getDisplayName() {
@@ -260,7 +260,7 @@ public class TreeNode {
     }
 
     /**
-     * 组件名称
+     * 组件名称。
      * @return appName
      */
     public String getAppName() {
@@ -277,7 +277,7 @@ public class TreeNode {
     }
 
     /**
-     * 组件id
+     * 组件id。
      * @return appId
      */
     public Long getAppId() {
@@ -294,7 +294,7 @@ public class TreeNode {
     }
 
     /**
-     * 是否是管理节点
+     * 是否是管理节点。
      * @return isAdmin
      */
     public Boolean getIsAdmin() {
@@ -311,7 +311,7 @@ public class TreeNode {
     }
 
     /**
-     * 是否是根节点
+     * 是否是根节点。
      * @return isRoot
      */
     public Boolean getIsRoot() {
@@ -328,7 +328,7 @@ public class TreeNode {
     }
 
     /**
-     * 应用id
+     * 应用id。
      * @return businessId
      */
     public Long getBusinessId() {
@@ -345,7 +345,7 @@ public class TreeNode {
     }
 
     /**
-     * 节点类型
+     * 节点类型。
      * @return nodeType
      */
     public NodeTypeEnum getNodeType() {
@@ -362,7 +362,7 @@ public class TreeNode {
     }
 
     /**
-     * 区域
+     * 区域。
      * @return region
      */
     public String getRegion() {
@@ -379,7 +379,7 @@ public class TreeNode {
     }
 
     /**
-     * 是否是默认的节点
+     * 是否是默认的节点。
      * @return isDefault
      */
     public Boolean getIsDefault() {

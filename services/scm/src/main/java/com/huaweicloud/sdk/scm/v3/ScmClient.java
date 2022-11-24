@@ -14,7 +14,7 @@ public class ScmClient {
     }
 
     public static ClientBuilder<ScmClient> newBuilder() {
-        return new ClientBuilder<>(ScmClient::new);
+        return new ClientBuilder<>(ScmClient::new, "GlobalCredentials,BasicCredentials");
     }
 
     /**

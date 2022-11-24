@@ -349,6 +349,11 @@ public class ClusterSpec {
 
     private Boolean supportIstio;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "configurationsOverride")
+
+    private List<PackageConfiguration> configurationsOverride = null;
+
     public ClusterSpec withCategory(CategoryEnum category) {
         this.category = category;
         return this;
@@ -406,7 +411,7 @@ public class ClusterSpec {
     }
 
     /**
-     * 集群版本，与Kubernetes社区基线版本保持一致，建议选择最新版本。  在CCE控制台支持创建两种最新版本的集群。可登录CCE控制台创建集群，在“版本”处获取到集群版本。 其它集群版本，当前仍可通过api创建，但后续会逐渐下线，具体下线策略请关注CCE官方公告。  >    - 若不配置，默认创建最新版本的集群。 >    - 若指定集群基线版本但是不指定具体r版本，则系统默认选择对应集群版本的最新r版本。建议不指定具体r版本由系统选择最新版本。
+     * 集群版本，与Kubernetes社区基线版本保持一致，建议选择最新版本。  在CCE控制台支持创建两种最新版本的集群。可登录CCE控制台创建集群，在“版本”处获取到集群版本。 其它集群版本，当前仍可通过api创建，但后续会逐渐下线，具体下线策略请关注CCE官方公告。  >    - 若不配置，默认创建最新版本的集群。 >    - 若指定集群基线版本但是不指定具体r版本，则系统默认选择对应集群版本的最新r版本。建议不指定具体r版本由系统选择最新版本。 >    - Turbo集群支持1.19及以上版本商用。
      * @return version
      */
     public String getVersion() {
@@ -782,6 +787,39 @@ public class ClusterSpec {
         this.supportIstio = supportIstio;
     }
 
+    public ClusterSpec withConfigurationsOverride(List<PackageConfiguration> configurationsOverride) {
+        this.configurationsOverride = configurationsOverride;
+        return this;
+    }
+
+    public ClusterSpec addConfigurationsOverrideItem(PackageConfiguration configurationsOverrideItem) {
+        if (this.configurationsOverride == null) {
+            this.configurationsOverride = new ArrayList<>();
+        }
+        this.configurationsOverride.add(configurationsOverrideItem);
+        return this;
+    }
+
+    public ClusterSpec withConfigurationsOverride(Consumer<List<PackageConfiguration>> configurationsOverrideSetter) {
+        if (this.configurationsOverride == null) {
+            this.configurationsOverride = new ArrayList<>();
+        }
+        configurationsOverrideSetter.accept(this.configurationsOverride);
+        return this;
+    }
+
+    /**
+     * 覆盖集群默认组件配置  若指定了不支持的组件或组件不支持的参数，该配置项将被忽略。  当前支持的可配置组件及其参数详见 [[配置管理](https://support.huaweicloud.com/usermanual-cce/cce_10_0213.html)](tag:hws) [[配置管理](https://support.huaweicloud.com/intl/zh-cn/usermanual-cce/cce_10_0213.html)](tag:hws_hk)
+     * @return configurationsOverride
+     */
+    public List<PackageConfiguration> getConfigurationsOverride() {
+        return configurationsOverride;
+    }
+
+    public void setConfigurationsOverride(List<PackageConfiguration> configurationsOverride) {
+        this.configurationsOverride = configurationsOverride;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -807,7 +845,8 @@ public class ClusterSpec {
             && Objects.equals(this.clusterTags, clusterSpec.clusterTags)
             && Objects.equals(this.kubeProxyMode, clusterSpec.kubeProxyMode) && Objects.equals(this.az, clusterSpec.az)
             && Objects.equals(this.extendParam, clusterSpec.extendParam)
-            && Objects.equals(this.supportIstio, clusterSpec.supportIstio);
+            && Objects.equals(this.supportIstio, clusterSpec.supportIstio)
+            && Objects.equals(this.configurationsOverride, clusterSpec.configurationsOverride);
     }
 
     @Override
@@ -831,7 +870,8 @@ public class ClusterSpec {
             kubeProxyMode,
             az,
             extendParam,
-            supportIstio);
+            supportIstio,
+            configurationsOverride);
     }
 
     @Override
@@ -858,6 +898,7 @@ public class ClusterSpec {
         sb.append("    az: ").append(toIndentedString(az)).append("\n");
         sb.append("    extendParam: ").append(toIndentedString(extendParam)).append("\n");
         sb.append("    supportIstio: ").append(toIndentedString(supportIstio)).append("\n");
+        sb.append("    configurationsOverride: ").append(toIndentedString(configurationsOverride)).append("\n");
         sb.append("}");
         return sb.toString();
     }

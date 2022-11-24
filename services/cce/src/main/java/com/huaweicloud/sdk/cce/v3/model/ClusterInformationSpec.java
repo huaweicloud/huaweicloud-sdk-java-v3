@@ -28,6 +28,16 @@ public class ClusterInformationSpec {
 
     private ContainerNetworkUpdate containerNetwork;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "eniNetwork")
+
+    private EniNetworkUpdate eniNetwork;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "hostNetwork")
+
+    private ClusterInformationSpecHostNetwork hostNetwork;
+
     public ClusterInformationSpec withDescription(String description) {
         this.description = description;
         return this;
@@ -104,6 +114,58 @@ public class ClusterInformationSpec {
         this.containerNetwork = containerNetwork;
     }
 
+    public ClusterInformationSpec withEniNetwork(EniNetworkUpdate eniNetwork) {
+        this.eniNetwork = eniNetwork;
+        return this;
+    }
+
+    public ClusterInformationSpec withEniNetwork(Consumer<EniNetworkUpdate> eniNetworkSetter) {
+        if (this.eniNetwork == null) {
+            this.eniNetwork = new EniNetworkUpdate();
+            eniNetworkSetter.accept(this.eniNetwork);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get eniNetwork
+     * @return eniNetwork
+     */
+    public EniNetworkUpdate getEniNetwork() {
+        return eniNetwork;
+    }
+
+    public void setEniNetwork(EniNetworkUpdate eniNetwork) {
+        this.eniNetwork = eniNetwork;
+    }
+
+    public ClusterInformationSpec withHostNetwork(ClusterInformationSpecHostNetwork hostNetwork) {
+        this.hostNetwork = hostNetwork;
+        return this;
+    }
+
+    public ClusterInformationSpec withHostNetwork(Consumer<ClusterInformationSpecHostNetwork> hostNetworkSetter) {
+        if (this.hostNetwork == null) {
+            this.hostNetwork = new ClusterInformationSpecHostNetwork();
+            hostNetworkSetter.accept(this.hostNetwork);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get hostNetwork
+     * @return hostNetwork
+     */
+    public ClusterInformationSpecHostNetwork getHostNetwork() {
+        return hostNetwork;
+    }
+
+    public void setHostNetwork(ClusterInformationSpecHostNetwork hostNetwork) {
+        this.hostNetwork = hostNetwork;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -115,12 +177,14 @@ public class ClusterInformationSpec {
         ClusterInformationSpec clusterInformationSpec = (ClusterInformationSpec) o;
         return Objects.equals(this.description, clusterInformationSpec.description)
             && Objects.equals(this.customSan, clusterInformationSpec.customSan)
-            && Objects.equals(this.containerNetwork, clusterInformationSpec.containerNetwork);
+            && Objects.equals(this.containerNetwork, clusterInformationSpec.containerNetwork)
+            && Objects.equals(this.eniNetwork, clusterInformationSpec.eniNetwork)
+            && Objects.equals(this.hostNetwork, clusterInformationSpec.hostNetwork);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(description, customSan, containerNetwork);
+        return Objects.hash(description, customSan, containerNetwork, eniNetwork, hostNetwork);
     }
 
     @Override
@@ -130,6 +194,8 @@ public class ClusterInformationSpec {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    customSan: ").append(toIndentedString(customSan)).append("\n");
         sb.append("    containerNetwork: ").append(toIndentedString(containerNetwork)).append("\n");
+        sb.append("    eniNetwork: ").append(toIndentedString(eniNetwork)).append("\n");
+        sb.append("    hostNetwork: ").append(toIndentedString(hostNetwork)).append("\n");
         sb.append("}");
         return sb.toString();
     }

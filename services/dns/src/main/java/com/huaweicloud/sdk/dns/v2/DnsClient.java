@@ -18,6 +18,214 @@ public class DnsClient {
     }
 
     /**
+     * 绑定ip地址。
+     *
+     * 绑定单个IP地址到终端节点
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param AssociateEndpointIpaddressRequest 请求对象
+     * @return AssociateEndpointIpaddressResponse
+     */
+    public AssociateEndpointIpaddressResponse associateEndpointIpaddress(AssociateEndpointIpaddressRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.associateEndpointIpaddress);
+    }
+
+    /**
+     * 绑定ip地址。
+     *
+     * 绑定单个IP地址到终端节点
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param AssociateEndpointIpaddressRequest 请求对象
+     * @return SyncInvoker<AssociateEndpointIpaddressRequest, AssociateEndpointIpaddressResponse>
+     */
+    public SyncInvoker<AssociateEndpointIpaddressRequest, AssociateEndpointIpaddressResponse> associateEndpointIpaddressInvoker(
+        AssociateEndpointIpaddressRequest request) {
+        return new SyncInvoker<AssociateEndpointIpaddressRequest, AssociateEndpointIpaddressResponse>(request,
+            DnsMeta.associateEndpointIpaddress, hcClient);
+    }
+
+    /**
+     * 批量删除PTR
+     *
+     * 批量删除PTR。本接口为原子操作，所有记录应全部删除成功或全部失败。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param BatchDeletePtrRecordsRequest 请求对象
+     * @return BatchDeletePtrRecordsResponse
+     */
+    public BatchDeletePtrRecordsResponse batchDeletePtrRecords(BatchDeletePtrRecordsRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.batchDeletePtrRecords);
+    }
+
+    /**
+     * 批量删除PTR
+     *
+     * 批量删除PTR。本接口为原子操作，所有记录应全部删除成功或全部失败。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param BatchDeletePtrRecordsRequest 请求对象
+     * @return SyncInvoker<BatchDeletePtrRecordsRequest, BatchDeletePtrRecordsResponse>
+     */
+    public SyncInvoker<BatchDeletePtrRecordsRequest, BatchDeletePtrRecordsResponse> batchDeletePtrRecordsInvoker(
+        BatchDeletePtrRecordsRequest request) {
+        return new SyncInvoker<BatchDeletePtrRecordsRequest, BatchDeletePtrRecordsResponse>(request,
+            DnsMeta.batchDeletePtrRecords, hcClient);
+    }
+
+    /**
+     * 批量删除Record Set
+     *
+     * 批量删除Record Set。
+     * 响应结果中只包含本次实际删除的Record Set。
+     * 支持批量删除公网域名和内网域名的记录集。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param BatchDeleteRecordSetsRequest 请求对象
+     * @return BatchDeleteRecordSetsResponse
+     */
+    public BatchDeleteRecordSetsResponse batchDeleteRecordSets(BatchDeleteRecordSetsRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.batchDeleteRecordSets);
+    }
+
+    /**
+     * 批量删除Record Set
+     *
+     * 批量删除Record Set。
+     * 响应结果中只包含本次实际删除的Record Set。
+     * 支持批量删除公网域名和内网域名的记录集。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param BatchDeleteRecordSetsRequest 请求对象
+     * @return SyncInvoker<BatchDeleteRecordSetsRequest, BatchDeleteRecordSetsResponse>
+     */
+    public SyncInvoker<BatchDeleteRecordSetsRequest, BatchDeleteRecordSetsResponse> batchDeleteRecordSetsInvoker(
+        BatchDeleteRecordSetsRequest request) {
+        return new SyncInvoker<BatchDeleteRecordSetsRequest, BatchDeleteRecordSetsResponse>(request,
+            DnsMeta.batchDeleteRecordSets, hcClient);
+    }
+
+    /**
+     * 批量删除Zone
+     *
+     * 批量删除Zone。
+     * 本接口为原子操作，所有记录应全部删除成功或全部失败。
+     * 仅支持公网Zone、内网Zone。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param BatchDeleteZonesRequest 请求对象
+     * @return BatchDeleteZonesResponse
+     */
+    public BatchDeleteZonesResponse batchDeleteZones(BatchDeleteZonesRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.batchDeleteZones);
+    }
+
+    /**
+     * 批量删除Zone
+     *
+     * 批量删除Zone。
+     * 本接口为原子操作，所有记录应全部删除成功或全部失败。
+     * 仅支持公网Zone、内网Zone。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param BatchDeleteZonesRequest 请求对象
+     * @return SyncInvoker<BatchDeleteZonesRequest, BatchDeleteZonesResponse>
+     */
+    public SyncInvoker<BatchDeleteZonesRequest, BatchDeleteZonesResponse> batchDeleteZonesInvoker(
+        BatchDeleteZonesRequest request) {
+        return new SyncInvoker<BatchDeleteZonesRequest, BatchDeleteZonesResponse>(request, DnsMeta.batchDeleteZones,
+            hcClient);
+    }
+
+    /**
+     * 批量设置Record Set状态
+     *
+     * 批量设置Record Set状态。
+     * 响应结果中只包含本次实际更新的Record Set。
+     * 仅支持公网域名记录集。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param BatchSetRecordSetsStatusRequest 请求对象
+     * @return BatchSetRecordSetsStatusResponse
+     */
+    public BatchSetRecordSetsStatusResponse batchSetRecordSetsStatus(BatchSetRecordSetsStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.batchSetRecordSetsStatus);
+    }
+
+    /**
+     * 批量设置Record Set状态
+     *
+     * 批量设置Record Set状态。
+     * 响应结果中只包含本次实际更新的Record Set。
+     * 仅支持公网域名记录集。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param BatchSetRecordSetsStatusRequest 请求对象
+     * @return SyncInvoker<BatchSetRecordSetsStatusRequest, BatchSetRecordSetsStatusResponse>
+     */
+    public SyncInvoker<BatchSetRecordSetsStatusRequest, BatchSetRecordSetsStatusResponse> batchSetRecordSetsStatusInvoker(
+        BatchSetRecordSetsStatusRequest request) {
+        return new SyncInvoker<BatchSetRecordSetsStatusRequest, BatchSetRecordSetsStatusResponse>(request,
+            DnsMeta.batchSetRecordSetsStatus, hcClient);
+    }
+
+    /**
+     * 批量设置Zone状态
+     *
+     * 批量设置Zone状态。
+     * 响应结果中只包含本次实际更新的Zone。
+     * 仅支持公网Zone。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param BatchSetZonesStatusRequest 请求对象
+     * @return BatchSetZonesStatusResponse
+     */
+    public BatchSetZonesStatusResponse batchSetZonesStatus(BatchSetZonesStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.batchSetZonesStatus);
+    }
+
+    /**
+     * 批量设置Zone状态
+     *
+     * 批量设置Zone状态。
+     * 响应结果中只包含本次实际更新的Zone。
+     * 仅支持公网Zone。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param BatchSetZonesStatusRequest 请求对象
+     * @return SyncInvoker<BatchSetZonesStatusRequest, BatchSetZonesStatusResponse>
+     */
+    public SyncInvoker<BatchSetZonesStatusRequest, BatchSetZonesStatusResponse> batchSetZonesStatusInvoker(
+        BatchSetZonesStatusRequest request) {
+        return new SyncInvoker<BatchSetZonesStatusRequest, BatchSetZonesStatusResponse>(request,
+            DnsMeta.batchSetZonesStatus, hcClient);
+    }
+
+    /**
      * 创建单个自定义线路
      *
      * 创建单个自定义线路
@@ -50,6 +258,166 @@ public class DnsClient {
     }
 
     /**
+     * 创建终端节点。
+     *
+     * 创建单个终端节点。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateEndpointRequest 请求对象
+     * @return CreateEndpointResponse
+     */
+    public CreateEndpointResponse createEndpoint(CreateEndpointRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.createEndpoint);
+    }
+
+    /**
+     * 创建终端节点。
+     *
+     * 创建单个终端节点。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateEndpointRequest 请求对象
+     * @return SyncInvoker<CreateEndpointRequest, CreateEndpointResponse>
+     */
+    public SyncInvoker<CreateEndpointRequest, CreateEndpointResponse> createEndpointInvoker(
+        CreateEndpointRequest request) {
+        return new SyncInvoker<CreateEndpointRequest, CreateEndpointResponse>(request, DnsMeta.createEndpoint,
+            hcClient);
+    }
+
+    /**
+     * 创建线路分组。
+     *
+     * 创建一个线路分组。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateLineGroupRequest 请求对象
+     * @return CreateLineGroupResponse
+     */
+    public CreateLineGroupResponse createLineGroup(CreateLineGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.createLineGroup);
+    }
+
+    /**
+     * 创建线路分组。
+     *
+     * 创建一个线路分组。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateLineGroupRequest 请求对象
+     * @return SyncInvoker<CreateLineGroupRequest, CreateLineGroupResponse>
+     */
+    public SyncInvoker<CreateLineGroupRequest, CreateLineGroupResponse> createLineGroupInvoker(
+        CreateLineGroupRequest request) {
+        return new SyncInvoker<CreateLineGroupRequest, CreateLineGroupResponse>(request, DnsMeta.createLineGroup,
+            hcClient);
+    }
+
+    /**
+     * 创建解析规则。
+     *
+     * 创建一个解析规则。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateResolveRuleRequest 请求对象
+     * @return CreateResolveRuleResponse
+     */
+    public CreateResolveRuleResponse createResolveRule(CreateResolveRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.createResolveRule);
+    }
+
+    /**
+     * 创建解析规则。
+     *
+     * 创建一个解析规则。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateResolveRuleRequest 请求对象
+     * @return SyncInvoker<CreateResolveRuleRequest, CreateResolveRuleResponse>
+     */
+    public SyncInvoker<CreateResolveRuleRequest, CreateResolveRuleResponse> createResolveRuleInvoker(
+        CreateResolveRuleRequest request) {
+        return new SyncInvoker<CreateResolveRuleRequest, CreateResolveRuleResponse>(request, DnsMeta.createResolveRule,
+            hcClient);
+    }
+
+    /**
+     * 创建公网域名找回请求。
+     *
+     * 创建公网域名找回请求。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateRetrievalRequest 请求对象
+     * @return CreateRetrievalResponse
+     */
+    public CreateRetrievalResponse createRetrieval(CreateRetrievalRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.createRetrieval);
+    }
+
+    /**
+     * 创建公网域名找回请求。
+     *
+     * 创建公网域名找回请求。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateRetrievalRequest 请求对象
+     * @return SyncInvoker<CreateRetrievalRequest, CreateRetrievalResponse>
+     */
+    public SyncInvoker<CreateRetrievalRequest, CreateRetrievalResponse> createRetrievalInvoker(
+        CreateRetrievalRequest request) {
+        return new SyncInvoker<CreateRetrievalRequest, CreateRetrievalResponse>(request, DnsMeta.createRetrieval,
+            hcClient);
+    }
+
+    /**
+     * 请求立即验证域名找回。
+     *
+     * 请求服务器立即执行找回验证。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateRetrievalVerificationRequest 请求对象
+     * @return CreateRetrievalVerificationResponse
+     */
+    public CreateRetrievalVerificationResponse createRetrievalVerification(CreateRetrievalVerificationRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.createRetrievalVerification);
+    }
+
+    /**
+     * 请求立即验证域名找回。
+     *
+     * 请求服务器立即执行找回验证。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateRetrievalVerificationRequest 请求对象
+     * @return SyncInvoker<CreateRetrievalVerificationRequest, CreateRetrievalVerificationResponse>
+     */
+    public SyncInvoker<CreateRetrievalVerificationRequest, CreateRetrievalVerificationResponse> createRetrievalVerificationInvoker(
+        CreateRetrievalVerificationRequest request) {
+        return new SyncInvoker<CreateRetrievalVerificationRequest, CreateRetrievalVerificationResponse>(request,
+            DnsMeta.createRetrievalVerification, hcClient);
+    }
+
+    /**
      * 删除单个自定义线路
      *
      * 删除单个自定义线路
@@ -79,6 +447,135 @@ public class DnsClient {
         DeleteCustomLineRequest request) {
         return new SyncInvoker<DeleteCustomLineRequest, DeleteCustomLineResponse>(request, DnsMeta.deleteCustomLine,
             hcClient);
+    }
+
+    /**
+     * 删除终端节点。
+     *
+     * 删除终端节点。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteEndpointRequest 请求对象
+     * @return DeleteEndpointResponse
+     */
+    public DeleteEndpointResponse deleteEndpoint(DeleteEndpointRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.deleteEndpoint);
+    }
+
+    /**
+     * 删除终端节点。
+     *
+     * 删除终端节点。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteEndpointRequest 请求对象
+     * @return SyncInvoker<DeleteEndpointRequest, DeleteEndpointResponse>
+     */
+    public SyncInvoker<DeleteEndpointRequest, DeleteEndpointResponse> deleteEndpointInvoker(
+        DeleteEndpointRequest request) {
+        return new SyncInvoker<DeleteEndpointRequest, DeleteEndpointResponse>(request, DnsMeta.deleteEndpoint,
+            hcClient);
+    }
+
+    /**
+     * 删除线路分组。
+     *
+     * 删除单个线路分组。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteLineGroupRequest 请求对象
+     * @return DeleteLineGroupResponse
+     */
+    public DeleteLineGroupResponse deleteLineGroup(DeleteLineGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.deleteLineGroup);
+    }
+
+    /**
+     * 删除线路分组。
+     *
+     * 删除单个线路分组。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteLineGroupRequest 请求对象
+     * @return SyncInvoker<DeleteLineGroupRequest, DeleteLineGroupResponse>
+     */
+    public SyncInvoker<DeleteLineGroupRequest, DeleteLineGroupResponse> deleteLineGroupInvoker(
+        DeleteLineGroupRequest request) {
+        return new SyncInvoker<DeleteLineGroupRequest, DeleteLineGroupResponse>(request, DnsMeta.deleteLineGroup,
+            hcClient);
+    }
+
+    /**
+     * 删除解析规则。
+     *
+     * 删除解析规则。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteResolveRuleRequest 请求对象
+     * @return DeleteResolveRuleResponse
+     */
+    public DeleteResolveRuleResponse deleteResolveRule(DeleteResolveRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.deleteResolveRule);
+    }
+
+    /**
+     * 删除解析规则。
+     *
+     * 删除解析规则。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteResolveRuleRequest 请求对象
+     * @return SyncInvoker<DeleteResolveRuleRequest, DeleteResolveRuleResponse>
+     */
+    public SyncInvoker<DeleteResolveRuleRequest, DeleteResolveRuleResponse> deleteResolveRuleInvoker(
+        DeleteResolveRuleRequest request) {
+        return new SyncInvoker<DeleteResolveRuleRequest, DeleteResolveRuleResponse>(request, DnsMeta.deleteResolveRule,
+            hcClient);
+    }
+
+    /**
+     * 解关联ip地址。
+     *
+     * 解除endpoint绑定的IP。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DisassociateEndpointIpaddressRequest 请求对象
+     * @return DisassociateEndpointIpaddressResponse
+     */
+    public DisassociateEndpointIpaddressResponse disassociateEndpointIpaddress(
+        DisassociateEndpointIpaddressRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.disassociateEndpointIpaddress);
+    }
+
+    /**
+     * 解关联ip地址。
+     *
+     * 解除endpoint绑定的IP。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DisassociateEndpointIpaddressRequest 请求对象
+     * @return SyncInvoker<DisassociateEndpointIpaddressRequest, DisassociateEndpointIpaddressResponse>
+     */
+    public SyncInvoker<DisassociateEndpointIpaddressRequest, DisassociateEndpointIpaddressResponse> disassociateEndpointIpaddressInvoker(
+        DisassociateEndpointIpaddressRequest request) {
+        return new SyncInvoker<DisassociateEndpointIpaddressRequest, DisassociateEndpointIpaddressResponse>(request,
+            DnsMeta.disassociateEndpointIpaddress, hcClient);
     }
 
     /**
@@ -146,6 +643,132 @@ public class DnsClient {
     }
 
     /**
+     * 查询ip地址列表。
+     *
+     * 查询某个endpoint下的ip地址列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListEndpointIpaddressesRequest 请求对象
+     * @return ListEndpointIpaddressesResponse
+     */
+    public ListEndpointIpaddressesResponse listEndpointIpaddresses(ListEndpointIpaddressesRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.listEndpointIpaddresses);
+    }
+
+    /**
+     * 查询ip地址列表。
+     *
+     * 查询某个endpoint下的ip地址列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListEndpointIpaddressesRequest 请求对象
+     * @return SyncInvoker<ListEndpointIpaddressesRequest, ListEndpointIpaddressesResponse>
+     */
+    public SyncInvoker<ListEndpointIpaddressesRequest, ListEndpointIpaddressesResponse> listEndpointIpaddressesInvoker(
+        ListEndpointIpaddressesRequest request) {
+        return new SyncInvoker<ListEndpointIpaddressesRequest, ListEndpointIpaddressesResponse>(request,
+            DnsMeta.listEndpointIpaddresses, hcClient);
+    }
+
+    /**
+     * 查询vpc信息。
+     *
+     * 查询vpc的终端节点信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListEndpointVpcsRequest 请求对象
+     * @return ListEndpointVpcsResponse
+     */
+    public ListEndpointVpcsResponse listEndpointVpcs(ListEndpointVpcsRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.listEndpointVpcs);
+    }
+
+    /**
+     * 查询vpc信息。
+     *
+     * 查询vpc的终端节点信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListEndpointVpcsRequest 请求对象
+     * @return SyncInvoker<ListEndpointVpcsRequest, ListEndpointVpcsResponse>
+     */
+    public SyncInvoker<ListEndpointVpcsRequest, ListEndpointVpcsResponse> listEndpointVpcsInvoker(
+        ListEndpointVpcsRequest request) {
+        return new SyncInvoker<ListEndpointVpcsRequest, ListEndpointVpcsResponse>(request, DnsMeta.listEndpointVpcs,
+            hcClient);
+    }
+
+    /**
+     * 查询终端节点列表。
+     *
+     * 查询终端节点列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListEndpointsRequest 请求对象
+     * @return ListEndpointsResponse
+     */
+    public ListEndpointsResponse listEndpoints(ListEndpointsRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.listEndpoints);
+    }
+
+    /**
+     * 查询终端节点列表。
+     *
+     * 查询终端节点列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListEndpointsRequest 请求对象
+     * @return SyncInvoker<ListEndpointsRequest, ListEndpointsResponse>
+     */
+    public SyncInvoker<ListEndpointsRequest, ListEndpointsResponse> listEndpointsInvoker(ListEndpointsRequest request) {
+        return new SyncInvoker<ListEndpointsRequest, ListEndpointsResponse>(request, DnsMeta.listEndpoints, hcClient);
+    }
+
+    /**
+     * 查询线路分组列表。
+     *
+     * 查询线路分组列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListLineGroupsRequest 请求对象
+     * @return ListLineGroupsResponse
+     */
+    public ListLineGroupsResponse listLineGroups(ListLineGroupsRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.listLineGroups);
+    }
+
+    /**
+     * 查询线路分组列表。
+     *
+     * 查询线路分组列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListLineGroupsRequest 请求对象
+     * @return SyncInvoker<ListLineGroupsRequest, ListLineGroupsResponse>
+     */
+    public SyncInvoker<ListLineGroupsRequest, ListLineGroupsResponse> listLineGroupsInvoker(
+        ListLineGroupsRequest request) {
+        return new SyncInvoker<ListLineGroupsRequest, ListLineGroupsResponse>(request, DnsMeta.listLineGroups,
+            hcClient);
+    }
+
+    /**
      * 查询名称服务器列表
      *
      * 查询名称服务器列表
@@ -174,6 +797,38 @@ public class DnsClient {
     public SyncInvoker<ListNameServersRequest, ListNameServersResponse> listNameServersInvoker(
         ListNameServersRequest request) {
         return new SyncInvoker<ListNameServersRequest, ListNameServersResponse>(request, DnsMeta.listNameServers,
+            hcClient);
+    }
+
+    /**
+     * 查询解析规则列表。
+     *
+     * 查询解析规则的列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListResoleRulesRequest 请求对象
+     * @return ListResoleRulesResponse
+     */
+    public ListResoleRulesResponse listResoleRules(ListResoleRulesRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.listResoleRules);
+    }
+
+    /**
+     * 查询解析规则列表。
+     *
+     * 查询解析规则的列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListResoleRulesRequest 请求对象
+     * @return SyncInvoker<ListResoleRulesRequest, ListResoleRulesResponse>
+     */
+    public SyncInvoker<ListResoleRulesRequest, ListResoleRulesResponse> listResoleRulesInvoker(
+        ListResoleRulesRequest request) {
+        return new SyncInvoker<ListResoleRulesRequest, ListResoleRulesResponse>(request, DnsMeta.listResoleRules,
             hcClient);
     }
 
@@ -240,6 +895,160 @@ public class DnsClient {
     }
 
     /**
+     * 查询endpoint。
+     *
+     * 查询终端单个节点。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowEndpointRequest 请求对象
+     * @return ShowEndpointResponse
+     */
+    public ShowEndpointResponse showEndpoint(ShowEndpointRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.showEndpoint);
+    }
+
+    /**
+     * 查询endpoint。
+     *
+     * 查询终端单个节点。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowEndpointRequest 请求对象
+     * @return SyncInvoker<ShowEndpointRequest, ShowEndpointResponse>
+     */
+    public SyncInvoker<ShowEndpointRequest, ShowEndpointResponse> showEndpointInvoker(ShowEndpointRequest request) {
+        return new SyncInvoker<ShowEndpointRequest, ShowEndpointResponse>(request, DnsMeta.showEndpoint, hcClient);
+    }
+
+    /**
+     * 查询线路分组。
+     *
+     * 查询线路分组。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowLineGroupRequest 请求对象
+     * @return ShowLineGroupResponse
+     */
+    public ShowLineGroupResponse showLineGroup(ShowLineGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.showLineGroup);
+    }
+
+    /**
+     * 查询线路分组。
+     *
+     * 查询线路分组。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowLineGroupRequest 请求对象
+     * @return SyncInvoker<ShowLineGroupRequest, ShowLineGroupResponse>
+     */
+    public SyncInvoker<ShowLineGroupRequest, ShowLineGroupResponse> showLineGroupInvoker(ShowLineGroupRequest request) {
+        return new SyncInvoker<ShowLineGroupRequest, ShowLineGroupResponse>(request, DnsMeta.showLineGroup, hcClient);
+    }
+
+    /**
+     * 查询单个解析规则。
+     *
+     * 查询单个解析规则。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowResoleRuleRequest 请求对象
+     * @return ShowResoleRuleResponse
+     */
+    public ShowResoleRuleResponse showResoleRule(ShowResoleRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.showResoleRule);
+    }
+
+    /**
+     * 查询单个解析规则。
+     *
+     * 查询单个解析规则。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowResoleRuleRequest 请求对象
+     * @return SyncInvoker<ShowResoleRuleRequest, ShowResoleRuleResponse>
+     */
+    public SyncInvoker<ShowResoleRuleRequest, ShowResoleRuleResponse> showResoleRuleInvoker(
+        ShowResoleRuleRequest request) {
+        return new SyncInvoker<ShowResoleRuleRequest, ShowResoleRuleResponse>(request, DnsMeta.showResoleRule,
+            hcClient);
+    }
+
+    /**
+     * 查询域名找回。
+     *
+     * 查询域名找回请求。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowRetrievalRequest 请求对象
+     * @return ShowRetrievalResponse
+     */
+    public ShowRetrievalResponse showRetrieval(ShowRetrievalRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.showRetrieval);
+    }
+
+    /**
+     * 查询域名找回。
+     *
+     * 查询域名找回请求。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowRetrievalRequest 请求对象
+     * @return SyncInvoker<ShowRetrievalRequest, ShowRetrievalResponse>
+     */
+    public SyncInvoker<ShowRetrievalRequest, ShowRetrievalResponse> showRetrievalInvoker(ShowRetrievalRequest request) {
+        return new SyncInvoker<ShowRetrievalRequest, ShowRetrievalResponse>(request, DnsMeta.showRetrieval, hcClient);
+    }
+
+    /**
+     * 查询域名找回结果。
+     *
+     * 查询域名找回结果。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowRetrievalVerificationRequest 请求对象
+     * @return ShowRetrievalVerificationResponse
+     */
+    public ShowRetrievalVerificationResponse showRetrievalVerification(ShowRetrievalVerificationRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.showRetrievalVerification);
+    }
+
+    /**
+     * 查询域名找回结果。
+     *
+     * 查询域名找回结果。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowRetrievalVerificationRequest 请求对象
+     * @return SyncInvoker<ShowRetrievalVerificationRequest, ShowRetrievalVerificationResponse>
+     */
+    public SyncInvoker<ShowRetrievalVerificationRequest, ShowRetrievalVerificationResponse> showRetrievalVerificationInvoker(
+        ShowRetrievalVerificationRequest request) {
+        return new SyncInvoker<ShowRetrievalVerificationRequest, ShowRetrievalVerificationResponse>(request,
+            DnsMeta.showRetrievalVerification, hcClient);
+    }
+
+    /**
      * 更新单个自定义线路
      *
      * 更新单个自定义线路
@@ -268,6 +1077,102 @@ public class DnsClient {
     public SyncInvoker<UpdateCustomLineRequest, UpdateCustomLineResponse> updateCustomLineInvoker(
         UpdateCustomLineRequest request) {
         return new SyncInvoker<UpdateCustomLineRequest, UpdateCustomLineResponse>(request, DnsMeta.updateCustomLine,
+            hcClient);
+    }
+
+    /**
+     * 修改终端节点
+     *
+     * 修改终端节点
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateEndpointRequest 请求对象
+     * @return UpdateEndpointResponse
+     */
+    public UpdateEndpointResponse updateEndpoint(UpdateEndpointRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.updateEndpoint);
+    }
+
+    /**
+     * 修改终端节点
+     *
+     * 修改终端节点
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateEndpointRequest 请求对象
+     * @return SyncInvoker<UpdateEndpointRequest, UpdateEndpointResponse>
+     */
+    public SyncInvoker<UpdateEndpointRequest, UpdateEndpointResponse> updateEndpointInvoker(
+        UpdateEndpointRequest request) {
+        return new SyncInvoker<UpdateEndpointRequest, UpdateEndpointResponse>(request, DnsMeta.updateEndpoint,
+            hcClient);
+    }
+
+    /**
+     * 更新线路分组。
+     *
+     * 更新单个线路分组。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateLineGroupsRequest 请求对象
+     * @return UpdateLineGroupsResponse
+     */
+    public UpdateLineGroupsResponse updateLineGroups(UpdateLineGroupsRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.updateLineGroups);
+    }
+
+    /**
+     * 更新线路分组。
+     *
+     * 更新单个线路分组。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateLineGroupsRequest 请求对象
+     * @return SyncInvoker<UpdateLineGroupsRequest, UpdateLineGroupsResponse>
+     */
+    public SyncInvoker<UpdateLineGroupsRequest, UpdateLineGroupsResponse> updateLineGroupsInvoker(
+        UpdateLineGroupsRequest request) {
+        return new SyncInvoker<UpdateLineGroupsRequest, UpdateLineGroupsResponse>(request, DnsMeta.updateLineGroups,
+            hcClient);
+    }
+
+    /**
+     * 修改解析规则。
+     *
+     * 修改一个解析规则。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateResolveRuleRequest 请求对象
+     * @return UpdateResolveRuleResponse
+     */
+    public UpdateResolveRuleResponse updateResolveRule(UpdateResolveRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.updateResolveRule);
+    }
+
+    /**
+     * 修改解析规则。
+     *
+     * 修改一个解析规则。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateResolveRuleRequest 请求对象
+     * @return SyncInvoker<UpdateResolveRuleRequest, UpdateResolveRuleResponse>
+     */
+    public SyncInvoker<UpdateResolveRuleRequest, UpdateResolveRuleResponse> updateResolveRuleInvoker(
+        UpdateResolveRuleRequest request) {
+        return new SyncInvoker<UpdateResolveRuleRequest, UpdateResolveRuleResponse>(request, DnsMeta.updateResolveRule,
             hcClient);
     }
 
@@ -429,6 +1334,38 @@ public class DnsClient {
         UpdatePtrRecordRequest request) {
         return new SyncInvoker<UpdatePtrRecordRequest, UpdatePtrRecordResponse>(request, DnsMeta.updatePtrRecord,
             hcClient);
+    }
+
+    /**
+     * Record Set关联健康检查。
+     *
+     * Record Set关联健康检查。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param AssociateHealthCheckRequest 请求对象
+     * @return AssociateHealthCheckResponse
+     */
+    public AssociateHealthCheckResponse associateHealthCheck(AssociateHealthCheckRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.associateHealthCheck);
+    }
+
+    /**
+     * Record Set关联健康检查。
+     *
+     * Record Set关联健康检查。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param AssociateHealthCheckRequest 请求对象
+     * @return SyncInvoker<AssociateHealthCheckRequest, AssociateHealthCheckResponse>
+     */
+    public SyncInvoker<AssociateHealthCheckRequest, AssociateHealthCheckResponse> associateHealthCheckInvoker(
+        AssociateHealthCheckRequest request) {
+        return new SyncInvoker<AssociateHealthCheckRequest, AssociateHealthCheckResponse>(request,
+            DnsMeta.associateHealthCheck, hcClient);
     }
 
     /**
@@ -660,6 +1597,38 @@ public class DnsClient {
         DeleteRecordSetsRequest request) {
         return new SyncInvoker<DeleteRecordSetsRequest, DeleteRecordSetsResponse>(request, DnsMeta.deleteRecordSets,
             hcClient);
+    }
+
+    /**
+     * Record Set解关联健康检查。
+     *
+     * Record Set解关联健康检查。。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DisassociateHealthCheckRequest 请求对象
+     * @return DisassociateHealthCheckResponse
+     */
+    public DisassociateHealthCheckResponse disassociateHealthCheck(DisassociateHealthCheckRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.disassociateHealthCheck);
+    }
+
+    /**
+     * Record Set解关联健康检查。
+     *
+     * Record Set解关联健康检查。。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DisassociateHealthCheckRequest 请求对象
+     * @return SyncInvoker<DisassociateHealthCheckRequest, DisassociateHealthCheckResponse>
+     */
+    public SyncInvoker<DisassociateHealthCheckRequest, DisassociateHealthCheckResponse> disassociateHealthCheckInvoker(
+        DisassociateHealthCheckRequest request) {
+        return new SyncInvoker<DisassociateHealthCheckRequest, DisassociateHealthCheckResponse>(request,
+            DnsMeta.disassociateHealthCheck, hcClient);
     }
 
     /**
@@ -1386,6 +2355,38 @@ public class DnsClient {
         ListPublicZonesRequest request) {
         return new SyncInvoker<ListPublicZonesRequest, ListPublicZonesResponse>(request, DnsMeta.listPublicZones,
             hcClient);
+    }
+
+    /**
+     * 设置单个内网Zone的子域名递归解析代理
+     *
+     * 设置单个内网Zone的子域名递归解析代理
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SetPrivateZoneProxyPatternRequest 请求对象
+     * @return SetPrivateZoneProxyPatternResponse
+     */
+    public SetPrivateZoneProxyPatternResponse setPrivateZoneProxyPattern(SetPrivateZoneProxyPatternRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.setPrivateZoneProxyPattern);
+    }
+
+    /**
+     * 设置单个内网Zone的子域名递归解析代理
+     *
+     * 设置单个内网Zone的子域名递归解析代理
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SetPrivateZoneProxyPatternRequest 请求对象
+     * @return SyncInvoker<SetPrivateZoneProxyPatternRequest, SetPrivateZoneProxyPatternResponse>
+     */
+    public SyncInvoker<SetPrivateZoneProxyPatternRequest, SetPrivateZoneProxyPatternResponse> setPrivateZoneProxyPatternInvoker(
+        SetPrivateZoneProxyPatternRequest request) {
+        return new SyncInvoker<SetPrivateZoneProxyPatternRequest, SetPrivateZoneProxyPatternResponse>(request,
+            DnsMeta.setPrivateZoneProxyPattern, hcClient);
     }
 
     /**

@@ -41,7 +41,7 @@ public class ListAppEnvsResponse extends SdkResponse {
     }
 
     /**
-     * 环境信息列表
+     * 环境信息列表。
      * @return envs
      */
     public List<EnvNodeModel> getEnvs() {

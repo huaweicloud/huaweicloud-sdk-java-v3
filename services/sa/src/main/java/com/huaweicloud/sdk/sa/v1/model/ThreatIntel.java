@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.sa.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.time.OffsetDateTime;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -49,7 +50,7 @@ public class ThreatIntel {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "modified")
 
-    private String modified;
+    private OffsetDateTime modified;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "valid_from")
@@ -189,7 +190,7 @@ public class ThreatIntel {
         this.description = description;
     }
 
-    public ThreatIntel withModified(String modified) {
+    public ThreatIntel withModified(OffsetDateTime modified) {
         this.modified = modified;
         return this;
     }
@@ -198,11 +199,11 @@ public class ThreatIntel {
      * 威胁情报的更新时间，格式ISO8601：YYYY-MM-DDTHH:mm:ss.ms+timezone。时区信息为事件发生时区，无法解析时区的时间，默认时区填东八区。
      * @return modified
      */
-    public String getModified() {
+    public OffsetDateTime getModified() {
         return modified;
     }
 
-    public void setModified(String modified) {
+    public void setModified(OffsetDateTime modified) {
         this.modified = modified;
     }
 

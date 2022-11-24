@@ -52,39 +52,6 @@ public class FunctionGraphAsyncClient {
     }
 
     /**
-     * 函数异步执行并返回预留实例ID
-     *
-     * 函数异步执行并返回预留实例ID用于场景指客户端请求执行比较费时任务，不需要同步等待执行完成返回结果，该方法提前返回任务执行对应的预留实例ID, 如果预留实例有异常，可以通过该实例ID把对应实例删除（该接口主要针对白名单用户）。
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param AsyncInvokeReservedFunctionRequest 请求对象
-     * @return CompletableFuture<AsyncInvokeReservedFunctionResponse>
-     */
-    public CompletableFuture<AsyncInvokeReservedFunctionResponse> asyncInvokeReservedFunctionAsync(
-        AsyncInvokeReservedFunctionRequest request) {
-        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.asyncInvokeReservedFunction);
-    }
-
-    /**
-     * 函数异步执行并返回预留实例ID
-     *
-     * 函数异步执行并返回预留实例ID用于场景指客户端请求执行比较费时任务，不需要同步等待执行完成返回结果，该方法提前返回任务执行对应的预留实例ID, 如果预留实例有异常，可以通过该实例ID把对应实例删除（该接口主要针对白名单用户）。
-     * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
-     *
-     * @param AsyncInvokeReservedFunctionRequest 请求对象
-     * @return AsyncInvoker<AsyncInvokeReservedFunctionRequest, AsyncInvokeReservedFunctionResponse>
-     */
-    public AsyncInvoker<AsyncInvokeReservedFunctionRequest, AsyncInvokeReservedFunctionResponse> asyncInvokeReservedFunctionAsyncInvoker(
-        AsyncInvokeReservedFunctionRequest request) {
-        return new AsyncInvoker<AsyncInvokeReservedFunctionRequest, AsyncInvokeReservedFunctionResponse>(request,
-            FunctionGraphMeta.asyncInvokeReservedFunction, hcClient);
-    }
-
-    /**
      * 删除指定函数的所有触发器
      *
      * 删除指定函数所有触发器设置。
@@ -221,6 +188,39 @@ public class FunctionGraphAsyncClient {
         CreateDependencyRequest request) {
         return new AsyncInvoker<CreateDependencyRequest, CreateDependencyResponse>(request,
             FunctionGraphMeta.createDependency, hcClient);
+    }
+
+    /**
+     * 创建依赖包版本
+     *
+     * 创建依赖包版本
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateDependencyVersionRequest 请求对象
+     * @return CompletableFuture<CreateDependencyVersionResponse>
+     */
+    public CompletableFuture<CreateDependencyVersionResponse> createDependencyVersionAsync(
+        CreateDependencyVersionRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.createDependencyVersion);
+    }
+
+    /**
+     * 创建依赖包版本
+     *
+     * 创建依赖包版本
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateDependencyVersionRequest 请求对象
+     * @return AsyncInvoker<CreateDependencyVersionRequest, CreateDependencyVersionResponse>
+     */
+    public AsyncInvoker<CreateDependencyVersionRequest, CreateDependencyVersionResponse> createDependencyVersionAsyncInvoker(
+        CreateDependencyVersionRequest request) {
+        return new AsyncInvoker<CreateDependencyVersionRequest, CreateDependencyVersionResponse>(request,
+            FunctionGraphMeta.createDependencyVersion, hcClient);
     }
 
     /**
@@ -454,6 +454,39 @@ public class FunctionGraphAsyncClient {
         DeleteDependencyRequest request) {
         return new AsyncInvoker<DeleteDependencyRequest, DeleteDependencyResponse>(request,
             FunctionGraphMeta.deleteDependency, hcClient);
+    }
+
+    /**
+     * 删除依赖包版本
+     *
+     * 删除依赖包版本
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteDependencyVersionRequest 请求对象
+     * @return CompletableFuture<DeleteDependencyVersionResponse>
+     */
+    public CompletableFuture<DeleteDependencyVersionResponse> deleteDependencyVersionAsync(
+        DeleteDependencyVersionRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.deleteDependencyVersion);
+    }
+
+    /**
+     * 删除依赖包版本
+     *
+     * 删除依赖包版本
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteDependencyVersionRequest 请求对象
+     * @return AsyncInvoker<DeleteDependencyVersionRequest, DeleteDependencyVersionResponse>
+     */
+    public AsyncInvoker<DeleteDependencyVersionRequest, DeleteDependencyVersionResponse> deleteDependencyVersionAsyncInvoker(
+        DeleteDependencyVersionRequest request) {
+        return new AsyncInvoker<DeleteDependencyVersionRequest, DeleteDependencyVersionResponse>(request,
+            FunctionGraphMeta.deleteDependencyVersion, hcClient);
     }
 
     /**
@@ -817,6 +850,39 @@ public class FunctionGraphAsyncClient {
     }
 
     /**
+     * 获取依赖包版本列表
+     *
+     * 获取依赖包版本列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListDependencyVersionRequest 请求对象
+     * @return CompletableFuture<ListDependencyVersionResponse>
+     */
+    public CompletableFuture<ListDependencyVersionResponse> listDependencyVersionAsync(
+        ListDependencyVersionRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.listDependencyVersion);
+    }
+
+    /**
+     * 获取依赖包版本列表
+     *
+     * 获取依赖包版本列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListDependencyVersionRequest 请求对象
+     * @return AsyncInvoker<ListDependencyVersionRequest, ListDependencyVersionResponse>
+     */
+    public AsyncInvoker<ListDependencyVersionRequest, ListDependencyVersionResponse> listDependencyVersionAsyncInvoker(
+        ListDependencyVersionRequest request) {
+        return new AsyncInvoker<ListDependencyVersionRequest, ListDependencyVersionResponse>(request,
+            FunctionGraphMeta.listDependencyVersion, hcClient);
+    }
+
+    /**
      * 获取指定函数的测试事件列表
      *
      * 获取指定函数的测试事件列表
@@ -844,6 +910,43 @@ public class FunctionGraphAsyncClient {
      */
     public AsyncInvoker<ListEventsRequest, ListEventsResponse> listEventsAsyncInvoker(ListEventsRequest request) {
         return new AsyncInvoker<ListEventsRequest, ListEventsResponse>(request, FunctionGraphMeta.listEvents, hcClient);
+    }
+
+    /**
+     * 获取按指定指标排序的函数列表
+     *
+     * 按指定指标排序的函数列表。
+     * 
+     * 默认统计按错误次数指标统计最近一天失败次数最多的前10个函数
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListFunctionAsMetricRequest 请求对象
+     * @return CompletableFuture<ListFunctionAsMetricResponse>
+     */
+    public CompletableFuture<ListFunctionAsMetricResponse> listFunctionAsMetricAsync(
+        ListFunctionAsMetricRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.listFunctionAsMetric);
+    }
+
+    /**
+     * 获取按指定指标排序的函数列表
+     *
+     * 按指定指标排序的函数列表。
+     * 
+     * 默认统计按错误次数指标统计最近一天失败次数最多的前10个函数
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListFunctionAsMetricRequest 请求对象
+     * @return AsyncInvoker<ListFunctionAsMetricRequest, ListFunctionAsMetricResponse>
+     */
+    public AsyncInvoker<ListFunctionAsMetricRequest, ListFunctionAsMetricResponse> listFunctionAsMetricAsyncInvoker(
+        ListFunctionAsMetricRequest request) {
+        return new AsyncInvoker<ListFunctionAsMetricRequest, ListFunctionAsMetricResponse>(request,
+            FunctionGraphMeta.listFunctionAsMetric, hcClient);
     }
 
     /**
@@ -877,6 +980,39 @@ public class FunctionGraphAsyncClient {
         ListFunctionAsyncInvokeConfigRequest request) {
         return new AsyncInvoker<ListFunctionAsyncInvokeConfigRequest, ListFunctionAsyncInvokeConfigResponse>(request,
             FunctionGraphMeta.listFunctionAsyncInvokeConfig, hcClient);
+    }
+
+    /**
+     * 获取函数预留实例数量
+     *
+     * 获取函数预留实例数量。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListFunctionReservedInstancesRequest 请求对象
+     * @return CompletableFuture<ListFunctionReservedInstancesResponse>
+     */
+    public CompletableFuture<ListFunctionReservedInstancesResponse> listFunctionReservedInstancesAsync(
+        ListFunctionReservedInstancesRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.listFunctionReservedInstances);
+    }
+
+    /**
+     * 获取函数预留实例数量
+     *
+     * 获取函数预留实例数量。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListFunctionReservedInstancesRequest 请求对象
+     * @return AsyncInvoker<ListFunctionReservedInstancesRequest, ListFunctionReservedInstancesResponse>
+     */
+    public AsyncInvoker<ListFunctionReservedInstancesRequest, ListFunctionReservedInstancesResponse> listFunctionReservedInstancesAsyncInvoker(
+        ListFunctionReservedInstancesRequest request) {
+        return new AsyncInvoker<ListFunctionReservedInstancesRequest, ListFunctionReservedInstancesResponse>(request,
+            FunctionGraphMeta.listFunctionReservedInstances, hcClient);
     }
 
     /**
@@ -1038,6 +1174,39 @@ public class FunctionGraphAsyncClient {
      */
     public AsyncInvoker<ListQuotasRequest, ListQuotasResponse> listQuotasAsyncInvoker(ListQuotasRequest request) {
         return new AsyncInvoker<ListQuotasRequest, ListQuotasResponse>(request, FunctionGraphMeta.listQuotas, hcClient);
+    }
+
+    /**
+     * 获取函数预留实例配置列表
+     *
+     * 获取函数预留实例配置列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListReservedInstanceConfigsRequest 请求对象
+     * @return CompletableFuture<ListReservedInstanceConfigsResponse>
+     */
+    public CompletableFuture<ListReservedInstanceConfigsResponse> listReservedInstanceConfigsAsync(
+        ListReservedInstanceConfigsRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.listReservedInstanceConfigs);
+    }
+
+    /**
+     * 获取函数预留实例配置列表
+     *
+     * 获取函数预留实例配置列表
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListReservedInstanceConfigsRequest 请求对象
+     * @return AsyncInvoker<ListReservedInstanceConfigsRequest, ListReservedInstanceConfigsResponse>
+     */
+    public AsyncInvoker<ListReservedInstanceConfigsRequest, ListReservedInstanceConfigsResponse> listReservedInstanceConfigsAsyncInvoker(
+        ListReservedInstanceConfigsRequest request) {
+        return new AsyncInvoker<ListReservedInstanceConfigsRequest, ListReservedInstanceConfigsResponse>(request,
+            FunctionGraphMeta.listReservedInstanceConfigs, hcClient);
     }
 
     /**
@@ -1237,6 +1406,39 @@ public class FunctionGraphAsyncClient {
         ShowDependcyRequest request) {
         return new AsyncInvoker<ShowDependcyRequest, ShowDependcyResponse>(request, FunctionGraphMeta.showDependcy,
             hcClient);
+    }
+
+    /**
+     * 获取依赖包版本详情
+     *
+     * 获取依赖包版本详情
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowDependencyVersionRequest 请求对象
+     * @return CompletableFuture<ShowDependencyVersionResponse>
+     */
+    public CompletableFuture<ShowDependencyVersionResponse> showDependencyVersionAsync(
+        ShowDependencyVersionRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.showDependencyVersion);
+    }
+
+    /**
+     * 获取依赖包版本详情
+     *
+     * 获取依赖包版本详情
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowDependencyVersionRequest 请求对象
+     * @return AsyncInvoker<ShowDependencyVersionRequest, ShowDependencyVersionResponse>
+     */
+    public AsyncInvoker<ShowDependencyVersionRequest, ShowDependencyVersionResponse> showDependencyVersionAsyncInvoker(
+        ShowDependencyVersionRequest request) {
+        return new AsyncInvoker<ShowDependencyVersionRequest, ShowDependencyVersionResponse>(request,
+            FunctionGraphMeta.showDependencyVersion, hcClient);
     }
 
     /**

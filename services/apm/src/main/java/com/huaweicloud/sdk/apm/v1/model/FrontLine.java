@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 趋势图数据模型
+ * 趋势图数据模型。
  */
 public class FrontLine {
 
@@ -65,7 +65,7 @@ public class FrontLine {
     }
 
     /**
-     * 数据点集合
+     * 数据点集合。
      * @return pointList
      */
     public List<FrontPoint> getPointList() {
@@ -82,7 +82,7 @@ public class FrontLine {
     }
 
     /**
-     * 标题
+     * 标题。
      * @return title
      */
     public String getTitle() {
@@ -99,7 +99,7 @@ public class FrontLine {
     }
 
     /**
-     * 单位
+     * 单位。
      * @return unit
      */
     public String getUnit() {
@@ -116,7 +116,7 @@ public class FrontLine {
     }
 
     /**
-     * 百分比
+     * 百分比。
      * @return precision
      */
     public Integer getPrecision() {
@@ -133,7 +133,7 @@ public class FrontLine {
     }
 
     /**
-     * 日期类型
+     * 日期类型。
      * @return dataType
      */
     public String getDataType() {
@@ -150,7 +150,7 @@ public class FrontLine {
     }
 
     /**
-     * 是否可见
+     * 是否可见。
      * @return visible
      */
     public Boolean getVisible() {

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 实例信息
+ * 实例信息。
  */
 public class InstanceInfo {
 
@@ -91,7 +91,7 @@ public class InstanceInfo {
     }
 
     /**
-     * 实例id
+     * 实例id。
      * @return instanceId
      */
     public Long getInstanceId() {
@@ -108,7 +108,7 @@ public class InstanceInfo {
     }
 
     /**
-     * 应用名称
+     * 应用名称。
      * @return businessName
      */
     public String getBusinessName() {
@@ -125,7 +125,7 @@ public class InstanceInfo {
     }
 
     /**
-     * 应用id
+     * 应用id。
      * @return businessId
      */
     public Long getBusinessId() {
@@ -142,7 +142,7 @@ public class InstanceInfo {
     }
 
     /**
-     * 组件名称
+     * 组件名称。
      * @return appName
      */
     public String getAppName() {
@@ -159,7 +159,7 @@ public class InstanceInfo {
     }
 
     /**
-     * 主机名称
+     * 主机名称。
      * @return hostName
      */
     public String getHostName() {
@@ -176,7 +176,7 @@ public class InstanceInfo {
     }
 
     /**
-     * 实例名称
+     * 实例名称。
      * @return instanceName
      */
     public String getInstanceName() {
@@ -193,7 +193,7 @@ public class InstanceInfo {
     }
 
     /**
-     * 主机ip地址
+     * 主机ip地址。
      * @return ipAddress
      */
     public String getIpAddress() {
@@ -210,7 +210,7 @@ public class InstanceInfo {
     }
 
     /**
-     * 环境ID
+     * 环境ID。
      * @return envId
      */
     public Long getEnvId() {
@@ -227,7 +227,7 @@ public class InstanceInfo {
     }
 
     /**
-     * Javaagent版本
+     * Javaagent版本。
      * @return agentVersion
      */
     public String getAgentVersion() {
@@ -244,7 +244,7 @@ public class InstanceInfo {
     }
 
     /**
-     * 最后心跳时间
+     * 最后心跳时间。
      * @return lastHeartbeat
      */
     public Long getLastHeartbeat() {
@@ -261,7 +261,7 @@ public class InstanceInfo {
     }
 
     /**
-     * 注册时间
+     * 注册时间。
      * @return registerTime
      */
     public Long getRegisterTime() {
@@ -278,7 +278,7 @@ public class InstanceInfo {
     }
 
     /**
-     * 最后修改用户id
+     * 最后修改用户id。
      * @return lastModifyUserId
      */
     public String getLastModifyUserId() {
@@ -295,7 +295,7 @@ public class InstanceInfo {
     }
 
     /**
-     * 实例状态
+     * 实例状态。
      * @return instanceStatus
      */
     public Integer getInstanceStatus() {
@@ -312,7 +312,7 @@ public class InstanceInfo {
     }
 
     /**
-     * 最后修改用户名称
+     * 最后修改用户名称。
      * @return lastModifyUserName
      */
     public String getLastModifyUserName() {
@@ -329,7 +329,7 @@ public class InstanceInfo {
     }
 
     /**
-     * 最后修改时间
+     * 最后修改时间。
      * @return lastModifyTime
      */
     public Long getLastModifyTime() {

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 数据单元
+ * 数据单元。
  */
 public class FrontCell {
 
@@ -61,7 +61,7 @@ public class FrontCell {
     }
 
     /**
-     * 数据类型
+     * 数据类型。
      * @return dataType
      */
     public String getDataType() {
@@ -78,7 +78,7 @@ public class FrontCell {
     }
 
     /**
-     * 函数
+     * 函数。
      * @return function
      */
     public String getFunction() {
@@ -95,7 +95,7 @@ public class FrontCell {
     }
 
     /**
-     * 是否调用链
+     * 是否调用链。
      * @return trace
      */
     public Boolean getTrace() {
@@ -112,7 +112,7 @@ public class FrontCell {
     }
 
     /**
-     * 是否是span信息，如果是就跳到调用链搜索页面
+     * 是否是span信息，如果是就跳到调用链搜索页面。
      * @return span
      */
     public Boolean getSpan() {
@@ -129,7 +129,7 @@ public class FrontCell {
     }
 
     /**
-     * span字段
+     * span字段。
      * @return spanField
      */
     public String getSpanField() {
@@ -146,7 +146,7 @@ public class FrontCell {
     }
 
     /**
-     * 小数点位数
+     * 小数点位数。
      * @return precision
      */
     public Integer getPrecision() {
@@ -163,7 +163,7 @@ public class FrontCell {
     }
 
     /**
-     * 文本信息
+     * 文本信息。
      * @return text
      */
     public String getText() {
@@ -180,7 +180,7 @@ public class FrontCell {
     }
 
     /**
-     * 单位
+     * 单位。
      * @return unit
      */
     public String getUnit() {
@@ -197,7 +197,7 @@ public class FrontCell {
     }
 
     /**
-     * 是否可见
+     * 是否可见。
      * @return visible
      */
     public Boolean getVisible() {

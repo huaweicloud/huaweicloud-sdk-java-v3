@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * span信息
+ * span信息。
  */
 public class ClientSpanInfo {
 
@@ -129,7 +129,7 @@ public class ClientSpanInfo {
     }
 
     /**
-     * vTraceId，虚拟traceI
+     * vTraceId，虚拟traceI。
      * @return globalTraceId
      */
     public String getGlobalTraceId() {
@@ -146,7 +146,7 @@ public class ClientSpanInfo {
     }
 
     /**
-     * Get globalPath
+     * 虚拟traceId经过的path路径。
      * @return globalPath
      */
     public String getGlobalPath() {
@@ -163,7 +163,7 @@ public class ClientSpanInfo {
     }
 
     /**
-     * Get traceId
+     * traceId。
      * @return traceId
      */
     public String getTraceId() {
@@ -180,7 +180,7 @@ public class ClientSpanInfo {
     }
 
     /**
-     * Get spanId
+     * span id。
      * @return spanId
      */
     public String getSpanId() {
@@ -197,7 +197,7 @@ public class ClientSpanInfo {
     }
 
     /**
-     * Get envId
+     * 环境Iid。
      * @return envId
      */
     public Long getEnvId() {
@@ -214,7 +214,7 @@ public class ClientSpanInfo {
     }
 
     /**
-     * Get instanceId
+     * 实例id。
      * @return instanceId
      */
     public Long getInstanceId() {
@@ -231,7 +231,7 @@ public class ClientSpanInfo {
     }
 
     /**
-     * Get appId
+     * 组件id。
      * @return appId
      */
     public Long getAppId() {
@@ -248,7 +248,7 @@ public class ClientSpanInfo {
     }
 
     /**
-     * Get bizId
+     * 应用id。
      * @return bizId
      */
     public Long getBizId() {
@@ -265,7 +265,7 @@ public class ClientSpanInfo {
     }
 
     /**
-     * Get domainId
+     * 租户id。
      * @return domainId
      */
     public Integer getDomainId() {
@@ -282,7 +282,7 @@ public class ClientSpanInfo {
     }
 
     /**
-     * Get source
+     * 只有是根event也就是span的时候有值。
      * @return source
      */
     public String getSource() {
@@ -299,7 +299,7 @@ public class ClientSpanInfo {
     }
 
     /**
-     * Get realSource
+     * 根event 的时候存在，实际调用的url。
      * @return realSource
      */
     public String getRealSource() {
@@ -316,7 +316,7 @@ public class ClientSpanInfo {
     }
 
     /**
-     * Get startTime
+     * 开始时间。
      * @return startTime
      */
     public Long getStartTime() {
@@ -333,7 +333,7 @@ public class ClientSpanInfo {
     }
 
     /**
-     * Get timeUsed
+     * 耗时。
      * @return timeUsed
      */
     public Long getTimeUsed() {
@@ -350,7 +350,7 @@ public class ClientSpanInfo {
     }
 
     /**
-     * Get code
+     * 状态码，针对http的调用有效。
      * @return code
      */
     public Integer getCode() {
@@ -367,7 +367,7 @@ public class ClientSpanInfo {
     }
 
     /**
-     * Get className
+     * 类名。
      * @return className
      */
     public String getClassName() {
@@ -384,7 +384,7 @@ public class ClientSpanInfo {
     }
 
     /**
-     * Get isAsync
+     * 是否异步。
      * @return isAsync
      */
     public Boolean getIsAsync() {
@@ -417,7 +417,7 @@ public class ClientSpanInfo {
     }
 
     /**
-     * Get tags
+     * 包含用户自定义参数，header或body体里的内容，httpMethod, bizCode，以及后续可能新增参数。
      * @return tags
      */
     public Map<String, String> getTags() {
@@ -434,7 +434,7 @@ public class ClientSpanInfo {
     }
 
     /**
-     * Get hasError
+     * 是否报错。
      * @return hasError
      */
     public Boolean getHasError() {
@@ -451,7 +451,7 @@ public class ClientSpanInfo {
     }
 
     /**
-     * Get errorReasons
+     * 报错原因。
      * @return errorReasons
      */
     public String getErrorReasons() {
@@ -468,7 +468,7 @@ public class ClientSpanInfo {
     }
 
     /**
-     * 类型，mysql，kafka等
+     * 类型，mysql，kafka等。
      * @return type
      */
     public String getType() {
@@ -485,7 +485,7 @@ public class ClientSpanInfo {
     }
 
     /**
-     * 这里的method实际上是tags里面的http_method，只有url监控项才有
+     * 这里的method实际上是tags里面的http_method，只有url监控项才有。
      * @return httpMethod
      */
     public String getHttpMethod() {
@@ -502,7 +502,7 @@ public class ClientSpanInfo {
     }
 
     /**
-     * 业务状态码的采集
+     * 业务状态码的采集。
      * @return bizCode
      */
     public String getBizCode() {

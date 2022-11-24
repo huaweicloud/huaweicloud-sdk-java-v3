@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 查询特定环境下监控项参数模型
+ * 查询特定环境下监控项参数模型。
  */
 public class GetEnvMonitorItemListParam {
 
@@ -31,7 +31,7 @@ public class GetEnvMonitorItemListParam {
     }
 
     /**
-     * 环境id
+     * 环境id。
      * @return envId
      */
     public Long getEnvId() {
@@ -48,7 +48,7 @@ public class GetEnvMonitorItemListParam {
     }
 
     /**
-     * 页码
+     * 页码。
      * @return page
      */
     public Integer getPage() {
@@ -65,7 +65,7 @@ public class GetEnvMonitorItemListParam {
     }
 
     /**
-     * 每页数量
+     * 每页数量。
      * @return pageSize
      */
     public Integer getPageSize() {

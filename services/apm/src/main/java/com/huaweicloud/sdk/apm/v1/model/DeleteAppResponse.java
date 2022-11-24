@@ -22,7 +22,7 @@ public class DeleteAppResponse extends SdkResponse {
     }
 
     /**
-     * 返回ok的结果，表示删除成功
+     * 返回ok的结果，表示删除成功。
      * @return ok
      */
     public String getOk() {

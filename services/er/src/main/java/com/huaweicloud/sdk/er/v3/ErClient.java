@@ -84,7 +84,7 @@ public class ErClient {
     /**
      * 查询路由关联列表
      *
-     * 支持分页查询, 支持过滤查询：state, resource_type, attachment_id。支持单字段排序，排序字段有[id,created_at,updated_at]，不支持多字段排序。
+     * 查询路由关联列表。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -99,7 +99,7 @@ public class ErClient {
     /**
      * 查询路由关联列表
      *
-     * 支持分页查询, 支持过滤查询：state, resource_type, attachment_id。支持单字段排序，排序字段有[id,created_at,updated_at]，不支持多字段排序。
+     * 查询路由关联列表。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -116,10 +116,7 @@ public class ErClient {
     /**
      * 查询连接列表
      *
-     * 查询企业路由器实例下的连接列表：
-     *  1，支持过滤查询，过滤条件有state，resource_type，resource_id过滤条件可以重复和组合 
-     * 2，支持分页查询，limit和marker组合实现分页查询 
-     * 3，支持单字段排序，排序字段有[id,name,description,created_at,updated_at]，不支持多字段排序。
+     * 查询企业路由器实例下的连接列表。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -134,10 +131,7 @@ public class ErClient {
     /**
      * 查询连接列表
      *
-     * 查询企业路由器实例下的连接列表：
-     *  1，支持过滤查询，过滤条件有state，resource_type，resource_id过滤条件可以重复和组合 
-     * 2，支持分页查询，limit和marker组合实现分页查询 
-     * 3，支持单字段排序，排序字段有[id,name,description,created_at,updated_at]，不支持多字段排序。
+     * 查询企业路由器实例下的连接列表。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -313,8 +307,7 @@ public class ErClient {
     /**
      * 删除企业路由器
      *
-     * 1. 只能删除企业路由器实例和其创建的默认路由表，如果存在其他路由表和连接，那么需要先删除其他路由表、连接、关联、传播和路由条目等。
-     * 2. 企业路由器实例状态为available，deleting和failed的时候才能删除。
+     * 删除企业路由器。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -329,8 +322,7 @@ public class ErClient {
     /**
      * 删除企业路由器
      *
-     * 1. 只能删除企业路由器实例和其创建的默认路由表，如果存在其他路由表和连接，那么需要先删除其他路由表、连接、关联、传播和路由条目等。
-     * 2. 企业路由器实例状态为available，deleting和failed的时候才能删除。
+     * 删除企业路由器。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -345,9 +337,9 @@ public class ErClient {
     }
 
     /**
-     * 查询企业路由器实例列表
+     * 查询企业路由器列表
      *
-     * 分页查询使用的参数为marker、limit。marker和limit一起使用时才会生效，单独使用无效。支持单字段排序，排序字段有[id,name,description,created_at,updated_at]，不支持多字段排序。
+     * 查询企业路由器列表
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -360,9 +352,9 @@ public class ErClient {
     }
 
     /**
-     * 查询企业路由器实例列表
+     * 查询企业路由器列表
      *
-     * 分页查询使用的参数为marker、limit。marker和limit一起使用时才会生效，单独使用无效。支持单字段排序，排序字段有[id,name,description,created_at,updated_at]，不支持多字段排序。
+     * 查询企业路由器列表
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -411,7 +403,7 @@ public class ErClient {
     /**
      * 更新企业路由器
      *
-     * 除了name和description，其它信息只有在企业路由器实例状态为available的时候才能更新。
+     * 更新企业路由器基本信息。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -426,7 +418,7 @@ public class ErClient {
     /**
      * 更新企业路由器
      *
-     * 除了name和description，其它信息只有在企业路由器实例状态为available的时候才能更新。
+     * 更新企业路由器基本信息。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -507,7 +499,7 @@ public class ErClient {
     /**
      * 查询路由传播列表
      *
-     * 支持分页查询, 支持过滤查询：state, resource_type, attachment_id。支持单字段排序，排序字段有[id,created_at,updated_at]，不支持多字段排序。
+     * 查询路由传播列表。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -522,7 +514,7 @@ public class ErClient {
     /**
      * 查询路由传播列表
      *
-     * 支持分页查询, 支持过滤查询：state, resource_type, attachment_id。支持单字段排序，排序字段有[id,created_at,updated_at]，不支持多字段排序。
+     * 查询路由传播列表。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -635,7 +627,7 @@ public class ErClient {
     /**
      * 查询静态路由列表
      *
-     * 支持分页查询，支持过滤查询：destination，attachment_id, resource_type, type.支持单字段排序，排序字段有[id,destination,created_at,updated_at]，不支持多字段排序。
+     * 查询静态路由列表。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -650,7 +642,7 @@ public class ErClient {
     /**
      * 查询静态路由列表
      *
-     * 支持分页查询，支持过滤查询：destination，attachment_id, resource_type, type.支持单字段排序，排序字段有[id,destination,created_at,updated_at]，不支持多字段排序。
+     * 查询静态路由列表。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -665,9 +657,9 @@ public class ErClient {
     }
 
     /**
-     * 查询路由详情
+     * 查询静态路由详情
      *
-     * 查询路由详情
+     * 查询静态路由详情
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -680,9 +672,9 @@ public class ErClient {
     }
 
     /**
-     * 查询路由详情
+     * 查询静态路由详情
      *
-     * 查询路由详情
+     * 查询静态路由详情
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -697,9 +689,9 @@ public class ErClient {
     }
 
     /**
-     * 修改路由
+     * 更新静态路由
      *
-     * 修改静态路由
+     * 更新静态路由
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -712,9 +704,9 @@ public class ErClient {
     }
 
     /**
-     * 修改路由
+     * 更新静态路由
      *
-     * 修改静态路由
+     * 更新静态路由
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -795,7 +787,7 @@ public class ErClient {
     /**
      * 查询路由表列表
      *
-     * 支持分页查询, 支持过滤查询：state, is_default_propagation_route_table, is_default_association_route_table。支持单字段排序，排序字段有[id,name,description,created_at,updated_at]，不支持多字段排序。
+     * 查询路由表列表。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -810,7 +802,7 @@ public class ErClient {
     /**
      * 查询路由表列表
      *
-     * 支持分页查询, 支持过滤查询：state, is_default_propagation_route_table, is_default_association_route_table。支持单字段排序，排序字段有[id,name,description,created_at,updated_at]，不支持多字段排序。
+     * 查询路由表列表。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -888,6 +880,134 @@ public class ErClient {
     }
 
     /**
+     * 创建资源标签
+     *
+     * 为特定类型的资源创建标签。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateResourceTagRequest 请求对象
+     * @return CreateResourceTagResponse
+     */
+    public CreateResourceTagResponse createResourceTag(CreateResourceTagRequest request) {
+        return hcClient.syncInvokeHttp(request, ErMeta.createResourceTag);
+    }
+
+    /**
+     * 创建资源标签
+     *
+     * 为特定类型的资源创建标签。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateResourceTagRequest 请求对象
+     * @return SyncInvoker<CreateResourceTagRequest, CreateResourceTagResponse>
+     */
+    public SyncInvoker<CreateResourceTagRequest, CreateResourceTagResponse> createResourceTagInvoker(
+        CreateResourceTagRequest request) {
+        return new SyncInvoker<CreateResourceTagRequest, CreateResourceTagResponse>(request, ErMeta.createResourceTag,
+            hcClient);
+    }
+
+    /**
+     * 删除资源标签
+     *
+     * 删除特定类型资源的标签。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteResourceTagRequest 请求对象
+     * @return DeleteResourceTagResponse
+     */
+    public DeleteResourceTagResponse deleteResourceTag(DeleteResourceTagRequest request) {
+        return hcClient.syncInvokeHttp(request, ErMeta.deleteResourceTag);
+    }
+
+    /**
+     * 删除资源标签
+     *
+     * 删除特定类型资源的标签。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param DeleteResourceTagRequest 请求对象
+     * @return SyncInvoker<DeleteResourceTagRequest, DeleteResourceTagResponse>
+     */
+    public SyncInvoker<DeleteResourceTagRequest, DeleteResourceTagResponse> deleteResourceTagInvoker(
+        DeleteResourceTagRequest request) {
+        return new SyncInvoker<DeleteResourceTagRequest, DeleteResourceTagResponse>(request, ErMeta.deleteResourceTag,
+            hcClient);
+    }
+
+    /**
+     * 查询项目标签
+     *
+     * 查询特定类型资源的标签集合。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListProjectTagsRequest 请求对象
+     * @return ListProjectTagsResponse
+     */
+    public ListProjectTagsResponse listProjectTags(ListProjectTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, ErMeta.listProjectTags);
+    }
+
+    /**
+     * 查询项目标签
+     *
+     * 查询特定类型资源的标签集合。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ListProjectTagsRequest 请求对象
+     * @return SyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse>
+     */
+    public SyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse> listProjectTagsInvoker(
+        ListProjectTagsRequest request) {
+        return new SyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse>(request, ErMeta.listProjectTags,
+            hcClient);
+    }
+
+    /**
+     * 查询资源标签
+     *
+     * 查询特定类型资源的标签信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowResourceTagRequest 请求对象
+     * @return ShowResourceTagResponse
+     */
+    public ShowResourceTagResponse showResourceTag(ShowResourceTagRequest request) {
+        return hcClient.syncInvokeHttp(request, ErMeta.showResourceTag);
+    }
+
+    /**
+     * 查询资源标签
+     *
+     * 查询特定类型资源的标签信息。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowResourceTagRequest 请求对象
+     * @return SyncInvoker<ShowResourceTagRequest, ShowResourceTagResponse>
+     */
+    public SyncInvoker<ShowResourceTagRequest, ShowResourceTagResponse> showResourceTagInvoker(
+        ShowResourceTagRequest request) {
+        return new SyncInvoker<ShowResourceTagRequest, ShowResourceTagResponse>(request, ErMeta.showResourceTag,
+            hcClient);
+    }
+
+    /**
      * 创建VPC连接
      *
      * 给ER实例创建VPC连接。
@@ -922,7 +1042,7 @@ public class ErClient {
     /**
      * 删除VPC连接
      *
-     * VPC连接状态为available，deleting和failed的时候才能删除。
+     * 删除VPC连接。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -937,7 +1057,7 @@ public class ErClient {
     /**
      * 删除VPC连接
      *
-     * VPC连接状态为available，deleting和failed的时候才能删除。
+     * 删除VPC连接。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -954,10 +1074,7 @@ public class ErClient {
     /**
      * 查询VPC连接列表
      *
-     * 查询企业路由器实例下的VPC连接列表：
-     * 1，支持过滤查询，过滤条件有id，state，enterprise_project_id，vpc_id，过滤条件可以重复和组合
-     * 2，支持分页查询，limit和marker组合实现分页查询
-     * 3，支持单字段排序功能，排序字段有[id,name,description,created_at,updated_at]，不支持多字段排序。
+     * 查询企业路由器实例下的VPC连接列表。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -972,10 +1089,7 @@ public class ErClient {
     /**
      * 查询VPC连接列表
      *
-     * 查询企业路由器实例下的VPC连接列表：
-     * 1，支持过滤查询，过滤条件有id，state，enterprise_project_id，vpc_id，过滤条件可以重复和组合
-     * 2，支持分页查询，limit和marker组合实现分页查询
-     * 3，支持单字段排序功能，排序字段有[id,name,description,created_at,updated_at]，不支持多字段排序。
+     * 查询企业路由器实例下的VPC连接列表。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.

@@ -53,6 +53,45 @@ public class WafAsyncClient {
     }
 
     /**
+     * 变更包周期云模式waf规格
+     *
+     * 变更包周期云模式waf规格。注：
+     *  - 1.变更某产品规格的前提是必须已购买该产品 
+     *  - 2.waf版本只支持升配，不支持降配；扩展包数量可以增加或者减少，但不支持数量减少为0 
+     *  - 3.不支持同时升降配，如增加域名扩展包数量，同时减少规则扩展包数量
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ChangePrepaidCloudWafRequest 请求对象
+     * @return CompletableFuture<ChangePrepaidCloudWafResponse>
+     */
+    public CompletableFuture<ChangePrepaidCloudWafResponse> changePrepaidCloudWafAsync(
+        ChangePrepaidCloudWafRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.changePrepaidCloudWaf);
+    }
+
+    /**
+     * 变更包周期云模式waf规格
+     *
+     * 变更包周期云模式waf规格。注：
+     *  - 1.变更某产品规格的前提是必须已购买该产品 
+     *  - 2.waf版本只支持升配，不支持降配；扩展包数量可以增加或者减少，但不支持数量减少为0 
+     *  - 3.不支持同时升降配，如增加域名扩展包数量，同时减少规则扩展包数量
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ChangePrepaidCloudWafRequest 请求对象
+     * @return AsyncInvoker<ChangePrepaidCloudWafRequest, ChangePrepaidCloudWafResponse>
+     */
+    public AsyncInvoker<ChangePrepaidCloudWafRequest, ChangePrepaidCloudWafResponse> changePrepaidCloudWafAsyncInvoker(
+        ChangePrepaidCloudWafRequest request) {
+        return new AsyncInvoker<ChangePrepaidCloudWafRequest, ChangePrepaidCloudWafResponse>(request,
+            WafMeta.changePrepaidCloudWaf, hcClient);
+    }
+
+    /**
      * 创建防篡改规则
      *
      * 创建防篡改规则
@@ -214,7 +253,7 @@ public class WafAsyncClient {
     /**
      * 创建WAF独享引擎实例
      *
-     * 创建WAF独享引擎实例
+     * 创建WAF独享引擎实例。独享模式只在部分局点支持，包括：华北-北京四、华东-上海一、华南-广州、华南-深圳  、中国-香港、亚太-曼谷、 亚太-新加坡。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -229,7 +268,7 @@ public class WafAsyncClient {
     /**
      * 创建WAF独享引擎实例
      *
-     * 创建WAF独享引擎实例
+     * 创建WAF独享引擎实例。独享模式只在部分局点支持，包括：华北-北京四、华东-上海一、华南-广州、华南-深圳  、中国-香港、亚太-曼谷、 亚太-新加坡。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -335,6 +374,39 @@ public class WafAsyncClient {
         CreatePremiumHostRequest request) {
         return new AsyncInvoker<CreatePremiumHostRequest, CreatePremiumHostResponse>(request, WafMeta.createPremiumHost,
             hcClient);
+    }
+
+    /**
+     * 购买包周期云模式waf
+     *
+     * 购买包周期云模式waf
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreatePrepaidCloudWafRequest 请求对象
+     * @return CompletableFuture<CreatePrepaidCloudWafResponse>
+     */
+    public CompletableFuture<CreatePrepaidCloudWafResponse> createPrepaidCloudWafAsync(
+        CreatePrepaidCloudWafRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.createPrepaidCloudWaf);
+    }
+
+    /**
+     * 购买包周期云模式waf
+     *
+     * 购买包周期云模式waf
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreatePrepaidCloudWafRequest 请求对象
+     * @return AsyncInvoker<CreatePrepaidCloudWafRequest, CreatePrepaidCloudWafResponse>
+     */
+    public AsyncInvoker<CreatePrepaidCloudWafRequest, CreatePrepaidCloudWafResponse> createPrepaidCloudWafAsyncInvoker(
+        CreatePrepaidCloudWafRequest request) {
+        return new AsyncInvoker<CreatePrepaidCloudWafRequest, CreatePrepaidCloudWafResponse>(request,
+            WafMeta.createPrepaidCloudWaf, hcClient);
     }
 
     /**
@@ -596,7 +668,7 @@ public class WafAsyncClient {
     /**
      * 删除WAF独享引擎信息
      *
-     * 删除WAF独享引擎信息
+     * 删除WAF独享引擎信息。独享模式只在部分局点支持，包括：华北-北京四、华东-上海一、华南-广州、华南-深圳  、中国-香港、亚太-曼谷、 亚太-新加坡。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -611,7 +683,7 @@ public class WafAsyncClient {
     /**
      * 删除WAF独享引擎信息
      *
-     * 删除WAF独享引擎信息
+     * 删除WAF独享引擎信息。独享模式只在部分局点支持，包括：华北-北京四、华东-上海一、华南-广州、华南-深圳  、中国-香港、亚太-曼谷、 亚太-新加坡。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1102,7 +1174,7 @@ public class WafAsyncClient {
     /**
      * 查询WAF独享引擎列表
      *
-     * 查询WAF独享引擎列表
+     * 查询WAF独享引擎列表。独享模式只在部分局点支持，包括：华北-北京四、华东-上海一、华南-广州、华南-深圳  、中国-香港、亚太-曼谷、 亚太-新加坡。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1117,7 +1189,7 @@ public class WafAsyncClient {
     /**
      * 查询WAF独享引擎列表
      *
-     * 查询WAF独享引擎列表
+     * 查询WAF独享引擎列表。独享模式只在部分局点支持，包括：华北-北京四、华东-上海一、华南-广州、华南-深圳  、中国-香港、亚太-曼谷、 亚太-新加坡。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1547,7 +1619,7 @@ public class WafAsyncClient {
     /**
      * 重命名WAF独享引擎
      *
-     * 重命名WAF独享引擎
+     * 重命名WAF独享引擎。独享模式只在部分局点支持，包括：华北-北京四、华东-上海一、华南-广州、华南-深圳  、中国-香港、亚太-曼谷、 亚太-新加坡。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1562,7 +1634,7 @@ public class WafAsyncClient {
     /**
      * 重命名WAF独享引擎
      *
-     * 重命名WAF独享引擎
+     * 重命名WAF独享引擎。独享模式只在部分局点支持，包括：华北-北京四、华东-上海一、华南-广州、华南-深圳  、中国-香港、亚太-曼谷、 亚太-新加坡。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1735,7 +1807,7 @@ public class WafAsyncClient {
     /**
      * 查询WAF独享引擎信息
      *
-     * 查询WAF独享引擎信息
+     * 查询WAF独享引擎信息。独享模式只在部分局点支持，包括：华北-北京四、华东-上海一、华南-广州、华南-深圳  、中国-香港、亚太-曼谷、 亚太-新加坡。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1750,7 +1822,7 @@ public class WafAsyncClient {
     /**
      * 查询WAF独享引擎信息
      *
-     * 查询WAF独享引擎信息
+     * 查询WAF独享引擎信息。独享模式只在部分局点支持，包括：华北-北京四、华东-上海一、华南-广州、华南-深圳  、中国-香港、亚太-曼谷、 亚太-新加坡。
      * 
      * 详细说明请参考华为云API Explorer。
      * Please refer to Huawei cloud API Explorer for details.
@@ -1916,6 +1988,39 @@ public class WafAsyncClient {
     public AsyncInvoker<ShowSourceIpRequest, ShowSourceIpResponse> showSourceIpAsyncInvoker(
         ShowSourceIpRequest request) {
         return new AsyncInvoker<ShowSourceIpRequest, ShowSourceIpResponse>(request, WafMeta.showSourceIp, hcClient);
+    }
+
+    /**
+     * 查询租户订购信息
+     *
+     * 查询租户订购信息，包括云模式包周期、按需计费、独享模式
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowSubscriptionInfoRequest 请求对象
+     * @return CompletableFuture<ShowSubscriptionInfoResponse>
+     */
+    public CompletableFuture<ShowSubscriptionInfoResponse> showSubscriptionInfoAsync(
+        ShowSubscriptionInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.showSubscriptionInfo);
+    }
+
+    /**
+     * 查询租户订购信息
+     *
+     * 查询租户订购信息，包括云模式包周期、按需计费、独享模式
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowSubscriptionInfoRequest 请求对象
+     * @return AsyncInvoker<ShowSubscriptionInfoRequest, ShowSubscriptionInfoResponse>
+     */
+    public AsyncInvoker<ShowSubscriptionInfoRequest, ShowSubscriptionInfoResponse> showSubscriptionInfoAsyncInvoker(
+        ShowSubscriptionInfoRequest request) {
+        return new AsyncInvoker<ShowSubscriptionInfoRequest, ShowSubscriptionInfoResponse>(request,
+            WafMeta.showSubscriptionInfo, hcClient);
     }
 
     /**

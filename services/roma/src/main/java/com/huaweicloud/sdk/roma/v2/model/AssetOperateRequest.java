@@ -16,19 +16,19 @@ public class AssetOperateRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "apps")
 
-    private List<String> apps = null;
+    private List<AssetExportRequestApps> apps = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tasks")
 
-    private List<AssetOperateRequestTasks> tasks = null;
+    private List<AssetExportRequestTasks> tasks = null;
 
-    public AssetOperateRequest withApps(List<String> apps) {
+    public AssetOperateRequest withApps(List<AssetExportRequestApps> apps) {
         this.apps = apps;
         return this;
     }
 
-    public AssetOperateRequest addAppsItem(String appsItem) {
+    public AssetOperateRequest addAppsItem(AssetExportRequestApps appsItem) {
         if (this.apps == null) {
             this.apps = new ArrayList<>();
         }
@@ -36,7 +36,7 @@ public class AssetOperateRequest {
         return this;
     }
 
-    public AssetOperateRequest withApps(Consumer<List<String>> appsSetter) {
+    public AssetOperateRequest withApps(Consumer<List<AssetExportRequestApps>> appsSetter) {
         if (this.apps == null) {
             this.apps = new ArrayList<>();
         }
@@ -48,20 +48,20 @@ public class AssetOperateRequest {
      * 应用列表
      * @return apps
      */
-    public List<String> getApps() {
+    public List<AssetExportRequestApps> getApps() {
         return apps;
     }
 
-    public void setApps(List<String> apps) {
+    public void setApps(List<AssetExportRequestApps> apps) {
         this.apps = apps;
     }
 
-    public AssetOperateRequest withTasks(List<AssetOperateRequestTasks> tasks) {
+    public AssetOperateRequest withTasks(List<AssetExportRequestTasks> tasks) {
         this.tasks = tasks;
         return this;
     }
 
-    public AssetOperateRequest addTasksItem(AssetOperateRequestTasks tasksItem) {
+    public AssetOperateRequest addTasksItem(AssetExportRequestTasks tasksItem) {
         if (this.tasks == null) {
             this.tasks = new ArrayList<>();
         }
@@ -69,7 +69,7 @@ public class AssetOperateRequest {
         return this;
     }
 
-    public AssetOperateRequest withTasks(Consumer<List<AssetOperateRequestTasks>> tasksSetter) {
+    public AssetOperateRequest withTasks(Consumer<List<AssetExportRequestTasks>> tasksSetter) {
         if (this.tasks == null) {
             this.tasks = new ArrayList<>();
         }
@@ -81,11 +81,11 @@ public class AssetOperateRequest {
      * 任务列表
      * @return tasks
      */
-    public List<AssetOperateRequestTasks> getTasks() {
+    public List<AssetExportRequestTasks> getTasks() {
         return tasks;
     }
 
-    public void setTasks(List<AssetOperateRequestTasks> tasks) {
+    public void setTasks(List<AssetExportRequestTasks> tasks) {
         this.tasks = tasks;
     }
 

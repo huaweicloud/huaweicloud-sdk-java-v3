@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 数据行
+ * 数据行。
  */
 public class FrontRow {
 
@@ -55,7 +55,7 @@ public class FrontRow {
     }
 
     /**
-     * 数据单元集合
+     * 数据单元集合。
      * @return cellList
      */
     public List<FrontCell> getCellList() {
@@ -72,7 +72,7 @@ public class FrontRow {
     }
 
     /**
-     * 将group by的字段拼接成过滤字符串，用于后续点网格点击使用
+     * 将group by的字段拼接成过滤字符串，用于后续点网格点击使用。
      * @return filter
      */
     public String getFilter() {
@@ -89,7 +89,7 @@ public class FrontRow {
     }
 
     /**
-     * 是否是header信息
+     * 是否是header信息。
      * @return header
      */
     public Boolean getHeader() {
@@ -106,7 +106,7 @@ public class FrontRow {
     }
 
     /**
-     * 是否是事务
+     * Url跟踪id。
      * @return txId
      */
     public Long getTxId() {

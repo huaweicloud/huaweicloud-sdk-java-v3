@@ -307,11 +307,6 @@ public class DatasourceInfo {
     private String appId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "custom_plugin_id")
-
-    private String customPluginId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "content")
 
     private Content content;
@@ -372,23 +367,6 @@ public class DatasourceInfo {
         this.appId = appId;
     }
 
-    public DatasourceInfo withCustomPluginId(String customPluginId) {
-        this.customPluginId = customPluginId;
-        return this;
-    }
-
-    /**
-     * 数据源所属连接器Id，自定义数据源必填
-     * @return customPluginId
-     */
-    public String getCustomPluginId() {
-        return customPluginId;
-    }
-
-    public void setCustomPluginId(String customPluginId) {
-        this.customPluginId = customPluginId;
-    }
-
     public DatasourceInfo withContent(Content content) {
         this.content = content;
         return this;
@@ -443,15 +421,13 @@ public class DatasourceInfo {
         DatasourceInfo datasourceInfo = (DatasourceInfo) o;
         return Objects.equals(this.datasourceName, datasourceInfo.datasourceName)
             && Objects.equals(this.datasourceType, datasourceInfo.datasourceType)
-            && Objects.equals(this.appId, datasourceInfo.appId)
-            && Objects.equals(this.customPluginId, datasourceInfo.customPluginId)
-            && Objects.equals(this.content, datasourceInfo.content)
+            && Objects.equals(this.appId, datasourceInfo.appId) && Objects.equals(this.content, datasourceInfo.content)
             && Objects.equals(this.description, datasourceInfo.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(datasourceName, datasourceType, appId, customPluginId, content, description);
+        return Objects.hash(datasourceName, datasourceType, appId, content, description);
     }
 
     @Override
@@ -461,7 +437,6 @@ public class DatasourceInfo {
         sb.append("    datasourceName: ").append(toIndentedString(datasourceName)).append("\n");
         sb.append("    datasourceType: ").append(toIndentedString(datasourceType)).append("\n");
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
-        sb.append("    customPluginId: ").append(toIndentedString(customPluginId)).append("\n");
         sb.append("    content: ").append(toIndentedString(content)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");

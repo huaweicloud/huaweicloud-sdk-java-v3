@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 采集器类别信息
+ * 采集器类别信息。
  */
 public class CollectorCategoryInfo {
 
@@ -36,7 +36,7 @@ public class CollectorCategoryInfo {
     }
 
     /**
-     * 采集器类别id
+     * 采集器类别id。
      * @return categoryId
      */
     public Integer getCategoryId() {
@@ -53,7 +53,7 @@ public class CollectorCategoryInfo {
     }
 
     /**
-     * 采集器类别名称
+     * 采集器类别名称。
      * @return categoryName
      */
     public String getCategoryName() {
@@ -70,7 +70,7 @@ public class CollectorCategoryInfo {
     }
 
     /**
-     * 采集器类别展示名称
+     * 采集器类别展示名称。
      * @return displayName
      */
     public String getDisplayName() {
@@ -87,7 +87,7 @@ public class CollectorCategoryInfo {
     }
 
     /**
-     * 序列号
+     * 序列号。
      * @return sequence
      */
     public Integer getSequence() {

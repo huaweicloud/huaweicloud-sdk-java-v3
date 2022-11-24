@@ -243,6 +243,11 @@ public class UpdateFunctionConfigRequestBody {
     private StrategyConfig strategyConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "custom_image")
+
+    private CustomImage customImage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extend_config")
 
     private String extendConfig;
@@ -520,6 +525,32 @@ public class UpdateFunctionConfigRequestBody {
         this.strategyConfig = strategyConfig;
     }
 
+    public UpdateFunctionConfigRequestBody withCustomImage(CustomImage customImage) {
+        this.customImage = customImage;
+        return this;
+    }
+
+    public UpdateFunctionConfigRequestBody withCustomImage(Consumer<CustomImage> customImageSetter) {
+        if (this.customImage == null) {
+            this.customImage = new CustomImage();
+            customImageSetter.accept(this.customImage);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get customImage
+     * @return customImage
+     */
+    public CustomImage getCustomImage() {
+        return customImage;
+    }
+
+    public void setCustomImage(CustomImage customImage) {
+        this.customImage = customImage;
+    }
+
     public UpdateFunctionConfigRequestBody withExtendConfig(String extendConfig) {
         this.extendConfig = extendConfig;
         return this;
@@ -644,6 +675,7 @@ public class UpdateFunctionConfigRequestBody {
             && Objects.equals(this.funcVpc, updateFunctionConfigRequestBody.funcVpc)
             && Objects.equals(this.mountConfig, updateFunctionConfigRequestBody.mountConfig)
             && Objects.equals(this.strategyConfig, updateFunctionConfigRequestBody.strategyConfig)
+            && Objects.equals(this.customImage, updateFunctionConfigRequestBody.customImage)
             && Objects.equals(this.extendConfig, updateFunctionConfigRequestBody.extendConfig)
             && Objects.equals(this.initializerHandler, updateFunctionConfigRequestBody.initializerHandler)
             && Objects.equals(this.initializerTimeout, updateFunctionConfigRequestBody.initializerTimeout)
@@ -667,6 +699,7 @@ public class UpdateFunctionConfigRequestBody {
             funcVpc,
             mountConfig,
             strategyConfig,
+            customImage,
             extendConfig,
             initializerHandler,
             initializerTimeout,
@@ -692,6 +725,7 @@ public class UpdateFunctionConfigRequestBody {
         sb.append("    funcVpc: ").append(toIndentedString(funcVpc)).append("\n");
         sb.append("    mountConfig: ").append(toIndentedString(mountConfig)).append("\n");
         sb.append("    strategyConfig: ").append(toIndentedString(strategyConfig)).append("\n");
+        sb.append("    customImage: ").append(toIndentedString(customImage)).append("\n");
         sb.append("    extendConfig: ").append(toIndentedString(extendConfig)).append("\n");
         sb.append("    initializerHandler: ").append(toIndentedString(initializerHandler)).append("\n");
         sb.append("    initializerTimeout: ").append(toIndentedString(initializerTimeout)).append("\n");

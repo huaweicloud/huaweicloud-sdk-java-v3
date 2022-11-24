@@ -41,7 +41,7 @@ public class ListOpenRegionResponse extends SdkResponse {
     }
 
     /**
-     * region列表
+     * region列表。
      * @return regionList
      */
     public List<Region> getRegionList() {

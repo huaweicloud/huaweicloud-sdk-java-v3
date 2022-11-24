@@ -50,11 +50,6 @@ public class RouteTable {
     private List<Tag> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "bgp_options")
-
-    private BgpOptions bgpOptions;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
 
     private OffsetDateTime createdAt;
@@ -199,32 +194,6 @@ public class RouteTable {
         this.tags = tags;
     }
 
-    public RouteTable withBgpOptions(BgpOptions bgpOptions) {
-        this.bgpOptions = bgpOptions;
-        return this;
-    }
-
-    public RouteTable withBgpOptions(Consumer<BgpOptions> bgpOptionsSetter) {
-        if (this.bgpOptions == null) {
-            this.bgpOptions = new BgpOptions();
-            bgpOptionsSetter.accept(this.bgpOptions);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get bgpOptions
-     * @return bgpOptions
-     */
-    public BgpOptions getBgpOptions() {
-        return bgpOptions;
-    }
-
-    public void setBgpOptions(BgpOptions bgpOptions) {
-        this.bgpOptions = bgpOptions;
-    }
-
     public RouteTable withCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -273,23 +242,14 @@ public class RouteTable {
             && Objects.equals(this.isDefaultAssociation, routeTable.isDefaultAssociation)
             && Objects.equals(this.isDefaultPropagation, routeTable.isDefaultPropagation)
             && Objects.equals(this.state, routeTable.state) && Objects.equals(this.tags, routeTable.tags)
-            && Objects.equals(this.bgpOptions, routeTable.bgpOptions)
             && Objects.equals(this.createdAt, routeTable.createdAt)
             && Objects.equals(this.updatedAt, routeTable.updatedAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id,
-            name,
-            description,
-            isDefaultAssociation,
-            isDefaultPropagation,
-            state,
-            tags,
-            bgpOptions,
-            createdAt,
-            updatedAt);
+        return Objects
+            .hash(id, name, description, isDefaultAssociation, isDefaultPropagation, state, tags, createdAt, updatedAt);
     }
 
     @Override
@@ -303,7 +263,6 @@ public class RouteTable {
         sb.append("    isDefaultPropagation: ").append(toIndentedString(isDefaultPropagation)).append("\n");
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
-        sb.append("    bgpOptions: ").append(toIndentedString(bgpOptions)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("}");

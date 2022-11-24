@@ -46,47 +46,6 @@ public class FunctionGraphMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<AsyncInvokeReservedFunctionRequest, AsyncInvokeReservedFunctionResponse> asyncInvokeReservedFunction =
-        genForasyncInvokeReservedFunction();
-
-    private static HttpRequestDef<AsyncInvokeReservedFunctionRequest, AsyncInvokeReservedFunctionResponse> genForasyncInvokeReservedFunction() {
-        // basic
-        HttpRequestDef.Builder<AsyncInvokeReservedFunctionRequest, AsyncInvokeReservedFunctionResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.POST,
-                    AsyncInvokeReservedFunctionRequest.class,
-                    AsyncInvokeReservedFunctionResponse.class)
-                .withName("AsyncInvokeReservedFunction")
-                .withUri("/v2/{project_id}/fgs/functions/{function_urn}/reserved-invocations")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("function_urn",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AsyncInvokeReservedFunctionRequest::getFunctionUrn, (req, v) -> {
-                req.setFunctionUrn(v);
-            }));
-        builder.<Map<String, Object>>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Map.class),
-            f -> f.withMarshaller(AsyncInvokeReservedFunctionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }).withInnerContainerType(Object.class));
-
-        // response
-
-        builder.<String>withResponseField("Content-Type",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(AsyncInvokeReservedFunctionResponse::getContentType,
-                AsyncInvokeReservedFunctionResponse::setContentType));
-        return builder.build();
-    }
-
     public static final HttpRequestDef<BatchDeleteFunctionTriggersRequest, BatchDeleteFunctionTriggersResponse> batchDeleteFunctionTriggers =
         genForbatchDeleteFunctionTriggers();
 
@@ -189,6 +148,31 @@ public class FunctionGraphMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateDependencyRequestBody.class),
             f -> f.withMarshaller(CreateDependencyRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateDependencyVersionRequest, CreateDependencyVersionResponse> createDependencyVersion =
+        genForcreateDependencyVersion();
+
+    private static HttpRequestDef<CreateDependencyVersionRequest, CreateDependencyVersionResponse> genForcreateDependencyVersion() {
+        // basic
+        HttpRequestDef.Builder<CreateDependencyVersionRequest, CreateDependencyVersionResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateDependencyVersionRequest.class, CreateDependencyVersionResponse.class)
+            .withName("CreateDependencyVersion")
+            .withUri("/v2/{project_id}/fgs/dependencies/version")
+            .withContentType("application/json");
+
+        // requests
+        builder.<CreateDependencyRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateDependencyRequestBody.class),
+            f -> f.withMarshaller(CreateDependencyVersionRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -392,6 +376,38 @@ public class FunctionGraphMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteDependencyRequest::getDependId, (req, v) -> {
                 req.setDependId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDependencyVersionRequest, DeleteDependencyVersionResponse> deleteDependencyVersion =
+        genFordeleteDependencyVersion();
+
+    private static HttpRequestDef<DeleteDependencyVersionRequest, DeleteDependencyVersionResponse> genFordeleteDependencyVersion() {
+        // basic
+        HttpRequestDef.Builder<DeleteDependencyVersionRequest, DeleteDependencyVersionResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteDependencyVersionRequest.class, DeleteDependencyVersionResponse.class)
+            .withName("DeleteDependencyVersion")
+            .withUri("/v2/{project_id}/fgs/dependencies/{depend_id}/version/{version}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("depend_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDependencyVersionRequest::getDependId, (req, v) -> {
+                req.setDependId(v);
+            }));
+        builder.<String>withRequestField("version",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDependencyVersionRequest::getVersion, (req, v) -> {
+                req.setVersion(v);
             }));
 
         // response
@@ -828,6 +844,45 @@ public class FunctionGraphMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListDependencyVersionRequest, ListDependencyVersionResponse> listDependencyVersion =
+        genForlistDependencyVersion();
+
+    private static HttpRequestDef<ListDependencyVersionRequest, ListDependencyVersionResponse> genForlistDependencyVersion() {
+        // basic
+        HttpRequestDef.Builder<ListDependencyVersionRequest, ListDependencyVersionResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListDependencyVersionRequest.class, ListDependencyVersionResponse.class)
+            .withName("ListDependencyVersion")
+            .withUri("/v2/{project_id}/fgs/dependencies/{depend_id}/version")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("depend_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDependencyVersionRequest::getDependId, (req, v) -> {
+                req.setDependId(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDependencyVersionRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+        builder.<String>withRequestField("maxitems",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDependencyVersionRequest::getMaxitems, (req, v) -> {
+                req.setMaxitems(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListEventsRequest, ListEventsResponse> listEvents = genForlistEvents();
 
     private static HttpRequestDef<ListEventsRequest, ListEventsResponse> genForlistEvents() {
@@ -845,6 +900,52 @@ public class FunctionGraphMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListEventsRequest::getFunctionUrn, (req, v) -> {
                 req.setFunctionUrn(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListFunctionAsMetricRequest, ListFunctionAsMetricResponse> listFunctionAsMetric =
+        genForlistFunctionAsMetric();
+
+    private static HttpRequestDef<ListFunctionAsMetricRequest, ListFunctionAsMetricResponse> genForlistFunctionAsMetric() {
+        // basic
+        HttpRequestDef.Builder<ListFunctionAsMetricRequest, ListFunctionAsMetricResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListFunctionAsMetricRequest.class, ListFunctionAsMetricResponse.class)
+            .withName("ListFunctionAsMetric")
+            .withUri("/v2/{project_id}/fgs/function/report")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFunctionAsMetricRequest::getType, (req, v) -> {
+                req.setType(v);
+            }));
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFunctionAsMetricRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            }));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFunctionAsMetricRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            }));
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFunctionAsMetricRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
             }));
 
         // response
@@ -887,6 +988,48 @@ public class FunctionGraphMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListFunctionAsyncInvokeConfigRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListFunctionReservedInstancesRequest, ListFunctionReservedInstancesResponse> listFunctionReservedInstances =
+        genForlistFunctionReservedInstances();
+
+    private static HttpRequestDef<ListFunctionReservedInstancesRequest, ListFunctionReservedInstancesResponse> genForlistFunctionReservedInstances() {
+        // basic
+        HttpRequestDef.Builder<ListFunctionReservedInstancesRequest, ListFunctionReservedInstancesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListFunctionReservedInstancesRequest.class,
+                    ListFunctionReservedInstancesResponse.class)
+                .withName("ListFunctionReservedInstances")
+                .withUri("/v2/{project_id}/fgs/functions/reservedinstances")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFunctionReservedInstancesRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+        builder.<String>withRequestField("maxitems",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFunctionReservedInstancesRequest::getMaxitems, (req, v) -> {
+                req.setMaxitems(v);
+            }));
+        builder.<String>withRequestField("urn",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFunctionReservedInstancesRequest::getUrn, (req, v) -> {
+                req.setUrn(v);
             }));
 
         // response
@@ -1047,6 +1190,34 @@ public class FunctionGraphMeta {
                 .withContentType("application/json");
 
         // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListReservedInstanceConfigsRequest, ListReservedInstanceConfigsResponse> listReservedInstanceConfigs =
+        genForlistReservedInstanceConfigs();
+
+    private static HttpRequestDef<ListReservedInstanceConfigsRequest, ListReservedInstanceConfigsResponse> genForlistReservedInstanceConfigs() {
+        // basic
+        HttpRequestDef.Builder<ListReservedInstanceConfigsRequest, ListReservedInstanceConfigsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListReservedInstanceConfigsRequest.class,
+                    ListReservedInstanceConfigsResponse.class)
+                .withName("ListReservedInstanceConfigs")
+                .withUri("/v2/{project_id}/fgs/functions/reservedinstanceconfigs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("function_urn",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListReservedInstanceConfigsRequest::getFunctionUrn, (req, v) -> {
+                req.setFunctionUrn(v);
+            }));
 
         // response
 
@@ -1278,6 +1449,38 @@ public class FunctionGraphMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowDependcyRequest::getDependId, (req, v) -> {
                 req.setDependId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDependencyVersionRequest, ShowDependencyVersionResponse> showDependencyVersion =
+        genForshowDependencyVersion();
+
+    private static HttpRequestDef<ShowDependencyVersionRequest, ShowDependencyVersionResponse> genForshowDependencyVersion() {
+        // basic
+        HttpRequestDef.Builder<ShowDependencyVersionRequest, ShowDependencyVersionResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowDependencyVersionRequest.class, ShowDependencyVersionResponse.class)
+            .withName("ShowDependencyVersion")
+            .withUri("/v2/{project_id}/fgs/dependencies/{depend_id}/version/{version}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("depend_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDependencyVersionRequest::getDependId, (req, v) -> {
+                req.setDependId(v);
+            }));
+        builder.<String>withRequestField("version",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDependencyVersionRequest::getVersion, (req, v) -> {
+                req.setVersion(v);
             }));
 
         // response

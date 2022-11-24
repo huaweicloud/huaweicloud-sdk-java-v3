@@ -15,16 +15,16 @@ public class ShowBackupResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "backup")
 
-    private BackupDetail backup;
+    private BackupResp backup;
 
-    public ShowBackupResponse withBackup(BackupDetail backup) {
+    public ShowBackupResponse withBackup(BackupResp backup) {
         this.backup = backup;
         return this;
     }
 
-    public ShowBackupResponse withBackup(Consumer<BackupDetail> backupSetter) {
+    public ShowBackupResponse withBackup(Consumer<BackupResp> backupSetter) {
         if (this.backup == null) {
-            this.backup = new BackupDetail();
+            this.backup = new BackupResp();
             backupSetter.accept(this.backup);
         }
 
@@ -35,11 +35,11 @@ public class ShowBackupResponse extends SdkResponse {
      * Get backup
      * @return backup
      */
-    public BackupDetail getBackup() {
+    public BackupResp getBackup() {
         return backup;
     }
 
-    public void setBackup(BackupDetail backup) {
+    public void setBackup(BackupResp backup) {
         this.backup = backup;
     }
 

@@ -11,7 +11,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * event信息的简要信息
+ * event信息的简要信息。
  */
 public class SpanEventInfo {
 
@@ -211,7 +211,7 @@ public class SpanEventInfo {
     }
 
     /**
-     * 环境名称
+     * 环境名称。
      * @return envName
      */
     public String getEnvName() {
@@ -228,7 +228,7 @@ public class SpanEventInfo {
     }
 
     /**
-     * 组件名称
+     * 组件名称。
      * @return appName
      */
     public String getAppName() {
@@ -245,7 +245,7 @@ public class SpanEventInfo {
     }
 
     /**
-     * 缩进
+     * 缩进。
      * @return indent
      */
     public Integer getIndent() {
@@ -262,7 +262,7 @@ public class SpanEventInfo {
     }
 
     /**
-     * 区域
+     * 区域。
      * @return region
      */
     public String getRegion() {
@@ -279,7 +279,7 @@ public class SpanEventInfo {
     }
 
     /**
-     * 主机名称
+     * 主机名称。
      * @return hostName
      */
     public String getHostName() {
@@ -296,7 +296,7 @@ public class SpanEventInfo {
     }
 
     /**
-     * ip地址
+     * ip地址。
      * @return ipAddress
      */
     public String getIpAddress() {
@@ -313,7 +313,7 @@ public class SpanEventInfo {
     }
 
     /**
-     * 实例名称
+     * 实例名称。
      * @return instanceName
      */
     public String getInstanceName() {
@@ -330,7 +330,7 @@ public class SpanEventInfo {
     }
 
     /**
-     * event的ID，在一个具体的span下面event的编号，一般是1-1-2 这种格式
+     * event的ID，在一个具体的span下面event的编号，一般是1-1-2这种格式。
      * @return eventId
      */
     public String getEventId() {
@@ -347,7 +347,7 @@ public class SpanEventInfo {
     }
 
     /**
-     * 产生下一个span的源的eventId
+     * 产生下一个span的源的eventId。
      * @return nextSpanId
      */
     public String getNextSpanId() {
@@ -364,7 +364,7 @@ public class SpanEventInfo {
     }
 
     /**
-     * 调用方的eventid
+     * 调用方的eventid。
      * @return sourceEventId
      */
     public String getSourceEventId() {
@@ -381,7 +381,7 @@ public class SpanEventInfo {
     }
 
     /**
-     * 方法名
+     * 方法名。
      * @return method
      */
     public String getMethod() {
@@ -398,7 +398,7 @@ public class SpanEventInfo {
     }
 
     /**
-     * 子event的个数
+     * 子event的个数。
      * @return childrenEventCount
      */
     public Integer getChildrenEventCount() {
@@ -431,7 +431,7 @@ public class SpanEventInfo {
     }
 
     /**
-     * 丢弃的子event个数，key是类型
+     * 丢弃的子event个数，key是类型。
      * @return discard
      */
     public List<DiscardInfo> getDiscard() {
@@ -448,7 +448,7 @@ public class SpanEventInfo {
     }
 
     /**
-     * 界面展示的参数，每个类型的event自己来实现
+     * 界面展示的参数，每个类型的event自己来实现。
      * @return argument
      */
     public String getArgument() {
@@ -481,7 +481,7 @@ public class SpanEventInfo {
     }
 
     /**
-     * 注册信息里面的attachment
+     * 注册信息里面的attachment。
      * @return attachment
      */
     public Map<String, String> getAttachment() {
@@ -498,7 +498,7 @@ public class SpanEventInfo {
     }
 
     /**
-     * vTraceId，虚拟traceId
+     * vTraceId，虚拟traceId。
      * @return globalTraceId
      */
     public String getGlobalTraceId() {
@@ -515,7 +515,7 @@ public class SpanEventInfo {
     }
 
     /**
-     * 虚拟traceId经过的path路径
+     * 虚拟traceId经过的path路径。
      * @return globalPath
      */
     public String getGlobalPath() {
@@ -532,7 +532,7 @@ public class SpanEventInfo {
     }
 
     /**
-     * traceId
+     * traceId。
      * @return traceId
      */
     public String getTraceId() {
@@ -549,7 +549,7 @@ public class SpanEventInfo {
     }
 
     /**
-     * span id
+     * span id。
      * @return spanId
      */
     public String getSpanId() {
@@ -566,7 +566,7 @@ public class SpanEventInfo {
     }
 
     /**
-     * 环境ID
+     * 环境id。
      * @return envId
      */
     public Long getEnvId() {
@@ -583,7 +583,7 @@ public class SpanEventInfo {
     }
 
     /**
-     * 实例ID
+     * 实例id。
      * @return instanceId
      */
     public Long getInstanceId() {
@@ -600,7 +600,7 @@ public class SpanEventInfo {
     }
 
     /**
-     * 组件id
+     * 组件id。
      * @return appId
      */
     public Long getAppId() {
@@ -617,7 +617,7 @@ public class SpanEventInfo {
     }
 
     /**
-     * 应用id
+     * 应用id。
      * @return bizId
      */
     public Long getBizId() {
@@ -634,7 +634,7 @@ public class SpanEventInfo {
     }
 
     /**
-     * 租户ID
+     * 租户id。
      * @return domainId
      */
     public Integer getDomainId() {
@@ -651,7 +651,7 @@ public class SpanEventInfo {
     }
 
     /**
-     * 只有是根event也就是span的时候有值
+     * 只有是根event也就是span的时候有值。
      * @return source
      */
     public String getSource() {
@@ -668,7 +668,7 @@ public class SpanEventInfo {
     }
 
     /**
-     * 根event 的时候存在，实际调用的url
+     * 根event的时候存在，实际调用的url。
      * @return realSource
      */
     public String getRealSource() {
@@ -685,7 +685,7 @@ public class SpanEventInfo {
     }
 
     /**
-     * 开始时间
+     * 开始时间。
      * @return startTime
      */
     public Long getStartTime() {
@@ -702,7 +702,7 @@ public class SpanEventInfo {
     }
 
     /**
-     * 耗时
+     * 耗时。
      * @return timeUsed
      */
     public Long getTimeUsed() {
@@ -719,7 +719,7 @@ public class SpanEventInfo {
     }
 
     /**
-     * 状态码，针对http的调用有效
+     * 状态码，针对http的调用有效。
      * @return code
      */
     public Integer getCode() {
@@ -736,7 +736,7 @@ public class SpanEventInfo {
     }
 
     /**
-     * 类名
+     * 类名。
      * @return className
      */
     public String getClassName() {
@@ -753,7 +753,7 @@ public class SpanEventInfo {
     }
 
     /**
-     * 是否异步的event
+     * 是否异步的event。
      * @return isAsync
      */
     public Boolean getIsAsync() {
@@ -786,7 +786,7 @@ public class SpanEventInfo {
     }
 
     /**
-     * 包含用户自定义参数，header或body体里的内容，httpMethod, bizCode，以及后续可能新增参数
+     * 包含用户自定义参数，header或body体里的内容，httpMethod, bizCode，以及后续可能新增参数。
      * @return tags
      */
     public Map<String, String> getTags() {
@@ -803,7 +803,7 @@ public class SpanEventInfo {
     }
 
     /**
-     * 是否有错误，主要用在span的场景
+     * 是否有错误，主要用在span的场景。
      * @return hasError
      */
     public Boolean getHasError() {
@@ -820,7 +820,7 @@ public class SpanEventInfo {
     }
 
     /**
-     * 错误类型 主要有这么几种 ErrorType枚举的几种，可以逗号分隔多种类型
+     * 错误原因。
      * @return errorReasons
      */
     public String getErrorReasons() {
@@ -837,7 +837,7 @@ public class SpanEventInfo {
     }
 
     /**
-     * 类型，mysql，kafka等
+     * 类型，mysql，kafka等。
      * @return type
      */
     public String getType() {
@@ -854,7 +854,7 @@ public class SpanEventInfo {
     }
 
     /**
-     * 这里的method实际上是tags里面的http_method，只有url监控项才有
+     * 这里的method实际上是tags里面的http_method，只有url监控项才有。
      * @return httpMethod
      */
     public String getHttpMethod() {
@@ -871,7 +871,7 @@ public class SpanEventInfo {
     }
 
     /**
-     * 业务状态码的采集
+     * 业务状态码的采集。
      * @return bizCode
      */
     public String getBizCode() {
@@ -888,7 +888,7 @@ public class SpanEventInfo {
     }
 
     /**
-     * spanId
+     * spanId。
      * @return id
      */
     public String getId() {

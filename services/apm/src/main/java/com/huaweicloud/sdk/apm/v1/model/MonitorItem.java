@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 监控项数据结构
+ * 监控项数据结构。
  */
 public class MonitorItem {
 
@@ -81,7 +81,7 @@ public class MonitorItem {
     }
 
     /**
-     * 监控项id
+     * 监控项id。
      * @return id
      */
     public Long getId() {
@@ -98,7 +98,7 @@ public class MonitorItem {
     }
 
     /**
-     * 环境id
+     * 环境id。
      * @return envId
      */
     public Long getEnvId() {
@@ -115,7 +115,7 @@ public class MonitorItem {
     }
 
     /**
-     * 采集器id
+     * 采集器id。
      * @return collectorId
      */
     public Integer getCollectorId() {
@@ -132,7 +132,7 @@ public class MonitorItem {
     }
 
     /**
-     * 采集器名称
+     * 采集器名称。
      * @return collectorName
      */
     public String getCollectorName() {
@@ -149,7 +149,7 @@ public class MonitorItem {
     }
 
     /**
-     * 采集器展示名称
+     * 采集器展示名称。
      * @return displayName
      */
     public String getDisplayName() {
@@ -166,7 +166,7 @@ public class MonitorItem {
     }
 
     /**
-     * 采集间隔
+     * 采集间隔。
      * @return collectInterval
      */
     public Integer getCollectInterval() {
@@ -183,7 +183,7 @@ public class MonitorItem {
     }
 
     /**
-     * 是否禁用
+     * 是否禁用。
      * @return disabled
      */
     public Boolean getDisabled() {
@@ -200,7 +200,7 @@ public class MonitorItem {
     }
 
     /**
-     * 修改采集状态用户id
+     * 修改采集状态用户id。
      * @return statusChangeUserId
      */
     public String getStatusChangeUserId() {
@@ -217,7 +217,7 @@ public class MonitorItem {
     }
 
     /**
-     * 修改采集状态用户名称
+     * 修改采集状态用户名称。
      * @return statusChangeUserName
      */
     public String getStatusChangeUserName() {
@@ -234,7 +234,7 @@ public class MonitorItem {
     }
 
     /**
-     * 修改采集状态时间
+     * 修改采集状态时间。
      * @return statusChangeTime
      */
     public String getStatusChangeTime() {
@@ -251,7 +251,7 @@ public class MonitorItem {
     }
 
     /**
-     * 修改采集配置用户id
+     * 修改采集配置用户id。
      * @return configChangeUserId
      */
     public String getConfigChangeUserId() {
@@ -268,7 +268,7 @@ public class MonitorItem {
     }
 
     /**
-     * 修改采集配置用户名称
+     * 修改采集配置用户名称。
      * @return configChangeUserName
      */
     public String getConfigChangeUserName() {
@@ -285,7 +285,7 @@ public class MonitorItem {
     }
 
     /**
-     * 修改采集配置时间
+     * 修改采集配置时间。
      * @return configChangeTime
      */
     public String getConfigChangeTime() {

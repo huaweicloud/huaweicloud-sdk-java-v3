@@ -168,6 +168,36 @@ public class CseClient {
     }
 
     /**
+     * 对微服务引擎专享版进行重试
+     *
+     * 对微服务引擎专享版进行重试
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param RetryEngineRequest 请求对象
+     * @return RetryEngineResponse
+     */
+    public RetryEngineResponse retryEngine(RetryEngineRequest request) {
+        return hcClient.syncInvokeHttp(request, CseMeta.retryEngine);
+    }
+
+    /**
+     * 对微服务引擎专享版进行重试
+     *
+     * 对微服务引擎专享版进行重试
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param RetryEngineRequest 请求对象
+     * @return SyncInvoker<RetryEngineRequest, RetryEngineResponse>
+     */
+    public SyncInvoker<RetryEngineRequest, RetryEngineResponse> retryEngineInvoker(RetryEngineRequest request) {
+        return new SyncInvoker<RetryEngineRequest, RetryEngineResponse>(request, CseMeta.retryEngine, hcClient);
+    }
+
+    /**
      * 查询微服务引擎专享版详情
      *
      * 查询微服务引擎专享版详情
@@ -225,6 +255,36 @@ public class CseClient {
      */
     public SyncInvoker<ShowEngineJobRequest, ShowEngineJobResponse> showEngineJobInvoker(ShowEngineJobRequest request) {
         return new SyncInvoker<ShowEngineJobRequest, ShowEngineJobResponse>(request, CseMeta.showEngineJob, hcClient);
+    }
+
+    /**
+     * 升级微服务引擎专享版
+     *
+     * 升级微服务引擎专享版
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpgradeEngineRequest 请求对象
+     * @return UpgradeEngineResponse
+     */
+    public UpgradeEngineResponse upgradeEngine(UpgradeEngineRequest request) {
+        return hcClient.syncInvokeHttp(request, CseMeta.upgradeEngine);
+    }
+
+    /**
+     * 升级微服务引擎专享版
+     *
+     * 升级微服务引擎专享版
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpgradeEngineRequest 请求对象
+     * @return SyncInvoker<UpgradeEngineRequest, UpgradeEngineResponse>
+     */
+    public SyncInvoker<UpgradeEngineRequest, UpgradeEngineResponse> upgradeEngineInvoker(UpgradeEngineRequest request) {
+        return new SyncInvoker<UpgradeEngineRequest, UpgradeEngineResponse>(request, CseMeta.upgradeEngine, hcClient);
     }
 
     /**

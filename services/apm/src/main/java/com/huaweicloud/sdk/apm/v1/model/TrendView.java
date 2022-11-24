@@ -14,12 +14,12 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 视图配置信息
+ * 视图配置信息。
  */
 public class TrendView {
 
     /**
-     * 视图类型
+     * 视图类型。
      */
     public static final class ViewTypeEnum {
 
@@ -122,7 +122,7 @@ public class TrendView {
     private String title;
 
     /**
-     * 表格的方向，H：默认，表头横向，V：表头纵向
+     * 表格的方向，H：默认，表头横向，V：表头纵向。
      */
     public static final class TableDirectionEnum {
 
@@ -244,7 +244,7 @@ public class TrendView {
     }
 
     /**
-     * 视图类型
+     * 视图类型。
      * @return viewType
      */
     public ViewTypeEnum getViewType() {
@@ -261,7 +261,7 @@ public class TrendView {
     }
 
     /**
-     * 采集器名称
+     * 采集器名称。
      * @return collectorName
      */
     public String getCollectorName() {
@@ -278,7 +278,7 @@ public class TrendView {
     }
 
     /**
-     * 视图对应的指标集名称
+     * 视图对应的指标集名称。
      * @return metricSet
      */
     public String getMetricSet() {
@@ -295,7 +295,7 @@ public class TrendView {
     }
 
     /**
-     * 图标所需展示的标题
+     * 图标所需展示的标题。
      * @return title
      */
     public String getTitle() {
@@ -312,7 +312,7 @@ public class TrendView {
     }
 
     /**
-     * 表格的方向，H：默认，表头横向，V：表头纵向
+     * 表格的方向，H：默认，表头横向，V：表头纵向。
      * @return tableDirection
      */
     public TableDirectionEnum getTableDirection() {
@@ -329,7 +329,7 @@ public class TrendView {
     }
 
     /**
-     * 分组
+     * 分组。
      * @return groupBy
      */
     public String getGroupBy() {
@@ -346,7 +346,7 @@ public class TrendView {
     }
 
     /**
-     * 过滤列表模型
+     * 过滤列表模型。
      * @return filter
      */
     public String getFilter() {
@@ -379,7 +379,7 @@ public class TrendView {
     }
 
     /**
-     * 所需展示的字段列表模型列表
+     * 所需展示的字段列表模型列表。
      * @return fieldItemList
      */
     public List<FieldItem> getFieldItemList() {
@@ -396,7 +396,7 @@ public class TrendView {
     }
 
     /**
-     * 跨度
+     * 跨度。
      * @return span
      */
     public Boolean getSpan() {
@@ -413,7 +413,7 @@ public class TrendView {
     }
 
     /**
-     * span字段属性
+     * span字段属性。
      * @return spanField
      */
     public String getSpanField() {
@@ -430,7 +430,7 @@ public class TrendView {
     }
 
     /**
-     * 排序
+     * 排序。
      * @return orderBy
      */
     public String getOrderBy() {
@@ -447,7 +447,7 @@ public class TrendView {
     }
 
     /**
-     * 是否只展示最近一笔数据
+     * 是否只展示最近一笔数据。
      * @return latest
      */
     public String getLatest() {

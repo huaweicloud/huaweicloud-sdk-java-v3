@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 获取clob数据的请求参数
+ * 获取clob数据的请求参数。
  */
 public class GetClobDetailParam {
 
@@ -26,7 +26,7 @@ public class GetClobDetailParam {
     }
 
     /**
-     * 环境id
+     * 环境id。
      * @return envId
      */
     public Long getEnvId() {
@@ -43,7 +43,7 @@ public class GetClobDetailParam {
     }
 
     /**
-     * clobId
+     * clobId。
      * @return clobId
      */
     public String getClobId() {

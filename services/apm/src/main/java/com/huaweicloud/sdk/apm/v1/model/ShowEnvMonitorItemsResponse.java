@@ -47,7 +47,7 @@ public class ShowEnvMonitorItemsResponse extends SdkResponse {
     }
 
     /**
-     * 采集器类别集合
+     * 采集器类别集合。
      * @return categoryInfoList
      */
     public List<CollectorCategoryInfo> getCategoryInfoList() {
@@ -81,7 +81,7 @@ public class ShowEnvMonitorItemsResponse extends SdkResponse {
     }
 
     /**
-     * 监控项集合
+     * 监控项集合。
      * @return monitorItemInfoList
      */
     public List<MonitorItemEntity> getMonitorItemInfoList() {

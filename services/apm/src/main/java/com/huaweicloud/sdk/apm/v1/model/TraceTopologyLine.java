@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 拓扑图上的组件调用指向线
+ * 拓扑图上的组件调用指向线。
  */
 public class TraceTopologyLine {
 
@@ -52,7 +52,7 @@ public class TraceTopologyLine {
     }
 
     /**
-     * 开始节点id
+     * 开始节点id。
      * @return startNodeId
      */
     public Long getStartNodeId() {
@@ -69,7 +69,7 @@ public class TraceTopologyLine {
     }
 
     /**
-     * 结束节点id
+     * 结束节点id。
      * @return endNodeId
      */
     public Long getEndNodeId() {
@@ -86,7 +86,7 @@ public class TraceTopologyLine {
     }
 
     /**
-     * 调用跨度id
+     * 调用跨度id。
      * @return spanId
      */
     public String getSpanId() {
@@ -155,7 +155,7 @@ public class TraceTopologyLine {
     }
 
     /**
-     * id
+     * id。
      * @return id
      */
     public String getId() {
@@ -172,7 +172,7 @@ public class TraceTopologyLine {
     }
 
     /**
-     * 获取一条线的提示信息
+     * 获取一条线的提示信息。
      * @return hint
      */
     public String getHint() {

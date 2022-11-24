@@ -18,6 +18,68 @@ public class CssClient {
     }
 
     /**
+     * 添加独立master、client
+     *
+     * 由于集群数据面业务的增长或者不确定性，很难在一开始就能够把集群的规模形态想明白，该接口能够在非独立master和client的集群上面独立master、client角色。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param AddIndependentNodeRequest 请求对象
+     * @return AddIndependentNodeResponse
+     */
+    public AddIndependentNodeResponse addIndependentNode(AddIndependentNodeRequest request) {
+        return hcClient.syncInvokeHttp(request, CssMeta.addIndependentNode);
+    }
+
+    /**
+     * 添加独立master、client
+     *
+     * 由于集群数据面业务的增长或者不确定性，很难在一开始就能够把集群的规模形态想明白，该接口能够在非独立master和client的集群上面独立master、client角色。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param AddIndependentNodeRequest 请求对象
+     * @return SyncInvoker<AddIndependentNodeRequest, AddIndependentNodeResponse>
+     */
+    public SyncInvoker<AddIndependentNodeRequest, AddIndependentNodeResponse> addIndependentNodeInvoker(
+        AddIndependentNodeRequest request) {
+        return new SyncInvoker<AddIndependentNodeRequest, AddIndependentNodeResponse>(request,
+            CssMeta.addIndependentNode, hcClient);
+    }
+
+    /**
+     * 安全模式修改
+     *
+     * 该接口用于切换集群的安全模式。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ChangeModeRequest 请求对象
+     * @return ChangeModeResponse
+     */
+    public ChangeModeResponse changeMode(ChangeModeRequest request) {
+        return hcClient.syncInvokeHttp(request, CssMeta.changeMode);
+    }
+
+    /**
+     * 安全模式修改
+     *
+     * 该接口用于切换集群的安全模式。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ChangeModeRequest 请求对象
+     * @return SyncInvoker<ChangeModeRequest, ChangeModeResponse>
+     */
+    public SyncInvoker<ChangeModeRequest, ChangeModeResponse> changeModeInvoker(ChangeModeRequest request) {
+        return new SyncInvoker<ChangeModeRequest, ChangeModeResponse>(request, CssMeta.changeMode, hcClient);
+    }
+
+    /**
      * 设置自动创建快照策略
      *
      * 该接口用于设置自动创建快照，默认一天创建一个快照。
@@ -1451,6 +1513,38 @@ public class CssClient {
         UpdateFlavorByTypeRequest request) {
         return new SyncInvoker<UpdateFlavorByTypeRequest, UpdateFlavorByTypeResponse>(request,
             CssMeta.updateFlavorByType, hcClient);
+    }
+
+    /**
+     * 节点替换
+     *
+     * 该接口用于替换失败节点。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateInstanceRequest 请求对象
+     * @return UpdateInstanceResponse
+     */
+    public UpdateInstanceResponse updateInstance(UpdateInstanceRequest request) {
+        return hcClient.syncInvokeHttp(request, CssMeta.updateInstance);
+    }
+
+    /**
+     * 节点替换
+     *
+     * 该接口用于替换失败节点。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param UpdateInstanceRequest 请求对象
+     * @return SyncInvoker<UpdateInstanceRequest, UpdateInstanceResponse>
+     */
+    public SyncInvoker<UpdateInstanceRequest, UpdateInstanceResponse> updateInstanceInvoker(
+        UpdateInstanceRequest request) {
+        return new SyncInvoker<UpdateInstanceRequest, UpdateInstanceResponse>(request, CssMeta.updateInstance,
+            hcClient);
     }
 
     /**

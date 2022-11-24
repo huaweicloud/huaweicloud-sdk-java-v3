@@ -82,7 +82,7 @@ public class Route {
     }
 
     /**
-     * 路由表类型，只支持static和propagated
+     * 路由类型
      * @return type
      */
     public String getType() {

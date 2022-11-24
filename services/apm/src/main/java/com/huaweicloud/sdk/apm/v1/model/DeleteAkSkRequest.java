@@ -21,7 +21,7 @@ public class DeleteAkSkRequest {
     }
 
     /**
-     * 需要删除的ak信息
+     * 需要删除的ak信息。
      * @return ak
      */
     public String getAk() {

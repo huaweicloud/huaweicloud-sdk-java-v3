@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 应用查询返回的数据结构
+ * 应用查询返回的数据结构。
  */
 public class AppSearchParam {
 
@@ -41,7 +41,7 @@ public class AppSearchParam {
     }
 
     /**
-     * 业务id
+     * 应用id。
      * @return businessId
      */
     public Long getBusinessId() {
@@ -58,7 +58,7 @@ public class AppSearchParam {
     }
 
     /**
-     * 区域名称
+     * 区域名称。
      * @return region
      */
     public String getRegion() {
@@ -75,7 +75,7 @@ public class AppSearchParam {
     }
 
     /**
-     * 页码
+     * 页码。
      * @return page
      */
     public Integer getPage() {
@@ -92,7 +92,7 @@ public class AppSearchParam {
     }
 
     /**
-     * 每页条数
+     * 每页条数。
      * @return pageSize
      */
     public Integer getPageSize() {
@@ -109,7 +109,7 @@ public class AppSearchParam {
     }
 
     /**
-     * 关键字
+     * 关键字。
      * @return keyword
      */
     public String getKeyword() {

@@ -117,6 +117,38 @@ public class GaussDBforNoSQLClient {
     }
 
     /**
+     * ‘创建冷数据存储’
+     *
+     * ‘创建冷数据存储’
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateColdVolumeRequest 请求对象
+     * @return CreateColdVolumeResponse
+     */
+    public CreateColdVolumeResponse createColdVolume(CreateColdVolumeRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.createColdVolume);
+    }
+
+    /**
+     * ‘创建冷数据存储’
+     *
+     * ‘创建冷数据存储’
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param CreateColdVolumeRequest 请求对象
+     * @return SyncInvoker<CreateColdVolumeRequest, CreateColdVolumeResponse>
+     */
+    public SyncInvoker<CreateColdVolumeRequest, CreateColdVolumeResponse> createColdVolumeInvoker(
+        CreateColdVolumeRequest request) {
+        return new SyncInvoker<CreateColdVolumeRequest, CreateColdVolumeResponse>(request,
+            GaussDBforNoSQLMeta.createColdVolume, hcClient);
+    }
+
+    /**
      * 创建参数模板
      *
      * 创建参数模板。
@@ -753,6 +785,38 @@ public class GaussDBforNoSQLClient {
     }
 
     /**
+     * 绑定/解绑弹性公网IP
+     *
+     * 实例下的节点绑定弹性公网IP/解绑弹性公网IP
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ModifyPublicIpRequest 请求对象
+     * @return ModifyPublicIpResponse
+     */
+    public ModifyPublicIpResponse modifyPublicIp(ModifyPublicIpRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.modifyPublicIp);
+    }
+
+    /**
+     * 绑定/解绑弹性公网IP
+     *
+     * 实例下的节点绑定弹性公网IP/解绑弹性公网IP
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ModifyPublicIpRequest 请求对象
+     * @return SyncInvoker<ModifyPublicIpRequest, ModifyPublicIpResponse>
+     */
+    public SyncInvoker<ModifyPublicIpRequest, ModifyPublicIpResponse> modifyPublicIpInvoker(
+        ModifyPublicIpRequest request) {
+        return new SyncInvoker<ModifyPublicIpRequest, ModifyPublicIpResponse>(request,
+            GaussDBforNoSQLMeta.modifyPublicIp, hcClient);
+    }
+
+    /**
      * 修改实例的管理员密码
      *
      * 修改实例的管理员密码。
@@ -781,6 +845,38 @@ public class GaussDBforNoSQLClient {
     public SyncInvoker<ResetPasswordRequest, ResetPasswordResponse> resetPasswordInvoker(ResetPasswordRequest request) {
         return new SyncInvoker<ResetPasswordRequest, ResetPasswordResponse>(request, GaussDBforNoSQLMeta.resetPassword,
             hcClient);
+    }
+
+    /**
+     * 扩容冷数据存储
+     *
+     * 扩容冷数据存储。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ResizeColdVolumeRequest 请求对象
+     * @return ResizeColdVolumeResponse
+     */
+    public ResizeColdVolumeResponse resizeColdVolume(ResizeColdVolumeRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.resizeColdVolume);
+    }
+
+    /**
+     * 扩容冷数据存储
+     *
+     * 扩容冷数据存储。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ResizeColdVolumeRequest 请求对象
+     * @return SyncInvoker<ResizeColdVolumeRequest, ResizeColdVolumeResponse>
+     */
+    public SyncInvoker<ResizeColdVolumeRequest, ResizeColdVolumeResponse> resizeColdVolumeInvoker(
+        ResizeColdVolumeRequest request) {
+        return new SyncInvoker<ResizeColdVolumeRequest, ResizeColdVolumeResponse>(request,
+            GaussDBforNoSQLMeta.resizeColdVolume, hcClient);
     }
 
     /**
@@ -848,6 +944,38 @@ public class GaussDBforNoSQLClient {
     }
 
     /**
+     * 重启实例的数据库服务
+     *
+     * 重启实例的数据库服务。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param RestartInstanceRequest 请求对象
+     * @return RestartInstanceResponse
+     */
+    public RestartInstanceResponse restartInstance(RestartInstanceRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.restartInstance);
+    }
+
+    /**
+     * 重启实例的数据库服务
+     *
+     * 重启实例的数据库服务。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param RestartInstanceRequest 请求对象
+     * @return SyncInvoker<RestartInstanceRequest, RestartInstanceResponse>
+     */
+    public SyncInvoker<RestartInstanceRequest, RestartInstanceResponse> restartInstanceInvoker(
+        RestartInstanceRequest request) {
+        return new SyncInvoker<RestartInstanceRequest, RestartInstanceResponse>(request,
+            GaussDBforNoSQLMeta.restartInstance, hcClient);
+    }
+
+    /**
      * 恢复到已有实例
      *
      * 恢复到已有实例
@@ -880,6 +1008,38 @@ public class GaussDBforNoSQLClient {
     }
 
     /**
+     * 设置磁盘自动扩容策略
+     *
+     * 设置磁盘自动扩容策略。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SetAutoEnlargePolicyRequest 请求对象
+     * @return SetAutoEnlargePolicyResponse
+     */
+    public SetAutoEnlargePolicyResponse setAutoEnlargePolicy(SetAutoEnlargePolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.setAutoEnlargePolicy);
+    }
+
+    /**
+     * 设置磁盘自动扩容策略
+     *
+     * 设置磁盘自动扩容策略。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SetAutoEnlargePolicyRequest 请求对象
+     * @return SyncInvoker<SetAutoEnlargePolicyRequest, SetAutoEnlargePolicyResponse>
+     */
+    public SyncInvoker<SetAutoEnlargePolicyRequest, SetAutoEnlargePolicyResponse> setAutoEnlargePolicyInvoker(
+        SetAutoEnlargePolicyRequest request) {
+        return new SyncInvoker<SetAutoEnlargePolicyRequest, SetAutoEnlargePolicyResponse>(request,
+            GaussDBforNoSQLMeta.setAutoEnlargePolicy, hcClient);
+    }
+
+    /**
      * 设置自动备份策略
      *
      * 设置自动备份策略。
@@ -909,6 +1069,68 @@ public class GaussDBforNoSQLClient {
         SetBackupPolicyRequest request) {
         return new SyncInvoker<SetBackupPolicyRequest, SetBackupPolicyResponse>(request,
             GaussDBforNoSQLMeta.setBackupPolicy, hcClient);
+    }
+
+    /**
+     * 查询参数模板可应用的实例列表
+     *
+     * 查询参数模板可应用的实例列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowApplicableInstancesRequest 请求对象
+     * @return ShowApplicableInstancesResponse
+     */
+    public ShowApplicableInstancesResponse showApplicableInstances(ShowApplicableInstancesRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.showApplicableInstances);
+    }
+
+    /**
+     * 查询参数模板可应用的实例列表
+     *
+     * 查询参数模板可应用的实例列表。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowApplicableInstancesRequest 请求对象
+     * @return SyncInvoker<ShowApplicableInstancesRequest, ShowApplicableInstancesResponse>
+     */
+    public SyncInvoker<ShowApplicableInstancesRequest, ShowApplicableInstancesResponse> showApplicableInstancesInvoker(
+        ShowApplicableInstancesRequest request) {
+        return new SyncInvoker<ShowApplicableInstancesRequest, ShowApplicableInstancesResponse>(request,
+            GaussDBforNoSQLMeta.showApplicableInstances, hcClient);
+    }
+
+    /**
+     * 查询参数模板应用历史
+     *
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowApplyHistoryRequest 请求对象
+     * @return ShowApplyHistoryResponse
+     */
+    public ShowApplyHistoryResponse showApplyHistory(ShowApplyHistoryRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.showApplyHistory);
+    }
+
+    /**
+     * 查询参数模板应用历史
+     *
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowApplyHistoryRequest 请求对象
+     * @return SyncInvoker<ShowApplyHistoryRequest, ShowApplyHistoryResponse>
+     */
+    public SyncInvoker<ShowApplyHistoryRequest, ShowApplyHistoryResponse> showApplyHistoryInvoker(
+        ShowApplyHistoryRequest request) {
+        return new SyncInvoker<ShowApplyHistoryRequest, ShowApplyHistoryResponse>(request,
+            GaussDBforNoSQLMeta.showApplyHistory, hcClient);
     }
 
     /**
@@ -1040,6 +1262,38 @@ public class GaussDBforNoSQLClient {
     }
 
     /**
+     * 查询实例参数的修改历史
+     *
+     * 查询实例参数的修改历史
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowModifyHistoryRequest 请求对象
+     * @return ShowModifyHistoryResponse
+     */
+    public ShowModifyHistoryResponse showModifyHistory(ShowModifyHistoryRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.showModifyHistory);
+    }
+
+    /**
+     * 查询实例参数的修改历史
+     *
+     * 查询实例参数的修改历史
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param ShowModifyHistoryRequest 请求对象
+     * @return SyncInvoker<ShowModifyHistoryRequest, ShowModifyHistoryResponse>
+     */
+    public SyncInvoker<ShowModifyHistoryRequest, ShowModifyHistoryResponse> showModifyHistoryInvoker(
+        ShowModifyHistoryRequest request) {
+        return new SyncInvoker<ShowModifyHistoryRequest, ShowModifyHistoryResponse>(request,
+            GaussDBforNoSQLMeta.showModifyHistory, hcClient);
+    }
+
+    /**
      * 查询配额
      *
      * 查询单租户在GaussDBforNoSQL服务下的资源配额。
@@ -1132,6 +1386,36 @@ public class GaussDBforNoSQLClient {
         ShrinkInstanceNodeRequest request) {
         return new SyncInvoker<ShrinkInstanceNodeRequest, ShrinkInstanceNodeResponse>(request,
             GaussDBforNoSQLMeta.shrinkInstanceNode, hcClient);
+    }
+
+    /**
+     * 切换实例SSL开关
+     *
+     * 切换实例SSL开关。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SwitchSslRequest 请求对象
+     * @return SwitchSslResponse
+     */
+    public SwitchSslResponse switchSsl(SwitchSslRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.switchSsl);
+    }
+
+    /**
+     * 切换实例SSL开关
+     *
+     * 切换实例SSL开关。
+     * 
+     * 详细说明请参考华为云API Explorer。
+     * Please refer to Huawei cloud API Explorer for details.
+     *
+     * @param SwitchSslRequest 请求对象
+     * @return SyncInvoker<SwitchSslRequest, SwitchSslResponse>
+     */
+    public SyncInvoker<SwitchSslRequest, SwitchSslResponse> switchSslInvoker(SwitchSslRequest request) {
+        return new SyncInvoker<SwitchSslRequest, SwitchSslResponse>(request, GaussDBforNoSQLMeta.switchSsl, hcClient);
     }
 
     /**

@@ -27,7 +27,7 @@ public class ShowClobDetailRequest {
     }
 
     /**
-     * 应用id
+     * 应用id。
      * @return xBusinessId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
